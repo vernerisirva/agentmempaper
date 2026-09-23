@@ -22,13 +22,13 @@
   "first_seen_at": "2026-09-22 09:05:43",
   "first_seen_date": "2026-09-22",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-09-22 09:05:43",
-  "last_seen_date": "2026-09-22",
+  "is_new": false,
+  "last_seen_at": "2026-09-23 09:08:16",
+  "last_seen_date": "2026-09-23",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-22 09:05:55",
   "notified_date": "2026-09-22",
   "openalex_id": "W7213510770",
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-22 09:05:43",
-    "generated_at": "2026-09-22 09:07:30",
-    "last_seen_at": "2026-09-22 09:05:43",
+    "generated_at": "2026-09-23 09:10:55",
+    "last_seen_at": "2026-09-23 09:08:16",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -109,36 +109,2551 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-23T09:09:31.420905+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.98,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript delivers a rigorous, well-controlled systematic study of an efficiency module across diverse architectures and tasks. The experimental design is thorough, negative/boundary conditions are transparently discussed and analyzed, and claims match the evidence.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 71618,
+      "assessment_input_sha256": "f950a527304d5aaffc86cfe88b4378ba7ef2cb50a322f0ed8428a6f631a2fa38",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.18279",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 68137,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 65038,
+      "evidence_block_count": 108,
+      "evidence_context_characters": 81125,
+      "evidence_context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+      "evidence_context_sha256": "7cb85e838de550ecc9e6372e4656c47d619159614176815c8c884cbb04183beb",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 68189,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "extracted_pages": 27,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "5f36f78164583a9f974cb227227ca3bd2079b3749006276b2a0a1c8a88b6fcc7",
+        "source_url": "https://arxiv.org/pdf/2609.18279",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 68137,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Decoder-Agnostic Token Merging For Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 2237,
+          "supplied_characters": 2237
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 360,
+          "supplied_characters": 360
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2830,
+          "supplied_characters": 2830
+        },
+        {
+          "heading": "Segmentation Decoders For Vits",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 156,
+          "supplied_characters": 156
+        },
+        {
+          "heading": "Segmentation Decoders For Vits",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 3074,
+          "supplied_characters": 3074
+        },
+        {
+          "heading": "Segmentation Decoders For Vits",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1722,
+          "supplied_characters": 1722
+        },
+        {
+          "heading": "Token Merging For Dense Prediction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Token Discarding Removes Informative Tokens, Either Explicitly In Hard Prun-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 409,
+          "supplied_characters": 409
+        },
+        {
+          "heading": "Token Discarding Removes Informative Tokens, Either Explicitly In Hard Prun-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2948,
+          "supplied_characters": 2948
+        },
+        {
+          "heading": "Token Discarding Removes Informative Tokens, Either Explicitly In Hard Prun-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 10,
+          "source_characters": 1629,
+          "supplied_characters": 1629
+        },
+        {
+          "heading": "Construct The Graph By Computing The Pairwise Similarities Between Neigh-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 67,
+          "supplied_characters": 67
+        },
+        {
+          "heading": "Dynamically Perform An Edge Cut Via A Thresholding Operation On The Edge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 517,
+          "supplied_characters": 517
+        },
+        {
+          "heading": "Dynamically Perform An Edge Cut Via A Thresholding Operation On The Edge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 725,
+          "supplied_characters": 725
+        },
+        {
+          "heading": "Preliminaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 142,
+          "supplied_characters": 142
+        },
+        {
+          "heading": "A Tokenizert:I7\u2192T 0 Which Takes A Rgb Imagei\u2208R H\u00d7W\u00d73 As An Input",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 174,
+          "supplied_characters": 174
+        },
+        {
+          "heading": "An Encodere:T 1 7\u2192T L+1 Comprising A Stack Ofltransformer Layers",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 16,
+          "supplied_characters": 16
+        },
+        {
+          "heading": "A Decoderd:T L+17\u2192Pwhich Generates Per-Pixel Segmentation Prediction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 425,
+          "supplied_characters": 425
+        },
+        {
+          "heading": "Graph Construction And Similarity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 788,
+          "supplied_characters": 788
+        },
+        {
+          "heading": "Graph Construction And Similarity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Dynamic Edge Cut",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1005,
+          "supplied_characters": 1005
+        },
+        {
+          "heading": "Token Fusion By Connected Components",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1046,
+          "supplied_characters": 1046
+        },
+        {
+          "heading": "Token Fusion By Connected Components",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 548,
+          "supplied_characters": 548
+        },
+        {
+          "heading": "Training With Dynamic Merging",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 154,
+          "supplied_characters": 154
+        },
+        {
+          "heading": "Appendix: G2T M",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 24,
+          "source_characters": 1433,
+          "supplied_characters": 1433
+        },
+        {
+          "heading": "Frameworks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 536,
+          "supplied_characters": 536
+        },
+        {
+          "heading": "Frameworks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 996,
+          "supplied_characters": 996
+        },
+        {
+          "heading": "Model Training",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 27,
+          "source_characters": 851,
+          "supplied_characters": 851
+        },
+        {
+          "heading": "Graph-Guided Merging Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1184,
+          "supplied_characters": 1184
+        },
+        {
+          "heading": "Graph-Guided Merging Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 861,
+          "supplied_characters": 861
+        },
+        {
+          "heading": "Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 30,
+          "source_characters": 1037,
+          "supplied_characters": 1037
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 31,
+          "source_characters": 483,
+          "supplied_characters": 483
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 3279,
+          "supplied_characters": 3279
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "results",
+          "section_index": 33,
+          "source_characters": 1861,
+          "supplied_characters": 1861
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "results",
+          "section_index": 34,
+          "source_characters": 2220,
+          "supplied_characters": 2220
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "results",
+          "section_index": 35,
+          "source_characters": 2280,
+          "supplied_characters": 2280
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "results",
+          "section_index": 36,
+          "source_characters": 1760,
+          "supplied_characters": 1760
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "results",
+          "section_index": 37,
+          "source_characters": 432,
+          "supplied_characters": 432
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "results",
+          "section_index": 38,
+          "source_characters": 18,
+          "supplied_characters": 18
+        },
+        {
+          "heading": "Qualitative Comparisons",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 997,
+          "supplied_characters": 997
+        },
+        {
+          "heading": "Ablation Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "results",
+          "section_index": 40,
+          "source_characters": 1814,
+          "supplied_characters": 1814
+        },
+        {
+          "heading": "Ablation Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "results",
+          "section_index": 41,
+          "source_characters": 2373,
+          "supplied_characters": 2373
+        },
+        {
+          "heading": "Ablation Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "results",
+          "section_index": 42,
+          "source_characters": 2072,
+          "supplied_characters": 2072
+        },
+        {
+          "heading": "Ablation Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "results",
+          "section_index": 43,
+          "source_characters": 1539,
+          "supplied_characters": 1539
+        },
+        {
+          "heading": "Ablation Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "results",
+          "section_index": 44,
+          "source_characters": 2469,
+          "supplied_characters": 2469
+        },
+        {
+          "heading": "Ablation Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "results",
+          "section_index": 45,
+          "source_characters": 29,
+          "supplied_characters": 29
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "conclusion",
+          "section_index": 46,
+          "source_characters": 2770,
+          "supplied_characters": 2770
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 170,
+          "supplied_characters": 170
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 3493,
+          "supplied_characters": 3493
+        },
+        {
+          "heading": "Graph-Guided Token Merging 25",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 29,
+          "supplied_characters": 29
+        },
+        {
+          "heading": "Steiner, A. And Kolesnikov, A., Zhai, X., Wightman, R., Uszkoreit, J., Beyer, L.:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 184,
+          "supplied_characters": 184
+        },
+        {
+          "heading": "Oquab, M., Darcet, T., Moutakanni, T., Vo, H., Szafraniec, M., Khalidov, V., Fer-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 364,
+          "supplied_characters": 364
+        },
+        {
+          "heading": "Bolya, D., Fu, C.-Y., Dai, X., Zhang, P., Feichtenhofer, C., Hoffman, J.: Token",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 145,
+          "supplied_characters": 145
+        },
+        {
+          "heading": "Norouzi, N., Orlova, S., De Geus, D., Dubbelman, G.: Algm: Adaptive Local-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 268,
+          "supplied_characters": 268
+        },
+        {
+          "heading": "Li, J., Wang, Y., Zhang, X., Shi, B., Jiang, D., Li, C., Dai, W., Xiong, H., Tian, Q.:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 322,
+          "supplied_characters": 322
+        },
+        {
+          "heading": "Kim, M., Gao, S., Hsu, Y.-C., Shen, Y., Jin, H.: Token Fusion: Bridging The Gap",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 213,
+          "supplied_characters": 213
+        },
+        {
+          "heading": "Bonnaerens, M., Dambre, J.: Learned Thresholds Token Merging And Pruning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 120,
+          "supplied_characters": 120
+        },
+        {
+          "heading": "Yuan,Y.,Liang,W.,Ding,H.,Liang,Z.,Zhang,C.,Hu,H.:Expeditinglarge-Scale",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 233,
+          "supplied_characters": 233
+        },
+        {
+          "heading": "Yang, Y., Zhou, Y., Hu, X., Duan, S.: Kff: K-Feature Fusion Token Merging For Vi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 127,
+          "supplied_characters": 127
+        },
+        {
+          "heading": "Lee, D. H., Hong, S.: Learning To Merge Tokens Via Decoupled Embedding For Effi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 540,
+          "supplied_characters": 540
+        },
+        {
+          "heading": "Haurum, J. B., Escalera, S., Taylor, G. W., Moeslund, T. B.: Agglomerative Token",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 227,
+          "supplied_characters": 227
+        },
+        {
+          "heading": "Haurum, J. B., Escalera, S., Taylor, G. W., Moeslund, T. B.: Agglomerative Token",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 18,
+          "supplied_characters": 18
+        },
+        {
+          "heading": "Xu, X., Wang, S., Chen, Y., Zheng, Y., Wei, Z., Liu, J.: Gtp-Vit: Efficient",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 572,
+          "supplied_characters": 572
+        },
+        {
+          "heading": "Mao, J., Shen, Y., Guo, J., Yao, Y., Hua, X., Shen, H.: Prune And Merge: Efficient",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 213,
+          "supplied_characters": 213
+        },
+        {
+          "heading": "Chang, S., Wang, P., Lin, M., Wang, F., Zhang, D. J. Jin, R., Shou, M. Z.: Mak-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 242,
+          "supplied_characters": 242
+        },
+        {
+          "heading": "Rao, Y., Zhao, W., Liu, B., Lu, J., Zhou, J., Hsieh, C.-J.: Dynamicvit: Efficient",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 65,
+          "source_characters": 567,
+          "supplied_characters": 567
+        },
+        {
+          "heading": "Marin, D., Chang, J.-H. R., Ranjan, A., Prabhu, A., Rastegari, M., Tuzel, O.:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 229,
+          "supplied_characters": 229
+        },
+        {
+          "heading": "Wang, H., Dedhia, B., Jha, N. K.: Zero-Tprune: Zero-Shot Token Pruning Through",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 233,
+          "supplied_characters": 233
+        },
+        {
+          "heading": "Chen, D., Lin, K., Deng, Q.: Ucc: A Unified Cascade Compression Framework For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 121,
+          "supplied_characters": 121
+        },
+        {
+          "heading": "Eliopoulos, N. J., Jajal, P., Davis, J. C., Liu, G., Thiravathukal, G. K., Lu, Y.-H.:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 285,
+          "supplied_characters": 285
+        },
+        {
+          "heading": "Bergner, B., Lippert, C., Mahendran, A.: Token Cropr: Faster Vits For Quite A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 70,
+          "source_characters": 182,
+          "supplied_characters": 182
+        },
+        {
+          "heading": "Nguyen, P., Cheung, N.-M.: Token Compression Meets Compact Vision Trans-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 71,
+          "source_characters": 158,
+          "supplied_characters": 158
+        },
+        {
+          "heading": "Nguyen, P., Cheung, N.-M.: Token Compression Meets Compact Vision Trans-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 72,
+          "source_characters": 134,
+          "supplied_characters": 134
+        },
+        {
+          "heading": "Dong, Y., Cordonnier, J.-B., Loukas, A.: Attention Is Not All You Need: Pure At-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 73,
+          "source_characters": 206,
+          "supplied_characters": 206
+        },
+        {
+          "heading": "Wang, P., Zheng, W., Chen, T., Wang, Z.: Anti-Oversmoothing In Deep Vi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 190,
+          "supplied_characters": 190
+        },
+        {
+          "heading": "Darcet, T., Oquab, M., Mairal, J., Bojanowski, P.: Vision Transformers Need Reg-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 75,
+          "source_characters": 148,
+          "supplied_characters": 148
+        },
+        {
+          "heading": "Poreba, M., Ben Chehida, K., Grativol Ribeira, L., Auzanneau, F.: Un-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 76,
+          "source_characters": 178,
+          "supplied_characters": 178
+        },
+        {
+          "heading": "Bercy, V., Poreba, M., Szczepanski, M., Bouchafa, S.: G2Tm: Single-Module",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 77,
+          "source_characters": 241,
+          "supplied_characters": 241
+        }
+      ],
+      "selected_characters": 65038,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "selected_sections": [
+        {
+          "characters": 2237,
+          "heading": "Decoder-Agnostic Token Merging For Vision",
+          "page": 1
+        },
+        {
+          "characters": 360,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2830,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 156,
+          "heading": "Segmentation Decoders For Vits",
+          "page": 2
+        },
+        {
+          "characters": 3074,
+          "heading": "Segmentation Decoders For Vits",
+          "page": 3
+        },
+        {
+          "characters": 1722,
+          "heading": "Segmentation Decoders For Vits",
+          "page": 4
+        },
+        {
+          "characters": 89,
+          "heading": "Token Merging For Dense Prediction",
+          "page": 4
+        },
+        {
+          "characters": 409,
+          "heading": "Token Discarding Removes Informative Tokens, Either Explicitly In Hard Prun-",
+          "page": 4
+        },
+        {
+          "characters": 2948,
+          "heading": "Token Discarding Removes Informative Tokens, Either Explicitly In Hard Prun-",
+          "page": 5
+        },
+        {
+          "characters": 17,
+          "heading": "Token Discarding Removes Informative Tokens, Either Explicitly In Hard Prun-",
+          "page": 6
+        },
+        {
+          "characters": 1629,
+          "heading": "Methodology",
+          "page": 6
+        },
+        {
+          "characters": 67,
+          "heading": "Construct The Graph By Computing The Pairwise Similarities Between Neigh-",
+          "page": 6
+        },
+        {
+          "characters": 517,
+          "heading": "Dynamically Perform An Edge Cut Via A Thresholding Operation On The Edge",
+          "page": 6
+        },
+        {
+          "characters": 725,
+          "heading": "Dynamically Perform An Edge Cut Via A Thresholding Operation On The Edge",
+          "page": 7
+        },
+        {
+          "characters": 142,
+          "heading": "Preliminaries",
+          "page": 7
+        },
+        {
+          "characters": 174,
+          "heading": "A Tokenizert:I7\u2192T 0 Which Takes A Rgb Imagei\u2208R H\u00d7W\u00d73 As An Input",
+          "page": 7
+        },
+        {
+          "characters": 16,
+          "heading": "An Encodere:T 1 7\u2192T L+1 Comprising A Stack Ofltransformer Layers",
+          "page": 7
+        },
+        {
+          "characters": 425,
+          "heading": "A Decoderd:T L+17\u2192Pwhich Generates Per-Pixel Segmentation Prediction",
+          "page": 7
+        },
+        {
+          "characters": 788,
+          "heading": "Graph Construction And Similarity",
+          "page": 7
+        },
+        {
+          "characters": 314,
+          "heading": "Graph Construction And Similarity",
+          "page": 8
+        },
+        {
+          "characters": 1005,
+          "heading": "Dynamic Edge Cut",
+          "page": 8
+        },
+        {
+          "characters": 1046,
+          "heading": "Token Fusion By Connected Components",
+          "page": 8
+        },
+        {
+          "characters": 548,
+          "heading": "Token Fusion By Connected Components",
+          "page": 9
+        },
+        {
+          "characters": 154,
+          "heading": "Training With Dynamic Merging",
+          "page": 9
+        },
+        {
+          "characters": 1433,
+          "heading": "Appendix: G2T M",
+          "page": 9
+        },
+        {
+          "characters": 536,
+          "heading": "Frameworks",
+          "page": 9
+        },
+        {
+          "characters": 996,
+          "heading": "Frameworks",
+          "page": 10
+        },
+        {
+          "characters": 851,
+          "heading": "Model Training",
+          "page": 10
+        },
+        {
+          "characters": 1184,
+          "heading": "Graph-Guided Merging Settings",
+          "page": 10
+        },
+        {
+          "characters": 861,
+          "heading": "Graph-Guided Merging Settings",
+          "page": 11
+        },
+        {
+          "characters": 1037,
+          "heading": "Evaluation Metrics",
+          "page": 11
+        },
+        {
+          "characters": 483,
+          "heading": "Experiments",
+          "page": 11
+        },
+        {
+          "characters": 3279,
+          "heading": "Experiments",
+          "page": 12
+        },
+        {
+          "characters": 1861,
+          "heading": "Experiments",
+          "page": 13
+        },
+        {
+          "characters": 2220,
+          "heading": "Experiments",
+          "page": 14
+        },
+        {
+          "characters": 2280,
+          "heading": "Experiments",
+          "page": 15
+        },
+        {
+          "characters": 1760,
+          "heading": "Experiments",
+          "page": 16
+        },
+        {
+          "characters": 432,
+          "heading": "Experiments",
+          "page": 17
+        },
+        {
+          "characters": 18,
+          "heading": "Experiments",
+          "page": 18
+        },
+        {
+          "characters": 997,
+          "heading": "Qualitative Comparisons",
+          "page": 18
+        },
+        {
+          "characters": 1814,
+          "heading": "Ablation Studies",
+          "page": 18
+        },
+        {
+          "characters": 2373,
+          "heading": "Ablation Studies",
+          "page": 19
+        },
+        {
+          "characters": 2072,
+          "heading": "Ablation Studies",
+          "page": 20
+        },
+        {
+          "characters": 1539,
+          "heading": "Ablation Studies",
+          "page": 21
+        },
+        {
+          "characters": 2469,
+          "heading": "Ablation Studies",
+          "page": 22
+        },
+        {
+          "characters": 29,
+          "heading": "Ablation Studies",
+          "page": 23
+        },
+        {
+          "characters": 2770,
+          "heading": "Conclusion",
+          "page": 23
+        },
+        {
+          "characters": 170,
+          "heading": "Unclassified body after references",
+          "page": 23
+        },
+        {
+          "characters": 3493,
+          "heading": "Unclassified body after references",
+          "page": 24
+        },
+        {
+          "characters": 29,
+          "heading": "Graph-Guided Token Merging 25",
+          "page": 25
+        },
+        {
+          "characters": 184,
+          "heading": "Steiner, A. And Kolesnikov, A., Zhai, X., Wightman, R., Uszkoreit, J., Beyer, L.:",
+          "page": 25
+        },
+        {
+          "characters": 364,
+          "heading": "Oquab, M., Darcet, T., Moutakanni, T., Vo, H., Szafraniec, M., Khalidov, V., Fer-",
+          "page": 25
+        },
+        {
+          "characters": 145,
+          "heading": "Bolya, D., Fu, C.-Y., Dai, X., Zhang, P., Feichtenhofer, C., Hoffman, J.: Token",
+          "page": 25
+        },
+        {
+          "characters": 268,
+          "heading": "Norouzi, N., Orlova, S., De Geus, D., Dubbelman, G.: Algm: Adaptive Local-",
+          "page": 25
+        },
+        {
+          "characters": 322,
+          "heading": "Li, J., Wang, Y., Zhang, X., Shi, B., Jiang, D., Li, C., Dai, W., Xiong, H., Tian, Q.:",
+          "page": 25
+        },
+        {
+          "characters": 213,
+          "heading": "Kim, M., Gao, S., Hsu, Y.-C., Shen, Y., Jin, H.: Token Fusion: Bridging The Gap",
+          "page": 25
+        },
+        {
+          "characters": 120,
+          "heading": "Bonnaerens, M., Dambre, J.: Learned Thresholds Token Merging And Pruning",
+          "page": 25
+        },
+        {
+          "characters": 233,
+          "heading": "Yuan,Y.,Liang,W.,Ding,H.,Liang,Z.,Zhang,C.,Hu,H.:Expeditinglarge-Scale",
+          "page": 25
+        },
+        {
+          "characters": 127,
+          "heading": "Yang, Y., Zhou, Y., Hu, X., Duan, S.: Kff: K-Feature Fusion Token Merging For Vi-",
+          "page": 25
+        },
+        {
+          "characters": 540,
+          "heading": "Lee, D. H., Hong, S.: Learning To Merge Tokens Via Decoupled Embedding For Effi-",
+          "page": 25
+        },
+        {
+          "characters": 227,
+          "heading": "Haurum, J. B., Escalera, S., Taylor, G. W., Moeslund, T. B.: Agglomerative Token",
+          "page": 25
+        },
+        {
+          "characters": 18,
+          "heading": "Haurum, J. B., Escalera, S., Taylor, G. W., Moeslund, T. B.: Agglomerative Token",
+          "page": 26
+        },
+        {
+          "characters": 572,
+          "heading": "Xu, X., Wang, S., Chen, Y., Zheng, Y., Wei, Z., Liu, J.: Gtp-Vit: Efficient",
+          "page": 26
+        },
+        {
+          "characters": 213,
+          "heading": "Mao, J., Shen, Y., Guo, J., Yao, Y., Hua, X., Shen, H.: Prune And Merge: Efficient",
+          "page": 26
+        },
+        {
+          "characters": 242,
+          "heading": "Chang, S., Wang, P., Lin, M., Wang, F., Zhang, D. J. Jin, R., Shou, M. Z.: Mak-",
+          "page": 26
+        },
+        {
+          "characters": 567,
+          "heading": "Rao, Y., Zhao, W., Liu, B., Lu, J., Zhou, J., Hsieh, C.-J.: Dynamicvit: Efficient",
+          "page": 26
+        },
+        {
+          "characters": 229,
+          "heading": "Marin, D., Chang, J.-H. R., Ranjan, A., Prabhu, A., Rastegari, M., Tuzel, O.:",
+          "page": 26
+        },
+        {
+          "characters": 233,
+          "heading": "Wang, H., Dedhia, B., Jha, N. K.: Zero-Tprune: Zero-Shot Token Pruning Through",
+          "page": 26
+        },
+        {
+          "characters": 121,
+          "heading": "Chen, D., Lin, K., Deng, Q.: Ucc: A Unified Cascade Compression Framework For",
+          "page": 26
+        },
+        {
+          "characters": 285,
+          "heading": "Eliopoulos, N. J., Jajal, P., Davis, J. C., Liu, G., Thiravathukal, G. K., Lu, Y.-H.:",
+          "page": 26
+        },
+        {
+          "characters": 182,
+          "heading": "Bergner, B., Lippert, C., Mahendran, A.: Token Cropr: Faster Vits For Quite A",
+          "page": 26
+        },
+        {
+          "characters": 158,
+          "heading": "Nguyen, P., Cheung, N.-M.: Token Compression Meets Compact Vision Trans-",
+          "page": 26
+        },
+        {
+          "characters": 134,
+          "heading": "Nguyen, P., Cheung, N.-M.: Token Compression Meets Compact Vision Trans-",
+          "page": 27
+        },
+        {
+          "characters": 206,
+          "heading": "Dong, Y., Cordonnier, J.-B., Loukas, A.: Attention Is Not All You Need: Pure At-",
+          "page": 27
+        },
+        {
+          "characters": 190,
+          "heading": "Wang, P., Zheng, W., Chen, T., Wang, Z.: Anti-Oversmoothing In Deep Vi-",
+          "page": 27
+        },
+        {
+          "characters": 148,
+          "heading": "Darcet, T., Oquab, M., Mairal, J., Bojanowski, P.: Vision Transformers Need Reg-",
+          "page": 27
+        },
+        {
+          "characters": 178,
+          "heading": "Poreba, M., Ben Chehida, K., Grativol Ribeira, L., Auzanneau, F.: Un-",
+          "page": 27
+        },
+        {
+          "characters": 241,
+          "heading": "Bercy, V., Poreba, M., Szczepanski, M., Bouchafa, S.: G2Tm: Single-Module",
+          "page": 27
+        }
+      ],
+      "selected_text_sha256": "f950a527304d5aaffc86cfe88b4378ba7ef2cb50a322f0ed8428a6f631a2fa38",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "5f36f78164583a9f974cb227227ca3bd2079b3749006276b2a0a1c8a88b6fcc7",
+      "source_pages": 27,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0002"
+        ],
+        "excerpt": "eval-\nuated within a single architecture, leaving open whether their effective-\nness stems from the merging mechanism itself or from the specific de-\ncoder they are paired with. We extend Graph-Guided Token Merging\n(G2TM), a single module inserted early in a ViT-based network, beyond\nits original Segmenter setting. We evaluate G2TM across three semantic\nsegmentation frameworks (Segmenter, SETR, EoMT) and three decoder\nfamilies (Linear, Transformer-, convolution-based), as well as standard\nViT image classification. Our results show that G2TM's behavior and\naccuracy\u2013efficiency trade-off are consistent across every tested architec-\nture for a given backbone size, indicating that its effectiveness is a prop-\nerty of the encoder rather than the decoder. G2TM also generalizes well\nto image classification, achieving an even smaller degradation in accu-\nracy compared to semantic segmentation. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Decoder-Agnostic Token Merging For Vision",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a0d799f3cd37a35122da2d5c432c55de74146dc5ed16167ed0be4addbf3066a7",
+            "evidence_id": "Ea74f20b053a52f83-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Decoder-Agnostic Token Merging For Vision",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 1,
+                "section": "Decoder-Agnostic Token Merging For Vision",
+                "section_index": 0,
+                "start": 892,
+                "text": "eval-\nuated within a single architecture, leaving open whether their effective-\nness stems from the merging mechanism itself or from the specific de-\ncoder they are paired with. We extend Graph-Guided Token Merging\n(G2TM), a single module inserted early in a ViT-based network, beyond\nits original Segmenter setting. We evaluate G2TM across three semantic\nsegmentation frameworks (Segmenter, SETR, EoMT) and three decoder\nfamilies (Linear, Transformer-, convolution-based), as well as standard\nViT image classification. Our results show that G2TM's behavior and\naccuracy\u2013efficiency trade-off are consistent across every tested architec-\nture for a given backbone size, indicating that its effectiveness is a prop-\nerty of the encoder rather than the decoder. G2TM also generalizes well\nto image classification, achieving an even smaller degradation in accu-\nracy compared to semantic segmentation. "
+              }
+            ],
+            "text": "eval-\nuated within a single architecture, leaving open whether their effective-\nness stems from the merging mechanism itself or from the specific de-\ncoder they are paired with. We extend Graph-Guided Token Merging\n(G2TM), a single module inserted early in a ViT-based network, beyond\nits original Segmenter setting. We evaluate G2TM across three semantic\nsegmentation frameworks (Segmenter, SETR, EoMT) and three decoder\nfamilies (Linear, Transformer-, convolution-based), as well as standard\nViT image classification. Our results show that G2TM's behavior and\naccuracy\u2013efficiency trade-off are consistent across every tested architec-\nture for a given backbone size, indicating that its effectiveness is a prop-\nerty of the encoder rather than the decoder. G2TM also generalizes well\nto image classification, achieving an even smaller degradation in accu-\nracy compared to semantic segmentation. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0003"
+        ],
+        "excerpt": "We further find that G2TM's\noptimal hyperparameters, resulting in a consistent drop in GFLOPs of\n22-47%and an increase in throughput by up to74%for segmentation\nmodels on ADE20K dataset, depend primarily on the backbone's pre-\ntraining recipe and on the target dataset, rather than on the decoder\nchoice. Codes are available here.\nKeywords:Semantic Segmentation, Vision Transformer, Decoder, To-\nken Merging, Graph Theory, Computational complexity",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Decoder-Agnostic Token Merging For Vision",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b0489b88ec7b7adff610f2645d9ad5b886288f7bdeede2b3973ed6e14312e773",
+            "evidence_id": "Ea74f20b053a52f83-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Decoder-Agnostic Token Merging For Vision",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2237,
+                "page": 1,
+                "section": "Decoder-Agnostic Token Merging For Vision",
+                "section_index": 0,
+                "start": 1790,
+                "text": "We further find that G2TM's\noptimal hyperparameters, resulting in a consistent drop in GFLOPs of\n22-47%and an increase in throughput by up to74%for segmentation\nmodels on ADE20K dataset, depend primarily on the backbone's pre-\ntraining recipe and on the target dataset, rather than on the decoder\nchoice. Codes are available here.\nKeywords:Semantic Segmentation, Vision Transformer, Decoder, To-\nken Merging, Graph Theory, Computational complexity"
+              }
+            ],
+            "text": "We further find that G2TM's\noptimal hyperparameters, resulting in a consistent drop in GFLOPs of\n22-47%and an increase in throughput by up to74%for segmentation\nmodels on ADE20K dataset, depend primarily on the backbone's pre-\ntraining recipe and on the target dataset, rather than on the decoder\nchoice. Codes are available here.\nKeywords:Semantic Segmentation, Vision Transformer, Decoder, To-\nken Merging, Graph Theory, Computational complexity"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0019"
+        ],
+        "excerpt": "To address token redundancy in ViTs, we propose Graph-Guided Token Merging\n(G2TM), a token merging framework based on graph theory. As illustrated in\nFigure 1, G2TM is inserted once in a chosen Transformer block of the encoder,\nunlike prior token merging methods which typically reduce the token sequence\niteratively or across multiple layers. In practice, we favor insertion in shallow\nstages, typically after the first or second attention layer, since reducing the token\nsequence early maximizes computational savings in subsequent self-attention\noperations.\nT0\nMulti-Head Self-Attention\nFFN\nLayer Norm.\nLayer Norm.\nTi TiG2TM\n |TiG2TM| < |Ti|\nTransformer block + Token Merging\nTiATTN\nLi\nT1\nPatch Embedding\nTransformer blocks\nTi\nLi+1, ..., Lm\nG2TM Module\nTiG2TM\nMerged Token Indices\nTransformer Encoder\nInput Image\nTransformer blocks\nL1, ..., Li-1\nTi+1 Tm+1\nWith i = 1 or 2\nOR\nToken ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d39fda6fb38b475251d533267238a9b6b3f18421ad1bc900138c29f37bf064c5",
+            "evidence_id": "Ea74f20b053a52f83-B0019",
+            "pages": [
+              6
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 884,
+                "page": 6,
+                "section": "Methodology",
+                "section_index": 10,
+                "start": 0,
+                "text": "To address token redundancy in ViTs, we propose Graph-Guided Token Merging\n(G2TM), a token merging framework based on graph theory. As illustrated in\nFigure 1, G2TM is inserted once in a chosen Transformer block of the encoder,\nunlike prior token merging methods which typically reduce the token sequence\niteratively or across multiple layers. In practice, we favor insertion in shallow\nstages, typically after the first or second attention layer, since reducing the token\nsequence early maximizes computational savings in subsequent self-attention\noperations.\nT0\nMulti-Head Self-Attention\nFFN\nLayer Norm.\nLayer Norm.\nTi TiG2TM\n |TiG2TM| < |Ti|\nTransformer block + Token Merging\nTiATTN\nLi\nT1\nPatch Embedding\nTransformer blocks\nTi\nLi+1, ..., Lm\nG2TM Module\nTiG2TM\nMerged Token Indices\nTransformer Encoder\nInput Image\nTransformer blocks\nL1, ..., Li-1\nTi+1 Tm+1\nWith i = 1 or 2\nOR\nToken "
+              }
+            ],
+            "text": "To address token redundancy in ViTs, we propose Graph-Guided Token Merging\n(G2TM), a token merging framework based on graph theory. As illustrated in\nFigure 1, G2TM is inserted once in a chosen Transformer block of the encoder,\nunlike prior token merging methods which typically reduce the token sequence\niteratively or across multiple layers. In practice, we favor insertion in shallow\nstages, typically after the first or second attention layer, since reducing the token\nsequence early maximizes computational savings in subsequent self-attention\noperations.\nT0\nMulti-Head Self-Attention\nFFN\nLayer Norm.\nLayer Norm.\nTi TiG2TM\n |TiG2TM| < |Ti|\nTransformer block + Token Merging\nTiATTN\nLi\nT1\nPatch Embedding\nTransformer blocks\nTi\nLi+1, ..., Lm\nG2TM Module\nTiG2TM\nMerged Token Indices\nTransformer Encoder\nInput Image\nTransformer blocks\nL1, ..., Li-1\nTi+1 Tm+1\nWith i = 1 or 2\nOR\nToken "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0020"
+        ],
+        "excerpt": "UnmergingLinear/Transformer head\nTask Head\nToken UnmergingCNN head\nPrediction\nOption 1 Option 2\nFig.1:Integration of the G2TM module within thei th Transformer\nblock of a ViT-based architecture.The module is inserted following the\nattention layer and the residual connection of one of the shallow Transformer\nblocks (typically,i= 1or2).\nG2TM represents the token sequence as a graph, where each node corre-\nsponds to an individual token and edges encode pairwise similarities between\nspatially adjacent tokens (i.e.: tokens whose corresponding patches are neigh-\nbors in the image grid). The similarity is computed over the 4-neighborhood\nusing only right and bottom edges to avoid redundancy. The merging process\nfollows a three-stage pipeline:",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ec3fa80cca49a1b57d3671b004b91a8e369f24169413331c761f6346ef8c3341",
+            "evidence_id": "Ea74f20b053a52f83-B0020",
+            "pages": [
+              6
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1629,
+                "page": 6,
+                "section": "Methodology",
+                "section_index": 10,
+                "start": 884,
+                "text": "UnmergingLinear/Transformer head\nTask Head\nToken UnmergingCNN head\nPrediction\nOption 1 Option 2\nFig.1:Integration of the G2TM module within thei th Transformer\nblock of a ViT-based architecture.The module is inserted following the\nattention layer and the residual connection of one of the shallow Transformer\nblocks (typically,i= 1or2).\nG2TM represents the token sequence as a graph, where each node corre-\nsponds to an individual token and edges encode pairwise similarities between\nspatially adjacent tokens (i.e.: tokens whose corresponding patches are neigh-\nbors in the image grid). The similarity is computed over the 4-neighborhood\nusing only right and bottom edges to avoid redundancy. The merging process\nfollows a three-stage pipeline:"
+              }
+            ],
+            "text": "UnmergingLinear/Transformer head\nTask Head\nToken UnmergingCNN head\nPrediction\nOption 1 Option 2\nFig.1:Integration of the G2TM module within thei th Transformer\nblock of a ViT-based architecture.The module is inserted following the\nattention layer and the residual connection of one of the shallow Transformer\nblocks (typically,i= 1or2).\nG2TM represents the token sequence as a graph, where each node corre-\nsponds to an individual token and edges encode pairwise similarities between\nspatially adjacent tokens (i.e.: tokens whose corresponding patches are neigh-\nbors in the image grid). The similarity is computed over the 4-neighborhood\nusing only right and bottom edges to avoid redundancy. The merging process\nfollows a three-stage pipeline:"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0028"
+        ],
+        "excerpt": "G2TM operates after the attention layer and the following residual connection of\nthei th Transformer block, processing the sequenceTAT T N\ni . The layeriis chosen\nsmall compared to the total number of Transformer blocks in the networkL,\nso that the token reduction occurs early in the encoder. G2TM constructs an\nundirected graphG= (V,E,W), as shown in Figure 2.a, where:\n\u2013The verticesVcorrespond to the tokens inT AT T N\ni ;\n\u2013The edgesElink the spatially adjacent tokens;\n\u2013The weight matrixW= (cs i,j)(i,j)\u2208{1,...,N} 2 stores the cosine similarities\nbetween all pairs of neighboring tokens, using their token embeddings.\nThe cosine similarity, which is widely used in state-of-the-art token merging\nmethods, is defined between two vectors as follows:\ncsi,j = ti\u00b7t j\nmax(\u2225ti\u22252\u2225tj\u22252,\u03f5),(1)\n8 V. Bercy et al.\nwith\u03f5\u226a1(typically10 \u22128) ensuring numerical stability.\nTo avoid any computational redundancy, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graph Construction And Similarity",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a7f5498a68dae152bd3a530fbc91ad1ba4273a2b8d73c8a86a99eff5467e21f5",
+            "evidence_id": "Ea74f20b053a52f83-B0028",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Graph Construction And Similarity",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 788,
+                "page": 7,
+                "section": "Graph Construction And Similarity",
+                "section_index": 18,
+                "start": 0,
+                "text": "G2TM operates after the attention layer and the following residual connection of\nthei th Transformer block, processing the sequenceTAT T N\ni . The layeriis chosen\nsmall compared to the total number of Transformer blocks in the networkL,\nso that the token reduction occurs early in the encoder. G2TM constructs an\nundirected graphG= (V,E,W), as shown in Figure 2.a, where:\n\u2013The verticesVcorrespond to the tokens inT AT T N\ni ;\n\u2013The edgesElink the spatially adjacent tokens;\n\u2013The weight matrixW= (cs i,j)(i,j)\u2208{1,...,N} 2 stores the cosine similarities\nbetween all pairs of neighboring tokens, using their token embeddings.\nThe cosine similarity, which is widely used in state-of-the-art token merging\nmethods, is defined between two vectors as follows:\ncsi,j = ti\u00b7t j\nmax(\u2225ti\u22252\u2225tj\u22252,\u03f5),(1)"
+              },
+              {
+                "end": 111,
+                "page": 8,
+                "section": "Graph Construction And Similarity",
+                "section_index": 19,
+                "start": 0,
+                "text": "8 V. Bercy et al.\nwith\u03f5\u226a1(typically10 \u22128) ensuring numerical stability.\nTo avoid any computational redundancy, "
+              }
+            ],
+            "text": "G2TM operates after the attention layer and the following residual connection of\nthei th Transformer block, processing the sequenceTAT T N\ni . The layeriis chosen\nsmall compared to the total number of Transformer blocks in the networkL,\nso that the token reduction occurs early in the encoder. G2TM constructs an\nundirected graphG= (V,E,W), as shown in Figure 2.a, where:\n\u2013The verticesVcorrespond to the tokens inT AT T N\ni ;\n\u2013The edgesElink the spatially adjacent tokens;\n\u2013The weight matrixW= (cs i,j)(i,j)\u2208{1,...,N} 2 stores the cosine similarities\nbetween all pairs of neighboring tokens, using their token embeddings.\nThe cosine similarity, which is widely used in state-of-the-art token merging\nmethods, is defined between two vectors as follows:\ncsi,j = ti\u00b7t j\nmax(\u2225ti\u22252\u2225tj\u22252,\u03f5),(1)\n8 V. Bercy et al.\nwith\u03f5\u226a1(typically10 \u22128) ensuring numerical stability.\nTo avoid any computational redundancy, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0030"
+        ],
+        "excerpt": "To control the merging granularity, we define a threshold\u03c4prior to training (see\nSection 4) and apply it to the cosine similarity scores. Thereby, we remove all\nedges whose weights are below this threshold, disconnecting tokens that are not\nsimilar enough (see Figure 2.b). The number of removed edges depends on both\nthe input image and the chosen threshold value.\nAfter the edge cut, the remaining structure of the graphGconsists of several\ndisconnected subgraphs, that are called connected components in graph theory.\nIn G2TM, each of them represents a group of locally similar tokens. We apply\na Breadth-First-Search (BFS) algorithm to the graphG, to retrieve the indices\nof the tokens belonging to each connected component whose size is greater than\n1 (i.e.: comprising more than 1 token). Thus, we obtain a set of tokens for\neach component, and we store their indices for later unmerging. We ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Dynamic Edge Cut",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e1924150bfe266e667c7e6616c8e3397e493193ad2a8f72c5c57423989981aff",
+            "evidence_id": "Ea74f20b053a52f83-B0030",
+            "pages": [
+              8
+            ],
+            "section": "Dynamic Edge Cut",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 8,
+                "section": "Dynamic Edge Cut",
+                "section_index": 20,
+                "start": 0,
+                "text": "To control the merging granularity, we define a threshold\u03c4prior to training (see\nSection 4) and apply it to the cosine similarity scores. Thereby, we remove all\nedges whose weights are below this threshold, disconnecting tokens that are not\nsimilar enough (see Figure 2.b). The number of removed edges depends on both\nthe input image and the chosen threshold value.\nAfter the edge cut, the remaining structure of the graphGconsists of several\ndisconnected subgraphs, that are called connected components in graph theory.\nIn G2TM, each of them represents a group of locally similar tokens. We apply\na Breadth-First-Search (BFS) algorithm to the graphG, to retrieve the indices\nof the tokens belonging to each connected component whose size is greater than\n1 (i.e.: comprising more than 1 token). Thus, we obtain a set of tokens for\neach component, and we store their indices for later unmerging. We "
+              }
+            ],
+            "text": "To control the merging granularity, we define a threshold\u03c4prior to training (see\nSection 4) and apply it to the cosine similarity scores. Thereby, we remove all\nedges whose weights are below this threshold, disconnecting tokens that are not\nsimilar enough (see Figure 2.b). The number of removed edges depends on both\nthe input image and the chosen threshold value.\nAfter the edge cut, the remaining structure of the graphGconsists of several\ndisconnected subgraphs, that are called connected components in graph theory.\nIn G2TM, each of them represents a group of locally similar tokens. We apply\na Breadth-First-Search (BFS) algorithm to the graphG, to retrieve the indices\nof the tokens belonging to each connected component whose size is greater than\n1 (i.e.: comprising more than 1 token). Thus, we obtain a set of tokens for\neach component, and we store their indices for later unmerging. We "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0032"
+        ],
+        "excerpt": "For each connected componentj\u2208[K], we aggregate the tokensCj into a single\nembedding \u00aftj using a simple unweighted average operation, enabling the merging\nofconnectedcomponentsofanysize.Duringinference,thetokensC j areremoved\nfrom the sequenceT AT T N\ni and are replaced by \u00aftj (see Figure 2.e). Hence, the\noutput sequence of our moduleTG2T M\ni \u2208R N \u2032\u00d7d, whereN\u2032\u2264N, contains these\nmerged tokens along with some original ones (i.e.: not linked to any others after\nC2\nGraph\ncomponents OR\nTraining\n{0,1,2,3,7}\nC1\nC2\n{5,6,9,10}\nC3\n{14,15}\nd.\nC1\n{14,15}\nC2\n{0,1,2,3,7}\n{5,6,9,10}\nC3\na. b. c. e.\nThresholding\nC3\nMerging\nC1\nInference\nCosine similarity\nFig.2:Illustration of G2TM merging strategy. Tokens are arranged on a\n2D grid. Their position in the grid corresponds to those of the patches in the\noriginal image. The final merging operation (last step) differs between training\n(left) and inference ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Token Fusion By Connected Components",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "85cbd1ea6ddbd479193e14d17c23a7c4ff46b4bfc7f3131a7e6ba2888e2465db",
+            "evidence_id": "Ea74f20b053a52f83-B0032",
+            "pages": [
+              8
+            ],
+            "section": "Token Fusion By Connected Components",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 8,
+                "section": "Token Fusion By Connected Components",
+                "section_index": 21,
+                "start": 0,
+                "text": "For each connected componentj\u2208[K], we aggregate the tokensCj into a single\nembedding \u00aftj using a simple unweighted average operation, enabling the merging\nofconnectedcomponentsofanysize.Duringinference,thetokensC j areremoved\nfrom the sequenceT AT T N\ni and are replaced by \u00aftj (see Figure 2.e). Hence, the\noutput sequence of our moduleTG2T M\ni \u2208R N \u2032\u00d7d, whereN\u2032\u2264N, contains these\nmerged tokens along with some original ones (i.e.: not linked to any others after\nC2\nGraph\ncomponents OR\nTraining\n{0,1,2,3,7}\nC1\nC2\n{5,6,9,10}\nC3\n{14,15}\nd.\nC1\n{14,15}\nC2\n{0,1,2,3,7}\n{5,6,9,10}\nC3\na. b. c. e.\nThresholding\nC3\nMerging\nC1\nInference\nCosine similarity\nFig.2:Illustration of G2TM merging strategy. Tokens are arranged on a\n2D grid. Their position in the grid corresponds to those of the patches in the\noriginal image. The final merging operation (last step) differs between training\n(left) and inference "
+              }
+            ],
+            "text": "For each connected componentj\u2208[K], we aggregate the tokensCj into a single\nembedding \u00aftj using a simple unweighted average operation, enabling the merging\nofconnectedcomponentsofanysize.Duringinference,thetokensC j areremoved\nfrom the sequenceT AT T N\ni and are replaced by \u00aftj (see Figure 2.e). Hence, the\noutput sequence of our moduleTG2T M\ni \u2208R N \u2032\u00d7d, whereN\u2032\u2264N, contains these\nmerged tokens along with some original ones (i.e.: not linked to any others after\nC2\nGraph\ncomponents OR\nTraining\n{0,1,2,3,7}\nC1\nC2\n{5,6,9,10}\nC3\n{14,15}\nd.\nC1\n{14,15}\nC2\n{0,1,2,3,7}\n{5,6,9,10}\nC3\na. b. c. e.\nThresholding\nC3\nMerging\nC1\nInference\nCosine similarity\nFig.2:Illustration of G2TM merging strategy. Tokens are arranged on a\n2D grid. Their position in the grid corresponds to those of the patches in the\noriginal image. The final merging operation (last step) differs between training\n(left) and inference "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0035"
+        ],
+        "excerpt": "T G2T M\ni . However, during training, all token sequences in a batch must have the\nsame length to benefit from efficient batching. Unlike prior works, we do not con-\nstrain the number of removed tokens during training. Instead, we preserve the\noriginal sequence length by replacing the vanilla self-attention with masked self-\nattention in the layers following the G2TM module. We mask all the tokens in\n{C1,...,C K}, except the representative one in each connected component that\nwas assigned the computed average token value (see Figure 2.d). This ensures\nthat merged tokens do not affect training and allows the model to adapt to the\nactual amount of information compressed by the merging operation. After all\ntransformer blocks, we apply the unmerging operation. In practice, for each con-\nnected component, the representative token embedding, after being processed by\nthe subsequent Transformer ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: G2T M",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f85e0cebf149486bb459758c362ddd3256f242547f7824e596d0864d31bb12ed",
+            "evidence_id": "Ea74f20b053a52f83-B0035",
+            "pages": [
+              9
+            ],
+            "section": "Appendix: G2T M",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 9,
+                "section": "Appendix: G2T M",
+                "section_index": 24,
+                "start": 0,
+                "text": "T G2T M\ni . However, during training, all token sequences in a batch must have the\nsame length to benefit from efficient batching. Unlike prior works, we do not con-\nstrain the number of removed tokens during training. Instead, we preserve the\noriginal sequence length by replacing the vanilla self-attention with masked self-\nattention in the layers following the G2TM module. We mask all the tokens in\n{C1,...,C K}, except the representative one in each connected component that\nwas assigned the computed average token value (see Figure 2.d). This ensures\nthat merged tokens do not affect training and allows the model to adapt to the\nactual amount of information compressed by the merging operation. After all\ntransformer blocks, we apply the unmerging operation. In practice, for each con-\nnected component, the representative token embedding, after being processed by\nthe subsequent Transformer "
+              }
+            ],
+            "text": "T G2T M\ni . However, during training, all token sequences in a batch must have the\nsame length to benefit from efficient batching. Unlike prior works, we do not con-\nstrain the number of removed tokens during training. Instead, we preserve the\noriginal sequence length by replacing the vanilla self-attention with masked self-\nattention in the layers following the G2TM module. We mask all the tokens in\n{C1,...,C K}, except the representative one in each connected component that\nwas assigned the computed average token value (see Figure 2.d). This ensures\nthat merged tokens do not affect training and allows the model to adapt to the\nactual amount of information compressed by the merging operation. After all\ntransformer blocks, we apply the unmerging operation. In practice, for each con-\nnected component, the representative token embedding, after being processed by\nthe subsequent Transformer "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0040"
+        ],
+        "excerpt": "Motivated by the results obtained in [41], the G2TM module is inserted into\none of the first two Transformer blocks of the model, each with distinct thresh-\nold values\u03c4. Specifically, at the first layer, we set\u03c4= 0.95for ADE20K and\nCityscapes, while\u03c4= 0.88for the first and\u03c4= 0.86for the latter at the sec-\nond layer. As explained in the ablation study, we use a single configuration for\nG2TM on Cityscapes: a threshold value\u03c4= 0.95at the second layer. These\nsettings achieve the optimal trade-off between efficiency and accuracy for all\ntested models, controlling the spread of connected components and the number\nof remaining tokens after merging.\nDuring training, we adopt an alternative strategy that uses a curriculum\non the threshold\u03c4to progressively adapt the network to token reduction. We\nstart with a higher value of\u03c4and gradually decrease it by0.01at a time, until\nit reaches the final ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graph-Guided Merging Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3e1d7b5e9bd01b981ec07cc7696d22b0c6c51450a064a28bc34b09e1c9bd6c4b",
+            "evidence_id": "Ea74f20b053a52f83-B0040",
+            "pages": [
+              10
+            ],
+            "section": "Graph-Guided Merging Settings",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 10,
+                "section": "Graph-Guided Merging Settings",
+                "section_index": 28,
+                "start": 0,
+                "text": "Motivated by the results obtained in [41], the G2TM module is inserted into\none of the first two Transformer blocks of the model, each with distinct thresh-\nold values\u03c4. Specifically, at the first layer, we set\u03c4= 0.95for ADE20K and\nCityscapes, while\u03c4= 0.88for the first and\u03c4= 0.86for the latter at the sec-\nond layer. As explained in the ablation study, we use a single configuration for\nG2TM on Cityscapes: a threshold value\u03c4= 0.95at the second layer. These\nsettings achieve the optimal trade-off between efficiency and accuracy for all\ntested models, controlling the spread of connected components and the number\nof remaining tokens after merging.\nDuring training, we adopt an alternative strategy that uses a curriculum\non the threshold\u03c4to progressively adapt the network to token reduction. We\nstart with a higher value of\u03c4and gradually decrease it by0.01at a time, until\nit reaches the final "
+              }
+            ],
+            "text": "Motivated by the results obtained in [41], the G2TM module is inserted into\none of the first two Transformer blocks of the model, each with distinct thresh-\nold values\u03c4. Specifically, at the first layer, we set\u03c4= 0.95for ADE20K and\nCityscapes, while\u03c4= 0.88for the first and\u03c4= 0.86for the latter at the sec-\nond layer. As explained in the ablation study, we use a single configuration for\nG2TM on Cityscapes: a threshold value\u03c4= 0.95at the second layer. These\nsettings achieve the optimal trade-off between efficiency and accuracy for all\ntested models, controlling the spread of connected components and the number\nof remaining tokens after merging.\nDuring training, we adopt an alternative strategy that uses a curriculum\non the threshold\u03c4to progressively adapt the network to token reduction. We\nstart with a higher value of\u03c4and gradually decrease it by0.01at a time, until\nit reaches the final "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0043"
+        ],
+        "excerpt": "We assess the performance of G2TM models using both accuracy- and efficiency-\noriented metrics. While we evaluate the classification models using the Top-1\naccuracy score, semantic segmentation accuracy is measured with the standard\nmean Intersection-over-Union (mIoU), reported on the validation set. To quan-\ntify the efficiency of each model, we estimate the median throughput in frames\nper second (FPS) on a single NVIDIA A100 GPU with 80 GB of VRAM. To\nreflect real-world conditions, the throughput is computed with a batch size of 1.\nAdditionally, we report the computational complexity in terms of floating-point\noperations (FLOPs), which are calculated using thefvcorelibrary and expressed\nin GFLOPs, where1GFLOP= 10 9 FLOPs. We also provide the number of\nremaining tokens and the mean size of the merged tokens (i.e.: the number of\ntokens inside eachC 1,...,C K, or the number of patches ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "07fdc73359abbb16b195117790b8b3226a44f26016e55e290f16f36265907732",
+            "evidence_id": "Ea74f20b053a52f83-B0043",
+            "pages": [
+              11
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 11,
+                "section": "Evaluation Metrics",
+                "section_index": 30,
+                "start": 0,
+                "text": "We assess the performance of G2TM models using both accuracy- and efficiency-\noriented metrics. While we evaluate the classification models using the Top-1\naccuracy score, semantic segmentation accuracy is measured with the standard\nmean Intersection-over-Union (mIoU), reported on the validation set. To quan-\ntify the efficiency of each model, we estimate the median throughput in frames\nper second (FPS) on a single NVIDIA A100 GPU with 80 GB of VRAM. To\nreflect real-world conditions, the throughput is computed with a batch size of 1.\nAdditionally, we report the computational complexity in terms of floating-point\noperations (FLOPs), which are calculated using thefvcorelibrary and expressed\nin GFLOPs, where1GFLOP= 10 9 FLOPs. We also provide the number of\nremaining tokens and the mean size of the merged tokens (i.e.: the number of\ntokens inside eachC 1,...,C K, or the number of patches "
+              }
+            ],
+            "text": "We assess the performance of G2TM models using both accuracy- and efficiency-\noriented metrics. While we evaluate the classification models using the Top-1\naccuracy score, semantic segmentation accuracy is measured with the standard\nmean Intersection-over-Union (mIoU), reported on the validation set. To quan-\ntify the efficiency of each model, we estimate the median throughput in frames\nper second (FPS) on a single NVIDIA A100 GPU with 80 GB of VRAM. To\nreflect real-world conditions, the throughput is computed with a batch size of 1.\nAdditionally, we report the computational complexity in terms of floating-point\noperations (FLOPs), which are calculated using thefvcorelibrary and expressed\nin GFLOPs, where1GFLOP= 10 9 FLOPs. We also provide the number of\nremaining tokens and the mean size of the merged tokens (i.e.: the number of\ntokens inside eachC 1,...,C K, or the number of patches "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0046"
+        ],
+        "excerpt": "throughput and compute\ngains. Seg-L with the Mask Transformer decoder illustrates this well: the mIoU\ndecreases by0.3or2points whether G2TM is applied at the first or the second\nlayer, whereas the throughput roughly increases by37%or74%and the GFLOPs\nshrinks by29%or47%respectively. SETR-L models show a similar pattern\nin the reduction in accuracy and in the increase in efficiency. Interestingly, at\nmoderate model scale the trade-off is sometimes not a trade-off at all: under\nG2TM\u2020@2, Seg-S almost equals the baseline mIoU for both the Linear and the\nMask Transformer decoders (-0.1and +0.1point respectively), while cutting\nGFLOPs and the number of tokens by32%in both cases. This suggests that, at\nthis scale, G2TM behaves as a mild regularizer rather than a lossy compression\nstep.\nRobustness to decoder design.The token statistics provide the clearest ev-\nidence that G2TM's behavior is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "86a205002e608f031bd5ac9559ed5f861faaf8ee13870c7e63ab9e553c2701e6",
+            "evidence_id": "Ea74f20b053a52f83-B0046",
+            "pages": [
+              12
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1310,
+                "page": 12,
+                "section": "Experiments",
+                "section_index": 32,
+                "start": 415,
+                "text": "throughput and compute\ngains. Seg-L with the Mask Transformer decoder illustrates this well: the mIoU\ndecreases by0.3or2points whether G2TM is applied at the first or the second\nlayer, whereas the throughput roughly increases by37%or74%and the GFLOPs\nshrinks by29%or47%respectively. SETR-L models show a similar pattern\nin the reduction in accuracy and in the increase in efficiency. Interestingly, at\nmoderate model scale the trade-off is sometimes not a trade-off at all: under\nG2TM\u2020@2, Seg-S almost equals the baseline mIoU for both the Linear and the\nMask Transformer decoders (-0.1and +0.1point respectively), while cutting\nGFLOPs and the number of tokens by32%in both cases. This suggests that, at\nthis scale, G2TM behaves as a mild regularizer rather than a lossy compression\nstep.\nRobustness to decoder design.The token statistics provide the clearest ev-\nidence that G2TM's behavior is "
+              }
+            ],
+            "text": "throughput and compute\ngains. Seg-L with the Mask Transformer decoder illustrates this well: the mIoU\ndecreases by0.3or2points whether G2TM is applied at the first or the second\nlayer, whereas the throughput roughly increases by37%or74%and the GFLOPs\nshrinks by29%or47%respectively. SETR-L models show a similar pattern\nin the reduction in accuracy and in the increase in efficiency. Interestingly, at\nmoderate model scale the trade-off is sometimes not a trade-off at all: under\nG2TM\u2020@2, Seg-S almost equals the baseline mIoU for both the Linear and the\nMask Transformer decoders (-0.1and +0.1point respectively), while cutting\nGFLOPs and the number of tokens by32%in both cases. This suggests that, at\nthis scale, G2TM behaves as a mild regularizer rather than a lossy compression\nstep.\nRobustness to decoder design.The token statistics provide the clearest ev-\nidence that G2TM's behavior is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0047"
+        ],
+        "excerpt": "decoupled from the decoder. The numbers of\nremaining tokens after the merging operation are almost identical across all seg-\nmentation heads of the SETR-B model, despite Naive, PUP and MLA being\nvery different decoder architectures. Since G2TM operates inside the ViT-based\nencoder, upstream of the decoding stage, the decoder has no visibility into which\ntokens are merged. This suggests that training with different heads has little im-\npact on the backbone feature distribution. Compared to the vanilla models, the\nmIoUvariationrelatedtoG2TMisconsistentacrossalldecoders:beingrelatively\nhigh for ViT-B encoder with G2TM@1, whereas being under a1point decrease\nfor ViT-T and ViT-S encoders as well as for ViT-L encoder with G2TM@1,\nexcept for SETR-PUP-L. Naturally, the resulting efficiency gains may slightly\nvary across decoders as they reflect how much the savings made in the encoder\ntranslate ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8ac046161c0c52b13be0a3e00e02b9a19eea5876edc9351d32458954ccbedc52",
+            "evidence_id": "Ea74f20b053a52f83-B0047",
+            "pages": [
+              12
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2210,
+                "page": 12,
+                "section": "Experiments",
+                "section_index": 32,
+                "start": 1310,
+                "text": "decoupled from the decoder. The numbers of\nremaining tokens after the merging operation are almost identical across all seg-\nmentation heads of the SETR-B model, despite Naive, PUP and MLA being\nvery different decoder architectures. Since G2TM operates inside the ViT-based\nencoder, upstream of the decoding stage, the decoder has no visibility into which\ntokens are merged. This suggests that training with different heads has little im-\npact on the backbone feature distribution. Compared to the vanilla models, the\nmIoUvariationrelatedtoG2TMisconsistentacrossalldecoders:beingrelatively\nhigh for ViT-B encoder with G2TM@1, whereas being under a1point decrease\nfor ViT-T and ViT-S encoders as well as for ViT-L encoder with G2TM@1,\nexcept for SETR-PUP-L. Naturally, the resulting efficiency gains may slightly\nvary across decoders as they reflect how much the savings made in the encoder\ntranslate "
+              }
+            ],
+            "text": "decoupled from the decoder. The numbers of\nremaining tokens after the merging operation are almost identical across all seg-\nmentation heads of the SETR-B model, despite Naive, PUP and MLA being\nvery different decoder architectures. Since G2TM operates inside the ViT-based\nencoder, upstream of the decoding stage, the decoder has no visibility into which\ntokens are merged. This suggests that training with different heads has little im-\npact on the backbone feature distribution. Compared to the vanilla models, the\nmIoUvariationrelatedtoG2TMisconsistentacrossalldecoders:beingrelatively\nhigh for ViT-B encoder with G2TM@1, whereas being under a1point decrease\nfor ViT-T and ViT-S encoders as well as for ViT-L encoder with G2TM@1,\nexcept for SETR-PUP-L. Naturally, the resulting efficiency gains may slightly\nvary across decoders as they reflect how much the savings made in the encoder\ntranslate "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0048"
+        ],
+        "excerpt": "into an overall speedup. We note three reasons: first, the convolution-\nbased decoders do not directly benefit from token reduction since their spatial\noperations require the token sequence to be restored to its full resolution before-\nhand (e.g.: Seg with Mask Transformer decoder vs. SETR-MLA), second, the\ndecoder's relative computational weight compared to the encoder substantially\ndiffers across frameworks (see Table 1,e.g.: SETR-Naive-B vs. SETR-PUP-B),\nand third, the savings made by G2TM in the subsequent attention computa-\ntions are sometimes not high enough to offset the overhead introduced by the\nmerging step itself (e.g.: ViT-T encoders). G2TM exhibits the smallest gains on\nlightweight architectures, where the throughput actually decreases with G2TM\ndespite a genuine reduction in GFLOPs: the merging operation is no longer\nnegligible once the attention blocks themselves are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "71bfde24bcf133534a0099d8d758faeda3c36a53cf03bb8b33a15865c93f9b8c",
+            "evidence_id": "Ea74f20b053a52f83-B0048",
+            "pages": [
+              12
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3105,
+                "page": 12,
+                "section": "Experiments",
+                "section_index": 32,
+                "start": 2210,
+                "text": "into an overall speedup. We note three reasons: first, the convolution-\nbased decoders do not directly benefit from token reduction since their spatial\noperations require the token sequence to be restored to its full resolution before-\nhand (e.g.: Seg with Mask Transformer decoder vs. SETR-MLA), second, the\ndecoder's relative computational weight compared to the encoder substantially\ndiffers across frameworks (see Table 1,e.g.: SETR-Naive-B vs. SETR-PUP-B),\nand third, the savings made by G2TM in the subsequent attention computa-\ntions are sometimes not high enough to offset the overhead introduced by the\nmerging step itself (e.g.: ViT-T encoders). G2TM exhibits the smallest gains on\nlightweight architectures, where the throughput actually decreases with G2TM\ndespite a genuine reduction in GFLOPs: the merging operation is no longer\nnegligible once the attention blocks themselves are "
+              }
+            ],
+            "text": "into an overall speedup. We note three reasons: first, the convolution-\nbased decoders do not directly benefit from token reduction since their spatial\noperations require the token sequence to be restored to its full resolution before-\nhand (e.g.: Seg with Mask Transformer decoder vs. SETR-MLA), second, the\ndecoder's relative computational weight compared to the encoder substantially\ndiffers across frameworks (see Table 1,e.g.: SETR-Naive-B vs. SETR-PUP-B),\nand third, the savings made by G2TM in the subsequent attention computa-\ntions are sometimes not high enough to offset the overhead introduced by the\nmerging step itself (e.g.: ViT-T encoders). G2TM exhibits the smallest gains on\nlightweight architectures, where the throughput actually decreases with G2TM\ndespite a genuine reduction in GFLOPs: the merging operation is no longer\nnegligible once the attention blocks themselves are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0049"
+        ],
+        "excerpt": "cheap. Hence, we note that\nG2TM delivers its intended throughput improvement on models whose baseline\nthroughput lies below approximately100FPS. On the other hand, EoMT shows\nGraph-Guided Token Merging 13\nTable 3:Semantic segmentation results on ADE20K.We evaluate all mod-\nels and their respective decoders and compare them with the chosen G2TM's\nconfigurations inserted in the backbone. @lindicates the application layer.\nTokens\nModel Decoder mIoU\u2197FPS\u2197GFLOPs\u2198Count Mean size\nSeg-T40.1 174.110.65 1024 -\n+ G2TM@1 Linear 39.1 164.1 7.06 729 8.9\n+ G2TM\u2020@2 39.3 160.76.57649 7.4\nSeg-S 46.2 114.5 32.02 1024 -\n+ G2TM@1 Linear46.3123.4 24.37 807 7.1\n+ G2TM\u2020@2 46.1131.2 21.55691 7.1\nSeg-B48.453.5 107.40 1024 -\n+ G2TM@1 Linear 44.574.3 58.92576 11.4\n+ G2TM\u2020@2 47.3 70.0 67.54 624 8.3\nSeg-L51.316.5 362.56 1024 -\n+ G2TM@1 Linear 50.7 23.8 253.92 736 3.5\n+ G2TM\u2020@2 49.229.6 198.51559 9.2\nSeg-T40.7 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f068b23f044a7f8323c682bc2042e0a54d18e41e7a35673150485a90737c2a81",
+            "evidence_id": "Ea74f20b053a52f83-B0049",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3279,
+                "page": 12,
+                "section": "Experiments",
+                "section_index": 32,
+                "start": 3105,
+                "text": "cheap. Hence, we note that\nG2TM delivers its intended throughput improvement on models whose baseline\nthroughput lies below approximately100FPS. On the other hand, EoMT shows"
+              },
+              {
+                "end": 717,
+                "page": 13,
+                "section": "Experiments",
+                "section_index": 33,
+                "start": 0,
+                "text": "Graph-Guided Token Merging 13\nTable 3:Semantic segmentation results on ADE20K.We evaluate all mod-\nels and their respective decoders and compare them with the chosen G2TM's\nconfigurations inserted in the backbone. @lindicates the application layer.\nTokens\nModel Decoder mIoU\u2197FPS\u2197GFLOPs\u2198Count Mean size\nSeg-T40.1 174.110.65 1024 -\n+ G2TM@1 Linear 39.1 164.1 7.06 729 8.9\n+ G2TM\u2020@2 39.3 160.76.57649 7.4\nSeg-S 46.2 114.5 32.02 1024 -\n+ G2TM@1 Linear46.3123.4 24.37 807 7.1\n+ G2TM\u2020@2 46.1131.2 21.55691 7.1\nSeg-B48.453.5 107.40 1024 -\n+ G2TM@1 Linear 44.574.3 58.92576 11.4\n+ G2TM\u2020@2 47.3 70.0 67.54 624 8.3\nSeg-L51.316.5 362.56 1024 -\n+ G2TM@1 Linear 50.7 23.8 253.92 736 3.5\n+ G2TM\u2020@2 49.229.6 198.51559 9.2\nSeg-T40.7 "
+              }
+            ],
+            "text": "cheap. Hence, we note that\nG2TM delivers its intended throughput improvement on models whose baseline\nthroughput lies below approximately100FPS. On the other hand, EoMT shows\nGraph-Guided Token Merging 13\nTable 3:Semantic segmentation results on ADE20K.We evaluate all mod-\nels and their respective decoders and compare them with the chosen G2TM's\nconfigurations inserted in the backbone. @lindicates the application layer.\nTokens\nModel Decoder mIoU\u2197FPS\u2197GFLOPs\u2198Count Mean size\nSeg-T40.1 174.110.65 1024 -\n+ G2TM@1 Linear 39.1 164.1 7.06 729 8.9\n+ G2TM\u2020@2 39.3 160.76.57649 7.4\nSeg-S 46.2 114.5 32.02 1024 -\n+ G2TM@1 Linear46.3123.4 24.37 807 7.1\n+ G2TM\u2020@2 46.1131.2 21.55691 7.1\nSeg-B48.453.5 107.40 1024 -\n+ G2TM@1 Linear 44.574.3 58.92576 11.4\n+ G2TM\u2020@2 47.3 70.0 67.54 624 8.3\nSeg-L51.316.5 362.56 1024 -\n+ G2TM@1 Linear 50.7 23.8 253.92 736 3.5\n+ G2TM\u2020@2 49.229.6 198.51559 9.2\nSeg-T40.7 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0050"
+        ],
+        "excerpt": "147.412.83 1024 -\n+ G2TM@1 Mask Transformer 39.1 141.2 8.55 731 9.0\n+ G2TM\u2020@2 39.9 141.37.84647 7.4\nSeg-S 46.5 94.8 38.62 1024 -\n+ G2TM@1 Mask Transformer 46.1 106.5 29.28 803 7.3\n+ G2TM\u2020@246.6 113.4 26.15698 7.2\nSeg-B49.643.2 129.57 1024 -\n+ G2TM@1 Mask Transformer 46.562.2 75.05604 10.4\n+ G2TM\u2020@2 48.7 58.5 81.15 623 8.6\nSeg-L52.314.9 400.08 1024 -\n+ G2TM@1 Mask Transformer 52.0 20.4 284.58 745 3.5\n+ G2TM\u2020@2 50.326.0 210.96535 10.5\nSETR-B48.853.5 108.29 1024 -\n+ G2TM@1 Naive 46.972.9 62.47602 10.3\n+ G2TM\u2020@2 47.9 69.9 68.29 622 8.2\nSETR-L52.016.5 363.47 1024 -\n+ G2TM@1 Naive 51.8 24.3 250.14 723 3.6\n+ G2TM\u2020@2 49.929.6 197.61554 9.4\nSETR-B49.546.0 170.30 1024 -\n+ G2TM@1 PUP 47.561.5 126.87625 9.5\n+ G2TM\u2020@2 48.2 59.7 131.01 630 8.2\nSETR-L52.315.7 426.02 1024 -\n+ G2TM@1 PUP 50.5 23.7 297.88 682 4.4\n+ G2TM@2 49.127.8 256.11542 9.8\nSETR-B49.749.4 133.86 1024 -\n+ G2TM@1 MLA 48.164.4 90.81629 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c5edb85523dc7d8fcbb9299d5866cd69420fb12856e71fbf5ce342c506156c12",
+            "evidence_id": "Ea74f20b053a52f83-B0050",
+            "pages": [
+              13
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1616,
+                "page": 13,
+                "section": "Experiments",
+                "section_index": 33,
+                "start": 717,
+                "text": "147.412.83 1024 -\n+ G2TM@1 Mask Transformer 39.1 141.2 8.55 731 9.0\n+ G2TM\u2020@2 39.9 141.37.84647 7.4\nSeg-S 46.5 94.8 38.62 1024 -\n+ G2TM@1 Mask Transformer 46.1 106.5 29.28 803 7.3\n+ G2TM\u2020@246.6 113.4 26.15698 7.2\nSeg-B49.643.2 129.57 1024 -\n+ G2TM@1 Mask Transformer 46.562.2 75.05604 10.4\n+ G2TM\u2020@2 48.7 58.5 81.15 623 8.6\nSeg-L52.314.9 400.08 1024 -\n+ G2TM@1 Mask Transformer 52.0 20.4 284.58 745 3.5\n+ G2TM\u2020@2 50.326.0 210.96535 10.5\nSETR-B48.853.5 108.29 1024 -\n+ G2TM@1 Naive 46.972.9 62.47602 10.3\n+ G2TM\u2020@2 47.9 69.9 68.29 622 8.2\nSETR-L52.016.5 363.47 1024 -\n+ G2TM@1 Naive 51.8 24.3 250.14 723 3.6\n+ G2TM\u2020@2 49.929.6 197.61554 9.4\nSETR-B49.546.0 170.30 1024 -\n+ G2TM@1 PUP 47.561.5 126.87625 9.5\n+ G2TM\u2020@2 48.2 59.7 131.01 630 8.2\nSETR-L52.315.7 426.02 1024 -\n+ G2TM@1 PUP 50.5 23.7 297.88 682 4.4\n+ G2TM@2 49.127.8 256.11542 9.8\nSETR-B49.749.4 133.86 1024 -\n+ G2TM@1 MLA 48.164.4 90.81629 "
+              }
+            ],
+            "text": "147.412.83 1024 -\n+ G2TM@1 Mask Transformer 39.1 141.2 8.55 731 9.0\n+ G2TM\u2020@2 39.9 141.37.84647 7.4\nSeg-S 46.5 94.8 38.62 1024 -\n+ G2TM@1 Mask Transformer 46.1 106.5 29.28 803 7.3\n+ G2TM\u2020@246.6 113.4 26.15698 7.2\nSeg-B49.643.2 129.57 1024 -\n+ G2TM@1 Mask Transformer 46.562.2 75.05604 10.4\n+ G2TM\u2020@2 48.7 58.5 81.15 623 8.6\nSeg-L52.314.9 400.08 1024 -\n+ G2TM@1 Mask Transformer 52.0 20.4 284.58 745 3.5\n+ G2TM\u2020@2 50.326.0 210.96535 10.5\nSETR-B48.853.5 108.29 1024 -\n+ G2TM@1 Naive 46.972.9 62.47602 10.3\n+ G2TM\u2020@2 47.9 69.9 68.29 622 8.2\nSETR-L52.016.5 363.47 1024 -\n+ G2TM@1 Naive 51.8 24.3 250.14 723 3.6\n+ G2TM\u2020@2 49.929.6 197.61554 9.4\nSETR-B49.546.0 170.30 1024 -\n+ G2TM@1 PUP 47.561.5 126.87625 9.5\n+ G2TM\u2020@2 48.2 59.7 131.01 630 8.2\nSETR-L52.315.7 426.02 1024 -\n+ G2TM@1 PUP 50.5 23.7 297.88 682 4.4\n+ G2TM@2 49.127.8 256.11542 9.8\nSETR-B49.749.4 133.86 1024 -\n+ G2TM@1 MLA 48.164.4 90.81629 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0051"
+        ],
+        "excerpt": "9.5\n+ G2TM\u2020@2 48.8 62.4 94.46 628 8.1\nSETR-L51.816.0 401.94 1024 -\n+ G2TM@1 MLA 51.1 22.7 290.86 730 3.6\n+ G2TM\u2020@2 50.227.8 235.58552 9.6\nEoMT-L52.360.9 392.82 1024 -\n+ G2TM@1 Transformer 52.0 71.4 297.10 773 4.1\n+ G2TM\u2020@2 52.277.8 260.23655 8.1\n14 V. Bercy et al.\nthe smallest degradation observed among all architectures, with no more than a\n0.3point decrease in mIoU. We hypothesize that the particular joint integration\nof the encoder and the decoder within the ViT-L architecture and the addition\nof query tokens make the model more tolerant to token merging.\nMerging settings.Delaying the merging operation by one block while lowering\nthe threshold (G2TM\u2020@2 vs. G2TM@1 in Table 3) tends to show better accu-\nracy retention (e.g.: ViT-B encoders). This is coherent as allowing one additional\nblock of self-attention before merging lets the model build slightly more context\nand make safer ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13,
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ab8cd2c41bafaf6661b2919c05cf7b8fc467d7591c5892c03b22fe25cc5760b4",
+            "evidence_id": "Ea74f20b053a52f83-B0051",
+            "pages": [
+              13,
+              14
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1861,
+                "page": 13,
+                "section": "Experiments",
+                "section_index": 33,
+                "start": 1616,
+                "text": "9.5\n+ G2TM\u2020@2 48.8 62.4 94.46 628 8.1\nSETR-L51.816.0 401.94 1024 -\n+ G2TM@1 MLA 51.1 22.7 290.86 730 3.6\n+ G2TM\u2020@2 50.227.8 235.58552 9.6\nEoMT-L52.360.9 392.82 1024 -\n+ G2TM@1 Transformer 52.0 71.4 297.10 773 4.1\n+ G2TM\u2020@2 52.277.8 260.23655 8.1"
+              },
+              {
+                "end": 648,
+                "page": 14,
+                "section": "Experiments",
+                "section_index": 34,
+                "start": 0,
+                "text": "14 V. Bercy et al.\nthe smallest degradation observed among all architectures, with no more than a\n0.3point decrease in mIoU. We hypothesize that the particular joint integration\nof the encoder and the decoder within the ViT-L architecture and the addition\nof query tokens make the model more tolerant to token merging.\nMerging settings.Delaying the merging operation by one block while lowering\nthe threshold (G2TM\u2020@2 vs. G2TM@1 in Table 3) tends to show better accu-\nracy retention (e.g.: ViT-B encoders). This is coherent as allowing one additional\nblock of self-attention before merging lets the model build slightly more context\nand make safer "
+              }
+            ],
+            "text": "9.5\n+ G2TM\u2020@2 48.8 62.4 94.46 628 8.1\nSETR-L51.816.0 401.94 1024 -\n+ G2TM@1 MLA 51.1 22.7 290.86 730 3.6\n+ G2TM\u2020@2 50.227.8 235.58552 9.6\nEoMT-L52.360.9 392.82 1024 -\n+ G2TM@1 Transformer 52.0 71.4 297.10 773 4.1\n+ G2TM\u2020@2 52.277.8 260.23655 8.1\n14 V. Bercy et al.\nthe smallest degradation observed among all architectures, with no more than a\n0.3point decrease in mIoU. We hypothesize that the particular joint integration\nof the encoder and the decoder within the ViT-L architecture and the addition\nof query tokens make the model more tolerant to token merging.\nMerging settings.Delaying the merging operation by one block while lowering\nthe threshold (G2TM\u2020@2 vs. G2TM@1 in Table 3) tends to show better accu-\nracy retention (e.g.: ViT-B encoders). This is coherent as allowing one additional\nblock of self-attention before merging lets the model build slightly more context\nand make safer "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0055"
+        ],
+        "excerpt": "efficiency metrics follow the same trends identified in seg-\nmentation models: the GFLOPs is consistently decreased by22-35%, even with\nthe original ViT-T and its4.7GFLOPs, while the throughput increases by up\nto33%, except for the lightweight models (ViT-T and -S) despite the decrease\nin GFLOPs. This confirms G2TM's previously highlighted behavior on mod-\nels whose throughput is higher than100FPS, regardless of the task: G2TM's\noverhead should be put into perspective with the attention cost it saves.\nTable 4:Image classification results on ImageNet-1k.We evaluate all ViT\nmodels with their linear classification decoder and compare them with the chosen\nG2TM's configurations inserted in the backbone. @lindicates the application\nlayer.\nTokens\nModel Top-1\u2197FPS\u2197GFLOPs\u2198Count Mean size\nViT-T78.0 226.54.70 576 -\n+ G2TM@1 77.8 193.0 4.27 531 4.6\n+ G2TM\u2020@2 77.6 183.53.46425 6.8\nViT-S83.0 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "99e49cffff696d0a030020610ee7d5361ce809982915a6159a7f0843e72f1fd3",
+            "evidence_id": "Ea74f20b053a52f83-B0055",
+            "pages": [
+              15
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2011,
+                "page": 15,
+                "section": "Experiments",
+                "section_index": 35,
+                "start": 1121,
+                "text": "efficiency metrics follow the same trends identified in seg-\nmentation models: the GFLOPs is consistently decreased by22-35%, even with\nthe original ViT-T and its4.7GFLOPs, while the throughput increases by up\nto33%, except for the lightweight models (ViT-T and -S) despite the decrease\nin GFLOPs. This confirms G2TM's previously highlighted behavior on mod-\nels whose throughput is higher than100FPS, regardless of the task: G2TM's\noverhead should be put into perspective with the attention cost it saves.\nTable 4:Image classification results on ImageNet-1k.We evaluate all ViT\nmodels with their linear classification decoder and compare them with the chosen\nG2TM's configurations inserted in the backbone. @lindicates the application\nlayer.\nTokens\nModel Top-1\u2197FPS\u2197GFLOPs\u2198Count Mean size\nViT-T78.0 226.54.70 576 -\n+ G2TM@1 77.8 193.0 4.27 531 4.6\n+ G2TM\u2020@2 77.6 183.53.46425 6.8\nViT-S83.0 "
+              }
+            ],
+            "text": "efficiency metrics follow the same trends identified in seg-\nmentation models: the GFLOPs is consistently decreased by22-35%, even with\nthe original ViT-T and its4.7GFLOPs, while the throughput increases by up\nto33%, except for the lightweight models (ViT-T and -S) despite the decrease\nin GFLOPs. This confirms G2TM's previously highlighted behavior on mod-\nels whose throughput is higher than100FPS, regardless of the task: G2TM's\noverhead should be put into perspective with the attention cost it saves.\nTable 4:Image classification results on ImageNet-1k.We evaluate all ViT\nmodels with their linear classification decoder and compare them with the chosen\nG2TM's configurations inserted in the backbone. @lindicates the application\nlayer.\nTokens\nModel Top-1\u2197FPS\u2197GFLOPs\u2198Count Mean size\nViT-T78.0 226.54.70 576 -\n+ G2TM@1 77.8 193.0 4.27 531 4.6\n+ G2TM\u2020@2 77.6 183.53.46425 6.8\nViT-S83.0 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0056"
+        ],
+        "excerpt": "195.515.52 576 -\n+ G2TM@1 82.9 179.5 14.98 558 3.2\n+ G2TM\u2020@2 82.8 180.612.07443 6.9\nViT-B 84.8 88.0 55.54 576 -\n+ G2TM@184.8101.6 49.44 515 3.3\n+ G2TM\u2020@2 84.5103.6 41.05414 8.0\nViT-L86.231.6 191.21 576 -\n+ G2TM@1 86.0 32.6 174.40 528 2.3\n+ G2TM@2 85.544.8 124.64371 7.5\n16 V. Bercy et al.\nA different merging setting.Figure 4 shows the accuracy and the efficiency,\nthrough the number of GFLOPs and the remaining number of tokens after merg-\ning, of a ViT-S model as a function of the threshold value. The efficiency metrics\ngradually increase with G2TM's threshold, yet the Top-1 curve significantly rises\nbetween\u03c4= 0.85and\u03c4= 0.86and then plateaus. Hence, we choose to set a\nlower threshold\u03c4= 0.86at the second layer on ImageNet-1k, compared to the\nvalue\u03c4= 0.88for ADE20K. Moreover, unlike segmentation, where it is prefer-\nable to insert G2TM at the second layer for T to B backbone sizes, which ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15,
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "526fd3ded60575b5022030b2b147799e5a0d05580c4cda13322ebe3a27545e6c",
+            "evidence_id": "Ea74f20b053a52f83-B0056",
+            "pages": [
+              15,
+              16
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2280,
+                "page": 15,
+                "section": "Experiments",
+                "section_index": 35,
+                "start": 2011,
+                "text": "195.515.52 576 -\n+ G2TM@1 82.9 179.5 14.98 558 3.2\n+ G2TM\u2020@2 82.8 180.612.07443 6.9\nViT-B 84.8 88.0 55.54 576 -\n+ G2TM@184.8101.6 49.44 515 3.3\n+ G2TM\u2020@2 84.5103.6 41.05414 8.0\nViT-L86.231.6 191.21 576 -\n+ G2TM@1 86.0 32.6 174.40 528 2.3\n+ G2TM@2 85.544.8 124.64371 7.5"
+              },
+              {
+                "end": 627,
+                "page": 16,
+                "section": "Experiments",
+                "section_index": 36,
+                "start": 0,
+                "text": "16 V. Bercy et al.\nA different merging setting.Figure 4 shows the accuracy and the efficiency,\nthrough the number of GFLOPs and the remaining number of tokens after merg-\ning, of a ViT-S model as a function of the threshold value. The efficiency metrics\ngradually increase with G2TM's threshold, yet the Top-1 curve significantly rises\nbetween\u03c4= 0.85and\u03c4= 0.86and then plateaus. Hence, we choose to set a\nlower threshold\u03c4= 0.86at the second layer on ImageNet-1k, compared to the\nvalue\u03c4= 0.88for ADE20K. Moreover, unlike segmentation, where it is prefer-\nable to insert G2TM at the second layer for T to B backbone sizes, which "
+              }
+            ],
+            "text": "195.515.52 576 -\n+ G2TM@1 82.9 179.5 14.98 558 3.2\n+ G2TM\u2020@2 82.8 180.612.07443 6.9\nViT-B 84.8 88.0 55.54 576 -\n+ G2TM@184.8101.6 49.44 515 3.3\n+ G2TM\u2020@2 84.5103.6 41.05414 8.0\nViT-L86.231.6 191.21 576 -\n+ G2TM@1 86.0 32.6 174.40 528 2.3\n+ G2TM@2 85.544.8 124.64371 7.5\n16 V. Bercy et al.\nA different merging setting.Figure 4 shows the accuracy and the efficiency,\nthrough the number of GFLOPs and the remaining number of tokens after merg-\ning, of a ViT-S model as a function of the threshold value. The efficiency metrics\ngradually increase with G2TM's threshold, yet the Top-1 curve significantly rises\nbetween\u03c4= 0.85and\u03c4= 0.86and then plateaus. Hence, we choose to set a\nlower threshold\u03c4= 0.86at the second layer on ImageNet-1k, compared to the\nvalue\u03c4= 0.88for ADE20K. Moreover, unlike segmentation, where it is prefer-\nable to insert G2TM at the second layer for T to B backbone sizes, which "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0067"
+        ],
+        "excerpt": "discriminative\npower and the merge becomes largely uninformed regardless of the threshold\nused, which is highlighted by the stronger gains in efficiency and the bigger size of\nmerged tokens observed with DINOv2 models (see Table 9). As the distribution\nof EoMT-DINOv2 slowly begins to broaden from the third layer, the degradation\nTable 9:EoMT's semantic segmentation results using two different\nbackbone's pre-training weights.We compare them with G2TM's config-\nurations chosen in Section 4. @land [\u03c4] indicate the application layer and the\nthreshold value respectively.\nTokens\nModel Pre-training mIoU\u2197FPS\u2197GFLOPs\u2198Count Mean size\nEoMT AugReg52.360.9 392.82 1024 -\n+ G2TM@1 AugReg 52.0 71.4 297.10 773 4.1\n+ G2TM\u2020@2 AugReg 52.277.8 260.23655 8.1\nEoMT DINOv258.159.5 394.44 1024 -\n+ G2TM@1 DINOv2 52.5 81.2 231.71 590 14.3\n+ G2TM\u2020@2 DINOv2 49.390.4 151.66327 17.4\n+ G2TM@3[0.90] DINOv2 56.7 80.7 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Studies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "772b8f94d736f64596884956b50432a77216b776896a8f0749dd0400ebc93271",
+            "evidence_id": "Ea74f20b053a52f83-B0067",
+            "pages": [
+              20
+            ],
+            "section": "Ablation Studies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2058,
+                "page": 20,
+                "section": "Ablation Studies",
+                "section_index": 42,
+                "start": 1163,
+                "text": "discriminative\npower and the merge becomes largely uninformed regardless of the threshold\nused, which is highlighted by the stronger gains in efficiency and the bigger size of\nmerged tokens observed with DINOv2 models (see Table 9). As the distribution\nof EoMT-DINOv2 slowly begins to broaden from the third layer, the degradation\nTable 9:EoMT's semantic segmentation results using two different\nbackbone's pre-training weights.We compare them with G2TM's config-\nurations chosen in Section 4. @land [\u03c4] indicate the application layer and the\nthreshold value respectively.\nTokens\nModel Pre-training mIoU\u2197FPS\u2197GFLOPs\u2198Count Mean size\nEoMT AugReg52.360.9 392.82 1024 -\n+ G2TM@1 AugReg 52.0 71.4 297.10 773 4.1\n+ G2TM\u2020@2 AugReg 52.277.8 260.23655 8.1\nEoMT DINOv258.159.5 394.44 1024 -\n+ G2TM@1 DINOv2 52.5 81.2 231.71 590 14.3\n+ G2TM\u2020@2 DINOv2 49.390.4 151.66327 17.4\n+ G2TM@3[0.90] DINOv2 56.7 80.7 "
+              }
+            ],
+            "text": "discriminative\npower and the merge becomes largely uninformed regardless of the threshold\nused, which is highlighted by the stronger gains in efficiency and the bigger size of\nmerged tokens observed with DINOv2 models (see Table 9). As the distribution\nof EoMT-DINOv2 slowly begins to broaden from the third layer, the degradation\nTable 9:EoMT's semantic segmentation results using two different\nbackbone's pre-training weights.We compare them with G2TM's config-\nurations chosen in Section 4. @land [\u03c4] indicate the application layer and the\nthreshold value respectively.\nTokens\nModel Pre-training mIoU\u2197FPS\u2197GFLOPs\u2198Count Mean size\nEoMT AugReg52.360.9 392.82 1024 -\n+ G2TM@1 AugReg 52.0 71.4 297.10 773 4.1\n+ G2TM\u2020@2 AugReg 52.277.8 260.23655 8.1\nEoMT DINOv258.159.5 394.44 1024 -\n+ G2TM@1 DINOv2 52.5 81.2 231.71 590 14.3\n+ G2TM\u2020@2 DINOv2 49.390.4 151.66327 17.4\n+ G2TM@3[0.90] DINOv2 56.7 80.7 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0068"
+        ],
+        "excerpt": "228.25 538 9.7\nGraph-Guided Token Merging 21\nCosine similarity\nNumber of tokens\nFig.6:Distributions of cosine similarities between adjacent tokens in\nEoMT.From top to bottom: AugReg and DINOv2 pretraining weights. From\nleft to right: distributions computed at 1st, 2nd, 3rd and 4th layers. The distri-\nbutions are computed over the training set of ADE20K.\nin mIoU tends to be smaller when G2TM is applied at the third layer, with\nstill an increase in efficiency. These observations indicate that G2TM behavior\ndepends on the specific pre-training weights used for fine-tuning. The token\nsimilarity distributions are strong tools for deciding whether it is worth applying\nsimilarity-based merging within a specific Transformer block.\nThe impact of the dataset.In Table 10, we extend the evaluation of G2TM\non Cityscapes at768\u00d7768resolution. The accuracy\u2013efficiency trade-off is con-\nsistent with what ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20,
+          21
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Studies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c902e048bc82c02fa0621f127b4f4bf615112493e3886d4b426eb8898e5fd9a8",
+            "evidence_id": "Ea74f20b053a52f83-B0068",
+            "pages": [
+              20,
+              21
+            ],
+            "section": "Ablation Studies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2072,
+                "page": 20,
+                "section": "Ablation Studies",
+                "section_index": 42,
+                "start": 2058,
+                "text": "228.25 538 9.7"
+              },
+              {
+                "end": 885,
+                "page": 21,
+                "section": "Ablation Studies",
+                "section_index": 43,
+                "start": 0,
+                "text": "Graph-Guided Token Merging 21\nCosine similarity\nNumber of tokens\nFig.6:Distributions of cosine similarities between adjacent tokens in\nEoMT.From top to bottom: AugReg and DINOv2 pretraining weights. From\nleft to right: distributions computed at 1st, 2nd, 3rd and 4th layers. The distri-\nbutions are computed over the training set of ADE20K.\nin mIoU tends to be smaller when G2TM is applied at the third layer, with\nstill an increase in efficiency. These observations indicate that G2TM behavior\ndepends on the specific pre-training weights used for fine-tuning. The token\nsimilarity distributions are strong tools for deciding whether it is worth applying\nsimilarity-based merging within a specific Transformer block.\nThe impact of the dataset.In Table 10, we extend the evaluation of G2TM\non Cityscapes at768\u00d7768resolution. The accuracy\u2013efficiency trade-off is con-\nsistent with what "
+              }
+            ],
+            "text": "228.25 538 9.7\nGraph-Guided Token Merging 21\nCosine similarity\nNumber of tokens\nFig.6:Distributions of cosine similarities between adjacent tokens in\nEoMT.From top to bottom: AugReg and DINOv2 pretraining weights. From\nleft to right: distributions computed at 1st, 2nd, 3rd and 4th layers. The distri-\nbutions are computed over the training set of ADE20K.\nin mIoU tends to be smaller when G2TM is applied at the third layer, with\nstill an increase in efficiency. These observations indicate that G2TM behavior\ndepends on the specific pre-training weights used for fine-tuning. The token\nsimilarity distributions are strong tools for deciding whether it is worth applying\nsimilarity-based merging within a specific Transformer block.\nThe impact of the dataset.In Table 10, we extend the evaluation of G2TM\non Cityscapes at768\u00d7768resolution. The accuracy\u2013efficiency trade-off is con-\nsistent with what "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0071"
+        ],
+        "excerpt": "image\nresolution of1024\u00d71024in Table 11, using the same G2TM\u2020@2[0.95] config-\nuration. The trade-off remains favorable at every backbone size tested, yet the\nSeg-L model is not evaluated at this resolution due to GPU memory limita-\ntion. Despite the token count growing by a further78%, the accuracy\u2013efficiency\ntrade-off remains unchanged with the same G2TM's hyperparameters, contrast-\ning with the dataset shift observed in the previous section. As the resolution\nincreases, the relative merging behavior and the resulting trade-off remain es-\nsentially unchanged, indicating that the longer token sequence is not what drives\nthe hyperparameter shift between datasets and refuting the second explanation\nof the previous paragraph. This suggests G2TM's hyperparameters need to be\ntuned once per dataset rather than per resolution to obtain a similar merging\nbehavior.\nTable 11:Semantic segmentation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Studies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5e6178724e4de4133519ac79266fcdcfe46a0cc33aacd462add3a8cede62829e",
+            "evidence_id": "Ea74f20b053a52f83-B0071",
+            "pages": [
+              22
+            ],
+            "section": "Ablation Studies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2033,
+                "page": 22,
+                "section": "Ablation Studies",
+                "section_index": 44,
+                "start": 1133,
+                "text": "image\nresolution of1024\u00d71024in Table 11, using the same G2TM\u2020@2[0.95] config-\nuration. The trade-off remains favorable at every backbone size tested, yet the\nSeg-L model is not evaluated at this resolution due to GPU memory limita-\ntion. Despite the token count growing by a further78%, the accuracy\u2013efficiency\ntrade-off remains unchanged with the same G2TM's hyperparameters, contrast-\ning with the dataset shift observed in the previous section. As the resolution\nincreases, the relative merging behavior and the resulting trade-off remain es-\nsentially unchanged, indicating that the longer token sequence is not what drives\nthe hyperparameter shift between datasets and refuting the second explanation\nof the previous paragraph. This suggests G2TM's hyperparameters need to be\ntuned once per dataset rather than per resolution to obtain a similar merging\nbehavior.\nTable 11:Semantic segmentation "
+              }
+            ],
+            "text": "image\nresolution of1024\u00d71024in Table 11, using the same G2TM\u2020@2[0.95] config-\nuration. The trade-off remains favorable at every backbone size tested, yet the\nSeg-L model is not evaluated at this resolution due to GPU memory limita-\ntion. Despite the token count growing by a further78%, the accuracy\u2013efficiency\ntrade-off remains unchanged with the same G2TM's hyperparameters, contrast-\ning with the dataset shift observed in the previous section. As the resolution\nincreases, the relative merging behavior and the resulting trade-off remain es-\nsentially unchanged, indicating that the longer token sequence is not what drives\nthe hyperparameter shift between datasets and refuting the second explanation\nof the previous paragraph. This suggests G2TM's hyperparameters need to be\ntuned once per dataset rather than per resolution to obtain a similar merging\nbehavior.\nTable 11:Semantic segmentation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0074"
+        ],
+        "excerpt": "segmentation: on a ViT\nmodel for ImageNet-1k classification, it achieves an even smaller and more uni-\nform accuracy cost than on segmentation, at every backbone scale.\nAcross our experiments, we have shown that the merging behavior of G2TM,\nobserved through the number of remaining tokens after merging and the mean\nsize of merged tokens, depends on two main factors: the backbone's pre-training\nrecipe, as shown by the sharp contrast between AugReg and DINOv2 pre-trained\nencoders on EoMT, and the target dataset, as shown by the different thresholds\nrequired on Cityscapes and ADE20K. Notably, a set of merging hyperparameters\nproved robust to a change in decoder design or in input resolution within a given\ndataset, suggesting that only a change in the pre-training weights or in the target\ndataset requires retuning the threshold, while the preferred application layer\nadditionally depends on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dce98940e8ff2b400e2e90a4825e8cd270896378384cfdce5254eb9af9ac886f",
+            "evidence_id": "Ea74f20b053a52f83-B0074",
+            "pages": [
+              23
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 23,
+                "section": "Conclusion",
+                "section_index": 46,
+                "start": 893,
+                "text": "segmentation: on a ViT\nmodel for ImageNet-1k classification, it achieves an even smaller and more uni-\nform accuracy cost than on segmentation, at every backbone scale.\nAcross our experiments, we have shown that the merging behavior of G2TM,\nobserved through the number of remaining tokens after merging and the mean\nsize of merged tokens, depends on two main factors: the backbone's pre-training\nrecipe, as shown by the sharp contrast between AugReg and DINOv2 pre-trained\nencoders on EoMT, and the target dataset, as shown by the different thresholds\nrequired on Cityscapes and ADE20K. Notably, a set of merging hyperparameters\nproved robust to a change in decoder design or in input resolution within a given\ndataset, suggesting that only a change in the pre-training weights or in the target\ndataset requires retuning the threshold, while the preferred application layer\nadditionally depends on "
+              }
+            ],
+            "text": "segmentation: on a ViT\nmodel for ImageNet-1k classification, it achieves an even smaller and more uni-\nform accuracy cost than on segmentation, at every backbone scale.\nAcross our experiments, we have shown that the merging behavior of G2TM,\nobserved through the number of remaining tokens after merging and the mean\nsize of merged tokens, depends on two main factors: the backbone's pre-training\nrecipe, as shown by the sharp contrast between AugReg and DINOv2 pre-trained\nencoders on EoMT, and the target dataset, as shown by the different thresholds\nrequired on Cityscapes and ADE20K. Notably, a set of merging hyperparameters\nproved robust to a change in decoder design or in input resolution within a given\ndataset, suggesting that only a change in the pre-training weights or in the target\ndataset requires retuning the threshold, while the preferred application layer\nadditionally depends on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0075"
+        ],
+        "excerpt": "the backbone scale.\nIn terms of numbers, assuming a decrease in mIoU of at most2points on\nADE20K dataset, G2TM achieves a consistent drop in GFLOPs of up to47%\nand throughput improves by up to74%, when the original model's throughput\nis below approximately100FPS. Above this cutoff, G2TM's own overhead is no\nlonger offset by the subsequent attention savings, and throughput even decreases\ndespite a genuine reduction in GFLOPs. Together, these results position G2TM\nas a decoder-agnostic and broadly transferable token merging strategy, whose\ndeployment should be guided by the pre-training recipe, the target task and\ndataset, as well as the throughput of the original model it is applied to.\nAcknowledgments.This research work was made possible by the use of the Facto-\nryIA supercomputer, financially supported by the Ile-De-France Regional Council.\nDisclosure of Interests.The authors have no ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e873e6ca39e907660d9e1a068b7517c2fafaea22aa443749d52a775a4846dd25",
+            "evidence_id": "Ea74f20b053a52f83-B0075",
+            "pages": [
+              23
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 2690,
+                "page": 23,
+                "section": "Conclusion",
+                "section_index": 46,
+                "start": 1792,
+                "text": "the backbone scale.\nIn terms of numbers, assuming a decrease in mIoU of at most2points on\nADE20K dataset, G2TM achieves a consistent drop in GFLOPs of up to47%\nand throughput improves by up to74%, when the original model's throughput\nis below approximately100FPS. Above this cutoff, G2TM's own overhead is no\nlonger offset by the subsequent attention savings, and throughput even decreases\ndespite a genuine reduction in GFLOPs. Together, these results position G2TM\nas a decoder-agnostic and broadly transferable token merging strategy, whose\ndeployment should be guided by the pre-training recipe, the target task and\ndataset, as well as the throughput of the original model it is applied to.\nAcknowledgments.This research work was made possible by the use of the Facto-\nryIA supercomputer, financially supported by the Ile-De-France Regional Council.\nDisclosure of Interests.The authors have no "
+              }
+            ],
+            "text": "the backbone scale.\nIn terms of numbers, assuming a decrease in mIoU of at most2points on\nADE20K dataset, G2TM achieves a consistent drop in GFLOPs of up to47%\nand throughput improves by up to74%, when the original model's throughput\nis below approximately100FPS. Above this cutoff, G2TM's own overhead is no\nlonger offset by the subsequent attention savings, and throughput even decreases\ndespite a genuine reduction in GFLOPs. Together, these results position G2TM\nas a decoder-agnostic and broadly transferable token merging strategy, whose\ndeployment should be guided by the pre-training recipe, the target task and\ndataset, as well as the throughput of the original model it is applied to.\nAcknowledgments.This research work was made possible by the use of the Facto-\nryIA supercomputer, financially supported by the Ile-De-France Regional Council.\nDisclosure of Interests.The authors have no "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.18279",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2609.18279",
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The optimization signal is supervised task loss with a fixed threshold curriculum, while the headline outcomes are measured with held-out validation ground-truth metrics (mIoU, Top-1) and hardware profiling (FPS, GFLOPs), which are independent of the training objective.",
+          "final_evaluation_signal": "Held-out validation ground-truth metrics (mIoU on ADE20K/Cityscapes, Top-1 on ImageNet-1k) plus measured FPS and computed GFLOPs.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Supervised cross-entropy/segmentation loss with backpropagation and a fixed threshold curriculum for G2TM edge pruning.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0002",
+          "Ea74f20b053a52f83-B0003",
+          "Ea74f20b053a52f83-B0019",
+          "Ea74f20b053a52f83-B0020",
+          "Ea74f20b053a52f83-B0028",
+          "Ea74f20b053a52f83-B0030",
+          "Ea74f20b053a52f83-B0032",
+          "Ea74f20b053a52f83-B0035",
+          "Ea74f20b053a52f83-B0040",
+          "Ea74f20b053a52f83-B0043",
+          "Ea74f20b053a52f83-B0046",
+          "Ea74f20b053a52f83-B0047",
+          "Ea74f20b053a52f83-B0048",
+          "Ea74f20b053a52f83-B0049",
+          "Ea74f20b053a52f83-B0050",
+          "Ea74f20b053a52f83-B0051",
+          "Ea74f20b053a52f83-B0055",
+          "Ea74f20b053a52f83-B0056",
+          "Ea74f20b053a52f83-B0067",
+          "Ea74f20b053a52f83-B0068",
+          "Ea74f20b053a52f83-B0071",
+          "Ea74f20b053a52f83-B0074",
+          "Ea74f20b053a52f83-B0075"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "5f36f78164583a9f974cb227227ca3bd2079b3749006276b2a0a1c8a88b6fcc7"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.18279",
+        "claim_evidence_alignment": "Reported experimental data support the claims: token counts and accuracy retention remain consistent across varied decoder heads for a given backbone, while throughput and FLOPs improve consistently on compute-heavy models, and pre-training distributions directly explain performance differences.",
+        "context_id": "a74f20b053a52f8375cfab2d859a156b4a6915ebc63be89758732a24fd6e8852",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical study comprehensively tests three semantic segmentation frameworks (Segmenter, SETR, EoMT) across four backbone scales on ADE20K and Cityscapes, as well as image classification on ImageNet-1k, measuring standard validation metrics (mIoU, Top-1 accuracy, GFLOPs, and GPU throughput). Extensive ablations examine Proportional Attention, off-the-shelf application, pre-training objectives (AugReg vs DINOv2), and input resolution.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "Final model evaluations rely strictly on held-out standard benchmark ground-truth labels and external hardware compute metrics, entirely independent of the optimization process.",
+          "final_evaluation_signal": "Standard validation ground-truth metrics (mean IoU on ADE20K/Cityscapes validation sets and Top-1 accuracy on ImageNet-1k) along with hardware profiling (measured FPS and FLOPs).",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Standard supervised cross-entropy and segmentation task loss optimization using backpropagation, with a fixed threshold curriculum for edge pruning.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea74f20b053a52f83-B0002",
+          "Ea74f20b053a52f83-B0003",
+          "Ea74f20b053a52f83-B0019",
+          "Ea74f20b053a52f83-B0020",
+          "Ea74f20b053a52f83-B0028",
+          "Ea74f20b053a52f83-B0030",
+          "Ea74f20b053a52f83-B0032",
+          "Ea74f20b053a52f83-B0035",
+          "Ea74f20b053a52f83-B0040",
+          "Ea74f20b053a52f83-B0043",
+          "Ea74f20b053a52f83-B0046",
+          "Ea74f20b053a52f83-B0047",
+          "Ea74f20b053a52f83-B0048",
+          "Ea74f20b053a52f83-B0049",
+          "Ea74f20b053a52f83-B0050",
+          "Ea74f20b053a52f83-B0051",
+          "Ea74f20b053a52f83-B0055",
+          "Ea74f20b053a52f83-B0056",
+          "Ea74f20b053a52f83-B0067",
+          "Ea74f20b053a52f83-B0068",
+          "Ea74f20b053a52f83-B0071",
+          "Ea74f20b053a52f83-B0074",
+          "Ea74f20b053a52f83-B0075"
+        ],
+        "limitations": "The authors explicitly note and analyze limitations, including reduced throughput on lightweight models (baseline throughput over 100 FPS) where module overhead exceeds attention savings, degradation under uncurated off-the-shelf deployment on small models, and failure on representations with oversmoothed cosine similarity profiles (such as DINOv2 without adjustment).",
+        "method_assessment": "G2TM constructs an undirected 4-neighborhood graph of patch tokens in an early transformer block, prunes edges below a cosine similarity threshold, fuses connected components via average pooling, and unmerges before decoder operations. The training adaptation via threshold curricula and masked attention is clearly formulated.",
+        "quality_rationale": "The manuscript delivers a rigorous, well-controlled systematic study of an efficiency module across diverse architectures and tasks. The experimental design is thorough, negative/boundary conditions are transparently discussed and analyzed, and claims match the evidence.",
+        "scoped_contribution": "The paper presents a systematic empirical evaluation of Graph-Guided Token Merging (G2TM) across multiple vision transformer backbones, tasks, and decoder architectures (linear, convolutional, and transformer-based), demonstrating that G2TM's token reduction behavior and accuracy-efficiency trade-offs are decoder-agnostic and primarily governed by backbone pre-training and target datasets.",
+        "source_content_hash": "5f36f78164583a9f974cb227227ca3bd2079b3749006276b2a0a1c8a88b6fcc7"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript delivers a rigorous, well-controlled systematic study of an efficiency module across diverse architectures and tasks. The experimental design is thorough, negative/boundary conditions are transparently discussed and analyzed, and claims match the evidence.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "5f36f78164583a9f974cb227227ca3bd2079b3749006276b2a0a1c8a88b6fcc7",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly note and analyze limitations, including reduced throughput on lightweight models (baseline throughput over 100 FPS) where module overhead exceeds attention savings, degradation under uncurated off-the-shelf deployment on small models, and failure on representations with oversmoothed cosine similarity profiles (such as DINOv2 without adjustment)."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -171,7 +2686,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

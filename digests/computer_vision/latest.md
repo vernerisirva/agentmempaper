@@ -1,17 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-22](2026-09-22.md).
+Latest daily digest: [2026-09-23](2026-09-23.md).
 
-# Paper Scout Digest - 2026-09-22
+# Paper Scout Digest - 2026-09-23
 
 ## Run Summary
 
-- **Run ID:** 2
+- **Run ID:** 3
 - **Candidates fetched:** 100
-- **New unique papers:** 93
-- **Relevant:** 28
-- **Maybe relevant:** 60
-- **Irrelevant:** 12
+- **New unique papers:** 97
+- **Relevant:** 19
+- **Maybe relevant:** 70
+- **Irrelevant:** 11
 - **Source summary:** openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
@@ -27,170 +27,410 @@ Latest daily digest: [2026-09-22](2026-09-22.md).
 - openalex: incomplete discovery window for 'vision transformer image recognition'; single-page record limit reached.
 - openalex: incomplete discovery window for 'image segmentation deep learning'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'real-time object detection'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'yolo detector'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'open-vocabulary object detection'; single-page record limit reached.
+- semantic_scholar failed for 'yolo detector': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar failed for 'open-vocabulary object detection': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 - semantic_scholar: incomplete discovery window for 'visual representation learning'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872v3)
+### [A Comparative Study of Faster R-CNN, Mask R-CNN, and YOLOv8 for Object Detection and Instance Segmentation, with a Custom-Class Transfer-Learning Case Study](https://doi.org/10.21203/rs.3.rs-10831765/v1)
 
-- **Authors:** Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander Kirillov, Sergey Zagoruyko
-- **Date:** 2020-05-26
-- **Source:** arxiv
+- **Authors:** Muhammad Usman Aslam
+- **Date:** 2026-09-21
+- **Source:** openalex
 - **Relevance:** relevant (100/100)
-- **Reason:** Studies DETR-family or query-based object detection.
-- **Tags:** object-detection, detr, segmentation, benchmark
-- **Abstract summary:** We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the t...
-
-### [Decoder-Agnostic Token Merging for Vision Transformers: A Systematic Study of G2TM](https://arxiv.org/abs/2609.18279)
-
-- **Authors:** Victor Bercy, Martyna Poreba, Michal Szczepanski, Samia Bouchafa
-- **Date:** 2026-09-16
-- **Source:** openalex
-- **Relevance:** relevant (98/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation, vision-transformer, visual-representation, efficient-vision, benchmark
-- **Abstract summary:** Vision Transformers (ViTs) have achieved state-of-the-art performance across a range of computer vision tasks, mainly thanks to the self-attention mechanism. However, its complexity, increasing quadratically with the number of tokens, remains the major obstacle to ViT efficiency and deployment at scale. Token mergin...
-
-### [Multi-Stream Deep Learning Framework for Real-Time Dangerous Behavior Detection and Defect Recognition in Power Systems](https://doi.org/10.3233/atde260887)
-
-- **Authors:** Xiaoming Chen, Yifeng Liu, Pengcheng Wang, Jingwen Li, Jing Zhou, Yuqian Wang, et al.
-- **Date:** 2026-09-15
-- **Source:** openalex
-- **Relevance:** relevant (98/100)
 - **Reason:** Studies YOLO-family or real-time object detection.
-- **Tags:** object-detection, yolo, pose, efficient-vision, metrics
-- **Abstract summary:** The operational safety of modern power systems faces threats from infrastructure degradation and human procedural violations. Traditional monitoring lacks real-time prevention and neglects Safety Ergonomics principles regarding human attention decay, leading to “Inattentional Blindness.” This paper proposes “SafeGri...
+- **Tags:** object-detection, yolo, segmentation
+- **Abstract summary:** No abstract available.
 
-### [Segment Anything](https://arxiv.org/abs/2304.02643v1)
+### [A Kernel-Aware Regularization Model for Chromatic-Robust Detection: Analysis of Grayscale-to-RGB Generalization](https://doi.org/10.3390/jimaging12090457)
 
-- **Authors:** Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, et al.
-- **Date:** 2023-04-05
-- **Source:** arxiv
-- **Relevance:** relevant (96/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation, visual-representation
-- **Abstract summary:** We introduce the Segment Anything (SA) project: a new task, model, and dataset for image segmentation. Using our efficient model in a data collection loop, we built the largest segmentation dataset to date (by far), with over 1 billion masks on 11M licensed and privacy respecting images. The model is designed and tr...
+- **Authors:** Zehang Wang, Tieyong Cao, Jibin Yang, Zhiliang Yang, Kaili Qi
+- **Date:** 2026-09-20
+- **Source:** openalex
+- **Relevance:** relevant (100/100)
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** object-detection, yolo, detr
+- **Abstract summary:** Object detection models can experience substantial performance degradation when the input representation at deployment differs from that used during fine-tuning. In this study, we investigate a specific grayscale-to-RGB distribution shift in which detectors fine-tuned on grayscale-derived images are subsequently eva...
 
-### [Self-supervised knowledge distillation for few-shot single-stage 3D object detection](https://doi.org/10.1016/j.compeleceng.2026.111522)
+### [AI-Powered Real-Time Surveillance: An Intelligent Threat Detection System for Security Enhancement](https://doi.org/10.61710/4a4m7g78)
 
-- **Authors:** Alok Kumar Tiwari, Charu Gandhi, Prateek Singhal, Madan Singh, Rajesh Dwivedi
-- **Date:** 2026-09-16
+- **Authors:** Noor Abdulkaadhim
+- **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** relevant (96/100)
-- **Reason:** Studies object-detection architecture, training, or evaluation.
-- **Tags:** object-detection, 3d-vision, efficient-vision, benchmark
-- **Abstract summary:** Conventional deep learning models for 3D object detection require a large number of annotated bounding boxes and substantial computational resources, which limit their applicability in data- and resource-constrained autonomous driving scenarios. To address this challenge, this paper proposes SSD-KD, a self-supervise...
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** object-detection, yolo, benchmark
+- **Abstract summary:** Intelligent real-time surveillance systems are upending the status quo in high-risk and complicated contexts due to the growing need for advanced solutions to improve public safety. But their performance is frequently hindered by insufficient training data diversity, class imbalance, and limited generalization due t...
 
-### [Multi-output classification of dental implant placement parameters in the posterior maxilla from CBCT images using a two-stage vision transformer framework](https://doi.org/10.1038/s41598-026-70962-z)
+### [Photonic-inspired multiscale frequency fusion for low-light YOLO detection](https://doi.org/10.1117/12.3125772)
 
-- **Authors:** Nattamon Wachirasakulchai, Raweewan Arayasantiparb, Tharathip Kulchotirat, Kiatanant Boonsiriseth, Pobploy Petchmedyai, Penporn Luangchana, et al.
-- **Date:** 2026-09-20
+- **Authors:** Jiayang Liu
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** relevant (96/100)
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** object-detection, yolo
+- **Abstract summary:** Low-light object detection remains challenging because insufficient illumination, weak local contrast, noise, color distortion, and blurred object boundaries can degrade the visual information required by object detectors. Although image enhancement is commonly applied before detection, a visually brighter image doe...
+
+### [A Layer-Wise Mechanistic Analysis of Privacy in Vision Transformer Pose Estimators](https://doi.org/10.1007/978-3-032-39028-8_30)
+
+- **Authors:** Matteo Mugnai, Francesco Pistolesi
+- **Date:** 2026-09-21
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies visual backbones or vision-transformer architecture.
-- **Tags:** vision-transformer, efficient-vision
-- **Abstract summary:** Implant placement in the posterior edentulous maxilla is clinically challenging due to anatomical variability, limited residual bone height, and maxillary sinus pneumatization. Conventional planning relies heavily on clinician experience and manual radiographic interpretation, leading to variability and subjectivity...
-
-### [The Generalization Gap in Deep Learning for Wound Image Segmentation: A PRISMA 2020 Systematic Review of Internal versus External Validation](https://doi.org/10.5281/zenodo.22859249)
-
-- **Authors:** Rokeya Akter
-- **Date:** 2026-09-20
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation
+- **Tags:** vision-transformer
 - **Abstract summary:** No abstract available.
 
-### [The Generalization Gap in Deep Learning for Wound Image Segmentation: A PRISMA 2020 Systematic Review of Internal versus External Validation](https://doi.org/10.5281/zenodo.22859250)
+### [BSQG-YOLO: non-destructive real-time quality grading of Brasenia schreberi](https://doi.org/10.1007/s11694-026-04869-8)
 
-- **Authors:** Rokeya Akter
-- **Date:** 2026-09-20
+- **Authors:** Nayanajith J, Wang Jie, Shahram Hamza Manzoor, Xuran Liu, Arshed Ahmed, Zhao Zhang, et al.
+- **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** yolo
 - **Abstract summary:** No abstract available.
+
+### [DAM-YOLO: A Lightweight and Accurate Multi-Scale Model for Dam Crack Detection](https://doi.org/10.21203/rs.3.rs-10947191/v1)
+
+- **Authors:** Haoyu Dang, Leilei Dong, Nan Lian, Chuan Zhang, Yao Zhang, Jie Zhou, et al.
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** yolo
+- **Abstract summary:** No abstract available.
+
+### [Riemannian--Lorentz Fusion of Vision Transformers and State-Space Models](https://arxiv.org/abs/2609.19384)
+
+- **Authors:** Badri N. Patro, Vijay S. Agneeswaran
+- **Date:** 2026-09-16
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer, benchmark
+- **Abstract summary:** Scaling deep learning faces critical bottlenecks: data exhaustion, exponential training costs, and resource concentration. Model merging combines pre-trained checkpoints without gradient descent, offering orders-of-magnitude savings versus retraining. Combining independently trained vision models is difficult when t...
 
 ## Maybe Relevant
 
-### [Accuracy- and Real-Time-Aware 4D Radar Preprocessing for Autonomous Driving Perception Systems](https://arxiv.org/abs/2609.18542)
+### [A Lightweight BEV Perception Optimization Framework for Real-Time 3D Object Detection in Occluded Scenes](https://doi.org/10.5194/ms-2026-168)
 
-- **Authors:** Woo-Jin Jung, Dong-Hee Paek, Jeong-Su Park, Seung-Hyun Kong
-- **Date:** 2026-09-16
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: robotics or driving system where the vision contribution is not clearly the subject.
-- **Tags:** object-detection, 3d-vision, edge-deployment
-- **Abstract summary:** 4D radar has emerged as a promising next-generation sensor for improving the robustness of autonomous driving perception systems because of its stable sensing capability under adverse weather conditions. However, deploying 4D radar in embedded environments with limited hardware resources requires radar-representatio...
-
-### [DRerio LogAI: an open-source, GPU-free platform for automated tracking and behavioural analysis of adult zebrafish (Danio rerio)](https://doi.org/10.5281/zenodo.22783436)
-
-- **Authors:** Marco Antônio Sant'Ana Camargos, Percília Cardoso Giaquinto
-- **Date:** 2026-09-15
+- **Authors:** Yi Zhang, Anhua Zhou, Jun Li
+- **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** yolo, tracking
-- **Abstract summary:** DRerio LogAI is an open-source desktop platform for automated tracking, closed-loop stimulation and behavioural analysis of adult zebrafish (Danio rerio). It combines YOLOv11 detection, BYTETracker multi-object tracking and Intel OpenVINO inference in an event-driven architecture, and runs GPU-free on integrated gra...
+- **Tags:** object-detection, 3d-vision, efficient-vision, benchmark
+- **Abstract summary:** Abstract. Real-time 3D object detection in occluded scenes is a core challenge for pure-vision autonomous driving perception. Existing dense Bird's Eye View (BEV) detection methods suffer from redundant backbone parameters, inflexible fixed sampling strategies, and coarse-grained temporal modeling, making it difficu...
 
-### [HBB2OBB: Horizontal to Oriented Bounding Box Conversion and Evaluation Tool](https://doi.org/10.5281/zenodo.22817652)
+### [A lightweight transformer-based real-time object detection method for edge devices](https://doi.org/10.1117/12.3124499)
 
-- **Authors:** Róbert Fónod
-- **Date:** 2026-09-17
+- **Authors:** Shun Xu
+- **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** object-detection, yolo, segmentation, benchmark
-- **Abstract summary:** HBB2OBB converts horizontal (axis-aligned) bounding boxes (HBBs) into oriented (rotated) bounding boxes (OBBs) by using existing HBB annotations as prompts for segmentation models from the SAM (Segment Anything Model) family. It targets object detection tasks where objects appear at arbitrary orientations, such as a...
+- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
+- **Tags:** object-detection, backbone, efficient-vision, edge-deployment, benchmark
+- **Abstract summary:** Achieving high-accuracy, low-latency real-time object detection on resource-constrained edge devices is a core challenge in computer vision. Existing Transformer-based detectors are accurate, but their large parameter counts and computational cost hinder direct edge deployment. This paper proposes LT-Det, a lightwei...
 
-### [Quantum Vision Ai For Pediatric Urological Screening Using Hybrid Quantum Machine Learning](https://doi.org/10.38142/jisdb.v5i3.2116)
+### [A Robust and Real-Time Ship Detection Framework Based on an Enhanced YOLOv8 Architecture for Satellite Imagery](https://doi.org/10.1007/978-3-032-39711-9_9)
 
-- **Authors:** Joko Pitoyo, Jahrizal, Fajri Marindra Siregar, Nyoto Nyoto, Rizaldi Putra, Nicholas Renaldo
+- **Authors:** Guzalkhon Bakhriddinova, Marusya Yaroslava, Emina Sadiq, Aliyya Naile, Semara Vuqar, Tamerlan Elmira, et al.
 - **Date:** 2026-09-21
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** vision-transformer
-- **Abstract summary:** Pediatric urological disorders require timely recognition to reduce the risk of persistent functional, reproductive, and psychosocial consequences, yet screening still depends heavily on clinician-led visual examination. This study develops and evaluates Quantum Vision AI, a child-safe intelligent screening platform...
+- **Tags:** yolo
+- **Abstract summary:** No abstract available.
 
-### [ResLRP: The Role of Residual Cancellation in Attribution Instability in Vision Transformers](https://arxiv.org/abs/2609.17152)
+### [AI-Based Early Alzheimer’s Disease Detection Using Multi-Model Feature Fusion and Vision Transformers: A Literature Review](https://doi.org/10.48175/ijarsct-38416)
 
-- **Authors:** Jim Berend, Reduan Achtibat, Daniel Schäffer, Alexander Binder, Wojciech Samek, Sebastian Lapuschkin, et al.
-- **Date:** 2026-09-15
+- **Authors:** Prof. Minak K, Chinthan G K, Indrajith P, Lakshmi C Mudur Krutika R Budni
+- **Date:** 2026-09-19
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** vision-transformer, vision-language
-- **Abstract summary:** Vision Transformers (ViTs) are central to most modern vision models, yet obtaining input attributions that are fine-grained, faithful, and stable remains challenging. Layer-wise Relevance Propagation (LRP) has been adapted to transformer attention, but in ViTs it often produces noisy, unfaithful explanations. We sho...
+- **Tags:** vision-transformer
+- **Abstract summary:** The timely identification of Alzheimer’s Disease (AD) is crucial for the provision of adequate treatment to the patients. The traditional diagnostic techniques such as neuroimaging, CSF examination, and neuropsychological testing might be relatively expensive, invasive, and sensitive. Due to the development of Artif...
 
-### [YOLO27: An Overview of Dual-Scale Architecture and Query-Based Real-Time Computer Vision](https://doi.org/10.6084/m9.figshare.33916828.v3)
+### [Comparative Analysis Of Real-Time Appearance-Based Mapping And Cartographer Algorithms Using Deep Learning Object Detection](https://doi.org/10.5281/zenodo.22878936)
 
-- **Authors:** Ranjan Sapkota
-- **Date:** 2026-09-17
+- **Authors:** abdullahmhelbanna-rgb
+- **Date:** 2026-09-21
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: robotics or driving system where the vision contribution is not clearly the subject.
-- **Tags:** object-detection, yolo, segmentation, pose, depth, edge-deployment, benchmark
-- **Abstract summary:** This study presents a comprehensive overview of Ultralytics YOLO27 (also called as YOLOv27), examining its scale-adaptive architecture, detection mechanisms, preliminary performance, and implications for real-time computer vision. Unlike conventional YOLO families that largely scale common architectures across model...
+- **Tags:** object-detection
+- **Abstract summary:** This release provides the complete reproducibility package supporting the manuscript: "Comparative Analysis Of Real-Time Appearance-Based Mapping And Cartographer Algorithms Using Deep Learning Object Detection." The package contains the complete experimental artifacts for ROS 2 Humble benchmarking of Cartographer a...
 
-### [A COMPUTER VISION APPROACH TO MILITARY OBJECT RECOGNITION](https://doi.org/10.68302/std2026.vol3.154)
+### [Comparative Analysis Of Real-Time Appearance-Based Mapping And Cartographer Algorithms Using Deep Learning Object Detection](https://doi.org/10.5281/zenodo.21220233)
 
-- **Authors:** Krasimir Ognyanov Slavyanov
+- **Authors:** abdullahmhelbanna-rgb
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: robotics or driving system where the vision contribution is not clearly the subject.
+- **Tags:** object-detection
+- **Abstract summary:** This release provides the complete reproducibility package supporting the manuscript: "Comparative Analysis Of Real-Time Appearance-Based Mapping And Cartographer Algorithms Using Deep Learning Object Detection." The package contains the complete experimental artifacts for ROS 2 Humble benchmarking of Cartographer a...
+
+### [Data for study "A Structural Preservation Framework for Denoiser Selection in YOLO-Based Pedestrian Detection under Sensor Noise"](https://doi.org/10.5281/zenodo.22871455)
+
+- **Authors:** Kiet Vo Thanh, René Jaroš, Minh Ly Duc, Petr Bilík, Radek Martínek
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** yolo, benchmark
+- **Abstract summary:** Basic information---------------------------1. Journal article: A Structural Preservation Framework for Denoiser Selection in YOLO-Based Pedestrian Detection under Sensor Noise 2. DOI: 10.5281/zenodo.22871455 3. Contact information Name: Vo Thanh Kiet Institution: VSB – Technical University of Ostrava E-mail: kiet.v...
+
+### [Data for study "A Structural Preservation Framework for Denoiser Selection in YOLO-Based Pedestrian Detection under Sensor Noise"](https://doi.org/10.5281/zenodo.22871454)
+
+- **Authors:** Kiet Vo Thanh, René Jaroš, Minh Ly Duc, Petr Bilík, Radek Martínek
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** yolo, benchmark
+- **Abstract summary:** Basic information---------------------------1. Journal article: A Structural Preservation Framework for Denoiser Selection in YOLO-Based Pedestrian Detection under Sensor Noise 2. DOI: 10.5281/zenodo.22871455 3. Contact information Name: Vo Thanh Kiet Institution: VSB – Technical University of Ostrava E-mail: kiet.v...
+
+### [Deep Learning-Based Pre-Processing Pipeline and Hybrid Vision Transformer Model for Deepfake Video Detection](https://doi.org/10.58496/bjml/2026/012)
+
+- **Authors:** Harith A. Hussein, Khalid Shaker, Salwani Abdullah
+- **Date:** 2026-09-19
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: synthetic-data or applied use of vision models without a clearly general method contribution.
+- **Tags:** vision-transformer, synthetic-data
+- **Abstract summary:** Deepfake technology has increased the generation of hyper-realistic synthetic images and videos using AI that pose a threat to personal privacy, integrity in business and national security. Machine Learning (ML) and Deep Learning (DL) have been extensively used in Deepfake generation and detection due their feature...
+
+### [Designing Robust UAV Object Detection Systems for Real-World Scenarios](https://doi.org/10.1007/978-3-032-39711-9_15)
+
+- **Authors:** Tugce Calkinsin, Irem Bayraktar
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection
+- **Abstract summary:** No abstract available.
+
+### [Ev-YOLO: Uncertainty-Aware Object Detection via a Unified Evidential Formulation](https://doi.org/10.48550/arxiv.2609.24668)
+
+- **Authors:** Simon Barbarit-Gaboriau, Hind Laghmara, Rémi Boutteau, Samia Ainouz
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
+- **Tags:** object-detection, yolo, benchmark
+- **Abstract summary:** Reliable uncertainty estimation is essential for deploying object detectors in autonomous systems operating in uncertain environments. Evidential Deep Learning (EDL) provides a principled framework for uncertainty-aware classification by representing network outputs as evidence and interpreting predictions through s...
+
+### [Evaluating the Performance of the YOLOv5 Object Detection Algorithm for Real-Time Detection of Sunn Pests (Eurygaster integriceps) Across Complex Crop Backgrounds](https://doi.org/10.1007/s42853-026-00311-5)
+
+- **Authors:** Mohammad Ghorbani, Kazem Jafarinaeimi, Hossein Maghsoudi, Mahdieh Asadi, Fahimeh Ghasemian
+- **Date:** 2026-09-22
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision
+- **Abstract summary:** No abstract available.
+
+### [HDMamba-YOLO: Efficient State-Space Perception and Local Spatial Reconstruction for UAV Small Object](https://doi.org/10.48550/arxiv.2609.23061)
+
+- **Authors:** Linduo Wei, Junjie Fan, Yijun Mai, Yong Qi
+- **Date:** 2026-09-19
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, metrics
+- **Abstract summary:** Small-object detection in UAV imagery is challenged by weak visual evidence, ambiguous boundaries, dense object distributions, and complex backgrounds. Effective detection therefore requires long-range contextual information for target-background discrimination while preserving explicit local two-dimensional structu...
+
+### [LoRA Enhanced Contrastive Learning with SAS Vision Transformers](https://arxiv.org/abs/2609.21061)
+
+- **Authors:** Dan Zimmerman, Frank E. Bobe, Amelia L. McCormack, Matthew Cook, Gregory D. Vetaw
 - **Date:** 2026-09-17
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** vision-transformer, visual-representation
+- **Abstract summary:** Automatic target recognition (ATR) with synthetic aperture sonar (SAS) supports advanced naval capabilities, but deep learning is constrained by scarce target imagery, background clutter, and human-in-the-loop assessment. We adapt DINOv3 Vision Transformer (ViT) models to underwater SAS ATR using a three-stage param...
+
+### [MARLON: MARine Litter Object detectioN](https://doi.org/10.1007/978-3-032-39028-8_17)
+
+- **Authors:** Francisco Macedo, Luís Macedo, João F. Duarte, Gil Rito Gonçalves
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection
+- **Abstract summary:** No abstract available.
+
+### [Real-time object detection of robotic welding defects and adaptive parameter tuning based on YOLO](https://doi.org/10.1117/12.3125683)
+
+- **Authors:** Mingyu Li
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision, edge-deployment
+- **Abstract summary:** To address the issues of offline flaw detection feedback delay and limited edge deployment of complex vision models in continuous welding scenarios using industrial robots, this paper proposes a defect perception and adaptive electrical parameter control algorithm based on lightweight multi-scale feature reconstruct...
+
+### [Recent Advancements in Artificial Intelligence for Breast Cancer: Image Augmentation, Segmentation, Diagnosis, and Prognosis Approaches](https://doi.org/10.36948/ijfmr.2026.v08i05.87962)
+
+- **Authors:** N. K. Verma, Ayush Sharma, Kelvin Luntsi, Anshika Vashney
+- **Date:** 2026-09-19
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** segmentation
+- **Abstract summary:** Breast cancer remains the most frequently diagnosed malignancy and a leading cause of cancer death among women worldwide, with GLOBOCAN 2022 estimating 2.30 million new cases and 666,103 deaths globally (Bray et al., 2024; Gu et al., 2026). Artificial intelligence (AI), and deep learning (DL) in particular, has beco...
+
+### [RIF-YOLO-N: Lightweight P3 Residual Identity Fusion with Resolution-Guided Fine-Tuning for Tiny-Object Detection](https://doi.org/10.3390/jimaging12090450)
+
+- **Authors:** Mansoor Iqbal, Balaj Khalid, Syed Zarak Shah, Mishal Sarfraz, Khalid Munir, Zahid Ullah
+- **Date:** 2026-09-17
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
+- **Tags:** object-detection, yolo, benchmark, metrics
+- **Abstract summary:** Tiny-object detection remains challenging because repeated downsampling degrades the limited spatial information available for small targets. This paper proposes RIF-YOLO-N, a lightweight detector that strengthens the finest P3 pathway of YOLOv8n through residual identity fusion (RIF). RIF combines neck-level semant...
+
+### [Road Traffic Object Detection System for Severe Weather Scenarios Based on YOLOX](https://doi.org/10.54254/2755-2721/2026.ba37052)
+
+- **Authors:** Hao Jiang
+- **Date:** 2026-09-22
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision
+- **Abstract summary:** Road traffic object detection is the core perceptual task in the current field of intelligent transportation. The You Look Only Once (YOLO) series algorithms are widely used for real-time detection due to their end-to-end inference, fast speed, high accuracy, and ease of deployment. However, existing public datasets...
+
+### [SDR-YOLO: Scale-Selective Detail Residual Enhanced YOLO for Visible–Thermal Object Detection](https://doi.org/10.3390/rs18183216)
+
+- **Authors:** Lijuan Wang, Zuchao Bao, Baichuan Rong, Dongming Lu
+- **Date:** 2026-09-19
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision, edge-deployment
+- **Abstract summary:** Visible–thermal object detection benefits from the complementary properties of RGB and thermal imagery, but repeated cross-modal fusion can increase model complexity, particularly in lightweight detectors. This paper proposes SDR-YOLO, a scale-selective detector designed to make better use of shallow spatial details...
+
+### [SmartHisto: Bayesian active learning for histology images](https://doi.org/10.1371/journal.pcbi.1013611)
+
+- **Authors:** Sriram Vijendran, Bailey Arruda, Tavis K. Anderson, Oliver Eulenstein
+- **Date:** 2026-09-17
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** segmentation
+- **Abstract summary:** Accurate and efficient characterization of biological images is crucial for advancing systems biology and medical research. Recent advancements in deep learning and image processing have enabled neural network models to rapidly accelerate image analysis by utilizing large expert-annotated datasets. However, in histo...
+
+### [Thermal-prior-guided visible–infrared fusion for lightweight object detection in few-shot power equipment inspection](https://doi.org/10.1080/10589759.2026.2732240)
+
+- **Authors:** Tzuen-Wuu Hsieh, Chih-Min Yu
+- **Date:** 2026-09-22
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision, edge-deployment, metrics
+- **Abstract summary:** Visible and infrared imaging provide complementary evidence for power equipment inspection. Visible images preserve structural details required for component localisation, whereas infrared images reveal temperature-related operating conditions. However, the reliability of the two modalities varies considerably acros...
+
+### [Transformer-Based Small Object Detection in UAV Aerial Imagery Using Edge Artificial Intelligence](https://doi.org/10.1007/978-3-032-39711-9_16)
+
+- **Authors:** Tugce Calkinsin, Irem Bayraktar
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection
+- **Abstract summary:** No abstract available.
+
+### [YOLO-MDFR-Light: a lightweight defect detection network with multi-dimensional frequency attention for industrial edge deployment](https://doi.org/10.1117/12.3125618)
+
+- **Authors:** Jun Xu
+- **Date:** 2026-09-22
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, edge-deployment
+- **Abstract summary:** Modern deep learning object detectors with over 20 million parameters are difficult to deploy on edge devices with 2--8 GB memory. In this work, we compress YOLO11m to 7.89 M parameters, achieving a 60.8% parameter reduction with only a 1.01% mAP@50 drop for binary industrial defect classification. The backbone adop...
+
+### [YOLO-OCR vs. Vision–Language Models Under Limited Data Availability: A Car-Plate Recognition Case Study](https://doi.org/10.3390/electronics15184242)
+
+- **Authors:** Janko Tufegdžić, Matija Dodović, Ana Ivković, Vladimir Jocović, Miloš Cvetanović
+- **Date:** 2026-09-17
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
+- **Tags:** object-detection, yolo
+- **Abstract summary:** Automatic license-plate recognition (ALPR) systems typically rely on a two-stage pipeline that combines object detection with optical character recognition (OCR), whereas recent vision–language models (VLMs) enable direct image-level recognition without task-specific training. This paper presents a comprehensive com...
+
+### [YOLOv11-EASFF: An Improved Object Detection Model with Early Adaptive Spatial Feature Fusion and Structured Pruning for Railway Foreign Object Intrusion Detection](https://doi.org/10.1088/2631-8695/aeaaa2)
+
+- **Authors:** Yingzhu Lin, Dai Peng, Yuchuan Hu, Shaofeng Wang, Lei Kou, Wei Chen, et al.
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
+- **Tags:** object-detection, yolo, backbone, efficient-vision, edge-deployment
+- **Abstract summary:** Abstract Foreign object intrusion on railways represents a major hazard threatening operational safety. The characteristics of long distance and small size lead to high missed detection rates and poor scene adaptability in existing general-purpose object detection models. To address this, this paper proposes a railw...
+
+### [A novel deep learning-based approach for liver segmentation from 3D CT images using probabilistic shape guidance](https://doi.org/10.1038/s41598-026-71324-5)
+
+- **Authors:** Ahmed Semida, Ahmed Sharafeldeen, Hanan M. Amer, Abeer T. Khalil, Ali Mahmoud, Rasha Karam, et al.
+- **Date:** 2026-09-23
 - **Source:** openalex
 - **Relevance:** maybe (51/100)
 - **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** visual-representation
-- **Abstract summary:** This research described is focused on computer vision tools implemented for detection of a particular military object (or many objects) in a observed scene, given a reference image(s) of the object(s). An algorithm for detecting a specific object based on finding point correspondences between the reference and the t...
+- **Tags:** segmentation
+- **Abstract summary:** Abstract Accurate liver segmentation is essential for computer-aided diagnosis (CAD) systems, yet it remains challenging due to anatomical variability, indistinct organ boundaries, and tissue intensity variations in both normal and pathological cases. To address these challenges, a deep learning-based framework is p...
 
-### [BenSParX: A robust explainable machine learning framework for Parkinson’s disease detection from Bengali conversational speech](https://doi.org/10.1016/j.artmed.2026.103538)
+### [Comparison of Different Deep Learning Frameworks for Hippocampus Body and Head Segmentation](https://doi.org/10.18502/fbt.v13i3.22748)
 
-- **Authors:** Riad Hossain, Muhammad Ashad Kabir, Arat Ibne Golam Mowla, Animesh Roy, Ranjit Kumar Ghosh
-- **Date:** 2026-09-17
+- **Authors:** Hanie Arabian, Alireza Karimian, Reza Rasti, Hossein Arabi
+- **Date:** 2026-09-22
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
+- **Tags:** segmentation
+- **Abstract summary:** Purpose: Precise hippocampus segmentation from Magnetic Resonance Imaging (MRI) scans is vital in diagnosing various neurological disorders. Traditional segmentation methods face challenges due to the hippocampus's complex structure. This study compares four deep learning frameworks to segment hippocampal parts, inc...
+
+### [Evaluation of the image quality index with MRI motion artifacts on tumor segmentation using deep learning](https://doi.org/10.1007/s12194-026-01144-9)
+
+- **Authors:** Masafumi Akanuma, Keisuke Usui, Ryoma Tsuchiya, Eiichi Maehara, Keisuke Fujita, Tatsuya Choji, et al.
+- **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Parkinson's disease (PD) poses a growing global health challenge, with Bangladesh experiencing a notable rise in PD-related mortality. Early detection of PD remains particularly challenging in resource-constrained settings, where voice-based analysis has emerged as a promising non-invasive and cost-effective alterna...
+- **Abstract summary:** No abstract available.
+
+### [Intelligent Fire Detection with UAV-Based Deep Learning for Improved Emergency Response](https://doi.org/10.1007/978-3-032-39711-9_12)
+
+- **Authors:** Semara Vuqar, Aliyya Naile, Tamerlan Elmira, Guzalkhon Bakhriddinova, Emina Sadiq, Ulviyye Telman, et al.
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** No abstract available.
+
+### [Segmentation of Cactus Diseases Using Machine and Deep Learning)](https://doi.org/10.37394/232018.2026.14.50)
+
+- **Authors:** Aissam El Ibrahimi, Nabil El Akchioui
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Artificial intelligence and machine learning play a critical role in plant disease detection and management. This study proposes an approach for diagnosing and segmenting cactus diseases using Random Forest (RF) and compares its performance with SVM, ANN, KNN, CNN, and U-Net models. A dataset of 20 cactus images (10...
+
+### [Super-Resolution and Artificial Transformer with Attention for accurate detection of brain tumor in MRI-based medical imaging](https://doi.org/10.21203/rs.3.rs-8157315/v1)
+
+- **Authors:** Shyam Shankar Dwivedi
+- **Date:** 2026-09-16
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** No abstract available.

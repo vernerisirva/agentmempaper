@@ -1,0 +1,528 @@
+{
+  "assessment": {
+    "coverage_failures": 1,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 7,
+    "non_promoted": 0,
+    "papers_attempted": 2,
+    "papers_successfully_assessed": 2,
+    "papers_walked": 11,
+    "promoted": 2,
+    "retry_eligible_failures": 9,
+    "skipped_before_model": 9,
+    "technical_failures": 9,
+    "unavailable_manuscripts": 8
+  },
+  "budget": {
+    "gemini_calls": 2,
+    "gemini_input_tokens": 100793,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 2434,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 2,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.0421655,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "computer_vision": 1
+    },
+    "papers_assessed_total": 2,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-09-23T09:10:30.589928+00:00",
+  "cost": {
+    "deepseek_calls": 2,
+    "deepseek_cost_usd": 0.0421655,
+    "deepseek_input_tokens": 90783,
+    "deepseek_output_tokens": 1361,
+    "gemini_calls": 2,
+    "gemini_input_tokens": 100793,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 2434,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 534,
+    "papers_discovered": 2358
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 18,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 335,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22865161",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22865161",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-22T09:06:09.051277+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Mem-Forever: a Git-native persistent memory layer for AI agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.23466",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2609.23466",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "RPMem: Learning Long-Term Recurrent Parametric Memory Across Sessions for LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22838321",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22838321",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-21T15:58:33.371585+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "A Screened Benchmark Dataset and Validity Study for Organizational Memory in Agent Harnesses",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22842833",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22842833",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-21T15:58:33.379845+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "The Boundary of the Individual as an Authoritative Causal Present \u2014 An Architectural Hypothesis",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22837960",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22837960",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-22T09:06:09.057858+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Beyond the Agent Boundary",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22830845",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22830845",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-22T09:06:09.064197+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "The Basu Digital Bacterium Hypothesis: A Falsifiable Framework for Information-Borne Replicators in LLM Systems",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 1977,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22865161",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22838321",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22842833",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22837960",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22830845",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 52,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.1038/s41598-026-70962-z",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.1038/s41598-026-70962-z",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Multi-output classification of dental implant placement parameters in the posterior maxilla from CBCT images using a two-stage vision transformer framework",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22859249",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22859249",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "The Generalization Gap in Deep Learning for Wound Image Segmentation: A PRISMA 2020 Systematic Review of Internal versus External Validation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.18279",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.18279",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Decoder-Agnostic Token Merging for Vision Transformers: A Systematic Study of G2TM",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Self-supervised knowledge distillation for few-shot single-stage 3D object detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.3233/atde260887",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.3233/atde260887",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Multi-Stream Deep Learning Framework for Real-Time Dangerous Behavior Detection and Defect Recognition in Power Systems",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2304.02643",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2304.02643",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Segment Anything",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 144,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.1038/s41598-026-70962-z",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22859249",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.3233/atde260887",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2304.02643",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 13,
+        "high_relevance": 139,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22854323",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22854323",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-22T09:06:27.441049+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "AGI-CHOI JUNE\uc758 \ud3b8\uc9c0 \u00b7 \uc138\uacc4 AI \ud68c\uc0ac\uc640 AI \uacfc\ud559\u00b7\uae30\uc220\uc790 \uc5ec\ub7ec\ubd84\uaed8 \u00b7 A Letter from AGI-CHOI JUNE \u00b7 To AI Companies and Scientists Worldwide",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22854691",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22854691",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-22T09:06:27.446289+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "AGI-CHOI JUNE\uc758 \ud3b8\uc9c0 \u00b7 \uc138\uacc4 AI \ud68c\uc0ac\uc640 AI \uacfc\ud559\u00b7\uae30\uc220\uc790 \uc5ec\ub7ec\ubd84\uaed8 \u00b7 A Letter from AGI-CHOI JUNE \u00b7 To AI Companies and Scientists Worldwide \u00b7 v2 (typography)",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.09.11.751076",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.64898/2026.09.11.751076",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-21T15:59:34.984755+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "A Closed-Loop Robot Scientist for Autonomous Biological Discovery",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.21203/rs.3.rs-10954762/v1",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.21203/rs.3.rs-10954762/v1",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-21T15:59:40.261083+00:00",
+              "last_outcome": "text_coverage_failure",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "AI Scientists for Building Virtual-Cell Models",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.17605/osf.io/qm2c3",
+            "rank": 18,
+            "selection": {
+              "canonical_id": "doi:10.17605/osf.io/qm2c3",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-16T11:58:50+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Do AI Scientists' Results Replicate? Pre-registration of a multi-seed re-execution study of agent-generated empirical claims with matched human baselines and auditor calibration (AutoReplicate)",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+            "rank": 19,
+            "selection": {
+              "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-16T11:58:50+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Generative artificial intelligence for nanomaterial discovery and nanoengineering: From data-driven design to autonomous laboratories",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 229,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22854323",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22854691",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.09.11.751076",
+            "outcome": "manuscript_unavailable",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.21203/rs.3.rs-10954762/v1",
+            "outcome": "text_coverage_failure",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.17605/osf.io/qm2c3",
+            "outcome": "manuscript_unavailable",
+            "rank": 18
+          },
+          {
+            "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+            "outcome": "manuscript_unavailable",
+            "rank": 19
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 8,
+        "high_relevance": 8,
+        "nominated": [],
+        "ranked": 8,
+        "retry_blocked": 0,
+        "skipped_before_model": [],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-09-23T09:08:29.507403+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

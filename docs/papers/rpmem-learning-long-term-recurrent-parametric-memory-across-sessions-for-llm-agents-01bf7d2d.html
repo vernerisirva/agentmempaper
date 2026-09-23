@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPMem: Learning Long-Term Recurrent Parametric Memory Across Sessions for LLM Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>RPMem: Learning Long-Term Recurrent Parametric Memory Across Sessions for LLM Agents</h1>
+          <p class="hero-copy">Fan-Yu Zhao, Rui-Ke Cao, Liang Dong, Fu-Gen Yao, Jian Xu, Guan-Jun Jiang, Han Zhang, Yi-Fei Zhao, Yin-Sheng Li</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://www.semanticscholar.org/paper/d84232d26104a0f9ad8acce504a732c50f1cfe41">Open paper</a>
+            <a class="paper-detail-link" href="rpmem-learning-long-term-recurrent-parametric-memory-across-sessions-for-llm-agents-01bf7d2d.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Fan-Yu Zhao, Rui-Ke Cao, Liang Dong, Fu-Gen Yao, Jian Xu, Guan-Jun Jiang, Han Zhang, Yi-Fei Zhao, Yin-Sheng Li</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-09-20</dd></div>
+              <div><dt>Publication date</dt><dd>2026-09-20</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>semantic_scholar</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>Semantic Scholar</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2609.23466">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Discusses Engram-style or parametric memory mechanisms for language models.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Long-running LLM agents require memory that persists and evolves across sessions. Text-based memory retrieves and reconstructs past interactions at every query, making long-horizon performance increasingly dependent on retrieval quality and contextual reasoning as histories grow. Parametric memory encodes experience...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous, well-engineered, and comprehensive evaluation of a parametric memory architecture with extensive ablation studies, cross-architecture generalization, and diagnostic analysis of consolidation dynamics.</p>
+      <p>The authors explicitly note that consolidation gates are trained per application scenario, leaving cross-scenario transfer and generalization across tasks with divergent memory requirements for future work.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-23T09:08:45.819943+00:00.</p>
+        <p>Coverage: 133860 of 133860 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>session into
+a model-independent latent memory through forward computation and selectively integrates it with
+retained memory via a task-trained recurrent gate. The consolidated memory is then mapped to
+backbone-specific low-rank adaptation (LoRA) parameters, allowing the encoding capability to transfer
+when the backbone is replaced. Evaluation across three long-term memory benchmarks and five diverse
+backbones demonstrates broad generalization with near-constant update cost and memory footprint.
+With Qwen3-8B on PERMA, RPMem reaches 85.52%, outperforming the strongest parametric and text-
+based baselines by 5.32 and 12.98 percentage points, respectively. Ablations validate the complementary
+roles of session compilation and cross-session consolidation, while dynamics analyses reveal that the
+gate acquires task-specific memory integration strategies. These results establish RPMem as a </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The memory compiler is a hypernetwork comprising a session encoder and a model-specific LoRA decoder. The
+session encoder combines a frozen context encoder with a trainable Perceiver-based resampler [24], which
+compresses variable-length context features into fixed-shape session memory. For a tokenized session𝑐𝑡, these
+operations are
+𝑋𝑡 =𝐸 𝜉(𝑐𝑡)∈ℝ 𝐿×𝑛𝑡×𝑑𝑒,(2)
+𝑞𝑡 =𝐺 𝜙(𝑋𝑡)∈ℝ 𝐿×𝑀×𝑟×𝑑 .(3)
+Here, the frozen context encoder𝐸𝜉, with parameters𝜉 and hidden width𝑑𝑒, extracts features for the𝑛𝑡 tokens
+of𝑐𝑡 from 𝐿 evenly spaced depths, one per adapted layer of the compilation backbone. The axes of𝑋𝑡 index
+encoder depth, token position, and feature. The resampler𝐺𝜙, with trainable parameters𝜙, compresses each
+layer&#x27;s token features independently through shared cross-attention blocks. In its output𝑞𝑡, 𝑀 counts the types
+of linear modules receiving LoRA updates within each adapted layer. The symbols𝑟 </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>compilation
+objectiveL comp:
+LFKL(𝑐)= 1
+𝑄
+𝑄∑︁
+𝑖=1
+1
+𝑁𝑖
+𝑁𝑖∑︁
+𝑗=1
+ℓ𝑖,𝑗,(10)
+Lcomp =𝔼 𝑐[LFKL(𝑐)+𝜆R 1(𝑐)].(11)
+Here, 𝔼𝑐 averages over sessions in the compilation corpus,R1(𝑐) averages the absolute magnitudes of all LoRA
+factors decoded from𝑐, and𝜆 is the regularization weight. Optimization updates𝜙 and 𝛽 while holding𝜉 and
+𝜃fixed.
+The separation between𝐺𝜙 and 𝐷𝛽 supports adaptation to a target backbone𝑓𝜃′, whose frozen parameters are
+denoted by𝜃′. We retain𝐺𝜙, instantiate a target-specific decoder𝐷𝛽′ with parameters𝛽′, and optimize𝛽′ with
+the same fixed-reference forward-KL objective while the memory encoder and target backbone remain fixed.
+The target decoder accepts the unchanged memory representation and generates LoRA factors matching the
+target backbone&#x27;s layer count and module dimensions.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Compilation places every𝑞𝑡 in the same fixed-shape memory space. Letℎ𝑡∈ℝ 𝐿×𝑀×𝑟×𝑑 denote the accumulated
+memory after the first𝑡 sessions. We setℎ0 = 0before any session arrives and initialize the memory directly
+from the first session asℎ1 =𝑞 1. For each subsequent session, a lightweight recurrent consolidation gate
+combines the accumulated memory with the incoming representation through a retention tensor:
+𝑧𝑡 =𝜎
+[ℎ𝑡−1 ;𝑞𝑡]𝑊𝑔+𝑏 𝑔
+
+, 𝑡≥2.(12)
+The tensor𝑧𝑡∈ℝ 𝐿×𝑀×𝑟×𝑑 contains a𝑑-dimensional retention vector at every layer, module, and rank index.
+The operator[ ;] denotes concatenation,𝑊𝑔∈ℝ 2𝑑×𝑑 is the shared gate projection,𝑏𝑔∈ℝ 𝑑 is its bias, and𝜎 is
+the element-wise sigmoid. Concatenation and the shared linear projection operate along the latent feature
+dimension. The gate updates the persistent state as
+ℎ𝑡 =𝑧 𝑡⊙ℎ 𝑡−1+(1−𝑧 𝑡)⊙𝑞 𝑡, 𝑡≥2,(13)
+4</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>recurrence forms the final persistent stateℎ𝑇, and the decoder produces the corresponding adapter collection
+Λ𝑇 =𝐷 𝛽(ℎ𝑇). We collect the trainable gate parameters as𝜓={𝑊 𝑔,𝑏𝑔} and optimize the expected loss over the
+target application&#x27;s training distribution:
+Lcon(𝜓)=𝔼 (C1:𝑇,𝑥,𝑦)∼D task
+
+ℓtask
+
+𝑝𝜃⊕Λ𝑇(·|𝑥),𝑦
+
+,(14)
+whereDtask is the training-data distribution of the target application,𝑝𝜃⊕Λ𝑇(·|𝑥) is the memory-conditioned
+response distribution, andℓtask is a differentiable prediction loss that evaluates this prediction against the target
+𝑦. Gradients propagate through the frozen backbone and decoder to update𝜓, while𝜃,𝜉,𝜙, and𝛽 remain
+fixed. The frozen compiler also allows the𝑞𝑡 representations to be precomputed during training. At deployment
+(Figure 1(c)), all modules are frozen. The first session initializes memory, and subsequent sessions update
+it through encoding and recurrent </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarks and metrics.PERMA [ 25] evaluates memory formation, revision, and intervention across
+ordered sessions; we report its four clean and noisy single-domain (SD) and multi-domain (MD) settings and
+their macro-average. PersonaMem-v2 [3] derives independent queries from long user histories; we report
+Overall, Self, and Current accuracy. PrefEval [2] measures memory after 10, 70, and 300 intervening turns,
+averaged across its three information forms. Detailed task construction and metric definitions appear in
+Appendix D.1.
+Baselines.Textual-memory methods include Full Context, RAG [26] with M3-Embedding [27], Rolling
+Summary, Mem0 [8], and LightMem [9]. Parametric baselines include SFT, trained on the same downstream
+split with the visible history, and the released Metis-9B recurrent-memory model [16]. No Context and
+Gold State provide query-only and annotated-memory references. </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RPMem: Learning Long-Term Recurrent Parametric Memory
+Table 1|Main comparison on cross-session memory benchmarks (accuracy, %).
+Type Method PERMA PersonaMem-v2 PrefEval
+SD-C SD-N MD-C MD-N Core Overall Self Current 10 70 300
+Reference No Context 66.73 66.73 54.60 54.60 60.66 25.74 25.28 25.42 36.67 39.82 39.07
+Gold State 72.70 72.23 66.06 65.47 69.12 57.90 64.05 69.16 80.18 80.74 80.00
+Textual
+Rolling Summary 39.57 40.27 23.34 27.41 32.65 26.58 25.46 25.32 44.26 45.19 45.19
+LightMem 56.63 56.20 40.72 40.20 48.44 30.46 31.42 34.5181.30 79.0773.52
+Mem0 57.57 58.57 41.03 42.10 49.82 30.02 30.26 31.90 73.15 65.19 61.67
+RAG (BGE-M3) 63.00 62.53 49.16 47.46 55.54 30.32 31.13 31.70 59.26 54.63 50.74
+Full Context 76.47 73.03 70.72 69.95 72.54 31.10 32.72 33.97 60.00 45.00 40.56
+Parametric
+SFT 78.00 71.47 49.30 42.61 60.35 31.64 33.65 35.47 57.22 40.00 38.15
+Metis-9B 80.87 80.47 80.1779.29 80.20 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RPMem: Learning Long-Term Recurrent Parametric Memory
+Table 2 reports both ablations with SD and MD macro-averages; complete definitions and setting-level results
+appear in Appendix C.
+Table 2| Ablations on PERMA (accuracy, %):(a)compilation objectives and(b)
+consolidation rules. Core SD and Core MD average the clean and noisy settings.
+FKL/RKL denote forward/reverse KL; bold and underline mark the best and
+second-best results in each panel.
+Variant Core SD Core MD Core Avg.
+(a) Memory compilation objective
+Compiler SFT 72.20 50.23 61.21
+Sampled RKL (top-𝐾) 74.08 59.73 66.91
+Sampled RKL (K3) 70.82 63.22 67.02
+Top-𝐾CE 82.99 72.34 77.66
+Sampled FKL 88.37 79.14 83.75
+Fixed FKL 90.89 80.15 85.52
+(b) Cross-session consolidation
+Rank concatenation 14.97 12.71 13.84
+Latent averaging 62.40 28.64 45.52
+Latest Session 67.72 39.40 53.56
+Factor averaging 69.44 38.99 54.21
+Learned gate (ours) 90.89 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We first test the defining lifecycle claim that accumulated memory remains reusable after backbone replacement.
+We then evaluate its deployment viability through resource scaling and general-capability retention.
+Cross-backbone reuse.We reuse the frozen Qwen3-8B session encoder with Qwen3-4B, Ministral-3-8B [29],
+Qwen3.5-9B,andQwen3.5-35B-A3B[ 30], adaptingonlythemodel-specificdecoderduringcompilationforeach
+target. Under the same target-side training budget, transfer improves all 28 backbone–setting combinations
+over compilers trained from scratch and raises the cross-model average from 75.97% to 89.64%, showing
+that one parametric memory representation can serve different backbones through target-specific decoding.
+Complete results and adaptation costs appear in Appendix F.
+Streaming deployment.We profile update latency, persistent-memory size, and historical query tokens from
+one to </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RPMem: Learning Long-Term Recurrent Parametric Memory
+Table 3|Online deployment efficiency at 64 accumulated sessions.
+Type Method Update Memory Hist. tokens
+↓Time (s)↓Growth↓Size (MiB)↓Growth↓
+Textual Full Context – –0.13878.09×28,498.4
+Mem0 12.5541.10×20.04162.11×441.7
+Parametric Adapter rank concatenation 0.94829.46×183.7385.10×0
+RPMem (ours) 0.0431.03×36.5621.00×0
+and 292 times faster than Mem0. Across the full profile, update and memory growth remain1.03× and1 .00×,
+respectively, with no historical query tokens. Avoiding history reprocessing also reduces query cost: over the
+5,000-question PersonaMem-v2 test set with approximately 32K-token histories, mean language-model forward
+time is 0.055 seconds, compared with 4.287 seconds for Full Context. Training the shared compiler requires
+an estimated 338 GPU-hours, whereas consolidation for a representative PERMA fold takes 13 minutes </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>on one
+A800-80GB GPU; complete costs appear in Appendix D.5.
+General-capability retention.Finally, we evaluate the unmodified backbone (Base LLM), Latest Session,
+and RPMem on MMLU [31], GSM8K [32], and IFEval [33], averaging the two memory methods over ten
+user-specific adapters. Complete protocols and user-level results appear in Appendix D.5.
+Table 4|General-capability retention (accuracy, %).
+Method MMLU GSM8K IFEval
+Base LLM 71.96 75.21 81.70
+Latest Session 69.85 73.15 77.38
+RPMem (ours) 70.13 73.78 77.89
+RPMem remains within 1.83 pp of Base LLM on MMLU, 1.43 pp on GSM8K, and 3.81 pp on IFEval, while
+improving over Latest Session on all three benchmarks. Cross-session memory therefore largely preserves the
+backbone&#x27;s general capabilities.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Application-specificconsolidationalignsmemoryretentionandupdatingwiththetargetscenario&#x27;srequirements,
+but the learned policy&#x27;s applicability to scenarios with substantially different memory needs remains to be
+studied. Future work could explore cross-scenario learning that balances shared consolidation capabilities with
+application-specific adaptation.
+10</blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>query-specific visible session
+prefix and official A–H candidate set. Ten leave-one-user-out folds assign nine users to gate training and the
+remaining user to evaluation. All three task types of the training users contribute supervision. Each example
+starts a fresh recurrence over its visible history, with the first segment initializing memory and subsequent
+segments processed in chronological order. The held-out user&#x27;s history is encoded at evaluation using the fixed
+compiler and trained gate.
+PersonaMem-v2.Construction starts from the pinned 32K-Text release and its training, validation, and
+benchmark partitions. Training and validation rows belonging to benchmark personas are excluded. Two
+known invalid training rows are removed: one has no distractor answers and one includes the correct answer
+among the distractors. Null distractor entries are discarded with the repair recorded. </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The resulting partitions
+contain 18,527 training examples, 2,059 validation examples, and all 5,000 benchmark questions. Each
+example resolves its linked chat history into a chronological message stream, which is segmented under the
+shared token budget. Candidate answers are deterministically shuffled using the instance identifier, and the
+same ordering is used by every method. Training uses the training partition; the final-epoch gate is evaluated
+on the benchmark partition.
+PrefEval.Each base example is represented in three evidence forms: an explicit statement, a choice-based
+interaction, and a persona-based interaction. The corresponding evidence sessions are followed by the official
+intervening dialogue prefix for each of the 10-, 70-, and 300-turn settings. The frozen preparation contains
+1,000 base examples and 3,000 form-specific examples before expansion over these three </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>history lengths. The
+topic split follows the official training implementation with seed 42: 16 topics are used for training, while
+transportation, technology shopping, education resources, and motor shopping are held out. One gate is trained
+jointly across training topics, evidence forms, and history lengths. The split contains 820 training and 180
+held-out base examples, yielding 2,460 and 540 form-specific examples, respectively. Expansion over the three
+history lengths produces 7,380 training instances and 1,620 evaluation instances; each history-length setting
+evaluates the same 540 held-out form-specific examples. Base examples and topics are disjoint across the
+training and evaluation partitions. Shared intervening sessions reuse their cached encodings. Answer options
+are deterministically permuted with seed 42 and the instance identifier, consistently across methods.
+Supervision </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In the main comparison, RPMem and our baseline implementations use Qwen3-8B as the answering model.
+We directly evaluate the released Metis-9B model. Generalization and transfer use the five backbones reported
+in Appendix D.7and Appendix F. Thinking mode is disabled throughout. Within each benchmark, methods
+receive the same chronological history boundary, query, candidate answers, and output parser. On PERMA,
+prediction selects the largest next-token logit among the legal labels A through H. Accuracy is first computed
+for each held-out user and then macro-averaged across the ten folds. PersonaMem-v2 uses its frozen training,
+validation, and benchmark splits, and PrefEval uses its official topic-disjoint split.
+The default RPMem run losslessly segments sessions at 4,096 tokens and overlaps one complete event between
+adjacent segments. Its compiler is the 51,885-update checkpoint trained </blockquote></details></li><li><strong>Contribution clarity — page 37</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To control backbone family and scale in the comparison with Metis, we evaluate No Context, Full Context,
+Metis-9B, and RPMem on Qwen3.5-9B. All four methods share the PERMA task splits, visible-history boundary,
+non-thinking mode, and A–H next-token-logit answer selection. RPMem uses the adapted decoder described in
+Appendix Fand fits its consolidation gate on the nine training users of each fold. Metis-9B uses its released
+memory-model weights without additional PERMA training.
+Table G.1|Same-backbone comparison on PERMA with Qwen3.5-9B (accuracy, %).
+Method Clean SD Noisy SD Clean MD Noisy MD Core Avg. 7-Variant Avg.
+No Context 29.20 29.20 35.63 35.63 32.41 31.98
+Full Context 69.27 72.00 85.71 85.68 78.17 74.25
+Metis-9B 80.87 80.47 80.17 79.29 80.20 80.04
+RPMem (ours) 96.50 96.50 92.52 92.68 94.55 94.66
+Core Avg. averages the four displayed settings; 7-Variant Avg. additionally </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Parametric memory mechanism</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory encoded in or attached to model behavior</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: llm-agents, long-term-memory, evaluation, parametric-memory, agent-memory, memory-systems</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: semantic_scholar, arxiv</li><li>Latest revision / source update: unknown</li><li>Publication date source: semantic_scholar</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-23 09:04:22</li><li>Last seen by Paper Scout: 2026-09-23 09:04:22</li></ul>
+            <ul><li>arXiv: 2609.23466</li><li>Semantic Scholar: d84232d26104a0f9ad8acce504a732c50f1cfe41</li><li>Semantic Scholar IDs: d84232d26104a0f9ad8acce504a732c50f1cfe41</li><li>arXiv IDs: 2609.23466</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="rpmem-learning-long-term-recurrent-parametric-memory-across-sessions-for-llm-agents-01bf7d2d.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>RPMem: Learning Long-Term Recurrent Parametric Memory Across Sessions for LLM Agents. Fan-Yu Zhao, Rui-Ke Cao, Liang Dong, Fu-Gen Yao, Jian Xu, Guan-Jun Jiang, Han Zhang, Yi-Fei Zhao, Yin-Sheng Li. 2026-09-20. https://www.semanticscholar.org/paper/d84232d26104a0f9ad8acce504a732c50f1cfe41</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

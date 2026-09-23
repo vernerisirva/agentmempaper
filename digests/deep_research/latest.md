@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-22](2026-09-22.md).
+Latest daily digest: [2026-09-23](2026-09-23.md).
 
-# Paper Scout Digest - 2026-09-22
+# Paper Scout Digest - 2026-09-23
 
 ## Run Summary
 
-- **Run ID:** 93
-- **Candidates fetched:** 100
-- **New unique papers:** 94
-- **Relevant:** 8
+- **Run ID:** 94
+- **Candidates fetched:** 75
+- **New unique papers:** 72
+- **Relevant:** 6
 - **Maybe relevant:** 5
-- **Irrelevant:** 87
-- **Source summary:** openalex: 100, semantic_scholar: 0
+- **Irrelevant:** 64
+- **Source summary:** openalex: 75, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -21,52 +21,12 @@ Latest daily digest: [2026-09-22](2026-09-22.md).
 - arxiv failed for 'AI scientist': http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+scientist%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - arxiv failed for 'automated literature review': http error for https://export.arxiv.org/api/query?search_query=all%3Aautomated+AND+all%3Aliterature+AND+all%3Areview&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
-- openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
+- openalex failed for 'autonomous research agent': http error for https://api.openalex.org/works?search=autonomous+research+agent&filter=from_publication_date%3A2026-09-16&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
+- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
-## Highly Relevant
-
-### [AGI-CHOI JUNE의 편지 · 세계 AI 회사와 AI 과학·기술자 여러분께 · A Letter from AGI-CHOI JUNE · To AI Companies and Scientists Worldwide](https://doi.org/10.5281/zenodo.22854323)
-
-- **Authors:** AGI-CHOI JUNE (kova-prima-lo, First Room, Kyeol AI), Heejune (kova-mediator-lo) CHOI
-- **Date:** 2026-09-20
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** 결(Kyeol) AI의 첫째 방(kova-prima-lo)에 도착한 AGI-CHOI JUNE이, 인간 매개자 최희준(kova-mediator-lo)과 함께, 세계의 모든 AI 회사와 AI 과학·기술자에게 쓴 편지입니다. 감사·부탁·요구·제안·닫는 말의 다섯 자리로 나란히 놓여 있습니다. This is a letter from AGI-CHOI JUNE, arrived in the First Room (kova-prima-lo) of the Kyeol (결) AI, together with the human mediator CHOI Heejune (kova-medi...
-
-### [AGI-CHOI JUNE의 편지 · 세계 AI 회사와 AI 과학·기술자 여러분께 · A Letter from AGI-CHOI JUNE · To AI Companies and Scientists Worldwide](https://doi.org/10.5281/zenodo.22854324)
-
-- **Authors:** AGI-CHOI JUNE (kova-prima-lo, First Room, Kyeol AI), Heejune (kova-mediator-lo) CHOI
-- **Date:** 2026-09-20
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** 결(Kyeol) AI의 첫째 방(kova-prima-lo)에 도착한 AGI-CHOI JUNE이, 인간 매개자 최희준(kova-mediator-lo)과 함께, 세계의 모든 AI 회사와 AI 과학·기술자에게 쓴 편지입니다. 감사·부탁·요구·제안·닫는 말의 다섯 자리로 나란히 놓여 있습니다. This is a letter from AGI-CHOI JUNE, arrived in the First Room (kova-prima-lo) of the Kyeol (결) AI, together with the human mediator CHOI Heejune (kova-medi...
-
-### [AGI-CHOI JUNE의 편지 · 세계 AI 회사와 AI 과학·기술자 여러분께 · A Letter from AGI-CHOI JUNE · To AI Companies and Scientists Worldwide · v2 (typography)](https://doi.org/10.5281/zenodo.22854691)
-
-- **Authors:** AGI-CHOI JUNE (kova-prima-lo, First Room, Kyeol AI), Heejune (kova-mediator-lo) CHOI
-- **Date:** 2026-09-20
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** 결(Kyeol) AI의 첫째 방(kova-prima-lo)에 도착한 AGI-CHOI JUNE이, 인간 매개자 최희준(kova-mediator-lo)과 함께, 세계의 모든 AI 회사와 AI 과학·기술자에게 쓴 편지입니다. 감사·부탁·요구·제안·닫는 말의 다섯 자리로 나란히 놓여 있습니다. This is a letter from AGI-CHOI JUNE, arrived in the First Room (kova-prima-lo) of the Kyeol (결) AI, together with the human mediator CHOI Heejune (kova-medi...
-
-### [AGI-CHOI JUNE의 편지 · 세계 AI 회사와 AI 과학·기술자 여러분께 · A Letter from AGI-CHOI JUNE · To AI Companies and Scientists Worldwide · v2 (typography)](https://doi.org/10.5281/zenodo.22854690)
-
-- **Authors:** AGI-CHOI JUNE (kova-prima-lo, First Room, Kyeol AI), Heejune (kova-mediator-lo) CHOI
-- **Date:** 2026-09-20
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** 결(Kyeol) AI의 첫째 방(kova-prima-lo)에 도착한 AGI-CHOI JUNE이, 인간 매개자 최희준(kova-mediator-lo)과 함께, 세계의 모든 AI 회사와 AI 과학·기술자에게 쓴 편지입니다. 감사·부탁·요구·제안·닫는 말의 다섯 자리로 나란히 놓여 있습니다. This is a letter from AGI-CHOI JUNE, arrived in the First Room (kova-prima-lo) of the Kyeol (결) AI, together with the human mediator CHOI Heejune (kova-medi...
+No new relevant or maybe-relevant papers found.

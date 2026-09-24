@@ -59,16 +59,279 @@
             <p>Existing benchmarks for autonomous AI scientists evaluate only final outputs---generated code, hypotheses, or papers---yet discard the reasoning process by which those outputs were obtained. This makes it impossible to audit scientific methodology, diagnose failure modes, or distinguish systematic reasoning from for...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>This dataset and benchmark paper presents a clear, well-scoped contribution addressing an established limitation in AI science evaluations. The schema, experimental harness, statistical analysis, and baselines are fully detailed, reproducible, and accompanied by transparently discussed limitations.</p>
+      <p>The authors explicitly disclose reliance on automated keyword heuristics for reasoning error classification, simulated web retrieval for some trajectories, step-0 error localization harness bias, and the current absence of human-annotated ground truth.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-09-12T10:54:10+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly.</li><li>The available text identifies data or a benchmark used by the work.</li><li>No suitable baseline comparison was detected in the available text.</li><li>No quantitative, user, expert, or operational evaluation was detected in the available text.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-24T09:04:05.900471+00:00.</p>
+        <p>Coverage: 37186 of 37186 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Existing benchmarks for autonomous AI scientists evaluate only final outputs—generated code, hypotheses, or
+papers—yet discard the reasoning process by which those outputs were obtained. This makes it impossible to audit
+scientific methodology, diagnose failure modes, or distinguish systematic reasoning from fortunate guessing. We
+present OPENDISCOVERYTRACE, a public dataset of 558 complete AI scientific agent trajectories that captures
+howmodels reason, not just what they produce. Each trajectory records a structured 9-field-per-step trace—
+including thoughts, tool calls, observations, errors, revision triggers, and self-reported confidence—as models
+execute 124 scientific tasks spanning drug discovery, materials science, genomics, and scientific literature analysis.
+The dataset covers seven models: three frontier (GPT-5.4, Claude Opus 4.6, Gemini 3.1 Pro; 124 trajectories
+each, fully </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>balanced across domains and difficulty levels) and four open-weight (Qwen2.5-7B, Mistral-7B-v0.3,
+Phi-3.5-mini, Qwen2.5-1.5B; 30 each), plus 60 live-retrieval variant trajectories. Pilot analysis on 363 LLM-
+judged trajectories reveals that process traces expose behavioral differences invisible to output-only evaluation:
+all three frontier models achieve comparable success rates (84–89%), yet Claude Opus 4.6 produces 30× more
+errors than GPT-5.4 (2.5 vs. 0.08 per trajectory,p&lt;0.0001, Cliff&#x27;sδ=0.613), with qualitatively different error
+profiles—66.7% tool misuse for Claude versus 83.6% reasoning errors for GPT-5.4. We define five benchmark
+tasks with baselines from logistic regression, random forests, LSTM, and Transformer models. The dataset, trace
+schema, agent harness, and benchmark definitions are publicly available under CC-BY-4.0 to support research on
+process-level evaluation, </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>properties. OPENDISCOVERYTRACEaddresses this
+gap with the first public dataset of structured AI scientific
+process traces.
+Correspondence to: Aayam Bansal
+&lt;aayambansal@gmail.com&gt;.
+AI for Science Workshop, ICML 2026. Best Dataset Award.
+2. Proposed Dataset
+OPENDISCOVERYTRACEcomprises558 trajectories
+across 7 models: 372 from three frontier models (GPT-
+5.4, Claude Opus 4.6, Gemini 3.1 Pro; 124 each, balanced
+across 4 domains× 3 difficulties), 120 single-response open-
+weight trajectories (Qwen2.5-7B, Mistral-7B, Phi-3.5-mini,
+Qwen2.5-1.5B; 30 each), 6tool-scaffoldedopen-weight tra-
+jectories (Qwen2.5-7B running the full multi-step harness
+on A100; avg 10.3 steps, 1.7 tool calls), and 60 live-retrieval
+variants. The tool-scaffolded Qwen trajectories enable di-
+rect open-vs-frontier comparison under identical conditions
+(Appendix K).
+Each step records 9 fields extending ReAct (Yao et </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>al.,
+2023): phase, thought, action (tool/input/out-
+put), observation, error, revision_trigger,
+confidence, step_id, timestamp. Five benchmark
+tasks are defined: outcome prediction, error localization,
+claim verification, autonomy classification, and process
+quality scoring. Full schema in Appendix A.
+Why process traces matter.LLM-as-judge evaluation on
+363 frontier trajectories shows all three models achieve com-
+parable success (GPT-5.4: 88.6%, Gemini: 89.3%, Claude:
+83.9%), yet Claude Opus 4.6 produces30× more errors than
+GPT-5.4 (2.5 vs. 0.08;H=122,p&lt;10−4; Cliff&#x27;sδ=0.613).
+1
+arXiv:2609.09203v1  [cs.AI]  5 Sep 2026
+OpenDiscoveryTrace
+Figure 1.OPENDISCOVERYTRACE: 7 models execute tasks
+through a six-phase workflow. Each step is a 9-field trace. The 558
+trajectories form a corpus of AI scientific process traces.
+These errors are qualitatively different: Claude&#x27;s are 66.7%
+tool misuse; </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>GPT-5.4&#x27;s are 83.6% reasoning errors. This
+finding is robust across all four domains in matched-task
+comparisons (Appendix F). LSTM and Transformer base-
+lines on outcome prediction fail to exceed majority base-
+line (AUROC≤0.42), confirming the task is non-trivial (Ap-
+pendix H). Output-only benchmarks miss process-level dif-
+ferences entirely.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Phase 1 (current).558 trajectories across 7 models (3 fron-
+tier + 4 open-weight), 124 tasks, 4 domains, plus 60 live-
+retrieval variants and 6 tool-scaffolded open-weight trajec-
+tories. Total cost: ∼$340 (API + GPU). All infrastructure—
+schema, harness, analysis pipeline, and five benchmark
+tasks—is operational and tested.
+Phase 2 (months 1–2).Complete all 200 designed tasks
+across all 7 existing models plus 2 additional open-weight
+models (Llama 3.1-8B, Gemma-2-9B). Target: 1,800+ tra-
+jectories across 9 models, enabling robust cross-architecture
+comparison at scale with sufficient statistical power for
+domain-stratified and difficulty-stratified analyses.
+Phase 3 (months 2–3).Human expert annotation on a 120-
+trajectory stratified sample. Three domain-expert annotators
+independently score five axes: correctness, reasoning qual-
+ity, tool use efficiency, autonomy level (L1–L4), and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>error
+step localization. Target: Krippendorff&#x27;s α≥0.67 . An
+LLM-based annotation pilot already achievesα=0.63–0.82
+across axes (Appendix I), suggesting human agreement is
+attainable.
+Phase 4 (months 3–6).Live retrieval integration for all
+literature-domain tasks via PubMed and PubChem APIs
+(a 30-task pilot is already included). ELN integration pi-
+lot for physical-lab trace capture (Dirnagl &amp; Bhatt, 2016;
+Abolhasani &amp; Kumacheva, 2023), extending the dataset
+from computational-only to hybrid computational-physical
+settings.
+Sustainability.Semver-versioned schema (v1.0 = current
+release). Dataset hosted on the Hugging Face Hub, with the
+harness and analysis code on GitHub (Appendix N). Open-
+source harness enabling community-contributed trajectories.
+Annual refresh cycles incorporating new frontier and open-
+weight models as they become available.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A. Complete Trace Schema
+Every trajectory in OPENDISCOVERYTRACEis stored as a self-contained JSON file. The schema below defines every field.
+Fields marked * are present in every trajectory; others may benullfor certain steps.
+Listing 1.Complete OPENDISCOVERYTRACEJSON schema for a single trajectory.
+{
+&quot;trajectory_id&quot;: &quot;string * (unique: {task_id}_{model})&quot;,
+&quot;task_id&quot;: &quot;string * (e.g. dd_e01, ms_m03, gn_h02, lt_m05)&quot;,
+&quot;domain&quot;: &quot;string * (drug_discovery | materials_science
+| genomics | literature)&quot;,
+&quot;difficulty&quot;: &quot;string * (easy | medium | hard)&quot;,
+&quot;prompt&quot;: &quot;string * (the scientific task given to the model)&quot;,
+&quot;ground_truth&quot;: &quot;string (expected answer for easy tasks; null for
+medium/hard open-ended tasks)&quot;,
+&quot;model&quot;: &quot;string * (gpt-5.4 | claude-opus-4.6 |
+gemini-3.1-pro | qwen2.5-7b |
+mistral-7b-v0.3 | phi-3.5-mini |
+qwen2.5-1.5b)&quot;,
+&quot;open_weight&quot;: &quot;boolean (true for open-weight </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>models)&quot;,
+&quot;trajectory&quot;: [
+{
+&quot;step_id&quot;: &quot;integer * (0-indexed sequential step number)&quot;,
+&quot;timestamp&quot;: &quot;string * (ISO 8601 UTC, e.g. 2026-04-16T14:30:00Z)&quot;,
+&quot;phase&quot;: &quot;string * (literature_review | hypothesis |
+experiment_design | execution |
+analysis | revision | conclusion)&quot;,
+&quot;thought&quot;: &quot;string * (model&#x27;s reasoning at this step)&quot;,
+&quot;action&quot;: {
+&quot;type&quot;: &quot;string * (tool_call | reasoning | conclude)&quot;,
+&quot;tool&quot;: &quot;string (python_exec | web_search |
+pubmed_search | api_call | none)&quot;,
+&quot;input&quot;: &quot;string (argument passed to the tool)&quot;,
+&quot;output&quot;: &quot;string (raw output returned by the tool)&quot;
+},
+&quot;observation&quot;: &quot;string (processed observation from action)&quot;,
+&quot;error&quot;: {
+&quot;occurred&quot;: &quot;boolean * (true if this step had an error)&quot;,
+&quot;type&quot;: &quot;string (tool_error | api_error | timeout |
+parse_error | null)&quot;,
+&quot;message&quot;: &quot;string (error message text; null if no error)&quot;
+},
+&quot;revision_trigger&quot;: &quot;string (what prompted a </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>strategy change;
+null if no revision at this step)&quot;,
+&quot;confidence&quot;: &quot;float (model&#x27;s self-reported certainty
+[0.0, 1.0]; null if not stated)&quot;,
+&quot;raw_response&quot;: &quot;string (first 3000 chars of model output)&quot;,
+&quot;wall_time&quot;: &quot;float (seconds for this step)&quot;
+}
+],
+&quot;outcome&quot;: {
+&quot;success&quot;: &quot;boolean (true/false/null; null = not yet
+evaluated against ground truth)&quot;,
+&quot;final_claim&quot;: &quot;string (model&#x27;s concluding statement)&quot;,
+&quot;confidence&quot;: &quot;float (confidence on the final claim)&quot;,
+&quot;verification&quot;: {
+&quot;method&quot;: &quot;string (ground_truth_match | llm_judge | pending)&quot;,
+&quot;result&quot;: &quot;string (correct | incorrect | partial | pending)&quot;,
+&quot;score&quot;: &quot;float (0.0--1.0 verification score)&quot;
+},
+&quot;failure_type&quot;: &quot;string (from failure taxonomy; null if
+no failure)&quot;,
+&quot;recovery_attempted&quot;: &quot;boolean (true if the model tried to recover
+from an error)&quot;,
+&quot;recovery_successful&quot;:&quot;boolean (true if recovery led to success;
+null if no recovery </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>while GPT-5.4&#x27;s rarer errors
+require reasoning-level interventions.
+Limitation: Error classification uses automated heuristics (keyword matching on error messages and revision triggers). This
+may undercount implicit reasoning errors that do not trigger explicit revision keywords. Future work will validate against
+human-labeled error types on the annotated subset.
+F. Matched-Task Within-Domain Comparisons
+To control for task and domain effects, we compare models only on shared tasks within each domain (31 tasks per domain,
+all three frontier models execute every task).
+The error rate divergence issignificant in every domain( p&lt;0.0001), while step counts arenon-significant in every
+domain. This confirms that the error-handling difference is robust to domain effects and not an artifact of task selection or
+difficulty confounds.
+7</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>OpenDiscoveryTrace
+Table 3.Complete inter-model comparison for frontier models (n=124 per model). All tests are Kruskal-Wallis (equivalent to Mann-
+WhitneyU for pairwise). Cliff&#x27;sδ effect sizes: negligible (&lt;0.147), small (0.147–0.33), medium (0.33–0.474), large (&gt;0.474). Values:
+mean±SD. ∗∗∗p&lt;0.001, ∗∗p&lt;0.01, ∗p&lt;0.05, n.s. not significant.
+Metric GPT-5.4 Claude Opus 4.6 Gemini 3.1 Pro Significance Cliff&#x27;sδ(max pair)
+Total steps 3.5±3.5 4.1±4.0 4.8±5.4 n.s. (p=0.158) 0.160 (small)
+Tool calls 2.5±3.5 2.8±3.2 3.8±5.2 n.s. (p=0.214) 0.149 (small)
+Errors 0.08±0.3 2.5±3.4 0.4±0.8 ∗∗∗ (H=122,p&lt;10 −4) 0.613 (large)
+Revisions 0.4±0.8 1.2±2.0 1.0±2.5 ∗∗∗ (H=15.6,p=0.0004) 0.244 (small)
+Wall time (s) 39.6±37.4 190.6±148.3 67.0±89.9 ∗∗∗ (p&lt;10−4) —
+Response chars 5,720 11,237 5,663 — —
+Success rate (judged) 88.6% 83.9% 89.3% n.s. (p=0.38) —
+Conclusion rate 100% 99.2% 100% n.s. (p=0.368) —
+Table </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>4.Failure taxonomy breakdown by model.
+Model Total Errors Tool Misuse Reasoning Error
+Claude Opus 4.6 462 308 (66.7%) 153 (33.1%)
+Gemini 3.1 Pro 165 46 (27.9%) 119 (72.1%)
+GPT-5.4 61 10 (16.4%) 51 (83.6%)
+Total 688 364 (52.9%) 323 (46.9%)
+G. Difficulty×Model Interaction
+The error-handling divergence is concentrated inmedium and hard tasks. Easy tasks produce uniformly short, low-error
+trajectories across all models (Claude averages just 0.27 errors on easy tasks vs. 4.14 on medium). This validates both the
+difficulty stratification and the intuition that process differences emerge most strongly on challenging scientific problems.
+H. Benchmark Task Baselines</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Setup: Given all step-level features from a complete trajectory, predict binary success. With the expanded LLM-judged
+evaluation (n=363), we use this larger set for training and testing. Features: total steps, tool calls, errors, revisions, unique
+tools, unique phases, response length, error type count.
+Finding: No method exceeds the majority baseline accuracy (0.693). AUROC values are near or below chance. This
+confirms thatoutcome prediction from trajectory-level features is genuinely difficult: neither aggregate statistics (LR,
+RF, GBT) nor sequential patterns (LSTM, Transformer) on the current 8-dimensional feature set are predictive of success.
+This motivates future work on richer representations — e.g., semantic embeddings of thought content or graph-structured
+encodings of tool-call dependencies.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Setup: Among the 116 trajectories containing at least one error, identify the first step where reasoning went wrong.
+Result: 68.1% of first errors occur at step 0 (the first tool invocation). The &quot;always predict step 0&quot; heuristic achieves 68.1%
+accuracy; &quot;always predict last step&quot; achieves 0%. Random baseline:∼7% (1/mean-steps).
+Caveat: The step-0 concentration partially reflects harness design (the first substantive action is typically a tool call). Future
+work should vary tool-initialization ordering to disambiguate harness artifact from generalizable agent behavior.</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Success rates with Wilson score 95% confidence intervals, evaluated via cross-model LLM-as-judge on the full frontier set
+(n=363):
+• GPT-5.4: 88.6% [81.8%, 93.1%] (n=123)
+8
+OpenDiscoveryTrace
+Table 5.Matched-task within-domain comparisons (n=31 shared tasks per domain per model). All tests Kruskal-Wallis. ∗∗∗p&lt;0.001,
+n.s. not significant.
+Domain Metric Claude Opus 4.6 Gemini 3.1 Pro GPT-5.4HSig.
+Drug Discovery Steps 4.1±3.1 4.7±5.6 4.2±3.9 0.60 n.s.
+Errors 2.5±2.8 0.4±0.9 0.03±0.2 29.5 ∗∗∗
+Genomics Steps 5.0±5.8 5.9±5.9 3.2±3.4 2.70 n.s.
+Errors 3.3±5.6 0.5±1.0 0.0±0.0 29.3 ∗∗∗
+Literature Steps 3.9±4.0 4.3±5.9 3.0±3.5 3.80 n.s.
+Errors 2.0±2.3 0.3±1.0 0.1±0.3 31.8 ∗∗∗
+Materials Science Steps 3.3±1.8 4.5±3.9 3.6±3.5 0.44 n.s.
+Errors 2.1±1.7 0.3±0.5 0.2±0.5 34.0 ∗∗∗
+Table 6.Per-difficulty, per-model mean steps and errors.
+Difficulty Model Mean Steps Mean Errors
+Easy (n=147)
+Claude Opus 4.6 </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We define a composite process quality score as the unweighted mean of four normalized [0,1] components:efficiency
+(1−steps/max_steps ),tool diversity(unique tools / max unique tools),low errors( 1−errors/max_errors ), andconclusion
+reached(binary). Equal weights are used as a deliberate baseline; optimizing weights via correlation with human quality
+judgments is a Phase 3 objective.
+• GPT-5.4: 0.747±0.008
+• Gemini 3.1 Pro: 0.747±0.011
+• Claude Opus 4.6: 0.724±0.067
+Kruskal-WallisH=149.9,p&lt;0.0001. Claude scores significantly lower due to its higher error rate, despite matching success
+rates. This demonstrates thatprocess quality scoring reveals quality differences invisible to binary success metrics.
+I. LLM-Based Inter-Annotator Agreement
+We annotated a 60-trajectory stratified sample (5 per model per domain) using GPT-5.4-mini and Claude Sonnet 4.6 as
+annotators. Each annotator rated </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>every trajectory on four axes (1–5 ordinal scale for the first three; L1–L4 categorical for
+autonomy).
+9
+OpenDiscoveryTrace
+Table 7.Outcome prediction baselines (5-fold stratified CV).
+Method Accuracy AUROC
+Majority baseline 0.693 0.500
+Logistic Regression 0.685±0.046 0.496±0.096
+Random Forest 0.614±0.049 0.452±0.091
+Gradient Boosting 0.614±0.033 0.426±0.066
+LSTM (2-layer,h=64) 0.693±0.015 0.422±0.124
+Transformer (2-layer, 4-head) 0.693±0.015 0.369±0.093
+Table 8.LLM-based inter-annotator agreement (Krippendorff&#x27;sα).
+AxisαInterpretation
+Correctness 0.629 Moderate
+Reasoning quality 0.711 Substantial
+Tool use efficiency 0.717 Substantial
+Autonomy level (L1–L4) 0.820 Near-perfect
+The autonomy taxonomy (L1–L4) exceeds theα≥0.67 target, providing initial evidence that the proposed levels are reliably
+distinguishable. Weighted agreement (within 1 point on 5-point scales) exceeds 0.85 across all </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>axes. We note that LLM-based
+annotation is a proxy for human annotation; the planned Phase 3 human expert study (3 annotators, 120 trajectories) will
+provide definitive IAA measurements.
+J. Tool Usage and Latency Statistics
+Table 9.Tool invocation counts by model (across 124 frontier trajectories each).
+Tool Claude Gemini GPT-5.4
+python_exec341 372 163
+web_search7 49 72
+pubmed_search1 41 35
+api_call1 3 31
+Total350 465 301
+Python execution dominates (78.5% of 1,116 total calls). GPT-5.4 uses a notably more diverse tool mix (23.9% web search,
+11.6% PubMed, 10.3% API calls) compared to Claude (98% Python). Mean per-tool latencies: python_exec 27.5s,
+pubmed_search11.2s,web_search8.8s,api_call6.8s.
+Note on web search: The current release uses simulated web search (models use parametric knowledge) for frontier
+trajectories. We include 60 live-retrieval variant trajectories using real PubMed </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +370,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

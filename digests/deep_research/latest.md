@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-23](2026-09-23.md).
+Latest daily digest: [2026-09-24](2026-09-24.md).
 
-# Paper Scout Digest - 2026-09-23
+# Paper Scout Digest - 2026-09-24
 
 ## Run Summary
 
-- **Run ID:** 94
-- **Candidates fetched:** 75
-- **New unique papers:** 72
-- **Relevant:** 6
+- **Run ID:** 95
+- **Candidates fetched:** 100
+- **New unique papers:** 95
+- **Relevant:** 9
 - **Maybe relevant:** 5
-- **Irrelevant:** 64
-- **Source summary:** openalex: 75, semantic_scholar: 0
+- **Irrelevant:** 86
+- **Source summary:** openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -21,12 +21,44 @@ Latest daily digest: [2026-09-23](2026-09-23.md).
 - arxiv failed for 'AI scientist': http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+scientist%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - arxiv failed for 'automated literature review': http error for https://export.arxiv.org/api/query?search_query=all%3Aautomated+AND+all%3Aliterature+AND+all%3Areview&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
-- openalex failed for 'autonomous research agent': http error for https://api.openalex.org/works?search=autonomous+research+agent&filter=from_publication_date%3A2026-09-16&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
-- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
-No new relevant or maybe-relevant papers found.
+## Highly Relevant
+
+### [Continuous Novel Discovery: The Minimum Configuration for Artificial Superintelligence](https://doi.org/10.5281/zenodo.22894142)
+
+- **Authors:** Franny Philos Sophia
+- **Date:** 2026-09-22
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Every existing definition of artificial superintelligence (ASI) inherits an unmeasurable baseline —the upper limit of human cognitive ability. We propose a definition that avoids this dependency:ASI is continuous novel discovery, a self-sustaining loop in which a system expands its knowledgespace by discovering what...
+
+### [Continuous Novel Discovery: The Minimum Configuration for Artificial Superintelligence](https://doi.org/10.5281/zenodo.22894141)
+
+- **Authors:** Franny Philos Sophia
+- **Date:** 2026-09-22
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Every existing definition of artificial superintelligence (ASI) inherits an unmeasurable baseline —the upper limit of human cognitive ability. We propose a definition that avoids this dependency:ASI is continuous novel discovery, a self-sustaining loop in which a system expands its knowledgespace by discovering what...
+
+## Maybe Relevant
+
+### [XScientist: A Git-Like Research Protocol for Long-Running Autonomous Scientific Discovery](https://doi.org/10.66977/xsci.2609.0003)
+
+- **Authors:** Jixiang Luo
+- **Date:** 2026-07-14
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** research-memory
+- **Abstract summary:** Autonomous research systems can generate plausible papers while losing the decisions, failed branches, and evidence needed to inspect or continue the work. We present XScientist, a local-first, git-like protocol that treats research state, rather than a manuscript, as the unit of continuation. Hypotheses, experiment...

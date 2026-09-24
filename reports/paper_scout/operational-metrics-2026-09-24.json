@@ -1,0 +1,528 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 5,
+    "non_promoted": 0,
+    "papers_attempted": 2,
+    "papers_successfully_assessed": 2,
+    "papers_walked": 13,
+    "promoted": 2,
+    "retry_eligible_failures": 11,
+    "skipped_before_model": 11,
+    "technical_failures": 11,
+    "unavailable_manuscripts": 11
+  },
+  "budget": {
+    "gemini_calls": 2,
+    "gemini_input_tokens": 81863,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 2821,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 2,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.03853008,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 2,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-09-24T09:04:21.393141+00:00",
+  "cost": {
+    "deepseek_calls": 2,
+    "deepseek_cost_usd": 0.03853008,
+    "deepseek_input_tokens": 74581,
+    "deepseek_output_tokens": 1287,
+    "gemini_calls": 2,
+    "gemini_input_tokens": 81863,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 2821,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 543,
+    "papers_discovered": 2387
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 18,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 340,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23466",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.23466",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "RPMem: Learning Long-Term Recurrent Parametric Memory Across Sessions for LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22889960",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22889960",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "LSG: A Lightweight Supervised Gate for Sub-Millisecond Agentic Memory Novelty Filtering",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.24971",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.24971",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DolphinBench: Mapping the Pareto Frontier of Agent Memory",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22865161",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22865161",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-23T09:08:43.101135+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Mem-Forever: a Git-native persistent memory layer for AI agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23449",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.23449",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "PSD: Pseudo Self-Distillation of Memory Representation Capabilities for LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23570",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.23570",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "VibeMemBench: Evaluating Memory Systems for Coding Agents on Real Repository Coding Tasks",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 1995,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22889960",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.24971",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22865161",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23449",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23570",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 55,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.61710/4a4m7g78",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.61710/4a4m7g78",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "AI-Powered Real-Time Surveillance: An Intelligent Threat Detection System for Security Enhancement",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1007/s11694-026-04869-8",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.1007/s11694-026-04869-8",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "BSQG-YOLO: non-destructive real-time quality grading of Brasenia schreberi",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.21203/rs.3.rs-10831765/v1",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.21203/rs.3.rs-10831765/v1",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A Comparative Study of Faster R-CNN, Mask R-CNN, and YOLOv8 for Object Detection and Instance Segmentation, with a Custom-Class Transfer-Learning Case Study",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1117/12.3125772",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.1117/12.3125772",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Photonic-inspired multiscale frequency fusion for low-light YOLO detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1007/978-3-032-39028-8_30",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.1007/978-3-032-39028-8_30",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A Layer-Wise Mechanistic Analysis of Privacy in Vision Transformer Pose Estimators",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.21203/rs.3.rs-10947191/v1",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.21203/rs.3.rs-10947191/v1",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DAM-YOLO: A Lightweight and Accurate Multi-Scale Model for Dam Crack Detection",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 153,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.61710/4a4m7g78",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.1007/s11694-026-04869-8",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.21203/rs.3.rs-10831765/v1",
+            "outcome": "manuscript_unavailable",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.1117/12.3125772",
+            "outcome": "manuscript_unavailable",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.1007/978-3-032-39028-8_30",
+            "outcome": "manuscript_unavailable",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.21203/rs.3.rs-10947191/v1",
+            "outcome": "manuscript_unavailable",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 13,
+        "high_relevance": 140,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22894142",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22894142",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Continuous Novel Discovery: The Minimum Configuration for Artificial Superintelligence",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22854323",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22854323",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-23T09:10:23.159472+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "AGI-CHOI JUNE\uc758 \ud3b8\uc9c0 \u00b7 \uc138\uacc4 AI \ud68c\uc0ac\uc640 AI \uacfc\ud559\u00b7\uae30\uc220\uc790 \uc5ec\ub7ec\ubd84\uaed8 \u00b7 A Letter from AGI-CHOI JUNE \u00b7 To AI Companies and Scientists Worldwide",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22854691",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22854691",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-23T09:10:23.165274+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "AGI-CHOI JUNE\uc758 \ud3b8\uc9c0 \u00b7 \uc138\uacc4 AI \ud68c\uc0ac\uc640 AI \uacfc\ud559\u00b7\uae30\uc220\uc790 \uc5ec\ub7ec\ubd84\uaed8 \u00b7 A Letter from AGI-CHOI JUNE \u00b7 To AI Companies and Scientists Worldwide \u00b7 v2 (typography)",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.17605/osf.io/qm2c3",
+            "rank": 19,
+            "selection": {
+              "canonical_id": "doi:10.17605/osf.io/qm2c3",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-23T09:10:30.528682+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Do AI Scientists' Results Replicate? Pre-registration of a multi-seed re-execution study of agent-generated empirical claims with matched human baselines and auditor calibration (AutoReplicate)",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+            "rank": 20,
+            "selection": {
+              "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-23T09:10:30.587242+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Generative artificial intelligence for nanomaterial discovery and nanoengineering: From data-driven design to autonomous laboratories",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.09203",
+            "rank": 21,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.09203",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "OpenDiscoveryTrace: Process Traces for Evaluating AI Scientist Workflows",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 231,
+        "retry_blocked": 2,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22894142",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22854323",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22854691",
+            "outcome": "manuscript_unavailable",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.17605/osf.io/qm2c3",
+            "outcome": "manuscript_unavailable",
+            "rank": 19
+          },
+          {
+            "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+            "outcome": "manuscript_unavailable",
+            "rank": 20
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 8,
+        "high_relevance": 8,
+        "nominated": [],
+        "ranked": 8,
+        "retry_blocked": 0,
+        "skipped_before_model": [],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-09-24T09:03:32.123010+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

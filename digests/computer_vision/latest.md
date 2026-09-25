@@ -1,17 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-24](2026-09-24.md).
+Latest daily digest: [2026-09-25](2026-09-25.md).
 
-# Paper Scout Digest - 2026-09-24
+# Paper Scout Digest - 2026-09-25
 
 ## Run Summary
 
-- **Run ID:** 4
+- **Run ID:** 5
 - **Candidates fetched:** 100
-- **New unique papers:** 97
-- **Relevant:** 20
-- **Maybe relevant:** 68
-- **Irrelevant:** 12
+- **New unique papers:** 99
+- **Relevant:** 27
+- **Maybe relevant:** 65
+- **Irrelevant:** 8
 - **Source summary:** openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
@@ -29,98 +29,258 @@ Latest daily digest: [2026-09-24](2026-09-24.md).
 - semantic_scholar: incomplete discovery window for 'real-time object detection'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'yolo detector'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'open-vocabulary object detection'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'visual representation learning'; single-page record limit reached.
+- semantic_scholar failed for 'visual representation learning': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640v5)
+### [UFL-YOLO: Enhancing Underwater Object Detection with Lightweight Feature Refinement and Noise-Aware Loss](https://doi.org/10.1088/2631-8695/aeaaa3)
 
-- **Authors:** Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
-- **Date:** 2015-06-08
-- **Source:** arxiv
+- **Authors:** Yuxin Wu, Yan Wang, Jing Zhang, Xi Yan, Xin Zhu Shu
+- **Date:** 2026-09-21
+- **Source:** openalex
 - **Relevance:** relevant (99/100)
 - **Reason:** Studies YOLO-family or real-time object detection.
-- **Tags:** object-detection, yolo, efficient-vision
-- **Abstract summary:** We present YOLO, a new approach to object detection. Prior work on object detection repurposes classifiers to perform detection. Instead, we frame object detection as a regression problem to spatially separated bounding boxes and associated class probabilities. A single neural network predicts bounding boxes and cla...
+- **Tags:** object-detection, yolo
+- **Abstract summary:** Abstract Underwater object detection is challenged by visual degradation such as low contrast, background noise and the difficulty of identifying small targets. To alleviate these issues, we propose UFL-YOLO, an enhanced version of YOLOv10 augmented with lightweight yet effective modules: Small Object Enhance Pyrami...
 
-### [A deep learning-assisted whole-cell biosensor for catechol monitoring: Synergizing BphC recognition with a multi-feature fusion vision transformer](https://doi.org/10.1016/j.talanta.2026.130638)
+### [Deep learning-based segmentation, grading and genotype classification of glioma: a literature analysis](https://doi.org/10.21037/qims-2026-0730)
 
-- **Authors:** Xiaoyan Qi, Guoqiang Sun, Yuzhi Xue, Yan Liang, Pingyu Wang, Fangling Ning, et al.
-- **Date:** 2026-09-18
+- **Authors:** Weihan Song, Yuan Hu, Yi Wang, Jian Ruan, Bo Lin, Weibin Yang
+- **Date:** 2026-09-23
 - **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies visual backbones or vision-transformer architecture.
-- **Tags:** vision-transformer
-- **Abstract summary:** No abstract available.
+- **Relevance:** relevant (96/100)
+- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
+- **Tags:** segmentation, vision-transformer
+- **Abstract summary:** Background and Objective: Glioma represents the most prevalent and lethal primary brain tumor in adults, and its high mortality poses a significant challenge to clinical decision-making. While the conventional gold standard for diagnosis relies on the examination of surgically resected tumor tissue, recent advances...
 
-### [A deep learning-expert hybrid framework for interpreting interior and architectural design styles in cultural heritage contexts](https://doi.org/10.1080/00038628.2026.2737179)
+### [YOLO-Spectra-Net: Reliability-Aware RGB–Infrared Fusion for Robust Object Detection Under Adverse Conditions](https://doi.org/10.3390/s26196028)
 
-- **Authors:** Dung Nguyen, Van-Tung Nguyen, Giang Bui
+- **Authors:** Zhangshuo Hu, Lin Chai
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** relevant (96/100)
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** object-detection, yolo
+- **Abstract summary:** Robust object detection in practical sensing systems remains challenging under low visibility, rapidly varying illumination, occlusion, and cluttered backgrounds. Visible images provide rich structural and texture information but are vulnerable to darkness, haze, and glare, whereas infrared images preserve thermal s...
+
+### [When Does Non-Maximum Suppression Remove Touching Objects? A Geometric Analysis of Snooker Ball Detection with Implications for Real-Time Detector Design and Evaluation](https://doi.org/10.5281/zenodo.22909063)
+
+- **Authors:** Muhammad Waleed Hassan
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** relevant (94/100)
+- **Reason:** Studies object-detection architecture, training, or evaluation.
+- **Tags:** object-detection, efficient-vision
+- **Abstract summary:** A frequent claim in real-time object detection is that non-maximum suppression (NMS) removes true objects when they touch, so that NMS-free detectors are needed in crowded scenes. We test this claim in snooker, where the geometry is known exactly: spheres of diameter 52.5 mm on a table of known size, including fifte...
+
+### [When Does Non-Maximum Suppression Remove Touching Objects? A Geometric Analysis of Snooker Ball Detection with Implications for Real-Time Detector Design and Evaluation](https://doi.org/10.5281/zenodo.22909062)
+
+- **Authors:** Muhammad Waleed Hassan
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** relevant (94/100)
+- **Reason:** Studies object-detection architecture, training, or evaluation.
+- **Tags:** object-detection, efficient-vision
+- **Abstract summary:** A frequent claim in real-time object detection is that non-maximum suppression (NMS) removes true objects when they touch, so that NMS-free detectors are needed in crowded scenes. We test this claim in snooker, where the geometry is known exactly: spheres of diameter 52.5 mm on a table of known size, including fifte...
+
+### [Flora-YOLO: A lightweight framework for real-time rose grading on edge devices via structural optimization and feature refinement](https://doi.org/10.1371/journal.pone.0358742)
+
+- **Authors:** Wenwei Liu, Jinyu Xu, Guoao Wang, Shuo Ding, Yuanbo Zhang, Runze Tian, et al.
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** object-detection, yolo, efficient-vision, edge-deployment, metrics
+- **Abstract summary:** Precise flower grading in modern agriculture is critical for determining market value but remains hindered by inefficient manual labor and the computational constraints of edge devices. To address these challenges, this paper introduces Flora-YOLO, a lightweight and robust detection framework built upon the YOLO11n...
+
+### [LPC-transformer: a training strategy optimized framework for multiclass pneumonia medical image classification](https://doi.org/10.3389/fmed.2026.1960913)
+
+- **Authors:** Hongwei Chang, Tao Hu
 - **Date:** 2026-09-22
 - **Source:** openalex
-- **Relevance:** relevant (91/100)
+- **Relevance:** relevant (93/100)
 - **Reason:** Studies visual backbones or vision-transformer architecture.
-- **Tags:** vision-transformer
-- **Abstract summary:** This study investigates how artificial intelligence (AI) supports the interpretation of interior and architectural design styles (IADS) through a hybrid framework that combines deep learning, expert evaluation, and explainable AI. A diverse set of customized deep learning models, including EfficientNetB3, ResNet50,...
+- **Tags:** vision-transformer, visual-representation
+- **Abstract summary:** Lung imaging enables direct visualization of lesions and is vital for pneumonia diagnosis. However, current deep learning models show unsatisfactory classification accuracy and generalization for multi-class lung disease recognition, limiting their clinical decision-support value. To tackle this issue, we present LP...
+
+### [Understanding Vision Transformers through Intuition and Simple Visual Examples](https://doi.org/10.37394/23205.2026.25.15)
+
+- **Authors:** M. Sabrigiriraj, K. Manoharan
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer, visual-representation
+- **Abstract summary:** Vision Transformers are normally used in image recognition and are considered as an alternative to Convolutional Neural Networks. Unlike traditional convolution-based models, a Vision Transformer does not rely on local filters Instead, it segments an image into smaller patches and understands the relationships among...
+
+### [Auditing Level-Capacity Ablations in Single-Stage Object Detectors: A Decoupling Patch, a Fixed-Calibre Repair, and the Limits of Budget-Mismatch Ratios](https://doi.org/10.21203/rs.3.rs-11081225/v1)
+
+- **Authors:** 黄品超, 蔡幸螢
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies object-detection architecture, training, or evaluation.
+- **Tags:** object-detection
+- **Abstract summary:** No abstract available.
+
+### [HOIBlender: Blending Lightweight Detection with Vision-Language Priors for Efficient Human-Object Interaction Detection](https://arxiv.org/abs/2609.23431)
+
+- **Authors:** Junwen Chen, Keiji Yanai
+- **Date:** 2026-09-20
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies DETR-family or query-based object detection.
+- **Tags:** detr, vision-language
+- **Abstract summary:** Human-object interaction (HOI) detection requires grounding an interacting human-object pair and recognizing the verb that links them, often under severe long-tail supervision. Recent methods improve accuracy with stronger detectors and vision-language priors, but many still stack heavy transformer encoders, intrica...
+
+### [YOLO-RCD: A Lightweight Pavement Damage Detector Validated by Controlled Multi-Seed Reproduction and Measured Edge Deployment](https://doi.org/10.21203/rs.3.rs-10846283/v1)
+
+- **Authors:** Aihemaitijiang Tuerhong, Shuo Wang, Aximu Yuemaier, Xiaopeng Gu, Jie Liu, Naman Maimaiti
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** yolo, edge-deployment
+- **Abstract summary:** No abstract available.
 
 ## Maybe Relevant
 
-### [PART: Learning 3D Part Assembly and Retrieval with Transformers](https://arxiv.org/abs/2609.19872)
+### [A comparative evaluation of explainable AI techniques across CNN and vision transformer architectures for mango leaf disease detection](https://doi.org/10.1080/21642583.2026.2734417)
 
-- **Authors:** Rucha Bao, Wenzheng Wu, Chucheng Xiang, Zhongyuan Liu, Yuan Liu, Jinxin Dong, et al.
-- **Date:** 2026-09-17
-- **Source:** openalex
-- **Relevance:** maybe (59/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** pose
-- **Abstract summary:** 3D assembly is fundamental to modern manufacturing and digital content creation. In this paper, we present PART, a unified transformer-based framework for 3D part retrieval and assembly: given a target shape and a part library, PART automatically selects the appropriate parts and predicts their 6-DoF poses to recons...
-
-### [A Lightweight PCB Defect Detection Method Based on Heterogeneous Feature Enhancement and Discrepancy-Guided Fusion](https://doi.org/10.3390/s26185984)
-
-- **Authors:** Yujie Pei, Xuehong Gao, Shenyuan Gao, Yongchang Zhang, Ying Liu, Guozhong Huang, et al.
+- **Authors:** Omkar Prabhu, T. Manoj, Sucharitha Shetty
 - **Date:** 2026-09-21
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** object-detection, yolo
-- **Abstract summary:** Accurate detection of small and weak defects is essential for ensuring the manufacturing quality and operational reliability of printed circuit boards (PCBs). Existing detectors, however, remain constrained by insufficient fine-grained feature representation, interference from repetitive conductive backgrounds, loca...
+- **Tags:** vision-transformer
+- **Abstract summary:** Early and accurate disease diagnosis in mango leaves is essential for minimizing crop loss and supporting sustainable agriculture. Although deep learning models using convolutional neural networks (CNNs) and vision transformers (ViTs) achieve high diagnostic accuracy, their lack of interpretability limits practical...
 
-### [Hybridnav: A Hybrid Approach to Zero-Shot Object Detection with Adaptive Exploration for Autonomous Reconnaissance](https://doi.org/10.4271/2026-01-7517)
+### [A comparative study of vision transformer architectures evaluating MYC status prediction in diffuse large B cell lymphoma](https://doi.org/10.1038/s41598-026-70959-8)
 
-- **Authors:** Hemanth Indurthi, Eric Martinson
+- **Authors:** Gei Ki Tang, Chee Chin Lim, FAEZAHTUL ARBAEYAH HUSSAIN, Qi Wei Oung, Aidy Irman Yajid, Sumayyah Mohammad Azmi
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** vision-transformer, efficient-vision
+- **Abstract summary:** Predicting MYC gene rearrangements in diffuse large B-cell lymphoma (DLBCL) from Hematoxylin and Eosin (H&E) images can optimize diagnostic triaging. This is crucial because Fluorescence in Situ Hybridization (FISH) testing remains costly and time-consuming. We evaluated five optimized Vision Transformer (ViT) parad...
+
+### [An optimized EfficientNetB7 deep learning model for lung cancer tissue pathology image recognition](https://doi.org/10.3389/fonc.2026.1862407)
+
+- **Authors:** Xiongwen He, Lili Fu, Baicheng Xu, Jingru luo, Junnv Xu, Shu Lin, et al.
 - **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: robotics or driving system where the vision contribution is not clearly the subject.
+- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
+- **Tags:** visual-representation
+- **Abstract summary:** Background Lung cancer is the leading cause of cancer deaths worldwide. This study constructed and optimized a deep learning model to recognize lung cancer pathological images for intelligent classification. Methods The LC25000 dataset was adopted for model training, and the LungHist700 dataset served as independent...
+
+### [Efficient spiking hierarchical representation for remote sensing image dehazing](https://doi.org/10.1117/1.jrs.20.036510)
+
+- **Authors:** Zhenjie Yang
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
 - **Tags:** object-detection
-- **Abstract summary:** Autonomous reconnaissance in unknown or contested environments demands robust perception systems capable of identifying diverse objects without prior training data. This paper presents HybridNAV, a hybrid framework that combines multiple foundation models with an adaptive navigation system for zero-shot object detec...
+- **Abstract summary:** Remote sensing image dehazing is an important low-level vision task for improving image interpretability and supporting downstream applications such as land-cover recognition, object detection, and change detection. Existing CNN-based and Transformer-based methods have achieved remarkable restoration performance, bu...
 
-### [RViTCANet: a multimodal network for UAV recognition based on millimeter wave radar RCS data](https://doi.org/10.1007/s40747-026-02526-7)
+### [mbariml: a curation pipeline for turning deep-sea imagery and video into object-detection training data](https://doi.org/10.48550/arxiv.2609.25500)
 
-- **Authors:** Hongyu Gao, Yujie Huo, Ahmad Najmi Bin Amerhaider Nuar, Junkun Hong
+- **Authors:** Lonny Lundsten, Kevin Barnard, Dave Caress
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
+- **Tags:** object-detection, yolo
+- **Abstract summary:** Training data quantity and quality greatly affect object detection model performance, regardless of model architecture. When using object detection models on video and images from the deep sea, in which the objects of interest, primarily organisms, are sparse, faint, and hard to identify, incremental improvements to...
+
+### [Semantically-Guided Domain Randomization for Industrial Object Detection in Low-Image-Budget Regimes](https://doi.org/10.48550/arxiv.2609.26505)
+
+- **Authors:** Jose Moises Araya-Martinez, Gautham Mohan, Jens Lambrecht
 - **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, vision-language, synthetic-data, benchmark, metrics
+- **Abstract summary:** Retraining visual perception pipelines in High-Mix, Low-Volume (HMLV) automotive manufacturing must be carried out under tight annotation, energy, and time budgets, yet most Synthetic Data Generation (SDG) strategies still operate in the thousands of images. This work evaluates Semantically-Guided Domain Randomizati...
+
+### [SFE-Mamba: A Spatial–Frequency Collaborative Enhancement Network for Object Detection in Snowy Road Scenes](https://doi.org/10.3390/info17100941)
+
+- **Authors:** Quanxiang Wang, Zhaofa Zhou, Zhili Zhang
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision
+- **Abstract summary:** Snowflake occlusion, reflections from accumulated snow, and low-contrast imaging in snowy environments can degrade target features and impair road-object detection performance. To address these challenges, this paper proposes SFE-Mamba, a snowy-weather object detection network built on Mamba-YOLO. First, a Snow Spat...
+
+### [SSLVNet: an explainable multi-modal hybrid framework integrating self-supervised learning and vision transformers for multi-label classification of retinal diseases](https://doi.org/10.3389/frai.2026.1937520)
+
+- **Authors:** M. Rithiga, R. K. Nadesh
+- **Date:** 2026-09-21
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
 - **Tags:** vision-transformer
-- **Abstract summary:** Precise recognition of low-altitude UAVs is critical for airspace security, yet current radar cross section (RCS)-based multimodal methods face challenges regarding limited local receptive fields, rigid temporal modeling, and inefficient fusion strategies, especially when dealing with nonlinear scattering patterns,...
+- **Abstract summary:** Introduction Retinal Diseases are the main reason for vision loss and blindness worldwide. Initial identification of retinal abnormalities is essential for avoiding severe retinal-related complications and improving patient results. Traditional retinal disease diagnosis mainly depends on manual checks of retinal fun...
 
-### [HACI-Net: A Hybrid Attention and Channel Interaction Network for Food Image Recognition](https://doi.org/10.21203/rs.3.rs-10598219/v1)
+### [YOLO FAMILY ARCHITECTURES FOR EXPLOSIVE OBJECT DETECTION IN EMBEDDED SYSTEMS OF AUTONOMOUS UNMANNED VEHICLES: A COMPARATIVE ANALYSIS](https://doi.org/10.26906/sunz.2026.3.123)
 
-- **Authors:** Zhiyong Xiao, Chaoliang Liu, Zhaohong Deng
-- **Date:** 2026-09-17
+- **Authors:** Oleksandr Skorlupin, Andrii Podorozhniak
+- **Date:** 2026-09-18
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision
+- **Abstract summary:** Relevance. The need to choose an effective YOLO architecture for explosive object detection in unmanned aerial vehicle embedded systems is driven by limited computational resources, real-time constraints, and energy efficiency requirements. The object of research is explosive object detection in embedded autonomous...
+
+### [Automatic segmentation of craniomaxillofacial complex and mandible in dental CBCT images using a TransUNet-based deep learning model](https://doi.org/10.1186/s12903-026-09971-3)
+
+- **Authors:** Zheng-Xing Lin, Zhong-yao Tian, Yu-yue Shao, Chang‐Yuan Zhang, Zhu Dan-Hong, Dong Zhang, et al.
+- **Date:** 2026-09-23
 - **Source:** openalex
 - **Relevance:** maybe (51/100)
 - **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** visual-representation
-- **Abstract summary:** No abstract available.
+- **Tags:** segmentation, metrics
+- **Abstract summary:** Accurate segmentation of craniomaxillofacial structures from cone beam computed tomography (CBCT) is essential for digital dentistry, but conventional manual and semi-automated methods are time-consuming and operator-dependent. This study aimed to develop and validate a TransUNet-based deep learning model for automa...
 
-### [A calibrated multi-scale transformer-based dual deep convolutional neural network framework for robust parasitic egg recognition across diverse microscopy conditions](https://doi.org/10.1016/j.compeleceng.2026.111492)
+### [An edge-adaptive vision-language framework for real-time open-set violence recognition in surveillance videos](https://doi.org/10.1038/s41598-026-72763-w)
 
-- **Authors:** Muhammad Bilal Zia, Xujuan Zhou, Raj Gururajan, Ka Ching Chan
-- **Date:** 2026-09-18
+- **Authors:** Beibei Bian, Donghui Zhang, Jiamu Bai
+- **Date:** 2026-09-22
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-language, edge-deployment
+- **Abstract summary:** Abstract Low-latency violent event detection is essential for intelligent edge surveillance. Current violent recognition models suffer three critical deployment drawbacks: prohibitive computational overhead from full fine‑tuning, inadequate temporal modeling for continuous video streams, and severe performance degra...
+
+### [DEEP LEARNING-DRIVEN IMAGE ENHANCEMENT AND LESION SEGMENTATION FOR IMPROVED DIAGNOSTIC ACCURACY IN NOISY MEDICAL IMAGES](https://doi.org/10.48161/qjms.v3n1a89)
+
+- **Authors:** Johan Winsli G. Felix, Zaripova Mukaddas Djumayozovna, Kamoliddin Rustamov
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** metrics
+- **Abstract summary:** Medical imaging technologies, including Computed Tomography (CT), Magnetic Resonance Imaging (MRI), and ultrasound, play a significant role in disease diagnosis and treatment planning. Therefore, medical images are sometimes affected by noise, low contrast, motion artifacts, and intensity variations that reduce imag...
+
+### [DEEP LEARNING-DRIVEN IMAGE ENHANCEMENT AND LESION SEGMENTATION FOR IMPROVED DIAGNOSTIC ACCURACY IN NOISY MEDICAL IMAGES](https://doi.org/10.48161/qjms.v3a89)
+
+- **Authors:** Johan Winsli G. Felix, Zaripova Mukaddas Djumayozovna, Kamoliddin Rustamov
+- **Date:** 2026-09-23
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** metrics
+- **Abstract summary:** Medical imaging technologies, including Computed Tomography (CT), Magnetic Resonance Imaging (MRI), and ultrasound, play a significant role in disease diagnosis and treatment planning. Therefore, medical images are sometimes affected by noise, low contrast, motion artifacts, and intensity variations that reduce imag...
+
+### [Laryngeal Structure Segmentation in High-Speed Videoendoscopy Using Deep Learning](https://arxiv.org/abs/2609.26636)
+
+- **Authors:** Sardar Nafis Bin Ali, Mohsen Zayernouri, Dimitar D. Deliyski, Maryam Naghibolhosseini
+- **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** The accurate identification of parasitic eggs in microscopic images remains a persistent challenge in both clinical and veterinary diagnostics. Existing manual examination techniques, while effective, are time-consuming, error prone, and difficult to standardize across diverse laboratory settings. Existing automated...
+- **Abstract summary:** Laryngeal high-speed videoendoscopy (HSV) offers an effective means of observing the motion of different laryngeal structures along with vibratory behaviors of the vocal folds under various voicing conditions. Segmentation of laryngeal tissues enables analysis of different tissue structures and their dynamics, helpi...

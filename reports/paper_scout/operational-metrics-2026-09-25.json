@@ -1,0 +1,524 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 10,
+    "non_promoted": 1,
+    "papers_attempted": 3,
+    "papers_successfully_assessed": 3,
+    "papers_walked": 8,
+    "promoted": 2,
+    "retry_eligible_failures": 5,
+    "skipped_before_model": 5,
+    "technical_failures": 5,
+    "unavailable_manuscripts": 5
+  },
+  "budget": {
+    "gemini_calls": 3,
+    "gemini_input_tokens": 54092,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 2766,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 3,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.02141465,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "computer_vision": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 3,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-09-25T09:25:44.498356+00:00",
+  "cost": {
+    "deepseek_calls": 3,
+    "deepseek_cost_usd": 0.02141465,
+    "deepseek_input_tokens": 53223,
+    "deepseek_output_tokens": 1455,
+    "gemini_calls": 3,
+    "gemini_input_tokens": 54092,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 2766,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 555,
+    "papers_discovered": 2415
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 18,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 341,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22889960",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22889960",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "LSG: A Lightweight Supervised Gate for Sub-Millisecond Agentic Memory Novelty Filtering",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.24971",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.24971",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DolphinBench: Mapping the Pareto Frontier of Agent Memory",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23449",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.23449",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "PSD: Pseudo Self-Distillation of Memory Representation Capabilities for LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23570",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.23570",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "VibeMemBench: Evaluating Memory Systems for Coding Agents on Real Repository Coding Tasks",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23315",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.23315",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Graph Memory for LLM Agents: At What Cost? A Comparative Evaluation of Query, Ingest, and Update Performance Across Graph Database Engines",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22865161",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22865161",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-23T09:08:43.101135+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Mem-Forever: a Git-native persistent memory layer for AI agents",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 1998,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22889960",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23449",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23570",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.23315",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22865161",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 65,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.1080/00038628.2026.2737179",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.1080/00038628.2026.2737179",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A deep learning-expert hybrid framework for interpreting interior and architectural design styles in cultural heritage contexts",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1016/j.talanta.2026.130638",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.1016/j.talanta.2026.130638",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A deep learning-assisted whole-cell biosensor for catechol monitoring: Synergizing BphC recognition with a multi-feature fusion vision transformer",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:1506.02640",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:1506.02640",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "You Only Look Once: Unified, Real-Time Object Detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.21037/qims-2026-0730",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.21037/qims-2026-0730",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Deep learning-based segmentation, grading and genotype classification of glioma: a literature analysis",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.3390/s26196028",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.3390/s26196028",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "YOLO-Spectra-Net: Reliability-Aware RGB\u2013Infrared Fusion for Robust Object Detection Under Adverse Conditions",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22909063",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22909063",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "When Does Non-Maximum Suppression Remove Touching Objects? A Geometric Analysis of Snooker Ball Detection with Implications for Real-Time Detector Design and Evaluation",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 176,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.1080/00038628.2026.2737179",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.1016/j.talanta.2026.130638",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.21037/qims-2026-0730",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.3390/s26196028",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22909063",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 14,
+        "high_relevance": 141,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22894142",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22894142",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-24T09:04:05.297474+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Continuous Novel Discovery: The Minimum Configuration for Artificial Superintelligence",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.09.22.753641",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.64898/2026.09.22.753641",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "An AI-ready compositional framework for mechanistic aging research and in silico intervention testing",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.55630/dipp.2026.16.16",
+            "rank": 23,
+            "selection": {
+              "canonical_id": "doi:10.55630/dipp.2026.16.16",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Enhancing Scientific Heritage Access Through AI-Powered Assistants and Collaboration Platforms in Academic Ecosystems",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.20944/preprints202609.0402.v1",
+            "rank": 24,
+            "selection": {
+              "canonical_id": "doi:10.20944/preprints202609.0402.v1",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Agent and Tool Search: Foundations, Techniques, and Open Challenges",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.02253",
+            "rank": 25,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.02253",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.17863/cam.134096",
+            "rank": 26,
+            "selection": {
+              "canonical_id": "doi:10.17863/cam.134096",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "(Human) Attention Is (Still) All You Need: Human Oversight Makes Ai-Assisted Social Science",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 233,
+        "retry_blocked": 6,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22894142",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.09.22.753641",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.20944/preprints202609.0402.v1",
+            "outcome": "track_slot_consumed",
+            "rank": 24
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.02253",
+            "outcome": "track_slot_consumed",
+            "rank": 25
+          },
+          {
+            "canonical_id": "doi:10.17863/cam.134096",
+            "outcome": "track_slot_consumed",
+            "rank": 26
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 8,
+        "high_relevance": 8,
+        "nominated": [],
+        "ranked": 8,
+        "retry_blocked": 0,
+        "skipped_before_model": [],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-09-25T09:24:53.846466+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

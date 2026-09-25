@@ -24,7 +24,7 @@
           <h1>DolphinBench: Mapping the Pareto Frontier of Agent Memory</h1>
           <p class="hero-copy">Soumil Rathi, Deshraj Yadav, Taranjeet Singh</p>
           <div class="paper-detail-actions">
-            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2609.24971">Open paper</a>
+            <a class="paper-link" href="https://arxiv.org/abs/2609.24971">Open paper</a>
             <a class="paper-detail-link" href="dolphinbench-mapping-the-pareto-frontier-of-agent-memory-a658d5fa.json">Download paper JSON</a>
           </div>
         </header>
@@ -47,7 +47,7 @@
           <section class="detail-panel">
             <p class="section-kicker">Sources</p>
             <ul><li>OpenAlex</li><li>arXiv</li></ul>
-            <div class="secondary-links"><a href="https://arxiv.org/abs/2609.24971">arXiv</a><a href="https://openalex.org/W7214043592">OpenAlex</a></div>
+            <div class="secondary-links"><a href="https://doi.org/10.48550/arxiv.2609.24971">DOI</a><a href="https://openalex.org/W7214043592">OpenAlex</a></div>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Why included</p>
@@ -59,16 +59,203 @@
             <p>Agents today often take real-world actions that depend on long-term memory and context recall over time. However, most current memory benchmarks are built for a conversational question-answer format, where the question itself signals that some fact must be retrieved, and often which one. Moreover, benchmarks rarely...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>DolphinBench addresses recognized methodology shortcomings in current memory benchmarks (such as prompt retrieval leakage and unverified solvability) with a sound verification loop and multi-dimensional Pareto reporting. The empirical study across model and memory system permutations is sound and complete for a benchmark contribution.</p>
+      <p>The authors explicitly discuss key constraints, including reliance on synthetic dialogue histories, coverage restricted to three knowledge-work roles, simulated app APIs rather than live web services, modest task action depths, and separated rather than continuous/interleaved ingestion and testing.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-25T09:25:08.285478+00:00.</p>
+        <p>Coverage: 29617 of 29617 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Agents today often take real world actions which depend on long
+term memory and context recall over time. However, most current
+memorybenchmarksarebuiltforaconversationalquestion-answer
+format, where the question itself signals that some fact must be
+retrieved, and often which one. Moreover, benchmarks rarely re-
+quire anything beyond accuracy from submissions, allowing mem-
+ory systems to make unreasonable cost/time tradeoffs to achieve
+higher scores. We present DolphinBench, a benchmark that evalu-
+atesmemorydirectlythroughanagent&#x27;staskcompletion.Dolphin-
+Bench includes three knowledge-work personas with roughly 500k
+tokens of user messages per persona and evaluates agents on tasks
+which depend on information from that history. We verify all 200
+tasks per persona by running an agent with and without the rele-
+vanthistory,requiringsuccesswithitandfailurewithoutit.Finally,
+we require </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cost,
+andlatency.Asystemcanachievehighaccuracy,forinstance,
+by re-reading the entire history at each query with frontier
+models,incurring significantlatencyand computecoststhat
+a production deployment could not sustain. We therefore re-
+quireeveryresulttoreporttotalcostandmediantasklatency
+alongside accuracy.
+Second,becausemostbenchmarksaregeneratedsyntheti-
+callyandatscale,theyarepronetodefects:incorrectanswer
+keys,mislabeledsupportingevidence,andquestionsthatare
+unanswerableevengiventhecompletehistory[12,17].Most
+benchmarks do not establish that each of their tests is actu-
+allysolvablebyacapableagentwithperfectmemory,which
+imposes an unknown ceiling on every reported score in case
+ofsuchdefects.WethereforeverifyeveryDolphinBenchtest
+using an agent with oracle memory: we provide the rele-
+vant history and require the agent to complete the task, then
+withhold that history and require </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>it to fail. This checks that
+the task can be completed and that withholding the history
+affects success.
+We introduce DolphinBench, a benchmark that evaluates
+agent memory through real world simulated actions. Dol-
+phinBenchdefinesthreeknowledge-workpersonas:astartup
+CEO,aninfrastructureengineer,andaproductmanager.We
+thensimulateyearsofconversation(userinputandtasks)for
+each persona with their agent. An agent processes this his-
+tory and is then issued tasks whose correct actions depend
+on specific pieces of information within the session history.
+Together, these choices give DolphinBench three proper-
+ties that existing memory benchmarks do not combine: tests
+that evaluate memory through action rather than recall, re-
+sults that report cost and latency alongside accuracy, and
+verification of every test through agent runs with and with-
+1
+arXiv:2609.24971v2  [cs.CL]  22 Sep 2026</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AnindependentauditofLoCoMo[17]reportedincorrectan-
+swersfor99of1,540non-adversarialquestions(6.4%).Other
+popular benchmarks contain similar issues. LongMemEval
+contains ground-truth arithmetic errors and mislabeled evi-
+dence, surfaced as GitHub issues by the community [12].
+Careful pipeline construction reduces error rates but does
+not eliminate them, so BEAM [24] adds human review,
+checking that every question is answerable. However, a test
+can pass that review and still be solvable without any mem-
+ory, and then every system gets it right whether its memory
+works or not. Every DolphinBench test therefore has to fail
+without the relevant sessions as well as pass with them. We
+verify both automatically before a test ships, as described in
+the Test Construction section.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DolphinBench is a benchmark built to evaluate agents on
+their memory which directly tests task success. The bench-
+markcoversthreepersonas:Morgan,astartupCEO;Alex,an
+infrastructureengineer;andRiley,aproductmanager.These
+were chosen to have a wide coverage of different tools/apps
+the agent would use, queries across different task types, and
+thus different memory access patterns as well.
+Each persona has a simulated history spanning several
+years, with 3,400–5,128 user messages totalling approxi-
+mately 500k tokens1. The agents go through this simulated
+history,afterwhichtheyaretestedontasksthatrequireinfor-
+mationfromwithinthosesimulatedsessions.Thebenchmark
+contains600tests,200perpersona.Toolcallsandapps(No-
+tion,Gmail,GitHub,etc.)arebothsimulatedtoreproducibly
+test real world actions [28, 31].
+Worked example.Morgan test 001:
+History.In a January session, Morgan mentions a </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MEMTRACK [5]✓ ✗ ✗
+DolphinBench (ours)✓ ✓ ✓
+Table 1: Memory benchmarks compared on the three properties an action-based memory evaluation requires.✓: yes,✗: no,
+∼: partial: alatency but no cost;blatency only in an appendix;ctoken counts as the only cost signal, no latency;dactions in a
+story/text-gamesettingratherthanappstate; echeckstaskdesignandinformationdisclosureafterevaluation; ftimingandtoken
+counts, but no monetary cost;gmonetary cost but no latency.
+ordertosucceed,andanLLMjudgechecksthattherestaurant
+is Blue Bottle.
+The request specifies the drink, size, and pickup, but not
+the cafe. The agent must use Morgan&#x27;s earlier preference to
+choose where to place the order.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>against the source
+messages before verification.
+Test Verification
+For each test, we provide the original history messages
+needed to complete it as oracle messages. We run the test
+twice with GPT-5.6-Luna given these oracle messages, and
+twice without them (Figure 2). The task, tools, and starting
+app records remain the same. Both runs with history must
+passeverygradingcheck,andbothrunswithouthistorymust
+fail.
+We inspect the runs to check that failure without history
+reflectsmissinginformationratherthantoolerrorsordefects
+in the test. We revise candidates that fail these checks and
+exclude those that do not meet the acceptance conditions.
+4
+Cost ($)
+Harness Agent model Memory system Accuracy (%) Agent Memory system Total Median latency (s)
+Hermes GPT-5.6-Luna Built-in memory 65.67 61.48 0.0061.4844.35
+Mem070.6761.54 34.68 96.2137.69
+Honcho 68.50 96.56 46.30 142.85 44.66
+Hindsight 69.50 </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>57.99 26.66 84.65 55.31
+Supermemory 59.17 63.86 281.79 345.64 52.68
+Hermes MiniMax M3 Built-in memory 26.50 107.03 0.00107.0351.40
+Mem047.83111.71 36.31 148.0246.95
+Honcho 47.33 168.39 43.46 211.85 80.33
+Hindsight 41.00 119.51 38.82 158.33 144.28
+Supermemory 20.00 111.68 386.02 497.70 137.52
+Claude Code Claude Sonnet 5 Built-in memory 26.33 1,132.75 0.001,132.75 32.19
+Mem0 32.33 1,803.63 26.94 1,830.57 42.30
+Honcho35.831,556.02 9.79 1,565.82 37.92
+Table 2: Results on DolphinBench: comparing the accuracy, cost, and latency of agents using different memory systems across
+600 tasks spanning three personas. Bold marks the highest accuracy, lowest total cost, and lowest median latency within each
+harness–model group.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We grade task completion by checking the agent&#x27;s tool calls
+against the actions and results required by the task. During
+testconstruction,wechoosehowtocheckeachrequirement:
+•We use an LLM judge [29] (GPT-5.6-Sol) when check-
+ing a requirement requires interpreting meaning, such
+as whether an email conveys a particular decision. The
+judge receives the user&#x27;s request and the arguments of
+the tool call being checked, and is instructed to accept
+equivalent wording.
+•We use deterministic checks when a requirement can
+be tested directly, such as whether a required tool was
+called or whether an identifier, number, date, or list
+matches the required value.
+The checks must establish that each required action was
+completed correctly. For example, an email must have both
+thecorrectrecipientandtherequiredcontentinthesamesend
+call; satisfying those checks across different emails does not
+count. If a </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>task requires two separate emails, one send call
+cannot count as both. A task passes only when every check
+passes.
+Every submission must report accuracy, total cost across
+ingestion and testing, and median task latency. We calculate
+accuracy as the fraction of tasks passed and take the median
+of the individual test latencies across all personas.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Weevaluateagentswithdifferentcombinationsofharnesses,
+language models, and memory systems. Table 2 reports the
+accuracy, cost, and latency of each combination.
+Accuracy is the percentage of tasks passed. Total cost
+covers ingestion and testing, including memory processing.
+Latency is the median time per test, including tool use.
+Memory performance reflects the capabilities of the
+model, the harness, and the memory system working to-
+gether. With Hermes [15] and Mem0 [4], accuracy reaches
+70.67% with GPT-5.6-Luna, compared with 47.83% with
+MiniMax M3. The memory systems also rank differently
+across configurations: Mem0 scores highest with both Her-
+mes models, while Honcho [18] scores highest with Claude
+Code [2] and Claude Sonnet 5.
+Higher accuracy need not require longer response times.
+With Hermes and GPT-5.6-Luna, Mem0 improves accuracy
+over built-in memory by five percentage points </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Synthetic data.We generate conversation histories rather
+than collect them from real users. These histories may not
+capture the variety of writing styles, languages, and inter-
+action patterns found in real conversations. Checking facts
+against source messages and verifying the tests helps catch
+errors, but inconsistencies may remain.
+Domain coverage.Three personas cover only a small part
+of knowledge work. They exercise different tools and mem-
+ory requirements, but do not represent domains such as law,
+medicine, or long-term customer support. The construction
+pipeline supports adding personas to broaden this coverage.
+Simulated environment.Agents interact with simulated
+appsratherthanliveservices.Theappssupportselectedop-
+erationsanderrors,butdonotreproducethefullbehaviorof
+production systems, including service outages and </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>changes
+madebyotherusersduringatask.Thismakesthetasksrepro-
+ducible while leaving some difficulties of real deployments
+untested.
+Task length.Each task requires one to four separately
+graded actions, though agents may make additional calls to
+findinformationorcorrectmistakes.Thesetaskstestwhether
+agentsuserememberedinformationcorrectlywithoutrequir-
+inglongworkflows.Longertaskswouldextendtheevaluation
+to using memory across many dependent steps.
+Separate ingestion and testing.Agents process the full
+history before taking any tests. This lets us compare agents
+againstthesamecompletedhistory,butdoesnottesthowthey
+handle new conversations and tasks arriving throughout an
+ongoingevaluation.Interleavingingestionandtestingwould
+better represent that continuous use.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +294,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +310,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-23</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-24 08:59:03</li><li>Last seen by Paper Scout: 2026-09-24 08:59:03</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-25</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-24 08:59:03</li><li>Last seen by Paper Scout: 2026-09-25 09:20:11</li></ul>
             <ul><li>DOI: 10.48550/arxiv.2609.24971</li><li>arXiv: 2609.24971</li><li>OpenAlex: W7214043592</li><li>OpenAlex IDs: W7214043592</li><li>arXiv IDs: 2609.24971</li></ul>
           </section>
           <section class="detail-panel">
@@ -131,7 +318,7 @@
             <p><a href="dolphinbench-mapping-the-pareto-frontier-of-agent-memory-a658d5fa.json">Download paper JSON</a></p>
             <details class="paper-more">
               <summary>Citation text</summary>
-              <p>DolphinBench: Mapping the Pareto Frontier of Agent Memory. Soumil Rathi, Deshraj Yadav, Taranjeet Singh. 2026-09-21. https://doi.org/10.48550/arxiv.2609.24971</p>
+              <p>DolphinBench: Mapping the Pareto Frontier of Agent Memory. Soumil Rathi, Deshraj Yadav, Taranjeet Singh. 2026-09-21. https://arxiv.org/abs/2609.24971</p>
             </details>
           </section>
         </section>

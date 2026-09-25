@@ -64,16 +64,244 @@
             <p>We present YOLO, a new approach to object detection. Prior work on object detection repurposes classifiers to perform detection. Instead, we frame object detection as a regression problem to spatially separated bounding boxes and associated class probabilities. A single neural network predicts bounding boxes and cla...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents an influential, thoroughly detailed architecture with extensive quantitative evaluations across speed, accuracy, error profiles, and out-of-domain generalization.</p>
+      <p>The authors document key spatial constraints of the grid, difficulty detecting small or clustered objects, struggles with unusual aspect ratios, and inferior localization accuracy compared to leading multi-stage detectors.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-25T09:25:21.087487+00:00.</p>
+        <p>Coverage: 41763 of 41763 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We present YOLO, a new approach to object detection.
+Prior work on object detection repurposes classifiers to per-
+form detection. Instead, we frame object detection as a re-
+gression problem to spatially separated bounding boxes and
+associated class probabilities. A single neural network pre-
+dicts bounding boxes and class probabilities directly from
+full images in one evaluation. Since the whole detection
+pipeline is a single network, it can be optimized end-to-end
+directly on detection performance.
+Our unified architecture is extremely fast. Our base
+YOLO model processes images in real-time at 45 frames
+per second. A smaller version of the network, Fast YOLO,
+processes an astounding 155 frames per second while
+still achieving double the mAP of other real-time detec-
+tors. Compared to state-of-the-art detection systems, YOLO
+makes more localization errors but is less likely to </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>straight from image pixels to bounding box coordi-
+nates and class probabilities. Using our system, you only
+look once (YOLO) at an image to predict what objects are
+present and where they are.
+YOLO is refreshingly simple: see Figure 1. A sin-
+gle convolutional network simultaneously predicts multi-
+ple bounding boxes and class probabilities for those boxes.
+YOLO trains on full images and directly optimizes detec-
+tion performance. This unified model has several benefits
+over traditional methods of object detection.
+First, YOLO is extremely fast. Since we frame detection
+as a regression problem we don&#x27;t need a complex pipeline.
+We simply run our neural network on a new image at test
+time to predict detections. Our base network runs at 45
+frames per second with no batch processing on a Titan X
+GPU and a fast version runs at more than 150 fps. This
+means we can process streaming video in </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We unify the separate components of object detection
+into a single neural network. Our network uses features
+from the entire image to predict each bounding box. It also
+predicts all bounding boxes across all classes for an im-
+age simultaneously. This means our network reasons glob-
+ally about the full image and all the objects in the image.
+The YOLO design enables end-to-end training and real-
+time speeds while maintaining high average precision.
+Our system divides the input image into an S×S grid.
+If the center of an object falls into a grid cell, that grid cell
+is responsible for detecting that object.
+Each grid cell predictsB bounding boxes and confidence
+scores for those boxes. These confidence scores reflect how
+confident the model is that the box contains an object and
+also how accurate it thinks the box is that it predicts. For-
+mally we define confidence as Pr(Object)∗ </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>confidence predictions,
+Pr(Classi|Object)∗ Pr(Object)∗ IOUtruth
+pred = Pr( Classi)∗ IOUtruth
+pred (1)
+which gives us class-specific confidence scores for each
+box. These scores encode both the probability of that class
+appearing in the box and how well the predicted box fits the
+object.
+S × S grid on input
+Bounding boxes + confidence
+Class probability map
+Final detections
+Figure 2: The Model. Our system models detection as a regres-
+sion problem. It divides the image into an S × S grid and for each
+grid cell predicts B bounding boxes, confidence for those boxes,
+and C class probabilities. These predictions are encoded as an
+S × S × (B ∗ 5 + C) tensor.
+For evaluating YOLO on PASCAL VOC, we useS = 7 ,
+B = 2 . P ASCAL VOC has 20 labelled classes so C = 20 .
+Our final prediction is a 7× 7× 30 tensor.</blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>each object. We assign one predictor
+to be &quot;responsible&quot; for predicting an object based on which
+prediction has the highest current IOU with the ground
+truth. This leads to specialization between the bounding box
+predictors. Each predictor gets better at predicting certain
+sizes, aspect ratios, or classes of object, improving overall
+recall.
+During training we optimize the following, multi-part
+loss function:
+λcoord
+S2
+∑
+i=0
+B∑
+j=0
+1 obj
+ij
+[
+(xi− ˆxi)2 + (yi− ˆyi)2
+]
++λcoord
+S2
+∑
+i=0
+B∑
+j=0
+1 obj
+ij
+[(√wi−
+√
+ˆwi
+)2
++
+(√
+hi−
+√
+ˆhi
+)2]
++
+S2
+∑
+i=0
+B∑
+j=0
+1 obj
+ij
+(
+Ci− ˆCi
+)2
++λnoobj
+S2
+∑
+i=0
+B∑
+j=0
+1 noobj
+ij
+(
+Ci− ˆCi
+)2
++
+S2
+∑
+i=0
+1 obj
+i
+∑
+c∈classes
+(pi(c)− ˆpi(c))2 (3)
+where 1 obj
+i denotes if object appears in cell i and 1 obj
+ij de-
+notes that the jth bounding box predictor in cell i is &quot;re-
+sponsible&quot; for that prediction.
+Note that the loss function only penalizes </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YOLO imposes strong spatial constraints on bounding
+box predictions since each grid cell only predicts two boxes
+and can only have one class. This spatial constraint lim-
+its the number of nearby objects that our model can pre-
+dict. Our model struggles with small objects that appear in
+groups, such as flocks of birds.
+Since our model learns to predict bounding boxes from
+data, it struggles to generalize to objects in new or unusual
+aspect ratios or configurations. Our model also uses rela-
+tively coarse features for predicting bounding boxes since
+our architecture has multiple downsampling layers from the
+input image.
+Finally, while we train on a loss function that approxi-
+mates detection performance, our loss function treats errors
+the same in small bounding boxes versus large bounding
+boxes. A small error in a large box is generally benign but a
+small error in a small box has a much </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>greater effect on IOU.
+Our main source of error is incorrect localizations.</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>slower than YOLO. It is use-
+ful for comparison to other detection systems that rely on
+VGG-16 but since it is slower than real-time the rest of the
+paper focuses on our faster models.
+Fastest DPM effectively speeds up DPM without sacri-
+ficing much mAP but it still misses real-time performance
+by a factor of 2 [38]. It also is limited by DPM&#x27;s relatively
+low accuracy on detection compared to neural network ap-
+proaches.
+R-CNN minus R replaces Selective Search with static
+bounding box proposals [20]. While it is much faster than
+Real-Time Detectors Train mAP FPS
+100Hz DPM [31] 2007 16.0 100
+30Hz DPM [31] 2007 26.1 30
+Fast YOLO 2007+2012 52.7 155
+YOLO 2007+2012 63.4 45
+Less Than Real-Time
+Fastest DPM [38] 2007 30.4 15
+R-CNN Minus R [20] 2007 53.5 6
+Fast R-CNN [14] 2007+2012 70.0 0.5
+Faster R-CNN VGG-16[28] 2007+2012 73.2 7
+Faster R-CNN ZF [28] 2007+2012 62.1 18
+YOLO VGG-16 2007+2012 66.4 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>21
+Table 1: Real-Time Systems on PASCAL VOC 2007. Compar-
+ing the performance and speed of fast detectors. Fast YOLO is
+the fastest detector on record for P ASCAL VOC detection and is
+still twice as accurate as any other real-time detector. YOLO is
+10 mAP more accurate than the fast version while still well above
+real-time in speed.
+R-CNN, it still falls short of real-time and takes a significant
+accuracy hit from not having good proposals.
+Fast R-CNN speeds up the classification stage of R-CNN
+but it still relies on selective search which can take around
+2 seconds per image to generate bounding box proposals.
+Thus it has high mAP but at 0.5 fps it is still far from real-
+time.
+The recent Faster R-CNN replaces selective search with
+a neural network to propose bounding boxes, similar to
+Szegedy et al. [8] In our tests, their most accurate model
+achieves 7 fps while a smaller, less </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>performance
+boost.
+VOC 2012 test mAP aero bike bird boat bottle bus car cat chair cow table dog horse mbike personplant sheep sofa train tv
+MR CNN MORE DATA [11] 73.9 85.5 82.9 76.6 57.8 62.7 79.4 77.2 86.6 55.0 79.1 62.2 87.0 83.4 84.7 78.9 45.3 73.4 65.8 80.3 74.0
+HyperNet VGG 71.4 84.2 78.5 73.6 55.6 53.7 78.7 79.8 87.7 49.6 74.9 52.1 86.0 81.7 83.3 81.8 48.6 73.5 59.4 79.9 65.7
+HyperNet SP 71.3 84.1 78.3 73.3 55.5 53.6 78.6 79.6 87.5 49.5 74.9 52.1 85.6 81.6 83.2 81.6 48.4 73.2 59.3 79.7 65.6
+Fast R-CNN + YOLO 70.7 83.4 78.5 73.5 55.8 43.4 79.1 73.1 89.4 49.4 75.5 57.0 87.5 80.9 81.0 74.7 41.8 71.5 68.5 82.1 67.2
+MR CNN S CNN [11] 70.7 85.0 79.6 71.5 55.3 57.7 76.0 73.9 84.6 50.5 74.3 61.7 85.5 79.9 81.7 76.4 41.0 69.0 61.2 77.7 72.1
+Faster R-CNN [28] 70.4 84.9 79.8 74.3 53.9 49.8 77.5 75.9 88.5 45.6 77.1 55.3 86.9 81.7 80.9 79.6 40.1 72.6 60.9 81.2 61.5
+DEEP ENS COCO 70.1 84.0 79.4 </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YOLO is a fast, accurate object detector, making it ideal
+for computer vision applications. We connect YOLO to a
+webcam and verify that it maintains real-time performance,
+Poselets
+RCNN
+D&amp;T
+Humans
+DPM
+YOLO
+(a) Picasso Dataset precision-recall curves.
+VOC 2007 Picasso People-Art
+AP AP Best F1 AP
+YOLO 59.2 53.3 0.590 45
+R-CNN 54.2 10.4 0.226 26
+DPM 43.2 37.8 0.458 32
+Poselets [2] 36.5 17.8 0.271
+D&amp;T [4] - 1.9 0.051
+(b) Quantitative results on the VOC 2007, Picasso, and People-Art Datasets.
+The Picasso Dataset evaluates on both AP and best F1 score.
+Figure 5: Generalization results on Picasso and People-Art datasets.
+Figure 6: Qualitative Results. YOLO running on sample artwork and natural images from the internet. It is mostly accurate although it
+does think one person is an airplane.
+including the time to fetch images from the camera and dis-
+play the detections.
+The resulting system is </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +340,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

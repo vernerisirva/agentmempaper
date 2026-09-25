@@ -1,17 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-24](2026-09-24.md).
+Latest daily digest: [2026-09-25](2026-09-25.md).
 
-# Paper Scout Digest - 2026-09-24
+# Paper Scout Digest - 2026-09-25
 
 ## Run Summary
 
-- **Run ID:** 95
+- **Run ID:** 96
 - **Candidates fetched:** 100
-- **New unique papers:** 95
-- **Relevant:** 9
-- **Maybe relevant:** 5
-- **Irrelevant:** 86
+- **New unique papers:** 99
+- **Relevant:** 8
+- **Maybe relevant:** 4
+- **Irrelevant:** 88
 - **Source summary:** openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
@@ -27,38 +27,28 @@ Latest daily digest: [2026-09-24](2026-09-24.md).
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
-- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [Continuous Novel Discovery: The Minimum Configuration for Artificial Superintelligence](https://doi.org/10.5281/zenodo.22894142)
+### [An AI-ready compositional framework for mechanistic aging research and in silico intervention testing](https://doi.org/10.64898/2026.09.22.753641)
 
-- **Authors:** Franny Philos Sophia
-- **Date:** 2026-09-22
+- **Authors:** Minja Belić, David Furman
+- **Date:** 2026-09-23
 - **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Every existing definition of artificial superintelligence (ASI) inherits an unmeasurable baseline —the upper limit of human cognitive ability. We propose a definition that avoids this dependency:ASI is continuous novel discovery, a self-sustaining loop in which a system expands its knowledgespace by discovering what...
-
-### [Continuous Novel Discovery: The Minimum Configuration for Artificial Superintelligence](https://doi.org/10.5281/zenodo.22894141)
-
-- **Authors:** Franny Philos Sophia
-- **Date:** 2026-09-22
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Every existing definition of artificial superintelligence (ASI) inherits an unmeasurable baseline —the upper limit of human cognitive ability. We propose a definition that avoids this dependency:ASI is continuous novel discovery, a self-sustaining loop in which a system expands its knowledgespace by discovering what...
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Aging is a network-level phenomenon, with its hallmarks interacting through dense feedback loops across vastly different timescales. Decades of reductionist research have produced thousands of mechanistic models of narrow subsystems, but no straightforward way to integrate them into one comprehensive system. Consequ...
 
 ## Maybe Relevant
 
-### [XScientist: A Git-Like Research Protocol for Long-Running Autonomous Scientific Discovery](https://doi.org/10.66977/xsci.2609.0003)
+### [Recursive self-improvement of AI research agents](https://doi.org/10.48550/arxiv.2609.26457)
 
-- **Authors:** Jixiang Luo
-- **Date:** 2026-07-14
+- **Authors:** Dhruv Srikanth, Bingchen Zhao, Dixing Xu, Yuxiang Wu, Zheng‐Yao Jiang
+- **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** maybe (51/100)
 - **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** research-memory
-- **Abstract summary:** Autonomous research systems can generate plausible papers while losing the decisions, failed branches, and evidence needed to inspect or continue the work. We present XScientist, a local-first, git-like protocol that treats research state, rather than a manuscript, as the unit of continuation. Hypotheses, experiment...
+- **Tags:** deep-research-agents
+- **Abstract summary:** AI agents are beginning to automate research and development across the AI stack, from improving training efficiency to optimizing inference. A natural next step is to improve the research efficiency of the agents themselves. When an AI research agent's own code is the object of optimization, each accepted rewrite b...

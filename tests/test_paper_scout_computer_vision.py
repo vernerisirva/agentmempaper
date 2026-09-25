@@ -900,9 +900,9 @@ class WorkflowIntegration(unittest.TestCase):
         Every scheduled bootstrap therefore passes --allow-unresolved, which reports loudly
         and exits 0. Pinned for both workflows and every track, not just this one.
         """
-        for name in ("paper-scout.yml", "paper-scout-backfill.yml"):
+        for name, job_id in (("paper-scout.yml", "scout"), ("paper-scout-backfill.yml", "backfill")):
             workflow, _ = self.workflow(name)
-            job = next(iter(workflow["jobs"].values()))
+            job = workflow["jobs"][job_id]
             for step in job["steps"]:
                 for line in (step.get("run") or "").splitlines():
                     if "ingest-seeds" in line and not line.strip().startswith("#"):
@@ -1043,9 +1043,9 @@ class WorkflowIntegration(unittest.TestCase):
                               if line.startswith("::")]), 1, printed)
 
     def test_every_state_path_is_checkpointed_before_it_is_persisted(self):
-        for name in ("paper-scout.yml", "paper-scout-backfill.yml"):
+        for name, job_id in (("paper-scout.yml", "scout"), ("paper-scout-backfill.yml", "backfill")):
             workflow, _ = self.workflow(name)
-            job = next(iter(workflow["jobs"].values()))
+            job = workflow["jobs"][job_id]
             commands = "\n".join(step.get("run", "") for step in job["steps"])
             for path in STATE_PATHS:
                 self.assertIn(path, commands, f"{name} does not checkpoint {path}")

@@ -21,16 +21,23 @@ name: Paper Scout
 # usual daily maximum stays below the ceiling. This workflow and the weekly backfill share
 # one concurrency group with cancel-in-progress false and queue max, which is what keeps a
 # single writer on the durable state.
+
+# The external 06:00 Stockholm trigger is identified by this title; the guard below reads it.
+# Keep the condition identical to IS_DAILY_RUN (run-name cannot read env).
+run-name: ${{ inputs.trigger == 'daily' && !inputs.deploy_only && 'Paper Scout (daily trigger)' || 'Paper Scout' }}
+
 on:
   schedule:
-    # 04:00 UTC is 06:00 in Europe/Helsinki (UTC+2), weekdays only.
+    # The daily run is meant for 06:00 Europe/Stockholm on weekdays. GitHub runs cron on
+    # a best-effort queue and has never started this repository's scheduled run near its
+    # nominal time: observed starts are four to six hours late whatever the cron says.
+    # So the primary trigger is external: a cron-job.org job in the Europe/Stockholm
+    # timezone dispatches this workflow at 06:00 with `trigger: daily`, which starts
+    # within seconds and follows summer time on its own.
     #
-    # GitHub runs cron on a best-effort queue and has never started this repository's
-    # scheduled run near its nominal time: with a 06:20 UTC cron, observed starts across
-    # nine runs ranged from 10:50 to 12:52 UTC, a consistent four-to-six hour delay. An
-    # earlier cron moves the queue position earlier but cannot promise an arrival time.
-    # If the run must land by a given hour, trigger it on a self-hosted schedule and use
-    # workflow_dispatch, because this trigger cannot guarantee it.
+    # This cron is only the fallback for a day the external trigger does not fire. The
+    # daily-guard job makes whichever of the two arrives second skip once the other has
+    # succeeded, so a normal day still assesses exactly once.
     - cron: "0 4 * * 1-5"
   workflow_dispatch:
     inputs:
@@ -42,6 +49,11 @@ on:
         description: "Run the bounded scientific-assessment stage (scheduled runs always do)"
         type: boolean
         default: false
+      trigger:
+        description: "Set to daily only by the external 06:00 Stockholm scheduler"
+        type: choice
+        options: [manual, daily]
+        default: manual
       allow_state_initialize:
         description: "FIRST RUN ONLY: create empty state when no private snapshot exists"
         type: boolean
@@ -51,6 +63,13 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  # Read-only run history for the daily guard, which also re-checks inside the scout job.
+  actions: read
+
+env:
+  # A daily run is the GitHub cron or the external 06:00 Stockholm dispatch. A deploy_only
+  # dispatch assesses nothing, so it neither counts as the day's run nor is skipped.
+  IS_DAILY_RUN: ${{ github.event_name == 'schedule' || (inputs.trigger == 'daily' && !inputs.deploy_only) }}
 
 concurrency:
   group: paper-scout-${{ github.ref }}
@@ -58,20 +77,48 @@ concurrency:
   queue: max
 
 jobs:
+  daily-guard:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      skip: ${{ steps.guard.outputs.skip }}
+    steps:
+      - name: Check out the guard script
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+      - name: Skip if today's daily run already succeeded
+        id: guard
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/daily_run_guard.py
+
   scout:
+    needs: daily-guard
+    if: ${{ needs.daily-guard.outputs.skip != 'true' }}
     runs-on: ubuntu-latest
     env:
       # The `inputs` context exists only for workflow_dispatch; on a schedule trigger it
       # is null, so gating the scientific steps on `inputs.run_assessment` alone silently
-      # skipped them on exactly the runs the schedule exists for. A scheduled run assesses
-      # by default; a manual run still has to ask for it.
-      RUN_ASSESSMENT: ${{ github.event_name == 'schedule' || inputs.run_assessment }}
+      # skipped them on exactly the runs the schedule exists for. A daily run, from either
+      # trigger, assesses by default; any other manual run still has to ask for it.
+      RUN_ASSESSMENT: ${{ github.event_name == 'schedule' || inputs.trigger == 'daily' || inputs.run_assessment }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      # A partial re-run ("Re-run failed jobs", "Re-run job") does not re-run daily-guard
+      # and replays its first-attempt decision, so the job that spends money checks for
+      # itself before any side effect.
+      - name: Re-check the daily guard
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/daily_run_guard.py --enforce
 
       - name: Set up Python
         uses: actions/setup-python@v5

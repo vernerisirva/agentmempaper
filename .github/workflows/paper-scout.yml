@@ -23,7 +23,8 @@ name: Paper Scout
 # single writer on the durable state.
 
 # The external 06:00 Stockholm trigger is identified by this title; the guard below reads it.
-run-name: ${{ inputs.trigger == 'daily' && 'Paper Scout (daily trigger)' || 'Paper Scout' }}
+# Keep the condition identical to IS_DAILY_RUN (run-name cannot read env).
+run-name: ${{ inputs.trigger == 'daily' && !inputs.deploy_only && 'Paper Scout (daily trigger)' || 'Paper Scout' }}
 
 on:
   schedule:
@@ -62,6 +63,13 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  # Read-only run history for the daily guard, which also re-checks inside the scout job.
+  actions: read
+
+env:
+  # A daily run is the GitHub cron or the external 06:00 Stockholm dispatch. A deploy_only
+  # dispatch assesses nothing, so it neither counts as the day's run nor is skipped.
+  IS_DAILY_RUN: ${{ github.event_name == 'schedule' || (inputs.trigger == 'daily' && !inputs.deploy_only) }}
 
 concurrency:
   group: paper-scout-${{ github.ref }}
@@ -84,7 +92,6 @@ jobs:
       - name: Skip if today's daily run already succeeded
         id: guard
         env:
-          IS_DAILY_RUN: ${{ github.event_name == 'schedule' || inputs.trigger == 'daily' }}
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 .github/scripts/daily_run_guard.py
 
@@ -104,6 +111,14 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      # A partial re-run ("Re-run failed jobs", "Re-run job") does not re-run daily-guard
+      # and replays its first-attempt decision, so the job that spends money checks for
+      # itself before any side effect.
+      - name: Re-check the daily guard
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/daily_run_guard.py --enforce
 
       - name: Set up Python
         uses: actions/setup-python@v5

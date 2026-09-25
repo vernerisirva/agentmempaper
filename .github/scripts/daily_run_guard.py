@@ -13,12 +13,24 @@ is not evidence, because under the shared concurrency group every later run is q
 while this one executes, and counting it would make both skip. A failed or cancelled run
 is not evidence either, so the second trigger acts as a retry.
 
-Writes `skip=true|false` to $GITHUB_OUTPUT. Any error fails the step, which stops the
-run: a guard that cannot see history must not risk a second assessment.
+Two modes:
+
+* default (the daily-guard job): writes `skip=true|false` to $GITHUB_OUTPUT, so a
+  duplicate run skips the scout job cleanly and still shows green.
+* `--enforce` (first step of the scout job): exits 1 instead. "Re-run failed jobs" and
+  "Re-run job" do not re-run a job that succeeded, so they replay the daily-guard job's
+  first-attempt `skip=false`; this check inside the spending job is what stops such a
+  re-run from assessing a second time after the other trigger has succeeded.
+
+Any error fails the step, which stops the run: a guard that cannot see history must not
+risk a second assessment. Other operator actions stay outside the rule: re-running a
+successful run with "Re-run all jobs" before the other trigger has succeeded will assess
+again. To redeploy Pages without assessing, dispatch with `deploy_only`.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import sys
@@ -66,17 +78,31 @@ def fetch_runs(repository: str, workflow: str, token: str, since: datetime) -> l
         return json.load(response)["workflow_runs"]
 
 
-def main() -> int:
-    if os.environ["IS_DAILY_RUN"] != "true":
-        skip, reason = False, "not a daily run; the guard does not apply"
-    else:
-        now = datetime.now(timezone.utc)
-        runs = fetch_runs(os.environ["GITHUB_REPOSITORY"], "paper-scout.yml",
-                          os.environ["GITHUB_TOKEN"], stockholm_day_start(now))
-        earlier = earlier_success_today(runs, int(os.environ["GITHUB_RUN_ID"]), now)
-        skip = earlier is not None
-        reason = (f"run {earlier['id']} ({earlier['event']}) already succeeded today"
-                  if earlier else "no daily run has succeeded yet today")
+def decide(env: dict, now: datetime) -> tuple[bool, str]:
+    if env["IS_DAILY_RUN"] != "true":
+        return False, "not a daily run; the guard does not apply"
+    runs = fetch_runs(env["GITHUB_REPOSITORY"], "paper-scout.yml", env["GITHUB_TOKEN"],
+                      stockholm_day_start(now))
+    earlier = earlier_success_today(runs, int(env["GITHUB_RUN_ID"]), now)
+    if earlier:
+        return True, f"run {earlier['id']} ({earlier['event']}) already succeeded today"
+    return False, "no daily run has succeeded yet today"
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--enforce", action="store_true",
+                        help="fail instead of writing a skip output")
+    args = parser.parse_args(argv)
+    skip, reason = decide(os.environ, datetime.now(timezone.utc))
+    if args.enforce:
+        if skip:
+            print(f"::error::Refusing a second daily assessment: {reason}. A partial re-run "
+                  "reuses the first attempt's guard decision; dispatch with deploy_only to "
+                  "redeploy without assessing.")
+            return 1
+        print(f"daily guard re-check passed: {reason}")
+        return 0
     print(f"skip={str(skip).lower()}: {reason}")
     with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
         output.write(f"skip={str(skip).lower()}\n")

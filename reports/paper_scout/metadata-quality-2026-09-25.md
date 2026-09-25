@@ -11,7 +11,7 @@
 - **Future or imprecise source dates:** 4
 - **Persistent-memory reason without explicit memory evidence:** 0
 - **High-scoring agentic-AI papers without explicit memory evidence:** 0
-- **Maybe papers with core memory phrases:** 23
+- **Maybe papers with core memory phrases:** 24
 
 ## Year-Only Publication Dates
 
@@ -87,6 +87,7 @@
 
 ## Maybe Papers With Core Memory Phrases
 
+- **Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents** — maybe, 2026-09-23, precision=day, source=openalex
 - **Scored Before the Question Exists: What a Write-Time Importance Value in LLM Agent Memory Predicts, Why an Additive Term Is Not a Prior, and the Ablation the Canonical Architecture Did Not Run** — maybe, 2026-09-21, precision=day, source=openalex
 - **MemCalib: Benchmarking and Optimizing Memory Use in LLM Agents** — maybe, 2026-09-21, precision=day, source=openalex
 - **The Price of Safety: Benign-Case Utility and Token Overhead of Memory-Poisoning Defenses in LLM Agents** — maybe, 2026-09-19, precision=day, source=openalex

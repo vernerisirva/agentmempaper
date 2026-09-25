@@ -47,9 +47,9 @@
 
 ## Decisions
 
-- relevant: 9
-- maybe: 33
-- irrelevant: 53
+- relevant: 10
+- maybe: 29
+- irrelevant: 56
 
 ## Top Relevant Or Maybe Papers
 
@@ -59,10 +59,10 @@
 - **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** (relevant, 91/100): Studies memory systems or memory modules for LLM agents. https://www.semanticscholar.org/paper/57563394951aebb6d7f5611808eac0ba14a5bb87
 - **LSG: A Lightweight Supervised Gate for Sub-Millisecond Agentic Memory Novelty Filtering** (relevant, 91/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://doi.org/10.5281/zenodo.22889960
 - **LSG: A Lightweight Supervised Gate for Sub-Millisecond Agentic Memory Novelty Filtering** (relevant, 91/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://doi.org/10.5281/zenodo.22889959
+- **EnSIMem: Entity-Structured Indexing for Long-Term Agent Memory** (relevant, 91/100): Focuses on persistent or long-term memory for agent behavior. https://doi.org/10.48550/arxiv.2609.27279
 - **Cognitive Extensions for Dual-Process Language Agents: Memory and Self-Reflection in Interactive Environments** (relevant, 91/100): Studies memory systems or memory modules for LLM agents. https://arxiv.org/abs/2609.19128
 - **Consolidation Without Weights: What the Complementary Learning Systems Analogy Licenses in LLM Agent Memory, and Why the Systems That Borrow Its Name Do Not Inherit Its Guarantee** (relevant, 90/100): Studies memory systems or memory modules for LLM agents. https://doi.org/10.5281/zenodo.22699102
 - **Consolidation Without Weights: What the Complementary Learning Systems Analogy Licenses in LLM Agent Memory, and Why the Systems That Borrow Its Name Do Not Inherit Its Guarantee** (relevant, 90/100): Studies memory systems or memory modules for LLM agents. https://doi.org/10.5281/zenodo.22699101
-- **fidelis: zero-LLM agent memory for Claude Code and AI agents** (maybe, 69/100): Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory. https://doi.org/10.5281/zenodo.22732418
 
 ## Source Failures
 
@@ -71,10 +71,10 @@
 ## Deduplication Examples
 
 - doi:10.48550/arxiv.2609.19128: openalex:W7213516733, openalex:W7213516733
-- doi:10.5281/zenodo.22699101: openalex:W7212154123, openalex:W7212154123
 - doi:10.5281/zenodo.22699102: openalex:W7212131127, openalex:W7212131127
+- doi:10.5281/zenodo.22699101: openalex:W7212154123, openalex:W7212154123
 - doi:10.48550/arxiv.2609.19502: openalex:W7213596096, openalex:W7213596096
+- doi:10.26434/chemrxiv.15009184/v1: openalex:W7213934344, openalex:W7213934344
 - doi:10.1145/3845797: openalex:W4390529182, openalex:W4390529182
 - doi:10.1162/coli.a.652: openalex:W4403048355, openalex:W4403048355
 - doi:10.1016/j.inffus.2026.104791: openalex:W4403882865, openalex:W4403882865
-- openalex:W7213371194: openalex:W7213371194, openalex:W7213371194

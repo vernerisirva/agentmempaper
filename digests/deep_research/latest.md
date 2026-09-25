@@ -6,11 +6,11 @@ Latest daily digest: [2026-09-25](2026-09-25.md).
 
 ## Run Summary
 
-- **Run ID:** 96
+- **Run ID:** 97
 - **Candidates fetched:** 100
-- **New unique papers:** 99
-- **Relevant:** 8
-- **Maybe relevant:** 4
+- **New unique papers:** 100
+- **Relevant:** 7
+- **Maybe relevant:** 5
 - **Irrelevant:** 88
 - **Source summary:** openalex: 100, semantic_scholar: 0
 
@@ -29,26 +29,14 @@ Latest daily digest: [2026-09-25](2026-09-25.md).
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
-## Highly Relevant
-
-### [An AI-ready compositional framework for mechanistic aging research and in silico intervention testing](https://doi.org/10.64898/2026.09.22.753641)
-
-- **Authors:** Minja Belić, David Furman
-- **Date:** 2026-09-23
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Aging is a network-level phenomenon, with its hallmarks interacting through dense feedback loops across vastly different timescales. Decades of reductionist research have produced thousands of mechanistic models of narrow subsystems, but no straightforward way to integrate them into one comprehensive system. Consequ...
-
 ## Maybe Relevant
 
-### [Recursive self-improvement of AI research agents](https://doi.org/10.48550/arxiv.2609.26457)
+### [Little Scientist: architecture and implementation of a controlled artificial intelligence agent for scientific and technological literacy in basic education](https://doi.org/10.54901/educa.v9-816)
 
-- **Authors:** Dhruv Srikanth, Bingchen Zhao, Dixing Xu, Yuxiang Wu, Zheng‐Yao Jiang
-- **Date:** 2026-09-22
+- **Authors:** Cláudio Gerhardt, Dimas Rodrigues Dutra, Ingrid Santos, Matheus Jose Miller Krumenauer, Murillo Pereira Azevedo, Natália Horst Bitencourt, et al.
+- **Date:** 2026-09-24
 - **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** deep-research-agents
-- **Abstract summary:** AI agents are beginning to automate research and development across the AI stack, from improving training efficiency to optimizing inference. A natural next step is to improve the research efficiency of the agents themselves. When an AI research agent's own code is the object of optimization, each accepted rewrite b...
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** The objective of this study is to analyze the development and implementation of a controlled artificial intelligence agent, named Little Scientist (Cientista Mirim), aimed at supporting K-12 students in the process of Scientific-Technological Literacy (AlfaCT). The research problem investigates how a supervised AI a...

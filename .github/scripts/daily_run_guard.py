@@ -8,7 +8,11 @@ trigger does not fire. Both assess, so without this guard a normal day would run
 scientific stage twice and spend twice the frozen per-run bound.
 
 The rule: a daily run (either trigger) skips when another daily run already concluded
-`success` on the same Stockholm calendar day. Only completed successes count. A queued run
+`success` in an attempt that started on the same Stockholm calendar day. A run is dated by
+its latest attempt's `run_started_at`, not its `created_at`: a re-run keeps the original
+creation time, so dating by creation would let a failed Monday run re-run on Tuesday be
+invisible to Tuesday's triggers and assess twice that day. Dated by start, the re-run is
+Tuesday's run. Only completed successes count. A queued run
 is not evidence, because under the shared concurrency group every later run is queued
 while this one executes, and counting it would make both skip. A failed or cancelled run
 is not evidence either, so the second trigger acts as a retry.
@@ -36,11 +40,16 @@ import os
 import sys
 import urllib.parse
 import urllib.request
-from datetime import datetime, time, timezone
+from datetime import datetime, time, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 STOCKHOLM = ZoneInfo("Europe/Stockholm")
 DAILY_TITLE = "Paper Scout (daily trigger)"
+# GitHub allows re-running a run for 30 days after it was created, so a run created that
+# long ago can still have started an attempt today.
+EVIDENCE_WINDOW = timedelta(days=31)
+PER_PAGE = 100
+MAX_PAGES = 10  # the filtered runs listing stops at 1,000 results
 
 
 def is_daily_run(run: dict) -> bool:
@@ -52,37 +61,48 @@ def stockholm_day_start(now: datetime) -> datetime:
     return datetime.combine(day, time(0), tzinfo=STOCKHOLM).astimezone(timezone.utc)
 
 
+def attempt_started(run: dict) -> datetime:
+    return datetime.fromisoformat(run["run_started_at"].replace("Z", "+00:00"))
+
+
 def earlier_success_today(runs: list[dict], current_run_id: int, now: datetime) -> dict | None:
     start = stockholm_day_start(now)
     for run in runs:
         if run.get("id") == current_run_id or not is_daily_run(run):
             continue
-        created = datetime.fromisoformat(run["created_at"].replace("Z", "+00:00"))
-        if created >= start and run.get("conclusion") == "success":
+        if run.get("conclusion") == "success" and attempt_started(run) >= start:
             return run
     return None
 
 
 def fetch_runs(repository: str, workflow: str, token: str, since: datetime) -> list[dict]:
-    query = urllib.parse.urlencode({
-        "created": ">=" + since.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "status": "success",
-        "per_page": 100,
-    })
-    request = urllib.request.Request(
-        f"https://api.github.com/repos/{repository}/actions/workflows/{workflow}/runs?{query}",
-        headers={"Authorization": f"Bearer {token}",
-                 "Accept": "application/vnd.github+json",
-                 "X-GitHub-Api-Version": "2022-11-28"})
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return json.load(response)["workflow_runs"]
+    runs: list[dict] = []
+    for page in range(1, MAX_PAGES + 1):
+        query = urllib.parse.urlencode({
+            "created": ">=" + since.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "status": "success",
+            "per_page": PER_PAGE,
+            "page": page,
+        })
+        request = urllib.request.Request(
+            f"https://api.github.com/repos/{repository}/actions/workflows/{workflow}/runs?{query}",
+            headers={"Authorization": f"Bearer {token}",
+                     "Accept": "application/vnd.github+json",
+                     "X-GitHub-Api-Version": "2022-11-28"})
+        with urllib.request.urlopen(request, timeout=30) as response:
+            batch = json.load(response)["workflow_runs"]
+        runs.extend(batch)
+        if len(batch) < PER_PAGE:
+            return runs
+    raise RuntimeError(f"more than {MAX_PAGES * PER_PAGE} successful runs since {since}; "
+                       "the guard cannot see all of its evidence")
 
 
 def decide(env: dict, now: datetime) -> tuple[bool, str]:
     if env["IS_DAILY_RUN"] != "true":
         return False, "not a daily run; the guard does not apply"
     runs = fetch_runs(env["GITHUB_REPOSITORY"], "paper-scout.yml", env["GITHUB_TOKEN"],
-                      stockholm_day_start(now))
+                      stockholm_day_start(now) - EVIDENCE_WINDOW)
     earlier = earlier_success_today(runs, int(env["GITHUB_RUN_ID"]), now)
     if earlier:
         return True, f"run {earlier['id']} ({earlier['event']}) already succeeded today"

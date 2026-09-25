@@ -7,7 +7,7 @@ from pathlib import Path
 import tempfile
 import socket
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 from urllib.error import HTTPError, URLError
 
 from test_paper_scout_scientific_gate import candidate, manuscript
@@ -585,9 +585,9 @@ class DailyRunGuardTests(unittest.TestCase):
         self.guard = _load_daily_run_guard()
 
     def run_(self, run_id, created_at, event="workflow_dispatch", title="Paper Scout (daily trigger)",
-             conclusion="success"):
-        return {"id": run_id, "event": event, "display_title": title,
-                "created_at": created_at, "conclusion": conclusion}
+             conclusion="success", started_at=None):
+        return {"id": run_id, "event": event, "display_title": title, "created_at": created_at,
+                "run_started_at": started_at or created_at, "conclusion": conclusion}
 
     def earlier(self, runs, now):
         return self.guard.earlier_success_today(runs, self.CURRENT, now)
@@ -626,11 +626,46 @@ class DailyRunGuardTests(unittest.TestCase):
         self.assertFalse(skip)
         fetch.assert_not_called()
 
-    def test_a_daily_run_queries_from_stockholm_midnight(self):
+    def test_a_daily_run_reads_back_across_the_whole_rerun_window(self):
         (skip, reason), fetch = self.decide({"IS_DAILY_RUN": "true"}, [self.run_(1, "2026-09-28T04:00:10Z")])
         self.assertTrue(skip, reason)
         self.assertEqual(fetch.call_args.args[1], "paper-scout.yml")
-        self.assertEqual(fetch.call_args.args[3], datetime(2026, 9, 27, 22, 0, tzinfo=UTC))
+        # Stockholm midnight, minus the 30-day re-run window and a day of margin.
+        self.assertEqual(fetch.call_args.args[3], datetime(2026, 8, 27, 22, 0, tzinfo=UTC))
+
+    def test_a_run_is_dated_by_its_latest_attempt_not_its_creation(self):
+        # Monday's failed external run A is re-run and succeeds at 00:30 Tuesday. It is
+        # Tuesday's run, so Tuesday's 06:00 trigger must skip.
+        rerun = self.run_(1, "2026-09-28T04:00:10Z", started_at="2026-09-28T22:30:00Z")
+        self.assertEqual(self.earlier([rerun], datetime(2026, 9, 29, 4, 0, tzinfo=UTC)), rerun)
+        # Monday's cron B succeeded on Monday. It does not block that re-run of A on
+        # Tuesday, which then counts as Tuesday's one assessment.
+        monday = self.run_(2, "2026-09-28T09:00:00Z", event="schedule", title="Paper Scout")
+        self.assertIsNone(self.earlier([monday], datetime(2026, 9, 28, 22, 30, tzinfo=UTC)))
+
+    def serve_pages(self, sizes):
+        pages = [{"workflow_runs": [self.run_(i, "2026-09-28T04:00:00Z") for i in range(n)]}
+                 for n in sizes]
+        responses = []
+        for page in pages:
+            response = MagicMock()
+            response.__enter__.return_value.read.return_value = json.dumps(page).encode()
+            responses.append(response)
+        return patch.object(self.guard.urllib.request, "urlopen", side_effect=responses)
+
+    def test_the_history_is_paginated_to_the_end(self):
+        with self.serve_pages([100, 3]) as urlopen:
+            runs = self.guard.fetch_runs("o/r", "paper-scout.yml", "t", datetime(2026, 8, 27, 22, tzinfo=UTC))
+        self.assertEqual(len(runs), 103)
+        self.assertEqual(urlopen.call_count, 2)
+        query = urlopen.call_args_list[1].args[0].full_url
+        self.assertIn("created=%3E%3D2026-08-27T22%3A00%3A00Z", query)
+        self.assertIn("status=success", query)
+        self.assertIn("page=2", query)
+
+    def test_history_beyond_the_listing_cap_fails_closed(self):
+        with self.serve_pages([100] * 10), self.assertRaises(RuntimeError):
+            self.guard.fetch_runs("o/r", "paper-scout.yml", "t", datetime(2026, 8, 27, 22, tzinfo=UTC))
 
     def run_main(self, argv, skip):
         with tempfile.TemporaryDirectory() as tmp:

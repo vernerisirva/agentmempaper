@@ -8,7 +8,7 @@
 - **Highly relevant without exact date:** 2
 - **Biological/cognitive high-relevance risks:** 2
 - **Highly relevant with generic/peripheral reasons:** 0
-- **Future or imprecise source dates:** 4
+- **Future or imprecise source dates:** 5
 - **Persistent-memory reason without explicit memory evidence:** 0
 - **High-scoring agentic-AI papers without explicit memory evidence:** 0
 - **Maybe papers with core memory phrases:** 24
@@ -70,6 +70,7 @@
 
 ## Future Or Imprecise Source Dates
 
+- **Memory as Market Power: Persistent AI-Agent Memory, Switching Costs, and Consumer Lock-In — Replication Package** — relevant, 2026-09-26, precision=day, source=openalex
 - **Theory-Grounded LLM Societies for Emergent Coordination** — relevant, 2026, precision=year, source=crossref-published-print
 - **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** — relevant, 2026, precision=year, source=semantic_scholar
   - Crossref enrichment failed for 10.48550/arXiv.2602.01869: http error for https://api.crossref.org/works/10.48550%2FarXiv.2602.01869: request failed after 1 attempts: HTTP Error 404: Not Found

@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-25](2026-09-25.md).
+Latest daily digest: [2026-09-28](2026-09-28.md).
 
-# Paper Scout Digest - 2026-09-25
+# Paper Scout Digest - 2026-09-28
 
 ## Run Summary
 
-- **Run ID:** 135
-- **Candidates fetched:** 418
-- **New unique papers:** 370
-- **Relevant:** 41
-- **Maybe relevant:** 56
-- **Irrelevant:** 321
-- **Source summary:** openalex: 400, semantic_scholar: 18
+- **Run ID:** 137
+- **Candidates fetched:** 17
+- **New unique papers:** 17
+- **Relevant:** 2
+- **Maybe relevant:** 5
+- **Irrelevant:** 10
+- **Source summary:** semantic_scholar: 17
 
 ## Source Warnings
 
@@ -22,105 +22,95 @@ Latest daily digest: [2026-09-25](2026-09-25.md).
 - arxiv failed for 'memory distillation': http error for https://export.arxiv.org/api/query?search_query=all%3Amemory+AND+all%3Adistillation&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - arxiv failed for 'self-improving language models': http error for https://export.arxiv.org/api/query?search_query=all%3Aself+AND+all%3Aimproving+AND+all%3Alanguage+AND+all%3Amodels&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - arxiv failed for 'cs.AI,cs.CL,cs.LG': http error for https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG&start=0&max_results=300&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
-- openalex: incomplete discovery window for 'agent memory'; single-page record limit reached.
-- openalex: incomplete discovery window for 'procedural memory language model'; single-page record limit reached.
-- openalex: incomplete discovery window for 'memory distillation language model'; single-page record limit reached.
-- openalex: incomplete discovery window for 'parametric memory language model'; single-page record limit reached.
+- openalex failed for 'agent memory': http error for https://api.openalex.org/works?search=agent+memory&filter=from_publication_date%3A2026-09-18&per-page=100: request failed after 3 attempts: HTTP Error 503: Service Unavailable
+- openalex failed for 'procedural memory language model': http error for https://api.openalex.org/works?search=procedural+memory+language+model&filter=from_publication_date%3A2026-09-18&per-page=100: request failed after 3 attempts: HTTP Error 503: Service Unavailable
+- openalex failed for 'memory distillation language model': http error for https://api.openalex.org/works?search=memory+distillation+language+model&filter=from_publication_date%3A2026-09-18&per-page=100: request failed after 3 attempts: HTTP Error 503: Service Unavailable
+- openalex failed for 'parametric memory language model': http error for https://api.openalex.org/works?search=parametric+memory+language+model&filter=from_publication_date%3A2026-09-18&per-page=100: request failed after 3 attempts: HTTP Error 503: Service Unavailable
 - semantic_scholar: incomplete discovery window for 'agent memory'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'procedural memory language model'; single-page record limit reached.
-- semantic_scholar failed for 'memory distillation': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'memory distillation'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'parametric memory LLM'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [XChronos OS as a Temporal-Semantic Operating Layer: Architecture, falsifiable hypotheses, and an experimental program for persistent memory and agents](https://doi.org/10.5281/zenodo.22938863)
+### [Scope Before You Persist: Preventing Cross-Family Interference in Agent Memory](https://arxiv.org/abs/2609.29144)
 
-- **Authors:** Jaconaazar Souza Silva
+- **Authors:** Yezhou Cheng, Runjia Du, Zeming Liu, Qibai Chen, Hang Lyu, Yankai Zeng, et al.
 - **Date:** 2026-09-24
-- **Source:** openalex
-- **Relevance:** relevant (100/100)
-- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
-- **Tags:** agent-memory, long-term-memory, memory-types, evaluation, memory-systems, llm-agents
-- **Abstract summary:** English XChronos OS is proposed as a temporal-semantic operating layer for persistent human–AI and agent-based systems. Rather than replacing a conventional operating-system kernel, the architecture introduces a higher-level computational layer intended to represent temporally indexed events, persistent semantic mem...
-
-### [XChronos OS as a Temporal-Semantic Operating Layer: Architecture, falsifiable hypotheses, and an experimental program for persistent memory and agents](https://doi.org/10.5281/zenodo.22938864)
-
-- **Authors:** Jaconaazar Souza Silva
-- **Date:** 2026-09-24
-- **Source:** openalex
-- **Relevance:** relevant (100/100)
-- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
-- **Tags:** agent-memory, long-term-memory, memory-types, evaluation, memory-systems, llm-agents
-- **Abstract summary:** English XChronos OS is proposed as a temporal-semantic operating layer for persistent human–AI and agent-based systems. Rather than replacing a conventional operating-system kernel, the architecture introduces a higher-level computational layer intended to represent temporally indexed events, persistent semantic mem...
-
-### [AkasicMEM: Governed Enterprise Memory for Agents](https://arxiv.org/abs/2609.25563)
-
-- **Authors:** Jeongmin Bae, Yong‐Jae Kim, Kyoung Hur, Donghyoung Han, Min-Soo Kim
-- **Date:** 2026-09-22
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
-- **Tags:** agent-memory, memory-policy, evaluation, memory-systems, llm-agents
-- **Abstract summary:** Agent memory enables enterprise agents to retain knowledge acquired during work and reuse it across tasks and agents, turning execution experience into persistent organizational knowledge. Realizing this potential requires both source--memory integration, through which enterprise sources and accumulated memory can b...
-
-### [EnSIMem: Entity-Structured Indexing for Long-Term Agent Memory](https://doi.org/10.48550/arxiv.2609.27279)
-
-- **Authors:** Xuanyu Meng, Xing Fan, Xinyi Fan, Chenlei Guo, Yixuan Xie, Jiawei Han
-- **Date:** 2026-09-23
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Focuses on persistent or long-term memory for agent behavior.
 - **Tags:** agent-memory, long-term-memory, memory-systems, llm-agents
-- **Abstract summary:** An agent that interacts with users over long periods must recall facts, preferences, events, and changes from a continuously growing interaction history. Existing memory systems often compress interactions into generic summaries or retrieve anonymous text chunks, making it difficult for an agent to identify the corr...
+- **Abstract summary:** Persistent memory lets language-model agents improve prompts and skills without updating model weights. We show that matching retrieval scope to certification scope enables these edits to support reliable repeated adaptation across recurring task families. We study frozen-model agents on ProcStream-RSI, a 12-round c...
+
+### [agmi: Agent Memory Integrity, a conformance test suite for tamper evidence in AI agent memory and checkpoint stores](https://doi.org/10.5281/zenodo.22957647)
+
+- **Authors:** Khandelwal Yasha
+- **Date:** 2026-09-25
+- **Source:** openalex
+- **Relevance:** relevant (90/100)
+- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
+- **Tags:** agent-memory, memory-systems, llm-agents
+- **Abstract summary:** 0.6.0: the eight-edit at-rest scorecard, implementing the test method proposed for IETF draft-han-bmwg-agent-security-benchmark metric 5.4.7 (bmwg list, 24 September 2026). agmi (Agent Memory Integrity) is an open, MIT-licensed conformance test suite that measures whether AI agent memory and checkpoint stores notice...
+
+### [Memory as Market Power: Persistent AI-Agent Memory, Switching Costs, and Consumer Lock-In — Replication Package](https://doi.org/10.5281/zenodo.22968683)
+
+- **Authors:** Ali Soltanhosseini
+- **Date:** 2026-09-26
+- **Source:** openalex
+- **Relevance:** relevant (90/100)
+- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
+- **Tags:** agent-memory, memory-systems, llm-agents
+- **Abstract summary:** Replication package for the paper "Memory as Market Power: Persistent AI-Agent Memory, Switching Costs, and Consumer Lock-In" (Ali Soltanhosseini, 2026), prepared for the International Journal of Industrial Organization. The package contains a synthetic dataset (a consumer panel of 2,000 consumers over four waves, a...
+
+### [Memory as Market Power: Persistent AI-Agent Memory, Switching Costs, and Consumer Lock-In — Replication Package](https://doi.org/10.5281/zenodo.22968682)
+
+- **Authors:** Ali Soltanhosseini
+- **Date:** 2026-09-26
+- **Source:** openalex
+- **Relevance:** relevant (90/100)
+- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
+- **Tags:** agent-memory, memory-systems, llm-agents
+- **Abstract summary:** Replication package for the paper "Memory as Market Power: Persistent AI-Agent Memory, Switching Costs, and Consumer Lock-In" (Ali Soltanhosseini, 2026), prepared for the International Journal of Industrial Organization. The package contains a synthetic dataset (a consumer panel of 2,000 consumers over four waves, a...
 
 ## Maybe Relevant
 
-### [Evaluating Decision Models for Text Annotation in Computational Social Science](https://arxiv.org/abs/2609.24574)
+### [Agent Memory with Episodic Retrieval for Financial Decision-Making](https://arxiv.org/abs/2609.28771)
 
-- **Authors:** Hazem Ibrahim, Yasir Zaki
-- **Date:** 2026-09-21
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Computational social science increasingly relies on large language models for text annotation, and the validity of published findings now rests on the labels generated by such models. Decision models, a new model class built for categorical question answering, answer typed questions with a choice, a probability dist...
-
-### [Information retrieval reliability in large language models: a study of source verification](https://doi.org/10.23900/ra.v24i120.2067)
-
-- **Authors:** Harun Nabiyev
+- **Authors:** Nuoyue Xu, Jiang Liu, Wenxuan Huang, Xiang Zhang, Juntai Cao, Jiaqi Wei
 - **Date:** 2026-09-23
 - **Source:** openalex
-- **Relevance:** maybe (45/100)
+- **Relevance:** maybe (62/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Large language models (LLMs) have come into widespread use in recent years across domains ranging from education and journalism to academic research and everyday information seeking. Their ability to produce fluent, coherent-sounding answers in natural language creates the impression that these answers are accurate...
+- **Tags:** evaluation, llm-agents
+- **Abstract summary:** Large language models (LLMs) have demonstrated strong capabilities in financial analysis and reasoning, inspiring recent advances in agent-based trading frameworks. While these systems show promise, prior approaches either emphasize long-horizon forecasting or operate as stateless analyzers, limiting their applicabi...
 
-### [MuSeR: Scalable Long-sequence Recommendation with Multi-interest Modeling](https://arxiv.org/abs/2609.23677)
+### [DKL: Decoupled Knowledge Learning for Instruction-Tuned Language Models](https://arxiv.org/abs/2609.02685)
 
-- **Authors:** Yongkang Fu, Beining Bao, Yu Jiang, Xiangyu Zhao, Hongyang Wei, Guangxing Chen, et al.
-- **Date:** 2026-09-20
+- **Authors:** Kushagra Bhushan, Meghanadh Pulivarthi, Sai Krishna Reddy Sathi, Gaurav Pandey, Sonam Gupta, Vineet Kumar, et al.
+- **Date:** 2026-09-02
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
 - **Tags:** untagged
-- **Abstract summary:** Ultra-long user behavior sequences carry rich signals of stable and diverse preferences, yet industrial recommender systems typically truncate histories to a few hundred actions under strict latency and memory budgets, leaving long-term interests under-utilized. Users also pursue multiple heterogeneous intents acros...
+- **Abstract summary:** RAG has become the de facto method for incorporating new, corpus-specific knowledge into an instruction following LLM (Instruct LLM). Although RAG-based prompting improves factual grounding, it fails when retrieval is incorrect or incomplete, leading to hallucinations. Finetuning methods such as RAFT and PA-RAG enha...
 
-### [Verify, Don't Trust: Agentic Model Development for Video Discovery Retrieval at Scale](https://arxiv.org/abs/2609.21257)
+### [ERRAND: Budgeted Maintenance of Agent Memory](https://arxiv.org/abs/2609.29545)
 
-- **Authors:** Hao Fu, Baiting Zhu, Minglei Chen, Yinjie Huang, Shuai Ding
-- **Date:** 2026-09-18
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** llm-agents
-- **Abstract summary:** Large language model (LLM) agents can propose, implement, and evaluate model changes. Autoresearch loops demonstrate this capability through minutes-scale iterations on a self-contained program. Online autoresearch instead spans asynchronous systems, hours-long variants, and weeks-long campaigns that can influence a...
-
-### [Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents](https://doi.org/10.48550/arxiv.2609.27334)
-
-- **Authors:** Yefan Zhou, Yang Li, Zeyu Leo Liu, Semih Yavuz, Shafiq Joty
-- **Date:** 2026-09-23
+- **Authors:** Beining Wu, Zihao Ding, Jun Huang
+- **Date:** 2026-09-02
 - **Source:** openalex
 - **Relevance:** maybe (43/100)
 - **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
-- **Tags:** agent-memory, llm-agents
-- **Abstract summary:** Agentic memory systems reuse past experience to improve future performance, yet most existing designs curate memory at write time: once a task is completed, its trajectory is distilled into a fixed artifact, such as a reflection, workflow, skill, or reasoning strategy, that is later retrieved by similarity. This for...
+- **Tags:** agent-memory
+- **Abstract summary:** Deployed agents run on handed-over knowledge: a frozen policy consults a briefing of consolidated items written before the stream begins. The world then moves while the store stands still: paths close, flags change, price bands move; every item was true at handover, and the failure is staleness, not ignorance. We in...
+
+### [ERRAND: Budgeted Maintenance of Agent Memory](https://www.semanticscholar.org/paper/e86e5e63189757699cb01ef91771fb45f17d67bf)
+
+- **Authors:** Bei-Ning Wu, Zi-Hao Ding, Jun Huang
+- **Date:** 2026-09-02
+- **Source:** semantic_scholar
+- **Relevance:** maybe (43/100)
+- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
+- **Tags:** agent-memory
+- **Abstract summary:** Deployed agents run on handed-over knowledge: a frozen policy consults a briefing of consolidated items written before the stream begins. The world then moves while the store stands still: paths close, flags change, price bands move; every item was true at handover, and the failure is staleness, not ignorance. We in...

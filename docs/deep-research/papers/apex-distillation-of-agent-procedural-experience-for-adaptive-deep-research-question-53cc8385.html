@@ -59,16 +59,403 @@
             <p>Deep research agents augment large language models with external tools to answer complex, long-horizon questions through multi-turn reasoning. Learning from prior experience is crucial for continual improvement, yet existing methods either retrieve verbose task-specific traces that burden decision-making, or distill...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents an adequately scoped and well-documented architectural contribution with clear empirical verification across established standard benchmarks and comprehensive ablations.</p>
+      <p>The authors document key limitations including reliance on 7B/8B model backbones, lack of end-to-end training synergies due to alternating optimization, and running online test-time adaptation completely without ground-truth supervision.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: partial_full_text.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-09-05T10:41:25+00:00.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-28T10:34:51.306158+00:00.</p>
+        <p>Coverage: 77605 of 77605 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents augment large language
+models with external tools to answer com-
+plex, long-horizon questions through multi-
+turn reasoning. Learning from prior experi-
+ence is crucial for continual improvement, yet
+existing methods either retrieve verbose task-
+specific traces that burden decision-making,
+or distill procedural skills that remain decou-
+pled from downstream policy adaptation. We
+propose APEX, a hierarchical experience uti-
+lization framework that organizes interaction
+history into instance-level trajectory memories
+and category-level procedural skills, and cou-
+ples them through a closed-loop architecture
+of Executor, Distiller, and Planner. The three
+modules are optimized via a three-stage al-
+ternating GRPO training paradigm, enabling
+reward-guided skill distillation rather than
+fixed-prompt generation. At test time, distilled
+skills serve as procedural priors </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for online Plan-
+ner adaptation through skill-guided test-time
+reinforcement learning, allowing ground-truth-
+free self-improvement with skill-alignment reg-
+ularization to prevent policy drift. Exper-
+iments on 7 benchmarks demonstrate that
+APEXachieves state-of-the-art performance,
+surpassing GPT-5.4 by 14.7 points and the
+strongest memory-augmented baseline by 3.0
+points. Code is available at https://github.
+com/J-Ding519/APEx.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experience Mem-
+ory.APEXorganizes long-term trajectories into
+instance-level memories and category-level skills,
+preserving concrete task-solving traces while ab-
+stracting reusable procedural knowledge for plan-
+ning. ❷ Experience-to-Action Agent Loop.Built
+on this hierarchy, APEXintegrates an Executor, a
+Distiller, and a Planner into an experience-to-action
+loop, where tool-use trajectories are collected, ab-
+stracted into skills, and reused for strategic plan-
+ning. This design aligns execution, abstraction,
+and planning for continual agent improvement. ❸
+Skill-guided Test-time Adaptation.During de-
+ployment, APEXuses retrieved skills and memo-
+ries as procedural priors for TTRL, allowing the
+Planner to adapt on unlabeled queries and consol-
+idate new trajectories into future memories and
+skills. Our contributions are as follows.
+❶ Framework.We propose APEX, a hierarchi-
+cal </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Relative Policy Optimization (GRPO).
+GRPO (Shao et al., 2024) optimizes the policy
+with intra-group relative rewards. In our work Dis-
+tiller, Planner and Executor are optimized with
+GRPO. For each input x, the policy samples a
+group of G responses{oi}G
+i=1 and computes the
+group-normalized advantage as ˆAi = (R(oi)−
+meanj[R(oj)])/(stdj[R(oj)] +ϵ) . Following the
+GRPO implementation, the policy objective for the
+currently optimized moduleπη is:
+LGRPO(η) =−E x,{oi}
+&quot;
+1
+G
+GX
+i=1
+1
+|oi|
+|oi|X
+t=1
+min
 
-        <ul><li>The contribution is stated explicitly. — page 9</li><li>A baseline or comparison system is described. — page 1</li><li>Limitations or threats to validity are acknowledged.</li><li>Code, data, or research artifacts are described as available. — page 1</li><li>No quantitative, user, expert, or operational evaluation was detected in the available text.</li></ul>
+ri,t(η) ˆAi,clip
+
+ri,t(η),1−ϵ,1 +ϵ
+ ˆAi
+#
+,
+(5)
+where ri,t(η) =π η(oi,t |x,o i,&lt;t)/πηold(oi,t |
+x,oi,&lt;t)is the token-level probability ratio.
+Test-time Reinforcement Learning (TTRL).
+Unlike standard TTRL based on majority vot-
+ing (Zuo et al., 2025), APEXconstructs re-
+wards using a multi-judge LLM-as-Judge mech-
+anism (Zheng et al., 2023). In our implementation,
+we update the Planner at </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>test time. Given a test
+queryq, the Planner first retrieves the correspond-
+ing skillRS(q) and memoryRM(q), generates a
+plan p, and the Executor produces an execution
+trajectoryτ and final answer ˆy. The Planner&#x27;s pa-
+rametersψ are updated online by GRPO using the
+final rewardR final:
+ψt+1 = GRPO
+
+ψt,R final
+
+.(6)</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To optimize planning, execution, and experience
+distillation, APEXadopts a three-stage alternat-
+ing reinforcement learning framework. The frame-
+work contains three trainable modules: the Execu-
+torπexec
+θ , the Distillerπdist
+ϕ , and the Plannerπplan
+ψ .
+Executor Training.In the first stage, the Planner
+and Distiller are frozen, and the Executor is opti-
+mized to perform multi-turn tool interaction under
+a given plan. Given a queryq and a planp, the Ex-
+ecutor generates a trajectory τ=π exec
+θ (q,p|T) ,
+whereTdenotes the available tool set.
+The Executor reward combines answer correct-
+ness, tool-use effectiveness, and format validity:
+Rexec(τ) =λ 1Racc(τ) +λ 2Rtool(τ)
++λ 3Rfmt(τ), (10)
+whereλ1,λ2, andλ3 are hyperparameters. The ac-
+curacy reward Racc(τ) =J(Extract(τ),y ∗) is
+computed by an LLM judge. The tool reward
+Rtool(τ) = 1
+|V|
+P
+v∈V I[∃t valid∈v] encourages
+each execution </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>segment to contain valid tool use
+tvalid, whereV denotes the segments split by replan
+boundaries. The format reward Rfmt(τ)∈{0,1}
+checks if the output follows the required structure.
+Distiller Training.In the second stage, the Ex-
+ecutor and Planner are frozen, and the Distiller
+is optimized to transform instance-level memo-
+ries into reusable category-level skills. Given a
+memory bucket Mt
+c,d and an optional previous
+skill st
+c,d, the Distiller outputs an operation type
+o and an updated skill st+1
+c,d , i.e., (o,st+1
+c,d ) =
+πdist
+ϕ (Mt
+c,d,st
+c,d). The operationo is selected from
+{synthesize,refine,create,skip} . We define the
+Distiller reward as:
+Rdist(o,st+1
+c,d ) =µ1Rquality(st+1
+c,d ) +µ 2Rfmt(st+1
+c,d )
++µ 3Revolve(o,st+1
+c,d ,st
+c,d),
+(11)
+where µ1, µ2, and µ3 are hyperparameters and
+Revolve measures if the operationo is rational. Each
+reward is judged by an LLM judgerJ </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>skill.
+Planner Training.In the third stage, the Ex-
+ecutor and Distiller are frozen, and the Planner
+is trained through a plan–execute–evaluate–replan
+loop. Given query q, retrieved skill guidance
+RS(q), and retrieved memoriesRM(q), the Plan-
+ner first generates an initial plan:
+p1 =π plan
+ψ (q,RS(q),RM(q)).(12)
+The frozen Executor executes p1 and produces
+the first answer ˆy1. The Planner then observes
+Trace(τ) and predicts a binary decisiond∈{0,1}
+indicating whether re-planning is needed. If d= 1 ,
+the Planner generates a revised planp2 and obtains
+a second answer ˆy2. Ifd= 0 , we set ˆy2 = ˆy1. The
+Planner reward is:
+Rplan =α1Racc(ˆy2) +α 2Racc(ˆy1)
++α 3Rfmt +α 4Rdec, (13)
+where α1, α2, α3, and α4 are hyperparameters.
+The decision rewardRdec encourages the Planner
+to stop when the first execution is correct and to
+trigger re-planning when the initial execution fails.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>After the training stage, APEXfurther performs
+Skill-guided TTRL to adapt the Planner on unla-
+beled test queries. Since ground-truth answers are
+unavailable at test time, APEXconstructs a no-
+ground-truth reward with multiple LLM judges.
+Meanwhile, the learned category-level skills are
+used as regularization priors to prevent the Plan-
+ner from drifting away from previously verified
+procedural knowledge.
+No-Ground-Truth Reward.Without ground-
+truth answers, APEXestimates answer quality
+through a multi-judge LLM-as-Judge mechanism.
+Specifically, three judges evaluate the execution
+from different aspects:E1(q,τ,ˆy) checks reason-
+ing consistency,E2(q,τ,ˆy) checks whether the fi-
+nal answer is supported by retrieved evidence in
+the trajectory, andE3(q,ˆy)checks whether the re-
+sponse is valid and complete. Their judgments are
+aggregated by an arbiterA:
+Rnogt =λnA(E 1(·),E 2(·),E 3(·))
++ </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(1−λ n)Rfmt
+(14)
+The aggregated no-ground-truth reward is also
+used as a pseudo-supervision signal for memory
+consolidation.
+Skill-Alignment Regularization.Relying only
+on no-ground-truth rewards may cause unstable
+online updates. Therefore, APEXuses the re-
+trieved skill as a knowledge anchor. For a category–
+modality bucket (c,d) , the skillsc,d contains proce-
+durePc,d and pitfallsFc,d. The alignment reward
+evaluates whether the generated plan follows the
+recommended procedure and avoids known pitfalls:
+Ralign =J align (p,Pc,d,Fc,d).(15)
+The final reward combines the original no-ground-
+truth reward and the skill-alignment reward:
+Rfinal = (1−λ s)Rnogt +λsRalign,(16)
+The weightλs =λ base·wc,d·min
+ nc,d
+Nthreshold
+,1
+
+is adaptively determined by the confidence of the
+retrieved skill.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Training Settings:Our training framework is
+built on veRL (Sheng et al., 2025) and follows a
+three-stage alternating optimization paradigm. The
+Executor employs Qwen2.5-VL-7B (Qwen Team,
+2025) as its backbone and is trained on FVQA-
+train (Wang et al., 2017). The Distiller, based
+on Qwen3-8B (Yang et al., 2025), is subsequently
+trained on FVQA-train to distill accumulated ex-
+ecution memories into structured skill documents.
+The Planner, also based on Qwen3-8B, is trained
+in the final stage on a mixture of FVQA-train (with
+images discarded) and MATPO (Mo et al., 2025).
+The Executor is equipped with offline text-to-text
+and offline image-to-image search tools. A Qwen3-
+32B model serves as the LLM Judger for reward
+computation. More details are provided in Ap-
+pendix C.
+Test Settings:To evaluate APEX, we conduct ex-
+periments on a diverse set of image-text and text-
+only benchmarks. For </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As shown in Table 1, APEXachieves the best
+average performance across 7 benchmarks, with an
+average score of 64.4. We highlight the following
+key observations:
+❶ Substantial improvement over standalone
+Table 1:Main results across in-domain and out-of-domain benchmarks. The best results are highlighted in
+bold, and the second-best results are underlined.
+In-Domain Out-of-Domain
+Method FVQA-test HotpotQA 2Wiki SimpleVQA LiveVQA InfoSeek MMSearch Avg.
+Naive-Large Language Model
+GPT-5.4 51.3 60.2 64.9 55.9 22.8 45.6 47.4 49.7
+Gemini-3-Flash 68.4 66.2 68.472.325.7 66.5 67.962.2
+Qwen2.5-VL-7B 20.7 12.6 20.5 30.2 8.3 23.6 7.2 17.6
+Qwen2.5-VL-32B 24.3 16.9 24.0 39.8 18.5 25.8 15.7 23.6
+Search Agent
+Qwen2.5-VL-7B+ReAct 34.2 23.7 31.2 35.4 10.6 28.1 21.3 26.4
+Qwen2.5-VL-32B+ReAct 50.9 31.4 37.0 48.3 24.7 38.1 27.5 36.8
+MMSearch-R1 58.3 39.2 48.3 55.2 28.6 49.5 43.3 46.1
+Deepeyes2 60.6 - - 59.4 - </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>51.1 63.7 -
+Memory-Augmented Search Agent
+RAG 58.6 47.8 56.2 60.7 31.9 55.9 54.3 52.2
+Mem0 54.9 49.3 54.9 56.9 24.3 48.2 43.1 47.4
+A-Mem 38.5 46.8 56.2 51.6 22.8 36.1 41.1 41.9
+ExpeL 64.2 56.3 62.9 62.5 34.1 58.8 61.3 57.2
+Memento 66.1 55.2 64.3 61.7 36.7 57.3 61.4 57.5
+MIA 65.3 64.0 71.6 63.8 39.7 64.7 60.6 61.4
+Ours
+APEX68.7 67.8 75.266.3 42.4 66.963.8 64.4
+LLMs.APEXimproves by 14.7 points com-
+pared to GPT-5.4 and slightly surpasses Gemini-
+3-Flash in average accuracy. Notably, APEXout-
+performs its own backbone model Qwen2.5-VL-
+7B by 46.8 points in absolute terms, demonstrat-
+ing that structured skill knowledge and memory-
+augmented planning can effectively compensate for
+model scale, enabling a small open-source model
+to rival closed-source counterparts.
+❷ Consistent gains over search agents.Equip-
+ping LLMs with search tools through ReAct sub-
+stantially improves performance </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We conduct three groups of ablation studies to eval-
+uate each component in APEX.
+❶ Experience Utilization.We remove different
+experience sources during inference.w/o Mem.dis-
+ables the retrieval of concrete execution memories,
+w/o Skillremoves distilled procedural skills, and
+w/o Bothremoves both. These variants reduce the
+average accuracy by 1.8, 3.1, and 10.1 points, re-spectively. This suggests that category-level skills
+provide general templates for similar tasks, while
+instance-level memories offer concrete problem-
+solving examples; their complementarity enables
+more effective utilization of past experience.
+Table 3:Ablation study of APEX. Accuracy is re-
+ported on image-text and text-only tasks. Performance
+drops (↓) relative to the full model are shown in sub-
+scripts.
+Method Image-Text Text-Only Avg.
+FVQA SimpleVQA HotpotQA 2Wiki
+APEX68.7 66.3 67.8 75.2 69.5
+w/o Experience </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Utilization
+w/o Mem. 67.4↓1.364.8↓1.565.7↓2.172.9↓2.367.7↓1.8
+w/o Skill 64.9↓3.862.7↓3.665.6↓2.272.3↓2.966.4↓3.1
+w/o Both 58.6↓10.155.0↓11.358.4↓9.465.5↓9.759.4↓10.1
+w/o Post-training Optimization
+w/o Dis. 66.4↓2.363.7↓2.665.8↓2.072.7↓2.567.2↓2.3
+w/o Plan. 66.8↓1.963.9↓2.466.2↓1.674.0↓1.267.7↓1.8
+w/o Exec. 61.0↓7.758.0↓8.358.2↓9.667.2↓8.061.1↓8.4
+w/o Closed-loop Adaptation
+w/o TTRL 64.6↓4.160.8↓5.563.5↓4.372.4↓2.865.3↓4.2
+w/o Iter. 66.0↓2.764.1↓2.264.7↓3.173.3↓1.967.0↓2.5
+❷ Post-training Optimization.We evaluate
+module-wise GRPO post-training. For each ab-
+lation, the pipeline structure is kept unchanged,
+while the corresponding GRPO-trained module is
+replaced with its non-trained base model, such as
+Qwen2.5-VL-7B or Qwen3-8B. Removing GRPO
+from the Distiller, Planner, and Executor reduces
+the average accuracy by 2.3, 1.8, and 8.4 points
+respectively. The larger degradation ofw/o </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While APEXachieves the best average perfor-
+mance across seven benchmarks and demonstrates
+strong generalization to out-of-domain settings, our
+current framework is built upon small open-source
+models. Although APEXenables a 7B model to
+surpass closed-source systems, we have not ex-
+plored how APEXscales when applied to more
+powerful backbone models. Additionally, our three-
+stage alternating GRPO training paradigm, despite
+its effectiveness in stabilizing cross-module credit
+assignment and producing consistently improving
+rewards, requires sequential optimization of the Ex-
+ecutor, Distiller, and Planner, which may not fully
+exploit the synergies achievable through end-to-
+end joint training. Finally, our skill-guided TTRL
+mechanism currently operates online at test time
+without ground-truth supervision, and while it al-
+ready yields significant improvements through self-
+improvement, </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tokens
+Max response length 8,192 tokens
+Max tool response length 8,192 tokens
+Max assistant turns 10
+Max LLM calls per run 20
+Sampling temperature 1.0
+KL coefficientβ0.0
+Entropy coefficient 0.0
+PPO clip rangeϵ0.2
+Number of GPUs 8
+Epochs (over test set) 1
+Optimizer AdamW
+whereR nogt = 0.9·A+ 0.1·R fmt. The adaptive
+weightλs is computed as:
+λs =λ base·wc,d·min
+ nc,d
+Nthreshold
+,1
+
+,(27)
+with λbase = 0.1 and Nthreshold = 10 . This en-
+sures that skills with higher win ratewc,d and more
+supporting evidencenc,d exert stronger regulariza-
+tion, while low-confidence or newly created skills
+have minimal influence on the policy update.
+E Dataset Description
+We conduct comprehensive evaluation across seven
+benchmark datasets spanning both multimodal and
+text-only scenarios. Table 8 provides an overview
+of all evaluation datasets.</blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>steps related to
+the failure cause .
+- Never remove a pitfall that is still relevant .
+Output a JSON object with the same structure as above .
+Evaluator 1: Reasoning and Logical Consistency
+You are a Reasoning and Logical Consistency Evaluator . Your task is to
+objectively evaluate the reasoning quality and the logical coherence of the
+thought process of a multimodal deep research agent when executing tasks .
+[ Input Information ]
+- User Question ( Question ) : { question }
+- Execution Trajectory ( Trajectory ) : { trajectory }
+- Agent Final Output ( Final Output ) : { final_output }
+[ Evaluation Criteria ]</blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Final Arbiter
+You are the Final Arbiter . In the absence of a ground - truth answer , your one
+and only task is to determine whether the final answer generated by the
+multimodal deep research agent is correct .
+The feedback from the three evaluators is provided for your reference . You
+need make a definitive judgment based on the factual evidence in the
+trajectory and the logical soundness of the final output .
+[ Input Information ]
+- User Question ( Question ) : { question }
+- Execution Trajectory ( Trajectory ) : { trajectory }
+- Agent Final Output ( Final Output ) : { final_output }
+- Evaluator 1 Feedback ( Reasoning and Logical Consistency , Importance Weight :
+0.5) : { e va l ua t o r_ 1 _ re s u lt }
+- Evaluator 2 Feedback ( Information Sourcing and Credibility , Importance
+Weight : 0.3) : { e v al u a to r _ 2_ r e su l t }
+- Evaluator 3 Feedback ( Result Validity , Importance </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

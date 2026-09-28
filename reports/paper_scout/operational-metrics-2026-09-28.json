@@ -1,0 +1,524 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 9,
+    "non_promoted": 1,
+    "papers_attempted": 3,
+    "papers_successfully_assessed": 3,
+    "papers_walked": 9,
+    "promoted": 2,
+    "retry_eligible_failures": 6,
+    "skipped_before_model": 6,
+    "technical_failures": 6,
+    "unavailable_manuscripts": 5
+  },
+  "budget": {
+    "gemini_calls": 3,
+    "gemini_input_tokens": 80988,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3315,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 3,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.03720579,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "computer_vision": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 3,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-09-28T10:35:22.226928+00:00",
+  "cost": {
+    "deepseek_calls": 3,
+    "deepseek_cost_usd": 0.03720579,
+    "deepseek_input_tokens": 76023,
+    "deepseek_output_tokens": 1668,
+    "gemini_calls": 3,
+    "gemini_input_tokens": 80988,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3315,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 595,
+    "papers_discovered": 2643
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 18,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 347,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22968683",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22968683",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Memory as Market Power: Persistent AI-Agent Memory, Switching Costs, and Consumer Lock-In \u2014 Replication Package",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.29144",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.29144",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Scope Before You Persist: Preventing Cross-Family Interference in Agent Memory",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22957647",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22957647",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "agmi: Agent Memory Integrity, a conformance test suite for tamper evidence in AI agent memory and checkpoint stores",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22938863",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22938863",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "XChronos OS as a Temporal-Semantic Operating Layer: Architecture, falsifiable hypotheses, and an experimental program for persistent memory and agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.27279",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.27279",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "EnSIMem: Entity-Structured Indexing for Long-Term Agent Memory",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "openalex:W7214246154",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "openalex:W7214246154",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "AkasicMEM: Governed Enterprise Memory for Agents",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 2010,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22968683",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22957647",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22938863",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.27279",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "openalex:W7214246154",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 99,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.26437/2pdqpg59",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.26437/2pdqpg59",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Cloud-Based Facial Expression Recognition Using Squeeze Vision Transformer",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.3389/frai.2026.1945529",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.3389/frai.2026.1945529",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Vision\u2013language guided semantic-geometric transformer for memory-efficient 3D scene understanding",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.21203/rs.3.rs-10777482/v1",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.21203/rs.3.rs-10777482/v1",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "INRA-Transformer: A Multi-Scale Hybrid Vision Transformer for Precise Seismic Deformation Mapping of the 6.1 Mw S\u0131nd\u0131rg\u0131 Earthquake",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.29073",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2609.29073",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Seeing Is Not Measuring: Tool-Augmented Metric Spatial Reasoning for Vision-Language Models",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.29225",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2609.29225",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "ComplexSync: High-Fidelity and Real-Time Lip Sync in Complex Scenarios",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.17485/ijst/v19i33.1128",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.17485/ijst/v19i33.1128",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Deep Learning with Additive Angular Spatio Temporal Vision Transformer for Multimodal Biometric Recognition Vision Attention Fusion Transformer",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 391,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.26437/2pdqpg59",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.3389/frai.2026.1945529",
+            "outcome": "integrity_failure",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2609.29073",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2609.29225",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.17485/ijst/v19i33.1128",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 15,
+        "high_relevance": 141,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.64898/2026.09.22.753641",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.64898/2026.09.22.753641",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-25T09:25:34.329274+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "An AI-ready compositional framework for mechanistic aging research and in silico intervention testing",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22894142",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22894142",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-25T09:25:34.323820+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Continuous Novel Discovery: The Minimum Configuration for Artificial Superintelligence",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.20944/preprints202609.0402.v1",
+            "rank": 24,
+            "selection": {
+              "canonical_id": "doi:10.20944/preprints202609.0402.v1",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Agent and Tool Search: Foundations, Techniques, and Open Challenges",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.02253",
+            "rank": 25,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.02253",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.17863/cam.134096",
+            "rank": 26,
+            "selection": {
+              "canonical_id": "doi:10.17863/cam.134096",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "(Human) Attention Is (Still) All You Need: Human Oversight Makes Ai-Assisted Social Science",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.00935",
+            "rank": 27,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.00935",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DualStake: Dual-Path Confidence Calibration in Deep Research Agents",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 234,
+        "retry_blocked": 6,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.64898/2026.09.22.753641",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22894142",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.20944/preprints202609.0402.v1",
+            "outcome": "manuscript_unavailable",
+            "rank": 24
+          },
+          {
+            "canonical_id": "doi:10.17863/cam.134096",
+            "outcome": "track_slot_consumed",
+            "rank": 26
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.00935",
+            "outcome": "track_slot_consumed",
+            "rank": 27
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 8,
+        "high_relevance": 8,
+        "nominated": [],
+        "ranked": 8,
+        "retry_blocked": 0,
+        "skipped_before_model": [],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-09-28T10:33:32.519567+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

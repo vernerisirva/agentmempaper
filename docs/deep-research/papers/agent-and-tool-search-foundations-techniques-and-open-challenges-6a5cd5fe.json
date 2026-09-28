@@ -47,7 +47,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-08 11:25:55",
-    "generated_at": "2026-09-25 13:55:57",
+    "generated_at": "2026-09-28 10:35:44",
     "last_seen_at": "2026-09-11 11:28:17",
     "metadata_sources": [
       "openalex"
@@ -106,66 +106,63 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-08T11:26:18+00:00",
+    "assessed_at": "2026-09-28T10:34:49.952381+00:00",
     "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
     "assessor_type": "deterministic",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 43/100, low confidence, based on title and abstract.",
+    "concise_summary": "Manuscript unavailable; no scientific decision.",
     "confidence": "low",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 2,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+    "coverage": {
+      "assessment_input_characters": 1706,
+      "extraction_complete": false,
+      "version": "coverage-v1"
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
-    "evidence": [
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No reproducible review or selection methodology was detected.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      }
-    ],
+    "evidence": [],
     "full_text_assessed": false,
     "full_text_url": null,
-    "gate_version": null,
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
-      "No reproducible review or selection methodology was detected."
+      "No reproducible review or selection methodology was detected.",
+      "No extractable manuscript text was available."
     ],
-    "overall_quality_score": 43,
+    "overall_quality_score": null,
     "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "manuscript_unavailable",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Manuscript unavailable; no scientific decision.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "40c4a3b42c95ea585cd9e051a5dece871c51adca035cecdede49408c29a8be6a",
-    "status": "not_assessed",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

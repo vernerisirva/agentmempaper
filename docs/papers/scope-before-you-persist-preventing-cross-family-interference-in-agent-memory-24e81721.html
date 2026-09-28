@@ -59,16 +59,194 @@
             <p>Persistent memory lets language-model agents improve prompts and skills without updating model weights. We show that matching retrieval scope to certification scope enables these edits to support reliable repeated adaptation across recurring task families. We study frozen-model agents on ProcStream-RSI, a 12-round c...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study exhibits high experimental rigor with strict leakage boundaries between online probe gates and sealed hidden checkpoints, clear ablation of confounding compute, and robust statistical reporting.</p>
+      <p>The authors explicitly bound their conclusions to inspectable prompt scaffolds under fixed task contracts, noting the lack of open-world routing, wrong-slot misrouting tests, and other model families as areas for future investigation.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-28T10:33:48.327104+00:00.</p>
+        <p>Coverage: 41411 of 41411 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Persistent memory lets language-model agents improve prompts and skills without
+updating model weights. We show that matching retrieval scope to certification
+scope enables these edits to support reliable repeated adaptation across recurring
+task families. We study frozen-model agents on PROCSTREAM-RSI, a 12-round
+code-repair stream, using Orthogonal Regression Control (ORC), an execution-
+grounded gate for persistent skill edits. In an intervention that holds proposals
+and gate decisions fixed, retrieving each accepted skill only for its originating
+family raises mean hidden trajectory utility from 0.713 under global memory to
+0.816 and changes harmful deployments from six of eight to none. In 27 paired
+randomized-order streams, Scoped-ORC improves mean trajectory utility by 0.063
+[0.037, 0.094] over Global-ORC, accepts 63 rather than 12 updates, and produces
+multiple accepted updates </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>holding proposals, decisions, programs, and scores fixed; paired end-to-end streams then
+allow later behavior and gate outcomes to diverge. Together, they show that scoped retrieval
+prevents the observed cross-family harm and supports repeated updates across a 12-round
+stream.
+Family-scoped retrieval preserves locally certified gains and, in a 27-stream randomized-order
+extension, increases both trajectory utility and the number of useful accepted updates. The global
+controls explain this advantage: across eight 12-round streams, each global-update method falls
+below Static because accepted rules affect families outside the gate&#x27;s evidence. Persistent adaptation
+therefore depends on matching evidence scope and deployment scope in addition to proposal quality
+and gate accuracy.
+We call this outcomecontinual adaptation: sequentially accepted edits remain useful as the </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Letπθ be a frozen actor andKt the persistent natural-language skill deployed at roundt. On discovery
+batchDt, the actor receives the task specification, buggy program, visible examples, andKt, then
+2
+Author-prepared manuscript; not a record of conference acceptance
+emits repaired programs. A frozen editor maps the resulting programs and visible failures to a
+proposalK′
+t. A gateG t evaluatesKt andK′
+t on paired probe tasks and chooses
+Kt+1 =
+K′
+t, G t(K′
+t,Kt) = 1,
+Kt,otherwise. (1)
+The editor instruction is fixed, and proposed meta-skill text is ignored in confirmatory runs; the only
+inherited state isKt. Generated task programs are ephemeral outputs rather than mutable system
+code.
+LetUt be hidden utility ofKt on a fixed balanced checkpoint bank. We report terminal utility, mean
+trajectory utility MTU = 1
+T+1
+PT
+t=0Ut, mean backward transfer, worst-family retention, and a
+separate </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We test a direct scope intervention. Instead of replacing one global policy, Scoped-ORC stores an
+accepted candidate in the current family&#x27;s slot. For a task from familyf, the actor receives
+Kt(f) =
+(
+K (f)
+t ,if an accepted slot forfexists,
+K0,otherwise. (3)
+The active policy remains exactly 360 characters: retrieval changes which policy is supplied, not
+the prompt budget. Proposal generation and the gate are unchanged. In the round-0 comparison,
+Global- and Scoped-ORC therefore use the same discovery outputs, candidate, probe evidence, and
+acceptance decision; only the scope of deployment differs. This design tests a mechanism—cross-
+family exposure—rather than a stronger editor or verifier.</blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ORC evaluates incumbent and candidate policies on the same probe instances. Each task has
+three online channels: four public examples, four private exact-output tests absent from the ac-
+tor/editor prompt, and at least six answer-free metamorphic checks. For task i and channel
+c∈{pub,priv,meta}, letd i,c be candidate-minus-incumbent pass rate.
+Probe instances are partitioned into the current family and one group for each historical family.
+A returning current family remains distinct from its historical instances. For each group/channel
+pair, ORC computes a deterministic one-sided 95% paired-bootstrap lower boundLg,c. We exactly
+enumerate bootstrap samples whennn≤50,000 and otherwise use 2,000 seeded draws; every group
+contains at least four tasks.
+3
+Author-prepared manuscript; not a record of conference acceptance
+Withδ new = 0andδ reg = 0.02, a candidate is deployed only </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>if
+Lcurrent,pub≥−δ reg, L current,priv&gt;δ new,(4)
+Lcurrent,meta≥−δ reg, L g,c≥−δ reg ∀g &lt;t,∀c,(5)
+and no private or metamorphic evaluation reports an unsafe program. The conjunction prevents a
+gain in one channel from averaging away a regression in another. Rejected proposals remain in the
+trace but never affect later actor or editor prompts.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>substantial prior competence.
+Each round has four discovery and four probe tasks. Separately generated fixed banks contain one
+checkpoint and two final tasks per family, for 123 tasks per stream. Exact-output public, private,
+and hidden inputs are pairwise disjoint, and hidden cases are unavailable to the online agent. Role-
+normalized public views are unique; full manifest-integrity checks are described in the reproducibility
+statement and supplement.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We first isolate retrieval scope on the eight main streams. Every Global-ORC lineage accepts the
+same kind of round-0 boundary rule, so family-scoped retrieval uses its archived completion on
+4
+Author-prepared manuscript; not a record of conference acceptance
+boundary tasks and the archived Static completion elsewhere. The proposals, gate decisions, task
+programs, and scores remain unchanged; only the task-to-skill assignment differs.
+We then test the mechanism prospectively under balanced randomized entry. The v4 generator applies
+a seed-deterministic permutation to the v3.1 family multiset. Eighteen seeds give two streams for
+each of the nine possible first families. Each stream contains one update round, four discovery and
+four probe tasks, and checkpoint and final banks with two tasks per family. Global- and Scoped-ORC
+are paired within stream and must share their proposal and gate </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>trajectory utility,
+and ORC–Batch-ORC terminal checkpoint utility. We report paired raw seeds, bootstrap 95%
+intervals, two-sided paired sign-flip sensitivity tests, and Holm correction across these three tests.
+The eight seed-instantiated streams are the analysis population; task-level results are descriptive.
+Provider-reported token counts determine counterfactual endpoint cost.
+For external validity, terminal Static, Latest-only, Replay, ORC, and Batch-ORC policies are
+evaluated without feedback on 32 HumanEval+ tasks selected before adaptive main results by a fixed
+SHA-256 ranking. The upstream augmented tests remain offline and execute in a pinned NumPy
+container. This measures transfer of the learned skills beyond PROCSTREAM-RSI.
+A second, actor-only diagnostic applies the same terminal skills to each stream&#x27;s 18-task final bank
+using GPT-OSS-120B on the fixed AkashML BF16 </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Global controls reveal the value of scope matching.Static and Frozen-compute are identical at
+0.775 mean trajectory utility and final checkpoint utility, despite Frozen-compute&#x27;s counterfactual
+endpoint cost being roughly five times as high (table 1). Latest-only accepts every proposal and
+reaches 0.703 mean trajectory utility with mean BWT−0.253; Self-judge and Replay reach 0.736 and
+5
+Author-prepared manuscript; not a record of conference acceptance
+Table 1: Main ProcStream-RSI results over eight paired streams. Brackets are seed-bootstrap 95%
+intervals. Harmful accepts count accepted rounds whose fixed hidden checkpoint score decreased.
+Method Mean traj.↑Final checkpoint↑BWT↑Accepted Harmful
+Static 0.775 [0.734, 0.814] 0.775 [0.734, 0.814] 0.000 [0.000, 0.000] 0.00 0.00
+Frozen-compute 0.775 [0.734, 0.814] 0.775 [0.734, 0.814] 0.000 [0.000, 0.000] 0.00 0.00
+Latest-only 0.703 [0.678, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rule raises boundary-family hidden
+utility by 0.398 on average, but simultaneously changes missing, rotation, tie-breaking, and chunk
+families by−0.461,−0.234,−0.148, and−0.117. The shared global skill therefore couples a useful
+local update to measurable changes in other families.
+Final-bank hidden means are 0.786 for Static, Frozen-compute, and Batch-ORC, 0.705 for Latest-
+only, 0.719 for Self-judge, 0.682 for Replay, and 0.682 for ORC. These terminal-policy results are
+consistent with the trajectory analysis.
+Family-scoped retrieval preserves local gains across families.Changing only retrieval scope
+yields the central improvement (table 4). The fixed-completion Scoped-ORC intervention attains
+mean trajectory utility 0.816, compared with 0.713 for Global-ORC and 0.775 for Static. Its paired
+advantage is 0.103 over Global-ORC (bootstrap 95% interval [0.052,0.151] , sign-flip </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>retrieval
+applies each ORC rule only to its originating family and uses the initial skill elsewhere.
+Deployment Mean traj.↑Final checkpoint↑Accepted Harmful
+Static 0.775 [0.734, 0.814] 0.775 [0.734, 0.814] 0 0
+Global ORC 0.713 [0.653, 0.762] 0.707 [0.645, 0.760] 8 6
+Scoped retrieval 0.816 [0.782, 0.852] 0.819 [0.786, 0.855] 8 0
+0.070] (p= 0.1250 ). The two deployments have the same current-family change by construction
+when their shared candidate is accepted; their mean non-current-family changes are -0.047 and
+0.000, respectively. The paired deployments therefore isolate cross-family exposure: they share the
+current-family gain, while scoped retrieval prevents changes to every non-current family.
+Full randomized-order extension.Across 27 complete 12-round streams, Scoped-minus-Global
+mean hidden trajectory utility is 0.063 [0.037, 0.094] (sign-flip sensitivityp&lt;10 −4; Holmp&lt;10 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>−4).
+Global-ORC accepts 12 updates in total and has 2 streams with at least two acceptances; Scoped-
+ORC accepts 63 updates and has 19 such streams. The paired increase in the multiple-acceptance
+indicator is 0.630 (sign-flip sensitivityp&lt;10 −4). The harmful/accepted counts are 6/12 for Global-
+ORC and 0/63 for Scoped-ORC. On this templated benchmark, the learned router classifies held-out
+checkpoint prompts with 100.0% accuracy (243/243) and matches oracle routing at 0.848 trajectory
+utility; the fallback-on-miss curve shows how utility degrades as routing errors increase.
+Orthogonal evidence improves selection within scope.Across 479 within-stream proposal–round
+comparisons pooled descriptively over five methods, the public and private/metamorphic components
+reach AUROC 0.752 and 0.998, respectively. Yet all eight ORC acceptances are safe locally while
+only two improve the next global </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The study covers inspectable scaffold edits with one frozen model and nine code-contract families.
+A cumulative one-shot control for compounding, open-world and wrong-slot routing, additional
+editor/search backbones, and automatically learned invariants remain future work.
+Generated programs run in a pinned, network-free Docker sandbox with least privilege, resource
+limits, and AST validation. The study has no personal data or human subjects. Full trajectories,
+bounded terminology, and cost accounting discourage overgeneralizing this scaffold-level result.
+8
+Author-prepared manuscript; not a record of conference acceptance
+(a) Scope and controls
+Static = Batch-ORC
+ORC
+Scoped retrieval
+0.50
+0.60
+0.70
+0.80
+0.90
+0
+4
+8
+12
+(b) Permissive baselines
+Static
+Latest-only
+Replay
+0
+4
+8
+12
+Deployment round
+Hidden checkpoint score
+Figure 2: Mean fixed-bank hidden performance of deployed policies. </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the gate.
+On HumanEval+, Global-ORC scores 0.895 versus Static&#x27;s 0.914. On the sealed GPT-OSS banks,
+Global-ORC scores 0.951 and scoped retrieval reaches 0.960, or 0.020 above Static (bootstrap 95%
+interval[0.004,0.035]) and 0.010 above Global-ORC ([−0.033,0.055]).
+11
+Author-prepared manuscript; not a record of conference acceptance</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>C EVIDENCE ROLES AND LEAKAGE BOUNDARIES
+Discovery code, visible errors, specifications, and public cases are summarized for the editor. Probe
+tasks are visible to the actor but never summarized for the editor. Private exact-output tests and
+metamorphic outcomes are available only to the online gate. Checkpoint scores are recorded after
+each decision but never enter proposal or acceptance prompts. Sealed hidden cases are absent from
+online manifests and loaded only by the model-free auditor. The final bank is distinct from the
+checkpoint bank and evaluated once by the terminal state.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +285,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

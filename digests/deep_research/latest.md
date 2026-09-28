@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-25](2026-09-25.md).
+Latest daily digest: [2026-09-28](2026-09-28.md).
 
-# Paper Scout Digest - 2026-09-25
+# Paper Scout Digest - 2026-09-28
 
 ## Run Summary
 
-- **Run ID:** 97
-- **Candidates fetched:** 100
-- **New unique papers:** 100
-- **Relevant:** 7
-- **Maybe relevant:** 5
-- **Irrelevant:** 88
-- **Source summary:** openalex: 100, semantic_scholar: 0
+- **Run ID:** 98
+- **Candidates fetched:** 0
+- **New unique papers:** 0
+- **Relevant:** 0
+- **Maybe relevant:** 0
+- **Irrelevant:** 0
+- **Source summary:** semantic_scholar: 0
 
 ## Source Warnings
 
@@ -20,23 +20,13 @@ Latest daily digest: [2026-09-25](2026-09-25.md).
 - arxiv failed for 'autonomous research agent': http error for https://export.arxiv.org/api/query?search_query=all%3Aautonomous+AND+all%3Aresearch+AND+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - arxiv failed for 'AI scientist': http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+scientist%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - arxiv failed for 'automated literature review': http error for https://export.arxiv.org/api/query?search_query=all%3Aautomated+AND+all%3Aliterature+AND+all%3Areview&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
-- openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
-- openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
-- openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
-- openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- openalex failed for 'deep research agent': http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-09-21&per-page=25: request failed after 3 attempts: HTTP Error 503: Service Unavailable
+- openalex failed for 'autonomous research agent': http error for https://api.openalex.org/works?search=autonomous+research+agent&filter=from_publication_date%3A2026-09-21&per-page=25: request failed after 3 attempts: HTTP Error 503: Service Unavailable
+- openalex failed for 'AI scientist': http error for https://api.openalex.org/works?search=AI+scientist&filter=from_publication_date%3A2026-09-21&per-page=25: request failed after 3 attempts: HTTP Error 503: Service Unavailable
+- openalex failed for 'automated literature review': http error for https://api.openalex.org/works?search=automated+literature+review&filter=from_publication_date%3A2026-09-21&per-page=25: request failed after 3 attempts: HTTP Error 503: Service Unavailable
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
-## Maybe Relevant
-
-### [Little Scientist: architecture and implementation of a controlled artificial intelligence agent for scientific and technological literacy in basic education](https://doi.org/10.54901/educa.v9-816)
-
-- **Authors:** Cláudio Gerhardt, Dimas Rodrigues Dutra, Ingrid Santos, Matheus Jose Miller Krumenauer, Murillo Pereira Azevedo, Natália Horst Bitencourt, et al.
-- **Date:** 2026-09-24
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** The objective of this study is to analyze the development and implementation of a controlled artificial intelligence agent, named Little Scientist (Cientista Mirim), aimed at supporting K-12 students in the process of Scientific-Technological Literacy (AlfaCT). The research problem investigates how a supervised AI a...
+No new relevant or maybe-relevant papers found.

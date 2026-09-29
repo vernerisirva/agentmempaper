@@ -1,0 +1,547 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 15,
+    "non_promoted": 2,
+    "papers_attempted": 3,
+    "papers_successfully_assessed": 3,
+    "papers_walked": 4,
+    "promoted": 1,
+    "retry_eligible_failures": 1,
+    "skipped_before_model": 1,
+    "technical_failures": 1,
+    "unavailable_manuscripts": 0
+  },
+  "budget": {
+    "gemini_calls": 3,
+    "gemini_input_tokens": 174670,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3786,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 3,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.17781817,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "computer_vision": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 3,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-09-29T10:29:55.081510+00:00",
+  "cost": {
+    "deepseek_calls": 3,
+    "deepseek_cost_usd": 0.17781817,
+    "deepseek_input_tokens": 161172,
+    "deepseek_output_tokens": 15324,
+    "gemini_calls": 3,
+    "gemini_input_tokens": 174670,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3786,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 696,
+    "papers_discovered": 2967
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 19,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 382,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2609.34633",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2609.34633",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "GenMem: Generative Symbolic Memory for Self-Evolving Harness",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.34438",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2609.34438",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Remember by Asking: Retrieval-Induced Memory Evolution for LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.34863",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2609.34863",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Revisit to Segment: Working Memory Distillation for Reasoning Segmentation",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.34242",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2609.34242",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Stashbird: Efficient Speaker-Indexed Memory for Conversational Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.34545",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2609.34545",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Remember Before You're Asked: MemDream for Self-Probing Memory Evolution",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.34422",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2609.34422",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Coding Agent Memory Post-training: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via Reinforcement Learning",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 2091,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2609.34438",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2609.34863",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2609.34242",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2609.34545",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2609.34422",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 1,
+        "high_relevance": 158,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.26437/2pdqpg59",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.26437/2pdqpg59",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-28T10:34:16.744373+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Cloud-Based Facial Expression Recognition Using Squeeze Vision Transformer",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.3389/frai.2026.1945529",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.3389/frai.2026.1945529",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-28T10:34:18.948899+00:00",
+              "last_outcome": "integrity_failure",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Vision\u2013language guided semantic-geometric transformer for memory-efficient 3D scene understanding",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.27735",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.27735",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "NS-ATTENTION: Newton-Schulz Transformations of Attention Outputs in Vision Transformers",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.35490",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2609.35490",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "AHMAD: Adaptive Hybrid Multi-task Vision Learning with Assisted Distillation for Keypoint Detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.34853",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2609.34853",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "EviSplat: Preserving Multi-View Evidence in 3D Gaussian Splatting for Open-Vocabulary Segmentation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.34564",
+            "rank": 7,
+            "selection": {
+              "canonical_id": "arxiv:2609.34564",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "GLF-Q: Global-Local Feature-based Quantization for Vision Transformers",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 623,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.3389/frai.2026.1945529",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.27735",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2609.35490",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2609.34853",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          },
+          {
+            "canonical_id": "arxiv:2609.34564",
+            "outcome": "track_slot_consumed",
+            "rank": 7
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 147,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2609.35051",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2609.35051",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Large-Scale Autonomous Discovery of Kissing Number Constructions",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2609.34450",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2609.34450",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "ReproBench: Benchmarking LLM Agents on Reproducing Vulnerability From Scratch",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2609.34296",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2609.34296",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Dr.Credit: Rubric-Grounded Process Credit Assignment for Deep Research Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.1145/3799682.3840769",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.1145/3799682.3840769",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "CodeGraph: Open-Taxonomy Knowledge Graph for Source Code with Wikidata Grounding",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2609.30588",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2609.30588",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Orchestrating GenAI for Interdisciplinary Research",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.09.22.753641",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.64898/2026.09.22.753641",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-28T10:34:49.941426+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "An AI-ready compositional framework for mechanistic aging research and in silico intervention testing",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 244,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2609.34450",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2609.34296",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.1145/3799682.3840769",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2609.30588",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.09.22.753641",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 8,
+        "high_relevance": 9,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2609.35578",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2609.35578",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "FactorEngram: Factorized N-gram Memory with Basis-Level Gating for Language Models",
+            "track": "engram"
+          }
+        ],
+        "ranked": 9,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2609.35578",
+            "outcome": "not_assessed",
+            "rank": 1
+          }
+        ],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-09-29T10:24:35.130821+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

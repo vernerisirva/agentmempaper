@@ -60,15 +60,181 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Manuscript unavailable; no scientific decision.</p>
-      <p>No promotion; review candidates may remain pending indefinitely.</p>
+      <p>The contribution is modest, essentially consisting of fine-tuning an off-the-shelf ViT-small model on three legacy datasets. The gap between the formulated squeeze-fusion method and the actually evaluated architecture, combined with the lack of direct baseline comparisons and missing cloud/edge empirical runtime evaluations despite the paper&#x27;s central title and theme, warrants an uncertain assessment.</p>
+      <p>The authors transparently acknowledge that evaluation is limited to offline testing on small, controlled datasets without testing in-the-wild robustness or real end-to-end cloud latency and throughput [E31e576869c0657c4-B0006, E31e576869c0657c4-B0065].</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: African Journal Of Applied Research. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
-        <p>Assessed: 2026-09-28T10:34:16.744373+00:00.</p>
-        <p>Coverage: unknown of unknown eligible manuscript characters; omitted body: unknown. Extraction complete: False.</p>
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-29T10:27:19.013743+00:00.</p>
+        <p>Coverage: 45585 of 45585 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Purpose: This paper presents and evaluates a cloud -oriented facial expression
+recognition (FER) system built on a compact, squeeze -style Vision Transformer, and
+assesses its suitability as an accurate , resource-efficient modelling layer for cloud and
+edge-cloud deployment.
+Design/Methodology/Approach: A pretrained ViT -small-patch16-224 backbone is
+fine-tuned for seven-class facial expression classification (angry, disgust, fear, happy,
+neutral, sad, and surprise). Images from three benchmark datasets (CK+, JAFFE, and
+KDEF) are preprocessed by resizing, converting to grayscale, converting to tensors,
+normalising, and expanding channels. The model is trained with cross-entropy loss and
+the Adam optimiser over ten epochs. Performance is assessed using accuracy, loss, per-
+class precision, recall, and F1-score, macro-averaged metrics, and confusion matrices.
+Research </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Limitation: Evaluation relies on controlled laboratory datasets and measures
+classification performance offline. Generalisation to in-the-wild data and end -to-end
+cloud-serving latency, throughput, and cost have not yet been tested.
+Findings: The model attains 97.5% accuracy on CK+ (macro F1 of 0.956), 95.0% on
+JAFFE (macro F1 of 0.946), and 86.1% on KDEF (macro F1 of 0.857). Accuracy is
+highest on the tightly controlled CK+ and JAFFE datasets and lower on the more
+heterogeneous KDEF, with Fear and Disgust the most frequently confused expressions
+across all three datasets.
+Practical Implication: The results indicate that compact, squeeze -style vision
+transformers can act as an accurate and computationally efficient modelling layer for
+cloud and edge -cloud FER services. They reduce the computational complexity and
+memory required per inference request, simplifying </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>computing resources than
+similar convol utional networks  (Han et al., 202) . To address this issue, researchers
+developed squeezed vision transformers ( Xue et al., 2025; Kim et al., 2022) . They
+reduce the dimensionality of the object representation to lower costs, then combine the
+resulting global representation with locally extracted features to preserve fine details.
+
+Facial Expression Recognition (FER) increasingly runs in the cloud, at the edge, or in
+a hybrid setup rather than entirely on handheld devices (Aikyn et al., 2024). The cloud
+can host larger models, reduce load, and make updates more efficient, keeping network
+traffic low and avoiding transmission of  raw facial imagery across a network. In this
+study, the dataset pipeline and training were organised  around cloud-hosted storage,
+which reflects the general direction of the field, though we are careful in </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This section describes the complete experimental methodology, from data preparation
+through model training to evaluation. It first presents an overview of the end -to-end
+pipeline, then details the datasets, preprocessing steps, and the Squeeze Vision
+Transformer architecture that forms the classification backbone.
+
+Figure 1 depicts the pipeline end-to-end: dataset preparation from cloud-hosted storage,
+model initialisation, training and evaluation, and finally saving the best checkpoint for
+inference. The following subsections discuss each stage in detail, with particular
+emphasis on the Squeeze Vision Transformer framework that underpins the classifier.
+
+Figure 1: Overview of the research methodology for cloud-based facial expression
+recognition.
+
+Datasets
+Three public facial expression datasets were used, all held in cloud -hosted storage: the
+Extended Cohn-Kanade </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>dataset, CK+ (Lucey et al., 2010); the Japanese Female Facial
+Expression database, JAFFE (Lyons et al., 1998); and the Karolinska Directed Emotional</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ISSN: 2408-7920
+Copyright ⓒ African Journal of Applied Research
+Arca Academic    81
+
+
+
+
+Faces set, KDEF (Lundqvist et al., 1998). Each labels its images across the same seven
+categories: angry, disgust, fear, happy, neutral, sad, and surprise. Each dataset was split
+70% for training and 30% for testing.
+
+Preprocessing
+To keep the work consistent across datasets, images were first resized to 48 × 48 pixels,
+converted to grayscale, and normalised. For training, they were then resized again to 224
+× 224 to match the transformer&#x27;s expected input, and the single grayscale channel was
+replicated across three channels to satisfy the RGB format.
+
+Model Architecture: Squeeze Vision Transformer
+The classifier follows the Squeeze Vision Transformer design, which lower the cost of
+the standard transformer by reducing the dimensions after the encoder stack, and then
+recovers </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Finally, the fused representation at the classification token goes through a linear
+layer and a softmax, giving a probability distribution over the seven expressions:
+
+ ŷ =  𝑠𝑜𝑓𝑡𝑚𝑎𝑥(𝑊𝑐𝐹𝑓𝑢𝑠𝑒𝑑
+𝑐𝑙𝑠  +  𝑏𝑐) (7)
+
+In the implementation reported here, the backbone is a compact ViT -small-patch16-224
+initialised from ImageNet-pretrained weights (Dosovitskiy et al., 2021), with its final layer
+Q = zWQ
+ K = zWK
+Attention scores:  softmax(QKᵀ / √dₖ)
+Weighted sum of values  (scores × V)
+V = zWV
+Concatenate heads → linear projection
+Figure 4: Scaled dot-product multi-head attention.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ISSN: 2408-7920
+Copyright ⓒ African Journal of Applied Research
+Arca Academic    86
+
+
+
+
+swapped for the seven -way head of Equation (7). ViT -small already reduces embedding
+dimension and head count relative to ViT -Base and ViT -Large, so the backbone choice
+follows the same efficiency logic as the squeeze layer described above. We should be clear
+about the boundary, though: the dedicated local-branch fusion module in Equations (5) and
+(6) is part of the architecture as formulated, not the trained pipeline evaluated in Section 4,
+and we list integrating it as a direct extension in Section 6.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The squeeze case for squeezing is easiest to see in the complexity of attention
+itself. For a sequence of N tokens with embedding dimension D, standard multi -head
+self-attention, counting the query, key, and value projections, costs:
+ 𝛺(𝑀𝑆𝐴)  =  4𝑁𝐷2  +  2𝑁2𝐷 (8)
+Once the squeeze layer has taken the embedding dimension from D down to
+D/r, that becomes:
+ 𝛺(𝑀𝑆𝐴𝑠𝑞)  =  4𝑁 (𝐷
+𝑟 )
+2
+ +  2𝑁2 (𝐷
+𝑟 ) (9)
+
+Because one of the terms is proportional to the square of D and the other to D, the
+savings increase with r instead of remaining constant. This is the main reason why
+squeeze-style transformers are common in mobile, edge, and cloud computing contexts
+(Setyawan et al., 2025; Wan et al., 2023; Li et al., 2022; Mehta &amp; Rastegari, 2021).
+
+Training Setup
+The fine-tuning process used a cross-entropy loss with the Adam optimiser, a learning
+rate of 0.0001, a batch size of 16, and ten </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>epochs. The checkpoint with the highest test
+accuracy was retained as the final model for each dataset. The loss over C classes is:
+ ℒ =  − ∑ 𝑦𝑖 𝑙𝑜𝑔(ŷ𝑖)
+𝐶
+𝑖 = 1
+ (10)
+where 𝑦𝑖 is the one-hot ground-truth vector (1 for the correct class, 0 otherwise)
+and ŷ𝑖 is the predicted probability for class i from Equation (7). When the model
+confidently predicts the right emotion, that probability is near 1 and the loss is near 0.
+
+Evaluation Metrics
+To measure the performance of this work, various metrics are used. These metrics are
+accuracy, training and validation loss, precision, recall, F1 -score, and the confusion
+matrix, as well as the macro-averaged precision, recall, and F1 across the seven classes
+for each dataset. Macro averaging was chosen since it weights every expression equally
+and therefore reveals weakness on the rarer classes that a plain accuracy score would
+hide.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The proposed model was evaluated separately on the CK+, JAFFE, and KDEF datasets.
+Table 1 gives the headline numbers for each dataset. Tables 2 through 4 illustrate the
+performance class by class.
+
+Table 1. Overall accuracy and macro-averaged precision, recall, and F1-score
+on the CK+, JAFFE, and KDEF test sets, with performance highest on the
+controlled CK+ and JAFFE and lowest on the more varied KDEF.
+
+Table 2: Overall accuracy and macro-averaged precision, recall, and F1-score on the
+CK+, JAFFE, and KDEF test sets
+Dataset Accuracy Macro
+Precision Macro Recall Macro F1
+CK+ 0.975 0.962 0.954 0.956
+JAFFE 0.950 0.960 0.943 0.946
+KDEF 0.861 0.861 0.859 0.857
+
+Cohn-Kanade-Plus (CK+)
+On the CK+ dataset, the model achieved 97.5% accuracy, with macro precision of
+0.962, macro recall of 0.954, and macro F1 of 0.956. Fear, neutral, and surprise
+expressions achieved perfect </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ISSN: 2408-7920
+Copyright ⓒ African Journal of Applied Research
+Arca Academic    92
+
+
+
+
+Rastegari, 2021). That matters for a cloud service, where a smaller backbone directly
+reduces the compute and memory that have to be provisioned per request, and where
+those two quantities drive both cost and latency (Zhong et al., 2025; Wu et al., 2023).
+
+The present study has limits, and it is worth stating them plainly. Everything reported
+here was measured offline, at the dataset level. The cloud component was storage, not
+an inference-serving pipeline, which sets this work apart from studies that report end -
+to-end cloud latency and throughput for systems actually in service (Zhong et al., 2025;
+Chowdary et al., 2024). Measuring serving latency, throughput, and cost for this
+backbone, rather than accuracy alone, is the obvious next move, and it would help close
+a gap that </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +273,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +289,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-27</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-28 10:33:16</li><li>Last seen by Paper Scout: 2026-09-28 10:33:16</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-27</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-28 10:33:16</li><li>Last seen by Paper Scout: 2026-09-29 10:24:25</li></ul>
             <ul><li>DOI: 10.26437/2pdqpg59</li><li>OpenAlex: W7214491237</li><li>OpenAlex IDs: W7214491237</li></ul>
           </section>
           <section class="detail-panel">

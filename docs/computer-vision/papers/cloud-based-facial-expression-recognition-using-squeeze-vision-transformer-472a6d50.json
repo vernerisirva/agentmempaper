@@ -20,12 +20,12 @@
   "first_seen_date": "2026-09-28",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-09-28 10:33:16",
-  "last_seen_date": "2026-09-28",
+  "last_seen_at": "2026-09-29 10:24:25",
+  "last_seen_date": "2026-09-29",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-28 10:33:32",
   "notified_date": "2026-09-28",
   "openalex_id": "W7214491237",
@@ -35,8 +35,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-28 10:33:16",
-    "generated_at": "2026-09-28 10:35:47",
-    "last_seen_at": "2026-09-28 10:33:16",
+    "generated_at": "2026-09-29 10:30:21",
+    "last_seen_at": "2026-09-29 10:24:25",
     "metadata_sources": [
       "openalex"
     ],
@@ -96,36 +96,1656 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-28T10:34:16.744373+00:00",
-    "assessment_scope": "title_and_abstract",
+    "assessed_at": "2026-09-29T10:27:19.013743+00:00",
+    "assessment_scope": "full_text",
     "assessment_version": "quality-promotion-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": "Manuscript unavailable; no scientific decision.",
+    "concerns": [
+      "The paper's central title and abstract frame the work as a cloud-based system using a Squeeze Vision Transformer, but the actually trained and evaluated pipeline is a standard ImageNet-pretrained ViT-small backbone; the dedicated squeeze-layer local-global fusion module is explicitly stated to be part of the formulated architecture only and not the evaluated model [E31e576869c0657c4-B0045].",
+      "The cloud claim is not empirically substantiated: the cloud component was storage only, and no serving latency, throughput, memory, or cost measurements are reported, so the practical implication of cloud/edge-cloud suitability is not established by the evidence [E31e576869c0657c4-B0006, E31e576869c0657c4-B0011, E31e576869c0657c4-B0065].",
+      "The evaluation lacks direct comparative baselines under identical splits or setups, repeated runs, or statistical dispersion, leaving the reported accuracy pattern without a controlled reference for the claimed efficiency-accuracy trade-off [E31e576869c0657c4-B0026, E31e576869c0657c4-B0050]."
+    ],
+    "concise_summary": "The contribution is modest, essentially consisting of fine-tuning an off-the-shelf ViT-small model on three legacy datasets. The gap between the formulated squeeze-fusion method and the actually evaluated architecture, combined with the lack of direct baseline comparisons and missing cloud/edge empirical runtime evaluations despite the paper's central title and theme, warrants an uncertain assessment.",
     "confidence": "low",
     "coverage": {
-      "assessment_input_characters": 2459,
-      "extraction_complete": false,
-      "version": "coverage-v1"
+      "assessment_input_characters": 48057,
+      "assessment_input_sha256": "be0ca4074ab27f3d68769e5fd53f0499a7145ec0e5ed9cb398ab5329b9d55475",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.26437/2pdqpg59",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 46009,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 45585,
+      "evidence_block_count": 86,
+      "evidence_context_characters": 55522,
+      "evidence_context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+      "evidence_context_sha256": "21ed5d8c08c144266054a6cc36ba7793e0ec25fc2bc12e95fd959dc625d0ea6c",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 46047,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "extracted_pages": 20,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "8799ee22120dd79ef37b5cd55d2b91486f080cbdf2d9554320b8a5f021ed13d2",
+        "source_url": "https://mail.ajaronline.com/index.php/AJAR/article/download/2187/929",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 46009,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 90,
+          "supplied_characters": 90
+        },
+        {
+          "heading": "Cloud-Based Facial Expression Recognition Using",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 2,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Squeeze Vision Transformer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 257,
+          "supplied_characters": 257
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 4,
+          "source_characters": 2529,
+          "supplied_characters": 2529
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 90,
+          "supplied_characters": 90
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 7,
+          "source_characters": 2372,
+          "supplied_characters": 2372
+        },
+        {
+          "heading": "Literature Review",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 610,
+          "supplied_characters": 610
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 3348,
+          "supplied_characters": 3348
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 3151,
+          "supplied_characters": 3151
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 592,
+          "supplied_characters": 592
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 15,
+          "source_characters": 1044,
+          "supplied_characters": 1044
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1227,
+          "supplied_characters": 1227
+        },
+        {
+          "heading": "Patch And Position Embedding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 735,
+          "supplied_characters": 735
+        },
+        {
+          "heading": "Transformer Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 425,
+          "supplied_characters": 425
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 639,
+          "supplied_characters": 639
+        },
+        {
+          "heading": "Squeeze Layer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 523,
+          "supplied_characters": 523
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 600,
+          "supplied_characters": 600
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 409,
+          "supplied_characters": 409
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 963,
+          "supplied_characters": 963
+        },
+        {
+          "heading": "Classification Head",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 589,
+          "supplied_characters": 589
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 617,
+          "supplied_characters": 617
+        },
+        {
+          "heading": "Computational Complexity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1795,
+          "supplied_characters": 1795
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 90,
+          "supplied_characters": 90
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 35,
+          "source_characters": 1625,
+          "supplied_characters": 1625
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 907,
+          "supplied_characters": 907
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 492,
+          "supplied_characters": 492
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 1193,
+          "supplied_characters": 1193
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 856,
+          "supplied_characters": 856
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "discussion",
+          "section_index": 44,
+          "source_characters": 1020,
+          "supplied_characters": 1020
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 1595,
+          "supplied_characters": 1595
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "conclusion",
+          "section_index": 47,
+          "source_characters": 1358,
+          "supplied_characters": 1358
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 501,
+          "supplied_characters": 501
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 2318,
+          "supplied_characters": 2318
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 35,
+          "supplied_characters": 35
+        },
+        {
+          "heading": "Special Issue: Artificial Intelligence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 42,
+          "supplied_characters": 42
+        },
+        {
+          "heading": "Engineering: Emerging Technologies And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 201,
+          "supplied_characters": 201
+        },
+        {
+          "heading": "Published: September 2026",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 25,
+          "supplied_characters": 25
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 15,
+          "supplied_characters": 15
+        },
+        {
+          "heading": "Copyright \u24b8 African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Arca Academic    94",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 2939,
+          "supplied_characters": 2939
+        },
+        {
+          "heading": "African Journal Of Applied Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Issn: 2408-7920",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 1708,
+          "supplied_characters": 1708
+        }
+      ],
+      "selected_characters": 45585,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "selected_sections": [
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 1
+        },
+        {
+          "characters": 90,
+          "heading": "Issn: 2408-7920",
+          "page": 1
+        },
+        {
+          "characters": 47,
+          "heading": "Cloud-Based Facial Expression Recognition Using",
+          "page": 1
+        },
+        {
+          "characters": 257,
+          "heading": "Squeeze Vision Transformer",
+          "page": 1
+        },
+        {
+          "characters": 2529,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 2
+        },
+        {
+          "characters": 90,
+          "heading": "Issn: 2408-7920",
+          "page": 2
+        },
+        {
+          "characters": 2372,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 610,
+          "heading": "Literature Review",
+          "page": 2
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 3
+        },
+        {
+          "characters": 3348,
+          "heading": "Issn: 2408-7920",
+          "page": 3
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 4
+        },
+        {
+          "characters": 3151,
+          "heading": "Issn: 2408-7920",
+          "page": 4
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 5
+        },
+        {
+          "characters": 592,
+          "heading": "Issn: 2408-7920",
+          "page": 5
+        },
+        {
+          "characters": 1044,
+          "heading": "Methodology",
+          "page": 5
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 6
+        },
+        {
+          "characters": 1227,
+          "heading": "Issn: 2408-7920",
+          "page": 6
+        },
+        {
+          "characters": 735,
+          "heading": "Patch And Position Embedding",
+          "page": 6
+        },
+        {
+          "characters": 425,
+          "heading": "Transformer Encoder",
+          "page": 6
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 7
+        },
+        {
+          "characters": 639,
+          "heading": "Issn: 2408-7920",
+          "page": 7
+        },
+        {
+          "characters": 523,
+          "heading": "Squeeze Layer",
+          "page": 7
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 8
+        },
+        {
+          "characters": 600,
+          "heading": "Issn: 2408-7920",
+          "page": 8
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 9
+        },
+        {
+          "characters": 409,
+          "heading": "Issn: 2408-7920",
+          "page": 9
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 10
+        },
+        {
+          "characters": 963,
+          "heading": "Issn: 2408-7920",
+          "page": 10
+        },
+        {
+          "characters": 589,
+          "heading": "Classification Head",
+          "page": 10
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 11
+        },
+        {
+          "characters": 617,
+          "heading": "Issn: 2408-7920",
+          "page": 11
+        },
+        {
+          "characters": 1795,
+          "heading": "Computational Complexity",
+          "page": 11
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 12
+        },
+        {
+          "characters": 90,
+          "heading": "Issn: 2408-7920",
+          "page": 12
+        },
+        {
+          "characters": 1625,
+          "heading": "Results",
+          "page": 12
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 13
+        },
+        {
+          "characters": 907,
+          "heading": "Issn: 2408-7920",
+          "page": 13
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 14
+        },
+        {
+          "characters": 492,
+          "heading": "Issn: 2408-7920",
+          "page": 14
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 15
+        },
+        {
+          "characters": 1193,
+          "heading": "Issn: 2408-7920",
+          "page": 15
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 16
+        },
+        {
+          "characters": 856,
+          "heading": "Issn: 2408-7920",
+          "page": 16
+        },
+        {
+          "characters": 1020,
+          "heading": "Discussion",
+          "page": 16
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 17
+        },
+        {
+          "characters": 1595,
+          "heading": "Issn: 2408-7920",
+          "page": 17
+        },
+        {
+          "characters": 1358,
+          "heading": "Conclusion",
+          "page": 17
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 18
+        },
+        {
+          "characters": 501,
+          "heading": "Issn: 2408-7920",
+          "page": 18
+        },
+        {
+          "characters": 2318,
+          "heading": "Unclassified body after references",
+          "page": 18
+        },
+        {
+          "characters": 35,
+          "heading": "African Journal Of Applied Research",
+          "page": 19
+        },
+        {
+          "characters": 42,
+          "heading": "Special Issue: Artificial Intelligence And",
+          "page": 19
+        },
+        {
+          "characters": 201,
+          "heading": "Engineering: Emerging Technologies And",
+          "page": 19
+        },
+        {
+          "characters": 25,
+          "heading": "Published: September 2026",
+          "page": 19
+        },
+        {
+          "characters": 15,
+          "heading": "Issn: 2408-7920",
+          "page": 19
+        },
+        {
+          "characters": 47,
+          "heading": "Copyright \u24b8 African Journal Of Applied Research",
+          "page": 19
+        },
+        {
+          "characters": 2939,
+          "heading": "Arca Academic    94",
+          "page": 19
+        },
+        {
+          "characters": 314,
+          "heading": "African Journal Of Applied Research",
+          "page": 20
+        },
+        {
+          "characters": 1708,
+          "heading": "Issn: 2408-7920",
+          "page": 20
+        }
+      ],
+      "selected_text_sha256": "be0ca4074ab27f3d68769e5fd53f0499a7145ec0e5ed9cb398ab5329b9d55475",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "8799ee22120dd79ef37b5cd55d2b91486f080cbdf2d9554320b8a5f021ed13d2",
+      "source_pages": 20,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0005"
+        ],
+        "excerpt": "Purpose: This paper presents and evaluates a cloud -oriented facial expression \nrecognition (FER) system built on a compact, squeeze -style Vision Transformer, and \nassesses its suitability as an accurate , resource-efficient modelling layer for cloud and \nedge-cloud deployment. \nDesign/Methodology/Approach: A pretrained ViT -small-patch16-224 backbone is \nfine-tuned for seven-class facial expression classification (angry, disgust, fear, happy, \nneutral, sad, and surprise). Images from three benchmark datasets (CK+, JAFFE, and \nKDEF) are preprocessed by resizing, converting to grayscale, converting to tensors, \nnormalising, and expanding channels. The model is trained with cross-entropy loss and \nthe Adam optimiser over ten epochs. Performance is assessed using accuracy, loss, per-\nclass precision, recall, and F1-score, macro-averaged metrics, and confusion matrices. \nResearch ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "56e7f56614eda931f4ed85a1e16129355600bb071d70c256f53db36cb69fc6d8",
+            "evidence_id": "E31e576869c0657c4-B0005",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 4,
+                "start": 0,
+                "text": "Purpose: This paper presents and evaluates a cloud -oriented facial expression \nrecognition (FER) system built on a compact, squeeze -style Vision Transformer, and \nassesses its suitability as an accurate , resource-efficient modelling layer for cloud and \nedge-cloud deployment. \nDesign/Methodology/Approach: A pretrained ViT -small-patch16-224 backbone is \nfine-tuned for seven-class facial expression classification (angry, disgust, fear, happy, \nneutral, sad, and surprise). Images from three benchmark datasets (CK+, JAFFE, and \nKDEF) are preprocessed by resizing, converting to grayscale, converting to tensors, \nnormalising, and expanding channels. The model is trained with cross-entropy loss and \nthe Adam optimiser over ten epochs. Performance is assessed using accuracy, loss, per-\nclass precision, recall, and F1-score, macro-averaged metrics, and confusion matrices. \nResearch "
+              }
+            ],
+            "text": "Purpose: This paper presents and evaluates a cloud -oriented facial expression \nrecognition (FER) system built on a compact, squeeze -style Vision Transformer, and \nassesses its suitability as an accurate , resource-efficient modelling layer for cloud and \nedge-cloud deployment. \nDesign/Methodology/Approach: A pretrained ViT -small-patch16-224 backbone is \nfine-tuned for seven-class facial expression classification (angry, disgust, fear, happy, \nneutral, sad, and surprise). Images from three benchmark datasets (CK+, JAFFE, and \nKDEF) are preprocessed by resizing, converting to grayscale, converting to tensors, \nnormalising, and expanding channels. The model is trained with cross-entropy loss and \nthe Adam optimiser over ten epochs. Performance is assessed using accuracy, loss, per-\nclass precision, recall, and F1-score, macro-averaged metrics, and confusion matrices. \nResearch "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0006"
+        ],
+        "excerpt": "Limitation: Evaluation relies on controlled laboratory datasets and measures \nclassification performance offline. Generalisation to in-the-wild data and end -to-end \ncloud-serving latency, throughput, and cost have not yet been tested.  \nFindings: The model attains 97.5% accuracy on CK+ (macro F1 of 0.956), 95.0% on \nJAFFE (macro F1 of 0.946), and 86.1% on KDEF (macro F1 of 0.857). Accuracy is \nhighest on the tightly controlled CK+ and JAFFE datasets and lower on the more \nheterogeneous KDEF, with Fear and Disgust the most frequently confused expressions \nacross all three datasets. \nPractical Implication: The results indicate that compact, squeeze -style vision \ntransformers can act as an accurate and computationally efficient modelling layer for \ncloud and edge -cloud FER services. They reduce the computational complexity and \nmemory required per inference request, simplifying ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3e295de1221ce4eb74193708d1f24cff04fe14786ed05db8dcdcffdcb7204c4d",
+            "evidence_id": "E31e576869c0657c4-B0006",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1781,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 4,
+                "start": 890,
+                "text": "Limitation: Evaluation relies on controlled laboratory datasets and measures \nclassification performance offline. Generalisation to in-the-wild data and end -to-end \ncloud-serving latency, throughput, and cost have not yet been tested.  \nFindings: The model attains 97.5% accuracy on CK+ (macro F1 of 0.956), 95.0% on \nJAFFE (macro F1 of 0.946), and 86.1% on KDEF (macro F1 of 0.857). Accuracy is \nhighest on the tightly controlled CK+ and JAFFE datasets and lower on the more \nheterogeneous KDEF, with Fear and Disgust the most frequently confused expressions \nacross all three datasets. \nPractical Implication: The results indicate that compact, squeeze -style vision \ntransformers can act as an accurate and computationally efficient modelling layer for \ncloud and edge -cloud FER services. They reduce the computational complexity and \nmemory required per inference request, simplifying "
+              }
+            ],
+            "text": "Limitation: Evaluation relies on controlled laboratory datasets and measures \nclassification performance offline. Generalisation to in-the-wild data and end -to-end \ncloud-serving latency, throughput, and cost have not yet been tested.  \nFindings: The model attains 97.5% accuracy on CK+ (macro F1 of 0.956), 95.0% on \nJAFFE (macro F1 of 0.946), and 86.1% on KDEF (macro F1 of 0.857). Accuracy is \nhighest on the tightly controlled CK+ and JAFFE datasets and lower on the more \nheterogeneous KDEF, with Fear and Disgust the most frequently confused expressions \nacross all three datasets. \nPractical Implication: The results indicate that compact, squeeze -style vision \ntransformers can act as an accurate and computationally efficient modelling layer for \ncloud and edge -cloud FER services. They reduce the computational complexity and \nmemory required per inference request, simplifying "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0011"
+        ],
+        "excerpt": "computing resources than \nsimilar convol utional networks  (Han et al., 202) . To address this issue, researchers \ndeveloped squeezed vision transformers ( Xue et al., 2025; Kim et al., 2022) . They \nreduce the dimensionality of the object representation to lower costs, then combine the \nresulting global representation with locally extracted features to preserve fine details. \n \nFacial Expression Recognition (FER) increasingly runs in the cloud, at the edge, or in \na hybrid setup rather than entirely on handheld devices (Aikyn et al., 2024). The cloud \ncan host larger models, reduce load, and make updates more efficient, keeping network \ntraffic low and avoiding transmission of  raw facial imagery across a network. In this \nstudy, the dataset pipeline and training were organised  around cloud-hosted storage, \nwhich reflects the general direction of the field, though we are careful in ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "752cb9eb17d4424ba8e4c89eb091c581bd6cbe2037063fd28986a513688640ba",
+            "evidence_id": "E31e576869c0657c4-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1788,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 7,
+                "start": 891,
+                "text": "computing resources than \nsimilar convol utional networks  (Han et al., 202) . To address this issue, researchers \ndeveloped squeezed vision transformers ( Xue et al., 2025; Kim et al., 2022) . They \nreduce the dimensionality of the object representation to lower costs, then combine the \nresulting global representation with locally extracted features to preserve fine details. \n \nFacial Expression Recognition (FER) increasingly runs in the cloud, at the edge, or in \na hybrid setup rather than entirely on handheld devices (Aikyn et al., 2024). The cloud \ncan host larger models, reduce load, and make updates more efficient, keeping network \ntraffic low and avoiding transmission of  raw facial imagery across a network. In this \nstudy, the dataset pipeline and training were organised  around cloud-hosted storage, \nwhich reflects the general direction of the field, though we are careful in "
+              }
+            ],
+            "text": "computing resources than \nsimilar convol utional networks  (Han et al., 202) . To address this issue, researchers \ndeveloped squeezed vision transformers ( Xue et al., 2025; Kim et al., 2022) . They \nreduce the dimensionality of the object representation to lower costs, then combine the \nresulting global representation with locally extracted features to preserve fine details. \n \nFacial Expression Recognition (FER) increasingly runs in the cloud, at the edge, or in \na hybrid setup rather than entirely on handheld devices (Aikyn et al., 2024). The cloud \ncan host larger models, reduce load, and make updates more efficient, keeping network \ntraffic low and avoiding transmission of  raw facial imagery across a network. In this \nstudy, the dataset pipeline and training were organised  around cloud-hosted storage, \nwhich reflects the general direction of the field, though we are careful in "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0026"
+        ],
+        "excerpt": "This section describes the complete experimental methodology, from data preparation \nthrough model training to evaluation. It first presents an overview of the end -to-end \npipeline, then details the datasets, preprocessing steps, and the Squeeze Vision \nTransformer architecture that forms the classification backbone. \n \nFigure 1 depicts the pipeline end-to-end: dataset preparation from cloud-hosted storage, \nmodel initialisation, training and evaluation, and finally saving the best checkpoint for \ninference. The following subsections discuss each stage in detail, with particular \nemphasis on the Squeeze Vision Transformer framework that underpins the classifier. \n \nFigure 1: Overview of the research methodology for cloud-based facial expression \nrecognition. \n \nDatasets \nThree public facial expression datasets were used, all held in cloud -hosted storage: the \nExtended Cohn-Kanade ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8a2864ee426eb9c4ec43d62c9689e87086ee4aaf794b10273c79151bef740b71",
+            "evidence_id": "E31e576869c0657c4-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 5,
+                "section": "Methodology",
+                "section_index": 15,
+                "start": 0,
+                "text": "This section describes the complete experimental methodology, from data preparation \nthrough model training to evaluation. It first presents an overview of the end -to-end \npipeline, then details the datasets, preprocessing steps, and the Squeeze Vision \nTransformer architecture that forms the classification backbone. \n \nFigure 1 depicts the pipeline end-to-end: dataset preparation from cloud-hosted storage, \nmodel initialisation, training and evaluation, and finally saving the best checkpoint for \ninference. The following subsections discuss each stage in detail, with particular \nemphasis on the Squeeze Vision Transformer framework that underpins the classifier. \n \nFigure 1: Overview of the research methodology for cloud-based facial expression \nrecognition. \n \nDatasets \nThree public facial expression datasets were used, all held in cloud -hosted storage: the \nExtended Cohn-Kanade "
+              }
+            ],
+            "text": "This section describes the complete experimental methodology, from data preparation \nthrough model training to evaluation. It first presents an overview of the end -to-end \npipeline, then details the datasets, preprocessing steps, and the Squeeze Vision \nTransformer architecture that forms the classification backbone. \n \nFigure 1 depicts the pipeline end-to-end: dataset preparation from cloud-hosted storage, \nmodel initialisation, training and evaluation, and finally saving the best checkpoint for \ninference. The following subsections discuss each stage in detail, with particular \nemphasis on the Squeeze Vision Transformer framework that underpins the classifier. \n \nFigure 1: Overview of the research methodology for cloud-based facial expression \nrecognition. \n \nDatasets \nThree public facial expression datasets were used, all held in cloud -hosted storage: the \nExtended Cohn-Kanade "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0027"
+        ],
+        "excerpt": "dataset, CK+ (Lucey et al., 2010); the Japanese Female Facial \nExpression database, JAFFE (Lyons et al., 1998); and the Karolinska Directed Emotional",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3e40c6404849553842755e29afdeb90904b24cb4b05980ab9d89c0a689aa4937",
+            "evidence_id": "E31e576869c0657c4-B0027",
+            "pages": [
+              5
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1044,
+                "page": 5,
+                "section": "Methodology",
+                "section_index": 15,
+                "start": 895,
+                "text": "dataset, CK+ (Lucey et al., 2010); the Japanese Female Facial \nExpression database, JAFFE (Lyons et al., 1998); and the Karolinska Directed Emotional"
+              }
+            ],
+            "text": "dataset, CK+ (Lucey et al., 2010); the Japanese Female Facial \nExpression database, JAFFE (Lyons et al., 1998); and the Karolinska Directed Emotional"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0029"
+        ],
+        "excerpt": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    81 \n \n \n \n \nFaces set, KDEF (Lundqvist et al., 1998). Each labels its images across the same seven \ncategories: angry, disgust, fear, happy, neutral, sad, and surprise. Each dataset was split \n70% for training and 30% for testing. \n \nPreprocessing \nTo keep the work consistent across datasets, images were first resized to 48 \u00d7 48 pixels, \nconverted to grayscale, and normalised. For training, they were then resized again to 224 \n\u00d7 224 to match the transformer's expected input, and the single grayscale channel was \nreplicated across three channels to satisfy the RGB format. \n \nModel Architecture: Squeeze Vision Transformer \nThe classifier follows the Squeeze Vision Transformer design, which lower the cost of \nthe standard transformer by reducing the dimensions after the encoder stack, and then \nrecovers ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Issn: 2408-7920",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "470e826ed0eabb14d25c512167c780ec1bbf6d9b55b74a1635d58854dc264636",
+            "evidence_id": "E31e576869c0657c4-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Issn: 2408-7920",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 6,
+                "section": "Issn: 2408-7920",
+                "section_index": 17,
+                "start": 0,
+                "text": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    81 \n \n \n \n \nFaces set, KDEF (Lundqvist et al., 1998). Each labels its images across the same seven \ncategories: angry, disgust, fear, happy, neutral, sad, and surprise. Each dataset was split \n70% for training and 30% for testing. \n \nPreprocessing \nTo keep the work consistent across datasets, images were first resized to 48 \u00d7 48 pixels, \nconverted to grayscale, and normalised. For training, they were then resized again to 224 \n\u00d7 224 to match the transformer's expected input, and the single grayscale channel was \nreplicated across three channels to satisfy the RGB format. \n \nModel Architecture: Squeeze Vision Transformer \nThe classifier follows the Squeeze Vision Transformer design, which lower the cost of \nthe standard transformer by reducing the dimensions after the encoder stack, and then \nrecovers "
+              }
+            ],
+            "text": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    81 \n \n \n \n \nFaces set, KDEF (Lundqvist et al., 1998). Each labels its images across the same seven \ncategories: angry, disgust, fear, happy, neutral, sad, and surprise. Each dataset was split \n70% for training and 30% for testing. \n \nPreprocessing \nTo keep the work consistent across datasets, images were first resized to 48 \u00d7 48 pixels, \nconverted to grayscale, and normalised. For training, they were then resized again to 224 \n\u00d7 224 to match the transformer's expected input, and the single grayscale channel was \nreplicated across three channels to satisfy the RGB format. \n \nModel Architecture: Squeeze Vision Transformer \nThe classifier follows the Squeeze Vision Transformer design, which lower the cost of \nthe standard transformer by reducing the dimensions after the encoder stack, and then \nrecovers "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0043"
+        ],
+        "excerpt": "Finally, the fused representation at the classification token goes through a linear \nlayer and a softmax, giving a probability distribution over the seven expressions: \n \n \u0177 =  \ud835\udc60\ud835\udc5c\ud835\udc53\ud835\udc61\ud835\udc5a\ud835\udc4e\ud835\udc65(\ud835\udc4a\ud835\udc50\ud835\udc39\ud835\udc53\ud835\udc62\ud835\udc60\ud835\udc52\ud835\udc51\n\ud835\udc50\ud835\udc59\ud835\udc60  +  \ud835\udc4f\ud835\udc50) (7) \n \nIn the implementation reported here, the backbone is a compact ViT -small-patch16-224 \ninitialised from ImageNet-pretrained weights (Dosovitskiy et al., 2021), with its final layer \nQ = zWQ \n K = zWK \nAttention scores:  softmax(QK\u1d40 / \u221ad\u2096) \nWeighted sum of values  (scores \u00d7 V) \nV = zWV \nConcatenate heads \u2192 linear projection \nFigure 4: Scaled dot-product multi-head attention.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Classification Head",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e1665223383a18e220598aedd26e0fcb4e4e177aebb49cd145f84d53ededb498",
+            "evidence_id": "E31e576869c0657c4-B0043",
+            "pages": [
+              10
+            ],
+            "section": "Classification Head",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 589,
+                "page": 10,
+                "section": "Classification Head",
+                "section_index": 29,
+                "start": 0,
+                "text": "Finally, the fused representation at the classification token goes through a linear \nlayer and a softmax, giving a probability distribution over the seven expressions: \n \n \u0177 =  \ud835\udc60\ud835\udc5c\ud835\udc53\ud835\udc61\ud835\udc5a\ud835\udc4e\ud835\udc65(\ud835\udc4a\ud835\udc50\ud835\udc39\ud835\udc53\ud835\udc62\ud835\udc60\ud835\udc52\ud835\udc51\n\ud835\udc50\ud835\udc59\ud835\udc60  +  \ud835\udc4f\ud835\udc50) (7) \n \nIn the implementation reported here, the backbone is a compact ViT -small-patch16-224 \ninitialised from ImageNet-pretrained weights (Dosovitskiy et al., 2021), with its final layer \nQ = zWQ \n K = zWK \nAttention scores:  softmax(QK\u1d40 / \u221ad\u2096) \nWeighted sum of values  (scores \u00d7 V) \nV = zWV \nConcatenate heads \u2192 linear projection \nFigure 4: Scaled dot-product multi-head attention."
+              }
+            ],
+            "text": "Finally, the fused representation at the classification token goes through a linear \nlayer and a softmax, giving a probability distribution over the seven expressions: \n \n \u0177 =  \ud835\udc60\ud835\udc5c\ud835\udc53\ud835\udc61\ud835\udc5a\ud835\udc4e\ud835\udc65(\ud835\udc4a\ud835\udc50\ud835\udc39\ud835\udc53\ud835\udc62\ud835\udc60\ud835\udc52\ud835\udc51\n\ud835\udc50\ud835\udc59\ud835\udc60  +  \ud835\udc4f\ud835\udc50) (7) \n \nIn the implementation reported here, the backbone is a compact ViT -small-patch16-224 \ninitialised from ImageNet-pretrained weights (Dosovitskiy et al., 2021), with its final layer \nQ = zWQ \n K = zWK \nAttention scores:  softmax(QK\u1d40 / \u221ad\u2096) \nWeighted sum of values  (scores \u00d7 V) \nV = zWV \nConcatenate heads \u2192 linear projection \nFigure 4: Scaled dot-product multi-head attention."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0045"
+        ],
+        "excerpt": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    86 \n \n \n \n \nswapped for the seven -way head of Equation (7). ViT -small already reduces embedding \ndimension and head count relative to ViT -Base and ViT -Large, so the backbone choice  \nfollows the same efficiency logic as the squeeze layer described above. We should be clear \nabout the boundary, though: the dedicated local-branch fusion module in Equations (5) and \n(6) is part of the architecture as formulated, not the trained pipeline evaluated in Section 4, \nand we list integrating it as a direct extension in Section 6.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Issn: 2408-7920",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0b1e6dcf20004c4e786d5904fcc5ec8e9939b70a74e540b801df5887755c8c52",
+            "evidence_id": "E31e576869c0657c4-B0045",
+            "pages": [
+              11
+            ],
+            "section": "Issn: 2408-7920",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 617,
+                "page": 11,
+                "section": "Issn: 2408-7920",
+                "section_index": 31,
+                "start": 0,
+                "text": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    86 \n \n \n \n \nswapped for the seven -way head of Equation (7). ViT -small already reduces embedding \ndimension and head count relative to ViT -Base and ViT -Large, so the backbone choice  \nfollows the same efficiency logic as the squeeze layer described above. We should be clear \nabout the boundary, though: the dedicated local-branch fusion module in Equations (5) and \n(6) is part of the architecture as formulated, not the trained pipeline evaluated in Section 4, \nand we list integrating it as a direct extension in Section 6."
+              }
+            ],
+            "text": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    86 \n \n \n \n \nswapped for the seven -way head of Equation (7). ViT -small already reduces embedding \ndimension and head count relative to ViT -Base and ViT -Large, so the backbone choice  \nfollows the same efficiency logic as the squeeze layer described above. We should be clear \nabout the boundary, though: the dedicated local-branch fusion module in Equations (5) and \n(6) is part of the architecture as formulated, not the trained pipeline evaluated in Section 4, \nand we list integrating it as a direct extension in Section 6."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0046"
+        ],
+        "excerpt": "The squeeze case for squeezing is easiest to see in the complexity of attention \nitself. For a sequence of N tokens with embedding dimension D, standard multi -head \nself-attention, counting the query, key, and value projections, costs: \n \ud835\udefa(\ud835\udc40\ud835\udc46\ud835\udc34)  =  4\ud835\udc41\ud835\udc372  +  2\ud835\udc412\ud835\udc37 (8) \nOnce the squeeze layer has taken the embedding dimension from D down to \nD/r, that becomes: \n \ud835\udefa(\ud835\udc40\ud835\udc46\ud835\udc34\ud835\udc60\ud835\udc5e)  =  4\ud835\udc41 (\ud835\udc37\n\ud835\udc5f )\n2\n +  2\ud835\udc412 (\ud835\udc37\n\ud835\udc5f ) (9) \n \nBecause one of the terms is proportional to the square of D and the other to D, the \nsavings increase with r instead of remaining constant. This is the main reason why \nsqueeze-style transformers are common in mobile, edge, and cloud computing contexts \n(Setyawan et al., 2025; Wan et al., 2023; Li et al., 2022; Mehta & Rastegari, 2021). \n \nTraining Setup \nThe fine-tuning process used a cross-entropy loss with the Adam optimiser, a learning \nrate of 0.0001, a batch size of 16, and ten ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Computational Complexity",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "280600969a101b26da80d3103efddd314beff6ce7081e5f0d5007dd341194e79",
+            "evidence_id": "E31e576869c0657c4-B0046",
+            "pages": [
+              11
+            ],
+            "section": "Computational Complexity",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 11,
+                "section": "Computational Complexity",
+                "section_index": 32,
+                "start": 0,
+                "text": "The squeeze case for squeezing is easiest to see in the complexity of attention \nitself. For a sequence of N tokens with embedding dimension D, standard multi -head \nself-attention, counting the query, key, and value projections, costs: \n \ud835\udefa(\ud835\udc40\ud835\udc46\ud835\udc34)  =  4\ud835\udc41\ud835\udc372  +  2\ud835\udc412\ud835\udc37 (8) \nOnce the squeeze layer has taken the embedding dimension from D down to \nD/r, that becomes: \n \ud835\udefa(\ud835\udc40\ud835\udc46\ud835\udc34\ud835\udc60\ud835\udc5e)  =  4\ud835\udc41 (\ud835\udc37\n\ud835\udc5f )\n2\n +  2\ud835\udc412 (\ud835\udc37\n\ud835\udc5f ) (9) \n \nBecause one of the terms is proportional to the square of D and the other to D, the \nsavings increase with r instead of remaining constant. This is the main reason why \nsqueeze-style transformers are common in mobile, edge, and cloud computing contexts \n(Setyawan et al., 2025; Wan et al., 2023; Li et al., 2022; Mehta & Rastegari, 2021). \n \nTraining Setup \nThe fine-tuning process used a cross-entropy loss with the Adam optimiser, a learning \nrate of 0.0001, a batch size of 16, and ten "
+              }
+            ],
+            "text": "The squeeze case for squeezing is easiest to see in the complexity of attention \nitself. For a sequence of N tokens with embedding dimension D, standard multi -head \nself-attention, counting the query, key, and value projections, costs: \n \ud835\udefa(\ud835\udc40\ud835\udc46\ud835\udc34)  =  4\ud835\udc41\ud835\udc372  +  2\ud835\udc412\ud835\udc37 (8) \nOnce the squeeze layer has taken the embedding dimension from D down to \nD/r, that becomes: \n \ud835\udefa(\ud835\udc40\ud835\udc46\ud835\udc34\ud835\udc60\ud835\udc5e)  =  4\ud835\udc41 (\ud835\udc37\n\ud835\udc5f )\n2\n +  2\ud835\udc412 (\ud835\udc37\n\ud835\udc5f ) (9) \n \nBecause one of the terms is proportional to the square of D and the other to D, the \nsavings increase with r instead of remaining constant. This is the main reason why \nsqueeze-style transformers are common in mobile, edge, and cloud computing contexts \n(Setyawan et al., 2025; Wan et al., 2023; Li et al., 2022; Mehta & Rastegari, 2021). \n \nTraining Setup \nThe fine-tuning process used a cross-entropy loss with the Adam optimiser, a learning \nrate of 0.0001, a batch size of 16, and ten "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0047"
+        ],
+        "excerpt": "epochs. The checkpoint with the highest test \naccuracy was retained as the final model for each dataset. The loss over C classes is: \n \u2112 =  \u2212 \u2211 \ud835\udc66\ud835\udc56 \ud835\udc59\ud835\udc5c\ud835\udc54(\u0177\ud835\udc56)\n\ud835\udc36\n\ud835\udc56 = 1\n (10) \nwhere \ud835\udc66\ud835\udc56 is the one-hot ground-truth vector (1 for the correct class, 0 otherwise) \nand \u0177\ud835\udc56 is the predicted probability for class i from Equation (7). When the model \nconfidently predicts the right emotion, that probability is near 1 and the loss is near 0. \n \nEvaluation Metrics \nTo measure the performance of this work, various metrics are used. These metrics are \naccuracy, training and validation loss, precision, recall, F1 -score, and the confusion \nmatrix, as well as the macro-averaged precision, recall, and F1 across the seven classes \nfor each dataset. Macro averaging was chosen since it weights every expression equally \nand therefore reveals weakness on the rarer classes that a plain accuracy score would \nhide.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Computational Complexity",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "533dad9fb4f383be0b450cdd07450117b400089f3aa06bf40c10c84774a335bf",
+            "evidence_id": "E31e576869c0657c4-B0047",
+            "pages": [
+              11
+            ],
+            "section": "Computational Complexity",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 11,
+                "section": "Computational Complexity",
+                "section_index": 32,
+                "start": 899,
+                "text": "epochs. The checkpoint with the highest test \naccuracy was retained as the final model for each dataset. The loss over C classes is: \n \u2112 =  \u2212 \u2211 \ud835\udc66\ud835\udc56 \ud835\udc59\ud835\udc5c\ud835\udc54(\u0177\ud835\udc56)\n\ud835\udc36\n\ud835\udc56 = 1\n (10) \nwhere \ud835\udc66\ud835\udc56 is the one-hot ground-truth vector (1 for the correct class, 0 otherwise) \nand \u0177\ud835\udc56 is the predicted probability for class i from Equation (7). When the model \nconfidently predicts the right emotion, that probability is near 1 and the loss is near 0. \n \nEvaluation Metrics \nTo measure the performance of this work, various metrics are used. These metrics are \naccuracy, training and validation loss, precision, recall, F1 -score, and the confusion \nmatrix, as well as the macro-averaged precision, recall, and F1 across the seven classes \nfor each dataset. Macro averaging was chosen since it weights every expression equally \nand therefore reveals weakness on the rarer classes that a plain accuracy score would \nhide."
+              }
+            ],
+            "text": "epochs. The checkpoint with the highest test \naccuracy was retained as the final model for each dataset. The loss over C classes is: \n \u2112 =  \u2212 \u2211 \ud835\udc66\ud835\udc56 \ud835\udc59\ud835\udc5c\ud835\udc54(\u0177\ud835\udc56)\n\ud835\udc36\n\ud835\udc56 = 1\n (10) \nwhere \ud835\udc66\ud835\udc56 is the one-hot ground-truth vector (1 for the correct class, 0 otherwise) \nand \u0177\ud835\udc56 is the predicted probability for class i from Equation (7). When the model \nconfidently predicts the right emotion, that probability is near 1 and the loss is near 0. \n \nEvaluation Metrics \nTo measure the performance of this work, various metrics are used. These metrics are \naccuracy, training and validation loss, precision, recall, F1 -score, and the confusion \nmatrix, as well as the macro-averaged precision, recall, and F1 across the seven classes \nfor each dataset. Macro averaging was chosen since it weights every expression equally \nand therefore reveals weakness on the rarer classes that a plain accuracy score would \nhide."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0050"
+        ],
+        "excerpt": "The proposed model was evaluated separately on the CK+, JAFFE, and KDEF datasets. \nTable 1 gives the headline numbers for each dataset. Tables 2 through 4 illustrate the \nperformance class by class. \n \nTable 1. Overall accuracy and macro-averaged precision, recall, and F1-score \non the CK+, JAFFE, and KDEF test sets, with performance highest on the \ncontrolled CK+ and JAFFE and lowest on the more varied KDEF. \n \nTable 2: Overall accuracy and macro-averaged precision, recall, and F1-score on the \nCK+, JAFFE, and KDEF test sets \nDataset Accuracy Macro \nPrecision Macro Recall Macro F1 \nCK+ 0.975 0.962 0.954 0.956 \nJAFFE 0.950 0.960 0.943 0.946 \nKDEF 0.861 0.861 0.859 0.857 \n \nCohn-Kanade-Plus (CK+) \nOn the CK+ dataset, the model achieved 97.5% accuracy, with macro precision of \n0.962, macro recall of 0.954, and macro F1 of 0.956. Fear, neutral, and surprise \nexpressions achieved perfect ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8b5153320d6343209ac21fccab9230b1f59c5177b6ce0bb522d3a89c5e44c679",
+            "evidence_id": "E31e576869c0657c4-B0050",
+            "pages": [
+              12
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 12,
+                "section": "Results",
+                "section_index": 35,
+                "start": 0,
+                "text": "The proposed model was evaluated separately on the CK+, JAFFE, and KDEF datasets. \nTable 1 gives the headline numbers for each dataset. Tables 2 through 4 illustrate the \nperformance class by class. \n \nTable 1. Overall accuracy and macro-averaged precision, recall, and F1-score \non the CK+, JAFFE, and KDEF test sets, with performance highest on the \ncontrolled CK+ and JAFFE and lowest on the more varied KDEF. \n \nTable 2: Overall accuracy and macro-averaged precision, recall, and F1-score on the \nCK+, JAFFE, and KDEF test sets \nDataset Accuracy Macro \nPrecision Macro Recall Macro F1 \nCK+ 0.975 0.962 0.954 0.956 \nJAFFE 0.950 0.960 0.943 0.946 \nKDEF 0.861 0.861 0.859 0.857 \n \nCohn-Kanade-Plus (CK+) \nOn the CK+ dataset, the model achieved 97.5% accuracy, with macro precision of \n0.962, macro recall of 0.954, and macro F1 of 0.956. Fear, neutral, and surprise \nexpressions achieved perfect "
+              }
+            ],
+            "text": "The proposed model was evaluated separately on the CK+, JAFFE, and KDEF datasets. \nTable 1 gives the headline numbers for each dataset. Tables 2 through 4 illustrate the \nperformance class by class. \n \nTable 1. Overall accuracy and macro-averaged precision, recall, and F1-score \non the CK+, JAFFE, and KDEF test sets, with performance highest on the \ncontrolled CK+ and JAFFE and lowest on the more varied KDEF. \n \nTable 2: Overall accuracy and macro-averaged precision, recall, and F1-score on the \nCK+, JAFFE, and KDEF test sets \nDataset Accuracy Macro \nPrecision Macro Recall Macro F1 \nCK+ 0.975 0.962 0.954 0.956 \nJAFFE 0.950 0.960 0.943 0.946 \nKDEF 0.861 0.861 0.859 0.857 \n \nCohn-Kanade-Plus (CK+) \nOn the CK+ dataset, the model achieved 97.5% accuracy, with macro precision of \n0.962, macro recall of 0.954, and macro F1 of 0.956. Fear, neutral, and surprise \nexpressions achieved perfect "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E31e576869c0657c4-B0065"
+        ],
+        "excerpt": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    92 \n \n \n \n \nRastegari, 2021). That matters for a cloud service, where a smaller backbone directly \nreduces the compute and memory that have to be provisioned per request, and where \nthose two quantities drive both cost and latency (Zhong et al., 2025; Wu et al., 2023). \n \nThe present study has limits, and it is worth stating them plainly. Everything reported \nhere was measured offline, at the dataset level. The cloud component was storage, not \nan inference-serving pipeline, which sets this work apart from studies that report end -\nto-end cloud latency and throughput for systems actually in service (Zhong et al., 2025; \nChowdary et al., 2024). Measuring serving latency, throughput, and cost for this \nbackbone, rather than accuracy alone, is the obvious next move, and it would help close \na gap that ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Issn: 2408-7920",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "53efcf858851af1f4186d7a43b50288e15029b0a9a776be252c246c594ec44e3",
+            "evidence_id": "E31e576869c0657c4-B0065",
+            "pages": [
+              17
+            ],
+            "section": "Issn: 2408-7920",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 17,
+                "section": "Issn: 2408-7920",
+                "section_index": 46,
+                "start": 0,
+                "text": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    92 \n \n \n \n \nRastegari, 2021). That matters for a cloud service, where a smaller backbone directly \nreduces the compute and memory that have to be provisioned per request, and where \nthose two quantities drive both cost and latency (Zhong et al., 2025; Wu et al., 2023). \n \nThe present study has limits, and it is worth stating them plainly. Everything reported \nhere was measured offline, at the dataset level. The cloud component was storage, not \nan inference-serving pipeline, which sets this work apart from studies that report end -\nto-end cloud latency and throughput for systems actually in service (Zhong et al., 2025; \nChowdary et al., 2024). Measuring serving latency, throughput, and cost for this \nbackbone, rather than accuracy alone, is the obvious next move, and it would help close \na gap that "
+              }
+            ],
+            "text": "ISSN: 2408-7920  \nCopyright \u24d2 African Journal of Applied Research     \nArca Academic    92 \n \n \n \n \nRastegari, 2021). That matters for a cloud service, where a smaller backbone directly \nreduces the compute and memory that have to be provisioned per request, and where \nthose two quantities drive both cost and latency (Zhong et al., 2025; Wu et al., 2023). \n \nThe present study has limits, and it is worth stating them plainly. Everything reported \nhere was measured offline, at the dataset level. The cloud component was storage, not \nan inference-serving pipeline, which sets this work apart from studies that report end -\nto-end cloud latency and throughput for systems actually in service (Zhong et al., 2025; \nChowdary et al., 2024). Measuring serving latency, throughput, and cost for this \nbackbone, rather than accuracy alone, is the obvious next move, and it would help close \na gap that "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://mail.ajaronline.com/index.php/AJAR/article/download/2187/929",
     "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
-      "No suitable baseline comparison was detected in the available text.",
-      "No extractable manuscript text was available."
+      "No reproducible review or selection methodology was detected."
     ],
     "overall_quality_score": null,
-    "paper_type": "empirical_research",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
     "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The paper's central title and abstract frame the work as a cloud-based system using a Squeeze Vision Transformer, but the actually trained and evaluated pipeline is a standard ImageNet-pretrained ViT-small backbone; the dedicated squeeze-layer local-global fusion module is explicitly stated to be part of the formulated architecture only and not the evaluated model [E31e576869c0657c4-B0045].",
+          "The cloud claim is not empirically substantiated: the cloud component was storage only, and no serving latency, throughput, memory, or cost measurements are reported, so the practical implication of cloud/edge-cloud suitability is not established by the evidence [E31e576869c0657c4-B0006, E31e576869c0657c4-B0011, E31e576869c0657c4-B0065].",
+          "The evaluation lacks direct comparative baselines under identical splits or setups, repeated runs, or statistical dispersion, leaving the reported accuracy pattern without a controlled reference for the claimed efficiency-accuracy trade-off [E31e576869c0657c4-B0026, E31e576869c0657c4-B0050]."
+        ],
+        "canonical_id": "doi:10.26437/2pdqpg59",
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The final outcome is measured with objective dataset ground-truth labels on held-out test splits, not with a learned or automated surrogate judge.",
+          "final_evaluation_signal": "Accuracy, macro-averaged precision, recall, and F1-score computed against ground-truth categorical labels on the held-out 30% test sets [E31e576869c0657c4-B0047, E31e576869c0657c4-B0050].",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Cross-entropy loss with the Adam optimizer over ten epochs on 70% training splits, with the checkpoint selected by highest test accuracy [E31e576869c0657c4-B0046, E31e576869c0657c4-B0047].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E31e576869c0657c4-B0005",
+          "E31e576869c0657c4-B0006",
+          "E31e576869c0657c4-B0011",
+          "E31e576869c0657c4-B0026",
+          "E31e576869c0657c4-B0029",
+          "E31e576869c0657c4-B0043",
+          "E31e576869c0657c4-B0045",
+          "E31e576869c0657c4-B0046",
+          "E31e576869c0657c4-B0047",
+          "E31e576869c0657c4-B0050",
+          "E31e576869c0657c4-B0065"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "8799ee22120dd79ef37b5cd55d2b91486f080cbdf2d9554320b8a5f021ed13d2"
+      },
       "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
       "adjudicator_provider": "openrouter",
       "model_pair": {
@@ -142,17 +1762,53 @@
         },
         "version": "model-pair-v1"
       },
-      "outcome": "manuscript_unavailable",
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.26437/2pdqpg59",
+        "claim_evidence_alignment": "Claims regarding cloud-based deployment and suitability are decoupled from the evidence, as the paper only conducts offline training and testing where the cloud aspect was restricted to cloud-hosted file storage [E31e576869c0657c4-B0011, E31e576869c0657c4-B0065]. The evaluated model is standard ViT-small fine-tuning rather than the novel hybrid SqueezeViT fusion architecture formulated in the methodology section [E31e576869c0657c4-B0045].",
+        "context_id": "31e576869c0657c4348d1624946e46f847a5b16eb74a51307d1a60f57c64d69a",
+        "decision": "uncertain",
+        "evaluation_assessment": "Evaluation reports standard offline classification metrics (accuracy, macro F1, precision, recall) across 70/30 train/test splits of three standard laboratory datasets [E31e576869c0657c4-B0026, E31e576869c0657c4-B0029, E31e576869c0657c4-B0050]. No comparative baselines are benchmarked under identical splits or setups, no statistical dispersion or repeated runs are provided, and no cloud runtime benchmarks (latency, memory footprint, throughput) are measured [E31e576869c0657c4-B0006, E31e576869c0657c4-B0065].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "Evaluation is conducted using objective ground-truth dataset categorical labels on held-out test splits without reliance on learned or automated surrogate judges.",
+          "final_evaluation_signal": "Accuracy, macro-averaged precision, recall, and F1-score computed against ground-truth labels on the 30% test sets [E31e576869c0657c4-B0047, E31e576869c0657c4-B0050].",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Cross-entropy loss with the Adam optimizer over 10 epochs on 70% training splits, selecting the checkpoint with the highest test accuracy [E31e576869c0657c4-B0046, E31e576869c0657c4-B0047].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E31e576869c0657c4-B0005",
+          "E31e576869c0657c4-B0006",
+          "E31e576869c0657c4-B0011",
+          "E31e576869c0657c4-B0026",
+          "E31e576869c0657c4-B0027",
+          "E31e576869c0657c4-B0029",
+          "E31e576869c0657c4-B0043",
+          "E31e576869c0657c4-B0045",
+          "E31e576869c0657c4-B0046",
+          "E31e576869c0657c4-B0047",
+          "E31e576869c0657c4-B0050",
+          "E31e576869c0657c4-B0065"
+        ],
+        "limitations": "The authors transparently acknowledge that evaluation is limited to offline testing on small, controlled datasets without testing in-the-wild robustness or real end-to-end cloud latency and throughput [E31e576869c0657c4-B0006, E31e576869c0657c4-B0065].",
+        "method_assessment": "The methodology describes standard image preprocessing (grayscale conversion, resizing to 224x224, 3-channel replication) and fine-tuning an ImageNet-pretrained ViT-small model using Adam and cross-entropy loss [E31e576869c0657c4-B0029, E31e576869c0657c4-B0043, E31e576869c0657c4-B0046]. However, while the paper outlines a theoretical SqueezeViT architecture with local-global feature fusion, the text explicitly clarifies that the dedicated local-branch fusion module was not part of the trained and evaluated model pipeline [E31e576869c0657c4-B0045].",
+        "quality_rationale": "The contribution is modest, essentially consisting of fine-tuning an off-the-shelf ViT-small model on three legacy datasets. The gap between the formulated squeeze-fusion method and the actually evaluated architecture, combined with the lack of direct baseline comparisons and missing cloud/edge empirical runtime evaluations despite the paper's central title and theme, warrants an uncertain assessment.",
+        "scoped_contribution": "The manuscript evaluates fine-tuning a compact ViT-small backbone for seven-class facial expression recognition across three benchmark datasets (CK+, JAFFE, and KDEF), motivated as a computationally efficient layer for cloud storage pipelines [E31e576869c0657c4-B0005, E31e576869c0657c4-B0011, E31e576869c0657c4-B0045].",
+        "source_content_hash": "8799ee22120dd79ef37b5cd55d2b91486f080cbdf2d9554320b8a5f021ed13d2"
+      },
       "primary_model": "gemini-3.8-flash",
-      "primary_provider": "google"
+      "primary_provider": "google",
+      "provenance_status": "pass"
     },
-    "rationale": "Manuscript unavailable; no scientific decision.",
+    "rationale": "The contribution is modest, essentially consisting of fine-tuning an off-the-shelf ViT-small model on three legacy datasets. The gap between the formulated squeeze-fusion method and the actually evaluated architecture, combined with the lack of direct baseline comparisons and missing cloud/edge empirical runtime evaluations despite the paper's central title and theme, warrants an uncertain assessment.",
     "recommendation": "unknown",
     "rubric_version": "scholarly-rubric-v2",
-    "source_content_hash": "0cddf376a78fb059c20bf5af71553374de8360014ff9805938ab6051d97f3e80",
+    "source_content_hash": "8799ee22120dd79ef37b5cd55d2b91486f080cbdf2d9554320b8a5f021ed13d2",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
+    "uncertainty": "The authors transparently acknowledge that evaluation is limited to offline testing on small, controlled datasets without testing in-the-wild robustness or real end-to-end cloud latency and throughput [E31e576869c0657c4-B0006, E31e576869c0657c4-B0065]."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -181,7 +1837,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -59,16 +59,156 @@
             <p>Open-vocabulary 3D scene understanding enables object localization and segmentation from free-form text queries without a fixed category vocabulary. Many recent methods build on 3D Gaussian Splatting and consolidate multi-view observations, such as masked crops from individual views, into language features or compac...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides a well-motivated architectural enhancement to 3D Gaussian Splatting for open-vocabulary tasks with thorough ablation studies, transparent implementation details, and solid benchmarking against state-of-the-art baselines.</p>
+      <p>The authors clearly acknowledge dependencies on source 2D mask segmentations and frozen CLIP representations, as well as limitations in handling complex attribute combinations and spatial relationships.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-30T10:19:04.054685+00:00.</p>
+        <p>Coverage: 74888 of 74888 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>observations, potentially weakening
+query-relevant cues.
+To address this limitation, we proposeEviSplat, which keeps individual observation features avail-
+able for query-dependent selection. Using LaGa&#x27;s class-agnostic grouping (Cen et al., 2025b), EviS-
+plat organizes these features into instance observation banks (Fig. 1, bottom). Since different obser-
+vations may cover different subsets of an instance&#x27;s Gaussians, an instance-level score alone cannot
+distinguish where query-relevant cues are supported. EviSplat therefore learns an appearance dis-
+tribution for each Gaussian to capture its locally supported evidence. Given a query, query-guided
+evidence aggregation forms an instance-level score from the most relevant observations and refines
+each Gaussian&#x27;s score with local evidence weighted by observation reliability.
+We evaluate EviSplat on LERF-OVS, 3D-OVS, and ScanNet for </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+Gaussian evidence field records a distribution of the appearances supported at each Gaussian.After
+this stage,Query-guided evidence aggregation(§4.2) scores both representations against an incom-
+ing query and computes the final scores of individual Gaussians.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>approximateqg:
+pg = softmax
+ Wzg
+∥zg∥2
 
-        <ul></ul>
+,L evid =−E g
+h KX
+k=1
+qg(k) logpg(k)
+i
+,(8)
+where Gaussians are sampled with probability proportional to P
+o∈Egwg(o), so that every obser-
+vation contributes to the loss in proportion to its weight. We call the mapg7→p g theGaussian
+evidence field. The latents and decoders are the only trained parameters of EviSplat; the 3DGS
+scene, the CLIP encoder, and the affinity field remain frozen, and training uses neither text queries
+nor a label vocabulary.
+5</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given a text queryt, every Gaussiangreceives the score
+sg(t) =b g(t) +ρg max
+
+eg(t)−b g(t),0
+
+.(9)
+Theinstance priorb g(t)provides a base score forgby combining instance relevance scores ac-
+cording to its affinity-based assignments. TheGaussian-local evidencee g(t)is the relevance of
+the appearances observed atgitself, computed from the evidence field. Theobservation reliability
+ρg∈[0,1], computed from the evidence sets, determines how much the local evidence may raise
+the prior. We define the three terms in turn.
+Instance priorbg(t).We apply the relevance of Eq. 2 to the individual features of each bank rather
+than to a consolidated descriptor. Average pooling over a bank can dilute useful cues, whereas max
+pooling is sensitive to individual noisy observations, as also reported by LaGa (Cen et al., 2025b).
+For a set ofnscores, letmean β denote the mean of its⌈βn⌉largest elements, </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets and metrics.We evaluate open-vocabulary segmentation on LERF-OVS (Kerr et al.,
+2023; Qin et al., 2024), 3D-OVS (Liu et al., 2023), and ScanNet (Dai et al., 2017). We report mIoU
+on all three datasets, together with mAcc@0.25on LERF-OVS and the class-averaged accuracy
+mAcc on ScanNet. LERF-OVS and 3D-OVS evaluate rendered masks; ScanNet evaluates 3D points
+in ten scenes following OpenGaussian (Wu et al., 2024). Table 1 separates methods that query
+rendered language feature maps from those that score and select 3D Gaussians before rendering.
+EviSplat and our LaGa baseline follow the latter. For prior methods, we report mAcc@0.25when
+available.
+Implementation.We use SAM (Kirillov et al., 2023) for source-view mask generation and the
+OpenCLIP ViT-B/16 model of CLIP (Radford et al., 2021) for image–text encoding across datasets.
+On LERF-OVS we use three semantic scales,D= 32,K= </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LERF-OVS.EviSplat achieves the highest mIoU on three of the four scenes and the highest mean,
+70.7, which is5.1points above the best prior mean in either group (Tab. 1). It also reaches the highest
+mAcc@0.25,86.5against82.9. The largest margin over the strongest prior result is onFIGURINES.
+3D-OVS and ScanNet.On 3D-OVS, EviSplat reaches97.4mIoU, compared with97.1for the
+best prior method. On ScanNet, EviSplat achieves the highest mIoU for 19 and 15 classes and
+the second highest for 10 classes, together with the highest mAcc for 15 and 10 classes (Tab. 2).
+These results extend the gains beyond the LERF-OVS scenes to both rendered-view and point-level
+segmentation.</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Instance observations and the evidence field.Across variants, we keep the reconstructed geom-
+etry, LaGa affinity field, renderer, and post-processing fixed. The instance-only variant scores each
+Gaussian by the instance priorb g(t)alone (Eq. 11), without the Gaussian-local correction; it raises
+the baseline from63.6to66.2mIoU without additional representation learning (Tab. 3), already
+above the best prior mean of65.6(Tab. 1). Averaging the query relevance scores of all retained ob-
+servations yields62.8mIoU and taking the maximum score yields60.0, compared with66.2for the
+top-βmean, supporting query-dependent selection of a subset of observations. Adding Gaussian-
+7
+Table 1:LERF-OVS segmentation.† denotes our reproduced baseline for LaGa (Cen et al., 2025b);
+other prior results are cited as reported value. Metrics are four-scene averages, and our EviSplat re-
+ports three-run </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>means±population SD. mAcc: mask IoU&gt;0.25success rate (Best/ Second-Best ).
+Method Per-scene mIoU Mean
+Fig. Tea. Ram. Wal. mIoU mAcc
+2D rendered-feature querying
+LERF (Kerr et al., 2023) 38.6 45.0 28.2 37.9 37.4 –
+LangSplat (Qin et al., 2024) 44.7 65.1 51.2 44.5 51.4 –
+Occam&#x27;s LGS (Cheng et al., 2024) 58.6 70.2 51.0 65.3 61.3 –
+OpenGaFF (Li et al., 2026a) 64.3 76.153.8 65.8 65.0 –
+CCL-LGS (Tian et al., 2025) 61.2 71.8 62.3 67.1 65.6 –
+3D Gaussian-level querying
+OpenGaussian (Wu et al., 2024) 39.3 60.4 31.0 22.7 38.4 51.4
+LightSplat (Bang et al., 2026) 50.6 59.7 45.1 35.0 47.6 68.3
+OpenGaFF (Li et al., 2026a) 59.4 71.0 38.4 48.6 54.4 80.8
+V ALA (Wang et al., 2026) 60.4 70.6 45.4 55.7 58.0 82.9
+LaGa (Cen et al., 2025b) 64.1 70.9 55.6 65.6 64.0 –
+LaGa† 63.4 67.1 60.8 62.9 63.6 81.9
+EviSplat (Ours) 74.8±0.1773.5 ±0.0162.9±0.2771.5±0.0770.7±0.1086.5±0.00
+Table 2:Open-vocabulary segmentation </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>increasing local
+evidence coverage from10%to100%raises sparse storage from121.6to307.7MiB, while the
+D= 16field remains at173.3MiB. These storage measurements exclude the observation bank and
+8
+Table 3:Component and size analysis on LERF-OVS (mIoU).Baseline reproduces LaGa.D:
+latent dimension;K: prototypes per semantic scale. Local storage totals four scenes and excludes
+shared components.
+Fig. Tea. Ram. Wal. Mean Local storage(MiB)↓
+Instance observations and the evidence field
+Baseline (Cen et al., 2025b) 63.4 67.1 60.8 62.9 63.6 –
+Query-guided evidence aggregation (instance only) 65.2 69.8 65.1 64.8 66.2 –
+Evidence representation and aggregation
+Mean observation feature 67.3 72.865.667.3 68.2 –
+Mean prototype relevance (probability-weighted) 66.6 72.6 65.4 65.5 67.5 –
+Maximum prototype relevance 31.8 49.4 37.1 58.5 44.2 –
+Representation size and storage
+Sparse empirical distribution </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>remains dependent on source-mask quality and frozen CLIP features; pre-
+serving observations alone may not overcome CLIP&#x27;s limitations in understanding attribute com-
+binations and spatial relations (Yuksekgonul et al., 2023). Refining the fixed Gaussian-to-instance
+assignments and improving compositional query understanding remain directions for future work.</blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evidence-field training (codebook initialization, Gaussian sampling, and latent initialization)
+while keeping the photometric scene and the affinity field fixed. Within-method ablations reuse the
+same affinity-field checkpoints to isolate changes to evidence representation and aggregation.
+LERF-OVS accuracy.For each scene, mAcc@0.25is the fraction of annotated (frame, query)
+pairs whose mask IoU exceeds0.25; the reported mean averages the four scenes. It is distinct from
+per-class point recall on ScanNet and from localization accuracy based on the highest-scoring image
+pixel. For the main setting, all three evidence-field seeds give86.54%: their masks differ, but the
+numbers of pairs crossing the IoU threshold are unchanged.</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CLIP feature; the source RGB and mask stay fixed. (b) Boundary pixels are removed before
+CLIP re-encoding. The illustrated erosion is exaggerated for visibility; orange and blue indicate
+removed and retained mask pixels, respectively.
+Table C.2:Sensitivity to source-observation perturbations.Four-scene mean mIoU (%). Paren-
+theses give changes in percentage points from the control within each block. Erosion uses a matched
+re-encoding control. Light-blue shading highlights changes from the corresponding control.
+Perturbed source views Baseline Instance-only EviSplat
+Feature replacement
+Clean64.15 66.22 70.54
+10%62.48 (−1.67) 66.30 (+0.08) 70.22 (−0.32)
+30%59.38 (−4.78) 64.15 (−2.07) 68.63 (−1.91)
+Mask erosion
+Re-encoding control62.91 66.42 70.64
+10%63.50 (+0.60) 66.90 (+0.48) 70.77 (+0.13)
+30%63.13 (+0.22) 66.35 (−0.07) 70.61 (−0.03)
+and the evidence field is retrained; all three </blockquote></details></li><li><strong>Contribution clarity — pages 19–20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fraction changes; the fields and remaining inference settings are fixed. The means
+are69.89±0.04and70.67±0.10mIoU, respectively (population standard deviations). The paired
+gains are0.65,0.92, and0.78points. Across seeds,WALDO KITCHENimproves by3.81points and
+TEATIMEby0.43, whileFIGURINESandRAMENdecrease by0.71and0.40. This supports the ob-
+19
+served mean improvement across evidence-field seeds, rather than a uniform scene-level gain. We
+useβ= 0.5in the main LERF-OVS results following this benchmark sweep; these evaluations do
+not constitute a held-out test of the parameter choice.
+C.3 REPRESENTATIONSIZE, STORAGE,ANDCOMPUTATIONALCOST
+Local representation storage.LetNbe the number of Gaussians,Lthe number of semantic
+scales, anddc the visual-feature dimension. The evidence field storesND+LDKtrainable scalars
+andLKd c frozen codebook scalars. The latent dimensionDcontrols the per-Gaussian </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +247,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

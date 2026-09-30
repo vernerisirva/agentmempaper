@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remember by Asking: Retrieval-Induced Memory Evolution for LLM Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Remember by Asking: Retrieval-Induced Memory Evolution for LLM Agents</h1>
+          <p class="hero-copy">Wanqi Zhou, Jiawei Lu, Yang Wang, Zhaolong Xing, Zhen Chen, Ai Han, Haoyue Shi</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2609.34438">Open paper</a>
+            <a class="paper-detail-link" href="remember-by-asking-retrieval-induced-memory-evolution-for-llm-agents-5707666a.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Wanqi Zhou, Jiawei Lu, Yang Wang, Zhaolong Xing, Zhen Chen, Ai Han, Haoyue Shi</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-09-28</dd></div>
+              <div><dt>Publication date</dt><dd>2026-09-28</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2609.34438v1">arXiv</a><a href="https://arxiv.org/abs/2609.34438">arXiv</a><a href="https://openalex.org/W7214713171">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Focuses on persistent or long-term memory for agent behavior.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Long-term memory is essential for language agents to maintain coherent and effective behavior over extended, multi-session interactions. Existing memory systems mainly use retrieval at read time, while write-time memory formation still relies on direct extraction or compression. However, when future information need...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a clear, well-scoped architectural contribution to LLM agent memory systems with sound technical details and rigorous comparative benchmarking against standard baselines.</p>
+      <p>The evaluation excludes the adversarial split of LoCoMo and relies on a fixed set of six generic formation queries, while write-time token overhead during memory construction is not explicitly quantified alongside query tokens.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-30T10:18:49.403766+00:00.</p>
+        <p>Coverage: 20378 of 20378 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory is essential for language agents to main-
+tain coherent and effective behavior over extended, multi-
+session interactions. Existing memory systems mainly use
+retrieval at read time, while write-time memory formation still
+relies on direct extraction or compression. However, when
+future information needs are unknown, compressing an entire
+interaction in one pass can overlook locally important de-
+tails that may matter later. To this end, we introduceRIME,
+a retrieval-induced memory framework that shifts memory
+construction from monolithic compression toward evidence-
+centered integration. RIME uses generic self-questions to
+retrieve focused dialogue evidence and grounds memory
+formation in both the retrieved evidence and relevant histor-
+ical memories, which are jointly reconciled into an evolving
+memory bank with temporal and provenance information.
+At inference time, </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>compressed memory serves as the pri-
+mary rather than the sole source of evidence: when it cannot
+support an answer, RIME retrieves relevant source dialogue
+together with its local context to recover information omitted
+during memory formation, without resorting to full-history
+processing. Extensive experiments on LoCoMo with Qwen3-
+235B-A22B and GPT-5.6 Sol show that RIME consistently
+achieves the best performance across all three quality metrics
+among the compared methods, while requiring substantially
+fewer query-time LLM tokens.
+Index Terms—Long-term memory, Language agents,
+Dialogue memory</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RIME introduces complementary innovations in both mem-
+ory formation and memory use.
+Question-guided evidence recall.RIME maintains a fixed
+set of generic formation questions
+Q={q r}R
+r=1,(1)
+which are shared across all sessions and independent of down-
+stream queries. In our implementation,R= 6, covering peo-
+ple and relationships, events, activities, plans, states and pref-
+erences, and specific factual details.
+Letϕ(·)denote the text embedding function and
+s(a,b) = ϕ(a)⊤ϕ(b)
+∥ϕ(a)∥2∥ϕ(b)∥2
+(2)
+denote cosine similarity. For each formation questionq r,
+RIME retrieves thek f most relevant dialogue turns from the
+current sessionS t:
+R(r)
+t =
+kf
+arg topk
+x∈St
+s(qr,x).(3)
+The formation questions therefore act as retrieval cues rather
+than summarization instructions: each question indepen-
+dently surfaces dialogue evidence associated with a particular
+type of information before memory </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>construction.
+We first merge the turns recalled by all formation ques-
+tions:
+Rt =
+R[
+r=1
+R(r)
+t .(4)
+Because some recalled turns depend on nearby context, RIME
+performs two rounds of local context expansion:
+eR(ℓ+1)
+t = eR(ℓ)
+t ∪N t
+
+eR(ℓ)
+t
+
+, ℓ= 0,1,(5)
+with eR(0)
+t =R t, whereN t(·)adds neighboring turns needed
+to resolve local dialogue dependencies. The final evidence set
+is
+Et = eR(2)
+t .(6)
+Historical memory grounding.For each formation ques-
+tionq r, RIME combines the question with its recalled evi-
+denceR (r)
+t to construct a query for retrieving relevant histor-
+ical memories:
+z(r)
+t = Concat
+
+qr,R (r)
+t
+
+,(7)
+where the dialogue turns inR (r)
+t are concatenated in decreas-
+ing order of retrieval similarity. The corresponding historical
+memories are retrieved as
+H(r)
+t =
+kh
+arg topk
+m∈Mt−1
+s
+
+z(r)
+t ,m
+
+,H t =
+R[
+r=1
+H(r)
+t .(8)
+Joint memory formation and </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reconciliation.Given the re-
+called current-session evidenceE t and the retrieved historical
+memoriesH t, RIME performs fact extraction, within-session
+deduplication, reference resolution, and historical reconcilia-
+tion jointly in a single LLM call:
+Ot =F mem (Et,H t).(9)
+Each predicted operationo∈O t takes one of four forms:
+op(o)∈{ADD,UPDATE,DELETE,NOOP}.(10)
+ADDcreates a new memory, UPDATErevises or augments
+an existing memory describing the same underlying fact,
+DELETEremoves a memory explicitly contradicted as erro-
+neous, and NOOPis used when the historical memory already
+captures the current evidence. Each memory also retains its
+temporal information and dialogue provenance.
+Finally, the predicted operations are applied to obtain the
+updated memory bank:
+Mt = Apply (Mt−1,O t).(11)
+(a) Memory formation
+Current dialogue
+User:
+I will travel to Tokyo
+next month.
+Assistant:
+Great! </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given a user queryq usr
+i , let˜yi =F ans(qusr
+i ,M i)denote the
+initial answer from the retrieved semantic memoriesM i. If
+˜yi =NONE, RIME retrieves relevant source turns using TF–</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>IDF [16]:
+Rsrc
+i =
+ks
+arg topk
+x∈ST
+t=1St
+ψ(q usr
+i )⊤ψ(x),E src
+i =R src
+i ∪Ctxw(Rsrc
+i ),
+(12)
+whereCtx w(·)adds up towpreceding and following turns
+within the same session. The final prediction is
+ˆyi =
+(
+˜yi,˜y i̸=NONE,
+Fans(qusr
+i ,E src
+i ),˜y i =NONE.
+(13)</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Dataset.We evaluate on LoCoMo [17], a benchmark for
+very long-term conversational memory. Following the paper-
+comparable setting, we use 1,540 questions from four cate-
+gories: single-hop, multi-hop, temporal, and open-domain,
+excluding the adversarial category.Baselines.We compare
+RIME with RAG [18], Mem0 [4], A-MEM [5], Nemori [6],
+and D-Mem [7], covering retrieval-based, structured, adap-
+tive, and deliberative long-term memory systems.Models.
+We evaluate all methods with two LLM backbones, Qwen3-
+235B-A22B and GPT-5.6 Sol. For each setting, the same
+backbone is used for memory construction and answer gener-
+ation, and the corresponding model is also used as the LLM
+judge. For answer generation and evaluation, we follow the
+prompting protocol used by D-Mem [7] and Nemori [6],
+including the answer and LLM-judge prompts.Memory
+and Retrieval Configuration.RIME uses six generic </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for-
+mation queries covering person, event, activity, plan, state,
+Table 1. Main results on the 1,540 non-adversarial LoCoMo
+questions. Higher is better for Judge, F1, and BLEU-1; lower
+is better for inference tokens. †D-Mem results are directly
+reported from the original paper using Qwen3-235B-Instruct,
+as its implementation is not publicly available.
+Method Judge↑F1↑BLEU-1↑Tokens↓
+Qwen3-235B-A22B
+RAG 31.36 20.87 17.46 3.64K
+Mem0 53.12 35.76 30.49 2.20K
+A-MEM 68.77 44.12 37.86 63.19K
+Nemori 77.34 46.01 39.88 20.92K
+D-Mem† 78.60 51.00 42.60 15.57K
+RIME81.82 51.46 44.225.11K
+GPT-5.6 Sol
+RAG 40.00 23.94 20.29 3.31K
+Mem0 70.52 46.45 39.59 2.24K
+A-MEM 80.78 53.77 46.54 52.14K
+Nemori 83.05 52.64 45.88 17.74K
+RIME84.29 56.41 48.855.21K
+and specific detail. For each query, we retrieve the top 10
+dialogue turns and top 5 relevant historical memories. At
+inference, we retrieve the top 30 semantic </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memories us-
+ing OpenAI&#x27;stext-embedding-3-small. If the ini-
+tial answer isNONE, TF–IDF retrieval selects the top 20
+source-dialogue turns, each expanded with a context win-
+dow of 15 turns. No raw dialogue is provided during the
+initial memory-based answer. Unless otherwise specified,
+all baselines use the same retrieval settings; A-MEM retains
+its originalall-MiniLM-L6-v2embedding model fol-
+lowing its official configuration. The source code, including
+the exact prompts and evaluation configuration, is available
+athttps://anonymous.4open.science/r/RIME_
+official-4BC7.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 compares RIME with representative long-term mem-
+ory systems under two LLM backbones. RIME consistently
+achieves the best performance across all three quality met-
+rics with both Qwen3-235B-A22B and GPT-5.6 Sol. No-
+tably, these gains are achieved with substantially lower query-
+time LLM cost than deliberative memory baselines such as
+A-MEM and Nemori, demonstrating that selective access to
+source dialogue provides an effective alternative to expensive
+deliberation over long histories.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Effect of question-guided memory formation.To isolate
+the effect of question-guided retrieval, we compare three for-
+mation strategies with the same memory-use stage.Direct
+Table 2. Effect of memory formation strategies on LoCoMo
+using Qwen3-235B-A22B (n= 1,540). All variants use the
+same selective memory-use procedure.
+Formation Strategy Judge↑F1↑BLEU-1↑
+Direct Compression 71.62 49.26 42.32
+Question-Prompted Compression 72.66 48.87 42.11
+RIME81.82 51.46 44.22
+Table 3. Ablation of selective source retrieval on LoCoMo.
+Method Judge↑F1↑BLEU-1↑
+Qwen3-235B-A22B
+RIME w/o selective retrieval 71.23 44.73 38.41
+RIME81.82 51.46 44.22
+GPT-5.6 Sol
+RIME w/o selective retrieval 80.97 54.27 46.96
+RIME84.29 56.41 48.85
+Compressionuses the Mem0 extraction prompt over the full
+session, whileQuestion-Prompted Compressionadditionally
+uses the six formation dimensions as extraction instructions
+without </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>question-specific retrieval. RIME instead uses these
+questions as retrieval cues before memory consolidation. As
+shown in Table 2, adding the six dimensions to the compres-
+sion prompt yields no consistent gain over direct compres-
+sion, whereas RIME improves all three metrics. This suggests
+that question-guided memory formation is effective.
+Effect of selective source retrieval.We further examine
+whether access to the source dialogue is necessary when se-
+mantic memory is insufficient. Disabling selective source
+retrieval causes a substantial performance drop on both back-
+bones, with the Judge score decreasing by 10.59 points on
+Qwen3-235B-A22B and 3.32 points on GPT-5.6 Sol. Source
+retrieval is triggered more frequently with Qwen than with
+GPT-5.6 (16.8% vs. 6.0%), consistent with the larger degra-
+dation observed when this mechanism is removed.</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Memory architecture / system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory mechanisms or governance for LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: llm-agents, long-term-memory, benchmark, agent-memory, memory-systems</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-30</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-29 10:21:36</li><li>Last seen by Paper Scout: 2026-09-30 10:16:10</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2609.34438</li><li>arXiv: 2609.34438</li><li>OpenAlex: W7214713171</li><li>OpenAlex IDs: W7214713171</li><li>arXiv IDs: 2609.34438</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="remember-by-asking-retrieval-induced-memory-evolution-for-llm-agents-5707666a.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Remember by Asking: Retrieval-Induced Memory Evolution for LLM Agents. Wanqi Zhou, Jiawei Lu, Yang Wang, Zhaolong Xing, Zhen Chen, Ai Han, Haoyue Shi. 2026-09-28. https://doi.org/10.48550/arxiv.2609.34438</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents</h1>
+          <p class="hero-copy">Haohao Qu, Yongcheng Jing, Chun Hin Chan, Shanru Lin, Wenqi Fan, Dacheng Tao</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2609.37311">Open paper</a>
+            <a class="paper-detail-link" href="remem-rethinking-perception-and-memory-in-long-context-recommendation-agents-3ffd54b6.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Haohao Qu, Yongcheng Jing, Chun Hin Chan, Shanru Lin, Wenqi Fan, Dacheng Tao</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-09-29</dd></div>
+              <div><dt>Publication date</dt><dd>2026-09-29</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2609.37311v1">arXiv</a><a href="https://arxiv.org/abs/2609.37311">arXiv</a><a href="https://openalex.org/W7214992421">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies memory storage, retrieval, update, or consolidation for LLM agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Recent Recommendation Agents (RecAgents) offer a promising alternative by shifting recommendation to an active, user-side paradigm, where generative agents autonomously perceive external platforms, reason over user preferences, and execute decisions. However, existing RecAgents still suffer from two critical limitat...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a coherent framework addressing both perception noise and long-context degradation in recommender agents, supported by explicit mathematical formulation, ablations, baseline comparisons, and honest analysis of latency constraints.</p>
+      <p>The authors identify high inference latency stemming from sequential chunk updates as a practical limitation and outline future directions toward richer multi-action environments and varied chunking schedules.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-01T10:44:10.044416+00:00.</p>
+        <p>Coverage: 91479 of 91479 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Recent Recommendation Agents (RecAgents) offer a promising
+alternative by shifting recommendation to an active, user-side par-
+adigm, where generative agents autonomously perceive external
+platforms, reason over user preferences, and execute decisions.
+However, existing RecAgents still suffer from two critical limita-
+tions: brittle item perception based on noisy and heterogeneous
+item pages, and inefficient long-context reasoning over extended
+user histories and multi-step interaction traces. To address these
+challenges, we propose a novel recommendation agent framework,
+termed asReMem, that combines OCR-based multimodal percep-
+tion with time-evolving dynamic memory. Instead of parsing raw
+HTML, ReMem observes item pages through screenshots and ex-
+tracts structured multimodal information via an OCR tool, enabling
+a more humanoid and platform-agnostic perception mechanism.
+To support </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>long-horizon preference modeling, ReMem further in-
+troduces a chunk-wise sequential memory update strategy, where
+the agent selectively maintains a fixed-size memory of informa-
+tive historical interactions while processing arbitrarily long con-
+texts with linear inference complexity and bounded context length.
+This design allows the agent to preserve evolving user preferences
+without relying on external memory modules or disrupting the
+standard autoregressive generation process. To enhance the dy-
+namic memory instruction, we further develop a multi-memory
+GRPO variant, which propagates the final-answer advantage to all
+intermediate conversations that contribute to the final response.
+Extensive experiments on three datasets demonstrate that ReMem
+consistently outperforms state-of-the-art baselines, achieving an
+average improvement of 5.16% across three recommendation agent
+tasks, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memorize every trivial detail. In-
+stead, we dynamically abstract key concepts, update our cognitive
+state, and discard redundant information to manage cognitive load.
+This selective attention allows us to solve complex, long-horizon
+tasks with bounded memory capacity.
+Motivated by these intuitions, we introduce a novel RecAgent
+framework, namedReMem, that leverages Optical Character Recog-
+nition (OCR)-based multimodal perception for humanoid informa-
+tion gathering, coupled with dynamic memory enhanced by Rein-
+forcement Learning (RL) for long-context reasoning. Specifically,
+we integrate DeepSeek-OCR-2 [39, 40] as an active tool-use com-
+ponent to achieve human-like multimodal perception. By parsing
+screenshots of item pages, this approach extracts structured multi-
+modal item information, effectively bypassing the noisy and brittle
+nature of HTML parsing. Furthermore, we propose a </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Driven by the aforementioned insights in Sect. 2, we propose a novel
+framework, ReMem, for recommendation AI agents. As shown in
+Figure 3, the design principle of ReMem lies on two anthropocentric
+intuitions. First, the paper embraces a multimodal perception solu-
+tion through OCR [39, 40] to replace the original reading format
+(e.g., HTML), as the majority of item pages are with a human-
+centered design philosophy: emphasizing the key information visu-
+ally. The OCR technique can preserve essential information while
+filtering noisy contents (e.g., ads) to improve multimodal percep-
+tion of item pages. Second, we introduce a time-evolving memory
+mechanism designed for capturing the evolving user preferences.
+This mechanism enables RecAgents to process inputs of any length
+within a finite context window in linear time complexity during
+the inference process, thereby overcoming a major </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Rather than relying on the raw HTML format, this paper proposes
+embracing a more general solution for item perception:&quot;see&quot; item
+pages with natural text, images and interactive elements in a unified
+perspective. Recently, Optical Character Recognition (OCR) has
+emerged as a foundational technology capable of converting images
+and scanned text documents into structured templates that can be
+read by large language models (LLMs) [4]. To enable multimodal
+perception in agent-based recommendation scenarios, OCR is more
+promising than ever—with massive amounts of unstructured data
+being generated and consumed every day.
+As shown in Figure 3 (a), after request to a certain item page, the
+proposed ReMem prompts an advanced OCR model, i.e., DeepSeek-
+OCR-2 [40], to parse the whole page including not only the textual
+contents but also the images or charts
+𝑣𝑗 =OCR(Request(url(texts, images, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>context size bounded.
+3.3.1Workflow.As illustrated in Figure 3(b), the proposed mem-
+ory mechanism treats an arbitrarily long user interaction history
+as a controlled stream of evidence rather than a monolithic context.
+At each step, the RecAgent observes two components: (1) the next
+chunk of historical interactions, and (2) a compact memory sum-
+marizing the preference evidence accumulated so far. The memory
+is represented as ordinary natural-language tokens inside the LLM
+context window. Therefore, the backbone LLM does not require any
+architectural modification, external key-value cache manipulation,
+or customized attention operator.
+The working procedure naturally consists of two stages: namely
+context-processingandanswer-generation. In the first stage, the
+model sequentially reads chunks of the user history and updates
+the memory after each chunk. For a user 𝑢𝑖, the interaction </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>his-
+toryH={𝑣 1,...,𝑣 𝐽} is partitioned into 𝑇 contiguous chunks
+C={ c1,..., c𝑇} based on a chunking window of𝑊 , where each
+chunkc𝑡 =join[𝑣 𝑡𝑊,...,𝑣 (𝑡+1)𝑊] may contain𝑊 user–item inter-
+actions and the corresponding item descriptions. Given the previous
+memorym𝑡−1 and the current chunkc𝑡 , the RecAgent produces an
+updated memorym 𝑡 :
+m𝑡∼𝑝 𝜃
+m𝑡|m𝑡−1,c𝑡,Q ,(3)
+whereQ denotes the user query or recommendation task, the mem-
+ory is set to a fix-length of|m𝑡|=𝐿 , and the initial memorym 0 =∅ .
+The updated memory overwrites the previous one.
+ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents Preprint, Work in Progress, arXiv
+b) User Preference Reasoning with Time-Evolving Memory
+...
+User Interaction History
+...LLM
+Chunk 1 Chunk 2
+LLM
+Chunk T
+LLM
+ LLM
+Chunk
+Model Input
+Chunking
+Window
+Current
+Memory
+Intermediate
+Memory
+Perception Prompt:
+Parse the item
+page and </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the user𝑢𝑖. As
+illustrated in Section 3.3 and Equation (3), for each query, a policy
+model𝜋𝜃 generates𝑇sequential memory instances:
+M={m 1,m 2,...,m 𝑇},m 𝑡∼𝜋 𝜃old(·|m 𝑡−1,c𝑡,Q),(9)
+where the base memorym0 =∅ . These memory summaries are then
+used by the model to produce a final answer:𝑦∼𝜋 𝜃old(·| m𝑇, ˆc,Q)
+using the accumulated memorym𝑇 .
+Building upon this framework, we can sample a group of 𝐺
+complete reasoning instances with a high generation temperature
+(e.g., 1.5) to make model outputs be more creative:
+{M𝑔,𝑦𝑔}𝐺
+𝑔=1,M 𝑔 ={m 1
+𝑔,...,m 𝑇
+𝑔},(10)
+whereM𝑔 denotes the set of intermediate memory for the 𝑔-th
+sampled reasoning instance.
+3.4.2Final-Answer Reward and Group Advantage.To make
+sure the agent ground into our recommendation scenarios, each
+sampled instance is evaluated using only the final answer of rec-
+ommendation:𝑟𝑔 =𝑟(𝑦 𝑔,𝑦+), where𝑦+ denotes the ground-truth
+item,𝑟(·) may </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>be task-specific metrics, such as Accuracy, Hit Rate
+or Ranking Score [ 7, 8, 17]. As in standard GRPO, we compute
+the group-relative advantage by normalizing rewards across the𝐺
+sampled instances:
+𝐴𝑔 = 𝑟𝑔−𝜇𝑟
+𝜎𝑟+𝜖 , 𝜇 𝑟 = 1
+𝐺
+𝐺∑︁
+𝑔=1
+𝑟𝑔, 𝜎 𝑟 =
+vut
+1
+𝐺
+𝐺∑︁
+𝑔=1
+(𝑟𝑔−𝜇𝑟)2,(11)
+where𝜖is a small constant for numerical stability.
+The key modification is that 𝐴𝑔 is not only used to optimize
+the final answer𝑦𝑖, but is also propagated to every intermediate
+memory summary inM𝑔. Thus, memory instances that lead to a
+high-quality final answer are reinforced, while those associated
+with poor final answers are discouraged.
+3.4.3Memory-Level Policy Ratio.For the 𝑡-th intermediate
+memory in the𝑔-th sampled instance, we define the token-level
+policy ratio at𝑙-th token as
+𝜌𝑚
+𝑔,𝑡,𝑙(𝜃)= 𝜋𝜃
+𝑚𝑔,𝑡,𝑙|Q,𝑚 𝑔,𝑡,&lt;𝑙,c𝑡
+𝜋𝜃old
+𝑚𝑔,𝑡,𝑙|Q,𝑐 𝑔,𝑡,&lt;𝑙,c𝑡.(12)
+Each memory is conditioned only on the original query 𝑥, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+given chunkc 𝑡 and its own previous tokens 𝑚𝑔,𝑡,&lt;𝑙 , rather than
+on tokens from other memory summaries. This prevents artificial
+cross-memory credit assignment. Similarly, the token-level policy
+ratio of final output can be formulated as
+𝜌𝑦
+𝑔,𝑙(𝜃)= 𝜋𝜃
+𝑦𝑔,𝑙|Q,M 𝑔,𝑦𝑔,&lt;𝑙, ˆc
+𝜋𝜃old
+𝑦𝑔,𝑙|Q,M 𝑔,𝑦𝑔,&lt;𝑙, ˆc.(13)
+3.4.4Multi-Memory GRPO Objective.Considering the sequen-
+tial property of user preference reasoning, we use a simple but
+effective trick to teach the model what to memory, which optimizes
+intermediate memory summaries using the final-answer advantage,
+inspired by the novel DAPO algorithm [49]. Specifically, we first
+consider a clipped objective optimization on final answer as:
+JAns(𝜃)=E 𝑥,{(M 𝑔,𝑦𝑔)}𝐺
+𝑔=1
+&quot;
+1
+𝐺
+𝐺∑︁
+𝑔=1
+1
+𝐿𝑦
+𝐿𝑦∑︁
+𝑙=1
+min
+
+𝜌𝑦
+𝑔,𝑙(𝜃)𝐴𝑔,clip
+
+𝜌𝑦
+𝑔,𝑙(𝜃),1−𝛿,1+𝛿
+
+𝐴𝑔
+#
+,
+(14)
+where𝛿 is the clipping coefficient (0.2). Then, the same advantage
+can be applied to the </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>intermediate memory summaries:
+JMem(𝜃)=E 𝑥,{(M 𝑔,𝑦𝑔)}𝐺
+𝑔=1
+&quot;
+1
+𝐺
+𝐺∑︁
+𝑔=1
+1
+𝑇
+𝑇∑︁
+𝑡=1
+1
+𝐿𝑚
+𝐿𝑚∑︁
+𝑙=1
+min
+
+𝜌𝑚
+𝑔,𝑡,𝑙(𝜃)𝐴𝑔,clip
+
+𝜌𝑚
+𝑔,𝑡,𝑙(𝜃),1−𝛿,1+𝛿
+
+𝐴𝑔
+#
+.
+(15)
+The overall Multi-Memory GRPO objective is then
+JMem-GRPO(𝜃)=J Ans(𝜃)+𝜆J Mem(𝜃),(16)
+where𝜆 controls whether and how strongly the memory tokens
+are optimized.
+3.4.5KL regularization.To avoid excessive deviation from a
+reference policy𝜋ref, we add a full token-level KL penalty over the
+ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents Preprint, Work in Progress, arXiv
+generated memory tokens:
+D𝑚
+KL =E
+&quot;
+1
+𝐺
+𝐺∑︁
+𝑔=1
+1
+𝑇
+𝑇∑︁
+𝑡=1
+1
+𝐿𝑚
+𝐿𝑚∑︁
+𝑙=1
+(𝑓−log𝑓−1)
+#
+,
+where𝑓= 𝜋ref
+𝑚𝑔,𝑡,𝑙|Q,𝑚 𝑔,𝑡,&lt;𝑙,c𝑡
+𝜋𝜃
+𝑚𝑔,𝑡,𝑙|Q,𝑚 𝑔,𝑡,&lt;𝑙,c𝑡 .
+(17)
+The final training objective is
+max
+𝜃
+J(𝜃)=J Mem-GRPO(𝜃)−𝛽D 𝑚
+KL,(18)
+where𝛽is the KL coefficient (set to 0.04 following [29]).</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>4.1.1Datasets.To evaluate the effectiveness of the proposed Re-
+Mem in the user-agent-platform paradigm with proactive user in-
+structions, we construct three agentic recommendation datasets,
+namely MovieTV, Books, and Games using the widely-usedAma-
+zon Reviews 20237 data, which provide textual information (such
+as item titles, descriptions, and reviews), as well as the URL links
+of product images. Based on these contents, we create item snap-
+shots into a format of shopping platform webpage, and randomly
+include advertising content as a distraction. Furthermore, following
+InstructRec [53], we assign a persona to each user and generate
+the instruction for this interaction based on the corresponding user
+review and task. More details are in the Appendix C.2.
+Table 2: Basic statistics of benchmark datasets.
+Dataset #Users #Items #Int. Avg. Seq. #Tokens (Avg. | Max.)
+Games 94,762 25,612 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is set to 0 in the two epochs (warming up), and
+set to0.7for the following training. We use a rollout batch size of
+64 and a group size of 8 for our training.
+4.1.4Evaluation Metrics.Three commonly used metrics are
+used: LLM-as-Judge Accuracy (GPT-5-mini) for theJudgingtask,
+Top-K Hit Ratio (HR@K) and Top-K Normalized Discounted Cu-
+mulative Gain (NDCG@K) for theSearchingandRankingtasks,
+respectively, where higher values indicate superior performance.
+Furthermore, the values of K are specified as 1, 3 and 5, with 1 and
+3 serving as the default settings of HR and NDCG, respectively, for
+ablation experiments and parameter analyses.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 3 presents the overall performance comparison, from which
+we make the following observations:
+• ReMem achieves the best overall performance across most datasets
+and tasks. ReMem obtains the best results on all searching and
+judging settings, and achieves the best performance on two out
+of three ranking settings. On average, ReMem consistently im-
+proves over the strongest baseline by 5.16%. These consistent
+gains demonstrate the effectiveness of ReMem in identifying
+user-preferred items from candidate sets. The improvements are
+statistically significant with𝑝&lt;0.01, indicating that the advan-
+tage of our model is stable rather than incidental. Moreover, the
+standard deviations of ReMem are relatively small, demonstrating
+stable inference behavior.
+• Existing RecAgent baselines improve over conventional recom-
+mendation methods but remain limited. Compared with DeepRec
+methods such </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DeepRec LLMRec RecAgent LongAgent ReMem (Ours) Imp. *SASRec BERT4Rec P5 TokenRec ToolRec iAgent Qwen-L1 Mem0
+Searching
+Games HR@1 0.2828 0.2955 0.2509 0.3011 0.1970 0.3824 0.3249 0.3995 0.4292±0.0243 7.43%
+HR@3 0.3115 0.3225 0.2525 0.3711 0.3636 0.5096 0.4851 0.5184 0.5590±0.0367 7.83%
+MovieTV HR@1 0.1763 0.1838 0.1319 0.1799 0.1613 0.2308 0.2260 0.2480 0.2552±0.0164 2.92%
+HR@3 0.2208 0.2320 0.1816 0.2501 0.1827 0.3536 0.3162 0.3342 0.3656±0.0415 3.37%
+Books HR@1 0.1761 0.1898 0.1411 0.2232 0.2172 0.2925 0.2843 0.3133 0.3588±0.0190 14.55%
+HR@3 0.2853 0.2701 0.2248 0.3228 0.3831 0.4857 0.3999 0.4756 0.5069±0.0482 4.37%
+Ranking
+GamesNDCG@3 0.2689 0.2727 0.2815 0.3891 0.3969 0.4816 0.4368 0.4616 0.5074±0.0342 5.36%
+MovieTVNDCG@3 0.2605 0.2268 0.2470 0.2985 0.31650.38170.3334 0.3269 0.3718±0.0254 -2.59%
+BooksNDCG@3 0.2261 0.2288 0.2464 0.3107 0.2594 0.3839 0.3360 0.3618 0.4180±0.0197 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This suggests that the proposed dynamic memory mechanism
+effectively filters, organizes, and retrieves preference-relevant in-
+formation from lengthy contexts, reducing the negative impact
+of irrelevant or noisy historical interactions. These results verify
+that our model is better suited for long-horizon recommendation
+reasoning, where accurately capturing evolving and sparse user
+preferences is essential.
+4.3.2Ablation Study.We report the results of ablation experi-
+ments on theSearchingtask, where three key modules are removed
+separately as follows:
+• -OCR: The vision-based OCR perception module is deactivated,
+and raw item contents are used instead.
+• -GRPO: The Multi-Mem GRPO post-training is removed, resulting
+in a training-free variant of the proposed model.
+• -TEM: The Time-Evolving Memory (TEM) is replaced with a
+plain long-text context consisting of interaction history, </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>HR@1 HR@3 HR@1 HR@3 HR@1 HR@3
+ReMem (Full) 0.4292 0.5590 0.2552 0.3656 0.3588 0.5069
+-OCR0.3959 0.5067 0.2466 0.3403 0.3145 0.4520
+-GRPO0.3767 0.5025 0.2213 0.3410 0.2750 0.4680
+-TEM0.3301 0.4819 0.2236 0.3159 0.2537 0.4021
+From the ablation results in Table 4, we draw several key ob-
+servations. First, all major components contribute to the overall
+performance, as removing any single component consistently de-
+grades effectiveness. Second, even without GRPO post-training, the
+proposed model still achieves competitive performance compared
+with state-of-the-art baselines such as iAgent, demonstrating the
+strength of the base framework. Third, removingTEMleads to the
+largest performance drop in most cases, indicating that relying
+solely on a plain long context is challenging for the LLM backbone
+and that an efficient memory mechanism is essential. These results
+suggest that the proposed </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>points.
+The correctness is evaluated using recommendation metrics com-
+bined with rule-based criteria:
+𝑟correct =Metric LLM-as-Judge(𝑦pred,𝑦 gold),(25)
+where𝑦pred is the extracted final answer from the response𝑦, and
+𝑦gold is the ground-truth answer. Here, we use the item title for
+string matching. For different tasks, we adopt the corresponding
+metrics: Top-𝐾 Hit Ratio (HR@K), Top-𝐾 Normalized Discounted
+Cumulative Gain (NDCG@K), and Accuracy for theSearching,Rank-
+ing, andJudgingtasks, respectively. The reward is assigned as the
+exact value of the corresponding metric, all of which lie in[0,1].
+Specifically, the HR@K metric is calculated as:
+HR@𝐾= 1
+|U|
+∑︁
+𝑢∈U
+1
+n
+R(𝐾)
+𝑢 ∩G𝑢 ≠∅
+o
+,(26)
+whereR(𝐾)
+𝑢 is the top-𝐾 recommended item set for user𝑢,G𝑢 is the
+ground-truth relevant item set, and1{·} is the indicator function.
+Under the leave-one-out evaluation protocol, each user has only
+one </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 7 reports the average inference time per sample on a sin-
+gle NVIDIA H20 (96 GB) GPU. Compared with the vanilla LLM
+(Qwen3.5-9B), our memory-based framework incurs additional la-
+tency due to iterative memory construction and multi-step reason-
+ing. As expected, the inference time generally increases with the
+input context length, requiring 224.60 s, 118.53 s, and 98.25 s per
+sample on the Books, MovieTV, and Games datasets, respectively.
+Although the overhead is non-negligible, we consider it acceptable
+for active recommendation agents, where improved recommenda-
+tion quality and reasoning capability are often more critical than
+strict real-time response.
+D Discussion on Limitations and Future Work
+Limitations. Despite the promising results, our framework could
+a limitation. The proposed memory construction and reasoning</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Preprint, Work in Progress, arXiv Qu et al.
+Table 5: A case study demonstrating the effectiveness of the proposed memory mechanism in modeling evolving user preferences. To improve
+readability, only the item titles are shown in the interaction sequence.
+Context Length = 37,781 Tokens
+Item Sequence↓ Memory</blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>length reasoning evaluation across
+three recommendation tasks on the Games and MovieTV datasets.
+Dataset Games MovieTV
+Short Medium Long Short Medium Long
+#Samples 25,550 68,350 862 482 5,120 47
+#Tokens (K) 0-14 14-112 112-722 0-14 14-112 112-292
+Task: Searching, Metric: HR@1
+Ours 0.4388 0.4111 0.3563 0.2609 0.2549 0.2201
+QwenL1 0.3418 0.3113 0.3005 0.2363 0.2227 0.2072
+Task: Ranking, Metric: NDCG@3
+Ours 0.5277 0.5152 0.4624 0.3857 0.3770 0.3216
+QwenL1 0.4531 0.4388 0.3449 0.3461 0.3344 0.2971
+Task: Judging, Metric: Accuracy (%)
+Ours 0.8289 0.8215 0.7520 0.7362 0.7230 0.6764
+QwenL1 0.8067 0.7928 0.7143 0.7053 0.6795 0.6109
+Table 7: Inference time of our model on a single H20 (96 GB) GPU.
+Second per Sample Books MovieTV Games
+Avg. #Tokens 62,281.48 30,207.68 26,217.33
+Qwen3.5-9B 9.8142 3.9504 3.6327
+ReMem 224.6032 118.5262 98.2545
+TODO List. We plan to conduct additional experiments on </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Memory architecture or policy</li>
+              <li>Tags: memory-policy, agent-memory, memory-systems, llm-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-01</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-30 10:15:40</li><li>Last seen by Paper Scout: 2026-10-01 10:41:56</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2609.37311</li><li>arXiv: 2609.37311</li><li>OpenAlex: W7214992421</li><li>OpenAlex IDs: W7214992421</li><li>arXiv IDs: 2609.37311</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="remem-rethinking-perception-and-memory-in-long-context-recommendation-agents-3ffd54b6.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents. Haohao Qu, Yongcheng Jing, Chun Hin Chan, Shanru Lin, Wenqi Fan, Dacheng Tao. 2026-09-29. https://doi.org/10.48550/arxiv.2609.37311</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

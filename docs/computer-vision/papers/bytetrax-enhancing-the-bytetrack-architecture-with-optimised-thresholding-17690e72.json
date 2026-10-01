@@ -18,13 +18,13 @@
   "first_seen_at": "2026-09-30 10:17:50",
   "first_seen_date": "2026-09-30",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-09-30 10:18:07",
-  "last_seen_date": "2026-09-30",
+  "is_new": false,
+  "last_seen_at": "2026-10-01 10:43:37",
+  "last_seen_date": "2026-10-01",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-29",
   "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-30 10:18:30",
   "notified_date": "2026-09-30",
   "openalex_id": null,
@@ -34,8 +34,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-30 10:17:50",
-    "generated_at": "2026-09-30 10:20:40",
-    "last_seen_at": "2026-09-30 10:18:07",
+    "generated_at": "2026-10-01 10:45:52",
+    "last_seen_at": "2026-10-01 10:43:37",
     "metadata_sources": [
       "arxiv"
     ],
@@ -99,36 +99,1487 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-01T10:44:29.559420+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The manuscript reports no statistical significance testing or uncertainty quantification for the claimed performance gains, and several headline improvements are small (e.g., HOTA +1.550, MOTA +1.368 in open systems), leaving the robustness of the reported advantages unestablished.",
+      "The evaluation independence of the headline outcome is not established: the manuscript does not report whether the threshold values and heuristic parameters were tuned on the same test benchmarks used to report final results, and no held-out validation or independent calibration is described.",
+      "The paper contains a mathematical error in the IoU definition, where the union and intersection terms are reversed in Equation 3, undermining confidence in the methodological rigor of the described architecture."
+    ],
+    "concise_summary": "The paper provides an adequately scoped and well-executed experimental comparison of an architectural refinement to an established tracking baseline. Controlled testing on multiple standard datasets and across multiple thresholds provides solid empirical support for the claimed gains.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 47794,
+      "assessment_input_sha256": "5e9b7bcfce44319f186649309dda7156e358fbf3437147975d9be67e94543eaa",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2609.37801",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 46799,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 46483,
+      "evidence_block_count": 64,
+      "evidence_context_characters": 54108,
+      "evidence_context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+      "evidence_context_sha256": "79c67f4cda79f01e154d8a6ad6f8b10380c69c4c35e95dfafc0c9ee899217d17",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 46821,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "619a97e9760ddb65eece0f62f63c939b63a2a923d77089b81b869854cc28b99f",
+        "source_url": "https://arxiv.org/pdf/2609.37801",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 46799,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Bytetrax: Enhancing The Bytetrack Architecture With Optimised",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "methods",
+          "section_index": 0,
+          "source_characters": 124,
+          "supplied_characters": 124
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1453,
+          "supplied_characters": 1453
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2551,
+          "supplied_characters": 2551
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3110,
+          "supplied_characters": 3110
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 1670,
+          "supplied_characters": 1670
+        },
+        {
+          "heading": "Tracking-By-Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1915,
+          "supplied_characters": 1915
+        },
+        {
+          "heading": "Tracking-By-Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 141,
+          "supplied_characters": 141
+        },
+        {
+          "heading": "Bytetrack",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1965,
+          "supplied_characters": 1965
+        },
+        {
+          "heading": "Bytetrax Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 2435,
+          "supplied_characters": 2435
+        },
+        {
+          "heading": "Bytetrax Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 1460,
+          "supplied_characters": 1460
+        },
+        {
+          "heading": "Track Reconnection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1608,
+          "supplied_characters": 1608
+        },
+        {
+          "heading": "Tracklet Merging",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1793,
+          "supplied_characters": 1793
+        },
+        {
+          "heading": "Tracklet Merging",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 587,
+          "supplied_characters": 587
+        },
+        {
+          "heading": "Mot [ 21]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 613,
+          "supplied_characters": 613
+        },
+        {
+          "heading": "Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 2180,
+          "supplied_characters": 2180
+        },
+        {
+          "heading": "Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 877,
+          "supplied_characters": 877
+        },
+        {
+          "heading": "Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1819,
+          "supplied_characters": 1819
+        },
+        {
+          "heading": "Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 846,
+          "supplied_characters": 846
+        },
+        {
+          "heading": "Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 2014,
+          "supplied_characters": 2014
+        },
+        {
+          "heading": "Comparison With Bytetrack",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2522,
+          "supplied_characters": 2522
+        },
+        {
+          "heading": "Comparison With Bytetrack",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 3492,
+          "supplied_characters": 3492
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 21,
+          "source_characters": 103,
+          "supplied_characters": 103
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 22,
+          "source_characters": 2185,
+          "supplied_characters": 2185
+        },
+        {
+          "heading": "Back matter: Acknowledgements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 310,
+          "supplied_characters": 310
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 99,
+          "supplied_characters": 99
+        },
+        {
+          "heading": "Object Tracking Review: Retrospective And Emerging",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 165,
+          "supplied_characters": 165
+        },
+        {
+          "heading": "Ple Online And Realtime Tracking With A Deep Associa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 386,
+          "supplied_characters": 386
+        },
+        {
+          "heading": "Chronized Set-Of-Sequences Modeling For Multiple Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 558,
+          "supplied_characters": 558
+        },
+        {
+          "heading": "Tracking: A Comprehensive Survey From Foundations To",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 154,
+          "supplied_characters": 154
+        },
+        {
+          "heading": "Tracking: A Comprehensive Survey From Foundations To",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 5269,
+          "supplied_characters": 5269
+        },
+        {
+          "heading": "Tracking: A Comprehensive Survey From Foundations To",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 2079,
+          "supplied_characters": 2079
+        }
+      ],
+      "selected_characters": 46483,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 124,
+          "heading": "Bytetrax: Enhancing The Bytetrack Architecture With Optimised",
+          "page": 1
+        },
+        {
+          "characters": 1453,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2551,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3110,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1670,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1915,
+          "heading": "Tracking-By-Detection",
+          "page": 3
+        },
+        {
+          "characters": 141,
+          "heading": "Tracking-By-Detection",
+          "page": 4
+        },
+        {
+          "characters": 1965,
+          "heading": "Bytetrack",
+          "page": 4
+        },
+        {
+          "characters": 2435,
+          "heading": "Bytetrax Architecture",
+          "page": 4
+        },
+        {
+          "characters": 1460,
+          "heading": "Bytetrax Architecture",
+          "page": 5
+        },
+        {
+          "characters": 1608,
+          "heading": "Track Reconnection",
+          "page": 5
+        },
+        {
+          "characters": 1793,
+          "heading": "Tracklet Merging",
+          "page": 5
+        },
+        {
+          "characters": 587,
+          "heading": "Tracklet Merging",
+          "page": 6
+        },
+        {
+          "characters": 613,
+          "heading": "Mot [ 21]",
+          "page": 6
+        },
+        {
+          "characters": 2180,
+          "heading": "Datasets",
+          "page": 6
+        },
+        {
+          "characters": 877,
+          "heading": "Metrics",
+          "page": 6
+        },
+        {
+          "characters": 1819,
+          "heading": "Metrics",
+          "page": 7
+        },
+        {
+          "characters": 846,
+          "heading": "Implementation",
+          "page": 7
+        },
+        {
+          "characters": 2014,
+          "heading": "Implementation",
+          "page": 8
+        },
+        {
+          "characters": 2522,
+          "heading": "Comparison With Bytetrack",
+          "page": 8
+        },
+        {
+          "characters": 3492,
+          "heading": "Comparison With Bytetrack",
+          "page": 9
+        },
+        {
+          "characters": 103,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 2185,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 310,
+          "heading": "Back matter: Acknowledgements",
+          "page": 10
+        },
+        {
+          "characters": 99,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 165,
+          "heading": "Object Tracking Review: Retrospective And Emerging",
+          "page": 10
+        },
+        {
+          "characters": 386,
+          "heading": "Ple Online And Realtime Tracking With A Deep Associa-",
+          "page": 10
+        },
+        {
+          "characters": 558,
+          "heading": "Chronized Set-Of-Sequences Modeling For Multiple Object",
+          "page": 10
+        },
+        {
+          "characters": 154,
+          "heading": "Tracking: A Comprehensive Survey From Foundations To",
+          "page": 10
+        },
+        {
+          "characters": 5269,
+          "heading": "Tracking: A Comprehensive Survey From Foundations To",
+          "page": 11
+        },
+        {
+          "characters": 2079,
+          "heading": "Tracking: A Comprehensive Survey From Foundations To",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "5e9b7bcfce44319f186649309dda7156e358fbf3437147975d9be67e94543eaa",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "619a97e9760ddb65eece0f62f63c939b63a2a923d77089b81b869854cc28b99f",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0002"
+        ],
+        "excerpt": "The ByteTrack algorithm is a widely used and computa-\ntionally efficient multi-object tracking architecture. Its\ncore innovation lies in the combination of lenient bound-\ning box associations with tracklet similarity matching\nto robustly deal with object occlusions. However, this\nstrategy is nevertheless vulnerable to erroneous track\nreclassification and identity switching, as detection con-\nfidence scores dictate association priority. To address\nthis, I present a simple enhancement of the ByteTrack\narchitecture\u2014named ByteTraX\u2014that optimises track\ncontinuity via a single unified matching threshold, while\npenalising identity switches through stringent track ini-\ntiation criteria. This approach achieves consistently\nimproved performance across a range of diverse bench-\nmarks including GMOT-40, LC-MOT, SportsMOT,\nTeamTrack, DAMUNT, and DeepSea-MOT, while si-\nmultaneously increasing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "89749a84eb7bb9e2ba443547c619273ffade5b01d75bb361d6f654b1cce93fae",
+            "evidence_id": "Ee6822e79e5bc6372-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "The ByteTrack algorithm is a widely used and computa-\ntionally efficient multi-object tracking architecture. Its\ncore innovation lies in the combination of lenient bound-\ning box associations with tracklet similarity matching\nto robustly deal with object occlusions. However, this\nstrategy is nevertheless vulnerable to erroneous track\nreclassification and identity switching, as detection con-\nfidence scores dictate association priority. To address\nthis, I present a simple enhancement of the ByteTrack\narchitecture\u2014named ByteTraX\u2014that optimises track\ncontinuity via a single unified matching threshold, while\npenalising identity switches through stringent track ini-\ntiation criteria. This approach achieves consistently\nimproved performance across a range of diverse bench-\nmarks including GMOT-40, LC-MOT, SportsMOT,\nTeamTrack, DAMUNT, and DeepSea-MOT, while si-\nmultaneously increasing "
+              }
+            ],
+            "text": "The ByteTrack algorithm is a widely used and computa-\ntionally efficient multi-object tracking architecture. Its\ncore innovation lies in the combination of lenient bound-\ning box associations with tracklet similarity matching\nto robustly deal with object occlusions. However, this\nstrategy is nevertheless vulnerable to erroneous track\nreclassification and identity switching, as detection con-\nfidence scores dictate association priority. To address\nthis, I present a simple enhancement of the ByteTrack\narchitecture\u2014named ByteTraX\u2014that optimises track\ncontinuity via a single unified matching threshold, while\npenalising identity switches through stringent track ini-\ntiation criteria. This approach achieves consistently\nimproved performance across a range of diverse bench-\nmarks including GMOT-40, LC-MOT, SportsMOT,\nTeamTrack, DAMUNT, and DeepSea-MOT, while si-\nmultaneously increasing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0003"
+        ],
+        "excerpt": "processing speed by >10%.\nSpecifically, results demonstrate a >40% reduction in\nidentity switches, accompanied by mean increases in\nHOTA of 3.6, IDF1 of 5.6, and FPS of 6.3. As\nsuch, adoption of the ByteTraX algorithm has the po-\ntential to substantially enhance tracking performance\nover the ByteTrack baseline, while retaining the effi-\nciency needed for real-time deployment. To facilitate\nusage, I provide the source code, integration functional-\nity for the YOLO family of object detection models, and\ndeployment instructions via an open source repository.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "16249bd0fa861f68698fe9b5dc746bbb2b8c7b2e025606476d0d01278f309363",
+            "evidence_id": "Ee6822e79e5bc6372-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1453,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 892,
+                "text": "processing speed by >10%.\nSpecifically, results demonstrate a >40% reduction in\nidentity switches, accompanied by mean increases in\nHOTA of 3.6, IDF1 of 5.6, and FPS of 6.3. As\nsuch, adoption of the ByteTraX algorithm has the po-\ntential to substantially enhance tracking performance\nover the ByteTrack baseline, while retaining the effi-\nciency needed for real-time deployment. To facilitate\nusage, I provide the source code, integration functional-\nity for the YOLO family of object detection models, and\ndeployment instructions via an open source repository."
+              }
+            ],
+            "text": "processing speed by >10%.\nSpecifically, results demonstrate a >40% reduction in\nidentity switches, accompanied by mean increases in\nHOTA of 3.6, IDF1 of 5.6, and FPS of 6.3. As\nsuch, adoption of the ByteTraX algorithm has the po-\ntential to substantially enhance tracking performance\nover the ByteTrack baseline, while retaining the effi-\nciency needed for real-time deployment. To facilitate\nusage, I provide the source code, integration functional-\nity for the YOLO family of object detection models, and\ndeployment instructions via an open source repository."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0011"
+        ],
+        "excerpt": "optimised\nthresholding, thus limiting the occurrence of erroneous\nidentity switches. Crucially, ByteTraX considers all de-\ntections equally rather than sorting them by confidence\nscore, predicts trajectories with broad uncertainty\nbounds, and deploys bespoke tracking strategies across\nopen and closed systems. I compare this approach\nto the default ByteTrack algorithm across six stan-\ndardised benchmarks\u2014GMOT-40 [ 16], LC-MOT [ 17],\nSportsMOT [ 18], TeamTrack [19], DAMUNT [ 20], and\nDeepSea-MOT [ 21]\u2014representing a combination of\nopen and closed systems from diverse usage scenar-\nios (Fig. 2). To ensure consistency, both algorithms\nemploy the same YOLO26 front-end detection mod-\nels, and are assessed with standard HOTA, CLEAR,\nand ID metrics. Trackers are further evaluated via\na simple line crossing accuracy approach, selected to\nreflect an explainable and ubiquitous real-world use\ncase. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "bbb63d6d92b7951c6bccf38a74e8176d9c8e6d0a6c5ab27c343b06ff6bb81e06",
+            "evidence_id": "Ee6822e79e5bc6372-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1492,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 592,
+                "text": "optimised\nthresholding, thus limiting the occurrence of erroneous\nidentity switches. Crucially, ByteTraX considers all de-\ntections equally rather than sorting them by confidence\nscore, predicts trajectories with broad uncertainty\nbounds, and deploys bespoke tracking strategies across\nopen and closed systems. I compare this approach\nto the default ByteTrack algorithm across six stan-\ndardised benchmarks\u2014GMOT-40 [ 16], LC-MOT [ 17],\nSportsMOT [ 18], TeamTrack [19], DAMUNT [ 20], and\nDeepSea-MOT [ 21]\u2014representing a combination of\nopen and closed systems from diverse usage scenar-\nios (Fig. 2). To ensure consistency, both algorithms\nemploy the same YOLO26 front-end detection mod-\nels, and are assessed with standard HOTA, CLEAR,\nand ID metrics. Trackers are further evaluated via\na simple line crossing accuracy approach, selected to\nreflect an explainable and ubiquitous real-world use\ncase. "
+              }
+            ],
+            "text": "optimised\nthresholding, thus limiting the occurrence of erroneous\nidentity switches. Crucially, ByteTraX considers all de-\ntections equally rather than sorting them by confidence\nscore, predicts trajectories with broad uncertainty\nbounds, and deploys bespoke tracking strategies across\nopen and closed systems. I compare this approach\nto the default ByteTrack algorithm across six stan-\ndardised benchmarks\u2014GMOT-40 [ 16], LC-MOT [ 17],\nSportsMOT [ 18], TeamTrack [19], DAMUNT [ 20], and\nDeepSea-MOT [ 21]\u2014representing a combination of\nopen and closed systems from diverse usage scenar-\nios (Fig. 2). To ensure consistency, both algorithms\nemploy the same YOLO26 front-end detection mod-\nels, and are assessed with standard HOTA, CLEAR,\nand ID metrics. Trackers are further evaluated via\na simple line crossing accuracy approach, selected to\nreflect an explainable and ubiquitous real-world use\ncase. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0019"
+        ],
+        "excerpt": "The ByteTraX architecture incorporates two specific\nenhancements to improve tracking fidelity and identity\npersistence. First, it treats all detections as equally\nviable by removing the first and second stage match-\ning thresholds utilised in ByteTrack [ 9], meaning that\npredictions are not segregated into high and low score\ngroupings. This ensures that detections with higher\nconfidence scores do not supersede those of lower con-\nfidence unless supported by the motion model, thus\nreducing erroneous ID switches when the two sources\nof information conflict. This can be calculated as:\n\ud835\udc37\ud835\udc63 = \ud835\udc37 > \ud835\udf0f (1)\nWith \ud835\udc37\ud835\udc63 denoting valid detections used in track match-\ning, specified as bounding boxes with a confidence score\nexceeding the threshold \ud835\udf0f .\nTracked detections are then passed to a central motion\nmodel that predicts their likely coordinates in the next\nframe, allowing for propagation of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bytetrax Architecture",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "985d755424bd44fd123904f5c89984cf9c0dc0952941c6594b726982114d1594",
+            "evidence_id": "Ee6822e79e5bc6372-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Bytetrax Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 4,
+                "section": "Bytetrax Architecture",
+                "section_index": 8,
+                "start": 0,
+                "text": "The ByteTraX architecture incorporates two specific\nenhancements to improve tracking fidelity and identity\npersistence. First, it treats all detections as equally\nviable by removing the first and second stage match-\ning thresholds utilised in ByteTrack [ 9], meaning that\npredictions are not segregated into high and low score\ngroupings. This ensures that detections with higher\nconfidence scores do not supersede those of lower con-\nfidence unless supported by the motion model, thus\nreducing erroneous ID switches when the two sources\nof information conflict. This can be calculated as:\n\ud835\udc37\ud835\udc63 = \ud835\udc37 > \ud835\udf0f (1)\nWith \ud835\udc37\ud835\udc63 denoting valid detections used in track match-\ning, specified as bounding boxes with a confidence score\nexceeding the threshold \ud835\udf0f .\nTracked detections are then passed to a central motion\nmodel that predicts their likely coordinates in the next\nframe, allowing for propagation of "
+              }
+            ],
+            "text": "The ByteTraX architecture incorporates two specific\nenhancements to improve tracking fidelity and identity\npersistence. First, it treats all detections as equally\nviable by removing the first and second stage match-\ning thresholds utilised in ByteTrack [ 9], meaning that\npredictions are not segregated into high and low score\ngroupings. This ensures that detections with higher\nconfidence scores do not supersede those of lower con-\nfidence unless supported by the motion model, thus\nreducing erroneous ID switches when the two sources\nof information conflict. This can be calculated as:\n\ud835\udc37\ud835\udc63 = \ud835\udc37 > \ud835\udf0f (1)\nWith \ud835\udc37\ud835\udc63 denoting valid detections used in track match-\ning, specified as bounding boxes with a confidence score\nexceeding the threshold \ud835\udf0f .\nTracked detections are then passed to a central motion\nmodel that predicts their likely coordinates in the next\nframe, allowing for propagation of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0021"
+        ],
+        "excerpt": "reflects the reality that motion model\npredictions are frequently limited in accuracy, and thus\nmatching should aim to approximate the general area\ndistribution of a predicated track, rather than requir-\ning precise overlap. Specifically, the IoU between mo-\ntion model predictions and candidate detections is cal-\nculated as:\n\ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc37\ud835\udc63, \ud835\udc47 ) = \u2223 \ud835\udc37 \ud835\udc63 \u222a \ud835\udc47 \u2223\n\u2223 \ud835\udc37 \ud835\udc63 \u2229 \ud835\udc47 \u2223 (3)\nIn which \ud835\udc37\ud835\udc63 \u222a \ud835\udc47 is the area of overlap between the\npredicted track location and detection, and \ud835\udc37\ud835\udc63 \u2229 \ud835\udc47 is\ntheir combined area when considered as a single shape.\nThe quantification of IoU-based similarity is then de-\ntermined via the following equation:\n\ud835\udc36 = 1 \u2212 \ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc47 , \ud835\udc37 \ud835\udc63) (4)\n4\nWhere \ud835\udc36 is a cost function, calculated as the IoU of\npredicted track location \ud835\udc47 and valid detection \ud835\udc37\ud835\udc63 sub-\ntracted from 1. Consequently, by minimising the devi-\nation from 1 required to satisfy the track association\nsimilarity threshold, the more ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bytetrax Architecture",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fa400a7ce91755347098ca21f40f07709c90f2e38af7ee71363c6b3203f2a7ed",
+            "evidence_id": "Ee6822e79e5bc6372-B0021",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Bytetrax Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2435,
+                "page": 4,
+                "section": "Bytetrax Architecture",
+                "section_index": 8,
+                "start": 1786,
+                "text": "reflects the reality that motion model\npredictions are frequently limited in accuracy, and thus\nmatching should aim to approximate the general area\ndistribution of a predicated track, rather than requir-\ning precise overlap. Specifically, the IoU between mo-\ntion model predictions and candidate detections is cal-\nculated as:\n\ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc37\ud835\udc63, \ud835\udc47 ) = \u2223 \ud835\udc37 \ud835\udc63 \u222a \ud835\udc47 \u2223\n\u2223 \ud835\udc37 \ud835\udc63 \u2229 \ud835\udc47 \u2223 (3)\nIn which \ud835\udc37\ud835\udc63 \u222a \ud835\udc47 is the area of overlap between the\npredicted track location and detection, and \ud835\udc37\ud835\udc63 \u2229 \ud835\udc47 is\ntheir combined area when considered as a single shape.\nThe quantification of IoU-based similarity is then de-\ntermined via the following equation:\n\ud835\udc36 = 1 \u2212 \ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc47 , \ud835\udc37 \ud835\udc63) (4)\n4"
+              },
+              {
+                "end": 248,
+                "page": 5,
+                "section": "Bytetrax Architecture",
+                "section_index": 9,
+                "start": 0,
+                "text": "Where \ud835\udc36 is a cost function, calculated as the IoU of\npredicted track location \ud835\udc47 and valid detection \ud835\udc37\ud835\udc63 sub-\ntracted from 1. Consequently, by minimising the devi-\nation from 1 required to satisfy the track association\nsimilarity threshold, the more "
+              }
+            ],
+            "text": "reflects the reality that motion model\npredictions are frequently limited in accuracy, and thus\nmatching should aim to approximate the general area\ndistribution of a predicated track, rather than requir-\ning precise overlap. Specifically, the IoU between mo-\ntion model predictions and candidate detections is cal-\nculated as:\n\ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc37\ud835\udc63, \ud835\udc47 ) = \u2223 \ud835\udc37 \ud835\udc63 \u222a \ud835\udc47 \u2223\n\u2223 \ud835\udc37 \ud835\udc63 \u2229 \ud835\udc47 \u2223 (3)\nIn which \ud835\udc37\ud835\udc63 \u222a \ud835\udc47 is the area of overlap between the\npredicted track location and detection, and \ud835\udc37\ud835\udc63 \u2229 \ud835\udc47 is\ntheir combined area when considered as a single shape.\nThe quantification of IoU-based similarity is then de-\ntermined via the following equation:\n\ud835\udc36 = 1 \u2212 \ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc47 , \ud835\udc37 \ud835\udc63) (4)\n4\nWhere \ud835\udc36 is a cost function, calculated as the IoU of\npredicted track location \ud835\udc47 and valid detection \ud835\udc37\ud835\udc63 sub-\ntracted from 1. Consequently, by minimising the devi-\nation from 1 required to satisfy the track association\nsimilarity threshold, the more "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0024"
+        ],
+        "excerpt": "To enable extended track reconnection, a simple search\nheuristic is employed when a single track ID is lost and\ncannot be recovered by the motion model. This is pos-\nsible in closed systems, as the fixed maximum track\ncount ensures that when only a single ID is lost, any\nnew trajectory must be associated with the same ID.\nSpecifically, this heuristic associates any same-class de-\ntection within a fixed relative distance and time thresh-\nold with the lost tracklet, regardless of motion projec-\ntions. This process is described by the following for-\nmula:\n\ud835\udc45 = [\u0394\ud835\udc61 \u2264 \ud835\udf0f \u2227 \u0394\ud835\udc43 \u2264 \ud835\udefc] (5)\nWhere \ud835\udc45 denotes the decision to reconnect a lost track\nwith a new trajectory, dependent upon their relative\npairwise difference \u0394 in occurrence time \ud835\udc61, and proxim-\nity \ud835\udc43 . To satisfy the reconnection criteria, both values\nmust fall within their respective thresholds \ud835\udf0f and \ud835\udefc.\nIn the case of multiple candidate ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Track Reconnection",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8199c9d2d452ae93200bfa5014d651670804e80018c39c90119cc84be914dd49",
+            "evidence_id": "Ee6822e79e5bc6372-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Track Reconnection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 5,
+                "section": "Track Reconnection",
+                "section_index": 10,
+                "start": 0,
+                "text": "To enable extended track reconnection, a simple search\nheuristic is employed when a single track ID is lost and\ncannot be recovered by the motion model. This is pos-\nsible in closed systems, as the fixed maximum track\ncount ensures that when only a single ID is lost, any\nnew trajectory must be associated with the same ID.\nSpecifically, this heuristic associates any same-class de-\ntection within a fixed relative distance and time thresh-\nold with the lost tracklet, regardless of motion projec-\ntions. This process is described by the following for-\nmula:\n\ud835\udc45 = [\u0394\ud835\udc61 \u2264 \ud835\udf0f \u2227 \u0394\ud835\udc43 \u2264 \ud835\udefc] (5)\nWhere \ud835\udc45 denotes the decision to reconnect a lost track\nwith a new trajectory, dependent upon their relative\npairwise difference \u0394 in occurrence time \ud835\udc61, and proxim-\nity \ud835\udc43 . To satisfy the reconnection criteria, both values\nmust fall within their respective thresholds \ud835\udf0f and \ud835\udefc.\nIn the case of multiple candidate "
+              }
+            ],
+            "text": "To enable extended track reconnection, a simple search\nheuristic is employed when a single track ID is lost and\ncannot be recovered by the motion model. This is pos-\nsible in closed systems, as the fixed maximum track\ncount ensures that when only a single ID is lost, any\nnew trajectory must be associated with the same ID.\nSpecifically, this heuristic associates any same-class de-\ntection within a fixed relative distance and time thresh-\nold with the lost tracklet, regardless of motion projec-\ntions. This process is described by the following for-\nmula:\n\ud835\udc45 = [\u0394\ud835\udc61 \u2264 \ud835\udf0f \u2227 \u0394\ud835\udc43 \u2264 \ud835\udefc] (5)\nWhere \ud835\udc45 denotes the decision to reconnect a lost track\nwith a new trajectory, dependent upon their relative\npairwise difference \u0394 in occurrence time \ud835\udc61, and proxim-\nity \ud835\udc43 . To satisfy the reconnection criteria, both values\nmust fall within their respective thresholds \ud835\udf0f and \ud835\udefc.\nIn the case of multiple candidate "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0026"
+        ],
+        "excerpt": "To effectively resolve the issue of erroneous ID reassig-\nnation, a merging step is implemented for screening\nall new tracklets. This relies upon the logic that for\na system with a fixed track count for which all tracks\nare currently present, additional tracklets that overlap\nwith existing trajectories likely represents repeat detec-\ntions of the same objects. Consequently, new tracks\nthat meet these criteria are immediately merged into\nthe existing same-class tracks with which they over-\nlap, thus preventing the assignation of a new ID to\nan established track, even if the former exhibits higher\ndetection confidence. This process is governed by the\nfollowing equation:\nM = \ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc47existing, \ud835\udc37new) \u2265 \ud835\udf0f merge (6)\nIn which M represents the decision to merge a new\ndetection \ud835\udc37new into an existing track \ud835\udc47existing, depen-\ndent upon their combined IoU meeting or exceeding\nthe threshold \ud835\udf0fmerge.\nAs ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Tracklet Merging",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e1e0874a6ffa272a99650dad01b257f3096fb76ed0e869c0b47e834e687fe351",
+            "evidence_id": "Ee6822e79e5bc6372-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Tracklet Merging",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 5,
+                "section": "Tracklet Merging",
+                "section_index": 11,
+                "start": 0,
+                "text": "To effectively resolve the issue of erroneous ID reassig-\nnation, a merging step is implemented for screening\nall new tracklets. This relies upon the logic that for\na system with a fixed track count for which all tracks\nare currently present, additional tracklets that overlap\nwith existing trajectories likely represents repeat detec-\ntions of the same objects. Consequently, new tracks\nthat meet these criteria are immediately merged into\nthe existing same-class tracks with which they over-\nlap, thus preventing the assignation of a new ID to\nan established track, even if the former exhibits higher\ndetection confidence. This process is governed by the\nfollowing equation:\nM = \ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc47existing, \ud835\udc37new) \u2265 \ud835\udf0f merge (6)\nIn which M represents the decision to merge a new\ndetection \ud835\udc37new into an existing track \ud835\udc47existing, depen-\ndent upon their combined IoU meeting or exceeding\nthe threshold \ud835\udf0fmerge.\nAs "
+              }
+            ],
+            "text": "To effectively resolve the issue of erroneous ID reassig-\nnation, a merging step is implemented for screening\nall new tracklets. This relies upon the logic that for\na system with a fixed track count for which all tracks\nare currently present, additional tracklets that overlap\nwith existing trajectories likely represents repeat detec-\ntions of the same objects. Consequently, new tracks\nthat meet these criteria are immediately merged into\nthe existing same-class tracks with which they over-\nlap, thus preventing the assignation of a new ID to\nan established track, even if the former exhibits higher\ndetection confidence. This process is governed by the\nfollowing equation:\nM = \ud835\udc3c\ud835\udc5c\ud835\udc48 (\ud835\udc47existing, \ud835\udc37new) \u2265 \ud835\udf0f merge (6)\nIn which M represents the decision to merge a new\ndetection \ud835\udc37new into an existing track \ud835\udc47existing, depen-\ndent upon their combined IoU meeting or exceeding\nthe threshold \ud835\udf0fmerge.\nAs "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0030"
+        ],
+        "excerpt": "I utilise six standardised benchmarks to evaluate the\nperformance of ByteTraX in comparison to that of the\nByteTrack baseline. These encompass a diversity of\ntracking scenarios, target types, and motion patterns,\nwhile providing detailed ground truth annotations for\nboth bounding boxes and track identities. The first\nthree of these\u2014GMOT-40 [ 16], SportsMOT [ 18], and\nDeepSea-MOT [ 21]\u2014represent open systems in which\ntracks can enter and leave the frame (Fig. 2a); while\nthe latter three\u2014LC-MOT [ 17], TeamTrack [ 19], and\nDAMUNT [20]\u2014are closed systems in which all tracks\nremain in view across videos (Fig. 2b). While the vast\nscope of potential real-world deployments cannot fea-\nsibly be encompassed by benchmarking alone [ 30], the\naforementioned datasets allow for relative performance\ncomparisons across widely divergent tracking scenarios.\nIllustrative of this, sequences contain from 4 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Datasets",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e2b941a6ec00e072722bb3a3863bc402ca160621cd7534c2748390c47af0ca74",
+            "evidence_id": "Ee6822e79e5bc6372-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Datasets",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "Datasets",
+                "section_index": 14,
+                "start": 0,
+                "text": "I utilise six standardised benchmarks to evaluate the\nperformance of ByteTraX in comparison to that of the\nByteTrack baseline. These encompass a diversity of\ntracking scenarios, target types, and motion patterns,\nwhile providing detailed ground truth annotations for\nboth bounding boxes and track identities. The first\nthree of these\u2014GMOT-40 [ 16], SportsMOT [ 18], and\nDeepSea-MOT [ 21]\u2014represent open systems in which\ntracks can enter and leave the frame (Fig. 2a); while\nthe latter three\u2014LC-MOT [ 17], TeamTrack [ 19], and\nDAMUNT [20]\u2014are closed systems in which all tracks\nremain in view across videos (Fig. 2b). While the vast\nscope of potential real-world deployments cannot fea-\nsibly be encompassed by benchmarking alone [ 30], the\naforementioned datasets allow for relative performance\ncomparisons across widely divergent tracking scenarios.\nIllustrative of this, sequences contain from 4 "
+              }
+            ],
+            "text": "I utilise six standardised benchmarks to evaluate the\nperformance of ByteTraX in comparison to that of the\nByteTrack baseline. These encompass a diversity of\ntracking scenarios, target types, and motion patterns,\nwhile providing detailed ground truth annotations for\nboth bounding boxes and track identities. The first\nthree of these\u2014GMOT-40 [ 16], SportsMOT [ 18], and\nDeepSea-MOT [ 21]\u2014represent open systems in which\ntracks can enter and leave the frame (Fig. 2a); while\nthe latter three\u2014LC-MOT [ 17], TeamTrack [ 19], and\nDAMUNT [20]\u2014are closed systems in which all tracks\nremain in view across videos (Fig. 2b). While the vast\nscope of potential real-world deployments cannot fea-\nsibly be encompassed by benchmarking alone [ 30], the\naforementioned datasets allow for relative performance\ncomparisons across widely divergent tracking scenarios.\nIllustrative of this, sequences contain from 4 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0033"
+        ],
+        "excerpt": "To comprehensively evaluate tracking performance, I\nemploy HOTA [31], MOTA [ 32], IDF1 [ 33], IDSW [ 34],\nexcess ID count [ 35], and FPS [ 34]. These metrics en-\ncompass tracking accuracy, identity preservation, and\ncomputational efficiency, enabling assessment of Byte-\nTraX's potential to reduce erroneous ID reassignation,\nalong with any resultant impacts on overall perfor-\nmance. Specifically, HOTA is selected to quantify com-\nbined tracking accuracy as it balances detection, associ-\nation, and localisation performance [ 31], while MOTA\nprovides a more detection-centric measure, and is in-\ncluded due to its extensive usage in earlier work [ 32].\nIdentity preservation and track switching are assessed\nvia IDF1, IDSW, and excess ID count, as these allow\nfor evaluation of the proportion of detections correctly\nassigned to their corresponding ground truth IDs [ 33],\n6",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Metrics",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d0d3da484c2f103c3566e9dc02ae02115c6f989131effa66c807763a5b31409f",
+            "evidence_id": "Ee6822e79e5bc6372-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Metrics",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 877,
+                "page": 6,
+                "section": "Metrics",
+                "section_index": 15,
+                "start": 0,
+                "text": "To comprehensively evaluate tracking performance, I\nemploy HOTA [31], MOTA [ 32], IDF1 [ 33], IDSW [ 34],\nexcess ID count [ 35], and FPS [ 34]. These metrics en-\ncompass tracking accuracy, identity preservation, and\ncomputational efficiency, enabling assessment of Byte-\nTraX's potential to reduce erroneous ID reassignation,\nalong with any resultant impacts on overall perfor-\nmance. Specifically, HOTA is selected to quantify com-\nbined tracking accuracy as it balances detection, associ-\nation, and localisation performance [ 31], while MOTA\nprovides a more detection-centric measure, and is in-\ncluded due to its extensive usage in earlier work [ 32].\nIdentity preservation and track switching are assessed\nvia IDF1, IDSW, and excess ID count, as these allow\nfor evaluation of the proportion of detections correctly\nassigned to their corresponding ground truth IDs [ 33],\n6"
+              }
+            ],
+            "text": "To comprehensively evaluate tracking performance, I\nemploy HOTA [31], MOTA [ 32], IDF1 [ 33], IDSW [ 34],\nexcess ID count [ 35], and FPS [ 34]. These metrics en-\ncompass tracking accuracy, identity preservation, and\ncomputational efficiency, enabling assessment of Byte-\nTraX's potential to reduce erroneous ID reassignation,\nalong with any resultant impacts on overall perfor-\nmance. Specifically, HOTA is selected to quantify com-\nbined tracking accuracy as it balances detection, associ-\nation, and localisation performance [ 31], while MOTA\nprovides a more detection-centric measure, and is in-\ncluded due to its extensive usage in earlier work [ 32].\nIdentity preservation and track switching are assessed\nvia IDF1, IDSW, and excess ID count, as these allow\nfor evaluation of the proportion of detections correctly\nassigned to their corresponding ground truth IDs [ 33],\n6"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0037"
+        ],
+        "excerpt": "Trials employed YOLO26n [ 42] as the common detec-\ntion architecture, with a separate model trained on\neach benchmark for 100 epochs, thus serving as a con-\nsistent detection front-end for use across both tracking\nalgorithms. As training and testing portions differed\nbetween datasets, a standard 40:10:50 training, valida-\ntion, and testing split was adopted in all cases. This en-\nsured that models were well-optimised to their respec-\ntive testing benchmarks, allowing assessments to focus\non identity association and tracking performance in-\ndependently of detector-based limitations. While this\nnecessarily limits comparisons to the two tracking al-\ngorithms described here, it ensures reliable and robust\nperformance evaluations that are broadly generalisable\nacross a range of use cases.\nFor the open system datasets, ByteTraX was evalu-\n7",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3668a869001e6ae89433b0a0e424288f7733b3528419b79b72d2c30c437c090f",
+            "evidence_id": "Ee6822e79e5bc6372-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Implementation",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 846,
+                "page": 7,
+                "section": "Implementation",
+                "section_index": 17,
+                "start": 0,
+                "text": "Trials employed YOLO26n [ 42] as the common detec-\ntion architecture, with a separate model trained on\neach benchmark for 100 epochs, thus serving as a con-\nsistent detection front-end for use across both tracking\nalgorithms. As training and testing portions differed\nbetween datasets, a standard 40:10:50 training, valida-\ntion, and testing split was adopted in all cases. This en-\nsured that models were well-optimised to their respec-\ntive testing benchmarks, allowing assessments to focus\non identity association and tracking performance in-\ndependently of detector-based limitations. While this\nnecessarily limits comparisons to the two tracking al-\ngorithms described here, it ensures reliable and robust\nperformance evaluations that are broadly generalisable\nacross a range of use cases.\nFor the open system datasets, ByteTraX was evalu-\n7"
+              }
+            ],
+            "text": "Trials employed YOLO26n [ 42] as the common detec-\ntion architecture, with a separate model trained on\neach benchmark for 100 epochs, thus serving as a con-\nsistent detection front-end for use across both tracking\nalgorithms. As training and testing portions differed\nbetween datasets, a standard 40:10:50 training, valida-\ntion, and testing split was adopted in all cases. This en-\nsured that models were well-optimised to their respec-\ntive testing benchmarks, allowing assessments to focus\non identity association and tracking performance in-\ndependently of detector-based limitations. While this\nnecessarily limits comparisons to the two tracking al-\ngorithms described here, it ensures reliable and robust\nperformance evaluations that are broadly generalisable\nacross a range of use cases.\nFor the open system datasets, ByteTraX was evalu-\n7"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0038"
+        ],
+        "excerpt": "T able 2. Comparison of tracking performance across open and closed systems. Values represent combined means\naveraged over all benchmark datasets and detection confidence thresholds belonging to each system type, with the\nhighest scoring results shown in bold. The overall tracking algorithm rankings are determined based upon the\nproportion of top scoring metrics achieved by each.\nSystem Type Tracker HOTA MOTA IDF1\nCrossing\nAccuracy IDSW FPS\nOpen ByteTrack 62.593 73.634 72.294 80.899 91 44.328\nByteT raX 64.143 75.002 74.869 82.667 58 49.498\nClosed ByteTrack 68.356 83.629 69.832 76.379 103 51.601\nByteTraX 74.009 84.597 77.819 83.909 53 58.645\nByteT raX-R T 77.111 86.185 82.043 87.098 30 59.265\nated only in its standard configuration, while in the\nclosed system datasets, it was additionally tested with\nthe track reconnection and merging features enabled\u2014\nthe latter henceforth being ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "01e8400386cdcd7f160bc0453d22978985532239403f499498302dc154455ec4",
+            "evidence_id": "Ee6822e79e5bc6372-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Implementation",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 8,
+                "section": "Implementation",
+                "section_index": 18,
+                "start": 0,
+                "text": "T able 2. Comparison of tracking performance across open and closed systems. Values represent combined means\naveraged over all benchmark datasets and detection confidence thresholds belonging to each system type, with the\nhighest scoring results shown in bold. The overall tracking algorithm rankings are determined based upon the\nproportion of top scoring metrics achieved by each.\nSystem Type Tracker HOTA MOTA IDF1\nCrossing\nAccuracy IDSW FPS\nOpen ByteTrack 62.593 73.634 72.294 80.899 91 44.328\nByteT raX 64.143 75.002 74.869 82.667 58 49.498\nClosed ByteTrack 68.356 83.629 69.832 76.379 103 51.601\nByteTraX 74.009 84.597 77.819 83.909 53 58.645\nByteT raX-R T 77.111 86.185 82.043 87.098 30 59.265\nated only in its standard configuration, while in the\nclosed system datasets, it was additionally tested with\nthe track reconnection and merging features enabled\u2014\nthe latter henceforth being "
+              }
+            ],
+            "text": "T able 2. Comparison of tracking performance across open and closed systems. Values represent combined means\naveraged over all benchmark datasets and detection confidence thresholds belonging to each system type, with the\nhighest scoring results shown in bold. The overall tracking algorithm rankings are determined based upon the\nproportion of top scoring metrics achieved by each.\nSystem Type Tracker HOTA MOTA IDF1\nCrossing\nAccuracy IDSW FPS\nOpen ByteTrack 62.593 73.634 72.294 80.899 91 44.328\nByteT raX 64.143 75.002 74.869 82.667 58 49.498\nClosed ByteTrack 68.356 83.629 69.832 76.379 103 51.601\nByteTraX 74.009 84.597 77.819 83.909 53 58.645\nByteT raX-R T 77.111 86.185 82.043 87.098 30 59.265\nated only in its standard configuration, while in the\nclosed system datasets, it was additionally tested with\nthe track reconnection and merging features enabled\u2014\nthe latter henceforth being "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0039"
+        ],
+        "excerpt": "referred to as 'ByteTraX-\nRT' . This allowed for additive evaluation of both the\ncore ByteTraX architecture and specific closed sys-\ntem enhancements in comparison to the ByteTrack\nbaseline. Metric extraction utilised the established\n'TrackEval' framework [34, 43, 44], yielding HOTA [ 31],\nCLEAR [ 32], Identity [ 33], and V ACE [ 45] metrics,\nalong with a bespoke analysis pipeline for recording line\ncrossing accuracy measures. To explore performance\nstability across input values, separate runs were under-\ntaken at detection confidence thresholds of 0.25, 0.50,\nand 0.75 for each permutation of tracker and video se-\nquence. All other model parameters remained identical\nacross testing regimes to ensure comparability, with an\nIoU threshold of 0.70, image downsampling resolution\nof 640x640, and inference arguments set to the defaults\npresent in YOLO26 [ 42]. Training and testing was ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a23e6e25156fda6784f2a4206c5f5423b70d16c3db6d072275b6d15a68177a36",
+            "evidence_id": "Ee6822e79e5bc6372-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Implementation",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1783,
+                "page": 8,
+                "section": "Implementation",
+                "section_index": 18,
+                "start": 892,
+                "text": "referred to as 'ByteTraX-\nRT' . This allowed for additive evaluation of both the\ncore ByteTraX architecture and specific closed sys-\ntem enhancements in comparison to the ByteTrack\nbaseline. Metric extraction utilised the established\n'TrackEval' framework [34, 43, 44], yielding HOTA [ 31],\nCLEAR [ 32], Identity [ 33], and V ACE [ 45] metrics,\nalong with a bespoke analysis pipeline for recording line\ncrossing accuracy measures. To explore performance\nstability across input values, separate runs were under-\ntaken at detection confidence thresholds of 0.25, 0.50,\nand 0.75 for each permutation of tracker and video se-\nquence. All other model parameters remained identical\nacross testing regimes to ensure comparability, with an\nIoU threshold of 0.70, image downsampling resolution\nof 640x640, and inference arguments set to the defaults\npresent in YOLO26 [ 42]. Training and testing was "
+              }
+            ],
+            "text": "referred to as 'ByteTraX-\nRT' . This allowed for additive evaluation of both the\ncore ByteTraX architecture and specific closed sys-\ntem enhancements in comparison to the ByteTrack\nbaseline. Metric extraction utilised the established\n'TrackEval' framework [34, 43, 44], yielding HOTA [ 31],\nCLEAR [ 32], Identity [ 33], and V ACE [ 45] metrics,\nalong with a bespoke analysis pipeline for recording line\ncrossing accuracy measures. To explore performance\nstability across input values, separate runs were under-\ntaken at detection confidence thresholds of 0.25, 0.50,\nand 0.75 for each permutation of tracker and video se-\nquence. All other model parameters remained identical\nacross testing regimes to ensure comparability, with an\nIoU threshold of 0.70, image downsampling resolution\nof 640x640, and inference arguments set to the defaults\npresent in YOLO26 [ 42]. Training and testing was "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0041"
+        ],
+        "excerpt": "As the principle aim of ByteTraX is not to challenge\nthe state-of-the-art, but to improve upon the widely-\nestablished ByteTrack baseline, I focus my comparisons\non these two architectures exclusively. Results are\nbroadly divided into those from open and closed sys-\ntem benchmarks, and all assessments utilise the same\nupstream YOLO26 models across tracking algorithms\nto ensure parity.\nOpen System Benchmarks. When considering open sys-\ntem benchmarks, ByteTraX substantially outperforms\nByteTrack in overall tracking accuracy and speed,\nachieving a mean increase in HOTA of 1.550, MOTA\nof 1.368, and FPS of 5.170 (Fig. 3a, Table 2). This is\ndriven by markedly enhanced identity preservation, re-\nflected in an IDF1 score increase of 2.575, and crucially,\na >36% reduction in identity switches, with mean\nIDSW dropping from 91 to 58, and excess IDs from\n1013 to 447 (Fig. 3a, Fig. 4, Table 2). ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Bytetrack",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "ec1c2f3d2f05d7b161c004931f563cd1db45bb6634eb0bc46c49c68492138e3b",
+            "evidence_id": "Ee6822e79e5bc6372-B0041",
+            "pages": [
+              8
+            ],
+            "section": "Comparison With Bytetrack",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 8,
+                "section": "Comparison With Bytetrack",
+                "section_index": 19,
+                "start": 0,
+                "text": "As the principle aim of ByteTraX is not to challenge\nthe state-of-the-art, but to improve upon the widely-\nestablished ByteTrack baseline, I focus my comparisons\non these two architectures exclusively. Results are\nbroadly divided into those from open and closed sys-\ntem benchmarks, and all assessments utilise the same\nupstream YOLO26 models across tracking algorithms\nto ensure parity.\nOpen System Benchmarks. When considering open sys-\ntem benchmarks, ByteTraX substantially outperforms\nByteTrack in overall tracking accuracy and speed,\nachieving a mean increase in HOTA of 1.550, MOTA\nof 1.368, and FPS of 5.170 (Fig. 3a, Table 2). This is\ndriven by markedly enhanced identity preservation, re-\nflected in an IDF1 score increase of 2.575, and crucially,\na >36% reduction in identity switches, with mean\nIDSW dropping from 91 to 58, and excess IDs from\n1013 to 447 (Fig. 3a, Fig. 4, Table 2). "
+              }
+            ],
+            "text": "As the principle aim of ByteTraX is not to challenge\nthe state-of-the-art, but to improve upon the widely-\nestablished ByteTrack baseline, I focus my comparisons\non these two architectures exclusively. Results are\nbroadly divided into those from open and closed sys-\ntem benchmarks, and all assessments utilise the same\nupstream YOLO26 models across tracking algorithms\nto ensure parity.\nOpen System Benchmarks. When considering open sys-\ntem benchmarks, ByteTraX substantially outperforms\nByteTrack in overall tracking accuracy and speed,\nachieving a mean increase in HOTA of 1.550, MOTA\nof 1.368, and FPS of 5.170 (Fig. 3a, Table 2). This is\ndriven by markedly enhanced identity preservation, re-\nflected in an IDF1 score increase of 2.575, and crucially,\na >36% reduction in identity switches, with mean\nIDSW dropping from 91 to 58, and excess IDs from\n1013 to 447 (Fig. 3a, Fig. 4, Table 2). "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0042"
+        ],
+        "excerpt": "Performance im-\nprovements are further reflected in elevated line cross-\ning accuracy, with an aggregate increase in this metric\nof 1.768% over the ByteTrack baseline (Fig. 3a, Ta-\nble 2).\nThese trends are generally consistent across confidence\nthresholds, although with a slight increase in relative\nperformance gains at a threshold of 0.25, potentially in-\ndicating the increased cost of uncertainty for ByteTrack\nwhen presented with additional low confidence detec-\ntions (Fig. 3a). At the dataset level, results for both\nGMOT-40 and SportsMOT are broadly comparable,\nwith ByteTraX's ability to reduce erroneous identity re-\nassignments and switches driving similar performance\nimprovements in HOTA, MOTA, IDF1, IDSW, and ex-\ncess ID counts (Table 2, Fig. 4a). Notably however, de-\nspite the same being true for DeepSea-MOT in terms\nof HOTA, IDF1, and crossing accuracy scores, Byte-\nTraX did not ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Bytetrack",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e32b4f987cca62ba9dc65ba014c08d5dc31c11aebd7494dfe4fe341094962ea8",
+            "evidence_id": "Ee6822e79e5bc6372-B0042",
+            "pages": [
+              8
+            ],
+            "section": "Comparison With Bytetrack",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 8,
+                "section": "Comparison With Bytetrack",
+                "section_index": 19,
+                "start": 896,
+                "text": "Performance im-\nprovements are further reflected in elevated line cross-\ning accuracy, with an aggregate increase in this metric\nof 1.768% over the ByteTrack baseline (Fig. 3a, Ta-\nble 2).\nThese trends are generally consistent across confidence\nthresholds, although with a slight increase in relative\nperformance gains at a threshold of 0.25, potentially in-\ndicating the increased cost of uncertainty for ByteTrack\nwhen presented with additional low confidence detec-\ntions (Fig. 3a). At the dataset level, results for both\nGMOT-40 and SportsMOT are broadly comparable,\nwith ByteTraX's ability to reduce erroneous identity re-\nassignments and switches driving similar performance\nimprovements in HOTA, MOTA, IDF1, IDSW, and ex-\ncess ID counts (Table 2, Fig. 4a). Notably however, de-\nspite the same being true for DeepSea-MOT in terms\nof HOTA, IDF1, and crossing accuracy scores, Byte-\nTraX did not "
+              }
+            ],
+            "text": "Performance im-\nprovements are further reflected in elevated line cross-\ning accuracy, with an aggregate increase in this metric\nof 1.768% over the ByteTrack baseline (Fig. 3a, Ta-\nble 2).\nThese trends are generally consistent across confidence\nthresholds, although with a slight increase in relative\nperformance gains at a threshold of 0.25, potentially in-\ndicating the increased cost of uncertainty for ByteTrack\nwhen presented with additional low confidence detec-\ntions (Fig. 3a). At the dataset level, results for both\nGMOT-40 and SportsMOT are broadly comparable,\nwith ByteTraX's ability to reduce erroneous identity re-\nassignments and switches driving similar performance\nimprovements in HOTA, MOTA, IDF1, IDSW, and ex-\ncess ID counts (Table 2, Fig. 4a). Notably however, de-\nspite the same being true for DeepSea-MOT in terms\nof HOTA, IDF1, and crossing accuracy scores, Byte-\nTraX did not "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0043"
+        ],
+        "excerpt": "achieve meaningfully elevated MOTA or\nreduced IDSW rates (Table 3). Investigation across\nconfidence levels revealed this to be primarily driven\nby deficits at a threshold of 0.25, with IDSW rates\ndropping only at thresholds of 0.50 and 0.75 (Fig. 4a).\nClosed System Benchmarks. In closed systems, Byte-\nTraX again demonstrates superior HOTA, MOTA,\nIDF1, and FPS in comparison to ByteTrack, along with\nreduced IDSW scores and excess ID counts (Fig. 3b and\n4b, Table 2). Specifically, HOTA and IDF1 scores are\nincreased by 5.653 and 7.987 respectively, while MOTA\nis elevated by 0.968, suggesting that performance gains\nare primarily due to improvements in association rather\nthan detection accuracy. This is further supported\n8\na) b)\na) b)\nFigure 4. (a) Change in IDSW and excess ID counts relative to ByteTrack across detection confidence thresholds\nfor open system benchmarks ( N =53). Boxplots ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Bytetrack",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "117233708540b635442bf24fec5ba53e98ca755730080eb484235ad0491d48b0",
+            "evidence_id": "Ee6822e79e5bc6372-B0043",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Comparison With Bytetrack",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2522,
+                "page": 8,
+                "section": "Comparison With Bytetrack",
+                "section_index": 19,
+                "start": 1796,
+                "text": "achieve meaningfully elevated MOTA or\nreduced IDSW rates (Table 3). Investigation across\nconfidence levels revealed this to be primarily driven\nby deficits at a threshold of 0.25, with IDSW rates\ndropping only at thresholds of 0.50 and 0.75 (Fig. 4a).\nClosed System Benchmarks. In closed systems, Byte-\nTraX again demonstrates superior HOTA, MOTA,\nIDF1, and FPS in comparison to ByteTrack, along with\nreduced IDSW scores and excess ID counts (Fig. 3b and\n4b, Table 2). Specifically, HOTA and IDF1 scores are\nincreased by 5.653 and 7.987 respectively, while MOTA\nis elevated by 0.968, suggesting that performance gains\nare primarily due to improvements in association rather\nthan detection accuracy. This is further supported\n8"
+              },
+              {
+                "end": 169,
+                "page": 9,
+                "section": "Comparison With Bytetrack",
+                "section_index": 20,
+                "start": 0,
+                "text": "a) b)\na) b)\nFigure 4. (a) Change in IDSW and excess ID counts relative to ByteTrack across detection confidence thresholds\nfor open system benchmarks ( N =53). Boxplots "
+              }
+            ],
+            "text": "achieve meaningfully elevated MOTA or\nreduced IDSW rates (Table 3). Investigation across\nconfidence levels revealed this to be primarily driven\nby deficits at a threshold of 0.25, with IDSW rates\ndropping only at thresholds of 0.50 and 0.75 (Fig. 4a).\nClosed System Benchmarks. In closed systems, Byte-\nTraX again demonstrates superior HOTA, MOTA,\nIDF1, and FPS in comparison to ByteTrack, along with\nreduced IDSW scores and excess ID counts (Fig. 3b and\n4b, Table 2). Specifically, HOTA and IDF1 scores are\nincreased by 5.653 and 7.987 respectively, while MOTA\nis elevated by 0.968, suggesting that performance gains\nare primarily due to improvements in association rather\nthan detection accuracy. This is further supported\n8\na) b)\na) b)\nFigure 4. (a) Change in IDSW and excess ID counts relative to ByteTrack across detection confidence thresholds\nfor open system benchmarks ( N =53). Boxplots "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0048"
+        ],
+        "excerpt": "My results demonstrate that ByteTraX delivers sub-\nstantially improved performance and speed across a\n9\nT able 3. Comparison of tracking performance across benchmark datasets. Values represent combined means\naveraged over all detection confidence thresholds, with the highest scoring results for each dataset shown in bold.\nThe overall tracking algorithm rankings are determined based upon the proportion of top scoring metrics belonging\nto each.\nSystem\nType Dataset Tracker HOTA MOTA IDF1\nCrossing\nAccuracy IDSW FPS\nOpen GMOT-40 [ 16] ByteTrack 62.557 77.971 74.519 82.880 107 46.476\nByteT raX 64.379 79.775 77.562 84.577 65 51.720\nSportsMOT [ 18] ByteTrack 62.049 90.146 71.400 78.559 67 57.249\nByteT raX 63.304 90.930 74.279 82.086 44 66.475\nDeepSea-MOT [ 21] ByteTrack 62.898 51.331 63.661 73.679 37 31.857\nByteT raX 63.452 51.128 64.272 75.203 38 35.517\nClosed DAMUNT [ 20] ByteTrack 68.866 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "49062477f0d5e73d625cce1104f2cebdb9102a48f4a5c5720468d5647ae1471b",
+            "evidence_id": "Ee6822e79e5bc6372-B0048",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 103,
+                "page": 9,
+                "section": "Conclusion",
+                "section_index": 21,
+                "start": 0,
+                "text": "My results demonstrate that ByteTraX delivers sub-\nstantially improved performance and speed across a\n9"
+              },
+              {
+                "end": 792,
+                "page": 10,
+                "section": "Conclusion",
+                "section_index": 22,
+                "start": 0,
+                "text": "T able 3. Comparison of tracking performance across benchmark datasets. Values represent combined means\naveraged over all detection confidence thresholds, with the highest scoring results for each dataset shown in bold.\nThe overall tracking algorithm rankings are determined based upon the proportion of top scoring metrics belonging\nto each.\nSystem\nType Dataset Tracker HOTA MOTA IDF1\nCrossing\nAccuracy IDSW FPS\nOpen GMOT-40 [ 16] ByteTrack 62.557 77.971 74.519 82.880 107 46.476\nByteT raX 64.379 79.775 77.562 84.577 65 51.720\nSportsMOT [ 18] ByteTrack 62.049 90.146 71.400 78.559 67 57.249\nByteT raX 63.304 90.930 74.279 82.086 44 66.475\nDeepSea-MOT [ 21] ByteTrack 62.898 51.331 63.661 73.679 37 31.857\nByteT raX 63.452 51.128 64.272 75.203 38 35.517\nClosed DAMUNT [ 20] ByteTrack 68.866 "
+              }
+            ],
+            "text": "My results demonstrate that ByteTraX delivers sub-\nstantially improved performance and speed across a\n9\nT able 3. Comparison of tracking performance across benchmark datasets. Values represent combined means\naveraged over all detection confidence thresholds, with the highest scoring results for each dataset shown in bold.\nThe overall tracking algorithm rankings are determined based upon the proportion of top scoring metrics belonging\nto each.\nSystem\nType Dataset Tracker HOTA MOTA IDF1\nCrossing\nAccuracy IDSW FPS\nOpen GMOT-40 [ 16] ByteTrack 62.557 77.971 74.519 82.880 107 46.476\nByteT raX 64.379 79.775 77.562 84.577 65 51.720\nSportsMOT [ 18] ByteTrack 62.049 90.146 71.400 78.559 67 57.249\nByteT raX 63.304 90.930 74.279 82.086 44 66.475\nDeepSea-MOT [ 21] ByteTrack 62.898 51.331 63.661 73.679 37 31.857\nByteT raX 63.452 51.128 64.272 75.203 38 35.517\nClosed DAMUNT [ 20] ByteTrack 68.866 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0050"
+        ],
+        "excerpt": "the current most widely-\nutilised architecture\u2014this being ByteTrack. As such, I\nmake available the full ByteTraX integration pipeline\nfor deployment with YOLO26, along with the source\ncode required for expansion into additional detection\nframeworks. In sum, by combining enhanced accuracy\nand speed with ease-of-integration, ByteTraX aims to\nadvance the current baseline for real-time tracking at\nscale, thus delivering fundamentally improved perfor-\nmance across a broad range of applications.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a2bdbdfc0f72bcc764020384de1fbc1e8c1372f157bbbcc715ec71375cca5bc2",
+            "evidence_id": "Ee6822e79e5bc6372-B0050",
+            "pages": [
+              10
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 2185,
+                "page": 10,
+                "section": "Conclusion",
+                "section_index": 22,
+                "start": 1691,
+                "text": "the current most widely-\nutilised architecture\u2014this being ByteTrack. As such, I\nmake available the full ByteTraX integration pipeline\nfor deployment with YOLO26, along with the source\ncode required for expansion into additional detection\nframeworks. In sum, by combining enhanced accuracy\nand speed with ease-of-integration, ByteTraX aims to\nadvance the current baseline for real-time tracking at\nscale, thus delivering fundamentally improved perfor-\nmance across a broad range of applications."
+              }
+            ],
+            "text": "the current most widely-\nutilised architecture\u2014this being ByteTrack. As such, I\nmake available the full ByteTraX integration pipeline\nfor deployment with YOLO26, along with the source\ncode required for expansion into additional detection\nframeworks. In sum, by combining enhanced accuracy\nand speed with ease-of-integration, ByteTraX aims to\nadvance the current baseline for real-time tracking at\nscale, thus delivering fundamentally improved perfor-\nmance across a broad range of applications."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.37801",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript reports no statistical significance testing or uncertainty quantification for the claimed performance gains, and several headline improvements are small (e.g., HOTA +1.550, MOTA +1.368 in open systems), leaving the robustness of the reported advantages unestablished.",
+          "The evaluation independence of the headline outcome is not established: the manuscript does not report whether the threshold values and heuristic parameters were tuned on the same test benchmarks used to report final results, and no held-out validation or independent calibration is described.",
+          "The paper contains a mathematical error in the IoU definition, where the union and intersection terms are reversed in Equation 3, undermining confidence in the methodological rigor of the described architecture."
+        ],
+        "canonical_id": "arxiv:2609.37801",
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "evaluation_independence": {
+          "concern": "major",
+          "corroboration_direction": "unavailable",
+          "corroboration_summary": "The manuscript does not report any measurement independent of the benchmark test sets used for the reported results, such as held-out validation, statistical significance testing, or independent human assessment.",
+          "final_evaluation_signal": "Standard MOT metrics (HOTA, MOTA, IDF1, IDSW, FPS) computed via TrackEval on the benchmark test splits against ground-truth annotations.",
+          "independent_corroboration": "absent",
+          "optimization_signal": "Threshold adjustments and heuristic rules for association, reconnection, and merging, with parameters selected across detection confidence thresholds of 0.25, 0.50, and 0.75 on the same benchmark datasets.",
+          "signal_reuse": "uncertain"
+        },
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0002",
+          "Ee6822e79e5bc6372-B0003",
+          "Ee6822e79e5bc6372-B0019",
+          "Ee6822e79e5bc6372-B0021",
+          "Ee6822e79e5bc6372-B0024",
+          "Ee6822e79e5bc6372-B0026",
+          "Ee6822e79e5bc6372-B0030",
+          "Ee6822e79e5bc6372-B0033",
+          "Ee6822e79e5bc6372-B0037",
+          "Ee6822e79e5bc6372-B0038",
+          "Ee6822e79e5bc6372-B0039",
+          "Ee6822e79e5bc6372-B0041",
+          "Ee6822e79e5bc6372-B0042",
+          "Ee6822e79e5bc6372-B0043",
+          "Ee6822e79e5bc6372-B0048",
+          "Ee6822e79e5bc6372-B0050"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "619a97e9760ddb65eece0f62f63c939b63a2a923d77089b81b869854cc28b99f"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2609.37801",
+        "claim_evidence_alignment": "Claims regarding identity switch reduction, accuracy improvements, and processing speed enhancements align directly with the tabulated results across benchmarks [Ee6822e79e5bc6372-B0003, Ee6822e79e5bc6372-B0038, Ee6822e79e5bc6372-B0048]. The author appropriately positions the work as an enhancement of ByteTrack rather than claiming state-of-the-art across all MOT methods [Ee6822e79e5bc6372-B0041, Ee6822e79e5bc6372-B0050].",
+        "context_id": "e6822e79e5bc637207f20ce49cb5de79fa2e62f49ba532bc24d8e72c5e04292c",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation rigorously compares ByteTraX against the baseline ByteTrack across six distinct benchmarks representing both open and closed tracking environments [Ee6822e79e5bc6372-B0030, Ee6822e79e5bc6372-B0038, Ee6822e79e5bc6372-B0048]. It employs standard multi-object tracking metrics (HOTA, MOTA, IDF1, IDSW) and hardware-controlled runtime speed measurements across varying confidence thresholds [Ee6822e79e5bc6372-B0033, Ee6822e79e5bc6372-B0038, Ee6822e79e5bc6372-B0039].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely on ground-truth benchmark test annotations and standardized external evaluation toolkits (TrackEval) across six public datasets [Ee6822e79e5bc6372-B0030, Ee6822e79e5bc6372-B0039].",
+          "final_evaluation_signal": "Standard multi-object tracking metrics (HOTA, MOTA, IDF1, IDSW) computed via TrackEval on independent test splits against ground-truth trajectories [Ee6822e79e5bc6372-B0033, Ee6822e79e5bc6372-B0037, Ee6822e79e5bc6372-B0039].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pre-determined threshold adjustments and heuristic rules defined for association, reconnection, and merging, coupled with upstream YOLO26 models trained on the training splits [Ee6822e79e5bc6372-B0019, Ee6822e79e5bc6372-B0024, Ee6822e79e5bc6372-B0037].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ee6822e79e5bc6372-B0002",
+          "Ee6822e79e5bc6372-B0003",
+          "Ee6822e79e5bc6372-B0011",
+          "Ee6822e79e5bc6372-B0019",
+          "Ee6822e79e5bc6372-B0021",
+          "Ee6822e79e5bc6372-B0024",
+          "Ee6822e79e5bc6372-B0026",
+          "Ee6822e79e5bc6372-B0030",
+          "Ee6822e79e5bc6372-B0033",
+          "Ee6822e79e5bc6372-B0037",
+          "Ee6822e79e5bc6372-B0038",
+          "Ee6822e79e5bc6372-B0041",
+          "Ee6822e79e5bc6372-B0048",
+          "Ee6822e79e5bc6372-B0050"
+        ],
+        "limitations": "The manuscript explicitly distinguishes open versus closed tracking environments, noting that reconnection and merging heuristics rely on fixed track counts and are unsuitable for general open systems [Ee6822e79e5bc6372-B0027, Ee6822e79e5bc6372-B0038]. It also notes that comparisons are restricted specifically to ByteTrack [Ee6822e79e5bc6372-B0037, Ee6822e79e5bc6372-B0041].",
+        "method_assessment": "The methodology is described mathematically and procedurally, detailing the elimination of confidence score prioritization, the IoU matching modification, and the closed-system heuristics [Ee6822e79e5bc6372-B0019, Ee6822e79e5bc6372-B0021, Ee6822e79e5bc6372-B0024, Ee6822e79e5bc6372-B0026]. The upstream detector and training/test splits are clearly standardized across systems [Ee6822e79e5bc6372-B0037].",
+        "quality_rationale": "The paper provides an adequately scoped and well-executed experimental comparison of an architectural refinement to an established tracking baseline. Controlled testing on multiple standard datasets and across multiple thresholds provides solid empirical support for the claimed gains.",
+        "scoped_contribution": "The manuscript proposes ByteTraX, an adaptation of the ByteTrack multi-object tracking architecture that removes two-stage score binning, applies lenient IoU association thresholds, and adds optional track reconnection and merging heuristics for closed-system tracking [Ee6822e79e5bc6372-B0002, Ee6822e79e5bc6372-B0019, Ee6822e79e5bc6372-B0021, Ee6822e79e5bc6372-B0024, Ee6822e79e5bc6372-B0026].",
+        "source_content_hash": "619a97e9760ddb65eece0f62f63c939b63a2a923d77089b81b869854cc28b99f"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper provides an adequately scoped and well-executed experimental comparison of an architectural refinement to an established tracking baseline. Controlled testing on multiple standard datasets and across multiple thresholds provides solid empirical support for the claimed gains.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "619a97e9760ddb65eece0f62f63c939b63a2a923d77089b81b869854cc28b99f",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript explicitly distinguishes open versus closed tracking environments, noting that reconnection and merging heuristics rely on fixed track counts and are unsuitable for general open systems [Ee6822e79e5bc6372-B0027, Ee6822e79e5bc6372-B0038]. It also notes that comparisons are restricted specifically to ByteTrack [Ee6822e79e5bc6372-B0037, Ee6822e79e5bc6372-B0041]."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -157,7 +1608,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

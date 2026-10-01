@@ -1,0 +1,547 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 13,
+    "non_promoted": 1,
+    "papers_attempted": 3,
+    "papers_successfully_assessed": 3,
+    "papers_walked": 6,
+    "promoted": 2,
+    "retry_eligible_failures": 3,
+    "skipped_before_model": 3,
+    "technical_failures": 3,
+    "unavailable_manuscripts": 2
+  },
+  "budget": {
+    "gemini_calls": 3,
+    "gemini_input_tokens": 86665,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 4169,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 3,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.02444469,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "computer_vision": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 3,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-10-01T10:45:25.706299+00:00",
+  "cost": {
+    "deepseek_calls": 3,
+    "deepseek_cost_usd": 0.02444469,
+    "deepseek_input_tokens": 83628,
+    "deepseek_output_tokens": 2089,
+    "gemini_calls": 3,
+    "gemini_input_tokens": 86665,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 4169,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 775,
+    "papers_discovered": 3377
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 19,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 398,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.23040522",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23040522",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Data and scripts for: Same answers, different scores: an empirical study of evaluation choices in long-term memory benchmarks for LLM agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23040399",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23040399",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Data and scripts for: Access control and staff lifecycle in a multi-tenant memory server for AI agents: threat model, attack evaluation and two revocation bugs",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.37311",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.37311",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.38147",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2609.38147",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Thinking Before Thinking: Scaling Agentic Inference Through Meta-Reasoning",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.36739",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2609.36739",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Frontier Autolab: Organizational Memory, Adversarial Dissent and Temporal Leakage in Multi-Agent LLM Firms Across Fifty Years of Technological Change",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.36059",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2609.36059",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Mnemon: Raw Records, Fast Judgments, Slow Thoughts",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 2159,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.23040522",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23040399",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2609.38147",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2609.36739",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2609.36059",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 213,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2609.37801",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2609.37801",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "ByteTraX: Enhancing the ByteTrack Architecture with Optimised Thresholding",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.37340",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2609.37340",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "HyperSAM: A Promptable Foundation Model for Hyperspectral Remote Sensing",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.37631",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2609.37631",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Procedural Core: A Compact Recurrent Initialization for Vision Transformers",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.37339",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2609.37339",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "UGO: Unified Architecture for General Multi-Object Tracking by Segmentation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1117/1.jei.35.5.053011",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.1117/1.jei.35.5.053011",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Fine-grained pillar encoder with spatial adaptation for lidar-based 3D object detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.38116",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2609.38116",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "GA-EIRFS: A Geometry-Augmented Repeat-Factor Sampling Method for Long-Tailed LiDAR 3D Object Detection",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 953,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2609.37340",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2609.37631",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2609.37339",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.1117/1.jei.35.5.053011",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2609.38116",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 155,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.36726",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.36726",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Can AI Scientists Change Their Minds? Prior-Evidence Conflict in Synthetic Universes",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2609.36071",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2609.36071",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "LongCat-DeepResearch Technical Report",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.36344",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.36344",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DeepRewind: Predicting and Repairing Premature Commitments in Deep Research Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23023674",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23023674",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Too Far to Turn Back: Prior-Art Blindness Increases With Project Investment in Autonomous Research Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.70777/si.v3i3.18761",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.70777/si.v3i3.18761",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "ScientistTwo Autonomous Research System Summary and Critical Assessment",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2609.39154",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2609.39154",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DAGent: Evaluate-then-Grow Planning for Deep Research Agents",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 256,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2609.36071",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.36344",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23023674",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.70777/si.v3i3.18761",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2609.39154",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 8,
+        "high_relevance": 9,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.35578",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-30T10:20:13.801385+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "FactorEngram: Factorized N-gram Memory with Basis-Level Gating for Language Models",
+            "track": "engram"
+          }
+        ],
+        "ranked": 9,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "outcome": "not_assessed",
+            "rank": 1
+          }
+        ],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-10-01T10:43:48.467158+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

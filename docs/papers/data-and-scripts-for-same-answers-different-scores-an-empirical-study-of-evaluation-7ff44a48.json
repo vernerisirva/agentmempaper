@@ -6,7 +6,7 @@
     "https://openalex.org/W7214746055",
     "https://openalex.org/W7214703018"
   ],
-  "appeared_in_latest_run": true,
+  "appeared_in_latest_run": false,
   "arxiv_id": null,
   "authors": [
     "Vitalii Cherepanov"
@@ -20,13 +20,13 @@
   "first_seen_at": "2026-09-30 10:16:11",
   "first_seen_date": "2026-09-30",
   "future_date": false,
-  "is_new": true,
+  "is_new": false,
   "last_seen_at": "2026-09-30 10:16:11",
   "last_seen_date": "2026-09-30",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-30 10:16:45",
   "notified_date": "2026-09-30",
   "openalex_id": "W7214746055",
@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-30 10:16:11",
-    "generated_at": "2026-09-30 10:20:14",
+    "generated_at": "2026-10-01 10:45:26",
     "last_seen_at": "2026-09-30 10:16:11",
     "metadata_sources": [
       "openalex"
@@ -107,36 +107,64 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-10-01T10:44:08.069901+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Manuscript unavailable; no scientific decision.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 935,
+      "extraction_complete": false,
+      "version": "coverage-v1"
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
     "full_text_assessed": false,
     "full_text_url": null,
-    "gate_version": null,
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+      "No extractable manuscript text was available."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "systems_or_application",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "manuscript_unavailable",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Manuscript unavailable; no scientific decision.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "c82211bfb40867edceee7c8c3f9096d1a83686a3a7e999ec62d02ae5e51ba385",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

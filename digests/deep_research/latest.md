@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-30](2026-09-30.md).
+Latest daily digest: [2026-10-01](2026-10-01.md).
 
-# Paper Scout Digest - 2026-09-30
+# Paper Scout Digest - 2026-10-01
 
 ## Run Summary
 
-- **Run ID:** 100
-- **Candidates fetched:** 137
-- **New unique papers:** 132
-- **Relevant:** 17
-- **Maybe relevant:** 10
+- **Run ID:** 101
+- **Candidates fetched:** 140
+- **New unique papers:** 134
+- **Relevant:** 19
+- **Maybe relevant:** 11
 - **Irrelevant:** 110
-- **Source summary:** arxiv: 37, openalex: 100, semantic_scholar: 0
+- **Source summary:** arxiv: 40, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -28,134 +28,74 @@ Latest daily digest: [2026-09-30](2026-09-30.md).
 
 ## Highly Relevant
 
-### [Can AI Scientists Change Their Minds? Prior-Evidence Conflict in Synthetic Universes](https://arxiv.org/abs/2609.36726v1)
+### [Can AI Scientists Change Their Minds? Prior-Evidence Conflict in Synthetic Universes](https://doi.org/10.48550/arxiv.2609.36726)
 
 - **Authors:** Kargi Chauhan
 - **Date:** 2026-09-29
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
 - **Abstract summary:** Can a scientific agent distinguish a law it inferred from evidence from one it merely recognizes? We introduce Synthetic Universes, a controlled benchmark that pairs canonical famous worlds with matched twisted twins governed by nearby noncanonical mechanisms. We evaluate each reported law twice: by executing it on...
 
-### [LongCat-DeepResearch Technical Report](https://arxiv.org/abs/2609.36071v1)
+### [DAGent: Evaluate-then-Grow Planning for Deep Research Agents](https://arxiv.org/abs/2609.39154v1)
 
-- **Authors:** Meituan LongCat Team, He Zhu, Yue Xu, Wanli Wu, Haolin Ren, Yuxin Bian, et al.
-- **Date:** 2026-09-28
+- **Authors:** Hanwen Liu, Yuanfu Sun, Qiaoyu Tan
+- **Date:** 2026-09-30
 - **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** We present LongCat-DeepResearch, a deep research system that combines an enhanced LongCat model with a multi-agent workflow for producing comprehensive, evidence-grounded reports. The workflow separates global planning from detailed investigation and coordinates revision at the section level. Multiple planning agent...
-
-### [ScientistTwo Autonomous Research System Summary and Critical Assessment](https://doi.org/10.70777/si.v3i3.18761)
-
-- **Authors:** Kristen W. Carlson
-- **Date:** 2026-09-25
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** A short summary and assessment of the just-released landmark Google Cloud AI Research article on its autonomous AI scientist program.
-
-### [CodeGraph: Open-Taxonomy Knowledge Graph for Source Code with Wikidata Grounding](https://arxiv.org/abs/2609.29474)
-
-- **Authors:** Federico Pennino, Andrea Gurioli, Stefano Zacchiroli, Maurizio Gabbrielli, Paolo Ferragina
-- **Date:** 2026-09-24
-- **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Public software repositories, like GitHub and Software Heritage Archive, store billions of files, yet extracting their implicit engineering knowledge ---i.e., the algorithms they implement, the paradigms they follow, the patterns they instantiate, and the application domains they serve--- remains challenging, as cur...
+- **Abstract summary:** Deep research tasks require agents to navigate large knowledge spaces, synthesize evidence across many sources, and adapt their plans as findings emerge. Directed acyclic graph (DAG)-based multi-agent systems suit this setting because they support parallel execution and isolate each sub-task within a focused depende...
 
-### [DeepRewind: Predicting and Repairing Premature Commitments in Deep Research Agents](https://arxiv.org/abs/2609.36344v1)
+### [DeepRewind: Predicting and Repairing Premature Commitments in Deep Research Agents](https://doi.org/10.48550/arxiv.2609.36344)
 
 - **Authors:** Amirhossein Abaskohi, Amirhossein Dabiriaghdam, Lele Wang, Peter West, Giuseppe Carenini
 - **Date:** 2026-09-28
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
 - **Abstract summary:** Deep-research agents conduct long-horizon investigations through iterative search, evidence evaluation, belief revision, and synthesis. However, they may commit to claims before sufficient evidence is available, causing later reasoning to reinforce an incorrect interpretation. We introduce DeepRewind, an additive co...
 
-### [Dr.Credit: Rubric-Grounded Process Credit Assignment for Deep Research Agents](https://doi.org/10.48550/arxiv.2609.34296)
+### [Experimental Experience Modeling for Autonomous Research](https://arxiv.org/abs/2609.39392v1)
 
-- **Authors:** Yingjian Zhu, Zhenyi Wang, Jiaxin Guo, Kun Ding, Ying Wang, Shen Huang, et al.
-- **Date:** 2026-09-28
-- **Source:** openalex
+- **Authors:** Wenda Wei, Yingchen Zhang, Ruqing Zhang, Jiafeng Guo, Daiting Shi, Xueqi Cheng
+- **Date:** 2026-09-30
+- **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Rubric-based tasks are increasingly addressed through reinforcement learning (RL), with rubric scores used as training rewards. However, these rewards typically supervise final answers without distinguishing the contributions of intermediate decisions. Many existing credit assignment methods rely on ground-truth ans...
+- **Abstract summary:** Autonomous research agents can generate hypotheses and conduct experiments, but experimentation remains a major source of computational cost. A fundamental challenge is deciding which experiments are worth running, particularly when prior evidence is insufficient to resolve uncertainty. Yet current research agents l...
 
-### [Orchestrating GenAI for Interdisciplinary Research](https://arxiv.org/abs/2609.30588)
+### [Search Shapes Conclusions: Auditing Evidence Selection Bias in Deep Research Agents](https://arxiv.org/abs/2609.39026v1)
 
-- **Authors:** Shirley Anugrah Hayati, Moyan Zhou, Patricia Anugrah Setiani, Ruizi Wang, Joseph Chee Chang, Dongyeop Kang
-- **Date:** 2026-09-24
-- **Source:** openalex
+- **Authors:** Shuyao Xiao, Shengling Wang, Xuan Chen, Ke Chao, Ming Cui, Feifei Qian, et al.
+- **Date:** 2026-09-30
+- **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** As researchers tackle interdisciplinary problems, they face the need to deepen expertise in primary areas while rapidly acquiring knowledge in secondary domains. Generative AI (GenAI) is increasingly positioned to meet this need, from general-purpose chat assistants to Deep Research tools marketed as autonomous rese...
-
-### [Too Far to Turn Back: Prior-Art Blindness Increases With Project Investment in Autonomous Research Agents](https://doi.org/10.5281/zenodo.23023674)
-
-- **Authors:** Vyshali Prabananth Lal, Srinivas Suman Singh Thakur
-- **Date:** 2026-09-28
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Autonomous research agents run for days, and every such system we surveyed checks novelty exactly once, before work begins. We ask what happens when a competing paper appears DURING execution - does the agent notice, and what does it decide? We introduce the first benchmark for mid-project novelty collision: 66 prop...
-
-### [Too Far to Turn Back: Prior-Art Blindness Increases With Project Investment in Autonomous Research Agents](https://doi.org/10.5281/zenodo.23023673)
-
-- **Authors:** Vyshali Prabananth Lal, Srinivas Suman Singh Thakur
-- **Date:** 2026-09-28
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Autonomous research agents run for days, and every such system we surveyed checks novelty exactly once, before work begins. We ask what happens when a competing paper appears DURING execution - does the agent notice, and what does it decide? We introduce the first benchmark for mid-project novelty collision: 66 prop...
+- **Abstract summary:** Deep Research agents synthesize evidence into cited reports, yet a well-cited report can still reach a misleading conclusion. Citation correctness checks whether cited sources support individual claims. It does not show whether adaptive search exposed a representative view of all documents made available for evaluat...
 
 ## Maybe Relevant
 
-### [From Search to Research: Exploring Search Scaling in Autonomous Quantitative Factor Mining](https://doi.org/10.48550/arxiv.2609.35559)
+### [Empathy in the Soil, Agents on the Desktop: Why Plant Pathology Needs a Scientist-in-the-Loop AI Paradigm](https://doi.org/10.5423/ppj.oc.07.2026.0091)
 
-- **Authors:** 邓康程, Hui Cai, Jiacheng Lu, Chester Zhongshu Qian, Rui Sun, Beidi Luan, et al.
-- **Date:** 2026-09-28
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** research-memory
-- **Abstract summary:** Inference scaling has been shown to improve large language model (LLM) performance, and this principle naturally extends to autonomous LLM agents through increased search budgets, which we refer to as *search scaling*. Although prior work has characterized the mechanisms, scaling behavior, and performance limits of...
-
-### [AutoMark: Enabling Autoresearch to Discover Better LLM Watermarks](https://arxiv.org/abs/2609.37310v1)
-
-- **Authors:** Thibaud Gloaguen, Robin Staab, Martin Vechev
-- **Date:** 2026-09-29
-- **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** With LLM watermarking being deployed commercially and now required by regulations, improving its reliability and effectiveness has become crucial. Yet, recent progress in the field of LLM watermarking has increasingly been driven by improving details of existing methods, an effort fundamentally limited by the pace o...
-
-### [AutoPDEBench: Benchmarking LLM Auto-Research for Neural PDE Solver Design](https://doi.org/10.48550/arxiv.2609.32245)
-
-- **Authors:** Ruoyan Li, Wei Wang, Yizhou Sun
-- **Date:** 2026-09-26
+- **Authors:** Junhyun Jeon
+- **Date:** 2026-09-30
 - **Source:** openalex
 - **Relevance:** maybe (51/100)
 - **Reason:** Review candidate: may support deep research workflows but needs human judgment.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Partial differential equations (PDEs) are essential for modeling complex physical systems, and neural solvers have recently emerged as powerful data-driven tools for numerically solving them. However, existing neural solvers struggle with domain-specific challenges, such as varying parameters and high-speed flows, n...
+- **Abstract summary:** Plant pathology faces a cognitive bottleneck caused by the growing volume of biological data. Addressing it requires a shift from passive chatbots to autonomous AI research agents that operate in Goal-Action-State cycles. Researchers can set up a local, desktop-based agentic framework that combines semantic discover...
 
-### [Agentic Workflow for Automated Systematic Literature Review: A Case Study on Generative AI Applications in the Oil and Gas Industry](https://doi.org/10.2118/232289-ms)
+### [AREX-2: Advancing Self-Improving Agents through Long-Horizon Reflective Tasks](https://arxiv.org/abs/2609.38288v1)
 
-- **Authors:** O. E. Abdelaziem, M. A. Amer
+- **Authors:** Hongjin Qian, Chaofan Li, Kun Luo, Wenqing Wei, Jianlyu Chen, Shuqi Lu, et al.
 - **Date:** 2026-09-29
-- **Source:** openalex
+- **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** Abstract The rapid expansion of generative AI across the oil and gas applications has created an urgent need for structured review on emerging research trends. However, traditional systematic literature reviews (SLRs) are time-consuming and difficult to scale as the volume of AI publications grows every day. This pa...
+- **Abstract summary:** We present AREX-2, an effort to advance the self-improving capability of LLM agents, which we define as the ability to iteratively refine a solution at test time. This ability rests on two complementary capabilities: reflection, which produces a solution better than the current one, and long-horizon execution, which...

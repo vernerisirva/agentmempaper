@@ -59,16 +59,277 @@
             <p>Over a century ago, Henri Poincaré argued that a motionless observer cannot acquire the notion of space. Yet, most visual representation learning methods operate on individual images, while those that leverage multiple views rely on RGB reconstruction, entangling geometry with appearance. We propose Poincar3, a self...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a clear, well-motivated conceptual advance moving multi-view SSL away from appearance-entangling RGB pixel reconstruction to self-distillation. The system design is validated with thorough experiments, consistent baselines, clear ablation studies, and transparent reporting of limitations.</p>
+      <p>The authors identify limitations transparently, including reduced semantic classification performance compared to DINOv3, hyperparameter sensitivity inherent to self-distillation frameworks, and heuristic/handcrafted frame selection from training videos.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-02T10:42:59.348820+00:00.</p>
+        <p>Coverage: 66876 of 66876 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Over a century ago, Henri Poincar ´e argued that a motionless observer cannot ac-
+quire the notion of space. Yet, most visual representation learning methods oper-
+ate on individual images, while those that leverage multiple views rely on RGB
+reconstruction, entangling geometry with appearance. We propose Poincar3, a
+self-supervised method that learns representations from multiple views through
+self-distillation instead of RGB reconstruction. We combine masked patch and
+image-level distillation with a teacher that observes additional views, enabling
+training from scratch without explicit 3D supervision. Poincar3 outperforms
+both previous single and multi-view self-supervised approaches such as DI-
+NOv3, MuM, and Muskie on correspondence estimation, camera pose estima-
+tion, and 3D reconstruction. Using a lightweight Poincar ´e adapter, we also
+find that our learned features encode </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>be trained entirely from
+scratch, without any 3D supervision.
+We find that stable and effective multi-view self-distillation relies on three key ingredients: introduc-
+ing an image-level distillation objective, providing the teacher with access to additional views of the
+scene, and retaining full images rather than using local and global crops. Together, these ingredients
+give rise to Poincar3,1a multi-view self-supervised model that learns strong representations directly
+from unlabeled image sequences mined from the internet. We illustrate its state-of-the-art empirical
+performance in Fig. 1, and show that multi-view geometry emerges without labels, as evidenced by
+zero-shot correspondences in Fig. 2.
+Across a broad range of 3D tasks, such as relative pose estimation, point cloud estimation, and
+correspondence estimation, Poincar3 substantially improves over state-of-the-art single- </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this section, we begin by introducing the notation (Sec. 3.1) and subsequently propose multi-view
+self-distillation (Sec. 3.2). Thereafter, we outline the architecture (Sec. 3.3) and training (Sec. 3.4)
+of Poincar3. We illustrate Poincar3 in Fig. 3 and propose a pseudo-code implementation in Algo. 1.
+3
+Preprint.
+Algorithm 1: Multi-view self-distillation pseudo-code.
+# fs, ft: student and teacher networks
+# tps, tpt: student and teacher temperatures
+# l: EMA momentum rate
+# M, T: number of student and extra teacher views
+ft.params = fs.params
+forimgsinloader:# mini-batch of M+T frame seqs.
+sv = augment(imgs[:, :M])
+tv = augment(imgs)
+mask = sample_mask(sv)# patch mask [B, M, N]
+P_s, G_s, G_raw = fs(sv, mask=mask)
+withno_grad():
+P_t, G_t, _ = ft(tv, mask=None)
+# masked patch distillation (iBOT-style)
+P_t = sknopp(P_t[:, :M][mask].detach(), tpt)
+P_s = log_softmax(P_s[mask] / tps, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>dim=-1)
+L_patch = -(P_t * P_s).sum(-1).mean()
+# per-frame image objective (DINO-style)
+G_t = sknopp(G_t[:, :M].detach(), tpt)
+G_s = log_softmax(G_s / tps, dim=-1)
+L_global = -(G_t * G_s).sum(-1).mean()
+L_koleo = koleo(G_raw)
+loss = L_patch + 0.5 *L_global + 0.1 *L_koleo
+loss.backward()
+update(fs)# AdamW
+ft.params = l *ft.params + (1-l) *fs.params
+Student
+T eacher
+Figure 4:Visualizing a training se-
+quence.The student and teacher get
+the same sequence (hereM= 6) while
+the teacher gets additional frames (here
+T= 2), the student gets masked frames.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1PM
+i=1|Mi|
+MX
+i=1
+X
+u∈Mi
+CE
 
-        <ul></ul>
+Pt
+i,u,Ps
+i,u
+
+,(1)
+where|M i|denotes the number of masked patches, andCE(p,q)= - P
+k pk logqk denotes the
+cross-entropy loss.
+Image-level self-distillation.We additionally align the image-level representations using,
+Lglobal = 1
+M
+MX
+i=1
+CE
+
+Gt
+i,Gs
+i
+
+,(2)
+which we find essential for guiding self-distillation towards a 3D-aware representation.
+Teacher with additional views.We further propose that the teacher observe more of the scene
+than the student. If the student processesMviews, the teacher also receivesTextra frames from
+the same scene. These additional frames are excluded from all loss computations and only provide
+extra geometric context through the multi-view attention mechanism. During training, we sampleT
+uniformly between 0 and 12. We illustrate an example sequence in Fig. 4.
+Regularization and final objective.We apply Sinkhorn-Knopp and </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>KoLeo regularization to pre-
+vent representational collapse. Our final training objective is,
+L=L patch +αL global +βL KoLeo,(3)
+whereα= 0.5andβ= 0.1in all experiments.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We begin by considering feed-forward reconstruction (Wang et al., 2024; 2025), where a multi-view
+transformer directly predicts scene geometry from a sequence of images. We consider three eval-
+uation settings of increasing computational complexity (i) train only the pose and depth head, (ii)
+train a transformer, and (iii) finetune the full model with new heads. We train on a large collection
+of labeled 3D datasets using 4 H200 GPUs for each experiment and report the results in Tab. 1
+together with training curves in Fig. 7. Poincar3 shows substantially improved performance, espe-
+cially on camera pose estimation, compared to all existing models. Furthermore, initializing from
+the Poincar3 weights allows for rapid finetuning, achieving an AUC@30◦ of 65.0%+ on RE10K af-
+ter only 10K steps with a low learning rate. Further details can be found in Sec. E in the Appendix.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RE10K AUC@30
+0 50k 100k 150k 200k
+Training steps
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+Evaluation loss
+Poincar3 DINOv3 Random
+Figure 7:Initialization for feed-forward reconstruction.
+Comparing training from scratch (green), initializing the en-
+coder from DINOv3 (red), and finetuning Poincar3 (blue).
+Table 1:Feed-forward reconstruction.Reporting relative pose accuracy by AUC over 10 random
+frames and point cloud accuracy by median accuracy (acc.) in mm and normal consistency (NC) by
+the cosine of the angle between the normals. Training with 4 H200 GPUs for 3 days each.
+Multi-View Relative Pose Point Cloud Estimation
+Method RE10K ScanNet++ MegaDepth ETH3D DTU
+Metric→@3 ◦ @30◦ @3◦ @30◦ @3◦ @30◦ Acc. NC Acc. NC
+Train only heads on top of the frozen backbone
+DINOv3 0.0 18.9 0.0 9.4 1.5 55.5 1.18 0.59 10.76 0.54
+Muskie 1.1 36.3 0.0 19.0 0.1 46.9 1.12 0.60 11.43 0.55
+MuM 0.0 29.8 0.0 18.7 0.1 48.5 1.12 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.60 12.60 0.54
+Poincar32.4 51.9 0.1 48.7 3.7 67.5 0.82 0.65 10.60 0.59
+Train a transformer on top of the frozen backbone
+DINOv3 1.0 29.1 0.0 22.0 1.7 65.6 0.95 0.66 10.63 0.58
+Muskie 1.8 41.5 0.0 28.1 1.7 58.9 0.88 0.67 11.95 0.58
+MuM 1.4 40.1 0.0 30.2 1.9 60.8 1.00 0.60 12.26 0.56
+Poincar35.2 62.2 1.3 52.1 5.2 69.5 0.75 0.68 10.52 0.61
+Finetune the backbone1
+Random init. 0.0 17.4 0.0 11.3 0.0 35.9 1.24 0.60 12.34 0.56
+DINOv3 init. 1.3 31.2 0.0 30.9 6.9 73.8 0.98 0.68 10.87 0.59
+Poincar38.3 68.2 4.5 67.0 7.4 74.6 0.81 0.80 6.73 0.63
+1MuM and Muskie are excluded because their architectures differ substantially, making direct finetuning comparisons less meaningful.
+models trained with 3D annotations. The attention map is an even more powerful correspondence
+estimator, achieving a top-accuracy of 94.9. We also outperform all other methods on two-view
+correspondence estimation using a </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While
+Poincar3 has strong representations at all layers, we compare to thebestlayer for fair comparison.
+Method ScanNet (Dai et al., 2017) NA VI (Jampani et al., 2023)
+PCK@→5px 10px 25px 50px 5px 10px 25px 50px
+Feature Nearest-Neighbor Matching
+F eed-Forward Reconstruction
+VGGT-Ω24.5 32.8 52.9 69.0 16.8 25.9 51.6 70.9
+DA3 21.5 22.9 28.2 35.2 14.6 18.6 30.5 46.9
+π3 26.7 38.6 61.3 75.6 18.2 30.3 60.2 78.8
+Self-Supervised Models
+DINOv3 24.7 33.9 56.8 72.2 17.6 28.7 59.6 78.7
+Muskie 27.7 42.4 70.1 83.1 18.7 32.7 64.7 80.5
+MuM 27.0 40.5 66.9 79.9 17.9 30.2 60.2 74.9
+Poincar327.9 46.2 79.5 89.6 19.2 33.7 68.7 84.2
+Attention Matching
+F eed-Forward Reconstruction
+VGGT-Ω24.3 32.9 54.2 68.9 16.3 23.9 46.8 63.7
+DA3 21.4 23.2 28.2 34.0 14.8 19.1 31.6 46.7
+π3 27.040.7 68.7 83.8 18.3 30.4 62.2 82.0
+Self-Supervised Models
+Muskie 24.6 34.7 62.9 81.5 15.5 22.3 46.2 67.9
+MuM 25.6 37.2 64.7 77.2 17.4 28.5 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>56.6 68.7
+Poincar327.0 43.9 83.7 94.9 19.3 34.7 74.5 86.5
+RGB reconstruction
+Poincar3
+Ground truth Predicted Error
+Figure 8:Multi-view correspondence tracks.We visualize the predicted tracks (blue), the ground-
+truth (green), and the error (red). Poincar3 gives accurate zero-shot multi-view geometry.
+We fit one such adapter per scene on20held-out ScanNet++ (Yeshwanth et al., 2023) scenes and
+reportR 2 on the held-out pairs from each scene in Tab. 3. We qualitatively illustrate the results in
+Fig. 11. In the spirit of Poincar ´e&#x27;s observation that spatial structure emerges through distinguish-
+ing changes of position from changes of state (Poincar ´e, 1905), the motion-informed features are
+consistently better than those obtained from one view, with Poincar3 achieving the strongest results.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>&gt;0.3
+DINOv3✗0.046±0.00342.5±1.90.9±0.6
+Muskie✗0.042±0.00339.7±2.20.4±0.2
+Muskie✓0.061±0.00346.3±1.73.6±1.0
+MuM✗0.059±0.00243.1±1.84.5±0.6
+MuM✓0.081±0.00251.7±1.86.5±0.8
+Poincar3✗0.053±0.00342.4±2.32.0±0.7
+Poincar3✓0.098±0.00255.7±1.77.1±0.7
+500 1k 2k 4k 8k 16k 32k 64k 128k 256k
+Normalized training compute (A100-equiv. GPU-hours)
+50
+55
+60
+65
+70
+75
+80
+85PCK@25px
+MuM
+DINOv3
+Muskie
+Poincar3
+Figure 9:Multi-view correspondence es-
+timation accuracy versus training com-
+pute.Poincar3 ties DINOv3&#x27;s performance
+after just one day on8×H200s.
+Table 4:Supervision ablation.Multi-view correspon-
+dence estimation accuracy (PCK@25).
+Method Multi-view Matching
+Dataset→ScanNet NA VI
+Same compute, data, and architecture
+I: RGB reconstruction (MuM obj.) 54.5 46.3
+II: Baseline (DINOv2 obj.) 47.2 35.7
+III: Multi-view DINOv2 49.7 35.9
+IV: Multi-view iBOT 55.7 46.4
+V: +Image-level objective 66.7 58.1
+VI: </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>+Teacher seeing more views 70.2 61.5
+VII: +Increase scale (Poincar3) 83.7 74.5
+0 50k 100k 150k 200k 250k
+Pretraining steps
+20
+30
+40
+50
+60
+70
+80ScanNet PCK@25px
+Ours</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our approach prioritizes geometric over semantic performance (see Tab. 6, Appendix). This is
+consistent with evidence that semantic and spatial information are processed by different neural
+systems in the human brain (Binder et al., 2009; Epstein et al., 2017). Furthermore, we do not have
+the computational resources to match the size of DINOv3 (we use around 100x less compute). Yet,
+we significantly outperform previous approaches (see Fig. 9).
+We find that the representations degrade when hyper-parameters such as the EMA coefficient and
+weight decay deviate from those of DINOv3. We also find it crucial to follow prior work when
+adapting the learning rate to batch size (Goyal et al., 2018). This fragility has plagued self-distillation
+since its inception (Grill et al., 2020; Caron et al., 2021) and mitigating it constitutes interesting
+future work. Finally, while our training is </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>self-supervised, frame selection within video sequences
+is currently handcrafted. Automating this selection is an interesting direction for future work.
+9
+Preprint.</blockquote></details></li><li><strong>Contribution clarity — pages 21–22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our protocol follows El Banani et al. (2024). In particular, we evaluate zero-shot correspondence
+directly, without any task-specific finetuning, by feeding a cluster of8covisible views of one scene
+through a backbone in a single multi-view forward pass and tracking100query points sampled
+in the first view across the remaining7. Ground-truth tracks come from reprojecting each query
+point through its ground-truth depth, pose, and intrinsics into every other view, with a depth-based
+occlusion test discarding views where the reprojected point is not actually visible; points never
+visible in any other view are dropped entirely. We evaluate on NA VI and ScanNet (both with metric-
+scale ground-truth depth) and MegaDepth (unscaled SfM depth).
+21
+Preprint.
+We score two different ways of reading off a correspondence from the same forward pass.Feature
+matchingtakes the source query point&#x27;s dense </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>feature (bilinearly sampled at its exact sub-patch
+location) and finds its 1-nearest-neighbor by cosine similarity in each target view&#x27;s dense feature
+map.Attention matchinginstead reads the correspondence directly off the backbone&#x27;s own softmax
+cross-view attention: the source point&#x27;s query vector attends over every view&#x27;s keys, and the arg-
+max of that distribution restricted to a target view&#x27;s patch tokens is the match – this asks whether
+the model&#x27;s own attention agrees with correspondence, not just its output feature similarity. Both
+are read from features/attention at a specific network depth; since backbones differ widely in depth
+and in which blocks carry genuine cross-view mixing, we sweep four evenly-spaced relative depths
+(quarter-points of each backbone&#x27;s own valid block range) and, following common practice, report
+the single best-performing depth per backbone and </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We follow Chen et al. (2026). As the code is unpublished as of writing, we do our best to reim-
+plement the core protocol. In particular, we fit a Poincar ´e adapter per scene on20held-out Scan-
+Net++ (Yeshwanth et al., 2023) scenes, using a chronological80/20split of each scene&#x27;s frames
+and sweeping stridess∈{2,...,60}, and measureR 2 on the held-out pairs. AsR 2 is unbounded
+below, its raw mean is dominated by a few degenerate scenes; we therefore report the clipped mean
+R2 = mean (max(0,R 2))together with the fraction of scenes exceedingR 2&gt;0andR 2&gt;0.3.
+All values are the best over four relative encoder depths and are averaged over10adapter seeds (±
+95%-confidence interval where the scene set is fixed and shared across methods). Methods marked
+MV additionally receive an eight-frame context window with a frame spacing of5, activating their
+cross-view attention; only the anchor frame&#x27;s </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +368,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +384,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-09-30</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-01 10:43:35</li><li>Last seen by Paper Scout: 2026-10-01 10:43:35</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-09-30</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-01 10:43:35</li><li>Last seen by Paper Scout: 2026-10-02 10:42:07</li></ul>
             <ul><li>arXiv: 2609.39227</li><li>arXiv IDs: 2609.39227</li></ul>
           </section>
           <section class="detail-panel">

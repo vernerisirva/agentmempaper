@@ -1,22 +1,25 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-01](2026-10-01.md).
+Latest daily digest: [2026-10-02](2026-10-02.md).
 
-# Paper Scout Digest - 2026-10-01
+# Paper Scout Digest - 2026-10-02
 
 ## Run Summary
 
-- **Run ID:** 101
-- **Candidates fetched:** 140
-- **New unique papers:** 134
-- **Relevant:** 19
-- **Maybe relevant:** 11
-- **Irrelevant:** 110
-- **Source summary:** arxiv: 40, openalex: 100, semantic_scholar: 0
+- **Run ID:** 102
+- **Candidates fetched:** 101
+- **New unique papers:** 97
+- **Relevant:** 7
+- **Maybe relevant:** 4
+- **Irrelevant:** 90
+- **Source summary:** openalex: 100, semantic_scholar: 1
 
 ## Source Warnings
 
-- arxiv: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
+- arxiv failed for 'deep research agent': timeout error for https://export.arxiv.org/api/query?search_query=all%3Adeep+AND+all%3Aresearch+AND+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: The read operation timed out
+- arxiv failed for 'autonomous research agent': timeout error for https://export.arxiv.org/api/query?search_query=all%3Aautonomous+AND+all%3Aresearch+AND+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: The read operation timed out
+- arxiv failed for 'AI scientist': http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+scientist%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'automated literature review': http error for https://export.arxiv.org/api/query?search_query=all%3Aautomated+AND+all%3Aliterature+AND+all%3Areview&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
@@ -28,74 +31,12 @@ Latest daily digest: [2026-10-01](2026-10-01.md).
 
 ## Highly Relevant
 
-### [Can AI Scientists Change Their Minds? Prior-Evidence Conflict in Synthetic Universes](https://doi.org/10.48550/arxiv.2609.36726)
+### [YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents](https://www.semanticscholar.org/paper/a2f117bdfc10626be7e48df5eacd241f408c96e7)
 
-- **Authors:** Kargi Chauhan
-- **Date:** 2026-09-29
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
+- **Authors:** Yoonkyu Woo, Woo-Jin Lee, Jin-Xia Huang
+- **Date:** 2026-10-01
+- **Source:** semantic_scholar
+- **Relevance:** relevant (98/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Can a scientific agent distinguish a law it inferred from evidence from one it merely recognizes? We introduce Synthetic Universes, a controlled benchmark that pairs canonical famous worlds with matched twisted twins governed by nearby noncanonical mechanisms. We evaluate each reported law twice: by executing it on...
-
-### [DAGent: Evaluate-then-Grow Planning for Deep Research Agents](https://arxiv.org/abs/2609.39154v1)
-
-- **Authors:** Hanwen Liu, Yuanfu Sun, Qiaoyu Tan
-- **Date:** 2026-09-30
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research tasks require agents to navigate large knowledge spaces, synthesize evidence across many sources, and adapt their plans as findings emerge. Directed acyclic graph (DAG)-based multi-agent systems suit this setting because they support parallel execution and isolate each sub-task within a focused depende...
-
-### [DeepRewind: Predicting and Repairing Premature Commitments in Deep Research Agents](https://doi.org/10.48550/arxiv.2609.36344)
-
-- **Authors:** Amirhossein Abaskohi, Amirhossein Dabiriaghdam, Lele Wang, Peter West, Giuseppe Carenini
-- **Date:** 2026-09-28
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep-research agents conduct long-horizon investigations through iterative search, evidence evaluation, belief revision, and synthesis. However, they may commit to claims before sufficient evidence is available, causing later reasoning to reinforce an incorrect interpretation. We introduce DeepRewind, an additive co...
-
-### [Experimental Experience Modeling for Autonomous Research](https://arxiv.org/abs/2609.39392v1)
-
-- **Authors:** Wenda Wei, Yingchen Zhang, Ruqing Zhang, Jiafeng Guo, Daiting Shi, Xueqi Cheng
-- **Date:** 2026-09-30
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Autonomous research agents can generate hypotheses and conduct experiments, but experimentation remains a major source of computational cost. A fundamental challenge is deciding which experiments are worth running, particularly when prior evidence is insufficient to resolve uncertainty. Yet current research agents l...
-
-### [Search Shapes Conclusions: Auditing Evidence Selection Bias in Deep Research Agents](https://arxiv.org/abs/2609.39026v1)
-
-- **Authors:** Shuyao Xiao, Shengling Wang, Xuan Chen, Ke Chao, Ming Cui, Feifei Qian, et al.
-- **Date:** 2026-09-30
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep Research agents synthesize evidence into cited reports, yet a well-cited report can still reach a misleading conclusion. Citation correctness checks whether cited sources support individual claims. It does not show whether adaptive search exposed a representative view of all documents made available for evaluat...
-
-## Maybe Relevant
-
-### [Empathy in the Soil, Agents on the Desktop: Why Plant Pathology Needs a Scientist-in-the-Loop AI Paradigm](https://doi.org/10.5423/ppj.oc.07.2026.0091)
-
-- **Authors:** Junhyun Jeon
-- **Date:** 2026-09-30
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Plant pathology faces a cognitive bottleneck caused by the growing volume of biological data. Addressing it requires a shift from passive chatbots to autonomous AI research agents that operate in Goal-Action-State cycles. Researchers can set up a local, desktop-based agentic framework that combines semantic discover...
-
-### [AREX-2: Advancing Self-Improving Agents through Long-Horizon Reflective Tasks](https://arxiv.org/abs/2609.38288v1)
-
-- **Authors:** Hongjin Qian, Chaofan Li, Kun Luo, Wenqing Wei, Jianlyu Chen, Shuqi Lu, et al.
-- **Date:** 2026-09-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** We present AREX-2, an effort to advance the self-improving capability of LLM agents, which we define as the ability to iteratively refine a solution at test time. This ability rests on two complementary capabilities: reflection, which produces a solution better than the current one, and long-horizon execution, which...
+- **Tags:** deep-research-agents, ai-scientist, research-memory
+- **Abstract summary:** End-to-end research agents can now produce complete scientific papers, yet manuscript claims often diverge from executed experiments. This gap is structural: research state, failure histories, and claim-evidence alignment are not maintained as persistent, verifiable state across long-horizon pipelines. We present Yo...

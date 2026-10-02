@@ -1,21 +1,24 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-01](2026-10-01.md).
+Latest daily digest: [2026-10-02](2026-10-02.md).
 
-# Paper Scout Digest - 2026-10-01
+# Paper Scout Digest - 2026-10-02
 
 ## Run Summary
 
-- **Run ID:** 30
-- **Candidates fetched:** 83
-- **New unique papers:** 81
-- **Relevant:** 4
+- **Run ID:** 31
+- **Candidates fetched:** 77
+- **New unique papers:** 76
+- **Relevant:** 2
 - **Maybe relevant:** 0
-- **Irrelevant:** 79
-- **Source summary:** arxiv: 6, openalex: 76, semantic_scholar: 1
+- **Irrelevant:** 75
+- **Source summary:** arxiv: 0, openalex: 76, semantic_scholar: 1
 
 ## Source Warnings
 
+- arxiv failed for 'Engram language model': http error for https://export.arxiv.org/api/query?search_query=all%3AEngram+AND+all%3Alanguage+AND+all%3Amodel&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'conditional memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22conditional+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'n-gram memory transformer': timeout error for https://export.arxiv.org/api/query?search_query=all%3An+AND+all%3Agram+AND+all%3Amemory+AND+all%3Atransformer&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: The read operation timed out
 - openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
 - openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.

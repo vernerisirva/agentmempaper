@@ -59,16 +59,212 @@
             <p>As preferences, goals, and facts change, LLM agents must use the current state while earlier versions remain in context. Yet they can answer with an old value of the same variable, a failure that we call stale binding. To study when models use outdated information and why, we introduce Controlled In-Context Memory (...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers exceptional depth, providing clear definitions, thorough mechanistic analyses, formal theoretical bounds on RoPE attention under multiple updates, and robust empirical validation across several model architectures with strict controls.</p>
+      <p>The manuscript acknowledges limitations clearly, noting that synthetic/controlled logs may not fully mirror wild agent traces, that probe recoverability does not imply native utilization, and that attention routing requires white-box model access, calibrated heads, and structured parsing.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-02T10:42:39.581673+00:00.</p>
+        <p>Coverage: 159067 of 159067 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As preferences, goals, and facts change, LLM agents must use the current state
+while earlier versions remain in context. Yet they can answer with an old value
+of the same variable, a failure that we callstale binding. To study when models
+use outdated information and why, we introduce Controlled In-Context Memory
+(CICM), a benchmark for tracking and using updated information in conversations
+and agent logs. We observe that even frontier reasoning models can fail to recover
+the current state. We find that in open-source models probes can still recover the
+updated value when the model answers with an old one, pointing to a failure to
+select information that remains available. Component tests in Qwen and Pythia
+identify a mechanism for this selection failure: attention drift, where attention
+favors old values over the current one when producing an answer. We study a
+one-layer transformer </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>other-variable confusion across dialogue and agent-log tasks, connecting controlled mechanism
+tests with complex histories that challenge frontier models.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>chosen. Measurements and component interventions in various model families identifyattention
+drift: attention favors old values over the current one, affecting which value reaches the answer.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>how several old values can together receive more attention than the current value, making the
+competition behind selection explicit.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>across Qwen, Llama, Mistral, and Gemma without changing model weights. Adjusting the
+intervention for each input corrects most old-value errors while preserving nearly all initially
+correct answers.</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>When a model returns an old value, one possible explanation is that it has lost the current value from
+its internal representation. However, a linear probe can still recover information about the current
+value from the model&#x27;s hidden state, even when its answer is incorrect. On old-value errors, a linear
+probe assigns the current value a mean probability of 84.8% in Qwen and 82.2% in Llama, against
+3.2–6.4% when the value labels are randomly reassigned (Figure 5a). Other-variable errors show
+similar recoverability (Appendix Table 6). The probe reads the standardized final-layer hidden state
+hi at the answer position in dialoguei. With learned weightsW and biasb, denotedϕ= (W,b) , it
+assigns each of the 21 candidate valuesv the probabilityqϕ(v|h i) = softmax(Whi +b)v. We fit
+5
+Old-value vs. correct answers (controlled dialogues, two models)
+(a) Still decodable
+current-value probe </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Attention drift is not specific to one model. We useattention driftfor attention giving greater priority
+to old values than to the current value. Comparing each updated dialogue with one of equal token
+length but no conflicting reassignment, conflicting updates shift attention and query–key matching
+toward old values in five models with reliable controls, including Llama and answers that are correct
+(Appendix B.10). Redirecting that attention changes which value is answered in Qwen, Llama and
+Mistral (Section 6), so the shift is not incidental to the answer. In Qwen, the same measure separates
+failures from correct answers. For each head at the answer position, let Aold andAcurrent be the
+attention masses summed over old and current assignments, and define the old-value share as
+ρold = Aold
+Aold +A current
+.(1)
+Averaged across heads and adjusted for prompt length, the share is 19.4 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A shift in attention on failures is still a correlation. By replacing components we can causally test
+whether they produce the answer.
+Attention selects positions through query–key matching and transmits their information through
+value vectors and the output projection (Vaswani et al., 2017). For 120 failed synthetic overwrite
+prompts, we construct successful counterparts with identical candidate values and positions, renaming
+earlier assignments to remove competition for the queried variable (Appendix B.6). We then replace
+components in failed runs with their successful counterparts (Qwen rows in Table 1). Recovery
+concentrates in late hidden states and old-value keys, implicating late selection and competing keys.
+For the current-minus-old answer-score gapg, we measure recovery after replacement as
+R= 100 greplaced−g failed
+gsuccessful−g failed
+.(2)
+HereR= 100restores the successful </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>old
+values corrects 38.4% of held-out old-value an-
+swers, against 8.7% for layer-matched random
+sets, with discovery and evaluation on separate
+examples. The recovery concentrates in the
+query–key path, where matching favors old as-
+signments while the value pathway keeps transmitting whatever is attended. Replacing selected
+inputs to a single head&#x27;s key recovers 75% of the answer-score gap, against 6% for layer-matched
+random inputs (Table 1). As in the larger models, the current value remains readable on these failures.
+Appendix B.8 gives the full experimental results.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our experiments show that models can return an old value even when the current value remains recov-
+erable from their hidden states. We provide a theoretical explanation using a one-layer Transformer
+with a simplified copying mechanism: both values remain available, and the probability of copying
+each value equals the attention weight on its position. This setting lets us examine how selection can
+fail without information being lost.
+Consider a current valuevc and an old valuevo, with attention scoressc,so and distancesdc &lt;d o
+from the query. Their selection probabilitiesP(·) depend on the difference between their attention
+scores. For a shared content key with rotary position encoding (Su et al., 2024), this relationship
+becomes
+logP(vc)
+P(vo) = sc−so
+T = 2
+T
+X
+b
+wb sin(mθb +ψb) sin
+δθb
+2
 
-        <ul></ul>
+,(3)
+whereT &gt;0 is the softmax temperature,δ=d o−dc,m= (d c +do)/2, andwb,θb,ψb denote </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>at
+current-value positions and subtract it at old-value positions:
+s′
+j =s j +β1[j∈C]−β1[j∈O], a j = esj
+P
+ℓesℓ
+, a ′
+j = es′
+j
+P
+ℓes′
+ℓ
+.(4)
+Heresj denotes the original attention score, whileaj anda′
+j are the attention weights before and after
+routing, normalized over all prompt positions. The biasβ shifts attention toward the current value
+and away from old values. We consider two forms of routing: a fixed bias calibrated in advance, and
+an adaptive bias that adjusts to each input to reach a target current-to-old attention ratio, subject to a
+cap. Heads and routing settings are selected before testing, without using test labels (Appendix E).
+Table 2: Accuracy and preservation are percentages; old-error correction is shown as counts.
+Accuracy↑Old errors Preserved
+Model Original Routing Reminder corrected↑ ↑
+Adaptive attention bias
+Qwen2.5-3B 16.46 95.21 99.27 678/711 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>98.73
+Llama-3.2-3B 27.71 93.12 68.85 514/541 100.00
+Llama-3.1-8B 41.71 88.63 65.38 395/467 100.00
+Mistral-7B 5.42 81.35 98.44 564/674 98.08
+Gemma-2-9B 47.08 91.88 82.81 407/455 100.00
+Fixed attention bias
+Qwen2.5-7B 37.60 68.8588.02208/487 100.00
+Qwen2.5-14B 40.52 41.6798.5413/491 98.46
+Reminder adds the parsed current value before the query. Old errors corrected shows corrected/initial old-value
+errors; Preserved shows the percentage of initially correct answers retained.
+Adaptive routing improves current-value retrieval while largely preserving answers that were already
+correct. Across the five adaptive configurations, absolute accuracy gains range from 44.79 to 78.75%,
+with 98.08 to 100% of initially correct answers preserved (Table 2). These improvements depend on
+which positions and heads are targeted: all five gains exceed the observed ranges of random-head
+and random-position </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our controlled dialogues and constructed operational logs do not estimate failure prevalence in
+deployed agents. Internal measurements only cover open-source models, with different patterns
+across comparisons. Probes establish recoverability, while known-answer steering establishes output
+control. Routing requires internal access, labeled calibration, and a structured parser.</blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Replacing the upstream inputs to L8H2&#x27;s key recovers 0.86 of
+the QK score gap and 0.75 of the final answer-score gap, and the corresponding random-set upper
+95% bounds are 0.16 and 0.17. The upstream components, ranked on discovery data, are L7H7,
+L6H2, L7H4, L5H11, L4H11, L5H10, L3H0, L6H6, L5H8, L3-MLP, L3H4, and L4H1. These results
+identify inputs that affect key matching, but the tests do not establish that these components encode
+assignment order.
+Table 10: Held-out interventions in Pythia-160M. Random controls use equally sized sets matched by
+layer; entries are mean fractions or normalized recovery.
+Intervention Measured effect Targeted Random
+Remove heads favoring old
+values
+Fraction of errors corrected 0.38 0.09
+Remove heads favoring the
+current value
+Fraction switching to an old value 0.04 0.03
+Replace inputs to L8H2&#x27;s key QK score-gap recovery 0.86 0.04
+Answer-score-gap </blockquote></details></li><li><strong>Contribution clarity — page 30</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The 1,200 CICM dialogues (Appendix D) cover three variables, seven values each, and six combina-
+tions of competitor distances. A deterministic identifier hash assigns 40 of each cell&#x27;s 200 dialogues
+to calibration and 160 to testing. Adaptive calibration splits into 120 discovery and 120 validation
+dialogues. Variables, vocabulary, and templates are not held out.
+With weights frozen, we differentiate the current-minus-strongest-old first-token answer score with
+respect to a gate on each head&#x27;s intervention, at zero intervention (m= 1 , bias cap 8). Scores combine
+tokenization variants by log-sum-exp. Heads are ranked by average gradient on discovery old-value
+errors. First-token collisions are excluded from this objective, not from full-response evaluation. The
+gradient measures local sensitivity, not each head&#x27;s independent correction effect. Validation tests
+the highest-ranked </blockquote></details></li><li><strong>Contribution clarity — pages 30–31</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>excluding head-selection uncertainty.
+Targeted routing outperforms random controls, and reversing it harms accuracy (Table 13). We test
+16 random-position sets matching positive/negative token counts and excluding controlled values.
+30
+Table 12: Frozen routing settings and held-out retrieval outcomes. Counts show old-value errors
+corrected and originally correct answers preserved. Gain is the equally weighted group estimate
+(percentage points), with its 95% bootstrap interval.
+Model Heads Setting Corrected Preserved Group gain [95% interval]
+Qwen2.5-3B 32m= 4678/711 156/158 78.37 [74.51, 82.21]
+Llama-3.2-3B 32m= 4514/541 266/266 64.60 [59.40, 69.63]
+Llama-3.1-8B 16m= 4395/467 400/400 46.90 [41.99, 51.93]
+Mistral-7B-v0.3 32m= 2564/674 51/52 75.01 [70.33, 79.12]
+Gemma-2-9B 32m= 4407/455 452/452 45.06 [39.63, 50.99]
+Qwen2.5-7B 8β= 8208/487 361/361 31.80 [27.88, 35.76]
+Qwen2.5-14B 8β= </blockquote></details></li><li><strong>Contribution clarity — page 31</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>213/491 383/389 1.17 [0.14, 2.24]
+Adaptive runs also test 64 random-head sets matching counts per layer and excluding selected heads.
+They use the same rule, but adaptive biases can differ: these are not matched-norm controls. Reverse
+routing recomputes its bias in the opposite direction. The reminder comparison is descriptive, without
+a separate paired significance test against routing.
+Table 13: Control gains in retrieval accuracy (percentage points). Random columns report means and
+empirical 95% ranges across sampled sets, not confidence intervals for paired effects. A dash means
+the control was not run.
+Model Random positions Random heads Reverse routing
+Qwen2.5-3B0.08 [−0.27,0.38]−9.98 [−14.42,−1.28]−16.35
+Llama-3.2-3B−0.17 [−0.48,0.07]−5.05 [−12.19,0.88]−27.08
+Llama-3.1-8B−0.36 [−0.69,0.00]−2.52 [−10.90,3.05]−28.15
+Mistral-7B-v0.30.03 [−0.10,0.21]−0.49 </blockquote></details></li><li><strong>Contribution clarity — pages 39–40</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>deferred histories are correct against 16/17 linearized controls
+and 17/17 snapshots, with no truncation, and five scenarios fail only in the deferred form and one only
+in the linearized form (exact McNemarp= 0.22 ). Four separate development scenarios give 2/4, 4/4,
+39
+Table 21: Current-state accuracy on complex operational histories. The primary panels use the same
+40 fresh paired scenarios, and brackets give Wilson 95% intervals over all requests. Truncation at the
+output cap counts as no answer. The exploratory panel reuses four separate pilot scenarios and is
+reported as counts. Sol and DeepSeek use high reasoning.
+Model and cohort Full history Current-state snapshot
+GPT-5.6 Sol, confirmation 9/40 40/40
+Accuracy [95% interval] 22.5% [12.3, 37.5] 100% [91.2, 100]
+Claude Opus 4.8, confirmation 18/40 (9 truncated) 40/40
+Accuracy [95% interval] 45.0% [30.7, 60.2] 100% [91.2, </blockquote></details></li><li><strong>Contribution clarity — page 40</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>100]
+Completed-answer accuracy 18/31 (58.1%) 40/40 (100%)
+GPT-5.6 Sol, exploratory 0/4 4/4
+DeepSeek V4 Pro 0813, exploratory 2/4 4/4
+Claude Opus 4.8, exploratory 0/4 4/4
+Claude Sonnet 5, exploratory 0/4 (4 truncated) 4/4
+and 4/4. Every error names an old occupant of the queried slot. The remaining 23 frozen scenarios
+were not requested, and this exploratory comparison reports the complete pre-specified prefix.
+Table 22: Dependency-aware logs: Claude Opus 4.8 on 1,024-line scenarios with pending operations
+resolved by later lines. The linearized control has the same effective operations at the same line
+numbers without cross-line dependency, and brackets give Wilson 95% intervals.
+Cohort Deferred history Linearized control Snapshot
+Confirmation prefix (17 scenarios) 12/17 16/17 17/17
+Accuracy [95% interval] 70.6% [46.9, 86.7] 94.1% [73.0, 99.0] 100% [81.6, 100]
+Development (4 scenarios) </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +303,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

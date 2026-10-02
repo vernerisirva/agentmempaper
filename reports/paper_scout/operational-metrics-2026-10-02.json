@@ -1,0 +1,547 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 12,
+    "non_promoted": 0,
+    "papers_attempted": 3,
+    "papers_successfully_assessed": 3,
+    "papers_walked": 7,
+    "promoted": 3,
+    "retry_eligible_failures": 4,
+    "skipped_before_model": 4,
+    "technical_failures": 4,
+    "unavailable_manuscripts": 3
+  },
+  "budget": {
+    "gemini_calls": 3,
+    "gemini_input_tokens": 171713,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3826,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 3,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.02111348,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "computer_vision": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 3,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-10-02T10:43:39.391940+00:00",
+  "cost": {
+    "deepseek_calls": 3,
+    "deepseek_cost_usd": 0.02111348,
+    "deepseek_input_tokens": 155143,
+    "deepseek_output_tokens": 1933,
+    "gemini_calls": 3,
+    "gemini_input_tokens": 171713,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3826,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 799,
+    "papers_discovered": 3494
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 19,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 398,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2609.38866",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2609.38866",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "When Context Changes: Understanding Update Failures in LLMs",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.39284",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2609.39284",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "EngramBench: A Capability-Grounded Benchmark for Skill-Evolution Harnesses",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23068931",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23068931",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Salience, Ranking, and Metabolism: Three Conflated Signals in Long-Running Agent Memory Systems",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.38353",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2609.38353",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "TAGGRAPH: Tag-Augmented Graphs for Graph Retrieval of Agent Persistent Histories",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2609.38275",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2609.38275",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "When Correct Memory Goes Wrong: Fuzzing Persistent Memory Use in LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23040522",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23040522",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-01T10:44:08.069901+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Data and scripts for: Same answers, different scores: an empirical study of evaluation choices in long-term memory benchmarks for LLM agents",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 2162,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2609.39284",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23068931",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2609.38353",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2609.38275",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23040522",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 236,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.1142/s0218001426550189",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.1142/s0218001426550189",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "An Enhanced RT-DETR with Selective Boundary Aggregation and Tri-Focal CIoU Loss for Real-Time Object Detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1186/s13677-026-00976-5",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.1186/s13677-026-00976-5",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Real-time YOLO across Cloud, edge, and IoT: architectures, optimisations, and deployment patterns",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1142/s0218001426550177",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.1142/s0218001426550177",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Toward Lightweight Fine-Tuning of YOLO via Guided Optimization for Cross-Domain Remote Sensing Object Detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.39227",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2609.39227",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Emergent Multi-View Geometry Through Self-Distillation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1007/s11263-026-03046-0",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.1007/s11263-026-03046-0",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "MC-PanDA++: Simpler, Stronger, and More Robust Domain-Adaptive Panoptic Segmentation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2609.39748",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2609.39748",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "FAST: Flow Any Scene Transformer",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 1066,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.1142/s0218001426550189",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.1186/s13677-026-00976-5",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.1142/s0218001426550177",
+            "outcome": "manuscript_unavailable",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.1007/s11263-026-03046-0",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2609.39748",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 3,
+        "high_relevance": 156,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2609.39154",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2609.39154",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DAGent: Evaluate-then-Grow Planning for Deep Research Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2609.39392",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2609.39392",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Experimental Experience Modeling for Autonomous Research",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2609.39026",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2609.39026",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Search Shapes Conclusions: Auditing Evidence Selection Bias in Deep Research Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.01097",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2610.01097",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2609.36071",
+            "rank": 7,
+            "selection": {
+              "canonical_id": "arxiv:2609.36071",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "LongCat-DeepResearch Technical Report",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.36344",
+            "rank": 9,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.36344",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DeepRewind: Predicting and Repairing Premature Commitments in Deep Research Agents",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 257,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2609.39392",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2609.39026",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2610.01097",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2609.36071",
+            "outcome": "track_slot_consumed",
+            "rank": 7
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.36344",
+            "outcome": "track_slot_consumed",
+            "rank": 9
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 8,
+        "high_relevance": 9,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.35578",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-30T10:20:13.801385+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "FactorEngram: Factorized N-gram Memory with Basis-Level Gating for Language Models",
+            "track": "engram"
+          }
+        ],
+        "ranked": 9,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "outcome": "not_assessed",
+            "rank": 1
+          }
+        ],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-10-02T10:42:27.050686+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

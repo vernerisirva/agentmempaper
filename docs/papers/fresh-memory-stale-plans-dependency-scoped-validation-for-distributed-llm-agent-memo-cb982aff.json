@@ -1,0 +1,251 @@
+{
+  "abstract_summary": "Distributed LLM-agent teams can read the latest shared facts and still act on an obsolete plan. A planner may derive an action from requirement $r_3$, another agent may commit $r_4$, and an executor may receive $r_4$ without replacing the plan derived from $r_3$. We call this \\emph{stale-plan execution}: state fresh...",
+  "alternate_urls": [
+    "https://arxiv.org/abs/2609.03340v1",
+    "https://arxiv.org/abs/2609.03340"
+  ],
+  "appeared_in_latest_run": false,
+  "arxiv_id": "2609.03340",
+  "authors": [
+    "Evan Chen",
+    "Shiqiang Wang",
+    "Christopher G. Brinton"
+  ],
+  "canonical_id": "arxiv:2609.03340",
+  "citation": "Fresh Memory, Stale Plans: Dependency-Scoped Validation for Distributed LLM-Agent Memory. Evan Chen, Shiqiang Wang, Christopher G. Brinton. 2026-09-03. https://arxiv.org/abs/2609.03340v1",
+  "detail_json": "papers/fresh-memory-stale-plans-dependency-scoped-validation-for-distributed-llm-agent-memo-cb982aff.json",
+  "detail_page": "papers/fresh-memory-stale-plans-dependency-scoped-validation-for-distributed-llm-agent-memo-cb982aff.html",
+  "doi": null,
+  "effective_sort_date": "2026-09-03",
+  "first_seen_at": "2026-09-04 11:22:45",
+  "first_seen_date": "2026-09-04",
+  "future_date": false,
+  "is_new": false,
+  "last_seen_at": "2026-09-06 11:03:01",
+  "last_seen_date": "2026-09-06",
+  "latest_relevant_date_bucket": 0,
+  "latest_revision_date": "2026-09-03",
+  "library_admission": "review",
+  "newly_discovered_in_latest_run": false,
+  "notified_at": "2026-09-04 11:24:20",
+  "notified_date": "2026-09-04",
+  "openalex_id": null,
+  "pinned": false,
+  "provenance": {
+    "curated": false,
+    "curation_note": null,
+    "date_source": "arxiv",
+    "first_seen_at": "2026-09-04 11:22:45",
+    "generated_at": "2026-10-04 11:17:26",
+    "last_seen_at": "2026-09-06 11:03:01",
+    "metadata_sources": [
+      "arxiv"
+    ],
+    "publication_date_confidence": "high",
+    "publication_date_precision": "day",
+    "publication_date_source": "arxiv",
+    "relevance_source": "deterministic screening",
+    "screening_source": "deterministic rules",
+    "source_ids": {
+      "arxiv": [
+        "2609.03340"
+      ]
+    }
+  },
+  "publication": {
+    "confidence": "high",
+    "date": "2026-09-03",
+    "display": "Published 2026-09-03",
+    "latest_revision_date": "2026-09-03",
+    "precision": "day",
+    "publication_date_confidence": "high",
+    "source": "arxiv",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
+    "year": "2026"
+  },
+  "publication_date": "2026-09-03",
+  "publication_date_confidence": "high",
+  "publication_date_precision": "day",
+  "publication_date_source": "arxiv",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
+  "publication_year": "2026",
+  "related_topics": [
+    "agent-memory"
+  ],
+  "relevance": {
+    "curation_note": null,
+    "decision": "maybe",
+    "public_label": "Review candidate",
+    "reason": "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.",
+    "review_status": null,
+    "score": 43,
+    "tags": [
+      "agent-memory"
+    ]
+  },
+  "relevance_decision": "maybe",
+  "relevance_label": "Memory architecture or policy",
+  "relevance_reason": "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.",
+  "relevance_score": 43,
+  "research_note": null,
+  "review_status": null,
+  "schema_version": "paper-scout-card-v2",
+  "scholarly_quality": {
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-09-06T11:04:38+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
+    "assessor_model": null,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.43,
+    "concerns": [],
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 68/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
+    "coverage": {},
+    "curation_note": null,
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": false,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "contribution_clarity",
+        "evidence_ids": [],
+        "excerpt": "hat the plan authorizing an action remains valid. We introduce PLANFENCE, a dependency-scoped action-validation protocol. Plans cite the exact",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "pages": [],
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
+        "excerpt": "ency or provide application-level choices between latency and freshness [16, 17, 18, 19]. PLANFENCEdoes not introduce another consistency model. It specifies which rec",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "pages": [],
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "pages": [],
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": null,
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": false,
+    "full_text_url": null,
+    "gate_version": null,
+    "manual_override": false,
+    "missing_information": [],
+    "overall_quality_score": 68,
+    "paper_type": "position_or_conceptual",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "promotion": {},
+    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "c5ac7428dc577a8ad97fe8caaf45a87bdbcbaa95f9e0f67cffe6d5947d87b124",
+    "status": "not_assessed",
+    "suppressed": false,
+    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+  },
+  "semantic_scholar_id": null,
+  "source": "arxiv",
+  "source_id": "2609.03340",
+  "source_ids": {
+    "arxiv": [
+      "2609.03340"
+    ]
+  },
+  "source_updated_date": "2026-09-03",
+  "sources": [
+    "arxiv"
+  ],
+  "ssrn_id": null,
+  "structured_card": {
+    "evidence_or_evaluation": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "key_contribution": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "limitations_or_uncertainty": {
+      "confidence": "high",
+      "provenance": "rule",
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
+    },
+    "method_or_system_type": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "relation_to_agentic_memory": {
+      "confidence": "low",
+      "provenance": "rule",
+      "value": "Agentic-AI connection exists, but memory focus is weak or indirect"
+    },
+    "research_relevance": {
+      "confidence": "low",
+      "provenance": "rule",
+      "value": "Review candidate"
+    }
+  },
+  "structured_sections": {
+    "evidence_or_evaluation_signals": [],
+    "method_or_system_type": "Not extracted yet",
+    "possible_key_claims": [],
+    "relation_to_agentic_memory": "Agentic-AI connection exists, but memory focus is weak or indirect"
+  },
+  "tags": [
+    "agent-memory"
+  ],
+  "title": "Fresh Memory, Stale Plans: Dependency-Scoped Validation for Distributed LLM-Agent Memory",
+  "url": "https://arxiv.org/abs/2609.03340v1"
+}

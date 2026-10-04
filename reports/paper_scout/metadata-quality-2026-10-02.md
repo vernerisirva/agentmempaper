@@ -8,7 +8,7 @@
 - **Highly relevant without exact date:** 1
 - **Biological/cognitive high-relevance risks:** 2
 - **Highly relevant with generic/peripheral reasons:** 0
-- **Future or imprecise source dates:** 2
+- **Future or imprecise source dates:** 3
 - **Persistent-memory reason without explicit memory evidence:** 0
 - **High-scoring agentic-AI papers without explicit memory evidence:** 0
 - **Maybe papers with core memory phrases:** 27
@@ -58,6 +58,7 @@
 ## Future Or Imprecise Source Dates
 
 - **Theory-Grounded LLM Societies for Emergent Coordination** — relevant, 2026, precision=year, source=crossref-published-print
+- **agmi: Agent Memory Integrity, a conformance test suite for tamper evidence in AI agent memory and checkpoint stores** — relevant, 2026-10-03, precision=day, source=openalex
 - **Write-Time Admission Control for Persistent-Memory Security in LLM Agents** — maybe, 2027-01-01, precision=day, source=openalex
 
 ## Persistent-Memory Reasons Without Explicit Memory Evidence

@@ -59,16 +59,240 @@
             <p>Long-term memory systems for large language models (LLMs) have gained popularity for extending reasoning capabilities across applications. Current memory systems rely on LLM agents to organize and consolidate memory, resulting in costly, inefficient write operations. To address this limitation, we propose MemFit, a...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript provides a well-motivated architectural alternative to costly LLM-driven memory consolidation, supported by solid experimental methodology, meaningful baselines, multi-metric evaluations, and comprehensive ablation analyses. The claims are fully aligned with the empirical findings.</p>
+      <p>The authors clearly acknowledge the inherent trade-off of append-only storage without consolidation, noting that multi-hop synthesis across distant sessions becomes harder at retrieval time. They also document limitations regarding supported modalities and privacy risks associated with verbatim storage.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-05T11:10:36.159956+00:00.</p>
+        <p>Coverage: 81405 of 81405 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory systems for large language models (LLMs) have gained pop-
+ularity for extending reasoning capabilities across applications. Current memory
+systems rely on LLM agents to organize and consolidate memory, resulting in
+costly, inefficient write operations. To address this limitation, we proposeMemFit,
+a long-term memory system for conversational agents that reduces the cost and
+latency of memory operations. Unlike existing systems that rely on expensive LLM
+calls for memory construction or discard surface-level details through compression,
+MemFit stores each turn verbatim in an append-only store with near-instantaneous,
+LLM-free insertion, indexing turns with segment summaries rather than replacing
+them. Additionally, MemFit uses an LLM-free, multi-path retrieval strategy that
+combines lexical and semantic signals with cross-encoder reranking over caption-
+augmented </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>semantically similar memories are retrieved. These limitations raise a central research question:
+Can a long-term memory system achieve efficient storage and precise retrieval without relying on
+frequent LLM calls?
+In this paper, we introduce MemFit, a long-term memory system for conversational agents that
+addresses this critical question by keeping the LLM out of the write path and out of the search itself.
+As illustrated in Figure 1, firstly, our system replaces computationally expensive, LLM-driven storage
+with anappend-only episode store: each turn is stored verbatim and indexed by a lexical signal,
+BM25 (Robertson &amp; Zaragoza, 2009), and an embedding signal, so insertion costs an encoder pass
+rather than an LLM call, and no stored content is rewritten as the conversation grows. A second
+layer summarizes each conversational segment in a single call and records the turns it was </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>built
+from. This means that the summaries index the store rather than compress it, leaving the original
+interaction content retrievable. Since nothing is merged or discarded at write time, a superseded
+fact and its correction both survive with their dates, and the choice between them is deferred until
+the question is known. Secondly, to ensure precise retrieval, MemFit uses anLLM-free retrieval
+pipeline, in which both indexes score the store, two additive expansions widen the candidate pool,
+and a cross-encoder (Nogueira &amp; Cho, 2019) decides the final order. The system further supports
+both textual and multimodal settings via atext-image fusiondesign, where detailed image captions
+are embedded directly into the searchable episode text, enabling visual content to be retrieved through
+the same lexical and semantic pathways as text.
+To summarize, the primary contributions of this work are </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Memory representation. Each utterance in H becomes onememory episodewritten as ei =
+(xi,zi,gi,mi), where the formatted text xi is labeled with time and speaker (e.g.,[Time: 2023-
+05-12] [Speaker: Lena] I adopted a golden retriever yesterday.), zi =f enc(xi)∈R d is the
+L2-normalized embedding of xi from a frozen sentence encoderfenc,gi is a global sequence number
+for temporal ordering, and mi is the structured metadata, including fields such as timestamps, speaker
+identifiers, and session and turn identifiers used for filtering and scoring. This granularity is deliberate
+because it matches the unit each benchmark annotates as gold evidence and the unit an answer
+usually needs, so no answer is split across a boundary the system chose for itself, and retrieval is
+scored at the granularity the benchmark defines. In the multimodal setting, an image-bearing turn
+additionally carries its image </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>identifier and caption, appended to xi as structured text ( [Image
+D1:IMG_001: a golden retriever on a beach...] ), which makes image content
+searchable through the same lexical and semantic pathways used for text; we term thistext-image
+fusion. We source captions from ground-truth annotations when available; otherwise, we generate
+them with a multimodal large language model (MLLM).
+Episode store and indexes. Episodes are stored in anappend-only store M={e 1,...,e N} under
+two indexes that answer different kinds of questions about the same text. The first is a BM25 index
+over the tokens of xi, holding the term frequencies of each episode and the document frequency of
+each term, so that a bag of query terms scores the store in one pass over the postings of those terms,
+touching only the episodes in which one of them occurs; this is the signal that matches a name, a
+date, or a rare noun </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TextTiling (Hearst, 1997) segments consecutive episodes
+without an LLM by comparing their embeddings across each gap. At every gap, the cosine similarity
+between the mean embeddings of the b episodes on either side gives a coherence score, with
+b= max(3,round(√n/2)) forN stored episodes, and a boundary is placed at each local minimum
+whose depth below its neighboring peaks exceeds µd +σd/2, whereµd andσd are the mean and
+standard deviation of the depth over all gaps. Every resulting segment of at least three episodes is
+then summarized in a single LLM call that sees up to 14 evenly spaced member excerpts and returns
+two sentences (≤200 tokens). Each summary is stored alongside the episodes, with its members&#x27;
+identifiers as provenance and its own embedding, and retrieved by the same hybrid score. Summaries
+deliberately do not compress the store: the episodes they describe remain verbatim </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Once the store has been built, it is used for all downstream query answering. When a user or
+evaluation benchmark poses a queryq (e.g., a factual question, a temporal reasoning task, or a visual
+search over shared images), retrieval proceeds in four stages, as illustrated in Figure 2: candidate
+generation over both indexes, two additive expansions of the candidate pool, a cross-encoder rerank
+that fixes what the reader sees, and then final answer extraction.
+Stage 1: Hybrid candidate generation. Let zq =f enc(q) denote the L2-normalized query em-
+bedding produced by the same frozen sentence encoder used during storage. Two paths score the
+stored episodes: alexical path, lex(q,xi) =BM25(q,x i), and asemantic path, the cosine similarity
+sem(zq,zi) =z⊤
+i zq, computed for every episode at once as the matrix-vector product Zzq. The top
+nscan = 60 episodes from each path form a candidate </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>union, over which the two scores are min-max
+normalized and combined convexly,
+si =α· dsem(zq,zi) + (1−α)· clex(q,xi),(1)
+where dsem and clex denote the two scores after min-max normalization over the union, and α is a
+hyperparameter (by defaultα= 0.7 ). Since BM25 is unbounded while cosine similarity is not, their
+raw values share no scale, so normalizing before combining makes the two signals comparable. Each
+candidate additionally receives additive metadata boosts when the query mentions a specific speaker
+(+0.10), year (+0.05), or month (+0.08) that matches the episode&#x27;s metadata, encouraging episodes
+from the queried time period or speaker to surface. Because the boosts are applied after normalization,
+a boost is a fixed fraction of the observed score range rather than an arbitrary offset between two
+scales.
+Stage 2: Additive candidate expansion. In practice, candidate generation </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is the binding constraint
+for retrieval: far more questions are lost because the gold turn never enters the candidate pool than
+because it is ranked too low within it. To address this, two expansions widen the pool. First, the
+summary layer is searched with the same hybrid score, and the highest-scoring summaries pull
+their member episodes into the pool through their provenance. This means that a summary that
+5
+Preprint. Under review.
+matches the query retrieves the turns it was built from. Second, pseudo-relevance feedback re-runs
+candidate generation with the 12 rarest terms, by inverse document frequency, from the two top-
+ranked episodes; this targets multi-hop questions, whose two supporting turns lie in different sessions
+where a single query finds only one. Both expansions are strictlyadditivebecause they append results
+to the candidate pool. Therefore, expansion can only add </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evidence the first stage missed and can
+never evict what it found.
+Stage 3: Reranking and pack assembly. Once the candidate pool is generated, a cross-encoder
+scores the top 50 first-stage candidates, together with every expansion candidate, against theoriginal
+question. The lexical and semantic scores therefore decide only membership in the candidate pool,
+not the final order, so their differing scales stop affecting the ranking. Because a cross-encoder scores
+a two-sentence summary and a raw turn on different text distributions, we standardize scores within
+each kind before ordering, so a summary holds a pack slot only if it ranks as well among summaries
+as an episode does among episodes. Thek= 10 highest-ranked candidates form the collectionHk,
+and every retrieved episode brings the turns within w= 1 of it in the same session, restoring the
+context a short reply depends on without a </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>covering six question types:
+single-session user, assistant, and preference; multi-session; knowledge update; and temporal
+reasoning.
+Baselines.We compare MemFit against leading memory systems, MemoryBank (Zhong et al.,
+2024), MemGPT (Packer et al., 2023), MemoryOS (Kang et al., 2025), A-MEM (Xu et al., 2025),
+LightMem (Fang et al., 2025), Mem0 (Chhikara et al., 2025), and SimpleMem (Liu et al., 2026),
+and against full-context and naive retrieval (NaiveRAG) baselines where a benchmark reports them.
+Details on each are provided in Appendix § B.2.
+Backbones and evaluation metrics.To show that MemFit is backend-agnostic, we evaluate it
+with theproprietary GPT-4o, GPT-4.1-mini, and GPT-4o-mini (Achiam et al., 2023), the
+open-source Qwen3-8B (Yang et al., 2025) and Gemma3-27B (Gemma Team et al., 2025), and the
+multimodal Qwen2.5-VL-7B (Bai et al., 2025) on MemGallery. On LoCoMo, we report F1 </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and
+BLEU-1 (Papineni et al., 2002) per category and averaged over the four categories; on MemGallery,
+6
+Preprint. Under review.
+Table 1: Performance on the LoCoMo benchmark with four backbones. F1 and BLEU-1 per category
+and averaged over the four categories. MemFit achieves superior performance. Best result per
+backbone in bold.
+Model Method Multi-Hop Temporal OpenDomain Single-Hop Average
+F1 (%) BLEU (%) F1 (%) BLEU (%) F1 (%) BLEU (%) F1 (%) BLEU (%) F1 (%) BLEU (%)
+GPT-4.1-mini
+MemoryBank 5.00 4.68 5.94 4.78 5.16 4.52 5.72 4.86 5.46 4.71
+MemGPT 17.72 16.02 19.44 16.54 11.29 10.18 25.59 24.25 18.51 16.75
+A-MEM 25.06 17.32 51.01 44.75 13.22 14.75 41.02 36.99 32.58 28.45
+LightMem 24.96 21.66 20.55 18.39 19.21 17.68 33.79 29.66 24.63 21.85
+Mem0 30.14 27.62 48.91 44.82 16.43 14.94 41.3 36.17 34.20 30.89
+SimpleMem 43.46 38.8258.62 50.10 19.76 18.04 51.12 43.53 43.24 37.62
+MemFit 41.58 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>33.70 66.05 60.99 28.85 25.42 64.56 58.84 50.26 44.74
+GPT-4o
+MemoryBank 6.49 4.69 2.47 2.43 6.43 5.30 8.28 7.10 5.92 4.88
+MemGPT 30.36 22.83 17.29 13.18 12.24 11.87 40.16 36.35 25.01 21.06
+A-MEM 32.86 23.76 39.41 31.23 17.10 15.84 44.43 38.97 33.45 27.45
+LightMem 28.15 21.83 36.53 29.12 13.38 11.54 33.76 28.02 27.96 22.63
+Mem0 35.13 27.56 52.38 44.15 17.73 15.92 39.12 35.43 36.09 30.77
+SimpleMem 35.89 32.83 56.71 20.57 18.23 16.34 45.41 39.25 39.06 27.25
+MemFit 41.28 33.07 65.48 60.21 25.38 22.33 65.16 60.23 49.33 43.96
+Qwen3:8b
+MemoryBank 9.50 7.10 3.80 2.50 7.50 6.50 9.20 7.50 7.50 5.90
+MemGPT 14.20 9.80 5.50 4.20 12.50 10.80 11.50 9.10 10.93 8.48
+A-MEM 20.50 13.80 22.50 18.20 13.20 10.50 26.80 21.50 20.75 16.00
+LightMem 18.53 14.23 26.78 21.52 14.12 11.24 29.48 23.83 22.23 17.71
+Mem0 22.42 16.83 32.48 26.13 15.23 12.54 33.05 27.24 25.80 20.69
+SimpleMem 28.97 24.93 42.85 36.49 15.35 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>on Temporal, OpenDomain, and Single-Hop
+queries with every backbone. Multi-hop is the one category MemFit does not lead in every setting,
+Table 2: Overall results on MemGallery (Bei
+et al., 2026) and LongMemEval-S (Wu et al.,
+2024).
+(a) MemGallery (Qwen2.5-VL-7B)
+Method F1 (%)↑
+Full context 36.25
+NaiveRAG 59.74
+MemGPT 52.82
+A-MEM 62.28
+MemoryOS 61.09
+MemFit 67.66
+(b) LongMemEval-S (GPT-4o-mini)
+Method Accuracy (%)↑
+Full context 56.80
+NaiveRAG 61.00
+A-MEM 62.60
+LightMem 64.29
+Mem0 53.61
+MemoryOS 44.80
+LangMem 37.20
+MemFit 64.60
+trailing SimpleMem with GPT-4.1-mini
+(41.58% vs. 43.46%): such questions require
+synthesizing facts across separately stored episodes,
+and methods that consolidate memories through
+LLM calls during storage can pre-compute those
+connections, whereas MemFit composes at
+retrieval time through pseudo-relevance feedback.
+Comparison results on MemGallery </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>42.84×0.56
+Packk=10(default) 61.82 44.19 2,156
+Packk=2062.29 43.89×1.85
+Packk=3061.64 42.78×2.65
+PRF, 4 documents 61.23 43.99×1.00
+Summary expansion, 10 61.49 44.59×1.01
+Narrower pools (30/40)60.4543.26×0.99
+Wider scan (100/50) 61.56 44.27×1.01
+Resource consumption.Against the three systems that consult an LLM as memories arrive,
+MemFit issues 81–87% fewer LLM calls (1,977 vs. 10,554–15,736; Fig. 3a), generates 32–45×
+fewer output tokens, and costs 82–88% less at GPT-4.1-mini prices ($1.53 vs. $8.51–$12.38;
+Fig. 3d). LightMem has a comparable budget: both systems issue about 400 write-time calls and
+one call per question, but MemFit&#x27;s write path uses 5.1× fewer tokens (0.22M vs. 1.13M) and costs
+5.7× less ($0.14 vs. $0.81), because its only write-time output is one summary per segment, while
+LightMem rewrites the conversation into memory entries. In exchange, MemFit&#x27;s reader </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>receives
+verbatim turns rather than distilled facts (2,210 vs. 1,015 input tokens per question), so full runs cost
+about the same ($1.53 vs. $1.46):MemFitpays less to build memory and more to read it.
+Latency. MemFit builds memory 3.9–52.6× faster than every baseline (Fig. 3e): 946s for the
+whole benchmark, of which LLM-free storage and indexing take 15s, against 3,708s forSimpleMem,
+5,750s for LightMem, 9,240s for A-MEM, and 49,765s for Mem0. Per question, it answers in 1.23s,
+faster than A-MEM (4.94s) and SimpleMem (22.39s) but slower than Mem0 (1.06s) and LightMem
+(0.75s), trading a somewhat longer read for the fastest write path.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We perform a systematic ablation study on the LoCoMo dataset to quantify the contribution of
+each core component of the MemFit architecture (Table 3, left). Removing the context window
+produces the largest degradation, with average F1 falling by 1.86 points and the judge score by 1.7,
+confirming that a retrieved turn is often not self-contained without its neighbors. Pseudo-relevance
+feedback, summary expansion, the wide first-stage scan, and the summaries themselves each account
+for between 0.83 and 1.35 average F1. The components therefore overlap, each recovering evidence
+the others partly reach, and removing all of them at once leaves plain retrieval, which costs 3.32
+average F1 and 5.5 judge points (p&lt;0.001). Appendix C reports per-category results.</blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>open-domain questions (51.1% to
+57.6%). Multi-hop questions remain the hardest: the pack holds every one of their evidence turns for
+only 26.2% of them (23.0% with plain retrieval), which is where systems that link memories at write
+time can gain onMemFit.
+Table 9: Evidence retrieval on LoCoMo per category, plain retrieval (Plain) againstMemFit, over the
+1,536 questions with annotated evidence. Pack hit: at least one gold turn among the k retrieved items.
+Pack all: every gold turn among them. Hit@30: at least one gold turn among the top 30 reranked
+candidates.
+Pack hit (%) Pack all (%) Hit@30 (%)
+Category PlainMemFitPlainMemFitPlainMemFit
+Multi-Hop 74.881.223.026.281.687.6
+Temporal 83.585.777.979.885.089.4
+OpenDomain 51.157.634.839.162.068.5
+Single-Hop 82.284.479.581.985.790.7
+All 79.282.566.168.783.488.5
+Sensitivity per category.Table 10 gives every setting of the sensitivity study. </blockquote></details></li><li><strong>Contribution clarity — pages 20–21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>E LIMITATIONS
+While MemFit provides promising results across the three datasets tested, and substantially reduces
+memory construction cost and time, we acknowledge there are some important limitations. First,
+due to the fact that MemFit does not rely on LLM consolidation or organization during storage,
+retrieving and combining memories across sessions becomes a harder task at retrieval time, leading to
+slightly decreased performance in questions that require these abilities. Additionally, while applying
+a similar approach as the text-image fusion to other modalities is feasible, the current system only
+handles text and image modalities.
+20
+Preprint. Under review.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +331,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +347,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-04</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-04 11:16:53</li><li>Last seen by Paper Scout: 2026-10-04 11:16:54</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-04</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-04 11:16:53</li><li>Last seen by Paper Scout: 2026-10-05 11:08:08</li></ul>
             <ul><li>DOI: 10.48550/arxiv.2610.00872</li><li>arXiv: 2610.00872</li><li>OpenAlex: W7216504145</li><li>OpenAlex IDs: W7216504145</li><li>arXiv IDs: 2610.00872</li></ul>
           </section>
           <section class="detail-panel">

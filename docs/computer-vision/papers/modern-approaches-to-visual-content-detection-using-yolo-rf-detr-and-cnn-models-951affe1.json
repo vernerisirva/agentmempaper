@@ -1,0 +1,1400 @@
+{
+  "abstract_summary": "This article presents a comparative study of modern deep learning approaches for the detection of destructive visual content, including extremist symbols, weapons, explosive devices, and violent imagery. A domain-specific dataset containing 11 object categories was developed from publicly available Internet sources...",
+  "alternate_urls": [
+    "https://doi.org/10.48084/etasr.21134",
+    "https://openalex.org/W7218538369"
+  ],
+  "appeared_in_latest_run": true,
+  "arxiv_id": null,
+  "authors": [
+    "Sharipa Temirgaziyeva",
+    "Asem Turarbek",
+    "Ahmet \u015eakir Dokuz",
+    "Saule Zamanova",
+    "L. S. Kopbosyn"
+  ],
+  "canonical_id": "doi:10.48084/etasr.21134",
+  "citation": "Modern Approaches to Visual Content Detection Using YOLO, RF-DETR, and CNN Models. Sharipa Temirgaziyeva, Asem Turarbek, Ahmet \u015eakir Dokuz, Saule Zamanova, L. S. Kopbosyn. 2026-10-02. https://doi.org/10.48084/etasr.21134",
+  "detail_json": "papers/modern-approaches-to-visual-content-detection-using-yolo-rf-detr-and-cnn-models-951affe1.json",
+  "detail_page": "papers/modern-approaches-to-visual-content-detection-using-yolo-rf-detr-and-cnn-models-951affe1.html",
+  "doi": "10.48084/etasr.21134",
+  "effective_sort_date": "2026-10-02",
+  "first_seen_at": "2026-10-05 11:10:01",
+  "first_seen_date": "2026-10-05",
+  "future_date": false,
+  "is_new": true,
+  "last_seen_at": "2026-10-05 11:10:01",
+  "last_seen_date": "2026-10-05",
+  "latest_relevant_date_bucket": 0,
+  "latest_revision_date": null,
+  "library_admission": "review",
+  "newly_discovered_in_latest_run": true,
+  "notified_at": "2026-10-05 11:10:13",
+  "notified_date": "2026-10-05",
+  "openalex_id": "W7218538369",
+  "pinned": false,
+  "provenance": {
+    "curated": false,
+    "curation_note": null,
+    "date_source": "openalex",
+    "first_seen_at": "2026-10-05 11:10:01",
+    "generated_at": "2026-10-05 11:12:31",
+    "last_seen_at": "2026-10-05 11:10:01",
+    "metadata_sources": [
+      "openalex"
+    ],
+    "publication_date_confidence": "medium",
+    "publication_date_precision": "day",
+    "publication_date_source": "openalex",
+    "relevance_source": "deterministic screening",
+    "screening_source": "deterministic rules",
+    "source_ids": {
+      "openalex": [
+        "W7218538369"
+      ]
+    }
+  },
+  "publication": {
+    "confidence": "medium",
+    "date": "2026-10-02",
+    "display": "Published 2026-10-02",
+    "latest_revision_date": null,
+    "precision": "day",
+    "publication_date_confidence": "medium",
+    "source": "openalex",
+    "status": "peer_reviewed",
+    "status_evidence": "OpenAlex records a published journal location: Engineering Technology & Applied Science Research. Peer review inferred from venue metadata, not independently verified.",
+    "year": "2026"
+  },
+  "publication_date": "2026-10-02",
+  "publication_date_confidence": "medium",
+  "publication_date_precision": "day",
+  "publication_date_source": "openalex",
+  "publication_status": "peer_reviewed",
+  "publication_status_evidence": "OpenAlex records a published journal location: Engineering Technology & Applied Science Research. Peer review inferred from venue metadata, not independently verified.",
+  "publication_year": "2026",
+  "related_topics": [
+    "benchmark",
+    "detr",
+    "efficient-vision",
+    "metrics",
+    "object-detection",
+    "yolo"
+  ],
+  "relevance": {
+    "curation_note": null,
+    "decision": "relevant",
+    "public_label": "Highly relevant",
+    "reason": "Studies YOLO-family or real-time object detection.",
+    "review_status": null,
+    "score": 100,
+    "tags": [
+      "object-detection",
+      "yolo",
+      "detr",
+      "efficient-vision",
+      "benchmark",
+      "metrics"
+    ]
+  },
+  "relevance_decision": "relevant",
+  "relevance_label": "YOLO / real-time detection",
+  "relevance_reason": "Studies YOLO-family or real-time object detection.",
+  "relevance_score": 100,
+  "research_note": null,
+  "review_status": null,
+  "schema_version": "paper-scout-card-v2",
+  "scholarly_quality": {
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-10-05T11:11:08.521528+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
+    "combined_rank_score": 1.0,
+    "concerns": [
+      "The manuscript reports only single-run results on a single 10% test split without confidence intervals, standard deviations, repeated trials, or statistical testing, so the margin between RF-DETR Medium (mAP@50 0.869) and the best YOLO variants (0.834-0.841) is not established as statistically robust.",
+      "The augmentation pipeline is described as expanding the dataset to 3,385 images before the 70/20/10 split is stated, leaving potential train/test leakage from augmented copies of test images unresolved.",
+      "The 'YOLOv8m combined with CNN layers' ensemble is described only vaguely, with no architectural detail or training procedure sufficient to reproduce or interpret its reported 0.841 mAP.",
+      "The paper's broad claim that transformer-based detectors provide higher accuracy and stronger generalization than convolution-based approaches is based on a single small custom dataset with severe class imbalance (e.g., 107 Al-Qaeda images) and no external benchmark or out-of-distribution evaluation."
+    ],
+    "concise_summary": "While the paper provides a straightforward comparative study on a specialized destructive visual content dataset, the technical contributions are limited to dataset assembly and standard fine-tuning of existing models. Given ambiguities around augmentation pipeline splitting, single-run evaluation without error bounds, and limited algorithmic novelty, the study's scientific rigor remains uncertain.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 33669,
+      "assessment_input_sha256": "c746fac88db45900ce46d013dca718748ae21471d45193c9d70faf85b7abbbb6",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48084/etasr.21134",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 32577,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 32358,
+      "evidence_block_count": 46,
+      "evidence_context_characters": 38335,
+      "evidence_context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+      "evidence_context_sha256": "2ac14e268b64210f7e3b11fd77e4581d85aad5ff640ccc00be0abb44d43d31cf",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 32589,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "extracted_pages": 7,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "c950d23463b6bd55830ef966331617f9e277bb0f87388d6236f12780458e4edf",
+        "source_url": "https://www.etasr.com/index.php/ETASR/article/download/21134/7149",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 32577,
+      "scientific_body_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 1010,
+          "supplied_characters": 1010
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2202,
+          "supplied_characters": 2202
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 212,
+          "supplied_characters": 212
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 3,
+          "source_characters": 6693,
+          "supplied_characters": 6693
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "appendix",
+          "section_index": 4,
+          "source_characters": 5341,
+          "supplied_characters": 5341
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 5,
+          "source_characters": 1394,
+          "supplied_characters": 1394
+        },
+        {
+          "heading": "Appendix: Training Configuration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 6,
+          "source_characters": 2038,
+          "supplied_characters": 2038
+        },
+        {
+          "heading": "Appendix: Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 7,
+          "source_characters": 2325,
+          "supplied_characters": 2325
+        },
+        {
+          "heading": "Appendix: Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "appendix",
+          "section_index": 8,
+          "source_characters": 1160,
+          "supplied_characters": 1160
+        },
+        {
+          "heading": "Values Obtained By The Rf-Detr Medium Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 511,
+          "supplied_characters": 511
+        },
+        {
+          "heading": "Values Obtained By The Rf-Detr Medium Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 3822,
+          "supplied_characters": 3822
+        },
+        {
+          "heading": "Fps, Demonstrating Its Suitability For Real-Time  Content",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Fps, Demonstrating Its Suitability For Real-Time  Content",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 633,
+          "supplied_characters": 633
+        },
+        {
+          "heading": "Declaration Of Competing Interests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 79,
+          "supplied_characters": 79
+        },
+        {
+          "heading": "Back matter: Acknowledgment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 48,
+          "supplied_characters": 48
+        },
+        {
+          "heading": "Data Availability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 79,
+          "supplied_characters": 79
+        },
+        {
+          "heading": "Remain The Property Of Their Respective Copyright H Olders And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 251,
+          "supplied_characters": 251
+        },
+        {
+          "heading": "And Experimental Configuration Are Available From T He",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 101,
+          "supplied_characters": 101
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1051,
+          "supplied_characters": 1051
+        },
+        {
+          "heading": "Multimodal Cyberbullying Detection Through Adaptive  And Hierarchical",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2227,
+          "supplied_characters": 2227
+        },
+        {
+          "heading": "Learning-Based Lesion Detection Algorithm For Resol Ving Data",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 502,
+          "supplied_characters": 502
+        },
+        {
+          "heading": "Detr: Neural Architecture Search For Real-Time Dete Ction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 502,
+          "supplied_characters": 502
+        },
+        {
+          "heading": "Them All: Localisation Recall Precision (Lrp) For E Valuating Visual",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 153,
+          "supplied_characters": 153
+        }
+      ],
+      "selected_characters": 32358,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "selected_sections": [
+        {
+          "characters": 1010,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 2202,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 212,
+          "heading": "Abstract",
+          "page": 2
+        },
+        {
+          "characters": 6693,
+          "heading": "Appendix: Introduction",
+          "page": 2
+        },
+        {
+          "characters": 5341,
+          "heading": "Appendix: Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1394,
+          "heading": "Appendix: Introduction",
+          "page": 4
+        },
+        {
+          "characters": 2038,
+          "heading": "Appendix: Training Configuration",
+          "page": 4
+        },
+        {
+          "characters": 2325,
+          "heading": "Appendix: Evaluation Metrics",
+          "page": 4
+        },
+        {
+          "characters": 1160,
+          "heading": "Appendix: Evaluation Metrics",
+          "page": 5
+        },
+        {
+          "characters": 511,
+          "heading": "Values Obtained By The Rf-Detr Medium Model",
+          "page": 5
+        },
+        {
+          "characters": 3822,
+          "heading": "Values Obtained By The Rf-Detr Medium Model",
+          "page": 6
+        },
+        {
+          "characters": 24,
+          "heading": "Fps, Demonstrating Its Suitability For Real-Time  Content",
+          "page": 6
+        },
+        {
+          "characters": 633,
+          "heading": "Fps, Demonstrating Its Suitability For Real-Time  Content",
+          "page": 7
+        },
+        {
+          "characters": 79,
+          "heading": "Declaration Of Competing Interests",
+          "page": 7
+        },
+        {
+          "characters": 48,
+          "heading": "Back matter: Acknowledgment",
+          "page": 7
+        },
+        {
+          "characters": 79,
+          "heading": "Data Availability",
+          "page": 7
+        },
+        {
+          "characters": 251,
+          "heading": "Remain The Property Of Their Respective Copyright H Olders And",
+          "page": 7
+        },
+        {
+          "characters": 101,
+          "heading": "And Experimental Configuration Are Available From T He",
+          "page": 7
+        },
+        {
+          "characters": 1051,
+          "heading": "Unclassified body after references",
+          "page": 7
+        },
+        {
+          "characters": 2227,
+          "heading": "Multimodal Cyberbullying Detection Through Adaptive  And Hierarchical",
+          "page": 7
+        },
+        {
+          "characters": 502,
+          "heading": "Learning-Based Lesion Detection Algorithm For Resol Ving Data",
+          "page": 7
+        },
+        {
+          "characters": 502,
+          "heading": "Detr: Neural Architecture Search For Real-Time Dete Ction",
+          "page": 7
+        },
+        {
+          "characters": 153,
+          "heading": "Them All: Localisation Recall Precision (Lrp) For E Valuating Visual",
+          "page": 7
+        }
+      ],
+      "selected_text_sha256": "c746fac88db45900ce46d013dca718748ae21471d45193c9d70faf85b7abbbb6",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "c950d23463b6bd55830ef966331617f9e277bb0f87388d6236f12780458e4edf",
+      "source_pages": 7,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
+    "curation_note": null,
+    "dimension_scores": {},
+    "downranked": false,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0003"
+        ],
+        "excerpt": "This article presents a comparative study of modern  deep learning approaches for the detection of \ndestructive visual content, including extremist symbols, weapons, explosive devices, and violent imagery. A \ndomain-specific dataset containing 11 object catego ries was developed from publicly available Internet  \nsources and manually annotated using bounding boxes  in COCO format. The dataset was divided into \ntraining (70%), validation (20%), and testing (10%)  subsets and expanded through data augmentation to \nimprove model robustness under different viewpoints and background conditions. Several state-of-the-art \nobject detection models were experimentally evaluat ed, including YOLOv8s, YOLOv8m, YOLOv8l, \nYOLOv8x, YOLOv11s, an enhanced YOLOv8m model combin ed with Convolutional Neural Network \n(CNN) layers, and the transformer-based RF-DETR Med ium architecture. Performance was ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "2ac56e730c338fb72ab631e2d8a4b760433ffa0f5ab4b754e6da2ee49bbb63ee",
+            "evidence_id": "Eae011a622725a177-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "This article presents a comparative study of modern  deep learning approaches for the detection of \ndestructive visual content, including extremist symbols, weapons, explosive devices, and violent imagery. A \ndomain-specific dataset containing 11 object catego ries was developed from publicly available Internet  \nsources and manually annotated using bounding boxes  in COCO format. The dataset was divided into \ntraining (70%), validation (20%), and testing (10%)  subsets and expanded through data augmentation to \nimprove model robustness under different viewpoints and background conditions. Several state-of-the-art \nobject detection models were experimentally evaluat ed, including YOLOv8s, YOLOv8m, YOLOv8l, \nYOLOv8x, YOLOv11s, an enhanced YOLOv8m model combin ed with Convolutional Neural Network \n(CNN) layers, and the transformer-based RF-DETR Med ium architecture. Performance was "
+              }
+            ],
+            "text": "This article presents a comparative study of modern  deep learning approaches for the detection of \ndestructive visual content, including extremist symbols, weapons, explosive devices, and violent imagery. A \ndomain-specific dataset containing 11 object catego ries was developed from publicly available Internet  \nsources and manually annotated using bounding boxes  in COCO format. The dataset was divided into \ntraining (70%), validation (20%), and testing (10%)  subsets and expanded through data augmentation to \nimprove model robustness under different viewpoints and background conditions. Several state-of-the-art \nobject detection models were experimentally evaluat ed, including YOLOv8s, YOLOv8m, YOLOv8l, \nYOLOv8x, YOLOv11s, an enhanced YOLOv8m model combin ed with Convolutional Neural Network \n(CNN) layers, and the transformer-based RF-DETR Med ium architecture. Performance was "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0004"
+        ],
+        "excerpt": "assessed \nusing Precision, Recall, and mean Average Precision  at an Intersection over Union threshold of 0.5 \n(mAP@50). Among the YOLO-based models, YOLOv8m achieved the highest detection accuracy with an \nmAP@50 of 0.834, whereas the RF-DETR Medium model o utperformed the others with an mAP@50 of \n0.869, an average Precision of 0.89, and a Recall o f 0.85. Class-wise evaluation demonstrated excellen t \nrecognition performance for Al-Qaeda, Blood, ISIS, and Hezbollah categories (mAP@50 up to 0.99), while \nlower accuracy was observed for Hamas and AK-47 bec ause of limited training samples and visual \nsimilarity with other categories. The selected RF-D ETR Medium model was integrated into a real-time \nvisual threat detection system with a graphical use r interface and achieved an average inference speed  of \napproximately 55 FPS, demonstrating its suitability for practical deployment. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "25d2c8e9a444f69cad77a1b3b7cc41879f68832246fd9fdd26565a0e1229b777",
+            "evidence_id": "Eae011a622725a177-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 893,
+                "text": "assessed \nusing Precision, Recall, and mean Average Precision  at an Intersection over Union threshold of 0.5 \n(mAP@50). Among the YOLO-based models, YOLOv8m achieved the highest detection accuracy with an \nmAP@50 of 0.834, whereas the RF-DETR Medium model o utperformed the others with an mAP@50 of \n0.869, an average Precision of 0.89, and a Recall o f 0.85. Class-wise evaluation demonstrated excellen t \nrecognition performance for Al-Qaeda, Blood, ISIS, and Hezbollah categories (mAP@50 up to 0.99), while \nlower accuracy was observed for Hamas and AK-47 bec ause of limited training samples and visual \nsimilarity with other categories. The selected RF-D ETR Medium model was integrated into a real-time \nvisual threat detection system with a graphical use r interface and achieved an average inference speed  of \napproximately 55 FPS, demonstrating its suitability for practical deployment. "
+              }
+            ],
+            "text": "assessed \nusing Precision, Recall, and mean Average Precision  at an Intersection over Union threshold of 0.5 \n(mAP@50). Among the YOLO-based models, YOLOv8m achieved the highest detection accuracy with an \nmAP@50 of 0.834, whereas the RF-DETR Medium model o utperformed the others with an mAP@50 of \n0.869, an average Precision of 0.89, and a Recall o f 0.85. Class-wise evaluation demonstrated excellen t \nrecognition performance for Al-Qaeda, Blood, ISIS, and Hezbollah categories (mAP@50 up to 0.99), while \nlower accuracy was observed for Hamas and AK-47 bec ause of limited training samples and visual \nsimilarity with other categories. The selected RF-D ETR Medium model was integrated into a real-time \nvisual threat detection system with a graphical use r interface and achieved an average inference speed  of \napproximately 55 FPS, demonstrating its suitability for practical deployment. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0014"
+        ],
+        "excerpt": "contextual information, and modern deep l earning \narchitectures substantially improve the reliability and accuracy \nof destructive content detection. These advances hi ghlight the \ngrowing importance of intelligent systems for autom ated \ncontent moderation and public safety applications. \nII.  METHODOLOGY \nTo develop an effective system for destructive visu al \ncontent detection, the proposed methodology integrates dataset \npreparation, image preprocessing, deep learning mod el \ntraining, comparative performance evaluation, and r eal-time \ndeployment. The framework was designed to assess th e \neffectiveness of both convolution-based (YOLOv8, YOLOv11, \nand CNN-enhanced YOLO) and transformer-based (RF-\nDETR) object detection models under identical exper imental \nconditions.  \nA.  Dataset Preparation and Structure \nA total of 2068 images were collected to identify s igns of \nextremist ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d282d08f21a6d0fd973c4bc8fa5b9e562dc137d9d954e248cf8e17bd15051cc1",
+            "evidence_id": "Eae011a622725a177-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1375,
+                "page": 3,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 478,
+                "text": "contextual information, and modern deep l earning \narchitectures substantially improve the reliability and accuracy \nof destructive content detection. These advances hi ghlight the \ngrowing importance of intelligent systems for autom ated \ncontent moderation and public safety applications. \nII.  METHODOLOGY \nTo develop an effective system for destructive visu al \ncontent detection, the proposed methodology integrates dataset \npreparation, image preprocessing, deep learning mod el \ntraining, comparative performance evaluation, and r eal-time \ndeployment. The framework was designed to assess th e \neffectiveness of both convolution-based (YOLOv8, YOLOv11, \nand CNN-enhanced YOLO) and transformer-based (RF-\nDETR) object detection models under identical exper imental \nconditions.  \nA.  Dataset Preparation and Structure \nA total of 2068 images were collected to identify s igns of \nextremist "
+              }
+            ],
+            "text": "contextual information, and modern deep l earning \narchitectures substantially improve the reliability and accuracy \nof destructive content detection. These advances hi ghlight the \ngrowing importance of intelligent systems for autom ated \ncontent moderation and public safety applications. \nII.  METHODOLOGY \nTo develop an effective system for destructive visu al \ncontent detection, the proposed methodology integrates dataset \npreparation, image preprocessing, deep learning mod el \ntraining, comparative performance evaluation, and r eal-time \ndeployment. The framework was designed to assess th e \neffectiveness of both convolution-based (YOLOv8, YOLOv11, \nand CNN-enhanced YOLO) and transformer-based (RF-\nDETR) object detection models under identical exper imental \nconditions.  \nA.  Dataset Preparation and Structure \nA total of 2068 images were collected to identify s igns of \nextremist "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0015"
+        ],
+        "excerpt": "organizations and dangerous objects. The dataset \nconsists of 11 different classes. These included flags and signs \nof extremist organizations, types of weapons (Knife, Gun, AK-\n47, Bomb), visual materials related to blood, and n eutral \nimages to evaluate the generalization ability of the model. \nImages were collected from publicly available Inter net \nresources, including Getty Images, Wikimedia Common s, \nUnsplash, and Google Images, using keyword-based re trieval. \nTo ensure dataset diversity, predefined keywords re lated to \nextremist organization symbols and dangerous object s were \nemployed, including \"ISIS flag,\" \"Al-Qaeda flag,\" \" Hamas \nflag,\" \"Hezbollah flag,\" \"AK-47,\" \"Gun,\" \"Knife,\" a nd \n\"Bomb.\" To the best of our knowledge, no publicly a vailable \nbenchmark dataset simultaneously contains object-le vel \nannotations for extremist organization symbols, wea pons, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "539d265a4490a094f81cee1d31832ea6f32196e1434fc1aeb3073557bf8324e1",
+            "evidence_id": "Eae011a622725a177-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2263,
+                "page": 3,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 1375,
+                "text": "organizations and dangerous objects. The dataset \nconsists of 11 different classes. These included flags and signs \nof extremist organizations, types of weapons (Knife, Gun, AK-\n47, Bomb), visual materials related to blood, and n eutral \nimages to evaluate the generalization ability of the model. \nImages were collected from publicly available Inter net \nresources, including Getty Images, Wikimedia Common s, \nUnsplash, and Google Images, using keyword-based re trieval. \nTo ensure dataset diversity, predefined keywords re lated to \nextremist organization symbols and dangerous object s were \nemployed, including \"ISIS flag,\" \"Al-Qaeda flag,\" \" Hamas \nflag,\" \"Hezbollah flag,\" \"AK-47,\" \"Gun,\" \"Knife,\" a nd \n\"Bomb.\" To the best of our knowledge, no publicly a vailable \nbenchmark dataset simultaneously contains object-le vel \nannotations for extremist organization symbols, wea pons, "
+              }
+            ],
+            "text": "organizations and dangerous objects. The dataset \nconsists of 11 different classes. These included flags and signs \nof extremist organizations, types of weapons (Knife, Gun, AK-\n47, Bomb), visual materials related to blood, and n eutral \nimages to evaluate the generalization ability of the model. \nImages were collected from publicly available Inter net \nresources, including Getty Images, Wikimedia Common s, \nUnsplash, and Google Images, using keyword-based re trieval. \nTo ensure dataset diversity, predefined keywords re lated to \nextremist organization symbols and dangerous object s were \nemployed, including \"ISIS flag,\" \"Al-Qaeda flag,\" \" Hamas \nflag,\" \"Hezbollah flag,\" \"AK-47,\" \"Gun,\" \"Knife,\" a nd \n\"Bomb.\" To the best of our knowledge, no publicly a vailable \nbenchmark dataset simultaneously contains object-le vel \nannotations for extremist organization symbols, wea pons, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0017"
+        ],
+        "excerpt": "sam ples before \nannotation. Each image was verified to ensure correct labeling, \nimproving dataset consistency and reliability. \n \nThe Roboflow platform was utilized for the annotati on \nprocess. Objects were delineated using bounding box es, \nsupplemented by polygon annotations for complex geo metries \nwhere required. The resulting dataset was standardi zed and \nexported in COCO JSON format. To maintain high data  \nintegrity, all annotations underwent a rigorous ver ification \nprocess; any inaccuracies or omissions were rectifi ed. In \ninstances of ambiguity, the final labeling was esta blished \nthrough author consensus. \nB.  Image Processing and Data Augmentation \nThe dataset exhibits a moderate degree of class imb alance, \nas the public availability of visual materials rela ted to some \nextremist organizations is limited. Nevertheless, sufficient data \nwas collected for each class ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "18200ad743175133b00712d3601b4b20e17b89e6ef2b107b4ea43fb8172c5ffc",
+            "evidence_id": "Eae011a622725a177-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 4059,
+                "page": 3,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 3161,
+                "text": "sam ples before \nannotation. Each image was verified to ensure correct labeling, \nimproving dataset consistency and reliability. \n \nThe Roboflow platform was utilized for the annotati on \nprocess. Objects were delineated using bounding box es, \nsupplemented by polygon annotations for complex geo metries \nwhere required. The resulting dataset was standardi zed and \nexported in COCO JSON format. To maintain high data  \nintegrity, all annotations underwent a rigorous ver ification \nprocess; any inaccuracies or omissions were rectifi ed. In \ninstances of ambiguity, the final labeling was esta blished \nthrough author consensus. \nB.  Image Processing and Data Augmentation \nThe dataset exhibits a moderate degree of class imb alance, \nas the public availability of visual materials rela ted to some \nextremist organizations is limited. Nevertheless, sufficient data \nwas collected for each class "
+              }
+            ],
+            "text": "sam ples before \nannotation. Each image was verified to ensure correct labeling, \nimproving dataset consistency and reliability. \n \nThe Roboflow platform was utilized for the annotati on \nprocess. Objects were delineated using bounding box es, \nsupplemented by polygon annotations for complex geo metries \nwhere required. The resulting dataset was standardi zed and \nexported in COCO JSON format. To maintain high data  \nintegrity, all annotations underwent a rigorous ver ification \nprocess; any inaccuracies or omissions were rectifi ed. In \ninstances of ambiguity, the final labeling was esta blished \nthrough author consensus. \nB.  Image Processing and Data Augmentation \nThe dataset exhibits a moderate degree of class imb alance, \nas the public availability of visual materials rela ted to some \nextremist organizations is limited. Nevertheless, sufficient data \nwas collected for each class "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0018"
+        ],
+        "excerpt": "to allow the model to learn \nimportant visual features. Data augmentation was us ed to \nincrease the generalizability of the models. In particular, image \nrotation and horizontal flip operations were perfor med. After \napplying the augmentation techniques, the dataset increased to \n3385 images. Figure 1 shows the resulting class distribution. \n \n \nFig. 1.  Distribution of images after data augmentation. \nThe dataset was divided as follows: \n\u2022  Training set (Train): 70% \n\u2022  Validation set (Validation): 20% \n\u2022  Test set (Test): 10% \nImages and annotations for each class were stored i n \nseparate folders ( images/  and labels/ ) and fed into the training \nprocess using the data.yaml  file. All images were scaled to \n640\u00d7640 pixels. This approach increased the ability  of the \nmodels to recognize each object individually and ha ndle \noverlapping objects. \nC.  Model Architecture \nThe YOLO ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4ff629cfb878fc50abcb8f3c9e76cc1c4b5da4a9be440abe0c34c6287be9299b",
+            "evidence_id": "Eae011a622725a177-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 4956,
+                "page": 3,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 4059,
+                "text": "to allow the model to learn \nimportant visual features. Data augmentation was us ed to \nincrease the generalizability of the models. In particular, image \nrotation and horizontal flip operations were perfor med. After \napplying the augmentation techniques, the dataset increased to \n3385 images. Figure 1 shows the resulting class distribution. \n \n \nFig. 1.  Distribution of images after data augmentation. \nThe dataset was divided as follows: \n\u2022  Training set (Train): 70% \n\u2022  Validation set (Validation): 20% \n\u2022  Test set (Test): 10% \nImages and annotations for each class were stored i n \nseparate folders ( images/  and labels/ ) and fed into the training \nprocess using the data.yaml  file. All images were scaled to \n640\u00d7640 pixels. This approach increased the ability  of the \nmodels to recognize each object individually and ha ndle \noverlapping objects. \nC.  Model Architecture \nThe YOLO "
+              }
+            ],
+            "text": "to allow the model to learn \nimportant visual features. Data augmentation was us ed to \nincrease the generalizability of the models. In particular, image \nrotation and horizontal flip operations were perfor med. After \napplying the augmentation techniques, the dataset increased to \n3385 images. Figure 1 shows the resulting class distribution. \n \n \nFig. 1.  Distribution of images after data augmentation. \nThe dataset was divided as follows: \n\u2022  Training set (Train): 70% \n\u2022  Validation set (Validation): 20% \n\u2022  Test set (Test): 10% \nImages and annotations for each class were stored i n \nseparate folders ( images/  and labels/ ) and fed into the training \nprocess using the data.yaml  file. All images were scaled to \n640\u00d7640 pixels. This approach increased the ability  of the \nmodels to recognize each object individually and ha ndle \noverlapping objects. \nC.  Model Architecture \nThe YOLO "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0021"
+        ],
+        "excerpt": "The number of images for each class is as follows: The \nKnife class has the largest share with 602 images, while the \nAK-47 and Gun classes have 535 and 518 images, respectively. \nBlood and Bomb are middle-level classes (386 and 376 images, \nrespectively). The Al-Qaeda, Hamas, Palestine Islam ic Jihad \n(PIJ), and Neutral classes contain fewer samples co mpared to \nweapon-related categories, with Al-Qaeda being the smallest \nclass (107 images). The dataset exhibits a moderate  class \nimbalance because visual materials of some extremis t \norganizations are limited. Nevertheless, sufficient samples were \navailable for each class to enable effective model training. \nAll models were trained in Google Colab using an NVIDIA \nTesla T4 GPU. The input image resolution was set to 640\u00d7640 \npixels, the batch size was 16, and each model was t rained for \n50 epochs. Model performance was evaluated ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Training Configuration",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0933015ad33ed2f2b47c3be19d3e51d7732e5d1f6ca7d486bdaa497c0c4a677b",
+            "evidence_id": "Eae011a622725a177-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Training Configuration",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 4,
+                "section": "Appendix: Training Configuration",
+                "section_index": 6,
+                "start": 0,
+                "text": "The number of images for each class is as follows: The \nKnife class has the largest share with 602 images, while the \nAK-47 and Gun classes have 535 and 518 images, respectively. \nBlood and Bomb are middle-level classes (386 and 376 images, \nrespectively). The Al-Qaeda, Hamas, Palestine Islam ic Jihad \n(PIJ), and Neutral classes contain fewer samples co mpared to \nweapon-related categories, with Al-Qaeda being the smallest \nclass (107 images). The dataset exhibits a moderate  class \nimbalance because visual materials of some extremis t \norganizations are limited. Nevertheless, sufficient samples were \navailable for each class to enable effective model training. \nAll models were trained in Google Colab using an NVIDIA \nTesla T4 GPU. The input image resolution was set to 640\u00d7640 \npixels, the batch size was 16, and each model was t rained for \n50 epochs. Model performance was evaluated "
+              }
+            ],
+            "text": "The number of images for each class is as follows: The \nKnife class has the largest share with 602 images, while the \nAK-47 and Gun classes have 535 and 518 images, respectively. \nBlood and Bomb are middle-level classes (386 and 376 images, \nrespectively). The Al-Qaeda, Hamas, Palestine Islam ic Jihad \n(PIJ), and Neutral classes contain fewer samples co mpared to \nweapon-related categories, with Al-Qaeda being the smallest \nclass (107 images). The dataset exhibits a moderate  class \nimbalance because visual materials of some extremis t \norganizations are limited. Nevertheless, sufficient samples were \navailable for each class to enable effective model training. \nAll models were trained in Google Colab using an NVIDIA \nTesla T4 GPU. The input image resolution was set to 640\u00d7640 \npixels, the batch size was 16, and each model was t rained for \n50 epochs. Model performance was evaluated "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0022"
+        ],
+        "excerpt": "using a \nconfidence threshold of 0.25 and an Intersection ov er Union \n(IoU) threshold of 0.5, with mAP@50 calculated unde r these \nsettings. The AdamW optimizer was employed with an \nautomatically selected initial learning rate. Data augmentation \nincluded horizontal translation, color transformati on, and \nmosaic augmentation to improve model generalization. \nComputational efficiency was evaluated by measuring  the \ninference speed. The proposed model processed one i mage in \nan average of 18 ms (approximately 55 FPS), demonstrating its \nsuitability for real-time applications. \nTo ensure a fair and unbiased comparison, all evalu ated \nmodels (YOLOv8s, YOLOv8m, YOLOv8l, YOLOv8x, \nYOLOv11s, YOLOv8m+CNN, and RF-DETR Medium) were \ntrained and evaluated on the same dataset using ide ntical \nexperimental conditions, including the same trainin g, \nvalidation, and test splits, image ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Training Configuration",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "51b64824ad825309474d345e3bb73645f97d4ffa4aae4234f089f3dc256862c3",
+            "evidence_id": "Eae011a622725a177-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Training Configuration",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1786,
+                "page": 4,
+                "section": "Appendix: Training Configuration",
+                "section_index": 6,
+                "start": 896,
+                "text": "using a \nconfidence threshold of 0.25 and an Intersection ov er Union \n(IoU) threshold of 0.5, with mAP@50 calculated unde r these \nsettings. The AdamW optimizer was employed with an \nautomatically selected initial learning rate. Data augmentation \nincluded horizontal translation, color transformati on, and \nmosaic augmentation to improve model generalization. \nComputational efficiency was evaluated by measuring  the \ninference speed. The proposed model processed one i mage in \nan average of 18 ms (approximately 55 FPS), demonstrating its \nsuitability for real-time applications. \nTo ensure a fair and unbiased comparison, all evalu ated \nmodels (YOLOv8s, YOLOv8m, YOLOv8l, YOLOv8x, \nYOLOv11s, YOLOv8m+CNN, and RF-DETR Medium) were \ntrained and evaluated on the same dataset using ide ntical \nexperimental conditions, including the same trainin g, \nvalidation, and test splits, image "
+              }
+            ],
+            "text": "using a \nconfidence threshold of 0.25 and an Intersection ov er Union \n(IoU) threshold of 0.5, with mAP@50 calculated unde r these \nsettings. The AdamW optimizer was employed with an \nautomatically selected initial learning rate. Data augmentation \nincluded horizontal translation, color transformati on, and \nmosaic augmentation to improve model generalization. \nComputational efficiency was evaluated by measuring  the \ninference speed. The proposed model processed one i mage in \nan average of 18 ms (approximately 55 FPS), demonstrating its \nsuitability for real-time applications. \nTo ensure a fair and unbiased comparison, all evalu ated \nmodels (YOLOv8s, YOLOv8m, YOLOv8l, YOLOv8x, \nYOLOv11s, YOLOv8m+CNN, and RF-DETR Medium) were \ntrained and evaluated on the same dataset using ide ntical \nexperimental conditions, including the same trainin g, \nvalidation, and test splits, image "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0023"
+        ],
+        "excerpt": "resolution, batch size, number \nof epochs, optimization settings, and evaluation me trics. \nTherefore, the reported performance differences ref lect the \ncharacteristics of the evaluated architectures rath er than \nvariations in the experimental setup.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Training Configuration",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5374990e60b40cff6fc3b5c78831501d7e804f5abbeae15c55c357772c0eeb5d",
+            "evidence_id": "Eae011a622725a177-B0023",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Training Configuration",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2038,
+                "page": 4,
+                "section": "Appendix: Training Configuration",
+                "section_index": 6,
+                "start": 1786,
+                "text": "resolution, batch size, number \nof epochs, optimization settings, and evaluation me trics. \nTherefore, the reported performance differences ref lect the \ncharacteristics of the evaluated architectures rath er than \nvariations in the experimental setup."
+              }
+            ],
+            "text": "resolution, batch size, number \nof epochs, optimization settings, and evaluation me trics. \nTherefore, the reported performance differences ref lect the \ncharacteristics of the evaluated architectures rath er than \nvariations in the experimental setup."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0027"
+        ],
+        "excerpt": "models. \nThe comparative analysis shows that while the YOLO \nseries is fast and lightweight, its accuracy is lower than that of \nthe RF-DETR model in overlapping objects and comple x \nscenes. Although YOLO11s is more effective in recog nizing \nsmall objects, it does not reach the RF-DETR Medium  model \nin terms of overall mAP50. RF-DETR Medium achieved the \nhighest performance (0.869) and was selected as the  most \neffective model in processing multi-object scenes and complex \nvisual content. Although the ensemble approach impr oves \nreliability, the overall performance does not reach  that of the \nRF-DETR model (0.841). Table I summarizes the class -wise \nPrecision, Recall, and mAP@50 values obtained by th e RF-\nDETR Medium model. \nTABLE I.  CLASS-WISE PRECISION, RECALL AND MAP50",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Evaluation Metrics",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3449ce2d8300c0f27216d4cb3f275ced9fc6bf1c9a9893b5fc8f9d1d1c66133e",
+            "evidence_id": "Eae011a622725a177-B0027",
+            "pages": [
+              5
+            ],
+            "section": "Appendix: Evaluation Metrics",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1160,
+                "page": 5,
+                "section": "Appendix: Evaluation Metrics",
+                "section_index": 8,
+                "start": 369,
+                "text": "models. \nThe comparative analysis shows that while the YOLO \nseries is fast and lightweight, its accuracy is lower than that of \nthe RF-DETR model in overlapping objects and comple x \nscenes. Although YOLO11s is more effective in recog nizing \nsmall objects, it does not reach the RF-DETR Medium  model \nin terms of overall mAP50. RF-DETR Medium achieved the \nhighest performance (0.869) and was selected as the  most \neffective model in processing multi-object scenes and complex \nvisual content. Although the ensemble approach impr oves \nreliability, the overall performance does not reach  that of the \nRF-DETR model (0.841). Table I summarizes the class -wise \nPrecision, Recall, and mAP@50 values obtained by th e RF-\nDETR Medium model. \nTABLE I.  CLASS-WISE PRECISION, RECALL AND MAP50"
+              }
+            ],
+            "text": "models. \nThe comparative analysis shows that while the YOLO \nseries is fast and lightweight, its accuracy is lower than that of \nthe RF-DETR model in overlapping objects and comple x \nscenes. Although YOLO11s is more effective in recog nizing \nsmall objects, it does not reach the RF-DETR Medium  model \nin terms of overall mAP50. RF-DETR Medium achieved the \nhighest performance (0.869) and was selected as the  most \neffective model in processing multi-object scenes and complex \nvisual content. Although the ensemble approach impr oves \nreliability, the overall performance does not reach  that of the \nRF-DETR model (0.841). Table I summarizes the class -wise \nPrecision, Recall, and mAP@50 values obtained by th e RF-\nDETR Medium model. \nTABLE I.  CLASS-WISE PRECISION, RECALL AND MAP50"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0028"
+        ],
+        "excerpt": "VALUES OBTAINED BY THE RF-DETR MEDIUM MODEL \nClass Precision Recall mAP50 \nAK-47 0.74 0.69 0.71 \nAl -Qaeda  0.99  0.98  0.99  \nBlood  0.98  0.97  0.98  \nBomb 0.91 0.87 0.89 \nGun  0.81  0.77  0.79  \nHamas 0.62 0.55 0.58 \nHezbollah  0.95  0.93  0.94  \nISIS  0.99  0.97  0.98  \nKnife 0.90 0.87 0.88 \nNeutral  0.92  0.90  0.91  \nPalestine Islamic Jihad (PIJ)  0.93 0.90 0.91 \nAverage  0.89  0.85  0.869  \n \n \n \nFig. 2.  Model results. \n \nFig. 3.  Confusion matrix obtained from the evaluation of th e RF-DETR model.\nEngineering, Technology & Applied Science Research  Vol. 16 , No. 5, 20 26 , 39487 -39493  39492   \n \nwww.etasr.com  Temirgaziyeva et al.: Modern Approaches to Visual Content Detection Using YOLO, RF -DETR, and \u2026  \n \nThe RF-DETR model achieved an overall mAP@50 score \nof 86.9%, demonstrating strong performance across m ost \nobject categories. The highest AP50 values were obt ained for ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Values Obtained By The Rf-Detr Medium Model",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b78ea07cdd30498a6f6f627cb300b4aa92de52e958fa5ed0dc34aebbf03d1c7c",
+            "evidence_id": "Eae011a622725a177-B0028",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Values Obtained By The Rf-Detr Medium Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 511,
+                "page": 5,
+                "section": "Values Obtained By The Rf-Detr Medium Model",
+                "section_index": 9,
+                "start": 0,
+                "text": "VALUES OBTAINED BY THE RF-DETR MEDIUM MODEL \nClass Precision Recall mAP50 \nAK-47 0.74 0.69 0.71 \nAl -Qaeda  0.99  0.98  0.99  \nBlood  0.98  0.97  0.98  \nBomb 0.91 0.87 0.89 \nGun  0.81  0.77  0.79  \nHamas 0.62 0.55 0.58 \nHezbollah  0.95  0.93  0.94  \nISIS  0.99  0.97  0.98  \nKnife 0.90 0.87 0.88 \nNeutral  0.92  0.90  0.91  \nPalestine Islamic Jihad (PIJ)  0.93 0.90 0.91 \nAverage  0.89  0.85  0.869  \n \n \n \nFig. 2.  Model results. \n \nFig. 3.  Confusion matrix obtained from the evaluation of th e RF-DETR model."
+              },
+              {
+                "end": 388,
+                "page": 6,
+                "section": "Values Obtained By The Rf-Detr Medium Model",
+                "section_index": 10,
+                "start": 0,
+                "text": "Engineering, Technology & Applied Science Research  Vol. 16 , No. 5, 20 26 , 39487 -39493  39492   \n \nwww.etasr.com  Temirgaziyeva et al.: Modern Approaches to Visual Content Detection Using YOLO, RF -DETR, and \u2026  \n \nThe RF-DETR model achieved an overall mAP@50 score \nof 86.9%, demonstrating strong performance across m ost \nobject categories. The highest AP50 values were obt ained for "
+              }
+            ],
+            "text": "VALUES OBTAINED BY THE RF-DETR MEDIUM MODEL \nClass Precision Recall mAP50 \nAK-47 0.74 0.69 0.71 \nAl -Qaeda  0.99  0.98  0.99  \nBlood  0.98  0.97  0.98  \nBomb 0.91 0.87 0.89 \nGun  0.81  0.77  0.79  \nHamas 0.62 0.55 0.58 \nHezbollah  0.95  0.93  0.94  \nISIS  0.99  0.97  0.98  \nKnife 0.90 0.87 0.88 \nNeutral  0.92  0.90  0.91  \nPalestine Islamic Jihad (PIJ)  0.93 0.90 0.91 \nAverage  0.89  0.85  0.869  \n \n \n \nFig. 2.  Model results. \n \nFig. 3.  Confusion matrix obtained from the evaluation of th e RF-DETR model.\nEngineering, Technology & Applied Science Research  Vol. 16 , No. 5, 20 26 , 39487 -39493  39492   \n \nwww.etasr.com  Temirgaziyeva et al.: Modern Approaches to Visual Content Detection Using YOLO, RF -DETR, and \u2026  \n \nThe RF-DETR model achieved an overall mAP@50 score \nof 86.9%, demonstrating strong performance across m ost \nobject categories. The highest AP50 values were obt ained for "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0029"
+        ],
+        "excerpt": "\nAl-Qaeda (0.99), Blood (0.98), and ISIS (0.98), indicating that \nthese categories possess distinctive visual charact eristics that \ncan be effectively learned by the model. Lower perf ormance \nwas observed for the Hamas (0.58) and AK-47 (0.71) classes, \nwhich can be attributed to limited training samples  and visual \nsimilarities with other categories. Nevertheless, t he obtained \nresults confirm the effectiveness of RF-DETR for de tecting \ndestructive visual content and extremist-related imagery. \nFigure 3 shows the confusion matrix obtained from t he \nevaluation of the RF-DETR model on the test dataset . The \nmatrix depicts the correspondence between the actua l and \npredicted classes. As can be seen from the confusio n matrix, \nmost of the predictions are located along the main diagonal, \nindicating that the RF-DETR model effectively disti nguishes \nbetween different categories of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Values Obtained By The Rf-Detr Medium Model",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e4946da2b7447cdaed53ef5bc7fa5c17471e84c432d1bcd51e3abaf0cbb0cffe",
+            "evidence_id": "Eae011a622725a177-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Values Obtained By The Rf-Detr Medium Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1286,
+                "page": 6,
+                "section": "Values Obtained By The Rf-Detr Medium Model",
+                "section_index": 10,
+                "start": 388,
+                "text": "\nAl-Qaeda (0.99), Blood (0.98), and ISIS (0.98), indicating that \nthese categories possess distinctive visual charact eristics that \ncan be effectively learned by the model. Lower perf ormance \nwas observed for the Hamas (0.58) and AK-47 (0.71) classes, \nwhich can be attributed to limited training samples  and visual \nsimilarities with other categories. Nevertheless, t he obtained \nresults confirm the effectiveness of RF-DETR for de tecting \ndestructive visual content and extremist-related imagery. \nFigure 3 shows the confusion matrix obtained from t he \nevaluation of the RF-DETR model on the test dataset . The \nmatrix depicts the correspondence between the actua l and \npredicted classes. As can be seen from the confusio n matrix, \nmost of the predictions are located along the main diagonal, \nindicating that the RF-DETR model effectively disti nguishes \nbetween different categories of "
+              }
+            ],
+            "text": "\nAl-Qaeda (0.99), Blood (0.98), and ISIS (0.98), indicating that \nthese categories possess distinctive visual charact eristics that \ncan be effectively learned by the model. Lower perf ormance \nwas observed for the Hamas (0.58) and AK-47 (0.71) classes, \nwhich can be attributed to limited training samples  and visual \nsimilarities with other categories. Nevertheless, t he obtained \nresults confirm the effectiveness of RF-DETR for de tecting \ndestructive visual content and extremist-related imagery. \nFigure 3 shows the confusion matrix obtained from t he \nevaluation of the RF-DETR model on the test dataset . The \nmatrix depicts the correspondence between the actua l and \npredicted classes. As can be seen from the confusio n matrix, \nmost of the predictions are located along the main diagonal, \nindicating that the RF-DETR model effectively disti nguishes \nbetween different categories of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0030"
+        ],
+        "excerpt": "destructive visual content. In \nparticular, a high number of correctly identified s amples is \nobserved in the Blood, Gun, Knife, ISIS, and Palestine Islamic \nJihad (PIJ) classes, demonstrating that the model a chieves \nconsistent and reliable performance across these categories.  \nThe obtained results are consistent with previous s tudies \nthat report the effectiveness of deep learning for harmful and \nextremist visual content analysis. Earlier research  has mainly \nfocused on individual tasks such as weapon detectio n [7], \nextremist image classification [9, 11], or multimod al harmful \ncontent analysis [5, 6, 10, 13]. In contrast, this study evaluates \nmultiple state-of-the-art object detection architec tures on a \nunified dataset containing extremist symbols, weapo ns, \nexplosives, and violent imagery. Under identical ex perimental \nconditions, the transformer-based RF-DETR Medium ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Values Obtained By The Rf-Detr Medium Model",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f91dc016488787e3226f098ed34045969e79fad3ecb2bb96c3ab228da5beefa6",
+            "evidence_id": "Eae011a622725a177-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Values Obtained By The Rf-Detr Medium Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2184,
+                "page": 6,
+                "section": "Values Obtained By The Rf-Detr Medium Model",
+                "section_index": 10,
+                "start": 1286,
+                "text": "destructive visual content. In \nparticular, a high number of correctly identified s amples is \nobserved in the Blood, Gun, Knife, ISIS, and Palestine Islamic \nJihad (PIJ) classes, demonstrating that the model a chieves \nconsistent and reliable performance across these categories.  \nThe obtained results are consistent with previous s tudies \nthat report the effectiveness of deep learning for harmful and \nextremist visual content analysis. Earlier research  has mainly \nfocused on individual tasks such as weapon detectio n [7], \nextremist image classification [9, 11], or multimod al harmful \ncontent analysis [5, 6, 10, 13]. In contrast, this study evaluates \nmultiple state-of-the-art object detection architec tures on a \nunified dataset containing extremist symbols, weapo ns, \nexplosives, and violent imagery. Under identical ex perimental \nconditions, the transformer-based RF-DETR Medium "
+              }
+            ],
+            "text": "destructive visual content. In \nparticular, a high number of correctly identified s amples is \nobserved in the Blood, Gun, Knife, ISIS, and Palestine Islamic \nJihad (PIJ) classes, demonstrating that the model a chieves \nconsistent and reliable performance across these categories.  \nThe obtained results are consistent with previous s tudies \nthat report the effectiveness of deep learning for harmful and \nextremist visual content analysis. Earlier research  has mainly \nfocused on individual tasks such as weapon detectio n [7], \nextremist image classification [9, 11], or multimod al harmful \ncontent analysis [5, 6, 10, 13]. In contrast, this study evaluates \nmultiple state-of-the-art object detection architec tures on a \nunified dataset containing extremist symbols, weapo ns, \nexplosives, and violent imagery. Under identical ex perimental \nconditions, the transformer-based RF-DETR Medium "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0031"
+        ],
+        "excerpt": "achieved \nthe highest detection performance, demonstrating it s stronger \ncapability to model complex visual scenes compared with \nconvolution-based YOLO architectures. \nFigure 4 presents the main interface of the develop ed \nsystem. \n \n \nFig. 4.  System home page. \nFigure 5 presents an example of the image recogniti on \nresults of this system. In this example, an image o f an \nexplosive device is input, and the results are obta ined with a \nscore of 81-82%. \n \nFig. 5.  Image detection example. \nFigure 6 shows another example of the recognition r esult \nobtained through the graphical interface. Here, an image \ndepicting blood was entered, and the system detecte d it with \n94-97% accuracy. \n \n \nFig. 6.  Image detection example. \nIV.  CONCLUSION \nThis study compared the state-of-the-art methods fo r \ndetecting destructive visual content on the Internet on a special \ndataset consisting of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Values Obtained By The Rf-Detr Medium Model",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e3d7708e9dca677f9e849d6ed665305b51d87ba44fa3d75832fc0d6812d2b5e9",
+            "evidence_id": "Eae011a622725a177-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Values Obtained By The Rf-Detr Medium Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3083,
+                "page": 6,
+                "section": "Values Obtained By The Rf-Detr Medium Model",
+                "section_index": 10,
+                "start": 2184,
+                "text": "achieved \nthe highest detection performance, demonstrating it s stronger \ncapability to model complex visual scenes compared with \nconvolution-based YOLO architectures. \nFigure 4 presents the main interface of the develop ed \nsystem. \n \n \nFig. 4.  System home page. \nFigure 5 presents an example of the image recogniti on \nresults of this system. In this example, an image o f an \nexplosive device is input, and the results are obta ined with a \nscore of 81-82%. \n \nFig. 5.  Image detection example. \nFigure 6 shows another example of the recognition r esult \nobtained through the graphical interface. Here, an image \ndepicting blood was entered, and the system detecte d it with \n94-97% accuracy. \n \n \nFig. 6.  Image detection example. \nIV.  CONCLUSION \nThis study compared the state-of-the-art methods fo r \ndetecting destructive visual content on the Internet on a special \ndataset consisting of "
+              }
+            ],
+            "text": "achieved \nthe highest detection performance, demonstrating it s stronger \ncapability to model complex visual scenes compared with \nconvolution-based YOLO architectures. \nFigure 4 presents the main interface of the develop ed \nsystem. \n \n \nFig. 4.  System home page. \nFigure 5 presents an example of the image recogniti on \nresults of this system. In this example, an image o f an \nexplosive device is input, and the results are obta ined with a \nscore of 81-82%. \n \nFig. 5.  Image detection example. \nFigure 6 shows another example of the recognition r esult \nobtained through the graphical interface. Here, an image \ndepicting blood was entered, and the system detecte d it with \n94-97% accuracy. \n \n \nFig. 6.  Image detection example. \nIV.  CONCLUSION \nThis study compared the state-of-the-art methods fo r \ndetecting destructive visual content on the Internet on a special \ndataset consisting of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eae011a622725a177-B0032"
+        ],
+        "excerpt": "11 classes, which included ob jects \ndepicting flags of extremist organizations, weapons , and \ndangerous objects. The experimental results showed that \nalthough the YOLO8 series worked quickly and effici ently in \nreal-time detection, it had low accuracy in overlap ping objects \nand complex scenes. YOLO11s showed good results in \nrecognizing small objects, and the YOLO8m+CNN ensem ble \nmethod increased reliability, but the overall perfo rmance was \nlower than the RF-DETR Medium model (0.841 vs 0.869). The \nRF-DETR Medium model, based on the Transformer \narchitecture, achieved the highest accuracy (mAP50 = 0.869) \namong all the models compared. In addition, the RF- DETR \nmodel achieved an average inference speed of approx imately",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Values Obtained By The Rf-Detr Medium Model",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fd4d7f30628bf004c04f7529355489936f1d26bafce48ddf0af2c8bdff564490",
+            "evidence_id": "Eae011a622725a177-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Values Obtained By The Rf-Detr Medium Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3822,
+                "page": 6,
+                "section": "Values Obtained By The Rf-Detr Medium Model",
+                "section_index": 10,
+                "start": 3083,
+                "text": "11 classes, which included ob jects \ndepicting flags of extremist organizations, weapons , and \ndangerous objects. The experimental results showed that \nalthough the YOLO8 series worked quickly and effici ently in \nreal-time detection, it had low accuracy in overlap ping objects \nand complex scenes. YOLO11s showed good results in \nrecognizing small objects, and the YOLO8m+CNN ensem ble \nmethod increased reliability, but the overall perfo rmance was \nlower than the RF-DETR Medium model (0.841 vs 0.869). The \nRF-DETR Medium model, based on the Transformer \narchitecture, achieved the highest accuracy (mAP50 = 0.869) \namong all the models compared. In addition, the RF- DETR \nmodel achieved an average inference speed of approx imately"
+              }
+            ],
+            "text": "11 classes, which included ob jects \ndepicting flags of extremist organizations, weapons , and \ndangerous objects. The experimental results showed that \nalthough the YOLO8 series worked quickly and effici ently in \nreal-time detection, it had low accuracy in overlap ping objects \nand complex scenes. YOLO11s showed good results in \nrecognizing small objects, and the YOLO8m+CNN ensem ble \nmethod increased reliability, but the overall perfo rmance was \nlower than the RF-DETR Medium model (0.841 vs 0.869). The \nRF-DETR Medium model, based on the Transformer \narchitecture, achieved the highest accuracy (mAP50 = 0.869) \namong all the models compared. In addition, the RF- DETR \nmodel achieved an average inference speed of approx imately"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://www.etasr.com/index.php/ETASR/article/download/21134/7149",
+    "gate_version": "dual-promotion-v3",
+    "manual_override": false,
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
+    "overall_quality_score": null,
+    "paper_type": "survey_or_review",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript reports only single-run results on a single 10% test split without confidence intervals, standard deviations, repeated trials, or statistical testing, so the margin between RF-DETR Medium (mAP@50 0.869) and the best YOLO variants (0.834-0.841) is not established as statistically robust.",
+          "The augmentation pipeline is described as expanding the dataset to 3,385 images before the 70/20/10 split is stated, leaving potential train/test leakage from augmented copies of test images unresolved.",
+          "The 'YOLOv8m combined with CNN layers' ensemble is described only vaguely, with no architectural detail or training procedure sufficient to reproduce or interpret its reported 0.841 mAP.",
+          "The paper's broad claim that transformer-based detectors provide higher accuracy and stronger generalization than convolution-based approaches is based on a single small custom dataset with severe class imbalance (e.g., 107 Al-Qaeda images) and no external benchmark or out-of-distribution evaluation."
+        ],
+        "canonical_id": "doi:10.48084/etasr.21134",
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The final evaluation uses objective ground-truth metrics on a held-out test split rather than a learned or model-generated evaluator, so no circularity is present.",
+          "final_evaluation_signal": "Deterministic Precision, Recall, and mAP@0.5 computed against manually annotated ground-truth bounding boxes on the held-out test split.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Standard supervised bounding-box regression and classification losses minimized via AdamW during training of the detection models.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eae011a622725a177-B0003",
+          "Eae011a622725a177-B0004",
+          "Eae011a622725a177-B0014",
+          "Eae011a622725a177-B0015",
+          "Eae011a622725a177-B0017",
+          "Eae011a622725a177-B0018",
+          "Eae011a622725a177-B0021",
+          "Eae011a622725a177-B0022",
+          "Eae011a622725a177-B0023",
+          "Eae011a622725a177-B0027",
+          "Eae011a622725a177-B0028",
+          "Eae011a622725a177-B0029",
+          "Eae011a622725a177-B0030",
+          "Eae011a622725a177-B0031",
+          "Eae011a622725a177-B0032"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "c950d23463b6bd55830ef966331617f9e277bb0f87388d6236f12780458e4edf"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48084/etasr.21134",
+        "claim_evidence_alignment": "Claims that RF-DETR Medium outperforms convolutional architectures on this domain are supported by the reported single-split mAP@50 numbers, but broader claims regarding transformer superiority and real-time operational safety readiness are moderately overstated given small sample sizes for certain classes (e.g., Hamas, Al-Qaeda) and lack of out-of-distribution testing.",
+        "context_id": "ae011a622725a177d35512acbb000325de9f288ac2524d9901d64e65a4f2e739",
+        "decision": "uncertain",
+        "evaluation_assessment": "Evaluation reports standard precision, recall, and mAP@50 metrics across models and classes on a 10% test split. However, the manuscript does not report confidence intervals, standard deviations across multiple runs, or formal statistical testing, leaving uncertainty around whether the 0.869 mAP of RF-DETR vs 0.834-0.841 for YOLO models represents a statistically robust margin rather than single-run variance.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The final evaluation relies on an objective ground-truth metric (mAP@50) evaluated on a held-out test split rather than an adaptive, synthetic, or model-based evaluator.",
+          "final_evaluation_signal": "Standard deterministic object detection metrics (Precision, Recall, mAP@0.5) computed against ground-truth bounding box annotations on the test split.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Standard supervised bounding-box regression and classification loss functions minimized via the AdamW optimizer during training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eae011a622725a177-B0003",
+          "Eae011a622725a177-B0004",
+          "Eae011a622725a177-B0014",
+          "Eae011a622725a177-B0015",
+          "Eae011a622725a177-B0017",
+          "Eae011a622725a177-B0018",
+          "Eae011a622725a177-B0021",
+          "Eae011a622725a177-B0022",
+          "Eae011a622725a177-B0027",
+          "Eae011a622725a177-B0028"
+        ],
+        "limitations": "The authors acknowledge class imbalance and limited sample sizes for specific extremist symbols, but omit discussion of potential data leakage during augmentation, lack of repeated trials, and the absence of external benchmark evaluations.",
+        "method_assessment": "The methodology compiles 2,068 images via keyword scraping, annotates them via Roboflow into COCO format, expands the dataset via augmentation to 3,385 images, and trains existing standard detection models under standard training configurations (50 epochs, batch size 16, AdamW). However, methodological descriptions regarding the exact structure and implementation of the 'YOLOv8m combined with CNN layers' ensemble remain vague, and augmentation appears to have been applied before or without clear isolation from dataset splitting.",
+        "quality_rationale": "While the paper provides a straightforward comparative study on a specialized destructive visual content dataset, the technical contributions are limited to dataset assembly and standard fine-tuning of existing models. Given ambiguities around augmentation pipeline splitting, single-run evaluation without error bounds, and limited algorithmic novelty, the study's scientific rigor remains uncertain.",
+        "scoped_contribution": "A benchmark and comparative evaluation of off-the-shelf object detection architectures (YOLOv8 variants, YOLOv11s, YOLOv8m+CNN, and RF-DETR Medium) on a custom 11-class dataset of destructive visual content (weapons, blood, and extremist organization symbols).",
+        "source_content_hash": "c950d23463b6bd55830ef966331617f9e277bb0f87388d6236f12780458e4edf"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the paper provides a straightforward comparative study on a specialized destructive visual content dataset, the technical contributions are limited to dataset assembly and standard fine-tuning of existing models. Given ambiguities around augmentation pipeline splitting, single-run evaluation without error bounds, and limited algorithmic novelty, the study's scientific rigor remains uncertain.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "c950d23463b6bd55830ef966331617f9e277bb0f87388d6236f12780458e4edf",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "The authors acknowledge class imbalance and limited sample sizes for specific extremist symbols, but omit discussion of potential data leakage during augmentation, lack of repeated trials, and the absence of external benchmark evaluations."
+  },
+  "semantic_scholar_id": null,
+  "source": "openalex",
+  "source_id": "W7218538369",
+  "source_ids": {
+    "openalex": [
+      "W7218538369"
+    ]
+  },
+  "source_updated_date": "2026-10-05",
+  "sources": [
+    "openalex"
+  ],
+  "ssrn_id": null,
+  "structured_card": {
+    "evidence_or_evaluation": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "key_contribution": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "limitations_or_uncertainty": {
+      "confidence": "high",
+      "provenance": "rule",
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
+    },
+    "method_or_system_type": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Real-time / YOLO-family detection"
+    },
+    "relation_to_agentic_memory": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Directly concerns the YOLO family or real-time single-stage detection"
+    },
+    "research_relevance": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Directly relevant to computer-vision research based on screening evidence."
+    }
+  },
+  "structured_sections": {
+    "evidence_or_evaluation_signals": [],
+    "method_or_system_type": "Real-time / YOLO-family detection",
+    "possible_key_claims": [],
+    "relation_to_agentic_memory": "Directly concerns the YOLO family or real-time single-stage detection"
+  },
+  "tags": [
+    "object-detection",
+    "yolo",
+    "detr",
+    "efficient-vision",
+    "benchmark",
+    "metrics"
+  ],
+  "title": "Modern Approaches to Visual Content Detection Using YOLO, RF-DETR, and CNN Models",
+  "url": "https://doi.org/10.48084/etasr.21134"
+}

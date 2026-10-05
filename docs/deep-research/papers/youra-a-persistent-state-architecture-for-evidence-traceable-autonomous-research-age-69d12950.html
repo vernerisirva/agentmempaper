@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents</h1>
+          <p class="hero-copy">Yoonkyu Woo, Woojin Lee, Jin-Xia Huang</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.01097">Open paper</a>
+            <a class="paper-detail-link" href="youra-a-persistent-state-architecture-for-evidence-traceable-autonomous-research-age-69d12950.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Yoonkyu Woo, Woojin Lee, Jin-Xia Huang</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-01</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-01</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li><li>Semantic Scholar</li></ul>
+            <div class="secondary-links"><a href="https://www.semanticscholar.org/paper/a2f117bdfc10626be7e48df5eacd241f408c96e7">Semantic Scholar</a><a href="https://doi.org/10.48550/arxiv.2610.01097">DOI</a><a href="https://openalex.org/W7215909366">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies AI-scientist or scientific-discovery agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>End-to-end research agents can now produce complete scientific papers, yet manuscript claims often diverge from executed experiments. This gap is structural: research state, failure histories, and claim-evidence alignment are not maintained as persistent, verifiable state across long-horizon pipelines. We present Yo...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a substantial and clear architectural contribution to autonomous scientific discovery agents, with thorough experimental controls, rigorous ablation studies, and independent multi-judge corroboration paired with human audit.</p>
+      <p>The study openly notes constraints including evaluation limited to machine learning domains, context truncation during LLM judging of long code/logs, and differing baseline tool environments and token budgets.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-05T11:11:33.453146+00:00.</p>
+        <p>Coverage: 86810 of 86810 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>End-to-end research agents can now produce
+complete scientific papers, yet manuscript
+claims often diverge from executed experi-
+ments. This gap is structural: research state,
+failure histories, and claim–evidence align-
+ment are not maintained as persistent, verifi-
+able state across long-horizon pipelines. We
+presentYouRA (Your Research Agent), an
+architecture for stateful, evidence-traceable au-
+tonomous research. YouRA preserves research
+state, execution evidence, and failure history
+across the research trajectory by integrating
+three components: aVerification State Architec-
+ture(VSA) that tracks hypotheses, gates, and
+evidence pointers; anIndependent Controller
+that turns state and reflection records into lifecy-
+cle, recovery, and debate/review control while
+separating control from execution; andState-
+ful Reflectionthat logs failures as structured
+lessons and routes recovery </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>through bounded
+repair, redesign, or reset. On MLR-Bench&#x27;s
+predefined ten-task end-to-end subset, YouRA
+improves over both MLR-Agent and AI Sci-
+entist V2 on scalar Overall across all three
+matched backbones. An automated diagnostic
+using MLR-Bench&#x27;s hallucination taxonomy
+reports intersection/union counts for four fact-
+based failure types, and data-provenance di-
+agnostic shows more real-data-based outputs.
+Ablating each of the four components (the
+VSA, the Independent Controller, MCP tool
+access, and reflection-guided recovery) sup-
+ports their separable contributions. Removing
+either core-state component drops YouRA be-
+low the full system. Code: https://github.
+com/PrayPrey/Your-Research-Agent.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>recall, making it difficult to
+resume or recover a run from the actual research
+state.
+All three limitations trace back to the same ab-
+sence: the research trajectory is not maintained as
+explicit, persistent, verifiable structure across the
+pipeline. Two pieces are missing. One is a shared
+state substrate that records hypotheses, gates, fail-
+ures, and evidence pointers. The other is an exter-
+nal control surface that uses this state to resume,
+redirect, and review the research lifecycle.
+To address these problems, we presentYouRA
+(Your Research Agent), an architecture for state-
+ful, evidence-traceable autonomous research that
+preserves research state, execution evidence, and
+trajectory-level failure history as explicit, persis-
+tent structure (Figure 1). Its three components are:
+(i) aVerification State Architecture (VSA)that
+centrally manages hypotheses, gates, and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evidence
+pointers; (ii) anIndependent Controller, which
+consumes VSA and reflection records to drive life-
+cycle transitions, recovery escalation, and multi-
+agent debate/review roles while separating high-
+level control from task execution; and (iii)State-
+ful Reflection, which logs failures as structured
+lessons and routes recovery through bounded re-
+pair, redesign, or reset. Given only a topic-level
+description, YouRA autonomously expands it into
+a research question, hypothesis, experiment plan,
+implementation, validation evidence, and final
+manuscript. In practical research use, the same
+architecture supports dynamic researcher steering
+through stage-specific CLI commands for redirect-
+ing, restarting, or redesigning a run; for evalua-
+tion as an autonomous research agent, however,
+all benchmark runs in this paper are held to fully
+autonomous mode.
+We evaluate on MLR-Bench (Chen et </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YouRA&#x27;s first component targets context and evi-
+dence fragmentation. In conventional agent loops,
+state is implicitly embedded in conversation his-
+tory, where it is vulnerable to truncation and hallu-
+cination. YouRA instead maintains research state
+through a Y AML-basedVerification State Architec-
+ture (VSA). A central verification_state.yaml
+tracks macro pipeline state (hypotheses, gate re-
+sults, routing decisions, evidence pointers, and a
+failed-hypotheses registry), and per-stage check-
+point files complement it. Later stages read gate
+outcomes, evidence pointers, and failure records
+from the VSA, so executed experiments become
+explicit constraints when hypotheses are revised,
+validated, or written into manuscript claims. The
+VSA is asingle persistent state recordunder three
+invariants:gate-driven progression(a hypothesis
+advances only when its MUST_WORK gates are </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YouRA&#x27;s second component turns persistent state
+into control. The VSA stores the research trajec-
+tory, and Stateful Reflection records failure con-
+straints and routing history; the independent con-
+troller consumes these records to choose the next
+action. Concretely, the controller supports three
+roles:lifecycle continuation, selecting the next
+stage from VSA gate status;recovery escalation,
+consuming Stateful Reflection records to choose
+repair, redesign, or reset boundaries; andindepen-
+dent debate/review, used by Hypothesis Debate
+and Adversarial Fact Review. By keeping control
+in a separate context from task execution, YouRA
+avoids making the execution conversation itself the
+only source of control state. The controller there-
+fore reads compact VSA/artifact summaries rather
+than the full trace and emits continuation context
+at stop or human-in-the-loop boundaries.
+Prior systems </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YouRA&#x27;s third component,Stateful Reflection,
+turns failure signals into structured constraints that
+later stages can use. It operates over Reflective
+Memory (§3.2) during the hypothesis loop: routing-
+relevant outcomes are recorded with structured rea-
+sons, supporting or refuting evidence, and pivot-
+or-reuse rationales, so refuted approaches become
+negative constraints while validated and partially
+validated components become reusable evidence
+for successor stages. Recovery proceeds in three
+levels. Bounded repair first handles local Cod-
+ing &amp; Validation failures, and after each execution
+an independent mock-data and hard-coded-result
+detector checks whether reported outputs are de-
+rived from actual data processing; detected fab-
+rications trigger repair before evidence is passed
+downstream. If a MUST_WORK gate remains unsat-
+isfied after repair, Stateful Reflection escalates </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>System Backbone LLM Clarity Novelty Soundness Significance Overall
+MLR-Agent
+Sonnet 4.5 7.42±0.24 5.12±0.74 2.48±0.61 3.52±0.68 3.10±0.64
+Opus 4.57.30±0.35 5.25±0.31 3.05±0.96 3.80±0.71 3.62±0.80
+Sonnet 4.67.78±0.22 5.95±0.444.05±1.19 4.72±1.14 4.42±1.11
+AI Scientist V2
+Sonnet 4.5 6.72±0.43 4.85±0.60 3.45±1.18 3.92±0.85 3.62±0.84
+Opus 4.56.38±1.25 5.22±0.86 4.18±1.314.47±1.034.28±1.16
+Sonnet 4.66.45±0.65 5.75±0.47 3.32±1.01 4.22±0.95 3.88±0.88
+YouRA
+Sonnet 4.5 7.50±0.49 5.23±0.92 3.98±1.74 4.30±1.28 4.20±1.45
+Opus 4.57.73±0.48 5.33±1.03 4.58±1.864.33±1.424.45±1.51
+Sonnet 4.67.72±0.32 5.70±0.574.92±1.09 5.05±1.00 5.05±0.92
+Table 1: MLR-Bench end-to-end scores (10 tasks; 1–10, higher is better). Each cell reports the mean± task SD of
+scores averaged over four judges; bold marks the best score per matched-backbone block.
+Comparison Backbone Win Tie Lose
+YouRA vs MLR-Agent
+Sonnet 4.5 25 14 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1
+Opus 4.5 26 5 9
+Sonnet 4.6 21 14 5
+YouRA vs AI Scientist V2
+Sonnet 4.5 18 14 8
+Opus 4.5 17 12 11
+Sonnet 4.6 20 12 8
+Table 2: Order-controlled pairwise preferences from
+the YouRA perspective. Each row summarizes 40 order-
+collapsed judge-task verdicts (10 tasks× 4 judges); each
+verdict is scored in both orders, with reversals counted
+as ties.
+Agent baseline pipeline for idea generation, pro-
+posal formulation, experimentation, and paper
+writing. The 201 tasks are sourced from recent
+ICLR/ICML/NeurIPS workshops and are catego-
+rized by MLR-Bench into nine core ML topics:
+LLMs and Vision-Language Models, AI for Sci-
+ence, ML Theory, Trustworthy AI, Computer Vi-
+sion, ML Systems, Multimodality, Reinforcement
+Learning, and other emerging topics. End-to-end
+and pairwise paper-level evaluation use the prede-
+fined ten-task subset specified by MLR-Bench (Ta-
+ble 1 and Table 2). As </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Protocol
+Contributors, 2025) summarized in Appendix Ta-
+ble 6. This is a released-configuration comparison
+with matched research-execution backbones, not
+a fully tool-normalized comparison; architecture-
+level interpretation therefore relies on the within-
+YouRA ablations and the provenance/hallucination
+diagnostics in addition to the cross-system scores.
+For YouRA, the Claude model is the task-execution
+backbone and the independent controller is fixed as
+GPT-5.2 (OpenAI, 2025) (removed only in the w/o
+Independent Controller ablation. §4.3), so Table 1
+varies execution rather than controller backbone.
+Evaluation.We adopt MLR-Bench&#x27;s End-to-
+End rubric (Chen et al., 2026) (Clarity, Novelty,
+Soundness, Significance, Overall; 1–10):Clarity
+scores readability and structure,Noveltyscores
+originality and advance over prior work,Sound-
+nessscores method appropriateness, data support,
+code </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>consistency, and whether reported results are
+real, not fabricated,Significancescores whether re-
+liable results support field-level impact, andOver-
+allgives a holistic publishability-anchored judg-
+ment. We retain these evaluation criteria and adapt
+MLR-Judge&#x27;s input handling to account for each
+1https://github.com/openai/codex
+2https://github.com/anthropics/claude-code
+judge LLM&#x27;s context length limit. Each judge
+receives the task description, paper, code, result
+files, and experimental logs. Across all evaluated
+systems, when a request exceeded this limit, we
+progressively truncated the combined code, result
+files, and logs from the end and retried the request,
+while keeping the task description and paper in
+full. The MLR-Bench study reports alignment be-
+tween MLR-Judge scores and human judgments,
+so we use this rubric as the primary standardized
+metric while acknowledging the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>general limita-
+tions of automated judging. We therefore com-
+plement scalar scores with order-controlled pair-
+wise preferences, hallucination diagnostics, data-
+provenance diagnostics, and component ablations.
+End-to-end scoring on the ten-task subset averages
+four frontier-class judges from distinct model fam-
+ilies (Gemini 3.1 Pro (Google DeepMind, 2026),
+GPT 5.4 (OpenAI, 2026), Grok 4.3 (xAI, 2026),
+and Opus 4.6 (Anthropic, 2026a)), selected so
+that judge capability meets or exceeds that of the
+generators under evaluation while limiting judge–
+generator overlap. Pairwise win rates use the same
+four judges with order-bias control: for each pa-
+per pair, we evaluate both presentation orders and
+count the comparison as a tie if the preferred paper
+changes when the order is reversed. All evaluations
+run fully autonomously.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>matched backbones, and the gains are con-
+centrated in dimensions tied to research validity.
+Against MLR-Agent, YouRA improves Overall
+on every backbone and shows the largest separa-
+tion inSoundnessandSignificance. It also leads
+AI Scientist V2, the strongest prior end-to-end base-
+line included by MLR-Bench, on Overall across
+backbones and achieves higherSoundnessin all
+three settings. Both Overall gaps are significant
+under a paired sign-flip permutation test over the
+30 matched (backbone, task) cells (Appendix D.1).
+Pairwise preferences.Table 2 reports pairwise
+preferences, with each pair judged in both presen-
+tation orders to control position bias (Zheng et al.,
+2023). Across the three backbones (120 compar-
+isons per baseline), YouRA wins 72, ties 33, and
+loses 15 against MLR-Agent, and wins 55, ties 38,
+and loses 27 against AI Scientist V2. It comes
+out ahead on every backbone, </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>text.
+Configuration Backbone VSA IC MCP Refl. Clarity Novelty Soundness Significance Overall
+YouRA (full)
+Sonnet 4.5 ✓ ✓ ✓ ✓ 7.50±0.49 5.23±0.92 3.98±1.74 4.30±1.28 4.20±1.45
+Sonnet 4.6✓ ✓ ✓ ✓7.72±0.32 5.70±0.57 4.92±1.09 5.05±1.00 5.05±0.92
+Opus 4.5✓ ✓ ✓ ✓7.73±0.48 5.33±1.03 4.58±1.86 4.33±1.42 4.45±1.51
+w/o VSA
+Sonnet 4.5 ✗ ✓ ✓ ✓ 7.17±0.46 4.12±1.09 2.73±1.29 3.02±0.92 2.88±0.94
+Sonnet 4.6✗ ✓ ✓ ✓7.55±0.39 5.40±0.72 4.20±1.62 4.35±1.33 4.10±1.28
+Opus 4.5✗ ✓ ✓ ✓7.47±0.34 5.42±0.43 3.10±1.58 3.48±0.91 3.33±1.14
+w/o Independent
+Controller
+Sonnet 4.5 ✓ ✗ ✓ ✓ 7.22±0.18 4.80±1.13 2.25±1.01 2.88±0.44 2.38±0.44
+Sonnet 4.6✓ ✗ ✓ ✓7.53±0.25 5.53±0.82 4.83±1.72 4.83±1.39 4.70±1.22
+Opus 4.5✓ ✗ ✓ ✓7.28±0.25 5.30±0.75 2.92±1.28 3.70±0.78 3.25±1.08
+w/o MCP
+Sonnet 4.5 ✓ ✓ ✗ ✓ 7.45±0.42 4.55±0.90 2.40±0.64 3.15±0.39 2.83±0.54
+Sonnet 4.6✓ ✓ ✗ ✓7.53±0.30 5.75±0.60 4.12±1.21 4.67±0.95 4.42±0.80
+Opus 4.5✓ ✓ </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>indepen-
+dently assess 270 flagged instances (90 per system),
+confirming roughly three quarters as genuine hal-
+lucinations. Precision is highest for hallucinated
+methodology and lowest for nonexistent citations,
+and per-system precision is statistically indistin-
+guishable, so the automated diagnostic does not
+systematically favor or disfavor any system. A
+fourth evaluator then audits the three annotators
+by independently re-annotating a 90-instance sub-
+set. Agreement is moderate, most disagreements
+are cases where the auditor is stricter than the pri-
+mary annotator, and the disagreement rate does not
+differ significantly across systems (χ2(2) = 2.61,
+p= 0.27 ), giving no evidence of systematic bias
+toward or against any of the three systems.
+Because precision is comparable across systems,
+Table 5 reports precision-corrected hallucination
+counts. On these corrected counts, MLR-Agent </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The data-provenance companion in Figure 2 and
+Appendix Table 15 provides a separate provenance
+context. In Sonnet 4.5, Sonnet 4.6 and Opus 4.5,
+27/30 of YouRA&#x27;s generated papers are classified
+as real-data-based by both analyzers, compared
+with 11/30 for MLR-Agent and 17/30 for AI Sci-
+Flag precision by category Flag precision by system Auditor agreement
+Count Rate Count Rate Count Rate
+Hallucinated Methodology 92/102 90.2% YouRA 68/90 75.6% YouRA 26/30 86.7%
+Faked Experimental Results 64/85 75.3% MLR-Agent 70/90 77.8% MLR-Agent 21/30 70.0%
+Mathematical Errors 15/21 71.4% AI Scientist V2 65/90 72.2% AI Scientist V2 22/30 73.3%
+Nonexistent Citations 32/62 51.6%
+Overall 203/270 75.2%χ 2(2) = 0.75,p= 0.686Overall 69/90 76.7%
+Wilson 95% CI [69.7%, 80.0%] Cohen&#x27;sκ0.54
+Table 4: Human validation of the automated hallucination diagnostic. Left: precision of automatically flagged
+instances by </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>category (confirmed/flagged), with the Wilson 95% CI of the overall precision. Middle: per-system
+precision; theχ2 test shows the differences across systems are not significant. Right: agreement between the three
+primary annotators and an independent fourth auditor on a 90-instance subset (30 per annotator), with Cohen&#x27;sκ;
+18 of the 21 disagreements are cases where the auditor is stricter.
+Flags Precision Corrected
+YouRA 420 75.6% 317
+MLR-Agent 552 77.8% 429
+AI Scientist V2 413 72.2% 298
+∆ 95% CI p
+YouRA−MLR-Agent−112 [−184,−39]0.003
+YouRA−AI Scientist V2+19 [−45,+86]0.571
+AI Scientist V2−MLR-Agent−131 [−200,−62]&lt;0.001
+Table 5: Precision-corrected hallucination counts, com-
+puted as automated flags times the human-validated
+precision from Table 4, with pairwise differences (95%
+CIs, two-sidedp).
+entist V2. These diagnostics complement the score
+and preference results in Table 1 and </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>donut
+summarizes the Real/Synthetic/Fabricated classification
+of 30 generated papers for one system under one of
+two independent analysis pipelines (Codex/GPT-5.4 or
+Claude/Opus 4.6). Exact counts are in Appendix Ta-
+ble 15.
+not rest on fabricated content. YouRA has signifi-
+cantly fewer confirmed hallucinations than MLR-
+Agent, its count cannot be distinguished from that
+of AI Scientist V2, its runs rely on real data more
+often than either baseline under a conservative read-
+ing, and the scalar score separates YouRA from
+both. A scalar end-to-end score cannot by itself tell
+whether a gain comes from better research or from
+more persuasive fabrication, so it should be paired
+with diagnostics that check manuscript claims and
+their underlying data against executed evidence,
+such as the human-validated hallucination diag-
+nostic and the automated data-provenance analysis
+used here.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>All experiments focus on machine learning and
+Deep learning tasks, leaving the applicability of
+YouRA to other scientific domains for future in-
+vestigation. Research quality is assessed using the
+MLR-Judge framework with a judge LLM different
+from those evaluated in the original MLR-Bench
+study. Alignment with human reviewers therefore
+requires separate validation for our judge config-
+uration. Input truncation due to the judge LLMs&#x27;
+context length limits may disadvantage papers with
+extensive code, result files, or logs. The systems
+compared in our experiments operate with differ-
+ent tool configurations and token budgets, so the
+reported scores reflect performance under each sys-
+tem&#x27;s resource conditions. A promising direction
+for future work is to develop a benchmark with
+standardized tool access and token budgets, provid-
+ing a common experimental setting for comparing
+autonomous </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Protocol.Each generated paper is classified at
+the paper level by the kind of data its experiments
+ran on. An automated analyzer receives the paper
+and the root of its experiment folder, explores the
+folder without assuming its layout, and inspects
+the experiment code and result files to check that
+execution actually occurred, then assigns one of
+three labels:Real(experiments run on real datasets,
+e.g., loaded through datasets.load_dataset or
+torchvision.datasets),Synthetic(experiments
+run on artificially generated data, e.g., random
+draws or synthetic-dataset generators), orFabri-
+cated(reported values without runnable experi-
+ment code, e.g., hardcoded result arrays). Every
+label is stored with the file-level evidence it rests
+on. Two analyzers built on distinct model families,
+Claude Code (Opus 4.6) and Codex (GPT-5.4), run
+the same protocol independently, so the classifi-
+cation </blockquote></details></li><li><strong>Contribution clarity — pages 20–21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tasks).
+Ablation significance.Table 16 compares full
+YouRA with each ablated configuration over the
+same 30 cells. Removing any of the four compo-
+nents lowersOverall, and all four differences stay
+significant after Holm correction under paired sign-
+flip permutation tests. These tests do not rank the
+components.
+Table 16: Paired significance tests for component re-
+movals. The unit is the 30 matched (backbone, task)
+cells, where each cell averages four judges&#x27; Overall
+scores. ∆ Overall is ablated minus full YouRA, so nega-
+tive values indicate drops under ablation. Permutationp
+is two-sided from 100,000 sign-flip assignments. W/L/T
+reports cells where full YouRA is higher, lower, or tied.
+Backbone drops are reported in Sonnet 4.5 / Opus 4.5 /
+Sonnet 4.6 order.
+Removed component ∆Overall Perm.p Holmp W/L/T Signp Backbone drops
+MCP−1.13&lt;0.001&lt;0.00120/5/5 </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Autonomous research-agent system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies agents that perform or evaluate multi-step research workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 98/100</li>
+              <li>Screening category: AI scientist / discovery system</li>
+              <li>Tags: deep-research-agents, ai-scientist, research-memory</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv, semantic_scholar</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-02 10:32:21</li><li>Last seen by Paper Scout: 2026-10-05 11:09:01</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.01097</li><li>arXiv: 2610.01097</li><li>Semantic Scholar: a2f117bdfc10626be7e48df5eacd241f408c96e7</li><li>OpenAlex: W7215909366</li><li>OpenAlex IDs: W7215909366</li><li>arXiv IDs: 2610.01097</li><li>Semantic Scholar IDs: a2f117bdfc10626be7e48df5eacd241f408c96e7</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="youra-a-persistent-state-architecture-for-evidence-traceable-autonomous-research-age-69d12950.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents. Yoonkyu Woo, Woojin Lee, Jin-Xia Huang. 2026-10-01. https://arxiv.org/abs/2610.01097</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

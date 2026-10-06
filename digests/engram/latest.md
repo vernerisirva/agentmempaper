@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-05](2026-10-05.md).
+Latest daily digest: [2026-10-06](2026-10-06.md).
 
-# Paper Scout Digest - 2026-10-05
+# Paper Scout Digest - 2026-10-06
 
 ## Run Summary
 
-- **Run ID:** 33
-- **Candidates fetched:** 89
-- **New unique papers:** 79
+- **Run ID:** 34
+- **Candidates fetched:** 87
+- **New unique papers:** 78
 - **Relevant:** 5
 - **Maybe relevant:** 1
-- **Irrelevant:** 83
-- **Source summary:** arxiv: 5, openalex: 83, semantic_scholar: 1
+- **Irrelevant:** 81
+- **Source summary:** arxiv: 5, openalex: 82, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -24,26 +24,4 @@ Latest daily digest: [2026-10-05](2026-10-05.md).
 - semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
 
-## Highly Relevant
-
-### [Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning](https://arxiv.org/abs/2608.23982)
-
-- **Authors:** Zhen Bi, Xueshu Chen, Yan Wang, Zhizhi Peng, Haosen Hong, Zhen Wang, et al.
-- **Date:** 2026-08-25
-- **Source:** openalex
-- **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.
-- **Tags:** conditional-memory
-- **Abstract summary:** Scientific reasoning requires language models to retrieve specialized knowledge and incorporate it reliably into multi-step computation. Conditional memory provides an explicit lookup pathway that complements dense neural representations, but its usefulness is inherently input- and computation-dependent: retrieved i...
-
-## Maybe Relevant
-
-### [DELAYED SUPERVISION FOR TEST-TIME LANGUAGE MODELS](https://arxiv.org/abs/2609.32312)
-
-- **Authors:** Jinha Kim, Taksh Kothari
-- **Date:** 2026-09-26
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent learned-memory mechanism; direct Engram connection is unestablished. Matched: test-time-memory.
-- **Tags:** test-time-memory
-- **Abstract summary:** Test-time language models adapt a compact memory while processing the input sequence. This perspective encompasses nonlinear fast-weight learning in LaCT, associative delta-rule updates in DeltaNet, and generalized delta-rule state updates in RWKV-7. Training these models to predict the next token does not explicitl...
+No new relevant or maybe-relevant papers found.

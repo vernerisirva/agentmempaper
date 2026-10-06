@@ -28,12 +28,12 @@
   "first_seen_date": "2026-10-05",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-05 11:08:53",
-  "last_seen_date": "2026-10-05",
+  "last_seen_at": "2026-10-06 11:01:09",
+  "last_seen_date": "2026-10-06",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-05 11:09:14",
   "notified_date": "2026-10-05",
   "openalex_id": "W7215682171",
@@ -43,8 +43,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-10-05 11:08:43",
-    "generated_at": "2026-10-05 11:12:28",
-    "last_seen_at": "2026-10-05 11:08:53",
+    "generated_at": "2026-10-06 11:03:48",
+    "last_seen_at": "2026-10-06 11:01:09",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -108,36 +108,1597 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-06T11:03:14.094447+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "While the system demonstration framework is coherent, scientific validation is preliminary: a sample of 20 queries for retrieval and an unspecified sample size for user ratings provide insufficient empirical backing to justify promotion at this time.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 36622,
+      "assessment_input_sha256": "4089baec3dce76a1069a428425f79da0bb3db606296ec7d946d09956ec214152",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2610.01027",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 35160,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 34523,
+      "evidence_block_count": 62,
+      "evidence_context_characters": 41967,
+      "evidence_context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+      "evidence_context_sha256": "c7f867d3db2d97d08f7504a43871f310c3615dedc39e82b681de6853e1ccc59b",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 35178,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "extracted_pages": 10,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "ac5b3fdab72858b6886295862fee8f9ef430dd7a65d90e37424edfad9c973bc1",
+        "source_url": "https://arxiv.org/pdf/2610.01027",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 35160,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 314,
+          "supplied_characters": 314
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1283,
+          "supplied_characters": 1283
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2360,
+          "supplied_characters": 2360
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1977,
+          "supplied_characters": 1977
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 1256,
+          "supplied_characters": 1256
+        },
+        {
+          "heading": "Framework And Usage Example",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 382,
+          "supplied_characters": 382
+        },
+        {
+          "heading": "Unified Task Entry",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 492,
+          "supplied_characters": 492
+        },
+        {
+          "heading": "Legal Question Answering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 503,
+          "supplied_characters": 503
+        },
+        {
+          "heading": "Legal Qa Professional",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 723,
+          "supplied_characters": 723
+        },
+        {
+          "heading": "Professional Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 971,
+          "supplied_characters": 971
+        },
+        {
+          "heading": "Deep Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1216,
+          "supplied_characters": 1216
+        },
+        {
+          "heading": "Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 11,
+          "source_characters": 213,
+          "supplied_characters": 213
+        },
+        {
+          "heading": "Llm And Data Services",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 734,
+          "supplied_characters": 734
+        },
+        {
+          "heading": "Legal Question Answering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1558,
+          "supplied_characters": 1558
+        },
+        {
+          "heading": "Professional Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1672,
+          "supplied_characters": 1672
+        },
+        {
+          "heading": "Professional Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1601,
+          "supplied_characters": 1601
+        },
+        {
+          "heading": "The Resulting Evidence Set Can Be Directly Pro-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 46,
+          "supplied_characters": 46
+        },
+        {
+          "heading": "Multi-Agent Deep Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 2402,
+          "supplied_characters": 2402
+        },
+        {
+          "heading": "Multi-Agent Deep Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 259,
+          "supplied_characters": 259
+        },
+        {
+          "heading": "Evidence-Grounded Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1602,
+          "supplied_characters": 1602
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 147,
+          "supplied_characters": 147
+        },
+        {
+          "heading": "Retrieval Quality",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1008,
+          "supplied_characters": 1008
+        },
+        {
+          "heading": "User Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1172,
+          "supplied_characters": 1172
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 23,
+          "source_characters": 543,
+          "supplied_characters": 543
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "limitations",
+          "section_index": 24,
+          "source_characters": 640,
+          "supplied_characters": 640
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Context Retrieval For Sequential Sentence Classification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 353,
+          "supplied_characters": 353
+        },
+        {
+          "heading": "By Facts For Romanian Legal Multi-Choice Question",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 356,
+          "supplied_characters": 356
+        },
+        {
+          "heading": "Sistant Based On A Role-Aligned Mixture-Of-Experts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 187,
+          "supplied_characters": 187
+        },
+        {
+          "heading": "Ai-Powered Legal Assistant Using Multi-Agent Architec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 737,
+          "supplied_characters": 737
+        },
+        {
+          "heading": "The 62Nd Annual Meeting Of The Association For Com-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 51,
+          "supplied_characters": 51
+        },
+        {
+          "heading": "Putational Linguistics (V Olume 3: System Demonstra-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 623,
+          "supplied_characters": 623
+        },
+        {
+          "heading": "Retrieval-Augmented Generation For Knowledge-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 321,
+          "supplied_characters": 321
+        },
+        {
+          "heading": "Power Of Llms On Multiple Legal Tasks With A Uni-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 101,
+          "supplied_characters": 101
+        },
+        {
+          "heading": "Nual Meeting Of The Association For Computational",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 446,
+          "supplied_characters": 446
+        },
+        {
+          "heading": "Inproceedings Of The 63Rd Annual Meeting Of The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Association For Computational Linguistics (V Olume",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 241,
+          "supplied_characters": 241
+        },
+        {
+          "heading": "Association For Computational Linguistics (V Olume",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 1701,
+          "supplied_characters": 1701
+        },
+        {
+          "heading": "Appendix: Case Study Of Deep Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 193,
+          "supplied_characters": 193
+        },
+        {
+          "heading": "\u53ef\u80fd\u4e3aN+ 1\uff1b",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1363,
+          "supplied_characters": 1363
+        },
+        {
+          "heading": "Detailed Legal Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 259,
+          "supplied_characters": 259
+        },
+        {
+          "heading": "\u7ed3\u8bba\u4e09\uff1a\"N+ 1\"\u4e0d\u662f\u6240\u6709\u8f9e\u9000\u90fd\u6709\uff0c\u53ea\u9002\u7528",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 459,
+          "supplied_characters": 459
+        },
+        {
+          "heading": "\u7ed3\u8bba\u4e09\uff1a\"N+ 1\"\u4e0d\u662f\u6240\u6709\u8f9e\u9000\u90fd\u6709\uff0c\u53ea\u9002\u7528",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 87,
+          "supplied_characters": 87
+        },
+        {
+          "heading": "Statutory Provisions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 498,
+          "supplied_characters": 498
+        },
+        {
+          "heading": "Case References",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 585,
+          "supplied_characters": 585
+        },
+        {
+          "heading": "Risk Alerts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 408,
+          "supplied_characters": 408
+        },
+        {
+          "heading": "Liability Disclaimer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 335,
+          "supplied_characters": 335
+        }
+      ],
+      "selected_characters": 34523,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_sections": [
+        {
+          "characters": 314,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1283,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2360,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1977,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1256,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 382,
+          "heading": "Framework And Usage Example",
+          "page": 2
+        },
+        {
+          "characters": 492,
+          "heading": "Unified Task Entry",
+          "page": 2
+        },
+        {
+          "characters": 503,
+          "heading": "Legal Question Answering",
+          "page": 2
+        },
+        {
+          "characters": 723,
+          "heading": "Legal Qa Professional",
+          "page": 3
+        },
+        {
+          "characters": 971,
+          "heading": "Professional Retrieval",
+          "page": 3
+        },
+        {
+          "characters": 1216,
+          "heading": "Deep Research",
+          "page": 3
+        },
+        {
+          "characters": 213,
+          "heading": "Implementation",
+          "page": 4
+        },
+        {
+          "characters": 734,
+          "heading": "Llm And Data Services",
+          "page": 4
+        },
+        {
+          "characters": 1558,
+          "heading": "Legal Question Answering",
+          "page": 4
+        },
+        {
+          "characters": 1672,
+          "heading": "Professional Retrieval",
+          "page": 4
+        },
+        {
+          "characters": 1601,
+          "heading": "Professional Retrieval",
+          "page": 5
+        },
+        {
+          "characters": 46,
+          "heading": "The Resulting Evidence Set Can Be Directly Pro-",
+          "page": 5
+        },
+        {
+          "characters": 2402,
+          "heading": "Multi-Agent Deep Research",
+          "page": 5
+        },
+        {
+          "characters": 259,
+          "heading": "Multi-Agent Deep Research",
+          "page": 6
+        },
+        {
+          "characters": 1602,
+          "heading": "Evidence-Grounded Generation",
+          "page": 6
+        },
+        {
+          "characters": 147,
+          "heading": "Evaluation",
+          "page": 6
+        },
+        {
+          "characters": 1008,
+          "heading": "Retrieval Quality",
+          "page": 6
+        },
+        {
+          "characters": 1172,
+          "heading": "User Study",
+          "page": 6
+        },
+        {
+          "characters": 543,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 640,
+          "heading": "Limitations",
+          "page": 7
+        },
+        {
+          "characters": 98,
+          "heading": "Unclassified body after references",
+          "page": 7
+        },
+        {
+          "characters": 353,
+          "heading": "Context Retrieval For Sequential Sentence Classification",
+          "page": 7
+        },
+        {
+          "characters": 356,
+          "heading": "By Facts For Romanian Legal Multi-Choice Question",
+          "page": 7
+        },
+        {
+          "characters": 187,
+          "heading": "Sistant Based On A Role-Aligned Mixture-Of-Experts",
+          "page": 7
+        },
+        {
+          "characters": 737,
+          "heading": "Ai-Powered Legal Assistant Using Multi-Agent Architec-",
+          "page": 7
+        },
+        {
+          "characters": 51,
+          "heading": "The 62Nd Annual Meeting Of The Association For Com-",
+          "page": 7
+        },
+        {
+          "characters": 623,
+          "heading": "Putational Linguistics (V Olume 3: System Demonstra-",
+          "page": 7
+        },
+        {
+          "characters": 321,
+          "heading": "Retrieval-Augmented Generation For Knowledge-",
+          "page": 7
+        },
+        {
+          "characters": 101,
+          "heading": "Power Of Llms On Multiple Legal Tasks With A Uni-",
+          "page": 7
+        },
+        {
+          "characters": 446,
+          "heading": "Nual Meeting Of The Association For Computational",
+          "page": 7
+        },
+        {
+          "characters": 47,
+          "heading": "Inproceedings Of The 63Rd Annual Meeting Of The",
+          "page": 7
+        },
+        {
+          "characters": 241,
+          "heading": "Association For Computational Linguistics (V Olume",
+          "page": 7
+        },
+        {
+          "characters": 1701,
+          "heading": "Association For Computational Linguistics (V Olume",
+          "page": 8
+        },
+        {
+          "characters": 193,
+          "heading": "Appendix: Case Study Of Deep Research",
+          "page": 9
+        },
+        {
+          "characters": 1363,
+          "heading": "\u53ef\u80fd\u4e3aN+ 1\uff1b",
+          "page": 9
+        },
+        {
+          "characters": 259,
+          "heading": "Detailed Legal Analysis",
+          "page": 9
+        },
+        {
+          "characters": 459,
+          "heading": "\u7ed3\u8bba\u4e09\uff1a\"N+ 1\"\u4e0d\u662f\u6240\u6709\u8f9e\u9000\u90fd\u6709\uff0c\u53ea\u9002\u7528",
+          "page": 9
+        },
+        {
+          "characters": 87,
+          "heading": "\u7ed3\u8bba\u4e09\uff1a\"N+ 1\"\u4e0d\u662f\u6240\u6709\u8f9e\u9000\u90fd\u6709\uff0c\u53ea\u9002\u7528",
+          "page": 10
+        },
+        {
+          "characters": 498,
+          "heading": "Statutory Provisions",
+          "page": 10
+        },
+        {
+          "characters": 585,
+          "heading": "Case References",
+          "page": 10
+        },
+        {
+          "characters": 408,
+          "heading": "Risk Alerts",
+          "page": 10
+        },
+        {
+          "characters": 335,
+          "heading": "Liability Disclaimer",
+          "page": 10
+        }
+      ],
+      "selected_text_sha256": "4089baec3dce76a1069a428425f79da0bb3db606296ec7d946d09956ec214152",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "ac5b3fdab72858b6886295862fee8f9ef430dd7a65d90e37424edfad9c973bc1",
+      "source_pages": 10,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0002"
+        ],
+        "excerpt": "Recent advances in Large Language Mod-\nels (LLMs) and Retrieval-Augmented Gener-\nation (RAG) have significantly democratized\naccess to legal information. Nevertheless, most\nexisting legal assistants remain confined to\nmulti-turn conversational QA, failing to sup-\nport complex legal tasks that require system-\natic evidence retrieval, multi-step reasoning,\nand report-level synthesis. In this paper, we\npresentLawCompass, an evidence-grounded\nlegal assistant that navigates the transition\nfrom standard Legal QA to multi-agent deep\nresearch. LawCompass provides three task-\noriented functions:Legal QA, which deliv-\ners precise, evidence-backed answers to legal\nquestions;Professional Retrieval, which en-\nables structured exploration of statutes and ju-\ndicial cases via query rewriting; andDeep Re-\nsearch, which employs a multi-agent workflow\nto decompose complex legal tasks and synthe-\nsize ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b6cffd1628ec95461429434eacdb5d1f05fb0c5bdcc4b5f5642e571b2f28c18a",
+            "evidence_id": "Eada0bd6df25903bd-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Recent advances in Large Language Mod-\nels (LLMs) and Retrieval-Augmented Gener-\nation (RAG) have significantly democratized\naccess to legal information. Nevertheless, most\nexisting legal assistants remain confined to\nmulti-turn conversational QA, failing to sup-\nport complex legal tasks that require system-\natic evidence retrieval, multi-step reasoning,\nand report-level synthesis. In this paper, we\npresentLawCompass, an evidence-grounded\nlegal assistant that navigates the transition\nfrom standard Legal QA to multi-agent deep\nresearch. LawCompass provides three task-\noriented functions:Legal QA, which deliv-\ners precise, evidence-backed answers to legal\nquestions;Professional Retrieval, which en-\nables structured exploration of statutes and ju-\ndicial cases via query rewriting; andDeep Re-\nsearch, which employs a multi-agent workflow\nto decompose complex legal tasks and synthe-\nsize "
+              }
+            ],
+            "text": "Recent advances in Large Language Mod-\nels (LLMs) and Retrieval-Augmented Gener-\nation (RAG) have significantly democratized\naccess to legal information. Nevertheless, most\nexisting legal assistants remain confined to\nmulti-turn conversational QA, failing to sup-\nport complex legal tasks that require system-\natic evidence retrieval, multi-step reasoning,\nand report-level synthesis. In this paper, we\npresentLawCompass, an evidence-grounded\nlegal assistant that navigates the transition\nfrom standard Legal QA to multi-agent deep\nresearch. LawCompass provides three task-\noriented functions:Legal QA, which deliv-\ners precise, evidence-backed answers to legal\nquestions;Professional Retrieval, which en-\nables structured exploration of statutes and ju-\ndicial cases via query rewriting; andDeep Re-\nsearch, which employs a multi-agent workflow\nto decompose complex legal tasks and synthe-\nsize "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0007"
+        ],
+        "excerpt": "legal\nresearch, as shown in Figure 1 (b). Built upon a\nRAG framework, LawCompass aggregates external\nknowledge from heterogeneous legal sources, in-\ncluding statutes, judicial cases, and user-uploaded\ndocuments, to rigorously ground system outputs\nacross all target applications. Specifically, Law-\nCompass provides three task-oriented functions.\nFirst,Legal QAprovides concise answers to le-\ngal questions, ensuring every claim is backed by\nexplicit legal evidence. Second,Professional Re-\ntrievalenables users to search and explore relevant\nlegal authorities, including statutes and judicial\ncases. To improve retrieval accuracy and result clar-\nity, it incorporates query rewriting and structured\nresult presentation. Third,Deep Researchextends\nthe retrieval-augmented framework with a multi-\nagent workflow for complex legal research tasks.\nIt decomposes broad research objectives into ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3b658a1abcdb54cf867613ba421ca9ed45dbd2dd424b14e4596f41065a4d8e3a",
+            "evidence_id": "Eada0bd6df25903bd-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1220,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 330,
+                "text": "legal\nresearch, as shown in Figure 1 (b). Built upon a\nRAG framework, LawCompass aggregates external\nknowledge from heterogeneous legal sources, in-\ncluding statutes, judicial cases, and user-uploaded\ndocuments, to rigorously ground system outputs\nacross all target applications. Specifically, Law-\nCompass provides three task-oriented functions.\nFirst,Legal QAprovides concise answers to le-\ngal questions, ensuring every claim is backed by\nexplicit legal evidence. Second,Professional Re-\ntrievalenables users to search and explore relevant\nlegal authorities, including statutes and judicial\ncases. To improve retrieval accuracy and result clar-\nity, it incorporates query rewriting and structured\nresult presentation. Third,Deep Researchextends\nthe retrieval-augmented framework with a multi-\nagent workflow for complex legal research tasks.\nIt decomposes broad research objectives into "
+              }
+            ],
+            "text": "legal\nresearch, as shown in Figure 1 (b). Built upon a\nRAG framework, LawCompass aggregates external\nknowledge from heterogeneous legal sources, in-\ncluding statutes, judicial cases, and user-uploaded\ndocuments, to rigorously ground system outputs\nacross all target applications. Specifically, Law-\nCompass provides three task-oriented functions.\nFirst,Legal QAprovides concise answers to le-\ngal questions, ensuring every claim is backed by\nexplicit legal evidence. Second,Professional Re-\ntrievalenables users to search and explore relevant\nlegal authorities, including statutes and judicial\ncases. To improve retrieval accuracy and result clar-\nity, it incorporates query rewriting and structured\nresult presentation. Third,Deep Researchextends\nthe retrieval-augmented framework with a multi-\nagent workflow for complex legal research tasks.\nIt decomposes broad research objectives into "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0011"
+        ],
+        "excerpt": "LawCompass adopts a Unified Task Entry inter-\nface that routes user requests to three task-oriented\nmodes:(i)Legal QA,(ii)Professional Retrieval,\nand(iii)Deep Research. The three modes share\ncommon services for document input, citation ren-\ndering, session management, and authenticated ac-\ncess control, while differing in task complexity,\nretrieval strategy, and output structure.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Framework And Usage Example",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "cc2c32b18f95aa1758a4299bdc6d25b97693ea7eaa286916a90a7ca82e1c6b93",
+            "evidence_id": "Eada0bd6df25903bd-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Framework And Usage Example",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 382,
+                "page": 2,
+                "section": "Framework And Usage Example",
+                "section_index": 5,
+                "start": 0,
+                "text": "LawCompass adopts a Unified Task Entry inter-\nface that routes user requests to three task-oriented\nmodes:(i)Legal QA,(ii)Professional Retrieval,\nand(iii)Deep Research. The three modes share\ncommon services for document input, citation ren-\ndering, session management, and authenticated ac-\ncess control, while differing in task complexity,\nretrieval strategy, and output structure."
+              }
+            ],
+            "text": "LawCompass adopts a Unified Task Entry inter-\nface that routes user requests to three task-oriented\nmodes:(i)Legal QA,(ii)Professional Retrieval,\nand(iii)Deep Research. The three modes share\ncommon services for document input, citation ren-\ndering, session management, and authenticated ac-\ncess control, while differing in task complexity,\nretrieval strategy, and output structure."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0015"
+        ],
+        "excerpt": "The Professional Retrieval module empowers users\nto execute structured, in-depth navigation across\nheterogeneous legal corpora, including statutes, ju-\ndicial cases, and supporting legal resources. To im-\nprove retrieval quality, LawCompass first performs\nquery rewriting and dual-path retrieval, allowing\nusers to discover relevant legal authorities even\nwhen the original query is incomplete or expressed\nin non-legal terminology. The retrieved results are\nthen organized into a structured, evidence-oriented\nreport with four sections:1) Summary of the Le-\ngal Question and Key Disputes;2) Overview of\nRetrieved Statutory or Case Materials;3) De-\ntailed Analysis of Core Legal Provisions, Adju-\ndication Rules, or Representative Cases; and4)\nRetrieval Conclusions, Practical Recommenda-\ntions, and Risk Alerts. This structured presen-\ntation allows users to conveniently inspect legal\nsources, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Professional Retrieval",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "be05407ee3711c9013aedd578bb883fa32e84f787edc59a391b10b352242b574",
+            "evidence_id": "Eada0bd6df25903bd-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Professional Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 3,
+                "section": "Professional Retrieval",
+                "section_index": 9,
+                "start": 0,
+                "text": "The Professional Retrieval module empowers users\nto execute structured, in-depth navigation across\nheterogeneous legal corpora, including statutes, ju-\ndicial cases, and supporting legal resources. To im-\nprove retrieval quality, LawCompass first performs\nquery rewriting and dual-path retrieval, allowing\nusers to discover relevant legal authorities even\nwhen the original query is incomplete or expressed\nin non-legal terminology. The retrieved results are\nthen organized into a structured, evidence-oriented\nreport with four sections:1) Summary of the Le-\ngal Question and Key Disputes;2) Overview of\nRetrieved Statutory or Case Materials;3) De-\ntailed Analysis of Core Legal Provisions, Adju-\ndication Rules, or Representative Cases; and4)\nRetrieval Conclusions, Practical Recommenda-\ntions, and Risk Alerts. This structured presen-\ntation allows users to conveniently inspect legal\nsources, "
+              }
+            ],
+            "text": "The Professional Retrieval module empowers users\nto execute structured, in-depth navigation across\nheterogeneous legal corpora, including statutes, ju-\ndicial cases, and supporting legal resources. To im-\nprove retrieval quality, LawCompass first performs\nquery rewriting and dual-path retrieval, allowing\nusers to discover relevant legal authorities even\nwhen the original query is incomplete or expressed\nin non-legal terminology. The retrieved results are\nthen organized into a structured, evidence-oriented\nreport with four sections:1) Summary of the Le-\ngal Question and Key Disputes;2) Overview of\nRetrieved Statutory or Case Materials;3) De-\ntailed Analysis of Core Legal Provisions, Adju-\ndication Rules, or Representative Cases; and4)\nRetrieval Conclusions, Practical Recommenda-\ntions, and Risk Alerts. This structured presen-\ntation allows users to conveniently inspect legal\nsources, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0017"
+        ],
+        "excerpt": "While Legal QA and Professional Retrieval target\nhighly localized information needs, real-world le-\ngal practice frequently requires systematic investi-\ngations across heterogeneous source materials and\nanalytical dimensions. To support such scenar-\nios, LawCompass provides a Multi-Agent Deep\nResearch module, as shown in Figure 2. Upon\nreceiving a research objective, the system initi-\nates a highly orchestrated multi-agent workflow.\nThePlanner Agentfirst decomposes the objective\ninto a set of actionable subtasks. Subsequently,\nspecializedExecutor Agentsare dispatched in par-\nallel to harvest, cross-verify, and analyze empiri-\ncal evidence across statutes, judicial cases, web-\nscale repositories, and user-uploaded documenta-\ntion. During this process, intermediate findings are\npresented as subtask reports, allowing users to as-\nsess whether the system has covered crucial analyt-\nical ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Deep Research",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "dce1cfb0173b2aa9d4ee813049f325a12abde31a0ef770d4df040419739e683a",
+            "evidence_id": "Eada0bd6df25903bd-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Deep Research",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 3,
+                "section": "Deep Research",
+                "section_index": 10,
+                "start": 0,
+                "text": "While Legal QA and Professional Retrieval target\nhighly localized information needs, real-world le-\ngal practice frequently requires systematic investi-\ngations across heterogeneous source materials and\nanalytical dimensions. To support such scenar-\nios, LawCompass provides a Multi-Agent Deep\nResearch module, as shown in Figure 2. Upon\nreceiving a research objective, the system initi-\nates a highly orchestrated multi-agent workflow.\nThePlanner Agentfirst decomposes the objective\ninto a set of actionable subtasks. Subsequently,\nspecializedExecutor Agentsare dispatched in par-\nallel to harvest, cross-verify, and analyze empiri-\ncal evidence across statutes, judicial cases, web-\nscale repositories, and user-uploaded documenta-\ntion. During this process, intermediate findings are\npresented as subtask reports, allowing users to as-\nsess whether the system has covered crucial analyt-\nical "
+              }
+            ],
+            "text": "While Legal QA and Professional Retrieval target\nhighly localized information needs, real-world le-\ngal practice frequently requires systematic investi-\ngations across heterogeneous source materials and\nanalytical dimensions. To support such scenar-\nios, LawCompass provides a Multi-Agent Deep\nResearch module, as shown in Figure 2. Upon\nreceiving a research objective, the system initi-\nates a highly orchestrated multi-agent workflow.\nThePlanner Agentfirst decomposes the objective\ninto a set of actionable subtasks. Subsequently,\nspecializedExecutor Agentsare dispatched in par-\nallel to harvest, cross-verify, and analyze empiri-\ncal evidence across statutes, judicial cases, web-\nscale repositories, and user-uploaded documenta-\ntion. During this process, intermediate findings are\npresented as subtask reports, allowing users to as-\nsess whether the system has covered crucial analyt-\nical "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0020"
+        ],
+        "excerpt": "LLM.LawCompass employs DeepSeek-v4\n(DeepSeek-AI, 2026) as its primary reasoning\nengine to orchestrate core workflows, including\nintent classification, query rewriting, research\nplanning, and multi-source report synthesis.\nOther LLMs, such as GPT (OpenAI, 2026) and\nLlama (Grattafiori et al., 2024), are also supported.\nData Services.To support evidence-grounded\nlegal question answering and deep research, we\ncollect 220,000 statutory provisions from Lawyee1\nand 100,000 court cases from China Judgements\nOnline2, as shown in Figure 3 (bottom). These data\nare stored in a Milvus vector database. Further-\nmore, to bridge potential temporal gaps in static\ndatabases, we integrate real-time web search aug-\nmentation powered by Tavily3.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Llm And Data Services",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b4cef5e1e1e3e6ac72bb929be8fac2fe34b615735c72a97395bb7b840fbcdb69",
+            "evidence_id": "Eada0bd6df25903bd-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Llm And Data Services",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 734,
+                "page": 4,
+                "section": "Llm And Data Services",
+                "section_index": 12,
+                "start": 0,
+                "text": "LLM.LawCompass employs DeepSeek-v4\n(DeepSeek-AI, 2026) as its primary reasoning\nengine to orchestrate core workflows, including\nintent classification, query rewriting, research\nplanning, and multi-source report synthesis.\nOther LLMs, such as GPT (OpenAI, 2026) and\nLlama (Grattafiori et al., 2024), are also supported.\nData Services.To support evidence-grounded\nlegal question answering and deep research, we\ncollect 220,000 statutory provisions from Lawyee1\nand 100,000 court cases from China Judgements\nOnline2, as shown in Figure 3 (bottom). These data\nare stored in a Milvus vector database. Further-\nmore, to bridge potential temporal gaps in static\ndatabases, we integrate real-time web search aug-\nmentation powered by Tavily3."
+              }
+            ],
+            "text": "LLM.LawCompass employs DeepSeek-v4\n(DeepSeek-AI, 2026) as its primary reasoning\nengine to orchestrate core workflows, including\nintent classification, query rewriting, research\nplanning, and multi-source report synthesis.\nOther LLMs, such as GPT (OpenAI, 2026) and\nLlama (Grattafiori et al., 2024), are also supported.\nData Services.To support evidence-grounded\nlegal question answering and deep research, we\ncollect 220,000 statutory provisions from Lawyee1\nand 100,000 court cases from China Judgements\nOnline2, as shown in Figure 3 (bottom). These data\nare stored in a Milvus vector database. Further-\nmore, to bridge potential temporal gaps in static\ndatabases, we integrate real-time web search aug-\nmentation powered by Tavily3."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0023"
+        ],
+        "excerpt": "As illustrated in Figure 3 (middle), this module\nis operated through query rewriting, dual-path re-\ntrieval, result aggregation and structured presen-\ntation generation, with the generation process de-\nscribed in Section 4.5.\nQuery Rewriting.Legal search queries are of-\nten incomplete, ambiguous, or expressed in non-\nprofessional language. To improve retrieval effec-\ntiveness, LawCompass first employs an LLM to\nreformulate user queries into retrieval-oriented rep-\nresentations. The rewritten query enriches legal\nterminology and expands 3\u20135 relevant concepts\nwhile preserving the original user intent.\nDual-Path Retrieval.To balance precision and\nrecall, LawCompass performs retrieval using both\nthe original user query and the rewritten query. The\noriginal query preserves the user's explicit informa-\ntion needs, while the rewritten query improves cov-\nerage of legally relevant concepts and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Professional Retrieval",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d39ab576dd466aa8138ae55fa391a3bed16a5d06fc4c39d4db4a1a53ed7ec708",
+            "evidence_id": "Eada0bd6df25903bd-B0023",
+            "pages": [
+              4
+            ],
+            "section": "Professional Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 4,
+                "section": "Professional Retrieval",
+                "section_index": 14,
+                "start": 0,
+                "text": "As illustrated in Figure 3 (middle), this module\nis operated through query rewriting, dual-path re-\ntrieval, result aggregation and structured presen-\ntation generation, with the generation process de-\nscribed in Section 4.5.\nQuery Rewriting.Legal search queries are of-\nten incomplete, ambiguous, or expressed in non-\nprofessional language. To improve retrieval effec-\ntiveness, LawCompass first employs an LLM to\nreformulate user queries into retrieval-oriented rep-\nresentations. The rewritten query enriches legal\nterminology and expands 3\u20135 relevant concepts\nwhile preserving the original user intent.\nDual-Path Retrieval.To balance precision and\nrecall, LawCompass performs retrieval using both\nthe original user query and the rewritten query. The\noriginal query preserves the user's explicit informa-\ntion needs, while the rewritten query improves cov-\nerage of legally relevant concepts and "
+              }
+            ],
+            "text": "As illustrated in Figure 3 (middle), this module\nis operated through query rewriting, dual-path re-\ntrieval, result aggregation and structured presen-\ntation generation, with the generation process de-\nscribed in Section 4.5.\nQuery Rewriting.Legal search queries are of-\nten incomplete, ambiguous, or expressed in non-\nprofessional language. To improve retrieval effec-\ntiveness, LawCompass first employs an LLM to\nreformulate user queries into retrieval-oriented rep-\nresentations. The rewritten query enriches legal\nterminology and expands 3\u20135 relevant concepts\nwhile preserving the original user intent.\nDual-Path Retrieval.To balance precision and\nrecall, LawCompass performs retrieval using both\nthe original user query and the rewritten query. The\noriginal query preserves the user's explicit informa-\ntion needs, while the rewritten query improves cov-\nerage of legally relevant concepts and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0028"
+        ],
+        "excerpt": "Unlike Legal QA, which provides concise answers,\nthe deep research module performs end-to-end le-\ngal research through planner, executor, and synthe-\nsis agents coordinated by LangGraph (LangChain,\n2026). As shown in Figure 3 (right), LangGraph\nmaintains the evolving plan, subtasks, evidence,\nand draft report state.\nPlanner.The Planner Agent coordinates the\nDeep Research workflow by converting a complex\nlegal query into an executable research plan. It\nidentifies the main legal issues and decomposes the\nquery into 3\u20135 complementary subtasks, each with\na distinct focus and specified source scope, such\nas legal sources, web sources, or both. The output\nplan is validated against a predefined schema to en-\nsure the required task count, clear objectives, and\ncomplete information for task execution. The in-\nvalid plan is first passed to a structural repair mod-\nule, which fills in missing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Agent Deep Research",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "1180b3a4e4aa771890a2630a02435e496836a231950f91a4fa88c0b7823144af",
+            "evidence_id": "Eada0bd6df25903bd-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Multi-Agent Deep Research",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 5,
+                "section": "Multi-Agent Deep Research",
+                "section_index": 17,
+                "start": 0,
+                "text": "Unlike Legal QA, which provides concise answers,\nthe deep research module performs end-to-end le-\ngal research through planner, executor, and synthe-\nsis agents coordinated by LangGraph (LangChain,\n2026). As shown in Figure 3 (right), LangGraph\nmaintains the evolving plan, subtasks, evidence,\nand draft report state.\nPlanner.The Planner Agent coordinates the\nDeep Research workflow by converting a complex\nlegal query into an executable research plan. It\nidentifies the main legal issues and decomposes the\nquery into 3\u20135 complementary subtasks, each with\na distinct focus and specified source scope, such\nas legal sources, web sources, or both. The output\nplan is validated against a predefined schema to en-\nsure the required task count, clear objectives, and\ncomplete information for task execution. The in-\nvalid plan is first passed to a structural repair mod-\nule, which fills in missing "
+              }
+            ],
+            "text": "Unlike Legal QA, which provides concise answers,\nthe deep research module performs end-to-end le-\ngal research through planner, executor, and synthe-\nsis agents coordinated by LangGraph (LangChain,\n2026). As shown in Figure 3 (right), LangGraph\nmaintains the evolving plan, subtasks, evidence,\nand draft report state.\nPlanner.The Planner Agent coordinates the\nDeep Research workflow by converting a complex\nlegal query into an executable research plan. It\nidentifies the main legal issues and decomposes the\nquery into 3\u20135 complementary subtasks, each with\na distinct focus and specified source scope, such\nas legal sources, web sources, or both. The output\nplan is validated against a predefined schema to en-\nsure the required task count, clear objectives, and\ncomplete information for task execution. The in-\nvalid plan is first passed to a structural repair mod-\nule, which fills in missing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0031"
+        ],
+        "excerpt": "This shared component is employed across all mod-\nules to transform retrieved legal materials into co-\nherent answers or a report through hierarchy-aware\nsource ordering and mandatory citation constraints.\nHierarchy-Aware Source Ordering.Unlike\ngeneral-domain RAG systems that rank context\nmainly by semantic similarity, LawCompass in-\ncorporates the legal authority of retrieved sources.\nDuring subtask summarization and final report syn-\nthesis, statutory materials and cases are organized\naccording to their respective authority levels or case\nreference levels, with higher-ranked sources priori-\ntized in the generated analysis. When such ranking\nmetadata is available, the generation prompts ex-\nplicitly instruct the LLM to present and cite higher-\nauthority materials before lower-authority ones, so\nthat conclusions are grounded in the most authori-\ntative available evidence.\nMandatory ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evidence-Grounded Generation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f29b92a480b20dc8a1f337d3e81f57d3d070aeaad95fb8d5afa8092f08ee37eb",
+            "evidence_id": "Eada0bd6df25903bd-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Evidence-Grounded Generation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 6,
+                "section": "Evidence-Grounded Generation",
+                "section_index": 19,
+                "start": 0,
+                "text": "This shared component is employed across all mod-\nules to transform retrieved legal materials into co-\nherent answers or a report through hierarchy-aware\nsource ordering and mandatory citation constraints.\nHierarchy-Aware Source Ordering.Unlike\ngeneral-domain RAG systems that rank context\nmainly by semantic similarity, LawCompass in-\ncorporates the legal authority of retrieved sources.\nDuring subtask summarization and final report syn-\nthesis, statutory materials and cases are organized\naccording to their respective authority levels or case\nreference levels, with higher-ranked sources priori-\ntized in the generated analysis. When such ranking\nmetadata is available, the generation prompts ex-\nplicitly instruct the LLM to present and cite higher-\nauthority materials before lower-authority ones, so\nthat conclusions are grounded in the most authori-\ntative available evidence.\nMandatory "
+              }
+            ],
+            "text": "This shared component is employed across all mod-\nules to transform retrieved legal materials into co-\nherent answers or a report through hierarchy-aware\nsource ordering and mandatory citation constraints.\nHierarchy-Aware Source Ordering.Unlike\ngeneral-domain RAG systems that rank context\nmainly by semantic similarity, LawCompass in-\ncorporates the legal authority of retrieved sources.\nDuring subtask summarization and final report syn-\nthesis, statutory materials and cases are organized\naccording to their respective authority levels or case\nreference levels, with higher-ranked sources priori-\ntized in the generated analysis. When such ranking\nmetadata is available, the generation prompts ex-\nplicitly instruct the LLM to present and cite higher-\nauthority materials before lower-authority ones, so\nthat conclusions are grounded in the most authori-\ntative available evidence.\nMandatory "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0034"
+        ],
+        "excerpt": "High-quality retrieval is essential for LawCompass,\nas all three task-oriented functions rely on retrieved\nlegal sources to generate or present evidence-\ngrounded outputs. We conduct a human relevance-\nbased retrieval evaluation using a set of 20 legal\nqueries covering different legal information needs.\nFor each query, we collect the top-5 evidence pas-\nsages returned by the system and ask two annota-\ntors with legal backgrounds to independently judge\nthe relevance of each passage. Each retrieved pas-\nsage is labeled as relevant, partially relevant, or\nirrelevant according to whether it provides use-\nful legal authority for addressing the user query.\nBased on these annotations, we report Precision@5,\nnDCG@5, and the average relevance score. The\nresults in Table 1 confirm the effectiveness of dual-\npath retrieval in LawCompass.\nMethod P@5\u2191nDCG@5\u2191Rel. Score\u2191\nOriginal 76.0 85.5 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Retrieval Quality",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "1b4287a10d490bdacdc9ea57cd7f737449b3e097997b2fa8890d5b30a648c776",
+            "evidence_id": "Eada0bd6df25903bd-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Retrieval Quality",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 888,
+                "page": 6,
+                "section": "Retrieval Quality",
+                "section_index": 21,
+                "start": 0,
+                "text": "High-quality retrieval is essential for LawCompass,\nas all three task-oriented functions rely on retrieved\nlegal sources to generate or present evidence-\ngrounded outputs. We conduct a human relevance-\nbased retrieval evaluation using a set of 20 legal\nqueries covering different legal information needs.\nFor each query, we collect the top-5 evidence pas-\nsages returned by the system and ask two annota-\ntors with legal backgrounds to independently judge\nthe relevance of each passage. Each retrieved pas-\nsage is labeled as relevant, partially relevant, or\nirrelevant according to whether it provides use-\nful legal authority for addressing the user query.\nBased on these annotations, we report Precision@5,\nnDCG@5, and the average relevance score. The\nresults in Table 1 confirm the effectiveness of dual-\npath retrieval in LawCompass.\nMethod P@5\u2191nDCG@5\u2191Rel. Score\u2191\nOriginal 76.0 85.5 "
+              }
+            ],
+            "text": "High-quality retrieval is essential for LawCompass,\nas all three task-oriented functions rely on retrieved\nlegal sources to generate or present evidence-\ngrounded outputs. We conduct a human relevance-\nbased retrieval evaluation using a set of 20 legal\nqueries covering different legal information needs.\nFor each query, we collect the top-5 evidence pas-\nsages returned by the system and ask two annota-\ntors with legal backgrounds to independently judge\nthe relevance of each passage. Each retrieved pas-\nsage is labeled as relevant, partially relevant, or\nirrelevant according to whether it provides use-\nful legal authority for addressing the user query.\nBased on these annotations, we report Precision@5,\nnDCG@5, and the average relevance score. The\nresults in Table 1 confirm the effectiveness of dual-\npath retrieval in LawCompass.\nMethod P@5\u2191nDCG@5\u2191Rel. Score\u2191\nOriginal 76.0 85.5 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0035"
+        ],
+        "excerpt": "1.10\nQuery-Rewritten 75.0 85.9 1.11\nLawCompass 79.0 90.9 1.28\nTable 1: Retrieval quality evaluation on 20 legal queries.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Retrieval Quality",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "63a0fea4c9efd90d1cce978b3444b19912bf01f5d649b7e303e66c8a316ebc17",
+            "evidence_id": "Eada0bd6df25903bd-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Retrieval Quality",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1008,
+                "page": 6,
+                "section": "Retrieval Quality",
+                "section_index": 21,
+                "start": 888,
+                "text": "1.10\nQuery-Rewritten 75.0 85.9 1.11\nLawCompass 79.0 90.9 1.28\nTable 1: Retrieval quality evaluation on 20 legal queries."
+              }
+            ],
+            "text": "1.10\nQuery-Rewritten 75.0 85.9 1.11\nLawCompass 79.0 90.9 1.28\nTable 1: Retrieval quality evaluation on 20 legal queries."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0036"
+        ],
+        "excerpt": "We further conducted a task-based user study to\nevaluate the usability and practical value of Law-\nCompass. Specifically, we invited participants with\nand without legal backgrounds to examine whether\nthe system can support both ordinary users and\nusers with professional legal knowledge. Each par-\nticipant was asked to complete three representa-\ntive tasks using LawCompass. After completing\nthe tasks, participants evaluated LawCompass on\na five-point Likert scale in terms of usability, use-\nfulness, clarity, evidence-grounded trustworthiness,\nand the utility of Deep Research. Table 2 reports\nthe average scores obtained by rating the collected\nopen-ended feedback. The results indicate that\nLawCompass is well received by both groups, with\nparticularly strong ratings for usefulness, Deep Re-\nsearch value, and overall satisfaction.\nDimension Legal Non-legal Overall\nEase of Use 3.9 4.2 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "User Study",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e516c21bffac00124b94ba4b8ab5673dfb5094a42fd60e15ceb03783a3ddb65e",
+            "evidence_id": "Eada0bd6df25903bd-B0036",
+            "pages": [
+              6
+            ],
+            "section": "User Study",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 6,
+                "section": "User Study",
+                "section_index": 22,
+                "start": 0,
+                "text": "We further conducted a task-based user study to\nevaluate the usability and practical value of Law-\nCompass. Specifically, we invited participants with\nand without legal backgrounds to examine whether\nthe system can support both ordinary users and\nusers with professional legal knowledge. Each par-\nticipant was asked to complete three representa-\ntive tasks using LawCompass. After completing\nthe tasks, participants evaluated LawCompass on\na five-point Likert scale in terms of usability, use-\nfulness, clarity, evidence-grounded trustworthiness,\nand the utility of Deep Research. Table 2 reports\nthe average scores obtained by rating the collected\nopen-ended feedback. The results indicate that\nLawCompass is well received by both groups, with\nparticularly strong ratings for usefulness, Deep Re-\nsearch value, and overall satisfaction.\nDimension Legal Non-legal Overall\nEase of Use 3.9 4.2 "
+              }
+            ],
+            "text": "We further conducted a task-based user study to\nevaluate the usability and practical value of Law-\nCompass. Specifically, we invited participants with\nand without legal backgrounds to examine whether\nthe system can support both ordinary users and\nusers with professional legal knowledge. Each par-\nticipant was asked to complete three representa-\ntive tasks using LawCompass. After completing\nthe tasks, participants evaluated LawCompass on\na five-point Likert scale in terms of usability, use-\nfulness, clarity, evidence-grounded trustworthiness,\nand the utility of Deep Research. Table 2 reports\nthe average scores obtained by rating the collected\nopen-ended feedback. The results indicate that\nLawCompass is well received by both groups, with\nparticularly strong ratings for usefulness, Deep Re-\nsearch value, and overall satisfaction.\nDimension Legal Non-legal Overall\nEase of Use 3.9 4.2 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0037"
+        ],
+        "excerpt": "4.1\nUsefulness 4.0 4.5 4.3\nEvidence Trust 3.8 4.5 4.2\nRetrieval Clarity 3.9 4.3 4.1\nDeep Research Value 4.2 4.5 4.4\nOverall Satisfaction 4.1 4.4 4.3\nTable 2: User study results across participants with and\nwithout legal backgrounds. Scores are based on a 5-\npoint Likert scale.\n6",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "User Study",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "293a5d44aab5f959666ad7f09ac603932ee199cb8daebc8c5530f8a9cd252c68",
+            "evidence_id": "Eada0bd6df25903bd-B0037",
+            "pages": [
+              6
+            ],
+            "section": "User Study",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1172,
+                "page": 6,
+                "section": "User Study",
+                "section_index": 22,
+                "start": 893,
+                "text": "4.1\nUsefulness 4.0 4.5 4.3\nEvidence Trust 3.8 4.5 4.2\nRetrieval Clarity 3.9 4.3 4.1\nDeep Research Value 4.2 4.5 4.4\nOverall Satisfaction 4.1 4.4 4.3\nTable 2: User study results across participants with and\nwithout legal backgrounds. Scores are based on a 5-\npoint Likert scale.\n6"
+              }
+            ],
+            "text": "4.1\nUsefulness 4.0 4.5 4.3\nEvidence Trust 3.8 4.5 4.2\nRetrieval Clarity 3.9 4.3 4.1\nDeep Research Value 4.2 4.5 4.4\nOverall Satisfaction 4.1 4.4 4.3\nTable 2: User study results across participants with and\nwithout legal backgrounds. Scores are based on a 5-\npoint Likert scale.\n6"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0039"
+        ],
+        "excerpt": "This paper presents LawCompass, a unified legal\nresearch system that extends conventional legal QA\nto multi-agent Deep Research. Despite its practi-\ncal utility, LawCompass still has several limita-\ntions. First, its retrieval coverage depends on the\ncompleteness and update frequency of the local\ndatabase. Newly issued legal documents, recent\ncases, and local regulations may not be included\npromptly. Second, although the Deep Research\nmodule improves the structure and interpretability\nof complex questions by decomposing them into\nmultiple subtasks, this multi-stage process also in-\ntroduces additional latency and computational cost.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6cefb3cb4c4b2f232d5ba70a0743f90d9d5a6729c4ac8feda353e3ecacc92d55",
+            "evidence_id": "Eada0bd6df25903bd-B0039",
+            "pages": [
+              7
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 640,
+                "page": 7,
+                "section": "Limitations",
+                "section_index": 24,
+                "start": 0,
+                "text": "This paper presents LawCompass, a unified legal\nresearch system that extends conventional legal QA\nto multi-agent Deep Research. Despite its practi-\ncal utility, LawCompass still has several limita-\ntions. First, its retrieval coverage depends on the\ncompleteness and update frequency of the local\ndatabase. Newly issued legal documents, recent\ncases, and local regulations may not be included\npromptly. Second, although the Deep Research\nmodule improves the structure and interpretability\nof complex questions by decomposing them into\nmultiple subtasks, this multi-stage process also in-\ntroduces additional latency and computational cost."
+              }
+            ],
+            "text": "This paper presents LawCompass, a unified legal\nresearch system that extends conventional legal QA\nto multi-agent Deep Research. Despite its practi-\ncal utility, LawCompass still has several limita-\ntions. First, its retrieval coverage depends on the\ncompleteness and update frequency of the local\ndatabase. Newly issued legal documents, recent\ncases, and local regulations may not be included\npromptly. Second, although the Deep Research\nmodule improves the structure and interpretability\nof complex questions by decomposing them into\nmultiple subtasks, this multi-stage process also in-\ntroduces additional latency and computational cost."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0054"
+        ],
+        "excerpt": "A Case Study of Deep Research\nQ:\u88ab\u8f9e\u9000\u53ef\u4ee5\u8d54\u591a\u5c11\u94b1\uff1f Q: How Much Compensation Can I Receive If I\nAm Dismissed?\nR: 1.\u95ee\u9898\u6982\u8ff0\n\u7528\u6237\u54a8\u8be2\"\u88ab\u8f9e\u9000\u53ef\u4ee5\u8d54\u591a\u5c11\u94b1\"\u3002\u8be5\u95ee\u9898\u901a\u5e38\n\u53d6\u51b3\u4e8e\u8f9e\u9000\u6027\u8d28\uff1a\n\u2022\u5408\u6cd5\u89e3\u9664\u4e14\u4f9d\u6cd5\u5e94\u8865\u507f\uff1a\u4e00\u822c\u4e3a\u7ecf\u6d4e\u8865\u507f\n\u91d1\uff0c\u5373\u901a\u5e38\u6240\u79f0N\uff1b\n\u2022\u7279\u5b9a\u65e0\u8fc7\u5931\u6027\u89e3\u9664\u4e14\u672a\u63d0\u524d30\u65e5\u4e66\u9762\u901a\u77e5\uff1a",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Case Study Of Deep Research",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e4fcd61292d699763a77e2a87e377f8d0357dfdd1f463b2072ae97f760ae2f1f",
+            "evidence_id": "Eada0bd6df25903bd-B0054",
+            "pages": [
+              9
+            ],
+            "section": "Appendix: Case Study Of Deep Research",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 193,
+                "page": 9,
+                "section": "Appendix: Case Study Of Deep Research",
+                "section_index": 38,
+                "start": 0,
+                "text": "A Case Study of Deep Research\nQ:\u88ab\u8f9e\u9000\u53ef\u4ee5\u8d54\u591a\u5c11\u94b1\uff1f Q: How Much Compensation Can I Receive If I\nAm Dismissed?\nR: 1.\u95ee\u9898\u6982\u8ff0\n\u7528\u6237\u54a8\u8be2\"\u88ab\u8f9e\u9000\u53ef\u4ee5\u8d54\u591a\u5c11\u94b1\"\u3002\u8be5\u95ee\u9898\u901a\u5e38\n\u53d6\u51b3\u4e8e\u8f9e\u9000\u6027\u8d28\uff1a\n\u2022\u5408\u6cd5\u89e3\u9664\u4e14\u4f9d\u6cd5\u5e94\u8865\u507f\uff1a\u4e00\u822c\u4e3a\u7ecf\u6d4e\u8865\u507f\n\u91d1\uff0c\u5373\u901a\u5e38\u6240\u79f0N\uff1b\n\u2022\u7279\u5b9a\u65e0\u8fc7\u5931\u6027\u89e3\u9664\u4e14\u672a\u63d0\u524d30\u65e5\u4e66\u9762\u901a\u77e5\uff1a"
+              }
+            ],
+            "text": "A Case Study of Deep Research\nQ:\u88ab\u8f9e\u9000\u53ef\u4ee5\u8d54\u591a\u5c11\u94b1\uff1f Q: How Much Compensation Can I Receive If I\nAm Dismissed?\nR: 1.\u95ee\u9898\u6982\u8ff0\n\u7528\u6237\u54a8\u8be2\"\u88ab\u8f9e\u9000\u53ef\u4ee5\u8d54\u591a\u5c11\u94b1\"\u3002\u8be5\u95ee\u9898\u901a\u5e38\n\u53d6\u51b3\u4e8e\u8f9e\u9000\u6027\u8d28\uff1a\n\u2022\u5408\u6cd5\u89e3\u9664\u4e14\u4f9d\u6cd5\u5e94\u8865\u507f\uff1a\u4e00\u822c\u4e3a\u7ecf\u6d4e\u8865\u507f\n\u91d1\uff0c\u5373\u901a\u5e38\u6240\u79f0N\uff1b\n\u2022\u7279\u5b9a\u65e0\u8fc7\u5931\u6027\u89e3\u9664\u4e14\u672a\u63d0\u524d30\u65e5\u4e66\u9762\u901a\u77e5\uff1a"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.01027",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2610.01027",
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Human relevance annotations by two legal-background annotators and Likert ratings from legal and non-legal participants provide evaluator-independent measurements of retrieval quality and usability.",
+          "final_evaluation_signal": "Manual relevance annotation of top-5 retrieved passages on 20 legal queries and a five-point Likert user study across legal and non-legal participants.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Prompt engineering, template definitions, heuristic routing rules, and fallback/repair logic across the LangGraph agents and retrieval pipeline.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0002",
+          "Eada0bd6df25903bd-B0007",
+          "Eada0bd6df25903bd-B0011",
+          "Eada0bd6df25903bd-B0015",
+          "Eada0bd6df25903bd-B0017",
+          "Eada0bd6df25903bd-B0020",
+          "Eada0bd6df25903bd-B0023",
+          "Eada0bd6df25903bd-B0028",
+          "Eada0bd6df25903bd-B0031",
+          "Eada0bd6df25903bd-B0034",
+          "Eada0bd6df25903bd-B0035",
+          "Eada0bd6df25903bd-B0036",
+          "Eada0bd6df25903bd-B0037",
+          "Eada0bd6df25903bd-B0039",
+          "Eada0bd6df25903bd-B0054"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "ac5b3fdab72858b6886295862fee8f9ef430dd7a65d90e37424edfad9c973bc1"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2610.01027",
+        "claim_evidence_alignment": "Claims regarding the overall practical reliability and comparative superiority of the multi-agent deep research workflow are supported mostly by an abridged single case study and minimal user Likert ratings, leaving broad effectiveness claims under-substantiated.",
+        "context_id": "ada0bd6df25903bdd00a8a69afb3568d5fb7d6f691b1de75788a3804f1c6558b",
+        "decision": "uncertain",
+        "evaluation_assessment": "The quantitative evaluation is severely limited. Retrieval quality is assessed on only 20 queries evaluated by two annotators without reporting inter-annotator agreement or statistical confidence intervals, and the user study lacks details on participant sample size, selection criteria, task design, and error variance.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Human annotations by two annotators with legal backgrounds and survey scores from participants with and without legal backgrounds.",
+          "final_evaluation_signal": "Manual relevance annotation of top-5 retrieved passages on 20 queries and a 5-point Likert scale user study.",
+          "independent_corroboration": "present",
+          "optimization_signal": "System prompt engineering, template definitions, and heuristic/fallback rule tuning across LangGraph agents and retrieval pipelines.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eada0bd6df25903bd-B0002",
+          "Eada0bd6df25903bd-B0011",
+          "Eada0bd6df25903bd-B0020",
+          "Eada0bd6df25903bd-B0028",
+          "Eada0bd6df25903bd-B0034",
+          "Eada0bd6df25903bd-B0035",
+          "Eada0bd6df25903bd-B0036",
+          "Eada0bd6df25903bd-B0037",
+          "Eada0bd6df25903bd-B0039"
+        ],
+        "limitations": "The authors identify limitations regarding static database coverage/freshness and computational latency/cost of multi-stage planning, but omit discussion of evaluation sample size limitations and potential hallucination during synthesis.",
+        "method_assessment": "The architecture is clearly outlined, integrating heuristic/LLM intent routing, dual-path retrieval over Milvus databases (statutes and cases) plus Tavily web search, and a multi-agent orchestration setup (planner, executor, synthesis). However, many implementation specifics (e.g., precise prompts, fallback trigger rates, embedding models used for vector retrieval) are only high-level.",
+        "quality_rationale": "While the system demonstration framework is coherent, scientific validation is preliminary: a sample of 20 queries for retrieval and an unspecified sample size for user ratings provide insufficient empirical backing to justify promotion at this time.",
+        "scoped_contribution": "The paper presents LawCompass, an evidence-grounded legal assistant combining legal question answering, query-rewriting dual-path legal retrieval, and multi-agent deep research using LangGraph to synthesize structured legal reports.",
+        "source_content_hash": "ac5b3fdab72858b6886295862fee8f9ef430dd7a65d90e37424edfad9c973bc1"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the system demonstration framework is coherent, scientific validation is preliminary: a sample of 20 queries for retrieval and an unspecified sample size for user ratings provide insufficient empirical backing to justify promotion at this time.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "ac5b3fdab72858b6886295862fee8f9ef430dd7a65d90e37424edfad9c973bc1",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors identify limitations regarding static database coverage/freshness and computational latency/cost of multi-stage planning, but omit discussion of evaluation sample size limitations and potential hallucination during synthesis."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -170,7 +1731,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

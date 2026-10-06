@@ -59,16 +59,172 @@
             <p>Large language models (LLMs) are increasingly deployed in enterprise, scientific, and medical applications, where agents must incorporate domain-specific knowledge and adapt from experience. Context engineering offers a practical alternative to weight updates by improving model behavior through instructions, strateg...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study presents a clear, well-scoped system that addresses a well-identified failure mode of flat memory in test-time continual learning. The methodology is thoroughly detailed, formal bounds are derived, and empirical results demonstrate substantial token and training-time efficiency gains on objective external tasks.</p>
+      <p>The manuscript acknowledges limitations including the small number of tasks (two financial domains), evaluation against only one primary baseline (ACE), single-run evaluation without repeated trials, and the fact that reading the index retains residual growth rather than strict end-to-end O(1) complexity.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-06T11:02:40.001683+00:00.</p>
+        <p>Coverage: 43912 of 43912 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory grows as
+O(N), whereas bounded retrieval maintains anO(1)memory-context length per query.
+• GraphMemory.We introduce GRAPHMEMORY, a lightweight external memory that
+accumulates, refines, organizes, and connects reusable strategies in an evolving graph. Nodes
+represent ACE-style knowledge points, while weighted edges capture useful relationships
+among them. For each query, GraphMemory identifies relevant entry nodes, traverses their
+local neighborhoods, and supplies only the resulting subgraph to the language model. This
+replaces full-memory prompting with selective relational retrieval while preserving the
+interpretability, portability, and weight-free adaptation of natural-language memory.
+• Competitive performance at substantially lower cost.Across three dataset–model settings
+on two financial reasoning tasks, FORMULAand FINER, GraphMemory remains within 4.0
+percentage points </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>of ACE with Claude Haiku 4.5 and outperforms ACE by 1.5 points on
+FORMULAwith Qwen3.8-27B. GraphMemory reduces training-token usage by 81–85%,
+test-token usage by79–92%, and active training time by21–34%.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We use ACE as our workhorse for realizing GraphMemory. GraphMemory changes ACE at precisely
+two interfaces: what the Generator (f) reads and what the Curator (O) writes. Instead of exposing
+the complete playbook to every query, we prepend a retrieval stage; instead of writing only bullet-
+point updates, the Curator can also write relations between them. The resulting adaptation loop is
+RETRIEVE–GENERATE–REFLECT–CURATE, as illustrated in Figure 2. For retrieval, we maintain a
+compact index containing each node&#x27;s identifier and a short key, but not its full bullet-point content.
+Given a query, the Retriever reads this index and selects a small set of entry nodes. We then perform a
+deterministic breadth-first traversal from those entries, expanding neighbors in order of learned edge
+utility, under fixed hop, node, and token budgets. Only the full contents of the nodes reached during
+this </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>traversal are loaded and passed to the Generator. The LLM therefore makes the initial semantic
+choice, while the graph provides a cheap and deterministic mechanism for bringing in connected
+knowledge.
+Generation follows ACE. Reflection is extended in one respect: beyond ACE-style critique, the
+Reflector labels the Generator&#x27;s reported memory transitions as helpful, harmful, or neutral. Helpful
+4
+Figure 1: Prompt-token usage at successive training checkpoints for
+GraphMemory and ACE on FORMULAwith Qwen3.8-27B.
+Figure 2: Overview of GraphMemory. An LLM retriever selects entry nodes from a compact index,
+after which a bounded breadth-first traversal loads the relevant subgraph. The ACE Generator and
+Reflector operate on this retrieved context, while the Curator writes new nodes and edges back to the
+graph.
+and harmful labels contribute confidence-weighted evidence to the corresponding </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>edges, while neutral
+labels leave the counters unchanged. The traversal utility is the mean of the resulting Beta posterior,
+so retrieval preferentially follows transitions with stronger helpful evidence. The difference appears
+during curation: the Curator produces a graph update that may add or revise bullet-point nodes, add
+or revise edges, or do both. The update is applied locally without rewriting the rest of the graph. New
+nodes are added to the compact index, while new edges determine which lessons can be reached
+together during later retrieval. We provide the detailed construction of GraphMemory in Appendix B.
+It is important to note that this realization is not strictlyO(1) end to end because the Retriever still
+reads an index that grows with the number of nodes. The bound in Proposition 2 applies to the full
+memory content supplied to the Generator. Since each index entry </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>BaselinesWe compare GraphMemory against ACE [ 25] using two state-of-the-art LLM backbones
+across two financial reasoning tasks. For each backbone and task, we report cold-start performance
+and final test performance after memory construction. To assess adaptation efficiency, we track
+5
+Table 1: Offline adaptation performance, token usage, and estimated training cost on FORMULAand
+FINER. Training-token counts and costs are approximate. Costs assume a 95%–5% input–output
+token split and standard real-time API prices. Initial accuracy denotes cold-start test accuracy.
+Dataset Backbone System Accuracy Token Usage Estimated Cost *
+Initial Best val. (step) Final test Training Test Training (USD)
+FORMULA
+Claude Haiku 4.5 GraphMemory 0.70 0.87 (500) 0.81∼20M∼1.4M $24.00
+ACE (80k cap) 0.700.88 (300) 0.85∼131M∼18M $157.20
+Qwen3.8-27B GraphMemory 0.690.88 (200) 0.84∼8M∼0.6M $5.00
+ACE 0.67 0.88 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(200) 0.83∼42M∼4M $26.25
+FINER Claude Haiku 4.5 GraphMemory 0.75 0.80 (700) 0.75∼57M∼9M $68.40
+ACE (80k cap) 0.750.80 (200) 0.78∼327M∼42M $392.40
+Qwen3.8-27B GraphMemory 0.72 0.79 (900) 0.77∼31M∼5M</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>because its growth would otherwise exceed the model&#x27;s context-window limit. No
+such cap is required for Qwen3.8-27B, which supports a larger context window. This highlights
+the importance of retrieval-based memory: using ACE with smaller context windows may require a
+memory cap or other context-management techniques.
+DatasetsBoth memory systems are evaluated on the two financial reasoning tasks: FINER [ 12] and
+FORMULA[ 19]. Each system is trained for a single epoch. Our FORMULAsplit uses 500/300/200
+training, validation, and test examples, respectively, while our FINER split uses 1,000/500/441
+examples. We evaluate validation performance every 100 training iterations.
+Adaptation performanceTables 1 and 2 summarize our findings. Across three dataset–model
+configurations, GraphMemory reduces memory-construction tokens by approximately 81–85%,
+estimated cost by a similar margin, and test </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tokens by 78.6%–92.2%, while maintaining competitive
+accuracy. On FORMULAwith Qwen3.8-27B, it slightly outperforms ACE using only 19% of its
+training-token budget. With Claude Haiku 4.5, ACE leads by 4.0 percentage points but uses 6.6× as
+many training tokens. On FINER, GraphMemory trails ACE by 2.94 points. Figure 3 shows that
+ACE improves rapidly before plateauing or declining as its memory approaches the 80k-token cap.
+GraphMemory improves more slowly and varies more initially, but continues improving as its graph
+grows, suggesting a trade-off between early sample efficiency and late-stage stability.
+6
+Table 2: Active wall-clock time for offline training and held-out test on FORMULAand FINER. All
+figures are active wall clock. Bold indicates the faster result.
+Dataset Model System Training Final test
+Total Per step Total Per sample
+FORMULAclaude-haiku-4-5 GraphMemory6.4 h 46 s15.7 min </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>4.7 s
+ACE (80k cap) 8.1 h 58 s8.6 min 2.6 s
+FINER claude-haiku-4-5 GraphMemory19.0 h 68 s47.1 min 6.4 s
+ACE (80k cap) 28.9 h 104 s26.5 min 3.6 s
+Token and monetary efficiencyThe largest reduction occurs on FORMULAwith Claude Haiku 4.5,
+where GraphMemory uses approximately 20M training tokens compared with 131M for ACE, an
+84.7% reduction. Its test-time token usage decreases from approximately 18M to 1.4M, a 92.2%
+reduction. Comparable savings are observed with Qwen3.8-27B, for which GraphMemory reduces
+training-token usage from 42M to 8M, and on FINER, where usage falls from 327M to 57M. Under
+our pricing assumptions, these reductions lower the estimated cost of memory construction from
+$157.20 to $24.00 on Claude/FORMULA, from $26.25 to $5.00 on Qwen/FORMULA, and from
+$392.40 to $68.40 on Claude/FINER.
+Wall-clock efficiencyAs shown in Table 2, GraphMemory also reduces active training </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>time. Training
+time decreases by 21.0% on FORMULA(6.4 versus 8.1 hours) and 34.3% on FINER (19.0 versus
+28.9 hours). GraphMemory is slower during inference, however, requiring approximately 1.8 ×
+as much time per test example. This overhead arises because GraphMemory performs retrieval
+before generating each prediction, whereas ACE directly supplies its complete memory to the
+backbone. A more efficient implementation ofϕ, such as an embedding-based retriever, could reduce
+inference latency and further decrease training time. We leave this investigation to future work. Thus,
+GraphMemory trades a modest increase in per-query latency for substantially lower context length,
+training cost, and test-time token consumption.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>financial tasks and two LLM backbones, GraphMemory remains competitive
+with ACE while reducing memory-construction tokens by 81–85%, test-time tokens by 79–92%,
+and estimated API cost similarly. Learning trajectories suggest slower initial adaptation but greater
+stability and continued improvement.
+Our results remain preliminary, covering two related tasks, two models, and one primary baseline.
+Broader evaluations, additional memory and prompt-optimization baselines, and repeated runs are
+needed. Retrieval overhead also makes individual test queries slower despite lower token usage,
+motivating embedding-based and hybrid retrievers, caching, and improved graph routing. Finally,
+longer continual-learning streams and cross-model transfer will test whether improvements persist
+beyond one epoch and whether memory built by larger models can efficiently adapt smaller ones.
+7</blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Retrieval has two stages. First, an LLM Retriever reads the compact index and returns a structured
+selection of up to two index sections and at most six entry nodes. Second, GraphMemory performs
+a weight-prioritized breadth-first traversal over outgoing edges. Entry nodes have depth zero. At
+each breadth level, active outgoing neighbors are ordered by decreasing posterior-mean weight from
+Equation (19), with target-node identifier used as a deterministic tie-break, and at most the two
+highest-scoring neighbors of a loaded node are considered. Traversal is bounded by two hops from
+each entry node, at most 12 loaded nodes, and at most 2,500 tokens of serialized node content. A
+node is not loaded if doing so would violate either the node or token budget.
+12
+Algorithm 1Bounded posterior-mean-prioritized retrieval in GraphMemory
+Require:Queryx, directed graphG= (V,E), compact </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>indexI(G)
+1:A←LLMSelect(I(G),x){at most 2 sections and 6 valid entry nodes}
+2:Q←[(v,0) :v∈A],L←[ ],Z←∅
+3:whileQ̸=∅and|L|&lt;12do
+4:(v,d)←popFront(Q)
+5:ifv /∈Zthen
+6:Z←Z∪{v}
+7:iflen(Ser(L∥[v]))≤2500then
+8:appendvtoL
+9:ifd&lt;2then
+10:N v←Top2u:(v,u)∈Ew(v,u)
+11:append[(u,d+ 1) :u∈N v]toQ
+12:end if
+13:end if
+14:end if
+15:end while
+16:returnSer(L)
+Algorithm 1 gives the retrieval procedure. The queue preserves breadth-first depth order, while edge
+scores determine the priority among neighbors at the same expansion point. Duplicate nodes reached
+from different entries are loaded only once.
+The Retriever uses structured JSON output. Invalid identifiers are discarded. We use no full-memory
+fallback: if the graph is empty or no valid entry node is selected, the retrieved memory is empty and
+generation proceeds without a memory block. This choice prevents retrieval failures from silently
+reverting to </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For training example (xt,yt), GraphMemory first retrieves from the graph constructed from earlier
+examples,
+ct =ϕ(G (t),xt),by t =f(c t,xt).(22)
+Only after producingbyt does the Reflector inspect the prediction, available feedback, and execution
+trace. The Curator then emits local graph edits, which are applied to obtainG(t+1). Consequently,
+information derived fromyt cannot affect the prediction onxt; it becomes available only to subsequent
+examples. The Generator and Reflector retain ACE&#x27;s core roles, with the additional memory-use
+tracing and edge feedback described above, while the Retriever and graph-valued Curator implement
+the two GraphMemory-specific interfaces described in Section 3.</blockquote></details></li><li><strong>Contribution clarity — pages 13–14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>accuracy is selected
+13
+for the held-out test evaluation. In the Claude experiments, ACE uses the 80,000-token memory cap
+reported in the main text. Formula uses 500/300/200 train/validation/test examples, and FiNER uses
+1,000/500/441 examples.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +263,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +279,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-02</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-05 11:07:41</li><li>Last seen by Paper Scout: 2026-10-05 11:07:44</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-02</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-05 11:07:41</li><li>Last seen by Paper Scout: 2026-10-06 11:00:05</li></ul>
             <ul><li>arXiv: 2610.02687</li><li>arXiv IDs: 2610.02687</li></ul>
           </section>
           <section class="detail-panel">

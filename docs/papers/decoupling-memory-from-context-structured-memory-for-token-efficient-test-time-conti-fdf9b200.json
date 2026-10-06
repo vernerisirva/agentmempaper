@@ -21,12 +21,12 @@
   "first_seen_date": "2026-10-05",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-05 11:07:44",
-  "last_seen_date": "2026-10-05",
+  "last_seen_at": "2026-10-06 11:00:05",
+  "last_seen_date": "2026-10-06",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-02",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-05 11:08:43",
   "notified_date": "2026-10-05",
   "openalex_id": null,
@@ -36,8 +36,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-05 11:07:41",
-    "generated_at": "2026-10-05 11:12:03",
-    "last_seen_at": "2026-10-05 11:07:44",
+    "generated_at": "2026-10-06 11:03:28",
+    "last_seen_at": "2026-10-06 11:00:05",
     "metadata_sources": [
       "arxiv"
     ],
@@ -99,36 +99,1501 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-06T11:02:40.001683+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.9,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The study presents a clear, well-scoped system that addresses a well-identified failure mode of flat memory in test-time continual learning. The methodology is thoroughly detailed, formal bounds are derived, and empirical results demonstrate substantial token and training-time efficiency gains on objective external tasks.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 45517,
+      "assessment_input_sha256": "8cc68d45f1d1821bbfc72c6203c5866897ee86a8c4af9df0b7d95575f34470b3",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.02687",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 44524,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 43912,
+      "evidence_block_count": 61,
+      "evidence_context_characters": 51562,
+      "evidence_context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+      "evidence_context_sha256": "066963e24da76a51bd4570ebbf74a0c4bbd6fa107ec1fa9547572030aac71fb3",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 44550,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "d3df134ce0c5d191f40aa45d5513f348e55167c9937e71f03d00e4e27a5b2c4b",
+        "source_url": "https://arxiv.org/pdf/2610.02687",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 44524,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "introduction",
+        "limitations",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "introduction",
+        "limitations",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 381,
+          "supplied_characters": 381
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1665,
+          "supplied_characters": 1665
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 915,
+          "supplied_characters": 915
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3768,
+          "supplied_characters": 3768
+        },
+        {
+          "heading": "Offline Context Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 650,
+          "supplied_characters": 650
+        },
+        {
+          "heading": "Offline Context Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1245,
+          "supplied_characters": 1245
+        },
+        {
+          "heading": "From Local Context Updates To Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 2637,
+          "supplied_characters": 2637
+        },
+        {
+          "heading": "From Local Context Updates To Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1141,
+          "supplied_characters": 1141
+        },
+        {
+          "heading": "Memory With Bounded Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1810,
+          "supplied_characters": 1810
+        },
+        {
+          "heading": "Graphmemory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1296,
+          "supplied_characters": 1296
+        },
+        {
+          "heading": "Graphmemory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1666,
+          "supplied_characters": 1666
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 287,
+          "supplied_characters": 287
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 806,
+          "supplied_characters": 806
+        },
+        {
+          "heading": "Ace\u223c \u223c",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2409,
+          "supplied_characters": 2409
+        },
+        {
+          "heading": "Ace\u223c \u223c",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1912,
+          "supplied_characters": 1912
+        },
+        {
+          "heading": "Conclusion, Limitations, And Future Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "limitations",
+          "section_index": 15,
+          "source_characters": 1776,
+          "supplied_characters": 1776
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 3705,
+          "supplied_characters": 3705
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 2174,
+          "supplied_characters": 2174
+        },
+        {
+          "heading": "Appendix: Additional Formalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 18,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Appendix: Textual Optimization Oracles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 19,
+          "source_characters": 640,
+          "supplied_characters": 640
+        },
+        {
+          "heading": "Candidates And Add New Proposals:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1183,
+          "supplied_characters": 1183
+        },
+        {
+          "heading": "Appendix: Why Use A Local Context-Block Surrogate?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 21,
+          "source_characters": 1445,
+          "supplied_characters": 1445
+        },
+        {
+          "heading": "Appendix: Memory-Context Scaling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 22,
+          "source_characters": 177,
+          "supplied_characters": 177
+        },
+        {
+          "heading": "Appendix: Memory-Context Scaling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 23,
+          "source_characters": 878,
+          "supplied_characters": 878
+        },
+        {
+          "heading": "Appendix: Graphmemory As Structured Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 24,
+          "source_characters": 1035,
+          "supplied_characters": 1035
+        },
+        {
+          "heading": "Appendix: Directed Evidence-Weighted Memory Graph",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 25,
+          "source_characters": 493,
+          "supplied_characters": 493
+        },
+        {
+          "heading": "Appendix: Directed Evidence-Weighted Memory Graph",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 26,
+          "source_characters": 2951,
+          "supplied_characters": 2951
+        },
+        {
+          "heading": "Appendix: Retrieval And Traversal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 27,
+          "source_characters": 764,
+          "supplied_characters": 764
+        },
+        {
+          "heading": "Appendix: Retrieval And Traversal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 1463,
+          "supplied_characters": 1463
+        },
+        {
+          "heading": "Appendix: Retrieve\u2013Generate\u2013Reflect\u2013Curate Execution Order",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 701,
+          "supplied_characters": 701
+        },
+        {
+          "heading": "Appendix: Model And Evaluation Configuration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 30,
+          "source_characters": 915,
+          "supplied_characters": 915
+        },
+        {
+          "heading": "Appendix: Model And Evaluation Configuration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 220,
+          "supplied_characters": 220
+        },
+        {
+          "heading": "Appendix: Token And Latency Accounting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 778,
+          "supplied_characters": 778
+        }
+      ],
+      "selected_characters": 43912,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 381,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1665,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 915,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3768,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 650,
+          "heading": "Offline Context Optimization",
+          "page": 2
+        },
+        {
+          "characters": 1245,
+          "heading": "Offline Context Optimization",
+          "page": 3
+        },
+        {
+          "characters": 2637,
+          "heading": "From Local Context Updates To Memory",
+          "page": 3
+        },
+        {
+          "characters": 1141,
+          "heading": "From Local Context Updates To Memory",
+          "page": 4
+        },
+        {
+          "characters": 1810,
+          "heading": "Memory With Bounded Retrieval",
+          "page": 4
+        },
+        {
+          "characters": 1296,
+          "heading": "Graphmemory",
+          "page": 4
+        },
+        {
+          "characters": 1666,
+          "heading": "Graphmemory",
+          "page": 5
+        },
+        {
+          "characters": 287,
+          "heading": "Experiments",
+          "page": 5
+        },
+        {
+          "characters": 806,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 2409,
+          "heading": "Ace\u223c \u223c",
+          "page": 6
+        },
+        {
+          "characters": 1912,
+          "heading": "Ace\u223c \u223c",
+          "page": 7
+        },
+        {
+          "characters": 1776,
+          "heading": "Conclusion, Limitations, And Future Work",
+          "page": 7
+        },
+        {
+          "characters": 3705,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 2174,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 26,
+          "heading": "Appendix: Additional Formalization",
+          "page": 10
+        },
+        {
+          "characters": 640,
+          "heading": "Appendix: Textual Optimization Oracles",
+          "page": 10
+        },
+        {
+          "characters": 1183,
+          "heading": "Candidates And Add New Proposals:",
+          "page": 10
+        },
+        {
+          "characters": 1445,
+          "heading": "Appendix: Why Use A Local Context-Block Surrogate?",
+          "page": 10
+        },
+        {
+          "characters": 177,
+          "heading": "Appendix: Memory-Context Scaling",
+          "page": 10
+        },
+        {
+          "characters": 878,
+          "heading": "Appendix: Memory-Context Scaling",
+          "page": 11
+        },
+        {
+          "characters": 1035,
+          "heading": "Appendix: Graphmemory As Structured Retrieval",
+          "page": 11
+        },
+        {
+          "characters": 493,
+          "heading": "Appendix: Directed Evidence-Weighted Memory Graph",
+          "page": 11
+        },
+        {
+          "characters": 2951,
+          "heading": "Appendix: Directed Evidence-Weighted Memory Graph",
+          "page": 12
+        },
+        {
+          "characters": 764,
+          "heading": "Appendix: Retrieval And Traversal",
+          "page": 12
+        },
+        {
+          "characters": 1463,
+          "heading": "Appendix: Retrieval And Traversal",
+          "page": 13
+        },
+        {
+          "characters": 701,
+          "heading": "Appendix: Retrieve\u2013Generate\u2013Reflect\u2013Curate Execution Order",
+          "page": 13
+        },
+        {
+          "characters": 915,
+          "heading": "Appendix: Model And Evaluation Configuration",
+          "page": 13
+        },
+        {
+          "characters": 220,
+          "heading": "Appendix: Model And Evaluation Configuration",
+          "page": 14
+        },
+        {
+          "characters": 778,
+          "heading": "Appendix: Token And Latency Accounting",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "8cc68d45f1d1821bbfc72c6203c5866897ee86a8c4af9df0b7d95575f34470b3",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "d3df134ce0c5d191f40aa45d5513f348e55167c9937e71f03d00e4e27a5b2c4b",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0008"
+        ],
+        "excerpt": "memory grows as\nO(N), whereas bounded retrieval maintains anO(1)memory-context length per query.\n\u2022 GraphMemory.We introduce GRAPHMEMORY, a lightweight external memory that\naccumulates, refines, organizes, and connects reusable strategies in an evolving graph. Nodes\nrepresent ACE-style knowledge points, while weighted edges capture useful relationships\namong them. For each query, GraphMemory identifies relevant entry nodes, traverses their\nlocal neighborhoods, and supplies only the resulting subgraph to the language model. This\nreplaces full-memory prompting with selective relational retrieval while preserving the\ninterpretability, portability, and weight-free adaptation of natural-language memory.\n\u2022 Competitive performance at substantially lower cost.Across three dataset\u2013model settings\non two financial reasoning tasks, FORMULAand FINER, GraphMemory remains within 4.0\npercentage points ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c038b4a2272727761c8321b670b3607062adae1884cc56053456b738093ebb02",
+            "evidence_id": "Efac0221dfb3a97b5-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3564,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2666,
+                "text": "memory grows as\nO(N), whereas bounded retrieval maintains anO(1)memory-context length per query.\n\u2022 GraphMemory.We introduce GRAPHMEMORY, a lightweight external memory that\naccumulates, refines, organizes, and connects reusable strategies in an evolving graph. Nodes\nrepresent ACE-style knowledge points, while weighted edges capture useful relationships\namong them. For each query, GraphMemory identifies relevant entry nodes, traverses their\nlocal neighborhoods, and supplies only the resulting subgraph to the language model. This\nreplaces full-memory prompting with selective relational retrieval while preserving the\ninterpretability, portability, and weight-free adaptation of natural-language memory.\n\u2022 Competitive performance at substantially lower cost.Across three dataset\u2013model settings\non two financial reasoning tasks, FORMULAand FINER, GraphMemory remains within 4.0\npercentage points "
+              }
+            ],
+            "text": "memory grows as\nO(N), whereas bounded retrieval maintains anO(1)memory-context length per query.\n\u2022 GraphMemory.We introduce GRAPHMEMORY, a lightweight external memory that\naccumulates, refines, organizes, and connects reusable strategies in an evolving graph. Nodes\nrepresent ACE-style knowledge points, while weighted edges capture useful relationships\namong them. For each query, GraphMemory identifies relevant entry nodes, traverses their\nlocal neighborhoods, and supplies only the resulting subgraph to the language model. This\nreplaces full-memory prompting with selective relational retrieval while preserving the\ninterpretability, portability, and weight-free adaptation of natural-language memory.\n\u2022 Competitive performance at substantially lower cost.Across three dataset\u2013model settings\non two financial reasoning tasks, FORMULAand FINER, GraphMemory remains within 4.0\npercentage points "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0009"
+        ],
+        "excerpt": "of ACE with Claude Haiku 4.5 and outperforms ACE by 1.5 points on\nFORMULAwith Qwen3.8-27B. GraphMemory reduces training-token usage by 81\u201385%,\ntest-token usage by79\u201392%, and active training time by21\u201334%.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c43e254bebb38409de110f92fb0ad1d28c7088411677c36efdbd491ef3fe0ae4",
+            "evidence_id": "Efac0221dfb3a97b5-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3768,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 3564,
+                "text": "of ACE with Claude Haiku 4.5 and outperforms ACE by 1.5 points on\nFORMULAwith Qwen3.8-27B. GraphMemory reduces training-token usage by 81\u201385%,\ntest-token usage by79\u201392%, and active training time by21\u201334%."
+              }
+            ],
+            "text": "of ACE with Claude Haiku 4.5 and outperforms ACE by 1.5 points on\nFORMULAwith Qwen3.8-27B. GraphMemory reduces training-token usage by 81\u201385%,\ntest-token usage by79\u201392%, and active training time by21\u201334%."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0021"
+        ],
+        "excerpt": "We use ACE as our workhorse for realizing GraphMemory. GraphMemory changes ACE at precisely\ntwo interfaces: what the Generator (f) reads and what the Curator (O) writes. Instead of exposing\nthe complete playbook to every query, we prepend a retrieval stage; instead of writing only bullet-\npoint updates, the Curator can also write relations between them. The resulting adaptation loop is\nRETRIEVE\u2013GENERATE\u2013REFLECT\u2013CURATE, as illustrated in Figure 2. For retrieval, we maintain a\ncompact index containing each node's identifier and a short key, but not its full bullet-point content.\nGiven a query, the Retriever reads this index and selects a small set of entry nodes. We then perform a\ndeterministic breadth-first traversal from those entries, expanding neighbors in order of learned edge\nutility, under fixed hop, node, and token budgets. Only the full contents of the nodes reached during\nthis ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graphmemory",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b8787740a38015e41e72919904e5029f5b5152ffdfe3d1f45e02822cf90e96fe",
+            "evidence_id": "Efac0221dfb3a97b5-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Graphmemory",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 4,
+                "section": "Graphmemory",
+                "section_index": 9,
+                "start": 0,
+                "text": "We use ACE as our workhorse for realizing GraphMemory. GraphMemory changes ACE at precisely\ntwo interfaces: what the Generator (f) reads and what the Curator (O) writes. Instead of exposing\nthe complete playbook to every query, we prepend a retrieval stage; instead of writing only bullet-\npoint updates, the Curator can also write relations between them. The resulting adaptation loop is\nRETRIEVE\u2013GENERATE\u2013REFLECT\u2013CURATE, as illustrated in Figure 2. For retrieval, we maintain a\ncompact index containing each node's identifier and a short key, but not its full bullet-point content.\nGiven a query, the Retriever reads this index and selects a small set of entry nodes. We then perform a\ndeterministic breadth-first traversal from those entries, expanding neighbors in order of learned edge\nutility, under fixed hop, node, and token budgets. Only the full contents of the nodes reached during\nthis "
+              }
+            ],
+            "text": "We use ACE as our workhorse for realizing GraphMemory. GraphMemory changes ACE at precisely\ntwo interfaces: what the Generator (f) reads and what the Curator (O) writes. Instead of exposing\nthe complete playbook to every query, we prepend a retrieval stage; instead of writing only bullet-\npoint updates, the Curator can also write relations between them. The resulting adaptation loop is\nRETRIEVE\u2013GENERATE\u2013REFLECT\u2013CURATE, as illustrated in Figure 2. For retrieval, we maintain a\ncompact index containing each node's identifier and a short key, but not its full bullet-point content.\nGiven a query, the Retriever reads this index and selects a small set of entry nodes. We then perform a\ndeterministic breadth-first traversal from those entries, expanding neighbors in order of learned edge\nutility, under fixed hop, node, and token budgets. Only the full contents of the nodes reached during\nthis "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0022"
+        ],
+        "excerpt": "traversal are loaded and passed to the Generator. The LLM therefore makes the initial semantic\nchoice, while the graph provides a cheap and deterministic mechanism for bringing in connected\nknowledge.\nGeneration follows ACE. Reflection is extended in one respect: beyond ACE-style critique, the\nReflector labels the Generator's reported memory transitions as helpful, harmful, or neutral. Helpful\n4\nFigure 1: Prompt-token usage at successive training checkpoints for\nGraphMemory and ACE on FORMULAwith Qwen3.8-27B.\nFigure 2: Overview of GraphMemory. An LLM retriever selects entry nodes from a compact index,\nafter which a bounded breadth-first traversal loads the relevant subgraph. The ACE Generator and\nReflector operate on this retrieved context, while the Curator writes new nodes and edges back to the\ngraph.\nand harmful labels contribute confidence-weighted evidence to the corresponding ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graphmemory",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "203ed033da19d436cfd02d85257bec755c4d6062c0437418e7b856a6738db2ad",
+            "evidence_id": "Efac0221dfb3a97b5-B0022",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Graphmemory",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1296,
+                "page": 4,
+                "section": "Graphmemory",
+                "section_index": 9,
+                "start": 898,
+                "text": "traversal are loaded and passed to the Generator. The LLM therefore makes the initial semantic\nchoice, while the graph provides a cheap and deterministic mechanism for bringing in connected\nknowledge.\nGeneration follows ACE. Reflection is extended in one respect: beyond ACE-style critique, the\nReflector labels the Generator's reported memory transitions as helpful, harmful, or neutral. Helpful\n4"
+              },
+              {
+                "end": 496,
+                "page": 5,
+                "section": "Graphmemory",
+                "section_index": 10,
+                "start": 0,
+                "text": "Figure 1: Prompt-token usage at successive training checkpoints for\nGraphMemory and ACE on FORMULAwith Qwen3.8-27B.\nFigure 2: Overview of GraphMemory. An LLM retriever selects entry nodes from a compact index,\nafter which a bounded breadth-first traversal loads the relevant subgraph. The ACE Generator and\nReflector operate on this retrieved context, while the Curator writes new nodes and edges back to the\ngraph.\nand harmful labels contribute confidence-weighted evidence to the corresponding "
+              }
+            ],
+            "text": "traversal are loaded and passed to the Generator. The LLM therefore makes the initial semantic\nchoice, while the graph provides a cheap and deterministic mechanism for bringing in connected\nknowledge.\nGeneration follows ACE. Reflection is extended in one respect: beyond ACE-style critique, the\nReflector labels the Generator's reported memory transitions as helpful, harmful, or neutral. Helpful\n4\nFigure 1: Prompt-token usage at successive training checkpoints for\nGraphMemory and ACE on FORMULAwith Qwen3.8-27B.\nFigure 2: Overview of GraphMemory. An LLM retriever selects entry nodes from a compact index,\nafter which a bounded breadth-first traversal loads the relevant subgraph. The ACE Generator and\nReflector operate on this retrieved context, while the Curator writes new nodes and edges back to the\ngraph.\nand harmful labels contribute confidence-weighted evidence to the corresponding "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0023"
+        ],
+        "excerpt": "edges, while neutral\nlabels leave the counters unchanged. The traversal utility is the mean of the resulting Beta posterior,\nso retrieval preferentially follows transitions with stronger helpful evidence. The difference appears\nduring curation: the Curator produces a graph update that may add or revise bullet-point nodes, add\nor revise edges, or do both. The update is applied locally without rewriting the rest of the graph. New\nnodes are added to the compact index, while new edges determine which lessons can be reached\ntogether during later retrieval. We provide the detailed construction of GraphMemory in Appendix B.\nIt is important to note that this realization is not strictlyO(1) end to end because the Retriever still\nreads an index that grows with the number of nodes. The bound in Proposition 2 applies to the full\nmemory content supplied to the Generator. Since each index entry ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graphmemory",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4acd921ab7052187b57e9340a42a18721f7c39fec4b6c7e4e943165d1cc8d29c",
+            "evidence_id": "Efac0221dfb3a97b5-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Graphmemory",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1390,
+                "page": 5,
+                "section": "Graphmemory",
+                "section_index": 10,
+                "start": 496,
+                "text": "edges, while neutral\nlabels leave the counters unchanged. The traversal utility is the mean of the resulting Beta posterior,\nso retrieval preferentially follows transitions with stronger helpful evidence. The difference appears\nduring curation: the Curator produces a graph update that may add or revise bullet-point nodes, add\nor revise edges, or do both. The update is applied locally without rewriting the rest of the graph. New\nnodes are added to the compact index, while new edges determine which lessons can be reached\ntogether during later retrieval. We provide the detailed construction of GraphMemory in Appendix B.\nIt is important to note that this realization is not strictlyO(1) end to end because the Retriever still\nreads an index that grows with the number of nodes. The bound in Proposition 2 applies to the full\nmemory content supplied to the Generator. Since each index entry "
+              }
+            ],
+            "text": "edges, while neutral\nlabels leave the counters unchanged. The traversal utility is the mean of the resulting Beta posterior,\nso retrieval preferentially follows transitions with stronger helpful evidence. The difference appears\nduring curation: the Curator produces a graph update that may add or revise bullet-point nodes, add\nor revise edges, or do both. The update is applied locally without rewriting the rest of the graph. New\nnodes are added to the compact index, while new edges determine which lessons can be reached\ntogether during later retrieval. We provide the detailed construction of GraphMemory in Appendix B.\nIt is important to note that this realization is not strictlyO(1) end to end because the Retriever still\nreads an index that grows with the number of nodes. The bound in Proposition 2 applies to the full\nmemory content supplied to the Generator. Since each index entry "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0025"
+        ],
+        "excerpt": "BaselinesWe compare GraphMemory against ACE [ 25] using two state-of-the-art LLM backbones\nacross two financial reasoning tasks. For each backbone and task, we report cold-start performance\nand final test performance after memory construction. To assess adaptation efficiency, we track\n5\nTable 1: Offline adaptation performance, token usage, and estimated training cost on FORMULAand\nFINER. Training-token counts and costs are approximate. Costs assume a 95%\u20135% input\u2013output\ntoken split and standard real-time API prices. Initial accuracy denotes cold-start test accuracy.\nDataset Backbone System Accuracy Token Usage Estimated Cost *\nInitial Best val. (step) Final test Training Test Training (USD)\nFORMULA\nClaude Haiku 4.5 GraphMemory 0.70 0.87 (500) 0.81\u223c20M\u223c1.4M $24.00\nACE (80k cap) 0.700.88 (300) 0.85\u223c131M\u223c18M $157.20\nQwen3.8-27B GraphMemory 0.690.88 (200) 0.84\u223c8M\u223c0.6M $5.00\nACE 0.67 0.88 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7e89885104afb281f29c368f071a7c36b591d5e075f08d6914d0488e7e8e507f",
+            "evidence_id": "Efac0221dfb3a97b5-B0025",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 287,
+                "page": 5,
+                "section": "Experiments",
+                "section_index": 11,
+                "start": 0,
+                "text": "BaselinesWe compare GraphMemory against ACE [ 25] using two state-of-the-art LLM backbones\nacross two financial reasoning tasks. For each backbone and task, we report cold-start performance\nand final test performance after memory construction. To assess adaptation efficiency, we track\n5"
+              },
+              {
+                "end": 609,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 12,
+                "start": 0,
+                "text": "Table 1: Offline adaptation performance, token usage, and estimated training cost on FORMULAand\nFINER. Training-token counts and costs are approximate. Costs assume a 95%\u20135% input\u2013output\ntoken split and standard real-time API prices. Initial accuracy denotes cold-start test accuracy.\nDataset Backbone System Accuracy Token Usage Estimated Cost *\nInitial Best val. (step) Final test Training Test Training (USD)\nFORMULA\nClaude Haiku 4.5 GraphMemory 0.70 0.87 (500) 0.81\u223c20M\u223c1.4M $24.00\nACE (80k cap) 0.700.88 (300) 0.85\u223c131M\u223c18M $157.20\nQwen3.8-27B GraphMemory 0.690.88 (200) 0.84\u223c8M\u223c0.6M $5.00\nACE 0.67 0.88 "
+              }
+            ],
+            "text": "BaselinesWe compare GraphMemory against ACE [ 25] using two state-of-the-art LLM backbones\nacross two financial reasoning tasks. For each backbone and task, we report cold-start performance\nand final test performance after memory construction. To assess adaptation efficiency, we track\n5\nTable 1: Offline adaptation performance, token usage, and estimated training cost on FORMULAand\nFINER. Training-token counts and costs are approximate. Costs assume a 95%\u20135% input\u2013output\ntoken split and standard real-time API prices. Initial accuracy denotes cold-start test accuracy.\nDataset Backbone System Accuracy Token Usage Estimated Cost *\nInitial Best val. (step) Final test Training Test Training (USD)\nFORMULA\nClaude Haiku 4.5 GraphMemory 0.70 0.87 (500) 0.81\u223c20M\u223c1.4M $24.00\nACE (80k cap) 0.700.88 (300) 0.85\u223c131M\u223c18M $157.20\nQwen3.8-27B GraphMemory 0.690.88 (200) 0.84\u223c8M\u223c0.6M $5.00\nACE 0.67 0.88 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0026"
+        ],
+        "excerpt": "(200) 0.83\u223c42M\u223c4M $26.25\nFINER Claude Haiku 4.5 GraphMemory 0.75 0.80 (700) 0.75\u223c57M\u223c9M $68.40\nACE (80k cap) 0.750.80 (200) 0.78\u223c327M\u223c42M $392.40\nQwen3.8-27B GraphMemory 0.72 0.79 (900) 0.77\u223c31M\u223c5M",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dc6bd50b3f59dcd9228431b0d96e584b4b15994e98200aed66309ea63de5085e",
+            "evidence_id": "Efac0221dfb3a97b5-B0026",
+            "pages": [
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 806,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 12,
+                "start": 609,
+                "text": "(200) 0.83\u223c42M\u223c4M $26.25\nFINER Claude Haiku 4.5 GraphMemory 0.75 0.80 (700) 0.75\u223c57M\u223c9M $68.40\nACE (80k cap) 0.750.80 (200) 0.78\u223c327M\u223c42M $392.40\nQwen3.8-27B GraphMemory 0.72 0.79 (900) 0.77\u223c31M\u223c5M"
+              }
+            ],
+            "text": "(200) 0.83\u223c42M\u223c4M $26.25\nFINER Claude Haiku 4.5 GraphMemory 0.75 0.80 (700) 0.75\u223c57M\u223c9M $68.40\nACE (80k cap) 0.750.80 (200) 0.78\u223c327M\u223c42M $392.40\nQwen3.8-27B GraphMemory 0.72 0.79 (900) 0.77\u223c31M\u223c5M"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0028"
+        ],
+        "excerpt": "because its growth would otherwise exceed the model's context-window limit. No\nsuch cap is required for Qwen3.8-27B, which supports a larger context window. This highlights\nthe importance of retrieval-based memory: using ACE with smaller context windows may require a\nmemory cap or other context-management techniques.\nDatasetsBoth memory systems are evaluated on the two financial reasoning tasks: FINER [ 12] and\nFORMULA[ 19]. Each system is trained for a single epoch. Our FORMULAsplit uses 500/300/200\ntraining, validation, and test examples, respectively, while our FINER split uses 1,000/500/441\nexamples. We evaluate validation performance every 100 training iterations.\nAdaptation performanceTables 1 and 2 summarize our findings. Across three dataset\u2013model\nconfigurations, GraphMemory reduces memory-construction tokens by approximately 81\u201385%,\nestimated cost by a similar margin, and test ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ace\u223c \u223c",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "29e83ccfee2edab489f1aebe653f6440ecb2f8bf74152bd0e0355d9d9f4fcbbe",
+            "evidence_id": "Efac0221dfb3a97b5-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Ace\u223c \u223c",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 6,
+                "section": "Ace\u223c \u223c",
+                "section_index": 13,
+                "start": 898,
+                "text": "because its growth would otherwise exceed the model's context-window limit. No\nsuch cap is required for Qwen3.8-27B, which supports a larger context window. This highlights\nthe importance of retrieval-based memory: using ACE with smaller context windows may require a\nmemory cap or other context-management techniques.\nDatasetsBoth memory systems are evaluated on the two financial reasoning tasks: FINER [ 12] and\nFORMULA[ 19]. Each system is trained for a single epoch. Our FORMULAsplit uses 500/300/200\ntraining, validation, and test examples, respectively, while our FINER split uses 1,000/500/441\nexamples. We evaluate validation performance every 100 training iterations.\nAdaptation performanceTables 1 and 2 summarize our findings. Across three dataset\u2013model\nconfigurations, GraphMemory reduces memory-construction tokens by approximately 81\u201385%,\nestimated cost by a similar margin, and test "
+              }
+            ],
+            "text": "because its growth would otherwise exceed the model's context-window limit. No\nsuch cap is required for Qwen3.8-27B, which supports a larger context window. This highlights\nthe importance of retrieval-based memory: using ACE with smaller context windows may require a\nmemory cap or other context-management techniques.\nDatasetsBoth memory systems are evaluated on the two financial reasoning tasks: FINER [ 12] and\nFORMULA[ 19]. Each system is trained for a single epoch. Our FORMULAsplit uses 500/300/200\ntraining, validation, and test examples, respectively, while our FINER split uses 1,000/500/441\nexamples. We evaluate validation performance every 100 training iterations.\nAdaptation performanceTables 1 and 2 summarize our findings. Across three dataset\u2013model\nconfigurations, GraphMemory reduces memory-construction tokens by approximately 81\u201385%,\nestimated cost by a similar margin, and test "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0029"
+        ],
+        "excerpt": "tokens by 78.6%\u201392.2%, while maintaining competitive\naccuracy. On FORMULAwith Qwen3.8-27B, it slightly outperforms ACE using only 19% of its\ntraining-token budget. With Claude Haiku 4.5, ACE leads by 4.0 percentage points but uses 6.6\u00d7 as\nmany training tokens. On FINER, GraphMemory trails ACE by 2.94 points. Figure 3 shows that\nACE improves rapidly before plateauing or declining as its memory approaches the 80k-token cap.\nGraphMemory improves more slowly and varies more initially, but continues improving as its graph\ngrows, suggesting a trade-off between early sample efficiency and late-stage stability.\n6\nTable 2: Active wall-clock time for offline training and held-out test on FORMULAand FINER. All\nfigures are active wall clock. Bold indicates the faster result.\nDataset Model System Training Final test\nTotal Per step Total Per sample\nFORMULAclaude-haiku-4-5 GraphMemory6.4 h 46 s15.7 min ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ace\u223c \u223c",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0087ee54513897c69ba68085605882fc330e93ef2229fa78d839906a130fc242",
+            "evidence_id": "Efac0221dfb3a97b5-B0029",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Ace\u223c \u223c",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2409,
+                "page": 6,
+                "section": "Ace\u223c \u223c",
+                "section_index": 13,
+                "start": 1797,
+                "text": "tokens by 78.6%\u201392.2%, while maintaining competitive\naccuracy. On FORMULAwith Qwen3.8-27B, it slightly outperforms ACE using only 19% of its\ntraining-token budget. With Claude Haiku 4.5, ACE leads by 4.0 percentage points but uses 6.6\u00d7 as\nmany training tokens. On FINER, GraphMemory trails ACE by 2.94 points. Figure 3 shows that\nACE improves rapidly before plateauing or declining as its memory approaches the 80k-token cap.\nGraphMemory improves more slowly and varies more initially, but continues improving as its graph\ngrows, suggesting a trade-off between early sample efficiency and late-stage stability.\n6"
+              },
+              {
+                "end": 288,
+                "page": 7,
+                "section": "Ace\u223c \u223c",
+                "section_index": 14,
+                "start": 0,
+                "text": "Table 2: Active wall-clock time for offline training and held-out test on FORMULAand FINER. All\nfigures are active wall clock. Bold indicates the faster result.\nDataset Model System Training Final test\nTotal Per step Total Per sample\nFORMULAclaude-haiku-4-5 GraphMemory6.4 h 46 s15.7 min "
+              }
+            ],
+            "text": "tokens by 78.6%\u201392.2%, while maintaining competitive\naccuracy. On FORMULAwith Qwen3.8-27B, it slightly outperforms ACE using only 19% of its\ntraining-token budget. With Claude Haiku 4.5, ACE leads by 4.0 percentage points but uses 6.6\u00d7 as\nmany training tokens. On FINER, GraphMemory trails ACE by 2.94 points. Figure 3 shows that\nACE improves rapidly before plateauing or declining as its memory approaches the 80k-token cap.\nGraphMemory improves more slowly and varies more initially, but continues improving as its graph\ngrows, suggesting a trade-off between early sample efficiency and late-stage stability.\n6\nTable 2: Active wall-clock time for offline training and held-out test on FORMULAand FINER. All\nfigures are active wall clock. Bold indicates the faster result.\nDataset Model System Training Final test\nTotal Per step Total Per sample\nFORMULAclaude-haiku-4-5 GraphMemory6.4 h 46 s15.7 min "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0030"
+        ],
+        "excerpt": "4.7 s\nACE (80k cap) 8.1 h 58 s8.6 min 2.6 s\nFINER claude-haiku-4-5 GraphMemory19.0 h 68 s47.1 min 6.4 s\nACE (80k cap) 28.9 h 104 s26.5 min 3.6 s\nToken and monetary efficiencyThe largest reduction occurs on FORMULAwith Claude Haiku 4.5,\nwhere GraphMemory uses approximately 20M training tokens compared with 131M for ACE, an\n84.7% reduction. Its test-time token usage decreases from approximately 18M to 1.4M, a 92.2%\nreduction. Comparable savings are observed with Qwen3.8-27B, for which GraphMemory reduces\ntraining-token usage from 42M to 8M, and on FINER, where usage falls from 327M to 57M. Under\nour pricing assumptions, these reductions lower the estimated cost of memory construction from\n$157.20 to $24.00 on Claude/FORMULA, from $26.25 to $5.00 on Qwen/FORMULA, and from\n$392.40 to $68.40 on Claude/FINER.\nWall-clock efficiencyAs shown in Table 2, GraphMemory also reduces active training ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ace\u223c \u223c",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bc5d8e5b627f60cb90b9d1728f93e86919375460ea1ede7f2bf2fa2af027fb98",
+            "evidence_id": "Efac0221dfb3a97b5-B0030",
+            "pages": [
+              7
+            ],
+            "section": "Ace\u223c \u223c",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1186,
+                "page": 7,
+                "section": "Ace\u223c \u223c",
+                "section_index": 14,
+                "start": 288,
+                "text": "4.7 s\nACE (80k cap) 8.1 h 58 s8.6 min 2.6 s\nFINER claude-haiku-4-5 GraphMemory19.0 h 68 s47.1 min 6.4 s\nACE (80k cap) 28.9 h 104 s26.5 min 3.6 s\nToken and monetary efficiencyThe largest reduction occurs on FORMULAwith Claude Haiku 4.5,\nwhere GraphMemory uses approximately 20M training tokens compared with 131M for ACE, an\n84.7% reduction. Its test-time token usage decreases from approximately 18M to 1.4M, a 92.2%\nreduction. Comparable savings are observed with Qwen3.8-27B, for which GraphMemory reduces\ntraining-token usage from 42M to 8M, and on FINER, where usage falls from 327M to 57M. Under\nour pricing assumptions, these reductions lower the estimated cost of memory construction from\n$157.20 to $24.00 on Claude/FORMULA, from $26.25 to $5.00 on Qwen/FORMULA, and from\n$392.40 to $68.40 on Claude/FINER.\nWall-clock efficiencyAs shown in Table 2, GraphMemory also reduces active training "
+              }
+            ],
+            "text": "4.7 s\nACE (80k cap) 8.1 h 58 s8.6 min 2.6 s\nFINER claude-haiku-4-5 GraphMemory19.0 h 68 s47.1 min 6.4 s\nACE (80k cap) 28.9 h 104 s26.5 min 3.6 s\nToken and monetary efficiencyThe largest reduction occurs on FORMULAwith Claude Haiku 4.5,\nwhere GraphMemory uses approximately 20M training tokens compared with 131M for ACE, an\n84.7% reduction. Its test-time token usage decreases from approximately 18M to 1.4M, a 92.2%\nreduction. Comparable savings are observed with Qwen3.8-27B, for which GraphMemory reduces\ntraining-token usage from 42M to 8M, and on FINER, where usage falls from 327M to 57M. Under\nour pricing assumptions, these reductions lower the estimated cost of memory construction from\n$157.20 to $24.00 on Claude/FORMULA, from $26.25 to $5.00 on Qwen/FORMULA, and from\n$392.40 to $68.40 on Claude/FINER.\nWall-clock efficiencyAs shown in Table 2, GraphMemory also reduces active training "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0031"
+        ],
+        "excerpt": "time. Training\ntime decreases by 21.0% on FORMULA(6.4 versus 8.1 hours) and 34.3% on FINER (19.0 versus\n28.9 hours). GraphMemory is slower during inference, however, requiring approximately 1.8 \u00d7\nas much time per test example. This overhead arises because GraphMemory performs retrieval\nbefore generating each prediction, whereas ACE directly supplies its complete memory to the\nbackbone. A more efficient implementation of\u03d5, such as an embedding-based retriever, could reduce\ninference latency and further decrease training time. We leave this investigation to future work. Thus,\nGraphMemory trades a modest increase in per-query latency for substantially lower context length,\ntraining cost, and test-time token consumption.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ace\u223c \u223c",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "86dc3bd56e8342814941e08911d94e73747f5c18047621ded9a3754b889e423d",
+            "evidence_id": "Efac0221dfb3a97b5-B0031",
+            "pages": [
+              7
+            ],
+            "section": "Ace\u223c \u223c",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1912,
+                "page": 7,
+                "section": "Ace\u223c \u223c",
+                "section_index": 14,
+                "start": 1186,
+                "text": "time. Training\ntime decreases by 21.0% on FORMULA(6.4 versus 8.1 hours) and 34.3% on FINER (19.0 versus\n28.9 hours). GraphMemory is slower during inference, however, requiring approximately 1.8 \u00d7\nas much time per test example. This overhead arises because GraphMemory performs retrieval\nbefore generating each prediction, whereas ACE directly supplies its complete memory to the\nbackbone. A more efficient implementation of\u03d5, such as an embedding-based retriever, could reduce\ninference latency and further decrease training time. We leave this investigation to future work. Thus,\nGraphMemory trades a modest increase in per-query latency for substantially lower context length,\ntraining cost, and test-time token consumption."
+              }
+            ],
+            "text": "time. Training\ntime decreases by 21.0% on FORMULA(6.4 versus 8.1 hours) and 34.3% on FINER (19.0 versus\n28.9 hours). GraphMemory is slower during inference, however, requiring approximately 1.8 \u00d7\nas much time per test example. This overhead arises because GraphMemory performs retrieval\nbefore generating each prediction, whereas ACE directly supplies its complete memory to the\nbackbone. A more efficient implementation of\u03d5, such as an embedding-based retriever, could reduce\ninference latency and further decrease training time. We leave this investigation to future work. Thus,\nGraphMemory trades a modest increase in per-query latency for substantially lower context length,\ntraining cost, and test-time token consumption."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0033"
+        ],
+        "excerpt": "financial tasks and two LLM backbones, GraphMemory remains competitive\nwith ACE while reducing memory-construction tokens by 81\u201385%, test-time tokens by 79\u201392%,\nand estimated API cost similarly. Learning trajectories suggest slower initial adaptation but greater\nstability and continued improvement.\nOur results remain preliminary, covering two related tasks, two models, and one primary baseline.\nBroader evaluations, additional memory and prompt-optimization baselines, and repeated runs are\nneeded. Retrieval overhead also makes individual test queries slower despite lower token usage,\nmotivating embedding-based and hybrid retrievers, caching, and improved graph routing. Finally,\nlonger continual-learning streams and cross-model transfer will test whether improvements persist\nbeyond one epoch and whether memory built by larger models can efficiently adapt smaller ones.\n7",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion, Limitations, And Future Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f9978690d40ef1d1feeb05d8cd1846d5014ca14ff4c658ffc05d5084e5ccfd08",
+            "evidence_id": "Efac0221dfb3a97b5-B0033",
+            "pages": [
+              7
+            ],
+            "section": "Conclusion, Limitations, And Future Work",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1776,
+                "page": 7,
+                "section": "Conclusion, Limitations, And Future Work",
+                "section_index": 15,
+                "start": 896,
+                "text": "financial tasks and two LLM backbones, GraphMemory remains competitive\nwith ACE while reducing memory-construction tokens by 81\u201385%, test-time tokens by 79\u201392%,\nand estimated API cost similarly. Learning trajectories suggest slower initial adaptation but greater\nstability and continued improvement.\nOur results remain preliminary, covering two related tasks, two models, and one primary baseline.\nBroader evaluations, additional memory and prompt-optimization baselines, and repeated runs are\nneeded. Retrieval overhead also makes individual test queries slower despite lower token usage,\nmotivating embedding-based and hybrid retrievers, caching, and improved graph routing. Finally,\nlonger continual-learning streams and cross-model transfer will test whether improvements persist\nbeyond one epoch and whether memory built by larger models can efficiently adapt smaller ones.\n7"
+              }
+            ],
+            "text": "financial tasks and two LLM backbones, GraphMemory remains competitive\nwith ACE while reducing memory-construction tokens by 81\u201385%, test-time tokens by 79\u201392%,\nand estimated API cost similarly. Learning trajectories suggest slower initial adaptation but greater\nstability and continued improvement.\nOur results remain preliminary, covering two related tasks, two models, and one primary baseline.\nBroader evaluations, additional memory and prompt-optimization baselines, and repeated runs are\nneeded. Retrieval overhead also makes individual test queries slower despite lower token usage,\nmotivating embedding-based and hybrid retrievers, caching, and improved graph routing. Finally,\nlonger continual-learning streams and cross-model transfer will test whether improvements persist\nbeyond one epoch and whether memory built by larger models can efficiently adapt smaller ones.\n7"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0055"
+        ],
+        "excerpt": "Retrieval has two stages. First, an LLM Retriever reads the compact index and returns a structured\nselection of up to two index sections and at most six entry nodes. Second, GraphMemory performs\na weight-prioritized breadth-first traversal over outgoing edges. Entry nodes have depth zero. At\neach breadth level, active outgoing neighbors are ordered by decreasing posterior-mean weight from\nEquation (19), with target-node identifier used as a deterministic tie-break, and at most the two\nhighest-scoring neighbors of a loaded node are considered. Traversal is bounded by two hops from\neach entry node, at most 12 loaded nodes, and at most 2,500 tokens of serialized node content. A\nnode is not loaded if doing so would violate either the node or token budget.\n12\nAlgorithm 1Bounded posterior-mean-prioritized retrieval in GraphMemory\nRequire:Queryx, directed graphG= (V,E), compact ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Retrieval And Traversal",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f605ed7507ca2419b3e1656cf8e5336d6933ff046e2b0cf0ad3eb3aa869f45de",
+            "evidence_id": "Efac0221dfb3a97b5-B0055",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Appendix: Retrieval And Traversal",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 764,
+                "page": 12,
+                "section": "Appendix: Retrieval And Traversal",
+                "section_index": 27,
+                "start": 0,
+                "text": "Retrieval has two stages. First, an LLM Retriever reads the compact index and returns a structured\nselection of up to two index sections and at most six entry nodes. Second, GraphMemory performs\na weight-prioritized breadth-first traversal over outgoing edges. Entry nodes have depth zero. At\neach breadth level, active outgoing neighbors are ordered by decreasing posterior-mean weight from\nEquation (19), with target-node identifier used as a deterministic tie-break, and at most the two\nhighest-scoring neighbors of a loaded node are considered. Traversal is bounded by two hops from\neach entry node, at most 12 loaded nodes, and at most 2,500 tokens of serialized node content. A\nnode is not loaded if doing so would violate either the node or token budget.\n12"
+              },
+              {
+                "end": 119,
+                "page": 13,
+                "section": "Appendix: Retrieval And Traversal",
+                "section_index": 28,
+                "start": 0,
+                "text": "Algorithm 1Bounded posterior-mean-prioritized retrieval in GraphMemory\nRequire:Queryx, directed graphG= (V,E), compact "
+              }
+            ],
+            "text": "Retrieval has two stages. First, an LLM Retriever reads the compact index and returns a structured\nselection of up to two index sections and at most six entry nodes. Second, GraphMemory performs\na weight-prioritized breadth-first traversal over outgoing edges. Entry nodes have depth zero. At\neach breadth level, active outgoing neighbors are ordered by decreasing posterior-mean weight from\nEquation (19), with target-node identifier used as a deterministic tie-break, and at most the two\nhighest-scoring neighbors of a loaded node are considered. Traversal is bounded by two hops from\neach entry node, at most 12 loaded nodes, and at most 2,500 tokens of serialized node content. A\nnode is not loaded if doing so would violate either the node or token budget.\n12\nAlgorithm 1Bounded posterior-mean-prioritized retrieval in GraphMemory\nRequire:Queryx, directed graphG= (V,E), compact "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0056"
+        ],
+        "excerpt": "indexI(G)\n1:A\u2190LLMSelect(I(G),x){at most 2 sections and 6 valid entry nodes}\n2:Q\u2190[(v,0) :v\u2208A],L\u2190[ ],Z\u2190\u2205\n3:whileQ\u0338=\u2205and|L|<12do\n4:(v,d)\u2190popFront(Q)\n5:ifv /\u2208Zthen\n6:Z\u2190Z\u222a{v}\n7:iflen(Ser(L\u2225[v]))\u22642500then\n8:appendvtoL\n9:ifd<2then\n10:N v\u2190Top2u:(v,u)\u2208Ew(v,u)\n11:append[(u,d+ 1) :u\u2208N v]toQ\n12:end if\n13:end if\n14:end if\n15:end while\n16:returnSer(L)\nAlgorithm 1 gives the retrieval procedure. The queue preserves breadth-first depth order, while edge\nscores determine the priority among neighbors at the same expansion point. Duplicate nodes reached\nfrom different entries are loaded only once.\nThe Retriever uses structured JSON output. Invalid identifiers are discarded. We use no full-memory\nfallback: if the graph is empty or no valid entry node is selected, the retrieved memory is empty and\ngeneration proceeds without a memory block. This choice prevents retrieval failures from silently\nreverting to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Retrieval And Traversal",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c974ec944d5e4df07521ff93baf061ecc1f661be3200a84efd1d7b0e3889fa13",
+            "evidence_id": "Efac0221dfb3a97b5-B0056",
+            "pages": [
+              13
+            ],
+            "section": "Appendix: Retrieval And Traversal",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1017,
+                "page": 13,
+                "section": "Appendix: Retrieval And Traversal",
+                "section_index": 28,
+                "start": 119,
+                "text": "indexI(G)\n1:A\u2190LLMSelect(I(G),x){at most 2 sections and 6 valid entry nodes}\n2:Q\u2190[(v,0) :v\u2208A],L\u2190[ ],Z\u2190\u2205\n3:whileQ\u0338=\u2205and|L|<12do\n4:(v,d)\u2190popFront(Q)\n5:ifv /\u2208Zthen\n6:Z\u2190Z\u222a{v}\n7:iflen(Ser(L\u2225[v]))\u22642500then\n8:appendvtoL\n9:ifd<2then\n10:N v\u2190Top2u:(v,u)\u2208Ew(v,u)\n11:append[(u,d+ 1) :u\u2208N v]toQ\n12:end if\n13:end if\n14:end if\n15:end while\n16:returnSer(L)\nAlgorithm 1 gives the retrieval procedure. The queue preserves breadth-first depth order, while edge\nscores determine the priority among neighbors at the same expansion point. Duplicate nodes reached\nfrom different entries are loaded only once.\nThe Retriever uses structured JSON output. Invalid identifiers are discarded. We use no full-memory\nfallback: if the graph is empty or no valid entry node is selected, the retrieved memory is empty and\ngeneration proceeds without a memory block. This choice prevents retrieval failures from silently\nreverting to "
+              }
+            ],
+            "text": "indexI(G)\n1:A\u2190LLMSelect(I(G),x){at most 2 sections and 6 valid entry nodes}\n2:Q\u2190[(v,0) :v\u2208A],L\u2190[ ],Z\u2190\u2205\n3:whileQ\u0338=\u2205and|L|<12do\n4:(v,d)\u2190popFront(Q)\n5:ifv /\u2208Zthen\n6:Z\u2190Z\u222a{v}\n7:iflen(Ser(L\u2225[v]))\u22642500then\n8:appendvtoL\n9:ifd<2then\n10:N v\u2190Top2u:(v,u)\u2208Ew(v,u)\n11:append[(u,d+ 1) :u\u2208N v]toQ\n12:end if\n13:end if\n14:end if\n15:end while\n16:returnSer(L)\nAlgorithm 1 gives the retrieval procedure. The queue preserves breadth-first depth order, while edge\nscores determine the priority among neighbors at the same expansion point. Duplicate nodes reached\nfrom different entries are loaded only once.\nThe Retriever uses structured JSON output. Invalid identifiers are discarded. We use no full-memory\nfallback: if the graph is empty or no valid entry node is selected, the retrieved memory is empty and\ngeneration proceeds without a memory block. This choice prevents retrieval failures from silently\nreverting to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0058"
+        ],
+        "excerpt": "For training example (xt,yt), GraphMemory first retrieves from the graph constructed from earlier\nexamples,\nct =\u03d5(G (t),xt),by t =f(c t,xt).(22)\nOnly after producingbyt does the Reflector inspect the prediction, available feedback, and execution\ntrace. The Curator then emits local graph edits, which are applied to obtainG(t+1). Consequently,\ninformation derived fromyt cannot affect the prediction onxt; it becomes available only to subsequent\nexamples. The Generator and Reflector retain ACE's core roles, with the additional memory-use\ntracing and edge feedback described above, while the Retriever and graph-valued Curator implement\nthe two GraphMemory-specific interfaces described in Section 3.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Retrieve\u2013Generate\u2013Reflect\u2013Curate Execution Order",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cef73229323a432f6c9e1322f1d52fee97d8bb9107a1815f36168df9891c54be",
+            "evidence_id": "Efac0221dfb3a97b5-B0058",
+            "pages": [
+              13
+            ],
+            "section": "Appendix: Retrieve\u2013Generate\u2013Reflect\u2013Curate Execution Order",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 701,
+                "page": 13,
+                "section": "Appendix: Retrieve\u2013Generate\u2013Reflect\u2013Curate Execution Order",
+                "section_index": 29,
+                "start": 0,
+                "text": "For training example (xt,yt), GraphMemory first retrieves from the graph constructed from earlier\nexamples,\nct =\u03d5(G (t),xt),by t =f(c t,xt).(22)\nOnly after producingbyt does the Reflector inspect the prediction, available feedback, and execution\ntrace. The Curator then emits local graph edits, which are applied to obtainG(t+1). Consequently,\ninformation derived fromyt cannot affect the prediction onxt; it becomes available only to subsequent\nexamples. The Generator and Reflector retain ACE's core roles, with the additional memory-use\ntracing and edge feedback described above, while the Retriever and graph-valued Curator implement\nthe two GraphMemory-specific interfaces described in Section 3."
+              }
+            ],
+            "text": "For training example (xt,yt), GraphMemory first retrieves from the graph constructed from earlier\nexamples,\nct =\u03d5(G (t),xt),by t =f(c t,xt).(22)\nOnly after producingbyt does the Reflector inspect the prediction, available feedback, and execution\ntrace. The Curator then emits local graph edits, which are applied to obtainG(t+1). Consequently,\ninformation derived fromyt cannot affect the prediction onxt; it becomes available only to subsequent\nexamples. The Generator and Reflector retain ACE's core roles, with the additional memory-use\ntracing and edge feedback described above, while the Retriever and graph-valued Curator implement\nthe two GraphMemory-specific interfaces described in Section 3."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0060"
+        ],
+        "excerpt": "accuracy is selected\n13\nfor the held-out test evaluation. In the Claude experiments, ACE uses the 80,000-token memory cap\nreported in the main text. Formula uses 500/300/200 train/validation/test examples, and FiNER uses\n1,000/500/441 examples.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13,
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Model And Evaluation Configuration",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3b1c8c4e89ed4081cb949ca3bf13e13fad9a15fc97f8047ba66e4ce76777e794",
+            "evidence_id": "Efac0221dfb3a97b5-B0060",
+            "pages": [
+              13,
+              14
+            ],
+            "section": "Appendix: Model And Evaluation Configuration",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 915,
+                "page": 13,
+                "section": "Appendix: Model And Evaluation Configuration",
+                "section_index": 30,
+                "start": 892,
+                "text": "accuracy is selected\n13"
+              },
+              {
+                "end": 220,
+                "page": 14,
+                "section": "Appendix: Model And Evaluation Configuration",
+                "section_index": 31,
+                "start": 0,
+                "text": "for the held-out test evaluation. In the Claude experiments, ACE uses the 80,000-token memory cap\nreported in the main text. Formula uses 500/300/200 train/validation/test examples, and FiNER uses\n1,000/500/441 examples."
+              }
+            ],
+            "text": "accuracy is selected\n13\nfor the held-out test evaluation. In the Claude experiments, ACE uses the 80,000-token memory cap\nreported in the main text. Formula uses 500/300/200 train/validation/test examples, and FiNER uses\n1,000/500/441 examples."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.02687",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.02687",
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Held-out test accuracy on FORMULA and FINER is measured against ground-truth labels, independent of the Reflector feedback used to shape graph edges and nodes.",
+          "final_evaluation_signal": "Held-out test accuracy on FORMULA and FINER, selected by best validation checkpoint.",
+          "independent_corroboration": "present",
+          "optimization_signal": "LLM Reflector helpful/harmful/neutral transition labels and ACE-style critique that drive Curator node and edge updates.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0008",
+          "Efac0221dfb3a97b5-B0009",
+          "Efac0221dfb3a97b5-B0021",
+          "Efac0221dfb3a97b5-B0022",
+          "Efac0221dfb3a97b5-B0023",
+          "Efac0221dfb3a97b5-B0025",
+          "Efac0221dfb3a97b5-B0026",
+          "Efac0221dfb3a97b5-B0028",
+          "Efac0221dfb3a97b5-B0029",
+          "Efac0221dfb3a97b5-B0030",
+          "Efac0221dfb3a97b5-B0031",
+          "Efac0221dfb3a97b5-B0033",
+          "Efac0221dfb3a97b5-B0055",
+          "Efac0221dfb3a97b5-B0056",
+          "Efac0221dfb3a97b5-B0058",
+          "Efac0221dfb3a97b5-B0060"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "d3df134ce0c5d191f40aa45d5513f348e55167c9937e71f03d00e4e27a5b2c4b"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.02687",
+        "claim_evidence_alignment": "The headline claims that GraphMemory achieves competitive task accuracy while reducing memory-construction tokens by 81-85% and test tokens by 79-92% are directly supported by the reported empirical tables. Authors clearly document trade-offs, such as higher per-query test latency and modest accuracy drops relative to uncapped or high-cap flat memory.",
+        "context_id": "fac0221dfb3a97b5ae9f8af11137140b140cb31fdf4e29aaf6b58f75a9460b9d",
+        "decision": "pass",
+        "evaluation_assessment": "Experiments compare GraphMemory against ACE on two financial reasoning datasets (FORMULA and FiNER) across two LLM backbones (Claude Haiku 4.5 and Qwen3.8-27B) using held-out test splits. Metrics include objective downstream accuracy, cumulative training and test token counts, estimated monetary cost, and active wall-clock time.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Downstream task performance is measured against ground-truth labels on held-out test splits rather than by internal reflective feedback.",
+          "final_evaluation_signal": "Objective downstream task accuracy on held-out test sets of financial benchmark datasets (FORMULA and FiNER).",
+          "independent_corroboration": "present",
+          "optimization_signal": "An LLM Reflector generates qualitative critique and transition feedback (helpful/harmful/neutral) that guides the Curator in updating graph nodes and edge weights.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Efac0221dfb3a97b5-B0008",
+          "Efac0221dfb3a97b5-B0009",
+          "Efac0221dfb3a97b5-B0021",
+          "Efac0221dfb3a97b5-B0022",
+          "Efac0221dfb3a97b5-B0023",
+          "Efac0221dfb3a97b5-B0025",
+          "Efac0221dfb3a97b5-B0026",
+          "Efac0221dfb3a97b5-B0028",
+          "Efac0221dfb3a97b5-B0029",
+          "Efac0221dfb3a97b5-B0030",
+          "Efac0221dfb3a97b5-B0031",
+          "Efac0221dfb3a97b5-B0033",
+          "Efac0221dfb3a97b5-B0055",
+          "Efac0221dfb3a97b5-B0056",
+          "Efac0221dfb3a97b5-B0058",
+          "Efac0221dfb3a97b5-B0060"
+        ],
+        "limitations": "The manuscript acknowledges limitations including the small number of tasks (two financial domains), evaluation against only one primary baseline (ACE), single-run evaluation without repeated trials, and the fact that reading the index retains residual growth rather than strict end-to-end O(1) complexity.",
+        "method_assessment": "The architecture extends Agentic Context Engineering (ACE) to a Retrieve-Generate-Reflect-Curate loop, updating node context and edge transition weights modeled as Beta posterior distributions over helpful/harmful reflective feedback. Retrieval constraints (depth, maximum nodes, and token limits) are clearly defined and accompanied by formal scaling properties.",
+        "quality_rationale": "The study presents a clear, well-scoped system that addresses a well-identified failure mode of flat memory in test-time continual learning. The methodology is thoroughly detailed, formal bounds are derived, and empirical results demonstrate substantial token and training-time efficiency gains on objective external tasks.",
+        "scoped_contribution": "The paper formalizes context adaptation as optimization and introduces GraphMemory, a graph-structured external natural language memory that selectively retrieves relevant subgraphs using an LLM retriever and breadth-first search to reduce token usage during test-time continual adaptation.",
+        "source_content_hash": "d3df134ce0c5d191f40aa45d5513f348e55167c9937e71f03d00e4e27a5b2c4b"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study presents a clear, well-scoped system that addresses a well-identified failure mode of flat memory in test-time continual learning. The methodology is thoroughly detailed, formal bounds are derived, and empirical results demonstrate substantial token and training-time efficiency gains on objective external tasks.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "d3df134ce0c5d191f40aa45d5513f348e55167c9937e71f03d00e4e27a5b2c4b",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript acknowledges limitations including the small number of tasks (two financial domains), evaluation against only one primary baseline (ACE), single-run evaluation without repeated trials, and the fact that reading the index retains residual growth rather than strict end-to-end O(1) complexity."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -157,7 +1622,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

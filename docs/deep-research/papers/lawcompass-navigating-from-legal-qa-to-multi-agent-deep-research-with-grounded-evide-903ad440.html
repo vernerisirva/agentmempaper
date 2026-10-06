@@ -60,15 +60,233 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>While the system demonstration framework is coherent, scientific validation is preliminary: a sample of 20 queries for retrieval and an unspecified sample size for user ratings provide insufficient empirical backing to justify promotion at this time.</p>
+      <p>The authors identify limitations regarding static database coverage/freshness and computational latency/cost of multi-stage planning, but omit discussion of evaluation sample size limitations and potential hallucination during synthesis.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-06T11:03:14.094447+00:00.</p>
+        <p>Coverage: 34523 of 34523 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Recent advances in Large Language Mod-
+els (LLMs) and Retrieval-Augmented Gener-
+ation (RAG) have significantly democratized
+access to legal information. Nevertheless, most
+existing legal assistants remain confined to
+multi-turn conversational QA, failing to sup-
+port complex legal tasks that require system-
+atic evidence retrieval, multi-step reasoning,
+and report-level synthesis. In this paper, we
+presentLawCompass, an evidence-grounded
+legal assistant that navigates the transition
+from standard Legal QA to multi-agent deep
+research. LawCompass provides three task-
+oriented functions:Legal QA, which deliv-
+ers precise, evidence-backed answers to legal
+questions;Professional Retrieval, which en-
+ables structured exploration of statutes and ju-
+dicial cases via query rewriting; andDeep Re-
+search, which employs a multi-agent workflow
+to decompose complex legal tasks and synthe-
+size </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>legal
+research, as shown in Figure 1 (b). Built upon a
+RAG framework, LawCompass aggregates external
+knowledge from heterogeneous legal sources, in-
+cluding statutes, judicial cases, and user-uploaded
+documents, to rigorously ground system outputs
+across all target applications. Specifically, Law-
+Compass provides three task-oriented functions.
+First,Legal QAprovides concise answers to le-
+gal questions, ensuring every claim is backed by
+explicit legal evidence. Second,Professional Re-
+trievalenables users to search and explore relevant
+legal authorities, including statutes and judicial
+cases. To improve retrieval accuracy and result clar-
+ity, it incorporates query rewriting and structured
+result presentation. Third,Deep Researchextends
+the retrieval-augmented framework with a multi-
+agent workflow for complex legal research tasks.
+It decomposes broad research objectives into </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LawCompass adopts a Unified Task Entry inter-
+face that routes user requests to three task-oriented
+modes:(i)Legal QA,(ii)Professional Retrieval,
+and(iii)Deep Research. The three modes share
+common services for document input, citation ren-
+dering, session management, and authenticated ac-
+cess control, while differing in task complexity,
+retrieval strategy, and output structure.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Professional Retrieval module empowers users
+to execute structured, in-depth navigation across
+heterogeneous legal corpora, including statutes, ju-
+dicial cases, and supporting legal resources. To im-
+prove retrieval quality, LawCompass first performs
+query rewriting and dual-path retrieval, allowing
+users to discover relevant legal authorities even
+when the original query is incomplete or expressed
+in non-legal terminology. The retrieved results are
+then organized into a structured, evidence-oriented
+report with four sections:1) Summary of the Le-
+gal Question and Key Disputes;2) Overview of
+Retrieved Statutory or Case Materials;3) De-
+tailed Analysis of Core Legal Provisions, Adju-
+dication Rules, or Representative Cases; and4)
+Retrieval Conclusions, Practical Recommenda-
+tions, and Risk Alerts. This structured presen-
+tation allows users to conveniently inspect legal
+sources, </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While Legal QA and Professional Retrieval target
+highly localized information needs, real-world le-
+gal practice frequently requires systematic investi-
+gations across heterogeneous source materials and
+analytical dimensions. To support such scenar-
+ios, LawCompass provides a Multi-Agent Deep
+Research module, as shown in Figure 2. Upon
+receiving a research objective, the system initi-
+ates a highly orchestrated multi-agent workflow.
+ThePlanner Agentfirst decomposes the objective
+into a set of actionable subtasks. Subsequently,
+specializedExecutor Agentsare dispatched in par-
+allel to harvest, cross-verify, and analyze empiri-
+cal evidence across statutes, judicial cases, web-
+scale repositories, and user-uploaded documenta-
+tion. During this process, intermediate findings are
+presented as subtask reports, allowing users to as-
+sess whether the system has covered crucial analyt-
+ical </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LLM.LawCompass employs DeepSeek-v4
+(DeepSeek-AI, 2026) as its primary reasoning
+engine to orchestrate core workflows, including
+intent classification, query rewriting, research
+planning, and multi-source report synthesis.
+Other LLMs, such as GPT (OpenAI, 2026) and
+Llama (Grattafiori et al., 2024), are also supported.
+Data Services.To support evidence-grounded
+legal question answering and deep research, we
+collect 220,000 statutory provisions from Lawyee1
+and 100,000 court cases from China Judgements
+Online2, as shown in Figure 3 (bottom). These data
+are stored in a Milvus vector database. Further-
+more, to bridge potential temporal gaps in static
+databases, we integrate real-time web search aug-
+mentation powered by Tavily3.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As illustrated in Figure 3 (middle), this module
+is operated through query rewriting, dual-path re-
+trieval, result aggregation and structured presen-
+tation generation, with the generation process de-
+scribed in Section 4.5.
+Query Rewriting.Legal search queries are of-
+ten incomplete, ambiguous, or expressed in non-
+professional language. To improve retrieval effec-
+tiveness, LawCompass first employs an LLM to
+reformulate user queries into retrieval-oriented rep-
+resentations. The rewritten query enriches legal
+terminology and expands 3–5 relevant concepts
+while preserving the original user intent.
+Dual-Path Retrieval.To balance precision and
+recall, LawCompass performs retrieval using both
+the original user query and the rewritten query. The
+original query preserves the user&#x27;s explicit informa-
+tion needs, while the rewritten query improves cov-
+erage of legally relevant concepts and </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Unlike Legal QA, which provides concise answers,
+the deep research module performs end-to-end le-
+gal research through planner, executor, and synthe-
+sis agents coordinated by LangGraph (LangChain,
+2026). As shown in Figure 3 (right), LangGraph
+maintains the evolving plan, subtasks, evidence,
+and draft report state.
+Planner.The Planner Agent coordinates the
+Deep Research workflow by converting a complex
+legal query into an executable research plan. It
+identifies the main legal issues and decomposes the
+query into 3–5 complementary subtasks, each with
+a distinct focus and specified source scope, such
+as legal sources, web sources, or both. The output
+plan is validated against a predefined schema to en-
+sure the required task count, clear objectives, and
+complete information for task execution. The in-
+valid plan is first passed to a structural repair mod-
+ule, which fills in missing </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This shared component is employed across all mod-
+ules to transform retrieved legal materials into co-
+herent answers or a report through hierarchy-aware
+source ordering and mandatory citation constraints.
+Hierarchy-Aware Source Ordering.Unlike
+general-domain RAG systems that rank context
+mainly by semantic similarity, LawCompass in-
+corporates the legal authority of retrieved sources.
+During subtask summarization and final report syn-
+thesis, statutory materials and cases are organized
+according to their respective authority levels or case
+reference levels, with higher-ranked sources priori-
+tized in the generated analysis. When such ranking
+metadata is available, the generation prompts ex-
+plicitly instruct the LLM to present and cite higher-
+authority materials before lower-authority ones, so
+that conclusions are grounded in the most authori-
+tative available evidence.
+Mandatory </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>High-quality retrieval is essential for LawCompass,
+as all three task-oriented functions rely on retrieved
+legal sources to generate or present evidence-
+grounded outputs. We conduct a human relevance-
+based retrieval evaluation using a set of 20 legal
+queries covering different legal information needs.
+For each query, we collect the top-5 evidence pas-
+sages returned by the system and ask two annota-
+tors with legal backgrounds to independently judge
+the relevance of each passage. Each retrieved pas-
+sage is labeled as relevant, partially relevant, or
+irrelevant according to whether it provides use-
+ful legal authority for addressing the user query.
+Based on these annotations, we report Precision@5,
+nDCG@5, and the average relevance score. The
+results in Table 1 confirm the effectiveness of dual-
+path retrieval in LawCompass.
+Method P@5↑nDCG@5↑Rel. Score↑
+Original 76.0 85.5 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1.10
+Query-Rewritten 75.0 85.9 1.11
+LawCompass 79.0 90.9 1.28
+Table 1: Retrieval quality evaluation on 20 legal queries.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We further conducted a task-based user study to
+evaluate the usability and practical value of Law-
+Compass. Specifically, we invited participants with
+and without legal backgrounds to examine whether
+the system can support both ordinary users and
+users with professional legal knowledge. Each par-
+ticipant was asked to complete three representa-
+tive tasks using LawCompass. After completing
+the tasks, participants evaluated LawCompass on
+a five-point Likert scale in terms of usability, use-
+fulness, clarity, evidence-grounded trustworthiness,
+and the utility of Deep Research. Table 2 reports
+the average scores obtained by rating the collected
+open-ended feedback. The results indicate that
+LawCompass is well received by both groups, with
+particularly strong ratings for usefulness, Deep Re-
+search value, and overall satisfaction.
+Dimension Legal Non-legal Overall
+Ease of Use 3.9 4.2 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>4.1
+Usefulness 4.0 4.5 4.3
+Evidence Trust 3.8 4.5 4.2
+Retrieval Clarity 3.9 4.3 4.1
+Deep Research Value 4.2 4.5 4.4
+Overall Satisfaction 4.1 4.4 4.3
+Table 2: User study results across participants with and
+without legal backgrounds. Scores are based on a 5-
+point Likert scale.
+6</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This paper presents LawCompass, a unified legal
+research system that extends conventional legal QA
+to multi-agent Deep Research. Despite its practi-
+cal utility, LawCompass still has several limita-
+tions. First, its retrieval coverage depends on the
+completeness and update frequency of the local
+database. Newly issued legal documents, recent
+cases, and local regulations may not be included
+promptly. Second, although the Deep Research
+module improves the structure and interpretability
+of complex questions by decomposing them into
+multiple subtasks, this multi-stage process also in-
+troduces additional latency and computational cost.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A Case Study of Deep Research
+Q:被辞退可以赔多少钱？ Q: How Much Compensation Can I Receive If I
+Am Dismissed?
+R: 1.问题概述
+用户咨询&quot;被辞退可以赔多少钱&quot;。该问题通常
+取决于辞退性质：
+•合法解除且依法应补偿：一般为经济补偿
+金，即通常所称N；
+•特定无过失性解除且未提前30日书面通知：</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +325,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +341,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-05 11:08:43</li><li>Last seen by Paper Scout: 2026-10-05 11:08:53</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-05 11:08:43</li><li>Last seen by Paper Scout: 2026-10-06 11:01:09</li></ul>
             <ul><li>DOI: 10.48550/arxiv.2610.01027</li><li>arXiv: 2610.01027</li><li>OpenAlex: W7215682171</li><li>OpenAlex IDs: W7215682171</li><li>arXiv IDs: 2610.01027</li></ul>
           </section>
           <section class="detail-panel">

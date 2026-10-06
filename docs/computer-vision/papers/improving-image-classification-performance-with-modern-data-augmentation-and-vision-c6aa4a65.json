@@ -20,12 +20,12 @@
   "first_seen_date": "2026-10-05",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-05 11:10:02",
-  "last_seen_date": "2026-10-05",
+  "last_seen_at": "2026-10-06 11:02:15",
+  "last_seen_date": "2026-10-06",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-05 11:10:13",
   "notified_date": "2026-10-05",
   "openalex_id": "W7219007446",
@@ -35,8 +35,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-10-05 11:10:02",
-    "generated_at": "2026-10-05 11:12:31",
-    "last_seen_at": "2026-10-05 11:10:02",
+    "generated_at": "2026-10-06 11:03:50",
+    "last_seen_at": "2026-10-06 11:02:15",
     "metadata_sources": [
       "openalex"
     ],
@@ -98,36 +98,1074 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-06T11:02:57.868739+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.98,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The manuscript contains a major internal contradiction: Section III describes a hybrid CNN with VGG-style convolution layers, three inception modules, and three residual blocks, while Table I and Figure 3 describe a standard ViT-Base pipeline with 16x16 patches and no explanation of how these architectures relate.",
+      "The evaluation is too weak to support the headline claims: only four configurations are compared over 20 epochs on CIFAR-10, with no standard deviations, no repeated runs, no statistical testing, and no comparison against the self-supervised methods the abstract claims to outperform.",
+      "The robustness claims are underspecified: CIFAR-10-C is mentioned in the discussion, but the manuscript does not report how corrupted images were generated, which corruptions or severities were used, or any quantitative CIFAR-10-C results.",
+      "The abstract claims higher accuracy against existing self-supervised methods, but no self-supervised baseline is trained or evaluated anywhere in the paper."
+    ],
+    "concise_summary": "Due to major methodological discrepancies in model definition and an extremely limited, underspecified evaluation protocol, scientific quality and validity remain highly uncertain.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 31933,
+      "assessment_input_sha256": "210df3149e59356b2a845c66894691efbfc1f16842357006c33714cb4361d9c5",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48084/etasr.20583",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 30672,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 30525,
+      "evidence_block_count": 49,
+      "evidence_context_characters": 36768,
+      "evidence_context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+      "evidence_context_sha256": "428130c5c57abb61f11da6eaa8638d76732c9347d299f708777818f174bffe42",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 30682,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extracted_pages": 6,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "3ae33a2938970cf925c76d6780c726016d6df696f8d5bcc68925341460a09d14",
+        "source_url": "https://www.etasr.com/index.php/ETASR/article/download/20583/7239",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 30672,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 913,
+          "supplied_characters": 913
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 839,
+          "supplied_characters": 839
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "appendix",
+          "section_index": 2,
+          "source_characters": 2851,
+          "supplied_characters": 2851
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 3,
+          "source_characters": 2989,
+          "supplied_characters": 2989
+        },
+        {
+          "heading": "Appendix: Vggnet",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 4,
+          "source_characters": 2806,
+          "supplied_characters": 2806
+        },
+        {
+          "heading": "Appendix: Vggnet",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "appendix",
+          "section_index": 5,
+          "source_characters": 2946,
+          "supplied_characters": 2946
+        },
+        {
+          "heading": "Appendix: Vggnet",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 6,
+          "source_characters": 4573,
+          "supplied_characters": 4573
+        },
+        {
+          "heading": "Appendix: Vggnet",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "appendix",
+          "section_index": 7,
+          "source_characters": 4187,
+          "supplied_characters": 4187
+        },
+        {
+          "heading": "Appendix: Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "appendix",
+          "section_index": 8,
+          "source_characters": 1089,
+          "supplied_characters": 1089
+        },
+        {
+          "heading": "Appendix: Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 9,
+          "source_characters": 209,
+          "supplied_characters": 209
+        },
+        {
+          "heading": "Declaration Of Competing Interests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 209,
+          "supplied_characters": 209
+        },
+        {
+          "heading": "The Authors Are Thankful To National School Of Appl Ied",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 139,
+          "supplied_characters": 139
+        },
+        {
+          "heading": "Data Availability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "The Data Supporting The Findings Of This Study Are Available",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 116,
+          "supplied_characters": 116
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 443,
+          "supplied_characters": 443
+        },
+        {
+          "heading": "Enhancement Through Tree-Search Theory And Deep Rei Nforcement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 263,
+          "supplied_characters": 263
+        },
+        {
+          "heading": "Vision: A Critical Review Of Emerging Techniques An D Application",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 4272,
+          "supplied_characters": 4272
+        },
+        {
+          "heading": "Regularization Strategy To Train Strong Classifiers  With Localizable",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 458,
+          "supplied_characters": 458
+        },
+        {
+          "heading": "Authors Profile",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 15,
+          "supplied_characters": 15
+        },
+        {
+          "heading": "Abderrahmane Bouidi (0009-0008-2778-303X)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 41,
+          "supplied_characters": 41
+        },
+        {
+          "heading": "Obtained His Master'S Degree In Decision Support",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 48,
+          "supplied_characters": 48
+        },
+        {
+          "heading": "Information Systems And Imaging From The Faculty Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 417,
+          "supplied_characters": 417
+        },
+        {
+          "heading": "Lahcen Oughir (0000-0003-0151-863X) Is A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 40,
+          "supplied_characters": 40
+        },
+        {
+          "heading": "Professor At The National School Of Applied Science S",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 212,
+          "supplied_characters": 212
+        },
+        {
+          "heading": "Focuses On Machine Learning And Deep Learning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 100,
+          "supplied_characters": 100
+        },
+        {
+          "heading": "Scopus And Supervised More Than 9 Successfully",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 333,
+          "supplied_characters": 333
+        }
+      ],
+      "selected_characters": 30525,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "selected_sections": [
+        {
+          "characters": 913,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 839,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2851,
+          "heading": "Appendix: Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2989,
+          "heading": "Appendix: Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2806,
+          "heading": "Appendix: Vggnet",
+          "page": 2
+        },
+        {
+          "characters": 2946,
+          "heading": "Appendix: Vggnet",
+          "page": 3
+        },
+        {
+          "characters": 4573,
+          "heading": "Appendix: Vggnet",
+          "page": 4
+        },
+        {
+          "characters": 4187,
+          "heading": "Appendix: Vggnet",
+          "page": 5
+        },
+        {
+          "characters": 1089,
+          "heading": "Appendix: Conclusion",
+          "page": 5
+        },
+        {
+          "characters": 209,
+          "heading": "Appendix: Conclusion",
+          "page": 6
+        },
+        {
+          "characters": 209,
+          "heading": "Declaration Of Competing Interests",
+          "page": 6
+        },
+        {
+          "characters": 139,
+          "heading": "The Authors Are Thankful To National School Of Appl Ied",
+          "page": 6
+        },
+        {
+          "characters": 17,
+          "heading": "Data Availability",
+          "page": 6
+        },
+        {
+          "characters": 116,
+          "heading": "The Data Supporting The Findings Of This Study Are Available",
+          "page": 6
+        },
+        {
+          "characters": 443,
+          "heading": "Unclassified body after references",
+          "page": 6
+        },
+        {
+          "characters": 263,
+          "heading": "Enhancement Through Tree-Search Theory And Deep Rei Nforcement",
+          "page": 6
+        },
+        {
+          "characters": 4272,
+          "heading": "Vision: A Critical Review Of Emerging Techniques An D Application",
+          "page": 6
+        },
+        {
+          "characters": 458,
+          "heading": "Regularization Strategy To Train Strong Classifiers  With Localizable",
+          "page": 6
+        },
+        {
+          "characters": 15,
+          "heading": "Authors Profile",
+          "page": 6
+        },
+        {
+          "characters": 41,
+          "heading": "Abderrahmane Bouidi (0009-0008-2778-303X)",
+          "page": 6
+        },
+        {
+          "characters": 48,
+          "heading": "Obtained His Master'S Degree In Decision Support",
+          "page": 6
+        },
+        {
+          "characters": 417,
+          "heading": "Information Systems And Imaging From The Faculty Of",
+          "page": 6
+        },
+        {
+          "characters": 40,
+          "heading": "Lahcen Oughir (0000-0003-0151-863X) Is A",
+          "page": 6
+        },
+        {
+          "characters": 212,
+          "heading": "Professor At The National School Of Applied Science S",
+          "page": 6
+        },
+        {
+          "characters": 100,
+          "heading": "Focuses On Machine Learning And Deep Learning",
+          "page": 6
+        },
+        {
+          "characters": 333,
+          "heading": "Scopus And Supervised More Than 9 Successfully",
+          "page": 6
+        }
+      ],
+      "selected_text_sha256": "210df3149e59356b2a845c66894691efbfc1f16842357006c33714cb4361d9c5",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "3ae33a2938970cf925c76d6780c726016d6df696f8d5bcc68925341460a09d14",
+      "source_pages": 6,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0003"
+        ],
+        "excerpt": "Visual cognition, one of the main tasks of computer  vision, has many applications, including object \ndetection, face recognition, and self-driving automobiles. This paper discusses deep learning applications to \nvisual cognition, including a brief history, some o f its applications, and some architectures, such as  \nResidual Networks and Residual-Inception. Visual cognition faces significant challenges when dealing w ith \nobjects that have comparable forms but represent di fferent classes. The proposed architecture in this \npaper incorporates Modern Data Augmentation and Vis ion Transformers (MDAViT) to improve \naccuracy. The model is trained and evaluated on the  CIFAR-10 dataset, demonstrating higher accuracy \nagainst existing self-supervised methods. \nKeywords-deep learning; CNN; modern data augmentation; vision transformer",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "91addd1e54db5a907e8ecd024235aabf1302eae82df6a62105a06257c8a500e3",
+            "evidence_id": "E7272d0c56b7b2ad6-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 839,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Visual cognition, one of the main tasks of computer  vision, has many applications, including object \ndetection, face recognition, and self-driving automobiles. This paper discusses deep learning applications to \nvisual cognition, including a brief history, some o f its applications, and some architectures, such as  \nResidual Networks and Residual-Inception. Visual cognition faces significant challenges when dealing w ith \nobjects that have comparable forms but represent di fferent classes. The proposed architecture in this \npaper incorporates Modern Data Augmentation and Vis ion Transformers (MDAViT) to improve \naccuracy. The model is trained and evaluated on the  CIFAR-10 dataset, demonstrating higher accuracy \nagainst existing self-supervised methods. \nKeywords-deep learning; CNN; modern data augmentation; vision transformer"
+              }
+            ],
+            "text": "Visual cognition, one of the main tasks of computer  vision, has many applications, including object \ndetection, face recognition, and self-driving automobiles. This paper discusses deep learning applications to \nvisual cognition, including a brief history, some o f its applications, and some architectures, such as  \nResidual Networks and Residual-Inception. Visual cognition faces significant challenges when dealing w ith \nobjects that have comparable forms but represent di fferent classes. The proposed architecture in this \npaper incorporates Modern Data Augmentation and Vis ion Transformers (MDAViT) to improve \naccuracy. The model is trained and evaluated on the  CIFAR-10 dataset, demonstrating higher accuracy \nagainst existing self-supervised methods. \nKeywords-deep learning; CNN; modern data augmentation; vision transformer"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0007"
+        ],
+        "excerpt": "the entire image. This approach might achieve \noutstanding performance in image classification tas ks. By \nsemi-supervised learning, a ViT can make full use o f the\nEngineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40159   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \ninformation entailing unlabeled image data, enhanci ng \nperformance and the generalization capability [10].  \nThe main contributions of this study are: \n\uf0b7 We propose a deep neural network structure includin g \nresidual blocks and inception modules. This archite cture is \nperforming very well in image classification, but c an also \nbe extended to object detection, localization, and pixel-level \nsegmentation. The use of these novel concepts led t o a \nsubstantial performance gain and enhanced flexibili ty in \nmultiple ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4ba45b510df98872f92b40153529c05f613a7c743f8c38d99d39668e933e03e2",
+            "evidence_id": "E7272d0c56b7b2ad6-B0007",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2851,
+                "page": 1,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 2687,
+                "text": "the entire image. This approach might achieve \noutstanding performance in image classification tas ks. By \nsemi-supervised learning, a ViT can make full use o f the"
+              },
+              {
+                "end": 735,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "Engineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40159   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \ninformation entailing unlabeled image data, enhanci ng \nperformance and the generalization capability [10].  \nThe main contributions of this study are: \n\uf0b7 We propose a deep neural network structure includin g \nresidual blocks and inception modules. This archite cture is \nperforming very well in image classification, but c an also \nbe extended to object detection, localization, and pixel-level \nsegmentation. The use of these novel concepts led t o a \nsubstantial performance gain and enhanced flexibili ty in \nmultiple "
+              }
+            ],
+            "text": "the entire image. This approach might achieve \noutstanding performance in image classification tas ks. By \nsemi-supervised learning, a ViT can make full use o f the\nEngineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40159   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \ninformation entailing unlabeled image data, enhanci ng \nperformance and the generalization capability [10].  \nThe main contributions of this study are: \n\uf0b7 We propose a deep neural network structure includin g \nresidual blocks and inception modules. This archite cture is \nperforming very well in image classification, but c an also \nbe extended to object detection, localization, and pixel-level \nsegmentation. The use of these novel concepts led t o a \nsubstantial performance gain and enhanced flexibili ty in \nmultiple "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0013"
+        ],
+        "excerpt": "faced when working with deep ar tificial \nneural networks.  \nBy introducing a deep residual learning framework, the \nauthors solved the issue of degradation. The centra l concept of \nthis framework is that instead of learning a direct  mapping \nfrom \u0001  to \u0002  by a function \u0003(\u0001)  (with several stacked non-\nlinear layers), they defined the residual function using: \n\u0006(\u0001) = \b\t\n\u000b(\u0003(\u0001)\u2212\u0001 )   (1) \n \u0003(\u0001) = \u0006(\u0001)+\u0001     (2) \nIII.  THE PROPOSED ARCHITECTURE \nOur approach is inspired by CNNs, ViTs, and Modern Data \nAugmentation (MDA). By combining the best features of these \narchitectures, we have developed a unique and high-\nperformance architecture, consisting of the following stages: \n\uf0b7 At first, there are convolution layers of 16,32,64 filters with \na stride of 2 are used, based on VGG16 architecture. \n\uf0b7 In the middle, we use: \no Three inception modules. \no Three residual blocks: \n\uf0a7 A convolution ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Vggnet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "83c0decc2e8cc45b36a81f51c13c0e69960ee0f92488eb9bada7611f1ddecff6",
+            "evidence_id": "E7272d0c56b7b2ad6-B0013",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Vggnet",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2696,
+                "page": 2,
+                "section": "Appendix: Vggnet",
+                "section_index": 4,
+                "start": 1796,
+                "text": "faced when working with deep ar tificial \nneural networks.  \nBy introducing a deep residual learning framework, the \nauthors solved the issue of degradation. The centra l concept of \nthis framework is that instead of learning a direct  mapping \nfrom \u0001  to \u0002  by a function \u0003(\u0001)  (with several stacked non-\nlinear layers), they defined the residual function using: \n\u0006(\u0001) = \b\t\n\u000b(\u0003(\u0001)\u2212\u0001 )   (1) \n \u0003(\u0001) = \u0006(\u0001)+\u0001     (2) \nIII.  THE PROPOSED ARCHITECTURE \nOur approach is inspired by CNNs, ViTs, and Modern Data \nAugmentation (MDA). By combining the best features of these \narchitectures, we have developed a unique and high-\nperformance architecture, consisting of the following stages: \n\uf0b7 At first, there are convolution layers of 16,32,64 filters with \na stride of 2 are used, based on VGG16 architecture. \n\uf0b7 In the middle, we use: \no Three inception modules. \no Three residual blocks: \n\uf0a7 A convolution "
+              }
+            ],
+            "text": "faced when working with deep ar tificial \nneural networks.  \nBy introducing a deep residual learning framework, the \nauthors solved the issue of degradation. The centra l concept of \nthis framework is that instead of learning a direct  mapping \nfrom \u0001  to \u0002  by a function \u0003(\u0001)  (with several stacked non-\nlinear layers), they defined the residual function using: \n\u0006(\u0001) = \b\t\n\u000b(\u0003(\u0001)\u2212\u0001 )   (1) \n \u0003(\u0001) = \u0006(\u0001)+\u0001     (2) \nIII.  THE PROPOSED ARCHITECTURE \nOur approach is inspired by CNNs, ViTs, and Modern Data \nAugmentation (MDA). By combining the best features of these \narchitectures, we have developed a unique and high-\nperformance architecture, consisting of the following stages: \n\uf0b7 At first, there are convolution layers of 16,32,64 filters with \na stride of 2 are used, based on VGG16 architecture. \n\uf0b7 In the middle, we use: \no Three inception modules. \no Three residual blocks: \n\uf0a7 A convolution "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0014"
+        ],
+        "excerpt": "block with a stride of 2 that skips \n3 layers (Figure 1). \n\uf0a7 An identity block that skips 3 layers (Figure 2).\nEngineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40160   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \n\uf0b7 ReLU [18] was really effective in solving deeper ne ural \nnetwork problems such as the vanishing gradient iss ue [19] \nin the ResNet architecture. \n\uf0b7 Global Average Pooling [19] (with a stride of 2) is  utilized \ninstead of fully connected layers. \n\uf0b7 MDA was applied to each patch. This process relies on \nexisting data to generate new samples, thereby impr oving \nmodel optimization and generalization. \n\uf0b7 ViT was applied to divide each image into patches (16\u00d716), \neach of which was flattened into a vector and then \nprocessed by a standard Transformer encoder. \n\uf0b7 SoftMax ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Vggnet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3c6eea62249c0866a3c45899f04c016069257aee5ea405828c9ac93e8fa137bd",
+            "evidence_id": "E7272d0c56b7b2ad6-B0014",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Appendix: Vggnet",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2806,
+                "page": 2,
+                "section": "Appendix: Vggnet",
+                "section_index": 4,
+                "start": 2696,
+                "text": "block with a stride of 2 that skips \n3 layers (Figure 1). \n\uf0a7 An identity block that skips 3 layers (Figure 2)."
+              },
+              {
+                "end": 790,
+                "page": 3,
+                "section": "Appendix: Vggnet",
+                "section_index": 5,
+                "start": 0,
+                "text": "Engineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40160   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \n\uf0b7 ReLU [18] was really effective in solving deeper ne ural \nnetwork problems such as the vanishing gradient iss ue [19] \nin the ResNet architecture. \n\uf0b7 Global Average Pooling [19] (with a stride of 2) is  utilized \ninstead of fully connected layers. \n\uf0b7 MDA was applied to each patch. This process relies on \nexisting data to generate new samples, thereby impr oving \nmodel optimization and generalization. \n\uf0b7 ViT was applied to divide each image into patches (16\u00d716), \neach of which was flattened into a vector and then \nprocessed by a standard Transformer encoder. \n\uf0b7 SoftMax "
+              }
+            ],
+            "text": "block with a stride of 2 that skips \n3 layers (Figure 1). \n\uf0a7 An identity block that skips 3 layers (Figure 2).\nEngineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40160   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \n\uf0b7 ReLU [18] was really effective in solving deeper ne ural \nnetwork problems such as the vanishing gradient iss ue [19] \nin the ResNet architecture. \n\uf0b7 Global Average Pooling [19] (with a stride of 2) is  utilized \ninstead of fully connected layers. \n\uf0b7 MDA was applied to each patch. This process relies on \nexisting data to generate new samples, thereby impr oving \nmodel optimization and generalization. \n\uf0b7 ViT was applied to divide each image into patches (16\u00d716), \neach of which was flattened into a vector and then \nprocessed by a standard Transformer encoder. \n\uf0b7 SoftMax "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0016"
+        ],
+        "excerpt": " then \npreprocessed through normalization and tensor conve rsion \nbefore being forwarded to the ViT for feature extra ction and \nclassification. By integrating the augmentation sta ge into the \nlearning pipeline, the proposed architecture increa ses the \ndiversity of training samples, reduces overfitting, and enhances \nthe model's generalization capability, leading to i mproved \nclassification performance on small-scale datasets such as \nCIFAR-10. \n \n \nFig. 3.  MDAViT pipeline. \nA.  Dataset \nThe CIFAR-10 dataset [20] consists of 60,000 images  \ncollected from the web, with a size of 32 \u00d7 32 =1024 pixels and \n3 color channels (RGB). The data set is divided int o five \ntraining batches and one test batch of 10000 images . In this \nstudy, we will try to classify 10 separate classes using the \nproposed image classification architecture. \nThe following figure illustrates some images of our  ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Vggnet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "aea23cbe0830b3732a4ddd75f3aeae086d96e37c96452ceb3485959e7681f0d1",
+            "evidence_id": "E7272d0c56b7b2ad6-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Appendix: Vggnet",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2589,
+                "page": 3,
+                "section": "Appendix: Vggnet",
+                "section_index": 5,
+                "start": 1690,
+                "text": " then \npreprocessed through normalization and tensor conve rsion \nbefore being forwarded to the ViT for feature extra ction and \nclassification. By integrating the augmentation sta ge into the \nlearning pipeline, the proposed architecture increa ses the \ndiversity of training samples, reduces overfitting, and enhances \nthe model's generalization capability, leading to i mproved \nclassification performance on small-scale datasets such as \nCIFAR-10. \n \n \nFig. 3.  MDAViT pipeline. \nA.  Dataset \nThe CIFAR-10 dataset [20] consists of 60,000 images  \ncollected from the web, with a size of 32 \u00d7 32 =1024 pixels and \n3 color channels (RGB). The data set is divided int o five \ntraining batches and one test batch of 10000 images . In this \nstudy, we will try to classify 10 separate classes using the \nproposed image classification architecture. \nThe following figure illustrates some images of our  "
+              }
+            ],
+            "text": " then \npreprocessed through normalization and tensor conve rsion \nbefore being forwarded to the ViT for feature extra ction and \nclassification. By integrating the augmentation sta ge into the \nlearning pipeline, the proposed architecture increa ses the \ndiversity of training samples, reduces overfitting, and enhances \nthe model's generalization capability, leading to i mproved \nclassification performance on small-scale datasets such as \nCIFAR-10. \n \n \nFig. 3.  MDAViT pipeline. \nA.  Dataset \nThe CIFAR-10 dataset [20] consists of 60,000 images  \ncollected from the web, with a size of 32 \u00d7 32 =1024 pixels and \n3 color channels (RGB). The data set is divided int o five \ntraining batches and one test batch of 10000 images . In this \nstudy, we will try to classify 10 separate classes using the \nproposed image classification architecture. \nThe following figure illustrates some images of our  "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0018"
+        ],
+        "excerpt": "a vector space where similar data points are \nmapped to similar vectors. This process can be unde rstood as \ntransforming an image into a sequence, because the original \nTransformer was designed for sequential tasks. \nTable I summarizes the configuration parameters of the \nproposed MDAViT architecture, including the VIT \narchitecture, training hyperparameters, and optimiz ation \nsettings adopted in this study. \nTABLE I.  PARAMETERS OF THE PROPOSED MDAVIT \nARCHITECTURE. \nParameter Value \nModel  ViT Base  \nImage size  16 \u00d7 16 \u00d7 3  \nImage embedding dimension  768  \nNumber of Transformer encoder layers  12  \nNumber of heads  12  \nOptimizer  AdamW  \nBatch size  128  \nData augmentation policy  Multi -Level DA  \nTraining images  50,000  \nTest images  10,000  \nTrain \u2013 Validation split  45,000/5,000  \nTest set  10,000  \nParameters  86M  \n \nC.  Modern Data Augmentation \nMDA methods go beyond ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Vggnet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "ad0aeeae3296e02f95ee340eddfd3c0453c99993499aeb4825d1779f5ce002b2",
+            "evidence_id": "E7272d0c56b7b2ad6-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Vggnet",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1438,
+                "page": 4,
+                "section": "Appendix: Vggnet",
+                "section_index": 6,
+                "start": 543,
+                "text": "a vector space where similar data points are \nmapped to similar vectors. This process can be unde rstood as \ntransforming an image into a sequence, because the original \nTransformer was designed for sequential tasks. \nTable I summarizes the configuration parameters of the \nproposed MDAViT architecture, including the VIT \narchitecture, training hyperparameters, and optimiz ation \nsettings adopted in this study. \nTABLE I.  PARAMETERS OF THE PROPOSED MDAVIT \nARCHITECTURE. \nParameter Value \nModel  ViT Base  \nImage size  16 \u00d7 16 \u00d7 3  \nImage embedding dimension  768  \nNumber of Transformer encoder layers  12  \nNumber of heads  12  \nOptimizer  AdamW  \nBatch size  128  \nData augmentation policy  Multi -Level DA  \nTraining images  50,000  \nTest images  10,000  \nTrain \u2013 Validation split  45,000/5,000  \nTest set  10,000  \nParameters  86M  \n \nC.  Modern Data Augmentation \nMDA methods go beyond "
+              }
+            ],
+            "text": "a vector space where similar data points are \nmapped to similar vectors. This process can be unde rstood as \ntransforming an image into a sequence, because the original \nTransformer was designed for sequential tasks. \nTable I summarizes the configuration parameters of the \nproposed MDAViT architecture, including the VIT \narchitecture, training hyperparameters, and optimiz ation \nsettings adopted in this study. \nTABLE I.  PARAMETERS OF THE PROPOSED MDAVIT \nARCHITECTURE. \nParameter Value \nModel  ViT Base  \nImage size  16 \u00d7 16 \u00d7 3  \nImage embedding dimension  768  \nNumber of Transformer encoder layers  12  \nNumber of heads  12  \nOptimizer  AdamW  \nBatch size  128  \nData augmentation policy  Multi -Level DA  \nTraining images  50,000  \nTest images  10,000  \nTrain \u2013 Validation split  45,000/5,000  \nTest set  10,000  \nParameters  86M  \n \nC.  Modern Data Augmentation \nMDA methods go beyond "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0020"
+        ],
+        "excerpt": "Meanwhile, methods such a s \nAugMix [24] incorporate several typical transformations plus a \nmixing step to promote consistency over dissimilar \nperturbations and greatly improve robustness agains t common \ncorruptions and distribution shifts. In combination, these MDA \ntechniques are integral parts of state-of-the-art v ision pipelines \nnot only for improving clean accuracy but also in m itigating \nperformance degradation under noise and corruptions, the latter \nbeing especially important when evaluating models o n \nrobustness benchmarks such as CIFAR-10-C [22]. \nIV.  RESULTS AND DISCUSSION \nIn this section, we evaluate four different model \nconfigurations on the previously described dataset.  All \nexperiments were conducted for 20 training epochs t o ensure a \nfair comparison. The first configuration employs a standard \nCNN architecture without MDA. The second configurat ion ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Vggnet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a54853f036c835e141b9b4bb7259cc9b5a8d22b50e8fb6a773d136cccc41b193",
+            "evidence_id": "E7272d0c56b7b2ad6-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Vggnet",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3220,
+                "page": 4,
+                "section": "Appendix: Vggnet",
+                "section_index": 6,
+                "start": 2330,
+                "text": "Meanwhile, methods such a s \nAugMix [24] incorporate several typical transformations plus a \nmixing step to promote consistency over dissimilar \nperturbations and greatly improve robustness agains t common \ncorruptions and distribution shifts. In combination, these MDA \ntechniques are integral parts of state-of-the-art v ision pipelines \nnot only for improving clean accuracy but also in m itigating \nperformance degradation under noise and corruptions, the latter \nbeing especially important when evaluating models o n \nrobustness benchmarks such as CIFAR-10-C [22]. \nIV.  RESULTS AND DISCUSSION \nIn this section, we evaluate four different model \nconfigurations on the previously described dataset.  All \nexperiments were conducted for 20 training epochs t o ensure a \nfair comparison. The first configuration employs a standard \nCNN architecture without MDA. The second configurat ion "
+              }
+            ],
+            "text": "Meanwhile, methods such a s \nAugMix [24] incorporate several typical transformations plus a \nmixing step to promote consistency over dissimilar \nperturbations and greatly improve robustness agains t common \ncorruptions and distribution shifts. In combination, these MDA \ntechniques are integral parts of state-of-the-art v ision pipelines \nnot only for improving clean accuracy but also in m itigating \nperformance degradation under noise and corruptions, the latter \nbeing especially important when evaluating models o n \nrobustness benchmarks such as CIFAR-10-C [22]. \nIV.  RESULTS AND DISCUSSION \nIn this section, we evaluate four different model \nconfigurations on the previously described dataset.  All \nexperiments were conducted for 20 training epochs t o ensure a \nfair comparison. The first configuration employs a standard \nCNN architecture without MDA. The second configurat ion "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0021"
+        ],
+        "excerpt": "\nintegrates MDA into the CNN framework. The third \nconfiguration replaces the CNN with a ViT architect ure \nwithout augmentation. Finally, the fourth and propo sed \nconfiguration combines ViT with MDA. \nA.  Performance Metrics \nThe performance of the proposed MDAViT architecture  \nwas assessed using accuracy and robustness: \nAccuracy =\n\u0015(\u0016\u0017\u0018\u0019\u0016\u001a\u0018)\n\u0015(\u0016\u0017\u0018\u0019\u001b\u0017\u0018\u0019\u001b\u001a\u0018\u0019\u0016\u001a\u0018)    (3) \nwhere TPi, FPi, TNi, and FNi denote the numbers of True \nPositives, False Positives, True Negatives, and False Negatives, \nrespectively, for class i. \nRobustness measures how well a classification model  \nmaintains its accuracy when evaluated on perturbed images \nrather than clean images. It is calculated as the r atio of the \naccuracy obtained on perturbed images \u001c\u001d\u001d\u001e\u001f !\" #\u001f$  to that \nobtained on clean images  \u001d\u001d%&\u001f'( , expressed as a percentage: \nR =\n*++,-./0.1-2 \n*++34-56 \n\u00d7100       (4) \nB.  Results \nTable II ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Vggnet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "7858f9849e70bbdcd750f488a76a936f447137639271c035ceae3b6a22012030",
+            "evidence_id": "E7272d0c56b7b2ad6-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Vggnet",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 4116,
+                "page": 4,
+                "section": "Appendix: Vggnet",
+                "section_index": 6,
+                "start": 3220,
+                "text": "\nintegrates MDA into the CNN framework. The third \nconfiguration replaces the CNN with a ViT architect ure \nwithout augmentation. Finally, the fourth and propo sed \nconfiguration combines ViT with MDA. \nA.  Performance Metrics \nThe performance of the proposed MDAViT architecture  \nwas assessed using accuracy and robustness: \nAccuracy =\n\u0015(\u0016\u0017\u0018\u0019\u0016\u001a\u0018)\n\u0015(\u0016\u0017\u0018\u0019\u001b\u0017\u0018\u0019\u001b\u001a\u0018\u0019\u0016\u001a\u0018)    (3) \nwhere TPi, FPi, TNi, and FNi denote the numbers of True \nPositives, False Positives, True Negatives, and False Negatives, \nrespectively, for class i. \nRobustness measures how well a classification model  \nmaintains its accuracy when evaluated on perturbed images \nrather than clean images. It is calculated as the r atio of the \naccuracy obtained on perturbed images \u001c\u001d\u001d\u001e\u001f !\" #\u001f$  to that \nobtained on clean images  \u001d\u001d%&\u001f'( , expressed as a percentage: \nR =\n*++,-./0.1-2 \n*++34-56 \n\u00d7100       (4) \nB.  Results \nTable II "
+              }
+            ],
+            "text": "\nintegrates MDA into the CNN framework. The third \nconfiguration replaces the CNN with a ViT architect ure \nwithout augmentation. Finally, the fourth and propo sed \nconfiguration combines ViT with MDA. \nA.  Performance Metrics \nThe performance of the proposed MDAViT architecture  \nwas assessed using accuracy and robustness: \nAccuracy =\n\u0015(\u0016\u0017\u0018\u0019\u0016\u001a\u0018)\n\u0015(\u0016\u0017\u0018\u0019\u001b\u0017\u0018\u0019\u001b\u001a\u0018\u0019\u0016\u001a\u0018)    (3) \nwhere TPi, FPi, TNi, and FNi denote the numbers of True \nPositives, False Positives, True Negatives, and False Negatives, \nrespectively, for class i. \nRobustness measures how well a classification model  \nmaintains its accuracy when evaluated on perturbed images \nrather than clean images. It is calculated as the r atio of the \naccuracy obtained on perturbed images \u001c\u001d\u001d\u001e\u001f !\" #\u001f$  to that \nobtained on clean images  \u001d\u001d%&\u001f'( , expressed as a percentage: \nR =\n*++,-./0.1-2 \n*++34-56 \n\u00d7100       (4) \nB.  Results \nTable II "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0022"
+        ],
+        "excerpt": "summarizes the experimental results in ter ms of \naccuracy, robustness on CIFAR-10, and performance gain over \nthe baseline, and Figure 4 shows the accuracy compa rison \ngraphically. \nTABLE II.  PERFORMANCE COMPARISON ON CIFAR-10 \nModel Epochs Accuracy \n(%) Robustness Gain vs \nBaseline \nCNN  20  68.10  62.00  - \nCNN+MDA  20  80.30  68.10  +12.20  \nViT  20  75.40  60.20  - \nViT+MDA  20  93.70  86.20  +18.30  \n \n \nFig. 4.  Accuracy comparison on CIFAR-10.\nEngineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40162   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \nTable II showcases the superior performance of the \nproposed model compared to all other configurations  trained \nfor 20 epochs on CIFAR-10. In addition to accuracy, MDAViT \ndemonstrates outstanding robustness, reaching 86.00 %, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Vggnet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "52a80384f642d3a3b443ef3e2b1bf21b1793bb7230fb2d5a3d4c3e5c34b8ee69",
+            "evidence_id": "E7272d0c56b7b2ad6-B0022",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Appendix: Vggnet",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 4573,
+                "page": 4,
+                "section": "Appendix: Vggnet",
+                "section_index": 6,
+                "start": 4116,
+                "text": "summarizes the experimental results in ter ms of \naccuracy, robustness on CIFAR-10, and performance gain over \nthe baseline, and Figure 4 shows the accuracy compa rison \ngraphically. \nTABLE II.  PERFORMANCE COMPARISON ON CIFAR-10 \nModel Epochs Accuracy \n(%) Robustness Gain vs \nBaseline \nCNN  20  68.10  62.00  - \nCNN+MDA  20  80.30  68.10  +12.20  \nViT  20  75.40  60.20  - \nViT+MDA  20  93.70  86.20  +18.30  \n \n \nFig. 4.  Accuracy comparison on CIFAR-10."
+              },
+              {
+                "end": 442,
+                "page": 5,
+                "section": "Appendix: Vggnet",
+                "section_index": 7,
+                "start": 0,
+                "text": "Engineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40162   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \nTable II showcases the superior performance of the \nproposed model compared to all other configurations  trained \nfor 20 epochs on CIFAR-10. In addition to accuracy, MDAViT \ndemonstrates outstanding robustness, reaching 86.00 %, "
+              }
+            ],
+            "text": "summarizes the experimental results in ter ms of \naccuracy, robustness on CIFAR-10, and performance gain over \nthe baseline, and Figure 4 shows the accuracy compa rison \ngraphically. \nTABLE II.  PERFORMANCE COMPARISON ON CIFAR-10 \nModel Epochs Accuracy \n(%) Robustness Gain vs \nBaseline \nCNN  20  68.10  62.00  - \nCNN+MDA  20  80.30  68.10  +12.20  \nViT  20  75.40  60.20  - \nViT+MDA  20  93.70  86.20  +18.30  \n \n \nFig. 4.  Accuracy comparison on CIFAR-10.\nEngineering, Technology & Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40162   \n \nwww.etasr.com Bouidi & Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and \u2026 \n \nTable II showcases the superior performance of the \nproposed model compared to all other configurations  trained \nfor 20 epochs on CIFAR-10. In addition to accuracy, MDAViT \ndemonstrates outstanding robustness, reaching 86.00 %, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0026"
+        ],
+        "excerpt": "the \nCIFAR-10-C, ViTs trained with MDA exhibit smaller d rops in \nperformance under common corruptions compared to bo th \nCNNs and baseline ViTs, suggesting a stronger resil ience to \nnoise, blur, and other perturbations. This trend is  consistent \nwith the observed line plots of accuracy versus cor ruption \nseverity, where ViT+MDA maintains a relatively flat  \nperformance curve, in contrast to the steeper degra dation of \nViT without augmentation. \nThese findings have several implications. First, th ey \nreinforce the importance of augmentation strategies  as a \nregularization mechanism, particularly for architec tures with \nhigh capacity and weaker inductive biases. Second, the \ncombination of ViTs and MDA not only boosts clean a ccuracy \nbut also improves robustness, making such models mo re \nsuitable for deployment in real-world environments with \ncorrupted or noisy data. Finally, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Vggnet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a5812f2c979d1558a02b67826b0da61e2cc72f5b2376a05ff5c9aebb038ed47b",
+            "evidence_id": "E7272d0c56b7b2ad6-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Appendix: Vggnet",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 4036,
+                "page": 5,
+                "section": "Appendix: Vggnet",
+                "section_index": 7,
+                "start": 3139,
+                "text": "the \nCIFAR-10-C, ViTs trained with MDA exhibit smaller d rops in \nperformance under common corruptions compared to bo th \nCNNs and baseline ViTs, suggesting a stronger resil ience to \nnoise, blur, and other perturbations. This trend is  consistent \nwith the observed line plots of accuracy versus cor ruption \nseverity, where ViT+MDA maintains a relatively flat  \nperformance curve, in contrast to the steeper degra dation of \nViT without augmentation. \nThese findings have several implications. First, th ey \nreinforce the importance of augmentation strategies  as a \nregularization mechanism, particularly for architec tures with \nhigh capacity and weaker inductive biases. Second, the \ncombination of ViTs and MDA not only boosts clean a ccuracy \nbut also improves robustness, making such models mo re \nsuitable for deployment in real-world environments with \ncorrupted or noisy data. Finally, "
+              }
+            ],
+            "text": "the \nCIFAR-10-C, ViTs trained with MDA exhibit smaller d rops in \nperformance under common corruptions compared to bo th \nCNNs and baseline ViTs, suggesting a stronger resil ience to \nnoise, blur, and other perturbations. This trend is  consistent \nwith the observed line plots of accuracy versus cor ruption \nseverity, where ViT+MDA maintains a relatively flat  \nperformance curve, in contrast to the steeper degra dation of \nViT without augmentation. \nThese findings have several implications. First, th ey \nreinforce the importance of augmentation strategies  as a \nregularization mechanism, particularly for architec tures with \nhigh capacity and weaker inductive biases. Second, the \ncombination of ViTs and MDA not only boosts clean a ccuracy \nbut also improves robustness, making such models mo re \nsuitable for deployment in real-world environments with \ncorrupted or noisy data. Finally, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://www.etasr.com/index.php/ETASR/article/download/20583/7239",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript contains a major internal contradiction: Section III describes a hybrid CNN with VGG-style convolution layers, three inception modules, and three residual blocks, while Table I and Figure 3 describe a standard ViT-Base pipeline with 16x16 patches and no explanation of how these architectures relate.",
+          "The evaluation is too weak to support the headline claims: only four configurations are compared over 20 epochs on CIFAR-10, with no standard deviations, no repeated runs, no statistical testing, and no comparison against the self-supervised methods the abstract claims to outperform.",
+          "The robustness claims are underspecified: CIFAR-10-C is mentioned in the discussion, but the manuscript does not report how corrupted images were generated, which corruptions or severities were used, or any quantitative CIFAR-10-C results.",
+          "The abstract claims higher accuracy against existing self-supervised methods, but no self-supervised baseline is trained or evaluated anywhere in the paper."
+        ],
+        "canonical_id": "doi:10.48084/etasr.20583",
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The reported accuracy and robustness are computed from CIFAR-10 test predictions, and no evidence indicates the test metric was used to optimize the model.",
+          "final_evaluation_signal": "Top-1 accuracy and robustness ratio on CIFAR-10 test data.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Supervised training loss with AdamW on CIFAR-10 training data.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0003",
+          "E7272d0c56b7b2ad6-B0007",
+          "E7272d0c56b7b2ad6-B0013",
+          "E7272d0c56b7b2ad6-B0014",
+          "E7272d0c56b7b2ad6-B0016",
+          "E7272d0c56b7b2ad6-B0018",
+          "E7272d0c56b7b2ad6-B0020",
+          "E7272d0c56b7b2ad6-B0021",
+          "E7272d0c56b7b2ad6-B0022",
+          "E7272d0c56b7b2ad6-B0026"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "3ae33a2938970cf925c76d6780c726016d6df696f8d5bcc68925341460a09d14"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48084/etasr.20583",
+        "claim_evidence_alignment": "Claims regarding superior accuracy against self-supervised methods or state-of-the-art vision pipelines are unsubstantiated by the narrow 4-row comparison table with underspecified models trained for only 20 epochs.",
+        "context_id": "7272d0c56b7b2ad61cf86a3390f345033042fd6cc9068f0f1f7eea1b7e338794",
+        "decision": "uncertain",
+        "evaluation_assessment": "The evaluation compares basic setups across just 20 epochs on CIFAR-10, with unclear baseline specifications and minimal details on how corruption robustness (e.g. CIFAR-10-C) was generated or tested despite being mentioned in discussion.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "Evaluation is conducted using standard classification metric calculations on test splits.",
+          "final_evaluation_signal": "Top-1 classification accuracy and perturbed accuracy ratio on CIFAR-10 test splits.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Standard supervised cross-entropy loss with AdamW optimization on CIFAR-10.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E7272d0c56b7b2ad6-B0007",
+          "E7272d0c56b7b2ad6-B0013",
+          "E7272d0c56b7b2ad6-B0014",
+          "E7272d0c56b7b2ad6-B0016",
+          "E7272d0c56b7b2ad6-B0018",
+          "E7272d0c56b7b2ad6-B0021",
+          "E7272d0c56b7b2ad6-B0022",
+          "E7272d0c56b7b2ad6-B0026"
+        ],
+        "limitations": "The study does not address the contradiction between the described inception/residual architecture and the ViT pipeline, lacks standard baselines or variance estimates, and does not provide comprehensive ablation.",
+        "method_assessment": "The methodology contains severe structural inconsistencies: Section III describes a hybrid CNN model with inception and residual blocks, whereas Table I and Figure 3 present standard ViT-Base with image patch tokens and Multi-Level DA without explaining how the two descriptions connect.",
+        "quality_rationale": "Due to major methodological discrepancies in model definition and an extremely limited, underspecified evaluation protocol, scientific quality and validity remain highly uncertain.",
+        "scoped_contribution": "The manuscript evaluates combining Vision Transformers with data augmentation techniques (termed MDAViT) on CIFAR-10 image classification and robustness under perturbations.",
+        "source_content_hash": "3ae33a2938970cf925c76d6780c726016d6df696f8d5bcc68925341460a09d14"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "Due to major methodological discrepancies in model definition and an extremely limited, underspecified evaluation protocol, scientific quality and validity remain highly uncertain.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "3ae33a2938970cf925c76d6780c726016d6df696f8d5bcc68925341460a09d14",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The study does not address the contradiction between the described inception/residual architecture and the ViT pipeline, lacks standard baselines or variance estimates, and does not provide comprehensive ablation."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -156,7 +1194,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

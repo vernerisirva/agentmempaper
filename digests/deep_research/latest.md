@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-05](2026-10-05.md).
+Latest daily digest: [2026-10-06](2026-10-06.md).
 
-# Paper Scout Digest - 2026-10-05
+# Paper Scout Digest - 2026-10-06
 
 ## Run Summary
 
-- **Run ID:** 103
-- **Candidates fetched:** 140
-- **New unique papers:** 135
-- **Relevant:** 27
-- **Maybe relevant:** 8
-- **Irrelevant:** 105
-- **Source summary:** arxiv: 39, openalex: 100, semantic_scholar: 1
+- **Run ID:** 104
+- **Candidates fetched:** 139
+- **New unique papers:** 132
+- **Relevant:** 23
+- **Maybe relevant:** 10
+- **Irrelevant:** 106
+- **Source summary:** arxiv: 38, openalex: 100, semantic_scholar: 1
 
 ## Source Warnings
 
@@ -27,124 +27,84 @@ Latest daily digest: [2026-10-05](2026-10-05.md).
 
 ## Highly Relevant
 
-### [YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents](https://arxiv.org/abs/2610.01097)
+### [EvoCast: Reliable Autonomous Research Agents for Iterative Forecasting Architecture Evolution](https://arxiv.org/abs/2610.04517v1)
 
-- **Authors:** Yoonkyu Woo, Woojin Lee, Jin-Xia Huang
-- **Date:** 2026-10-01
-- **Source:** openalex
-- **Relevance:** relevant (98/100)
+- **Authors:** Kaipeng Xu, Xianli Yan, Yan Wang, Xiang Liu, Shan Liu
+- **Date:** 2026-10-03
+- **Source:** arxiv
+- **Relevance:** relevant (96/100)
+- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
+- **Tags:** deep-research-agents, citation-grounding
+- **Abstract summary:** Deep time-series forecasting models have rapidly diversified, yet adapting them to a specific task still requires extensive expert effort in model selection, mechanism diagnosis, architecture design, implementation, and evaluation. Existing AutoML methods are constrained by predefined search spaces, while general-pu...
+
+### [Are We Measuring Scientific Intelligence? Rethinking the Evaluation of AI Scientists](https://arxiv.org/abs/2610.04915v1)
+
+- **Authors:** Kate Zhang, Yuante Li
+- **Date:** 2026-10-04
+- **Source:** arxiv
+- **Relevance:** relevant (95/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** deep-research-agents, ai-scientist, research-memory
-- **Abstract summary:** End-to-end research agents can now produce complete scientific papers, yet manuscript claims often diverge from executed experiments. This gap is structural: research state, failure histories, and claim-evidence alignment are not maintained as persistent, verifiable state across long-horizon pipelines. We present Yo...
+- **Tags:** ai-scientist, citation-grounding, deep-research-agents
+- **Abstract summary:** AI agents can now carry out data-driven scientific analyses end to end, and benchmarks assess them by giving an agent a question and a dataset and scoring its final answer against a fixed key. These benchmarks assume that a correct answer was derived from the supplied data, a property we call evidence grounding. How...
 
-### [LawCompass: Navigating from Legal QA to Multi-Agent Deep Research with Grounded Evidence](https://arxiv.org/abs/2610.01027v1)
+### [From Scientific Observations to Mechanisms: Benchmarking Hypothesis Generation by AI Scientists](https://arxiv.org/abs/2610.05197v1)
 
-- **Authors:** Xiaoxia Cheng, Linnan Wang, Jiahao Ma, Zhichuan Ye, Xuemei Zhou, Chuanyu Tong, et al.
-- **Date:** 2026-10-01
-- **Source:** arxiv
-- **Relevance:** relevant (96/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** Recent advances in Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) have significantly democratized access to legal information. Nevertheless, most existing legal assistants remain confined to multi-turn conversational QA, failing to support complex legal tasks that require systematic evidence r...
-
-### [LawCompass: Navigating from Legal QA to Multi-Agent Deep Research with Grounded Evidence](https://arxiv.org/abs/2610.01027)
-
-- **Authors:** Xiaoxia Cheng, Linnan Wang, Jiahao Ma, Zhichuan Ye, Xuemei Zhou, Chuanyu Tong, et al.
-- **Date:** 2026-10-01
-- **Source:** openalex
-- **Relevance:** relevant (96/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** Recent advances in Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) have significantly democratized access to legal information. Nevertheless, most existing legal assistants remain confined to multi-turn conversational QA, failing to support complex legal tasks that require systematic evidence r...
-
-### [Beyond State-of-the-Art: Standardising Environmental Impact Metrics for AI Research](https://arxiv.org/abs/2610.01116v1)
-
-- **Authors:** Lachlan McGinness, Dan Pagendam, Robert Offner
-- **Date:** 2026-10-01
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies automated literature-review systems or literature-review agents.
-- **Tags:** literature-review, deep-research-agents
-- **Abstract summary:** As the capabilities and ubiquity of Large Language Models (LLMs) grow, so does their environmental footprint. Despite calls for responsible AI, the machine learning community lacks standardised practices for carbon accounting. Our automated literature review of the 5,285 papers accepted to NeurIPS 2025 reveals that...
-
-### [Can AI Scientists Coordinate at Runtime?](https://arxiv.org/abs/2610.00980v1)
-
-- **Authors:** Zijian Liu, Yangzhixin Luo, Junyu Lu, Yi Li, Yu Chen, David Xu, et al.
-- **Date:** 2026-10-01
+- **Authors:** Xiaxun Xie, Qingqing Long, Meng Xiao, Wei Ju, Yuanchun Zhou, Xuezhi Wang, et al.
+- **Date:** 2026-10-04
 - **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Multi-agent AI scientists have shown improving performance across a diverse range of tasks. Yet a common approach is design-time agentic orchestration, which typically relies on fixed workflows. In contrast, human scientists coordinate and adjust their division of labor at runtime. We therefore ask: can AI scientist...
+- **Abstract summary:** Data-driven mechanistic hypotheses are essential to scientific discovery because they explain how underlying processes produce observed phenomena. AI agents and AI scientists increasingly support scientific data analysis. However, their ability to turn empirical findings into mechanistic hypotheses remains insuffici...
 
-### [Can AI Scientists Coordinate at Runtime?](https://arxiv.org/abs/2610.00980)
+### [VideoResearchAgent: Grounded Task Synthesis and Sim-to-Real RL for Open-Web Video Research](https://arxiv.org/abs/2610.04911v1)
 
-- **Authors:** Zijian Liu, Yangzhixin Luo, Junyu Lu, Yi Li, Yu Chen, David Xu, et al.
-- **Date:** 2026-10-01
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Multi-agent AI scientists have shown improving performance across a diverse range of tasks. Yet a common approach is design-time agentic orchestration, which typically relies on fixed workflows. In contrast, human scientists coordinate and adjust their division of labor at runtime. We therefore ask: can AI scientist...
-
-### [Just-In-Time Agent Memory with Runtime Agentic Research](https://arxiv.org/abs/2609.34385)
-
-- **Authors:** Bingyu Yan, Chaofan Li, Hongjin Qian, Shuqi Lu, Chaozhuo Li, Zheng Liu
-- **Date:** 2026-09-28
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** Memory is critical for AI agents. Many existing agent-memory systems follow an Ahead-of-Time (AOT) design, constructing memory before a specific request arrives. While this reduces online serving cost, such request-agnostic memory construction can discard fine-grained information that later becomes important. To add...
-
-### [DAGent: Evaluate-then-Grow Planning for Deep Research Agents](https://arxiv.org/abs/2609.39154)
-
-- **Authors:** Hanwen Liu, Yuanfu Sun, Qiaoyu Tan
-- **Date:** 2026-09-30
-- **Source:** openalex
+- **Authors:** Yuhang Zhou, Fei Li, Yuxi Wu, Bin Zhu, Jingjing Chen
+- **Date:** 2026-10-04
+- **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Deep research tasks require agents to navigate large knowledge spaces, synthesize evidence across many sources, and adapt their plans as findings emerge. Directed acyclic graph (DAG)-based multi-agent systems suit this setting because they support parallel execution and isolate each sub-task within a focused depende...
-
-### [Experimental Experience Modeling for Autonomous Research](https://arxiv.org/abs/2609.39392)
-
-- **Authors:** Wenda Wei, Yingchen Zhang, Ruqing Zhang, Jiafeng Guo, Daiting Shi, Xueqi Cheng
-- **Date:** 2026-09-30
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Autonomous research agents can generate hypotheses and conduct experiments, but experimentation remains a major source of computational cost. A fundamental challenge is deciding which experiments are worth running, particularly when prior evidence is insufficient to resolve uncertainty. Yet current research agents l...
-
-### [Search Shapes Conclusions: Auditing Evidence Selection Bias in Deep Research Agents](https://arxiv.org/abs/2609.39026)
-
-- **Authors:** Shuyao Xiao, Shengling Wang, Xuan Chen, Ke Chao, Ming Hai Cui, Feifei Qian, et al.
-- **Date:** 2026-09-30
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep Research agents synthesize evidence into cited reports, yet a well-cited report can still reach a misleading conclusion. Citation correctness checks whether cited sources support individual claims. It does not show whether adaptive search exposed a representative view of all documents made available for evaluat...
+- **Abstract summary:** Existing deep research agents are designed primarily for text- and image-based web sources, while video reasoning systems typically assume that relevant videos are provided in advance. We study open-web video research, where an agent must autonomously discover relevant videos, navigate their temporal content, and gr...
 
 ## Maybe Relevant
 
-### [Learning What to Investigate Next: Meta-Reasoning for Long-Horizon Research Agents](https://arxiv.org/abs/2610.02525v1)
+### [Building LLM Agent Systems the Deep Learning Way: From Modular Design to Architecture Search](https://arxiv.org/abs/2610.04961v1)
 
-- **Authors:** Ankur Samanta, Yonathan Efroni, Paul Sajda, Kaveh Hassani, Anirudh Goyal
-- **Date:** 2026-10-01
+- **Authors:** Tao Feng, Pengrui Han, Zhongjie Dai, Jiaxuan You
+- **Date:** 2026-10-04
 - **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** Long-horizon research agents must decide both how to investigate and what to investigate next as evidence accumulates. This is hard to learn because such decisions are sparse in long execution traces, and their consequences may emerge several investigations later. We introduce Meta-reasoning for Iterative Research A...
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** research-adjacent
+- **Abstract summary:** Large Language Models (LLMs) have revolutionized AI research and enabled exciting agent systems. To build a complex LLM agent system, most existing research relies on insights from other domains or heuristics to manually build the agent system. However, this approach often requires heavy hand-engineering and fails t...
 
-### [AREX-2: Advancing Self-Improving Agents through Long-Horizon Reflective Tasks](https://arxiv.org/abs/2609.38288)
+### [Can LLM Agents Select and Engage with Biological Tools?](https://arxiv.org/abs/2610.03853v1)
 
-- **Authors:** Hongjin Qian, Chaofan Li, Kun Luo, Wenqing Wei, Jianlyu Chen, Shuqi Lu, et al.
-- **Date:** 2026-09-29
-- **Source:** openalex
+- **Authors:** Jeffrey Lee, Alyssa Wordland, Kyle Brady, Grant Ellison, Henry Alexander Bradley, Christopher Rodriguez, et al.
+- **Date:** 2026-10-02
+- **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** We present AREX-2, an effort to advance the self-improving capability of LLM agents, which we define as the ability to iteratively refine a solution at test time. This ability rests on two complementary capabilities: reflection, which produces a solution better than the current one, and long-horizon execution, which...
+- **Abstract summary:** Computational tools for biological research (biological tools, or BTs) are advancing rapidly in both quantity and demonstrated capability. While these technologies offer many benefits for scientific advancement, malicious actors may seek to exploit them to design and develop biological weapons (BWs). Generally, BTs...
+
+### [MedVLA-Agent: A Collaborative Vision–Language Framework for Explainable Lung Cancer Diagnosis — Early-Stage Design and Feasibility](https://doi.org/10.3233/faia261051)
+
+- **Authors:** Mouad Guedad, Hatem Abdellatif, Domènec Puig
+- **Date:** 2026-10-01
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** citation-grounding
+- **Abstract summary:** Lung cancer remains the leading cause of cancer-related mortality worldwide, while current AI systems remain task-specific and weakly explainable. We present MedVLA-Agent, a collaborative research roadmap integrating CT-based deep learning, radiomics, clinical data, and Vision–Language reasoning through three agents...
+
+### [MMPostTrainBench: Benchmarking Autonomous Research for Multimodal Post-Training](https://arxiv.org/abs/2610.05398v1)
+
+- **Authors:** Yuxin Liu, Yuxuan Wang, Zhenxin Lei, Lingchen Meng, Yuchong Sun, Junming Lin, et al.
+- **Date:** 2026-10-04
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** research-adjacent
+- **Abstract summary:** Autonomous research seeks sustained model improvements through iterative experimentation and feedback. LLM agents show promise in automating machine learning and language-model post-training, but their ability to sustain multimodal improvement remains unclear. We introduce MMPostTrainBench, a benchmark spanning eigh...

@@ -60,15 +60,199 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>Due to major methodological discrepancies in model definition and an extremely limited, underspecified evaluation protocol, scientific quality and validity remain highly uncertain.</p>
+      <p>The study does not address the contradiction between the described inception/residual architecture and the ViT pipeline, lacks standard baselines or variance estimates, and does not provide comprehensive ablation.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: Engineering Technology &amp; Applied Science Research. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-06T11:02:57.868739+00:00.</p>
+        <p>Coverage: 30525 of 30525 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Visual cognition, one of the main tasks of computer  vision, has many applications, including object
+detection, face recognition, and self-driving automobiles. This paper discusses deep learning applications to
+visual cognition, including a brief history, some o f its applications, and some architectures, such as
+Residual Networks and Residual-Inception. Visual cognition faces significant challenges when dealing w ith
+objects that have comparable forms but represent di fferent classes. The proposed architecture in this
+paper incorporates Modern Data Augmentation and Vis ion Transformers (MDAViT) to improve
+accuracy. The model is trained and evaluated on the  CIFAR-10 dataset, demonstrating higher accuracy
+against existing self-supervised methods.
+Keywords-deep learning; CNN; modern data augmentation; vision transformer</blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the entire image. This approach might achieve
+outstanding performance in image classification tas ks. By
+semi-supervised learning, a ViT can make full use o f the
+Engineering, Technology &amp; Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40159
 
-        <ul></ul>
+www.etasr.com Bouidi &amp; Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and …
+
+information entailing unlabeled image data, enhanci ng
+performance and the generalization capability [10].
+The main contributions of this study are:
+ We propose a deep neural network structure includin g
+residual blocks and inception modules. This archite cture is
+performing very well in image classification, but c an also
+be extended to object detection, localization, and pixel-level
+segmentation. The use of these novel concepts led t o a
+substantial performance gain and enhanced flexibili ty in
+multiple </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>faced when working with deep ar tificial
+neural networks.
+By introducing a deep residual learning framework, the
+authors solved the issue of degradation. The centra l concept of
+this framework is that instead of learning a direct  mapping
+from   to   by a function ()  (with several stacked non-
+linear layers), they defined the residual function using:
+() =
+(()− )   (1)
+ () = ()+     (2)
+III.  THE PROPOSED ARCHITECTURE
+Our approach is inspired by CNNs, ViTs, and Modern Data
+Augmentation (MDA). By combining the best features of these
+architectures, we have developed a unique and high-
+performance architecture, consisting of the following stages:
+ At first, there are convolution layers of 16,32,64 filters with
+a stride of 2 are used, based on VGG16 architecture.
+ In the middle, we use:
+o Three inception modules.
+o Three residual blocks:
+ A convolution </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>block with a stride of 2 that skips
+3 layers (Figure 1).
+ An identity block that skips 3 layers (Figure 2).
+Engineering, Technology &amp; Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40160
+
+www.etasr.com Bouidi &amp; Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and …
+
+ ReLU [18] was really effective in solving deeper ne ural
+network problems such as the vanishing gradient iss ue [19]
+in the ResNet architecture.
+ Global Average Pooling [19] (with a stride of 2) is  utilized
+instead of fully connected layers.
+ MDA was applied to each patch. This process relies on
+existing data to generate new samples, thereby impr oving
+model optimization and generalization.
+ ViT was applied to divide each image into patches (16×16),
+each of which was flattened into a vector and then
+processed by a standard Transformer encoder.
+ SoftMax </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote> then
+preprocessed through normalization and tensor conve rsion
+before being forwarded to the ViT for feature extra ction and
+classification. By integrating the augmentation sta ge into the
+learning pipeline, the proposed architecture increa ses the
+diversity of training samples, reduces overfitting, and enhances
+the model&#x27;s generalization capability, leading to i mproved
+classification performance on small-scale datasets such as
+CIFAR-10.
+
+
+Fig. 3.  MDAViT pipeline.
+A.  Dataset
+The CIFAR-10 dataset [20] consists of 60,000 images
+collected from the web, with a size of 32 × 32 =1024 pixels and
+3 color channels (RGB). The data set is divided int o five
+training batches and one test batch of 10000 images . In this
+study, we will try to classify 10 separate classes using the
+proposed image classification architecture.
+The following figure illustrates some images of our  </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a vector space where similar data points are
+mapped to similar vectors. This process can be unde rstood as
+transforming an image into a sequence, because the original
+Transformer was designed for sequential tasks.
+Table I summarizes the configuration parameters of the
+proposed MDAViT architecture, including the VIT
+architecture, training hyperparameters, and optimiz ation
+settings adopted in this study.
+TABLE I.  PARAMETERS OF THE PROPOSED MDAVIT
+ARCHITECTURE.
+Parameter Value
+Model  ViT Base
+Image size  16 × 16 × 3
+Image embedding dimension  768
+Number of Transformer encoder layers  12
+Number of heads  12
+Optimizer  AdamW
+Batch size  128
+Data augmentation policy  Multi -Level DA
+Training images  50,000
+Test images  10,000
+Train – Validation split  45,000/5,000
+Test set  10,000
+Parameters  86M
+
+C.  Modern Data Augmentation
+MDA methods go beyond </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Meanwhile, methods such a s
+AugMix [24] incorporate several typical transformations plus a
+mixing step to promote consistency over dissimilar
+perturbations and greatly improve robustness agains t common
+corruptions and distribution shifts. In combination, these MDA
+techniques are integral parts of state-of-the-art v ision pipelines
+not only for improving clean accuracy but also in m itigating
+performance degradation under noise and corruptions, the latter
+being especially important when evaluating models o n
+robustness benchmarks such as CIFAR-10-C [22].
+IV.  RESULTS AND DISCUSSION
+In this section, we evaluate four different model
+configurations on the previously described dataset.  All
+experiments were conducted for 20 training epochs t o ensure a
+fair comparison. The first configuration employs a standard
+CNN architecture without MDA. The second configurat ion </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+integrates MDA into the CNN framework. The third
+configuration replaces the CNN with a ViT architect ure
+without augmentation. Finally, the fourth and propo sed
+configuration combines ViT with MDA.
+A.  Performance Metrics
+The performance of the proposed MDAViT architecture
+was assessed using accuracy and robustness:
+Accuracy =
+()
+()    (3)
+where TPi, FPi, TNi, and FNi denote the numbers of True
+Positives, False Positives, True Negatives, and False Negatives,
+respectively, for class i.
+Robustness measures how well a classification model
+maintains its accuracy when evaluated on perturbed images
+rather than clean images. It is calculated as the r atio of the
+accuracy obtained on perturbed images  !&quot; #$  to that
+obtained on clean images  %&amp;&#x27;( , expressed as a percentage:
+R =
+*++,-./0.1-2
+*++34-56
+×100       (4)
+B.  Results
+Table II </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>summarizes the experimental results in ter ms of
+accuracy, robustness on CIFAR-10, and performance gain over
+the baseline, and Figure 4 shows the accuracy compa rison
+graphically.
+TABLE II.  PERFORMANCE COMPARISON ON CIFAR-10
+Model Epochs Accuracy
+(%) Robustness Gain vs
+Baseline
+CNN  20  68.10  62.00  -
+CNN+MDA  20  80.30  68.10  +12.20
+ViT  20  75.40  60.20  -
+ViT+MDA  20  93.70  86.20  +18.30
+
+
+Fig. 4.  Accuracy comparison on CIFAR-10.
+Engineering, Technology &amp; Applied Science Research  Vol. 16, No. 5, 2026, 40158-40163  40162
+
+www.etasr.com Bouidi &amp; Oughdir: Improving Image Cla ssification Performance with Modern Data Augmentation and …
+
+Table II showcases the superior performance of the
+proposed model compared to all other configurations  trained
+for 20 epochs on CIFAR-10. In addition to accuracy, MDAViT
+demonstrates outstanding robustness, reaching 86.00 %, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+CIFAR-10-C, ViTs trained with MDA exhibit smaller d rops in
+performance under common corruptions compared to bo th
+CNNs and baseline ViTs, suggesting a stronger resil ience to
+noise, blur, and other perturbations. This trend is  consistent
+with the observed line plots of accuracy versus cor ruption
+severity, where ViT+MDA maintains a relatively flat
+performance curve, in contrast to the steeper degra dation of
+ViT without augmentation.
+These findings have several implications. First, th ey
+reinforce the importance of augmentation strategies  as a
+regularization mechanism, particularly for architec tures with
+high capacity and weaker inductive biases. Second, the
+combination of ViTs and MDA not only boosts clean a ccuracy
+but also improves robustness, making such models mo re
+suitable for deployment in real-world environments with
+corrupted or noisy data. Finally, </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +291,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +307,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-05 11:10:02</li><li>Last seen by Paper Scout: 2026-10-05 11:10:02</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-05 11:10:02</li><li>Last seen by Paper Scout: 2026-10-06 11:02:15</li></ul>
             <ul><li>DOI: 10.48084/etasr.20583</li><li>OpenAlex: W7219007446</li><li>OpenAlex IDs: W7219007446</li></ul>
           </section>
           <section class="detail-panel">

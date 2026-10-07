@@ -59,16 +59,323 @@
             <p>Natural face-to-face human--robot interaction requires a robot to understand an evolving social situation, decide when to engage, and express its intent through coordinated physical behavior. Yet existing approaches rarely close this loop: foundation-model agents provide increasingly capable multimodal reasoning and...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The contribution is substantive and well-scoped, providing an end-to-end operational robotics framework validated with physical embodiment, controlled human subject experiments, and timing benchmarks.</p>
+      <p>The authors explicitly acknowledge limitations including residual multi-second latency stemming from cascaded VLM and facial generation models that preclude sub-second conversational turn-taking, as well as hardware constraints in mechanical facial expressiveness.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-07T10:51:52.706957+00:00.</p>
+        <p>Coverage: 42108 of 42108 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>can understand evolving social context, engage
+proactively, and coordinate verbal and nonverbal behavior
+remains largely unexplored.
+To address this gap, we present a unified embodied social
+interaction system deployed on the Sophia [17] humanoid
+robot. At its core, a multimodal social agent directly rea-
+sons over conversational audio and visual observations, aug-
+mented with long-term memory, online knowledge retrieval,
+and proactive interaction to support both reactive and self-
+initiated engagement. An embodiment-aware gesture planner
+further translates response intent into verified symbolic ges-
+ture programs composed of executable upper-body motion
+primitives. To realize these high-level decisions as coherent
+physical behavior, we introduce a streaming multimodal
+orchestration scheme that synchronizes speech with audio-
+driven facial animation and schedules gestures online </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>using
+the audio–facial stream as a shared temporal reference. To-
+gether, these components couple multimodal social reasoning
+with coordinated verbal and nonverbal behavior, enabling
+context-aware and proactive face-to-face interaction on a
+physical humanoid robot.
+We summarize our core contributions as follows:
+1) We presentARISE, a unified framework for physical
+humanoid social interaction that combines multimodal
+social reasoning, long-term memory, and coordinated em-
+bodied expression, supporting both reactive and proactive
+engagement.
+2) We bridge high-level agentic social reasoning and low-
+level embodiment-aware gesture planning to translate so-
+cial intent into executable robot behavior. Streaming Mul-
+timodal Orchestration further coordinates asynchronous
+speech, facial animation, and gesture streams for progres-
+sive embodied execution.
+3) Extensive evaluations on Sophia </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>maps ongoing
+audio–visual interaction to coordinated verbal and nonverbal
+behaviors on the Sophia [17] human-like robot. Given con-
+versational audioA t and RGB observationV t, theMultimodal
+Social Agentgenerates a verbal response and an executable
+symbolic gesture plan using multimodal reasoning, long-
+term memory, online retrieval, and proactive interaction.
+TheStreaming Multimodal Orchestrationmodule converts
+these high-level outputs into synchronized speech, facial
+animation, and temporally scheduled gestures. TheRobot
+Deploymentmodule finally maps the coordinated signals
+to Sophia&#x27;s actuators. This design separates semantic social
+planning from temporal coordination and low-level execu-
+tion.
+B. Multimodal Social Agent
+TheMultimodal Social Agentoperates at the semantic
+level and produces a verbal responseR t and a symbolic
+gesture program ˆSt. It contains anAgentic Interaction </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Plan-
+nerfor deciding what and when to communicate and an
+Embodiment-aware Gesture Plannerfor generating and re-
+fining executable upper-body behaviors [23], [24], [2].
+Agentic Interaction Planner.At interaction stept, the
+planner directly receives raw conversational audioA t and the
+current RGB observationV t through an audio–visual multi-
+modal foundation model. We denote the current multimodal
+context byC t = (At ,Vt ). The planner supportsreactiveinter-
+actions triggered by human speech andproactiveinteractions
+initiated by the robot.
+For a reactive interaction, a skill router determines whether
+long-term memory and online search are needed:
+Dt =π skill(Ct ) = (d mem
+t ,d search
+t ),(1)
+whered mem
+t ,d search
+t ∈{0,1}indicate whether memory and
+online search are activated, respectively. The memory store
+Mt preserves salient user information and interaction events
+across </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>neu-
+tral semantic abstraction of the motion, specifying what the
+keyframe visually conveys and in which social contexts it is
+generally appropriate, without exposing low-level actuator
+details to the planner. Each keyframe corresponds to a
+validated robot posture, while actuator-level mappings are
+handled during deployment. At a high level, the keyframes
+are organized into four semantic categories:Neutral and
+Recovery,Social and Affective,Communicative and Presen-
+tational, andCognitive and Attentive.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2. ...
+3. ...
+Plan3
+1. ...
+2. ...
+3. ...
+4. ...
+CandidatePrograms
+Gesture Planner
+Review &amp; Refinement Agent
+Fig. 2. Overview ofARISE. Given conversational audio and real-time RGB observations, theMultimodal Social Agentperforms reactive and proactive
+planning with long-term memory and online search, generating a verbal response and symbolic gesture plan.Streaming Multimodal Orchestration
+synchronizes speech, facial animation, and gestures for progressive execution, andRobot Deploymentmaps the coordinated outputs to robot&#x27;s actuators.
+Rather than generating a single gesture directly, the plan-
+ner first proposesJcandidate programs by reasoning over
+the response and the semantic keyframe library:
+{S(j)
+t }J
+j=1 =h φ (Rt ,K).(5)
+Each candidate is a keyframe sequenceS (j)
+t =
+[(n j,1,τ j,1), . . . ,(nj,M j ,τ j,M j )], wheren j,m denotes the
+selected keyframe name andτ j,m denotes its </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>nominal
+duration. Candidate construction follows semantic
+composition rules encoded in the planner, such as pairing
+hand-shape primitives with a preceding arm raise to preserve
+visibility, ending most gestures with a neutral standby pose,
+and avoiding broad presenting motions when inconsistent
+with the response intent.
+The candidate set is then passed to a review-and-
+refinement agent:
+ˆSt =g η
 
-        <ul></ul>
+{S(j)
+t }J
+j=1,R t ,K
+
+.(6)
+This stage shares the general motivation of prior work on
+grounding language-model outputs in executable robot skills,
+such as SayCan [25], in that unchecked language-model
+proposals should not be directly executed on physical robots.
+The agent evaluates the candidates according to semantic fit,
+social appropriateness, naturalness, timing compatibility, and
+embodiment feasibility. When a candidate is already suitable,
+the agent selects it as the final symbolic </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>It first synchronizes speech and facial anima-
+tion, then uses the audio–facial stream as the reference clock
+for gesture scheduling.
+The generated speech is streamed as temporally ordered
+audio chunksa t,r. Each chunk is sent in parallel to the audio
+buffer and Audio2Face, which produces the corresponding
+facial blendshape chunk
+ft,r =f A2F(at,r ).(7)
+Because facial synthesis introduces additional latency, im-
+mediate audio playback would cause the facial signal to
+lag behind speech. We therefore enqueue an audio chunk
+only after its corresponding facial chunk becomes available.
+Paired chunks(a t,r ,f t,r )enter a synchronization buffer, and
+playback starts aftern buf complete pairs are accumulated.
+The buffer is then drained in temporal order while subsequent
+pairs are generated and enqueued online. This warm-up
+strategy trades an initial buffering delay for stable audio–
+facial </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>names in ˆSt onto this clock.
+Each keyframe namen t,m is assigned an execution interval
+It,m = [s t,m ,s t,m +τ t,m ]using the current audio time and a
+short look-ahead window to tolerate asynchronous genera-
+tion and robot playback. Gestures are therefore scheduled
+progressively as speech is generated rather than after the full
+response becomes available.
+D. Robot Deployment
+DeployingARISEon Sophia requires converting hetero-
+geneous behavioral representations into robot-specific com-
+mands while preserving their temporal structure. Speech
+arrives as audio chunks, facial motion as blendshape se-
+quences, and upper-body behavior as symbolic keyframes,
+each requiring a different physical realization. Audio is
+dispatched to the loudspeaker, while Audio2Face outputs are
+retargeted through ExFace [6] to Sophia&#x27;s mechanical facial
+actuators. Each gesture keyframe is resolved through a </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Hardware Setup.We conduct our experiments on the
+Sophia [17] humanoid robot developed by Hanson Robotics.
+An Intel RealSense RGB camera is mounted between
+Sophia&#x27;s head and chest to capture visual observations, and a
+Philips DLM3545C Bluetooth microphone captures speech.
+Our framework runs on a host computer equipped with an
+NVIDIA RTX 3090 GPU, which communicates with Sophia
+through the robot&#x27;s native control interface to deliver speech,
+facial expressions, and upper-body gestures.
+Evaluation Metrics.All ratings were collected using a
+five-point Likert scale, where 1 denotes &quot;strongly disagree&quot;
+and 5 denotes &quot;strongly agree.&quot; We used different rating
+criteria for the two user studies.
+For theMulti-round Interactionexperiment, participants
+evaluated each interaction session using four criteria:
+•Overall Interaction Quality(OIQ): To what extent do
+the robot&#x27;s verbal and non-verbal </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>movements temporally and semantically coor-
+dinated with its speech?
+•Overall Quality: Considering both the robot&#x27;s speech
+and movements, how would you rate the overall quality
+of this response?
+User Study.We recruited 20 participants who had no prior
+knowledge of our system for each of Q1 and Q2. Each par-
+ticipant completed the full evaluation for all configurations
+within the corresponding experiment.
+For Q1, participants were provided with a predefined dia-
+logue script to ensure comparable interaction content, while
+retaining the freedom to ask natural follow-up questions
+based on the robot&#x27;s responses. For Q2, participants were
+provided with predefined dialogue scripts and were asked to
+follow the scripts while focusing on the robot&#x27;s verbal and
+gestural responses.
+After each interaction, participants rated the robot accord-
+ing to the evaluation metrics associated with the </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>correspond-
+ing study. The order of configurations was independently ran-
+domized for each participant. Participants were not allowed
+to see or interact with the robot before the experiment, and
+not informed of the configuration used in each interaction or
+whether it corresponded to the baseline or an ablation. Before
+each interaction, the robot was reset to the same predefined
+initial state.
+Statistical Analysis.For each configuration, mean and
+standard deviation were computed across the 20 participant
+ratings. We applied two-sided paired Wilcoxon signed-rank
+tests [26] to participant-level scores.P-values were adjusted
+using the Holm procedure [27]. Significance was denoted by
+∗ forP adj &lt;0.05, ∗∗ forP adj &lt;0.01, and ∗∗∗ forP adj &lt;0.001.
+B. Baselines and Ablation
+To assess the contributions of individual components to
+interaction-response and embodied-gesture quality, we eval-
+uated </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the Full System together with the following controlled
+ablation settings.
+For Q1, we compare four configurations:Full System,
+which enables visual input, long-term memory, and proactive
+interaction;w/o Visual Input, which removes the current
+RGB observation;w/o Long-Term Memory, which disables
+memory retrieval and update; andw/o Proactive Interac-
+tion, which disables proactive behaviors while retaining user-
+initiated response generation.
+For Q2, we compare four configurations of our
+Embodiment-Aware Gesture Generationframework.Full
+Systemdenotes the complete configuration.Single Candi-
+datechanges the number of generated candidates fromJ=3
+toJ=1.w/o Review-and-Refinement Agentremoves the
+review-and-refinement stage and directly generates and exe-
+cutes a single gesture sequence. We also include EMAGE [1]
+as an external speech-driven gesture baseline. EMAGE gen-
+erates human-body </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>motion in the SMPL-X representation.
+We retain only its upper-body motion and project it into
+Sophia&#x27;s joint space. Since Sophia&#x27;s joints are modeled as
+single-degree-of-freedom actuators, this projection reduces
+the corresponding SMPL-X motion to one-dimensional joint
+commands. Before execution, a safety check clips any com-
+mand that exceeds the allowable joint range of the robot.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE II
+RESULTS FORMULTI-ROUNDSOCIALINTERACTION.
+Method OIQ(↑) CA(↑) CC(↑) IE(↑)
+Full System4.38±0.41 4.34±0.43 4.25±0.46 4.31±0.44
+w/o Visual Input 3.72±0.58 *** 2.90±0.69 *** 4.08±0.50 4.06±0.52
+w/o Long-Term Memory 3.54±0.61 *** 3.78±0.57 ** 3.29±0.68 *** 3.62±0.64 **
+w/o Proactive Interaction 3.76±0.51 ** 4.23±0.44 4.16±0.47 3.12±0.71 ***</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Motion
+Natural.
+Motion
+Express.
+Speech-Motion
+Coord.
+Overall
+Quality
+Full System3.92±0.34 4.22±0.34 4.03±0.60 4.09±0.26
+Single Candidate 3.63±0.41 ** 3.88±0.43 * 3.79±0.41 3.92±0.29
+w/o R-R Agent 3.00±0.39 *** 3.35±0.46 *** 3.21±0.44 ** 3.58±0.24 ***
+EMAGE 3.37±0.27 *** 3.67±0.38 *** 3.89±0.33 3.98±0.25
+grounded proactive assistance. As shown in Table II, the Full
+System achieves the best overall performance across all cri-
+teria. Removing visual input causes CA to decrease sharply,
+showing that visual information is essential for understanding
+interaction situation. Removing long-term memory lowers
+all four scores. This shows that interaction understanding,
+especially proactive behavior, depends substantially on con-
+textual information. Underlying language model has some
+basic memory capability, but cannot maintain the persistent
+and precise contextual connections provided by the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE IV
+LATENCY DEFINITIONS.
+Latencies Definition
+LMSA The latency ofMultimodal Social Agent.
+LES The latency of embodied synthesis.
+Lrobot The latency ofRobot Deployment.
+LAF The end-to-end latency from the end of user&#x27;s speech to the
+beginning of audio-facial playback.
+Multimodal Orchestrationsubstantially reduces the system
+delay.
+Effect of Executable Gesture Library Size.We further
+evaluate the effect of gesture library size using five keyframe
+libraries containing 8, 15, 30, 37, and 45 keyframes, re-
+spectively. The following category counts are reported in the
+order ofNeutral and Recovery,Social and Affective,Com-
+municative and Presentational, andCognitive and Attentive.
+The 8-keyframe library contains(1,4,2,1)keyframes across
+these four categories, respectively. The 15-keyframe library</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE V
+RESULTS FORSYSTEM LATENCY EVALUATION. VALUES ARE REPORTED
+AS MEAN.
+MethodL MSA (↓)L ES (↓)L robot (↓)L AF (↓)
+Streaming Multimodal Orchestration (Ours) 3.3061.9060.0035.214
+Serial Embodiment Processing 3.227 10.621 0.003 13.851
+Fig. 5. Effect of gesture library size on user-rated motion quality. Library
+size is measured by the number of semantic keyframes. The scores increase
+substantially as the library grows from 8 to 37 keyframes, while the gain
+becomes marginal when further expanded to 45 keyframes.
+expands these counts to(2,5,7,1), while the 30-keyframe
+library further expands them to(2,8,18,2). The 37-keyframe
+library used in the main experiments contains(2,9,24,2)
+keyframes. Finally, the 45-keyframe library further adds
+Social and AffectiveandCommunicative and Presentational
+motions, resulting in(2,12,29,2)keyframes across the four
+categories. All other components, </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The current cascaded architecture still limits sub-second
+conversational responsiveness, with most latency arising
+from multimodal-agent inference and streaming facial syn-
+thesis rather than robot execution. Fine-grained facial ex-
+pressiveness also remains limited on the current hardware
+platform. Mechanical facial actuation constrains the sub-
+tle motions that can be physically realized, intro- ducing
+platform-dependent limits distinct from the proposed social
+planning and orchestration mechanisms. Future work will
+explore lightweight models specialized for social interaction
+and robot-native facial synthesis to further reduce response
+latency and improve embodied responsiveness.
+VI. CONCLUSION
+We presentedARISE, a unified framework that connects
+multimodal social reasoning with coordinated embodied in-
+teraction on the Sophia humanoid. By integrating memory-
+augmented reactive and </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +414,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +430,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-06 11:00:01</li><li>Last seen by Paper Scout: 2026-10-06 11:00:01</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-06 11:00:01</li><li>Last seen by Paper Scout: 2026-10-07 10:49:14</li></ul>
             <ul><li>arXiv: 2610.05964</li><li>arXiv IDs: 2610.05964</li></ul>
           </section>
           <section class="detail-panel">

@@ -20,12 +20,12 @@
   "first_seen_date": "2026-10-06",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-06 11:02:11",
-  "last_seen_date": "2026-10-06",
+  "last_seen_at": "2026-10-07 10:51:19",
+  "last_seen_date": "2026-10-07",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-05",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-06 11:02:22",
   "notified_date": "2026-10-06",
   "openalex_id": null,
@@ -35,8 +35,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-06 11:01:53",
-    "generated_at": "2026-10-06 11:03:50",
-    "last_seen_at": "2026-10-06 11:02:11",
+    "generated_at": "2026-10-07 10:53:21",
+    "last_seen_at": "2026-10-07 10:51:19",
     "metadata_sources": [
       "arxiv"
     ],
@@ -98,36 +98,1455 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-07T10:52:12.129548+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.98,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a clearly motivated, novel system that scales BO to expressive NAS spaces via a grammar-constrained latent space, with robust full-training verification on standard vision benchmarks and solid ablations.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 60034,
+      "assessment_input_sha256": "a4a35be5a4b7a367110a741321396b63b501e4864312ac034aa1bb8fc76e5022",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.06167",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 58870,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 57979,
+      "evidence_block_count": 78,
+      "evidence_context_characters": 67831,
+      "evidence_context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+      "evidence_context_sha256": "795568a8d2418db3a208fe15c3f0c2459d7c12805c5963d04132d93b8d56ded7",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 58904,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "extracted_pages": 18,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "2f7ef7dbb187ce44d924892aa10087de46b88ef6d7365404712d4c7088fcb3a6",
+        "source_url": "https://arxiv.org/pdf/2610.06167",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 58870,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related"
+      ],
+      "sections": [
+        {
+          "heading": "Bayesian Optimization In Sequence-To-Architecture Latent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "methods",
+          "section_index": 0,
+          "source_characters": 260,
+          "supplied_characters": 260
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1175,
+          "supplied_characters": 1175
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2057,
+          "supplied_characters": 2057
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2184,
+          "supplied_characters": 2184
+        },
+        {
+          "heading": "We Introduce A Novel Latent Space That Can Represent Modern Large-Scale Architectures Including",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 4,
+          "source_characters": 612,
+          "supplied_characters": 612
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 1133,
+          "supplied_characters": 1133
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 6,
+          "source_characters": 4548,
+          "supplied_characters": 4548
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 7,
+          "source_characters": 293,
+          "supplied_characters": 293
+        },
+        {
+          "heading": "Sequence-To-Architecture Latent Space",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 319,
+          "supplied_characters": 319
+        },
+        {
+          "heading": "Architecture Space",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 1168,
+          "supplied_characters": 1168
+        },
+        {
+          "heading": "Prefix Encoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1021,
+          "supplied_characters": 1021
+        },
+        {
+          "heading": "Prefix Encoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1229,
+          "supplied_characters": 1229
+        },
+        {
+          "heading": "Leaf Nodes.If A Dag Consists Of A Single Primitive Operation From Table 5, It Is Assigned A Unique",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Sequential Composition.If A Dag Is Composed Of Two Sub-Dags In Sequence, Each Having Prefix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 58,
+          "supplied_characters": 58
+        },
+        {
+          "heading": "Compound Nodes.If A Dag Is Composed Of A Compound Node Having The Single-Character Prefix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 875,
+          "supplied_characters": 875
+        },
+        {
+          "heading": "Latent Space Encoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1068,
+          "supplied_characters": 1068
+        },
+        {
+          "heading": "Latent Space Encoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 3219,
+          "supplied_characters": 3219
+        },
+        {
+          "heading": "Zero-Shot Proxy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 654,
+          "supplied_characters": 654
+        },
+        {
+          "heading": "Zero-Shot Proxy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 3573,
+          "supplied_characters": 3573
+        },
+        {
+          "heading": "Bayesian Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 538,
+          "supplied_characters": 538
+        },
+        {
+          "heading": "Bayesian Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 823,
+          "supplied_characters": 823
+        },
+        {
+          "heading": "Design Choices For Latent-Space Architecture Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 2272,
+          "supplied_characters": 2272
+        },
+        {
+          "heading": "Sequence-To-Architecture Latent Space",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 22,
+          "source_characters": 204,
+          "supplied_characters": 204
+        },
+        {
+          "heading": "Sequence-To-Architecture Latent Space",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 2416,
+          "supplied_characters": 2416
+        },
+        {
+          "heading": "Architecture Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 24,
+          "source_characters": 1036,
+          "supplied_characters": 1036
+        },
+        {
+          "heading": "Architecture Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 25,
+          "source_characters": 3668,
+          "supplied_characters": 3668
+        },
+        {
+          "heading": "Architecture Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "methods",
+          "section_index": 26,
+          "source_characters": 780,
+          "supplied_characters": 780
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 27,
+          "source_characters": 1286,
+          "supplied_characters": 1286
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 970,
+          "supplied_characters": 970
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 3537,
+          "supplied_characters": 3537
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 3611,
+          "supplied_characters": 3611
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 2466,
+          "supplied_characters": 2466
+        },
+        {
+          "heading": "Appendix: A Supplementary Material",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Appendix: V Ae Training Curves",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 516,
+          "supplied_characters": 516
+        },
+        {
+          "heading": "Appendix: Graph Nodes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 197,
+          "supplied_characters": 197
+        },
+        {
+          "heading": "Does The Same At 1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1279,
+          "supplied_characters": 1279
+        },
+        {
+          "heading": "Letter Node Arity Status Description",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 1616,
+          "supplied_characters": 1616
+        },
+        {
+          "heading": "Appendix: Prefix Encoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 139,
+          "supplied_characters": 139
+        },
+        {
+          "heading": "Appendix: Prefix Encoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 564,
+          "supplied_characters": 564
+        },
+        {
+          "heading": "Appendix: Gaussian-Process Surrogate And Acquisition Function",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 1684,
+          "supplied_characters": 1684
+        },
+        {
+          "heading": "Appendix: Gaussian-Process Surrogate And Acquisition Function",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 2890,
+          "supplied_characters": 2890
+        }
+      ],
+      "selected_characters": 57979,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "selected_sections": [
+        {
+          "characters": 260,
+          "heading": "Bayesian Optimization In Sequence-To-Architecture Latent",
+          "page": 1
+        },
+        {
+          "characters": 1175,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2057,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2184,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 612,
+          "heading": "We Introduce A Novel Latent Space That Can Represent Modern Large-Scale Architectures Including",
+          "page": 2
+        },
+        {
+          "characters": 1133,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 4548,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 293,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 319,
+          "heading": "Sequence-To-Architecture Latent Space",
+          "page": 4
+        },
+        {
+          "characters": 1168,
+          "heading": "Architecture Space",
+          "page": 4
+        },
+        {
+          "characters": 1021,
+          "heading": "Prefix Encoding",
+          "page": 4
+        },
+        {
+          "characters": 1229,
+          "heading": "Prefix Encoding",
+          "page": 5
+        },
+        {
+          "characters": 17,
+          "heading": "Leaf Nodes.If A Dag Consists Of A Single Primitive Operation From Table 5, It Is Assigned A Unique",
+          "page": 5
+        },
+        {
+          "characters": 58,
+          "heading": "Sequential Composition.If A Dag Is Composed Of Two Sub-Dags In Sequence, Each Having Prefix",
+          "page": 5
+        },
+        {
+          "characters": 875,
+          "heading": "Compound Nodes.If A Dag Is Composed Of A Compound Node Having The Single-Character Prefix",
+          "page": 5
+        },
+        {
+          "characters": 1068,
+          "heading": "Latent Space Encoding",
+          "page": 5
+        },
+        {
+          "characters": 3219,
+          "heading": "Latent Space Encoding",
+          "page": 6
+        },
+        {
+          "characters": 654,
+          "heading": "Zero-Shot Proxy",
+          "page": 6
+        },
+        {
+          "characters": 3573,
+          "heading": "Zero-Shot Proxy",
+          "page": 7
+        },
+        {
+          "characters": 538,
+          "heading": "Bayesian Optimization",
+          "page": 7
+        },
+        {
+          "characters": 823,
+          "heading": "Bayesian Optimization",
+          "page": 8
+        },
+        {
+          "characters": 2272,
+          "heading": "Design Choices For Latent-Space Architecture Search",
+          "page": 8
+        },
+        {
+          "characters": 204,
+          "heading": "Sequence-To-Architecture Latent Space",
+          "page": 8
+        },
+        {
+          "characters": 2416,
+          "heading": "Sequence-To-Architecture Latent Space",
+          "page": 9
+        },
+        {
+          "characters": 1036,
+          "heading": "Architecture Search",
+          "page": 9
+        },
+        {
+          "characters": 3668,
+          "heading": "Architecture Search",
+          "page": 10
+        },
+        {
+          "characters": 780,
+          "heading": "Architecture Search",
+          "page": 11
+        },
+        {
+          "characters": 1286,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 970,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3537,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 3611,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 2466,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 24,
+          "heading": "Appendix: A Supplementary Material",
+          "page": 15
+        },
+        {
+          "characters": 516,
+          "heading": "Appendix: V Ae Training Curves",
+          "page": 15
+        },
+        {
+          "characters": 197,
+          "heading": "Appendix: Graph Nodes",
+          "page": 15
+        },
+        {
+          "characters": 1279,
+          "heading": "Does The Same At 1",
+          "page": 15
+        },
+        {
+          "characters": 1616,
+          "heading": "Letter Node Arity Status Description",
+          "page": 16
+        },
+        {
+          "characters": 139,
+          "heading": "Appendix: Prefix Encoding",
+          "page": 16
+        },
+        {
+          "characters": 564,
+          "heading": "Appendix: Prefix Encoding",
+          "page": 17
+        },
+        {
+          "characters": 1684,
+          "heading": "Appendix: Gaussian-Process Surrogate And Acquisition Function",
+          "page": 17
+        },
+        {
+          "characters": 2890,
+          "heading": "Appendix: Gaussian-Process Surrogate And Acquisition Function",
+          "page": 18
+        }
+      ],
+      "selected_text_sha256": "a4a35be5a4b7a367110a741321396b63b501e4864312ac034aa1bb8fc76e5022",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "2f7ef7dbb187ce44d924892aa10087de46b88ef6d7365404712d4c7088fcb3a6",
+      "source_pages": 18,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0002"
+        ],
+        "excerpt": "Zero-shot Neural Architecture Search removes the prohibitive cost of traditional NAS, but its search\nprocess is typically based on the evolutionary algorithm (EA); lacking an explicit model of the objective,\nit often resorts to a near-random search through mutation. Bayesian Optimization offers a principled\nalternative by modeling the objective and aggregating information across iterations, but scales poorly to\nthe high-dimensional, discrete, graph-structured spaces of modern NAS, restricting its use to only small\nnetworks. In this paper, we bring Bayesian Optimization to zero-shot NAS for large-scale architectures\nby learning a latent space via a Variational Autoencoder trained to reconstruct a novel prefix encoding\nof architectures and propose a proxy scalarization that combines several zero-shot proxies into a single\nBayesian Optimization objective. After only 10,000 iterations of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fe2611d43b02b0dd15012fad154a0aef494ff7d3ffee96fe8ce9d734a1803e8a",
+            "evidence_id": "E9ef3847293c95793-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Zero-shot Neural Architecture Search removes the prohibitive cost of traditional NAS, but its search\nprocess is typically based on the evolutionary algorithm (EA); lacking an explicit model of the objective,\nit often resorts to a near-random search through mutation. Bayesian Optimization offers a principled\nalternative by modeling the objective and aggregating information across iterations, but scales poorly to\nthe high-dimensional, discrete, graph-structured spaces of modern NAS, restricting its use to only small\nnetworks. In this paper, we bring Bayesian Optimization to zero-shot NAS for large-scale architectures\nby learning a latent space via a Variational Autoencoder trained to reconstruct a novel prefix encoding\nof architectures and propose a proxy scalarization that combines several zero-shot proxies into a single\nBayesian Optimization objective. After only 10,000 iterations of "
+              }
+            ],
+            "text": "Zero-shot Neural Architecture Search removes the prohibitive cost of traditional NAS, but its search\nprocess is typically based on the evolutionary algorithm (EA); lacking an explicit model of the objective,\nit often resorts to a near-random search through mutation. Bayesian Optimization offers a principled\nalternative by modeling the objective and aggregating information across iterations, but scales poorly to\nthe high-dimensional, discrete, graph-structured spaces of modern NAS, restricting its use to only small\nnetworks. In this paper, we bring Bayesian Optimization to zero-shot NAS for large-scale architectures\nby learning a latent space via a Variational Autoencoder trained to reconstruct a novel prefix encoding\nof architectures and propose a proxy scalarization that combines several zero-shot proxies into a single\nBayesian Optimization objective. After only 10,000 iterations of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0007"
+        ],
+        "excerpt": "(2020), by training a Variational Autoencoder (V AE) that learns to reconstruct network architectures\nexpressed by prefix encoding that serializes each architecture block into a compact, bijective string over\na vocabulary of primitive and compound operations. The resulting latent space provides a smooth, low-\ndimensional representation of large-scale heterogeneous architectures suitable as the search domain for\nBayesian Optimization.\nAdditionally, we propose a new proxy scalarization method that allows us to combine several state-of-the-art\nzero-shot proxies into a single objective. The scalarization whitens and decorrelates the proxy dimensions and,\nunlike rank-based aggregations, can be evaluated pointwise for any architecture, which is a key prerequisite for\nmodern gradient-free optimization. As a result, our method \u2013 unlike previous methods based on evolutionary\nalgorithms \u2013 is able ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d07a407dd68e6fea8486923060ceba07daf4f6af76fa891c984d038e4d8e388d",
+            "evidence_id": "E9ef3847293c95793-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1519,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 619,
+                "text": "(2020), by training a Variational Autoencoder (V AE) that learns to reconstruct network architectures\nexpressed by prefix encoding that serializes each architecture block into a compact, bijective string over\na vocabulary of primitive and compound operations. The resulting latent space provides a smooth, low-\ndimensional representation of large-scale heterogeneous architectures suitable as the search domain for\nBayesian Optimization.\nAdditionally, we propose a new proxy scalarization method that allows us to combine several state-of-the-art\nzero-shot proxies into a single objective. The scalarization whitens and decorrelates the proxy dimensions and,\nunlike rank-based aggregations, can be evaluated pointwise for any architecture, which is a key prerequisite for\nmodern gradient-free optimization. As a result, our method \u2013 unlike previous methods based on evolutionary\nalgorithms \u2013 is able "
+              }
+            ],
+            "text": "(2020), by training a Variational Autoencoder (V AE) that learns to reconstruct network architectures\nexpressed by prefix encoding that serializes each architecture block into a compact, bijective string over\na vocabulary of primitive and compound operations. The resulting latent space provides a smooth, low-\ndimensional representation of large-scale heterogeneous architectures suitable as the search domain for\nBayesian Optimization.\nAdditionally, we propose a new proxy scalarization method that allows us to combine several state-of-the-art\nzero-shot proxies into a single objective. The scalarization whitens and decorrelates the proxy dimensions and,\nunlike rank-based aggregations, can be evaluated pointwise for any architecture, which is a key prerequisite for\nmodern gradient-free optimization. As a result, our method \u2013 unlike previous methods based on evolutionary\nalgorithms \u2013 is able "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0008"
+        ],
+        "excerpt": "to learn and exploit the properties of the NAS search space during the search process.\nFinally, we use our newly introduced latent space to run Bayesian Optimization, using the scalarized proxy\nof classification accuracy as the objective function, to search for new architectures. The best architecture\nas per the proxy value (found without training any of the candidate networks) is only then trained using the\nstandard UniNAS training recipe Tybl and Neumann (2026) to obtain the actual accuracy in three different\nvision tasks (image classification, object detection/instance segmentation, semantic segmentation).\nIn summary, we make the following contributions:",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "19e0f564fb1ac7f3cf4d0ba6d5a5de38bc33557a5db7d9054c4f95683544e0a6",
+            "evidence_id": "E9ef3847293c95793-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2184,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1519,
+                "text": "to learn and exploit the properties of the NAS search space during the search process.\nFinally, we use our newly introduced latent space to run Bayesian Optimization, using the scalarized proxy\nof classification accuracy as the objective function, to search for new architectures. The best architecture\nas per the proxy value (found without training any of the candidate networks) is only then trained using the\nstandard UniNAS training recipe Tybl and Neumann (2026) to obtain the actual accuracy in three different\nvision tasks (image classification, object detection/instance segmentation, semantic segmentation).\nIn summary, we make the following contributions:"
+              }
+            ],
+            "text": "to learn and exploit the properties of the NAS search space during the search process.\nFinally, we use our newly introduced latent space to run Bayesian Optimization, using the scalarized proxy\nof classification accuracy as the objective function, to search for new architectures. The best architecture\nas per the proxy value (found without training any of the candidate networks) is only then trained using the\nstandard UniNAS training recipe Tybl and Neumann (2026) to obtain the actual accuracy in three different\nvision tasks (image classification, object detection/instance segmentation, semantic segmentation).\nIn summary, we make the following contributions:"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0021"
+        ],
+        "excerpt": "has two independent\nsequential operations. Each compound node type also uniquely determines the spatial dimensionality of\n4\nchildren node inputs as well as of the compound node output. Using the same example as above, the children\nnodes of aglobal average pooling nodealways have the input dimension of (C,1,1) due to the spatial\ndimensionality reduction coming from global average; on the other hand, the children nodes of abranch\nnodehave the same input dimension as the parent compound node. For full description of all compound\nnodes, see Table 5 in Appendix.\nWith the introduction of compound nodes, we obtain a more compact version of the UniNAS space with\n20 different node types (13simple nodesand 7compound nodes), but at the same time we do not lose the\nexpressive power to encode modern convolution and transformer architectures and their hybrids. In our\nmethod, we therefore represent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Prefix Encoding",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f653a97420768acf13e49ec5d5069f56090e7e5c221baddf281e2e84a5ec7ad3",
+            "evidence_id": "E9ef3847293c95793-B0021",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Prefix Encoding",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1021,
+                "page": 4,
+                "section": "Prefix Encoding",
+                "section_index": 10,
+                "start": 898,
+                "text": "has two independent\nsequential operations. Each compound node type also uniquely determines the spatial dimensionality of\n4"
+              },
+              {
+                "end": 773,
+                "page": 5,
+                "section": "Prefix Encoding",
+                "section_index": 11,
+                "start": 0,
+                "text": "children node inputs as well as of the compound node output. Using the same example as above, the children\nnodes of aglobal average pooling nodealways have the input dimension of (C,1,1) due to the spatial\ndimensionality reduction coming from global average; on the other hand, the children nodes of abranch\nnodehave the same input dimension as the parent compound node. For full description of all compound\nnodes, see Table 5 in Appendix.\nWith the introduction of compound nodes, we obtain a more compact version of the UniNAS space with\n20 different node types (13simple nodesand 7compound nodes), but at the same time we do not lose the\nexpressive power to encode modern convolution and transformer architectures and their hybrids. In our\nmethod, we therefore represent "
+              }
+            ],
+            "text": "has two independent\nsequential operations. Each compound node type also uniquely determines the spatial dimensionality of\n4\nchildren node inputs as well as of the compound node output. Using the same example as above, the children\nnodes of aglobal average pooling nodealways have the input dimension of (C,1,1) due to the spatial\ndimensionality reduction coming from global average; on the other hand, the children nodes of abranch\nnodehave the same input dimension as the parent compound node. For full description of all compound\nnodes, see Table 5 in Appendix.\nWith the introduction of compound nodes, we obtain a more compact version of the UniNAS space with\n20 different node types (13simple nodesand 7compound nodes), but at the same time we do not lose the\nexpressive power to encode modern convolution and transformer architectures and their hybrids. In our\nmethod, we therefore represent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0026"
+        ],
+        "excerpt": "To allow continuous optimization over the space of UniNAS blocks, we train a Variational Autoencoder\n(V AE) that defines a mapping from latent vectors to block prefix strings. The encoder maps a computational\ngraphG to a diagonal-Gaussian posteriorq\u03d5(z|G) =N\n\u0000\n\u00b5\u03d5(G),diag\u03c3 2\n\u03d5(G)\n\u0001\nin Rdz, wheredz = 32; the\ndecoder autoregressively reconstructs the block's prefix token sequencex= (x 1,...,x T ) from a sampled\nlatent vector. Both modules are trained end-to-end by maximizing the evidence lower bound\nL(\u03d5,\u03b8;G) =E q\u03d5(z|G)\n\u0002\nlogp\u03b8(x|z)\n\u0003\n\u2212\u03b2D KL\n\u0000\nq\u03d5(z|G)\u2225N(0,I)\n\u0001\n,(1)\nwhere\u03b2controls the rate\u2013distortion trade-off Higgins et al. (2017).\nAlignment-aware reconstruction loss.Rather than standard position-wise cross-entropy, we usesoft-DTW\nloss Cuturi and Blondel (2017) as the reconstruction term logp\u03b8(x|z) . Let \u02c6x= (\u02c6x1,...,\u02c6x T \u2032) denote the\ndecoded token sequence and lete:V\u2192R d be the shared ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Latent Space Encoding",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5cc79eab671f088fc6f5c94ccefc997619da8aa19953a15af381364cd2300f42",
+            "evidence_id": "E9ef3847293c95793-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Latent Space Encoding",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 5,
+                "section": "Latent Space Encoding",
+                "section_index": 15,
+                "start": 0,
+                "text": "To allow continuous optimization over the space of UniNAS blocks, we train a Variational Autoencoder\n(V AE) that defines a mapping from latent vectors to block prefix strings. The encoder maps a computational\ngraphG to a diagonal-Gaussian posteriorq\u03d5(z|G) =N\n\u0000\n\u00b5\u03d5(G),diag\u03c3 2\n\u03d5(G)\n\u0001\nin Rdz, wheredz = 32; the\ndecoder autoregressively reconstructs the block's prefix token sequencex= (x 1,...,x T ) from a sampled\nlatent vector. Both modules are trained end-to-end by maximizing the evidence lower bound\nL(\u03d5,\u03b8;G) =E q\u03d5(z|G)\n\u0002\nlogp\u03b8(x|z)\n\u0003\n\u2212\u03b2D KL\n\u0000\nq\u03d5(z|G)\u2225N(0,I)\n\u0001\n,(1)\nwhere\u03b2controls the rate\u2013distortion trade-off Higgins et al. (2017).\nAlignment-aware reconstruction loss.Rather than standard position-wise cross-entropy, we usesoft-DTW\nloss Cuturi and Blondel (2017) as the reconstruction term logp\u03b8(x|z) . Let \u02c6x= (\u02c6x1,...,\u02c6x T \u2032) denote the\ndecoded token sequence and lete:V\u2192R d be the shared "
+              }
+            ],
+            "text": "To allow continuous optimization over the space of UniNAS blocks, we train a Variational Autoencoder\n(V AE) that defines a mapping from latent vectors to block prefix strings. The encoder maps a computational\ngraphG to a diagonal-Gaussian posteriorq\u03d5(z|G) =N\n\u0000\n\u00b5\u03d5(G),diag\u03c3 2\n\u03d5(G)\n\u0001\nin Rdz, wheredz = 32; the\ndecoder autoregressively reconstructs the block's prefix token sequencex= (x 1,...,x T ) from a sampled\nlatent vector. Both modules are trained end-to-end by maximizing the evidence lower bound\nL(\u03d5,\u03b8;G) =E q\u03d5(z|G)\n\u0002\nlogp\u03b8(x|z)\n\u0003\n\u2212\u03b2D KL\n\u0000\nq\u03d5(z|G)\u2225N(0,I)\n\u0001\n,(1)\nwhere\u03b2controls the rate\u2013distortion trade-off Higgins et al. (2017).\nAlignment-aware reconstruction loss.Rather than standard position-wise cross-entropy, we usesoft-DTW\nloss Cuturi and Blondel (2017) as the reconstruction term logp\u03b8(x|z) . Let \u02c6x= (\u02c6x1,...,\u02c6x T \u2032) denote the\ndecoded token sequence and lete:V\u2192R d be the shared "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0034"
+        ],
+        "excerpt": "of the multi-\ndimensional proxy. Let p(\u03b1)\u2208R k denote the k-dimensional vector of k individual training-free proxy\nvalues of an architecture\u03b1, and let \u00b5 and \u03a3 denote the empirical mean and whitening matrix of proxy vectors\ncomputed over a calibration set of randomly sampled architectures from the search space. The scalarized\nproxy scores(\u03b1)\u2208Ris defined as\ns(\u03b1) =\n\u0000\np(\u03b1)\u2212\u00b5\n\u0001\u22a4\u03a3\u221211,(3)\nwhere 1 denotes a vector of all ones, i.e. it is the sum of the standardized (whitened) marginal proxies, closely\nrelated to Mahalanobis distance McLachlan (1999) of the proxy vector from the population mean.\nThis formulation has two desirable properties.(i) Scale normalization and decorrelation.Multiplication by\n\u03a3\u22121 simultaneously standardizes the scale of each proxy dimension\u2014accounting for potentially disparate\nmagnitudes and variances\u2014and decorrelates the dimensions, preventing redundant information ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Zero-Shot Proxy",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ce7488d162de5eeea296b5caf92f995b30f7486548baebc2a896b07c822e37f6",
+            "evidence_id": "E9ef3847293c95793-B0034",
+            "pages": [
+              7
+            ],
+            "section": "Zero-Shot Proxy",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2937,
+                "page": 7,
+                "section": "Zero-Shot Proxy",
+                "section_index": 18,
+                "start": 2044,
+                "text": "of the multi-\ndimensional proxy. Let p(\u03b1)\u2208R k denote the k-dimensional vector of k individual training-free proxy\nvalues of an architecture\u03b1, and let \u00b5 and \u03a3 denote the empirical mean and whitening matrix of proxy vectors\ncomputed over a calibration set of randomly sampled architectures from the search space. The scalarized\nproxy scores(\u03b1)\u2208Ris defined as\ns(\u03b1) =\n\u0000\np(\u03b1)\u2212\u00b5\n\u0001\u22a4\u03a3\u221211,(3)\nwhere 1 denotes a vector of all ones, i.e. it is the sum of the standardized (whitened) marginal proxies, closely\nrelated to Mahalanobis distance McLachlan (1999) of the proxy vector from the population mean.\nThis formulation has two desirable properties.(i) Scale normalization and decorrelation.Multiplication by\n\u03a3\u22121 simultaneously standardizes the scale of each proxy dimension\u2014accounting for potentially disparate\nmagnitudes and variances\u2014and decorrelates the dimensions, preventing redundant information "
+              }
+            ],
+            "text": "of the multi-\ndimensional proxy. Let p(\u03b1)\u2208R k denote the k-dimensional vector of k individual training-free proxy\nvalues of an architecture\u03b1, and let \u00b5 and \u03a3 denote the empirical mean and whitening matrix of proxy vectors\ncomputed over a calibration set of randomly sampled architectures from the search space. The scalarized\nproxy scores(\u03b1)\u2208Ris defined as\ns(\u03b1) =\n\u0000\np(\u03b1)\u2212\u00b5\n\u0001\u22a4\u03a3\u221211,(3)\nwhere 1 denotes a vector of all ones, i.e. it is the sum of the standardized (whitened) marginal proxies, closely\nrelated to Mahalanobis distance McLachlan (1999) of the proxy vector from the population mean.\nThis formulation has two desirable properties.(i) Scale normalization and decorrelation.Multiplication by\n\u03a3\u22121 simultaneously standardizes the scale of each proxy dimension\u2014accounting for potentially disparate\nmagnitudes and variances\u2014and decorrelates the dimensions, preventing redundant information "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0041"
+        ],
+        "excerpt": "Training VAE.We train the sequence-to-architecture V AE on\u223c96K randomly generated UniNAS block\nprefixes, holding out 2 048 blocks for validation. Because feasible blocks are generated purely by symbolic\n8\nTable 1: Top-1 image classification accuracy on ImageNet-1K (Deng et al., 2009). All models have a similar\nnumber of parameters and were trained using the UniNAS training protocol.\nModelParams FLOPsTop-1(%)\nResNet He et al. (2016) 24.8M 9.0G 75.19\nEfficientNet Tan and Le (2019) 24.0M 6.0G 80.52\nViT Dosovitskiy et al. (2020); Dai et al. (2021) 26.4M 18.4G 80.64\nCoAtNet Dai et al. (2021) 26.9M 8.44G 80.58\nZenNAS Lin et al. (2021) 26.3M 18.6G 80.48\nAZ-NAS Lee and Ham (2024) 26.7M 19.0G 80.39\nZiCo Li et al. (2023) 27.0M 9.7G 80.85\nUniNAS-A Tybl and Neumann (2026) 26.8M 9.0G 81.15\nours27.0M 9.1G81.51\ngraph enumeration, this stage requires no GPU computation. The V AE uses a maximum token ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sequence-To-Architecture Latent Space",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "05bf85d2df88b566a728e3603ca586501ffa665e6cbef2dea5c241e6e1267b5a",
+            "evidence_id": "E9ef3847293c95793-B0041",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Sequence-To-Architecture Latent Space",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 204,
+                "page": 8,
+                "section": "Sequence-To-Architecture Latent Space",
+                "section_index": 22,
+                "start": 0,
+                "text": "Training VAE.We train the sequence-to-architecture V AE on\u223c96K randomly generated UniNAS block\nprefixes, holding out 2 048 blocks for validation. Because feasible blocks are generated purely by symbolic\n8"
+              },
+              {
+                "end": 692,
+                "page": 9,
+                "section": "Sequence-To-Architecture Latent Space",
+                "section_index": 23,
+                "start": 0,
+                "text": "Table 1: Top-1 image classification accuracy on ImageNet-1K (Deng et al., 2009). All models have a similar\nnumber of parameters and were trained using the UniNAS training protocol.\nModelParams FLOPsTop-1(%)\nResNet He et al. (2016) 24.8M 9.0G 75.19\nEfficientNet Tan and Le (2019) 24.0M 6.0G 80.52\nViT Dosovitskiy et al. (2020); Dai et al. (2021) 26.4M 18.4G 80.64\nCoAtNet Dai et al. (2021) 26.9M 8.44G 80.58\nZenNAS Lin et al. (2021) 26.3M 18.6G 80.48\nAZ-NAS Lee and Ham (2024) 26.7M 19.0G 80.39\nZiCo Li et al. (2023) 27.0M 9.7G 80.85\nUniNAS-A Tybl and Neumann (2026) 26.8M 9.0G 81.15\nours27.0M 9.1G81.51\ngraph enumeration, this stage requires no GPU computation. The V AE uses a maximum token "
+              }
+            ],
+            "text": "Training VAE.We train the sequence-to-architecture V AE on\u223c96K randomly generated UniNAS block\nprefixes, holding out 2 048 blocks for validation. Because feasible blocks are generated purely by symbolic\n8\nTable 1: Top-1 image classification accuracy on ImageNet-1K (Deng et al., 2009). All models have a similar\nnumber of parameters and were trained using the UniNAS training protocol.\nModelParams FLOPsTop-1(%)\nResNet He et al. (2016) 24.8M 9.0G 75.19\nEfficientNet Tan and Le (2019) 24.0M 6.0G 80.52\nViT Dosovitskiy et al. (2020); Dai et al. (2021) 26.4M 18.4G 80.64\nCoAtNet Dai et al. (2021) 26.9M 8.44G 80.58\nZenNAS Lin et al. (2021) 26.3M 18.6G 80.48\nAZ-NAS Lee and Ham (2024) 26.7M 19.0G 80.39\nZiCo Li et al. (2023) 27.0M 9.7G 80.85\nUniNAS-A Tybl and Neumann (2026) 26.8M 9.0G 81.15\nours27.0M 9.1G81.51\ngraph enumeration, this stage requires no GPU computation. The V AE uses a maximum token "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0044"
+        ],
+        "excerpt": "The search is seeded from the union of three complementary architecture pools - randomly grown graphs,\nrandom-walk graphs, and mutation-perturbed graphs\u2014designed to provide broad initial coverage of the\ndesign space. We sampleKseed = 256 architectures uniformly from this union and evaluate the scalarized\nzero-shot proxy (see Section 4.1). The resulting scores are used to fit the scalarizer statistics \u00b5 and \u03a3 (Eq. 3)\nonce; these are frozen for the remainder of the search. Each seed architecture is encoded to its deterministic\nposterior mean \u00b5\u03d5(s) and inserted into the BO observation set together with its penalized composite score.\nWe run the process for 10 000 iterations, resulting in a total 8 GPU hours.\nImage classification.After the fixed number of iterations, we collect all evaluated architectures whose\nparameter count falls within the target budget (centered on then\u22c6 from equation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture Search",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ffa50d3d7420ff2bbc133e53548f98f71242786f39a8f757008628c2fa5f8452",
+            "evidence_id": "E9ef3847293c95793-B0044",
+            "pages": [
+              9
+            ],
+            "section": "Architecture Search",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 9,
+                "section": "Architecture Search",
+                "section_index": 24,
+                "start": 0,
+                "text": "The search is seeded from the union of three complementary architecture pools - randomly grown graphs,\nrandom-walk graphs, and mutation-perturbed graphs\u2014designed to provide broad initial coverage of the\ndesign space. We sampleKseed = 256 architectures uniformly from this union and evaluate the scalarized\nzero-shot proxy (see Section 4.1). The resulting scores are used to fit the scalarizer statistics \u00b5 and \u03a3 (Eq. 3)\nonce; these are frozen for the remainder of the search. Each seed architecture is encoded to its deterministic\nposterior mean \u00b5\u03d5(s) and inserted into the BO observation set together with its penalized composite score.\nWe run the process for 10 000 iterations, resulting in a total 8 GPU hours.\nImage classification.After the fixed number of iterations, we collect all evaluated architectures whose\nparameter count falls within the target budget (centered on then\u22c6 from equation "
+              }
+            ],
+            "text": "The search is seeded from the union of three complementary architecture pools - randomly grown graphs,\nrandom-walk graphs, and mutation-perturbed graphs\u2014designed to provide broad initial coverage of the\ndesign space. We sampleKseed = 256 architectures uniformly from this union and evaluate the scalarized\nzero-shot proxy (see Section 4.1). The resulting scores are used to fit the scalarizer statistics \u00b5 and \u03a3 (Eq. 3)\nonce; these are frozen for the remainder of the search. Each seed architecture is encoded to its deterministic\nposterior mean \u00b5\u03d5(s) and inserted into the BO observation set together with its penalized composite score.\nWe run the process for 10 000 iterations, resulting in a total 8 GPU hours.\nImage classification.After the fixed number of iterations, we collect all evaluated architectures whose\nparameter count falls within the target budget (centered on then\u22c6 from equation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0045"
+        ],
+        "excerpt": "4, as the search concentrates\nits evaluations in this region). From this budget-compliant subset, we select the architecture at the 99th\n9\nTable 2: Comparison of zero-shot (training-free) NAS optimization strategies by best reported top-1 accuracy\non ImageNet-1K (Deng et al., 2009). \u2020 denotes methods where optimal architecture was found on a smaller\ndataset (CIFAR) and then upscaled before training on ImageNet-1K.\nMethod Search strategy Top-1 (%) GPU days\n\u03b2-DARTS\u2020 Ye et al. (2022) Differentiable (DARTS space) 76.1 0.4\nGP-NAS\u2020 Li et al. (2020) Bayesian Opt. w/ hand-crafted encoding 73.4 0.9\nBONAS\u2020 Shi et al. (2020) Bayesian Opt. w/ learned encoding 75.4 10.0\nUniNAS-A Tybl and Neumann (2026) Evolutionary Algorithm 81.15 0.5\noursBayesian Opt. w/ seq-to-arch latent enc.81.510.33\nTable 3: Accuracy of object detection & instance segmentation on MS-COCO Lin et al. (2014) and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture Search",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "61988d310b2e107148aadd268a603823eed910cff755baf2912cdc49cba8d0e9",
+            "evidence_id": "E9ef3847293c95793-B0045",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Architecture Search",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1036,
+                "page": 9,
+                "section": "Architecture Search",
+                "section_index": 24,
+                "start": 898,
+                "text": "4, as the search concentrates\nits evaluations in this region). From this budget-compliant subset, we select the architecture at the 99th\n9"
+              },
+              {
+                "end": 742,
+                "page": 10,
+                "section": "Architecture Search",
+                "section_index": 25,
+                "start": 0,
+                "text": "Table 2: Comparison of zero-shot (training-free) NAS optimization strategies by best reported top-1 accuracy\non ImageNet-1K (Deng et al., 2009). \u2020 denotes methods where optimal architecture was found on a smaller\ndataset (CIFAR) and then upscaled before training on ImageNet-1K.\nMethod Search strategy Top-1 (%) GPU days\n\u03b2-DARTS\u2020 Ye et al. (2022) Differentiable (DARTS space) 76.1 0.4\nGP-NAS\u2020 Li et al. (2020) Bayesian Opt. w/ hand-crafted encoding 73.4 0.9\nBONAS\u2020 Shi et al. (2020) Bayesian Opt. w/ learned encoding 75.4 10.0\nUniNAS-A Tybl and Neumann (2026) Evolutionary Algorithm 81.15 0.5\noursBayesian Opt. w/ seq-to-arch latent enc.81.510.33\nTable 3: Accuracy of object detection & instance segmentation on MS-COCO Lin et al. (2014) and "
+              }
+            ],
+            "text": "4, as the search concentrates\nits evaluations in this region). From this budget-compliant subset, we select the architecture at the 99th\n9\nTable 2: Comparison of zero-shot (training-free) NAS optimization strategies by best reported top-1 accuracy\non ImageNet-1K (Deng et al., 2009). \u2020 denotes methods where optimal architecture was found on a smaller\ndataset (CIFAR) and then upscaled before training on ImageNet-1K.\nMethod Search strategy Top-1 (%) GPU days\n\u03b2-DARTS\u2020 Ye et al. (2022) Differentiable (DARTS space) 76.1 0.4\nGP-NAS\u2020 Li et al. (2020) Bayesian Opt. w/ hand-crafted encoding 73.4 0.9\nBONAS\u2020 Shi et al. (2020) Bayesian Opt. w/ learned encoding 75.4 10.0\nUniNAS-A Tybl and Neumann (2026) Evolutionary Algorithm 81.15 0.5\noursBayesian Opt. w/ seq-to-arch latent enc.81.510.33\nTable 3: Accuracy of object detection & instance segmentation on MS-COCO Lin et al. (2014) and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0046"
+        ],
+        "excerpt": "semantic\nsegmentation on ADE20K Zhou et al. (2017). APb, APm and mIoU denote box and mask average precision\nand mean intersection over union, respectively.\nObject Detection and Seg. Semantic Segmentation\nModelParams APb APm FPS FLOPs mIoU FPS FLOPs\nResNet He et al. (2016) 24.8M 37.7 34.7 102.8 184G 39.3 481.2 47G\nEfficientNet Tan and Le (2019) 24.0M 39.0 35.8 43.1 124G 37.0 152.6 32G\nCoAtNet Dai et al. (2021) 26.9M 41.3 38.4 14.4 296G 42.4 61.7 51G\nUniNAS-A Tybl and Neumann (2026) 26.8M 42.4 39.0 14.2 297G 45.6 88.2 51G\nours27.0M 42.9 39.813.5 305G 46.1 62.451G\npercentile of the penalized objective \u02dcsrather than the outright maximum, as we find that the very top of the\nproxy-score distribution is susceptible to noise and proxy miscalibration. The architecture was then trained\nfrom scratch on ImageNet-1K (Deng et al., 2009) using the UniNAS training protocol Tybl and Neumann\n(2026), ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture Search",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e141618c17cdda281f15ecf149b02ef70e5499567f5d4bd55e54aa1af94159b9",
+            "evidence_id": "E9ef3847293c95793-B0046",
+            "pages": [
+              10
+            ],
+            "section": "Architecture Search",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1637,
+                "page": 10,
+                "section": "Architecture Search",
+                "section_index": 25,
+                "start": 742,
+                "text": "semantic\nsegmentation on ADE20K Zhou et al. (2017). APb, APm and mIoU denote box and mask average precision\nand mean intersection over union, respectively.\nObject Detection and Seg. Semantic Segmentation\nModelParams APb APm FPS FLOPs mIoU FPS FLOPs\nResNet He et al. (2016) 24.8M 37.7 34.7 102.8 184G 39.3 481.2 47G\nEfficientNet Tan and Le (2019) 24.0M 39.0 35.8 43.1 124G 37.0 152.6 32G\nCoAtNet Dai et al. (2021) 26.9M 41.3 38.4 14.4 296G 42.4 61.7 51G\nUniNAS-A Tybl and Neumann (2026) 26.8M 42.4 39.0 14.2 297G 45.6 88.2 51G\nours27.0M 42.9 39.813.5 305G 46.1 62.451G\npercentile of the penalized objective \u02dcsrather than the outright maximum, as we find that the very top of the\nproxy-score distribution is susceptible to noise and proxy miscalibration. The architecture was then trained\nfrom scratch on ImageNet-1K (Deng et al., 2009) using the UniNAS training protocol Tybl and Neumann\n(2026), "
+              }
+            ],
+            "text": "semantic\nsegmentation on ADE20K Zhou et al. (2017). APb, APm and mIoU denote box and mask average precision\nand mean intersection over union, respectively.\nObject Detection and Seg. Semantic Segmentation\nModelParams APb APm FPS FLOPs mIoU FPS FLOPs\nResNet He et al. (2016) 24.8M 37.7 34.7 102.8 184G 39.3 481.2 47G\nEfficientNet Tan and Le (2019) 24.0M 39.0 35.8 43.1 124G 37.0 152.6 32G\nCoAtNet Dai et al. (2021) 26.9M 41.3 38.4 14.4 296G 42.4 61.7 51G\nUniNAS-A Tybl and Neumann (2026) 26.8M 42.4 39.0 14.2 297G 45.6 88.2 51G\nours27.0M 42.9 39.813.5 305G 46.1 62.451G\npercentile of the penalized objective \u02dcsrather than the outright maximum, as we find that the very top of the\nproxy-score distribution is susceptible to noise and proxy miscalibration. The architecture was then trained\nfrom scratch on ImageNet-1K (Deng et al., 2009) using the UniNAS training protocol Tybl and Neumann\n(2026), "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0047"
+        ],
+        "excerpt": "which we follow without modification. The training took 32 hours on 8 A100 GPUs.\nThe model achieves state-of-the-art top-1 accuracy on the ImageNet validation set among models trained\nwith the standard UniNAS protocol (Table 1). Compared to accuracy reported by other zero- and one-shot\napproaches on the same task (Table 2), our method also clearly discovers highest-scoring architecture for the\nsmallest GPU cost, demonstrating that the combination of a well-structured latent space with BO-guided\nexploration outperforms baselines.\nDownstream tasks.To assess the generality of the discovered architecture beyond image classification,\nwe fine-tune the ImageNet-pretrained backbone on two downstream tasks \u2013 object detection and instance\nsegmentation on MS-COCO (Lin et al., 2014) and semantic segmentation on ADE20K (Zhou et al., 2017).\nThe training took 24 hours, respectively 15 hours on 4 A100 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture Search",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d8fa5d140a719a0c004a3a29193a07b1cc32087f297ba68a7c54eccb9e9764fd",
+            "evidence_id": "E9ef3847293c95793-B0047",
+            "pages": [
+              10
+            ],
+            "section": "Architecture Search",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2536,
+                "page": 10,
+                "section": "Architecture Search",
+                "section_index": 25,
+                "start": 1637,
+                "text": "which we follow without modification. The training took 32 hours on 8 A100 GPUs.\nThe model achieves state-of-the-art top-1 accuracy on the ImageNet validation set among models trained\nwith the standard UniNAS protocol (Table 1). Compared to accuracy reported by other zero- and one-shot\napproaches on the same task (Table 2), our method also clearly discovers highest-scoring architecture for the\nsmallest GPU cost, demonstrating that the combination of a well-structured latent space with BO-guided\nexploration outperforms baselines.\nDownstream tasks.To assess the generality of the discovered architecture beyond image classification,\nwe fine-tune the ImageNet-pretrained backbone on two downstream tasks \u2013 object detection and instance\nsegmentation on MS-COCO (Lin et al., 2014) and semantic segmentation on ADE20K (Zhou et al., 2017).\nThe training took 24 hours, respectively 15 hours on 4 A100 "
+              }
+            ],
+            "text": "which we follow without modification. The training took 32 hours on 8 A100 GPUs.\nThe model achieves state-of-the-art top-1 accuracy on the ImageNet validation set among models trained\nwith the standard UniNAS protocol (Table 1). Compared to accuracy reported by other zero- and one-shot\napproaches on the same task (Table 2), our method also clearly discovers highest-scoring architecture for the\nsmallest GPU cost, demonstrating that the combination of a well-structured latent space with BO-guided\nexploration outperforms baselines.\nDownstream tasks.To assess the generality of the discovered architecture beyond image classification,\nwe fine-tune the ImageNet-pretrained backbone on two downstream tasks \u2013 object detection and instance\nsegmentation on MS-COCO (Lin et al., 2014) and semantic segmentation on ADE20K (Zhou et al., 2017).\nThe training took 24 hours, respectively 15 hours on 4 A100 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ef3847293c95793-B0049"
+        ],
+        "excerpt": "composite proxy as\nrank-aggregations cannot drive BO (unlike EA), whose surrogate needs an absolute score for each architecture,\nso we optimize the strongest single proxy, VKDNW Tybl and Neumann (2025), instead; accuracy falls to\n10\nTable 4:Ablation of the main components.We remove each component and replace it with the closest\nalternative.\u2020BO did not improve the proxy, and the final architecture training diverged.\nVariant Search Latent space Proxy Top-1 (%)\u2206\nOurs (full) BO prefix-based scalarized81.5\u2013\nw/o latent space EA none scalarized 80.0\u22121.5\nw/o proxy scalarization BO prefix-based VKDNW (single) 77.2\u22124.3\nw/o prefix encoding BO graph-based (VGAE) scalarized diverged \u2020 \u2013\n77.2%. Replacing the sequence-to-architecture V AE with a graph-based VGAE is the most damaging change:\nits reconstruction error stays close to the random level (see Supplementary Material), BO does not improve\nthe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture Search",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b88bb61240d926693fd41af5de3ea3add22bed65e2d378b364e762a9966a73df",
+            "evidence_id": "E9ef3847293c95793-B0049",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Architecture Search",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3668,
+                "page": 10,
+                "section": "Architecture Search",
+                "section_index": 25,
+                "start": 3436,
+                "text": "composite proxy as\nrank-aggregations cannot drive BO (unlike EA), whose surrogate needs an absolute score for each architecture,\nso we optimize the strongest single proxy, VKDNW Tybl and Neumann (2025), instead; accuracy falls to\n10"
+              },
+              {
+                "end": 665,
+                "page": 11,
+                "section": "Architecture Search",
+                "section_index": 26,
+                "start": 0,
+                "text": "Table 4:Ablation of the main components.We remove each component and replace it with the closest\nalternative.\u2020BO did not improve the proxy, and the final architecture training diverged.\nVariant Search Latent space Proxy Top-1 (%)\u2206\nOurs (full) BO prefix-based scalarized81.5\u2013\nw/o latent space EA none scalarized 80.0\u22121.5\nw/o proxy scalarization BO prefix-based VKDNW (single) 77.2\u22124.3\nw/o prefix encoding BO graph-based (VGAE) scalarized diverged \u2020 \u2013\n77.2%. Replacing the sequence-to-architecture V AE with a graph-based VGAE is the most damaging change:\nits reconstruction error stays close to the random level (see Supplementary Material), BO does not improve\nthe "
+              }
+            ],
+            "text": "composite proxy as\nrank-aggregations cannot drive BO (unlike EA), whose surrogate needs an absolute score for each architecture,\nso we optimize the strongest single proxy, VKDNW Tybl and Neumann (2025), instead; accuracy falls to\n10\nTable 4:Ablation of the main components.We remove each component and replace it with the closest\nalternative.\u2020BO did not improve the proxy, and the final architecture training diverged.\nVariant Search Latent space Proxy Top-1 (%)\u2206\nOurs (full) BO prefix-based scalarized81.5\u2013\nw/o latent space EA none scalarized 80.0\u22121.5\nw/o proxy scalarization BO prefix-based VKDNW (single) 77.2\u22124.3\nw/o prefix encoding BO graph-based (VGAE) scalarized diverged \u2020 \u2013\n77.2%. Replacing the sequence-to-architecture V AE with a graph-based VGAE is the most damaging change:\nits reconstruction error stays close to the random level (see Supplementary Material), BO does not improve\nthe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.06167",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "systems_or_application",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.06167",
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The selected architecture is trained from scratch on ImageNet-1K and fine-tuned on MS-COCO and ADE20K, with reported top-1 accuracy, AP, and mIoU compared against established baselines.",
+          "final_evaluation_signal": "Ground-truth validation accuracy after full training on ImageNet-1K and downstream task metrics on MS-COCO and ADE20K.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Scalarized zero-shot proxy scores from whitened VKDNW components with a parameter-count penalty.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E9ef3847293c95793-B0002",
+          "E9ef3847293c95793-B0007",
+          "E9ef3847293c95793-B0008",
+          "E9ef3847293c95793-B0021",
+          "E9ef3847293c95793-B0026",
+          "E9ef3847293c95793-B0034",
+          "E9ef3847293c95793-B0041",
+          "E9ef3847293c95793-B0044",
+          "E9ef3847293c95793-B0045",
+          "E9ef3847293c95793-B0046",
+          "E9ef3847293c95793-B0047",
+          "E9ef3847293c95793-B0049"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "2f7ef7dbb187ce44d924892aa10087de46b88ef6d7365404712d4c7088fcb3a6"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.06167",
+        "claim_evidence_alignment": "Claims of achieving competitive zero-shot NAS performance (81.51% top-1 ImageNet-1K at ~27M parameters) and cross-task generalization align well with the empirical training results and comparative tables.",
+        "context_id": "9ef3847293c95793eb3942fb31eb55f9cb79c0c94ab3db2522e67444971c48d3",
+        "decision": "pass",
+        "evaluation_assessment": "The authors evaluate the single top-selected architecture by fully training it on ImageNet-1K under the standard UniNAS recipe, transferring it to COCO object detection/segmentation and ADE20K semantic segmentation, and providing component ablations covering latent space, prefix encoding, and proxy scalarization.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Full training and standard task metric evaluation (top-1 classification accuracy, AP, and mIoU) on standard benchmarks.",
+          "final_evaluation_signal": "Actual ground-truth validation accuracy following complete training from scratch on ImageNet-1K, MS-COCO, and ADE20K.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Scalarized zero-shot training-free proxy scores (whitened VKDNW multi-dimensional components) penalized by parameter deviation.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E9ef3847293c95793-B0002",
+          "E9ef3847293c95793-B0007",
+          "E9ef3847293c95793-B0008",
+          "E9ef3847293c95793-B0021",
+          "E9ef3847293c95793-B0026",
+          "E9ef3847293c95793-B0034",
+          "E9ef3847293c95793-B0041",
+          "E9ef3847293c95793-B0044",
+          "E9ef3847293c95793-B0045",
+          "E9ef3847293c95793-B0046",
+          "E9ef3847293c95793-B0047",
+          "E9ef3847293c95793-B0049"
+        ],
+        "limitations": "The authors acknowledge that the proxy scalarizer covariance is frozen after initialization rather than adaptively recalibrated, and that latent decoding requires retry perturbation for occasional invalid shape matching.",
+        "method_assessment": "The methodology is thoroughly detailed, describing the 20-node compound prefix grammar, the graph convolutional encoder and autoregressive transformer decoder with soft-DTW loss, the multi-proxy whitening scalarization, and budget-penalized GP-based Bayesian optimization.",
+        "quality_rationale": "The manuscript presents a clearly motivated, novel system that scales BO to expressive NAS spaces via a grammar-constrained latent space, with robust full-training verification on standard vision benchmarks and solid ablations.",
+        "scoped_contribution": "The paper introduces a Bayesian Optimization approach for zero-shot neural architecture search over large-scale spaces by learning a continuous latent space with a VAE operating on a prefix encoding of architecture graphs, coupled with a Mahalanobis-whitened proxy scalarization.",
+        "source_content_hash": "2f7ef7dbb187ce44d924892aa10087de46b88ef6d7365404712d4c7088fcb3a6"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a clearly motivated, novel system that scales BO to expressive NAS spaces via a grammar-constrained latent space, with robust full-training verification on standard vision benchmarks and solid ablations.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "2f7ef7dbb187ce44d924892aa10087de46b88ef6d7365404712d4c7088fcb3a6",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors acknowledge that the proxy scalarizer covariance is frozen after initialization rather than adaptively recalibrated, and that latent decoding requires retry perturbation for occasional invalid shape matching."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -156,7 +1575,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

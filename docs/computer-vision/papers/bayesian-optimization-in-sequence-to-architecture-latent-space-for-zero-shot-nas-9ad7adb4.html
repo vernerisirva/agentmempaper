@@ -59,16 +59,155 @@
             <p>Zero-shot Neural Architecture Search removes the prohibitive cost of traditional NAS, but its search process is typically based on the evolutionary algorithm (EA); lacking an explicit model of the objective, it often resorts to a near-random search through mutation. Bayesian Optimization offers a principled alternat...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a clearly motivated, novel system that scales BO to expressive NAS spaces via a grammar-constrained latent space, with robust full-training verification on standard vision benchmarks and solid ablations.</p>
+      <p>The authors acknowledge that the proxy scalarizer covariance is frozen after initialization rather than adaptively recalibrated, and that latent decoding requires retry perturbation for occasional invalid shape matching.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-07T10:52:12.129548+00:00.</p>
+        <p>Coverage: 57979 of 57979 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Zero-shot Neural Architecture Search removes the prohibitive cost of traditional NAS, but its search
+process is typically based on the evolutionary algorithm (EA); lacking an explicit model of the objective,
+it often resorts to a near-random search through mutation. Bayesian Optimization offers a principled
+alternative by modeling the objective and aggregating information across iterations, but scales poorly to
+the high-dimensional, discrete, graph-structured spaces of modern NAS, restricting its use to only small
+networks. In this paper, we bring Bayesian Optimization to zero-shot NAS for large-scale architectures
+by learning a latent space via a Variational Autoencoder trained to reconstruct a novel prefix encoding
+of architectures and propose a proxy scalarization that combines several zero-shot proxies into a single
+Bayesian Optimization objective. After only 10,000 iterations of </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(2020), by training a Variational Autoencoder (V AE) that learns to reconstruct network architectures
+expressed by prefix encoding that serializes each architecture block into a compact, bijective string over
+a vocabulary of primitive and compound operations. The resulting latent space provides a smooth, low-
+dimensional representation of large-scale heterogeneous architectures suitable as the search domain for
+Bayesian Optimization.
+Additionally, we propose a new proxy scalarization method that allows us to combine several state-of-the-art
+zero-shot proxies into a single objective. The scalarization whitens and decorrelates the proxy dimensions and,
+unlike rank-based aggregations, can be evaluated pointwise for any architecture, which is a key prerequisite for
+modern gradient-free optimization. As a result, our method – unlike previous methods based on evolutionary
+algorithms – is able </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to learn and exploit the properties of the NAS search space during the search process.
+Finally, we use our newly introduced latent space to run Bayesian Optimization, using the scalarized proxy
+of classification accuracy as the objective function, to search for new architectures. The best architecture
+as per the proxy value (found without training any of the candidate networks) is only then trained using the
+standard UniNAS training recipe Tybl and Neumann (2026) to obtain the actual accuracy in three different
+vision tasks (image classification, object detection/instance segmentation, semantic segmentation).
+In summary, we make the following contributions:</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>has two independent
+sequential operations. Each compound node type also uniquely determines the spatial dimensionality of
+4
+children node inputs as well as of the compound node output. Using the same example as above, the children
+nodes of aglobal average pooling nodealways have the input dimension of (C,1,1) due to the spatial
+dimensionality reduction coming from global average; on the other hand, the children nodes of abranch
+nodehave the same input dimension as the parent compound node. For full description of all compound
+nodes, see Table 5 in Appendix.
+With the introduction of compound nodes, we obtain a more compact version of the UniNAS space with
+20 different node types (13simple nodesand 7compound nodes), but at the same time we do not lose the
+expressive power to encode modern convolution and transformer architectures and their hybrids. In our
+method, we therefore represent </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To allow continuous optimization over the space of UniNAS blocks, we train a Variational Autoencoder
+(V AE) that defines a mapping from latent vectors to block prefix strings. The encoder maps a computational
+graphG to a diagonal-Gaussian posteriorqϕ(z|G) =N
 
-        <ul></ul>
+µϕ(G),diagσ 2
+ϕ(G)
+
+in Rdz, wheredz = 32; the
+decoder autoregressively reconstructs the block&#x27;s prefix token sequencex= (x 1,...,x T ) from a sampled
+latent vector. Both modules are trained end-to-end by maximizing the evidence lower bound
+L(ϕ,θ;G) =E qϕ(z|G)
+
+logpθ(x|z)
+
+−βD KL
+
+qϕ(z|G)∥N(0,I)
+
+,(1)
+whereβcontrols the rate–distortion trade-off Higgins et al. (2017).
+Alignment-aware reconstruction loss.Rather than standard position-wise cross-entropy, we usesoft-DTW
+loss Cuturi and Blondel (2017) as the reconstruction term logpθ(x|z) . Let ˆx= (ˆx1,...,ˆx T ′) denote the
+decoded token sequence and lete:V→R d be the shared </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>of the multi-
+dimensional proxy. Let p(α)∈R k denote the k-dimensional vector of k individual training-free proxy
+values of an architectureα, and let µ and Σ denote the empirical mean and whitening matrix of proxy vectors
+computed over a calibration set of randomly sampled architectures from the search space. The scalarized
+proxy scores(α)∈Ris defined as
+s(α) =
+
+p(α)−µ
+⊤Σ−11,(3)
+where 1 denotes a vector of all ones, i.e. it is the sum of the standardized (whitened) marginal proxies, closely
+related to Mahalanobis distance McLachlan (1999) of the proxy vector from the population mean.
+This formulation has two desirable properties.(i) Scale normalization and decorrelation.Multiplication by
+Σ−1 simultaneously standardizes the scale of each proxy dimension—accounting for potentially disparate
+magnitudes and variances—and decorrelates the dimensions, preventing redundant information </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Training VAE.We train the sequence-to-architecture V AE on∼96K randomly generated UniNAS block
+prefixes, holding out 2 048 blocks for validation. Because feasible blocks are generated purely by symbolic
+8
+Table 1: Top-1 image classification accuracy on ImageNet-1K (Deng et al., 2009). All models have a similar
+number of parameters and were trained using the UniNAS training protocol.
+ModelParams FLOPsTop-1(%)
+ResNet He et al. (2016) 24.8M 9.0G 75.19
+EfficientNet Tan and Le (2019) 24.0M 6.0G 80.52
+ViT Dosovitskiy et al. (2020); Dai et al. (2021) 26.4M 18.4G 80.64
+CoAtNet Dai et al. (2021) 26.9M 8.44G 80.58
+ZenNAS Lin et al. (2021) 26.3M 18.6G 80.48
+AZ-NAS Lee and Ham (2024) 26.7M 19.0G 80.39
+ZiCo Li et al. (2023) 27.0M 9.7G 80.85
+UniNAS-A Tybl and Neumann (2026) 26.8M 9.0G 81.15
+ours27.0M 9.1G81.51
+graph enumeration, this stage requires no GPU computation. The V AE uses a maximum token </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The search is seeded from the union of three complementary architecture pools - randomly grown graphs,
+random-walk graphs, and mutation-perturbed graphs—designed to provide broad initial coverage of the
+design space. We sampleKseed = 256 architectures uniformly from this union and evaluate the scalarized
+zero-shot proxy (see Section 4.1). The resulting scores are used to fit the scalarizer statistics µ and Σ (Eq. 3)
+once; these are frozen for the remainder of the search. Each seed architecture is encoded to its deterministic
+posterior mean µϕ(s) and inserted into the BO observation set together with its penalized composite score.
+We run the process for 10 000 iterations, resulting in a total 8 GPU hours.
+Image classification.After the fixed number of iterations, we collect all evaluated architectures whose
+parameter count falls within the target budget (centered on then⋆ from equation </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>4, as the search concentrates
+its evaluations in this region). From this budget-compliant subset, we select the architecture at the 99th
+9
+Table 2: Comparison of zero-shot (training-free) NAS optimization strategies by best reported top-1 accuracy
+on ImageNet-1K (Deng et al., 2009). † denotes methods where optimal architecture was found on a smaller
+dataset (CIFAR) and then upscaled before training on ImageNet-1K.
+Method Search strategy Top-1 (%) GPU days
+β-DARTS† Ye et al. (2022) Differentiable (DARTS space) 76.1 0.4
+GP-NAS† Li et al. (2020) Bayesian Opt. w/ hand-crafted encoding 73.4 0.9
+BONAS† Shi et al. (2020) Bayesian Opt. w/ learned encoding 75.4 10.0
+UniNAS-A Tybl and Neumann (2026) Evolutionary Algorithm 81.15 0.5
+oursBayesian Opt. w/ seq-to-arch latent enc.81.510.33
+Table 3: Accuracy of object detection &amp; instance segmentation on MS-COCO Lin et al. (2014) and </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>semantic
+segmentation on ADE20K Zhou et al. (2017). APb, APm and mIoU denote box and mask average precision
+and mean intersection over union, respectively.
+Object Detection and Seg. Semantic Segmentation
+ModelParams APb APm FPS FLOPs mIoU FPS FLOPs
+ResNet He et al. (2016) 24.8M 37.7 34.7 102.8 184G 39.3 481.2 47G
+EfficientNet Tan and Le (2019) 24.0M 39.0 35.8 43.1 124G 37.0 152.6 32G
+CoAtNet Dai et al. (2021) 26.9M 41.3 38.4 14.4 296G 42.4 61.7 51G
+UniNAS-A Tybl and Neumann (2026) 26.8M 42.4 39.0 14.2 297G 45.6 88.2 51G
+ours27.0M 42.9 39.813.5 305G 46.1 62.451G
+percentile of the penalized objective ˜srather than the outright maximum, as we find that the very top of the
+proxy-score distribution is susceptible to noise and proxy miscalibration. The architecture was then trained
+from scratch on ImageNet-1K (Deng et al., 2009) using the UniNAS training protocol Tybl and Neumann
+(2026), </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>which we follow without modification. The training took 32 hours on 8 A100 GPUs.
+The model achieves state-of-the-art top-1 accuracy on the ImageNet validation set among models trained
+with the standard UniNAS protocol (Table 1). Compared to accuracy reported by other zero- and one-shot
+approaches on the same task (Table 2), our method also clearly discovers highest-scoring architecture for the
+smallest GPU cost, demonstrating that the combination of a well-structured latent space with BO-guided
+exploration outperforms baselines.
+Downstream tasks.To assess the generality of the discovered architecture beyond image classification,
+we fine-tune the ImageNet-pretrained backbone on two downstream tasks – object detection and instance
+segmentation on MS-COCO (Lin et al., 2014) and semantic segmentation on ADE20K (Zhou et al., 2017).
+The training took 24 hours, respectively 15 hours on 4 A100 </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>composite proxy as
+rank-aggregations cannot drive BO (unlike EA), whose surrogate needs an absolute score for each architecture,
+so we optimize the strongest single proxy, VKDNW Tybl and Neumann (2025), instead; accuracy falls to
+10
+Table 4:Ablation of the main components.We remove each component and replace it with the closest
+alternative.†BO did not improve the proxy, and the final architecture training diverged.
+Variant Search Latent space Proxy Top-1 (%)∆
+Ours (full) BO prefix-based scalarized81.5–
+w/o latent space EA none scalarized 80.0−1.5
+w/o proxy scalarization BO prefix-based VKDNW (single) 77.2−4.3
+w/o prefix encoding BO graph-based (VGAE) scalarized diverged † –
+77.2%. Replacing the sequence-to-architecture V AE with a graph-based VGAE is the most damaging change:
+its reconstruction error stays close to the random level (see Supplementary Material), BO does not improve
+the </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +246,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +262,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-06 11:01:53</li><li>Last seen by Paper Scout: 2026-10-06 11:02:11</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-05</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-06 11:01:53</li><li>Last seen by Paper Scout: 2026-10-07 10:51:19</li></ul>
             <ul><li>arXiv: 2610.06167</li><li>arXiv IDs: 2610.06167</li></ul>
           </section>
           <section class="detail-panel">

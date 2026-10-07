@@ -1,0 +1,568 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 15,
+    "non_promoted": 1,
+    "papers_attempted": 3,
+    "papers_successfully_assessed": 3,
+    "papers_walked": 5,
+    "promoted": 2,
+    "retry_eligible_failures": 2,
+    "skipped_before_model": 2,
+    "technical_failures": 2,
+    "unavailable_manuscripts": 0
+  },
+  "budget": {
+    "gemini_calls": 3,
+    "gemini_input_tokens": 80896,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3264,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 3,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.09237544,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "computer_vision": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 3,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-10-07T10:52:53.758010+00:00",
+  "cost": {
+    "deepseek_calls": 3,
+    "deepseek_cost_usd": 0.09237544,
+    "deepseek_input_tokens": 77806,
+    "deepseek_output_tokens": 1789,
+    "gemini_calls": 3,
+    "gemini_input_tokens": 80896,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3264,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 921,
+    "papers_discovered": 4094
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 20,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 428,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2610.05964",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2610.05964",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "From Social Reasoning to Embodied Interaction: An Agentic Framework for Social Robots",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.05732",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2610.05732",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "PACMI: Provenance-Aware Cascading Memory Invalidation for Long-Term LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.06830",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2610.06830",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.05124",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2610.05124",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.05334",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2610.05334",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "AgentDiscover: Autonomous Discovery with Minimal Search Scaffolding",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.04868",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2610.04868",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "From Memory to Guide: Spatio-Temporal Composer for Procedural Coding Memory",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 2312,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2610.05732",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2610.06830",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2610.05124",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2610.05334",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2610.04868",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 319,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2610.06167",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2610.06167",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Bayesian Optimization in Sequence-to-Architecture Latent Space for Zero-Shot NAS",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2610.06226",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2610.06226",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "LeAVJEPA: A Minimalist Architecture for Audio-Visual Self-Supervised Learning",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2610.06423",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2610.06423",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Toward Reliable Infant Pose Estimation: A Training-Dynamics Approach to Noisy Annotation Detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2610.06063",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2610.06063",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Vision Transformer Ensembles for Panoramic Street Segmentation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2610.05756",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2610.05756",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Vision-enabled detection of safety helmet compliance in construction zones",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2610.05758",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2610.05758",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A Three-Dimensional Reverse-Projection Method for Sparse Point Cloud Completion and Its Application to High-Speed Train Nose Reconstruction",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 1501,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2610.06226",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2610.06423",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2610.06063",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2610.05756",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2610.05758",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 2,
+        "high_relevance": 165,
+        "nominated": [
+          {
+            "canonical_id": "arxiv:2610.04915",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "arxiv:2610.04915",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Are We Measuring Scientific Intelligence? Rethinking the Evaluation of AI Scientists",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.05197",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2610.05197",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "From Scientific Observations to Mechanisms: Benchmarking Hypothesis Generation by AI Scientists",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.04911",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2610.04911",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "VideoResearchAgent: Grounded Task Synthesis and Sim-to-Real RL for Open-Web Video Research",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.04517",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2610.04517",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "EvoCast: Reliable Autonomous Research Agents for Iterative Forecasting Architecture Evolution",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.1073/pnas.2610214123",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.1073/pnas.2610214123",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "The more you automate, the less you see: Hidden pitfalls of autonomous AI scientists",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.01116",
+            "rank": 8,
+            "selection": {
+              "canonical_id": "arxiv:2610.01116",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Beyond State-of-the-Art: Standardising Environmental Impact Metrics for AI Research",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 271,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "arxiv:2610.05197",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2610.04911",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2610.04517",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.1073/pnas.2610214123",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2610.01116",
+            "outcome": "track_slot_consumed",
+            "rank": 8
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 7,
+        "high_relevance": 9,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.35578",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-30T10:20:13.801385+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "FactorEngram: Factorized N-gram Memory with Basis-Level Gating for Language Models",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2608.23982",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2608.23982",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-05T11:12:03.267421+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning",
+            "track": "engram"
+          }
+        ],
+        "ranked": 10,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "outcome": "not_assessed",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2608.23982",
+            "outcome": "not_assessed",
+            "rank": 5
+          }
+        ],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-10-07T10:51:28.499065+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

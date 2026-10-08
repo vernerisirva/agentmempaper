@@ -59,16 +59,127 @@
             <p>Accurate nuclei instance segmentation is essential for quantitative renal pathology, yet general-purpose models often struggle with low contrast, dense nuclei, complex morphology, and strong background staining. In this work, we extended a human-in-the-loop framework by combining 5,901 foundation-model-generated pse...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers a well-scoped, rigorously conducted benchmark addressing an established open question regarding human-in-the-loop data efficiency in computational pathology, providing reproducible experimental details and clear boundaries.</p>
+      <p>The authors transparently acknowledge limitations, including restriction to renal pathology, a single 185-patch hold-out test set, predefined non-tuned oversampling weights, and reliance on single training runs without stochastic variance bounds.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-08T11:11:09.998983+00:00.</p>
+        <p>Coverage: 33853 of 33853 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>time-consuming set of intermediate-difficulty cases provides additional value beyond Easy and
+Hard examples. In this study, we complete this evaluation by introducing a &quot;Medium&quot;-difficulty cohort and
+systematically assessing its contribution to model adaptation. Specifically, we extended our human-in-the-loop
+framework by combining 5,901 foundation-model-generated pseudo-labels from well-segmented cases (Easy), 860
+newly expert-annotated unresolved challenging cases (Medium), and 198 expert-annotated cases that were jointly
+identified as failures by the foundation models in our prior study (Hard). We additionally incorporated recently
+developed general-purpose cell segmentation models to evaluate the performance of current state-of-the-art ap-
+proaches. Together, these annotations spanning multiple levels of segmentation difficulty enabled a systematic
+evaluation of seven single-source </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>pseudo-labels from well-segmented cases as Easy data and 198 prior
+expert-annotated consensus failure cases as Hard data. 2 Pathology experts selected and annotated 860 challeng-
+ing patches from a pool of 1,079 previously unresolved Medium-quality image patches (Fig. 1A). Together, these
+annotation sources were used to evaluate whether incorporating Medium annotations provides additional value
+beyond the previously established Easy + Hard fine-tuning strategy for kidney nuclei instance segmentation. 2, 3
+We fine-tuned and evaluated nine cell segmentation model configurations released from 2022 to 2026, including
+Cellpose 3.0, Cellpose-SAM, Cellpose-DINO, StarDist, CellViT (HIPT and SAM), CellViT++ (Virchow), LSP-
+DETR, and PathoSAM 5–13 (Fig. 1B). Each model was fine-tuned using seven single-source and mixed-source
+strategies across Easy, Medium, and Hard annotation sources, resulting </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>of the most challenging cases for manual instance annotation. These samples represented regions that remained
+insufficiently segmented after the evaluation of newly released models. The human-in-the-loop annotation process
+was performed from the original image patches rather than by correcting foundation-model predictions.
+As shown in Fig. 3B, the fine-tuning data were organized into three annotation sources according to segmen-
+tation difficulty. Easy samples consisted of 5,901 Good-rated image patches with foundation-model-generated
+pseudo-labels from our prior study. Hard samples consisted of 198 consensus failure cases that were rated Bad
+across the previously evaluated foundation models and subsequently annotated by pathology experts. Medium
+samples consisted of the 860 newly selected unresolved challenging patches described above, which were manu-
+ally annotated from the original </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>images. Together, these three sources provided scalable pseudo-labels, newly
+annotated unresolved cases, and expert-annotated consensus failures for subsequent fine-tuning experiments.
+Figure 3:Human-in-the-loop annotation and construction of multi-source fine-tuning data.(A)
+Pathology experts screened unresolved Medium-quality kidney patches, selected challenging samples, and man-
+ually annotated nucleus instances from the original images. (B) The final fine-tuning data consisted of three
+annotation sources: prior foundation-model-generated pseudo-labels from Easy cases, prior expert-annotated
+consensus failure cases (Hard), and newly human-in-the-loop annotated unresolved cases (Medium).</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For the four mixed-source datasets—Easy + Medium, Easy + Hard, Medium + Hard, and Easy + Medium +
+Hard—source-wise weighted oversampling was applied to reduce imbalance among annotation sources, following
+the rebalancing strategy used in our prior work: 2
+wc = N
+γnc + (1−γ)N ,
+whereNdenotes the total number of training samples,n c is the number of samples from annotation source
+c, andγcontrols the strength of source rebalancing. This weighting scheme increased the sampling probability
+of underrepresented annotation sources and reduced the dominance of the majority source during fine-tuning,
+thereby increasing model exposure to challenging Medium and Hard patches.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this study, all experiments were evaluated using the same independent set of 185 expert-annotated kidney
+pathology patches established in our prior study. 2 The test set was excluded from pseudo-label generation,
+Medium and Hard data enrichment, validation, and fine-tuning.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As illustrated in Fig. 1C and summarized in Table 3, seven fine-tuning strategies were used: Easy, Medium,
+Hard, Easy + Medium, Easy + Hard, Medium + Hard, and Easy + Medium + Hard.
+The nine cell segmentation model configurations were fine-tuned under all seven strategies, resulting in 63
+fine-tuning experiments. As shown in Table 3,γwas set to 0.85 for Easy + Medium, Easy + Hard, and Easy
++ Medium + Hard, and to 0.55 for Medium + Hard. These settings reduced dataset imbalance and increased
+the sampling frequency of the underrepresented Medium and Hard samples. The strategy-specificγvalues were
+determined before model fine-tuning based on the degree of dataset imbalance and were applied consistently
+across all model configurations.
+Table 3: Fine-tuning data composition and expected sampling ratios for the seven fine-tuning strategies
+Fine-tuning Strategies Samples Original Ratio (%) </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The performance of all model configurations and their fine-tuned variants was evaluated using the F1 score. 21
+Predicted and reference instances were matched using an IoU threshold of 0.5. The F1 score was computed for
+each test patch and then averaged across all test patches. It was calculated as:
+F1 = 2TP
+2TP + FP + FN,
+where TP, FP, and FN denote true-positive, false-positive, and false-negative nuclei instances, respectively.
+The F1 score was used as the primary evaluation metric because it jointly accounts for false-positive and false-
+negative predictions.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 4:Comparison of F1 scores across seven fine-tuning strategies.The nine nuclei instance-
+segmentation model configurations are grouped into (a) the Cellpose family, (b) the CellViT family, and (c) other
+segmentation models. For each model, performance is shown for the baseline and seven fine-tuning strategies:
+Easy (E),Medium (M),Hard (H),Easy + Hard (E+H),Easy + Medium (E+M),Medium + Hard
+(M+H)andEasy + Medium + Hard (E+M+H).
+In Figure 4, we compare the F1 scores obtained using the seven annotation strategies across the Cellpose
+family, CellViT family, and other segmentation models. We found that no single fine-tuning strategy was optimal
+for all nine model configurations.
+Medium-only fine-tuning produced the best F1 score for four models: StarDist, Cellpose-SAM, CellViT
+[HIPT-256], and CellViT [SAM-H]. We obtained the best results for CellViT++ [Virchow] and PathoSAM </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>by
+combining Medium and Hard annotations. Cellpose 3.0 achieved its highest F1 score using the complete Easy plus
+Medium plus Hard dataset. In contrast, Hard-only fine-tuning was optimal for Cellpose-DINO and LSP-DETR.
+Overall, seven of the nine best-performing strategies included the newly annotated Medium data. Although
+Easy + Hard fine-tuning improved performance over the corresponding baseline for eight of the nine model
+configurations, it was not the optimal strategy for any model once Medium-containing strategies were included
+in the comparison. These results indicate that the newly annotated Medium cases provided complementary
+kidney-specific supervision beyond the previously available Easy and Hard data, although the optimal data
+composition remained model dependent.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>score of 0.8423, followed by CellViT++ [Virchow] at 0.8338 and CellViT [HIPT-256] at
+0.8299.
+We observed substantial differences in the magnitude of improvement across models. StarDist showed the
+largest absolute gain, increasing from 0.7380 to 0.8332 with Medium-only fine-tuning, corresponding to an
+improvement of 0.0952. Cellpose-SAM showed the second-largest gain of 0.0841. Cellpose 3.0 and Cellpose-
+DINO improved by 0.0630 and 0.0625, respectively. We also observed smaller but consistent gains for CellViT
+[HIPT-256], LSP-DETR, CellViT++ [Virchow], CellViT [SAM-H], and PathoSAM. These results show that the
+effect of human-in-the-loop data enrichment varied according to the model configuration and its baseline.
+Table 4: Best fine-tuning strategy and corresponding F1 performance for each model.
+Cell Segmentation Models Baseline
+Performance
+Fine-tuned
+Performance
+Fine-tuning </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Strategy
+StarDist 0.7380 0.8332 Medium
+Cellpose 3.0 0.6748 0.7378 Easy + Medium + Hard
+Cellpose-SAM 0.7816 0.8657 Medium
+CellViT (HIPT-256) 0.7838 0.8299 Medium
+CellViT++ (Virchow) 0.7995 0.8338 Medium + Hard
+CellViT (SAM-H) 0.8108 0.8423 Medium
+Cellpose-DINO 0.7918 0.8543 Hard
+PathoSAM 0.8247 0.8386 Medium + Hard
+LSP-DETR0.8339 0.8725Hard
+Note:Bold values indicate the highest F1 score, and underlined values indicate the second-highest F1 score within each
+performance column.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Cellpose-DINO leverage large-scale pretrained ViT encoders and may therefore be
+more robust to these challenging appearances.
+The frequent benefit of Medium annotations also suggests that samples remaining unresolved after successive
+foundation-model evaluations contain complementary information that is not fully represented by either well-
+segmented Easy cases or extreme Hard failures. However, because no single annotation composition consistently
+performed best across all models, a fixed fine-tuning dataset may not be optimal for adapting diverse segmentation
+architectures. Several limitations should also be considered. First, this study focuses exclusively on renal
+pathology, and the effectiveness of the proposed annotation strategies may differ across organs, staining protocols,
+or imaging domains. Second, evaluation was performed on a fixed hold-out set of 185 expert-annotated </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>kidney
+pathology patches. In addition, the source-rebalancing parameters were predefined for each mixed-data strategy
+and applied consistently across models rather than optimized separately for individual architectures. Finally,
+each model–strategy configuration was evaluated using a single fine-tuning run, and variability arising from
+random initialization or stochastic optimization was not explicitly quantified. Future work could investigate
+model-specific or adaptive data-selection strategies that automatically identify the most informative annotation
+sources and determine how annotation composition should be adjusted for different segmentation models.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +218,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +234,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-06</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-07 10:51:18</li><li>Last seen by Paper Scout: 2026-10-07 10:51:18</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-06</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-07 10:51:18</li><li>Last seen by Paper Scout: 2026-10-08 11:09:49</li></ul>
             <ul><li>arXiv: 2610.07711</li><li>arXiv IDs: 2610.07711</li></ul>
           </section>
           <section class="detail-panel">

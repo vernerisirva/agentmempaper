@@ -59,16 +59,330 @@
             <p>Long conversational agents have become essential in our daily lives. They must remember what was said long back in order to help us efficiently complete a task without needing the user to repeat instructions and context repeatedly. However, the main issue is that instructions and context change over time and so the...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a methodologically rigorous, thoroughly tested memory architecture with controlled comparative experiments, rigorous statistical reporting, and well-substantiated, unexaggerated claims.</p>
+      <p>The authors transparently document limitations, including heuristic tuning of transition weights on a development set, lower absolute performance on MemoryAgentBench, and baseline substitutions where official artifacts were unavailable.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-08T11:10:28.565254+00:00.</p>
+        <p>Coverage: 50120 of 50120 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long conversational agents have become essen-
+tial in our daily lives. They must remember
+what was said long back in order to help us
+efficiently complete a task without needing the
+user to repeat instructions and context repeat-
+edly. However, the main issue is that instruc-
+tions and context change over time and so the
+agents must be able to adapt accordingly. A
+useful memory system should preserve both
+current and historical states, distinguish stale
+information from active knowledge, retrieve
+evidence appropriate to the query and avoid
+repeatedly invoking a large language model
+to rewrite prior interactions. We introduce
+MINDSET, a memory controller that stores
+a conversation as immutable episodes and or-
+ganizes them into versioned schemas through
+minimum-energy state transitions. Each incom-
+ing episode may reinforce, supersede, split or
+create a schema. The transition decision </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>structured in-
+dex over supporting and exceptional episodes, with
+temporal validity, active or historical status and
+arXiv:2610.08586v1  [cs.AI]  6 Oct 2026
+predecessor-successor links. For each incoming
+episode, MINDSET evaluates four possible actions
+-REINFORCE,SUPERSEDE,SPLITandNEWun-
+der a local energy function. The energy penalizes
+representation distortion, unresolved contradiction,
+historical damage, unnecessary fragmentation, and
+internal inconsistency. Temporal and contextual
+signals determine action feasibility, while hystere-
+sis prevents isolated contradictions from prema-
+turely rewriting stable memory. This design sepa-
+rates two responsibilities that are often conflated.
+The memory controller determines how experience
+should be organized and which episodes are rele-
+vant, while the language model receives a bounded
+evidence packet and produces the final answer.
+Our main </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Let a conversation produce an ordered stream of
+episodes
+Et = (e1,e 2,...,e t),
+where each episode stores a conversation identifier,
+session, timestamp, speaker, raw text and locally
+extracted entity, role, context, attribute, and change-
+cue features. The memory controller maintains a
+set of schemasSt. A schema groups compatible
+episodes into a versioned state; it records support
+and exception identifiers, a centroid and medoid,
+validity bounds, active or historical status and pre-
+decessor/successor links.
+For each incoming episode et, the controller
+chooses an action
+at∈{REINFORCE,SUPERSEDE,SPLIT,NEW}
+Reinforceadds evidence to a compatible active
+schema.Supersedecloses an active schema and
+creates its temporally linked successor.Splitcre-
+ates a coexisting contextual branch.Newstarts an
+independent schema. Raw episodes are immutable
+under every action.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>bounded raw-evidence packet to the answer model.
+These signals determine action feasibility before
+energy comparison:SUPERSEDErequires p≥
+θsup,SPLITrequires κ≥θ split, andNEWis
+removed when K≥θ new. A hard new-topic
+guard selectsNEWwhen K &lt; θ new, mt =
+0, and d &lt; θ d. The implementation uses
+ks = 6 , o∅ = 0.50 , (αd,αe,αr,αc,αt) =
+(0.52,0.18,0.12,0.10,0.08) , mr = 2 , θr =
+0.80, (βc,βℓ,βx,βr) = (0.35,0.20,0.40,0.25) ,
+(γt,γc,γr,γd) = (0.65,0.45,0.20,0.35) , and
+(θsup,θ split,θ new,θd) = (0.35,0.12,0.43,0.35).
+All compatibility coefficients, transition thresh-
+olds, energy weights and hysteresis margins were
+selected through coarse calibration on a held-out
+development set with no question overlap with
+LoCoMo-700. MAB is fully dataset-disjoint from
+this calibration. They were frozen before test exe-
+cution and were not optimized against test-answer
+F1.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>max(τ,κ), a=REINFORCE,
+max(0,κ−τ), a=SUPERSEDE,
+max(0,τ−κ), a=SPLIT,
+K(e,s), a=NEW.
+The final weights are represented by
+w= (w d,wc,wh,wf,wi).
+The implementation usesλh = 0.35,mmin = 2,
+η= 0.75,λ i = 0.50, and
+w= (1.00,1.25,0.75,0.22,1.00).
+These are hand-tuned coefficients, not a proven
+optimal fit. Distortion and inconsistency define unit
+scale; contradiction receives modest priority so a
+detected single-valued conflict can outweigh mod-
+erate semantic fit; historical damage is discounted;
+and fragmentation is a weaker global regularizer be-
+cause its count-based term accumulates throughout
+a conversation. The development set is question
+disjoint from test LoCoMo 700. There is no gra-
+dient fitting or test-answer F1 optimization. All
+parameters are frozen before the final paper runs.
+Two shortcuts precede general comparison. Easy
+reinforcement applies whenp&lt;θ easy
+p ,κ&lt;θ easy
+κ </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>summarizing away evidence
+At query time, a local router labels the information
+need as current, historical, contextual or generic.
+Three candidate channels are then combined:
+• direct retrieval, a dense-BM25 union over raw
+episodes;
+• schema-mediated retrieval, which finds rele-
+vant schemas and expands them back to their sup-
+port, exception, medoid and continuity episodes;
+• version retrieval, which exposes medoids from
+active and historical schema states.
+The candidate pool is reranked with
+ms-marco-MiniLM-L6-v2 and embeddings use
+all-MiniLM-L6-v2. We use a candidate pool of
+40 and return eight pieces of evidence. The answer
+model receives the original provenance-bearing
+episodes.
+Method Answer F1 Recall@8 Precision@8 MRR nDCG@8 Evidence recall Total tokens
+MINDSET 0.4280 0.6280 0.1056 0.5572 0.54530.6302 403,978
+LightMem 0.4024 0.4522 0.0783 0.4365 0.4092 0.4554313,522
+Vector RAG </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Retrieval methods can emit memory units of very
+different size. We therefore normalize them be-
+fore generation. Up to 20 candidate memories are
+segmented into 768-token passages with 96-token
+overlap, rescored against the question using the
+same local embedding model and greedily selected
+under a maximum of eight passages - 8,000 evi-
+dence tokens and three passages per original mem-
+ory. Every passage retains its source memory ID,
+source event IDs, passage index, and character/-
+token offsets. Long Context is the sole structural
+exception because full history defines the baseline;
+it uses deterministic recency truncation at 20,000
+UTF-8 bytes.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We use a frozen manifest of 700 questions fromLo-
+CoMo(Maharana et al., 2024), 70 from each of ten
+conversations. The category counts are 151 single-
+hop, 151 temporal, 96 multi-hop, 151 open-domain,
+and 151 adversarial questions. As a secondary
+dataset, we useMemoryAgentBench (MAB)(Hu
+et al., 2026). We use 150 samples from benchmark-
+instance files: 125 in-context-learning examples
+and 25 recommendation examples. The five ICL
+source groups contribute 25 instances each, and the
+recommender contributes 25. We therefore use 850
+questions in total. This is done intentionally to keep
+API costs manageable while also providing suffi-
+cient breadth for fair evaluation. The exact IDs and
+order are stored in the manifest and will be released
+with the codebase for reproducibility. Model trans-
+fer is evaluated on the complete frozen LoCoMo
+benchmark used by the primary experiment.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We compare MINDSET against 5 methods:
+• Vector RAG:flat normalized MiniLM embed-
+dings over timestamped dialogue turns with co-
+sine top-kretrieval.
+• Long Context Memory:chronological full his-
+tory, with deterministic oldest-turn removal only
+beyond 20,000 UTF-8 bytes.
+• MemoryBank:adapted from the official archi-
+tecture (Zhong et al., 2023). GPT-OSS replaces
+the original GPT-3.5 summarizer so the backbone
+remains same.
+• LightMem:a reproduction preserving key de-
+sign choices from the paper (Zhang et al., 2026).
+• Nemori:a reproduction of the official implemen-
+tation (Ma et al., 2026).</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The primary model is gpt-oss-120b from Cere-
+bras. All six methods use the same answer instruc-
+tions, deterministic temperature 0, a maximum out-
+put reservation of 4,096 tokens, structured JSON
+validation, and completeness retries. Primary Lo-
+CoMo batching uses eight questions where sup-
+ported; Long Context uses one question per request
+because histories are question-specific and large.
+The cross-backbone experiment uses zai-glm-4.7
+and gemma-4-31b from Cerebras, 1 question per re-
+quest, a 1,024-token output cap and a 160,000-byte
+prompt guard.
+Method ICL exact match Recommender Recall@5 ICL token F1 Recommender F1@5
+MINDSET (Ours)0.0240 0.1400 0.0526 0.0587
+MemoryBank 0.0000 0.1000 0.0409 0.0427
+LightMem 0.0160 0.0400 0.0414 0.0160
+Long Context Memory 0.0080 0.0400 0.0275 0.0133
+Vector RAG 0.0000 0.0400 0.0183 0.0133
+Nemori0.02400.0000 0.0506 0.0000
+Table 3:GPT-OSS-120B on the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>frozen MAB-150 manifest.
+Variant Answer F1 Recall@8 Precision@8 MRR nDCG@8 Evidence recall
+Full MINDSET0.42800.6280 0.1056 0.5572 0.54530.6302
+Nearest-schema merge 0.40800.6296 0.10600.5547 0.5445 0.6318
+No contextual term 0.4194 0.6280 0.1056 0.5572 0.54530.6302
+No temporal term 0.4237 0.6266 0.1054 0.5556 0.5437 0.6287
+No hysteresis 0.4237 0.6280 0.10600.5549 0.5442 0.6302
+No fragmentation penalty 0.4043 0.6256 0.1052 0.5567 0.5437 0.6278
+No provenance expansion 0.4274 0.6158 0.1029 0.5508 0.5369 0.6180
+Table 4:LoCoMo-700 ablations with GPT-OSS-120B.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>On the ten LoCoMo conversation clusters, MIND-
+SET significantly improves Recall@8, MRR and
+nDCG@8 over LightMem, the closest method
+across our study (mean differences +0.1758,
++0.1207, and +0.1361, respectively; Holm-
+corrected p= 0.00977 for each). Against
+Nemori, the gains in Recall@8 (+0.2082), MRR
+(+0.3045) and nDCG@8 (+0.2724) are also sig-
+nificant (Holm-corrected p= 0.00977 for each).
+Thus, the tests support a significant retrieval-
+ranking advantage over both strongest baselines.
+For answer F1, MINDSET obtains the highest ob-
+served value. Its gain over long context is sig-
+nificant (mean difference +0.1489, 95% cluster-
+bootstrap CI [+0.1094,+0.1857] , Holm-corrected
+p= 0.00977 ). Gains over Vector RAG, Nemori,
+and MemoryBank are also significant at p &lt;
+0.05 (Holm-correctedp= 0.04297 , 0.02930, and
+0.01562, respectively). The gain over LightMem
+remains directionally positive </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>but is not statistically
+confirmed (+0.0256,p= 0.24023 ). We use two-
+sided exact paired sign-flip permutation tests over
+all 210 = 1,024 conversation-cluster sign assign-
+ments and cluster bootstrapping at the conversa-
+tion level, with Holm correction within each metric
+family. This design accounts for non-independence
+among questions drawn from the same history.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Method Answer F1↑Recall@8↑Precision@8↑MRR↑nDCG@8↑Total Tokens↓
+MINDSET0.4080 0.4293 0.0745 0.2806 0.2957 507,238
+LightMem 0.4005 0.4130 0.0718 0.2744 0.2875 708,450
+Nemori 0.3961 0.3085 0.0510 0.1794 0.1937 955,224
+Vector RAG 0.3815 0.3904 0.0670 0.2675 0.2779 609,491
+Long Context 0.2975 0.0153 0.0036 0.0082 0.0082 4,360,926
+MemoryBank 0.2659 0.0671 0.0115 0.0501 0.0494 831,244
+Table 5:GLM-4.7 on the frozen LoCoMo-700 manifest. Total tokens is the provider-recorded sum of input and output tokens.
+Method Answer F1↑Recall@8↑Precision@8↑MRR↑nDCG@8↑Total Tokens↓
+LightMem0.33080.4130 0.0718 0.2744 0.2875 825,896
+MINDSET 0.3306 0.4293 0.0745 0.2806 0.2957768,173
+Nemori 0.3295 0.3085 0.0510 0.1794 0.1937 1,440,066
+Vector RAG 0.3226 0.3904 0.0670 0.2675 0.2779705,867
+Long Context 0.2739 0.0153 0.0036 0.0082 0.0082 5,000,182
+MemoryBank 0.2582 0.0678 0.0115 0.0453 0.0488 979,396
+Table </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>6:Gemma-4-31B on the same complete LoCoMo-700 manifest.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Replacing energy-based assignment with nearest-
+schema merging and removing fragmentation pres-
+sure drop F1 by 0.0200 and 0.0237 respectively,
+showing the most impact. They support the cen-
+tral proposal: it matters not only whether rele-
+vant episodes can be found, but whether memory
+evolves into a useful number of coherent states.
+The other terms show smaller individual effects.
+Their retrieval columns except provenance expan-
+sion almost tie the full system as they affect how
+evidence is organized more than the presence of
+candidate episodes.</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ommendation split contains only 25 examples.
+These results therefore indicate relative perfor-mance under the evaluated protocol rather than
+broad MAB competence.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>productions because all upstream trained arti-
+facts were unavailable. MemoryBank addition-
+ally uses GPT-OSS in place of its original sum-
+marization model.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>hand-tuned engineering choices calibrated on
+held-out development data rather than scientifi-
+cally proven optimal values.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We show complete statistical tests computed on our
+primary dataset, LoCoMo. All tests use paired per-
+question scores from frozen run artifacts. Answer
+F1 and evidence recall use all 700 questions; rank-
+ing metrics use the 696 questions with nonempty
+gold evidence, matching the aggregation used in the
+main results table. Both the bootstrap and the two-
+sided exact sign-flip permutation test operate on the
+ten conversation clusters, preserving all questions
+from a conversation as one dependent unit. We re-
+port 95% bootstrap confidence intervals and Holm-
+adjustedp-values within each metric family. Posi-
+tive differences favor MINDSET. W-T-L denotes
+per-question wins, ties and losses. Mean differ-
+ences are computed from unrounded per-question
+values. The cluster-level design guards against ar-
+tificially narrow uncertainty estimates caused by
+treating questions from the same </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Baseline Metric Mean∆95% CI W–T–L PermutationpHolmp
+Vector RAG Answer F1 +0.0473 [+0.0178,+0.0783] 202–367–131 0.02148 0.04297
+Long Context Answer F1 +0.1489 [+0.1094,+0.1857] 295–313–92 0.001950.00977
+Nemori Answer F1 +0.0547 [+0.0188,+0.1074] 217–325–158 0.00977 0.02930
+LightMem Answer F1 +0.0256 [-0.0118,+0.0636] 175–380–145 0.24023 0.24023
+MemoryBank Answer F1 +0.1305 [+0.0786,+0.1822] 284–318–98 0.00391 0.01562
+Vector RAG Recall@8 +0.2377 [+0.1970,+0.2815] 220–453–23 0.001950.00977
+Long Context Recall@8 +0.6127 [+0.5745,+0.6489] 485–202–9 0.001950.00977
+Nemori Recall@8 +0.2082 [+0.1788,+0.2363] 243–384–69 0.001950.00977
+LightMem Recall@8 +0.1758 [+0.1345,+0.2227] 173–488–35 0.001950.00977
+MemoryBank Recall@8 +0.5646 [+0.5189,+0.6030] 460–221–15 0.001950.00977
+Vector RAG Precision@8 +0.0386 [+0.0324,+0.0451] 220–453–23 0.001950.00977
+Long Context Precision@8 +0.1020 </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LoCoMo answer F1 is deterministic and category
+aware. MAB ICL exact match parses the first an-
+swer line and removes an Answer: prefix. Rec-
+ommendation scoring canonicalizes movie entities
+with the benchmark entity map and edit distance
+before Recall@5. Supplementary MAB ICL F1 se-
+lects the best normalized-token match among valid
+references; supplementary recommender F1 uses
+the canonicalized top-five set. No LLM judge is
+used for any number in the tables.</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>components
+LightMem&#x27;s unpublished LoRA selector and of-
+fline consolidation model are substituted to support
+reproduction. MemoryBank uses the shared GPT-
+OSS model for its summary calls. These choices
+preserve experimental control but mean the corre-
+sponding rows should be read as results for doc-
+umented reproductions, not exact reruns of every
+upstream software dependency.</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We reserve a separate 300-question LoCoMo devel-
+opment set for hand-tuning MINDSET&#x27;s compati-
+bility coefficients, energy weights, transition thresh-
+olds, hysteresis margins and retrieval-coverage pa-
+rameters before the primary evaluation. The set
+is disjoint from the frozen LoCoMo-700 manifest
+at the question-ID level and contains 75 examples
+from each available category (categories 1, 2, 4,
+and 5); category 3 has no remaining examples be-
+cause it is fully represented in the primary manifest.
+Selection is done after excluding every question in
+the primary 700 LoCoMo samples used for the
+main paper. Questions are sorted by the SHA-256
+key, the first 75 questions in each available cate-
+gory are selected and the selected records are sorted
+globally by the same key. No primary-test question
+is used for parameter selection. The complete man-
+ifest, including exact question IDs, source </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +421,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +437,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-06</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-07 10:49:14</li><li>Last seen by Paper Scout: 2026-10-07 10:49:33</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-06</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-07 10:49:14</li><li>Last seen by Paper Scout: 2026-10-08 11:07:24</li></ul>
             <ul><li>arXiv: 2610.08586</li><li>arXiv IDs: 2610.08586</li></ul>
           </section>
           <section class="detail-panel">

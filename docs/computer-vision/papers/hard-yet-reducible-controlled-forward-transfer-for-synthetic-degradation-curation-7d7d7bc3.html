@@ -59,16 +59,170 @@
             <p>Selecting synthetic degradations for dense prediction requires an estimate of their training utility, the generalization gain they bring under a finite training budget. Clean and degraded twins share content and labels, suggesting a score based on how much short training reduces the excess error caused by degradatio...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous, well-controlled experimental setup addressing a genuine confound in synthetic data selection. The mathematical formulation is clear, baselines are fairly adapted under matched budgets, and empirical analyses thoroughly probe underlying mechanisms.</p>
+      <p>The authors transparently document limitations, including reliance on single-run evaluations for final training, residual drift near gate thresholds, reliance on cross-family transfer for completely novel degradation types, and probe budget heuristics.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-09T11:21:21.024996+00:00.</p>
+        <p>Coverage: 54791 of 54791 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Wepropose thecontrolled
+Reducible Degradation Gap(cRDG)forregionsdefinedbydegradationtypeandseverity. Froma
+common checkpoint, cRDG runs two budget-matched probes that differ only in one augmentation
+slot, which holds either a synthetic degradation or a clean augmentation. The score is the gain on
+held-out degraded images relative to the clean-control probe. Clean harm is a separate feasibility
+constraint. cRDG reveals a correctable severity band in which training on the degradation yields
+high controlled gain under the available budget, and the band moves with the predictor, the
+starting checkpoint, and the training budget.Curation of Reducible Bands(CuRB) uses cRDG to
+select synthetic data without changing the predictor. On semantic segmentation and salient object
+detection,CuRBimproves representative predictors under matched synthetic-data budgets </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>training progress.
+(c) Our matched-control formulation underlyingcRDG measures degraded gain𝐺𝑔 beyond equally long
+clean training, while checking clean harm𝐻𝑔 separately.
+also a poor indicator of utility, because a strong degradation can remove the evidence needed
+to recover the mask, leaving samples that are hard yet carry little learnable signal under the
+available budget. Selecting by loss or uncertainty [8, 9] can then waste the budget or cause
+negative transfer.
+We define the utility of a degradation as its held-out gain beyond equally long clean training
+under the same probe budget, subject to a clean-retention constraint. Forward transfer here
+means the gain on held-out source scenes that carry the same degradation after a short probe,
+and transfer to real adverse domains is evaluated separately (§ 4.4). Curation uses only source
+images and their synthetic twins, never </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Bands(CuRB), a curation framework that adds
+degradation-aware selection to existing dense predictors without changing their architectures.
+Scores are recomputed for the operating checkpoint and budget. The band only summarizes
+the profile. Selection ranks feasible positive-score regions directly and fills a fixed synthetic
+budget in rank order, with validity gating before ranking and𝑘-center sampling for the last
+partial region.
+Our contributions are as follows.
+• We formulatebudget-conditioned correctability. Training utility need not track severity, realism,
+or difficulty, and the useful severity region migrates with predictor, checkpoint, and probe
+budget.
+• We proposecRDG, a held-out, budget-matched estimate of the gain from training on a
+degradation region relative to an equally long clean-control probe, with clean harm handled
+separately.
+• We introduceCuRB, a plug-and-play </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>it may have contributed to training𝜃0. The
+split is reused for every region. Let𝑈(𝜃,𝒮;𝐾) denote𝐾 optimizer steps from𝜃 on a data stream
+𝒮, and let⊕ denote the union of the clean-replay stream and the augmentation-slot stream in
+each probe batch. From the common start𝜃0 we run two probes on half𝐴,
+𝜃deg𝐴,𝑔 =𝑈 𝜃0, 𝐴clean⊕𝐴 deg,𝑔 ;𝐾 ,𝜃 ctrl𝐴 =𝑈 𝜃0, 𝐴clean⊕𝐴 aug;𝐾 .(2)
+The treatment probe fills the slot with twins from region𝑔. The clean-control probe fills the
+same slot with a weak photometric augmentation of the same base view (Appendix C). Both
+probes share source IDs, steps, batch composition, clean-replay ratio, optimizer, schedule, data
+order, and initialization. The control does not depend on𝑔, so it is run once per direction and
+shared across all regions. If no valid twin exists after𝑛𝑧 regeneration draws, the control view is
+kept in the treatment slot, so the match is never </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Both probes are evaluated on the held-out half𝐵. We define thedegraded gainand theclean harm
+as
+𝐺𝐴→𝐵𝑔 =𝐿 𝐵𝑑𝜃ctrl𝐴 ;𝑔 −𝐿 𝐵𝑑𝜃deg𝐴,𝑔 ;𝑔 , 𝐻 𝐴→𝐵𝑔 = h𝐿𝐵𝑐𝜃deg𝐴,𝑔 −𝐿 𝐵𝑐𝜃ctrl𝐴 i+.(3)
+𝐺 is positive when degradation training outperforms the matched clean control on held-out
+degraded images.𝐻 is positive when the treatment increases the held-out clean loss. We then
+swap the two halves and average the two held-out gains,
+cRDG(𝑔;𝐾,𝜃 0)= 12𝐺𝐴→𝐵𝑔 +𝐺 𝐵→𝐴𝑔 .(4)
+A region isfeasibleiff max
 
-        <ul></ul>
+𝐻𝐴→𝐵𝑔 ,𝐻 𝐵→𝐴𝑔 ≤𝜖 . Infeasible regions are excluded from selection,
+and signed scores remain available for analysis. We use a hard constraint rather than a penalty
+𝐺𝑔−𝜆𝐻𝑔 becauseitenforcescleanretentionwithoutanothertrade-offparameter. Theconstraint
+bounds probe-time harm and does not guarantee final clean accuracy, which § 4.2 checks
+empirically.
+Baselines from the same probes.The same held-out losses </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>[26].
+Method𝑀↓𝐹 max𝛽 ↑𝐸 𝜙↑𝑆 𝛼↑
+SI-EDN [29] .062 .817 .841 .810
++ Uncurated twins (𝐵sel) .058 .835 .858 .817
++CuRB(𝐵 sel) .052 .853 .873 .831
+CSSAM [27] .035 .887 .916 .886
++ Uncurated twins (𝐵sel) .034 .891 .919 .888
++CuRB(𝐵 sel) .030 .912 .934 .893
+NUN [28] .038 .857 .896 .875
++ Uncurated twins (𝐵sel) .036 .867 .902 .877
++CuRB(𝐵 sel) .032 .880 .917 .886
+(b)CSOD10K [27].
+Table 1. Evaluation on SOD Benchmarksfollowingtheofficialprotocol(§4.1). Atthesameaugmentation
+budget, comparing uncurated sampling withCuRBisolates the gain from curation.
+ACDC mIoU↑Dark Zurich mIoU↑Cityscapes
+Data-generation host Published host setting Original +CuRBOriginal +CuRBvalΔ↑
+single-generator hosts
+ISSA [19] SegFormer 52.45 53.9227.39 28.76 +0.24
+H-Weather [20] SegFormer 49.21 50.6323.44 24.65 +0.36
+Gen4Seg [21] SegFormer 51.04 52.3925.63 27.28 +0.45
+composite DG host
+ISSA [19] RobustNet (DeepLabV3+) 47.55 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>48.7323.09 24.35 +0.18
+Table 2.CuRBas a plug-in to existing data-generation settings.PublishedreferencesforISSA,H-Weather,
+and RobustNet+ISSA are taken from Li et al.[19]. Gen4Seg follows Yin et al.[21] (its Dark Zurich value
+is obtained with the released pipeline). Our &quot;+CuRB&quot; runs applyCuRBunder the corresponding host
+setting and synthetic-data budget. The composite host stacks RobustNet [33] with ISSA on DeepLabV3+.
+Host-specific region construction: Appendix D.
+(Appendix A). The matched synthetic pool contains low light, backlight, fog, and rain at eight
+severity levels per family. Low light is aligned with the night condition, while fog and rain
+have direct counterparts in ACDC [32]. Backlight is an additional source-side illumination
+family, and snow is held out entirely for unseen-family evaluation. We report the in-family
+mean over fog, night, and rain, and evaluation also </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>64.19 32.24 52.96 49.80 50.28 27.06 68.31
+Grad. contrib. [11] 64.73 31.85 53.42 50.00 50.55 26.84 68.58
+DisCL-style selection [25] 64.48 32.36 53.27 50.04 50.79 27.02 68.40
+RDG (uncontrolled) 65.11 32.29 53.76 50.39 50.47 27.45 67.41
+Fixed-Mid 65.02 32.91 53.58 50.50 50.68 27.33 68.87
+CuRB(cRDG) 66.73 34.26 54.93 51.97 51.38 28.75 70.13
+Table 3. Controlled curation comparison on Cityscapes→ACDC / Dark Zurich.All methods share the
+candidatepool,validitygate, 𝐵sel,final-trainingobjective,andschedule,differingintheirsample-selection
+policies. Fog, night, and rain are treated as the in-family conditions. Snow is held out as an unseen family,
+with no snow samples entering the candidate pool, curation, or final training.
+Figure 3. Qualitative comparison.(a) Degraded SOD with NUN. (b) adverse-condition SemSeg with
+ISSA SegFormer. Baseline and +CuRBpredictions are shown for both tasks.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ablations(Cityscapes→ACDC).RDG
+and𝐷𝑔 replace cRDG by the paired gap reduction
+and the held-out loss drop. Other rows remove
+cross-fitting, held-out transfer, and the clean-harm
+constraint.𝜌 glob is over all32regions.
+Methods𝑀↓𝐹 𝑚𝑎𝑥𝛽 ↑𝐸 𝜙↑𝑆 𝛼↑
+Source-only .021 .892 .960 .920
+All-gen. (uniform,𝐵sel) .022 .889 .958 .918
+Grad. contrib. [11] .022 .890 .959 .919
+RDG (uncontr.) .023 .885 .955 .914
+Fixed-Mid .021 .891 .960 .919
+cRDG,𝐻unconstrained .025 .879 .950 .908
+CuRB .021 .893 .961 .921
+Table 5. Clean retention on SOD(DUTS-TE,
+NUN/PVTv2-B2). Source-only trains on clean
+DUTS-TR. Augmented variants add the same syn-
+theticbudgetselectedbyeachmethod,soanydrop
+is the clean cost of that selection.
+baseline, 28.75 on Dark Zurich, and 51.38 on held-out snow, where improvement reflects
+cross-family transfer. Cityscapes performance is also preserved, reaching70.13 versus 67.84
+for source-only. The </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Does cRDG predict real utility?We first obtain an empirical retraining utility. Holding
+everythingbuttheregionfixed,weretrainonceperregion 𝑔 andrecordthesigned,unnormalized
+gain on ACDC in-family,𝑈real(𝑔)=mIoU real(𝑀𝑔)−mIoU real(𝑀clean). Fig. 4a overlays it withΔ0,
+RDG, andcRDGfor one family. We test whetherRDGremains high when real utility becomes
+negative and whethercRDG preserves the ordering of𝑈real, including regions with negative
+utility. The decision unit and the correlation unit are both theregion(per-sample real gain would
+need one retraining per sample). A global rank correlation can be inflated by mean differences
+betweenfamilies, so Tab. 6 reports𝜌glob over all32 regions and𝜌macro = 1|𝒟| ˝𝑑𝜌𝑑, where𝜌𝑑
+is the Spearman correlation over the8 regions of family𝑑. Both use the operational ranking.
+Because cRDG is computed on source twins only, the table also correlates the same </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>valuation baselines Twin-based scores
+Metric Highest loss /
+uncertainty
+RHO-Loss style
+[8]
+Grad. contrib.
+[11]
+Δ0
+(gap)
+RDG
+(uncontrolled)
+𝐷𝑔
+(held-out drop)
+CuRB
+(cRDG)
+𝜌glob with𝑈 real↑0.25 0.49 0.52 0.39 0.61 0.70 0.79
+𝜌macro with𝑈 real↑0.17 0.35 0.37 0.27 0.43 0.56 0.74
+𝜌DZ with𝑈 DZ↑0.21 0.43 0.45 0.33 0.53 0.62 0.72
+in-fam. mIoU↑49.45 49.80 50.00 49.28 50.39 51.02 51.97
+Table 6. Region-level score comparisonunder matched pool, gate, diversity, budget, objective, and
+schedule (Cityscapes→ACDC, ISSA SegFormer).𝜌glob is Spearman correlation with𝑈real over all32
+regions,𝜌macroaverageswithin-familycorrelations,and 𝜌DZevaluatesthesamerankingagainstper-region
+retraining gains on Dark Zurich.Δ0 is the unmastered gap and𝐷𝑔 the held-out loss drop.
+supports transfer beyond the benchmark used to define𝑈real. The held-out loss drop𝐷𝑔 is the
+no-subtraction counterpart, andcRDG improves𝜌glob from </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>transfer. The probe horizon follows a fixed budget-scaling rule rather than
+adapting to each region. The SOD twin pool comes from external clean images. Also, all newly
+trained models are single runs, and we do not report seed variance.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +261,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +277,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-07</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-08 11:09:26</li><li>Last seen by Paper Scout: 2026-10-08 11:09:48</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-07</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-08 11:09:26</li><li>Last seen by Paper Scout: 2026-10-09 11:20:17</li></ul>
             <ul><li>arXiv: 2610.09849</li><li>arXiv IDs: 2610.09849</li></ul>
           </section>
           <section class="detail-panel">

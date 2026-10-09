@@ -4,7 +4,7 @@
     "https://arxiv.org/abs/2610.09348v1",
     "https://arxiv.org/abs/2610.09348"
   ],
-  "appeared_in_latest_run": true,
+  "appeared_in_latest_run": false,
   "arxiv_id": "2610.09348",
   "authors": [
     "Yufeng Li",
@@ -27,13 +27,13 @@
   "first_seen_at": "2026-10-08 11:07:24",
   "first_seen_date": "2026-10-08",
   "future_date": false,
-  "is_new": true,
+  "is_new": false,
   "last_seen_at": "2026-10-08 11:07:24",
   "last_seen_date": "2026-10-08",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-07",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-08 11:08:21",
   "notified_date": "2026-10-08",
   "openalex_id": null,
@@ -43,7 +43,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-08 11:07:24",
-    "generated_at": "2026-10-08 11:12:35",
+    "generated_at": "2026-10-09 11:21:59",
     "last_seen_at": "2026-10-08 11:07:24",
     "metadata_sources": [
       "arxiv"
@@ -113,36 +113,2423 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-09T11:20:59.984361+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The contribution is soundly scoped and executed, offering clear formalization, thorough empirical benchmarking, and rigorous ablations without overstating the capacity of flat stores against structured graphs.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 73190,
+      "assessment_input_sha256": "462db37e85d82a64082760eda326a62a5194d1555c3c99bbf0c3742e4c07a490",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.09348",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 70308,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 69831,
+      "evidence_block_count": 108,
+      "evidence_context_characters": 83754,
+      "evidence_context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+      "evidence_context_sha256": "ebafe6bff614b223d31dda33628e352ba15b3163e8ad5ee73ea30171ab4c86de",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 70356,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "extracted_pages": 25,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "fffc5dcfe2e7790a852d183d82363842b380c102f2e73f9d4c735e7d450047fb",
+        "source_url": "https://arxiv.org/pdf/2610.09348",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 70308,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Relevanceisnotsufficiency: Whatactually",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 39,
+          "supplied_characters": 39
+        },
+        {
+          "heading": "Closes Theevidencegap Inlong-Termmem-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 445,
+          "supplied_characters": 445
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1568,
+          "supplied_characters": 1568
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1166,
+          "supplied_characters": 1166
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 4585,
+          "supplied_characters": 4585
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 1256,
+          "supplied_characters": 1256
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1822,
+          "supplied_characters": 1822
+        },
+        {
+          "heading": "What Counts As A Sufficient Candidate Memory Set",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1398,
+          "supplied_characters": 1398
+        },
+        {
+          "heading": "What Counts As A Sufficient Candidate Memory Set",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2315,
+          "supplied_characters": 2315
+        },
+        {
+          "heading": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 9,
+          "source_characters": 390,
+          "supplied_characters": 390
+        },
+        {
+          "heading": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 10,
+          "source_characters": 4176,
+          "supplied_characters": 4176
+        },
+        {
+          "heading": "Stagei: Compose Complementary Evidence Withfca-Ms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 324,
+          "supplied_characters": 324
+        },
+        {
+          "heading": "Stagei: Compose Complementary Evidence Withfca-Ms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1203,
+          "supplied_characters": 1203
+        },
+        {
+          "heading": "Stageii: Complete Missing Support Under A Budget",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1182,
+          "supplied_characters": 1182
+        },
+        {
+          "heading": "Access Schedules For Completion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1113,
+          "supplied_characters": 1113
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 290,
+          "supplied_characters": 290
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 267,
+          "supplied_characters": 267
+        },
+        {
+          "heading": "F1 J F1 J F1 J F1 J F1 J",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 666,
+          "supplied_characters": 666
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 2054,
+          "supplied_characters": 2054
+        },
+        {
+          "heading": "Experimentalresult",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 725,
+          "supplied_characters": 725
+        },
+        {
+          "heading": "Experimentalresult",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 1880,
+          "supplied_characters": 1880
+        },
+        {
+          "heading": "F1J Jth",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1157,
+          "supplied_characters": 1157
+        },
+        {
+          "heading": "F1J Jth",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 3078,
+          "supplied_characters": 3078
+        },
+        {
+          "heading": "Conclusion Anddiscussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "discussion",
+          "section_index": 23,
+          "source_characters": 1449,
+          "supplied_characters": 1449
+        },
+        {
+          "heading": "Aiuse Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 985,
+          "supplied_characters": 985
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 2823,
+          "supplied_characters": 2823
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1250,
+          "supplied_characters": 1250
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 748,
+          "supplied_characters": 748
+        },
+        {
+          "heading": "Appendix: A Evidence-Law Mapping 15",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 25,
+          "supplied_characters": 25
+        },
+        {
+          "heading": "Appendix: B Case Trace For Figure 1 15",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 28,
+          "supplied_characters": 28
+        },
+        {
+          "heading": "Appendix: C Structured Memory Boundary 15",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 30,
+          "source_characters": 31,
+          "supplied_characters": 31
+        },
+        {
+          "heading": "Appendix: D Algorithmic Specification 16",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 30,
+          "supplied_characters": 30
+        },
+        {
+          "heading": "Appendix: Implementation Details 17",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Appendix: Data Usage And Sealing 18",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Appendix: G Dataset Provenance And Derived Evaluation Sets 18",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 51,
+          "supplied_characters": 51
+        },
+        {
+          "heading": "Appendix: H Same-Store Locomocontrols 19",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 30,
+          "supplied_characters": 30
+        },
+        {
+          "heading": "Appendix: I Budget Sweep 20",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Appendix: J Development Robustness 22",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Appendix: K Full Longmemeval-S Type Breakdown 22",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 38,
+          "supplied_characters": 38
+        },
+        {
+          "heading": "Appendix: L Comparison With Learned Residual Set Completion 22",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 52,
+          "supplied_characters": 52
+        },
+        {
+          "heading": "Appendix: M Annotation Protocol 23",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Appendix: M Annotation Protocol 23",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Appendix: Evidence-Law Mapping",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 2856,
+          "supplied_characters": 2856
+        },
+        {
+          "heading": "Appendix: Case Trace For Figure1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 741,
+          "supplied_characters": 741
+        },
+        {
+          "heading": "Appendix: Structured Memory Boundary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 218,
+          "supplied_characters": 218
+        },
+        {
+          "heading": "Appendix: Structured Memory Boundary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 2105,
+          "supplied_characters": 2105
+        },
+        {
+          "heading": "Appendix: Algorithmic Specification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 190,
+          "supplied_characters": 190
+        },
+        {
+          "heading": "Appendix: Algorithmic Specification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 2142,
+          "supplied_characters": 2142
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 539,
+          "supplied_characters": 539
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 1367,
+          "supplied_characters": 1367
+        },
+        {
+          "heading": "Appendix: Data Usage And Sealing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 485,
+          "supplied_characters": 485
+        },
+        {
+          "heading": "Appendix: Dataset Provenance And Derived Evaluation Sets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 2453,
+          "supplied_characters": 2453
+        },
+        {
+          "heading": "Appendix: Dataset Provenance And Derived Evaluation Sets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 1624,
+          "supplied_characters": 1624
+        },
+        {
+          "heading": "Appendix: Same-Storelocomo Controls",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 919,
+          "supplied_characters": 919
+        },
+        {
+          "heading": "Appendix: Budget Sweep",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 1313,
+          "supplied_characters": 1313
+        },
+        {
+          "heading": "Appendix: Budget Sweep",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 2392,
+          "supplied_characters": 2392
+        },
+        {
+          "heading": "Appendix: Budget Sweep",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 166,
+          "supplied_characters": 166
+        },
+        {
+          "heading": "Appendix: Development Robustness",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 434,
+          "supplied_characters": 434
+        },
+        {
+          "heading": "Appendix: Fulllongmemeval-Stype Breakdown",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 880,
+          "supplied_characters": 880
+        },
+        {
+          "heading": "Appendix: Comparison With Learned Residual Set Completion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 574,
+          "supplied_characters": 574
+        },
+        {
+          "heading": "Appendix: Comparison With Learned Residual Set Completion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 157,
+          "supplied_characters": 157
+        },
+        {
+          "heading": "Appendix: Annotation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 874,
+          "supplied_characters": 874
+        },
+        {
+          "heading": "Appendix: Metric Definitions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 1955,
+          "supplied_characters": 1955
+        },
+        {
+          "heading": "Appendix: Prompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 284,
+          "supplied_characters": 284
+        },
+        {
+          "heading": "Appendix: Prompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 2500,
+          "supplied_characters": 2500
+        },
+        {
+          "heading": "Appendix: Prompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 316,
+          "supplied_characters": 316
+        },
+        {
+          "heading": "Appendix: Matched Three-Call Comparison Ofbfr-Mvandbfr-Text",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 1486,
+          "supplied_characters": 1486
+        }
+      ],
+      "selected_characters": 69831,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "selected_sections": [
+        {
+          "characters": 39,
+          "heading": "Relevanceisnotsufficiency: Whatactually",
+          "page": 1
+        },
+        {
+          "characters": 445,
+          "heading": "Closes Theevidencegap Inlong-Termmem-",
+          "page": 1
+        },
+        {
+          "characters": 1568,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1166,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4585,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1256,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1822,
+          "heading": "Relatedwork",
+          "page": 3
+        },
+        {
+          "characters": 1398,
+          "heading": "What Counts As A Sufficient Candidate Memory Set",
+          "page": 3
+        },
+        {
+          "characters": 2315,
+          "heading": "What Counts As A Sufficient Candidate Memory Set",
+          "page": 4
+        },
+        {
+          "characters": 390,
+          "heading": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+          "page": 4
+        },
+        {
+          "characters": 4176,
+          "heading": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+          "page": 5
+        },
+        {
+          "characters": 324,
+          "heading": "Stagei: Compose Complementary Evidence Withfca-Ms",
+          "page": 5
+        },
+        {
+          "characters": 1203,
+          "heading": "Stagei: Compose Complementary Evidence Withfca-Ms",
+          "page": 6
+        },
+        {
+          "characters": 1182,
+          "heading": "Stageii: Complete Missing Support Under A Budget",
+          "page": 6
+        },
+        {
+          "characters": 1113,
+          "heading": "Access Schedules For Completion",
+          "page": 6
+        },
+        {
+          "characters": 290,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 267,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 666,
+          "heading": "F1 J F1 J F1 J F1 J F1 J",
+          "page": 7
+        },
+        {
+          "characters": 2054,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 725,
+          "heading": "Experimentalresult",
+          "page": 7
+        },
+        {
+          "characters": 1880,
+          "heading": "Experimentalresult",
+          "page": 8
+        },
+        {
+          "characters": 1157,
+          "heading": "F1J Jth",
+          "page": 8
+        },
+        {
+          "characters": 3078,
+          "heading": "F1J Jth",
+          "page": 9
+        },
+        {
+          "characters": 1449,
+          "heading": "Conclusion Anddiscussion",
+          "page": 10
+        },
+        {
+          "characters": 985,
+          "heading": "Aiuse Statement",
+          "page": 11
+        },
+        {
+          "characters": 2823,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 1250,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 748,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 25,
+          "heading": "Appendix: A Evidence-Law Mapping 15",
+          "page": 13
+        },
+        {
+          "characters": 28,
+          "heading": "Appendix: B Case Trace For Figure 1 15",
+          "page": 13
+        },
+        {
+          "characters": 31,
+          "heading": "Appendix: C Structured Memory Boundary 15",
+          "page": 13
+        },
+        {
+          "characters": 30,
+          "heading": "Appendix: D Algorithmic Specification 16",
+          "page": 13
+        },
+        {
+          "characters": 27,
+          "heading": "Appendix: Implementation Details 17",
+          "page": 13
+        },
+        {
+          "characters": 27,
+          "heading": "Appendix: Data Usage And Sealing 18",
+          "page": 13
+        },
+        {
+          "characters": 51,
+          "heading": "Appendix: G Dataset Provenance And Derived Evaluation Sets 18",
+          "page": 13
+        },
+        {
+          "characters": 30,
+          "heading": "Appendix: H Same-Store Locomocontrols 19",
+          "page": 13
+        },
+        {
+          "characters": 17,
+          "heading": "Appendix: I Budget Sweep 20",
+          "page": 13
+        },
+        {
+          "characters": 27,
+          "heading": "Appendix: J Development Robustness 22",
+          "page": 13
+        },
+        {
+          "characters": 38,
+          "heading": "Appendix: K Full Longmemeval-S Type Breakdown 22",
+          "page": 13
+        },
+        {
+          "characters": 52,
+          "heading": "Appendix: L Comparison With Learned Residual Set Completion 22",
+          "page": 13
+        },
+        {
+          "characters": 27,
+          "heading": "Appendix: M Annotation Protocol 23",
+          "page": 13
+        },
+        {
+          "characters": 97,
+          "heading": "Appendix: M Annotation Protocol 23",
+          "page": 14
+        },
+        {
+          "characters": 2856,
+          "heading": "Appendix: Evidence-Law Mapping",
+          "page": 15
+        },
+        {
+          "characters": 741,
+          "heading": "Appendix: Case Trace For Figure1",
+          "page": 15
+        },
+        {
+          "characters": 218,
+          "heading": "Appendix: Structured Memory Boundary",
+          "page": 15
+        },
+        {
+          "characters": 2105,
+          "heading": "Appendix: Structured Memory Boundary",
+          "page": 16
+        },
+        {
+          "characters": 190,
+          "heading": "Appendix: Algorithmic Specification",
+          "page": 16
+        },
+        {
+          "characters": 2142,
+          "heading": "Appendix: Algorithmic Specification",
+          "page": 17
+        },
+        {
+          "characters": 539,
+          "heading": "Appendix: Implementation Details",
+          "page": 17
+        },
+        {
+          "characters": 1367,
+          "heading": "Appendix: Implementation Details",
+          "page": 18
+        },
+        {
+          "characters": 485,
+          "heading": "Appendix: Data Usage And Sealing",
+          "page": 18
+        },
+        {
+          "characters": 2453,
+          "heading": "Appendix: Dataset Provenance And Derived Evaluation Sets",
+          "page": 18
+        },
+        {
+          "characters": 1624,
+          "heading": "Appendix: Dataset Provenance And Derived Evaluation Sets",
+          "page": 19
+        },
+        {
+          "characters": 919,
+          "heading": "Appendix: Same-Storelocomo Controls",
+          "page": 19
+        },
+        {
+          "characters": 1313,
+          "heading": "Appendix: Budget Sweep",
+          "page": 20
+        },
+        {
+          "characters": 2392,
+          "heading": "Appendix: Budget Sweep",
+          "page": 21
+        },
+        {
+          "characters": 166,
+          "heading": "Appendix: Budget Sweep",
+          "page": 22
+        },
+        {
+          "characters": 434,
+          "heading": "Appendix: Development Robustness",
+          "page": 22
+        },
+        {
+          "characters": 880,
+          "heading": "Appendix: Fulllongmemeval-Stype Breakdown",
+          "page": 22
+        },
+        {
+          "characters": 574,
+          "heading": "Appendix: Comparison With Learned Residual Set Completion",
+          "page": 22
+        },
+        {
+          "characters": 157,
+          "heading": "Appendix: Comparison With Learned Residual Set Completion",
+          "page": 23
+        },
+        {
+          "characters": 874,
+          "heading": "Appendix: Annotation Protocol",
+          "page": 23
+        },
+        {
+          "characters": 1955,
+          "heading": "Appendix: Metric Definitions",
+          "page": 23
+        },
+        {
+          "characters": 284,
+          "heading": "Appendix: Prompts",
+          "page": 23
+        },
+        {
+          "characters": 2500,
+          "heading": "Appendix: Prompts",
+          "page": 24
+        },
+        {
+          "characters": 316,
+          "heading": "Appendix: Prompts",
+          "page": 25
+        },
+        {
+          "characters": 1486,
+          "heading": "Appendix: Matched Three-Call Comparison Ofbfr-Mvandbfr-Text",
+          "page": 25
+        }
+      ],
+      "selected_text_sha256": "462db37e85d82a64082760eda326a62a5194d1555c3c99bbf0c3742e4c07a490",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "fffc5dcfe2e7790a852d183d82363842b380c102f2e73f9d4c735e7d450047fb",
+      "source_pages": 25,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "surrogate_code_units": 1,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": [
+        "Canonical Unicode normalization processed 1 UTF-16 surrogate code units; unpaired units are visible replacement characters, not reconstructed symbols."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0003"
+        ],
+        "excerpt": "LLM agents that interact with a user across many sessions accumulate histories\nthat exceed their context window, so they store past interactions in an external\nmemory and answer each question from a small set of retrieved records. Existing\nmemory systems rank records by lexical or embedding relevance, yet the top-\nranked memories can each be relevant while jointly omitting a complementary\nfact that the answer requires, especially for multi-session and temporal questions.\nDrawing on the distinction between relevance and sufficiency in legal evidence\nscholarship, we recast memory retrieval as constructing asufficient memory set.\nTo operationalize this view, we introduce a blinded LLM judgment over the re-\ntrieved set, together with Gold Hit and Turn Hit as evidence-coverage proxies.\nWe then proposeBudgeted Flat Reconstruction (BFR), which builds sufficient\nsets over a fixed flat memory ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8fd6957694d3f974a9c43ee09d69e58de85646937998b6fdfc4c29bb31fba9b4",
+            "evidence_id": "E346284f5d1cd4c68-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "LLM agents that interact with a user across many sessions accumulate histories\nthat exceed their context window, so they store past interactions in an external\nmemory and answer each question from a small set of retrieved records. Existing\nmemory systems rank records by lexical or embedding relevance, yet the top-\nranked memories can each be relevant while jointly omitting a complementary\nfact that the answer requires, especially for multi-session and temporal questions.\nDrawing on the distinction between relevance and sufficiency in legal evidence\nscholarship, we recast memory retrieval as constructing asufficient memory set.\nTo operationalize this view, we introduce a blinded LLM judgment over the re-\ntrieved set, together with Gold Hit and Turn Hit as evidence-coverage proxies.\nWe then proposeBudgeted Flat Reconstruction (BFR), which builds sufficient\nsets over a fixed flat memory "
+              }
+            ],
+            "text": "LLM agents that interact with a user across many sessions accumulate histories\nthat exceed their context window, so they store past interactions in an external\nmemory and answer each question from a small set of retrieved records. Existing\nmemory systems rank records by lexical or embedding relevance, yet the top-\nranked memories can each be relevant while jointly omitting a complementary\nfact that the answer requires, especially for multi-session and temporal questions.\nDrawing on the distinction between relevance and sufficiency in legal evidence\nscholarship, we recast memory retrieval as constructing asufficient memory set.\nTo operationalize this view, we introduce a blinded LLM judgment over the re-\ntrieved set, together with Gold Hit and Turn Hit as evidence-coverage proxies.\nWe then proposeBudgeted Flat Reconstruction (BFR), which builds sufficient\nsets over a fixed flat memory "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0004"
+        ],
+        "excerpt": "store in two stages. Specifically, we first applyFor-\nmal Concept Analysis for Memory Selection (FCA-MS)to decompose the question\ninto information requirements and select a compact candidate subset that jointly\ncovers them. Then, we repeatedly acquire unseen records through deeper text\nsearch or complementary entity and session views, stopping when the budget is\nexhausted. Experiments on LOCOMOand LONGMEMEVAL-S show that BFR\noutperforms same-store adaptations of recent agent-memory systems in both an-\nswer quality and evidence coverage. Specifically, on LONGMEMEVAL-S it raises\njudged accuracy from 72.4% to 82.2% and Turn Hit to 91.4%. Code is available\nat:GitHub.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "858b2eaacd3a5c830c86470662c12363a77a9e43a2aa0ed766e30a753a8b3589",
+            "evidence_id": "E346284f5d1cd4c68-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1568,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 897,
+                "text": "store in two stages. Specifically, we first applyFor-\nmal Concept Analysis for Memory Selection (FCA-MS)to decompose the question\ninto information requirements and select a compact candidate subset that jointly\ncovers them. Then, we repeatedly acquire unseen records through deeper text\nsearch or complementary entity and session views, stopping when the budget is\nexhausted. Experiments on LOCOMOand LONGMEMEVAL-S show that BFR\noutperforms same-store adaptations of recent agent-memory systems in both an-\nswer quality and evidence coverage. Specifically, on LONGMEMEVAL-S it raises\njudged accuracy from 72.4% to 82.2% and Turn Hit to 91.4%. Code is available\nat:GitHub."
+              }
+            ],
+            "text": "store in two stages. Specifically, we first applyFor-\nmal Concept Analysis for Memory Selection (FCA-MS)to decompose the question\ninto information requirements and select a compact candidate subset that jointly\ncovers them. Then, we repeatedly acquire unseen records through deeper text\nsearch or complementary entity and session views, stopping when the budget is\nexhausted. Experiments on LOCOMOand LONGMEMEVAL-S show that BFR\noutperforms same-store adaptations of recent agent-memory systems in both an-\nswer quality and evidence coverage. Specifically, on LONGMEMEVAL-S it raises\njudged accuracy from 72.4% to 82.2% and Turn Hit to 91.4%. Code is available\nat:GitHub."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0010"
+        ],
+        "excerpt": "improving selection within that pool. Both challenges must be met\nwithout knowing which records are required. At inference time, no oracle declares a set sufficient,\nso a method must itself decide how far to search and when to stop.\nTo address both challenges, we proposeBudgeted Flat Reconstruction(BFR), a two-stage,\nrequirement-aware framework that assembles answer-supporting evidence over a flat memory store\nunder a fixed retrieval budget. Specifically, at Stage I,Formal Concept Analysis for Memory Se-\nlection(FCA-MS) first decomposes the question into answer requirements, and then applies an\nFCA-based prefilter followed by LLM selection of a compact, complementary subset. These se-\nlected candidates are grounded to source records to form the initial evidence set. At Stage II, we\nacquire further supporting evidence from the current evidence set, excluding records already ob-\ntained ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b73af44d0d1f62dc7fb58ad79ac15678905389bba4c575001af4920e7e240865",
+            "evidence_id": "E346284f5d1cd4c68-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4210,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 3313,
+                "text": "improving selection within that pool. Both challenges must be met\nwithout knowing which records are required. At inference time, no oracle declares a set sufficient,\nso a method must itself decide how far to search and when to stop.\nTo address both challenges, we proposeBudgeted Flat Reconstruction(BFR), a two-stage,\nrequirement-aware framework that assembles answer-supporting evidence over a flat memory store\nunder a fixed retrieval budget. Specifically, at Stage I,Formal Concept Analysis for Memory Se-\nlection(FCA-MS) first decomposes the question into answer requirements, and then applies an\nFCA-based prefilter followed by LLM selection of a compact, complementary subset. These se-\nlected candidates are grounded to source records to form the initial evidence set. At Stage II, we\nacquire further supporting evidence from the current evidence set, excluding records already ob-\ntained "
+              }
+            ],
+            "text": "improving selection within that pool. Both challenges must be met\nwithout knowing which records are required. At inference time, no oracle declares a set sufficient,\nso a method must itself decide how far to search and when to stop.\nTo address both challenges, we proposeBudgeted Flat Reconstruction(BFR), a two-stage,\nrequirement-aware framework that assembles answer-supporting evidence over a flat memory store\nunder a fixed retrieval budget. Specifically, at Stage I,Formal Concept Analysis for Memory Se-\nlection(FCA-MS) first decomposes the question into answer requirements, and then applies an\nFCA-based prefilter followed by LLM selection of a compact, complementary subset. These se-\nlected candidates are grounded to source records to form the initial evidence set. At Stage II, we\nacquire further supporting evidence from the current evidence set, excluding records already ob-\ntained "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0011"
+        ],
+        "excerpt": "and accumulating new support within a fixed retrieval budget. We instantiate this stage with\ntwo schedules:Budgeted Flat Reconstruction with Text Access(BFR-Text) extends text retrieval,\nandBudgeted Flat Reconstruction with Multi-View Access(BFR-MV) combines text, entity, and\nsession views. Stage I thus composes the evidence already present among the candidates, Stage II\n2\nreaches evidence beyond them, and the fixed budget supplies a stopping rule that does not presume\nsufficiency can be recognized. Finally, we evaluate BFR on LOCOMOand LONGMEMEVAL-S\nunder protocols that hold the memory store, answerer, and judge fixed within each benchmark. Ex-\ntensive results show that BFR improves judged answer quality and annotated evidence coverage over\nsame-store baselines. On LONGMEMEVAL-S, it raises judged accuracy from72.4%to82.2%and\nattains a91.4%Turn Hit. In summary, this paper makes three ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "269bd29a739f20a01f336c266bc58f66ee1014ff82699a001c9e32b4b3918202",
+            "evidence_id": "E346284f5d1cd4c68-B0011",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4585,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 4210,
+                "text": "and accumulating new support within a fixed retrieval budget. We instantiate this stage with\ntwo schedules:Budgeted Flat Reconstruction with Text Access(BFR-Text) extends text retrieval,\nandBudgeted Flat Reconstruction with Multi-View Access(BFR-MV) combines text, entity, and\nsession views. Stage I thus composes the evidence already present among the candidates, Stage II\n2"
+              },
+              {
+                "end": 521,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 5,
+                "start": 0,
+                "text": "reaches evidence beyond them, and the fixed budget supplies a stopping rule that does not presume\nsufficiency can be recognized. Finally, we evaluate BFR on LOCOMOand LONGMEMEVAL-S\nunder protocols that hold the memory store, answerer, and judge fixed within each benchmark. Ex-\ntensive results show that BFR improves judged answer quality and annotated evidence coverage over\nsame-store baselines. On LONGMEMEVAL-S, it raises judged accuracy from72.4%to82.2%and\nattains a91.4%Turn Hit. In summary, this paper makes three "
+              }
+            ],
+            "text": "and accumulating new support within a fixed retrieval budget. We instantiate this stage with\ntwo schedules:Budgeted Flat Reconstruction with Text Access(BFR-Text) extends text retrieval,\nandBudgeted Flat Reconstruction with Multi-View Access(BFR-MV) combines text, entity, and\nsession views. Stage I thus composes the evidence already present among the candidates, Stage II\n2\nreaches evidence beyond them, and the fixed budget supplies a stopping rule that does not presume\nsufficiency can be recognized. Finally, we evaluate BFR on LOCOMOand LONGMEMEVAL-S\nunder protocols that hold the memory store, answerer, and judge fixed within each benchmark. Ex-\ntensive results show that BFR improves judged answer quality and annotated evidence coverage over\nsame-store baselines. On LONGMEMEVAL-S, it raises judged accuracy from72.4%to82.2%and\nattains a91.4%Turn Hit. In summary, this paper makes three "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0012"
+        ],
+        "excerpt": "contributions:\n(i) We formulate memory retrieval as the construction of a sufficient memory set and make set-level\nsufficiency measurable: LLM-Suff@Set judges whether a retrieved set supports the answer, while\nGold Hit and Turn Hit track coverage of annotated answer-bearing evidence.\n(ii) We propose BFR, a two-stage method for building sufficient sets over a flat memory. Its two\nstages recover complementary evidence missing within and beyond the initial candidates.\n(iii) We conduct extensive experiments on LOCOMOand LONGMEMEVAL-S. These results show\nthat BFR improves answer quality and evidence coverage, and identify where additional evidence is\nrecovered and clarify the distinct roles of evidence composition and acquisition.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6b715eff956a138962be106e87ed9821d4732a225a71e38370a4ec87260c77bf",
+            "evidence_id": "E346284f5d1cd4c68-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1256,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 5,
+                "start": 521,
+                "text": "contributions:\n(i) We formulate memory retrieval as the construction of a sufficient memory set and make set-level\nsufficiency measurable: LLM-Suff@Set judges whether a retrieved set supports the answer, while\nGold Hit and Turn Hit track coverage of annotated answer-bearing evidence.\n(ii) We propose BFR, a two-stage method for building sufficient sets over a flat memory. Its two\nstages recover complementary evidence missing within and beyond the initial candidates.\n(iii) We conduct extensive experiments on LOCOMOand LONGMEMEVAL-S. These results show\nthat BFR improves answer quality and evidence coverage, and identify where additional evidence is\nrecovered and clarify the distinct roles of evidence composition and acquisition."
+              }
+            ],
+            "text": "contributions:\n(i) We formulate memory retrieval as the construction of a sufficient memory set and make set-level\nsufficiency measurable: LLM-Suff@Set judges whether a retrieved set supports the answer, while\nGold Hit and Turn Hit track coverage of annotated answer-bearing evidence.\n(ii) We propose BFR, a two-stage method for building sufficient sets over a flat memory. Its two\nstages recover complementary evidence missing within and beyond the initial candidates.\n(iii) We conduct extensive experiments on LOCOMOand LONGMEMEVAL-S. These results show\nthat BFR improves answer quality and evidence coverage, and identify where additional evidence is\nrecovered and clarify the distinct roles of evidence composition and acquisition."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0018"
+        ],
+        "excerpt": "views.\nTable 1:Illustrative delivery-time question.Both dates are required to derive the five-day answer.\nRetrieved evidence LLM-Suff@Set Gold Hit Turn Hit\nOrder only (Feb. 5)0 1 0\nArrival only (Feb. 10)0 1 1\nOrder + arrival 11 1\nThus,S(q, E)concerns what the evidence makes answerable, independently of whether a particular\nanswerer generates the correct response. To assess this property offline, leta(q, E)be the final\ndecidedlabel from a blinded, reference-conditioned LLM adjudication givenq,y \u22c6(q), andtext(E)\n(Appendix M), witha(q, E)\u2208 {sufficient,insufficient}. We defineLLM-Suff@Setby\nbSLLM(q, E) =\u22ae[a(q, E) = sufficient].(2)\nHere, bSLLM(q, E)is the operational, reference-conditioned assessment of joint answer support. It\nis undefined when adjudication is uncertain or missing; such cases are excluded from the reported\nrate rather than counted as insufficient. For questions with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "What Counts As A Sufficient Candidate Memory Set",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bea4611275956b46851b6b44c38151094099e32b06a9a8b2a520fd0019bec423",
+            "evidence_id": "E346284f5d1cd4c68-B0018",
+            "pages": [
+              4
+            ],
+            "section": "What Counts As A Sufficient Candidate Memory Set",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1280,
+                "page": 4,
+                "section": "What Counts As A Sufficient Candidate Memory Set",
+                "section_index": 8,
+                "start": 388,
+                "text": "views.\nTable 1:Illustrative delivery-time question.Both dates are required to derive the five-day answer.\nRetrieved evidence LLM-Suff@Set Gold Hit Turn Hit\nOrder only (Feb. 5)0 1 0\nArrival only (Feb. 10)0 1 1\nOrder + arrival 11 1\nThus,S(q, E)concerns what the evidence makes answerable, independently of whether a particular\nanswerer generates the correct response. To assess this property offline, leta(q, E)be the final\ndecidedlabel from a blinded, reference-conditioned LLM adjudication givenq,y \u22c6(q), andtext(E)\n(Appendix M), witha(q, E)\u2208 {sufficient,insufficient}. We defineLLM-Suff@Setby\nbSLLM(q, E) =\u22ae[a(q, E) = sufficient].(2)\nHere, bSLLM(q, E)is the operational, reference-conditioned assessment of joint answer support. It\nis undefined when adjudication is uncertain or missing; such cases are excluded from the reported\nrate rather than counted as insufficient. For questions with "
+              }
+            ],
+            "text": "views.\nTable 1:Illustrative delivery-time question.Both dates are required to derive the five-day answer.\nRetrieved evidence LLM-Suff@Set Gold Hit Turn Hit\nOrder only (Feb. 5)0 1 0\nArrival only (Feb. 10)0 1 1\nOrder + arrival 11 1\nThus,S(q, E)concerns what the evidence makes answerable, independently of whether a particular\nanswerer generates the correct response. To assess this property offline, leta(q, E)be the final\ndecidedlabel from a blinded, reference-conditioned LLM adjudication givenq,y \u22c6(q), andtext(E)\n(Appendix M), witha(q, E)\u2208 {sufficient,insufficient}. We defineLLM-Suff@Setby\nbSLLM(q, E) =\u22ae[a(q, E) = sufficient].(2)\nHere, bSLLM(q, E)is the operational, reference-conditioned assessment of joint answer support. It\nis undefined when adjudication is uncertain or missing; such cases are excluded from the reported\nrate rather than counted as insufficient. For questions with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0019"
+        ],
+        "excerpt": "annotated supporting records, letG(q)be\ntheir nonempty set of source identifiers andH(q)be their set of annotated source-turn identifiers,\nwhich may be empty.Gold HitandTurn Hitare defined as follows:\nG(q, E) =\u22ae[src(E)\u2229 G(q)\u0338=\u2205](3)\nTH(q, E) =\u22ae[src(E)\u2229 H(q)\u0338=\u2205](4)\nThe valueG(q, E)is1ifEreaches at least one annotated supporting record; it does not require\nretrieval of every supporting record. Gold Hit is undefined whenG(q) =\u2205and is averaged over\nquestions with nonempty supporting-record annotations. The valueTH(q, E)is1ifEreaches at\nleast one annotated answer-bearing turn. Our main LONGMEMEVAL-S results average Turn Hit over\nall500questions. These proxies measure whether annotated evidence was reached, not whether the\nset suffices. In Table 1, each singleton has Gold Hit1, and the arrival alone has Turn Hit1. Neither\nyields the five-day answer, but together they do. A hit is therefore ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "What Counts As A Sufficient Candidate Memory Set",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "be54d5b44e19707e18a479e3186d3e158a614506f23e7d46dbe9a1685f133a4f",
+            "evidence_id": "E346284f5d1cd4c68-B0019",
+            "pages": [
+              4
+            ],
+            "section": "What Counts As A Sufficient Candidate Memory Set",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2176,
+                "page": 4,
+                "section": "What Counts As A Sufficient Candidate Memory Set",
+                "section_index": 8,
+                "start": 1280,
+                "text": "annotated supporting records, letG(q)be\ntheir nonempty set of source identifiers andH(q)be their set of annotated source-turn identifiers,\nwhich may be empty.Gold HitandTurn Hitare defined as follows:\nG(q, E) =\u22ae[src(E)\u2229 G(q)\u0338=\u2205](3)\nTH(q, E) =\u22ae[src(E)\u2229 H(q)\u0338=\u2205](4)\nThe valueG(q, E)is1ifEreaches at least one annotated supporting record; it does not require\nretrieval of every supporting record. Gold Hit is undefined whenG(q) =\u2205and is averaged over\nquestions with nonempty supporting-record annotations. The valueTH(q, E)is1ifEreaches at\nleast one annotated answer-bearing turn. Our main LONGMEMEVAL-S results average Turn Hit over\nall500questions. These proxies measure whether annotated evidence was reached, not whether the\nset suffices. In Table 1, each singleton has Gold Hit1, and the arrival alone has Turn Hit1. Neither\nyields the five-day answer, but together they do. A hit is therefore "
+              }
+            ],
+            "text": "annotated supporting records, letG(q)be\ntheir nonempty set of source identifiers andH(q)be their set of annotated source-turn identifiers,\nwhich may be empty.Gold HitandTurn Hitare defined as follows:\nG(q, E) =\u22ae[src(E)\u2229 G(q)\u0338=\u2205](3)\nTH(q, E) =\u22ae[src(E)\u2229 H(q)\u0338=\u2205](4)\nThe valueG(q, E)is1ifEreaches at least one annotated supporting record; it does not require\nretrieval of every supporting record. Gold Hit is undefined whenG(q) =\u2205and is averaged over\nquestions with nonempty supporting-record annotations. The valueTH(q, E)is1ifEreaches at\nleast one annotated answer-bearing turn. Our main LONGMEMEVAL-S results average Turn Hit over\nall500questions. These proxies measure whether annotated evidence was reached, not whether the\nset suffices. In Table 1, each singleton has Gold Hit1, and the arrival alone has Turn Hit1. Neither\nyields the five-day answer, but together they do. A hit is therefore "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0020"
+        ],
+        "excerpt": "necessary for sufficiency but does\nnot establish it, which is why we report the proxies alongside, not in place of, the set-level judgment.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "What Counts As A Sufficient Candidate Memory Set",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d147b0787a3a94d4c3b68d09b236a1803eea1d7f33998c15f33350ba435177d4",
+            "evidence_id": "E346284f5d1cd4c68-B0020",
+            "pages": [
+              4
+            ],
+            "section": "What Counts As A Sufficient Candidate Memory Set",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2315,
+                "page": 4,
+                "section": "What Counts As A Sufficient Candidate Memory Set",
+                "section_index": 8,
+                "start": 2176,
+                "text": "necessary for sufficiency but does\nnot establish it, which is why we report the proxies alongside, not in place of, the set-level judgment."
+              }
+            ],
+            "text": "necessary for sufficiency but does\nnot establish it, which is why we report the proxies alongside, not in place of, the set-level judgment."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0024"
+        ],
+        "excerpt": "intoE t+1 until the budget is exhausted.\nThe comprehensive evidence set returns to Agent, and Agent answers the question based on the set.\nA one-shot reader returnsE= TopK(q,M)and cannot recover once a required exhibit is missing.\nBudgeted reconstruction instead starts from an initial setE 0 and adds only unseen records,\nEt+1 =E t \u222aK t, K t \u2286 M \\Et.(6)\nEquation 5 is the problem. The two gaps in Section 3 say what a solution must do. Composition\nchoosesE 0 so that distinct answer requirements are covered rather than redundant relevant items.\nCompletion chooses eachK t so that a missing exhibit can still enter the record after the first page.\nBFR assigns one stage to each gap. Let fMbe an agent-memory note representation and\u03d5a ground-\ning map intoM. Stage I buildsE 0 with FCA-MS and Stage II runs a completion schedule\u03c0:\nE0 =\u03d5\n\u0010\n\u03c1FCA(q, fM)\n\u0011\n,\nAt =\u03c0(q, Et, t),\nEt+1 =E t \u222a\u03ba \u03c0(q, Et, Ct), t ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5d53f47cedcf35ea63d399b2139eed99dc9708dd0acceca91867882d4faefc92",
+            "evidence_id": "E346284f5d1cd4c68-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3193,
+                "page": 5,
+                "section": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+                "section_index": 10,
+                "start": 2293,
+                "text": "intoE t+1 until the budget is exhausted.\nThe comprehensive evidence set returns to Agent, and Agent answers the question based on the set.\nA one-shot reader returnsE= TopK(q,M)and cannot recover once a required exhibit is missing.\nBudgeted reconstruction instead starts from an initial setE 0 and adds only unseen records,\nEt+1 =E t \u222aK t, K t \u2286 M \\Et.(6)\nEquation 5 is the problem. The two gaps in Section 3 say what a solution must do. Composition\nchoosesE 0 so that distinct answer requirements are covered rather than redundant relevant items.\nCompletion chooses eachK t so that a missing exhibit can still enter the record after the first page.\nBFR assigns one stage to each gap. Let fMbe an agent-memory note representation and\u03d5a ground-\ning map intoM. Stage I buildsE 0 with FCA-MS and Stage II runs a completion schedule\u03c0:\nE0 =\u03d5\n\u0010\n\u03c1FCA(q, fM)\n\u0011\n,\nAt =\u03c0(q, Et, t),\nEt+1 =E t \u222a\u03ba \u03c0(q, Et, Ct), t "
+              }
+            ],
+            "text": "intoE t+1 until the budget is exhausted.\nThe comprehensive evidence set returns to Agent, and Agent answers the question based on the set.\nA one-shot reader returnsE= TopK(q,M)and cannot recover once a required exhibit is missing.\nBudgeted reconstruction instead starts from an initial setE 0 and adds only unseen records,\nEt+1 =E t \u222aK t, K t \u2286 M \\Et.(6)\nEquation 5 is the problem. The two gaps in Section 3 say what a solution must do. Composition\nchoosesE 0 so that distinct answer requirements are covered rather than redundant relevant items.\nCompletion chooses eachK t so that a missing exhibit can still enter the record after the first page.\nBFR assigns one stage to each gap. Let fMbe an agent-memory note representation and\u03d5a ground-\ning map intoM. Stage I buildsE 0 with FCA-MS and Stage II runs a completion schedule\u03c0:\nE0 =\u03d5\n\u0010\n\u03c1FCA(q, fM)\n\u0011\n,\nAt =\u03c0(q, Et, t),\nEt+1 =E t \u222a\u03ba \u03c0(q, Et, Ct), t "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0025"
+        ],
+        "excerpt": "< T.\n(7)\nAt names the retrieval views and cues at roundt,C t is the unseen candidate pool those calls return,\nand\u03ba \u03c0 retains added records. The answerer readsE T after the budget is spent. Figure 3 makes this\ndata flow explicit. Stage I asks the agent memory system for an expanded candidate pool beyond its\nusual top-k, decomposes the query into requirements, filters the pool by requirement-aware FCA,\nand asks an LLM to select a compact supporting subset. A bounded grounding map then supplies\nthe initial source-record evidenceE 0. Stage II treats this set as a cumulative evidence state, retrieves\nthrough the views specified by\u03c0, removes records already inE t, and retains novel support until an\nobservable budget is exhausted. The figure instantiates this loop with BFR-MV; BFR-Text uses the\nsame exclusion, retention, accumulation, and stopping operations with text access only. Appendix ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3d75617bc9e2ab23e2ce97c6123aa346c4423ef22acd19662fb4842e4e49ddc4",
+            "evidence_id": "E346284f5d1cd4c68-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4089,
+                "page": 5,
+                "section": "Problem:Construct A Sufficient Set Under A Retrieval Budget",
+                "section_index": 10,
+                "start": 3193,
+                "text": "< T.\n(7)\nAt names the retrieval views and cues at roundt,C t is the unseen candidate pool those calls return,\nand\u03ba \u03c0 retains added records. The answerer readsE T after the budget is spent. Figure 3 makes this\ndata flow explicit. Stage I asks the agent memory system for an expanded candidate pool beyond its\nusual top-k, decomposes the query into requirements, filters the pool by requirement-aware FCA,\nand asks an LLM to select a compact supporting subset. A bounded grounding map then supplies\nthe initial source-record evidenceE 0. Stage II treats this set as a cumulative evidence state, retrieves\nthrough the views specified by\u03c0, removes records already inE t, and retains novel support until an\nobservable budget is exhausted. The figure instantiates this loop with BFR-MV; BFR-Text uses the\nsame exclusion, retention, accumulation, and stopping operations with text access only. Appendix "
+              }
+            ],
+            "text": "< T.\n(7)\nAt names the retrieval views and cues at roundt,C t is the unseen candidate pool those calls return,\nand\u03ba \u03c0 retains added records. The answerer readsE T after the budget is spent. Figure 3 makes this\ndata flow explicit. Stage I asks the agent memory system for an expanded candidate pool beyond its\nusual top-k, decomposes the query into requirements, filters the pool by requirement-aware FCA,\nand asks an LLM to select a compact supporting subset. A bounded grounding map then supplies\nthe initial source-record evidenceE 0. Stage II treats this set as a cumulative evidence state, retrieves\nthrough the views specified by\u03c0, removes records already inE t, and retains novel support until an\nobservable budget is exhausted. The figure instantiates this loop with BFR-MV; BFR-Text uses the\nsame exclusion, retention, accumulation, and stopping operations with text access only. Appendix "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0027"
+        ],
+        "excerpt": "Expanded retrieval and requirement decomposition.An agent memory system returns an ordered\npoolC q = TopN(Retrieveagent(q, fM)), withN > krelative to its usual top-kretrieval cutoff. An\nLLM decomposesqinto answer-oriented requirementsR q ={r j}Jj=1, including distinct facts,\nbridges, list items, and temporal constraints.\n5\nRequirement-aware prefilter.An FCA-based prefilter uses the requirements and retrieved candi-\ndates to retain a smaller poolP q = FCAPrefilter(R q,C q). This step exposes a broader range of\npotentially complementary notes to the selector while bounding its input.\nMinimum-subset selection and grounding.An LLM receivesqandP q and is instructed to se-\nlect the smallest memory subset that jointly supplies the required information. Its selected IDs\nare checked against the prefiltered pool and deduplicated; the implementation uses requirement-\ncoverage output and a fixed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stagei: Compose Complementary Evidence Withfca-Ms",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "17d0e68ca4a916238fe0018d2f8ba8ef3c366eb668b4b9fc99b00fa2bb3b44e8",
+            "evidence_id": "E346284f5d1cd4c68-B0027",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Stagei: Compose Complementary Evidence Withfca-Ms",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 324,
+                "page": 5,
+                "section": "Stagei: Compose Complementary Evidence Withfca-Ms",
+                "section_index": 11,
+                "start": 0,
+                "text": "Expanded retrieval and requirement decomposition.An agent memory system returns an ordered\npoolC q = TopN(Retrieveagent(q, fM)), withN > krelative to its usual top-kretrieval cutoff. An\nLLM decomposesqinto answer-oriented requirementsR q ={r j}Jj=1, including distinct facts,\nbridges, list items, and temporal constraints.\n5"
+              },
+              {
+                "end": 572,
+                "page": 6,
+                "section": "Stagei: Compose Complementary Evidence Withfca-Ms",
+                "section_index": 12,
+                "start": 0,
+                "text": "Requirement-aware prefilter.An FCA-based prefilter uses the requirements and retrieved candi-\ndates to retain a smaller poolP q = FCAPrefilter(R q,C q). This step exposes a broader range of\npotentially complementary notes to the selector while bounding its input.\nMinimum-subset selection and grounding.An LLM receivesqandP q and is instructed to se-\nlect the smallest memory subset that jointly supplies the required information. Its selected IDs\nare checked against the prefiltered pool and deduplicated; the implementation uses requirement-\ncoverage output and a fixed "
+              }
+            ],
+            "text": "Expanded retrieval and requirement decomposition.An agent memory system returns an ordered\npoolC q = TopN(Retrieveagent(q, fM)), withN > krelative to its usual top-kretrieval cutoff. An\nLLM decomposesqinto answer-oriented requirementsR q ={r j}Jj=1, including distinct facts,\nbridges, list items, and temporal constraints.\n5\nRequirement-aware prefilter.An FCA-based prefilter uses the requirements and retrieved candi-\ndates to retain a smaller poolP q = FCAPrefilter(R q,C q). This step exposes a broader range of\npotentially complementary notes to the selector while bounding its input.\nMinimum-subset selection and grounding.An LLM receivesqandP q and is instructed to se-\nlect the smallest memory subset that jointly supplies the required information. Its selected IDs\nare checked against the prefiltered pool and deduplicated; the implementation uses requirement-\ncoverage output and a fixed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0028"
+        ],
+        "excerpt": "fallback if the valid subset is empty (Appendix E). Only the resulting\nselected notesSare grounded to source turns by\u03d5to produceE 0 \u2286 M; the retriever's initial top-k\nis a reference cutoff, not a retained base set.\nThis stage improves requirement coverage within the initial candidate pool but remains bounded by\nthat pool. A required record can therefore be absent fromE 0 even whenE 0 already contains several\nrecords related to the question. Stage II treats this remaining gap as an acquisition problem instead\nof reselecting repeatedly from the same pool. Algorithm 1 in Appendix D summarizes the selection\nand grounding steps.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stagei: Compose Complementary Evidence Withfca-Ms",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c3af4b201ba89011af5657ac7bdc563526a6ca0ba1a1f214c579a41d6278f568",
+            "evidence_id": "E346284f5d1cd4c68-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Stagei: Compose Complementary Evidence Withfca-Ms",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1203,
+                "page": 6,
+                "section": "Stagei: Compose Complementary Evidence Withfca-Ms",
+                "section_index": 12,
+                "start": 572,
+                "text": "fallback if the valid subset is empty (Appendix E). Only the resulting\nselected notesSare grounded to source turns by\u03d5to produceE 0 \u2286 M; the retriever's initial top-k\nis a reference cutoff, not a retained base set.\nThis stage improves requirement coverage within the initial candidate pool but remains bounded by\nthat pool. A required record can therefore be absent fromE 0 even whenE 0 already contains several\nrecords related to the question. Stage II treats this remaining gap as an acquisition problem instead\nof reselecting repeatedly from the same pool. Algorithm 1 in Appendix D summarizes the selection\nand grounding steps."
+              }
+            ],
+            "text": "fallback if the valid subset is empty (Appendix E). Only the resulting\nselected notesSare grounded to source turns by\u03d5to produceE 0 \u2286 M; the retriever's initial top-k\nis a reference cutoff, not a retained base set.\nThis stage improves requirement coverage within the initial candidate pool but remains bounded by\nthat pool. A required record can therefore be absent fromE 0 even whenE 0 already contains several\nrecords related to the question. Stage II treats this remaining gap as an acquisition problem instead\nof reselecting repeatedly from the same pool. Algorithm 1 in Appendix D summarizes the selection\nand grounding steps."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0029"
+        ],
+        "excerpt": "Multi-view access to one fixed store.Text, entity, and session indices provide different access paths\nto the same source-grounded records inM. At roundt, each actiona= (v, c)\u2208A t specifies a view\nvand a cuec. The retrievers exclude all records already contained inE t:\nCt = Unique\n\uf8eb\n\uf8ed [\n(v,c)\u2208At\nRv(c,M \\Et)\n\uf8f6\n\uf8f8 .(8)\nThe exclusion constraint makes acquisition cumulative and duplicate-free. The retention rule\u03ba \u03c0\nranks the returned records by relevance and by novelty with respect to the current set, keeps at most\nkkeep of them, and adds them toE t by set union. Consequently, each round either extends the\nreachable evidence or leaves the set unchanged.\nBudgeted stopping.The budgetB= (B step, Bcall, Bnew)limits the number of rounds, retrieval\ncalls, and newly retained records. The main configuration allows three rounds, six calls, and30new\nrecords. We use budget exhaustion as the stopping ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stageii: Complete Missing Support Under A Budget",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7bb0d82630981207e891c36527c38a444a3671ce4aab00d2cccdcb888edb4c3d",
+            "evidence_id": "E346284f5d1cd4c68-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Stageii: Complete Missing Support Under A Budget",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 6,
+                "section": "Stageii: Complete Missing Support Under A Budget",
+                "section_index": 13,
+                "start": 0,
+                "text": "Multi-view access to one fixed store.Text, entity, and session indices provide different access paths\nto the same source-grounded records inM. At roundt, each actiona= (v, c)\u2208A t specifies a view\nvand a cuec. The retrievers exclude all records already contained inE t:\nCt = Unique\n\uf8eb\n\uf8ed [\n(v,c)\u2208At\nRv(c,M \\Et)\n\uf8f6\n\uf8f8 .(8)\nThe exclusion constraint makes acquisition cumulative and duplicate-free. The retention rule\u03ba \u03c0\nranks the returned records by relevance and by novelty with respect to the current set, keeps at most\nkkeep of them, and adds them toE t by set union. Consequently, each round either extends the\nreachable evidence or leaves the set unchanged.\nBudgeted stopping.The budgetB= (B step, Bcall, Bnew)limits the number of rounds, retrieval\ncalls, and newly retained records. The main configuration allows three rounds, six calls, and30new\nrecords. We use budget exhaustion as the stopping "
+              }
+            ],
+            "text": "Multi-view access to one fixed store.Text, entity, and session indices provide different access paths\nto the same source-grounded records inM. At roundt, each actiona= (v, c)\u2208A t specifies a view\nvand a cuec. The retrievers exclude all records already contained inE t:\nCt = Unique\n\uf8eb\n\uf8ed [\n(v,c)\u2208At\nRv(c,M \\Et)\n\uf8f6\n\uf8f8 .(8)\nThe exclusion constraint makes acquisition cumulative and duplicate-free. The retention rule\u03ba \u03c0\nranks the returned records by relevance and by novelty with respect to the current set, keeps at most\nkkeep of them, and adds them toE t by set union. Consequently, each round either extends the\nreachable evidence or leaves the set unchanged.\nBudgeted stopping.The budgetB= (B step, Bcall, Bnew)limits the number of rounds, retrieval\ncalls, and newly retained records. The main configuration allows three rounds, six calls, and30new\nrecords. We use budget exhaustion as the stopping "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0030"
+        ],
+        "excerpt": "condition because the offline sufficiency measures\nin Section 3 require either a reference answer or gold annotations and are therefore unavailable at\ninference time. Algorithm 2 in Appendix D gives the shared completion loop; the fixed schedules\ndiffer only in how they instantiateA t.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stageii: Complete Missing Support Under A Budget",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6553f626c190729c12409b79415aa584e3611a6911b0b320eef01d8926a36caf",
+            "evidence_id": "E346284f5d1cd4c68-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Stageii: Complete Missing Support Under A Budget",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1182,
+                "page": 6,
+                "section": "Stageii: Complete Missing Support Under A Budget",
+                "section_index": 13,
+                "start": 896,
+                "text": "condition because the offline sufficiency measures\nin Section 3 require either a reference answer or gold annotations and are therefore unavailable at\ninference time. Algorithm 2 in Appendix D gives the shared completion loop; the fixed schedules\ndiffer only in how they instantiateA t."
+              }
+            ],
+            "text": "condition because the offline sufficiency measures\nin Section 3 require either a reference answer or gold annotations and are therefore unavailable at\ninference time. Algorithm 2 in Appendix D gives the shared completion loop; the fixed schedules\ndiffer only in how they instantiateA t."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0033"
+        ],
+        "excerpt": "In this section, we conduct controlled experiments to evaluate BFR and answer four research ques-\ntions:(RQ1)How does BFR compare with same-store memory baselines in answer quality?(RQ2)\nDo retrieved sets contain sufficient evidence to answer the question, and how does direct sufficiency\n6\nTable 2:Performance across different question types on LOCOMO(n=200). Same flat store and\nextractive answerer; BFR is BFR-MV C6. F1 and LLM-Judge (J) are percentages. Bold denotes the\nbest value in each column.\nMethod Multi-Hop Temporal Open Domain Single-Hop Overall",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9de0f053493075c91c84531629ee9bc3cff354a626ea2db48d84a36a643cecae",
+            "evidence_id": "E346284f5d1cd4c68-B0033",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 290,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 15,
+                "start": 0,
+                "text": "In this section, we conduct controlled experiments to evaluate BFR and answer four research ques-\ntions:(RQ1)How does BFR compare with same-store memory baselines in answer quality?(RQ2)\nDo retrieved sets contain sufficient evidence to answer the question, and how does direct sufficiency\n6"
+              },
+              {
+                "end": 267,
+                "page": 7,
+                "section": "Experiments",
+                "section_index": 16,
+                "start": 0,
+                "text": "Table 2:Performance across different question types on LOCOMO(n=200). Same flat store and\nextractive answerer; BFR is BFR-MV C6. F1 and LLM-Judge (J) are percentages. Bold denotes the\nbest value in each column.\nMethod Multi-Hop Temporal Open Domain Single-Hop Overall"
+              }
+            ],
+            "text": "In this section, we conduct controlled experiments to evaluate BFR and answer four research ques-\ntions:(RQ1)How does BFR compare with same-store memory baselines in answer quality?(RQ2)\nDo retrieved sets contain sufficient evidence to answer the question, and how does direct sufficiency\n6\nTable 2:Performance across different question types on LOCOMO(n=200). Same flat store and\nextractive answerer; BFR is BFR-MV C6. F1 and LLM-Judge (J) are percentages. Bold denotes the\nbest value in each column.\nMethod Multi-Hop Temporal Open Domain Single-Hop Overall"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0034"
+        ],
+        "excerpt": "F1 J F1 J F1 J F1 J F1 J\nMem0 (Chhikara et al., 2025) 29.3 42.4 74.1 78.0 2.2 0.0 58.5 59.6 55.3 59.0\nA-Mem (Xu et al., 2025) 32.3 42.4 70.2 72.03.80.0 47.1 51.4 48.7 53.0\nCoM\u2217 (Xu et al., 2026) 29.3 36.4 66.2 70.0 3.2 0.0 52.3 56.0 50.0 54.0\nMRAgent-Flat\u2217 (Ji et al., 2026) 32.8 45.5 72.1 78.0 2.9 0.0 63.2 68.8 58.0 64.5\nBFR (ours) 44.6 48.5 78.1 80.0 2.7 12.5 75.7 77.1 68.3 70.5\ncompare with annotated-support hits?(RQ3)How do the two stages and access schedules contribute\nto performance?(RQ4)How do answer quality and evidence coverage change with additional re-\ntrieval cost? The appendix reports full operating-point, question-type, and cross-system results.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "F1 J F1 J F1 J F1 J F1 J",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "392962bf112321d9a2dbdfbcdb3a5d6c3707d12ba73cbb975afed31e776aefe8",
+            "evidence_id": "E346284f5d1cd4c68-B0034",
+            "pages": [
+              7
+            ],
+            "section": "F1 J F1 J F1 J F1 J F1 J",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 666,
+                "page": 7,
+                "section": "F1 J F1 J F1 J F1 J F1 J",
+                "section_index": 17,
+                "start": 0,
+                "text": "F1 J F1 J F1 J F1 J F1 J\nMem0 (Chhikara et al., 2025) 29.3 42.4 74.1 78.0 2.2 0.0 58.5 59.6 55.3 59.0\nA-Mem (Xu et al., 2025) 32.3 42.4 70.2 72.03.80.0 47.1 51.4 48.7 53.0\nCoM\u2217 (Xu et al., 2026) 29.3 36.4 66.2 70.0 3.2 0.0 52.3 56.0 50.0 54.0\nMRAgent-Flat\u2217 (Ji et al., 2026) 32.8 45.5 72.1 78.0 2.9 0.0 63.2 68.8 58.0 64.5\nBFR (ours) 44.6 48.5 78.1 80.0 2.7 12.5 75.7 77.1 68.3 70.5\ncompare with annotated-support hits?(RQ3)How do the two stages and access schedules contribute\nto performance?(RQ4)How do answer quality and evidence coverage change with additional re-\ntrieval cost? The appendix reports full operating-point, question-type, and cross-system results."
+              }
+            ],
+            "text": "F1 J F1 J F1 J F1 J F1 J\nMem0 (Chhikara et al., 2025) 29.3 42.4 74.1 78.0 2.2 0.0 58.5 59.6 55.3 59.0\nA-Mem (Xu et al., 2025) 32.3 42.4 70.2 72.03.80.0 47.1 51.4 48.7 53.0\nCoM\u2217 (Xu et al., 2026) 29.3 36.4 66.2 70.0 3.2 0.0 52.3 56.0 50.0 54.0\nMRAgent-Flat\u2217 (Ji et al., 2026) 32.8 45.5 72.1 78.0 2.9 0.0 63.2 68.8 58.0 64.5\nBFR (ours) 44.6 48.5 78.1 80.0 2.7 12.5 75.7 77.1 68.3 70.5\ncompare with annotated-support hits?(RQ3)How do the two stages and access schedules contribute\nto performance?(RQ4)How do answer quality and evidence coverage change with additional re-\ntrieval cost? The appendix reports full operating-point, question-type, and cross-system results."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0035"
+        ],
+        "excerpt": "Datasets.We evaluate on two benchmarks for long-term conversational memory. LOCOMO(Ma-\nharana et al., 2024) tests understanding of long, multi-session conversations, including questions\nthat require linking information across turns. LONGMEMEVAL-S (Wu et al., 2025) tests whether\na memory system can answer questions about information distributed across extended interaction\nhistories and sessions. Both provide evidence annotations, allowing us to assess retrieval as well as\nfinal answers. To keep multi-arm evaluation costs manageable, we use a fixed stratified200-question\nLOCOMOdevelopment subset; we evaluate all500questions of LONGMEMEVAL-S. Dataset prove-\nnance and the construction of every derived evaluation subset are documented in Appendix G.\nBaselines.We evaluate BFR against four representative memory-augmented baselines:\nMem0 (Chhikara et al., 2025), A-Mem (Xu et al., 2025), CoM \u2217 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6ddde34823c153a31d526f3833c4541dcf136d10ef3e5e20479b9496d88476e5",
+            "evidence_id": "E346284f5d1cd4c68-B0035",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 0,
+                "text": "Datasets.We evaluate on two benchmarks for long-term conversational memory. LOCOMO(Ma-\nharana et al., 2024) tests understanding of long, multi-session conversations, including questions\nthat require linking information across turns. LONGMEMEVAL-S (Wu et al., 2025) tests whether\na memory system can answer questions about information distributed across extended interaction\nhistories and sessions. Both provide evidence annotations, allowing us to assess retrieval as well as\nfinal answers. To keep multi-arm evaluation costs manageable, we use a fixed stratified200-question\nLOCOMOdevelopment subset; we evaluate all500questions of LONGMEMEVAL-S. Dataset prove-\nnance and the construction of every derived evaluation subset are documented in Appendix G.\nBaselines.We evaluate BFR against four representative memory-augmented baselines:\nMem0 (Chhikara et al., 2025), A-Mem (Xu et al., 2025), CoM \u2217 "
+              }
+            ],
+            "text": "Datasets.We evaluate on two benchmarks for long-term conversational memory. LOCOMO(Ma-\nharana et al., 2024) tests understanding of long, multi-session conversations, including questions\nthat require linking information across turns. LONGMEMEVAL-S (Wu et al., 2025) tests whether\na memory system can answer questions about information distributed across extended interaction\nhistories and sessions. Both provide evidence annotations, allowing us to assess retrieval as well as\nfinal answers. To keep multi-arm evaluation costs manageable, we use a fixed stratified200-question\nLOCOMOdevelopment subset; we evaluate all500questions of LONGMEMEVAL-S. Dataset prove-\nnance and the construction of every derived evaluation subset are documented in Appendix G.\nBaselines.We evaluate BFR against four representative memory-augmented baselines:\nMem0 (Chhikara et al., 2025), A-Mem (Xu et al., 2025), CoM \u2217 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0036"
+        ],
+        "excerpt": "(Xu et al., 2026), and MRAgent-\nFlat\u2217 (Ji et al., 2026). Within each benchmark, all arms share the same flat turn store, extractive\nanswerer, and answer judge. The starred methods are controlled same-store adaptations of the pub-\nlished systems. Baseline retrieval and BFR initialization are detailed in Appendix E.\nMetrics.Answer quality is measured by Porter stem F1 and LLM-Judge (J) on LOCOMO, and\nby Judge on LONGMEMEVAL-S. The answer judge isgpt-5.5at temperature zero with prompt\nmem0 accuracy v1. On LOCOMO,G(q)is the released set of supporting-record identifiers. We\nreport the sufficiency indicators in Section 3 and two finer measures of annotated-evidence recovery:\nER(q, E) =|src(E)\u2229 G(q)||G(q)| ,CER(q, E) =\u22ae[G(q)\u2286src(E)].(9)\nEvidence Recall (ER) is the fraction of annotated supporting records inG(q)thatErecovers,\nwhile Complete Evidence Recall (CER) requires every annotated ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "71ab7609074dfd1c9606dcd9d9345d1c74b563e415f0e76047993a1b3e2e5aed",
+            "evidence_id": "E346284f5d1cd4c68-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 898,
+                "text": "(Xu et al., 2026), and MRAgent-\nFlat\u2217 (Ji et al., 2026). Within each benchmark, all arms share the same flat turn store, extractive\nanswerer, and answer judge. The starred methods are controlled same-store adaptations of the pub-\nlished systems. Baseline retrieval and BFR initialization are detailed in Appendix E.\nMetrics.Answer quality is measured by Porter stem F1 and LLM-Judge (J) on LOCOMO, and\nby Judge on LONGMEMEVAL-S. The answer judge isgpt-5.5at temperature zero with prompt\nmem0 accuracy v1. On LOCOMO,G(q)is the released set of supporting-record identifiers. We\nreport the sufficiency indicators in Section 3 and two finer measures of annotated-evidence recovery:\nER(q, E) =|src(E)\u2229 G(q)||G(q)| ,CER(q, E) =\u22ae[G(q)\u2286src(E)].(9)\nEvidence Recall (ER) is the fraction of annotated supporting records inG(q)thatErecovers,\nwhile Complete Evidence Recall (CER) requires every annotated "
+              }
+            ],
+            "text": "(Xu et al., 2026), and MRAgent-\nFlat\u2217 (Ji et al., 2026). Within each benchmark, all arms share the same flat turn store, extractive\nanswerer, and answer judge. The starred methods are controlled same-store adaptations of the pub-\nlished systems. Baseline retrieval and BFR initialization are detailed in Appendix E.\nMetrics.Answer quality is measured by Porter stem F1 and LLM-Judge (J) on LOCOMO, and\nby Judge on LONGMEMEVAL-S. The answer judge isgpt-5.5at temperature zero with prompt\nmem0 accuracy v1. On LOCOMO,G(q)is the released set of supporting-record identifiers. We\nreport the sufficiency indicators in Section 3 and two finer measures of annotated-evidence recovery:\nER(q, E) =|src(E)\u2229 G(q)||G(q)| ,CER(q, E) =\u22ae[G(q)\u2286src(E)].(9)\nEvidence Recall (ER) is the fraction of annotated supporting records inG(q)thatErecovers,\nwhile Complete Evidence Recall (CER) requires every annotated "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0037"
+        ],
+        "excerpt": "supporting record. On LONG-\nMEMEVAL-S,H(q)comprises turns markedhas answer; Turn Hit measures whether the re-\ntrieved set reaches one. These retrieval and set-level measures complement rather than replace\nend-to-end answer scores. Prompts are listed in Appendix O.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "01d5e015425543a8f774ae5b4beb46e7bc5d680210b1122f7b53130f28e43738",
+            "evidence_id": "E346284f5d1cd4c68-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2054,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 1790,
+                "text": "supporting record. On LONG-\nMEMEVAL-S,H(q)comprises turns markedhas answer; Turn Hit measures whether the re-\ntrieved set reaches one. These retrieval and set-level measures complement rather than replace\nend-to-end answer scores. Prompts are listed in Appendix O."
+              }
+            ],
+            "text": "supporting record. On LONG-\nMEMEVAL-S,H(q)comprises turns markedhas answer; Turn Hit measures whether the re-\ntrieved set reaches one. These retrieval and set-level measures complement rather than replace\nend-to-end answer scores. Prompts are listed in Appendix O."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0038"
+        ],
+        "excerpt": "RQ1: Does BFR improve answer quality under the same memory store?\nBFR achieves the best overall answer quality among same-store methods on both benchmarks (Ta-\nble 2, Table 3).On LOCOMO, it leads in Stem F1 and Judge across Multi-Hop, Temporal, and\nSingle-Hop questions. On LONGMEMEVAL-S, it also leads in overall Judge and Turn Hit, with\na particularly strong gain on Temporal questions. The small LOCOMOOpen Domain slice is re-\nported without a separate type-level conclusion. These results are consistent with the two-stage\ndesign: FCA-MS assembles complementary initial evidence, and budgeted completion retrieves un-\nseen support beyond the initial set. The following analyses test whether this support closes evidence\n7\nTable 3:Performance across different question types on LONGMEMEVAL-S(n=500). The four\nquestion-type columns report Judge accuracy; All values are percentages. All rows share ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalresult",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9264935880906f660599f39aaf174183d069ae7dce3112150cc42ce3989e9aa6",
+            "evidence_id": "E346284f5d1cd4c68-B0038",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Experimentalresult",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 725,
+                "page": 7,
+                "section": "Experimentalresult",
+                "section_index": 19,
+                "start": 0,
+                "text": "RQ1: Does BFR improve answer quality under the same memory store?\nBFR achieves the best overall answer quality among same-store methods on both benchmarks (Ta-\nble 2, Table 3).On LOCOMO, it leads in Stem F1 and Judge across Multi-Hop, Temporal, and\nSingle-Hop questions. On LONGMEMEVAL-S, it also leads in overall Judge and Turn Hit, with\na particularly strong gain on Temporal questions. The small LOCOMOOpen Domain slice is re-\nported without a separate type-level conclusion. These results are consistent with the two-stage\ndesign: FCA-MS assembles complementary initial evidence, and budgeted completion retrieves un-\nseen support beyond the initial set. The following analyses test whether this support closes evidence\n7"
+              },
+              {
+                "end": 174,
+                "page": 8,
+                "section": "Experimentalresult",
+                "section_index": 20,
+                "start": 0,
+                "text": "Table 3:Performance across different question types on LONGMEMEVAL-S(n=500). The four\nquestion-type columns report Judge accuracy; All values are percentages. All rows share "
+              }
+            ],
+            "text": "RQ1: Does BFR improve answer quality under the same memory store?\nBFR achieves the best overall answer quality among same-store methods on both benchmarks (Ta-\nble 2, Table 3).On LOCOMO, it leads in Stem F1 and Judge across Multi-Hop, Temporal, and\nSingle-Hop questions. On LONGMEMEVAL-S, it also leads in overall Judge and Turn Hit, with\na particularly strong gain on Temporal questions. The small LOCOMOOpen Domain slice is re-\nported without a separate type-level conclusion. These results are consistent with the two-stage\ndesign: FCA-MS assembles complementary initial evidence, and budgeted completion retrieves un-\nseen support beyond the initial set. The following analyses test whether this support closes evidence\n7\nTable 3:Performance across different question types on LONGMEMEVAL-S(n=500). The four\nquestion-type columns report Judge accuracy; All values are percentages. All rows share "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0039"
+        ],
+        "excerpt": "the same\nturn store, extractive answerer, and judge. Bold and underline denote the best and second-best values\nin each column. The full six-type Turn Hit breakdown is in Appendix K.\nJudge by question type Overall\nMethod Multi-S Single-S Temporal Preference Judge Turn Hit\nMem0 (Chhikara et al., 2025) 60.9 87.1 65.4 26.7 72.4 64.8\nA-Mem (Xu et al., 2025) 54.1 87.1 57.133.368.6 82.2\nCoM \u2217(Xu et al., 2026) 54.1 87.1 57.133.368.6 80.6\nMRAgent-Flat\u2217 (Ji et al., 2026) 58.6 90.0 63.2 30.0 71.4 78.8\nBFR (ours) 69.2 92.9 84.2 30.0 82.2 91.4\nTable 4:Set sufficiency and annotated-evidence reach across same-store systems.On LOCOMO\n(n=200), LLM-Suff@Set is the blinded set-level judgment and Gold Hit measures annotated-\nevidence access. On LONGMEMEVAL-S, LLM-Suff@Set is the set-level judgment and Turn Hit\nmeasures annotated-evidence access over all500questions, with unannotated items counted ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalresult",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "40312b75f55ba6b0a08e0bd3783c30ab05a84041f7d497f93ea9d72f39cb8602",
+            "evidence_id": "E346284f5d1cd4c68-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Experimentalresult",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1064,
+                "page": 8,
+                "section": "Experimentalresult",
+                "section_index": 20,
+                "start": 174,
+                "text": "the same\nturn store, extractive answerer, and judge. Bold and underline denote the best and second-best values\nin each column. The full six-type Turn Hit breakdown is in Appendix K.\nJudge by question type Overall\nMethod Multi-S Single-S Temporal Preference Judge Turn Hit\nMem0 (Chhikara et al., 2025) 60.9 87.1 65.4 26.7 72.4 64.8\nA-Mem (Xu et al., 2025) 54.1 87.1 57.133.368.6 82.2\nCoM \u2217(Xu et al., 2026) 54.1 87.1 57.133.368.6 80.6\nMRAgent-Flat\u2217 (Ji et al., 2026) 58.6 90.0 63.2 30.0 71.4 78.8\nBFR (ours) 69.2 92.9 84.2 30.0 82.2 91.4\nTable 4:Set sufficiency and annotated-evidence reach across same-store systems.On LOCOMO\n(n=200), LLM-Suff@Set is the blinded set-level judgment and Gold Hit measures annotated-\nevidence access. On LONGMEMEVAL-S, LLM-Suff@Set is the set-level judgment and Turn Hit\nmeasures annotated-evidence access over all500questions, with unannotated items counted "
+              }
+            ],
+            "text": "the same\nturn store, extractive answerer, and judge. Bold and underline denote the best and second-best values\nin each column. The full six-type Turn Hit breakdown is in Appendix K.\nJudge by question type Overall\nMethod Multi-S Single-S Temporal Preference Judge Turn Hit\nMem0 (Chhikara et al., 2025) 60.9 87.1 65.4 26.7 72.4 64.8\nA-Mem (Xu et al., 2025) 54.1 87.1 57.133.368.6 82.2\nCoM \u2217(Xu et al., 2026) 54.1 87.1 57.133.368.6 80.6\nMRAgent-Flat\u2217 (Ji et al., 2026) 58.6 90.0 63.2 30.0 71.4 78.8\nBFR (ours) 69.2 92.9 84.2 30.0 82.2 91.4\nTable 4:Set sufficiency and annotated-evidence reach across same-store systems.On LOCOMO\n(n=200), LLM-Suff@Set is the blinded set-level judgment and Gold Hit measures annotated-\nevidence access. On LONGMEMEVAL-S, LLM-Suff@Set is the set-level judgment and Turn Hit\nmeasures annotated-evidence access over all500questions, with unannotated items counted "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0040"
+        ],
+        "excerpt": "as\nmisses. All values are percentages. BFR-Text uses C3 and BFR-MV uses C6.\nSystem LOCOMO(n=200) LONGMEMEVAL-S (n=500)\nLLM-Suff@Set Gold Hit LLM-Suff@Set Turn Hit\nMem0 (Chhikara et al., 2025) 45.5% 57.0% 48.0% 64.8%\nA-Mem (Xu et al., 2025) 36.5% 50.0% 38.0% 82.2%\nCoM\u2217 (Xu et al., 2026) 44.0% 49.0% 49.0% 80.6%\nMRAgent-Flat\u2217 (Ji et al., 2026) 54.5% 62.5% 56.0% 78.8%\nFCA-MS (Stage I Only) 42.5% 51.0% 48.0% 85.0%\nBFR-Text 62.0% 72.5% 63.0% 88.6%\nBFR-MV 63.5% 73.5% 65.0% 91.4%\ngaps and how stage, access schedule, and budget contribute. Paired same-store comparisons and the\nseparate comparison with CoM and Full-MRAgent are in Appendix H and Appendix C, respectively.\nRQ2: Do the retrieved sets contain the evidence needed for an answer?\nTable 6:Stage and access-schedule ablation.\nConfiguration LOCOMOLONGMEMEVAL-S",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalresult",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3c072a4d93cf22b8ae3be0b460a7c151e17f752e4402844377384926fb2d8c4a",
+            "evidence_id": "E346284f5d1cd4c68-B0040",
+            "pages": [
+              8
+            ],
+            "section": "Experimentalresult",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1880,
+                "page": 8,
+                "section": "Experimentalresult",
+                "section_index": 20,
+                "start": 1064,
+                "text": "as\nmisses. All values are percentages. BFR-Text uses C3 and BFR-MV uses C6.\nSystem LOCOMO(n=200) LONGMEMEVAL-S (n=500)\nLLM-Suff@Set Gold Hit LLM-Suff@Set Turn Hit\nMem0 (Chhikara et al., 2025) 45.5% 57.0% 48.0% 64.8%\nA-Mem (Xu et al., 2025) 36.5% 50.0% 38.0% 82.2%\nCoM\u2217 (Xu et al., 2026) 44.0% 49.0% 49.0% 80.6%\nMRAgent-Flat\u2217 (Ji et al., 2026) 54.5% 62.5% 56.0% 78.8%\nFCA-MS (Stage I Only) 42.5% 51.0% 48.0% 85.0%\nBFR-Text 62.0% 72.5% 63.0% 88.6%\nBFR-MV 63.5% 73.5% 65.0% 91.4%\ngaps and how stage, access schedule, and budget contribute. Paired same-store comparisons and the\nseparate comparison with CoM and Full-MRAgent are in Appendix H and Appendix C, respectively.\nRQ2: Do the retrieved sets contain the evidence needed for an answer?\nTable 6:Stage and access-schedule ablation.\nConfiguration LOCOMOLONGMEMEVAL-S"
+              }
+            ],
+            "text": "as\nmisses. All values are percentages. BFR-Text uses C3 and BFR-MV uses C6.\nSystem LOCOMO(n=200) LONGMEMEVAL-S (n=500)\nLLM-Suff@Set Gold Hit LLM-Suff@Set Turn Hit\nMem0 (Chhikara et al., 2025) 45.5% 57.0% 48.0% 64.8%\nA-Mem (Xu et al., 2025) 36.5% 50.0% 38.0% 82.2%\nCoM\u2217 (Xu et al., 2026) 44.0% 49.0% 49.0% 80.6%\nMRAgent-Flat\u2217 (Ji et al., 2026) 54.5% 62.5% 56.0% 78.8%\nFCA-MS (Stage I Only) 42.5% 51.0% 48.0% 85.0%\nBFR-Text 62.0% 72.5% 63.0% 88.6%\nBFR-MV 63.5% 73.5% 65.0% 91.4%\ngaps and how stage, access schedule, and budget contribute. Paired same-store comparisons and the\nseparate comparison with CoM and Full-MRAgent are in Appendix H and Appendix C, respectively.\nRQ2: Do the retrieved sets contain the evidence needed for an answer?\nTable 6:Stage and access-schedule ablation.\nConfiguration LOCOMOLONGMEMEVAL-S"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0074"
+        ],
+        "excerpt": "C STRUCTURED MEMORY BOUNDARY\nThis appendix reports the cross-system comparison that was removed from the main LOCOMO\ntable. The slice is the conv-30 overlap (n=81) under a unified extractive answerer and judge. BFR-\n15\nTable 8:Cross-system boundary on the LOCOMOconv-30 overlap(n=81), unified extractive\nanswerer and judge;\u2020marks rows re-scored under this protocol. Bold / underline: best / second-\nbest. Open Domain is absent from the slice.\nMulti-Hop Temporal Single-Hop Overall\nMethod F1 J F1 J F1 J F1 J\nBFR-Text\u2020 41.454.5100.0 100.075.5 77.378.781.5\nCoM\u2020 (Xu et al., 2026) 41.2 63.6 96.2 96.2 71.8 84.1 75.5 85.2\nMRAgent-Flat\u2020 (Ji et al., 2026) 12.9 45.5 92.3 92.3 62.3 68.2 65.2 72.8\nFull-MRAgent\u2020 (Ji et al., 2026) 26.590.992.3 96.2 78.8 95.576.1 95.1\nTable 9:Flat acquisition vs. structured memoryon the81-question overlap slice under a shared\nextractive answerer and judge. Full MRAgent and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15,
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Structured Memory Boundary",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "22f47d96297ab6eea5102c30f8d1168bbeab054740f6f35c1da2138c8ea9a996",
+            "evidence_id": "E346284f5d1cd4c68-B0074",
+            "pages": [
+              15,
+              16
+            ],
+            "section": "Appendix: Structured Memory Boundary",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 218,
+                "page": 15,
+                "section": "Appendix: Structured Memory Boundary",
+                "section_index": 44,
+                "start": 0,
+                "text": "C STRUCTURED MEMORY BOUNDARY\nThis appendix reports the cross-system comparison that was removed from the main LOCOMO\ntable. The slice is the conv-30 overlap (n=81) under a unified extractive answerer and judge. BFR-\n15"
+              },
+              {
+                "end": 681,
+                "page": 16,
+                "section": "Appendix: Structured Memory Boundary",
+                "section_index": 45,
+                "start": 0,
+                "text": "Table 8:Cross-system boundary on the LOCOMOconv-30 overlap(n=81), unified extractive\nanswerer and judge;\u2020marks rows re-scored under this protocol. Bold / underline: best / second-\nbest. Open Domain is absent from the slice.\nMulti-Hop Temporal Single-Hop Overall\nMethod F1 J F1 J F1 J F1 J\nBFR-Text\u2020 41.454.5100.0 100.075.5 77.378.781.5\nCoM\u2020 (Xu et al., 2026) 41.2 63.6 96.2 96.2 71.8 84.1 75.5 85.2\nMRAgent-Flat\u2020 (Ji et al., 2026) 12.9 45.5 92.3 92.3 62.3 68.2 65.2 72.8\nFull-MRAgent\u2020 (Ji et al., 2026) 26.590.992.3 96.2 78.8 95.576.1 95.1\nTable 9:Flat acquisition vs. structured memoryon the81-question overlap slice under a shared\nextractive answerer and judge. Full MRAgent and "
+              }
+            ],
+            "text": "C STRUCTURED MEMORY BOUNDARY\nThis appendix reports the cross-system comparison that was removed from the main LOCOMO\ntable. The slice is the conv-30 overlap (n=81) under a unified extractive answerer and judge. BFR-\n15\nTable 8:Cross-system boundary on the LOCOMOconv-30 overlap(n=81), unified extractive\nanswerer and judge;\u2020marks rows re-scored under this protocol. Bold / underline: best / second-\nbest. Open Domain is absent from the slice.\nMulti-Hop Temporal Single-Hop Overall\nMethod F1 J F1 J F1 J F1 J\nBFR-Text\u2020 41.454.5100.0 100.075.5 77.378.781.5\nCoM\u2020 (Xu et al., 2026) 41.2 63.6 96.2 96.2 71.8 84.1 75.5 85.2\nMRAgent-Flat\u2020 (Ji et al., 2026) 12.9 45.5 92.3 92.3 62.3 68.2 65.2 72.8\nFull-MRAgent\u2020 (Ji et al., 2026) 26.590.992.3 96.2 78.8 95.576.1 95.1\nTable 9:Flat acquisition vs. structured memoryon the81-question overlap slice under a shared\nextractive answerer and judge. Full MRAgent and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0099"
+        ],
+        "excerpt": "M ANNOTATION PROTOCOL\nSuff@Set is labelled on a question\u2013evidence snapshot rather than on the system answer. The blinded\ninput contains the question, reference answer, and anonymized evidence text; it withholds the\nmethod, budget, system answer, and gold evidence identifiers. Two independent judges (gpt-5.5\nandclaude-sonnet-4-6) assignsufficient,insufficient, oruncertain;gpt-6-soladjudicates\ndisagreements. All calls use temperature zero. Because the protocol includes the reference answer\nand uses model judges, Suff@Set is an LLM-only, reference-conditioned offline evaluation measure\nrather than a human annotation or an inference-time stopping signal. An uncertain or missing final\nlabel is excluded from the binary-rate denominator; the originally reported FCA-MS, BFR-Text C3,\nand BFR-MV C6 pilot produced no uncertain labels. No human Suff@Set labels are reported.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Annotation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "544d76b92fbbfec56da93a318ad72a2b9b4678b5c86cdec0559f073de117352a",
+            "evidence_id": "E346284f5d1cd4c68-B0099",
+            "pages": [
+              23
+            ],
+            "section": "Appendix: Annotation Protocol",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 874,
+                "page": 23,
+                "section": "Appendix: Annotation Protocol",
+                "section_index": 61,
+                "start": 0,
+                "text": "M ANNOTATION PROTOCOL\nSuff@Set is labelled on a question\u2013evidence snapshot rather than on the system answer. The blinded\ninput contains the question, reference answer, and anonymized evidence text; it withholds the\nmethod, budget, system answer, and gold evidence identifiers. Two independent judges (gpt-5.5\nandclaude-sonnet-4-6) assignsufficient,insufficient, oruncertain;gpt-6-soladjudicates\ndisagreements. All calls use temperature zero. Because the protocol includes the reference answer\nand uses model judges, Suff@Set is an LLM-only, reference-conditioned offline evaluation measure\nrather than a human annotation or an inference-time stopping signal. An uncertain or missing final\nlabel is excluded from the binary-rate denominator; the originally reported FCA-MS, BFR-Text C3,\nand BFR-MV C6 pilot produced no uncertain labels. No human Suff@Set labels are reported."
+              }
+            ],
+            "text": "M ANNOTATION PROTOCOL\nSuff@Set is labelled on a question\u2013evidence snapshot rather than on the system answer. The blinded\ninput contains the question, reference answer, and anonymized evidence text; it withholds the\nmethod, budget, system answer, and gold evidence identifiers. Two independent judges (gpt-5.5\nandclaude-sonnet-4-6) assignsufficient,insufficient, oruncertain;gpt-6-soladjudicates\ndisagreements. All calls use temperature zero. Because the protocol includes the reference answer\nand uses model judges, Suff@Set is an LLM-only, reference-conditioned offline evaluation measure\nrather than a human annotation or an inference-time stopping signal. An uncertain or missing final\nlabel is excluded from the binary-rate denominator; the originally reported FCA-MS, BFR-Text C3,\nand BFR-MV C6 pilot produced no uncertain labels. No human Suff@Set labels are reported."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.09348",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected.",
+      "Canonical Unicode normalization processed 1 UTF-16 surrogate code units; unpaired units are visible replacement characters, not reconstructed symbols."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.09348",
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Objective benchmark annotations (Gold Hit, Turn Hit, CER) and Porter stem F1 corroborate the reported gains, with BFR-MV reaching 91.4% Turn Hit and 82.2% judged accuracy on LONGMEMEVAL-S.",
+          "final_evaluation_signal": "Headline outcomes are established by blinded reference-conditioned LLM judges (gpt-5.5 answer judge and Suff@Set adjudication) alongside benchmark ground-truth metrics including Porter stem F1, Gold Hit, Turn Hit, and Complete Evidence Recall.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system is shaped by fixed, rule-based and LLM-prompted heuristics: requirement decomposition, FCA prefiltering, minimal-subset selection, and budget-exhaustion stopping. No model weights are tuned against downstream judges.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0003",
+          "E346284f5d1cd4c68-B0004",
+          "E346284f5d1cd4c68-B0010",
+          "E346284f5d1cd4c68-B0011",
+          "E346284f5d1cd4c68-B0012",
+          "E346284f5d1cd4c68-B0018",
+          "E346284f5d1cd4c68-B0019",
+          "E346284f5d1cd4c68-B0020",
+          "E346284f5d1cd4c68-B0024",
+          "E346284f5d1cd4c68-B0025",
+          "E346284f5d1cd4c68-B0027",
+          "E346284f5d1cd4c68-B0028",
+          "E346284f5d1cd4c68-B0029",
+          "E346284f5d1cd4c68-B0030",
+          "E346284f5d1cd4c68-B0033",
+          "E346284f5d1cd4c68-B0034",
+          "E346284f5d1cd4c68-B0035",
+          "E346284f5d1cd4c68-B0036",
+          "E346284f5d1cd4c68-B0037",
+          "E346284f5d1cd4c68-B0038",
+          "E346284f5d1cd4c68-B0039",
+          "E346284f5d1cd4c68-B0040",
+          "E346284f5d1cd4c68-B0074",
+          "E346284f5d1cd4c68-B0099"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "fffc5dcfe2e7790a852d183d82363842b380c102f2e73f9d4c735e7d450047fb"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.09348",
+        "claim_evidence_alignment": "Reported gains over same-store adaptations of Mem0, A-Mem, CoM, and MRAgent-Flat are well aligned with evidence, showing consistent improvements in answer accuracy and evidence coverage, while acknowledging that structured graph memories still exhibit higher associative precision.",
+        "context_id": "346284f5d1cd4c68155e3c98933b4dc4d7a7cc3ba67e703263ff03becb374eab",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation conducts rigorous same-store comparisons on LOCOMO and LONGMEMEVAL-S, holding the store, extractive answerer, and judge fixed. Headline claims are tracked across answer quality metrics (Porter stem F1, LLM judge) alongside independent benchmark annotations (Gold Hit, Turn Hit, CER).",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Objective reference-based metrics including Porter stem F1, Gold Hit, Turn Hit, and Complete Evidence Recall directly corroborate the headline gains across both benchmarks.",
+          "final_evaluation_signal": "Blinded reference-conditioned LLM judgment (gpt-5.5 mem0 accuracy and Suff@Set adjudication) alongside ground-truth benchmark metrics (Porter stem F1, Gold Hit, Turn Hit, Evidence Recall).",
+          "independent_corroboration": "present",
+          "optimization_signal": "Rule-based and LLM-prompted heuristic procedures (question requirement decomposition, FCA prefiltering, and fixed budget exhaustion stopping rules) without model weight tuning against downstream judges.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E346284f5d1cd4c68-B0003",
+          "E346284f5d1cd4c68-B0004",
+          "E346284f5d1cd4c68-B0010",
+          "E346284f5d1cd4c68-B0011",
+          "E346284f5d1cd4c68-B0012",
+          "E346284f5d1cd4c68-B0018",
+          "E346284f5d1cd4c68-B0019",
+          "E346284f5d1cd4c68-B0020",
+          "E346284f5d1cd4c68-B0024",
+          "E346284f5d1cd4c68-B0025",
+          "E346284f5d1cd4c68-B0027",
+          "E346284f5d1cd4c68-B0028",
+          "E346284f5d1cd4c68-B0029",
+          "E346284f5d1cd4c68-B0030",
+          "E346284f5d1cd4c68-B0033",
+          "E346284f5d1cd4c68-B0034",
+          "E346284f5d1cd4c68-B0035",
+          "E346284f5d1cd4c68-B0036",
+          "E346284f5d1cd4c68-B0037",
+          "E346284f5d1cd4c68-B0038",
+          "E346284f5d1cd4c68-B0039",
+          "E346284f5d1cd4c68-B0040",
+          "E346284f5d1cd4c68-B0074",
+          "E346284f5d1cd4c68-B0099"
+        ],
+        "limitations": "The authors explicitly disclose development contact on LOCOMO conversations, boundary differences when compared to non-flat graph architectures, and the failure of gold-free sufficiency estimates to act as viable dynamic stopping signals.",
+        "method_assessment": "The method is clearly specified: Stage I expands retrieval, decomposes queries into requirements, pre-filters via Formal Concept Analysis, and selects a minimal complementary subset grounded to turns; Stage II iteratively collects unseen records using fixed access schedules under an explicit budget limit.",
+        "quality_rationale": "The contribution is soundly scoped and executed, offering clear formalization, thorough empirical benchmarking, and rigorous ablations without overstating the capacity of flat stores against structured graphs.",
+        "scoped_contribution": "The paper formulates long-term memory retrieval as constructing a sufficient evidence set and introduces Budgeted Flat Reconstruction (BFR), combining formal concept analysis subset selection (FCA-MS) with budgeted multi-view or text-deepening completion over a flat memory store.",
+        "source_content_hash": "fffc5dcfe2e7790a852d183d82363842b380c102f2e73f9d4c735e7d450047fb"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The contribution is soundly scoped and executed, offering clear formalization, thorough empirical benchmarking, and rigorous ablations without overstating the capacity of flat stores against structured graphs.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "fffc5dcfe2e7790a852d183d82363842b380c102f2e73f9d4c735e7d450047fb",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly disclose development contact on LOCOMO conversations, boundary differences when compared to non-flat graph architectures, and the failure of gold-free sufficiency estimates to act as viable dynamic stopping signals."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -171,7 +2558,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -26,13 +26,13 @@
   "first_seen_at": "2026-10-08 11:09:26",
   "first_seen_date": "2026-10-08",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-10-08 11:09:48",
-  "last_seen_date": "2026-10-08",
+  "is_new": false,
+  "last_seen_at": "2026-10-09 11:20:17",
+  "last_seen_date": "2026-10-09",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-07",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-08 11:10:09",
   "notified_date": "2026-10-08",
   "openalex_id": null,
@@ -42,8 +42,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-08 11:09:26",
-    "generated_at": "2026-10-08 11:12:59",
-    "last_seen_at": "2026-10-08 11:09:48",
+    "generated_at": "2026-10-09 11:22:27",
+    "last_seen_at": "2026-10-09 11:20:17",
     "metadata_sources": [
       "arxiv"
     ],
@@ -105,36 +105,1354 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-09T11:21:21.024996+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous, well-controlled experimental setup addressing a genuine confound in synthetic data selection. The mathematical formulation is clear, baselines are fairly adapted under matched budgets, and empirical analyses thoroughly probe underlying mechanisms.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 56325,
+      "assessment_input_sha256": "26e14ec665ce294e4b142e77c447f8d46a2e54aafc94237cc68249d5d62e8a81",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.09849",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 55228,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 54791,
+      "evidence_block_count": 73,
+      "evidence_context_characters": 63534,
+      "evidence_context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+      "evidence_context_sha256": "d12328391d41ca1eaa95a47e065e1d66c1bed0ac62b61ae37f44ae419c370dbf",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 55260,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "extracted_pages": 17,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "57cc4588c8249061a9cc2eb3effcac83fb85814a8225610f5b76e1246c672251",
+        "source_url": "https://arxiv.org/pdf/2610.09849",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 55228,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 1911,
+          "supplied_characters": 1911
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 1282,
+          "supplied_characters": 1282
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 4546,
+          "supplied_characters": 4546
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1661,
+          "supplied_characters": 1661
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 2051,
+          "supplied_characters": 2051
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 691,
+          "supplied_characters": 691
+        },
+        {
+          "heading": "Appendix: B B A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 6,
+          "source_characters": 1658,
+          "supplied_characters": 1658
+        },
+        {
+          "heading": "Controlled Reducibility For Degradation Curation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 288,
+          "supplied_characters": 288
+        },
+        {
+          "heading": "Candidate Regions And Validity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1615,
+          "supplied_characters": 1615
+        },
+        {
+          "heading": "Candidate Regions And Validity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 4,
+          "supplied_characters": 4
+        },
+        {
+          "heading": "Matched-Control Probes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2045,
+          "supplied_characters": 2045
+        },
+        {
+          "heading": "Matched-Control Reducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1304,
+          "supplied_characters": 1304
+        },
+        {
+          "heading": "Matched-Control Reducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 203,
+          "supplied_characters": 203
+        },
+        {
+          "heading": "Curation And Final Training",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 13,
+          "source_characters": 1298,
+          "supplied_characters": 1298
+        },
+        {
+          "heading": "The Diagnostic Severity Band",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 910,
+          "supplied_characters": 910
+        },
+        {
+          "heading": "Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 15,
+          "source_characters": 524,
+          "supplied_characters": 524
+        },
+        {
+          "heading": "Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 3504,
+          "supplied_characters": 3504
+        },
+        {
+          "heading": "Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 1340,
+          "supplied_characters": 1340
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 1444,
+          "supplied_characters": 1444
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 1992,
+          "supplied_characters": 1992
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 745,
+          "supplied_characters": 745
+        },
+        {
+          "heading": "Analysis: Training Utility And The Correctable Band",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 1000,
+          "supplied_characters": 1000
+        },
+        {
+          "heading": "Analysis: Training Utility And The Correctable Band",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 22,
+          "source_characters": 41,
+          "supplied_characters": 41
+        },
+        {
+          "heading": "Foglow Light",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 84,
+          "supplied_characters": 84
+        },
+        {
+          "heading": "Fog",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 2719,
+          "supplied_characters": 2719
+        },
+        {
+          "heading": "Fog",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 4,
+          "supplied_characters": 4
+        },
+        {
+          "heading": "Discussion And Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "limitations",
+          "section_index": 26,
+          "source_characters": 1129,
+          "supplied_characters": 1129
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 27,
+          "source_characters": 447,
+          "supplied_characters": 447
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 2138,
+          "supplied_characters": 2138
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 4712,
+          "supplied_characters": 4712
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 354,
+          "supplied_characters": 354
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 4,
+          "supplied_characters": 4
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 2483,
+          "supplied_characters": 2483
+        },
+        {
+          "heading": "Appendix: B Generator And Validity Gate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 1481,
+          "supplied_characters": 1481
+        },
+        {
+          "heading": "Appendix: B Generator And Validity Gate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 3022,
+          "supplied_characters": 3022
+        },
+        {
+          "heading": "Appendix: B Generator And Validity Gate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 3141,
+          "supplied_characters": 3141
+        },
+        {
+          "heading": "Appendix: B Generator And Validity Gate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 1016,
+          "supplied_characters": 1016
+        }
+      ],
+      "selected_characters": 54791,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "selected_sections": [
+        {
+          "characters": 1911,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1282,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4546,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1661,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 2051,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 691,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 1658,
+          "heading": "Appendix: B B A",
+          "page": 4
+        },
+        {
+          "characters": 288,
+          "heading": "Controlled Reducibility For Degradation Curation",
+          "page": 4
+        },
+        {
+          "characters": 1615,
+          "heading": "Candidate Regions And Validity",
+          "page": 4
+        },
+        {
+          "characters": 4,
+          "heading": "Candidate Regions And Validity",
+          "page": 5
+        },
+        {
+          "characters": 2045,
+          "heading": "Matched-Control Probes",
+          "page": 5
+        },
+        {
+          "characters": 1304,
+          "heading": "Matched-Control Reducibility",
+          "page": 5
+        },
+        {
+          "characters": 203,
+          "heading": "Matched-Control Reducibility",
+          "page": 6
+        },
+        {
+          "characters": 1298,
+          "heading": "Curation And Final Training",
+          "page": 6
+        },
+        {
+          "characters": 910,
+          "heading": "The Diagnostic Severity Band",
+          "page": 6
+        },
+        {
+          "characters": 524,
+          "heading": "Setup",
+          "page": 6
+        },
+        {
+          "characters": 3504,
+          "heading": "Setup",
+          "page": 7
+        },
+        {
+          "characters": 1340,
+          "heading": "Setup",
+          "page": 8
+        },
+        {
+          "characters": 1444,
+          "heading": "Main Results",
+          "page": 8
+        },
+        {
+          "characters": 1992,
+          "heading": "Main Results",
+          "page": 9
+        },
+        {
+          "characters": 745,
+          "heading": "Ablation Study",
+          "page": 9
+        },
+        {
+          "characters": 1000,
+          "heading": "Analysis: Training Utility And The Correctable Band",
+          "page": 9
+        },
+        {
+          "characters": 41,
+          "heading": "Analysis: Training Utility And The Correctable Band",
+          "page": 10
+        },
+        {
+          "characters": 84,
+          "heading": "Foglow Light",
+          "page": 10
+        },
+        {
+          "characters": 2719,
+          "heading": "Fog",
+          "page": 10
+        },
+        {
+          "characters": 4,
+          "heading": "Fog",
+          "page": 11
+        },
+        {
+          "characters": 1129,
+          "heading": "Discussion And Limitations",
+          "page": 11
+        },
+        {
+          "characters": 447,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 2138,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 4712,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 354,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 4,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 2483,
+          "heading": "Appendix: Implementation Details",
+          "page": 14
+        },
+        {
+          "characters": 1481,
+          "heading": "Appendix: B Generator And Validity Gate",
+          "page": 14
+        },
+        {
+          "characters": 3022,
+          "heading": "Appendix: B Generator And Validity Gate",
+          "page": 15
+        },
+        {
+          "characters": 3141,
+          "heading": "Appendix: B Generator And Validity Gate",
+          "page": 16
+        },
+        {
+          "characters": 1016,
+          "heading": "Appendix: B Generator And Validity Gate",
+          "page": 17
+        }
+      ],
+      "selected_text_sha256": "26e14ec665ce294e4b142e77c447f8d46a2e54aafc94237cc68249d5d62e8a81",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "57cc4588c8249061a9cc2eb3effcac83fb85814a8225610f5b76e1246c672251",
+      "source_pages": 17,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0002"
+        ],
+        "excerpt": "Wepropose thecontrolled\nReducible Degradation Gap(cRDG)forregionsdefinedbydegradationtypeandseverity. Froma\ncommon checkpoint, cRDG runs two budget-matched probes that differ only in one augmentation\nslot, which holds either a synthetic degradation or a clean augmentation. The score is the gain on\nheld-out degraded images relative to the clean-control probe. Clean harm is a separate feasibility\nconstraint. cRDG reveals a correctable severity band in which training on the degradation yields\nhigh controlled gain under the available budget, and the band moves with the predictor, the\nstarting checkpoint, and the training budget.Curation of Reducible Bands(CuRB) uses cRDG to\nselect synthetic data without changing the predictor. On semantic segmentation and salient object\ndetection,CuRBimproves representative predictors under matched synthetic-data budgets ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fcf432bf4cee2c7ca19a9bc4bd31230416f91beeba1e8d62d5b3ff40284e460c",
+            "evidence_id": "E3e141b6fcd8cc674-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1761,
+                "page": 1,
+                "section": "Abstract / front matter",
+                "section_index": 0,
+                "start": 898,
+                "text": "Wepropose thecontrolled\nReducible Degradation Gap(cRDG)forregionsdefinedbydegradationtypeandseverity. Froma\ncommon checkpoint, cRDG runs two budget-matched probes that differ only in one augmentation\nslot, which holds either a synthetic degradation or a clean augmentation. The score is the gain on\nheld-out degraded images relative to the clean-control probe. Clean harm is a separate feasibility\nconstraint. cRDG reveals a correctable severity band in which training on the degradation yields\nhigh controlled gain under the available budget, and the band moves with the predictor, the\nstarting checkpoint, and the training budget.Curation of Reducible Bands(CuRB) uses cRDG to\nselect synthetic data without changing the predictor. On semantic segmentation and salient object\ndetection,CuRBimproves representative predictors under matched synthetic-data budgets "
+              }
+            ],
+            "text": "Wepropose thecontrolled\nReducible Degradation Gap(cRDG)forregionsdefinedbydegradationtypeandseverity. Froma\ncommon checkpoint, cRDG runs two budget-matched probes that differ only in one augmentation\nslot, which holds either a synthetic degradation or a clean augmentation. The score is the gain on\nheld-out degraded images relative to the clean-control probe. Clean harm is a separate feasibility\nconstraint. cRDG reveals a correctable severity band in which training on the degradation yields\nhigh controlled gain under the available budget, and the band moves with the predictor, the\nstarting checkpoint, and the training budget.Curation of Reducible Bands(CuRB) uses cRDG to\nselect synthetic data without changing the predictor. On semantic segmentation and salient object\ndetection,CuRBimproves representative predictors under matched synthetic-data budgets "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0007"
+        ],
+        "excerpt": "training progress.\n(c) Our matched-control formulation underlyingcRDG measures degraded gain\ud835\udc3a\ud835\udc54 beyond equally long\nclean training, while checking clean harm\ud835\udc3b\ud835\udc54 separately.\nalso a poor indicator of utility, because a strong degradation can remove the evidence needed\nto recover the mask, leaving samples that are hard yet carry little learnable signal under the\navailable budget. Selecting by loss or uncertainty [8, 9] can then waste the budget or cause\nnegative transfer.\nWe define the utility of a degradation as its held-out gain beyond equally long clean training\nunder the same probe budget, subject to a clean-retention constraint. Forward transfer here\nmeans the gain on held-out source scenes that carry the same degradation after a short probe,\nand transfer to real adverse domains is evaluated separately (\u00a7 4.4). Curation uses only source\nimages and their synthetic twins, never ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8548aee3031340d4a3baa8930409a0597293021590e7faddaacbc6b01420d94c",
+            "evidence_id": "E3e141b6fcd8cc674-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2297,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1408,
+                "text": "training progress.\n(c) Our matched-control formulation underlyingcRDG measures degraded gain\ud835\udc3a\ud835\udc54 beyond equally long\nclean training, while checking clean harm\ud835\udc3b\ud835\udc54 separately.\nalso a poor indicator of utility, because a strong degradation can remove the evidence needed\nto recover the mask, leaving samples that are hard yet carry little learnable signal under the\navailable budget. Selecting by loss or uncertainty [8, 9] can then waste the budget or cause\nnegative transfer.\nWe define the utility of a degradation as its held-out gain beyond equally long clean training\nunder the same probe budget, subject to a clean-retention constraint. Forward transfer here\nmeans the gain on held-out source scenes that carry the same degradation after a short probe,\nand transfer to real adverse domains is evaluated separately (\u00a7 4.4). Curation uses only source\nimages and their synthetic twins, never "
+              }
+            ],
+            "text": "training progress.\n(c) Our matched-control formulation underlyingcRDG measures degraded gain\ud835\udc3a\ud835\udc54 beyond equally long\nclean training, while checking clean harm\ud835\udc3b\ud835\udc54 separately.\nalso a poor indicator of utility, because a strong degradation can remove the evidence needed\nto recover the mask, leaving samples that are hard yet carry little learnable signal under the\navailable budget. Selecting by loss or uncertainty [8, 9] can then waste the budget or cause\nnegative transfer.\nWe define the utility of a degradation as its held-out gain beyond equally long clean training\nunder the same probe budget, subject to a clean-retention constraint. Forward transfer here\nmeans the gain on held-out source scenes that carry the same degradation after a short probe,\nand transfer to real adverse domains is evaluated separately (\u00a7 4.4). Curation uses only source\nimages and their synthetic twins, never "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0011"
+        ],
+        "excerpt": "Bands(CuRB), a curation framework that adds\ndegradation-aware selection to existing dense predictors without changing their architectures.\nScores are recomputed for the operating checkpoint and budget. The band only summarizes\nthe profile. Selection ranks feasible positive-score regions directly and fills a fixed synthetic\nbudget in rank order, with validity gating before ranking and\ud835\udc58-center sampling for the last\npartial region.\nOur contributions are as follows.\n\u2022 We formulatebudget-conditioned correctability. Training utility need not track severity, realism,\nor difficulty, and the useful severity region migrates with predictor, checkpoint, and probe\nbudget.\n\u2022 We proposecRDG, a held-out, budget-matched estimate of the gain from training on a\ndegradation region relative to an equally long clean-control probe, with clean harm handled\nseparately.\n\u2022 We introduceCuRB, a plug-and-play ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fc5f1996844c242aa64c5cee7c95bbd54ee29429890810530dcd1536925bd20d",
+            "evidence_id": "E3e141b6fcd8cc674-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1331,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 438,
+                "text": "Bands(CuRB), a curation framework that adds\ndegradation-aware selection to existing dense predictors without changing their architectures.\nScores are recomputed for the operating checkpoint and budget. The band only summarizes\nthe profile. Selection ranks feasible positive-score regions directly and fills a fixed synthetic\nbudget in rank order, with validity gating before ranking and\ud835\udc58-center sampling for the last\npartial region.\nOur contributions are as follows.\n\u2022 We formulatebudget-conditioned correctability. Training utility need not track severity, realism,\nor difficulty, and the useful severity region migrates with predictor, checkpoint, and probe\nbudget.\n\u2022 We proposecRDG, a held-out, budget-matched estimate of the gain from training on a\ndegradation region relative to an equally long clean-control probe, with clean harm handled\nseparately.\n\u2022 We introduceCuRB, a plug-and-play "
+              }
+            ],
+            "text": "Bands(CuRB), a curation framework that adds\ndegradation-aware selection to existing dense predictors without changing their architectures.\nScores are recomputed for the operating checkpoint and budget. The band only summarizes\nthe profile. Selection ranks feasible positive-score regions directly and fills a fixed synthetic\nbudget in rank order, with validity gating before ranking and\ud835\udc58-center sampling for the last\npartial region.\nOur contributions are as follows.\n\u2022 We formulatebudget-conditioned correctability. Training utility need not track severity, realism,\nor difficulty, and the useful severity region migrates with predictor, checkpoint, and probe\nbudget.\n\u2022 We proposecRDG, a held-out, budget-matched estimate of the gain from training on a\ndegradation region relative to an equally long clean-control probe, with clean harm handled\nseparately.\n\u2022 We introduceCuRB, a plug-and-play "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0023"
+        ],
+        "excerpt": "it may have contributed to training\ud835\udf030. The\nsplit is reused for every region. Let\ud835\udc48(\ud835\udf03,\ud835\udcae;\ud835\udc3e) denote\ud835\udc3e optimizer steps from\ud835\udf03 on a data stream\n\ud835\udcae, and let\u2295 denote the union of the clean-replay stream and the augmentation-slot stream in\neach probe batch. From the common start\ud835\udf030 we run two probes on half\ud835\udc34,\n\ud835\udf03deg\ud835\udc34,\ud835\udc54 =\ud835\udc48 \u0000\ud835\udf030, \ud835\udc34clean\u2295\ud835\udc34 deg,\ud835\udc54 ;\ud835\udc3e \u0001,\ud835\udf03 ctrl\ud835\udc34 =\ud835\udc48 \u0000\ud835\udf030, \ud835\udc34clean\u2295\ud835\udc34 aug;\ud835\udc3e \u0001.(2)\nThe treatment probe fills the slot with twins from region\ud835\udc54. The clean-control probe fills the\nsame slot with a weak photometric augmentation of the same base view (Appendix C). Both\nprobes share source IDs, steps, batch composition, clean-replay ratio, optimizer, schedule, data\norder, and initialization. The control does not depend on\ud835\udc54, so it is run once per direction and\nshared across all regions. If no valid twin exists after\ud835\udc5b\ud835\udc67 regeneration draws, the control view is\nkept in the treatment slot, so the match is never ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Matched-Control Probes",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "95ae13431a4ddfe725ffd11199c3c617a3998ca9195f6f95472d63cc9ab6c338",
+            "evidence_id": "E3e141b6fcd8cc674-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Matched-Control Probes",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 5,
+                "section": "Matched-Control Probes",
+                "section_index": 10,
+                "start": 898,
+                "text": "it may have contributed to training\ud835\udf030. The\nsplit is reused for every region. Let\ud835\udc48(\ud835\udf03,\ud835\udcae;\ud835\udc3e) denote\ud835\udc3e optimizer steps from\ud835\udf03 on a data stream\n\ud835\udcae, and let\u2295 denote the union of the clean-replay stream and the augmentation-slot stream in\neach probe batch. From the common start\ud835\udf030 we run two probes on half\ud835\udc34,\n\ud835\udf03deg\ud835\udc34,\ud835\udc54 =\ud835\udc48 \u0000\ud835\udf030, \ud835\udc34clean\u2295\ud835\udc34 deg,\ud835\udc54 ;\ud835\udc3e \u0001,\ud835\udf03 ctrl\ud835\udc34 =\ud835\udc48 \u0000\ud835\udf030, \ud835\udc34clean\u2295\ud835\udc34 aug;\ud835\udc3e \u0001.(2)\nThe treatment probe fills the slot with twins from region\ud835\udc54. The clean-control probe fills the\nsame slot with a weak photometric augmentation of the same base view (Appendix C). Both\nprobes share source IDs, steps, batch composition, clean-replay ratio, optimizer, schedule, data\norder, and initialization. The control does not depend on\ud835\udc54, so it is run once per direction and\nshared across all regions. If no valid twin exists after\ud835\udc5b\ud835\udc67 regeneration draws, the control view is\nkept in the treatment slot, so the match is never "
+              }
+            ],
+            "text": "it may have contributed to training\ud835\udf030. The\nsplit is reused for every region. Let\ud835\udc48(\ud835\udf03,\ud835\udcae;\ud835\udc3e) denote\ud835\udc3e optimizer steps from\ud835\udf03 on a data stream\n\ud835\udcae, and let\u2295 denote the union of the clean-replay stream and the augmentation-slot stream in\neach probe batch. From the common start\ud835\udf030 we run two probes on half\ud835\udc34,\n\ud835\udf03deg\ud835\udc34,\ud835\udc54 =\ud835\udc48 \u0000\ud835\udf030, \ud835\udc34clean\u2295\ud835\udc34 deg,\ud835\udc54 ;\ud835\udc3e \u0001,\ud835\udf03 ctrl\ud835\udc34 =\ud835\udc48 \u0000\ud835\udf030, \ud835\udc34clean\u2295\ud835\udc34 aug;\ud835\udc3e \u0001.(2)\nThe treatment probe fills the slot with twins from region\ud835\udc54. The clean-control probe fills the\nsame slot with a weak photometric augmentation of the same base view (Appendix C). Both\nprobes share source IDs, steps, batch composition, clean-replay ratio, optimizer, schedule, data\norder, and initialization. The control does not depend on\ud835\udc54, so it is run once per direction and\nshared across all regions. If no valid twin exists after\ud835\udc5b\ud835\udc67 regeneration draws, the control view is\nkept in the treatment slot, so the match is never "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0025"
+        ],
+        "excerpt": "Both probes are evaluated on the held-out half\ud835\udc35. We define thedegraded gainand theclean harm\nas\n\ud835\udc3a\ud835\udc34\u2192\ud835\udc35\ud835\udc54 =\ud835\udc3f \ud835\udc35\ud835\udc51\u0000\ud835\udf03ctrl\ud835\udc34 ;\ud835\udc54 \u0001\u2212\ud835\udc3f \ud835\udc35\ud835\udc51\u0000\ud835\udf03deg\ud835\udc34,\ud835\udc54 ;\ud835\udc54 \u0001, \ud835\udc3b \ud835\udc34\u2192\ud835\udc35\ud835\udc54 = h\ud835\udc3f\ud835\udc35\ud835\udc50\u0000\ud835\udf03deg\ud835\udc34,\ud835\udc54 \u0001\u2212\ud835\udc3f \ud835\udc35\ud835\udc50\u0000\ud835\udf03ctrl\ud835\udc34 \u0001i+.(3)\n\ud835\udc3a is positive when degradation training outperforms the matched clean control on held-out\ndegraded images.\ud835\udc3b is positive when the treatment increases the held-out clean loss. We then\nswap the two halves and average the two held-out gains,\ncRDG(\ud835\udc54;\ud835\udc3e,\ud835\udf03 0)= 12\u0000\ud835\udc3a\ud835\udc34\u2192\ud835\udc35\ud835\udc54 +\ud835\udc3a \ud835\udc35\u2192\ud835\udc34\ud835\udc54 \u0001.(4)\nA region isfeasibleiff max\n\u0000\n\ud835\udc3b\ud835\udc34\u2192\ud835\udc35\ud835\udc54 ,\ud835\udc3b \ud835\udc35\u2192\ud835\udc34\ud835\udc54 \u0001\u2264\ud835\udf16 . Infeasible regions are excluded from selection,\nand signed scores remain available for analysis. We use a hard constraint rather than a penalty\n\ud835\udc3a\ud835\udc54\u2212\ud835\udf06\ud835\udc3b\ud835\udc54 becauseitenforcescleanretentionwithoutanothertrade-offparameter. Theconstraint\nbounds probe-time harm and does not guarantee final clean accuracy, which \u00a7 4.2 checks\nempirically.\nBaselines from the same probes.The same held-out losses ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Matched-Control Reducibility",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "acefe4d6c9aa7788e245a04e16d4a247d439f1610c32c2a4b302392e62f94d9d",
+            "evidence_id": "E3e141b6fcd8cc674-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Matched-Control Reducibility",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 5,
+                "section": "Matched-Control Reducibility",
+                "section_index": 11,
+                "start": 0,
+                "text": "Both probes are evaluated on the held-out half\ud835\udc35. We define thedegraded gainand theclean harm\nas\n\ud835\udc3a\ud835\udc34\u2192\ud835\udc35\ud835\udc54 =\ud835\udc3f \ud835\udc35\ud835\udc51\u0000\ud835\udf03ctrl\ud835\udc34 ;\ud835\udc54 \u0001\u2212\ud835\udc3f \ud835\udc35\ud835\udc51\u0000\ud835\udf03deg\ud835\udc34,\ud835\udc54 ;\ud835\udc54 \u0001, \ud835\udc3b \ud835\udc34\u2192\ud835\udc35\ud835\udc54 = h\ud835\udc3f\ud835\udc35\ud835\udc50\u0000\ud835\udf03deg\ud835\udc34,\ud835\udc54 \u0001\u2212\ud835\udc3f \ud835\udc35\ud835\udc50\u0000\ud835\udf03ctrl\ud835\udc34 \u0001i+.(3)\n\ud835\udc3a is positive when degradation training outperforms the matched clean control on held-out\ndegraded images.\ud835\udc3b is positive when the treatment increases the held-out clean loss. We then\nswap the two halves and average the two held-out gains,\ncRDG(\ud835\udc54;\ud835\udc3e,\ud835\udf03 0)= 12\u0000\ud835\udc3a\ud835\udc34\u2192\ud835\udc35\ud835\udc54 +\ud835\udc3a \ud835\udc35\u2192\ud835\udc34\ud835\udc54 \u0001.(4)\nA region isfeasibleiff max\n\u0000\n\ud835\udc3b\ud835\udc34\u2192\ud835\udc35\ud835\udc54 ,\ud835\udc3b \ud835\udc35\u2192\ud835\udc34\ud835\udc54 \u0001\u2264\ud835\udf16 . Infeasible regions are excluded from selection,\nand signed scores remain available for analysis. We use a hard constraint rather than a penalty\n\ud835\udc3a\ud835\udc54\u2212\ud835\udf06\ud835\udc3b\ud835\udc54 becauseitenforcescleanretentionwithoutanothertrade-offparameter. Theconstraint\nbounds probe-time harm and does not guarantee final clean accuracy, which \u00a7 4.2 checks\nempirically.\nBaselines from the same probes.The same held-out losses "
+              }
+            ],
+            "text": "Both probes are evaluated on the held-out half\ud835\udc35. We define thedegraded gainand theclean harm\nas\n\ud835\udc3a\ud835\udc34\u2192\ud835\udc35\ud835\udc54 =\ud835\udc3f \ud835\udc35\ud835\udc51\u0000\ud835\udf03ctrl\ud835\udc34 ;\ud835\udc54 \u0001\u2212\ud835\udc3f \ud835\udc35\ud835\udc51\u0000\ud835\udf03deg\ud835\udc34,\ud835\udc54 ;\ud835\udc54 \u0001, \ud835\udc3b \ud835\udc34\u2192\ud835\udc35\ud835\udc54 = h\ud835\udc3f\ud835\udc35\ud835\udc50\u0000\ud835\udf03deg\ud835\udc34,\ud835\udc54 \u0001\u2212\ud835\udc3f \ud835\udc35\ud835\udc50\u0000\ud835\udf03ctrl\ud835\udc34 \u0001i+.(3)\n\ud835\udc3a is positive when degradation training outperforms the matched clean control on held-out\ndegraded images.\ud835\udc3b is positive when the treatment increases the held-out clean loss. We then\nswap the two halves and average the two held-out gains,\ncRDG(\ud835\udc54;\ud835\udc3e,\ud835\udf03 0)= 12\u0000\ud835\udc3a\ud835\udc34\u2192\ud835\udc35\ud835\udc54 +\ud835\udc3a \ud835\udc35\u2192\ud835\udc34\ud835\udc54 \u0001.(4)\nA region isfeasibleiff max\n\u0000\n\ud835\udc3b\ud835\udc34\u2192\ud835\udc35\ud835\udc54 ,\ud835\udc3b \ud835\udc35\u2192\ud835\udc34\ud835\udc54 \u0001\u2264\ud835\udf16 . Infeasible regions are excluded from selection,\nand signed scores remain available for analysis. We use a hard constraint rather than a penalty\n\ud835\udc3a\ud835\udc54\u2212\ud835\udf06\ud835\udc3b\ud835\udc54 becauseitenforcescleanretentionwithoutanothertrade-offparameter. Theconstraint\nbounds probe-time harm and does not guarantee final clean accuracy, which \u00a7 4.2 checks\nempirically.\nBaselines from the same probes.The same held-out losses "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0032"
+        ],
+        "excerpt": "[26].\nMethod\ud835\udc40\u2193\ud835\udc39 max\ud835\udefd \u2191\ud835\udc38 \ud835\udf19\u2191\ud835\udc46 \ud835\udefc\u2191\nSI-EDN [29] .062 .817 .841 .810\n+ Uncurated twins (\ud835\udc35sel) .058 .835 .858 .817\n+CuRB(\ud835\udc35 sel) .052 .853 .873 .831\nCSSAM [27] .035 .887 .916 .886\n+ Uncurated twins (\ud835\udc35sel) .034 .891 .919 .888\n+CuRB(\ud835\udc35 sel) .030 .912 .934 .893\nNUN [28] .038 .857 .896 .875\n+ Uncurated twins (\ud835\udc35sel) .036 .867 .902 .877\n+CuRB(\ud835\udc35 sel) .032 .880 .917 .886\n(b)CSOD10K [27].\nTable 1. Evaluation on SOD Benchmarksfollowingtheofficialprotocol(\u00a74.1). Atthesameaugmentation\nbudget, comparing uncurated sampling withCuRBisolates the gain from curation.\nACDC mIoU\u2191Dark Zurich mIoU\u2191Cityscapes\nData-generation host Published host setting Original +CuRBOriginal +CuRBval\u0394\u2191\nsingle-generator hosts\nISSA [19] SegFormer 52.45 53.9227.39 28.76 +0.24\nH-Weather [20] SegFormer 49.21 50.6323.44 24.65 +0.36\nGen4Seg [21] SegFormer 51.04 52.3925.63 27.28 +0.45\ncomposite DG host\nISSA [19] RobustNet (DeepLabV3+) 47.55 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9221ff02a3c70adfe8224b0f0ce320e5bfe9ef58867fbfeceac620aa6d61de17",
+            "evidence_id": "E3e141b6fcd8cc674-B0032",
+            "pages": [
+              7
+            ],
+            "section": "Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1268,
+                "page": 7,
+                "section": "Setup",
+                "section_index": 16,
+                "start": 370,
+                "text": "[26].\nMethod\ud835\udc40\u2193\ud835\udc39 max\ud835\udefd \u2191\ud835\udc38 \ud835\udf19\u2191\ud835\udc46 \ud835\udefc\u2191\nSI-EDN [29] .062 .817 .841 .810\n+ Uncurated twins (\ud835\udc35sel) .058 .835 .858 .817\n+CuRB(\ud835\udc35 sel) .052 .853 .873 .831\nCSSAM [27] .035 .887 .916 .886\n+ Uncurated twins (\ud835\udc35sel) .034 .891 .919 .888\n+CuRB(\ud835\udc35 sel) .030 .912 .934 .893\nNUN [28] .038 .857 .896 .875\n+ Uncurated twins (\ud835\udc35sel) .036 .867 .902 .877\n+CuRB(\ud835\udc35 sel) .032 .880 .917 .886\n(b)CSOD10K [27].\nTable 1. Evaluation on SOD Benchmarksfollowingtheofficialprotocol(\u00a74.1). Atthesameaugmentation\nbudget, comparing uncurated sampling withCuRBisolates the gain from curation.\nACDC mIoU\u2191Dark Zurich mIoU\u2191Cityscapes\nData-generation host Published host setting Original +CuRBOriginal +CuRBval\u0394\u2191\nsingle-generator hosts\nISSA [19] SegFormer 52.45 53.9227.39 28.76 +0.24\nH-Weather [20] SegFormer 49.21 50.6323.44 24.65 +0.36\nGen4Seg [21] SegFormer 51.04 52.3925.63 27.28 +0.45\ncomposite DG host\nISSA [19] RobustNet (DeepLabV3+) 47.55 "
+              }
+            ],
+            "text": "[26].\nMethod\ud835\udc40\u2193\ud835\udc39 max\ud835\udefd \u2191\ud835\udc38 \ud835\udf19\u2191\ud835\udc46 \ud835\udefc\u2191\nSI-EDN [29] .062 .817 .841 .810\n+ Uncurated twins (\ud835\udc35sel) .058 .835 .858 .817\n+CuRB(\ud835\udc35 sel) .052 .853 .873 .831\nCSSAM [27] .035 .887 .916 .886\n+ Uncurated twins (\ud835\udc35sel) .034 .891 .919 .888\n+CuRB(\ud835\udc35 sel) .030 .912 .934 .893\nNUN [28] .038 .857 .896 .875\n+ Uncurated twins (\ud835\udc35sel) .036 .867 .902 .877\n+CuRB(\ud835\udc35 sel) .032 .880 .917 .886\n(b)CSOD10K [27].\nTable 1. Evaluation on SOD Benchmarksfollowingtheofficialprotocol(\u00a74.1). Atthesameaugmentation\nbudget, comparing uncurated sampling withCuRBisolates the gain from curation.\nACDC mIoU\u2191Dark Zurich mIoU\u2191Cityscapes\nData-generation host Published host setting Original +CuRBOriginal +CuRBval\u0394\u2191\nsingle-generator hosts\nISSA [19] SegFormer 52.45 53.9227.39 28.76 +0.24\nH-Weather [20] SegFormer 49.21 50.6323.44 24.65 +0.36\nGen4Seg [21] SegFormer 51.04 52.3925.63 27.28 +0.45\ncomposite DG host\nISSA [19] RobustNet (DeepLabV3+) 47.55 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0033"
+        ],
+        "excerpt": "48.7323.09 24.35 +0.18\nTable 2.CuRBas a plug-in to existing data-generation settings.PublishedreferencesforISSA,H-Weather,\nand RobustNet+ISSA are taken from Li et al.[19]. Gen4Seg follows Yin et al.[21] (its Dark Zurich value\nis obtained with the released pipeline). Our \"+CuRB\" runs applyCuRBunder the corresponding host\nsetting and synthetic-data budget. The composite host stacks RobustNet [33] with ISSA on DeepLabV3+.\nHost-specific region construction: Appendix D.\n(Appendix A). The matched synthetic pool contains low light, backlight, fog, and rain at eight\nseverity levels per family. Low light is aligned with the night condition, while fog and rain\nhave direct counterparts in ACDC [32]. Backlight is an additional source-side illumination\nfamily, and snow is held out entirely for unseen-family evaluation. We report the in-family\nmean over fog, night, and rain, and evaluation also ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cdeed63948c89fa5c07b467bd7188d4325911a553dea927346b190325ada4196",
+            "evidence_id": "E3e141b6fcd8cc674-B0033",
+            "pages": [
+              7
+            ],
+            "section": "Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2162,
+                "page": 7,
+                "section": "Setup",
+                "section_index": 16,
+                "start": 1268,
+                "text": "48.7323.09 24.35 +0.18\nTable 2.CuRBas a plug-in to existing data-generation settings.PublishedreferencesforISSA,H-Weather,\nand RobustNet+ISSA are taken from Li et al.[19]. Gen4Seg follows Yin et al.[21] (its Dark Zurich value\nis obtained with the released pipeline). Our \"+CuRB\" runs applyCuRBunder the corresponding host\nsetting and synthetic-data budget. The composite host stacks RobustNet [33] with ISSA on DeepLabV3+.\nHost-specific region construction: Appendix D.\n(Appendix A). The matched synthetic pool contains low light, backlight, fog, and rain at eight\nseverity levels per family. Low light is aligned with the night condition, while fog and rain\nhave direct counterparts in ACDC [32]. Backlight is an additional source-side illumination\nfamily, and snow is held out entirely for unseen-family evaluation. We report the in-family\nmean over fog, night, and rain, and evaluation also "
+              }
+            ],
+            "text": "48.7323.09 24.35 +0.18\nTable 2.CuRBas a plug-in to existing data-generation settings.PublishedreferencesforISSA,H-Weather,\nand RobustNet+ISSA are taken from Li et al.[19]. Gen4Seg follows Yin et al.[21] (its Dark Zurich value\nis obtained with the released pipeline). Our \"+CuRB\" runs applyCuRBunder the corresponding host\nsetting and synthetic-data budget. The composite host stacks RobustNet [33] with ISSA on DeepLabV3+.\nHost-specific region construction: Appendix D.\n(Appendix A). The matched synthetic pool contains low light, backlight, fog, and rain at eight\nseverity levels per family. Low light is aligned with the night condition, while fog and rain\nhave direct counterparts in ACDC [32]. Backlight is an additional source-side illumination\nfamily, and snow is held out entirely for unseen-family evaluation. We report the in-family\nmean over fog, night, and rain, and evaluation also "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0036"
+        ],
+        "excerpt": "64.19 32.24 52.96 49.80 50.28 27.06 68.31\nGrad. contrib. [11] 64.73 31.85 53.42 50.00 50.55 26.84 68.58\nDisCL-style selection [25] 64.48 32.36 53.27 50.04 50.79 27.02 68.40\nRDG (uncontrolled) 65.11 32.29 53.76 50.39 50.47 27.45 67.41\nFixed-Mid 65.02 32.91 53.58 50.50 50.68 27.33 68.87\nCuRB(cRDG) 66.73 34.26 54.93 51.97 51.38 28.75 70.13\nTable 3. Controlled curation comparison on Cityscapes\u2192ACDC / Dark Zurich.All methods share the\ncandidatepool,validitygate, \ud835\udc35sel,final-trainingobjective,andschedule,differingintheirsample-selection\npolicies. Fog, night, and rain are treated as the in-family conditions. Snow is held out as an unseen family,\nwith no snow samples entering the candidate pool, curation, or final training.\nFigure 3. Qualitative comparison.(a) Degraded SOD with NUN. (b) adverse-condition SemSeg with\nISSA SegFormer. Baseline and +CuRBpredictions are shown for both tasks.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4219546c48b788f303c60ab387a5d7b57dc4d36d6e0a6d8ee99c888f26588ff4",
+            "evidence_id": "E3e141b6fcd8cc674-B0036",
+            "pages": [
+              8
+            ],
+            "section": "Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1340,
+                "page": 8,
+                "section": "Setup",
+                "section_index": 17,
+                "start": 450,
+                "text": "64.19 32.24 52.96 49.80 50.28 27.06 68.31\nGrad. contrib. [11] 64.73 31.85 53.42 50.00 50.55 26.84 68.58\nDisCL-style selection [25] 64.48 32.36 53.27 50.04 50.79 27.02 68.40\nRDG (uncontrolled) 65.11 32.29 53.76 50.39 50.47 27.45 67.41\nFixed-Mid 65.02 32.91 53.58 50.50 50.68 27.33 68.87\nCuRB(cRDG) 66.73 34.26 54.93 51.97 51.38 28.75 70.13\nTable 3. Controlled curation comparison on Cityscapes\u2192ACDC / Dark Zurich.All methods share the\ncandidatepool,validitygate, \ud835\udc35sel,final-trainingobjective,andschedule,differingintheirsample-selection\npolicies. Fog, night, and rain are treated as the in-family conditions. Snow is held out as an unseen family,\nwith no snow samples entering the candidate pool, curation, or final training.\nFigure 3. Qualitative comparison.(a) Degraded SOD with NUN. (b) adverse-condition SemSeg with\nISSA SegFormer. Baseline and +CuRBpredictions are shown for both tasks."
+              }
+            ],
+            "text": "64.19 32.24 52.96 49.80 50.28 27.06 68.31\nGrad. contrib. [11] 64.73 31.85 53.42 50.00 50.55 26.84 68.58\nDisCL-style selection [25] 64.48 32.36 53.27 50.04 50.79 27.02 68.40\nRDG (uncontrolled) 65.11 32.29 53.76 50.39 50.47 27.45 67.41\nFixed-Mid 65.02 32.91 53.58 50.50 50.68 27.33 68.87\nCuRB(cRDG) 66.73 34.26 54.93 51.97 51.38 28.75 70.13\nTable 3. Controlled curation comparison on Cityscapes\u2192ACDC / Dark Zurich.All methods share the\ncandidatepool,validitygate, \ud835\udc35sel,final-trainingobjective,andschedule,differingintheirsample-selection\npolicies. Fog, night, and rain are treated as the in-family conditions. Snow is held out as an unseen family,\nwith no snow samples entering the candidate pool, curation, or final training.\nFigure 3. Qualitative comparison.(a) Degraded SOD with NUN. (b) adverse-condition SemSeg with\nISSA SegFormer. Baseline and +CuRBpredictions are shown for both tasks."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0039"
+        ],
+        "excerpt": "ablations(Cityscapes\u2192ACDC).RDG\nand\ud835\udc37\ud835\udc54 replace cRDG by the paired gap reduction\nand the held-out loss drop. Other rows remove\ncross-fitting, held-out transfer, and the clean-harm\nconstraint.\ud835\udf0c glob is over all32regions.\nMethods\ud835\udc40\u2193\ud835\udc39 \ud835\udc5a\ud835\udc4e\ud835\udc65\ud835\udefd \u2191\ud835\udc38 \ud835\udf19\u2191\ud835\udc46 \ud835\udefc\u2191\nSource-only .021 .892 .960 .920\nAll-gen. (uniform,\ud835\udc35sel) .022 .889 .958 .918\nGrad. contrib. [11] .022 .890 .959 .919\nRDG (uncontr.) .023 .885 .955 .914\nFixed-Mid .021 .891 .960 .919\ncRDG,\ud835\udc3bunconstrained .025 .879 .950 .908\nCuRB .021 .893 .961 .921\nTable 5. Clean retention on SOD(DUTS-TE,\nNUN/PVTv2-B2). Source-only trains on clean\nDUTS-TR. Augmented variants add the same syn-\ntheticbudgetselectedbyeachmethod,soanydrop\nis the clean cost of that selection.\nbaseline, 28.75 on Dark Zurich, and 51.38 on held-out snow, where improvement reflects\ncross-family transfer. Cityscapes performance is also preserved, reaching70.13 versus 67.84\nfor source-only. The ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f1a6332af0ef5460df747724d0f83aa070f468e0ff47967755796d4bc47f1012",
+            "evidence_id": "E3e141b6fcd8cc674-B0039",
+            "pages": [
+              9
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1227,
+                "page": 9,
+                "section": "Main Results",
+                "section_index": 19,
+                "start": 328,
+                "text": "ablations(Cityscapes\u2192ACDC).RDG\nand\ud835\udc37\ud835\udc54 replace cRDG by the paired gap reduction\nand the held-out loss drop. Other rows remove\ncross-fitting, held-out transfer, and the clean-harm\nconstraint.\ud835\udf0c glob is over all32regions.\nMethods\ud835\udc40\u2193\ud835\udc39 \ud835\udc5a\ud835\udc4e\ud835\udc65\ud835\udefd \u2191\ud835\udc38 \ud835\udf19\u2191\ud835\udc46 \ud835\udefc\u2191\nSource-only .021 .892 .960 .920\nAll-gen. (uniform,\ud835\udc35sel) .022 .889 .958 .918\nGrad. contrib. [11] .022 .890 .959 .919\nRDG (uncontr.) .023 .885 .955 .914\nFixed-Mid .021 .891 .960 .919\ncRDG,\ud835\udc3bunconstrained .025 .879 .950 .908\nCuRB .021 .893 .961 .921\nTable 5. Clean retention on SOD(DUTS-TE,\nNUN/PVTv2-B2). Source-only trains on clean\nDUTS-TR. Augmented variants add the same syn-\ntheticbudgetselectedbyeachmethod,soanydrop\nis the clean cost of that selection.\nbaseline, 28.75 on Dark Zurich, and 51.38 on held-out snow, where improvement reflects\ncross-family transfer. Cityscapes performance is also preserved, reaching70.13 versus 67.84\nfor source-only. The "
+              }
+            ],
+            "text": "ablations(Cityscapes\u2192ACDC).RDG\nand\ud835\udc37\ud835\udc54 replace cRDG by the paired gap reduction\nand the held-out loss drop. Other rows remove\ncross-fitting, held-out transfer, and the clean-harm\nconstraint.\ud835\udf0c glob is over all32regions.\nMethods\ud835\udc40\u2193\ud835\udc39 \ud835\udc5a\ud835\udc4e\ud835\udc65\ud835\udefd \u2191\ud835\udc38 \ud835\udf19\u2191\ud835\udc46 \ud835\udefc\u2191\nSource-only .021 .892 .960 .920\nAll-gen. (uniform,\ud835\udc35sel) .022 .889 .958 .918\nGrad. contrib. [11] .022 .890 .959 .919\nRDG (uncontr.) .023 .885 .955 .914\nFixed-Mid .021 .891 .960 .919\ncRDG,\ud835\udc3bunconstrained .025 .879 .950 .908\nCuRB .021 .893 .961 .921\nTable 5. Clean retention on SOD(DUTS-TE,\nNUN/PVTv2-B2). Source-only trains on clean\nDUTS-TR. Augmented variants add the same syn-\ntheticbudgetselectedbyeachmethod,soanydrop\nis the clean cost of that selection.\nbaseline, 28.75 on Dark Zurich, and 51.38 on held-out snow, where improvement reflects\ncross-family transfer. Cityscapes performance is also preserved, reaching70.13 versus 67.84\nfor source-only. The "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0042"
+        ],
+        "excerpt": "Does cRDG predict real utility?We first obtain an empirical retraining utility. Holding\neverythingbuttheregionfixed,weretrainonceperregion \ud835\udc54 andrecordthesigned,unnormalized\ngain on ACDC in-family,\ud835\udc48real(\ud835\udc54)=mIoU real(\ud835\udc40\ud835\udc54)\u2212mIoU real(\ud835\udc40clean). Fig. 4a overlays it with\u03940,\nRDG, andcRDGfor one family. We test whetherRDGremains high when real utility becomes\nnegative and whethercRDG preserves the ordering of\ud835\udc48real, including regions with negative\nutility. The decision unit and the correlation unit are both theregion(per-sample real gain would\nneed one retraining per sample). A global rank correlation can be inflated by mean differences\nbetweenfamilies, so Tab. 6 reports\ud835\udf0cglob over all32 regions and\ud835\udf0cmacro = 1|\ud835\udc9f| \u02dd\ud835\udc51\ud835\udf0c\ud835\udc51, where\ud835\udf0c\ud835\udc51\nis the Spearman correlation over the8 regions of family\ud835\udc51. Both use the operational ranking.\nBecause cRDG is computed on source twins only, the table also correlates the same ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Analysis: Training Utility And The Correctable Band",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b250aa52d9dba4b315ef8eeb95c6c973ffd4dd686b1673d56f0976c1b53ae422",
+            "evidence_id": "E3e141b6fcd8cc674-B0042",
+            "pages": [
+              9
+            ],
+            "section": "Analysis: Training Utility And The Correctable Band",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 9,
+                "section": "Analysis: Training Utility And The Correctable Band",
+                "section_index": 21,
+                "start": 0,
+                "text": "Does cRDG predict real utility?We first obtain an empirical retraining utility. Holding\neverythingbuttheregionfixed,weretrainonceperregion \ud835\udc54 andrecordthesigned,unnormalized\ngain on ACDC in-family,\ud835\udc48real(\ud835\udc54)=mIoU real(\ud835\udc40\ud835\udc54)\u2212mIoU real(\ud835\udc40clean). Fig. 4a overlays it with\u03940,\nRDG, andcRDGfor one family. We test whetherRDGremains high when real utility becomes\nnegative and whethercRDG preserves the ordering of\ud835\udc48real, including regions with negative\nutility. The decision unit and the correlation unit are both theregion(per-sample real gain would\nneed one retraining per sample). A global rank correlation can be inflated by mean differences\nbetweenfamilies, so Tab. 6 reports\ud835\udf0cglob over all32 regions and\ud835\udf0cmacro = 1|\ud835\udc9f| \u02dd\ud835\udc51\ud835\udf0c\ud835\udc51, where\ud835\udf0c\ud835\udc51\nis the Spearman correlation over the8 regions of family\ud835\udc51. Both use the operational ranking.\nBecause cRDG is computed on source twins only, the table also correlates the same "
+              }
+            ],
+            "text": "Does cRDG predict real utility?We first obtain an empirical retraining utility. Holding\neverythingbuttheregionfixed,weretrainonceperregion \ud835\udc54 andrecordthesigned,unnormalized\ngain on ACDC in-family,\ud835\udc48real(\ud835\udc54)=mIoU real(\ud835\udc40\ud835\udc54)\u2212mIoU real(\ud835\udc40clean). Fig. 4a overlays it with\u03940,\nRDG, andcRDGfor one family. We test whetherRDGremains high when real utility becomes\nnegative and whethercRDG preserves the ordering of\ud835\udc48real, including regions with negative\nutility. The decision unit and the correlation unit are both theregion(per-sample real gain would\nneed one retraining per sample). A global rank correlation can be inflated by mean differences\nbetweenfamilies, so Tab. 6 reports\ud835\udf0cglob over all32 regions and\ud835\udf0cmacro = 1|\ud835\udc9f| \u02dd\ud835\udc51\ud835\udf0c\ud835\udc51, where\ud835\udf0c\ud835\udc51\nis the Spearman correlation over the8 regions of family\ud835\udc51. Both use the operational ranking.\nBecause cRDG is computed on source twins only, the table also correlates the same "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0046"
+        ],
+        "excerpt": "valuation baselines Twin-based scores\nMetric Highest loss /\nuncertainty\nRHO-Loss style\n[8]\nGrad. contrib.\n[11]\n\u03940\n(gap)\nRDG\n(uncontrolled)\n\ud835\udc37\ud835\udc54\n(held-out drop)\nCuRB\n(cRDG)\n\ud835\udf0cglob with\ud835\udc48 real\u21910.25 0.49 0.52 0.39 0.61 0.70 0.79\n\ud835\udf0cmacro with\ud835\udc48 real\u21910.17 0.35 0.37 0.27 0.43 0.56 0.74\n\ud835\udf0cDZ with\ud835\udc48 DZ\u21910.21 0.43 0.45 0.33 0.53 0.62 0.72\nin-fam. mIoU\u219149.45 49.80 50.00 49.28 50.39 51.02 51.97\nTable 6. Region-level score comparisonunder matched pool, gate, diversity, budget, objective, and\nschedule (Cityscapes\u2192ACDC, ISSA SegFormer).\ud835\udf0cglob is Spearman correlation with\ud835\udc48real over all32\nregions,\ud835\udf0cmacroaverageswithin-familycorrelations,and \ud835\udf0cDZevaluatesthesamerankingagainstper-region\nretraining gains on Dark Zurich.\u03940 is the unmastered gap and\ud835\udc37\ud835\udc54 the held-out loss drop.\nsupports transfer beyond the benchmark used to define\ud835\udc48real. The held-out loss drop\ud835\udc37\ud835\udc54 is the\nno-subtraction counterpart, andcRDG improves\ud835\udf0cglob from ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Fog",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0391956458333365696194056727bb1366cc8a349c16c922d99bc17c7d9835c2",
+            "evidence_id": "E3e141b6fcd8cc674-B0046",
+            "pages": [
+              10
+            ],
+            "section": "Fog",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1798,
+                "page": 10,
+                "section": "Fog",
+                "section_index": 24,
+                "start": 898,
+                "text": "valuation baselines Twin-based scores\nMetric Highest loss /\nuncertainty\nRHO-Loss style\n[8]\nGrad. contrib.\n[11]\n\u03940\n(gap)\nRDG\n(uncontrolled)\n\ud835\udc37\ud835\udc54\n(held-out drop)\nCuRB\n(cRDG)\n\ud835\udf0cglob with\ud835\udc48 real\u21910.25 0.49 0.52 0.39 0.61 0.70 0.79\n\ud835\udf0cmacro with\ud835\udc48 real\u21910.17 0.35 0.37 0.27 0.43 0.56 0.74\n\ud835\udf0cDZ with\ud835\udc48 DZ\u21910.21 0.43 0.45 0.33 0.53 0.62 0.72\nin-fam. mIoU\u219149.45 49.80 50.00 49.28 50.39 51.02 51.97\nTable 6. Region-level score comparisonunder matched pool, gate, diversity, budget, objective, and\nschedule (Cityscapes\u2192ACDC, ISSA SegFormer).\ud835\udf0cglob is Spearman correlation with\ud835\udc48real over all32\nregions,\ud835\udf0cmacroaverageswithin-familycorrelations,and \ud835\udf0cDZevaluatesthesamerankingagainstper-region\nretraining gains on Dark Zurich.\u03940 is the unmastered gap and\ud835\udc37\ud835\udc54 the held-out loss drop.\nsupports transfer beyond the benchmark used to define\ud835\udc48real. The held-out loss drop\ud835\udc37\ud835\udc54 is the\nno-subtraction counterpart, andcRDG improves\ud835\udf0cglob from "
+              }
+            ],
+            "text": "valuation baselines Twin-based scores\nMetric Highest loss /\nuncertainty\nRHO-Loss style\n[8]\nGrad. contrib.\n[11]\n\u03940\n(gap)\nRDG\n(uncontrolled)\n\ud835\udc37\ud835\udc54\n(held-out drop)\nCuRB\n(cRDG)\n\ud835\udf0cglob with\ud835\udc48 real\u21910.25 0.49 0.52 0.39 0.61 0.70 0.79\n\ud835\udf0cmacro with\ud835\udc48 real\u21910.17 0.35 0.37 0.27 0.43 0.56 0.74\n\ud835\udf0cDZ with\ud835\udc48 DZ\u21910.21 0.43 0.45 0.33 0.53 0.62 0.72\nin-fam. mIoU\u219149.45 49.80 50.00 49.28 50.39 51.02 51.97\nTable 6. Region-level score comparisonunder matched pool, gate, diversity, budget, objective, and\nschedule (Cityscapes\u2192ACDC, ISSA SegFormer).\ud835\udf0cglob is Spearman correlation with\ud835\udc48real over all32\nregions,\ud835\udf0cmacroaverageswithin-familycorrelations,and \ud835\udf0cDZevaluatesthesamerankingagainstper-region\nretraining gains on Dark Zurich.\u03940 is the unmastered gap and\ud835\udc37\ud835\udc54 the held-out loss drop.\nsupports transfer beyond the benchmark used to define\ud835\udc48real. The held-out loss drop\ud835\udc37\ud835\udc54 is the\nno-subtraction counterpart, andcRDG improves\ud835\udf0cglob from "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0050"
+        ],
+        "excerpt": "transfer. The probe horizon follows a fixed budget-scaling rule rather than\nadapting to each region. The SOD twin pool comes from external clean images. Also, all newly\ntrained models are single runs, and we do not report seed variance.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion And Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "202577d1dc6f454a46330d21d3edb862e4ab615a17919c291d1675934838768b",
+            "evidence_id": "E3e141b6fcd8cc674-B0050",
+            "pages": [
+              11
+            ],
+            "section": "Discussion And Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1129,
+                "page": 11,
+                "section": "Discussion And Limitations",
+                "section_index": 26,
+                "start": 893,
+                "text": "transfer. The probe horizon follows a fixed budget-scaling rule rather than\nadapting to each region. The SOD twin pool comes from external clean images. Also, all newly\ntrained models are single runs, and we do not report seed variance."
+              }
+            ],
+            "text": "transfer. The probe horizon follows a fixed budget-scaling rule rather than\nadapting to each region. The SOD twin pool comes from external clean images. Also, all newly\ntrained models are single runs, and we do not report seed variance."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.09849",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "theoretical",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.09849",
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Full downstream retraining on established external benchmarks (ACDC, Dark Zurich, WXSOD, CSOD10K) shows consistent gains over uncurated and baseline-curated sets, and region-level cRDG rankings correlate with independently measured per-region retraining utility.",
+          "final_evaluation_signal": "Standard benchmark metrics on real adverse-condition and SOD test sets (mIoU on ACDC/Dark Zurich, MAE/F-beta/E-measure/S-measure on WXSOD/CSOD10K), plus per-region retraining gains on real targets.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Short K-step treatment and clean-control probe losses on split source data, used to compute cRDG and rank degradation-severity regions for selection.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0002",
+          "E3e141b6fcd8cc674-B0007",
+          "E3e141b6fcd8cc674-B0011",
+          "E3e141b6fcd8cc674-B0023",
+          "E3e141b6fcd8cc674-B0025",
+          "E3e141b6fcd8cc674-B0032",
+          "E3e141b6fcd8cc674-B0033",
+          "E3e141b6fcd8cc674-B0036",
+          "E3e141b6fcd8cc674-B0039",
+          "E3e141b6fcd8cc674-B0042",
+          "E3e141b6fcd8cc674-B0046",
+          "E3e141b6fcd8cc674-B0050"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "57cc4588c8249061a9cc2eb3effcac83fb85814a8225610f5b76e1246c672251"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.09849",
+        "claim_evidence_alignment": "Claims regarding the non-monotonic nature of training utility, the shift in correctable bands across models/budgets, and CuRB's performance gains over uncurated twins and baseline valuation metrics are directly supported by benchmark metrics and correlation with ground-truth retraining gains.",
+        "context_id": "3e141b6fcd8cc674dd846ad1a58adb553a538c7ca671eb36934930e0bcb4120f",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluations are comprehensive across semantic segmentation (Cityscapes to ACDC, Dark Zurich) and salient object detection (WXSOD, CSOD10K) under strict budget-matched protocols. The paper isolates the effect of curation against multiple data-selection baselines, tests plug-in compatibility across several generators, verifies compute tradeoffs, and performs informative ablations.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Full downstream retraining evaluated on established external benchmarks (ACDC, Dark Zurich, WXSOD, CSOD10K) demonstrates consistent performance gains over uncurated and baseline-curated sets.",
+          "final_evaluation_signal": "Standard benchmark test evaluation metrics (mIoU on real adverse conditions like ACDC/Dark Zurich, and MAE/F-beta/E-measure/S-measure on real SOD datasets).",
+          "independent_corroboration": "present",
+          "optimization_signal": "Short K-step treatment and control probe training losses on split source data using synthetic degradation twins versus weak photometric augmentations.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E3e141b6fcd8cc674-B0002",
+          "E3e141b6fcd8cc674-B0007",
+          "E3e141b6fcd8cc674-B0011",
+          "E3e141b6fcd8cc674-B0023",
+          "E3e141b6fcd8cc674-B0025",
+          "E3e141b6fcd8cc674-B0032",
+          "E3e141b6fcd8cc674-B0033",
+          "E3e141b6fcd8cc674-B0036",
+          "E3e141b6fcd8cc674-B0039",
+          "E3e141b6fcd8cc674-B0042",
+          "E3e141b6fcd8cc674-B0046",
+          "E3e141b6fcd8cc674-B0050"
+        ],
+        "limitations": "The authors transparently document limitations, including reliance on single-run evaluations for final training, residual drift near gate thresholds, reliance on cross-family transfer for completely novel degradation types, and probe budget heuristics.",
+        "method_assessment": "The method mathematically isolates degradation-specific reducible error from clean forgetting and generic optimization progress using cross-fitted matched control probes. The candidate pool generation, structural DINOv2 validity gating, budget allocation, and clean-harm constraint are well specified.",
+        "quality_rationale": "The manuscript presents a rigorous, well-controlled experimental setup addressing a genuine confound in synthetic data selection. The mathematical formulation is clear, baselines are fairly adapted under matched budgets, and empirical analyses thoroughly probe underlying mechanisms.",
+        "scoped_contribution": "The paper introduces the controlled Reducible Degradation Gap (cRDG) and the Curation of Reducible Bands (CuRB) framework, which scores synthetic degradation-severity regions via budget-matched short probes relative to a clean-control stream, curating synthetic data for dense prediction without target-domain exposure.",
+        "source_content_hash": "57cc4588c8249061a9cc2eb3effcac83fb85814a8225610f5b76e1246c672251"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous, well-controlled experimental setup addressing a genuine confound in synthetic data selection. The mathematical formulation is clear, baselines are fairly adapted under matched budgets, and empirical analyses thoroughly probe underlying mechanisms.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "57cc4588c8249061a9cc2eb3effcac83fb85814a8225610f5b76e1246c672251",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently document limitations, including reliance on single-run evaluations for final training, residual drift near gate thresholds, reliance on cross-family transfer for completely novel degradation types, and probe budget heuristics."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -163,7 +1481,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

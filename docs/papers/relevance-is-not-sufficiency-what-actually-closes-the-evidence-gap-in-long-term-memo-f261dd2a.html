@@ -59,16 +59,250 @@
             <p>LLM agents that interact with a user across many sessions accumulate histories that exceed their context window, so they store past interactions in an external memory and answer each question from a small set of retrieved records. Existing memory systems rank records by lexical or embedding relevance, yet the top-ra...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The contribution is soundly scoped and executed, offering clear formalization, thorough empirical benchmarking, and rigorous ablations without overstating the capacity of flat stores against structured graphs.</p>
+      <p>The authors explicitly disclose development contact on LOCOMO conversations, boundary differences when compared to non-flat graph architectures, and the failure of gold-free sufficiency estimates to act as viable dynamic stopping signals.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-09T11:20:59.984361+00:00.</p>
+        <p>Coverage: 69831 of 69831 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LLM agents that interact with a user across many sessions accumulate histories
+that exceed their context window, so they store past interactions in an external
+memory and answer each question from a small set of retrieved records. Existing
+memory systems rank records by lexical or embedding relevance, yet the top-
+ranked memories can each be relevant while jointly omitting a complementary
+fact that the answer requires, especially for multi-session and temporal questions.
+Drawing on the distinction between relevance and sufficiency in legal evidence
+scholarship, we recast memory retrieval as constructing asufficient memory set.
+To operationalize this view, we introduce a blinded LLM judgment over the re-
+trieved set, together with Gold Hit and Turn Hit as evidence-coverage proxies.
+We then proposeBudgeted Flat Reconstruction (BFR), which builds sufficient
+sets over a fixed flat memory </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>store in two stages. Specifically, we first applyFor-
+mal Concept Analysis for Memory Selection (FCA-MS)to decompose the question
+into information requirements and select a compact candidate subset that jointly
+covers them. Then, we repeatedly acquire unseen records through deeper text
+search or complementary entity and session views, stopping when the budget is
+exhausted. Experiments on LOCOMOand LONGMEMEVAL-S show that BFR
+outperforms same-store adaptations of recent agent-memory systems in both an-
+swer quality and evidence coverage. Specifically, on LONGMEMEVAL-S it raises
+judged accuracy from 72.4% to 82.2% and Turn Hit to 91.4%. Code is available
+at:GitHub.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>improving selection within that pool. Both challenges must be met
+without knowing which records are required. At inference time, no oracle declares a set sufficient,
+so a method must itself decide how far to search and when to stop.
+To address both challenges, we proposeBudgeted Flat Reconstruction(BFR), a two-stage,
+requirement-aware framework that assembles answer-supporting evidence over a flat memory store
+under a fixed retrieval budget. Specifically, at Stage I,Formal Concept Analysis for Memory Se-
+lection(FCA-MS) first decomposes the question into answer requirements, and then applies an
+FCA-based prefilter followed by LLM selection of a compact, complementary subset. These se-
+lected candidates are grounded to source records to form the initial evidence set. At Stage II, we
+acquire further supporting evidence from the current evidence set, excluding records already ob-
+tained </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and accumulating new support within a fixed retrieval budget. We instantiate this stage with
+two schedules:Budgeted Flat Reconstruction with Text Access(BFR-Text) extends text retrieval,
+andBudgeted Flat Reconstruction with Multi-View Access(BFR-MV) combines text, entity, and
+session views. Stage I thus composes the evidence already present among the candidates, Stage II
+2
+reaches evidence beyond them, and the fixed budget supplies a stopping rule that does not presume
+sufficiency can be recognized. Finally, we evaluate BFR on LOCOMOand LONGMEMEVAL-S
+under protocols that hold the memory store, answerer, and judge fixed within each benchmark. Ex-
+tensive results show that BFR improves judged answer quality and annotated evidence coverage over
+same-store baselines. On LONGMEMEVAL-S, it raises judged accuracy from72.4%to82.2%and
+attains a91.4%Turn Hit. In summary, this paper makes three </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>contributions:
+(i) We formulate memory retrieval as the construction of a sufficient memory set and make set-level
+sufficiency measurable: LLM-Suff@Set judges whether a retrieved set supports the answer, while
+Gold Hit and Turn Hit track coverage of annotated answer-bearing evidence.
+(ii) We propose BFR, a two-stage method for building sufficient sets over a flat memory. Its two
+stages recover complementary evidence missing within and beyond the initial candidates.
+(iii) We conduct extensive experiments on LOCOMOand LONGMEMEVAL-S. These results show
+that BFR improves answer quality and evidence coverage, and identify where additional evidence is
+recovered and clarify the distinct roles of evidence composition and acquisition.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>views.
+Table 1:Illustrative delivery-time question.Both dates are required to derive the five-day answer.
+Retrieved evidence LLM-Suff@Set Gold Hit Turn Hit
+Order only (Feb. 5)0 1 0
+Arrival only (Feb. 10)0 1 1
+Order + arrival 11 1
+Thus,S(q, E)concerns what the evidence makes answerable, independently of whether a particular
+answerer generates the correct response. To assess this property offline, leta(q, E)be the final
+decidedlabel from a blinded, reference-conditioned LLM adjudication givenq,y ⋆(q), andtext(E)
+(Appendix M), witha(q, E)∈ {sufficient,insufficient}. We defineLLM-Suff@Setby
+bSLLM(q, E) =⊮[a(q, E) = sufficient].(2)
+Here, bSLLM(q, E)is the operational, reference-conditioned assessment of joint answer support. It
+is undefined when adjudication is uncertain or missing; such cases are excluded from the reported
+rate rather than counted as insufficient. For questions with </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>annotated supporting records, letG(q)be
+their nonempty set of source identifiers andH(q)be their set of annotated source-turn identifiers,
+which may be empty.Gold HitandTurn Hitare defined as follows:
+G(q, E) =⊮[src(E)∩ G(q)̸=∅](3)
+TH(q, E) =⊮[src(E)∩ H(q)̸=∅](4)
+The valueG(q, E)is1ifEreaches at least one annotated supporting record; it does not require
+retrieval of every supporting record. Gold Hit is undefined whenG(q) =∅and is averaged over
+questions with nonempty supporting-record annotations. The valueTH(q, E)is1ifEreaches at
+least one annotated answer-bearing turn. Our main LONGMEMEVAL-S results average Turn Hit over
+all500questions. These proxies measure whether annotated evidence was reached, not whether the
+set suffices. In Table 1, each singleton has Gold Hit1, and the arrival alone has Turn Hit1. Neither
+yields the five-day answer, but together they do. A hit is therefore </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>necessary for sufficiency but does
+not establish it, which is why we report the proxies alongside, not in place of, the set-level judgment.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>intoE t+1 until the budget is exhausted.
+The comprehensive evidence set returns to Agent, and Agent answers the question based on the set.
+A one-shot reader returnsE= TopK(q,M)and cannot recover once a required exhibit is missing.
+Budgeted reconstruction instead starts from an initial setE 0 and adds only unseen records,
+Et+1 =E t ∪K t, K t ⊆ M \Et.(6)
+Equation 5 is the problem. The two gaps in Section 3 say what a solution must do. Composition
+choosesE 0 so that distinct answer requirements are covered rather than redundant relevant items.
+Completion chooses eachK t so that a missing exhibit can still enter the record after the first page.
+BFR assigns one stage to each gap. Let fMbe an agent-memory note representation andϕa ground-
+ing map intoM. Stage I buildsE 0 with FCA-MS and Stage II runs a completion scheduleπ:
+E0 =ϕ
 
-        <ul></ul>
+ρFCA(q, fM)
+
+,
+At =π(q, Et, t),
+Et+1 =E t ∪κ π(q, Et, Ct), t </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>&lt; T.
+(7)
+At names the retrieval views and cues at roundt,C t is the unseen candidate pool those calls return,
+andκ π retains added records. The answerer readsE T after the budget is spent. Figure 3 makes this
+data flow explicit. Stage I asks the agent memory system for an expanded candidate pool beyond its
+usual top-k, decomposes the query into requirements, filters the pool by requirement-aware FCA,
+and asks an LLM to select a compact supporting subset. A bounded grounding map then supplies
+the initial source-record evidenceE 0. Stage II treats this set as a cumulative evidence state, retrieves
+through the views specified byπ, removes records already inE t, and retains novel support until an
+observable budget is exhausted. The figure instantiates this loop with BFR-MV; BFR-Text uses the
+same exclusion, retention, accumulation, and stopping operations with text access only. Appendix </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Expanded retrieval and requirement decomposition.An agent memory system returns an ordered
+poolC q = TopN(Retrieveagent(q, fM)), withN &gt; krelative to its usual top-kretrieval cutoff. An
+LLM decomposesqinto answer-oriented requirementsR q ={r j}Jj=1, including distinct facts,
+bridges, list items, and temporal constraints.
+5
+Requirement-aware prefilter.An FCA-based prefilter uses the requirements and retrieved candi-
+dates to retain a smaller poolP q = FCAPrefilter(R q,C q). This step exposes a broader range of
+potentially complementary notes to the selector while bounding its input.
+Minimum-subset selection and grounding.An LLM receivesqandP q and is instructed to se-
+lect the smallest memory subset that jointly supplies the required information. Its selected IDs
+are checked against the prefiltered pool and deduplicated; the implementation uses requirement-
+coverage output and a fixed </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fallback if the valid subset is empty (Appendix E). Only the resulting
+selected notesSare grounded to source turns byϕto produceE 0 ⊆ M; the retriever&#x27;s initial top-k
+is a reference cutoff, not a retained base set.
+This stage improves requirement coverage within the initial candidate pool but remains bounded by
+that pool. A required record can therefore be absent fromE 0 even whenE 0 already contains several
+records related to the question. Stage II treats this remaining gap as an acquisition problem instead
+of reselecting repeatedly from the same pool. Algorithm 1 in Appendix D summarizes the selection
+and grounding steps.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Multi-view access to one fixed store.Text, entity, and session indices provide different access paths
+to the same source-grounded records inM. At roundt, each actiona= (v, c)∈A t specifies a view
+vand a cuec. The retrievers exclude all records already contained inE t:
+Ct = Unique
+
+ [
+(v,c)∈At
+Rv(c,M \Et)
+
+ .(8)
+The exclusion constraint makes acquisition cumulative and duplicate-free. The retention ruleκ π
+ranks the returned records by relevance and by novelty with respect to the current set, keeps at most
+kkeep of them, and adds them toE t by set union. Consequently, each round either extends the
+reachable evidence or leaves the set unchanged.
+Budgeted stopping.The budgetB= (B step, Bcall, Bnew)limits the number of rounds, retrieval
+calls, and newly retained records. The main configuration allows three rounds, six calls, and30new
+records. We use budget exhaustion as the stopping </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>condition because the offline sufficiency measures
+in Section 3 require either a reference answer or gold annotations and are therefore unavailable at
+inference time. Algorithm 2 in Appendix D gives the shared completion loop; the fixed schedules
+differ only in how they instantiateA t.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this section, we conduct controlled experiments to evaluate BFR and answer four research ques-
+tions:(RQ1)How does BFR compare with same-store memory baselines in answer quality?(RQ2)
+Do retrieved sets contain sufficient evidence to answer the question, and how does direct sufficiency
+6
+Table 2:Performance across different question types on LOCOMO(n=200). Same flat store and
+extractive answerer; BFR is BFR-MV C6. F1 and LLM-Judge (J) are percentages. Bold denotes the
+best value in each column.
+Method Multi-Hop Temporal Open Domain Single-Hop Overall</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>F1 J F1 J F1 J F1 J F1 J
+Mem0 (Chhikara et al., 2025) 29.3 42.4 74.1 78.0 2.2 0.0 58.5 59.6 55.3 59.0
+A-Mem (Xu et al., 2025) 32.3 42.4 70.2 72.03.80.0 47.1 51.4 48.7 53.0
+CoM∗ (Xu et al., 2026) 29.3 36.4 66.2 70.0 3.2 0.0 52.3 56.0 50.0 54.0
+MRAgent-Flat∗ (Ji et al., 2026) 32.8 45.5 72.1 78.0 2.9 0.0 63.2 68.8 58.0 64.5
+BFR (ours) 44.6 48.5 78.1 80.0 2.7 12.5 75.7 77.1 68.3 70.5
+compare with annotated-support hits?(RQ3)How do the two stages and access schedules contribute
+to performance?(RQ4)How do answer quality and evidence coverage change with additional re-
+trieval cost? The appendix reports full operating-point, question-type, and cross-system results.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets.We evaluate on two benchmarks for long-term conversational memory. LOCOMO(Ma-
+harana et al., 2024) tests understanding of long, multi-session conversations, including questions
+that require linking information across turns. LONGMEMEVAL-S (Wu et al., 2025) tests whether
+a memory system can answer questions about information distributed across extended interaction
+histories and sessions. Both provide evidence annotations, allowing us to assess retrieval as well as
+final answers. To keep multi-arm evaluation costs manageable, we use a fixed stratified200-question
+LOCOMOdevelopment subset; we evaluate all500questions of LONGMEMEVAL-S. Dataset prove-
+nance and the construction of every derived evaluation subset are documented in Appendix G.
+Baselines.We evaluate BFR against four representative memory-augmented baselines:
+Mem0 (Chhikara et al., 2025), A-Mem (Xu et al., 2025), CoM ∗ </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(Xu et al., 2026), and MRAgent-
+Flat∗ (Ji et al., 2026). Within each benchmark, all arms share the same flat turn store, extractive
+answerer, and answer judge. The starred methods are controlled same-store adaptations of the pub-
+lished systems. Baseline retrieval and BFR initialization are detailed in Appendix E.
+Metrics.Answer quality is measured by Porter stem F1 and LLM-Judge (J) on LOCOMO, and
+by Judge on LONGMEMEVAL-S. The answer judge isgpt-5.5at temperature zero with prompt
+mem0 accuracy v1. On LOCOMO,G(q)is the released set of supporting-record identifiers. We
+report the sufficiency indicators in Section 3 and two finer measures of annotated-evidence recovery:
+ER(q, E) =|src(E)∩ G(q)||G(q)| ,CER(q, E) =⊮[G(q)⊆src(E)].(9)
+Evidence Recall (ER) is the fraction of annotated supporting records inG(q)thatErecovers,
+while Complete Evidence Recall (CER) requires every annotated </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>supporting record. On LONG-
+MEMEVAL-S,H(q)comprises turns markedhas answer; Turn Hit measures whether the re-
+trieved set reaches one. These retrieval and set-level measures complement rather than replace
+end-to-end answer scores. Prompts are listed in Appendix O.</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RQ1: Does BFR improve answer quality under the same memory store?
+BFR achieves the best overall answer quality among same-store methods on both benchmarks (Ta-
+ble 2, Table 3).On LOCOMO, it leads in Stem F1 and Judge across Multi-Hop, Temporal, and
+Single-Hop questions. On LONGMEMEVAL-S, it also leads in overall Judge and Turn Hit, with
+a particularly strong gain on Temporal questions. The small LOCOMOOpen Domain slice is re-
+ported without a separate type-level conclusion. These results are consistent with the two-stage
+design: FCA-MS assembles complementary initial evidence, and budgeted completion retrieves un-
+seen support beyond the initial set. The following analyses test whether this support closes evidence
+7
+Table 3:Performance across different question types on LONGMEMEVAL-S(n=500). The four
+question-type columns report Judge accuracy; All values are percentages. All rows share </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the same
+turn store, extractive answerer, and judge. Bold and underline denote the best and second-best values
+in each column. The full six-type Turn Hit breakdown is in Appendix K.
+Judge by question type Overall
+Method Multi-S Single-S Temporal Preference Judge Turn Hit
+Mem0 (Chhikara et al., 2025) 60.9 87.1 65.4 26.7 72.4 64.8
+A-Mem (Xu et al., 2025) 54.1 87.1 57.133.368.6 82.2
+CoM ∗(Xu et al., 2026) 54.1 87.1 57.133.368.6 80.6
+MRAgent-Flat∗ (Ji et al., 2026) 58.6 90.0 63.2 30.0 71.4 78.8
+BFR (ours) 69.2 92.9 84.2 30.0 82.2 91.4
+Table 4:Set sufficiency and annotated-evidence reach across same-store systems.On LOCOMO
+(n=200), LLM-Suff@Set is the blinded set-level judgment and Gold Hit measures annotated-
+evidence access. On LONGMEMEVAL-S, LLM-Suff@Set is the set-level judgment and Turn Hit
+measures annotated-evidence access over all500questions, with unannotated items counted </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>as
+misses. All values are percentages. BFR-Text uses C3 and BFR-MV uses C6.
+System LOCOMO(n=200) LONGMEMEVAL-S (n=500)
+LLM-Suff@Set Gold Hit LLM-Suff@Set Turn Hit
+Mem0 (Chhikara et al., 2025) 45.5% 57.0% 48.0% 64.8%
+A-Mem (Xu et al., 2025) 36.5% 50.0% 38.0% 82.2%
+CoM∗ (Xu et al., 2026) 44.0% 49.0% 49.0% 80.6%
+MRAgent-Flat∗ (Ji et al., 2026) 54.5% 62.5% 56.0% 78.8%
+FCA-MS (Stage I Only) 42.5% 51.0% 48.0% 85.0%
+BFR-Text 62.0% 72.5% 63.0% 88.6%
+BFR-MV 63.5% 73.5% 65.0% 91.4%
+gaps and how stage, access schedule, and budget contribute. Paired same-store comparisons and the
+separate comparison with CoM and Full-MRAgent are in Appendix H and Appendix C, respectively.
+RQ2: Do the retrieved sets contain the evidence needed for an answer?
+Table 6:Stage and access-schedule ablation.
+Configuration LOCOMOLONGMEMEVAL-S</blockquote></details></li><li><strong>Contribution clarity — pages 15–16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>C STRUCTURED MEMORY BOUNDARY
+This appendix reports the cross-system comparison that was removed from the main LOCOMO
+table. The slice is the conv-30 overlap (n=81) under a unified extractive answerer and judge. BFR-
+15
+Table 8:Cross-system boundary on the LOCOMOconv-30 overlap(n=81), unified extractive
+answerer and judge;†marks rows re-scored under this protocol. Bold / underline: best / second-
+best. Open Domain is absent from the slice.
+Multi-Hop Temporal Single-Hop Overall
+Method F1 J F1 J F1 J F1 J
+BFR-Text† 41.454.5100.0 100.075.5 77.378.781.5
+CoM† (Xu et al., 2026) 41.2 63.6 96.2 96.2 71.8 84.1 75.5 85.2
+MRAgent-Flat† (Ji et al., 2026) 12.9 45.5 92.3 92.3 62.3 68.2 65.2 72.8
+Full-MRAgent† (Ji et al., 2026) 26.590.992.3 96.2 78.8 95.576.1 95.1
+Table 9:Flat acquisition vs. structured memoryon the81-question overlap slice under a shared
+extractive answerer and judge. Full MRAgent and </blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>M ANNOTATION PROTOCOL
+Suff@Set is labelled on a question–evidence snapshot rather than on the system answer. The blinded
+input contains the question, reference answer, and anonymized evidence text; it withholds the
+method, budget, system answer, and gold evidence identifiers. Two independent judges (gpt-5.5
+andclaude-sonnet-4-6) assignsufficient,insufficient, oruncertain;gpt-6-soladjudicates
+disagreements. All calls use temperature zero. Because the protocol includes the reference answer
+and uses model judges, Suff@Set is an LLM-only, reference-conditioned offline evaluation measure
+rather than a human annotation or an inference-time stopping signal. An uncertain or missing final
+label is excluded from the binary-rate denominator; the originally reported FCA-MS, BFR-Text C3,
+and BFR-MV C6 pilot produced no uncertain labels. No human Suff@Set labels are reported.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +341,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-08](2026-10-08.md).
+Latest daily digest: [2026-10-09](2026-10-09.md).
 
-# Paper Scout Digest - 2026-10-08
+# Paper Scout Digest - 2026-10-09
 
 ## Run Summary
 
-- **Run ID:** 36
-- **Candidates fetched:** 92
-- **New unique papers:** 78
-- **Relevant:** 8
+- **Run ID:** 37
+- **Candidates fetched:** 86
+- **New unique papers:** 77
+- **Relevant:** 5
 - **Maybe relevant:** 0
-- **Irrelevant:** 84
-- **Source summary:** arxiv: 9, openalex: 82, semantic_scholar: 1
+- **Irrelevant:** 81
+- **Source summary:** arxiv: 6, openalex: 78, semantic_scholar: 2
 
 ## Source Warnings
 
@@ -21,16 +21,16 @@ Latest daily digest: [2026-10-08](2026-10-08.md).
 - openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'Engram'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.
-- semantic_scholar failed for 'frozen memory reader adaptation': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory](https://arxiv.org/abs/2610.10533v1)
+### [EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory](https://doi.org/10.48550/arxiv.2610.10533)
 
 - **Authors:** Hongru Cai, Ran Wei, Wenjie Wang, Chengfa Wu, Ning Song, Yongqi Li, et al.
 - **Date:** 2026-10-07
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (92/100)
 - **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
 - **Tags:** engram, conditional-memory, hashed-ngram-memory

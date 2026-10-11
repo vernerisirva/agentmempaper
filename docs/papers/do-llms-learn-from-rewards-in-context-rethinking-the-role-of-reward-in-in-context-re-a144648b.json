@@ -1,42 +1,45 @@
 {
-  "abstract_summary": "Persistent memory for Large Language Models (LLMs) has matured rapidly: systems such as MemGPT/Letta, Mem0, and Zep now provide agents with tiered, temporally-aware, model-agnostic external storage, while the Model Context Protocol (MCP) standardizes access to memory servers. A less addressed problem is that an iden...",
+  "abstract_summary": "LLM agents increasingly improve at inference time by accumulating experience in context rather than by updating parameters. This process is often described as in-context reinforcement learning (ICRL). Whether in-context learning (ICL) can actually play the role of RL, however, has not been tested. We study this ques...",
   "alternate_urls": [
-    "https://arxiv.org/abs/2610.05124v1",
-    "https://arxiv.org/abs/2610.05124"
+    "https://arxiv.org/abs/2610.11152v1",
+    "https://arxiv.org/abs/2610.11152"
   ],
-  "appeared_in_latest_run": false,
-  "arxiv_id": "2610.05124",
+  "appeared_in_latest_run": true,
+  "arxiv_id": "2610.11152",
   "authors": [
-    "Amit Vadnere",
-    "Aishwarya Lonarkar"
+    "Minchan Kwon",
+    "Seunghee Koh",
+    "Sunghyun Baek",
+    "Minsung Bae",
+    "Junmo Kim"
   ],
-  "canonical_id": "arxiv:2610.05124",
-  "citation": "Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory. Amit Vadnere, Aishwarya Lonarkar. 2026-10-04. https://arxiv.org/abs/2610.05124v1",
-  "detail_json": "papers/memory-canonicalization-a-framework-and-benchmark-for-cross-model-drift-in-persisten-8649be8c.json",
-  "detail_page": "papers/memory-canonicalization-a-framework-and-benchmark-for-cross-model-drift-in-persisten-8649be8c.html",
+  "canonical_id": "arxiv:2610.11152",
+  "citation": "Do LLMs Learn from Rewards in Context? : Rethinking the role of reward in In-Context Reinforcement Learning. Minchan Kwon, Seunghee Koh, Sunghyun Baek, Minsung Bae, Junmo Kim. 2026-10-08. https://arxiv.org/abs/2610.11152v1",
+  "detail_json": "papers/do-llms-learn-from-rewards-in-context-rethinking-the-role-of-reward-in-in-context-re-a144648b.json",
+  "detail_page": "papers/do-llms-learn-from-rewards-in-context-rethinking-the-role-of-reward-in-in-context-re-a144648b.html",
   "doi": null,
-  "effective_sort_date": "2026-10-04",
-  "first_seen_at": "2026-10-06 11:00:02",
-  "first_seen_date": "2026-10-06",
+  "effective_sort_date": "2026-10-08",
+  "first_seen_at": "2026-10-11 11:36:11",
+  "first_seen_date": "2026-10-11",
   "future_date": false,
-  "is_new": false,
-  "last_seen_at": "2026-10-08 11:07:24",
-  "last_seen_date": "2026-10-08",
+  "is_new": true,
+  "last_seen_at": "2026-10-11 11:36:11",
+  "last_seen_date": "2026-10-11",
   "latest_relevant_date_bucket": 0,
-  "latest_revision_date": "2026-10-04",
+  "latest_revision_date": "2026-10-08",
   "library_admission": "review",
-  "newly_discovered_in_latest_run": false,
-  "notified_at": "2026-10-06 11:00:59",
-  "notified_date": "2026-10-06",
+  "newly_discovered_in_latest_run": true,
+  "notified_at": null,
+  "notified_date": null,
   "openalex_id": null,
   "pinned": false,
   "provenance": {
     "curated": false,
     "curation_note": null,
     "date_source": "arxiv",
-    "first_seen_at": "2026-10-06 11:00:02",
-    "generated_at": "2026-10-09 11:21:59",
-    "last_seen_at": "2026-10-08 11:07:24",
+    "first_seen_at": "2026-10-11 11:36:11",
+    "generated_at": "2026-10-11 11:36:42",
+    "last_seen_at": "2026-10-11 11:36:11",
     "metadata_sources": [
       "arxiv"
     ],
@@ -47,15 +50,15 @@
     "screening_source": "deterministic rules",
     "source_ids": {
       "arxiv": [
-        "2610.05124"
+        "2610.11152"
       ]
     }
   },
   "publication": {
     "confidence": "high",
-    "date": "2026-10-04",
-    "display": "Published 2026-10-04",
-    "latest_revision_date": "2026-10-04",
+    "date": "2026-10-08",
+    "display": "Published 2026-10-08",
+    "latest_revision_date": "2026-10-08",
     "precision": "day",
     "publication_date_confidence": "high",
     "source": "arxiv",
@@ -63,7 +66,7 @@
     "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
-  "publication_date": "2026-10-04",
+  "publication_date": "2026-10-08",
   "publication_date_confidence": "high",
   "publication_date_precision": "day",
   "publication_date_source": "arxiv",
@@ -72,31 +75,24 @@
   "publication_year": "2026",
   "related_topics": [
     "agent-memory",
-    "benchmark",
-    "llm-agents",
-    "long-term-memory",
-    "memory-benchmark",
-    "memory-systems"
+    "llm-agents"
   ],
   "relevance": {
     "curation_note": null,
-    "decision": "relevant",
-    "public_label": "Highly relevant",
-    "reason": "Focuses on persistent or long-term memory for agent behavior.",
+    "decision": "maybe",
+    "public_label": "Review candidate",
+    "reason": "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.",
     "review_status": null,
-    "score": 100,
+    "score": 43,
     "tags": [
-      "long-term-memory",
-      "benchmark",
       "agent-memory",
-      "memory-systems",
       "llm-agents"
     ]
   },
-  "relevance_decision": "relevant",
-  "relevance_label": "Memory benchmark/evaluation",
-  "relevance_reason": "Focuses on persistent or long-term memory for agent behavior.",
-  "relevance_score": 100,
+  "relevance_decision": "maybe",
+  "relevance_label": "Peripheral review candidate",
+  "relevance_reason": "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.",
+  "relevance_score": 43,
   "research_note": null,
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
@@ -108,7 +104,7 @@
     "assessment_version": null,
     "assessor_model": null,
     "assessor_type": null,
-    "combined_rank_score": 1.0,
+    "combined_rank_score": 0.43,
     "concerns": [],
     "concise_summary": null,
     "confidence": "unknown",
@@ -136,22 +132,22 @@
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
-  "source_id": "2610.05124",
+  "source_id": "2610.11152",
   "source_ids": {
     "arxiv": [
-      "2610.05124"
+      "2610.11152"
     ]
   },
-  "source_updated_date": "2026-10-04",
+  "source_updated_date": "2026-10-08",
   "sources": [
     "arxiv"
   ],
   "ssrn_id": null,
   "structured_card": {
     "evidence_or_evaluation": {
-      "confidence": "medium",
-      "provenance": "metadata",
-      "value": "Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata."
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
     },
     "key_contribution": {
       "confidence": "not_extracted",
@@ -164,34 +160,31 @@
       "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
     },
     "method_or_system_type": {
-      "confidence": "medium",
-      "provenance": "metadata",
-      "value": "Benchmark / evaluation"
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
     },
     "relation_to_agentic_memory": {
-      "confidence": "medium",
-      "provenance": "metadata",
-      "value": "Evaluates memory behavior, safety, or retrieval in LLM agents"
+      "confidence": "low",
+      "provenance": "rule",
+      "value": "Agentic-AI connection exists, but memory focus is weak or indirect"
     },
     "research_relevance": {
-      "confidence": "medium",
+      "confidence": "low",
       "provenance": "rule",
-      "value": "Directly relevant to agentic-memory research based on screening evidence."
+      "value": "Review candidate"
     }
   },
   "structured_sections": {
     "evidence_or_evaluation_signals": [],
-    "method_or_system_type": "Benchmark / evaluation",
+    "method_or_system_type": "Not extracted yet",
     "possible_key_claims": [],
-    "relation_to_agentic_memory": "Evaluates memory behavior, safety, or retrieval in LLM agents"
+    "relation_to_agentic_memory": "Agentic-AI connection exists, but memory focus is weak or indirect"
   },
   "tags": [
-    "long-term-memory",
-    "benchmark",
     "agent-memory",
-    "memory-systems",
     "llm-agents"
   ],
-  "title": "Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory",
-  "url": "https://arxiv.org/abs/2610.05124v1"
+  "title": "Do LLMs Learn from Rewards in Context? : Rethinking the role of reward in In-Context Reinforcement Learning",
+  "url": "https://arxiv.org/abs/2610.11152v1"
 }

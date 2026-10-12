@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataSense-Bench: The First Step Toward an AI Scientist</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>DataSense-Bench: The First Step Toward an AI Scientist</h1>
+          <p class="hero-copy">Yudi Zhang, Mingyu Cao, Lu Yin, Mykola Pechenizkiy, Shiwei Liu</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.12190">Open paper</a>
+            <a class="paper-detail-link" href="datasense-bench-the-first-step-toward-an-ai-scientist-c504f283.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Yudi Zhang, Mingyu Cao, Lu Yin, Mykola Pechenizkiy, Shiwei Liu</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-08</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-08</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.12190v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2610.12190">DOI</a><a href="https://openalex.org/W7221069550">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies AI-scientist or scientific-discovery agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>As claims about recursive self-improvement (RSI) and artificial general intelligence (AGI) proliferate, we ask a simple question: do frontier AI models have a sense of data, i.e., can they reliably select the right data for training? We introduce DataSense-Bench to study this capability through the fundamental probl...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The study presents a clear, well-scoped protocol with strong experimental design, thorough empirical evaluation of multiple models across diverse tasks, transparent error metrics, and disciplined interpretations avoiding overclaiming.</p>
+      <p>The work explicitly acknowledges its focus on SFT of existing trajectories, excluding reinforcement learning post-training or synthetic data generation, and notes variation in agent execution traces.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-12T11:40:50.877887+00:00.</p>
+        <p>Coverage: 85221 of 85221 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As claims about recursive self-improvement (RSI) and artificial general intelli-
+gence (AGI) proliferate, we ask a simple question: do frontier AI models have a
+sense of data, i.e., can they reliably select the right data for training? We intro-
+duce DataSense-Bench1 to study this capability through the fundamental problem
+of data selection and performance forecasting in machine learning. We ask AI
+agents to select and rank candidate training subsets that can be used to fine-tune a
+small LLM model. Agents are allowed to inspect the data, write and execute anal-
+ysis code, and run model forward passes, but can not train the model or access
+the actual evaluation tasks. We then fine-tune the base model on each selected
+subset and evaluate its post-training performance under a standardized protocol.
+We instantiate the benchmark in terminal problem solving and tool use, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>data pool, inference-only
+access to a base model, and a fixed fine-tuning protocol. It selects disjoint, equal-sized subsets and
+ranks them by expected value for the post-training performance. The agent may inspect data, exe-
+cute analysis code, and run forward passes, but cannot train models or access evaluation tasks. Once
+the submission is fixed, the benchmark fine-tunes a fresh copy of the base model on each subset and
+measures the resulting performance. This separation makes the submitted ranking a prediction that
+can be checked against subsequent experimental evidence. As a consequence, the benchmark asks
+about bothSelection qualityandRanking accuracy, which measure whether the first group in the
+LLM&#x27;s predicted ordering produces a useful model and whether the predicted ordering of the subsets
+agrees with their observed performance, separately. A strong top choice need not imply </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>an accurate
+ordering; conversely, correctly ordering weak subsets need not produce a useful recommendation.
+Both are needed to understand whether an agent can turn data analysis into reliable decisions.
+Our Findings.We instantiate this protocol in terminal problem solving and multi-turn tool use,
+using OpenThoughts-Agent and EnvScaler trajectories for training and TBLite and BFCL for down-
+stream evaluation, respectively. Our experiments reveal two limitations: gains over random selection
+are modest, and agents do not reliably rank their selected groups. Ranking ability also does not hold
+consistently across tasks.(1) The frontier agents produce plausible, data-specific recipes but
+do not reliably predict post-training utility.On TBLite, two LLMs select first groups that un-
+derperform random selection, with differences across LLMs ranging from -0.55 to +0.99 points, as
+shown in Table </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>post-training performance.
+Budget: 4 hours total, one H100
+Agent submits
+Assignment CSV
+Data point IDs
+→  split labels
+Predicted order
+g1≻g2≻g3≻g4≻g5
+Method report
+Selection recipe
+Validity check
+Post-training
+CSV →  5 splits
+Fresh base model
+per split
+Fixed-recipe SFT
+gi ⟶ mi
+5 models
+m1, m2, m3, m4, m5
+Post-train evaluation
+TBLite + verifier
+Mean across seeds
+mi ⟶ ̄pi
+5 performance scores
+̄p1, ̄p2, ̄p3, ̄p4, ̄p5
+Agent evaluation
+Performance of g1
+s1
+Ranking accuracy
+Spearman ρ
+Best-group accuracy
+[s1 = maxk sk ]
+Fallback s1 = sbase Spearman ρ = −1 Best-group acc. = 0
+Second failure or no valid submission by the deadline
+First failure: retry once (same prompt)
+Both attempts share one 4-hour budget
+Valid
+Figure 2:From data-selection predictions to post-hoc verification.Illustrated for terminal prob-
+lem solving, the CLI agent analyzes candidate trajectories with inference-only access to </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>task-specific training procedure. Within each task, all resulting models use the same evalua-
+tion suite and scoring protocol. Lets k denote the downstream score (TBLite average reward or
+BFCL accuracy) for the model trained ong k, averaged across evaluation tasks and evaluation seeds.
+These outcomes are used only to assess the submitted selection and ordering, not to revise them.
+Section 4.1 describes both downstream evaluation protocols.</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>=⊮[s 1 = max k=1,...,5 sk]. Spearman correlation (Spearman, 1904) tests the full predicted
+ordering:S rank =ρ Spearman
+
+(4,3,2,1,0),(s 1, . . . , s5)
+
+. These measures distinguish identifying
+the best group from correctly ordering all alternatives. We reverse the group-index scale so that
+perfect rank agreement gives+1, whereas a reversed ordering gives−1.
+5
+Preprint
+For valid submissions, we compute both ranking metrics within each selection run after evaluating
+all five groups. Best-group accuracy counts a tie for the highest unrounded score as correct. Spear-
+man correlation uses average ranks for ties and is undefined when all five outcomes are equal. Such
+runs are excluded only from the mean Spearman correlation; they remain in the averages of selec-
+tion scores and best-group accuracy. For failed submissions under Section 3.2, we sets 1 =s base,
+Srank =−1, andA best = 0. These </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 separates two questions: whether agents choose useful training data and whether they cor-
+rectly rank the groups they select.
+Selection yields limited gains over random selection on both tasks.On BFCL, all six agents&#x27;
+averageg 1 accuracies exceed random selection&#x27;s 34.75%, but gains range from only 0.35 to 1.78
+% points. DeepSeek V4 Pro has the highest average at 36.53%. Its run-3g 1 achieves the highest
+accuracy among agent-selected checkpoints, 38.62%. On TBLite, averageg 1 rewards range from
+11.00% to 12.54%, compared with 11.55% for random selection. Two of ten agents underperform
+this reference, and DeepSeek V4 Pro&#x27;s leading score improves on it by only 0.99 points. Thus,
+elaborate selection recipes yield modest gains on both tasks, with less consistent improvements on
+TBLite.
+Selecting useful data does not imply reliably ranking the selected groups.BFCL reveals a </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>report the post-training performance, accuracy (%) for BFCL, and re-
+ward for TBLite (scale from 0-1 to 0-100). We report the average performance across three evalua-
+tion seeds and three data selection runs, standard deviation (subscript), and maximum score among
+different data selection runs. Shading compares group averages within a row; red outlines mark
+each task&#x27;s largest maximum among agent-selected groups.g 1 gain∆ random is relative to random
+selection. Best-group accuracyA best measures how often the agent identifies its best group; rank
+performanceS rank measures Spearman correlation between predicted and observed group orderings
+(Section 3.3). More detailed experimental results are in Appendix A.3.
+Rank Agent / references 1 g1 gain∆random s2 s3 s4 s5 Srank Abest (%)
+BFCL accuracy (50 trajectories per group)Base model: 31.67%</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We analyze 30 TBLite and 18 BFCL selection procedures and identify three patterns.Common sig-
+nals, different value judgments.Across TBLite recipes, completion cues appear in 30 procedures,
+length features in 29, format checks in 28, base-model loss in 23, and diversity controls in 21. Yet
+agents interpret these signals differently. One DeepSeek V4 Pro recipe rewards higher first-assistant-
+turn loss after penalizing formatting defects:q DS =ℓ(1−0.10e−0.05w−0.50j)(0.5+0.5c), where
+7
+Preprint
+Time Executed commands and resulting decisions
+00:00:02cat config.yaml;cat recipe/sft.py;nvidia-smi. Read the selection
+configuration and SFT recipe; inspect available compute.
+00:00:49–
+00:03:13
+python - &lt;&lt;&#x27;EOF&#x27;: readdata/train.parquet, print example turns and
+task descriptions, and count completion markers, parser warnings, and response
+formats.
+00:04:04 Write and runpython work/features.py. </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Anticipating which changes will improve a model can help recursive self-improvement allocate
+training resources more effectively. As these systems take on research roles, data sense becomes a
+concrete part of that challenge: connecting properties of training examples to what a model will learn
+from them. We introduce DATASENSE-BENCHto evaluate this data sense through selecting useful
+subsets and predicting their relative post-training performance. Across terminal problem solving and
+multi-turn tool use, agents construct plausible, data-specific recipes, but selection gains over random
+selection are limited. Agents do not reliably rank their selected groups, and this ability does not hold
+consistently across tasks. These results highlight a gap between producing a convincing analysis of
+data and making reliable decisions about its training value, motivating data sense as a capability </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to
+evaluate when assessing progress toward AI scientists and their recursive self-improvement.
+Limitations and future work.Our benchmark studies data sense through selecting and ranking
+existing data for SFT. Future work should extend this scope to reinforcement-learning post-training
+and the generation of new training data, testing whether agents can anticipate which experiences to
+collect or create and how those choices will improve learning.
+9
+Preprint</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>AI-scientist / discovery workflow</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies autonomous scientific-discovery or hypothesis-generation workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 93/100</li>
+              <li>Screening category: AI scientist / discovery system</li>
+              <li>Tags: ai-scientist, deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-11</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-09 11:19:02</li><li>Last seen by Paper Scout: 2026-10-12 11:38:29</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.12190</li><li>arXiv: 2610.12190</li><li>OpenAlex: W7221069550</li><li>OpenAlex IDs: W7221069550</li><li>arXiv IDs: 2610.12190</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="datasense-bench-the-first-step-toward-an-ai-scientist-c504f283.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>DataSense-Bench: The First Step Toward an AI Scientist. Yudi Zhang, Mingyu Cao, Lu Yin, Mykola Pechenizkiy, Shiwei Liu. 2026-10-08. https://arxiv.org/abs/2610.12190</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

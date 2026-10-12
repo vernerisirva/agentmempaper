@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-09](2026-10-09.md).
+Latest daily digest: [2026-10-12](2026-10-12.md).
 
-# Paper Scout Digest - 2026-10-09
+# Paper Scout Digest - 2026-10-12
 
 ## Run Summary
 
-- **Run ID:** 37
-- **Candidates fetched:** 86
+- **Run ID:** 39
+- **Candidates fetched:** 87
 - **New unique papers:** 77
-- **Relevant:** 5
+- **Relevant:** 6
 - **Maybe relevant:** 0
 - **Irrelevant:** 81
-- **Source summary:** arxiv: 6, openalex: 78, semantic_scholar: 2
+- **Source summary:** arxiv: 7, openalex: 77, semantic_scholar: 3
 
 ## Source Warnings
 
@@ -24,14 +24,4 @@ Latest daily digest: [2026-10-09](2026-10-09.md).
 - semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
 
-## Highly Relevant
-
-### [EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory](https://doi.org/10.48550/arxiv.2610.10533)
-
-- **Authors:** Hongru Cai, Ran Wei, Wenjie Wang, Chengfa Wu, Ning Song, Yongqi Li, et al.
-- **Date:** 2026-10-07
-- **Source:** openalex
-- **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
-- **Tags:** engram, conditional-memory, hashed-ngram-memory
-- **Abstract summary:** Conditional memory architectures such as DeepSeek Engram use input n-grams to look up learned embeddings, expanding the capacity of large language models (LLMs) with limited additional computation. Beyond model scaling, this architecture has demonstrated the potential to decouple factual knowledge storage from gener...
+No new relevant or maybe-relevant papers found.

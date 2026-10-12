@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-09](2026-10-09.md).
+Latest daily digest: [2026-10-12](2026-10-12.md).
 
-# Paper Scout Digest - 2026-10-09
+# Paper Scout Digest - 2026-10-12
 
 ## Run Summary
 
-- **Run ID:** 107
-- **Candidates fetched:** 143
-- **New unique papers:** 132
-- **Relevant:** 28
-- **Maybe relevant:** 15
-- **Irrelevant:** 100
-- **Source summary:** arxiv: 41, openalex: 100, semantic_scholar: 2
+- **Run ID:** 108
+- **Candidates fetched:** 134
+- **New unique papers:** 127
+- **Relevant:** 21
+- **Maybe relevant:** 12
+- **Irrelevant:** 101
+- **Source summary:** arxiv: 33, openalex: 100, semantic_scholar: 1
 
 ## Source Warnings
 
@@ -20,68 +20,58 @@ Latest daily digest: [2026-10-09](2026-10-09.md).
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
-- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station](https://doi.org/10.48550/arxiv.2610.08927)
-
-- **Authors:** Wenyu Du, Stephen Chung
-- **Date:** 2026-10-06
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Recent AI systems have made rapid progress in scientific discovery when given well-defined metrics, but whether they can autonomously undertake open-ended scientific discovery remains unclear. We investigate AI's ability to tackle open-ended tasks in Station, an open-world environment in which multiple agents simula...
-
-### [DataSense-Bench: The First Step Toward an AI Scientist](https://arxiv.org/abs/2610.12190v1)
+### [DataSense-Bench: The First Step Toward an AI Scientist](https://arxiv.org/abs/2610.12190)
 
 - **Authors:** Yudi Zhang, Mingyu Cao, Lu Yin, Mykola Pechenizkiy, Shiwei Liu
 - **Date:** 2026-10-08
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
 - **Abstract summary:** As claims about recursive self-improvement (RSI) and artificial general intelligence (AGI) proliferate, we ask a simple question: do frontier AI models have a sense of data, i.e., can they reliably select the right data for training? We introduce DataSense-Bench to study this capability through the fundamental probl...
 
-### [DrugTargetWorld: A Synthetic Biobank for Training and Benchmarking AI Scientists](https://doi.org/10.48550/arxiv.2610.09558)
+### [Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents](https://doi.org/10.13140/rg.2.2.27194.15043)
 
-- **Authors:** Samuel Margolis, Paul Schmiedmayer, Alan Huang, Ethan Chen, Ishan Bhattacharjee, Atman Shah, et al.
-- **Date:** 2026-10-07
+- **Authors:** Minghao Guo, Meng Cao, Sui Zhao, Siyu Ning, Xin Wang, Haoze Zhao, et al.
+- **Date:** 2026-10-09
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Drug target discovery requires distinguishing molecules that causally drive disease from those that are merely associated with it. Training and evaluating AI agents to perform this workflow end-to-end is difficult because real world biobanks lack known causal ground truth and participant-level data is access control...
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents, benchmark
+- **Abstract summary:** No abstract available.
 
-### [EvoSim: Learning to Model, Modeling to Learn](https://arxiv.org/abs/2610.11344v1)
+### [Agent Execution Integrity Benchmark (AEIB): A Post-Dispatch Reconciliation & Evidence Profile for Scholarly Workflows (v1.0-review)](https://doi.org/10.5281/zenodo.23160475)
 
-- **Authors:** Yun-Wei Song, Jinkai Tao, Jun-Dong Zhang, Rui Zhang, Yi-Min Wu, Qiang Zhang
-- **Date:** 2026-10-08
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Physics-based models connect scientific explanation with quantitative prediction. Constructing them requires selecting physical processes, defining states and governing equations, specifying couplings, and identifying parameters from experiments. Existing AI systems remain limited in making these model structure dec...
+- **Authors:** Andrii Leukhin
+- **Date:** 2026-10-05
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** AEIB (Agent Execution Integrity Benchmark) is an open research prototype establishing a structured post-dispatch reconciliation boundary for autonomous research agents. This release includes:- Versioned transport-to-disposition mapping contract containing 18 mapping rules covering 15 wire fault vectors + 3 governor...
 
-### [A Society of Researchers: Designing Institutions for Populations of Autonomous Research Agents](https://doi.org/10.48550/arxiv.2610.10468)
+### [From Retrieval to Customer Context: Evaluating Frontier-Model Systems for Voice-of-Customer Analysis](https://arxiv.org/abs/2610.09375)
 
-- **Authors:** Ali Asaria, Deep Gandhi, Tony Salomone
+- **Authors:** Raviraja Ganta, Viraj Bagal, Prabhath Chellingi
 - **Date:** 2026-10-07
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Deployments of research agents are moving to populations of thousands that share one pool of compute, while most current systems organize one project at a time or leave the population unorganized. We argue that such a population will acquire an organization whether or not its designers provide one, so designers shou...
+- **Abstract summary:** Organizations increasingly use frontier language models to analyze customer feedback, but answer quality also depends on how that feedback is organized and made available. We define a \emph{customer context graph} as a unified model of customer and business context. Typed relationships connect customer objects (feed...
 
-### [OneSearch-VL: Unified Multimodal Deep Research Agent for Image and Video](https://arxiv.org/abs/2610.12419v1)
+### [OneSearch-VL: Unified Multimodal Deep Research Agent for Image and Video](https://arxiv.org/abs/2610.12419)
 
 - **Authors:** Hongyu Li, Manyuan Zhang, Kaituo Feng, Shu Chen, Dian Zheng, Hao Li, et al.
 - **Date:** 2026-10-08
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
@@ -89,52 +79,42 @@ Latest daily digest: [2026-10-09](2026-10-09.md).
 
 ## Maybe Relevant
 
-### [Authorship responsibilities of scientists who use AI research agents](https://doi.org/10.3389/fgene.2026.1954843)
+### [Autonomous AI research agents in pancreatic ductal adenocarcinoma immunology: from multimodal evidence to experimental validation](https://doi.org/10.3389/fimmu.2026.1983838)
 
-- **Authors:** David B. Resnik, Mohammad Hosseini, Robert T. Pennock
-- **Date:** 2026-10-07
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** deep-research-agents
-- **Abstract summary:** The advent of artificial intelligence (AI) tools capable of performing research independently, which we call AI research agents (AIRAs) is likely to significantly impact how science is planned, performed, reviewed, evaluated, and communicated. However, the expected gains in efficiency and productivity from the deplo...
-
-### [OA-MAP: Evidence-Grounded Multi-Agent Multimodal Framework for Interpretable Knee Osteoarthritis Progression](https://arxiv.org/abs/2610.12134v1)
-
-- **Authors:** Sixu Chen, Mingrui Yang, Qiang Guan, Xiaojuan Li
-- **Date:** 2026-10-08
-- **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
-- **Abstract summary:** Knee osteoarthritis (KOA) progression prediction can support patient monitoring, requiring the integration of multimodal data and multidomain expertise. Moreover, isolated risk estimates provide limited insight underlying a prediction. To automate the progression assessment workflow and reduce manual effort while pr...
-
-### [Data Sherpa: An AI-Powered Assistant for Scientific Collaboration Knowledge Management](https://doi.org/10.5281/zenodo.22804318)
-
-- **Authors:** Fabian Araneda Baltierra, F. Menanteau
-- **Date:** 2026-10-19
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** Large scientific collaborations face a persistent challenge: critical knowledge is scattered across hundreds of people, documents, datasets, and communication archives, creating steep learning curves and inefficiencies that disproportionately affect early-career researchers and newcomers. Senior scientists are repea...
-
-### [Evaluating Autonomous LLM Agents Across Molecular Prediction and Optimization Benchmarks](https://doi.org/10.64898/2026.10.01.755314)
-
-- **Authors:** Khachik S. Smbatyan, Tsolak Ghukasyan, Garik Petrosyan
-- **Date:** 2026-10-08
+- **Authors:** Li Yang, Yu Li, Rong Huang, Zhi-qiang San, Junfeng Ye
+- **Date:** 2026-10-09
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Pancreatic ductal adenocarcinoma (PDAC) remains one of the most challenging malignancies due to profound biological heterogeneity, complex stromal organization, and limited responsiveness to current immunotherapies. Recent advances in single-cell sequencing, spatial omics, digital pathology, and multimodal profiling...
+
+### [Can Agent Harnesses and Inference Engines Hear Each Other? The HEAR Protocol for Agentic LLM Serving](https://arxiv.org/abs/2610.06597)
+
+- **Authors:** Jiaqi Zhao, Haodong Chen, Jitai Hao, Wei Zhao, Jinghao Pang, Qiang Huang, et al.
+- **Date:** 2026-10-05
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** Large language model (LLM) agents are increasingly capable of carrying out autonomous computational research, but it remains unclear whether they can develop molecular modeling methods that compete with strong human-developed approaches. Here, we evaluate autonomous method development across four settings: Therapeut...
+- **Abstract summary:** LLM agents increasingly execute complex workflows involving multi-turn reasoning, tool use, and parallel agents. Efficient serving requires decisions that span two layers with complementary information: the agent harness understands workflow dependencies, context lifecycles, and execution objectives, whereas the inf...
 
-### [Forms of LLM-Integrated Applications from LLM-Chats to Autonomous AI Agent System](https://arxiv.org/abs/2610.11899v1)
+### [Web$hell: A Unified Interface for Agentic Web Access](https://arxiv.org/abs/2610.13416v1)
 
-- **Authors:** Irene Weber
-- **Date:** 2026-10-08
+- **Authors:** Sunghwan Kim, Deogyong Kim, Sangam Lee, Donguk Kwon, Dongha Lee
+- **Date:** 2026-10-09
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** Large language models (LLMs) are increasingly embedded as components in software systems, marketed under labels such as chatbot, copilot, retrieval-augmented generation, workflow, coding agent and AI agent. Whether these labels denote genuine architectural forms or serve as branding has not been assessed systematica...
+- **Abstract summary:** Large language model (LLM) agents are becoming direct users of the open web. As they take on increasingly complex and information-intensive tasks, effective web access is becoming a core capability for agentic problem solving. Existing approaches have advanced agentic web access through different access models, incl...
+
+### [What Did the Agent Actually Do? Evidence-Grounded Oversight for Long-Horizon Agents](https://arxiv.org/abs/2610.06406)
+
+- **Authors:** Zhongxiang Sun, Jiahao Yan, Hongkang Zhao, Haojie Ding, Boheng Zhang, Fan Yang, et al.
+- **Date:** 2026-10-05
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** citation-grounding
+- **Abstract summary:** As agents take on long-horizon tasks, users shift from making individual decisions to overseeing autonomous execution. Yet the volume of agent activity and the fragmentation of supporting evidence make it difficult to determine which decisions warrant user verification. We study monitors that identify consequential...

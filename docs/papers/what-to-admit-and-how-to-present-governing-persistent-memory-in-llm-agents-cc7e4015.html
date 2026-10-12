@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What to Admit and How to Present: Governing Persistent Memory in LLM Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>What to Admit and How to Present: Governing Persistent Memory in LLM Agents</h1>
+          <p class="hero-copy">Chang Liu, Deliang Ding</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.11188">Open paper</a>
+            <a class="paper-detail-link" href="what-to-admit-and-how-to-present-governing-persistent-memory-in-llm-agents-cc7e4015.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Chang Liu, Deliang Ding</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-08</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-08</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.11188v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2610.11188">DOI</a><a href="https://openalex.org/W7221136001">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Focuses on persistent or long-term memory for agent behavior.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Persistent memory can improve personalization in LLM agents but can also induce sycophancy and cross-domain leakage. We distinguish two governance decisions: admission, which determines what recalled information enters the working context, and presentation, which determines how admitted information is expressed. We...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>This study provides a rigorous, preregistered experimental investigation that cleanly dissects admission from presentation in agent memory. Its claims are exceptionally well-disciplined, negative and bounded results are prominently analyzed, and statistical adjustments are appropriately applied throughout.</p>
+      <p>The authors document clear boundaries, including increased missed-personalization failures, lack of improvement on GPT-OSS-120B under tested configurations, failure to mitigate memory–evidence conflicts when conflicting memory is present, and reliance on an automated external judge with human validation limited to the development set [E9c43c60ccb5c03a1-B0011, E9c43c60ccb5c03a1-B0031, E9c43c60ccb5c03a1-B0051, E9c43c60ccb5c03a1-B0056].</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-12T11:40:09.147532+00:00.</p>
+        <p>Coverage: 48878 of 48878 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Persistent memory can improve personalization in LLM agents
+but can also induce sycophancy and cross-domain leakage. We dis-
+tinguish two governance decisions:admission, which determines
+what recalled information enters the working context, andpresenta-
+tion, which determines how admitted information is expressed. We
+implement two inference-time designs without retraining: factor-
+compiled admission (FC), which assesses whole memory entries,
+and permission-semantic admission (PS), which decomposes entries
+into typed units. Both use deterministic policies to translate adju-
+dicated attributes into eligibility decisions and typed channels. We
+evaluate the designs on a four-backbone development suite and an
+external benchmark with four tasks of300samples each. Relative to
+verbatim injection, FC and PS reduce pooled judge-assessed failure
+rates on the external benchmark by6.7and8 </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>.8percentage points,
+respectively (𝑝= 2.7× 10−7 and𝑝= 4.1× 10−12). Development-set
+reductions in cross-domain leakage reach29.5percentage points.
+The query-conditioned gating baseline shows no statistically sig-
+nificant change in objective fact judgment failure or pooled failure
+relative to verbatim injection. Under identical neutral-list render-
+ing and matched admission counts, PS outperforms random and
+relevance-based selection on external objective-fact judgment af-
+ter Holm correction. The corresponding internal controls and a
+separate situational-permission probe do not establish a selection
+advantage. A controlled development-set experiment reduces cross-
+domain failure by a further17.5percentage points by tightening
+admission while holding presentation fixed (𝑝= 1.6× 10−4). In
+contrast, no comparison between two renderings of identical ad-
+judication outputs survives an </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>although
+misleading information may still influence the response. Common
+admission mechanisms such as retrieval thresholds and relevance
+filters exercise admission crudely with a single keep/discard bit,
+and prompt-level memory steering typically exercises presentation
+without any admission decision. No prior work, to our knowledge,
+separates and measures the two levers on the same memory system.
+This paper does so with a controlled decomposition. On the
+admission side we instantiatesituated adjudication: one batched
+adjudication call sees the query, the answer target, the task mode,
+andalltop- 𝑘 memories together (enabling cross-memory conflict
+detection), assigns attributes—never action decisions—and phys-
+ically drops ineligible units. We evaluate two admission designs.
+Factor-compiled admission(FC) assesses each retrieved entry
+as a whole and uses deterministic code to map its </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>attributes to
+typed channels.Permission-semantic admission(PS) first de-
+composes entries into typed units and maps their attributes to six
+permission categories: five permitted uses anddeny. Units assigned
+denyare omitted from the generation prompt. On the presentation
+side we instantiate two sectioned renderings of thesameadjudi-
+cated verdicts—permission-note headers (PN) and information-type
+channel headers (CH)—grouping the same admitted units under
+differently labeled sections.
+All confirmatory analyses were preregistered before data collec-
+tion, with frozen prompts and assets. The evaluation runs on two
+surfaces: a four-backbone development suite spanning sycophancy,
+beneficial use, and cross-domain leakage (𝑛= 122/91/200per di-
+mension), and an external benchmark of four preference-memory
+arXiv:2610.11188v1  [cs.AI]  8 Oct 2026</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AAMAS &#x27;27, May 3–7, 2027, Hanoi, Vietnam Chang Liu and Deliang Ding
+tasks with300samples each [ 21], judged end-to-end by a single
+external judge. Our findings:
+• Adjudication-based pipelines cut judged harm; one con-
+trolled contrast isolates an admission move.On the ex-
+ternal benchmark, FC cuts pooled judged harm by6 .7pp
+(𝑝= 2.7× 10−7) and PS by8 .8pp (𝑝= 4.1× 10−12) against
+verbatim injection; they share adjudicated admission as well
+as situated analysis, typed judgment, and structured-use
+instructions, so we attribute the cuts to the adjudication-
+based pipelines as wholes rather than to admission alone
+(PS-vs-FC: pooled𝑝=. 066, not statistically significant). The
+query-conditioned gating baseline shows no statistically sig-
+nificant change in objective-question failure (45.2%→ 45.5%,
+𝑝= 1.0) or pooled failure (𝑝=. 08). A separate controlled
+contrast—presentation, prompt, and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>judge fixed, only the
+injection set tightened—cuts cross-domain failure a further
+17.5pp (𝑝= 1.6× 10−4) in one development configuration.
+Budget-matched controls, in which every comparison arm
+receives exactly as many memory units per query as PS, at-
+tribute part of the external gain to the selection itself (the
+internal study is preregistered; the external extension follows
+the same frozen analysis family and thresholds without a sep-
+arate preregistration): at equal budget PS cuts objective-fact
+failure below both random-selection and relevance-ranking
+arms (Holm-corrected), while the same controls show no
+significant selection effect on the development surface. On
+the development suite, admission cuts cross-domain leakage
+by29.5pp on Qwen3.7-Max and15.0pp on Kimi-K2.6 (both
+surviving false-discovery correction).
+• Between the two tested sectioned renderings, no ro-
+bust </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>difference.In a verdict-shared controlled experiment—
+same adjudication decisions, same admitted content, only
+the rendering differs—the single nominally significant cell
+(+4.0pp,𝑝=. 043) does not survive an exploratory BH cor-
+rection across the nine task-metric pairs (𝑞=.39), and a pre-
+registered cross-backbone main test is0/4significant. The
+claim is scoped to the two tested renderings, not to presen-
+tation in general. The only directly significant presentation
+effect we observe is a single-backbone design-phase obser-
+vation (9.9%→ 2.2%, two-sided𝑝=. 039), which we report
+as suggestive only.
+• Failures under memory–evidence conflict persist un-
+der every tested governance wording.Misleading rates
+remain82.3–85.0%in the FC, PS, and rendering arms (85.7%
+under the gate baseline), against91.7%under verbatim injec-
+tion; a no-memory arm shows0%misleading. Among tested
+configurations, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>only those that remove memories from the
+context eliminate the effect; no arm that retains the conflict-
+ing memory, under any wording we test, brings misleading
+below82%. We read this as a residual-failure observation,
+not an established mechanism (Section 6).
+• Boundaries.Both admission designsincreasemissed-personal-
+ization failures on the personalization task (FC+7.6pp, PS
++5.3pp, both significant)—an overshoot observed for both
+designs; GPT-OSS-120B does not improve on leakage un-
+der the tested configurations (𝑝=. 12; a generation-time
+configuration does, supplement S5 ); and a preregistered
+effect-size gate is not met (pooled improvement8.8pp vs. a
+10pp threshold; personalization accuracy−6.0pp vs. a3pp
+no-degradation line).
+Within the evaluated configurations, the results support prior-
+itizing admission decisions, while providing no robust basis for
+preferring one tested </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>One batched adjudication call receives the query, the recent dia-
+logue, benchmark-provided evidence, andall 𝑘 memories together,
+and returns a structured verdict. Its design has three fixed properties,
+shared across both admission designs and both evaluation surfaces:
+(1) Attribute assessment separated from policy decisions.
+The adjudicator assigns attributes to each memory entry or
+unit, including kind, subject, epistemic status, and tempo-
+rality. A separate deterministic policy maps these attributes
+to eligibility decisions and permitted uses; the adjudicator
+never decides what the answer should do.
+(2) Situation awareness.A situation block judges theanswer
+target(about the user, a third party, or the world) and thetask
+mode(factual, recommendation, planning, support) before
+any unit verdict, so the same memory can be eligible for one
+query and ineligible for another.
+(3) Physical </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(the Presentation Lever)
+Holding adjudicated verdicts and admitted content fixed, we com-
+pare two renderings.PN (permission-note rendering): admitted
+units are grouped under section headers, each stating what that
+section&#x27;s information may be used for in this answer.CH (chan-
+nel): units are grouped under typed channel headers that state
+what each group may be used for (the variant that won a design-
+phase comparison on the development backbone; Section 5.3). Both
+are sectioned renderings encoding the same permission semantics
+over the same admitted units; they differ in section labeling and
+organization—permission-note labels vs. information-type chan-
+nel labels—so the comparison isolates the rendering stage while
+acknowledging that section scheme and wording co-vary within it.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Every confirmatory comparison in this paper was preregistered
+with frozen assets before its data collection: the cross-backbone
+suite (arm definitions, dimensions, test families), the external gate
+and three-way comparison (task set, pooling, thresholds), and the
+verdict-shared rendering experiment (including the verdict-sharing
+mechanism: the PN arm runs first and writes verdicts to a ledger;
+the CH arm reads the ledger without re-adjudication, guaranteeing
+identical admission decisions). The internal budget-matched con-
+trols have preregistration documents; their external extension and
+the situational-permission probe (supplement S9–S10) were run
+under analysis families and thresholds frozen at data collection but
+without separate preregistration documents, and we flag this status
+where those results are reported. Adjudication prompts, channel
+headers, and permission schemas are held </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Development generators: Qwen3.7-Max, MiniMax-M3, Kimi-K2.6,
+and GPT-OSS-120B [7, 8, 11, 16]; the external surface generates with
+DeepSeek-V4-Pro [5]. All generators run temperature0, thinking
+disabled, except Kimi-K2.6 (API-enforced0.6) and GPT-OSS-120B
+(reasoning effort low, the closest available approximation). The
+FC/PS adjudicator is DeepSeek-V4-Pro on both surfaces; the supple-
+ment&#x27;s generation-time system (Two-Phase) runs its own phase-1
+scorer, with per-run configuration documented in supplement S5.
+On the development surface, all four generators receive the same
+frozen PS adjudication outputs, allowing us to evaluate downstream
+transfer while holding upstream adjudication fixed. A single ex-
+ternal judge (GLM-5.2, temperature0, thinking disabled) scores
+every arm on every surface [24]; the judge is never a generator, and
+all within-study comparisons share judge, threshold, and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>prompts.
+To check the judge, two human annotators independently labeled
+a stratified sample of360development-surface outputs (120per
+dimension) under the same score≥3 failure rubric; all annotator–
+judge and annotator–annotator disagreements were resolved by
+item-level third-party adjudication, and the judge agrees with the
+resulting consensus labels at binary𝜅=0.70(𝑛=352; supplement S3).
+No human validation was performed for the external task rubrics.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>exact McNe-
+mar, raw𝑝. Dimensions: syc = sycophancy, ben = beneficial
+use, xd = cross-domain leakage. Bold = survives BH correc-
+tion within its own family: CH cells against the preregistered
+cross-backbone family (CH vs. Bare on syc/xd, four back-
+bones); PN cells against a separate exploratory family.
+Backbone Dim Bare PS+PN𝑝PS+CH𝑝
+MiniMax-M3 syc 31.1 27.0 .40 29.5 .83
+MiniMax-M3 ben 16.5 18.7 .82 16.5 1.0
+MiniMax-M3 xd 9.5 4.0 .052 4.0 .027
+Qwen3.7-Max syc 50.036.1 .000941.8 .053
+Qwen3.7-Max ben 0.0 0.0 1.0 0.0 1.0
+Qwen3.7-Max xd 44.014.5&lt;10 −4 18.0&lt;10 −4
+Kimi-K2.6 syc 43.432.0 .009432.8 .019
+Kimi-K2.6 ben 0.0 1.1 1.0 2.2 .50
+Kimi-K2.6 xd 37.022.5 .0013 22.0 .0003
+GPT-OSS-120B syc 45.9 38.5 .064 37.7 .041
+GPT-OSS-120B ben 0.0 1.1 1.0 1.1 1.0
+GPT-OSS-120B xd 64.0 70.0 .12 69.0 .20</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mec
+= memory–evidence conflict, pm = personalized memory use.
+Task Bare Gate𝑝FC𝑝PS𝑝
+ofj 45.2 45.5 1.0 23.71.4×10 −13 20.47.6×10 −19
+csc 33.3 22.7 .0004 27.0 .042 25.3 .0049
+mec 91.7 85.7 .0003 85.08.8×10 −5 84.03.4×10 −5
+pm 14.7 22.7 .0012 † 22.3 .0022 † 20.0 .0365 †
+pooled (𝑛=1,199) 46.2 44.1 .08 39.52.7×10 −7 37.44.1×10 −12</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>objective-question failure (45.2%
+→ 45.5%,𝑝= 1.0) and worsens personalization (+8.0pp,𝑝=. 0012);
+its pooled change is not significant ( 𝑝=. 08). Directly paired
+against this gate, PS improves the objective-fact task (McNemar
+𝑝=2.4×10−17 over300valid pairs) but shows no significant advan-
+tage on scope control (𝑝=.42) or memory–evidence conflict (𝑝=.50):
+the admission increment over the reimplemented gating baseline is
+task-specific. This is the failure mode our adjudication is designed
+AAMAS &#x27;27, May 3–7, 2027, Hanoi, Vietnam Chang Liu and Deliang Ding
+Table 3: Verdict-shared rendering experiment: identical ad-
+mission decisions, two sectioned renderings (PN vs. CH).
+Paired exact McNemar;𝑛=300per row.
+Task Metric PN CH𝑝
+ofj accuracy .737 .777 .043
+ofj misconception .220 .190 .12
+csc accuracy .170 .160 .76
+csc scope violation .253 .237 .60
+mec misled .833 .823 .68
+mec accuracy .003 .007 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Difference Between Renderings
+The verdict-shared experiment compares PS+PN vs. PS+CH with
+identicaladjudication decisions—the PN arm writes verdicts to a
+ledger that the CH arm reads without re-adjudication—so any dif-
+ference is attributable to the rendering change (section labels and
+organization) alone. Table 3 shows the result across four tasks and
+nine task-metric pairs. The single nominally significant cell (ofj
+accuracy73.7%→ 77.7%,𝑝=. 043) fails BH correction across the
+nine task-metric pairs (𝑞=. 39; a supplementary, non-preregistered
+correction scope; the separate preregistered development-set com-
+parison is reported below), and its direction does not replicate across
+tasks. The two pm rows are perfectly symmetric (27/27and28/28
+discordant pairs, both 𝑝= 1.0). A preregistered cross-backbone
+main test of PN-vs-CH on the development surface (beneficial di-
+mension, four </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and zeroes out scope violations and
+misleading—memory is simultaneously the benefit and the hazard,
+and in our arms only interventions that changewhichmemory
+content reaches the context move both sides of that trade-off.
+A single-variable experiment isolates that admission move
+directly. On the development surface&#x27;s cross-domain dimension
+(DeepSeek-V4-Pro,𝑛=200; supplement S5), an annotated-memory
+arm—memories kept in the prompt with per-memory influence
+annotations, generation instructed to acknowledge but not adopt—
+fails42 .5%. Holding the same annotations, the same generation
+prompt, the same judge, and the same phase-1 scores fixed, and
+changingonlythe injection set (memories whose maximum
+influence score falls below0 .5are excluded from the generation
+prompt), failure falls to25.0%(paired exact McNemar𝑝= 1.6×10−4,
+59:24discordant pairs). Presentation identical, admission </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The personalization overshoot is shared by both designs.
+Both admission pipelinesincreasepm failures—appropriate pref-
+erences left unapplied—FC14 .7% → 22.3%( 𝑝=. 0022) and
+PS14 .7% → 20.0%( 𝑝=. 0365), with pm accuracy dropping
+66.3%→ 57.0%(FC) and→ 60.3%(PS). Two structurally different
+designs overshooting on the same task is a shared observation; our
+design does not isolate whether the cost is inherent to the admission
+move or to shared pipeline components.The preregistered gate
+is not met.The PS gate demanded pooled improvement ≥ 10pp
+andno task accuracy drop &gt; 3pp; measured:8.8pp (1.2pp below
+the threshold) and −6.0pp pm accuracy (beyond the permitted
+3pp decrease). The pooled improvement is statistically significant
+(𝑝=4.1×10−12) and the ofj failure reduction is24.7pp; neither result
+changes the gate outcome.One backbone does not improve
+under the tested </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Memory architecture / system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory mechanisms or governance for LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Core agent-memory paper</li>
+              <li>Tags: agent-memory, llm-agents, long-term-memory, memory-systems</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-11</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-11 11:36:11</li><li>Last seen by Paper Scout: 2026-10-12 11:37:40</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.11188</li><li>arXiv: 2610.11188</li><li>OpenAlex: W7221136001</li><li>OpenAlex IDs: W7221136001</li><li>arXiv IDs: 2610.11188</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="what-to-admit-and-how-to-present-governing-persistent-memory-in-llm-agents-cc7e4015.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>What to Admit and How to Present: Governing Persistent Memory in LLM Agents. Chang Liu, Deliang Ding. 2026-10-08. https://arxiv.org/abs/2610.11188</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forgetting is Not Always Bad: A Neuro-Inspired Memory Repair Mechanism for Poisoned LLM Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Forgetting is Not Always Bad: A Neuro-Inspired Memory Repair Mechanism for Poisoned LLM Agents</h1>
+          <p class="hero-copy">Lei Liu, Yunji Liang, Xiaowen Zhang, Jingqi Liu, Qi Li, Bin Guo, Zhiwen Yu</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2610.13267">Open paper</a>
+            <a class="paper-detail-link" href="forgetting-is-not-always-bad-a-neuro-inspired-memory-repair-mechanism-for-poisoned-l-3a9edde0.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Lei Liu, Yunji Liang, Xiaowen Zhang, Jingqi Liu, Qi Li, Bin Guo, Zhiwen Yu</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-09</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-09</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.13267v1">arXiv</a><a href="https://arxiv.org/abs/2610.13267">arXiv</a><a href="https://openalex.org/W7221577566">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Discusses Engram-style or parametric memory mechanisms for language models.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Large language model (LLM) agents are highly vulnerable to memory-poisoning attacks. Existing defenses primarily rely on external modules for either static memory isolation or continuous online auditing, resulting in low memory efficiency and high computational overhead. To address these limitations, inspired by neu...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The study offers a solid, well-formulated defense framework backed by clear mathematical formulation, extensive comparative evaluations against standard baselines, multi-agent validation, and detailed sensitivity and ablation studies.</p>
+      <p>The authors appropriately note the potential limitation of probe-aware adaptive attacks if an adversary possesses detailed internal knowledge of the probing mechanism, though they contextualize this against current threat models [E8f9543e1cdffa780-B0063].</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-13T11:25:37.264194+00:00.</p>
+        <p>Coverage: 91743 of 91743 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Large language model (LLM) agents are highly vulnerable to memory-poisoning
+attacks. Existing defenses primarily rely on external modules for either static mem-
+ory isolation or continuous online auditing, resulting in low memory efficiency and
+high computational overhead. To address these limitations, inspired by neuroscien-
+tific mechanisms that weak reactivation can destabilize memories and induce decay
+in the absence of reinforcement, we propose an agent-intrinsic training-free mem-
+ory repair framework,DREAM(DynamicReactivation forEngramAttenuation
+inMemory), that enables selective functional forgetting of poisoned memories.
+Specifically, DREAM implements a three-stage pipeline: perturbation-induced
+implicit reactivation to reveal the structural fragility of malicious memories, adap-
+tive anomaly diagnosis based on multi-dimensional activation patterns to detect
+topological </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Drawing inspiration from neuroscientific findings that weak or indirect retrieval cues render a memory
+trace labile, placing it into a fragile, destabilized state that progressively decays in the absence of
+reinforcement [28, 29], we propose an agent-intrinsic defense framework, dubbed DREAM, to
+induce the selective functional forgetting of malicious records to repair the LLM agents&#x27; memory
+system. As shown in Fig. 2, DREAM is consisted of a unified three-stage pipeline: first, it employs
+implicit reactivationby injecting weak isotropic Gaussian noise into memory embeddings to expose
+the structural fragility of malicious memories; next, it performsadaptive anomaly diagnosisby
+monitoring multi-dimensional activation intensities to identify topological anomalies; and finally,
+it models memory evolution as a discrete-time dynamical system and governs the memory weight
+decay to functional </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>intensity Ri(t) to aggregate complementary signals into a
+unified diagnostic score. The definition ofR i(t)is as follow:
+Definition 1 (Multi-dimensional Activation Intensity).To systematically assess the abnormal fragility
+and unstable influence of poisoned memories, we define an activation intensity score Ri(t) in Eq. 5,
+which integrates three dimensions to jointly quantify the robustness of a memory under perturbation
+probe. These terms are explicitly defined as follows:
+Ri(t) = sim(˜vi, vi) +p ret(˜vi) +E coh(˜vi)(5)
+Geometric Stability.In Eq. 5, sim(˜vi, vi) measures the cosine similarity between the original
+and perturbed representations, and thus reflects thelocal geometric stabilityof a memory under
+perturbation. It remains informative because it captures a basic perturbation-response property that is
+not directly represented by the other terms. In particular, existing attacks </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To identify poisoned records without relying on hard-coded heuristics, we define an adaptive threshold
+at each iteration in Eq. 8, where µR(t) and σR(t) denote the empirical mean and standard deviation
+of the collection {Ri(t)}, respectively, and the scaling factor η &gt;0 serves as a diagnostic sensitivity
+hyperparameter that regulates the stringency of the anomaly detection procedure.
+Rth(t) =µ R(t)−η·σ R(t)(8)
+A record is deemedsuspiciousifR i(t)&lt; Rth(t). The deviation magnitudes are defined in Eq. 9:
+∆Ri(t) = max
+
+0, µR(t)−R i(t)
+
+(9)
+To prevent the accumulation of spurious noise between phases, we introduce a bidirectionalsuspect
+score si(t)∈[0,1] in Eq. 10, which increases upon anomalous activations and decays otherwise,
+whereγ∈(0,1)controls the decay rate.
+si(t+ 1) =
+min si(t) + ∆Ri(t),1.0 ,ifR i(t)&lt; Rth(t)
+si(t)·γ,otherwise (10)</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>si(t) to define a time-dependent decay rate λi(t). Here λ0 is the base
+decay rate andkis an amplification factor. The decay equation is defined as follows.
+λi(t) =λ 0 ·
+
+1 +k·s i(t)
+
+·
+
+1−c i(t)
+
+(11)
+Memory Weight Update Rules.Drawing on the diagnostic results, DREAM assigns distinct update
+rules to benign and suspicious memories, leading to a selective pattern of retention and attenuation in
+the weight dynamics.Benign Memory Reconsolidation, as given by Eq. 12, is applied to memories
+that remain stable under perturbation and retain sufficient utility, i.e., Ri(t)≥R th(t) and ci(t)&gt; θc,
+where θc is a utility threshold, and αrec is the recovery rate. In this regime, reconsolidation dominates
+and drives the weight toward the high-weight region.
+wi(t+ 1) =w i(t) +α rec ·
+
+1−w i(t)
+
+(12)
+Otherwise,Destabilization and Decayis applied to suspicious memories. Inspired by the </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Ebbinghaus
+Forgetting Curve theory [42], we model this process as exponential decay in Eq. 13. In this regime,
+the effective decay rate remains large, pushing suspicious memories toward the low-weight region.
+wi(t+ 1) =w i(t)·exp
+
+−λ i(t)
+
+(13)
+Consequently, suspicious memories are progressively attenuated toward low weights, while benign
+memories are preserved near the high-weight region through reconsolidation. Empirical visualizations
+are provided in Appendix F, Fig. 7. As the weight of a harmful memory decreases, its contribution to
+the retrieval score is continuously suppressed; by contrast, normal memories retain their influence
+on downstream reasoning. This realizesfunctional forgettingwithout requiring explicit deletion or
+destructive parameter updates.
+6
+Table 1: Performance (ASR-r, ASR-a, ASR-t, ACC) evaluation of defense mechanisms against AgentPoison
+[8] attacks </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>acrossGPT-5.4-miniandClaude-Haiku-4.5with contrastive-based retriever DPR. EHRAgent is
+evaluated on two dataset, eICU and MIMIC-III, and ReAct is examined on StrategyQA. Lower Attack Success
+Rate (ASR) (%) indicates better performance (↓), while higher benign accuracy (ACC) is preferable (↑). The
+best result is inbold.
+EHRAgent ReAct
+eICU MIMIC-III Strategy-QABackbone Method
+ASR-r ASR-a ASR-t ACC ASR-r ASR-a ASR-t ACC ASR-r ASR-a ASR-t ACC
+GPT-5.4-mini
+No defense 100.00 100.00 100.00 70.83 100.00 100.00 100.00 54.55 100.00 60.00 60.00 26.20
+PPL 100.00 100.00 100.00 66.31 100.00 0.00 18.18 54.54 100.00 90.80 39.50 28.50
+LLM Auditor 86.09 86.09 100.00 79.68 100.00 0.00 37.58 55.76 46.29 55.13 21.50 30.50
+Distil Classifier 100.00 100.00 100.00 72.73 100.00 0.00 36.36 52.12 22.15 70.91 19.50 41.00
+A-MemGuard 74.87 85.31 65.24 73.85 29.09 0.00 12.12 53.94 5.00 10.28 7.00 47.00
+DREAM (Ours) </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2.14 2.14 2.14 85.03 0.00 0.00 0.00 62.34 0.00 0.00 0.00 61.20
+Claude-Haiku-4.5
+No defense 100.00 83.33 62.50 45.83 100.00 81.25 37.50 37.50 47.09 96.39 80.00 28.00
+PPL 100.00 93.58 44.39 57.22 100.00 1.20 4.20 41.82 43.75 16.67 5.00 32.50
+LLM Auditor 88.77 85.56 47.06 72.19 100.00 0.00 2.40 52.12 3.100.5065.50 34.50
+Distil Classifier 100.00 91.98 28.88 71.66 100.00 0.60 3.00 42.42 100.00 39.50 56.50 41.50
+A-MemGuard 85.56 48.66 11.76 71.12 36.36 1.20 3.60 52.58 33.33 13.50 62.00 38.00
+DREAM (Ours) 5.35 5.88 3.74 75.00 0.00 0.00 0.00 57.14 0.20 4.38 3.48 46.96</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LLM Agent and Benchmarks.To evaluate the performance of DREAM, we select three types of
+real-world agents:(i)EHRAgent [ 2] for healthcare record management are examined on eICU and
+MIMIC-III dataset.(ii)To explore the performance of DREAM on knowledge-intensive QA agent, we
+select ReAct [30], which operates on StrategyQA [43].(iii)To further demonstrate the effectiveness
+on multi-agent system (MAS), we evaluate DREAM on a collaborative agents with MISINFOTASK
+dataset [31]. We enforce two types of memory poison attacks in our paper: AgentPoison [ 8] for
+backdoor attack and MINJA [9] for memory injection attack.
+Models and Baselines.We assess our framework using two advanced LLM backbones,GPT-5.4-
+mini[ 44] andClaude-Haiku-4.5[ 45], each of which is paired with a different memory retrieval
+architecture, namely, the contrastive-based DPR [46] and the end-to-end REALM, respectively [47].
+We </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>compare DREAM against a standardNo Defenseagent and four baseline defenses: A-MemGuard
+[17], LLM Audit Module, fine-tuned Distil Classifier [ 37], and Perplexity Filter (PPL) [ 19]. The
+implementation details and baseline settings are provided in Appendix B.
+Evaluation Metrics.To evaluate the proposed defense, we assess not only its ability to neutralize
+attacks but also its ability to preserve normal agent performance. Specifically, we use Attack Success
+Rate (ASR) to measure robustness. For defense on backdoor attack, we report stage-wise ASR at
+retrieval (ASR-r), reasoning (ASR-a), and end-to-end task completion (ASR-t) following AgentPoison
+[8]. For memory injection attacks, we report the cumulative ASR over the entire attack interaction
+process following MINJA [ 9]. Importantly, unlike prior defenses that mainly emphasize attack
+suppression, we treat benign accuracy (ACC) as an </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ASR ACC ASR ACC ASR ACC
+GPT-5.4-mini
+No defense 90.71 69.52 63.37 44.24 90.80 28.50
+PPL 70.34 60.43 59.42 46.67 59.34 22.22
+LLM Auditor 72.70 58.29 65.28 49.690.0052.50
+Distil Classifier 65.24 59.89 7.20 36.97 31.11 53.00
+A-MemGuard 14.44 58.29 0.00 42.42 68.57 20.38
+DREAM (ours) 1.60 77.01 0.00 49.09 12.00 58.40
+Claude-Haiku-4.5
+No defense 62.50 54.17 66.67 44.16 45.60 21.60
+PPL 100.00 52.94 6.70 33.94 93.02 38.50
+LLM Auditor 100.00 52.41 4.20 33.33 20.83 34.00
+Distil Classifier 0.00 57.22 0.00 36.36 26.50 33.00
+A-MemGuard 3.20 50.27 0.00 45.640.0051.41
+DREAM (ours) 0.00 62.50 0.00 48.48 2.80 62.40
+DREAM is robust on memory injection
+attacks.To test DREAM&#x27;s effectiveness
+in defending semantic camouflage attacks,
+we further evaluate it against MINJA [ 9],
+which poisons the memory system through
+seemingly benign user queries to initiate
+a self-reinforcing error cycle. As shown
+in Table </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>6.430 70.69
+Distil Classifier 6.125 85.42
+PPL 6.330 81.82
+LLM Auditor 6.100 90.00
+ARGUS 6.388 87.50
+A-MemGuard 6.233 89.90
+DREAM(Ours) 6.038 92.96
+DREAM is effective for multi-agents systems.Table 3
+presents the evaluation of DREAM under malicious memory
+injection in a multi-agent system (MAS) setting [31]. The Fi-
+nal Score (FS) is an aggregate metric that combines multiple
+error-related penalty components, while the Task Success Rate
+(TSR) measures the extent to which the predefined objectives
+are achieved. We observe that DREAM achieves overwhelm-
+ing performance with the lowest average Final Score of 6.038
+and the highest average Task Success Rate of 92.96%. This
+showcases the DREAM works well for the MAS by preserving
+the multi-turn reasoning and cooperative behaviors.
+100 200 300 400
+Time (s)
+4
+4.5
+5
+5.5
+6
+6.5
+7
+7.5Total Tokens
+104
+DREAM(Ours)
+(178.42s, 46484)
+PPL
+(433.21s, </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>56926)
+LLM Auditor
+(214.08s, 63750)
+Distil Classifier
+(256.45s, 64397)
+A-MemGuard
+(380.39s, 74666)
+Figure 3: Efficiency in terms of runtime
+and token consumption. Smaller values
+are preferable on both axes.
+DREAM is more efficient than baselines.To quantify the
+computational overhead introduced by different defenses, we
+measure both the total runtime and the number of tokens con-
+sumed when answering a batch of 10 queries. As illustrated
+in Fig. 3, DREAM achieves the lowest overall cost among
+all evaluated methods, requiring only 178.42sof runtime and
+46,484tokens. In contrast, the baselines are consistently more
+expensive, with runtime ranging from 214.08sup to 433.21s,
+and token usage ranging between 56,926 and 74,666. More
+concretely, compared with PPL, LLM Auditor, Distil Classifier,
+and A-MemGuard, DREAM reduces runtime by58.8%, 16.7%,
+30.4%, and 53.1%, respectively, while </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>disabled.
+Components EHRAgent (eICU) ReAct
+pret sim Ecoh ASR-r ASR-a ASR-t ACC ASR-r ASR-a ASR-t ACC
+✓ ✓ ✓ 2.14 2.14 2.14 85.03 0.00 0.00 0.00 61.20
+×✓ ✓2.67 2.67 2.67 77.54 0.52 100.00 1.60 54.00
+✓ × ✓ 2.14 2.14 2.14 65.78 0.38 100.00 1.60 34.00
+✓ ✓×81.82 80.74 77.00 77.54 0.00 0.00 0.00 31.20
+✓ × × 2.14 2.14 2.14 74.87 0.00 0.00 0.00 46.00
+×✓×3.74 3.74 3.74 75.40 0.00 0.00 0.00 60.40
+× × ✓ 4.38 4.28 4.28 73.80 1.57 100.00 6.45 40.32
+4 8 16 32 64
+Injection Number
+02468
+70
+80
+90
+100ASR-r(%)
+No Defense
+A-MemGuard
+PPL
+LLM Auditor
+Distil Classifier
+DREAM(Ours)
+(a) ASR-r
+4 8 16 32 64
+Injection Number
+02468
+70
+80
+90
+100ASR-a(%)
+No Defense
+A-MemGuard
+PPL
+LLM Auditor
+Distil Classifier
+DREAM(Ours) (b) ASR-a
+4 8 16 32 64
+Injection Number
+02468
+70
+80
+90
+100ASR-t(%)
+No Defense
+A-MemGuard
+PPL
+LLM Auditor
+Distil Classifier
+DREAM(Ours) (c) ASR-t
+4 8 16 32 64
+Injection </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A Limitations
+DREAM relies on a multi-dimensional activation probe to distinguish suspicious memories from
+benign ones. In principle, if an attacker had detailed knowledge of this internal probing mechanism,
+they could attempt to optimize poisoned memories to remain stable under the probe and thereby
+weaken the resulting anomaly signal. However, such a probe-aware attack is difficult under the threat
+models considered in current memory-poisoning work on LLM agents. Existing attacks are typically
+studied under more constrained capabilities, such as query-only interaction, indirect memory injection
+through normal user queries, limited write access to the memory store, or black-box access to the
+agent core, rather than full visibility into the defender&#x27;s internal monitoring mechanism. Therefore,
+while probe-aware evasion is a meaningful theoretical limitation, realizing it in practice </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reports the defense performance when the retriever is replaced by REALM. Overall, the main
+trend remains consistent with the DPR-based results: DREAM is most effective on the structured
+EHRAgent tasks, while open-ended ReAct remains the more challenging case. UnderGPT-5.4-mini,
+DREAM substantially improves robustness on both medical datasets. On eICU, it reduces ASR-r/a/t
+from 100.00/100.00/99.46 to 2.14/2.14/1.60, while also improving ACC from 74.80 to 78.07. On
+MIMIC-III, DREAM similarly lowers ASR-r/a/t to 2.42/1.82/0.00 and raises ACC from 47.27 to</blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>effectively suppress attack propagation in domain-specific agents.
+On ReAct (Strategy-QA), the pattern is more nuanced. DREAM still achieves the lowest retrieval-
+stage and end-to-end attack rates under GPT-5.4-mini, reducing ASR-r from 78.33 to 0.48 and
+ASR-t from 88.78 to 2.00. However, ASR-a remains non-negligible (34.00), indicating that under
+open-ended reasoning, residual malicious signals can still propagate inside the reasoning chain even
+after retrieval has been largely cleaned. This observation is also consistent with the broader baseline
+behavior in Table 6: under REALM, several defenses can partially suppress retrieval-stage attacks on
+ReAct, but reasoning-stage robustness remains unstable and highly backbone-dependent.
+14
+Across methods, PPL and Distil Classifier remain weak on the EHRAgent settings, often leaving
+attack success near saturation. LLM Auditor and A-MemGuard </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>99.47 99.47 63.64 0.42 100.00 1.60 36.80
+0.05 2.14 2.14 2.1485.030.45 100.00 1.60 42.80
+0.10 2.14 2.14 2.14 75.94 0.32 100.00 1.20 50.00
+0.15 2.14 2.14 2.14 77.01 0.91 80.00 1.60 34.40
+0.20 2.14 2.14 2.14 81.82 0.40 100.00 1.60 39.60
+0.25 2.14 2.14 2.14 79.14 0.42 100.00 1.60 46.40
+0.30 2.14 2.14 2.14 77.54 0.00 0.00 0.0061.20
+0.35 2.14 2.14 2.14 77.33 0.00 0.00 20.40 42.80
+0.40 2.14 2.14 2.14 77.01 0.32 100.00 1.20 41.29
+0.45 2.14 2.14 2.14 75.40 0.36 100.00 1.60 40.80
+0.50 2.14 2.14 2.14 77.54 0.00 0.00 0.00 53.20
+λ0
+0.00 100.00 100.00 100.00 74.87 0.00 0.00 0.00 34.00
+0.10 2.14 2.14 2.14 79.14 0.40 100.00 1.60 44.80
+0.20 2.14 2.14 2.14 68.98 0.00 0.00 0.0061.20
+0.30 3.74 3.74 3.74 74.33 0.41 100.00 1.60 42.80
+0.40 2.14 2.14 2.1485.030.00 0.00 0.00 38.80
+0.50 2.14 2.14 2.14 76.47 0.43 100.00 1.60 44.80
+0.60 2.14 2.14 2.14 79.14 0.36 100.00 1.60 31.20
+0.70 100.00 98.93 98.93 72.19 0.39 </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>100.00 0.40 34.00
+0.80 100.00 98.93 98.93 77.54 0.00 0.00 0.00 36.61
+0.90 2.14 0.534 0.534 69.52 0.00 0.00 0.00 54.40
+1.00 2.14 2.14 2.14 70.59 0.42 100.00 1.60 44.00
+k
+0 2.14 2.14 2.14 65.78 0.00 0.00 0.00 52.00
+5 2.14 2.14 2.14 80.74 0.43 100.00 1.60 44.80
+10 2.14 2.14 2.1485.030.00 0.00 0.00 46.99
+15 2.14 2.14 2.14 78.07 0.00 0.00 0.0061.20
+20 2.14 2.14 2.14 74.33 0.42 100.00 1.60 36.40
+25 2.14 2.14 2.14 72.74 1.48 28.57 0.80 32.40
+αrec
+0.00 2.14 2.14 2.14 67.38 0.37 100.00 1.60 38.00
+0.10 2.14 2.14 2.14 77.01 0.48 100.00 2.00 46.00
+0.20 2.14 2.14 2.14 74.87 0.00 0.00 0.00 55.20
+0.30 2.14 2.14 2.14 73.80 0.00 0.00 0.00 41.20
+0.40 2.14 2.14 2.14 73.26 0.00 0.00 0.00 36.80
+0.50 2.14 2.14 2.14 73.28 0.00 0.00 0.0061.20
+0.60 2.14 2.14 2.1485.030.52 100.00 1.60 56.80
+0.70 2.14 2.14 2.14 73.26 0.71 40.00 0.80 38.80
+0.80 2.14 2.14 2.14 71.12 0.00 0.00 0.00 46.40
+0.90 2.14 2.14 2.14 66.84 </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Security / robustness evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd>Abstract-level signal: safety, security, or robustness evaluation is mentioned in available metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory-related safety risks in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory architecture or policy</li>
+              <li>Tags: llm-agents, memory-policy, parametric-memory, agent-memory, memory-systems</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-13</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-12 11:37:09</li><li>Last seen by Paper Scout: 2026-10-13 11:23:07</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.13267</li><li>arXiv: 2610.13267</li><li>OpenAlex: W7221577566</li><li>OpenAlex IDs: W7221577566</li><li>arXiv IDs: 2610.13267</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="forgetting-is-not-always-bad-a-neuro-inspired-memory-repair-mechanism-for-poisoned-l-3a9edde0.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Forgetting is Not Always Bad: A Neuro-Inspired Memory Repair Mechanism for Poisoned LLM Agents. Lei Liu, Yunji Liang, Xiaowen Zhang, Jingqi Liu, Qi Li, Bin Guo, Zhiwen Yu. 2026-10-09. https://doi.org/10.48550/arxiv.2610.13267</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

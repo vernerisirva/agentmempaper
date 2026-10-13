@@ -23,12 +23,12 @@
   "first_seen_date": "2026-10-12",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-12 11:39:28",
-  "last_seen_date": "2026-10-12",
+  "last_seen_at": "2026-10-13 11:25:06",
+  "last_seen_date": "2026-10-13",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-09",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-12 11:39:43",
   "notified_date": "2026-10-12",
   "openalex_id": null,
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-12 11:39:24",
-    "generated_at": "2026-10-12 11:41:33",
-    "last_seen_at": "2026-10-12 11:39:28",
+    "generated_at": "2026-10-13 11:27:12",
+    "last_seen_at": "2026-10-13 11:25:06",
     "metadata_sources": [
       "arxiv"
     ],
@@ -99,36 +99,2143 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-13T11:26:02.740889+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript provides a well-scoped, rigorously tested contribution to diffusion transformer training dynamics. The experiments thoroughly investigate the proposed mechanisms with appropriate controls and ablations, meeting the standard for inclusion.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 69189,
+      "assessment_input_sha256": "24f6714175f64b78b540e8311889ed822ce21956e4c1b30894f9495aa630ad56",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.13322",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 66885,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 66523,
+      "evidence_block_count": 101,
+      "evidence_context_characters": 78947,
+      "evidence_context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+      "evidence_context_sha256": "a7f7c5474e501dc4677288ac43d8e86db093552fea013fe51477389b0a9bf0f6",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 66929,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "extracted_pages": 23,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "a80f96efaea4b9dd5d70184d2d22402e81203321f1467b8041658b37ef03266a",
+        "source_url": "https://arxiv.org/pdf/2610.13322",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 66885,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Cova: Composingvae Representations Forgen-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 373,
+          "supplied_characters": 373
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1898,
+          "supplied_characters": 1898
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 3,
+          "source_characters": 848,
+          "supplied_characters": 848
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 2759,
+          "supplied_characters": 2759
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 3891,
+          "supplied_characters": 3891
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 6,
+          "source_characters": 1027,
+          "supplied_characters": 1027
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 7,
+          "source_characters": 4343,
+          "supplied_characters": 4343
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "related",
+          "section_index": 8,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Preliminaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1156,
+          "supplied_characters": 1156
+        },
+        {
+          "heading": "Composingvae Representations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1931,
+          "supplied_characters": 1931
+        },
+        {
+          "heading": "Composingvae Representations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Stage-Adaptivesupervision Andsoftlabelconditioning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1606,
+          "supplied_characters": 1606
+        },
+        {
+          "heading": "Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 13,
+          "source_characters": 1784,
+          "supplied_characters": 1784
+        },
+        {
+          "heading": "Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 14,
+          "source_characters": 2323,
+          "supplied_characters": 2323
+        },
+        {
+          "heading": "System-Levelcomparisons",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2159,
+          "supplied_characters": 2159
+        },
+        {
+          "heading": "System-Levelcomparisons",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 939,
+          "supplied_characters": 939
+        },
+        {
+          "heading": "Ablationstudies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 2906,
+          "supplied_characters": 2906
+        },
+        {
+          "heading": "Ablationstudies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 1247,
+          "supplied_characters": 1247
+        },
+        {
+          "heading": "Understandingsoftlabelconditioning: Disentanglingdirection And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2017,
+          "supplied_characters": 2017
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 20,
+          "source_characters": 756,
+          "supplied_characters": 756
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 21,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Aiuse Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 243,
+          "supplied_characters": 243
+        },
+        {
+          "heading": "Reproducibility Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 378,
+          "supplied_characters": 378
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 2701,
+          "supplied_characters": 2701
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 3196,
+          "supplied_characters": 3196
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 3688,
+          "supplied_characters": 3688
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 1400,
+          "supplied_characters": 1400
+        },
+        {
+          "heading": "Backbone Sit-B/2 Sit-L/2 Sit-Xl/2",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 33,
+          "supplied_characters": 33
+        },
+        {
+          "heading": "Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 30,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Input Latent32\u00d732\u00d74 32\u00d732\u00d74 32\u00d732\u00d74",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 117,
+          "supplied_characters": 117
+        },
+        {
+          "heading": "Latent Patch Size2\u00d72 2\u00d72 2\u00d72",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 37,
+          "supplied_characters": 37
+        },
+        {
+          "heading": "Feature Dimension 192 192 192",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 190,
+          "supplied_characters": 190
+        },
+        {
+          "heading": "Alignment And Conditioning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Alignment Layer 4 8 8",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "Alignment Duration 200K 200K 200K",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 73,
+          "supplied_characters": 73
+        },
+        {
+          "heading": "Slc Warmup 350K 350K 350K",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 25,
+          "supplied_characters": 25
+        },
+        {
+          "heading": "Optimization And Sampling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 25,
+          "supplied_characters": 25
+        },
+        {
+          "heading": "Global Batch Size 256 256 256",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 29,
+          "supplied_characters": 29
+        },
+        {
+          "heading": "Optimizer Adamw Adamw Adamw",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Learning Rate1E\u22124 1E\u22124 1E\u22124",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Prediction Velocity Velocity Velocity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 37,
+          "supplied_characters": 37
+        },
+        {
+          "heading": "Sampler Euler-Maruyama Euler-Maruyama Euler-Maruyama",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 52,
+          "supplied_characters": 52
+        },
+        {
+          "heading": "Sampling Steps 250 250 250",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 499,
+          "supplied_characters": 499
+        },
+        {
+          "heading": "Is Defined As",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 53,
+          "supplied_characters": 53
+        },
+        {
+          "heading": "Is Defined As",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 945,
+          "supplied_characters": 945
+        },
+        {
+          "heading": "Appendix: Spatiallds Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 2575,
+          "supplied_characters": 2575
+        },
+        {
+          "heading": "Appendix: Spatiallds Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 657,
+          "supplied_characters": 657
+        },
+        {
+          "heading": "Appendix: Additionalablationstudies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 1451,
+          "supplied_characters": 1451
+        },
+        {
+          "heading": "Appendix: Additionalablationstudies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 2896,
+          "supplied_characters": 2896
+        },
+        {
+          "heading": "Appendix: Additionalablationstudies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 2439,
+          "supplied_characters": 2439
+        },
+        {
+          "heading": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 470,
+          "supplied_characters": 470
+        },
+        {
+          "heading": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 3575,
+          "supplied_characters": 3575
+        },
+        {
+          "heading": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 3073,
+          "supplied_characters": 3073
+        },
+        {
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 338,
+          "supplied_characters": 338
+        },
+        {
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 802,
+          "supplied_characters": 802
+        },
+        {
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 103,
+          "supplied_characters": 103
+        },
+        {
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 103,
+          "supplied_characters": 103
+        },
+        {
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 89,
+          "supplied_characters": 89
+        }
+      ],
+      "selected_characters": 66523,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "selected_sections": [
+        {
+          "characters": 23,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 373,
+          "heading": "Cova: Composingvae Representations Forgen-",
+          "page": 1
+        },
+        {
+          "characters": 1898,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 848,
+          "heading": "Abstract",
+          "page": 2
+        },
+        {
+          "characters": 2759,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 3891,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1027,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 4343,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 23,
+          "heading": "Related Work",
+          "page": 5
+        },
+        {
+          "characters": 1156,
+          "heading": "Preliminaries",
+          "page": 5
+        },
+        {
+          "characters": 1931,
+          "heading": "Composingvae Representations",
+          "page": 5
+        },
+        {
+          "characters": 23,
+          "heading": "Composingvae Representations",
+          "page": 6
+        },
+        {
+          "characters": 1606,
+          "heading": "Stage-Adaptivesupervision Andsoftlabelconditioning",
+          "page": 6
+        },
+        {
+          "characters": 1784,
+          "heading": "Setup",
+          "page": 6
+        },
+        {
+          "characters": 2323,
+          "heading": "Setup",
+          "page": 7
+        },
+        {
+          "characters": 2159,
+          "heading": "System-Levelcomparisons",
+          "page": 7
+        },
+        {
+          "characters": 939,
+          "heading": "System-Levelcomparisons",
+          "page": 8
+        },
+        {
+          "characters": 2906,
+          "heading": "Ablationstudies",
+          "page": 8
+        },
+        {
+          "characters": 1247,
+          "heading": "Ablationstudies",
+          "page": 9
+        },
+        {
+          "characters": 2017,
+          "heading": "Understandingsoftlabelconditioning: Disentanglingdirection And",
+          "page": 9
+        },
+        {
+          "characters": 756,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 23,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 243,
+          "heading": "Aiuse Statement",
+          "page": 10
+        },
+        {
+          "characters": 378,
+          "heading": "Reproducibility Statement",
+          "page": 10
+        },
+        {
+          "characters": 2701,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 3196,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3688,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 23,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 1400,
+          "heading": "Appendix: Experimental Setup",
+          "page": 13
+        },
+        {
+          "characters": 33,
+          "heading": "Backbone Sit-B/2 Sit-L/2 Sit-Xl/2",
+          "page": 13
+        },
+        {
+          "characters": 23,
+          "heading": "Architecture",
+          "page": 13
+        },
+        {
+          "characters": 117,
+          "heading": "Input Latent32\u00d732\u00d74 32\u00d732\u00d74 32\u00d732\u00d74",
+          "page": 13
+        },
+        {
+          "characters": 37,
+          "heading": "Latent Patch Size2\u00d72 2\u00d72 2\u00d72",
+          "page": 13
+        },
+        {
+          "characters": 190,
+          "heading": "Feature Dimension 192 192 192",
+          "page": 13
+        },
+        {
+          "characters": 26,
+          "heading": "Alignment And Conditioning",
+          "page": 13
+        },
+        {
+          "characters": 50,
+          "heading": "Alignment Layer 4 8 8",
+          "page": 13
+        },
+        {
+          "characters": 73,
+          "heading": "Alignment Duration 200K 200K 200K",
+          "page": 13
+        },
+        {
+          "characters": 25,
+          "heading": "Slc Warmup 350K 350K 350K",
+          "page": 13
+        },
+        {
+          "characters": 25,
+          "heading": "Optimization And Sampling",
+          "page": 13
+        },
+        {
+          "characters": 29,
+          "heading": "Global Batch Size 256 256 256",
+          "page": 13
+        },
+        {
+          "characters": 27,
+          "heading": "Optimizer Adamw Adamw Adamw",
+          "page": 13
+        },
+        {
+          "characters": 27,
+          "heading": "Learning Rate1E\u22124 1E\u22124 1E\u22124",
+          "page": 13
+        },
+        {
+          "characters": 37,
+          "heading": "Prediction Velocity Velocity Velocity",
+          "page": 13
+        },
+        {
+          "characters": 52,
+          "heading": "Sampler Euler-Maruyama Euler-Maruyama Euler-Maruyama",
+          "page": 13
+        },
+        {
+          "characters": 499,
+          "heading": "Sampling Steps 250 250 250",
+          "page": 13
+        },
+        {
+          "characters": 53,
+          "heading": "Is Defined As",
+          "page": 13
+        },
+        {
+          "characters": 945,
+          "heading": "Is Defined As",
+          "page": 14
+        },
+        {
+          "characters": 2575,
+          "heading": "Appendix: Spatiallds Protocol",
+          "page": 14
+        },
+        {
+          "characters": 657,
+          "heading": "Appendix: Spatiallds Protocol",
+          "page": 15
+        },
+        {
+          "characters": 1451,
+          "heading": "Appendix: Additionalablationstudies",
+          "page": 15
+        },
+        {
+          "characters": 2896,
+          "heading": "Appendix: Additionalablationstudies",
+          "page": 16
+        },
+        {
+          "characters": 2439,
+          "heading": "Appendix: Additionalablationstudies",
+          "page": 17
+        },
+        {
+          "characters": 470,
+          "heading": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+          "page": 17
+        },
+        {
+          "characters": 3575,
+          "heading": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+          "page": 18
+        },
+        {
+          "characters": 3073,
+          "heading": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+          "page": 19
+        },
+        {
+          "characters": 338,
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "page": 19
+        },
+        {
+          "characters": 802,
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "page": 20
+        },
+        {
+          "characters": 103,
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "page": 21
+        },
+        {
+          "characters": 103,
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "page": 22
+        },
+        {
+          "characters": 89,
+          "heading": "Appendix: Supplementaryqualitativeresults",
+          "page": 23
+        }
+      ],
+      "selected_text_sha256": "24f6714175f64b78b540e8311889ed822ce21956e4c1b30894f9495aa630ad56",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "a80f96efaea4b9dd5d70184d2d22402e81203321f1467b8041658b37ef03266a",
+      "source_pages": 23,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0003"
+        ],
+        "excerpt": "Representation alignment with pretrained visual encoders improves diffusion trans-\nformer training but requires auxiliary encoders and extra training overhead. Recent\napproaches instead exploit representations from the generative model's own varia-\ntional autoencoder (V AE). However, reconstruction-oriented V AE features are not\noptimized for the semantic discrimination and spatial structure needed for genera-\ntive learning. We introduceCoV A(ComposedV AE Representations), a lightweight\nframework that composes V AE features online into stage-wise guidance for flow-\nmatching training. A small latent composer is jointly trained with class supervision,\nmasked latent reconstruction, and horizontal-flip consistency, yielding semantically\ndiscriminative, spatially structured dense features and sample-dependent class pos-\nteriors. CoV A aligns intermediate SiT features with the composed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d0cc8c9a94ee06372462954bded905ffcc3a1f7fd66ea529ce1839b0f116c039",
+            "evidence_id": "Ee639f8da382d3986-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "Representation alignment with pretrained visual encoders improves diffusion trans-\nformer training but requires auxiliary encoders and extra training overhead. Recent\napproaches instead exploit representations from the generative model's own varia-\ntional autoencoder (V AE). However, reconstruction-oriented V AE features are not\noptimized for the semantic discrimination and spatial structure needed for genera-\ntive learning. We introduceCoV A(ComposedV AE Representations), a lightweight\nframework that composes V AE features online into stage-wise guidance for flow-\nmatching training. A small latent composer is jointly trained with class supervision,\nmasked latent reconstruction, and horizontal-flip consistency, yielding semantically\ndiscriminative, spatially structured dense features and sample-dependent class pos-\nteriors. CoV A aligns intermediate SiT features with the composed "
+              }
+            ],
+            "text": "Representation alignment with pretrained visual encoders improves diffusion trans-\nformer training but requires auxiliary encoders and extra training overhead. Recent\napproaches instead exploit representations from the generative model's own varia-\ntional autoencoder (V AE). However, reconstruction-oriented V AE features are not\noptimized for the semantic discrimination and spatial structure needed for genera-\ntive learning. We introduceCoV A(ComposedV AE Representations), a lightweight\nframework that composes V AE features online into stage-wise guidance for flow-\nmatching training. A small latent composer is jointly trained with class supervision,\nmasked latent reconstruction, and horizontal-flip consistency, yielding semantically\ndiscriminative, spatially structured dense features and sample-dependent class pos-\nteriors. CoV A aligns intermediate SiT features with the composed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0004"
+        ],
+        "excerpt": "representations\nearly in training, then removes the increasingly detrimental alignment and reuses\ndetached composer posteriors for sample-dependent soft label conditioning. We\nfurther uncover a hidden confound in soft label conditioning: averaging class\nembeddings attenuates their magnitude, coupling semantic interpolation with con-\nditioning strength. This attenuation alone can substantially improve FID while\ndegrading Recall, revealing a non-semantic source of the apparent gain. CoV A\ncorrects this confound by restoring the hard-label magnitude, isolating posterior-\ndependent directional semantics. CoV A adds only 8.5M training-only auxiliary\nparameters (1.3% of SiT-XL/2) and introduces no inference-time overhead. On\nImageNet 256\u00d7256, CoV A reduces SiT-XL/2 FID from 17.2 to 7.4 (57%) in 400K\nsteps. With classifier-free guidance, it achieves an FID of2.03in only 400 epochs,\nversus 2.06 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0fb414985b21202aa6f3f61941f115e74918f313583c668ca64e24a21d74184f",
+            "evidence_id": "Ee639f8da382d3986-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 893,
+                "text": "representations\nearly in training, then removes the increasingly detrimental alignment and reuses\ndetached composer posteriors for sample-dependent soft label conditioning. We\nfurther uncover a hidden confound in soft label conditioning: averaging class\nembeddings attenuates their magnitude, coupling semantic interpolation with con-\nditioning strength. This attenuation alone can substantially improve FID while\ndegrading Recall, revealing a non-semantic source of the apparent gain. CoV A\ncorrects this confound by restoring the hard-label magnitude, isolating posterior-\ndependent directional semantics. CoV A adds only 8.5M training-only auxiliary\nparameters (1.3% of SiT-XL/2) and introduces no inference-time overhead. On\nImageNet 256\u00d7256, CoV A reduces SiT-XL/2 FID from 17.2 to 7.4 (57%) in 400K\nsteps. With classifier-free guidance, it achieves an FID of2.03in only 400 epochs,\nversus 2.06 "
+              }
+            ],
+            "text": "representations\nearly in training, then removes the increasingly detrimental alignment and reuses\ndetached composer posteriors for sample-dependent soft label conditioning. We\nfurther uncover a hidden confound in soft label conditioning: averaging class\nembeddings attenuates their magnitude, coupling semantic interpolation with con-\nditioning strength. This attenuation alone can substantially improve FID while\ndegrading Recall, revealing a non-semantic source of the apparent gain. CoV A\ncorrects this confound by restoring the hard-label magnitude, isolating posterior-\ndependent directional semantics. CoV A adds only 8.5M training-only auxiliary\nparameters (1.3% of SiT-XL/2) and introduces no inference-time overhead. On\nImageNet 256\u00d7256, CoV A reduces SiT-XL/2 FID from 17.2 to 7.4 (57%) in 400K\nsteps. With classifier-free guidance, it achieves an FID of2.03in only 400 epochs,\nversus 2.06 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0009"
+        ],
+        "excerpt": "question:can reconstruction-oriented VAE features be lightly reorganized\ninto representations that are better suited for generative learning?To address this, we introduce\nCoV A(ComposedV AE Representations), a lightweight framework that learns to compose V AE\nrepresentations online during flow-matching training. CoV A augments the V AE features with a latent\ncomposer trained using complementary semantic and structural objectives, including class supervision,\nmasked latent reconstruction He et al. (2022), and horizontal-flip consistency. As illustrated in Fig. 2,\nthis lightweight composition transforms the weakly organized spatial structure of raw V AE latents\ninto coherent, object-aligned representations. Motivated by the finding of iREPA Singh et al. (2026)\nthat spatial structure is critical to effective representation alignment, we use these composed dense\nfeatures as supervisory ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2c44d6dc8bc5ebdef3871c5184fa19742bab0821e5238d1605213521908eabb7",
+            "evidence_id": "Ee639f8da382d3986-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2683,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 1788,
+                "text": "question:can reconstruction-oriented VAE features be lightly reorganized\ninto representations that are better suited for generative learning?To address this, we introduce\nCoV A(ComposedV AE Representations), a lightweight framework that learns to compose V AE\nrepresentations online during flow-matching training. CoV A augments the V AE features with a latent\ncomposer trained using complementary semantic and structural objectives, including class supervision,\nmasked latent reconstruction He et al. (2022), and horizontal-flip consistency. As illustrated in Fig. 2,\nthis lightweight composition transforms the weakly organized spatial structure of raw V AE latents\ninto coherent, object-aligned representations. Motivated by the finding of iREPA Singh et al. (2026)\nthat spatial structure is critical to effective representation alignment, we use these composed dense\nfeatures as supervisory "
+              }
+            ],
+            "text": "question:can reconstruction-oriented VAE features be lightly reorganized\ninto representations that are better suited for generative learning?To address this, we introduce\nCoV A(ComposedV AE Representations), a lightweight framework that learns to compose V AE\nrepresentations online during flow-matching training. CoV A augments the V AE features with a latent\ncomposer trained using complementary semantic and structural objectives, including class supervision,\nmasked latent reconstruction He et al. (2022), and horizontal-flip consistency. As illustrated in Fig. 2,\nthis lightweight composition transforms the weakly organized spatial structure of raw V AE latents\ninto coherent, object-aligned representations. Motivated by the finding of iREPA Singh et al. (2026)\nthat spatial structure is critical to effective representation alignment, we use these composed dense\nfeatures as supervisory "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0011"
+        ],
+        "excerpt": "benefit the generator without constraining its internal feature space?CoV A\naddresses this by shifting the role of the composer from representation supervision to conditioning. At\nlater stages, CoV A removes the intermediate alignment objective and reuses the composer's detached\nclass posterior for sample-dependent Soft Label Conditioning. The V AE-derived signal thus evolves\nfrom shaping internal features to modulating class conditioning as training progresses.\nA closer analysis reveals a hidden confound in naive soft label conditioning. Forming a soft condition\nby averaging class embeddings changes two factors simultaneously: its semantic direction and its\nmagnitude. The latter unintentionally alters the strength of class conditioning, making it difficult to\ndistinguish gains from semantic interpolation from those caused by weaker or stronger conditioning.\nEmpirically, naive soft ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4d66d26ac5c7194dc0ecec65476368e315dfed7887a72c1c3e666b992fd8a284",
+            "evidence_id": "Ee639f8da382d3986-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1712,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 5,
+                "start": 817,
+                "text": "benefit the generator without constraining its internal feature space?CoV A\naddresses this by shifting the role of the composer from representation supervision to conditioning. At\nlater stages, CoV A removes the intermediate alignment objective and reuses the composer's detached\nclass posterior for sample-dependent Soft Label Conditioning. The V AE-derived signal thus evolves\nfrom shaping internal features to modulating class conditioning as training progresses.\nA closer analysis reveals a hidden confound in naive soft label conditioning. Forming a soft condition\nby averaging class embeddings changes two factors simultaneously: its semantic direction and its\nmagnitude. The latter unintentionally alters the strength of class conditioning, making it difficult to\ndistinguish gains from semantic interpolation from those caused by weaker or stronger conditioning.\nEmpirically, naive soft "
+              }
+            ],
+            "text": "benefit the generator without constraining its internal feature space?CoV A\naddresses this by shifting the role of the composer from representation supervision to conditioning. At\nlater stages, CoV A removes the intermediate alignment objective and reuses the composer's detached\nclass posterior for sample-dependent Soft Label Conditioning. The V AE-derived signal thus evolves\nfrom shaping internal features to modulating class conditioning as training progresses.\nA closer analysis reveals a hidden confound in naive soft label conditioning. Forming a soft condition\nby averaging class embeddings changes two factors simultaneously: its semantic direction and its\nmagnitude. The latter unintentionally alters the strength of class conditioning, making it difficult to\ndistinguish gains from semantic interpolation from those caused by weaker or stronger conditioning.\nEmpirically, naive soft "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0012"
+        ],
+        "excerpt": "conditioning lowers FID Heusel et al. (2017) and improves Precision, but also\nreduces Recall Kynk\u00e4\u00e4nniemi et al. (2019), revealing a clear quality\u2013diversity trade-off. Controlled\nablations show that this trade-off is largely driven by the unintended magnitude change. CoV A\ntherefore explicitly restores the condition magnitude, removing this confounding effect and allowing\nthe posterior to contribute primarily through its sample-dependent semantic direction.\nCoV A introduces only 8.5M (1.3% of SiT-XL/2) training-only auxiliary parameters, including a 5.6M\nlatent composer and a 2.9M alignment projector, incurs only 7.2% additional training-time GFLOPs,\nand is discarded at inference. Across SiT model scales, CoV A consistently improves generation\nquality under matched training budgets. On ImageNet, it reduces SiT-XL/2 FID from 17.2 to 7.4\nat 400K steps, while reaching 2.03 with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f31d6cf57fda955ecaeb9274884f9d5aaf2bd764cc8da2e742012dd60f9a6d8a",
+            "evidence_id": "Ee639f8da382d3986-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2600,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 5,
+                "start": 1712,
+                "text": "conditioning lowers FID Heusel et al. (2017) and improves Precision, but also\nreduces Recall Kynk\u00e4\u00e4nniemi et al. (2019), revealing a clear quality\u2013diversity trade-off. Controlled\nablations show that this trade-off is largely driven by the unintended magnitude change. CoV A\ntherefore explicitly restores the condition magnitude, removing this confounding effect and allowing\nthe posterior to contribute primarily through its sample-dependent semantic direction.\nCoV A introduces only 8.5M (1.3% of SiT-XL/2) training-only auxiliary parameters, including a 5.6M\nlatent composer and a 2.9M alignment projector, incurs only 7.2% additional training-time GFLOPs,\nand is discarded at inference. Across SiT model scales, CoV A consistently improves generation\nquality under matched training budgets. On ImageNet, it reduces SiT-XL/2 FID from 17.2 to 7.4\nat 400K steps, while reaching 2.03 with "
+              }
+            ],
+            "text": "conditioning lowers FID Heusel et al. (2017) and improves Precision, but also\nreduces Recall Kynk\u00e4\u00e4nniemi et al. (2019), revealing a clear quality\u2013diversity trade-off. Controlled\nablations show that this trade-off is largely driven by the unintended magnitude change. CoV A\ntherefore explicitly restores the condition magnitude, removing this confounding effect and allowing\nthe posterior to contribute primarily through its sample-dependent semantic direction.\nCoV A introduces only 8.5M (1.3% of SiT-XL/2) training-only auxiliary parameters, including a 5.6M\nlatent composer and a 2.9M alignment projector, incurs only 7.2% additional training-time GFLOPs,\nand is discarded at inference. Across SiT model scales, CoV A consistently improves generation\nquality under matched training budgets. On ImageNet, it reduces SiT-XL/2 FID from 17.2 to 7.4\nat 400K steps, while reaching 2.03 with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0024"
+        ],
+        "excerpt": "Directly using V AE features as representation targets is efficient, but these features are learned primar-\nily for reconstruction rather than semantic organization. CoV A therefore learns a lightweight online\ncomposer that reorganizes the clean V AE latent into a representation better suited for intermediate\nsupervision.\nLet Z\u2208R N\u00d7d z denote the patchified clean V AE latent, where N is the number of spatial latent\npatches and dz is the patch dimension. A lightweight ViT-based composer Dosovitskiy et al. (2020)\nF\u03b8 produces dense patch featuresH\u2208R N\u00d7d h and class logitso\u2208R K:\n(H,o) =F \u03b8(Z),H= [h 1, . . . ,hN ],(3)\nwhereKdenotes the number of classes.\nThe composer is trained online with complementary semantic and spatial objectives:\nLcomp =L cls +\u03bb mimLmim +\u03bb flipLflip.(4)\nHere, Lcls is a label-smoothed classification loss Szegedy et al. (2016), Lmim performs masked\nlatent reconstruction ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Composingvae Representations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "436aba02121c6a4f830607d612d4eaec97dda0da81469a600d25fcc91584b5ba",
+            "evidence_id": "Ee639f8da382d3986-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Composingvae Representations",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 5,
+                "section": "Composingvae Representations",
+                "section_index": 10,
+                "start": 0,
+                "text": "Directly using V AE features as representation targets is efficient, but these features are learned primar-\nily for reconstruction rather than semantic organization. CoV A therefore learns a lightweight online\ncomposer that reorganizes the clean V AE latent into a representation better suited for intermediate\nsupervision.\nLet Z\u2208R N\u00d7d z denote the patchified clean V AE latent, where N is the number of spatial latent\npatches and dz is the patch dimension. A lightweight ViT-based composer Dosovitskiy et al. (2020)\nF\u03b8 produces dense patch featuresH\u2208R N\u00d7d h and class logitso\u2208R K:\n(H,o) =F \u03b8(Z),H= [h 1, . . . ,hN ],(3)\nwhereKdenotes the number of classes.\nThe composer is trained online with complementary semantic and spatial objectives:\nLcomp =L cls +\u03bb mimLmim +\u03bb flipLflip.(4)\nHere, Lcls is a label-smoothed classification loss Szegedy et al. (2016), Lmim performs masked\nlatent reconstruction "
+              }
+            ],
+            "text": "Directly using V AE features as representation targets is efficient, but these features are learned primar-\nily for reconstruction rather than semantic organization. CoV A therefore learns a lightweight online\ncomposer that reorganizes the clean V AE latent into a representation better suited for intermediate\nsupervision.\nLet Z\u2208R N\u00d7d z denote the patchified clean V AE latent, where N is the number of spatial latent\npatches and dz is the patch dimension. A lightweight ViT-based composer Dosovitskiy et al. (2020)\nF\u03b8 produces dense patch featuresH\u2208R N\u00d7d h and class logitso\u2208R K:\n(H,o) =F \u03b8(Z),H= [h 1, . . . ,hN ],(3)\nwhereKdenotes the number of classes.\nThe composer is trained online with complementary semantic and spatial objectives:\nLcomp =L cls +\u03bb mimLmim +\u03bb flipLflip.(4)\nHere, Lcls is a label-smoothed classification loss Szegedy et al. (2016), Lmim performs masked\nlatent reconstruction "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0025"
+        ],
+        "excerpt": "following masked autoencoding He et al. (2022), and Lflip encourages spatial\nconsistency under horizontal flipping. These objectives respectively promote class-level semantics,\nlocal latent structure, and spatial equivariance in the dense representation. Detailed formulations and\nimplementation settings are provided in the appendix.\nWe use the composed dense features to supervise an intermediate SiT layer following the\nrepresentation-alignment formulation of REPA Yu et al. (2024). Let G(\u2113) = [g (\u2113)1 , . . . ,g(\u2113)N ] de-\nnote the N patch-token features produced by the \u2113-th SiT block. Following REPA, a lightweight\nMLP projector \u03a0 maps the SiT features into the composer feature space, and spatially corresponding\ntokens are aligned using cosine distance:\nLalign = 1N\nNX\ni=1\ndcos\n\u0010\n\u03a0(g(\u2113)i ),sg(h i)\u0011 ,(5)\nwhere dcos(\u00b7,\u00b7) denotes cosine distance and sg(\u00b7) is the stop-gradient operator. Thus, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Composingvae Representations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4424716f14df9fe2c589517bf22ca5bb145d7843b5be6d8f703cf6e1b9cee8c0",
+            "evidence_id": "Ee639f8da382d3986-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Composingvae Representations",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 5,
+                "section": "Composingvae Representations",
+                "section_index": 10,
+                "start": 899,
+                "text": "following masked autoencoding He et al. (2022), and Lflip encourages spatial\nconsistency under horizontal flipping. These objectives respectively promote class-level semantics,\nlocal latent structure, and spatial equivariance in the dense representation. Detailed formulations and\nimplementation settings are provided in the appendix.\nWe use the composed dense features to supervise an intermediate SiT layer following the\nrepresentation-alignment formulation of REPA Yu et al. (2024). Let G(\u2113) = [g (\u2113)1 , . . . ,g(\u2113)N ] de-\nnote the N patch-token features produced by the \u2113-th SiT block. Following REPA, a lightweight\nMLP projector \u03a0 maps the SiT features into the composer feature space, and spatially corresponding\ntokens are aligned using cosine distance:\nLalign = 1N\nNX\ni=1\ndcos\n\u0010\n\u03a0(g(\u2113)i ),sg(h i)\u0011 ,(5)\nwhere dcos(\u00b7,\u00b7) denotes cosine distance and sg(\u00b7) is the stop-gradient operator. Thus, "
+              }
+            ],
+            "text": "following masked autoencoding He et al. (2022), and Lflip encourages spatial\nconsistency under horizontal flipping. These objectives respectively promote class-level semantics,\nlocal latent structure, and spatial equivariance in the dense representation. Detailed formulations and\nimplementation settings are provided in the appendix.\nWe use the composed dense features to supervise an intermediate SiT layer following the\nrepresentation-alignment formulation of REPA Yu et al. (2024). Let G(\u2113) = [g (\u2113)1 , . . . ,g(\u2113)N ] de-\nnote the N patch-token features produced by the \u2113-th SiT block. Following REPA, a lightweight\nMLP projector \u03a0 maps the SiT features into the composer feature space, and spatially corresponding\ntokens are aligned using cosine distance:\nLalign = 1N\nNX\ni=1\ndcos\n\u0010\n\u03a0(g(\u2113)i ),sg(h i)\u0011 ,(5)\nwhere dcos(\u00b7,\u00b7) denotes cosine distance and sg(\u00b7) is the stop-gradient operator. Thus, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0027"
+        ],
+        "excerpt": "Representation alignment is effective early in training but becomes detrimental when maintained for\ntoo long. CoV A therefore disables alignment after a transition step s\u03c4 and reuses the composer's\nsemantic prediction for sample-dependent class conditioning.\nFor a training samplej, the composer produces the detached posterior\nqj = sg (softmax(oj)),q j \u2208R K.(6)\nUnlike fixed label smoothing, qj is sample-dependent and captures the composer's predicted relations\namong classes.\nLet E\u2208R K\u00d7d c denote the SiT class-embedding table. With probability ps, the hard-label condition\nis replaced by the naive soft condition\n\u00afcj =q \u22a4j E.(7)\nSince this interpolation changes both condition direction and magnitude, we restore its magnitude to\nthat of the corresponding hard-label embedding:\ncsoftj = \u2225Eyj \u22252\u2225\u00afcj\u22252 +\u03f5 \u00afcj,(8)\nwhere yj is the ground-truth class and \u03f5 ensures numerical stability. This ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Adaptivesupervision Andsoftlabelconditioning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a8f0177c1c73e8254e66bfd906437ba7114fe07b4111432b027ed94a2321d956",
+            "evidence_id": "Ee639f8da382d3986-B0027",
+            "pages": [
+              6
+            ],
+            "section": "Stage-Adaptivesupervision Andsoftlabelconditioning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 6,
+                "section": "Stage-Adaptivesupervision Andsoftlabelconditioning",
+                "section_index": 12,
+                "start": 0,
+                "text": "Representation alignment is effective early in training but becomes detrimental when maintained for\ntoo long. CoV A therefore disables alignment after a transition step s\u03c4 and reuses the composer's\nsemantic prediction for sample-dependent class conditioning.\nFor a training samplej, the composer produces the detached posterior\nqj = sg (softmax(oj)),q j \u2208R K.(6)\nUnlike fixed label smoothing, qj is sample-dependent and captures the composer's predicted relations\namong classes.\nLet E\u2208R K\u00d7d c denote the SiT class-embedding table. With probability ps, the hard-label condition\nis replaced by the naive soft condition\n\u00afcj =q \u22a4j E.(7)\nSince this interpolation changes both condition direction and magnitude, we restore its magnitude to\nthat of the corresponding hard-label embedding:\ncsoftj = \u2225Eyj \u22252\u2225\u00afcj\u22252 +\u03f5 \u00afcj,(8)\nwhere yj is the ground-truth class and \u03f5 ensures numerical stability. This "
+              }
+            ],
+            "text": "Representation alignment is effective early in training but becomes detrimental when maintained for\ntoo long. CoV A therefore disables alignment after a transition step s\u03c4 and reuses the composer's\nsemantic prediction for sample-dependent class conditioning.\nFor a training samplej, the composer produces the detached posterior\nqj = sg (softmax(oj)),q j \u2208R K.(6)\nUnlike fixed label smoothing, qj is sample-dependent and captures the composer's predicted relations\namong classes.\nLet E\u2208R K\u00d7d c denote the SiT class-embedding table. With probability ps, the hard-label condition\nis replaced by the naive soft condition\n\u00afcj =q \u22a4j E.(7)\nSince this interpolation changes both condition direction and magnitude, we restore its magnitude to\nthat of the corresponding hard-label embedding:\ncsoftj = \u2225Eyj \u22252\u2225\u00afcj\u22252 +\u03f5 \u00afcj,(8)\nwhere yj is the ground-truth class and \u03f5 ensures numerical stability. This "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0028"
+        ],
+        "excerpt": "preserves the posterior-\ndependent direction while removing the unintended change in conditioning strength.\nDuring training, each sample uses either Eyj or csoftj according to ps, followed by standard classifier-\nfree label dropout. Let s\u03c4 and s\u2032\u03c4 denote the alignment stopping and SLC activation steps, respectively;\nalignment is used fors < s\u03c4 , while sample-dependent soft conditioning is activated fors\u2265s \u2032\u03c4 .\nThe overall training objective is\nL=L FM(c) +\u03bb align(s)Lalign +\u03bb compLcomp.(9)\nImplementation details of the conditioning schedule are deferred to the appendix. At inference, the\ncomposer and alignment projector are discarded, and the model uses the standard SiT pipeline with\nhard-label conditioning.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Adaptivesupervision Andsoftlabelconditioning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6cb81ed6983e12cfec43d91255292753d72a10af60b90964786e3c8a2f13740d",
+            "evidence_id": "Ee639f8da382d3986-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Stage-Adaptivesupervision Andsoftlabelconditioning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1606,
+                "page": 6,
+                "section": "Stage-Adaptivesupervision Andsoftlabelconditioning",
+                "section_index": 12,
+                "start": 891,
+                "text": "preserves the posterior-\ndependent direction while removing the unintended change in conditioning strength.\nDuring training, each sample uses either Eyj or csoftj according to ps, followed by standard classifier-\nfree label dropout. Let s\u03c4 and s\u2032\u03c4 denote the alignment stopping and SLC activation steps, respectively;\nalignment is used fors < s\u03c4 , while sample-dependent soft conditioning is activated fors\u2265s \u2032\u03c4 .\nThe overall training objective is\nL=L FM(c) +\u03bb align(s)Lalign +\u03bb compLcomp.(9)\nImplementation details of the conditioning schedule are deferred to the appendix. At inference, the\ncomposer and alignment projector are discarded, and the model uses the standard SiT pipeline with\nhard-label conditioning."
+              }
+            ],
+            "text": "preserves the posterior-\ndependent direction while removing the unintended change in conditioning strength.\nDuring training, each sample uses either Eyj or csoftj according to ps, followed by standard classifier-\nfree label dropout. Let s\u03c4 and s\u2032\u03c4 denote the alignment stopping and SLC activation steps, respectively;\nalignment is used fors < s\u03c4 , while sample-dependent soft conditioning is activated fors\u2265s \u2032\u03c4 .\nThe overall training objective is\nL=L FM(c) +\u03bb align(s)Lalign +\u03bb compLcomp.(9)\nImplementation details of the conditioning schedule are deferred to the appendix. At inference, the\ncomposer and alignment projector are discarded, and the model uses the standard SiT pipeline with\nhard-label conditioning."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0031"
+        ],
+        "excerpt": "Preprint. Under review.\nTable 1:FID comparison across train-\ning iterations for accelerated alignment\nmethods.All experiments are conducted\non ImageNet (256\u00d7256) with a batch size\nof 256 and without CFG.\nMethod #Params Iter. FID\u2193\nSiT-B/2 130M 400K 33.0\n+REPA 130M 400K 24.4\n+SRA2 130M 400K 28.9\n+ CoV A(ours)130M400K 21.4\nSiT-L/2 458M 400K 18.8\n+REPA 458M 400K 9.7\n+SRA2 458M 200K 22.5\n+SRA2 458M 400K 14.3\n+ CoV A(ours)458M200K 20.4\n+ CoV A(ours)458M400K 9.3\nSiT-XL/2 675M 400K 17.2\n+REPA 675M 400K 7.9\n+REPA 675M 1M 6.4\n+REPA 675M 4M 5.9\n+SRA2 675M 400K 11.7\n+SRA2 675M 1M 8.2\n+SRA2 675M 2M 7.0\n+ CoV A(ours)675M400K 7.4\n+ CoV A(ours)675M1M 4.4\n+ CoV A(ours)675M2M 3.6\nTable 2:Comparison with state-of-the-art methods\non ImageNet 256\u00d7256 with CFG.\"External\" indi-\ncates reliance on additional pretrained models beyond\nthe standard generative pipeline.\nMethod Epochs ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b326014b10afc9ad4d081f04a0a080ad90286401e46383670d7a08548ba0dd2a",
+            "evidence_id": "Ee639f8da382d3986-B0031",
+            "pages": [
+              7
+            ],
+            "section": "Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 868,
+                "page": 7,
+                "section": "Setup",
+                "section_index": 14,
+                "start": 0,
+                "text": "Preprint. Under review.\nTable 1:FID comparison across train-\ning iterations for accelerated alignment\nmethods.All experiments are conducted\non ImageNet (256\u00d7256) with a batch size\nof 256 and without CFG.\nMethod #Params Iter. FID\u2193\nSiT-B/2 130M 400K 33.0\n+REPA 130M 400K 24.4\n+SRA2 130M 400K 28.9\n+ CoV A(ours)130M400K 21.4\nSiT-L/2 458M 400K 18.8\n+REPA 458M 400K 9.7\n+SRA2 458M 200K 22.5\n+SRA2 458M 400K 14.3\n+ CoV A(ours)458M200K 20.4\n+ CoV A(ours)458M400K 9.3\nSiT-XL/2 675M 400K 17.2\n+REPA 675M 400K 7.9\n+REPA 675M 1M 6.4\n+REPA 675M 4M 5.9\n+SRA2 675M 400K 11.7\n+SRA2 675M 1M 8.2\n+SRA2 675M 2M 7.0\n+ CoV A(ours)675M400K 7.4\n+ CoV A(ours)675M1M 4.4\n+ CoV A(ours)675M2M 3.6\nTable 2:Comparison with state-of-the-art methods\non ImageNet 256\u00d7256 with CFG.\"External\" indi-\ncates reliance on additional pretrained models beyond\nthe standard generative pipeline.\nMethod Epochs "
+              }
+            ],
+            "text": "Preprint. Under review.\nTable 1:FID comparison across train-\ning iterations for accelerated alignment\nmethods.All experiments are conducted\non ImageNet (256\u00d7256) with a batch size\nof 256 and without CFG.\nMethod #Params Iter. FID\u2193\nSiT-B/2 130M 400K 33.0\n+REPA 130M 400K 24.4\n+SRA2 130M 400K 28.9\n+ CoV A(ours)130M400K 21.4\nSiT-L/2 458M 400K 18.8\n+REPA 458M 400K 9.7\n+SRA2 458M 200K 22.5\n+SRA2 458M 400K 14.3\n+ CoV A(ours)458M200K 20.4\n+ CoV A(ours)458M400K 9.3\nSiT-XL/2 675M 400K 17.2\n+REPA 675M 400K 7.9\n+REPA 675M 1M 6.4\n+REPA 675M 4M 5.9\n+SRA2 675M 400K 11.7\n+SRA2 675M 1M 8.2\n+SRA2 675M 2M 7.0\n+ CoV A(ours)675M400K 7.4\n+ CoV A(ours)675M1M 4.4\n+ CoV A(ours)675M2M 3.6\nTable 2:Comparison with state-of-the-art methods\non ImageNet 256\u00d7256 with CFG.\"External\" indi-\ncates reliance on additional pretrained models beyond\nthe standard generative pipeline.\nMethod Epochs "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0032"
+        ],
+        "excerpt": "FID\u2193sFID\u2193IS\u2191Pre.\u2191Rec.\u2191External\nPixel diffusion\nADM-U 400 3.94 6.14 186.7 0.82 0.52\u2717\nVDM++560 2.40 \u2013 225.3 \u2013 \u2013\u2717\nSimple diffusion 800 2.77 \u2013 211.8 \u2013 \u2013\u2717\nCDM 2160 4.88 \u2013 158.7 \u2013 \u2013\u2717\nPixelFlow-XL/4 320 1.98 \u2013 282.1 0.81 0.60\u2717\nDiP-XL/16 320 1.98 \u2013 282.9 0.80 0.62\u2717\nPixNerd-XL/16 320 1.95 \u2013 298.0 0.80 0.60\u2713\nPixelGen-XL/16 160 1.83 \u2013 293.6 0.79 0.63\u2713\nJiT-G/16 600 1.82 \u2013 292.6 \u2013 \u2013\u2717\nDeCo-XL/16 800 1.62 4.41 301.0 0.80 0.62\u2713\nLatent diffusion, Transformer + U-Net hybrid\nU-ViT-H/2 240 2.29 5.68 263.9 0.82 0.57\u2717\nDiffiT \u2013 1.73 \u2013 276.5 0.80 0.62\u2717\nMDTv2-XL/2 1080 1.58 4.52 314.7 0.79 0.65\u2717\nLatent diffusion, Transformer\nMaskDiT 1600 2.28 5.67 276.6 0.80 0.61\u2717\nSD-DiT 480 3.23 \u2013 \u2013 \u2013 \u2013\u2717\nDiT-XL/2 1400 2.27 4.60 278.2 0.83 0.57\u2717\nSiT-XL/2 1400 2.06 4.50 270.3 0.82 0.59\u2717\n+ REPA 800 1.42 4.70 305.7 0.80 0.65\u2713\n+ REG 800 1.36 4.25 299.4 0.77 0.66\u2713\n+ SRA2 200 1.98 4.53 284.5 0.83 0.59\u2717\n+ SRA2 400 1.84 4.50 306.5 0.82 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4ad19cb517a03805bce6be11602fa308d9ccc095e48cf5009a2ffea3f80e979b",
+            "evidence_id": "Ee639f8da382d3986-B0032",
+            "pages": [
+              7
+            ],
+            "section": "Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1768,
+                "page": 7,
+                "section": "Setup",
+                "section_index": 14,
+                "start": 868,
+                "text": "FID\u2193sFID\u2193IS\u2191Pre.\u2191Rec.\u2191External\nPixel diffusion\nADM-U 400 3.94 6.14 186.7 0.82 0.52\u2717\nVDM++560 2.40 \u2013 225.3 \u2013 \u2013\u2717\nSimple diffusion 800 2.77 \u2013 211.8 \u2013 \u2013\u2717\nCDM 2160 4.88 \u2013 158.7 \u2013 \u2013\u2717\nPixelFlow-XL/4 320 1.98 \u2013 282.1 0.81 0.60\u2717\nDiP-XL/16 320 1.98 \u2013 282.9 0.80 0.62\u2717\nPixNerd-XL/16 320 1.95 \u2013 298.0 0.80 0.60\u2713\nPixelGen-XL/16 160 1.83 \u2013 293.6 0.79 0.63\u2713\nJiT-G/16 600 1.82 \u2013 292.6 \u2013 \u2013\u2717\nDeCo-XL/16 800 1.62 4.41 301.0 0.80 0.62\u2713\nLatent diffusion, Transformer + U-Net hybrid\nU-ViT-H/2 240 2.29 5.68 263.9 0.82 0.57\u2717\nDiffiT \u2013 1.73 \u2013 276.5 0.80 0.62\u2717\nMDTv2-XL/2 1080 1.58 4.52 314.7 0.79 0.65\u2717\nLatent diffusion, Transformer\nMaskDiT 1600 2.28 5.67 276.6 0.80 0.61\u2717\nSD-DiT 480 3.23 \u2013 \u2013 \u2013 \u2013\u2717\nDiT-XL/2 1400 2.27 4.60 278.2 0.83 0.57\u2717\nSiT-XL/2 1400 2.06 4.50 270.3 0.82 0.59\u2717\n+ REPA 800 1.42 4.70 305.7 0.80 0.65\u2713\n+ REG 800 1.36 4.25 299.4 0.77 0.66\u2713\n+ SRA2 200 1.98 4.53 284.5 0.83 0.59\u2717\n+ SRA2 400 1.84 4.50 306.5 0.82 "
+              }
+            ],
+            "text": "FID\u2193sFID\u2193IS\u2191Pre.\u2191Rec.\u2191External\nPixel diffusion\nADM-U 400 3.94 6.14 186.7 0.82 0.52\u2717\nVDM++560 2.40 \u2013 225.3 \u2013 \u2013\u2717\nSimple diffusion 800 2.77 \u2013 211.8 \u2013 \u2013\u2717\nCDM 2160 4.88 \u2013 158.7 \u2013 \u2013\u2717\nPixelFlow-XL/4 320 1.98 \u2013 282.1 0.81 0.60\u2717\nDiP-XL/16 320 1.98 \u2013 282.9 0.80 0.62\u2717\nPixNerd-XL/16 320 1.95 \u2013 298.0 0.80 0.60\u2713\nPixelGen-XL/16 160 1.83 \u2013 293.6 0.79 0.63\u2713\nJiT-G/16 600 1.82 \u2013 292.6 \u2013 \u2013\u2717\nDeCo-XL/16 800 1.62 4.41 301.0 0.80 0.62\u2713\nLatent diffusion, Transformer + U-Net hybrid\nU-ViT-H/2 240 2.29 5.68 263.9 0.82 0.57\u2717\nDiffiT \u2013 1.73 \u2013 276.5 0.80 0.62\u2717\nMDTv2-XL/2 1080 1.58 4.52 314.7 0.79 0.65\u2717\nLatent diffusion, Transformer\nMaskDiT 1600 2.28 5.67 276.6 0.80 0.61\u2717\nSD-DiT 480 3.23 \u2013 \u2013 \u2013 \u2013\u2717\nDiT-XL/2 1400 2.27 4.60 278.2 0.83 0.57\u2717\nSiT-XL/2 1400 2.06 4.50 270.3 0.82 0.59\u2717\n+ REPA 800 1.42 4.70 305.7 0.80 0.65\u2713\n+ REG 800 1.36 4.25 299.4 0.77 0.66\u2713\n+ SRA2 200 1.98 4.53 284.5 0.83 0.59\u2717\n+ SRA2 400 1.84 4.50 306.5 0.82 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0033"
+        ],
+        "excerpt": "0.61\u2717\n+ CoV A (ours)200 2.19 4.49 287.9 0.80 0.60\u2717\n+ CoV A (ours)400 2.03 4.52 316.4 0.80 0.62\u2717\nGeneration quality assessment.We report FID Heusel et al. (2017), sFID Nash et al. (2021),\nIS Salimans et al. (2016), Precision, and Recall Kynk\u00e4\u00e4nniemi et al. (2019). We generate 50K\nsamples from the EMA model using the SDE Euler\u2013Maruyama solver with 250 integration steps,\nand evaluate against ImageNet reference statistics. Classifier-free guidance Ho & Salimans (2022) is\ndisabled unless otherwise specified, and the same protocol is used for all methods.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "be211f1927c898faa1a2060c3400ccc525d9cf845507fc7f70f37f4c4d1f93a6",
+            "evidence_id": "Ee639f8da382d3986-B0033",
+            "pages": [
+              7
+            ],
+            "section": "Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2323,
+                "page": 7,
+                "section": "Setup",
+                "section_index": 14,
+                "start": 1768,
+                "text": "0.61\u2717\n+ CoV A (ours)200 2.19 4.49 287.9 0.80 0.60\u2717\n+ CoV A (ours)400 2.03 4.52 316.4 0.80 0.62\u2717\nGeneration quality assessment.We report FID Heusel et al. (2017), sFID Nash et al. (2021),\nIS Salimans et al. (2016), Precision, and Recall Kynk\u00e4\u00e4nniemi et al. (2019). We generate 50K\nsamples from the EMA model using the SDE Euler\u2013Maruyama solver with 250 integration steps,\nand evaluate against ImageNet reference statistics. Classifier-free guidance Ho & Salimans (2022) is\ndisabled unless otherwise specified, and the same protocol is used for all methods."
+              }
+            ],
+            "text": "0.61\u2717\n+ CoV A (ours)200 2.19 4.49 287.9 0.80 0.60\u2717\n+ CoV A (ours)400 2.03 4.52 316.4 0.80 0.62\u2717\nGeneration quality assessment.We report FID Heusel et al. (2017), sFID Nash et al. (2021),\nIS Salimans et al. (2016), Precision, and Recall Kynk\u00e4\u00e4nniemi et al. (2019). We generate 50K\nsamples from the EMA model using the SDE Euler\u2013Maruyama solver with 250 integration steps,\nand evaluate against ImageNet reference statistics. Classifier-free guidance Ho & Salimans (2022) is\ndisabled unless otherwise specified, and the same protocol is used for all methods."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0038"
+        ],
+        "excerpt": "All ablations use SiT-B/2 trained for 400k steps with 250 SDE function evaluations and without CFG.\nTable 4:Ablation on composer training objectives.\nAll variants use the same feature-alignment configura-\ntion without SLC or early stopping. When enabled,\nclassification uses label smoothing \u03f5= 0.1, and MIM\nuses a masking ratio of 0.7. Prec. and Rec. denote preci-\nsion and recall.\nLcls Lmim Lflip FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\n\u00d7 \u00d7 \u00d7 33.02 6.46 43.71 0.53 0.63\n\u00d7\u2713\u00d7 31.92 6.26 48.14 0.540.64\n\u2713\u00d7 \u00d7 30.85 6.83 50.94 0.54 0.63\n\u2713 \u2713\u00d7 28.11 6.41 54.91 0.560.64\n\u2713\u00d7\u2713 28.066.2354.77 0.56 0.62\n\u2713 \u2713 \u2713 26.836.3257.69 0.57 0.64\nComposer Objectives. We first isolate the con-\ntribution of each objective used to train the latent\ncomposer. As shown in Table 4, masked latent\nreconstruction alone improves FID from 33.02\nto 31.92, while classification supervision alone\nfurther reduces it to 30.85. Starting from ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablationstudies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "91b7ffa6faf803472a20f03da88ca78b29dc566c0aececea3ce0ccee52483878",
+            "evidence_id": "Ee639f8da382d3986-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Ablationstudies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 8,
+                "section": "Ablationstudies",
+                "section_index": 17,
+                "start": 0,
+                "text": "All ablations use SiT-B/2 trained for 400k steps with 250 SDE function evaluations and without CFG.\nTable 4:Ablation on composer training objectives.\nAll variants use the same feature-alignment configura-\ntion without SLC or early stopping. When enabled,\nclassification uses label smoothing \u03f5= 0.1, and MIM\nuses a masking ratio of 0.7. Prec. and Rec. denote preci-\nsion and recall.\nLcls Lmim Lflip FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\n\u00d7 \u00d7 \u00d7 33.02 6.46 43.71 0.53 0.63\n\u00d7\u2713\u00d7 31.92 6.26 48.14 0.540.64\n\u2713\u00d7 \u00d7 30.85 6.83 50.94 0.54 0.63\n\u2713 \u2713\u00d7 28.11 6.41 54.91 0.560.64\n\u2713\u00d7\u2713 28.066.2354.77 0.56 0.62\n\u2713 \u2713 \u2713 26.836.3257.69 0.57 0.64\nComposer Objectives. We first isolate the con-\ntribution of each objective used to train the latent\ncomposer. As shown in Table 4, masked latent\nreconstruction alone improves FID from 33.02\nto 31.92, while classification supervision alone\nfurther reduces it to 30.85. Starting from "
+              }
+            ],
+            "text": "All ablations use SiT-B/2 trained for 400k steps with 250 SDE function evaluations and without CFG.\nTable 4:Ablation on composer training objectives.\nAll variants use the same feature-alignment configura-\ntion without SLC or early stopping. When enabled,\nclassification uses label smoothing \u03f5= 0.1, and MIM\nuses a masking ratio of 0.7. Prec. and Rec. denote preci-\nsion and recall.\nLcls Lmim Lflip FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\n\u00d7 \u00d7 \u00d7 33.02 6.46 43.71 0.53 0.63\n\u00d7\u2713\u00d7 31.92 6.26 48.14 0.540.64\n\u2713\u00d7 \u00d7 30.85 6.83 50.94 0.54 0.63\n\u2713 \u2713\u00d7 28.11 6.41 54.91 0.560.64\n\u2713\u00d7\u2713 28.066.2354.77 0.56 0.62\n\u2713 \u2713 \u2713 26.836.3257.69 0.57 0.64\nComposer Objectives. We first isolate the con-\ntribution of each objective used to train the latent\ncomposer. As shown in Table 4, masked latent\nreconstruction alone improves FID from 33.02\nto 31.92, while classification supervision alone\nfurther reduces it to 30.85. Starting from "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0040"
+        ],
+        "excerpt": "throughout training. We therefore stop the representation-alignment\nobjective at200K iterations in the subsequent experiments.\nSLC versus Fixed Label Smoothing. We then ask whether the benefit of soft conditioning comes\nfrom generic label smoothing or from the sample-dependent posterior produced by the online classifier.\nUnder matched replacement probabilities, sample-adaptive SLC consistently outperforms fixed label\nsmoothing, and the gap becomes more pronounced as the replacement probability increases, reaching\n24.19 versus 28.29 FID at p= 0.9 in Fig. 4(b). This result shows that the gain is not explained\nby weakening the hard condition alone. The instance-specific posterior provides additional useful\ninformation for generation. Since sampling uses hard-label conditioning, we cap the SLC replacement\nprobability at p= 0.9 to retain sufficient hard-label exposure during training and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablationstudies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6fa860c65fa2f5c828098abaf828918080f77b6a4a2e37d2e619203a257e0849",
+            "evidence_id": "Ee639f8da382d3986-B0040",
+            "pages": [
+              8
+            ],
+            "section": "Ablationstudies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2681,
+                "page": 8,
+                "section": "Ablationstudies",
+                "section_index": 17,
+                "start": 1785,
+                "text": "throughout training. We therefore stop the representation-alignment\nobjective at200K iterations in the subsequent experiments.\nSLC versus Fixed Label Smoothing. We then ask whether the benefit of soft conditioning comes\nfrom generic label smoothing or from the sample-dependent posterior produced by the online classifier.\nUnder matched replacement probabilities, sample-adaptive SLC consistently outperforms fixed label\nsmoothing, and the gap becomes more pronounced as the replacement probability increases, reaching\n24.19 versus 28.29 FID at p= 0.9 in Fig. 4(b). This result shows that the gain is not explained\nby weakening the hard condition alone. The instance-specific posterior provides additional useful\ninformation for generation. Since sampling uses hard-label conditioning, we cap the SLC replacement\nprobability at p= 0.9 to retain sufficient hard-label exposure during training and "
+              }
+            ],
+            "text": "throughout training. We therefore stop the representation-alignment\nobjective at200K iterations in the subsequent experiments.\nSLC versus Fixed Label Smoothing. We then ask whether the benefit of soft conditioning comes\nfrom generic label smoothing or from the sample-dependent posterior produced by the online classifier.\nUnder matched replacement probabilities, sample-adaptive SLC consistently outperforms fixed label\nsmoothing, and the gap becomes more pronounced as the replacement probability increases, reaching\n24.19 versus 28.29 FID at p= 0.9 in Fig. 4(b). This result shows that the gain is not explained\nby weakening the hard condition alone. The instance-specific posterior provides additional useful\ninformation for generation. Since sampling uses hard-label conditioning, we cap the SLC replacement\nprobability at p= 0.9 to retain sufficient hard-label exposure during training and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0041"
+        ],
+        "excerpt": "limit the train\u2013test\nmismatch.\nSLC Warmup Schedule. Finally, we study when the generator should start receiving the online\nclassifier's posterior. As shown in Fig. 4(c), delaying SLC consistently improves performance across\n8\nPreprint. Under review.\nTable 5:Direction\u2013magnitude decomposition of SLC.Di-\nrection and magnitude refer to the training-time class con-\ndition. All variants use standard hard-label conditioning at\ninference.\nDirection Magnitude FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\nHard Hard 24.87 5.95 61.19 0.58 0.64\nSoft Soft 12.715.58118.340.67 0.58\nHard Soft 12.785.55109.710.680.57\nSoft Hard 22.73 5.77 70.30 0.58 0.63\nShuffled soft Hard 34.13 6.47 42.35 0.520.64\nTable 6:Sensitivity to inference-time condition\nmagnitude.We scale hard-label embeddings by\n\u03b3 at inference for a model trained without SLC,\nkeeping all parameters fixed.\n\u03b3 FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\n1.00 24.87 5.95 61.19 0.580.64\n1.10 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablationstudies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f54a5f3799166b28f847d190dd0635fe0603ee8dedccf002ec62f13d6dc2aeb2",
+            "evidence_id": "Ee639f8da382d3986-B0041",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Ablationstudies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2906,
+                "page": 8,
+                "section": "Ablationstudies",
+                "section_index": 17,
+                "start": 2681,
+                "text": "limit the train\u2013test\nmismatch.\nSLC Warmup Schedule. Finally, we study when the generator should start receiving the online\nclassifier's posterior. As shown in Fig. 4(c), delaying SLC consistently improves performance across\n8"
+              },
+              {
+                "end": 673,
+                "page": 9,
+                "section": "Ablationstudies",
+                "section_index": 18,
+                "start": 0,
+                "text": "Preprint. Under review.\nTable 5:Direction\u2013magnitude decomposition of SLC.Di-\nrection and magnitude refer to the training-time class con-\ndition. All variants use standard hard-label conditioning at\ninference.\nDirection Magnitude FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\nHard Hard 24.87 5.95 61.19 0.58 0.64\nSoft Soft 12.715.58118.340.67 0.58\nHard Soft 12.785.55109.710.680.57\nSoft Hard 22.73 5.77 70.30 0.58 0.63\nShuffled soft Hard 34.13 6.47 42.35 0.520.64\nTable 6:Sensitivity to inference-time condition\nmagnitude.We scale hard-label embeddings by\n\u03b3 at inference for a model trained without SLC,\nkeeping all parameters fixed.\n\u03b3 FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\n1.00 24.87 5.95 61.19 0.580.64\n1.10 "
+              }
+            ],
+            "text": "limit the train\u2013test\nmismatch.\nSLC Warmup Schedule. Finally, we study when the generator should start receiving the online\nclassifier's posterior. As shown in Fig. 4(c), delaying SLC consistently improves performance across\n8\nPreprint. Under review.\nTable 5:Direction\u2013magnitude decomposition of SLC.Di-\nrection and magnitude refer to the training-time class con-\ndition. All variants use standard hard-label conditioning at\ninference.\nDirection Magnitude FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\nHard Hard 24.87 5.95 61.19 0.58 0.64\nSoft Soft 12.715.58118.340.67 0.58\nHard Soft 12.785.55109.710.680.57\nSoft Hard 22.73 5.77 70.30 0.58 0.63\nShuffled soft Hard 34.13 6.47 42.35 0.520.64\nTable 6:Sensitivity to inference-time condition\nmagnitude.We scale hard-label embeddings by\n\u03b3 at inference for a model trained without SLC,\nkeeping all parameters fixed.\n\u03b3 FID\u2193sFID\u2193IS\u2191Prec.\u2191Rec.\u2191\n1.00 24.87 5.95 61.19 0.580.64\n1.10 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0043"
+        ],
+        "excerpt": "MAGNITUDE\nNaive Soft Label Conditioning (SLC) averages class embeddings according to the sample-dependent\ncomposer posterior, changing both thedirectionandmagnitudeof the condition. For ground-truth\nclassy, lete h =e y and\nes =\nX\nk\nqkek (10)\ndenote the hard and naive soft conditions, respectively. We disentangle their effects by constructing\nehard-dir,soft-mag =\u2225e s\u22252\neh\n\u2225eh\u22252\n,e soft-dir,hard-mag =\u2225e h\u22252\nes\n\u2225es\u22252\n.(11)\nDirection and magnitude play different roles.As shown in Table 5, using the soft magnitude alone\nreduces FID from 24.87 to 12.78, but also lowers Recall from 0.64 to 0.57. By contrast, using the\nsoft direction with the hard-label magnitude gives FID improvement to 22.73 while preserving higher\nRecall. Importantly, shuffling soft directions across samples degrades FID sharply to 34.13, showing\nthat the directional component carries sample-specific information rather than ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Understandingsoftlabelconditioning: Disentanglingdirection And",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3ebf1fa5d0f0f08b9b8db1ce764e220c95afce8bd6983004bddd0d732de1182f",
+            "evidence_id": "Ee639f8da382d3986-B0043",
+            "pages": [
+              9
+            ],
+            "section": "Understandingsoftlabelconditioning: Disentanglingdirection And",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 9,
+                "section": "Understandingsoftlabelconditioning: Disentanglingdirection And",
+                "section_index": 19,
+                "start": 0,
+                "text": "MAGNITUDE\nNaive Soft Label Conditioning (SLC) averages class embeddings according to the sample-dependent\ncomposer posterior, changing both thedirectionandmagnitudeof the condition. For ground-truth\nclassy, lete h =e y and\nes =\nX\nk\nqkek (10)\ndenote the hard and naive soft conditions, respectively. We disentangle their effects by constructing\nehard-dir,soft-mag =\u2225e s\u22252\neh\n\u2225eh\u22252\n,e soft-dir,hard-mag =\u2225e h\u22252\nes\n\u2225es\u22252\n.(11)\nDirection and magnitude play different roles.As shown in Table 5, using the soft magnitude alone\nreduces FID from 24.87 to 12.78, but also lowers Recall from 0.64 to 0.57. By contrast, using the\nsoft direction with the hard-label magnitude gives FID improvement to 22.73 while preserving higher\nRecall. Importantly, shuffling soft directions across samples degrades FID sharply to 34.13, showing\nthat the directional component carries sample-specific information rather than "
+              }
+            ],
+            "text": "MAGNITUDE\nNaive Soft Label Conditioning (SLC) averages class embeddings according to the sample-dependent\ncomposer posterior, changing both thedirectionandmagnitudeof the condition. For ground-truth\nclassy, lete h =e y and\nes =\nX\nk\nqkek (10)\ndenote the hard and naive soft conditions, respectively. We disentangle their effects by constructing\nehard-dir,soft-mag =\u2225e s\u22252\neh\n\u2225eh\u22252\n,e soft-dir,hard-mag =\u2225e h\u22252\nes\n\u2225es\u22252\n.(11)\nDirection and magnitude play different roles.As shown in Table 5, using the soft magnitude alone\nreduces FID from 24.87 to 12.78, but also lowers Recall from 0.64 to 0.57. By contrast, using the\nsoft direction with the hard-label magnitude gives FID improvement to 22.73 while preserving higher\nRecall. Importantly, shuffling soft directions across samples degrades FID sharply to 34.13, showing\nthat the directional component carries sample-specific information rather than "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0044"
+        ],
+        "excerpt": "generic smoothing.\nThus, the modest standalone FID gain of direction should not be interpreted as semantic irrelevance,\npreserving the correspondence between each sample and its posterior direction is critical. This\nsuggests that the two components encode qualitatively different effects: magnitude mainly changes\nconditioning strength, whereas direction reflects posterior-dependent class structure.\nMagnitude creates a conditioning-strength shortcut.Using the attenuated soft magnitude during\ntraining while reverting to the standard hard-label condition at inference introduces an implicit\nconditioning-strength mismatch. This alone produces a large change in the fidelity\u2013coverage bal-\nance, even without introducing sample-dependent semantic direction. The inference-time scaling\nexperiment in Table 6 independently confirms that the generator is highly sensitive to this coordinate:\nmodifying ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Understandingsoftlabelconditioning: Disentanglingdirection And",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4a960178ea6b3abd528ce28ebc22f99382b7c7616bdce85aeab62a36b338af8c",
+            "evidence_id": "Ee639f8da382d3986-B0044",
+            "pages": [
+              9
+            ],
+            "section": "Understandingsoftlabelconditioning: Disentanglingdirection And",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1798,
+                "page": 9,
+                "section": "Understandingsoftlabelconditioning: Disentanglingdirection And",
+                "section_index": 19,
+                "start": 899,
+                "text": "generic smoothing.\nThus, the modest standalone FID gain of direction should not be interpreted as semantic irrelevance,\npreserving the correspondence between each sample and its posterior direction is critical. This\nsuggests that the two components encode qualitatively different effects: magnitude mainly changes\nconditioning strength, whereas direction reflects posterior-dependent class structure.\nMagnitude creates a conditioning-strength shortcut.Using the attenuated soft magnitude during\ntraining while reverting to the standard hard-label condition at inference introduces an implicit\nconditioning-strength mismatch. This alone produces a large change in the fidelity\u2013coverage bal-\nance, even without introducing sample-dependent semantic direction. The inference-time scaling\nexperiment in Table 6 independently confirms that the generator is highly sensitive to this coordinate:\nmodifying "
+              }
+            ],
+            "text": "generic smoothing.\nThus, the modest standalone FID gain of direction should not be interpreted as semantic irrelevance,\npreserving the correspondence between each sample and its posterior direction is critical. This\nsuggests that the two components encode qualitatively different effects: magnitude mainly changes\nconditioning strength, whereas direction reflects posterior-dependent class structure.\nMagnitude creates a conditioning-strength shortcut.Using the attenuated soft magnitude during\ntraining while reverting to the standard hard-label condition at inference introduces an implicit\nconditioning-strength mismatch. This alone produces a large change in the fidelity\u2013coverage bal-\nance, even without introducing sample-dependent semantic direction. The inference-time scaling\nexperiment in Table 6 independently confirms that the generator is highly sensitive to this coordinate:\nmodifying "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0081"
+        ],
+        "excerpt": "DINOv2-B/14 is an external feature reference, with ImageNet normalization and resizing to\n224\u00d7224 to produce the same token grid. We evaluate the 200K model weights and report per-image\nmeans. The numerical comparison is summarized in Table 8, and the corresponding qualitative\ncomparison is shown in Figure 5.\nTable 8:Spatial LDS objective comparisons at 200K.Near/far denote mean cosine similarity; LDS is near\nminus far. All values are rounded to two decimal places.\nFeature / objective Near\u2191Far\u2193LDS\u2191\nRaw V AE 0.44 0.16 0.28\nCE 0.48 0.19 0.29\nMIM only 0.92 0.86 0.06\nCE+MIM 0.60 0.24 0.36\nCE+flip 0.92 0.83 0.09\nCE+MIM+flip 0.66 0.250.41\nDINOv2-B/14 0.64 0.25 0.40\nThe objective effects interact.Using CE as the anchor, adding MIM increases LDS by +0.07.\nAdding flip consistency without MIM changes LDS by \u22120.20. When MIM is already present, adding\nflip increases LDS by +0.05; equivalently, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Spatiallds Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0d19dee192f2c83dec722a57305db1b226bdf03c9501a00a3da39ee8c9ad58e0",
+            "evidence_id": "Ee639f8da382d3986-B0081",
+            "pages": [
+              14
+            ],
+            "section": "Appendix: Spatiallds Protocol",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1787,
+                "page": 14,
+                "section": "Appendix: Spatiallds Protocol",
+                "section_index": 47,
+                "start": 892,
+                "text": "DINOv2-B/14 is an external feature reference, with ImageNet normalization and resizing to\n224\u00d7224 to produce the same token grid. We evaluate the 200K model weights and report per-image\nmeans. The numerical comparison is summarized in Table 8, and the corresponding qualitative\ncomparison is shown in Figure 5.\nTable 8:Spatial LDS objective comparisons at 200K.Near/far denote mean cosine similarity; LDS is near\nminus far. All values are rounded to two decimal places.\nFeature / objective Near\u2191Far\u2193LDS\u2191\nRaw V AE 0.44 0.16 0.28\nCE 0.48 0.19 0.29\nMIM only 0.92 0.86 0.06\nCE+MIM 0.60 0.24 0.36\nCE+flip 0.92 0.83 0.09\nCE+MIM+flip 0.66 0.250.41\nDINOv2-B/14 0.64 0.25 0.40\nThe objective effects interact.Using CE as the anchor, adding MIM increases LDS by +0.07.\nAdding flip consistency without MIM changes LDS by \u22120.20. When MIM is already present, adding\nflip increases LDS by +0.05; equivalently, "
+              }
+            ],
+            "text": "DINOv2-B/14 is an external feature reference, with ImageNet normalization and resizing to\n224\u00d7224 to produce the same token grid. We evaluate the 200K model weights and report per-image\nmeans. The numerical comparison is summarized in Table 8, and the corresponding qualitative\ncomparison is shown in Figure 5.\nTable 8:Spatial LDS objective comparisons at 200K.Near/far denote mean cosine similarity; LDS is near\nminus far. All values are rounded to two decimal places.\nFeature / objective Near\u2191Far\u2193LDS\u2191\nRaw V AE 0.44 0.16 0.28\nCE 0.48 0.19 0.29\nMIM only 0.92 0.86 0.06\nCE+MIM 0.60 0.24 0.36\nCE+flip 0.92 0.83 0.09\nCE+MIM+flip 0.66 0.250.41\nDINOv2-B/14 0.64 0.25 0.40\nThe objective effects interact.Using CE as the anchor, adding MIM increases LDS by +0.07.\nAdding flip consistency without MIM changes LDS by \u22120.20. When MIM is already present, adding\nflip increases LDS by +0.05; equivalently, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0083"
+        ],
+        "excerpt": "the\nsame panda image,16\u00d716token grid, and center anchor.\nTable 9:Cumulative ablation of CoV A on SiT-B/2.All models are trained for 400K iterations on\nImageNet 256\u00d7256 without CFG under the same optimization and sampling protocol. Each row\nprogressively adds one component to the preceding configuration.\nConfiguration FID\u2193sFID\u2193Prec.\u2191Rec.\u2191IS\u2191\nSiT-B/2 33.02 6.46 0.53 0.63 43.71\n+ Composed representation alignment 26.83 6.32 0.57 0.64 57.69\n+ Alignment early stopping 24.87 5.96 0.58 0.64 61.19\n+ Soft label conditioning 21.45 5.69 0.59 0.63 74.57",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Spatiallds Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "49423e7bf47971a832779c96320f3f3ea94c496c5306cdcd1d9ecfd9ee66a516",
+            "evidence_id": "Ee639f8da382d3986-B0083",
+            "pages": [
+              15
+            ],
+            "section": "Appendix: Spatiallds Protocol",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 657,
+                "page": 15,
+                "section": "Appendix: Spatiallds Protocol",
+                "section_index": 48,
+                "start": 110,
+                "text": "the\nsame panda image,16\u00d716token grid, and center anchor.\nTable 9:Cumulative ablation of CoV A on SiT-B/2.All models are trained for 400K iterations on\nImageNet 256\u00d7256 without CFG under the same optimization and sampling protocol. Each row\nprogressively adds one component to the preceding configuration.\nConfiguration FID\u2193sFID\u2193Prec.\u2191Rec.\u2191IS\u2191\nSiT-B/2 33.02 6.46 0.53 0.63 43.71\n+ Composed representation alignment 26.83 6.32 0.57 0.64 57.69\n+ Alignment early stopping 24.87 5.96 0.58 0.64 61.19\n+ Soft label conditioning 21.45 5.69 0.59 0.63 74.57"
+              }
+            ],
+            "text": "the\nsame panda image,16\u00d716token grid, and center anchor.\nTable 9:Cumulative ablation of CoV A on SiT-B/2.All models are trained for 400K iterations on\nImageNet 256\u00d7256 without CFG under the same optimization and sampling protocol. Each row\nprogressively adds one component to the preceding configuration.\nConfiguration FID\u2193sFID\u2193Prec.\u2191Rec.\u2191IS\u2191\nSiT-B/2 33.02 6.46 0.53 0.63 43.71\n+ Composed representation alignment 26.83 6.32 0.57 0.64 57.69\n+ Alignment early stopping 24.87 5.96 0.58 0.64 61.19\n+ Soft label conditioning 21.45 5.69 0.59 0.63 74.57"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0096"
+        ],
+        "excerpt": "shuffling soft directions across samples strongly degrades performance,\ndemonstrating that the posterior-dependent direction contains sample-specific semantic information.\nTaken together, naive SLC entangles two fundamentally different effects:posterior-dependent se-\nmantic directionandposterior-dependent conditioning magnitude. The latter can strongly alter the\nfidelity\u2013coverage balance and therefore confounds the apparent gain of soft conditioning. CoV A\n18\nPreprint. Under review.\nexplicitly removes this confound by restoring the soft condition to the corresponding hard-label\nmagnitude, while preserving its posterior-dependent direction. In this way, the soft condition con-\ntributes sample-specific semantic information without relying on unintended changes in conditioning\nstrength.\nNull-centered controls for conditioning strength. Our default magnitude correction in Eq. (8) re-\nstores ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18,
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a575141564ae4a062d1c62fea5f88622a406ab80ebc8ababe58dde5a845d1a1d",
+            "evidence_id": "Ee639f8da382d3986-B0096",
+            "pages": [
+              18,
+              19
+            ],
+            "section": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3575,
+                "page": 18,
+                "section": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+                "section_index": 53,
+                "start": 3112,
+                "text": "shuffling soft directions across samples strongly degrades performance,\ndemonstrating that the posterior-dependent direction contains sample-specific semantic information.\nTaken together, naive SLC entangles two fundamentally different effects:posterior-dependent se-\nmantic directionandposterior-dependent conditioning magnitude. The latter can strongly alter the\nfidelity\u2013coverage balance and therefore confounds the apparent gain of soft conditioning. CoV A\n18"
+              },
+              {
+                "end": 436,
+                "page": 19,
+                "section": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+                "section_index": 54,
+                "start": 0,
+                "text": "Preprint. Under review.\nexplicitly removes this confound by restoring the soft condition to the corresponding hard-label\nmagnitude, while preserving its posterior-dependent direction. In this way, the soft condition con-\ntributes sample-specific semantic information without relying on unintended changes in conditioning\nstrength.\nNull-centered controls for conditioning strength. Our default magnitude correction in Eq. (8) re-\nstores "
+              }
+            ],
+            "text": "shuffling soft directions across samples strongly degrades performance,\ndemonstrating that the posterior-dependent direction contains sample-specific semantic information.\nTaken together, naive SLC entangles two fundamentally different effects:posterior-dependent se-\nmantic directionandposterior-dependent conditioning magnitude. The latter can strongly alter the\nfidelity\u2013coverage balance and therefore confounds the apparent gain of soft conditioning. CoV A\n18\nPreprint. Under review.\nexplicitly removes this confound by restoring the soft condition to the corresponding hard-label\nmagnitude, while preserving its posterior-dependent direction. In this way, the soft condition con-\ntributes sample-specific semantic information without relying on unintended changes in conditioning\nstrength.\nNull-centered controls for conditioning strength. Our default magnitude correction in Eq. (8) re-\nstores "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0098"
+        ],
+        "excerpt": "the same 350K checkpoint, we replace the default normalization with Eq. 20 during the\nfinal 50K training iterations, while keeping all other SLC settings unchanged. As shown in Table 15,\nnull-centered normalization achieves an FID of 21.14, closely matching the 21.45 FID of the default\nCoV A formulation. It also retains high Recall (0.628). This result indicates thatthe improvement\nfrom corrected SLC does not depend on using the embedding-space origin as the normalization\nreference; preserving conditioning strength relative to the learned unconditional embedding leads to\nessentially the same behavior.\nNull-centered scaling at inference.We next directly perturb conditioning strength relative to the\nunconditional anchor while keeping the model parameters fixed. For a hard-label embedding ey, we\ndefine\ne(\u03b3)y =e \u2205 +\u03b3(e y \u2212e \u2205),(22)\nwhere \u03b3= 1 recovers the standard hard-label condition. This ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 19,
+        "pages": [
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3f2ede7be2e19d8643ac694ec58ec159d8d2b6e42e845d77943a84709e70ba67",
+            "evidence_id": "Ee639f8da382d3986-B0098",
+            "pages": [
+              19
+            ],
+            "section": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2235,
+                "page": 19,
+                "section": "Appendix: Understanding Themagnitudeconfound Insoftlabel",
+                "section_index": 54,
+                "start": 1335,
+                "text": "the same 350K checkpoint, we replace the default normalization with Eq. 20 during the\nfinal 50K training iterations, while keeping all other SLC settings unchanged. As shown in Table 15,\nnull-centered normalization achieves an FID of 21.14, closely matching the 21.45 FID of the default\nCoV A formulation. It also retains high Recall (0.628). This result indicates thatthe improvement\nfrom corrected SLC does not depend on using the embedding-space origin as the normalization\nreference; preserving conditioning strength relative to the learned unconditional embedding leads to\nessentially the same behavior.\nNull-centered scaling at inference.We next directly perturb conditioning strength relative to the\nunconditional anchor while keeping the model parameters fixed. For a hard-label embedding ey, we\ndefine\ne(\u03b3)y =e \u2205 +\u03b3(e y \u2212e \u2205),(22)\nwhere \u03b3= 1 recovers the standard hard-label condition. This "
+              }
+            ],
+            "text": "the same 350K checkpoint, we replace the default normalization with Eq. 20 during the\nfinal 50K training iterations, while keeping all other SLC settings unchanged. As shown in Table 15,\nnull-centered normalization achieves an FID of 21.14, closely matching the 21.45 FID of the default\nCoV A formulation. It also retains high Recall (0.628). This result indicates thatthe improvement\nfrom corrected SLC does not depend on using the embedding-space origin as the normalization\nreference; preserving conditioning strength relative to the learned unconditional embedding leads to\nessentially the same behavior.\nNull-centered scaling at inference.We next directly perturb conditioning strength relative to the\nunconditional anchor while keeping the model parameters fixed. For a hard-label embedding ey, we\ndefine\ne(\u03b3)y =e \u2205 +\u03b3(e y \u2212e \u2205),(22)\nwhere \u03b3= 1 recovers the standard hard-label condition. This "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.13322",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.13322",
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Standard Inception-v3-based distribution metrics and Spatial LDS provide external measurement of generation quality and spatial organization, independent of the composer's training objectives.",
+          "final_evaluation_signal": "Headline outcomes are established by standard generative benchmarks on 50k samples against ImageNet reference statistics: FID, sFID, Inception Score, Precision, and Recall, plus Spatial LDS on validation latents.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system is shaped by the flow-matching objective combined with intermediate cosine feature alignment to composer features and late-stage magnitude-corrected soft label conditioning derived from the online composer's classification, masked reconstruction, and flip-consistency losses.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0003",
+          "Ee639f8da382d3986-B0004",
+          "Ee639f8da382d3986-B0009",
+          "Ee639f8da382d3986-B0011",
+          "Ee639f8da382d3986-B0012",
+          "Ee639f8da382d3986-B0024",
+          "Ee639f8da382d3986-B0025",
+          "Ee639f8da382d3986-B0027",
+          "Ee639f8da382d3986-B0028",
+          "Ee639f8da382d3986-B0031",
+          "Ee639f8da382d3986-B0032",
+          "Ee639f8da382d3986-B0033",
+          "Ee639f8da382d3986-B0038",
+          "Ee639f8da382d3986-B0040",
+          "Ee639f8da382d3986-B0041",
+          "Ee639f8da382d3986-B0043",
+          "Ee639f8da382d3986-B0044",
+          "Ee639f8da382d3986-B0081",
+          "Ee639f8da382d3986-B0083",
+          "Ee639f8da382d3986-B0096",
+          "Ee639f8da382d3986-B0098"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "a80f96efaea4b9dd5d70184d2d22402e81203321f1467b8041658b37ef03266a"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.13322",
+        "claim_evidence_alignment": "Claims of accelerated convergence and improved generation metrics without relying on large external teachers (like DINO or CLIP) are well substantiated by matched-budget comparisons and extensive control experiments. The analytical and empirical demonstration of the soft-label magnitude confound is thoroughly validated through directional decompositions and null-centered scaling baselines.",
+        "context_id": "e639f8da382d3986e4b362870ae2ec66200461601d9e663d4437ead396308f5c",
+        "decision": "pass",
+        "evaluation_assessment": "The framework is evaluated systematically on class-conditional ImageNet 256x256 across multiple SiT model scales (B/2, L/2, XL/2) using established standard metrics including FID, sFID, Inception Score, Precision, and Recall. The paper features comprehensive ablation studies isolating the composer objectives, stopping schedules, and the magnitude confound in soft conditioning.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Standard image distribution metrics (FID, sFID, IS, Precision, Recall) evaluated externally via standard Inception-v3 features on generated samples.",
+          "final_evaluation_signal": "Standard generative benchmarking on 50k samples using reference dataset distributions: Frechet Inception Distance (FID), sFID, Inception Score, and Precision/Recall, alongside Spatial LDS on validation latents.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Flow-matching loss combined with intermediate cosine feature alignment and late-stage magnitude-corrected soft label conditioning derived from the online composer's classification and MIM objectives.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ee639f8da382d3986-B0003",
+          "Ee639f8da382d3986-B0004",
+          "Ee639f8da382d3986-B0009",
+          "Ee639f8da382d3986-B0011",
+          "Ee639f8da382d3986-B0012",
+          "Ee639f8da382d3986-B0024",
+          "Ee639f8da382d3986-B0025",
+          "Ee639f8da382d3986-B0027",
+          "Ee639f8da382d3986-B0028",
+          "Ee639f8da382d3986-B0031",
+          "Ee639f8da382d3986-B0032",
+          "Ee639f8da382d3986-B0033",
+          "Ee639f8da382d3986-B0038",
+          "Ee639f8da382d3986-B0040",
+          "Ee639f8da382d3986-B0041",
+          "Ee639f8da382d3986-B0043",
+          "Ee639f8da382d3986-B0044",
+          "Ee639f8da382d3986-B0081",
+          "Ee639f8da382d3986-B0083",
+          "Ee639f8da382d3986-B0096",
+          "Ee639f8da382d3986-B0098"
+        ],
+        "limitations": "The work explicitly notes the stage sensitivity of representation alignment and soft label conditioning, requiring thresholded scheduling. Evaluations are scoped primarily to class-conditional ImageNet 256x256 under SiT backbones.",
+        "method_assessment": "The method is clearly formulated with formal descriptions of the composer loss, cosine feature alignment, alignment early stopping, and magnitude-corrected soft label conditioning to decouple directional semantic interpolation from embedding attenuation. Experimental protocols, architectural details, and hyperparameters are thoroughly documented.",
+        "quality_rationale": "The manuscript provides a well-scoped, rigorously tested contribution to diffusion transformer training dynamics. The experiments thoroughly investigate the proposed mechanisms with appropriate controls and ablations, meeting the standard for inclusion.",
+        "scoped_contribution": "The paper introduces CoVA, an online training scheme for flow-matching diffusion transformers that reorganizes VAE representations using an auxiliary latent composer trained with classification, masked reconstruction, and flip-consistency objectives. CoVA performs intermediate feature alignment early in training, transitions to magnitude-corrected soft label conditioning using the detached composer posterior late in training, and discards all auxiliary parameters at inference.",
+        "source_content_hash": "a80f96efaea4b9dd5d70184d2d22402e81203321f1467b8041658b37ef03266a"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript provides a well-scoped, rigorously tested contribution to diffusion transformer training dynamics. The experiments thoroughly investigate the proposed mechanisms with appropriate controls and ablations, meeting the standard for inclusion.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "a80f96efaea4b9dd5d70184d2d22402e81203321f1467b8041658b37ef03266a",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The work explicitly notes the stage sensitivity of representation alignment and soft label conditioning, requiring thresholded scheduling. Evaluations are scoped primarily to class-conditional ImageNet 256x256 under SiT backbones."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -157,7 +2264,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

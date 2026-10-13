@@ -59,16 +59,224 @@
             <p>Physics-based models connect scientific explanation with quantitative prediction. Constructing them requires selecting physical processes, defining states and governing equations, specifying couplings, and identifying parameters from experiments. Existing AI systems remain limited in making these model structure dec...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a thorough, well-controlled experimental framework featuring multi-task evaluations, rigorous isolation, and clear ablation comparisons between baseline, naive memory, and scientific evolution. Claims are appropriately scoped and corroborated by empirical measurements.</p>
+      <p>The transfer of dynamic voltage prediction is validated across unseen temperatures within known driving cycle profiles rather than completely unseen duty cycles, and certain complex failure modes remain unresolved across challenging physical tasks.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-13T11:26:25.753688+00:00.</p>
+        <p>Coverage: 146216 of 146216 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Physics-based models connect scientific explanation with quantitative prediction.
+Constructing them requires selecting physical processes, defining states and gov-
+erning equations, specifying couplings, and identifying parameters from experi-
+ments. Existing AI systems remain limited in making these model structure deci-
+sions autonomously. We introduce EvoSim, a self-evolving AI scientist for physi-
+cal modeling. It uses experimental discrepancies to drive mechanism and equation
+revisions and held-out experimental data to test physical plausibility. Exploration
+traces make updates to knowledge, skills, and multi-agent orchestration. This co-
+evolution improves physics-based models and EvoSim&#x27;s ability to select mecha-
+nisms, diagnose failures, and coordinate research. We evaluate EvoSim on two
+industrial battery modeling tasks. It predicts lithium-metal-plating onset from 25
+to 45 °C </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and 2 C to 6 C with a mean absolute error of 1.79% in state of charge.
+Dynamic voltage prediction under vehicle driving conditions achieves a root mean
+square error of 7.62 mV , surpassing the reported accuracy of models developed by
+human experts. Self-evolution reduces model and physics errors by approximately
+36% relative to baseline, demonstrating improved scientific modeling capability.
+EvoSim turns experimental observations into validated models and cumulative re-
+search expertise.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>selection and subsequent research. EvoSim
+also reviews the investigation records to extract do-
+main knowledge, modeling skills, tool procedures, and
+strategies for coordinating research tasks. These capa-
+bilities are assessed for supporting evidence, actionabil-
+ity, and scope of use, separately from decisions about
+candidate models. Retained capabilities guide sub-
+sequent hypothesis selection, model construction, and
+validation. A rejected model can therefore yield a use-
+ful research method, allowing subsequent exploration
+to build on previous attempts.
+We evaluate EvoSim on two industrial battery-
+modeling tasks. Predicting lithium-plating onset helps
+define operating limits for fast charging, while predicting dynamic voltage supports assessment of
+battery behavior under vehicle loads. The plating-onset model achieves a mean absolute error of
+1.79% points in state of charge across </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>held-out validation conditions. The voltage model achieves
+a root mean squared error of 7.62 mV on the 30 ◦C dynamic stress test condition, which is numer-
+ically below the compared literature values. Across 45 matched comparisons, capability learning
+reduces the incidence of model-construction or physical-mechanism failures from 73.3% to 46.7%.
+Together, these results support autonomous modeling in which experimental feedback improves
+physical explanations, and each investigation builds the research capabilities.
+The key contributions are as follows:
+1.Co-evolution for autonomous physics-based modeling.EvoSim couples experimental
+model development with research capability learning. Model investigations identify learn-
+ing requirements, and retained knowledge and methods support further exploration of phys-
+ical mechanisms.
+2.Parallel exploration of physical mechanisms and model </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>limits.
+Model.EvoSim starts from a one-dimensional porous-electrode model for electrolyte transport,
+electronic conduction, particle diffusion, and graphite intercalation. It adds a parallel plating
+and stripping reaction driven by the local plating overpotential. Onset is defined by a capacity-
+normalized accumulated irreversible-lithium threshold. The 14 training conditions identify a shared
+plating exchange-current scale and a bounded rate-dependent fraction that converts accumulated de-
+position into irreversible lithium. The model is then fixed before prediction of the six validation
+conditions.
+7
+Preprint
+Table 1:Ablation on the four-state voltage task.Performance and progress during the model
+search.
+Condition Best valid RMSE (mV) Progress during search
+Baseline 89.478 Unchanged through 12 attempts
+Naive Memory 89.383 Unchanged through 12 attempts
+Scientific </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evolution22.015Attained on attempt 2
+Results.The six validation conditions are excluded from parameter identification. On these held-
+out conditions, predicted onset SOC has an MAE of 1.79 SOC percentage points and an RMSE
+of 2.11 SOC percentage points (Figure 3a,b). Appendix C provides the equations, onset criterion,
+development path, solution checks, and pointwise results.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>poten-
+tials, charge-transfer polarization, and internal resistance. It rebuilds the states with the exact zero-
+order-hold update, then adds electrolyte transport and interfacial charging to the solved physics-
+based model. Terminal voltage follows from the solved electrochemical potentials and resistive
+losses. Appendix C.4 gives the model and held-out evaluation.
+Results.We evaluate the fixed physics-based model by leaving out one temperature at a time.
+For each held-out temperature, the model uses the other temperatures for parameter identification.
+Figure 3c shows two complete predicted and measured voltage traces at held-out temperatures.</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>measured later outcome. Appendix D.2, G give the complete records.
+8
+Preprint
+Figure 4:Effect of Scientific Evolution. (a)Baseline investigations and investigations using saved
+procedures on three tasks.(b)Failure counts and execution measures across 45 matched pairs from
+11 modeling tasks. Each measure is normalized to its corresponding Baseline value, shown as 100%.
+The figure label Improved denotes EvoSim with Scientific Evolution.
+Reliability and efficiency.We analyze 45 matched pairs across 11 modeling tasks. Each pair
+contains one Baseline run and one Scientific Evolution run. The two runs use the same task, starting
+model, data, solver, checks, and evaluation budget. Model and physical-mechanism failures decrease
+from 33 to 21 runs. Among pairs with different outcomes, 15 favor Scientific Evolution and 3 favor
+Baseline. The two-sided exact McNemar test givesp= 0.0075. Adjustment </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>across the six failure
+modes givesp= 0.0151. Active execution time for these later modeling runs decreases by 42.6%
+(Figure 4b). Appendix D.4 gives the failure definitions, statistical test, counts, and execution totals.
+Scientific conclusions.Across nine evaluated tasks, four conclusions apply to the tested conditions.
+Four conclusions apply only to a narrower range. One proposed general mechanism is rejected
+because every tested model fails the evaluation criterion. All nine decisions agree with the evaluation
+results. Appendix E.3 gives the selection criteria and results.</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>three-condition comparison usesgpt-5.5in
+all conditions. The model version, system prompt, task prompt, tools, submission budget, and
+stopping rule are fixed across the three runs. The planning prompt asks the agent to inspect the
+task, current model, and available evidence; select the next candidate modification or modification
+set; state its expected physical or numerical effect; and define the checks needed after execution.
+The execution prompt asks the agent to implement the selected candidate, run the solver, export
+the required quantities, and report the model files and results. The final-review prompt starts in a
+separate session. It reads the candidate model, source files, solver log, exported results, and fixed
+acceptance rules. It returnsPASSonly when the implementation, solution, and measurement checks
+all pass.
+Procedure retrieval and update.Each saved procedure states the </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>of the six
+validation conditions.
+The dynamic-voltage case evaluates one fixed model structure by leave-one-temperature cross-
+validation on complete driving traces. The evaluation contains eight temperature folds and 16 traces.
+In each fold, both the DST and US06 traces at the held-out temperature are excluded from parameter
+identification, and both are evaluated after the fold-specific parameters are identified. We report two
+pre-defined individual-condition results in the main text. Section C.4 gives the split definition and
+the reported held-out results.
+These checks answer different scientific questions. Agreement with the development measurements
+tests whether the constructed equations and calibrated parameters describe the observed cell. So-
+lution and physical checks test whether the implemented model solves the stated equations and
+respects their constraints. Cross-validation </blockquote></details></li><li><strong>Contribution clarity — pages 22–23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>identification. The source study used all 20 conditions when
+adjusting its solid-diffusion activation energy. Its values on the six listed conditions therefore come
+from conditions used during model development. We calculate its MAE of 2.82 percentage points
+and RMSE of 4.06 percentage points from the published pointwise outputs. The source study does
+not report these two summary metrics directly. EvoSim gives a validation MAE of 1.79 percentage
+points and a validation RMSE of 2.11 percentage points. The table uses the same conditions and
+experimental targets, but the parameter-identification procedures differ.
+22
+Preprint
+Table 8: Comparison on the six conditions reserved for EvoSim validation. EvoSim does not use
+these conditions for parameter identification. The source-study model used the full 20-condition
+matrix during model development (Konz et al., 2023). Errors are prediction </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>model structure can carry electrochemical and
+dynamic states through complete load sequences. Accurate voltage calculation under these loads
+supports state-of-charge and power-capability estimation and model-predictive control in battery-
+management systems (Guo &amp; Couto, 2026a).
+Model calibration and evaluation.Two evaluations have different roles. The full-data develop-
+ment fit uses all 16 traces for both parameter estimation and error calculation. Its equal-condition
+mean RMSE is 4.86 mV . This value measures fit capacity and is not a held-out result.
+Held-out evaluation uses eight leave-one-temperature folds. In the fold for temperatureT h, the
+model parameters are identified from the 14 DST and US06 traces at the other seven temperatures.
+The complete DST and US06 voltage traces atT h are then solved without refitting. Thus, tem-
+perature is held out, while the DST and US06 </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>protocol types remain represented in the calibration
+set. The split tests transfer to an unseen temperature within two known protocol families. It does
+not test transfer to an unseen drive protocol. The governing electrochemical equations, parameter
+constraints, initial-condition procedure, and error metric remain fixed across folds.
+We report two pre-defined held-out results in the main text: 30 ◦C DST at 7.62 mV and 20◦C US06
+at 8.97 mV . These are results for individual runs, not an aggregate over all held-out conditions. The
+temperature split, protocol labels, parameter-identification rule, and error metric were fixed before
+evaluation.
+For a voltage trace withnaligned samples, the reported error is
+RMSEV = 1000
+vuut 1
+n
+nX
+j=1
 
-        <ul></ul>
+bVj −V j
+2
+mV.(25)
+Here bVj is the predicted voltage in V andV j is the measured voltage in V at samplej. The factor
+1000 converts the result from V to mV </blockquote></details></li><li><strong>Contribution clarity — page 29</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DST or US06 operating conditions. The first
+block uses the same A123 A1-007 25◦C DST measurement trace and inputs.
+Model structure Comparison condition RMSE (mV)
+Same A123 trace and inputs; original identification procedures
+Physics-based model (this work) Full-data run; not held out 6.08
+CPG-SPMT (Guo &amp; Couto, 2026a) Published result on the same condition 32.10
+DST/US06 dynamic-voltage results reported by each study
+Physics-based model (this work) Held-out results shown in Figure 3 7.62, 8.97
+NDCTNet (Tu et al., 2024) Reported results 12.25, 13.01
+ESP (He et al., 2024) Reported result 13.90
+PIROL (Rifat et al., 2026) Reported result 17.80
+2RC-KiBaM (Kasper et al., 2025) Reported result 18.60
+2RC ECM (Valderrama-V´elez et al., 2026) Reported result 23.24
+Cui et al. (Cui et al., 2023) Reported results 34.40, 49.50
+29</blockquote></details></li><li><strong>Contribution clarity — pages 37–38</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>exact 95% confidence interval of 1.41–26.94. The exact McNemar
+result isp= 0.0075, and it remains significant after correction across all six failure modes (p Holm =
+0.0151). False completion, data/protocol failure, tool-operation failure, and looping/stagnation also
+remain significant after correction. Numerical-solver failure does not show a significant difference.
+These results show that the reductions are consistent across matched experiments and are larger than
+expected from balanced pair-to-pair variation under the null hypothesis.
+The task columns show how widely each failure occurs. The run columns show how often it occurs
+across repeated experiments. Model / physics failures appear in 7 of the 11 tasks under both condi-
+37
+Preprint
+Table 23: Failure-mode transitions across 45 same-task pairs.
+Failure mode
+Baseline
+count
+Scientific
+Evolution
+count
+Baseline-
+only </blockquote></details></li><li><strong>Contribution clarity — page 38</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Both
+Evolution-
+only
+Net
+decrease (%)
+False completion 12 0 12 0 0 100.0%
+Tool operation 19 2 17 2 0 89.5%
+Model / physics 33 21 15 18 3 36.4%
+Data / protocol 14 0 14 0 0 100.0%
+Numerical solver 5 2 5 0 2 60.0%
+Looping / stagnation 25 5 21 4 1 80.0%
+Table 24: Exact paired tests for the failure-mode transitions.
+Failure mode
+Baseline-
+only (b)
+Evolution-
+only (c)
+Exact
+p-value
+Holm-adjusted
+p-value
+False completion 12 0 0.000488 0.001465
+Tool operation 17 0 0.000015 0.000076
+Model / physics 15 3 0.007538 0.015076
+Data / protocol 14 0 0.000122 0.000488
+Numerical solver 5 2 0.453125 0.453125
+Looping / stagnation 21 1 0.000011 0.000066
+tions. Their run count decreases from 33 under Baseline to 21 under Scientific Evolution. Of the 45
+pairs, 15 contain this failure only under Baseline, 18 contain it under both conditions, and 3 contain
+it only under Scientific Evolution. The decrease from 33 </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +315,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +331,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-08</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-09 11:18:59</li><li>Last seen by Paper Scout: 2026-10-12 11:38:25</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-08</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-09 11:18:59</li><li>Last seen by Paper Scout: 2026-10-13 11:23:45</li></ul>
             <ul><li>arXiv: 2610.11344</li><li>arXiv IDs: 2610.11344</li></ul>
           </section>
           <section class="detail-panel">

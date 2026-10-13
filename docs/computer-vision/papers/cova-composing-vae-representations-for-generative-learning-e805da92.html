@@ -59,16 +59,304 @@
             <p>Representation alignment with pretrained visual encoders improves diffusion transformer training but requires auxiliary encoders and extra training overhead. Recent approaches instead exploit representations from the generative model&#x27;s own variational autoencoder (VAE). However, reconstruction-oriented VAE features...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript provides a well-scoped, rigorously tested contribution to diffusion transformer training dynamics. The experiments thoroughly investigate the proposed mechanisms with appropriate controls and ablations, meeting the standard for inclusion.</p>
+      <p>The work explicitly notes the stage sensitivity of representation alignment and soft label conditioning, requiring thresholded scheduling. Evaluations are scoped primarily to class-conditional ImageNet 256x256 under SiT backbones.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-13T11:26:02.740889+00:00.</p>
+        <p>Coverage: 66523 of 66523 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Representation alignment with pretrained visual encoders improves diffusion trans-
+former training but requires auxiliary encoders and extra training overhead. Recent
+approaches instead exploit representations from the generative model&#x27;s own varia-
+tional autoencoder (V AE). However, reconstruction-oriented V AE features are not
+optimized for the semantic discrimination and spatial structure needed for genera-
+tive learning. We introduceCoV A(ComposedV AE Representations), a lightweight
+framework that composes V AE features online into stage-wise guidance for flow-
+matching training. A small latent composer is jointly trained with class supervision,
+masked latent reconstruction, and horizontal-flip consistency, yielding semantically
+discriminative, spatially structured dense features and sample-dependent class pos-
+teriors. CoV A aligns intermediate SiT features with the composed </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>representations
+early in training, then removes the increasingly detrimental alignment and reuses
+detached composer posteriors for sample-dependent soft label conditioning. We
+further uncover a hidden confound in soft label conditioning: averaging class
+embeddings attenuates their magnitude, coupling semantic interpolation with con-
+ditioning strength. This attenuation alone can substantially improve FID while
+degrading Recall, revealing a non-semantic source of the apparent gain. CoV A
+corrects this confound by restoring the hard-label magnitude, isolating posterior-
+dependent directional semantics. CoV A adds only 8.5M training-only auxiliary
+parameters (1.3% of SiT-XL/2) and introduces no inference-time overhead. On
+ImageNet 256×256, CoV A reduces SiT-XL/2 FID from 17.2 to 7.4 (57%) in 400K
+steps. With classifier-free guidance, it achieves an FID of2.03in only 400 epochs,
+versus 2.06 </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>question:can reconstruction-oriented VAE features be lightly reorganized
+into representations that are better suited for generative learning?To address this, we introduce
+CoV A(ComposedV AE Representations), a lightweight framework that learns to compose V AE
+representations online during flow-matching training. CoV A augments the V AE features with a latent
+composer trained using complementary semantic and structural objectives, including class supervision,
+masked latent reconstruction He et al. (2022), and horizontal-flip consistency. As illustrated in Fig. 2,
+this lightweight composition transforms the weakly organized spatial structure of raw V AE latents
+into coherent, object-aligned representations. Motivated by the finding of iREPA Singh et al. (2026)
+that spatial structure is critical to effective representation alignment, we use these composed dense
+features as supervisory </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>benefit the generator without constraining its internal feature space?CoV A
+addresses this by shifting the role of the composer from representation supervision to conditioning. At
+later stages, CoV A removes the intermediate alignment objective and reuses the composer&#x27;s detached
+class posterior for sample-dependent Soft Label Conditioning. The V AE-derived signal thus evolves
+from shaping internal features to modulating class conditioning as training progresses.
+A closer analysis reveals a hidden confound in naive soft label conditioning. Forming a soft condition
+by averaging class embeddings changes two factors simultaneously: its semantic direction and its
+magnitude. The latter unintentionally alters the strength of class conditioning, making it difficult to
+distinguish gains from semantic interpolation from those caused by weaker or stronger conditioning.
+Empirically, naive soft </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>conditioning lowers FID Heusel et al. (2017) and improves Precision, but also
+reduces Recall Kynkäänniemi et al. (2019), revealing a clear quality–diversity trade-off. Controlled
+ablations show that this trade-off is largely driven by the unintended magnitude change. CoV A
+therefore explicitly restores the condition magnitude, removing this confounding effect and allowing
+the posterior to contribute primarily through its sample-dependent semantic direction.
+CoV A introduces only 8.5M (1.3% of SiT-XL/2) training-only auxiliary parameters, including a 5.6M
+latent composer and a 2.9M alignment projector, incurs only 7.2% additional training-time GFLOPs,
+and is discarded at inference. Across SiT model scales, CoV A consistently improves generation
+quality under matched training budgets. On ImageNet, it reduces SiT-XL/2 FID from 17.2 to 7.4
+at 400K steps, while reaching 2.03 with </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Directly using V AE features as representation targets is efficient, but these features are learned primar-
+ily for reconstruction rather than semantic organization. CoV A therefore learns a lightweight online
+composer that reorganizes the clean V AE latent into a representation better suited for intermediate
+supervision.
+Let Z∈R N×d z denote the patchified clean V AE latent, where N is the number of spatial latent
+patches and dz is the patch dimension. A lightweight ViT-based composer Dosovitskiy et al. (2020)
+Fθ produces dense patch featuresH∈R N×d h and class logitso∈R K:
+(H,o) =F θ(Z),H= [h 1, . . . ,hN ],(3)
+whereKdenotes the number of classes.
+The composer is trained online with complementary semantic and spatial objectives:
+Lcomp =L cls +λ mimLmim +λ flipLflip.(4)
+Here, Lcls is a label-smoothed classification loss Szegedy et al. (2016), Lmim performs masked
+latent reconstruction </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>following masked autoencoding He et al. (2022), and Lflip encourages spatial
+consistency under horizontal flipping. These objectives respectively promote class-level semantics,
+local latent structure, and spatial equivariance in the dense representation. Detailed formulations and
+implementation settings are provided in the appendix.
+We use the composed dense features to supervise an intermediate SiT layer following the
+representation-alignment formulation of REPA Yu et al. (2024). Let G(ℓ) = [g (ℓ)1 , . . . ,g(ℓ)N ] de-
+note the N patch-token features produced by the ℓ-th SiT block. Following REPA, a lightweight
+MLP projector Π maps the SiT features into the composer feature space, and spatially corresponding
+tokens are aligned using cosine distance:
+Lalign = 1N
+NX
+i=1
+dcos
 
-        <ul></ul>
+Π(g(ℓ)i ),sg(h i) ,(5)
+where dcos(·,·) denotes cosine distance and sg(·) is the stop-gradient operator. Thus, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Representation alignment is effective early in training but becomes detrimental when maintained for
+too long. CoV A therefore disables alignment after a transition step sτ and reuses the composer&#x27;s
+semantic prediction for sample-dependent class conditioning.
+For a training samplej, the composer produces the detached posterior
+qj = sg (softmax(oj)),q j ∈R K.(6)
+Unlike fixed label smoothing, qj is sample-dependent and captures the composer&#x27;s predicted relations
+among classes.
+Let E∈R K×d c denote the SiT class-embedding table. With probability ps, the hard-label condition
+is replaced by the naive soft condition
+¯cj =q ⊤j E.(7)
+Since this interpolation changes both condition direction and magnitude, we restore its magnitude to
+that of the corresponding hard-label embedding:
+csoftj = ∥Eyj ∥2∥¯cj∥2 +ϵ ¯cj,(8)
+where yj is the ground-truth class and ϵ ensures numerical stability. This </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>preserves the posterior-
+dependent direction while removing the unintended change in conditioning strength.
+During training, each sample uses either Eyj or csoftj according to ps, followed by standard classifier-
+free label dropout. Let sτ and s′τ denote the alignment stopping and SLC activation steps, respectively;
+alignment is used fors &lt; sτ , while sample-dependent soft conditioning is activated fors≥s ′τ .
+The overall training objective is
+L=L FM(c) +λ align(s)Lalign +λ compLcomp.(9)
+Implementation details of the conditioning schedule are deferred to the appendix. At inference, the
+composer and alignment projector are discarded, and the model uses the standard SiT pipeline with
+hard-label conditioning.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Preprint. Under review.
+Table 1:FID comparison across train-
+ing iterations for accelerated alignment
+methods.All experiments are conducted
+on ImageNet (256×256) with a batch size
+of 256 and without CFG.
+Method #Params Iter. FID↓
+SiT-B/2 130M 400K 33.0
++REPA 130M 400K 24.4
++SRA2 130M 400K 28.9
++ CoV A(ours)130M400K 21.4
+SiT-L/2 458M 400K 18.8
++REPA 458M 400K 9.7
++SRA2 458M 200K 22.5
++SRA2 458M 400K 14.3
++ CoV A(ours)458M200K 20.4
++ CoV A(ours)458M400K 9.3
+SiT-XL/2 675M 400K 17.2
++REPA 675M 400K 7.9
++REPA 675M 1M 6.4
++REPA 675M 4M 5.9
++SRA2 675M 400K 11.7
++SRA2 675M 1M 8.2
++SRA2 675M 2M 7.0
++ CoV A(ours)675M400K 7.4
++ CoV A(ours)675M1M 4.4
++ CoV A(ours)675M2M 3.6
+Table 2:Comparison with state-of-the-art methods
+on ImageNet 256×256 with CFG.&quot;External&quot; indi-
+cates reliance on additional pretrained models beyond
+the standard generative pipeline.
+Method Epochs </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>FID↓sFID↓IS↑Pre.↑Rec.↑External
+Pixel diffusion
+ADM-U 400 3.94 6.14 186.7 0.82 0.52✗
+VDM++560 2.40 – 225.3 – –✗
+Simple diffusion 800 2.77 – 211.8 – –✗
+CDM 2160 4.88 – 158.7 – –✗
+PixelFlow-XL/4 320 1.98 – 282.1 0.81 0.60✗
+DiP-XL/16 320 1.98 – 282.9 0.80 0.62✗
+PixNerd-XL/16 320 1.95 – 298.0 0.80 0.60✓
+PixelGen-XL/16 160 1.83 – 293.6 0.79 0.63✓
+JiT-G/16 600 1.82 – 292.6 – –✗
+DeCo-XL/16 800 1.62 4.41 301.0 0.80 0.62✓
+Latent diffusion, Transformer + U-Net hybrid
+U-ViT-H/2 240 2.29 5.68 263.9 0.82 0.57✗
+DiffiT – 1.73 – 276.5 0.80 0.62✗
+MDTv2-XL/2 1080 1.58 4.52 314.7 0.79 0.65✗
+Latent diffusion, Transformer
+MaskDiT 1600 2.28 5.67 276.6 0.80 0.61✗
+SD-DiT 480 3.23 – – – –✗
+DiT-XL/2 1400 2.27 4.60 278.2 0.83 0.57✗
+SiT-XL/2 1400 2.06 4.50 270.3 0.82 0.59✗
++ REPA 800 1.42 4.70 305.7 0.80 0.65✓
++ REG 800 1.36 4.25 299.4 0.77 0.66✓
++ SRA2 200 1.98 4.53 284.5 0.83 0.59✗
++ SRA2 400 1.84 4.50 306.5 0.82 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.61✗
++ CoV A (ours)200 2.19 4.49 287.9 0.80 0.60✗
++ CoV A (ours)400 2.03 4.52 316.4 0.80 0.62✗
+Generation quality assessment.We report FID Heusel et al. (2017), sFID Nash et al. (2021),
+IS Salimans et al. (2016), Precision, and Recall Kynkäänniemi et al. (2019). We generate 50K
+samples from the EMA model using the SDE Euler–Maruyama solver with 250 integration steps,
+and evaluate against ImageNet reference statistics. Classifier-free guidance Ho &amp; Salimans (2022) is
+disabled unless otherwise specified, and the same protocol is used for all methods.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>All ablations use SiT-B/2 trained for 400k steps with 250 SDE function evaluations and without CFG.
+Table 4:Ablation on composer training objectives.
+All variants use the same feature-alignment configura-
+tion without SLC or early stopping. When enabled,
+classification uses label smoothing ϵ= 0.1, and MIM
+uses a masking ratio of 0.7. Prec. and Rec. denote preci-
+sion and recall.
+Lcls Lmim Lflip FID↓sFID↓IS↑Prec.↑Rec.↑
+× × × 33.02 6.46 43.71 0.53 0.63
+×✓× 31.92 6.26 48.14 0.540.64
+✓× × 30.85 6.83 50.94 0.54 0.63
+✓ ✓× 28.11 6.41 54.91 0.560.64
+✓×✓ 28.066.2354.77 0.56 0.62
+✓ ✓ ✓ 26.836.3257.69 0.57 0.64
+Composer Objectives. We first isolate the con-
+tribution of each objective used to train the latent
+composer. As shown in Table 4, masked latent
+reconstruction alone improves FID from 33.02
+to 31.92, while classification supervision alone
+further reduces it to 30.85. Starting from </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>throughout training. We therefore stop the representation-alignment
+objective at200K iterations in the subsequent experiments.
+SLC versus Fixed Label Smoothing. We then ask whether the benefit of soft conditioning comes
+from generic label smoothing or from the sample-dependent posterior produced by the online classifier.
+Under matched replacement probabilities, sample-adaptive SLC consistently outperforms fixed label
+smoothing, and the gap becomes more pronounced as the replacement probability increases, reaching
+24.19 versus 28.29 FID at p= 0.9 in Fig. 4(b). This result shows that the gain is not explained
+by weakening the hard condition alone. The instance-specific posterior provides additional useful
+information for generation. Since sampling uses hard-label conditioning, we cap the SLC replacement
+probability at p= 0.9 to retain sufficient hard-label exposure during training and </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>limit the train–test
+mismatch.
+SLC Warmup Schedule. Finally, we study when the generator should start receiving the online
+classifier&#x27;s posterior. As shown in Fig. 4(c), delaying SLC consistently improves performance across
+8
+Preprint. Under review.
+Table 5:Direction–magnitude decomposition of SLC.Di-
+rection and magnitude refer to the training-time class con-
+dition. All variants use standard hard-label conditioning at
+inference.
+Direction Magnitude FID↓sFID↓IS↑Prec.↑Rec.↑
+Hard Hard 24.87 5.95 61.19 0.58 0.64
+Soft Soft 12.715.58118.340.67 0.58
+Hard Soft 12.785.55109.710.680.57
+Soft Hard 22.73 5.77 70.30 0.58 0.63
+Shuffled soft Hard 34.13 6.47 42.35 0.520.64
+Table 6:Sensitivity to inference-time condition
+magnitude.We scale hard-label embeddings by
+γ at inference for a model trained without SLC,
+keeping all parameters fixed.
+γ FID↓sFID↓IS↑Prec.↑Rec.↑
+1.00 24.87 5.95 61.19 0.580.64
+1.10 </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MAGNITUDE
+Naive Soft Label Conditioning (SLC) averages class embeddings according to the sample-dependent
+composer posterior, changing both thedirectionandmagnitudeof the condition. For ground-truth
+classy, lete h =e y and
+es =
+X
+k
+qkek (10)
+denote the hard and naive soft conditions, respectively. We disentangle their effects by constructing
+ehard-dir,soft-mag =∥e s∥2
+eh
+∥eh∥2
+,e soft-dir,hard-mag =∥e h∥2
+es
+∥es∥2
+.(11)
+Direction and magnitude play different roles.As shown in Table 5, using the soft magnitude alone
+reduces FID from 24.87 to 12.78, but also lowers Recall from 0.64 to 0.57. By contrast, using the
+soft direction with the hard-label magnitude gives FID improvement to 22.73 while preserving higher
+Recall. Importantly, shuffling soft directions across samples degrades FID sharply to 34.13, showing
+that the directional component carries sample-specific information rather than </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generic smoothing.
+Thus, the modest standalone FID gain of direction should not be interpreted as semantic irrelevance,
+preserving the correspondence between each sample and its posterior direction is critical. This
+suggests that the two components encode qualitatively different effects: magnitude mainly changes
+conditioning strength, whereas direction reflects posterior-dependent class structure.
+Magnitude creates a conditioning-strength shortcut.Using the attenuated soft magnitude during
+training while reverting to the standard hard-label condition at inference introduces an implicit
+conditioning-strength mismatch. This alone produces a large change in the fidelity–coverage bal-
+ance, even without introducing sample-dependent semantic direction. The inference-time scaling
+experiment in Table 6 independently confirms that the generator is highly sensitive to this coordinate:
+modifying </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DINOv2-B/14 is an external feature reference, with ImageNet normalization and resizing to
+224×224 to produce the same token grid. We evaluate the 200K model weights and report per-image
+means. The numerical comparison is summarized in Table 8, and the corresponding qualitative
+comparison is shown in Figure 5.
+Table 8:Spatial LDS objective comparisons at 200K.Near/far denote mean cosine similarity; LDS is near
+minus far. All values are rounded to two decimal places.
+Feature / objective Near↑Far↓LDS↑
+Raw V AE 0.44 0.16 0.28
+CE 0.48 0.19 0.29
+MIM only 0.92 0.86 0.06
+CE+MIM 0.60 0.24 0.36
+CE+flip 0.92 0.83 0.09
+CE+MIM+flip 0.66 0.250.41
+DINOv2-B/14 0.64 0.25 0.40
+The objective effects interact.Using CE as the anchor, adding MIM increases LDS by +0.07.
+Adding flip consistency without MIM changes LDS by −0.20. When MIM is already present, adding
+flip increases LDS by +0.05; equivalently, </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+same panda image,16×16token grid, and center anchor.
+Table 9:Cumulative ablation of CoV A on SiT-B/2.All models are trained for 400K iterations on
+ImageNet 256×256 without CFG under the same optimization and sampling protocol. Each row
+progressively adds one component to the preceding configuration.
+Configuration FID↓sFID↓Prec.↑Rec.↑IS↑
+SiT-B/2 33.02 6.46 0.53 0.63 43.71
++ Composed representation alignment 26.83 6.32 0.57 0.64 57.69
++ Alignment early stopping 24.87 5.96 0.58 0.64 61.19
++ Soft label conditioning 21.45 5.69 0.59 0.63 74.57</blockquote></details></li><li><strong>Contribution clarity — pages 18–19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>shuffling soft directions across samples strongly degrades performance,
+demonstrating that the posterior-dependent direction contains sample-specific semantic information.
+Taken together, naive SLC entangles two fundamentally different effects:posterior-dependent se-
+mantic directionandposterior-dependent conditioning magnitude. The latter can strongly alter the
+fidelity–coverage balance and therefore confounds the apparent gain of soft conditioning. CoV A
+18
+Preprint. Under review.
+explicitly removes this confound by restoring the soft condition to the corresponding hard-label
+magnitude, while preserving its posterior-dependent direction. In this way, the soft condition con-
+tributes sample-specific semantic information without relying on unintended changes in conditioning
+strength.
+Null-centered controls for conditioning strength. Our default magnitude correction in Eq. (8) re-
+stores </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the same 350K checkpoint, we replace the default normalization with Eq. 20 during the
+final 50K training iterations, while keeping all other SLC settings unchanged. As shown in Table 15,
+null-centered normalization achieves an FID of 21.14, closely matching the 21.45 FID of the default
+CoV A formulation. It also retains high Recall (0.628). This result indicates thatthe improvement
+from corrected SLC does not depend on using the embedding-space origin as the normalization
+reference; preserving conditioning strength relative to the learned unconditional embedding leads to
+essentially the same behavior.
+Null-centered scaling at inference.We next directly perturb conditioning strength relative to the
+unconditional anchor while keeping the model parameters fixed. For a hard-label embedding ey, we
+define
+e(γ)y =e ∅ +γ(e y −e ∅),(22)
+where γ= 1 recovers the standard hard-label condition. This </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +395,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +411,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-09</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-12 11:39:24</li><li>Last seen by Paper Scout: 2026-10-12 11:39:28</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-09</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-12 11:39:24</li><li>Last seen by Paper Scout: 2026-10-13 11:25:06</li></ul>
             <ul><li>arXiv: 2610.13322</li><li>arXiv IDs: 2610.13322</li></ul>
           </section>
           <section class="detail-panel">

@@ -60,15 +60,170 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>The empirical profiling data for runtime and power on the selected devices is clear, but the absence of model classification accuracy metrics, omission of network architectural specifications, and unfulfilled claims regarding quantization and runtime optimization evaluations create substantial scientific uncertainty.</p>
+      <p>The work does not adequately address its failure to report model accuracy, omit detailed architectural details of the tested networks, or explain the discrepancy between claimed quantization studies and reported results.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: JOURNAL OF BAKU ENGINEERING UNIVERSITY- MATHEMATICS AND COMPUTER SCIENCE. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-14T09:18:56.372884+00:00.</p>
+        <p>Coverage: 30501 of 30501 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ARTICLE INFO ABSTRACT
+Article history:
+Received: 2025-09-01
+Received in revised form:2025-09-11
+Accepted:2026-01-12
+Available online
+The deployment of artificial intelligence models on edge computing platforms is
+imperative for applications necessitating real-time perception, including object
+detection and gesture recognition. This paper presents a thoroughgoing
+benchmarking study of 2D and 3D convolutional neural network models across
+a range of representative edge devices, including the NVIDIA Jetson AGX
+Orin, Jetson Nano, and Raspberry Pi 3. The study utilizes gesture recognition
+and mask detection as the primary use cases for evaluating the performance of
+these models. We evaluated the inference time, memory footprint, and power
+consumption under varying input resolutions and sequence lengths, thereby
+capturing the latency –accuracy–energy trade -offs that govern </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>pract ical
+deployment. The results show that AGX Orin consistently handles high -
+demand scenarios with low latency and stable throughput, whereas Jetson Nano
+offers competitive efficiency in energy-constrained settings. Raspberry Pi 3,
+while limited, establishes a useful baseline for CPU -only operation and
+highlights optimization needs. We also examined the effects of quantization and
+runtime optimizations and reported configurations that deliver robust
+performance without substantial accuracy loss. This study syn thesizes these
+findings into actionable guidelines for selecting models, precisions, and device
+classes according to operational constraints. By providing a reproducible
+evaluation framework and device-aware recommendations, this study supports
+developers in balancing speed, accuracy, and energy efficiency, thereby enabling
+reliable real-time AI on </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>bandwidth
+limitations, and privacy concerns, particularl y in time -sensitive applications such as health
+monitoring, autonomous driving, and surveillance. Edge comp uting directly addresses these
+challenges by enabling on-device processing, reducing the dependency on external servers, and
+supporting real-time dec ision-making. The widespread deployment of IoT devices, smart
+cameras, and mobile robots further emphasizes the need for efficient and robust AI inference at
+the edge, making the selection of appropriate models and hardware platforms a critical research
+topic.
+In this context, the present study investigates the performance of 3D CNN models for gesture
+recognition using the 20BN and Jester datasets, as well as 2D CNN and ResNet50 models for
+real-time mask detection using the MaskedFace-Net and RMFD datasets. The experiments are
+conducted on three representative edge </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>devices: Jetson AGX Orin, Jetson Nano, and Raspberry
+Pi 3. The key specifications of these devices are summarized in Table 1. The differences in
+CPU/GPU architecture, memory capacity, and power re quirements serve as a foundation for
+understanding how hardware constraints affect model performance.
 
-        <ul></ul>
+Table 1. Specification of used edge devices.
+Specification AGX Orin Jetson Nano Raspberry Pi 3
+CPU 8-core ARM Cortex -A78AE @ 2.188 GHz 4-core ARM Cortex -A57 @ 1.43 GHz Quad-core ARM Cortex -A53 @ 1.2 GHz
+GPU 2048 CUDA cores 128-core Maxwell GPU Broadcom VideoCore IV
+Memory 32 GB LPDDR5 4 GB LPDDR4 1 GB LPDDR2
+Storage 64 GB eMMC  microSD MicroSD
+Power 15-60 W  5-10 W 5 W
+JetPack / OS JetPack 6.0 JetPack 4.2.1 N/A (Uses Raspbian)
+Framework TensorFlow, PyTorch TensorFlow, PyTorch TensorFlow, PyTorch
+AI Performance Up to 275 TOPS 0.5 TOPS Limited AI capabilities
+
+Although </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>power and energy efficiency, which are crucial
+for optimizing the deployment of AI models in r esource-constrained environments. This
+benchmarking provides valuable insights into selecting ap propriate hardware and model
+configurations for specific edge computing applications, focusing on achieving a balance
+between speed, accuracy, and power consumption of the model.
+Shahla Uralova, Rasim Mahmudov, Amil Babayev and Qurban Yusufov
+188
+Here are the main contributions of this paper:
+ We present a comprehensive benchmarking of 3D CNN models for gesture recognition
+using the 20BN and Jester datasets, evaluating their scalability across diffe rent frame
+input sizes.
+ We evaluate 2D CNN and ResNet50 models for face mask detection using the Masked
+Face-Net and RMFD dataset s, providing insights into their robustness u nder varying
+image resolutions.
+ We analyze and compare edge </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We conduct a comprehensive evaluation of two representative application families—specifically
+gesture recognition and face-mask detection—across three distinct embedded edge computing
+devices: the NVIDIA Jetson AGX Orin, Jetson Nano, and Raspberry Pi 3. Our benchmark
+methodology encompasses both 3D and 2D inference regimes and implements a carefully
+standardized protocol to guarantee fair, reproducible, and meaningful comparisons across these
+diverse hardware platforms. Figure 1 provides a detailed overview of the experimental setup,
+including the tasks being evaluated, the model architectures employed (specifically 3D CNNs for
+temporal analysis and both lightweight and ResNet-based 2D CNNs for spatial analysis), the
+datasets utilized for training and validation (including 20BN-Jester, Jester, MaskedFace-Net, and
+RMFD), and the comprehensive range of input dimensions </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+benchmarking hand-gesture classification.
+
+Fig. 1. Architecture of benchmarking system
+For mask detection, we evaluate two model families: a lightwe ight 2D CNN on the RMFD
+dataset (inputs at 300 × 300 and 516 × 516), and a ResNet-50 on the MaskedFace-Net dataset (224
+× 224 and 960 × 544). This combination reflects both constrained and computationally demanding
+pipelines, and allows us to capture how model capacity interacts with device limitations.
+All devices were configured in performance-oriented modes to reduce throttling and stabilize
+results. On Jetson boards, experiments were run under JetPack environments (v6.0 for AGX Orin
+and v4.2.1 for Nano), while the Raspberry Pi used Raspbian with TensorFlow/PyTorch backends.
+Benchmarking 2D and 3D Object Detection Models on Different Edge Computing Platforms
+191
+We locked GPU clocks where possible to minimize DVFS -related </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>variance. Unless otherwise
+specified, batch size = 1 and single-stream inference were used.
+Measurements were taken under consistent conditions. Latency is reported as the median
+inference time over repeated runs after discarding warm-up iterations. Memory usage reflects
+peak resident set size (RSS) during inference. CPU and GPU power draw were recorded through
+on-device telemetry (tegrastats for Jetson boards and vcgencmd for Raspberry Pi) at 1 Hz
+sampling, then averaged. To account for runtime variability, each experiment was repeated three
+times, and the most stable run was reported.
+This setup provides a transparent basis for comparing devices with widely different compute
+capabilities, memory budgets, and power envelopes, and lays the foundation for the
+benchmarking results reported in Section 3.2.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>enables a consistent comparison of
+efficiency across devices and input regimes.
+
+Table 2. Benchmarking results of AI models across different hardware platforms. Column &quot;Alg.&quot; indicates the
+algorithm type, where &quot;GR&quot; represents gesture recognition and &quot;MD&quot; represents mask detection models.
+&quot;N/F&quot; denotes cases where execution was not feasible.
+Alg. Model Data set Input Size Inference Time (ms) Memory (G) CPU (Power/mW) GPU (Power/mW) AGX Orin Nano RPi 3 AGX Orin Nano RPi 3 AGX Orin Nano RPi 3 AGX Orin Nano RPi 3
+GR
+3D CNN 20BN Jester 64x64, 16F 15 50 60 2.5 1.8 0.7 360 750 850 950 370 400 160x160, 64F 40 122 183 4.0 3.0 0.83 420 820 920 1200 550 600
+2D CNN Jester 128x128 10 35 35 1.8 1.2 0.62 320 680 750 800 290 330 512x512 30 102 144 3.5 2.5 0.84 380 760 840 1050 450 500
+MD </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>input complexity (Orin: 950 →1200 mW,
+Nano: 370→550 mW; Table 2, Fig. 2–3).
+Despite Orin&#x27;s higher instantaneous GPU power draw, its energy per inference r emains more
+efficient due to shorter processing times (approximately 14 mJ at 64×64, 16 F versus 18.5 mJ on
+Nano; 48 mJ at 160×160, 64 F versus 97 mJ on Nano). This demonstrates that in temporal models,
+superior performance translates to better energy efficiency.
+3.4 Gesture recognition with 2D CNNs (Jester).
+For the 128×128 resolution, the AGX Orin device demonstrates exceptional performance with an
+execution time of just 10 ms, while both the Jetson Nano and Raspberry Pi 3 require significantly
+longer processing times of 35 ms (approxi mately 3.5 times slower than Orin). When the
+resolution is increased to 512×512, the processing latency grows proportionally across all devices,
+reaching 30 ms for Orin, 102 ms for Nano, </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Raspberry Pi 3 cannot function (N/F) with ResNet -50 at both 224×224 and 960×544
+resolutions due to memory and computing limitations (Table 2). In contrast, Orin achieves
+processing times of 35–50 ms (GPU power: 1150–1250 mW, memory usage: 4.5–5.5 GB), while
+Nano operates at 105–150 ms (GPU power: 600–650 mW, memory usage: 3.29–3.81 GB). When
+using the lighter 2D CNN model RMFD, all devices successfully complete inference: Orin (20–25
+ms), Nano (60–80 ms), and Raspberry Pi 3 (70–90 ms). These faster speeds come with reduced
+memory requirements approximately 2.0–2.8 GB on Orin, 1.5–2.15 GB on Nano, and 0.8–0.83 GB
+on Raspberry Pi 3. These findings highlight that model capacity (such as ResNet-50) is typically
+the primary factor that limits performance on lower-end hardware.
+Benchmarking 2D and 3D Object Detection Models on Different Edge Computing Platforms
+193
+
+Figure 2. </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This study thoroughly evaluated edge computing platforms, focusing on NVIDIA&#x27;s Jetson AGX
+Orin and Jetson Nano, in addition to the Raspberry Pi 3 as a baseline with CPU capabilities. We
+implemented a standardized evaluation protocol to ensure transparent and reproducible
+comparisons using 3D CNNs for gesture recognition and 2D CNN/ResNet-50 models for face
+mask detection across the 20BN -Jester, Jester, MaskedFace -Net, and RMFD datasets. Our
+findings indicate that the Jetson AGX Orin consistently delivers superior performance, with 3–
+4.6× lower latency, higher memory headroom, and enhanced energ y efficiency per inference.
+This makes it the optimal choice for high -resolution or computationally intensive real -time
+applications, such as autonomous navigation, industrial AI, and healthcare diagnostics. The
+Jetson Nano, while less powerful, offers a balanced trade-off between </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>efficiency and cost, ideal
+for moderate-scale or energy -constrained deployments. In contrast, Raspberry Pi 3 offers a
+valuable baseline for lightweight 2D tasks and highlights the need for optimization on CPU-only
+devices. These f indings underscore the importance of consi dering factors beyond FLOPs or
+model size when optimizing model–device matching, including hardware-specific acceleration,
+thermal design, and memory constraints.
+Future work will explore model compression techniqu es, such as pruning, quant ization, and
+distillation. It will also integrate with next -generation accelerators, including Jetson Thor and
+ASICs. Additionally, it will evaluate additional edge AI tasks, such as tracking and anomaly
+detection. Finally, it wil l explore adaptive and federated learning for personalization across
+heterogeneous environments.
+Overall, this study provides actionable </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>guidelines for balancing accuracy, speed, and energy
+efficiency in edge AI deployments, contributing to sustainable and reliable real-time intelligence
+on resource-limited platforms.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +262,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +278,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-10-13</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-13 11:25:08</li><li>Last seen by Paper Scout: 2026-10-13 11:25:08</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-10-13</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-13 11:25:08</li><li>Last seen by Paper Scout: 2026-10-14 09:17:47</li></ul>
             <ul><li>DOI: 10.30546/09090.2025.1010.2015</li><li>OpenAlex: W7221526664</li><li>OpenAlex IDs: W7221526664</li></ul>
           </section>
           <section class="detail-panel">

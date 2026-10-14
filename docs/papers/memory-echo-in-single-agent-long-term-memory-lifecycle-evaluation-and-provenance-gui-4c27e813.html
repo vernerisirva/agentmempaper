@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory Echo in Single-Agent Long-Term Memory: Lifecycle Evaluation and Provenance-Guided Mitigation</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Memory Echo in Single-Agent Long-Term Memory: Lifecycle Evaluation and Provenance-Guided Mitigation</h1>
+          <p class="hero-copy">Yufeng Li, Sheng Yao, Peng Zeng, Dezhang Kong, Shi Lin, Changting Lin, Xun Wang, Meng Han</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.17763v1">Open paper</a>
+            <a class="paper-detail-link" href="memory-echo-in-single-agent-long-term-memory-lifecycle-evaluation-and-provenance-gui-4c27e813.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Yufeng Li, Sheng Yao, Peng Zeng, Dezhang Kong, Shi Lin, Changting Lin, Xun Wang, Meng Han</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-13</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-13</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.17763">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Evaluates memory mechanisms or benchmarks for LLM agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Long-term memory supports agents across sessions. Repeated retrieval and write-back can let one historical claim occupy multiple retrieval positions and influence current answers without independent evidence. Existing work examines retrieval, updating, and question answering, leaving same-source record accumulation...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>This study makes a well-controlled, significant contribution to understanding and mitigating failure modes in agent memory architectures. The experimental design is meticulous with sound comparative baselines and well-scoped claims.</p>
+      <p>The authors acknowledge key limitations, including the reliance on benchmark-provided source annotations, synthetic seeds placed into historical traces, answer span selection influencing gains, and lack of human audit for borderline judge scores.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-14T09:18:26.775480+00:00.</p>
+        <p>Coverage: 98689 of 98689 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory supports agents across ses-
+sions. Repeated retrieval and write-back can let
+one historical claim occupy multiple retrieval
+positions and influence current answers with-
+out independent evidence. Existing work exam-
+ines retrieval, updating, and question answer-
+ing, leaving same-source record accumulation
+and post-correction persistence underexplored.
+Motivated by research in social cognition and
+memory psychology on repeated exposure, re-
+trieval, and revision, we defineMemory Echoas
+the excess retrieval exposure gained by histori-
+cal information from the same source without
+additional independent evidence, and introduce
+MEchoBench to evaluate its emergence, cor-
+rection resistance, persistence, and effect on
+answers. To address this phenomenon, we intro-
+duce the Family–Provenance–Authority frame-
+work (FPA). Specifically, FPA selects one rep-
+resentative per source </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>family, conditions the
+eligibility of old records for the answer context
+on verified corrections, and constrains final an-
+swers with authoritative evidence. In paired re-
+play on 190 fixed questions across four memory
+frameworks, FPA raises accuracy from 0.825
+to 0.920 with DeepSeek V4 Flash and from
+0.782 to 0.916 with Kimi K2.6; mean Decision
+Contamination Effect falls from 0.106 to 0.030
+and from 0.109 to 0.038, respectively. These
+results show that agent memory can preserve
+traceable history without allowing repeated his-
+torical information to govern current decisions.
+The code is available at https://github.com
+/OrcasSam/memory-echo-benchmark.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(formation):Across four memory architec-
+tures, how do seed-only storage, repeated read-only
+retrieval, and retrieval with write-back differ in
+same-source derivative count, historical Echo Den-
+sity (ED), and old-answer adoption?RQ2 (post-
+correction influence):After a common verified
+correction, what remains in native retrieval versus
+served context, how does exposure persist through
+30 read-only queries, and does it still lower answer
+accuracy?RQ3 (FPA mechanism):With matched
+candidates and a fixed generator, how much do
+Family, Provenance, and Authority each contribute
+beyond Baseline, Budget, CRAG-M, and PairLR,
+including the change from unconstrained to con-
+strained answers?RQ4 (transfer and robustness):
+Do paired gains persist across four architectures,
+two generators, and shopping, medical, and travel
+tasks under provenance errors and incomplete cor-
+rections, while retaining </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>valid history?
+MEchoBench pairs source questions across
+memory histories and follows initialization, repeti-
+tion, correction, delayed retrieval, and task answer-
+ing. We track derivative counts and ED for RQ1;
+native and served retrieval, storage- and serving-
+side Reconsolidation Resistance Index (RRI), a
+30-query ED curve, Windowed Echo Persistence
+(WEP), and final accuracy for RQ2; Decision Con-
+tamination Effect (DCE) and before/after answer
+changes for RQ3; and paired performance and
+valid-history retention for RQ4.
+The formation and correction mechanisms in
+RQ1 and RQ2 motivate the Family–Provenance–
+Authority framework (FPA), and RQ3 asks which
+of its components account for the measured gains.
+FPA selects one retrieval representative per source
+family to limit the occupancy advantage of repeated
+traces, uses verified corrections to determine when
+old records may enter the </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>repeated
+processing gives historical information a re-
+trieval advantage that can affect decisions.
+• We develop MEchoBench and four measure-
+ments to track trace accumulation, correction
+resistance, delayed persistence, and answer
+shift within one memory lifecycle.
+• We introduce FPA, combining family repre-
+sentative selection, post-correction eligibility,
+and authority-guided answering to reduce de-
+cision contamination while preserving trace-
+able history, and validate its effects across
+general data sources and practical tasks.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Echo Density (ED).ED measures how much of
+the ranked answer context is occupied by one his-
+torical source family:
+ED =
+PN
+r=1 wrbrsrPN
+r=1 wr
+.(1)
+Symbols. N is the number of retrieved records;
+r is a record&#x27;s rank from 1 (highest) to N. br is
+1 if the record at rank r descends from the his-
+torical seed and 0 otherwise. xr and e are se-
+mantic representations of that record and the seed;
+sr = max(0,cos(x r, e))is their nonnegative co-
+sine similarity. wr = 1/log 2(r+ 1) is the rank
+weight, with log2 denoting the base-two logarithm.
+The sums add contributions over all ranks. Thus the
+numerator counts similarity-weighted old-family
+positions, and the denominator normalizes by all
+rank weights. High ED means prominent exposure,
+not necessarily a wrong answer.
+Reconsolidation Resistance Index (RRI).RRI
+asks whether a verified correction displaces the old
+family. It combines the family&#x27;s </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>survival with its
+competition against the corrected evidence:
+RRI = 12 min(1,ED post/EDpre)
++ 12 EDpostEDpost +C post . (2)
+Symbols. EDpre and EDpost are old-family oc-
+cupancies before and after correction; Cpost is
+corrected-family occupancy afterward. Retrieval
+RRI uses rank-weighted occupancies of returned
+records; storage RRI uses unranked occupancies
+of stored records. Each family&#x27;s semantic similar-
+ity is measured against its own seed or correction.
+min(1,·) caps survival at one; the second fraction
+is the old share of competing evidence. The two
+1/2 factors give both parts equal weight, yielding
+RRI in [0,1] . RRI is zero when EDpre = 0; a zero
+denominator in the second fraction also makes that
+fraction zero.
+Windowed Echo Persistence (WEP).WEP
+summarizes old-family exposure across the con-
+secutive read-only queries after correction:
+WEP30 = 129 29Xt=1 EDt + EDt+12 </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>.(3)
+Symbols. EDt is old-family ED at read-only probe
+t, and EDt+1 is its value at the next probe. There
+are 30 probes; the sum runs over t= 1, . . . ,29
+to cover their 29 adjacent intervals. The index
+counts queries, not elapsed time. Each adjacent pair
+is averaged by dividing by 2, and division by 29
+averages across the full window. WEP30 therefore
+measures persistence even when ED fluctuates. No
+probe writes a record.
+Decision Contamination Effect (DCE).DCE
+tests whether the generated answer aligns more
+with the historical claim than with the verified an-
+swer:
+DCE = max(0,(E−G)/4).(4)
+Symbols. a is the generated answer. E, G∈[0,4]
+are its judge-assigned alignment scores with the
+historical Echo and verified gold answers, respec-
+tively; zero means no alignment and four means
+full alignment. Dividing E−G by 4 normalizes
+their difference, and max(0,·) clips negative val-
+ues to zero. </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Thus DCE∈[0,1] measures the an-
+swer&#x27;s extra alignment with the old claim.
+Reading the metrics together.ED locates old-
+family occupancy, RRI its resistance to correction,
+WEP its delayed exposure, and DCE its influence
+on the answer. Reporting each at its stage sepa-
+rates a crowded retrieval list from a contaminated
+decision. Correctness is judged against the verified
+answer, without showing the Echo, on a 0–4 scale.
+Scores of at least 3 count as accurate; a separate
+binary judgment records old-answer adoption.
+4</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>FPA controls the answer context between retrieval
+and generation without changing stored history.
+Records carry source and family IDs, parent links,
+source type, and validity; derivatives inherit their
+parent&#x27;s family. Figure 3 shows family selection,
+provenance gating, and authority-guided answering
+in a shopping query.
+Stage 1: Family-level selection.Source and par-
+ent links group the old whole-milk records M1–
+M3 in Figure 3 into family F1; M4–M6 have
+other origins. FPA scores retrieval relevance, con-
+fidence, source reliability, exposure, and validity
+(Appendix E), then admits at most one represen-
+tative per family. M1 represents F1 in the illustra-
+tion, while M2 and M3 receive no extra positions.
+Repeated writes therefore add records, not inde-
+pendent votes. The family ID follows ancestry,
+not the wording of the answer: two independent
+sources may agree, while two differently </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>worded
+summaries of one retrieval remain the same fam-
+ily. The representative is selected anew from the
+current candidate pool; source grouping does not
+delete the unselected records.
+Stage 2: Provenance-aware gating.The gate
+checks source, parent, verification, and validity
+against the correction. In the figure, M4 supersedes
+the whole-milk family: M1–M3 remain stored
+for audit but cannot support the current answer.
+M4 enters as verified evidence; nonconflicting M5
+and M6 remain eligible context. Retrieval nei-
+ther grants a record write-back authority nor re-
+stores an obsolete descendant&#x27;s evidential status.
+Section 6.6 tests this gate when correction quality
+changes. This is the handoff from family balance
+to evidence validity. Selecting only M1 from F1
+would still leave one obsolete whole-milk recom-
+mendation in the prompt; the provenance check
+removes that last route into </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>current evidence after
+M4 arrives. Serving eligibility changes while the
+full record lineage remains available.
+Stage 3: Authority-guided answering.The gen-
+erator sees eligible evidence rather than raw Top-k
+and is directed to prefer verified current facts. Here
+M4 supports &quot;You should buy oat milk,&quot; not the
+superseded whole-milk claim. A final check com-
+pares the draft with admitted authority and may
+select a supported short span for an extractive ques-
+tion; both raw and constrained answers are retained.
+The figure&#x27;s no-authority fallback to qualified con-
+text is illustrative. The missing/noisy-correction
+experiment tests the gate without implementing
+that recovery branch.
+Serving comparison.All methods serve at most
+five records from the same frozen pool. Budget
+penalizes excess old occupancy; CRAG-M grades
+candidates (Yan et al., 2024); PairLR learns pair-
+wise ranking (Burges et </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The lifecycle runs in A-MEM (Xu et al., 2025),
+official Mem0 (Chhikara et al., 2025), CoM (Xu
+et al., 2026b), and LangMem (LangChain Team,
+2025). Two reinforced histories for each of 190
+questions in four architectures yield 1,520 paired
+answer states per method and generator. DeepSeek
+V4 Flash uses temperature 0 and Kimi K2.6 uses
+0.6; both produce at most 120 tokens. GPT-
+5.6 (gpt-5.6-sol) judges answers in two passes.
+Within each generator, methods share questions,
+histories, and candidate pools. ED and WEP de-
+pend on the served pool, so they match across gen-
+erators. We compare methods within each model;
+Appendix B reports architecture cells.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The matched comparisons show that FPA couples
+answer improvement with a larger drop in persis-
+Old ED WEP DCE
+0.00
+0.25
+0.50
+0.75
+1.00Fraction of baseline0.00
+0.57
+0.01 0.00
+A-MEM
+Old ED WEP DCE
+0.00
+0.60
+0.01 0.00
+Mem0
+Old ED WEP DCE
+0.00
+0.25
+0.50
+0.75
+1.00Fraction of baseline
+0.55
+1.01
+0.32
+0.57
+CoM
+Old ED WEP DCE
+0.48
+1.01
+0.20
+0.50
+LangMem
+Figure 6: DeepSeek V4 Flash risk under FPA relative
+to each architecture&#x27;s Baseline (Table 10). The dashed
+line marks Baseline= 1; shorter bars indicate lower risk
+on the displayed metrics.
+Method Acc.↑Old↓ED↓WEP↓DCE↓
+DeepSeek V4 Flash
+Baseline 0.825 0.106 0.662 0.427 0.106
+Budget 0.861 0.059 0.574 0.264 0.056
+CRAG-M 0.855 0.059 0.707 0.245 0.055
+PairLR 0.861 0.058 0.692 0.309 0.054
+FPA0.920 0.028 0.528 0.057 0.030
+Kimi K2.6
+Baseline 0.782 0.108 0.662 0.427 0.109
+Budget 0.847 0.075 0.574 0.264 0.073
+CRAG-M 0.842 0.064 0.707 0.245 0.064
+PairLR </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Task transfer depends on whether history actually
+conflicts with current evidence. In shopping and
+medical QA, FPA reduces old-answer adoption
+while improving accuracy. Travel begins without
+old-answer adoption; restricting useful planning
+context then reduces accuracy (Table 12). The
+result identifies a boundary of the intervention, not
+a universal benefit from filtering history.
+An earlier extractive pilot measured Post ED,
+RRI, WEP, and DCE on shopping, medical QA,
+and travel (Figure 7). It used 50 tasks per sce-
+nario across A-MEM and Mem0. Its values are in
+Appendix Table 16; this pilot is distinct from the
+current transfer study (Table 12).
+Source-quality tests sharpen that boundary.
+Complete provenance and noisy family IDs retain a
+modest advantage, whereas a missing or unreliable
+correction leaves the gate without a trustworthy re-
+placement and harms accuracy. When the old </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fact
+is nonconflicting, the change is small (Appendix
+Table 13). The contrast separates evidence validity
+from recency: filtering helps only when reliable
+current evidence replaces the old source.
+Variant Acc. Old DCE
+Baseline 0.825 0.106 0.106
+wFamily 0.651 0.095 0.097
+wProvenance 0.820 0.010 0.009
+wJoint gate 0.637 0.012 0.011
+wAuthority 0.912 0.031 0.032
+Full FPA0.920 0.028 0.030
+Table 3: DeepSeek component ablation on 1,520 paired
+states. The full component-presence matrix is in Ap-
+pendix Table 11.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The ablation separates suppressing obsolete evi-
+dence from supplying a usable answer. Provenance
+control alone sharply reduces old-answer adoption
+but does not improve correctness; family control by
+itself can also remove useful context. Combining
+the two gates further reduces the historical claim&#x27;s
+reach but leaves the generator short of a replace-
+ment answer. Accuracy recovers when verified au-
+thority is added, and the answer check contributes a
+smaller final gain (Table 3). Together, these stages
+limit unsupported repetition and supply the current
+fact.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Untreated DeepSeek repeats the historical answer,
+whereas FPA returns the verified one. The trace
+links that reversal to which source family reaches
+the generator, not to a changed question (Sec-
+tion 6.3). Travel and unreliable-correction cases
+show the converse: when the old answer is not be-
+ing adopted or replacement evidence is unavailable,
+withholding context can remove information the
+generator still needs. The serving decision must
+therefore depend on a real conflict and a usable
+authority; Table 4 illustrates the correction-quality
+boundary.
+Source condition Baseline FPA
+Complete 0.604 0.629
+Correction missing/noisy 0.378 0.212
+Table 4: DeepSeek accuracy by correction quality; 760
+answer states per method and condition. Full results
+appear in Appendix Table 13.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The benchmark places a real answer from another
+question into a controlled historical position; it
+does not estimate how frequently such seeds arise
+in natural interaction. Serving-method compar-
+isons replay recorded candidate pools rather than
+evolving a separate memory database for each com-
+parator. FPA uses source-family and validity anno-
+tations supplied by the benchmark, and its final an-
+swer check can select a concise verified span, mak-
+ing part of the measured gain an answer-processing
+effect. GPT-5.6 judges correctness and contamina-
+tion without an independent human audit of bor-
+derline cases. The travel and missing-correction
+conditions show that the measured benefit depends
+on a relevant Echo conflict and usable replacement
+evidence.
+Ethical Considerations
+Medical questions are used as evaluation cases, not
+clinical advice. Historical seeds intentionally con-
+flict with </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Benchmark / evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd>Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Evaluates memory behavior, safety, or retrieval in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: agent-memory, long-term-memory, benchmark, evaluation, memory-systems, llm-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-13</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-14 09:15:23</li><li>Last seen by Paper Scout: 2026-10-14 09:15:23</li></ul>
+            <ul><li>arXiv: 2610.17763</li><li>arXiv IDs: 2610.17763</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="memory-echo-in-single-agent-long-term-memory-lifecycle-evaluation-and-provenance-gui-4c27e813.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Memory Echo in Single-Agent Long-Term Memory: Lifecycle Evaluation and Provenance-Guided Mitigation. Yufeng Li, Sheng Yao, Peng Zeng, Dezhang Kong, Shi Lin, Changting Lin, Xun Wang, Meng Han. 2026-10-13. https://arxiv.org/abs/2610.17763v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

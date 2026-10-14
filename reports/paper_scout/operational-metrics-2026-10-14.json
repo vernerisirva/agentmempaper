@@ -1,0 +1,589 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 12,
+    "non_promoted": 1,
+    "papers_attempted": 3,
+    "papers_successfully_assessed": 3,
+    "papers_walked": 9,
+    "promoted": 2,
+    "retry_eligible_failures": 6,
+    "skipped_before_model": 6,
+    "technical_failures": 6,
+    "unavailable_manuscripts": 3
+  },
+  "budget": {
+    "gemini_calls": 3,
+    "gemini_input_tokens": 101853,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3295,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 3,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.09002589,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "computer_vision": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 3,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-10-14T09:19:28.090561+00:00",
+  "cost": {
+    "deepseek_calls": 3,
+    "deepseek_cost_usd": 0.09002589,
+    "deepseek_input_tokens": 94428,
+    "deepseek_output_tokens": 1870,
+    "gemini_calls": 3,
+    "gemini_input_tokens": 101853,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 3295,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 1083,
+    "papers_discovered": 4925
+  },
+  "limits": {
+    "max_acquisition_walk_per_track": 6,
+    "max_papers_per_run": 4,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 21,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 470,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.23306776",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23306776",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Code and data for: Quantum Similarity Search for LLM-Agent Memory Retrieval under Bounded State Preparation",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23304592",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23304592",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Preregistration: Sequential Reflective Memory and Behavioral Heuristics in Autonomous LLM Trading Agents on the Warsaw Stock Exchange (Season 2)",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.17763",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2610.17763",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Memory Echo in Single-Agent Long-Term Memory: Lifecycle Evaluation and Provenance-Guided Mitigation",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.18052",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2610.18052",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Can Agents Forget When Asked? A Benchmark for Memory Unlearning in LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.17659",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2610.17659",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Can Agents Truly Forget? Explore Machine Unlearning for LLM Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "arxiv:2610.18684",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2610.18684",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Knowing the User Is Not Knowing What We Established: Grounding Awareness in Personal Agents",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 2504,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.23306776",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23304592",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2610.18052",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2610.17659",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2610.18684",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 423,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.30546/09090.2025.1010.2015",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.30546/09090.2025.1010.2015",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "BENCHMARKING 2D AND 3D OBJECT DETECTION MODELS ON DIFFERENT EDGE COMPUTING PLATFORMS",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.15849/ijasca.147",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.15849/ijasca.147",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "ViXNet: Vision Transformer with Xception Network for Facial Expression Recognition",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1038/s41598-026-73064-y",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.1038/s41598-026-73064-y",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A deep hybrid feature extraction model based on MobileNet and vision transformer for acute lymphoblastic leukemia prediction",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.10.09.757828",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.64898/2026.10.09.757828",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Label-free identification of bacterial species using adapted vision transformers",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.54097/n1htyf98",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.54097/n1htyf98",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Multi-scale Feature Enhanced Network for Remote Sensing Object Detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.3390/rs18203453",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.3390/rs18203453",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Normality-Calibrated Modality Routing for Optical-SAR Object Detection Under Cloud-Induced Optical Degradation",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 2107,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.15849/ijasca.147",
+            "outcome": "track_slot_consumed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.1038/s41598-026-73064-y",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.10.09.757828",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.54097/n1htyf98",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.3390/rs18203453",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 180,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.23304572",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23304572",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-13T11:26:24.599277+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "THE EL-RAKHAWI GLOBAL PROTOCOL FOR OPEN-SOURCE BIOLOGICAL DISCOVERY AND ANTI-BIOPIRACY From Monopolistic \"AI Scientists\" to Sovereign Science for Humanity A Groundbreaking Engineering and Legal Framework for Democratizing Autonomous Discovery, Advanced Therapies, and Climate-Resilient Agricultur",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.18272",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "arxiv:2610.18272",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "JevGPT: Thinking Fast and Slow in Autonomous Research",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.18092",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2610.18092",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "LifeSearch: Benchmarking Deep Research Agents for Real-World Life and Productivity",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.15910",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2610.15910",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "RIVO: Lightweight Adaptive Rerouting for Deep Research Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "arxiv:2610.14683",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2610.14683",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Triage-PiEvo: Evidence Admission for Principle-Evolving Scientific Agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.13140/rg.2.2.27194.15043",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.13140/rg.2.2.27194.15043",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-13T11:26:24.602639+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 303,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.23304572",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "arxiv:2610.18092",
+            "outcome": "track_slot_consumed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "arxiv:2610.15910",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2610.14683",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.13140/rg.2.2.27194.15043",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 7,
+        "high_relevance": 10,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.10533",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.10533",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-09T11:21:59.348583+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.35578",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-30T10:20:13.801385+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "FactorEngram: Factorized N-gram Memory with Basis-Level Gating for Language Models",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2608.23982",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2608.23982",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-05T11:12:03.267421+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning",
+            "track": "engram"
+          }
+        ],
+        "ranked": 11,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.10533",
+            "outcome": "not_assessed",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "outcome": "not_assessed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2608.23982",
+            "outcome": "not_assessed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-10-14T09:17:57.798148+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v2"
+}

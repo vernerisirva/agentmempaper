@@ -25,12 +25,12 @@
   "first_seen_date": "2026-10-14",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-14 09:15:49",
-  "last_seen_date": "2026-10-14",
+  "last_seen_at": "2026-10-15 08:48:33",
+  "last_seen_date": "2026-10-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-13",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-14 09:16:22",
   "notified_date": "2026-10-14",
   "openalex_id": null,
@@ -40,8 +40,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-14 09:15:23",
-    "generated_at": "2026-10-14 09:19:28",
-    "last_seen_at": "2026-10-14 09:15:49",
+    "generated_at": "2026-10-15 08:52:34",
+    "last_seen_at": "2026-10-15 08:48:33",
     "metadata_sources": [
       "arxiv"
     ],
@@ -108,36 +108,2110 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-15T08:51:43.007518+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The study offers a rigorous, well-controlled experimental framework for an under-evaluated task in agent architectures. The pairing with control dialogues prevents degenerate solutions (such as total memory wipe or failure to store) from appearing successful, accompanied by human judge validation and statistical uncertainty analysis.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 93258,
+      "assessment_input_sha256": "ba408afa5e3b4d66f2a0e318c048f1a3e4d431957c09a5965a2d47c6d053b5f0",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.18052",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 90503,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 89927,
+      "evidence_block_count": 128,
+      "evidence_context_characters": 105596,
+      "evidence_context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+      "evidence_context_sha256": "9fa8d894ffcf86f4d316f366c0bb80f55f1ff68b74c946ed77e323174d29ef3c",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 90551,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "extracted_pages": 25,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "983e236cccfaa595b0d66c47c650aac6c24a88cb00ca1b0aeabefe219b415652",
+        "source_url": "https://arxiv.org/pdf/2610.18052",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 90503,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 44,
+          "supplied_characters": 44
+        },
+        {
+          "heading": "Mark Formemoryunlearning Inllm Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 154,
+          "supplied_characters": 154
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1634,
+          "supplied_characters": 1634
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1959,
+          "supplied_characters": 1959
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 5046,
+          "supplied_characters": 5046
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 9,
+          "supplied_characters": 9
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 4946,
+          "supplied_characters": 4946
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 185,
+          "supplied_characters": 185
+        },
+        {
+          "heading": "Test Suite",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 860,
+          "supplied_characters": 860
+        },
+        {
+          "heading": "Taskformulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1610,
+          "supplied_characters": 1610
+        },
+        {
+          "heading": "Benchmarkconstruction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 394,
+          "supplied_characters": 394
+        },
+        {
+          "heading": "Profilesynthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 410,
+          "supplied_characters": 410
+        },
+        {
+          "heading": "Profilesynthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 803,
+          "supplied_characters": 803
+        },
+        {
+          "heading": "Dialogueplanning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2339,
+          "supplied_characters": 2339
+        },
+        {
+          "heading": "Multi-Agentdialoguesimulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 893,
+          "supplied_characters": 893
+        },
+        {
+          "heading": "Requestinjection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 410,
+          "supplied_characters": 410
+        },
+        {
+          "heading": "Requestinjection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 102,
+          "supplied_characters": 102
+        },
+        {
+          "heading": "F1 F2 F3 F4 F5 F6",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 156,
+          "supplied_characters": 156
+        },
+        {
+          "heading": "R1 (F4)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "R2 (F5)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "R3 (F6)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "R4 (F3)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "R5 (F2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 837,
+          "supplied_characters": 837
+        },
+        {
+          "heading": "Questiongeneration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 1527,
+          "supplied_characters": 1527
+        },
+        {
+          "heading": "Benchmarkstatistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 24,
+          "source_characters": 879,
+          "supplied_characters": 879
+        },
+        {
+          "heading": "Benchmarkmetrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 281,
+          "supplied_characters": 281
+        },
+        {
+          "heading": "Benchmarkmetrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 26,
+          "source_characters": 2814,
+          "supplied_characters": 2814
+        },
+        {
+          "heading": "Experimentalsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 27,
+          "source_characters": 851,
+          "supplied_characters": 851
+        },
+        {
+          "heading": "Experimentalsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 28,
+          "source_characters": 1573,
+          "supplied_characters": 1573
+        },
+        {
+          "heading": "Mainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 29,
+          "source_characters": 1973,
+          "supplied_characters": 1973
+        },
+        {
+          "heading": "Mainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 30,
+          "source_characters": 9,
+          "supplied_characters": 9
+        },
+        {
+          "heading": "F1 F2 F3 F4 F5 F6",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1082,
+          "supplied_characters": 1082
+        },
+        {
+          "heading": "Resultanalysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 2802,
+          "supplied_characters": 2802
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 33,
+          "source_characters": 715,
+          "supplied_characters": 715
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 34,
+          "source_characters": 9,
+          "supplied_characters": 9
+        },
+        {
+          "heading": "Aiuse Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 431,
+          "supplied_characters": 431
+        },
+        {
+          "heading": "Ethics Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 905,
+          "supplied_characters": 905
+        },
+        {
+          "heading": "Reproducibility Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 742,
+          "supplied_characters": 742
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 1567,
+          "supplied_characters": 1567
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 3673,
+          "supplied_characters": 3673
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 3796,
+          "supplied_characters": 3796
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 571,
+          "supplied_characters": 571
+        },
+        {
+          "heading": "Appendix: Evaluationprotocol Anditem-Levelmetrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 1525,
+          "supplied_characters": 1525
+        },
+        {
+          "heading": "Metric Suite Version Ground Truth Conditioned On Detects",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 56,
+          "supplied_characters": 56
+        },
+        {
+          "heading": "Raretention Control Version Fact Value \u2013 Storage Capability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 132,
+          "supplied_characters": 132
+        },
+        {
+          "heading": "Prpreservation Forget Version Fact Value Control Probe Over-Deletion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 68,
+          "supplied_characters": 68
+        },
+        {
+          "heading": "Rlarelearning Forget Version New Value \u2013 Relearning Failure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 1071,
+          "supplied_characters": 1071
+        },
+        {
+          "heading": "Appendix: Humanvalidation Of Thellm Judge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 461,
+          "supplied_characters": 461
+        },
+        {
+          "heading": "Appendix: Humanvalidation Of Thellm Judge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 402,
+          "supplied_characters": 402
+        },
+        {
+          "heading": "Appendix: Baselines Anddeletionpaths",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 226,
+          "supplied_characters": 226
+        },
+        {
+          "heading": "Appendix: Integration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 754,
+          "supplied_characters": 754
+        },
+        {
+          "heading": "Appendix: Deletionpolicy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 2321,
+          "supplied_characters": 2321
+        },
+        {
+          "heading": "Appendix: Deletionpolicy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 526,
+          "supplied_characters": 526
+        },
+        {
+          "heading": "Appendix: Detailedbenchmarkstatistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 2859,
+          "supplied_characters": 2859
+        },
+        {
+          "heading": "Appendix: Detailedbenchmarkstatistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 1066,
+          "supplied_characters": 1066
+        },
+        {
+          "heading": "Appendix: Qualitativeexamples",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Appendix: Oneforgetrequest Ofeachtype",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 1884,
+          "supplied_characters": 1884
+        },
+        {
+          "heading": "Appendix: Pairedprobes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 594,
+          "supplied_characters": 594
+        },
+        {
+          "heading": "Appendix: Pairedprobes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 1069,
+          "supplied_characters": 1069
+        },
+        {
+          "heading": "Appendix: Preservation Andrelearningprobes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 1127,
+          "supplied_characters": 1127
+        },
+        {
+          "heading": "Appendix: Attacksuiteexample",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 550,
+          "supplied_characters": 550
+        },
+        {
+          "heading": "Appendix: Additionalresults Onbemula-Lite",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 681,
+          "supplied_characters": 681
+        },
+        {
+          "heading": "Appendix: Theefficacy Andpreservationtrade-Off",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Appendix: Theefficacy Andpreservationtrade-Off",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 1722,
+          "supplied_characters": 1722
+        },
+        {
+          "heading": "Appendix: Attackrobustness Byattacktype",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 323,
+          "supplied_characters": 323
+        },
+        {
+          "heading": "Appendix: Attackrobustness Byattacktype",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 2026,
+          "supplied_characters": 2026
+        },
+        {
+          "heading": "Appendix: Suitemetrics Byforgetrequesttype",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 717,
+          "supplied_characters": 717
+        },
+        {
+          "heading": "Appendix: Effect Ofdialoguelength",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 518,
+          "supplied_characters": 518
+        },
+        {
+          "heading": "Appendix: Effect Ofdialoguelength",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 9,
+          "supplied_characters": 9
+        },
+        {
+          "heading": "F1 F2 F3 F4 F5 F6",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 3008,
+          "supplied_characters": 3008
+        },
+        {
+          "heading": "Appendix: Bootstrapconfidenceintervals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 1289,
+          "supplied_characters": 1289
+        },
+        {
+          "heading": "Appendix: Bootstrapconfidenceintervals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 1410,
+          "supplied_characters": 1410
+        },
+        {
+          "heading": "Appendix: Bootstrapconfidenceintervals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 72,
+          "source_characters": 2316,
+          "supplied_characters": 2316
+        },
+        {
+          "heading": "Appendix: Generation Andevaluationprompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 73,
+          "source_characters": 2048,
+          "supplied_characters": 2048
+        },
+        {
+          "heading": "Appendix: Generation Andevaluationprompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 74,
+          "source_characters": 3179,
+          "supplied_characters": 3179
+        },
+        {
+          "heading": "Appendix: Generation Andevaluationprompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 75,
+          "source_characters": 2724,
+          "supplied_characters": 2724
+        },
+        {
+          "heading": "Appendix: Generation Andevaluationprompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 76,
+          "source_characters": 1803,
+          "supplied_characters": 1803
+        }
+      ],
+      "selected_characters": 89927,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "selected_sections": [
+        {
+          "characters": 44,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 154,
+          "heading": "Mark Formemoryunlearning Inllm Agents",
+          "page": 1
+        },
+        {
+          "characters": 1634,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1959,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 5046,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 9,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 4946,
+          "heading": "Relatedwork",
+          "page": 3
+        },
+        {
+          "characters": 185,
+          "heading": "Relatedwork",
+          "page": 4
+        },
+        {
+          "characters": 860,
+          "heading": "Test Suite",
+          "page": 4
+        },
+        {
+          "characters": 1610,
+          "heading": "Taskformulation",
+          "page": 4
+        },
+        {
+          "characters": 394,
+          "heading": "Benchmarkconstruction",
+          "page": 4
+        },
+        {
+          "characters": 410,
+          "heading": "Profilesynthesis",
+          "page": 4
+        },
+        {
+          "characters": 803,
+          "heading": "Profilesynthesis",
+          "page": 5
+        },
+        {
+          "characters": 2339,
+          "heading": "Dialogueplanning",
+          "page": 5
+        },
+        {
+          "characters": 893,
+          "heading": "Multi-Agentdialoguesimulation",
+          "page": 5
+        },
+        {
+          "characters": 410,
+          "heading": "Requestinjection",
+          "page": 5
+        },
+        {
+          "characters": 102,
+          "heading": "Requestinjection",
+          "page": 6
+        },
+        {
+          "characters": 156,
+          "heading": "F1 F2 F3 F4 F5 F6",
+          "page": 6
+        },
+        {
+          "characters": 7,
+          "heading": "R1 (F4)",
+          "page": 6
+        },
+        {
+          "characters": 7,
+          "heading": "R2 (F5)",
+          "page": 6
+        },
+        {
+          "characters": 7,
+          "heading": "R3 (F6)",
+          "page": 6
+        },
+        {
+          "characters": 7,
+          "heading": "R4 (F3)",
+          "page": 6
+        },
+        {
+          "characters": 837,
+          "heading": "R5 (F2)",
+          "page": 6
+        },
+        {
+          "characters": 1527,
+          "heading": "Questiongeneration",
+          "page": 6
+        },
+        {
+          "characters": 879,
+          "heading": "Benchmarkstatistics",
+          "page": 6
+        },
+        {
+          "characters": 281,
+          "heading": "Benchmarkmetrics",
+          "page": 6
+        },
+        {
+          "characters": 2814,
+          "heading": "Benchmarkmetrics",
+          "page": 7
+        },
+        {
+          "characters": 851,
+          "heading": "Experimentalsetup",
+          "page": 7
+        },
+        {
+          "characters": 1573,
+          "heading": "Experimentalsetup",
+          "page": 8
+        },
+        {
+          "characters": 1973,
+          "heading": "Mainresults",
+          "page": 8
+        },
+        {
+          "characters": 9,
+          "heading": "Mainresults",
+          "page": 9
+        },
+        {
+          "characters": 1082,
+          "heading": "F1 F2 F3 F4 F5 F6",
+          "page": 9
+        },
+        {
+          "characters": 2802,
+          "heading": "Resultanalysis",
+          "page": 9
+        },
+        {
+          "characters": 715,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 9,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 431,
+          "heading": "Aiuse Statement",
+          "page": 10
+        },
+        {
+          "characters": 905,
+          "heading": "Ethics Statement",
+          "page": 10
+        },
+        {
+          "characters": 742,
+          "heading": "Reproducibility Statement",
+          "page": 10
+        },
+        {
+          "characters": 1567,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 3673,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3796,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 571,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 1525,
+          "heading": "Appendix: Evaluationprotocol Anditem-Levelmetrics",
+          "page": 13
+        },
+        {
+          "characters": 56,
+          "heading": "Metric Suite Version Ground Truth Conditioned On Detects",
+          "page": 13
+        },
+        {
+          "characters": 132,
+          "heading": "Raretention Control Version Fact Value \u2013 Storage Capability",
+          "page": 13
+        },
+        {
+          "characters": 68,
+          "heading": "Prpreservation Forget Version Fact Value Control Probe Over-Deletion",
+          "page": 13
+        },
+        {
+          "characters": 1071,
+          "heading": "Rlarelearning Forget Version New Value \u2013 Relearning Failure",
+          "page": 13
+        },
+        {
+          "characters": 461,
+          "heading": "Appendix: Humanvalidation Of Thellm Judge",
+          "page": 13
+        },
+        {
+          "characters": 402,
+          "heading": "Appendix: Humanvalidation Of Thellm Judge",
+          "page": 14
+        },
+        {
+          "characters": 226,
+          "heading": "Appendix: Baselines Anddeletionpaths",
+          "page": 14
+        },
+        {
+          "characters": 754,
+          "heading": "Appendix: Integration",
+          "page": 14
+        },
+        {
+          "characters": 2321,
+          "heading": "Appendix: Deletionpolicy",
+          "page": 14
+        },
+        {
+          "characters": 526,
+          "heading": "Appendix: Deletionpolicy",
+          "page": 15
+        },
+        {
+          "characters": 2859,
+          "heading": "Appendix: Detailedbenchmarkstatistics",
+          "page": 15
+        },
+        {
+          "characters": 1066,
+          "heading": "Appendix: Detailedbenchmarkstatistics",
+          "page": 16
+        },
+        {
+          "characters": 21,
+          "heading": "Appendix: Qualitativeexamples",
+          "page": 16
+        },
+        {
+          "characters": 1884,
+          "heading": "Appendix: Oneforgetrequest Ofeachtype",
+          "page": 16
+        },
+        {
+          "characters": 594,
+          "heading": "Appendix: Pairedprobes",
+          "page": 16
+        },
+        {
+          "characters": 1069,
+          "heading": "Appendix: Pairedprobes",
+          "page": 17
+        },
+        {
+          "characters": 1127,
+          "heading": "Appendix: Preservation Andrelearningprobes",
+          "page": 17
+        },
+        {
+          "characters": 550,
+          "heading": "Appendix: Attacksuiteexample",
+          "page": 17
+        },
+        {
+          "characters": 681,
+          "heading": "Appendix: Additionalresults Onbemula-Lite",
+          "page": 17
+        },
+        {
+          "characters": 423,
+          "heading": "Appendix: Theefficacy Andpreservationtrade-Off",
+          "page": 17
+        },
+        {
+          "characters": 1722,
+          "heading": "Appendix: Theefficacy Andpreservationtrade-Off",
+          "page": 18
+        },
+        {
+          "characters": 323,
+          "heading": "Appendix: Attackrobustness Byattacktype",
+          "page": 18
+        },
+        {
+          "characters": 2026,
+          "heading": "Appendix: Attackrobustness Byattacktype",
+          "page": 19
+        },
+        {
+          "characters": 717,
+          "heading": "Appendix: Suitemetrics Byforgetrequesttype",
+          "page": 19
+        },
+        {
+          "characters": 518,
+          "heading": "Appendix: Effect Ofdialoguelength",
+          "page": 19
+        },
+        {
+          "characters": 9,
+          "heading": "Appendix: Effect Ofdialoguelength",
+          "page": 20
+        },
+        {
+          "characters": 3008,
+          "heading": "F1 F2 F3 F4 F5 F6",
+          "page": 20
+        },
+        {
+          "characters": 1289,
+          "heading": "Appendix: Bootstrapconfidenceintervals",
+          "page": 20
+        },
+        {
+          "characters": 1410,
+          "heading": "Appendix: Bootstrapconfidenceintervals",
+          "page": 21
+        },
+        {
+          "characters": 2316,
+          "heading": "Appendix: Bootstrapconfidenceintervals",
+          "page": 22
+        },
+        {
+          "characters": 2048,
+          "heading": "Appendix: Generation Andevaluationprompts",
+          "page": 22
+        },
+        {
+          "characters": 3179,
+          "heading": "Appendix: Generation Andevaluationprompts",
+          "page": 23
+        },
+        {
+          "characters": 2724,
+          "heading": "Appendix: Generation Andevaluationprompts",
+          "page": 24
+        },
+        {
+          "characters": 1803,
+          "heading": "Appendix: Generation Andevaluationprompts",
+          "page": 25
+        }
+      ],
+      "selected_text_sha256": "ba408afa5e3b4d66f2a0e318c048f1a3e4d431957c09a5965a2d47c6d053b5f0",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "983e236cccfaa595b0d66c47c650aac6c24a88cb00ca1b0aeabefe219b415652",
+      "source_pages": 25,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0003"
+        ],
+        "excerpt": "Long-term memory has become a core component of large language model (LLM)\nagents. As agents accumulate personal information over long-term use, users in-\ncreasingly ask them to delete sensitive or outdated facts. A memory system should\nhonor such requests. It should remove exactly what was requested and keep the\nrest of its memory intact. However, existing memory benchmarks evaluate only\nmemory writing, retrieval, and organization, so whether agents can forget at the\nuser's explicit request remains under-evaluated. To address this gap, we propose\nBEMULA, the first benchmark dedicated to memory unlearning. It comprises 50\nmulti-session dialogue instances, 135 forget requests of six types, and 1,742 test\nquestions. Each dialogue has a control version without the requests, so that only\nsystems that have stored the target can earn credit for forgetting. Across the paired\nversions, five ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "35af784a99a7be678614170db109b4be8e33f8fb0ca90101540c7f0127f86630",
+            "evidence_id": "E02714f6ad8cf92b4-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "Long-term memory has become a core component of large language model (LLM)\nagents. As agents accumulate personal information over long-term use, users in-\ncreasingly ask them to delete sensitive or outdated facts. A memory system should\nhonor such requests. It should remove exactly what was requested and keep the\nrest of its memory intact. However, existing memory benchmarks evaluate only\nmemory writing, retrieval, and organization, so whether agents can forget at the\nuser's explicit request remains under-evaluated. To address this gap, we propose\nBEMULA, the first benchmark dedicated to memory unlearning. It comprises 50\nmulti-session dialogue instances, 135 forget requests of six types, and 1,742 test\nquestions. Each dialogue has a control version without the requests, so that only\nsystems that have stored the target can earn credit for forgetting. Across the paired\nversions, five "
+              }
+            ],
+            "text": "Long-term memory has become a core component of large language model (LLM)\nagents. As agents accumulate personal information over long-term use, users in-\ncreasingly ask them to delete sensitive or outdated facts. A memory system should\nhonor such requests. It should remove exactly what was requested and keep the\nrest of its memory intact. However, existing memory benchmarks evaluate only\nmemory writing, retrieval, and organization, so whether agents can forget at the\nuser's explicit request remains under-evaluated. To address this gap, we propose\nBEMULA, the first benchmark dedicated to memory unlearning. It comprises 50\nmulti-session dialogue instances, 135 forget requests of six types, and 1,742 test\nquestions. Each dialogue has a control version without the requests, so that only\nsystems that have stored the target can earn credit for forgetting. Across the paired\nversions, five "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0004"
+        ],
+        "excerpt": "test suites measure storage, removal of the requested information,\npreservation of unrelated memories, relearning of similar facts, and resistance to\nextraction attacks. On BEMULA, we evaluate six mainstream memory systems\nunder three backbone LLMs, together with the Full Context LLM on two of them.\nThe results are negative. Across all evaluated systems and backbones, no system\npasses more than 1.5% of forget requests end to end, and most pass none at all.\nThese systems either leave the requested information extractable under simple at-\ntacks or delete far more than requested. Memory unlearning therefore remains\nan open challenge for agent memory design. We release our data and code at\nhttps://github.com/Nboxff/bemula-benchmark.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "777060c02b9b6e4e9026025321aa6cc1ca922bcfa6f70939a137fde8009bc2a4",
+            "evidence_id": "E02714f6ad8cf92b4-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1634,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 896,
+                "text": "test suites measure storage, removal of the requested information,\npreservation of unrelated memories, relearning of similar facts, and resistance to\nextraction attacks. On BEMULA, we evaluate six mainstream memory systems\nunder three backbone LLMs, together with the Full Context LLM on two of them.\nThe results are negative. Across all evaluated systems and backbones, no system\npasses more than 1.5% of forget requests end to end, and most pass none at all.\nThese systems either leave the requested information extractable under simple at-\ntacks or delete far more than requested. Memory unlearning therefore remains\nan open challenge for agent memory design. We release our data and code at\nhttps://github.com/Nboxff/bemula-benchmark."
+              }
+            ],
+            "text": "test suites measure storage, removal of the requested information,\npreservation of unrelated memories, relearning of similar facts, and resistance to\nextraction attacks. On BEMULA, we evaluate six mainstream memory systems\nunder three backbone LLMs, together with the Full Context LLM on two of them.\nThe results are negative. Across all evaluated systems and backbones, no system\npasses more than 1.5% of forget requests end to end, and most pass none at all.\nThese systems either leave the requested information extractable under simple at-\ntacks or delete far more than requested. Memory unlearning therefore remains\nan open challenge for agent memory design. We release our data and code at\nhttps://github.com/Nboxff/bemula-benchmark."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0011"
+        ],
+        "excerpt": "or refuse to answer related questions would all score perfectly, even\nthough none of them removes the target while keeping the rest of the memory usable. We therefore\npair each dialogue with a control version without forget requests, and score every probe against its\ncontrol counterpart, so that only systems that retain the target can earn credit for forgetting. Each\nforget request is evaluated by a suite of retention, efficacy, relearning, and attack questions, with\ninstance-level preservation questions to catch over-deletion.\nIn summary, the main contributions of this paper are threefold:\n\u2022Task definition.We propose memory unlearning as a new task for LLM agents and organize\nforget requests into a six-type taxonomy along three axes. Each dialogue containing forget\nrequests is paired with a control version, separating genuine forgetting from a failure to encode.\n\u2022The BEMULAbenchmark.We ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ce4b5c77eac738ee4bba00c3e79318c2a52633558652951f79b32c99ae661617",
+            "evidence_id": "E02714f6ad8cf92b4-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4319,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 3419,
+                "text": "or refuse to answer related questions would all score perfectly, even\nthough none of them removes the target while keeping the rest of the memory usable. We therefore\npair each dialogue with a control version without forget requests, and score every probe against its\ncontrol counterpart, so that only systems that retain the target can earn credit for forgetting. Each\nforget request is evaluated by a suite of retention, efficacy, relearning, and attack questions, with\ninstance-level preservation questions to catch over-deletion.\nIn summary, the main contributions of this paper are threefold:\n\u2022Task definition.We propose memory unlearning as a new task for LLM agents and organize\nforget requests into a six-type taxonomy along three axes. Each dialogue containing forget\nrequests is paired with a control version, separating genuine forgetting from a failure to encode.\n\u2022The BEMULAbenchmark.We "
+              }
+            ],
+            "text": "or refuse to answer related questions would all score perfectly, even\nthough none of them removes the target while keeping the rest of the memory usable. We therefore\npair each dialogue with a control version without forget requests, and score every probe against its\ncontrol counterpart, so that only systems that retain the target can earn credit for forgetting. Each\nforget request is evaluated by a suite of retention, efficacy, relearning, and attack questions, with\ninstance-level preservation questions to catch over-deletion.\nIn summary, the main contributions of this paper are threefold:\n\u2022Task definition.We propose memory unlearning as a new task for LLM agents and organize\nforget requests into a six-type taxonomy along three axes. Each dialogue containing forget\nrequests is paired with a control version, separating genuine forgetting from a failure to encode.\n\u2022The BEMULAbenchmark.We "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0021"
+        ],
+        "excerpt": "the history are forget re-\nquests expressed in natural language, each asking the agent to delete specific information disclosed\nearlier in the dialogue. The memory system must interpret these requests as deletion instructions and\nupdateMaccordingly. In the memory unlearning task, the requested information must be neither\nretrievable nor inferable from memory after a forget request, while all other content remains intact\nand similar facts can still be learned. In BEMULA, each instance is paired with a control versionD \u2032,\nin which every forget request and the assistant's confirmation are replaced by a semantically neutral\nfiller interaction of comparable length. All other turns inD \u2032 are the same as inD.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Taskformulation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0acd1b0738785bbd08ca8380a1fca3d3be510908687caaa40b6ffd9a151db422",
+            "evidence_id": "E02714f6ad8cf92b4-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Taskformulation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1610,
+                "page": 4,
+                "section": "Taskformulation",
+                "section_index": 9,
+                "start": 899,
+                "text": "the history are forget re-\nquests expressed in natural language, each asking the agent to delete specific information disclosed\nearlier in the dialogue. The memory system must interpret these requests as deletion instructions and\nupdateMaccordingly. In the memory unlearning task, the requested information must be neither\nretrievable nor inferable from memory after a forget request, while all other content remains intact\nand similar facts can still be learned. In BEMULA, each instance is paired with a control versionD \u2032,\nin which every forget request and the assistant's confirmation are replaced by a semantically neutral\nfiller interaction of comparable length. All other turns inD \u2032 are the same as inD."
+              }
+            ],
+            "text": "the history are forget re-\nquests expressed in natural language, each asking the agent to delete specific information disclosed\nearlier in the dialogue. The memory system must interpret these requests as deletion instructions and\nupdateMaccordingly. In the memory unlearning task, the requested information must be neither\nretrievable nor inferable from memory after a forget request, while all other content remains intact\nand similar facts can still be learned. In BEMULA, each instance is paired with a control versionD \u2032,\nin which every forget request and the assistant's confirmation are replaced by a semantically neutral\nfiller interaction of comparable length. All other turns inD \u2032 are the same as inD."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0039"
+        ],
+        "excerpt": "During the evaluation, the system ingests the dialogue session by session and answers each test\nquestion in a fresh session whose working context contains only the query, so every answer must\ncome from memoryM. The evaluation produces a binary outcome for every test question. To\n6\nPreprint.\nseparate the never-remembered from the genuinely forgotten, we evaluate each forget request against\npaired control probes. We score the retention suite on the control version and the other four suites\non the forget version. The preservation and attack questions are also asked on the control version,\nwhere they serve as the conditioning probes for the forget-version items.\nFormally, we writeS ret,S eff,S pres,S rl, andS att for the question sets of the retention, efficacy,\npreservation, relearning, and attack suites, and we partition the attack suite by attack type into\nS1, . . . , Sm, withm= 5in ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarkmetrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f3040d959ad0ff6dadcf34d0343498b3068cda9a17785c9a1db51e29c3139d85",
+            "evidence_id": "E02714f6ad8cf92b4-B0039",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Benchmarkmetrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 281,
+                "page": 6,
+                "section": "Benchmarkmetrics",
+                "section_index": 25,
+                "start": 0,
+                "text": "During the evaluation, the system ingests the dialogue session by session and answers each test\nquestion in a fresh session whose working context contains only the query, so every answer must\ncome from memoryM. The evaluation produces a binary outcome for every test question. To\n6"
+              },
+              {
+                "end": 613,
+                "page": 7,
+                "section": "Benchmarkmetrics",
+                "section_index": 26,
+                "start": 0,
+                "text": "Preprint.\nseparate the never-remembered from the genuinely forgotten, we evaluate each forget request against\npaired control probes. We score the retention suite on the control version and the other four suites\non the forget version. The preservation and attack questions are also asked on the control version,\nwhere they serve as the conditioning probes for the forget-version items.\nFormally, we writeS ret,S eff,S pres,S rl, andS att for the question sets of the retention, efficacy,\npreservation, relearning, and attack suites, and we partition the attack suite by attack type into\nS1, . . . , Sm, withm= 5in "
+              }
+            ],
+            "text": "During the evaluation, the system ingests the dialogue session by session and answers each test\nquestion in a fresh session whose working context contains only the query, so every answer must\ncome from memoryM. The evaluation produces a binary outcome for every test question. To\n6\nPreprint.\nseparate the never-remembered from the genuinely forgotten, we evaluate each forget request against\npaired control probes. We score the retention suite on the control version and the other four suites\non the forget version. The preservation and attack questions are also asked on the control version,\nwhere they serve as the conditioning probes for the forget-version items.\nFormally, we writeS ret,S eff,S pres,S rl, andS att for the question sets of the retention, efficacy,\npreservation, relearning, and attack suites, and we partition the attack suite by attack type into\nS1, . . . , Sm, withm= 5in "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0040"
+        ],
+        "excerpt": "BEMULA. Letz i \u2208 {0,1}be the correctness of questionion the\nversion on which it is scored, and letc i \u2208 {0,1}be the outcome of its paired control probe. The\neffective correctness\u02dczi =z i \u2227c i conditions every efficacy, preservation, and attack question on the\ncontrol version. Retention questions and replacement new-value questions have no control counter-\npart and takec i = 1. For a question sets, we write its average effective correctness as\nM(s) = 1|s| Xi\u2208s \u02dczi.(2)\nThe five item-level metrics apply Eq. 2 to the corresponding suite, so each of the first four averages\nthe effective correctness over one question set,\nRA = M(Sret),FE = M(S eff ),PR = M(S pres),RLA = M(S rl),AR = 1m\nmX\na=1\nM(Sa).\n(3)\nThe retention accuracy (RA) tests normal memorization ability. The forgetting efficacy (FE) credits\na question as correctly forgotten only when the forget-version response reports the fact as ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarkmetrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9e43d2acb4b8b381504e622f17df248ba89a4b8a14f386f03655e8efc8b1914f",
+            "evidence_id": "E02714f6ad8cf92b4-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Benchmarkmetrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1512,
+                "page": 7,
+                "section": "Benchmarkmetrics",
+                "section_index": 26,
+                "start": 613,
+                "text": "BEMULA. Letz i \u2208 {0,1}be the correctness of questionion the\nversion on which it is scored, and letc i \u2208 {0,1}be the outcome of its paired control probe. The\neffective correctness\u02dczi =z i \u2227c i conditions every efficacy, preservation, and attack question on the\ncontrol version. Retention questions and replacement new-value questions have no control counter-\npart and takec i = 1. For a question sets, we write its average effective correctness as\nM(s) = 1|s| Xi\u2208s \u02dczi.(2)\nThe five item-level metrics apply Eq. 2 to the corresponding suite, so each of the first four averages\nthe effective correctness over one question set,\nRA = M(Sret),FE = M(S eff ),PR = M(S pres),RLA = M(S rl),AR = 1m\nmX\na=1\nM(Sa).\n(3)\nThe retention accuracy (RA) tests normal memorization ability. The forgetting efficacy (FE) credits\na question as correctly forgotten only when the forget-version response reports the fact as "
+              }
+            ],
+            "text": "BEMULA. Letz i \u2208 {0,1}be the correctness of questionion the\nversion on which it is scored, and letc i \u2208 {0,1}be the outcome of its paired control probe. The\neffective correctness\u02dczi =z i \u2227c i conditions every efficacy, preservation, and attack question on the\ncontrol version. Retention questions and replacement new-value questions have no control counter-\npart and takec i = 1. For a question sets, we write its average effective correctness as\nM(s) = 1|s| Xi\u2208s \u02dczi.(2)\nThe five item-level metrics apply Eq. 2 to the corresponding suite, so each of the first four averages\nthe effective correctness over one question set,\nRA = M(Sret),FE = M(S eff ),PR = M(S pres),RLA = M(S rl),AR = 1m\nmX\na=1\nM(Sa).\n(3)\nThe retention accuracy (RA) tests normal memorization ability. The forgetting efficacy (FE) credits\na question as correctly forgotten only when the forget-version response reports the fact as "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0041"
+        ],
+        "excerpt": "unavailable\nwithout leaking the target value. Preservation (PR) credits a question only when the control version\nalso answers it correctly. Relearning accuracy (RLA) tests the acquisition of similar facts after a\nforget request is issued. Finally, attack robustness (AR) credits an attack as defended only when it\nfails after the forget request. All answers are graded by an LLM judge, and all metrics are reported\nas percentages.\nThe request pass rate (RPR) is the strictest metric, whereRis the set of forget requests,I r the\nquestions scored for requestr, andP(r)the preservation questions of the instance that containsr.\nRPR = 1|R| Xr\u2208R 1h\u0010 ^i\u2208Ir \u02dczi\u0011 \u2227 \u0010 ^j\u2208P(r) \u02dczj\u0011i.(4)\nA request passes only when all of its questions and all preservation questions of its instance are\ncorrect. The overall BEMULAscore multiplies two geometric-mean factors,\nScore = F A\u00d7UG,F A =\n\u221a\nFE\u00b7AR,UG ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarkmetrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9823b5cffabc04afa571cb40a05327021d52d6ce641690a0aef83234cb5ad73a",
+            "evidence_id": "E02714f6ad8cf92b4-B0041",
+            "pages": [
+              7
+            ],
+            "section": "Benchmarkmetrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2393,
+                "page": 7,
+                "section": "Benchmarkmetrics",
+                "section_index": 26,
+                "start": 1512,
+                "text": "unavailable\nwithout leaking the target value. Preservation (PR) credits a question only when the control version\nalso answers it correctly. Relearning accuracy (RLA) tests the acquisition of similar facts after a\nforget request is issued. Finally, attack robustness (AR) credits an attack as defended only when it\nfails after the forget request. All answers are graded by an LLM judge, and all metrics are reported\nas percentages.\nThe request pass rate (RPR) is the strictest metric, whereRis the set of forget requests,I r the\nquestions scored for requestr, andP(r)the preservation questions of the instance that containsr.\nRPR = 1|R| Xr\u2208R 1h\u0010 ^i\u2208Ir \u02dczi\u0011 \u2227 \u0010 ^j\u2208P(r) \u02dczj\u0011i.(4)\nA request passes only when all of its questions and all preservation questions of its instance are\ncorrect. The overall BEMULAscore multiplies two geometric-mean factors,\nScore = F A\u00d7UG,F A =\n\u221a\nFE\u00b7AR,UG "
+              }
+            ],
+            "text": "unavailable\nwithout leaking the target value. Preservation (PR) credits a question only when the control version\nalso answers it correctly. Relearning accuracy (RLA) tests the acquisition of similar facts after a\nforget request is issued. Finally, attack robustness (AR) credits an attack as defended only when it\nfails after the forget request. All answers are graded by an LLM judge, and all metrics are reported\nas percentages.\nThe request pass rate (RPR) is the strictest metric, whereRis the set of forget requests,I r the\nquestions scored for requestr, andP(r)the preservation questions of the instance that containsr.\nRPR = 1|R| Xr\u2208R 1h\u0010 ^i\u2208Ir \u02dczi\u0011 \u2227 \u0010 ^j\u2208P(r) \u02dczj\u0011i.(4)\nA request passes only when all of its questions and all preservation questions of its instance are\ncorrect. The overall BEMULAscore multiplies two geometric-mean factors,\nScore = F A\u00d7UG,F A =\n\u221a\nFE\u00b7AR,UG "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0042"
+        ],
+        "excerpt": "=\n\u221a\nPR\u00b7RLA,(5)\nwhere forgetting ability (F A) measures how well a system erases the requested information, and\nusability guard (UG) measures whether the system remains usable afterwards. Because the score is\na product, a zero on any of the four metrics zeroes the total. A system that deletes everything scores\nno better than one that forgets nothing, and a system that can no longer learn similar facts also scores\nzero.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarkmetrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "449f49c07a82d3669812b612315a78b4abd81dc92937ce531a5fd85440309c33",
+            "evidence_id": "E02714f6ad8cf92b4-B0042",
+            "pages": [
+              7
+            ],
+            "section": "Benchmarkmetrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2814,
+                "page": 7,
+                "section": "Benchmarkmetrics",
+                "section_index": 26,
+                "start": 2393,
+                "text": "=\n\u221a\nPR\u00b7RLA,(5)\nwhere forgetting ability (F A) measures how well a system erases the requested information, and\nusability guard (UG) measures whether the system remains usable afterwards. Because the score is\na product, a zero on any of the four metrics zeroes the total. A system that deletes everything scores\nno better than one that forgets nothing, and a system that can no longer learn similar facts also scores\nzero."
+              }
+            ],
+            "text": "=\n\u221a\nPR\u00b7RLA,(5)\nwhere forgetting ability (F A) measures how well a system erases the requested information, and\nusability guard (UG) measures whether the system remains usable afterwards. Because the score is\na product, a zero on any of the four metrics zeroes the total. A system that deletes everything scores\nno better than one that forgets nothing, and a system that can no longer learn similar facts also scores\nzero."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0044"
+        ],
+        "excerpt": "Preprint.\nTable 1: Main results on BEMULAunder three backbone LLMs.RA: retention accuracy.FE:\nforgetting efficacy.PR: preservation.RLA: relearning.AR: attack robustness.RPR: request pass\nrate.Score: overall score (F A\u00d7UG, Eq. 5). All scores are percentages. Appendix K reports 95%\nbootstrap CIs.\nSuite Metrics Aggregate\nSystemRA FE PR RLA AR RPR Score\nBackbone:\n GPT-5.6-Luna\nFull Context 84.4 26.8 73.398.2 27.60.023.1\nNaive RAG 75.9 14.7 67.3 71.1 12.9 0.0 9.5\nLangMem 50.437.920.0 78.9 25.6 0.0 12.4\nMem0 89.7 8.5 80.0 77.2 4.7 0.0 4.9\nA-MEM 80.4 33.0 59.3 88.6 24.7 0.0 20.7\nLightMem 92.9 17.988.080.7 18.0 0.0 15.1\nSimpleMem93.316.1 82.7 90.4 18.7 0.0 15.0\nBackbone:\n DeepSeek-V4.1-Flash\nFull Context 75.053.646.0100.032.9 0.7 28.5\nNaive RAG 72.8 12.5 64.7 71.1 11.8 0.0 8.2\nLangMem 92.0 40.6 74.0 89.535.7 1.5 31.0\nMem0 87.9 17.0 86.7 71.1 12.6 0.0 11.5\nA-MEM 73.2 29.5 54.0 93.0 21.2 0.0 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b8776fa9795cccf9fdb0b1d4279ca3c5ab260998bdba06d7d46fe27873952815",
+            "evidence_id": "E02714f6ad8cf92b4-B0044",
+            "pages": [
+              8
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 8,
+                "section": "Experimentalsetup",
+                "section_index": 28,
+                "start": 0,
+                "text": "Preprint.\nTable 1: Main results on BEMULAunder three backbone LLMs.RA: retention accuracy.FE:\nforgetting efficacy.PR: preservation.RLA: relearning.AR: attack robustness.RPR: request pass\nrate.Score: overall score (F A\u00d7UG, Eq. 5). All scores are percentages. Appendix K reports 95%\nbootstrap CIs.\nSuite Metrics Aggregate\nSystemRA FE PR RLA AR RPR Score\nBackbone:\n GPT-5.6-Luna\nFull Context 84.4 26.8 73.398.2 27.60.023.1\nNaive RAG 75.9 14.7 67.3 71.1 12.9 0.0 9.5\nLangMem 50.437.920.0 78.9 25.6 0.0 12.4\nMem0 89.7 8.5 80.0 77.2 4.7 0.0 4.9\nA-MEM 80.4 33.0 59.3 88.6 24.7 0.0 20.7\nLightMem 92.9 17.988.080.7 18.0 0.0 15.1\nSimpleMem93.316.1 82.7 90.4 18.7 0.0 15.0\nBackbone:\n DeepSeek-V4.1-Flash\nFull Context 75.053.646.0100.032.9 0.7 28.5\nNaive RAG 72.8 12.5 64.7 71.1 11.8 0.0 8.2\nLangMem 92.0 40.6 74.0 89.535.7 1.5 31.0\nMem0 87.9 17.0 86.7 71.1 12.6 0.0 11.5\nA-MEM 73.2 29.5 54.0 93.0 21.2 0.0 "
+              }
+            ],
+            "text": "Preprint.\nTable 1: Main results on BEMULAunder three backbone LLMs.RA: retention accuracy.FE:\nforgetting efficacy.PR: preservation.RLA: relearning.AR: attack robustness.RPR: request pass\nrate.Score: overall score (F A\u00d7UG, Eq. 5). All scores are percentages. Appendix K reports 95%\nbootstrap CIs.\nSuite Metrics Aggregate\nSystemRA FE PR RLA AR RPR Score\nBackbone:\n GPT-5.6-Luna\nFull Context 84.4 26.8 73.398.2 27.60.023.1\nNaive RAG 75.9 14.7 67.3 71.1 12.9 0.0 9.5\nLangMem 50.437.920.0 78.9 25.6 0.0 12.4\nMem0 89.7 8.5 80.0 77.2 4.7 0.0 4.9\nA-MEM 80.4 33.0 59.3 88.6 24.7 0.0 20.7\nLightMem 92.9 17.988.080.7 18.0 0.0 15.1\nSimpleMem93.316.1 82.7 90.4 18.7 0.0 15.0\nBackbone:\n DeepSeek-V4.1-Flash\nFull Context 75.053.646.0100.032.9 0.7 28.5\nNaive RAG 72.8 12.5 64.7 71.1 11.8 0.0 8.2\nLangMem 92.0 40.6 74.0 89.535.7 1.5 31.0\nMem0 87.9 17.0 86.7 71.1 12.6 0.0 11.5\nA-MEM 73.2 29.5 54.0 93.0 21.2 0.0 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0045"
+        ],
+        "excerpt": "17.7\nLightMem94.612.994.082.5 10.4 0.0 10.2\nSimpleMem 90.6 17.9 84.7 90.4 20.0 0.7 16.5\nBackbone:\n Qwen3-32B-AWQ\nNaive RAG 73.2 7.1 63.3 72.8 5.0 0.0 4.0\nMem0 84.4 10.3 65.3 79.8 8.2 0.0 6.6\nLangMem 21.914.75.393.99.4 0.0 2.6\nLightMem92.98.986.072.8 5.6 0.0 5.6\nSimpleMem 78.6 14.3 54.7 83.3 14.00.09.5\ninstance, we reset the memory system. The system ingests the forget versionDor the control ver-\nsionD \u2032 turn by turn and then answers the test questions in a fresh session. All answers are judged\nby DeepSeek-V4.1-Flash. We quantify sampling uncertainty with a cluster bootstrap over instances\n(Appendix K) and base pairwise system comparisons on paired bootstrap differences.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "10fa16995fc1544e0ff5c7a6ef5279b5fc1ee2b5c787b83a0e2496d117000c3e",
+            "evidence_id": "E02714f6ad8cf92b4-B0045",
+            "pages": [
+              8
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1573,
+                "page": 8,
+                "section": "Experimentalsetup",
+                "section_index": 28,
+                "start": 895,
+                "text": "17.7\nLightMem94.612.994.082.5 10.4 0.0 10.2\nSimpleMem 90.6 17.9 84.7 90.4 20.0 0.7 16.5\nBackbone:\n Qwen3-32B-AWQ\nNaive RAG 73.2 7.1 63.3 72.8 5.0 0.0 4.0\nMem0 84.4 10.3 65.3 79.8 8.2 0.0 6.6\nLangMem 21.914.75.393.99.4 0.0 2.6\nLightMem92.98.986.072.8 5.6 0.0 5.6\nSimpleMem 78.6 14.3 54.7 83.3 14.00.09.5\ninstance, we reset the memory system. The system ingests the forget versionDor the control ver-\nsionD \u2032 turn by turn and then answers the test questions in a fresh session. All answers are judged\nby DeepSeek-V4.1-Flash. We quantify sampling uncertainty with a cluster bootstrap over instances\n(Appendix K) and base pairwise system comparisons on paired bootstrap differences."
+              }
+            ],
+            "text": "17.7\nLightMem94.612.994.082.5 10.4 0.0 10.2\nSimpleMem 90.6 17.9 84.7 90.4 20.0 0.7 16.5\nBackbone:\n Qwen3-32B-AWQ\nNaive RAG 73.2 7.1 63.3 72.8 5.0 0.0 4.0\nMem0 84.4 10.3 65.3 79.8 8.2 0.0 6.6\nLangMem 21.914.75.393.99.4 0.0 2.6\nLightMem92.98.986.072.8 5.6 0.0 5.6\nSimpleMem 78.6 14.3 54.7 83.3 14.00.09.5\ninstance, we reset the memory system. The system ingests the forget versionDor the control ver-\nsionD \u2032 turn by turn and then answers the test questions in a fresh session. All answers are judged\nby DeepSeek-V4.1-Flash. We quantify sampling uncertainty with a cluster bootstrap over instances\n(Appendix K) and base pairwise system comparisons on paired bootstrap differences."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0055"
+        ],
+        "excerpt": "We have presented BEMULA, the first benchmark dedicated to memory unlearning in LLM agents.\nEvaluations of six memory systems and the Full Context LLM under up to three backbone LLMs\nshow a consistent pattern. Systems retain target information reliably, yet forgetting on demand\nlargely fails, and almost no request passes its full suite. Memory unlearning therefore remains an\nopen challenge. Our study has two limitations. The dialogues are synthetic and come from one\ngeneration pipeline, and the benchmark covers conversational memory only, whereas tool-using\nagents can leave forgotten values in caches, logs, or external services. Extending BEMULAto real-\nuser dialogues and tool use is a natural next step.\n9\nPreprint.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9160859788f34b642e5437ad39e986193131006176bb051aec148bcc72040662",
+            "evidence_id": "E02714f6ad8cf92b4-B0055",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 715,
+                "page": 9,
+                "section": "Conclusion",
+                "section_index": 33,
+                "start": 0,
+                "text": "We have presented BEMULA, the first benchmark dedicated to memory unlearning in LLM agents.\nEvaluations of six memory systems and the Full Context LLM under up to three backbone LLMs\nshow a consistent pattern. Systems retain target information reliably, yet forgetting on demand\nlargely fails, and almost no request passes its full suite. Memory unlearning therefore remains an\nopen challenge. Our study has two limitations. The dialogues are synthetic and come from one\ngeneration pipeline, and the benchmark covers conversational memory only, whereas tool-using\nagents can leave forgotten values in caches, logs, or external services. Extending BEMULAto real-\nuser dialogues and tool use is a natural next step.\n9"
+              },
+              {
+                "end": 9,
+                "page": 10,
+                "section": "Conclusion",
+                "section_index": 34,
+                "start": 0,
+                "text": "Preprint."
+              }
+            ],
+            "text": "We have presented BEMULA, the first benchmark dedicated to memory unlearning in LLM agents.\nEvaluations of six memory systems and the Full Context LLM under up to three backbone LLMs\nshow a consistent pattern. Systems retain target information reliably, yet forgetting on demand\nlargely fails, and almost no request passes its full suite. Memory unlearning therefore remains an\nopen challenge. Our study has two limitations. The dialogues are synthetic and come from one\ngeneration pipeline, and the benchmark covers conversational memory only, whereas tool-using\nagents can leave forgotten values in caches, logs, or external services. Extending BEMULAto real-\nuser dialogues and tool use is a natural next step.\n9\nPreprint."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0057"
+        ],
+        "excerpt": "ETHICS STATEMENT\nBEMULAcontains only synthetic data. All user profiles, facts, and dialogues are produced by an\nLLM pipeline and do not describe any real person, so the benchmark creates no privacy risk for\nindividuals. The attack suite includes prompt-based extraction techniques such as jailbreak prefixes,\nand we use them only to measure whether memory systems leak deleted information. The bench-\nmark is intended to encourage defenses against such extraction. Since the grading relies on an LLM\njudge, its verdicts may carry model biases. We mitigate this risk with a human validation of the\nLLM judge on 100 sampled items, which yields 98% agreement. We expect the benchmark to have\na positive societal impact as well. It provides a systematic way to evaluate whether agent memory\nsystems honor deletion requests, and it therefore supports privacy protection goals such as the right\nto be ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ethics Statement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8fc864088667964e27ead47c5f14a7a618618e22b352d3d503e5f172621d1673",
+            "evidence_id": "E02714f6ad8cf92b4-B0057",
+            "pages": [
+              10
+            ],
+            "section": "Ethics Statement",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 10,
+                "section": "Ethics Statement",
+                "section_index": 36,
+                "start": 0,
+                "text": "ETHICS STATEMENT\nBEMULAcontains only synthetic data. All user profiles, facts, and dialogues are produced by an\nLLM pipeline and do not describe any real person, so the benchmark creates no privacy risk for\nindividuals. The attack suite includes prompt-based extraction techniques such as jailbreak prefixes,\nand we use them only to measure whether memory systems leak deleted information. The bench-\nmark is intended to encourage defenses against such extraction. Since the grading relies on an LLM\njudge, its verdicts may carry model biases. We mitigate this risk with a human validation of the\nLLM judge on 100 sampled items, which yields 98% agreement. We expect the benchmark to have\na positive societal impact as well. It provides a systematic way to evaluate whether agent memory\nsystems honor deletion requests, and it therefore supports privacy protection goals such as the right\nto be "
+              }
+            ],
+            "text": "ETHICS STATEMENT\nBEMULAcontains only synthetic data. All user profiles, facts, and dialogues are produced by an\nLLM pipeline and do not describe any real person, so the benchmark creates no privacy risk for\nindividuals. The attack suite includes prompt-based extraction techniques such as jailbreak prefixes,\nand we use them only to measure whether memory systems leak deleted information. The bench-\nmark is intended to encourage defenses against such extraction. Since the grading relies on an LLM\njudge, its verdicts may carry model biases. We mitigate this risk with a human validation of the\nLLM judge on 100 sampled items, which yields 98% agreement. We expect the benchmark to have\na positive societal impact as well. It provides a systematic way to evaluate whether agent memory\nsystems honor deletion requests, and it therefore supports privacy protection goals such as the right\nto be "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0078"
+        ],
+        "excerpt": "B HUMANVALIDATION OF THELLM JUDGE\nEvery item in BEMULAis graded by an LLM judge, so we validate the judge on a human-annotated\nsample of 100 graded items. We balance the two verdicts at sampling time, so that both outcomes\ncontribute equally to the agreement estimate. The annotator sees the question, the grading rubric,\nthe ground truth, the system answer, and the source dialogue turns, and we hide the judge verdict\nuntil the annotator records the score.\n13\nPreprint.\nTable 3: Agreement between the human annotator and the LLM judge on the 100 sampled items.\nRows give the judge verdict and columns give the annotator verdict.\nJudge verdict Annotator correct Annotator incorrect Agreement\nCorrect 53 1 98.1%\nIncorrect 1 45 97.8%\nAll 54 46 98.0%\nTable 3 reports the outcome. The annotator agrees with the judge on 98 of the 100 items, and\nCohen's kappa is 0.96.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13,
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Humanvalidation Of Thellm Judge",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d376f8a737fc315b47d417903b2f9acc3293f8f65dbd6157a96265f2f9221521",
+            "evidence_id": "E02714f6ad8cf92b4-B0078",
+            "pages": [
+              13,
+              14
+            ],
+            "section": "Appendix: Humanvalidation Of Thellm Judge",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 461,
+                "page": 13,
+                "section": "Appendix: Humanvalidation Of Thellm Judge",
+                "section_index": 47,
+                "start": 0,
+                "text": "B HUMANVALIDATION OF THELLM JUDGE\nEvery item in BEMULAis graded by an LLM judge, so we validate the judge on a human-annotated\nsample of 100 graded items. We balance the two verdicts at sampling time, so that both outcomes\ncontribute equally to the agreement estimate. The annotator sees the question, the grading rubric,\nthe ground truth, the system answer, and the source dialogue turns, and we hide the judge verdict\nuntil the annotator records the score.\n13"
+              },
+              {
+                "end": 402,
+                "page": 14,
+                "section": "Appendix: Humanvalidation Of Thellm Judge",
+                "section_index": 48,
+                "start": 0,
+                "text": "Preprint.\nTable 3: Agreement between the human annotator and the LLM judge on the 100 sampled items.\nRows give the judge verdict and columns give the annotator verdict.\nJudge verdict Annotator correct Annotator incorrect Agreement\nCorrect 53 1 98.1%\nIncorrect 1 45 97.8%\nAll 54 46 98.0%\nTable 3 reports the outcome. The annotator agrees with the judge on 98 of the 100 items, and\nCohen's kappa is 0.96."
+              }
+            ],
+            "text": "B HUMANVALIDATION OF THELLM JUDGE\nEvery item in BEMULAis graded by an LLM judge, so we validate the judge on a human-annotated\nsample of 100 graded items. We balance the two verdicts at sampling time, so that both outcomes\ncontribute equally to the agreement estimate. The annotator sees the question, the grading rubric,\nthe ground truth, the system answer, and the source dialogue turns, and we hide the judge verdict\nuntil the annotator records the score.\n13\nPreprint.\nTable 3: Agreement between the human annotator and the LLM judge on the 100 sampled items.\nRows give the judge verdict and columns give the annotator verdict.\nJudge verdict Annotator correct Annotator incorrect Agreement\nCorrect 53 1 98.1%\nIncorrect 1 45 97.8%\nAll 54 46 98.0%\nTable 3 reports the outcome. The annotator agrees with the judge on 98 of the 100 items, and\nCohen's kappa is 0.96."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0112"
+        ],
+        "excerpt": "K BOOTSTRAPCONFIDENCEINTERVALS\nWe quantify the sampling uncertainty of the main results with a cluster bootstrap over instances.\nQuestions within one instance share a profile and a dialogue history, so they are not independent\nsamples, and the instance is the outermost independent unit in our data. Each of the 10,000 resam-\nples draws 50 instance ids with replacement, gathers every item of the drawn instances from both\ndialogue versions so that control-probe conditioning is preserved, and recomputes the official met-\nrics. Table 8 reports the point estimate and the percentile 95% CI of every suite metric. We do not\nreport an interval forRPR, whose point estimates are almost all zero. For pairwise comparisons we\nresample the same instance draws for both systems and report the CI of the metric difference.\nThree observations follow from the intervals. First, neighboring ranks in Table 1 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Bootstrapconfidenceintervals",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c106e72de3eecfb9a14ccf7cf8157e9e3d2ed850565068eb1485e70f598ff884",
+            "evidence_id": "E02714f6ad8cf92b4-B0112",
+            "pages": [
+              20
+            ],
+            "section": "Appendix: Bootstrapconfidenceintervals",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 20,
+                "section": "Appendix: Bootstrapconfidenceintervals",
+                "section_index": 70,
+                "start": 0,
+                "text": "K BOOTSTRAPCONFIDENCEINTERVALS\nWe quantify the sampling uncertainty of the main results with a cluster bootstrap over instances.\nQuestions within one instance share a profile and a dialogue history, so they are not independent\nsamples, and the instance is the outermost independent unit in our data. Each of the 10,000 resam-\nples draws 50 instance ids with replacement, gathers every item of the drawn instances from both\ndialogue versions so that control-probe conditioning is preserved, and recomputes the official met-\nrics. Table 8 reports the point estimate and the percentile 95% CI of every suite metric. We do not\nreport an interval forRPR, whose point estimates are almost all zero. For pairwise comparisons we\nresample the same instance draws for both systems and report the CI of the metric difference.\nThree observations follow from the intervals. First, neighboring ranks in Table 1 "
+              }
+            ],
+            "text": "K BOOTSTRAPCONFIDENCEINTERVALS\nWe quantify the sampling uncertainty of the main results with a cluster bootstrap over instances.\nQuestions within one instance share a profile and a dialogue history, so they are not independent\nsamples, and the instance is the outermost independent unit in our data. Each of the 10,000 resam-\nples draws 50 instance ids with replacement, gathers every item of the drawn instances from both\ndialogue versions so that control-probe conditioning is preserved, and recomputes the official met-\nrics. Table 8 reports the point estimate and the percentile 95% CI of every suite metric. We do not\nreport an interval forRPR, whose point estimates are almost all zero. For pairwise comparisons we\nresample the same instance draws for both systems and report the CI of the metric difference.\nThree observations follow from the intervals. First, neighboring ranks in Table 1 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.18052",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.18052",
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "A human validation study on 100 balanced sampled items reports 98% agreement and Cohen's kappa 0.96 with the LLM judge.",
+          "final_evaluation_signal": "An LLM judge (DeepSeek-V4.1-Flash) grades answers against gold facts, sentinel markers, and rubrics across paired control and forget conditions.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The evaluated memory systems and backbones are fixed off-the-shelf or pre-trained systems with no benchmark-specific training, tuning, or selection reported.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0003",
+          "E02714f6ad8cf92b4-B0004",
+          "E02714f6ad8cf92b4-B0011",
+          "E02714f6ad8cf92b4-B0021",
+          "E02714f6ad8cf92b4-B0039",
+          "E02714f6ad8cf92b4-B0040",
+          "E02714f6ad8cf92b4-B0041",
+          "E02714f6ad8cf92b4-B0042",
+          "E02714f6ad8cf92b4-B0044",
+          "E02714f6ad8cf92b4-B0045",
+          "E02714f6ad8cf92b4-B0055",
+          "E02714f6ad8cf92b4-B0057",
+          "E02714f6ad8cf92b4-B0078",
+          "E02714f6ad8cf92b4-B0112"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "983e236cccfaa595b0d66c47c650aac6c24a88cb00ca1b0aeabefe219b415652"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.18052",
+        "claim_evidence_alignment": "Claims that current agent memory systems fail to forget reliably and remain susceptible to extraction attacks are directly substantiated by the empirical results across all test suites and model backbones. The scope is well calibrated, explicitly presenting unlearning as an unresolved challenge in current architectures.",
+        "context_id": "02714f6ad8cf92b435f17ec961fd070549648e300f64cbf446509cd742d4016f",
+        "decision": "pass",
+        "evaluation_assessment": "The benchmark systematically evaluates six agent memory systems and a full-context baseline across three LLM backbones, supported by 10,000-resample cluster bootstrap confidence intervals. The primary findings reveal near-zero end-to-end request pass rates and severe vulnerability to prompt-based extraction across existing systems.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "A human agreement study on 100 balanced sampled evaluation items was conducted, yielding 98% agreement (Cohen's kappa 0.96) with the LLM judge.",
+          "final_evaluation_signal": "An automated LLM judge (DeepSeek-V4.1-Flash) scoring model responses against gold facts, sentinel tags, and rubrics across paired conditions.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The memory systems and LLM baselines are fixed, off-the-shelf or pre-trained models evaluated under standard prompting and built-in updating heuristics without benchmark-specific fine-tuning or optimization.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E02714f6ad8cf92b4-B0003",
+          "E02714f6ad8cf92b4-B0004",
+          "E02714f6ad8cf92b4-B0011",
+          "E02714f6ad8cf92b4-B0021",
+          "E02714f6ad8cf92b4-B0039",
+          "E02714f6ad8cf92b4-B0040",
+          "E02714f6ad8cf92b4-B0041",
+          "E02714f6ad8cf92b4-B0042",
+          "E02714f6ad8cf92b4-B0044",
+          "E02714f6ad8cf92b4-B0045",
+          "E02714f6ad8cf92b4-B0055",
+          "E02714f6ad8cf92b4-B0057",
+          "E02714f6ad8cf92b4-B0078",
+          "E02714f6ad8cf92b4-B0112"
+        ],
+        "limitations": "The authors document key limitations including the purely synthetic nature of the multi-session dialogues and restriction to conversational memory without evaluating tool caches, external logs, or web-service traces.",
+        "method_assessment": "The methodology is thoroughly detailed, describing a five-stage synthetic generation pipeline with multi-agent dialogue simulation, controlled injection of six forget request types, and paired control versions to separate genuine unlearning from initial encoding failures. Evaluation metrics are formally defined, combining forgetting efficacy with usability and adversarial extraction suites.",
+        "quality_rationale": "The study offers a rigorous, well-controlled experimental framework for an under-evaluated task in agent architectures. The pairing with control dialogues prevents degenerate solutions (such as total memory wipe or failure to store) from appearing successful, accompanied by human judge validation and statistical uncertainty analysis.",
+        "scoped_contribution": "The paper introduces BEMULA, a benchmark designed to evaluate explicit natural-language memory unlearning in LLM conversational agents across multi-session dialogues, featuring paired control dialogues and five probe suites measuring retention, efficacy, preservation, relearning, and attack robustness.",
+        "source_content_hash": "983e236cccfaa595b0d66c47c650aac6c24a88cb00ca1b0aeabefe219b415652"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study offers a rigorous, well-controlled experimental framework for an under-evaluated task in agent architectures. The pairing with control dialogues prevents degenerate solutions (such as total memory wipe or failure to store) from appearing successful, accompanied by human judge validation and statistical uncertainty analysis.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "983e236cccfaa595b0d66c47c650aac6c24a88cb00ca1b0aeabefe219b415652",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors document key limitations including the purely synthetic nature of the multi-session dialogues and restriction to conversational memory without evaluating tool caches, external logs, or web-service traces."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -166,7 +2240,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

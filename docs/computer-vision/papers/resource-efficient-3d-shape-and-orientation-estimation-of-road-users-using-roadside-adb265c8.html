@@ -59,16 +59,223 @@
             <p>End-to-end deep learning pipelines for camera-radar 3D object detection are well established in driver assistance systems and autonomous vehicles; however, adapting them to roadside-mounted infrastructure presents significant challenges. On vehicles, sensor heights, pitch angles, and relative geometries remain large...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a clear, well-scoped engineering contribution with sound technical formulations, complete calibration details, thorough ablation studies, and objective benchmarking on an independent holdout set against ground truth.</p>
+      <p>The authors explicitly note that evaluation was conducted at a single roadside installation, fixed template bounds limit adaptability across vehicle sub-types, and yaw prediction models are site-optimized.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-15T08:51:58.470260+00:00.</p>
+        <p>Coverage: 42846 of 42846 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>end-to-end models prone to failure and difficult to
+adapt without massive location-specific datasets. Hence, instead of
+designing a complex end-to-end pipeline for direct 3D bounding
+box estimation, a low-cost, resource-efficient two-stage approach
+is proposed for real-time 3D shape and orientation estimation.
+The first stage utilizes any off-the-shelf, state-of-the-art method
+to extract 2D camera bounding boxes and associated 3D radar
+points for each road user. The proposed second stage then
+processes these inputs to construct 3D oriented bounding boxes
+where radar data determines 3D position, predefined templates
+define size for each road user, and a tiny neural network
+predicts a site-specific and optimized yaw angle. The algorithm
+is successfully validated at a curved road with a junction for
+pedestrians, bicycles, and cars, where it achieves25frames per
+second on an NVIDIA Jetson </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>time-consuming, a
+more practical engineering solution is to design lightweight
+algorithms that quickly adapt to new sensor mountings. By
+shifting the focus toward rapid, location-specific adaptation,
+accurate and real-time 3D perception of road users can be
+reliably achieved across varying roadside infrastructure.
+Hence, a low-cost, resource-efficient two-stage approach is
+proposed for real-time 3D shape and orientation estimation
+using a roadside-mounted RGB camera and 3D radar sen-
+sor. The first stage utilizes any off-the-shelf, state-of-the-art
+method to extract 2D camera bounding boxes and associated
+3D radar points for each road user. The proposed second stage
+arXiv:2610.18417v1  [cs.CV]  13 Oct 2026
+then processes these inputs to construct 3D oriented bounding
+boxes where radar data determines 3D position, predefined
+templates define size for each road user, and a tiny neural </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>extrinsic calibration matrices such as radar-to-camera
+(TRC), lidar-to-camera (T LC), and radar-to-lidar (T RL) are
+calculated using the methodology described in [33]. The lidar-
+to-ground extrinsic matrix (T LG) is derived by applying a
+vertical translation along theZ-axis, compensating for the
+physical mounting height of the sensor assembly. Utilizing
+these calibration matrices, the proposed framework performs
+various spatial coordinate transformations as illustrated in
+Fig. 1 (right).
+IV. METHODOLOGY
+The proposed two-stage framework for 3D road user detec-
+tion using a roadside RGB camera and 3D radar is illustrated in
+Fig. 2. By decoupling instance association from 3D geometry
+estimation, this approach circumvents the need for complex,
+end-to-end deep learning models for direct 3D bounding box
+prediction. In Stage 1, processing is strictly restricted to 2D
+image detection and 3D </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>radar point association, making it in-
+herently independent of ground plane embeddings or location-
+specific camera-radar calibration priors. Subsequently, Stage 2
+estimates the final 3D bounding boxes by deriving the 3D tar-
+get positions directly from radar points, while leveraging pre-
+defined size templates and site-specific geometric constraints
+with minimal training data requirements. Consequently, rather
+than relying on complex end-to-end models that scale poorly
+to new sensor configurations in roadside sensor setups, Stage 2
+focuses on finding an optimized, lightweight solution explicitly
+tailored for rapid, site-specific deployments.
+Fig. 2: Overview of the two-stage roadside 3D object detection
+framework. Inputs comprise a monocular image frameIand a
+sparse 3D radar point cloud frameP. Stage 1 yields a set ofN
+road user instancesD={(b i, ci, si,P i)}Ni=1, whereb i is the
+2D </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>bounding box,c i is the object category,s i is the detection
+confidence score, andP i is the associated radar point subset.
+Stage 2 estimates the 3D Oriented Bounding Box (OBB) state
+vectors{Θ i}Ni=1 for all detected instances.
+A. Problem Formulation
+Given a synchronized monocular image frameI∈
+RH×W×3 and a sparse radar point cloudP={p k ∈R 5}Kk=1
+containing 3D spatial coordinates, Doppler velocity, and Radar
+Cross Section (RCS), the first stage yieldsNroad user
+instances. For thei-th instance, the input comprises a 2D
+bounding boxb i ∈R 4 in image space and an associated subset
+of 3D radar pointsP i ⊆P.
+The objective is to estimate the 3D Oriented Bound-
+ing Box (OBB) parametrized by the state vectorΘ i =
+(xi,d i, ψi, vr,i, si, ci), wherex i = (x i, yi, zi)⊤ ∈R 3 rep-
+resents the 3D bounding box centroid with respect to the
+roadside sensor setup in ground plane,d i = (li, wi, hi)⊤ ∈R </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>spa-
+tial clustering for 3D radar point association. Unassociated
+or empty radar clusters default to monocular ground-plane
+homography depth estimates. The primary objective of this
+stage is to extract candidate 2D bounding boxesb i from the
+monocular imageIand isolate the corresponding 3D radar
+pointsP i for each detected road user instance. The resulting
+outputD={(b i, ci, si,P i)}Ni=1 serves as a lightweight,
+domain-agnostic representation containing all required multi-
+modal spatial cues for subsequent 3D estimation.
+C. Stage 2: 3D Shape and Orientation Estimation
+Stage 2 receives the localized instance associationsDfrom
+Stage 1 and constructs 3D bounding boxes, parameterized
+by the state vectorΘ i = (x i, yi, zi, li, wi, hi, ψi, vr,i, si, ci).
+In this proof-of-concept framework, three primary road user
+categories are evaluated: pedestrians, bicycles, and cars.
+The pipeline </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>umax, vmax)⊤ are expressed in
+homogeneous pixel coordinates asp m = [u m, vm,1] ⊤ for
+m∈ {1,2,3,4}, corresponding to(u min, vmin),(u max, vmin),
+(umin, vmax), and(u max, vmax).
+Because mapping 2D image coordinates to 3D space is
+inherently unconstrained, recovering metric 3D position re-
+quires explicit depth information. In the presented pipeline,
+this metric depth scalesis supplied directly by the associated
+radar cluster using its minimum longitudinal coordinate, such
+thats=x min = min k(x(k)). Given the camera projection
+matrixP=K·T RC (refer to Fig. 1 (right)), its augmented
+4×4homogeneous form ˜Pis constructed by appending the
+row vector[0,0,0,1].
+Each 2D pixel cornerp m is first inverse-projected into 3D
+radar space via ˜P−1, and subsequently transformed into 3D
+ground coordinatesX g,m = [x g,m, yg,m, zg,m,1] ⊤ using the
+extrinsic transformationsT RL (radar-to-lidar) andT LG </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>spatial
+extents∆x bic,i and∆y bic,i are measured across the cluster
+Pi. The final bicycle lengthl bic,i and widthw bic,i are then
+evaluated using (8) and (9) respectively. ForKi = 1, minimum
+values of length and width are used.
+lbic,i =
+
+
+
+lbic,min,if∆x bic,i &lt; lbic,min
+∆xbic,i,ifl bic,min ≤∆x bic,i ≤l bic,max
+lbic,max,if∆x bic,i &gt; lbic,max
+(8)
+wbic,i =
+
+
+
+wbic,min,if∆y bic,i &lt; wbic,min
+∆ybic,i,ifw bic,min ≤∆y bic,i ≤w bic,max
+wbic,max,if∆y bic,i &gt; wbic,max
+(9)
+For yaw angle estimation, a lightweight multi-modal neural
+network,YawPredictionNet(as illustrated in Fig. 3), is de-
+signed to jointly regress the sine and cosine components of the
+target orientation (sinψ,cosψ). The network processes two
+parallel input streams. Image ROI crops (224×224×3) are
+normalized via ImageNet statistics (µ= [0.485,0.456,0.406],
+σ= [0.229,0.224,0.225]) and associated radar point fields
+(x, y, vx, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Manually labeled 3D bounding boxes from the lidar sensor
+serve as the ground truth (GT) data in this work. Distinct
+datasets are dedicated to training and validating theYawPredic-
+tionNetmodels. At the same time, a separate, independent set
+of500frames containing451persons,360bicycles, and299
+cars is reserved exclusively for validating the final 3D OBB
+outcome of the proposed methodology and is omitted from
+parameter tuning. To prevent temporal data leakage, dataset
+splits are created using sequence-disjoint segments rather than
+random frame sampling. This frame count was strategically
+chosen as manual 3D annotation of dense point clouds is
+exceptionally labor-intensive, yet the total count of over1100
+well-distributed dynamic object instances across these frames
+provides a statistically robust and diverse evaluation set. At the
+selected location, the distribution of the road users is </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Training and validation forYawPredictionNetmodels for
+bicycles and cars is performed using AdamW (initial learn-
+ing rate10 −3, batch size1, gradient clip0.5) with a
+ReduceLROnPlateauscheduler (patience 50 epochs) op-
+timizingL total =L MSE(sinψ) +L MSE(cosψ). Class-specific
+parameters are configured as follows:
+•Bicycle:Trained for400epochs (262train /66val
+samples) with weight decay0.3, requiring only73,442
+trainable parameters.
+•Car:Trained for100epochs (329train /76val samples)
+with weight decay0.2, requiring only40,162trainable
+parameters.
+Owing to the lightweight architecture and minimal dataset
+size required for training,YawPredictionNetis exceptionally
+deployment-friendly and easily adaptable to real-time embed-
+ded hardware. Furthermore, while lidar is utilized in this work,
+ground-truth yaw orientation can be conveniently sourced from
+alternative modalities.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(0.21,0.05) (0.55,0.42) (0.15,0.07) (0.22,0.06) (0.08,0.09)
+134.4/4.9 1.8/2.0 1.25 (0.38,0.29) (0.21,0.05) (0.55,0.42) (0.15,0.07) (0.07,0.09) (0.39,0.13)
+144.4/4.9 1.8/2.0 0.75 (0.38,0.29) (0.21,0.05) (0.55,0.42) (0.15,0.07) (0.39,0.10) (0.39,0.98)
+TABLE IV: Comparison of bounding box estimation errors (mean, std) with baseline methods (B1: Baseline 1, B2: Baseline
+2). Mean and standard deviation are calculated over all500validation frames.
+Class Methodx c (m)y c (m)z c (m) Length (m) Width (m) Height (m) Yaw ( ◦)
+Person
+B1 (1.10,0.89) (0.37,0.44) (0.21,0.12) (0.40,0.09) (0.15,0.04) (0.27,0.19) –B2 –
+Ours(0.12,0.09) (0.09,0.07) (0.17,0.09) (0.11,0.09) (0.07,0.06) (0.20,0.11)–
+Bicycle
+B1 (2.42,2.43) (0.53,0.76) (0.14,0.09) (0.28,0.11) (0.05,0.04) (0.16,0.16) –B2 (15.04,16.27)
+Ours(0.36,0.22) (0.21,0.16) (0.09,0.05) (0.10,0.09) (0.05,0.04) (0.10,0.08) (4.93,4.63)
+Car
+B1 (2.67,2.36) </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(0.77,1.27) (0.22,0.07) (0.21,0.11) (0.15,0.07) (0.06,0.08) –B2 (5.88,4.30)
+Ours(0.38,0.29) (0.55,0.42) (0.22,0.06) (0.21,0.05) (0.15,0.07) (0.08,0.09) (3.68,3.65)
+executes seamlessly in real time at 25 FPS on an NVIDIA
+Jetson AGX Orin edge platform, rendering it exceptionally
+suitable for practical edge deployments where computational
+resources are tightly constrained. Fig. 4 shows some visual
+examples for reference.
+VI. CONCLUSION
+This paper presented a low-cost, resource-efficient two-stage
+framework for real-time 3D shape and orientation estimation
+of pedestrians, bicycles, and cars using roadside camera-radar
+setups. The methodology leverages associated sparse radar
+point clouds to establish precise 3D target positions, applies
+bounded dimension templates to stabilize object scale against
+point sparsity, and employs a lightweight neural network to
+regress site-specific yaw angles </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for bicycles and cars ac-
+curately. Comprehensive ablation studies established optimal
+dimension parameters, while comparative evaluations against
+camera-only homography baselines demonstrated significant
+performance gains. Operating at25FPS on an NVIDIA Jetson
+AGX Orin, the proposed system provides a practical, edge-
+friendly solution for real-time roadside perception.
+Despite its efficiency, this work is limited to a single
+roadside setup, and fixed template bounds cannot capture fine-
+grained size variations across vehicle sub-classes. Future work
+will evaluate cross-site transferability across diverse sensor ge-
+ometries and road geographies, implement dynamic templates,
+and expand support to heavy vehicles and motorbikes.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +314,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +330,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-13</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-14 09:17:18</li><li>Last seen by Paper Scout: 2026-10-14 09:17:44</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-13</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-14 09:17:18</li><li>Last seen by Paper Scout: 2026-10-15 08:50:58</li></ul>
             <ul><li>arXiv: 2610.18417</li><li>arXiv IDs: 2610.18417</li></ul>
           </section>
           <section class="detail-panel">

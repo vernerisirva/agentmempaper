@@ -59,16 +59,176 @@
             <p>Long-term memory has become a core component of large language model (LLM) agents. As agents accumulate personal information over long-term use, users increasingly ask them to delete sensitive or outdated facts. A memory system should honor such requests. It should remove exactly what was requested and keep the rest...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers a rigorous, well-controlled experimental framework for an under-evaluated task in agent architectures. The pairing with control dialogues prevents degenerate solutions (such as total memory wipe or failure to store) from appearing successful, accompanied by human judge validation and statistical uncertainty analysis.</p>
+      <p>The authors document key limitations including the purely synthetic nature of the multi-session dialogues and restriction to conversational memory without evaluating tool caches, external logs, or web-service traces.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-15T08:51:43.007518+00:00.</p>
+        <p>Coverage: 89927 of 89927 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory has become a core component of large language model (LLM)
+agents. As agents accumulate personal information over long-term use, users in-
+creasingly ask them to delete sensitive or outdated facts. A memory system should
+honor such requests. It should remove exactly what was requested and keep the
+rest of its memory intact. However, existing memory benchmarks evaluate only
+memory writing, retrieval, and organization, so whether agents can forget at the
+user&#x27;s explicit request remains under-evaluated. To address this gap, we propose
+BEMULA, the first benchmark dedicated to memory unlearning. It comprises 50
+multi-session dialogue instances, 135 forget requests of six types, and 1,742 test
+questions. Each dialogue has a control version without the requests, so that only
+systems that have stored the target can earn credit for forgetting. Across the paired
+versions, five </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>test suites measure storage, removal of the requested information,
+preservation of unrelated memories, relearning of similar facts, and resistance to
+extraction attacks. On BEMULA, we evaluate six mainstream memory systems
+under three backbone LLMs, together with the Full Context LLM on two of them.
+The results are negative. Across all evaluated systems and backbones, no system
+passes more than 1.5% of forget requests end to end, and most pass none at all.
+These systems either leave the requested information extractable under simple at-
+tacks or delete far more than requested. Memory unlearning therefore remains
+an open challenge for agent memory design. We release our data and code at
+https://github.com/Nboxff/bemula-benchmark.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>or refuse to answer related questions would all score perfectly, even
+though none of them removes the target while keeping the rest of the memory usable. We therefore
+pair each dialogue with a control version without forget requests, and score every probe against its
+control counterpart, so that only systems that retain the target can earn credit for forgetting. Each
+forget request is evaluated by a suite of retention, efficacy, relearning, and attack questions, with
+instance-level preservation questions to catch over-deletion.
+In summary, the main contributions of this paper are threefold:
+•Task definition.We propose memory unlearning as a new task for LLM agents and organize
+forget requests into a six-type taxonomy along three axes. Each dialogue containing forget
+requests is paired with a control version, separating genuine forgetting from a failure to encode.
+•The BEMULAbenchmark.We </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the history are forget re-
+quests expressed in natural language, each asking the agent to delete specific information disclosed
+earlier in the dialogue. The memory system must interpret these requests as deletion instructions and
+updateMaccordingly. In the memory unlearning task, the requested information must be neither
+retrievable nor inferable from memory after a forget request, while all other content remains intact
+and similar facts can still be learned. In BEMULA, each instance is paired with a control versionD ′,
+in which every forget request and the assistant&#x27;s confirmation are replaced by a semantically neutral
+filler interaction of comparable length. All other turns inD ′ are the same as inD.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>During the evaluation, the system ingests the dialogue session by session and answers each test
+question in a fresh session whose working context contains only the query, so every answer must
+come from memoryM. The evaluation produces a binary outcome for every test question. To
+6
+Preprint.
+separate the never-remembered from the genuinely forgotten, we evaluate each forget request against
+paired control probes. We score the retention suite on the control version and the other four suites
+on the forget version. The preservation and attack questions are also asked on the control version,
+where they serve as the conditioning probes for the forget-version items.
+Formally, we writeS ret,S eff,S pres,S rl, andS att for the question sets of the retention, efficacy,
+preservation, relearning, and attack suites, and we partition the attack suite by attack type into
+S1, . . . , Sm, withm= 5in </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>BEMULA. Letz i ∈ {0,1}be the correctness of questionion the
+version on which it is scored, and letc i ∈ {0,1}be the outcome of its paired control probe. The
+effective correctness˜zi =z i ∧c i conditions every efficacy, preservation, and attack question on the
+control version. Retention questions and replacement new-value questions have no control counter-
+part and takec i = 1. For a question sets, we write its average effective correctness as
+M(s) = 1|s| Xi∈s ˜zi.(2)
+The five item-level metrics apply Eq. 2 to the corresponding suite, so each of the first four averages
+the effective correctness over one question set,
+RA = M(Sret),FE = M(S eff ),PR = M(S pres),RLA = M(S rl),AR = 1m
+mX
+a=1
+M(Sa).
+(3)
+The retention accuracy (RA) tests normal memorization ability. The forgetting efficacy (FE) credits
+a question as correctly forgotten only when the forget-version response reports the fact as </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>unavailable
+without leaking the target value. Preservation (PR) credits a question only when the control version
+also answers it correctly. Relearning accuracy (RLA) tests the acquisition of similar facts after a
+forget request is issued. Finally, attack robustness (AR) credits an attack as defended only when it
+fails after the forget request. All answers are graded by an LLM judge, and all metrics are reported
+as percentages.
+The request pass rate (RPR) is the strictest metric, whereRis the set of forget requests,I r the
+questions scored for requestr, andP(r)the preservation questions of the instance that containsr.
+RPR = 1|R| Xr∈R 1h ^i∈Ir ˜zi ∧  ^j∈P(r) ˜zji.(4)
+A request passes only when all of its questions and all preservation questions of its instance are
+correct. The overall BEMULAscore multiplies two geometric-mean factors,
+Score = F A×UG,F A =
+√
+FE·AR,UG </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>=
+√
+PR·RLA,(5)
+where forgetting ability (F A) measures how well a system erases the requested information, and
+usability guard (UG) measures whether the system remains usable afterwards. Because the score is
+a product, a zero on any of the four metrics zeroes the total. A system that deletes everything scores
+no better than one that forgets nothing, and a system that can no longer learn similar facts also scores
+zero.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Preprint.
+Table 1: Main results on BEMULAunder three backbone LLMs.RA: retention accuracy.FE:
+forgetting efficacy.PR: preservation.RLA: relearning.AR: attack robustness.RPR: request pass
+rate.Score: overall score (F A×UG, Eq. 5). All scores are percentages. Appendix K reports 95%
+bootstrap CIs.
+Suite Metrics Aggregate
+SystemRA FE PR RLA AR RPR Score
+Backbone:
+ GPT-5.6-Luna
+Full Context 84.4 26.8 73.398.2 27.60.023.1
+Naive RAG 75.9 14.7 67.3 71.1 12.9 0.0 9.5
+LangMem 50.437.920.0 78.9 25.6 0.0 12.4
+Mem0 89.7 8.5 80.0 77.2 4.7 0.0 4.9
+A-MEM 80.4 33.0 59.3 88.6 24.7 0.0 20.7
+LightMem 92.9 17.988.080.7 18.0 0.0 15.1
+SimpleMem93.316.1 82.7 90.4 18.7 0.0 15.0
+Backbone:
+ DeepSeek-V4.1-Flash
+Full Context 75.053.646.0100.032.9 0.7 28.5
+Naive RAG 72.8 12.5 64.7 71.1 11.8 0.0 8.2
+LangMem 92.0 40.6 74.0 89.535.7 1.5 31.0
+Mem0 87.9 17.0 86.7 71.1 12.6 0.0 11.5
+A-MEM 73.2 29.5 54.0 93.0 21.2 0.0 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>17.7
+LightMem94.612.994.082.5 10.4 0.0 10.2
+SimpleMem 90.6 17.9 84.7 90.4 20.0 0.7 16.5
+Backbone:
+ Qwen3-32B-AWQ
+Naive RAG 73.2 7.1 63.3 72.8 5.0 0.0 4.0
+Mem0 84.4 10.3 65.3 79.8 8.2 0.0 6.6
+LangMem 21.914.75.393.99.4 0.0 2.6
+LightMem92.98.986.072.8 5.6 0.0 5.6
+SimpleMem 78.6 14.3 54.7 83.3 14.00.09.5
+instance, we reset the memory system. The system ingests the forget versionDor the control ver-
+sionD ′ turn by turn and then answers the test questions in a fresh session. All answers are judged
+by DeepSeek-V4.1-Flash. We quantify sampling uncertainty with a cluster bootstrap over instances
+(Appendix K) and base pairwise system comparisons on paired bootstrap differences.</blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We have presented BEMULA, the first benchmark dedicated to memory unlearning in LLM agents.
+Evaluations of six memory systems and the Full Context LLM under up to three backbone LLMs
+show a consistent pattern. Systems retain target information reliably, yet forgetting on demand
+largely fails, and almost no request passes its full suite. Memory unlearning therefore remains an
+open challenge. Our study has two limitations. The dialogues are synthetic and come from one
+generation pipeline, and the benchmark covers conversational memory only, whereas tool-using
+agents can leave forgotten values in caches, logs, or external services. Extending BEMULAto real-
+user dialogues and tool use is a natural next step.
+9
+Preprint.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ETHICS STATEMENT
+BEMULAcontains only synthetic data. All user profiles, facts, and dialogues are produced by an
+LLM pipeline and do not describe any real person, so the benchmark creates no privacy risk for
+individuals. The attack suite includes prompt-based extraction techniques such as jailbreak prefixes,
+and we use them only to measure whether memory systems leak deleted information. The bench-
+mark is intended to encourage defenses against such extraction. Since the grading relies on an LLM
+judge, its verdicts may carry model biases. We mitigate this risk with a human validation of the
+LLM judge on 100 sampled items, which yields 98% agreement. We expect the benchmark to have
+a positive societal impact as well. It provides a systematic way to evaluate whether agent memory
+systems honor deletion requests, and it therefore supports privacy protection goals such as the right
+to be </blockquote></details></li><li><strong>Contribution clarity — pages 13–14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>B HUMANVALIDATION OF THELLM JUDGE
+Every item in BEMULAis graded by an LLM judge, so we validate the judge on a human-annotated
+sample of 100 graded items. We balance the two verdicts at sampling time, so that both outcomes
+contribute equally to the agreement estimate. The annotator sees the question, the grading rubric,
+the ground truth, the system answer, and the source dialogue turns, and we hide the judge verdict
+until the annotator records the score.
+13
+Preprint.
+Table 3: Agreement between the human annotator and the LLM judge on the 100 sampled items.
+Rows give the judge verdict and columns give the annotator verdict.
+Judge verdict Annotator correct Annotator incorrect Agreement
+Correct 53 1 98.1%
+Incorrect 1 45 97.8%
+All 54 46 98.0%
+Table 3 reports the outcome. The annotator agrees with the judge on 98 of the 100 items, and
+Cohen&#x27;s kappa is 0.96.</blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>K BOOTSTRAPCONFIDENCEINTERVALS
+We quantify the sampling uncertainty of the main results with a cluster bootstrap over instances.
+Questions within one instance share a profile and a dialogue history, so they are not independent
+samples, and the instance is the outermost independent unit in our data. Each of the 10,000 resam-
+ples draws 50 instance ids with replacement, gathers every item of the drawn instances from both
+dialogue versions so that control-probe conditioning is preserved, and recomputes the official met-
+rics. Table 8 reports the point estimate and the percentile 95% CI of every suite metric. We do not
+report an interval forRPR, whose point estimates are almost all zero. For pairwise comparisons we
+resample the same instance draws for both systems and report the CI of the metric difference.
+Three observations follow from the intervals. First, neighboring ranks in Table 1 </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +267,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +283,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-13</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-14 09:15:23</li><li>Last seen by Paper Scout: 2026-10-14 09:15:49</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-13</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-14 09:15:23</li><li>Last seen by Paper Scout: 2026-10-15 08:48:33</li></ul>
             <ul><li>arXiv: 2610.18052</li><li>arXiv IDs: 2610.18052</li></ul>
           </section>
           <section class="detail-panel">

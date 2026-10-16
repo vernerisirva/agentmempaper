@@ -88,6 +88,38 @@ class AutomaticSelection(unittest.TestCase):
         self.assertEqual([(c.canonical_id, c.queue) for c in selected],
                          [("older", "backlog"), ("old", "recent")])
 
+    def test_arxiv_assessment_survives_a_doi_identity_change(self):
+        # Production reproduction: MemCode was assessed under arxiv:2610.19472,
+        # then merged into its arXiv DOI during the next discovery run.
+        selected, summaries = self.select({"t": [
+            paper("doi:10.48550/arxiv.2610.19472", "2026-10-15")]},
+            stored={"arxiv:2610.19472": [row("success")]})
+        self.assertEqual(selected, [])
+        self.assertEqual(summaries["t"].already_assessed, 1)
+
+    def test_doi_assessment_survives_the_reverse_identity_change(self):
+        selected, _ = self.select({"t": [paper("arxiv:2610.19472", "2026-10-15")]},
+            stored={"doi:10.48550/arxiv.2610.19472": [row("success", status="uncertain")]})
+        self.assertEqual(selected, [])
+
+    def test_alias_matching_does_not_multiply_technical_attempts(self):
+        selected, _ = self.select({"t": [paper("doi:10.48550/arxiv.2610.19472", "2026-10-01")]},
+            stored={"doi:10.48550/arxiv.2610.19472": [
+                row("transport_failure", at="2026-10-01T00:00:00+00:00")]})
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(selected[0].retry.attempts, 1)
+
+    def test_suppression_follows_an_identifier_alias(self):
+        selected, summaries = self.select({"t": [paper("doi:10.48550/arxiv.2610.19472", "2026-10-01")]},
+                                          suppressed={"arxiv:2610.19472"})
+        self.assertEqual(selected, [])
+        self.assertEqual(summaries["t"].suppressed, 1)
+
+    def test_an_unrelated_assessment_does_not_exclude_a_new_paper(self):
+        selected, _ = self.select({"t": [paper("arxiv:2610.19472", "2026-10-15")]},
+                                 stored={"arxiv:2610.19473": [row("success")]})
+        self.assertEqual(len(selected), 1)
+
 
 class AutomaticWalk(unittest.TestCase):
     def setUp(self):
@@ -184,6 +216,64 @@ class AutomaticStatus(unittest.TestCase):
     def test_deterministic_placeholder_is_not_an_ai_assessment(self):
         self.assertEqual(self.label(quality_status="uncertain", quality_assessor_type="deterministic"),
                          "Awaiting AI assessment")
+
+
+class MergedAssessmentHistory(unittest.TestCase):
+    def candidate(self, key, **changes):
+        from paper_scout.site import LibraryPaper
+        p = dict(canonical_id=key, title="MemCode: Discrete Semantic Representations for Long-Term Agent Memory",
+                 authors=[], abstract_summary="Memory study", reason="Relevant", score=90,
+                 decision="relevant", tags=[], source="arxiv", source_id="2610.19472",
+                 doi=None, arxiv_id="2610.19472", semantic_scholar_id=None, openalex_id=None,
+                 url=None, published_date="2026-10-14", first_seen_at="2026-10-15",
+                 last_seen_at="2026-10-16", notified_at=None, notified_date=None)
+        p.update(changes)
+        return LibraryPaper(**p)
+
+    def assessed(self, status="pass", at="2026-10-16T08:00:00+00:00", outcome="success"):
+        return self.candidate("arxiv:2610.19472", quality_status=status,
+                              quality_assessed_at=at, quality_assessor_type="hybrid",
+                              quality_scope="full_text", quality_full_text_assessed=True,
+                              quality_promotion={"outcome": outcome, "primary": {"canonical_id": "arxiv:2610.19472"}})
+
+    def test_richer_source_metadata_cannot_erase_the_assessment(self):
+        from paper_scout.site import _main_library, _merge_two_papers
+        known = self.assessed()
+        richer = self.candidate("doi:10.48550/arxiv.2610.19472", score=99)
+        for left, right in ((known, richer), (richer, known)):
+            merged = _merge_two_papers(left, right)
+            self.assertEqual(merged.canonical_id, richer.canonical_id)
+            self.assertTrue(_main_library(merged))
+            self.assertEqual(merged.quality_promotion, known.quality_promotion)
+
+    def test_latest_scientific_decision_wins_including_nonpasses(self):
+        from paper_scout.site import _main_library, _merge_two_papers
+        for status in ("uncertain", "insufficient"):
+            latest = replace(self.assessed(status, at="2026-10-16T10:00:00+00:00"),
+                             canonical_id="doi:10.48550/arxiv.2610.19472")
+            merged = _merge_two_papers(self.assessed(), latest)
+            self.assertEqual(merged.quality_status, status)
+            self.assertFalse(_main_library(merged))
+
+    def test_technical_failure_does_not_replace_a_completed_decision(self):
+        from paper_scout.site import _merge_two_papers
+        failed = self.assessed("uncertain", at="2026-10-16T10:00:00+00:00", outcome="transport_failure")
+        merged = _merge_two_papers(self.assessed(), failed)
+        self.assertEqual(merged.quality_status, "pass")
+        self.assertEqual(merged.quality_promotion["outcome"], "success")
+
+    def test_receipt_times_are_compared_as_times_across_formats_and_offsets(self):
+        from paper_scout.site import _merge_two_papers
+        for timestamp in ("2026-10-16 09:00:00", "2026-10-16T11:00:00+02:00"):
+            merged = _merge_two_papers(self.assessed(), self.assessed("insufficient", at=timestamp))
+            self.assertEqual(merged.quality_status, "insufficient")
+
+    def test_suppression_is_preserved_when_metadata_aliases_merge(self):
+        from paper_scout.site import _main_library, _merge_two_papers
+        merged = _merge_two_papers(replace(self.assessed(), quality_suppressed=True),
+                                   self.candidate("doi:10.48550/arxiv.2610.19472", score=99))
+        self.assertTrue(merged.quality_suppressed)
+        self.assertFalse(_main_library(merged))
 
 
 if __name__ == "__main__":

@@ -34,7 +34,7 @@ import json
 from pathlib import Path
 import sqlite3
 
-from paper_scout.batch_population import paper_identities, ranked_candidates
+from paper_scout.batch_population import identities, paper_identities, ranked_candidates
 from paper_scout.config import ScoutConfig
 from paper_scout.operational_eligibility import (
     OPERATIONAL_POLICY_VERSION, RETRY_POLICY, RetryState, retry_state,
@@ -46,7 +46,7 @@ from paper_scout.operational_preflight import (
 
 #: v3 records the backlog/recent selection policy and complete eligible queue counts.
 OPERATIONAL_RUN_VERSION = "operational-run-v3"
-SELECTION_POLICY_VERSION = "backlog-and-recent-v1"
+SELECTION_POLICY_VERSION = "backlog-and-recent-v2"
 BACKLOG_AFTER_DAYS = 7
 ELIGIBLE_RELEVANCE = "relevant"
 
@@ -157,9 +157,21 @@ def select_operational_candidates(configs: dict[str, ScoutConfig], build_time: s
     for path in sources.values():
         for canonical_id, payloads in _stored_assessments(Path(path)).items():
             stored.setdefault(canonical_id, []).extend(payloads)
+    # Discovery can merge an arXiv record into its DOI or OpenAlex alias. Keep the
+    # original receipts intact, but match their identifiers to the current paper.
+    # Stable row indexes prevent one receipt matching several aliases from counting as
+    # several technical attempts.
+    history: dict[str, dict[int, dict]] = {}
+    row_index = 0
+    for canonical_id, payloads in stored.items():
+        for payload in payloads:
+            for alias in identities(canonical_id):
+                history.setdefault(alias, {})[row_index] = payload
+            row_index += 1
     suppressed: set[str] = set()
     for path in sources.values():
         suppressed |= _suppressed(Path(path))
+    suppressed_aliases = {alias for key in suppressed for alias in identities(key)}
 
     selected: list[OperationalCandidate] = []
     summaries: dict[str, TrackSelection] = {}
@@ -188,10 +200,13 @@ def select_operational_candidates(configs: dict[str, ScoutConfig], build_time: s
         summary.high_relevance = len(ranked)
         eligible = []
         for rank, paper in enumerate(ranked, start=1):
-            if paper.canonical_id in suppressed:
+            aliases = paper_identities(paper)
+            if suppressed_aliases.intersection(aliases):
                 summary.suppressed += 1
                 continue
-            state = retry_state(paper.canonical_id, stored.get(paper.canonical_id, []), now=now)
+            prior = {index: payload for alias in aliases
+                     for index, payload in history.get(alias, {}).items()}
+            state = retry_state(paper.canonical_id, prior.values(), now=now)
             if state.completed:
                 summary.already_assessed += 1
                 continue
@@ -199,7 +214,7 @@ def select_operational_candidates(configs: dict[str, ScoutConfig], build_time: s
                 summary.retry_blocked += 1
                 continue
             candidate = OperationalCandidate(paper.canonical_id, track, rank, paper.title, state,
-                                             identities=paper_identities(paper))
+                                             identities=aliases)
             eligible.append((first_seen(paper), candidate))
         summary.eligible = len(eligible)
         backlog = sorted((item for item in eligible if item[0] <= cutoff),

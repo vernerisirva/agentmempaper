@@ -20,6 +20,7 @@ from .enrichment import DateEnrichmentDiagnostics, enrich_candidate_publication_
 from .fetchers.arxiv import parse_arxiv_feed
 from .http import HttpClient
 from .models import PaperCandidate
+from .operational_eligibility import is_completed_scientific_assessment
 from .promotion_protocol import DUAL_PROMOTION_GATE_VERSIONS, adjudicator_consistency_error
 from .publication import publication_status
 from .quality import combined_rank_score
@@ -1157,8 +1158,24 @@ def _merge_two_papers(left: LibraryPaper, right: LibraryPaper) -> LibraryPaper:
     notified_at = _min_date_value(left.notified_at, right.notified_at)
     notified_date = _min_date_value(left.notified_date, right.notified_date)
     decision = "relevant" if "relevant" in {left.decision, right.decision} else best.decision
+    # Bibliographic richness/relevance must not erase an existing assessment when a
+    # source alias wins the metadata merge. Preserve the newest completed decision,
+    # including an inconclusive or insufficient one; do not cherry-pick passes.
+    def assessment_order(paper: LibraryPaper) -> tuple[bool, datetime]:
+        completed = is_completed_scientific_assessment({
+            "assessor_type": paper.quality_assessor_type,
+            "assessment_scope": paper.quality_scope,
+            "execution": paper.quality_promotion,
+        })
+        return completed, _datetime_value(paper.quality_assessed_at) or datetime.min
+
+    assessed = max((left, right), key=assessment_order)
+    quality_fields = {key: value for key, value in assessed.__dict__.items()
+                      if key.startswith("quality_")}
+    quality_fields["quality_suppressed"] = left.quality_suppressed or right.quality_suppressed
     return replace(
         best,
+        **quality_fields,
         canonical_id=best.canonical_id,
         title=best.title,
         authors=best.authors or left.authors or right.authors,

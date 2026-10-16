@@ -29,12 +29,12 @@ from __future__ import annotations
 
 from contextlib import closing
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime, timedelta
 import json
 from pathlib import Path
 import sqlite3
 
-from paper_scout.batch_population import ranked_candidates
+from paper_scout.batch_population import paper_identities, ranked_candidates
 from paper_scout.config import ScoutConfig
 from paper_scout.operational_eligibility import (
     OPERATIONAL_POLICY_VERSION, RETRY_POLICY, RetryState, retry_state,
@@ -44,12 +44,10 @@ from paper_scout.operational_preflight import (
     PREFLIGHT_VERSION, RunBudget,
 )
 
-#: v2 renamed the per-track key "selected" to "nominated" and added
-#: "skipped_before_model", because with the acquisition walk a nomination is no longer the
-#: same thing as an assessment. The version moves with the shape so a consumer keyed on
-#: the old name fails loudly against a declared version rather than silently reading a
-#: field that is no longer there.
-OPERATIONAL_RUN_VERSION = "operational-run-v2"
+#: v3 records the backlog/recent selection policy and complete eligible queue counts.
+OPERATIONAL_RUN_VERSION = "operational-run-v3"
+SELECTION_POLICY_VERSION = "backlog-and-recent-v1"
+BACKLOG_AFTER_DAYS = 7
 ELIGIBLE_RELEVANCE = "relevant"
 
 
@@ -62,10 +60,12 @@ class OperationalCandidate:
     rank: int
     title: str
     retry: RetryState
+    queue: str = "recent"
+    identities: tuple[str, ...] = ()
 
     def to_dict(self) -> dict:
         return {"canonical_id": self.canonical_id, "track": self.track, "rank": self.rank,
-                "title": self.title, "selection": self.retry.to_dict()}
+                "title": self.title, "queue": self.queue, "selection": self.retry.to_dict()}
 
 
 def _stored_assessments(path: Path) -> dict[str, list[dict]]:
@@ -107,6 +107,8 @@ class TrackSelection:
     ranked: int = 0
     high_relevance: int = 0
     suppressed: int = 0
+    eligible: int = 0
+    backlog_eligible: int = 0
     already_assessed: int = 0
     retry_blocked: int = 0
     candidates: list[OperationalCandidate] = field(default_factory=list)
@@ -117,6 +119,7 @@ class TrackSelection:
     def to_dict(self) -> dict:
         return {"ranked": self.ranked, "high_relevance": self.high_relevance,
                 "suppressed": self.suppressed,
+                "eligible": self.eligible, "backlog_eligible": self.backlog_eligible,
                 "completed_scientific_assessment": self.already_assessed,
                 "retry_blocked": self.retry_blocked,
                 "nominated": [c.to_dict() for c in self.candidates],
@@ -160,28 +163,31 @@ def select_operational_candidates(configs: dict[str, ScoutConfig], build_time: s
 
     selected: list[OperationalCandidate] = []
     summaries: dict[str, TrackSelection] = {}
-    # Nomination is not assessment. Each track may nominate up to walk_limit candidates,
-    # but the per-track and per-run assessment bounds are enforced by the caller during
-    # the walk, against papers that actually reach a model.
-    nominated: dict[str, int] = {}
+    day = date.fromisoformat(build_time[:10])
+    cutoff = day - timedelta(days=BACKLOG_AFTER_DAYS)
+    track_order = sorted(configs)
+    if track_order:
+        offset = day.toordinal() % len(track_order)
+        track_order = track_order[offset:] + track_order[:offset]
+    queues: dict[tuple[str, str], list[OperationalCandidate]] = {}
+    limit = max(0, walk_limit) if budget.max_per_track > 0 and budget.max_per_run > 0 else 0
 
-    def slot_available(track: str) -> bool:
-        # A zero assessment bound means nothing may reach a model, so nominating is
-        # pointless; otherwise the only nomination limit is the walk cap.
-        if budget.max_per_track <= 0 or budget.max_per_run <= 0:
-            return False
-        return nominated.get(track, 0) < max(0, walk_limit)
+    def first_seen(paper) -> date:
+        try:
+            return date.fromisoformat((paper.first_seen_at or "")[:10])
+        except ValueError:
+            # Missing discovery dates must not manufacture queue age.
+            return day
 
-    for track in sorted(configs):
+    for track in track_order:
         summary = TrackSelection(track)
         summaries[track] = summary
         papers, _ = ranked_candidates(configs[track], build_time)
         summary.ranked = len(papers)
         ranked = [p for p in papers if p.decision == ELIGIBLE_RELEVANCE]
         summary.high_relevance = len(ranked)
+        eligible = []
         for rank, paper in enumerate(ranked, start=1):
-            if not slot_available(track):
-                break
             if paper.canonical_id in suppressed:
                 summary.suppressed += 1
                 continue
@@ -192,10 +198,33 @@ def select_operational_candidates(configs: dict[str, ScoutConfig], build_time: s
             if not state.eligible:
                 summary.retry_blocked += 1
                 continue
-            candidate = OperationalCandidate(paper.canonical_id, track, rank, paper.title, state)
-            selected.append(candidate)
-            summary.candidates.append(candidate)
-            nominated[track] = nominated.get(track, 0) + 1
+            candidate = OperationalCandidate(paper.canonical_id, track, rank, paper.title, state,
+                                             identities=paper_identities(paper))
+            eligible.append((first_seen(paper), candidate))
+        summary.eligible = len(eligible)
+        backlog = sorted((item for item in eligible if item[0] <= cutoff),
+                         key=lambda item: (item[0], item[1].rank, item[1].canonical_id))
+        summary.backlog_eligible = len(backlog)
+        # Half the acquisition attempts go to the oldest waiting papers. The walk
+        # spends at most one assessment on this queue, leaving a slot for recent papers.
+        backlog = backlog[:min((limit + 1) // 2, max(1, len(eligible) - 1))]
+        backlog_ids = {candidate.canonical_id for _, candidate in backlog}
+        queues[track, "backlog"] = [
+            OperationalCandidate(c.canonical_id, c.track, c.rank, c.title, c.retry,
+                                 "backlog", c.identities) for _, c in backlog]
+        queues[track, "recent"] = [c for _, c in eligible if c.canonical_id not in backlog_ids][
+            :limit - len(backlog)]
+
+    # Give every track a turn before its next candidate. Backlog goes first; rotating
+    # the first track by date shares a tight spend ceiling across all tracks over time.
+    for queue in ("backlog", "recent"):
+        for index in range(limit):
+            for track in track_order:
+                candidates = queues[track, queue]
+                if index < len(candidates):
+                    candidate = candidates[index]
+                    selected.append(candidate)
+                    summaries[track].candidates.append(candidate)
     return selected, summaries
 
 
@@ -248,11 +277,13 @@ class OperationalMetrics:
                 "operational_eligibility": OPERATIONAL_POLICY_VERSION,
                 "credential_preflight": PREFLIGHT_VERSION,
                 "operational_budget": BUDGET_VERSION,
+                "selection": SELECTION_POLICY_VERSION,
             },
             "retry_policy": RETRY_POLICY,
             "limits": {"max_papers_per_track": MAX_PAPERS_PER_TRACK,
                        "max_papers_per_run": MAX_PAPERS_PER_RUN,
-                       "max_acquisition_walk_per_track": MAX_ACQUISITION_WALK},
+                       "max_acquisition_walk_per_track": MAX_ACQUISITION_WALK,
+                       "backlog_after_days": BACKLOG_AFTER_DAYS},
             "started_at": self.started_at,
             "completed_at": datetime.now(UTC).isoformat(),
             "discovery": {"papers_discovered": self.papers_discovered,

@@ -289,7 +289,7 @@ def build_site(
     )
     (docs_root / "review.html").write_text(
         _render_library_page(pending, latest, archive_digests, site_title=site_title,
-            site_subtitle="Relevant discoveries awaiting quality review or a stronger topical match.",
+            site_subtitle="Automatic assessment status, inconclusive results, and possible topical matches.",
             digest_link_prefix=digest_link_prefix, cross_track_label=None, cross_track_href=None,
             navigation=navigation, review_view=True, relevance_profile=relevance_profile), encoding="utf-8")
     (docs_root / "latest.html").write_text(
@@ -1746,7 +1746,7 @@ def _render_library_page(
           <nav class="top-nav" aria-label="Primary">
             <a class="brand" href="index.html">Library</a>
             <span class="nav-links">
-              <a href="review.html">Review candidates</a>
+              <a href="review.html">AI assessment status</a>
               <a href="about.html">About</a>
               <a href="archive.html">Archive</a>
               {cross_track_link}
@@ -1762,9 +1762,9 @@ def _render_library_page(
         {_library_controls(default_decision=default_decision, quality_enabled=quality_enabled, show_relevance=review_view, relevance_profile=relevance_profile)}
         <section class="paper-section primary-section" id="paper-library" data-section="library">
           <div class="section-heading">
-            <h2>{"Review candidates" if review_view else "High-quality relevant papers"}</h2>
-            <p>{"Quality pending does not mean scientifically weak. Historical records remain available here during gradual review. New papers are shown first for 24 hours." if review_view else "Quality-screened papers, newest first. New papers are shown first for 24 hours."}</p>
-            {('<p class="empty">No papers have passed manuscript quality review yet. <a href="review.html">Browse review candidates</a> while the library is progressively assessed.</p>' if not papers and not review_view else '')}
+            <h2>{"AI assessment status" if review_view else "High-quality relevant papers"}</h2>
+            <p>{"Highly relevant papers are assessed automatically. Pending and inconclusive results do not require you to review papers. Possible topical matches are kept separately from assessed recommendations." if review_view else "Quality-screened papers, newest first. New papers are shown first for 24 hours."}</p>
+            {('<p class="empty">No papers have passed manuscript quality review yet. <a href="review.html">Browse AI assessment status</a> while automatic assessment runs.</p>' if not papers and not review_view else '')}
           </div>
           <div class="paper-list" id="paper-list">
             {_library_paper_cards(papers, default_decision=default_decision, quality_display=quality_display) if papers or review_view else ""}
@@ -1803,7 +1803,7 @@ def _render_latest_discoveries_page(
         latest_notice = ""
     elif not has_highly_relevant:
         paper_cards = _library_paper_cards(papers, default_decision="all", quality_display=quality_display)
-        latest_heading = "Review candidates found in the latest run"
+        latest_heading = "Possible matches found in the latest run"
         latest_notice = '<p class="empty latest-empty">No highly relevant papers were found in the latest run. The cumulative library was refreshed.</p>'
     else:
         paper_cards = _library_paper_cards(papers, default_decision="all", quality_display=quality_display)
@@ -1819,7 +1819,7 @@ def _render_latest_discoveries_page(
             <span class="nav-links">
               <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
-              <a href="review.html">Review candidates</a>
+              <a href="review.html">AI assessment status</a>
               <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/{escape(digest_link_prefix)}/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
@@ -1872,7 +1872,7 @@ def _render_archive_page(
           </div>
           <dl>
             <div><dt>Highly relevant</dt><dd>{_section_count(item, 'Highly Relevant')}</dd></div>
-            <div><dt>Review candidates</dt><dd>{_section_count(item, 'Maybe Relevant')}</dd></div>
+            <div><dt>Possible matches</dt><dd>{_section_count(item, 'Maybe Relevant')}</dd></div>
             <div><dt>Warnings</dt><dd>{len(item.source_warnings)}</dd></div>
           </dl>
         </article>
@@ -1888,7 +1888,7 @@ def _render_archive_page(
             <span class="nav-links">
               <a href="index.html">Library</a>
               <a href="latest.html">Latest run</a>
-              <a href="review.html">Review candidates</a>
+              <a href="review.html">AI assessment status</a>
               <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/{escape(digest_link_prefix)}/latest.md">Latest Markdown</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
@@ -1920,9 +1920,9 @@ def _render_about_page(
         else f"{site_title} is generated by Paper Scout from a track-specific search configuration, relevance rubric, SQLite state, and optional curation file."
     )
     relevance_text = (
-        "The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; review candidates may be useful but need human judgment."
+        "The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; possible matches have less certain topical relevance."
         if is_agent_memory
-        else "The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports autonomous/deep research workflows; review candidates may be useful but need human judgment."
+        else "The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports autonomous/deep research workflows; possible matches have less certain topical relevance."
     )
     references = ""
     if relevance_profile == "computer_vision":
@@ -2013,7 +2013,7 @@ def _render_about_page(
           </article>
           <article>
             <h2>Scholarly-quality assessment</h2>
-            <p>Paper Scout separates topical relevance from scientific-quality assessment. The main library contains only highly relevant, quality-screened papers with a manuscript-based pass. Review candidates retain pending historical papers without implying they are weak.</p>
+            <p>Paper Scout separates topical relevance from scientific-quality assessment. The main library contains only highly relevant, quality-screened papers with a manuscript-based pass. Pending papers are assessed automatically. Inconclusive results and possible topical matches remain available without requiring manual review.</p>
             <p>Institutional affiliation, employer, country, author identity and prestige are not quality criteria. Peer review is informative metadata but is not sufficient. Preprints and repository-only manuscripts can pass with adequate methods, evidence, comparisons appropriate to the claims, and limitations. Missing full text leaves quality uncertain.</p>
             <p>Deterministic text patterns and legacy scores cannot earn pass. Research cards retain concise rationale, limitations, full-text provenance and versioned assessments. Quality screening does not prove scientific correctness.</p>
           </article>
@@ -2023,7 +2023,7 @@ def _render_about_page(
           </article>
           <article>
             <h2>Structured paper cards</h2>
-            <p>The cumulative library links each paper to a structured detail page and sidecar JSON. These static records are meant for human review and future agent workflows; fields are provenance-aware, incomplete extraction is shown as “Not extracted yet”, and the sidecar schema is published at <a href="data/paper-card.schema.json">paper-card.schema.json</a>.</p>
+            <p>The cumulative library links each paper to a structured detail page and sidecar JSON. These static records support reading and automated research workflows; fields are provenance-aware, incomplete extraction is shown as “Not extracted yet”, and the sidecar schema is published at <a href="data/paper-card.schema.json">paper-card.schema.json</a>.</p>
             <p>Structured cards are generated from title, abstract or summary, metadata, deterministic screening, and curation notes. They do not claim that Paper Scout has deeply read the full paper.</p>
           </article>
           <article>
@@ -2199,7 +2199,7 @@ def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "age
 def _paper_quality_detail_section(paper: LibraryPaper) -> str:
     evidence = "".join(_quality_evidence_detail(e) for e in paper.quality_evidence)
     return f"""<section class="detail-panel wide quality-detail-panel">
-      <h2>{'Quality reviewed' if paper.quality_status == 'pass' else 'Scientifically insufficient' if paper.quality_status == 'insufficient' else 'Quality pending'}</h2>
+      <h2>{_assessment_label(paper)}</h2>
       <p>{escape(paper.quality_rationale)}</p>
       <p>{escape(paper.quality_uncertainty)}</p>
       <p>Publication: {escape(paper.publication_status.replace('_', ' '))}. {escape(paper.publication_status_evidence)}</p>
@@ -2276,7 +2276,7 @@ def _summary_strip(digest: ParsedDigest) -> str:
         ("Candidates fetched", digest.summary.get("Candidates fetched", "0")),
         ("New unique papers", digest.summary.get("New unique papers", "0")),
         ("Highly relevant", digest.summary.get("Relevant", "0")),
-        ("Review candidates", digest.summary.get("Maybe relevant", "0")),
+        ("Possible matches", digest.summary.get("Maybe relevant", "0")),
         ("Digest-quality warnings", str(digest.digest_quality_warning_count)),
     ]
     metric_cells = "".join(f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells)
@@ -2305,7 +2305,7 @@ def _library_summary_strip(papers: list[LibraryPaper], latest: ParsedDigest) -> 
         ("Total known papers", str(len(papers))),
         ("New in latest run", str(latest_count)),
         ("Highly relevant", str(highly)),
-        ("Review candidates", str(maybe)),
+        ("Possible matches", str(maybe)),
         ("Latest update date", latest.date),
     ]
     metric_cells = "".join(f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells)
@@ -2321,7 +2321,7 @@ def _latest_summary_strip(papers: list[LibraryPaper], latest: ParsedDigest) -> s
         ("Latest update date", latest.date),
         ("New in latest run", str(len(papers))),
         ("Highly relevant", str(sum(1 for paper in papers if paper.decision == "relevant"))),
-        ("Review candidates", str(sum(1 for paper in papers if paper.decision == "maybe"))),
+        ("Possible matches", str(sum(1 for paper in papers if paper.decision == "maybe"))),
     ]
     metric_cells = "".join(f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells)
     return f"""
@@ -2345,7 +2345,7 @@ def _controls(sources: list[str]) -> str:
         <div class="segmented" id="relevance-filters">
           <button data-decision="all" class="active">All</button>
           <button data-decision="relevant">Highly relevant</button>
-          <button data-decision="maybe">Review candidates</button>
+          <button data-decision="maybe">Possible matches</button>
         </div>
       </div>
       <label class="high-toggle">
@@ -2416,7 +2416,7 @@ def _library_controls(default_decision: str = "all", quality_enabled: bool = Fal
         <select id="relevance-filter">
           <option value="relevant"{selected["relevant"]}>Highly relevant</option>
           <option value="all"{selected["all"]}>All papers</option>
-          <option value="maybe"{selected["maybe"]}>Review candidates</option>
+          <option value="maybe"{selected["maybe"]}>Possible matches</option>
         </select>
       </label>
     ''' if show_relevance else ""
@@ -2631,9 +2631,26 @@ def _library_paper_card(
     """
 
 
+def _assessment_label(paper: LibraryPaper) -> str:
+    if paper.quality_status == "pass":
+        return "Quality reviewed"
+    if paper.quality_status == "insufficient":
+        return "Scientifically insufficient"
+    outcome = paper.quality_promotion.get("outcome")
+    if (paper.quality_status == "uncertain"
+            and paper.quality_assessor_type in {"llm", "hybrid"}
+            and paper.quality_full_text_assessed
+            and outcome in {None, "success", "scientific"}):
+        return "AI assessment inconclusive"
+    if outcome and outcome not in {"success", "scientific", "not_assessed"}:
+        return "AI assessment unavailable"
+    if paper.decision != "relevant":
+        return "Possible topical match"
+    return "Awaiting AI assessment"
+
+
 def _paper_quality_summary(paper: LibraryPaper, display: QualityDisplayConfig | None = None) -> str:
-    label = "Quality reviewed" if paper.quality_status == "pass" else "Scientifically insufficient" if paper.quality_status == "insufficient" else "Quality pending"
-    return f'<p class="quality-summary"><strong>{label}</strong></p>'
+    return f'<p class="quality-summary"><strong>{_assessment_label(paper)}</strong></p>'
 
 
 def _paper_quality_metadata(paper: LibraryPaper, display: QualityDisplayConfig | None = None) -> str:
@@ -2823,7 +2840,7 @@ def _source_label(source: str) -> str:
 
 
 def _decision_label(decision: str) -> str:
-    return "Highly relevant" if decision == "relevant" else "Review candidate" if decision == "maybe" else decision
+    return "Highly relevant" if decision == "relevant" else "Possible match" if decision == "maybe" else decision
 
 
 def _published_text(paper: LibraryPaper) -> str:

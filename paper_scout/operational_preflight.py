@@ -21,37 +21,25 @@ reported, and only by environment-variable name.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+import math
 import os
 from typing import Any
 
 from paper_scout.promotion_protocol import MODEL_PROVIDERS, PROVIDERS
 
 PREFLIGHT_VERSION = "credential-preflight-v1"
-BUDGET_VERSION = "operational-budget-v1"
+BUDGET_VERSION = "operational-budget-v2"
 
-#: Conservative production bounds. One paper per track per scheduled run, and no more
-#: than one per track across all of them: the run ceiling is the track count, so a fourth
-#: track raised it from three to four and nothing else changed. A track with no eligible
-#: paper forfeits its slot; its quota is never transferred to another track, so the normal
-#: daily maximum stays below the ceiling by design.
-#:
-#: These bound papers that actually reach a model. A candidate rejected by acquisition or
-#: the coverage gate never issues a request and costs nothing, so it is bounded separately
-#: by MAX_ACQUISITION_WALK below rather than consuming a track's assessment slot.
-MAX_PAPERS_PER_TRACK = 1
-MAX_PAPERS_PER_RUN = 4
+#: Up to two papers per track and eight overall, subject to the unchanged spending
+#: ceiling. One slot gives the oldest backlog a turn; recent papers use the remainder.
+#: Acquisition failures cost no model call and are bounded separately below.
+MAX_PAPERS_PER_TRACK = 2
+MAX_PAPERS_PER_RUN = 8
 
-#: How many candidates one track may try before giving up for this run.
-#:
-#: Selection cannot know whether a manuscript is retrievable without fetching it, and the
-#: head of the ranking is dominated by records with no retrievable or coverage-valid PDF.
-#: Two production runs on 2026-09-19 took the single top candidate per track and reached a
-#: model 0 times out of 4. Batch 6, which walked the same ranking, needed 14 candidates to
-#: find 5 acquirable ones in agent_memory and 20 to find 5 in deep_research — roughly a
-#: quarter to a third. Six attempts per track makes finding one likely without turning a
-#: daily run into an unbounded crawl, and every attempt is recorded, so a permanently dead
-#: manuscript still parks at the retry budget instead of being probed forever.
-MAX_ACQUISITION_WALK = 6
+#: Bounded manuscript acquisition attempts per track: up to six backlog candidates
+#: and the remaining attempts for recent candidates. Technical failures retain the
+#: existing cooldown and retry limit, so an unavailable paper cannot block the queue.
+MAX_ACQUISITION_WALK = 12
 
 #: Per-run ceiling on *known* OpenRouter spend, in USD. A maximum, not a target.
 DEFAULT_OPENROUTER_RUN_CEILING_USD = 0.30
@@ -68,13 +56,8 @@ OPENROUTER_CEILING_ENV = "PAPER_SCOUT_OPENROUTER_RUN_CEILING_USD"
 #: provider-side spend limit on the OpenRouter key, which is an account setting rather
 #: than something this process can impose.
 #:
-#: Four papers still fit under $0.30 without adjusting the ceiling, which is why the
-#: fourth track did not change it. At the measured rate a full run spends 4 x $0.0297779
-#: = $0.119. At this deliberately high estimate, which is also what the exception path
-#: charges when a raise happens after requests were issued, a full run spends 4 x $0.05 =
-#: $0.20, and the pre-spend check before the fourth paper sees $0.15 + $0.05 = $0.20,
-#: still under the ceiling. The ceiling binds first at seven papers, so it remains a real
-#: guard rather than a formality.
+#: The paper limit is a maximum, not promised throughput: the spending ceiling can
+#: stop the run sooner. Actual priced receipts determine the next reservation.
 ESTIMATED_OPENROUTER_USD_PER_PAPER = 0.05
 
 
@@ -151,7 +134,7 @@ def credential_preflight(primary_model: str | None = None,
 #: Defined beside may_assess so a caller classifying a refusal cannot drift from the
 #: strings it actually returns; the walk imports this rather than repeating the literals.
 RUN_LEVEL_STOP_REASONS = frozenset({"run_paper_limit_reached", "openrouter_ceiling_reached",
-                                    "openrouter_projection_exceeds_ceiling"})
+                                    "openrouter_projection_exceeds_ceiling", "unknown_model_cost"})
 #: Reasons that end only the track they were raised for.
 TRACK_LEVEL_STOP_REASONS = frozenset({"track_paper_limit_reached"})
 
@@ -191,7 +174,7 @@ class RunBudget:
                 ceiling = float(raw)
             except ValueError as exc:
                 raise ValueError(f"{OPENROUTER_CEILING_ENV} is not a number") from exc
-            if ceiling <= 0:
+            if not math.isfinite(ceiling) or ceiling <= 0:
                 raise ValueError(f"{OPENROUTER_CEILING_ENV} must be positive")
         return cls(openrouter_ceiling_usd=ceiling)
 
@@ -205,6 +188,10 @@ class RunBudget:
         if reason in TRACK_LEVEL_STOP_REASONS:
             raise ValueError(f"track-level reason cannot stop the run: {reason}")
         self.stopped_reason = reason
+
+    def stop_for_unknown_cost(self) -> None:
+        """Do not use apparently remaining budget after an unpriced model request."""
+        self._stop("unknown_model_cost")
 
     @property
     def total_assessed(self) -> int:
@@ -245,7 +232,7 @@ class RunBudget:
         allowed, reason = self.may_assess(track)
         if not allowed:
             raise CostCeilingExceeded(reason)
-        if projected_usd < 0:
+        if not math.isfinite(projected_usd) or projected_usd < 0:
             raise ValueError("projected cost cannot be negative")
         if self.openrouter_spend_usd + projected_usd > self.openrouter_ceiling_usd:
             self._stop("openrouter_projection_exceeds_ceiling")

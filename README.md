@@ -554,6 +554,27 @@ Reports include run assessments and `library-quality-YYYY-MM-DD.json`: relevance
 
 Record [22735829](https://zenodo.org/records/22735829), *Structured Episodic Memory (SEM)* by Berat Araç, was fetched from the public API and its 13-page manuscript inspected on 2026-09-16. The API labels it a preprint, with no creator affiliation; the PDF cover says Independent Researcher. It is classified `repository_only` because no external journal/conference publication is documented. The manuscript supports a scoped scientific pass through explicit methods, numerical paired ablations and limitations; results were not independently reproduced. Small seed counts, engineered Pong tasks and absent conventional RL baselines limit generalization. Topically it is an adjacent Agentic Memory review candidate, and outside Deep Research/Engram. The curation correction is about topical fit, independent of quality and affiliation. The factual fixture retains metadata, file checksum and manuscript evidence, excluding mutable counters.
 
+## Automatic paper assessment
+
+Scheduled runs use Gemini to assess manuscript evidence and DeepSeek to check the
+assessment. No manual paper review is required. The assessment status page distinguishes
+**Awaiting AI assessment**, **AI assessment inconclusive**, and unavailable assessments
+from possible topical matches. The main library still requires a valid scientific pass.
+An inconclusive scientific result is retained, not repeatedly assessed until it passes.
+
+Each weekday run may assess up to **two papers per track, eight overall**, under the
+existing **$0.30 known OpenRouter spend ceiling**. Papers waiting at least seven days get
+the first assessment opportunity in each track, oldest discovery first. Recent discoveries
+use the remaining capacity. Tracks take turns and the starting track rotates by UTC date,
+so a spending limit cannot always favor the same track. Acquisition is bounded to twelve
+candidates per track; existing technical retry limits and cooldowns still apply.
+
+The spending check uses a $0.05 projection before each paper, reconciled against actual
+receipts afterward. It can stop the run before eight papers; a single paper may overrun
+its estimate. Unpriced requests stop further assessment. Gemini usage remains recorded in
+tokens under the MSc allocation, not included in the OpenRouter monetary ceiling. Queue
+metrics record eligible and overdue counts so backlog progress can be checked.
+
 ## User-Friendly Daily Reading
 
 Do not watch individual GitHub Actions run pages for daily reading. Actions are useful for debugging failed runs, but the reading surfaces are, in order:

@@ -745,26 +745,27 @@ class DurableState(unittest.TestCase):
 
 
 class OperationalBounds(unittest.TestCase):
-    def test_the_run_ceiling_is_one_slot_per_track_and_nothing_more(self):
+    def test_the_run_ceiling_is_two_slots_per_track(self):
         from paper_scout.operational_preflight import MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK
-        self.assertEqual(MAX_PAPERS_PER_TRACK, 1)
-        self.assertEqual(MAX_PAPERS_PER_RUN, len(TRACKS))
+        self.assertEqual(MAX_PAPERS_PER_TRACK, 2)
+        self.assertEqual(MAX_PAPERS_PER_RUN, 2 * len(TRACKS))
 
     def test_an_unused_track_slot_is_never_lent_to_another_track(self):
         from paper_scout.operational_preflight import RunBudget
         budget = RunBudget()
         budget.record(TRACK, openrouter_usd=0.01)
+        budget.record(TRACK, openrouter_usd=0.01)
         self.assertEqual(budget.may_assess(TRACK), (False, "track_paper_limit_reached"))
         self.assertTrue(budget.may_assess("agent_memory")[0])
         # Three tracks with nothing eligible do not hand their slots to this one.
-        self.assertEqual(budget.total_assessed, 1)
+        self.assertEqual(budget.total_assessed, 2)
 
     def test_the_cost_ceiling_was_not_raised_for_the_fourth_track(self):
         from paper_scout.operational_preflight import (
             DEFAULT_OPENROUTER_RUN_CEILING_USD, ESTIMATED_OPENROUTER_USD_PER_PAPER, RunBudget)
         self.assertEqual(DEFAULT_OPENROUTER_RUN_CEILING_USD, 0.30)
         budget = RunBudget()
-        for index in range(budget.max_per_run):
+        for index in range(4):
             budget.reserve(f"track{index}")
             budget.record(f"track{index}", openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
         self.assertLess(budget.openrouter_spend_usd, DEFAULT_OPENROUTER_RUN_CEILING_USD)
@@ -1110,7 +1111,7 @@ class WorkflowIntegration(unittest.TestCase):
             # Deliberately NOT asserting quota <= 1: the field is inert in the scheduled
             # pipeline, and forcing it to 1 would change what a manual run does.
         budget_track, budget_run = MAX_PAPERS_PER_TRACK, MAX_PAPERS_PER_RUN
-        self.assertEqual((budget_track, budget_run), (1, len(TRACKS)))
+        self.assertEqual((budget_track, budget_run), (2, 2 * len(TRACKS)))
 
     def test_the_committed_ceiling_matches_the_code(self):
         from paper_scout.operational_preflight import DEFAULT_OPENROUTER_RUN_CEILING_USD

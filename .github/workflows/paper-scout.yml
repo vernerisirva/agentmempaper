@@ -11,14 +11,10 @@ name: Paper Scout
 #   INDEPENDENT_REVIEW                  PASS_WITH_NOTES, 0 unresolved blockers
 #   FIRST_OPERATIONAL_SMOKE             PASS   run 35461618434, 2 assessed, 2 promoted
 #
-# Bounds are frozen and must not be raised without an explicit operational decision:
-# 1 paper per track per run, 4 per run, $0.30 known OpenRouter spend per run. The run
-# ceiling went from 3 to 4 on 2026-09-21 only because a fourth track (computer_vision) was
-# added; the per-track quota is unchanged and no track may ever assess more than one paper
-# per run. The cost ceiling was NOT raised: four bounded adjudications cost 4 x $0.0298 =
-# $0.119 at the measured rate, or $0.20 at the conservative per-paper estimate, both under
-# $0.30. A track with nothing eligible forfeits its slot rather than lending it, so the
-# usual daily maximum stays below the ceiling. This workflow and the weekly backfill share
+# Automatic assessment policy approved on 2026-10-16: up to 2 papers per track and 8
+# overall, with the unchanged $0.30 known OpenRouter ceiling. Oldest waiting papers
+# get the first opportunity; recent discoveries use remaining capacity. Actual spending
+# can stop a run before the paper maximum. This workflow and the weekly backfill share
 # one concurrency group with cancel-in-progress false and queue max, which is what keeps a
 # single writer on the durable state.
 on:
@@ -192,10 +188,10 @@ jobs:
                     file=__import__("sys").stderr)
           PY
 
-      # 4. The bounded scientific-assessment stage: at most one paper per track and four
-      #    per run, under the unchanged per-run OpenRouter ceiling. A track with nothing
-      #    eligible forfeits its slot rather than lending it, so the usual daily maximum
-      #    stays below the ceiling.
+      # 4. The bounded scientific-assessment stage: at most two papers per track and eight
+      #    per run, under the unchanged per-run OpenRouter ceiling. Backlog candidates
+      #    run first, oldest first, followed by recent discoveries.
+      #    The shared cost guard can stop a run before the paper maximum is reached.
       - name: Bounded scientific assessment
         id: assess
         if: ${{ !inputs.deploy_only && env.RUN_ASSESSMENT == 'true' && steps.preflight.outputs.ok == 'true' }}

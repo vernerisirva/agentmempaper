@@ -508,14 +508,14 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
 
 
 def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None:
-    """Walk each track's nominees in rank order until one actually reaches a model.
+    """Walk the backlog and recent queues within paper and spending limits.
 
     Selection cannot tell whether a manuscript is retrievable without fetching it, so a
     track nominates several candidates and this walk tries them in order. A candidate
     rejected by acquisition or the coverage gate issues no request, costs nothing, and
-    does not consume the track's assessment slot; the walk moves on. The first candidate
-    that actually contacts a model ends that track for this run, so the frozen bound of
-    one assessed paper per track per run is unchanged.
+    does not consume a slot. At most one backlog candidate per track reaches a model;
+    recent candidates use the remaining per-track capacity. The selector interleaves
+    tracks so one track cannot consume the shared spending budget before others try.
 
     Rejections are still persisted, exactly as before. That is deliberate: it is what
     parks a permanently unavailable manuscript at the retry budget instead of re-probing
@@ -530,6 +530,14 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
     # a real assessment and one stopped by a run-global condition are different events,
     # and skipped_before_model is grouped across runs.
     consumed: dict[str, str] = {}
+    backlog_consumed: set[str] = set()
+    attempted_identities: set[str] = set()
+
+    def consume_slot(candidate) -> None:
+        if candidate.queue == "backlog":
+            backlog_consumed.add(candidate.track)
+        if budget.assessed_per_track.get(candidate.track, 0) >= budget.max_per_track:
+            consumed[candidate.track] = "track_slot_consumed"
 
     def record_skip(candidate, outcome: str) -> None:
         """Note in the track summary why a nomination produced no assessment."""
@@ -555,6 +563,9 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
             # Finished, for the reason recorded when it finished.
             note_not_walked(candidate, consumed[candidate.track])
             continue
+        if candidate.queue == "backlog" and candidate.track in backlog_consumed:
+            note_not_walked(candidate, "backlog_slot_consumed")
+            continue
         allowed, reason = budget.may_assess(candidate.track)
         if not allowed:
             if reason in RUN_LEVEL_STOP_REASONS:
@@ -566,6 +577,10 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
             note_not_walked(candidate, reason)
             continue
         config = configs[candidate.track]
+        identities = set(candidate.identities or (candidate.canonical_id,))
+        if identities & attempted_identities:
+            note_not_walked(candidate, "already_attempted_this_run")
+            continue
         store = PaperStore(config.sqlite_path)
         rows = store.quality_candidates(days=None, paper_id=candidate.canonical_id)
         if not rows:
@@ -588,24 +603,26 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
                 note_not_walked(remaining, "cost_ceiling_exceeded")
             return
         metrics.papers_walked += 1
+        attempted_identities.update(identities)
         try:
             assessment = assess_and_store_candidate(
                 config.quality, store, paper, canonical_id,
                 ClassificationResult(0, decision, "Stored relevance classification."),
                 curation_path=config.curation_path)
-        except Exception as exc:  # noqa: BLE001 - one paper must not stop the run.
+        except Exception as exc:  # noqa: BLE001 - retain metrics and fail closed on unknown spend.
             logging.getLogger(__name__).warning("Operational assessment failed for %s: %s",
                                                 canonical_id, exc)
             metrics.papers_attempted += 1
             metrics.technical_failures += 1
             metrics.retry_eligible_failures += 1
             # A raise can happen after requests were issued, so this is treated as a
-            # model-consuming attempt: charge the estimate rather than zero, and end the
-            # track. Walking on could spend a second paper's worth of unaccounted money.
+            # model-consuming attempt: charge the estimate rather than zero and stop
+            # further spending, since the actual price is unknown.
             budget.record(candidate.track,
                           openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
             metrics.unknown_cost_calls += 1
-            consumed[candidate.track] = "track_slot_consumed"
+            budget.stop_for_unknown_cost()
+            consume_slot(candidate)
             continue
         if assessment is None:
             # Returned only before any model call: the quality path was disabled for this
@@ -647,12 +664,12 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
                   f"{candidate.canonical_id}: {outcome} (no model call)")
             continue
         metrics.papers_attempted += 1
-        consumed[candidate.track] = "track_slot_consumed"
         budget.record(candidate.track, openrouter_usd=usage["openrouter_usd"],
                       openrouter_calls=usage["openrouter_calls"],
                       gemini_calls=usage["gemini_calls"],
                       gemini_input_tokens=usage["gemini_input"],
                       gemini_output_tokens=usage["gemini_output"])
+        consume_slot(candidate)
         metrics.deepseek_calls += usage["openrouter_calls"]
         metrics.deepseek_input_tokens += usage["openrouter_input"]
         metrics.deepseek_output_tokens += usage["openrouter_output"]
@@ -662,6 +679,8 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
         metrics.gemini_output_tokens += usage["gemini_output"]
         metrics.unknown_cost_calls += usage["unknown_cost_calls"]
         metrics.unattributed_calls += usage["unattributed_calls"]
+        if usage["unknown_cost_calls"] or usage["unattributed_calls"]:
+            budget.stop_for_unknown_cost()
         if outcome == "success":
             metrics.papers_successfully_assessed += 1
             if assessment.quality_status == "pass":
@@ -689,6 +708,7 @@ def _role_usage(assessment) -> dict:
     as $0. Treating an unpriced call as free is what would let the per-run ceiling pass
     while real money was being spent, so the run has to be able to see it.
     """
+    import math
     from paper_scout.promotion_protocol import MODEL_PROVIDERS
 
     usage = {"openrouter_usd": 0.0, "openrouter_calls": 0, "openrouter_input": 0,
@@ -712,10 +732,14 @@ def _role_usage(assessment) -> dict:
         usage["openrouter_input"] += prompt
         usage["openrouter_output"] += completion
         price = counts.get("cost", counts.get("cost_usd"))
-        if price is None:
+        try:
+            price = float(price)
+        except (ValueError, TypeError):
+            price = float("nan")
+        if not math.isfinite(price) or price < 0:
             usage["unknown_cost_calls"] += 1
         else:
-            usage["openrouter_usd"] += float(price)
+            usage["openrouter_usd"] += price
     return usage
 
 

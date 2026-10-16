@@ -32,7 +32,7 @@
 - Converted candidates: 100
 - Sample title: RIVO: Lightweight Adaptive Rerouting for Deep Research Agents
 - Sample source ID: W7221819642
-- Sample URL: https://doi.org/10.48550/arxiv.2610.15910
+- Sample URL: https://arxiv.org/abs/2610.15910
 - Sample published date: 2026-10-11
 - Abstract: yes
 
@@ -51,9 +51,9 @@
 
 ## Decisions
 
-- relevant: 38
+- relevant: 40
 - maybe: 17
-- irrelevant: 102
+- irrelevant: 100
 
 ## Top Relevant Or Maybe Papers
 
@@ -62,10 +62,10 @@
 - **Are We Measuring Scientific Intelligence? Rethinking the Evaluation of AI Scientists** (relevant, 95/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2610.04915v1
 - **Are We Measuring Scientific Intelligence? Rethinking the Evaluation of AI Scientists** (relevant, 95/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2610.04915
 - **Triage-PiEvo: Evidence Admission for Principle-Evolving Scientific Agents** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2610.14683v1
+- **Triage-PiEvo: Evidence Admission for Principle-Evolving Scientific Agents** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2610.14683
 - **The more you automate, the less you see: Hidden pitfalls of autonomous AI scientists** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.1073/pnas.2610214123
 - **THE EL-RAKHAWI GLOBAL PROTOCOL FOR OPEN-SOURCE BIOLOGICAL DISCOVERY AND ANTI-BIOPIRACY From Monopolistic "AI Scientists" to Sovereign Science for Humanity A Groundbreaking Engineering and Legal Framework for Democratizing Autonomous Discovery, Advanced Therapies, and Climate-Resilient Agricultur** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.5281/zenodo.23304572
 - **Restricted materials (reference answers and raw agent session outputs) for: Autonomous AI scientists converge on estimates but diverge on uncertainty** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.5281/zenodo.23300593
-- **RIVO: Lightweight Adaptive Rerouting for Deep Research Agents** (relevant, 93/100): Studies research-agent memory or iterative research state. https://doi.org/10.48550/arxiv.2610.15910
 - **RIVO: Lightweight Adaptive Rerouting for Deep Research Agents** (relevant, 93/100): Studies research-agent memory or iterative research state. https://arxiv.org/abs/2610.15910v1
 
 ## Source Failures

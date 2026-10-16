@@ -11,7 +11,7 @@
 - **Future or imprecise source dates:** 2
 - **Persistent-memory reason without explicit memory evidence:** 0
 - **High-scoring agentic-AI papers without explicit memory evidence:** 0
-- **Maybe papers with core memory phrases:** 33
+- **Maybe papers with core memory phrases:** 34
 
 ## Year-Only Publication Dates
 
@@ -71,6 +71,7 @@
 ## Maybe Papers With Core Memory Phrases
 
 - **MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning** — maybe, 2026-10-15, precision=day, source=arxiv
+- **What brings the next session back: one-line notes and the run log beside a replayed agent memory summary. Protocol and materials frozen before the run (Paper 7, Study 3)** — maybe, 2026-10-15, precision=day, source=openalex
 - **A reason with the switch: what an agent memory pipeline passes on when fallback runs come with a stated purpose. Protocol and materials frozen before the run (Paper 7, Study 2)** — maybe, 2026-10-13, precision=day, source=openalex
 - **A reason with the switch: what an agent memory pipeline passes on when fallback runs come with a stated purpose. Protocol and materials frozen before the run (Paper 7, Study 2; second registration)** — maybe, 2026-10-13, precision=day, source=openalex
 - **What survives the write: do agent memory pipelines keep the record of successes behind a single failure? Protocol and materials frozen before the run (Study 1)** — maybe, 2026-10-11, precision=day, source=openalex

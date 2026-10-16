@@ -51,22 +51,22 @@
 
 ## Decisions
 
-- relevant: 26
-- maybe: 54
+- relevant: 25
+- maybe: 55
 - irrelevant: 398
 
 ## Top Relevant Or Maybe Papers
 
+- **Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory** (relevant, 100/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://doi.org/10.48550/arxiv.2610.19366
 - **Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory** (relevant, 100/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://arxiv.org/abs/2610.19366v1
-- **Recall What Is Missing: Composing Evidence from Long-Term Agent Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://doi.org/10.48550/arxiv.2610.15642
+- **Recall What Is Missing: Composing Evidence from Long-Term Agent Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://arxiv.org/abs/2610.15642
 - **Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://arxiv.org/abs/2610.05124
+- **MemCode: Discrete Semantic Representations for Long-Term Agent Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://doi.org/10.48550/arxiv.2610.19472
 - **MINDSET: Energy-based Schema Evolution for Long Conversational Agent Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://arxiv.org/abs/2610.08586
 - **CreatorMemBench v1.0: A Lifecycle Benchmark for Mutable Creator-Agent Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://doi.org/10.5281/zenodo.23371367
-- **Code and data for: Quantum Similarity Search for LLM-Agent Memory Retrieval under Bounded State Preparation** (relevant, 100/100): Evaluates memory mechanisms or benchmarks for LLM agents. https://doi.org/10.5281/zenodo.23306776
 - **Beyond Downstream QA: Rethinking How We Evaluate Agent Memory** (relevant, 99/100): Evaluates memory mechanisms or benchmarks for LLM agents. https://arxiv.org/abs/2610.22209v1
 - **SEPM: Self-Evolving Procedural Memory Grounded in Task Graphs for Multi-Agent Collaboration** (relevant, 91/100): Studies memory systems or memory modules for LLM agents. https://arxiv.org/abs/2610.14515v1
 - **RecallDB: A Local-First, Bitemporal Hybrid Engine for Long-Horizon Agent Memory and Decoupled Evaluation** (relevant, 91/100): Studies governed shared memory or persistent memory protocols for LLM agents. https://doi.org/10.5281/zenodo.23107755
-- **Persistent Agent Memory under the EU AI Act and NIS2: Misalignment, Emergent Behaviour and Regulatory Fit** (relevant, 91/100): Studies governed shared memory or persistent memory protocols for LLM agents. https://doi.org/10.1017/err.2026.10159
 
 ## Source Failures
 
@@ -112,5 +112,5 @@
 - doi:10.13140/rg.2.2.14834.06082: openalex:W7220733556, openalex:W7220733556
 - doi:10.48550/arxiv.2610.08680: openalex:W7220891770, openalex:W7220891770
 - doi:10.48550/arxiv.2610.11573: openalex:W7221082749, openalex:W7221082749
-- doi:10.70593/978-81-6632-134-4: openalex:W7221687551, openalex:W7221687551
+- doi:10.37815/rte.v38ne1.1603: openalex:W7221749373, openalex:W7221749373
 - doi:10.48550/arxiv.2610.11776: openalex:W7221160365, openalex:W7221160365

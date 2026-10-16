@@ -41,11 +41,11 @@
           </article>
           <article>
             <h2>Relevance screening</h2>
-            <p>The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; review candidates may be useful but need human judgment.</p>
+            <p>The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; possible matches have less certain topical relevance.</p>
           </article>
           <article>
             <h2>Scholarly-quality assessment</h2>
-            <p>Paper Scout separates topical relevance from scientific-quality assessment. The main library contains only highly relevant, quality-screened papers with a manuscript-based pass. Review candidates retain pending historical papers without implying they are weak.</p>
+            <p>Paper Scout separates topical relevance from scientific-quality assessment. The main library contains only highly relevant, quality-screened papers with a manuscript-based pass. Pending papers are assessed automatically. Inconclusive results and possible topical matches remain available without requiring manual review.</p>
             <p>Institutional affiliation, employer, country, author identity and prestige are not quality criteria. Peer review is informative metadata but is not sufficient. Preprints and repository-only manuscripts can pass with adequate methods, evidence, comparisons appropriate to the claims, and limitations. Missing full text leaves quality uncertain.</p>
             <p>Deterministic text patterns and legacy scores cannot earn pass. Research cards retain concise rationale, limitations, full-text provenance and versioned assessments. Quality screening does not prove scientific correctness.</p>
           </article>
@@ -55,7 +55,7 @@
           </article>
           <article>
             <h2>Structured paper cards</h2>
-            <p>The cumulative library links each paper to a structured detail page and sidecar JSON. These static records are meant for human review and future agent workflows; fields are provenance-aware, incomplete extraction is shown as “Not extracted yet”, and the sidecar schema is published at <a href="data/paper-card.schema.json">paper-card.schema.json</a>.</p>
+            <p>The cumulative library links each paper to a structured detail page and sidecar JSON. These static records support reading and automated research workflows; fields are provenance-aware, incomplete extraction is shown as “Not extracted yet”, and the sidecar schema is published at <a href="data/paper-card.schema.json">paper-card.schema.json</a>.</p>
             <p>Structured cards are generated from title, abstract or summary, metadata, deterministic screening, and curation notes. They do not claim that Paper Scout has deeply read the full paper.</p>
           </article>
           <article>

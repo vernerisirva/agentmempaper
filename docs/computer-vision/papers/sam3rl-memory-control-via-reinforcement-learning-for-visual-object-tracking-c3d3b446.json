@@ -25,12 +25,12 @@
   "first_seen_at": "2026-10-15 08:50:57",
   "first_seen_date": "2026-10-15",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-10-16 08:45:58",
+  "is_new": false,
+  "last_seen_at": "2026-10-16 11:40:33",
   "last_seen_date": "2026-10-16",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-14",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-15 08:51:12",
   "notified_date": "2026-10-15",
@@ -41,8 +41,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-15 08:50:57",
-    "generated_at": "2026-10-16 08:48:17",
-    "last_seen_at": "2026-10-16 08:45:58",
+    "generated_at": "2026-10-16 11:43:32",
+    "last_seen_at": "2026-10-16 11:40:33",
     "metadata_sources": [
       "arxiv"
     ],
@@ -104,36 +104,2054 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-16T11:42:09.836134+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "This is a rigorous, high-quality empirical study that identifies and fixes undocumented issues in foundation tracking models, systematically evaluates across standard benchmarks, and validates design choices via complete ablations.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 86971,
+      "assessment_input_sha256": "3ebce3b26e1059a8240770d222624cf79a2c8063467d257de115030cbb362b12",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.19931",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 84813,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 84280,
+      "evidence_block_count": 111,
+      "evidence_context_characters": 97811,
+      "evidence_context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+      "evidence_context_sha256": "bf97d1d2c1b123842aa9b7729ae7d27418060f8d1e4769fe10315b3d69586df9",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 84867,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "extracted_pages": 28,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "10072efba3928fbf2981e03c51fca534ffb3acc9d7f00e8b5fd7f8a0353c09fa",
+        "source_url": "https://arxiv.org/pdf/2610.19931",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 84813,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Sam3Rl: Memorycontrol Viareinforcement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 38,
+          "supplied_characters": 38
+        },
+        {
+          "heading": "Learning Forvisualobjecttracking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 449,
+          "supplied_characters": 449
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1247,
+          "supplied_characters": 1247
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1876,
+          "supplied_characters": 1876
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 3478,
+          "supplied_characters": 3478
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 1205,
+          "supplied_characters": 1205
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 3090,
+          "supplied_characters": 3090
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 475,
+          "supplied_characters": 475
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 2949,
+          "supplied_characters": 2949
+        },
+        {
+          "heading": "Mdp Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 389,
+          "supplied_characters": 389
+        },
+        {
+          "heading": "Mdp Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 3805,
+          "supplied_characters": 3805
+        },
+        {
+          "heading": "Training Thememorycontroller",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 11,
+          "source_characters": 854,
+          "supplied_characters": 854
+        },
+        {
+          "heading": "Training Thememorycontroller",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 2186,
+          "supplied_characters": 2186
+        },
+        {
+          "heading": "Sam3Rl Performance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 750,
+          "supplied_characters": 750
+        },
+        {
+          "heading": "Vot(S) Challenges",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1866,
+          "supplied_characters": 1866
+        },
+        {
+          "heading": "Vot(S) Challenges",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1199,
+          "supplied_characters": 1199
+        },
+        {
+          "heading": "J& \u02d9F J&F",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1255,
+          "supplied_characters": 1255
+        },
+        {
+          "heading": "Vot Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1154,
+          "supplied_characters": 1154
+        },
+        {
+          "heading": "Vot Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1045,
+          "supplied_characters": 1045
+        },
+        {
+          "heading": "Vos Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1152,
+          "supplied_characters": 1152
+        },
+        {
+          "heading": "Analysis Oflearnedmemorycontrol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 95,
+          "supplied_characters": 95
+        },
+        {
+          "heading": "Fps Is Costly, As Most Decisions Concern Nearly Identical Frames. We Therefore Train At 5 Fps And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1782,
+          "supplied_characters": 1782
+        },
+        {
+          "heading": "Fps Is Costly, As Most Decisions Concern Nearly Identical Frames. We Therefore Train At 5 Fps And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1612,
+          "supplied_characters": 1612
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "discussion",
+          "section_index": 23,
+          "source_characters": 658,
+          "supplied_characters": 658
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "discussion",
+          "section_index": 24,
+          "source_characters": 950,
+          "supplied_characters": 950
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 546,
+          "supplied_characters": 546
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 2359,
+          "supplied_characters": 2359
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 3941,
+          "supplied_characters": 3941
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 3583,
+          "supplied_characters": 3583
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 534,
+          "supplied_characters": 534
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 76,
+          "supplied_characters": 76
+        },
+        {
+          "heading": "Appendix: Extendedresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 480,
+          "supplied_characters": 480
+        },
+        {
+          "heading": "Appendix: Sam2Rl Performance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 1827,
+          "supplied_characters": 1827
+        },
+        {
+          "heading": "Quality F-Score",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 15,
+          "supplied_characters": 15
+        },
+        {
+          "heading": "Model Fps Vots 2026 Vots2025 Vots-Rt2025 Vot-Lt2021 Vot-Lt2022",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 791,
+          "supplied_characters": 791
+        },
+        {
+          "heading": "Appendix: Additionalbenchmarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 315,
+          "supplied_characters": 315
+        },
+        {
+          "heading": "Appendix: Additionalbenchmarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 1047,
+          "supplied_characters": 1047
+        },
+        {
+          "heading": "J& \u02d9F J&F G",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 1897,
+          "supplied_characters": 1897
+        },
+        {
+          "heading": "J& \u02d9F J&F G",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 615,
+          "supplied_characters": 615
+        },
+        {
+          "heading": "Appendix: Vos Throughput",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 542,
+          "supplied_characters": 542
+        },
+        {
+          "heading": "Appendix: Vos Throughput",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 76,
+          "supplied_characters": 76
+        },
+        {
+          "heading": "Appendix: Trackerevaluationdetails Andreproducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 4017,
+          "supplied_characters": 4017
+        },
+        {
+          "heading": "Appendix: Trackerevaluationdetails Andreproducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 3084,
+          "supplied_characters": 3084
+        },
+        {
+          "heading": "Appendix: Trackerevaluationdetails Andreproducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 354,
+          "supplied_characters": 354
+        },
+        {
+          "heading": "J& \u02d9F J&F G",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 2107,
+          "supplied_characters": 2107
+        },
+        {
+          "heading": "J& \u02d9F J&F G",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 76,
+          "supplied_characters": 76
+        },
+        {
+          "heading": "Appendix: Racecondition Insam 3",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 2080,
+          "supplied_characters": 2080
+        },
+        {
+          "heading": "Appendix: Racecondition Insam 3",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 76,
+          "supplied_characters": 76
+        },
+        {
+          "heading": "Appendix: Trainingsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 2720,
+          "supplied_characters": 2720
+        },
+        {
+          "heading": "Appendix: Trainingsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 76,
+          "supplied_characters": 76
+        },
+        {
+          "heading": "Appendix: Ablations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 641,
+          "supplied_characters": 641
+        },
+        {
+          "heading": "Appendix: Actorinputfeatures",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 2511,
+          "supplied_characters": 2511
+        },
+        {
+          "heading": "Appendix: Actorinputfeatures",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 815,
+          "supplied_characters": 815
+        },
+        {
+          "heading": "Appendix: Objectpointerselection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 1622,
+          "supplied_characters": 1622
+        },
+        {
+          "heading": "Appendix: Rewardnormalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 819,
+          "supplied_characters": 819
+        },
+        {
+          "heading": "Appendix: Rewardnormalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 76,
+          "supplied_characters": 76
+        },
+        {
+          "heading": "Appendix: Extended Analysis Of Learned Memory Control",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 589,
+          "supplied_characters": 589
+        },
+        {
+          "heading": "Sam 3 Sam3Rl",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 419,
+          "supplied_characters": 419
+        },
+        {
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 1166,
+          "supplied_characters": 1166
+        },
+        {
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 979,
+          "supplied_characters": 979
+        },
+        {
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 1874,
+          "supplied_characters": 1874
+        },
+        {
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 2052,
+          "supplied_characters": 2052
+        },
+        {
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 1924,
+          "supplied_characters": 1924
+        }
+      ],
+      "selected_characters": 84280,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "selected_sections": [
+        {
+          "characters": 38,
+          "heading": "Sam3Rl: Memorycontrol Viareinforcement",
+          "page": 1
+        },
+        {
+          "characters": 449,
+          "heading": "Learning Forvisualobjecttracking",
+          "page": 1
+        },
+        {
+          "characters": 1247,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1876,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3478,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1205,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 3090,
+          "heading": "Relatedwork",
+          "page": 3
+        },
+        {
+          "characters": 475,
+          "heading": "Methodology",
+          "page": 3
+        },
+        {
+          "characters": 2949,
+          "heading": "Methodology",
+          "page": 4
+        },
+        {
+          "characters": 389,
+          "heading": "Mdp Formulation",
+          "page": 4
+        },
+        {
+          "characters": 3805,
+          "heading": "Mdp Formulation",
+          "page": 5
+        },
+        {
+          "characters": 854,
+          "heading": "Training Thememorycontroller",
+          "page": 5
+        },
+        {
+          "characters": 2186,
+          "heading": "Training Thememorycontroller",
+          "page": 6
+        },
+        {
+          "characters": 750,
+          "heading": "Sam3Rl Performance",
+          "page": 6
+        },
+        {
+          "characters": 1866,
+          "heading": "Vot(S) Challenges",
+          "page": 6
+        },
+        {
+          "characters": 1199,
+          "heading": "Vot(S) Challenges",
+          "page": 7
+        },
+        {
+          "characters": 1255,
+          "heading": "J& \u02d9F J&F",
+          "page": 7
+        },
+        {
+          "characters": 1154,
+          "heading": "Vot Datasets",
+          "page": 7
+        },
+        {
+          "characters": 1045,
+          "heading": "Vot Datasets",
+          "page": 8
+        },
+        {
+          "characters": 1152,
+          "heading": "Vos Datasets",
+          "page": 8
+        },
+        {
+          "characters": 95,
+          "heading": "Analysis Oflearnedmemorycontrol",
+          "page": 8
+        },
+        {
+          "characters": 1782,
+          "heading": "Fps Is Costly, As Most Decisions Concern Nearly Identical Frames. We Therefore Train At 5 Fps And",
+          "page": 8
+        },
+        {
+          "characters": 1612,
+          "heading": "Fps Is Costly, As Most Decisions Concern Nearly Identical Frames. We Therefore Train At 5 Fps And",
+          "page": 9
+        },
+        {
+          "characters": 658,
+          "heading": "Discussion",
+          "page": 9
+        },
+        {
+          "characters": 950,
+          "heading": "Discussion",
+          "page": 10
+        },
+        {
+          "characters": 546,
+          "heading": "Back matter: Acknowledgments",
+          "page": 10
+        },
+        {
+          "characters": 2359,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 3941,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3583,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 534,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 76,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 480,
+          "heading": "Appendix: Extendedresults",
+          "page": 14
+        },
+        {
+          "characters": 1827,
+          "heading": "Appendix: Sam2Rl Performance",
+          "page": 14
+        },
+        {
+          "characters": 15,
+          "heading": "Quality F-Score",
+          "page": 14
+        },
+        {
+          "characters": 791,
+          "heading": "Model Fps Vots 2026 Vots2025 Vots-Rt2025 Vot-Lt2021 Vot-Lt2022",
+          "page": 14
+        },
+        {
+          "characters": 315,
+          "heading": "Appendix: Additionalbenchmarks",
+          "page": 14
+        },
+        {
+          "characters": 1047,
+          "heading": "Appendix: Additionalbenchmarks",
+          "page": 15
+        },
+        {
+          "characters": 1897,
+          "heading": "J& \u02d9F J&F G",
+          "page": 15
+        },
+        {
+          "characters": 615,
+          "heading": "J& \u02d9F J&F G",
+          "page": 16
+        },
+        {
+          "characters": 542,
+          "heading": "Appendix: Vos Throughput",
+          "page": 16
+        },
+        {
+          "characters": 76,
+          "heading": "Appendix: Vos Throughput",
+          "page": 17
+        },
+        {
+          "characters": 4017,
+          "heading": "Appendix: Trackerevaluationdetails Andreproducibility",
+          "page": 17
+        },
+        {
+          "characters": 3084,
+          "heading": "Appendix: Trackerevaluationdetails Andreproducibility",
+          "page": 18
+        },
+        {
+          "characters": 354,
+          "heading": "Appendix: Trackerevaluationdetails Andreproducibility",
+          "page": 19
+        },
+        {
+          "characters": 2107,
+          "heading": "J& \u02d9F J&F G",
+          "page": 19
+        },
+        {
+          "characters": 76,
+          "heading": "J& \u02d9F J&F G",
+          "page": 20
+        },
+        {
+          "characters": 2080,
+          "heading": "Appendix: Racecondition Insam 3",
+          "page": 20
+        },
+        {
+          "characters": 76,
+          "heading": "Appendix: Racecondition Insam 3",
+          "page": 21
+        },
+        {
+          "characters": 2720,
+          "heading": "Appendix: Trainingsetup",
+          "page": 21
+        },
+        {
+          "characters": 76,
+          "heading": "Appendix: Trainingsetup",
+          "page": 22
+        },
+        {
+          "characters": 641,
+          "heading": "Appendix: Ablations",
+          "page": 22
+        },
+        {
+          "characters": 2511,
+          "heading": "Appendix: Actorinputfeatures",
+          "page": 22
+        },
+        {
+          "characters": 815,
+          "heading": "Appendix: Actorinputfeatures",
+          "page": 23
+        },
+        {
+          "characters": 1622,
+          "heading": "Appendix: Objectpointerselection",
+          "page": 23
+        },
+        {
+          "characters": 819,
+          "heading": "Appendix: Rewardnormalization",
+          "page": 23
+        },
+        {
+          "characters": 76,
+          "heading": "Appendix: Rewardnormalization",
+          "page": 24
+        },
+        {
+          "characters": 589,
+          "heading": "Appendix: Extended Analysis Of Learned Memory Control",
+          "page": 24
+        },
+        {
+          "characters": 419,
+          "heading": "Sam 3 Sam3Rl",
+          "page": 24
+        },
+        {
+          "characters": 1166,
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "page": 24
+        },
+        {
+          "characters": 979,
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "page": 25
+        },
+        {
+          "characters": 1874,
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "page": 26
+        },
+        {
+          "characters": 2052,
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "page": 27
+        },
+        {
+          "characters": 1924,
+          "heading": "Q1 Q2 Q3 Q4 Q5",
+          "page": 28
+        }
+      ],
+      "selected_text_sha256": "3ebce3b26e1059a8240770d222624cf79a2c8063467d257de115030cbb362b12",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "10072efba3928fbf2981e03c51fca534ffb3acc9d7f00e8b5fd7f8a0353c09fa",
+      "source_pages": 28,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0010"
+        ],
+        "excerpt": "as follows:\nLearned memory control for SAM-based trackers.We formulate memory bank control in SAM-\nbased trackers as an MDP over a fixed-capacity bank. The state describes the content of the bank, the\naction selects the entry to evict, and the reward scores the resulting prediction against the annotation.\nThis formulation allows the memory control to be learned instead of being manually designed.\nState-of-the-art visual object tracker.We present SAM3RL, which extends SAM 3 with a mem-\nory controller obtained by optimizing the introduced MDP with RL. It improves over SAM 3 on 11\nout of 12 benchmarks and ranks first on 10 of them. The largest gains are achieved on the VOT(S)\nchallenges, with+3.6on VOTS 2026 and+5.5on VOT-LT 2022. It is also the only tracker that con-\nsistently succeeds in video object segmentation, scoring+1.1on MOSE v2 and+2.5on SA-V val.\n2",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e6b62d58343cabd94b48cc1143718279dc6e2b7d05673f2c576976030e04142c",
+            "evidence_id": "E7b5a143a3de2278d-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3478,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 2610,
+                "text": "as follows:\nLearned memory control for SAM-based trackers.We formulate memory bank control in SAM-\nbased trackers as an MDP over a fixed-capacity bank. The state describes the content of the bank, the\naction selects the entry to evict, and the reward scores the resulting prediction against the annotation.\nThis formulation allows the memory control to be learned instead of being manually designed.\nState-of-the-art visual object tracker.We present SAM3RL, which extends SAM 3 with a mem-\nory controller obtained by optimizing the introduced MDP with RL. It improves over SAM 3 on 11\nout of 12 benchmarks and ranks first on 10 of them. The largest gains are achieved on the VOT(S)\nchallenges, with+3.6on VOTS 2026 and+5.5on VOT-LT 2022. It is also the only tracker that con-\nsistently succeeds in video object segmentation, scoring+1.1on MOSE v2 and+2.5on SA-V val.\n2"
+              }
+            ],
+            "text": "as follows:\nLearned memory control for SAM-based trackers.We formulate memory bank control in SAM-\nbased trackers as an MDP over a fixed-capacity bank. The state describes the content of the bank, the\naction selects the entry to evict, and the reward scores the resulting prediction against the annotation.\nThis formulation allows the memory control to be learned instead of being manually designed.\nState-of-the-art visual object tracker.We present SAM3RL, which extends SAM 3 with a mem-\nory controller obtained by optimizing the introduced MDP with RL. It improves over SAM 3 on 11\nout of 12 benchmarks and ranks first on 10 of them. The largest gains are achieved on the VOT(S)\nchallenges, with+3.6on VOTS 2026 and+5.5on VOT-LT 2022. It is also the only tracker that con-\nsistently succeeds in video object segmentation, scoring+1.1on MOSE v2 and+2.5on SA-V val.\n2"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0017"
+        ],
+        "excerpt": "We formulate memory control as an MDP and train a lightweight MLP controller\u03c0 \u03b8 with RL\nby rolling out tracking episodes over a corpus of annotated videos. Given a training sequence\nwith framesx 0, . . . , xT and object mask or box annotationsy 0, . . . , yT , the simulation starts by\nconditioning the frozen tracker on the first annotationy 0; see Figure 2. At each stept, the\ntracker holds a memory bankB t = (m\u03c40 , m\u03c41 , . . . , m\u03c46 )of seven memory frames with indices\n3\nSAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nFrozen SAM 3 / SAM 2\nframe xt\nImage\nEncoder\nMemory\nAttention\nMask\nDecoder\nmask yt\nMemory\nEncoder\nmemory mt\nat step t+1 max \ud835\udd3c[\u03a3k\u2009\u2265\u20090 \u03b3krt+k+1]\nUpdated Bank Bt+1\n0 30 78 228 240 264 274\nRL Controller \u03c0\u03b8\nSelects at \u2208 {1,\u2009\u2026,\u20097}\nmask yt\nReward rt\nIoU(yt , yt)\nrt\nMemory Bank B\u2032t capacity 7 \u2192 remove one\n0 \u00b7 prompt 1 2 3 \u00b7 removed 4 5 6 7 \u00b7 new\nper-slot ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2cd2f73fc80ca0c0c9e8276f60b77109e361312021a66c063bde3763bb207f7d",
+            "evidence_id": "E7b5a143a3de2278d-B0017",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 475,
+                "page": 3,
+                "section": "Methodology",
+                "section_index": 7,
+                "start": 0,
+                "text": "We formulate memory control as an MDP and train a lightweight MLP controller\u03c0 \u03b8 with RL\nby rolling out tracking episodes over a corpus of annotated videos. Given a training sequence\nwith framesx 0, . . . , xT and object mask or box annotationsy 0, . . . , yT , the simulation starts by\nconditioning the frozen tracker on the first annotationy 0; see Figure 2. At each stept, the\ntracker holds a memory bankB t = (m\u03c40 , m\u03c41 , . . . , m\u03c46 )of seven memory frames with indices\n3"
+              },
+              {
+                "end": 425,
+                "page": 4,
+                "section": "Methodology",
+                "section_index": 8,
+                "start": 0,
+                "text": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nFrozen SAM 3 / SAM 2\nframe xt\nImage\nEncoder\nMemory\nAttention\nMask\nDecoder\nmask yt\nMemory\nEncoder\nmemory mt\nat step t+1 max \ud835\udd3c[\u03a3k\u2009\u2265\u20090 \u03b3krt+k+1]\nUpdated Bank Bt+1\n0 30 78 228 240 264 274\nRL Controller \u03c0\u03b8\nSelects at \u2208 {1,\u2009\u2026,\u20097}\nmask yt\nReward rt\nIoU(yt , yt)\nrt\nMemory Bank B\u2032t capacity 7 \u2192 remove one\n0 \u00b7 prompt 1 2 3 \u00b7 removed 4 5 6 7 \u00b7 new\nper-slot "
+              }
+            ],
+            "text": "We formulate memory control as an MDP and train a lightweight MLP controller\u03c0 \u03b8 with RL\nby rolling out tracking episodes over a corpus of annotated videos. Given a training sequence\nwith framesx 0, . . . , xT and object mask or box annotationsy 0, . . . , yT , the simulation starts by\nconditioning the frozen tracker on the first annotationy 0; see Figure 2. At each stept, the\ntracker holds a memory bankB t = (m\u03c40 , m\u03c41 , . . . , m\u03c46 )of seven memory frames with indices\n3\nSAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nFrozen SAM 3 / SAM 2\nframe xt\nImage\nEncoder\nMemory\nAttention\nMask\nDecoder\nmask yt\nMemory\nEncoder\nmemory mt\nat step t+1 max \ud835\udd3c[\u03a3k\u2009\u2265\u20090 \u03b3krt+k+1]\nUpdated Bank Bt+1\n0 30 78 228 240 264 274\nRL Controller \u03c0\u03b8\nSelects at \u2208 {1,\u2009\u2026,\u20097}\nmask yt\nReward rt\nIoU(yt , yt)\nrt\nMemory Bank B\u2032t capacity 7 \u2192 remove one\n0 \u00b7 prompt 1 2 3 \u00b7 removed 4 5 6 7 \u00b7 new\nper-slot "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0024"
+        ],
+        "excerpt": "sample\nduring training and take the most likely action during inference. The memory rules of SAM 2\nand SAM 3 can themselves be formulated as policies in this action space. SAM 2 always selects\nat = 1and evicts the oldest memory, while SAM 3 keeps the most recent frame and selectsa t = 6\nwhenever an object-score-gated IoU ofx\u03c46 falls below a predefined threshold, andat = 1otherwise.\nReward.The reward measures the tracking quality of the prediction\u02c6yt against the annotationy t by\nqt =\n(\n1if\u02c6y t =\u2205andy t =\u2205,\nIoU(\u02c6yt, yt)otherwise, (1)\nwhich credits the tracker for the overlap between\u02c6yt andy t when the target is visible, and for correctly\nreporting when the object is absent. If the annotation is a bounding box, the IoU is computed against\nthe tight axis-aligned box enclosing the predicted mask. A large amount of variance ofq t comes\nfrom the difficulty of the video rather than from the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mdp Formulation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e8dcfc1069bf27036eb0eac4216813e8d4637dd62fb895150bd09ce13f2281c1",
+            "evidence_id": "E7b5a143a3de2278d-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Mdp Formulation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3189,
+                "page": 5,
+                "section": "Mdp Formulation",
+                "section_index": 10,
+                "start": 2293,
+                "text": "sample\nduring training and take the most likely action during inference. The memory rules of SAM 2\nand SAM 3 can themselves be formulated as policies in this action space. SAM 2 always selects\nat = 1and evicts the oldest memory, while SAM 3 keeps the most recent frame and selectsa t = 6\nwhenever an object-score-gated IoU ofx\u03c46 falls below a predefined threshold, andat = 1otherwise.\nReward.The reward measures the tracking quality of the prediction\u02c6yt against the annotationy t by\nqt =\n(\n1if\u02c6y t =\u2205andy t =\u2205,\nIoU(\u02c6yt, yt)otherwise, (1)\nwhich credits the tracker for the overlap between\u02c6yt andy t when the target is visible, and for correctly\nreporting when the object is absent. If the annotation is a bounding box, the IoU is computed against\nthe tight axis-aligned box enclosing the predicted mask. A large amount of variance ofq t comes\nfrom the difficulty of the video rather than from the "
+              }
+            ],
+            "text": "sample\nduring training and take the most likely action during inference. The memory rules of SAM 2\nand SAM 3 can themselves be formulated as policies in this action space. SAM 2 always selects\nat = 1and evicts the oldest memory, while SAM 3 keeps the most recent frame and selectsa t = 6\nwhenever an object-score-gated IoU ofx\u03c46 falls below a predefined threshold, andat = 1otherwise.\nReward.The reward measures the tracking quality of the prediction\u02c6yt against the annotationy t by\nqt =\n(\n1if\u02c6y t =\u2205andy t =\u2205,\nIoU(\u02c6yt, yt)otherwise, (1)\nwhich credits the tracker for the overlap between\u02c6yt andy t when the target is visible, and for correctly\nreporting when the object is absent. If the annotation is a bounding box, the IoU is computed against\nthe tight axis-aligned box enclosing the predicted mask. A large amount of variance ofq t comes\nfrom the difficulty of the video rather than from the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0025"
+        ],
+        "excerpt": "actions taken. Therefore, we normalize the\nreward by settingr t =q t \u2212b t, whereb t is the tracking quality that the underlying tracker scores\nat the same frame of the same video under the same conditioning with SAM 3's default memory\ncontrol. The baseline depends only on the video and not on the policy\u03c0 \u03b8, so we pre-computeb t\nonly once for the whole training dataset. The policy then maximizes the expected returnE \u03c0\u03b8 [Gt],\nwhereG t = Pk\u22650 \u03b3krt+k+1 is the discounted return from steptand\u03b3is the discount factor.\nAppendix E ablates the input feature groups, object pointer selection, and the reward normalization.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mdp Formulation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ea47573a871955d0e2038c4cdc3fb1b91a14b240eef022587eb165fb9c6032f1",
+            "evidence_id": "E7b5a143a3de2278d-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Mdp Formulation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3805,
+                "page": 5,
+                "section": "Mdp Formulation",
+                "section_index": 10,
+                "start": 3189,
+                "text": "actions taken. Therefore, we normalize the\nreward by settingr t =q t \u2212b t, whereb t is the tracking quality that the underlying tracker scores\nat the same frame of the same video under the same conditioning with SAM 3's default memory\ncontrol. The baseline depends only on the video and not on the policy\u03c0 \u03b8, so we pre-computeb t\nonly once for the whole training dataset. The policy then maximizes the expected returnE \u03c0\u03b8 [Gt],\nwhereG t = Pk\u22650 \u03b3krt+k+1 is the discounted return from steptand\u03b3is the discount factor.\nAppendix E ablates the input feature groups, object pointer selection, and the reward normalization."
+              }
+            ],
+            "text": "actions taken. Therefore, we normalize the\nreward by settingr t =q t \u2212b t, whereb t is the tracking quality that the underlying tracker scores\nat the same frame of the same video under the same conditioning with SAM 3's default memory\ncontrol. The baseline depends only on the video and not on the policy\u03c0 \u03b8, so we pre-computeb t\nonly once for the whole training dataset. The policy then maximizes the expected returnE \u03c0\u03b8 [Gt],\nwhereG t = Pk\u22650 \u03b3krt+k+1 is the discounted return from steptand\u03b3is the discount factor.\nAppendix E ablates the input feature groups, object pointer selection, and the reward normalization."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0027"
+        ],
+        "excerpt": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nTraining data.We train on the LaSOT training split (Fan et al., 2019), whose 1,120 sequences are\ndivided into 896 for training and 224 for validation, while the official test set is held out. LaSOT is\nannotated with per-frame bounding boxes at 30 FPS. Since consecutive frames at that rate are nearly\nidentical, an eviction decision changes the bank very little while still consuming a decision step. We\ntherefore subsample every sixth frame, so that training episodes run at 5 FPS and span 425 decision\nsteps on average. This also matches the typical annotation rate of VOS datasets.\nOptimization.We train the controller with Proximal Policy Optimization (PPO) (Schulman et al.,\n2017), using the undiscounted Monte-Carlo return (i.e.,\u03b3= 1) minus the critic's predicted value\nas the advantage. The return is bootstrapped ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Training Thememorycontroller",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "14642b1e522eb9289dccbf089989f455451f62fa2b2fdc3c26cf674bb9d20367",
+            "evidence_id": "E7b5a143a3de2278d-B0027",
+            "pages": [
+              6
+            ],
+            "section": "Training Thememorycontroller",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "Training Thememorycontroller",
+                "section_index": 12,
+                "start": 0,
+                "text": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nTraining data.We train on the LaSOT training split (Fan et al., 2019), whose 1,120 sequences are\ndivided into 896 for training and 224 for validation, while the official test set is held out. LaSOT is\nannotated with per-frame bounding boxes at 30 FPS. Since consecutive frames at that rate are nearly\nidentical, an eviction decision changes the bank very little while still consuming a decision step. We\ntherefore subsample every sixth frame, so that training episodes run at 5 FPS and span 425 decision\nsteps on average. This also matches the typical annotation rate of VOS datasets.\nOptimization.We train the controller with Proximal Policy Optimization (PPO) (Schulman et al.,\n2017), using the undiscounted Monte-Carlo return (i.e.,\u03b3= 1) minus the critic's predicted value\nas the advantage. The return is bootstrapped "
+              }
+            ],
+            "text": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nTraining data.We train on the LaSOT training split (Fan et al., 2019), whose 1,120 sequences are\ndivided into 896 for training and 224 for validation, while the official test set is held out. LaSOT is\nannotated with per-frame bounding boxes at 30 FPS. Since consecutive frames at that rate are nearly\nidentical, an eviction decision changes the bank very little while still consuming a decision step. We\ntherefore subsample every sixth frame, so that training episodes run at 5 FPS and span 425 decision\nsteps on average. This also matches the typical annotation rate of VOS datasets.\nOptimization.We train the controller with Proximal Policy Optimization (PPO) (Schulman et al.,\n2017), using the undiscounted Monte-Carlo return (i.e.,\u03b3= 1) minus the critic's predicted value\nas the advantage. The return is bootstrapped "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0028"
+        ],
+        "excerpt": "only when the rollout window truncates an episode,\ncorresponding to\u03bb= 1in generalized advantage estimation (GAE) (Schulman et al., 2016). Apart\nfrom this bootstrap, we keep the critic out of the targets and use it only as a baseline, as it fits the\ntraining videos well but transfers poorly to unseen videos. Each of the 400 iterations collects 376-\nstep rollouts from 256 parallel environments. Training takes about 24 hours on four H200 GPUs.\nWe evaluate the greedy policy on the full validation videos every 25 iterations and select the best\ncheckpoint. All remaining hyperparameters are listed in Table 13 in Appendix D.\nInference.The actor picks actions greedily, and its only overhead is a single MLP evaluation per\nmemory update. To keep the decision rate close to the 5 FPS seen in training, the memory controller\noperates with a strides=round(\u03bd/5), where\u03bdis the frame rate of the benchmark. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Training Thememorycontroller",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "341ea6522f0a762e7407d415384d6138b8e34bdd2342dbb2471ef46f20b0680b",
+            "evidence_id": "E7b5a143a3de2278d-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Training Thememorycontroller",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1798,
+                "page": 6,
+                "section": "Training Thememorycontroller",
+                "section_index": 12,
+                "start": 898,
+                "text": "only when the rollout window truncates an episode,\ncorresponding to\u03bb= 1in generalized advantage estimation (GAE) (Schulman et al., 2016). Apart\nfrom this bootstrap, we keep the critic out of the targets and use it only as a baseline, as it fits the\ntraining videos well but transfers poorly to unseen videos. Each of the 400 iterations collects 376-\nstep rollouts from 256 parallel environments. Training takes about 24 hours on four H200 GPUs.\nWe evaluate the greedy policy on the full validation videos every 25 iterations and select the best\ncheckpoint. All remaining hyperparameters are listed in Table 13 in Appendix D.\nInference.The actor picks actions greedily, and its only overhead is a single MLP evaluation per\nmemory update. To keep the decision rate close to the 5 FPS seen in training, the memory controller\noperates with a strides=round(\u03bd/5), where\u03bdis the frame rate of the benchmark. "
+              }
+            ],
+            "text": "only when the rollout window truncates an episode,\ncorresponding to\u03bb= 1in generalized advantage estimation (GAE) (Schulman et al., 2016). Apart\nfrom this bootstrap, we keep the critic out of the targets and use it only as a baseline, as it fits the\ntraining videos well but transfers poorly to unseen videos. Each of the 400 iterations collects 376-\nstep rollouts from 256 parallel environments. Training takes about 24 hours on four H200 GPUs.\nWe evaluate the greedy policy on the full validation videos every 25 iterations and select the best\ncheckpoint. All remaining hyperparameters are listed in Table 13 in Appendix D.\nInference.The actor picks actions greedily, and its only overhead is a single MLP evaluation per\nmemory update. To keep the decision rate close to the 5 FPS seen in training, the memory controller\noperates with a strides=round(\u03bd/5), where\u03bdis the frame rate of the benchmark. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0033"
+        ],
+        "excerpt": "challenge, which introduced more difficult sequences. The results on\n6\nSAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nTable 1:Performance on VOT(S) challenges.We report standard metrics for the evaluated chal-\nlenges. Deltas indicate improvement or decline relative to SAM 3.Boldindicates the best.\nQuality F-score\nModel FPS VOTS 2026 VOTS2025 VOTS-RT2025 VOT-LT2021 VOT-LT2022\nSAM 3 15.3 66.4 73.4 69.1 77.1 62.8\nSAMURAI3 15.1 64.0-2.472.2-1.271.5+2.477.4+0.363.4+0.6\nSAM3Long 9.3 67.9+1.575.2+1.8\u2013 77.1\u00b10.064.5+1.7\nDAM4SAM3 14.2 66.7+0.373.3-0.169.5+0.477.6+0.563.4+0.6\nSAMITE3 12.7 65.4-1.073.6+0.272.7+3.678.3+1.266.2+3.4\nHiM3SAM 11.8 63.0-3.472.5-0.958.8-10.377.1\u00b10.062.3-0.5\nSAM3RL (ours) 16.0 70.0+3.676.9+3.575.1+6.079.0+1.968.3+5.5\nTable 2:Performance on VOT datasets.\nDeltas indicate improvement or decline rel-\native to SAM 3.Boldindicates the best.\nQuality ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Vot(S) Challenges",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f42294867b9330f7675b54951ff7554bf16206b917cd282544965a5acacbeeec",
+            "evidence_id": "E7b5a143a3de2278d-B0033",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Vot(S) Challenges",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1866,
+                "page": 6,
+                "section": "Vot(S) Challenges",
+                "section_index": 14,
+                "start": 1796,
+                "text": "challenge, which introduced more difficult sequences. The results on\n6"
+              },
+              {
+                "end": 828,
+                "page": 7,
+                "section": "Vot(S) Challenges",
+                "section_index": 15,
+                "start": 0,
+                "text": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nTable 1:Performance on VOT(S) challenges.We report standard metrics for the evaluated chal-\nlenges. Deltas indicate improvement or decline relative to SAM 3.Boldindicates the best.\nQuality F-score\nModel FPS VOTS 2026 VOTS2025 VOTS-RT2025 VOT-LT2021 VOT-LT2022\nSAM 3 15.3 66.4 73.4 69.1 77.1 62.8\nSAMURAI3 15.1 64.0-2.472.2-1.271.5+2.477.4+0.363.4+0.6\nSAM3Long 9.3 67.9+1.575.2+1.8\u2013 77.1\u00b10.064.5+1.7\nDAM4SAM3 14.2 66.7+0.373.3-0.169.5+0.477.6+0.563.4+0.6\nSAMITE3 12.7 65.4-1.073.6+0.272.7+3.678.3+1.266.2+3.4\nHiM3SAM 11.8 63.0-3.472.5-0.958.8-10.377.1\u00b10.062.3-0.5\nSAM3RL (ours) 16.0 70.0+3.676.9+3.575.1+6.079.0+1.968.3+5.5\nTable 2:Performance on VOT datasets.\nDeltas indicate improvement or decline rel-\native to SAM 3.Boldindicates the best.\nQuality "
+              }
+            ],
+            "text": "challenge, which introduced more difficult sequences. The results on\n6\nSAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nTable 1:Performance on VOT(S) challenges.We report standard metrics for the evaluated chal-\nlenges. Deltas indicate improvement or decline relative to SAM 3.Boldindicates the best.\nQuality F-score\nModel FPS VOTS 2026 VOTS2025 VOTS-RT2025 VOT-LT2021 VOT-LT2022\nSAM 3 15.3 66.4 73.4 69.1 77.1 62.8\nSAMURAI3 15.1 64.0-2.472.2-1.271.5+2.477.4+0.363.4+0.6\nSAM3Long 9.3 67.9+1.575.2+1.8\u2013 77.1\u00b10.064.5+1.7\nDAM4SAM3 14.2 66.7+0.373.3-0.169.5+0.477.6+0.563.4+0.6\nSAMITE3 12.7 65.4-1.073.6+0.272.7+3.678.3+1.266.2+3.4\nHiM3SAM 11.8 63.0-3.472.5-0.958.8-10.377.1\u00b10.062.3-0.5\nSAM3RL (ours) 16.0 70.0+3.676.9+3.575.1+6.079.0+1.968.3+5.5\nTable 2:Performance on VOT datasets.\nDeltas indicate improvement or decline rel-\native to SAM 3.Boldindicates the best.\nQuality "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0034"
+        ],
+        "excerpt": "AUC\nModel DiDi LaSOT LaSOT ext\nSAM 3 71.4 75.9 61.7\nSAMURAI3 71.8+0.476.3+0.463.5+1.8\nSAM3Long 71.7+0.376.1+0.262.0+0.3\nDAM4SAM3 71.8+0.477.3+1.465.0+3.3\nSAMITE3 71.8+0.477.6+1.764.7+3.0\nHiM3SAM 70.8-0.675.6-0.361.9+0.2\nSAM3RL 72.0+0.678.4+2.564.7+3.0\nTable 3:Performance on VOS datasets.Deltas in-\ndicate improvement or decline relative to SAM 3.\nBoldindicates the best.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Vot(S) Challenges",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bc0908d3616c118eb9bc56e25be69399c6224e2a7943ff957c0d6f63ecfd1e43",
+            "evidence_id": "E7b5a143a3de2278d-B0034",
+            "pages": [
+              7
+            ],
+            "section": "Vot(S) Challenges",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1199,
+                "page": 7,
+                "section": "Vot(S) Challenges",
+                "section_index": 15,
+                "start": 828,
+                "text": "AUC\nModel DiDi LaSOT LaSOT ext\nSAM 3 71.4 75.9 61.7\nSAMURAI3 71.8+0.476.3+0.463.5+1.8\nSAM3Long 71.7+0.376.1+0.262.0+0.3\nDAM4SAM3 71.8+0.477.3+1.465.0+3.3\nSAMITE3 71.8+0.477.6+1.764.7+3.0\nHiM3SAM 70.8-0.675.6-0.361.9+0.2\nSAM3RL 72.0+0.678.4+2.564.7+3.0\nTable 3:Performance on VOS datasets.Deltas in-\ndicate improvement or decline relative to SAM 3.\nBoldindicates the best."
+              }
+            ],
+            "text": "AUC\nModel DiDi LaSOT LaSOT ext\nSAM 3 71.4 75.9 61.7\nSAMURAI3 71.8+0.476.3+0.463.5+1.8\nSAM3Long 71.7+0.376.1+0.262.0+0.3\nDAM4SAM3 71.8+0.477.3+1.465.0+3.3\nSAMITE3 71.8+0.477.6+1.764.7+3.0\nHiM3SAM 70.8-0.675.6-0.361.9+0.2\nSAM3RL 72.0+0.678.4+2.564.7+3.0\nTable 3:Performance on VOS datasets.Deltas in-\ndicate improvement or decline relative to SAM 3.\nBoldindicates the best."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0035"
+        ],
+        "excerpt": "J& \u02d9F J&F\nModel MOSE v2 SA-Vval SA-Vtest LVOSv2\nSAM 3 59.8 82.9 84.6 88.7\nSAMURAI3 56.6-3.278.7-4.281.4-3.288.4-0.3\nSAM3Long 59.3-0.582.5-0.485.0+0.489.0+0.3\nDAM4SAM3 58.0-1.880.4-2.583.1-1.588.9+0.2\nSAMITE3 53.4-6.481.1-1.882.2-2.489.3+0.6\nHiM3SAM 50.0-9.881.1-1.880.9-3.786.6-2.1\nSAM3RL 60.9+1.185.4+2.584.6\u00b10.089.5+0.8\nVOT-LT2021 were the most affected by a race condition in the original SAM 3 video predictor, which\nwe identify and fix in Appendix C; the numbers reported in this work are measured after the fix.\nModel throughputis measured on VOTS 2026 and covers model inference only. On the 30 FPS\nbenchmarks, SAM3RL updates its memory only everysth frame withs= 6, matching the 5 FPS\ndata used during training. On thes\u22121frames in between, no memory frame is formed, so the\nmemory encoder is skipped and the controller is not evaluated. SAM 3, in contrast, runs the memory\nencoder on every ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "J& \u02d9F J&F",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d1e601156524b2672a6ee257115ef12955e0e18bfb0d0a7c0d7346cc007b6734",
+            "evidence_id": "E7b5a143a3de2278d-B0035",
+            "pages": [
+              7
+            ],
+            "section": "J& \u02d9F J&F",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "J& \u02d9F J&F",
+                "section_index": 16,
+                "start": 0,
+                "text": "J& \u02d9F J&F\nModel MOSE v2 SA-Vval SA-Vtest LVOSv2\nSAM 3 59.8 82.9 84.6 88.7\nSAMURAI3 56.6-3.278.7-4.281.4-3.288.4-0.3\nSAM3Long 59.3-0.582.5-0.485.0+0.489.0+0.3\nDAM4SAM3 58.0-1.880.4-2.583.1-1.588.9+0.2\nSAMITE3 53.4-6.481.1-1.882.2-2.489.3+0.6\nHiM3SAM 50.0-9.881.1-1.880.9-3.786.6-2.1\nSAM3RL 60.9+1.185.4+2.584.6\u00b10.089.5+0.8\nVOT-LT2021 were the most affected by a race condition in the original SAM 3 video predictor, which\nwe identify and fix in Appendix C; the numbers reported in this work are measured after the fix.\nModel throughputis measured on VOTS 2026 and covers model inference only. On the 30 FPS\nbenchmarks, SAM3RL updates its memory only everysth frame withs= 6, matching the 5 FPS\ndata used during training. On thes\u22121frames in between, no memory frame is formed, so the\nmemory encoder is skipped and the controller is not evaluated. SAM 3, in contrast, runs the memory\nencoder on every "
+              }
+            ],
+            "text": "J& \u02d9F J&F\nModel MOSE v2 SA-Vval SA-Vtest LVOSv2\nSAM 3 59.8 82.9 84.6 88.7\nSAMURAI3 56.6-3.278.7-4.281.4-3.288.4-0.3\nSAM3Long 59.3-0.582.5-0.485.0+0.489.0+0.3\nDAM4SAM3 58.0-1.880.4-2.583.1-1.588.9+0.2\nSAMITE3 53.4-6.481.1-1.882.2-2.489.3+0.6\nHiM3SAM 50.0-9.881.1-1.880.9-3.786.6-2.1\nSAM3RL 60.9+1.185.4+2.584.6\u00b10.089.5+0.8\nVOT-LT2021 were the most affected by a race condition in the original SAM 3 video predictor, which\nwe identify and fix in Appendix C; the numbers reported in this work are measured after the fix.\nModel throughputis measured on VOTS 2026 and covers model inference only. On the 30 FPS\nbenchmarks, SAM3RL updates its memory only everysth frame withs= 6, matching the 5 FPS\ndata used during training. On thes\u22121frames in between, no memory frame is formed, so the\nmemory encoder is skipped and the controller is not evaluated. SAM 3, in contrast, runs the memory\nencoder on every "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0039"
+        ],
+        "excerpt": "AUC\nModelsFPS VOTS 2026 VOTS2025 DiDi VOT-LT 2021 VOT-LT2022 LaSOT LaSOT ext\nSAM 3115.3 66.4 73.4 71.4 77.1 62.8 75.9 61.7\nSAM3RL114.9 69.3+2.975.4+2.071.7+0.377.2+0.165.6+2.877.1+1.265.2+3.5\nSAM 3615.5 55.5-10.966.9-6.560.5-10.976.2-0.961.8-1.072.0-3.957.4-4.3\nSAM 3ours 615.8 68.1+1.775.9+2.571.2-0.275.7-1.465.6+2.877.4+1.564.8+3.1\nSAM3RL616.0 70.0+3.676.9+3.572.0+0.679.0+1.968.3+5.578.4+2.564.7+3.0",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Vot Datasets",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cbde77fc3f60a76cf935dea0118db8568889eca23fdfb6fe743d48ec394b46dd",
+            "evidence_id": "E7b5a143a3de2278d-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Vot Datasets",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1045,
+                "page": 8,
+                "section": "Vot Datasets",
+                "section_index": 18,
+                "start": 642,
+                "text": "AUC\nModelsFPS VOTS 2026 VOTS2025 DiDi VOT-LT 2021 VOT-LT2022 LaSOT LaSOT ext\nSAM 3115.3 66.4 73.4 71.4 77.1 62.8 75.9 61.7\nSAM3RL114.9 69.3+2.975.4+2.071.7+0.377.2+0.165.6+2.877.1+1.265.2+3.5\nSAM 3615.5 55.5-10.966.9-6.560.5-10.976.2-0.961.8-1.072.0-3.957.4-4.3\nSAM 3ours 615.8 68.1+1.775.9+2.571.2-0.275.7-1.465.6+2.877.4+1.564.8+3.1\nSAM3RL616.0 70.0+3.676.9+3.572.0+0.679.0+1.968.3+5.578.4+2.564.7+3.0"
+              }
+            ],
+            "text": "AUC\nModelsFPS VOTS 2026 VOTS2025 DiDi VOT-LT 2021 VOT-LT2022 LaSOT LaSOT ext\nSAM 3115.3 66.4 73.4 71.4 77.1 62.8 75.9 61.7\nSAM3RL114.9 69.3+2.975.4+2.071.7+0.377.2+0.165.6+2.877.1+1.265.2+3.5\nSAM 3615.5 55.5-10.966.9-6.560.5-10.976.2-0.961.8-1.072.0-3.957.4-4.3\nSAM 3ours 615.8 68.1+1.775.9+2.571.2-0.275.7-1.465.6+2.877.4+1.564.8+3.1\nSAM3RL616.0 70.0+3.676.9+3.572.0+0.679.0+1.968.3+5.578.4+2.564.7+3.0"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0047"
+        ],
+        "excerpt": "We presented SAM3RL, which learns memory control over a fixed-capacity bank with RL while\nkeeping the backbone frozen. SAM3RL improves over SAM 3 on 11 of 12 benchmarks and ranks\nfirst on 10, with the largest gains on VOT(S), at virtually no runtime cost. It is also the only method\nthat consistently improves on video object segmentation. Applying the same recipe to SAM 2 yields\nSAM2RL, which improves over SAM 2 on every benchmark and leads on 9. These results suggest\nthat memory control should be learned rather than designed, as learned control improves even the\nstrongest trackers and, unlike fixed rules, remains effective across model generations.\n9\nSAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nLimitations.First, the policy is tied to the 5 FPS decision rate seen in training. Deciding on every\nframe of 30 FPS benchmarks still improves over SAM 3, but the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "061ebdf67f5b0aa46a6e89cd7d8a161f6de831ad35f650df359ebcf7f7cde3d0",
+            "evidence_id": "E7b5a143a3de2278d-B0047",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 658,
+                "page": 9,
+                "section": "Discussion",
+                "section_index": 23,
+                "start": 0,
+                "text": "We presented SAM3RL, which learns memory control over a fixed-capacity bank with RL while\nkeeping the backbone frozen. SAM3RL improves over SAM 3 on 11 of 12 benchmarks and ranks\nfirst on 10, with the largest gains on VOT(S), at virtually no runtime cost. It is also the only method\nthat consistently improves on video object segmentation. Applying the same recipe to SAM 2 yields\nSAM2RL, which improves over SAM 2 on every benchmark and leads on 9. These results suggest\nthat memory control should be learned rather than designed, as learned control improves even the\nstrongest trackers and, unlike fixed rules, remains effective across model generations.\n9"
+              },
+              {
+                "end": 240,
+                "page": 10,
+                "section": "Discussion",
+                "section_index": 24,
+                "start": 0,
+                "text": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nLimitations.First, the policy is tied to the 5 FPS decision rate seen in training. Deciding on every\nframe of 30 FPS benchmarks still improves over SAM 3, but the "
+              }
+            ],
+            "text": "We presented SAM3RL, which learns memory control over a fixed-capacity bank with RL while\nkeeping the backbone frozen. SAM3RL improves over SAM 3 on 11 of 12 benchmarks and ranks\nfirst on 10, with the largest gains on VOT(S), at virtually no runtime cost. It is also the only method\nthat consistently improves on video object segmentation. Applying the same recipe to SAM 2 yields\nSAM2RL, which improves over SAM 2 on every benchmark and leads on 9. These results suggest\nthat memory control should be learned rather than designed, as learned control improves even the\nstrongest trackers and, unlike fixed rules, remains effective across model generations.\n9\nSAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\nLimitations.First, the policy is tied to the 5 FPS decision rate seen in training. Deciding on every\nframe of 30 FPS benchmarks still improves over SAM 3, but the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0048"
+        ],
+        "excerpt": "average gain drops from 2.9 to\n1.8 points. We therefore match the training rate with the strides, which requires the frame rate\nto be known in advance and keeps the skipped frames out of the memory bank. The former is\nrarely restrictive in practice, as the frame rate is usually available. Training at the native rate would\nremove this restriction, but most decisions would then concern near-identical frames. Such a policy\ncould nonetheless exploit the skipped frames and improve further on high-frame-rate benchmarks.\nSecond, the policy controls only the seven frames in the memory bank, while the nine object pointers\nare filled by a fixed rule. Learning both jointly is a natural direction for future work.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6a5ff777bbfb3bbf9e50b069af26c53ccee7a41cd3a1285006d84713c51de85f",
+            "evidence_id": "E7b5a143a3de2278d-B0048",
+            "pages": [
+              10
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 950,
+                "page": 10,
+                "section": "Discussion",
+                "section_index": 24,
+                "start": 240,
+                "text": "average gain drops from 2.9 to\n1.8 points. We therefore match the training rate with the strides, which requires the frame rate\nto be known in advance and keeps the skipped frames out of the memory bank. The former is\nrarely restrictive in practice, as the frame rate is usually available. Training at the native rate would\nremove this restriction, but most decisions would then concern near-identical frames. Such a policy\ncould nonetheless exploit the skipped frames and improve further on high-frame-rate benchmarks.\nSecond, the policy controls only the seven frames in the memory bank, while the nine object pointers\nare filled by a fixed rule. Learning both jointly is a natural direction for future work."
+              }
+            ],
+            "text": "average gain drops from 2.9 to\n1.8 points. We therefore match the training rate with the strides, which requires the frame rate\nto be known in advance and keeps the skipped frames out of the memory bank. The former is\nrarely restrictive in practice, as the frame rate is usually available. Training at the native rate would\nremove this restriction, but most decisions would then concern near-identical frames. Such a policy\ncould nonetheless exploit the skipped frames and improve further on high-frame-rate benchmarks.\nSecond, the policy controls only the seven frames in the memory bank, while the nine object pointers\nare filled by a fixed rule. Learning both jointly is a natural direction for future work."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0067"
+        ],
+        "excerpt": "Model FPS VOTS 2026 VOTS2025 VOTS-RT2025 VOT-LT2021 VOT-LT2022\nSAM 3 15.3 66.4 73.4 69.1 77.1 62.8\nSAMURAI3 15.1 64.0-2.472.2-1.271.5+2.477.4+0.363.4+0.6\nSAM3Long 9.3 67.9+1.575.2+1.8\u2013 77.1\u00b10.064.5+1.7\nDAM4SAM3 14.2 66.7+0.373.3-0.169.5+0.477.6+0.563.4+0.6\nSAMITE3 12.7 65.4-1.073.6+0.272.7+3.678.3+1.266.2+3.4\nHiM3SAM 11.8 63.0-3.472.5-0.958.8-10.377.1\u00b10.062.3-0.5\nSAM3RL (ours) 16.0 70.0+3.676.9+3.575.1+6.079.0+1.968.3+5.5\nSAM 2.1 L 25.1 57.9 65.6 65.6 66.1 55.1\nSAMURAI 21.3 59.9+2.068.2+2.668.1+2.575.8+9.761.2+6.1\nSAM2Long 11.0 61.0+3.168.1+2.5\u2013 72.9+6.857.5+2.4\nDAM4SAM 16.7 61.7+3.870.4+4.870.5+4.974.5+8.460.9+5.8\nSAMITE 16.3 61.1+3.269.2+3.667.1+1.578.5+12.463.7+8.6\nHiM2SAM 16.1 58.6+0.767.8+2.260.5-5.173.9+7.862.9+7.8\nSAM2RL (ours) 25.5 63.3+5.471.4+5.871.3+5.776.6+10.564.6+9.5",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Model Fps Vots 2026 Vots2025 Vots-Rt2025 Vot-Lt2021 Vot-Lt2022",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3c852585d5359a3a63d4c68a349a004218d92ed9a6012e54606f3f686cc485a6",
+            "evidence_id": "E7b5a143a3de2278d-B0067",
+            "pages": [
+              14
+            ],
+            "section": "Model Fps Vots 2026 Vots2025 Vots-Rt2025 Vot-Lt2021 Vot-Lt2022",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 791,
+                "page": 14,
+                "section": "Model Fps Vots 2026 Vots2025 Vots-Rt2025 Vot-Lt2021 Vot-Lt2022",
+                "section_index": 34,
+                "start": 0,
+                "text": "Model FPS VOTS 2026 VOTS2025 VOTS-RT2025 VOT-LT2021 VOT-LT2022\nSAM 3 15.3 66.4 73.4 69.1 77.1 62.8\nSAMURAI3 15.1 64.0-2.472.2-1.271.5+2.477.4+0.363.4+0.6\nSAM3Long 9.3 67.9+1.575.2+1.8\u2013 77.1\u00b10.064.5+1.7\nDAM4SAM3 14.2 66.7+0.373.3-0.169.5+0.477.6+0.563.4+0.6\nSAMITE3 12.7 65.4-1.073.6+0.272.7+3.678.3+1.266.2+3.4\nHiM3SAM 11.8 63.0-3.472.5-0.958.8-10.377.1\u00b10.062.3-0.5\nSAM3RL (ours) 16.0 70.0+3.676.9+3.575.1+6.079.0+1.968.3+5.5\nSAM 2.1 L 25.1 57.9 65.6 65.6 66.1 55.1\nSAMURAI 21.3 59.9+2.068.2+2.668.1+2.575.8+9.761.2+6.1\nSAM2Long 11.0 61.0+3.168.1+2.5\u2013 72.9+6.857.5+2.4\nDAM4SAM 16.7 61.7+3.870.4+4.870.5+4.974.5+8.460.9+5.8\nSAMITE 16.3 61.1+3.269.2+3.667.1+1.578.5+12.463.7+8.6\nHiM2SAM 16.1 58.6+0.767.8+2.260.5-5.173.9+7.862.9+7.8\nSAM2RL (ours) 25.5 63.3+5.471.4+5.871.3+5.776.6+10.564.6+9.5"
+              }
+            ],
+            "text": "Model FPS VOTS 2026 VOTS2025 VOTS-RT2025 VOT-LT2021 VOT-LT2022\nSAM 3 15.3 66.4 73.4 69.1 77.1 62.8\nSAMURAI3 15.1 64.0-2.472.2-1.271.5+2.477.4+0.363.4+0.6\nSAM3Long 9.3 67.9+1.575.2+1.8\u2013 77.1\u00b10.064.5+1.7\nDAM4SAM3 14.2 66.7+0.373.3-0.169.5+0.477.6+0.563.4+0.6\nSAMITE3 12.7 65.4-1.073.6+0.272.7+3.678.3+1.266.2+3.4\nHiM3SAM 11.8 63.0-3.472.5-0.958.8-10.377.1\u00b10.062.3-0.5\nSAM3RL (ours) 16.0 70.0+3.676.9+3.575.1+6.079.0+1.968.3+5.5\nSAM 2.1 L 25.1 57.9 65.6 65.6 66.1 55.1\nSAMURAI 21.3 59.9+2.068.2+2.668.1+2.575.8+9.761.2+6.1\nSAM2Long 11.0 61.0+3.168.1+2.5\u2013 72.9+6.857.5+2.4\nDAM4SAM 16.7 61.7+3.870.4+4.870.5+4.974.5+8.460.9+5.8\nSAMITE 16.3 61.1+3.269.2+3.667.1+1.578.5+12.463.7+8.6\nHiM2SAM 16.1 58.6+0.767.8+2.260.5-5.173.9+7.862.9+7.8\nSAM2RL (ours) 25.5 63.3+5.471.4+5.871.3+5.776.6+10.564.6+9.5"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0074"
+        ],
+        "excerpt": "B TRACKEREVALUATIONDETAILS ANDREPRODUCIBILITY\nBenchmarks and metrics.Table 8 lists every dataset we evaluate on, with the number of sequences,\nobjects, frame rate, and length. Performance is measured by the tracking quality (Kristan et al.,\n2023b) on the VOTS challenges and on DiDi, and by the F-score (Luke\u017ei\u02c7c et al., 2021) on the VOT-\nLT challenges. On LaSOT and LaSOT ext, it is measured by the area under the success rate curve\n(AUC) (Wu et al., 2015). On VOS benchmarks, it is measured byJ&F(Pont-Tuset et al., 2017),\nthe mean of the region similarityJand the contour accuracyF. MOSE v2 replacesFby an adaptive\nboundary accuracy \u02d9Fthat rescales the tolerance with object size.\nWe score LaSOT and LaSOText with the PyTracking evaluation code (Danelljan et al., 2019) (commit\n9cba77e), which implements the AUC protocol of the official LaSOT toolkit (Fan et al., 2019). Our\nSAM 2.1 runs ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Trackerevaluationdetails Andreproducibility",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0bb95273ad211734614b86779b8fd85e6b7c69ef03bffc30efc682be77bedd57",
+            "evidence_id": "E7b5a143a3de2278d-B0074",
+            "pages": [
+              17
+            ],
+            "section": "Appendix: Trackerevaluationdetails Andreproducibility",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 17,
+                "section": "Appendix: Trackerevaluationdetails Andreproducibility",
+                "section_index": 41,
+                "start": 0,
+                "text": "B TRACKEREVALUATIONDETAILS ANDREPRODUCIBILITY\nBenchmarks and metrics.Table 8 lists every dataset we evaluate on, with the number of sequences,\nobjects, frame rate, and length. Performance is measured by the tracking quality (Kristan et al.,\n2023b) on the VOTS challenges and on DiDi, and by the F-score (Luke\u017ei\u02c7c et al., 2021) on the VOT-\nLT challenges. On LaSOT and LaSOT ext, it is measured by the area under the success rate curve\n(AUC) (Wu et al., 2015). On VOS benchmarks, it is measured byJ&F(Pont-Tuset et al., 2017),\nthe mean of the region similarityJand the contour accuracyF. MOSE v2 replacesFby an adaptive\nboundary accuracy \u02d9Fthat rescales the tolerance with object size.\nWe score LaSOT and LaSOText with the PyTracking evaluation code (Danelljan et al., 2019) (commit\n9cba77e), which implements the AUC protocol of the official LaSOT toolkit (Fan et al., 2019). Our\nSAM 2.1 runs "
+              }
+            ],
+            "text": "B TRACKEREVALUATIONDETAILS ANDREPRODUCIBILITY\nBenchmarks and metrics.Table 8 lists every dataset we evaluate on, with the number of sequences,\nobjects, frame rate, and length. Performance is measured by the tracking quality (Kristan et al.,\n2023b) on the VOTS challenges and on DiDi, and by the F-score (Luke\u017ei\u02c7c et al., 2021) on the VOT-\nLT challenges. On LaSOT and LaSOT ext, it is measured by the area under the success rate curve\n(AUC) (Wu et al., 2015). On VOS benchmarks, it is measured byJ&F(Pont-Tuset et al., 2017),\nthe mean of the region similarityJand the contour accuracyF. MOSE v2 replacesFby an adaptive\nboundary accuracy \u02d9Fthat rescales the tolerance with object size.\nWe score LaSOT and LaSOText with the PyTracking evaluation code (Danelljan et al., 2019) (commit\n9cba77e), which implements the AUC protocol of the official LaSOT toolkit (Fan et al., 2019). Our\nSAM 2.1 runs "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0094"
+        ],
+        "excerpt": "The states t groups the per-slot features into four disjoint groups: temporal, confidence, semantic,\nand geometry; see Section 3.1. We test whether each group is necessary or sufficient with delete-one\nand keep-one ablations, respectively. The former removes one group from the actor input, while the\nlatter keeps exactly one. Everything else, including the critic input, is unchanged. The groups differ\nin the input size, with the baseline actor input having 1,560 dimensions after the pointer projection,\nof which semantic take 1,152, temporal 256, geometry 120, and confidence 32. The performance is\npresented in Tables 14 and 15 as a mean over three seeds for each arm. No single group is critically\nnecessary, and no single group is sufficient either. All arms still improve over SAM 3, except the\nkeep-one arms on MOSEv2, yet none matches the all-inputs actor across all benchmarks.\nTable ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Actorinputfeatures",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "797d61d928746cb918f71452106ee151f57e2fdabd717efcaa66e18597e2e92c",
+            "evidence_id": "E7b5a143a3de2278d-B0094",
+            "pages": [
+              22
+            ],
+            "section": "Appendix: Actorinputfeatures",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 22,
+                "section": "Appendix: Actorinputfeatures",
+                "section_index": 51,
+                "start": 0,
+                "text": "The states t groups the per-slot features into four disjoint groups: temporal, confidence, semantic,\nand geometry; see Section 3.1. We test whether each group is necessary or sufficient with delete-one\nand keep-one ablations, respectively. The former removes one group from the actor input, while the\nlatter keeps exactly one. Everything else, including the critic input, is unchanged. The groups differ\nin the input size, with the baseline actor input having 1,560 dimensions after the pointer projection,\nof which semantic take 1,152, temporal 256, geometry 120, and confidence 32. The performance is\npresented in Tables 14 and 15 as a mean over three seeds for each arm. No single group is critically\nnecessary, and no single group is sufficient either. All arms still improve over SAM 3, except the\nkeep-one arms on MOSEv2, yet none matches the all-inputs actor across all benchmarks.\nTable "
+              }
+            ],
+            "text": "The states t groups the per-slot features into four disjoint groups: temporal, confidence, semantic,\nand geometry; see Section 3.1. We test whether each group is necessary or sufficient with delete-one\nand keep-one ablations, respectively. The former removes one group from the actor input, while the\nlatter keeps exactly one. Everything else, including the critic input, is unchanged. The groups differ\nin the input size, with the baseline actor input having 1,560 dimensions after the pointer projection,\nof which semantic take 1,152, temporal 256, geometry 120, and confidence 32. The performance is\npresented in Tables 14 and 15 as a mean over three seeds for each arm. No single group is critically\nnecessary, and no single group is sufficient either. All arms still improve over SAM 3, except the\nkeep-one arms on MOSEv2, yet none matches the all-inputs actor across all benchmarks.\nTable "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0095"
+        ],
+        "excerpt": "14:Delete-one actor input feature group ablation.Each row removes one feature group\nfrom the actor input. Everything else, including the critic input, is unchanged. Every entry is the\nmean over three seeds, with the standard error of the mean in subscript. Cell color encodes the\ndifference to the full-input SAM3RL mean, green for a gain and red for a drop, darker for a larger\ndifference.Boldindicates the best.\nQuality F-score AUCJ&F\nActor input VOTS 2026 VOT-LT2022 LaSOT LaSOT ext MOSEv2\nSAM3RL(all inputs)69.5 \u00b10.2 68.5\u00b10.3 78.0\u00b10.3 64.6\u00b10.1 60.6\u00b10.3\nw/o temporal 69.1\u00b10.3 68.9\u00b10.5 78.0\u00b10.1 64.3\u00b10.3 60.7\u00b10.3\nw/o confidence 69.2\u00b10.2 68.4\u00b10.4 77.9\u00b10.1 64.1\u00b10.1 60.4\u00b10.1\nw/o semantic 69.1\u00b10.4 67.3\u00b10.4 78.0\u00b10.2 64.5\u00b10.2 60.2\u00b10.2\nw/o geometry 69.2\u00b10.2 68.2\u00b10.2 77.8\u00b10.1 64.5\u00b10.2 59.7\u00b10.2\nTable 15:Keep-one actor input feature group ablation.Each row keeps one feature group in the\nactor input and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Actorinputfeatures",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9f20a9d75f81195edac9e3db212d2fd9ebeffebf2213380b46852d93c6ebb0a9",
+            "evidence_id": "E7b5a143a3de2278d-B0095",
+            "pages": [
+              22
+            ],
+            "section": "Appendix: Actorinputfeatures",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 22,
+                "section": "Appendix: Actorinputfeatures",
+                "section_index": 51,
+                "start": 895,
+                "text": "14:Delete-one actor input feature group ablation.Each row removes one feature group\nfrom the actor input. Everything else, including the critic input, is unchanged. Every entry is the\nmean over three seeds, with the standard error of the mean in subscript. Cell color encodes the\ndifference to the full-input SAM3RL mean, green for a gain and red for a drop, darker for a larger\ndifference.Boldindicates the best.\nQuality F-score AUCJ&F\nActor input VOTS 2026 VOT-LT2022 LaSOT LaSOT ext MOSEv2\nSAM3RL(all inputs)69.5 \u00b10.2 68.5\u00b10.3 78.0\u00b10.3 64.6\u00b10.1 60.6\u00b10.3\nw/o temporal 69.1\u00b10.3 68.9\u00b10.5 78.0\u00b10.1 64.3\u00b10.3 60.7\u00b10.3\nw/o confidence 69.2\u00b10.2 68.4\u00b10.4 77.9\u00b10.1 64.1\u00b10.1 60.4\u00b10.1\nw/o semantic 69.1\u00b10.4 67.3\u00b10.4 78.0\u00b10.2 64.5\u00b10.2 60.2\u00b10.2\nw/o geometry 69.2\u00b10.2 68.2\u00b10.2 77.8\u00b10.1 64.5\u00b10.2 59.7\u00b10.2\nTable 15:Keep-one actor input feature group ablation.Each row keeps one feature group in the\nactor input and "
+              }
+            ],
+            "text": "14:Delete-one actor input feature group ablation.Each row removes one feature group\nfrom the actor input. Everything else, including the critic input, is unchanged. Every entry is the\nmean over three seeds, with the standard error of the mean in subscript. Cell color encodes the\ndifference to the full-input SAM3RL mean, green for a gain and red for a drop, darker for a larger\ndifference.Boldindicates the best.\nQuality F-score AUCJ&F\nActor input VOTS 2026 VOT-LT2022 LaSOT LaSOT ext MOSEv2\nSAM3RL(all inputs)69.5 \u00b10.2 68.5\u00b10.3 78.0\u00b10.3 64.6\u00b10.1 60.6\u00b10.3\nw/o temporal 69.1\u00b10.3 68.9\u00b10.5 78.0\u00b10.1 64.3\u00b10.3 60.7\u00b10.3\nw/o confidence 69.2\u00b10.2 68.4\u00b10.4 77.9\u00b10.1 64.1\u00b10.1 60.4\u00b10.1\nw/o semantic 69.1\u00b10.4 67.3\u00b10.4 78.0\u00b10.2 64.5\u00b10.2 60.2\u00b10.2\nw/o geometry 69.2\u00b10.2 68.2\u00b10.2 77.8\u00b10.1 64.5\u00b10.2 59.7\u00b10.2\nTable 15:Keep-one actor input feature group ablation.Each row keeps one feature group in the\nactor input and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0096"
+        ],
+        "excerpt": "removes the other three. Everything else, including the critic input, is unchanged.\nEvery entry is the mean over three seeds, with the standard error of the mean in subscript. Cell color\nencodes the difference to the full-input SAM3RL mean, green for a gain and red for a drop, darker\nfor a larger difference.Boldindicates the best.\nQuality F-score AUCJ&F\nActor input VOTS 2026 VOT-LT2022 LaSOT LaSOT ext MOSEv2\nSAM3RL(all inputs)69.5 \u00b10.2 68.5\u00b10.3 78.0\u00b10.3 64.6\u00b10.1 60.6\u00b10.3\nonly temporal 68.7\u00b10.3 68.3\u00b10.0 77.6\u00b10.2 64.1\u00b10.1 59.2\u00b10.1\nonly confidence 68.7\u00b10.2 66.3\u00b10.2 77.7\u00b10.2 64.8\u00b10.1 60.1\u00b10.6\nonly semantic 69.1\u00b10.4 68.8\u00b10.3 78.1\u00b10.3 63.7\u00b10.4 59.8\u00b10.2\nonly geometry 68.8\u00b10.2 67.6\u00b10.6 77.7\u00b10.2 63.9\u00b10.2 58.9\u00b10.8\n22\nSAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\n0 100 200 300 400\nTraining Iteration\n77.5\n78.0\n78.5\n79.0\n79.5\nValidation Score [%]\nRecently Evicted ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22,
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Actorinputfeatures",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e1f7083dfab7a1dceb664870f8fb82139b5a70afcae1c0663ecfa0ce190c2275",
+            "evidence_id": "E7b5a143a3de2278d-B0096",
+            "pages": [
+              22,
+              23
+            ],
+            "section": "Appendix: Actorinputfeatures",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2511,
+                "page": 22,
+                "section": "Appendix: Actorinputfeatures",
+                "section_index": 51,
+                "start": 1795,
+                "text": "removes the other three. Everything else, including the critic input, is unchanged.\nEvery entry is the mean over three seeds, with the standard error of the mean in subscript. Cell color\nencodes the difference to the full-input SAM3RL mean, green for a gain and red for a drop, darker\nfor a larger difference.Boldindicates the best.\nQuality F-score AUCJ&F\nActor input VOTS 2026 VOT-LT2022 LaSOT LaSOT ext MOSEv2\nSAM3RL(all inputs)69.5 \u00b10.2 68.5\u00b10.3 78.0\u00b10.3 64.6\u00b10.1 60.6\u00b10.3\nonly temporal 68.7\u00b10.3 68.3\u00b10.0 77.6\u00b10.2 64.1\u00b10.1 59.2\u00b10.1\nonly confidence 68.7\u00b10.2 66.3\u00b10.2 77.7\u00b10.2 64.8\u00b10.1 60.1\u00b10.6\nonly semantic 69.1\u00b10.4 68.8\u00b10.3 78.1\u00b10.3 63.7\u00b10.4 59.8\u00b10.2\nonly geometry 68.8\u00b10.2 67.6\u00b10.6 77.7\u00b10.2 63.9\u00b10.2 58.9\u00b10.8\n22"
+              },
+              {
+                "end": 177,
+                "page": 23,
+                "section": "Appendix: Actorinputfeatures",
+                "section_index": 52,
+                "start": 0,
+                "text": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\n0 100 200 300 400\nTraining Iteration\n77.5\n78.0\n78.5\n79.0\n79.5\nValidation Score [%]\nRecently Evicted "
+              }
+            ],
+            "text": "removes the other three. Everything else, including the critic input, is unchanged.\nEvery entry is the mean over three seeds, with the standard error of the mean in subscript. Cell color\nencodes the difference to the full-input SAM3RL mean, green for a gain and red for a drop, darker\nfor a larger difference.Boldindicates the best.\nQuality F-score AUCJ&F\nActor input VOTS 2026 VOT-LT2022 LaSOT LaSOT ext MOSEv2\nSAM3RL(all inputs)69.5 \u00b10.2 68.5\u00b10.3 78.0\u00b10.3 64.6\u00b10.1 60.6\u00b10.3\nonly temporal 68.7\u00b10.3 68.3\u00b10.0 77.6\u00b10.2 64.1\u00b10.1 59.2\u00b10.1\nonly confidence 68.7\u00b10.2 66.3\u00b10.2 77.7\u00b10.2 64.8\u00b10.1 60.1\u00b10.6\nonly semantic 69.1\u00b10.4 68.8\u00b10.3 78.1\u00b10.3 63.7\u00b10.4 59.8\u00b10.2\nonly geometry 68.8\u00b10.2 67.6\u00b10.6 77.7\u00b10.2 63.9\u00b10.2 58.9\u00b10.8\n22\nSAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking\n0 100 200 300 400\nTraining Iteration\n77.5\n78.0\n78.5\n79.0\n79.5\nValidation Score [%]\nRecently Evicted "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.19931",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.19931",
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline outcomes are measured on held-out external benchmarks and official challenge servers using standard metrics, independent of the PPO reward signal used for training.",
+          "final_evaluation_signal": "Standard benchmark metrics (Quality F-score, AUC, J&F) on held-out VOTS, VOT-LT, LaSOT, DiDi, and VOS datasets, including official evaluation servers.",
+          "independent_corroboration": "present",
+          "optimization_signal": "PPO training on LaSOT with reward equal to IoU tracking quality normalized by the SAM 3 default-memory baseline.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0010",
+          "E7b5a143a3de2278d-B0017",
+          "E7b5a143a3de2278d-B0024",
+          "E7b5a143a3de2278d-B0025",
+          "E7b5a143a3de2278d-B0027",
+          "E7b5a143a3de2278d-B0028",
+          "E7b5a143a3de2278d-B0033",
+          "E7b5a143a3de2278d-B0034",
+          "E7b5a143a3de2278d-B0035",
+          "E7b5a143a3de2278d-B0039",
+          "E7b5a143a3de2278d-B0047",
+          "E7b5a143a3de2278d-B0048",
+          "E7b5a143a3de2278d-B0067",
+          "E7b5a143a3de2278d-B0074",
+          "E7b5a143a3de2278d-B0094",
+          "E7b5a143a3de2278d-B0095",
+          "E7b5a143a3de2278d-B0096"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "10072efba3928fbf2981e03c51fca534ffb3acc9d7f00e8b5fd7f8a0353c09fa"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.19931",
+        "claim_evidence_alignment": "Claims of outperforming hand-crafted heuristics and achieving state-of-the-art results across most benchmarks without inference runtime penalty are directly corroborated by standard benchmark tables, official evaluation server submissions, and throughput measurements.",
+        "context_id": "7b5a143a3de2278d59f41a39e90c1b3d00958e16902b04ec3c986d31b42df0e1",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation spans 12-15 diverse tracking and VOS benchmarks (including VOTS challenges, VOT-LT, LaSOT, and MOSEv2), comparing against multiple hand-crafted heuristics ported to SAM 3 as well as native SAM 2 baselines, accompanied by multi-seed ablations.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluation is conducted on independent standard external tracking and segmentation test sets scored via standard toolkits and remote servers, showing consistent improvements over baselines.",
+          "final_evaluation_signal": "Standard benchmark evaluation metrics (Quality F-score, AUC, J&F) scored across held-out external benchmark sets and official challenge evaluation servers (e.g., VOTS, VOT-LT, MOSEv2, SA-V).",
+          "independent_corroboration": "present",
+          "optimization_signal": "PPO reinforcement learning on IoU tracking quality normalized by baseline default SAM 3 tracking performance on the LaSOT training split.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E7b5a143a3de2278d-B0010",
+          "E7b5a143a3de2278d-B0017",
+          "E7b5a143a3de2278d-B0024",
+          "E7b5a143a3de2278d-B0025",
+          "E7b5a143a3de2278d-B0027",
+          "E7b5a143a3de2278d-B0028",
+          "E7b5a143a3de2278d-B0033",
+          "E7b5a143a3de2278d-B0034",
+          "E7b5a143a3de2278d-B0035",
+          "E7b5a143a3de2278d-B0039",
+          "E7b5a143a3de2278d-B0047",
+          "E7b5a143a3de2278d-B0048",
+          "E7b5a143a3de2278d-B0067",
+          "E7b5a143a3de2278d-B0094",
+          "E7b5a143a3de2278d-B0095",
+          "E7b5a143a3de2278d-B0096"
+        ],
+        "limitations": "The authors explicitly discuss limitations regarding fixed stride matching pre-known frame rates, the lack of full joint learning for auxiliary object pointers, and qualitative failure cases during rapid viewpoint/scale changes.",
+        "method_assessment": "The methodology is thoroughly detailed, describing the 7-slot eviction action space, the 4-part state representation, reward normalization against a default baseline, PPO training setup on LaSOT, and strided inference matching the 5 FPS training frequency.",
+        "quality_rationale": "This is a rigorous, high-quality empirical study that identifies and fixes undocumented issues in foundation tracking models, systematically evaluates across standard benchmarks, and validates design choices via complete ablations.",
+        "scoped_contribution": "The paper presents SAM3RL (and SAM2RL), formulating memory bank control for SAM-based visual object trackers as an MDP optimized with PPO on training sequences, eliminating hand-crafted eviction heuristics.",
+        "source_content_hash": "10072efba3928fbf2981e03c51fca534ffb3acc9d7f00e8b5fd7f8a0353c09fa"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "This is a rigorous, high-quality empirical study that identifies and fixes undocumented issues in foundation tracking models, systematically evaluates across standard benchmarks, and validates design choices via complete ablations.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "10072efba3928fbf2981e03c51fca534ffb3acc9d7f00e8b5fd7f8a0353c09fa",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly discuss limitations regarding fixed stride matching pre-known frame rates, the lack of full joint learning for auxiliary object pointers, and qualitative failure cases during rapid viewpoint/scale changes."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -162,7 +2180,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -26,7 +26,7 @@
   "last_seen_date": "2026-06-30",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-26 13:04:09",
   "notified_date": "2026-06-26",
@@ -37,7 +37,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-26 13:01:31",
-    "generated_at": "2026-10-16 08:47:49",
+    "generated_at": "2026-10-16 11:43:11",
     "last_seen_at": "2026-06-30 10:10:05",
     "metadata_sources": [
       "openalex",
@@ -117,36 +117,1990 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-16T11:41:00.495398+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous, well-designed security framework with formal proofs and comprehensive empirical cross-model evaluation across multiple realistic threat models and baselines, fulfilling the criteria for scholarly quality.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 71088,
+      "assessment_input_sha256": "f679d5f98bd601f3239f8c0adb5ec2c83a83012afeab5658757ebd2700ff5d01",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7165972610",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 68916,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 68833,
+      "evidence_block_count": 102,
+      "evidence_context_characters": 81883,
+      "evidence_context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+      "evidence_context_sha256": "b274924f7ce5ecacf8d0e682615f097f7e67855d462235646dc1a70b66fcb46f",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 68938,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "7a792674eae6dabe59187e6b09bfa515c8d48e0651a1a71a36aec5313afee448",
+        "source_url": "https://arxiv.org/pdf/2606.24322",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 68916,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 1992,
+          "supplied_characters": 1992
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "appendix",
+          "section_index": 1,
+          "source_characters": 3440,
+          "supplied_characters": 3440
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 2,
+          "source_characters": 6363,
+          "supplied_characters": 6363
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "appendix",
+          "section_index": 3,
+          "source_characters": 5483,
+          "supplied_characters": 5483
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 4,
+          "source_characters": 4425,
+          "supplied_characters": 4425
+        },
+        {
+          "heading": "Appendix: Mem-Inv-Bench",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 5,
+          "source_characters": 1904,
+          "supplied_characters": 1904
+        },
+        {
+          "heading": "Appendix: Mem-Inv-Bench",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "appendix",
+          "section_index": 6,
+          "source_characters": 3107,
+          "supplied_characters": 3107
+        },
+        {
+          "heading": "Table I",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 282,
+          "supplied_characters": 282
+        },
+        {
+          "heading": "Tma-Nmalone Is0%On Both The Direct Attack And Laundering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 110,
+          "supplied_characters": 110
+        },
+        {
+          "heading": "Actions Correctly Require A One-Time Confirmation Rather",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 223,
+          "supplied_characters": 223
+        },
+        {
+          "heading": "Tma-Nm 0 0 100 0",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1794,
+          "supplied_characters": 1794
+        },
+        {
+          "heading": "Tma-Nm 0 0 100 0",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Table Ii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 537,
+          "supplied_characters": 537
+        },
+        {
+          "heading": "Table Iii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1880,
+          "supplied_characters": 1880
+        },
+        {
+          "heading": "Table Iv",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Mechanism Ablation(Mean Over The Eight Models):",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 511,
+          "supplied_characters": 511
+        },
+        {
+          "heading": "Mechanism Ablation(Mean Over The Eight Models):",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 1607,
+          "supplied_characters": 1607
+        },
+        {
+          "heading": "Table V",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "Head-To-Head Against Four Published Memory-Poisoning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 52,
+          "supplied_characters": 52
+        },
+        {
+          "heading": "Pipelines Reproduced As Drop-In Scenarios:Consequential-Asr",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 112,
+          "supplied_characters": 112
+        },
+        {
+          "heading": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 2140,
+          "supplied_characters": 2140
+        },
+        {
+          "heading": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Table Vi",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Content-Detector Sensitivity:Laundering-Asrand",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 2690,
+          "supplied_characters": 2690
+        },
+        {
+          "heading": "Table Vii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 9,
+          "supplied_characters": 9
+        },
+        {
+          "heading": "Threshold Generalization:Auto-Authorization Rate(%)By",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 2922,
+          "supplied_characters": 2922
+        },
+        {
+          "heading": "Threshold Generalization:Auto-Authorization Rate(%)By",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Table Viii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 10,
+          "supplied_characters": 10
+        },
+        {
+          "heading": "Lineage Default-Policy Probe(3Models):Consequential-Asr",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 55,
+          "supplied_characters": 55
+        },
+        {
+          "heading": "By Channel(Lower Better)And Legit-Utility By Provenance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 106,
+          "supplied_characters": 106
+        },
+        {
+          "heading": "Self-Summarization But Still Leaks Trusted-Tool Echo And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 369,
+          "supplied_characters": 369
+        },
+        {
+          "heading": "Table Ix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 321,
+          "supplied_characters": 321
+        },
+        {
+          "heading": "Camel/Fides And Themcpframework Carry Formal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 189,
+          "supplied_characters": 189
+        },
+        {
+          "heading": "Wt Xs Nm El Mc Bm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 5369,
+          "supplied_characters": 5369
+        },
+        {
+          "heading": "Wt Xs Nm El Mc Bm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 3249,
+          "supplied_characters": 3249
+        },
+        {
+          "heading": "Table X",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "Independence Stress Test:Attackasr (%)When Trusted",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 3020,
+          "supplied_characters": 3020
+        },
+        {
+          "heading": "Independence Stress Test:Attackasr (%)When Trusted",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 3098,
+          "supplied_characters": 3098
+        },
+        {
+          "heading": "Appendix: Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 672,
+          "supplied_characters": 672
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1891,
+          "supplied_characters": 1891
+        },
+        {
+          "heading": "Corruption Attacks To Retrieval-Augmented Generation Of Large Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 1905,
+          "supplied_characters": 1905
+        },
+        {
+          "heading": "Corruption Attacks To Retrieval-Augmented Generation Of Large Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 6550,
+          "supplied_characters": 6550
+        },
+        {
+          "heading": "Table Xi",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Undefended Consequential-Asr (%)By Model And Laundering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 405,
+          "supplied_characters": 405
+        }
+      ],
+      "selected_characters": 68833,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 1992,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 3440,
+          "heading": "Appendix: Introduction",
+          "page": 1
+        },
+        {
+          "characters": 6363,
+          "heading": "Appendix: Introduction",
+          "page": 2
+        },
+        {
+          "characters": 5483,
+          "heading": "Appendix: Introduction",
+          "page": 3
+        },
+        {
+          "characters": 4425,
+          "heading": "Appendix: Introduction",
+          "page": 4
+        },
+        {
+          "characters": 1904,
+          "heading": "Appendix: Mem-Inv-Bench",
+          "page": 4
+        },
+        {
+          "characters": 3107,
+          "heading": "Appendix: Mem-Inv-Bench",
+          "page": 5
+        },
+        {
+          "characters": 282,
+          "heading": "Table I",
+          "page": 5
+        },
+        {
+          "characters": 110,
+          "heading": "Tma-Nmalone Is0%On Both The Direct Attack And Laundering",
+          "page": 5
+        },
+        {
+          "characters": 223,
+          "heading": "Actions Correctly Require A One-Time Confirmation Rather",
+          "page": 5
+        },
+        {
+          "characters": 1794,
+          "heading": "Tma-Nm 0 0 100 0",
+          "page": 5
+        },
+        {
+          "characters": 1,
+          "heading": "Tma-Nm 0 0 100 0",
+          "page": 6
+        },
+        {
+          "characters": 537,
+          "heading": "Table Ii",
+          "page": 6
+        },
+        {
+          "characters": 1880,
+          "heading": "Table Iii",
+          "page": 6
+        },
+        {
+          "characters": 8,
+          "heading": "Table Iv",
+          "page": 6
+        },
+        {
+          "characters": 511,
+          "heading": "Mechanism Ablation(Mean Over The Eight Models):",
+          "page": 6
+        },
+        {
+          "characters": 1607,
+          "heading": "Mechanism Ablation(Mean Over The Eight Models):",
+          "page": 7
+        },
+        {
+          "characters": 7,
+          "heading": "Table V",
+          "page": 7
+        },
+        {
+          "characters": 52,
+          "heading": "Head-To-Head Against Four Published Memory-Poisoning",
+          "page": 7
+        },
+        {
+          "characters": 112,
+          "heading": "Pipelines Reproduced As Drop-In Scenarios:Consequential-Asr",
+          "page": 7
+        },
+        {
+          "characters": 2140,
+          "heading": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+          "page": 7
+        },
+        {
+          "characters": 1,
+          "heading": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+          "page": 8
+        },
+        {
+          "characters": 8,
+          "heading": "Table Vi",
+          "page": 8
+        },
+        {
+          "characters": 2690,
+          "heading": "Content-Detector Sensitivity:Laundering-Asrand",
+          "page": 8
+        },
+        {
+          "characters": 9,
+          "heading": "Table Vii",
+          "page": 8
+        },
+        {
+          "characters": 2922,
+          "heading": "Threshold Generalization:Auto-Authorization Rate(%)By",
+          "page": 8
+        },
+        {
+          "characters": 1,
+          "heading": "Threshold Generalization:Auto-Authorization Rate(%)By",
+          "page": 9
+        },
+        {
+          "characters": 10,
+          "heading": "Table Viii",
+          "page": 9
+        },
+        {
+          "characters": 55,
+          "heading": "Lineage Default-Policy Probe(3Models):Consequential-Asr",
+          "page": 9
+        },
+        {
+          "characters": 106,
+          "heading": "By Channel(Lower Better)And Legit-Utility By Provenance",
+          "page": 9
+        },
+        {
+          "characters": 369,
+          "heading": "Self-Summarization But Still Leaks Trusted-Tool Echo And",
+          "page": 9
+        },
+        {
+          "characters": 321,
+          "heading": "Table Ix",
+          "page": 9
+        },
+        {
+          "characters": 189,
+          "heading": "Camel/Fides And Themcpframework Carry Formal",
+          "page": 9
+        },
+        {
+          "characters": 5369,
+          "heading": "Wt Xs Nm El Mc Bm",
+          "page": 9
+        },
+        {
+          "characters": 3249,
+          "heading": "Wt Xs Nm El Mc Bm",
+          "page": 10
+        },
+        {
+          "characters": 7,
+          "heading": "Table X",
+          "page": 10
+        },
+        {
+          "characters": 3020,
+          "heading": "Independence Stress Test:Attackasr (%)When Trusted",
+          "page": 10
+        },
+        {
+          "characters": 3098,
+          "heading": "Independence Stress Test:Attackasr (%)When Trusted",
+          "page": 11
+        },
+        {
+          "characters": 672,
+          "heading": "Appendix: Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 1891,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 1905,
+          "heading": "Corruption Attacks To Retrieval-Augmented Generation Of Large Language",
+          "page": 11
+        },
+        {
+          "characters": 6550,
+          "heading": "Corruption Attacks To Retrieval-Augmented Generation Of Large Language",
+          "page": 12
+        },
+        {
+          "characters": 8,
+          "heading": "Table Xi",
+          "page": 12
+        },
+        {
+          "characters": 405,
+          "heading": "Undefended Consequential-Asr (%)By Model And Laundering",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "f679d5f98bd601f3239f8c0adb5ec2c83a83012afeab5658757ebd2700ff5d01",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "7a792674eae6dabe59187e6b09bfa515c8d48e0651a1a71a36aec5313afee448",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0002"
+        ],
+        "excerpt": "\"trusted.\" We formalize malleability for the memory write-\nretrieve-act pipeline and prove a machine-checked separation\ntheorem. No content- or lineage-based defense is sound under\nlaundering (T1), write-time origin binding is necessary (T2),\nand non-malleable origin-bound authority with Sybil-resistant\ncorroboration-gated elevation is sufficient (T3). Our construction,\nTMA-NM (Tamper-evident Memory Authority, Non-Malleable),\ninstantiates non-malleable information-flow control (IFC) for\nLLM-agent memory. A cross-defense, cross-attack, and cross-\nmodel benchmark over eight frontier models shows that existing\ndefenses fail exactly where the theory predicts (up to 68%\nlaundering attack-success), while TMA-NM reaches0%attack\nsuccess on both direct and laundering attacks across all models\nand channels, at full legitimate utility. We release the bench-\nmark, harness, and machine-checked TLA + ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2ee58dbb94f9273e8af7cd7c1736e883062fb719821eeb36f900f316dd03f9ba",
+            "evidence_id": "E4c72196c38860663-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1799,
+                "page": 1,
+                "section": "Abstract / front matter",
+                "section_index": 0,
+                "start": 899,
+                "text": "\"trusted.\" We formalize malleability for the memory write-\nretrieve-act pipeline and prove a machine-checked separation\ntheorem. No content- or lineage-based defense is sound under\nlaundering (T1), write-time origin binding is necessary (T2),\nand non-malleable origin-bound authority with Sybil-resistant\ncorroboration-gated elevation is sufficient (T3). Our construction,\nTMA-NM (Tamper-evident Memory Authority, Non-Malleable),\ninstantiates non-malleable information-flow control (IFC) for\nLLM-agent memory. A cross-defense, cross-attack, and cross-\nmodel benchmark over eight frontier models shows that existing\ndefenses fail exactly where the theory predicts (up to 68%\nlaundering attack-success), while TMA-NM reaches0%attack\nsuccess on both direct and laundering attacks across all models\nand channels, at full legitimate utility. We release the bench-\nmark, harness, and machine-checked TLA + "
+              }
+            ],
+            "text": "\"trusted.\" We formalize malleability for the memory write-\nretrieve-act pipeline and prove a machine-checked separation\ntheorem. No content- or lineage-based defense is sound under\nlaundering (T1), write-time origin binding is necessary (T2),\nand non-malleable origin-bound authority with Sybil-resistant\ncorroboration-gated elevation is sufficient (T3). Our construction,\nTMA-NM (Tamper-evident Memory Authority, Non-Malleable),\ninstantiates non-malleable information-flow control (IFC) for\nLLM-agent memory. A cross-defense, cross-attack, and cross-\nmodel benchmark over eight frontier models shows that existing\ndefenses fail exactly where the theory predicts (up to 68%\nlaundering attack-success), while TMA-NM reaches0%attack\nsuccess on both direct and laundering attacks across all models\nand channels, at full legitimate utility. We release the bench-\nmark, harness, and machine-checked TLA + "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0007"
+        ],
+        "excerpt": "Inmanufactured corrob-\noration(L-c) the adversary plants several untrusted items to\nfake a consensus. Each lowers an item's apparent untrusted-\nness without any genuine trusted endorsement.\nWe argue that authority to act must instead benon-\nmalleable, bound to a memory item's true origin, which\nthe trusted monitor records and no adversary transformation\ncan lower. Untrusted-origin content is non-actionable, and,\ncrucially, this labelpropagates. An agent note derived from\nuntrusted content, or a trusted-tool output echoing it, inherits\nuntrusted authority, which closes L-a and L-b. Authority rises\nonly throughSybil-resistant corroboration-gated elevation,\nthat is, through at least twoindependenttrusted principals\narXiv:2606.24322v1  [cs.CR]  23 Jun 2026\n2\n(for example an internal registry and a bank confirmation, not\ntwo copies of the same web page) or a fresh action-bound\nuser ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b147f6e1b1fd6abd41b71fd9e2b06172cb7e5d1978c203e76b863e5185c9aeaa",
+            "evidence_id": "E4c72196c38860663-B0007",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3440,
+                "page": 1,
+                "section": "Appendix: Introduction",
+                "section_index": 1,
+                "start": 2678,
+                "text": "Inmanufactured corrob-\noration(L-c) the adversary plants several untrusted items to\nfake a consensus. Each lowers an item's apparent untrusted-\nness without any genuine trusted endorsement.\nWe argue that authority to act must instead benon-\nmalleable, bound to a memory item's true origin, which\nthe trusted monitor records and no adversary transformation\ncan lower. Untrusted-origin content is non-actionable, and,\ncrucially, this labelpropagates. An agent note derived from\nuntrusted content, or a trusted-tool output echoing it, inherits\nuntrusted authority, which closes L-a and L-b. Authority rises\nonly throughSybil-resistant corroboration-gated elevation,\nthat is, through at least twoindependenttrusted principals\narXiv:2606.24322v1  [cs.CR]  23 Jun 2026"
+              },
+              {
+                "end": 127,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 0,
+                "text": "2\n(for example an internal registry and a bank confirmation, not\ntwo copies of the same web page) or a fresh action-bound\nuser "
+              }
+            ],
+            "text": "Inmanufactured corrob-\noration(L-c) the adversary plants several untrusted items to\nfake a consensus. Each lowers an item's apparent untrusted-\nness without any genuine trusted endorsement.\nWe argue that authority to act must instead benon-\nmalleable, bound to a memory item's true origin, which\nthe trusted monitor records and no adversary transformation\ncan lower. Untrusted-origin content is non-actionable, and,\ncrucially, this labelpropagates. An agent note derived from\nuntrusted content, or a trusted-tool output echoing it, inherits\nuntrusted authority, which closes L-a and L-b. Authority rises\nonly throughSybil-resistant corroboration-gated elevation,\nthat is, through at least twoindependenttrusted principals\narXiv:2606.24322v1  [cs.CR]  23 Jun 2026\n2\n(for example an internal registry and a bank confirmation, not\ntwo copies of the same web page) or a fresh action-bound\nuser "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0011"
+        ],
+        "excerpt": "at\nhttps://github.com/yedidel/mem-inv-bench, and the benchmark data at https:\n//huggingface.co/datasets/anonymos-2321135/MEM-INV-Bench.\ncannot break cryptography, and does not control the user's\nauthorization channel.\nAssumption A1 (origin-labeling oracle).The monitor assigns\neach write its trueoriginfrom thechannelit arrives on (user\nprompt, authenticated tool, agent self-write, untrusted ingestion),\nnever from its content. We assume the channel itself is authenti-\ncated, so labels are correct at write time. Concretely, atrusted\ntool channel is realized by mutually authenticated transport\n(mTLS), audience-bound OAuth tokens, or signed tool responses,\nso that origin derives from a verified channel identity rather than\nfrom message text, and the monitor can flaglabel driftwhen\na principal's claimed origin no longer matches its authenticated\nidentity. All of our guarantees ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "652cef9aea944b444e34fa50f329547653f8b1123849457c76493b851beaebf5",
+            "evidence_id": "E4c72196c38860663-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3701,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 2817,
+                "text": "at\nhttps://github.com/yedidel/mem-inv-bench, and the benchmark data at https:\n//huggingface.co/datasets/anonymos-2321135/MEM-INV-Bench.\ncannot break cryptography, and does not control the user's\nauthorization channel.\nAssumption A1 (origin-labeling oracle).The monitor assigns\neach write its trueoriginfrom thechannelit arrives on (user\nprompt, authenticated tool, agent self-write, untrusted ingestion),\nnever from its content. We assume the channel itself is authenti-\ncated, so labels are correct at write time. Concretely, atrusted\ntool channel is realized by mutually authenticated transport\n(mTLS), audience-bound OAuth tokens, or signed tool responses,\nso that origin derives from a verified channel identity rather than\nfrom message text, and the monitor can flaglabel driftwhen\na principal's claimed origin no longer matches its authenticated\nidentity. All of our guarantees "
+              }
+            ],
+            "text": "at\nhttps://github.com/yedidel/mem-inv-bench, and the benchmark data at https:\n//huggingface.co/datasets/anonymos-2321135/MEM-INV-Bench.\ncannot break cryptography, and does not control the user's\nauthorization channel.\nAssumption A1 (origin-labeling oracle).The monitor assigns\neach write its trueoriginfrom thechannelit arrives on (user\nprompt, authenticated tool, agent self-write, untrusted ingestion),\nnever from its content. We assume the channel itself is authenti-\ncated, so labels are correct at write time. Concretely, atrusted\ntool channel is realized by mutually authenticated transport\n(mTLS), audience-bound OAuth tokens, or signed tool responses,\nso that origin derives from a verified channel identity rather than\nfrom message text, and the monitor can flaglabel driftwhen\na principal's claimed origin no longer matches its authenticated\nidentity. All of our guarantees "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0014"
+        ],
+        "excerpt": "corroboration-gated elevation.(Malleability is\ndefined formally in Section IV, and this section presents\nthe construction that resists it.)Fig. 1 shows the monitor\nmediating the pipeline.\nThe construction has four mechanisms, sketched in Fig. 1.\nThe first,write-time origin binding(M1), setsact class=\nf(origin)at the moment of writing, so that untrusted maps\nto none, agent to inform, and trusted tool or user to act. The\nmonitor recordsorigin, and the adversary cannot forge it.\nNon-malleable propagation (M2) is the keystone of the\ndesign, and it closes L-a and L-b. Authority is bound ir-\nrevocably tooriginat write time and never to content or\nderivation edges. Any item derived from untrusted sources,\nwhether through agent summarization (L-a) or a trusted tool\nfed untrusted inputs (L-b), automatically inherits themaximum\nuntrustlevel and remainsact=none, no matter how benign",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d3f5b22828de73a018fb041b1162a80a18873319807e0d35e42e6e52ad1cea47",
+            "evidence_id": "E4c72196c38860663-B0014",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 6363,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 5479,
+                "text": "corroboration-gated elevation.(Malleability is\ndefined formally in Section IV, and this section presents\nthe construction that resists it.)Fig. 1 shows the monitor\nmediating the pipeline.\nThe construction has four mechanisms, sketched in Fig. 1.\nThe first,write-time origin binding(M1), setsact class=\nf(origin)at the moment of writing, so that untrusted maps\nto none, agent to inform, and trusted tool or user to act. The\nmonitor recordsorigin, and the adversary cannot forge it.\nNon-malleable propagation (M2) is the keystone of the\ndesign, and it closes L-a and L-b. Authority is bound ir-\nrevocably tooriginat write time and never to content or\nderivation edges. Any item derived from untrusted sources,\nwhether through agent summarization (L-a) or a trusted tool\nfed untrusted inputs (L-b), automatically inherits themaximum\nuntrustlevel and remainsact=none, no matter how benign"
+              }
+            ],
+            "text": "corroboration-gated elevation.(Malleability is\ndefined formally in Section IV, and this section presents\nthe construction that resists it.)Fig. 1 shows the monitor\nmediating the pipeline.\nThe construction has four mechanisms, sketched in Fig. 1.\nThe first,write-time origin binding(M1), setsact class=\nf(origin)at the moment of writing, so that untrusted maps\nto none, agent to inform, and trusted tool or user to act. The\nmonitor recordsorigin, and the adversary cannot forge it.\nNon-malleable propagation (M2) is the keystone of the\ndesign, and it closes L-a and L-b. Authority is bound ir-\nrevocably tooriginat write time and never to content or\nderivation edges. Any item derived from untrusted sources,\nwhether through agent summarization (L-a) or a trusted tool\nfed untrusted inputs (L-b), automatically inherits themaximum\nuntrustlevel and remainsact=none, no matter how benign"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0018"
+        ],
+        "excerpt": "elevations, and allow/denyverdictsare appended to\na hash chain, and retroactive edits break the chain. Each\nappend isO(1), a single hash over the previous head, and\nadds no model call, so logging does not affect the act-gate\nAlgorithm 1Act-time authorization for a consequential action\na(allow iff its value is not untrusted-derived, OR is licensed\nby\u22652independent trusted principals, OR a fresh user autho-\nrization is presented, otherwise deny).\n1:v\u2190security-relevant value ofa(e.g. payee, setting,\nrecipient)\n2:U\u2190 {retrieved untrusted items that pushv}\n3:ifU=\u2205then returnALLOW\u25b7 vnot from untrusted\nmemory\n4:end if\n5:C\u2190 {independenttrusted principals that licensev}\n6:if|C| \u22652thenelevate eachu\u2208U;returnALLOW\u25b7\nM3\n7:end if\n8:iffresh user auth bound toathenconsume it;return\nALLOW\n9:end if\n10:returnDENY\u25b7untrusted-derived value, uncorroborated\nlatency. Storage grows linearly in the number of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2055ee61207ee9dd77fadf78e8e06ea7bf4d7e7bece3fb6914794c5f0fd6d557",
+            "evidence_id": "E4c72196c38860663-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3584,
+                "page": 3,
+                "section": "Appendix: Introduction",
+                "section_index": 3,
+                "start": 2692,
+                "text": "elevations, and allow/denyverdictsare appended to\na hash chain, and retroactive edits break the chain. Each\nappend isO(1), a single hash over the previous head, and\nadds no model call, so logging does not affect the act-gate\nAlgorithm 1Act-time authorization for a consequential action\na(allow iff its value is not untrusted-derived, OR is licensed\nby\u22652independent trusted principals, OR a fresh user autho-\nrization is presented, otherwise deny).\n1:v\u2190security-relevant value ofa(e.g. payee, setting,\nrecipient)\n2:U\u2190 {retrieved untrusted items that pushv}\n3:ifU=\u2205then returnALLOW\u25b7 vnot from untrusted\nmemory\n4:end if\n5:C\u2190 {independenttrusted principals that licensev}\n6:if|C| \u22652thenelevate eachu\u2208U;returnALLOW\u25b7\nM3\n7:end if\n8:iffresh user auth bound toathenconsume it;return\nALLOW\n9:end if\n10:returnDENY\u25b7untrusted-derived value, uncorroborated\nlatency. Storage grows linearly in the number of "
+              }
+            ],
+            "text": "elevations, and allow/denyverdictsare appended to\na hash chain, and retroactive edits break the chain. Each\nappend isO(1), a single hash over the previous head, and\nadds no model call, so logging does not affect the act-gate\nAlgorithm 1Act-time authorization for a consequential action\na(allow iff its value is not untrusted-derived, OR is licensed\nby\u22652independent trusted principals, OR a fresh user autho-\nrization is presented, otherwise deny).\n1:v\u2190security-relevant value ofa(e.g. payee, setting,\nrecipient)\n2:U\u2190 {retrieved untrusted items that pushv}\n3:ifU=\u2205then returnALLOW\u25b7 vnot from untrusted\nmemory\n4:end if\n5:C\u2190 {independenttrusted principals that licensev}\n6:if|C| \u22652thenelevate eachu\u2208U;returnALLOW\u25b7\nM3\n7:end if\n8:iffresh user auth bound toathenconsume it;return\nALLOW\n9:end if\n10:returnDENY\u25b7untrusted-derived value, uncorroborated\nlatency. Storage grows linearly in the number of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0021"
+        ],
+        "excerpt": "+\n(Temporal Logic of Actions, checked with the TLC model\nchecker) with a laundering adversary realizingAand a\n4\ndefense-independent security invariantSec, namely that no\nuntrusted-origin item authorizes a consequential action unless\nelevated by\u2265kindependent trusted principals or a fresh\naction-bound user authorization. A CONSTANT selects the\nact-gate's authority rule. The three results below are state-\nments about thebounded modelMwith parametersSlots=3,\nsessions\u22642, and thresholdk=2, each established by exhaus-\ntive TLC enumeration.\nTheorem 1(T1, insufficiency of malleable gates).InM, any\ngate whose decision is a function of content or of a content-\nderivable lineage edge is malleable (Def. 1) and admits a\nreachable state violatingSec. TLC returns the witness trace\nwrite-untrusted\u2192paraphrase\u2192act.\nTheorem 2(T2, necessity of write-time binding).InM\nwith write-time origin binding ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f0fbc05e4bc43356451cb69865d366220339e5b17784550e21a300b1ad8f4f98",
+            "evidence_id": "E4c72196c38860663-B0021",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 5483,
+                "page": 3,
+                "section": "Appendix: Introduction",
+                "section_index": 3,
+                "start": 5374,
+                "text": "+\n(Temporal Logic of Actions, checked with the TLC model\nchecker) with a laundering adversary realizingAand a"
+              },
+              {
+                "end": 780,
+                "page": 4,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 0,
+                "text": "4\ndefense-independent security invariantSec, namely that no\nuntrusted-origin item authorizes a consequential action unless\nelevated by\u2265kindependent trusted principals or a fresh\naction-bound user authorization. A CONSTANT selects the\nact-gate's authority rule. The three results below are state-\nments about thebounded modelMwith parametersSlots=3,\nsessions\u22642, and thresholdk=2, each established by exhaus-\ntive TLC enumeration.\nTheorem 1(T1, insufficiency of malleable gates).InM, any\ngate whose decision is a function of content or of a content-\nderivable lineage edge is malleable (Def. 1) and admits a\nreachable state violatingSec. TLC returns the witness trace\nwrite-untrusted\u2192paraphrase\u2192act.\nTheorem 2(T2, necessity of write-time binding).InM\nwith write-time origin binding "
+              }
+            ],
+            "text": "+\n(Temporal Logic of Actions, checked with the TLC model\nchecker) with a laundering adversary realizingAand a\n4\ndefense-independent security invariantSec, namely that no\nuntrusted-origin item authorizes a consequential action unless\nelevated by\u2265kindependent trusted principals or a fresh\naction-bound user authorization. A CONSTANT selects the\nact-gate's authority rule. The three results below are state-\nments about thebounded modelMwith parametersSlots=3,\nsessions\u22642, and thresholdk=2, each established by exhaus-\ntive TLC enumeration.\nTheorem 1(T1, insufficiency of malleable gates).InM, any\ngate whose decision is a function of content or of a content-\nderivable lineage edge is malleable (Def. 1) and admits a\nreachable state violatingSec. TLC returns the witness trace\nwrite-untrusted\u2192paraphrase\u2192act.\nTheorem 2(T2, necessity of write-time binding).InM\nwith write-time origin binding "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0022"
+        ],
+        "excerpt": "disabled,Secis violated in\na reachable state, so write-time origin binding is necessary\nwithin the model.\nTheorem 3(T3, sufficiency of non-malleable authority).In\nM, the gate that binds authority to origin and elevates only\nvia\u2265kindependent trusted principals (or a fresh action-bound\nuser authorization) is non-malleable and satisfiesSecacross\nall3,270reachable states.\nThese are claims about the boundedM, and the inductive-\ninvariant argument below extends T3 toward unbounded ex-\necutions. We additionally check the implementation directly,\nby an exhaustive procedure over the real monitor that veri-\nfies Action Integrity (120configs), Elevation Soundness (64\ncorroborator sets), and end-to-end safety.\nThe results above check one model size, and we strengthen\nT3 towardunboundedexecutions with an inductive ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "843b43eb9f28b405d1794629169151fb1f0d6a0c8d4b89229b76435d7bd6f52e",
+            "evidence_id": "E4c72196c38860663-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1593,
+                "page": 4,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 780,
+                "text": "disabled,Secis violated in\na reachable state, so write-time origin binding is necessary\nwithin the model.\nTheorem 3(T3, sufficiency of non-malleable authority).In\nM, the gate that binds authority to origin and elevates only\nvia\u2265kindependent trusted principals (or a fresh action-bound\nuser authorization) is non-malleable and satisfiesSecacross\nall3,270reachable states.\nThese are claims about the boundedM, and the inductive-\ninvariant argument below extends T3 toward unbounded ex-\necutions. We additionally check the implementation directly,\nby an exhaustive procedure over the real monitor that veri-\nfies Action Integrity (120configs), Elevation Soundness (64\ncorroborator sets), and end-to-end safety.\nThe results above check one model size, and we strengthen\nT3 towardunboundedexecutions with an inductive "
+              }
+            ],
+            "text": "disabled,Secis violated in\na reachable state, so write-time origin binding is necessary\nwithin the model.\nTheorem 3(T3, sufficiency of non-malleable authority).In\nM, the gate that binds authority to origin and elevates only\nvia\u2265kindependent trusted principals (or a fresh action-bound\nuser authorization) is non-malleable and satisfiesSecacross\nall3,270reachable states.\nThese are claims about the boundedM, and the inductive-\ninvariant argument below extends T3 toward unbounded ex-\necutions. We additionally check the implementation directly,\nby an exhaustive procedure over the real monitor that veri-\nfies Action Integrity (120configs), Elevation Soundness (64\ncorroborator sets), and end-to-end safety.\nThe results above check one model size, and we strengthen\nT3 towardunboundedexecutions with an inductive "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0024"
+        ],
+        "excerpt": "trusted principals, so it can never\nelevate an untrusted-only value.ACTis theonlyaction that\nsetsacted, and its enabling guard is exactly theSecurity\npredicate for the new actor, so the post-state satisfiesSecurity\nby construction. None of these arguments mentions a concrete\nslot count or session number, soIndInvis preserved for\nanynumber of memory items and sessions, which extends\nsafety toward unbounded executions. We scope this claim\ncarefully. TLC mechanically verifies the inductivestep(preser-\nvation from allIndInv-states) and the initial state, while the\nparameter-independence above is a hand argument, and a fully\nmechanized deductive proof of the unbounded theorem for\narbitrary slots, sessions, and thresholds (TLAPS/Lean) remains\nfuture work that the inductive invariant sets up. We therefore\nclaim a machine-checked inductive invariant, rather than a\nfully mechanized unbounded ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ec9aa23598e48ce0ec036024256b24812c3011688167ff679061c9400dfe7946",
+            "evidence_id": "E4c72196c38860663-B0024",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3386,
+                "page": 4,
+                "section": "Appendix: Introduction",
+                "section_index": 4,
+                "start": 2490,
+                "text": "trusted principals, so it can never\nelevate an untrusted-only value.ACTis theonlyaction that\nsetsacted, and its enabling guard is exactly theSecurity\npredicate for the new actor, so the post-state satisfiesSecurity\nby construction. None of these arguments mentions a concrete\nslot count or session number, soIndInvis preserved for\nanynumber of memory items and sessions, which extends\nsafety toward unbounded executions. We scope this claim\ncarefully. TLC mechanically verifies the inductivestep(preser-\nvation from allIndInv-states) and the initial state, while the\nparameter-independence above is a hand argument, and a fully\nmechanized deductive proof of the unbounded theorem for\narbitrary slots, sessions, and thresholds (TLAPS/Lean) remains\nfuture work that the inductive invariant sets up. We therefore\nclaim a machine-checked inductive invariant, rather than a\nfully mechanized unbounded "
+              }
+            ],
+            "text": "trusted principals, so it can never\nelevate an untrusted-only value.ACTis theonlyaction that\nsetsacted, and its enabling guard is exactly theSecurity\npredicate for the new actor, so the post-state satisfiesSecurity\nby construction. None of these arguments mentions a concrete\nslot count or session number, soIndInvis preserved for\nanynumber of memory items and sessions, which extends\nsafety toward unbounded executions. We scope this claim\ncarefully. TLC mechanically verifies the inductivestep(preser-\nvation from allIndInv-states) and the initial state, while the\nparameter-independence above is a hand argument, and a fully\nmechanized deductive proof of the unbounded theorem for\narbitrary slots, sessions, and thresholds (TLAPS/Lean) remains\nfuture work that the inductive invariant sets up. We therefore\nclaim a machine-checked inductive invariant, rather than a\nfully mechanized unbounded "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0027"
+        ],
+        "excerpt": "This section defines the benchmark, namely its scenarios,\ndefense classes, and metrics. The results appear in Section VI.\nThe benchmark spans 12domains(finance, travel, SaaS,\nprocurement, payroll, e-commerce, utilities, non-profits, dev-\nops, healthcare, CRM, IT-security) and five consequential tool\ntypes (pay, wire, purchase, setting-change, data-send). At-\ntack scenarios cover sleeper, control-flow, and data-exfiltration\nclasses, legitimate-elevation scenarios require external infor-\nmation to act after trusted corroboration (utility must hold).\nEach attack hasbenign,static(blatant),adaptive(disguised),\nandwhiteboxvariants. The whitebox adversaryknows TMA-\nNMand forges trusted-sounding corroboration inside the un-\ntrusted blob to defeat value-provenance. Because TMA-NM's\nauthority followsoriginrather than content claiming trust, this\nis resisted by construction.\nWe compare five ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Mem-Inv-Bench",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dd0a3abbcf8f4c1fef250547e43a462b20a5bbec43ae3e9da520dfd63a2ba25a",
+            "evidence_id": "E4c72196c38860663-B0027",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Mem-Inv-Bench",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 4,
+                "section": "Appendix: Mem-Inv-Bench",
+                "section_index": 5,
+                "start": 0,
+                "text": "This section defines the benchmark, namely its scenarios,\ndefense classes, and metrics. The results appear in Section VI.\nThe benchmark spans 12domains(finance, travel, SaaS,\nprocurement, payroll, e-commerce, utilities, non-profits, dev-\nops, healthcare, CRM, IT-security) and five consequential tool\ntypes (pay, wire, purchase, setting-change, data-send). At-\ntack scenarios cover sleeper, control-flow, and data-exfiltration\nclasses, legitimate-elevation scenarios require external infor-\nmation to act after trusted corroboration (utility must hold).\nEach attack hasbenign,static(blatant),adaptive(disguised),\nandwhiteboxvariants. The whitebox adversaryknows TMA-\nNMand forges trusted-sounding corroboration inside the un-\ntrusted blob to defeat value-provenance. Because TMA-NM's\nauthority followsoriginrather than content claiming trust, this\nis resisted by construction.\nWe compare five "
+              }
+            ],
+            "text": "This section defines the benchmark, namely its scenarios,\ndefense classes, and metrics. The results appear in Section VI.\nThe benchmark spans 12domains(finance, travel, SaaS,\nprocurement, payroll, e-commerce, utilities, non-profits, dev-\nops, healthcare, CRM, IT-security) and five consequential tool\ntypes (pay, wire, purchase, setting-change, data-send). At-\ntack scenarios cover sleeper, control-flow, and data-exfiltration\nclasses, legitimate-elevation scenarios require external infor-\nmation to act after trusted corroboration (utility must hold).\nEach attack hasbenign,static(blatant),adaptive(disguised),\nandwhiteboxvariants. The whitebox adversaryknows TMA-\nNMand forges trusted-sounding corroboration inside the un-\ntrusted blob to defeat value-provenance. Because TMA-NM's\nauthority followsoriginrather than content claiming trust, this\nis resisted by construction.\nWe compare five "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0028"
+        ],
+        "excerpt": "defense classes, each the strongest faithful\ninstance of its class.noneapplies no defense.trust scoreis\ncontent-trust scoring (for example SuperLocalMemory [18]),\nand in the cross-model study its instance is a per-model\nLLM judge,prob detect, run onthe model under testso\nthat it is not a stub.lineageis derivation-edge attribution\n(MemLineage-style [14]).capability ifcis single-session ca-\npability/IFC (CaMeL/Fides-style), which assumes memory\nis uncompromised.tma nmis ours. The faithfulness point\nmatters in particular for the content detector, which runs on\nthe model under test rather than a stub.\nWe report the consequential-action attack-success rate\n(ASR), the fraction of runs in which the attacker action\nexecutes, for the direct attack and the three laundering\nchannels (L-a/b/c). We also reportlegit-utility(whether a\ncorroborated legitimate action is correctly authorized, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Mem-Inv-Bench",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bb6bc5f43dd95542886b49a269096e33d901fc932e8c9e9b4081005267e9a09b",
+            "evidence_id": "E4c72196c38860663-B0028",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Mem-Inv-Bench",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1781,
+                "page": 4,
+                "section": "Appendix: Mem-Inv-Bench",
+                "section_index": 5,
+                "start": 893,
+                "text": "defense classes, each the strongest faithful\ninstance of its class.noneapplies no defense.trust scoreis\ncontent-trust scoring (for example SuperLocalMemory [18]),\nand in the cross-model study its instance is a per-model\nLLM judge,prob detect, run onthe model under testso\nthat it is not a stub.lineageis derivation-edge attribution\n(MemLineage-style [14]).capability ifcis single-session ca-\npability/IFC (CaMeL/Fides-style), which assumes memory\nis uncompromised.tma nmis ours. The faithfulness point\nmatters in particular for the content detector, which runs on\nthe model under test rather than a stub.\nWe report the consequential-action attack-success rate\n(ASR), the fraction of runs in which the attacker action\nexecutes, for the direct attack and the three laundering\nchannels (L-a/b/c). We also reportlegit-utility(whether a\ncorroborated legitimate action is correctly authorized, "
+              }
+            ],
+            "text": "defense classes, each the strongest faithful\ninstance of its class.noneapplies no defense.trust scoreis\ncontent-trust scoring (for example SuperLocalMemory [18]),\nand in the cross-model study its instance is a per-model\nLLM judge,prob detect, run onthe model under testso\nthat it is not a stub.lineageis derivation-edge attribution\n(MemLineage-style [14]).capability ifcis single-session ca-\npability/IFC (CaMeL/Fides-style), which assumes memory\nis uncompromised.tma nmis ours. The faithfulness point\nmatters in particular for the content detector, which runs on\nthe model under test rather than a stub.\nWe report the consequential-action attack-success rate\n(ASR), the fraction of runs in which the attacker action\nexecutes, for the direct attack and the three laundering\nchannels (L-a/b/c). We also reportlegit-utility(whether a\ncorroborated legitimate action is correctly authorized, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0031"
+        ],
+        "excerpt": "classes at0%ASR onboththe direct attack and\nlaundering, at100%legit-utility, identical to the undefended\nagent. Baselines fail exactly where the separation theorem pre-\ndicts. Content (trust score) and capability-IFC are laundered\n(68%), capability-IFC additionally permits the direct attack\n(84%, since it assumes memory is clean), and lineage resists\ncorroboration laundering but is defeated by summarization\nand echo (47%). All TMA-NM-vs.-baseline ASR gaps are\nsignificant atp <5\u00d710 \u22125 (two-sided permutation test,\n20,000iterations). Pooled per laundering channel, TMA-NM\nis0/192with Wilson 95% CI[0,2.0]%on each of direct,\nsummarization, tool-echo, and corroboration. The full per-\nmodel, per-channel breakdown with exactnand CIs is in\nAppendix B, and each baseline's decision rule is documented\nin Appendix A.\nOn deployability, TMA-NM's act-gate is a deterministic\ncheck that requiresnoextra ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Mem-Inv-Bench",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "22552575c96d7a3108857afd3cd46cdac58126e9fa898ab2b29afc407ec8467b",
+            "evidence_id": "E4c72196c38860663-B0031",
+            "pages": [
+              5
+            ],
+            "section": "Appendix: Mem-Inv-Bench",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2569,
+                "page": 5,
+                "section": "Appendix: Mem-Inv-Bench",
+                "section_index": 6,
+                "start": 1672,
+                "text": "classes at0%ASR onboththe direct attack and\nlaundering, at100%legit-utility, identical to the undefended\nagent. Baselines fail exactly where the separation theorem pre-\ndicts. Content (trust score) and capability-IFC are laundered\n(68%), capability-IFC additionally permits the direct attack\n(84%, since it assumes memory is clean), and lineage resists\ncorroboration laundering but is defeated by summarization\nand echo (47%). All TMA-NM-vs.-baseline ASR gaps are\nsignificant atp <5\u00d710 \u22125 (two-sided permutation test,\n20,000iterations). Pooled per laundering channel, TMA-NM\nis0/192with Wilson 95% CI[0,2.0]%on each of direct,\nsummarization, tool-echo, and corroboration. The full per-\nmodel, per-channel breakdown with exactnand CIs is in\nAppendix B, and each baseline's decision rule is documented\nin Appendix A.\nOn deployability, TMA-NM's act-gate is a deterministic\ncheck that requiresnoextra "
+              }
+            ],
+            "text": "classes at0%ASR onboththe direct attack and\nlaundering, at100%legit-utility, identical to the undefended\nagent. Baselines fail exactly where the separation theorem pre-\ndicts. Content (trust score) and capability-IFC are laundered\n(68%), capability-IFC additionally permits the direct attack\n(84%, since it assumes memory is clean), and lineage resists\ncorroboration laundering but is defeated by summarization\nand echo (47%). All TMA-NM-vs.-baseline ASR gaps are\nsignificant atp <5\u00d710 \u22125 (two-sided permutation test,\n20,000iterations). Pooled per laundering channel, TMA-NM\nis0/192with Wilson 95% CI[0,2.0]%on each of direct,\nsummarization, tool-echo, and corroboration. The full per-\nmodel, per-channel breakdown with exactnand CIs is in\nAppendix B, and each baseline's decision rule is documented\nin Appendix A.\nOn deployability, TMA-NM's act-gate is a deterministic\ncheck that requiresnoextra "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0033"
+        ],
+        "excerpt": "TABLE I\nUNIFIED BENCHMARK,POOLED OVER8MODELS(WILSON95% CIIN\nTEXT). COLUMNS:DIRECT-ATTACKASR,LAUNDERINGASR (MEAN OF\nL-A/B/C),LEGIT-UTILITY(CORROBORATED,HIGHER IS BETTER),AND\nUNCORR-AUTO(AUTO-AUTHORIZATION OF ANuncorroborated,\nUNTRUSTED-SOURCED LEGITIMATE ACTION,WHERElower is safer).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table I",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ad8a8860901608811a46642cb200f09757287b97c72a6f573a4bba3e5d3071e0",
+            "evidence_id": "E4c72196c38860663-B0033",
+            "pages": [
+              5
+            ],
+            "section": "Table I",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 282,
+                "page": 5,
+                "section": "Table I",
+                "section_index": 7,
+                "start": 0,
+                "text": "TABLE I\nUNIFIED BENCHMARK,POOLED OVER8MODELS(WILSON95% CIIN\nTEXT). COLUMNS:DIRECT-ATTACKASR,LAUNDERINGASR (MEAN OF\nL-A/B/C),LEGIT-UTILITY(CORROBORATED,HIGHER IS BETTER),AND\nUNCORR-AUTO(AUTO-AUTHORIZATION OF ANuncorroborated,\nUNTRUSTED-SOURCED LEGITIMATE ACTION,WHERElower is safer)."
+              }
+            ],
+            "text": "TABLE I\nUNIFIED BENCHMARK,POOLED OVER8MODELS(WILSON95% CIIN\nTEXT). COLUMNS:DIRECT-ATTACKASR,LAUNDERINGASR (MEAN OF\nL-A/B/C),LEGIT-UTILITY(CORROBORATED,HIGHER IS BETTER),AND\nUNCORR-AUTO(AUTO-AUTHORIZATION OF ANuncorroborated,\nUNTRUSTED-SOURCED LEGITIMATE ACTION,WHERElower is safer)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0036"
+        ],
+        "excerpt": "TMA-NM 0 0 100 0\ndirect-ASR laundering-ASR legit-utility\n0\n20\n40\n60\n80\n100%  (pooled, 8 models)\nnone\ntrust score\nlineage\ncapability ifc\ntma nm\nFig. 2. Unified benchmark (pooled,8models, Wilson 95% CIs). TMA-NM\n(green) is0%on the direct attack and laundering while preserving100%\nlegit-utility.\nan uncorroborated, untrusted-sourced consequential action re-\nquires a one-time user confirmation (uncorr-auto= 0%), the\ncorrect anti-fraud behavior that the insecure baselines skip\n(uncorr-auto= 100%).\nThree supporting studies reinforce this. The cross-model\nstudy below reports the same conclusion across attackstyles\n(sleeper, control-flow, and data-exfiltration, with blatant, dis-\nguised, and whitebox triggers), the ablation isolates each\nmechanism, and the persistence sweep shows time-invariance.\nThe cross-model trigger-style study (per-model breakdown\nin Table III, pooled in Table II) supports ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Tma-Nm 0 0 100 0",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9b6b3610d3220380356aab4760a69ee837a9024dc54b8af934eba94629ab6010",
+            "evidence_id": "E4c72196c38860663-B0036",
+            "pages": [
+              5
+            ],
+            "section": "Tma-Nm 0 0 100 0",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 5,
+                "section": "Tma-Nm 0 0 100 0",
+                "section_index": 10,
+                "start": 0,
+                "text": "TMA-NM 0 0 100 0\ndirect-ASR laundering-ASR legit-utility\n0\n20\n40\n60\n80\n100%  (pooled, 8 models)\nnone\ntrust score\nlineage\ncapability ifc\ntma nm\nFig. 2. Unified benchmark (pooled,8models, Wilson 95% CIs). TMA-NM\n(green) is0%on the direct attack and laundering while preserving100%\nlegit-utility.\nan uncorroborated, untrusted-sourced consequential action re-\nquires a one-time user confirmation (uncorr-auto= 0%), the\ncorrect anti-fraud behavior that the insecure baselines skip\n(uncorr-auto= 100%).\nThree supporting studies reinforce this. The cross-model\nstudy below reports the same conclusion across attackstyles\n(sleeper, control-flow, and data-exfiltration, with blatant, dis-\nguised, and whitebox triggers), the ablation isolates each\nmechanism, and the persistence sweep shows time-invariance.\nThe cross-model trigger-style study (per-model breakdown\nin Table III, pooled in Table II) supports "
+              }
+            ],
+            "text": "TMA-NM 0 0 100 0\ndirect-ASR laundering-ASR legit-utility\n0\n20\n40\n60\n80\n100%  (pooled, 8 models)\nnone\ntrust score\nlineage\ncapability ifc\ntma nm\nFig. 2. Unified benchmark (pooled,8models, Wilson 95% CIs). TMA-NM\n(green) is0%on the direct attack and laundering while preserving100%\nlegit-utility.\nan uncorroborated, untrusted-sourced consequential action re-\nquires a one-time user confirmation (uncorr-auto= 0%), the\ncorrect anti-fraud behavior that the insecure baselines skip\n(uncorr-auto= 100%).\nThree supporting studies reinforce this. The cross-model\nstudy below reports the same conclusion across attackstyles\n(sleeper, control-flow, and data-exfiltration, with blatant, dis-\nguised, and whitebox triggers), the ablation isolates each\nmechanism, and the persistence sweep shows time-invariance.\nThe cross-model trigger-style study (per-model breakdown\nin Table III, pooled in Table II) supports "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0039"
+        ],
+        "excerpt": "TABLE II\nCROSS-MODEL STUDY:POOLED CONSEQUENTIAL-ACTIONASR (%)WITHWILSON95% CIBY TRIGGER STYLE,OVER EIGHT MODELS. TMA-NMIS0\nTHROUGHOUT.\nDefense static adaptive whitebox all utility\nnone 43.8 [41.2,46.5] 27.6 [25.3,30.1] 22.2 [20.1,24.5] 31.2 [29.8,32.7] 95.9 [94.8,96.7]\nprob detect 6.5 [5.3,8.0] 12.2 [10.6,14.1] 12.9 [11.3,14.8] 10.6 [9.7,11.6] 93.0 [91.7,94.2]\nlineage 24.4 [22.2,26.8] 9.3 [7.9,11.0] 0.0 [0.0,0.3] 11.2 [10.3,12.2] 95.9 [94.8,96.7]\ntemporal auth 0.0 [0.0,0.3] 0.0 [0.0,0.3] 0.0 [0.0,0.3] 0.0 [0.0,0.1] 95.9 [94.8,96.7]",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Ii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "028e9fc8010e6ecf3da7ad9501f2636238897653b26b356e535aee1202731493",
+            "evidence_id": "E4c72196c38860663-B0039",
+            "pages": [
+              6
+            ],
+            "section": "Table Ii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 537,
+                "page": 6,
+                "section": "Table Ii",
+                "section_index": 12,
+                "start": 0,
+                "text": "TABLE II\nCROSS-MODEL STUDY:POOLED CONSEQUENTIAL-ACTIONASR (%)WITHWILSON95% CIBY TRIGGER STYLE,OVER EIGHT MODELS. TMA-NMIS0\nTHROUGHOUT.\nDefense static adaptive whitebox all utility\nnone 43.8 [41.2,46.5] 27.6 [25.3,30.1] 22.2 [20.1,24.5] 31.2 [29.8,32.7] 95.9 [94.8,96.7]\nprob detect 6.5 [5.3,8.0] 12.2 [10.6,14.1] 12.9 [11.3,14.8] 10.6 [9.7,11.6] 93.0 [91.7,94.2]\nlineage 24.4 [22.2,26.8] 9.3 [7.9,11.0] 0.0 [0.0,0.3] 11.2 [10.3,12.2] 95.9 [94.8,96.7]\ntemporal auth 0.0 [0.0,0.3] 0.0 [0.0,0.3] 0.0 [0.0,0.3] 0.0 [0.0,0.1] 95.9 [94.8,96.7]"
+              }
+            ],
+            "text": "TABLE II\nCROSS-MODEL STUDY:POOLED CONSEQUENTIAL-ACTIONASR (%)WITHWILSON95% CIBY TRIGGER STYLE,OVER EIGHT MODELS. TMA-NMIS0\nTHROUGHOUT.\nDefense static adaptive whitebox all utility\nnone 43.8 [41.2,46.5] 27.6 [25.3,30.1] 22.2 [20.1,24.5] 31.2 [29.8,32.7] 95.9 [94.8,96.7]\nprob detect 6.5 [5.3,8.0] 12.2 [10.6,14.1] 12.9 [11.3,14.8] 10.6 [9.7,11.6] 93.0 [91.7,94.2]\nlineage 24.4 [22.2,26.8] 9.3 [7.9,11.0] 0.0 [0.0,0.3] 11.2 [10.3,12.2] 95.9 [94.8,96.7]\ntemporal auth 0.0 [0.0,0.3] 0.0 [0.0,0.3] 0.0 [0.0,0.3] 0.0 [0.0,0.1] 95.9 [94.8,96.7]"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0044"
+        ],
+        "excerpt": "MECHANISM ABLATION(MEAN OVER THE EIGHT MODELS):\nCONSEQUENTIAL-ASR (STATIC/ADAPTIVE/WHITEBOX)AND UTILITY(%).\nORIGIN BINDING(M1)IS THE SECURITY MECHANISM,\nCORROBORATION-GATED ELEVATION(M3)IS THE UTILITY MECHANISM,\nAND THE VERDICT LOG(M4)IS AUDITABILITY.\nCondition cons-st cons-ad cons-wb utility\nnone 44 28 22 96\nTMA-NM (full) 0 0 0 96\n\u2212origin binding 44 28 22 96\n\u2212elevation 0 0 0 77\n\u2212verdict log 0 0 0 96\nat0%forN\u2208 {0,1,2,4,8}intervening sessions, while the\nundefended threat persists at51\u201361%. Dormancy buys the\n7\nnone TMA \u2212M1 \u2212M2 \u2212M3\n0\n20\n40\n60\n80\n100% (mean over models)\nadapt-ASR\nutility\nFig. 3. Ablation (mean over the eight models): removing origin binding\nrestores attacks, removing elevation costs utility, and removing the verdict\nlog affects neither.\n0 2 4 6 8\nintervening sessions N\n0\n20\n40\n60\n80\n100consequential-ASR (%)\nnone\ntemporal_auth\nFig. 4. Cross-session persistence: ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mechanism Ablation(Mean Over The Eight Models):",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e2ff3d0bd4ebb42611e7672762041e02828f476dd2a0d13347f5825c318c1111",
+            "evidence_id": "E4c72196c38860663-B0044",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Mechanism Ablation(Mean Over The Eight Models):",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 511,
+                "page": 6,
+                "section": "Mechanism Ablation(Mean Over The Eight Models):",
+                "section_index": 15,
+                "start": 0,
+                "text": "MECHANISM ABLATION(MEAN OVER THE EIGHT MODELS):\nCONSEQUENTIAL-ASR (STATIC/ADAPTIVE/WHITEBOX)AND UTILITY(%).\nORIGIN BINDING(M1)IS THE SECURITY MECHANISM,\nCORROBORATION-GATED ELEVATION(M3)IS THE UTILITY MECHANISM,\nAND THE VERDICT LOG(M4)IS AUDITABILITY.\nCondition cons-st cons-ad cons-wb utility\nnone 44 28 22 96\nTMA-NM (full) 0 0 0 96\n\u2212origin binding 44 28 22 96\n\u2212elevation 0 0 0 77\n\u2212verdict log 0 0 0 96\nat0%forN\u2208 {0,1,2,4,8}intervening sessions, while the\nundefended threat persists at51\u201361%. Dormancy buys the"
+              },
+              {
+                "end": 374,
+                "page": 7,
+                "section": "Mechanism Ablation(Mean Over The Eight Models):",
+                "section_index": 16,
+                "start": 0,
+                "text": "7\nnone TMA \u2212M1 \u2212M2 \u2212M3\n0\n20\n40\n60\n80\n100% (mean over models)\nadapt-ASR\nutility\nFig. 3. Ablation (mean over the eight models): removing origin binding\nrestores attacks, removing elevation costs utility, and removing the verdict\nlog affects neither.\n0 2 4 6 8\nintervening sessions N\n0\n20\n40\n60\n80\n100consequential-ASR (%)\nnone\ntemporal_auth\nFig. 4. Cross-session persistence: "
+              }
+            ],
+            "text": "MECHANISM ABLATION(MEAN OVER THE EIGHT MODELS):\nCONSEQUENTIAL-ASR (STATIC/ADAPTIVE/WHITEBOX)AND UTILITY(%).\nORIGIN BINDING(M1)IS THE SECURITY MECHANISM,\nCORROBORATION-GATED ELEVATION(M3)IS THE UTILITY MECHANISM,\nAND THE VERDICT LOG(M4)IS AUDITABILITY.\nCondition cons-st cons-ad cons-wb utility\nnone 44 28 22 96\nTMA-NM (full) 0 0 0 96\n\u2212origin binding 44 28 22 96\n\u2212elevation 0 0 0 77\n\u2212verdict log 0 0 0 96\nat0%forN\u2208 {0,1,2,4,8}intervening sessions, while the\nundefended threat persists at51\u201361%. Dormancy buys the\n7\nnone TMA \u2212M1 \u2212M2 \u2212M3\n0\n20\n40\n60\n80\n100% (mean over models)\nadapt-ASR\nutility\nFig. 3. Ablation (mean over the eight models): removing origin binding\nrestores attacks, removing elevation costs utility, and removing the verdict\nlog affects neither.\n0 2 4 6 8\nintervening sessions N\n0\n20\n40\n60\n80\n100consequential-ASR (%)\nnone\ntemporal_auth\nFig. 4. Cross-session persistence: "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0045"
+        ],
+        "excerpt": "consequential-ASR vs. intervening sessions\nN.\nattacker nothing against a write-time binding.\nTo test external validity beyond our own scenarios, we\nreproduce fourpublishedmemory-poisoning pipelines (Mem-\nMorph [19], MemoryGraft [20], Trojan Hippo [21], and a\nconversational Trojan [22]) as drop-in attacks through the\nsame harness (Table V). Pooled over the eight models, TMA-\nNM blocks every one (0/1152,0.0%) at benign-task utility\nidentical to the undefended agent (264/384under both), so\nthe result is not bought with utility. The undefended agent\nis driven38.2%of the time, and the baselines fail in the\nstructurally distinct ways our separation predicts. Trojan Hippo\nexfiltration is the sharpest case:lineagegivesnoprotection\n(78.5%, identical to undefended) because an egress to an\nattacker address conflicts with no registry value to flag, and\nthe content judge still leaks43.8%, whereas ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mechanism Ablation(Mean Over The Eight Models):",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "02bdeb3a9ace69f8b5e616989ed67cc2b245ea1202d452f36c66e4457d8ddb36",
+            "evidence_id": "E4c72196c38860663-B0045",
+            "pages": [
+              7
+            ],
+            "section": "Mechanism Ablation(Mean Over The Eight Models):",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1271,
+                "page": 7,
+                "section": "Mechanism Ablation(Mean Over The Eight Models):",
+                "section_index": 16,
+                "start": 374,
+                "text": "consequential-ASR vs. intervening sessions\nN.\nattacker nothing against a write-time binding.\nTo test external validity beyond our own scenarios, we\nreproduce fourpublishedmemory-poisoning pipelines (Mem-\nMorph [19], MemoryGraft [20], Trojan Hippo [21], and a\nconversational Trojan [22]) as drop-in attacks through the\nsame harness (Table V). Pooled over the eight models, TMA-\nNM blocks every one (0/1152,0.0%) at benign-task utility\nidentical to the undefended agent (264/384under both), so\nthe result is not bought with utility. The undefended agent\nis driven38.2%of the time, and the baselines fail in the\nstructurally distinct ways our separation predicts. Trojan Hippo\nexfiltration is the sharpest case:lineagegivesnoprotection\n(78.5%, identical to undefended) because an egress to an\nattacker address conflicts with no registry value to flag, and\nthe content judge still leaks43.8%, whereas "
+              }
+            ],
+            "text": "consequential-ASR vs. intervening sessions\nN.\nattacker nothing against a write-time binding.\nTo test external validity beyond our own scenarios, we\nreproduce fourpublishedmemory-poisoning pipelines (Mem-\nMorph [19], MemoryGraft [20], Trojan Hippo [21], and a\nconversational Trojan [22]) as drop-in attacks through the\nsame harness (Table V). Pooled over the eight models, TMA-\nNM blocks every one (0/1152,0.0%) at benign-task utility\nidentical to the undefended agent (264/384under both), so\nthe result is not bought with utility. The undefended agent\nis driven38.2%of the time, and the baselines fail in the\nstructurally distinct ways our separation predicts. Trojan Hippo\nexfiltration is the sharpest case:lineagegivesnoprotection\n(78.5%, identical to undefended) because an egress to an\nattacker address conflicts with no registry value to flag, and\nthe content judge still leaks43.8%, whereas "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0050"
+        ],
+        "excerpt": "TMA-NMBLOCKS ALL FOUR AT UTILITY EQUAL TO THE UNDEFENDED\nAGENT.\nPublished pipeline none prob detect lineageTMA-NM\nMemMorph 27 1 00\nMemoryGraft 41 3 00\nTrojan Hippo 78 44 780\nConv. Trojan 7 0 00\nAll four38.2 12.0 19.60.0\ndirect\nsummarize tool_echo corroborate\nnone\ntrust_score\nlineage\ncapability_ifc\ntma_nm\n84 74 68 61\n0 74 68 61\n0 74 68 0\n84 74 68 61\n0 0 0 0\nattacker-action ASR (%): defense x laundering channel\n0\n20\n40\n60\n80\n100\nFig. 5. Theory\u2194benchmark correspondence: attacker-action ASR (%, 8 mod-\nels) for each defense class against each laundering channel. Each malleable\ndefense fails on the channels the separation theorem predicts, and TMA-NM\nis0%throughout.\nA. Theory\u2194benchmark correspondence (laundering)\nThe separation theorem (Section IV) predictswhichdefense\nclass fails onwhichlaundering channel. Fig. 5 gives the per-\nchannel ASR pooled over the eight models, and the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8d5bd2a0a7f56258dc1dfcd5146f2de098b5031db237f32418e4699d4b868d03",
+            "evidence_id": "E4c72196c38860663-B0050",
+            "pages": [
+              7
+            ],
+            "section": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 885,
+                "page": 7,
+                "section": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+                "section_index": 20,
+                "start": 0,
+                "text": "TMA-NMBLOCKS ALL FOUR AT UTILITY EQUAL TO THE UNDEFENDED\nAGENT.\nPublished pipeline none prob detect lineageTMA-NM\nMemMorph 27 1 00\nMemoryGraft 41 3 00\nTrojan Hippo 78 44 780\nConv. Trojan 7 0 00\nAll four38.2 12.0 19.60.0\ndirect\nsummarize tool_echo corroborate\nnone\ntrust_score\nlineage\ncapability_ifc\ntma_nm\n84 74 68 61\n0 74 68 61\n0 74 68 0\n84 74 68 61\n0 0 0 0\nattacker-action ASR (%): defense x laundering channel\n0\n20\n40\n60\n80\n100\nFig. 5. Theory\u2194benchmark correspondence: attacker-action ASR (%, 8 mod-\nels) for each defense class against each laundering channel. Each malleable\ndefense fails on the channels the separation theorem predicts, and TMA-NM\nis0%throughout.\nA. Theory\u2194benchmark correspondence (laundering)\nThe separation theorem (Section IV) predictswhichdefense\nclass fails onwhichlaundering channel. Fig. 5 gives the per-\nchannel ASR pooled over the eight models, and the "
+              }
+            ],
+            "text": "TMA-NMBLOCKS ALL FOUR AT UTILITY EQUAL TO THE UNDEFENDED\nAGENT.\nPublished pipeline none prob detect lineageTMA-NM\nMemMorph 27 1 00\nMemoryGraft 41 3 00\nTrojan Hippo 78 44 780\nConv. Trojan 7 0 00\nAll four38.2 12.0 19.60.0\ndirect\nsummarize tool_echo corroborate\nnone\ntrust_score\nlineage\ncapability_ifc\ntma_nm\n84 74 68 61\n0 74 68 61\n0 74 68 0\n84 74 68 61\n0 0 0 0\nattacker-action ASR (%): defense x laundering channel\n0\n20\n40\n60\n80\n100\nFig. 5. Theory\u2194benchmark correspondence: attacker-action ASR (%, 8 mod-\nels) for each defense class against each laundering channel. Each malleable\ndefense fails on the channels the separation theorem predicts, and TMA-NM\nis0%throughout.\nA. Theory\u2194benchmark correspondence (laundering)\nThe separation theorem (Section IV) predictswhichdefense\nclass fails onwhichlaundering channel. Fig. 5 gives the per-\nchannel ASR pooled over the eight models, and the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0052"
+        ],
+        "excerpt": "across\nturns, so a value fetched from an untrusted lookup remains\nuntrusted when later passed to a consequential call. Over the\neight models (n=128per defense), the undefended agent is\ninduced to fetch the poisoned value and act on it in61.7%\nof episodes, whereas TMA-NM holds at0%attack success,\nneutralizing the consequential attacks the undefended agent\n8",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7d64e9ec5c3ca11bed6b51882c51d81af5fc7ede7d576aad144e50a0352517d3",
+            "evidence_id": "E4c72196c38860663-B0052",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2140,
+                "page": 7,
+                "section": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+                "section_index": 20,
+                "start": 1784,
+                "text": "across\nturns, so a value fetched from an untrusted lookup remains\nuntrusted when later passed to a consequential call. Over the\neight models (n=128per defense), the undefended agent is\ninduced to fetch the poisoned value and act on it in61.7%\nof episodes, whereas TMA-NM holds at0%attack success,\nneutralizing the consequential attacks the undefended agent"
+              },
+              {
+                "end": 1,
+                "page": 8,
+                "section": "Tma-Nmblocks All Four At Utility Equal To The Undefended",
+                "section_index": 21,
+                "start": 0,
+                "text": "8"
+              }
+            ],
+            "text": "across\nturns, so a value fetched from an untrusted lookup remains\nuntrusted when later passed to a consequential call. Over the\neight models (n=128per defense), the undefended agent is\ninduced to fetch the poisoned value and act on it in61.7%\nof episodes, whereas TMA-NM holds at0%attack success,\nneutralizing the consequential attacks the undefended agent\n8"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0054"
+        ],
+        "excerpt": "CONTENT-DETECTOR SENSITIVITY:LAUNDERING-ASRAND\nLEGIT-UTILITY AS THELLM-JUDGE BLOCK THRESHOLD\u03c4IS SWEPT(3\nMODELS,n=81ATTACK/27LEGIT). NO\u03c4REACHES\n(0%ASR,100%UTILITY),WHEREASTMA-NMDOES.\nblock threshold\u03c4laundering-ASR (%) legit-utility (%)\n0 0.0 0.0\n5 3.7 33.3\n20 18.5 85.2\n50 22.2 88.9\n75 25.9 100.0\n100 55.6 100.0\nTMA-NM (origin-bound) 0.0 100.0\nwould otherwise execute. This confirms that the guarantee\nsurvives multi-step reasoning and cross-turn dataflow, not only\nsingle-shot proposals.\nTo check that the guarantee is backend-agnostic, we run the\nsame monitor end-to-end overMem0, a production memory\nframework with LLM-based fact-extraction on write, a local\nsentence-transformer embedder, and a Qdrant vector store.\nOrigin labels survive Mem0's consolidation, which rewrites\nstored content. Critically, the corroboration count consumed\nby the act gate is maintained from the monitor's record ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Content-Detector Sensitivity:Laundering-Asrand",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ed1bf3aa034a5375f15b7406e49b923cf31beb2205ca4471fa54164a83b25d9f",
+            "evidence_id": "E4c72196c38860663-B0054",
+            "pages": [
+              8
+            ],
+            "section": "Content-Detector Sensitivity:Laundering-Asrand",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 8,
+                "section": "Content-Detector Sensitivity:Laundering-Asrand",
+                "section_index": 23,
+                "start": 0,
+                "text": "CONTENT-DETECTOR SENSITIVITY:LAUNDERING-ASRAND\nLEGIT-UTILITY AS THELLM-JUDGE BLOCK THRESHOLD\u03c4IS SWEPT(3\nMODELS,n=81ATTACK/27LEGIT). NO\u03c4REACHES\n(0%ASR,100%UTILITY),WHEREASTMA-NMDOES.\nblock threshold\u03c4laundering-ASR (%) legit-utility (%)\n0 0.0 0.0\n5 3.7 33.3\n20 18.5 85.2\n50 22.2 88.9\n75 25.9 100.0\n100 55.6 100.0\nTMA-NM (origin-bound) 0.0 100.0\nwould otherwise execute. This confirms that the guarantee\nsurvives multi-step reasoning and cross-turn dataflow, not only\nsingle-shot proposals.\nTo check that the guarantee is backend-agnostic, we run the\nsame monitor end-to-end overMem0, a production memory\nframework with LLM-based fact-extraction on write, a local\nsentence-transformer embedder, and a Qdrant vector store.\nOrigin labels survive Mem0's consolidation, which rewrites\nstored content. Critically, the corroboration count consumed\nby the act gate is maintained from the monitor's record "
+              }
+            ],
+            "text": "CONTENT-DETECTOR SENSITIVITY:LAUNDERING-ASRAND\nLEGIT-UTILITY AS THELLM-JUDGE BLOCK THRESHOLD\u03c4IS SWEPT(3\nMODELS,n=81ATTACK/27LEGIT). NO\u03c4REACHES\n(0%ASR,100%UTILITY),WHEREASTMA-NMDOES.\nblock threshold\u03c4laundering-ASR (%) legit-utility (%)\n0 0.0 0.0\n5 3.7 33.3\n20 18.5 85.2\n50 22.2 88.9\n75 25.9 100.0\n100 55.6 100.0\nTMA-NM (origin-bound) 0.0 100.0\nwould otherwise execute. This confirms that the guarantee\nsurvives multi-step reasoning and cross-turn dataflow, not only\nsingle-shot proposals.\nTo check that the guarantee is backend-agnostic, we run the\nsame monitor end-to-end overMem0, a production memory\nframework with LLM-based fact-extraction on write, a local\nsentence-transformer embedder, and a Qdrant vector store.\nOrigin labels survive Mem0's consolidation, which rewrites\nstored content. Critically, the corroboration count consumed\nby the act gate is maintained from the monitor's record "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0055"
+        ],
+        "excerpt": "of\nindependent trustedwrites(not re-parsed from the retrieved\ntext), so store-side merging, de-duplication, or vector com-\npaction cannot silently lower an independence count or relabel\nan origin. Mem0 may rewritecontent, but authority lives\nin the monitor's append-only record. Over six models and\ntwo attack plus two legitimate scenarios\u00d78trials (n=96\nper defense), the undefended agent is poisoned in50.0%of\nepisodes (Wilson 95% CI[40.2,59.8]), while TMA-NM holds\nat0%(CI[0,3.8]), and the gap is significant (permutation test,\np= 5\u00d710 \u22125,20,000iterations). Legitimacy is preserved,\nsince TMA-NM authorizes thesame95/96legitimate actions\n(99.0%) as the undefended agent, where the single shared miss\nis a model formatting failure underbotharms rather than a\nTMA-NM block, so the guarantee transfers to a real deployed\nstore with zero false blocks.\nC. Baseline sensitivity and threshold ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Content-Detector Sensitivity:Laundering-Asrand",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "921967fedb0a7f37911a0db2e298b2606f3ca544a3658ce532a1c856af5fec12",
+            "evidence_id": "E4c72196c38860663-B0055",
+            "pages": [
+              8
+            ],
+            "section": "Content-Detector Sensitivity:Laundering-Asrand",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1783,
+                "page": 8,
+                "section": "Content-Detector Sensitivity:Laundering-Asrand",
+                "section_index": 23,
+                "start": 895,
+                "text": "of\nindependent trustedwrites(not re-parsed from the retrieved\ntext), so store-side merging, de-duplication, or vector com-\npaction cannot silently lower an independence count or relabel\nan origin. Mem0 may rewritecontent, but authority lives\nin the monitor's append-only record. Over six models and\ntwo attack plus two legitimate scenarios\u00d78trials (n=96\nper defense), the undefended agent is poisoned in50.0%of\nepisodes (Wilson 95% CI[40.2,59.8]), while TMA-NM holds\nat0%(CI[0,3.8]), and the gap is significant (permutation test,\np= 5\u00d710 \u22125,20,000iterations). Legitimacy is preserved,\nsince TMA-NM authorizes thesame95/96legitimate actions\n(99.0%) as the undefended agent, where the single shared miss\nis a model formatting failure underbotharms rather than a\nTMA-NM block, so the guarantee transfers to a real deployed\nstore with zero false blocks.\nC. Baseline sensitivity and threshold "
+              }
+            ],
+            "text": "of\nindependent trustedwrites(not re-parsed from the retrieved\ntext), so store-side merging, de-duplication, or vector com-\npaction cannot silently lower an independence count or relabel\nan origin. Mem0 may rewritecontent, but authority lives\nin the monitor's append-only record. Over six models and\ntwo attack plus two legitimate scenarios\u00d78trials (n=96\nper defense), the undefended agent is poisoned in50.0%of\nepisodes (Wilson 95% CI[40.2,59.8]), while TMA-NM holds\nat0%(CI[0,3.8]), and the gap is significant (permutation test,\np= 5\u00d710 \u22125,20,000iterations). Legitimacy is preserved,\nsince TMA-NM authorizes thesame95/96legitimate actions\n(99.0%) as the undefended agent, where the single shared miss\nis a model formatting failure underbotharms rather than a\nTMA-NM block, so the guarantee transfers to a real deployed\nstore with zero false blocks.\nC. Baseline sensitivity and threshold "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0080"
+        ],
+        "excerpt": "INDEPENDENCE STRESS TEST:ATTACKASR (%)WHEN TRUSTED\nPRINCIPALS ARE COMPROMISED(3MODELS). ASINGLE COMPROMISE IS\nRESISTED,CORRELATED(SHARED-DOMAIN)COMPROMISE IS BLOCKED\nONLY BY THE DOMAIN-AWARE MONITOR,AND DEFEATINGk=2NEEDS\nTWOindependentCOMPROMISES WHILEk=3RESTORES RESISTANCE.\ncompromise setting naive monitor domain-aware (ours)\nsingle compromise,k=20 0\ntwo independent,k=267 67\ntwo correlated (shared domain),k=2670\ntwo independent,k=30 0\nto the direct attack is high (pooled84%). The defense does\nnot depend on model alignment, since it is enforced outside\nthe model.\nThe elevation gate is only as strong as theindependenceof\nits corroborators, so we make independence concrete rather\nthan nominal. Two trusted principals count as independent\nonly if they have distinct cryptographic identities, separate\nadministrative or trust domains, and no shared upstream data\nsource, for example an internal ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Independence Stress Test:Attackasr (%)When Trusted",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bac232b72deb3e51271196be686a9c4829cd5136d180cba25c2d2ac86d6579ec",
+            "evidence_id": "E4c72196c38860663-B0080",
+            "pages": [
+              10
+            ],
+            "section": "Independence Stress Test:Attackasr (%)When Trusted",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 10,
+                "section": "Independence Stress Test:Attackasr (%)When Trusted",
+                "section_index": 36,
+                "start": 0,
+                "text": "INDEPENDENCE STRESS TEST:ATTACKASR (%)WHEN TRUSTED\nPRINCIPALS ARE COMPROMISED(3MODELS). ASINGLE COMPROMISE IS\nRESISTED,CORRELATED(SHARED-DOMAIN)COMPROMISE IS BLOCKED\nONLY BY THE DOMAIN-AWARE MONITOR,AND DEFEATINGk=2NEEDS\nTWOindependentCOMPROMISES WHILEk=3RESTORES RESISTANCE.\ncompromise setting naive monitor domain-aware (ours)\nsingle compromise,k=20 0\ntwo independent,k=267 67\ntwo correlated (shared domain),k=2670\ntwo independent,k=30 0\nto the direct attack is high (pooled84%). The defense does\nnot depend on model alignment, since it is enforced outside\nthe model.\nThe elevation gate is only as strong as theindependenceof\nits corroborators, so we make independence concrete rather\nthan nominal. Two trusted principals count as independent\nonly if they have distinct cryptographic identities, separate\nadministrative or trust domains, and no shared upstream data\nsource, for example an internal "
+              }
+            ],
+            "text": "INDEPENDENCE STRESS TEST:ATTACKASR (%)WHEN TRUSTED\nPRINCIPALS ARE COMPROMISED(3MODELS). ASINGLE COMPROMISE IS\nRESISTED,CORRELATED(SHARED-DOMAIN)COMPROMISE IS BLOCKED\nONLY BY THE DOMAIN-AWARE MONITOR,AND DEFEATINGk=2NEEDS\nTWOindependentCOMPROMISES WHILEk=3RESTORES RESISTANCE.\ncompromise setting naive monitor domain-aware (ours)\nsingle compromise,k=20 0\ntwo independent,k=267 67\ntwo correlated (shared domain),k=2670\ntwo independent,k=30 0\nto the direct attack is high (pooled84%). The defense does\nnot depend on model alignment, since it is enforced outside\nthe model.\nThe elevation gate is only as strong as theindependenceof\nits corroborators, so we make independence concrete rather\nthan nominal. Two trusted principals count as independent\nonly if they have distinct cryptographic identities, separate\nadministrative or trust domains, and no shared upstream data\nsource, for example an internal "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0084"
+        ],
+        "excerpt": "could\nlaunder a value, which is why elevation requires\u22652indepen-\ndent trusted sources rather than one. (c)Value attribution: the\nsecurity-relevant value is read exactly from the structured tool\ncall, and in the unified benchmark a memory item's authority\nis itschannel-assigned origin(set by the monitor, not parsed\nfrom text), so the headline results do not depend on text\nmatching. In a black-box deployment, attributing which re-\ntrieved value the agent actually used requiresvalue-level taint\npropagation. The principled mechanism is a capability-token\ndesign (authority carried as an unforgeable token through the\ndataflow, as in CaMeL/Fides), whereas our supporting cross-\nmodel study instead uses a text proxy, which an obfuscating\nadversary could evade and which capability tokens remove.\nExtending value-level taint to nested, structured tool payloads\n(JSON schemas, deeply nested fields) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Independence Stress Test:Attackasr (%)When Trusted",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b0b34178fd9aeb8e67a4cd5f6ed0aec7aa99a32c531c18932ae10202ffd74cbb",
+            "evidence_id": "E4c72196c38860663-B0084",
+            "pages": [
+              11
+            ],
+            "section": "Independence Stress Test:Attackasr (%)When Trusted",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1453,
+                "page": 11,
+                "section": "Independence Stress Test:Attackasr (%)When Trusted",
+                "section_index": 37,
+                "start": 555,
+                "text": "could\nlaunder a value, which is why elevation requires\u22652indepen-\ndent trusted sources rather than one. (c)Value attribution: the\nsecurity-relevant value is read exactly from the structured tool\ncall, and in the unified benchmark a memory item's authority\nis itschannel-assigned origin(set by the monitor, not parsed\nfrom text), so the headline results do not depend on text\nmatching. In a black-box deployment, attributing which re-\ntrieved value the agent actually used requiresvalue-level taint\npropagation. The principled mechanism is a capability-token\ndesign (authority carried as an unforgeable token through the\ndataflow, as in CaMeL/Fides), whereas our supporting cross-\nmodel study instead uses a text proxy, which an obfuscating\nadversary could evade and which capability tokens remove.\nExtending value-level taint to nested, structured tool payloads\n(JSON schemas, deeply nested fields) "
+              }
+            ],
+            "text": "could\nlaunder a value, which is why elevation requires\u22652indepen-\ndent trusted sources rather than one. (c)Value attribution: the\nsecurity-relevant value is read exactly from the structured tool\ncall, and in the unified benchmark a memory item's authority\nis itschannel-assigned origin(set by the monitor, not parsed\nfrom text), so the headline results do not depend on text\nmatching. In a black-box deployment, attributing which re-\ntrieved value the agent actually used requiresvalue-level taint\npropagation. The principled mechanism is a capability-token\ndesign (authority carried as an unforgeable token through the\ndataflow, as in CaMeL/Fides), whereas our supporting cross-\nmodel study instead uses a text proxy, which an obfuscating\nadversary could evade and which capability tokens remove.\nExtending value-level taint to nested, structured tool payloads\n(JSON schemas, deeply nested fields) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0085"
+        ],
+        "excerpt": "is a concrete next step,\nand tokens flowing with sub-values compose with TMA-NM's\norigin labels directly. A related residual isimplicit/aggregate\nreconstruction, that is, assembling a security-relevant value\nfrom several low-integrity fragments by in-context reasoning.\nThe boundary monitor (M2) taints it when the fragments pass\nthrough tracked tool inputs, but pure in-context reconstruction\nfalls under the same value-attribution gap. We leave full value-\nlevel capability tokens to future work. (d)Scope of realism:\nbeyond the controlled store we validate a multi-turn agentic\nloop (Section VI-B,n=128) and a production Mem0+Qdrant\nbackend (n=96per defense, six models, with Wilson CIs and\na permutation test), and these use a focused scenario set, so\nbroadening the task distribution is future work. (e)Bounded\nproof: the separation is machine-checked on a finite model\nand extended toward ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Independence Stress Test:Attackasr (%)When Trusted",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0b5d46049c39ce0e2afc8696bf91c24c9fe09fcebe0699e1914a60364fef94e9",
+            "evidence_id": "E4c72196c38860663-B0085",
+            "pages": [
+              11
+            ],
+            "section": "Independence Stress Test:Attackasr (%)When Trusted",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2348,
+                "page": 11,
+                "section": "Independence Stress Test:Attackasr (%)When Trusted",
+                "section_index": 37,
+                "start": 1453,
+                "text": "is a concrete next step,\nand tokens flowing with sub-values compose with TMA-NM's\norigin labels directly. A related residual isimplicit/aggregate\nreconstruction, that is, assembling a security-relevant value\nfrom several low-integrity fragments by in-context reasoning.\nThe boundary monitor (M2) taints it when the fragments pass\nthrough tracked tool inputs, but pure in-context reconstruction\nfalls under the same value-attribution gap. We leave full value-\nlevel capability tokens to future work. (d)Scope of realism:\nbeyond the controlled store we validate a multi-turn agentic\nloop (Section VI-B,n=128) and a production Mem0+Qdrant\nbackend (n=96per defense, six models, with Wilson CIs and\na permutation test), and these use a focused scenario set, so\nbroadening the task distribution is future work. (e)Bounded\nproof: the separation is machine-checked on a finite model\nand extended toward "
+              }
+            ],
+            "text": "is a concrete next step,\nand tokens flowing with sub-values compose with TMA-NM's\norigin labels directly. A related residual isimplicit/aggregate\nreconstruction, that is, assembling a security-relevant value\nfrom several low-integrity fragments by in-context reasoning.\nThe boundary monitor (M2) taints it when the fragments pass\nthrough tracked tool inputs, but pure in-context reconstruction\nfalls under the same value-attribution gap. We leave full value-\nlevel capability tokens to future work. (d)Scope of realism:\nbeyond the controlled store we validate a multi-turn agentic\nloop (Section VI-B,n=128) and a production Mem0+Qdrant\nbackend (n=96per defense, six models, with Wilson CIs and\na permutation test), and these use a focused scenario set, so\nbroadening the task distribution is future work. (e)Bounded\nproof: the separation is machine-checked on a finite model\nand extended toward "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4c72196c38860663-B0086"
+        ],
+        "excerpt": "unbounded executions by a machine-\nchecked inductive invariant, and a fully mechanized deductive\nproof (TLAPS/Lean) of the unbounded theorem remains fu-\nture work. (f)Corroborator availability: when fewer thank\nindependent trusted sources back an untrusted-sourced value,\nTMA-NM does not silently block but falls back to a one-\ntime user confirmation (the uncorr-auto path), and Table VII\nquantifies this burden (m<krequires confirmation). The cost\nis added friction rather than a permanent denial, and only for\nuntrusted-sourced values, since values from the user task or\na trusted tool act with no prompt. How often two indepen-\ndent trusted sources exist for routine actions is deployment-\ndependent, and quantifying it in the wild is future work.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Independence Stress Test:Attackasr (%)When Trusted",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c383afedf78741691806ede9e14cc4fe1a7259bb2d1e893a46779de8b19f8be9",
+            "evidence_id": "E4c72196c38860663-B0086",
+            "pages": [
+              11
+            ],
+            "section": "Independence Stress Test:Attackasr (%)When Trusted",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3098,
+                "page": 11,
+                "section": "Independence Stress Test:Attackasr (%)When Trusted",
+                "section_index": 37,
+                "start": 2348,
+                "text": "unbounded executions by a machine-\nchecked inductive invariant, and a fully mechanized deductive\nproof (TLAPS/Lean) of the unbounded theorem remains fu-\nture work. (f)Corroborator availability: when fewer thank\nindependent trusted sources back an untrusted-sourced value,\nTMA-NM does not silently block but falls back to a one-\ntime user confirmation (the uncorr-auto path), and Table VII\nquantifies this burden (m<krequires confirmation). The cost\nis added friction rather than a permanent denial, and only for\nuntrusted-sourced values, since values from the user task or\na trusted tool act with no prompt. How often two indepen-\ndent trusted sources exist for routine actions is deployment-\ndependent, and quantifying it in the wild is future work."
+              }
+            ],
+            "text": "unbounded executions by a machine-\nchecked inductive invariant, and a fully mechanized deductive\nproof (TLAPS/Lean) of the unbounded theorem remains fu-\nture work. (f)Corroborator availability: when fewer thank\nindependent trusted sources back an untrusted-sourced value,\nTMA-NM does not silently block but falls back to a one-\ntime user confirmation (the uncorr-auto path), and Table VII\nquantifies this burden (m<krequires confirmation). The cost\nis added friction rather than a permanent denial, and only for\nuntrusted-sourced values, since values from the user task or\na trusted tool act with no prompt. How often two indepen-\ndent trusted sources exist for routine actions is deployment-\ndependent, and quantifying it in the wild is future work."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.24322",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7165972610",
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The headline 0% consequential-ASR is corroborated by drop-in reproductions of four external published attack pipelines and by multi-turn and production Mem0/Qdrant runs, which do not depend on the construction's own rule set.",
+          "final_evaluation_signal": "Deterministic consequential-action execution metrics (ASR) and legitimate-utility controls across benchmark scenarios.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The TMA-NM act-gate policy and threshold k are fixed by construction; no model or evaluator is trained, tuned, or selected against the reported outcomes.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E4c72196c38860663-B0002",
+          "E4c72196c38860663-B0007",
+          "E4c72196c38860663-B0014",
+          "E4c72196c38860663-B0021",
+          "E4c72196c38860663-B0022",
+          "E4c72196c38860663-B0024",
+          "E4c72196c38860663-B0027",
+          "E4c72196c38860663-B0031",
+          "E4c72196c38860663-B0036",
+          "E4c72196c38860663-B0039",
+          "E4c72196c38860663-B0044",
+          "E4c72196c38860663-B0045",
+          "E4c72196c38860663-B0050",
+          "E4c72196c38860663-B0052",
+          "E4c72196c38860663-B0054",
+          "E4c72196c38860663-B0055",
+          "E4c72196c38860663-B0080",
+          "E4c72196c38860663-B0084",
+          "E4c72196c38860663-B0085",
+          "E4c72196c38860663-B0086"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "7a792674eae6dabe59187e6b09bfa515c8d48e0651a1a71a36aec5313afee448"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7165972610",
+        "claim_evidence_alignment": "Reported outcomes directly align with empirical results and TLA+ model checker verifications. The author clearly scopes the guarantees to consequential actions, explicitly noting that free-text answer biasing is mitigated rather than completely eliminated.",
+        "context_id": "4c72196c38860663e1c45a8340c584616634509dc735dc7712f62e55d4bdc104",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation across eight frontier LLMs over MEM-INV-Bench, multi-turn agent execution, production Mem0 with Qdrant, and reproductions of four external memory poisoning pipelines convincingly validates that TMA-NM reduces consequential attack success to 0% without loss of legitimate utility. Baselines (probabilistic detection, lineage tracking, capability IFC) are evaluated under faithful conditions and ablated rigorously.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluation tests drop-in attacks from four external published pipelines (MemMorph, MemoryGraft, Trojan Hippo, and Conversational Trojan) and runs multi-turn loops on production Mem0 backends.",
+          "final_evaluation_signal": "Deterministic execution metrics checking consequential tool action execution (ASR) and legitimate task utility across varied benchmark scenarios.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Rule-based non-malleable IFC enforcement policy and parameter threshold k specified by construction without prompt/weight training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E4c72196c38860663-B0002",
+          "E4c72196c38860663-B0007",
+          "E4c72196c38860663-B0011",
+          "E4c72196c38860663-B0014",
+          "E4c72196c38860663-B0018",
+          "E4c72196c38860663-B0021",
+          "E4c72196c38860663-B0022",
+          "E4c72196c38860663-B0024",
+          "E4c72196c38860663-B0027",
+          "E4c72196c38860663-B0028",
+          "E4c72196c38860663-B0031",
+          "E4c72196c38860663-B0033",
+          "E4c72196c38860663-B0036",
+          "E4c72196c38860663-B0039",
+          "E4c72196c38860663-B0044",
+          "E4c72196c38860663-B0045",
+          "E4c72196c38860663-B0050",
+          "E4c72196c38860663-B0052",
+          "E4c72196c38860663-B0054",
+          "E4c72196c38860663-B0055",
+          "E4c72196c38860663-B0080",
+          "E4c72196c38860663-B0084",
+          "E4c72196c38860663-B0085",
+          "E4c72196c38860663-B0086"
+        ],
+        "limitations": "The work candidly discusses the relocation of trust to channel labeling and corroborator independence, limitations regarding in-context value attribution without full capability tokens, and the scope of bounded formal proofs versus unbounded deductive proofs.",
+        "method_assessment": "The method mathematically formalizes memory malleability and proves separation theorems (T1-T3) verifying that content and malleable lineage defenses are unsound under laundering, while origin-binding and Sybil-resistant corroboration elevation are sufficient. The enforcement monitor operates deterministically at write, retrieve, and act boundaries with an append-only tamper-evident hash log.",
+        "quality_rationale": "The manuscript presents a rigorous, well-designed security framework with formal proofs and comprehensive empirical cross-model evaluation across multiple realistic threat models and baselines, fulfilling the criteria for scholarly quality.",
+        "scoped_contribution": "The paper provides a formal model, machine-checked TLA+ verification, and an empirical evaluation of TMA-NM, a non-malleable, origin-bound information-flow control system preventing consequential memory poisoning in LLM agents across three laundering channels.",
+        "source_content_hash": "7a792674eae6dabe59187e6b09bfa515c8d48e0651a1a71a36aec5313afee448"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous, well-designed security framework with formal proofs and comprehensive empirical cross-model evaluation across multiple realistic threat models and baselines, fulfilling the criteria for scholarly quality.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "7a792674eae6dabe59187e6b09bfa515c8d48e0651a1a71a36aec5313afee448",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The work candidly discusses the relocation of trust to channel labeling and corroborator independence, limitations regarding in-context value attribution without full capability tokens, and the scope of bounded formal proofs versus unbounded deductive proofs."
   },
   "semantic_scholar_id": "8f901170b067c63db1d2067885926954e7441ccb",
   "source": "openalex",
@@ -184,7 +2138,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

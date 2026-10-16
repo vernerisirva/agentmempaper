@@ -64,16 +64,341 @@
             <p>The automation of scientific discovery has reached an inflection point. While AI systems now operate instruments, optimize parameters and generate hypotheses, most remain procedural: they execute workflows fixed by human designers. True autonomous science demands epistemic autonomy--the capacity to construct, challe...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides an extensive and well-controlled study demonstrating end-to-end multi-agent orchestration of physical laboratory instrumentation. The claims are carefully bounded, ablations clearly delineate the role of Socratic midwifery, and reported physical outcomes are verified through objective numerical benchmarks.</p>
+      <p>The authors explicitly discuss key limitations, noting that Socratic interactions remain in natural language without formal logic representations, human supervision remains necessary as a safety gate, and repetitive large-scale data collection was offloaded to human operators [E30a68f4bdbf83274-B0042, E30a68f4bdbf83274-B0068, E30a68f4bdbf83274-B0069].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-16T11:41:22.186979+00:00.</p>
+        <p>Coverage: 81918 of 81918 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>transforming implicit and potentially
+brittle reasoning into explicit, testable and revisable mechanistic models. We
+evaluate AHOIS on a real multimode-fibre optical platform, a representative
+high-dimensional physical system that combines complex wave transformations,
+indirect detection, environmental drift and multi-modal acquisition. Operat-
+ing without prior encoding schemes, classifiers or speckle models, the system
+autonomously proposed and experimentally validated a random-interference
+encoding hypothesis, discovered task-adaptive sparse-measurement strategies,
+1
+arXiv:2606.26722v1  [cs.AI]  25 Jun 2026
+diagnosed distinct failure modes (encoding instability, fluorescence contamina-
+tion and detector noise) and translated a published imaging protocol into an
+executable experimental workflow on a non-original configuration. The discovered
+encoding yielded 16×16 measurements with an </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>effective rank of 56.9 and clas-
+sification accuracies of 76.97% on MNIST and 83.17% on Fashion-MNIST. Con-
+trolled ablations demonstrate that Socratic interrogation substantially improves
+physical consistency, hypothesis completeness, uncertainty calibration and down-
+stream experimental-plan validity. These results establish a principled route from
+workflow automation towards evidence-grounded, self-correcting autonomous
+scientific discovery in complex physical environments.
+Keywords:autonomous scientific discovery, multi-agent systems, hypothesis-driven
+experimentation, multimode fibre imaging, Socratic reasoning, trustworthy
+measurement, AI for science</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>physical experimentation
+AHOIS was designed to separate the intellectual, physical and evaluative components
+of autonomous experimentation while keeping them coupled through a shared scientific
+state (Fig. 1a). At each step, this state records the current hypothesis, its physical
+assumptions, the proposed experimental action, the expected observation, the relevant
+uncertainty and the evidence returned by the instrument. The agents therefore do not
+operate as a fixed sequential pipeline. Instead, they exchange hypotheses, executable
+plans, integrity checks and analytical results, allowing the research trajectory to be
+revised as experimental evidence accumulates.
+4
+Code generation,
+Instrument controller,
+Error interpretation
+a The AHOIS Multi-Agent Intelligence
+Intelligence Loop
+Boxue
+Gewu
+Duzhi
+Mingde
+Scientific planner,
+hypothesis generator
+Intelligence Loop
+Closed-Loop Planning </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Feedback
+High-Level Strategy
+Evaluate and challenge
+Physics critic,
+Evidence verifier
+Safety interlocks,
+ESA override
+System integrity monitoring
+Real-time perception of fiber
+optic position, Predict collision
+risk, Visual assistance control
+and recognition
+Data analysis and judgment
+Image recognition,
+Data analysis and inference
+Analytics
+feedback,
+Knowledge
+integration
+b
+Hardware abstraction layer
+Socrates midwifery loop
+ Understanding the optical system and the underlying physical laws
+Scientist
+ Socrates
+Response
+InquirySupervise
+Correct
+Referee
+c
+Imaging modalityQiushi
+Fig. 1The AHOIS multi-agent architecture and the physical testbed.a, Five functionally separated
+agents cooperate through a shared scientific state. Boxue formulates hypotheses and experimental
+plans; Gewu translates plans into hardware-executable operations; Mingde monitors system integrity
+and data </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>validity; Qiushi performs modelling, reconstruction and quantitative analysis; and Duzhi
+interrogates Boxue&#x27;s reasoning as a Socratic physics critic.b, Socratic midwifery loop. Duzhi chal-
+lenges candidate explanations through clarification, physical-constraint checking, causal probing and
+counterexample generation under human supervision, exposing hidden assumptions and missing
+causal links without directly prescribing the scientific conclusion.c, High-dimensional multimode-fibre
+optical platform used as the experimental testbed for agent-controlled wavefront shaping, multimode
+propagation and image acquisition.
+Boxue is the strategy agent. It interprets a high-level research goal, decomposes it
+into candidate hypotheses and produces machine-readable experimental plans. Gewu
+is the hardware-abstraction agent. It converts these plans into executable routines for
+laser operation, digital </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>micromirror device (DMD) pattern generation, camera trigger-
+ing and metadata recording. Mingde is the system-integrity agent. It audits the live
+data stream by checking exposure, rejecting saturated frames, validating dark frames,
+assessing frame completeness and quantifying speckle repeatability. Qiushi is the mod-
+elling agent. It implements data loaders, reconstruction models, training procedures,
+hyperparameter searches and quantitative analyses. Duzhi is the Socratic physics
+critic. Rather than acting as a second planner, Duzhi is constrained to interrogate
+Boxue&#x27;s reasoning by exposing hidden assumptions, missing constraints, unsupported
+causal links and plausible but incorrect interpretations (Fig. 1b).
+This role separation is central to the design. AHOIS is not implemented as
+a single monolithic prompt that directly maps a user request to an experimental
+action [31, 32, 46–48]. </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>illumination, fields scattered from different illuminated regions of a rough
+object acquire object-dependent amplitudes and phases. After coupling into the col-
+lection multimode fibre, these fields undergo mode mixing and coherent superposition
+before square-law detection. Boxue therefore proposed that the apparently random
+backscattered speckle should not necessarily be treated as an imaging artefact. Instead,
+the optical system might act as a physical random-interference encoder, transforming
+object-dependent scattering into a compact measurement from which object identity
+could be inferred without reconstructing a visually recognizable image.
+Duzhi then challenged whether the proposed speckle response was genuinely
+information-bearing or merely reflected low-dimensional variations in total collected
+6
+intensity. This interrogation led Boxue to define three criteria for testing the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>hypoth-
+esis before attempting neural decoding. First, the encoded measurements should not
+collapse into highly redundant responses across different inputs, which was assessed
+using a correlation matrix. Second, the measurement ensemble should occupy a
+multidimensional feature space rather than a few dominant intensity components,
+which was assessed by singular-value decomposition and effective-rank analysis.
+Third, the encoded intensities should use a measurable dynamic range without being
+dominated by saturation, near-zero values or uniform background. These criteria
+converted the initial physical intuition into experimentally testable conditions for
+random-interference encoding.
+AHOIS then translated the hypothesis into an optical protocol. Gewu controlled
+the DMD and calibrated illumination fibre to generate a four-focus pattern at the
+object plane (Fig. 2a). As this pattern was </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>raster-scanned across the target, the simul-
+taneously illuminated regions produced object-dependent backscattered fields that
+were collected by a separate multimode fibre. Each scan position yielded one intensity
+measurement after multimode propagation and detection, and the complete scan was
+arranged as a 16×16 encoder matrix (Fig. 2a,b). The resulting matrix was treated as
+a compact optical representation of the object, not as a conventional image. Measure-
+ments were acquired from handwritten-digit and clothing targets derived from MNIST
+and Fashion-MNIST.
+a
+Image
+classification
+Encoder matrixBackscattered light
+random interference encoding
+Matrix
+decoder
 
-        <ul></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Four-spot
+pattern
+3 μm
+Encoder matrix
+b
+c d e
+16×16 compressed measurements </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>variables (Fig. 2d). The
+encoded-intensity distribution further showed that the detector response was popu-
+lated over a usable dynamic range, with no dominant saturation regime (Fig. 2e).
+These observations supported the interpretation that structured illumination, coherent
+backscattering, multimode propagation and square-law detection jointly redistributed
+object information into a speckle-like measurement space.
+Having established this physical interpretation, AHOIS proposed neural decoding
+as a task-level test of whether the encoded measurements retained object information.
+A compact classifier was trained directly on the 16×16 encoder matrices, without using
+a reconstructed image as an intermediate representation. The classifier achieved test
+accuracies of 76.97% on MNIST and 83.17% on Fashion-MNIST (Fig. 2f,g). Although
+the encoded matrices bore little visual resemblance to the </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>corresponding objects, they
+retained sufficient information for object-level classification. This result showed that
+the backscattered speckle response was not merely an uninterpretable nuisance, but
+a computationally accessible representation produced by the physical measurement
+process.
+This experiment illustrates the role of Socratic interrogation in the discovery loop.
+The encoding concept was not supplied as a target task; it emerged from the agent&#x27;s
+analysis of unused backscattered light in the existing optical platform. Duzhi did
+not provide the answer, but forced the proposed mechanism to be evaluated against
+physical and statistical failure modes: redundancy, low dimensionality and unusable
+intensity range. The resulting measurement principle reframed backscattered speckle
+from an unwanted by-product of multimode-fibre imaging into a task-oriented physical
+encoding resource.</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reconstruction. AHOIS therefore
+proposed a coarse-to-fine acquisition policy in which the scan pattern is adapted during
+the experiment, rather than fixed before acquisition.
+8
+Duzhi then challenged whether this strategy would be distinguishable from ordi-
+nary uniform subsampling. In particular, it questioned whether a coarse scan could
+miss small, weakly contrasted or spatially isolated features, and whether local sig-
+nal intensity alone was sufficient to define where additional measurements should be
+placed. This interrogation led Boxue to refine the policy into three steps. First, an
+ultra-sparse background scan estimates the global field of view and identifies candi-
+date regions of interest (ROIs). Second, the ROI is sampled more densely than the
+surrounding background, so that measurement effort is concentrated where structural
+or task-level information is present. Third, local </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>features, a fluorescence image with
+sparse emitters and an endoscopic scene with localized clinically relevant content.
+Gewu translated the proposed sampling policy into focus-position sequences, Mingde
+monitored acquisition validity and Qiushi analysed the initial sparse measurements to
+estimate ROIs and recommend the next set of scan positions.
+The sampling-density comparison in Fig. 3c shows how recognition capability
+emerged as measurements were reallocated from the background to the ROI. In the
+most aggressive sparse condition, both the background and ROI were sampled at
+1/16 of the full scan density. This setting achieved the highest frame rate, 135.12 fps,
+but neither ROI recognition nor content recognition was successful. Increasing both
+background and ROI sampling to 1/12 preserved a high frame rate of 70.06 fps and
+enabled ROI recognition, but the content itself was still not </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reliably recognized. When
+the background remained at 1/12 density but the ROI was increased to 1/8, both
+ROI and content recognition became successful while maintaining 48.50 fps. Further
+increasing the ROI density to 1/4 improved the sampled representation but reduced
+the frame rate to 19.08 fps. Full scanning of both background and ROI provided com-
+plete spatial sampling but reduced the frame rate to 0.47 fps. Thus, the adaptive
+strategy identified an intermediate operating regime in which task-relevant recogni-
+tion was retained at tens of frames per second, whereas full scanning was more than
+two orders of magnitude slower.
+The frame-rate curve in Fig. 3d further illustrates this trade-off. As the effective
+image definition increased from sparse representations to full high-definition sampling,
+the imaging frame rate decreased approximately monotonically. The sparse and </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>essential measurement principle, determine which elements were
+implementation-specific, and adapt the optical encoding, hardware control, acquisition
+sequence and reconstruction pipeline to a different experimental configuration.
+Starting from the source paper and a description of the available instrument,
+Boxue reconstructed the experimental logic linking input-image encoding, DMD pat-
+tern generation, multimode-fibre propagation, camera acquisition and computational
+reconstruction. Duzhi then questioned assumptions that could not be transferred
+directly from the published apparatus to the local system, including differences in
+hardware access, optical alignment, calibration state and data-acquisition scale. This
+interrogation prompted Boxue to separate the general measurement principle from
+apparatus-specific details. Gewu translated the resulting plan into executable routines
+for </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>optical-pattern generation, DMD control and camera acquisition. Mingde moni-
+tored the operating state of the platform during pilot execution, including acquisition
+completeness and speckle stability. Qiushi prepared the data-processing, model-
+implementation and training components required to complete the reconstruction
+workflow (Fig. 4b).
+The autonomous optical acquisition was deliberately performed at pilot scale.
+This pilot experiment verified that the agents could execute the full pathway from
+encoded input generation to physical acquisition and data transfer into the recon-
+struction pipeline. We did not require AHOIS to repeat the validated acquisition
+11
+sequence for the entire training set, because large-scale data collection mainly con-
+sisted of time-consuming repetition and did not introduce a new scientific-reasoning
+challenge. The remaining measurements were therefore </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>protocol operated at four levels (Fig. 5a). Clarification questions
+required Boxue to define the physical meaning of terms in its explanation and to dis-
+tinguish measured quantities from inferred or assumed quantities. Constraint-checking
+questions examined whether the proposed interpretation was compatible with optical
+principles and hardware limits, including energy transfer, coherence, multimode prop-
+agation, collection geometry and detector response. Causal-probing questions required
+Boxue to describe the full chain linking optical modulation, field propagation, object
+interaction, signal collection and final measurement. Counterexample-based questions
+tested whether the same explanation would remain valid when the object, imaging
+modality, sampling condition or system stability changed. These interventions targeted
+the structure of the reasoning rather than the content of a </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>particular hypothesis, and
+therefore did not prescribe the scientific conclusion.
+We quantified the effect of successive questioning rounds using three scores:
+physics consistency, hypothesis completeness and uncertainty calibration. Physics con-
+sistency assessed whether the explanation followed relevant optical principles without
+internal contradiction. Hypothesis completeness assessed whether the explanation con-
+nected the main components of the experiment, including illumination, propagation,
+object interaction, collection and detection, rather than attributing the observation
+to a single isolated factor. Uncertainty calibration assessed whether Boxue separated
+experimentally established facts from model-dependent interpretations and unresolved
+propositions requiring further evidence. All three scores increased over seven rounds of
+Socratic questioning (Fig. 5b). Physics </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>consistency rose from approximately 2 to above
+4.5 on the 0–5 scale, while hypothesis completeness and uncertainty calibration showed
+similar monotonic improvements. These trends indicate that the questioning process
+progressively converted an incomplete qualitative account into a more constrained and
+testable physical explanation.
+The four classes of Socratic intervention contributed unequally (Fig. 5c). Clarifica-
+tion produced a mean utility of 0.42 by removing ambiguous terminology and forcing
+Boxue to state what was measured, inferred or assumed. Constraint checking produced
+a larger gain of 0.58 by excluding explanations that conflicted with optical principles or
+hardware constraints. Causal probing produced the largest improvement, 0.83, because
+it forced the agent to connect individual observations to a complete physical pathway
+rather than rely on qualitative association. </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the physical-understanding score associated with the four classes of Socratic
+intervention. Causal probing and counterexample challenge produce the largest gains.d, Ablation
+across Boxue alone, a generic reviewer, non-Socratic Duzhi and Socratic Duzhi, evaluated using nor-
+malized physics consistency, plan validity, planning efficiency and downstream task performance.
+Invalid-plan rate and steps to valid plan are inverted during normalization so that higher values indi-
+cate better performance.
+asked whether this interpretation accounted for collection efficiency, object-dependent
+scattering, detector response and redundancy between neighbouring measurements.
+It further asked whether increasing the number of scan positions would continue to
+add independent information when adjacent measurements overlapped, and whether
+an apparently optimal illumination condition could still lead to </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>poorer task-level
+performance because of limitations elsewhere in the measurement chain. Boxue con-
+sequently revised its explanation from a single-factor account to a system-level model
+in which illumination, object interaction, collection, detection and information redun-
+dancy jointly determine measurement utility. This revised account supported more
+defensible experimental choices without the critic prescribing those choices directly.
+To isolate the contribution of Socratic structure, we compared four configurations:
+Boxue alone, Boxue paired with a generic reviewer, Boxue paired with a non-Socratic
+version of Duzhi and Boxue paired with the full Socratic Duzhi. The Socratic config-
+uration achieved the highest normalized physics consistency, plan validity, planning
+efficiency and final task performance (Fig. 5d). It also produced the lowest invalid-plan
+rate and required fewer </blockquote></details></li><li><strong>Contribution clarity — pages 15–16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>steps to reach a valid plan; these two metrics were inverted
+during normalization so that higher values consistently represented better outcomes.
+Generic review improved surface-level completeness but was less effective at expos-
+ing missing causal links or specifying conditions under which a conclusion could fail.
+15
+Non-Socratic Duzhi identified weaknesses more directly, but often replaced Boxue&#x27;s
+reasoning with corrective statements. In contrast, Socratic Duzhi forced Boxue to
+resolve inconsistencies itself, preserving the distinction between guided inquiry and
+answer provision.
+These results show that Duzhi&#x27;s contribution lies not in the amount of criticism
+but in the form of the criticism. By withholding direct solutions and focusing on defi-
+nitions, physical constraints, causal structure and counterexamples, Duzhi encouraged
+Boxue to construct explanations that were more </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>criteria. Future systems could
+ground the questioning process in formal representations of physical variables, causal
+graphs, optical models or machine-verifiable experimental protocols. Second, human
+supervision remains part of the system. In the present work, the supervisor acted
+as a safety and quality gate rather than as the source of the scientific hypotheses,
+but stronger autonomy will require formal verification of hardware actions, explicit
+risk models and auditable intervention policies. Third, AHOIS does not yet claim to
+invent new physical laws. Its current strength is to construct, discriminate and revise
+mechanistic explanations within a known physical domain. Extending this approach
+to open-ended hypothesis generation beyond a predefined conceptual library remains
+an important challenge.
+The present experiments also expose a practical distinction between </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>autonomous
+reasoning and exhaustive autonomous labour. In the paper-to-platform experiment,
+AHOIS performed the intellectual and procedural translation of a published proto-
+col and validated the acquisition path at pilot scale, while researchers carried out the
+repetitive large-scale acquisition using the agent-established procedure. This boundary
+is deliberate. The scientific question was whether the agent could understand, adapt
+and operationalize the method, not whether it should consume resources repeating
+an already validated acquisition sequence. Future work should quantify this bound-
+ary more systematically by separating reasoning-intensive steps from scalable robotic
+execution.
+More broadly, our results suggest that trustworthy AI for experimental science
+requires more than fluent hypothesis generation or reliable instrument control. A sci-
+entific agent must be able to state </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +437,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -24,7 +24,7 @@
           <h1>JevGPT: Thinking Fast and Slow in Autonomous Research</h1>
           <p class="hero-copy">Yasheng Sun, Yanning Dai, Yimeng Chen, Nanbo Li, Firas Laakom, Yifan Xu, Piotr Piękos, Mateusz Ostaszewski, Wenyi Wang, Cheng Luo, Yuhui Wang, Jürgen Schmidhuber</p>
           <div class="paper-detail-actions">
-            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2610.18272">Open paper</a>
+            <a class="paper-link" href="https://arxiv.org/abs/2610.18272">Open paper</a>
             <a class="paper-detail-link" href="jevgpt-thinking-fast-and-slow-in-autonomous-research-a2731df6.json">Download paper JSON</a>
           </div>
         </header>
@@ -47,7 +47,7 @@
           <section class="detail-panel">
             <p class="section-kicker">Sources</p>
             <ul><li>OpenAlex</li><li>arXiv</li></ul>
-            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.18272v1">arXiv</a><a href="https://arxiv.org/abs/2610.18272">arXiv</a><a href="https://openalex.org/W7221813978">OpenAlex</a></div>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.18272v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2610.18272">DOI</a><a href="https://openalex.org/W7221813978">OpenAlex</a></div>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Why included</p>
@@ -59,16 +59,280 @@
             <p>Autonomous research agents must acquire and reason over evidence within a limited budget. Yet relevant sources can remain uninspected or unused, leaving a gap between retrieval coverage and the evidence that informs research. The challenge is to align fast local judgments with changing evidence needs and feed their...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The contribution provides a clean, well-motivated architectural separation of research planning and candidate assessment. The experiments are rigorously executed with explicit ablations and thorough trajectory case studies, offering substantial scientific value.</p>
+      <p>The authors explicitly acknowledge limitations, including restricting evaluation to fixed-corpus QA and ranking rather than open-web settings, relying on separate pipeline components rather than a unified model, and depending on source quality without autonomous external fact-checking.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-16T11:42:47.637457+00:00.</p>
+        <p>Coverage: 82933 of 82933 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Autonomous research agents must acquire and
+reason over evidence within a limited budget.
+Yet relevant sources can remain uninspected or
+unused, leaving a gap between retrieval cov-
+erage and the evidence that informs research.
+The challenge is to align fast local judgments
+with changing evidence needs and feed their
+findings back into research decisions. We intro-
+duceJevGPT, a dual-system architecture for
+autonomous research that couples fast evidence
+processing with deliberative research planning.
+System Two sets evidence objectives and in-
+tegrates findings, while System One locates
+support, assesses relevance, and guides further
+inspection. Independent source judgments run
+in parallel; selected original passages inform
+the next research step. Experiments on fixed-
+corpus question answering and document rank-
+ing show that JevGPT achieves leading task
+performance, with faster </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>autonomous research illustrated in Figure 1.
+System Two sets evidence objectives and integrates
+findings. Jev (Almeida, 2026) serves as System
+One, guiding source selection, passage localiza-
+tion, and continued reading; proactive discovery
+inspects additional candidates. Selected original
+passages return to System Two, connecting these
+local decisions to the next research action and the
+final answer or ranking.
+Experiments on BrowseComp-Plus and Neu-
+CLIRBench (Chen et al., 2026; Lawrie et al.,
+2025) cover fixed-corpus question answering and
+document ranking. Figure 2 shows that JevGPT
+achieves leading task performance at lower cost
+than comparably effective research agents. JevGPT
+also completes research faster. Evidence analysis
+and an ablation study examine how the architecture
+turns retrieved sources into useful evidence and
+how its components affect task performance.</blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>An item is a question or topic q over a fixed cor-
+pus D. System Two is a generative policy G with
+history ht at step t. Its action at =G(q, ht) is a
+search query, an evidence request, or a final answer
+or ranking. A System One judgment J(u, r)∈ Y
+takes an objective u and a source region r. The
+objective may be a local evidence question or the
+3
+full topic; the region contains original text blocks
+and their source coordinates.
+We use Jev&#x27;s three output types (Almeida, 2026).
+ANouljudgment returns the probability that re-
+gion r satisfies a stated property, such as contain-
+ing relevant evidence. AChoicejudgment returns
+a distribution over a finite set of options, such as
+source blocks or reading actions. AScorejudgment
+returns a distribution over ordinal levels. The spec-
+ified objective and output type bound each source
+judgment.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>System Two turns an unresolved aspect of the task
+into a search query or evidence request. Retrieval
+supplies ranked candidates; an evidence request
+selects sources and asks System One to assess them
+against the requested objective. We summarize the
+action and its associated evidence processing, with
+evidence memoryE t, as
+at =G(q, ht),(1)
+Ct = Candidates(at,D),(2)
+Zt ={J(u t, r) :r∈Regions(C t)},(3)
+(Et+1, ot) = Gather(Et, Ct, Zt),(4)
+where Ct contains retrieval units selected for in-
+spection, ut is the evidence objective, and Zt con-
+tains their local judgments. Evidence requests spec-
+ify Ct and ut; after a search, discovery uses the
+original task and eligible top-K candidates, return-
+ing findings asynchronously. Gather merges se-
+lected original passages into response ot, which en-
+ters the research history and informs System Two&#x27;s
+next objective. QA and ranking use different </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evidence Localization.For QA, System Two
+supplies candidate sources and local evidence ques-
+tions about unresolved entities, relations, or facts.
+For each question u and source region r, a Noul
+judgment estimates the probability eu,r that the re-
+gion addresses u, while a Choice judgment gives
+a distribution πu,r(b) over its original text blocks
+b. For valid judgments and evidence threshold τloc,
+the located block set is
+L(u, r) =
+(
+Select(πu,r), e u,r ≥τ loc,
+∅,otherwise, (6)
+where Select retains the most probable block and,
+when warranted by the distribution, a second block.
+The reader gathers and merges evidence passages
+around these blocks, preserving original text and
+source coordinates. Questions are assessed inde-
+pendently, so a passage can contribute one interme-
+diate fact to a larger chain of reasoning.
+Reading adapts to the findings so far. A Choice
+judgment selects among </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>inspecting further candi-
+dates, reading surrounding context, and returning
+the current evidence. The reader returns when the
+requested questions are supported or further inspec-
+tion stops adding useful material. Its response may
+contain partial evidence, which System Two com-
+bines with accumulated findings to choose the next
+research action.
+Relevance Assessment.For ranking, the reader
+assesses source regions against the original topic q.
+Score judgments give distributions over four levels
+ℓ= 0, . . . ,3: unrelated, tangential, relevant, and
+highly relevant. Let Pd be the distribution with
+the highest expected level ¯ℓd =E Pd[ℓ] across a
+document&#x27;s regions. The retention probability is
+pd =P d(2) +Pd(3). Noul judgments select useful
+source pages, each a bounded text excerpt.
+For fully assessed candidates C, the set returned
+to System Two is
+R={d∈ C:p d ≥θ} ∪ I,(7)
+where θ is a </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>probability pd. These priorities
+are
+sq(d) =
+
+
+
+X
+j∈Lq(d)
+1
+nj
+,QA,
+pd,ranking,
+(8)
+where Lq(d) contains the clues located in docu-
+ment d and nj counts documents containing clue
+j in the assessed batch. QA thus combines clue
+coverage with specificity, giving greater weight to
+clues found in fewer candidates.
+From eligible assessed documents A, the branch
+selects
+H= Top m,sq {d∈ A:s q(d)≥τ lead},(9)
+where Topm,sq keeps at most m documents in de-
+scending priority. QA candidates must contain
+a located clue; ranking candidates must be fully
+assessed and previously undelivered. If no QA
+candidate passes the threshold, the highest-priority
+candidate with a located clue is retained.
+Selected leads carry original excerpts and en-
+ter the research history asynchronously, informing
+subsequent source inspection or query refinement.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>BrowseComp-Plus.JevGPT achieves the high-
+est observed accuracy in Table 1, while completing
+research faster and making fewer searches than
+the compared agents. Its API cost is also lower
+than that of comparably accurate methods such as
+Reason-ColBERT, RISE, and AtlasNav. Pi-Serini
+remains cheaper but produces less accurate an-
+swers.
+NeuCLIRBench.JevGPT also achieves the high-
+est observed ranking quality on both metrics in Ta-
+ble 2. Relative to Pi-Serini, the strongest research
+baseline on this task, it uses substantially fewer
+System Two tokens and finishes sooner. Local
+judgments contribute little to API spending, and
+total cost remains the lowest among the GPT-based
+methods. These results extend the benefits of lo-
+cal evidence judgments from answer generation to
+document ranking.</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evidence Acquisition.Figure 4 measures gold-
+document recall separately for retrieved candidates,
+inspected sources, sources whose original text is
+1Detailed experimental settings and evaluation protocols
+are provided in Appendix A.
+5
+Table 1:BrowseComp-Plus results on 830 questions.Resources are per-question means; S2/S1 denote the two
+systems&#x27; API costs. Bold and underlining mark the best and second-best values, including ties.
+Performance Resources / question Cost / question ($)
+Method Retriever Accuracy (%)↑Tokens (K)↓Searches↓Time (s)↓S2↓S1↓
+BCP/ReAct BM25 77.11 2,169 24.87 182.1 3.0798 —
+Pi-Serini BM25 82.0526614.41 112.60.4053—
+Agentica BM25 84.46 335 33.88 111.7 0.7919 —
+AtlasNav BM25 + map 89.16 948 20.54 144.0 1.5257 —
+RISE BM25 89.88 609 26.08 111.0 1.1050 —
+Reason-ColBERT ColBERT 90.00 931 16.36 136.2 1.6090 —
+JevGPT Hybrid BM2590.484339.13 91.70.6081 0.0600
+Table </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2:NeuCLIRBench results on 105 topics.Resources are per-topic means. Bold and underlining mark the top
+two values; dashes denote inapplicable or unreported resources.
+Performance Resources / topic Cost / topic ($)
+Method Retriever nDCG@20↑F 1@20 (%)↑Tokens (K)↓Searches↓Time (s)↓S2↓S1↓
+BM25 BM25 0.3608 26.13 — — — — —
+RM3 BM25 0.3622 26.17 — — — — —
+Patapsco BM25 0.3485 24.80 — — — — —
+Qwen3-Reranker Fusion 0.5138 35.06 — — — — —
+RankGPT BM25 0.4843 32.4876 1.00141.3 0.6402 —
+BCP/ReAct BM25 0.4847 30.60 853 15.42 186.8 0.9707 —
+Agentica BM25 0.5107 34.19 516 32.85 211.0 0.8256 —
+Pi-Serini BM25 0.5240 35.02 708 7.35 177.0 0.8515 —
+JevGPT Hybrid BM250.5390 36.10158 2.68 79.3 0.57560.0082
+Candidate
+Pool
+Inspection Source
+Delivery
+Final
+Citation
+50
+60
+70
+80
+90
+100
+Gold-document recall (%)
+Evidence access Answer
+JevGPT
+Reason-ColBERT
+Pi-Serini
+BCP/ReAct
+Figure 4:Gold-document coverage.Mean </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>actions.
+The resource pattern is consistent with shifting
+effort from repeated search toward inspecting re-
+trieved material. Hybrid retrieval supplies candi-
+dates, and local reading makes their useful passages
+available to the planner, allowing it to answer with
+fewer search actions.
+3Corresponding ablations on NeuCLIRBench are reported
+in Appendix B.1.
+7
+Table 3:Cumulative ablation study on BrowseComp-Plus.All configurations use GPT-5.6 Terra on 415 matched
+questions with a 300-second active research budget; Evidence Discovery uses K= 60 . Bold marks the best value;
+N/A indicates that System One is unused.
+Performance Resources / question Cost / question ($)
+Configuration Accuracy (%)↑Tokens (K)↓Searches↓Time (s)↓S2↓S1↓
+Pi-Serini 72.05 133 9.29 76.6 0.0895 N/A
++ Hybrid BM25 79.521188.70 72.90.0824N/A
++ Evidence Localization 81.20 202 7.17 75.6 0.13530.0148
++ Evidence </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This work studies the coordination of fast and slow
+thinking at the level of agent architecture. JevGPT
+assigns local evidence judgments and research plan-
+ning to separate components. A natural next step
+is to integrate these capabilities within a unified
+model that learns when to make rapid local judg-
+ments and when to engage in extended reasoning.
+Joint training could allow the model to adapt this
+balance to the evolving needs of an investigation
+and allocate computation accordingly.
+Our evaluation focuses on question answering
+and document ranking over fixed corpora. Extend-
+ing this approach to open-web research and long-
+form synthesis would help explore how fast and
+slow thinking can support a broader range of re-
+search tasks.
+Ethical Considerations
+Data and Intended Use.We use the publicly
+released BrowseComp-Plus and NeuCLIRBench
+benchmarks and their fixed corpora for </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The main comparisons use all 830 BrowseComp-
+Plus questions over 100,195 documents and all
+105 NeuCLIRBench topics. The BrowseComp-
+Plus ablation and System Two model comparisons
+share 415 questions, selected by taking every sec-
+ond question ID from the numerically sorted of-
+ficial set. On NeuCLIRBench, queries combine
+the English topic title and description and search
+English machine translations of Persian, Russian,
+and Chinese documents. The topics comprise 54
+from 2023 and 51 from 2024. Gold answers and
+relevance judgments are used only for evaluation.
+Answer quality on BrowseComp-Plus is mea-
+sured by accuracy, using the official grading tem-
+plate with GPT-5.5 at medium effort. Ranking qual-
+ity on NeuCLIRBench is measured by nDCG@20
+and F1@20. nDCG@20 uses the official relevance
+gains g∈ {0,1,3}, while F1@20 treats documents
+with g &gt;0 as relevant and uses 20 as the </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +371,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +387,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-15</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-14 09:16:26</li><li>Last seen by Paper Scout: 2026-10-16 08:44:45</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-16</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-14 09:16:26</li><li>Last seen by Paper Scout: 2026-10-16 11:39:26</li></ul>
             <ul><li>DOI: 10.48550/arxiv.2610.18272</li><li>arXiv: 2610.18272</li><li>OpenAlex: W7221813978</li><li>OpenAlex IDs: W7221813978</li><li>arXiv IDs: 2610.18272</li></ul>
           </section>
           <section class="detail-panel">
@@ -131,7 +395,7 @@
             <p><a href="jevgpt-thinking-fast-and-slow-in-autonomous-research-a2731df6.json">Download paper JSON</a></p>
             <details class="paper-more">
               <summary>Citation text</summary>
-              <p>JevGPT: Thinking Fast and Slow in Autonomous Research. Yasheng Sun, Yanning Dai, Yimeng Chen, Nanbo Li, Firas Laakom, Yifan Xu, Piotr Piękos, Mateusz Ostaszewski, Wenyi Wang, Cheng Luo, Yuhui Wang, Jürgen Schmidhuber. 2026-10-13. https://doi.org/10.48550/arxiv.2610.18272</p>
+              <p>JevGPT: Thinking Fast and Slow in Autonomous Research. Yasheng Sun, Yanning Dai, Yimeng Chen, Nanbo Li, Firas Laakom, Yifan Xu, Piotr Piękos, Mateusz Ostaszewski, Wenyi Wang, Cheng Luo, Yuhui Wang, Jürgen Schmidhuber. 2026-10-13. https://arxiv.org/abs/2610.18272</p>
             </details>
           </section>
         </section>

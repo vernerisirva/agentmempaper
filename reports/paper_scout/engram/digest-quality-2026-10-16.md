@@ -1,9 +1,9 @@
 # Paper Scout Digest Quality - 2026-10-16
 
-- **Digest papers checked:** 2
+- **Digest papers checked:** 0
 - Likely false positives flagged: 0
 - Maybe-relevant core-memory papers flagged: 0
-- Suspicious high-relevance papers flagged: 1
+- Suspicious high-relevance papers flagged: 0
 - **Workflow behavior:** advisory only; this report does not fail the daily run.
 
 ## Likely False Positives
@@ -16,9 +16,4 @@
 
 ## Suspicious High-Relevance Papers
 
-### N-Gram Memories at Two Bits: Quantizing Lookup Tables in Large Language Models
-
-- **Source:** arxiv [https://arxiv.org/abs/2610.21810v1](https://arxiv.org/abs/2610.21810v1)
-- **Decision:** relevant (92/100)
-- **Matched broad terms:** GPU/infrastructure
-- **Suggested action:** review, downgrade, or exclude unless the paper explicitly focuses on agent memory.
+- None

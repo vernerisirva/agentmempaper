@@ -25,7 +25,7 @@
   "last_seen_date": "2026-09-24",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-21 15:58:19",
   "notified_date": "2026-09-21",
@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:58:04",
-    "generated_at": "2026-10-16 08:48:17",
+    "generated_at": "2026-10-16 11:43:32",
     "last_seen_at": "2026-09-24 09:03:21",
     "metadata_sources": [
       "openalex"
@@ -97,36 +97,1928 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-16T11:41:48.743300+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.94,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The work provides rigorous experimental design, meticulous profiling across independent scopes, transparent negative results regarding full serving pipeline compliance, and thorough ablation across models, datasets, and platforms.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 47329,
+      "assessment_input_sha256": "8fc8115810cd12292d113d13790903db66170d1f405fb75ed7140a9f2ceb0e10",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.21203/rs.3.rs-10938635/v1",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 45678,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 44875,
+      "evidence_block_count": 79,
+      "evidence_context_characters": 54410,
+      "evidence_context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+      "evidence_context_sha256": "6a473e2e47cbeb0d550925fbd2e2c57d54fc210581247d204afcada975d2da54",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 45702,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "9000c64f9bacf18d1ba017c3b38abd29f4c81a88b35c1c938e2de37356ce47bd",
+        "source_url": "https://www.researchsquare.com/article/rs-10938635/latest.pdf",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 45678,
+      "scientific_body_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 655,
+          "supplied_characters": 655
+        },
+        {
+          "heading": "Deadline-Aware Hardening Of Real-Time Object Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 647,
+          "supplied_characters": 647
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1852,
+          "supplied_characters": 1852
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 384,
+          "supplied_characters": 384
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 2913,
+          "supplied_characters": 2913
+        },
+        {
+          "heading": "Deadline-Oriented Evaluation. We Score The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 5,
+          "source_characters": 142,
+          "supplied_characters": 142
+        },
+        {
+          "heading": "Implementation-Aware Characterization. We",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "Bounded Candidate Admission. We Admit At",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 176,
+          "supplied_characters": 176
+        },
+        {
+          "heading": "Deadline-Calibrated Selection Of K. We Give A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 145,
+          "supplied_characters": 145
+        },
+        {
+          "heading": "End-To-End Validation And An Acceptance Cri-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 160,
+          "supplied_characters": 160
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 10,
+          "source_characters": 546,
+          "supplied_characters": 546
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 11,
+          "source_characters": 1542,
+          "supplied_characters": 1542
+        },
+        {
+          "heading": "System Model And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 19,
+          "supplied_characters": 19
+        },
+        {
+          "heading": "Measured System",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2624,
+          "supplied_characters": 2624
+        },
+        {
+          "heading": "Measured System",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 512,
+          "supplied_characters": 512
+        },
+        {
+          "heading": "Timing Scopes And Deadline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 814,
+          "supplied_characters": 814
+        },
+        {
+          "heading": "Threat Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "limitations",
+          "section_index": 16,
+          "source_characters": 1253,
+          "supplied_characters": 1253
+        },
+        {
+          "heading": "Candidate Inflation And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 16,
+          "supplied_characters": 16
+        },
+        {
+          "heading": "Candidate Count Controls",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 111,
+          "supplied_characters": 111
+        },
+        {
+          "heading": "Candidate Count Controls",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1271,
+          "supplied_characters": 1271
+        },
+        {
+          "heading": "Attack Strength Across The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 790,
+          "supplied_characters": 790
+        },
+        {
+          "heading": "Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 338,
+          "supplied_characters": 338
+        },
+        {
+          "heading": "Implementation Changes The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 22,
+          "source_characters": 843,
+          "supplied_characters": 843
+        },
+        {
+          "heading": "Implementation Changes The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 788,
+          "supplied_characters": 788
+        },
+        {
+          "heading": "Bounded Candidate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Pre-Nms Candidate Budget",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 2205,
+          "supplied_characters": 2205
+        },
+        {
+          "heading": "Accuracy\u2013Latency Trade-Off",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1029,
+          "supplied_characters": 1029
+        },
+        {
+          "heading": "Accuracy\u2013Latency Trade-Off",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1770,
+          "supplied_characters": 1770
+        },
+        {
+          "heading": "Stage-Local Protection Versus",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1487,
+          "supplied_characters": 1487
+        },
+        {
+          "heading": "Stage-Local Protection Versus",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1428,
+          "supplied_characters": 1428
+        },
+        {
+          "heading": "Generality And Deployment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "A Second Detector Geometry",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 661,
+          "supplied_characters": 661
+        },
+        {
+          "heading": "Second Evaluation Distribution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 753,
+          "supplied_characters": 753
+        },
+        {
+          "heading": "Edge Platform And Thermal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 657,
+          "supplied_characters": 657
+        },
+        {
+          "heading": "Edge Platform And Thermal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 961,
+          "supplied_characters": 961
+        },
+        {
+          "heading": "A Deadline-Aware",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 2016,
+          "supplied_characters": 2016
+        },
+        {
+          "heading": "Positioning Against Prior Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 563,
+          "supplied_characters": 563
+        },
+        {
+          "heading": "Positioning Against Prior Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 1509,
+          "supplied_characters": 1509
+        },
+        {
+          "heading": "Ev Ade [ 15]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 2124,
+          "supplied_characters": 2124
+        },
+        {
+          "heading": "Threats To Validity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "limitations",
+          "section_index": 39,
+          "source_characters": 1178,
+          "supplied_characters": 1178
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "conclusion",
+          "section_index": 40,
+          "source_characters": 2011,
+          "supplied_characters": 2011
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 44,
+          "supplied_characters": 44
+        },
+        {
+          "heading": "Learning Architecture Optimization Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "methods",
+          "section_index": 42,
+          "source_characters": 41,
+          "supplied_characters": 41
+        },
+        {
+          "heading": "For Edge Device Based On Start-Up Latency",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 154,
+          "supplied_characters": 154
+        },
+        {
+          "heading": "Based Power-Efficient Object Detection On",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Power-Aware Vision-Based Virtual Sensor For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "Of Software Multithreading For Deep-Learning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 432,
+          "supplied_characters": 432
+        },
+        {
+          "heading": "Proceedings Of The 27Th Acm Symposium",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 403,
+          "supplied_characters": 403
+        },
+        {
+          "heading": "Conference On Computer Vision And Pattern",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 174,
+          "supplied_characters": 174
+        },
+        {
+          "heading": "Tectural Implications Of Autonomous Driving:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "discussion",
+          "section_index": 49,
+          "source_characters": 87,
+          "supplied_characters": 87
+        },
+        {
+          "heading": "Ings Of The Twenty-Third International Con-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 43,
+          "supplied_characters": 43
+        },
+        {
+          "heading": "Ference On Architectural Support For Pro-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 41,
+          "supplied_characters": 41
+        },
+        {
+          "heading": "Gramming Languages And Operating Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 167,
+          "supplied_characters": 167
+        },
+        {
+          "heading": "Gramming Languages And Operating Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 3819,
+          "supplied_characters": 3819
+        }
+      ],
+      "selected_characters": 44875,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 655,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 647,
+          "heading": "Deadline-Aware Hardening Of Real-Time Object Detection",
+          "page": 2
+        },
+        {
+          "characters": 1852,
+          "heading": "Abstract",
+          "page": 2
+        },
+        {
+          "characters": 384,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2913,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 142,
+          "heading": "Deadline-Oriented Evaluation. We Score The",
+          "page": 3
+        },
+        {
+          "characters": 172,
+          "heading": "Implementation-Aware Characterization. We",
+          "page": 3
+        },
+        {
+          "characters": 176,
+          "heading": "Bounded Candidate Admission. We Admit At",
+          "page": 3
+        },
+        {
+          "characters": 145,
+          "heading": "Deadline-Calibrated Selection Of K. We Give A",
+          "page": 3
+        },
+        {
+          "characters": 160,
+          "heading": "End-To-End Validation And An Acceptance Cri-",
+          "page": 3
+        },
+        {
+          "characters": 546,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1542,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 19,
+          "heading": "System Model And",
+          "page": 4
+        },
+        {
+          "characters": 2624,
+          "heading": "Measured System",
+          "page": 4
+        },
+        {
+          "characters": 512,
+          "heading": "Measured System",
+          "page": 5
+        },
+        {
+          "characters": 814,
+          "heading": "Timing Scopes And Deadline",
+          "page": 5
+        },
+        {
+          "characters": 1253,
+          "heading": "Threat Model",
+          "page": 5
+        },
+        {
+          "characters": 16,
+          "heading": "Candidate Inflation And",
+          "page": 5
+        },
+        {
+          "characters": 111,
+          "heading": "Candidate Count Controls",
+          "page": 5
+        },
+        {
+          "characters": 1271,
+          "heading": "Candidate Count Controls",
+          "page": 6
+        },
+        {
+          "characters": 790,
+          "heading": "Attack Strength Across The",
+          "page": 6
+        },
+        {
+          "characters": 338,
+          "heading": "Experiment",
+          "page": 6
+        },
+        {
+          "characters": 843,
+          "heading": "Implementation Changes The",
+          "page": 6
+        },
+        {
+          "characters": 788,
+          "heading": "Implementation Changes The",
+          "page": 7
+        },
+        {
+          "characters": 17,
+          "heading": "Bounded Candidate",
+          "page": 7
+        },
+        {
+          "characters": 2205,
+          "heading": "Pre-Nms Candidate Budget",
+          "page": 7
+        },
+        {
+          "characters": 1029,
+          "heading": "Accuracy\u2013Latency Trade-Off",
+          "page": 7
+        },
+        {
+          "characters": 1770,
+          "heading": "Accuracy\u2013Latency Trade-Off",
+          "page": 8
+        },
+        {
+          "characters": 1487,
+          "heading": "Stage-Local Protection Versus",
+          "page": 8
+        },
+        {
+          "characters": 1428,
+          "heading": "Stage-Local Protection Versus",
+          "page": 9
+        },
+        {
+          "characters": 8,
+          "heading": "Generality And Deployment",
+          "page": 9
+        },
+        {
+          "characters": 661,
+          "heading": "A Second Detector Geometry",
+          "page": 9
+        },
+        {
+          "characters": 753,
+          "heading": "Second Evaluation Distribution",
+          "page": 9
+        },
+        {
+          "characters": 657,
+          "heading": "Edge Platform And Thermal",
+          "page": 9
+        },
+        {
+          "characters": 961,
+          "heading": "Edge Platform And Thermal",
+          "page": 10
+        },
+        {
+          "characters": 2016,
+          "heading": "A Deadline-Aware",
+          "page": 10
+        },
+        {
+          "characters": 563,
+          "heading": "Positioning Against Prior Work",
+          "page": 10
+        },
+        {
+          "characters": 1509,
+          "heading": "Positioning Against Prior Work",
+          "page": 11
+        },
+        {
+          "characters": 2124,
+          "heading": "Ev Ade [ 15]",
+          "page": 11
+        },
+        {
+          "characters": 1178,
+          "heading": "Threats To Validity",
+          "page": 11
+        },
+        {
+          "characters": 2011,
+          "heading": "Conclusion",
+          "page": 12
+        },
+        {
+          "characters": 44,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 41,
+          "heading": "Learning Architecture Optimization Method",
+          "page": 12
+        },
+        {
+          "characters": 154,
+          "heading": "For Edge Device Based On Start-Up Latency",
+          "page": 12
+        },
+        {
+          "characters": 208,
+          "heading": "Based Power-Efficient Object Detection On",
+          "page": 12
+        },
+        {
+          "characters": 172,
+          "heading": "Power-Aware Vision-Based Virtual Sensor For",
+          "page": 12
+        },
+        {
+          "characters": 432,
+          "heading": "Of Software Multithreading For Deep-Learning",
+          "page": 12
+        },
+        {
+          "characters": 403,
+          "heading": "Proceedings Of The 27Th Acm Symposium",
+          "page": 12
+        },
+        {
+          "characters": 174,
+          "heading": "Conference On Computer Vision And Pattern",
+          "page": 12
+        },
+        {
+          "characters": 87,
+          "heading": "Tectural Implications Of Autonomous Driving:",
+          "page": 12
+        },
+        {
+          "characters": 43,
+          "heading": "Ings Of The Twenty-Third International Con-",
+          "page": 12
+        },
+        {
+          "characters": 41,
+          "heading": "Ference On Architectural Support For Pro-",
+          "page": 12
+        },
+        {
+          "characters": 167,
+          "heading": "Gramming Languages And Operating Systems",
+          "page": 12
+        },
+        {
+          "characters": 3819,
+          "heading": "Gramming Languages And Operating Systems",
+          "page": 13
+        }
+      ],
+      "selected_text_sha256": "8fc8115810cd12292d113d13790903db66170d1f405fb75ed7140a9f2ceb0e10",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "9000c64f9bacf18d1ba017c3b38abd29f4c81a88b35c1c938e2de37356ce47bd",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0003"
+        ],
+        "excerpt": "Real-time object detectors are usually reported by mean latency o r frame rate. An availability failure,\nhowever, occurs when a single response misses the application' s deadline. Candidate-inflation latency\nattacks drive the number of boxes entering non-maximum suppres sion (NMS) far beyond its clean\nrange. Recent evaluations report that realistic hardware, represen tations and optimized suppression\nreduce the severity of such attacks. Reduced severity is not a bo und: work remains attacker-controlled,\nand prior studies do not jointly report deadline-relative tail la tency and deadline-miss ratio for a\ndefended serving path. We therefore admit at most K candidates to NMS. The selection operation\nis standard; new is its use as a deployment-selected bound on a ttacker-controlled work, calibrated\nagainst a declared deadline. It needs no retraining and no weigh t change, so it applies to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "39bdd01f8726e22e4b3399b8c6481191988737cb3f73c8bb466a1cd5eba0c0c5",
+            "evidence_id": "E6e2a534bdf3f1a27-B0003",
+            "pages": [
+              2
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 2,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "Real-time object detectors are usually reported by mean latency o r frame rate. An availability failure,\nhowever, occurs when a single response misses the application' s deadline. Candidate-inflation latency\nattacks drive the number of boxes entering non-maximum suppres sion (NMS) far beyond its clean\nrange. Recent evaluations report that realistic hardware, represen tations and optimized suppression\nreduce the severity of such attacks. Reduced severity is not a bo und: work remains attacker-controlled,\nand prior studies do not jointly report deadline-relative tail la tency and deadline-miss ratio for a\ndefended serving path. We therefore admit at most K candidates to NMS. The selection operation\nis standard; new is its use as a deployment-selected bound on a ttacker-controlled work, calibrated\nagainst a declared deadline. It needs no retraining and no weigh t change, so it applies to "
+              }
+            ],
+            "text": "Real-time object detectors are usually reported by mean latency o r frame rate. An availability failure,\nhowever, occurs when a single response misses the application' s deadline. Candidate-inflation latency\nattacks drive the number of boxes entering non-maximum suppres sion (NMS) far beyond its clean\nrange. Recent evaluations report that realistic hardware, represen tations and optimized suppression\nreduce the severity of such attacks. Reduced severity is not a bo und: work remains attacker-controlled,\nand prior studies do not jointly report deadline-relative tail la tency and deadline-miss ratio for a\ndefended serving path. We therefore admit at most K candidates to NMS. The selection operation\nis standard; new is its use as a deployment-selected bound on a ttacker-controlled work, calibrated\nagainst a declared deadline. It needs no retraining and no weigh t change, so it applies to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0012"
+        ],
+        "excerpt": "most K candidates to NMS. The selection\noperation is standard; its use as a deployment-\nselected bound on attacker-controlled work is\nnot, and we measure the accuracy it costs.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bounded Candidate Admission. We Admit At",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0ac57c306ceb97d63ebb5185e6e402ca27ecc8a600b21db6a2276b2ae215dc7f",
+            "evidence_id": "E6e2a534bdf3f1a27-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Bounded Candidate Admission. We Admit At",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 176,
+                "page": 3,
+                "section": "Bounded Candidate Admission. We Admit At",
+                "section_index": 7,
+                "start": 0,
+                "text": "most K candidates to NMS. The selection\noperation is standard; its use as a deployment-\nselected bound on attacker-controlled work is\nnot, and we measure the accuracy it costs."
+              }
+            ],
+            "text": "most K candidates to NMS. The selection\noperation is standard; its use as a deployment-\nselected bound on attacker-controlled work is\nnot, and we measure the accuracy it costs."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0013"
+        ],
+        "excerpt": "rule that picks K from measured tail latency\nand a stated accuracy tolerance, so a deploy-\nment with a different frame period can select\nits own.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Deadline-Calibrated Selection Of K. We Give A",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b322e1a1cc1ebd0af3c0f684bcd25d45c3ac2a8684a852087dffab177e57f1de",
+            "evidence_id": "E6e2a534bdf3f1a27-B0013",
+            "pages": [
+              3
+            ],
+            "section": "Deadline-Calibrated Selection Of K. We Give A",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 145,
+                "page": 3,
+                "section": "Deadline-Calibrated Selection Of K. We Give A",
+                "section_index": 8,
+                "start": 0,
+                "text": "rule that picks K from measured tail latency\nand a stated accuracy tolerance, so a deploy-\nment with a different frame period can select\nits own."
+              }
+            ],
+            "text": "rule that picks K from measured tail latency\nand a stated accuracy tolerance, so a deploy-\nment with a different frame period can select\nits own."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0019"
+        ],
+        "excerpt": "Figure 1 shows the testbed and carries its con-\nfiguration. The upper row is the online path:\nthe client's timer defines client scope, and nginx\nspreads requests over two workers, each hold-\ning one RTX 4090 and running YOLOv8x-P2\nat 1280-pixel input on a TensorRT fp16 serving\npath. The lower row is offline replay, where one\nworker's captured pre-NMS candidate arrays feed\nthree suppression backends and the edge board,\nso those arms differ only in implementation. The\nserved operating point is \u03c4 = 0 .30, NMS IoU\n0.65, at most 300 detections and the deployed\nT able 1 Accuracy provenance for the two\ndetection sets.\nSet Scoring point AP@[ .50 : .95]\nS wide open 0.3186\nS threshold 0.2793\nS budget 0.3171\nS threshold + budget 0.2793\nR wide open 0.3529\nR threshold 0.313556\nR threshold + capped 0.312913\ncap K = 1024; the graph emits 136 ,000 anchors.\nAttacks use 48 source images at seed 1337, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Measured System",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "74ff75cc609dee8f9fac1e201ccda5dab46e3dec4a16f57eca996c0421346acb",
+            "evidence_id": "E6e2a534bdf3f1a27-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Measured System",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 4,
+                "section": "Measured System",
+                "section_index": 13,
+                "start": 0,
+                "text": "Figure 1 shows the testbed and carries its con-\nfiguration. The upper row is the online path:\nthe client's timer defines client scope, and nginx\nspreads requests over two workers, each hold-\ning one RTX 4090 and running YOLOv8x-P2\nat 1280-pixel input on a TensorRT fp16 serving\npath. The lower row is offline replay, where one\nworker's captured pre-NMS candidate arrays feed\nthree suppression backends and the edge board,\nso those arms differ only in implementation. The\nserved operating point is \u03c4 = 0 .30, NMS IoU\n0.65, at most 300 detections and the deployed\nT able 1 Accuracy provenance for the two\ndetection sets.\nSet Scoring point AP@[ .50 : .95]\nS wide open 0.3186\nS threshold 0.2793\nS budget 0.3171\nS threshold + budget 0.2793\nR wide open 0.3529\nR threshold 0.313556\nR threshold + capped 0.312913\ncap K = 1024; the graph emits 136 ,000 anchors.\nAttacks use 48 source images at seed 1337, "
+              }
+            ],
+            "text": "Figure 1 shows the testbed and carries its con-\nfiguration. The upper row is the online path:\nthe client's timer defines client scope, and nginx\nspreads requests over two workers, each hold-\ning one RTX 4090 and running YOLOv8x-P2\nat 1280-pixel input on a TensorRT fp16 serving\npath. The lower row is offline replay, where one\nworker's captured pre-NMS candidate arrays feed\nthree suppression backends and the edge board,\nso those arms differ only in implementation. The\nserved operating point is \u03c4 = 0 .30, NMS IoU\n0.65, at most 300 detections and the deployed\nT able 1 Accuracy provenance for the two\ndetection sets.\nSet Scoring point AP@[ .50 : .95]\nS wide open 0.3186\nS threshold 0.2793\nS budget 0.3171\nS threshold + budget 0.2793\nR wide open 0.3529\nR threshold 0.313556\nR threshold + capped 0.312913\ncap K = 1024; the graph emits 136 ,000 anchors.\nAttacks use 48 source images at seed 1337, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0023"
+        ],
+        "excerpt": "metrics\nClient-observed latency is the sum\nLi = Tnet,i+Tqueue,i+Tdec,i+Tinf,i+Tpost,i+Tser,i,\n(1)\nand the deadline-miss ratio\nDMR(D) = 1n\nn\u2211\ni=1\n1[Li > D ]. (2)\nUnless stated otherwise D = 33 .3 ms, the 30-\nHz frame period of \u00a71; we report p95 with DMR\nbecause one percentile hides the mass beyond it.\nThe two scopes are numerically equal and logi-\ncally different: De2e applies to the client-observed\nLi of Eq. ( 1), network, queueing and serialization\nincluded, while Dsupp screens the suppression call\nalone, the scope of every stage figure here. No\nstage allocation is claimed, TNMS \u2264 Dsupp being\nnecessary for Li \u2264 De2e and never sufficient, and\nthe gap is not academic: at low load worker p95\nis 28.62 ms against an open-loop client p95 of\n33.48 ms, with a low-load client DMR of 0.0392\nfrom a separate draw.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Timing Scopes And Deadline",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8e12d4d1f6cc9cce4d29b97dee0959e440e699a05ff5f1f273eee8c88f1a1911",
+            "evidence_id": "E6e2a534bdf3f1a27-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Timing Scopes And Deadline",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 814,
+                "page": 5,
+                "section": "Timing Scopes And Deadline",
+                "section_index": 15,
+                "start": 0,
+                "text": "metrics\nClient-observed latency is the sum\nLi = Tnet,i+Tqueue,i+Tdec,i+Tinf,i+Tpost,i+Tser,i,\n(1)\nand the deadline-miss ratio\nDMR(D) = 1n\nn\u2211\ni=1\n1[Li > D ]. (2)\nUnless stated otherwise D = 33 .3 ms, the 30-\nHz frame period of \u00a71; we report p95 with DMR\nbecause one percentile hides the mass beyond it.\nThe two scopes are numerically equal and logi-\ncally different: De2e applies to the client-observed\nLi of Eq. ( 1), network, queueing and serialization\nincluded, while Dsupp screens the suppression call\nalone, the scope of every stage figure here. No\nstage allocation is claimed, TNMS \u2264 Dsupp being\nnecessary for Li \u2264 De2e and never sufficient, and\nthe gap is not academic: at low load worker p95\nis 28.62 ms against an open-loop client p95 of\n33.48 ms, with a low-load client DMR of 0.0392\nfrom a separate draw."
+              }
+            ],
+            "text": "metrics\nClient-observed latency is the sum\nLi = Tnet,i+Tqueue,i+Tdec,i+Tinf,i+Tpost,i+Tser,i,\n(1)\nand the deadline-miss ratio\nDMR(D) = 1n\nn\u2211\ni=1\n1[Li > D ]. (2)\nUnless stated otherwise D = 33 .3 ms, the 30-\nHz frame period of \u00a71; we report p95 with DMR\nbecause one percentile hides the mass beyond it.\nThe two scopes are numerically equal and logi-\ncally different: De2e applies to the client-observed\nLi of Eq. ( 1), network, queueing and serialization\nincluded, while Dsupp screens the suppression call\nalone, the scope of every stage figure here. No\nstage allocation is claimed, TNMS \u2264 Dsupp being\nnecessary for Li \u2264 De2e and never sufficient, and\nthe gap is not academic: at low load worker p95\nis 28.62 ms against an open-loop client p95 of\n33.48 ms, with a low-load client DMR of 0.0392\nfrom a separate draw."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0024"
+        ],
+        "excerpt": "The adversary perturbs a submitted image within\nan L\u221e budget and alters nothing else: not the\nweights, the serving binary, the cap or the server\nconfiguration. The objective is the candidate\ncount surviving the confidence threshold before\nNMS:\nmax\n\u03b4\nN\u03c4 (x + \u03b4)\ns.t. \u2225\u03b4\u2225\u221e \u2264 \u03f5,\nx + \u03b4 \u2208 [0, 1]d.\n(3)\nWe solve Eq. ( 3) by projected gradient ascent on\na differentiable surrogate for N\u03c4 : with pj the max-\nimum class probability of anchor j, the objective\nis \u2211j \u03c3((pj \u2212 \u03c4 )/T ), T = 0 .01, so N\u03c4 counts\nanchors, not class-expanded boxes. The update is\n\u03b4t+1 = \u03a0 \u03f5(\u03b4t + \u03b1 sign\u2207\u03b4), \u03b1 = 0 .005, 100 steps,\n\u03b40 = 0, projected onto the \u03f5-ball and [0 , 1]. Unless\na budget is named, every attacked figure in this\npaper is the principal condition \u03f5 = 0.03, and \u00a74.2\nvaries it. It is deterministic, the seed selecting only\nthe 48 source images, so there is no attack-seed\nvariance. Gradients are taken white-box on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Threat Model",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ec7f8d3884caf57fbc8c238dd1826212642d03f00be9e0eda637771212525ad9",
+            "evidence_id": "E6e2a534bdf3f1a27-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Threat Model",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 5,
+                "section": "Threat Model",
+                "section_index": 16,
+                "start": 0,
+                "text": "The adversary perturbs a submitted image within\nan L\u221e budget and alters nothing else: not the\nweights, the serving binary, the cap or the server\nconfiguration. The objective is the candidate\ncount surviving the confidence threshold before\nNMS:\nmax\n\u03b4\nN\u03c4 (x + \u03b4)\ns.t. \u2225\u03b4\u2225\u221e \u2264 \u03f5,\nx + \u03b4 \u2208 [0, 1]d.\n(3)\nWe solve Eq. ( 3) by projected gradient ascent on\na differentiable surrogate for N\u03c4 : with pj the max-\nimum class probability of anchor j, the objective\nis \u2211j \u03c3((pj \u2212 \u03c4 )/T ), T = 0 .01, so N\u03c4 counts\nanchors, not class-expanded boxes. The update is\n\u03b4t+1 = \u03a0 \u03f5(\u03b4t + \u03b1 sign\u2207\u03b4), \u03b1 = 0 .005, 100 steps,\n\u03b40 = 0, projected onto the \u03f5-ball and [0 , 1]. Unless\na budget is named, every attacked figure in this\npaper is the principal condition \u03f5 = 0.03, and \u00a74.2\nvaries it. It is deterministic, the seed selecting only\nthe 48 source images, so there is no attack-seed\nvariance. Gradients are taken white-box on "
+              }
+            ],
+            "text": "The adversary perturbs a submitted image within\nan L\u221e budget and alters nothing else: not the\nweights, the serving binary, the cap or the server\nconfiguration. The objective is the candidate\ncount surviving the confidence threshold before\nNMS:\nmax\n\u03b4\nN\u03c4 (x + \u03b4)\ns.t. \u2225\u03b4\u2225\u221e \u2264 \u03f5,\nx + \u03b4 \u2208 [0, 1]d.\n(3)\nWe solve Eq. ( 3) by projected gradient ascent on\na differentiable surrogate for N\u03c4 : with pj the max-\nimum class probability of anchor j, the objective\nis \u2211j \u03c3((pj \u2212 \u03c4 )/T ), T = 0 .01, so N\u03c4 counts\nanchors, not class-expanded boxes. The update is\n\u03b4t+1 = \u03a0 \u03f5(\u03b4t + \u03b1 sign\u2207\u03b4), \u03b1 = 0 .005, 100 steps,\n\u03b40 = 0, projected onto the \u03f5-ball and [0 , 1]. Unless\na budget is named, every attacked figure in this\npaper is the principal condition \u03f5 = 0.03, and \u00a74.2\nvaries it. It is deterministic, the seed selecting only\nthe 48 source images, so there is no attack-seed\nvariance. Gradients are taken white-box on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0031"
+        ],
+        "excerpt": "conclusion, but does not remove\nthe deadline violation\nBackend choice substantially reduces attacked\nsuppression latency, but no uncapped backend we\ntested satisfies the declared suppression screen.\nFollowing the deployment-realism concern of prior\nwork [ 15, 16], we replay identical attacked can-\ndidate arrays through three suppression imple-\nmentations. Over the same 48 images the sup-\npression call's p95 is 635.35 ms on the deployed\nNumPy path, 177.71 ms on torchvision CPU and\n49.08 ms on torchvision CUDA. CPU arms use the\nhost clock. CUDA arms are bracketed by device\nsynchronization after a warm-up, since an unsyn-\nchronized timing measures the kernel launch, not\nthe work. The host-to-device copy is excluded; at\n0.183 ms p95 it changes neither ordering nor ver-\ndict, so the CUDA figure understates a backend\nfed from the host.\n5",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Changes The",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e452590a49b4f6784c301dd46c54ca35085da37ba82d97f64a19ba053957a8b0",
+            "evidence_id": "E6e2a534bdf3f1a27-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Implementation Changes The",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 843,
+                "page": 6,
+                "section": "Implementation Changes The",
+                "section_index": 22,
+                "start": 0,
+                "text": "conclusion, but does not remove\nthe deadline violation\nBackend choice substantially reduces attacked\nsuppression latency, but no uncapped backend we\ntested satisfies the declared suppression screen.\nFollowing the deployment-realism concern of prior\nwork [ 15, 16], we replay identical attacked can-\ndidate arrays through three suppression imple-\nmentations. Over the same 48 images the sup-\npression call's p95 is 635.35 ms on the deployed\nNumPy path, 177.71 ms on torchvision CPU and\n49.08 ms on torchvision CUDA. CPU arms use the\nhost clock. CUDA arms are bracketed by device\nsynchronization after a warm-up, since an unsyn-\nchronized timing measures the kernel launch, not\nthe work. The host-to-device copy is excluded; at\n0.183 ms p95 it changes neither ordering nor ver-\ndict, so the CUDA figure understates a backend\nfed from the host.\n5"
+              }
+            ],
+            "text": "conclusion, but does not remove\nthe deadline violation\nBackend choice substantially reduces attacked\nsuppression latency, but no uncapped backend we\ntested satisfies the declared suppression screen.\nFollowing the deployment-realism concern of prior\nwork [ 15, 16], we replay identical attacked can-\ndidate arrays through three suppression imple-\nmentations. Over the same 48 images the sup-\npression call's p95 is 635.35 ms on the deployed\nNumPy path, 177.71 ms on torchvision CPU and\n49.08 ms on torchvision CUDA. CPU arms use the\nhost clock. CUDA arms are bracketed by device\nsynchronization after a warm-up, since an unsyn-\nchronized timing measures the kernel launch, not\nthe work. The host-to-device copy is excluded; at\n0.183 ms p95 it changes neither ordering nor ver-\ndict, so the CUDA figure understates a backend\nfed from the host.\n5"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0034"
+        ],
+        "excerpt": "Top-K selection is a standard operation and we\nclaim no novelty for it. What is proposed here is its\nuse as a deployment-selected bound on attacker-\ncontrolled work, with the value calibrated against\na declared deadline and its accuracy cost mea-\nsured. Let C be the candidates surviving the\nconfidence threshold and N = |C|. Before NMS\nwe retain only CK = TopK( C, K), admitting for\nN > K the K candidates smallest under the\nlexicographic key ( \u2212sj, j): argpartition on the\nnegated scores at index K \u2212 1 locates the cutoff,\nevery candidate strictly above it is admitted, and\nthe remaining places go to candidates equal to it in\nascending index order. The tie rule is not a formal-\nity, NumPy's introselect being unstable and exact\nties reachable at fp16 or quantized scores. The cut\nis O(N ) and adds no pairwise IoU comparison, the\nterm Eq. ( 4) bounds.\nFor a serial greedy NMS implementation, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pre-Nms Candidate Budget",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "90770316b90a98b0714de4ddeb94232e3ef9113760c9cb98722c256832cd46b7",
+            "evidence_id": "E6e2a534bdf3f1a27-B0034",
+            "pages": [
+              7
+            ],
+            "section": "Pre-Nms Candidate Budget",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 7,
+                "section": "Pre-Nms Candidate Budget",
+                "section_index": 25,
+                "start": 0,
+                "text": "Top-K selection is a standard operation and we\nclaim no novelty for it. What is proposed here is its\nuse as a deployment-selected bound on attacker-\ncontrolled work, with the value calibrated against\na declared deadline and its accuracy cost mea-\nsured. Let C be the candidates surviving the\nconfidence threshold and N = |C|. Before NMS\nwe retain only CK = TopK( C, K), admitting for\nN > K the K candidates smallest under the\nlexicographic key ( \u2212sj, j): argpartition on the\nnegated scores at index K \u2212 1 locates the cutoff,\nevery candidate strictly above it is admitted, and\nthe remaining places go to candidates equal to it in\nascending index order. The tie rule is not a formal-\nity, NumPy's introselect being unstable and exact\nties reachable at fp16 or quantized scores. The cut\nis O(N ) and adds no pairwise IoU comparison, the\nterm Eq. ( 4) bounds.\nFor a serial greedy NMS implementation, "
+              }
+            ],
+            "text": "Top-K selection is a standard operation and we\nclaim no novelty for it. What is proposed here is its\nuse as a deployment-selected bound on attacker-\ncontrolled work, with the value calibrated against\na declared deadline and its accuracy cost mea-\nsured. Let C be the candidates surviving the\nconfidence threshold and N = |C|. Before NMS\nwe retain only CK = TopK( C, K), admitting for\nN > K the K candidates smallest under the\nlexicographic key ( \u2212sj, j): argpartition on the\nnegated scores at index K \u2212 1 locates the cutoff,\nevery candidate strictly above it is admitted, and\nthe remaining places go to candidates equal to it in\nascending index order. The tie rule is not a formal-\nity, NumPy's introselect being unstable and exact\nties reachable at fp16 or quantized scores. The cut\nis O(N ) and adds no pairwise IoU comparison, the\nterm Eq. ( 4) bounds.\nFor a serial greedy NMS implementation, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0037"
+        ],
+        "excerpt": "Figure 3 evaluates several values of K under\nthree admission policies: the deployed global bud-\nget, which admits at most K candidates in total,\nand the per-class and per-level alternatives. Only\nthe global policy makes the admitted total a\ndeclared quantity, so Eq. ( 4) applies to it alone.\nThe other two are plotted for completeness; equal\nlabels there are not equal admitted work, and the\ncurves are not a ranking. The operating point\nK = 1024 reduces attacked suppression p95 to\n4.28 ms. Its clean cost is the paired difference of\nthe last two rows of Table 1, 0.00064 AP@[ .50 :\n.95], and 0.00060 when the clean evaluation is\nreplayed through the serving pool. Both are vali-\ndation figures, while \u00a73's headline accuracy is held\nout, and a cost measured on one population can-\nnot be subtracted from an accuracy measured on\nanother; so we repeated the sweep on test-dev\nwith K fixed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Accuracy\u2013Latency Trade-Off",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "39822bbcbd475a56fa1513e8f6e19ded8fcfde97fc493ec85ca9fde552ee8f72",
+            "evidence_id": "E6e2a534bdf3f1a27-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Accuracy\u2013Latency Trade-Off",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 7,
+                "section": "Accuracy\u2013Latency Trade-Off",
+                "section_index": 26,
+                "start": 0,
+                "text": "Figure 3 evaluates several values of K under\nthree admission policies: the deployed global bud-\nget, which admits at most K candidates in total,\nand the per-class and per-level alternatives. Only\nthe global policy makes the admitted total a\ndeclared quantity, so Eq. ( 4) applies to it alone.\nThe other two are plotted for completeness; equal\nlabels there are not equal admitted work, and the\ncurves are not a ranking. The operating point\nK = 1024 reduces attacked suppression p95 to\n4.28 ms. Its clean cost is the paired difference of\nthe last two rows of Table 1, 0.00064 AP@[ .50 :\n.95], and 0.00060 when the clean evaluation is\nreplayed through the serving pool. Both are vali-\ndation figures, while \u00a73's headline accuracy is held\nout, and a cost measured on one population can-\nnot be subtracted from an accuracy measured on\nanother; so we repeated the sweep on test-dev\nwith K fixed "
+              }
+            ],
+            "text": "Figure 3 evaluates several values of K under\nthree admission policies: the deployed global bud-\nget, which admits at most K candidates in total,\nand the per-class and per-level alternatives. Only\nthe global policy makes the admitted total a\ndeclared quantity, so Eq. ( 4) applies to it alone.\nThe other two are plotted for completeness; equal\nlabels there are not equal admitted work, and the\ncurves are not a ranking. The operating point\nK = 1024 reduces attacked suppression p95 to\n4.28 ms. Its clean cost is the paired difference of\nthe last two rows of Table 1, 0.00064 AP@[ .50 :\n.95], and 0.00060 when the clean evaluation is\nreplayed through the serving pool. Both are vali-\ndation figures, while \u00a73's headline accuracy is held\nout, and a cost measured on one population can-\nnot be subtracted from an accuracy measured on\nanother; so we repeated the sweep on test-dev\nwith K fixed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0038"
+        ],
+        "excerpt": "beforehand, obtaining 0.000188 over\nall 1610 images. The held-out cost is the smaller,\nso the validation figure is the conservative one to\n6\n100 101 102 103\nattacked suppression p95 (ms, log scale)\n0.10\n0.15\n0.20\n0.25\n0.30\n0.35clean AP@[.50:.95]\nK = 64\nK = 256\ndeployed: K = 1024\nDsupp = 33.3 ms\nuncapped clean AP 0.3136\nglobal Top-K (deployed)\nper-class Top-K\nper-level Top-K\nno cap: 672 ms, DMR 1.00\nFig. 3 Accuracy\u2013latency frontier for the candidate bud-\nget.\nquote, and the frontier saturates just above the\ndeployed cap.\nFor the selection rule below, U0.95 is a one-\nsided 95% Student- t upper confidence bound over\nsessions.\nK \u2217 = max{K : U0.95(Q0.95(TNMS(K))) \u2264 Dsupp\n\u2227 \u2206APK \u2264 \u03b4A\n}\n,\n(6)\nevaluated over the swept grid. On the deployed\nNumPy path K \u2217 = 5 , 120, the limit being a\nStudent-t bound over three session p95 values of\n48 images each; a more conservative multiplier\nleaves the same ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Accuracy\u2013Latency Trade-Off",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d50eed06aaf7e84056b57319125978e788bd38a9884684b41aedb2c93ea56a6c",
+            "evidence_id": "E6e2a534bdf3f1a27-B0038",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Accuracy\u2013Latency Trade-Off",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1029,
+                "page": 7,
+                "section": "Accuracy\u2013Latency Trade-Off",
+                "section_index": 26,
+                "start": 889,
+                "text": "beforehand, obtaining 0.000188 over\nall 1610 images. The held-out cost is the smaller,\nso the validation figure is the conservative one to\n6"
+              },
+              {
+                "end": 757,
+                "page": 8,
+                "section": "Accuracy\u2013Latency Trade-Off",
+                "section_index": 27,
+                "start": 0,
+                "text": "100 101 102 103\nattacked suppression p95 (ms, log scale)\n0.10\n0.15\n0.20\n0.25\n0.30\n0.35clean AP@[.50:.95]\nK = 64\nK = 256\ndeployed: K = 1024\nDsupp = 33.3 ms\nuncapped clean AP 0.3136\nglobal Top-K (deployed)\nper-class Top-K\nper-level Top-K\nno cap: 672 ms, DMR 1.00\nFig. 3 Accuracy\u2013latency frontier for the candidate bud-\nget.\nquote, and the frontier saturates just above the\ndeployed cap.\nFor the selection rule below, U0.95 is a one-\nsided 95% Student- t upper confidence bound over\nsessions.\nK \u2217 = max{K : U0.95(Q0.95(TNMS(K))) \u2264 Dsupp\n\u2227 \u2206APK \u2264 \u03b4A\n}\n,\n(6)\nevaluated over the swept grid. On the deployed\nNumPy path K \u2217 = 5 , 120, the limit being a\nStudent-t bound over three session p95 values of\n48 images each; a more conservative multiplier\nleaves the same "
+              }
+            ],
+            "text": "beforehand, obtaining 0.000188 over\nall 1610 images. The held-out cost is the smaller,\nso the validation figure is the conservative one to\n6\n100 101 102 103\nattacked suppression p95 (ms, log scale)\n0.10\n0.15\n0.20\n0.25\n0.30\n0.35clean AP@[.50:.95]\nK = 64\nK = 256\ndeployed: K = 1024\nDsupp = 33.3 ms\nuncapped clean AP 0.3136\nglobal Top-K (deployed)\nper-class Top-K\nper-level Top-K\nno cap: 672 ms, DMR 1.00\nFig. 3 Accuracy\u2013latency frontier for the candidate bud-\nget.\nquote, and the frontier saturates just above the\ndeployed cap.\nFor the selection rule below, U0.95 is a one-\nsided 95% Student- t upper confidence bound over\nsessions.\nK \u2217 = max{K : U0.95(Q0.95(TNMS(K))) \u2264 Dsupp\n\u2227 \u2206APK \u2264 \u03b4A\n}\n,\n(6)\nevaluated over the swept grid. On the deployed\nNumPy path K \u2217 = 5 , 120, the limit being a\nStudent-t bound over three session p95 values of\n48 images each; a more conservative multiplier\nleaves the same "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0041"
+        ],
+        "excerpt": "served deadline\nThe cap reduces client-side p95 under attack by\na factor of 15.10, a median over five independent\nA/B sessions, yet the defended requests still miss\nDe2e = 33 .3 ms every time. That is no contra-\ndiction: the work bound applies to suppression,\nand TNMS \u2264 Dsupp does not imply Le2e \u2264 De2e.\nNor is the miss attributable to the attack alone.\nAttacked images must be delivered losslessly, since\nre-encoding at the quality this pool serves did\nnot preserve the perturbation, so comparing them\nagainst the JPEG corpus varies two things at once.\nWe therefore re-encoded the same 48 sources into\nthe attacked arm's format and served all three\narms through the same pool at the same cap, in\nten sessions of 144 requests at \u03f5 = 2/255.\nThe adversary turns out not to be necessary for\nthe miss. Clean lossless images reach p95 66.20 ms\nat a deadline-miss ratio of 0.927, against 61.20 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Local Protection Versus",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db59af15fd783c17546133ec485554a4fe786130bf6c82a9e11e0dce8455a7c7",
+            "evidence_id": "E6e2a534bdf3f1a27-B0041",
+            "pages": [
+              8
+            ],
+            "section": "Stage-Local Protection Versus",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 8,
+                "section": "Stage-Local Protection Versus",
+                "section_index": 28,
+                "start": 0,
+                "text": "served deadline\nThe cap reduces client-side p95 under attack by\na factor of 15.10, a median over five independent\nA/B sessions, yet the defended requests still miss\nDe2e = 33 .3 ms every time. That is no contra-\ndiction: the work bound applies to suppression,\nand TNMS \u2264 Dsupp does not imply Le2e \u2264 De2e.\nNor is the miss attributable to the attack alone.\nAttacked images must be delivered losslessly, since\nre-encoding at the quality this pool serves did\nnot preserve the perturbation, so comparing them\nagainst the JPEG corpus varies two things at once.\nWe therefore re-encoded the same 48 sources into\nthe attacked arm's format and served all three\narms through the same pool at the same cap, in\nten sessions of 144 requests at \u03f5 = 2/255.\nThe adversary turns out not to be necessary for\nthe miss. Clean lossless images reach p95 66.20 ms\nat a deadline-miss ratio of 0.927, against 61.20 "
+              }
+            ],
+            "text": "served deadline\nThe cap reduces client-side p95 under attack by\na factor of 15.10, a median over five independent\nA/B sessions, yet the defended requests still miss\nDe2e = 33 .3 ms every time. That is no contra-\ndiction: the work bound applies to suppression,\nand TNMS \u2264 Dsupp does not imply Le2e \u2264 De2e.\nNor is the miss attributable to the attack alone.\nAttacked images must be delivered losslessly, since\nre-encoding at the quality this pool serves did\nnot preserve the perturbation, so comparing them\nagainst the JPEG corpus varies two things at once.\nWe therefore re-encoded the same 48 sources into\nthe attacked arm's format and served all three\narms through the same pool at the same cap, in\nten sessions of 144 requests at \u03f5 = 2/255.\nThe adversary turns out not to be necessary for\nthe miss. Clean lossless images reach p95 66.20 ms\nat a deadline-miss ratio of 0.927, against 61.20 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0042"
+        ],
+        "excerpt": "ms\nattacked. Those intervals overlap, so that ordering\nis not a ranking. The paired statistic is: taken per\nsource image as attacked minus clean, it puts the\nattacked arm ahead by a median 15.02 ms. The\ntwo need not agree in sign, since one compares\nthe arms' worst requests and the other compares\neach image with itself. The JPEG default reaches\n31.10 ms at 0.0.\nFigure 5 shows where the time goes; only\nworker stages are stacked, so no bar reaches a\nclient p95. The attacked bar exceeds the clean\nlossless bar almost entirely in decode, which runs\n1.87, 14.34 and 26.88 ms across the three arms\n7\n0 10 20 30 40 50 60\nworker-scope stage median (ms)\nclean, JPEG\n(production default)\nclean, lossless\n(no adversary)\nattacked, lossless\nDe2e = 33.3 ms\n4.6 12.5 worker total 21.12 ms\n14.3 4.7 12.5 worker total 33.52 ms\n26.9 5.1 12.6 worker total 48.94 ms\ndecode preprocess inference filter + Top-K NMS ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Local Protection Versus",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6cb4f6935c9f502b4b87160cd5145ab73676a406f63ddec354176dd662dadd08",
+            "evidence_id": "E6e2a534bdf3f1a27-B0042",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Stage-Local Protection Versus",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1487,
+                "page": 8,
+                "section": "Stage-Local Protection Versus",
+                "section_index": 28,
+                "start": 889,
+                "text": "ms\nattacked. Those intervals overlap, so that ordering\nis not a ranking. The paired statistic is: taken per\nsource image as attacked minus clean, it puts the\nattacked arm ahead by a median 15.02 ms. The\ntwo need not agree in sign, since one compares\nthe arms' worst requests and the other compares\neach image with itself. The JPEG default reaches\n31.10 ms at 0.0.\nFigure 5 shows where the time goes; only\nworker stages are stacked, so no bar reaches a\nclient p95. The attacked bar exceeds the clean\nlossless bar almost entirely in decode, which runs\n1.87, 14.34 and 26.88 ms across the three arms\n7"
+              },
+              {
+                "end": 299,
+                "page": 9,
+                "section": "Stage-Local Protection Versus",
+                "section_index": 29,
+                "start": 0,
+                "text": "0 10 20 30 40 50 60\nworker-scope stage median (ms)\nclean, JPEG\n(production default)\nclean, lossless\n(no adversary)\nattacked, lossless\nDe2e = 33.3 ms\n4.6 12.5 worker total 21.12 ms\n14.3 4.7 12.5 worker total 33.52 ms\n26.9 5.1 12.6 worker total 48.94 ms\ndecode preprocess inference filter + Top-K NMS "
+              }
+            ],
+            "text": "ms\nattacked. Those intervals overlap, so that ordering\nis not a ranking. The paired statistic is: taken per\nsource image as attacked minus clean, it puts the\nattacked arm ahead by a median 15.02 ms. The\ntwo need not agree in sign, since one compares\nthe arms' worst requests and the other compares\neach image with itself. The JPEG default reaches\n31.10 ms at 0.0.\nFigure 5 shows where the time goes; only\nworker stages are stacked, so no bar reaches a\nclient p95. The attacked bar exceeds the clean\nlossless bar almost entirely in decode, which runs\n1.87, 14.34 and 26.88 ms across the three arms\n7\n0 10 20 30 40 50 60\nworker-scope stage median (ms)\nclean, JPEG\n(production default)\nclean, lossless\n(no adversary)\nattacked, lossless\nDe2e = 33.3 ms\n4.6 12.5 worker total 21.12 ms\n14.3 4.7 12.5 worker total 33.52 ms\n26.9 5.1 12.6 worker total 48.94 ms\ndecode preprocess inference filter + Top-K NMS "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0043"
+        ],
+        "excerpt": "box decode\nFig. 5 Worker-scope stage medians for the three matched delivery a rms. The De2e line is a reference threshold, not an\nend-to-end percentile: the bars stack worker stages only.\nas the payload grows from 1.41 to 2.28 MB, tak-\ning worker totals from 21.12 through 33.52 to\n48.94 ms. All candidate handling, the only terms\nthe attack can inflate, costs about 2 ms more with\nthe cap in place: suppression rises from 0.29 to\n1.87 ms, and filtering plus selection, sharing one\ntimer, from 1.76 to 2.15 ms.\nThe largest attack-associated increment inside\nthe worker is therefore decode and represen-\ntation, not bounded candidate handling; where\nimage processing sits in a pipeline is itself a real-\ntime design variable [ 27]. This decomposes worker\nmedians, not client p95: the attacked arm does\nraise the miss ratio to 1.0, for which no binomial\nlimit is quoted, an observed 1.0 admitting ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Local Protection Versus",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e753dca8c9bac4808983263d012c92d8e29c69350412270a92c5a882eb3d0e2e",
+            "evidence_id": "E6e2a534bdf3f1a27-B0043",
+            "pages": [
+              9
+            ],
+            "section": "Stage-Local Protection Versus",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1194,
+                "page": 9,
+                "section": "Stage-Local Protection Versus",
+                "section_index": 29,
+                "start": 299,
+                "text": "box decode\nFig. 5 Worker-scope stage medians for the three matched delivery a rms. The De2e line is a reference threshold, not an\nend-to-end percentile: the bars stack worker stages only.\nas the payload grows from 1.41 to 2.28 MB, tak-\ning worker totals from 21.12 through 33.52 to\n48.94 ms. All candidate handling, the only terms\nthe attack can inflate, costs about 2 ms more with\nthe cap in place: suppression rises from 0.29 to\n1.87 ms, and filtering plus selection, sharing one\ntimer, from 1.76 to 2.15 ms.\nThe largest attack-associated increment inside\nthe worker is therefore decode and represen-\ntation, not bounded candidate handling; where\nimage processing sits in a pipeline is itself a real-\ntime design variable [ 27]. This decomposes worker\nmedians, not client p95: the attacked arm does\nraise the miss ratio to 1.0, for which no binomial\nlimit is quoted, an observed 1.0 admitting "
+              }
+            ],
+            "text": "box decode\nFig. 5 Worker-scope stage medians for the three matched delivery a rms. The De2e line is a reference threshold, not an\nend-to-end percentile: the bars stack worker stages only.\nas the payload grows from 1.41 to 2.28 MB, tak-\ning worker totals from 21.12 through 33.52 to\n48.94 ms. All candidate handling, the only terms\nthe attack can inflate, costs about 2 ms more with\nthe cap in place: suppression rises from 0.29 to\n1.87 ms, and filtering plus selection, sharing one\ntimer, from 1.76 to 2.15 ms.\nThe largest attack-associated increment inside\nthe worker is therefore decode and represen-\ntation, not bounded candidate handling; where\nimage processing sits in a pipeline is itself a real-\ntime design variable [ 27]. This decomposes worker\nmedians, not client p95: the attacked arm does\nraise the miss ratio to 1.0, for which no binomial\nlimit is quoted, an observed 1.0 admitting "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0046"
+        ],
+        "excerpt": "The anchor grid sets the maximum candidate\ncount, so a cap validated on one output tensor\nsays little about another. We repeated the capture\nand the sweep on the same detector family with-\nout its P2 head: 33,600 anchors against 136,000,\na factor of four in the quantity that sets the\nceiling. K = 1024 holds the suppression budget\non both, 3.11 ms against 4.19 ms in the same\nrun, while the runtime's shipped ceiling of 30,000\nmisses on both, at 187.30 and 342.96 ms. This is\nsuppression replay only; no accuracy claim is made\nfor the second model, and the bound is estab-\nlished for the two geometries tested rather than\nfor anchor-based detectors in general.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Second Detector Geometry",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "86207a07c7b4d1c286a824e887c2c4e7e53eabf9a7fb30cfa21d5d2333667b80",
+            "evidence_id": "E6e2a534bdf3f1a27-B0046",
+            "pages": [
+              9
+            ],
+            "section": "A Second Detector Geometry",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 661,
+                "page": 9,
+                "section": "A Second Detector Geometry",
+                "section_index": 31,
+                "start": 0,
+                "text": "The anchor grid sets the maximum candidate\ncount, so a cap validated on one output tensor\nsays little about another. We repeated the capture\nand the sweep on the same detector family with-\nout its P2 head: 33,600 anchors against 136,000,\na factor of four in the quantity that sets the\nceiling. K = 1024 holds the suppression budget\non both, 3.11 ms against 4.19 ms in the same\nrun, while the runtime's shipped ceiling of 30,000\nmisses on both, at 187.30 and 342.96 ms. This is\nsuppression replay only; no accuracy claim is made\nfor the second model, and the bound is estab-\nlished for the two geometries tested rather than\nfor anchor-based detectors in general."
+              }
+            ],
+            "text": "The anchor grid sets the maximum candidate\ncount, so a cap validated on one output tensor\nsays little about another. We repeated the capture\nand the sweep on the same detector family with-\nout its P2 head: 33,600 anchors against 136,000,\na factor of four in the quantity that sets the\nceiling. K = 1024 holds the suppression budget\non both, 3.11 ms against 4.19 ms in the same\nrun, while the runtime's shipped ceiling of 30,000\nmisses on both, at 187.30 and 342.96 ms. This is\nsuppression replay only; no accuracy claim is made\nfor the second model, and the bound is estab-\nlished for the two geometries tested rather than\nfor anchor-based detectors in general."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0047"
+        ],
+        "excerpt": "The promoted package is evaluated unchanged on\nBDD100K [ 24], a driving corpus whose clean can-\ndidate distribution is more than an order of mag-\nnitude sparser than VisDrone's, while attacked\ncounts land at much the same level on both.\nTheir ratio therefore rises to 1777.19, which mea-\nsures how little natural load a sparse corpus\ncarries and is not a severity ranking. The same\nK = 1024 defense nonetheless gives a client-side\nattacked p95 speedup of 14.04 over 144 requests\nper arm, and the cleanest attribution here: BDD's\nclean capped deadline-miss ratio is 0.0, so the\nattacked 1.0 on the same arm has no floor to sub-\ntract. Transfer across input distributions is what\nEV ADE found published attacks to lack [ 15]; we\nreport it for the defense.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Second Evaluation Distribution",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a79bf7434cd6a75d7d25120a38c8904b48ea3029cb0e3676c5d2d8de403a0637",
+            "evidence_id": "E6e2a534bdf3f1a27-B0047",
+            "pages": [
+              9
+            ],
+            "section": "Second Evaluation Distribution",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 753,
+                "page": 9,
+                "section": "Second Evaluation Distribution",
+                "section_index": 32,
+                "start": 0,
+                "text": "The promoted package is evaluated unchanged on\nBDD100K [ 24], a driving corpus whose clean can-\ndidate distribution is more than an order of mag-\nnitude sparser than VisDrone's, while attacked\ncounts land at much the same level on both.\nTheir ratio therefore rises to 1777.19, which mea-\nsures how little natural load a sparse corpus\ncarries and is not a severity ranking. The same\nK = 1024 defense nonetheless gives a client-side\nattacked p95 speedup of 14.04 over 144 requests\nper arm, and the cleanest attribution here: BDD's\nclean capped deadline-miss ratio is 0.0, so the\nattacked 1.0 on the same arm has no floor to sub-\ntract. Transfer across input distributions is what\nEV ADE found published attacks to lack [ 15]; we\nreport it for the defense."
+              }
+            ],
+            "text": "The promoted package is evaluated unchanged on\nBDD100K [ 24], a driving corpus whose clean can-\ndidate distribution is more than an order of mag-\nnitude sparser than VisDrone's, while attacked\ncounts land at much the same level on both.\nTheir ratio therefore rises to 1777.19, which mea-\nsures how little natural load a sparse corpus\ncarries and is not a severity ranking. The same\nK = 1024 defense nonetheless gives a client-side\nattacked p95 speedup of 14.04 over 144 requests\nper arm, and the cleanest attribution here: BDD's\nclean capped deadline-miss ratio is 0.0, so the\nattacked 1.0 on the same arm has no floor to sub-\ntract. Transfer across input distributions is what\nEV ADE found published attacks to lack [ 15]; we\nreport it for the defense."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0048"
+        ],
+        "excerpt": "throttling\nThis experiment tests one proposition: bounded\nNMS work does not imply invariance of the full\npipeline to platform state. The edge board eval-\nuates the mechanism on a second architecture,\ncooling unmodified so that throttling is part of the\nmeasurement.\nFigure 6 shows both halves. Above, the board\nis plainly thermally limited: temperature satu-\nrates, the first live throttle bit sets inside two\nminutes, and the ARM clock falls from 1.5 GHz\nand stays down. Below are the two inflation ratios\nwith their session intervals against the no-change\nline \u2013 two workloads on one board under one ther-\nmal regime, an edge-specialist model run end to\n8\n0 10 20 30 40\nelapsed time (minutes)\n75\n80\n85SoC temperature ( \u2218 C)\nfirst live throttle\n(a)\n0.8 1.0 1.2 1.4 1.6 1.8\nsustained p95 / burst p95\nno change 1.520 [1.450, 1.591]\nfull pipeline0.998 [0.983, 1.012]\nsuppression at ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Edge Platform And Thermal",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "96ff52ebc98b4579211351718702965ce9e6a2931860f8973f746969007ae7c6",
+            "evidence_id": "E6e2a534bdf3f1a27-B0048",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Edge Platform And Thermal",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 657,
+                "page": 9,
+                "section": "Edge Platform And Thermal",
+                "section_index": 33,
+                "start": 0,
+                "text": "throttling\nThis experiment tests one proposition: bounded\nNMS work does not imply invariance of the full\npipeline to platform state. The edge board eval-\nuates the mechanism on a second architecture,\ncooling unmodified so that throttling is part of the\nmeasurement.\nFigure 6 shows both halves. Above, the board\nis plainly thermally limited: temperature satu-\nrates, the first live throttle bit sets inside two\nminutes, and the ARM clock falls from 1.5 GHz\nand stays down. Below are the two inflation ratios\nwith their session intervals against the no-change\nline \u2013 two workloads on one board under one ther-\nmal regime, an edge-specialist model run end to\n8"
+              },
+              {
+                "end": 222,
+                "page": 10,
+                "section": "Edge Platform And Thermal",
+                "section_index": 34,
+                "start": 0,
+                "text": "0 10 20 30 40\nelapsed time (minutes)\n75\n80\n85SoC temperature ( \u2218 C)\nfirst live throttle\n(a)\n0.8 1.0 1.2 1.4 1.6 1.8\nsustained p95 / burst p95\nno change 1.520 [1.450, 1.591]\nfull pipeline0.998 [0.983, 1.012]\nsuppression at "
+              }
+            ],
+            "text": "throttling\nThis experiment tests one proposition: bounded\nNMS work does not imply invariance of the full\npipeline to platform state. The edge board eval-\nuates the mechanism on a second architecture,\ncooling unmodified so that throttling is part of the\nmeasurement.\nFigure 6 shows both halves. Above, the board\nis plainly thermally limited: temperature satu-\nrates, the first live throttle bit sets inside two\nminutes, and the ARM clock falls from 1.5 GHz\nand stays down. Below are the two inflation ratios\nwith their session intervals against the no-change\nline \u2013 two workloads on one board under one ther-\nmal regime, an edge-specialist model run end to\n8\n0 10 20 30 40\nelapsed time (minutes)\n75\n80\n85SoC temperature ( \u2218 C)\nfirst live throttle\n(a)\n0.8 1.0 1.2 1.4 1.6 1.8\nsustained p95 / burst p95\nno change 1.520 [1.450, 1.591]\nfull pipeline0.998 [0.983, 1.012]\nsuppression at "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0050"
+        ],
+        "excerpt": "model-promotion criterion\nAn artifact passing accuracy and integrity checks\ncan still violate a real-time requirement after\nexport. We therefore propose, rather than stan-\ndardize, an acceptance criterion in which deadline\nevidence joins promotion of package P :\nPromote(P ) = I(P ) \u2227 A(P )\n\u2227 Rclean(P ) \u2227 Radv(P, K), (7)\nwith I(P ) provenance checks, A(P ) a held-out\naccuracy criterion, and the clean and adversarial\ndeadline conditions\nRclean = [U0.95(Q0.95(Lclean)) \u2264 De2e]\n\u2227 [U0.95(DMRclean) \u2264 \u03c1], (8)\nRadv = [U0.95(Q0.95(Ladv)) \u2264 De2e]\n\u2227 [U0.95(DMRadv) \u2264 \u03c1]\n\u2227 [\u2206APK \u2264 \u03b4A]. (9)\nBoth are evaluated at client scope on the exported\nartifact. Lclean covers every input representation\nthe production API accepts, lossless included: the\npool serves lossless requests ( \u00a75.3) and an adver-\nsary reaches it through the same endpoint, so a cri-\nterion evaluated only on the JPEG default would\nexclude ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Deadline-Aware",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d20432ae897a7cb26fd03df725533dcb79da8ca61d66fbd2307bb54dfa9302b5",
+            "evidence_id": "E6e2a534bdf3f1a27-B0050",
+            "pages": [
+              10
+            ],
+            "section": "A Deadline-Aware",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 10,
+                "section": "A Deadline-Aware",
+                "section_index": 35,
+                "start": 0,
+                "text": "model-promotion criterion\nAn artifact passing accuracy and integrity checks\ncan still violate a real-time requirement after\nexport. We therefore propose, rather than stan-\ndardize, an acceptance criterion in which deadline\nevidence joins promotion of package P :\nPromote(P ) = I(P ) \u2227 A(P )\n\u2227 Rclean(P ) \u2227 Radv(P, K), (7)\nwith I(P ) provenance checks, A(P ) a held-out\naccuracy criterion, and the clean and adversarial\ndeadline conditions\nRclean = [U0.95(Q0.95(Lclean)) \u2264 De2e]\n\u2227 [U0.95(DMRclean) \u2264 \u03c1], (8)\nRadv = [U0.95(Q0.95(Ladv)) \u2264 De2e]\n\u2227 [U0.95(DMRadv) \u2264 \u03c1]\n\u2227 [\u2206APK \u2264 \u03b4A]. (9)\nBoth are evaluated at client scope on the exported\nartifact. Lclean covers every input representation\nthe production API accepts, lossless included: the\npool serves lossless requests ( \u00a75.3) and an adver-\nsary reaches it through the same endpoint, so a cri-\nterion evaluated only on the JPEG default would\nexclude "
+              }
+            ],
+            "text": "model-promotion criterion\nAn artifact passing accuracy and integrity checks\ncan still violate a real-time requirement after\nexport. We therefore propose, rather than stan-\ndardize, an acceptance criterion in which deadline\nevidence joins promotion of package P :\nPromote(P ) = I(P ) \u2227 A(P )\n\u2227 Rclean(P ) \u2227 Radv(P, K), (7)\nwith I(P ) provenance checks, A(P ) a held-out\naccuracy criterion, and the clean and adversarial\ndeadline conditions\nRclean = [U0.95(Q0.95(Lclean)) \u2264 De2e]\n\u2227 [U0.95(DMRclean) \u2264 \u03c1], (8)\nRadv = [U0.95(Q0.95(Ladv)) \u2264 De2e]\n\u2227 [U0.95(DMRadv) \u2264 \u03c1]\n\u2227 [\u2206APK \u2264 \u03b4A]. (9)\nBoth are evaluated at client scope on the exported\nartifact. Lclean covers every input representation\nthe production API accepts, lossless included: the\npool serves lossless requests ( \u00a75.3) and an adver-\nsary reaches it through the same endpoint, so a cri-\nterion evaluated only on the JPEG default would\nexclude "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0051"
+        ],
+        "excerpt": "the representation the attack requires.\nHere U0.95 instead uses a hierarchical bootstrap\nover sessions and source images; no exact bino-\nmial limit is used for a miss ratio, because replayed\nrequests over one corpus are not independent tri-\nals. We set \u03c1 = 0 .05 and \u03b4A = 10 \u22123, both policy\nrather than results, with \u2206AP K = AP uncapped \u2212\nAPK a paired difference within one detection set.\nThe evaluated package does not pass. The\ndeployed K = 1024 package satisfies I, A and\n\u2206APK \u2264 \u03b4A, its held-out cap cost being 0.000188.\nIt fails Radv on the quantile conjunct: attacked\nserved p95 is 61.20 ms against De2e = 33 .3 ms,\nnearly twice the budget. The observed DMR adv\nis 1 .0 on every session, so that conjunct fails too,\nthough we lean on the quantile, since an observa-\ntion of one admits no upper bound below one. It\nfails Rclean as well, on clean lossless requests. The\nartifact is therefore ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Deadline-Aware",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d9ca31222b373f3d278eee739eac665c06089ca50a6f780b6f192fb9d5ce95ac",
+            "evidence_id": "E6e2a534bdf3f1a27-B0051",
+            "pages": [
+              10
+            ],
+            "section": "A Deadline-Aware",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 10,
+                "section": "A Deadline-Aware",
+                "section_index": 35,
+                "start": 897,
+                "text": "the representation the attack requires.\nHere U0.95 instead uses a hierarchical bootstrap\nover sessions and source images; no exact bino-\nmial limit is used for a miss ratio, because replayed\nrequests over one corpus are not independent tri-\nals. We set \u03c1 = 0 .05 and \u03b4A = 10 \u22123, both policy\nrather than results, with \u2206AP K = AP uncapped \u2212\nAPK a paired difference within one detection set.\nThe evaluated package does not pass. The\ndeployed K = 1024 package satisfies I, A and\n\u2206APK \u2264 \u03b4A, its held-out cap cost being 0.000188.\nIt fails Radv on the quantile conjunct: attacked\nserved p95 is 61.20 ms against De2e = 33 .3 ms,\nnearly twice the budget. The observed DMR adv\nis 1 .0 on every session, so that conjunct fails too,\nthough we lean on the quantile, since an observa-\ntion of one admits no upper bound below one. It\nfails Rclean as well, on clean lossless requests. The\nartifact is therefore "
+              }
+            ],
+            "text": "the representation the attack requires.\nHere U0.95 instead uses a hierarchical bootstrap\nover sessions and source images; no exact bino-\nmial limit is used for a miss ratio, because replayed\nrequests over one corpus are not independent tri-\nals. We set \u03c1 = 0 .05 and \u03b4A = 10 \u22123, both policy\nrather than results, with \u2206AP K = AP uncapped \u2212\nAPK a paired difference within one detection set.\nThe evaluated package does not pass. The\ndeployed K = 1024 package satisfies I, A and\n\u2206APK \u2264 \u03b4A, its held-out cap cost being 0.000188.\nIt fails Radv on the quantile conjunct: attacked\nserved p95 is 61.20 ms against De2e = 33 .3 ms,\nnearly twice the budget. The observed DMR adv\nis 1 .0 on every session, so that conjunct fails too,\nthough we lean on the quantile, since an observa-\ntion of one admits no upper bound below one. It\nfails Rclean as well, on clean lossless requests. The\nartifact is therefore "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0059"
+        ],
+        "excerpt": "Two choices are policy, not findings. p95 is the\npolicy percentile because it is the quantile our ses-\nsion counts support with a useful confidence limit;\np99 would be stricter and less precisely estimated\nhere. And K \u2217 rests on three sessions, a weak basis\nfor a tail statement; the deployed cap sits five\ntimes below it, so the margin absorbs that, but a\ndeployment adopting K \u2217 should re-estimate over\nmore.\nRe-thresholding one nine-session clean low-\nload draw across deadlines, the miss ratio is 0.0093\nat 40 ms (25 Hz) and zero over all 2592 requests by\n66.7 ms. The mass sits in a narrow band immedi-\nately above the budget: a service at its boundary,\nnot one unable to meet a deadline, and the looser\npipeline budget of \u00a71 would contain it.\nSuppression cost depends substantially on the\nimplementation [15, 16], so the algorithmic candi-\ndate bound is the portable result; the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Threats To Validity",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0c8b7d8b68e2fb0a7898bc6b8da2501c6fe2c62eaca683700a5cb28168f6bfcf",
+            "evidence_id": "E6e2a534bdf3f1a27-B0059",
+            "pages": [
+              11
+            ],
+            "section": "Threats To Validity",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 885,
+                "page": 11,
+                "section": "Threats To Validity",
+                "section_index": 39,
+                "start": 0,
+                "text": "Two choices are policy, not findings. p95 is the\npolicy percentile because it is the quantile our ses-\nsion counts support with a useful confidence limit;\np99 would be stricter and less precisely estimated\nhere. And K \u2217 rests on three sessions, a weak basis\nfor a tail statement; the deployed cap sits five\ntimes below it, so the margin absorbs that, but a\ndeployment adopting K \u2217 should re-estimate over\nmore.\nRe-thresholding one nine-session clean low-\nload draw across deadlines, the miss ratio is 0.0093\nat 40 ms (25 Hz) and zero over all 2592 requests by\n66.7 ms. The mass sits in a narrow band immedi-\nately above the budget: a service at its boundary,\nnot one unable to meet a deadline, and the looser\npipeline budget of \u00a71 would contain it.\nSuppression cost depends substantially on the\nimplementation [15, 16], so the algorithmic candi-\ndate bound is the portable result; the "
+              }
+            ],
+            "text": "Two choices are policy, not findings. p95 is the\npolicy percentile because it is the quantile our ses-\nsion counts support with a useful confidence limit;\np99 would be stricter and less precisely estimated\nhere. And K \u2217 rests on three sessions, a weak basis\nfor a tail statement; the deployed cap sits five\ntimes below it, so the margin absorbs that, but a\ndeployment adopting K \u2217 should re-estimate over\nmore.\nRe-thresholding one nine-session clean low-\nload draw across deadlines, the miss ratio is 0.0093\nat 40 ms (25 Hz) and zero over all 2592 requests by\n66.7 ms. The mass sits in a narrow band immedi-\nately above the budget: a service at its boundary,\nnot one unable to meet a deadline, and the looser\npipeline budget of \u00a71 would contain it.\nSuppression cost depends substantially on the\nimplementation [15, 16], so the algorithmic candi-\ndate bound is the portable result; the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://www.researchsquare.com/article/rs-10938635/latest.pdf",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.21203/rs.3.rs-10938635/v1",
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The final evaluation uses objective wall-clock latency, deadline-miss ratio, and held-out COCO AP metrics measured on the exported serving path, which are independent of the differentiable surrogate used to craft attacks.",
+          "final_evaluation_signal": "Client-scope p95 latency, deadline-miss ratio, and COCO AP@[.50:.95] on held-out test data.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Projected gradient ascent on a differentiable surrogate maximizing the count of candidates passing the confidence threshold before NMS.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0003",
+          "E6e2a534bdf3f1a27-B0012",
+          "E6e2a534bdf3f1a27-B0013",
+          "E6e2a534bdf3f1a27-B0019",
+          "E6e2a534bdf3f1a27-B0023",
+          "E6e2a534bdf3f1a27-B0024",
+          "E6e2a534bdf3f1a27-B0031",
+          "E6e2a534bdf3f1a27-B0034",
+          "E6e2a534bdf3f1a27-B0037",
+          "E6e2a534bdf3f1a27-B0038",
+          "E6e2a534bdf3f1a27-B0041",
+          "E6e2a534bdf3f1a27-B0042",
+          "E6e2a534bdf3f1a27-B0043",
+          "E6e2a534bdf3f1a27-B0046",
+          "E6e2a534bdf3f1a27-B0047",
+          "E6e2a534bdf3f1a27-B0048",
+          "E6e2a534bdf3f1a27-B0050",
+          "E6e2a534bdf3f1a27-B0051",
+          "E6e2a534bdf3f1a27-B0059"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "9000c64f9bacf18d1ba017c3b38abd29f4c81a88b35c1c938e2de37356ce47bd"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.21203/rs.3.rs-10938635/v1",
+        "claim_evidence_alignment": "All claims are strictly supported by paired measurements and realistic controls; the authors avoid overclaiming by explicitly showing that the hardened artifact still fails end-to-end deadline requirements due to payload decode overheads, thus proving bounded suppression is necessary but not sufficient.",
+        "context_id": "6e2a534bdf3f1a27931a90d16b433546adb73aa16287ce4ad2060028b911429f",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical evaluation rigorously compares clean and attacked pipelines across datasets (VisDrone2019, BDD100K) and architectures, explicitly separating client, worker, and suppression timing scopes while reporting p95 tail latencies and deadline-miss ratios under thermal throttling and varied payload encodings.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Final evaluation evaluates objective hardware execution times, deadline compliance across distinct backends, and standard mAP metrics on held-out test sets without any shared surrogate loss.",
+          "final_evaluation_signal": "System-level wall-clock 95th percentile latency, deadline-miss ratio (DMR), and COCO AP@[.50:.95] detection accuracy on held-out test data.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Projected gradient ascent maximizing the count of candidate bounding boxes passing the confidence threshold before NMS.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E6e2a534bdf3f1a27-B0003",
+          "E6e2a534bdf3f1a27-B0012",
+          "E6e2a534bdf3f1a27-B0013",
+          "E6e2a534bdf3f1a27-B0019",
+          "E6e2a534bdf3f1a27-B0023",
+          "E6e2a534bdf3f1a27-B0024",
+          "E6e2a534bdf3f1a27-B0031",
+          "E6e2a534bdf3f1a27-B0034",
+          "E6e2a534bdf3f1a27-B0037",
+          "E6e2a534bdf3f1a27-B0038",
+          "E6e2a534bdf3f1a27-B0041",
+          "E6e2a534bdf3f1a27-B0042",
+          "E6e2a534bdf3f1a27-B0043",
+          "E6e2a534bdf3f1a27-B0046",
+          "E6e2a534bdf3f1a27-B0047",
+          "E6e2a534bdf3f1a27-B0048",
+          "E6e2a534bdf3f1a27-B0050",
+          "E6e2a534bdf3f1a27-B0051",
+          "E6e2a534bdf3f1a27-B0059"
+        ],
+        "limitations": "The authors transparently report that the defense only bounds stage-specific algorithmic IoU comparisons without guaranteeing hardware worst-case execution time or preventing end-to-end violations caused by upstream bottlenecks like image decompression.",
+        "method_assessment": "The methodology is thoroughly detailed, describing a deterministic PGD-based candidate inflation attack, a lexicographic Top-K selection rule calibrated against a declared deadline, and stage-isolated latency profiling spanning multiple software backends (NumPy, PyTorch CPU/CUDA) and hardware platforms (RTX 4090 pool and Raspberry Pi 4B).",
+        "quality_rationale": "The work provides rigorous experimental design, meticulous profiling across independent scopes, transparent negative results regarding full serving pipeline compliance, and thorough ablation across models, datasets, and platforms.",
+        "scoped_contribution": "The paper demonstrates that bounding candidate box admissions prior to non-maximum suppression (NMS) effectively limits attacker-controlled latency inflation in real-time object detection, while precisely quantifying the resulting held-out accuracy loss and showing that post-NMS bottleneck shifts (such as image decoding) prevent stage-level latency bounds from guaranteeing end-to-end deadline integrity.",
+        "source_content_hash": "9000c64f9bacf18d1ba017c3b38abd29f4c81a88b35c1c938e2de37356ce47bd"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work provides rigorous experimental design, meticulous profiling across independent scopes, transparent negative results regarding full serving pipeline compliance, and thorough ablation across models, datasets, and platforms.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "9000c64f9bacf18d1ba017c3b38abd29f4c81a88b35c1c938e2de37356ce47bd",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently report that the defense only bounds stage-specific algorithmic IoU comparisons without guaranteeing hardware worst-case execution time or preventing end-to-end violations caused by upstream bottlenecks like image decompression."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -155,7 +2047,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

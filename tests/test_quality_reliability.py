@@ -7,7 +7,7 @@ from pathlib import Path
 import tempfile
 import socket
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 from urllib.error import HTTPError, URLError
 
 from test_paper_scout_scientific_gate import candidate, manuscript
@@ -374,15 +374,56 @@ class ProviderContractTest(unittest.TestCase):
                              Loader=yaml.BaseLoader)
         gate = workflow["jobs"]["scout"]["env"]["RUN_ASSESSMENT"]
 
-        def evaluate(event_name, inputs):
-            # A minimal stand-in for the two operands GitHub substitutes.
-            scheduled = "github.event_name == 'schedule'" in gate and event_name == "schedule"
-            asked = "inputs.run_assessment" in gate and bool(inputs.get("run_assessment"))
-            return scheduled or asked
+        # Pin the structure, not substrings: a pure disjunction of exactly these operands.
+        # A substring check let `... || inputs.trigger == 'daily' && inputs.run_assessment`
+        # pass, which would make the external trigger (it sends only trigger=daily) skip
+        # assessment while reporting success.
+        self.assertTrue(gate.startswith("${{ ") and gate.endswith(" }}"), gate)
+        body = gate[4:-3]
+        self.assertNotIn("&&", body)
+        self.assertNotIn("!", body.replace("!=", ""))
+        self.assertEqual({operand.strip() for operand in body.split("||")},
+                         {"github.event_name == 'schedule'", "inputs.trigger == 'daily'",
+                          "inputs.run_assessment"})
 
-        self.assertTrue(evaluate("schedule", {}), "a scheduled run must assess")
-        self.assertTrue(evaluate("workflow_dispatch", {"run_assessment": True}))
-        self.assertFalse(evaluate("workflow_dispatch", {"run_assessment": False}))
+    def test_the_daily_guard_gates_the_whole_scout_job(self):
+        """Two daily triggers must not both reach the scientific stage on one day."""
+        import yaml
+        root = Path(__file__).resolve().parents[1]
+        workflow = yaml.load((root / ".github/workflows/paper-scout.yml").read_text(),
+                             Loader=yaml.BaseLoader)
+        guard_module = _load_daily_run_guard()
+        daily = "github.event_name == 'schedule' || (inputs.trigger == 'daily' && !inputs.deploy_only)"
+        self.assertEqual(workflow["env"]["IS_DAILY_RUN"], "${{ " + daily + " }}")
+        # run-name cannot read env, so it repeats the dispatch half of the same condition.
+        self.assertEqual(workflow["run-name"],
+                         "${{ inputs.trigger == 'daily' && !inputs.deploy_only && "
+                         f"'{guard_module.DAILY_TITLE}' || 'Paper Scout' }}}}")
+        self.assertEqual(workflow["on"]["workflow_dispatch"]["inputs"]["trigger"]["default"], "manual")
+        self.assertEqual(workflow["permissions"]["actions"], "read")
+
+        guard = workflow["jobs"]["daily-guard"]
+        self.assertEqual(guard["permissions"], {"actions": "read", "contents": "read"})
+        self.assertEqual(guard["outputs"], {"skip": "${{ steps.guard.outputs.skip }}"})
+        step = guard["steps"][-1]
+        self.assertEqual(step["id"], "guard")
+        self.assertEqual(step["run"], "python3 .github/scripts/daily_run_guard.py")
+        self.assertNotIn("IS_DAILY_RUN", step["env"], "one definition, at workflow level")
+
+        scout = workflow["jobs"]["scout"]
+        self.assertEqual(scout["needs"], "daily-guard")
+        self.assertEqual(scout["if"], "${{ needs.daily-guard.outputs.skip != 'true' }}")
+        self.assertNotIn("permissions", scout, "a job-level block would drop actions: read")
+        names = [s["name"] for s in scout["steps"]]
+        recheck = scout["steps"][names.index("Re-check the daily guard")]
+        self.assertEqual(recheck["run"], "python3 .github/scripts/daily_run_guard.py --enforce")
+        self.assertNotIn("if", recheck)
+        # Before every step that writes state or spends money.
+        for later in ("Restore private Paper Scout state", "Run discovery and metadata update",
+                      "Scientific credential preflight", "Bounded scientific assessment",
+                      "Commit scout updates", "Persist private Paper Scout state"):
+            self.assertLess(names.index("Re-check the daily guard"), names.index(later), later)
+
 
     def test_both_scheduled_writers_share_one_concurrency_group(self):
         """Single-writer discipline is what makes two scheduled workflows safe."""
@@ -526,3 +567,127 @@ class LiteralLineWrapRegressionTest(unittest.TestCase):
         self.assertEqual(result.quality_status, "uncertain")
         self.assertEqual(result.execution["proposed_decision"], {key: value[key] for key in ("quality_status", "quality_rationale", "quality_uncertainty")})
         self.assertNotEqual(result.quality_rationale, value["quality_rationale"])
+
+
+def _load_daily_run_guard():
+    import importlib.util
+    path = Path(__file__).resolve().parents[1] / ".github/scripts/daily_run_guard.py"
+    spec = importlib.util.spec_from_file_location("daily_run_guard", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class DailyRunGuardTests(unittest.TestCase):
+    CURRENT = 900
+
+    def setUp(self):
+        self.guard = _load_daily_run_guard()
+
+    def run_(self, run_id, created_at, event="workflow_dispatch", title="Paper Scout (daily trigger)",
+             conclusion="success", started_at=None):
+        return {"id": run_id, "event": event, "display_title": title, "created_at": created_at,
+                "run_started_at": started_at or created_at, "conclusion": conclusion}
+
+    def earlier(self, runs, now):
+        return self.guard.earlier_success_today(runs, self.CURRENT, now)
+
+    def test_the_late_github_cron_skips_after_the_morning_trigger_succeeded(self):
+        now = datetime(2026, 9, 28, 9, 5, tzinfo=UTC)
+        morning = self.run_(1, "2026-09-28T04:00:10Z")
+        self.assertEqual(self.earlier([morning], now), morning)
+
+    def test_the_morning_trigger_skips_after_an_on_time_github_cron_succeeded(self):
+        now = datetime(2026, 11, 2, 5, 0, tzinfo=UTC)  # 06:00 CET
+        cron = self.run_(1, "2026-11-02T04:02:00Z", event="schedule", title="Paper Scout")
+        self.assertEqual(self.earlier([cron], now), cron)
+
+    def test_a_failed_or_unfinished_daily_run_does_not_block_the_retry(self):
+        now = datetime(2026, 9, 28, 9, 5, tzinfo=UTC)
+        runs = [self.run_(1, "2026-09-28T04:00:10Z", conclusion="failure"),
+                self.run_(2, "2026-09-28T04:30:00Z", conclusion="cancelled"),
+                self.run_(3, "2026-09-28T09:00:00Z", event="schedule", conclusion=None)]
+        self.assertIsNone(self.earlier(runs, now))
+
+    def test_the_current_run_and_ordinary_manual_runs_do_not_count(self):
+        now = datetime(2026, 9, 28, 9, 5, tzinfo=UTC)
+        runs = [self.run_(self.CURRENT, "2026-09-28T09:00:00Z", event="schedule"),
+                self.run_(1, "2026-09-28T07:00:00Z", title="Paper Scout")]
+        self.assertIsNone(self.earlier(runs, now))
+
+    def decide(self, env, runs):
+        env = {"GITHUB_REPOSITORY": "o/r", "GITHUB_TOKEN": "t", "GITHUB_RUN_ID": str(self.CURRENT), **env}
+        with patch.object(self.guard, "fetch_runs", return_value=runs) as fetch:
+            result = self.guard.decide(env, datetime(2026, 9, 28, 9, 5, tzinfo=UTC))
+        return result, fetch
+
+    def test_a_non_daily_run_never_reads_history(self):
+        (skip, _), fetch = self.decide({"IS_DAILY_RUN": "false"}, [self.run_(1, "2026-09-28T04:00:10Z")])
+        self.assertFalse(skip)
+        fetch.assert_not_called()
+
+    def test_a_daily_run_reads_back_across_the_whole_rerun_window(self):
+        (skip, reason), fetch = self.decide({"IS_DAILY_RUN": "true"}, [self.run_(1, "2026-09-28T04:00:10Z")])
+        self.assertTrue(skip, reason)
+        self.assertEqual(fetch.call_args.args[1], "paper-scout.yml")
+        # Stockholm midnight, minus the 30-day re-run window and a day of margin.
+        self.assertEqual(fetch.call_args.args[3], datetime(2026, 8, 27, 22, 0, tzinfo=UTC))
+
+    def test_a_run_is_dated_by_its_latest_attempt_not_its_creation(self):
+        # Monday's failed external run A is re-run and succeeds at 00:30 Tuesday. It is
+        # Tuesday's run, so Tuesday's 06:00 trigger must skip.
+        rerun = self.run_(1, "2026-09-28T04:00:10Z", started_at="2026-09-28T22:30:00Z")
+        self.assertEqual(self.earlier([rerun], datetime(2026, 9, 29, 4, 0, tzinfo=UTC)), rerun)
+        # Monday's cron B succeeded on Monday. It does not block that re-run of A on
+        # Tuesday, which then counts as Tuesday's one assessment.
+        monday = self.run_(2, "2026-09-28T09:00:00Z", event="schedule", title="Paper Scout")
+        self.assertIsNone(self.earlier([monday], datetime(2026, 9, 28, 22, 30, tzinfo=UTC)))
+
+    def serve_pages(self, sizes):
+        pages = [{"workflow_runs": [self.run_(i, "2026-09-28T04:00:00Z") for i in range(n)]}
+                 for n in sizes]
+        responses = []
+        for page in pages:
+            response = MagicMock()
+            response.__enter__.return_value.read.return_value = json.dumps(page).encode()
+            responses.append(response)
+        return patch.object(self.guard.urllib.request, "urlopen", side_effect=responses)
+
+    def test_the_history_is_paginated_to_the_end(self):
+        with self.serve_pages([100, 3]) as urlopen:
+            runs = self.guard.fetch_runs("o/r", "paper-scout.yml", "t", datetime(2026, 8, 27, 22, tzinfo=UTC))
+        self.assertEqual(len(runs), 103)
+        self.assertEqual(urlopen.call_count, 2)
+        query = urlopen.call_args_list[1].args[0].full_url
+        self.assertIn("created=%3E%3D2026-08-27T22%3A00%3A00Z", query)
+        self.assertIn("status=success", query)
+        self.assertIn("page=2", query)
+
+    def test_history_beyond_the_listing_cap_fails_closed(self):
+        with self.serve_pages([100] * 10), self.assertRaises(RuntimeError):
+            self.guard.fetch_runs("o/r", "paper-scout.yml", "t", datetime(2026, 8, 27, 22, tzinfo=UTC))
+
+    def run_main(self, argv, skip):
+        with tempfile.TemporaryDirectory() as tmp:
+            output, summary = Path(tmp, "out"), Path(tmp, "summary")
+            env = {"GITHUB_OUTPUT": str(output), "GITHUB_STEP_SUMMARY": str(summary)}
+            with patch.dict("os.environ", env), \
+                 patch.object(self.guard, "decide", return_value=(skip, "because")):
+                code = self.guard.main(argv)
+            return code, output.read_text() if output.exists() else None
+
+    def test_the_guard_job_writes_the_skip_output_and_succeeds(self):
+        self.assertEqual(self.run_main([], skip=True), (0, "skip=true\n"))
+        self.assertEqual(self.run_main([], skip=False), (0, "skip=false\n"))
+
+    def test_the_in_job_recheck_fails_a_replayed_duplicate_and_writes_nothing(self):
+        self.assertEqual(self.run_main(["--enforce"], skip=True), (1, None))
+        self.assertEqual(self.run_main(["--enforce"], skip=False), (0, None))
+
+    def test_the_day_boundary_is_stockholm_midnight_not_utc(self):
+        # 23:30 UTC on the 27th is 01:30 CEST on the 28th: the same Stockholm day.
+        now = datetime(2026, 9, 28, 4, 0, tzinfo=UTC)
+        same_day = self.run_(1, "2026-09-27T23:30:00Z")
+        previous_day = self.run_(2, "2026-09-27T21:30:00Z")  # 23:30 CEST on the 27th
+        self.assertEqual(self.earlier([same_day], now), same_day)
+        self.assertIsNone(self.earlier([previous_day], now))

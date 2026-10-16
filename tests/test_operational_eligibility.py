@@ -389,14 +389,13 @@ class ProviderFailureKeepsPapersEligible(unittest.TestCase):
 
 
 class RunBudgetBounds(unittest.TestCase):
-    def test_default_limits_are_the_conservative_initial_policy(self):
+    def test_default_limits_allow_backlog_and_recent_papers(self):
         from paper_scout.batch_population import TRACKS
         budget = RunBudget()
-        self.assertEqual(budget.max_per_track, 1)
-        # The run ceiling is exactly one slot per track and no transfer between them, so
-        # it moves only when a track is added, never to buy a track a second assessment.
-        self.assertEqual(budget.max_per_run, len(TRACKS))
-        self.assertEqual(budget.max_per_run, 4)
+        self.assertEqual(budget.max_per_track, 2)
+        # The approved policy allows two slots per track within the shared money ceiling.
+        self.assertEqual(budget.max_per_run, 2 * len(TRACKS))
+        self.assertEqual(budget.max_per_run, 8)
         self.assertEqual(budget.openrouter_ceiling_usd, 0.30)
 
     def test_four_bounded_assessments_stay_under_the_unchanged_cost_ceiling(self):
@@ -408,15 +407,16 @@ class RunBudgetBounds(unittest.TestCase):
         """
         from paper_scout.operational_preflight import ESTIMATED_OPENROUTER_USD_PER_PAPER
         budget = RunBudget()
-        for index in range(budget.max_per_run):
+        for index in range(4):
             budget.reserve(f"track{index}")  # Raises CostCeilingExceeded if it would not fit.
             budget.record(f"track{index}", openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
         self.assertEqual(budget.total_assessed, 4)
         self.assertLess(budget.openrouter_spend_usd, budget.openrouter_ceiling_usd)
         self.assertIsNone(budget.stopped_reason)
 
-    def test_one_paper_per_track(self):
+    def test_two_papers_per_track(self):
         budget = RunBudget()
+        budget.record("agent_memory", openrouter_usd=0.01)
         budget.record("agent_memory", openrouter_usd=0.01)
         allowed, reason = budget.may_assess("agent_memory")
         self.assertFalse(allowed)
@@ -424,7 +424,7 @@ class RunBudgetBounds(unittest.TestCase):
         self.assertTrue(budget.may_assess("deep_research")[0])
 
     def test_run_total_is_capped(self):
-        budget = RunBudget(max_per_track=4)
+        budget = RunBudget(max_per_track=4, max_per_run=4)
         for track in ("a", "b", "c", "d"):
             budget.record(track, openrouter_usd=0.01)
         self.assertEqual(budget.may_assess("a")[1], "run_paper_limit_reached")
@@ -558,17 +558,19 @@ class OperationalSelection(unittest.TestCase):
 
     def test_engram_quota_is_not_transferred(self):
         from paper_scout.operational_run import MAX_PAPERS_PER_RUN as run_cap
-        self.assertEqual(MAX_PAPERS_PER_TRACK, 1)
+        self.assertEqual(MAX_PAPERS_PER_TRACK, 2)
         self.assertEqual(run_cap, MAX_PAPERS_PER_RUN)
         # A track with nothing eligible contributes nothing; it cannot lend its slot,
         # because the per-track ceiling is enforced per track rather than globally.
         budget = RunBudget()
         budget.record("agent_memory", openrouter_usd=0.0)
         budget.record("deep_research", openrouter_usd=0.0)
+        budget.record("agent_memory", openrouter_usd=0.0)
+        budget.record("deep_research", openrouter_usd=0.0)
         self.assertFalse(budget.may_assess("agent_memory")[0])
         self.assertFalse(budget.may_assess("deep_research")[0])
         self.assertTrue(budget.may_assess("engram")[0])
-        self.assertEqual(budget.total_assessed, 2)
+        self.assertEqual(budget.total_assessed, 4)
 
 
 class AcquisitionWalk(unittest.TestCase):
@@ -599,7 +601,7 @@ class AcquisitionWalk(unittest.TestCase):
         from paper_scout import cli
         from paper_scout.operational_run import OperationalMetrics, TrackSelection
         from paper_scout.operational_preflight import RunBudget
-        budget = budget or RunBudget()
+        budget = budget or RunBudget(max_per_track=1)
         metrics = OperationalMetrics()
         summaries = {t: TrackSelection(t) for t in {n.track for n in nominees}}
         # select_operational_candidates fills this; the helper must mirror it so the
@@ -804,7 +806,7 @@ class AcquisitionWalk(unittest.TestCase):
         self.assertEqual(len(track["nominated"]), 2)
         self.assertEqual(track["skipped_before_model"][0]["canonical_id"], "p1")
         self.assertEqual(record["assessment"]["skipped_before_model"], 1)
-        self.assertEqual(record["version"], "operational-run-v2")
+        self.assertEqual(record["version"], "operational-run-v3")
 
     def test_a_ceiling_stop_also_accounts_for_every_remaining_nomination(self):
         from paper_scout.operational_preflight import RunBudget
@@ -947,9 +949,9 @@ class AcquisitionWalk(unittest.TestCase):
 class WalkNomination(unittest.TestCase):
     def test_nomination_is_capped_by_the_walk_limit_not_the_assessment_bound(self):
         from paper_scout.operational_preflight import MAX_ACQUISITION_WALK, MAX_PAPERS_PER_TRACK
-        self.assertEqual(MAX_PAPERS_PER_TRACK, 1)
+        self.assertEqual(MAX_PAPERS_PER_TRACK, 2)
         self.assertGreater(MAX_ACQUISITION_WALK, MAX_PAPERS_PER_TRACK)
-        self.assertLessEqual(MAX_ACQUISITION_WALK, 10)
+        self.assertLessEqual(MAX_ACQUISITION_WALK, 12)
 
     def test_a_zero_assessment_bound_nominates_nothing(self):
         from paper_scout.operational_run import select_operational_candidates

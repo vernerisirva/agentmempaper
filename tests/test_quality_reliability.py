@@ -297,11 +297,10 @@ class ProviderContractTest(unittest.TestCase):
         from paper_scout.operational_preflight import (
             DEFAULT_OPENROUTER_RUN_CEILING_USD, MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK)
         from paper_scout.batch_population import TRACKS
-        self.assertEqual(MAX_PAPERS_PER_TRACK, 1)
-        # One slot per track and no transfer between them, so the run ceiling is exactly
-        # the track count. A raise that is not a new track is a policy change, not drift.
-        self.assertEqual(MAX_PAPERS_PER_RUN, len(TRACKS))
-        self.assertEqual(MAX_PAPERS_PER_RUN, 4)
+        self.assertEqual(MAX_PAPERS_PER_TRACK, 2)
+        # Two slots per track under the approved automatic-assessment policy.
+        self.assertEqual(MAX_PAPERS_PER_RUN, 2 * len(TRACKS))
+        self.assertEqual(MAX_PAPERS_PER_RUN, 8)
         # Adding the fourth track did not buy more money. The ceiling is unchanged.
         self.assertEqual(DEFAULT_OPENROUTER_RUN_CEILING_USD, 0.30)
 

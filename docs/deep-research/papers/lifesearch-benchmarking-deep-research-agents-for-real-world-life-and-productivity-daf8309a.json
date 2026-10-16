@@ -29,11 +29,11 @@
   "first_seen_date": "2026-10-14",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-10-16 11:39:26",
+  "last_seen_at": "2026-10-16 11:56:05",
   "last_seen_date": "2026-10-16",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-14 09:16:48",
   "notified_date": "2026-10-14",
@@ -44,8 +44,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-10-14 09:16:22",
-    "generated_at": "2026-10-16 11:43:29",
-    "last_seen_at": "2026-10-16 11:39:26",
+    "generated_at": "2026-10-16 11:57:47",
+    "last_seen_at": "2026-10-16 11:56:05",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -108,36 +108,2430 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-15T08:52:12.768471+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous benchmark for deep research agents with thorough documentation of dataset curation, rubric design, judge calibration against human ground truth, and extensive cross-model evaluation.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 74939,
+      "assessment_input_sha256": "8272ca409640a89e65b9101c5ec948e926a6738d79bc303f5ae80a6d2f082176",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.18092",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 71476,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 69778,
+      "evidence_block_count": 128,
+      "evidence_context_characters": 86641,
+      "evidence_context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+      "evidence_context_sha256": "9102803890faf10bb6cfbe29012e48af6291b6ae43745f828cdb7abfbf2c81cc",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 71522,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "extracted_pages": 24,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "c00c6038503adb332a0439da74f5e2fb1f4f43c135007a652241b307de9b5ffa",
+        "source_url": "https://arxiv.org/pdf/2610.18092",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 71476,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Lifesearch: Benchmarkingdeepresearch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "results",
+          "section_index": 0,
+          "source_characters": 36,
+          "supplied_characters": 36
+        },
+        {
+          "heading": "Agents Forreal-Worldlife Andproductivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 176,
+          "supplied_characters": 176
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 2144,
+          "supplied_characters": 2144
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 279,
+          "supplied_characters": 279
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 4799,
+          "supplied_characters": 4799
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 1770,
+          "supplied_characters": 1770
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 2267,
+          "supplied_characters": 2267
+        },
+        {
+          "heading": "Overview Oflifesearch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 376,
+          "supplied_characters": 376
+        },
+        {
+          "heading": "Overview Oflifesearch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1286,
+          "supplied_characters": 1286
+        },
+        {
+          "heading": "Datacollection Andtaskdomains",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 2112,
+          "supplied_characters": 2112
+        },
+        {
+          "heading": "Expert-Guidedtaskrefinement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 472,
+          "supplied_characters": 472
+        },
+        {
+          "heading": "Expert-Guidedtaskrefinement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1523,
+          "supplied_characters": 1523
+        },
+        {
+          "heading": "Rubricdesign",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 2912,
+          "supplied_characters": 2912
+        },
+        {
+          "heading": "Rubricdesign",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1171,
+          "supplied_characters": 1171
+        },
+        {
+          "heading": "Evaluationmethodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 14,
+          "source_characters": 1298,
+          "supplied_characters": 1298
+        },
+        {
+          "heading": "Judgemodelselection Indr Setting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 911,
+          "supplied_characters": 911
+        },
+        {
+          "heading": "Judgemodelselection Indr Setting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1773,
+          "supplied_characters": 1773
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 589,
+          "supplied_characters": 589
+        },
+        {
+          "heading": "Experimentalsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 1207,
+          "supplied_characters": 1207
+        },
+        {
+          "heading": "Experimentalsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 19,
+          "source_characters": 1622,
+          "supplied_characters": 1622
+        },
+        {
+          "heading": "Mainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 1428,
+          "supplied_characters": 1428
+        },
+        {
+          "heading": "Performancepatterns",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 801,
+          "supplied_characters": 801
+        },
+        {
+          "heading": "Performancepatterns",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 894,
+          "supplied_characters": 894
+        },
+        {
+          "heading": "Failureanalysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 1394,
+          "supplied_characters": 1394
+        },
+        {
+          "heading": "Humanagreement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 966,
+          "supplied_characters": 966
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 25,
+          "source_characters": 662,
+          "supplied_characters": 662
+        },
+        {
+          "heading": "Aiuse Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 331,
+          "supplied_characters": 331
+        },
+        {
+          "heading": "Ethics Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 336,
+          "supplied_characters": 336
+        },
+        {
+          "heading": "Reproducibility Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 802,
+          "supplied_characters": 802
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1996,
+          "supplied_characters": 1996
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 3786,
+          "supplied_characters": 3786
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 475,
+          "supplied_characters": 475
+        },
+        {
+          "heading": "Appendix: Rubricdesigndetails",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 303,
+          "supplied_characters": 303
+        },
+        {
+          "heading": "Aspect Definition Or Requirement Illustrative Rubric Or Value",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 293,
+          "supplied_characters": 293
+        },
+        {
+          "heading": "The Response Should Report The Monthly Subscription",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 83,
+          "supplied_characters": 83
+        },
+        {
+          "heading": "Factual Accuracy Correctness Of Concrete Facts And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 69,
+          "supplied_characters": 69
+        },
+        {
+          "heading": "The Response Should State That Plan A Costs Usd 20",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 80,
+          "supplied_characters": 80
+        },
+        {
+          "heading": "Evidence And Citation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 90,
+          "supplied_characters": 90
+        },
+        {
+          "heading": "The Response Should Identify Plan A'S Official Pricing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Reasoning And Analysis An Explicit Connection Between Evidence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 79,
+          "supplied_characters": 79
+        },
+        {
+          "heading": "The Response Should Explain How Plan A'S Lower Fee",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "Supports The Recommendation Under A Usd 25",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 58,
+          "supplied_characters": 58
+        },
+        {
+          "heading": "Task Success A Conclusion That Resolves The User'S",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 42,
+          "source_characters": 72,
+          "supplied_characters": 72
+        },
+        {
+          "heading": "The Response Should Conclude That Plan A Meets The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 73,
+          "supplied_characters": 73
+        },
+        {
+          "heading": "Presentation Compliance With Explicitly Requested",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 71,
+          "supplied_characters": 71
+        },
+        {
+          "heading": "The Response Should Present Plan A And Plan B In A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 223,
+          "supplied_characters": 223
+        },
+        {
+          "heading": "Typewhether The Judgment Is Objectively",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 158,
+          "supplied_characters": 158
+        },
+        {
+          "heading": "Necessitywhether The Requirement Is Stated In The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 140,
+          "supplied_characters": 140
+        },
+        {
+          "heading": "Priorityqualitative Importance Label Retained As",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 148,
+          "supplied_characters": 148
+        },
+        {
+          "heading": "Weightrelative Importance Of The Requirement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 220,
+          "supplied_characters": 220
+        },
+        {
+          "heading": "Atomic And Non-Redundant One Independently Testable Requirement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 94,
+          "supplied_characters": 94
+        },
+        {
+          "heading": "Separate A Price Check From A Recommendation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 92,
+          "supplied_characters": 92
+        },
+        {
+          "heading": "Self-Contained Identify The Entities And Scope Needed For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 78,
+          "supplied_characters": 78
+        },
+        {
+          "heading": "Name \"Plan A As Of 30 June 2026\" Instead Of \"The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 72,
+          "supplied_characters": 72
+        },
+        {
+          "heading": "Verified Factual Targets Encode The Checked Fact Needed For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 382,
+          "supplied_characters": 382
+        },
+        {
+          "heading": "State The Desired Behavior Positively And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 73,
+          "supplied_characters": 73
+        },
+        {
+          "heading": "Write \"The Response Should Distinguish Monthly",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 100,
+          "supplied_characters": 100
+        },
+        {
+          "heading": "Valid Answer Alternatives Preserve Reasonable Solution Diversity For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 86,
+          "supplied_characters": 86
+        },
+        {
+          "heading": "Make Example-Specific Recommendations Optional",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 114,
+          "supplied_characters": 114
+        },
+        {
+          "heading": "Appendix: Datacollection Andevaluationprompttemplates",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 755,
+          "supplied_characters": 755
+        },
+        {
+          "heading": "Appendix: Intent Andqualityfiltering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 2567,
+          "supplied_characters": 2567
+        },
+        {
+          "heading": "Appendix: Intent Andqualityfiltering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 1278,
+          "supplied_characters": 1278
+        },
+        {
+          "heading": "Appendix: Domainclassification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 350,
+          "supplied_characters": 350
+        },
+        {
+          "heading": "Financial Market Analysis: Stock, Futures, Fund, Foreign-Exchange, Or",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 408,
+          "supplied_characters": 408
+        },
+        {
+          "heading": "Industry News And Trend Aggregation: Recent News, Trends, Or Prominent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 287,
+          "supplied_characters": 287
+        },
+        {
+          "heading": "Technical Tools And Developer Resources: Finding Tools, Software, Source",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 65,
+          "source_characters": 258,
+          "supplied_characters": 258
+        },
+        {
+          "heading": "Technical Tools And Developer Resources: Finding Tools, Software, Source",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 649,
+          "supplied_characters": 649
+        },
+        {
+          "heading": "Appendix: Taskrewriting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 1247,
+          "supplied_characters": 1247
+        },
+        {
+          "heading": "Version Control And Delivery: Git Add/Commit/Push, Messaging-Service",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 202,
+          "supplied_characters": 202
+        },
+        {
+          "heading": "Automation-Framework Context: \"Read Memory -> Execute -> Update Memory\"",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 249,
+          "supplied_characters": 249
+        },
+        {
+          "heading": "Local-File Dependencies: Attached-File References Such As",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 70,
+          "source_characters": 138,
+          "supplied_characters": 138
+        },
+        {
+          "heading": "Local-File Dependencies: Attached-File References Such As",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 71,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Output File/Markup Declarations, But Not Content-Organization Requirements:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 72,
+          "source_characters": 260,
+          "supplied_characters": 260
+        },
+        {
+          "heading": "Recency Expressions Such As \"Today\", \"The Past 24 Hours\", \"Latest\", Or",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 73,
+          "source_characters": 155,
+          "supplied_characters": 155
+        },
+        {
+          "heading": "Output-Length And Item-Count Constraints, Such As \"1,000-1,500 Chinese",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 1285,
+          "supplied_characters": 1285
+        },
+        {
+          "heading": "Appendix: Englishjudgeprompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 75,
+          "source_characters": 472,
+          "supplied_characters": 472
+        },
+        {
+          "heading": "Appendix: Englishjudgeprompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 76,
+          "source_characters": 943,
+          "supplied_characters": 943
+        },
+        {
+          "heading": "Appendix: Chinesejudgeprompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 77,
+          "source_characters": 931,
+          "supplied_characters": 931
+        },
+        {
+          "heading": "Appendix: Deepresearchagentsystemprompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 78,
+          "source_characters": 1341,
+          "supplied_characters": 1341
+        },
+        {
+          "heading": "Appendix: Responselength Andevaluationtiming",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 79,
+          "source_characters": 616,
+          "supplied_characters": 616
+        },
+        {
+          "heading": "Appendix: Modelresponses Andrubricjudgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 80,
+          "source_characters": 528,
+          "supplied_characters": 528
+        },
+        {
+          "heading": "Appendix: Case1: Difyworkflow Andchatflow",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 81,
+          "source_characters": 464,
+          "supplied_characters": 464
+        },
+        {
+          "heading": "Workflow Execution (Excerpt).Workflow & Chatflow \u9875\uff1a\"A Workflow Runs Once From Start To Finish. It",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 82,
+          "source_characters": 755,
+          "supplied_characters": 755
+        },
+        {
+          "heading": "Appendix: Case2: Winter-Wheatliteraturescreening",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 83,
+          "source_characters": 1807,
+          "supplied_characters": 1807
+        },
+        {
+          "heading": "Appendix: Case3: A Time-Boundedrepositoryprofile",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 84,
+          "source_characters": 484,
+          "supplied_characters": 484
+        },
+        {
+          "heading": "Date Disclosure (Excerpt).Dating Caveat Up Front. Github'S Rest Api Only Returns A Live Snapshot; My",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 85,
+          "source_characters": 1267,
+          "supplied_characters": 1267
+        },
+        {
+          "heading": "Appendix: Case4: Uwb Literature Andmethodcomparison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 86,
+          "source_characters": 1971,
+          "supplied_characters": 1971
+        },
+        {
+          "heading": "Appendix: Bilingualtask Andrubricexamples",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 87,
+          "source_characters": 305,
+          "supplied_characters": 305
+        },
+        {
+          "heading": "Appendix: Chinesetask: Kunshanpopulationtimeseries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 88,
+          "source_characters": 575,
+          "supplied_characters": 575
+        },
+        {
+          "heading": "Appendix: Englishtask: Universitytuition Andadmissionscomparison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 89,
+          "source_characters": 1196,
+          "supplied_characters": 1196
+        }
+      ],
+      "selected_characters": 69778,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "selected_sections": [
+        {
+          "characters": 36,
+          "heading": "Lifesearch: Benchmarkingdeepresearch",
+          "page": 1
+        },
+        {
+          "characters": 176,
+          "heading": "Agents Forreal-Worldlife Andproductivity",
+          "page": 1
+        },
+        {
+          "characters": 2144,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 279,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4799,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1770,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 2267,
+          "heading": "Relatedwork",
+          "page": 3
+        },
+        {
+          "characters": 376,
+          "heading": "Overview Oflifesearch",
+          "page": 3
+        },
+        {
+          "characters": 1286,
+          "heading": "Overview Oflifesearch",
+          "page": 4
+        },
+        {
+          "characters": 2112,
+          "heading": "Datacollection Andtaskdomains",
+          "page": 4
+        },
+        {
+          "characters": 472,
+          "heading": "Expert-Guidedtaskrefinement",
+          "page": 4
+        },
+        {
+          "characters": 1523,
+          "heading": "Expert-Guidedtaskrefinement",
+          "page": 5
+        },
+        {
+          "characters": 2912,
+          "heading": "Rubricdesign",
+          "page": 5
+        },
+        {
+          "characters": 1171,
+          "heading": "Rubricdesign",
+          "page": 6
+        },
+        {
+          "characters": 1298,
+          "heading": "Evaluationmethodology",
+          "page": 6
+        },
+        {
+          "characters": 911,
+          "heading": "Judgemodelselection Indr Setting",
+          "page": 6
+        },
+        {
+          "characters": 1773,
+          "heading": "Judgemodelselection Indr Setting",
+          "page": 7
+        },
+        {
+          "characters": 589,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 1207,
+          "heading": "Experimentalsetup",
+          "page": 7
+        },
+        {
+          "characters": 1622,
+          "heading": "Experimentalsetup",
+          "page": 8
+        },
+        {
+          "characters": 1428,
+          "heading": "Mainresults",
+          "page": 8
+        },
+        {
+          "characters": 801,
+          "heading": "Performancepatterns",
+          "page": 8
+        },
+        {
+          "characters": 894,
+          "heading": "Performancepatterns",
+          "page": 9
+        },
+        {
+          "characters": 1394,
+          "heading": "Failureanalysis",
+          "page": 9
+        },
+        {
+          "characters": 966,
+          "heading": "Humanagreement",
+          "page": 9
+        },
+        {
+          "characters": 662,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 331,
+          "heading": "Aiuse Statement",
+          "page": 10
+        },
+        {
+          "characters": 336,
+          "heading": "Ethics Statement",
+          "page": 10
+        },
+        {
+          "characters": 802,
+          "heading": "Reproducibility Statement",
+          "page": 10
+        },
+        {
+          "characters": 1996,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 3786,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 475,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 303,
+          "heading": "Appendix: Rubricdesigndetails",
+          "page": 13
+        },
+        {
+          "characters": 293,
+          "heading": "Aspect Definition Or Requirement Illustrative Rubric Or Value",
+          "page": 13
+        },
+        {
+          "characters": 83,
+          "heading": "The Response Should Report The Monthly Subscription",
+          "page": 13
+        },
+        {
+          "characters": 69,
+          "heading": "Factual Accuracy Correctness Of Concrete Facts And",
+          "page": 13
+        },
+        {
+          "characters": 80,
+          "heading": "The Response Should State That Plan A Costs Usd 20",
+          "page": 13
+        },
+        {
+          "characters": 90,
+          "heading": "Evidence And Citation",
+          "page": 13
+        },
+        {
+          "characters": 93,
+          "heading": "The Response Should Identify Plan A'S Official Pricing",
+          "page": 13
+        },
+        {
+          "characters": 79,
+          "heading": "Reasoning And Analysis An Explicit Connection Between Evidence",
+          "page": 13
+        },
+        {
+          "characters": 50,
+          "heading": "The Response Should Explain How Plan A'S Lower Fee",
+          "page": 13
+        },
+        {
+          "characters": 58,
+          "heading": "Supports The Recommendation Under A Usd 25",
+          "page": 13
+        },
+        {
+          "characters": 72,
+          "heading": "Task Success A Conclusion That Resolves The User'S",
+          "page": 13
+        },
+        {
+          "characters": 73,
+          "heading": "The Response Should Conclude That Plan A Meets The",
+          "page": 13
+        },
+        {
+          "characters": 71,
+          "heading": "Presentation Compliance With Explicitly Requested",
+          "page": 13
+        },
+        {
+          "characters": 223,
+          "heading": "The Response Should Present Plan A And Plan B In A",
+          "page": 13
+        },
+        {
+          "characters": 158,
+          "heading": "Typewhether The Judgment Is Objectively",
+          "page": 13
+        },
+        {
+          "characters": 140,
+          "heading": "Necessitywhether The Requirement Is Stated In The",
+          "page": 13
+        },
+        {
+          "characters": 148,
+          "heading": "Priorityqualitative Importance Label Retained As",
+          "page": 13
+        },
+        {
+          "characters": 220,
+          "heading": "Weightrelative Importance Of The Requirement",
+          "page": 13
+        },
+        {
+          "characters": 94,
+          "heading": "Atomic And Non-Redundant One Independently Testable Requirement",
+          "page": 13
+        },
+        {
+          "characters": 92,
+          "heading": "Separate A Price Check From A Recommendation",
+          "page": 13
+        },
+        {
+          "characters": 78,
+          "heading": "Self-Contained Identify The Entities And Scope Needed For",
+          "page": 13
+        },
+        {
+          "characters": 72,
+          "heading": "Name \"Plan A As Of 30 June 2026\" Instead Of \"The",
+          "page": 13
+        },
+        {
+          "characters": 382,
+          "heading": "Verified Factual Targets Encode The Checked Fact Needed For",
+          "page": 13
+        },
+        {
+          "characters": 73,
+          "heading": "State The Desired Behavior Positively And",
+          "page": 13
+        },
+        {
+          "characters": 100,
+          "heading": "Write \"The Response Should Distinguish Monthly",
+          "page": 13
+        },
+        {
+          "characters": 86,
+          "heading": "Valid Answer Alternatives Preserve Reasonable Solution Diversity For",
+          "page": 13
+        },
+        {
+          "characters": 114,
+          "heading": "Make Example-Specific Recommendations Optional",
+          "page": 13
+        },
+        {
+          "characters": 755,
+          "heading": "Appendix: Datacollection Andevaluationprompttemplates",
+          "page": 14
+        },
+        {
+          "characters": 2567,
+          "heading": "Appendix: Intent Andqualityfiltering",
+          "page": 14
+        },
+        {
+          "characters": 1278,
+          "heading": "Appendix: Intent Andqualityfiltering",
+          "page": 15
+        },
+        {
+          "characters": 350,
+          "heading": "Appendix: Domainclassification",
+          "page": 15
+        },
+        {
+          "characters": 408,
+          "heading": "Financial Market Analysis: Stock, Futures, Fund, Foreign-Exchange, Or",
+          "page": 15
+        },
+        {
+          "characters": 287,
+          "heading": "Industry News And Trend Aggregation: Recent News, Trends, Or Prominent",
+          "page": 15
+        },
+        {
+          "characters": 258,
+          "heading": "Technical Tools And Developer Resources: Finding Tools, Software, Source",
+          "page": 15
+        },
+        {
+          "characters": 649,
+          "heading": "Technical Tools And Developer Resources: Finding Tools, Software, Source",
+          "page": 16
+        },
+        {
+          "characters": 1247,
+          "heading": "Appendix: Taskrewriting",
+          "page": 16
+        },
+        {
+          "characters": 202,
+          "heading": "Version Control And Delivery: Git Add/Commit/Push, Messaging-Service",
+          "page": 16
+        },
+        {
+          "characters": 249,
+          "heading": "Automation-Framework Context: \"Read Memory -> Execute -> Update Memory\"",
+          "page": 16
+        },
+        {
+          "characters": 138,
+          "heading": "Local-File Dependencies: Attached-File References Such As",
+          "page": 16
+        },
+        {
+          "characters": 47,
+          "heading": "Local-File Dependencies: Attached-File References Such As",
+          "page": 17
+        },
+        {
+          "characters": 260,
+          "heading": "Output File/Markup Declarations, But Not Content-Organization Requirements:",
+          "page": 17
+        },
+        {
+          "characters": 155,
+          "heading": "Recency Expressions Such As \"Today\", \"The Past 24 Hours\", \"Latest\", Or",
+          "page": 17
+        },
+        {
+          "characters": 1285,
+          "heading": "Output-Length And Item-Count Constraints, Such As \"1,000-1,500 Chinese",
+          "page": 17
+        },
+        {
+          "characters": 472,
+          "heading": "Appendix: Englishjudgeprompt",
+          "page": 17
+        },
+        {
+          "characters": 943,
+          "heading": "Appendix: Englishjudgeprompt",
+          "page": 18
+        },
+        {
+          "characters": 931,
+          "heading": "Appendix: Chinesejudgeprompt",
+          "page": 18
+        },
+        {
+          "characters": 1341,
+          "heading": "Appendix: Deepresearchagentsystemprompt",
+          "page": 19
+        },
+        {
+          "characters": 616,
+          "heading": "Appendix: Responselength Andevaluationtiming",
+          "page": 19
+        },
+        {
+          "characters": 528,
+          "heading": "Appendix: Modelresponses Andrubricjudgments",
+          "page": 20
+        },
+        {
+          "characters": 464,
+          "heading": "Appendix: Case1: Difyworkflow Andchatflow",
+          "page": 20
+        },
+        {
+          "characters": 755,
+          "heading": "Workflow Execution (Excerpt).Workflow & Chatflow \u9875\uff1a\"A Workflow Runs Once From Start To Finish. It",
+          "page": 20
+        },
+        {
+          "characters": 1807,
+          "heading": "Appendix: Case2: Winter-Wheatliteraturescreening",
+          "page": 21
+        },
+        {
+          "characters": 484,
+          "heading": "Appendix: Case3: A Time-Boundedrepositoryprofile",
+          "page": 22
+        },
+        {
+          "characters": 1267,
+          "heading": "Date Disclosure (Excerpt).Dating Caveat Up Front. Github'S Rest Api Only Returns A Live Snapshot; My",
+          "page": 22
+        },
+        {
+          "characters": 1971,
+          "heading": "Appendix: Case4: Uwb Literature Andmethodcomparison",
+          "page": 23
+        },
+        {
+          "characters": 305,
+          "heading": "Appendix: Bilingualtask Andrubricexamples",
+          "page": 24
+        },
+        {
+          "characters": 575,
+          "heading": "Appendix: Chinesetask: Kunshanpopulationtimeseries",
+          "page": 24
+        },
+        {
+          "characters": 1196,
+          "heading": "Appendix: Englishtask: Universitytuition Andadmissionscomparison",
+          "page": 24
+        }
+      ],
+      "selected_text_sha256": "8272ca409640a89e65b9101c5ec948e926a6738d79bc303f5ae80a6d2f082176",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "c00c6038503adb332a0439da74f5e2fb1f4f43c135007a652241b307de9b5ffa",
+      "source_pages": 24,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0003"
+        ],
+        "excerpt": "Deep research (DR) agents address open-ended information needs through multi-\nstep reasoning, long-horizon web search, and evidence synthesis. However, existing\nbenchmarks primarily focus on academic research or synthetic tasks, leaving DR\nagents' capabilities inreal-world life and professional productivitysettings insuffi-\nciently evaluated. To bridge this gap, we introduce LIFESEARCH, a challenging\nbenchmark comprising 203 Chinese and English tasks derived from real-user query\nseeds across 7 concrete life and productivity domains. Specially, we spend totally\nmore than 4,500 hours of human annotation to construct over 4,000 expert-written,\nfine-grained rubrics, covering both report-content criteria for coverage and accuracy,\nas well as concrete criteria specifying values, units, dates, and URLs. We conduct\nextensive experiments on 12 advanced DR agents under a unified evaluation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "82e37c98dc8e256db69a56fd36490a56c6621ea9520487037872e65ba8ed5d9c",
+            "evidence_id": "E9d346cc6c412f1a5-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "Deep research (DR) agents address open-ended information needs through multi-\nstep reasoning, long-horizon web search, and evidence synthesis. However, existing\nbenchmarks primarily focus on academic research or synthetic tasks, leaving DR\nagents' capabilities inreal-world life and professional productivitysettings insuffi-\nciently evaluated. To bridge this gap, we introduce LIFESEARCH, a challenging\nbenchmark comprising 203 Chinese and English tasks derived from real-user query\nseeds across 7 concrete life and productivity domains. Specially, we spend totally\nmore than 4,500 hours of human annotation to construct over 4,000 expert-written,\nfine-grained rubrics, covering both report-content criteria for coverage and accuracy,\nas well as concrete criteria specifying values, units, dates, and URLs. We conduct\nextensive experiments on 12 advanced DR agents under a unified evaluation "
+              }
+            ],
+            "text": "Deep research (DR) agents address open-ended information needs through multi-\nstep reasoning, long-horizon web search, and evidence synthesis. However, existing\nbenchmarks primarily focus on academic research or synthetic tasks, leaving DR\nagents' capabilities inreal-world life and professional productivitysettings insuffi-\nciently evaluated. To bridge this gap, we introduce LIFESEARCH, a challenging\nbenchmark comprising 203 Chinese and English tasks derived from real-user query\nseeds across 7 concrete life and productivity domains. Specially, we spend totally\nmore than 4,500 hours of human annotation to construct over 4,000 expert-written,\nfine-grained rubrics, covering both report-content criteria for coverage and accuracy,\nas well as concrete criteria specifying values, units, dates, and URLs. We conduct\nextensive experiments on 12 advanced DR agents under a unified evaluation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0004"
+        ],
+        "excerpt": "har-\nness, systematically analyzing their performance patterns and failure modes. We\nfind that even the best-performing frontier agent, GPT-5.6 Sol, achieves a score of\nonly 63.4%, revealing the potential improvement on realistic life and professional\nDR tasks. We compare candidate LLM judges against human rubric labels to select\nthe grading configuration. A human ranking study shows strong alignment between\naggregate benchmark scores and human judgments, with Spearman's \u03c1= 0.89 and\nKendall's \u03c4= 0.81. LIFESEARCHprovides a rigorous evaluation framework and\nfoundation for advancing DR agents toward real-world life and productivity.\nGPT-5.6 Sol\nOpus 5\nHy4 Preview\nGLM-5.3\nQwen3.8-Max\nDeepSeek V4 Pro\nKimi K3\nSeed-2.1-Pro\nOpus 4.8\nHy3\nGLM-5.2\nGemini 3.6 Flash\n0\n20\n40\n60\nOverall score (%)\n63.4\n56.1\n49.7 49.2 47.5 46.9 45.8 43.1 41.9\n38.9 37.1 34.7\n(a) Overall performance\n10 20 30 40 50\nOutput ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "18e3b5ffaeeeab4e3cd9105d40d65e59b6d7717f5de571d372fca59764a33110",
+            "evidence_id": "E9d346cc6c412f1a5-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 893,
+                "text": "har-\nness, systematically analyzing their performance patterns and failure modes. We\nfind that even the best-performing frontier agent, GPT-5.6 Sol, achieves a score of\nonly 63.4%, revealing the potential improvement on realistic life and professional\nDR tasks. We compare candidate LLM judges against human rubric labels to select\nthe grading configuration. A human ranking study shows strong alignment between\naggregate benchmark scores and human judgments, with Spearman's \u03c1= 0.89 and\nKendall's \u03c4= 0.81. LIFESEARCHprovides a rigorous evaluation framework and\nfoundation for advancing DR agents toward real-world life and productivity.\nGPT-5.6 Sol\nOpus 5\nHy4 Preview\nGLM-5.3\nQwen3.8-Max\nDeepSeek V4 Pro\nKimi K3\nSeed-2.1-Pro\nOpus 4.8\nHy3\nGLM-5.2\nGemini 3.6 Flash\n0\n20\n40\n60\nOverall score (%)\n63.4\n56.1\n49.7 49.2 47.5 46.9 45.8 43.1 41.9\n38.9 37.1 34.7\n(a) Overall performance\n10 20 30 40 50\nOutput "
+              }
+            ],
+            "text": "har-\nness, systematically analyzing their performance patterns and failure modes. We\nfind that even the best-performing frontier agent, GPT-5.6 Sol, achieves a score of\nonly 63.4%, revealing the potential improvement on realistic life and professional\nDR tasks. We compare candidate LLM judges against human rubric labels to select\nthe grading configuration. A human ranking study shows strong alignment between\naggregate benchmark scores and human judgments, with Spearman's \u03c1= 0.89 and\nKendall's \u03c4= 0.81. LIFESEARCHprovides a rigorous evaluation framework and\nfoundation for advancing DR agents toward real-world life and productivity.\nGPT-5.6 Sol\nOpus 5\nHy4 Preview\nGLM-5.3\nQwen3.8-Max\nDeepSeek V4 Pro\nKimi K3\nSeed-2.1-Pro\nOpus 4.8\nHy3\nGLM-5.2\nGemini 3.6 Flash\n0\n20\n40\n60\nOverall score (%)\n63.4\n56.1\n49.7 49.2 47.5 46.9 45.8 43.1 41.9\n38.9 37.1 34.7\n(a) Overall performance\n10 20 30 40 50\nOutput "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0009"
+        ],
+        "excerpt": "tasks.\nMotivated by this gap, we present LIFESEARCH, a benchmark for evaluating DR agents on real-world\nlife and professional productivity search. We hired crowd workers to write the initial query seeds,\nwhich undergo filtering and expert-guided refinement to form the benchmark tasks. LIFESEARCH\nspans 7 concrete life and productivity domains, and its construction involves more than 4,500 hours of\nhuman labor to produce over 4,000 expert-written, fine-grained rubrics that comprehensively assess\nboth the coverage and the accuracy of a candidate report. Specifically, LIFESEARCHcomprises\n203 tasks: 102 in Chinese and 101 in English. A substantial fraction of our rubrics arenumeric\nand grounded in concrete values, units, or thresholds. Satisfying these criteria therefore requires\nretrieving and reporting the precise quantities rather than producing qualitatively plausible ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2169e40d44bc5235d0184ec3aead91b1e850a569e315ef5f894223d3c64fdacf",
+            "evidence_id": "E9d346cc6c412f1a5-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3281,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 2401,
+                "text": "tasks.\nMotivated by this gap, we present LIFESEARCH, a benchmark for evaluating DR agents on real-world\nlife and professional productivity search. We hired crowd workers to write the initial query seeds,\nwhich undergo filtering and expert-guided refinement to form the benchmark tasks. LIFESEARCH\nspans 7 concrete life and productivity domains, and its construction involves more than 4,500 hours of\nhuman labor to produce over 4,000 expert-written, fine-grained rubrics that comprehensively assess\nboth the coverage and the accuracy of a candidate report. Specifically, LIFESEARCHcomprises\n203 tasks: 102 in Chinese and 101 in English. A substantial fraction of our rubrics arenumeric\nand grounded in concrete values, units, or thresholds. Satisfying these criteria therefore requires\nretrieving and reporting the precise quantities rather than producing qualitatively plausible "
+              }
+            ],
+            "text": "tasks.\nMotivated by this gap, we present LIFESEARCH, a benchmark for evaluating DR agents on real-world\nlife and professional productivity search. We hired crowd workers to write the initial query seeds,\nwhich undergo filtering and expert-guided refinement to form the benchmark tasks. LIFESEARCH\nspans 7 concrete life and productivity domains, and its construction involves more than 4,500 hours of\nhuman labor to produce over 4,000 expert-written, fine-grained rubrics that comprehensively assess\nboth the coverage and the accuracy of a candidate report. Specifically, LIFESEARCHcomprises\n203 tasks: 102 in Chinese and 101 in English. A substantial fraction of our rubrics arenumeric\nand grounded in concrete values, units, or thresholds. Satisfying these criteria therefore requires\nretrieving and reporting the precise quantities rather than producing qualitatively plausible "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0010"
+        ],
+        "excerpt": "statements.\nFurthermore, we compare 11 LLM-judge configurations on 402 human-annotated rubric labels and\nselect Gemini 3.1 Pro with low reasoning effort and zero temperature for benchmark grading. A\nhuman ranking study shows that the overall rankings produced by our evaluation closely agree with\nhuman rankings, yielding Spearman's\u03c1= 0.89and Kendall's\u03c4= 0.81.\nWe evaluate 12 frontier DR agents under a shared harness (Figure 1), yielding three main findings.i)\nSubstantial headroom remains:Even top-performing GPT-5.6 Sol reaches only 63.4%, with all\nsystems falling below 70% across domains.ii) Quality transcends volume:Higher scores correlate\nwith longer reports, yet volume alone is non-deterministic: Claude Opus 5 and GLM-5.3 have\ncomparable token counts but differ by 6.9 percentage points, highlighting the centrality of evidence\nsynthesis.iii) Common failure modes:Autonomous runs can fail ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "00d4f363d40148b2c93e86114e275ff458e61199198f8b3555d53ae9722ea10e",
+            "evidence_id": "E9d346cc6c412f1a5-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4181,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 3281,
+                "text": "statements.\nFurthermore, we compare 11 LLM-judge configurations on 402 human-annotated rubric labels and\nselect Gemini 3.1 Pro with low reasoning effort and zero temperature for benchmark grading. A\nhuman ranking study shows that the overall rankings produced by our evaluation closely agree with\nhuman rankings, yielding Spearman's\u03c1= 0.89and Kendall's\u03c4= 0.81.\nWe evaluate 12 frontier DR agents under a shared harness (Figure 1), yielding three main findings.i)\nSubstantial headroom remains:Even top-performing GPT-5.6 Sol reaches only 63.4%, with all\nsystems falling below 70% across domains.ii) Quality transcends volume:Higher scores correlate\nwith longer reports, yet volume alone is non-deterministic: Claude Opus 5 and GLM-5.3 have\ncomparable token counts but differ by 6.9 percentage points, highlighting the centrality of evidence\nsynthesis.iii) Common failure modes:Autonomous runs can fail "
+              }
+            ],
+            "text": "statements.\nFurthermore, we compare 11 LLM-judge configurations on 402 human-annotated rubric labels and\nselect Gemini 3.1 Pro with low reasoning effort and zero temperature for benchmark grading. A\nhuman ranking study shows that the overall rankings produced by our evaluation closely agree with\nhuman rankings, yielding Spearman's\u03c1= 0.89and Kendall's\u03c4= 0.81.\nWe evaluate 12 frontier DR agents under a shared harness (Figure 1), yielding three main findings.i)\nSubstantial headroom remains:Even top-performing GPT-5.6 Sol reaches only 63.4%, with all\nsystems falling below 70% across domains.ii) Quality transcends volume:Higher scores correlate\nwith longer reports, yet volume alone is non-deterministic: Claude Opus 5 and GLM-5.3 have\ncomparable token counts but differ by 6.9 percentage points, highlighting the centrality of evidence\nsynthesis.iii) Common failure modes:Autonomous runs can fail "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0017"
+        ],
+        "excerpt": "Figure 2 outlines the construction and evaluation pipeline, while Figure 3 summarizes the task\ndistribution and rubric statistics. LIFESEARCHcomprises 203 tasks (102 in Chinese and 101 in\nEnglish) across seven real-world personal and professional productivity domains. The tasks are\ndeveloped from query seeds written by hired crowd workers and refined by experts to express\n3\nCompany & competitor\nAcademic & professional\nFinancial markets\nPolicy & government\nIndustry news & trends\nTechnical tools\nEveryday facts\n203 tasks\nMust Have Nice to Have\n81.3% 18.7%\nExplicit Implicit\n62.0% 38.0%\nObjective Subjective\n98.0%\n2.0%\nRubrics per task\nMean\n19.77\nMedian\n20\nMin\n11\nMax\n34\n48\n37\n35\n27\n25\n22 9\n(a) Task distribution\nCompany & competitor\nAcademic & professional\nFinancial markets\nPolicy & government\nIndustry news & trends\nTechnical tools\nEveryday facts\n203 tasks\nMust Have Nice to Have\n81.3% ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overview Oflifesearch",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "491d77b794ca459f4b50b90d9b5f4e93fbc376f1dac609b6e67c2491c95f5ed2",
+            "evidence_id": "E9d346cc6c412f1a5-B0017",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Overview Oflifesearch",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 376,
+                "page": 3,
+                "section": "Overview Oflifesearch",
+                "section_index": 7,
+                "start": 0,
+                "text": "Figure 2 outlines the construction and evaluation pipeline, while Figure 3 summarizes the task\ndistribution and rubric statistics. LIFESEARCHcomprises 203 tasks (102 in Chinese and 101 in\nEnglish) across seven real-world personal and professional productivity domains. The tasks are\ndeveloped from query seeds written by hired crowd workers and refined by experts to express\n3"
+              },
+              {
+                "end": 514,
+                "page": 4,
+                "section": "Overview Oflifesearch",
+                "section_index": 8,
+                "start": 0,
+                "text": "Company & competitor\nAcademic & professional\nFinancial markets\nPolicy & government\nIndustry news & trends\nTechnical tools\nEveryday facts\n203 tasks\nMust Have Nice to Have\n81.3% 18.7%\nExplicit Implicit\n62.0% 38.0%\nObjective Subjective\n98.0%\n2.0%\nRubrics per task\nMean\n19.77\nMedian\n20\nMin\n11\nMax\n34\n48\n37\n35\n27\n25\n22 9\n(a) Task distribution\nCompany & competitor\nAcademic & professional\nFinancial markets\nPolicy & government\nIndustry news & trends\nTechnical tools\nEveryday facts\n203 tasks\nMust Have Nice to Have\n81.3% "
+              }
+            ],
+            "text": "Figure 2 outlines the construction and evaluation pipeline, while Figure 3 summarizes the task\ndistribution and rubric statistics. LIFESEARCHcomprises 203 tasks (102 in Chinese and 101 in\nEnglish) across seven real-world personal and professional productivity domains. The tasks are\ndeveloped from query seeds written by hired crowd workers and refined by experts to express\n3\nCompany & competitor\nAcademic & professional\nFinancial markets\nPolicy & government\nIndustry news & trends\nTechnical tools\nEveryday facts\n203 tasks\nMust Have Nice to Have\n81.3% 18.7%\nExplicit Implicit\n62.0% 38.0%\nObjective Subjective\n98.0%\n2.0%\nRubrics per task\nMean\n19.77\nMedian\n20\nMin\n11\nMax\n34\n48\n37\n35\n27\n25\n22 9\n(a) Task distribution\nCompany & competitor\nAcademic & professional\nFinancial markets\nPolicy & government\nIndustry news & trends\nTechnical tools\nEveryday facts\n203 tasks\nMust Have Nice to Have\n81.3% "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0018"
+        ],
+        "excerpt": "18.7%\nExplicit Implicit\n62.0% 38.0%\nObjective Subjective\n98.0%\n2.0%\nRubrics per task\nMean\n19.77\nMedian\n20\nMin\n11\nMax\n34\n48\n37\n35\n27\n25\n22 9 (b) Rubric composition.\nFigure 3: Dataset composition of LIFESEARCH. (a) Task counts across seven domains. (b) Annotation\nattributes across 4,014 rubrics and summary statistics of rubrics per task. Constructing the benchmark\nrequired more than 4,500 hours of human annotation.\ncomplex, pragmatic information-seeking needs. To rigorously evaluate generated reports, trained\nexpert annotators develop 4,014 fine-grained rubrics assessing both requirement coverage and factual\naccuracy. Crucially, many rubrics are anchored to concrete numerical values, units, dates, or\nthresholds, facilitating verifiable, criterion-level evaluation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overview Oflifesearch",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f834ab8bf4563514c874d0875a64465fb407306b0b941afd9009744ac65f2c73",
+            "evidence_id": "E9d346cc6c412f1a5-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Overview Oflifesearch",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1286,
+                "page": 4,
+                "section": "Overview Oflifesearch",
+                "section_index": 8,
+                "start": 514,
+                "text": "18.7%\nExplicit Implicit\n62.0% 38.0%\nObjective Subjective\n98.0%\n2.0%\nRubrics per task\nMean\n19.77\nMedian\n20\nMin\n11\nMax\n34\n48\n37\n35\n27\n25\n22 9 (b) Rubric composition.\nFigure 3: Dataset composition of LIFESEARCH. (a) Task counts across seven domains. (b) Annotation\nattributes across 4,014 rubrics and summary statistics of rubrics per task. Constructing the benchmark\nrequired more than 4,500 hours of human annotation.\ncomplex, pragmatic information-seeking needs. To rigorously evaluate generated reports, trained\nexpert annotators develop 4,014 fine-grained rubrics assessing both requirement coverage and factual\naccuracy. Crucially, many rubrics are anchored to concrete numerical values, units, dates, or\nthresholds, facilitating verifiable, criterion-level evaluation."
+              }
+            ],
+            "text": "18.7%\nExplicit Implicit\n62.0% 38.0%\nObjective Subjective\n98.0%\n2.0%\nRubrics per task\nMean\n19.77\nMedian\n20\nMin\n11\nMax\n34\n48\n37\n35\n27\n25\n22 9 (b) Rubric composition.\nFigure 3: Dataset composition of LIFESEARCH. (a) Task counts across seven domains. (b) Annotation\nattributes across 4,014 rubrics and summary statistics of rubrics per task. Constructing the benchmark\nrequired more than 4,500 hours of human annotation.\ncomplex, pragmatic information-seeking needs. To rigorously evaluate generated reports, trained\nexpert annotators develop 4,014 fine-grained rubrics assessing both requirement coverage and factual\naccuracy. Crucially, many rubrics are anchored to concrete numerical values, units, dates, or\nthresholds, facilitating verifiable, criterion-level evaluation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0025"
+        ],
+        "excerpt": "For each refined task q, the experts involved in task refinement construct a rubric set Rq describing\nthe requirements of a satisfactory report. Finance experts also participate in annotating rubrics for\nfinancial tasks. We userubricto denote a single scoring requirement that supports an independent\nPass/Fail judgment. The benchmark contains 4,014 rubrics, averaging 19.8 per task. Table 2\nsummarizes the assessment dimensions and annotation fields; detailed writing requirements and\nillustrative examples are provided in Appendix A. Appendix E presents Chinese and English tasks\nwith selected rubrics and their annotation attributes.\nAssessment dimensions.Rubric construction covers seven complementary dimensions: instruction\nfollowing, information coverage, factual accuracy, evidence and citation quality, reasoning and\nanalysis, task success, and presentation.\nRubric representation.Each ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rubricdesign",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b2ddda7a24d966ea1b37d1148c8e838b2b39a47fe7ffbcf3653cea1de774a727",
+            "evidence_id": "E9d346cc6c412f1a5-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Rubricdesign",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 5,
+                "section": "Rubricdesign",
+                "section_index": 12,
+                "start": 0,
+                "text": "For each refined task q, the experts involved in task refinement construct a rubric set Rq describing\nthe requirements of a satisfactory report. Finance experts also participate in annotating rubrics for\nfinancial tasks. We userubricto denote a single scoring requirement that supports an independent\nPass/Fail judgment. The benchmark contains 4,014 rubrics, averaging 19.8 per task. Table 2\nsummarizes the assessment dimensions and annotation fields; detailed writing requirements and\nillustrative examples are provided in Appendix A. Appendix E presents Chinese and English tasks\nwith selected rubrics and their annotation attributes.\nAssessment dimensions.Rubric construction covers seven complementary dimensions: instruction\nfollowing, information coverage, factual accuracy, evidence and citation quality, reasoning and\nanalysis, task success, and presentation.\nRubric representation.Each "
+              }
+            ],
+            "text": "For each refined task q, the experts involved in task refinement construct a rubric set Rq describing\nthe requirements of a satisfactory report. Finance experts also participate in annotating rubrics for\nfinancial tasks. We userubricto denote a single scoring requirement that supports an independent\nPass/Fail judgment. The benchmark contains 4,014 rubrics, averaging 19.8 per task. Table 2\nsummarizes the assessment dimensions and annotation fields; detailed writing requirements and\nillustrative examples are provided in Appendix A. Appendix E presents Chinese and English tasks\nwith selected rubrics and their annotation attributes.\nAssessment dimensions.Rubric construction covers seven complementary dimensions: instruction\nfollowing, information coverage, factual accuracy, evidence and citation quality, reasoning and\nanalysis, task success, and presentation.\nRubric representation.Each "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0027"
+        ],
+        "excerpt": "weights are used directly for score aggregation, as detailed in Section 3.4.\nWriting and grounding requirements.Rubrics are self-contained, non-redundant, and operationally\nprecise. Experts define target entities, factual targets, units, temporal bounds, and tolerances so\nthat judgments require no additional web browsing. Expert annotators specify and verify factual\nrequirements using authoritative sources. Approximately 40% of the rubrics explicitly specify\nnumerical values, specific events, or named documents, which provide concrete targets for verification.\nFor open-ended tasks such as recommendations, rubrics evaluate comparative depth and constraint\nsatisfaction rather than a single rigid response, thereby permitting valid alternatives. Rubrics tied to\nspecific examples remain optional unless the prompt explicitly requires them.\nQuality control.We implement annotation quality ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rubricdesign",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f31f8875415e7efa32d62cd5b18d29943ec1d5cbcff0c116be5d79060ca5f024",
+            "evidence_id": "E9d346cc6c412f1a5-B0027",
+            "pages": [
+              5
+            ],
+            "section": "Rubricdesign",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2688,
+                "page": 5,
+                "section": "Rubricdesign",
+                "section_index": 12,
+                "start": 1794,
+                "text": "weights are used directly for score aggregation, as detailed in Section 3.4.\nWriting and grounding requirements.Rubrics are self-contained, non-redundant, and operationally\nprecise. Experts define target entities, factual targets, units, temporal bounds, and tolerances so\nthat judgments require no additional web browsing. Expert annotators specify and verify factual\nrequirements using authoritative sources. Approximately 40% of the rubrics explicitly specify\nnumerical values, specific events, or named documents, which provide concrete targets for verification.\nFor open-ended tasks such as recommendations, rubrics evaluate comparative depth and constraint\nsatisfaction rather than a single rigid response, thereby permitting valid alternatives. Rubrics tied to\nspecific examples remain optional unless the prompt explicitly requires them.\nQuality control.We implement annotation quality "
+              }
+            ],
+            "text": "weights are used directly for score aggregation, as detailed in Section 3.4.\nWriting and grounding requirements.Rubrics are self-contained, non-redundant, and operationally\nprecise. Experts define target entities, factual targets, units, temporal bounds, and tolerances so\nthat judgments require no additional web browsing. Expert annotators specify and verify factual\nrequirements using authoritative sources. Approximately 40% of the rubrics explicitly specify\nnumerical values, specific events, or named documents, which provide concrete targets for verification.\nFor open-ended tasks such as recommendations, rubrics evaluate comparative depth and constraint\nsatisfaction rather than a single rigid response, thereby permitting valid alternatives. Rubrics tied to\nspecific examples remain optional unless the prompt explicitly requires them.\nQuality control.We implement annotation quality "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0030"
+        ],
+        "excerpt": "We adopt a rubric-based LLM-as-a-Judge approach to assess each final report. The resulting rubric-\nlevel judgments are aggregated into a score.\nGiven a task, its rubric set, and a candidate report, an LLM judge assigns a binary Pass/Fail label to\neach rubric. Judgments follow the rubric's acceptance conditions, including factual targets, source\nrequirements, and temporal scope. Semantically equivalent wording and numerical approximations\nare accepted where permitted by the rubric. Let Rq denote the rubric set for task q, and let yq,r \u2208\n{0,1}indicate whether the candidate report for taskqsatisfies rubricr.\nFor each rubric r in task q, we use its annotator-assigned weight wq,r, which reflects relative\nimportance within the task. We first normalize the weighted satisfaction score within each task and\nthen average these scores uniformly across the task setQ:\nsq =\nP\nr\u2208Rq wq,ryq,rP\nr\u2208Rq ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluationmethodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "719df072591f2299347c29d8597b467164250a1ab2ced8b1cc4399d8a0284430",
+            "evidence_id": "E9d346cc6c412f1a5-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Evaluationmethodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 6,
+                "section": "Evaluationmethodology",
+                "section_index": 14,
+                "start": 0,
+                "text": "We adopt a rubric-based LLM-as-a-Judge approach to assess each final report. The resulting rubric-\nlevel judgments are aggregated into a score.\nGiven a task, its rubric set, and a candidate report, an LLM judge assigns a binary Pass/Fail label to\neach rubric. Judgments follow the rubric's acceptance conditions, including factual targets, source\nrequirements, and temporal scope. Semantically equivalent wording and numerical approximations\nare accepted where permitted by the rubric. Let Rq denote the rubric set for task q, and let yq,r \u2208\n{0,1}indicate whether the candidate report for taskqsatisfies rubricr.\nFor each rubric r in task q, we use its annotator-assigned weight wq,r, which reflects relative\nimportance within the task. We first normalize the weighted satisfaction score within each task and\nthen average these scores uniformly across the task setQ:\nsq =\nP\nr\u2208Rq wq,ryq,rP\nr\u2208Rq "
+              }
+            ],
+            "text": "We adopt a rubric-based LLM-as-a-Judge approach to assess each final report. The resulting rubric-\nlevel judgments are aggregated into a score.\nGiven a task, its rubric set, and a candidate report, an LLM judge assigns a binary Pass/Fail label to\neach rubric. Judgments follow the rubric's acceptance conditions, including factual targets, source\nrequirements, and temporal scope. Semantically equivalent wording and numerical approximations\nare accepted where permitted by the rubric. Let Rq denote the rubric set for task q, and let yq,r \u2208\n{0,1}indicate whether the candidate report for taskqsatisfies rubricr.\nFor each rubric r in task q, we use its annotator-assigned weight wq,r, which reflects relative\nimportance within the task. We first normalize the weighted satisfaction score within each task and\nthen average these scores uniformly across the task setQ:\nsq =\nP\nr\u2208Rq wq,ryq,rP\nr\u2208Rq "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0032"
+        ],
+        "excerpt": "For judge selection in the DR rubric setting, we annotate one anonymized model response for each\nof 20 tasks (10 Chinese, 10 English), covering 402 rubrics. For each report, two to three domain\nexperts independently assign binary Pass/Fail labels, reaching a substantial inter-annotator agreement\n(mean pairwise Cohen's \u03ba= 0.715). All 65 initial disagreements are subsequently resolved through\ndiscussion to form the reference labels used to compare judge configurations.\nBenchmarking against these reference labels, we evaluate four frontier LLMs across 11 configurations\nof reasoning effort and temperature (Table 3). Each configuration is run three times on identical\nreports. We assess performance using three metrics: mean accuracy against human annotations,\nself-consistency (the proportion of rubrics yielding identical decisions across all three runs), and\nmajority-voted accuracy at the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Judgemodelselection Indr Setting",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8bf828d4cb672b4d46b6950cf64a3d74bb3b7f966171a28e640290721b412b7e",
+            "evidence_id": "E9d346cc6c412f1a5-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Judgemodelselection Indr Setting",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 6,
+                "section": "Judgemodelselection Indr Setting",
+                "section_index": 15,
+                "start": 0,
+                "text": "For judge selection in the DR rubric setting, we annotate one anonymized model response for each\nof 20 tasks (10 Chinese, 10 English), covering 402 rubrics. For each report, two to three domain\nexperts independently assign binary Pass/Fail labels, reaching a substantial inter-annotator agreement\n(mean pairwise Cohen's \u03ba= 0.715). All 65 initial disagreements are subsequently resolved through\ndiscussion to form the reference labels used to compare judge configurations.\nBenchmarking against these reference labels, we evaluate four frontier LLMs across 11 configurations\nof reasoning effort and temperature (Table 3). Each configuration is run three times on identical\nreports. We assess performance using three metrics: mean accuracy against human annotations,\nself-consistency (the proportion of rubrics yielding identical decisions across all three runs), and\nmajority-voted accuracy at the "
+              }
+            ],
+            "text": "For judge selection in the DR rubric setting, we annotate one anonymized model response for each\nof 20 tasks (10 Chinese, 10 English), covering 402 rubrics. For each report, two to three domain\nexperts independently assign binary Pass/Fail labels, reaching a substantial inter-annotator agreement\n(mean pairwise Cohen's \u03ba= 0.715). All 65 initial disagreements are subsequently resolved through\ndiscussion to form the reference labels used to compare judge configurations.\nBenchmarking against these reference labels, we evaluate four frontier LLMs across 11 configurations\nof reasoning effort and temperature (Table 3). Each configuration is run three times on identical\nreports. We assess performance using three metrics: mean accuracy against human annotations,\nself-consistency (the proportion of rubrics yielding identical decisions across all three runs), and\nmajority-voted accuracy at the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0033"
+        ],
+        "excerpt": "rubric level.\n6\nTable 3: Comparison of 11 judge configurations on 402 human-labeled rubrics for judge selection,\nsorted by mean accuracy over three runs. Default denotes the model's default setting. Bold numbers\nmark the best result in each metric.\nJudge model Reasoning Temp. Mean accuracy (%) Self-consistency (%) Majority vote (%)\nGemini 3.1 Pro Low 084.2598.884.33\nGemini 3.1 Pro High Default 84.00 94.584.33\nGemini 3.1 Pro High 0 83.50 98.0 83.33\nGemini 3.5 Flash High Default 82.42 94.8 82.34\nDeepSeek V4.1 Flash High 0 81.43 94.8 81.34\nDeepSeek V4.1 Flash High Default 81.43 91.3 81.84\nDeepSeek V4.1 Flash Low 0 80.10 94.0 80.10\nGPT-5.5 High Default 79.35 95.3 79.10\nDeepSeek V4.1 Flash Off 0 78.61 97.0 78.61\nGPT-5.5 Off 0 75.95 98.8 76.37\nGemini 3.5 Flash Off 0 75.6299.075.62\nTemperature and stability.Setting temperature to zero improves self-consistency\u2014e.g., rising from\n94.5% to 98.0% ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Judgemodelselection Indr Setting",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3625fa7b9681af033926a91f758065ab4b64ff724c50d4dc105d52d5961d2cbf",
+            "evidence_id": "E9d346cc6c412f1a5-B0033",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Judgemodelselection Indr Setting",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 911,
+                "page": 6,
+                "section": "Judgemodelselection Indr Setting",
+                "section_index": 15,
+                "start": 896,
+                "text": "rubric level.\n6"
+              },
+              {
+                "end": 883,
+                "page": 7,
+                "section": "Judgemodelselection Indr Setting",
+                "section_index": 16,
+                "start": 0,
+                "text": "Table 3: Comparison of 11 judge configurations on 402 human-labeled rubrics for judge selection,\nsorted by mean accuracy over three runs. Default denotes the model's default setting. Bold numbers\nmark the best result in each metric.\nJudge model Reasoning Temp. Mean accuracy (%) Self-consistency (%) Majority vote (%)\nGemini 3.1 Pro Low 084.2598.884.33\nGemini 3.1 Pro High Default 84.00 94.584.33\nGemini 3.1 Pro High 0 83.50 98.0 83.33\nGemini 3.5 Flash High Default 82.42 94.8 82.34\nDeepSeek V4.1 Flash High 0 81.43 94.8 81.34\nDeepSeek V4.1 Flash High Default 81.43 91.3 81.84\nDeepSeek V4.1 Flash Low 0 80.10 94.0 80.10\nGPT-5.5 High Default 79.35 95.3 79.10\nDeepSeek V4.1 Flash Off 0 78.61 97.0 78.61\nGPT-5.5 Off 0 75.95 98.8 76.37\nGemini 3.5 Flash Off 0 75.6299.075.62\nTemperature and stability.Setting temperature to zero improves self-consistency\u2014e.g., rising from\n94.5% to 98.0% "
+              }
+            ],
+            "text": "rubric level.\n6\nTable 3: Comparison of 11 judge configurations on 402 human-labeled rubrics for judge selection,\nsorted by mean accuracy over three runs. Default denotes the model's default setting. Bold numbers\nmark the best result in each metric.\nJudge model Reasoning Temp. Mean accuracy (%) Self-consistency (%) Majority vote (%)\nGemini 3.1 Pro Low 084.2598.884.33\nGemini 3.1 Pro High Default 84.00 94.584.33\nGemini 3.1 Pro High 0 83.50 98.0 83.33\nGemini 3.5 Flash High Default 82.42 94.8 82.34\nDeepSeek V4.1 Flash High 0 81.43 94.8 81.34\nDeepSeek V4.1 Flash High Default 81.43 91.3 81.84\nDeepSeek V4.1 Flash Low 0 80.10 94.0 80.10\nGPT-5.5 High Default 79.35 95.3 79.10\nDeepSeek V4.1 Flash Off 0 78.61 97.0 78.61\nGPT-5.5 Off 0 75.95 98.8 76.37\nGemini 3.5 Flash Off 0 75.6299.075.62\nTemperature and stability.Setting temperature to zero improves self-consistency\u2014e.g., rising from\n94.5% to 98.0% "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0034"
+        ],
+        "excerpt": "for Gemini 3.1 Pro and 91.3% to 94.8% for DeepSeek V4.1 Flash at high reasoning\neffort. However, stability does not guarantee accuracy: Gemini 3.5 Flash without reasoning achieves\n99.0% self-consistency but only 75.62% mean accuracy.\nLimited gains from majority voting.Majority voting yields marginal improvements over mean\naccuracy (\u22640.42 percentage points across all configurations), merely shifting accuracy from 84.25%\nto 84.33% for Gemini 3.1 Pro (low reasoning, zero temperature). We therefore adopt a single judge\npass per report for benchmark evaluation.\nBased on this comparison, we select Gemini 3.1 Pro with low reasoning effort and zero temperature,\nwhich achieves the highest mean accuracy (84.25%) among the tested configurations on these 402\nlabels. We use this configuration for benchmark grading. This model choice aligns with findings by\nPeng et al. (2026) in DR settings.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Judgemodelselection Indr Setting",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4c58faafe9d197dc68efd8e25baaa548c5cc92fc6aa56eec8ba21a7aa6a2c3e4",
+            "evidence_id": "E9d346cc6c412f1a5-B0034",
+            "pages": [
+              7
+            ],
+            "section": "Judgemodelselection Indr Setting",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1773,
+                "page": 7,
+                "section": "Judgemodelselection Indr Setting",
+                "section_index": 16,
+                "start": 883,
+                "text": "for Gemini 3.1 Pro and 91.3% to 94.8% for DeepSeek V4.1 Flash at high reasoning\neffort. However, stability does not guarantee accuracy: Gemini 3.5 Flash without reasoning achieves\n99.0% self-consistency but only 75.62% mean accuracy.\nLimited gains from majority voting.Majority voting yields marginal improvements over mean\naccuracy (\u22640.42 percentage points across all configurations), merely shifting accuracy from 84.25%\nto 84.33% for Gemini 3.1 Pro (low reasoning, zero temperature). We therefore adopt a single judge\npass per report for benchmark evaluation.\nBased on this comparison, we select Gemini 3.1 Pro with low reasoning effort and zero temperature,\nwhich achieves the highest mean accuracy (84.25%) among the tested configurations on these 402\nlabels. We use this configuration for benchmark grading. This model choice aligns with findings by\nPeng et al. (2026) in DR settings."
+              }
+            ],
+            "text": "for Gemini 3.1 Pro and 91.3% to 94.8% for DeepSeek V4.1 Flash at high reasoning\neffort. However, stability does not guarantee accuracy: Gemini 3.5 Flash without reasoning achieves\n99.0% self-consistency but only 75.62% mean accuracy.\nLimited gains from majority voting.Majority voting yields marginal improvements over mean\naccuracy (\u22640.42 percentage points across all configurations), merely shifting accuracy from 84.25%\nto 84.33% for Gemini 3.1 Pro (low reasoning, zero temperature). We therefore adopt a single judge\npass per report for benchmark evaluation.\nBased on this comparison, we select Gemini 3.1 Pro with low reasoning effort and zero temperature,\nwhich achieves the highest mean accuracy (84.25%) among the tested configurations on these 402\nlabels. We use this configuration for benchmark grading. This model choice aligns with findings by\nPeng et al. (2026) in DR settings."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0036"
+        ],
+        "excerpt": "We evaluate 12 frontier DR agents on all 203 bilingual tasks: GPT-5.6 Sol, Claude Opus 5, Hy4\nPreview, GLM-5.3, Qwen3.8-Max, DeepSeek-V4 Pro, Kimi-K3, Doubao-Seed-2.1-Pro, Claude Opus\n4.8, Hy3, GLM-5.2, and Gemini-3.6-Flash. We use each model's default configuration, setting\nreasoning effort to the maximum supported level where configurable. All systems operate within a\nshared ReAct-style (Yao et al., 2023) harness that interleaves decisions, tool execution, and feedback\nfrom the resulting observations. Agents have access toweb search,web fetch, andcode execution.\nEach iteration corresponds to a logical model decision step that may issue multiple tool calls or\nproduce the final answer. A unified system prompt in Appendix B.6 instructs agents to complete the\nDR task. We use Serper1 as the web-search backend and Jina Reader2 to retrieve web pages.\nWe evaluate final reports using the score ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dc2a11874e187ca3c66e80116c2f452b8e8f77f8cac2451a14670a9442b89977",
+            "evidence_id": "E9d346cc6c412f1a5-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Experimentalsetup",
+                "section_index": 18,
+                "start": 0,
+                "text": "We evaluate 12 frontier DR agents on all 203 bilingual tasks: GPT-5.6 Sol, Claude Opus 5, Hy4\nPreview, GLM-5.3, Qwen3.8-Max, DeepSeek-V4 Pro, Kimi-K3, Doubao-Seed-2.1-Pro, Claude Opus\n4.8, Hy3, GLM-5.2, and Gemini-3.6-Flash. We use each model's default configuration, setting\nreasoning effort to the maximum supported level where configurable. All systems operate within a\nshared ReAct-style (Yao et al., 2023) harness that interleaves decisions, tool execution, and feedback\nfrom the resulting observations. Agents have access toweb search,web fetch, andcode execution.\nEach iteration corresponds to a logical model decision step that may issue multiple tool calls or\nproduce the final answer. A unified system prompt in Appendix B.6 instructs agents to complete the\nDR task. We use Serper1 as the web-search backend and Jina Reader2 to retrieve web pages.\nWe evaluate final reports using the score "
+              }
+            ],
+            "text": "We evaluate 12 frontier DR agents on all 203 bilingual tasks: GPT-5.6 Sol, Claude Opus 5, Hy4\nPreview, GLM-5.3, Qwen3.8-Max, DeepSeek-V4 Pro, Kimi-K3, Doubao-Seed-2.1-Pro, Claude Opus\n4.8, Hy3, GLM-5.2, and Gemini-3.6-Flash. We use each model's default configuration, setting\nreasoning effort to the maximum supported level where configurable. All systems operate within a\nshared ReAct-style (Yao et al., 2023) harness that interleaves decisions, tool execution, and feedback\nfrom the resulting observations. Agents have access toweb search,web fetch, andcode execution.\nEach iteration corresponds to a logical model decision step that may issue multiple tool calls or\nproduce the final answer. A unified system prompt in Appendix B.6 instructs agents to complete the\nDR task. We use Serper1 as the web-search backend and Jina Reader2 to retrieve web pages.\nWe evaluate final reports using the score "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0037"
+        ],
+        "excerpt": "defined in Section 3.4, applying a single grading pass over\neach report's rubrics with Gemini 3.1 Pro (Google DeepMind, 2026), as selected in Section 3.5. To\naccount for variability across DR agent trajectories, we conduct three independent runs per task, and\n1https://serper.dev/\n2https://jina.ai/reader/\n7\nTable 4: Performance and resource usage on LIFESEARCH. Scores are reported as mean \u00b1 sample\nstandard deviation across three independent agent runs. Resource statistics are per-task means; output\ntokens include generation throughout execution, not only the final report. Domain abbreviations:\nComp., company and competitor research; Acad., academic and professional literature; Fin., financial\nmarket analysis; Pol., policy and government data; Ind., industry news and trend aggregation; Tech.,\ntechnical tools and developer resources; Everyd., everyday facts.\nDomain scores (%)\u2191Overall ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d5bcdf0dd34ed419fac9f7383aaaae0bde858ccc739d1206ecab2e999cdc02dc",
+            "evidence_id": "E9d346cc6c412f1a5-B0037",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1207,
+                "page": 7,
+                "section": "Experimentalsetup",
+                "section_index": 18,
+                "start": 900,
+                "text": "defined in Section 3.4, applying a single grading pass over\neach report's rubrics with Gemini 3.1 Pro (Google DeepMind, 2026), as selected in Section 3.5. To\naccount for variability across DR agent trajectories, we conduct three independent runs per task, and\n1https://serper.dev/\n2https://jina.ai/reader/\n7"
+              },
+              {
+                "end": 586,
+                "page": 8,
+                "section": "Experimentalsetup",
+                "section_index": 19,
+                "start": 0,
+                "text": "Table 4: Performance and resource usage on LIFESEARCH. Scores are reported as mean \u00b1 sample\nstandard deviation across three independent agent runs. Resource statistics are per-task means; output\ntokens include generation throughout execution, not only the final report. Domain abbreviations:\nComp., company and competitor research; Acad., academic and professional literature; Fin., financial\nmarket analysis; Pol., policy and government data; Ind., industry news and trend aggregation; Tech.,\ntechnical tools and developer resources; Everyd., everyday facts.\nDomain scores (%)\u2191Overall "
+              }
+            ],
+            "text": "defined in Section 3.4, applying a single grading pass over\neach report's rubrics with Gemini 3.1 Pro (Google DeepMind, 2026), as selected in Section 3.5. To\naccount for variability across DR agent trajectories, we conduct three independent runs per task, and\n1https://serper.dev/\n2https://jina.ai/reader/\n7\nTable 4: Performance and resource usage on LIFESEARCH. Scores are reported as mean \u00b1 sample\nstandard deviation across three independent agent runs. Resource statistics are per-task means; output\ntokens include generation throughout execution, not only the final report. Domain abbreviations:\nComp., company and competitor research; Acad., academic and professional literature; Fin., financial\nmarket analysis; Pol., policy and government data; Ind., industry news and trend aggregation; Tech.,\ntechnical tools and developer resources; Everyd., everyday facts.\nDomain scores (%)\u2191Overall "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0038"
+        ],
+        "excerpt": "Resource usage\nModelComp. Acad. Fin. Pol. Ind. Tech. Everyd. Score (%)\u2191Iter. Outputtokens (k)\nGPT-5.6 Sol 62.9 67.8 60.7 65.6 59.5 65.6 58.363.44\u00b10.2786.2 51.5\nClaude Opus 5 52.4 60.7 55.7 58.2 52.6 59.7 53.756.10\u00b10.2839.0 48.9\nHy4 Preview 46.7 51.4 48.1 52.9 51.0 51.9 47.149.73\u00b10.8640.0 33.6\nGLM-5.3 47.8 49.0 47.5 52.4 48.5 50.9 51.949.19\u00b11.2022.3 49.3\nQwen3.8-Max 48.2 47.3 46.9 50.4 47.1 45.4 45.147.52\u00b11.6425.0 33.1\nDeepSeek-V4 Pro 45.7 44.8 47.4 48.7 49.8 46.1 48.846.90\u00b11.1821.1 30.4\nKimi-K3 44.5 44.1 42.3 49.1 49.4 46.4 51.645.79\u00b10.7618.7 28.2\nDoubao-Seed-2.1-Pro 44.4 45.2 37.2 44.1 41.8 44.1 48.443.09\u00b10.4923.7 12.9\nClaude Opus 4.8 40.0 43.3 38.4 45.9 42.8 43.3 43.141.94\u00b10.6612.1 35.4\nHy3 40.2 38.0 35.3 41.5 40.4 37.5 41.138.90\u00b10.4831.0 17.6\nGLM-5.2 37.1 37.6 32.4 39.5 37.2 39.8 39.537.11\u00b11.1611.0 18.2\nGemini-3.6-Flash 32.8 36.0 33.2 35.1 36.5 32.7 44.534.72\u00b10.1617.8 14.9\nreport the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "084d333c907cf225f44adc09b3d005640bb5494137d48d8a0c8ed50dd5afc478",
+            "evidence_id": "E9d346cc6c412f1a5-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1486,
+                "page": 8,
+                "section": "Experimentalsetup",
+                "section_index": 19,
+                "start": 586,
+                "text": "Resource usage\nModelComp. Acad. Fin. Pol. Ind. Tech. Everyd. Score (%)\u2191Iter. Outputtokens (k)\nGPT-5.6 Sol 62.9 67.8 60.7 65.6 59.5 65.6 58.363.44\u00b10.2786.2 51.5\nClaude Opus 5 52.4 60.7 55.7 58.2 52.6 59.7 53.756.10\u00b10.2839.0 48.9\nHy4 Preview 46.7 51.4 48.1 52.9 51.0 51.9 47.149.73\u00b10.8640.0 33.6\nGLM-5.3 47.8 49.0 47.5 52.4 48.5 50.9 51.949.19\u00b11.2022.3 49.3\nQwen3.8-Max 48.2 47.3 46.9 50.4 47.1 45.4 45.147.52\u00b11.6425.0 33.1\nDeepSeek-V4 Pro 45.7 44.8 47.4 48.7 49.8 46.1 48.846.90\u00b11.1821.1 30.4\nKimi-K3 44.5 44.1 42.3 49.1 49.4 46.4 51.645.79\u00b10.7618.7 28.2\nDoubao-Seed-2.1-Pro 44.4 45.2 37.2 44.1 41.8 44.1 48.443.09\u00b10.4923.7 12.9\nClaude Opus 4.8 40.0 43.3 38.4 45.9 42.8 43.3 43.141.94\u00b10.6612.1 35.4\nHy3 40.2 38.0 35.3 41.5 40.4 37.5 41.138.90\u00b10.4831.0 17.6\nGLM-5.2 37.1 37.6 32.4 39.5 37.2 39.8 39.537.11\u00b11.1611.0 18.2\nGemini-3.6-Flash 32.8 36.0 33.2 35.1 36.5 32.7 44.534.72\u00b10.1617.8 14.9\nreport the "
+              }
+            ],
+            "text": "Resource usage\nModelComp. Acad. Fin. Pol. Ind. Tech. Everyd. Score (%)\u2191Iter. Outputtokens (k)\nGPT-5.6 Sol 62.9 67.8 60.7 65.6 59.5 65.6 58.363.44\u00b10.2786.2 51.5\nClaude Opus 5 52.4 60.7 55.7 58.2 52.6 59.7 53.756.10\u00b10.2839.0 48.9\nHy4 Preview 46.7 51.4 48.1 52.9 51.0 51.9 47.149.73\u00b10.8640.0 33.6\nGLM-5.3 47.8 49.0 47.5 52.4 48.5 50.9 51.949.19\u00b11.2022.3 49.3\nQwen3.8-Max 48.2 47.3 46.9 50.4 47.1 45.4 45.147.52\u00b11.6425.0 33.1\nDeepSeek-V4 Pro 45.7 44.8 47.4 48.7 49.8 46.1 48.846.90\u00b11.1821.1 30.4\nKimi-K3 44.5 44.1 42.3 49.1 49.4 46.4 51.645.79\u00b10.7618.7 28.2\nDoubao-Seed-2.1-Pro 44.4 45.2 37.2 44.1 41.8 44.1 48.443.09\u00b10.4923.7 12.9\nClaude Opus 4.8 40.0 43.3 38.4 45.9 42.8 43.3 43.141.94\u00b10.6612.1 35.4\nHy3 40.2 38.0 35.3 41.5 40.4 37.5 41.138.90\u00b10.4831.0 17.6\nGLM-5.2 37.1 37.6 32.4 39.5 37.2 39.8 39.537.11\u00b11.1611.0 18.2\nGemini-3.6-Flash 32.8 36.0 33.2 35.1 36.5 32.7 44.534.72\u00b10.1617.8 14.9\nreport the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0046"
+        ],
+        "excerpt": "We conduct a human ranking study on 30 tasks (15\nper language) to examine agreement at the report level.\nAnnotators rank anonymized reports presented in ran-\ndomized order according to factual accuracy, complete-\nness, and formatting quality. This assessment exam-\nines whether aggregate rubric scores capture the relative\nquality of complete research deliverables.\nTable 5 presents a seven-system study, comprising 210\nreports. Within this subset, rubric-based and human\nrankings are strongly correlated (Spearman's \u03c1= 0.89,\nKendall's \u03c4= 0.81), with identical ordering of the top\nfour systems. These results support the alignment of our\naggregate rubric-based scores with human assessments\nof overall report quality.\nTable 5: Ranks among the seven displayed\nmodels. \u2206 shows the change from Ours to\nHuman:\u2191better,\u2193worse.\nModel Humanrank Ours\u2206\nGPT-5.6 Sol 1 1 \u2014\nClaude Opus 5 2 2 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Humanagreement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "378a672fd1a49ff3db6b72373e3587a159a6ecf7bf8be2f30413a035c582129c",
+            "evidence_id": "E9d346cc6c412f1a5-B0046",
+            "pages": [
+              9
+            ],
+            "section": "Humanagreement",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 879,
+                "page": 9,
+                "section": "Humanagreement",
+                "section_index": 24,
+                "start": 0,
+                "text": "We conduct a human ranking study on 30 tasks (15\nper language) to examine agreement at the report level.\nAnnotators rank anonymized reports presented in ran-\ndomized order according to factual accuracy, complete-\nness, and formatting quality. This assessment exam-\nines whether aggregate rubric scores capture the relative\nquality of complete research deliverables.\nTable 5 presents a seven-system study, comprising 210\nreports. Within this subset, rubric-based and human\nrankings are strongly correlated (Spearman's \u03c1= 0.89,\nKendall's \u03c4= 0.81), with identical ordering of the top\nfour systems. These results support the alignment of our\naggregate rubric-based scores with human assessments\nof overall report quality.\nTable 5: Ranks among the seven displayed\nmodels. \u2206 shows the change from Ours to\nHuman:\u2191better,\u2193worse.\nModel Humanrank Ours\u2206\nGPT-5.6 Sol 1 1 \u2014\nClaude Opus 5 2 2 "
+              }
+            ],
+            "text": "We conduct a human ranking study on 30 tasks (15\nper language) to examine agreement at the report level.\nAnnotators rank anonymized reports presented in ran-\ndomized order according to factual accuracy, complete-\nness, and formatting quality. This assessment exam-\nines whether aggregate rubric scores capture the relative\nquality of complete research deliverables.\nTable 5 presents a seven-system study, comprising 210\nreports. Within this subset, rubric-based and human\nrankings are strongly correlated (Spearman's \u03c1= 0.89,\nKendall's \u03c4= 0.81), with identical ordering of the top\nfour systems. These results support the alignment of our\naggregate rubric-based scores with human assessments\nof overall report quality.\nTable 5: Ranks among the seven displayed\nmodels. \u2206 shows the change from Ours to\nHuman:\u2191better,\u2193worse.\nModel Humanrank Ours\u2206\nGPT-5.6 Sol 1 1 \u2014\nClaude Opus 5 2 2 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0047"
+        ],
+        "excerpt": "\u2014\nDoubao-Seed-2.1-Pro 3 3 \u2014\nKimi-K3 4 4 \u2014\nHy3 7 5\u21932\nClaude Opus 4.8 5 6\u21911\nGLM-5.2 6 7\u21911",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Humanagreement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0ded2a66f3cf1d1b5b4b3bea2cf157ef453eb12bcf95b8ce93298368c508e2c0",
+            "evidence_id": "E9d346cc6c412f1a5-B0047",
+            "pages": [
+              9
+            ],
+            "section": "Humanagreement",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 966,
+                "page": 9,
+                "section": "Humanagreement",
+                "section_index": 24,
+                "start": 879,
+                "text": "\u2014\nDoubao-Seed-2.1-Pro 3 3 \u2014\nKimi-K3 4 4 \u2014\nHy3 7 5\u21932\nClaude Opus 4.8 5 6\u21911\nGLM-5.2 6 7\u21911"
+              }
+            ],
+            "text": "\u2014\nDoubao-Seed-2.1-Pro 3 3 \u2014\nKimi-K3 4 4 \u2014\nHy3 7 5\u21932\nClaude Opus 4.8 5 6\u21911\nGLM-5.2 6 7\u21911"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.18092",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.18092",
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The LLM judge is calibrated against 402 human reference rubric labels, and aggregate benchmark scores are corroborated by a human ranking study over 210 reports showing strong rank agreement.",
+          "final_evaluation_signal": "Scoring against 4,014 expert-annotated rubrics using Gemini 3.1 Pro (low reasoning, zero temperature) as an LLM judge.",
+          "independent_corroboration": "present",
+          "optimization_signal": "None; the 12 evaluated frontier agents are third-party systems run out of the box in a unified ReAct harness without benchmark-specific training, tuning, or rubric-targeted optimization.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0003",
+          "E9d346cc6c412f1a5-B0004",
+          "E9d346cc6c412f1a5-B0009",
+          "E9d346cc6c412f1a5-B0010",
+          "E9d346cc6c412f1a5-B0017",
+          "E9d346cc6c412f1a5-B0018",
+          "E9d346cc6c412f1a5-B0025",
+          "E9d346cc6c412f1a5-B0027",
+          "E9d346cc6c412f1a5-B0030",
+          "E9d346cc6c412f1a5-B0032",
+          "E9d346cc6c412f1a5-B0033",
+          "E9d346cc6c412f1a5-B0034",
+          "E9d346cc6c412f1a5-B0036",
+          "E9d346cc6c412f1a5-B0037",
+          "E9d346cc6c412f1a5-B0038",
+          "E9d346cc6c412f1a5-B0046",
+          "E9d346cc6c412f1a5-B0047"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "c00c6038503adb332a0439da74f5e2fb1f4f43c135007a652241b307de9b5ffa"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.18092",
+        "claim_evidence_alignment": "Claims regarding current agent performance limits (top model GPT-5.6 Sol achieving 63.4%) and the non-deterministic relationship between report volume and quality are well-supported by experimental data and domain breakdowns.",
+        "context_id": "9d346cc6c412f1a5f1d20312d8e3be8e03f18e8af8b5836e71bebf3698927318",
+        "decision": "pass",
+        "evaluation_assessment": "The authors benchmark 12 frontier DR agents within a standardized harness across three independent runs, capturing resource usage and error patterns. Benchmark grading is corroborated by human inter-annotator agreement (kappa = 0.715), judge accuracy validation (84.25%), and a report-level human ranking study showing high rank correlation (Spearman rho = 0.89, Kendall tau = 0.81).",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Judge decisions are validated against 402 human reference rubric labels, and aggregate benchmark scores are corroborated by a human preference ranking study over 210 reports across 7 systems.",
+          "final_evaluation_signal": "Scoring against 4,014 fine-grained rubrics using Gemini 3.1 Pro (low reasoning, zero temperature) as an LLM judge.",
+          "independent_corroboration": "present",
+          "optimization_signal": "None; evaluated frontier models are third-party systems tested out of the box in a unified ReAct harness without benchmark-specific fine-tuning or rubric-targeted optimization.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E9d346cc6c412f1a5-B0003",
+          "E9d346cc6c412f1a5-B0004",
+          "E9d346cc6c412f1a5-B0009",
+          "E9d346cc6c412f1a5-B0010",
+          "E9d346cc6c412f1a5-B0017",
+          "E9d346cc6c412f1a5-B0018",
+          "E9d346cc6c412f1a5-B0025",
+          "E9d346cc6c412f1a5-B0027",
+          "E9d346cc6c412f1a5-B0030",
+          "E9d346cc6c412f1a5-B0032",
+          "E9d346cc6c412f1a5-B0033",
+          "E9d346cc6c412f1a5-B0034",
+          "E9d346cc6c412f1a5-B0036",
+          "E9d346cc6c412f1a5-B0037",
+          "E9d346cc6c412f1a5-B0038",
+          "E9d346cc6c412f1a5-B0046",
+          "E9d346cc6c412f1a5-B0047"
+        ],
+        "limitations": "The authors identify model-level failure modes (premature termination, temporal violations, missing details) and report the evaluation window constraints.",
+        "method_assessment": "The construction methodology combines crowdsourced query collection, multi-stage LLM-assisted filtering/rewriting, and expert refinement into subtasks with grounded, weighted rubrics. Judge model selection is transparently evaluated across 11 LLM-judge configurations against consensus human labels.",
+        "quality_rationale": "The manuscript presents a rigorous benchmark for deep research agents with thorough documentation of dataset curation, rubric design, judge calibration against human ground truth, and extensive cross-model evaluation.",
+        "scoped_contribution": "LifeSearch is an evaluation benchmark targeting deep research (DR) agents in real-world life and professional productivity contexts, containing 203 bilingual tasks (Chinese and English) and 4,014 expert-annotated fine-grained rubrics.",
+        "source_content_hash": "c00c6038503adb332a0439da74f5e2fb1f4f43c135007a652241b307de9b5ffa"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous benchmark for deep research agents with thorough documentation of dataset curation, rubric design, judge calibration against human ground truth, and extensive cross-model evaluation.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "c00c6038503adb332a0439da74f5e2fb1f4f43c135007a652241b307de9b5ffa",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors identify model-level failure modes (premature termination, temporal violations, missing details) and report the evaluation window constraints."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -170,7 +2564,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

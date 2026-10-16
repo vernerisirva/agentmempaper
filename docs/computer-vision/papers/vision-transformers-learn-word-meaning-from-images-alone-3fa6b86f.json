@@ -24,11 +24,11 @@
   "first_seen_date": "2026-10-12",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-10-16 11:40:36",
+  "last_seen_at": "2026-10-16 11:57:16",
   "last_seen_date": "2026-10-16",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-12 11:39:43",
   "notified_date": "2026-10-12",
@@ -39,8 +39,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-10-12 11:39:24",
-    "generated_at": "2026-10-16 11:43:32",
-    "last_seen_at": "2026-10-16 11:40:36",
+    "generated_at": "2026-10-16 11:57:50",
+    "last_seen_at": "2026-10-16 11:57:16",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -104,36 +104,2282 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-12T11:40:30.582862+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The empirical findings are supported by disciplined experimental controls (matched visual baselines, spelling-overlap controls, background variation, and text-screened ImageNet and finetuning subsets). The claims are circumspect and fully aligned with the evidence provided.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 110629,
+      "assessment_input_sha256": "bd4ea64857b409b5741915b7b36cc6ab6f07bd19d3708f715d4b81c63d2a9c5e",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.13252",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 107990,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 107384,
+      "evidence_block_count": 150,
+      "evidence_context_characters": 125507,
+      "evidence_context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+      "evidence_context_sha256": "21ec969c0bb2a52285be85cd8e41f7002f29d30e93654a39a7a0e8e94c9fb831",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 108050,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "extracted_pages": 31,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "2c57b4856c70f5591856f0a3452481661a96249dc58291151dba8501c202d562",
+        "source_url": "https://arxiv.org/pdf/2610.13252",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 107990,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 225,
+          "supplied_characters": 225
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1399,
+          "supplied_characters": 1399
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2092,
+          "supplied_characters": 2092
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3117,
+          "supplied_characters": 3117
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1186,
+          "supplied_characters": 1186
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 2000,
+          "supplied_characters": 2000
+        },
+        {
+          "heading": "Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 526,
+          "supplied_characters": 526
+        },
+        {
+          "heading": "Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 741,
+          "supplied_characters": 741
+        },
+        {
+          "heading": "Words And Images",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 743,
+          "supplied_characters": 743
+        },
+        {
+          "heading": "Words And Images",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 4083,
+          "supplied_characters": 4083
+        },
+        {
+          "heading": "Words And Images",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 663,
+          "supplied_characters": 663
+        },
+        {
+          "heading": "Word And Visual Directions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1750,
+          "supplied_characters": 1750
+        },
+        {
+          "heading": "Measures",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1147,
+          "supplied_characters": 1147
+        },
+        {
+          "heading": "Alignment And Finetuning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 279,
+          "supplied_characters": 279
+        },
+        {
+          "heading": "Alignment And Finetuning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 4011,
+          "supplied_characters": 4011
+        },
+        {
+          "heading": "Lexicalstructure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 349,
+          "supplied_characters": 349
+        },
+        {
+          "heading": "Lexicalstructure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 2231,
+          "supplied_characters": 2231
+        },
+        {
+          "heading": "Word-Classalignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1839,
+          "supplied_characters": 1839
+        },
+        {
+          "heading": "Word-Classalignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 2136,
+          "supplied_characters": 2136
+        },
+        {
+          "heading": "Alignment Andfinetuning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1591,
+          "supplied_characters": 1591
+        },
+        {
+          "heading": "Alignment Andfinetuning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 480,
+          "supplied_characters": 480
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "discussion",
+          "section_index": 21,
+          "source_characters": 3012,
+          "supplied_characters": 3012
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 22,
+          "source_characters": 942,
+          "supplied_characters": 942
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 23,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 329,
+          "supplied_characters": 329
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 3335,
+          "supplied_characters": 3335
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 4165,
+          "supplied_characters": 4165
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 3606,
+          "supplied_characters": 3606
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Data Andrendering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 2481,
+          "supplied_characters": 2481
+        },
+        {
+          "heading": "List Items Words Pairs Example And Purpose",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 42,
+          "supplied_characters": 42
+        },
+        {
+          "heading": "Synonym And One-Edit",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 81,
+          "supplied_characters": 81
+        },
+        {
+          "heading": "And Spelling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 75,
+          "supplied_characters": 75
+        },
+        {
+          "heading": "Onymy And Opposition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Synonym And Apparent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 79,
+          "supplied_characters": 79
+        },
+        {
+          "heading": "Meaning And Similar Form",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Singular And Plural 40 80 40 Road\u2013Roads: Form With Related Meaning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 66,
+          "supplied_characters": 66
+        },
+        {
+          "heading": "Country And Capital 60 120 60Germany\u2013Berlin: Factual Association",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 64,
+          "supplied_characters": 64
+        },
+        {
+          "heading": "Common Nouns 384 384 \u2014 Category Membership",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 42,
+          "supplied_characters": 42
+        },
+        {
+          "heading": "Brands 192 192 \u2014 Industry Membership",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 36,
+          "supplied_characters": 36
+        },
+        {
+          "heading": "Pseudowords 80 80 \u2014 Retrieval Candidates And Centering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 877,
+          "supplied_characters": 877
+        },
+        {
+          "heading": "Pseudowords 80 80 \u2014 Retrieval Candidates And Centering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 4750,
+          "supplied_characters": 4750
+        },
+        {
+          "heading": "Pseudowords 80 80 \u2014 Retrieval Candidates And Centering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 1415,
+          "supplied_characters": 1415
+        },
+        {
+          "heading": "Pseudowords 80 80 \u2014 Retrieval Candidates And Centering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Measures Andstatisticaltests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 206,
+          "supplied_characters": 206
+        },
+        {
+          "heading": "Appendix: Measures",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 3281,
+          "supplied_characters": 3281
+        },
+        {
+          "heading": "Appendix: Statistical Tests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 580,
+          "supplied_characters": 580
+        },
+        {
+          "heading": "Appendix: Statistical Tests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 2087,
+          "supplied_characters": 2087
+        },
+        {
+          "heading": "Appendix: Statistical Tests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Lexicalstructure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 180,
+          "supplied_characters": 180
+        },
+        {
+          "heading": "Appendix: Pairs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 2337,
+          "supplied_characters": 2337
+        },
+        {
+          "heading": "Appendix: Pairs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 4310,
+          "supplied_characters": 4310
+        },
+        {
+          "heading": "Appendix: Pairs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 1769,
+          "supplied_characters": 1769
+        },
+        {
+          "heading": "Appendix: Grouping By Category",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 583,
+          "supplied_characters": 583
+        },
+        {
+          "heading": "Appendix: Grouping By Category",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 2770,
+          "supplied_characters": 2770
+        },
+        {
+          "heading": "Appendix: Depth",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 558,
+          "supplied_characters": 558
+        },
+        {
+          "heading": "Appendix: Depth",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 3544,
+          "supplied_characters": 3544
+        },
+        {
+          "heading": "Appendix: Depth",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Word-Classalignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Appendix: The Class Names",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 1411,
+          "supplied_characters": 1411
+        },
+        {
+          "heading": "Appendix: The Class Images",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 1908,
+          "supplied_characters": 1908
+        },
+        {
+          "heading": "Appendix: The Class Images",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Alignment And Retrieval In Full",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 3725,
+          "supplied_characters": 3725
+        },
+        {
+          "heading": "Appendix: Alignment And Retrieval In Full",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Alignment By Depth",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 3091,
+          "supplied_characters": 3091
+        },
+        {
+          "heading": "Appendix: Alignment By Depth",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Two-Clue Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 3831,
+          "supplied_characters": 3831
+        },
+        {
+          "heading": "Appendix: Two-Clue Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 2324,
+          "supplied_characters": 2324
+        },
+        {
+          "heading": "Appendix: Two-Clue Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 41,
+          "supplied_characters": 41
+        },
+        {
+          "heading": "Appendix: Models And Representations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 2749,
+          "supplied_characters": 2749
+        },
+        {
+          "heading": "Appendix: Text And Speech Vectors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 572,
+          "supplied_characters": 572
+        },
+        {
+          "heading": "Appendix: Text And Speech Vectors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 2367,
+          "supplied_characters": 2367
+        },
+        {
+          "heading": "Appendix: Contrastive Finetuning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "appendix",
+          "section_index": 72,
+          "source_characters": 1711,
+          "supplied_characters": 1711
+        },
+        {
+          "heading": "Appendix: Contrastive Finetuning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "appendix",
+          "section_index": 73,
+          "source_characters": 2132,
+          "supplied_characters": 2132
+        },
+        {
+          "heading": "Mae-L 872 \u2217 981\u2217",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 16,
+          "supplied_characters": 16
+        },
+        {
+          "heading": "Mae-H 763 \u2217 872\u2217",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "body",
+          "section_index": 75,
+          "source_characters": 834,
+          "supplied_characters": 834
+        },
+        {
+          "heading": "Mae-H 763 \u2217 872\u2217",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "body",
+          "section_index": 76,
+          "source_characters": 353,
+          "supplied_characters": 353
+        }
+      ],
+      "selected_characters": 107384,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "selected_sections": [
+        {
+          "characters": 225,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1399,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2092,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3117,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1186,
+          "heading": "Relatedwork",
+          "page": 2
+        },
+        {
+          "characters": 2000,
+          "heading": "Relatedwork",
+          "page": 3
+        },
+        {
+          "characters": 526,
+          "heading": "Methods",
+          "page": 3
+        },
+        {
+          "characters": 741,
+          "heading": "Models",
+          "page": 3
+        },
+        {
+          "characters": 743,
+          "heading": "Words And Images",
+          "page": 3
+        },
+        {
+          "characters": 4083,
+          "heading": "Words And Images",
+          "page": 4
+        },
+        {
+          "characters": 663,
+          "heading": "Words And Images",
+          "page": 5
+        },
+        {
+          "characters": 1750,
+          "heading": "Word And Visual Directions",
+          "page": 5
+        },
+        {
+          "characters": 1147,
+          "heading": "Measures",
+          "page": 5
+        },
+        {
+          "characters": 279,
+          "heading": "Alignment And Finetuning",
+          "page": 5
+        },
+        {
+          "characters": 4011,
+          "heading": "Alignment And Finetuning",
+          "page": 6
+        },
+        {
+          "characters": 349,
+          "heading": "Lexicalstructure",
+          "page": 6
+        },
+        {
+          "characters": 2231,
+          "heading": "Lexicalstructure",
+          "page": 7
+        },
+        {
+          "characters": 1839,
+          "heading": "Word-Classalignment",
+          "page": 7
+        },
+        {
+          "characters": 2136,
+          "heading": "Word-Classalignment",
+          "page": 8
+        },
+        {
+          "characters": 1591,
+          "heading": "Alignment Andfinetuning",
+          "page": 8
+        },
+        {
+          "characters": 480,
+          "heading": "Alignment Andfinetuning",
+          "page": 9
+        },
+        {
+          "characters": 3012,
+          "heading": "Discussion",
+          "page": 9
+        },
+        {
+          "characters": 942,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 8,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 329,
+          "heading": "Back matter: Acknowledgments",
+          "page": 10
+        },
+        {
+          "characters": 3335,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 4165,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3606,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 8,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 2481,
+          "heading": "Appendix: Data Andrendering",
+          "page": 13
+        },
+        {
+          "characters": 42,
+          "heading": "List Items Words Pairs Example And Purpose",
+          "page": 13
+        },
+        {
+          "characters": 81,
+          "heading": "Synonym And One-Edit",
+          "page": 13
+        },
+        {
+          "characters": 75,
+          "heading": "And Spelling",
+          "page": 13
+        },
+        {
+          "characters": 20,
+          "heading": "Onymy And Opposition",
+          "page": 13
+        },
+        {
+          "characters": 79,
+          "heading": "Synonym And Apparent",
+          "page": 13
+        },
+        {
+          "characters": 24,
+          "heading": "Meaning And Similar Form",
+          "page": 13
+        },
+        {
+          "characters": 66,
+          "heading": "Singular And Plural 40 80 40 Road\u2013Roads: Form With Related Meaning",
+          "page": 13
+        },
+        {
+          "characters": 64,
+          "heading": "Country And Capital 60 120 60Germany\u2013Berlin: Factual Association",
+          "page": 13
+        },
+        {
+          "characters": 42,
+          "heading": "Common Nouns 384 384 \u2014 Category Membership",
+          "page": 13
+        },
+        {
+          "characters": 36,
+          "heading": "Brands 192 192 \u2014 Industry Membership",
+          "page": 13
+        },
+        {
+          "characters": 877,
+          "heading": "Pseudowords 80 80 \u2014 Retrieval Candidates And Centering",
+          "page": 13
+        },
+        {
+          "characters": 4750,
+          "heading": "Pseudowords 80 80 \u2014 Retrieval Candidates And Centering",
+          "page": 14
+        },
+        {
+          "characters": 1415,
+          "heading": "Pseudowords 80 80 \u2014 Retrieval Candidates And Centering",
+          "page": 15
+        },
+        {
+          "characters": 8,
+          "heading": "Pseudowords 80 80 \u2014 Retrieval Candidates And Centering",
+          "page": 16
+        },
+        {
+          "characters": 206,
+          "heading": "Appendix: Measures Andstatisticaltests",
+          "page": 16
+        },
+        {
+          "characters": 3281,
+          "heading": "Appendix: Measures",
+          "page": 16
+        },
+        {
+          "characters": 580,
+          "heading": "Appendix: Statistical Tests",
+          "page": 16
+        },
+        {
+          "characters": 2087,
+          "heading": "Appendix: Statistical Tests",
+          "page": 17
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Statistical Tests",
+          "page": 18
+        },
+        {
+          "characters": 180,
+          "heading": "Appendix: Lexicalstructure",
+          "page": 18
+        },
+        {
+          "characters": 2337,
+          "heading": "Appendix: Pairs",
+          "page": 18
+        },
+        {
+          "characters": 4310,
+          "heading": "Appendix: Pairs",
+          "page": 19
+        },
+        {
+          "characters": 1769,
+          "heading": "Appendix: Pairs",
+          "page": 20
+        },
+        {
+          "characters": 583,
+          "heading": "Appendix: Grouping By Category",
+          "page": 20
+        },
+        {
+          "characters": 2770,
+          "heading": "Appendix: Grouping By Category",
+          "page": 21
+        },
+        {
+          "characters": 558,
+          "heading": "Appendix: Depth",
+          "page": 21
+        },
+        {
+          "characters": 3544,
+          "heading": "Appendix: Depth",
+          "page": 22
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Depth",
+          "page": 23
+        },
+        {
+          "characters": 21,
+          "heading": "Appendix: Word-Classalignment",
+          "page": 23
+        },
+        {
+          "characters": 1411,
+          "heading": "Appendix: The Class Names",
+          "page": 23
+        },
+        {
+          "characters": 1908,
+          "heading": "Appendix: The Class Images",
+          "page": 23
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: The Class Images",
+          "page": 24
+        },
+        {
+          "characters": 3725,
+          "heading": "Appendix: Alignment And Retrieval In Full",
+          "page": 24
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Alignment And Retrieval In Full",
+          "page": 25
+        },
+        {
+          "characters": 3091,
+          "heading": "Appendix: Alignment By Depth",
+          "page": 25
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Alignment By Depth",
+          "page": 26
+        },
+        {
+          "characters": 3831,
+          "heading": "Appendix: Two-Clue Analysis",
+          "page": 26
+        },
+        {
+          "characters": 2324,
+          "heading": "Appendix: Two-Clue Analysis",
+          "page": 27
+        },
+        {
+          "characters": 41,
+          "heading": "Appendix: Two-Clue Analysis",
+          "page": 28
+        },
+        {
+          "characters": 2749,
+          "heading": "Appendix: Models And Representations",
+          "page": 28
+        },
+        {
+          "characters": 572,
+          "heading": "Appendix: Text And Speech Vectors",
+          "page": 28
+        },
+        {
+          "characters": 2367,
+          "heading": "Appendix: Text And Speech Vectors",
+          "page": 29
+        },
+        {
+          "characters": 1711,
+          "heading": "Appendix: Contrastive Finetuning",
+          "page": 29
+        },
+        {
+          "characters": 2132,
+          "heading": "Appendix: Contrastive Finetuning",
+          "page": 30
+        },
+        {
+          "characters": 16,
+          "heading": "Mae-L 872 \u2217 981\u2217",
+          "page": 30
+        },
+        {
+          "characters": 834,
+          "heading": "Mae-H 763 \u2217 872\u2217",
+          "page": 30
+        },
+        {
+          "characters": 353,
+          "heading": "Mae-H 763 \u2217 872\u2217",
+          "page": 31
+        }
+      ],
+      "selected_text_sha256": "bd4ea64857b409b5741915b7b36cc6ab6f07bd19d3708f715d4b81c63d2a9c5e",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "2c57b4856c70f5591856f0a3452481661a96249dc58291151dba8501c202d562",
+      "source_pages": 31,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0002"
+        ],
+        "excerpt": "Can a vision model learn what words mean from pixels alone? We show that the\ntwo largest DINOv3 vision transformers organize words rendered in images by\nword meaning, despite being pretrained using self-supervision on images only,\nwithout paired captions, class labels, or other language supervision. We derive word\nrepresentations from embedding differences between word images and matched\ncontrols, then test whether semantically related words are neighbors within each\nmodel's embedding space, while controlling for spelling similarity. We find that\nbrand names in the same industry group together, as do nouns from the same\nsemantic domain. Country-capital pairs exhibit consistent vector offsets, similarly\nto word embeddings trained on text. These word representations also align with\nthe representations of the visual object categories they name. DINOv3-H and\nDINOv3-7B are, to our knowledge, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1b44923af8da4f9a35125f81429d5d5606ea718db2d1cda7e92f5aa9737ce30f",
+            "evidence_id": "Ecac3edd73e996f01-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Can a vision model learn what words mean from pixels alone? We show that the\ntwo largest DINOv3 vision transformers organize words rendered in images by\nword meaning, despite being pretrained using self-supervision on images only,\nwithout paired captions, class labels, or other language supervision. We derive word\nrepresentations from embedding differences between word images and matched\ncontrols, then test whether semantically related words are neighbors within each\nmodel's embedding space, while controlling for spelling similarity. We find that\nbrand names in the same industry group together, as do nouns from the same\nsemantic domain. Country-capital pairs exhibit consistent vector offsets, similarly\nto word embeddings trained on text. These word representations also align with\nthe representations of the visual object categories they name. DINOv3-H and\nDINOv3-7B are, to our knowledge, "
+              }
+            ],
+            "text": "Can a vision model learn what words mean from pixels alone? We show that the\ntwo largest DINOv3 vision transformers organize words rendered in images by\nword meaning, despite being pretrained using self-supervision on images only,\nwithout paired captions, class labels, or other language supervision. We derive word\nrepresentations from embedding differences between word images and matched\ncontrols, then test whether semantically related words are neighbors within each\nmodel's embedding space, while controlling for spelling similarity. We find that\nbrand names in the same industry group together, as do nouns from the same\nsemantic domain. Country-capital pairs exhibit consistent vector offsets, similarly\nto word embeddings trained on text. These word representations also align with\nthe representations of the visual object categories they name. DINOv3-H and\nDINOv3-7B are, to our knowledge, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0008"
+        ],
+        "excerpt": "the semantic structure typically studied\nthrough language, despite having no objective that requires the model to read or match language.\nMore broadly, models can acquire capabilities that their training objective never explicitly targets\nwhen the relevant structure is present in the training data. Understanding such unexpected capabilities\nis therefore a general problem in large-scale pretraining, not one specific to text recognition.\nWe analyze rendered words using word directions: embedding differences between word images and\nmatched controls, averaged across backgrounds and centered over the vocabulary. Controlling for\nspelling similarity and rendering conditions, we find: (1) In DINOv3-H and DINOv3-7B, country-\ncapital pairs are neighbors with consistent offsets, brands and nouns group by category, and synonyms\nare retrieved above chance (Figure 1). These models perform comparably ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f0441508cfb8418db0512b2b5c92ab8091202d3052234b8cda657855261f2dc2",
+            "evidence_id": "Ecac3edd73e996f01-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2379,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1480,
+                "text": "the semantic structure typically studied\nthrough language, despite having no objective that requires the model to read or match language.\nMore broadly, models can acquire capabilities that their training objective never explicitly targets\nwhen the relevant structure is present in the training data. Understanding such unexpected capabilities\nis therefore a general problem in large-scale pretraining, not one specific to text recognition.\nWe analyze rendered words using word directions: embedding differences between word images and\nmatched controls, averaged across backgrounds and centered over the vocabulary. Controlling for\nspelling similarity and rendering conditions, we find: (1) In DINOv3-H and DINOv3-7B, country-\ncapital pairs are neighbors with consistent offsets, brands and nouns group by category, and synonyms\nare retrieved above chance (Figure 1). These models perform comparably "
+              }
+            ],
+            "text": "the semantic structure typically studied\nthrough language, despite having no objective that requires the model to read or match language.\nMore broadly, models can acquire capabilities that their training objective never explicitly targets\nwhen the relevant structure is present in the training data. Understanding such unexpected capabilities\nis therefore a general problem in large-scale pretraining, not one specific to text recognition.\nWe analyze rendered words using word directions: embedding differences between word images and\nmatched controls, averaged across backgrounds and centered over the vocabulary. Controlling for\nspelling similarity and rendering conditions, we find: (1) In DINOv3-H and DINOv3-7B, country-\ncapital pairs are neighbors with consistent offsets, brands and nouns group by category, and synonyms\nare retrieved above chance (Figure 1). These models perform comparably "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0015"
+        ],
+        "excerpt": "We measure fourteen models (Table 1): four DINOv3 models and Web-DINO-1B, trained without\nlabels or captions on images alone, DINOv3-7B by self-distillation and the smaller three by distillation\nfrom it (Sim\u00e9oni et al., 2026; Fan et al., 2025); three DINOv2 models, the predecessors to DINOv3\n(Oquab et al., 2024); three MAE models, trained by masked reconstruction (He et al., 2022); CLIP-B\nand SigLIP2-B, trained with language supervision on image-caption pairs (Radford et al., 2021;\nTschannen et al., 2025); and an untrained ViT-B as the baseline for visual form alone. The encoder f\nmaps an image x to its final-layer class token, or for SigLIP2-B to the mean of its patch tokens, with\nno projection head and no per-image normalization.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Models",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cda81ef5be568e566cca7e2a2d498adc5f198997019fe3bf4d75a4a754939785",
+            "evidence_id": "Ecac3edd73e996f01-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Models",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 741,
+                "page": 3,
+                "section": "Models",
+                "section_index": 7,
+                "start": 0,
+                "text": "We measure fourteen models (Table 1): four DINOv3 models and Web-DINO-1B, trained without\nlabels or captions on images alone, DINOv3-7B by self-distillation and the smaller three by distillation\nfrom it (Sim\u00e9oni et al., 2026; Fan et al., 2025); three DINOv2 models, the predecessors to DINOv3\n(Oquab et al., 2024); three MAE models, trained by masked reconstruction (He et al., 2022); CLIP-B\nand SigLIP2-B, trained with language supervision on image-caption pairs (Radford et al., 2021;\nTschannen et al., 2025); and an untrained ViT-B as the baseline for visual form alone. The encoder f\nmaps an image x to its final-layer class token, or for SigLIP2-B to the mean of its patch tokens, with\nno projection head and no per-image normalization."
+              }
+            ],
+            "text": "We measure fourteen models (Table 1): four DINOv3 models and Web-DINO-1B, trained without\nlabels or captions on images alone, DINOv3-7B by self-distillation and the smaller three by distillation\nfrom it (Sim\u00e9oni et al., 2026; Fan et al., 2025); three DINOv2 models, the predecessors to DINOv3\n(Oquab et al., 2024); three MAE models, trained by masked reconstruction (He et al., 2022); CLIP-B\nand SigLIP2-B, trained with language supervision on image-caption pairs (Radford et al., 2021;\nTschannen et al., 2025); and an untrained ViT-B as the baseline for visual form alone. The encoder f\nmaps an image x to its final-layer class token, or for SigLIP2-B to the mean of its patch tokens, with\nno projection head and no per-image normalization."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0021"
+        ],
+        "excerpt": "membership among neighbors within each cluster and compare the scores\nwith category labels shuffled among words of similar length (Appendix C.2).\nRendering.Every word, name, and pseudoword is rendered on the same 96 ImageNet-1k validation\nbackgrounds with no detected text. The 24 settings combine six fonts with four vertical position\n4\nPreprint\nbands and vary size, color, and backing. Each setting is used on four backgrounds. Typography\nand text center are fixed across words on each background, so words are compared under the same\nrendering conditions.\nControl image.Each word image has a control with the same background, position, color, and\nbacking. Fourier phase randomization replaces the letters' opacity mask with a textured patch in\nthe same bounding box. Subtracting their representations measures the response to intact lettering\nrelative to this matched overlay. Averaging these ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Words And Images",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0cd130cc735dad15cea0ed935465e4505f28edfba27a130c32c1d7c9e73921ac",
+            "evidence_id": "Ecac3edd73e996f01-B0021",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Words And Images",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4083,
+                "page": 4,
+                "section": "Words And Images",
+                "section_index": 9,
+                "start": 3746,
+                "text": "membership among neighbors within each cluster and compare the scores\nwith category labels shuffled among words of similar length (Appendix C.2).\nRendering.Every word, name, and pseudoword is rendered on the same 96 ImageNet-1k validation\nbackgrounds with no detected text. The 24 settings combine six fonts with four vertical position\n4"
+              },
+              {
+                "end": 558,
+                "page": 5,
+                "section": "Words And Images",
+                "section_index": 10,
+                "start": 0,
+                "text": "Preprint\nbands and vary size, color, and backing. Each setting is used on four backgrounds. Typography\nand text center are fixed across words on each background, so words are compared under the same\nrendering conditions.\nControl image.Each word image has a control with the same background, position, color, and\nbacking. Fourier phase randomization replaces the letters' opacity mask with a textured patch in\nthe same bounding box. Subtracting their representations measures the response to intact lettering\nrelative to this matched overlay. Averaging these "
+              }
+            ],
+            "text": "membership among neighbors within each cluster and compare the scores\nwith category labels shuffled among words of similar length (Appendix C.2).\nRendering.Every word, name, and pseudoword is rendered on the same 96 ImageNet-1k validation\nbackgrounds with no detected text. The 24 settings combine six fonts with four vertical position\n4\nPreprint\nbands and vary size, color, and backing. Each setting is used on four backgrounds. Typography\nand text center are fixed across words on each background, so words are compared under the same\nrendering conditions.\nControl image.Each word image has a control with the same background, position, color, and\nbacking. Fourier phase randomization replaces the letters' opacity mask with a textured patch in\nthe same bounding box. Subtracting their representations measures the response to intact lettering\nrelative to this matched overlay. Averaging these "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0023"
+        ],
+        "excerpt": "Word directions.Let S index the 96 backgrounds and xs denote background image s. For a word,\nname, or pseudoword w, write xs \u2295w for its word image, where \u2295 denotes rendering with the settings\nassigned to that background. The matched control is xs \u2295\u02dcws, where \u02dcws denotes the phase-scrambled\nopacity mask of the lettering for word w on background s. Theword direction \u03c4w is the average\ndifference between the word and control representations, centered over vocabularyV:\n\u02c6\u03c4w = 1|S| Xs\u2208S\u0002 f(x s \u2295w)\u2212f(x s \u2295\u02dcws) \u0003, \u03c4 w = \u02c6\u03c4w \u2212 1|V| Xv\u2208V \u02c6\u03c4v,(1)\nHere, \u02c6\u03c4w is the intermediate, uncentered difference vector. For lexical and cross-encoder comparisons,\nV contains 1,481 words and names and 80 pseudowords. For word-class comparisons, it contains the\n200 class names. The uncentered estimate is a mean of paired differences, as in difference-in-means\nprobes (Rimsky et al., 2024; Marks & Tegmark, 2024) and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Word And Visual Directions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2890f4c9e1af45f04fb1aa21da5aab30bb2441cb671a11367063bc537055515a",
+            "evidence_id": "Ecac3edd73e996f01-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Word And Visual Directions",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 5,
+                "section": "Word And Visual Directions",
+                "section_index": 11,
+                "start": 0,
+                "text": "Word directions.Let S index the 96 backgrounds and xs denote background image s. For a word,\nname, or pseudoword w, write xs \u2295w for its word image, where \u2295 denotes rendering with the settings\nassigned to that background. The matched control is xs \u2295\u02dcws, where \u02dcws denotes the phase-scrambled\nopacity mask of the lettering for word w on background s. Theword direction \u03c4w is the average\ndifference between the word and control representations, centered over vocabularyV:\n\u02c6\u03c4w = 1|S| Xs\u2208S\u0002 f(x s \u2295w)\u2212f(x s \u2295\u02dcws) \u0003, \u03c4 w = \u02c6\u03c4w \u2212 1|V| Xv\u2208V \u02c6\u03c4v,(1)\nHere, \u02c6\u03c4w is the intermediate, uncentered difference vector. For lexical and cross-encoder comparisons,\nV contains 1,481 words and names and 80 pseudowords. For word-class comparisons, it contains the\n200 class names. The uncentered estimate is a mean of paired differences, as in difference-in-means\nprobes (Rimsky et al., 2024; Marks & Tegmark, 2024) and "
+              }
+            ],
+            "text": "Word directions.Let S index the 96 backgrounds and xs denote background image s. For a word,\nname, or pseudoword w, write xs \u2295w for its word image, where \u2295 denotes rendering with the settings\nassigned to that background. The matched control is xs \u2295\u02dcws, where \u02dcws denotes the phase-scrambled\nopacity mask of the lettering for word w on background s. Theword direction \u03c4w is the average\ndifference between the word and control representations, centered over vocabularyV:\n\u02c6\u03c4w = 1|S| Xs\u2208S\u0002 f(x s \u2295w)\u2212f(x s \u2295\u02dcws) \u0003, \u03c4 w = \u02c6\u03c4w \u2212 1|V| Xv\u2208V \u02c6\u03c4v,(1)\nHere, \u02c6\u03c4w is the intermediate, uncentered difference vector. For lexical and cross-encoder comparisons,\nV contains 1,481 words and names and 80 pseudowords. For word-class comparisons, it contains the\n200 class names. The uncentered estimate is a mean of paired differences, as in difference-in-means\nprobes (Rimsky et al., 2024; Marks & Tegmark, 2024) and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0024"
+        ],
+        "excerpt": "concept directions under the linear\nrepresentation hypothesis (Park et al., 2024). The matched control is used to improve signal-to-noise\nby controlling for background and rendering effects. Directly averaging the word-image embeddings\nwithout control subtraction leads to the same qualitative conclusions.\nVisual directions.For a class c, let Ic index its retained class images xi. Their uncentered class\nmean is\u02c6\u03bdc. Centering it over the setCof all 1,000 classes gives thevisual direction\u03bd c:\n\u02c6\u03bdc = 1|Ic| Xi\u2208Ic f(x i), \u03bd c = \u02c6\u03bdc \u2212 1|C| Xc\u2032\u2208C \u02c6\u03bdc\u2032.(2)\nCentering over all 1,000 classes keeps the reference fixed when we choose the 200 classes with\nsingle-word names. The resulting visual direction is the difference between that class's mean and the\nmean of all the classes (Kim et al., 2018). Figure 2 compares the word and visual directions fortiger.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Word And Visual Directions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "80affaeee1f740c05fad8402c1bd82ecbfba37ab6eded75c4362fede9c5bc0f6",
+            "evidence_id": "Ecac3edd73e996f01-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Word And Visual Directions",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1750,
+                "page": 5,
+                "section": "Word And Visual Directions",
+                "section_index": 11,
+                "start": 898,
+                "text": "concept directions under the linear\nrepresentation hypothesis (Park et al., 2024). The matched control is used to improve signal-to-noise\nby controlling for background and rendering effects. Directly averaging the word-image embeddings\nwithout control subtraction leads to the same qualitative conclusions.\nVisual directions.For a class c, let Ic index its retained class images xi. Their uncentered class\nmean is\u02c6\u03bdc. Centering it over the setCof all 1,000 classes gives thevisual direction\u03bd c:\n\u02c6\u03bdc = 1|Ic| Xi\u2208Ic f(x i), \u03bd c = \u02c6\u03bdc \u2212 1|C| Xc\u2032\u2208C \u02c6\u03bdc\u2032.(2)\nCentering over all 1,000 classes keeps the reference fixed when we choose the 200 classes with\nsingle-word names. The resulting visual direction is the difference between that class's mean and the\nmean of all the classes (Kim et al., 2018). Figure 2 compares the word and visual directions fortiger."
+              }
+            ],
+            "text": "concept directions under the linear\nrepresentation hypothesis (Park et al., 2024). The matched control is used to improve signal-to-noise\nby controlling for background and rendering effects. Directly averaging the word-image embeddings\nwithout control subtraction leads to the same qualitative conclusions.\nVisual directions.For a class c, let Ic index its retained class images xi. Their uncentered class\nmean is\u02c6\u03bdc. Centering it over the setCof all 1,000 classes gives thevisual direction\u03bd c:\n\u02c6\u03bdc = 1|Ic| Xi\u2208Ic f(x i), \u03bd c = \u02c6\u03bdc \u2212 1|C| Xc\u2032\u2208C \u02c6\u03bdc\u2032.(2)\nCentering over all 1,000 classes keeps the reference fixed when we choose the 200 classes with\nsingle-word names. The resulting visual direction is the difference between that class's mean and the\nmean of all the classes (Kim et al., 2018). Figure 2 compares the word and visual directions fortiger."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0027"
+        ],
+        "excerpt": "Encoders.We compare vision models' word directions with word representations from Qwen3-\nEmbedding-0.6B, -4B, and -8B for text (Zhang et al., 2025), and w2v-BERT 2.0 for speech (SEAM-\nLESS Communication Team et al., 2025). For text, each word, name, and pseudoword is placed in\n5\nPreprint\nTable 1:DINOv3-H and DINOv3-7B are comparable to CLIP-B.Neighbor purity is the fraction\nof the ten nearest neighbors sharing a noun category or brand industry; top-10 accuracy is the fraction\nof paired targets retrieved among the ten nearest vocabulary items. Underlining marks a value above\nthe untrained ViT-B by more than twice the standard error of the difference, bold marks column\nmaxima, and small numbers are standard errors over words or pairs (Appendix B).\nNeighbor purity Top-10 accuracy\nModel Nouns Brands Capital Synonym One-edit word Plural or base\nDINOv3-B 0.194\u00b1.012 0.184\u00b1.016 0.000\u00b1.000 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Alignment And Finetuning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5ad073f5fceae9fa500aad54915303b38053a5ad36070d3787e23c5f81a7558b",
+            "evidence_id": "Ecac3edd73e996f01-B0027",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Alignment And Finetuning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 279,
+                "page": 5,
+                "section": "Alignment And Finetuning",
+                "section_index": 13,
+                "start": 0,
+                "text": "Encoders.We compare vision models' word directions with word representations from Qwen3-\nEmbedding-0.6B, -4B, and -8B for text (Zhang et al., 2025), and w2v-BERT 2.0 for speech (SEAM-\nLESS Communication Team et al., 2025). For text, each word, name, and pseudoword is placed in\n5"
+              },
+              {
+                "end": 614,
+                "page": 6,
+                "section": "Alignment And Finetuning",
+                "section_index": 14,
+                "start": 0,
+                "text": "Preprint\nTable 1:DINOv3-H and DINOv3-7B are comparable to CLIP-B.Neighbor purity is the fraction\nof the ten nearest neighbors sharing a noun category or brand industry; top-10 accuracy is the fraction\nof paired targets retrieved among the ten nearest vocabulary items. Underlining marks a value above\nthe untrained ViT-B by more than twice the standard error of the difference, bold marks column\nmaxima, and small numbers are standard errors over words or pairs (Appendix B).\nNeighbor purity Top-10 accuracy\nModel Nouns Brands Capital Synonym One-edit word Plural or base\nDINOv3-B 0.194\u00b1.012 0.184\u00b1.016 0.000\u00b1.000 "
+              }
+            ],
+            "text": "Encoders.We compare vision models' word directions with word representations from Qwen3-\nEmbedding-0.6B, -4B, and -8B for text (Zhang et al., 2025), and w2v-BERT 2.0 for speech (SEAM-\nLESS Communication Team et al., 2025). For text, each word, name, and pseudoword is placed in\n5\nPreprint\nTable 1:DINOv3-H and DINOv3-7B are comparable to CLIP-B.Neighbor purity is the fraction\nof the ten nearest neighbors sharing a noun category or brand industry; top-10 accuracy is the fraction\nof paired targets retrieved among the ten nearest vocabulary items. Underlining marks a value above\nthe untrained ViT-B by more than twice the standard error of the difference, bold marks column\nmaxima, and small numbers are standard errors over words or pairs (Appendix B).\nNeighbor purity Top-10 accuracy\nModel Nouns Brands Capital Synonym One-edit word Plural or base\nDINOv3-B 0.194\u00b1.012 0.184\u00b1.016 0.000\u00b1.000 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0028"
+        ],
+        "excerpt": "0.000\u00b1.000 0.653 \u00b1.039 0.333 \u00b1.054\nDINOv3-L 0.223 \u00b1.014 0.235\u00b1.023 0.117 \u00b1.041 0.013\u00b1.009 0.820 \u00b1.031 0.733 \u00b1.051\nDINOv3-H 0.269 \u00b1.017 0.351 \u00b1.027 0.600 \u00b1.063 0.060 \u00b1.019 0.607 \u00b1.040 0.813 \u00b1.045\nDINOv3-7B 0.308 \u00b1.020 0.334 \u00b1.031 0.600 \u00b1.063 0.100 \u00b1.024 0.620 \u00b1.040 0.853 \u00b1.041\nWeb-DINO-1B 0.187\u00b1.0120.167\u00b1.0160.000\u00b1.0000.007\u00b1.0070.547 \u00b1.0410.293 \u00b1.053\nDINOv2-B 0.179\u00b1.012 0.164\u00b1.015 0.000\u00b1.000 0.000\u00b1.000 0.353\u00b1.039 0.067\u00b1.029\nDINOv2-L 0.174\u00b1.011 0.167\u00b1.015 0.017\u00b1.017 0.007\u00b1.007 0.440\u00b1.041 0.093\u00b1.034\nDINOv2-G 0.181\u00b1.011 0.173\u00b1.014 0.000\u00b1.000 0.013\u00b1.009 0.367\u00b1.039 0.080\u00b1.031\nMAE-B 0.182\u00b1.0110.182\u00b1.0150.000\u00b1.0000.000\u00b1.0000.507 \u00b1.0410.040\u00b1.023\nMAE-L 0.186\u00b1.0120.188\u00b1.0140.000\u00b1.0000.000\u00b1.0000.547 \u00b1.0410.080\u00b1.031\nMAE-H 0.180\u00b1.0120.183\u00b1.0140.017\u00b1.0170.007\u00b1.0070.553 \u00b1.0410.093\u00b1.034\nCLIP-B 0.297 \u00b1.019 0.343 \u00b1.027 0.550 \u00b1.064 0.200 \u00b1.033 0.853 \u00b1.029 0.987 \u00b1.013\nSigLIP2-B 0.318 \u00b1.019 0.299 \u00b1.025 0.183 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Alignment And Finetuning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a7cc980bc9a9a978c6a9caf1e45ed4fd33c26b0b2730d2d4e92d88583d0d7cb9",
+            "evidence_id": "Ecac3edd73e996f01-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Alignment And Finetuning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1514,
+                "page": 6,
+                "section": "Alignment And Finetuning",
+                "section_index": 14,
+                "start": 614,
+                "text": "0.000\u00b1.000 0.653 \u00b1.039 0.333 \u00b1.054\nDINOv3-L 0.223 \u00b1.014 0.235\u00b1.023 0.117 \u00b1.041 0.013\u00b1.009 0.820 \u00b1.031 0.733 \u00b1.051\nDINOv3-H 0.269 \u00b1.017 0.351 \u00b1.027 0.600 \u00b1.063 0.060 \u00b1.019 0.607 \u00b1.040 0.813 \u00b1.045\nDINOv3-7B 0.308 \u00b1.020 0.334 \u00b1.031 0.600 \u00b1.063 0.100 \u00b1.024 0.620 \u00b1.040 0.853 \u00b1.041\nWeb-DINO-1B 0.187\u00b1.0120.167\u00b1.0160.000\u00b1.0000.007\u00b1.0070.547 \u00b1.0410.293 \u00b1.053\nDINOv2-B 0.179\u00b1.012 0.164\u00b1.015 0.000\u00b1.000 0.000\u00b1.000 0.353\u00b1.039 0.067\u00b1.029\nDINOv2-L 0.174\u00b1.011 0.167\u00b1.015 0.017\u00b1.017 0.007\u00b1.007 0.440\u00b1.041 0.093\u00b1.034\nDINOv2-G 0.181\u00b1.011 0.173\u00b1.014 0.000\u00b1.000 0.013\u00b1.009 0.367\u00b1.039 0.080\u00b1.031\nMAE-B 0.182\u00b1.0110.182\u00b1.0150.000\u00b1.0000.000\u00b1.0000.507 \u00b1.0410.040\u00b1.023\nMAE-L 0.186\u00b1.0120.188\u00b1.0140.000\u00b1.0000.000\u00b1.0000.547 \u00b1.0410.080\u00b1.031\nMAE-H 0.180\u00b1.0120.183\u00b1.0140.017\u00b1.0170.007\u00b1.0070.553 \u00b1.0410.093\u00b1.034\nCLIP-B 0.297 \u00b1.019 0.343 \u00b1.027 0.550 \u00b1.064 0.200 \u00b1.033 0.853 \u00b1.029 0.987 \u00b1.013\nSigLIP2-B 0.318 \u00b1.019 0.299 \u00b1.025 0.183 "
+              }
+            ],
+            "text": "0.000\u00b1.000 0.653 \u00b1.039 0.333 \u00b1.054\nDINOv3-L 0.223 \u00b1.014 0.235\u00b1.023 0.117 \u00b1.041 0.013\u00b1.009 0.820 \u00b1.031 0.733 \u00b1.051\nDINOv3-H 0.269 \u00b1.017 0.351 \u00b1.027 0.600 \u00b1.063 0.060 \u00b1.019 0.607 \u00b1.040 0.813 \u00b1.045\nDINOv3-7B 0.308 \u00b1.020 0.334 \u00b1.031 0.600 \u00b1.063 0.100 \u00b1.024 0.620 \u00b1.040 0.853 \u00b1.041\nWeb-DINO-1B 0.187\u00b1.0120.167\u00b1.0160.000\u00b1.0000.007\u00b1.0070.547 \u00b1.0410.293 \u00b1.053\nDINOv2-B 0.179\u00b1.012 0.164\u00b1.015 0.000\u00b1.000 0.000\u00b1.000 0.353\u00b1.039 0.067\u00b1.029\nDINOv2-L 0.174\u00b1.011 0.167\u00b1.015 0.017\u00b1.017 0.007\u00b1.007 0.440\u00b1.041 0.093\u00b1.034\nDINOv2-G 0.181\u00b1.011 0.173\u00b1.014 0.000\u00b1.000 0.013\u00b1.009 0.367\u00b1.039 0.080\u00b1.031\nMAE-B 0.182\u00b1.0110.182\u00b1.0150.000\u00b1.0000.000\u00b1.0000.507 \u00b1.0410.040\u00b1.023\nMAE-L 0.186\u00b1.0120.188\u00b1.0140.000\u00b1.0000.000\u00b1.0000.547 \u00b1.0410.080\u00b1.031\nMAE-H 0.180\u00b1.0120.183\u00b1.0140.017\u00b1.0170.007\u00b1.0070.553 \u00b1.0410.093\u00b1.034\nCLIP-B 0.297 \u00b1.019 0.343 \u00b1.027 0.550 \u00b1.064 0.200 \u00b1.033 0.853 \u00b1.029 0.987 \u00b1.013\nSigLIP2-B 0.318 \u00b1.019 0.299 \u00b1.025 0.183 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0032"
+        ],
+        "excerpt": "Our first experiment evaluates whether word directions of rendered words are semantically structured;\nresults are shown in Table 1, Figure 1a, and Appendix C.\nSemantic relations.DINOv3-H and DINOv3-7B group rendered words by meaning. In both, 60%\nof countries have their capital among their ten nearest neighbors (c.f. 55% in CLIP-B, with language\n6\nPreprint\nsupervision, but 0% for DINOv2), and nouns and brands lie near words of their own category about\nas often as in CLIP-B. DINOv3-L shows a weaker version of the same structure. The other eight\nself-supervised models, Web-DINO-1B among them, perform on par with the untrained ViT-B, using\nonly structural inductive bias. However, synonym retrival is limited in vision models: top-10 accuracy\nis 20% in CLIP-B and 10% in DINOv3-7B, compared with 69\u201374% in the Qwen3 text encoders given\nthe vocabulary as text. Across depth, noun purity rises ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Lexicalstructure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0f64671e301d0e4f2326228991b888eb2df718c029ec17fc6a365904b328cb82",
+            "evidence_id": "Ecac3edd73e996f01-B0032",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Lexicalstructure",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 349,
+                "page": 6,
+                "section": "Lexicalstructure",
+                "section_index": 15,
+                "start": 0,
+                "text": "Our first experiment evaluates whether word directions of rendered words are semantically structured;\nresults are shown in Table 1, Figure 1a, and Appendix C.\nSemantic relations.DINOv3-H and DINOv3-7B group rendered words by meaning. In both, 60%\nof countries have their capital among their ten nearest neighbors (c.f. 55% in CLIP-B, with language\n6"
+              },
+              {
+                "end": 547,
+                "page": 7,
+                "section": "Lexicalstructure",
+                "section_index": 16,
+                "start": 0,
+                "text": "Preprint\nsupervision, but 0% for DINOv2), and nouns and brands lie near words of their own category about\nas often as in CLIP-B. DINOv3-L shows a weaker version of the same structure. The other eight\nself-supervised models, Web-DINO-1B among them, perform on par with the untrained ViT-B, using\nonly structural inductive bias. However, synonym retrival is limited in vision models: top-10 accuracy\nis 20% in CLIP-B and 10% in DINOv3-7B, compared with 69\u201374% in the Qwen3 text encoders given\nthe vocabulary as text. Across depth, noun purity rises "
+              }
+            ],
+            "text": "Our first experiment evaluates whether word directions of rendered words are semantically structured;\nresults are shown in Table 1, Figure 1a, and Appendix C.\nSemantic relations.DINOv3-H and DINOv3-7B group rendered words by meaning. In both, 60%\nof countries have their capital among their ten nearest neighbors (c.f. 55% in CLIP-B, with language\n6\nPreprint\nsupervision, but 0% for DINOv2), and nouns and brands lie near words of their own category about\nas often as in CLIP-B. DINOv3-L shows a weaker version of the same structure. The other eight\nself-supervised models, Web-DINO-1B among them, perform on par with the untrained ViT-B, using\nonly structural inductive bias. However, synonym retrival is limited in vision models: top-10 accuracy\nis 20% in CLIP-B and 10% in DINOv3-7B, compared with 69\u201374% in the Qwen3 text encoders given\nthe vocabulary as text. Across depth, noun purity rises "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0034"
+        ],
+        "excerpt": "than by a general ability to recognize similar spellings. Insertions and deletions\nprovide less visual overlap because they change the word width and, with centered text, shift the\nremaining letters (Appendix C.1).\nSensitivity to word form also does not predict semantic retrieval. SigLIP2-B achieves 100% top-10\naccuracy for plural or base partners but only 18% for capitals, compared with 60% capital retrieval\nin DINOv3-H. Conversely, the Qwen3 text encoders achieve 69\u201374% synonym accuracy but only\n21\u201326% one-edit accuracy. Thus, strong retrieval of spelling-related words is neither necessary\nnor sufficient for strong semantic retrieval. We therefore interpret semantic structure relative to the\nuntrained ViT-B baseline, which captures similarity arising from visual form alone.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Lexicalstructure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "40bca6d7af7b6b0e3fe97e0c15738487c5665ad719d586fe75762fa4df1072e4",
+            "evidence_id": "Ecac3edd73e996f01-B0034",
+            "pages": [
+              7
+            ],
+            "section": "Lexicalstructure",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2231,
+                "page": 7,
+                "section": "Lexicalstructure",
+                "section_index": 16,
+                "start": 1445,
+                "text": "than by a general ability to recognize similar spellings. Insertions and deletions\nprovide less visual overlap because they change the word width and, with centered text, shift the\nremaining letters (Appendix C.1).\nSensitivity to word form also does not predict semantic retrieval. SigLIP2-B achieves 100% top-10\naccuracy for plural or base partners but only 18% for capitals, compared with 60% capital retrieval\nin DINOv3-H. Conversely, the Qwen3 text encoders achieve 69\u201374% synonym accuracy but only\n21\u201326% one-edit accuracy. Thus, strong retrieval of spelling-related words is neither necessary\nnor sufficient for strong semantic retrieval. We therefore interpret semantic structure relative to the\nuntrained ViT-B baseline, which captures similarity arising from visual form alone."
+              }
+            ],
+            "text": "than by a general ability to recognize similar spellings. Insertions and deletions\nprovide less visual overlap because they change the word width and, with centered text, shift the\nremaining letters (Appendix C.1).\nSensitivity to word form also does not predict semantic retrieval. SigLIP2-B achieves 100% top-10\naccuracy for plural or base partners but only 18% for capitals, compared with 60% capital retrieval\nin DINOv3-H. Conversely, the Qwen3 text encoders achieve 69\u201374% synonym accuracy but only\n21\u201326% one-edit accuracy. Thus, strong retrieval of spelling-related words is neither necessary\nnor sufficient for strong semantic retrieval. We therefore interpret semantic structure relative to the\nuntrained ViT-B baseline, which captures similarity arising from visual form alone."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0035"
+        ],
+        "excerpt": "We test whether word directions \u03c4w align with their corresponding visual class directions \u03bdw by\nmeasuring cosine similarity in the same space. Results are in Table 2; additional experiments and\nablations are in Appendix D.3\u2013D.5.\nNamed classes.DINOv3-H and DINOv3-7B show substantial word\u2013class alignment; DINOv3-H\nis on par with CLIP-B despite no alignment signal during training. Its word direction ranks the named\nTable 2:Word directions in DINOv3-H and DINOv3-7B align with the classes they name.\nMatched cosine similarity is the mean cosine similarity of the 200 word directions with the visual\ndirections of the classes they name. Word-to-class ranks the 1,000 visual directions for a word\ndirection; class-to-word ranks the 200 word directions for a named class; top-10 accuracy is the share\nof queries whose target is among the ten nearest, and median rank is the median of the target's ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Word-Classalignment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "57ce9937374299c9372f72652ef2fd3c7f7fa8005ea55f679d617027b2a8e86e",
+            "evidence_id": "Ecac3edd73e996f01-B0035",
+            "pages": [
+              7
+            ],
+            "section": "Word-Classalignment",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 7,
+                "section": "Word-Classalignment",
+                "section_index": 17,
+                "start": 0,
+                "text": "We test whether word directions \u03c4w align with their corresponding visual class directions \u03bdw by\nmeasuring cosine similarity in the same space. Results are in Table 2; additional experiments and\nablations are in Appendix D.3\u2013D.5.\nNamed classes.DINOv3-H and DINOv3-7B show substantial word\u2013class alignment; DINOv3-H\nis on par with CLIP-B despite no alignment signal during training. Its word direction ranks the named\nTable 2:Word directions in DINOv3-H and DINOv3-7B align with the classes they name.\nMatched cosine similarity is the mean cosine similarity of the 200 word directions with the visual\ndirections of the classes they name. Word-to-class ranks the 1,000 visual directions for a word\ndirection; class-to-word ranks the 200 word directions for a named class; top-10 accuracy is the share\nof queries whose target is among the ten nearest, and median rank is the median of the target's "
+              }
+            ],
+            "text": "We test whether word directions \u03c4w align with their corresponding visual class directions \u03bdw by\nmeasuring cosine similarity in the same space. Results are in Table 2; additional experiments and\nablations are in Appendix D.3\u2013D.5.\nNamed classes.DINOv3-H and DINOv3-7B show substantial word\u2013class alignment; DINOv3-H\nis on par with CLIP-B despite no alignment signal during training. Its word direction ranks the named\nTable 2:Word directions in DINOv3-H and DINOv3-7B align with the classes they name.\nMatched cosine similarity is the mean cosine similarity of the 200 word directions with the visual\ndirections of the classes they name. Word-to-class ranks the 1,000 visual directions for a word\ndirection; class-to-word ranks the 200 word directions for a named class; top-10 accuracy is the share\nof queries whose target is among the ten nearest, and median rank is the median of the target's "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0036"
+        ],
+        "excerpt": "rank\nover the queries, so a median rank of one means the target is nearest for at least half of them.\nWord to class Class to word\nModel Matched cosine similarity\nTop-10\naccuracy\nMedian\nrank\nTop-10\naccuracy\nMedian\nrank\nDINOv3-B 0.002\u00b1.003 0.010\u00b1.007 486 0.060\u00b1.017 94.5\nDINOv3-L 0.025 \u00b1.004 0.120 \u00b1.023 335 0.180 \u00b1.027 68\nDINOv3-H 0.234 \u00b1.014 0.645 \u00b1.034 1 0.680 \u00b1.033 1\nDINOv3-7B 0.120 \u00b1.012 0.325 \u00b1.033 154 0.405 \u00b1.035 32.5\nWeb-DINO-1B 0.001\u00b1.0020.020\u00b1.010477 0.045\u00b1.01595\nDINOv2-B -0.002\u00b1.003 0.010\u00b1.007 527.5 0.060\u00b1.017 103.5\nDINOv2-L -0.001\u00b1.002 0.000\u00b1.000 485 0.045\u00b1.015 99.5\nDINOv2-G 0.001\u00b1.002 0.005\u00b1.005 463 0.045\u00b1.015 94\nMAE-B -0.011\u00b1.0060.005\u00b1.005559 0.020\u00b1.010113\nMAE-L 0.003\u00b1.0040.015\u00b1.009491 0.045\u00b1.01598.5\nMAE-H 0.002\u00b1.0040.005\u00b1.005461.5 0.050\u00b1.01596.5\nCLIP-B 0.237 \u00b1.010 0.855 \u00b1.025 1 0.845 \u00b1.026 1\nSigLIP2-B 0.184 \u00b1.009 0.630 \u00b1.034 2 0.735 \u00b1.031 2\nUntrained ViT-B ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Word-Classalignment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b1929c880c6a689688636b29f9a146dc752fe2390b0283f139ed281e826db2a4",
+            "evidence_id": "Ecac3edd73e996f01-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Word-Classalignment",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1774,
+                "page": 7,
+                "section": "Word-Classalignment",
+                "section_index": 17,
+                "start": 894,
+                "text": "rank\nover the queries, so a median rank of one means the target is nearest for at least half of them.\nWord to class Class to word\nModel Matched cosine similarity\nTop-10\naccuracy\nMedian\nrank\nTop-10\naccuracy\nMedian\nrank\nDINOv3-B 0.002\u00b1.003 0.010\u00b1.007 486 0.060\u00b1.017 94.5\nDINOv3-L 0.025 \u00b1.004 0.120 \u00b1.023 335 0.180 \u00b1.027 68\nDINOv3-H 0.234 \u00b1.014 0.645 \u00b1.034 1 0.680 \u00b1.033 1\nDINOv3-7B 0.120 \u00b1.012 0.325 \u00b1.033 154 0.405 \u00b1.035 32.5\nWeb-DINO-1B 0.001\u00b1.0020.020\u00b1.010477 0.045\u00b1.01595\nDINOv2-B -0.002\u00b1.003 0.010\u00b1.007 527.5 0.060\u00b1.017 103.5\nDINOv2-L -0.001\u00b1.002 0.000\u00b1.000 485 0.045\u00b1.015 99.5\nDINOv2-G 0.001\u00b1.002 0.005\u00b1.005 463 0.045\u00b1.015 94\nMAE-B -0.011\u00b1.0060.005\u00b1.005559 0.020\u00b1.010113\nMAE-L 0.003\u00b1.0040.015\u00b1.009491 0.045\u00b1.01598.5\nMAE-H 0.002\u00b1.0040.005\u00b1.005461.5 0.050\u00b1.01596.5\nCLIP-B 0.237 \u00b1.010 0.855 \u00b1.025 1 0.845 \u00b1.026 1\nSigLIP2-B 0.184 \u00b1.009 0.630 \u00b1.034 2 0.735 \u00b1.031 2\nUntrained ViT-B "
+              }
+            ],
+            "text": "rank\nover the queries, so a median rank of one means the target is nearest for at least half of them.\nWord to class Class to word\nModel Matched cosine similarity\nTop-10\naccuracy\nMedian\nrank\nTop-10\naccuracy\nMedian\nrank\nDINOv3-B 0.002\u00b1.003 0.010\u00b1.007 486 0.060\u00b1.017 94.5\nDINOv3-L 0.025 \u00b1.004 0.120 \u00b1.023 335 0.180 \u00b1.027 68\nDINOv3-H 0.234 \u00b1.014 0.645 \u00b1.034 1 0.680 \u00b1.033 1\nDINOv3-7B 0.120 \u00b1.012 0.325 \u00b1.033 154 0.405 \u00b1.035 32.5\nWeb-DINO-1B 0.001\u00b1.0020.020\u00b1.010477 0.045\u00b1.01595\nDINOv2-B -0.002\u00b1.003 0.010\u00b1.007 527.5 0.060\u00b1.017 103.5\nDINOv2-L -0.001\u00b1.002 0.000\u00b1.000 485 0.045\u00b1.015 99.5\nDINOv2-G 0.001\u00b1.002 0.005\u00b1.005 463 0.045\u00b1.015 94\nMAE-B -0.011\u00b1.0060.005\u00b1.005559 0.020\u00b1.010113\nMAE-L 0.003\u00b1.0040.015\u00b1.009491 0.045\u00b1.01598.5\nMAE-H 0.002\u00b1.0040.005\u00b1.005461.5 0.050\u00b1.01596.5\nCLIP-B 0.237 \u00b1.010 0.855 \u00b1.025 1 0.845 \u00b1.026 1\nSigLIP2-B 0.184 \u00b1.009 0.630 \u00b1.034 2 0.735 \u00b1.031 2\nUntrained ViT-B "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0038"
+        ],
+        "excerpt": ".6 .7\nFigure 3:DINOv3-H and DINOv3-7B are most aligned with text encoders.Each cell compares a\ncolumn model and row encoder on the lexical vocabulary; the image rows, CLIP-B and SigLIP2-B,\nreceive rendered word images. The upper triangle shows mutual 10-NN alignment (shared nearest\nneighbors; chance 0.006), and the lower triangle shows linear CKA between centered similarity\nmatrices (chance 0.005\u20130.052). Each measure uses a logarithmic scale, outlines mark row maxima,\nand every cell exceeds a null that relabels words of equal length (Appendix B).\nclass first among 1,000 for over half of the 200 class names (median rank = 1). This alignment\npersists when visual directions are estimated only from images with no detected text (0.230 versus\n0.234 with all images; Appendix D.3). SigLIP2-B also aligns, and DINOv3-L weakly. The remaining\nmodels show no significant matched alignment despite ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Word-Classalignment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5060e0f709c3e7347c002a6c192b274ec6cf558713ae9f0200e70557d5774cc6",
+            "evidence_id": "Ecac3edd73e996f01-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Word-Classalignment",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1730,
+                "page": 8,
+                "section": "Word-Classalignment",
+                "section_index": 18,
+                "start": 834,
+                "text": ".6 .7\nFigure 3:DINOv3-H and DINOv3-7B are most aligned with text encoders.Each cell compares a\ncolumn model and row encoder on the lexical vocabulary; the image rows, CLIP-B and SigLIP2-B,\nreceive rendered word images. The upper triangle shows mutual 10-NN alignment (shared nearest\nneighbors; chance 0.006), and the lower triangle shows linear CKA between centered similarity\nmatrices (chance 0.005\u20130.052). Each measure uses a logarithmic scale, outlines mark row maxima,\nand every cell exceeds a null that relabels words of equal length (Appendix B).\nclass first among 1,000 for over half of the 200 class names (median rank = 1). This alignment\npersists when visual directions are estimated only from images with no detected text (0.230 versus\n0.234 with all images; Appendix D.3). SigLIP2-B also aligns, and DINOv3-L weakly. The remaining\nmodels show no significant matched alignment despite "
+              }
+            ],
+            "text": ".6 .7\nFigure 3:DINOv3-H and DINOv3-7B are most aligned with text encoders.Each cell compares a\ncolumn model and row encoder on the lexical vocabulary; the image rows, CLIP-B and SigLIP2-B,\nreceive rendered word images. The upper triangle shows mutual 10-NN alignment (shared nearest\nneighbors; chance 0.006), and the lower triangle shows linear CKA between centered similarity\nmatrices (chance 0.005\u20130.052). Each measure uses a logarithmic scale, outlines mark row maxima,\nand every cell exceeds a null that relabels words of equal length (Appendix B).\nclass first among 1,000 for over half of the 200 class names (median rank = 1). This alignment\npersists when visual directions are estimated only from images with no detected text (0.230 versus\n0.234 with all images; Appendix D.3). SigLIP2-B also aligns, and DINOv3-L weakly. The remaining\nmodels show no significant matched alignment despite "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0043"
+        ],
+        "excerpt": "The scope and possible sources of semantic knowledge.DINOv3-H and DINOv3-7B exhibit\nlexical semantic structure connecting written words to one another and to depicted object categories.\nNot all relations are equally strong: Category membership and country-capital associations are more\nclearly expressed than synonymy. Similarity and association are distinct (Hill et al., 2015), so factual\nrelationships do not imply equally strong synonym knowledge. These findings do not establish\ntaxonomic hierarchies or sentence-level composition. Nor do consistent offsets improve analogy\nretrieval over the country-only baseline, reinforcing the distinction between geometric regularity and\nanalogical reasoning (Linzen, 2016).\nThe source of this structure remains unresolved. Words can acquire associations from surrounding\nvisual content or through text embedded in frames; the latter could provide ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "416e8824e397ea98c052f4aa68c0370237a750442c42c47ef74669f7826ac4df",
+            "evidence_id": "Ecac3edd73e996f01-B0043",
+            "pages": [
+              9
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 9,
+                "section": "Discussion",
+                "section_index": 21,
+                "start": 0,
+                "text": "The scope and possible sources of semantic knowledge.DINOv3-H and DINOv3-7B exhibit\nlexical semantic structure connecting written words to one another and to depicted object categories.\nNot all relations are equally strong: Category membership and country-capital associations are more\nclearly expressed than synonymy. Similarity and association are distinct (Hill et al., 2015), so factual\nrelationships do not imply equally strong synonym knowledge. These findings do not establish\ntaxonomic hierarchies or sentence-level composition. Nor do consistent offsets improve analogy\nretrieval over the country-only baseline, reinforcing the distinction between geometric regularity and\nanalogical reasoning (Linzen, 2016).\nThe source of this structure remains unresolved. Words can acquire associations from surrounding\nvisual content or through text embedded in frames; the latter could provide "
+              }
+            ],
+            "text": "The scope and possible sources of semantic knowledge.DINOv3-H and DINOv3-7B exhibit\nlexical semantic structure connecting written words to one another and to depicted object categories.\nNot all relations are equally strong: Category membership and country-capital associations are more\nclearly expressed than synonymy. Similarity and association are distinct (Hill et al., 2015), so factual\nrelationships do not imply equally strong synonym knowledge. These findings do not establish\ntaxonomic hierarchies or sentence-level composition. Nor do consistent offsets improve analogy\nretrieval over the country-only baseline, reinforcing the distinction between geometric regularity and\nanalogical reasoning (Linzen, 2016).\nThe source of this structure remains unresolved. Words can acquire associations from surrounding\nvisual content or through text embedded in frames; the latter could provide "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0044"
+        ],
+        "excerpt": "linguistic co-occurrence\nsignals even for semantic relations not directly instantiated in the depicted scene. Embedded text\ninfluences CLIP training (Lin et al., 2024); it is also a potential source of semantic information\nin DINOv3's images, which are drawn mainly from public Instagram posts (Sim\u00e9oni et al., 2026).\nImage-only training therefore need not mean learning exclusively from depicted, concrete objects;\nvision models' knowledge of abstract semantics remains an open question.\nWhat finetuning changes.Finetuning improves synonym retrieval and noun purity in DINOv3-H,\nwith little change in the other finetuned models. After text finetuning, just four rendered images per\nword yield higher scores on both measures than all 96 images before finetuning. This is consistent\nwith a partial functional-dormancy interpretation: caption supervision makes the existing lexical\nstructure easier to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "66c15a2d93d45106d90834852e22727a2ebf0893fc24f54c659c960353ee7f42",
+            "evidence_id": "Ecac3edd73e996f01-B0044",
+            "pages": [
+              9
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 9,
+                "section": "Discussion",
+                "section_index": 21,
+                "start": 892,
+                "text": "linguistic co-occurrence\nsignals even for semantic relations not directly instantiated in the depicted scene. Embedded text\ninfluences CLIP training (Lin et al., 2024); it is also a potential source of semantic information\nin DINOv3's images, which are drawn mainly from public Instagram posts (Sim\u00e9oni et al., 2026).\nImage-only training therefore need not mean learning exclusively from depicted, concrete objects;\nvision models' knowledge of abstract semantics remains an open question.\nWhat finetuning changes.Finetuning improves synonym retrieval and noun purity in DINOv3-H,\nwith little change in the other finetuned models. After text finetuning, just four rendered images per\nword yield higher scores on both measures than all 96 images before finetuning. This is consistent\nwith a partial functional-dormancy interpretation: caption supervision makes the existing lexical\nstructure easier to "
+              }
+            ],
+            "text": "linguistic co-occurrence\nsignals even for semantic relations not directly instantiated in the depicted scene. Embedded text\ninfluences CLIP training (Lin et al., 2024); it is also a potential source of semantic information\nin DINOv3's images, which are drawn mainly from public Instagram posts (Sim\u00e9oni et al., 2026).\nImage-only training therefore need not mean learning exclusively from depicted, concrete objects;\nvision models' knowledge of abstract semantics remains an open question.\nWhat finetuning changes.Finetuning improves synonym retrieval and noun purity in DINOv3-H,\nwith little change in the other finetuned models. After text finetuning, just four rendered images per\nword yield higher scores on both measures than all 96 images before finetuning. This is consistent\nwith a partial functional-dormancy interpretation: caption supervision makes the existing lexical\nstructure easier to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0089"
+        ],
+        "excerpt": "Permutation tests and corrections.Our permutation tests keep the vectors fixed and shuffle\nthe labels or assignments relevant to each measure. For matched cosine similarity, we randomly\nreassign classes to words 2,000 times. For category structure, we shuffle category labels among\nwords of similar length (Appendix C.2). With R random permutations, the one-sided p-value is\n(r+ 1)/(R+ 1), where r counts scores at least as large as the observed score. The two-clue analysis\ninstead evaluates every combination of sign flips across the twelve clue grids, using a two-sided test\n16\nPreprint\nfor the residual and one-sided tests for the other outcomes (Appendix D.5). Tables report uncorrected\np-values. Where indicated, we apply Holm correction separately across all fourteen models in the\nwithin-item comparisons and across the thirteen pretrained models in the two-clue analysis.\nNull for alignment ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16,
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Statistical Tests",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a1a06d25416ea5df68376417a882f98ef55bba5cc3d412da43745192cd6eeed8",
+            "evidence_id": "Ecac3edd73e996f01-B0089",
+            "pages": [
+              16,
+              17
+            ],
+            "section": "Appendix: Statistical Tests",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 580,
+                "page": 16,
+                "section": "Appendix: Statistical Tests",
+                "section_index": 46,
+                "start": 0,
+                "text": "Permutation tests and corrections.Our permutation tests keep the vectors fixed and shuffle\nthe labels or assignments relevant to each measure. For matched cosine similarity, we randomly\nreassign classes to words 2,000 times. For category structure, we shuffle category labels among\nwords of similar length (Appendix C.2). With R random permutations, the one-sided p-value is\n(r+ 1)/(R+ 1), where r counts scores at least as large as the observed score. The two-clue analysis\ninstead evaluates every combination of sign flips across the twelve clue grids, using a two-sided test\n16"
+              },
+              {
+                "end": 319,
+                "page": 17,
+                "section": "Appendix: Statistical Tests",
+                "section_index": 47,
+                "start": 0,
+                "text": "Preprint\nfor the residual and one-sided tests for the other outcomes (Appendix D.5). Tables report uncorrected\np-values. Where indicated, we apply Holm correction separately across all fourteen models in the\nwithin-item comparisons and across the thirteen pretrained models in the two-clue analysis.\nNull for alignment "
+              }
+            ],
+            "text": "Permutation tests and corrections.Our permutation tests keep the vectors fixed and shuffle\nthe labels or assignments relevant to each measure. For matched cosine similarity, we randomly\nreassign classes to words 2,000 times. For category structure, we shuffle category labels among\nwords of similar length (Appendix C.2). With R random permutations, the one-sided p-value is\n(r+ 1)/(R+ 1), where r counts scores at least as large as the observed score. The two-clue analysis\ninstead evaluates every combination of sign flips across the twelve clue grids, using a two-sided test\n16\nPreprint\nfor the residual and one-sided tests for the other outcomes (Appendix D.5). Tables report uncorrected\np-values. Where indicated, we apply Holm correction separately across all fourteen models in the\nwithin-item comparisons and across the thirteen pretrained models in the two-clue analysis.\nNull for alignment "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0116"
+        ],
+        "excerpt": "The class images come from the ImageNet-1k validation split, as do the 96 backgrounds, which\nare left out of the class images. Oquab et al. (2024) report removing near-duplicates of benchmark\nvalidation sets from the DINOv2 pretraining data, so these images are less likely to be in that data.\nSim\u00e9oni et al. (2026) describe the DINOv3 curation as following that work but do not report the same\ndeduplication. Every class keeps at least 49 images, center-cropped and resized to 256 pixels as the\nbackgrounds were.\nTable 8: Word-class alignment at the final layer over the 200 class names. All images is the matched\ncosine similarity. Null mean is the mean over 2,000 random reassignments of classes to words, and p\nis the one-sided permutation probability. No detected text is the same measure over the 195 names\nwhose classes keep at least 32 images with no detected text, with visual directions ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: The Class Images",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3101259679d94a3222e13ae657e6699732c63308aa82312cd7880d89ae06d159",
+            "evidence_id": "Ecac3edd73e996f01-B0116",
+            "pages": [
+              23
+            ],
+            "section": "Appendix: The Class Images",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 23,
+                "section": "Appendix: The Class Images",
+                "section_index": 60,
+                "start": 0,
+                "text": "The class images come from the ImageNet-1k validation split, as do the 96 backgrounds, which\nare left out of the class images. Oquab et al. (2024) report removing near-duplicates of benchmark\nvalidation sets from the DINOv2 pretraining data, so these images are less likely to be in that data.\nSim\u00e9oni et al. (2026) describe the DINOv3 curation as following that work but do not report the same\ndeduplication. Every class keeps at least 49 images, center-cropped and resized to 256 pixels as the\nbackgrounds were.\nTable 8: Word-class alignment at the final layer over the 200 class names. All images is the matched\ncosine similarity. Null mean is the mean over 2,000 random reassignments of classes to words, and p\nis the one-sided permutation probability. No detected text is the same measure over the 195 names\nwhose classes keep at least 32 images with no detected text, with visual directions "
+              }
+            ],
+            "text": "The class images come from the ImageNet-1k validation split, as do the 96 backgrounds, which\nare left out of the class images. Oquab et al. (2024) report removing near-duplicates of benchmark\nvalidation sets from the DINOv2 pretraining data, so these images are less likely to be in that data.\nSim\u00e9oni et al. (2026) describe the DINOv3 curation as following that work but do not report the same\ndeduplication. Every class keeps at least 49 images, center-cropped and resized to 256 pixels as the\nbackgrounds were.\nTable 8: Word-class alignment at the final layer over the 200 class names. All images is the matched\ncosine similarity. Null mean is the mean over 2,000 random reassignments of classes to words, and p\nis the one-sided permutation probability. No detected text is the same measure over the 195 names\nwhose classes keep at least 32 images with no detected text, with visual directions "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.13252",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.13252",
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The manuscript reports independent measurements from held-out lexical benchmarks, ImageNet visual class directions, and frozen external text and speech encoders (Qwen3, w2v-BERT), which corroborate the semantic structure found in DINOv3-H and DINOv3-7B.",
+          "final_evaluation_signal": "Semantic retrieval benchmarks (country-capital, synonym, noun and brand category purity), word-class alignment with ImageNet visual directions, and cross-encoder alignment with frozen text and speech embeddings.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Self-supervised image-only pretraining (DINO self-distillation or masked autoencoding) and contrastive image-text or image-speech finetuning with symmetric InfoNCE loss.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0002",
+          "Ecac3edd73e996f01-B0008",
+          "Ecac3edd73e996f01-B0015",
+          "Ecac3edd73e996f01-B0021",
+          "Ecac3edd73e996f01-B0023",
+          "Ecac3edd73e996f01-B0024",
+          "Ecac3edd73e996f01-B0027",
+          "Ecac3edd73e996f01-B0028",
+          "Ecac3edd73e996f01-B0032",
+          "Ecac3edd73e996f01-B0034",
+          "Ecac3edd73e996f01-B0035",
+          "Ecac3edd73e996f01-B0036",
+          "Ecac3edd73e996f01-B0038",
+          "Ecac3edd73e996f01-B0043",
+          "Ecac3edd73e996f01-B0044",
+          "Ecac3edd73e996f01-B0089",
+          "Ecac3edd73e996f01-B0116"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "2c57b4856c70f5591856f0a3452481661a96249dc58291151dba8501c202d562"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.13252",
+        "claim_evidence_alignment": "Claims are carefully calibrated to word-level and category-level semantic structure rather than sentence comprehension or general reasoning. The manuscript appropriately notes that factual associations and category membership are substantially stronger than synonym retrieval and that broad compositional clue combinations are not supported.",
+        "context_id": "cac3edd73e996f01022811f94a4c6631462424fb6f89aa0007695def9f00c22b",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluations across 14 vision models demonstrate distinct emerging semantic clustering in DINOv3-H/7B across partner retrieval, brand/noun category purity, and ImageNet visual direction alignment. The reported effect sizes markedly exceed untrained baselines and smaller or earlier self-supervised models under non-parametric permutation testing.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely on held-out lexical benchmarks, visual class images, and independently trained language and speech models (Qwen3, w2v-BERT).",
+          "final_evaluation_signal": "Orthogonal semantic retrieval benchmarks (WordNet categories, country-capital pairs, synonyms) and cross-modal alignment with ImageNet class visual representations and external frozen text/speech embeddings.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pretraining self-supervision on images without language supervision (DINO self-distillation / masked autoencoding) and contrastive image-text/speech finetuning with InfoNCE loss on text-screened pairs.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ecac3edd73e996f01-B0002",
+          "Ecac3edd73e996f01-B0008",
+          "Ecac3edd73e996f01-B0015",
+          "Ecac3edd73e996f01-B0021",
+          "Ecac3edd73e996f01-B0023",
+          "Ecac3edd73e996f01-B0024",
+          "Ecac3edd73e996f01-B0027",
+          "Ecac3edd73e996f01-B0028",
+          "Ecac3edd73e996f01-B0032",
+          "Ecac3edd73e996f01-B0034",
+          "Ecac3edd73e996f01-B0035",
+          "Ecac3edd73e996f01-B0036",
+          "Ecac3edd73e996f01-B0038",
+          "Ecac3edd73e996f01-B0043",
+          "Ecac3edd73e996f01-B0044",
+          "Ecac3edd73e996f01-B0089",
+          "Ecac3edd73e996f01-B0116"
+        ],
+        "limitations": "The authors explicitly acknowledge limitations including lack of evidence for compositionality, the possibility of training data containing co-occurring rendered text (e.g. from web/Instagram data), and that the origin of semantic structure remains an open mechanistic question.",
+        "method_assessment": "The methodology derives centered word directions by subtracting phase-scrambled matched controls across varied typography settings and background images, providing a rigorous control against low-level visual artifacts. Thorough spelling controls, including one-edit neighbor tests and length-matched permutation nulls, cleanly separate orthographic similarity from semantic organization.",
+        "quality_rationale": "The empirical findings are supported by disciplined experimental controls (matched visual baselines, spelling-overlap controls, background variation, and text-screened ImageNet and finetuning subsets). The claims are circumspect and fully aligned with the evidence provided.",
+        "scoped_contribution": "Demonstration that large self-supervised vision models (specifically DINOv3-H and DINOv3-7B) encode semantic relations among rendered written words and align with depictions of named visual categories without paired language supervision.",
+        "source_content_hash": "2c57b4856c70f5591856f0a3452481661a96249dc58291151dba8501c202d562"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The empirical findings are supported by disciplined experimental controls (matched visual baselines, spelling-overlap controls, background variation, and text-screened ImageNet and finetuning subsets). The claims are circumspect and fully aligned with the evidence provided.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "2c57b4856c70f5591856f0a3452481661a96249dc58291151dba8501c202d562",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly acknowledge limitations including lack of evidence for compositionality, the possibility of training data containing co-occurring rendered text (e.g. from web/Instagram data), and that the origin of semantic structure remains an open mechanistic question."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -166,7 +2412,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

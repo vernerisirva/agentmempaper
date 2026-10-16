@@ -59,16 +59,393 @@
             <p>Real-time monocular human pose estimation is an important sensing component for human-centered intelligent systems. While recent camera-based methods have achieved impressive accuracy, fundamental challenges persist, particularly when visual observations are incomplete, such as during lower-body occlusion or short o...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study demonstrates high scientific quality with a clear, technically sound method, a well-synchronized novel dataset, solid comparisons against fair vision-only temporal baselines, thorough ablations, and objective ground-truth evaluation using optical/inertial MoCap reference tracking.</p>
+      <p>The authors clearly acknowledge key limitations, including the reliance on root-relative skeletons rather than long-term absolute global trajectories due to lack of absolute global yaw reference, the need for wider demographic and activity testing, and remaining validation requirements in downstream clinical or ergonomic tasks.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-16T08:47:07.069899+00:00.</p>
+        <p>Coverage: 55228 of 55228 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>lower-body
+occlusion, and short out-of-frame intervals. By evaluating stan-
+dard pose errors, temporal smoothness, and gait-related mea-
+surements (stance accuracy, step-distance error, and cadence
+error), we prove that the reconstructed motion becomes highly
+reliable for contact-sensitive motion analysis [10], [15]. The
+comprehensive results confirm a complete story: unobtrusive
+foot sensing effectively addresses the inherent blind spots of
+monocular cameras.
+The main contributions of this paper are summarized as
+follows:
+•We experimentally demonstrate that plantar-pressure and
+foot-mounted acceleration signals can enhance real-time
+monocular human pose estimation under both normal and
+degraded visual conditions. The improvement is particu-
+larly evident under lower-body occlusion and short out-
+of-frame visual degradation, indicating that foot-sensing
+signals provide complementary </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>physical cues beyond
+monocular visual observations.
+•We propose a new vision–plantar-pressure–acceleration
+dataset for robust monocular pose estimation. The
+dataset contains synchronized monocular video, four-
+point plantar-pressure signals, foot-mounted acceleration,
+and Xsens reference motion, covering approximately
+890K synchronized frames with five additional visual-
+degradation actions.
+•We propose a part-decoupled temporal fusion framework
+that incorporates plantar-pressure and foot-acceleration
+cues into lower-body motion estimation while main-
+taining whole-body kinematic consistency through a
+lightweight global coordinator.
+II. RELATEDWORK
+A. Real-Time Monocular Human Pose Estimation
+Monocular human pose estimation has been widely studied
+for low-cost and deployment-friendly motion sensing. Existing
+methods can be roughly grouped into 2D keypoint estima-
+tion, 3D landmark </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The data collection platform consists of three synchronized
+subsystems:
+1)Smart Insoles: A pair of commercial I-SOL smart in-
+soles, each of which is equipped with four piezoresistive
+pressure sensors and a 3-axis accelerometer and samples
+data at 30 Hz and transmits it via Bluetooth.
+2)Monocular Camera: An RGB camera is positioned
+frontally to ensure all full-body details are captured,
+4</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>jumping out and returning; walking out and returning; leav-
+ing the view, sitting, and returning
+Visual-dropout analysis
+Desk-induced real occlusion 2 15K upper-body free motion with static lower body; walking with
+lower body fully occluded by a desk
+Real-occlusion stress test
+Total 43 890K normal, short out-of-frame, and desk-induced real-occlusion
+actions
+Full dataset
+recording monocular video at 120 Hz (downsampled to
+30 Hz).
+3)Reference Motion Capture: An Xsens Awinda inertial
+motion capture system with 17 high-fidelity sensors
+captures ground-truth full-body kinematics at 60 Hz
+(downsampled to 30 Hz).
+The camera and the Xsens system are connected to the same
+workstation, enabling direct and precise software synchro-
+nization. The wireless insole stream is then aligned to this
+shared timeline by computing a correlation offset from the
+accelerometer spikes during a &quot;marching in </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>place&quot; calibration
+routine at the beginning of each session.
+B. Action Composition and Protocol
+The dataset comprises approximately 890K synchronized
+frames from 20 healthy adult participants (6 female, 14 male;
+mean age: 24 years).All experimental protocols involving
+human subjects were approved by the local ethics commit-
+tee, and written informed consent was obtained from all
+participants prior to the experiments.It covers 43 distinct
+activities categorized into six subsets, as detailed in Table I.
+The recordings are divided into standard evaluation sets
+(Home, Office, Sports, and Rehabilitation) and visual-
+degradation sets. The visual-degradation actions include short
+out-of-frame dropouts (for qualitative availability analysis) and
+desk-induced real occlusions (for physical obstruction stress
+testing). To prevent long-horizon inertial drift from Xsens, the
+dataset collection </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>follows a block-wise protocol, limiting each
+continuous recording segment to 10–15 minutes with repeated
+recalibration.
+IV. METHOD
+We propose an insole-enhanced framework for real-time
+monocular human pose estimation (Fig. 1). The system takes
+the standardized output of a real-time visual backbonev b1:T
+and a synchronized smart-insole streams 1:T as inputs to pre-
+dict a 22-joint SMPL-style root-relative 3D skeleton ˆP1:T =
+fθ(vb1:T ,s 1:T ), where ˆPt ∈R J×3 andJ= 22.
+A. Part-Decoupled Vision–Pressure–Inertial Fusion Network
+The proposed fusion network is motivated by the physical
+relationship between the insole signal and the human body.
+Since pressure and acceleration from the feet mainly describe
+lower-body contact and dynamics, directly concatenating them
+with the whole-body visual representation may be suboptimal.
+We therefore use a part-decoupled design, as illustrated in
+Fig. </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2.
+The visual feature is encoded into upper-body and lower-
+body streams via linear projection networks (MLPs) denoted
+asE u andE vl :
+hut =E u(vbt ),h l,vt =E vl (vbt ).(1)
+The insole feature is encoded separately:
+hst =E s(st).(2)
+The lower-body stream then fuses visual and insole features:
+hlt =E fl ([hl,vt ;h st ]),(3)
+where[·;·]denotes concatenation. This design injects foot-
+sensing cues into the body part where they are physically
+most informative, while keeping the upper-body stream mainly
+vision-driven.
+The upper and lower streams are modeled by separate
+temporal modules:
+mu1:T = LSTMu(hu1:T ),m l1:T = LSTMl(hl1:T ).(4)
+While the decoupled streams prevent local foot-sensing
+noise from overriding upper-body visual observations, com-
+pletely isolating the two branches violates the kinetic chain
+principle of the human body. The pelvis and lower spine act as
+a mechanical bridge; </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>consistency, a
+lightweight global coordinator acts as a soft kinetic constraint.
+It cross-examines the hidden states of both temporal memories
+and generates residual updates:
+[∆mut ; ∆mlt] =C MLP([mut ;m lt]).(5)
+The coordinated memories are then used to regress upper-body
+and lower-body joints via MLP-based regressorsH, H u, and
+Hl:
+ˆPt =H Hu(mut + ∆mut ), Hl(mlt + ∆mlt) .(6)
+This structure allows the model to exploit insole cues for
+lower-body refinement while preserving full-body kinematic
+coherence.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The training objective is designed to supervise both frame-
+level pose accuracy and temporal motion quality. Since the
+output is a continuous root-relative skeleton sequence, only
+minimizing the joint position error may still lead to frame-
+wise fluctuations or locally distorted limb configurations.
+Following standard practices in temporal 3D human pose
+estimation [32]–[34], we combine a joint position loss with
+first- and second-order temporal smoothness terms, and a
+bone-length consistency constraint:
+L=L pos +λ vLvel +λ aLacc +λ bLbone.(7)
+Here,L pos penalizes joint position errors in the root-relative
+skeleton space and provides the main supervision for pose
+accuracy.L vel andL acc constrain first- and second-order
+temporal differences, respectively, encouraging the predicted
+motion to follow the reference dynamics and reducing high-
+frequency jitter.L bone preserves local kinematic </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>structure
+by penalizing deviations in bone lengths, which helps avoid
+implausible limb deformation during temporal fusion. In our
+implementation,λ v = 0.1,λ a = 0.4, andλ b = 0.02.
+To improve robustness to temporary visual failures, we ap-
+ply visual feature dropout during training. For selected training
+windows, a continuous temporal block of visual features is
+masked to zero while the synchronized insole stream remains
+available. The masked block length is randomly sampled
+within the sequence, so the model learns to use pressure and
+acceleration cues when visual observations are temporarily
+unreliable. This augmentation is used only during training.
+C. Real-Time Streaming Inference
+During inference, the proposed fusion module operates in
+a streaming manner. At each time step, it receives the current
+visual pose feature and the synchronized insole measure-
+ment, while maintaining </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate our method on the new VPPA dataset (Section
+III). Three representative real-time visual backbones are eval-
+uated: MediaPipe, YOLOPose26, and SAT-HMR. Reference
+body poses are obtained from Xsens MVN. All compared
+methods use a fixed action-disjoint split where test actions are
+unseen during training. For synthetic lower-body occlusion,
+we manually mask the bottom 30% of each video frame with
+black pixels before feature extraction. Training and validation
+use sliding windows ofT= 120frames with a step size of 5
+frames.
+6</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>proposed method with a vision-only tem-
+poral baseline and several fusion variants. The vision-only
+temporal baseline uses the same visual backbone output and
+temporal modeling strategy as our method, but removes the
+insole stream. This baseline is important because it separates
+the benefit of pressure–inertial sensing from the benefit of
+temporal smoothing alone. For each visual backbone, the
+baseline is trained and evaluated in the same root-relative 22-
+joint output space as the proposed model.
+We also evaluate a naive temporal fusion variant, which di-
+rectly concatenates visual and insole features before temporal
+modeling without part decoupling or cross-branch coordina-
+tion. This variant tests whether simple multimodal concatena-
+tion is sufficient. In addition, we report ablations without the
+global coordinator, without pressure, and without acceleration.
+These variants examine </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>All models are trained on 120-frame windows. The training
+and validation windows are sampled with a step size of 5
+frames, while testing uses a step size of 1 frame to obtain
+dense frame-level predictions. The proposed fusion model uses
+two-layer LSTM temporal modules with a hidden dimension
+of 256. The upper- and lower-body branches use separate
+temporal memories, and the global coordinator predicts resid-
+ual updates for both branches. We train the model using
+AdamW with cosine learning-rate scheduling and select the
+best checkpoint according to validation PA-MPJPE. For fair
+comparison, the vision-only temporal baseline and fusion
+variants are trained under the same data split, window length,
+and evaluation protocol.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We report MPJPE and PA-MPJPE for pose accuracy, and
+jerk-based jitter for temporal smoothness. MPJPE measures
+the mean Euclidean distance between the predicted and ref-
+erence joints in the root-relative skeleton space, while PA-
+MPJPE is computed after Procrustes alignment. Jitter is com-
+puted from the third-order temporal derivative of the predicted
+joint trajectories and reflects high-frequency motion instability.
+For gait-related evaluation, we report stance accuracy, step-
+distance error, and cadence error. These metrics are computed
+from the reconstructed foot trajectories and are used to ex-
+amine whether the estimated pose preserves contact-sensitive
+motion properties beyond joint-level accuracy.
+To ensure biomechanical validity and clinical relevance,
+gait-related metrics are evaluated exclusively on stan-
+dard cyclic locomotion sequences within the test split
+(specifically, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>walking and jogging). This selective evaluation
+prevents the introduction of ill-defined noise from static or
+non-locomotive activities (such as sitting, eating, or upper-
+body exercises), where the concepts of stride geometry and
+gait cycle are physically inapplicable.
+Stance accuracy evaluates frame-level left/right foot-contact
+correctness. For each frame, we infer the predicted contact
+state from the reconstructed foot trajectory and compare it
+with the reference contact label derived from the motion-
+capture system. The smart-insole pressure signal is not used as
+the ground-truth contact label for this metric, preventing the
+evaluation from directly reusing the input sensing modality.
+Step-distance error measures the accuracy of step geometry.
+We first identify heel-strike events from the reference contact
+sequence. At each detected heel-strike frame, we compute the
+horizontal </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>distance between the left and right ankle joints. The
+reported error is the mean absolute difference between the
+predicted and reference step distances.
+Cadence error measures the accuracy of temporal step
+rhythm. Cadence is computed as the number of detected
+7
+steps per minute over an evaluated locomotion sequence.
+Together, these gait-related metrics strictly evaluate whether
+the reconstructed motion is useful for downstream gait and
+contact analysis.
+E. Main Pose Estimation Results
+Table II reports the main pose estimation results across
+three evaluation scopes: clean visual conditions, lower-body
+occlusion, and visual dropout (out-of-frame).
+Under clean visual observations on standard subsets, the
+proposed method consistently improves MPJPE, PA-MPJPE,
+and jitter across MediaPipe, YOLOPose26, and SAT-HMR.
+This indicates that the insole stream provides useful comple-
+mentary cues even </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>when the visual input is not deliberately
+degraded. The improvement becomes more pronounced under
+lower-body occlusion. Since the bottom 30% of the video
+frame is masked, the visual backbones receive weaker lower-
+body evidence, while the insole stream still provides pressure
+and acceleration cues related to foot-ground interaction. As a
+result, the proposed method substantially reduces pose error
+and temporal jitter compared with the vision-only temporal
+baselines.
+Crucially, we also report quantitative results under the ex-
+treme visual-dropout condition (Table II, bottom row). During
+visual dropouts, the subject temporarily leaves the camera
+view. Because vision-only baselines completely lose physical
+observability and degenerate to static holding or unpredictable
+extrapolation without image evidence, they cannot serve as a
+meaningful comparative baseline (denoted as &#x27;—&#x27;). In </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>stark
+contrast, the proposed insole-enhanced method reliably lever-
+ages continuous plantar pressure and acceleration to maintain
+active tracking of the lower limbs, achieving an MPJPE of
+123.63 mm and a PA-MPJPE of 59.65 mm. This further
+supports our core claim: unobtrusive foot sensing provides
+critical physical constraints exactly when monocular cameras
+fail.
+F . Gait-Related Evaluation
+Table III reports gait-related measurements specifically eval-
+uated on cyclic locomotion (walking and jogging).
+In the clean setting, the proposed method improves stance
+accuracy for all three backbones and reduces both step-
+distance and cadence errors. These results indicate that the
+insole-enhanced model does not merely reduce average joint
+error, but fundamentally improves foot-contact timing, relative
+step geometry, and step rhythm. On average, stance accuracy
+increases by 8.99 percentage </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CROSS-SUBJECT GENERALIZATION RESULTS ON HELD-OUT TEST
+SUBJECTS USINGMEDIAPIPE. ALL METRICS ARE LOWER-IS-BETTER.
+Condition Method MPJPE (mm)↓PA-MPJPE (mm)↓Jitter (m/s 3)↓
+Clean Temporal 73.47 48.86 89.02
+Ours68.06 45.78 75.64
+Occlusion Temporal 88.31 59.20 115.69
+Ours74.48 50.43 83.21
+Furthermore, when evaluating locomotion during complete
+visual dropouts (Dropout Walking), the proposed method
+impressively maintains a stance accuracy of 74.08%, a step-
+distance error of 9.55 cm, and a cadence error of 12.37
+step/min. This demonstrates that even when the camera cap-
+tures nothing, the smart insole continuously drives the tem-
+poral fusion network to output biomechanically plausible gait
+parameters.
+G. Cross-Subject Generalization
+To further examine whether the benefit of pressure–inertial
+foot sensing generalizes to unseen users, we conduct an
+additional subject-disjoint experiment using </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>REAL-OCCLUSION STRESS TEST ON TWO HELD-OUT DESK-INDUCED
+OCCLUSION SEQUENCES USINGMEDIAPIPE. ALL METRICS ARE
+LOWER-IS-BETTER.
+Method MPJPE (mm)↓PA-MPJPE (mm)↓Jitter (m/s 3)↓
+MediaPipe Temporal 93.17 65.58 178.25
+Ours62.06 45.79 94.00
+advantage becomes larger under occlusion, where MPJPE is
+reduced from 88.31 mm to 74.48 mm and jitter is reduced from
+115.69 to 83.21m/s 3. These results indicate that the benefit of
+pressure–inertial foot sensing is not limited to the calibrated-
+user action-disjoint setting, but can also improve robustness
+for held-out users.
+H. Real-Occlusion Stress Test
+We further evaluate the proposed method on two held-out
+real-occlusion sequences recorded with a physical desk. In
+both sequences, the desk is placed between the camera and
+the subject so that the lower body is fully invisible to the
+monocular camera. The first sequence is a stationary lower-
+body </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Therefore, the real-occlusion actions are not used
+as a standard benchmark with clean counterparts, but as a
+stress test for practical obstacle-induced visual degradation.
+As shown in Table V, the proposed method remains sub-
+stantially more robust than the vision-only temporal baseline
+under physical occlusion. It reduces MPJPE from 93.17 mm to
+62.06 mm, PA-MPJPE from 65.58 mm to 45.79 mm, and jitter
+from 178.25 to 94.00m/s 3. These results complement the
+synthetic occlusion experiment: the synthetic setting provides
+controlled comparison under the same actions, while the real-
+occlusion setting verifies robustness under practical obstacle-
+induced visual degradation.
+I. Ablation Study
+Table VI presents the ablation results on the MediaPipe
+clean setting. The vision-only temporal baseline already pro-
+vides a strong comparison because it uses temporal modeling
+without insole input. </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE VI
+ABLATION STUDY ON THEMEDIAPIPE CLEAN SETTING. ALL METRICS
+ARE LOWER-IS-BETTER.
+Method MPJPE (mm)↓PA-MPJPE (mm)↓Jitter (m/s 3)↓
+Vision Temporal 67.55 45.21 81.40
+Naive Temporal Fusion 66.90 43.09 77.05
+w/o Coordinator 66.25 43.88 80.25
+w/o Pressure 65.07 42.20 73.00
+w/o Acceleration 66.73 43.55 67.38
+Ours64.15 40.62 65.05
+and PA-MPJPE over the vision-only baseline, showing that
+foot sensing is useful even with a simple fusion design.
+However, it remains inferior to the proposed part-decoupled
+fusion network.
+Removing the global coordinator leads to worse PA-MPJPE
+and jitter, indicating that cross-branch information exchange
+is needed to maintain whole-body consistency after separating
+upper- and lower-body streams. Removing pressure or accel-
+eration also degrades the performance. Without pressure, the
+model loses direct contact and load-transfer cues; without ac-
+celeration, it </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LATENCY IS MEASURED USINGONNX RUNTIMEANDROID ONCPU
+WITH SYNCHRONIZED FEATURE STREAMS,BATCH SIZE1,STREAMING
+INFERENCE,AND200WARM-UP FRAMES. THEONNXMODEL SIZE IS
+12.10 MB.
+Device SoC / Chipset (Node) Avg. p95 p99 FPS
+(ms) (ms) (ms)
+vivo X200 Pro MediaTek Dimensity 9400 (3 nm) 0.44 0.68 0.80 2264.46
+Redmi Note 12 Snapdragon 7+ Gen 2 (4 nm) 1.04 1.15 1.33 960.88
+OPPO Reno3 MediaTek Dimensity 1000L (7 nm) 1.32 1.47 2.00 758.59
+module introduces negligible computational overhead once
+real-time visual pose features are available. The model size
+is 12.10 MB in ONNX format.
+It should be noted that this runtime measures only the
+proposed fusion module after visual pose features have been
+produced. The end-to-end system latency depends on the se-
+lected visual backbone, camera pipeline, and platform-specific
+preprocessing. This design is intentional: the proposed module
+is not tied to a particular </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>global tra-
+jectories. Because the current sensing setup lacks reliable
+global orientation, extended visual dropouts may still cause
+drift. Second, broader evaluation across users, environments,
+and motion types is needed. Third, downstream applications
+10
+such as ergonomic risk assessment, rehabilitation scoring, and
+abnormal gait screening require further validation.
+Future work will improve long-horizon robustness through
+lightweight global motion constraints and explicit contact-state
+modeling. We will also explore mobile and edge deployment
+with real-time visual front-ends and Bluetooth insole streams,
+and extend evaluation to industrial monitoring, home rehabil-
+itation, and long-term daily activity assessment.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +484,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +500,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-14</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-15 08:50:58</li><li>Last seen by Paper Scout: 2026-10-15 08:50:58</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-14</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-15 08:50:58</li><li>Last seen by Paper Scout: 2026-10-16 08:45:58</li></ul>
             <ul><li>arXiv: 2610.19494</li><li>arXiv IDs: 2610.19494</li></ul>
           </section>
           <section class="detail-panel">

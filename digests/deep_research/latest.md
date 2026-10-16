@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-15](2026-10-15.md).
+Latest daily digest: [2026-10-16](2026-10-16.md).
 
-# Paper Scout Digest - 2026-10-15
+# Paper Scout Digest - 2026-10-16
 
 ## Run Summary
 
-- **Run ID:** 111
-- **Candidates fetched:** 135
-- **New unique papers:** 131
-- **Relevant:** 15
-- **Maybe relevant:** 11
-- **Irrelevant:** 109
-- **Source summary:** arxiv: 35, openalex: 100, semantic_scholar: 0
+- **Run ID:** 112
+- **Candidates fetched:** 134
+- **New unique papers:** 130
+- **Relevant:** 14
+- **Maybe relevant:** 10
+- **Irrelevant:** 110
+- **Source summary:** arxiv: 34, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -27,32 +27,94 @@ Latest daily digest: [2026-10-15](2026-10-15.md).
 
 ## Highly Relevant
 
-### [Code and public materials for: Autonomous AI scientists converge on estimates but diverge on uncertainty](https://doi.org/10.5281/zenodo.23300515)
+### [A Harmondeg Philosophy Statement in Response to the October 13, 2026 Open Letter Signed by 406 AI Scientists](https://doi.org/10.5281/zenodo.23375095)
 
-- **Authors:** Jun Song, Yanting Zhang, Chendong Ma, Maohao Ran, Meng Chun Gao, Yonggang Zhang
-- **Date:** 2026-10-11
+- **Authors:** Hu-Yang Qingyun
+- **Date:** 2026-10-14
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** No abstract available.
+- **Abstract summary:** This statement from Harmondeg Philosophy responds to the October 13, 2026 open letter signed by 406 scientists calling for stronger safeguards for advanced artificial intelligence, including the isolation of certain high-risk AI systems from the internet. The statement recognizes the importance of scientific concern...
 
-### [Restricted materials (reference answers and raw agent session outputs) for: Autonomous AI scientists converge on estimates but diverge on uncertainty](https://doi.org/10.5281/zenodo.23300593)
+### [RIVO: Lightweight Adaptive Rerouting for Deep Research Agents](https://doi.org/10.48550/arxiv.2610.15910)
 
-- **Authors:** Jun Song, Yanting Zhang, Chendong Ma, Maohao Ran, Meng Chun Gao, Yonggang Zhang
+- **Authors:** Mingchen Li, Jiatan Huang, Hong Yu
 - **Date:** 2026-10-11
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** No abstract available.
+- **Reason:** Studies research-agent memory or iterative research state.
+- **Tags:** deep-research-agents, research-memory
+- **Abstract summary:** Deep Research agents rely on long-horizon reasoning and iterative tool use to solve complex information-seeking tasks. However, adaptive decision-making over these trajectories remains challenging, as agents may stop prematurely when further evidence is needed, continue unnecessarily after sufficient evidence has be...
 
-### [The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery](https://arxiv.org/abs/2610.18933v1)
+### [GRADS: Graph-Regulated Agentic Data Synthesis with Controllable Difficulty](https://arxiv.org/abs/2610.21167v1)
 
-- **Authors:** Robert Tjarko Lange, Luca Grillotti, Yutaro Yamada, Rujikorn Charakorn, David Ha
-- **Date:** 2026-10-13
+- **Authors:** Gaocheng Yang, Ruijie Tao, Kai Ye, Senhua Zhang, Zhengqin Zhu, Ziyang Li
+- **Date:** 2026-10-15
 - **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Modern coding agents are fundamentally reshaping the role of human input for computational research: they write code, launch in silico experiments, analyze their results, and autonomously operate with ever-increasing time horizons. Despite these developments, fully autonomous research agents suffer from a limited id...
+- **Abstract summary:** Deep research agents are increasingly deployed to retrieve precise information from large corpora, yet multi-hop, long-horizon tasks remain challenging. Synthetic data generation has emerged as a scalable solution, with existing pipelines typically expanding seed tasks to increase their apparent depth and breadth. H...
+
+### [JevGPT: Thinking Fast and Slow in Autonomous Research](https://doi.org/10.48550/arxiv.2610.18272)
+
+- **Authors:** Yasheng Sun, Yanning Dai, Yimeng Chen, Nanbo Li, Firas Laakom, Yifan Xu, et al.
+- **Date:** 2026-10-13
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Autonomous research agents must acquire and reason over evidence within a limited budget. Yet relevant sources can remain uninspected or unused, leaving a gap between retrieval coverage and the evidence that informs research. The challenge is to align fast local judgments with changing evidence needs and feed their...
+
+### [LifeSearch: Benchmarking Deep Research Agents for Real-World Life and Productivity](https://doi.org/10.48550/arxiv.2610.18092)
+
+- **Authors:** Yibo Wang, Senjie Jin, Yansong Ning, Xinbing Liang, Haotian Luo, Jiazheng Zhang, et al.
+- **Date:** 2026-10-13
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep research (DR) agents address open-ended information needs through multi-step reasoning, long-horizon web search, and evidence synthesis. However, existing benchmarks primarily focus on academic research or synthetic tasks, leaving DR agents' capabilities in real-world life and professional productivity settings...
+
+## Maybe Relevant
+
+### [PANINI-DR: Controlled Deep Research through Generative Semantic Workspaces](https://doi.org/10.48550/arxiv.2610.15208)
+
+- **Authors:** M. Yigit Turali, Shreyas Rajesh, M. Efe Lorasdagi, Chenda Duan, Kartik Sharma, Vwani Roychowdhury
+- **Date:** 2026-10-10
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** research-memory
+- **Abstract summary:** Deep research requires connecting multiple steps of search, reasoning, and computation, with intermediate findings guiding what to investigate next. As investigations grow, agents must maintain research state across model calls and check findings before errors propagate into subsequent work. We introduce PANINI-DR,...
+
+### [Adaptive Switching between Autonomous and Collaborative Exploration for Multiple Large Language Models](https://doi.org/10.5281/zenodo.23357202)
+
+- **Authors:** Jincheng Zhang
+- **Date:** 2026-10-14
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Multiple large language models (LLMs) can explore complex problem spaces independently or collaboratively. Autonomous exploration allows each model to develop distinct hypotheses, investigate alternative solution paths, and reduce premature convergence caused by shared assumptions. Collaborative exploration enables...
+
+### [Artificial Intelligence Needs Control Theory: Towards Stable, Adaptive, and Autonomous AI Systems](https://doi.org/10.5281/zenodo.23378509)
+
+- **Authors:** Mohamed EID
+- **Date:** 2026-10-14
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Abstract Artificial intelligence systems are increasingly capable of reasoning, planning, and interacting with external tools. However, capability alone does not guarantee stable behavior, reliable execution, or successful task completion under uncertainty and disturbances. This paper investigates how control-theore...
+
+### [Sci$Π$vot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents](https://arxiv.org/abs/2610.21082v1)
+
+- **Authors:** Youran Sun, Xingyu Ren, Chugang Yi, Kejia Zhang, Di Wu, Yingkang Cao, et al.
+- **Date:** 2026-10-15
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** web-research
+- **Abstract summary:** Large language model (LLM) agents can keep scientific experiments running for months with little human supervision, but reliable autonomous research also requires scientific judgment. Evaluating scientific judgment is difficult because research decisions are open-ended and depend on project context. We construct Sci...

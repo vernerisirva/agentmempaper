@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRADS: Graph-Regulated Agentic Data Synthesis with Controllable Difficulty</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>GRADS: Graph-Regulated Agentic Data Synthesis with Controllable Difficulty</h1>
+          <p class="hero-copy">Gaocheng Yang, Ruijie Tao, Kai Ye, Senhua Zhang, Zhengqin Zhu, Ziyang Li</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.21167v1">Open paper</a>
+            <a class="paper-detail-link" href="grads-graph-regulated-agentic-data-synthesis-with-controllable-difficulty-9e59acfa.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Gaocheng Yang, Ruijie Tao, Kai Ye, Senhua Zhang, Zhengqin Zhu, Ziyang Li</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-15</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-15</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.21167">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies autonomous or deep research agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Deep research agents are increasingly deployed to retrieve precise information from large corpora, yet multi-hop, long-horizon tasks remain challenging. Synthetic data generation has emerged as a scalable solution, with existing pipelines typically expanding seed tasks to increase their apparent depth and breadth. H...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The paper provides a rigorous conceptual formalization of evidence graphs to resolve the shortcut and disconnected reasoning issues in synthetic data generation, accompanied by extensive experimental validation, robust baseline comparisons, and clear ablations.</p>
+      <p>The authors transparently discuss key limitations, including the lack of statistically separable gains from GRPO under the 30-step budget, depth overshoot during subgraph extraction, per-item noise in exact depth, and the reliance on LLM deletion checks rather than human audits for edge necessity.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-16T08:47:30.820288+00:00.</p>
+        <p>Coverage: 83485 of 83485 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generation on a relevant subgraph, preserving indispens-
+able inference without accumulating irrelevant context. Experiments across se-
+curity, software-engineering, and scientific-document domains show that GRADS
+consistently generates verified tasks with empirically separated difficulty distri-
+butions, as measured by independent solvers. Moreover, under matched training
+budgets, post-training on this data delivers consistent gains at every level: SFT
+raises the solution-termination rate to over95%while cutting tool calls and turns
+by up to 75%, RL trims tool use by up to a further19.5%, and on our held-out,
+domain-specific benchmarks, the resulting 4B model matches Sonnet 4 on soft-
+ware engineering and surpasses it on the scientific and security domains.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>al., 2023), and verifi-
+cation subagents check every item before acceptance (Dhuliawala et al., 2024; Manakul et al., 2023;
+Du et al., 2024).
+We evaluate GRADS on three heterogeneous domains: GitHub issue tracking, experimental particle
+physics, and security. For each domain, we construct a representative benchmark and a post-training
+corpus. Compared with three synthesis baselines, GRADS is the only method whose delivered
+reasoning depth increases monotonically with the requested difficulty, and correspondingly the only
+one whose solver scores decrease monotonically from Easy to Hard. This ordering is preserved
+across solvers of three capability tiers. The resulting data is also effective for training: supervised
+fine-tuning a 4B model on GRADS trajectories yields large gains over the untrained model in every
+domain and outperforms every baseline at matched sample count and optimizer </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Definition 1(Evidence graph).An evidence graph isG= (V, E, τ, π, a)with(V, E)a DAG:Vis
+a set ofclaims(atomic facts, one per retrieved record);Ecarriesnecessarydependency edges—
+(u, v)∈Emeans establishingvrequiresu, so topology proxies reasoning effort, not relatedness;
+τ:E→ R={supports,causes,refutes, . . .}labels edges; provenanceπ:V→Σmaps
+each claim to its source context (withΣthe space of source contexts); anda∈Vis a distinguished
+anchor.P(G)denotes directed paths ending ata, and|p|their edge count.
+Definition 2(Node types).Each claim is acorenode (a main conclusion / root cause; may anchor
+a question), aninferencenode (derived by combining other claims; where multi-hop depth accu-
+mulates), or adetailnode (a supporting fact—key, date, version, status—that decorates a core or
+inference node but never lies on the reasoning chain).
+3</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In the expansion process, a question is hardened by growing its evidence graph across rounds
+(Figure 1), following aseed→explore→verify→re-exploreloop. LetG 0 be the seed graph
+whose claims already answer a seed question, and letθbe the depth threshold of the requested
+band (Eq. 3). At roundt, exploration proposes a set of candidate editsK t ={∆ t}, where each
+∆t = (∆V +,∆E +; ∆V −,∆E −)specifies claims and edges to add and to remove. A verification
+operatorνretains only the necessary part of the additive component, discarding hops a solver could
+bypass:
+ν(∆t) =
+
+∆V +,{(u, v)∈∆E + :vis underivable withoutu}; ∆V −,∆E −.(4)
+We then commit the verified edit that most extends the longest necessary chain, so depth grows
+rather than breadth:
+Gt+1 =G t ⊕ν(∆ ⋆t ),∆ ⋆t = arg max
+∆t∈Kt
+
+d
+
+Gt ⊕ν(∆ t)
+
+−d(G t)
+
+,(5)
+whereG⊕∆lets one round add, remove, or edit (remove+add) claims and edges; </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and explored snippet is recorded as one immutable event with
+a monotonically increasing id. Graph nodes never copy this text and store only a bare event id, from
+which the original span is recovered on demand by dereferencing. This keeps the evidence lossless
+and verbatim.
+Questions, rubrics, and verification.We use ten question types (full taxonomy in Appendix D),
+and for each we build a rubric of verifiable claims in three layers:core,detail, andinference, as
+in Definition 2. Each claim corresponds to a verifiable source span. Each item is evaluated in
+two stages. A deterministic validator first checks constraints that can be verified programmati-
+cally, including rubric-weight normalization, whether quotations match their cited source spans, and
+whether references resolve. Items that pass these checks are then assessed by two adversarially
+prompted LLM verifiers. Theprovenance </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>turnTtheSelectorreturns the subgraphS ⋆ that
+becomes the evidence for the next question:
+S⋆ = arg min</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>edge(u, v)counts toward depth only ifv
+cannot be derived withoutu, and otherwise it is kept as a non-necessary link. TheGraph Builder
+6
+Under review as a conference paper at ICLR 2027
+GitHub Physics Security
+0.00
+0.25
+0.50
+0.75
+1.00
+Solver score
+(final_score ∈ [0,1])
+GRADS
+GitHub Physics Security
+0.00
+0.25
+0.50
+0.75
+1.00
+TaskCraft
+GitHub Physics Security
+0.00
+0.25
+0.50
+0.75
+1.00
+WebShaper
+GitHub Physics Security
+0.00
+0.25
+0.50
+0.75
+1.00
+ClaudeCode
+GitHub Physics Security
+0
+3
+6
+9
+12
+Reasoning depth
+(necessary-inference hops)
+GitHub Physics Security
+0
+3
+6
+9
+12
+GitHub Physics Security
+0
+3
+6
+9
+12
+GitHub Physics Security
+0
+3
+6
+9
+12
+Difficulty Easy Medium Hard
+Figure 3: Difficulty is controllable and empirical only for GRADS: delivered depth (bottom row)
+and solver score (top row) by requested band. For more details, check Appendix Table 1.
+applies this test when adding edges and never lets a </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We apply GRADS to three heterogeneous corpora of real-world records spanning distinct domains.
+GitHubcontains issues, comments, and linked JIRA tickets from Apacheairflow,beam, and so
+on (raw size:7.6GB across∼1.07M records).Physicscontains internal analysis notes and public
+physics analysis summaries from the Compact Muon Solenoid (CMS), a general-purpose particle
+detector at CERN&#x27;s Large Hadron Collider (raw size:4.9GB across∼5.9k files).Securitycon-
+tains red-teaming agent traces from cybersecurity web-application attack and injection challenges
+(raw size:1.3GB across∼18.8k files). Synthesis and judging use the Opus 4.8 API, and empiri-
+cal difficulty is measured by asolver—an unmodified agent with the domain tools, a25-turn cap,
+and temperature0.7—whose answers are scored against each item&#x27;s rubric. For post-training, we
+fine-tuneQwen3.5-4B(Qwen Team, 2026) and then run GRPO (Shao </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We compare GRADS against three synthesis methods run through an identical protocol:Claude-
+Code, natural-language prompting for a target difficulty (a prompt-only ablation of GRADS with the
+graph and Selector removed);TaskCraft(Shi et al., 2026), which scales task complexity through
+straightforward extension in depth and width; andWebShaper(Tao et al., 2026), which expands set-
+theoretic task formalizations. Figure 3 reports delivered reasoning depth (bottom row) and solver
+score (top row) by requested band. Reported depth is measured on each item&#x27;s full evidence graph,
+whereas GRADS controls only the selected subgraph, so average depths can exceed the band thresh-
+olds.
+Depth as the difficulty axis.The complexity scoreC(G)(Eq. 2) combines several structural axes,
+but they are not equally informative about how hard an item is for a solver. Measured against
+rubric-graded solver score, </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>depthd(G)shows the strongest negative correlation (pooled Spearman
+rs =−0.45), ahead of information flowc info(G)(−0.39) and graph size|V|(−0.38), while breadth
+7
+Under review as a conference paper at ICLR 2027
+checkpoint 1 checkpoint 2 checkpoint 3
+0.22
+0.24
+0.26
+0.28
+0.30
+0.32
+0.34
+raw model 0.2319
+Score
+Physics
+checkpoint 1 checkpoint 2 checkpoint 3
+0.100
+0.125
+0.150
+0.175
+0.200
+0.225
+0.250
+0.275
+raw model 0.1149
+GitHub
+checkpoint 1 checkpoint 2 checkpoint 3
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+raw model 0.1414
+Security
+Ours ClaudeCode TaskCraft WebShaper raw model
+Figure 4: SFT on GRADS data (Ours) dominates every synthesis baseline in every domain; dashed
+line is the raw model. Check more details in Appendix Table 5.
+b(G)is only weakly related (−0.17). Depth also tracks the other axes closely, so a single depth value
+captures most of what the full topology encodes. We therefore </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>From each delivered QA item, we reconstruct agentic trajectories that replay the retrieval-and-
+reasoning path grounding the answer (construction details in Appendix E), and fine-tune Qwen3.5-
+4B on these trajectories. Each baseline&#x27;s QA is consumed by the same builder, configuration, and
+benchmark, so only the data differs. All arms are evaluated on the same frozen benchmark (Fig-
+ure 4). On every domain, SFT on GRADS trajectories beats the raw model by a significant margin
+and beats every baseline arm, supporting the utility of the synthesized data.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We further apply standard GRPO (Shao et al., 2024) to each domain&#x27;s SFT checkpoint, training on
+240synthesized pairs disjoint from the benchmark. Each rollout is rewarded by the same claim-level
+judge that scores the benchmark, but applied to the weighted reference claims of its own training pair,
+plus a bonus for the expected answer format. We train for30steps (Appendix E). GRPO produces
+small positive point estimates in all three domains(Figure 5), but none is statistically separable from
+the SFT policy under our 30-step budget. Its clearer effect is improved tool efficiency, reducing
+tool calls by up to19.5%. After post-training, the 4B model approaches Sonnet 4 on the GitHub
+benchmark and surpasses it on the Physics and Security benchmarks (Table 7).</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The difficulty axis is model-agnostic.To eliminate the influence of any single model, we evalu-
+ate three capability tiers: Opus 4.8 (frontier), Sonnet 4 (medium), and Qwen3.5-4B (light). Across
+all three domains, the solver score decreases monotonically as the model gets weaker, and for each
+model it decreases as the problems get harder (Figure 7). These results suggest that difficulty order-
+ing is a property of the data, not the solver.
+8
+Under review as a conference paper at ICLR 2027
+Physics GitHub Security
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.2319
+0.1149 0.1414
+0.3390
+0.2838
+0.4453
+0.3407
+0.3069
+0.4663
+Score
+Raw model SFT (best) RL (best)
+Figure 5: Post-training performance.
+SFT accounts for most of the score im-
+provement, while RL provides modest
+additional gains. Check more details in
+Appendix Table 6.
+Physics GitHub </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>First, our evidence that the synthesized data isusefulfor post-training is confined to supervised fine-
+tuning: under a30-step budget, GRPO did not yield a separable improvement over the SFT policy
+(§5.4), so whether reinforcement learning adds value under a larger budget remains untested. Sec-
+ond, because the Selector targets the requested depth by assembling a necessary-ancestor subgraph,
+in some domains it admits additional context that pushes an item&#x27;s realized depth beyond the band
+threshold (Figure 3, Table 1); this overshoot is benign for difficulty but may introduce a mild bias
+in the delivered depth distribution. Third, difficulty control is reliable at the level of the three bands,
+but the exact reasoning depth of any single item is noisier, so per-item difficulty should be treated
+as approximate rather than exact, and this residual variation differs across solvers. Finally, </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the same
+evidence graph both defines an item&#x27;s difficulty and supplies the subgraph the question is built from,
+so difficulty is in part validated by the construction that produced it. Moreover, whether an edge is
+necessary is judged by LLM agents (deletion tests by the Graph Builder and Graph Verifier, and the
+9
+Under review as a conference paper at ICLR 2027
+reasoning lens) rather than by human annotators, so these checks provide evidence, not proof, that a
+solver cannot bypass a hop; a human audit of edge necessity is left to future work.</blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A NUMERICAL DATA FOR FIGURES
+This appendix reports the exact values behind every figure in Section 5. ThePhysicsdomain is the
+CMS experimental-physics notes (on-disk namecms).
+Table 1: Data behind Figure 3. Solver score (rubric-weighted,∈[0,1];n= 20per cell) and
+delivered reasoning depth (longest necessary-inference chain) by method×domain×requested
+band. Only GRADS shows a monotone Easy&gt;Medium&gt;Hard solver-score gradient together with
+depth that grows Easy→Hard.
+Solver score Reasoning depth
+Method Domain Easy Medium Hard Easy Medium Hard
+GRADS
+GitHub 0.778 0.722 0.522 3.53 5.50 11.03
+Physics 0.715 0.450 0.374 3.47 4.83 10.82
+Security 0.725 0.671 0.559 2.57 4.17 9.10
+TaskCraft
+GitHub 1.000 0.950 0.950 1.20 1.80 2.55
+Physics 0.800 1.000 0.950 1.05 1.40 1.45
+Security 1.000 0.625 0.800 1.10 1.35 1.30
+WebShaper
+GitHub 0.624 0.752 0.654 2.80 2.30 2.35
+Physics 0.938 0.988 1.000 1.35 1.40 </blockquote></details></li><li><strong>Contribution clarity — pages 15–16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>B SYNTHESIS COST
+Table 9 reports GRADS synthesis cost per delivered item by requested difficulty: both API calls
+and tokens rise monotonically with depth, since a deeper chain requires more explore–generate
+15
+Under review as a conference paper at ICLR 2027
+Table 3: SFT benchmark score at three checkpoints per arm (step in parentheses; best in bold), with
+the best score and its change versus the raw model and versus ours. Ours is the best arm in every
+domain.
+Domain Arm Ckpt 1 Ckpt 2 Ckpt 3 Best∆raw∆ours
+Physics
+raw Qwen3.5-4B – 0.2319 – –
+Ours0.2932(10)0.3390(20)0.3139(24)0.3390+0.1071–
+Claude-Code 0.2936(12)0.2884(20)0.3011(24)0.3011+0.0692−0.0379
+TaskCraft0.2507(12)0.2399(20)0.2407(24)0.2507+0.0188−0.0883
+WebShaper0.2850(12)0.2602(16)0.2548(20)0.2850+0.0531−0.0540
+GitHub
+raw Qwen3.5-4B – 0.1149 – –
+Ours0.2574(8)0.2835(16)0.2838(26)0.2838+0.1689–
+Claude-Code </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Under review as a conference paper at ICLR 2027
+Table 7: Post-training closes the capability gap to a mid-sized solver. Benchmark mean score
+(30/30/40-weighted) of the Sonnet-4 solver (from Table 4) versus the post-trained Qwen3.5-4B (best
+RL checkpoint, Table 6). After post-training the 4B matches Sonnet-4 on GitHub and surpasses it
+on Physics and Security.
+Model GitHub Physics Security
+Sonnet-4 (mid solver) 0.308 0.266 0.342
+Post-trained 4B (best RL) 0.307 0.341 0.466
+∆(4B−Sonnet-4)−0.001 +0.075 +0.124
+Table 8: Data behind Figure 6 and the tool analysis. Per-item means for the raw model, best SFT,
+and best RL checkpoint;\boxed{}count and items-at-25-turn-cap are counts out of 100. SFT&#x27;s
+invariant effect is the jump in boxed rate and the drop in tool calls/turns; answer length moves in
+domain-specific directions.
+Domain Model Tool calls TurnsboxedAns. length Cap-hits
+Physics
+raw 16.35 </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>E POST-TRAINING CONFIGURATION
+SFT.All arms start from Qwen3.5-4B (Qwen Team, 2026) and share one fixed recipe with no per-
+arm hyperparameter search: full-parameter fine-tuning with LlamaFactory and DeepSpeed ZeRO-3
+on8×A100-40GB GPUs, theqwen3 5chat template, a 32,768-token context, learning rate10 −5
+with cosine decay and 3% warmup, 16 sequences per optimizer step, 6 epochs, and seed 42. Each
+training example is a complete multi-turn agent trajectory built from a QA pair by the same builder
+for every arm, with loss applied to assistant tokens only (reasoning, tool calls, and the final report).
+Table 12 summarizes the resulting data per arm.
+GRPO.We run standard GRPO in verl from each domain&#x27;s SFT checkpoint, training on 240
+synthesized pairs that exclude every SFT pair and are disjoint from the benchmark. Each rollout is
+rewarded by the evaluation judge&#x27;s claim-level protocol against </blockquote></details></li><li><strong>Contribution clarity — pages 24–25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>its own pair&#x27;s weighted reference
+claims, plus a small format term for a single\boxed{}answer. Updates are on-policy with a
+low-variance KL loss and no entropy bonus; Table 13 lists the full configuration.
+24
+Under review as a conference paper at ICLR 2027
+Domain ArmNSteps Tokens (k) Sup. tokens (k) Turns Tool calls Score
+Physics
+Raw Qwen3.5-4B – – – – – – 0.2319
+Ours 61 24 905.1 169.0 8.22 7.220.3390
+ClaudeCode 59 24 938.6 156.4 10.22 9.22 0.3011
+TaskCraft 60 24 626.6 84.5 4.98 3.98 0.2507
+WebShaper 60 24 715.2 98.5 5.43 4.43 0.2850
+GitHub
+Raw Qwen3.5-4B – – – – – – 0.1149
+Ours 65 24 860.6 145.4 6.46 5.460.2838
+ClaudeCode 58 24 438.8 82.1 6.93 5.93 0.1586
+TaskCraft 59 24 519.2 79.6 4.47 3.47 0.1731
+WebShaper 59 24 587.3 107.2 5.76 4.76 0.1836
+Security
+Raw Qwen3.5-4B – – – – – – 0.1414
+Ours 55 24 590.2 89.1 4.91 3.910.4453
+ClaudeCode 59 24 545.7 109.9 6.64 5.64 0.2972
+TaskCraft† 60 24 </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Autonomous research-agent system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies agents that perform or evaluate multi-step research workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Autonomous research agent workflow</li>
+              <li>Tags: deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-15</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-16 08:44:35</li><li>Last seen by Paper Scout: 2026-10-16 08:44:35</li></ul>
+            <ul><li>arXiv: 2610.21167</li><li>arXiv IDs: 2610.21167</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="grads-graph-regulated-agentic-data-synthesis-with-controllable-difficulty-9e59acfa.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>GRADS: Graph-Regulated Agentic Data Synthesis with Controllable Difficulty. Gaocheng Yang, Ruijie Tao, Kai Ye, Senhua Zhang, Zhengqin Zhu, Ziyang Li. 2026-10-15. https://arxiv.org/abs/2610.21167v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

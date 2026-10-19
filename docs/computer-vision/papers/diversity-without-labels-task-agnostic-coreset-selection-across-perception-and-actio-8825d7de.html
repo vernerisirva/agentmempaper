@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diversity Without Labels: Task-Agnostic Coreset Selection Across Perception and Action</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Diversity Without Labels: Task-Agnostic Coreset Selection Across Perception and Action</h1>
+          <p class="hero-copy">Julia Hindel, Benjamin Ramtoula, Kyuhwan Yeon, Nick Heppert, Paul Newman, Daniele De Martini, Abhinav Valada</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.23642v1">Open paper</a>
+            <a class="paper-detail-link" href="diversity-without-labels-task-agnostic-coreset-selection-across-perception-and-actio-8825d7de.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Julia Hindel, Benjamin Ramtoula, Kyuhwan Yeon, Nick Heppert, Paul Newman, Daniele De Martini, Abhinav Valada</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-16</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-16</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.23642">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies semantic, instance, panoptic, or promptable segmentation.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>While data collection for model training is relatively easy, curating high-quality datasets from large collections is inherently challenging. Coreset estimation methods address this problem by identifying the best data subsets to train models on. However, existing approaches often require proxy model training, exten...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work provides a well-motivated, scalable solution to label-free coreset selection backed by rigorous empirical analysis of activation distributions across 5,265 historical runs, clear algorithmic formulations, and comprehensive downstream cross-domain evaluations.</p>
+      <p>The authors openly address that optimal sampling strategies (fidelity vs. coverage) vary depending on dataset tail characteristics, and note that fixed retention ratios or redundant modalities (e.g., manipulation proprioception) do not uniformly improve performance.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-19T09:38:19.638382+00:00.</p>
+        <p>Coverage: 84748 of 84748 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While data collection for model training is relatively easy, curating high-quality
+datasets from large collections is inherently challenging. Coreset estimation
+methods address this problem by identifying the best data subsets to train models
+on. However, existing approaches often require proxy model training, extensive
+annotations, or task-specific tailoring. Unsupervised alternatives typically exploit
+geometric properties in foundation model feature spaces, but are limited to
+pairwise image-to-image comparisons or comparisons against a fixed subset. We
+introduce CoreDNA, an unsupervised, task-agnostic coreset estimation approach
+that pools neuron activations from vision foundation models into per-image
+and per-dataset distributions. By comparing each image&#x27;s distribution to the
+dataset-level distribution, CoreDNA can capture both low-level visual structure and
+high-level semantic </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>into compact per-image and dataset-level distributions and investigate the information
+they encode. Our analysis reveals that samples assigned high utility by training-based coreset
+methods tend to concentrate in the tails of final-layer activation statistics (Sec. 3.2). Motivated
+by this, we develop computationally efficient, density and coverage-based selection criteria for
+selective annotation and model training. We evaluate CoreDNA across image classification, semantic
+segmentation, depth estimation, and imitation learning for end-to-end driving and mobile manipulation
+(Sec. 4). Across these tasks, CoreDNA matches or outperforms state-of-the-art training-based and
+training-free methods, showing the value of dataset-relative activation statistics for data selection.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Image Patterns Considered:We first explore potential ways to produce image features that might
+serve as a good base for our design of a coreset curation method. To do so, we first create image-wise
+embeddings using VDNA (Ramtoula et al., 2023), which was originally designed to measure dataset
+similarity. VDNA computes, for every neuron of a frozen ViT-B backbone, a histogram of that
+neuron&#x27;s activations over an image x. We use the Mugs ViT-B/16 (Zhou et al., 2022a), as in VDNA.
+The backbone has L= 12 layers (ℓ= 1, . . . , L), each with N= 768 neurons (n= 1, . . . , N).
+Neuron (ℓ, n)yields raw bin counts rℓn(x) over B bins, which we normalize into a histogram
+hℓn(x)∈∆ B−1. The dataset-level VDNA Hℓn is the histogram of the same neuron accumulated
+over the full training set. We then compute the per-neuron EMD between an image&#x27;s histogram and
+the dataset-level histogram:
+hℓn(x) = </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rℓn(x)∥rℓn(x)∥1 , H ℓn = PPi=1 rℓn(xi)∥PPi=1 rℓn(xi)∥1 , d ℓn(x) = EMDhℓn(x), Hℓn.(1)
+The resulting distances dℓn(x) across all neurons reflect how typical or atypical image x is relative to
+the full dataset, at the granularity of individual neurons. To reduce dimensionality and build a compact
+representation, we explore multiple candidate statistics over these distances separately for each layer
+ℓ. Over all the neurons n of that layer ℓ, we compute dℓn(x) and record their mean µℓ(x), standard
+deviation σℓ(x), and maximum mℓ(x). µℓ(x) captures a layer&#x27;s overall atypicality, while σℓ(x) and
+mℓ(x) reveal whether that atypicality is broadly distributed or concentrated in a few strongly reacting
+neurons. We omit the minimum, as it is dominated by the many near-zero, uninformative neurons and
+adds no additional signal. Further, we also compute the same three statistics computed over all </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>layers
+jointly, µ1:L(x), σ1:L(x), and m1:L(x). Together, these 3L+ 3 statistics form the representation
+ϕ(x)∈R 3L+3 of image x, yielding a P×(3L+ 3) representation matrix Φ = [ϕ(x1), . . . , ϕ(xP )]⊤
+across the full dataset, containing statistics describing diverse types of properties and visual features,
+some of which we hope can help identify good coresets.
+Beyond these per-layer statistics, we propose to explore two further candidate statistics that measure
+how consistently the entries of ϕ rank an image, to identify images where the foundation model&#x27;s
+representation shifts across layers, hypothesizing these may add an informative axis for selection. For
+each of the 3L+ 3 entries, indexed by k, we sort all P training images in ascending order of that
+entry and let ρk(x)∈ {0, . . . , P−1}denote the position of image x in this ordering. We measure
+how much the individual </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>representations in ϕ(x) disagree about the image rank. Let ˜ρk(x) denote
+the absolute deviation of entryk&#x27;s rank from the per-image median rank,
+˜ρk(x) =
+ ρk(x)−med k′ ρk′(x).(2)
+We then define δmax(x) = maxk ˜ρk(x) and δavg(x) = 13L+3 Pk ˜ρk(x) as the maximum and average
+deviation across all 3L+ 3 entries of ϕ(x), respectively. Small δmax(x) or δavg(x) means all entries
+rank the image alike, whereas large values mean one or more entries rank it differently from the rest.
+We add both toϕ(x)as further candidate statistics, which thus contains3L+ 5entries.
+Analysis of Image Patterns:We analyze the layerwise representations with the Pearson correlation
+coefficient r of µℓ, σℓ, and mℓ (ℓ= 1,12,1:12 ) in Fig. 3, with qualitative examples of µ12 shown in
+Fig. 2. µℓ and σℓ are strongly correlated (r= 0.93 –0.95) across same layers, whereas µℓ and mℓ
+show more variable correlation across </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Tab. 10 in the appendix). A correlation of
+0.357 may seem modest at first glance, but it holds consistently across 5,265 runs, spanning five
+datasets across three task types, each evaluated at various retention rates and with multiple selection
+methods. Despite training noise entirely unrelated to sample selection, this signal persists, making it
+a substantial finding. The two are also complementary since combining them into a three-axis space
+gives the highest correlations for both coverage and fidelity (0.308 and 0.357), improving over either
+5
+Preprint.
+Figure 4: 3D scatter of z(x), colored by EL2N-measured hardness, for CIFAR10, PascalVOC, and Cityscapes.
+two-axis space on most datasets (Tab. 11). We note, however, that Cityscapes shows no correlation
+with any fidelity metric, suggesting that coverage may be the more informative metric for this dataset.
+Given this analysis, we </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>represent each image x by z(x) =
+
+µ12(x), σ12(x), δmax(x)
+
+, yielding a
+feature matrixF∈R P×3 on which we perform coreset selection.
+Table 1: Axes of the selection space (base: µ12, the
+mean of layer ℓ12). Correlation of run performance
+with the coverage and fidelity metrics of the selected
+set, averaged over the metrics of each family and
+over seven dataset-task combinations (5,265 histor-
+ical runs). Best in bold.
+Selection space Coverage↑Fidelity↑
+µ12 0.273 0.300
+µ12 +δ max 0.276 0.340
+µ12 +σ 12 0.280 0.341
+µ12 +δ max +σ 12 0.308 0.357
+Additional Axis: For tasks with multiple visual
+inputs, we combine them analogously, z(x) =
+z(xa), z(xb)
+
+, with xa and xb denoting the differ-
+ent visual inputs. Beyond images, many datasets
+also carry auxiliary recording information, such
+as timing or proprioceptive sensor readings, and
+we evaluate the effect of adding such non-visual
+information </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given our prior analysis of where the hardest samples lie and whether fidelity or coverage can predict
+it, we experiment with two formulations: a fidelity-based one that matches the data distribution via
+the sliced Wasserstein distance, and a coverage-based one that spreads the coreset over the data via
+farthest-point sampling (FPS). Each axis of z(x) is first standardized to unit variance over the dataset
+so that no axis dominates the distance. We apply a redundancy heuristic such that an axis is removed
+when its correlation with another exceeds 0.95, which holds for σ12 and µ12 on Cityscapes (all
+variants), NA VSIM, SemanticKITTI-DVPS, and often on LIBERO-10, ensuring that the remaining
+axes are decorrelated and each contributes independent information to selection. For fidelity, we
+select coresets by minimizing a sliced Wasserstein distance (Kolouri et al., 2019) between the coreset
+6</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Preprint.
+and the full dataset across all D dimensions. In 1D, the Wasserstein distance between equal-weight
+empirical measures equals the mean absolute quantile difference, minimized by picking the center
+of each of the P/C quantile bins. To extend this to RD, we use the sliced Wasserstein distance,
+drawing E unit directions θ1, . . . , θE, with θ1 fixed to the primary axis and the rest random. For each
+direction, we score each point by its rank distance to the nearest quantile center, and sum these scores
+across directions. Since near-duplicates can occur, we scan points in increasing score order and skip
+any point within distance g of an already selected one, where g= 0.01·(0.1/α) 1/D is a unit-cube
+spacing heuristic. If fewer than C points are selected, we relax the constraint and add skipped points
+in score order until C is reached. This selection strategy has a compute cost of </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>O(EPlogP) ; we
+show pseudocode in Appx. A.2.
+Since fidelity does not correlate with performance for some datasets (Sec. 3.3), we introduce farthest-
+point sampling (FPS) as an independent, coverage-based selection method. Starting from an arbitrary
+point, we repeatedly add the point farthest from the current coreset, atO(P C)total cost via a running
+minimum-distance array. FPS is a 2-approximation for the k-center objective and the standard
+heuristic for spread-out coverage. Unlike sliced Wasserstein selection, it maximizes diversity and is
+therefore biased toward sparse and extreme regions.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>against nine baselines (Random,Forgetting,EL2N,AUM,CCS,BOSS,ELFS,FreeSel, and
+ZCore) across 41 dataset-ratio settings spanning seven benchmarks (CIFAR10 (Krizhevsky, 2009),
+PascalVOC (Everingham et al., 2010), Cityscapes (Cordts et al., 2016), Cityscapes-DVPS (Qiao et al.,
+2021), SemanticKITTI-DVPS (Qiao et al., 2021), NA VSIM (Dauner et al., 2024), and LIBERO-
+10 (Liu et al., 2023)). All experiments are run over three seeds, and we report averages.</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>farthest-point sampling, which we attribute to spurious outliers hurting
+performance under FPS. More broadly, we observe that neither FPS nor sliced Wasserstein sampling
+dominates universally, with the better choice depending on the specific dataset and task. However,
+7
+Preprint.
+Table 2: Downstream accuracy (%) across coreset ratios for CIFAR10, Cityscapes, and PascalVOC. Full: training
+on all data. WS: Sliced Wasserstein sampling. FPS: farthest-point-sampling.
+CIFAR10↑(Full: 95.05) Cityscapes↑(Full: 76.22) PascalVOC↑(Full: 79.01)
+Method 0.01 0.05 0.1 0.2 0.3 0.5 0.7 0.01 0.1 0.3 0.5 0.7 0.01 0.1 0.3 0.5 0.7
+Ref.Random 41.41 71.21 80.90 88.17 90.69 93.11 94.43 48.81 65.33 71.87 73.68 74.87 40.02 55.56 74.81 76.65 78.06
+Training
+w/ labels
+AUM 16.10 22.80 31.93 60.5492.53 95.2495.28 50.96 69.38 71.4175.4274.00 26.51 29.03 71.73 76.84 78.14
+Forgetting 25.88 30.95 39.50 68.78 90.35 95.08 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>95.32 50.42 69.33 70.61 74.75 74.68 25.44 31.22 75.2177.30 78.26
+EL2N 13.94 18.16 26.31 68.37 90.34 94.9095.34 51.51 69.8871.33 75.21 73.89 16.38 29.12 72.93 77.12 78.26
+CCS 41.68 74.88 86.4988.8591.03 91.16 91.40 47.58 61.78 72.04 71.50 74.63 44.01 43.15 73.94 75.47 78.05
+BOSS45.75 78.0284.28 87.63 91.43 94.32 95.33 - 64.01 66.82 69.93 70.11 46.19 56.44 75.24 76.75 77.77
+Training
+w/o labels
+ELFS AUM 35.21 74.8286.6687.74 89.21 89.25 91.13 46.38 64.77 71.55 74.68 74.28 45.05 53.0075.5676.93 77.90
+ELFS Forget 34.72 76.09 86.60 87.52 89.12 89.01 90.95 46.27 64.96 71.92 74.37 73.92 44.92 49.94 75.45 76.94 78.00
+Training-
+&amp; label-free
+ZCore 40.60 66.25 83.56 87.95 91.43 93.39 94.45 48.19 67.07 72.01 74.03 74.56 39.98 57.52 75.31 76.76 78.01
+FreeSel 40.62 70.57 82.66 88.26 91.64 93.38 94.35 47.98 64.27 71.90 74.48 74.6847.5455.79 74.94 76.70 77.95
+CoreDNA (WS) 41.95 68.61 82.40 87.95 91.24 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>93.49 94.40 49.92 66.98 72.42 74.4075.3244.1959.2175.36 77.09 78.16
+CoreDNA (FPS) 41.65 67.42 80.62 86.79 90.98 93.30 94.39 50.20 67.3572.7674.46 75.08 37.21 57.60 73.99 76.46 77.81
+Table 3: Downstream accuracy across coreset ratios for Cityscapes-DVPS and SemanticKITTI-DVPS. Segmen-
+tation is evaluated in mIoU [%] and monocular metric depth estimation in RMSE. Full: training on all data. WS:
+Sliced Wasserstein sampling. FPS: farthest-point-sampling.
+Cityscapes-DVPS
+Segm.↑(Full: 66.43)
+Cityscapes-DVPS
+Depth↓(Full: 3.91)
+SemanticKITTI-DVPS
+Segm.↑(Full: 55.58)
+SemanticKITTI-DVPS
+Depth↓(Full: 3.39)
+Method 0.01 0.1 0.3 0.5 0.7 0.01 0.1 0.3 0.01 0.1 0.3 0.5 0.7 0.01 0.1 0.3
+Ref. Temporal Stride 38.28 56.71 63.8364.47 65.02 6.174.28 3.9738.7453.14 55.2855.80 56.32 3.67 3.343.35Random 37.88 55.77 61.23 64.03 64.83 5.70 4.36 4.02 36.81 51.17 55.08 55.98 55.90 3.70 3.36 3.36
+Training
+w/ </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>labels
+AUM 35.54 51.28 57.52 60.56 63.21 - - - 27.76 42.85 51.03 53.45 55.06 - - -
+Forgetting 32.86 45.70 56.63 60.15 62.63 5.56 4.44 4.12 26.44 40.35 46.26 52.84 54.46 3.95 3.45 3.34
+EL2N 32.84 52.01 58.99 62.00 64.65 7.40 5.74 5.15 28.07 43.58 51.12 53.55 55.04 3.74 3.52 3.40
+CCS 37.98 50.43 58.15 60.53 62.16 - - - 27.76 50.63 54.69 55.18 55.37 - - -
+BOSS 34.47 51.13 57.53 57.70 58.39 - - - 38.07 51.04 52.93 52.30 54.35 - - -
+Training
+w/o labels
+ELFS AUM 36.53 52.77 59.60 62.28 64.89 6.28 4.36 4.07 38.23 46.96 50.82 52.63 54.27 3.77 3.42 3.37
+ELFS Forget 36.65 52.64 59.79 62.76 64.18 6.29 4.36 4.07 38.31 47.31 54.05 55.65 55.74 3.74 3.43 3.39
+Training-
+&amp; label-free
+ZCore 38.07 55.05 61.54 63.33 64.30 5.81 4.43 4.08 38.69 52.47 54.89 54.90 56.24 3.603.39 3.37
+FreeSel 38.12 56.30 63.18 63.36 64.405.024.31 3.97 39.3351.74 55.16 56.2255.90 3.74 3.35 3.33
+CoreDNA (WS) 38.18 55.66 61.70 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>64.00 64.52 6.05 4.35 4.05 37.56 50.02 54.90 55.50 55.62 3.73 3.39 3.35
+CoreDNA (WS+T)38.5155.38 62.0464.77 65.226.10 4.39 4.08 37.73 51.37 55.16 55.99 56.393.77 3.36 3.35
+CoreDNA (FPS) 37.36 53.79 61.09 63.26 64.90 6.20 4.40 4.06 38.89 49.50 54.05 55.65 55.74 3.74 3.41 3.40
+CoreDNA with either selection consistently performs well across all settings, unlike several baselines
+whose performance varies substantially. In many cases, CoreDNA outperforms considerably stronger
+and more cumbersome baselines, and remains competitive even in the settings where it does not lead.
+We now turn to non-curated, sequence-based data, where redundancy between consecutive frames
+introduces properties absent from curated benchmarks. We compare Cityscapes-DVPS and
+SemanticKITTI-DVPS for monocular metric depth estimation and semantic segmentation in Tab. 3.
+Depth estimation is a regression problem, for which </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to α= 0.1 benefiting from explicitly selecting for diverse locations at such a low
+sample count, whereas at α= 0.5 , sufficient location diversity is already achieved naturally, making
+the position axis redundant. In general, FPS outperforms WS and the random baseline at both ratios,
+indicating that picking rare samples is helpful for this task, and CoreDNA can significantly improve
+autonomous driving policy training efficiency with minimal performance drop.
+Table 4: Downstream driving performance
+on NA VSIM. Img, State, and Pos. indicate
+the coreset selection axes.
+EPDMS↑
+Method Img State Pos. 0.1 0.5
+Full 80.51
+Random 65.44 78.88
+CoreDNA (WS)✓66.31 78.17
+CoreDNA (WS)✓ ✓65.29 78.90
+CoreDNA (WS)✓ ✓ ✓67.03 78.62
+CoreDNA (FPS)✓66.98 78.60
+CoreDNA (FPS)✓ ✓65.4279.98
+CoreDNA (FPS)✓ ✓ ✓67.4379.76
+Visuo-Motor Policies: For visuo-motor policy learning,
+we demonstrate the capabilities of </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>demonstration variant. We note that the retention rate
+itself may be suboptimal, and other values could yield even better results. Nonetheless, these results
+demonstrate that CoreDNA can improve performance over naively training using all available frames.
+Table 5: Mean success rate across all tasks in
+LIBERO-10.
+External Wrist Success
+Method Img Img Rate↑
+LIBERO-10 Frame-level sampling
+Full (5 demos) 16.9
+CoreDNA (WS)✓17.3
+CoreDNA (WS)✓ ✓16.8
+CoreDNA (FPS)✓ ✓17.1
+LIBERO-10 Frame-level sampling (50 demos)
+Full (50 demos) 76.7
+CoreDNA (WS)✓ ✓77.8
+LIBERO-90 Demonstration-level sampling (mix-in)
+All 18.3
+DataMIL✓ ✓25.3
+CoreDNA (WS)✓ ✓19.0
+CoreDNA (CR)✓ ✓27.3
+In our second experiment, we follow DataMIL&#x27;s exper-
+imental setup and keep all 5 demonstrations fixed and
+rather select an auxiliary subset of 10% demonstrations
+from the full LIBERO-90 demonstration corpus to mix
+with the 5 LIBERO-10 </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate our method on image classification, semantic segmentation, metric depth estimation, end-to-end
+autonomous driving and imitation learning. We use the authors&#x27; published code for all baselines. We train all
+experiments over 3 seeds to remove the effect of training-specific variations. We train all coresets for a dataset
+with consistent numbers of iterations. We detail the set-up for each below.
+Image classification.Following prior work (Zheng et al., 2023; Xie et al., 2023a; Zheng et al., 2025), we
+use a ResNet18 (He et al., 2016) architecture to train a network on CIFAR10 (Krizhevsky, 2009) with Cross
+Entropy loss. We train for 40,000 iterations with a learning rate of 0.1 using an SGD optimizer with momentum
+0.9, weight decay of 5e−4, and cosine annealing learning rate. We apply a random 32×32 crop with 4-pixel
+reflect padding and a random horizontal flip, followed by mean </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and standard-deviation normalization. We report
+results in terms of accuracy.
+Semantic Segmentation.We perform semantic segmentation on PascalVOC (Everingham et al., 2010),
+Cityscapes (Cordts et al., 2016), Cityscapes-DVPS (Qiao et al., 2021), and SemanticKITTI-DVPS (Qiao et al.,
+2021). We train a DeepLabv3 (Chen et al., 2017) with a ResNet-101 backbone and a batch size of 16 with Cross
+Entropy loss. We use a learning rate of 0.03 for PascalVOC, 0.1 for Cityscapes and SemanticKITTI-DVPS, and
+0.3 for Cityscapes-DVPS. We set the backbone&#x27;s learning rate to0.1× the head&#x27;s. We train for 39,720 iterations
+on PascalVOC, 11,160 on Cityscapes, 9,000 on Cityscapes-DVPS, and 23,920 on SemanticKITTI-DVPS,
+corresponding to 60 epochs on the full training set for PascalVOC, Cityscapes, and Cityscapes-DVPS, and 30
+epochs for SemanticKITTI-DVPS. All four segmentation datasets share a random horizontal </blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Cityscapes-
+DVPS. We train a ZoeDepth-Small network (Bhat et al., 2023) with a Depth Anything V2 backbone (Yang et al.,
+2024), using a scale-invariant log loss with a weight of 10. We train for 23,920 iterations on SemanticKITTI-
+DVPS and 4,500 on Cityscapes-DVPS (amounting to 30 epochs on the full dataset), using a batch size of 16, a
+learning rate of 2e−5 for the head, and 4e−7 for the encoder. Both depth datasets share a heavier augmentation
+14
+Preprint.
+pipeline than their segmentation counterparts: a random horizontal flip (p= 0.5), a random affine transform
+(rotation ±2.5◦, translation 5%, scale [0.95,1.05] ), color jitter (brightness, contrast, saturation, hue = 0.1), and
+random gamma correction (range [0.8,1.2] ), followed by ImageNet-statistics normalization. Cityscapes-DVPS
+uses a random resized crop to 518×518 (scale [0.5,2.0] ), while SemanticKITTI-DVPS resizes to </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>350×1204
+and takes a random 350×518 crop. We use an Adam optimizer with a cosine annealing learning rate scheduler.
+We report Root Mean Squared Error (RMSE) as the primary metric. For depth estimation, we define correctness
+as an absolute relative error below0.1for at least10%of the image, a threshold determined empirically.
+Imitation Learning – Driving.We perform end-to-end driving on the NA VSIM benchmark. We train on
+the navtrain split, which includes both training and validation scenes, and evaluate on the held-outnavtest
+split. For the baseline model, we use Latent TransFuser (Chitta et al., 2023), which uses only camera inputs
+without LiDAR. We train for 50 epochs with a batch size of 128 and a learning rate of 1e−4 . We refer the
+reader to the original work for further training details (Cao et al., 2025; Chitta et al., 2023). We report the
+Extended Predictive Driver Model Score </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(EPDMS) as the primary metric (Dauner et al., 2024; Cao et al., 2025).
+Imitation Learning – Manipulation.We perform end-to-end closed-loop visuo-motor policy training on
+the LIBERO-10 benchmark (Liu et al., 2023) using the OCTO model (Octo Model Team et al., 2024). We fine-
+tune OCTO using off-the-shelf parameters following the DataMIL benchmark (Dass et al., 2026) configuration,
+thus we use an action chunking head of size eight, a batch size of 128 and an annealing cosine learning rate
+schedule with an initial learning rate of 3e−4 . We evaluate all trained policies on the LIBERO-10 benchmark
+for 50 evaluation roll-outs and report the average success rate over them.
+For selecting the five demonstration subset of all 50 demonstrations for each LIBERO-10 task, we could not
+rely on DataMIL&#x27;s (Dass et al., 2026) selection as it was unavailable to us. Instead, we first filter all </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Segmentation method</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Segmentation task adjacent to detection; shares backbones and dense-prediction evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Segmentation</li>
+              <li>Tags: segmentation, visual-representation, depth</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-16</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-19 09:35:27</li><li>Last seen by Paper Scout: 2026-10-19 09:35:27</li></ul>
+            <ul><li>arXiv: 2610.23642</li><li>arXiv IDs: 2610.23642</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="diversity-without-labels-task-agnostic-coreset-selection-across-perception-and-actio-8825d7de.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Diversity Without Labels: Task-Agnostic Coreset Selection Across Perception and Action. Julia Hindel, Benjamin Ramtoula, Kyuhwan Yeon, Nick Heppert, Paul Newman, Daniele De Martini, Abhinav Valada. 2026-10-16. https://arxiv.org/abs/2610.23642v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

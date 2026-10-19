@@ -30,7 +30,7 @@
   "last_seen_date": "2026-08-02",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-26 19:25:45",
   "notified_date": "2026-06-26",
@@ -41,7 +41,7 @@
     "curation_note": "manually added",
     "date_source": "semantic_scholar",
     "first_seen_at": "2026-06-26 19:23:58",
-    "generated_at": "2026-10-18 09:53:53",
+    "generated_at": "2026-10-19 09:39:05",
     "last_seen_at": "2026-08-02 07:52:30",
     "metadata_sources": [
       "semantic_scholar",
@@ -120,36 +120,2081 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-19T09:36:07.569300+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper provides a thoroughly articulated formulation, sound training objectives, robust comparisons against contemporary memory baselines, and clear ablation data validating each component.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 65633,
+      "assessment_input_sha256": "67ff54a2bcb5a848cccb94c7fe5685fcc9d874e0c786dd8c715d37d679d8e5d4",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2606.25161",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 62553,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 61632,
+      "evidence_block_count": 92,
+      "evidence_context_characters": 74961,
+      "evidence_context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+      "evidence_context_sha256": "48c6a496194577cea42f7291f8238fdebeb3ab9920443e0516a6ff51b3bd2831",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 299,
+      "excluded_sections": [
+        {
+          "characters": 125,
+          "heading": "References",
+          "page": 12,
+          "reason": "explicit_back_matter"
+        },
+        {
+          "characters": 87,
+          "heading": "References",
+          "page": 13,
+          "reason": "explicit_back_matter"
+        },
+        {
+          "characters": 87,
+          "heading": "References",
+          "page": 13,
+          "reason": "explicit_back_matter"
+        }
+      ],
+      "extracted_characters": 62587,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "extracted_pages": 18,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "35e68df4f5debc42656e23cf807c689b2aad244b990d4f953315ca447261c690",
+        "source_url": "https://arxiv.org/pdf/2606.25161",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 62553,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Trustmem: Learning Trustworthy Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 1624,
+          "supplied_characters": 1624
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 2352,
+          "supplied_characters": 2352
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 4258,
+          "supplied_characters": 4258
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 243,
+          "supplied_characters": 243
+        },
+        {
+          "heading": "Related Works",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 2569,
+          "supplied_characters": 2569
+        },
+        {
+          "heading": "Related Works",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 546,
+          "supplied_characters": 546
+        },
+        {
+          "heading": "O+ > O-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 785,
+          "supplied_characters": 785
+        },
+        {
+          "heading": "Overview Of Trustmemframework",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1944,
+          "supplied_characters": 1944
+        },
+        {
+          "heading": "Overview Of Trustmemframework",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 874,
+          "supplied_characters": 874
+        },
+        {
+          "heading": "Memory Transition Verifier",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 2019,
+          "supplied_characters": 2019
+        },
+        {
+          "heading": "Multi-Granularity Reward Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1290,
+          "supplied_characters": 1290
+        },
+        {
+          "heading": "Multi-Granularity Reward Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 644,
+          "supplied_characters": 644
+        },
+        {
+          "heading": "Transition-Ranked Grpo",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 3471,
+          "supplied_characters": 3471
+        },
+        {
+          "heading": "Transition-Ranked Grpo",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1272,
+          "supplied_characters": 1272
+        },
+        {
+          "heading": "Experiment Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 1692,
+          "supplied_characters": 1692
+        },
+        {
+          "heading": "Experiment Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 4664,
+          "supplied_characters": 4664
+        },
+        {
+          "heading": "Experiments On Memory Utility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 558,
+          "supplied_characters": 558
+        },
+        {
+          "heading": "Methods Ar Ttl Lru Overall",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 1132,
+          "supplied_characters": 1132
+        },
+        {
+          "heading": "Experiments On Halumem",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 988,
+          "supplied_characters": 988
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 1471,
+          "supplied_characters": 1471
+        },
+        {
+          "heading": "Reliability Of Memory Consolidation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 237,
+          "supplied_characters": 237
+        },
+        {
+          "heading": "Reliability Of Memory Consolidation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 825,
+          "supplied_characters": 825
+        },
+        {
+          "heading": "Training Reward Dynamics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 22,
+          "source_characters": 717,
+          "supplied_characters": 717
+        },
+        {
+          "heading": "Case Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 680,
+          "supplied_characters": 680
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 24,
+          "source_characters": 441,
+          "supplied_characters": 441
+        },
+        {
+          "heading": "Input Chunk Existing Method Memory Trustmemmemory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "methods",
+          "section_index": 25,
+          "source_characters": 4583,
+          "supplied_characters": 4583
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "limitations",
+          "section_index": 26,
+          "source_characters": 525,
+          "supplied_characters": 525
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 4451,
+          "supplied_characters": 4451
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 719,
+          "supplied_characters": 719
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 2802,
+          "supplied_characters": 2802
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 861,
+          "supplied_characters": 861
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1200,
+          "supplied_characters": 1200
+        },
+        {
+          "heading": "Method Category Model/System Used Backbone/Base Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 32,
+          "source_characters": 346,
+          "supplied_characters": 346
+        },
+        {
+          "heading": "Mem-\u0391[32] Rl-Based Memory Method Mem-\u0391 Qwen3-4B",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 33,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Mem-T [41] Rl-Based / Agentic Memory Method Mem-T-4B Qwen3-4B",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 34,
+          "source_characters": 61,
+          "supplied_characters": 61
+        },
+        {
+          "heading": "Atommem [10] Rl-Based / Agentic Memory Method Atommem-8B Qwen3-8B",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 35,
+          "source_characters": 65,
+          "supplied_characters": 65
+        },
+        {
+          "heading": "Mem0 [4] System-Level Memory Framework Mem0 Not Fixed",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 53,
+          "supplied_characters": 53
+        },
+        {
+          "heading": "Memobase [38] System-Level Memory Framework Memobase Not Fixed",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 62,
+          "supplied_characters": 62
+        },
+        {
+          "heading": "Supermemory [24] System-Level Memory Framework Supermemory Not Fixed",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 68,
+          "supplied_characters": 68
+        },
+        {
+          "heading": "Zep [23] System-Level Memory Framework Zep Not Fixed",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 459,
+          "supplied_characters": 459
+        },
+        {
+          "heading": "Appendix: A Experiment Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 270,
+          "supplied_characters": 270
+        },
+        {
+          "heading": "Appendix: B Experiments On Memory Utility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 1189,
+          "supplied_characters": 1189
+        },
+        {
+          "heading": "Appendix: C Experiments On Halumem",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 1238,
+          "supplied_characters": 1238
+        },
+        {
+          "heading": "Prompt Template For Transition Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 467,
+          "supplied_characters": 467
+        },
+        {
+          "heading": "Faithfulness:Whether Newly Added Or Modified Memory Content Is Supported By The Chunk Evidence Or The Previous",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 1672,
+          "supplied_characters": 1672
+        },
+        {
+          "heading": "Appendix: D Memory Transition Error Judge Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 1393,
+          "supplied_characters": 1393
+        },
+        {
+          "heading": "Hallucination:The Memory Operation Introduces A Substantive New Fact Unsupported By The Input Chunk Or Prior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 1342,
+          "supplied_characters": 1342
+        },
+        {
+          "heading": "Hallucination:The Memory Operation Introduces A Substantive New Fact Unsupported By The Input Chunk Or Prior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 463,
+          "supplied_characters": 463
+        }
+      ],
+      "selected_characters": 61632,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "selected_sections": [
+        {
+          "characters": 1624,
+          "heading": "Trustmem: Learning Trustworthy Memory",
+          "page": 1
+        },
+        {
+          "characters": 2352,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4258,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 243,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 2569,
+          "heading": "Related Works",
+          "page": 3
+        },
+        {
+          "characters": 546,
+          "heading": "Related Works",
+          "page": 4
+        },
+        {
+          "characters": 785,
+          "heading": "O+ > O-",
+          "page": 4
+        },
+        {
+          "characters": 1944,
+          "heading": "Overview Of Trustmemframework",
+          "page": 4
+        },
+        {
+          "characters": 874,
+          "heading": "Overview Of Trustmemframework",
+          "page": 5
+        },
+        {
+          "characters": 2019,
+          "heading": "Memory Transition Verifier",
+          "page": 5
+        },
+        {
+          "characters": 1290,
+          "heading": "Multi-Granularity Reward Design",
+          "page": 5
+        },
+        {
+          "characters": 644,
+          "heading": "Multi-Granularity Reward Design",
+          "page": 6
+        },
+        {
+          "characters": 3471,
+          "heading": "Transition-Ranked Grpo",
+          "page": 6
+        },
+        {
+          "characters": 1272,
+          "heading": "Transition-Ranked Grpo",
+          "page": 7
+        },
+        {
+          "characters": 1692,
+          "heading": "Experiment Settings",
+          "page": 7
+        },
+        {
+          "characters": 4664,
+          "heading": "Experiment Settings",
+          "page": 8
+        },
+        {
+          "characters": 558,
+          "heading": "Experiments On Memory Utility",
+          "page": 8
+        },
+        {
+          "characters": 1132,
+          "heading": "Methods Ar Ttl Lru Overall",
+          "page": 9
+        },
+        {
+          "characters": 988,
+          "heading": "Experiments On Halumem",
+          "page": 9
+        },
+        {
+          "characters": 1471,
+          "heading": "Ablation Study",
+          "page": 9
+        },
+        {
+          "characters": 237,
+          "heading": "Reliability Of Memory Consolidation",
+          "page": 9
+        },
+        {
+          "characters": 825,
+          "heading": "Reliability Of Memory Consolidation",
+          "page": 10
+        },
+        {
+          "characters": 717,
+          "heading": "Training Reward Dynamics",
+          "page": 10
+        },
+        {
+          "characters": 680,
+          "heading": "Case Study",
+          "page": 10
+        },
+        {
+          "characters": 441,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 4583,
+          "heading": "Input Chunk Existing Method Memory Trustmemmemory",
+          "page": 11
+        },
+        {
+          "characters": 525,
+          "heading": "Limitations",
+          "page": 11
+        },
+        {
+          "characters": 4451,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 719,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 2802,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 861,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 1200,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 346,
+          "heading": "Method Category Model/System Used Backbone/Base Model",
+          "page": 15
+        },
+        {
+          "characters": 47,
+          "heading": "Mem-\u0391[32] Rl-Based Memory Method Mem-\u0391 Qwen3-4B",
+          "page": 15
+        },
+        {
+          "characters": 61,
+          "heading": "Mem-T [41] Rl-Based / Agentic Memory Method Mem-T-4B Qwen3-4B",
+          "page": 15
+        },
+        {
+          "characters": 65,
+          "heading": "Atommem [10] Rl-Based / Agentic Memory Method Atommem-8B Qwen3-8B",
+          "page": 15
+        },
+        {
+          "characters": 53,
+          "heading": "Mem0 [4] System-Level Memory Framework Mem0 Not Fixed",
+          "page": 15
+        },
+        {
+          "characters": 62,
+          "heading": "Memobase [38] System-Level Memory Framework Memobase Not Fixed",
+          "page": 15
+        },
+        {
+          "characters": 68,
+          "heading": "Supermemory [24] System-Level Memory Framework Supermemory Not Fixed",
+          "page": 15
+        },
+        {
+          "characters": 459,
+          "heading": "Zep [23] System-Level Memory Framework Zep Not Fixed",
+          "page": 15
+        },
+        {
+          "characters": 270,
+          "heading": "Appendix: A Experiment Settings",
+          "page": 15
+        },
+        {
+          "characters": 1189,
+          "heading": "Appendix: B Experiments On Memory Utility",
+          "page": 15
+        },
+        {
+          "characters": 1238,
+          "heading": "Appendix: C Experiments On Halumem",
+          "page": 15
+        },
+        {
+          "characters": 467,
+          "heading": "Prompt Template For Transition Verification",
+          "page": 16
+        },
+        {
+          "characters": 1672,
+          "heading": "Faithfulness:Whether Newly Added Or Modified Memory Content Is Supported By The Chunk Evidence Or The Previous",
+          "page": 16
+        },
+        {
+          "characters": 1393,
+          "heading": "Appendix: D Memory Transition Error Judge Prompt",
+          "page": 17
+        },
+        {
+          "characters": 1342,
+          "heading": "Hallucination:The Memory Operation Introduces A Substantive New Fact Unsupported By The Input Chunk Or Prior",
+          "page": 17
+        },
+        {
+          "characters": 463,
+          "heading": "Hallucination:The Memory Operation Introduces A Substantive New Fact Unsupported By The Input Chunk Or Prior",
+          "page": 18
+        }
+      ],
+      "selected_text_sha256": "67ff54a2bcb5a848cccb94c7fe5685fcc9d874e0c786dd8c715d37d679d8e5d4",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "35e68df4f5debc42656e23cf807c689b2aad244b990d4f953315ca447261c690",
+      "source_pages": 18,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": [
+        "Structurally bounded citation prefixes excluded; ambiguous back matter, body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0002"
+        ],
+        "excerpt": "Verifier to evaluate the transition process of memory updates in terms of coverage,\npreservation, and faithfulness. It further constructs preference pairs among candidate updates under the same\nmemory state, enabling preference-guided reinforcement learning to directly optimize memory updating be-\nhaviors. Extensive experiments demonstrate that TRUSTMEMimproves both memory utility and reliability:\nit achieves state-of-the-art results across MemoryAgentBench, HaluMem, and the Mem-\u03b1 validation set, im-\nproves HaluMem memory extraction by 12.14 F1 points, and reduces transition-level omission, corruption, and\nhallucination by 40.1%, 79.1%, and 50.0%, respectively, compared with the strongest baseline for each error\ntype.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Trustmem: Learning Trustworthy Memory",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "47307759a9da3acc7fb97f5f06a69c126eceab3a7f522cc493c24d6551fb90a9",
+            "evidence_id": "E4d9d5442b7e5f028-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Trustmem: Learning Trustworthy Memory",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1624,
+                "page": 1,
+                "section": "Trustmem: Learning Trustworthy Memory",
+                "section_index": 0,
+                "start": 897,
+                "text": "Verifier to evaluate the transition process of memory updates in terms of coverage,\npreservation, and faithfulness. It further constructs preference pairs among candidate updates under the same\nmemory state, enabling preference-guided reinforcement learning to directly optimize memory updating be-\nhaviors. Extensive experiments demonstrate that TRUSTMEMimproves both memory utility and reliability:\nit achieves state-of-the-art results across MemoryAgentBench, HaluMem, and the Mem-\u03b1 validation set, im-\nproves HaluMem memory extraction by 12.14 F1 points, and reduces transition-level omission, corruption, and\nhallucination by 40.1%, 79.1%, and 50.0%, respectively, compared with the strongest baseline for each error\ntype."
+              }
+            ],
+            "text": "Verifier to evaluate the transition process of memory updates in terms of coverage,\npreservation, and faithfulness. It further constructs preference pairs among candidate updates under the same\nmemory state, enabling preference-guided reinforcement learning to directly optimize memory updating be-\nhaviors. Extensive experiments demonstrate that TRUSTMEMimproves both memory utility and reliability:\nit achieves state-of-the-art results across MemoryAgentBench, HaluMem, and the Mem-\u03b1 validation set, im-\nproves HaluMem memory extraction by 12.14 F1 points, and reduces transition-level omission, corruption, and\nhallucination by 40.1%, 79.1%, and 50.0%, respectively, compared with the strongest baseline for each error\ntype."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0009"
+        ],
+        "excerpt": "update along coverage, preservation, and faithfulness, and further proposesTransition-Ranked\nGRPO, built upon GRPO [25], to optimize the memory-update policy. By ranking candidate updates under the same\nmemory state, TRUSTMEMprovides fine-grained supervision for memory-editing behaviors while maintaining the\ndownstream utility of the final memory.\nWe evaluate TRUSTMEMacross three settings: MemoryAgentBench [ 9], HaluMem [3], and the Mem-\u03b1 [32] validation\nset, covering accurate retrieval, test-time learning, long-range understanding, and memory reliability. Extensive\nexperiments demonstrate that TRUSTMEMachieves state-of-the-art results across these settings, improving over the\nstrongest baseline by 6.5 points on MemoryAgentBench and 12.14 F1 points in HaluMem memory extraction. Beyond\nfinal task performance, Figure 2 shows that TRUSTMEMachieves the lowest transition-level error rates ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "20629e8a0a3fd9a8f9322434f263fbf5fac2c2010a7e0d03470a2c3cf2f6c587",
+            "evidence_id": "E4d9d5442b7e5f028-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3913,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 3016,
+                "text": "update along coverage, preservation, and faithfulness, and further proposesTransition-Ranked\nGRPO, built upon GRPO [25], to optimize the memory-update policy. By ranking candidate updates under the same\nmemory state, TRUSTMEMprovides fine-grained supervision for memory-editing behaviors while maintaining the\ndownstream utility of the final memory.\nWe evaluate TRUSTMEMacross three settings: MemoryAgentBench [ 9], HaluMem [3], and the Mem-\u03b1 [32] validation\nset, covering accurate retrieval, test-time learning, long-range understanding, and memory reliability. Extensive\nexperiments demonstrate that TRUSTMEMachieves state-of-the-art results across these settings, improving over the\nstrongest baseline by 6.5 points on MemoryAgentBench and 12.14 F1 points in HaluMem memory extraction. Beyond\nfinal task performance, Figure 2 shows that TRUSTMEMachieves the lowest transition-level error rates "
+              }
+            ],
+            "text": "update along coverage, preservation, and faithfulness, and further proposesTransition-Ranked\nGRPO, built upon GRPO [25], to optimize the memory-update policy. By ranking candidate updates under the same\nmemory state, TRUSTMEMprovides fine-grained supervision for memory-editing behaviors while maintaining the\ndownstream utility of the final memory.\nWe evaluate TRUSTMEMacross three settings: MemoryAgentBench [ 9], HaluMem [3], and the Mem-\u03b1 [32] validation\nset, covering accurate retrieval, test-time learning, long-range understanding, and memory reliability. Extensive\nexperiments demonstrate that TRUSTMEMachieves state-of-the-art results across these settings, improving over the\nstrongest baseline by 6.5 points on MemoryAgentBench and 12.14 F1 points in HaluMem memory extraction. Beyond\nfinal task performance, Figure 2 shows that TRUSTMEMachieves the lowest transition-level error rates "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0010"
+        ],
+        "excerpt": "across omission,\ncorruption, and hallucination. Compared with the strongest baseline for each error type, TRUSTMEMreduces omission,\ncorruption, and hallucination by 40.1%, 79.1%, and 50.0%, respectively. These results demonstrate that TRUSTMEM\nimproves not only memory utility, but also operation-level reliability and transition-level safety.\n2\nFigure 2 Transition-level error rates of existing memory agents and TRUSTMEM.TRUSTMEMachieves the lowest\nomission, corruption, and hallucination rates, reducing errors by 40.1%, 79.1%, and 50.0% over the strongest baseline for each error\ntype.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "09cb7a17354800ac15c7e06782a46a2df0c2c186b2a0f4c9d232ba338a3a2d05",
+            "evidence_id": "E4d9d5442b7e5f028-B0010",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4258,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 3913,
+                "text": "across omission,\ncorruption, and hallucination. Compared with the strongest baseline for each error type, TRUSTMEMreduces omission,\ncorruption, and hallucination by 40.1%, 79.1%, and 50.0%, respectively. These results demonstrate that TRUSTMEM\nimproves not only memory utility, but also operation-level reliability and transition-level safety.\n2"
+              },
+              {
+                "end": 243,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "Figure 2 Transition-level error rates of existing memory agents and TRUSTMEM.TRUSTMEMachieves the lowest\nomission, corruption, and hallucination rates, reducing errors by 40.1%, 79.1%, and 50.0% over the strongest baseline for each error\ntype."
+              }
+            ],
+            "text": "across omission,\ncorruption, and hallucination. Compared with the strongest baseline for each error type, TRUSTMEMreduces omission,\ncorruption, and hallucination by 40.1%, 79.1%, and 50.0%, respectively. These results demonstrate that TRUSTMEM\nimproves not only memory utility, but also operation-level reliability and transition-level safety.\n2\nFigure 2 Transition-level error rates of existing memory agents and TRUSTMEM.TRUSTMEMachieves the lowest\nomission, corruption, and hallucination rates, reducing errors by 40.1%, 79.1%, and 50.0% over the strongest baseline for each error\ntype."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0021"
+        ],
+        "excerpt": "transition, including the current chunk, the generated memory-editing actions, and the memory entries touched or\nretrieved by these actions. This avoids feeding the full memory bank while still providing the evidence needed to judge\nthe local update. The simplified verifier prompt is shown in Figure 5 in the Appendix.\nSpecifically, the verifier evaluates each transition along three diagnostic dimensions:coverage, which checks whether\nimportant information from the current chunk is preserved;preservation, which checks whether valid prior memory is\nmaintained without unjustified deletion or distortion; andfaithfulness, which checks whether newly added or modified\nmemory content is supported by the current chunk or the previous memory state. These judgments are aggregated into a\nscalar trustworthiness scorev t =V(z t)\u2208[0,1], which is used as the transition-level verification reward.\nBy ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory Transition Verifier",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bd20d41b8016675c7ef4e9f5a6f9ddcbc602dc297dbd8906866fd9941810507a",
+            "evidence_id": "E4d9d5442b7e5f028-B0021",
+            "pages": [
+              5
+            ],
+            "section": "Memory Transition Verifier",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 5,
+                "section": "Memory Transition Verifier",
+                "section_index": 9,
+                "start": 900,
+                "text": "transition, including the current chunk, the generated memory-editing actions, and the memory entries touched or\nretrieved by these actions. This avoids feeding the full memory bank while still providing the evidence needed to judge\nthe local update. The simplified verifier prompt is shown in Figure 5 in the Appendix.\nSpecifically, the verifier evaluates each transition along three diagnostic dimensions:coverage, which checks whether\nimportant information from the current chunk is preserved;preservation, which checks whether valid prior memory is\nmaintained without unjustified deletion or distortion; andfaithfulness, which checks whether newly added or modified\nmemory content is supported by the current chunk or the previous memory state. These judgments are aggregated into a\nscalar trustworthiness scorev t =V(z t)\u2208[0,1], which is used as the transition-level verification reward.\nBy "
+              }
+            ],
+            "text": "transition, including the current chunk, the generated memory-editing actions, and the memory entries touched or\nretrieved by these actions. This avoids feeding the full memory bank while still providing the evidence needed to judge\nthe local update. The simplified verifier prompt is shown in Figure 5 in the Appendix.\nSpecifically, the verifier evaluates each transition along three diagnostic dimensions:coverage, which checks whether\nimportant information from the current chunk is preserved;preservation, which checks whether valid prior memory is\nmaintained without unjustified deletion or distortion; andfaithfulness, which checks whether newly added or modified\nmemory content is supported by the current chunk or the previous memory state. These judgments are aggregated into a\nscalar trustworthiness scorev t =V(z t)\u2208[0,1], which is used as the transition-level verification reward.\nBy "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0024"
+        ],
+        "excerpt": "|/ Pt |c(i)t |),\nencouraging compact memory.\nTransition-Level Rewards.These rewards evaluate each local memory transitionM t\u22121 \u2192M t.\nAction Execution (Ract) checks whether the generated structured actions are parseable and executable by the memory\nexecutorE.\nContent Type (Rtype) uses a lightweight analyzer Jtype to ensure that the modified content is semantically specific and\nnon-empty.\n5\nVerifier Reward(Rver) uses the Memory Transition VerifierV from Section 3.2 to evaluate the semantic safety of the\ntransition, defined asR (i)ver,t =V(z i,t).\nAggregating the above, we define the total reward for thet-th memory update of sampleias\nRi,t =R (i)task +\u03bb effR(i)eff +\u03bbactR(i)act,t +\u03bb typeR(i)type,t +\u03bb verR(i)ver,t. (1)\nThis reward combines final memory utility, memory compactness, action executability, content specificity, and transition-\nlevel trustworthiness. The sample-level terms provide ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Granularity Reward Design",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2fb53c9ecb98f358876300360cb10041b20d6dc1e7c5d6b75b29662721ede435",
+            "evidence_id": "E4d9d5442b7e5f028-B0024",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Multi-Granularity Reward Design",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1290,
+                "page": 5,
+                "section": "Multi-Granularity Reward Design",
+                "section_index": 10,
+                "start": 899,
+                "text": "|/ Pt |c(i)t |),\nencouraging compact memory.\nTransition-Level Rewards.These rewards evaluate each local memory transitionM t\u22121 \u2192M t.\nAction Execution (Ract) checks whether the generated structured actions are parseable and executable by the memory\nexecutorE.\nContent Type (Rtype) uses a lightweight analyzer Jtype to ensure that the modified content is semantically specific and\nnon-empty.\n5"
+              },
+              {
+                "end": 508,
+                "page": 6,
+                "section": "Multi-Granularity Reward Design",
+                "section_index": 11,
+                "start": 0,
+                "text": "Verifier Reward(Rver) uses the Memory Transition VerifierV from Section 3.2 to evaluate the semantic safety of the\ntransition, defined asR (i)ver,t =V(z i,t).\nAggregating the above, we define the total reward for thet-th memory update of sampleias\nRi,t =R (i)task +\u03bb effR(i)eff +\u03bbactR(i)act,t +\u03bb typeR(i)type,t +\u03bb verR(i)ver,t. (1)\nThis reward combines final memory utility, memory compactness, action executability, content specificity, and transition-\nlevel trustworthiness. The sample-level terms provide "
+              }
+            ],
+            "text": "|/ Pt |c(i)t |),\nencouraging compact memory.\nTransition-Level Rewards.These rewards evaluate each local memory transitionM t\u22121 \u2192M t.\nAction Execution (Ract) checks whether the generated structured actions are parseable and executable by the memory\nexecutorE.\nContent Type (Rtype) uses a lightweight analyzer Jtype to ensure that the modified content is semantically specific and\nnon-empty.\n5\nVerifier Reward(Rver) uses the Memory Transition VerifierV from Section 3.2 to evaluate the semantic safety of the\ntransition, defined asR (i)ver,t =V(z i,t).\nAggregating the above, we define the total reward for thet-th memory update of sampleias\nRi,t =R (i)task +\u03bb effR(i)eff +\u03bbactR(i)act,t +\u03bb typeR(i)type,t +\u03bb verR(i)ver,t. (1)\nThis reward combines final memory utility, memory compactness, action executability, content specificity, and transition-\nlevel trustworthiness. The sample-level terms provide "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0026"
+        ],
+        "excerpt": "Building on the multi-granularity reward, we proposeTransition-Ranked GRPO, which combines scalar reward\noptimization with verifier-guided transition ranking. While the verifier score can be used as a transition-level reward\nin Eq. (1), its absolute magnitude may not always be well calibrated. However, in our setting, verifier scores are used\nmore robustly as relative preferences among candidate updates generated under the same state than as fully calibrated\nabsolute values. Therefore, we further use verifier scores to construct preference pairs among candidate transitions and\noptimize the policy with an additional ranking objective.\nGlobal Trajectory Optimization via GRPO.We adopt Group Relative Policy Optimization (GRPO) [ 25] to optimize\nthe memory policy. Specifically, for each training sample i, we sample a group of G rollouts from the old policy \u03c0\u03b8old.\nAt each chunk step t within ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transition-Ranked Grpo",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "eace9cfac48b8c6acfeaeeaec00da4afe6ec571c19d23e54544aa31947b2d495",
+            "evidence_id": "E4d9d5442b7e5f028-B0026",
+            "pages": [
+              6
+            ],
+            "section": "Transition-Ranked Grpo",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "Transition-Ranked Grpo",
+                "section_index": 12,
+                "start": 0,
+                "text": "Building on the multi-granularity reward, we proposeTransition-Ranked GRPO, which combines scalar reward\noptimization with verifier-guided transition ranking. While the verifier score can be used as a transition-level reward\nin Eq. (1), its absolute magnitude may not always be well calibrated. However, in our setting, verifier scores are used\nmore robustly as relative preferences among candidate updates generated under the same state than as fully calibrated\nabsolute values. Therefore, we further use verifier scores to construct preference pairs among candidate transitions and\noptimize the policy with an additional ranking objective.\nGlobal Trajectory Optimization via GRPO.We adopt Group Relative Policy Optimization (GRPO) [ 25] to optimize\nthe memory policy. Specifically, for each training sample i, we sample a group of G rollouts from the old policy \u03c0\u03b8old.\nAt each chunk step t within "
+              }
+            ],
+            "text": "Building on the multi-granularity reward, we proposeTransition-Ranked GRPO, which combines scalar reward\noptimization with verifier-guided transition ranking. While the verifier score can be used as a transition-level reward\nin Eq. (1), its absolute magnitude may not always be well calibrated. However, in our setting, verifier scores are used\nmore robustly as relative preferences among candidate updates generated under the same state than as fully calibrated\nabsolute values. Therefore, we further use verifier scores to construct preference pairs among candidate transitions and\noptimize the policy with an additional ranking objective.\nGlobal Trajectory Optimization via GRPO.We adopt Group Relative Policy Optimization (GRPO) [ 25] to optimize\nthe memory policy. Specifically, for each training sample i, we sample a group of G rollouts from the old policy \u03c0\u03b8old.\nAt each chunk step t within "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0027"
+        ],
+        "excerpt": "rollout g, we compute the scalar reward R(g)i,t from Eq. (1). The group-normalized advantage\nis computed as \u02c6A(g)i,t = (R(g)i,t \u2212\u00b5 i,t)/(\u03c3i,t +\u03f5 A), where \u00b5i,t and \u03c3i,t are the mean and standard deviation of rewards\nacross the G rollouts for the same chunk step. Letting r(g)i,t,l(\u03b8) denote the importance ratio for the l-th generated token,\nthe GRPO objective over the memory construction trajectory is formulated as:\nJGRPO(\u03b8) =E i,t,g,l\nh\nmin\n\u0000\nr(g)i,t,l(\u03b8) \u02c6A(g)i,t ,clip \u0000r(g)i,t,l(\u03b8),1\u2212\u03f5,1 +\u03f5 \u0001 \u02c6A(g)i,t \u0001i.(2)\nVerifier-Guided Pair Construction.For each training sample i, the G rollouts produce multiple candidate memory\ntransitions at each chunk step t, denoted as Zi,t ={z (1)i,t , . . . , z(G)i,t }. These candidate transitions are generated from the\nsame current chunk and previous memory state, but may contain different memory-editing actions. Because the verifier\nV evaluates each ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transition-Ranked Grpo",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a45f4036946d4f225e16f60360050fd446de0d6569a506afd85363f3f2d5da31",
+            "evidence_id": "E4d9d5442b7e5f028-B0027",
+            "pages": [
+              6
+            ],
+            "section": "Transition-Ranked Grpo",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 6,
+                "section": "Transition-Ranked Grpo",
+                "section_index": 12,
+                "start": 899,
+                "text": "rollout g, we compute the scalar reward R(g)i,t from Eq. (1). The group-normalized advantage\nis computed as \u02c6A(g)i,t = (R(g)i,t \u2212\u00b5 i,t)/(\u03c3i,t +\u03f5 A), where \u00b5i,t and \u03c3i,t are the mean and standard deviation of rewards\nacross the G rollouts for the same chunk step. Letting r(g)i,t,l(\u03b8) denote the importance ratio for the l-th generated token,\nthe GRPO objective over the memory construction trajectory is formulated as:\nJGRPO(\u03b8) =E i,t,g,l\nh\nmin\n\u0000\nr(g)i,t,l(\u03b8) \u02c6A(g)i,t ,clip \u0000r(g)i,t,l(\u03b8),1\u2212\u03f5,1 +\u03f5 \u0001 \u02c6A(g)i,t \u0001i.(2)\nVerifier-Guided Pair Construction.For each training sample i, the G rollouts produce multiple candidate memory\ntransitions at each chunk step t, denoted as Zi,t ={z (1)i,t , . . . , z(G)i,t }. These candidate transitions are generated from the\nsame current chunk and previous memory state, but may contain different memory-editing actions. Because the verifier\nV evaluates each "
+              }
+            ],
+            "text": "rollout g, we compute the scalar reward R(g)i,t from Eq. (1). The group-normalized advantage\nis computed as \u02c6A(g)i,t = (R(g)i,t \u2212\u00b5 i,t)/(\u03c3i,t +\u03f5 A), where \u00b5i,t and \u03c3i,t are the mean and standard deviation of rewards\nacross the G rollouts for the same chunk step. Letting r(g)i,t,l(\u03b8) denote the importance ratio for the l-th generated token,\nthe GRPO objective over the memory construction trajectory is formulated as:\nJGRPO(\u03b8) =E i,t,g,l\nh\nmin\n\u0000\nr(g)i,t,l(\u03b8) \u02c6A(g)i,t ,clip \u0000r(g)i,t,l(\u03b8),1\u2212\u03f5,1 +\u03f5 \u0001 \u02c6A(g)i,t \u0001i.(2)\nVerifier-Guided Pair Construction.For each training sample i, the G rollouts produce multiple candidate memory\ntransitions at each chunk step t, denoted as Zi,t ={z (1)i,t , . . . , z(G)i,t }. These candidate transitions are generated from the\nsame current chunk and previous memory state, but may contain different memory-editing actions. Because the verifier\nV evaluates each "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0028"
+        ],
+        "excerpt": "transition independently, it induces a ranking over Zi,t. We select the transitions with the highest\nand lowest verifier scores as the preferred transition z+ and rejected transition z\u2212, respectively, provided their score\ngap exceeds a margin \u03b4. These preference pairs capture local differences in transition quality and provide additional\nsupervision beyond the scalar reward.\nLocal Preference Ranking via Verifier.Given the preference pairs (z+, z\u2212), we optimize a DPO-style ranking\nloss to inject step-level semantic supervision. Because z+ and z\u2212 are generated for the same chunk and previous\nmemory state, they share the same prompt pi,t and differ only in the generated memory-editing actions. Let o+ and\no\u2212 denote the preferred and rejected action sequences. We define the length-normalized log-probability margin as\n\u2206\u03b8 =\u2113 \u03b8(o+ |p i,t)\u2212\u2113 \u03b8(o\u2212 |p i,t), where \u2113\u03b8(o|p) denotes the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transition-Ranked Grpo",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3e025146dd6a56310b12e31e0e197fc1d18e1a6dbe9207125bce67de9cd9e784",
+            "evidence_id": "E4d9d5442b7e5f028-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Transition-Ranked Grpo",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2678,
+                "page": 6,
+                "section": "Transition-Ranked Grpo",
+                "section_index": 12,
+                "start": 1793,
+                "text": "transition independently, it induces a ranking over Zi,t. We select the transitions with the highest\nand lowest verifier scores as the preferred transition z+ and rejected transition z\u2212, respectively, provided their score\ngap exceeds a margin \u03b4. These preference pairs capture local differences in transition quality and provide additional\nsupervision beyond the scalar reward.\nLocal Preference Ranking via Verifier.Given the preference pairs (z+, z\u2212), we optimize a DPO-style ranking\nloss to inject step-level semantic supervision. Because z+ and z\u2212 are generated for the same chunk and previous\nmemory state, they share the same prompt pi,t and differ only in the generated memory-editing actions. Let o+ and\no\u2212 denote the preferred and rejected action sequences. We define the length-normalized log-probability margin as\n\u2206\u03b8 =\u2113 \u03b8(o+ |p i,t)\u2212\u2113 \u03b8(o\u2212 |p i,t), where \u2113\u03b8(o|p) denotes the "
+              }
+            ],
+            "text": "transition independently, it induces a ranking over Zi,t. We select the transitions with the highest\nand lowest verifier scores as the preferred transition z+ and rejected transition z\u2212, respectively, provided their score\ngap exceeds a margin \u03b4. These preference pairs capture local differences in transition quality and provide additional\nsupervision beyond the scalar reward.\nLocal Preference Ranking via Verifier.Given the preference pairs (z+, z\u2212), we optimize a DPO-style ranking\nloss to inject step-level semantic supervision. Because z+ and z\u2212 are generated for the same chunk and previous\nmemory state, they share the same prompt pi,t and differ only in the generated memory-editing actions. Let o+ and\no\u2212 denote the preferred and rejected action sequences. We define the length-normalized log-probability margin as\n\u2206\u03b8 =\u2113 \u03b8(o+ |p i,t)\u2212\u2113 \u03b8(o\u2212 |p i,t), where \u2113\u03b8(o|p) denotes the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0029"
+        ],
+        "excerpt": "length-normalized log probability of a generated\nresponseogiven promptp. The ranking loss is:\nLrank =\u2212log\u03c3(\u03b2 rank [\u2206\u03b8 \u2212\u2206 ref]),(3)\nwhere\u2206 ref =\u2113 ref (o+ |p i,t)\u2212\u2113 ref (o\u2212 |p i,t)is the corresponding margin under the reference policy.\nJoint Objective.We use a frozen reference policy \u03c0ref to regularize policy updates with a KL penalty. This KL term is\napplied as an actor-side auxiliary loss, rather than being added to the scalar reward used for advantage estimation. Here,\n\u03c0\u03b8old denotes the rollout policy used in the GRPO importance ratio, while \u03c0ref denotes the frozen reference policy used\nfor KL regularization and the ranking margin.\nThe final training objective combines scalar reward optimization, KL regularization, and transition-level ranking:\nL=\u2212J GRPO +\u03b2 KLLKL +\u03bb rankLrank.(4)\n6\nMethod AR TTL LRU Avg.\nSQuAD HotpotQA PerLTQA TREC-C NLU PubMed BookSum\nLong-Context 74.285.260.5 62.3 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transition-Ranked Grpo",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3f74324bf9098d5a57f55c204914452b5a410f50d9c6e5f0ff14bdb33e555c43",
+            "evidence_id": "E4d9d5442b7e5f028-B0029",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Transition-Ranked Grpo",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3471,
+                "page": 6,
+                "section": "Transition-Ranked Grpo",
+                "section_index": 12,
+                "start": 2678,
+                "text": "length-normalized log probability of a generated\nresponseogiven promptp. The ranking loss is:\nLrank =\u2212log\u03c3(\u03b2 rank [\u2206\u03b8 \u2212\u2206 ref]),(3)\nwhere\u2206 ref =\u2113 ref (o+ |p i,t)\u2212\u2113 ref (o\u2212 |p i,t)is the corresponding margin under the reference policy.\nJoint Objective.We use a frozen reference policy \u03c0ref to regularize policy updates with a KL penalty. This KL term is\napplied as an actor-side auxiliary loss, rather than being added to the scalar reward used for advantage estimation. Here,\n\u03c0\u03b8old denotes the rollout policy used in the GRPO importance ratio, while \u03c0ref denotes the frozen reference policy used\nfor KL regularization and the ranking margin.\nThe final training objective combines scalar reward optimization, KL regularization, and transition-level ranking:\nL=\u2212J GRPO +\u03b2 KLLKL +\u03bb rankLrank.(4)\n6"
+              },
+              {
+                "end": 103,
+                "page": 7,
+                "section": "Transition-Ranked Grpo",
+                "section_index": 13,
+                "start": 0,
+                "text": "Method AR TTL LRU Avg.\nSQuAD HotpotQA PerLTQA TREC-C NLU PubMed BookSum\nLong-Context 74.285.260.5 62.3 "
+              }
+            ],
+            "text": "length-normalized log probability of a generated\nresponseogiven promptp. The ranking loss is:\nLrank =\u2212log\u03c3(\u03b2 rank [\u2206\u03b8 \u2212\u2206 ref]),(3)\nwhere\u2206 ref =\u2113 ref (o+ |p i,t)\u2212\u2113 ref (o\u2212 |p i,t)is the corresponding margin under the reference policy.\nJoint Objective.We use a frozen reference policy \u03c0ref to regularize policy updates with a KL penalty. This KL term is\napplied as an actor-side auxiliary loss, rather than being added to the scalar reward used for advantage estimation. Here,\n\u03c0\u03b8old denotes the rollout policy used in the GRPO importance ratio, while \u03c0ref denotes the frozen reference policy used\nfor KL regularization and the ranking margin.\nThe final training objective combines scalar reward optimization, KL regularization, and transition-level ranking:\nL=\u2212J GRPO +\u03b2 KLLKL +\u03bb rankLrank.(4)\n6\nMethod AR TTL LRU Avg.\nSQuAD HotpotQA PerLTQA TREC-C NLU PubMed BookSum\nLong-Context 74.285.260.5 62.3 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0030"
+        ],
+        "excerpt": "70.8 53.3 5.2 58.8\nRAG-Top2 76.2 84.9 62.3 61.2 50.8 57.0 4.2 56.7\nMemAgent [39] 52.6 66.0 41.5 53.5 57.4 61.6 8.6 48.7\nMEM1 [46] 12.0 16.4 16.0 47.5 33.2 22.6 6.6 22.0\nMem-\u03b1[32] 78.6 83.265.9 66.6 65.8 54.5 18.7 61.9\nTRUSTMEM 80.6 84.9 63.6 72.4 73.8 64.0 22.6 66.3\nTable 1Experiment results on the Mem-\u03b1validation set. The top-2 results are highlighted.\nMethod AR TTL LRU Avg.\nSingle-Doc Multi-Doc LME(S) TREC-C NLU TREC-F Clinic Banking77 InfBench\nLong-Context 28.0 27.0 29.2 64.0 74.0 34.0 86.0 77.0 12.5 46.1\nRAG-Top2 69.0 45.058.1 69.0 65.0 21.0 70.0 75.0 6.5 50.2\nMemAgent [39] 51.0 52.0 23.0 62.0 78.0 30.088.083.0 10.9 53.1\nMEM1 [46] 23.0 33.0 13.0 57.080.028.0 48.0 76.0 7.0 40.6\nMem-T [41] 56.0 60.0 43.3 75.0 48.0 27.0 43.0 79.0 14.1 49.5\nAtomMem [10] 37.0 33.0 8.7 11.0 1.0 9.0 0.0 0.0 18.9 13.2\nMem-\u03b1[32] 74.0 68.052.0 71.0 71.041.073.0 70.0 12.9 59.2\nTRUSTMEM 83.0 64.0 55.0 85.0 79.2 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transition-Ranked Grpo",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d9fa2d9bb9483dee0e6eb47d7bd8b949e5b9a0bfbd543bd1b4b922498b0fdd06",
+            "evidence_id": "E4d9d5442b7e5f028-B0030",
+            "pages": [
+              7
+            ],
+            "section": "Transition-Ranked Grpo",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1003,
+                "page": 7,
+                "section": "Transition-Ranked Grpo",
+                "section_index": 13,
+                "start": 103,
+                "text": "70.8 53.3 5.2 58.8\nRAG-Top2 76.2 84.9 62.3 61.2 50.8 57.0 4.2 56.7\nMemAgent [39] 52.6 66.0 41.5 53.5 57.4 61.6 8.6 48.7\nMEM1 [46] 12.0 16.4 16.0 47.5 33.2 22.6 6.6 22.0\nMem-\u03b1[32] 78.6 83.265.9 66.6 65.8 54.5 18.7 61.9\nTRUSTMEM 80.6 84.9 63.6 72.4 73.8 64.0 22.6 66.3\nTable 1Experiment results on the Mem-\u03b1validation set. The top-2 results are highlighted.\nMethod AR TTL LRU Avg.\nSingle-Doc Multi-Doc LME(S) TREC-C NLU TREC-F Clinic Banking77 InfBench\nLong-Context 28.0 27.0 29.2 64.0 74.0 34.0 86.0 77.0 12.5 46.1\nRAG-Top2 69.0 45.058.1 69.0 65.0 21.0 70.0 75.0 6.5 50.2\nMemAgent [39] 51.0 52.0 23.0 62.0 78.0 30.088.083.0 10.9 53.1\nMEM1 [46] 23.0 33.0 13.0 57.080.028.0 48.0 76.0 7.0 40.6\nMem-T [41] 56.0 60.0 43.3 75.0 48.0 27.0 43.0 79.0 14.1 49.5\nAtomMem [10] 37.0 33.0 8.7 11.0 1.0 9.0 0.0 0.0 18.9 13.2\nMem-\u03b1[32] 74.0 68.052.0 71.0 71.041.073.0 70.0 12.9 59.2\nTRUSTMEM 83.0 64.0 55.0 85.0 79.2 "
+              }
+            ],
+            "text": "70.8 53.3 5.2 58.8\nRAG-Top2 76.2 84.9 62.3 61.2 50.8 57.0 4.2 56.7\nMemAgent [39] 52.6 66.0 41.5 53.5 57.4 61.6 8.6 48.7\nMEM1 [46] 12.0 16.4 16.0 47.5 33.2 22.6 6.6 22.0\nMem-\u03b1[32] 78.6 83.265.9 66.6 65.8 54.5 18.7 61.9\nTRUSTMEM 80.6 84.9 63.6 72.4 73.8 64.0 22.6 66.3\nTable 1Experiment results on the Mem-\u03b1validation set. The top-2 results are highlighted.\nMethod AR TTL LRU Avg.\nSingle-Doc Multi-Doc LME(S) TREC-C NLU TREC-F Clinic Banking77 InfBench\nLong-Context 28.0 27.0 29.2 64.0 74.0 34.0 86.0 77.0 12.5 46.1\nRAG-Top2 69.0 45.058.1 69.0 65.0 21.0 70.0 75.0 6.5 50.2\nMemAgent [39] 51.0 52.0 23.0 62.0 78.0 30.088.083.0 10.9 53.1\nMEM1 [46] 23.0 33.0 13.0 57.080.028.0 48.0 76.0 7.0 40.6\nMem-T [41] 56.0 60.0 43.3 75.0 48.0 27.0 43.0 79.0 14.1 49.5\nAtomMem [10] 37.0 33.0 8.7 11.0 1.0 9.0 0.0 0.0 18.9 13.2\nMem-\u03b1[32] 74.0 68.052.0 71.0 71.041.073.0 70.0 12.9 59.2\nTRUSTMEM 83.0 64.0 55.0 85.0 79.2 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0031"
+        ],
+        "excerpt": "41.0 84.0 84.0 15.9 65.7\nTable 2Experiment results on MemoryAgentBench. The top-2 results are highlighted.\nHere, LKL denotes the token-level KL regularization loss, while \u03b2KL and \u03bbrank control the weights of KL regularization\nand transition-level ranking, respectively.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transition-Ranked Grpo",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e43e5800bcb96a7f9d7f533985f2255e31f00f8034c0ed016d14ec6c11c4c49b",
+            "evidence_id": "E4d9d5442b7e5f028-B0031",
+            "pages": [
+              7
+            ],
+            "section": "Transition-Ranked Grpo",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1272,
+                "page": 7,
+                "section": "Transition-Ranked Grpo",
+                "section_index": 13,
+                "start": 1003,
+                "text": "41.0 84.0 84.0 15.9 65.7\nTable 2Experiment results on MemoryAgentBench. The top-2 results are highlighted.\nHere, LKL denotes the token-level KL regularization loss, while \u03b2KL and \u03bbrank control the weights of KL regularization\nand transition-level ranking, respectively."
+              }
+            ],
+            "text": "41.0 84.0 84.0 15.9 65.7\nTable 2Experiment results on MemoryAgentBench. The top-2 results are highlighted.\nHere, LKL denotes the token-level KL regularization loss, while \u03b2KL and \u03bbrank control the weights of KL regularization\nand transition-level ranking, respectively."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0032"
+        ],
+        "excerpt": "Datasets.We evaluate TRUSTMEMon MemoryAgentBench [ 9], HaluMem [ 3], and the Mem- \u03b1 validation set.\nFollowing Mem-\u03b1 [32], we use its training pool, which aggregates eight sources: SQuAD [ 22], HotpotQA [ 37],\nPerLTQA [7], LongMemEval-Train [33], NLU [15], TREC-C [16], PubMed-RCT [5], and BookSum [13]. We train\nTRUSTMEMon a balanced subset of 562 instances sampled from the 4,139-instance Mem- \u03b1 training pool, and evaluate\nvalidation performance and ablations on 463 held-out Mem-\u03b1 validation instances. We use all datasets, models, and\nsystems only for research purposes and follow their publicly released access conditions and licenses where available.\nMethod Memory Extraction Memory Updating Question Answering\nR\u2191Weighted R\u2191Acc.\u2191F1\u2191 C\u2191H\u2193O\u2193 C\u2191H\u2193O\u2193\nMem0 [4] 42.91 65.03 60.86 57.31 25.50 0.45 74.02 53.02 19.17 27.81\nMemobase [38] 14.55 25.88 32.29 25.13 5.20 0.55 94.25 35.33 29.97 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiment Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "23983fd019a60ab05b237d3e9cb9b4707a19649bb6878b3380c9b6601c6a0063",
+            "evidence_id": "E4d9d5442b7e5f028-B0032",
+            "pages": [
+              7
+            ],
+            "section": "Experiment Settings",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 887,
+                "page": 7,
+                "section": "Experiment Settings",
+                "section_index": 14,
+                "start": 0,
+                "text": "Datasets.We evaluate TRUSTMEMon MemoryAgentBench [ 9], HaluMem [ 3], and the Mem- \u03b1 validation set.\nFollowing Mem-\u03b1 [32], we use its training pool, which aggregates eight sources: SQuAD [ 22], HotpotQA [ 37],\nPerLTQA [7], LongMemEval-Train [33], NLU [15], TREC-C [16], PubMed-RCT [5], and BookSum [13]. We train\nTRUSTMEMon a balanced subset of 562 instances sampled from the 4,139-instance Mem- \u03b1 training pool, and evaluate\nvalidation performance and ablations on 463 held-out Mem-\u03b1 validation instances. We use all datasets, models, and\nsystems only for research purposes and follow their publicly released access conditions and licenses where available.\nMethod Memory Extraction Memory Updating Question Answering\nR\u2191Weighted R\u2191Acc.\u2191F1\u2191 C\u2191H\u2193O\u2193 C\u2191H\u2193O\u2193\nMem0 [4] 42.91 65.03 60.86 57.31 25.50 0.45 74.02 53.02 19.17 27.81\nMemobase [38] 14.55 25.88 32.29 25.13 5.20 0.55 94.25 35.33 29.97 "
+              }
+            ],
+            "text": "Datasets.We evaluate TRUSTMEMon MemoryAgentBench [ 9], HaluMem [ 3], and the Mem- \u03b1 validation set.\nFollowing Mem-\u03b1 [32], we use its training pool, which aggregates eight sources: SQuAD [ 22], HotpotQA [ 37],\nPerLTQA [7], LongMemEval-Train [33], NLU [15], TREC-C [16], PubMed-RCT [5], and BookSum [13]. We train\nTRUSTMEMon a balanced subset of 562 instances sampled from the 4,139-instance Mem- \u03b1 training pool, and evaluate\nvalidation performance and ablations on 463 held-out Mem-\u03b1 validation instances. We use all datasets, models, and\nsystems only for research purposes and follow their publicly released access conditions and licenses where available.\nMethod Memory Extraction Memory Updating Question Answering\nR\u2191Weighted R\u2191Acc.\u2191F1\u2191 C\u2191H\u2193O\u2193 C\u2191H\u2193O\u2193\nMem0 [4] 42.91 65.03 60.86 57.31 25.50 0.45 74.02 53.02 19.17 27.81\nMemobase [38] 14.55 25.88 32.29 25.13 5.20 0.55 94.25 35.33 29.97 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0033"
+        ],
+        "excerpt": "34.71\nSupermemory [24] 41.53 64.76 60.83 56.90 16.37 1.15 82.47 54.07 22.24 23.69\nZep [23] \u2013 \u2013 \u2013 \u2013 47.28 0.4252.31 55.47 21.92 22.62\nMemAgent [39] 12.39 15.31 82.02 22.03 11.66 4.55 83.78 42.11 28.70 28.12\nMem-T [41] 36.60 46.85 67.13 52.69 45.53 3.35 51.12 59.4326.11 13.98\nAtomMem [10] 0.28 0.3987.500.56 2.14 4.29 93.57 31.275.5664.00\nTRUSTMEM 56.73 67.45 67.81 69.45 46.84 0.53 48.64 55.22 6.07 12.46\nTable 3Experiment results on HaluMem Benchmark. We report operation-level metrics for memory extraction, memory updating,\nand memory-based question answering. R, Weighted R, Acc., and F1 evaluate memory extraction quality; C, H, and O denote\ncorrectness, hallucination, and omission, respectively.\nMemoryAgentBench.We evaluate TRUSTMEMon representative tasks from MemoryAgentBench [ 9] across three\n7\nmemory capabilities. For Accurate Retrieval (AR), we use Single-Doc, Multi-Doc, and LME(S), ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiment Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4813641d7254470e136e88695bd4559000fa08cfe63337daf22d7d935fb2d52a",
+            "evidence_id": "E4d9d5442b7e5f028-B0033",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Experiment Settings",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1692,
+                "page": 7,
+                "section": "Experiment Settings",
+                "section_index": 14,
+                "start": 887,
+                "text": "34.71\nSupermemory [24] 41.53 64.76 60.83 56.90 16.37 1.15 82.47 54.07 22.24 23.69\nZep [23] \u2013 \u2013 \u2013 \u2013 47.28 0.4252.31 55.47 21.92 22.62\nMemAgent [39] 12.39 15.31 82.02 22.03 11.66 4.55 83.78 42.11 28.70 28.12\nMem-T [41] 36.60 46.85 67.13 52.69 45.53 3.35 51.12 59.4326.11 13.98\nAtomMem [10] 0.28 0.3987.500.56 2.14 4.29 93.57 31.275.5664.00\nTRUSTMEM 56.73 67.45 67.81 69.45 46.84 0.53 48.64 55.22 6.07 12.46\nTable 3Experiment results on HaluMem Benchmark. We report operation-level metrics for memory extraction, memory updating,\nand memory-based question answering. R, Weighted R, Acc., and F1 evaluate memory extraction quality; C, H, and O denote\ncorrectness, hallucination, and omission, respectively.\nMemoryAgentBench.We evaluate TRUSTMEMon representative tasks from MemoryAgentBench [ 9] across three\n7"
+              },
+              {
+                "end": 92,
+                "page": 8,
+                "section": "Experiment Settings",
+                "section_index": 15,
+                "start": 0,
+                "text": "memory capabilities. For Accurate Retrieval (AR), we use Single-Doc, Multi-Doc, and LME(S), "
+              }
+            ],
+            "text": "34.71\nSupermemory [24] 41.53 64.76 60.83 56.90 16.37 1.15 82.47 54.07 22.24 23.69\nZep [23] \u2013 \u2013 \u2013 \u2013 47.28 0.4252.31 55.47 21.92 22.62\nMemAgent [39] 12.39 15.31 82.02 22.03 11.66 4.55 83.78 42.11 28.70 28.12\nMem-T [41] 36.60 46.85 67.13 52.69 45.53 3.35 51.12 59.4326.11 13.98\nAtomMem [10] 0.28 0.3987.500.56 2.14 4.29 93.57 31.275.5664.00\nTRUSTMEM 56.73 67.45 67.81 69.45 46.84 0.53 48.64 55.22 6.07 12.46\nTable 3Experiment results on HaluMem Benchmark. We report operation-level metrics for memory extraction, memory updating,\nand memory-based question answering. R, Weighted R, Acc., and F1 evaluate memory extraction quality; C, H, and O denote\ncorrectness, hallucination, and omission, respectively.\nMemoryAgentBench.We evaluate TRUSTMEMon representative tasks from MemoryAgentBench [ 9] across three\n7\nmemory capabilities. For Accurate Retrieval (AR), we use Single-Doc, Multi-Doc, and LME(S), "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0037"
+        ],
+        "excerpt": "No examples from\nMemoryAgentBench or HaluMem are used for training; all results are reported on held-out validation instances or\nexternal benchmarks. We report results from the step-85 checkpoint. Following the reward definition in Section 3, the\ntraining reward is defined as R=R task +R act + 0.1Rver + 0.05Reff + 0.1Rtype, where Rtask measures downstream task\nperformance, Ract evaluates action executability,Rver measures transition-level memory trustworthiness, Reff encourages\ncompact memory construction, and Rtype evaluates content specificity. We use 8 GRPO rollouts per instance, a learning\nrate of 1\u00d710 \u22126, KL coefficient 0.001, maximum prompt length 4096, maximum response length 2048. For the\npreference-ranking objective, we use top-1/bottom-1 pair construction with score margin 0.15, at most 256 preference\npairs per batch, pair micro-batch size of 1 per GPU, preference loss weight ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiment Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "465bef8a08bef9ffabac07c0f2b13e6d4e72355094e688057bcfa0ce3b4aebd5",
+            "evidence_id": "E4d9d5442b7e5f028-B0037",
+            "pages": [
+              8
+            ],
+            "section": "Experiment Settings",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3685,
+                "page": 8,
+                "section": "Experiment Settings",
+                "section_index": 15,
+                "start": 2786,
+                "text": "No examples from\nMemoryAgentBench or HaluMem are used for training; all results are reported on held-out validation instances or\nexternal benchmarks. We report results from the step-85 checkpoint. Following the reward definition in Section 3, the\ntraining reward is defined as R=R task +R act + 0.1Rver + 0.05Reff + 0.1Rtype, where Rtask measures downstream task\nperformance, Ract evaluates action executability,Rver measures transition-level memory trustworthiness, Reff encourages\ncompact memory construction, and Rtype evaluates content specificity. We use 8 GRPO rollouts per instance, a learning\nrate of 1\u00d710 \u22126, KL coefficient 0.001, maximum prompt length 4096, maximum response length 2048. For the\npreference-ranking objective, we use top-1/bottom-1 pair construction with score margin 0.15, at most 256 preference\npairs per batch, pair micro-batch size of 1 per GPU, preference loss weight "
+              }
+            ],
+            "text": "No examples from\nMemoryAgentBench or HaluMem are used for training; all results are reported on held-out validation instances or\nexternal benchmarks. We report results from the step-85 checkpoint. Following the reward definition in Section 3, the\ntraining reward is defined as R=R task +R act + 0.1Rver + 0.05Reff + 0.1Rtype, where Rtask measures downstream task\nperformance, Ract evaluates action executability,Rver measures transition-level memory trustworthiness, Reff encourages\ncompact memory construction, and Rtype evaluates content specificity. We use 8 GRPO rollouts per instance, a learning\nrate of 1\u00d710 \u22126, KL coefficient 0.001, maximum prompt length 4096, maximum response length 2048. For the\npreference-ranking objective, we use top-1/bottom-1 pair construction with score margin 0.15, at most 256 preference\npairs per batch, pair micro-batch size of 1 per GPU, preference loss weight "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0040"
+        ],
+        "excerpt": "Table 1 reports results on the Mem-\u03b1 validation set. TrustMem achieves the best average score of 66.3, outperforming the\nstrongest baseline Mem-\u03b1 by 4.4 points. The improvement is especially clear on Test-Time Learning, where TrustMem\nobtains the best scores on TREC-C (72.4), NLU (73.8), and PubMed (64.0). TrustMem also improves BookSum from\n18.7 to 22.6, showing better long-range memory utility. These gains indicate that transition-level verification helps the\nagent preserve useful task-specific and long-range information during memory construction.\n8",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments On Memory Utility",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0a2dcd67730cca4ed27b9790474581f85c1f7ddd1fea3f04390559ba959b6b37",
+            "evidence_id": "E4d9d5442b7e5f028-B0040",
+            "pages": [
+              8
+            ],
+            "section": "Experiments On Memory Utility",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 558,
+                "page": 8,
+                "section": "Experiments On Memory Utility",
+                "section_index": 16,
+                "start": 0,
+                "text": "Table 1 reports results on the Mem-\u03b1 validation set. TrustMem achieves the best average score of 66.3, outperforming the\nstrongest baseline Mem-\u03b1 by 4.4 points. The improvement is especially clear on Test-Time Learning, where TrustMem\nobtains the best scores on TREC-C (72.4), NLU (73.8), and PubMed (64.0). TrustMem also improves BookSum from\n18.7 to 22.6, showing better long-range memory utility. These gains indicate that transition-level verification helps the\nagent preserve useful task-specific and long-range information during memory construction.\n8"
+              }
+            ],
+            "text": "Table 1 reports results on the Mem-\u03b1 validation set. TrustMem achieves the best average score of 66.3, outperforming the\nstrongest baseline Mem-\u03b1 by 4.4 points. The improvement is especially clear on Test-Time Learning, where TrustMem\nobtains the best scores on TREC-C (72.4), NLU (73.8), and PubMed (64.0). TrustMem also improves BookSum from\n18.7 to 22.6, showing better long-range memory utility. These gains indicate that transition-level verification helps the\nagent preserve useful task-specific and long-range information during memory construction.\n8"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0041"
+        ],
+        "excerpt": "Methods AR TTL LRU Overall\nAblation of Reward Components\nw/oR act 67.4 52.6 15.9 54.0\nw/oR eff 71.1 66.9 18.8 61.8\nAblation of Transition Verification\nw/oR ver 72.1 58.3 20.6 58.7\nAblation of Optimization Strategy\nPRM-style GRPO 75.8 57.6 21.5 60.3\nTrustMem (TR-GRPO) 76.4 70.1 22.6 66.3\nTable 4Ablation studies on reward components, transition verification, and optimization strategy.\nTable 2 evaluates out-of-distribution generalization on MemoryAgentBench. TrustMem again achieves the best average\nscore of 65.7, improving over Mem-\u03b1 by 6.5 points and outperforming Long-Context and RAG-Top2 by 19.6 and 15.5\npoints, respectively. TrustMem performs strongly on both retrieval and test-time learning tasks, achieving the best\nscore on Single-Doc (83.0), TREC-C (85.0), and Banking77 (84.0). These results show that TrustMem learns a more\nrobust memory update policy than simply retaining long ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methods Ar Ttl Lru Overall",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fed0aa6a15a889d7d15ff984a5ce25734054e472e0207026b4355dd7a483a558",
+            "evidence_id": "E4d9d5442b7e5f028-B0041",
+            "pages": [
+              9
+            ],
+            "section": "Methods Ar Ttl Lru Overall",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 9,
+                "section": "Methods Ar Ttl Lru Overall",
+                "section_index": 17,
+                "start": 0,
+                "text": "Methods AR TTL LRU Overall\nAblation of Reward Components\nw/oR act 67.4 52.6 15.9 54.0\nw/oR eff 71.1 66.9 18.8 61.8\nAblation of Transition Verification\nw/oR ver 72.1 58.3 20.6 58.7\nAblation of Optimization Strategy\nPRM-style GRPO 75.8 57.6 21.5 60.3\nTrustMem (TR-GRPO) 76.4 70.1 22.6 66.3\nTable 4Ablation studies on reward components, transition verification, and optimization strategy.\nTable 2 evaluates out-of-distribution generalization on MemoryAgentBench. TrustMem again achieves the best average\nscore of 65.7, improving over Mem-\u03b1 by 6.5 points and outperforming Long-Context and RAG-Top2 by 19.6 and 15.5\npoints, respectively. TrustMem performs strongly on both retrieval and test-time learning tasks, achieving the best\nscore on Single-Doc (83.0), TREC-C (85.0), and Banking77 (84.0). These results show that TrustMem learns a more\nrobust memory update policy than simply retaining long "
+              }
+            ],
+            "text": "Methods AR TTL LRU Overall\nAblation of Reward Components\nw/oR act 67.4 52.6 15.9 54.0\nw/oR eff 71.1 66.9 18.8 61.8\nAblation of Transition Verification\nw/oR ver 72.1 58.3 20.6 58.7\nAblation of Optimization Strategy\nPRM-style GRPO 75.8 57.6 21.5 60.3\nTrustMem (TR-GRPO) 76.4 70.1 22.6 66.3\nTable 4Ablation studies on reward components, transition verification, and optimization strategy.\nTable 2 evaluates out-of-distribution generalization on MemoryAgentBench. TrustMem again achieves the best average\nscore of 65.7, improving over Mem-\u03b1 by 6.5 points and outperforming Long-Context and RAG-Top2 by 19.6 and 15.5\npoints, respectively. TrustMem performs strongly on both retrieval and test-time learning tasks, achieving the best\nscore on Single-Doc (83.0), TREC-C (85.0), and Banking77 (84.0). These results show that TrustMem learns a more\nrobust memory update policy than simply retaining long "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0043"
+        ],
+        "excerpt": "Table 3 evaluates operation-level memory reliability on HaluMem-Medium, covering memory extraction, memory\nupdating, and memory-based question answering. TrustMem achieves the best memory extraction recall (56.73),\nweighted recall (67.45), and F1 (69.45), improving the strongest prior F1 score by 12.14 points. Although AtomMem\nobtains the highest extraction accuracy, its very low recall and F1 suggest an overly conservative extraction behavior\nthat misses most useful memories. In contrast, TrustMem achieves a stronger coverage-correctness trade-off, resulting\nin the best overall extraction quality. For memory updating and memory-based question answering, TrustMem obtains\nthe lowest omission rates while maintaining competitive correctness and low hallucination. These results show that\ntransition-level verification and preference-guided optimization improve intermediate memory reliability ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments On Halumem",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9a5a0dea4fd97fc76765f73bf5afb4c0f734db4d0fa70d5087d36d36d0701bf4",
+            "evidence_id": "E4d9d5442b7e5f028-B0043",
+            "pages": [
+              9
+            ],
+            "section": "Experiments On Halumem",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 9,
+                "section": "Experiments On Halumem",
+                "section_index": 18,
+                "start": 0,
+                "text": "Table 3 evaluates operation-level memory reliability on HaluMem-Medium, covering memory extraction, memory\nupdating, and memory-based question answering. TrustMem achieves the best memory extraction recall (56.73),\nweighted recall (67.45), and F1 (69.45), improving the strongest prior F1 score by 12.14 points. Although AtomMem\nobtains the highest extraction accuracy, its very low recall and F1 suggest an overly conservative extraction behavior\nthat misses most useful memories. In contrast, TrustMem achieves a stronger coverage-correctness trade-off, resulting\nin the best overall extraction quality. For memory updating and memory-based question answering, TrustMem obtains\nthe lowest omission rates while maintaining competitive correctness and low hallucination. These results show that\ntransition-level verification and preference-guided optimization improve intermediate memory reliability "
+              }
+            ],
+            "text": "Table 3 evaluates operation-level memory reliability on HaluMem-Medium, covering memory extraction, memory\nupdating, and memory-based question answering. TrustMem achieves the best memory extraction recall (56.73),\nweighted recall (67.45), and F1 (69.45), improving the strongest prior F1 score by 12.14 points. Although AtomMem\nobtains the highest extraction accuracy, its very low recall and F1 suggest an overly conservative extraction behavior\nthat misses most useful memories. In contrast, TrustMem achieves a stronger coverage-correctness trade-off, resulting\nin the best overall extraction quality. For memory updating and memory-based question answering, TrustMem obtains\nthe lowest omission rates while maintaining competitive correctness and low hallucination. These results show that\ntransition-level verification and preference-guided optimization improve intermediate memory reliability "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0045"
+        ],
+        "excerpt": "As shown in Table 4, we perform ablation studies on the Mem-\u03b1validation set to quantitatively evaluate the impact of\nAction Execution Reward (Ract), Efficiency Reward (Reff), Transition Verifier Reward (Rver), and the Transition-Ranked\nGRPO optimization strategy.\nEffectiveness of Reward Components.Removing Ract causes the largest drop, reducing the overall score from\n66.3 to 54.0. This shows that executable memory-editing actions are crucial for reliable memory construction. Removing\nReff also decreases the overall score to 61.8, indicating that compact memory states help reduce redundancy and improve\ndownstream memory utility.\nEffectiveness of the Memory Transition Verifier.Removing Rver reduces the overall score from 66.3 to 58.7,\nwith a clear drop on TTL from 70.1 to 58.3. This confirms that the Memory Transition Verifier provides important\ntransition-level supervision. By checking ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "55e621995099ad0a728586ac5478ef81a5d37a4f2ead85368dc67437c848d681",
+            "evidence_id": "E4d9d5442b7e5f028-B0045",
+            "pages": [
+              9
+            ],
+            "section": "Ablation Study",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 9,
+                "section": "Ablation Study",
+                "section_index": 19,
+                "start": 0,
+                "text": "As shown in Table 4, we perform ablation studies on the Mem-\u03b1validation set to quantitatively evaluate the impact of\nAction Execution Reward (Ract), Efficiency Reward (Reff), Transition Verifier Reward (Rver), and the Transition-Ranked\nGRPO optimization strategy.\nEffectiveness of Reward Components.Removing Ract causes the largest drop, reducing the overall score from\n66.3 to 54.0. This shows that executable memory-editing actions are crucial for reliable memory construction. Removing\nReff also decreases the overall score to 61.8, indicating that compact memory states help reduce redundancy and improve\ndownstream memory utility.\nEffectiveness of the Memory Transition Verifier.Removing Rver reduces the overall score from 66.3 to 58.7,\nwith a clear drop on TTL from 70.1 to 58.3. This confirms that the Memory Transition Verifier provides important\ntransition-level supervision. By checking "
+              }
+            ],
+            "text": "As shown in Table 4, we perform ablation studies on the Mem-\u03b1validation set to quantitatively evaluate the impact of\nAction Execution Reward (Ract), Efficiency Reward (Reff), Transition Verifier Reward (Rver), and the Transition-Ranked\nGRPO optimization strategy.\nEffectiveness of Reward Components.Removing Ract causes the largest drop, reducing the overall score from\n66.3 to 54.0. This shows that executable memory-editing actions are crucial for reliable memory construction. Removing\nReff also decreases the overall score to 61.8, indicating that compact memory states help reduce redundancy and improve\ndownstream memory utility.\nEffectiveness of the Memory Transition Verifier.Removing Rver reduces the overall score from 66.3 to 58.7,\nwith a clear drop on TTL from 70.1 to 58.3. This confirms that the Memory Transition Verifier provides important\ntransition-level supervision. By checking "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0047"
+        ],
+        "excerpt": "We evaluate transition-level reliability by measuring three semantic failure modes: omission, corruption, and halluci-\nnation. Using generated trajectories from the 463-instance Mem-\u03b1 validation set, we construct chunk-level transition\n9\nFigure 4Training reward dynamics of TrustMem and the variant without Transition-Ranked GRPO.\nrecords for each method and use GPT-4o-mini [11] with temperature 0 as an LLM judge. The judge follows the prompt\nand definitions in Appendix D; we report the percentage of transitions containing each major error type.\nAs shown in Figure 2, omission is the dominant error type because memory construction is inherently compressive,\nwhile corruption and hallucination require actively writing incorrect or unsupported facts. Thus, comparisons should be\nmade within each error type across methods. TrustMem achieves the lowest error rates across all categories, with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reliability Of Memory Consolidation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3bdb58ff854b6c3b02b78563a03f9eabcc8eeb2672dab6b42679f61989f920ba",
+            "evidence_id": "E4d9d5442b7e5f028-B0047",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Reliability Of Memory Consolidation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 237,
+                "page": 9,
+                "section": "Reliability Of Memory Consolidation",
+                "section_index": 20,
+                "start": 0,
+                "text": "We evaluate transition-level reliability by measuring three semantic failure modes: omission, corruption, and halluci-\nnation. Using generated trajectories from the 463-instance Mem-\u03b1 validation set, we construct chunk-level transition\n9"
+              },
+              {
+                "end": 658,
+                "page": 10,
+                "section": "Reliability Of Memory Consolidation",
+                "section_index": 21,
+                "start": 0,
+                "text": "Figure 4Training reward dynamics of TrustMem and the variant without Transition-Ranked GRPO.\nrecords for each method and use GPT-4o-mini [11] with temperature 0 as an LLM judge. The judge follows the prompt\nand definitions in Appendix D; we report the percentage of transitions containing each major error type.\nAs shown in Figure 2, omission is the dominant error type because memory construction is inherently compressive,\nwhile corruption and hallucination require actively writing incorrect or unsupported facts. Thus, comparisons should be\nmade within each error type across methods. TrustMem achieves the lowest error rates across all categories, with "
+              }
+            ],
+            "text": "We evaluate transition-level reliability by measuring three semantic failure modes: omission, corruption, and halluci-\nnation. Using generated trajectories from the 463-instance Mem-\u03b1 validation set, we construct chunk-level transition\n9\nFigure 4Training reward dynamics of TrustMem and the variant without Transition-Ranked GRPO.\nrecords for each method and use GPT-4o-mini [11] with temperature 0 as an LLM judge. The judge follows the prompt\nand definitions in Appendix D; we report the percentage of transitions containing each major error type.\nAs shown in Figure 2, omission is the dominant error type because memory construction is inherently compressive,\nwhile corruption and hallucination require actively writing incorrect or unsupported facts. Thus, comparisons should be\nmade within each error type across methods. TrustMem achieves the lowest error rates across all categories, with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0048"
+        ],
+        "excerpt": "8.08%\nomission, 0.14% corruption, and 0.01% hallucination, demonstrating that transition-level verification reduces missing,\ndistorted, and unsupported memory content.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reliability Of Memory Consolidation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7a40da958ef944ebe2954a18dfbbacfbf3b6ad4c64b2dd57ab997734ea0170e4",
+            "evidence_id": "E4d9d5442b7e5f028-B0048",
+            "pages": [
+              10
+            ],
+            "section": "Reliability Of Memory Consolidation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 825,
+                "page": 10,
+                "section": "Reliability Of Memory Consolidation",
+                "section_index": 21,
+                "start": 658,
+                "text": "8.08%\nomission, 0.14% corruption, and 0.01% hallucination, demonstrating that transition-level verification reduces missing,\ndistorted, and unsupported memory content."
+              }
+            ],
+            "text": "8.08%\nomission, 0.14% corruption, and 0.01% hallucination, demonstrating that transition-level verification reduces missing,\ndistorted, and unsupported memory content."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0058"
+        ],
+        "excerpt": "A key limitation of TRUSTMEMis that our current experiments mainly focus on text-based long-term memory\nbenchmarks. However, in real-world agent applications, user inputs and memory evidence are often multimodal,\ninvolving not only textual interactions but also images, videos, documents, and other contextual signals. We plan to\nextend our framework to multimodal memory agents and vision-language models, enabling more faithful and trustworthy\nconsolidation of multimodal memory for open-ended personalized applications.\n11",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "80ff040f5604a72d00b9dc4501fe8a9c0c447cad7a0762bbe4ad7ee25d2a9621",
+            "evidence_id": "E4d9d5442b7e5f028-B0058",
+            "pages": [
+              11
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 525,
+                "page": 11,
+                "section": "Limitations",
+                "section_index": 26,
+                "start": 0,
+                "text": "A key limitation of TRUSTMEMis that our current experiments mainly focus on text-based long-term memory\nbenchmarks. However, in real-world agent applications, user inputs and memory evidence are often multimodal,\ninvolving not only textual interactions but also images, videos, documents, and other contextual signals. We plan to\nextend our framework to multimodal memory agents and vision-language models, enabling more faithful and trustworthy\nconsolidation of multimodal memory for open-ended personalized applications.\n11"
+              }
+            ],
+            "text": "A key limitation of TRUSTMEMis that our current experiments mainly focus on text-based long-term memory\nbenchmarks. However, in real-world agent applications, user inputs and memory evidence are often multimodal,\ninvolving not only textual interactions but also images, videos, documents, and other contextual signals. We plan to\nextend our framework to multimodal memory agents and vision-language models, enabling more faithful and trustworthy\nconsolidation of multimodal memory for open-ended personalized applications.\n11"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0086"
+        ],
+        "excerpt": "memory state.\nInputs:\n\u2022Chunk Evidence:{chunk_text}\n\u2022Pre-transition Memory State:{pre_memory}\n\u2022Post-transition Memory State:{post_memory}\n\u2022Touched Memory Actions:{actions}\nRequired Output:Return only a JSON object:\n{\n\"score\": 0.0,\n\"coverage_ok\": true,\n\"preservation_ok\": true,\n\"faithfulness_ok\": true,\n\"issues\": [\"brief issue labels\"],\n\"explanation\": \"brief explanation\"\n}\nRules:\n\u2022 Judge only from the provided chunk evidence, pre-transition memory, post-transition memory, and touched memory\nactions.\n\u2022 A skipped action can still be valid if the relevant information was already correctly stored and preserved.\n\u2022 Legitimate merging, rewriting, or compression is allowed as long as important facts are preserved.\n\u2022 Penalize critical omissions, unsupported additions, corrupted facts, and unjustified overwrites or deletions.\n\u2022 Use a continuous score in[0,1], where 1 means excellent consolidation and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Faithfulness:Whether Newly Added Or Modified Memory Content Is Supported By The Chunk Evidence Or The Previous",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a51b28daf9fecdbd7350df2a2ecd84f72d423a023f92b849289a81a8b0e34c65",
+            "evidence_id": "E4d9d5442b7e5f028-B0086",
+            "pages": [
+              16
+            ],
+            "section": "Faithfulness:Whether Newly Added Or Modified Memory Content Is Supported By The Chunk Evidence Or The Previous",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 16,
+                "section": "Faithfulness:Whether Newly Added Or Modified Memory Content Is Supported By The Chunk Evidence Or The Previous",
+                "section_index": 44,
+                "start": 0,
+                "text": "memory state.\nInputs:\n\u2022Chunk Evidence:{chunk_text}\n\u2022Pre-transition Memory State:{pre_memory}\n\u2022Post-transition Memory State:{post_memory}\n\u2022Touched Memory Actions:{actions}\nRequired Output:Return only a JSON object:\n{\n\"score\": 0.0,\n\"coverage_ok\": true,\n\"preservation_ok\": true,\n\"faithfulness_ok\": true,\n\"issues\": [\"brief issue labels\"],\n\"explanation\": \"brief explanation\"\n}\nRules:\n\u2022 Judge only from the provided chunk evidence, pre-transition memory, post-transition memory, and touched memory\nactions.\n\u2022 A skipped action can still be valid if the relevant information was already correctly stored and preserved.\n\u2022 Legitimate merging, rewriting, or compression is allowed as long as important facts are preserved.\n\u2022 Penalize critical omissions, unsupported additions, corrupted facts, and unjustified overwrites or deletions.\n\u2022 Use a continuous score in[0,1], where 1 means excellent consolidation and "
+              }
+            ],
+            "text": "memory state.\nInputs:\n\u2022Chunk Evidence:{chunk_text}\n\u2022Pre-transition Memory State:{pre_memory}\n\u2022Post-transition Memory State:{post_memory}\n\u2022Touched Memory Actions:{actions}\nRequired Output:Return only a JSON object:\n{\n\"score\": 0.0,\n\"coverage_ok\": true,\n\"preservation_ok\": true,\n\"faithfulness_ok\": true,\n\"issues\": [\"brief issue labels\"],\n\"explanation\": \"brief explanation\"\n}\nRules:\n\u2022 Judge only from the provided chunk evidence, pre-transition memory, post-transition memory, and touched memory\nactions.\n\u2022 A skipped action can still be valid if the relevant information was already correctly stored and preserved.\n\u2022 Legitimate merging, rewriting, or compression is allowed as long as important facts are preserved.\n\u2022 Penalize critical omissions, unsupported additions, corrupted facts, and unjustified overwrites or deletions.\n\u2022 Use a continuous score in[0,1], where 1 means excellent consolidation and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0088"
+        ],
+        "excerpt": "D Memory Transition Error Judge Prompt\nWe use GPT-4o-mini [11] with temperature set to 0 as the LLM judge for transition-level memory reliability evaluation.\nThe judge receives the prior memory, the current input chunk, the memory operations produced after reading the chunk,\nand the updated memory, and returns a structured JSON judgment over omission, corruption, and hallucination.\nEvaluation Protocol.For the reliability analysis in Section 4.5, we construct one record for each chunk-level memory\ntransition. Each record contains the prior memory, the current input chunk, the generated memory-editing operations,\nand the updated memory. A transition may contain multiple error types, so we compute each error rate independently\nas the percentage of transitions marked with that error type. We count only errors marked as major; transitions with\nminorornoneseverity are not counted as ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: D Memory Transition Error Judge Prompt",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "158fff318b4f96a72e3de5963f6f4df62d5d7c884d78a0a51479a1a8e964e23e",
+            "evidence_id": "E4d9d5442b7e5f028-B0088",
+            "pages": [
+              17
+            ],
+            "section": "Appendix: D Memory Transition Error Judge Prompt",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 17,
+                "section": "Appendix: D Memory Transition Error Judge Prompt",
+                "section_index": 45,
+                "start": 0,
+                "text": "D Memory Transition Error Judge Prompt\nWe use GPT-4o-mini [11] with temperature set to 0 as the LLM judge for transition-level memory reliability evaluation.\nThe judge receives the prior memory, the current input chunk, the memory operations produced after reading the chunk,\nand the updated memory, and returns a structured JSON judgment over omission, corruption, and hallucination.\nEvaluation Protocol.For the reliability analysis in Section 4.5, we construct one record for each chunk-level memory\ntransition. Each record contains the prior memory, the current input chunk, the generated memory-editing operations,\nand the updated memory. A transition may contain multiple error types, so we compute each error rate independently\nas the percentage of transitions marked with that error type. We count only errors marked as major; transitions with\nminorornoneseverity are not counted as "
+              }
+            ],
+            "text": "D Memory Transition Error Judge Prompt\nWe use GPT-4o-mini [11] with temperature set to 0 as the LLM judge for transition-level memory reliability evaluation.\nThe judge receives the prior memory, the current input chunk, the memory operations produced after reading the chunk,\nand the updated memory, and returns a structured JSON judgment over omission, corruption, and hallucination.\nEvaluation Protocol.For the reliability analysis in Section 4.5, we construct one record for each chunk-level memory\ntransition. Each record contains the prior memory, the current input chunk, the generated memory-editing operations,\nand the updated memory. A transition may contain multiple error types, so we compute each error rate independently\nas the percentage of transitions marked with that error type. We count only errors marked as major; transitions with\nminorornoneseverity are not counted as "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.25161",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "Structurally bounded citation prefixes excluded; ambiguous back matter, body and detected appendices retained where budget permits."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "case_study",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2606.25161",
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The reported gains are corroborated by objective benchmark task metrics and a separate external LLM judge, not by the training verifier itself.",
+          "final_evaluation_signal": "Headline outcomes are established through standard benchmark metrics on MemoryAgentBench, Mem-alpha validation, and HaluMem, with transition-level error rates scored by a separate GPT-4o-mini judge.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The policy is optimized against a multi-granularity reward that includes a frozen LLM Memory Transition Verifier score, plus a DPO-style ranking loss over candidate transitions ranked by that same verifier.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0002",
+          "E4d9d5442b7e5f028-B0009",
+          "E4d9d5442b7e5f028-B0010",
+          "E4d9d5442b7e5f028-B0021",
+          "E4d9d5442b7e5f028-B0024",
+          "E4d9d5442b7e5f028-B0026",
+          "E4d9d5442b7e5f028-B0027",
+          "E4d9d5442b7e5f028-B0028",
+          "E4d9d5442b7e5f028-B0029",
+          "E4d9d5442b7e5f028-B0030",
+          "E4d9d5442b7e5f028-B0031",
+          "E4d9d5442b7e5f028-B0032",
+          "E4d9d5442b7e5f028-B0033",
+          "E4d9d5442b7e5f028-B0037",
+          "E4d9d5442b7e5f028-B0040",
+          "E4d9d5442b7e5f028-B0041",
+          "E4d9d5442b7e5f028-B0043",
+          "E4d9d5442b7e5f028-B0045",
+          "E4d9d5442b7e5f028-B0047",
+          "E4d9d5442b7e5f028-B0048",
+          "E4d9d5442b7e5f028-B0058",
+          "E4d9d5442b7e5f028-B0086",
+          "E4d9d5442b7e5f028-B0088"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "35e68df4f5debc42656e23cf807c689b2aad244b990d4f953315ca447261c690"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2606.25161",
+        "claim_evidence_alignment": "Claims regarding superior downstream task performance, lower omission/corruption/hallucination rates, and the efficacy of preference ranking over pure scalar rewards are directly corroborated by empirical results in Tables 1-4 and Figure 2.",
+        "context_id": "4d9d5442b7e5f0280b28f25d62d8b4310ed1186c83450d73712fe5352ab233f2",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical evaluation is substantive, testing memory utility across Mem-alpha validation and out-of-distribution MemoryAgentBench, operational reliability on HaluMem, and transition-level error analyses alongside comprehensive ablation studies.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance gains are demonstrated on objective benchmark tasks (MemoryAgentBench, Mem-alpha, HaluMem) evaluated via standard task metrics and separate LLM judges rather than the training verifier.",
+          "final_evaluation_signal": "Standard benchmark objective metrics (F1/accuracy across MemoryAgentBench and Mem-alpha validation), HaluMem benchmark metrics, and separate transition error scoring using an external GPT-4o-mini judge.",
+          "independent_corroboration": "present",
+          "optimization_signal": "A multi-granularity reward combining downstream task reward, executability, content type, compactness, and a frozen LLM Memory Transition Verifier score, coupled with DPO ranking loss over candidate transitions ranked by the verifier.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E4d9d5442b7e5f028-B0002",
+          "E4d9d5442b7e5f028-B0009",
+          "E4d9d5442b7e5f028-B0010",
+          "E4d9d5442b7e5f028-B0021",
+          "E4d9d5442b7e5f028-B0024",
+          "E4d9d5442b7e5f028-B0026",
+          "E4d9d5442b7e5f028-B0027",
+          "E4d9d5442b7e5f028-B0028",
+          "E4d9d5442b7e5f028-B0029",
+          "E4d9d5442b7e5f028-B0030",
+          "E4d9d5442b7e5f028-B0031",
+          "E4d9d5442b7e5f028-B0032",
+          "E4d9d5442b7e5f028-B0033",
+          "E4d9d5442b7e5f028-B0037",
+          "E4d9d5442b7e5f028-B0040",
+          "E4d9d5442b7e5f028-B0041",
+          "E4d9d5442b7e5f028-B0043",
+          "E4d9d5442b7e5f028-B0045",
+          "E4d9d5442b7e5f028-B0047",
+          "E4d9d5442b7e5f028-B0048",
+          "E4d9d5442b7e5f028-B0058",
+          "E4d9d5442b7e5f028-B0086",
+          "E4d9d5442b7e5f028-B0088"
+        ],
+        "limitations": "The authors identify the primary limitation as being focused solely on text-based long-term memory benchmarks, leaving multimodal agent contexts to future work.",
+        "method_assessment": "The methodology is clearly specified, detailing the action space (WRITE, REVISE, PRUNE), the multi-granularity reward formulations, and the combination of GRPO advantage estimation with pairwise DPO-style ranking across rollout pairs under the same memory state.",
+        "quality_rationale": "The paper provides a thoroughly articulated formulation, sound training objectives, robust comparisons against contemporary memory baselines, and clear ablation data validating each component.",
+        "scoped_contribution": "TrustMem is a reinforcement learning framework for LLM long-term memory consolidation that uses a Memory Transition Verifier to evaluate step-level update trustworthiness (coverage, preservation, faithfulness) and trains policy updates via Transition-Ranked GRPO.",
+        "source_content_hash": "35e68df4f5debc42656e23cf807c689b2aad244b990d4f953315ca447261c690"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper provides a thoroughly articulated formulation, sound training objectives, robust comparisons against contemporary memory baselines, and clear ablation data validating each component.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "35e68df4f5debc42656e23cf807c689b2aad244b990d4f953315ca447261c690",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors identify the primary limitation as being focused solely on text-based long-term memory benchmarks, leaving multimodal agent contexts to future work."
   },
   "semantic_scholar_id": "1d3d2f04270110888af84b9222c8a6a41a791b54",
   "source": "semantic_scholar",
@@ -187,7 +2232,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

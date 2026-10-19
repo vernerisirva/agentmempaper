@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpikeQ: Spike-Guided Post-Training Quantization for Spiking Neural Networks</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>SpikeQ: Spike-Guided Post-Training Quantization for Spiking Neural Networks</h1>
+          <p class="hero-copy">Kai Sun, Peibo Duan, Zhanglu Yan, Guowei Zhang, Yongsheng Huang, Levin Kuhlmann</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.23046v1">Open paper</a>
+            <a class="paper-detail-link" href="spikeq-spike-guided-post-training-quantization-for-spiking-neural-networks-33e97c5b.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Kai Sun, Peibo Duan, Zhanglu Yan, Guowei Zhang, Yongsheng Huang, Levin Kuhlmann</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-16</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-16</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.23046">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies object-detection architecture, training, or evaluation.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>On neuromorphic chips, spiking neural networks (SNNs) consume far less energy than artificial neural networks (ANNs), but the limited memory of these chips requires low-bit synaptic weights and membrane potentials. Existing post-training quantization (PTQ) methods provide them without retraining and, like those for...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents sound theoretical and empirical justifications for departing from standard MSE-based PTQ objectives in spiking networks, executes a comprehensive set of controlled experiments, and clearly details all implementation aspects.</p>
+      <p>The authors observe performance degradation when jointly compressing to 2-bit on complex tasks due to accumulating flipped spikes, and note that pre-fire quantization under soft reset requires a wider grid spanning above the threshold.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-19T09:38:40.546803+00:00.</p>
+        <p>Coverage: 63357 of 63357 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>On neuromorphic chips, spiking neural networks (SNNs)
+consume far less energy than artificial neural networks
+(ANNs), but the limited memory of these chips requires
+low-bit synaptic weights and membrane potentials. Exist-
+ing post-training quantization (PTQ) methods provide them
+without retraining and, like those for ANNs, minimize nu-
+merical errors such as the mean squared error (MSE). In
+an SNN, however, a quantization error reaches later layers
+only through the spikes it flips. We find that errors of equal
+MSE can cause very different accuracy losses, whereas er-
+rors that flip the same fraction of spikes cause the same loss.
+We therefore proposeSpikeQ, a spike-guided PTQ frame-
+work. For weights, we select the level of each weight by
+simulating the downstream neurons and minimizing their
+spike errors. For membrane potentials, most existing meth-
+ods quantize the state after the </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reset, whereas neuromorphic
+chips compare the threshold with the membrane potential
+stored at a fixed bit width. We target this pre-fire quanti-
+zation and build a reset-aware grid that places the thresh-
+old on a rounding boundary, so rounding never flips the
+spike at the current time step. We evaluate SpikeQ on seven
+benchmarks of image classification, semantic segmentation,
+and object detection. With 2-bit pre-fire membrane poten-
+tials, every existing grid collapses, whereas SpikeQ retains
+most of the full-precision accuracy. With both at 4 bits, the
+models stay within 2.59 points of full precision, shrink their
+memory footprint 7.8–7.9×, and use 6.4–6.9×less energy.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>membrane poten-
+tial, we reverse the sign of an error whenever it would push
+the membrane potential across the threshold. This keeps the
+MSE unchanged but reduces the sharp accuracy drop of the
+original errors to almost none (Fig. 1(b)). Plotted against
+the fraction of flipped spikes, i.e., spikes added or removed
+by the error, the four curves of Fig. 1(a) and (b) merge into
+one (Fig. 1(c)), so the same fraction of flipped spikes causes
+the same accuracy loss. The Spearman correlation between
+the two is−0.99, far stronger than that of MSE, so more
+flipped spikes almost always means lower accuracy. Spikes
+are therefore a better guide than MSE for SNN quantization.
+In this paper, we propose SpikeQ, a spike-guided PTQ
+framework that uses spikes rather than numerical errors to
+guide the quantization of both weights and membrane po-
+tentials without gradient-based fine-tuning. Our </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Quantizing the weights changes the input current, the mem-
+brane potential, and the spikes of the downstream neuron
+(Fig. 2(a)). Existing methods select the weight levels that
+minimize the error of the input current or the membrane
+potential, yet the resulting spikes can still differ from the
+full-precision ones (Fig. 3). SpikeQ instead takes the spikes
+as the optimization target and selects the weight levels that
+minimize the spike error.
+Spike-count objective.In layerℓ, the input spikes bSℓ−1t
+from layerℓ−1pass through the quantized weights cW ℓ and
+3
+the LIF neurons of Eq. (1), and bNi counts the spikes of neu-
+roniover theTsteps. SpikeQ compares bNi with two refer-
+ence counts. The full-precision countN FPi comes from the
+original network, in which no layer is quantized. Match-
+ing it directly ignores that the earlier layers have already
+been quantized and have changed the input </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>spikes bSℓ−1 of
+layerℓ. We therefore also match the local countN loci , pro-
+duced by the full-precision weightsW ℓ on this changed in-
+put bSℓ−1. The spike-count loss is a weighted sum of the
+errors to the two counts, withρ∈[0,1],
+Lcount =ρ
+X
+i
+ bNi −N FPi  + (1−ρ) X
+i
+ bNi −N loci .(2)
+Margin term.Changing a weight by one level shifts the
+membrane potential but may not move it acrossθ. The spike
+count then does not change, and neither doesL count. In
+this case, we choose the level that brings the wrong spikes
+closest to being corrected. Since each wrong spike occurs
+at a specific stept, we compare spikes step by step with the
+same two references as the counts, the full-precision spikes
+SFPi,t and the local spikesS loci,t of neuroni. A neuron fires
+when bVi,t ≥θ, so| bVi,t −θ|is how much its membrane
+potential must change to correct a wrong spike. The margin
+sums this distance </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>over all wrong spikes,
+M FP = X
+i,t
+1
+ bSi,t ̸=S FPi,t  bVi,t −θ ,(3)
+andM loc is defined in the same way withS loci,t . The two
+margins are weighted byρas in Eq. (2),L margin =ρM FP+
+(1−ρ)M loc.
+Population term.BecauseL count takes the absolute
+value of each error, an extra spike and a missed spike give
+the same error. It thus cannot tell whether the layer fires too
+many or too few spikes in total. In either case, the next layer
+receives a wrong number of input spikes. We therefore add
+a population term,L pop = Pi( bNi − ¯Ni), which keeps the
+total spike count of the layer equal to that of the references.
+Here ¯Ni =ρN FPi + (1−ρ)N loci weights the two references
+byρas in Eq. (2).
+The complete objective sums the three terms,
+L=L count +λL margin +µL pop,(4)
+whereλis a fixed weight andµis adjusted during the
+search. SinceL pop grows with the number of spikes, a
+largerµfavors levels </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with fewer spikes.
+Discrete search.SinceLhas no useful gradient through
+the spikes, we search the levels directly (Algorithm 1).
+The best rounding of one weight depends on how the
+other weights of the neuron are rounded, and trying all
+Algorithm 1Weight quantization of SpikeQ
+Require:W, calibration set,b
+1:foreach layerℓdo
+2:Capture bSℓ−1; fixG W per channel
+3:L ←Eq. (4)
+4:Initialize fromW ℓ;µ←0
+5:foreach inputj, largest current firstdo▷First phase
+6:q j ←arg min q∈Aj Eε[L(qj =q)]
+7:foreach sweepdo▷Second phase
+8:Keep±1level changes that reduceL
+9:Restore and freeze channels whose held-out loss rises
+10:Updateµ
+11:Setbw←q∆ w for every weight ofW ℓ
+12:return cW
+combinations is infeasible. The first phase therefore de-
+cides the weights one input at a time, for all neurons at
+once, starting with the inputs that contribute the most cur-
+rent and thus influence the spikes most. Since the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>threshold and the reset rule
+(Fig. 4).
+Threshold anchoring.We placeθmidway between two
+adjacent levels, which makes it the rounding boundary be-
+tween them (Fig. 4, top). Withnof theKlevels belowθ,
+the levels ofG V are
+gj =θ+
+
+j−n+ 12 ∆v, j= 0, . . . , K−1,(5)
+with step∆ v &gt;0andn∈ {1, . . . , K−1}. The quantizer
+Qv rounds to the nearest level, so it never moves a mem-
+brane potential across the rounding boundaryθ. A mem-
+brane potential exactly atθis rounded up and still fires, and
+values outside the grid are clipped to its endpoints, which lie
+on either side ofθ. Hence1[Q v(V)≥θ] =1[V≥θ]for
+any∆ v andn, so rounding the membrane potential never
+changes the spike at the current step.
+Reset-aware level allocation.Under hard reset, the post-
+reset state is0after every spike, so we make0a level and
+keep only one level aboveθ, that is,n=K−1(Fig. 4,
+middle). Under soft reset, it is bVt −θ, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>which carries the
+part aboveθto the next step, so several levels aboveθare
+needed andnis calibrated. We makeθa whole numberm
+of steps, so that subtractingθmoves each levelg j aboveθ
+down to the levelg j−m (Fig. 4, bottom). The two rules give
+∆v =
+(
+θ/(m+ 12 )(hard reset),
+θ/m(soft reset), (6)
+wheremis the number of levels between0andθ, withm∈
+{0, . . . , K−2}under hard reset andm∈ {1, . . . , n}under
+soft reset, which keepsg j−m on the grid. In both cases, the
+post-reset state is a level (Sec. B).
+Calibration by spike errors.The grid is now set bym
+in Eq. (6) and, under soft reset, by the numbernof lev-
+els belowθ. A smaller step rounds more finely but clips
+more values outside the grid, and the best balance differs
+between layers. We try all values and compare the grids by
+the spikes they change, not by the MSE of membrane po-
+tentials, which also counts rounding errors that change </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarks.We evaluate SNNs withT= 4time steps
+on seven benchmarks. For image classification, we use
+PreAct-ResNet-18 [11] with soft reset on CIFAR-10 and
+CIFAR-100 [15], and SEW-ResNet-18 [8] and the Spike-
+driven Transformer 8-384 (SDT) [43] on ImageNet [4].
+For semantic segmentation, we use the 55M SDT-V2 [44]
+with a spiking FPN decoder on PASCAL VOC 2012 [7]
+and ADE20K [48]. For object detection, we use EMS-
+YOLO [34] with a ResNet-34 backbone on COCO [21]. All
+other models use hard reset.
+Baselines.For weights, we compare with round-to-
+nearest (RTN), FlowQ [1], the second-order methods
+GPTQ [9], SBC [32], and GPTAQ [19], and the re-
+construction methods BRECQ [18] and PTQ4SNN [40].
+For membrane potentials, we compare with MinMax [13]
+and MSE [26] range calibration, the membrane quantiza-
+tion of FlowQ (FlowQ-M), the threshold-centered grid of
+SQUAT [35], and the membrane </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>W4 W2 W4 W2 W4 W2 W4 W2
+FP 92.60 73.78 62.89 72.04
+RTN 92.25 17.59 70.97 1.00 36.21 0.10 40.79 0.12
+FlowQ [1] 91.96 10.00 58.59 1.07 28.12 0.10 24.19 0.17
+GPTQ [9] 92.09 89.53 71.48 50.49 61.59 13.90 68.65 4.42
+SBC [32]92.3989.26 71.96 51.17 61.63 26.93 68.57 5.36
+GPTAQ [19] 92.12 90.17 73.10 59.02 62.02 26.46 69.89 2.51
+BRECQ [18] 92.04 90.32 72.01 63.76 60.95 39.56 54.14 21.83
+PTQ4SNN [40] 91.8990.3672.14 64.19 60.86 40.49 54.97 22.21
+SpikeQ (Ours) 92.38 90.28 73.27 65.72 62.05 43.70 70.33 45.76
+Table 1. Weight quantization (Wb) on image classification with
+full-precision membrane potentials. CIFAR models are PreAct-
+ResNet-18. Top-1 accuracy (%). Best in bold and second best
+underlined.
+Method VOC 2012 ADE20KW4 W2 W4 W2
+FP 70.86 34.91
+RTN 68.23 3.49 32.07 0.12
+FlowQ [1] 60.92 3.49 24.40 0.05
+GPTQ [9]70.6452.83 34.46 16.42
+SBC [32] 70.25 56.14 34.22 19.53
+GPTAQ [19] 69.96 47.61 33.54 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>15.14
+BRECQ [18] 67.49 62.98 29.85 19.28
+PTQ4SNN [40] 67.53 62.05 29.84 18.58
+SpikeQ (Ours) 70.36 65.74 34.50 29.32
+Table 2. Weight quantization (Wb) of SDT-V2 on semantic seg-
+mentation with full-precision membrane potentials. mIoU (%).
+Notation as in Tab. 1.
+Method AP AP 50</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>W4 W2 W4 W2
+FP 31.38 50.86
+RTN 22.59 0.00 44.57 0.00
+FlowQ [1] 12.98 0.00 30.40 0.00
+GPTQ [9] 29.97 7.3250.2515.67
+SBC [32] 30.03 10.02 50.16 20.12
+GPTAQ [19] 29.12 1.46 49.58 3.62
+BRECQ [18] 25.40 14.82 45.80 31.72
+PTQ4SNN [40] 25.31 14.62 45.89 32.01
+SpikeQ (Ours) 30.23 21.30 50.10 39.91
+Table 3. Weight quantization (Wb) of EMS-YOLO on COCO with
+full-precision membrane potentials. AP and AP 50 (%). Notation
+as in Tab. 1.
+best on six of the seven benchmarks and more than doubles
+the accuracy of the strongest baseline on SDT (45.76% vs.
+22.21%). The difference comes from the step size. With
+a fine 4-bit step, the rounding error is small and flips only
+neurons whose membrane potential is close to the thresh-
+old, so minimizing the error of the current or membrane
+potential also keeps flipped spikes few. With a coarse 2-bit
+Method CIFAR-10 CIFAR-100V4 V2 V4 V2
+FP 92.60 73.78
+MinMax [13] </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>68.99/91.92 10.00/20.78 43.32/72.76 0.78/16.00
+MSE [26] 81.61/92.47 10.00/91.10 69.62/73.53 1.00/56.27
+FlowQ-M [1] 91.50/92.51 10.00/92.26 66.69/73.91 1.00/71.56
+SQUAT [35] 92.06/92.37 10.01/90.27 71.00 /73.88 1.00/66.52
+PTQ4SNN-M† [40] 90.90/92.53 10.00/91.89 63.55/73.71 1.00/70.23
++MPBA† [40] 63.32/92.54 10.00/92.03 ‡ 68.09/73.74 1.00/70.62 ‡
+SpikeQ (Ours) 92.68/92.55 91.36/92.48 73.27/74.04 68.60/72.96
+SpikeQ† (Ours) 92.80/92.66 91.31/92.76 73.27/73.37 68.65/73.44</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>V4 V2 V4 V2
+FP 62.89 72.04
+MinMax [13] 0.15/1.73 0.11/0.11 7.87/66.39 0.10/19.58
+MSE [26] 0.10/9.29 0.10/0.10 0.47/64.33 0.10/5.90
+FlowQ-M [1] 1.15/28.65 0.11/3.73 51.50/71.05 0.84/62.46
+SQUAT [35] 4.46/60.64 0.08/4.06 0.38/71.71 0.10/55.89
+PTQ4SNN-M† [40] 13.98/47.95 0.12/14.30 45.25/70.80 0.14/62.26
++MPBA† [40] 15.83/48.11 0.16/14.50 ‡ 35.61/70.21 0.25/62.50 ‡
+SpikeQ (Ours) 61.39/61.40 48.32/48.29 71.97/71.97 67.87/67.88
+SpikeQ† (Ours) 62.71/62.82 35.94/35.91 71.99/72.03 68.36/68.47
+Table 4. Membrane quantization (Vb) on image classification
+with full-precision weights. CIFAR models are PreAct-ResNet-</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Pre-fire quantization.PTQ4SNN-M selects one scale
+per channel, so besides the layer-wise SpikeQ, we report
+SpikeQ†, which selects one grid per channel. Under pre-
+6
+Method VOC 2012 ADE20KV4 V2 V4 V2
+FP 70.86 34.91
+MinMax [13] 0.05/62.40 3.49/50.10 0.17/24.87 0.12/15.84
+MSE [26] 3.49/69.10 3.49/41.22 0.27/33.62 0.12/24.01
+FlowQ-M [1] 16.88/70.29 3.49/68.52 11.07/34.02 0.12/33.41
+SQUAT [35] 2.91/70.61 0.20/61.47 1.59/34.720.13/31.69
+PTQ4SNN-M† [40] 61.14/70.76 3.49/70.12 27.32/34.61 0.16/34.29
++MPBA† [40] 57.16/70.70 3.49/69.42 ‡ 24.33/34.69 0.12/34.27‡
+SpikeQ (Ours) 70.65/70.73 69.71/69.79 34.56/34.56 33.44/33.67
+SpikeQ† (Ours) 70.46/70.85 70.61/70.32 34.46/34.54 34.27/33.94
+Table 5. Membrane quantization (Vb) of SDT-V2 on semantic
+segmentation with full-precision weights. mIoU (%). Notation as
+in Tab. 4.
+Method V4 V2
+FP 31.38
+MinMax [13] 0.79/30.97 0.00/26.35
+MSE [26] 0.27/31.03 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.00/27.84
+FlowQ-M [1] 28.41/31.20 0.13/30.84
+SQUAT [35] 20.30/31.36 0.00/30.60
+PTQ4SNN-M† [40] 28.54/31.27 0.32/31.28
++MPBA† [40] 27.49/31.39 0.49/31.13‡
+SpikeQ (Ours) 31.32/31.53 31.14/31.24
+SpikeQ† (Ours) 31.39/31.38 31.29/31.13
+Table 6. Membrane quantization (Vb) of EMS-YOLO on COCO
+with full-precision weights. AP (%). Notation as in Tab. 4.
+12 13 14 15 16
+flipped spikes (%)
+0
+20
+40
+60
+80Top-1 (%)
+(a) Weight quantization (W4)
+SpikeQ
+GPTAQ
+GPTQ, SBC
+BRECQ, PTQ4SNN
+FlowQ
+8 12 16 20
+flipped spikes (%)
+(b) Membrane quantization (V4)
+FP 72.04
+SpikeQ
+PTQ4SNN-M
++MPBA
+FlowQ-M
+SQUATMinMax
+MSE
+Figure 5. Accuracy versus flipped spikes of SDT-8-384 on Im-
+ageNet. (a) Weight quantization (W4) with full-precision mem-
+brane potentials. (b) Membrane quantization (V4) with full-
+precision weights. Flipped spikes are counted against the full-
+precision network over all neurons and time steps.
+fire </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Following prior work [41, 42], the energy consumption
+(EC) of one inference sample is written as
+EC =E compute +E memory +E neuron.(8)
+7
+Setting CIFAR ImageNet VOC ADE20K COCO10 100 SEW SDT
+FP 92.60 73.78 62.89 72.04 70.86 34.91 31.38
+W4 92.38 73.27 61.91 70.33 70.36 34.40 29.92
+W4V4 92.41 73.11 60.30 70.49 70.32 34.12 29.80
+W2 90.28 65.72 43.70 45.76 65.74 29.32 21.30
+W2V2 88.50 57.49 15.85 36.83 63.00 27.18 21.26
+Footprint (MB)
+FP 44.8 44.9 54.1 101 586 723 269
+W4 7.52 6.0× 7.546.0× 15.13.6× 45.42.2× 3911.5× 5281.4× 1561.7×
+W4V4 5.66 7.9× 5.687.9× 6.817.9× 13.07.8× 74.27.9× 91.47.9× 33.87.9×
+W2 4.86 9.2× 4.879.2× 12.34.4× 41.42.4× 3771.6× 5141.4× 1481.8×
+W2V2 2.86 15.6× 2.8715.6× 3.4415.7× 6.7215.1× 37.615.6× 46.215.6× 17.115.7×
+EC (mJ)
+FP 1.56 0.889 5.96 18.4 421 556 154
+W4V4 0.228 6.8× 0.1296.9× 0.8756.8× 2.716.8× 62.16.8× 81.66.8× 24.16.4×
+W2V2 0.147 10.6× 0.08310.8× 0.57610.3× </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 8 removes or changes one component of SpikeQ at a
+time, at W2 for weights and at V2 for membrane potentials.
+Weight terms.The margin and population terms matter
+on different tasks. Removing the margin term costs up to
+5.29 points on classification and detection, and the cost
+grows with task complexity, like the gain of SpikeQ in
+Sec. 5.2, since this term helps correct wrong spikes that a
+complex task has less redundancy to absorb. The popula-
+tion term matters more on segmentation, where removing it
+costs about 3.2 mIoU.
+Pre-fire grid rules.Without threshold anchoring, the grid
+has a level atθ, so membrane potentials within half a step
+Variant CIFAR ImageNet10 100 SEW SDT
+W2
+SpikeQ (Ours) 90.28 65.72 43.70 45.76
+w/oL margin 89.86−0.42 64.00−1.72 40.25−3.45 40.47−5.29
+w/oL pop 90.280.00 65.30−0.42 42.26−1.44 44.88−0.88
+Pre
+V2
+SpikeQ (Ours) 91.36 68.60 48.32 67.87
+w/o anchoring </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Models and calibration.All experiments run on
+NVIDIA A100 GPUs with 80 GB of memory. The CIFAR
+models and both SDT models use LIF neurons, and
+SEW-ResNet-18 uses IF neurons. Weight calibration uses
+a single seed, and on CIFAR-10 at W2, SpikeQ averages
+90.52±0.19over three calibration seeds. All COCO
+results, including full precision, are evaluated in FP32 with
+TF32 disabled.
+Weight quantization.Weights are quantized per output
+channel. GPTQ and SBC use their default min-max grids,
+and GPTAQ usesα= 0.25, the default of its official im-
+plementation. BRECQ, PTQ4SNN, and SpikeQ share the
+same clipping search for the weight grid, which minimizes
+theL 2.4 weight error, so they differ only in the selected lev-
+els. BRECQ and PTQ4SNN use 20k reconstruction itera-
+tions (5k on COCO). On COCO, all methods keep the first
+layer and the detection head at 8 bits with round-to-nearest.
+SpikeQ weight </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Reset-aware level allocation (Sec. 4.2) sets∆ v so that the
+post-reset state is a level ofG V and needs no further round-
+ing. We prove this below.
+Proposition 1.Under pre-fire quantization with the grid of
+Eq.(5),∆ v from Eq.(6), and the stated ranges ofm, the
+post-reset state is a level ofG V under both hard and soft
+reset, and themlevelsg n−m, . . . , gn−1 are those between
+0andθ.
+Proof.Without a spike, the post-reset state is bVt =Q v(Vt),
+which is a level. With a spike, bVt =g j for somej≥n,
+sinceg n is the lowest level aboveθ.
+Under hard reset, the post-reset state is0. With∆ v =
+θ/(m+ 12 ), Eq. (5) givesg n−m−1 =θ−(m+ 12 )∆v = 0,
+andn=K−1withm≤K−2ensuresn−m−1≥0.
+Under soft reset, the post-reset state isg j −θ. Withθ=
+m∆v, Eq. (5) givesgj −θ=g j−m, andm≤n≤jensures
+j−m≥0. In both cases, the lowest level above0isg n−m,
+which equals∆ v under hard reset and 12 ∆v under soft reset,
+so </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Segmentation method</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Segmentation task adjacent to detection; shares backbones and dense-prediction evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 98/100</li>
+              <li>Screening category: Object detection</li>
+              <li>Tags: object-detection, segmentation, visual-representation, efficient-vision</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-16</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-19 09:35:10</li><li>Last seen by Paper Scout: 2026-10-19 09:35:28</li></ul>
+            <ul><li>arXiv: 2610.23046</li><li>arXiv IDs: 2610.23046</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="spikeq-spike-guided-post-training-quantization-for-spiking-neural-networks-33e97c5b.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>SpikeQ: Spike-Guided Post-Training Quantization for Spiking Neural Networks. Kai Sun, Peibo Duan, Zhanglu Yan, Guowei Zhang, Yongsheng Huang, Levin Kuhlmann. 2026-10-16. https://arxiv.org/abs/2610.23046v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

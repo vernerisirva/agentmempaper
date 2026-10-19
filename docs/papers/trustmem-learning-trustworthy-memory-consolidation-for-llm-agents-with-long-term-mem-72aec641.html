@@ -64,16 +64,227 @@
             <p>Large language model (LLM) agents rely on long-term memory to support extended interactions and personalized assistance beyond finite context windows. Existing memory agents actively update external memory through generated write, revise, and delete operations, but these updates may omit important information, corru...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides a thoroughly articulated formulation, sound training objectives, robust comparisons against contemporary memory baselines, and clear ablation data validating each component.</p>
+      <p>The authors identify the primary limitation as being focused solely on text-based long-term memory benchmarks, leaving multimodal agent contexts to future work.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-19T09:36:07.569300+00:00.</p>
+        <p>Coverage: 61632 of 61632 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Verifier to evaluate the transition process of memory updates in terms of coverage,
+preservation, and faithfulness. It further constructs preference pairs among candidate updates under the same
+memory state, enabling preference-guided reinforcement learning to directly optimize memory updating be-
+haviors. Extensive experiments demonstrate that TRUSTMEMimproves both memory utility and reliability:
+it achieves state-of-the-art results across MemoryAgentBench, HaluMem, and the Mem-α validation set, im-
+proves HaluMem memory extraction by 12.14 F1 points, and reduces transition-level omission, corruption, and
+hallucination by 40.1%, 79.1%, and 50.0%, respectively, compared with the strongest baseline for each error
+type.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>update along coverage, preservation, and faithfulness, and further proposesTransition-Ranked
+GRPO, built upon GRPO [25], to optimize the memory-update policy. By ranking candidate updates under the same
+memory state, TRUSTMEMprovides fine-grained supervision for memory-editing behaviors while maintaining the
+downstream utility of the final memory.
+We evaluate TRUSTMEMacross three settings: MemoryAgentBench [ 9], HaluMem [3], and the Mem-α [32] validation
+set, covering accurate retrieval, test-time learning, long-range understanding, and memory reliability. Extensive
+experiments demonstrate that TRUSTMEMachieves state-of-the-art results across these settings, improving over the
+strongest baseline by 6.5 points on MemoryAgentBench and 12.14 F1 points in HaluMem memory extraction. Beyond
+final task performance, Figure 2 shows that TRUSTMEMachieves the lowest transition-level error rates </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>across omission,
+corruption, and hallucination. Compared with the strongest baseline for each error type, TRUSTMEMreduces omission,
+corruption, and hallucination by 40.1%, 79.1%, and 50.0%, respectively. These results demonstrate that TRUSTMEM
+improves not only memory utility, but also operation-level reliability and transition-level safety.
+2
+Figure 2 Transition-level error rates of existing memory agents and TRUSTMEM.TRUSTMEMachieves the lowest
+omission, corruption, and hallucination rates, reducing errors by 40.1%, 79.1%, and 50.0% over the strongest baseline for each error
+type.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>transition, including the current chunk, the generated memory-editing actions, and the memory entries touched or
+retrieved by these actions. This avoids feeding the full memory bank while still providing the evidence needed to judge
+the local update. The simplified verifier prompt is shown in Figure 5 in the Appendix.
+Specifically, the verifier evaluates each transition along three diagnostic dimensions:coverage, which checks whether
+important information from the current chunk is preserved;preservation, which checks whether valid prior memory is
+maintained without unjustified deletion or distortion; andfaithfulness, which checks whether newly added or modified
+memory content is supported by the current chunk or the previous memory state. These judgments are aggregated into a
+scalar trustworthiness scorev t =V(z t)∈[0,1], which is used as the transition-level verification reward.
+By </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>|/ Pt |c(i)t |),
+encouraging compact memory.
+Transition-Level Rewards.These rewards evaluate each local memory transitionM t−1 →M t.
+Action Execution (Ract) checks whether the generated structured actions are parseable and executable by the memory
+executorE.
+Content Type (Rtype) uses a lightweight analyzer Jtype to ensure that the modified content is semantically specific and
+non-empty.
+5
+Verifier Reward(Rver) uses the Memory Transition VerifierV from Section 3.2 to evaluate the semantic safety of the
+transition, defined asR (i)ver,t =V(z i,t).
+Aggregating the above, we define the total reward for thet-th memory update of sampleias
+Ri,t =R (i)task +λ effR(i)eff +λactR(i)act,t +λ typeR(i)type,t +λ verR(i)ver,t. (1)
+This reward combines final memory utility, memory compactness, action executability, content specificity, and transition-
+level trustworthiness. The sample-level terms provide </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Building on the multi-granularity reward, we proposeTransition-Ranked GRPO, which combines scalar reward
+optimization with verifier-guided transition ranking. While the verifier score can be used as a transition-level reward
+in Eq. (1), its absolute magnitude may not always be well calibrated. However, in our setting, verifier scores are used
+more robustly as relative preferences among candidate updates generated under the same state than as fully calibrated
+absolute values. Therefore, we further use verifier scores to construct preference pairs among candidate transitions and
+optimize the policy with an additional ranking objective.
+Global Trajectory Optimization via GRPO.We adopt Group Relative Policy Optimization (GRPO) [ 25] to optimize
+the memory policy. Specifically, for each training sample i, we sample a group of G rollouts from the old policy πθold.
+At each chunk step t within </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rollout g, we compute the scalar reward R(g)i,t from Eq. (1). The group-normalized advantage
+is computed as ˆA(g)i,t = (R(g)i,t −µ i,t)/(σi,t +ϵ A), where µi,t and σi,t are the mean and standard deviation of rewards
+across the G rollouts for the same chunk step. Letting r(g)i,t,l(θ) denote the importance ratio for the l-th generated token,
+the GRPO objective over the memory construction trajectory is formulated as:
+JGRPO(θ) =E i,t,g,l
+h
+min
 
-        <ul></ul>
+r(g)i,t,l(θ) ˆA(g)i,t ,clip r(g)i,t,l(θ),1−ϵ,1 +ϵ  ˆA(g)i,t i.(2)
+Verifier-Guided Pair Construction.For each training sample i, the G rollouts produce multiple candidate memory
+transitions at each chunk step t, denoted as Zi,t ={z (1)i,t , . . . , z(G)i,t }. These candidate transitions are generated from the
+same current chunk and previous memory state, but may contain different memory-editing actions. Because the verifier
+V evaluates each </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>transition independently, it induces a ranking over Zi,t. We select the transitions with the highest
+and lowest verifier scores as the preferred transition z+ and rejected transition z−, respectively, provided their score
+gap exceeds a margin δ. These preference pairs capture local differences in transition quality and provide additional
+supervision beyond the scalar reward.
+Local Preference Ranking via Verifier.Given the preference pairs (z+, z−), we optimize a DPO-style ranking
+loss to inject step-level semantic supervision. Because z+ and z− are generated for the same chunk and previous
+memory state, they share the same prompt pi,t and differ only in the generated memory-editing actions. Let o+ and
+o− denote the preferred and rejected action sequences. We define the length-normalized log-probability margin as
+∆θ =ℓ θ(o+ |p i,t)−ℓ θ(o− |p i,t), where ℓθ(o|p) denotes the </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>length-normalized log probability of a generated
+responseogiven promptp. The ranking loss is:
+Lrank =−logσ(β rank [∆θ −∆ ref]),(3)
+where∆ ref =ℓ ref (o+ |p i,t)−ℓ ref (o− |p i,t)is the corresponding margin under the reference policy.
+Joint Objective.We use a frozen reference policy πref to regularize policy updates with a KL penalty. This KL term is
+applied as an actor-side auxiliary loss, rather than being added to the scalar reward used for advantage estimation. Here,
+πθold denotes the rollout policy used in the GRPO importance ratio, while πref denotes the frozen reference policy used
+for KL regularization and the ranking margin.
+The final training objective combines scalar reward optimization, KL regularization, and transition-level ranking:
+L=−J GRPO +β KLLKL +λ rankLrank.(4)
+6
+Method AR TTL LRU Avg.
+SQuAD HotpotQA PerLTQA TREC-C NLU PubMed BookSum
+Long-Context 74.285.260.5 62.3 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>70.8 53.3 5.2 58.8
+RAG-Top2 76.2 84.9 62.3 61.2 50.8 57.0 4.2 56.7
+MemAgent [39] 52.6 66.0 41.5 53.5 57.4 61.6 8.6 48.7
+MEM1 [46] 12.0 16.4 16.0 47.5 33.2 22.6 6.6 22.0
+Mem-α[32] 78.6 83.265.9 66.6 65.8 54.5 18.7 61.9
+TRUSTMEM 80.6 84.9 63.6 72.4 73.8 64.0 22.6 66.3
+Table 1Experiment results on the Mem-αvalidation set. The top-2 results are highlighted.
+Method AR TTL LRU Avg.
+Single-Doc Multi-Doc LME(S) TREC-C NLU TREC-F Clinic Banking77 InfBench
+Long-Context 28.0 27.0 29.2 64.0 74.0 34.0 86.0 77.0 12.5 46.1
+RAG-Top2 69.0 45.058.1 69.0 65.0 21.0 70.0 75.0 6.5 50.2
+MemAgent [39] 51.0 52.0 23.0 62.0 78.0 30.088.083.0 10.9 53.1
+MEM1 [46] 23.0 33.0 13.0 57.080.028.0 48.0 76.0 7.0 40.6
+Mem-T [41] 56.0 60.0 43.3 75.0 48.0 27.0 43.0 79.0 14.1 49.5
+AtomMem [10] 37.0 33.0 8.7 11.0 1.0 9.0 0.0 0.0 18.9 13.2
+Mem-α[32] 74.0 68.052.0 71.0 71.041.073.0 70.0 12.9 59.2
+TRUSTMEM 83.0 64.0 55.0 85.0 79.2 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>41.0 84.0 84.0 15.9 65.7
+Table 2Experiment results on MemoryAgentBench. The top-2 results are highlighted.
+Here, LKL denotes the token-level KL regularization loss, while βKL and λrank control the weights of KL regularization
+and transition-level ranking, respectively.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets.We evaluate TRUSTMEMon MemoryAgentBench [ 9], HaluMem [ 3], and the Mem- α validation set.
+Following Mem-α [32], we use its training pool, which aggregates eight sources: SQuAD [ 22], HotpotQA [ 37],
+PerLTQA [7], LongMemEval-Train [33], NLU [15], TREC-C [16], PubMed-RCT [5], and BookSum [13]. We train
+TRUSTMEMon a balanced subset of 562 instances sampled from the 4,139-instance Mem- α training pool, and evaluate
+validation performance and ablations on 463 held-out Mem-α validation instances. We use all datasets, models, and
+systems only for research purposes and follow their publicly released access conditions and licenses where available.
+Method Memory Extraction Memory Updating Question Answering
+R↑Weighted R↑Acc.↑F1↑ C↑H↓O↓ C↑H↓O↓
+Mem0 [4] 42.91 65.03 60.86 57.31 25.50 0.45 74.02 53.02 19.17 27.81
+Memobase [38] 14.55 25.88 32.29 25.13 5.20 0.55 94.25 35.33 29.97 </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>34.71
+Supermemory [24] 41.53 64.76 60.83 56.90 16.37 1.15 82.47 54.07 22.24 23.69
+Zep [23] – – – – 47.28 0.4252.31 55.47 21.92 22.62
+MemAgent [39] 12.39 15.31 82.02 22.03 11.66 4.55 83.78 42.11 28.70 28.12
+Mem-T [41] 36.60 46.85 67.13 52.69 45.53 3.35 51.12 59.4326.11 13.98
+AtomMem [10] 0.28 0.3987.500.56 2.14 4.29 93.57 31.275.5664.00
+TRUSTMEM 56.73 67.45 67.81 69.45 46.84 0.53 48.64 55.22 6.07 12.46
+Table 3Experiment results on HaluMem Benchmark. We report operation-level metrics for memory extraction, memory updating,
+and memory-based question answering. R, Weighted R, Acc., and F1 evaluate memory extraction quality; C, H, and O denote
+correctness, hallucination, and omission, respectively.
+MemoryAgentBench.We evaluate TRUSTMEMon representative tasks from MemoryAgentBench [ 9] across three
+7
+memory capabilities. For Accurate Retrieval (AR), we use Single-Doc, Multi-Doc, and LME(S), </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>No examples from
+MemoryAgentBench or HaluMem are used for training; all results are reported on held-out validation instances or
+external benchmarks. We report results from the step-85 checkpoint. Following the reward definition in Section 3, the
+training reward is defined as R=R task +R act + 0.1Rver + 0.05Reff + 0.1Rtype, where Rtask measures downstream task
+performance, Ract evaluates action executability,Rver measures transition-level memory trustworthiness, Reff encourages
+compact memory construction, and Rtype evaluates content specificity. We use 8 GRPO rollouts per instance, a learning
+rate of 1×10 −6, KL coefficient 0.001, maximum prompt length 4096, maximum response length 2048. For the
+preference-ranking objective, we use top-1/bottom-1 pair construction with score margin 0.15, at most 256 preference
+pairs per batch, pair micro-batch size of 1 per GPU, preference loss weight </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 reports results on the Mem-α validation set. TrustMem achieves the best average score of 66.3, outperforming the
+strongest baseline Mem-α by 4.4 points. The improvement is especially clear on Test-Time Learning, where TrustMem
+obtains the best scores on TREC-C (72.4), NLU (73.8), and PubMed (64.0). TrustMem also improves BookSum from
+18.7 to 22.6, showing better long-range memory utility. These gains indicate that transition-level verification helps the
+agent preserve useful task-specific and long-range information during memory construction.
+8</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Methods AR TTL LRU Overall
+Ablation of Reward Components
+w/oR act 67.4 52.6 15.9 54.0
+w/oR eff 71.1 66.9 18.8 61.8
+Ablation of Transition Verification
+w/oR ver 72.1 58.3 20.6 58.7
+Ablation of Optimization Strategy
+PRM-style GRPO 75.8 57.6 21.5 60.3
+TrustMem (TR-GRPO) 76.4 70.1 22.6 66.3
+Table 4Ablation studies on reward components, transition verification, and optimization strategy.
+Table 2 evaluates out-of-distribution generalization on MemoryAgentBench. TrustMem again achieves the best average
+score of 65.7, improving over Mem-α by 6.5 points and outperforming Long-Context and RAG-Top2 by 19.6 and 15.5
+points, respectively. TrustMem performs strongly on both retrieval and test-time learning tasks, achieving the best
+score on Single-Doc (83.0), TREC-C (85.0), and Banking77 (84.0). These results show that TrustMem learns a more
+robust memory update policy than simply retaining long </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 3 evaluates operation-level memory reliability on HaluMem-Medium, covering memory extraction, memory
+updating, and memory-based question answering. TrustMem achieves the best memory extraction recall (56.73),
+weighted recall (67.45), and F1 (69.45), improving the strongest prior F1 score by 12.14 points. Although AtomMem
+obtains the highest extraction accuracy, its very low recall and F1 suggest an overly conservative extraction behavior
+that misses most useful memories. In contrast, TrustMem achieves a stronger coverage-correctness trade-off, resulting
+in the best overall extraction quality. For memory updating and memory-based question answering, TrustMem obtains
+the lowest omission rates while maintaining competitive correctness and low hallucination. These results show that
+transition-level verification and preference-guided optimization improve intermediate memory reliability </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As shown in Table 4, we perform ablation studies on the Mem-αvalidation set to quantitatively evaluate the impact of
+Action Execution Reward (Ract), Efficiency Reward (Reff), Transition Verifier Reward (Rver), and the Transition-Ranked
+GRPO optimization strategy.
+Effectiveness of Reward Components.Removing Ract causes the largest drop, reducing the overall score from
+66.3 to 54.0. This shows that executable memory-editing actions are crucial for reliable memory construction. Removing
+Reff also decreases the overall score to 61.8, indicating that compact memory states help reduce redundancy and improve
+downstream memory utility.
+Effectiveness of the Memory Transition Verifier.Removing Rver reduces the overall score from 66.3 to 58.7,
+with a clear drop on TTL from 70.1 to 58.3. This confirms that the Memory Transition Verifier provides important
+transition-level supervision. By checking </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate transition-level reliability by measuring three semantic failure modes: omission, corruption, and halluci-
+nation. Using generated trajectories from the 463-instance Mem-α validation set, we construct chunk-level transition
+9
+Figure 4Training reward dynamics of TrustMem and the variant without Transition-Ranked GRPO.
+records for each method and use GPT-4o-mini [11] with temperature 0 as an LLM judge. The judge follows the prompt
+and definitions in Appendix D; we report the percentage of transitions containing each major error type.
+As shown in Figure 2, omission is the dominant error type because memory construction is inherently compressive,
+while corruption and hallucination require actively writing incorrect or unsupported facts. Thus, comparisons should be
+made within each error type across methods. TrustMem achieves the lowest error rates across all categories, with </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>8.08%
+omission, 0.14% corruption, and 0.01% hallucination, demonstrating that transition-level verification reduces missing,
+distorted, and unsupported memory content.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A key limitation of TRUSTMEMis that our current experiments mainly focus on text-based long-term memory
+benchmarks. However, in real-world agent applications, user inputs and memory evidence are often multimodal,
+involving not only textual interactions but also images, videos, documents, and other contextual signals. We plan to
+extend our framework to multimodal memory agents and vision-language models, enabling more faithful and trustworthy
+consolidation of multimodal memory for open-ended personalized applications.
+11</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory state.
+Inputs:
+•Chunk Evidence:{chunk_text}
+•Pre-transition Memory State:{pre_memory}
+•Post-transition Memory State:{post_memory}
+•Touched Memory Actions:{actions}
+Required Output:Return only a JSON object:
+{
+&quot;score&quot;: 0.0,
+&quot;coverage_ok&quot;: true,
+&quot;preservation_ok&quot;: true,
+&quot;faithfulness_ok&quot;: true,
+&quot;issues&quot;: [&quot;brief issue labels&quot;],
+&quot;explanation&quot;: &quot;brief explanation&quot;
+}
+Rules:
+• Judge only from the provided chunk evidence, pre-transition memory, post-transition memory, and touched memory
+actions.
+• A skipped action can still be valid if the relevant information was already correctly stored and preserved.
+• Legitimate merging, rewriting, or compression is allowed as long as important facts are preserved.
+• Penalize critical omissions, unsupported additions, corrupted facts, and unjustified overwrites or deletions.
+• Use a continuous score in[0,1], where 1 means excellent consolidation and </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>D Memory Transition Error Judge Prompt
+We use GPT-4o-mini [11] with temperature set to 0 as the LLM judge for transition-level memory reliability evaluation.
+The judge receives the prior memory, the current input chunk, the memory operations produced after reading the chunk,
+and the updated memory, and returns a structured JSON judgment over omission, corruption, and hallucination.
+Evaluation Protocol.For the reliability analysis in Section 4.5, we construct one record for each chunk-level memory
+transition. Each record contains the prior memory, the current input chunk, the generated memory-editing operations,
+and the updated memory. A transition may contain multiple error types, so we compute each error rate independently
+as the percentage of transitions marked with that error type. We count only errors marked as major; transitions with
+minorornoneseverity are not counted as </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +323,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

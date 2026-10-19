@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-16](2026-10-16.md).
+Latest daily digest: [2026-10-19](2026-10-19.md).
 
-# Paper Scout Digest - 2026-10-16
+# Paper Scout Digest - 2026-10-19
 
 ## Run Summary
 
-- **Run ID:** 45
-- **Candidates fetched:** 92
-- **New unique papers:** 80
-- **Relevant:** 7
+- **Run ID:** 47
+- **Candidates fetched:** 84
+- **New unique papers:** 79
+- **Relevant:** 3
 - **Maybe relevant:** 1
-- **Irrelevant:** 84
-- **Source summary:** arxiv: 12, openalex: 79, semantic_scholar: 1
+- **Irrelevant:** 80
+- **Source summary:** arxiv: 8, openalex: 76, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -24,4 +24,24 @@ Latest daily digest: [2026-10-16](2026-10-16.md).
 - semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
 
-No new relevant or maybe-relevant papers found.
+## Highly Relevant
+
+### [N-Gram Memories at Two Bits: Quantizing Lookup Tables in Large Language Models](https://arxiv.org/abs/2610.21810)
+
+- **Authors:** Donghoon Han, Minseop Jung, Dong Woo Kwak, SeungJae Lee, Junhoo Lee
+- **Date:** 2026-10-15
+- **Source:** openalex
+- **Relevance:** relevant (92/100)
+- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
+- **Tags:** conditional-memory, hashed-ngram-memory
+- **Abstract summary:** Conditional memory expands language-model capacity through selective lookup, but the full embedding table must remain available for every possible input. We introduce Conditional Program (CP), a compressed representation that reconstructs only the rows an input requests. CP represents each row by a short code and a...
+
+### [Representation Drift in Continual Learning: LoRA versus N-gram Memory](https://arxiv.org/abs/2610.14921)
+
+- **Authors:** Hao Wu
+- **Date:** 2026-10-10
+- **Source:** openalex
+- **Relevance:** relevant (92/100)
+- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: hashed-ngram-memory.
+- **Tags:** hashed-ngram-memory
+- **Abstract summary:** A language model that keeps learning online must not slowly erode its own base capabilities. We ask which part of a modern LLM should absorb continual updates, by measuring how each choice changes the model's internal representations. On a 48-layer mixture-of-experts model with a native pretrained N-gram memory, we...

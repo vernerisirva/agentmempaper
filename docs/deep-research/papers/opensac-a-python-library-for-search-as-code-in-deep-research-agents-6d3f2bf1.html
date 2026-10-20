@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenSaC: A Python Library for Search as Code in Deep Research Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>OpenSaC: A Python Library for Search as Code in Deep Research Agents</h1>
+          <p class="hero-copy">Qi Liu, Jiaxin Mao, Fengbin Zhu, Tat-Seng Chua, Ji-Rong Wen</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.25779v1">Open paper</a>
+            <a class="paper-detail-link" href="opensac-a-python-library-for-search-as-code-in-deep-research-agents-6d3f2bf1.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Qi Liu, Jiaxin Mao, Fengbin Zhu, Tat-Seng Chua, Ji-Rong Wen</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-19</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-19</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.25779">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies autonomous or deep research agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Deep research agents investigate complex questions through iterative search, source examination, and evidence synthesis. A conventional workflow alternates reasoning with individual search and reading actions. Search as Code introduces a new paradigm: agents write programs that compose search, source reading, rerank...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The short paper delivers a well-defined systems contribution with practical relevance to deep research agents, accompanied by open-source code and clear, transparent empirical comparisons.</p>
+      <p>The authors transparently report the slight quality regression on WideSearch, benchmark task exclusions due to ground-truth leakage, and the need for future exploration into fine-tuning and adaptive skill optimization.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-20T09:13:53.260415+00:00.</p>
+        <p>Coverage: 20690 of 20690 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents investigate complex questions through itera-
+tive search, source examination, and evidence synthesis. A conven-
+tional workflow alternates reasoning with individual search and
+reading actions. Search as Code introduces a new paradigm: agents
+write programs that compose search, source reading, reranking,
+model calls, and local processing, returning selected observations
+for further reasoning. To support this workflow in existing coding
+agents, we presentOpenSaC, an open-source Python library with a
+companion Search as Code skill. Configurable capability interfaces
+let agents combine these operations while retaining evidence for
+inspection and reuse. Compared with standard Codex using its
+built-in web search, theOpenSaCconfiguration uses less execution
+time and fewer model tokens on BrowseComp and WideSearch,
+with higher accuracy on BrowseComp and slightly lower row </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is to bring these capabilities into existing coding
+agents through an open library and explicit guidance for program
+composition.
+To this end, we presentOpenSaC, an open-source Python library
+and companionSearch as Code skillthat provides instructions for
+composing research programs in agents such as Codex and Claude
+Code. The library provides composable interfaces for search, con-
+tent fetching, reranking, and optional language-model calls through
+independently configurable providers. The skill guides agents to
+combine these operations with ordinary Python in their existing
+workspace. Together, they let agents batch requests, process results,
+retain sources, and return selected evidence within the host agent&#x27;s
+workflow. Figure 1 contrasts the interaction patterns, and Figure 2
+outlines the supporting architecture.
+We evaluate theOpenSaCconfiguration against standard Codex
+with built-in </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>OpenSaCseparates the agent&#x27;s research decisions from program
+execution. The coding agent chooses the next steps and writes a
+Python program that combines software development kit (SDK)
+calls with local computation and file operations. The library supplies
+typed interfaces for search, content fetching, reranking, and model
+calls; the host executes the program. Selected execution results
+return to the agent, which decides whether to answer or investigate
+further. These observations can include source excerpts, extracted
+records, computed summaries, or errors.
+Figure 2 illustrates a possible labor-statistics program. Indepen-
+dent searches cover unemployment, employment, and earnings
+series; the program merges rankings, selects URLs, fetches data,
+and retains responses before returning records. Grouping known
+requests leaves the agent to identify gaps and decide on follow-up
+queries.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>OpenSaC Conference&#x27;17, July 2017, Washington, DC, USA
+Table 1: Core SDK methods. Batch variants preserve input
+order and return per-input data or errors. Local helpers make
+no provider calls.
+Method Operation
+searchFind and rank web pages
+search.manyRun independent searches in a batch
+content.fetchFetch text from a URL
+content.fetch_manyFetch text from multiple URLs
+rerankReorder items by query relevance
+llm.completeGenerate text from a prompt
+llm.complete_manyGenerate text for each prompt
+llm.extractExtract fields matching a schema
+llm.extract_manyExtract fields from multiple texts
+fuseMerge ranked lists into one ranking
+dedupRemove duplicates by URL or key</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The host executes programs and provides a workspace for retained
+evidence. The synchronous SDK bridges to an asynchronous run-
+time that manages capability calls.
+Supporting Search as Code.Programs use the host&#x27;s workspace
+to retain sources and intermediate results across executions. They
+can save full documents with their URLs, return selected excerpts,
+and reuse saved text in later programs. Local helpers complement
+this workspace: fuse merges ranked lists through weighted re-
+ciprocal rank fusion, and dedup removes repeated identities. Both
+preserve original objects, default to exact URL keys, and accept
+custom keys. Together, local helpers and ordinary file operations
+let programs combine evidence, retain sources, and select what to
+return to the agent.
+Supporting reliable execution.The runtime bounds concur-
+rent provider requests, applies per-request timeouts, and validates
+inputs </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Research workflows may require different search services, content
+readers, or model endpoints. Provider dispatch separates these back-
+end choices from program composition, allowing each capability
+to be configured independently.
+Adapters map shared capability contracts to each backend&#x27;s
+request and response formats. They register through Python entry
+points; the runtime routes calls to the configured adapter for each
+capability. Included adapters support Serper and Jina Reader, HTTP
+backends, and model endpoints compatible with the OpenAI API.
+Users can combine services, replace backends while retaining
+program logic, or compare provider configurations with the same
+program. Developers can connect new services through custom
+adapters without modifying the core library (Figure 2).</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>OpenSaCpairs the library with a companion Search as Code skill
+that guides agents in composing research programs. The library
+supplies executable capabilities; the skill explains when to batch in-
+dependent requests, preserve sources, select observations, and reuse
+evidence. This guidance is provided through the skill mechanisms
+of coding agents such as Codex and Claude Code [2, 6].
+The skill works with the agent&#x27;s existing Python execution and
+file tools. Users can revise its guidance to explore different batch-
+ing, evidence-selection, and reuse strategies within the same host
+workflow.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate English BrowseComp fact finding [10] and WideSearch
+information collection [11] on paired task sets drawn from 200 tasks
+per benchmark. We ran both conditions through Harbor [3] and
+archived trajectories, outputs, and grader results on Harbor Hub;
+we report paired, audited subsets. The native condition uses the
+standard Codex environment with its built-in web search. TheOpen-
+SaCcondition uses the package and skill, with native web search
+disabled. Both conditions use Codex 0.147.0 with gpt-5.6-luna,
+xhighreasoning, and a 30-minute task budget.
+Quality is answer accuracy for BrowseComp and macro row F1
+for WideSearch, with failed runs included. We exclude 31 BrowseC-
+omp tasks and 33 WideSearch tasks whose saved trajectories show
+that benchmark answer materials exposed the current task&#x27;s an-
+swers to the agent in either condition. We further exclude one
+WideSearch task with </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a blocked output stream underOpenSaC,
+leaving 169 and 166 paired tasks, respectively. Reported WideSearch
+scores include targeted manual corrections for four tasks in both
+conditions, addressing grading issues involving units, formatting,
+Conference&#x27;17, July 2017, Washington, DC, USA Liu et al.
+Table 2: Native retrieval andOpenSaCon BrowseComp and
+WideSearch. Quality is accuracy or macro row F1, respec-
+tively; time, tokens, and recorded model cost are per-task
+means. Failed runs and cached input tokens are included.
+Benchmark Condition Quality (%) Time (s) Tokens (k) Cost ($)
+BrowseComp Native 82.25 473.01 4102.9 0.14324
+OpenSaC85.21 329.59 2552.1 0.09117
+WideSearch Native 60.62 767.01 5416.0 0.18631
+OpenSaC59.78 540.36 4667.0 0.16286
+and entity aliases without changing predictions or reference an-
+swers. We report mean agent execution time, cumulative input
+and output tokens, and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>recorded model cost over one run per task.
+Time excludes setup and judging; cost excludes retrieval-provider
+charges.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>On BrowseComp,OpenSaCimproves accuracy by 2.96 percent-
+age points while reducing mean execution time by 30.3% (Table 2).
+Across the 169 paired tasks,OpenSaCanswers 14 questions cor-
+rectly that native retrieval misses, while native retrieval answers
+nine thatOpenSaCmisses. Model token usage falls by 37.8%, ac-
+companied by a 36.4% reduction in recorded model cost.
+On WideSearch,OpenSaCreduces mean execution time by 29.5%,
+saving about 227 seconds per task, while row F1 declines by 0.84
+percentage points. Model token usage falls by 13.8% and recorded
+model cost by 12.6%. The time reduction is similar across bench-
+marks, but token and model-cost savings are larger on BrowseComp,
+where accuracy also improves.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>OpenSaCenables coding agents to compose retrieval operations
+in inspectable programs and retain evidence for reuse. With skill
+guidance, it reduced execution time and model token use on both
+benchmarks; accuracy improved on BrowseComp, while row F1
+declined slightly on WideSearch.
+Improving how agents use SaC-like paradigms remains open.
+Better provider services could expand source coverage and improve
+the relevance and reliability of evidence. Skill guidance could be op-
+timized through evaluation, including methods that let agents pro-
+pose and test revisions. Supervised fine-tuning and reinforcement
+Listing 1: Agent-written batch search for statistical sources
+(excerpt).
+batches = sdk.search.many(queries, limit=8)
+forq, resultin zip(queries, batches, strict=True):
+print(&#x27;\nQUERY:&#x27;, q)
+ifresult.ok:
+forhinresult.data:
+print(f&#x27;- {h.title} | </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Autonomous research-agent system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies agents that perform or evaluate multi-step research workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Autonomous research agent workflow</li>
+              <li>Tags: deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-19</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-20 09:10:22</li><li>Last seen by Paper Scout: 2026-10-20 09:10:22</li></ul>
+            <ul><li>arXiv: 2610.25779</li><li>arXiv IDs: 2610.25779</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="opensac-a-python-library-for-search-as-code-in-deep-research-agents-6d3f2bf1.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>OpenSaC: A Python Library for Search as Code in Deep Research Agents. Qi Liu, Jiaxin Mao, Fengbin Zhu, Tat-Seng Chua, Ji-Rong Wen. 2026-10-19. https://arxiv.org/abs/2610.25779v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

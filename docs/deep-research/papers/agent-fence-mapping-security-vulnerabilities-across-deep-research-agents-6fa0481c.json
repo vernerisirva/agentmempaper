@@ -30,7 +30,7 @@
   "last_seen_date": "2026-06-29",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-29 05:18:42",
   "notified_date": "2026-06-29",
@@ -41,7 +41,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-29 05:16:24",
-    "generated_at": "2026-10-19 09:39:28",
+    "generated_at": "2026-10-20 09:15:40",
     "last_seen_at": "2026-06-29 05:18:26",
     "metadata_sources": [
       "openalex"
@@ -104,36 +104,1414 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-20T09:12:32.227981+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper provides an adequately described benchmark framework, well-controlled experimental isolation of agent architecture versus base model capabilities, rigorous trace-based violation definitions with inter-rater validation, and clear empirical evidence for its findings.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 37528,
+      "assessment_input_sha256": "c72a4178cc5ce4b1cbd4ea2c8f6873d79347e5f3d048e4a84eaa422c64c1cb73",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.1609/aaaiss.v9i1.42945",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 36723,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 36578,
+      "evidence_block_count": 48,
+      "evidence_context_characters": 42409,
+      "evidence_context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+      "evidence_context_sha256": "a74e5844ccc78cfce37a3c822c069d349068d419fa00876261bdcd49616bdc19",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 36737,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "extracted_pages": 8,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "a076f303f882e3b2983a36594d6335985e3bde3503ca553cc3fcee944a162353",
+        "source_url": "https://ojs.aaai.org/index.php/AAAI-SS/article/download/42945/50505",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 36723,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Agent-Fence: Mapping Security Vulnerabilities Across Deep Research Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 463,
+          "supplied_characters": 463
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1342,
+          "supplied_characters": 1342
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2608,
+          "supplied_characters": 2608
+        },
+        {
+          "heading": "Rewrite Query",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 3537,
+          "supplied_characters": 3537
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 831,
+          "supplied_characters": 831
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 1632,
+          "supplied_characters": 1632
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 583,
+          "supplied_characters": 583
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 3656,
+          "supplied_characters": 3656
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 3840,
+          "supplied_characters": 3840
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 3615,
+          "supplied_characters": 3615
+        },
+        {
+          "heading": "Artifact Taxonomy Coverage Reference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1413,
+          "supplied_characters": 1413
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 3839,
+          "supplied_characters": 3839
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 1588,
+          "supplied_characters": 1588
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 13,
+          "source_characters": 890,
+          "supplied_characters": 890
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 174,
+          "supplied_characters": 174
+        },
+        {
+          "heading": "Tack Detection System For Denial-Of-Wallet Attack Using Ad-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 324,
+          "supplied_characters": 324
+        },
+        {
+          "heading": "Proceedings Of The 2025 Conference On Empirical Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 393,
+          "supplied_characters": 393
+        },
+        {
+          "heading": "Helpful To Be Safe: User-Mediated Attacks On Planning And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 379,
+          "supplied_characters": 379
+        },
+        {
+          "heading": "Agentpoison: Red-Teaming Llm Agents Via Poisoning Mem-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 275,
+          "supplied_characters": 275
+        },
+        {
+          "heading": "Agentpoison: Red-Teaming Llm Agents Via Poisoning Mem-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 5196,
+          "supplied_characters": 5196
+        }
+      ],
+      "selected_characters": 36578,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "selected_sections": [
+        {
+          "characters": 463,
+          "heading": "Agent-Fence: Mapping Security Vulnerabilities Across Deep Research Agents",
+          "page": 1
+        },
+        {
+          "characters": 1342,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2608,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3537,
+          "heading": "Rewrite Query",
+          "page": 2
+        },
+        {
+          "characters": 831,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 1632,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 583,
+          "heading": "Methodology",
+          "page": 3
+        },
+        {
+          "characters": 3656,
+          "heading": "Experimental Setup",
+          "page": 3
+        },
+        {
+          "characters": 3840,
+          "heading": "Experimental Setup",
+          "page": 4
+        },
+        {
+          "characters": 3615,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 1413,
+          "heading": "Artifact Taxonomy Coverage Reference",
+          "page": 6
+        },
+        {
+          "characters": 3839,
+          "heading": "Results",
+          "page": 6
+        },
+        {
+          "characters": 1588,
+          "heading": "Results",
+          "page": 7
+        },
+        {
+          "characters": 890,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 174,
+          "heading": "Unclassified body after references",
+          "page": 7
+        },
+        {
+          "characters": 324,
+          "heading": "Tack Detection System For Denial-Of-Wallet Attack Using Ad-",
+          "page": 7
+        },
+        {
+          "characters": 393,
+          "heading": "Proceedings Of The 2025 Conference On Empirical Methods",
+          "page": 7
+        },
+        {
+          "characters": 379,
+          "heading": "Helpful To Be Safe: User-Mediated Attacks On Planning And",
+          "page": 7
+        },
+        {
+          "characters": 275,
+          "heading": "Agentpoison: Red-Teaming Llm Agents Via Poisoning Mem-",
+          "page": 7
+        },
+        {
+          "characters": 5196,
+          "heading": "Agentpoison: Red-Teaming Llm Agents Via Poisoning Mem-",
+          "page": 8
+        }
+      ],
+      "selected_text_sha256": "c72a4178cc5ce4b1cbd4ea2c8f6873d79347e5f3d048e4a84eaa422c64c1cb73",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "a076f303f882e3b2983a36594d6335985e3bde3503ca553cc3fcee944a162353",
+      "source_pages": 8,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0002"
+        ],
+        "excerpt": "Large language models are becoming deep agents that plan,\npersist state, and invoke tools, shifting safety failures from\nunsafe text to unsafe trajectories. We introduce AgentFence,\nan architecture-centric security evaluation that defines 14\ntrust-boundary attack classes across planning, memory, re-\ntrieval, tool use, and delegation, and detects failure via trace-\nauditable conversation breaks (unauthorized/unsafe tool use,\nwrong-principal actions, state/objective integrity violations,\nand attack-linked deviations). Holding the base model fixed,\nwe evaluate eight agent archetypes under persistent multi-\nturn interaction and find substantial architectural variation in\nmean security break rate (MSBR), from 0.29 \u00b1 0.04 (Lang-\nGraph) to 0.51 \u00b1 0.07 (AutoGPT). The highest-risk classes\nare operational: Denial-of-Wallet 0.62 \u00b1 0.08, Authorization\nConfusion 0.54 \u00b1 0.10, Retrieval Poisoning 0.47 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f47b1a49486fdff27969944707eed88532f7f2bbb1893bf41868b178a22b4f42",
+            "evidence_id": "E02d181dc5502cdb2-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Large language models are becoming deep agents that plan,\npersist state, and invoke tools, shifting safety failures from\nunsafe text to unsafe trajectories. We introduce AgentFence,\nan architecture-centric security evaluation that defines 14\ntrust-boundary attack classes across planning, memory, re-\ntrieval, tool use, and delegation, and detects failure via trace-\nauditable conversation breaks (unauthorized/unsafe tool use,\nwrong-principal actions, state/objective integrity violations,\nand attack-linked deviations). Holding the base model fixed,\nwe evaluate eight agent archetypes under persistent multi-\nturn interaction and find substantial architectural variation in\nmean security break rate (MSBR), from 0.29 \u00b1 0.04 (Lang-\nGraph) to 0.51 \u00b1 0.07 (AutoGPT). The highest-risk classes\nare operational: Denial-of-Wallet 0.62 \u00b1 0.08, Authorization\nConfusion 0.54 \u00b1 0.10, Retrieval Poisoning 0.47 "
+              }
+            ],
+            "text": "Large language models are becoming deep agents that plan,\npersist state, and invoke tools, shifting safety failures from\nunsafe text to unsafe trajectories. We introduce AgentFence,\nan architecture-centric security evaluation that defines 14\ntrust-boundary attack classes across planning, memory, re-\ntrieval, tool use, and delegation, and detects failure via trace-\nauditable conversation breaks (unauthorized/unsafe tool use,\nwrong-principal actions, state/objective integrity violations,\nand attack-linked deviations). Holding the base model fixed,\nwe evaluate eight agent archetypes under persistent multi-\nturn interaction and find substantial architectural variation in\nmean security break rate (MSBR), from 0.29 \u00b1 0.04 (Lang-\nGraph) to 0.51 \u00b1 0.07 (AutoGPT). The highest-risk classes\nare operational: Denial-of-Wallet 0.62 \u00b1 0.08, Authorization\nConfusion 0.54 \u00b1 0.10, Retrieval Poisoning 0.47 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0003"
+        ],
+        "excerpt": "\u00b1 0.09,\nand Planning Manipulation 0.44\u00b10.11, while prompt-centric\nclasses remain < 0.20 under standard settings. Breaks are\ndominated by boundary violations (SIV 31%, WPA 27%,\nUTI+UTA 24%, A TD 18%), and authorization confusion cor-\nrelates with objective and tool hijacking (\u03c1\u2248 0.63, \u03c1 \u2248 0.58).\nAgentFence reframes agent security around what matters op-\nerationally: whether an agent stays within its goal and author-\nity envelope over time.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2649e2abdea6fc219e242ebc660f04bc91e477f03cca48bb34b109b6e79e7e44",
+            "evidence_id": "E02d181dc5502cdb2-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1342,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 900,
+                "text": "\u00b1 0.09,\nand Planning Manipulation 0.44\u00b10.11, while prompt-centric\nclasses remain < 0.20 under standard settings. Breaks are\ndominated by boundary violations (SIV 31%, WPA 27%,\nUTI+UTA 24%, A TD 18%), and authorization confusion cor-\nrelates with objective and tool hijacking (\u03c1\u2248 0.63, \u03c1 \u2248 0.58).\nAgentFence reframes agent security around what matters op-\nerationally: whether an agent stays within its goal and author-\nity envelope over time."
+              }
+            ],
+            "text": "\u00b1 0.09,\nand Planning Manipulation 0.44\u00b10.11, while prompt-centric\nclasses remain < 0.20 under standard settings. Breaks are\ndominated by boundary violations (SIV 31%, WPA 27%,\nUTI+UTA 24%, A TD 18%), and authorization confusion cor-\nrelates with objective and tool hijacking (\u03c1\u2248 0.63, \u03c1 \u2248 0.58).\nAgentFence reframes agent security around what matters op-\nerationally: whether an agent stays within its goal and author-\nity envelope over time."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0009"
+        ],
+        "excerpt": "exposing security vulnerabilities\nthat arise from the structural trust assumptions embedded\nin modern deep research agents. Rather than optimizing ex-\nploits or proposing a new defense, AgentFence systemati-\ncally probes how agents fail when adversarial influence is\napplied across planning, memory, tool use, retrieval, and del-\negation over time.\nOur contributions. This paper makes four primary con-\ntributions:\n\u2022 A unified taxonomy of 14 classes (A 1\u2013A14) that pin-\npoint trust-boundary violations across prompt/state in-\njection, planning manipulation, tool-use hijacking, re-\ntrieval/search poisoning, delegation abuse, authorization\nconfusion, and denial-of-wallet.\n\u2022 A protocol that isolates agent vulnerabilities by fixing\nthe base model and systematically varying control flow,\nmemory handling, tool permissions, and delegation se-\nmantics across representative agent archetypes.\n\u2022 We ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rewrite Query",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "390fd3540cd436771ddf5f6222e5cb5433511f3bd60a59d575d0a7722334623b",
+            "evidence_id": "E02d181dc5502cdb2-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Rewrite Query",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2686,
+                "page": 2,
+                "section": "Rewrite Query",
+                "section_index": 3,
+                "start": 1791,
+                "text": "exposing security vulnerabilities\nthat arise from the structural trust assumptions embedded\nin modern deep research agents. Rather than optimizing ex-\nploits or proposing a new defense, AgentFence systemati-\ncally probes how agents fail when adversarial influence is\napplied across planning, memory, tool use, retrieval, and del-\negation over time.\nOur contributions. This paper makes four primary con-\ntributions:\n\u2022 A unified taxonomy of 14 classes (A 1\u2013A14) that pin-\npoint trust-boundary violations across prompt/state in-\njection, planning manipulation, tool-use hijacking, re-\ntrieval/search poisoning, delegation abuse, authorization\nconfusion, and denial-of-wallet.\n\u2022 A protocol that isolates agent vulnerabilities by fixing\nthe base model and systematically varying control flow,\nmemory handling, tool permissions, and delegation se-\nmantics across representative agent archetypes.\n\u2022 We "
+              }
+            ],
+            "text": "exposing security vulnerabilities\nthat arise from the structural trust assumptions embedded\nin modern deep research agents. Rather than optimizing ex-\nploits or proposing a new defense, AgentFence systemati-\ncally probes how agents fail when adversarial influence is\napplied across planning, memory, tool use, retrieval, and del-\negation over time.\nOur contributions. This paper makes four primary con-\ntributions:\n\u2022 A unified taxonomy of 14 classes (A 1\u2013A14) that pin-\npoint trust-boundary violations across prompt/state in-\njection, planning manipulation, tool-use hijacking, re-\ntrieval/search poisoning, delegation abuse, authorization\nconfusion, and denial-of-wallet.\n\u2022 A protocol that isolates agent vulnerabilities by fixing\nthe base model and systematically varying control flow,\nmemory handling, tool permissions, and delegation se-\nmantics across representative agent archetypes.\n\u2022 We "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0010"
+        ],
+        "excerpt": "formalize conversation breaks: objective, evidence-\nbacked criteria that certify when an agent is no longer\npursuing the correct goal within its authorized capabil-\nity envelope, enabling outcome-based security evaluation\nbeyond text-only judgments.\n\u2022 Using AgentFence on eight widely used archetypes, we\ndeliver the first comparative map of structurally exposed\nattack classes across designs, surfacing near-universal\nfailure modes that persist despite prompt-level safe-\nguards.\nOur findings suggest that many of today's most severe\nagent vulnerabilities are not bugs to be patched, but con-\nsequences of architectural trust assumptions. By reframing\nevaluation around unsafe actions and trajectory-level fail-\nures, AgentFence provides a foundation for designing, com-\nparing, and ultimately securing the next generation of au-\ntonomous AI systems.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rewrite Query",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "44fbda48ebf8c29ef1854d2b8819176a62b4895349b4cad67a4269cca0469551",
+            "evidence_id": "E02d181dc5502cdb2-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Rewrite Query",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3537,
+                "page": 2,
+                "section": "Rewrite Query",
+                "section_index": 3,
+                "start": 2686,
+                "text": "formalize conversation breaks: objective, evidence-\nbacked criteria that certify when an agent is no longer\npursuing the correct goal within its authorized capabil-\nity envelope, enabling outcome-based security evaluation\nbeyond text-only judgments.\n\u2022 Using AgentFence on eight widely used archetypes, we\ndeliver the first comparative map of structurally exposed\nattack classes across designs, surfacing near-universal\nfailure modes that persist despite prompt-level safe-\nguards.\nOur findings suggest that many of today's most severe\nagent vulnerabilities are not bugs to be patched, but con-\nsequences of architectural trust assumptions. By reframing\nevaluation around unsafe actions and trajectory-level fail-\nures, AgentFence provides a foundation for designing, com-\nparing, and ultimately securing the next generation of au-\ntonomous AI systems."
+              }
+            ],
+            "text": "formalize conversation breaks: objective, evidence-\nbacked criteria that certify when an agent is no longer\npursuing the correct goal within its authorized capabil-\nity envelope, enabling outcome-based security evaluation\nbeyond text-only judgments.\n\u2022 Using AgentFence on eight widely used archetypes, we\ndeliver the first comparative map of structurally exposed\nattack classes across designs, surfacing near-universal\nfailure modes that persist despite prompt-level safe-\nguards.\nOur findings suggest that many of today's most severe\nagent vulnerabilities are not bugs to be patched, but con-\nsequences of architectural trust assumptions. By reframing\nevaluation around unsafe actions and trajectory-level fail-\nures, AgentFence provides a foundation for designing, com-\nparing, and ultimately securing the next generation of au-\ntonomous AI systems."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0014"
+        ],
+        "excerpt": "AgentFence is designed to expose security vulnerabil-\nities that arise from the agentic structure surrounding\nLLMs\u2014planning loops, state, tool interfaces, retrieval, and\ndelegation\u2014rather than from a single model call. We focus\non post-deployment, interface-only adversaries who can in-\nfluence the agent through intended channels, including user\nprompts, retrieved/web content, tool outputs, shared mem-\nory, and inter-agent messages, but not weights or infrastruc-\nture. We reportsecurity breaks as trace-evidenced violations\nof explicit trust boundaries and authority constraints.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bbcc795e5e9316c7c3903084f33bf090059843a50dfad0f2062325bb822cb8ce",
+            "evidence_id": "E02d181dc5502cdb2-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 583,
+                "page": 3,
+                "section": "Methodology",
+                "section_index": 6,
+                "start": 0,
+                "text": "AgentFence is designed to expose security vulnerabil-\nities that arise from the agentic structure surrounding\nLLMs\u2014planning loops, state, tool interfaces, retrieval, and\ndelegation\u2014rather than from a single model call. We focus\non post-deployment, interface-only adversaries who can in-\nfluence the agent through intended channels, including user\nprompts, retrieved/web content, tool outputs, shared mem-\nory, and inter-agent messages, but not weights or infrastruc-\nture. We reportsecurity breaks as trace-evidenced violations\nof explicit trust boundaries and authority constraints."
+              }
+            ],
+            "text": "AgentFence is designed to expose security vulnerabil-\nities that arise from the agentic structure surrounding\nLLMs\u2014planning loops, state, tool interfaces, retrieval, and\ndelegation\u2014rather than from a single model call. We focus\non post-deployment, interface-only adversaries who can in-\nfluence the agent through intended channels, including user\nprompts, retrieved/web content, tool outputs, shared mem-\nory, and inter-agent messages, but not weights or infrastruc-\nture. We reportsecurity breaks as trace-evidenced violations\nof explicit trust boundaries and authority constraints."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0015"
+        ],
+        "excerpt": "iments use Qwen2.5-32B-Instruct as the underlying model\nto isolate architectural effects. We instantiate tasks using\nHotpotQA (Y ang et al. 2018), curating 91 instances with sta-\nble entities and unambiguous ground truth. For each instance\nqi, we use a verifier tuple gi = \u27e8ai, Si, Ci\u27e9, where ai is the\ncanonical answer, Si the annotated supporting facts, and Ci\nnormalization/alias constraints. Each instance is converted\ninto a persistent multi-turn \"research workload\": the agent\n(i) proposes a short plan, (ii) identifies key sources/entities,\n(iii) answers, (iv) cites supporting facts, and (v) answers\nnon-adversarial follow-ups probing consistency. Runs ter-\nminate upon verified completion, a security break, or a fixed\nbudget. Additionally, we used different tool sets to evaluate\nour analysis (Table 4).\nMulti-turn adversarial stressing. Attacks are applied\ngradually across turns within ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "03f56d3062ee1c07d0e88fa005352dff6ecf96bfe8b79e1da44d72da91d74743",
+            "evidence_id": "E02d181dc5502cdb2-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 3,
+                "section": "Experimental Setup",
+                "section_index": 7,
+                "start": 0,
+                "text": "iments use Qwen2.5-32B-Instruct as the underlying model\nto isolate architectural effects. We instantiate tasks using\nHotpotQA (Y ang et al. 2018), curating 91 instances with sta-\nble entities and unambiguous ground truth. For each instance\nqi, we use a verifier tuple gi = \u27e8ai, Si, Ci\u27e9, where ai is the\ncanonical answer, Si the annotated supporting facts, and Ci\nnormalization/alias constraints. Each instance is converted\ninto a persistent multi-turn \"research workload\": the agent\n(i) proposes a short plan, (ii) identifies key sources/entities,\n(iii) answers, (iv) cites supporting facts, and (v) answers\nnon-adversarial follow-ups probing consistency. Runs ter-\nminate upon verified completion, a security break, or a fixed\nbudget. Additionally, we used different tool sets to evaluate\nour analysis (Table 4).\nMulti-turn adversarial stressing. Attacks are applied\ngradually across turns within "
+              }
+            ],
+            "text": "iments use Qwen2.5-32B-Instruct as the underlying model\nto isolate architectural effects. We instantiate tasks using\nHotpotQA (Y ang et al. 2018), curating 91 instances with sta-\nble entities and unambiguous ground truth. For each instance\nqi, we use a verifier tuple gi = \u27e8ai, Si, Ci\u27e9, where ai is the\ncanonical answer, Si the annotated supporting facts, and Ci\nnormalization/alias constraints. Each instance is converted\ninto a persistent multi-turn \"research workload\": the agent\n(i) proposes a short plan, (ii) identifies key sources/entities,\n(iii) answers, (iv) cites supporting facts, and (v) answers\nnon-adversarial follow-ups probing consistency. Runs ter-\nminate upon verified completion, a security break, or a fixed\nbudget. Additionally, we used different tool sets to evaluate\nour analysis (Table 4).\nMulti-turn adversarial stressing. Attacks are applied\ngradually across turns within "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0016"
+        ],
+        "excerpt": "the same thread, with no re-\nLabel Decision Rules: per attack class i on agent A\n\u2713 Attack class i is applicable, required interfaces\nexist, and under the Standard Config (SC) the\nattack induces a Conversation Break in \u2265 \u03c4YES\nof runs: Pr(Break | A, i,SC) \u2265 \u03c4YES . We set\n\u03c4YES =0.30 by default, estimated over N \u2265 30\nruns with fixed budget and fixed task set.\n\u2013 Attack class i is applicable, but either: (i) breaks\noccur only under at least one Permissive Con-\nfig (PC), such as broader tool scope, higher retry\nbudget, or weaker sandbox; (ii) under SC the\nbreak rate is nonzero but < \u03c4YES ; or (iii) the class\nis applicable but requires an optional component,\nsuch as delegation, that is not enabled by default.\n\u00d7 Attack class i cannot be meaningfully instan-\ntiated because the agent lacks the required in-\nterface/trust edge; for example, no tool calls\nmake tool-hijacking undefined, and no ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "51876dc0728776dd3ecb4a3478b38d7a170d995e630e2fe08eea165b7d8ff8b9",
+            "evidence_id": "E02d181dc5502cdb2-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 3,
+                "section": "Experimental Setup",
+                "section_index": 7,
+                "start": 898,
+                "text": "the same thread, with no re-\nLabel Decision Rules: per attack class i on agent A\n\u2713 Attack class i is applicable, required interfaces\nexist, and under the Standard Config (SC) the\nattack induces a Conversation Break in \u2265 \u03c4YES\nof runs: Pr(Break | A, i,SC) \u2265 \u03c4YES . We set\n\u03c4YES =0.30 by default, estimated over N \u2265 30\nruns with fixed budget and fixed task set.\n\u2013 Attack class i is applicable, but either: (i) breaks\noccur only under at least one Permissive Con-\nfig (PC), such as broader tool scope, higher retry\nbudget, or weaker sandbox; (ii) under SC the\nbreak rate is nonzero but < \u03c4YES ; or (iii) the class\nis applicable but requires an optional component,\nsuch as delegation, that is not enabled by default.\n\u00d7 Attack class i cannot be meaningfully instan-\ntiated because the agent lacks the required in-\nterface/trust edge; for example, no tool calls\nmake tool-hijacking undefined, and no "
+              }
+            ],
+            "text": "the same thread, with no re-\nLabel Decision Rules: per attack class i on agent A\n\u2713 Attack class i is applicable, required interfaces\nexist, and under the Standard Config (SC) the\nattack induces a Conversation Break in \u2265 \u03c4YES\nof runs: Pr(Break | A, i,SC) \u2265 \u03c4YES . We set\n\u03c4YES =0.30 by default, estimated over N \u2265 30\nruns with fixed budget and fixed task set.\n\u2013 Attack class i is applicable, but either: (i) breaks\noccur only under at least one Permissive Con-\nfig (PC), such as broader tool scope, higher retry\nbudget, or weaker sandbox; (ii) under SC the\nbreak rate is nonzero but < \u03c4YES ; or (iii) the class\nis applicable but requires an optional component,\nsuch as delegation, that is not enabled by default.\n\u00d7 Attack class i cannot be meaningfully instan-\ntiated because the agent lacks the required in-\nterface/trust edge; for example, no tool calls\nmake tool-hijacking undefined, and no "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0017"
+        ],
+        "excerpt": "delegation\nmakes delegation attacks undefined.\nTable 1: Auditable protocol for exposure labels.\nsets, interleaved with task-consistent queries. Each of the\n14 attack classes targets a specific trust boundary, such as\nplanner state, memory reads/writes, tool routing/arguments,\nretrieval/search content, or delegation messages, allowing\nus to measure whether adversarial influence propagates into\ntrajectory-level failures.\nOperationalizing Security Breaks for Reproducible\nMeasurement\nAgentFence separates security breaks, trace-evidenced\nboundary/authority violations, from capability failures, task\nerrors without boundary violations. Each run yields an im-\nmutable trace T containing transcript with role tags, tool\ncalls with names, arguments, timestamps, and return hashes,\nplanner and state events, memory reads/writes, delegation\nmessages, retries, and configuration metadata, including ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cda9a922e20b82e88a1945246cefe3ea0736ffd82b9d3897ddf47ddea5617598",
+            "evidence_id": "E02d181dc5502cdb2-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2684,
+                "page": 3,
+                "section": "Experimental Setup",
+                "section_index": 7,
+                "start": 1790,
+                "text": "delegation\nmakes delegation attacks undefined.\nTable 1: Auditable protocol for exposure labels.\nsets, interleaved with task-consistent queries. Each of the\n14 attack classes targets a specific trust boundary, such as\nplanner state, memory reads/writes, tool routing/arguments,\nretrieval/search content, or delegation messages, allowing\nus to measure whether adversarial influence propagates into\ntrajectory-level failures.\nOperationalizing Security Breaks for Reproducible\nMeasurement\nAgentFence separates security breaks, trace-evidenced\nboundary/authority violations, from capability failures, task\nerrors without boundary violations. Each run yields an im-\nmutable trace T containing transcript with role tags, tool\ncalls with names, arguments, timestamps, and return hashes,\nplanner and state events, memory reads/writes, delegation\nmessages, retries, and configuration metadata, including "
+              }
+            ],
+            "text": "delegation\nmakes delegation attacks undefined.\nTable 1: Auditable protocol for exposure labels.\nsets, interleaved with task-consistent queries. Each of the\n14 attack classes targets a specific trust boundary, such as\nplanner state, memory reads/writes, tool routing/arguments,\nretrieval/search content, or delegation messages, allowing\nus to measure whether adversarial influence propagates into\ntrajectory-level failures.\nOperationalizing Security Breaks for Reproducible\nMeasurement\nAgentFence separates security breaks, trace-evidenced\nboundary/authority violations, from capability failures, task\nerrors without boundary violations. Each run yields an im-\nmutable trace T containing transcript with role tags, tool\ncalls with names, arguments, timestamps, and return hashes,\nplanner and state events, memory reads/writes, delegation\nmessages, retries, and configuration metadata, including "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0018"
+        ],
+        "excerpt": "al-\nlowed tools, budgets, and scopes.\nAttack linkage. Some task deviations are security-\nrelevant only when induced by adversarial influence cross-\ning a trust edge. We therefore add a trace-checkable at-\ntribution flag AL (Attack Link): AL = 1 iff the trace\nevidences adoption/propagation of non-trusted content into\nprotected boundaries, such as memory containing injected\ndirectives, planner outputs revealing objective replacement,\nor tool/router decisions justified by poisoned evidence.\nSecurity-break predicates. We implement each predicate\nas f (T , gi, \u03b8) \u2192 {0,1} with thresholds fixed before evalua-\ntion:\n\u2022 Unauthorized Tool Invocation (UTI): tool /\u2208 U, exceeds\nbudget B, or disallowed mode.\n\u2022 Unsafe Tool Argument (UTA): violates tool-specific argu-\nment policies \u03c0\u03c4 , such as sandbox paths, domain allow-\nlists, spend caps, or write scopes.\n\u2022 Wrong-Principal Action (WPA): treats ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "99f4476b15b5d860833980b5ecdf07c3ed5526fbe29fcdf2c21969ff9511590c",
+            "evidence_id": "E02d181dc5502cdb2-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3577,
+                "page": 3,
+                "section": "Experimental Setup",
+                "section_index": 7,
+                "start": 2684,
+                "text": "al-\nlowed tools, budgets, and scopes.\nAttack linkage. Some task deviations are security-\nrelevant only when induced by adversarial influence cross-\ning a trust edge. We therefore add a trace-checkable at-\ntribution flag AL (Attack Link): AL = 1 iff the trace\nevidences adoption/propagation of non-trusted content into\nprotected boundaries, such as memory containing injected\ndirectives, planner outputs revealing objective replacement,\nor tool/router decisions justified by poisoned evidence.\nSecurity-break predicates. We implement each predicate\nas f (T , gi, \u03b8) \u2192 {0,1} with thresholds fixed before evalua-\ntion:\n\u2022 Unauthorized Tool Invocation (UTI): tool /\u2208 U, exceeds\nbudget B, or disallowed mode.\n\u2022 Unsafe Tool Argument (UTA): violates tool-specific argu-\nment policies \u03c0\u03c4 , such as sandbox paths, domain allow-\nlists, spend caps, or write scopes.\n\u2022 Wrong-Principal Action (WPA): treats "
+              }
+            ],
+            "text": "al-\nlowed tools, budgets, and scopes.\nAttack linkage. Some task deviations are security-\nrelevant only when induced by adversarial influence cross-\ning a trust edge. We therefore add a trace-checkable at-\ntribution flag AL (Attack Link): AL = 1 iff the trace\nevidences adoption/propagation of non-trusted content into\nprotected boundaries, such as memory containing injected\ndirectives, planner outputs revealing objective replacement,\nor tool/router decisions justified by poisoned evidence.\nSecurity-break predicates. We implement each predicate\nas f (T , gi, \u03b8) \u2192 {0,1} with thresholds fixed before evalua-\ntion:\n\u2022 Unauthorized Tool Invocation (UTI): tool /\u2208 U, exceeds\nbudget B, or disallowed mode.\n\u2022 Unsafe Tool Argument (UTA): violates tool-specific argu-\nment policies \u03c0\u03c4 , such as sandbox paths, domain allow-\nlists, spend caps, or write scopes.\n\u2022 Wrong-Principal Action (WPA): treats "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0019"
+        ],
+        "excerpt": "non-authoritative\ninputs as higher-privilege instructions or acts under in-\n303\nAttack classes vs. deep-agent archetypes: labels from Table 1\nID Attack Class Deep-Resear\ncher\nOpen-Resear\ncher\nOpenDe\nvin\nAutoGPTBabyAGICrewAILangGraphLlamaIndex\nA1 Direct Prompt Injection \u2713 \u2713 \u2713 \u2713 \u2713 \u2713 \u2713 \u2713\nA2 Indirect Prompt Injection \u2713 \u2713 \u2013 \u2713 \u2713 \u2013 \u2013 \u2013\nA3 State Injection \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2013\nA4 Tool-Use Hijack \u2713 \u2713 \u2713 \u2713 \u2013 \u2013 \u2013 \u2013\nA5 Planning-Layer Manipulation \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2013\nA6 Retrieval Poisoning \u2713 \u2013 \u2713 \u2713 \u2013 \u2713 \u2013 \u2013\nA7 Web Search Result Poisoning \u2713 \u2013 \u2713 \u2713 \u2013 \u2713 \u2013 \u2013\nA8 Multi-Agent Role Confusion \u2713 \u2713 \u2713 \u2013 \u2013 \u2013 \u2713 \u2713\nA9 Delegation Attacks \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2713\nA10 Code-Execution Abuse \u2013 \u2013 \u2013 \u2713 \u2013 \u2713 \u2013 \u2013\nA11 Chain-of-Thought Leakage \u2713 \u00d7 \u00d7 \u00d7 \u2713 \u2013 \u2013 \u00d7\nA12 Objective Hijacking \u00d7 \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013\nA13 Denial-of-Wallet \u2013 \u2713 \u2013 \u2713 \u2013 \u2713 \u2013 \u2013\nA14 Authorization Confusion \u2013 \u2013 \u2013 \u2013 \u2013 \u2713 \u2013 \u2013\nTable 2: Table summarizes which agent archetypes materially expose each ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d6416711312d059becb194e2177a0a6dbea77b10aa0c89d6484d76e28e117fa4",
+            "evidence_id": "E02d181dc5502cdb2-B0019",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3656,
+                "page": 3,
+                "section": "Experimental Setup",
+                "section_index": 7,
+                "start": 3577,
+                "text": "non-authoritative\ninputs as higher-privilege instructions or acts under in-\n303"
+              },
+              {
+                "end": 817,
+                "page": 4,
+                "section": "Experimental Setup",
+                "section_index": 8,
+                "start": 0,
+                "text": "Attack classes vs. deep-agent archetypes: labels from Table 1\nID Attack Class Deep-Resear\ncher\nOpen-Resear\ncher\nOpenDe\nvin\nAutoGPTBabyAGICrewAILangGraphLlamaIndex\nA1 Direct Prompt Injection \u2713 \u2713 \u2713 \u2713 \u2713 \u2713 \u2713 \u2713\nA2 Indirect Prompt Injection \u2713 \u2713 \u2013 \u2713 \u2713 \u2013 \u2013 \u2013\nA3 State Injection \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2013\nA4 Tool-Use Hijack \u2713 \u2713 \u2713 \u2713 \u2013 \u2013 \u2013 \u2013\nA5 Planning-Layer Manipulation \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2013\nA6 Retrieval Poisoning \u2713 \u2013 \u2713 \u2713 \u2013 \u2713 \u2013 \u2013\nA7 Web Search Result Poisoning \u2713 \u2013 \u2713 \u2713 \u2013 \u2713 \u2013 \u2013\nA8 Multi-Agent Role Confusion \u2713 \u2713 \u2713 \u2013 \u2013 \u2013 \u2713 \u2713\nA9 Delegation Attacks \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2713\nA10 Code-Execution Abuse \u2013 \u2013 \u2013 \u2713 \u2013 \u2713 \u2013 \u2013\nA11 Chain-of-Thought Leakage \u2713 \u00d7 \u00d7 \u00d7 \u2713 \u2013 \u2013 \u00d7\nA12 Objective Hijacking \u00d7 \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013\nA13 Denial-of-Wallet \u2013 \u2713 \u2013 \u2713 \u2013 \u2713 \u2013 \u2013\nA14 Authorization Confusion \u2013 \u2013 \u2013 \u2013 \u2013 \u2713 \u2013 \u2013\nTable 2: Table summarizes which agent archetypes materially expose each "
+              }
+            ],
+            "text": "non-authoritative\ninputs as higher-privilege instructions or acts under in-\n303\nAttack classes vs. deep-agent archetypes: labels from Table 1\nID Attack Class Deep-Resear\ncher\nOpen-Resear\ncher\nOpenDe\nvin\nAutoGPTBabyAGICrewAILangGraphLlamaIndex\nA1 Direct Prompt Injection \u2713 \u2713 \u2713 \u2713 \u2713 \u2713 \u2713 \u2713\nA2 Indirect Prompt Injection \u2713 \u2713 \u2013 \u2713 \u2713 \u2013 \u2013 \u2013\nA3 State Injection \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2013\nA4 Tool-Use Hijack \u2713 \u2713 \u2713 \u2713 \u2013 \u2013 \u2013 \u2013\nA5 Planning-Layer Manipulation \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2013\nA6 Retrieval Poisoning \u2713 \u2013 \u2713 \u2713 \u2013 \u2713 \u2013 \u2013\nA7 Web Search Result Poisoning \u2713 \u2013 \u2713 \u2713 \u2013 \u2713 \u2013 \u2013\nA8 Multi-Agent Role Confusion \u2713 \u2713 \u2713 \u2013 \u2013 \u2013 \u2713 \u2713\nA9 Delegation Attacks \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013 \u2713\nA10 Code-Execution Abuse \u2013 \u2013 \u2013 \u2713 \u2013 \u2713 \u2013 \u2013\nA11 Chain-of-Thought Leakage \u2713 \u00d7 \u00d7 \u00d7 \u2713 \u2013 \u2013 \u00d7\nA12 Objective Hijacking \u00d7 \u2713 \u2713 \u2013 \u2013 \u2013 \u2013 \u2013\nA13 Denial-of-Wallet \u2013 \u2713 \u2013 \u2713 \u2013 \u2713 \u2013 \u2013\nA14 Authorization Confusion \u2013 \u2013 \u2013 \u2013 \u2013 \u2713 \u2013 \u2013\nTable 2: Table summarizes which agent archetypes materially expose each "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0020"
+        ],
+        "excerpt": "attack class (\u2713), partially expose it (\u2013), or largely\nmitigate it (\u00d7). The lifecycle-phase placement of each attack, primary vs. secondary across Context/Plan/Act/Synthesize, is\nreported separately in Table 3 and in the corresponding figure.\ncorrect identity/permission context; automatic for clear\ntrace evidence, otherwise assigned by fixed rubric.\n\u2022 State/Objective Integrity Violation (SIV): writes/adopts\nstate violating invariants, such as executable directives,\npolicy overrides, or goal changes, or planner indicates\nunauthorized objective replacement.\n\u2022 Attack-Linked Task Deviation (ATD): AL = 1 and the\nagent outputs \u02c6a \u0338= ai under Ci or cites evidence incon-\nsistent with Si, with trace support that deviation was in-\nduced by adversarial content crossing a trust edge.\nWe define\nSB(t) = UTI (t) \u2228 UTA(t) \u2228 WPA(t) \u2228 SIV (t) \u2228 ATD(t).\nCapability failures (AF/EF/TC) are computed for ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "177cddcfb9b9de1036f0f386ec3a0b05d2985d9ea4e6aba8b3076deb3d7ff542",
+            "evidence_id": "E02d181dc5502cdb2-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1711,
+                "page": 4,
+                "section": "Experimental Setup",
+                "section_index": 8,
+                "start": 817,
+                "text": "attack class (\u2713), partially expose it (\u2013), or largely\nmitigate it (\u00d7). The lifecycle-phase placement of each attack, primary vs. secondary across Context/Plan/Act/Synthesize, is\nreported separately in Table 3 and in the corresponding figure.\ncorrect identity/permission context; automatic for clear\ntrace evidence, otherwise assigned by fixed rubric.\n\u2022 State/Objective Integrity Violation (SIV): writes/adopts\nstate violating invariants, such as executable directives,\npolicy overrides, or goal changes, or planner indicates\nunauthorized objective replacement.\n\u2022 Attack-Linked Task Deviation (ATD): AL = 1 and the\nagent outputs \u02c6a \u0338= ai under Ci or cites evidence incon-\nsistent with Si, with trace support that deviation was in-\nduced by adversarial content crossing a trust edge.\nWe define\nSB(t) = UTI (t) \u2228 UTA(t) \u2228 WPA(t) \u2228 SIV (t) \u2228 ATD(t).\nCapability failures (AF/EF/TC) are computed for "
+              }
+            ],
+            "text": "attack class (\u2713), partially expose it (\u2013), or largely\nmitigate it (\u00d7). The lifecycle-phase placement of each attack, primary vs. secondary across Context/Plan/Act/Synthesize, is\nreported separately in Table 3 and in the corresponding figure.\ncorrect identity/permission context; automatic for clear\ntrace evidence, otherwise assigned by fixed rubric.\n\u2022 State/Objective Integrity Violation (SIV): writes/adopts\nstate violating invariants, such as executable directives,\npolicy overrides, or goal changes, or planner indicates\nunauthorized objective replacement.\n\u2022 Attack-Linked Task Deviation (ATD): AL = 1 and the\nagent outputs \u02c6a \u0338= ai under Ci or cites evidence incon-\nsistent with Si, with trace support that deviation was in-\nduced by adversarial content crossing a trust edge.\nWe define\nSB(t) = UTI (t) \u2228 UTA(t) \u2228 WPA(t) \u2228 SIV (t) \u2228 ATD(t).\nCapability failures (AF/EF/TC) are computed for "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0024"
+        ],
+        "excerpt": "vulnerability level for an agent. Results are aggregated over 91\nconversation threads; denser clusters of bubbles indicate repeated occurrences of the same event.\nOperational Definition of Attack Link\nAttack-linked attribution. To avoid conflating baseline\ntask errors with security vulnerabilities, AgentFence intro-\nduces an explicit Attack Link (AL) flag. AL is set to 1 if\nand only if the execution trace contains verifiable evidence\nthat non-authoritative content crossed a trust boundary and\ninfluenced protected agent state or decisions. Such evidence\nincludes injected directives written to memory, planner out-\nputs that adopt adversarial objectives, tool invocations justi-\nfied by poisoned evidence, or delegation messages that over-\nride authority constraints.\nLabeling protocol. AL, Wrong-Principal Action (WPA),\nand Attack-Linked Task Deviation (A TD) labels are as-\nsigned using a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "80fe51590e56c5e6d590fe691f511c0d07714cc83d52e6b3c0636450b9c1bf8e",
+            "evidence_id": "E02d181dc5502cdb2-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1453,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 9,
+                "start": 557,
+                "text": "vulnerability level for an agent. Results are aggregated over 91\nconversation threads; denser clusters of bubbles indicate repeated occurrences of the same event.\nOperational Definition of Attack Link\nAttack-linked attribution. To avoid conflating baseline\ntask errors with security vulnerabilities, AgentFence intro-\nduces an explicit Attack Link (AL) flag. AL is set to 1 if\nand only if the execution trace contains verifiable evidence\nthat non-authoritative content crossed a trust boundary and\ninfluenced protected agent state or decisions. Such evidence\nincludes injected directives written to memory, planner out-\nputs that adopt adversarial objectives, tool invocations justi-\nfied by poisoned evidence, or delegation messages that over-\nride authority constraints.\nLabeling protocol. AL, Wrong-Principal Action (WPA),\nand Attack-Linked Task Deviation (A TD) labels are as-\nsigned using a "
+              }
+            ],
+            "text": "vulnerability level for an agent. Results are aggregated over 91\nconversation threads; denser clusters of bubbles indicate repeated occurrences of the same event.\nOperational Definition of Attack Link\nAttack-linked attribution. To avoid conflating baseline\ntask errors with security vulnerabilities, AgentFence intro-\nduces an explicit Attack Link (AL) flag. AL is set to 1 if\nand only if the execution trace contains verifiable evidence\nthat non-authoritative content crossed a trust boundary and\ninfluenced protected agent state or decisions. Such evidence\nincludes injected directives written to memory, planner out-\nputs that adopt adversarial objectives, tool invocations justi-\nfied by poisoned evidence, or delegation messages that over-\nride authority constraints.\nLabeling protocol. AL, Wrong-Principal Action (WPA),\nand Attack-Linked Task Deviation (A TD) labels are as-\nsigned using a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0025"
+        ],
+        "excerpt": "semi-automatic rubric. Clear violations, such\nas unauthorized tool calls or explicit objective replacement,\nare labeled automatically; ambiguous cases are indepen-\ndently annotated by two reviewers and adjudicated. On a\n20% stratified sample, annotator agreement was substan-\ntial (Cohen's \u03ba = 0.81), supporting the reproducibility of\nsecurity-break labeling.\nArchitectural Normalization and Isolation\nWhat constitutes architecture. In AgentFence, an\nagent's architecture comprises its control flow, including\nplanner\u2013executor structure and retry loops, state handling,\nincluding memory read/write policies, tool interfaces,\nincluding routing, permissions, and argument validation,\nand delegation semantics. We explicitly distinguish these\nfrom the underlying language model, which is held fixed\nunless otherwise stated.\nNormalization across agents. To isolate architectural ef-\nfects, we normalize ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f6c4e2a764f80d3a23d970e3f33838e0964c14b33a546713c798107face30ec2",
+            "evidence_id": "E02d181dc5502cdb2-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2352,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 9,
+                "start": 1453,
+                "text": "semi-automatic rubric. Clear violations, such\nas unauthorized tool calls or explicit objective replacement,\nare labeled automatically; ambiguous cases are indepen-\ndently annotated by two reviewers and adjudicated. On a\n20% stratified sample, annotator agreement was substan-\ntial (Cohen's \u03ba = 0.81), supporting the reproducibility of\nsecurity-break labeling.\nArchitectural Normalization and Isolation\nWhat constitutes architecture. In AgentFence, an\nagent's architecture comprises its control flow, including\nplanner\u2013executor structure and retry loops, state handling,\nincluding memory read/write policies, tool interfaces,\nincluding routing, permissions, and argument validation,\nand delegation semantics. We explicitly distinguish these\nfrom the underlying language model, which is held fixed\nunless otherwise stated.\nNormalization across agents. To isolate architectural ef-\nfects, we normalize "
+              }
+            ],
+            "text": "semi-automatic rubric. Clear violations, such\nas unauthorized tool calls or explicit objective replacement,\nare labeled automatically; ambiguous cases are indepen-\ndently annotated by two reviewers and adjudicated. On a\n20% stratified sample, annotator agreement was substan-\ntial (Cohen's \u03ba = 0.81), supporting the reproducibility of\nsecurity-break labeling.\nArchitectural Normalization and Isolation\nWhat constitutes architecture. In AgentFence, an\nagent's architecture comprises its control flow, including\nplanner\u2013executor structure and retry loops, state handling,\nincluding memory read/write policies, tool interfaces,\nincluding routing, permissions, and argument validation,\nand delegation semantics. We explicitly distinguish these\nfrom the underlying language model, which is held fixed\nunless otherwise stated.\nNormalization across agents. To isolate architectural ef-\nfects, we normalize "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0026"
+        ],
+        "excerpt": "task prompts, tool APIs, retrieval back-\nends, and budget limits wherever possible. Differences such\nas tool scope, retry policies, or delegation are retained only\nwhen they are intrinsic to the agent framework. As a result,\nAgentFence does not claim to rank implementations, but to\nsurface structural design patterns that systematically amplify\nor reduce security risk.\nAblation and Sensitivity Analysis\nArchitectural ablations. We conduct targeted ablations\non two representative agents by selectively disabling (i) per-\nsistent memory writes, (ii) planner retries, and (iii) delega-\ntion. Removing persistent memory reduces Retrieval Poi-\nsoning and Planning Manipulation breaks by up to 35%,\nwhile retry removal significantly lowers Denial-of-Wallet\nexposure. These results support the interpretation that long-\nhorizon state propagation and unbounded retries are key\nstructural risk factors. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c57b06c005426c9d43629dfc8b6ec25322fdba254cd4ac54c7d535ddb5711ae8",
+            "evidence_id": "E02d181dc5502cdb2-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3249,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 9,
+                "start": 2352,
+                "text": "task prompts, tool APIs, retrieval back-\nends, and budget limits wherever possible. Differences such\nas tool scope, retry policies, or delegation are retained only\nwhen they are intrinsic to the agent framework. As a result,\nAgentFence does not claim to rank implementations, but to\nsurface structural design patterns that systematically amplify\nor reduce security risk.\nAblation and Sensitivity Analysis\nArchitectural ablations. We conduct targeted ablations\non two representative agents by selectively disabling (i) per-\nsistent memory writes, (ii) planner retries, and (iii) delega-\ntion. Removing persistent memory reduces Retrieval Poi-\nsoning and Planning Manipulation breaks by up to 35%,\nwhile retry removal significantly lowers Denial-of-Wallet\nexposure. These results support the interpretation that long-\nhorizon state propagation and unbounded retries are key\nstructural risk factors. "
+              }
+            ],
+            "text": "task prompts, tool APIs, retrieval back-\nends, and budget limits wherever possible. Differences such\nas tool scope, retry policies, or delegation are retained only\nwhen they are intrinsic to the agent framework. As a result,\nAgentFence does not claim to rank implementations, but to\nsurface structural design patterns that systematically amplify\nor reduce security risk.\nAblation and Sensitivity Analysis\nArchitectural ablations. We conduct targeted ablations\non two representative agents by selectively disabling (i) per-\nsistent memory writes, (ii) planner retries, and (iii) delega-\ntion. Removing persistent memory reduces Retrieval Poi-\nsoning and Planning Manipulation breaks by up to 35%,\nwhile retry removal significantly lowers Denial-of-Wallet\nexposure. These results support the interpretation that long-\nhorizon state propagation and unbounded retries are key\nstructural risk factors. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0028"
+        ],
+        "excerpt": "Artifact Taxonomy Coverage Reference\nToolBench A 4\u2013A7, A11, A13, A14 (Qin 2023)\nStableToolBench A 4\u2013A7, A11, A13 (Guo et al. 2024)\nAPI-Bank A 4, A5, A6, A13, A14 (Li et al. 2023)\nWebArena A 3, A4\u2013A7, A11, A13 (Zhou et al. 2023)\nSWE-bench A 4\u2013A7, A11, A13, A14 (Y ang et al. 2025)\nHarmBench A 1\u2013A3, A8, A11 (Mazeika 2024)\nJailbreakBench A 1\u2013A3, A11, A14 (Zou 2023)\nAdvBench A 1\u2013A3, A11, A13 (Chen et al. 2022)\nTable 4: Benchmarks used to instantiate AgentFence sce-\nnario families.\nFramework Mean Security Break Rate\nAutoGPT 0.51 \u00b1 0.07\nCrewAI 0.48 \u00b1 0.06\nBabyAGI 0.45 \u00b1 0.08\nOpenDevin 0.42 \u00b1 0.05\nDeep-Researcher 0.39 \u00b1 0.06\nOpen-Researcher 0.36 \u00b1 0.07\nLlamaIndex 0.34 \u00b1 0.05\nLangGraph 0.29 \u00b1 0.04\nTable 5: Mean Security Break Rate (MSBR) across all appli-\ncable attack classes under the Standard Configuration (SC),\nholding the base model and task set fixed. V alues denote\nmean \u00b1 standard ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Artifact Taxonomy Coverage Reference",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "258c4b50f84a09d1f3e961e339f84b46ea7e82279a21f3b52b18fd300716dc20",
+            "evidence_id": "E02d181dc5502cdb2-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Artifact Taxonomy Coverage Reference",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 6,
+                "section": "Artifact Taxonomy Coverage Reference",
+                "section_index": 10,
+                "start": 0,
+                "text": "Artifact Taxonomy Coverage Reference\nToolBench A 4\u2013A7, A11, A13, A14 (Qin 2023)\nStableToolBench A 4\u2013A7, A11, A13 (Guo et al. 2024)\nAPI-Bank A 4, A5, A6, A13, A14 (Li et al. 2023)\nWebArena A 3, A4\u2013A7, A11, A13 (Zhou et al. 2023)\nSWE-bench A 4\u2013A7, A11, A13, A14 (Y ang et al. 2025)\nHarmBench A 1\u2013A3, A8, A11 (Mazeika 2024)\nJailbreakBench A 1\u2013A3, A11, A14 (Zou 2023)\nAdvBench A 1\u2013A3, A11, A13 (Chen et al. 2022)\nTable 4: Benchmarks used to instantiate AgentFence sce-\nnario families.\nFramework Mean Security Break Rate\nAutoGPT 0.51 \u00b1 0.07\nCrewAI 0.48 \u00b1 0.06\nBabyAGI 0.45 \u00b1 0.08\nOpenDevin 0.42 \u00b1 0.05\nDeep-Researcher 0.39 \u00b1 0.06\nOpen-Researcher 0.36 \u00b1 0.07\nLlamaIndex 0.34 \u00b1 0.05\nLangGraph 0.29 \u00b1 0.04\nTable 5: Mean Security Break Rate (MSBR) across all appli-\ncable attack classes under the Standard Configuration (SC),\nholding the base model and task set fixed. V alues denote\nmean \u00b1 standard "
+              }
+            ],
+            "text": "Artifact Taxonomy Coverage Reference\nToolBench A 4\u2013A7, A11, A13, A14 (Qin 2023)\nStableToolBench A 4\u2013A7, A11, A13 (Guo et al. 2024)\nAPI-Bank A 4, A5, A6, A13, A14 (Li et al. 2023)\nWebArena A 3, A4\u2013A7, A11, A13 (Zhou et al. 2023)\nSWE-bench A 4\u2013A7, A11, A13, A14 (Y ang et al. 2025)\nHarmBench A 1\u2013A3, A8, A11 (Mazeika 2024)\nJailbreakBench A 1\u2013A3, A11, A14 (Zou 2023)\nAdvBench A 1\u2013A3, A11, A13 (Chen et al. 2022)\nTable 4: Benchmarks used to instantiate AgentFence sce-\nnario families.\nFramework Mean Security Break Rate\nAutoGPT 0.51 \u00b1 0.07\nCrewAI 0.48 \u00b1 0.06\nBabyAGI 0.45 \u00b1 0.08\nOpenDevin 0.42 \u00b1 0.05\nDeep-Researcher 0.39 \u00b1 0.06\nOpen-Researcher 0.36 \u00b1 0.07\nLlamaIndex 0.34 \u00b1 0.05\nLangGraph 0.29 \u00b1 0.04\nTable 5: Mean Security Break Rate (MSBR) across all appli-\ncable attack classes under the Standard Configuration (SC),\nholding the base model and task set fixed. V alues denote\nmean \u00b1 standard "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0029"
+        ],
+        "excerpt": "deviation over multi-turn runs. Lower val-\nues indicate reduced architectural exposure, not elimination\nof vulnerability.\nCross-model sanity check. To validate that observed pat-\nterns are not model-specific, we replicate a subset of exper-\niments using an alternative instruction-tuned model. Abso-\nlute break rates vary, but relative architectural differences\nand dominant attack classes are preserved, suggesting that\nAgentFence captures architecture-level phenomena rather\nthan idiosyncratic model behavior (Figure 3).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Artifact Taxonomy Coverage Reference",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "04fc5251008314bdab2f1d1239f1877034f447e1bbf16e7e887a43ac59259d85",
+            "evidence_id": "E02d181dc5502cdb2-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Artifact Taxonomy Coverage Reference",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1413,
+                "page": 6,
+                "section": "Artifact Taxonomy Coverage Reference",
+                "section_index": 10,
+                "start": 891,
+                "text": "deviation over multi-turn runs. Lower val-\nues indicate reduced architectural exposure, not elimination\nof vulnerability.\nCross-model sanity check. To validate that observed pat-\nterns are not model-specific, we replicate a subset of exper-\niments using an alternative instruction-tuned model. Abso-\nlute break rates vary, but relative architectural differences\nand dominant attack classes are preserved, suggesting that\nAgentFence captures architecture-level phenomena rather\nthan idiosyncratic model behavior (Figure 3)."
+              }
+            ],
+            "text": "deviation over multi-turn runs. Lower val-\nues indicate reduced architectural exposure, not elimination\nof vulnerability.\nCross-model sanity check. To validate that observed pat-\nterns are not model-specific, we replicate a subset of exper-\niments using an alternative instruction-tuned model. Abso-\nlute break rates vary, but relative architectural differences\nand dominant attack classes are preserved, suggesting that\nAgentFence captures architecture-level phenomena rather\nthan idiosyncratic model behavior (Figure 3)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0030"
+        ],
+        "excerpt": "We apply AgentFence to eight deep-agent archetypes and\nfourteen attack classes under a controlled, fixed-model pro-\ntocol. We report security breaks as defined in Section .\nAggregate Exposure by Attack Class\nFigure 4 reports mean security break rate (SC), averaged\nacross archetypes per class. Breaks concentrate in trajectory-\nlevel channels: Denial-of-Wallet (A13: 0.62 \u00b1 0.08), Autho-\nrization Confusion (A 14: 0.54 \u00b1 0.10), Retrieval Poisoning\n(A6: 0.47 \u00b1 0.09), and Planning-Layer Manipulation (A 5:\n0.44 \u00b1 0.11). Prompt-centric classes (A1, A2) remain below\n0.20 under SC, indicating that token-level safeguards do not\nprevent dominant operational failures.\nArchitecture-Level Differences: Fixed Base Model\nHolding model and tasks fixed isolates architectural sus-\nceptibility. MSBR ranges from 0.29 \u00b1 0.04 (LangGraph)\nto 0.51 \u00b1 0.07 (AutoGPT); see Table 5. Architectures with\nbroader tool ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5fa44cde35b7c9e995e2da552f09d389aa40144ec7ac1df20cc5178899b09f94",
+            "evidence_id": "E02d181dc5502cdb2-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 6,
+                "section": "Results",
+                "section_index": 11,
+                "start": 0,
+                "text": "We apply AgentFence to eight deep-agent archetypes and\nfourteen attack classes under a controlled, fixed-model pro-\ntocol. We report security breaks as defined in Section .\nAggregate Exposure by Attack Class\nFigure 4 reports mean security break rate (SC), averaged\nacross archetypes per class. Breaks concentrate in trajectory-\nlevel channels: Denial-of-Wallet (A13: 0.62 \u00b1 0.08), Autho-\nrization Confusion (A 14: 0.54 \u00b1 0.10), Retrieval Poisoning\n(A6: 0.47 \u00b1 0.09), and Planning-Layer Manipulation (A 5:\n0.44 \u00b1 0.11). Prompt-centric classes (A1, A2) remain below\n0.20 under SC, indicating that token-level safeguards do not\nprevent dominant operational failures.\nArchitecture-Level Differences: Fixed Base Model\nHolding model and tasks fixed isolates architectural sus-\nceptibility. MSBR ranges from 0.29 \u00b1 0.04 (LangGraph)\nto 0.51 \u00b1 0.07 (AutoGPT); see Table 5. Architectures with\nbroader tool "
+              }
+            ],
+            "text": "We apply AgentFence to eight deep-agent archetypes and\nfourteen attack classes under a controlled, fixed-model pro-\ntocol. We report security breaks as defined in Section .\nAggregate Exposure by Attack Class\nFigure 4 reports mean security break rate (SC), averaged\nacross archetypes per class. Breaks concentrate in trajectory-\nlevel channels: Denial-of-Wallet (A13: 0.62 \u00b1 0.08), Autho-\nrization Confusion (A 14: 0.54 \u00b1 0.10), Retrieval Poisoning\n(A6: 0.47 \u00b1 0.09), and Planning-Layer Manipulation (A 5:\n0.44 \u00b1 0.11). Prompt-centric classes (A1, A2) remain below\n0.20 under SC, indicating that token-level safeguards do not\nprevent dominant operational failures.\nArchitecture-Level Differences: Fixed Base Model\nHolding model and tasks fixed isolates architectural sus-\nceptibility. MSBR ranges from 0.29 \u00b1 0.04 (LangGraph)\nto 0.51 \u00b1 0.07 (AutoGPT); see Table 5. Architectures with\nbroader tool "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0031"
+        ],
+        "excerpt": "scope, higher retry budgets, or weaker separa-\ntion between planner/memory/tool authority exhibit higher\nbreak rates; structured control-flow designs reduce, but do\nnot eliminate, exposure.\nEffect size: architecture matters. The absolute MSBR\ngap between the most- and least-exposed architectures is\n\u2206max = 0.51 \u22120.29 = 0.22, a 76% relative increasewhen\nmoving from LangGraph to AutoGPT (0.22/0.29 \u2248 0.76).\nThis gap is large compared to within-agent variability, with\nstandard deviation approximately 0.04\u20130.08 in Table 5, sup-\nporting that AgentFence captures structural susceptibility\nrather than run-to-run noise.\nStandard vs. Permissive Configuration Sensitivity\nWe evaluate each agent\u2013attack pair under SC and one-\ndimension-at-a-time Permissive Configurations (PC). Sev-\neral classes amplify sharply under permissive settings: A 13\nincreases 0.58 \u2192 0.81, A 10 increases 0.22 \u2192 0.49, and\nA9 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "246e498ae13a98b7eb3ac85faf91961df32a13b86fc71b9289452c4de08c4f75",
+            "evidence_id": "E02d181dc5502cdb2-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 6,
+                "section": "Results",
+                "section_index": 11,
+                "start": 896,
+                "text": "scope, higher retry budgets, or weaker separa-\ntion between planner/memory/tool authority exhibit higher\nbreak rates; structured control-flow designs reduce, but do\nnot eliminate, exposure.\nEffect size: architecture matters. The absolute MSBR\ngap between the most- and least-exposed architectures is\n\u2206max = 0.51 \u22120.29 = 0.22, a 76% relative increasewhen\nmoving from LangGraph to AutoGPT (0.22/0.29 \u2248 0.76).\nThis gap is large compared to within-agent variability, with\nstandard deviation approximately 0.04\u20130.08 in Table 5, sup-\nporting that AgentFence captures structural susceptibility\nrather than run-to-run noise.\nStandard vs. Permissive Configuration Sensitivity\nWe evaluate each agent\u2013attack pair under SC and one-\ndimension-at-a-time Permissive Configurations (PC). Sev-\neral classes amplify sharply under permissive settings: A 13\nincreases 0.58 \u2192 0.81, A 10 increases 0.22 \u2192 0.49, and\nA9 "
+              }
+            ],
+            "text": "scope, higher retry budgets, or weaker separa-\ntion between planner/memory/tool authority exhibit higher\nbreak rates; structured control-flow designs reduce, but do\nnot eliminate, exposure.\nEffect size: architecture matters. The absolute MSBR\ngap between the most- and least-exposed architectures is\n\u2206max = 0.51 \u22120.29 = 0.22, a 76% relative increasewhen\nmoving from LangGraph to AutoGPT (0.22/0.29 \u2248 0.76).\nThis gap is large compared to within-agent variability, with\nstandard deviation approximately 0.04\u20130.08 in Table 5, sup-\nporting that AgentFence captures structural susceptibility\nrather than run-to-run noise.\nStandard vs. Permissive Configuration Sensitivity\nWe evaluate each agent\u2013attack pair under SC and one-\ndimension-at-a-time Permissive Configurations (PC). Sev-\neral classes amplify sharply under permissive settings: A 13\nincreases 0.58 \u2192 0.81, A 10 increases 0.22 \u2192 0.49, and\nA9 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0032"
+        ],
+        "excerpt": "increases 0.18 \u2192 0.46. In contrast, A 6 and A 5 exhibit\nsmaller deltas, below 0.10, consistent with vulnerabilities\ndriven by belief/state propagation and planning interfaces\nrather than budget/scope alone. This separation supports the\nY es/Maybe labels in Table 2.\nConfiguration elasticity separates budget-driven vs.\ninterface-driven risk. Under one-dimension permissive\nchanges, Denial-of-Wallet (A 13) exhibits the largest abso-\nlute jump (0.58 \u2192 0.81, \u2206=0.23; approximately 40% rel-\native), and Code-Execution Abuse (A 10) more than dou-\nbles (0.22 \u2192 0.49, \u2206=0.27; approximately 2.2\u00d7). Dele-\ngation Attacks (A 9) also more than doubles (0.18 \u2192 0.46,\n\u2206=0.28; approximately 2.6\u00d7). In contrast, Retrieval Poi-\nsoning (A6) and Planning Manipulation (A5) change by less\nthan 0.10, indicating these failures are inelastic to budget/s-\ncope and instead arise from persistent belief/state ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5bba764694822b3bde0c25bf135f7407706baa48da2289117b9d77b84bbcf42f",
+            "evidence_id": "E02d181dc5502cdb2-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2678,
+                "page": 6,
+                "section": "Results",
+                "section_index": 11,
+                "start": 1792,
+                "text": "increases 0.18 \u2192 0.46. In contrast, A 6 and A 5 exhibit\nsmaller deltas, below 0.10, consistent with vulnerabilities\ndriven by belief/state propagation and planning interfaces\nrather than budget/scope alone. This separation supports the\nY es/Maybe labels in Table 2.\nConfiguration elasticity separates budget-driven vs.\ninterface-driven risk. Under one-dimension permissive\nchanges, Denial-of-Wallet (A 13) exhibits the largest abso-\nlute jump (0.58 \u2192 0.81, \u2206=0.23; approximately 40% rel-\native), and Code-Execution Abuse (A 10) more than dou-\nbles (0.22 \u2192 0.49, \u2206=0.27; approximately 2.2\u00d7). Dele-\ngation Attacks (A 9) also more than doubles (0.18 \u2192 0.46,\n\u2206=0.28; approximately 2.6\u00d7). In contrast, Retrieval Poi-\nsoning (A6) and Planning Manipulation (A5) change by less\nthan 0.10, indicating these failures are inelastic to budget/s-\ncope and instead arise from persistent belief/state "
+              }
+            ],
+            "text": "increases 0.18 \u2192 0.46. In contrast, A 6 and A 5 exhibit\nsmaller deltas, below 0.10, consistent with vulnerabilities\ndriven by belief/state propagation and planning interfaces\nrather than budget/scope alone. This separation supports the\nY es/Maybe labels in Table 2.\nConfiguration elasticity separates budget-driven vs.\ninterface-driven risk. Under one-dimension permissive\nchanges, Denial-of-Wallet (A 13) exhibits the largest abso-\nlute jump (0.58 \u2192 0.81, \u2206=0.23; approximately 40% rel-\native), and Code-Execution Abuse (A 10) more than dou-\nbles (0.22 \u2192 0.49, \u2206=0.27; approximately 2.2\u00d7). Dele-\ngation Attacks (A 9) also more than doubles (0.18 \u2192 0.46,\n\u2206=0.28; approximately 2.6\u00d7). In contrast, Retrieval Poi-\nsoning (A6) and Planning Manipulation (A5) change by less\nthan 0.10, indicating these failures are inelastic to budget/s-\ncope and instead arise from persistent belief/state "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0033"
+        ],
+        "excerpt": "propaga-\ntion. This split provides a quantitative basis for separating\n\"knob-fixable\" risk, such as budgets, retries, and scope, from\ndeeper trust-boundary failures involving state and planning.\nBreak Composition and Trace-Auditable\nAttribution\nBreaks concentrate in boundary and authority violations:\nSIV accounts for 31%, WPA for 27%, UTI+UTA for 24%,\nand A TD for 18%. Because AgentFence upgrades task errors\nto security breaks only when trace-supported attack linkage\nholds (Section ), the protocol reduces misattribution of base-\nline reliability failures as security exposure.\nMost breaks are boundary failures, not task mis-\ntakes. Aggregated over agents, boundary/authority pred-\nicates (SIV+WPA+UTI/UTA) account for 31% + 27% +\n24% = 82% of all security breaks, while attack-linked\ntask deviation (A TD) contributes 18%. Thus, AgentFence\nfailures are dominated by who acted with what ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8decb5416262ba66b54c642a83a8f81154689b491514be69f0adff6a3e49bf10",
+            "evidence_id": "E02d181dc5502cdb2-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3571,
+                "page": 6,
+                "section": "Results",
+                "section_index": 11,
+                "start": 2678,
+                "text": "propaga-\ntion. This split provides a quantitative basis for separating\n\"knob-fixable\" risk, such as budgets, retries, and scope, from\ndeeper trust-boundary failures involving state and planning.\nBreak Composition and Trace-Auditable\nAttribution\nBreaks concentrate in boundary and authority violations:\nSIV accounts for 31%, WPA for 27%, UTI+UTA for 24%,\nand A TD for 18%. Because AgentFence upgrades task errors\nto security breaks only when trace-supported attack linkage\nholds (Section ), the protocol reduces misattribution of base-\nline reliability failures as security exposure.\nMost breaks are boundary failures, not task mis-\ntakes. Aggregated over agents, boundary/authority pred-\nicates (SIV+WPA+UTI/UTA) account for 31% + 27% +\n24% = 82% of all security breaks, while attack-linked\ntask deviation (A TD) contributes 18%. Thus, AgentFence\nfailures are dominated by who acted with what "
+              }
+            ],
+            "text": "propaga-\ntion. This split provides a quantitative basis for separating\n\"knob-fixable\" risk, such as budgets, retries, and scope, from\ndeeper trust-boundary failures involving state and planning.\nBreak Composition and Trace-Auditable\nAttribution\nBreaks concentrate in boundary and authority violations:\nSIV accounts for 31%, WPA for 27%, UTI+UTA for 24%,\nand A TD for 18%. Because AgentFence upgrades task errors\nto security breaks only when trace-supported attack linkage\nholds (Section ), the protocol reduces misattribution of base-\nline reliability failures as security exposure.\nMost breaks are boundary failures, not task mis-\ntakes. Aggregated over agents, boundary/authority pred-\nicates (SIV+WPA+UTI/UTA) account for 31% + 27% +\n24% = 82% of all security breaks, while attack-linked\ntask deviation (A TD) contributes 18%. Thus, AgentFence\nfailures are dominated by who acted with what "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://ojs.aaai.org/index.php/AAAI-SS/article/download/42945/50505",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.1609/aaaiss.v9i1.42945",
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Dual independent human annotators adjudicated ambiguous traces with substantial agreement (Cohen's kappa = 0.81), and a cross-model sanity check preserved relative architectural differences.",
+          "final_evaluation_signal": "Predefined trace-auditable conversation-break predicates (UTI, UTA, WPA, SIV, ATD) with attack-link attribution, evaluated against fixed ground-truth constraints.",
+          "independent_corroboration": "present",
+          "optimization_signal": "No optimization or tuning signal; the study is an observational benchmark across off-the-shelf agent archetypes with a fixed base model.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0002",
+          "E02d181dc5502cdb2-B0003",
+          "E02d181dc5502cdb2-B0009",
+          "E02d181dc5502cdb2-B0010",
+          "E02d181dc5502cdb2-B0014",
+          "E02d181dc5502cdb2-B0015",
+          "E02d181dc5502cdb2-B0016",
+          "E02d181dc5502cdb2-B0017",
+          "E02d181dc5502cdb2-B0018",
+          "E02d181dc5502cdb2-B0019",
+          "E02d181dc5502cdb2-B0020",
+          "E02d181dc5502cdb2-B0024",
+          "E02d181dc5502cdb2-B0025",
+          "E02d181dc5502cdb2-B0026",
+          "E02d181dc5502cdb2-B0028",
+          "E02d181dc5502cdb2-B0029",
+          "E02d181dc5502cdb2-B0030",
+          "E02d181dc5502cdb2-B0031",
+          "E02d181dc5502cdb2-B0032",
+          "E02d181dc5502cdb2-B0033"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "a076f303f882e3b2983a36594d6335985e3bde3503ca553cc3fcee944a162353"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.1609/aaaiss.v9i1.42945",
+        "claim_evidence_alignment": "Claims that operational failures (e.g., Denial-of-Wallet, Authorization Confusion, Retrieval Poisoning) dominate prompt-centric attacks and vary significantly across agent architectures (MSBR from 0.29 to 0.51) are well-supported by tabulated and cross-checked empirical data.",
+        "context_id": "02d181dc5502cdb2a1de0b1246ee74f7942b79a19ce89ee45737dc54deee578a",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation systematically measures the Mean Security Break Rate across archetypes and attack classes, isolating architectural effects via ablations on memory, retries, and delegation, as well as testing sensitivity across exposure thresholds and alternative models.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations included dual independent human annotator adjudication on ambiguous traces (Cohen's kappa = 0.81), cross-model validation checks, and architectural component ablations.",
+          "final_evaluation_signal": "Predefined trace-auditable conversation break predicates (UTI, UTA, WPA, SIV, ATD) and attack-link criteria evaluated on execution transcripts with verified ground-truth constraints.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Not applicable; the study conducts an observational and diagnostic benchmark evaluation across off-the-shelf and standard agent framework archetypes without tuning or optimizing the agents or payload policies against a training reward signal.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E02d181dc5502cdb2-B0002",
+          "E02d181dc5502cdb2-B0003",
+          "E02d181dc5502cdb2-B0009",
+          "E02d181dc5502cdb2-B0010",
+          "E02d181dc5502cdb2-B0014",
+          "E02d181dc5502cdb2-B0015",
+          "E02d181dc5502cdb2-B0016",
+          "E02d181dc5502cdb2-B0017",
+          "E02d181dc5502cdb2-B0018",
+          "E02d181dc5502cdb2-B0019",
+          "E02d181dc5502cdb2-B0020",
+          "E02d181dc5502cdb2-B0024",
+          "E02d181dc5502cdb2-B0025",
+          "E02d181dc5502cdb2-B0026",
+          "E02d181dc5502cdb2-B0028",
+          "E02d181dc5502cdb2-B0029",
+          "E02d181dc5502cdb2-B0030",
+          "E02d181dc5502cdb2-B0031",
+          "E02d181dc5502cdb2-B0032",
+          "E02d181dc5502cdb2-B0033"
+        ],
+        "limitations": "The study evaluates interface-only adversaries without direct system compromise, primarily uses a single base model family alongside a cross-model sanity check, and focuses on research-agent archetypes built atop fixed workload formats.",
+        "method_assessment": "The methodology fixes the base LLM (Qwen2.5-32B-Instruct) across eight agent archetypes on a 91-instance multi-turn workload, tracking objective break predicates (unauthorized tool invocation, unsafe arguments, wrong-principal action, state/objective integrity violation, attack-linked task deviation) with explicit attack-link attribution and dual-annotator agreement (Cohen's kappa = 0.81).",
+        "quality_rationale": "The paper provides an adequately described benchmark framework, well-controlled experimental isolation of agent architecture versus base model capabilities, rigorous trace-based violation definitions with inter-rater validation, and clear empirical evidence for its findings.",
+        "scoped_contribution": "AgentFence is an architecture-centric security evaluation methodology defining 14 trust-boundary attack classes across deep research agent paradigms, detecting trajectory-level operational failures via trace-audited conversation breaks while controlling base model capabilities.",
+        "source_content_hash": "a076f303f882e3b2983a36594d6335985e3bde3503ca553cc3fcee944a162353"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper provides an adequately described benchmark framework, well-controlled experimental isolation of agent architecture versus base model capabilities, rigorous trace-based violation definitions with inter-rater validation, and clear empirical evidence for its findings.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "a076f303f882e3b2983a36594d6335985e3bde3503ca553cc3fcee944a162353",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The study evaluates interface-only adversaries without direct system compromise, primarily uses a single base model family alongside a cross-model sanity check, and focuses on research-agent archetypes built atop fixed workload formats."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -162,7 +1540,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

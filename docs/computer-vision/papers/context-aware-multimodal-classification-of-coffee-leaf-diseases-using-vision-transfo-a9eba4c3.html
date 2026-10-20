@@ -59,16 +59,369 @@
             <p>Coffee leaf diseases may show overlapping visual symptoms and are also associated with surrounding agro environmental conditions.This study develops a context-aware multimodal framework integrating coffee leaf images with agro-environmental information for four-class disease classification.A pretrained Vision Transf...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study demonstrates high methodological rigor, includes negative/neutral control outcomes (shuffled sensor and zero incremental gain over vision-only baselines), avoids overclaiming, provides reproducible artifacts, and accurately reports the boundaries of its contribution.</p>
+      <p>The authors explicitly address limitations regarding dataset scope, ceiling effects on the validation partition, lack of cross-plantation and external environmental evaluation, and the need for more visually ambiguous field scenarios.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: International journal of intelligent engineering and systems. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-20T09:14:57.156014+00:00.</p>
+        <p>Coverage: 58406 of 58406 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>surrounding agro
+environmental conditions. This study develops a context-aware multimodal framework integrating coffee leaf images
+with agro-environmental information for four-class disease classification. A pretrained Vision Transformer (ViT-Base)
+extracts visual features, while an MLP encodes relative humidity, soil moisture, and soil pH, followed by feature-level
+fusion. The dataset contains 840 paired observations, divided into 672 training and 168 source -separated validation
+observations. Six configurations were evaluated: Sensor-only MLP, EfficientNet-B0, ViT-Base, MaxViT-Tiny, ViT +
+Sensor, and ViT + Shuffled Sensor. The proposed ViT + Sensor achieved 100% validation accuracy, 100% macro F1-
+score, balanced accuracy, Cohen&#x27;s kappa of 1.0000, and MCC of 1.0000. The Sensor -only MLP ac hieved 71.43%,
+confirming predictive information in the environmental variables. However, </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ViT-only and shuffled-sensor models also
+achieved 100%. Thus, multimodal integration is feasible, but no incremental accuracy benefit from image -sensor
+correspondence was demonstrated.
+Keywords: Coffee leaf disease, Multimodal learning, Vision transformer, Agro-environmental sensing, Feature fusion.</blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fixed and
+unaugmented.
+Six configurations are evaluated: sensor-only
+MLP, EfficientNet -B0, ViT -Base, MaxViT -Tiny, the
+proposed ViT  + Sensor model , and ViT + Shuffled
+Sensor. The image -only models provide visual
+baselines, the sensor -only model evaluates the
+Received:  August 12, 2026.     Revised: September 22, 2026.                                                                                          878
+International Journal of Intelligent Engineering and Systems, Vol.19, No.11, 2026         DOI: 10.22266/ijies2026.1130.45
 
-        <ul></ul>
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: https://creativecommons.org/licenses/by-sa/4.0/
+independent contribution of environmental
+information, and the shuffled -sensor configuration
+serves as a control for testing whether the multimodal
+model benefits from the </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To prevent information leakage between the
+training and validation sets, the 840 original paired
+observations were partitioned before any
+augmentation. The partitioning was performed using
+source-group-separated stratified sa mpling, where
+observations associated with the same original image
+source were kept within the same partition. The
+source group is identified by the source_id assigned
+during dataset verification. This procedure prevents
+the same source from contributing t o both training
+and validation.
+The resulting partition contains 672 original
+training observations (80%) and 168 original
+validation observations (20%). The validation set was
+fixed throughout all experiments and contained only
+original observations, with  no sensor or random
+visual augmentation. Thus, all configurations were
+evaluated on the same source-separated validation set.
+After </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Six experimental configurations were evaluated
+under the same source-separated validation protocol:
+(1) Sensor-only MLP, (2) EfficientNet -B0, (3) ViT-
+Base, (4) MaxViT -Tiny, (5) ViT + Sensor, and (6)
+ViT + Shuffled Sensor. The sensor-only MLP
+evaluates the independent predictive capability of the
+three agro -environmental variables, while
+EfficientNet-B0, ViT-Base, and MaxViT-Tiny serve
+as image-only baselines. The proposed ViT + Sensor
+configuration combines the 768 -dimensional visual
+representation with the 64 -dimensional
+environmental representation.
+For the ViT + Shuffled Sensor control, the
+complete three -variable sensor vector was jointly
+permuted across observations, thereby disrupting the
+original image -sensor corresponden ce while
+preserving the sensor -vector structure and its
+distribution. This configuration provides a control for
+assessing whether the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>multimodal model benefits
+from the original pairing between visual and
+environmental information. All six configurations
+were evaluated using the same fixed 168 source -
+separated validation observations and four canonical
+disease classes.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>All six experimental configurations were trained
+using multiclass cross -entropy loss under the same
+four-class label space. For a training or validation
+sample i with C = 4 classes, the cross-entropy loss is
+defined as Eq. (15).
+Received:  August 12, 2026.     Revised: September 22, 2026.                                                                                          881
+International Journal of Intelligent Engineering and Systems, Vol.19, No.11, 2026         DOI: 10.22266/ijies2026.1130.45
+
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: https://creativecommons.org/licenses/by-sa/4.0/
+ℒ = − 1𝑁 ∑ ∑ 𝑦𝑖𝑐 log(𝑝𝑖𝑐)
+𝐶
+𝑐=1
+𝑁
+𝑖=1
+ (15)
+
+where N denotes the number of samples, C is the
+number of classes, yic is the ground-truth indicator for
+class c, and pic is the predicted probability for class c.
+All </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>models were optimized using AdamW with
+the training settings summarized in Table 2. The ViT-
+based configurations used google/vit-base-patch16-
+224. EfficientNet -B0 and MaxViT -Tiny were
+initialized with the corresponding torchvision
+IMAGENET1K_V1 pretrained weights. For all
+pretrained image models, the complete backbone and
+
+Table 2. General Training and Implementation Settings
+Setting Value
+Original
+paired
+observations
+840
+Training
+observations
+672
+Validation
+observations
+168
+Effective
+training
+entries
+2,016
+Image input RGB, 224 × 224 pixels
+Image
+preprocessing
+Training-derived normalization
+Sensor
+variables
+Relative humidity, soil moisture, soil
+pH
+Sensor
+augmentation
+Two perturbed variants per training
+observation
+Visual
+augmentation
+Random flip, rotation,
+brightness/contrast; training only
+Optimizer AdamW
+Learning rate 2×10−5
+Weight decay </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>validation cross-
+entropy los s; (2) higher validation accuracy when
+losses differed by no more than 1 × 10⁻¹²; and (3)
+earlier epoch if both criteria remained tied. The
+selected epochs were 10, 9, 10, 3, 9, and 9 for Sensor-
+only MLP, EfficientNet -B0, ViT -Base, MaxViT -
+Tiny, ViT + Senso r, and ViT + Shuffled Sensor,
+respectively. The corresponding best.pt checkpoints
+were restored for final validation evaluation.
+Training-only sensor augmentation produced
+2,016 effective training entries from the 672 original
+training observations, while visual augmentation was
+applied dynamically during training. The 168
+validation observations remained unchanged and
+were not subjected to sensor augmentation or random
+visual transformations. Thus, all six configurations
+used the same s ource-separated validation partition
+and evaluation protocol.
+
+Table 3. Configuration-Specific </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>metrics
+All six configurations were evaluated on the same
+fixed set of 168 original validation observations
+obtained through source -separated partitioning. No
+sensor or random visual augmentation was applied
+during validation. Predictions were generated using
+the selected checkpoint for each configuration.
+Model performance was assessed using accuracy,
+macro-averaged precision, recall, and F1 -score,
+balanced accuracy, Cohen&#x27;s kappa, and Matthews
+correlation coefficient (MCC). Macro averaging was
+used to assign equal importance to the four canonical
+classes. Balanced accuracy was calculated as the
+mean class -wise recall, while Cohen&#x27;s kappa and
+MCC provided complementary measures of
+agreement and correlation beyond accuracy.
+In addition to record -level evaluation, source -
+level performance was assessed by aggregating
+predicted class probabilities for observations </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predictions, corresponding to 71.43% accuracy,
+72.95% macro F1 -score, and 74.43% balanced
+accuracy. In contrast, all image -containing
+configurations—EfficientNet-B0, ViT -Base,
+MaxViT-Tiny, ViT + Sensor, and ViT + Shuffled
+Sensor—correctly classified all 168 validation
+observations, achieving 100% accuracy, macro F1 -
+score, and balanced accuracy, with an MCC of 1.000.
+The results indicate that visual information
+provided the strongest discriminative signal under the
+present validation protocol. The 28.57 percentage -
+point difference between the Sensor -only MLP and
+the image-containing configurations also shows that
+the three environmental variables contain predictive
+information but are less discriminative when used
+independently. Importantly, the proposed ViT +
+Sensor model did not improve upon the ViT -only
+baseline, which already achieved perfect validation </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+performance. The identical 168/168 result obtained
+by the ViT + Shuffled Sensor configuration further
+indicates that no measurable accuracy difference was
+observed from preserving the original image -sensor
+correspondence on this validation set.
+The training histories in Fig. 4 provide additional
+information about model convergence. The image -
+containing configurations reached high accuracy
+rapidly, whereas the Sensor -only MLP improved
+more gradually. The proposed ViT + Sensor model
+reached 100% validation accuracy from epoch 2
+onward, with its minimum validation cross -entropy
+
+Table 4. Performance comparison of the six
+experimentally reproduced configurations on the source-
+separated validation set
+Model Acc. Macro F1 Balanced Acc. MCC
+Sensor-only
+MLP 71.43% 72.95% 74.43% 0.618
+EfficientNet-
+B0 100% 100% 100% 1.000
+ViT-Base 100% 100% 100% 1.000
+MaxViT-
+Tiny 100% </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>100% 100% 1.000
+ViT +
+Sensor 100% 100% 100% 1.000
+ViT +
+Shuffled
+Sensor
+100% 100% 100% 1.000
+Received:  August 12, 2026.     Revised: September 22, 2026.                                                                                          883
+International Journal of Intelligent Engineering and Systems, Vol.19, No.11, 2026         DOI: 10.22266/ijies2026.1130.45
+
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: https://creativecommons.org/licenses/by-sa/4.0/
+
+(a)
+
+(b)
+Figure. 4 Training dynamics of the six experimental configurations: (a) training accuracy and (b) training cross -entropy
+loss
+
+
+loss at epoch 9 (0.001012). The selected checkpoints
+for EfficientNet -B0, ViT -Base, MaxViT -Tiny, and
+ViT + Shuffled Sensor were obtained at epochs 9, 10,
+3, and 9, respectively, while the Sensor -only </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DOI: 10.22266/ijies2026.1130.45
+
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: https://creativecommons.org/licenses/by-sa/4.0/
+contain predictive information. The model correctly
+classified 120 of 168 validation observations, with
+74.43% balanced accuracy. A logistic -regression
+model using the same three sensor variables also
+achieved 74.40% validation accuracy, further
+supporting their predictive value.
+For the proposed multimodal approach, the ViT +
+Sensor model did not improve upon the  ViT-only
+baseline, which already achieved 100% accuracy.
+The ViT + Shuffled Sensor configuration produced
+the same result, indicating that preserving the original
+image-sensor correspondence did not yield a
+measurable performance difference under the present
+validation conditions. Thus, the results do not provide </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>+ Sensor and ViT +
+Shuffled Sensor achieved 100% accuracy, macro F1-
+score, balanced accuracy, and MCC on the 168-
+observation validation set. Thus, no measurable
+performance difference was observed between
+correctly paired and shuffled sensor inputs under the
+present validation conditions.
+This result should not be interpreted as evidence
+that environmental inform ation is irrelevant. The
+Sensor-only MLP achieved 71.43% accuracy,
+demonstrating that relative humidity, soil moisture,
+and soil pH contain predictive information associated
+with the disease classes. Rather, the identical
+performance of the paired and shuf fled
+configurations suggests that the visual modality was
+already sufficiently discriminative to classify all
+validation observations correctly, leaving limited
+opportunity for the sensor modality to produce an
+observable improvement.
+The shuffled-sensor </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: https://creativecommons.org/licenses/by-sa/4.0/
+Table 6. Overall validation metrics of the proposed ViT +
+Sensor model
+Metric Result
+Accuracy 100%
+Macro precision 100%
+Macro recall 100%
+Macro F1-score 100%
+Balanced accuracy 100%
+Cohen&#x27;s kappa 1.0000
+Matthews correlation coefficient 1.0000
+Correct / total predictions 168 / 168
+Nominal 95% Wilson CI 97.76%–100%
+
+acquisition periods, cameras, sensor devices, and
+environmental conditions would be required to
+evaluate external generalization.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>controlled image -only,
+sensor-only, and shuffled-sensor comparisons.
+Importantly, the multimodal model did not
+produce an observable accuracy improvement over
+the ViT-only baseline because the latter also achieved
+100% accuracy. Thus, the contribution of the
+proposed framework should be understood as
+context-aware multimodal integration and controlled
+evaluation, rather than a demonstrated accuracy gain
+over visual-only models.
+
+
+Table 7. Contextual comparison with representative plant-disease recognition studies
+Study Approach Data Result
+Coffee leaf disease [2] CNN ensemble Four coffee-leaf disease classes 97.31% validation
+Coffee leaf disease [4] EfficientNet-B0 843 natural field images; 3 classes 88.37% test
+Tomato leaf disease [12] CycleGAN + CNN/Transformer hybrid PlantVillage / AI Challenger / private 99.45% / 98.30% / 95.40%
+Plant disease [13] ViT + generative </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>implications
+The results show that visual information provides
+the strongest discriminative signal for the present
+classification task. Image -containing models
+achieved 100% validation accuracy, whereas the
+Sensor-only MLP achieved 71.43%, confirming that
+the agro -environmental variables contain predictive
+information. However, their incremental contribution
+could not be demonstrated because the image -only
+models already classified all validation observations
+correctly.
+The identical performance of the ViT + Sensor
+and ViT + Shuffled Se nsor configurations further
+indicates that the present experiments do not establish
+a measurable benefit from preserving the original
+image-sensor correspondence. Therefore, the main
+contribution of the proposed framework should be
+interpreted as the integ ration of visual and agro -
+environmental information within a unified </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>decision-
+support architecture, rather than as a demonstrated
+accuracy improvement over image-only models.
+Despite the strong results, the evaluation has
+important limitations. The validation set contains 168
+observations from the available acquisition domain,
+with no independent data from different plantations,
+seasons, cameras, sensor devices, or environmental
+conditions. Therefore, the 100% validation accuracy
+represents strong in-domain performance rather than
+broad field generalization. External validation is
+needed to assess robustness under unseen conditions.
+Practically, the framework can support early coffee
+leaf disease screening by combining visual symptoms
+with environmental context, as illustrated in Fig. 7. It
+is intended as a decision -support tool rather than a
+replacement for expert assessment. Future work
+should focus on independent field validation, </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This study developed a context -aware
+multimodal framework for coffee leaf disease
+classification by integrating ViT -based visual
+representations with agro-environmental information
+consisting of relative humidity, soil moisture, and soil
+pH. The proposed ViT + Sensor model achieved
+100% validation accuracy, 100% macro F1 -score,
+100% balanced accuracy, Cohen&#x27;s kappa of 1.0000,
+and MCC of 1.0000 on the fixed source -separated
+validation set. The Sensor -only MLP achieved
+71.43% accuracy, confirming that the environmental
+variables contain predictive information. However,
+the ViT -only and ViT + Shuffled Sensor
+configurations also achieved 100%. Thus, the current
+results demonstrate the feasibility of multimodal
+integration but  do not establish an incremental
+accuracy benefit from preserving the original image-
+sensor correspondence.
+The findings represent strong in </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +460,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +476,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-10-18</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-19 09:35:32</li><li>Last seen by Paper Scout: 2026-10-19 09:35:32</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-10-18</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-19 09:35:32</li><li>Last seen by Paper Scout: 2026-10-20 09:11:39</li></ul>
             <ul><li>DOI: 10.22266/ijies2026.1130.45</li><li>OpenAlex: W7222426529</li><li>OpenAlex IDs: W7222426529</li></ul>
           </section>
           <section class="detail-panel">

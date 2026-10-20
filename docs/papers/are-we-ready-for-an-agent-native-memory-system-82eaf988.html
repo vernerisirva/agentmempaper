@@ -64,16 +64,260 @@
             <p>Memory for large language model (LLM) agents has rapidly evolved from simple retrieval-augmented mechanisms into a data management system that supports persistent information storage, retrieval, update, consolidation, and dynamic lifecycle governance throughout agent execution. Despite this evolution, existing evalu...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study provides thorough, systematic empirical evidence across multiple competitive baselines and varied tasks, adhering to solid experimental controls and offering valuable architectural insights for agent-native memory systems.</p>
+      <p>The study is an empirical evaluation of existing open architectures rather than introducing a single novel memory model, and operational cost analyses rely on amortized latency traces rather than exhaustive production deployment settings.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-20T09:12:12.355617+00:00.</p>
+        <p>Coverage: 98990 of 98990 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Memory for large language model (LLM) agents has rapidly evolved
+from simple retrieval-augmented mechanisms into a data manage-
+ment system that supports persistent information storage, retrieval,
+update, consolidation, and dynamic lifecycle governance through-
+out agent execution. Despite this evolution, existing evaluations
+still benchmark agent memory mainly through end-to-end task suc-
+cess metrics (e.g., F1, BLEU), while treating the underlying system
+as a monolithic black box. As a result, critical system-level concerns,
+including operational costs, architectural trade-offs across mem-
+ory modules, and robustness under dynamic knowledge updates,
+remain insufficiently explored.
+In this paper, we present a systematic experimental study of
+agent memory from a data management perspective. We propose
+an analytical framework that decomposes agent memory into four
+core modules: memory </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>representation and storage, extraction, re-
+trieval and routing, and maintenance. Under this framework, we
+evaluate 12 representative memory systems and two reference base-
+lines across five benchmark workloads spanning 11 datasets. Our
+extensive end-to-end evaluation shows that no single architecture
+dominates across all scenarios; instead, effectiveness depends heav-
+ily on how well the memory structure aligns with the workload
+bottleneck. Furthermore, through fine-grained ablation studies, we
+quantify their individual effects on representation fidelity, retrieval
+precision, update correctness, and long-horizon stability. Finally, we
+reveal cost-performance trade-offs under realistic workloads, show-
+ing localized maintenance is more cost-efficient than global reorga-
+nization. Based on these findings, we identify promising directions
+towards building truly agent-native memory </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>single-sided, end-to-end task success metrics
+(e.g., F1 and BLEU scores) rather than a comprehensive evaluation
+suite. They fail to explicitly isolate and measure multi-dimensional
+performance indicators such as evidence-level retrieval fidelity,
+dynamic update robustness under conflicting knowledge, and long-
+horizon stability. Third, they rarely measure key operational costs
+from a systems perspective, such as index construction time and
+query latency, which are critical for production deployments. Last,
+they treat memory systems as monolithic black boxes rather than
+decomposing them into fundamental data management modules
+for isolated, fine-grained analysis.
+We overcome these limitations and conduct comprehensive ex-
+periments and analyses from a data management perspective. The
+contributions are as follows.
+(1) Technology Decomposition and Taxonomy (Section 3).We
+decompose existing </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>agent memory systems into four core compo-
+nents: (i) memory representation and storage, (ii) memory extrac-
+tion, (iii) memory retrieval and routing, and (iv) memory main-
+tenance. For each component, we further establish a structured
+taxonomy1 by categorizing existing approaches according to their
+underlying design principles, enabling principled comparisons.
+(2) Overall End-to-End Performance Evaluation (Section 4).
+We conduct end-to-end evaluations under a unified and fair testbed
+(e.g., unified time-overhead traces)2 across five distinct benchmark
+workloads encompassing 11 datasets. Our study includes 12 repre-
+sentative memory systems, each embodying different combinations
+of representation, storage, routing, and maintenance strategies. We
+evaluate their performance from five perspectives: task effective-
+ness (RQ1), retrieval fidelity (RQ2), dynamic update robustness
+(RQ3), </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>long-horizon stability (RQ4), and operational cost (RQ5).
+1https://github.com/OpenDataBox/awesome-agent-memory
+2https://github.com/OpenDataBox/MemoryData
+(3) Fine-Grained Technical Component Evaluation (Section 5).
+Leveraging our four-module framework, we conduct controlled
+and fine-grained experiments on representative strategies within
+each technique component. By systematically generating controlled
+variants that modify one module at a time, we quantify their per-
+formance trade-offs and assess their individual impacts on repre-
+sentation fidelity, routing precision, and update correctness.
+(4) Insightful Findings.Based on our experimental results and
+in-depth analysis, we distill a set of insightful findings regarding
+the cost–performance trade-offs of agent memory systems:
+❶ Are Memory Systems Effective Across Different Agent
+Request Workloads?No single memory architecture </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>perspective [14, 32], we formalize theagent memory
+systemas a tuple of four modules: M𝑠𝑦𝑠 =⟨R,S,Q,U⟩ , where
+each module governs a distinct phase of the memory lifecycle.
+•(1) Memory Representation and StorageR: A mapping that de-
+fines the logical and physical memory format with a data model
+of two facets: (a) logical representation, spanning simple primi-
+tives (discrete tokens, continuous vectors) to complex topologies
+(knowledge graphs, trees, and composites); and (b) physical storage,
+utilizing transient registers, specialized single-engine databases, or
+multi-engine backends for persistence and indexing.
+•(2) Memory ExtractionS: A mechanism governing how hetero-
+geneous input streams (e.g., multi-turn dialogues, tool logs) are
+transformed into logical memory primitives via pipelines such as
+raw sequence concatenation, schema-free semantic extraction, or
+schema-constrained </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This module consists of two components: (1) logical representation,
+which defines the structural encoding and organization exposed
+to the agent system, directly dictating capacity, accessibility, and
+trade-offs in expressiveness, retrieval granularity, and downstream
+reasoning compatibility; and (2) physical storage, which designates
+the persistence and indexing structures, such as volatile in-context
+registers, dense vector engines, or topological graph databases.
+3
+Table 1: Taxonomy and Characteristics of Agent Memory Systems.
+Memory Representation &amp; StorageCategory Method Representation Storage Memory Extraction Memory Retrieval &amp;Query Routing Memory Maintenance
+MemoChat[18] ❶Token-Level Sequence(Structured JSON Memos) ❶Transient In-Context Registers ❸Schema-Constrained Extraction(LLM Topic Segmentation) ❹Autonomous Agentic Routing(LLM Topic Selection) ❸LLM-Driven Semantic </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this section, we conduct a systematic evaluation of agent memory
+systems across five research questions. Across five distinct bench-
+mark workloads and 11 datasets, we assess 12 representative mem-
+ory systems against baselines to characterize their performance.
+Specifically, the five research questions are as follows.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental Setting.For&quot;Do different agent memory systems
+successfully improve end-to-end task performance across workloads?&quot;,
+we evaluate 12 representative memory systems and two reference
+baselines (Long ContextandEmbedding RAG) on the three end-to-
+end workloads to assess whether memory improves task success
+beyond the underlyingLLM. Specifically, we use: (1)LoCoMo[ 20]:
+a long-conversation QA benchmark that tests episodic, temporal,
+and open-domain memory over multi-turn interactions, and re-
+port the unweighted mean of category-levelExact Match (EM)and
+Answer F1on the four-category queries; (2)LongMemEval[ 31]:
+a multi-session long-memory benchmark that evaluates whether
+systems can reconnect facts across sessions and reason over tem-
+porally distributed evidence, and reportSubstring EM,ROUGE-L F1,
+ROUGE-L Recall, andGPT-5.4-basedLLMJudge AccuracyfromMem-
+oryAgentBench[ 22]; and </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(3)DB-Bench: evaluates whether memory
+supports procedural execution across database operations from
+LifelongAgentBench[ 37], and reportExact Match (EM)andTask
+Success Rate.
+O1-(Cross-Workload Effectiveness): No single memory sys-
+tem dominates all workloads, but methods that preserve task-
+critical evidence through structure-guided filtering remain
+the most competitive overall.As shown in Figure 7, the leading
+systems shift across workloads: (1) Structure-aware systems lead
+LongMemEval, where Zep reaches48.0LLMJudge Accuracyand
+Cognee attains35.3 ROUGE-L F1; (2) Hybrid filtering is strongest
+onLoCoMoexactness, where MemOS reaches11.5 Exact Match
+(EM); and (3) Trace-preserving memories remain strongest onDB-
+Bench, where Long Context achieves48.20 EMand MemoChat
+reaches55.40 Task Success Rate. However, among methods with full
+7</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental Setting.For&quot;How accurately can a memory sys-
+tem surface the stored evidence required by a query?&quot;, we evaluate
+eight representative memory systems to assess evidence-level re-
+trieval fidelity independently of downstream answer generation.
+Specifically, we useLoCoMo[ 20], which provides source-level gold
+evidence for queries with diverse evidence distances. We report:
+(1)Recall@K, where a hit requires the top- 𝑘 retrieved source-id
+groups to contain the annotated gold evidence, and (2)Recall@10
+over sixevidence distance gapbins (1–5 to 26–31), defined by the
+8
+Table 2: Robustness over Memory Update Settings.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>whether systems can absorb fact revisions and answer temporally
+grounded queries after updates; and(2) Backbone Robustness Abla-
+tion, which tests whether this behavior remains stable when only
+theLLMbackbone changes. In(1) Update Robustness Comparison,
+Table 2 compares 11 representative memory systems onKnowl-
+edge UpdateandTemporal ReasoningfromLongMemEval[ 31], and
+TemporalfromLoCoMo[ 20]. The twoLongMemEval[ 31] slices
+are reported withSubstring EMandROUGE-L F1, while theLo-
+CoMo[ 20] slice is reported withExact Match (EM)andAnswer F1;
+In(2) Backbone Robustness Ablation, Figure 9 evaluates 6 representa-
+tive memory settings under 4LLMbackbones on theLoCoMo[ 20].
+O4-(Temporal State Externalization): No single memory sys-
+tem dominates all update-oriented slices, but methods that
+preserve temporally valid evidence through structured or-
+ganization remain the most competitive </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental Setting.For&quot;How stable are agent memory sys-
+tems as the effective memory horizon increases, either through longer
+contexts or more distant supporting evidence?&quot;, we evaluate 12 repre-
+sentative memory systems across 3 benchmarks to assess robust-
+ness to increasing context length and temporal distance. Specifi-
+cally, we use: (1)LongBench[ 3], which evaluates controlled long-
+context difficulty in question answering, reported withAccuracy
+overShort,Medium, andLongcontext-length buckets to measure
+context-length robustness; (2)LongMemEval[ 31], which evaluates
+multi-session memory as the amount of prior interaction grows,
+reported withROUGE-L F1over bins of historical session count to
+measure multi-session stability; and (3)LoCoMo[ 20], which evalu-
+ates memory drift when supporting evidence lies back in the con-
+versation, reported withAnswer F1over bins of </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental Setting.For&quot;What is the operational cost of each
+memory system in terms of utility–latency trade-off and cross-workload
+latency footprint?&quot;, we evaluate 8 representative memory systems
+using the unified time-overhead traces recorded by our runner.
+We quantify two aspects: (1)Utility–latency trade-off, measured by
+A vg. Operation Latency/QueryandNormalized Utility; and (2)Cross-
+workload latency footprint, measured byOutlier-Filtered A vg. Total
+Latency/Query. For (1),A vg. Operation Latency/Queryis computed
+as memory construction time plus query time and interpreted as
+amortized per-query cost for systems with cumulative or bursty
+writes, whileNormalized Utilityis the mean of six min–max nor-
+malized answer-quality metrics from the currentLoCoMo[ 20] and
+LongMemEval[ 31] runs. For (2), we reportOutlier-Filtered A vg. Total
+Latency/Queryon three benchmark.
+O7-(Localized </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To understand the root causes behind end-to-end performance
+differences, we decompose agent memory systems into four funda-
+mental modules. By systematically generating controlled variants
+that modify one module at a time, we evaluate the contribution of
+each module to overall system performance.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental Setting.For&quot;How do memory abstraction level and
+structural organization affect factual fidelity and downstream rea-
+soning effectiveness?&quot;, we evaluate three representation-focused
+variants: (1)LightMem[ 7] comparesUser-Only Raw, which stores
+verbatim user utterances,User-Only Summary, which rewrites each
+session into an LLM-generated abstractive summary, andUser-Only
+Table 3: Ablation of Representation and Storage Mechanisms.
+Method Variant LoCoMo LongMemEval
+EM Ans. F1 Substr. EM ROUGE-L F1
+LightMem
+User-Only Raw24.2 38.9 26.0 31.4
+User-Only Summary 8.5 15.6 11.7 17.4
+User-Only Compressed 23.6 38.6 10.7 19.1
+MemTree Flat-biased 18.2 30.7 23.0 29.9Deeper Tree18.7 31.2 23.3 30.9
+Mem0 Default3.26.29.3 16.5Graph Store 3.06.58.3 15.9
+Compressed, which removes filler and redundant tokens while pre-
+serving the original phrasing and factual content; (2)MemTree[ 27]
+compares a </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental Setting.For&quot;How do write-time extraction choices
+affect factual fidelity and downstream reasoning effectiveness?&quot;, we
+compare extraction-related variants in three groups:(1) Memo-
+Chat[ 18], which contrastsHeuristic TopicandLLM Topicsegmen-
+tation;(2) MemOS[ 15], which contrastsFast MemorizeandFine
+11
+Table 4: Ablation of Memory Extraction Strategies.
+Method Variant LoCoMo LongMemEval
+EM Ans. F1 Substr. EM ROUGE-L F1
+MemoChat Heuristic Topic23.033.510.7 18.6LLM Topic 22.534.47.3 15.9
+MemOS Fast Memorize25.5 40.820.7 26.1Fine Memorize 2.5 5.022.3 30.2
+LightMem User-Only Raw 24.2 38.926.0 31.4Hybrid Raw25.5 39.725.331.4
+Memorizeon the same tree_text backend; and(3) LightMem[ 7],
+which contrastsUser-Only RawandHybrid Rawby extracting raw
+memory from user turns only or from both user and assistant turns.
+We evaluateLongMemEvalfor multi-session factual retrieval fi-
+delity </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental Setting.For&quot;How do retrieval fusion and reasoning-
+mediated routing affect retrieval relevance and provenance-sensitive
+precision?&quot;, we compare variants in two groups: (1)A-MEMunder
+Hybrid-Balanced, which uses a moderate dense–sparse fusion, ver-
+susHybrid Sparse-Leaning, which increases the sparse contribution;
+and (2)SimpleMemunderNo Planning, which retrieves directly,
+versusPlanning Only, which adds an explicit planning step, and
+Table 5: Ablation of Retrieval and Routing Mechanisms.
+Method Variant LoCoMo LongMemEval
+Ans. F1 Recall Substr. EM ROUGE-L F1
+A-MEM Hybrid-Balanced24.649.927.5 25.9Hybrid Sparse-Leaning 23.0 44.3 24.3 22.8
+SimpleMem
+No Planning 18.7 86.4 17.0 22.9
+Planning Only20.7 90.6 21.7 27.9
+Planning + Reflect 20.0 88.6 21.3 </blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental Setting.For&quot;How do consolidation aggressiveness,
+flush timing, and summary granularity affect update correctness
+and long-horizon memory consistency?&quot;, we compare maintenance-
+relevant variants in two groups:(1) MemoChatunder default multi-
+topic consolidation versusTopic1, which forces each window into a
+12
+single-topic summary; and(2) MemoryOSunder default immediate
+consolidation versusDelayed-Flush, which enlarges the short-term
+buffer before backend writes, andConservative-Merge, which raises
+the topic-similarity threshold for stricter assimilation. We evaluate
+onLoCoMoto assess whether these maintenance choices preserve
+updated facts and coherent memory use over extended contexts.
+O11-(Conservative Consolidation): Conservative consolida-
+tion is more effective than delayed flushing or overly coarse
+summarization for maintaining answer-relevant memory.
+As shown in Figure </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +356,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

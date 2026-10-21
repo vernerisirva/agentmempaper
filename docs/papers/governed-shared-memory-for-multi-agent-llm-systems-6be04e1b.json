@@ -31,7 +31,7 @@
   "last_seen_date": "2026-06-30",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-26 13:04:09",
   "notified_date": "2026-06-26",
@@ -42,7 +42,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-26 13:01:31",
-    "generated_at": "2026-10-20 09:15:18",
+    "generated_at": "2026-10-21 09:23:35",
     "last_seen_at": "2026-06-30 10:10:02",
     "metadata_sources": [
       "openalex",
@@ -118,36 +118,1862 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-21T09:20:43.537976+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.9,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The work addresses an important architectural transition in multi-agent LLM systems by treating shared memory as a governed distributed-systems problem rather than solely a context retrieval task. The experimental design is rigorous, transparently reporting system anomalies, remediations, and performance trade-offs with fully committed trace artifacts.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 66625,
+      "assessment_input_sha256": "130941fa6e218d51099a4e7f4d5adeaf3bee0fe14594e740c9455173a325db93",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7165973042",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 65697,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 64481,
+      "evidence_block_count": 96,
+      "evidence_context_characters": 75581,
+      "evidence_context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+      "evidence_context_sha256": "9e35e962dc29a10cdd53485e9c4639933fea9244b379ae832e717bc4bd0c5c06",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 65725,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "extracted_pages": 15,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "6c3b893a8b4be981e27ad90fd2adbb3412df661aec7c1a21fd006a071f166b0b",
+        "source_url": "https://arxiv.org/pdf/2606.24535",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 65697,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Governed Shared Memory For Multi-Agent Llm Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 212,
+          "supplied_characters": 212
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2360,
+          "supplied_characters": 2360
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2065,
+          "supplied_characters": 2065
+        },
+        {
+          "heading": "Contributions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 309,
+          "supplied_characters": 309
+        },
+        {
+          "heading": "Contributions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 1631,
+          "supplied_characters": 1631
+        },
+        {
+          "heading": "Long-Context Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 450,
+          "supplied_characters": 450
+        },
+        {
+          "heading": "Agent Memory Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 395,
+          "supplied_characters": 395
+        },
+        {
+          "heading": "Agent Memory Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1250,
+          "supplied_characters": 1250
+        },
+        {
+          "heading": "Distributed Systems And Shared State",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 743,
+          "supplied_characters": 743
+        },
+        {
+          "heading": "Memory Governance, Security, And Pri-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1620,
+          "supplied_characters": 1620
+        },
+        {
+          "heading": "The Fleet-Memory Problem",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 10,
+          "source_characters": 2004,
+          "supplied_characters": 2004
+        },
+        {
+          "heading": "Fleet-Memory Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 706,
+          "supplied_characters": 706
+        },
+        {
+          "heading": "Memory Operations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 2056,
+          "supplied_characters": 2056
+        },
+        {
+          "heading": "Fleet-Memory Failure Modes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Unauthorized Leakage",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 476,
+          "supplied_characters": 476
+        },
+        {
+          "heading": "Stale Propagation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 424,
+          "supplied_characters": 424
+        },
+        {
+          "heading": "Contradiction Persistence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 362,
+          "supplied_characters": 362
+        },
+        {
+          "heading": "Provenance Collapse",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 374,
+          "supplied_characters": 374
+        },
+        {
+          "heading": "Governedsharedmemoryarchitec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 4,
+          "supplied_characters": 4
+        },
+        {
+          "heading": "Design Principles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 58,
+          "supplied_characters": 58
+        },
+        {
+          "heading": "Memory Scopes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 436,
+          "supplied_characters": 436
+        },
+        {
+          "heading": "Temporal Resolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 395,
+          "supplied_characters": 395
+        },
+        {
+          "heading": "Provenance Graph",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 358,
+          "supplied_characters": 358
+        },
+        {
+          "heading": "Policy-Governed Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 275,
+          "supplied_characters": 275
+        },
+        {
+          "heading": "Reference Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 24,
+          "source_characters": 230,
+          "supplied_characters": 230
+        },
+        {
+          "heading": "Memclaw",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1418,
+          "supplied_characters": 1418
+        },
+        {
+          "heading": "Argusfleet",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 2281,
+          "supplied_characters": 2281
+        },
+        {
+          "heading": "Evaluation Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 27,
+          "source_characters": 388,
+          "supplied_characters": 388
+        },
+        {
+          "heading": "Leakage Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 28,
+          "source_characters": 412,
+          "supplied_characters": 412
+        },
+        {
+          "heading": "Leakage Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 29,
+          "source_characters": 1341,
+          "supplied_characters": 1341
+        },
+        {
+          "heading": "Contradiction Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 30,
+          "source_characters": 1259,
+          "supplied_characters": 1259
+        },
+        {
+          "heading": "Provenance Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 31,
+          "source_characters": 797,
+          "supplied_characters": 797
+        },
+        {
+          "heading": "Propagation Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 1466,
+          "supplied_characters": 1466
+        },
+        {
+          "heading": "Propagation Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 33,
+          "source_characters": 379,
+          "supplied_characters": 379
+        },
+        {
+          "heading": "Experimental Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 34,
+          "source_characters": 608,
+          "supplied_characters": 608
+        },
+        {
+          "heading": "Leakage",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 3511,
+          "supplied_characters": 3511
+        },
+        {
+          "heading": "Leakage",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 2875,
+          "supplied_characters": 2875
+        },
+        {
+          "heading": "Provenance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 1395,
+          "supplied_characters": 1395
+        },
+        {
+          "heading": "Propagation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 2248,
+          "supplied_characters": 2248
+        },
+        {
+          "heading": "Propagation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 397,
+          "supplied_characters": 397
+        },
+        {
+          "heading": "Contradiction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 3343,
+          "supplied_characters": 3343
+        },
+        {
+          "heading": "Discussion And Findings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "discussion",
+          "section_index": 41,
+          "source_characters": 394,
+          "supplied_characters": 394
+        },
+        {
+          "heading": "Scope Enforcement Was Bimodal (Get-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 3522,
+          "supplied_characters": 3522
+        },
+        {
+          "heading": "Deduplication Starves Contradiction De-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 1402,
+          "supplied_characters": 1402
+        },
+        {
+          "heading": "Cross-Agent Propagation Is Privilege-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 837,
+          "supplied_characters": 837
+        },
+        {
+          "heading": "Cross-Agent Propagation Is Privilege-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 85,
+          "supplied_characters": 85
+        },
+        {
+          "heading": "The Consistency Cost Is Paid At Write",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 1686,
+          "supplied_characters": 1686
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "limitations",
+          "section_index": 47,
+          "source_characters": 3567,
+          "supplied_characters": 3567
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "limitations",
+          "section_index": 48,
+          "source_characters": 885,
+          "supplied_characters": 885
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "conclusion",
+          "section_index": 49,
+          "source_characters": 3117,
+          "supplied_characters": 3117
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 1509,
+          "supplied_characters": 1509
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 852,
+          "supplied_characters": 852
+        },
+        {
+          "heading": "Advances In Neural Information Processing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 1546,
+          "supplied_characters": 1546
+        },
+        {
+          "heading": "User Memory Sharing In Llm Agents With Dynamic Ac-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 1276,
+          "supplied_characters": 1276
+        },
+        {
+          "heading": "Gen: Enabling Next-Gen Llm Applications Via Multi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 438,
+          "supplied_characters": 438
+        }
+      ],
+      "selected_characters": 64481,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "selected_sections": [
+        {
+          "characters": 212,
+          "heading": "Governed Shared Memory For Multi-Agent Llm Systems",
+          "page": 1
+        },
+        {
+          "characters": 2360,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2065,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 309,
+          "heading": "Contributions",
+          "page": 1
+        },
+        {
+          "characters": 1631,
+          "heading": "Contributions",
+          "page": 2
+        },
+        {
+          "characters": 450,
+          "heading": "Long-Context Retrieval",
+          "page": 2
+        },
+        {
+          "characters": 395,
+          "heading": "Agent Memory Systems",
+          "page": 2
+        },
+        {
+          "characters": 1250,
+          "heading": "Agent Memory Systems",
+          "page": 3
+        },
+        {
+          "characters": 743,
+          "heading": "Distributed Systems And Shared State",
+          "page": 3
+        },
+        {
+          "characters": 1620,
+          "heading": "Memory Governance, Security, And Pri-",
+          "page": 3
+        },
+        {
+          "characters": 2004,
+          "heading": "The Fleet-Memory Problem",
+          "page": 3
+        },
+        {
+          "characters": 706,
+          "heading": "Fleet-Memory Systems",
+          "page": 4
+        },
+        {
+          "characters": 2056,
+          "heading": "Memory Operations",
+          "page": 4
+        },
+        {
+          "characters": 54,
+          "heading": "Fleet-Memory Failure Modes",
+          "page": 4
+        },
+        {
+          "characters": 476,
+          "heading": "Unauthorized Leakage",
+          "page": 4
+        },
+        {
+          "characters": 424,
+          "heading": "Stale Propagation",
+          "page": 5
+        },
+        {
+          "characters": 362,
+          "heading": "Contradiction Persistence",
+          "page": 5
+        },
+        {
+          "characters": 374,
+          "heading": "Provenance Collapse",
+          "page": 5
+        },
+        {
+          "characters": 4,
+          "heading": "Governedsharedmemoryarchitec-",
+          "page": 5
+        },
+        {
+          "characters": 58,
+          "heading": "Design Principles",
+          "page": 5
+        },
+        {
+          "characters": 436,
+          "heading": "Memory Scopes",
+          "page": 5
+        },
+        {
+          "characters": 395,
+          "heading": "Temporal Resolution",
+          "page": 5
+        },
+        {
+          "characters": 358,
+          "heading": "Provenance Graph",
+          "page": 5
+        },
+        {
+          "characters": 275,
+          "heading": "Policy-Governed Retrieval",
+          "page": 5
+        },
+        {
+          "characters": 230,
+          "heading": "Reference Implementation",
+          "page": 6
+        },
+        {
+          "characters": 1418,
+          "heading": "Memclaw",
+          "page": 6
+        },
+        {
+          "characters": 2281,
+          "heading": "Argusfleet",
+          "page": 6
+        },
+        {
+          "characters": 388,
+          "heading": "Evaluation Methodology",
+          "page": 6
+        },
+        {
+          "characters": 412,
+          "heading": "Leakage Experiment",
+          "page": 6
+        },
+        {
+          "characters": 1341,
+          "heading": "Leakage Experiment",
+          "page": 7
+        },
+        {
+          "characters": 1259,
+          "heading": "Contradiction Experiment",
+          "page": 7
+        },
+        {
+          "characters": 797,
+          "heading": "Provenance Experiment",
+          "page": 7
+        },
+        {
+          "characters": 1466,
+          "heading": "Propagation Experiment",
+          "page": 7
+        },
+        {
+          "characters": 379,
+          "heading": "Propagation Experiment",
+          "page": 8
+        },
+        {
+          "characters": 608,
+          "heading": "Experimental Results",
+          "page": 8
+        },
+        {
+          "characters": 3511,
+          "heading": "Leakage",
+          "page": 8
+        },
+        {
+          "characters": 2875,
+          "heading": "Leakage",
+          "page": 9
+        },
+        {
+          "characters": 1395,
+          "heading": "Provenance",
+          "page": 10
+        },
+        {
+          "characters": 2248,
+          "heading": "Propagation",
+          "page": 10
+        },
+        {
+          "characters": 397,
+          "heading": "Propagation",
+          "page": 11
+        },
+        {
+          "characters": 3343,
+          "heading": "Contradiction",
+          "page": 11
+        },
+        {
+          "characters": 394,
+          "heading": "Discussion And Findings",
+          "page": 11
+        },
+        {
+          "characters": 3522,
+          "heading": "Scope Enforcement Was Bimodal (Get-",
+          "page": 12
+        },
+        {
+          "characters": 1402,
+          "heading": "Deduplication Starves Contradiction De-",
+          "page": 12
+        },
+        {
+          "characters": 837,
+          "heading": "Cross-Agent Propagation Is Privilege-",
+          "page": 12
+        },
+        {
+          "characters": 85,
+          "heading": "Cross-Agent Propagation Is Privilege-",
+          "page": 13
+        },
+        {
+          "characters": 1686,
+          "heading": "The Consistency Cost Is Paid At Write",
+          "page": 13
+        },
+        {
+          "characters": 3567,
+          "heading": "Limitations",
+          "page": 13
+        },
+        {
+          "characters": 885,
+          "heading": "Limitations",
+          "page": 14
+        },
+        {
+          "characters": 3117,
+          "heading": "Conclusion",
+          "page": 14
+        },
+        {
+          "characters": 1509,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 852,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 1546,
+          "heading": "Advances In Neural Information Processing Systems",
+          "page": 15
+        },
+        {
+          "characters": 1276,
+          "heading": "User Memory Sharing In Llm Agents With Dynamic Ac-",
+          "page": 15
+        },
+        {
+          "characters": 438,
+          "heading": "Gen: Enabling Next-Gen Llm Applications Via Multi-",
+          "page": 15
+        }
+      ],
+      "selected_text_sha256": "130941fa6e218d51099a4e7f4d5adeaf3bee0fe14594e740c9455173a325db93",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "6c3b893a8b4be981e27ad90fd2adbb3412df661aec7c1a21fd006a071f166b0b",
+      "source_pages": 15,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0002"
+        ],
+        "excerpt": "AImemorysystemsareincreasinglymovingbeyondisolatedchatbothistoriestowardsharedstateusedbyfleetsofcooperating\nagents. Inthissetting,memoryisnotonlyaretrievalproblem: itbecomesagoverneddistributed-systemsprobleminvolvingscoped\naccess,temporalcorrectness,provenance,synchronization,andpolicy-controlledpropagation. Weintroduceasystemsarchitecture\nfor governed shared memory in multi-agent LLM environments. The architecture formalizes the fleet-memory problem, identifies\nfour failure modes\u2014unauthorized leakage, stale propagation, contradiction persistence, and provenance collapse\u2014and defines\nprimitives for scoped retrieval, temporal supersession, provenance tracking, and policy-governed memory propagation.\nWe instantiate these primitives in MemClaw, a production multi-tenant memory service, and evaluate them using ArgusFleet,\na reproducible harness that exercises the live REST API along four ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8fd0be1d1d9adb2d8076012ff30c2cb2f020d716b2e69338a813f42e5eb47e89",
+            "evidence_id": "E01be9106fda4f321-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "AImemorysystemsareincreasinglymovingbeyondisolatedchatbothistoriestowardsharedstateusedbyfleetsofcooperating\nagents. Inthissetting,memoryisnotonlyaretrievalproblem: itbecomesagoverneddistributed-systemsprobleminvolvingscoped\naccess,temporalcorrectness,provenance,synchronization,andpolicy-controlledpropagation. Weintroduceasystemsarchitecture\nfor governed shared memory in multi-agent LLM environments. The architecture formalizes the fleet-memory problem, identifies\nfour failure modes\u2014unauthorized leakage, stale propagation, contradiction persistence, and provenance collapse\u2014and defines\nprimitives for scoped retrieval, temporal supersession, provenance tracking, and policy-governed memory propagation.\nWe instantiate these primitives in MemClaw, a production multi-tenant memory service, and evaluate them using ArgusFleet,\na reproducible harness that exercises the live REST API along four "
+              }
+            ],
+            "text": "AImemorysystemsareincreasinglymovingbeyondisolatedchatbothistoriestowardsharedstateusedbyfleetsofcooperating\nagents. Inthissetting,memoryisnotonlyaretrievalproblem: itbecomesagoverneddistributed-systemsprobleminvolvingscoped\naccess,temporalcorrectness,provenance,synchronization,andpolicy-controlledpropagation. Weintroduceasystemsarchitecture\nfor governed shared memory in multi-agent LLM environments. The architecture formalizes the fleet-memory problem, identifies\nfour failure modes\u2014unauthorized leakage, stale propagation, contradiction persistence, and provenance collapse\u2014and defines\nprimitives for scoped retrieval, temporal supersession, provenance tracking, and policy-governed memory propagation.\nWe instantiate these primitives in MemClaw, a production multi-tenant memory service, and evaluate them using ArgusFleet,\na reproducible harness that exercises the live REST API along four "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0008"
+        ],
+        "excerpt": "This paper makes three contributions.\nFirst, we formalize the fleet-memory problem for multi-\nagent LLM systems, modeling shared memory as governed\noperational state with scope, provenance, and temporal su-\npersession. We identify four resulting failure modes: unau-\n1\narXiv:2606.24535v1  [cs.AI]  23 Jun 2026\nFigure1: Systemoverview. AfleetofcooperatingagentswritestoandreadsfromgovernedsharedmemorythroughMemClaw's\nRESTAPI.MemClawexposesfourgovernancedimensions\u2014scope,time,provenance,andpropagation\u2014correspondingtowho\nmay read a memory, which version is current, where a memory came from, and how it moves across agent boundaries.\nArgusFleet probes the same API surface with one experiment per dimension: leakage probes scope enforcement, contradiction\nprobes temporal supersession, provenance walks derivation chains, and propagation measures authorized visibility and cross-\nfleet leakage. Stale ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Contributions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2600ead940f38989eb194de2f73238ea810df2168658eed4923a2d7b61841bc5",
+            "evidence_id": "E01be9106fda4f321-B0008",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Contributions",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 309,
+                "page": 1,
+                "section": "Contributions",
+                "section_index": 3,
+                "start": 0,
+                "text": "This paper makes three contributions.\nFirst, we formalize the fleet-memory problem for multi-\nagent LLM systems, modeling shared memory as governed\noperational state with scope, provenance, and temporal su-\npersession. We identify four resulting failure modes: unau-\n1\narXiv:2606.24535v1  [cs.AI]  23 Jun 2026"
+              },
+              {
+                "end": 590,
+                "page": 2,
+                "section": "Contributions",
+                "section_index": 4,
+                "start": 0,
+                "text": "Figure1: Systemoverview. AfleetofcooperatingagentswritestoandreadsfromgovernedsharedmemorythroughMemClaw's\nRESTAPI.MemClawexposesfourgovernancedimensions\u2014scope,time,provenance,andpropagation\u2014correspondingtowho\nmay read a memory, which version is current, where a memory came from, and how it moves across agent boundaries.\nArgusFleet probes the same API surface with one experiment per dimension: leakage probes scope enforcement, contradiction\nprobes temporal supersession, provenance walks derivation chains, and propagation measures authorized visibility and cross-\nfleet leakage. Stale "
+              }
+            ],
+            "text": "This paper makes three contributions.\nFirst, we formalize the fleet-memory problem for multi-\nagent LLM systems, modeling shared memory as governed\noperational state with scope, provenance, and temporal su-\npersession. We identify four resulting failure modes: unau-\n1\narXiv:2606.24535v1  [cs.AI]  23 Jun 2026\nFigure1: Systemoverview. AfleetofcooperatingagentswritestoandreadsfromgovernedsharedmemorythroughMemClaw's\nRESTAPI.MemClawexposesfourgovernancedimensions\u2014scope,time,provenance,andpropagation\u2014correspondingtowho\nmay read a memory, which version is current, where a memory came from, and how it moves across agent boundaries.\nArgusFleet probes the same API surface with one experiment per dimension: leakage probes scope enforcement, contradiction\nprobes temporal supersession, provenance walks derivation chains, and propagation measures authorized visibility and cross-\nfleet leakage. Stale "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0020"
+        ],
+        "excerpt": "We define a fleet-memory system as:\n\ud835\udc39=(\ud835\udc34,\ud835\udc40,\ud835\udc3a,\ud835\udc43,\ud835\udc47)\nwhere:\n\u2022\ud835\udc34represents a set of interacting agents,\n\u2022\ud835\udc40is a shared memory substrate,\n\u2022\ud835\udc3ais a governance and policy layer,\n\u2022\ud835\udc43represents provenance metadata,\n\u2022\ud835\udc47definestemporalorderingandsupersessionsemantics.\nUnlike single-agent conversational memory, fleet-memory\nsystems must maintain correctness across interacting reads\nand writes performed by multiple autonomous actors over\ntime.\nThis introduces challenges analogous to:\n\u2022distributed consistency,\n\u2022access control,\n\u2022synchronization,\n\u2022event sourcing,\n\u2022and state resolution.\nThecentralchallengeisnolongermerelyretrievingseman-\ntically relevant information; it is maintaining operationally\ncorrect shared state.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Fleet-Memory Systems",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "64c82edbe6540a7d753efb7c72bdc860d228cba636d8654db7ed54c3e9db8fc8",
+            "evidence_id": "E01be9106fda4f321-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Fleet-Memory Systems",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 706,
+                "page": 4,
+                "section": "Fleet-Memory Systems",
+                "section_index": 11,
+                "start": 0,
+                "text": "We define a fleet-memory system as:\n\ud835\udc39=(\ud835\udc34,\ud835\udc40,\ud835\udc3a,\ud835\udc43,\ud835\udc47)\nwhere:\n\u2022\ud835\udc34represents a set of interacting agents,\n\u2022\ud835\udc40is a shared memory substrate,\n\u2022\ud835\udc3ais a governance and policy layer,\n\u2022\ud835\udc43represents provenance metadata,\n\u2022\ud835\udc47definestemporalorderingandsupersessionsemantics.\nUnlike single-agent conversational memory, fleet-memory\nsystems must maintain correctness across interacting reads\nand writes performed by multiple autonomous actors over\ntime.\nThis introduces challenges analogous to:\n\u2022distributed consistency,\n\u2022access control,\n\u2022synchronization,\n\u2022event sourcing,\n\u2022and state resolution.\nThecentralchallengeisnolongermerelyretrievingseman-\ntically relevant information; it is maintaining operationally\ncorrect shared state."
+              }
+            ],
+            "text": "We define a fleet-memory system as:\n\ud835\udc39=(\ud835\udc34,\ud835\udc40,\ud835\udc3a,\ud835\udc43,\ud835\udc47)\nwhere:\n\u2022\ud835\udc34represents a set of interacting agents,\n\u2022\ud835\udc40is a shared memory substrate,\n\u2022\ud835\udc3ais a governance and policy layer,\n\u2022\ud835\udc43represents provenance metadata,\n\u2022\ud835\udc47definestemporalorderingandsupersessionsemantics.\nUnlike single-agent conversational memory, fleet-memory\nsystems must maintain correctness across interacting reads\nand writes performed by multiple autonomous actors over\ntime.\nThis introduces challenges analogous to:\n\u2022distributed consistency,\n\u2022access control,\n\u2022synchronization,\n\u2022event sourcing,\n\u2022and state resolution.\nThecentralchallengeisnolongermerelyretrievingseman-\ntically relevant information; it is maintaining operationally\ncorrect shared state."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0022"
+        ],
+        "excerpt": "on:\n\u2022authorization,\n\u2022state freshness,\n\u2022contradiction resolution,\n\u2022provenance validity,\n\u2022and synchronization guarantees.\nWe make the authorization requirement precise, since it is\ntheonetheevaluationfalsifies. Letauth(\ud835\udc4e \ud835\udc57,\ud835\udc60 \ud835\udc56,\ud835\udc3a)denotethe\npredicate\"agent\ud835\udc4e \ud835\udc57 isentitled,undergovernance\ud835\udc3a,toviewa\nmemorycarryingscope\ud835\udc60 \ud835\udc56,\"where\ud835\udc60 \ud835\udc56 decomposesintonested\nlevels(agent\u2291fleet\u2291tenant; \u00a76). Aretrievalisscope-sound\nwhen\n\ud835\udc64\ud835\udc56\u2208\ud835\udc5f \ud835\udc57 =\u21d2auth(\ud835\udc4e \ud835\udc57,\ud835\udc60 \ud835\udc56,\ud835\udc3a).(Inv-Scope)\nThatis,noagentreceivesamemoryitsidentityisnotentitled\nto under the row's scope.Inv-Scopeis the formal content of\nthe unauthorized-leakage failure mode (\u00a74): a leak is exactly\naviolationofit. Acorrectgoverned-memoryimplementation\nmustevaluatethefullscopepredicateoneveryretrievalpath;\nas \u00a78 shows, theGET-by-id path evaluated only the tenant\nprojection of\ud835\udc60 \ud835\udc56 at measurement time and so violatedInv-\nScopefor any fleet- or agent-scoped row. The ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory Operations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f01e7ccd2bc4d8ae694ad283f84c144dcec771a20e0bd01592234501988fc60a",
+            "evidence_id": "E01be9106fda4f321-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Memory Operations",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1776,
+                "page": 4,
+                "section": "Memory Operations",
+                "section_index": 12,
+                "start": 889,
+                "text": "on:\n\u2022authorization,\n\u2022state freshness,\n\u2022contradiction resolution,\n\u2022provenance validity,\n\u2022and synchronization guarantees.\nWe make the authorization requirement precise, since it is\ntheonetheevaluationfalsifies. Letauth(\ud835\udc4e \ud835\udc57,\ud835\udc60 \ud835\udc56,\ud835\udc3a)denotethe\npredicate\"agent\ud835\udc4e \ud835\udc57 isentitled,undergovernance\ud835\udc3a,toviewa\nmemorycarryingscope\ud835\udc60 \ud835\udc56,\"where\ud835\udc60 \ud835\udc56 decomposesintonested\nlevels(agent\u2291fleet\u2291tenant; \u00a76). Aretrievalisscope-sound\nwhen\n\ud835\udc64\ud835\udc56\u2208\ud835\udc5f \ud835\udc57 =\u21d2auth(\ud835\udc4e \ud835\udc57,\ud835\udc60 \ud835\udc56,\ud835\udc3a).(Inv-Scope)\nThatis,noagentreceivesamemoryitsidentityisnotentitled\nto under the row's scope.Inv-Scopeis the formal content of\nthe unauthorized-leakage failure mode (\u00a74): a leak is exactly\naviolationofit. Acorrectgoverned-memoryimplementation\nmustevaluatethefullscopepredicateoneveryretrievalpath;\nas \u00a78 shows, theGET-by-id path evaluated only the tenant\nprojection of\ud835\udc60 \ud835\udc56 at measurement time and so violatedInv-\nScopefor any fleet- or agent-scoped row. The "
+              }
+            ],
+            "text": "on:\n\u2022authorization,\n\u2022state freshness,\n\u2022contradiction resolution,\n\u2022provenance validity,\n\u2022and synchronization guarantees.\nWe make the authorization requirement precise, since it is\ntheonetheevaluationfalsifies. Letauth(\ud835\udc4e \ud835\udc57,\ud835\udc60 \ud835\udc56,\ud835\udc3a)denotethe\npredicate\"agent\ud835\udc4e \ud835\udc57 isentitled,undergovernance\ud835\udc3a,toviewa\nmemorycarryingscope\ud835\udc60 \ud835\udc56,\"where\ud835\udc60 \ud835\udc56 decomposesintonested\nlevels(agent\u2291fleet\u2291tenant; \u00a76). Aretrievalisscope-sound\nwhen\n\ud835\udc64\ud835\udc56\u2208\ud835\udc5f \ud835\udc57 =\u21d2auth(\ud835\udc4e \ud835\udc57,\ud835\udc60 \ud835\udc56,\ud835\udc3a).(Inv-Scope)\nThatis,noagentreceivesamemoryitsidentityisnotentitled\nto under the row's scope.Inv-Scopeis the formal content of\nthe unauthorized-leakage failure mode (\u00a74): a leak is exactly\naviolationofit. Acorrectgoverned-memoryimplementation\nmustevaluatethefullscopepredicateoneveryretrievalpath;\nas \u00a78 shows, theGET-by-id path evaluated only the tenant\nprojection of\ud835\udc60 \ud835\udc56 at measurement time and so violatedInv-\nScopefor any fleet- or agent-scoped row. The "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0038"
+        ],
+        "excerpt": "ArgusFleetisanopen-sourcePython3.12evaluationharness 2\nforgovernedsharedmemory,comprisingfourexperiments,an\nasync REST client, a typed domain model, structured event\nlogging, and a reproducible reporting pipeline. It is dis-\ntributedastheargusfleetpackage;weusethenameArgus-\nFleet for the system throughout this paper. The harness pro-\nduces JSONL event traces, CSV summaries, and Matplotlib\nfigures from each run, all derived from the same canonical\neventstreamsoanalysiscanbere-executedwithoutre-hitting\nthe server. The event traces backing every number in this\n1https://memclaw.net\n2https://github.com/caura-ai/argusfleet\npaper\u2014includingallfour\ud835\udc41=200contradictionrunsandthe\n\ud835\udc41=100comparison (\u00a78) \u2014 are committed undertraces/\nin that repository (commit2c55bb5); each experiment's re-\nportedfiguresandsummary.csvregeneratedeterministically\nfrom its per-writeevents.jsonl.\nDeterminism.Every workload ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Argusfleet",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bb3f9622d05f2bba068cdff8d442f315d4678f260bd570f39b514d2816b77e22",
+            "evidence_id": "E01be9106fda4f321-B0038",
+            "pages": [
+              6
+            ],
+            "section": "Argusfleet",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "Argusfleet",
+                "section_index": 26,
+                "start": 0,
+                "text": "ArgusFleetisanopen-sourcePython3.12evaluationharness 2\nforgovernedsharedmemory,comprisingfourexperiments,an\nasync REST client, a typed domain model, structured event\nlogging, and a reproducible reporting pipeline. It is dis-\ntributedastheargusfleetpackage;weusethenameArgus-\nFleet for the system throughout this paper. The harness pro-\nduces JSONL event traces, CSV summaries, and Matplotlib\nfigures from each run, all derived from the same canonical\neventstreamsoanalysiscanbere-executedwithoutre-hitting\nthe server. The event traces backing every number in this\n1https://memclaw.net\n2https://github.com/caura-ai/argusfleet\npaper\u2014includingallfour\ud835\udc41=200contradictionrunsandthe\n\ud835\udc41=100comparison (\u00a78) \u2014 are committed undertraces/\nin that repository (commit2c55bb5); each experiment's re-\nportedfiguresandsummary.csvregeneratedeterministically\nfrom its per-writeevents.jsonl.\nDeterminism.Every workload "
+              }
+            ],
+            "text": "ArgusFleetisanopen-sourcePython3.12evaluationharness 2\nforgovernedsharedmemory,comprisingfourexperiments,an\nasync REST client, a typed domain model, structured event\nlogging, and a reproducible reporting pipeline. It is dis-\ntributedastheargusfleetpackage;weusethenameArgus-\nFleet for the system throughout this paper. The harness pro-\nduces JSONL event traces, CSV summaries, and Matplotlib\nfigures from each run, all derived from the same canonical\neventstreamsoanalysiscanbere-executedwithoutre-hitting\nthe server. The event traces backing every number in this\n1https://memclaw.net\n2https://github.com/caura-ai/argusfleet\npaper\u2014includingallfour\ud835\udc41=200contradictionrunsandthe\n\ud835\udc41=100comparison (\u00a78) \u2014 are committed undertraces/\nin that repository (commit2c55bb5); each experiment's re-\nportedfiguresandsummary.csvregeneratedeterministically\nfrom its per-writeevents.jsonl.\nDeterminism.Every workload "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0042"
+        ],
+        "excerpt": "We instantiate\ud835\udc39=4fleets, each containing\ud835\udc3e=6agents,\nin a single tenant. The first agent in each fleet (theowner)\nwritestwosecrets: onewithfleetscope,onewithagentscope,\neach containing a unique canary token in metadata and sub-\nstantively distinct prose in content. Every agent then probes\nevery secret by issuing a search whose query is the secret's\nprose; the harness classifies each probe against ground truth\n6\n(does this agent's tenant/fleet/agent identity entitle it to see\nthis secret?) and labels the result.\nFor each probe, we record two orthogonal failure signals:\n\u2022leak\u2014 the server returned a row the probe was not\nentitled to see; this is the security failure that motivates\ngovernance.\n\u2022miss\u2014 the server failed to return a row the probe was\nentitled to see; this is an availability failure that reflects\nretrieval recall.\nWe reportleak_rate=\ud835\udc5b leaks/\ud835\udc5bexpected-deny and\nmiss_rate=\ud835\udc5b ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Leakage Experiment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "82bd5c2eb28c63a5b339c78eac9ff23aa466c9545e6ca0b465d9f56458d0b502",
+            "evidence_id": "E01be9106fda4f321-B0042",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Leakage Experiment",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 412,
+                "page": 6,
+                "section": "Leakage Experiment",
+                "section_index": 28,
+                "start": 0,
+                "text": "We instantiate\ud835\udc39=4fleets, each containing\ud835\udc3e=6agents,\nin a single tenant. The first agent in each fleet (theowner)\nwritestwosecrets: onewithfleetscope,onewithagentscope,\neach containing a unique canary token in metadata and sub-\nstantively distinct prose in content. Every agent then probes\nevery secret by issuing a search whose query is the secret's\nprose; the harness classifies each probe against ground truth\n6"
+              },
+              {
+                "end": 478,
+                "page": 7,
+                "section": "Leakage Experiment",
+                "section_index": 29,
+                "start": 0,
+                "text": "(does this agent's tenant/fleet/agent identity entitle it to see\nthis secret?) and labels the result.\nFor each probe, we record two orthogonal failure signals:\n\u2022leak\u2014 the server returned a row the probe was not\nentitled to see; this is the security failure that motivates\ngovernance.\n\u2022miss\u2014 the server failed to return a row the probe was\nentitled to see; this is an availability failure that reflects\nretrieval recall.\nWe reportleak_rate=\ud835\udc5b leaks/\ud835\udc5bexpected-deny and\nmiss_rate=\ud835\udc5b "
+              }
+            ],
+            "text": "We instantiate\ud835\udc39=4fleets, each containing\ud835\udc3e=6agents,\nin a single tenant. The first agent in each fleet (theowner)\nwritestwosecrets: onewithfleetscope,onewithagentscope,\neach containing a unique canary token in metadata and sub-\nstantively distinct prose in content. Every agent then probes\nevery secret by issuing a search whose query is the secret's\nprose; the harness classifies each probe against ground truth\n6\n(does this agent's tenant/fleet/agent identity entitle it to see\nthis secret?) and labels the result.\nFor each probe, we record two orthogonal failure signals:\n\u2022leak\u2014 the server returned a row the probe was not\nentitled to see; this is the security failure that motivates\ngovernance.\n\u2022miss\u2014 the server failed to return a row the probe was\nentitled to see; this is an availability failure that reflects\nretrieval recall.\nWe reportleak_rate=\ud835\udc5b leaks/\ud835\udc5bexpected-deny and\nmiss_rate=\ud835\udc5b "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0044"
+        ],
+        "excerpt": "We construct100facts drawn from20\ndistinct subject\u2013predicate templates (e.g.,\n\u27e8billing-service-N,deployment_region\u27e9). For each fact\nwe run two scenarios: asequentialwriter pair separated\nby a small delay, and aconcurrentpair dispatched simul-\ntaneously. Within each pair, both writes share the same\nsubject_entity_idandpredicatebut assert different\nobject_value. The RDF triple is what we expect to route\nthe second write into the server's structural contradiction\ndetector rather than into the embedding-similarity dedup\ngate.\nWe report:\n\u2022detection_rate\u2014 the fraction of fact-runs in which,\nafter a settle window, aGET-by-idre-fetchof the two\nrowsshowsasupersessionedge(supersedes_id)orthe\nolder row flipped to a non-active status. The re-fetch is\nessential: contradiction detection runspost-commit and\nasynchronously, sosupersedes_idis never present ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Contradiction Experiment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "710df70a664561d7ed65eb960ac13d773add1e7cc429a24017ac38fe95ef85ed",
+            "evidence_id": "E01be9106fda4f321-B0044",
+            "pages": [
+              7
+            ],
+            "section": "Contradiction Experiment",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 852,
+                "page": 7,
+                "section": "Contradiction Experiment",
+                "section_index": 30,
+                "start": 0,
+                "text": "We construct100facts drawn from20\ndistinct subject\u2013predicate templates (e.g.,\n\u27e8billing-service-N,deployment_region\u27e9). For each fact\nwe run two scenarios: asequentialwriter pair separated\nby a small delay, and aconcurrentpair dispatched simul-\ntaneously. Within each pair, both writes share the same\nsubject_entity_idandpredicatebut assert different\nobject_value. The RDF triple is what we expect to route\nthe second write into the server's structural contradiction\ndetector rather than into the embedding-similarity dedup\ngate.\nWe report:\n\u2022detection_rate\u2014 the fraction of fact-runs in which,\nafter a settle window, aGET-by-idre-fetchof the two\nrowsshowsasupersessionedge(supersedes_id)orthe\nolder row flipped to a non-active status. The re-fetch is\nessential: contradiction detection runspost-commit and\nasynchronously, sosupersedes_idis never present "
+              }
+            ],
+            "text": "We construct100facts drawn from20\ndistinct subject\u2013predicate templates (e.g.,\n\u27e8billing-service-N,deployment_region\u27e9). For each fact\nwe run two scenarios: asequentialwriter pair separated\nby a small delay, and aconcurrentpair dispatched simul-\ntaneously. Within each pair, both writes share the same\nsubject_entity_idandpredicatebut assert different\nobject_value. The RDF triple is what we expect to route\nthe second write into the server's structural contradiction\ndetector rather than into the embedding-similarity dedup\ngate.\nWe report:\n\u2022detection_rate\u2014 the fraction of fact-runs in which,\nafter a settle window, aGET-by-idre-fetchof the two\nrowsshowsasupersessionedge(supersedes_id)orthe\nolder row flipped to a non-active status. The re-fetch is\nessential: contradiction detection runspost-commit and\nasynchronously, sosupersedes_idis never present "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0046"
+        ],
+        "excerpt": "We construct50derivation chains of depth4(200total\nwrites). Each chain corresponds to a synthetic incident nar-\nrative drawn from a pool of25operational topics (cycled,\nwith a per-chain nonce keeping content distinct) (e.g.,check-\nout error rate spike,Kafka consumer rebalance loop). The\nfour steps in each chain correspond toobservation,hypothe-\nsis,mitigation, andverification. Each step writes a memory\nwithmetadata.derived_fromencoding the parent identi-\nfier. After all writes settle, the harness fetches the leaf and\nwalks the chain back to the root, grading three signals:\n\u2022completeness\u2014 every ancestor on the planned chain is\nreachable viaGET.\n\u2022accuracy\u2014 at each step the observed writer matches\nthe planned writer.\n\u2022depth_fidelity\u2014 the reconstructed chain length equals\nthe planned depth.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Provenance Experiment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db07f0d9fb44875798de17280428e1e9fec200454b4f372404a629f16ecac3e5",
+            "evidence_id": "E01be9106fda4f321-B0046",
+            "pages": [
+              7
+            ],
+            "section": "Provenance Experiment",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 797,
+                "page": 7,
+                "section": "Provenance Experiment",
+                "section_index": 31,
+                "start": 0,
+                "text": "We construct50derivation chains of depth4(200total\nwrites). Each chain corresponds to a synthetic incident nar-\nrative drawn from a pool of25operational topics (cycled,\nwith a per-chain nonce keeping content distinct) (e.g.,check-\nout error rate spike,Kafka consumer rebalance loop). The\nfour steps in each chain correspond toobservation,hypothe-\nsis,mitigation, andverification. Each step writes a memory\nwithmetadata.derived_fromencoding the parent identi-\nfier. After all writes settle, the harness fetches the leaf and\nwalks the chain back to the root, grading three signals:\n\u2022completeness\u2014 every ancestor on the planned chain is\nreachable viaGET.\n\u2022accuracy\u2014 at each step the observed writer matches\nthe planned writer.\n\u2022depth_fidelity\u2014 the reconstructed chain length equals\nthe planned depth."
+              }
+            ],
+            "text": "We construct50derivation chains of depth4(200total\nwrites). Each chain corresponds to a synthetic incident nar-\nrative drawn from a pool of25operational topics (cycled,\nwith a per-chain nonce keeping content distinct) (e.g.,check-\nout error rate spike,Kafka consumer rebalance loop). The\nfour steps in each chain correspond toobservation,hypothe-\nsis,mitigation, andverification. Each step writes a memory\nwithmetadata.derived_fromencoding the parent identi-\nfier. After all writes settle, the harness fetches the leaf and\nwalks the chain back to the root, grading three signals:\n\u2022completeness\u2014 every ancestor on the planned chain is\nreachable viaGET.\n\u2022accuracy\u2014 at each step the observed writer matches\nthe planned writer.\n\u2022depth_fidelity\u2014 the reconstructed chain length equals\nthe planned depth."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0047"
+        ],
+        "excerpt": "Theexperimenthastwodeliberatelyseparatephases,because\nthe visibilityrateand the consistencylatencywant opposite\nmeasurement regimes.\nRate phase.A designated writer agent writes40fleet-\nscoped facts, each phrased as a substantively distinct opera-\ntionalstatement(drawnfrom40templates).3siblingreaders\nin the same fleet and2non-fleet readers in the same tenant\nthen poll/searchfor the prose (200probes total). Fleet-\nsibling probes time out after30seconds; non-fleet probes\nexecuteasingleattemptandanyhitiscountedasacross-fleet\nleak. This phase scales with the fact count to tighten the rate\nCIs; its per-probe latency isnotused (see below).\nWindowphase.Becausetheratephaseseedseveryfactbe-\nforedraininganyprobethroughaconcurrencygate,aprobe's\nfirst/searchlands long after the row is already searchable\n\u2014 so its time-to-visibility measures harness scheduling, not\nserver lag, and inflates with probe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Propagation Experiment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4acb4bacf1554f46a44be9ea08418fba5e21c3ede961bffab3771d20e2651d54",
+            "evidence_id": "E01be9106fda4f321-B0047",
+            "pages": [
+              7
+            ],
+            "section": "Propagation Experiment",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 7,
+                "section": "Propagation Experiment",
+                "section_index": 32,
+                "start": 0,
+                "text": "Theexperimenthastwodeliberatelyseparatephases,because\nthe visibilityrateand the consistencylatencywant opposite\nmeasurement regimes.\nRate phase.A designated writer agent writes40fleet-\nscoped facts, each phrased as a substantively distinct opera-\ntionalstatement(drawnfrom40templates).3siblingreaders\nin the same fleet and2non-fleet readers in the same tenant\nthen poll/searchfor the prose (200probes total). Fleet-\nsibling probes time out after30seconds; non-fleet probes\nexecuteasingleattemptandanyhitiscountedasacross-fleet\nleak. This phase scales with the fact count to tighten the rate\nCIs; its per-probe latency isnotused (see below).\nWindowphase.Becausetheratephaseseedseveryfactbe-\nforedraininganyprobethroughaconcurrencygate,aprobe's\nfirst/searchlands long after the row is already searchable\n\u2014 so its time-to-visibility measures harness scheduling, not\nserver lag, and inflates with probe "
+              }
+            ],
+            "text": "Theexperimenthastwodeliberatelyseparatephases,because\nthe visibilityrateand the consistencylatencywant opposite\nmeasurement regimes.\nRate phase.A designated writer agent writes40fleet-\nscoped facts, each phrased as a substantively distinct opera-\ntionalstatement(drawnfrom40templates).3siblingreaders\nin the same fleet and2non-fleet readers in the same tenant\nthen poll/searchfor the prose (200probes total). Fleet-\nsibling probes time out after30seconds; non-fleet probes\nexecuteasingleattemptandanyhitiscountedasacross-fleet\nleak. This phase scales with the fact count to tighten the rate\nCIs; its per-probe latency isnotused (see below).\nWindowphase.Becausetheratephaseseedseveryfactbe-\nforedraininganyprobethroughaconcurrencygate,aprobe's\nfirst/searchlands long after the row is already searchable\n\u2014 so its time-to-visibility measures harness scheduling, not\nserver lag, and inflates with probe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0053"
+        ],
+        "excerpt": "trust=1\u2014\nbelowthetrust-2cross-fleet-readrung\u2014successfullyfetched\nafleet-1row, while its same-fleet control and the trust-2\ncredential behaved as expected (Table 3). Inspecting the\nhandler confirmed the cause:GET/memories/{id}\nchecked onlyenforce_readable_tenantand\nmemory.tenant_id==tenant_id; it never consulted\nthe caller's fleet, agent, the row's visibility scope, or the\ntrust level, so the resolvedagent_idwas discarded. The\naccess leak was therefore a genuineenforcement gapon the\nGETpath, not an authentication-model artifact. In the terms\nof \u00a73, the handler discharged only the tenant projection of\n\ud835\udc60\ud835\udc56, violatingInv-Scopefor fleet- and agent-scoped rows \u2014\nthe measured leak was exactly the predicted violation. We\ndisclosed the gap; it was remediated server-side during the\nstudy (Remediation, \u00a79.1).\nTable 3: Agent-scopedGET-by-id probe,as measured(2026-\n05-30). ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Leakage",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1a0511263f6832dc5413374f6b610bc9c9439693314704d03396f35c61d65cab",
+            "evidence_id": "E01be9106fda4f321-B0053",
+            "pages": [
+              8
+            ],
+            "section": "Leakage",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2602,
+                "page": 8,
+                "section": "Leakage",
+                "section_index": 35,
+                "start": 1730,
+                "text": "trust=1\u2014\nbelowthetrust-2cross-fleet-readrung\u2014successfullyfetched\nafleet-1row, while its same-fleet control and the trust-2\ncredential behaved as expected (Table 3). Inspecting the\nhandler confirmed the cause:GET/memories/{id}\nchecked onlyenforce_readable_tenantand\nmemory.tenant_id==tenant_id; it never consulted\nthe caller's fleet, agent, the row's visibility scope, or the\ntrust level, so the resolvedagent_idwas discarded. The\naccess leak was therefore a genuineenforcement gapon the\nGETpath, not an authentication-model artifact. In the terms\nof \u00a73, the handler discharged only the tenant projection of\n\ud835\udc60\ud835\udc56, violatingInv-Scopefor fleet- and agent-scoped rows \u2014\nthe measured leak was exactly the predicted violation. We\ndisclosed the gap; it was remediated server-side during the\nstudy (Remediation, \u00a79.1).\nTable 3: Agent-scopedGET-by-id probe,as measured(2026-\n05-30). "
+              }
+            ],
+            "text": "trust=1\u2014\nbelowthetrust-2cross-fleet-readrung\u2014successfullyfetched\nafleet-1row, while its same-fleet control and the trust-2\ncredential behaved as expected (Table 3). Inspecting the\nhandler confirmed the cause:GET/memories/{id}\nchecked onlyenforce_readable_tenantand\nmemory.tenant_id==tenant_id; it never consulted\nthe caller's fleet, agent, the row's visibility scope, or the\ntrust level, so the resolvedagent_idwas discarded. The\naccess leak was therefore a genuineenforcement gapon the\nGETpath, not an authentication-model artifact. In the terms\nof \u00a73, the handler discharged only the tenant projection of\n\ud835\udc60\ud835\udc56, violatingInv-Scopefor fleet- and agent-scoped rows \u2014\nthe measured leak was exactly the predicted violation. We\ndisclosed the gap; it was remediated server-side during the\nstudy (Remediation, \u00a79.1).\nTable 3: Agent-scopedGET-by-id probe,as measured(2026-\n05-30). "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0055"
+        ],
+        "excerpt": "embedding-similarity scan.\n8\nTable2: Headlineresultsacrossthefourexperimentsat\ud835\udc41=200(plannedprobes/writesperexperiment)onafreshly-provisioned\nMemClaw tenant. Leakage carries two signals per probe: the authoritativeaccesssignal fromGET-by-id, and the secondary\ndiscoverysignal from semantic search. Counts in parentheses indicate the denominator the rate is over. Each rate is followed\nby its95%Wilson score interval. The GET-by-id tenant-key rows measure tenant-wide reachability under a tenant-scoped\ncredential and should be read as exposure under tenant authority, not by themselves as a sub-tenant policy violation. The\nsub-tenantenforcementgapisestablishedbytheagent-scopedprobeinTable3: atmeasurementtime,atrust-1agentcouldGET\na cross-fleet row that the trust ladder should have denied; this was remediated on 2026-05-31 (\u00a79.1; re-probe trust-1cross-fleet\n0/36).\nExperiment Metric ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Leakage",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "38c930e3348473cc789364f13490b5ad3aaee170c07fa853f2f94263e9d5cc95",
+            "evidence_id": "E01be9106fda4f321-B0055",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Leakage",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3511,
+                "page": 8,
+                "section": "Leakage",
+                "section_index": 35,
+                "start": 3483,
+                "text": "embedding-similarity scan.\n8"
+              },
+              {
+                "end": 857,
+                "page": 9,
+                "section": "Leakage",
+                "section_index": 36,
+                "start": 0,
+                "text": "Table2: Headlineresultsacrossthefourexperimentsat\ud835\udc41=200(plannedprobes/writesperexperiment)onafreshly-provisioned\nMemClaw tenant. Leakage carries two signals per probe: the authoritativeaccesssignal fromGET-by-id, and the secondary\ndiscoverysignal from semantic search. Counts in parentheses indicate the denominator the rate is over. Each rate is followed\nby its95%Wilson score interval. The GET-by-id tenant-key rows measure tenant-wide reachability under a tenant-scoped\ncredential and should be read as exposure under tenant authority, not by themselves as a sub-tenant policy violation. The\nsub-tenantenforcementgapisestablishedbytheagent-scopedprobeinTable3: atmeasurementtime,atrust-1agentcouldGET\na cross-fleet row that the trust ladder should have denied; this was remediated on 2026-05-31 (\u00a79.1; re-probe trust-1cross-fleet\n0/36).\nExperiment Metric "
+              }
+            ],
+            "text": "embedding-similarity scan.\n8\nTable2: Headlineresultsacrossthefourexperimentsat\ud835\udc41=200(plannedprobes/writesperexperiment)onafreshly-provisioned\nMemClaw tenant. Leakage carries two signals per probe: the authoritativeaccesssignal fromGET-by-id, and the secondary\ndiscoverysignal from semantic search. Counts in parentheses indicate the denominator the rate is over. Each rate is followed\nby its95%Wilson score interval. The GET-by-id tenant-key rows measure tenant-wide reachability under a tenant-scoped\ncredential and should be read as exposure under tenant authority, not by themselves as a sub-tenant policy violation. The\nsub-tenantenforcementgapisestablishedbytheagent-scopedprobeinTable3: atmeasurementtime,atrust-1agentcouldGET\na cross-fleet row that the trust ladder should have denied; this was remediated on 2026-05-31 (\u00a79.1; re-probe trust-1cross-fleet\n0/36).\nExperiment Metric "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0065"
+        ],
+        "excerpt": "earlierdeployment_regionwas not one, so\nthe RDF path was silently skipped. Using a single-valued\npredicate(region,runs_on,...) andre-fetchingpost-settle\nfixes both.\nThe0.490ceilingissetbywriteadmission:206/400writes\nwererejected409bythesynchronousdedupgatebeforereach-\ningthe(post-commit)detector,so90fact-runshadbothwrites\nland. The rejections fall roughly evenly across the first and\nsecondwriteofapairandaredominatedbyexact-contentdu-\nplicates\u2014partlythegenuinededup-pre-empts-contradiction\neffectof\u00a79(acontradictionphrasedas\"\ud835\udc4bis\ud835\udc34\"vs\"\ud835\udc4bis\ud835\udc35\"is\nnear-identicaltext),partlylimitedprosediversityinourwork-\nloadgenerator. Wedonotcleanlyseparatethetwo;therobust\nclaim is the conditional one:when both writes are admitted,\nsupersession is correct90/90. Admission is stochastic \u2014\nconcurrentwritesraceatthededupgateandcontentisnonce-\nsalted per run \u2014 so counts vary run-to-run around a stable\nrate: ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Contradiction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "996443bd60c7353f5c61cf46e862b13206a9b6352823ca977fe8a57fa43e914e",
+            "evidence_id": "E01be9106fda4f321-B0065",
+            "pages": [
+              11
+            ],
+            "section": "Contradiction",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1764,
+                "page": 11,
+                "section": "Contradiction",
+                "section_index": 40,
+                "start": 874,
+                "text": "earlierdeployment_regionwas not one, so\nthe RDF path was silently skipped. Using a single-valued\npredicate(region,runs_on,...) andre-fetchingpost-settle\nfixes both.\nThe0.490ceilingissetbywriteadmission:206/400writes\nwererejected409bythesynchronousdedupgatebeforereach-\ningthe(post-commit)detector,so90fact-runshadbothwrites\nland. The rejections fall roughly evenly across the first and\nsecondwriteofapairandaredominatedbyexact-contentdu-\nplicates\u2014partlythegenuinededup-pre-empts-contradiction\neffectof\u00a79(acontradictionphrasedas\"\ud835\udc4bis\ud835\udc34\"vs\"\ud835\udc4bis\ud835\udc35\"is\nnear-identicaltext),partlylimitedprosediversityinourwork-\nloadgenerator. Wedonotcleanlyseparatethetwo;therobust\nclaim is the conditional one:when both writes are admitted,\nsupersession is correct90/90. Admission is stochastic \u2014\nconcurrentwritesraceatthededupgateandcontentisnonce-\nsalted per run \u2014 so counts vary run-to-run around a stable\nrate: "
+              }
+            ],
+            "text": "earlierdeployment_regionwas not one, so\nthe RDF path was silently skipped. Using a single-valued\npredicate(region,runs_on,...) andre-fetchingpost-settle\nfixes both.\nThe0.490ceilingissetbywriteadmission:206/400writes\nwererejected409bythesynchronousdedupgatebeforereach-\ningthe(post-commit)detector,so90fact-runshadbothwrites\nland. The rejections fall roughly evenly across the first and\nsecondwriteofapairandaredominatedbyexact-contentdu-\nplicates\u2014partlythegenuinededup-pre-empts-contradiction\neffectof\u00a79(acontradictionphrasedas\"\ud835\udc4bis\ud835\udc34\"vs\"\ud835\udc4bis\ud835\udc35\"is\nnear-identicaltext),partlylimitedprosediversityinourwork-\nloadgenerator. Wedonotcleanlyseparatethetwo;therobust\nclaim is the conditional one:when both writes are admitted,\nsupersession is correct90/90. Admission is stochastic \u2014\nconcurrentwritesraceatthededupgateandcontentisnonce-\nsalted per run \u2014 so counts vary run-to-run around a stable\nrate: "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0069"
+        ],
+        "excerpt": "Path Gap Remediated)\nThe leakage experiment surfaces a structural asymmetry in\nhow scope is enforced. Tenant boundaries are enforced uni-\nformly: cross-tenant requests are rejected on bothGET-by-id\nandPOST-searchpaths(theleakageratemeasurementsabove\nwerecollectedwithinasingletenantforthatreason\u2014cross-\ntenant probes do not reach the read handlers at all).Sub-\ntenantscope\u2014fleetandagent\u2014was,atmeasurementtime,\nenforced only on the search path (and there only partially);\ntheGET-by-id path is addressed by the remediation below.\nAt measurement time, directGET-by-id returned a row\nto any tenant-authorized caller who presented the correct\ntenant_id, regardless of the originating fleet or writer.\nCrucially, this held even when the caller presented an\nagent-scoped credential whose identity the gateway re-\nsolves (\u00a78, Table 3): theget_memoryhandler ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Scope Enforcement Was Bimodal (Get-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "55ff244b327bd5764ea81f65f7ba18424f47e2bdd0b4249c61a4d8145123cd2d",
+            "evidence_id": "E01be9106fda4f321-B0069",
+            "pages": [
+              12
+            ],
+            "section": "Scope Enforcement Was Bimodal (Get-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 849,
+                "page": 12,
+                "section": "Scope Enforcement Was Bimodal (Get-",
+                "section_index": 42,
+                "start": 0,
+                "text": "Path Gap Remediated)\nThe leakage experiment surfaces a structural asymmetry in\nhow scope is enforced. Tenant boundaries are enforced uni-\nformly: cross-tenant requests are rejected on bothGET-by-id\nandPOST-searchpaths(theleakageratemeasurementsabove\nwerecollectedwithinasingletenantforthatreason\u2014cross-\ntenant probes do not reach the read handlers at all).Sub-\ntenantscope\u2014fleetandagent\u2014was,atmeasurementtime,\nenforced only on the search path (and there only partially);\ntheGET-by-id path is addressed by the remediation below.\nAt measurement time, directGET-by-id returned a row\nto any tenant-authorized caller who presented the correct\ntenant_id, regardless of the originating fleet or writer.\nCrucially, this held even when the caller presented an\nagent-scoped credential whose identity the gateway re-\nsolves (\u00a78, Table 3): theget_memoryhandler "
+              }
+            ],
+            "text": "Path Gap Remediated)\nThe leakage experiment surfaces a structural asymmetry in\nhow scope is enforced. Tenant boundaries are enforced uni-\nformly: cross-tenant requests are rejected on bothGET-by-id\nandPOST-searchpaths(theleakageratemeasurementsabove\nwerecollectedwithinasingletenantforthatreason\u2014cross-\ntenant probes do not reach the read handlers at all).Sub-\ntenantscope\u2014fleetandagent\u2014was,atmeasurementtime,\nenforced only on the search path (and there only partially);\ntheGET-by-id path is addressed by the remediation below.\nAt measurement time, directGET-by-id returned a row\nto any tenant-authorized caller who presented the correct\ntenant_id, regardless of the originating fleet or writer.\nCrucially, this held even when the caller presented an\nagent-scoped credential whose identity the gateway re-\nsolves (\u00a78, Table 3): theget_memoryhandler "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0071"
+        ],
+        "excerpt": "a\ngenuineenforcementgap\u2014aviolationofInv-Scope(\u00a73)\u2014\nnotacredentiallimitation,andwhileitstood,thepropagation\nofmemory_idvalues across fleet boundaries was itself the\nde-facto capability boundary.\nRemediation.We disclosed the gap; it was fixed server-\nsideduringthestudy. Ascaledre-probeon2026-05-31\u201496\nGET-by-idprobesacrossfourfleetsandbothtrustlevels, with\neach agent using its own agent-scoped key, committed under\ntraces/\u2014 confirms theget_memoryhandler now applies\nexactlythefleet/agent/scopefilterthesearchpathalreadycar-\nried: trust-1cross-fleet reads are denied (0/36, 95% Wilson\n[0.000,0.096], returned as404so the row's existence is not\ndisclosed), trust-2cross-fleet reads are admitted by the lad-\nder(36/36), andsame-fleetcontrolspass(12/12); totalleaks\n0/96. Thebulk164/164accessrate(\u00a78)wascollectedwitha\ntenant-scoped key, which is tenant-wide by design and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Scope Enforcement Was Bimodal (Get-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b148214fcd1109578df3d9fb91f67b24e31dcc958ee32196f69679be74c83f2b",
+            "evidence_id": "E01be9106fda4f321-B0071",
+            "pages": [
+              12
+            ],
+            "section": "Scope Enforcement Was Bimodal (Get-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2567,
+                "page": 12,
+                "section": "Scope Enforcement Was Bimodal (Get-",
+                "section_index": 42,
+                "start": 1699,
+                "text": "a\ngenuineenforcementgap\u2014aviolationofInv-Scope(\u00a73)\u2014\nnotacredentiallimitation,andwhileitstood,thepropagation\nofmemory_idvalues across fleet boundaries was itself the\nde-facto capability boundary.\nRemediation.We disclosed the gap; it was fixed server-\nsideduringthestudy. Ascaledre-probeon2026-05-31\u201496\nGET-by-idprobesacrossfourfleetsandbothtrustlevels, with\neach agent using its own agent-scoped key, committed under\ntraces/\u2014 confirms theget_memoryhandler now applies\nexactlythefleet/agent/scopefilterthesearchpathalreadycar-\nried: trust-1cross-fleet reads are denied (0/36, 95% Wilson\n[0.000,0.096], returned as404so the row's existence is not\ndisclosed), trust-2cross-fleet reads are admitted by the lad-\nder(36/36), andsame-fleetcontrolspass(12/12); totalleaks\n0/96. Thebulk164/164accessrate(\u00a78)wascollectedwitha\ntenant-scoped key, which is tenant-wide by design and "
+              }
+            ],
+            "text": "a\ngenuineenforcementgap\u2014aviolationofInv-Scope(\u00a73)\u2014\nnotacredentiallimitation,andwhileitstood,thepropagation\nofmemory_idvalues across fleet boundaries was itself the\nde-facto capability boundary.\nRemediation.We disclosed the gap; it was fixed server-\nsideduringthestudy. Ascaledre-probeon2026-05-31\u201496\nGET-by-idprobesacrossfourfleetsandbothtrustlevels, with\neach agent using its own agent-scoped key, committed under\ntraces/\u2014 confirms theget_memoryhandler now applies\nexactlythefleet/agent/scopefilterthesearchpathalreadycar-\nried: trust-1cross-fleet reads are denied (0/36, 95% Wilson\n[0.000,0.096], returned as404so the row's existence is not\ndisclosed), trust-2cross-fleet reads are admitted by the lad-\nder(36/36), andsame-fleetcontrolspass(12/12); totalleaks\n0/96. Thebulk164/164accessrate(\u00a78)wascollectedwitha\ntenant-scoped key, which is tenant-wide by design and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0074"
+        ],
+        "excerpt": "tection\nThecontradictiondetectoritselfissound: conditionalonboth\nwrites being admitted, it superseded correctly in every case\n(90/90,\u00a78). Thearchitecturalissueisthattwomechanismson\nthewritepathinteractbadly. Asemanticnear-duplicatedetec-\ntor evaluates an incoming write synchronously,pre-commit,\nreturning409whenembeddingsimilarityexceedsathreshold.\nThe contradiction detector evaluates RDF-triple compatibil-\nity and setssupersedes_id\u2014 but it runspost-commit and\nasynchronously. So the synchronous gate can reject a write\nbefore the asynchronous detector ever sees it. The pathologi-\ncal case is intrinsic: a contradiction phrased naturally (\"\ud835\udc4bis\n\ud835\udc34\"then\"\ud835\udc4bis\ud835\udc35\")isnear-identicaltext,sotheverywritesthe\ndetector exists to resolve are the ones most likely to be 409'd\nat the gate. (This is also why the detector reads as a \"null\"\nunder naive measurement \u2014 it never receives the input, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Deduplication Starves Contradiction De-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "acfcdb81ace48cda4de74f76af5f4524dc28f10162e84eacdb7f219faee7a97a",
+            "evidence_id": "E01be9106fda4f321-B0074",
+            "pages": [
+              12
+            ],
+            "section": "Deduplication Starves Contradiction De-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 882,
+                "page": 12,
+                "section": "Deduplication Starves Contradiction De-",
+                "section_index": 43,
+                "start": 0,
+                "text": "tection\nThecontradictiondetectoritselfissound: conditionalonboth\nwrites being admitted, it superseded correctly in every case\n(90/90,\u00a78). Thearchitecturalissueisthattwomechanismson\nthewritepathinteractbadly. Asemanticnear-duplicatedetec-\ntor evaluates an incoming write synchronously,pre-commit,\nreturning409whenembeddingsimilarityexceedsathreshold.\nThe contradiction detector evaluates RDF-triple compatibil-\nity and setssupersedes_id\u2014 but it runspost-commit and\nasynchronously. So the synchronous gate can reject a write\nbefore the asynchronous detector ever sees it. The pathologi-\ncal case is intrinsic: a contradiction phrased naturally (\"\ud835\udc4bis\n\ud835\udc34\"then\"\ud835\udc4bis\ud835\udc35\")isnear-identicaltext,sotheverywritesthe\ndetector exists to resolve are the ones most likely to be 409'd\nat the gate. (This is also why the detector reads as a \"null\"\nunder naive measurement \u2014 it never receives the input, "
+              }
+            ],
+            "text": "tection\nThecontradictiondetectoritselfissound: conditionalonboth\nwrites being admitted, it superseded correctly in every case\n(90/90,\u00a78). Thearchitecturalissueisthattwomechanismson\nthewritepathinteractbadly. Asemanticnear-duplicatedetec-\ntor evaluates an incoming write synchronously,pre-commit,\nreturning409whenembeddingsimilarityexceedsathreshold.\nThe contradiction detector evaluates RDF-triple compatibil-\nity and setssupersedes_id\u2014 but it runspost-commit and\nasynchronously. So the synchronous gate can reject a write\nbefore the asynchronous detector ever sees it. The pathologi-\ncal case is intrinsic: a contradiction phrased naturally (\"\ud835\udc4bis\n\ud835\udc34\"then\"\ud835\udc4bis\ud835\udc35\")isnear-identicaltext,sotheverywritesthe\ndetector exists to resolve are the ones most likely to be 409'd\nat the gate. (This is also why the detector reads as a \"null\"\nunder naive measurement \u2014 it never receives the input, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0080"
+        ],
+        "excerpt": "Several limitations bound the scope of the empirical claims\nin \u00a78.\nSelf-evaluation.ArgusFleetandMemClawarebuiltbythe\nsame group; this is an evaluation of our own production ser-\nvice, not an independent audit. We mitigate the obvious bias\nby reporting the unflattering results prominently \u2014 theGET-\nby-id enforcement gap (disclosed, since remediated) and the\ndedup/contradiction pipeline-ordering issue \u2014 and by deriv-\ningeveryfigurefromacommittedJSONLtrace. Reportinga\ngap in one's own service and then its fix is an obvious place\nfor bias to hide; we counter it by committing the re-probe\ntrace, not just asserting the remediation. An independent\nreplication,whichtheopenharnessenablesagainstanywire-\ncompatible service, would carry more weight than our own\nnumbers.\nAgent-scope probe is focused, not exhaustive.The bulk\nleakagerateswerecollectedwithatenant-scopedkey(tenant-\nwide by design); ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5b38225bcdb0bd8f69717bc31005ee178cc607f201231e862fba0276c1bdc06b",
+            "evidence_id": "E01be9106fda4f321-B0080",
+            "pages": [
+              13
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 13,
+                "section": "Limitations",
+                "section_index": 47,
+                "start": 0,
+                "text": "Several limitations bound the scope of the empirical claims\nin \u00a78.\nSelf-evaluation.ArgusFleetandMemClawarebuiltbythe\nsame group; this is an evaluation of our own production ser-\nvice, not an independent audit. We mitigate the obvious bias\nby reporting the unflattering results prominently \u2014 theGET-\nby-id enforcement gap (disclosed, since remediated) and the\ndedup/contradiction pipeline-ordering issue \u2014 and by deriv-\ningeveryfigurefromacommittedJSONLtrace. Reportinga\ngap in one's own service and then its fix is an obvious place\nfor bias to hide; we counter it by committing the re-probe\ntrace, not just asserting the remediation. An independent\nreplication,whichtheopenharnessenablesagainstanywire-\ncompatible service, would carry more weight than our own\nnumbers.\nAgent-scope probe is focused, not exhaustive.The bulk\nleakagerateswerecollectedwithatenant-scopedkey(tenant-\nwide by design); "
+              }
+            ],
+            "text": "Several limitations bound the scope of the empirical claims\nin \u00a78.\nSelf-evaluation.ArgusFleetandMemClawarebuiltbythe\nsame group; this is an evaluation of our own production ser-\nvice, not an independent audit. We mitigate the obvious bias\nby reporting the unflattering results prominently \u2014 theGET-\nby-id enforcement gap (disclosed, since remediated) and the\ndedup/contradiction pipeline-ordering issue \u2014 and by deriv-\ningeveryfigurefromacommittedJSONLtrace. Reportinga\ngap in one's own service and then its fix is an obvious place\nfor bias to hide; we counter it by committing the re-probe\ntrace, not just asserting the remediation. An independent\nreplication,whichtheopenharnessenablesagainstanywire-\ncompatible service, would carry more weight than our own\nnumbers.\nAgent-scope probe is focused, not exhaustive.The bulk\nleakagerateswerecollectedwithatenant-scopedkey(tenant-\nwide by design); "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E01be9106fda4f321-B0084"
+        ],
+        "excerpt": "earlier version of this work reported a p50 of tens of seconds\nfor exactly this reason). We therefore measure the window\non a small set of facts polled immediately and continuously\nfrom write completion (\u00a77), one at a time so the polls stay\nunder the/searchbudget; under strong mode this yields a\np50 of\u223c0.8s (\u00a78). The residual limitation is granularity\nand scale: the window is measured at250ms resolution on8\nfacts,soitresolves\"effectivelyimmediate\"butnotasub-250\nmsvalue,andalarger,multi-regionsweepwouldsharpenthe\ntail and test whether the synchronous-enrichment behaviour\nholds under sustained load.\nNocomparand.Wedonotcompareagainstabaseline(e.g.,\na long-context-only configuration, or an alternative memory\nimplementation). The architectural claims of \u00a75 stand on the\nfailure-mode taxonomy and the implementation, but the em-\npiricalclaimswouldbesharperwithacomparisoncondition.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "730f9b00a9a907ece9e7b5ad2e6240d20b43713c967bb7a54fa72d13b8bf5632",
+            "evidence_id": "E01be9106fda4f321-B0084",
+            "pages": [
+              14
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 885,
+                "page": 14,
+                "section": "Limitations",
+                "section_index": 48,
+                "start": 0,
+                "text": "earlier version of this work reported a p50 of tens of seconds\nfor exactly this reason). We therefore measure the window\non a small set of facts polled immediately and continuously\nfrom write completion (\u00a77), one at a time so the polls stay\nunder the/searchbudget; under strong mode this yields a\np50 of\u223c0.8s (\u00a78). The residual limitation is granularity\nand scale: the window is measured at250ms resolution on8\nfacts,soitresolves\"effectivelyimmediate\"butnotasub-250\nmsvalue,andalarger,multi-regionsweepwouldsharpenthe\ntail and test whether the synchronous-enrichment behaviour\nholds under sustained load.\nNocomparand.Wedonotcompareagainstabaseline(e.g.,\na long-context-only configuration, or an alternative memory\nimplementation). The architectural claims of \u00a75 stand on the\nfailure-mode taxonomy and the implementation, but the em-\npiricalclaimswouldbesharperwithacomparisoncondition."
+              }
+            ],
+            "text": "earlier version of this work reported a p50 of tens of seconds\nfor exactly this reason). We therefore measure the window\non a small set of facts polled immediately and continuously\nfrom write completion (\u00a77), one at a time so the polls stay\nunder the/searchbudget; under strong mode this yields a\np50 of\u223c0.8s (\u00a78). The residual limitation is granularity\nand scale: the window is measured at250ms resolution on8\nfacts,soitresolves\"effectivelyimmediate\"butnotasub-250\nmsvalue,andalarger,multi-regionsweepwouldsharpenthe\ntail and test whether the synchronous-enrichment behaviour\nholds under sustained load.\nNocomparand.Wedonotcompareagainstabaseline(e.g.,\na long-context-only configuration, or an alternative memory\nimplementation). The architectural claims of \u00a75 stand on the\nfailure-mode taxonomy and the implementation, but the em-\npiricalclaimswouldbesharperwithacomparisoncondition."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.24535",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7165973042",
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline outcomes are established through deterministic canary matching, HTTP error/success status verification, and graph link traversal rather than an internal or reused LLM judge.",
+          "final_evaluation_signal": "The final evaluation relies on deterministic, objective black-box client probes measuring HTTP response codes, exact canary token presence, and primary-key derivation-chain integrity via the ArgusFleet harness.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The service architecture and its enforcement pipelines (e.g., semantic deduplication thresholding and RDF-triple contradiction logic) were configured and iteratively patched to satisfy governance predicates.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E01be9106fda4f321-B0002",
+          "E01be9106fda4f321-B0008",
+          "E01be9106fda4f321-B0020",
+          "E01be9106fda4f321-B0022",
+          "E01be9106fda4f321-B0038",
+          "E01be9106fda4f321-B0042",
+          "E01be9106fda4f321-B0044",
+          "E01be9106fda4f321-B0046",
+          "E01be9106fda4f321-B0047",
+          "E01be9106fda4f321-B0053",
+          "E01be9106fda4f321-B0055",
+          "E01be9106fda4f321-B0065",
+          "E01be9106fda4f321-B0069",
+          "E01be9106fda4f321-B0071",
+          "E01be9106fda4f321-B0074",
+          "E01be9106fda4f321-B0080",
+          "E01be9106fda4f321-B0084"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "6c3b893a8b4be981e27ad90fd2adbb3412df661aec7c1a21fd006a071f166b0b"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7165973042",
+        "claim_evidence_alignment": "Claims are precisely aligned with the empirical findings. The authors do not overclaim perfect security or universal superiority over baselines, explicitly qualifying success rates (e.g., contradiction detection succeeding 90/90 conditional on admission) and acknowledging operational trade-offs such as elevated write latency tails.",
+        "context_id": "01be9106fda4f3215ec4f7df5617cdbaa61cc232d95fa299a184310653b98239",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation measures the live MemClaw service across 200 trials per failure dimension, reporting exact success counts, latency percentiles, and 95% Wilson confidence intervals. It rigorously isolates confounding artifacts (such as decoupling probe-scheduling latency from server consistency latency) and highlights negative and architectural findings, including a pipeline clash between deduplication and asynchronous contradiction detection as well as a disclosed sub-tenant access gap.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline outcomes are established through deterministic canary matching, HTTP error/success status verification, and graph link traversal rather than an internal or reused LLM judge.",
+          "final_evaluation_signal": "The final evaluation relies on deterministic, objective black-box client probes measuring HTTP response codes, exact canary token presence, and primary-key derivation-chain integrity via the ArgusFleet harness.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The service architecture and underlying heuristics/pipelines (e.g., semantic deduplication thresholding and RDF-triple contradiction logic) were configured and iteratively patched to satisfy governance predicates.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E01be9106fda4f321-B0002",
+          "E01be9106fda4f321-B0008",
+          "E01be9106fda4f321-B0020",
+          "E01be9106fda4f321-B0022",
+          "E01be9106fda4f321-B0038",
+          "E01be9106fda4f321-B0042",
+          "E01be9106fda4f321-B0044",
+          "E01be9106fda4f321-B0046",
+          "E01be9106fda4f321-B0047",
+          "E01be9106fda4f321-B0053",
+          "E01be9106fda4f321-B0055",
+          "E01be9106fda4f321-B0065",
+          "E01be9106fda4f321-B0069",
+          "E01be9106fda4f321-B0071",
+          "E01be9106fda4f321-B0074",
+          "E01be9106fda4f321-B0080",
+          "E01be9106fda4f321-B0084"
+        ],
+        "limitations": "The authors provide an extensive limitations section covering the lack of comparative baselines, self-evaluation risks, single-tenant scope, and the initial lack of sub-tenant enforcement on GET-by-id.",
+        "method_assessment": "The methodology is clearly described, combining a formal problem specification with concrete, reproducible black-box API experiments using deterministic seeding, distinct read/write phases, and canary tokens. The harness probes both positive operational pathways and failure boundaries, documenting exact request sequences and handling API concurrency limits.",
+        "quality_rationale": "The work addresses an important architectural transition in multi-agent LLM systems by treating shared memory as a governed distributed-systems problem rather than solely a context retrieval task. The experimental design is rigorous, transparently reporting system anomalies, remediations, and performance trade-offs with fully committed trace artifacts.",
+        "scoped_contribution": "The paper formalizes the fleet-memory problem for multi-agent LLM systems with five primitives (agents, substrate, governance, provenance, temporal supersession) and four associated failure modes. It presents MemClaw as an implementation and ArgusFleet as an empirical evaluation harness measuring scope leakage, provenance reconstruction, propagation latency/visibility, and contradiction resolution on a running production service.",
+        "source_content_hash": "6c3b893a8b4be981e27ad90fd2adbb3412df661aec7c1a21fd006a071f166b0b"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work addresses an important architectural transition in multi-agent LLM systems by treating shared memory as a governed distributed-systems problem rather than solely a context retrieval task. The experimental design is rigorous, transparently reporting system anomalies, remediations, and performance trade-offs with fully committed trace artifacts.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "6c3b893a8b4be981e27ad90fd2adbb3412df661aec7c1a21fd006a071f166b0b",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors provide an extensive limitations section covering the lack of comparative baselines, self-evaluation risks, single-tenant scope, and the initial lack of sub-tenant enforcement on GET-by-id."
   },
   "semantic_scholar_id": "cbe226378202698435093f69ef7d8e2db382f96c",
   "source": "openalex",
@@ -186,7 +2012,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

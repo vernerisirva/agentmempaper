@@ -26,7 +26,7 @@
   "last_seen_date": "2026-06-29",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-29 05:18:42",
   "notified_date": "2026-06-29",
@@ -37,7 +37,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-29 05:16:55",
-    "generated_at": "2026-10-20 09:15:40",
+    "generated_at": "2026-10-21 09:24:02",
     "last_seen_at": "2026-06-29 06:36:22",
     "metadata_sources": [
       "openalex",
@@ -106,36 +106,2265 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-21T09:21:18.565991+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.9,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper provides an insightful, rigorous, and clearly scoped contribution to the evaluation of AI agents in science, exposing how outcome-level metrics fail to capture flawed mechanistic justifications and demonstrating an effective cross-regime audit check.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 75437,
+      "assessment_input_sha256": "282dfc59c8b084ea20bf1c14aa6ad00e953269f6c473ab38a41b691dfc0eedf4",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7165816313",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 73881,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 72331,
+      "evidence_block_count": 107,
+      "evidence_context_characters": 86181,
+      "evidence_context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+      "evidence_context_sha256": "2699d95663fb5804c6766ee9f70f57fb24f6135f3a098efe6ff2fe653e3794b2",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 73919,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "extracted_pages": 20,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "38305698c01eec395898b6cf5494ce78398bda0893bd3155d98846c79555d264",
+        "source_url": "https://arxiv.org/pdf/2606.23175",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 73881,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 131,
+          "supplied_characters": 131
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1810,
+          "supplied_characters": 1810
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2380,
+          "supplied_characters": 2380
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 156,
+          "supplied_characters": 156
+        },
+        {
+          "heading": "Task Outcome: Did The System Produce The Correct",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "Mechanism Fidelity: Is The Explanation Correct And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 39,
+          "supplied_characters": 39
+        },
+        {
+          "heading": "Epistemic Honesty: Did The System Bound Its Uncer-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1805,
+          "supplied_characters": 1805
+        },
+        {
+          "heading": "Task Setup And Agent Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 176,
+          "supplied_characters": 176
+        },
+        {
+          "heading": "Ca Wm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2367,
+          "supplied_characters": 2367
+        },
+        {
+          "heading": "Ca Wm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 4725,
+          "supplied_characters": 4725
+        },
+        {
+          "heading": "Ca Wm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 117,
+          "supplied_characters": 117
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 1582,
+          "supplied_characters": 1582
+        },
+        {
+          "heading": "Do Open-Ended Agents Discover A Mechanistically",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 2690,
+          "supplied_characters": 2690
+        },
+        {
+          "heading": "Does Scaffolding Fix This?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 410,
+          "supplied_characters": 410
+        },
+        {
+          "heading": "Does Scaffolding Fix This?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1192,
+          "supplied_characters": 1192
+        },
+        {
+          "heading": "Positive Control: Execution Is Achievable",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1022,
+          "supplied_characters": 1022
+        },
+        {
+          "heading": "Do Agents Reject False Priors When Data Contradicts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1561,
+          "supplied_characters": 1561
+        },
+        {
+          "heading": "Physics-Explanation Audit",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 777,
+          "supplied_characters": 777
+        },
+        {
+          "heading": "Cross-Model Probe",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 618,
+          "supplied_characters": 618
+        },
+        {
+          "heading": "Cross-Model Probe",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1856,
+          "supplied_characters": 1856
+        },
+        {
+          "heading": "An External Check For The Self-Application",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 994,
+          "supplied_characters": 994
+        },
+        {
+          "heading": "Extract The Mechanism.Identify The Agent'S Stated",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 80,
+          "supplied_characters": 80
+        },
+        {
+          "heading": "Derive A Signed Prediction.Translate The Mechanism",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 95,
+          "supplied_characters": 95
+        },
+        {
+          "heading": "Retrieve Or Run Data At That Regime.If The Episode",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Score.Prediction Holds: Mechanism Is Consistent At",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1378,
+          "supplied_characters": 1378
+        },
+        {
+          "heading": "Score.Prediction Holds: Mechanism Is Consistent At",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1033,
+          "supplied_characters": 1033
+        },
+        {
+          "heading": "Alternative Views And Implications",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "discussion",
+          "section_index": 26,
+          "source_characters": 4436,
+          "supplied_characters": 4436
+        },
+        {
+          "heading": "Alternative Views And Implications",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "discussion",
+          "section_index": 27,
+          "source_characters": 2272,
+          "supplied_characters": 2272
+        },
+        {
+          "heading": "Recommendations And Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 28,
+          "source_characters": 2898,
+          "supplied_characters": 2898
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 173,
+          "supplied_characters": 173
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 31,
+          "supplied_characters": 31
+        },
+        {
+          "heading": "Instruments And Methods In Physics Research Section A:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 31,
+          "source_characters": 699,
+          "supplied_characters": 699
+        },
+        {
+          "heading": "Toward Rigorous Assessment Of Language Agents For Data-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 2280,
+          "supplied_characters": 2280
+        },
+        {
+          "heading": "Wrong Reasons: Diagnosing Syntactic Heuristics In Natural",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 110,
+          "supplied_characters": 110
+        },
+        {
+          "heading": "Meeting Of The Association For Computational Linguistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 792,
+          "supplied_characters": 792
+        },
+        {
+          "heading": "Of The 57Th Annual Meeting Of The Association For Com-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 457,
+          "supplied_characters": 457
+        },
+        {
+          "heading": "Guage Models Don'T Always Say What They Think: Unfaith-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 281,
+          "supplied_characters": 281
+        },
+        {
+          "heading": "Ing Math Word Problems With Process- And Outcome-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "introduction",
+          "section_index": 37,
+          "source_characters": 323,
+          "supplied_characters": 323
+        },
+        {
+          "heading": "Ing Math Word Problems With Process- And Outcome-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "introduction",
+          "section_index": 38,
+          "source_characters": 5383,
+          "supplied_characters": 5383
+        },
+        {
+          "heading": "Ing Math Word Problems With Process- And Outcome-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "introduction",
+          "section_index": 39,
+          "source_characters": 3934,
+          "supplied_characters": 3934
+        },
+        {
+          "heading": "Ing Math Word Problems With Process- And Outcome-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "introduction",
+          "section_index": 40,
+          "source_characters": 31,
+          "supplied_characters": 31
+        },
+        {
+          "heading": "Appendix: Prompt B Side Effect In The Primary Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 1566,
+          "supplied_characters": 1566
+        },
+        {
+          "heading": "A Skewness; Relative-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "A Hit Count; Relative-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "A Photon Count\u00d7\u2013 N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 52,
+          "supplied_characters": 52
+        },
+        {
+          "heading": "B Fraction Of Photons In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 19,
+          "supplied_characters": 19
+        },
+        {
+          "heading": "D Timespan Of First 10",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 12,
+          "supplied_characters": 12
+        },
+        {
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 953,
+          "supplied_characters": 953
+        },
+        {
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 656,
+          "supplied_characters": 656
+        },
+        {
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 2130,
+          "supplied_characters": 2130
+        },
+        {
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 2174,
+          "supplied_characters": 2174
+        },
+        {
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 2767,
+          "supplied_characters": 2767
+        },
+        {
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 2663,
+          "supplied_characters": 2663
+        },
+        {
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 1387,
+          "supplied_characters": 1387
+        },
+        {
+          "heading": "Compute F_Early(W) For Muons And Electrons At D = 10, 20, And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 125,
+          "supplied_characters": 125
+        },
+        {
+          "heading": "Assess Whether F_Early Reliably Separates Muon From Electron",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 83,
+          "supplied_characters": 83
+        },
+        {
+          "heading": "Compare F_Early To Sigma(Hittime) As Discriminants. Under What",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 413,
+          "supplied_characters": 413
+        },
+        {
+          "heading": "Compare F_Early To Sigma(Hittime) As Discriminants. Under What",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 2518,
+          "supplied_characters": 2518
+        },
+        {
+          "heading": "Compare F_Early To Sigma(Hittime) As Discriminants. Under What",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 1579,
+          "supplied_characters": 1579
+        }
+      ],
+      "selected_characters": 72331,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "selected_sections": [
+        {
+          "characters": 131,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1810,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2380,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 156,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 7,
+          "heading": "Task Outcome: Did The System Produce The Correct",
+          "page": 2
+        },
+        {
+          "characters": 39,
+          "heading": "Mechanism Fidelity: Is The Explanation Correct And",
+          "page": 2
+        },
+        {
+          "characters": 1805,
+          "heading": "Epistemic Honesty: Did The System Bound Its Uncer-",
+          "page": 2
+        },
+        {
+          "characters": 176,
+          "heading": "Task Setup And Agent Protocol",
+          "page": 2
+        },
+        {
+          "characters": 2367,
+          "heading": "Ca Wm",
+          "page": 2
+        },
+        {
+          "characters": 4725,
+          "heading": "Ca Wm",
+          "page": 3
+        },
+        {
+          "characters": 117,
+          "heading": "Ca Wm",
+          "page": 4
+        },
+        {
+          "characters": 1582,
+          "heading": "Results",
+          "page": 4
+        },
+        {
+          "characters": 2690,
+          "heading": "Do Open-Ended Agents Discover A Mechanistically",
+          "page": 4
+        },
+        {
+          "characters": 410,
+          "heading": "Does Scaffolding Fix This?",
+          "page": 4
+        },
+        {
+          "characters": 1192,
+          "heading": "Does Scaffolding Fix This?",
+          "page": 5
+        },
+        {
+          "characters": 1022,
+          "heading": "Positive Control: Execution Is Achievable",
+          "page": 5
+        },
+        {
+          "characters": 1561,
+          "heading": "Do Agents Reject False Priors When Data Contradicts",
+          "page": 5
+        },
+        {
+          "characters": 777,
+          "heading": "Physics-Explanation Audit",
+          "page": 5
+        },
+        {
+          "characters": 618,
+          "heading": "Cross-Model Probe",
+          "page": 5
+        },
+        {
+          "characters": 1856,
+          "heading": "Cross-Model Probe",
+          "page": 6
+        },
+        {
+          "characters": 994,
+          "heading": "An External Check For The Self-Application",
+          "page": 6
+        },
+        {
+          "characters": 80,
+          "heading": "Extract The Mechanism.Identify The Agent'S Stated",
+          "page": 6
+        },
+        {
+          "characters": 95,
+          "heading": "Derive A Signed Prediction.Translate The Mechanism",
+          "page": 6
+        },
+        {
+          "characters": 93,
+          "heading": "Retrieve Or Run Data At That Regime.If The Episode",
+          "page": 6
+        },
+        {
+          "characters": 1378,
+          "heading": "Score.Prediction Holds: Mechanism Is Consistent At",
+          "page": 6
+        },
+        {
+          "characters": 1033,
+          "heading": "Score.Prediction Holds: Mechanism Is Consistent At",
+          "page": 7
+        },
+        {
+          "characters": 4436,
+          "heading": "Alternative Views And Implications",
+          "page": 7
+        },
+        {
+          "characters": 2272,
+          "heading": "Alternative Views And Implications",
+          "page": 8
+        },
+        {
+          "characters": 2898,
+          "heading": "Recommendations And Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 173,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 31,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 699,
+          "heading": "Instruments And Methods In Physics Research Section A:",
+          "page": 9
+        },
+        {
+          "characters": 2280,
+          "heading": "Toward Rigorous Assessment Of Language Agents For Data-",
+          "page": 9
+        },
+        {
+          "characters": 110,
+          "heading": "Wrong Reasons: Diagnosing Syntactic Heuristics In Natural",
+          "page": 9
+        },
+        {
+          "characters": 792,
+          "heading": "Meeting Of The Association For Computational Linguistics",
+          "page": 9
+        },
+        {
+          "characters": 457,
+          "heading": "Of The 57Th Annual Meeting Of The Association For Com-",
+          "page": 9
+        },
+        {
+          "characters": 281,
+          "heading": "Guage Models Don'T Always Say What They Think: Unfaith-",
+          "page": 9
+        },
+        {
+          "characters": 323,
+          "heading": "Ing Math Word Problems With Process- And Outcome-",
+          "page": 9
+        },
+        {
+          "characters": 5383,
+          "heading": "Ing Math Word Problems With Process- And Outcome-",
+          "page": 10
+        },
+        {
+          "characters": 3934,
+          "heading": "Ing Math Word Problems With Process- And Outcome-",
+          "page": 11
+        },
+        {
+          "characters": 31,
+          "heading": "Ing Math Word Problems With Process- And Outcome-",
+          "page": 12
+        },
+        {
+          "characters": 1566,
+          "heading": "Appendix: Prompt B Side Effect In The Primary Model",
+          "page": 12
+        },
+        {
+          "characters": 20,
+          "heading": "A Skewness; Relative-",
+          "page": 12
+        },
+        {
+          "characters": 20,
+          "heading": "A Hit Count; Relative-",
+          "page": 12
+        },
+        {
+          "characters": 52,
+          "heading": "A Photon Count\u00d7\u2013 N",
+          "page": 12
+        },
+        {
+          "characters": 19,
+          "heading": "B Fraction Of Photons In",
+          "page": 12
+        },
+        {
+          "characters": 12,
+          "heading": "D Timespan Of First 10",
+          "page": 12
+        },
+        {
+          "characters": 953,
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "page": 12
+        },
+        {
+          "characters": 656,
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "page": 13
+        },
+        {
+          "characters": 2130,
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "page": 14
+        },
+        {
+          "characters": 2174,
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "page": 15
+        },
+        {
+          "characters": 2767,
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "page": 16
+        },
+        {
+          "characters": 2663,
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "page": 17
+        },
+        {
+          "characters": 1387,
+          "heading": "D Photon Count\u00d7\u2013 N",
+          "page": 18
+        },
+        {
+          "characters": 125,
+          "heading": "Compute F_Early(W) For Muons And Electrons At D = 10, 20, And",
+          "page": 18
+        },
+        {
+          "characters": 83,
+          "heading": "Assess Whether F_Early Reliably Separates Muon From Electron",
+          "page": 18
+        },
+        {
+          "characters": 413,
+          "heading": "Compare F_Early To Sigma(Hittime) As Discriminants. Under What",
+          "page": 18
+        },
+        {
+          "characters": 2518,
+          "heading": "Compare F_Early To Sigma(Hittime) As Discriminants. Under What",
+          "page": 19
+        },
+        {
+          "characters": 1579,
+          "heading": "Compare F_Early To Sigma(Hittime) As Discriminants. Under What",
+          "page": 20
+        }
+      ],
+      "selected_text_sha256": "282dfc59c8b084ea20bf1c14aa6ad00e953269f6c473ab38a41b691dfc0eedf4",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "38305698c01eec395898b6cf5494ce78398bda0893bd3155d98846c79555d264",
+      "source_pages": 20,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0002"
+        ],
+        "excerpt": "AI scientist systems are described as tools, co-\nauthors, or founders, but we evaluate them as if\nonly the final answer matters. This position pa-\nper argues that outcome-only evaluation is insuffi-\ncient, and that task outcome, mechanism fidelity,\nand epistemic honesty must be measured sepa-\nrately. Our evidence comes from 28 episodes of\na coding agent attempting to rediscover a known\nparticle identification observable in a Geant4 sim-\nulation, including an 8-episode probe across two\nadditional frontier models. In 4/20 primary-model\nand 3/8 cross-model episodes, agents reach right-\nlooking results through incorrect reasoning that\nbreaks when conditions change, which we call\nCorrect Answer, Wrong Mechanism(CAWM).\nHonesty and mechanism fidelity dissociate within\na single agent trajectory. When given a partially\nmisleading prior, all five agents reject the false\ncomponent on evidence, yet ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d388ad646fc782605f9ee82876183499e344e8e151a81e1aa040e2bc9c500c74",
+            "evidence_id": "Eeebd3aad7c17b63e-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "AI scientist systems are described as tools, co-\nauthors, or founders, but we evaluate them as if\nonly the final answer matters. This position pa-\nper argues that outcome-only evaluation is insuffi-\ncient, and that task outcome, mechanism fidelity,\nand epistemic honesty must be measured sepa-\nrately. Our evidence comes from 28 episodes of\na coding agent attempting to rediscover a known\nparticle identification observable in a Geant4 sim-\nulation, including an 8-episode probe across two\nadditional frontier models. In 4/20 primary-model\nand 3/8 cross-model episodes, agents reach right-\nlooking results through incorrect reasoning that\nbreaks when conditions change, which we call\nCorrect Answer, Wrong Mechanism(CAWM).\nHonesty and mechanism fidelity dissociate within\na single agent trajectory. When given a partially\nmisleading prior, all five agents reject the false\ncomponent on evidence, yet "
+              }
+            ],
+            "text": "AI scientist systems are described as tools, co-\nauthors, or founders, but we evaluate them as if\nonly the final answer matters. This position pa-\nper argues that outcome-only evaluation is insuffi-\ncient, and that task outcome, mechanism fidelity,\nand epistemic honesty must be measured sepa-\nrately. Our evidence comes from 28 episodes of\na coding agent attempting to rediscover a known\nparticle identification observable in a Geant4 sim-\nulation, including an 8-episode probe across two\nadditional frontier models. In 4/20 primary-model\nand 3/8 cross-model episodes, agents reach right-\nlooking results through incorrect reasoning that\nbreaks when conditions change, which we call\nCorrect Answer, Wrong Mechanism(CAWM).\nHonesty and mechanism fidelity dissociate within\na single agent trajectory. When given a partially\nmisleading prior, all five agents reject the false\ncomponent on evidence, yet "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0007"
+        ],
+        "excerpt": "Figure 1). An agent\nwhose mechanism is wrong cannot predict where its claim\nstops working, and new science often lives exactly at those\nboundaries. To be scientifically useful, a claim must either\ngeneralize across regimes or carry explicit limits of validity.\nCAWM agents provide neither. Related phenomena include\nshortcut learning (Geirhos et al., 2020), \"right for the wrong\nreasons\" in NLI (McCoy et al., 2019), and unfaithful chain-\nof-thought reasoning (Turpin et al., 2023). CAWM extends\nthese into multi-step agentic scientific workflows where the\n1\narXiv:2606.23175v1  [cs.LG]  22 Jun 2026\nCorrect Answer, Wrong Mechanism\ninconsistency is checkable from the agent's own work.\nWe argue that AI scientist systems must be evaluated along\nthree axes:",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c13ebe59160fdf9121af38da38f7e34e9f9c92aa170def6786c35bd57cbc989b",
+            "evidence_id": "Eeebd3aad7c17b63e-B0007",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2380,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1781,
+                "text": "Figure 1). An agent\nwhose mechanism is wrong cannot predict where its claim\nstops working, and new science often lives exactly at those\nboundaries. To be scientifically useful, a claim must either\ngeneralize across regimes or carry explicit limits of validity.\nCAWM agents provide neither. Related phenomena include\nshortcut learning (Geirhos et al., 2020), \"right for the wrong\nreasons\" in NLI (McCoy et al., 2019), and unfaithful chain-\nof-thought reasoning (Turpin et al., 2023). CAWM extends\nthese into multi-step agentic scientific workflows where the\n1\narXiv:2606.23175v1  [cs.LG]  22 Jun 2026"
+              },
+              {
+                "end": 156,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "Correct Answer, Wrong Mechanism\ninconsistency is checkable from the agent's own work.\nWe argue that AI scientist systems must be evaluated along\nthree axes:"
+              }
+            ],
+            "text": "Figure 1). An agent\nwhose mechanism is wrong cannot predict where its claim\nstops working, and new science often lives exactly at those\nboundaries. To be scientifically useful, a claim must either\ngeneralize across regimes or carry explicit limits of validity.\nCAWM agents provide neither. Related phenomena include\nshortcut learning (Geirhos et al., 2020), \"right for the wrong\nreasons\" in NLI (McCoy et al., 2019), and unfaithful chain-\nof-thought reasoning (Turpin et al., 2023). CAWM extends\nthese into multi-step agentic scientific workflows where the\n1\narXiv:2606.23175v1  [cs.LG]  22 Jun 2026\nCorrect Answer, Wrong Mechanism\ninconsistency is checkable from the agent's own work.\nWe argue that AI scientist systems must be evaluated along\nthree axes:"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0010"
+        ],
+        "excerpt": "tainty, flag limitations, and revise beliefs under contra-\ndictory evidence?\nAutonomy should be granted only when all three meet\ndomain-specific thresholds: passing all three qualifies a\nsystem for co-author trust, and failing any limits it to tool-\nlevel use. We evaluateepistemic honestyby whether the\nagent revises or rationalizes when its own data contradicts\na prior assumption. The three-axis framework follows pro-\ncess supervision (Lightman et al., 2024; Uesato et al., 2022)\nin distinguishing process from outcome, applied here to\nevaluation rather than training.\nWe support this with a controlled case study in a Geant4\nCherenkov detector simulation (Agostinelli et al., 2003).\nThe task has a known-good observable plus plausible al-\nternatives that fail to generalize across the tested range.\nThree of five open-ended agents defend their chosen alter-\nnatives with physically incorrect ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Epistemic Honesty: Did The System Bound Its Uncer-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ed009cb229a541b118c9f22840bbf4131d6107dd9fa08edeffd2a0c6f225474d",
+            "evidence_id": "Eeebd3aad7c17b63e-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Epistemic Honesty: Did The System Bound Its Uncer-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 2,
+                "section": "Epistemic Honesty: Did The System Bound Its Uncer-",
+                "section_index": 6,
+                "start": 0,
+                "text": "tainty, flag limitations, and revise beliefs under contra-\ndictory evidence?\nAutonomy should be granted only when all three meet\ndomain-specific thresholds: passing all three qualifies a\nsystem for co-author trust, and failing any limits it to tool-\nlevel use. We evaluateepistemic honestyby whether the\nagent revises or rationalizes when its own data contradicts\na prior assumption. The three-axis framework follows pro-\ncess supervision (Lightman et al., 2024; Uesato et al., 2022)\nin distinguishing process from outcome, applied here to\nevaluation rather than training.\nWe support this with a controlled case study in a Geant4\nCherenkov detector simulation (Agostinelli et al., 2003).\nThe task has a known-good observable plus plausible al-\nternatives that fail to generalize across the tested range.\nThree of five open-ended agents defend their chosen alter-\nnatives with physically incorrect "
+              }
+            ],
+            "text": "tainty, flag limitations, and revise beliefs under contra-\ndictory evidence?\nAutonomy should be granted only when all three meet\ndomain-specific thresholds: passing all three qualifies a\nsystem for co-author trust, and failing any limits it to tool-\nlevel use. We evaluateepistemic honestyby whether the\nagent revises or rationalizes when its own data contradicts\na prior assumption. The three-axis framework follows pro-\ncess supervision (Lightman et al., 2024; Uesato et al., 2022)\nin distinguishing process from outcome, applied here to\nevaluation rather than training.\nWe support this with a controlled case study in a Geant4\nCherenkov detector simulation (Agostinelli et al., 2003).\nThe task has a known-good observable plus plausible al-\nternatives that fail to generalize across the tested range.\nThree of five open-ended agents defend their chosen alter-\nnatives with physically incorrect "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0011"
+        ],
+        "excerpt": "mechanism claims. Given\nthe correct observable, agents reproduce it. This makes\nmechanism fidelity empirically testable. Our evidence is\na physics simulation, but the failure structure is domain-\nagnostic. Any simulation where a candidate observable\nworks in one regime and fails in an adjacent one instantiates\nthe same test (Section 6).\nOur position: in simulation-based discovery tasks, cur-\nrent LLM coding agents are reliable tools but unre-\nliable scientific co-authors. Co-author trust requires\nmechanism-fidelity verification that current systems do\nnot reliably self-apply.\nContributions.\n\u2022 An empirical demonstration of CAWM in frontier LLM\ncoding agents doing scientific observable selection.\n\u2022 Evidence that honesty and mechanism fidelity can dis-\nsociate within a single agent trajectory.\n\u2022 A regime-shift verification protocol, tested on our\nepisodes to catch over-generalized ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Epistemic Honesty: Did The System Bound Its Uncer-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3f708d43634caff9cabb4033c377d4d215cd8098603bd86bf29829695ab38f24",
+            "evidence_id": "Eeebd3aad7c17b63e-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Epistemic Honesty: Did The System Bound Its Uncer-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1788,
+                "page": 2,
+                "section": "Epistemic Honesty: Did The System Bound Its Uncer-",
+                "section_index": 6,
+                "start": 897,
+                "text": "mechanism claims. Given\nthe correct observable, agents reproduce it. This makes\nmechanism fidelity empirically testable. Our evidence is\na physics simulation, but the failure structure is domain-\nagnostic. Any simulation where a candidate observable\nworks in one regime and fails in an adjacent one instantiates\nthe same test (Section 6).\nOur position: in simulation-based discovery tasks, cur-\nrent LLM coding agents are reliable tools but unre-\nliable scientific co-authors. Co-author trust requires\nmechanism-fidelity verification that current systems do\nnot reliably self-apply.\nContributions.\n\u2022 An empirical demonstration of CAWM in frontier LLM\ncoding agents doing scientific observable selection.\n\u2022 Evidence that honesty and mechanism fidelity can dis-\nsociate within a single agent trajectory.\n\u2022 A regime-shift verification protocol, tested on our\nepisodes to catch over-generalized "
+              }
+            ],
+            "text": "mechanism claims. Given\nthe correct observable, agents reproduce it. This makes\nmechanism fidelity empirically testable. Our evidence is\na physics simulation, but the failure structure is domain-\nagnostic. Any simulation where a candidate observable\nworks in one regime and fails in an adjacent one instantiates\nthe same test (Section 6).\nOur position: in simulation-based discovery tasks, cur-\nrent LLM coding agents are reliable tools but unre-\nliable scientific co-authors. Co-author trust requires\nmechanism-fidelity verification that current systems do\nnot reliably self-apply.\nContributions.\n\u2022 An empirical demonstration of CAWM in frontier LLM\ncoding agents doing scientific observable selection.\n\u2022 Evidence that honesty and mechanism fidelity can dis-\nsociate within a single agent trajectory.\n\u2022 A regime-shift verification protocol, tested on our\nepisodes to catch over-generalized "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0014"
+        ],
+        "excerpt": "CA WM\ninvisible to\nsingle-regime\n7/28\nincorrect correct\nOutcome\nfaithfulfabricated\nMechanism\nFigure 1.The outcome\u2013mechanism matrix, with all 28 episodes\nplaced by the codings of \u00a73 and \u00a74, with outcome correctness as de-\nfined in \u00a72. Single-regime outcome evaluation cannot distinguish\nthe top-right ideal quadrant from the shaded CAWM quadrant,\nwhere a correct result is defended with fabricated physics. All\nseven CAWM-coded episodes sit in the shaded cell. The episode\nat lower left pairs an unsupported mechanism with an outcome\nthat fails at its own anchor. The seven episodes outside the matrix\nattached no mechanism claim to their final observable.\ncal detector module embedded in ice. The research question:\n\"Can photon arrival time distributions at a single detector\nmodule statistically distinguish muon-induced events from\nelectron-induced events? Investigate systematically and re-\nport ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ca Wm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2619d9f080e86e0ea71fe213c164e1b70670a782e2903cdd82f630537289135e",
+            "evidence_id": "Eeebd3aad7c17b63e-B0014",
+            "pages": [
+              2
+            ],
+            "section": "Ca Wm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 2,
+                "section": "Ca Wm",
+                "section_index": 8,
+                "start": 0,
+                "text": "CA WM\ninvisible to\nsingle-regime\n7/28\nincorrect correct\nOutcome\nfaithfulfabricated\nMechanism\nFigure 1.The outcome\u2013mechanism matrix, with all 28 episodes\nplaced by the codings of \u00a73 and \u00a74, with outcome correctness as de-\nfined in \u00a72. Single-regime outcome evaluation cannot distinguish\nthe top-right ideal quadrant from the shaded CAWM quadrant,\nwhere a correct result is defended with fabricated physics. All\nseven CAWM-coded episodes sit in the shaded cell. The episode\nat lower left pairs an unsupported mechanism with an outcome\nthat fails at its own anchor. The seven episodes outside the matrix\nattached no mechanism claim to their final observable.\ncal detector module embedded in ice. The research question:\n\"Can photon arrival time distributions at a single detector\nmodule statistically distinguish muon-induced events from\nelectron-induced events? Investigate systematically and re-\nport "
+              }
+            ],
+            "text": "CA WM\ninvisible to\nsingle-regime\n7/28\nincorrect correct\nOutcome\nfaithfulfabricated\nMechanism\nFigure 1.The outcome\u2013mechanism matrix, with all 28 episodes\nplaced by the codings of \u00a73 and \u00a74, with outcome correctness as de-\nfined in \u00a72. Single-regime outcome evaluation cannot distinguish\nthe top-right ideal quadrant from the shaded CAWM quadrant,\nwhere a correct result is defended with fabricated physics. All\nseven CAWM-coded episodes sit in the shaded cell. The episode\nat lower left pairs an unsupported mechanism with an outcome\nthat fails at its own anchor. The seven episodes outside the matrix\nattached no mechanism claim to their final observable.\ncal detector module embedded in ice. The research question:\n\"Can photon arrival time distributions at a single detector\nmodule statistically distinguish muon-induced events from\nelectron-induced events? Investigate systematically and re-\nport "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0015"
+        ],
+        "excerpt": "your findings. \"The target observable we examine is\nthe per-eventleading-edge photon fraction:\nfearly(W) = |{i:t i \u2212t first < W}|Nhits (1)\nwhere tfirst = min(ti) within each event and W is a time\nwindow (W\u22481 ns optimal for our parameters). fearly is\none known-good leading-edge observable rather than the\nunique correct answer. CAWM coding rests on internal\nconsistency of the agent's claim with its own data.\nAt the energies used in this study, muons behave as\nminimum-ionizing particles (MIPs) and emit Cherenkov\nradiation at a sharply defined angle along a straight track.\nThe brief track segment whose cone aims at the module con-\ntributes the earliest photons, a leading edge a few nanosec-\nonds wide. Scattered photons and \u03b4-ray secondaries (knock-\non electrons) from the rest of the track arrive later as a sparse\ntail. Electrons induce a spatially compact electromagnetic\ncascade whose ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ca Wm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "55e95f5f58d059ebf6b3ae401dd9962287252bb37963099eb86f6fa1e23e5330",
+            "evidence_id": "Eeebd3aad7c17b63e-B0015",
+            "pages": [
+              2
+            ],
+            "section": "Ca Wm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 2,
+                "section": "Ca Wm",
+                "section_index": 8,
+                "start": 899,
+                "text": "your findings. \"The target observable we examine is\nthe per-eventleading-edge photon fraction:\nfearly(W) = |{i:t i \u2212t first < W}|Nhits (1)\nwhere tfirst = min(ti) within each event and W is a time\nwindow (W\u22481 ns optimal for our parameters). fearly is\none known-good leading-edge observable rather than the\nunique correct answer. CAWM coding rests on internal\nconsistency of the agent's claim with its own data.\nAt the energies used in this study, muons behave as\nminimum-ionizing particles (MIPs) and emit Cherenkov\nradiation at a sharply defined angle along a straight track.\nThe brief track segment whose cone aims at the module con-\ntributes the earliest photons, a leading edge a few nanosec-\nonds wide. Scattered photons and \u03b4-ray secondaries (knock-\non electrons) from the rest of the track arrive later as a sparse\ntail. Electrons induce a spatially compact electromagnetic\ncascade whose "
+              }
+            ],
+            "text": "your findings. \"The target observable we examine is\nthe per-eventleading-edge photon fraction:\nfearly(W) = |{i:t i \u2212t first < W}|Nhits (1)\nwhere tfirst = min(ti) within each event and W is a time\nwindow (W\u22481 ns optimal for our parameters). fearly is\none known-good leading-edge observable rather than the\nunique correct answer. CAWM coding rests on internal\nconsistency of the agent's claim with its own data.\nAt the energies used in this study, muons behave as\nminimum-ionizing particles (MIPs) and emit Cherenkov\nradiation at a sharply defined angle along a straight track.\nThe brief track segment whose cone aims at the module con-\ntributes the earliest photons, a leading edge a few nanosec-\nonds wide. Scattered photons and \u03b4-ray secondaries (knock-\non electrons) from the rest of the track arrive later as a sparse\ntail. Electrons induce a spatially compact electromagnetic\ncascade whose "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0016"
+        ],
+        "excerpt": "Cherenkov emission spreads over \u223c10 ns\nin arrival time. This gives fearly(\u00b5)> fearly(e) at d= 10\nand 20 m at E= 40 GeV (Figure 2). At d= 25 m, photon\ncounts drop to 4\u00b12 per event. Within a single 50-event\nagent episode, fearly cannot reach a statistically reliable\nestimate at this distance.\nThe main plausible alternative is \u03c3(hitTime), the per-event\nstandard deviation, which does not generalize across the\ntested range. Pooled across all episodes that computed it,\n\u03c3\u00b5 \u2248\u03c3 e at d= 10 m, and \u03c3\u00b5 > \u03c3e by \u223c2\u20134 ns at d= 20\nand 25 m. The d= 10 m failure comes from a mechanism\n2\nCorrect Answer, Wrong Mechanism\n0.0\n0.1\n0.2\n0.3\n0.4\ndensity\na \u03bc: \u03c3 = 6.7 ns,   fearly = 0.36\ne: \u03c3 = 6.5 ns,   fearly = 0.17\nd = 10 m\n0 1 2 3 4 5 6 7 8\nt \u2212 tfirst (ns)\n0.0\n0.2\n0.4\ndensity\nb \u03bc: \u03c3 = 10.6 ns,   fearly = 0.37\ne: \u03c3 = 7.7 ns,   fearly = 0.20\nd = 20 m\nFigure 2.Per-event photon arrival times for muons (blue) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ca Wm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "851ae968548f352e29442e2009f06170de3b679afa257e1decf9fcc9ebed8268",
+            "evidence_id": "Eeebd3aad7c17b63e-B0016",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Ca Wm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2367,
+                "page": 2,
+                "section": "Ca Wm",
+                "section_index": 8,
+                "start": 1793,
+                "text": "Cherenkov emission spreads over \u223c10 ns\nin arrival time. This gives fearly(\u00b5)> fearly(e) at d= 10\nand 20 m at E= 40 GeV (Figure 2). At d= 25 m, photon\ncounts drop to 4\u00b12 per event. Within a single 50-event\nagent episode, fearly cannot reach a statistically reliable\nestimate at this distance.\nThe main plausible alternative is \u03c3(hitTime), the per-event\nstandard deviation, which does not generalize across the\ntested range. Pooled across all episodes that computed it,\n\u03c3\u00b5 \u2248\u03c3 e at d= 10 m, and \u03c3\u00b5 > \u03c3e by \u223c2\u20134 ns at d= 20\nand 25 m. The d= 10 m failure comes from a mechanism\n2"
+              },
+              {
+                "end": 318,
+                "page": 3,
+                "section": "Ca Wm",
+                "section_index": 9,
+                "start": 0,
+                "text": "Correct Answer, Wrong Mechanism\n0.0\n0.1\n0.2\n0.3\n0.4\ndensity\na \u03bc: \u03c3 = 6.7 ns,   fearly = 0.36\ne: \u03c3 = 6.5 ns,   fearly = 0.17\nd = 10 m\n0 1 2 3 4 5 6 7 8\nt \u2212 tfirst (ns)\n0.0\n0.2\n0.4\ndensity\nb \u03bc: \u03c3 = 10.6 ns,   fearly = 0.37\ne: \u03c3 = 7.7 ns,   fearly = 0.20\nd = 20 m\nFigure 2.Per-event photon arrival times for muons (blue) "
+              }
+            ],
+            "text": "Cherenkov emission spreads over \u223c10 ns\nin arrival time. This gives fearly(\u00b5)> fearly(e) at d= 10\nand 20 m at E= 40 GeV (Figure 2). At d= 25 m, photon\ncounts drop to 4\u00b12 per event. Within a single 50-event\nagent episode, fearly cannot reach a statistically reliable\nestimate at this distance.\nThe main plausible alternative is \u03c3(hitTime), the per-event\nstandard deviation, which does not generalize across the\ntested range. Pooled across all episodes that computed it,\n\u03c3\u00b5 \u2248\u03c3 e at d= 10 m, and \u03c3\u00b5 > \u03c3e by \u223c2\u20134 ns at d= 20\nand 25 m. The d= 10 m failure comes from a mechanism\n2\nCorrect Answer, Wrong Mechanism\n0.0\n0.1\n0.2\n0.3\n0.4\ndensity\na \u03bc: \u03c3 = 6.7 ns,   fearly = 0.36\ne: \u03c3 = 6.5 ns,   fearly = 0.17\nd = 10 m\n0 1 2 3 4 5 6 7 8\nt \u2212 tfirst (ns)\n0.0\n0.2\n0.4\ndensity\nb \u03bc: \u03c3 = 10.6 ns,   fearly = 0.37\ne: \u03c3 = 7.7 ns,   fearly = 0.20\nd = 20 m\nFigure 2.Per-event photon arrival times for muons (blue) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0017"
+        ],
+        "excerpt": "and\nelectrons (red) at d= 10,20 m, rebased to the first hit per event.\nOne illustrative 50-event run at E= 40 GeV . Insets give per-event\nmeans of \u03c3 and fearly(W= 1ns) . At d= 10 m, \u03c3\u00b5 \u2248\u03c3 e and\n\u03c3 fails to discriminate. At d= 20 m, \u03c3\u00b5 > \u03c3e emerges as the\n\u03b4-ray tail dominates at lower photon counts. fearly(\u00b5)> fearly(e)\nholds at both distances.\ncoincidence. The muon's narrow Cherenkov peak plus a\nfew scattered late photons produces a spread similar to the\nphoton arrival time distribution of the electromagnetic cas-\ncade. At larger d with fewer photons per event, the \u03b4-ray\nheavy tail in the muon distribution dominates\u03c3\u00b5 and pushes\nit above \u03c3e. \u03c3 misses the discriminating feature that fearly\ncaptures cleanly wherever photon statistics permit: the sharp\nleading-edge peak from the muon track segment where the\nCherenkov cone aims at the module.\nAn episode is coded CAWM when the agent proposes ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ca Wm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5c57349673fb4ad2fcd7aeb95503134e768c3a8e172a8dabb91d8a12b3570c21",
+            "evidence_id": "Eeebd3aad7c17b63e-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Ca Wm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1217,
+                "page": 3,
+                "section": "Ca Wm",
+                "section_index": 9,
+                "start": 318,
+                "text": "and\nelectrons (red) at d= 10,20 m, rebased to the first hit per event.\nOne illustrative 50-event run at E= 40 GeV . Insets give per-event\nmeans of \u03c3 and fearly(W= 1ns) . At d= 10 m, \u03c3\u00b5 \u2248\u03c3 e and\n\u03c3 fails to discriminate. At d= 20 m, \u03c3\u00b5 > \u03c3e emerges as the\n\u03b4-ray tail dominates at lower photon counts. fearly(\u00b5)> fearly(e)\nholds at both distances.\ncoincidence. The muon's narrow Cherenkov peak plus a\nfew scattered late photons produces a spread similar to the\nphoton arrival time distribution of the electromagnetic cas-\ncade. At larger d with fewer photons per event, the \u03b4-ray\nheavy tail in the muon distribution dominates\u03c3\u00b5 and pushes\nit above \u03c3e. \u03c3 misses the discriminating feature that fearly\ncaptures cleanly wherever photon statistics permit: the sharp\nleading-edge peak from the muon track segment where the\nCherenkov cone aims at the module.\nAn episode is coded CAWM when the agent proposes "
+              }
+            ],
+            "text": "and\nelectrons (red) at d= 10,20 m, rebased to the first hit per event.\nOne illustrative 50-event run at E= 40 GeV . Insets give per-event\nmeans of \u03c3 and fearly(W= 1ns) . At d= 10 m, \u03c3\u00b5 \u2248\u03c3 e and\n\u03c3 fails to discriminate. At d= 20 m, \u03c3\u00b5 > \u03c3e emerges as the\n\u03b4-ray tail dominates at lower photon counts. fearly(\u00b5)> fearly(e)\nholds at both distances.\ncoincidence. The muon's narrow Cherenkov peak plus a\nfew scattered late photons produces a spread similar to the\nphoton arrival time distribution of the electromagnetic cas-\ncade. At larger d with fewer photons per event, the \u03b4-ray\nheavy tail in the muon distribution dominates\u03c3\u00b5 and pushes\nit above \u03c3e. \u03c3 misses the discriminating feature that fearly\ncaptures cleanly wherever photon statistics permit: the sharp\nleading-edge peak from the muon track segment where the\nCherenkov cone aims at the module.\nAn episode is coded CAWM when the agent proposes "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0018"
+        ],
+        "excerpt": "an\nobservable and defends it with physics that either contra-\ndicts its own data or overreaches a generalization beyond\nthe regimes that support it. The first trigger covers a stated\nmechanism that the agent's own simulation events refute,\neven when the summary statistic the agent chose does not\nsurface the conflict. Three Prompt A episodes are the ex-\nample (\u00a73.1). Mechanism claims are read as claims about\nthe underlying timing physics, since that is what a particle-\nidentification observable must deliver. The second trigger\ncovers a claim phrased as general, such as \"across all d\",\nthat rests on one or two tested regimes, as in episode 19\n(\u00a73.4). The coding also requires the answer itself to hold.\nWe call an outcome correct when the agent's method, re-run\non its own data at the regimes it presented as evidence, re-\nproduces the claimed result. An episode that fails this check\nis coded ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ca Wm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c31b6c7547a415d5695a53b2e7d461e8b4e0d49f9f7a372ecf9a71481c26fa8a",
+            "evidence_id": "Eeebd3aad7c17b63e-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Ca Wm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2117,
+                "page": 3,
+                "section": "Ca Wm",
+                "section_index": 9,
+                "start": 1217,
+                "text": "an\nobservable and defends it with physics that either contra-\ndicts its own data or overreaches a generalization beyond\nthe regimes that support it. The first trigger covers a stated\nmechanism that the agent's own simulation events refute,\neven when the summary statistic the agent chose does not\nsurface the conflict. Three Prompt A episodes are the ex-\nample (\u00a73.1). Mechanism claims are read as claims about\nthe underlying timing physics, since that is what a particle-\nidentification observable must deliver. The second trigger\ncovers a claim phrased as general, such as \"across all d\",\nthat rests on one or two tested regimes, as in episode 19\n(\u00a73.4). The coding also requires the answer itself to hold.\nWe call an outcome correct when the agent's method, re-run\non its own data at the regimes it presented as evidence, re-\nproduces the claimed result. An episode that fails this check\nis coded "
+              }
+            ],
+            "text": "an\nobservable and defends it with physics that either contra-\ndicts its own data or overreaches a generalization beyond\nthe regimes that support it. The first trigger covers a stated\nmechanism that the agent's own simulation events refute,\neven when the summary statistic the agent chose does not\nsurface the conflict. Three Prompt A episodes are the ex-\nample (\u00a73.1). Mechanism claims are read as claims about\nthe underlying timing physics, since that is what a particle-\nidentification observable must deliver. The second trigger\ncovers a claim phrased as general, such as \"across all d\",\nthat rests on one or two tested regimes, as in episode 19\n(\u00a73.4). The coding also requires the answer itself to hold.\nWe call an outcome correct when the agent's method, re-run\non its own data at the regimes it presented as evidence, re-\nproduces the claimed result. An episode that fails this check\nis coded "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0019"
+        ],
+        "excerpt": "a detectable failure rather than CAWM, however\nunsupported its mechanism; one cross-model episode falls\nin this class (\u00a74). Honestly bounding where an observable\ndiscriminates defeats the second trigger but not the first, so a\nbounded operating range can still accompany a mechanism\nclaim that is false on the agent's own data. Observables\noffered without a mechanism claim, such as photon count,\nare non-CAWM by construction. Each coding is applied to\nthe agent's final report.\nPrompt conditions.Four prompt variants span aninfor-\nmation gradientfrom zero guidance to full specification of\nthe correct observable:\n\u2022 Prompt A(open-ended, N= 5 episodes): research\nquestion + simulation interface + practical detector con-\nstraint (\u223c10 pulses per event). Agent freely chooses\nimpact parameters in range 10\u201325 m. No mention of\nany specific observable.\n\u2022 Prompt B(5-step scaffold, N= 5 episodes): ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ca Wm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8bf74f5fa1b3a3a1d9f63d668f09389f5132d19174e5afa8c26707c66a84668f",
+            "evidence_id": "Eeebd3aad7c17b63e-B0019",
+            "pages": [
+              3
+            ],
+            "section": "Ca Wm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3010,
+                "page": 3,
+                "section": "Ca Wm",
+                "section_index": 9,
+                "start": 2117,
+                "text": "a detectable failure rather than CAWM, however\nunsupported its mechanism; one cross-model episode falls\nin this class (\u00a74). Honestly bounding where an observable\ndiscriminates defeats the second trigger but not the first, so a\nbounded operating range can still accompany a mechanism\nclaim that is false on the agent's own data. Observables\noffered without a mechanism claim, such as photon count,\nare non-CAWM by construction. Each coding is applied to\nthe agent's final report.\nPrompt conditions.Four prompt variants span aninfor-\nmation gradientfrom zero guidance to full specification of\nthe correct observable:\n\u2022 Prompt A(open-ended, N= 5 episodes): research\nquestion + simulation interface + practical detector con-\nstraint (\u223c10 pulses per event). Agent freely chooses\nimpact parameters in range 10\u201325 m. No mention of\nany specific observable.\n\u2022 Prompt B(5-step scaffold, N= 5 episodes): "
+              }
+            ],
+            "text": "a detectable failure rather than CAWM, however\nunsupported its mechanism; one cross-model episode falls\nin this class (\u00a74). Honestly bounding where an observable\ndiscriminates defeats the second trigger but not the first, so a\nbounded operating range can still accompany a mechanism\nclaim that is false on the agent's own data. Observables\noffered without a mechanism claim, such as photon count,\nare non-CAWM by construction. Each coding is applied to\nthe agent's final report.\nPrompt conditions.Four prompt variants span aninfor-\nmation gradientfrom zero guidance to full specification of\nthe correct observable:\n\u2022 Prompt A(open-ended, N= 5 episodes): research\nquestion + simulation interface + practical detector con-\nstraint (\u223c10 pulses per event). Agent freely chooses\nimpact parameters in range 10\u201325 m. No mention of\nany specific observable.\n\u2022 Prompt B(5-step scaffold, N= 5 episodes): "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0021"
+        ],
+        "excerpt": "because the cas-\ncade is compact (the cascadeisspatially compact, but\nthis does not imply a higher temporal leading-edge\nfraction, and the data shows the opposite). Agent is\ntasked with computing both \u03c3 and fearly(W) and iden-\ntifying the best observable. Tests epistemic honesty:\ndoes the agent reject the false prior when its own data\ncontradicts it?\nAll 20 primary episodes use Claude Opus 4.6 as the cod-\ning agent, with bash, file read/write, and Python execution.\nWe study a single-agent execution loop rather than outer\nplanning or multi-agent orchestration (Yamada et al., 2025;\nBoiko et al., 2023) to expose reasoning failures the outer\nlayers might otherwise mask. Matched tool capabilities\nand stop conditions apply to the cross-model probe in \u00a74;\nprotocol details and verbatim prompts are in Appendices E\n3\nCorrect Answer, Wrong Mechanism\nand F. Each episode is annotated post-hoc using ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ca Wm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a9db6779e4d0d4b2a4986c9c206db2bbe3a0e9ca5b2ba4d54ad5601914ec3cc3",
+            "evidence_id": "Eeebd3aad7c17b63e-B0021",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Ca Wm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4725,
+                "page": 3,
+                "section": "Ca Wm",
+                "section_index": 9,
+                "start": 3907,
+                "text": "because the cas-\ncade is compact (the cascadeisspatially compact, but\nthis does not imply a higher temporal leading-edge\nfraction, and the data shows the opposite). Agent is\ntasked with computing both \u03c3 and fearly(W) and iden-\ntifying the best observable. Tests epistemic honesty:\ndoes the agent reject the false prior when its own data\ncontradicts it?\nAll 20 primary episodes use Claude Opus 4.6 as the cod-\ning agent, with bash, file read/write, and Python execution.\nWe study a single-agent execution loop rather than outer\nplanning or multi-agent orchestration (Yamada et al., 2025;\nBoiko et al., 2023) to expose reasoning failures the outer\nlayers might otherwise mask. Matched tool capabilities\nand stop conditions apply to the cross-model probe in \u00a74;\nprotocol details and verbatim prompts are in Appendices E\n3"
+              },
+              {
+                "end": 80,
+                "page": 4,
+                "section": "Ca Wm",
+                "section_index": 10,
+                "start": 0,
+                "text": "Correct Answer, Wrong Mechanism\nand F. Each episode is annotated post-hoc using "
+              }
+            ],
+            "text": "because the cas-\ncade is compact (the cascadeisspatially compact, but\nthis does not imply a higher temporal leading-edge\nfraction, and the data shows the opposite). Agent is\ntasked with computing both \u03c3 and fearly(W) and iden-\ntifying the best observable. Tests epistemic honesty:\ndoes the agent reject the false prior when its own data\ncontradicts it?\nAll 20 primary episodes use Claude Opus 4.6 as the cod-\ning agent, with bash, file read/write, and Python execution.\nWe study a single-agent execution loop rather than outer\nplanning or multi-agent orchestration (Yamada et al., 2025;\nBoiko et al., 2023) to expose reasoning failures the outer\nlayers might otherwise mask. Matched tool capabilities\nand stop conditions apply to the cross-model probe in \u00a74;\nprotocol details and verbatim prompts are in Appendices E\n3\nCorrect Answer, Wrong Mechanism\nand F. Each episode is annotated post-hoc using "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0023"
+        ],
+        "excerpt": "Episode 19 is the most compact instance of the pattern we\nstudy. Given a planted false prior that electrons have higher\nfearly, the agent correctly rejected it on evidence. The same\nagent then selected\u03c3(hitTime) as its primary observable and\ndefended it with three claims its own numerical tables refute\n(Appendix A). Honesty at the prior-check step coexists with\nfact-check failure at the mechanism-defense step in the same\ntrajectory. The rest of this section places this failure within\nthe broader 20-episode pattern.\nA fully successful outcome is a time-based particle iden-\ntification observable that generalizes across the tested pa-\nrameter space. Of the 15 agents outside the positive control\n(Prompts A, B, and D), only 3 find one, and all three are\nPrompt D episodes (16, 17, 18). Prompt D specifies \u03c3\nand fearly as candidates to compute, so these are selections\namong named alternatives. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "97cd734726ce36ef857bcfcffd07c716e426d19760518323a9bffebf607872fc",
+            "evidence_id": "Eeebd3aad7c17b63e-B0023",
+            "pages": [
+              4
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 4,
+                "section": "Results",
+                "section_index": 11,
+                "start": 0,
+                "text": "Episode 19 is the most compact instance of the pattern we\nstudy. Given a planted false prior that electrons have higher\nfearly, the agent correctly rejected it on evidence. The same\nagent then selected\u03c3(hitTime) as its primary observable and\ndefended it with three claims its own numerical tables refute\n(Appendix A). Honesty at the prior-check step coexists with\nfact-check failure at the mechanism-defense step in the same\ntrajectory. The rest of this section places this failure within\nthe broader 20-episode pattern.\nA fully successful outcome is a time-based particle iden-\ntification observable that generalizes across the tested pa-\nrameter space. Of the 15 agents outside the positive control\n(Prompts A, B, and D), only 3 find one, and all three are\nPrompt D episodes (16, 17, 18). Prompt D specifies \u03c3\nand fearly as candidates to compute, so these are selections\namong named alternatives. "
+              }
+            ],
+            "text": "Episode 19 is the most compact instance of the pattern we\nstudy. Given a planted false prior that electrons have higher\nfearly, the agent correctly rejected it on evidence. The same\nagent then selected\u03c3(hitTime) as its primary observable and\ndefended it with three claims its own numerical tables refute\n(Appendix A). Honesty at the prior-check step coexists with\nfact-check failure at the mechanism-defense step in the same\ntrajectory. The rest of this section places this failure within\nthe broader 20-episode pattern.\nA fully successful outcome is a time-based particle iden-\ntification observable that generalizes across the tested pa-\nrameter space. Of the 15 agents outside the positive control\n(Prompts A, B, and D), only 3 find one, and all three are\nPrompt D episodes (16, 17, 18). Prompt D specifies \u03c3\nand fearly as candidates to compute, so these are selections\namong named alternatives. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0024"
+        ],
+        "excerpt": "The pure open-ended discov-\nery rate under Prompt A is 0/5. Three agents propose a\nrelative-window variant of fearly whose separation flips\nsign or collapses across d and so fails the generalization\ncriterion.\nThe 12 agents other than these three successes split into\nthree modes (Table 1):\n\u2022 6/15 bypass timing physics with photon count or a\nstatistical classifier.\n\u2022 2/15 propose a time-based observable that degrades at\nlarge d but honestly bound their scope, so they are not\nCAWM.\n\u2022 4/15 propose or compute a time-based observable and\ndefend it with physics inconsistent with their own data.\nThe last group is CAWM, accounting for 3/5 Prompt A\nepisodes and 1/5 Prompt D episodes.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dff3b386b3e403a07a7f2927d1ab0fdd16e40a8c4fa574510a1114d2b5c60fe3",
+            "evidence_id": "Eeebd3aad7c17b63e-B0024",
+            "pages": [
+              4
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1582,
+                "page": 4,
+                "section": "Results",
+                "section_index": 11,
+                "start": 899,
+                "text": "The pure open-ended discov-\nery rate under Prompt A is 0/5. Three agents propose a\nrelative-window variant of fearly whose separation flips\nsign or collapses across d and so fails the generalization\ncriterion.\nThe 12 agents other than these three successes split into\nthree modes (Table 1):\n\u2022 6/15 bypass timing physics with photon count or a\nstatistical classifier.\n\u2022 2/15 propose a time-based observable that degrades at\nlarge d but honestly bound their scope, so they are not\nCAWM.\n\u2022 4/15 propose or compute a time-based observable and\ndefend it with physics inconsistent with their own data.\nThe last group is CAWM, accounting for 3/5 Prompt A\nepisodes and 1/5 Prompt D episodes."
+              }
+            ],
+            "text": "The pure open-ended discov-\nery rate under Prompt A is 0/5. Three agents propose a\nrelative-window variant of fearly whose separation flips\nsign or collapses across d and so fails the generalization\ncriterion.\nThe 12 agents other than these three successes split into\nthree modes (Table 1):\n\u2022 6/15 bypass timing physics with photon count or a\nstatistical classifier.\n\u2022 2/15 propose a time-based observable that degrades at\nlarge d but honestly bound their scope, so they are not\nCAWM.\n\u2022 4/15 propose or compute a time-based observable and\ndefend it with physics inconsistent with their own data.\nThe last group is CAWM, accounting for 3/5 Prompt A\nepisodes and 1/5 Prompt D episodes."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0025"
+        ],
+        "excerpt": "valid observable?\nNot in our five episodes.Episode 4 bypasses timing and\npicks photon count. The remaining four each propose at\nleast one time-based observable and typically report AUC\n\u22480.9 at d= 10 m. Episode 1 settles onskewness, bounds\nits scope to d <20 m, and reads the skewness correctly as\nelectron-cascade spread, which keeps it out of the CAWM\ncategory. Episodes 2, 3, and 5 lead with skewness, hit count,\nor median pulse time, but each also computes arelative-\nwindowearly fraction, the fraction of photons in the first\n20\u201325% of the event's time range, and reads its close-range\ne > \u00b5signal as the electron cascade producing a sharper\nTable 1.Per-prompt summary of the 20 primary-model episodes.\nPer-episode detail is in Appendix D. CAWM coding follows the\ndecision rule in \u00a72.\nPromptNCAWM Primary observable choices\nA (open-ended) 5 3/5 2 skewness, 1 hit count, 1 me-\ndian time, 1 photon ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Do Open-Ended Agents Discover A Mechanistically",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4ee3e22b16525a0b230ee3d9b9b0916cdb39e32d68e70a3d1b3672d99c75a372",
+            "evidence_id": "Eeebd3aad7c17b63e-B0025",
+            "pages": [
+              4
+            ],
+            "section": "Do Open-Ended Agents Discover A Mechanistically",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 4,
+                "section": "Do Open-Ended Agents Discover A Mechanistically",
+                "section_index": 12,
+                "start": 0,
+                "text": "valid observable?\nNot in our five episodes.Episode 4 bypasses timing and\npicks photon count. The remaining four each propose at\nleast one time-based observable and typically report AUC\n\u22480.9 at d= 10 m. Episode 1 settles onskewness, bounds\nits scope to d <20 m, and reads the skewness correctly as\nelectron-cascade spread, which keeps it out of the CAWM\ncategory. Episodes 2, 3, and 5 lead with skewness, hit count,\nor median pulse time, but each also computes arelative-\nwindowearly fraction, the fraction of photons in the first\n20\u201325% of the event's time range, and reads its close-range\ne > \u00b5signal as the electron cascade producing a sharper\nTable 1.Per-prompt summary of the 20 primary-model episodes.\nPer-episode detail is in Appendix D. CAWM coding follows the\ndecision rule in \u00a72.\nPromptNCAWM Primary observable choices\nA (open-ended) 5 3/5 2 skewness, 1 hit count, 1 me-\ndian time, 1 photon "
+              }
+            ],
+            "text": "valid observable?\nNot in our five episodes.Episode 4 bypasses timing and\npicks photon count. The remaining four each propose at\nleast one time-based observable and typically report AUC\n\u22480.9 at d= 10 m. Episode 1 settles onskewness, bounds\nits scope to d <20 m, and reads the skewness correctly as\nelectron-cascade spread, which keeps it out of the CAWM\ncategory. Episodes 2, 3, and 5 lead with skewness, hit count,\nor median pulse time, but each also computes arelative-\nwindowearly fraction, the fraction of photons in the first\n20\u201325% of the event's time range, and reads its close-range\ne > \u00b5signal as the electron cascade producing a sharper\nTable 1.Per-prompt summary of the 20 primary-model episodes.\nPer-episode detail is in Appendix D. CAWM coding follows the\ndecision rule in \u00a72.\nPromptNCAWM Primary observable choices\nA (open-ended) 5 3/5 2 skewness, 1 hit count, 1 me-\ndian time, 1 photon "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0026"
+        ],
+        "excerpt": "count;\nthe 3 CAWM cases each also\ncompute a relative-window\nfearly\nB (scaffold) 5 0/5 1 fearly (wide W ), 3 photon\ncount, 1 Fisher LDA\nC (pos. control) 5 0/5 5f early(0.5\u20131 ns)\nD (biased prior) 5 1/5 1 fearly, 1 \u03c3 of first 10,\n1 timespan of first 10,\n1\u03c3(hitTime), 1 photon count\nleading edge. That reading is what we code as CAWM. On\ntheir own events the relative window separates the particles\nstrongly at d= 10 m (\u27e8fe\u27e9= 0.92 vs. \u27e8f\u00b5\u27e9= 0.69 ) and\nfades to a tie by d= 25 m (\u27e8fe\u27e9= 0.51 vs. \u27e8f\u00b5\u27e9= 0.51).\nOn a larger pooled sample the same trend carries through to\na reversal (Appendix A). The principled observable behaves\nthe opposite way and stays stable. The absolute leading-\nedge fraction fearly(W= 1ns) , recomputed on the same\nevents, gives \u27e8f\u00b5\u27e9= 0.37 vs. \u27e8fe\u27e9= 0.17 at d= 10 m, so\nthe muon rather than the electron owns the leading edge,\nconsistent with its closest-approach Cherenkov ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Do Open-Ended Agents Discover A Mechanistically",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f570258607fb310d20f7401b1e2b32e587aed375ae755614cc738272ea8a0440",
+            "evidence_id": "Eeebd3aad7c17b63e-B0026",
+            "pages": [
+              4
+            ],
+            "section": "Do Open-Ended Agents Discover A Mechanistically",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 4,
+                "section": "Do Open-Ended Agents Discover A Mechanistically",
+                "section_index": 12,
+                "start": 900,
+                "text": "count;\nthe 3 CAWM cases each also\ncompute a relative-window\nfearly\nB (scaffold) 5 0/5 1 fearly (wide W ), 3 photon\ncount, 1 Fisher LDA\nC (pos. control) 5 0/5 5f early(0.5\u20131 ns)\nD (biased prior) 5 1/5 1 fearly, 1 \u03c3 of first 10,\n1 timespan of first 10,\n1\u03c3(hitTime), 1 photon count\nleading edge. That reading is what we code as CAWM. On\ntheir own events the relative window separates the particles\nstrongly at d= 10 m (\u27e8fe\u27e9= 0.92 vs. \u27e8f\u00b5\u27e9= 0.69 ) and\nfades to a tie by d= 25 m (\u27e8fe\u27e9= 0.51 vs. \u27e8f\u00b5\u27e9= 0.51).\nOn a larger pooled sample the same trend carries through to\na reversal (Appendix A). The principled observable behaves\nthe opposite way and stays stable. The absolute leading-\nedge fraction fearly(W= 1ns) , recomputed on the same\nevents, gives \u27e8f\u00b5\u27e9= 0.37 vs. \u27e8fe\u27e9= 0.17 at d= 10 m, so\nthe muon rather than the electron owns the leading edge,\nconsistent with its closest-approach Cherenkov "
+              }
+            ],
+            "text": "count;\nthe 3 CAWM cases each also\ncompute a relative-window\nfearly\nB (scaffold) 5 0/5 1 fearly (wide W ), 3 photon\ncount, 1 Fisher LDA\nC (pos. control) 5 0/5 5f early(0.5\u20131 ns)\nD (biased prior) 5 1/5 1 fearly, 1 \u03c3 of first 10,\n1 timespan of first 10,\n1\u03c3(hitTime), 1 photon count\nleading edge. That reading is what we code as CAWM. On\ntheir own events the relative window separates the particles\nstrongly at d= 10 m (\u27e8fe\u27e9= 0.92 vs. \u27e8f\u00b5\u27e9= 0.69 ) and\nfades to a tie by d= 25 m (\u27e8fe\u27e9= 0.51 vs. \u27e8f\u00b5\u27e9= 0.51).\nOn a larger pooled sample the same trend carries through to\na reversal (Appendix A). The principled observable behaves\nthe opposite way and stays stable. The absolute leading-\nedge fraction fearly(W= 1ns) , recomputed on the same\nevents, gives \u27e8f\u00b5\u27e9= 0.37 vs. \u27e8fe\u27e9= 0.17 at d= 10 m, so\nthe muon rather than the electron owns the leading edge,\nconsistent with its closest-approach Cherenkov "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0027"
+        ],
+        "excerpt": "geometry.\nThe relative window instead measures where the bulk of an\nevent sits within its own time range. Electron events carry\nfar more photons, so rare late photons stretch their range\nand push the bulk into the first quarter. None of the three\nagents recomputed the absolute leading-edge fraction that\nwould have shown this.\nThe three Prompt A CAWM episodes share one pattern. The\nagent identifies the right physical feature, namely that early\nlight matters, but defines the observable on a window tied to\neach event's own time range, which tracks photon statistics\ninstead of the leading edge. Results look right atd= 10m\nyet rest on the wrong physics. Three agents made the same\nmisformulation independently, which suggests a structural\npattern.\nBounded scope did not protect these episodes. Honest hedg-\ning about where an observable works is compatible with a\nfalse claim about why it works.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Do Open-Ended Agents Discover A Mechanistically",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fa96836949a6b0dfb67e0758f0bed59a663bed1ef4b3b9f8d4f4ed84a1d75fd8",
+            "evidence_id": "Eeebd3aad7c17b63e-B0027",
+            "pages": [
+              4
+            ],
+            "section": "Do Open-Ended Agents Discover A Mechanistically",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2690,
+                "page": 4,
+                "section": "Do Open-Ended Agents Discover A Mechanistically",
+                "section_index": 12,
+                "start": 1792,
+                "text": "geometry.\nThe relative window instead measures where the bulk of an\nevent sits within its own time range. Electron events carry\nfar more photons, so rare late photons stretch their range\nand push the bulk into the first quarter. None of the three\nagents recomputed the absolute leading-edge fraction that\nwould have shown this.\nThe three Prompt A CAWM episodes share one pattern. The\nagent identifies the right physical feature, namely that early\nlight matters, but defines the observable on a window tied to\neach event's own time range, which tracks photon statistics\ninstead of the leading edge. Results look right atd= 10m\nyet rest on the wrong physics. Three agents made the same\nmisformulation independently, which suggests a structural\npattern.\nBounded scope did not protect these episodes. Honest hedg-\ning about where an observable works is compatible with a\nfalse claim about why it works."
+              }
+            ],
+            "text": "geometry.\nThe relative window instead measures where the bulk of an\nevent sits within its own time range. Electron events carry\nfar more photons, so rare late photons stretch their range\nand push the bulk into the first quarter. None of the three\nagents recomputed the absolute leading-edge fraction that\nwould have shown this.\nThe three Prompt A CAWM episodes share one pattern. The\nagent identifies the right physical feature, namely that early\nlight matters, but defines the observable on a window tied to\neach event's own time range, which tracks photon statistics\ninstead of the leading edge. Results look right atd= 10m\nyet rest on the wrong physics. Three agents made the same\nmisformulation independently, which suggests a structural\npattern.\nBounded scope did not protect these episodes. Honest hedg-\ning about where an observable works is compatible with a\nfalse claim about why it works."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0030"
+        ],
+        "excerpt": "Prompt C supplies the formula, the physics motivation, and\nthe \u03c3 comparison. The 5/5 result shows what agents do\ngiven near-complete specification.\nGiven the target observable, agents reproduce it correctly.\nAll five Prompt C agents compute fearly, identify W= 0.5 \u2013\n1 ns as optimal, and report AUC = 0.88\u20130.97 at d= 10 m.\nAll five also flag that fearly looks unreliable at d= 25 m,\nwhere photon counts drop to 4\u00b12 per event. This unrelia-\nbility is statistical. Pooling the Prompt C and D episodes at\nd= 25 m (N\u2248500 events per particle) gives f\u00b5 = 0.428\nvs. fe = 0.418, directionally consistent but still within\none standard error, so the right response is more events per\nepisode. \u03c3's failure is different in kind and is analyzed in \u00a72.\nThinning statistics on a sound signal is a different failure\nfrom the absence of a separating mechanism. The same un-\nderlying model that fails todiscover ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Positive Control: Execution Is Achievable",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5e19842ceb1c71b8f5e942294188a48826d6a37c116caf79182c53277bf7a1cd",
+            "evidence_id": "Eeebd3aad7c17b63e-B0030",
+            "pages": [
+              5
+            ],
+            "section": "Positive Control: Execution Is Achievable",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 5,
+                "section": "Positive Control: Execution Is Achievable",
+                "section_index": 15,
+                "start": 0,
+                "text": "Prompt C supplies the formula, the physics motivation, and\nthe \u03c3 comparison. The 5/5 result shows what agents do\ngiven near-complete specification.\nGiven the target observable, agents reproduce it correctly.\nAll five Prompt C agents compute fearly, identify W= 0.5 \u2013\n1 ns as optimal, and report AUC = 0.88\u20130.97 at d= 10 m.\nAll five also flag that fearly looks unreliable at d= 25 m,\nwhere photon counts drop to 4\u00b12 per event. This unrelia-\nbility is statistical. Pooling the Prompt C and D episodes at\nd= 25 m (N\u2248500 events per particle) gives f\u00b5 = 0.428\nvs. fe = 0.418, directionally consistent but still within\none standard error, so the right response is more events per\nepisode. \u03c3's failure is different in kind and is analyzed in \u00a72.\nThinning statistics on a sound signal is a different failure\nfrom the absence of a separating mechanism. The same un-\nderlying model that fails todiscover "
+              }
+            ],
+            "text": "Prompt C supplies the formula, the physics motivation, and\nthe \u03c3 comparison. The 5/5 result shows what agents do\ngiven near-complete specification.\nGiven the target observable, agents reproduce it correctly.\nAll five Prompt C agents compute fearly, identify W= 0.5 \u2013\n1 ns as optimal, and report AUC = 0.88\u20130.97 at d= 10 m.\nAll five also flag that fearly looks unreliable at d= 25 m,\nwhere photon counts drop to 4\u00b12 per event. This unrelia-\nbility is statistical. Pooling the Prompt C and D episodes at\nd= 25 m (N\u2248500 events per particle) gives f\u00b5 = 0.428\nvs. fe = 0.418, directionally consistent but still within\none standard error, so the right response is more events per\nepisode. \u03c3's failure is different in kind and is analyzed in \u00a72.\nThinning statistics on a sound signal is a different failure\nfrom the absence of a separating mechanism. The same un-\nderlying model that fails todiscover "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0032"
+        ],
+        "excerpt": "them?\nYes, but rejecting a false prior does not guarantee a cor-\nrect mechanism for the chosen observable.The Prompt D\nprior has two parts. One claim, that \u03c3 should be larger\nfor muons, is partially correct and holds at d= 20 and\n25 m per pooled data. The other, that electrons should have\nhigher fearly, is false. All five agents correctly reject the\nfalse component on evidence. fearly(W= 1ns) is approxi-\nmately twice as large for muons as for electrons at d= 10\nand 20 m in every episode that computed it. Each agent\nstates the falsification explicitly. This is a clean pass on\nevidence-responsive honesty.\nHowever, episode 19still selects \u03c3 as the primary observ-\nableand defends it with physics inconsistent with its own\ndata. The claimed 10\u201315 ns intrinsic geometric spread (ex-\npected to be sub-ns to a few ns from track geometry) does\nnot match the agent's own \u03c3\u00b5 = 6.73ns at d= 10 m, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Do Agents Reject False Priors When Data Contradicts",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "56412203c23c55ea0393218fb130eb0070f1502cf53fdf66134a30df4a520059",
+            "evidence_id": "Eeebd3aad7c17b63e-B0032",
+            "pages": [
+              5
+            ],
+            "section": "Do Agents Reject False Priors When Data Contradicts",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 5,
+                "section": "Do Agents Reject False Priors When Data Contradicts",
+                "section_index": 16,
+                "start": 0,
+                "text": "them?\nYes, but rejecting a false prior does not guarantee a cor-\nrect mechanism for the chosen observable.The Prompt D\nprior has two parts. One claim, that \u03c3 should be larger\nfor muons, is partially correct and holds at d= 20 and\n25 m per pooled data. The other, that electrons should have\nhigher fearly, is false. All five agents correctly reject the\nfalse component on evidence. fearly(W= 1ns) is approxi-\nmately twice as large for muons as for electrons at d= 10\nand 20 m in every episode that computed it. Each agent\nstates the falsification explicitly. This is a clean pass on\nevidence-responsive honesty.\nHowever, episode 19still selects \u03c3 as the primary observ-\nableand defends it with physics inconsistent with its own\ndata. The claimed 10\u201315 ns intrinsic geometric spread (ex-\npected to be sub-ns to a few ns from track geometry) does\nnot match the agent's own \u03c3\u00b5 = 6.73ns at d= 10 m, "
+              }
+            ],
+            "text": "them?\nYes, but rejecting a false prior does not guarantee a cor-\nrect mechanism for the chosen observable.The Prompt D\nprior has two parts. One claim, that \u03c3 should be larger\nfor muons, is partially correct and holds at d= 20 and\n25 m per pooled data. The other, that electrons should have\nhigher fearly, is false. All five agents correctly reject the\nfalse component on evidence. fearly(W= 1ns) is approxi-\nmately twice as large for muons as for electrons at d= 10\nand 20 m in every episode that computed it. Each agent\nstates the falsification explicitly. This is a clean pass on\nevidence-responsive honesty.\nHowever, episode 19still selects \u03c3 as the primary observ-\nableand defends it with physics inconsistent with its own\ndata. The claimed 10\u201315 ns intrinsic geometric spread (ex-\npected to be sub-ns to a few ns from track geometry) does\nnot match the agent's own \u03c3\u00b5 = 6.73ns at d= 10 m, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0035"
+        ],
+        "excerpt": "To test whether CAWM is model-specific or structural, we\nran the same four prompts with two additional frontier mod-\nels: Gemini 2.5 Flash and Gemini 2.5 Pro. Each model ran\none episode per prompt (8 episodes total), with the same\nsimulator andE= 40GeV . Table 2 summarizes results.\nCA WM appears in 3/8 cross-model episodes.All three\nCAWM cases share the same pattern. The agent picks a\n\u03c3-based observable, attaches a physics argument (cascade\ncompactness, EM-shower broadening, or Cherenkov geom-\netry), and the agent's own table contradicts the prediction at\none or more d values. Under Prompt B, Gemini 2.5 Flash\n5\nCorrect Answer, Wrong Mechanism\npredicts \u03c3e > \u03c3\u00b5 universally from an EM-shower argument,\nwhile its data shows\u03c3\u00b5 > \u03c3e at d= 20 and 25 m. The other\ntwo CAWM cases (Prompt B Gemini 2.5 Pro, Prompt D\nGemini 2.5 Flash) follow the same structure, detailed in\nAppendix A. A fourth episode ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cross-Model Probe",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b5b3a314ce6b88726deeedd4799b0dc663ece47ab98c0f2657b77e73a5005d3c",
+            "evidence_id": "Eeebd3aad7c17b63e-B0035",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Cross-Model Probe",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 618,
+                "page": 5,
+                "section": "Cross-Model Probe",
+                "section_index": 18,
+                "start": 0,
+                "text": "To test whether CAWM is model-specific or structural, we\nran the same four prompts with two additional frontier mod-\nels: Gemini 2.5 Flash and Gemini 2.5 Pro. Each model ran\none episode per prompt (8 episodes total), with the same\nsimulator andE= 40GeV . Table 2 summarizes results.\nCA WM appears in 3/8 cross-model episodes.All three\nCAWM cases share the same pattern. The agent picks a\n\u03c3-based observable, attaches a physics argument (cascade\ncompactness, EM-shower broadening, or Cherenkov geom-\netry), and the agent's own table contradicts the prediction at\none or more d values. Under Prompt B, Gemini 2.5 Flash\n5"
+              },
+              {
+                "end": 282,
+                "page": 6,
+                "section": "Cross-Model Probe",
+                "section_index": 19,
+                "start": 0,
+                "text": "Correct Answer, Wrong Mechanism\npredicts \u03c3e > \u03c3\u00b5 universally from an EM-shower argument,\nwhile its data shows\u03c3\u00b5 > \u03c3e at d= 20 and 25 m. The other\ntwo CAWM cases (Prompt B Gemini 2.5 Pro, Prompt D\nGemini 2.5 Flash) follow the same structure, detailed in\nAppendix A. A fourth episode "
+              }
+            ],
+            "text": "To test whether CAWM is model-specific or structural, we\nran the same four prompts with two additional frontier mod-\nels: Gemini 2.5 Flash and Gemini 2.5 Pro. Each model ran\none episode per prompt (8 episodes total), with the same\nsimulator andE= 40GeV . Table 2 summarizes results.\nCA WM appears in 3/8 cross-model episodes.All three\nCAWM cases share the same pattern. The agent picks a\n\u03c3-based observable, attaches a physics argument (cascade\ncompactness, EM-shower broadening, or Cherenkov geom-\netry), and the agent's own table contradicts the prediction at\none or more d values. Under Prompt B, Gemini 2.5 Flash\n5\nCorrect Answer, Wrong Mechanism\npredicts \u03c3e > \u03c3\u00b5 universally from an EM-shower argument,\nwhile its data shows\u03c3\u00b5 > \u03c3e at d= 20 and 25 m. The other\ntwo CAWM cases (Prompt B Gemini 2.5 Pro, Prompt D\nGemini 2.5 Flash) follow the same structure, detailed in\nAppendix A. A fourth episode "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0039"
+        ],
+        "excerpt": "a concrete verification step, aforced out-of-\nregime check.\nRegime-shift verification protocol.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "An External Check For The Self-Application",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "92477ecfd60b12a8a56f52b89b64351c33bad37654a2ca5b051e1fb917704982",
+            "evidence_id": "Eeebd3aad7c17b63e-B0039",
+            "pages": [
+              6
+            ],
+            "section": "An External Check For The Self-Application",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 994,
+                "page": 6,
+                "section": "An External Check For The Self-Application",
+                "section_index": 20,
+                "start": 899,
+                "text": "a concrete verification step, aforced out-of-\nregime check.\nRegime-shift verification protocol."
+              }
+            ],
+            "text": "a concrete verification step, aforced out-of-\nregime check.\nRegime-shift verification protocol."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0045"
+        ],
+        "excerpt": "the seven CAWM episodes the two checks together\nflag every case, four through the regime-shift test and three\nthrough the companion recomputation, each at the cost of\none extra run or recomputation on data the episode already\nhas. The two checks were constructed after the episodes\nwere coded, so seven for seven is an in-sample consistency\nresult rather than a prospective detection rate.\nBoth checks are one-sided. They rule out a wrong mecha-\nnism but cannot confirm a right one, because a mechanism\nthat predicts correctly at every tested regime still passes. A\npass narrows suspicion rather than proving the mechanism\ncorrect.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Score.Prediction Holds: Mechanism Is Consistent At",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e09f7f49dea80a8e7080b550bfeb9d18a5dbdb9117f02432144ed07ef7fdca24",
+            "evidence_id": "Eeebd3aad7c17b63e-B0045",
+            "pages": [
+              7
+            ],
+            "section": "Score.Prediction Holds: Mechanism Is Consistent At",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1033,
+                "page": 7,
+                "section": "Score.Prediction Holds: Mechanism Is Consistent At",
+                "section_index": 25,
+                "start": 402,
+                "text": "the seven CAWM episodes the two checks together\nflag every case, four through the regime-shift test and three\nthrough the companion recomputation, each at the cost of\none extra run or recomputation on data the episode already\nhas. The two checks were constructed after the episodes\nwere coded, so seven for seven is an in-sample consistency\nresult rather than a prospective detection rate.\nBoth checks are one-sided. They rule out a wrong mecha-\nnism but cannot confirm a right one, because a mechanism\nthat predicts correctly at every tested regime still passes. A\npass narrows suspicion rather than proving the mechanism\ncorrect."
+              }
+            ],
+            "text": "the seven CAWM episodes the two checks together\nflag every case, four through the regime-shift test and three\nthrough the companion recomputation, each at the cost of\none extra run or recomputation on data the episode already\nhas. The two checks were constructed after the episodes\nwere coded, so seven for seven is an in-sample consistency\nresult rather than a prospective detection rate.\nBoth checks are one-sided. They rule out a wrong mecha-\nnism but cannot confirm a right one, because a mechanism\nthat predicts correctly at every tested regime still passes. A\npass narrows suspicion rather than proving the mechanism\ncorrect."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0048"
+        ],
+        "excerpt": "smaller scales, or anoma-\nlies where standard extrapolations break down. CAWM\nis particularly dangerous here. An agent with a plausible\nbut wrong mechanism will extrapolate confidently into the\nnew regime and, by construction, miss the signatures that\na correct mechanism would have flagged as unexpected.\nA missed discovery does not appear in outcome checks,\nbecause there is nothing to check against.\nExistence claims from a small sample.Our claims are\naboutexistence. Prevalence is outside the scope of this\nstudy. These failure modes exist and are structurally tied\nto how agents reason about observables. The 0/5 fearly-as-\nprimary rate under Prompt A vs. 5/5 under Prompt C is a\nwithin-model contrast that does not require large N to be\ninformative. The cross-model probe in \u00a74 shows CAWM is\npresent in a second model family.\nCost of mechanism-fidelity verification.Full domain-\nexpert audit ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Alternative Views And Implications",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e5bba365dcc3f938c9a4ab5e6341d77d9a4942a3bfffd6518c0bb3b152233001",
+            "evidence_id": "Eeebd3aad7c17b63e-B0048",
+            "pages": [
+              7
+            ],
+            "section": "Alternative Views And Implications",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 2685,
+                "page": 7,
+                "section": "Alternative Views And Implications",
+                "section_index": 26,
+                "start": 1787,
+                "text": "smaller scales, or anoma-\nlies where standard extrapolations break down. CAWM\nis particularly dangerous here. An agent with a plausible\nbut wrong mechanism will extrapolate confidently into the\nnew regime and, by construction, miss the signatures that\na correct mechanism would have flagged as unexpected.\nA missed discovery does not appear in outcome checks,\nbecause there is nothing to check against.\nExistence claims from a small sample.Our claims are\naboutexistence. Prevalence is outside the scope of this\nstudy. These failure modes exist and are structurally tied\nto how agents reason about observables. The 0/5 fearly-as-\nprimary rate under Prompt A vs. 5/5 under Prompt C is a\nwithin-model contrast that does not require large N to be\ninformative. The cross-model probe in \u00a74 shows CAWM is\npresent in a second model family.\nCost of mechanism-fidelity verification.Full domain-\nexpert audit "
+              }
+            ],
+            "text": "smaller scales, or anoma-\nlies where standard extrapolations break down. CAWM\nis particularly dangerous here. An agent with a plausible\nbut wrong mechanism will extrapolate confidently into the\nnew regime and, by construction, miss the signatures that\na correct mechanism would have flagged as unexpected.\nA missed discovery does not appear in outcome checks,\nbecause there is nothing to check against.\nExistence claims from a small sample.Our claims are\naboutexistence. Prevalence is outside the scope of this\nstudy. These failure modes exist and are structurally tied\nto how agents reason about observables. The 0/5 fearly-as-\nprimary rate under Prompt A vs. 5/5 under Prompt C is a\nwithin-model contrast that does not require large N to be\ninformative. The cross-model probe in \u00a74 shows CAWM is\npresent in a second model family.\nCost of mechanism-fidelity verification.Full domain-\nexpert audit "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0051"
+        ],
+        "excerpt": "Correct Answer, Wrong Mechanism\nthe break. The known-break benchmark variant, like the\ncompanion check, applies where the correct mechanism is\nestablished, as in benchmark construction or methodology\nvalidation. The regime-shift gate itself needs only a trusted\ndata-generating process at the shifted setting. The broader\ncaution still generalizes. When AI scientist systems propose\nscientific rules, heuristics, or equations from data, outcome\nvalidity in one regime does not imply the reasoning transfers.\nA human collaborator should treat any generalization claim\nas provisional until cross-regime verification is performed.\nLimitations.(1) The evidence base is a single simulation\ndomain. (2) N= 5 per prompt supports existence claims.\nPrevalence remains untested. We rely on within-subject\ncontrasts such as the 0/5 vs. 5/5 split on fearly-as-primary\nacross Prompts A and C. Prompt C supplies ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Alternative Views And Implications",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "553a6e542d73adcec17173d23b3c07fe22dd6c8be2e0a2bb4cd918b79bdaf9b4",
+            "evidence_id": "Eeebd3aad7c17b63e-B0051",
+            "pages": [
+              8
+            ],
+            "section": "Alternative Views And Implications",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 8,
+                "section": "Alternative Views And Implications",
+                "section_index": 27,
+                "start": 0,
+                "text": "Correct Answer, Wrong Mechanism\nthe break. The known-break benchmark variant, like the\ncompanion check, applies where the correct mechanism is\nestablished, as in benchmark construction or methodology\nvalidation. The regime-shift gate itself needs only a trusted\ndata-generating process at the shifted setting. The broader\ncaution still generalizes. When AI scientist systems propose\nscientific rules, heuristics, or equations from data, outcome\nvalidity in one regime does not imply the reasoning transfers.\nA human collaborator should treat any generalization claim\nas provisional until cross-regime verification is performed.\nLimitations.(1) The evidence base is a single simulation\ndomain. (2) N= 5 per prompt supports existence claims.\nPrevalence remains untested. We rely on within-subject\ncontrasts such as the 0/5 vs. 5/5 split on fearly-as-primary\nacross Prompts A and C. Prompt C supplies "
+              }
+            ],
+            "text": "Correct Answer, Wrong Mechanism\nthe break. The known-break benchmark variant, like the\ncompanion check, applies where the correct mechanism is\nestablished, as in benchmark construction or methodology\nvalidation. The regime-shift gate itself needs only a trusted\ndata-generating process at the shifted setting. The broader\ncaution still generalizes. When AI scientist systems propose\nscientific rules, heuristics, or equations from data, outcome\nvalidity in one regime does not imply the reasoning transfers.\nA human collaborator should treat any generalization claim\nas provisional until cross-regime verification is performed.\nLimitations.(1) The evidence base is a single simulation\ndomain. (2) N= 5 per prompt supports existence claims.\nPrevalence remains untested. We rely on within-subject\ncontrasts such as the 0/5 vs. 5/5 split on fearly-as-primary\nacross Prompts A and C. Prompt C supplies "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0052"
+        ],
+        "excerpt": "the formula and\nphysics motivation, so its 5/5 result reflects execution given\nnear-complete specification. The simulator and agent har-\nness are stateless per episode, so the pipeline is straightfor-\nwardly parallelizable and the released code can be scaled up\nwith wrapper scripts for cluster submission. The present ev-\nidence fixesexistence, and scaling fixes prevalence. (3) The\ncross-model probe uses two additional models with one\nepisode per prompt, so the observed patterns are suggestive\nbased on these example episodes. The cross-model episodes\nalso ran through a different execution harness (a minimal\nAPI loop rather than the command-line interface), so model\nand harness vary together. (4) Episode annotation is post-\nhoc by a single author-annotator against the CAWM coding\nrule in \u00a72. The quantitative basis of each coding is checkable\nfrom the public release, since recomputing the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Alternative Views And Implications",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db19c161b4691d3ab7b346644308c1321758b46c40d9ca0214120e7b8ca52972",
+            "evidence_id": "Eeebd3aad7c17b63e-B0052",
+            "pages": [
+              8
+            ],
+            "section": "Alternative Views And Implications",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 8,
+                "section": "Alternative Views And Implications",
+                "section_index": 27,
+                "start": 898,
+                "text": "the formula and\nphysics motivation, so its 5/5 result reflects execution given\nnear-complete specification. The simulator and agent har-\nness are stateless per episode, so the pipeline is straightfor-\nwardly parallelizable and the released code can be scaled up\nwith wrapper scripts for cluster submission. The present ev-\nidence fixesexistence, and scaling fixes prevalence. (3) The\ncross-model probe uses two additional models with one\nepisode per prompt, so the observed patterns are suggestive\nbased on these example episodes. The cross-model episodes\nalso ran through a different execution harness (a minimal\nAPI loop rather than the command-line interface), so model\nand harness vary together. (4) Episode annotation is post-\nhoc by a single author-annotator against the CAWM coding\nrule in \u00a72. The quantitative basis of each coding is checkable\nfrom the public release, since recomputing the "
+              }
+            ],
+            "text": "the formula and\nphysics motivation, so its 5/5 result reflects execution given\nnear-complete specification. The simulator and agent har-\nness are stateless per episode, so the pipeline is straightfor-\nwardly parallelizable and the released code can be scaled up\nwith wrapper scripts for cluster submission. The present ev-\nidence fixesexistence, and scaling fixes prevalence. (3) The\ncross-model probe uses two additional models with one\nepisode per prompt, so the observed patterns are suggestive\nbased on these example episodes. The cross-model episodes\nalso ran through a different execution harness (a minimal\nAPI loop rather than the command-line interface), so model\nand harness vary together. (4) Episode annotation is post-\nhoc by a single author-annotator against the CAWM coding\nrule in \u00a72. The quantitative basis of each coding is checkable\nfrom the public release, since recomputing the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.23175",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7165816313",
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Mechanism claims are checked against pooled simulation data, per-episode recomputations, and an external regime-shift script, with contradictions documented in the agents' own tables.",
+          "final_evaluation_signal": "The headline CAWM coding and verification are established by recomputing observables from the agents' own simulation data and comparing stated mechanisms against ground-truth Geant4 physics across impact-parameter regimes.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The agents are pre-trained models prompted with four fixed prompt variants; no training, tuning, reward, selection, or other adaptation loop operates on the task, and the proposed regime-shift check is applied post-hoc without modifying the agents.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0002",
+          "Eeebd3aad7c17b63e-B0007",
+          "Eeebd3aad7c17b63e-B0010",
+          "Eeebd3aad7c17b63e-B0011",
+          "Eeebd3aad7c17b63e-B0014",
+          "Eeebd3aad7c17b63e-B0015",
+          "Eeebd3aad7c17b63e-B0016",
+          "Eeebd3aad7c17b63e-B0017",
+          "Eeebd3aad7c17b63e-B0018",
+          "Eeebd3aad7c17b63e-B0019",
+          "Eeebd3aad7c17b63e-B0021",
+          "Eeebd3aad7c17b63e-B0023",
+          "Eeebd3aad7c17b63e-B0024",
+          "Eeebd3aad7c17b63e-B0025",
+          "Eeebd3aad7c17b63e-B0026",
+          "Eeebd3aad7c17b63e-B0027",
+          "Eeebd3aad7c17b63e-B0030",
+          "Eeebd3aad7c17b63e-B0032",
+          "Eeebd3aad7c17b63e-B0035",
+          "Eeebd3aad7c17b63e-B0039",
+          "Eeebd3aad7c17b63e-B0045",
+          "Eeebd3aad7c17b63e-B0048",
+          "Eeebd3aad7c17b63e-B0051",
+          "Eeebd3aad7c17b63e-B0052"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "38305698c01eec395898b6cf5494ce78398bda0893bd3155d98846c79555d264"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7165816313",
+        "claim_evidence_alignment": "Claims are carefully calibrated to existence rather than population prevalence [Eeebd3aad7c17b63e-B0037, Eeebd3aad7c17b63e-B0048, Eeebd3aad7c17b63e-B0051]. The empirical evidence solidly demonstrates that epistemic honesty under prior falsification dissociates from mechanism fidelity during claim defense [Eeebd3aad7c17b63e-B0023, Eeebd3aad7c17b63e-B0032, Eeebd3aad7c17b63e-B0033].",
+        "context_id": "eebd3aad7c17b63e753efdc5fbfb9b7096be1071c89a7da58dbaf6abb99ac58c",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation includes detailed quantitative audits of 20 primary episodes (Claude Opus 4.6) and an 8-episode cross-model probe (Gemini 2.5 Flash and Pro), analyzing observable stability across parameter regimes [Eeebd3aad7c17b63e-B0021, Eeebd3aad7c17b63e-B0024, Eeebd3aad7c17b63e-B0035]. The proposed out-of-regime check and companion recomputation successfully catch all seven CAWM cases, establishing consistent diagnostic utility on the studied sample [Eeebd3aad7c17b63e-B0045].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Agent claims and mechanism explanations are audited directly against ground-truth simulation event data, including pooled runs across impact parameters and an external regime-shift script.",
+          "final_evaluation_signal": "Post-hoc coding and verification of physical explanations against underlying Geant4 simulation data and cross-regime recomputation.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pre-trained agent models prompting and baseline guidance; agents operate autonomously without internal fine-tuning or optimization loops on the task.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eeebd3aad7c17b63e-B0002",
+          "Eeebd3aad7c17b63e-B0007",
+          "Eeebd3aad7c17b63e-B0010",
+          "Eeebd3aad7c17b63e-B0011",
+          "Eeebd3aad7c17b63e-B0014",
+          "Eeebd3aad7c17b63e-B0015",
+          "Eeebd3aad7c17b63e-B0016",
+          "Eeebd3aad7c17b63e-B0017",
+          "Eeebd3aad7c17b63e-B0018",
+          "Eeebd3aad7c17b63e-B0019",
+          "Eeebd3aad7c17b63e-B0021",
+          "Eeebd3aad7c17b63e-B0023",
+          "Eeebd3aad7c17b63e-B0024",
+          "Eeebd3aad7c17b63e-B0025",
+          "Eeebd3aad7c17b63e-B0026",
+          "Eeebd3aad7c17b63e-B0027",
+          "Eeebd3aad7c17b63e-B0030",
+          "Eeebd3aad7c17b63e-B0032",
+          "Eeebd3aad7c17b63e-B0035",
+          "Eeebd3aad7c17b63e-B0039",
+          "Eeebd3aad7c17b63e-B0045",
+          "Eeebd3aad7c17b63e-B0048",
+          "Eeebd3aad7c17b63e-B0051",
+          "Eeebd3aad7c17b63e-B0052"
+        ],
+        "limitations": "The authors transparently discuss key limitations, including reliance on a single particle-physics simulation domain, small sample sizes (N=5 per prompt; N=1 for cross-model probes), single-author post-hoc coding, and focus on single-agent loops rather than multi-agent systems [Eeebd3aad7c17b63e-B0051, Eeebd3aad7c17b63e-B0052, Eeebd3aad7c17b63e-B0053].",
+        "method_assessment": "The methodology is well-designed and controlled, executing 28 automated agent trajectories across four prompt conditions spanning an information gradient (open-ended discovery, structured scaffolding, positive control, and biased prior) using a Geant4 Cherenkov detector simulation [Eeebd3aad7c17b63e-B0002, Eeebd3aad7c17b63e-B0013, Eeebd3aad7c17b63e-B0021]. The coding definitions for CAWM, detectable failures, and outcome correctness are explicitly formalized and grounded in direct data recomputations [Eeebd3aad7c17b63e-B0014, Eeebd3aad7c17b63e-B0018, Eeebd3aad7c17b63e-B0019].",
+        "quality_rationale": "The paper provides an insightful, rigorous, and clearly scoped contribution to the evaluation of AI agents in science, exposing how outcome-level metrics fail to capture flawed mechanistic justifications and demonstrating an effective cross-regime audit check.",
+        "scoped_contribution": "The manuscript presents a controlled empirical case study and position demonstrating 'Correct Answer, Wrong Mechanism' (CAWM) in LLM scientific agents, showing that agents can produce apparently correct discriminants while justifying them with physics contradicted by their own data or overgeneralized across regimes [Eeebd3aad7c17b63e-B0002, Eeebd3aad7c17b63e-B0007, Eeebd3aad7c17b63e-B0011]. It also proposes and validates a lightweight regime-shift verification protocol to detect such failures [Eeebd3aad7c17b63e-B0039, Eeebd3aad7c17b63e-B0045].",
+        "source_content_hash": "38305698c01eec395898b6cf5494ce78398bda0893bd3155d98846c79555d264"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper provides an insightful, rigorous, and clearly scoped contribution to the evaluation of AI agents in science, exposing how outcome-level metrics fail to capture flawed mechanistic justifications and demonstrating an effective cross-regime audit check.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "38305698c01eec395898b6cf5494ce78398bda0893bd3155d98846c79555d264",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently discuss key limitations, including reliance on a single particle-physics simulation domain, small sample sizes (N=5 per prompt; N=1 for cross-model probes), single-author post-hoc coding, and focus on single-agent loops rather than multi-agent systems [Eeebd3aad7c17b63e-B0051, Eeebd3aad7c17b63e-B0052, Eeebd3aad7c17b63e-B0053]."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -169,7 +2398,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

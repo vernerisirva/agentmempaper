@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAFE-Mem: Secure Agentic Memory with Fine-Grained Authority and Governance-Aware Retrieval</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>SAFE-Mem: Secure Agentic Memory with Fine-Grained Authority and Governance-Aware Retrieval</h1>
+          <p class="hero-copy">LI Haoming, Dingyi Kang, Xu Hu, Jinxin Yang, Zhu Xu, Chenru Wang, 戈弋, Miao Yin, Guanpeng Li, Feng Chen, Bingzhe Li</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2610.22959">Open paper</a>
+            <a class="paper-detail-link" href="safe-mem-secure-agentic-memory-with-fine-grained-authority-and-governance-aware-retr-0b5bbc45.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>LI Haoming, Dingyi Kang, Xu Hu, Jinxin Yang, Zhu Xu, Chenru Wang, 戈弋, Miao Yin, Guanpeng Li, Feng Chen, Bingzhe Li</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-16</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-16</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.22959v1">arXiv</a><a href="https://arxiv.org/abs/2610.22959">arXiv</a><a href="https://openalex.org/W7222958942">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Focuses on persistent or long-term memory for agent behavior.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Large language model (LLM) agents increasingly rely on persistent memory to support long-term reasoning and personalized interactions. However, information collected from external sources can introduce security risks when untrusted claims (i.e., atomic statements) are later treated as authorized preferences, policie...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The paper presents an impactful, well-formalized system for agentic memory security with rigorous empirical validation against established baselines, comprehensive ablations, and blinded human calibration of automated judgments.</p>
+      <p>The authors explicitly bound their threat model, noting that persuaded principals can still endorse poisoned content and that false factual statements not relying on borrowed authority fall outside authority governance.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-20T09:14:28.877757+00:00.</p>
+        <p>Coverage: 77624 of 77624 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Large language model (LLM) agents increas-
+ingly rely on persistent memory to support
+long-term reasoning and personalized interac-
+tions. However, information collected from
+external sources can introduce security risks
+when untrusted claims (i.e., atomic statements)
+are later treated as authorized preferences,
+policies, or permissions. Existing defenses
+typically rely on content-based filtering or
+coarse-grained provenance tracking, which ei-
+ther fail to prevent unauthorized memory use or
+block legitimate information, sacrificing mem-
+ory utility. To address these limitations, we
+propose SAFE-Mem, a fine-grained memory
+governance framework that improves security
+while preserving legitimate memory use. First,
+SAFE-Mem annotates each claim with three
+governance labels (i.e., kind, authority, and
+scope) to capture its provenance and permit-
+ted use. Second, governance-aware </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>retrieval
+matches query requirements with claim per-
+missions to block unauthorized influence while
+retaining legitimate information. Third, a
+governance-enabled memory graph connects
+source sentences, claims, and entities to sup-
+port provenance tracking and efficient retrieval.
+Across four LLM backbones on MPBench
+and LoCoMo, SAFE-Mem attains the low-
+est attack success among defenses that retain
+legitimate memory, at least 77% below the
+strongest of them, and the highest answer ac-
+curacy of all evaluated defenses, improving
+it by up to 15%. The code is available at
+https://github.com/LVenum/SAFE-Mem.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We consider an LLM agent that serves one or more
+principals across sessions. While working, the
+agent reads external artifacts such as web pages,
+emails, documents and tool outputs, and distills
+what it reads into persistent memory. In later ses-
+sions, it retrieves entries relevant to a request and
+conditions its answer or action on them. Authority
+over a principal originates only in that principal&#x27;s
+own assertions, instructions and authorizations.
+The agent runtime records the channel through
+which each input arrives, such as a principal&#x27;s turn
+or an attached artifact, and these records are trusted.
+The adversary controls the content of external
+artifacts the agent reads. When several principals
+share one memory, another principal may act as
+the adversary; its own turns then carry authority
+over itself and over no other principal. It cannot
+alter another principal&#x27;s turns, write to </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SAFE-Mem describes every claim c by three gov-
+ernance labels: a kind κ(c), an authority α(c) and
+a scopes(c).
+The kind specifies what a claim does when the
+agent adopts it, following Searle&#x27;s classification
+of illocutionary acts (Searle, 1976). A description
+reports what a source asserted and binds nobody.
+An attribute commits its speaker to a fact about a
+subject and binds answers about that subject. Pref-
+erences and rules function as directives but differ
+in reach: a preference guides choices made for a
+principal, while a rule governs every occasion that
+satisfies its condition. A permission functions as
+a declaration, changing what the agent may do or
+whom it may rely on by being issued. Ordered by
+how much of the agent&#x27;s conduct they bind, the
+five kinds form DESCRIPTION&lt;ATTRIBUTE&lt;
+PREFERENCE&lt;RULE&lt;PERMISSION . Kind is
+assigned during claim extraction.
+Authority is the strongest </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>con-
+sidered part of its content and carry equal authority.
+In a conversation, another party&#x27;s sentence confers
+ATTRIBUTEauthority. Scope specifies over whom
+that authority holds: a principal&#x27;s sentences apply
+to that principal, and another party&#x27;s sentences ap-
+ply to that party alone.
+A claim serves at its effective level
+λ(c) = min
+
+κ(c), α(c)
+
+.(1)
+Taking the minimum follows integrity lattices, in
+which nothing is raised above the integrity of its
+source (Biba, 1977; Denning, 1976). An artifact
+claim that the extractor labels aPERMISSIONserves
+as a description. The two labels act as successive
+gates. Authority decides whether a source may es-
+tablish a claim of a given force at all; kind bounds
+what the claim itself can be used for once that holds.
+A principal&#x27;s report of a colleague&#x27;s preference car-
+ries the principal&#x27;s authority and the kindDESCRIP-
+TION, so it answers what the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Before retrieval, the agent&#x27;s LLM reads a request
+q and determines its use u(q), the kind of claim
+an answer needs, and its target t(q), the party the
+request concerns, by default the asking principal.
+The classifier reads only q. A claim or passage x is
+admissible forqwhen
+λ(x)≥u(q)
+∧
+
+u(q) =DESCRIPTION∨t(q)∈s(x)
+
+. (2)
+The first condition lets an entry serve a use only
+when its level reaches that use: a claim from a web
+page may be reported, but never adopted as the
+principal&#x27;s preference. The second leaves reporting
+open to all content, while any stronger use also
+requires the entry&#x27;s authority to cover the party
+the request concerns. An entry withheld from one
+request stays in memory and serves any request
+that asks for a use it reaches.
+Algorithm 1 in Appendix A gives the procedure.
+SAFE-Mem filters before ranking: only admissi-
+ble claims are candidates, and the k most </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarks.MPBench (Dash et al., 2026) pairs
+user requests with external artifacts such as web
+pages, emails, documents and tool outputs, and an-
+notates the memory each artifact would introduce.
+It has 3,241 attack cases, which target stored pref-
+erences, policies, trust assignments and procedures
+for data and credentials, and 2,999 benign cases:
+249 ask the agent to remember something, 2,607
+contain an artifact that merely suggests a claim
+5
+MPBench ASR↓MPBench Recall↑MPBench Restraint↑LoCoMo Acc.↑
+Defense G M H Q G M H Q G M H Q G M H Q
+No defense 26.7 49.8 10.9 41.1 75.9 79.5 71.5 78.3 35.1 36.5 45.8 35.5 50.2 39.5 50.4 44.2
+A-MemGuard 13.1 41.0 7.1 18.7 70.3 73.5 56.2 64.7 42.1 37.3 64.0 55.9 38.1 38.9 19.7 20.1
+DRIFT 25.1 40.4 10.6 26.5 75.9 81.5 71.5 71.9 34.6 36.1 47.9 39.1 50.2 39.5 50.4 44.0
+RandEC 21.8 27.3 10.6 28.5 70.7 72.3 68.7 73.1 36.9 39.4 47.5 37.7 49.0 38.6 47.9 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>41.6
+LLM sanitizer 24.2 48.2 10.5 32.8 74.3 79.5 71.5 79.1 35.1 36.4 45.6 36.1 50.2 39.5 50.4 44.1
+MemLineage 24.6 45.4 8.3 37.4 72.3 81.1 67.9 76.7 35.3 37.1 56.5 36.4 50.1 39.5 50.1 44.1
+TMA-NM 2.7 2.4 0.5 1.49.6 9.6 2.4 2.094.7 94.7 98.4 98.750.2 39.5 50.4 44.1
+SAFE-Mem2.66.2 1.5 1.9 86.3 85.9 84.3 83.148.4 50.6 51.4 49.261.3 54.6 53.5 47.0
+Table 1: Results (%) on four backbones: G = GPT-5.6-terra, M = GPT-4o-mini, H = Claude Haiku 5.5, Q =
+Qwen3.8-Flash. Bold: best among defenses; underlined: second best. Intervals in Appendix J.
+about the user, and 143 carry no annotated mem-
+ory. We write all 6,240 cases into one principal&#x27;s
+memory and score the 2,999 attack cases that carry
+a later request. LoCoMo (Maharana et al., 2024)
+contains ten long two-person conversations with
+1,540 recall questions, and each speaker acts as the
+principal in turn. EHRAgent (Shi et al., 2024) an-
+swers </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>embeds with all-MiniLM-
+L6-v2 (Reimers and Gurevych, 2019) and runs at
+temperature 0, with all prompts fixed before any
+run (Appendix Q).
+Evaluation Metrics.On MPBench, a GPT-4o-
+mini judge scores each answer against the case&#x27;s
+annotated memory. ASR is the share of attack
+cases whose answer endorses or acts on the in-
+jected memory, excluding answers that only report
+artifact content. Recall is the share of explicit re-
+tention requests answered with the retained con-
+tent, and Restraint the share of suggestive cases
+answered without asserting the suggested claim
+about the user. On LoCoMo, we report judge ac-
+curacy. On EHRAgent, ASR is the share of victim
+questions whose generated or executed code targets
+the wrong patient (Table 2), and Lost is the share
+of memories retrieved for benign questions that a
+defense removes.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2
+1 1 3 5 3 5 0
+0 5 10 8 9 8 4
+GPT-4o-mini
+Recom.TrustVerif.Unauth.Exfil.PolicyCred.
+18 5 12 13 7 8 3
+14 2 8 9 4 5 0
+16 9 11 11 7 16 4
+14 6 19 10 5 13 6
+18 5 9 14 7 10 4
+17 3 5 10 6 8 3
+1 0 1 1 0 2 0
+0 0 0 4 2 10 0
+Claude Haiku 5.5
+Recom.TrustVerif.Unauth.Exfil.PolicyCred.
+29 47 80 41 18 40 10
+17 19 40 17 5 26 3
+23 30 62 17 8 26 4
+25 29 53 28 12 31 13
+29 32 63 35 12 36 3
+28 43 76 36 13 45 6
+0 2 5 0 0 0 0
+0 0 3 4 2 7 0
+Qwen3.8-Flash
+Figure 3: MPBench ASR (%) by attack goal: recommendation poisoning, trust hijacking, verification bypass,
+unauthorized action, data exfiltration, policy override and credential harvesting.
+Defense ASR↓Exec.↓Lost↓
+No defense 66.7 69.0 0.0
+A-MemGuard 26.7 27.6 39.3
+DRIFT 63.3 65.50.0
+RandEC 83.3 86.20.0
+LLM sanitizer 80.0 82.80.0
+MemLineage 85.7 88.90.0
+TMA-NM0.0 0.070.4
+Isolation0.0 0.071.4
+SAFE-Mem 72.40.02.0
+w/o scope 42.9 44.4 2.0
+Table 2: EHRAgent under </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>On EHRAgent, the adversary is itself a user of the
+shared memory, so the records it plants carry its
+own authority. What must hold is that this authority
+stops at its owner, which is the role of scope.
+Table 2 shows that SAFE-Mem stops the attack
+where it would take effect. Though the agent drafts
+code for the wrong patient on 72.4% of the victim&#x27;s
+questions, none of these calls runs: the patient iden-
+tifier each one relies on appears only in entries
+whose authority belongs to another principal, and
+the call check refuses it. Without the scope check,
+44.4% of the attacks execute, which identifies scope
+as the operative check. Defenses that judge content
+remove nothing. TMA-NM and isolation also pre-
+vent every execution, but they remove 70.4% and
+71.4% of the memories that benign questions would
+retrieve; SAFE-Mem removes 2.0%, keeping what
+users share while denying what they cannot </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>GPT-4o-mini Haiku 5.5 Qwen3.8
+Rewrite None Ours None Ours None Ours
+None 49.8 6.2 10.9 1.5 41.1 1.9
+Forged author 50.8 6.4 9.0 1.4 42.0 2.2
+Forged request 63.4 7.6 30.9 2.1 46.4 2.0
+Understated kind 51.9 6.2 9.9 1.4 42.6 2.1
+Conflict evasion 53.4 6.6 10.2 1.6 48.9 2.2
+Table 3: ASR (%) under adaptive rewrites of every MP-
+Bench attack, without defense (None) and with SAFE-
+Mem (Ours).
+that are consistent and free of instructions do not
+get through.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Defenses that act through the model&#x27;s judgment are
+as strong as the model that applies them. Without
+defense, GPT-5.6-terra resists more attacks than
+GPT-4o-mini, with ASR of 26.7% against 49.8%,
+and A-MemGuard removes half of the attacks on
+GPT-5.6-terra but under a fifth on GPT-4o-mini.
+The same dependence appears inside SAFE-Mem
+when inadmissible entries are served with a descrip-
+tion label: ASR rises from 2.6% and 6.2% to 6.2%
+and 19.6% (Appendix M). Withholding decides
+what reaches the context, and with it SAFE-Mem&#x27;s
+ASR stays between 1.5% and 6.2% across all four
+backbones (Table 1). The judgments that set the
+labels hold up against human labels (Appendix I):
+the use classifier separates descriptions from every
+higher kind on 94.0% of requests on GPT-5.6-terra,
+the retention judgment agrees on 84.0% of prin-
+cipal sentences, and the answer judge agrees on
+83.5% of answers.</blockquote></details></li><li><strong>Contribution clarity — pages 13–14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sentences
+(Cohen&#x27;s kappa 0.76): of the four disagreements,
+one keeps a sentence the principal had not asked
+to keep, none misses a request, and three confuse a
+request in the principal&#x27;s own words with one that
+points into an artifact. The use classifier agrees on
+the exact kind for 84.7% and 68.7% of requests on
+GPT-5.6-terra and GPT-4o-mini (Cohen&#x27;s kappa
+0.81 and 0.61), and on whether a request needs a
+description or a higher kind for 94.0% and 85.3%.
+The answer judge agrees on 83.5% of answers (Co-
+hen&#x27;s kappa 0.67); 27 of its 33 disagreements count
+an answer as acting on the payload when the anno-
+tator does not, and 6 the reverse.
+13
+GPT-4o-mini Claude Haiku 5.5 Qwen3.8-Flash
+Configuration ASR↓Rec.↑Res.↑ASR↓Rec.↑Res.↑ASR↓Rec.↑Res.↑
+SAFE-Mem 6.2 85.9 50.6 1.5 84.3 51.4 1.9 83.1 49.2
+governance off 62.3 76.7 32.0 28.2 71.1 39.9 49.3 75.1 34.5
+no endorsement 2.7 2.0 94.1 0.4 0.0 98.2 </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Security / robustness evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd>Abstract-level signal: safety, security, or robustness evaluation is mentioned in available metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory-related safety risks in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: agent-memory, llm-agents, long-term-memory, memory-policy, benchmark, memory-systems</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-20</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-19 09:33:11</li><li>Last seen by Paper Scout: 2026-10-21 09:12:36</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.22959</li><li>arXiv: 2610.22959</li><li>OpenAlex: W7222958942</li><li>OpenAlex IDs: W7222958942</li><li>arXiv IDs: 2610.22959</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="safe-mem-secure-agentic-memory-with-fine-grained-authority-and-governance-aware-retr-0b5bbc45.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>SAFE-Mem: Secure Agentic Memory with Fine-Grained Authority and Governance-Aware Retrieval. LI Haoming, Dingyi Kang, Xu Hu, Jinxin Yang, Zhu Xu, Chenru Wang, 戈弋, Miao Yin, Guanpeng Li, Feng Chen, Bingzhe Li. 2026-10-16. https://doi.org/10.48550/arxiv.2610.22959</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

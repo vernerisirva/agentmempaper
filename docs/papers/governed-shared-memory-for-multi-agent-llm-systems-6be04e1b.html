@@ -64,16 +64,280 @@
             <p>Multi-agent LLM environments require robust mechanisms for shared knowledge management. This paper formalizes the fleet-memory problem and identifies four foundational failure modes: unauthorized leakage, stale propagation, contradiction persistence, and provenance collapse. To address these, we define explicit syst...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work addresses an important architectural transition in multi-agent LLM systems by treating shared memory as a governed distributed-systems problem rather than solely a context retrieval task. The experimental design is rigorous, transparently reporting system anomalies, remediations, and performance trade-offs with fully committed trace artifacts.</p>
+      <p>The authors provide an extensive limitations section covering the lack of comparative baselines, self-evaluation risks, single-tenant scope, and the initial lack of sub-tenant enforcement on GET-by-id.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-21T09:20:43.537976+00:00.</p>
+        <p>Coverage: 64481 of 64481 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AImemorysystemsareincreasinglymovingbeyondisolatedchatbothistoriestowardsharedstateusedbyfleetsofcooperating
+agents. Inthissetting,memoryisnotonlyaretrievalproblem: itbecomesagoverneddistributed-systemsprobleminvolvingscoped
+access,temporalcorrectness,provenance,synchronization,andpolicy-controlledpropagation. Weintroduceasystemsarchitecture
+for governed shared memory in multi-agent LLM environments. The architecture formalizes the fleet-memory problem, identifies
+four failure modes—unauthorized leakage, stale propagation, contradiction persistence, and provenance collapse—and defines
+primitives for scoped retrieval, temporal supersession, provenance tracking, and policy-governed memory propagation.
+We instantiate these primitives in MemClaw, a production multi-tenant memory service, and evaluate them using ArgusFleet,
+a reproducible harness that exercises the live REST API along four </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This paper makes three contributions.
+First, we formalize the fleet-memory problem for multi-
+agent LLM systems, modeling shared memory as governed
+operational state with scope, provenance, and temporal su-
+persession. We identify four resulting failure modes: unau-
+1
+arXiv:2606.24535v1  [cs.AI]  23 Jun 2026
+Figure1: Systemoverview. AfleetofcooperatingagentswritestoandreadsfromgovernedsharedmemorythroughMemClaw&#x27;s
+RESTAPI.MemClawexposesfourgovernancedimensions—scope,time,provenance,andpropagation—correspondingtowho
+may read a memory, which version is current, where a memory came from, and how it moves across agent boundaries.
+ArgusFleet probes the same API surface with one experiment per dimension: leakage probes scope enforcement, contradiction
+probes temporal supersession, provenance walks derivation chains, and propagation measures authorized visibility and cross-
+fleet leakage. Stale </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We define a fleet-memory system as:
+𝐹=(𝐴,𝑀,𝐺,𝑃,𝑇)
+where:
+•𝐴represents a set of interacting agents,
+•𝑀is a shared memory substrate,
+•𝐺is a governance and policy layer,
+•𝑃represents provenance metadata,
+•𝑇definestemporalorderingandsupersessionsemantics.
+Unlike single-agent conversational memory, fleet-memory
+systems must maintain correctness across interacting reads
+and writes performed by multiple autonomous actors over
+time.
+This introduces challenges analogous to:
+•distributed consistency,
+•access control,
+•synchronization,
+•event sourcing,
+•and state resolution.
+Thecentralchallengeisnolongermerelyretrievingseman-
+tically relevant information; it is maintaining operationally
+correct shared state.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>on:
+•authorization,
+•state freshness,
+•contradiction resolution,
+•provenance validity,
+•and synchronization guarantees.
+We make the authorization requirement precise, since it is
+theonetheevaluationfalsifies. Letauth(𝑎 𝑗,𝑠 𝑖,𝐺)denotethe
+predicate&quot;agent𝑎 𝑗 isentitled,undergovernance𝐺,toviewa
+memorycarryingscope𝑠 𝑖,&quot;where𝑠 𝑖 decomposesintonested
+levels(agent⊑fleet⊑tenant; §6). Aretrievalisscope-sound
+when
+𝑤𝑖∈𝑟 𝑗 =⇒auth(𝑎 𝑗,𝑠 𝑖,𝐺).(Inv-Scope)
+Thatis,noagentreceivesamemoryitsidentityisnotentitled
+to under the row&#x27;s scope.Inv-Scopeis the formal content of
+the unauthorized-leakage failure mode (§4): a leak is exactly
+aviolationofit. Acorrectgoverned-memoryimplementation
+mustevaluatethefullscopepredicateoneveryretrievalpath;
+as §8 shows, theGET-by-id path evaluated only the tenant
+projection of𝑠 𝑖 at measurement time and so violatedInv-
+Scopefor any fleet- or agent-scoped row. The </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ArgusFleetisanopen-sourcePython3.12evaluationharness 2
+forgovernedsharedmemory,comprisingfourexperiments,an
+async REST client, a typed domain model, structured event
+logging, and a reproducible reporting pipeline. It is dis-
+tributedastheargusfleetpackage;weusethenameArgus-
+Fleet for the system throughout this paper. The harness pro-
+duces JSONL event traces, CSV summaries, and Matplotlib
+figures from each run, all derived from the same canonical
+eventstreamsoanalysiscanbere-executedwithoutre-hitting
+the server. The event traces backing every number in this
+1https://memclaw.net
+2https://github.com/caura-ai/argusfleet
+paper—includingallfour𝑁=200contradictionrunsandthe
+𝑁=100comparison (§8) — are committed undertraces/
+in that repository (commit2c55bb5); each experiment&#x27;s re-
+portedfiguresandsummary.csvregeneratedeterministically
+from its per-writeevents.jsonl.
+Determinism.Every workload </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We instantiate𝐹=4fleets, each containing𝐾=6agents,
+in a single tenant. The first agent in each fleet (theowner)
+writestwosecrets: onewithfleetscope,onewithagentscope,
+each containing a unique canary token in metadata and sub-
+stantively distinct prose in content. Every agent then probes
+every secret by issuing a search whose query is the secret&#x27;s
+prose; the harness classifies each probe against ground truth
+6
+(does this agent&#x27;s tenant/fleet/agent identity entitle it to see
+this secret?) and labels the result.
+For each probe, we record two orthogonal failure signals:
+•leak— the server returned a row the probe was not
+entitled to see; this is the security failure that motivates
+governance.
+•miss— the server failed to return a row the probe was
+entitled to see; this is an availability failure that reflects
+retrieval recall.
+We reportleak_rate=𝑛 leaks/𝑛expected-deny and
+miss_rate=𝑛 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We construct100facts drawn from20
+distinct subject–predicate templates (e.g.,
+⟨billing-service-N,deployment_region⟩). For each fact
+we run two scenarios: asequentialwriter pair separated
+by a small delay, and aconcurrentpair dispatched simul-
+taneously. Within each pair, both writes share the same
+subject_entity_idandpredicatebut assert different
+object_value. The RDF triple is what we expect to route
+the second write into the server&#x27;s structural contradiction
+detector rather than into the embedding-similarity dedup
+gate.
+We report:
+•detection_rate— the fraction of fact-runs in which,
+after a settle window, aGET-by-idre-fetchof the two
+rowsshowsasupersessionedge(supersedes_id)orthe
+older row flipped to a non-active status. The re-fetch is
+essential: contradiction detection runspost-commit and
+asynchronously, sosupersedes_idis never present </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We construct50derivation chains of depth4(200total
+writes). Each chain corresponds to a synthetic incident nar-
+rative drawn from a pool of25operational topics (cycled,
+with a per-chain nonce keeping content distinct) (e.g.,check-
+out error rate spike,Kafka consumer rebalance loop). The
+four steps in each chain correspond toobservation,hypothe-
+sis,mitigation, andverification. Each step writes a memory
+withmetadata.derived_fromencoding the parent identi-
+fier. After all writes settle, the harness fetches the leaf and
+walks the chain back to the root, grading three signals:
+•completeness— every ancestor on the planned chain is
+reachable viaGET.
+•accuracy— at each step the observed writer matches
+the planned writer.
+•depth_fidelity— the reconstructed chain length equals
+the planned depth.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Theexperimenthastwodeliberatelyseparatephases,because
+the visibilityrateand the consistencylatencywant opposite
+measurement regimes.
+Rate phase.A designated writer agent writes40fleet-
+scoped facts, each phrased as a substantively distinct opera-
+tionalstatement(drawnfrom40templates).3siblingreaders
+in the same fleet and2non-fleet readers in the same tenant
+then poll/searchfor the prose (200probes total). Fleet-
+sibling probes time out after30seconds; non-fleet probes
+executeasingleattemptandanyhitiscountedasacross-fleet
+leak. This phase scales with the fact count to tighten the rate
+CIs; its per-probe latency isnotused (see below).
+Windowphase.Becausetheratephaseseedseveryfactbe-
+foredraininganyprobethroughaconcurrencygate,aprobe&#x27;s
+first/searchlands long after the row is already searchable
+— so its time-to-visibility measures harness scheduling, not
+server lag, and inflates with probe </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>trust=1—
+belowthetrust-2cross-fleet-readrung—successfullyfetched
+afleet-1row, while its same-fleet control and the trust-2
+credential behaved as expected (Table 3). Inspecting the
+handler confirmed the cause:GET/memories/{id}
+checked onlyenforce_readable_tenantand
+memory.tenant_id==tenant_id; it never consulted
+the caller&#x27;s fleet, agent, the row&#x27;s visibility scope, or the
+trust level, so the resolvedagent_idwas discarded. The
+access leak was therefore a genuineenforcement gapon the
+GETpath, not an authentication-model artifact. In the terms
+of §3, the handler discharged only the tenant projection of
+𝑠𝑖, violatingInv-Scopefor fleet- and agent-scoped rows —
+the measured leak was exactly the predicted violation. We
+disclosed the gap; it was remediated server-side during the
+study (Remediation, §9.1).
+Table 3: Agent-scopedGET-by-id probe,as measured(2026-
+05-30). </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>embedding-similarity scan.
+8
+Table2: Headlineresultsacrossthefourexperimentsat𝑁=200(plannedprobes/writesperexperiment)onafreshly-provisioned
+MemClaw tenant. Leakage carries two signals per probe: the authoritativeaccesssignal fromGET-by-id, and the secondary
+discoverysignal from semantic search. Counts in parentheses indicate the denominator the rate is over. Each rate is followed
+by its95%Wilson score interval. The GET-by-id tenant-key rows measure tenant-wide reachability under a tenant-scoped
+credential and should be read as exposure under tenant authority, not by themselves as a sub-tenant policy violation. The
+sub-tenantenforcementgapisestablishedbytheagent-scopedprobeinTable3: atmeasurementtime,atrust-1agentcouldGET
+a cross-fleet row that the trust ladder should have denied; this was remediated on 2026-05-31 (§9.1; re-probe trust-1cross-fleet
+0/36).
+Experiment Metric </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>earlierdeployment_regionwas not one, so
+the RDF path was silently skipped. Using a single-valued
+predicate(region,runs_on,...) andre-fetchingpost-settle
+fixes both.
+The0.490ceilingissetbywriteadmission:206/400writes
+wererejected409bythesynchronousdedupgatebeforereach-
+ingthe(post-commit)detector,so90fact-runshadbothwrites
+land. The rejections fall roughly evenly across the first and
+secondwriteofapairandaredominatedbyexact-contentdu-
+plicates—partlythegenuinededup-pre-empts-contradiction
+effectof§9(acontradictionphrasedas&quot;𝑋is𝐴&quot;vs&quot;𝑋is𝐵&quot;is
+near-identicaltext),partlylimitedprosediversityinourwork-
+loadgenerator. Wedonotcleanlyseparatethetwo;therobust
+claim is the conditional one:when both writes are admitted,
+supersession is correct90/90. Admission is stochastic —
+concurrentwritesraceatthededupgateandcontentisnonce-
+salted per run — so counts vary run-to-run around a stable
+rate: </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Path Gap Remediated)
+The leakage experiment surfaces a structural asymmetry in
+how scope is enforced. Tenant boundaries are enforced uni-
+formly: cross-tenant requests are rejected on bothGET-by-id
+andPOST-searchpaths(theleakageratemeasurementsabove
+werecollectedwithinasingletenantforthatreason—cross-
+tenant probes do not reach the read handlers at all).Sub-
+tenantscope—fleetandagent—was,atmeasurementtime,
+enforced only on the search path (and there only partially);
+theGET-by-id path is addressed by the remediation below.
+At measurement time, directGET-by-id returned a row
+to any tenant-authorized caller who presented the correct
+tenant_id, regardless of the originating fleet or writer.
+Crucially, this held even when the caller presented an
+agent-scoped credential whose identity the gateway re-
+solves (§8, Table 3): theget_memoryhandler </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a
+genuineenforcementgap—aviolationofInv-Scope(§3)—
+notacredentiallimitation,andwhileitstood,thepropagation
+ofmemory_idvalues across fleet boundaries was itself the
+de-facto capability boundary.
+Remediation.We disclosed the gap; it was fixed server-
+sideduringthestudy. Ascaledre-probeon2026-05-31—96
+GET-by-idprobesacrossfourfleetsandbothtrustlevels, with
+each agent using its own agent-scoped key, committed under
+traces/— confirms theget_memoryhandler now applies
+exactlythefleet/agent/scopefilterthesearchpathalreadycar-
+ried: trust-1cross-fleet reads are denied (0/36, 95% Wilson
+[0.000,0.096], returned as404so the row&#x27;s existence is not
+disclosed), trust-2cross-fleet reads are admitted by the lad-
+der(36/36), andsame-fleetcontrolspass(12/12); totalleaks
+0/96. Thebulk164/164accessrate(§8)wascollectedwitha
+tenant-scoped key, which is tenant-wide by design and </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tection
+Thecontradictiondetectoritselfissound: conditionalonboth
+writes being admitted, it superseded correctly in every case
+(90/90,§8). Thearchitecturalissueisthattwomechanismson
+thewritepathinteractbadly. Asemanticnear-duplicatedetec-
+tor evaluates an incoming write synchronously,pre-commit,
+returning409whenembeddingsimilarityexceedsathreshold.
+The contradiction detector evaluates RDF-triple compatibil-
+ity and setssupersedes_id— but it runspost-commit and
+asynchronously. So the synchronous gate can reject a write
+before the asynchronous detector ever sees it. The pathologi-
+cal case is intrinsic: a contradiction phrased naturally (&quot;𝑋is
+𝐴&quot;then&quot;𝑋is𝐵&quot;)isnear-identicaltext,sotheverywritesthe
+detector exists to resolve are the ones most likely to be 409&#x27;d
+at the gate. (This is also why the detector reads as a &quot;null&quot;
+under naive measurement — it never receives the input, </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Several limitations bound the scope of the empirical claims
+in §8.
+Self-evaluation.ArgusFleetandMemClawarebuiltbythe
+same group; this is an evaluation of our own production ser-
+vice, not an independent audit. We mitigate the obvious bias
+by reporting the unflattering results prominently — theGET-
+by-id enforcement gap (disclosed, since remediated) and the
+dedup/contradiction pipeline-ordering issue — and by deriv-
+ingeveryfigurefromacommittedJSONLtrace. Reportinga
+gap in one&#x27;s own service and then its fix is an obvious place
+for bias to hide; we counter it by committing the re-probe
+trace, not just asserting the remediation. An independent
+replication,whichtheopenharnessenablesagainstanywire-
+compatible service, would carry more weight than our own
+numbers.
+Agent-scope probe is focused, not exhaustive.The bulk
+leakagerateswerecollectedwithatenant-scopedkey(tenant-
+wide by design); </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>earlier version of this work reported a p50 of tens of seconds
+for exactly this reason). We therefore measure the window
+on a small set of facts polled immediately and continuously
+from write completion (§7), one at a time so the polls stay
+under the/searchbudget; under strong mode this yields a
+p50 of∼0.8s (§8). The residual limitation is granularity
+and scale: the window is measured at250ms resolution on8
+facts,soitresolves&quot;effectivelyimmediate&quot;butnotasub-250
+msvalue,andalarger,multi-regionsweepwouldsharpenthe
+tail and test whether the synchronous-enrichment behaviour
+holds under sustained load.
+Nocomparand.Wedonotcompareagainstabaseline(e.g.,
+a long-context-only configuration, or an alternative memory
+implementation). The architectural claims of §5 stand on the
+failure-mode taxonomy and the implementation, but the em-
+piricalclaimswouldbesharperwithacomparisoncondition.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +376,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

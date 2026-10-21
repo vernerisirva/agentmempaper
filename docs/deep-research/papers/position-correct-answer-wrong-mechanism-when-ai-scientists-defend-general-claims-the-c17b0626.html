@@ -64,16 +64,410 @@
             <p>AI scientist systems are described as tools, coauthors, or founders, but we evaluate them as if only the final answer matters. This position paper argues that outcome-only evaluation is insufficient, and that task outcome, mechanism fidelity, and epistemic honesty must be measured separately. Our evidence comes from...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides an insightful, rigorous, and clearly scoped contribution to the evaluation of AI agents in science, exposing how outcome-level metrics fail to capture flawed mechanistic justifications and demonstrating an effective cross-regime audit check.</p>
+      <p>The authors transparently discuss key limitations, including reliance on a single particle-physics simulation domain, small sample sizes (N=5 per prompt; N=1 for cross-model probes), single-author post-hoc coding, and focus on single-agent loops rather than multi-agent systems [Eeebd3aad7c17b63e-B0051, Eeebd3aad7c17b63e-B0052, Eeebd3aad7c17b63e-B0053].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-21T09:21:18.565991+00:00.</p>
+        <p>Coverage: 72331 of 72331 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AI scientist systems are described as tools, co-
+authors, or founders, but we evaluate them as if
+only the final answer matters. This position pa-
+per argues that outcome-only evaluation is insuffi-
+cient, and that task outcome, mechanism fidelity,
+and epistemic honesty must be measured sepa-
+rately. Our evidence comes from 28 episodes of
+a coding agent attempting to rediscover a known
+particle identification observable in a Geant4 sim-
+ulation, including an 8-episode probe across two
+additional frontier models. In 4/20 primary-model
+and 3/8 cross-model episodes, agents reach right-
+looking results through incorrect reasoning that
+breaks when conditions change, which we call
+Correct Answer, Wrong Mechanism(CAWM).
+Honesty and mechanism fidelity dissociate within
+a single agent trajectory. When given a partially
+misleading prior, all five agents reject the false
+component on evidence, yet </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 1). An agent
+whose mechanism is wrong cannot predict where its claim
+stops working, and new science often lives exactly at those
+boundaries. To be scientifically useful, a claim must either
+generalize across regimes or carry explicit limits of validity.
+CAWM agents provide neither. Related phenomena include
+shortcut learning (Geirhos et al., 2020), &quot;right for the wrong
+reasons&quot; in NLI (McCoy et al., 2019), and unfaithful chain-
+of-thought reasoning (Turpin et al., 2023). CAWM extends
+these into multi-step agentic scientific workflows where the
+1
+arXiv:2606.23175v1  [cs.LG]  22 Jun 2026
+Correct Answer, Wrong Mechanism
+inconsistency is checkable from the agent&#x27;s own work.
+We argue that AI scientist systems must be evaluated along
+three axes:</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tainty, flag limitations, and revise beliefs under contra-
+dictory evidence?
+Autonomy should be granted only when all three meet
+domain-specific thresholds: passing all three qualifies a
+system for co-author trust, and failing any limits it to tool-
+level use. We evaluateepistemic honestyby whether the
+agent revises or rationalizes when its own data contradicts
+a prior assumption. The three-axis framework follows pro-
+cess supervision (Lightman et al., 2024; Uesato et al., 2022)
+in distinguishing process from outcome, applied here to
+evaluation rather than training.
+We support this with a controlled case study in a Geant4
+Cherenkov detector simulation (Agostinelli et al., 2003).
+The task has a known-good observable plus plausible al-
+ternatives that fail to generalize across the tested range.
+Three of five open-ended agents defend their chosen alter-
+natives with physically incorrect </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mechanism claims. Given
+the correct observable, agents reproduce it. This makes
+mechanism fidelity empirically testable. Our evidence is
+a physics simulation, but the failure structure is domain-
+agnostic. Any simulation where a candidate observable
+works in one regime and fails in an adjacent one instantiates
+the same test (Section 6).
+Our position: in simulation-based discovery tasks, cur-
+rent LLM coding agents are reliable tools but unre-
+liable scientific co-authors. Co-author trust requires
+mechanism-fidelity verification that current systems do
+not reliably self-apply.
+Contributions.
+• An empirical demonstration of CAWM in frontier LLM
+coding agents doing scientific observable selection.
+• Evidence that honesty and mechanism fidelity can dis-
+sociate within a single agent trajectory.
+• A regime-shift verification protocol, tested on our
+episodes to catch over-generalized </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CA WM
+invisible to
+single-regime
+7/28
+incorrect correct
+Outcome
+faithfulfabricated
+Mechanism
+Figure 1.The outcome–mechanism matrix, with all 28 episodes
+placed by the codings of §3 and §4, with outcome correctness as de-
+fined in §2. Single-regime outcome evaluation cannot distinguish
+the top-right ideal quadrant from the shaded CAWM quadrant,
+where a correct result is defended with fabricated physics. All
+seven CAWM-coded episodes sit in the shaded cell. The episode
+at lower left pairs an unsupported mechanism with an outcome
+that fails at its own anchor. The seven episodes outside the matrix
+attached no mechanism claim to their final observable.
+cal detector module embedded in ice. The research question:
+&quot;Can photon arrival time distributions at a single detector
+module statistically distinguish muon-induced events from
+electron-induced events? Investigate systematically and re-
+port </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>your findings. &quot;The target observable we examine is
+the per-eventleading-edge photon fraction:
+fearly(W) = |{i:t i −t first &lt; W}|Nhits (1)
+where tfirst = min(ti) within each event and W is a time
+window (W≈1 ns optimal for our parameters). fearly is
+one known-good leading-edge observable rather than the
+unique correct answer. CAWM coding rests on internal
+consistency of the agent&#x27;s claim with its own data.
+At the energies used in this study, muons behave as
+minimum-ionizing particles (MIPs) and emit Cherenkov
+radiation at a sharply defined angle along a straight track.
+The brief track segment whose cone aims at the module con-
+tributes the earliest photons, a leading edge a few nanosec-
+onds wide. Scattered photons and δ-ray secondaries (knock-
+on electrons) from the rest of the track arrive later as a sparse
+tail. Electrons induce a spatially compact electromagnetic
+cascade whose </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Cherenkov emission spreads over ∼10 ns
+in arrival time. This gives fearly(µ)&gt; fearly(e) at d= 10
+and 20 m at E= 40 GeV (Figure 2). At d= 25 m, photon
+counts drop to 4±2 per event. Within a single 50-event
+agent episode, fearly cannot reach a statistically reliable
+estimate at this distance.
+The main plausible alternative is σ(hitTime), the per-event
+standard deviation, which does not generalize across the
+tested range. Pooled across all episodes that computed it,
+σµ ≈σ e at d= 10 m, and σµ &gt; σe by ∼2–4 ns at d= 20
+and 25 m. The d= 10 m failure comes from a mechanism
+2
+Correct Answer, Wrong Mechanism
+0.0
+0.1
+0.2
+0.3
+0.4
+density
+a μ: σ = 6.7 ns,   fearly = 0.36
+e: σ = 6.5 ns,   fearly = 0.17
+d = 10 m
+0 1 2 3 4 5 6 7 8
+t − tfirst (ns)
+0.0
+0.2
+0.4
+density
+b μ: σ = 10.6 ns,   fearly = 0.37
+e: σ = 7.7 ns,   fearly = 0.20
+d = 20 m
+Figure 2.Per-event photon arrival times for muons (blue) </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and
+electrons (red) at d= 10,20 m, rebased to the first hit per event.
+One illustrative 50-event run at E= 40 GeV . Insets give per-event
+means of σ and fearly(W= 1ns) . At d= 10 m, σµ ≈σ e and
+σ fails to discriminate. At d= 20 m, σµ &gt; σe emerges as the
+δ-ray tail dominates at lower photon counts. fearly(µ)&gt; fearly(e)
+holds at both distances.
+coincidence. The muon&#x27;s narrow Cherenkov peak plus a
+few scattered late photons produces a spread similar to the
+photon arrival time distribution of the electromagnetic cas-
+cade. At larger d with fewer photons per event, the δ-ray
+heavy tail in the muon distribution dominatesσµ and pushes
+it above σe. σ misses the discriminating feature that fearly
+captures cleanly wherever photon statistics permit: the sharp
+leading-edge peak from the muon track segment where the
+Cherenkov cone aims at the module.
+An episode is coded CAWM when the agent proposes </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>an
+observable and defends it with physics that either contra-
+dicts its own data or overreaches a generalization beyond
+the regimes that support it. The first trigger covers a stated
+mechanism that the agent&#x27;s own simulation events refute,
+even when the summary statistic the agent chose does not
+surface the conflict. Three Prompt A episodes are the ex-
+ample (§3.1). Mechanism claims are read as claims about
+the underlying timing physics, since that is what a particle-
+identification observable must deliver. The second trigger
+covers a claim phrased as general, such as &quot;across all d&quot;,
+that rests on one or two tested regimes, as in episode 19
+(§3.4). The coding also requires the answer itself to hold.
+We call an outcome correct when the agent&#x27;s method, re-run
+on its own data at the regimes it presented as evidence, re-
+produces the claimed result. An episode that fails this check
+is coded </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a detectable failure rather than CAWM, however
+unsupported its mechanism; one cross-model episode falls
+in this class (§4). Honestly bounding where an observable
+discriminates defeats the second trigger but not the first, so a
+bounded operating range can still accompany a mechanism
+claim that is false on the agent&#x27;s own data. Observables
+offered without a mechanism claim, such as photon count,
+are non-CAWM by construction. Each coding is applied to
+the agent&#x27;s final report.
+Prompt conditions.Four prompt variants span aninfor-
+mation gradientfrom zero guidance to full specification of
+the correct observable:
+• Prompt A(open-ended, N= 5 episodes): research
+question + simulation interface + practical detector con-
+straint (∼10 pulses per event). Agent freely chooses
+impact parameters in range 10–25 m. No mention of
+any specific observable.
+• Prompt B(5-step scaffold, N= 5 episodes): </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>because the cas-
+cade is compact (the cascadeisspatially compact, but
+this does not imply a higher temporal leading-edge
+fraction, and the data shows the opposite). Agent is
+tasked with computing both σ and fearly(W) and iden-
+tifying the best observable. Tests epistemic honesty:
+does the agent reject the false prior when its own data
+contradicts it?
+All 20 primary episodes use Claude Opus 4.6 as the cod-
+ing agent, with bash, file read/write, and Python execution.
+We study a single-agent execution loop rather than outer
+planning or multi-agent orchestration (Yamada et al., 2025;
+Boiko et al., 2023) to expose reasoning failures the outer
+layers might otherwise mask. Matched tool capabilities
+and stop conditions apply to the cross-model probe in §4;
+protocol details and verbatim prompts are in Appendices E
+3
+Correct Answer, Wrong Mechanism
+and F. Each episode is annotated post-hoc using </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Episode 19 is the most compact instance of the pattern we
+study. Given a planted false prior that electrons have higher
+fearly, the agent correctly rejected it on evidence. The same
+agent then selectedσ(hitTime) as its primary observable and
+defended it with three claims its own numerical tables refute
+(Appendix A). Honesty at the prior-check step coexists with
+fact-check failure at the mechanism-defense step in the same
+trajectory. The rest of this section places this failure within
+the broader 20-episode pattern.
+A fully successful outcome is a time-based particle iden-
+tification observable that generalizes across the tested pa-
+rameter space. Of the 15 agents outside the positive control
+(Prompts A, B, and D), only 3 find one, and all three are
+Prompt D episodes (16, 17, 18). Prompt D specifies σ
+and fearly as candidates to compute, so these are selections
+among named alternatives. </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The pure open-ended discov-
+ery rate under Prompt A is 0/5. Three agents propose a
+relative-window variant of fearly whose separation flips
+sign or collapses across d and so fails the generalization
+criterion.
+The 12 agents other than these three successes split into
+three modes (Table 1):
+• 6/15 bypass timing physics with photon count or a
+statistical classifier.
+• 2/15 propose a time-based observable that degrades at
+large d but honestly bound their scope, so they are not
+CAWM.
+• 4/15 propose or compute a time-based observable and
+defend it with physics inconsistent with their own data.
+The last group is CAWM, accounting for 3/5 Prompt A
+episodes and 1/5 Prompt D episodes.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>valid observable?
+Not in our five episodes.Episode 4 bypasses timing and
+picks photon count. The remaining four each propose at
+least one time-based observable and typically report AUC
+≈0.9 at d= 10 m. Episode 1 settles onskewness, bounds
+its scope to d &lt;20 m, and reads the skewness correctly as
+electron-cascade spread, which keeps it out of the CAWM
+category. Episodes 2, 3, and 5 lead with skewness, hit count,
+or median pulse time, but each also computes arelative-
+windowearly fraction, the fraction of photons in the first
+20–25% of the event&#x27;s time range, and reads its close-range
+e &gt; µsignal as the electron cascade producing a sharper
+Table 1.Per-prompt summary of the 20 primary-model episodes.
+Per-episode detail is in Appendix D. CAWM coding follows the
+decision rule in §2.
+PromptNCAWM Primary observable choices
+A (open-ended) 5 3/5 2 skewness, 1 hit count, 1 me-
+dian time, 1 photon </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>count;
+the 3 CAWM cases each also
+compute a relative-window
+fearly
+B (scaffold) 5 0/5 1 fearly (wide W ), 3 photon
+count, 1 Fisher LDA
+C (pos. control) 5 0/5 5f early(0.5–1 ns)
+D (biased prior) 5 1/5 1 fearly, 1 σ of first 10,
+1 timespan of first 10,
+1σ(hitTime), 1 photon count
+leading edge. That reading is what we code as CAWM. On
+their own events the relative window separates the particles
+strongly at d= 10 m (⟨fe⟩= 0.92 vs. ⟨fµ⟩= 0.69 ) and
+fades to a tie by d= 25 m (⟨fe⟩= 0.51 vs. ⟨fµ⟩= 0.51).
+On a larger pooled sample the same trend carries through to
+a reversal (Appendix A). The principled observable behaves
+the opposite way and stays stable. The absolute leading-
+edge fraction fearly(W= 1ns) , recomputed on the same
+events, gives ⟨fµ⟩= 0.37 vs. ⟨fe⟩= 0.17 at d= 10 m, so
+the muon rather than the electron owns the leading edge,
+consistent with its closest-approach Cherenkov </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>geometry.
+The relative window instead measures where the bulk of an
+event sits within its own time range. Electron events carry
+far more photons, so rare late photons stretch their range
+and push the bulk into the first quarter. None of the three
+agents recomputed the absolute leading-edge fraction that
+would have shown this.
+The three Prompt A CAWM episodes share one pattern. The
+agent identifies the right physical feature, namely that early
+light matters, but defines the observable on a window tied to
+each event&#x27;s own time range, which tracks photon statistics
+instead of the leading edge. Results look right atd= 10m
+yet rest on the wrong physics. Three agents made the same
+misformulation independently, which suggests a structural
+pattern.
+Bounded scope did not protect these episodes. Honest hedg-
+ing about where an observable works is compatible with a
+false claim about why it works.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Prompt C supplies the formula, the physics motivation, and
+the σ comparison. The 5/5 result shows what agents do
+given near-complete specification.
+Given the target observable, agents reproduce it correctly.
+All five Prompt C agents compute fearly, identify W= 0.5 –
+1 ns as optimal, and report AUC = 0.88–0.97 at d= 10 m.
+All five also flag that fearly looks unreliable at d= 25 m,
+where photon counts drop to 4±2 per event. This unrelia-
+bility is statistical. Pooling the Prompt C and D episodes at
+d= 25 m (N≈500 events per particle) gives fµ = 0.428
+vs. fe = 0.418, directionally consistent but still within
+one standard error, so the right response is more events per
+episode. σ&#x27;s failure is different in kind and is analyzed in §2.
+Thinning statistics on a sound signal is a different failure
+from the absence of a separating mechanism. The same un-
+derlying model that fails todiscover </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>them?
+Yes, but rejecting a false prior does not guarantee a cor-
+rect mechanism for the chosen observable.The Prompt D
+prior has two parts. One claim, that σ should be larger
+for muons, is partially correct and holds at d= 20 and
+25 m per pooled data. The other, that electrons should have
+higher fearly, is false. All five agents correctly reject the
+false component on evidence. fearly(W= 1ns) is approxi-
+mately twice as large for muons as for electrons at d= 10
+and 20 m in every episode that computed it. Each agent
+states the falsification explicitly. This is a clean pass on
+evidence-responsive honesty.
+However, episode 19still selects σ as the primary observ-
+ableand defends it with physics inconsistent with its own
+data. The claimed 10–15 ns intrinsic geometric spread (ex-
+pected to be sub-ns to a few ns from track geometry) does
+not match the agent&#x27;s own σµ = 6.73ns at d= 10 m, </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To test whether CAWM is model-specific or structural, we
+ran the same four prompts with two additional frontier mod-
+els: Gemini 2.5 Flash and Gemini 2.5 Pro. Each model ran
+one episode per prompt (8 episodes total), with the same
+simulator andE= 40GeV . Table 2 summarizes results.
+CA WM appears in 3/8 cross-model episodes.All three
+CAWM cases share the same pattern. The agent picks a
+σ-based observable, attaches a physics argument (cascade
+compactness, EM-shower broadening, or Cherenkov geom-
+etry), and the agent&#x27;s own table contradicts the prediction at
+one or more d values. Under Prompt B, Gemini 2.5 Flash
+5
+Correct Answer, Wrong Mechanism
+predicts σe &gt; σµ universally from an EM-shower argument,
+while its data showsσµ &gt; σe at d= 20 and 25 m. The other
+two CAWM cases (Prompt B Gemini 2.5 Pro, Prompt D
+Gemini 2.5 Flash) follow the same structure, detailed in
+Appendix A. A fourth episode </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a concrete verification step, aforced out-of-
+regime check.
+Regime-shift verification protocol.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the seven CAWM episodes the two checks together
+flag every case, four through the regime-shift test and three
+through the companion recomputation, each at the cost of
+one extra run or recomputation on data the episode already
+has. The two checks were constructed after the episodes
+were coded, so seven for seven is an in-sample consistency
+result rather than a prospective detection rate.
+Both checks are one-sided. They rule out a wrong mecha-
+nism but cannot confirm a right one, because a mechanism
+that predicts correctly at every tested regime still passes. A
+pass narrows suspicion rather than proving the mechanism
+correct.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>smaller scales, or anoma-
+lies where standard extrapolations break down. CAWM
+is particularly dangerous here. An agent with a plausible
+but wrong mechanism will extrapolate confidently into the
+new regime and, by construction, miss the signatures that
+a correct mechanism would have flagged as unexpected.
+A missed discovery does not appear in outcome checks,
+because there is nothing to check against.
+Existence claims from a small sample.Our claims are
+aboutexistence. Prevalence is outside the scope of this
+study. These failure modes exist and are structurally tied
+to how agents reason about observables. The 0/5 fearly-as-
+primary rate under Prompt A vs. 5/5 under Prompt C is a
+within-model contrast that does not require large N to be
+informative. The cross-model probe in §4 shows CAWM is
+present in a second model family.
+Cost of mechanism-fidelity verification.Full domain-
+expert audit </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Correct Answer, Wrong Mechanism
+the break. The known-break benchmark variant, like the
+companion check, applies where the correct mechanism is
+established, as in benchmark construction or methodology
+validation. The regime-shift gate itself needs only a trusted
+data-generating process at the shifted setting. The broader
+caution still generalizes. When AI scientist systems propose
+scientific rules, heuristics, or equations from data, outcome
+validity in one regime does not imply the reasoning transfers.
+A human collaborator should treat any generalization claim
+as provisional until cross-regime verification is performed.
+Limitations.(1) The evidence base is a single simulation
+domain. (2) N= 5 per prompt supports existence claims.
+Prevalence remains untested. We rely on within-subject
+contrasts such as the 0/5 vs. 5/5 split on fearly-as-primary
+across Prompts A and C. Prompt C supplies </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the formula and
+physics motivation, so its 5/5 result reflects execution given
+near-complete specification. The simulator and agent har-
+ness are stateless per episode, so the pipeline is straightfor-
+wardly parallelizable and the released code can be scaled up
+with wrapper scripts for cluster submission. The present ev-
+idence fixesexistence, and scaling fixes prevalence. (3) The
+cross-model probe uses two additional models with one
+episode per prompt, so the observed patterns are suggestive
+based on these example episodes. The cross-model episodes
+also ran through a different execution harness (a minimal
+API loop rather than the command-line interface), so model
+and harness vary together. (4) Episode annotation is post-
+hoc by a single author-annotator against the CAWM coding
+rule in §2. The quantitative basis of each coding is checkable
+from the public release, since recomputing the </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +506,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

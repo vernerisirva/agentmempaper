@@ -59,16 +59,151 @@
             <p>Deep research agents (DRA) are commonly used for open-ended synthesis tasks where closed-world QA benchmarks are poorly suited to characterize relevant aspects of performance. We study the self-consistency of one commercial deep research system under repeated identical prompting, representing each report with the se...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>While the representation and questions are intriguing, testing 10 runs of a single prompt on a single black-box agent constitutes preliminary or pilot-level evidence rather than a robust, generalizable benchmark study. The dependence on unvalidated LLM extraction and deduplication without human annotation audits further introduces scientific uncertainty.</p>
+      <p>The authors explicitly acknowledge major limitations, including reliance on a single prompt, domain, and commercial system, inability to separate retrieval from generation stochasticity, potential web drift, exact URL matching constraints, and un-audited extraction/canonicalization noise [Ea9a6f0d489b70193-B0022, Ea9a6f0d489b70193-B0024].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-21T09:21:52.507053+00:00.</p>
+        <p>Coverage: 19819 of 19819 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents (DRA) are commonly used for open-ended synthesis tasks where closed-world
+QA benchmarks are poorly suited to characterize relevant aspects of performance. We study theself-
+consistencyof one commercial deep research system under repeated identical prompting, representing
+each report with the set of named entities it mentions, categorised by a custom schema, and the set of
+citations it retrieves. Across repeated runs of a single open-ended cybersecurity related prompt, we
+quantify pairwise overlap to characterize how stable the retrieved and synthesized output structure is
+under repeated identical prompts. In ten runs, the pairwise entity Jaccard results in a median of 0.12
+and the pairwise citation Jaccard is below0.02, with discovery curves that do not visibly saturate. The
+magnitude and structure of (dis)agreement between entity sets varies by entity class, which </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>verifiably factually correct. The contributions presented here are threefold.
+First, we propose a three-level representation of DRA outputs, i.e. canonicalized named entities, citations, and entity–
+citation pairs, as an evaluation lens for self-consistency under repeated identical prompting. Second, applying this
+lens to a single commercial DRA on an open-ended topical cybersecurity related prompt, we show that entity-level
+agreement is substantially higher than citation-level agreement. Third, we show that pairwise agreement varies sharply
+across entity classes in a way that tracks the presumed size of the underlying entity space.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To study the self-consistency of a deep research system under fixed user inputs, we issue an identical open-ended
+cybersecurity prompt to a single commercial deep research system (Google deep-research-preview-04-2026,
+accessed through the API on 2026-04-27) in 10 repeated iterations of the same prompt, shown in Figure 1. Each of the
+ten runs produced a main report with links to citations. Inline citations in the raw response were emitted by the agent as
+a redirect URL. These URLs are followed by an HTTP GET request with a Chrome-likeUser-Agent and the resolved
+URL is recorded. These raw reports and cited sources are cleaned with a deterministic preprocessing pipeline before
+extraction. Resolved citation URLs were retained as citation identifiers, but the content of cited web pages was not
+included in the entity-overlap analysis.
+Entities were extracted from all preprocessed documents </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>using thelangextract library 1 with Google Gemini 2.5-flash
+as the extraction model (Google, 2025). Raw entity surface forms were canonicalized using the openai-gabriel
+library, a general-purpose information extraction library that has been described and validated in Asirvatham et al.
+(2026). Deduplication was run separately for each of the eleven entity classes.
+The method operates in two stages: first, embedding-based grouping clusters similar surface forms into groups of up to
+500 that are then assigned labels in-context. The model used was gpt-5.4-mini. The process was repeated three times
+(n_runs=3) with voting to reduce the effect of random noise. The system prompt used was the default one provided
+with the package.
+1langextractis not an officially supported Google product.
+2
+Self-Consistency in a Deep Research SystemA PREPRINT
+To quantify the stochasticity of the DRA reports, we </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>compute pairwise Jaccard similarity over all
+n
+2
 
-        <ul></ul>
+=
+10
+2
+
+= 45
+unordered pairs of runs. For two runsAandBwith item setsS A andS B,
+J(A, B) =|SA ∩S B||SA ∪S B| ,
+withJ= 0when both sets are empty. The pairwise Jaccard similarity was calculated for the following:
+• Overall entities. S={(c, e)} , where c is an extraction class and e is a deduplicated canonical entity
+mentioned in the report, across all classes jointly.
+• Per-class entities.For each extraction class c, Sc ={e} restricted to that class. This is done to disentangle the
+degree of variance across different entity classes.
+•Citations.S={u}over distinct URLs.
+• Entity–citation edges. S={(c, e, u)}, where e is a canonical entity of class c, and u is the resolved citation
+URL assigned to that entity mention by the nearest following inline citation marker in the generated report.
+Edge overlap is therefore a strict URL-level proxy </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for whether the same entity is grounded in the same cited
+source across runs.
+Pairwise Jaccard describes the degree ofagreement between runsbut obfuscates thedirectional trajectoryof the separate
+runs. To investigate the latter, discovery curves are used. Given a fixed reading orderπ= (d 1, . . . , dn) of the n runs
+and a per-document item setX d, the discovery curve is as follows:
+Cπ(k) =
+ k[i=1 Xdi  , k= 1, . . . , n,
+i.e. the cumulative count of distinct items (entities or citations) seen after reading the first k documents. To reduce
+dependence on an arbitrary run ordering, we compute this curve over 1000 random permutations of the ten runs and
+report the mean accumulation curve in Figure 3. Flattening curves indicate that repeated runs are converging on a stable
+set; curves that remain steep indicate that each additional run keeps retrieving unseen entities.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Across the 10 runs, outputs contained a median of 5,292 words (range: 4,837–6,152), 199 extracted entity mentions
+(162–271), 162 distinct canonical entities after deduplication (139–193), 2.96 entities per 100 words (2.42–3.64), and
+79 distinct citation URLs (66–101).
+Figure 2 shows the distribution of pairwise Jaccard similarities across all 45 run pairs, broken down by entity class as
+well as aggregated for the overall entity set and for cited sources. Agreement between any two runs is low in absolute
+terms: the overall entity Jaccard has a median of 0.12, meaning that any two reports share only about one canonical
+entity in eight, despite being responses to an identical prompt. Overlap of citations is even lower, with the median
+Jaccard similarity score between sets of citations in two reports being just over 0.01, indicating that repeated runs of
+the same query rarely cite the same </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>URLs. We additionally computed pairwise Jaccard similarity over entity–citation
+edges, where an edge is treated as shared only when both the canonical entity and the resolved citation URL most
+closely following it match across two runs. Edge-level agreement was near zero: across the 45 run pairs, the median
+edge Jaccard was 0.0073, with an interquartile range of 0.0019–0.0124 and a maximum of 0.0256. The median pair of
+runs shared only four entity–citation edges out of a union of 678. We therefore do not plot edge overlap separately in
+Figure 2, as it would be visually indistinguishable from the citation row. Substantively, the result indicates that repeated
+runs do not stably reproduce the same URL-level grounding structure.
+Per-class Jaccard ranges over more than an order of magnitude, with Geopolitical actors and threat actors showing the
+highest median agreement, consistent with </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>policy, or regulation
+Organization
+Security product or service
+Software target
+Threat actor
+Vulnerability or weakness
+Citations
+0.0 0.2 0.4 0.6 0.8 1.0
+Pairwise Jaccard
+Overall
+Figure 2:Pairwise Jaccard similarity across ten repeated runs.Each point represents one unordered pair of reports,
+for 45 run pairs in total. Rows show Jaccard similarity over canonical entities within each class, resolved citation URLs,
+and the overall canonical entity set. Boxplots summarize the distribution across run pairs. Overall entity overlap is
+low, with median Jaccard approximately 0.12, while citation overlap is much lower, with median citation Jaccard just
+over 0.01. Entity–citation edge overlap is omitted from the plot because its median Jaccard is similarly near zero and
+visually indistinguishable from the citation row.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Several limitations impact the claims of this work.
+Single system, prompt and domain.We study one commercial DRA on one prompt in one domain. We make no
+claim that the magnitudes reported here generalize to other DRAs, other prompts, or other domains. Cybersecurity was
+4
+Self-Consistency in a Deep Research SystemA PREPRINT
+1 2 3 4 5 6 7 8 9 10
+Number of runs
+0%
+20%
+40%
+60%
+80%
+100%Proportion discovered
+AI system or model
+Benchmark or standard
+Cyber operation or campaign
+Cybersecurity technique or control
+Geopolitical actor
+Law, policy, or regulation
+Organization
+Security product or service
+Software target
+Threat actor
+Vulnerability or weakness
+Overall
+Figure 3:Discovery curves for canonical entity coverage across repeated runs.For each entity class, we randomly
+order the ten reports and compute the cumulative proportion of distinct canonical entities observed after k runs. Curves
+that </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>flatten quickly would indicate convergence towards a stable observed entity set; the mostly near-linear curves
+indicate that additional runs continue to surface previously unseen entities.
+chosen due to a hypothesis that it would produce a mix of relatively stable named entities and rapidly evolving long-tail
+entities, but other domains might show different patterns.
+Conflation of retrieval-side and generation-side stochasticity.Our experimental design does not separate variance
+arising from different web pages being retrieved across runs from variance arising from the same retrieved evidence
+being summarized differently due to limitations of the commercial API.
+Web drift and URL stability.All ten runs were conducted within a short time window, but we cannot rule out that
+some inter-run variance reflects genuine changes in the indexed web rather than stochasticity of the agent. </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Because
+entity–citation edge equality depends on exact resolved URL matches, the edge results should be interpreted as URL-
+level grounding stability rather than semantic evidence stability. Two different URLs may support similar claims, and
+the same underlying source may sometimes be reachable through different URL forms.
+Extraction and canonicalization noise.Our pipeline relies on LLM-based entity extraction and deduplication
+stages. We did not conduct a full annotation-quality audit of either stage. Spot checks suggest minor inconsistencies in
+granularity, for example whether versioned variants of the same model are merged into a single canonical entity or
+retained separately. This was likely a result of underspecified prompts to the deduplication software library. Such errors
+likely affect the exact numeric Jaccard values, especially for entity classes with many near-duplicate </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +242,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +258,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-19</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-20 09:10:22</li><li>Last seen by Paper Scout: 2026-10-20 09:10:22</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-19</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-20 09:10:22</li><li>Last seen by Paper Scout: 2026-10-21 09:16:40</li></ul>
             <ul><li>arXiv: 2610.26421</li><li>arXiv IDs: 2610.26421</li></ul>
           </section>
           <section class="detail-panel">

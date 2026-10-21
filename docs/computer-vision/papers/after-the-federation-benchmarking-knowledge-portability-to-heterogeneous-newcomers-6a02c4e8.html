@@ -59,16 +59,428 @@
             <p>Once historical clients become unavailable, a federation must serve newcomers through the artifact it leaves behind. How much of its knowledge remains useful in an architecture chosen afterward? We introduce FEDNBO, a seven-dataset benchmark that separates knowledge supply, policy identification, and private-model c...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>This work sets a high standard for benchmarking post-federation transfer by combining theoretical grounding with scrupulously controlled experiments, pre-registered chronologies, and explicit disclosures of both positive and negative outcomes. It clearly qualifies for acceptance.</p>
+      <p>The manuscript transparently discusses key constraints, including small test cohorts for MELD/TCGA, simulated action silos, in-domain public anchors, lack of formal differential privacy guarantees, and the non-equivalence of finite sample guarantees to prospective individual safety.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-21T09:23:15.026051+00:00.</p>
+        <p>Coverage: 73821 of 73821 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Once historical clients become unavailable, a federation
+must serve newcomers through the artifact it leaves behind.
+How much of its knowledge remains useful in an architec-
+ture chosen afterward? We introduceFEDNBO, a seven-
+dataset benchmark that separates knowledge supply, policy
+identification, and private-model compilation under disjoint
+data roles. Controlled studies expose inflated oracle gains,
+architecture-dependent transfer reversals, and a gap be-
+tween teacher accuracy and private-model utility. Ordinary
+public-response distillation provides a competitive reference
+without public task labels or newcomer samples: gains over
+strengthened local training are 23.52 and 16.62 percent-
+age points on 300 CelebA identities and 300 FedEMNIST
+writers, respectively. In a complete-pipeline FedEMNIST
+comparison, this reference reaches 97.13% accuracy with
+12.4 seconds of compilation per </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>seven-dataset, role-disjoint
+benchmark with declared information access, unseen private
+architectures, accuracy–cost comparisons and client harm;
+(2) a supply–identification–compilation decomposition with
+corresponding identifiability boundaries; and (3) controlled
+evidence for a strong public-response reference. Ordinary
+KD gains +23.52 pp on CelebA and +16.62 pp on FedEM-
+NIST over strengthened local training. Complete-pipeline
+comparisons quantify its cost advantage, while equal-count
+interventions expose public-support sensitivity in trainable
+visual models. These results establish useful portability
+under explicit conditions rather than a universal transfer
+guarantee.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>inference
+x
+c
+M
+enc.
+head
+f
+c,A
+ŷ
+Only the private model is deployed
+bank / source clients are absent
+(b) Public-response compilation
+one fit per architecture–modality interface
+Public mini-batch
+X
+A
+M
+supported views
+1
+Query frozen bank
+h
+k
+M
+logits
+T
+A
+= t
+k
+(X
+A
+)
+stop-grad
+2
+Instantiate an unseen private architecture
+MLP
+CNN
+Mobile
+pixels
+FC
+FC
+head
+conv
+conv
+pool
+head
+frozen prefix
+late blocks
+head
+f
+θ
+(X
+A
+)
+ℓ</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>KL / BCE
+ℓ(f
+θ
+(x), t(x))
+update trainable parameters θ
+θ
+1
+, θ
+2
+, …
+Disjoint public split
+fit
+val
+task labels unused
+3
+Select checkpoint
+1
+2
+3
+4
+min. validation loss
+f
+θ*
+Reusable private model
+same architecture + view
+Validation uses held-out public responses only
+Fixed-feature control: ridge response head (λ = 1)
+(c) Policy identification and audit
+Labeled shadow clients
+Selection labels
+client
+0
+1
+…
+K
+c
+1
+0
++
+−
++
+c
+2
+0
++
++
+−
+c
+m
+0
+−
++
++
+schematic candidate gains
+PCV / simultaneous LCB
+D
+c
+sel
+Empirical / Active Testing
+declared label budget
+A
+local retained as k = 0
+{f
+c,0
+, …, f
+c,K
+}
+f
+c,A
+private
+inference
+Query labels are opened only for final evaluation
+D
+c
+qry
+ΔU
+gain</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A completed federation exposes a frozen bank B; historical
+clients cannot be contacted or retrained. Newcomer c has
+modality set Mc and private hypothesis class Hc, possibly
+unseen during federation training. Source and newcomer
+share label semantics and metric, but need not share represen-
+tations or parameters. Fit labels Dfitc train local model fc,0.
+Bank policies hc,1, . . . , hc,K are compiled into fc,k ∈ Hc;
+directly deployable policies havef c,k =h c,k.
+A selector A chooses k∈ {0, . . . , K}using declared
+onboarding evidence, with hc,0 =f c,0. Query labels Dqryc
+are evaluation-only. For higher-is-better utilityU, client gain
+is
+Gk(c) =U(f c,k;c)−U(f c,0;c)∈[−1,1].(1)
+Negative transfer means GA(c)&lt;0 . Fit and selection labels
+serve different roles: zero selection labels does not make a
+few-label-trained model zero-shot.
+Public-response compilation.Identity-disjoint, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>unlabeled
+public anchors A={x i}ni=1 receive frozen logits t(xi) for
+each supported modality subset. Only (xi, t(xi)) crosses the
+interface. We fit fixed-feature ridge (λ= 1 ) or ordinary neu-
+ral response KD [9], including trainable late visual blocks;
+held-out responses select checkpoints without task labels
+or newcomer inputs. A compiled model is reusable across
+clients choosing the same architecture–modality interface.
+Historical models are absent at inference.
+Three separable bottlenecks.Teacher-side supply is
+Sc = max k U(h c,k;c)−U(f c,0;c) . Identification loss is
+Ic = maxk U(h c,k;c)−U(h c,A;c) , and compilation loss is
+Cc =U(h c,A;c)−U(f c,A;c). Thus
+GA(c) =S c −I c −C c.(2)
+Compilation addresses Cc, not the sign of Sc −I c. A private-
+candidate oracle mixes these terms and is optimistic if query
+labels both select and score a policy; we also use label-
+disjoint </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Proposition 1 (unlabeled benefit is not identifiable).Let
+f0 be local and f1, . . . , fK fixed candidates. A selector ob-
+serves unlabeled target inputs, candidate predictions and
+their statistics. If it selects fj ̸=f 0 with positive probability
+where they disagree, then over unrestricted P(Y|X) it can-
+not guarantee both nonnegative transfer and strictly positive
+gain. The same observations admit opposite label condition-
+als; a positive guarantee needs assumptions or label-linked
+evidence.
+Proposition 2 (anchor-span identifiability).Let z(x) =
+[ϕc(x); 1]∈R d be a fixed representation with bias, andZ A
+its anchor matrix. If teacher scores satisfy t(x) =w ⊤∗ z(x)
+on anchors and targets, anchor responses determine all target
+scores iff
+span{z(x) :x∈supp(P c)} ⊆rowspan(ZA).(3)
+Recovery error scales with the coefficient norm in z(x) =
+Z ⊤A αx; regularization also requires a </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>representation-residual
+term. This is a fixed-feature response result, not a label-
+accuracy or neural-optimization guarantee. Exact recovery
+can copy a harmful teacher.
+Proposition 3 (shadow mean-gain certificate).Condi-
+tion on a frozen bank and policies, F. Suppose m labeled
+shadow clients and a future client are conditionally indepen-
+dent draws from the same declared stratum. Policies are
+fixed before shadow labels are opened and Gk(c)∈[−1,1] .
+With probability at least 1−δ , simultaneously for K candi-
+dates,
+E[Gk(C)| F]≥ ¯Gk − p2 log(K/δ)/m.(4)
+Hoeffding concentration and a union bound give the re-
+sult [10]. A positive bound certifies expected future-client
+gain, not individual safety. For m= 3, K= 5, δ=.05 , the
+radius is1.75. Proofs and precise scope are supplementary.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Source clients train the bank; shadow (meta) clients select
+policies before held-out test scoring (Table 1). Prospective
+studies freeze plans before test access. Labeled revisions
+reuse evaluated cohorts but make new choices on shadow-
+development clients. The five-dataset policy audit repeats
+optimization with five seeds and linear/deep heads; UCI
+HAR uses linear models and temporal CNNs. Seeds are not
+independent clients. MELD assigns modalities by speaker
+and preserves dialogue separation. UCF51-20 preserves in-
+divisible video groups; its clients are simulated. TCGA uses
+eligible Tissue Source Sites and class-stratified 60/20/20
+splits. UCI HAR withholds gyroscope from half the sub-
+jects; FedEMNIST preserves writer identities and official
+within-writer partitions. Cohort and freeze receipts are sup-
+plementary.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>NIST uses 4,096 images from 500 public writers to compile
+unseen pixel-MLP/CNN models. Neither compiler uses pub-
+lic task labels or newcomer inputs; the primary decentralized
+revision removes the historical public-label progression gate.
+Selectors include fixed policies, empirical selection-label
+argmax,Active Testing(fixed ensemble surrogate, expected-
+loss acquisition, 10% uniform floor and LURE correc-
+tion [11]),PCV(one shadow-selected policy, requiring non-
+negative mean gain for every shadow client), and Eq. 4.
+Local wins ties; same-query oracles are diagnostic. HAR
+additionally executes PeFLL-compatible generation from 12
+labeled descriptors and ATP-compatible one-step entropy
+adaptation from 20 unlabeled inputs [3, 20]; their supported
+interfaces and references differ.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MobileBERT-feature
+linear/MLP
+UCF51-20 [22] 51 12/4/4 group silo (simulated) video/audio features FedAvg MLPs→linear/MLP
+TCGA-BRCA [24] 2 7/3/3 Tissue Source Site (natural) WSI embedding/RNA
+expression
+FedAvg MLPs→linear/MLP
+UCI HAR [2] 6 12/6/12 subject (natural) raw accelerome-
+ter/gyroscope windows
+flattened-window MLPs → raw lin-
+ear/temporal CNN
+CelebA [15] 2 878/310/291;+4×300confirm identity (natural) raw RGB/facial land-
+marks
+raw FedSGD ResNet-18 →
+MobileNetV3/EfficientNet-B0
+FedEMNIST [5, 8] 10 1000/400/300 writer (natural) raw grayscale image residual CNN→pixel MLP/small CNN
+Table 2.Public-response utility and cost. A:strengthened local controls on 300 clients per dataset (reused-cohort revisions). CelebA
+matches late blocks and eight fit labels; FedEMNIST uses 20 labels/1,440 local updates.B:separate 100-epoch, three-seed pipeline
+comparison; harm is MLP/CNN after seed </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>averaging. Source costs differ; the full comparator reconstructs HeteroFedTTA.
+A. Benefit over strengthened local training
+Dataset local compiled gain [95% CI]
+CelebA 62.94 86.46 23.52 [21.69,25.38]
+FedEMNIST 80.27 96.89 16.62 [15.35,17.86]
+B. Complete pipeline: accuracy, harm and cost
+Pipeline acc. (%) harm MLP/CNN time (s)
+Original bank + KD 97.13 12.0/2.0 12.4
+Meta bank + KD 97.09 12.7/2.3 11.9
+Meta bank + dual 97.03 12.3/2.7 67.5
+Accuracy is %, gain is pp. Panel A FedEMNIST compilers use 50 epochs; B uses 100, with 200-epoch sensitivity in Table 6. Compilation time is per
+architecture on one RTX 4090. Intervals in A resample clients after averaging architectures and FedEMNIST seeds.
+The primary revision matches local ImageNet initializa-
+tion and trainable blocks, selecting its optimization on
+shadow identities; compilation retains+23.52 pp(Table 2A).
+Even a query-selected local </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Separately supervised public-label con-
+trols (Fig. 2B) yield response-minus-control differences of
+−0.35,+0.40,−1.08,+2.09 pp across ridge, binary, corre-
+lated and decorrelated studies. Responses are competitive,
+not uniformly superior to public labels.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Same-query versus label-disjoint gain falls from +2.49 to
+−1.01 ppon CREMA-D and +22.98 to −0.08 ppon TCGA
+(Fig. 3A); UCF51-20 retains +2.12 pp from +3.56 pp. Can-
+didate existence and policy identification differ: all fixed
+CREMA-D policies are harmful, all MELD policies help,
+and HAR retains positive fixed gains despite PCV absten-
+tion (Table 3). TCGA has a useful fixed KD-1 policy
+(+17.62 pp), but small, imbalanced selection cohorts fail
+to identify it per client.
+More labels help selectively.Four Active Testing labels
+recover 13.68 pp on MELD and 1.14 pp on UCF51-20; ad-
+ditional labels improve both (Fig. 3B). CREMA-D stays
+negative with all selection labels, while TCGA reaches only
+1.67 pp. Labels cannot create transferable candidates or
+make a shifted cohort representative.
+Shadow evidence and shift.PCV abstains on CREMA-D,
+UCF51-20 and HAR. On TCGA it selects KD-0.1 and </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>HAR freezes roles, missingness, five policies and budgets
+before opening 12 test subjects; a shadow-only amendment
+sets two fit labels per class. Fixed KD-1 gains 3.88 pp over-
+all but loses 1.73 pp in linear models and gains 9.49 pp in
+temporal CNNs (Fig. 3D). The paired interaction is11.21 pp
+[7.57,15.17], p=.0005 by exact sign-flip. Six disagreement
+labels halve harm from 16.7% to 8.3%; 24 retain that harm
+and raise gain to 4.47 pp (Table 4A). Neither removes neg-
+ative linear-stratum gain. Architecture routing discovered
+here remains retrospective.
+Table 3.Fixed policies and shadow-selected deployment.Gain/CI: pp; harm: %. Policies 1–4 are global/cluster 0/cluster 1/uniform on
+CREMA-D and KD 0.1/1/10/pure KD elsewhere. PCV uses only shadow labels; all LCB rules abstain. Test cohorts: MELD/TCGA, 3
+clients; UCF, 4 simulated silos.
+Fixed-policy gain PCV deployment
+Dataset 1 2 3 4 Choice </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Gain [95% CI] Harm
+CREMA-D−7.08−6.78−8.80−6.87local0.00[0.00,0.00] 0.0
+MELD+11.16 +16.05 +17.66 +17.89pure KD+17.89[15.30,22.03] 0.0
+UCF51-20+1.90 +1.57−1.18−1.45local0.00[0.00,0.00] 0.0
+TCGA-BRCA+13.33 +17.62 +17.18 +14.21joint KD 0.1+13.33[−1.31,30.00] 33.3
+UCI HAR+3.23 +3.88 +1.98 +1.69local0.00[0.00,0.00] 0.0
+Table 4.HAR architectures, selection labels and compatible baselines. A:sealed 12-subject audit; gain/CI: pp, harm: %. Oracle
+is diagnostic.B:separate supported slices with different references; PeFLL uses 12 labeled descriptors, ATP an unlabeled batch of 20.
+Accuracy: %.
+A. Fixed transfer and disagreement-label audit
+Policy Gain [95% CI] Harm Linear gain CNN gain
+Fixed joint KD 1+3.88[2.19,5.51] 16.7−1.73 +9.49
+Disagreement audit, 6 labels+3.22[1.83,4.64] 8.3−1.08 +7.52
+Disagreement audit, 24 labels+4.47[2.71,6.34] 8.3−0.93 +9.87
+Same-query oracle (diagnostic)+8.030.0+2.89 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>+13.18
+B. Named methods on supported interfaces
+Method Reference Ref. acc. Method acc. Gain [95% CI] Harm
+PeFLL FedAvg + fit (12 labels) 44.4 51.2+6.79[3.35,9.95] 16.7
+ATP Compatible global model 46.02 45.97−0.05[−0.69,0.59] 50.0
+Compatible PeFLL and ATP slices have different local ref-
+erences (Table 4B): PeFLL gains 6.79 pp but harms 16.7%;
+ATP changes mean accuracy little (−0.05 pp) while harming
+50.0%. They are not a common-baseline ranking. On 291
+sealed CelebA identities, sparse prototype handoff reaches
+65.23% versus 63.49% local and 92.40% teacher, leaving
+a 27.17 pp [25.17,29.17] portability gap and 37.5% harm.
+A six-transformation control does not resolve it (−0.47 pp
+[−2.19,1.09]).</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>after averaging three draws. ∆KL is broad minus restricted;
+harm is broad/restricted.
+Private backbone Fit inputs Broad acc. Restr. acc. Difference [95% CI]∆KL Harm
+MobileNet blocks 64 72.07 69.01 3.06 [1.84,4.32]−0.049027.4/32.2
+128 78.46 75.42 3.04 [1.93,4.20]−0.042617.8/24.8
+512 85.32 80.94 4.38 [3.26,5.54]−0.086110.4/13.7
+EfficientNet blocks 64 75.96 70.12 5.83 [4.51,7.21]−0.024225.6/35.2
+128 82.19 82.04 0.15 [−0.76,1.10]+0.024814.1/14.4
+512 87.82 84.94 2.89 [1.84,3.94]−0.06678.5/13.0</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>At 100 epochs, original-bank KD reaches 97.13% with 12.4
+s compilation per architecture versus 97.03% and 67.5 s for
+the HeteroFedTTA reconstruction (Table 2B). Full-minus-
+minimal gain is −0.11 pp [−0.28,0.07]; at 200 epochs it is
+0.04 pp [−0.12,0.21], not evidence of equivalence. Table 6
+retains both architectures and budgets: doubling optimiza-
+tion roughly doubles compilation without uniform accuracy
+gain. Same-bank KD separates source improvement from
+target adaptation; at 200 epochs its advantage over original-
+bank KD is0.15 pp[0.04,0.27].
+Amortization and source effort.ForJinterfaces andN
+arrivals, stage costs satisfy
+Ctotal =C bank +J ¯Ccompile +N ¯Ctarget.(5)
+Bank cost includes export; communication is separate. Orig-
+inal source training takes 85.7–91.6 s, selected meta check-
+points add 2,656.9–10,668.1 s, and source-budget search
+costs 12,463.9–43,954.6 s. Uncached </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Report teacher utility against a credible local baseline, sep-
+arate selection from scoring, and test the intended private
+architecture at a declared budget. CelebA covers image-only
+and image-derived landmarks; FedEMNIST tests unimodal
+portability. General independent-sensor multimodal trans-
+fer remains distinct. The fednbo.py entry point binds
+cohort identities, protocols, result hashes and reproduction
+commands.
+Table 6.FedEMNIST compiler-budget sensitivity.Entries are 100/200 epochs with matched inputs, initialization, optimizer and batch
+order. Accuracy/harm: %; harm averages three seeds by architecture. Meta + dual reconstructs HeteroFedTTA. Timings exclude I/O/loading;
+source effort differs and is reported separately.
+Architecture Pipeline Accuracy Harm Compile (s) Target (ms)
+MLP Original + KD 95.87/95.82 12.0/12.0 11.8/23.1 0.71/0.66
+Meta + KD 95.74/95.97 12.7/11.0 11.0/22.4 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MELD/TCGA have three test clients, UCF51-20 clients are
+simulated, and four tasks use frozen features. The image
+studies use in-domain anchors; cross-domain support, re-
+sponse privacy and prospective individual safety remain
+open. Proposition 2 concerns fixed linear representations.
+The HeteroFedTTA reconstruction has finite source budgets;
+revisions reuse evaluated cohorts. The supplement preserves
+superseded centralized FedEMNIST and public-label-gate
+protocols alongside the client-local replications.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This supplement follows the four experimental questions in the main paper: selection, private-model realization, public-input
+support, and cost/benefit. The main paper presents the principal policy, architecture, support, and budget contrasts. The
+consolidated tables here retain their original context and additional shadow, historical-control, and source-search rows. Full
+grids and individual seeds remain in the accompanying JSON/CSV files.
+Roles and uncertainty.Source clients train the bank; shadow-development clients choose recipes; shadow-validation and
+test clients evaluate frozen decisions. Revisions explicitly reuse previously evaluated cohorts. The primary revised CelebA and
+FedEMNIST results are not additional prospective confirmations. Confidence intervals resample natural clients after averaging
+architectures and seeds, unless architecture is a displayed stratum. They quantify </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>first complete result artifact. The guarded runner
+records the consumed policy hash; the verifier checks policy, receipt and result agreement. Local filesystem times (UTC+8)
+are repository records, not independent trusted timestamps. The original FedEMNIST progression gate used public labels
+and a centralized teacher; the later primary replications remove both dependencies. Task amendments, historical results and
+strengthened-baseline revisions remain distinguishable in the release.
+Table S1. Original confirmation chronology. Hash prefixes identify full policy hashes in the receipts. Revised baselines reuse these cohorts
+rather than create new confirmations.
+Study roles frozen choice policy/result time policy SHA
+CelebA sparse handoff 878/310/291 identities fit pseudo-label prototype; 8 labels 09-26 23:53/09-26 23:559f2392c1
+CelebA ridge new 300 identities 4,096 anchors; ridge alpha 1 </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>on positive target mass, not merely different parameter values. The anchor-span proof and regularized residual
+are given above.
+Conditional mean-gain concentration.Condition on the frozen bank and policies F. For independently drawn same-stratum
+shadow clients and fixed candidatek, gains lie in[−1,1], so Hoeffding gives
+Pr
+ ¯Gk −E[G k(C)| F]≥ϵ| F ≤exp(−mϵ 2/2).
+A union bound over K fixed candidates and ϵ=
+p
+2 log(K/δ)/m yields the stated simultaneous bound. Candidate or
+bank selection using the same shadow labels invalidates this fixed-policy argument unless independently accounted for. The
+guarantee concerns population mean gain under the declared distribution, not each client or an arbitrarily shifted future
+population.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +519,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +535,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-19</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-20 09:11:35</li><li>Last seen by Paper Scout: 2026-10-20 09:11:35</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-19</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-20 09:11:35</li><li>Last seen by Paper Scout: 2026-10-21 09:20:01</li></ul>
             <ul><li>arXiv: 2610.26026</li><li>arXiv IDs: 2610.26026</li></ul>
           </section>
           <section class="detail-panel">

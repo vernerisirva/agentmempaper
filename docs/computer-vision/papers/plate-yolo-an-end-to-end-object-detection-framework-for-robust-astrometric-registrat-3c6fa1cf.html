@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plate-YOLO: An End-to-End Object Detection Framework for Robust Astrometric Registration of Historical Plates</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Plate-YOLO: An End-to-End Object Detection Framework for Robust Astrometric Registration of Historical Plates</h1>
+          <p class="hero-copy">Quanfeng Xu, Zhengjun Shang, Shiyin Shen, Yong Yu, Mingyang Ma, Zhenghong Tang, Meiting Yang, Jing Yang, Zhao Jianhai</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2610.25677">Open paper</a>
+            <a class="paper-detail-link" href="plate-yolo-an-end-to-end-object-detection-framework-for-robust-astrometric-registrat-3c6fa1cf.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Quanfeng Xu, Zhengjun Shang, Shiyin Shen, Yong Yu, Mingyang Ma, Zhenghong Tang, Meiting Yang, Jing Yang, Zhao Jianhai</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-19</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-19</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://doi.org/10.5281/zenodo.23414798">DOI</a><a href="https://arxiv.org/abs/2610.25677v1">arXiv</a><a href="https://arxiv.org/abs/2610.25677">arXiv</a><a href="https://openalex.org/W7223026975">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies YOLO-family or real-time object detection.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Historical astronomical plates provide a long temporal baseline for time-domain astrophysics, but degradation and structural artifacts can hinder automated astrometric calibration. We present Plate-YOLO, a framework that combines source detection and stellar classification in one detector and supplies source catalog...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work provides a well-executed domain adaptation and detection pipeline that solves a concrete problem in historical astronomical archive preservation, backed by sound ablation studies and solid independent validation via Gaia DR3 astrometric calibration.</p>
+      <p>The authors document residual dependency on reference catalog depth, sensitivity degradation for the faintest sources, failure on extended comet plates with trailed stars, and caution that instrumental magnitude rank correlations do not constitute calibrated photometry.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-20T09:13:33.119415+00:00.</p>
+        <p>Coverage: 52030 of 52030 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Historical astronomical plates provide a long temporal baseline for time-domain astrophysics, but
+degradation and structural artifacts can hinder automated astrometric calibration. We present Plate-
+YOLO, a framework that combines source detection and stellar classification in one detector and
+supplies source catalogs to a separate astrometric solver. The detector adapts YOLOv5 with Space-to-
+Depth feature rearrangement, SimAM attention, a high-resolution P2 head, and a Normalized Wasser-
+stein Distance loss for small bounding boxes. A Gaia-guided fine-tuning procedure uses initially solved
+plates to construct labels for a new archive. On 150 UBAI plates for which the conventional pipeline
+had failed, the Chinese-trained model solved 40 plates, and target-archive fine-tuning recovered a fur-
+ther 106, giving an overall recovery rate of 146/150 (97.3%). In the reported hardware </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>initially train the model on well-
+characterized Chinese historical plates to establish a reliable baseline (Z.-J. Shang et al. 2024; Q. Xu et al. 2026),
+and then apply it directly to the Ulugh Beg Astronomical Institute (UBAI) archive to evaluate its cross-archive
+generalization. To account for the inherent physical and observational differences between these archives, we introduce
+a Gaia-guided fine-tuning strategy that utilizes initially calibrated UBAI plates to generate accurate local reference
+labels. Ultimately, this pipeline enables successful stellar extraction and astrometric calibration for severely degraded
+plates that conventional methods fail to process.
+This paper is organized as follows: Section 2 describes the Chinese and UBAI plate datasets and the preprocessing
+procedure. Section 3 introduces the Plate-YOLO framework, including the network architecture, the </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>plate.
+We applied this partition to construct a representative datasetD s ={(x sj, ysj )}Nsj=1, wherex s represents the im-
+age tensor andy s encapsulates both the bounding box geometries and class labels. To generatey s objectively, we
+implemented an automated pipeline.
+First,SExtractorwas run with a detection threshold of 1.5σabove the local background to obtain candidate
+sources. This low threshold increases sensitivity but does not guarantee completeness. Training-box centers were
+taken from the windowed positions (XWIN IMAGE,YWIN IMAGE), and the box sizes were defined asw= 2×A IMAGE
+(semi-major) andh= 2×B IMAGE(semi-minor axes).
+Candidate detections were cross-matched with Gaia DR3 ( Gaia Collaboration et al. 2023) using reference sources
+withG≤18 mag 7, whose coordinates were propagated to each plate epoch using Gaia proper motions. Detections with
+a counterpart within 3×RMS of </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the plate astrometric solution were labeled as stellar, whereas unmatched detections
+were operationally labeled as non-stellar. Positional errors, blending, and catalog selection can also affect matching.
+These labels therefore provide a catalog-based reference rather than a guarantee of photometric completeness.
+As described in Section 2.1, the dataset was divided into independent training, validation, and test sets at the
+full-plate level (see Table 1 in detail). For computationally efficient model development, we sampled 100 patches
+from each training plate, yielding 200,000 training cutouts containing 645,307 stellar and 250,259 fake source label
+instances. We similarly constructed the validation set using a fixed sample of 100 patches per plate to monitor model
+convergence. The test set was constructed by selecting 500 patches from each test plate. All label counts in Table 1
+refer </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>aperture-based brightness estimation,
+which generates the relative brightness rankings required to seamlessly interface our deep learning extractions with
+classical astrometric solvers.
+3.1.Plate-YOLO Architecture
+Plate-YOLO adapts the YOLOv5 baseline (R. Khanam &amp; M. Hussain 2024) with three structural modifications
+tailored for micro-scale targets (Figure 2). To finalize predictions, we apply a confidence threshold to reject background
+noise, followed by Non-Maximum Suppression (NMS) to resolve overlapping bounding boxes. The effectiveness of these
+modifications is validated in Appendix A.
+3.1.1.Space-to-Depth module
+In standard convolutional networks, stride-2 max pooling or strided convolutions are commonly used to reduce
+spatial dimensions and increase the receptive field. R. Sunkara &amp; T. Luo (2023) noted that this process can remove
+fine-grained spatial cues that are critical for </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to domain shift. Nevertheless, when feeding
+these initial zero-shot detections into an astrometric solver (e.g., Astrometry.net), some target plates still retain enough
+valid stellar coordinates to successfully solve their astrometric calibration and obtain a WCS.
+To bridge this cross-domain gap without requiring manual annotation, we introduce a self-calibration strategy that
+exploits this partial success (the detailed pipeline is discussed in Section 4.2). Specifically, we construct an archive-
+specific dataset using a subset of plates with successful astrometric calibration. On these plates, we first apply a high-
+sensitivity thresholding algorithm to extract all potential sources. Cross-matching candidates with epoch-propagated
+Gaia positions projected through the WCS provides catalog-based labels, subject to the matching and catalog-selection
+limitations in Section 2.3.2. This </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>defines the target datasetD t ={(x tj, ytj)}.
+These high-quality labeled samples from the target domain (D t) are then used alongside the source dataset (D s)
+to fine-tune the Plate-YOLO detector. The regularization term penalizes deviations from the source-model weights,
+while joint training onD s andD t is intended to mitigate forgetting during target-archive adaptation.
+L(θ) =L det(Ds) +λ tLdet(Dt) +λ reg||θ−θ s||2 (7)
+whereL det denotes the total joint detection loss (as defined in Eq. 2),θrepresents the current network weights, and
+θs represents the frozen baseline weights of the pre-trained source domain model. The hyperparametersλ t andλ reg
+balance the domain adaptation and network regularization, which are empirically set toλt = 1.0 andλ reg = 0.01 in our
+experiments. The regularization term acts as a structural constraint to prevent catastrophic forgetting; it preserves </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+foundational source detection capability learned from the original archive, while the target loss component allows the
+framework to rapidly adapt to the unique optical properties and distinct fake source distributions of the new historical
+archive.
+3.4.Instrumental Brightness Estimation for Source Ranking
+The extracted positions are supplied to Astrometry.net for astrometric solving. Relative brightness is used to order
+the input catalog and prioritize candidate anchors. We estimate an instrumental brightness proxy from the original,
+unstretched FITS image; it is intended for source ranking rather than calibrated photometry.
+8
+The geometric center of a predicted box [x min, ymin, xmax, ymax] is
+xc = xmin +x max2 , y c = ymin +y max2 .(8)
+The geometric center of the predicted bounding box was used directly as the aperture center, without centroid
+refinement or recentering on the </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Despite severe structural differences,
+relying on the instrumental-brightness ranking from the instrumental magnitude estimation method proposed in Sec-
+tion 3.4, the model&#x27;s robust feature extraction enabled Astrometry.net to derive WCS solutions for 40 of these plates
+successfully. While this provided a necessary foothold in the target domain plates, 110 plates remained unsolved.
+Differences between archives, image degradation, and solver constraints may all contribute to these failures.
+9
+Figure 3.The four comet-target plates that remained unsolved after Plate-YOLO fine-tuning.
+To bridge this domain gap and improve the detection depth limit, we applied the Gaia-guided fine-tuning strategy
+detailed in Section 3.3. By cross-matching the 40 initially calibrated plates with the Gaia DR3 reference catalogs, we
+automatically constructed a Gaia-labeled target-domain dataset,D t ={(x tj, </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ordering and astrometric solving recovered 106 of the 110 plates.
+Including the initial 40 solutions, the overall pipeline recovered 146 of the 150 plates (97.3%). Visual inspection
+identified the remaining four failures as comet observations: plates x01376, x01397, x01525, and x01527, shown in
+Figure 3. The comet occupies a substantial fraction of the field, while comet tracking produces trails in the background
+stars, leaving too few usable stellar anchors for reliable astrometric calibration.
+4.3.Science performance of Plate-YOLO detector
+4.3.1.Detection Completeness and Catalog Purity
+We evaluated detection performance on the 106 newly recovered plates, which were excluded from training and
+fine-tuning. Using the recovered WCS solutions, we cross-matched theSExtractorand Plate-YOLO catalogs with
+Gaia DR3 positions propagated to each observation epoch. The </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Gaia-confirmedSExtractorcatalog provides the
+baseline for relative completeness, while the Gaia-matched fraction of each detection catalog measures its purity.
+Because rigorous plate photometric calibration is complex (M. Ma et al. 2025), instrumental magnitudes serve only as
+approximate brightness indicators, without correction for plate-to-plate zero-point differences.
+Figure 4a compares the source distributions and magnitude-dependent relative completeness of the two Plate-YOLO
+models. We adopt a lowSExtractordetection threshold of 1.5σand treat the Gaia-confirmed detections as an
+approximately complete reference sample of stars detectable on these plates. In each instrumental-magnitude bin,
+we calculate the ratio of Gaia-matched Plate-YOLO stellar detections to Gaia-confirmedSExtractorsources. The
+Fine-tuned Modelreaches a peak ratio of about 95%, compared with about 65% for theBase </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>coordinates
+propagated to the observation epoch. The factor cosδ ref,i converts the right-ascension difference to its local tangent-
+plane angular separation. Both residual components are expressed in arcseconds. The positional residual isr i =
+[(∆α∗i )2 + (∆δi)2]1/2, and the plate-level two-dimensional RMS is
+RMS =
+vuut 1
+N
+NX
+i=1
+r2i ,(11)
+whereNis the number of matched sources used in the evaluation.
+Across these plates, the median RMS is 0.563 ′′ (interquartile range: 0.496 ′′–0.635′′), based on a median of 1724 Gaia
+matches per plate (interquartile range: 602–4253). These residuals are consistent with the stronger image degradation
+in this challenging sample, including PSF distortions and emulsion defects.
+Figure 5 examines the radial dependence of the positional residuals. Here,ρ=
+p
+(x−x c)2 + (y−y c)2/[√W 2 +H 2/2],
+where (xc, yc) is the plate center andWandHare its dimensions. </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>decreased from 2.63 to 0.79 s with the Plate-YOLO catalogs. The measured extraction
+and solving stages required 19.36 s for the conventional pipeline and 7.40 s for Plate-YOLO, corresponding to a 2.62-fold
+acceleration. BecauseSExtractorran on an Intel i9-10900 CPU and Plate-YOLO on an NVIDIA RTX 3090 GPU,
+these values represent the practical performance of the adopted configurations rather than a hardware-independent
+comparison.
+5.2.Astrometric Residuals
+We compared the two pipelines on the same 500-plate benchmark using the plate-level RMS defined in Equation 11.
+Both pipelines used the same Gaia DR3 reference selection, matching criteria, clipping procedure, and WCS model.
+Each RMS was calculated from the corresponding pipeline&#x27;s own Gaia-matched sources, so the paired comparison
+evaluates the resulting solutions, including differences in source selection.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>does not isolate WCS accuracy from source-selection effects.
+6.CONCLUSIONS
+Plate-YOLO integrates source detection and stellar classification for degraded historical photographic plates using
+SPD feature rearrangement, SimAM attention, a P2 detection head, and NWD regression. The resulting stellar
+catalogs are ranked by an instrumental-brightness proxy and passed directly to the astrometric solver.
+Among 150 UBAI plates unsolved by the conventional pipeline, the Chinese-trained model recovered 40 solutions
+and Gaia-guided fine-tuning recovered a further 106, giving an overall success rate of 146/150 (97.3%). The newly
+recovered solutions have a median plate-level RMS of 0.563 ′′, with no pronounced outward increase in the median
+positional residuals. On the tested hardware, Plate-YOLO achieved 2.53-fold faster source extraction and a 2.62-fold
+speedup for the combined extraction and </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Model Added Stellar
+Variant Component Precision (%) Recall (%) AP@0.5
+Baseline None 85.6 78.4 0.754
+Variant 1 + NWD Loss 91.8 82.3 0.803
+Variant 2 + SPD Module 92.4 85.1 0.826
+Variant 3 + SimAM 95.5 84.8 0.841
+Plate-YOLO + P2 Head97.0 88.0 0.874
+Note—Baseline denotes the unmodified YOLOv5 model, and components are added cumulatively. Precision, recall, and
+AP@0.5 are reported for the stellar class on the Chinese test patches, with AP evaluated at an IoU threshold of 0.5. We focus
+on stellar detection because the resulting stellar catalog is input to the astrometric solver.
+The unmodified YOLOv5 baseline gives the reported precision of 85.6% and recall of 78.4%. The following results
+describe the cumulative experiment; they do not isolate the contribution of each component from interactions with
+previously added components.
+•NWD Loss:NWD compares bounding-box centers and sizes without </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Real-time / YOLO-family detection</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Directly concerns the YOLO family or real-time single-stage detection</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: YOLO / real-time detection</li>
+              <li>Tags: object-detection, yolo, detr</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-21</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-19 09:35:31</li><li>Last seen by Paper Scout: 2026-10-22 09:10:04</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.25677</li><li>arXiv: 2610.25677</li><li>OpenAlex: W7223026975</li><li>OpenAlex IDs: W7223026975, W7222578541</li><li>arXiv IDs: 2610.25677</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="plate-yolo-an-end-to-end-object-detection-framework-for-robust-astrometric-registrat-3c6fa1cf.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Plate-YOLO: An End-to-End Object Detection Framework for Robust Astrometric Registration of Historical Plates. Quanfeng Xu, Zhengjun Shang, Shiyin Shen, Yong Yu, Mingyang Ma, Zhenghong Tang, Meiting Yang, Jing Yang, Zhao Jianhai. 2026-10-19. https://doi.org/10.48550/arxiv.2610.25677</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

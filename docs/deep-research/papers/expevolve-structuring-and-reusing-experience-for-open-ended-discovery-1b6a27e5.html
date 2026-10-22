@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery</h1>
+          <p class="hero-copy">Yongqiang Chen, Chenxi Liu, Deyu Zou, Zhenhao Chen, Tongliang Liu, Bo Han, Kun Zhang</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.29303v1">Open paper</a>
+            <a class="paper-detail-link" href="expevolve-structuring-and-reusing-experience-for-open-ended-discovery-1b6a27e5.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Yongqiang Chen, Chenxi Liu, Deyu Zou, Zhenhao Chen, Tongliang Liu, Bo Han, Kun Zhang</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-21</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-21</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.29303">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies AI-scientist or scientific-discovery agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Evolutionary coding agents such as AlphaEvolve are one of the notable successes in using Large Language Models (LLMs) to build AI Scientists. These agents tackle open-ended scientific problems by iteratively improving and evolving programs, leveraging the prior knowledge and reasoning capabilities of LLMs. Despite t...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The paper provides a coherent conceptual framework, rigorous theoretical justification, complete implementation specifics, and solid empirical validation on standard benchmarks without circular evaluation traps.</p>
+      <p>The authors acknowledge that the studied discovery domains remain restricted to relatively small-scale verification settings with automated/deterministic objective code, leaving expensive real-world verification regimes to future work.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-22T09:12:43.539009+00:00.</p>
+        <p>Coverage: 142956 of 142956 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>propose
+ExpEvolve, which injects idea-level extraction and control into evolution: it discovers and leverages
+the high-level factors from programs that explain scoring differences among different programs. We
+characterize theoretical conditions on when discovery with idea factors improves sample efficiency. We
+also build a practical framework to show that the extracted high-level idea factors are helpful for guiding
+exploitation from experience and exploration when discovery comes to a plateau. Across11open-ended
+mathematical tasks, ExpEvolve significantly improves the final performance and sample efficiency
+up to5.0×. The improvements also transfer to4other LLMs and to6machine learning tasks from
+MLS-Bench. Analysis shows thatExpEvolve can discover idea-level factors to provide better exploration
+and exploitation for evolutionary discovery.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>we proposeExpEvolve, which recognizes, structures, and leverages
+the high-level idea factors from discovery experience (Fig. 1). Specifically,ExpEvolve realizes the
+discovery of ideas via identifying high-level factors that help explain the program scoring differences.
+Built uponCOAT (Liu et al., 2025), the discovered idea factors are expected to predict which program
+performs better given any pair of programs in the experience. Then, the admitted idea factors will be
+incorporated as an action of a multi-armed bandit that controls the exploration and exploitation of
+different ideas during discovery. To enable sufficient exploration,ExpEvolve also allocates slots for
+random exploration (Gideoni et al., 2026), and idea-guided exploration when the evolution comes to
+2
+ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery
+a plateau. The idea-guided exploration enforces LLMs </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to explore diverse ideas other than those widely
+used in top-scoring programs. The idea-based control inExpEvolveallows efficient exploitation of
+promising ideas while continuing to explore programs with varied ideas.
+We evaluateExpEvolve on11open-ended mathematical discovery tasks with a budget of200
+evaluated programs, usingSCS as the backbone and the main baseline (Sec. 5). Under two con-
+figurations that split the budget into20generations of10programs and10generations of20
+programs, ExpEvolve improves the final performance overSCS and ShinkaEvolve in most settings
+with smaller budgets up to5.0×. Further analyses show that the discovered idea factors order the
+archived programs better than their code length on all11tasks. We further integrateExpEvolve into
+OpenRSI (Yang et al., 2026b) on six tasks from MLS-Bench (Lyu et al., 2026a), where it improves
+the mean final best-so-far score </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1,...,𝑝 𝐾}, and let each evaluation
+return𝑦 𝑡 =𝐹(𝑝 𝑡;𝜃 sci)+𝜀 𝑡 with𝜀 𝑡∼N(0,𝜎 2)i.i.d.
+(a) With reuse.If each program has a known representation 𝜙(𝑝) ∈ℝ 𝑑 with∥𝜙(𝑝)∥ 2 ≤ 1and
+𝐹(𝑝 ;𝜃sci)=⟨𝜙(𝑝),𝑤 ★⟩ for an unknown𝑤★∈ℝ 𝑑, then under a coverage condition on the represen-
+tation, there exists a policy that, with probability at least1−𝛿, outputs a program within𝜖 of the
+optimal value after𝑂
+
+𝑑 𝜎2𝜖2 log 𝐾𝛿 evaluations.
+(b) Without reuse.If programs are unrelated, i.e.,𝐹(𝑝 𝑖;𝜃sci)=𝜇 𝑖 for an arbitrary𝜇∈ℝ 𝐾, then any
+policy with the same guarantee for every𝜇needsΩ
+
+𝐾 𝜎2𝜖2 log 1𝛿 evaluations.
+The formal statement and proof are given in Appendix E. Theorem 3.1 implies that reusing
+experience at the high-level design choices can significantly improve sample efficiency fromΩ(𝐾) to
+𝑂(𝑑log𝐾) , where𝐾≫𝑑 . In evolutionary discovery,𝐾 counts the candidate program space, which
+grow combinatorially </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>two candidate ideas 𝑧0 and 𝑧1, and
+two mechanisms𝜃0 and 𝜃1 under which the score depends on𝑧0 and 𝑧1, respectively, i.e.,𝐹(𝑝 ;𝜃𝑖)=
+𝑔(𝑍(𝑝),𝑧 𝑖(𝑝)) for a common representation𝑍 and function𝑔, with the same observation noise. Suppose
+5</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>support: 𝑛!&quot;=18,𝑛!##=30
+score contrast: +Δ=+0.37
+redundancy / admissibility
+check: pass
+reject
+Insufficient support
+or redundant admitted
+Idea memory entry
+Factor:
+uses_constructive_init
+Description:
+Detects explicit cons..
+Evidence:
+𝑛!&quot;=18,𝑛!##=30,)Δ=+0.37
+Status: active
+Candidate action: add::F
+Figure 3|Illustration of idea factor discovery.
+Idea memory.During the discovery,ExpEvolve maintains an idea memoryM𝑡 which is a set of
+idea factors. Each idea factor is stored with a name, a description of its code pattern, a type, i.e.,
+binary or categorical, and a value setV. For each program in the experience archive, the values of
+idea factors are annotated by an annotator LLM, which instantiates the idea representation𝑍(𝑝).
+Explainability of idea factors.A faithful idea representation is expected to be able to predict the
+score of a program, i.e.,𝐹(𝑝 ;𝜃sci)=𝑔(𝑍(𝑝)) (Sec. 3.2). </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery
+Discovering idea factors from unexplained pairs.The idea discovery process inExpEvolve
+is an iterative loop: each time the discovery is triggered,ExpEvolve fits a pairwise ranker on the
+annotated idea factors, and selects the pairs of archived programs with a large score gap that the
+current idea factors fail to explain. The unexplained pairs suggest theexistence of missing idea factors
+that separate the programs in each pair. For the selected pairs, a separate proposer LLM reads the
+programs to propose candidate idea factors that distinguish them. Each candidate is then annotated
+on the whole archive, and is admitted into the idea memory if each of its values is supported by
+enough programs and its values separate the scores.
+Proposal context (open search)
+Shared information
+• global idea </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery
+e.g., ADD(𝑧) and REMOVE(𝑧) for a binary idea factor. An action adds to the context an instruction
+that describes𝑧, together with demonstration programs in the target state, to ask the mutator LLM to
+realize the action in the new program. The MAB selects the action for each idea-guided slot. The
+reward of an action is the score of the program generated under the action relative to the random
+exploration in the same generation, i.e.,𝑟= 𝑦−¯𝑦rand𝜎rand , where 𝑦 is the score of the generated program,
+and ¯𝑦rand and 𝜎rand are the mean and the standard deviation of the scores of random exploration
+in the same generation. The normalization removes the drift of scores across generations and the
+differences of score scales across tasks. The MAB selects the actions with an upper confidence bound
+(UCB) rule on the maximum reward </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>of each action (Appendix H.3).
+Exploration at plateaus.Oftentimes, evolutionary discovery can concentrate around its best
+programs and a single strategy. Consequently, the ideas widely used in top-scoring programs stop
+varying, and their roles cannot be identified from the archive (Thm. 3.3). When the best score does
+not improve for𝜅 generations, ExpEvolve switches to idea-guided exploration, which enforces the
+mutator LLM to explore diverse ideas other than those widely used in top-scoring programs. Specifi-
+cally, a separate LLM probes the properties shared by the top-scoring programs as background idea
+factors, and an LLM judge determines which idea factors in the memory depend on the background.
+ExpEvolve then masks the actions of the dependent idea factors, instructs the mutator LLM to avoid
+them, and assigns more slots to random exploration with diversified demonstrations.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Tasks.We evaluate on11open-ended mathematical discovery tasks. Nine tasks are the problems
+studied bySCS (Gideoni et al., 2026), which are taken fromAlphaEvolve (Novikov et al., 2025),
+including the first and second autocorrelation inequalities, the uncertainty inequality, the Erdős
+minimum overlap problem, sums and differences of sets, the max–min distance ratio, the Heilbronn
+problem for triangles, the kissing number in11dimensions, and circle packing. The other two tasks
+are the Hadamard matrix problem (Wang et al., 2026) and a variant of circle packing that recovers
+the radii by linear programming. We report the best score at the end of the budget, as the mean and
+standard deviation over seeds, and the best seed. Full details of the tasks are given in Appendix I.1.
+Budget.Each run evaluates200programs. We consider two configurations with the same budget,
+i.e.,10generations </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery
+Table 1| Final performance at the budget of200evaluated programs. Mean reports the seed mean±
+seed standard deviation over3seeds, and Best reports the best seed.
+20 generations×10 programs 10 generations×20 programs ShinkaEvolve
+TaskExpEvolve SCS ExpEvolve SCS
+Mean Best Mean Best Mean Best Mean Best Mean Best
+Hadamard↑0.9211±0.000 0.92110.6641±0.169 0.85960.9259±0.008 0.93570.8349±0.101 0.9211 0.6467±0.139 0.8066
+Pack↑2.63542±0.001 2.635982.61697±0.028 2.635722.63499±0.002 2.635982.62305±0.011 2.63104 2.58201±0.037 2.61408
+Linprog↑2.63542±0.001 2.63598 2.63542±0.001 2.63598 2.63542±0.001 2.635982.55161±0.006 2.55608 2.51434±0.026 2.54142
+SumDiff↑1.11609±0.006 1.119371.11087±0.001 1.111431.12224±0.001 1.122811.11608±0.005 1.12006 1.10954±0.000 1.10954
+Heilbronn↑0.0353±0.001 0.03590.0313±0.003 0.03400.0358±0.001 </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.03650.0336±0.001 0.0343 0.0303±0.002 0.0324
+Min overlap↓0.3810±0.000 0.38100.3816±0.0010.3810 0.3810±0.000 0.3810 0.3810±0.000 0.38100.3824±0.000 0.3824
+Kissing↑526±97 582413±23 438582±0 582 582±0 582462±90 566
+Second autocorr.↑0.8825±0.000 0.88250.8398±0.016 0.84990.8825±0.000 0.8825 0.8825±0.000 0.88250.8745±0.008 0.8825
+First autocorr.↓1.5113±0.002 1.50981.5235±0.011 1.51511.5195±0.006 1.51511.5508±0.011 1.5378 1.5540±0.029 1.5203
+Max–min ratio↓12.9262±0.064 12.889212.9338±0.07712.8892 12.8892±0.000 12.889212.9808±0.033 12.9425 13.0000±0.000 13.0000
+Hermite↓0.35473±0.003 0.352630.39431±0.059 0.359450.35089±0.002 0.348200.35956±0.005 0.35394 4.72779±3.788 0.35429</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>shape 20x10 shape 10x20 mean of 3 seeds, band ± 1 std
+Figure 6|Best-so-far scores along the budget of200evaluated programs.
+ExpEvolve improves sample efficiency.Fig. 6 shows the best-so-far scores along the budget on
+Hadamard, Sums and differences, Heilbronn, and Minimum overlap. On these four tasks,ExpEvolve
+needs1.7×to26.2×fewer evaluations thanSCSunder both configurations.
+The improvements transfer to other LLMs.Fig. 7 (a) shows that the advantages ofExpEvolve
+overSCStransfers to other LLMs such as DeepSeek-v4-pro, GLM-5.2 and Gemini-3.7-Flash.
+Summarizingexperienceasmemoryhelpstheearlysearchbutsaturates. ShinkaEvolveand
+SCS+meta retain the experience as a textual summary of recent programs, which provides additional
+context to the mutator LLM without controlling which ideas are evaluated. Fig. 7 (b) shows that
+SCS+meta improves overSCS in the early stage. However, its improvement </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery
+Bandit Anomaly Clustering Multi-obj. Subgroup ES
+0.0
+0.2
+0.4
+0.6
+0.8
+Mean final BSF score
+0.750
+0.579
+0.485
+0.375
+0.610
+0.565
+0.846
+0.688
+0.520
+0.408
+0.638
+0.591
++0.096
++0.109
++0.035
++0.032
++0.028
++0.026
+OpenRSI OpenRSI + ExpEvolve
+(a) Final BSF performance
+1 20 30 40 50 60 70
+Search progress
+0.32
+0.34
+0.36
+0.38
+0.40
+0.42
+Best-so-far score
+Common history
+OpenRSI
+OpenRSI + ExpEvolve
+GUIDED edit
+Plateau mode
+A1
+A1</blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Due to the resource constraints, the tasks studied in this work remain limited to small-scale verification
+and are relatively simple. There remains a broader scope of scientific problems to be explored where
+verification signals can be expensive, such as biology, medicine, etc.. Meanwhile, the factor discovery
+can also be guided with additional background knowledge of the task.
+B. Related Work
+In this section, we present more detailed discussions of related works in the literature.
+AI Scientist agents.With the significant advancement in LLM capacity and the development
+of agentic systems, a rising number of works develop agents to help scientific discovery (Tie et al.,
+2025; Zheng et al., 2025a; Zhou et al., 2025). Some systems automate the whole research workflow,
+from idea generation to experimentation and paper writing (Feng et al., 2026b; Ghareeb et al.,
+2026; Gottweis et al., 2026; </blockquote></details></li><li><strong>Contribution clarity — page 38</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery
+values as collected by Gideoni et al. (2026). All methods use the same evaluator for each task, and
+each evaluation is limited to60seconds, except the uncertainty inequality with300seconds.
+Table 4| Tasks, optimization directions, and reference values. The previous best values and the values
+of AlphaEvolve are collected by Gideoni et al. (2026). For the uncertainty inequality, all methods
+in Gideoni et al. (2026) reach0.3482under their reformulated parameterization, which we use in our
+experiments. For the Hadamard matrix, the previous best is the normalized score of the best-known
+construction.
+Task Direction Previous bestAlphaEvolve
+First autocorrelation inequality↓1.5098 1.5053
+Second autocorrelation inequality↑0.88922 0.8962
+Uncertainty inequality↓0.3523 0.3521
+Erdős minimum overlap↓0.380927 0.380924
+Sums and </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>AI-scientist / discovery workflow</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies autonomous scientific-discovery or hypothesis-generation workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 93/100</li>
+              <li>Screening category: AI scientist / discovery system</li>
+              <li>Tags: ai-scientist, deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-21</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-22 09:08:45</li><li>Last seen by Paper Scout: 2026-10-22 09:08:45</li></ul>
+            <ul><li>arXiv: 2610.29303</li><li>arXiv IDs: 2610.29303</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="expevolve-structuring-and-reusing-experience-for-open-ended-discovery-1b6a27e5.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery. Yongqiang Chen, Chenxi Liu, Deyu Zou, Zhenhao Chen, Tongliang Liu, Bo Han, Kun Zhang. 2026-10-21. https://arxiv.org/abs/2610.29303v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

@@ -59,16 +59,218 @@
             <p>3D scene graphs support language-guided navigation by organizing physical entities and their containment and spatial relations into hierarchical maps. Building such structured maps requires a scene representation that consistently distinguishes semantic regions and object instances across viewpoints. To this end, we...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper presents a coherent technical framework, solid algorithmic details, clear baselines, rigorous ablation analysis, and appropriate limitations.</p>
+      <p>The authors clearly acknowledge limitations, including poor room boundary delineation in open-plan spaces (e.g., open kitchens) and the offline nature of the scene graph construction [Eb2ed8061a1ca8742-B0040].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-22T09:12:21.191406+00:00.</p>
+        <p>Coverage: 41624 of 41624 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>novel-view panoptic segmentation and direct Gaussian-
+level panoptic decoding. A semantic-aware scene graph mod-
+ule further recovers a floor-room-stuff-object hierarchy with
+containment and spatial relations. We further release NaviGS,
+a real-world dataset for panoramic scene understanding. The
+dataset provides 3DGS, mesh, RGB, semantic, and depth data.
+For 3D scene graph identification, PanoGraphGS outperforms
+the strongest evaluated baseline in object-node accuracy by
+more than 50% points on average across Replica and Nav-
+iGS. PanoGraphGS also achieves state-of-the-art performance
+among the evaluated methods in 2D panoptic segmentation.
+These results demonstrate the effectiveness of PanoGraphGS
+in both hierarchical 3D scene understanding and 2D panoptic
+segmentation. The project website is available at:https:
+//github.com/gaojh0333/PanoGraphGS.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Gaussian
+representation learning with hierarchical 3D scene graph con-
+struction. PanoGraphGS jointly learns semantic and instance
+features anchored to shared Gaussian geometry. The semantic
+branch combines residual feature projection and category
+prototypes with confidence-weighted supervision, while the
+instance branch associates view-local pseudo-labels with
+persistent Gaussian instance identities to ensure consistent
+object correspondence across views. As illustrated in Fig. 1,
+the resulting panoptic Gaussian representation supports both
+panoptic segmentation and direct Gaussian-level decoding.
+The semantic-aware hierarchical reasoning module combines
+structural semantics with Gaussian geometry to recover the
+floor-room-stuff-objecthierarchy and its containment and
+spatial relations, enabling structured spatial queries such as
+locating the bed1 in the living room on floor1. CLIP </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Per-Gaussian  Decoding
+Semantic class
+Instance ID
+Gaussian Decoding and Entity Abstraction Semantic-Aware Floor
+and Room Reasoning
+Floor levels
+Room regions
+Hierarchical Association and
+Spatial Relations
+Objects Floors/Rooms Relations 3D Scene Graph
+Hierarchical Scene Graph
+S Scene
+F Floor
+R Room
+Hierarchical Scene Graph Construction
+CLIP
+bedroom
+kitchenliving
+room
+…
+Semantic Geometry
+ceiling
+floor
+room
+room
+Fig. 3. Hierarchical 3D scene graph construction from panoptic Gaussians.
+stuff-object scene graph with explicit containment and spatial
+relations without training.
+III. METHOD
+A. Overall
+As illustrated in Figure 2, we employ SAM3-generated [6]
+masks from posed RGB images as supervision, which may
+contain noisy labels and inconsistent instance IDs across
+frames. We first augment the Gaussians with semantic and
+instance features (Section III-B). We jointly optimize the
+appearance, </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>atp, andc i,p is the view-dependent color of
+gi. The outputs ˆCp andf bp denote the rendered RGB color
+and feature of branchb, respectively. This shared rendering
+lifts multi-view 2D supervision to Gaussian-level features.
+C. Prototype-Based Semantic Learning
+The semantic branch maintains a learnable prototypeq c ∈
+RD for each semantic categoryc. Eachq c is randomly
+initialized. We introduce a residual-projection MLP shared
+between rendered 2D pixel features and 3D Gaussian-level
+features. This MLP unifies image-space semantic supervision
+with Gaussian-level semantic decoding and lifts 2D panoptic
+information into 3D. The discrepancy between the two spaces
+can produce noisy semantic predictions when 2D supervision
+is directly transferred to 3D Gaussian representations. This
+design mitigates the discrepancy. Specifically, the residual
+projection maps the rendered semantic featuref semp </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>iden-
+tifiers and is thus treated as a pseudo-label. To address
+this ambiguity, the instance branch maintainsKlearnable
+global instance prototypesu kKk=1 and associates view-local
+instance regions with persistent global identities. Given the
+rendered instance featuref insp , the global instance logits and
+probabilities are defined as:
+ℓinsp,k =u ⊤k f insp , P insp,k = softmax(ℓinsp )k,(4)
+For a view-local pseudo-instancer, pixelwise probabilities
+are aggregated over its region to define the association cost:
+Ar,k =−
+X
+p:yinsp =r
+P insp,k,(5)
+and the one-to-one assignment between local pseudo-
+instances and global instance identities is determined by
+π∗v = arg minπv
+X
+r∈Rv
+Ar,πv(r),(6)
+whereu k is the learnable prototype of global instance iden-
+tityk,y insp is the view-local pseudo-instance supervision at
+pixelp,R v is the set of pseudo-instance identifiers in viewv,
+andπ ∗v is the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE I
+HIERARCHICAL SCENE GRAPH COMPARISON ONREPLICA ANDNAVIGSDATASETS.
+Method Replica NaviGSFloor Acc. (%) Room Acc. (%) Object Acc. (%) Floor Acc. (%) Room Acc. (%) Object Acc. (%)
+KeySG [20] 100.00 22.50 17.27 90.00 35.00 5.25
+HOV-SG [5] 100.00 87.50 21.72 90.00 66.67 14.57
+OP3DSG [21] – – 35.91 – – 16.97
+BBQ [22] – – 33.08 – – 26.25
+ConceptGraphs [23] – – 39.32 – – 30.50
+PanoGraphGS (Ours) 100.00 100.00 89.90 100.00 100.00 98.36
+denotes the set of semantic categories or instance identities
+present in viewv. The temperatureτ tk adjusts confidence
+according to the within-class or within-instance feature dis-
+persion. The confidenceγ tp measures supervision reliability
+relative to competing categories or instance identities in the
+current view. It suppresses unreliable samples in both the se-
+mantic and instance objectives. The task- and class/instance-
+dependent factorτ tk is used </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE II
+COMPARISON OFPANOGRAPHGSWITH STATE-OF-THE-ART ALGORITHMS ONSCANNET++, REPLICA ANDNAVIGSBENCHMARKSPANOPTIC
+SEGMENTATION. THE BEST AND SECOND-BEST RESULTS ARE INDICATED IN BOLD AND UNDERLINED,RESPECTIVELY.
+Model ScanNet++ Replica NaviGSmIoU mBIoU mIoU mBIoU mIoU mBIoU
+Gaussian Grouping [14] 15.67 13.03 23.94 16.98 56.91 35.86
+ObjectGS [28] 8.91 6.41 12.22 5.39 43.77 26.69
+Trace3D [29] 30.22 27.54 54.90 48.50 67.51 44.75
+Unified-Lift [8] 38.10 35.92 63.91 59.69 78.48 57.84
+PanopticRecon++ [30] 31.93 29.31 54.32 43.51 49.36 25.58
+PanoGraphGS (Ours) 41.06 37.89 76.73 70.51 83.19 64.39
+roomr. The room receiving the most votes is selected:
+r(e) = arg max
+r∈Vroom
+|{xi ∈ Ge |x i ∈BBox(r)}|,(18)
+whereG e denotes the set of 3D Gaussians supporting object
+e, andBBox(r)represents the bounding box of roomr. This
+point-level voting strategy assigns each object to the room
+containing the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets.We evaluate on two public datasets, Scan-
+Net++ [31] and Replica [32]. In addition, we releaseNav-
+iGS, a real-world dataset comprising RGB and semantic
+scenes. NaviGS is acquired using two fisheye cameras and
+a handheld LiDAR device. LiDAR-assisted acquisition pro-
+vides accurate camera poses and a sparse point cloud for
+Gaussian initialization. Both scene collections provide 3DGS
+models, meshes, RGB, camera poses, and depth; semantic
+scenes additionally include scene graphs. To evaluate hi-
+erarchical scene graph construction, we select multi-room
+layouts from Replica and NaviGS that support evaluation of
+the floor-room-stuff-object hierarchy.
+Evaluation Metrics.Scene graph performance is evalu-
+ated by floor-, room-, and object-level accuracy. All com-
+pared methods use the same SAM3-generated segmentation
+masks as supervision. Since OP3DSG, BBQ, and Concept-
+Graphs do not </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>support floor-room recognition, they are
+evaluated only at the object level. For KeySG, HOV-SG,
+and PanoGraphGS, floor, room, and object recognition are
+manually verified under a hierarchical criterion: a room is
+correct only when its floor and room identities and semantic
+category are correctly identified, while an object is correct
+only when its floor, room, and object identities are all correct.
+Panoptic segmentation is evaluated using mIoU for region
+overlap and mBIoU for object and structural boundaries. For
+instance-only methods such as Unified-Lift, these metrics
+are computed after per-image optimal instance matching
+without semantic categories. For panoptic methods, including
+PanopticRecon++ and PanoGraphGS, a match is correct
+only when both instance identity and semantic category are
+correctly predicted, yielding a stricter criterion.
+Implementation Details.Training and </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE III
+ABLATION STUDY ONREPLICA.
+Confidence
+Weighted
+Instance
+Association
+Semantic
+Prototypes
+Object
+Acc. (%)
+2D
+mIoU
+2D
+mBIoU
+EXP0 × × × 53.20 59.34 48.19
+EXP1 ✓×✓ 55.31 63.84 54.10
+EXP2 ✓ ✓× 80.42 70.23 61.00
+EXP3 ×✓ ✓ 86.33 68.97 59.53
+EXP4 ✓ ✓ ✓ 89.90 76.73 70.51
+both quantitative accuracy and visual quality, producing
+more complete regions, more stable object identities, and
+clearer object and structural boundaries. These results further
+demonstrate the effectiveness of the residual projection MLP
+shared by rendered 2D pixel features and 3D Gaussian-level
+features; this design addresses the limitation of conventional
+semantic Gaussian methods whose learning modules typi-
+cally operate on either 2D or 3D features.
+C. Ablation Study
+We evaluate the effectiveness of the individual compo-
+nents of PanoGraphGS on the public Replica dataset, which
+contains multi-room layouts. The </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>panoramic scene understanding. PanoGraphGS
+nevertheless has several limitations. Open-plan spaces such
+as open kitchens lack explicit spatial boundaries, making
+room delineation challenging. Moreover, the current scene
+graph construction operates offline, and we will investigate
+online feed-forward scene graph construction for incremental
+scene understanding during continuous observations.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +309,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +325,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-20</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-21 09:20:00</li><li>Last seen by Paper Scout: 2026-10-21 09:20:00</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-20</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-21 09:20:00</li><li>Last seen by Paper Scout: 2026-10-22 09:10:02</li></ul>
             <ul><li>arXiv: 2610.27696</li><li>arXiv IDs: 2610.27696</li></ul>
           </section>
           <section class="detail-panel">

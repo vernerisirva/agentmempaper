@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:58:07",
-    "generated_at": "2026-10-21 09:24:04",
+    "generated_at": "2026-10-22 09:13:51",
     "last_seen_at": "2026-09-22 09:05:43",
     "metadata_sources": [
       "openalex"
@@ -100,36 +100,1269 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-22T09:11:26.854033+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The paper presents a comparative study but does not establish its claimed contribution of a first comprehensive comparison: the literature review itself lists ViT and fusion models already applied and evaluated, the models compared are standard baselines rather than new methods, and no independent test-set verification of the headline results is supplied. Multiple stated performance values for nearly identical measures are inconsistent, such as the conclusion reporting TransUNet mIoU 0.64 and Dice 0.54 while Table IV reports 0.67 and 0.52, so the reported claims cannot be treated as scientifically reliable.",
+      "The central fairness claim is not supported by the noted optimization signals in Table III: U-Net and TransUNet use Dice loss while ViT uses Cross-Entropy, and batch sizes, maximum epochs, and early-stopping dynamics differ, so the alleged rigorous gold-standard comparison does not establish equivalence of training conditions. Such protocol mismatch can materially distort Dice and mIoU rankings and invalidates the central conclusion of this comparative benchmark.",
+      "The headline results are reported from validation curves and best-epoch selection rather than a held-out test assessment. The stated best-performing model was selected using peak validation mIoU, yet no test-split metrics are actually reported, even though the paper earlier declares a test split, meaning the results may have been selected for the very metric being reported."
+    ],
+    "concise_summary": "The study offers an empirical benchmarking exercise, but methodological inconsistencies in training setups (differing loss functions, epochs, and batch sizes) prevent a rigorous apples-to-apples architectural comparison. Combined with reporting peak validation scores rather than transparent test split results, scientific certainty is insufficient for promotion.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 42671,
+      "assessment_input_sha256": "f55b6361f93d237a1baf7b3fbcee5f6af659765c299de4410fa606a7193e33d8",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.63503/acset.109",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 40175,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 39641,
+      "evidence_block_count": 55,
+      "evidence_context_characters": 48056,
+      "evidence_context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+      "evidence_context_sha256": "fee4f686a0038f7d1399c2c4f571063404914c085191b6a85f3fd7cbc87693df",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 40199,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "93c2d818deffe259fb4af9f1606bbd4f8f5f94224996ba9fe29abc6cb7c8850c",
+        "source_url": "https://conferenceseries.adroidjournals.com/index.php/ACSET/article/download/109/79",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 40175,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Adroid Conference Series: Engineering And Technology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 2452,
+          "supplied_characters": 2452
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 2725,
+          "supplied_characters": 2725
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 319,
+          "supplied_characters": 319
+        },
+        {
+          "heading": "Motivation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 1751,
+          "supplied_characters": 1751
+        },
+        {
+          "heading": "Literature Review",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 2757,
+          "supplied_characters": 2757
+        },
+        {
+          "heading": "Literature Review",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 2058,
+          "supplied_characters": 2058
+        },
+        {
+          "heading": "Table I",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "Comparative Study Of Existing Surface Defect Segmentation Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 1079,
+          "supplied_characters": 1079
+        },
+        {
+          "heading": "Problem Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 8,
+          "source_characters": 1498,
+          "supplied_characters": 1498
+        },
+        {
+          "heading": "Problem Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 9,
+          "source_characters": 107,
+          "supplied_characters": 107
+        },
+        {
+          "heading": "Proposed Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 10,
+          "source_characters": 531,
+          "supplied_characters": 531
+        },
+        {
+          "heading": "Appendix: Data Collection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 11,
+          "source_characters": 1198,
+          "supplied_characters": 1198
+        },
+        {
+          "heading": "Dagm 2007)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 10,
+          "supplied_characters": 10
+        },
+        {
+          "heading": "Dagm 2007)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 211,
+          "supplied_characters": 211
+        },
+        {
+          "heading": "Table Ii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 2309,
+          "supplied_characters": 2309
+        },
+        {
+          "heading": "Table Ii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2824,
+          "supplied_characters": 2824
+        },
+        {
+          "heading": "Table Ii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1365,
+          "supplied_characters": 1365
+        },
+        {
+          "heading": "Table Iii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 9,
+          "supplied_characters": 9
+        },
+        {
+          "heading": "Table Iii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1398,
+          "supplied_characters": 1398
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 19,
+          "source_characters": 727,
+          "supplied_characters": 727
+        },
+        {
+          "heading": "The Smooth Convergence Of The Model Can Be Attributed To The Nature Of U -Net'S Architecture And Its",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 20,
+          "source_characters": 538,
+          "supplied_characters": 538
+        },
+        {
+          "heading": "The Smooth Convergence Of The Model Can Be Attributed To The Nature Of U -Net'S Architecture And Its",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 1262,
+          "supplied_characters": 1262
+        },
+        {
+          "heading": "Appendix: Training Vs. Validation Miou Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 22,
+          "source_characters": 221,
+          "supplied_characters": 221
+        },
+        {
+          "heading": "Appendix: Training Vs. Validation Miou Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 23,
+          "source_characters": 1581,
+          "supplied_characters": 1581
+        },
+        {
+          "heading": "Appendix: Training Vs. Validation Miou Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 24,
+          "source_characters": 826,
+          "supplied_characters": 826
+        },
+        {
+          "heading": "Table Iv",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1807,
+          "supplied_characters": 1807
+        },
+        {
+          "heading": "Table Iv",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 394,
+          "supplied_characters": 394
+        },
+        {
+          "heading": "Limitations Of The Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "limitations",
+          "section_index": 27,
+          "source_characters": 1549,
+          "supplied_characters": 1549
+        },
+        {
+          "heading": "Novelty And Contributions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "introduction",
+          "section_index": 28,
+          "source_characters": 1019,
+          "supplied_characters": 1019
+        },
+        {
+          "heading": "Conclusions And Futire Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "conclusion",
+          "section_index": 29,
+          "source_characters": 1452,
+          "supplied_characters": 1452
+        },
+        {
+          "heading": "Conclusions And Futire Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 30,
+          "source_characters": 669,
+          "supplied_characters": 669
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 2988,
+          "supplied_characters": 2988
+        }
+      ],
+      "selected_characters": 39641,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 2452,
+          "heading": "Adroid Conference Series: Engineering And Technology",
+          "page": 1
+        },
+        {
+          "characters": 2725,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 319,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1751,
+          "heading": "Motivation",
+          "page": 2
+        },
+        {
+          "characters": 2757,
+          "heading": "Literature Review",
+          "page": 2
+        },
+        {
+          "characters": 2058,
+          "heading": "Literature Review",
+          "page": 3
+        },
+        {
+          "characters": 7,
+          "heading": "Table I",
+          "page": 3
+        },
+        {
+          "characters": 1079,
+          "heading": "Comparative Study Of Existing Surface Defect Segmentation Methods",
+          "page": 3
+        },
+        {
+          "characters": 1498,
+          "heading": "Problem Statement",
+          "page": 3
+        },
+        {
+          "characters": 107,
+          "heading": "Problem Statement",
+          "page": 4
+        },
+        {
+          "characters": 531,
+          "heading": "Proposed Methodology",
+          "page": 4
+        },
+        {
+          "characters": 1198,
+          "heading": "Appendix: Data Collection",
+          "page": 4
+        },
+        {
+          "characters": 10,
+          "heading": "Dagm 2007)",
+          "page": 4
+        },
+        {
+          "characters": 211,
+          "heading": "Dagm 2007)",
+          "page": 5
+        },
+        {
+          "characters": 2309,
+          "heading": "Table Ii",
+          "page": 5
+        },
+        {
+          "characters": 2824,
+          "heading": "Table Ii",
+          "page": 6
+        },
+        {
+          "characters": 1365,
+          "heading": "Table Ii",
+          "page": 7
+        },
+        {
+          "characters": 9,
+          "heading": "Table Iii",
+          "page": 7
+        },
+        {
+          "characters": 1398,
+          "heading": "Table Iii",
+          "page": 8
+        },
+        {
+          "characters": 727,
+          "heading": "Appendix: Implementation Details",
+          "page": 8
+        },
+        {
+          "characters": 538,
+          "heading": "The Smooth Convergence Of The Model Can Be Attributed To The Nature Of U -Net'S Architecture And Its",
+          "page": 8
+        },
+        {
+          "characters": 1262,
+          "heading": "The Smooth Convergence Of The Model Can Be Attributed To The Nature Of U -Net'S Architecture And Its",
+          "page": 9
+        },
+        {
+          "characters": 221,
+          "heading": "Appendix: Training Vs. Validation Miou Analysis",
+          "page": 9
+        },
+        {
+          "characters": 1581,
+          "heading": "Appendix: Training Vs. Validation Miou Analysis",
+          "page": 10
+        },
+        {
+          "characters": 826,
+          "heading": "Appendix: Training Vs. Validation Miou Analysis",
+          "page": 11
+        },
+        {
+          "characters": 1807,
+          "heading": "Table Iv",
+          "page": 11
+        },
+        {
+          "characters": 394,
+          "heading": "Table Iv",
+          "page": 12
+        },
+        {
+          "characters": 1549,
+          "heading": "Limitations Of The Study",
+          "page": 12
+        },
+        {
+          "characters": 1019,
+          "heading": "Novelty And Contributions",
+          "page": 12
+        },
+        {
+          "characters": 1452,
+          "heading": "Conclusions And Futire Work",
+          "page": 12
+        },
+        {
+          "characters": 669,
+          "heading": "Conclusions And Futire Work",
+          "page": 13
+        },
+        {
+          "characters": 2988,
+          "heading": "Unclassified body after references",
+          "page": 13
+        }
+      ],
+      "selected_text_sha256": "f55b6361f93d237a1baf7b3fbcee5f6af659765c299de4410fa606a7193e33d8",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "93c2d818deffe259fb4af9f1606bbd4f8f5f94224996ba9fe29abc6cb7c8850c",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0003"
+        ],
+        "excerpt": "unified approach of training and evaluation over three benchmark industrial surface \ndefect segmentation datasets, i.e., MVTec AD, NEU Surface Defect Database, and DAGM 2007, where the Dice Coefficient \nand mean Intersection over Union are used as evaluation criteria. It is observed that U -Net performs best in terms of \nmaximum mIoU of 0.75 at Epoch 26, ViT attains 0.72 with better generalization behavior at Epoch 41, and TransUNet \nachieves 0.67 at epoch 19.  \nKeywords: Surface Defect Segmentation, Vision Transformers, Hybrid CNN -Transformer Models, Industrial \nQuality Inspection, Deep Learning, Dice Coefficient, Mean Intersection over Union (mIoU) .",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adroid Conference Series: Engineering And Technology",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5fb47253694ad725414c0fc4ab8ad065e0b5ff1121d8d95dd7af03ab77e230dd",
+            "evidence_id": "Efa2161c1fc496679-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Adroid Conference Series: Engineering And Technology",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2452,
+                "page": 1,
+                "section": "Adroid Conference Series: Engineering And Technology",
+                "section_index": 0,
+                "start": 1791,
+                "text": "unified approach of training and evaluation over three benchmark industrial surface \ndefect segmentation datasets, i.e., MVTec AD, NEU Surface Defect Database, and DAGM 2007, where the Dice Coefficient \nand mean Intersection over Union are used as evaluation criteria. It is observed that U -Net performs best in terms of \nmaximum mIoU of 0.75 at Epoch 26, ViT attains 0.72 with better generalization behavior at Epoch 41, and TransUNet \nachieves 0.67 at epoch 19.  \nKeywords: Surface Defect Segmentation, Vision Transformers, Hybrid CNN -Transformer Models, Industrial \nQuality Inspection, Deep Learning, Dice Coefficient, Mean Intersection over Union (mIoU) ."
+              }
+            ],
+            "text": "unified approach of training and evaluation over three benchmark industrial surface \ndefect segmentation datasets, i.e., MVTec AD, NEU Surface Defect Database, and DAGM 2007, where the Dice Coefficient \nand mean Intersection over Union are used as evaluation criteria. It is observed that U -Net performs best in terms of \nmaximum mIoU of 0.75 at Epoch 26, ViT attains 0.72 with better generalization behavior at Epoch 41, and TransUNet \nachieves 0.67 at epoch 19.  \nKeywords: Surface Defect Segmentation, Vision Transformers, Hybrid CNN -Transformer Models, Industrial \nQuality Inspection, Deep Learning, Dice Coefficient, Mean Intersection over Union (mIoU) ."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0021"
+        ],
+        "excerpt": "This design can be described as a modular sequential pipeline containing five steps namely, dataset acquisition \nand preparation, preprocessing and augmentation, architecture -specific model inference, segmentation outputs \ngeneration, and performance assessment. All three models have used exactly the same data pipeline in order to \ncompare their performance fairly. The architecture of the designed framework is illustrated in Fig. 1 below.  \n \nFig. 1. Overall Architecture of the Object Surface Defect Segmentation Architecture",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Proposed Methodology",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8e667e73c19b648e4458f49361ec594d47b962ef2c978110aa0e1bc43438c647",
+            "evidence_id": "Efa2161c1fc496679-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Proposed Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 531,
+                "page": 4,
+                "section": "Proposed Methodology",
+                "section_index": 10,
+                "start": 0,
+                "text": "This design can be described as a modular sequential pipeline containing five steps namely, dataset acquisition \nand preparation, preprocessing and augmentation, architecture -specific model inference, segmentation outputs \ngeneration, and performance assessment. All three models have used exactly the same data pipeline in order to \ncompare their performance fairly. The architecture of the designed framework is illustrated in Fig. 1 below.  \n \nFig. 1. Overall Architecture of the Object Surface Defect Segmentation Architecture"
+              }
+            ],
+            "text": "This design can be described as a modular sequential pipeline containing five steps namely, dataset acquisition \nand preparation, preprocessing and augmentation, architecture -specific model inference, segmentation outputs \ngeneration, and performance assessment. All three models have used exactly the same data pipeline in order to \ncompare their performance fairly. The architecture of the designed framework is illustrated in Fig. 1 below.  \n \nFig. 1. Overall Architecture of the Object Surface Defect Segmentation Architecture"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0022"
+        ],
+        "excerpt": "Three different benchmark databases were used to ensure diversity in the studied materials, defect categories, \nand imaging conditions. \n\u2022 MVTec Anomaly Detection (AD) Benchmark [4]: Contains 5,354 high -resolution images categorized \ninto 15 object and texture classes, including metals, fabrics, leather, and electronic components with \ndefects such as scratches, dents, and cracks.  \n\u2022 NEU Surface Defect Benchmark: A steel surface inspection dataset containing 1,800 images across \nmultiple defect categories including crazing, inclusion, patches, pitted surfaces, rolled -in scale, and \nscratches.  \n\u2022 DAGM 2007 Benchmark [16]: A texture defect benchmark consisting of 1,150 images covering six \ndifferent defect categories.  \nThe merged dataset containing 8,304 images was split into training (70%), validation (20%), and testing (10%) \ndatasets with balanced distribution across each split. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Data Collection",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "37ba458561d961aa2ae3afee28420b990efe2597bdc1faf9837ae5f15f1770db",
+            "evidence_id": "Efa2161c1fc496679-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Data Collection",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 4,
+                "section": "Appendix: Data Collection",
+                "section_index": 11,
+                "start": 0,
+                "text": "Three different benchmark databases were used to ensure diversity in the studied materials, defect categories, \nand imaging conditions. \n\u2022 MVTec Anomaly Detection (AD) Benchmark [4]: Contains 5,354 high -resolution images categorized \ninto 15 object and texture classes, including metals, fabrics, leather, and electronic components with \ndefects such as scratches, dents, and cracks.  \n\u2022 NEU Surface Defect Benchmark: A steel surface inspection dataset containing 1,800 images across \nmultiple defect categories including crazing, inclusion, patches, pitted surfaces, rolled -in scale, and \nscratches.  \n\u2022 DAGM 2007 Benchmark [16]: A texture defect benchmark consisting of 1,150 images covering six \ndifferent defect categories.  \nThe merged dataset containing 8,304 images was split into training (70%), validation (20%), and testing (10%) \ndatasets with balanced distribution across each split. "
+              }
+            ],
+            "text": "Three different benchmark databases were used to ensure diversity in the studied materials, defect categories, \nand imaging conditions. \n\u2022 MVTec Anomaly Detection (AD) Benchmark [4]: Contains 5,354 high -resolution images categorized \ninto 15 object and texture classes, including metals, fabrics, leather, and electronic components with \ndefects such as scratches, dents, and cracks.  \n\u2022 NEU Surface Defect Benchmark: A steel surface inspection dataset containing 1,800 images across \nmultiple defect categories including crazing, inclusion, patches, pitted surfaces, rolled -in scale, and \nscratches.  \n\u2022 DAGM 2007 Benchmark [16]: A texture defect benchmark consisting of 1,150 images covering six \ndifferent defect categories.  \nThe merged dataset containing 8,304 images was split into training (70%), validation (20%), and testing (10%) \ndatasets with balanced distribution across each split. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0025"
+        ],
+        "excerpt": "TABLE II \nDATASET DISTRIBUTION ACROSS SPLITS. \nSplit Normal Samples Defective Samples Total \nTraining (70%) 3,648 2,562 6,210 \nValidation (20%) 837 663 1,500 \nTesting (10%) 298 296 594 \nTotal 4,783 3,521 8,304 \n \nB.  Preprocessing and Data Augmentation \nIn real-world settings, industrial images vary in terms of lighting conditions, scale, angle, and noise due to the \nvariety of settings where the images are taken. Given this fact and the requirement of developing a model that is \nrobust and compatible with deep learning, especially transformers, preprocessing techniques were conducted to \nnormalize all images. \nImage Resizing: All images were resized to 256\u00d7256 or 512\u00d7512 pixel sizes to make the inputs uniform, which \nis essential when applying deep learning algorithms to generate patches. Image resizing techniques that maintain \naspect ratios were implemented to prevent any kind of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Ii",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "199f6173a5a68467af9722ac9895b089e8297b0ee656651c1f7dcee4f211dacb",
+            "evidence_id": "Efa2161c1fc496679-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Table Ii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 5,
+                "section": "Table Ii",
+                "section_index": 14,
+                "start": 0,
+                "text": "TABLE II \nDATASET DISTRIBUTION ACROSS SPLITS. \nSplit Normal Samples Defective Samples Total \nTraining (70%) 3,648 2,562 6,210 \nValidation (20%) 837 663 1,500 \nTesting (10%) 298 296 594 \nTotal 4,783 3,521 8,304 \n \nB.  Preprocessing and Data Augmentation \nIn real-world settings, industrial images vary in terms of lighting conditions, scale, angle, and noise due to the \nvariety of settings where the images are taken. Given this fact and the requirement of developing a model that is \nrobust and compatible with deep learning, especially transformers, preprocessing techniques were conducted to \nnormalize all images. \nImage Resizing: All images were resized to 256\u00d7256 or 512\u00d7512 pixel sizes to make the inputs uniform, which \nis essential when applying deep learning algorithms to generate patches. Image resizing techniques that maintain \naspect ratios were implemented to prevent any kind of "
+              }
+            ],
+            "text": "TABLE II \nDATASET DISTRIBUTION ACROSS SPLITS. \nSplit Normal Samples Defective Samples Total \nTraining (70%) 3,648 2,562 6,210 \nValidation (20%) 837 663 1,500 \nTesting (10%) 298 296 594 \nTotal 4,783 3,521 8,304 \n \nB.  Preprocessing and Data Augmentation \nIn real-world settings, industrial images vary in terms of lighting conditions, scale, angle, and noise due to the \nvariety of settings where the images are taken. Given this fact and the requirement of developing a model that is \nrobust and compatible with deep learning, especially transformers, preprocessing techniques were conducted to \nnormalize all images. \nImage Resizing: All images were resized to 256\u00d7256 or 512\u00d7512 pixel sizes to make the inputs uniform, which \nis essential when applying deep learning algorithms to generate patches. Image resizing techniques that maintain \naspect ratios were implemented to prevent any kind of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0031"
+        ],
+        "excerpt": "both architectures individually.  \n \n \n \nFig. 5. TransUNet Hybrid CNN-Transformer Architecture \n \n \nE.  CNN Baseline (U-Net) \nThe U -Net was used as the CNN -based baseline, where the pre -trained ResNet-34 encoder was used with a \nsymmetrical decoder, where both were linked via skip connections for each scale level. The encoder down -\nsamples the input using convolutional layers and max pooling, while the decoder up -samples the image using \ntransposed convolution layers combined with skip connections from the encoder to restore spatial information. \nThe 1\u00d71 segmentation layer generated the output probability map for binary classification of defects. Since U -\nNet performs very well on small amounts of annotated data sets, it is considered a strong competitor.  \n \n \n \nFig. 6. U-Net CNN Architecture for Surface Defect Segmentation \n \n \nAll three models have been trained using the AdamW ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Ii",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "985d217b60124942d76e9f3f9b487fb484b7a12b9897dc4eb6c6436a4c819b15",
+            "evidence_id": "Efa2161c1fc496679-B0031",
+            "pages": [
+              7
+            ],
+            "section": "Table Ii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1147,
+                "page": 7,
+                "section": "Table Ii",
+                "section_index": 16,
+                "start": 248,
+                "text": "both architectures individually.  \n \n \n \nFig. 5. TransUNet Hybrid CNN-Transformer Architecture \n \n \nE.  CNN Baseline (U-Net) \nThe U -Net was used as the CNN -based baseline, where the pre -trained ResNet-34 encoder was used with a \nsymmetrical decoder, where both were linked via skip connections for each scale level. The encoder down -\nsamples the input using convolutional layers and max pooling, while the decoder up -samples the image using \ntransposed convolution layers combined with skip connections from the encoder to restore spatial information. \nThe 1\u00d71 segmentation layer generated the output probability map for binary classification of defects. Since U -\nNet performs very well on small amounts of annotated data sets, it is considered a strong competitor.  \n \n \n \nFig. 6. U-Net CNN Architecture for Surface Defect Segmentation \n \n \nAll three models have been trained using the AdamW "
+              }
+            ],
+            "text": "both architectures individually.  \n \n \n \nFig. 5. TransUNet Hybrid CNN-Transformer Architecture \n \n \nE.  CNN Baseline (U-Net) \nThe U -Net was used as the CNN -based baseline, where the pre -trained ResNet-34 encoder was used with a \nsymmetrical decoder, where both were linked via skip connections for each scale level. The encoder down -\nsamples the input using convolutional layers and max pooling, while the decoder up -samples the image using \ntransposed convolution layers combined with skip connections from the encoder to restore spatial information. \nThe 1\u00d71 segmentation layer generated the output probability map for binary classification of defects. Since U -\nNet performs very well on small amounts of annotated data sets, it is considered a strong competitor.  \n \n \n \nFig. 6. U-Net CNN Architecture for Surface Defect Segmentation \n \n \nAll three models have been trained using the AdamW "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0033"
+        ],
+        "excerpt": "TABLE III\nICCCN-2026 \n \n \nProceedings of ICCCN-2026 55 ADROID Conference Series: Engineering and Technology (ACS: ET) \n \nTRAINING CONFIGURATION FOR ALL MODELS. \nModel Input Size Max Epochs Batch Size Optimizer Loss Function \nU-Net 256\u00d7256 40 16 AdamW Dice Loss \nViT 256\u00d7256 60 8 AdamW Cross-Entropy \nTransUNet 256\u00d7256 40 8 AdamW Dice Loss \n \n \nF.  Performance Evaluation Metrics \nIn order to quantitatively assess the proposed method, two metrics are used: Dice coefficient  and mean \nintersection over union (mIoU). These metrics are commonly used in segmentation problems, especially when \nthere is an imbalance between classes. \nDice coefficient assesses the extent of overlap between the predicted mask and the ground truth. It works well in \ncases of imbalanced data where the defective areas constitute a tiny fraction of the whole image.  \nDice = 2\ud835\udc47\ud835\udc432\ud835\udc47\ud835\udc43 + \ud835\udc39\ud835\udc43 + \ud835\udc39\ud835\udc41 (1) \n \nwhere TP stands for ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iii",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4b1b01335bfe15db69d6e570a320948eaa72ab9d2a716d0e7e3f8cdc9b841cd4",
+            "evidence_id": "Efa2161c1fc496679-B0033",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Table Iii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 9,
+                "page": 7,
+                "section": "Table Iii",
+                "section_index": 17,
+                "start": 0,
+                "text": "TABLE III"
+              },
+              {
+                "end": 888,
+                "page": 8,
+                "section": "Table Iii",
+                "section_index": 18,
+                "start": 0,
+                "text": "ICCCN-2026 \n \n \nProceedings of ICCCN-2026 55 ADROID Conference Series: Engineering and Technology (ACS: ET) \n \nTRAINING CONFIGURATION FOR ALL MODELS. \nModel Input Size Max Epochs Batch Size Optimizer Loss Function \nU-Net 256\u00d7256 40 16 AdamW Dice Loss \nViT 256\u00d7256 60 8 AdamW Cross-Entropy \nTransUNet 256\u00d7256 40 8 AdamW Dice Loss \n \n \nF.  Performance Evaluation Metrics \nIn order to quantitatively assess the proposed method, two metrics are used: Dice coefficient  and mean \nintersection over union (mIoU). These metrics are commonly used in segmentation problems, especially when \nthere is an imbalance between classes. \nDice coefficient assesses the extent of overlap between the predicted mask and the ground truth. It works well in \ncases of imbalanced data where the defective areas constitute a tiny fraction of the whole image.  \nDice = 2\ud835\udc47\ud835\udc432\ud835\udc47\ud835\udc43 + \ud835\udc39\ud835\udc43 + \ud835\udc39\ud835\udc41 (1) \n \nwhere TP stands for "
+              }
+            ],
+            "text": "TABLE III\nICCCN-2026 \n \n \nProceedings of ICCCN-2026 55 ADROID Conference Series: Engineering and Technology (ACS: ET) \n \nTRAINING CONFIGURATION FOR ALL MODELS. \nModel Input Size Max Epochs Batch Size Optimizer Loss Function \nU-Net 256\u00d7256 40 16 AdamW Dice Loss \nViT 256\u00d7256 60 8 AdamW Cross-Entropy \nTransUNet 256\u00d7256 40 8 AdamW Dice Loss \n \n \nF.  Performance Evaluation Metrics \nIn order to quantitatively assess the proposed method, two metrics are used: Dice coefficient  and mean \nintersection over union (mIoU). These metrics are commonly used in segmentation problems, especially when \nthere is an imbalance between classes. \nDice coefficient assesses the extent of overlap between the predicted mask and the ground truth. It works well in \ncases of imbalanced data where the defective areas constitute a tiny fraction of the whole image.  \nDice = 2\ud835\udc47\ud835\udc432\ud835\udc47\ud835\udc43 + \ud835\udc39\ud835\udc43 + \ud835\udc39\ud835\udc41 (1) \n \nwhere TP stands for "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0034"
+        ],
+        "excerpt": "true positives (correctly classified defect pixels), FP is false positives (incorrectly classified \ndefect pixels), and FN is false negatives (defect pixels not detected). \nThe mean Intersection over Union ( mIoU) computes the overlap between the predicted and true mask values \ndivided by the sum of these values. It is designed to penalize both over- and under-segmentation errors. \nmIoU = \ud835\udc47\ud835\udc43\ud835\udc47\ud835\udc43 + \ud835\udc39\ud835\udc43 + \ud835\udc39\ud835\udc41 (2) \n \nUsing Dice Coefficient along with mIoU offers a complete assessment of the segmentation results.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iii",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8cfaacf9a7afc6bd049c60192a7fb4445d3f3ba24d7438c887cb67eff53b4180",
+            "evidence_id": "Efa2161c1fc496679-B0034",
+            "pages": [
+              8
+            ],
+            "section": "Table Iii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1398,
+                "page": 8,
+                "section": "Table Iii",
+                "section_index": 18,
+                "start": 888,
+                "text": "true positives (correctly classified defect pixels), FP is false positives (incorrectly classified \ndefect pixels), and FN is false negatives (defect pixels not detected). \nThe mean Intersection over Union ( mIoU) computes the overlap between the predicted and true mask values \ndivided by the sum of these values. It is designed to penalize both over- and under-segmentation errors. \nmIoU = \ud835\udc47\ud835\udc43\ud835\udc47\ud835\udc43 + \ud835\udc39\ud835\udc43 + \ud835\udc39\ud835\udc41 (2) \n \nUsing Dice Coefficient along with mIoU offers a complete assessment of the segmentation results."
+              }
+            ],
+            "text": "true positives (correctly classified defect pixels), FP is false positives (incorrectly classified \ndefect pixels), and FN is false negatives (defect pixels not detected). \nThe mean Intersection over Union ( mIoU) computes the overlap between the predicted and true mask values \ndivided by the sum of these values. It is designed to penalize both over- and under-segmentation errors. \nmIoU = \ud835\udc47\ud835\udc43\ud835\udc47\ud835\udc43 + \ud835\udc39\ud835\udc43 + \ud835\udc39\ud835\udc41 (2) \n \nUsing Dice Coefficient along with mIoU offers a complete assessment of the segmentation results."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0040"
+        ],
+        "excerpt": "\ndemonstrated the maximum gap between validation and train mIoU during early training stages, but it \ndrastically decreased after the convergence stage. \n \n \n \nFig. 9. Training vs. Validation mIoU Curves \u2014 All Three Models (solid: train, dashed: validation) \n \n \nE. Best Epoch Identification \nThe mIoU value per validation epoch at which each of these models showed their best results is illustrated in \nFig. 10; that value was selected as the final model checkpoint for evaluating its test result. U-Net performed best \nat epoch 26 (mIoU = 0.75) , TransUNet at epoch 19 (mIoU = 0.67) , and ViT at epoch 41 (mIoU = 0.72) . The \norder of speediness of training of the three models is in line with the specific properties of each model's \nlearning: CNN of TransUNet learns local features fast, the convolutions of U-Net enable faster learning of \nglobal patterns, while attention of ViT requires more ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Training Vs. Validation Miou Analysis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f0ac5f2eca1468d36692890c395bc1b09af879aa9d5e5725b8807359de0b0c3e",
+            "evidence_id": "Efa2161c1fc496679-B0040",
+            "pages": [
+              10
+            ],
+            "section": "Appendix: Training Vs. Validation Miou Analysis",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1572,
+                "page": 10,
+                "section": "Appendix: Training Vs. Validation Miou Analysis",
+                "section_index": 23,
+                "start": 673,
+                "text": "\ndemonstrated the maximum gap between validation and train mIoU during early training stages, but it \ndrastically decreased after the convergence stage. \n \n \n \nFig. 9. Training vs. Validation mIoU Curves \u2014 All Three Models (solid: train, dashed: validation) \n \n \nE. Best Epoch Identification \nThe mIoU value per validation epoch at which each of these models showed their best results is illustrated in \nFig. 10; that value was selected as the final model checkpoint for evaluating its test result. U-Net performed best \nat epoch 26 (mIoU = 0.75) , TransUNet at epoch 19 (mIoU = 0.67) , and ViT at epoch 41 (mIoU = 0.72) . The \norder of speediness of training of the three models is in line with the specific properties of each model's \nlearning: CNN of TransUNet learns local features fast, the convolutions of U-Net enable faster learning of \nglobal patterns, while attention of ViT requires more "
+              }
+            ],
+            "text": "\ndemonstrated the maximum gap between validation and train mIoU during early training stages, but it \ndrastically decreased after the convergence stage. \n \n \n \nFig. 9. Training vs. Validation mIoU Curves \u2014 All Three Models (solid: train, dashed: validation) \n \n \nE. Best Epoch Identification \nThe mIoU value per validation epoch at which each of these models showed their best results is illustrated in \nFig. 10; that value was selected as the final model checkpoint for evaluating its test result. U-Net performed best \nat epoch 26 (mIoU = 0.75) , TransUNet at epoch 19 (mIoU = 0.67) , and ViT at epoch 41 (mIoU = 0.72) . The \norder of speediness of training of the three models is in line with the specific properties of each model's \nlearning: CNN of TransUNet learns local features fast, the convolutions of U-Net enable faster learning of \nglobal patterns, while attention of ViT requires more "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0042"
+        ],
+        "excerpt": "TABLE IV \nFINAL PERFORMANCE COMPARISON OF SEGMENTATION MODELS. \nModel Best mIoU Best Dice Convergence \nU-Net (CNN) 0.75 0.63 Fast, mild late overfitting \nViT (Transformer) 0.72 0.56 Slow, strong generalization \nTransUNet (Hybrid) 0.67 0.52 Moderate, early volatility \n \nG. Discussion and Interpretation \nSeveral practical lessons could be drawn from the results that are important regardless of the exact numerical \nvalues obtained. First, the clear superiority of the U-Net at the present dataset scale demonstrates the ongoing \nrelevance of convolutional biases in cases when annotated training examples are limited. In the context of \nmanufacturing inspections where labeling becomes costly and time -consuming, the greater sample efficiency of \nU-Net is certainly important. \nSecond, while the mIoU of 0.72  achieved by the ViT is slightly lower than 0.75 reached by U-Net, the strong ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iv",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "869b6be4b836f4681f6f8d3d3e3d1cc9882bc8cca4fd773bd3a2f8812bf7cbac",
+            "evidence_id": "Efa2161c1fc496679-B0042",
+            "pages": [
+              11
+            ],
+            "section": "Table Iv",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 11,
+                "section": "Table Iv",
+                "section_index": 25,
+                "start": 0,
+                "text": "TABLE IV \nFINAL PERFORMANCE COMPARISON OF SEGMENTATION MODELS. \nModel Best mIoU Best Dice Convergence \nU-Net (CNN) 0.75 0.63 Fast, mild late overfitting \nViT (Transformer) 0.72 0.56 Slow, strong generalization \nTransUNet (Hybrid) 0.67 0.52 Moderate, early volatility \n \nG. Discussion and Interpretation \nSeveral practical lessons could be drawn from the results that are important regardless of the exact numerical \nvalues obtained. First, the clear superiority of the U-Net at the present dataset scale demonstrates the ongoing \nrelevance of convolutional biases in cases when annotated training examples are limited. In the context of \nmanufacturing inspections where labeling becomes costly and time -consuming, the greater sample efficiency of \nU-Net is certainly important. \nSecond, while the mIoU of 0.72  achieved by the ViT is slightly lower than 0.75 reached by U-Net, the strong "
+              }
+            ],
+            "text": "TABLE IV \nFINAL PERFORMANCE COMPARISON OF SEGMENTATION MODELS. \nModel Best mIoU Best Dice Convergence \nU-Net (CNN) 0.75 0.63 Fast, mild late overfitting \nViT (Transformer) 0.72 0.56 Slow, strong generalization \nTransUNet (Hybrid) 0.67 0.52 Moderate, early volatility \n \nG. Discussion and Interpretation \nSeveral practical lessons could be drawn from the results that are important regardless of the exact numerical \nvalues obtained. First, the clear superiority of the U-Net at the present dataset scale demonstrates the ongoing \nrelevance of convolutional biases in cases when annotated training examples are limited. In the context of \nmanufacturing inspections where labeling becomes costly and time -consuming, the greater sample efficiency of \nU-Net is certainly important. \nSecond, while the mIoU of 0.72  achieved by the ViT is slightly lower than 0.75 reached by U-Net, the strong "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0046"
+        ],
+        "excerpt": "is hard and costly to gather in an industrial setting. On the other hand, CNNs show satisfactory \nresults with smaller datasets because of their inductive biases, but they find it challenging to model complex \ndependencies in images. \nFurther to that, the current research paper is concerned with binary classification, defective or non -defective \nproducts. As such, it cannot be used when multiple classifications of defective items are required.  \nLastly, the experiments performed were done in a controlled environment. Issues related to the practical use of \nsuch models like inference speed and hardware limitations have not been discussed here.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations Of The Study",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "2b4930fd2a494bc25e1b1e41c948576e7ddfed35578e6077c68351af7fcaa6bd",
+            "evidence_id": "Efa2161c1fc496679-B0046",
+            "pages": [
+              12
+            ],
+            "section": "Limitations Of The Study",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1549,
+                "page": 12,
+                "section": "Limitations Of The Study",
+                "section_index": 27,
+                "start": 898,
+                "text": "is hard and costly to gather in an industrial setting. On the other hand, CNNs show satisfactory \nresults with smaller datasets because of their inductive biases, but they find it challenging to model complex \ndependencies in images. \nFurther to that, the current research paper is concerned with binary classification, defective or non -defective \nproducts. As such, it cannot be used when multiple classifications of defective items are required.  \nLastly, the experiments performed were done in a controlled environment. Issues related to the practical use of \nsuch models like inference speed and hardware limitations have not been discussed here."
+              }
+            ],
+            "text": "is hard and costly to gather in an industrial setting. On the other hand, CNNs show satisfactory \nresults with smaller datasets because of their inductive biases, but they find it challenging to model complex \ndependencies in images. \nFurther to that, the current research paper is concerned with binary classification, defective or non -defective \nproducts. As such, it cannot be used when multiple classifications of defective items are required.  \nLastly, the experiments performed were done in a controlled environment. Issues related to the practical use of \nsuch models like inference speed and hardware limitations have not been discussed here."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0047"
+        ],
+        "excerpt": "Innovations and contributions: \n \n\u2022 Comparative Controlled Experimental Setup: A precise and replicable three -way comparative analysis of \nU-Net, ViT and TransUNet under consistent experimentation parameters to conduct the first comprehensive \ncomparison of these architectures for the problem of industrial surface defect detection.  \n\u2022 Evaluation on Multiple Datasets: Robust evaluation through three state -of-the-art industrial benchmark \ndatasets \u2013 MVTec AD, NEU Surface Defect Dataset, and DAGM 2007 dataset.  \n\u2022 Performance Monitoring: Precise monitoring of training and validation mIoU on an epoch -by-epoch basis \nto identify important distinctions in terms of convergence, overfitting tendencies, and generalization ability \nbeyond the mere performance metric.  \n\u2022 Industrial Implementation Guidelines: Practical recommendations for selecting a suitable architecture \ndepending on the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Novelty And Contributions",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "2f8cab2ef5f043252dac842e7294d923726490dc2af356649f5ba6683c2b1074",
+            "evidence_id": "Efa2161c1fc496679-B0047",
+            "pages": [
+              12
+            ],
+            "section": "Novelty And Contributions",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 12,
+                "section": "Novelty And Contributions",
+                "section_index": 28,
+                "start": 0,
+                "text": "Innovations and contributions: \n \n\u2022 Comparative Controlled Experimental Setup: A precise and replicable three -way comparative analysis of \nU-Net, ViT and TransUNet under consistent experimentation parameters to conduct the first comprehensive \ncomparison of these architectures for the problem of industrial surface defect detection.  \n\u2022 Evaluation on Multiple Datasets: Robust evaluation through three state -of-the-art industrial benchmark \ndatasets \u2013 MVTec AD, NEU Surface Defect Dataset, and DAGM 2007 dataset.  \n\u2022 Performance Monitoring: Precise monitoring of training and validation mIoU on an epoch -by-epoch basis \nto identify important distinctions in terms of convergence, overfitting tendencies, and generalization ability \nbeyond the mere performance metric.  \n\u2022 Industrial Implementation Guidelines: Practical recommendations for selecting a suitable architecture \ndepending on the "
+              }
+            ],
+            "text": "Innovations and contributions: \n \n\u2022 Comparative Controlled Experimental Setup: A precise and replicable three -way comparative analysis of \nU-Net, ViT and TransUNet under consistent experimentation parameters to conduct the first comprehensive \ncomparison of these architectures for the problem of industrial surface defect detection.  \n\u2022 Evaluation on Multiple Datasets: Robust evaluation through three state -of-the-art industrial benchmark \ndatasets \u2013 MVTec AD, NEU Surface Defect Dataset, and DAGM 2007 dataset.  \n\u2022 Performance Monitoring: Precise monitoring of training and validation mIoU on an epoch -by-epoch basis \nto identify important distinctions in terms of convergence, overfitting tendencies, and generalization ability \nbeyond the mere performance metric.  \n\u2022 Industrial Implementation Guidelines: Practical recommendations for selecting a suitable architecture \ndepending on the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0049"
+        ],
+        "excerpt": "The present work provides a comparative evaluation of three deep learning frameworks, namely U -Net, Vision \nTransformer (ViT), and TransUNet, in the context of industrial manufacturing applications. The experiments \nwere conducted using three datasets with similar settings, which allowed for a reliable architectural comparison \nof the models. \nU-Net demonstrates outstanding performance with the highest mean intersection over union (0.75) and Dice \n(0.63) scores at the given scale of datasets due to well -defined convolutional inductive biases facilitating rapid \nmodel convergence and accurate boundaries. ViT yields high mean intersection over union (0.72) but shows a \nbetter generalization pattern with well -aligned training and validation curves and monotonic convergence. \nTransUNet yields lower peak metrics (mIoU: 0.64; Dice: 0.54) under the current conditions, which implies that ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusions And Futire Work",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "555e5c03861832770cb6bc1d87ad3d118211f98a69b9f5c091b4fa4a95e19efd",
+            "evidence_id": "Efa2161c1fc496679-B0049",
+            "pages": [
+              12
+            ],
+            "section": "Conclusions And Futire Work",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 12,
+                "section": "Conclusions And Futire Work",
+                "section_index": 29,
+                "start": 0,
+                "text": "The present work provides a comparative evaluation of three deep learning frameworks, namely U -Net, Vision \nTransformer (ViT), and TransUNet, in the context of industrial manufacturing applications. The experiments \nwere conducted using three datasets with similar settings, which allowed for a reliable architectural comparison \nof the models. \nU-Net demonstrates outstanding performance with the highest mean intersection over union (0.75) and Dice \n(0.63) scores at the given scale of datasets due to well -defined convolutional inductive biases facilitating rapid \nmodel convergence and accurate boundaries. ViT yields high mean intersection over union (0.72) but shows a \nbetter generalization pattern with well -aligned training and validation curves and monotonic convergence. \nTransUNet yields lower peak metrics (mIoU: 0.64; Dice: 0.54) under the current conditions, which implies that "
+              }
+            ],
+            "text": "The present work provides a comparative evaluation of three deep learning frameworks, namely U -Net, Vision \nTransformer (ViT), and TransUNet, in the context of industrial manufacturing applications. The experiments \nwere conducted using three datasets with similar settings, which allowed for a reliable architectural comparison \nof the models. \nU-Net demonstrates outstanding performance with the highest mean intersection over union (0.75) and Dice \n(0.63) scores at the given scale of datasets due to well -defined convolutional inductive biases facilitating rapid \nmodel convergence and accurate boundaries. ViT yields high mean intersection over union (0.72) but shows a \nbetter generalization pattern with well -aligned training and validation curves and monotonic convergence. \nTransUNet yields lower peak metrics (mIoU: 0.64; Dice: 0.54) under the current conditions, which implies that "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://conferenceseries.adroidjournals.com/index.php/ACSET/article/download/109/79",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The paper presents a comparative study but does not establish its claimed contribution of a first comprehensive comparison: the literature review itself lists ViT and fusion models already applied and evaluated, the models compared are standard baselines rather than new methods, and no independent test-set verification of the headline results is supplied. Multiple stated performance values for nearly identical measures are inconsistent, such as the conclusion reporting TransUNet mIoU 0.64 and Dice 0.54 while Table IV reports 0.67 and 0.52, so the reported claims cannot be treated as scientifically reliable.",
+          "The central fairness claim is not supported by the noted optimization signals in Table III: U-Net and TransUNet use Dice loss while ViT uses Cross-Entropy, and batch sizes, maximum epochs, and early-stopping dynamics differ, so the alleged rigorous gold-standard comparison does not establish equivalence of training conditions. Such protocol mismatch can materially distort Dice and mIoU rankings and invalidates the central conclusion of this comparative benchmark.",
+          "The headline results are reported from validation curves and best-epoch selection rather than a held-out test assessment. The stated best-performing model was selected using peak validation mIoU, yet no test-split metrics are actually reported, even though the paper earlier declares a test split, meaning the results may have been selected for the very metric being reported."
+        ],
+        "canonical_id": "doi:10.63503/acset.109",
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The evaluation is based on supervised training against dataset ground-truth masks with validation mIoU and Dice metrics computed as overlap with those human-annotated labels; no model-based judge, reward, or automated evaluator appears to be used to optimize or score outcomes.",
+          "final_evaluation_signal": "Peak validation mIoU and Dice coefficient values across epochs are the headline results, although no distinct test-set metrics are reported.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Supervised optimization with ground-truth masks using BCE and Dice loss for U-Net and TransUNet and Cross-Entropy for ViT under AdamW, with early stopping and learning-rate decay.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0033",
+          "Efa2161c1fc496679-B0040",
+          "Efa2161c1fc496679-B0042",
+          "Efa2161c1fc496679-B0049",
+          "Efa2161c1fc496679-B0022",
+          "Efa2161c1fc496679-B0031",
+          "Efa2161c1fc496679-B0047",
+          "Efa2161c1fc496679-B0046",
+          "Efa2161c1fc496679-B0034"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "93c2d818deffe259fb4af9f1606bbd4f8f5f94224996ba9fe29abc6cb7c8850c"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.63503/acset.109",
+        "claim_evidence_alignment": "Claims regarding a unified, controlled experimental setup are undermined by the differing hyperparameters and loss functions between architectures in Table III. The claimed trade-offs between generalization and inductive bias are loosely supported given the lack of independent test set quantification.",
+        "context_id": "fa2161c1fc4966791978ca36e9a2674818178d8ffe32346dad49f64977bb374c",
+        "decision": "uncertain",
+        "evaluation_assessment": "The evaluation relies on selecting peak validation mIoU epochs and reports aggregated performance on the combined dataset without per-dataset or per-class breakdowns. In addition, the paper states that the best checkpoint was chosen to evaluate test results, yet the primary results presented in Table IV and the figures reflect validation epoch metrics rather than a distinct test set evaluation.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "Standard supervised training where evaluation is conducted on ground truth pixel annotations rather than a model-based reward or tuning judge.",
+          "final_evaluation_signal": "Validation set mean Intersection over Union (mIoU) and Dice coefficient metrics computed across epochs.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Supervised loss functions (AdamW with Dice loss for U-Net/TransUNet and Cross-Entropy for ViT) optimized against ground truth masks.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Efa2161c1fc496679-B0003",
+          "Efa2161c1fc496679-B0021",
+          "Efa2161c1fc496679-B0022",
+          "Efa2161c1fc496679-B0025",
+          "Efa2161c1fc496679-B0033",
+          "Efa2161c1fc496679-B0034",
+          "Efa2161c1fc496679-B0040",
+          "Efa2161c1fc496679-B0042",
+          "Efa2161c1fc496679-B0046"
+        ],
+        "limitations": "The authors identify limitations regarding binary classification, computational costs of transformers, and evaluation within a controlled synthetic/benchmark environment rather than real-world manufacturing lines.",
+        "method_assessment": "The methodology trains standard baseline models on a combined pool of datasets using different training settings (Table III shows unequal epochs, batch sizes, and loss functions across the models, such as Dice Loss vs Cross-Entropy). Furthermore, the exact ViT decoder architecture used for dense pixel segmentation is inadequately described.",
+        "quality_rationale": "The study offers an empirical benchmarking exercise, but methodological inconsistencies in training setups (differing loss functions, epochs, and batch sizes) prevent a rigorous apples-to-apples architectural comparison. Combined with reporting peak validation scores rather than transparent test split results, scientific certainty is insufficient for promotion.",
+        "scoped_contribution": "The paper presents an empirical comparison of three deep learning segmentation models (U-Net, ViT, and TransUNet) trained on a merged industrial defect dataset comprising MVTec AD, NEU, and DAGM 2007.",
+        "source_content_hash": "93c2d818deffe259fb4af9f1606bbd4f8f5f94224996ba9fe29abc6cb7c8850c"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study offers an empirical benchmarking exercise, but methodological inconsistencies in training setups (differing loss functions, epochs, and batch sizes) prevent a rigorous apples-to-apples architectural comparison. Combined with reporting peak validation scores rather than transparent test split results, scientific certainty is insufficient for promotion.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "93c2d818deffe259fb4af9f1606bbd4f8f5f94224996ba9fe29abc6cb7c8850c",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors identify limitations regarding binary classification, computational costs of transformers, and evaluation within a controlled synthetic/benchmark environment rather than real-world manufacturing lines."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -158,7 +1391,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

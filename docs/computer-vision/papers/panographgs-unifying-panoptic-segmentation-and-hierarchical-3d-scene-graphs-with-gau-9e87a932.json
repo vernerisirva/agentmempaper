@@ -23,12 +23,12 @@
   "first_seen_date": "2026-10-21",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-21 09:20:00",
-  "last_seen_date": "2026-10-21",
+  "last_seen_at": "2026-10-22 09:10:02",
+  "last_seen_date": "2026-10-22",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-20",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-21 09:20:14",
   "notified_date": "2026-10-21",
   "openalex_id": null,
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-21 09:20:00",
-    "generated_at": "2026-10-21 09:24:04",
-    "last_seen_at": "2026-10-21 09:20:00",
+    "generated_at": "2026-10-22 09:13:51",
+    "last_seen_at": "2026-10-22 09:10:02",
     "metadata_sources": [
       "arxiv"
     ],
@@ -99,36 +99,1001 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-22T09:12:21.191406+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper presents a coherent technical framework, solid algorithmic details, clear baselines, rigorous ablation analysis, and appropriate limitations.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 42736,
+      "assessment_input_sha256": "141881e2c509a7c34afb0a9cd85ef5dfcd95866de8513f2dc84c0c8a194a203f",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.27696",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 41697,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 41624,
+      "evidence_block_count": 53,
+      "evidence_context_characters": 48230,
+      "evidence_context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+      "evidence_context_sha256": "4af71892e7449da2dfebbdf1e851350f99e62368a453630a64dada5d901b4d07",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 41713,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "extracted_pages": 9,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "337c1dd176d2cf9cb3c220a99146d5c039a787e7dcd154e384f7a3bb8d1e193b",
+        "source_url": "https://arxiv.org/pdf/2610.27696",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 41697,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 1758,
+          "supplied_characters": 1758
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "appendix",
+          "section_index": 1,
+          "source_characters": 3372,
+          "supplied_characters": 3372
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 2,
+          "source_characters": 4992,
+          "supplied_characters": 4992
+        },
+        {
+          "heading": "Per-Gaussian  Decoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 4217,
+          "supplied_characters": 4217
+        },
+        {
+          "heading": "Per-Gaussian  Decoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 2801,
+          "supplied_characters": 2801
+        },
+        {
+          "heading": "Table I",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 5205,
+          "supplied_characters": 5205
+        },
+        {
+          "heading": "Table Ii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1885,
+          "supplied_characters": 1885
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 7,
+          "source_characters": 3309,
+          "supplied_characters": 3309
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 8,
+          "source_characters": 2003,
+          "supplied_characters": 2003
+        },
+        {
+          "heading": "Table Iii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1627,
+          "supplied_characters": 1627
+        },
+        {
+          "heading": "Table Iii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 556,
+          "supplied_characters": 556
+        },
+        {
+          "heading": "Appendix: Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 11,
+          "source_characters": 1290,
+          "supplied_characters": 1290
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 412,
+          "supplied_characters": 412
+        },
+        {
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern Recognition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 564,
+          "supplied_characters": 564
+        },
+        {
+          "heading": "Erarchical Open-Vocabulary 3D Scene Graphs For Language-Grounded",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1112,
+          "supplied_characters": 1112
+        },
+        {
+          "heading": "Siangraph: 3D Gaussian-Based Scene Graph Generation For Open-World",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2185,
+          "supplied_characters": 2185
+        },
+        {
+          "heading": "Gaussian-Based Panoptic Segmentation For 3D Open Vocabulary Scene",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 344,
+          "supplied_characters": 344
+        },
+        {
+          "heading": "In2025 Ieee/Rsj International Conference On Intelligent Robots And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 773,
+          "supplied_characters": 773
+        },
+        {
+          "heading": "Of The Ieee International Conference On Robotics And Automation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 852,
+          "supplied_characters": 852
+        },
+        {
+          "heading": "Of The Ieee International Conference On Robotics And Automation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2367,
+          "supplied_characters": 2367
+        }
+      ],
+      "selected_characters": 41624,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "selected_sections": [
+        {
+          "characters": 1758,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 3372,
+          "heading": "Appendix: Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4992,
+          "heading": "Appendix: Introduction",
+          "page": 2
+        },
+        {
+          "characters": 4217,
+          "heading": "Per-Gaussian  Decoding",
+          "page": 3
+        },
+        {
+          "characters": 2801,
+          "heading": "Per-Gaussian  Decoding",
+          "page": 4
+        },
+        {
+          "characters": 5205,
+          "heading": "Table I",
+          "page": 5
+        },
+        {
+          "characters": 1885,
+          "heading": "Table Ii",
+          "page": 6
+        },
+        {
+          "characters": 3309,
+          "heading": "Appendix: Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 2003,
+          "heading": "Appendix: Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 1627,
+          "heading": "Table Iii",
+          "page": 7
+        },
+        {
+          "characters": 556,
+          "heading": "Table Iii",
+          "page": 8
+        },
+        {
+          "characters": 1290,
+          "heading": "Appendix: Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 412,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 564,
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern Recognition",
+          "page": 8
+        },
+        {
+          "characters": 1112,
+          "heading": "Erarchical Open-Vocabulary 3D Scene Graphs For Language-Grounded",
+          "page": 8
+        },
+        {
+          "characters": 2185,
+          "heading": "Siangraph: 3D Gaussian-Based Scene Graph Generation For Open-World",
+          "page": 8
+        },
+        {
+          "characters": 344,
+          "heading": "Gaussian-Based Panoptic Segmentation For 3D Open Vocabulary Scene",
+          "page": 8
+        },
+        {
+          "characters": 773,
+          "heading": "In2025 Ieee/Rsj International Conference On Intelligent Robots And",
+          "page": 8
+        },
+        {
+          "characters": 852,
+          "heading": "Of The Ieee International Conference On Robotics And Automation",
+          "page": 8
+        },
+        {
+          "characters": 2367,
+          "heading": "Of The Ieee International Conference On Robotics And Automation",
+          "page": 9
+        }
+      ],
+      "selected_text_sha256": "141881e2c509a7c34afb0a9cd85ef5dfcd95866de8513f2dc84c0c8a194a203f",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "337c1dd176d2cf9cb3c220a99146d5c039a787e7dcd154e384f7a3bb8d1e193b",
+      "source_pages": 9,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0002"
+        ],
+        "excerpt": "novel-view panoptic segmentation and direct Gaussian-\nlevel panoptic decoding. A semantic-aware scene graph mod-\nule further recovers a floor-room-stuff-object hierarchy with\ncontainment and spatial relations. We further release NaviGS,\na real-world dataset for panoramic scene understanding. The\ndataset provides 3DGS, mesh, RGB, semantic, and depth data.\nFor 3D scene graph identification, PanoGraphGS outperforms\nthe strongest evaluated baseline in object-node accuracy by\nmore than 50% points on average across Replica and Nav-\niGS. PanoGraphGS also achieves state-of-the-art performance\namong the evaluated methods in 2D panoptic segmentation.\nThese results demonstrate the effectiveness of PanoGraphGS\nin both hierarchical 3D scene understanding and 2D panoptic\nsegmentation. The project website is available at:https:\n//github.com/gaojh0333/PanoGraphGS.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4f8423cb948fbc07b5640668f94e7f79e5bae3d8401a2dc546b03a6a9c7348d8",
+            "evidence_id": "Eb2ed8061a1ca8742-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1758,
+                "page": 1,
+                "section": "Abstract / front matter",
+                "section_index": 0,
+                "start": 898,
+                "text": "novel-view panoptic segmentation and direct Gaussian-\nlevel panoptic decoding. A semantic-aware scene graph mod-\nule further recovers a floor-room-stuff-object hierarchy with\ncontainment and spatial relations. We further release NaviGS,\na real-world dataset for panoramic scene understanding. The\ndataset provides 3DGS, mesh, RGB, semantic, and depth data.\nFor 3D scene graph identification, PanoGraphGS outperforms\nthe strongest evaluated baseline in object-node accuracy by\nmore than 50% points on average across Replica and Nav-\niGS. PanoGraphGS also achieves state-of-the-art performance\namong the evaluated methods in 2D panoptic segmentation.\nThese results demonstrate the effectiveness of PanoGraphGS\nin both hierarchical 3D scene understanding and 2D panoptic\nsegmentation. The project website is available at:https:\n//github.com/gaojh0333/PanoGraphGS."
+              }
+            ],
+            "text": "novel-view panoptic segmentation and direct Gaussian-\nlevel panoptic decoding. A semantic-aware scene graph mod-\nule further recovers a floor-room-stuff-object hierarchy with\ncontainment and spatial relations. We further release NaviGS,\na real-world dataset for panoramic scene understanding. The\ndataset provides 3DGS, mesh, RGB, semantic, and depth data.\nFor 3D scene graph identification, PanoGraphGS outperforms\nthe strongest evaluated baseline in object-node accuracy by\nmore than 50% points on average across Replica and Nav-\niGS. PanoGraphGS also achieves state-of-the-art performance\namong the evaluated methods in 2D panoptic segmentation.\nThese results demonstrate the effectiveness of PanoGraphGS\nin both hierarchical 3D scene understanding and 2D panoptic\nsegmentation. The project website is available at:https:\n//github.com/gaojh0333/PanoGraphGS."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0008"
+        ],
+        "excerpt": "Gaussian\nrepresentation learning with hierarchical 3D scene graph con-\nstruction. PanoGraphGS jointly learns semantic and instance\nfeatures anchored to shared Gaussian geometry. The semantic\nbranch combines residual feature projection and category\nprototypes with confidence-weighted supervision, while the\ninstance branch associates view-local pseudo-labels with\npersistent Gaussian instance identities to ensure consistent\nobject correspondence across views. As illustrated in Fig. 1,\nthe resulting panoptic Gaussian representation supports both\npanoptic segmentation and direct Gaussian-level decoding.\nThe semantic-aware hierarchical reasoning module combines\nstructural semantics with Gaussian geometry to recover the\nfloor-room-stuff-objecthierarchy and its containment and\nspatial relations, enabling structured spatial queries such as\nlocating the bed1 in the living room on floor1. CLIP ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "21d6c736c63263c836d3635e1ae9d0e57dc7b9ec96306832f2bf54d4998beed7",
+            "evidence_id": "Eb2ed8061a1ca8742-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1989,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 1093,
+                "text": "Gaussian\nrepresentation learning with hierarchical 3D scene graph con-\nstruction. PanoGraphGS jointly learns semantic and instance\nfeatures anchored to shared Gaussian geometry. The semantic\nbranch combines residual feature projection and category\nprototypes with confidence-weighted supervision, while the\ninstance branch associates view-local pseudo-labels with\npersistent Gaussian instance identities to ensure consistent\nobject correspondence across views. As illustrated in Fig. 1,\nthe resulting panoptic Gaussian representation supports both\npanoptic segmentation and direct Gaussian-level decoding.\nThe semantic-aware hierarchical reasoning module combines\nstructural semantics with Gaussian geometry to recover the\nfloor-room-stuff-objecthierarchy and its containment and\nspatial relations, enabling structured spatial queries such as\nlocating the bed1 in the living room on floor1. CLIP "
+              }
+            ],
+            "text": "Gaussian\nrepresentation learning with hierarchical 3D scene graph con-\nstruction. PanoGraphGS jointly learns semantic and instance\nfeatures anchored to shared Gaussian geometry. The semantic\nbranch combines residual feature projection and category\nprototypes with confidence-weighted supervision, while the\ninstance branch associates view-local pseudo-labels with\npersistent Gaussian instance identities to ensure consistent\nobject correspondence across views. As illustrated in Fig. 1,\nthe resulting panoptic Gaussian representation supports both\npanoptic segmentation and direct Gaussian-level decoding.\nThe semantic-aware hierarchical reasoning module combines\nstructural semantics with Gaussian geometry to recover the\nfloor-room-stuff-objecthierarchy and its containment and\nspatial relations, enabling structured spatial queries such as\nlocating the bed1 in the living room on floor1. CLIP "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0013"
+        ],
+        "excerpt": "Per-Gaussian  Decoding\nSemantic class\nInstance ID\nGaussian Decoding and Entity Abstraction Semantic-Aware Floor \nand Room Reasoning\nFloor levels\nRoom regions\nHierarchical Association and \nSpatial Relations\nObjects Floors/Rooms Relations 3D Scene Graph\nHierarchical Scene Graph \nS Scene\nF Floor\nR Room\nHierarchical Scene Graph Construction\nCLIP\nbedroom\nkitchenliving\nroom\n\u2026\nSemantic Geometry\nceiling\nfloor\nroom\nroom\nFig. 3. Hierarchical 3D scene graph construction from panoptic Gaussians.\nstuff-object scene graph with explicit containment and spatial\nrelations without training.\nIII. METHOD\nA. Overall\nAs illustrated in Figure 2, we employ SAM3-generated [6]\nmasks from posed RGB images as supervision, which may\ncontain noisy labels and inconsistent instance IDs across\nframes. We first augment the Gaussians with semantic and\ninstance features (Section III-B). We jointly optimize the\nappearance, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Per-Gaussian  Decoding",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bd8d44b990cef1c89877c35a885edffbff74344b7363f6ab5f640508ceecb51f",
+            "evidence_id": "Eb2ed8061a1ca8742-B0013",
+            "pages": [
+              3
+            ],
+            "section": "Per-Gaussian  Decoding",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 3,
+                "section": "Per-Gaussian  Decoding",
+                "section_index": 3,
+                "start": 0,
+                "text": "Per-Gaussian  Decoding\nSemantic class\nInstance ID\nGaussian Decoding and Entity Abstraction Semantic-Aware Floor \nand Room Reasoning\nFloor levels\nRoom regions\nHierarchical Association and \nSpatial Relations\nObjects Floors/Rooms Relations 3D Scene Graph\nHierarchical Scene Graph \nS Scene\nF Floor\nR Room\nHierarchical Scene Graph Construction\nCLIP\nbedroom\nkitchenliving\nroom\n\u2026\nSemantic Geometry\nceiling\nfloor\nroom\nroom\nFig. 3. Hierarchical 3D scene graph construction from panoptic Gaussians.\nstuff-object scene graph with explicit containment and spatial\nrelations without training.\nIII. METHOD\nA. Overall\nAs illustrated in Figure 2, we employ SAM3-generated [6]\nmasks from posed RGB images as supervision, which may\ncontain noisy labels and inconsistent instance IDs across\nframes. We first augment the Gaussians with semantic and\ninstance features (Section III-B). We jointly optimize the\nappearance, "
+              }
+            ],
+            "text": "Per-Gaussian  Decoding\nSemantic class\nInstance ID\nGaussian Decoding and Entity Abstraction Semantic-Aware Floor \nand Room Reasoning\nFloor levels\nRoom regions\nHierarchical Association and \nSpatial Relations\nObjects Floors/Rooms Relations 3D Scene Graph\nHierarchical Scene Graph \nS Scene\nF Floor\nR Room\nHierarchical Scene Graph Construction\nCLIP\nbedroom\nkitchenliving\nroom\n\u2026\nSemantic Geometry\nceiling\nfloor\nroom\nroom\nFig. 3. Hierarchical 3D scene graph construction from panoptic Gaussians.\nstuff-object scene graph with explicit containment and spatial\nrelations without training.\nIII. METHOD\nA. Overall\nAs illustrated in Figure 2, we employ SAM3-generated [6]\nmasks from posed RGB images as supervision, which may\ncontain noisy labels and inconsistent instance IDs across\nframes. We first augment the Gaussians with semantic and\ninstance features (Section III-B). We jointly optimize the\nappearance, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0016"
+        ],
+        "excerpt": "atp, andc i,p is the view-dependent color of\ngi. The outputs \u02c6Cp andf bp denote the rendered RGB color\nand feature of branchb, respectively. This shared rendering\nlifts multi-view 2D supervision to Gaussian-level features.\nC. Prototype-Based Semantic Learning\nThe semantic branch maintains a learnable prototypeq c \u2208\nRD for each semantic categoryc. Eachq c is randomly\ninitialized. We introduce a residual-projection MLP shared\nbetween rendered 2D pixel features and 3D Gaussian-level\nfeatures. This MLP unifies image-space semantic supervision\nwith Gaussian-level semantic decoding and lifts 2D panoptic\ninformation into 3D. The discrepancy between the two spaces\ncan produce noisy semantic predictions when 2D supervision\nis directly transferred to 3D Gaussian representations. This\ndesign mitigates the discrepancy. Specifically, the residual\nprojection maps the rendered semantic featuref semp ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Per-Gaussian  Decoding",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2cf6a87ac5ec8498356fc57b87b4b899948d1ea6aa7f40739b942af34573c783",
+            "evidence_id": "Eb2ed8061a1ca8742-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Per-Gaussian  Decoding",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3597,
+                "page": 3,
+                "section": "Per-Gaussian  Decoding",
+                "section_index": 3,
+                "start": 2699,
+                "text": "atp, andc i,p is the view-dependent color of\ngi. The outputs \u02c6Cp andf bp denote the rendered RGB color\nand feature of branchb, respectively. This shared rendering\nlifts multi-view 2D supervision to Gaussian-level features.\nC. Prototype-Based Semantic Learning\nThe semantic branch maintains a learnable prototypeq c \u2208\nRD for each semantic categoryc. Eachq c is randomly\ninitialized. We introduce a residual-projection MLP shared\nbetween rendered 2D pixel features and 3D Gaussian-level\nfeatures. This MLP unifies image-space semantic supervision\nwith Gaussian-level semantic decoding and lifts 2D panoptic\ninformation into 3D. The discrepancy between the two spaces\ncan produce noisy semantic predictions when 2D supervision\nis directly transferred to 3D Gaussian representations. This\ndesign mitigates the discrepancy. Specifically, the residual\nprojection maps the rendered semantic featuref semp "
+              }
+            ],
+            "text": "atp, andc i,p is the view-dependent color of\ngi. The outputs \u02c6Cp andf bp denote the rendered RGB color\nand feature of branchb, respectively. This shared rendering\nlifts multi-view 2D supervision to Gaussian-level features.\nC. Prototype-Based Semantic Learning\nThe semantic branch maintains a learnable prototypeq c \u2208\nRD for each semantic categoryc. Eachq c is randomly\ninitialized. We introduce a residual-projection MLP shared\nbetween rendered 2D pixel features and 3D Gaussian-level\nfeatures. This MLP unifies image-space semantic supervision\nwith Gaussian-level semantic decoding and lifts 2D panoptic\ninformation into 3D. The discrepancy between the two spaces\ncan produce noisy semantic predictions when 2D supervision\nis directly transferred to 3D Gaussian representations. This\ndesign mitigates the discrepancy. Specifically, the residual\nprojection maps the rendered semantic featuref semp "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0018"
+        ],
+        "excerpt": "iden-\ntifiers and is thus treated as a pseudo-label. To address\nthis ambiguity, the instance branch maintainsKlearnable\nglobal instance prototypesu kKk=1 and associates view-local\ninstance regions with persistent global identities. Given the\nrendered instance featuref insp , the global instance logits and\nprobabilities are defined as:\n\u2113insp,k =u \u22a4k f insp , P insp,k = softmax(\u2113insp )k,(4)\nFor a view-local pseudo-instancer, pixelwise probabilities\nare aggregated over its region to define the association cost:\nAr,k =\u2212\nX\np:yinsp =r\nP insp,k,(5)\nand the one-to-one assignment between local pseudo-\ninstances and global instance identities is determined by\n\u03c0\u2217v = arg min\u03c0v\nX\nr\u2208Rv\nAr,\u03c0v(r),(6)\nwhereu k is the learnable prototype of global instance iden-\ntityk,y insp is the view-local pseudo-instance supervision at\npixelp,R v is the set of pseudo-instance identifiers in viewv,\nand\u03c0 \u2217v is the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Per-Gaussian  Decoding",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6b112db8d00621f639507993e88d0de86959ff1b0d969bc1343262acc62c368f",
+            "evidence_id": "Eb2ed8061a1ca8742-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Per-Gaussian  Decoding",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1163,
+                "page": 4,
+                "section": "Per-Gaussian  Decoding",
+                "section_index": 4,
+                "start": 268,
+                "text": "iden-\ntifiers and is thus treated as a pseudo-label. To address\nthis ambiguity, the instance branch maintainsKlearnable\nglobal instance prototypesu kKk=1 and associates view-local\ninstance regions with persistent global identities. Given the\nrendered instance featuref insp , the global instance logits and\nprobabilities are defined as:\n\u2113insp,k =u \u22a4k f insp , P insp,k = softmax(\u2113insp )k,(4)\nFor a view-local pseudo-instancer, pixelwise probabilities\nare aggregated over its region to define the association cost:\nAr,k =\u2212\nX\np:yinsp =r\nP insp,k,(5)\nand the one-to-one assignment between local pseudo-\ninstances and global instance identities is determined by\n\u03c0\u2217v = arg min\u03c0v\nX\nr\u2208Rv\nAr,\u03c0v(r),(6)\nwhereu k is the learnable prototype of global instance iden-\ntityk,y insp is the view-local pseudo-instance supervision at\npixelp,R v is the set of pseudo-instance identifiers in viewv,\nand\u03c0 \u2217v is the "
+              }
+            ],
+            "text": "iden-\ntifiers and is thus treated as a pseudo-label. To address\nthis ambiguity, the instance branch maintainsKlearnable\nglobal instance prototypesu kKk=1 and associates view-local\ninstance regions with persistent global identities. Given the\nrendered instance featuref insp , the global instance logits and\nprobabilities are defined as:\n\u2113insp,k =u \u22a4k f insp , P insp,k = softmax(\u2113insp )k,(4)\nFor a view-local pseudo-instancer, pixelwise probabilities\nare aggregated over its region to define the association cost:\nAr,k =\u2212\nX\np:yinsp =r\nP insp,k,(5)\nand the one-to-one assignment between local pseudo-\ninstances and global instance identities is determined by\n\u03c0\u2217v = arg min\u03c0v\nX\nr\u2208Rv\nAr,\u03c0v(r),(6)\nwhereu k is the learnable prototype of global instance iden-\ntityk,y insp is the view-local pseudo-instance supervision at\npixelp,R v is the set of pseudo-instance identifiers in viewv,\nand\u03c0 \u2217v is the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0021"
+        ],
+        "excerpt": "TABLE I\nHIERARCHICAL SCENE GRAPH COMPARISON ONREPLICA ANDNAVIGSDATASETS.\nMethod Replica NaviGSFloor Acc. (%) Room Acc. (%) Object Acc. (%) Floor Acc. (%) Room Acc. (%) Object Acc. (%)\nKeySG [20] 100.00 22.50 17.27 90.00 35.00 5.25\nHOV-SG [5] 100.00 87.50 21.72 90.00 66.67 14.57\nOP3DSG [21] \u2013 \u2013 35.91 \u2013 \u2013 16.97\nBBQ [22] \u2013 \u2013 33.08 \u2013 \u2013 26.25\nConceptGraphs [23] \u2013 \u2013 39.32 \u2013 \u2013 30.50\nPanoGraphGS (Ours) 100.00 100.00 89.90 100.00 100.00 98.36\ndenotes the set of semantic categories or instance identities\npresent in viewv. The temperature\u03c4 tk adjusts confidence\naccording to the within-class or within-instance feature dis-\npersion. The confidence\u03b3 tp measures supervision reliability\nrelative to competing categories or instance identities in the\ncurrent view. It suppresses unreliable samples in both the se-\nmantic and instance objectives. The task- and class/instance-\ndependent factor\u03c4 tk is used ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table I",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0f4d03ae334122d24ef86a80a2502bd400003212f4ed59d06c1884238a6b043a",
+            "evidence_id": "Eb2ed8061a1ca8742-B0021",
+            "pages": [
+              5
+            ],
+            "section": "Table I",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 5,
+                "section": "Table I",
+                "section_index": 5,
+                "start": 0,
+                "text": "TABLE I\nHIERARCHICAL SCENE GRAPH COMPARISON ONREPLICA ANDNAVIGSDATASETS.\nMethod Replica NaviGSFloor Acc. (%) Room Acc. (%) Object Acc. (%) Floor Acc. (%) Room Acc. (%) Object Acc. (%)\nKeySG [20] 100.00 22.50 17.27 90.00 35.00 5.25\nHOV-SG [5] 100.00 87.50 21.72 90.00 66.67 14.57\nOP3DSG [21] \u2013 \u2013 35.91 \u2013 \u2013 16.97\nBBQ [22] \u2013 \u2013 33.08 \u2013 \u2013 26.25\nConceptGraphs [23] \u2013 \u2013 39.32 \u2013 \u2013 30.50\nPanoGraphGS (Ours) 100.00 100.00 89.90 100.00 100.00 98.36\ndenotes the set of semantic categories or instance identities\npresent in viewv. The temperature\u03c4 tk adjusts confidence\naccording to the within-class or within-instance feature dis-\npersion. The confidence\u03b3 tp measures supervision reliability\nrelative to competing categories or instance identities in the\ncurrent view. It suppresses unreliable samples in both the se-\nmantic and instance objectives. The task- and class/instance-\ndependent factor\u03c4 tk is used "
+              }
+            ],
+            "text": "TABLE I\nHIERARCHICAL SCENE GRAPH COMPARISON ONREPLICA ANDNAVIGSDATASETS.\nMethod Replica NaviGSFloor Acc. (%) Room Acc. (%) Object Acc. (%) Floor Acc. (%) Room Acc. (%) Object Acc. (%)\nKeySG [20] 100.00 22.50 17.27 90.00 35.00 5.25\nHOV-SG [5] 100.00 87.50 21.72 90.00 66.67 14.57\nOP3DSG [21] \u2013 \u2013 35.91 \u2013 \u2013 16.97\nBBQ [22] \u2013 \u2013 33.08 \u2013 \u2013 26.25\nConceptGraphs [23] \u2013 \u2013 39.32 \u2013 \u2013 30.50\nPanoGraphGS (Ours) 100.00 100.00 89.90 100.00 100.00 98.36\ndenotes the set of semantic categories or instance identities\npresent in viewv. The temperature\u03c4 tk adjusts confidence\naccording to the within-class or within-instance feature dis-\npersion. The confidence\u03b3 tp measures supervision reliability\nrelative to competing categories or instance identities in the\ncurrent view. It suppresses unreliable samples in both the se-\nmantic and instance objectives. The task- and class/instance-\ndependent factor\u03c4 tk is used "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0027"
+        ],
+        "excerpt": "TABLE II\nCOMPARISON OFPANOGRAPHGSWITH STATE-OF-THE-ART ALGORITHMS ONSCANNET++, REPLICA ANDNAVIGSBENCHMARKSPANOPTIC\nSEGMENTATION. THE BEST AND SECOND-BEST RESULTS ARE INDICATED IN BOLD AND UNDERLINED,RESPECTIVELY.\nModel ScanNet++ Replica NaviGSmIoU mBIoU mIoU mBIoU mIoU mBIoU\nGaussian Grouping [14] 15.67 13.03 23.94 16.98 56.91 35.86\nObjectGS [28] 8.91 6.41 12.22 5.39 43.77 26.69\nTrace3D [29] 30.22 27.54 54.90 48.50 67.51 44.75\nUnified-Lift [8] 38.10 35.92 63.91 59.69 78.48 57.84\nPanopticRecon++ [30] 31.93 29.31 54.32 43.51 49.36 25.58\nPanoGraphGS (Ours) 41.06 37.89 76.73 70.51 83.19 64.39\nroomr. The room receiving the most votes is selected:\nr(e) = arg max\nr\u2208Vroom\n|{xi \u2208 Ge |x i \u2208BBox(r)}|,(18)\nwhereG e denotes the set of 3D Gaussians supporting object\ne, andBBox(r)represents the bounding box of roomr. This\npoint-level voting strategy assigns each object to the room\ncontaining the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Ii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4ccfc15ff8753196e4ddcefacb99e15f05193ef613c83e6a31a198b38439b5f8",
+            "evidence_id": "Eb2ed8061a1ca8742-B0027",
+            "pages": [
+              6
+            ],
+            "section": "Table Ii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 6,
+                "section": "Table Ii",
+                "section_index": 6,
+                "start": 0,
+                "text": "TABLE II\nCOMPARISON OFPANOGRAPHGSWITH STATE-OF-THE-ART ALGORITHMS ONSCANNET++, REPLICA ANDNAVIGSBENCHMARKSPANOPTIC\nSEGMENTATION. THE BEST AND SECOND-BEST RESULTS ARE INDICATED IN BOLD AND UNDERLINED,RESPECTIVELY.\nModel ScanNet++ Replica NaviGSmIoU mBIoU mIoU mBIoU mIoU mBIoU\nGaussian Grouping [14] 15.67 13.03 23.94 16.98 56.91 35.86\nObjectGS [28] 8.91 6.41 12.22 5.39 43.77 26.69\nTrace3D [29] 30.22 27.54 54.90 48.50 67.51 44.75\nUnified-Lift [8] 38.10 35.92 63.91 59.69 78.48 57.84\nPanopticRecon++ [30] 31.93 29.31 54.32 43.51 49.36 25.58\nPanoGraphGS (Ours) 41.06 37.89 76.73 70.51 83.19 64.39\nroomr. The room receiving the most votes is selected:\nr(e) = arg max\nr\u2208Vroom\n|{xi \u2208 Ge |x i \u2208BBox(r)}|,(18)\nwhereG e denotes the set of 3D Gaussians supporting object\ne, andBBox(r)represents the bounding box of roomr. This\npoint-level voting strategy assigns each object to the room\ncontaining the "
+              }
+            ],
+            "text": "TABLE II\nCOMPARISON OFPANOGRAPHGSWITH STATE-OF-THE-ART ALGORITHMS ONSCANNET++, REPLICA ANDNAVIGSBENCHMARKSPANOPTIC\nSEGMENTATION. THE BEST AND SECOND-BEST RESULTS ARE INDICATED IN BOLD AND UNDERLINED,RESPECTIVELY.\nModel ScanNet++ Replica NaviGSmIoU mBIoU mIoU mBIoU mIoU mBIoU\nGaussian Grouping [14] 15.67 13.03 23.94 16.98 56.91 35.86\nObjectGS [28] 8.91 6.41 12.22 5.39 43.77 26.69\nTrace3D [29] 30.22 27.54 54.90 48.50 67.51 44.75\nUnified-Lift [8] 38.10 35.92 63.91 59.69 78.48 57.84\nPanopticRecon++ [30] 31.93 29.31 54.32 43.51 49.36 25.58\nPanoGraphGS (Ours) 41.06 37.89 76.73 70.51 83.19 64.39\nroomr. The room receiving the most votes is selected:\nr(e) = arg max\nr\u2208Vroom\n|{xi \u2208 Ge |x i \u2208BBox(r)}|,(18)\nwhereG e denotes the set of 3D Gaussians supporting object\ne, andBBox(r)represents the bounding box of roomr. This\npoint-level voting strategy assigns each object to the room\ncontaining the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0030"
+        ],
+        "excerpt": "Datasets.We evaluate on two public datasets, Scan-\nNet++ [31] and Replica [32]. In addition, we releaseNav-\niGS, a real-world dataset comprising RGB and semantic\nscenes. NaviGS is acquired using two fisheye cameras and\na handheld LiDAR device. LiDAR-assisted acquisition pro-\nvides accurate camera poses and a sparse point cloud for\nGaussian initialization. Both scene collections provide 3DGS\nmodels, meshes, RGB, camera poses, and depth; semantic\nscenes additionally include scene graphs. To evaluate hi-\nerarchical scene graph construction, we select multi-room\nlayouts from Replica and NaviGS that support evaluation of\nthe floor-room-stuff-object hierarchy.\nEvaluation Metrics.Scene graph performance is evalu-\nated by floor-, room-, and object-level accuracy. All com-\npared methods use the same SAM3-generated segmentation\nmasks as supervision. Since OP3DSG, BBQ, and Concept-\nGraphs do not ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b816c8addf23c3a39f86a2b67d525585a6e4527030a08684692c71d912dec560",
+            "evidence_id": "Eb2ed8061a1ca8742-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Appendix: Experimental Setup",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "Appendix: Experimental Setup",
+                "section_index": 7,
+                "start": 0,
+                "text": "Datasets.We evaluate on two public datasets, Scan-\nNet++ [31] and Replica [32]. In addition, we releaseNav-\niGS, a real-world dataset comprising RGB and semantic\nscenes. NaviGS is acquired using two fisheye cameras and\na handheld LiDAR device. LiDAR-assisted acquisition pro-\nvides accurate camera poses and a sparse point cloud for\nGaussian initialization. Both scene collections provide 3DGS\nmodels, meshes, RGB, camera poses, and depth; semantic\nscenes additionally include scene graphs. To evaluate hi-\nerarchical scene graph construction, we select multi-room\nlayouts from Replica and NaviGS that support evaluation of\nthe floor-room-stuff-object hierarchy.\nEvaluation Metrics.Scene graph performance is evalu-\nated by floor-, room-, and object-level accuracy. All com-\npared methods use the same SAM3-generated segmentation\nmasks as supervision. Since OP3DSG, BBQ, and Concept-\nGraphs do not "
+              }
+            ],
+            "text": "Datasets.We evaluate on two public datasets, Scan-\nNet++ [31] and Replica [32]. In addition, we releaseNav-\niGS, a real-world dataset comprising RGB and semantic\nscenes. NaviGS is acquired using two fisheye cameras and\na handheld LiDAR device. LiDAR-assisted acquisition pro-\nvides accurate camera poses and a sparse point cloud for\nGaussian initialization. Both scene collections provide 3DGS\nmodels, meshes, RGB, camera poses, and depth; semantic\nscenes additionally include scene graphs. To evaluate hi-\nerarchical scene graph construction, we select multi-room\nlayouts from Replica and NaviGS that support evaluation of\nthe floor-room-stuff-object hierarchy.\nEvaluation Metrics.Scene graph performance is evalu-\nated by floor-, room-, and object-level accuracy. All com-\npared methods use the same SAM3-generated segmentation\nmasks as supervision. Since OP3DSG, BBQ, and Concept-\nGraphs do not "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0031"
+        ],
+        "excerpt": "support floor-room recognition, they are\nevaluated only at the object level. For KeySG, HOV-SG,\nand PanoGraphGS, floor, room, and object recognition are\nmanually verified under a hierarchical criterion: a room is\ncorrect only when its floor and room identities and semantic\ncategory are correctly identified, while an object is correct\nonly when its floor, room, and object identities are all correct.\nPanoptic segmentation is evaluated using mIoU for region\noverlap and mBIoU for object and structural boundaries. For\ninstance-only methods such as Unified-Lift, these metrics\nare computed after per-image optimal instance matching\nwithout semantic categories. For panoptic methods, including\nPanopticRecon++ and PanoGraphGS, a match is correct\nonly when both instance identity and semantic category are\ncorrectly predicted, yielding a stricter criterion.\nImplementation Details.Training and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "291e6c150de1870d2993caa346a57cc2216b482e171acf60288080290b103757",
+            "evidence_id": "Eb2ed8061a1ca8742-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Appendix: Experimental Setup",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 6,
+                "section": "Appendix: Experimental Setup",
+                "section_index": 7,
+                "start": 898,
+                "text": "support floor-room recognition, they are\nevaluated only at the object level. For KeySG, HOV-SG,\nand PanoGraphGS, floor, room, and object recognition are\nmanually verified under a hierarchical criterion: a room is\ncorrect only when its floor and room identities and semantic\ncategory are correctly identified, while an object is correct\nonly when its floor, room, and object identities are all correct.\nPanoptic segmentation is evaluated using mIoU for region\noverlap and mBIoU for object and structural boundaries. For\ninstance-only methods such as Unified-Lift, these metrics\nare computed after per-image optimal instance matching\nwithout semantic categories. For panoptic methods, including\nPanopticRecon++ and PanoGraphGS, a match is correct\nonly when both instance identity and semantic category are\ncorrectly predicted, yielding a stricter criterion.\nImplementation Details.Training and "
+              }
+            ],
+            "text": "support floor-room recognition, they are\nevaluated only at the object level. For KeySG, HOV-SG,\nand PanoGraphGS, floor, room, and object recognition are\nmanually verified under a hierarchical criterion: a room is\ncorrect only when its floor and room identities and semantic\ncategory are correctly identified, while an object is correct\nonly when its floor, room, and object identities are all correct.\nPanoptic segmentation is evaluated using mIoU for region\noverlap and mBIoU for object and structural boundaries. For\ninstance-only methods such as Unified-Lift, these metrics\nare computed after per-image optimal instance matching\nwithout semantic categories. For panoptic methods, including\nPanopticRecon++ and PanoGraphGS, a match is correct\nonly when both instance identity and semantic category are\ncorrectly predicted, yielding a stricter criterion.\nImplementation Details.Training and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0036"
+        ],
+        "excerpt": "TABLE III\nABLATION STUDY ONREPLICA.\nConfidence\nWeighted\nInstance\nAssociation\nSemantic\nPrototypes\nObject\nAcc. (%)\n2D\nmIoU\n2D\nmBIoU\nEXP0 \u00d7 \u00d7 \u00d7 53.20 59.34 48.19\nEXP1 \u2713\u00d7\u2713 55.31 63.84 54.10\nEXP2 \u2713 \u2713\u00d7 80.42 70.23 61.00\nEXP3 \u00d7\u2713 \u2713 86.33 68.97 59.53\nEXP4 \u2713 \u2713 \u2713 89.90 76.73 70.51\nboth quantitative accuracy and visual quality, producing\nmore complete regions, more stable object identities, and\nclearer object and structural boundaries. These results further\ndemonstrate the effectiveness of the residual projection MLP\nshared by rendered 2D pixel features and 3D Gaussian-level\nfeatures; this design addresses the limitation of conventional\nsemantic Gaussian methods whose learning modules typi-\ncally operate on either 2D or 3D features.\nC. Ablation Study\nWe evaluate the effectiveness of the individual compo-\nnents of PanoGraphGS on the public Replica dataset, which\ncontains multi-room layouts. The ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1bef91c3b63242cca0502d4f089d93962d7516951a30587efc7ba86af0014ee6",
+            "evidence_id": "Eb2ed8061a1ca8742-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Table Iii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 7,
+                "section": "Table Iii",
+                "section_index": 9,
+                "start": 0,
+                "text": "TABLE III\nABLATION STUDY ONREPLICA.\nConfidence\nWeighted\nInstance\nAssociation\nSemantic\nPrototypes\nObject\nAcc. (%)\n2D\nmIoU\n2D\nmBIoU\nEXP0 \u00d7 \u00d7 \u00d7 53.20 59.34 48.19\nEXP1 \u2713\u00d7\u2713 55.31 63.84 54.10\nEXP2 \u2713 \u2713\u00d7 80.42 70.23 61.00\nEXP3 \u00d7\u2713 \u2713 86.33 68.97 59.53\nEXP4 \u2713 \u2713 \u2713 89.90 76.73 70.51\nboth quantitative accuracy and visual quality, producing\nmore complete regions, more stable object identities, and\nclearer object and structural boundaries. These results further\ndemonstrate the effectiveness of the residual projection MLP\nshared by rendered 2D pixel features and 3D Gaussian-level\nfeatures; this design addresses the limitation of conventional\nsemantic Gaussian methods whose learning modules typi-\ncally operate on either 2D or 3D features.\nC. Ablation Study\nWe evaluate the effectiveness of the individual compo-\nnents of PanoGraphGS on the public Replica dataset, which\ncontains multi-room layouts. The "
+              }
+            ],
+            "text": "TABLE III\nABLATION STUDY ONREPLICA.\nConfidence\nWeighted\nInstance\nAssociation\nSemantic\nPrototypes\nObject\nAcc. (%)\n2D\nmIoU\n2D\nmBIoU\nEXP0 \u00d7 \u00d7 \u00d7 53.20 59.34 48.19\nEXP1 \u2713\u00d7\u2713 55.31 63.84 54.10\nEXP2 \u2713 \u2713\u00d7 80.42 70.23 61.00\nEXP3 \u00d7\u2713 \u2713 86.33 68.97 59.53\nEXP4 \u2713 \u2713 \u2713 89.90 76.73 70.51\nboth quantitative accuracy and visual quality, producing\nmore complete regions, more stable object identities, and\nclearer object and structural boundaries. These results further\ndemonstrate the effectiveness of the residual projection MLP\nshared by rendered 2D pixel features and 3D Gaussian-level\nfeatures; this design addresses the limitation of conventional\nsemantic Gaussian methods whose learning modules typi-\ncally operate on either 2D or 3D features.\nC. Ablation Study\nWe evaluate the effectiveness of the individual compo-\nnents of PanoGraphGS on the public Replica dataset, which\ncontains multi-room layouts. The "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0040"
+        ],
+        "excerpt": "panoramic scene understanding. PanoGraphGS\nnevertheless has several limitations. Open-plan spaces such\nas open kitchens lack explicit spatial boundaries, making\nroom delineation challenging. Moreover, the current scene\ngraph construction operates offline, and we will investigate\nonline feed-forward scene graph construction for incremental\nscene understanding during continuous observations.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e09026b86607885cacda773f4b5093881912f52c8fe67d3523f31b43d9ae7f08",
+            "evidence_id": "Eb2ed8061a1ca8742-B0040",
+            "pages": [
+              8
+            ],
+            "section": "Appendix: Conclusion",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1290,
+                "page": 8,
+                "section": "Appendix: Conclusion",
+                "section_index": 11,
+                "start": 898,
+                "text": "panoramic scene understanding. PanoGraphGS\nnevertheless has several limitations. Open-plan spaces such\nas open kitchens lack explicit spatial boundaries, making\nroom delineation challenging. Moreover, the current scene\ngraph construction operates offline, and we will investigate\nonline feed-forward scene graph construction for incremental\nscene understanding during continuous observations."
+              }
+            ],
+            "text": "panoramic scene understanding. PanoGraphGS\nnevertheless has several limitations. Open-plan spaces such\nas open kitchens lack explicit spatial boundaries, making\nroom delineation challenging. Moreover, the current scene\ngraph construction operates offline, and we will investigate\nonline feed-forward scene graph construction for incremental\nscene understanding during continuous observations."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.27696",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "systems_or_application",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.27696",
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The manuscript reports evaluation against external benchmark ground-truth annotations on ScanNet++, Replica, and NaviGS for panoptic segmentation metrics, and manually verified hierarchical ground truth for scene graph accuracy.",
+          "final_evaluation_signal": "External benchmark ground-truth annotations for 2D panoptic segmentation (mIoU, mBIoU) and manually verified hierarchical ground truth for 3D scene graph accuracy.",
+          "independent_corroboration": "present",
+          "optimization_signal": "SAM3-generated 2D pseudo-segmentation masks combined with photometric RGB losses and confidence-weighted contrastive/prototype losses.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0002",
+          "Eb2ed8061a1ca8742-B0008",
+          "Eb2ed8061a1ca8742-B0013",
+          "Eb2ed8061a1ca8742-B0016",
+          "Eb2ed8061a1ca8742-B0018",
+          "Eb2ed8061a1ca8742-B0021",
+          "Eb2ed8061a1ca8742-B0027",
+          "Eb2ed8061a1ca8742-B0030",
+          "Eb2ed8061a1ca8742-B0031",
+          "Eb2ed8061a1ca8742-B0036",
+          "Eb2ed8061a1ca8742-B0040"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "337c1dd176d2cf9cb3c220a99146d5c039a787e7dcd154e384f7a3bb8d1e193b"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.27696",
+        "claim_evidence_alignment": "Reported empirical improvements in hierarchical accuracy and panoptic boundary quality align with the proposed joint 2D-3D representations and association mechanisms [Eb2ed8061a1ca8742-B0021, Eb2ed8061a1ca8742-B0027, Eb2ed8061a1ca8742-B0036].",
+        "context_id": "b2ed8061a1ca8742267da0fd60ea74124ec3eff2bbb9b30f8a379fda6f9e5469",
+        "decision": "pass",
+        "evaluation_assessment": "The system is evaluated against established baselines (HOV-SG, ConceptGraphs, Unified-Lift, PanopticRecon++) across three datasets (ScanNet++, Replica, NaviGS) on 2D panoptic segmentation (mIoU, mBIoU) and 3D scene graph identification accuracy, supported by an ablation study [Eb2ed8061a1ca8742-B0021, Eb2ed8061a1ca8742-B0027, Eb2ed8061a1ca8742-B0036].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Standard external ground-truth masks and annotations on ScanNet++, Replica, and NaviGS are used to compute mIoU/mBIoU and scene graph accuracy [Eb2ed8061a1ca8742-B0030, Eb2ed8061a1ca8742-B0031].",
+          "final_evaluation_signal": "Standard ground-truth benchmark annotations for 2D panoptic segmentation (mIoU, mBIoU) and manually verified hierarchical ground truth for 3D scene graph accuracy [Eb2ed8061a1ca8742-B0030, Eb2ed8061a1ca8742-B0031].",
+          "independent_corroboration": "present",
+          "optimization_signal": "SAM3-generated 2D pseudo-segmentation masks combined with photometric RGB losses and confidence-weighted contrastive/prototype losses [Eb2ed8061a1ca8742-B0013, Eb2ed8061a1ca8742-B0019, Eb2ed8061a1ca8742-B0022].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eb2ed8061a1ca8742-B0008",
+          "Eb2ed8061a1ca8742-B0016",
+          "Eb2ed8061a1ca8742-B0018",
+          "Eb2ed8061a1ca8742-B0021",
+          "Eb2ed8061a1ca8742-B0027",
+          "Eb2ed8061a1ca8742-B0030",
+          "Eb2ed8061a1ca8742-B0031",
+          "Eb2ed8061a1ca8742-B0036",
+          "Eb2ed8061a1ca8742-B0040"
+        ],
+        "limitations": "The authors clearly acknowledge limitations, including poor room boundary delineation in open-plan spaces (e.g., open kitchens) and the offline nature of the scene graph construction [Eb2ed8061a1ca8742-B0040].",
+        "method_assessment": "The methodology is thoroughly detailed, describing the shared rendering formulations, residual projection MLP for prototype semantics, Hungarian matching for view-consistent global instance assignment, confidence weighting, and hierarchical rule-based graph construction from structural Gaussians [Eb2ed8061a1ca8742-B0015, Eb2ed8061a1ca8742-B0016, Eb2ed8061a1ca8742-B0018, Eb2ed8061a1ca8742-B0020, Eb2ed8061a1ca8742-B0025, Eb2ed8061a1ca8742-B0027].",
+        "quality_rationale": "The paper presents a coherent technical framework, solid algorithmic details, clear baselines, rigorous ablation analysis, and appropriate limitations.",
+        "scoped_contribution": "The manuscript proposes PanoGraphGS, an approach combining 3D Gaussian Splatting with prototype-based semantic learning and Hungarian association-based instance learning, together with a semantic-aware floor-room-stuff-object scene graph construction pipeline and a new benchmark dataset NaviGS [Eb2ed8061a1ca8742-B0002, Eb2ed8061a1ca8742-B0008, Eb2ed8061a1ca8742-B0018, Eb2ed8061a1ca8742-B0025].",
+        "source_content_hash": "337c1dd176d2cf9cb3c220a99146d5c039a787e7dcd154e384f7a3bb8d1e193b"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper presents a coherent technical framework, solid algorithmic details, clear baselines, rigorous ablation analysis, and appropriate limitations.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "337c1dd176d2cf9cb3c220a99146d5c039a787e7dcd154e384f7a3bb8d1e193b",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors clearly acknowledge limitations, including poor room boundary delineation in open-plan spaces (e.g., open kitchens) and the offline nature of the scene graph construction [Eb2ed8061a1ca8742-B0040]."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -157,7 +1122,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-22](2026-10-22.md).
+Latest daily digest: [2026-10-23](2026-10-23.md).
 
-# Paper Scout Digest - 2026-10-22
+# Paper Scout Digest - 2026-10-23
 
 ## Run Summary
 
-- **Run ID:** 118
-- **Candidates fetched:** 149
-- **New unique papers:** 142
-- **Relevant:** 22
-- **Maybe relevant:** 13
-- **Irrelevant:** 114
-- **Source summary:** arxiv: 49, openalex: 100, semantic_scholar: 0
+- **Run ID:** 119
+- **Candidates fetched:** 146
+- **New unique papers:** 139
+- **Relevant:** 23
+- **Maybe relevant:** 14
+- **Irrelevant:** 109
+- **Source summary:** arxiv: 46, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -20,111 +20,61 @@ Latest daily digest: [2026-10-22](2026-10-22.md).
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
-- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery](https://arxiv.org/abs/2610.29303v1)
+### [Auto-MD-bench: Evaluating Autoresearch Agents for Real-World Medical Tasks](https://arxiv.org/abs/2610.25069)
 
-- **Authors:** Yongqiang Chen, Chenxi Liu, Deyu Zou, Zhenhao Chen, Tongliang Liu, Bo Han, et al.
+- **Authors:** Shenqi Zhou, Qiran Zou, Wenhao Zhao, Zhenyu Liao, Dianbo Liu
+- **Date:** 2026-10-18
+- **Source:** openalex
+- **Relevance:** relevant (95/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, web-research, deep-research-agents
+- **Abstract summary:** Autonomous agents are increasingly capable of developing machine learning (ML) models end to end. In medical practice, however, strong performance on the target metric does not fully characterize how good the models are in real-world use cases. For example, medical ML models should also provide well-calibrated risk...
+
+### [EL-RAKHAWI BIO-QUANTUM COMPUTING FRAMEWORK INTEGRATING CEREBRAL ORGANOIDS, QUANTUM NEUROMORPHIC ARCHITECTURES, AND AUTONOMOUS AI SCIENTIST AGENTS A Unified Paradigm for Next-Generation Computational Intelligence and Autonomous Discovery](https://doi.org/10.5281/zenodo.23527960)
+
+- **Authors:** mohamed kamal arafa el-rakhawi
 - **Date:** 2026-10-21
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Evolutionary coding agents such as AlphaEvolve are one of the notable successes in using Large Language Models (LLMs) to build AI Scientists. These agents tackle open-ended scientific problems by iteratively improving and evolving programs, leveraging the prior knowledge and reasoning capabilities of LLMs. Despite t...
+- **Abstract summary:** THE EL-RAKHAWI BIO-QUANTUM COMPUTING FRAMEWORK by Dr. M.K.A. El-Rakhawi (DOI: 10.5281/zenodo.23527961) integrates three frontier technologies: Organoid Intelligence (OI), Quantum Neuromorphic Computing, and Autonomous AI Scientist Agents. Core innovations: (1) Cerebral organoids interfaced via 3D Multi-Electrode Arr...
 
-### [Benchmarking and Error Analysis of Deep Search and Deep Research LLM Agents](https://arxiv.org/abs/2610.29346v1)
+### [RIDAR: Safeguarding Research Integrity in Autonomous Research Agents via Automated Detection and Runtime Intervention](https://arxiv.org/abs/2610.31372v1)
 
-- **Authors:** Zixuan Yu, Zhenheng Tang, Xiaowen Chu, Bo Han
-- **Date:** 2026-10-21
+- **Authors:** Jiening Siow, Amy Xin, Junjie Wang, Ziyu Tang, Zijun Yao, Yunjia Qi, et al.
+- **Date:** 2026-10-22
 - **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** As Large Language Models (LLMs) evolve into autonomous Deep Search and Deep Research Agents capable of executing long-horizon, multi-step tasks, evaluating their reliability becomes increasingly critical. However, existing evaluation paradigms predominantly focus on final task outcomes, leaving a significant gap in...
-
-### [Epi: Towards a Persistent, Self-Improving Agent for Autonomous Research](https://doi.org/10.48550/arxiv.2610.24944)
-
-- **Authors:** Yue Huang, Zhangchen Xu, Xiaonan Luo, Zheyuan Liu, Lichi Li, Yiping Wang, et al.
-- **Date:** 2026-10-18
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** We present Épi, an autonomous research agent that sustains investigations across model sessions and evolves its methods through accumulated experience. Épi combines persistent research history, hierarchical memory, branching and independent review to maintain research continuity, learn from experiments, and explore...
-
-### [HybridResearcher: Bridging the Structured-Unstructured Boundary for Deep Research Agents](https://doi.org/10.48550/arxiv.2610.24899)
-
-- **Authors:** Soyoung Yoon, Peiran Xu, Han Wang, Ruofan Wu, Xiaodong Yu, Feng Yan, et al.
-- **Date:** 2026-10-17
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** While LLM agents are increasingly capable of gathering and synthesizing evidence from a single homogeneous source, such as structured tables or unstructured data, real-world analytical questions frequently span heterogeneous sources. For example, answering one enterprise question may require both a result computed o...
-
-### [NeuroAct: Advancing EEG Analysis and Decoding via Dual-Loop Autonomous Research](https://doi.org/10.48550/arxiv.2610.25211)
-
-- **Authors:** Wei Xiong, Jiangtong Li, Han Zhao, Linxiao Yang, Jie Li, Changjun Jiang
-- **Date:** 2026-10-18
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** EEG analysis and decoding underpin brain-computer interfaces, cognitive assessment, and sleep monitoring. Fixed pipelines and reward-driven search do not explicitly determine how signal structure, representations, predictor behavior, and training dynamics contribute to performance or generalization gaps, leaving int...
-
-### [OpenSaC: A Python Library for Search as Code in Deep Research Agents](https://doi.org/10.48550/arxiv.2610.25779)
-
-- **Authors:** Qi Liu, Jiaxin Mao, Fengbin Zhu, Tat‐Seng Chua, Ji-Rong Wen
-- **Date:** 2026-10-19
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents investigate complex questions through iterative search, source examination, and evidence synthesis. A conventional workflow alternates reasoning with individual search and reading actions. Search as Code introduces a new paradigm: agents write programs that compose search, source reading, rerank...
-
-### [Self-Consistency of Entity Sets and Citations in a Deep Research System under Repeated Prompting](https://doi.org/10.48550/arxiv.2610.26421)
-
-- **Authors:** Lauri Pykälä, Kimmo  K. Kaski
-- **Date:** 2026-10-19
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents (DRA) are commonly used for open-ended synthesis tasks where closed-world QA benchmarks are poorly suited to characterize relevant aspects of performance. We study the self-consistency of one commercial deep research system under repeated identical prompting, representing each report with the se...
-
-### [TCMScience: An Autonomous Scientist for Traditional Chinese Medicine](https://doi.org/10.48550/arxiv.2610.24601)
-
-- **Authors:** Yanlan Kang, Ruiqi Liu, 顾心培, Tzu-Yi Lei, Shuai Xu, Xukun Zhang, et al.
-- **Date:** 2026-10-17
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Traditional Chinese medicine (TCM) research connects classical texts, medicinal entities, molecular assays, computational predictions, and clinical studies. An autonomous research agent must preserve the inferential boundaries between these evidence types while coordinating analysis across heterogeneous resources. W...
+- **Abstract summary:** Autonomous research agents are increasingly used to automate large portions of scientific research, yet they are prone to research integrity violations (RIVs): behaviors that compromise the validity, reproducibility, or faithfulness of the research process. We present RIDAR, a framework for automated RIV detection a...
 
 ## Maybe Relevant
 
-### [GroundedVDR: Grounding Video-to-Web Evidence Dependencies in Video Deep Research](https://doi.org/10.48550/arxiv.2610.25493)
+### [FALCA: Falsification-Aware Reinforcement Learning with Hierarchical Credit Assignment for Long-Horizon Deep Search Agents](https://arxiv.org/abs/2610.28361)
 
-- **Authors:** Xiyuan Liang, Yu Wang, Zuhao Yang, Z Wang, Duo Li, Sudong Wang, et al.
-- **Date:** 2026-10-18
+- **Authors:** Zijun Dou, Kun Luo, Chaofan Li, Shuqi Lu, Zheng Liu
+- **Date:** 2026-10-20
 - **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** research-memory
+- **Abstract summary:** Long-horizon deep search requires LLM agents to iteratively decompose complex information needs, gather evidence from external sources, and maintain a reliable research state under multiple constraints. A central challenge is that early mistakes can be amplified over the search trajectory: agents may anchor on an in...
+
+### [Beyond Watching and Searching: Benchmarking Agents for Video-centered Deep Research Reports](https://arxiv.org/abs/2610.31158v1)
+
+- **Authors:** Jiahao Meng, Qize Yang, Yuxuan Wang, Yunfei Chu, Wensi Dai, Jin Xu, et al.
+- **Date:** 2026-10-22
+- **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** citation-grounding
-- **Abstract summary:** Video large multimodal models have improved at identifying cross-frame visual evidence and conducting open-web retrieval, as reflected in recent video deep research (VDR) benchmarks. However, existing VDR benchmarks primarily evaluate tool-use trajectories and final responses without verifying whether a model actual...
-
-### [MIRA: A Multimodal Illustrated Deep Research Agent for Controllable Reports](https://doi.org/10.48550/arxiv.2610.25926)
-
-- **Authors:** Hongrui Wu, Kaiwen Tuo, Congcong Wang, Gen Li, Shuai Dong, Xinlei Yu, et al.
-- **Date:** 2026-10-19
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** deep-research-agents, citation-grounding
-- **Abstract summary:** Deep research agents are increasingly capable of searching the open web and synthesizing evidence, yet they remain poorly suited to controllable report generation in multimodal deep research. This task requires agents to handle interleaved textual and visual inputs, gather multimodal evidence through multi-step web...
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep research agents synthesize open-web evidence into long reports, but current benchmarks do not evaluate research centered on a source video. We introduce Video-Centered Deep Research Report Generation. Given a video and user request, an agent identifies research questions, retrieves external multimodal evidence,...

@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:58:06",
-    "generated_at": "2026-10-22 09:13:51",
+    "generated_at": "2026-10-23 09:07:39",
     "last_seen_at": "2026-09-22 09:05:43",
     "metadata_sources": [
       "openalex",
@@ -103,36 +103,1758 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-23T09:05:52.139971+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The manuscript provides no controlled, converged, parameter-matched classical baseline or component ablation, so the utility of the quantum-inspired periodic encoding and gated mixing over a standard vision transformer is unestablished.",
+      "The simulator diagnostic uses one-epoch, non-converged runs with unmatched parameter counts, and the authors state the accuracy differences are optimization snapshots rather than evidence of architectural superiority.",
+      "The multi-dataset and ImageNet results are single-run point estimates without repeated seeds or uncertainty intervals, and the ImageNet comparisons are explicitly heterogeneous external literature values rather than controlled pairwise evidence."
+    ],
+    "concise_summary": "The mathematical characterization and conceptual delineation of the method are clear, and the authors scrupulously disclaim quantum advantage and overclaims. However, under library curation standards, scientific promotion requires substantiated empirical evidence of the architectural contribution's value, which is precluded here by the total absence of converged, controlled classical baselines and ablations.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 53374,
+      "assessment_input_sha256": "5e5f5515aad5a9e733a36bbf186291cd8232a5847939109909cfb5e6965385f8",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.17789",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 52193,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 51262,
+      "evidence_block_count": 72,
+      "evidence_context_characters": 60475,
+      "evidence_context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+      "evidence_context_sha256": "ad1b3ca5a031ef6b266abb3e45be334b1bfef7e047aa4925b3f2e95d74ae5457",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 52215,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "369779be813b6ddee0fb8e9efd8b02a028cadf492b7f956428c5b35298993a1b",
+        "source_url": "https://arxiv.org/pdf/2609.17789",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 52193,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Qit: Quantum-Inspired Transformer For Visual Recognition Task",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 117,
+          "supplied_characters": 117
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1731,
+          "supplied_characters": 1731
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2766,
+          "supplied_characters": 2766
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1714,
+          "supplied_characters": 1714
+        },
+        {
+          "heading": "We Introduce Qit, A Vision Transformer That Integrates",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 278,
+          "supplied_characters": 278
+        },
+        {
+          "heading": "We Characterize The Trigonometric Feature Map As An Ex-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 330,
+          "supplied_characters": 330
+        },
+        {
+          "heading": "We Evaluate Qit Across Image-Classification Benchmarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 6,
+          "source_characters": 287,
+          "supplied_characters": 287
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 7,
+          "source_characters": 911,
+          "supplied_characters": 911
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 8,
+          "source_characters": 3875,
+          "supplied_characters": 3875
+        },
+        {
+          "heading": "Quantum-Inspired Transformer Architec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 402,
+          "supplied_characters": 402
+        },
+        {
+          "heading": "Background",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 10,
+          "source_characters": 989,
+          "supplied_characters": 989
+        },
+        {
+          "heading": "Background",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 11,
+          "source_characters": 1153,
+          "supplied_characters": 1153
+        },
+        {
+          "heading": "Token Embedding (Classical Preprocessing)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 417,
+          "supplied_characters": 417
+        },
+        {
+          "heading": "Quantum Angle Encoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1549,
+          "supplied_characters": 1549
+        },
+        {
+          "heading": "Hilbert-Space Self-Attention",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1124,
+          "supplied_characters": 1124
+        },
+        {
+          "heading": "Hilbert-Space Self-Attention",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2374,
+          "supplied_characters": 2374
+        },
+        {
+          "heading": "Design Rationale",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 759,
+          "supplied_characters": 759
+        },
+        {
+          "heading": "Gated Multiplicative Mixing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 576,
+          "supplied_characters": 576
+        },
+        {
+          "heading": "Architectural Interpretation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 407,
+          "supplied_characters": 407
+        },
+        {
+          "heading": "Architectural Interpretation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1860,
+          "supplied_characters": 1860
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 549,
+          "supplied_characters": 549
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 1752,
+          "supplied_characters": 1752
+        },
+        {
+          "heading": "Comparison With Simulated Quantum Trans-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 271,
+          "supplied_characters": 271
+        },
+        {
+          "heading": "Comparison With Simulated Quantum Trans-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 3831,
+          "supplied_characters": 3831
+        },
+        {
+          "heading": "Context From Quantum Attention Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 392,
+          "supplied_characters": 392
+        },
+        {
+          "heading": "Context From Quantum Attention Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 807,
+          "supplied_characters": 807
+        },
+        {
+          "heading": "Scalability To Imagenet",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1000,
+          "supplied_characters": 1000
+        },
+        {
+          "heading": "Results Across Multiple Benchmarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 27,
+          "source_characters": 2422,
+          "supplied_characters": 2422
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 28,
+          "source_characters": 793,
+          "supplied_characters": 793
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 2259,
+          "supplied_characters": 2259
+        },
+        {
+          "heading": "Benchmark Study For Predicting Time Series With Variational",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 30,
+          "source_characters": 434,
+          "supplied_characters": 434
+        },
+        {
+          "heading": "The Ieee/Cvf Conference On Computer Vision And Pattern",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 442,
+          "supplied_characters": 442
+        },
+        {
+          "heading": "Conference On Computer Vision And Pattern Recognition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 2199,
+          "supplied_characters": 2199
+        },
+        {
+          "heading": "Mamba-Based Architecture For Vision And Multivariate Time",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 33,
+          "source_characters": 229,
+          "supplied_characters": 229
+        },
+        {
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 118,
+          "supplied_characters": 118
+        },
+        {
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 5526,
+          "supplied_characters": 5526
+        },
+        {
+          "heading": "Appendix: Qit Encoder Block",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 112,
+          "supplied_characters": 112
+        },
+        {
+          "heading": "Appendix: Qit Encoder Block",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 1018,
+          "supplied_characters": 1018
+        },
+        {
+          "heading": "Appendix: Exact Property Of The Periodic Feature Map",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 1109,
+          "supplied_characters": 1109
+        },
+        {
+          "heading": "Appendix: Computational Cost",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 592,
+          "supplied_characters": 592
+        },
+        {
+          "heading": "Appendix: Experimental Protocol And Interpretation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 958,
+          "supplied_characters": 958
+        },
+        {
+          "heading": "Appendix: Experimental Protocol And Interpretation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 830,
+          "supplied_characters": 830
+        }
+      ],
+      "selected_characters": 51262,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 117,
+          "heading": "Qit: Quantum-Inspired Transformer For Visual Recognition Task",
+          "page": 1
+        },
+        {
+          "characters": 1731,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2766,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1714,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 278,
+          "heading": "We Introduce Qit, A Vision Transformer That Integrates",
+          "page": 2
+        },
+        {
+          "characters": 330,
+          "heading": "We Characterize The Trigonometric Feature Map As An Ex-",
+          "page": 2
+        },
+        {
+          "characters": 287,
+          "heading": "We Evaluate Qit Across Image-Classification Benchmarks",
+          "page": 2
+        },
+        {
+          "characters": 911,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 3875,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 402,
+          "heading": "Quantum-Inspired Transformer Architec-",
+          "page": 3
+        },
+        {
+          "characters": 989,
+          "heading": "Background",
+          "page": 3
+        },
+        {
+          "characters": 1153,
+          "heading": "Background",
+          "page": 4
+        },
+        {
+          "characters": 417,
+          "heading": "Token Embedding (Classical Preprocessing)",
+          "page": 4
+        },
+        {
+          "characters": 1549,
+          "heading": "Quantum Angle Encoding",
+          "page": 4
+        },
+        {
+          "characters": 1124,
+          "heading": "Hilbert-Space Self-Attention",
+          "page": 4
+        },
+        {
+          "characters": 2374,
+          "heading": "Hilbert-Space Self-Attention",
+          "page": 5
+        },
+        {
+          "characters": 759,
+          "heading": "Design Rationale",
+          "page": 5
+        },
+        {
+          "characters": 576,
+          "heading": "Gated Multiplicative Mixing",
+          "page": 5
+        },
+        {
+          "characters": 407,
+          "heading": "Architectural Interpretation",
+          "page": 5
+        },
+        {
+          "characters": 1860,
+          "heading": "Architectural Interpretation",
+          "page": 6
+        },
+        {
+          "characters": 549,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 1752,
+          "heading": "Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 271,
+          "heading": "Comparison With Simulated Quantum Trans-",
+          "page": 6
+        },
+        {
+          "characters": 3831,
+          "heading": "Comparison With Simulated Quantum Trans-",
+          "page": 7
+        },
+        {
+          "characters": 392,
+          "heading": "Context From Quantum Attention Models",
+          "page": 7
+        },
+        {
+          "characters": 807,
+          "heading": "Context From Quantum Attention Models",
+          "page": 8
+        },
+        {
+          "characters": 1000,
+          "heading": "Scalability To Imagenet",
+          "page": 8
+        },
+        {
+          "characters": 2422,
+          "heading": "Results Across Multiple Benchmarks",
+          "page": 8
+        },
+        {
+          "characters": 793,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 2259,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 434,
+          "heading": "Benchmark Study For Predicting Time Series With Variational",
+          "page": 9
+        },
+        {
+          "characters": 442,
+          "heading": "The Ieee/Cvf Conference On Computer Vision And Pattern",
+          "page": 9
+        },
+        {
+          "characters": 2199,
+          "heading": "Conference On Computer Vision And Pattern Recognition",
+          "page": 9
+        },
+        {
+          "characters": 229,
+          "heading": "Mamba-Based Architecture For Vision And Multivariate Time",
+          "page": 9
+        },
+        {
+          "characters": 118,
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "page": 9
+        },
+        {
+          "characters": 5526,
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "page": 10
+        },
+        {
+          "characters": 112,
+          "heading": "Appendix: Qit Encoder Block",
+          "page": 10
+        },
+        {
+          "characters": 1018,
+          "heading": "Appendix: Qit Encoder Block",
+          "page": 11
+        },
+        {
+          "characters": 1109,
+          "heading": "Appendix: Exact Property Of The Periodic Feature Map",
+          "page": 11
+        },
+        {
+          "characters": 592,
+          "heading": "Appendix: Computational Cost",
+          "page": 11
+        },
+        {
+          "characters": 958,
+          "heading": "Appendix: Experimental Protocol And Interpretation",
+          "page": 11
+        },
+        {
+          "characters": 830,
+          "heading": "Appendix: Experimental Protocol And Interpretation",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "5e5f5515aad5a9e733a36bbf186291cd8232a5847939109909cfb5e6965385f8",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "369779be813b6ddee0fb8e9efd8b02a028cadf492b7f956428c5b35298993a1b",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0002"
+        ],
+        "excerpt": "Quantum machine learning offers a compelling represen-\ntational perspective: angle-encoded states inhabit Hilbert\nspaces in which periodic similarities and interactions can\nbe expressed naturally. Realizing this perspective for visual\nrecognition remains difficult, however, because present quan-\ntum neural networks are constrained by limited qubit counts,\ncostly circuit simulation and measurement, noise, and un-\nstable optimization on noisy intermediate-scale quantum\ndevices. We investigate whether useful structural ideas from\nquantum models can instead be realized as scalable classi-\ncal Transformer operations. We introduce QiT, a Quantum-\ninspired Transformer for vision tasks with three compo-\nnents: (i) angle-inspired encoding that maps image tokens\nto learned trigonometric Hilbert-space features analogous\nto quantum rotation-based state encoding; (ii) self-attention\nover these ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4d460773dc72a23d0fa470cad3cff9ad5f83b9c9e34ac534f2a1e9d1f826d925",
+            "evidence_id": "E78a4082c26d4f236-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Quantum machine learning offers a compelling represen-\ntational perspective: angle-encoded states inhabit Hilbert\nspaces in which periodic similarities and interactions can\nbe expressed naturally. Realizing this perspective for visual\nrecognition remains difficult, however, because present quan-\ntum neural networks are constrained by limited qubit counts,\ncostly circuit simulation and measurement, noise, and un-\nstable optimization on noisy intermediate-scale quantum\ndevices. We investigate whether useful structural ideas from\nquantum models can instead be realized as scalable classi-\ncal Transformer operations. We introduce QiT, a Quantum-\ninspired Transformer for vision tasks with three compo-\nnents: (i) angle-inspired encoding that maps image tokens\nto learned trigonometric Hilbert-space features analogous\nto quantum rotation-based state encoding; (ii) self-attention\nover these "
+              }
+            ],
+            "text": "Quantum machine learning offers a compelling represen-\ntational perspective: angle-encoded states inhabit Hilbert\nspaces in which periodic similarities and interactions can\nbe expressed naturally. Realizing this perspective for visual\nrecognition remains difficult, however, because present quan-\ntum neural networks are constrained by limited qubit counts,\ncostly circuit simulation and measurement, noise, and un-\nstable optimization on noisy intermediate-scale quantum\ndevices. We investigate whether useful structural ideas from\nquantum models can instead be realized as scalable classi-\ncal Transformer operations. We introduce QiT, a Quantum-\ninspired Transformer for vision tasks with three compo-\nnents: (i) angle-inspired encoding that maps image tokens\nto learned trigonometric Hilbert-space features analogous\nto quantum rotation-based state encoding; (ii) self-attention\nover these "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0003"
+        ],
+        "excerpt": "periodic features, inducing a classical cosine ker-\nnel approximated to quantum fidelity kernels; and (iii) gated\nmultiplicative emulation, a trainable classical surrogate for\ninteraction terms found in variational circuits. All compo-\nnents are differentiable tensor operations, so QiT claims\nneither quantum computation nor quantum speedup and re-\ntains the O(N 2D) attention complexity of a standard Vision\nTransformer. Across image-classification benchmarks, QiT\nis competitive with a matched classical Transformer while\navoiding the severe runtime cost observed for a small simu-\nlated quantum Transformer. QiT-B reaches 78.3% ImageNet-\n1K top-1 accuracy with 45.7M parameters and 11.5 GFLOPs.\nThese results position QiT as a scalable baseline for isolat-\ning and evaluating quantum-motivated inductive biases in\nvisual recognition.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "cb5bf1ac39c903a583737228da2bec8530792aca9a2ec213ad250dbcbd3dfd78",
+            "evidence_id": "E78a4082c26d4f236-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1731,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 894,
+                "text": "periodic features, inducing a classical cosine ker-\nnel approximated to quantum fidelity kernels; and (iii) gated\nmultiplicative emulation, a trainable classical surrogate for\ninteraction terms found in variational circuits. All compo-\nnents are differentiable tensor operations, so QiT claims\nneither quantum computation nor quantum speedup and re-\ntains the O(N 2D) attention complexity of a standard Vision\nTransformer. Across image-classification benchmarks, QiT\nis competitive with a matched classical Transformer while\navoiding the severe runtime cost observed for a small simu-\nlated quantum Transformer. QiT-B reaches 78.3% ImageNet-\n1K top-1 accuracy with 45.7M parameters and 11.5 GFLOPs.\nThese results position QiT as a scalable baseline for isolat-\ning and evaluating quantum-motivated inductive biases in\nvisual recognition."
+              }
+            ],
+            "text": "periodic features, inducing a classical cosine ker-\nnel approximated to quantum fidelity kernels; and (iii) gated\nmultiplicative emulation, a trainable classical surrogate for\ninteraction terms found in variational circuits. All compo-\nnents are differentiable tensor operations, so QiT claims\nneither quantum computation nor quantum speedup and re-\ntains the O(N 2D) attention complexity of a standard Vision\nTransformer. Across image-classification benchmarks, QiT\nis competitive with a matched classical Transformer while\navoiding the severe runtime cost observed for a small simu-\nlated quantum Transformer. QiT-B reaches 78.3% ImageNet-\n1K top-1 accuracy with 45.7M parameters and 11.5 GFLOPs.\nThese results position QiT as a scalable baseline for isolat-\ning and evaluating quantum-motivated inductive biases in\nvisual recognition."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0006"
+        ],
+        "excerpt": "structural motifs associated with\nquantum models in Hilbert spaces can provide useful induc-\ntive biases in a Transformer that retains the scalability of\nclassical deep learning. More precisely, can periodic angle\nfeatures and multiplicative interactions be integrated into\nparallel visual attention without circuits, measurements, or\nassumptions of quantum computational advantage? We need\nan architecture that integrates quantum principles without\nquantum hardware. Figure 1 provides an overview of the\nresulting QiT encoder.\nWe propose QiT (Quantum-inspired Transformer), a clas-\nsical vision architecture that translates three motifs from\nparameterized quantum models into differentiable tensor op-\nerations. First,angle-inspired encodingmaps each token h to\nbounded angles \u03b8(h) =\u03c0tanh(hW \u03b8 +b) and trigonometric\nperiodic features \u03d5(h) = [sin(\u03b8(h)),cos(\u03b8(h))] , analogous\nin form to quantum ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fec02bf53fc0e8d321d1d50c1a5561379386fb1f15715e6a870814985691190d",
+            "evidence_id": "E78a4082c26d4f236-B0006",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2685,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1790,
+                "text": "structural motifs associated with\nquantum models in Hilbert spaces can provide useful induc-\ntive biases in a Transformer that retains the scalability of\nclassical deep learning. More precisely, can periodic angle\nfeatures and multiplicative interactions be integrated into\nparallel visual attention without circuits, measurements, or\nassumptions of quantum computational advantage? We need\nan architecture that integrates quantum principles without\nquantum hardware. Figure 1 provides an overview of the\nresulting QiT encoder.\nWe propose QiT (Quantum-inspired Transformer), a clas-\nsical vision architecture that translates three motifs from\nparameterized quantum models into differentiable tensor op-\nerations. First,angle-inspired encodingmaps each token h to\nbounded angles \u03b8(h) =\u03c0tanh(hW \u03b8 +b) and trigonometric\nperiodic features \u03d5(h) = [sin(\u03b8(h)),cos(\u03b8(h))] , analogous\nin form to quantum "
+              }
+            ],
+            "text": "structural motifs associated with\nquantum models in Hilbert spaces can provide useful induc-\ntive biases in a Transformer that retains the scalability of\nclassical deep learning. More precisely, can periodic angle\nfeatures and multiplicative interactions be integrated into\nparallel visual attention without circuits, measurements, or\nassumptions of quantum computational advantage? We need\nan architecture that integrates quantum principles without\nquantum hardware. Figure 1 provides an overview of the\nresulting QiT encoder.\nWe propose QiT (Quantum-inspired Transformer), a clas-\nsical vision architecture that translates three motifs from\nparameterized quantum models into differentiable tensor op-\nerations. First,angle-inspired encodingmaps each token h to\nbounded angles \u03b8(h) =\u03c0tanh(hW \u03b8 +b) and trigonometric\nperiodic features \u03d5(h) = [sin(\u03b8(h)),cos(\u03b8(h))] , analogous\nin form to quantum "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0007"
+        ],
+        "excerpt": "rotation-based data encoding. Second,\narXiv:2609.17789v1  [quant-ph]  15 Sep 2026\nFigure 1.QiT encoder block: Tokens are mapped to a quantum-inspired Hilbert space via angle encoding and Fourier features.\nKernel attention approximates quantum fidelity, while local quantum mixers and a circuit surrogate layer emulate bounded-depth\nPQCs within a Transformer architecture.\nperiodic-feature self-attentionforms queries, keys, and val-\nues from learned projections of \u03d5(h) in Hilbert-inspired\nfeature space, allowing tokens to interact after a nonlinear\nperiodic lift. Before projection, the inner product of these\nfeatures is an explicit cosine kernel; after learned query and\nkey projections, the attention score is a trainable bilinear sim-\nilarity rather than a quantum fidelity kernel. Third, agated\nmultiplicative mixer, (GELU(ZW 1)\u2299\u03c3(ZW g))W2, intro-\nduces input-dependent channel interactions ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "065a3e6374cdb5494b12e0fbf423c968052abc65bb4a243fad86c85a95e2d5d3",
+            "evidence_id": "E78a4082c26d4f236-B0007",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2766,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 2685,
+                "text": "rotation-based data encoding. Second,\narXiv:2609.17789v1  [quant-ph]  15 Sep 2026"
+              },
+              {
+                "end": 816,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "Figure 1.QiT encoder block: Tokens are mapped to a quantum-inspired Hilbert space via angle encoding and Fourier features.\nKernel attention approximates quantum fidelity, while local quantum mixers and a circuit surrogate layer emulate bounded-depth\nPQCs within a Transformer architecture.\nperiodic-feature self-attentionforms queries, keys, and val-\nues from learned projections of \u03d5(h) in Hilbert-inspired\nfeature space, allowing tokens to interact after a nonlinear\nperiodic lift. Before projection, the inner product of these\nfeatures is an explicit cosine kernel; after learned query and\nkey projections, the attention score is a trainable bilinear sim-\nilarity rather than a quantum fidelity kernel. Third, agated\nmultiplicative mixer, (GELU(ZW 1)\u2299\u03c3(ZW g))W2, intro-\nduces input-dependent channel interactions "
+              }
+            ],
+            "text": "rotation-based data encoding. Second,\narXiv:2609.17789v1  [quant-ph]  15 Sep 2026\nFigure 1.QiT encoder block: Tokens are mapped to a quantum-inspired Hilbert space via angle encoding and Fourier features.\nKernel attention approximates quantum fidelity, while local quantum mixers and a circuit surrogate layer emulate bounded-depth\nPQCs within a Transformer architecture.\nperiodic-feature self-attentionforms queries, keys, and val-\nues from learned projections of \u03d5(h) in Hilbert-inspired\nfeature space, allowing tokens to interact after a nonlinear\nperiodic lift. Before projection, the inner product of these\nfeatures is an explicit cosine kernel; after learned query and\nkey projections, the attention score is a trainable bilinear sim-\nilarity rather than a quantum fidelity kernel. Third, agated\nmultiplicative mixer, (GELU(ZW 1)\u2299\u03c3(ZW g))W2, intro-\nduces input-dependent channel interactions "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0008"
+        ],
+        "excerpt": "motivated by\nmultiplicative terms in a variational quantum circuit (VQC).\nIt does not instantiate or simulate physical entanglement.\nFor image tokens X\u2208R B\u00d7N\u00d7D and labels y, QiT\nsolves standard supervised classification by minimizing\ncross-entropy for f\u0398(X). The design reverses the usual\nhybrid construction: rather than executing classical atten-\ntion through quantum circuits, it isolates selected quantum-\nmotivated functional forms and evaluates them with conven-\ntional GPU kernels. QiT consequently preserves parallel to-\nken processing, standard backpropagation, and the O(N 2D)\nattention complexity of a Vision Transformer while avoid-\ning circuit simulation, repeated measurement, and quantum-\nhardware constraints. The resulting model enables these\ninductive biases to be evaluated on vision benchmarks at a\nscale that is currently impractical for circuit-based attention.\nContributions.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "86d0b281c43f247262dd00e71e49b0ccf61f3b0c9a53f2f1b3ba914d98ceeeab",
+            "evidence_id": "E78a4082c26d4f236-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1714,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 816,
+                "text": "motivated by\nmultiplicative terms in a variational quantum circuit (VQC).\nIt does not instantiate or simulate physical entanglement.\nFor image tokens X\u2208R B\u00d7N\u00d7D and labels y, QiT\nsolves standard supervised classification by minimizing\ncross-entropy for f\u0398(X). The design reverses the usual\nhybrid construction: rather than executing classical atten-\ntion through quantum circuits, it isolates selected quantum-\nmotivated functional forms and evaluates them with conven-\ntional GPU kernels. QiT consequently preserves parallel to-\nken processing, standard backpropagation, and the O(N 2D)\nattention complexity of a Vision Transformer while avoid-\ning circuit simulation, repeated measurement, and quantum-\nhardware constraints. The resulting model enables these\ninductive biases to be evaluated on vision benchmarks at a\nscale that is currently impractical for circuit-based attention.\nContributions."
+              }
+            ],
+            "text": "motivated by\nmultiplicative terms in a variational quantum circuit (VQC).\nIt does not instantiate or simulate physical entanglement.\nFor image tokens X\u2208R B\u00d7N\u00d7D and labels y, QiT\nsolves standard supervised classification by minimizing\ncross-entropy for f\u0398(X). The design reverses the usual\nhybrid construction: rather than executing classical atten-\ntion through quantum circuits, it isolates selected quantum-\nmotivated functional forms and evaluates them with conven-\ntional GPU kernels. QiT consequently preserves parallel to-\nken processing, standard backpropagation, and the O(N 2D)\nattention complexity of a Vision Transformer while avoid-\ning circuit simulation, repeated measurement, and quantum-\nhardware constraints. The resulting model enables these\ninductive biases to be evaluated on vision benchmarks at a\nscale that is currently impractical for circuit-based attention.\nContributions."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0010"
+        ],
+        "excerpt": "plicit positive-semidefinite cosine kernel, connecting QiT\nto periodic feature methods and rotation-based quantum\ndata encoding. We state the boundary of this connection\nexplicitly: learned query\u2013key scores are bilinear simi-\nlarities, not general quantum fidelity kernels, and gated\nmixing does not realize physical entanglement.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Characterize The Trigonometric Feature Map As An Ex-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5eaa54b51f38aa3ba68928989fef61adb5ffaba74147bfe9c337ed9b0a0c3978",
+            "evidence_id": "E78a4082c26d4f236-B0010",
+            "pages": [
+              2
+            ],
+            "section": "We Characterize The Trigonometric Feature Map As An Ex-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 330,
+                "page": 2,
+                "section": "We Characterize The Trigonometric Feature Map As An Ex-",
+                "section_index": 5,
+                "start": 0,
+                "text": "plicit positive-semidefinite cosine kernel, connecting QiT\nto periodic feature methods and rotation-based quantum\ndata encoding. We state the boundary of this connection\nexplicitly: learned query\u2013key scores are bilinear simi-\nlarities, not general quantum fidelity kernels, and gated\nmixing does not realize physical entanglement."
+              }
+            ],
+            "text": "plicit positive-semidefinite cosine kernel, connecting QiT\nto periodic feature methods and rotation-based quantum\ndata encoding. We state the boundary of this connection\nexplicitly: learned query\u2013key scores are bilinear simi-\nlarities, not general quantum fidelity kernels, and gated\nmixing does not realize physical entanglement."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0011"
+        ],
+        "excerpt": "and compare it with both classical vision models and a\nfour-qubit PennyLane Transformer. In the controlled one-\nepoch simulator study, QiT reduces runtime by nearly\nthree orders of magnitude; at scale, QiT-B reaches 78.3%\nImageNet-1K top-1 accuracy with 45.7M parameters and\n11.5 GFLOPs.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Evaluate Qit Across Image-Classification Benchmarks",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "ffeebd293bba0be8e072d4ecd749da06021a3fda096610fdf70884063d064c80",
+            "evidence_id": "E78a4082c26d4f236-B0011",
+            "pages": [
+              2
+            ],
+            "section": "We Evaluate Qit Across Image-Classification Benchmarks",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 287,
+                "page": 2,
+                "section": "We Evaluate Qit Across Image-Classification Benchmarks",
+                "section_index": 6,
+                "start": 0,
+                "text": "and compare it with both classical vision models and a\nfour-qubit PennyLane Transformer. In the controlled one-\nepoch simulator study, QiT reduces runtime by nearly\nthree orders of magnitude; at scale, QiT-B reaches 78.3%\nImageNet-1K top-1 accuracy with 45.7M parameters and\n11.5 GFLOPs."
+              }
+            ],
+            "text": "and compare it with both classical vision models and a\nfour-qubit PennyLane Transformer. In the controlled one-\nepoch simulator study, QiT reduces runtime by nearly\nthree orders of magnitude; at scale, QiT-B reaches 78.3%\nImageNet-1K top-1 accuracy with 45.7M parameters and\n11.5 GFLOPs."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0032"
+        ],
+        "excerpt": "147,458 8,996,352 9.60 50.00 0.0010 63.72\nQiT 2 4 angles 324,690 20,756,672 10.76 86.35 0.0016 102.91\nFQT-P 2 4 qubits 16,394O(N 22Q)23,904.70 81.20 2.4987 90,745.75\nCViT 4 0 147,716 8,996,608 9.40 25.00 0.0008 127.97\nQiT 4 4 angles 324,948 20,756,928 10.64 71.98 0.0015 202.02\nFQT-P 4 4 qubits 16,652O(N 22Q)13,697.42 62.42 2.3363 178,606.09\nCViT 10 0 147,490 8,997,376 5.60 10.00 0.0007 253.50\nQiT 10 4 angles 325,722 20,757,696 6.89 50.39 0.0013 447.23\nFQT-P 10 4 qubits 17,426O(N 22Q)13,641.24 32.33 2.3174 445,765.80\nTable 3. Unified asymptotic comparison of Transformer variants. N = tokens, D = embedding dim, Q = qubits, L = circuit depth. Runtime\nslowdown is relative to CViT.\nModel Token mixing (attn.) Channel mixer Total complexity Slowdown Feasibility (CIFAR) Acc\nCViTO(N 2D)O(N D 2)O(N 2D) 1\u00d7Fully trainable 0.50\nQiT (surrogate)O(N 2D)O(QL)O(N 2D) 1.1\u00d7Fully trainable 0.86\nFQT-P ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architectural Interpretation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0134e3c0cf7fc37b1e49416d090ec780f236b9cf85d80a7a62e0936750f2b961",
+            "evidence_id": "E78a4082c26d4f236-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Architectural Interpretation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1382,
+                "page": 6,
+                "section": "Architectural Interpretation",
+                "section_index": 19,
+                "start": 489,
+                "text": "147,458 8,996,352 9.60 50.00 0.0010 63.72\nQiT 2 4 angles 324,690 20,756,672 10.76 86.35 0.0016 102.91\nFQT-P 2 4 qubits 16,394O(N 22Q)23,904.70 81.20 2.4987 90,745.75\nCViT 4 0 147,716 8,996,608 9.40 25.00 0.0008 127.97\nQiT 4 4 angles 324,948 20,756,928 10.64 71.98 0.0015 202.02\nFQT-P 4 4 qubits 16,652O(N 22Q)13,697.42 62.42 2.3363 178,606.09\nCViT 10 0 147,490 8,997,376 5.60 10.00 0.0007 253.50\nQiT 10 4 angles 325,722 20,757,696 6.89 50.39 0.0013 447.23\nFQT-P 10 4 qubits 17,426O(N 22Q)13,641.24 32.33 2.3174 445,765.80\nTable 3. Unified asymptotic comparison of Transformer variants. N = tokens, D = embedding dim, Q = qubits, L = circuit depth. Runtime\nslowdown is relative to CViT.\nModel Token mixing (attn.) Channel mixer Total complexity Slowdown Feasibility (CIFAR) Acc\nCViTO(N 2D)O(N D 2)O(N 2D) 1\u00d7Fully trainable 0.50\nQiT (surrogate)O(N 2D)O(QL)O(N 2D) 1.1\u00d7Fully trainable 0.86\nFQT-P "
+              }
+            ],
+            "text": "147,458 8,996,352 9.60 50.00 0.0010 63.72\nQiT 2 4 angles 324,690 20,756,672 10.76 86.35 0.0016 102.91\nFQT-P 2 4 qubits 16,394O(N 22Q)23,904.70 81.20 2.4987 90,745.75\nCViT 4 0 147,716 8,996,608 9.40 25.00 0.0008 127.97\nQiT 4 4 angles 324,948 20,756,928 10.64 71.98 0.0015 202.02\nFQT-P 4 4 qubits 16,652O(N 22Q)13,697.42 62.42 2.3363 178,606.09\nCViT 10 0 147,490 8,997,376 5.60 10.00 0.0007 253.50\nQiT 10 4 angles 325,722 20,757,696 6.89 50.39 0.0013 447.23\nFQT-P 10 4 qubits 17,426O(N 22Q)13,641.24 32.33 2.3174 445,765.80\nTable 3. Unified asymptotic comparison of Transformer variants. N = tokens, D = embedding dim, Q = qubits, L = circuit depth. Runtime\nslowdown is relative to CViT.\nModel Token mixing (attn.) Channel mixer Total complexity Slowdown Feasibility (CIFAR) Acc\nCViTO(N 2D)O(N D 2)O(N 2D) 1\u00d7Fully trainable 0.50\nQiT (surrogate)O(N 2D)O(QL)O(N 2D) 1.1\u00d7Fully trainable 0.86\nFQT-P "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0036"
+        ],
+        "excerpt": "angles.\nIt is trained for 300 epochs with AdamW, cosine learning-\nrate decay, random cropping, horizontal flipping, and color\njitter on four Tesla T4 GPUs; per-GPU batch sizes appear in\nTable 5. For Q3, the QiT-XS/S/B variants use the parameter\nand FLOP budgets reported in Table 4. Results must be\ninterpreted within each protocol rather than compared across\nprotocols.\nReporting scope.All tables report point estimates from\nthe available runs. The current records do not include re-\npeated seeds, uncertainty intervals, complete optimizer hy-\nperparameters, reduced-class CIFAR split definitions, or the\nenergy-measurement procedure. We therefore use the results\nto document observed accuracy, runtime, and scalability,\nnot statistical superiority. A final reproducible submission\nshould provide these missing details and repeated-run confi-\ndence intervals.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a8207b6c5c6e2af78145e36b13a1f3a83b0f403c701adaa75912d63a6095b075",
+            "evidence_id": "E78a4082c26d4f236-B0036",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1752,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 21,
+                "start": 892,
+                "text": "angles.\nIt is trained for 300 epochs with AdamW, cosine learning-\nrate decay, random cropping, horizontal flipping, and color\njitter on four Tesla T4 GPUs; per-GPU batch sizes appear in\nTable 5. For Q3, the QiT-XS/S/B variants use the parameter\nand FLOP budgets reported in Table 4. Results must be\ninterpreted within each protocol rather than compared across\nprotocols.\nReporting scope.All tables report point estimates from\nthe available runs. The current records do not include re-\npeated seeds, uncertainty intervals, complete optimizer hy-\nperparameters, reduced-class CIFAR split definitions, or the\nenergy-measurement procedure. We therefore use the results\nto document observed accuracy, runtime, and scalability,\nnot statistical superiority. A final reproducible submission\nshould provide these missing details and repeated-run confi-\ndence intervals."
+              }
+            ],
+            "text": "angles.\nIt is trained for 300 epochs with AdamW, cosine learning-\nrate decay, random cropping, horizontal flipping, and color\njitter on four Tesla T4 GPUs; per-GPU batch sizes appear in\nTable 5. For Q3, the QiT-XS/S/B variants use the parameter\nand FLOP budgets reported in Table 4. Results must be\ninterpreted within each protocol rather than compared across\nprotocols.\nReporting scope.All tables report point estimates from\nthe available runs. The current records do not include re-\npeated seeds, uncertainty intervals, complete optimizer hy-\nperparameters, reduced-class CIFAR split definitions, or the\nenergy-measurement procedure. We therefore use the results\nto document observed accuracy, runtime, and scalability,\nnot statistical superiority. A final reproducible submission\nshould provide these missing details and repeated-run confi-\ndence intervals."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0037"
+        ],
+        "excerpt": "formers\nTable 2 compares a classical Vision Transformer (CViT),\nQiT, and a four-qubit Full Quantum Transformer simulated\nin PennyLane (FQT-P) under the Q1 protocol. In this table,\n\"angles/qubits\" distinguishes QiT's four learned angles from\nFQT-P's four simulated qubits.\nTable 4. ImageNet-1K top-1 accuracy, GFLOPs, and Parameters\nare reported for representative architectures. Results are drawn\nfrom their respective papers and use different training recipes; the\ntable provides scale and accuracy context rather than controlled\npairwise comparisons. QiT rows are highlighted.\nNetwork Size Params FLOPs Top-1\nCNN\nResNet-50 [15] 2242 25.5M 4.1G 78.3\nResNeXt101 [48] 2242 83.5M 15.6G 81.5\nEfficientNet-B5 [44] 4562 30M 9.9G 83.6\nTransformer-MLP Mixer\ngMLP-Ti [22] 2242 6M 1.4G 72.0\ngMLP-S [22] 2242 20M 4.5G 79.4\ngMLP-B [22] 2242 73M 15.8G 81.6\nResMLP-12 [46] 2242 15M 3.0G 76.6\nResMLP-36 [46] 2242 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Simulated Quantum Trans-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0c9b355dc77d1469e7e88f848fa045cdfb95920bf3a1d899300d9e1723ec5cb7",
+            "evidence_id": "E78a4082c26d4f236-B0037",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Comparison With Simulated Quantum Trans-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 271,
+                "page": 6,
+                "section": "Comparison With Simulated Quantum Trans-",
+                "section_index": 22,
+                "start": 0,
+                "text": "formers\nTable 2 compares a classical Vision Transformer (CViT),\nQiT, and a four-qubit Full Quantum Transformer simulated\nin PennyLane (FQT-P) under the Q1 protocol. In this table,\n\"angles/qubits\" distinguishes QiT's four learned angles from\nFQT-P's four simulated qubits."
+              },
+              {
+                "end": 627,
+                "page": 7,
+                "section": "Comparison With Simulated Quantum Trans-",
+                "section_index": 23,
+                "start": 0,
+                "text": "Table 4. ImageNet-1K top-1 accuracy, GFLOPs, and Parameters\nare reported for representative architectures. Results are drawn\nfrom their respective papers and use different training recipes; the\ntable provides scale and accuracy context rather than controlled\npairwise comparisons. QiT rows are highlighted.\nNetwork Size Params FLOPs Top-1\nCNN\nResNet-50 [15] 2242 25.5M 4.1G 78.3\nResNeXt101 [48] 2242 83.5M 15.6G 81.5\nEfficientNet-B5 [44] 4562 30M 9.9G 83.6\nTransformer-MLP Mixer\ngMLP-Ti [22] 2242 6M 1.4G 72.0\ngMLP-S [22] 2242 20M 4.5G 79.4\ngMLP-B [22] 2242 73M 15.8G 81.6\nResMLP-12 [46] 2242 15M 3.0G 76.6\nResMLP-36 [46] 2242 "
+              }
+            ],
+            "text": "formers\nTable 2 compares a classical Vision Transformer (CViT),\nQiT, and a four-qubit Full Quantum Transformer simulated\nin PennyLane (FQT-P) under the Q1 protocol. In this table,\n\"angles/qubits\" distinguishes QiT's four learned angles from\nFQT-P's four simulated qubits.\nTable 4. ImageNet-1K top-1 accuracy, GFLOPs, and Parameters\nare reported for representative architectures. Results are drawn\nfrom their respective papers and use different training recipes; the\ntable provides scale and accuracy context rather than controlled\npairwise comparisons. QiT rows are highlighted.\nNetwork Size Params FLOPs Top-1\nCNN\nResNet-50 [15] 2242 25.5M 4.1G 78.3\nResNeXt101 [48] 2242 83.5M 15.6G 81.5\nEfficientNet-B5 [44] 4562 30M 9.9G 83.6\nTransformer-MLP Mixer\ngMLP-Ti [22] 2242 6M 1.4G 72.0\ngMLP-S [22] 2242 20M 4.5G 79.4\ngMLP-B [22] 2242 73M 15.8G 81.6\nResMLP-12 [46] 2242 15M 3.0G 76.6\nResMLP-36 [46] 2242 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0038"
+        ],
+        "excerpt": "45M 8.9G 79.7\nTransformer-Spectral\nFnet-S [18] 2242 15M 2.9G 71.2\nGFNet-Ti [34] 2242 7M 1.3G 74.6\nGFNet-XS [34] 2242 16M 2.9G 78.6\nGFNet-S [34] 2242 25M 4.5G 80.0\nSpectFormer-XS [30] 2242 20M 4.0G 80.2\nSpectFormer-S [30] 2242 32M 6.6G 81.7\nSpectFormer-B [30] 2242 57M 11.5G 82.1\nTransformer-State-Space\nVim-Ti [54] 2242 7M 1.5G 76.0\nVim-S [54] 2242 26M 5.1G 80.4\nLocalVMamba-T [16] 2242 26.0M 5.7G 82.7\nLocalVMamba-S [16] 2242 50.0M 11.4G 83.7\nSiMBA-S [27] 2242 15.3M 2.4G 81.7\nSiMBA-B [27] 2242 22.8M 4.2G 83.5\nVMamba-T [23] 2242 31.0M 4.9G 82.5\nVMamba-S [23] 2242 50.0M 8.7G 83.6\nTransformer-Attention\nViT-B/16 [10] 3842 86M 55.5G 77.9\nDeiT-Ti [45] 2242 5M 1.2G 72.2\nDeiT-S [45] 2242 22M 4.6G 79.8\nDeiT-B [45] 2242 86M 17.5G 81.8\nTransformer-Quantum-Inspired (ours)\nQiT-XS 2242 18.1M 3.8G 75.0\nQiT-S 2242 31.0M 5.6G 77.4\nQiT-B 2242 45.7M 11.5G 78.3\nRuntime and latency.Across 2, 4, and 10 classes, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Simulated Quantum Trans-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "29469e2889b657d99922a8af0cae725dbf4719da249f065984a89e3ce54fe2ae",
+            "evidence_id": "E78a4082c26d4f236-B0038",
+            "pages": [
+              7
+            ],
+            "section": "Comparison With Simulated Quantum Trans-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1527,
+                "page": 7,
+                "section": "Comparison With Simulated Quantum Trans-",
+                "section_index": 23,
+                "start": 627,
+                "text": "45M 8.9G 79.7\nTransformer-Spectral\nFnet-S [18] 2242 15M 2.9G 71.2\nGFNet-Ti [34] 2242 7M 1.3G 74.6\nGFNet-XS [34] 2242 16M 2.9G 78.6\nGFNet-S [34] 2242 25M 4.5G 80.0\nSpectFormer-XS [30] 2242 20M 4.0G 80.2\nSpectFormer-S [30] 2242 32M 6.6G 81.7\nSpectFormer-B [30] 2242 57M 11.5G 82.1\nTransformer-State-Space\nVim-Ti [54] 2242 7M 1.5G 76.0\nVim-S [54] 2242 26M 5.1G 80.4\nLocalVMamba-T [16] 2242 26.0M 5.7G 82.7\nLocalVMamba-S [16] 2242 50.0M 11.4G 83.7\nSiMBA-S [27] 2242 15.3M 2.4G 81.7\nSiMBA-B [27] 2242 22.8M 4.2G 83.5\nVMamba-T [23] 2242 31.0M 4.9G 82.5\nVMamba-S [23] 2242 50.0M 8.7G 83.6\nTransformer-Attention\nViT-B/16 [10] 3842 86M 55.5G 77.9\nDeiT-Ti [45] 2242 5M 1.2G 72.2\nDeiT-S [45] 2242 22M 4.6G 79.8\nDeiT-B [45] 2242 86M 17.5G 81.8\nTransformer-Quantum-Inspired (ours)\nQiT-XS 2242 18.1M 3.8G 75.0\nQiT-S 2242 31.0M 5.6G 77.4\nQiT-B 2242 45.7M 11.5G 78.3\nRuntime and latency.Across 2, 4, and 10 classes, "
+              }
+            ],
+            "text": "45M 8.9G 79.7\nTransformer-Spectral\nFnet-S [18] 2242 15M 2.9G 71.2\nGFNet-Ti [34] 2242 7M 1.3G 74.6\nGFNet-XS [34] 2242 16M 2.9G 78.6\nGFNet-S [34] 2242 25M 4.5G 80.0\nSpectFormer-XS [30] 2242 20M 4.0G 80.2\nSpectFormer-S [30] 2242 32M 6.6G 81.7\nSpectFormer-B [30] 2242 57M 11.5G 82.1\nTransformer-State-Space\nVim-Ti [54] 2242 7M 1.5G 76.0\nVim-S [54] 2242 26M 5.1G 80.4\nLocalVMamba-T [16] 2242 26.0M 5.7G 82.7\nLocalVMamba-S [16] 2242 50.0M 11.4G 83.7\nSiMBA-S [27] 2242 15.3M 2.4G 81.7\nSiMBA-B [27] 2242 22.8M 4.2G 83.5\nVMamba-T [23] 2242 31.0M 4.9G 82.5\nVMamba-S [23] 2242 50.0M 8.7G 83.6\nTransformer-Attention\nViT-B/16 [10] 3842 86M 55.5G 77.9\nDeiT-Ti [45] 2242 5M 1.2G 72.2\nDeiT-S [45] 2242 22M 4.6G 79.8\nDeiT-B [45] 2242 86M 17.5G 81.8\nTransformer-Quantum-Inspired (ours)\nQiT-XS 2242 18.1M 3.8G 75.0\nQiT-S 2242 31.0M 5.6G 77.4\nQiT-B 2242 45.7M 11.5G 78.3\nRuntime and latency.Across 2, 4, and 10 classes, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0039"
+        ],
+        "excerpt": "FQT-P\nrequires 90,745.75, 178,606.09, and 445,765.80 seconds,\nrespectively, versus 102.91, 202.02, and 447.23 seconds for\nQiT. The corresponding FQT-P/QiT wall-clock ratios are\n881.8\u00d7, 884.1\u00d7, and 996.7\u00d7. Reported inference latency\nshows a similarly large gap of 1557.5\u20131782.6\u00d7. QiT is\nnot cost-free relative to CViT: it uses about2.30\u00d7 as many\nrecorded FLOPs and 2.20\u00d7 as many parameters in this setup,\nyielding a 1.58\u20131.76\u00d7 wall-clock increase. Thus the pilot\ndemonstrates a large implementation-cost gap between clas-\nsical tensor execution and this PennyLane simulation, while\nalso quantifying QiT's overhead over the small CViT.\nAccuracy and interpretation.After one epoch, QiT\nrecords 86.35%, 71.98%, and 50.39% accuracy for 2, 4, and\n10 classes; FQT-P records 81.20%, 62.42%, and 32.33%.\nCViT remains exactly at chance (50%, 25%, and 10%), in-\ndicating that this short protocol is unsuitable ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Simulated Quantum Trans-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "bfb7c12445bed742e267df89b3f8b2d9f76a47e017fa827da2e797c8b9bbbe0a",
+            "evidence_id": "E78a4082c26d4f236-B0039",
+            "pages": [
+              7
+            ],
+            "section": "Comparison With Simulated Quantum Trans-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2426,
+                "page": 7,
+                "section": "Comparison With Simulated Quantum Trans-",
+                "section_index": 23,
+                "start": 1527,
+                "text": "FQT-P\nrequires 90,745.75, 178,606.09, and 445,765.80 seconds,\nrespectively, versus 102.91, 202.02, and 447.23 seconds for\nQiT. The corresponding FQT-P/QiT wall-clock ratios are\n881.8\u00d7, 884.1\u00d7, and 996.7\u00d7. Reported inference latency\nshows a similarly large gap of 1557.5\u20131782.6\u00d7. QiT is\nnot cost-free relative to CViT: it uses about2.30\u00d7 as many\nrecorded FLOPs and 2.20\u00d7 as many parameters in this setup,\nyielding a 1.58\u20131.76\u00d7 wall-clock increase. Thus the pilot\ndemonstrates a large implementation-cost gap between clas-\nsical tensor execution and this PennyLane simulation, while\nalso quantifying QiT's overhead over the small CViT.\nAccuracy and interpretation.After one epoch, QiT\nrecords 86.35%, 71.98%, and 50.39% accuracy for 2, 4, and\n10 classes; FQT-P records 81.20%, 62.42%, and 32.33%.\nCViT remains exactly at chance (50%, 25%, and 10%), in-\ndicating that this short protocol is unsuitable "
+              }
+            ],
+            "text": "FQT-P\nrequires 90,745.75, 178,606.09, and 445,765.80 seconds,\nrespectively, versus 102.91, 202.02, and 447.23 seconds for\nQiT. The corresponding FQT-P/QiT wall-clock ratios are\n881.8\u00d7, 884.1\u00d7, and 996.7\u00d7. Reported inference latency\nshows a similarly large gap of 1557.5\u20131782.6\u00d7. QiT is\nnot cost-free relative to CViT: it uses about2.30\u00d7 as many\nrecorded FLOPs and 2.20\u00d7 as many parameters in this setup,\nyielding a 1.58\u20131.76\u00d7 wall-clock increase. Thus the pilot\ndemonstrates a large implementation-cost gap between clas-\nsical tensor execution and this PennyLane simulation, while\nalso quantifying QiT's overhead over the small CViT.\nAccuracy and interpretation.After one epoch, QiT\nrecords 86.35%, 71.98%, and 50.39% accuracy for 2, 4, and\n10 classes; FQT-P records 81.20%, 62.42%, and 32.33%.\nCViT remains exactly at chance (50%, 25%, and 10%), in-\ndicating that this short protocol is unsuitable "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0040"
+        ],
+        "excerpt": "for assessing\nits converged performance. The observed QiT\u2013FQT-P dif-\nferences are therefore optimization snapshots, not evidence\nof architectural superiority. Parameter counts are also un-\nmatched: QiT has roughly 325K parameters, CViT 147K,\nand FQT-P 16\u201317K. The defensible conclusion is computa-\ntional: the tested simulator does not provide a practical route\nto the longer and larger studies below.\nEnergy measurements.FQT-P's recorded energy is three\norders of magnitude above the classical runs, but the mea-\nsurement procedure, simulator implementation, and device\nutilization are undocumented. We report these values for\ncompleteness and draw no hardware-independent energy-\nefficiency conclusion from them.\nAsymptotic complexity analysis.Table 3 separates\nasymptotic complexity from measured runtime. QiT's peri-\nodic feature projection costs O(N QD)per layer, attention\ncosts O(N 2D), and a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Simulated Quantum Trans-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "91e7b5ebb377d68bc17f3a9c4c9aedc5e5662ad5b1df9892079346f123d74649",
+            "evidence_id": "E78a4082c26d4f236-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Comparison With Simulated Quantum Trans-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3326,
+                "page": 7,
+                "section": "Comparison With Simulated Quantum Trans-",
+                "section_index": 23,
+                "start": 2426,
+                "text": "for assessing\nits converged performance. The observed QiT\u2013FQT-P dif-\nferences are therefore optimization snapshots, not evidence\nof architectural superiority. Parameter counts are also un-\nmatched: QiT has roughly 325K parameters, CViT 147K,\nand FQT-P 16\u201317K. The defensible conclusion is computa-\ntional: the tested simulator does not provide a practical route\nto the longer and larger studies below.\nEnergy measurements.FQT-P's recorded energy is three\norders of magnitude above the classical runs, but the mea-\nsurement procedure, simulator implementation, and device\nutilization are undocumented. We report these values for\ncompleteness and draw no hardware-independent energy-\nefficiency conclusion from them.\nAsymptotic complexity analysis.Table 3 separates\nasymptotic complexity from measured runtime. QiT's peri-\nodic feature projection costs O(N QD)per layer, attention\ncosts O(N 2D), and a "
+              }
+            ],
+            "text": "for assessing\nits converged performance. The observed QiT\u2013FQT-P dif-\nferences are therefore optimization snapshots, not evidence\nof architectural superiority. Parameter counts are also un-\nmatched: QiT has roughly 325K parameters, CViT 147K,\nand FQT-P 16\u201317K. The defensible conclusion is computa-\ntional: the tested simulator does not provide a practical route\nto the longer and larger studies below.\nEnergy measurements.FQT-P's recorded energy is three\norders of magnitude above the classical runs, but the mea-\nsurement procedure, simulator implementation, and device\nutilization are undocumented. We report these values for\ncompleteness and draw no hardware-independent energy-\nefficiency conclusion from them.\nAsymptotic complexity analysis.Table 3 separates\nasymptotic complexity from measured runtime. QiT's peri-\nodic feature projection costs O(N QD)per layer, attention\ncosts O(N 2D), and a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0042"
+        ],
+        "excerpt": "Table 1 summarizes reported resource characteristics for\nQSANN [19], QSAM [ 51], HQViT [ 50], QViT [ 9], QK-\nSAN [52], QSAN [40], and F-QSANN [53]. Circuit archi-\ntecture, encoding, measurements, and hardware assumptions\ndiffer across these works, so the entries provide qualitative\ncontext rather than a normalized runtime ranking. QiT has\nzero quantum-resource requirements by construction.\nTable 5. Single-run QiT results across eight image datasets. All runs use four Tesla T4 GPUs, patch size 4, depth 12, width 256, four heads,\nQ=16learned angles, and 300 epochs. Batch is per GPU; latency is reported per image.\nDataset Classes Image Size Train Batch/GPU Epochs Params (M) GFLOPs Acc (%) Wall clock Inference (ms)\nCIFAR-10 1032\u00d73250,000 128 300 5.48 0.355 78.84\u223c1.74h 14.50\nSVHN 1032\u00d73273,257 128 300 5.48 0.355 95.94\u223c2.55h 14.66\nSTL-10 1096\u00d7965,000 32 300 5.61 3.386 63.50\u223c2.07h 14.65\nPets ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Context From Quantum Attention Models",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5d32f639b73fa534b249ba65d6da4259e21acdc7926e5bfdca298f28b4fec987",
+            "evidence_id": "E78a4082c26d4f236-B0042",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Context From Quantum Attention Models",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 392,
+                "page": 7,
+                "section": "Context From Quantum Attention Models",
+                "section_index": 24,
+                "start": 0,
+                "text": "Table 1 summarizes reported resource characteristics for\nQSANN [19], QSAM [ 51], HQViT [ 50], QViT [ 9], QK-\nSAN [52], QSAN [40], and F-QSANN [53]. Circuit archi-\ntecture, encoding, measurements, and hardware assumptions\ndiffer across these works, so the entries provide qualitative\ncontext rather than a normalized runtime ranking. QiT has\nzero quantum-resource requirements by construction."
+              },
+              {
+                "end": 505,
+                "page": 8,
+                "section": "Context From Quantum Attention Models",
+                "section_index": 25,
+                "start": 0,
+                "text": "Table 5. Single-run QiT results across eight image datasets. All runs use four Tesla T4 GPUs, patch size 4, depth 12, width 256, four heads,\nQ=16learned angles, and 300 epochs. Batch is per GPU; latency is reported per image.\nDataset Classes Image Size Train Batch/GPU Epochs Params (M) GFLOPs Acc (%) Wall clock Inference (ms)\nCIFAR-10 1032\u00d73250,000 128 300 5.48 0.355 78.84\u223c1.74h 14.50\nSVHN 1032\u00d73273,257 128 300 5.48 0.355 95.94\u223c2.55h 14.66\nSTL-10 1096\u00d7965,000 32 300 5.61 3.386 63.50\u223c2.07h 14.65\nPets "
+              }
+            ],
+            "text": "Table 1 summarizes reported resource characteristics for\nQSANN [19], QSAM [ 51], HQViT [ 50], QViT [ 9], QK-\nSAN [52], QSAN [40], and F-QSANN [53]. Circuit archi-\ntecture, encoding, measurements, and hardware assumptions\ndiffer across these works, so the entries provide qualitative\ncontext rather than a normalized runtime ranking. QiT has\nzero quantum-resource requirements by construction.\nTable 5. Single-run QiT results across eight image datasets. All runs use four Tesla T4 GPUs, patch size 4, depth 12, width 256, four heads,\nQ=16learned angles, and 300 epochs. Batch is per GPU; latency is reported per image.\nDataset Classes Image Size Train Batch/GPU Epochs Params (M) GFLOPs Acc (%) Wall clock Inference (ms)\nCIFAR-10 1032\u00d73250,000 128 300 5.48 0.355 78.84\u223c1.74h 14.50\nSVHN 1032\u00d73273,257 128 300 5.48 0.355 95.94\u223c2.55h 14.66\nSTL-10 1096\u00d7965,000 32 300 5.61 3.386 63.50\u223c2.07h 14.65\nPets "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0044"
+        ],
+        "excerpt": "Table 4 places QiT-XS/S/B alongside published ImageNet-\n1K results. Within the QiT family, increasing from XS to S\nraises top-1 accuracy from 75.0% to 77.4% while increasing\ncompute from 3.8 to 5.6 GFLOPs. Scaling from S to B\nadds 14.7M parameters and 5.9 GFLOPs for a further 0.9\npercentage-point gain, reaching 78.3%. This monotonic\nbut diminishing gain indicates that the architecture remains\ntrainable as capacity grows, although it does not establish\noptimal scaling.\nAcross published models, QiT-B matches the listed\nResNet-50 accuracy and exceeds the listed ViT-B/16 re-\nsult by 0.4 points with fewer reported FLOPs, but these\nare not controlled comparisons because input resolution,\naugmentation, optimization, and pretraining may differ. QiT\ntrails DeiT-B by 3.5 points and the strongest spectral and\nstate-space entries by 3.8\u20135.4 points. Accordingly, Table 4\nsupports ImageNet-scale ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Scalability To Imagenet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f5bc009fe1354e85ae4338f4dfe272b7394a9e0d768791f87514afb26fb2fdb4",
+            "evidence_id": "E78a4082c26d4f236-B0044",
+            "pages": [
+              8
+            ],
+            "section": "Scalability To Imagenet",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 8,
+                "section": "Scalability To Imagenet",
+                "section_index": 26,
+                "start": 0,
+                "text": "Table 4 places QiT-XS/S/B alongside published ImageNet-\n1K results. Within the QiT family, increasing from XS to S\nraises top-1 accuracy from 75.0% to 77.4% while increasing\ncompute from 3.8 to 5.6 GFLOPs. Scaling from S to B\nadds 14.7M parameters and 5.9 GFLOPs for a further 0.9\npercentage-point gain, reaching 78.3%. This monotonic\nbut diminishing gain indicates that the architecture remains\ntrainable as capacity grows, although it does not establish\noptimal scaling.\nAcross published models, QiT-B matches the listed\nResNet-50 accuracy and exceeds the listed ViT-B/16 re-\nsult by 0.4 points with fewer reported FLOPs, but these\nare not controlled comparisons because input resolution,\naugmentation, optimization, and pretraining may differ. QiT\ntrails DeiT-B by 3.5 points and the strongest spectral and\nstate-space entries by 3.8\u20135.4 points. Accordingly, Table 4\nsupports ImageNet-scale "
+              }
+            ],
+            "text": "Table 4 places QiT-XS/S/B alongside published ImageNet-\n1K results. Within the QiT family, increasing from XS to S\nraises top-1 accuracy from 75.0% to 77.4% while increasing\ncompute from 3.8 to 5.6 GFLOPs. Scaling from S to B\nadds 14.7M parameters and 5.9 GFLOPs for a further 0.9\npercentage-point gain, reaching 78.3%. This monotonic\nbut diminishing gain indicates that the architecture remains\ntrainable as capacity grows, although it does not establish\noptimal scaling.\nAcross published models, QiT-B matches the listed\nResNet-50 accuracy and exceeds the listed ViT-B/16 re-\nsult by 0.4 points with fewer reported FLOPs, but these\nare not controlled comparisons because input resolution,\naugmentation, optimization, and pretraining may differ. QiT\ntrails DeiT-B by 3.5 points and the strongest spectral and\nstate-space entries by 3.8\u20135.4 points. Accordingly, Table 4\nsupports ImageNet-scale "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0045"
+        ],
+        "excerpt": "feasibility and locates the current\naccuracy\u2013cost trade-off; it does not support a state-of-the-art\nclaim.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Scalability To Imagenet",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "75a729096601b122b27d966fed264745214511736348369f63af2f34944c8bb7",
+            "evidence_id": "E78a4082c26d4f236-B0045",
+            "pages": [
+              8
+            ],
+            "section": "Scalability To Imagenet",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1000,
+                "page": 8,
+                "section": "Scalability To Imagenet",
+                "section_index": 26,
+                "start": 894,
+                "text": "feasibility and locates the current\naccuracy\u2013cost trade-off; it does not support a state-of-the-art\nclaim."
+              }
+            ],
+            "text": "feasibility and locates the current\naccuracy\u2013cost trade-off; it does not support a state-of-the-art\nclaim."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0047"
+        ],
+        "excerpt": "runs, the 224\u00d7224 configuration uses about 69\u00d7\nmore FLOPs but approximately5.4\u00d7the measured latency,\nconsistent with different levels of GPU utilization across\ninput sizes rather than proportional latency scaling.\nWall-clock time varies with both image resolution and\ntraining-set size: Food-101 is the longest run at approxi-\nmately 78.34 hours, while the smaller 32\u00d732 datasets finish\nin under 2.6 hours. Taken together, the table establishes\nthat the same QiT block can be optimized across substantial\nchanges in resolution, sample count, and class count. Be-\ncause no matched baseline or component ablation is reported\nunder this 300-epoch protocol, the table cannot attribute\naccuracy gains to periodic encoding or gated mixing.\nExperimental findings.The experiments answer the three\nevaluation questions as follows. For Q1, the tested four-\nqubit PennyLane implementation is 882\u2013997\u00d7 slower ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results Across Multiple Benchmarks",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f707a9de552c58054a53a2d82043935799372ab70e1048e2f5f169ccdd938a2d",
+            "evidence_id": "E78a4082c26d4f236-B0047",
+            "pages": [
+              8
+            ],
+            "section": "Results Across Multiple Benchmarks",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 8,
+                "section": "Results Across Multiple Benchmarks",
+                "section_index": 27,
+                "start": 897,
+                "text": "runs, the 224\u00d7224 configuration uses about 69\u00d7\nmore FLOPs but approximately5.4\u00d7the measured latency,\nconsistent with different levels of GPU utilization across\ninput sizes rather than proportional latency scaling.\nWall-clock time varies with both image resolution and\ntraining-set size: Food-101 is the longest run at approxi-\nmately 78.34 hours, while the smaller 32\u00d732 datasets finish\nin under 2.6 hours. Taken together, the table establishes\nthat the same QiT block can be optimized across substantial\nchanges in resolution, sample count, and class count. Be-\ncause no matched baseline or component ablation is reported\nunder this 300-epoch protocol, the table cannot attribute\naccuracy gains to periodic encoding or gated mixing.\nExperimental findings.The experiments answer the three\nevaluation questions as follows. For Q1, the tested four-\nqubit PennyLane implementation is 882\u2013997\u00d7 slower "
+              }
+            ],
+            "text": "runs, the 224\u00d7224 configuration uses about 69\u00d7\nmore FLOPs but approximately5.4\u00d7the measured latency,\nconsistent with different levels of GPU utilization across\ninput sizes rather than proportional latency scaling.\nWall-clock time varies with both image resolution and\ntraining-set size: Food-101 is the longest run at approxi-\nmately 78.34 hours, while the smaller 32\u00d732 datasets finish\nin under 2.6 hours. Taken together, the table establishes\nthat the same QiT block can be optimized across substantial\nchanges in resolution, sample count, and class count. Be-\ncause no matched baseline or component ablation is reported\nunder this 300-epoch protocol, the table cannot attribute\naccuracy gains to periodic encoding or gated mixing.\nExperimental findings.The experiments answer the three\nevaluation questions as follows. For Q1, the tested four-\nqubit PennyLane implementation is 882\u2013997\u00d7 slower "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0048"
+        ],
+        "excerpt": "in\nwall-clock time than QiT, while QiT is 1.58\u20131.76\u00d7 slower\nthan the small CViT. For Q2, one QiT configuration trains\nacross eight datasets spanning32\u00d732 to 224\u00d7224 inputs and\n10 to 257 classes. For Q3, QiT scales to ImageNet-1K and\nreaches 78.3% top-1 accuracy, but remains below stronger\ncontemporary backbones in the contextual table. The current\nevidence establishes execution feasibility and measured cost;\nit does not establish that the quantum-motivated components\noutperform a converged, parameter-matched Transformer.\nThat question requires controlled ablations, repeated seeds,\nand a complete shared training protocol.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results Across Multiple Benchmarks",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "623cc724e9281cef34f1e7a285501630bb1b27f1fc15f65df7a6d0b61bce84e0",
+            "evidence_id": "E78a4082c26d4f236-B0048",
+            "pages": [
+              8
+            ],
+            "section": "Results Across Multiple Benchmarks",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2422,
+                "page": 8,
+                "section": "Results Across Multiple Benchmarks",
+                "section_index": 27,
+                "start": 1794,
+                "text": "in\nwall-clock time than QiT, while QiT is 1.58\u20131.76\u00d7 slower\nthan the small CViT. For Q2, one QiT configuration trains\nacross eight datasets spanning32\u00d732 to 224\u00d7224 inputs and\n10 to 257 classes. For Q3, QiT scales to ImageNet-1K and\nreaches 78.3% top-1 accuracy, but remains below stronger\ncontemporary backbones in the contextual table. The current\nevidence establishes execution feasibility and measured cost;\nit does not establish that the quantum-motivated components\noutperform a converged, parameter-matched Transformer.\nThat question requires controlled ablations, repeated seeds,\nand a complete shared training protocol."
+              }
+            ],
+            "text": "in\nwall-clock time than QiT, while QiT is 1.58\u20131.76\u00d7 slower\nthan the small CViT. For Q2, one QiT configuration trains\nacross eight datasets spanning32\u00d732 to 224\u00d7224 inputs and\n10 to 257 classes. For Q3, QiT scales to ImageNet-1K and\nreaches 78.3% top-1 accuracy, but remains below stronger\ncontemporary backbones in the contextual table. The current\nevidence establishes execution feasibility and measured cost;\nit does not establish that the quantum-motivated components\noutperform a converged, parameter-matched Transformer.\nThat question requires controlled ablations, repeated seeds,\nand a complete shared training protocol."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0072"
+        ],
+        "excerpt": "varies with image resolution as\nreported in the main paper.\nImageNet-1K study.QiT-XS, QiT-S, and QiT-B are eval-\nuated at 224\u00d7224 resolution with the parameter counts and\nFLOPs reported in the main paper. Comparisons with pub-\nlished architectures provide accuracy\u2013cost context rather\nthan controlled pairwise evidence because their training\nrecipes can differ.\nAll experimental values are point estimates from the avail-\nable runs. Repeated seeds, uncertainty intervals, complete\noptimizer settings, reduced-class split definitions, and the\nenergy-measurement procedure are not available in the cur-\nrent records. Accordingly, the evidence establishes that QiT\ncan be trained at image-classification scale and documents\nthe measured cost of the tested implementations. It does not\nestablish statistical superiority over a converged, parameter-\nmatched Transformer or any quantum advantage.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11,
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Experimental Protocol And Interpretation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "db1ca4276e7ef6e6f878ec80baf36b0dca9d9e0d83428699859def01f3baa37a",
+            "evidence_id": "E78a4082c26d4f236-B0072",
+            "pages": [
+              11,
+              12
+            ],
+            "section": "Appendix: Experimental Protocol And Interpretation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 958,
+                "page": 11,
+                "section": "Appendix: Experimental Protocol And Interpretation",
+                "section_index": 40,
+                "start": 899,
+                "text": "varies with image resolution as\nreported in the main paper."
+              },
+              {
+                "end": 830,
+                "page": 12,
+                "section": "Appendix: Experimental Protocol And Interpretation",
+                "section_index": 41,
+                "start": 0,
+                "text": "ImageNet-1K study.QiT-XS, QiT-S, and QiT-B are eval-\nuated at 224\u00d7224 resolution with the parameter counts and\nFLOPs reported in the main paper. Comparisons with pub-\nlished architectures provide accuracy\u2013cost context rather\nthan controlled pairwise evidence because their training\nrecipes can differ.\nAll experimental values are point estimates from the avail-\nable runs. Repeated seeds, uncertainty intervals, complete\noptimizer settings, reduced-class split definitions, and the\nenergy-measurement procedure are not available in the cur-\nrent records. Accordingly, the evidence establishes that QiT\ncan be trained at image-classification scale and documents\nthe measured cost of the tested implementations. It does not\nestablish statistical superiority over a converged, parameter-\nmatched Transformer or any quantum advantage."
+              }
+            ],
+            "text": "varies with image resolution as\nreported in the main paper.\nImageNet-1K study.QiT-XS, QiT-S, and QiT-B are eval-\nuated at 224\u00d7224 resolution with the parameter counts and\nFLOPs reported in the main paper. Comparisons with pub-\nlished architectures provide accuracy\u2013cost context rather\nthan controlled pairwise evidence because their training\nrecipes can differ.\nAll experimental values are point estimates from the avail-\nable runs. Repeated seeds, uncertainty intervals, complete\noptimizer settings, reduced-class split definitions, and the\nenergy-measurement procedure are not available in the cur-\nrent records. Accordingly, the evidence establishes that QiT\ncan be trained at image-classification scale and documents\nthe measured cost of the tested implementations. It does not\nestablish statistical superiority over a converged, parameter-\nmatched Transformer or any quantum advantage."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.17789",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript provides no controlled, converged, parameter-matched classical baseline or component ablation, so the utility of the quantum-inspired periodic encoding and gated mixing over a standard vision transformer is unestablished.",
+          "The simulator diagnostic uses one-epoch, non-converged runs with unmatched parameter counts, and the authors state the accuracy differences are optimization snapshots rather than evidence of architectural superiority.",
+          "The multi-dataset and ImageNet results are single-run point estimates without repeated seeds or uncertainty intervals, and the ImageNet comparisons are explicitly heterogeneous external literature values rather than controlled pairwise evidence."
+        ],
+        "canonical_id": "doi:10.48550/arxiv.2609.17789",
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "Standard supervised classification setup using canonical datasets without evaluator reuse.",
+          "final_evaluation_signal": "Top-1 classification accuracy and runtime/FLOP metrics on standard benchmark test sets.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Standard cross-entropy loss minimized via backpropagation with AdamW during training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0002",
+          "E78a4082c26d4f236-B0003",
+          "E78a4082c26d4f236-B0006",
+          "E78a4082c26d4f236-B0007",
+          "E78a4082c26d4f236-B0008",
+          "E78a4082c26d4f236-B0010",
+          "E78a4082c26d4f236-B0011",
+          "E78a4082c26d4f236-B0032",
+          "E78a4082c26d4f236-B0036",
+          "E78a4082c26d4f236-B0037",
+          "E78a4082c26d4f236-B0038",
+          "E78a4082c26d4f236-B0039",
+          "E78a4082c26d4f236-B0040",
+          "E78a4082c26d4f236-B0042",
+          "E78a4082c26d4f236-B0044",
+          "E78a4082c26d4f236-B0045",
+          "E78a4082c26d4f236-B0047",
+          "E78a4082c26d4f236-B0048",
+          "E78a4082c26d4f236-B0072"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "369779be813b6ddee0fb8e9efd8b02a028cadf492b7f956428c5b35298993a1b"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.17789",
+        "claim_evidence_alignment": "While the manuscript is remarkably frank and explicitly caveats its empirical limitations, the available evidence fails to demonstrate whether the proposed quantum-inspired inductive biases provide any actual utility or benefit over standard, matched vision transformers.",
+        "context_id": "78a4082c26d4f2367e8f291e84967b580811531af99926e39645a6dbc6e6b174",
+        "decision": "uncertain",
+        "evaluation_assessment": "The evaluation lacks controlled, matched classical baselines and component ablations; the simulator comparison evaluates an unconverged one-epoch run with unmatched parameters, the multi-dataset benchmark provides no baseline comparison, and ImageNet results merely tabulate heterogeneous external literature numbers.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "Standard supervised classification setup using canonical datasets without evaluator reuse.",
+          "final_evaluation_signal": "Top-1 classification accuracy and runtime/FLOP metrics on standard benchmark test sets.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Standard cross-entropy loss minimized via backpropagation with AdamW during training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E78a4082c26d4f236-B0002",
+          "E78a4082c26d4f236-B0003",
+          "E78a4082c26d4f236-B0006",
+          "E78a4082c26d4f236-B0007",
+          "E78a4082c26d4f236-B0008",
+          "E78a4082c26d4f236-B0010",
+          "E78a4082c26d4f236-B0011",
+          "E78a4082c26d4f236-B0032",
+          "E78a4082c26d4f236-B0036",
+          "E78a4082c26d4f236-B0037",
+          "E78a4082c26d4f236-B0038",
+          "E78a4082c26d4f236-B0039",
+          "E78a4082c26d4f236-B0040",
+          "E78a4082c26d4f236-B0042",
+          "E78a4082c26d4f236-B0044",
+          "E78a4082c26d4f236-B0045",
+          "E78a4082c26d4f236-B0047",
+          "E78a4082c26d4f236-B0048",
+          "E78a4082c26d4f236-B0072"
+        ],
+        "limitations": "The authors explicitly note that runs are single-seed point estimates without error intervals, component ablations are absent, classical baselines in the diagnostic did not converge, and hyperparameter/energy details are omitted.",
+        "method_assessment": "The architecture is well-specified, mapping tokens through learned bounded trigonometric features prior to self-attention projections alongside a gated MLP block, with clear proofs that unprojected similarities form a cosine kernel while projected attention remains bilinear.",
+        "quality_rationale": "The mathematical characterization and conceptual delineation of the method are clear, and the authors scrupulously disclaim quantum advantage and overclaims. However, under library curation standards, scientific promotion requires substantiated empirical evidence of the architectural contribution's value, which is precluded here by the total absence of converged, controlled classical baselines and ablations.",
+        "scoped_contribution": "QiT translates quantum-inspired motifs\u2014angle-based periodic feature encoding and gated multiplicative channel mixing\u2014into fully classical differentiable tensor operations for vision transformers without claiming quantum advantage.",
+        "source_content_hash": "369779be813b6ddee0fb8e9efd8b02a028cadf492b7f956428c5b35298993a1b"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The mathematical characterization and conceptual delineation of the method are clear, and the authors scrupulously disclaim quantum advantage and overclaims. However, under library curation standards, scientific promotion requires substantiated empirical evidence of the architectural contribution's value, which is precluded here by the total absence of converged, controlled classical baselines and ablations.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "369779be813b6ddee0fb8e9efd8b02a028cadf492b7f956428c5b35298993a1b",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly note that runs are single-seed point estimates without error intervals, component ablations are absent, classical baselines in the diagnostic did not converge, and hyperparameter/energy details are omitted."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -165,7 +1887,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -59,16 +59,255 @@
             <p>As Large Language Models (LLMs) evolve into autonomous Deep Search and Deep Research Agents capable of executing long-horizon, multi-step tasks, evaluating their reliability becomes increasingly critical. However, existing evaluation paradigms predominantly focus on final task outcomes, leaving a significant gap in...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study provides a clearly defined problem formulation, sound taxonomy, rigorous experimental trace diagnostics on established benchmarks, and actionable design insights for agent development, meeting the standards for scientific contribution.</p>
+      <p>The work focuses on diagnostic categorization rather than online automated repair, evaluates a restricted toolset (search and fetch) in Deep Search, and relies partly on an LLM evaluator (GPT-5) for semantic task-level categorizations.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-23T09:06:49.684088+00:00.</p>
+        <p>Coverage: 71517 of 71517 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarking and Error Analysis of Deep Search and Deep Research LLM Agents
+citation-grounded reasoning. We intentionally defer fine-
+grained category definitions to the taxonomy section.
+Building on this formulation, we present a unified error
+diagnosis framework and benchmark for process-level eval-
+uation from full execution traces. Based on this framework,
+we derive a structured taxonomy spanning both levels and
+both paradigms, and then conduct an empirical study to
+characterize how error types emerge and propagate across
+agent workflows. Our main contributions are as follows:
+• We introduce a process-oriented evaluation framework
+that captures full agent trajectories, enabling repro-
+ducible diagnosis beyond end-to-end accuracy.
+• We propose a structured taxonomy that separates
+sharedSystem-Levelfailures from paradigm-specific
+Task-Levelfailures in Deep Search and Deep </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate agent failures through a bifurcated methodology
+that explicitly categorizes breakdowns into System-Level
+errors and Task-Level errors. Because LLM agents op-
+erate at the interface of programmatic tool execution and
+probabilistic reasoning, this separation is essential to avoid
+conflating deterministic infrastructure faults with semantic
+cognitive limitations. Accordingly, our diagnostic pipeline
+combines rule-based parsing to isolate System-Level errors
+with a human-guided LLM-as-a-Judge framework to evalu-
+ate Task-Level errors.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To systematically identify system-level errors, we develop a
+hybrid diagnostic pipeline that combines rule-based extrac-
+tion with LLM-assisted evaluation. First, we employ regular
+expressions and structured parsing to precisely extract the
+2</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>When infrastructure execution succeeds, agents may still
+fail at the task level due to higher-order cognitive, strate-
+gic, or synthesis limitations that emerge across extended
+reasoning trajectories and large context windows. Because
+these semantic breakdowns are difficult to capture through
+rigid rule-based parsing alone, we adopt a human-guided
+LLM-as-a-Judge pipeline to systematically interpret the ex-
+ecution logs. To ensure our evaluation rubric is empirically
+grounded rather than arbitrarily defined, we first conduct
+a qualitative, human-in-the-loop analysis of sampled inter-
+mediate traces to inductively construct a behavioral tax-
+onomy. Building upon this foundation, we then employ
+the LLM-as-a-Judge framework to automatically categorize
+these process-level deviations at scale. Given the distinct
+characteristics, we separately address the specific cognitive
+bottlenecks </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Setup. To empirically validate our proposed error taxonomy
+and systematically diagnose bottlenecks in long-horizon au-
+tonomous agents, we design a controlled evaluation pipeline
+spanning both Deep Search and Deep Research paradigms.
+Importantly, our objective is not to benchmark end-to-end
+performance, but to construct experimental environments
+that expose process-level behaviors and failure patterns dur-
+ing extended agent execution. Each setup therefore empha-
+sizes controllability and comparability, enabling consistent
+analysis of error emergence across different agent architec-
+tures and model backbones.
+Deep Search.For Deep Search tasks, we employ the
+Miroflow(Su et al., 2026) agent framework and deliberately
+4</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>gradually shifts away from the originalresearch objective.
+Table 1.Overview of the proposed error taxonomy across system-level and task-level failures, with representative examples for each error
+type.
+restrict the agent&#x27;s action space to core information-seeking
+operations. Specifically, the agent is equipped with only two
+tools: search, which retrieves search engine results and
+summaries, andfetch, which extracts full textual content
+from selected webpages. This constrained design minimizes
+confounding factors introduced by complex tool ecosys-
+tems and allows errors to be attributed primarily to naviga-
+tion, retrieval, and evidence utilization behaviors. Such a
+controlled environment enables fine-grained observation of
+process-level failures, includingSurface-Level Skimming
+andObservation Neglect. The framework is instantiated
+with two base models,GPT-5-mini(Singh et al., 2025) </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generalize across distinct
+agent designs and execution dynamics.
+Benchmarks and Datasets.To ground our error anal-
+ysis in realistic agent workflows, we draw tasks from a
+collection of established and widely adopted benchmarks
+spanning both agentic paradigms. Rather than using these
+benchmarks for conventional performance evaluation, we
+leverage them as representative task sources to elicit di-
+5
+Benchmarking and Error Analysis of Deep Search and Deep Research LLM Agents
+verse long-horizon agent trajectories suitable for diagnostic
+analysis. Detailed dataset statistics and configurations are
+provided in Appendix B. For Deep Search agent, to capture
+representative information-seeking and web navigation be-
+haviors, we sample tasks from four commonly used Deep
+Search benchmarks:BrowseComp (Wei et al., 2025)A
+benchmark frequently used to study complex web browsing
+and autonomous navigation </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>synthesis.
+Although these benchmarks are traditionally employed for
+end-to-end accuracy evaluation, our framework instead uses
+them to generate complete execution traces. By leveraging
+their curated task prompts, reference answers, and structural
+requirements, we obtain standardized problem settings that
+enable consistent, process-oriented error diagnosis across
+diverse agent trajectories. We adopt GPT-5 as the LLM
+judge for both system-level error and task-level error.
+Result.In this section, we report process-level findings
+from both Deep Search and Deep Research settings under
+the unified taxonomy introduced in Section 3. We first ana-
+lyze System-Level errors to characterize interaction-side
+reliability, and then analyze Task-Level errors to reveal
+paradigm-specific cognitive bottlenecks in retrieval and syn-
+thesis workflows. These results provide a fine-grained view
+of where </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>detect, adapt to,
+and recover from inevitable failures during interaction.
+Task-Level Error. Task-level errors capture higher-order cog-
+nitive and strategic failures that occur even when tool execu-
+tion is syntactically valid. Unlike system-level breakdowns,
+these errors are reflected in how agents explore, accumulate
+evidence, and decide when to stop. In this section, we an-
+alyze task-level error distributions across benchmarks and
+models to identify paradigm-specific bottlenecks in Deep
+Search and Deep Research workflows.
+As detailed in Table 3, our task-level evaluation of Deep
+Search agents reveals a strong positive correlation between
+process-level reliability (No Error Rate) and final task accu-
+racy (Acc). Models that successfully navigate intermediate
+cognitive bottlenecks consistently achieve higher end-to-end
+success, confirming the diagnostic validity of our taxonomy.
+6</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarking and Error Analysis of Deep Search and Deep Research LLM Agents
+Metric BrowseComp BrowseComp-zh GAIA-val-text-only XBench-DS
+No Error3504 4861 1217 2750
+Tool Call Parsing Failure 22 6 3 15
+Incorrect Tool Name 109 70 232 236
+Call Formatting Error 4 13 34 23
+Tool-Function Mismatch 434 286 1227 650
+Irrelevant Query 30 36 169 22
+Domain Tool Misalignment 72 426 1163 369
+Syntactical Query Failure 84 6 180 15
+Unsupported Content Modality 5 8 61 13
+Non-Existent Page 0 1 39 2
+Anti-Scraping 392 437 30 268
+New Pattern Errors 10 20 7 13
+Avg. Steps / Task46.66 61.7 42.34 43.76
+Total Steps4666 6170 4362 4376
+Error Steps1162 1309 3145 1626
+No Error Rate75.10 78.78 27.90 62.84
+Acc17.00 42.00 63.11 73.00
+Table 2.System-Level error summary for Deep Search traces.
+Furthermore, the error distributions expose stark behavioral
+divergences between model architectures. GPT-5-mini pre-
+dominantly </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarking and Error Analysis of Deep Search and Deep Research LLM Agents
+Table 3.Distribution of task-level errors in Deep Search agents.
+Miro-30B denotes MiroThinker-30B-v1.5.
+BrowseComp BrowseComp-zh
+Failure Mode Miro-30B GPT-5-mini Miro-30B GPT-5-mini
+No Error 17 14 45 27
+Obs. Neglect 12 2 8 1
+Surface Skim. 17 20 9 14
+Premature Stop 4 20 1 38
+Rabbit Hole 9 3 8 0
+Ineffective Query 47 41 25 20
+No Error Rate 17.00 14.00 45.00 27.00
+Acc 17.00 15.00 42.00 29.00
+GAIA XBench-DS
+Failure Mode Miro-30B GPT-5-mini Miro-30B GPT-5-mini
+No Error 64 53 72 19
+Obs. Neglect 12 1 18 2
+Surface Skim. 5 4 3 0
+Premature Stop 12 41 1 75
+Rabbit Hole 7 1 2 1
+Ineffective Query 3 3 4 3
+No Error Rate 62.14 51.46 72.00 19.00
+Acc 63.11 56.31 73.00 41.00
+coverage, and recovery after failed actions rather than final-
+answer accuracy alone. Moreover, the taxonomy provides
+structured reward signals for iterative </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a
+central factor shaping agent robustness rather than a periph-
+eral implementation detail.
+Implications for Agentic Frameworks.Observed error
+propagation further highlights limitations of monolithic rea-
+soning loops. When planning, navigation, reading, and
+synthesis are handled within a single continuous process,
+context degradation and strategic drift become inevitable.
+More robust frameworks should introduce modular control
+stages separating planning, verification, and repair. Deep
+Search agents benefit from adaptive stopping criteria and
+explicit exploration-coverage checks, while Deep Research
+systems require staged synthesis pipelines that isolate re-
+Table 4.Distribution of task-level errors in Deep Research agents.
+C denotes Contradiction Neglect and Sourcing Bias, S denotes
+Synthesis Hallucination, and G denotes Goal Drift.
+Failure Mode Open-DR Step-DR
+No Error 44 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>C + S + G 9 1
+No Error Rate 4413
+RACE 0.5360.4802
+FACT 0.4680.4143
+trieval from reconciliation and report generation. Incorpo-
+rating lightweight runtime self-diagnosis mechanisms based
+on our taxonomy can enable early intervention, allowing
+agents to revise trajectories before failures fully propagate.
+Broader Takeaway.Fine-grained evaluation serves as an
+enabling infrastructure for reliable autonomous agents. By
+transforming opaque failures into structured diagnostic sig-
+nals, it supports systematic improvements across training,
+tool ecosystems, and framework architecture. As agent au-
+tonomy and interaction horizons continue to expand, shift-
+ing from outcome-based evaluation toward process-level
+diagnosis is essential for developing systems that are not
+only capable, but consistently reliable in open environments.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our
+work introduces a taxonomy aimed at more systematically
+characterizing failure patterns in long-horizon, information-
+dense autonomous research workflows.
+B. Dataset
+This appendix summarizes the dataset scale used in our
+evaluation.
+For Deep Search, we use four benchmarks: BrowseComp,
+BrowseComp-zh, GAIA-val-text, and XBench-DS. Due to
+evaluation cost constraints, BrowseComp and BrowseComp-
+zh are evaluated using subsampled subsets.
+For Deep Research, we use DeepResearch Bench as the
+evaluation source for long-horizon synthesis tasks.
+Success Criterion.For Deep Search, success is defined
+by answer correctness against the ground truth. Given
+model output ˆyand reference answer y∗, a run is con-
+sidered successful when ˆymatches y∗ under benchmark
+normalization rules (e.g., alias normalization and format-
+ting tolerance). This criterion is relatively uniform across
+Deep Search </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>benchmarks because these tasks typically have
+explicit reference answers.
+For Deep Research, success criteria are benchmark-
+dependent rather than uniform. In this work, we follow
+the DeepResearch Bench (Du et al., 2025) setting and eval-
+uate along two dimensions:
+• RACE(Reference-based and Adaptive Criteria-driven
+Evaluation)
+– Comprehensiveness: coverage breadth and depth
+of the research topic.
+– Insight/Depth: quality of analysis and insight
+generation.
+– Instruction-Following: adherence to specific
+task requirements.
+– Readability: clarity, organization, and presenta-
+tion quality.
+• FACT(Factual Abundance and Citation Trustworthi-
+ness)
+– Citation Accuracy: percentage of correctly sup-
+ported citations.
+– Effective Citations: average number of verifiably
+supported citations per task.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +346,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +362,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-21</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-22 09:08:39</li><li>Last seen by Paper Scout: 2026-10-22 09:08:42</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-21</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-22 09:08:39</li><li>Last seen by Paper Scout: 2026-10-23 09:03:20</li></ul>
             <ul><li>arXiv: 2610.29346</li><li>arXiv IDs: 2610.29346</li></ul>
           </section>
           <section class="detail-panel">

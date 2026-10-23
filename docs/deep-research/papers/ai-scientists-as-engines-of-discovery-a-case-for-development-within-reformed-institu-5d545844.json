@@ -46,7 +46,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-29 05:16:55",
-    "generated_at": "2026-10-22 09:13:47",
+    "generated_at": "2026-10-23 09:07:36",
     "last_seen_at": "2026-06-29 06:36:22",
     "metadata_sources": [
       "openalex",
@@ -114,15 +114,19 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-10-22T09:11:10.457438+00:00",
+    "assessed_at": "2026-10-23T09:05:31.494120+00:00",
     "assessment_scope": "full_text",
     "assessment_version": "quality-promotion-v2",
     "assessor_model": "gemini-3.8-flash",
     "assessor_type": "hybrid",
     "combined_rank_score": 0.88,
-    "concerns": [],
-    "concise_summary": "Scientific response or integrity validation failed; technical review pending.",
-    "confidence": "high",
+    "concerns": [
+      "The manuscript is a perspective and policy essay with no empirical evaluation, formal method description, or systematic validation of its central claims; the Denario demonstration is cited from external work rather than presented with evidence in this paper.",
+      "The central thesis that multi-agent systems represent a qualitative shift and that language-grounded systems may support scientific reasoning is asserted speculatively, with no experimental or theoretical validation supplied in the manuscript.",
+      "The governance recommendations are framed as concrete but are presented without evidence of feasibility, effectiveness, or comparison to alternatives, leaving their scientific and practical support unestablished."
+    ],
+    "concise_summary": "While the essay offers a coherent conceptual synthesis of governance challenges surrounding AI in science, it provides no independent empirical or methodological evaluation. Under rigorous scientific curation criteria requiring concrete method/system validation, a perspective paper without direct empirical testing warrants an uncertain decision.",
+    "confidence": "low",
     "coverage": {
       "assessment_input_characters": 42655,
       "assessment_input_sha256": "8f6605976612871bf4b4602b5c3e72b23ed57171b9a007c9c217909588999604",
@@ -579,8 +583,553 @@
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0003"
+        ],
+        "excerpt": "Agentic artificial intelligence (AI) systems are beginning to assist, accelerate,\nand partially automate scientific discovery, performing tasks that span literature\n1\narXiv:2606.22859v1  [cs.AI]  22 Jun 2026\nsynthesis, code generation, data analysis, hypothesis proposal, and model criticism.\nWe argue that this transition is qualitative rather than incremental, and that suitably\ndesigned multi-agent systems may evolve from passive computational tools into \"AI\nscientists\" that can expand the hypothesis-generating and verification capacity of\nscience. Such systems must be developed and deployed within a scientific ecosystem\nfit for purpose: institutions must be redesigned for verification, accountability,\ninterpretability, and dual-use safety. We sketch how multi-agent architectures,\nillustrated by the prototype frameworkDenario, accelerate the discovery cycle\nand traverse model spaces ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6b4a8cc92b74bcba669156deb68dc2527886c90052706fbe1ceabbb58a4f1ca8",
+            "evidence_id": "Ebee803639d13bcee-B0003",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 207,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Agentic artificial intelligence (AI) systems are beginning to assist, accelerate,\nand partially automate scientific discovery, performing tasks that span literature\n1\narXiv:2606.22859v1  [cs.AI]  22 Jun 2026"
+              },
+              {
+                "end": 688,
+                "page": 2,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "synthesis, code generation, data analysis, hypothesis proposal, and model criticism.\nWe argue that this transition is qualitative rather than incremental, and that suitably\ndesigned multi-agent systems may evolve from passive computational tools into \"AI\nscientists\" that can expand the hypothesis-generating and verification capacity of\nscience. Such systems must be developed and deployed within a scientific ecosystem\nfit for purpose: institutions must be redesigned for verification, accountability,\ninterpretability, and dual-use safety. We sketch how multi-agent architectures,\nillustrated by the prototype frameworkDenario, accelerate the discovery cycle\nand traverse model spaces "
+              }
+            ],
+            "text": "Agentic artificial intelligence (AI) systems are beginning to assist, accelerate,\nand partially automate scientific discovery, performing tasks that span literature\n1\narXiv:2606.22859v1  [cs.AI]  22 Jun 2026\nsynthesis, code generation, data analysis, hypothesis proposal, and model criticism.\nWe argue that this transition is qualitative rather than incremental, and that suitably\ndesigned multi-agent systems may evolve from passive computational tools into \"AI\nscientists\" that can expand the hypothesis-generating and verification capacity of\nscience. Such systems must be developed and deployed within a scientific ecosystem\nfit for purpose: institutions must be redesigned for verification, accountability,\ninterpretability, and dual-use safety. We sketch how multi-agent architectures,\nillustrated by the prototype frameworkDenario, accelerate the discovery cycle\nand traverse model spaces "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0007"
+        ],
+        "excerpt": "assist but do notreason, they generate\nbut do notfalsifyreliably, they interpolate but do notextrapolate. However, a different\nframework is now emerging in which AI multi-agent systems becomeepistemic actors\n2\nembedded within the scientific method. We will call such systemsAI scientists. We are\nnot yet there, but the trajectory is qualitative rather than incremental.\nThe central thesis is that, because they can expand the hypothesis-generating and\nverification capacity of science, such systems must be developed and deployed within\ninstitutions redesigned around verification, accountability, interpretability, and dual-use\nsafety. Science is a collective attempt to discover how the world works, and using tools\nto make that discovery faster can accelerate human capabilities. The argument proceeds\nin five steps: (i) what current AI systems actually do; (ii) how multi-agent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "59d5330e701e3330e024999f6832a038cdaa687a42c8f9ab6ce63a2ec179a608",
+            "evidence_id": "Ebee803639d13bcee-B0007",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 3571,
+                "page": 2,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 3362,
+                "text": "assist but do notreason, they generate\nbut do notfalsifyreliably, they interpolate but do notextrapolate. However, a different\nframework is now emerging in which AI multi-agent systems becomeepistemic actors\n2"
+              },
+              {
+                "end": 672,
+                "page": 3,
+                "section": "Abstract",
+                "section_index": 3,
+                "start": 0,
+                "text": "embedded within the scientific method. We will call such systemsAI scientists. We are\nnot yet there, but the trajectory is qualitative rather than incremental.\nThe central thesis is that, because they can expand the hypothesis-generating and\nverification capacity of science, such systems must be developed and deployed within\ninstitutions redesigned around verification, accountability, interpretability, and dual-use\nsafety. Science is a collective attempt to discover how the world works, and using tools\nto make that discovery faster can accelerate human capabilities. The argument proceeds\nin five steps: (i) what current AI systems actually do; (ii) how multi-agent "
+              }
+            ],
+            "text": "assist but do notreason, they generate\nbut do notfalsifyreliably, they interpolate but do notextrapolate. However, a different\nframework is now emerging in which AI multi-agent systems becomeepistemic actors\n2\nembedded within the scientific method. We will call such systemsAI scientists. We are\nnot yet there, but the trajectory is qualitative rather than incremental.\nThe central thesis is that, because they can expand the hypothesis-generating and\nverification capacity of science, such systems must be developed and deployed within\ninstitutions redesigned around verification, accountability, interpretability, and dual-use\nsafety. Science is a collective attempt to discover how the world works, and using tools\nto make that discovery faster can accelerate human capabilities. The argument proceeds\nin five steps: (i) what current AI systems actually do; (ii) how multi-agent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0011"
+        ],
+        "excerpt": "data;\nand acontroller agentcoordinates the others. This architecture enables an internal\ndialectic in which competing ideas are explored and refined, and can generate novel\ninsights by traversing regions of model parameter space that human researchers may\nnever have considered [Ghafarollahi and Buehler, 2024, Lu et al., 2024, Yamada et al.,\n2025, Gottweis et al., 2025]. The system resembles a research team, with the crucial\ndifference that the collaborators are algorithmic agents operating at scale and at machine\nspeed.\nTo probe this paradigm concretely, some of us have developedDenario[Villaescusa-\nNavarro et al., 2025], a multi-agent framework for scientific discovery. 1 Denario\nintegrates automated literature exploration, code generation and execution, dataset\nanalysis, and iterative hypothesis testing; cooperating agents communicate through\nstructured prompts and share computational ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fe4ed9eae8b10fcf429911dffaf189e0a559d35fbf4f06292e1e943265c7044f",
+            "evidence_id": "Ebee803639d13bcee-B0011",
+            "pages": [
+              4
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1411,
+                "page": 4,
+                "section": "Abstract",
+                "section_index": 4,
+                "start": 511,
+                "text": "data;\nand acontroller agentcoordinates the others. This architecture enables an internal\ndialectic in which competing ideas are explored and refined, and can generate novel\ninsights by traversing regions of model parameter space that human researchers may\nnever have considered [Ghafarollahi and Buehler, 2024, Lu et al., 2024, Yamada et al.,\n2025, Gottweis et al., 2025]. The system resembles a research team, with the crucial\ndifference that the collaborators are algorithmic agents operating at scale and at machine\nspeed.\nTo probe this paradigm concretely, some of us have developedDenario[Villaescusa-\nNavarro et al., 2025], a multi-agent framework for scientific discovery. 1 Denario\nintegrates automated literature exploration, code generation and execution, dataset\nanalysis, and iterative hypothesis testing; cooperating agents communicate through\nstructured prompts and share computational "
+              }
+            ],
+            "text": "data;\nand acontroller agentcoordinates the others. This architecture enables an internal\ndialectic in which competing ideas are explored and refined, and can generate novel\ninsights by traversing regions of model parameter space that human researchers may\nnever have considered [Ghafarollahi and Buehler, 2024, Lu et al., 2024, Yamada et al.,\n2025, Gottweis et al., 2025]. The system resembles a research team, with the crucial\ndifference that the collaborators are algorithmic agents operating at scale and at machine\nspeed.\nTo probe this paradigm concretely, some of us have developedDenario[Villaescusa-\nNavarro et al., 2025], a multi-agent framework for scientific discovery. 1 Denario\nintegrates automated literature exploration, code generation and execution, dataset\nanalysis, and iterative hypothesis testing; cooperating agents communicate through\nstructured prompts and share computational "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0012"
+        ],
+        "excerpt": "tools, while a central reasoning layer\norchestrates the workflow. In one controlled demonstration [Braga et al., 2026] Denario\nwas asked to unveil the hidden symmetries that keep certain modified-gravity theories\n\"healthy\" (ghost-free), and it identified them on its own. The exercise illustrates a broader\npossibility: AI systems can search candidate model spaces far faster than humans can,\nallowing scientists to focus on interpretation and conceptual reasoning.\nCompressing the discovery cycle and expanding the hy-\npothesis space\nScientific progress typically follows a cycle: formulating hypotheses, developing com-\nputational or experimental tools, analyzing data, and communicating results [Popper,\n1963]. Historically, each stage required substantial effort. Multi-agent AI systems\ncompress several stages at once: literature retrieval is accelerated, analysis code can be\ngenerated and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "85336b9f0246c83adeef34b028a45d2373b71f617f1110ac6d021387e3b22b25",
+            "evidence_id": "Ebee803639d13bcee-B0012",
+            "pages": [
+              4
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2307,
+                "page": 4,
+                "section": "Abstract",
+                "section_index": 4,
+                "start": 1411,
+                "text": "tools, while a central reasoning layer\norchestrates the workflow. In one controlled demonstration [Braga et al., 2026] Denario\nwas asked to unveil the hidden symmetries that keep certain modified-gravity theories\n\"healthy\" (ghost-free), and it identified them on its own. The exercise illustrates a broader\npossibility: AI systems can search candidate model spaces far faster than humans can,\nallowing scientists to focus on interpretation and conceptual reasoning.\nCompressing the discovery cycle and expanding the hy-\npothesis space\nScientific progress typically follows a cycle: formulating hypotheses, developing com-\nputational or experimental tools, analyzing data, and communicating results [Popper,\n1963]. Historically, each stage required substantial effort. Multi-agent AI systems\ncompress several stages at once: literature retrieval is accelerated, analysis code can be\ngenerated and "
+              }
+            ],
+            "text": "tools, while a central reasoning layer\norchestrates the workflow. In one controlled demonstration [Braga et al., 2026] Denario\nwas asked to unveil the hidden symmetries that keep certain modified-gravity theories\n\"healthy\" (ghost-free), and it identified them on its own. The exercise illustrates a broader\npossibility: AI systems can search candidate model spaces far faster than humans can,\nallowing scientists to focus on interpretation and conceptual reasoning.\nCompressing the discovery cycle and expanding the hy-\npothesis space\nScientific progress typically follows a cycle: formulating hypotheses, developing com-\nputational or experimental tools, analyzing data, and communicating results [Popper,\n1963]. Historically, each stage required substantial effort. Multi-agent AI systems\ncompress several stages at once: literature retrieval is accelerated, analysis code can be\ngenerated and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0024"
+        ],
+        "excerpt": "accelerate. We acknowledge that this essay itself represents a snapshot in time\nwithin this rapidly evolving landscape. None of the categories we evoke are eternal or\nimpermeable. One response is to return to the underlying question: what do we want\nfrom our science system, and what role should AI play within it? The answer should\nstart from the fact that AI scientists may be able to populate the adjacent possible at\nscale, while the human scientific vocation is to decide when the adjacent possible is no\nlonger enough, create the next space of possibilities and above all take responsibility.\nSix governance problems must be addressed concretely if AI scientists are to be deployed\nresponsibly.First, dual-use risk: agentic systems with access to chemistry, biology,\nautonomous experimentation, or cyber tools can lower barriers to harmful capabilities;\nthey require capability gating, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "bb2edda0c11fa6a64d62d943d28967765a30a67ed17ea6312b94fefde5dd08a7",
+            "evidence_id": "Ebee803639d13bcee-B0024",
+            "pages": [
+              7
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 3046,
+                "page": 7,
+                "section": "Abstract",
+                "section_index": 7,
+                "start": 2154,
+                "text": "accelerate. We acknowledge that this essay itself represents a snapshot in time\nwithin this rapidly evolving landscape. None of the categories we evoke are eternal or\nimpermeable. One response is to return to the underlying question: what do we want\nfrom our science system, and what role should AI play within it? The answer should\nstart from the fact that AI scientists may be able to populate the adjacent possible at\nscale, while the human scientific vocation is to decide when the adjacent possible is no\nlonger enough, create the next space of possibilities and above all take responsibility.\nSix governance problems must be addressed concretely if AI scientists are to be deployed\nresponsibly.First, dual-use risk: agentic systems with access to chemistry, biology,\nautonomous experimentation, or cyber tools can lower barriers to harmful capabilities;\nthey require capability gating, "
+              }
+            ],
+            "text": "accelerate. We acknowledge that this essay itself represents a snapshot in time\nwithin this rapidly evolving landscape. None of the categories we evoke are eternal or\nimpermeable. One response is to return to the underlying question: what do we want\nfrom our science system, and what role should AI play within it? The answer should\nstart from the fact that AI scientists may be able to populate the adjacent possible at\nscale, while the human scientific vocation is to decide when the adjacent possible is no\nlonger enough, create the next space of possibilities and above all take responsibility.\nSix governance problems must be addressed concretely if AI scientists are to be deployed\nresponsibly.First, dual-use risk: agentic systems with access to chemistry, biology,\nautonomous experimentation, or cyber tools can lower barriers to harmful capabilities;\nthey require capability gating, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0025"
+        ],
+        "excerpt": "structured red-teaming, pre-deployment evaluations, and\ninternational coordination.Second, autonomous experimentation: agents that trigger\n7\nphysical experiments or interact with cloud-hosted labs need explicit authorization\nboundaries, audit trails, and human-in-the-loop checkpoints; recent demonstrations of\nautonomous agents acting outside intended behavioral boundaries make loose natural-\nlanguage instructions an inadequate safety layer.Third, publication flooding and\nhallucinated results: machines can produce plausible manuscripts faster than humans\ncan evaluate them, and false outputs can enter the literature, be reused, and become\ntraining data for the next generation of models. This is a route to mediocrity collapse:\nincorrect results propagate because they are produced quickly, reviewed imperfectly,\nand later treated as part of the knowledge base. The emergence of large numbers ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "89d3042aed35f72ff5f8a5e952a4d031c9ac8b961ec7511acc8a7c82b2f8a437",
+            "evidence_id": "Ebee803639d13bcee-B0025",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 3186,
+                "page": 7,
+                "section": "Abstract",
+                "section_index": 7,
+                "start": 3046,
+                "text": "structured red-teaming, pre-deployment evaluations, and\ninternational coordination.Second, autonomous experimentation: agents that trigger\n7"
+              },
+              {
+                "end": 758,
+                "page": 8,
+                "section": "Abstract",
+                "section_index": 8,
+                "start": 0,
+                "text": "physical experiments or interact with cloud-hosted labs need explicit authorization\nboundaries, audit trails, and human-in-the-loop checkpoints; recent demonstrations of\nautonomous agents acting outside intended behavioral boundaries make loose natural-\nlanguage instructions an inadequate safety layer.Third, publication flooding and\nhallucinated results: machines can produce plausible manuscripts faster than humans\ncan evaluate them, and false outputs can enter the literature, be reused, and become\ntraining data for the next generation of models. This is a route to mediocrity collapse:\nincorrect results propagate because they are produced quickly, reviewed imperfectly,\nand later treated as part of the knowledge base. The emergence of large numbers "
+              }
+            ],
+            "text": "structured red-teaming, pre-deployment evaluations, and\ninternational coordination.Second, autonomous experimentation: agents that trigger\n7\nphysical experiments or interact with cloud-hosted labs need explicit authorization\nboundaries, audit trails, and human-in-the-loop checkpoints; recent demonstrations of\nautonomous agents acting outside intended behavioral boundaries make loose natural-\nlanguage instructions an inadequate safety layer.Third, publication flooding and\nhallucinated results: machines can produce plausible manuscripts faster than humans\ncan evaluate them, and false outputs can enter the literature, be reused, and become\ntraining data for the next generation of models. This is a route to mediocrity collapse:\nincorrect results propagate because they are produced quickly, reviewed imperfectly,\nand later treated as part of the knowledge base. The emergence of large numbers "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0026"
+        ],
+        "excerpt": "of\nhallucinated citations has already led arXiv to publicize sanctions [Zhao et al., 2026,\nChawla, 2026].Fourth, homogenization: when many groups query the same models,\nmethodological diversity declines; the risk is even higher if AI systems are also used\nnaively to evaluate grants and papers, because proposals may be rewarded for resembling\nthe past rather than for being both innovative and impactful.Fifth, knowledge collapse:\nif AI reduces the incentive to acquire individual expertise, the human capacity needed\nfor non-incremental insight may erode [Acemoglu et al., 2026].Sixth, unsafe self-\nimprovement: if AI-generated knowledge becomes training data for subsequent AI\nsystems, a recursive process may arise in which AI outputs drive innovations that\nenhance the systems from which they originated. These possibilities are commonly\ndiscussed under self-improving and self-replicating AI ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "49342ee70e935b37eff9cff398b2452730dbd808cc182b2b88dfd4017c454272",
+            "evidence_id": "Ebee803639d13bcee-B0026",
+            "pages": [
+              8
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1656,
+                "page": 8,
+                "section": "Abstract",
+                "section_index": 8,
+                "start": 758,
+                "text": "of\nhallucinated citations has already led arXiv to publicize sanctions [Zhao et al., 2026,\nChawla, 2026].Fourth, homogenization: when many groups query the same models,\nmethodological diversity declines; the risk is even higher if AI systems are also used\nnaively to evaluate grants and papers, because proposals may be rewarded for resembling\nthe past rather than for being both innovative and impactful.Fifth, knowledge collapse:\nif AI reduces the incentive to acquire individual expertise, the human capacity needed\nfor non-incremental insight may erode [Acemoglu et al., 2026].Sixth, unsafe self-\nimprovement: if AI-generated knowledge becomes training data for subsequent AI\nsystems, a recursive process may arise in which AI outputs drive innovations that\nenhance the systems from which they originated. These possibilities are commonly\ndiscussed under self-improving and self-replicating AI "
+              }
+            ],
+            "text": "of\nhallucinated citations has already led arXiv to publicize sanctions [Zhao et al., 2026,\nChawla, 2026].Fourth, homogenization: when many groups query the same models,\nmethodological diversity declines; the risk is even higher if AI systems are also used\nnaively to evaluate grants and papers, because proposals may be rewarded for resembling\nthe past rather than for being both innovative and impactful.Fifth, knowledge collapse:\nif AI reduces the incentive to acquire individual expertise, the human capacity needed\nfor non-incremental insight may erode [Acemoglu et al., 2026].Sixth, unsafe self-\nimprovement: if AI-generated knowledge becomes training data for subsequent AI\nsystems, a recursive process may arise in which AI outputs drive innovations that\nenhance the systems from which they originated. These possibilities are commonly\ndiscussed under self-improving and self-replicating AI "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0029"
+        ],
+        "excerpt": "mainstream position for scientific publishers, with many journals adopting AI policies\nthat request self-declarations of where and how AI has supported the submitted\nresearch. However, it is as yet unclear what effect these requirements have on\nresearcher behavior. Currently, disclosure is voluntary and it is impossible to police\nand enforce. Moving beyond voluntary disclosures, it is possible to imagine that\nmanuscripts using AI agents in hypothesis generation, code production, data analysis,\nor drafting could have a structured, machine-readable provenance record, being\nshipped with executable pipelines that allow independent re-running of the workflow.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mandating Provenance And Reproducibility.Disclosure Of Ai Use Is Becoming A",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "2caa9b991c9224554ceea9a433c0a2d2904f7bb91ff79bdb046565991e3ef15b",
+            "evidence_id": "Ebee803639d13bcee-B0029",
+            "pages": [
+              9
+            ],
+            "section": "Mandating Provenance And Reproducibility.Disclosure Of Ai Use Is Becoming A",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 662,
+                "page": 9,
+                "section": "Mandating Provenance And Reproducibility.Disclosure Of Ai Use Is Becoming A",
+                "section_index": 9,
+                "start": 0,
+                "text": "mainstream position for scientific publishers, with many journals adopting AI policies\nthat request self-declarations of where and how AI has supported the submitted\nresearch. However, it is as yet unclear what effect these requirements have on\nresearcher behavior. Currently, disclosure is voluntary and it is impossible to police\nand enforce. Moving beyond voluntary disclosures, it is possible to imagine that\nmanuscripts using AI agents in hypothesis generation, code production, data analysis,\nor drafting could have a structured, machine-readable provenance record, being\nshipped with executable pipelines that allow independent re-running of the workflow."
+              }
+            ],
+            "text": "mainstream position for scientific publishers, with many journals adopting AI policies\nthat request self-declarations of where and how AI has supported the submitted\nresearch. However, it is as yet unclear what effect these requirements have on\nresearcher behavior. Currently, disclosure is voluntary and it is impossible to police\nand enforce. Moving beyond voluntary disclosures, it is possible to imagine that\nmanuscripts using AI agents in hypothesis generation, code production, data analysis,\nor drafting could have a structured, machine-readable provenance record, being\nshipped with executable pipelines that allow independent re-running of the workflow."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0030"
+        ],
+        "excerpt": "publishable machine-generated manuscripts creates new strains for human peer\nreview. arXiv's recent decision to sanction submissions containing unchecked AI-\ngenerated errors, such as hallucinated references, illustrates the scale of the challenge\nat hand. Some publishers are experimenting with the use of AI to support reviewers.2\nAlongside these efforts, there may be opportunities for journals to integrate AI-\nenabled checks for code execution, data integrity, statistical claims and citation\naccuracy, freeing human referees to focus on conceptual judgment. Whether such\ntools are trustworthy and useful in practice are live questions. Openly benchmarking\nhybrid human\u2013machine review could help explore this more rigorously.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Augmenting Peer Review With Automated Verification.The Volume Of Plausibly",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4933ccf57031cdd20775ba548cace5ad6116eaf76cce0479171de8d457decd25",
+            "evidence_id": "Ebee803639d13bcee-B0030",
+            "pages": [
+              9
+            ],
+            "section": "Augmenting Peer Review With Automated Verification.The Volume Of Plausibly",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 730,
+                "page": 9,
+                "section": "Augmenting Peer Review With Automated Verification.The Volume Of Plausibly",
+                "section_index": 10,
+                "start": 0,
+                "text": "publishable machine-generated manuscripts creates new strains for human peer\nreview. arXiv's recent decision to sanction submissions containing unchecked AI-\ngenerated errors, such as hallucinated references, illustrates the scale of the challenge\nat hand. Some publishers are experimenting with the use of AI to support reviewers.2\nAlongside these efforts, there may be opportunities for journals to integrate AI-\nenabled checks for code execution, data integrity, statistical claims and citation\naccuracy, freeing human referees to focus on conceptual judgment. Whether such\ntools are trustworthy and useful in practice are live questions. Openly benchmarking\nhybrid human\u2013machine review could help explore this more rigorously."
+              }
+            ],
+            "text": "publishable machine-generated manuscripts creates new strains for human peer\nreview. arXiv's recent decision to sanction submissions containing unchecked AI-\ngenerated errors, such as hallucinated references, illustrates the scale of the challenge\nat hand. Some publishers are experimenting with the use of AI to support reviewers.2\nAlongside these efforts, there may be opportunities for journals to integrate AI-\nenabled checks for code execution, data integrity, statistical claims and citation\naccuracy, freeing human referees to focus on conceptual judgment. Whether such\ntools are trustworthy and useful in practice are live questions. Openly benchmarking\nhybrid human\u2013machine review could help explore this more rigorously."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0033"
+        ],
+        "excerpt": "reviews\nSahu et al. [2025]\n9\nlanguage interfaces that give fluent or convincing responses Kosmyna et al. [2025].\nAnother is the emergence of new forms of agentic debt, as the boundary between\nautomatable tasks and human judgment is blurred in complex agentic systems. At\nthe same time, evidence of emergent misalignment in agentic systems highlights the\nrisk of harmful behaviors from AI, even when given natural language instructions\nto the contrary MacDiarmid et al. [2025]. What an effective authorization interface\nlooks like in a working lab environment is unresolved. A starting point might be\nthat any AI-initiated physical experiment, irreversible intervention, or release of a\nself-modifying agent should require explicit, logged human authorization; cloud-lab\nproviders and institutional review boards should adopt this as a baseline.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Governing Dual-Use Capabilities.Fields Such As Biosecurity, Which Have A History",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0bd12b11ca831634adf9206b479161f7780c70e900a1c5a1579c6173550e74f7",
+            "evidence_id": "Ebee803639d13bcee-B0033",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Governing Dual-Use Capabilities.Fields Such As Biosecurity, Which Have A History",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1816,
+                "page": 9,
+                "section": "Governing Dual-Use Capabilities.Fields Such As Biosecurity, Which Have A History",
+                "section_index": 11,
+                "start": 1788,
+                "text": "reviews\nSahu et al. [2025]\n9"
+              },
+              {
+                "end": 815,
+                "page": 10,
+                "section": "Governing Dual-Use Capabilities.Fields Such As Biosecurity, Which Have A History",
+                "section_index": 12,
+                "start": 0,
+                "text": "language interfaces that give fluent or convincing responses Kosmyna et al. [2025].\nAnother is the emergence of new forms of agentic debt, as the boundary between\nautomatable tasks and human judgment is blurred in complex agentic systems. At\nthe same time, evidence of emergent misalignment in agentic systems highlights the\nrisk of harmful behaviors from AI, even when given natural language instructions\nto the contrary MacDiarmid et al. [2025]. What an effective authorization interface\nlooks like in a working lab environment is unresolved. A starting point might be\nthat any AI-initiated physical experiment, irreversible intervention, or release of a\nself-modifying agent should require explicit, logged human authorization; cloud-lab\nproviders and institutional review boards should adopt this as a baseline."
+              }
+            ],
+            "text": "reviews\nSahu et al. [2025]\n9\nlanguage interfaces that give fluent or convincing responses Kosmyna et al. [2025].\nAnother is the emergence of new forms of agentic debt, as the boundary between\nautomatable tasks and human judgment is blurred in complex agentic systems. At\nthe same time, evidence of emergent misalignment in agentic systems highlights the\nrisk of harmful behaviors from AI, even when given natural language instructions\nto the contrary MacDiarmid et al. [2025]. What an effective authorization interface\nlooks like in a working lab environment is unresolved. A starting point might be\nthat any AI-initiated physical experiment, irreversible intervention, or release of a\nself-modifying agent should require explicit, logged human authorization; cloud-lab\nproviders and institutional review boards should adopt this as a baseline."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0038"
+        ],
+        "excerpt": "robust reasoning requires an internal\nmodel of the world\u2014one that encodes objects, causality and dynamics in a manner akin\nto human mental representations\u2014with language a secondary communicative interface\nbuilt on top. The history of innovation, however, has shown that biological mimicry\nis not always the most efficient route to mechanization: after centuries of attempts to\nunlock human flight with mechanical flapping wings, the successful solution was the\nstatic airfoil. Contemporary AI systems trained almost exclusively on linguistic and\nsymbolic corpora already exhibit increasingly sophisticated inference, abstraction and\neven hypothesis generation, suggesting an analogous pattern in cognition. Should such\nsystems demonstrate sustained success in scientific contexts\u2014deriving new results, iden-\ntifying inconsistencies in existing theories, or proposing viable extensions to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reforming Authorship And Credit.One Area Of Emerging Consensus Across Pub-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b8b7ce7dfca2153ac16631eada173f87bc6924fda0d9fadfafb1f85ed041a4d0",
+            "evidence_id": "Ebee803639d13bcee-B0038",
+            "pages": [
+              11
+            ],
+            "section": "Reforming Authorship And Credit.One Area Of Emerging Consensus Across Pub-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1622,
+                "page": 11,
+                "section": "Reforming Authorship And Credit.One Area Of Emerging Consensus Across Pub-",
+                "section_index": 16,
+                "start": 734,
+                "text": "robust reasoning requires an internal\nmodel of the world\u2014one that encodes objects, causality and dynamics in a manner akin\nto human mental representations\u2014with language a secondary communicative interface\nbuilt on top. The history of innovation, however, has shown that biological mimicry\nis not always the most efficient route to mechanization: after centuries of attempts to\nunlock human flight with mechanical flapping wings, the successful solution was the\nstatic airfoil. Contemporary AI systems trained almost exclusively on linguistic and\nsymbolic corpora already exhibit increasingly sophisticated inference, abstraction and\neven hypothesis generation, suggesting an analogous pattern in cognition. Should such\nsystems demonstrate sustained success in scientific contexts\u2014deriving new results, iden-\ntifying inconsistencies in existing theories, or proposing viable extensions to "
+              }
+            ],
+            "text": "robust reasoning requires an internal\nmodel of the world\u2014one that encodes objects, causality and dynamics in a manner akin\nto human mental representations\u2014with language a secondary communicative interface\nbuilt on top. The history of innovation, however, has shown that biological mimicry\nis not always the most efficient route to mechanization: after centuries of attempts to\nunlock human flight with mechanical flapping wings, the successful solution was the\nstatic airfoil. Contemporary AI systems trained almost exclusively on linguistic and\nsymbolic corpora already exhibit increasingly sophisticated inference, abstraction and\neven hypothesis generation, suggesting an analogous pattern in cognition. Should such\nsystems demonstrate sustained success in scientific contexts\u2014deriving new results, iden-\ntifying inconsistencies in existing theories, or proposing viable extensions to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0039"
+        ],
+        "excerpt": "established\nframeworks\u2014it would suggest that the capacity for reasoning is not necessarily tied to\nexplicit world models as previously assumed.\nFrom a formal standpoint these generative systems are built on instances of universal\nfunction approximators\u2014deep compositions of nonlinear maps such as the multilayer\nperceptron,\nf(x) =W L \u03c3(WL\u22121 \u03c3(\u00b7 \u00b7 \u00b7\u03c3(W1x+b 1)\u00b7 \u00b7 \u00b7) +b L\u22121) +bL,\nor architectures inspired by the Kolmogorov\u2013Arnold representation theorem. The sub-\nstantive possibility is that language, when sufficiently rich and systematically structured,\nmay itself constitute a representation of the world adequate for many forms of reasoning,\nwith linguistic data functioning as a compressed, distributed representation of empirical\nreality, and the neural network acting as a mechanism for navigating and recombining\nthat representation, extracting latent structures that support inference and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reforming Authorship And Credit.One Area Of Emerging Consensus Across Pub-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "dd664682d3fbedc8d0a1126feee78aba3267dd982752b24af2dc25db3126e5b6",
+            "evidence_id": "Ebee803639d13bcee-B0039",
+            "pages": [
+              11
+            ],
+            "section": "Reforming Authorship And Credit.One Area Of Emerging Consensus Across Pub-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2519,
+                "page": 11,
+                "section": "Reforming Authorship And Credit.One Area Of Emerging Consensus Across Pub-",
+                "section_index": 16,
+                "start": 1622,
+                "text": "established\nframeworks\u2014it would suggest that the capacity for reasoning is not necessarily tied to\nexplicit world models as previously assumed.\nFrom a formal standpoint these generative systems are built on instances of universal\nfunction approximators\u2014deep compositions of nonlinear maps such as the multilayer\nperceptron,\nf(x) =W L \u03c3(WL\u22121 \u03c3(\u00b7 \u00b7 \u00b7\u03c3(W1x+b 1)\u00b7 \u00b7 \u00b7) +b L\u22121) +bL,\nor architectures inspired by the Kolmogorov\u2013Arnold representation theorem. The sub-\nstantive possibility is that language, when sufficiently rich and systematically structured,\nmay itself constitute a representation of the world adequate for many forms of reasoning,\nwith linguistic data functioning as a compressed, distributed representation of empirical\nreality, and the neural network acting as a mechanism for navigating and recombining\nthat representation, extracting latent structures that support inference and "
+              }
+            ],
+            "text": "established\nframeworks\u2014it would suggest that the capacity for reasoning is not necessarily tied to\nexplicit world models as previously assumed.\nFrom a formal standpoint these generative systems are built on instances of universal\nfunction approximators\u2014deep compositions of nonlinear maps such as the multilayer\nperceptron,\nf(x) =W L \u03c3(WL\u22121 \u03c3(\u00b7 \u00b7 \u00b7\u03c3(W1x+b 1)\u00b7 \u00b7 \u00b7) +b L\u22121) +bL,\nor architectures inspired by the Kolmogorov\u2013Arnold representation theorem. The sub-\nstantive possibility is that language, when sufficiently rich and systematically structured,\nmay itself constitute a representation of the world adequate for many forms of reasoning,\nwith linguistic data functioning as a compressed, distributed representation of empirical\nreality, and the neural network acting as a mechanism for navigating and recombining\nthat representation, extracting latent structures that support inference and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2606.22859",
     "gate_version": "dual-promotion-v3",
     "manual_override": false,
@@ -589,6 +1138,40 @@
     "paper_type": "position_or_conceptual",
     "positive_signals": [],
     "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript is a perspective and policy essay with no empirical evaluation, formal method description, or systematic validation of its central claims; the Denario demonstration is cited from external work rather than presented with evidence in this paper.",
+          "The central thesis that multi-agent systems represent a qualitative shift and that language-grounded systems may support scientific reasoning is asserted speculatively, with no experimental or theoretical validation supplied in the manuscript.",
+          "The governance recommendations are framed as concrete but are presented without evidence of feasibility, effectiveness, or comparison to alternatives, leaving their scientific and practical support unestablished."
+        ],
+        "canonical_id": "openalex:W7165816672",
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The paper is a qualitative argumentative essay without an optimization or evaluation signal, so independence is not applicable.",
+          "final_evaluation_signal": "Not applicable; no quantitative or automated evaluation benchmark is reported.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; the manuscript reports no model training, tuning, selection, or other adaptation loop.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0003",
+          "Ebee803639d13bcee-B0007",
+          "Ebee803639d13bcee-B0011",
+          "Ebee803639d13bcee-B0012",
+          "Ebee803639d13bcee-B0024",
+          "Ebee803639d13bcee-B0025",
+          "Ebee803639d13bcee-B0026",
+          "Ebee803639d13bcee-B0029",
+          "Ebee803639d13bcee-B0030",
+          "Ebee803639d13bcee-B0033",
+          "Ebee803639d13bcee-B0038",
+          "Ebee803639d13bcee-B0039"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "d6c968b51fc17e7386880affe6e0c70a84283f211eea9c6a65b2cb8cdf218e3d"
+      },
       "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
       "adjudicator_provider": "openrouter",
       "model_pair": {
@@ -605,17 +1188,50 @@
         },
         "version": "model-pair-v1"
       },
-      "outcome": "protocol_failure",
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7165816672",
+        "claim_evidence_alignment": "The conceptual arguments are aligned with the broad literature on AI governance and scientific automation, but the ambitious theoretical propositions regarding reasoning emerging purely from language models remain speculative and unvalidated by empirical data.",
+        "context_id": "bee803639d13bceef99231bd624b1c0439d58fd2ea1692b8b0dbe8788304e15f",
+        "decision": "uncertain",
+        "evaluation_assessment": "No formal experimental evaluation, baseline comparisons, empirical metrics, or user studies are conducted within the paper itself; supporting evidence relies on narrative citations of prior publications and thought experiments.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No quantitative evaluation or model training is conducted; the text consists of conceptual discussion and policy recommendations.",
+          "final_evaluation_signal": "Not applicable; no quantitative or automated evaluation benchmarks are reported.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; the manuscript presents a qualitative essay and governance argument without training or fine-tuning models.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "Ebee803639d13bcee-B0003",
+          "Ebee803639d13bcee-B0007",
+          "Ebee803639d13bcee-B0011",
+          "Ebee803639d13bcee-B0012",
+          "Ebee803639d13bcee-B0025",
+          "Ebee803639d13bcee-B0026",
+          "Ebee803639d13bcee-B0029",
+          "Ebee803639d13bcee-B0033",
+          "Ebee803639d13bcee-B0039"
+        ],
+        "limitations": "The authors explicitly note that the essay represents a temporal snapshot in a rapidly evolving technological landscape and that open challenges such as practical authorization interfaces for cloud labs and enforceable provenance remain unresolved.",
+        "method_assessment": "The manuscript is an argumentative perspective rather than an empirical study or technical system description; it references prototype tools like Denario conceptually without presenting new algorithmic methods, formal datasets, or systematic methodological evaluations.",
+        "quality_rationale": "While the essay offers a coherent conceptual synthesis of governance challenges surrounding AI in science, it provides no independent empirical or methodological evaluation. Under rigorous scientific curation criteria requiring concrete method/system validation, a perspective paper without direct empirical testing warrants an uncertain decision.",
+        "scoped_contribution": "This perspective and policy essay argues that multi-agent AI systems represent a qualitative shift in automated scientific discovery and proposes six institutional governance reforms to address dual-use risks, peer-review overload, and knowledge collapse.",
+        "source_content_hash": "d6c968b51fc17e7386880affe6e0c70a84283f211eea9c6a65b2cb8cdf218e3d"
+      },
       "primary_model": "gemini-3.8-flash",
-      "primary_provider": "google"
+      "primary_provider": "google",
+      "provenance_status": "pass"
     },
-    "rationale": "Scientific response or integrity validation failed; technical review pending.",
+    "rationale": "While the essay offers a coherent conceptual synthesis of governance challenges surrounding AI in science, it provides no independent empirical or methodological evaluation. Under rigorous scientific curation criteria requiring concrete method/system validation, a perspective paper without direct empirical testing warrants an uncertain decision.",
     "recommendation": "unknown",
     "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "d6c968b51fc17e7386880affe6e0c70a84283f211eea9c6a65b2cb8cdf218e3d",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
+    "uncertainty": "The authors explicitly note that the essay represents a temporal snapshot in a rapidly evolving technological landscape and that open challenges such as practical authorization interfaces for cloud labs and enforceable provenance remain unresolved."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

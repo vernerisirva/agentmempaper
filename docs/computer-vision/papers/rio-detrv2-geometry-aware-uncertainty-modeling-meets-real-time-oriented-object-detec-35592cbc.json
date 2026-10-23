@@ -27,12 +27,12 @@
   "first_seen_date": "2026-10-22",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-22 09:10:01",
-  "last_seen_date": "2026-10-22",
+  "last_seen_at": "2026-10-23 09:04:32",
+  "last_seen_date": "2026-10-23",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-21",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-22 09:10:12",
   "notified_date": "2026-10-22",
   "openalex_id": null,
@@ -42,8 +42,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-22 09:09:42",
-    "generated_at": "2026-10-22 09:13:51",
-    "last_seen_at": "2026-10-22 09:10:01",
+    "generated_at": "2026-10-23 09:07:39",
+    "last_seen_at": "2026-10-23 09:04:32",
     "metadata_sources": [
       "arxiv"
     ],
@@ -107,36 +107,1422 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-23T09:06:33.446215+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a sound, well-motivated architectural extension to real-time oriented DETRs with thorough mathematical descriptions, clear ablation studies, and robust benchmarking on standard datasets without methodological circularity.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 64487,
+      "assessment_input_sha256": "89f20953037f95e598fd5cc23c73608b017197262dd66cdaf328f4fd98fd555f",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.29159",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 62997,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 62589,
+      "evidence_block_count": 88,
+      "evidence_context_characters": 73570,
+      "evidence_context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+      "evidence_context_sha256": "1c08985bb1ec6ff39e26adfd522f03c3756f5e66667975f2910f19d73f4eee2c",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 63023,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "0c3d5e376da9d7f90c2cd21ae076721814a3c6be223a345b22b4b97640c58b8b",
+        "source_url": "https://arxiv.org/pdf/2610.29159",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 62997,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Rio-Detrv2: Geometry-Aware Uncertainty Modeling Meets Real-Time Oriented",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "limitations",
+          "section_index": 0,
+          "source_characters": 347,
+          "supplied_characters": 347
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1363,
+          "supplied_characters": 1363
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2543,
+          "supplied_characters": 2543
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 5814,
+          "supplied_characters": 5814
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 4,
+          "source_characters": 324,
+          "supplied_characters": 324
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 3781,
+          "supplied_characters": 3781
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 4286,
+          "supplied_characters": 4286
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 4042,
+          "supplied_characters": 4042
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 1998,
+          "supplied_characters": 1998
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 3809,
+          "supplied_characters": 3809
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 2382,
+          "supplied_characters": 2382
+        },
+        {
+          "heading": "Ap50-95 Compared With 51.80 Of The Original Rio-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1145,
+          "supplied_characters": 1145
+        },
+        {
+          "heading": "Ap50, And 55.13 Ap75. Compared With Circular De-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 828,
+          "supplied_characters": 828
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 13,
+          "source_characters": 1023,
+          "supplied_characters": 1023
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 939,
+          "supplied_characters": 939
+        },
+        {
+          "heading": "Ieee Transactions On Circuits And Systems For Video Tech-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 141,
+          "supplied_characters": 141
+        },
+        {
+          "heading": "Learning Roi Transformer For Oriented Object Detection In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 279,
+          "supplied_characters": 279
+        },
+        {
+          "heading": "Object Detection In Aerial Images: A Large-Scale Benchmark",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 962,
+          "supplied_characters": 962
+        },
+        {
+          "heading": "Oriented Feature-Query Manipulation For Efficient Tiny Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1101,
+          "supplied_characters": 1101
+        },
+        {
+          "heading": "Distance Matching With Adaptive Query Denoising For Rotated",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 526,
+          "supplied_characters": 526
+        },
+        {
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern Recog-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 253,
+          "supplied_characters": 253
+        },
+        {
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 213,
+          "supplied_characters": 213
+        },
+        {
+          "heading": "Fied And Distributed Bounding Boxes For Dense Object Detec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 957,
+          "supplied_characters": 957
+        },
+        {
+          "heading": "D-Fine: Redefine Regression Task In Detrs As Fine-Grained",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 226,
+          "supplied_characters": 226
+        },
+        {
+          "heading": "D-Fine: Redefine Regression Task In Detrs As Fine-Grained",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 4671,
+          "supplied_characters": 4671
+        },
+        {
+          "heading": "Appendix: Additional Details Of Oabdr",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 25,
+          "source_characters": 176,
+          "supplied_characters": 176
+        },
+        {
+          "heading": "Appendix: Boundary Target Assignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 26,
+          "source_characters": 241,
+          "supplied_characters": 241
+        },
+        {
+          "heading": "Appendix: Inverse Normalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 27,
+          "source_characters": 311,
+          "supplied_characters": 311
+        },
+        {
+          "heading": "Appendix: Layer-Wise Obb Decoding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 110,
+          "supplied_characters": 110
+        },
+        {
+          "heading": "Appendix: Additional Details Of Ctlar",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 988,
+          "supplied_characters": 988
+        },
+        {
+          "heading": "Appendix: Method-Specific Hyperparameters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 30,
+          "source_characters": 149,
+          "supplied_characters": 149
+        },
+        {
+          "heading": "Appendix: Latency Measurement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 2137,
+          "supplied_characters": 2137
+        },
+        {
+          "heading": "Appendix: Latency Measurement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 3583,
+          "supplied_characters": 3583
+        },
+        {
+          "heading": "Appendix: Latency Measurement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 3952,
+          "supplied_characters": 3952
+        },
+        {
+          "heading": "Appendix: Latency Measurement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 3490,
+          "supplied_characters": 3490
+        },
+        {
+          "heading": "Appendix: Latency Measurement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 3499,
+          "supplied_characters": 3499
+        }
+      ],
+      "selected_characters": 62589,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 347,
+          "heading": "Rio-Detrv2: Geometry-Aware Uncertainty Modeling Meets Real-Time Oriented",
+          "page": 1
+        },
+        {
+          "characters": 1363,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2543,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 5814,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 324,
+          "heading": "Method",
+          "page": 2
+        },
+        {
+          "characters": 3781,
+          "heading": "Method",
+          "page": 3
+        },
+        {
+          "characters": 4286,
+          "heading": "Method",
+          "page": 4
+        },
+        {
+          "characters": 4042,
+          "heading": "Method",
+          "page": 5
+        },
+        {
+          "characters": 1998,
+          "heading": "Experiments",
+          "page": 5
+        },
+        {
+          "characters": 3809,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 2382,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 1145,
+          "heading": "Ap50-95 Compared With 51.80 Of The Original Rio-",
+          "page": 7
+        },
+        {
+          "characters": 828,
+          "heading": "Ap50, And 55.13 Ap75. Compared With Circular De-",
+          "page": 7
+        },
+        {
+          "characters": 1023,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 939,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 141,
+          "heading": "Ieee Transactions On Circuits And Systems For Video Tech-",
+          "page": 8
+        },
+        {
+          "characters": 279,
+          "heading": "Learning Roi Transformer For Oriented Object Detection In",
+          "page": 8
+        },
+        {
+          "characters": 962,
+          "heading": "Object Detection In Aerial Images: A Large-Scale Benchmark",
+          "page": 8
+        },
+        {
+          "characters": 1101,
+          "heading": "Oriented Feature-Query Manipulation For Efficient Tiny Object",
+          "page": 8
+        },
+        {
+          "characters": 526,
+          "heading": "Distance Matching With Adaptive Query Denoising For Rotated",
+          "page": 8
+        },
+        {
+          "characters": 253,
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern Recog-",
+          "page": 8
+        },
+        {
+          "characters": 213,
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "page": 8
+        },
+        {
+          "characters": 957,
+          "heading": "Fied And Distributed Bounding Boxes For Dense Object Detec-",
+          "page": 8
+        },
+        {
+          "characters": 226,
+          "heading": "D-Fine: Redefine Regression Task In Detrs As Fine-Grained",
+          "page": 8
+        },
+        {
+          "characters": 4671,
+          "heading": "D-Fine: Redefine Regression Task In Detrs As Fine-Grained",
+          "page": 9
+        },
+        {
+          "characters": 176,
+          "heading": "Appendix: Additional Details Of Oabdr",
+          "page": 10
+        },
+        {
+          "characters": 241,
+          "heading": "Appendix: Boundary Target Assignment",
+          "page": 10
+        },
+        {
+          "characters": 311,
+          "heading": "Appendix: Inverse Normalization",
+          "page": 10
+        },
+        {
+          "characters": 110,
+          "heading": "Appendix: Layer-Wise Obb Decoding",
+          "page": 10
+        },
+        {
+          "characters": 988,
+          "heading": "Appendix: Additional Details Of Ctlar",
+          "page": 10
+        },
+        {
+          "characters": 149,
+          "heading": "Appendix: Method-Specific Hyperparameters",
+          "page": 10
+        },
+        {
+          "characters": 2137,
+          "heading": "Appendix: Latency Measurement",
+          "page": 10
+        },
+        {
+          "characters": 3583,
+          "heading": "Appendix: Latency Measurement",
+          "page": 11
+        },
+        {
+          "characters": 3952,
+          "heading": "Appendix: Latency Measurement",
+          "page": 12
+        },
+        {
+          "characters": 3490,
+          "heading": "Appendix: Latency Measurement",
+          "page": 13
+        },
+        {
+          "characters": 3499,
+          "heading": "Appendix: Latency Measurement",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "89f20953037f95e598fd5cc23c73608b017197262dd66cdaf328f4fd98fd555f",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "0c3d5e376da9d7f90c2cd21ae076721814a3c6be223a345b22b4b97640c58b8b",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0002"
+        ],
+        "excerpt": "RiO-DETR is the first real-time end-to-end transformer for\noriented object detection, yet further localization gains re-\nquireamoreexpressiveboxrepresentation.Althoughdistribu-\ntionalregressionhassucceededinhorizontalDETRs,extend-\ning it to oriented detection introduces geometry-misaligned\nboundary modeling and topology-inconsistent orientation re-\nfinement. We presentRiO-DETRv2, a geometry-aware un-\ncertainty modeling framework for real-time oriented object\ndetection.Toresolvethegeometrymismatch,Object-Aligned\nBoundary Distribution Refinement represents box bound-\naries as probability distributions in an object-aligned co-\nordinate system and progressively refines them across de-\ncoder layers. For better orientation topology consistency,\nweintroduceCircular-to-LocalAngularResidualRefinement\nthat transitions from global periodic search to local fine-\ngrained estimation. Unified OBB ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "18cc99ced6b15aac38e8c5c45aa89e655365cc960fdb0dd7b80f3d069604883e",
+            "evidence_id": "E8f5598891adc0c86-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "RiO-DETR is the first real-time end-to-end transformer for\noriented object detection, yet further localization gains re-\nquireamoreexpressiveboxrepresentation.Althoughdistribu-\ntionalregressionhassucceededinhorizontalDETRs,extend-\ning it to oriented detection introduces geometry-misaligned\nboundary modeling and topology-inconsistent orientation re-\nfinement. We presentRiO-DETRv2, a geometry-aware un-\ncertainty modeling framework for real-time oriented object\ndetection.Toresolvethegeometrymismatch,Object-Aligned\nBoundary Distribution Refinement represents box bound-\naries as probability distributions in an object-aligned co-\nordinate system and progressively refines them across de-\ncoder layers. For better orientation topology consistency,\nweintroduceCircular-to-LocalAngularResidualRefinement\nthat transitions from global periodic search to local fine-\ngrained estimation. Unified OBB "
+              }
+            ],
+            "text": "RiO-DETR is the first real-time end-to-end transformer for\noriented object detection, yet further localization gains re-\nquireamoreexpressiveboxrepresentation.Althoughdistribu-\ntionalregressionhassucceededinhorizontalDETRs,extend-\ning it to oriented detection introduces geometry-misaligned\nboundary modeling and topology-inconsistent orientation re-\nfinement. We presentRiO-DETRv2, a geometry-aware un-\ncertainty modeling framework for real-time oriented object\ndetection.Toresolvethegeometrymismatch,Object-Aligned\nBoundary Distribution Refinement represents box bound-\naries as probability distributions in an object-aligned co-\nordinate system and progressively refines them across de-\ncoder layers. For better orientation topology consistency,\nweintroduceCircular-to-LocalAngularResidualRefinement\nthat transitions from global periodic search to local fine-\ngrained estimation. Unified OBB "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0007"
+        ],
+        "excerpt": "Oct 2026\norientationshouldberepresentedindependentlyaccordingto\ntheir geometric structures, they jointly determine complete-\nOBB localization quality. Optimizing them with separate\nqualitycriteriamayproducehighconfidencepredictionswith\nunreliable overall localization.\nWe presentRiO-DETRv2, a geometry-aware uncertainty\nrefinementframeworkthatmodelsspatialandangularuncer-\ntainty according to their geometric structures while aligning\noptimizationatthecomplete-OBBlevel.Forspatiallocaliza-\ntion,Object-Aligned Boundary Distribution Refinement\nextendsD-FINE(Pengetal.2024)bydefiningfourboundary\ndistributions in an object-aligned local coordinate system.\nThis representation preserves stable side semantics under\narbitrary rotations, reduces orientation-boundary entangle-\nment,andenablesprogressiverefinementacrossdecoderlay-\ners. For orientation estimation,Circular-to-Local Angular\nResidual ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "28430bbaeca4e9ab0059de39f71d2a6000a28f70fbcf8e58ba58477d6f51e705",
+            "evidence_id": "E8f5598891adc0c86-B0007",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2543,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 2535,
+                "text": "Oct 2026"
+              },
+              {
+                "end": 884,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "orientationshouldberepresentedindependentlyaccordingto\ntheir geometric structures, they jointly determine complete-\nOBB localization quality. Optimizing them with separate\nqualitycriteriamayproducehighconfidencepredictionswith\nunreliable overall localization.\nWe presentRiO-DETRv2, a geometry-aware uncertainty\nrefinementframeworkthatmodelsspatialandangularuncer-\ntainty according to their geometric structures while aligning\noptimizationatthecomplete-OBBlevel.Forspatiallocaliza-\ntion,Object-Aligned Boundary Distribution Refinement\nextendsD-FINE(Pengetal.2024)bydefiningfourboundary\ndistributions in an object-aligned local coordinate system.\nThis representation preserves stable side semantics under\narbitrary rotations, reduces orientation-boundary entangle-\nment,andenablesprogressiverefinementacrossdecoderlay-\ners. For orientation estimation,Circular-to-Local Angular\nResidual "
+              }
+            ],
+            "text": "Oct 2026\norientationshouldberepresentedindependentlyaccordingto\ntheir geometric structures, they jointly determine complete-\nOBB localization quality. Optimizing them with separate\nqualitycriteriamayproducehighconfidencepredictionswith\nunreliable overall localization.\nWe presentRiO-DETRv2, a geometry-aware uncertainty\nrefinementframeworkthatmodelsspatialandangularuncer-\ntainty according to their geometric structures while aligning\noptimizationatthecomplete-OBBlevel.Forspatiallocaliza-\ntion,Object-Aligned Boundary Distribution Refinement\nextendsD-FINE(Pengetal.2024)bydefiningfourboundary\ndistributions in an object-aligned local coordinate system.\nThis representation preserves stable side semantics under\narbitrary rotations, reduces orientation-boundary entangle-\nment,andenablesprogressiverefinementacrossdecoderlay-\ners. For orientation estimation,Circular-to-Local Angular\nResidual "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0008"
+        ],
+        "excerpt": "Refinementmodels layer-wise residual distribu-\ntions around the current reference orientation. The first de-\ncoder layer performs topology-consistent global search over\nthe complete periodic domain using a circular distribution,\nwhilesubsequentlayersemployprogressivelycontractedlo-\ncal supports for fine angular estimation. The decoded resid-\nuals iteratively update the orientation through the periodic\nrefinementmechanismofRiO-DETR,extendingdeterminis-\nticangleregressiontocoarse-to-fineuncertaintyrefinement.\nFinally,Unified OBB Quality-Aligned Learningcoordi-\nnates boundary and angular branches using complete-OBB\nlocalization quality. The quality score serves as both the\nsoft classification target and the shared weight for distribu-\ntionlosses.Uncertaintystatisticsfrompredicteddistributions\nfurthercalibrateclassificationconfidence,improvingitscon-\nsistency with the reliability of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2a6c7c88cc612303935ca5b1bc57c0c6af07fd826732c36aff1a67d9e745bb63",
+            "evidence_id": "E8f5598891adc0c86-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1776,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 884,
+                "text": "Refinementmodels layer-wise residual distribu-\ntions around the current reference orientation. The first de-\ncoder layer performs topology-consistent global search over\nthe complete periodic domain using a circular distribution,\nwhilesubsequentlayersemployprogressivelycontractedlo-\ncal supports for fine angular estimation. The decoded resid-\nuals iteratively update the orientation through the periodic\nrefinementmechanismofRiO-DETR,extendingdeterminis-\nticangleregressiontocoarse-to-fineuncertaintyrefinement.\nFinally,Unified OBB Quality-Aligned Learningcoordi-\nnates boundary and angular branches using complete-OBB\nlocalization quality. The quality score serves as both the\nsoft classification target and the shared weight for distribu-\ntionlosses.Uncertaintystatisticsfrompredicteddistributions\nfurthercalibrateclassificationconfidence,improvingitscon-\nsistency with the reliability of "
+              }
+            ],
+            "text": "Refinementmodels layer-wise residual distribu-\ntions around the current reference orientation. The first de-\ncoder layer performs topology-consistent global search over\nthe complete periodic domain using a circular distribution,\nwhilesubsequentlayersemployprogressivelycontractedlo-\ncal supports for fine angular estimation. The decoded resid-\nuals iteratively update the orientation through the periodic\nrefinementmechanismofRiO-DETR,extendingdeterminis-\nticangleregressiontocoarse-to-fineuncertaintyrefinement.\nFinally,Unified OBB Quality-Aligned Learningcoordi-\nnates boundary and angular branches using complete-OBB\nlocalization quality. The quality score serves as both the\nsoft classification target and the shared weight for distribu-\ntionlosses.Uncertaintystatisticsfrompredicteddistributions\nfurthercalibrateclassificationconfidence,improvingitscon-\nsistency with the reliability of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0016"
+        ],
+        "excerpt": "im-\nageaxesnolongercorrespondtoconsistentphysicalsidesof\nthe object, as shown in Fig. 3. Consequently, the predicted\ndistributionsareforcedtomodelbothintrinsicboundaryun-\ncertainty and orientation-induced variations. Such geome-\ntrymisalignmentbreaksside-wisesemanticconsistencyand\nlimits progressive refinement across decoder layers.\nObject-aligned boundary representation.To address\nthis issue, we define boundary distributions in a canoni-\ncal coordinate frame aligned with the object geometry. Let\nb0 ={c 0, w0, h0, \u03b80}andb \u22c6 ={c \u22c6, w\u22c6, h\u22c6, \u03b8\u22c6}denote\nthe initial reference and target OBBs. We first transform the\ncenter offset into the target-aligned coordinate frame:\n\u03b4\u22c6loc =R(\u2212\u03b8 \u22c6)(c\u22c6 \u2212c 0) =\n\u0014\n\u03b4\u22c6x\n\u03b4\u22c6y\n\u0015\n,(1)\nwhereR(\u00b7)denotes a two-dimensional rotation matrix. The\nfourphysicalsidedistancesinthislocalframearedefinedas\nd\u22c6 =\n\uf8ee\n\uf8ef\uf8f0\nt\u22c6\nb\u22c6\n\u2113\u22c6\nr\u22c6\n\uf8f9\n\uf8fa\uf8fb =\n\uf8ee\n\uf8ef\uf8f0\nh\u22c6/2\u2212\u03b4 \u22c6y\nh\u22c6/2 +\u03b4 \u22c6y\nw\u22c6/2\u2212\u03b4 \u22c6x\nw\u22c6/2 +\u03b4 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9e101a5112f584101c49c5738d388170f410c15306aa7df5c3a58c0877e453f2",
+            "evidence_id": "E8f5598891adc0c86-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2268,
+                "page": 3,
+                "section": "Method",
+                "section_index": 5,
+                "start": 1369,
+                "text": "im-\nageaxesnolongercorrespondtoconsistentphysicalsidesof\nthe object, as shown in Fig. 3. Consequently, the predicted\ndistributionsareforcedtomodelbothintrinsicboundaryun-\ncertainty and orientation-induced variations. Such geome-\ntrymisalignmentbreaksside-wisesemanticconsistencyand\nlimits progressive refinement across decoder layers.\nObject-aligned boundary representation.To address\nthis issue, we define boundary distributions in a canoni-\ncal coordinate frame aligned with the object geometry. Let\nb0 ={c 0, w0, h0, \u03b80}andb \u22c6 ={c \u22c6, w\u22c6, h\u22c6, \u03b8\u22c6}denote\nthe initial reference and target OBBs. We first transform the\ncenter offset into the target-aligned coordinate frame:\n\u03b4\u22c6loc =R(\u2212\u03b8 \u22c6)(c\u22c6 \u2212c 0) =\n\u0014\n\u03b4\u22c6x\n\u03b4\u22c6y\n\u0015\n,(1)\nwhereR(\u00b7)denotes a two-dimensional rotation matrix. The\nfourphysicalsidedistancesinthislocalframearedefinedas\nd\u22c6 =\n\uf8ee\n\uf8ef\uf8f0\nt\u22c6\nb\u22c6\n\u2113\u22c6\nr\u22c6\n\uf8f9\n\uf8fa\uf8fb =\n\uf8ee\n\uf8ef\uf8f0\nh\u22c6/2\u2212\u03b4 \u22c6y\nh\u22c6/2 +\u03b4 \u22c6y\nw\u22c6/2\u2212\u03b4 \u22c6x\nw\u22c6/2 +\u03b4 "
+              }
+            ],
+            "text": "im-\nageaxesnolongercorrespondtoconsistentphysicalsidesof\nthe object, as shown in Fig. 3. Consequently, the predicted\ndistributionsareforcedtomodelbothintrinsicboundaryun-\ncertainty and orientation-induced variations. Such geome-\ntrymisalignmentbreaksside-wisesemanticconsistencyand\nlimits progressive refinement across decoder layers.\nObject-aligned boundary representation.To address\nthis issue, we define boundary distributions in a canoni-\ncal coordinate frame aligned with the object geometry. Let\nb0 ={c 0, w0, h0, \u03b80}andb \u22c6 ={c \u22c6, w\u22c6, h\u22c6, \u03b8\u22c6}denote\nthe initial reference and target OBBs. We first transform the\ncenter offset into the target-aligned coordinate frame:\n\u03b4\u22c6loc =R(\u2212\u03b8 \u22c6)(c\u22c6 \u2212c 0) =\n\u0014\n\u03b4\u22c6x\n\u03b4\u22c6y\n\u0015\n,(1)\nwhereR(\u00b7)denotes a two-dimensional rotation matrix. The\nfourphysicalsidedistancesinthislocalframearedefinedas\nd\u22c6 =\n\uf8ee\n\uf8ef\uf8f0\nt\u22c6\nb\u22c6\n\u2113\u22c6\nr\u22c6\n\uf8f9\n\uf8fa\uf8fb =\n\uf8ee\n\uf8ef\uf8f0\nh\u22c6/2\u2212\u03b4 \u22c6y\nh\u22c6/2 +\u03b4 \u22c6y\nw\u22c6/2\u2212\u03b4 \u22c6x\nw\u22c6/2 +\u03b4 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0020"
+        ],
+        "excerpt": "refinement.We denote the\nsigned shortest-path residual in the\u03c0-periodic space by\n\u27e8x\u27e9\u03c0 = ((x+\u03c0/2) mod\u03c0)\u2212\u03c0/2,\u27e8x\u27e9 \u03c0 \u2208[\u2212\u03c0/2, \u03c0/2).\nAtthefirstdecoderlayer,Mangularbinsuniformlycover\nthefullresidualdomain,withcandidates\u03c8 (1)(n) =\u2212\u03c0/2 +\nn\u03c0/M,n= 0, . . . , M\u22121. To avoid the discontinuity of\nlinear decoding at the periodic boundary, we decode the\nfirst-layer residual using the circular first moment:\n\u2206\u03b8(1) = 12 atan2\n M\u22121X\nn=0\nPr(1)\u03b8 (n) sin\u00102\u03c8(1)(n)\u0011 ,\nM\u22121X\nn=0\nPr(1)\u03b8 (n) cos\u00102\u03c8(1)(n)\u0011 !. (5)\nThe doubled-angle representation maps the\u03c0-periodic ori-\nentation space to a full circle, making the first and last\nbins adjacent. The first-layer orientation is then updated as\n\u03b8(1) = (\u03b8(0) + \u2206\u03b8(1)) mod\u03c0.\nFor decoder layersl\u22652, the residual support is progres-\nsively contracted:\nr(l) = \u03c02\u03b1l\u22121 , \u03c8 (l)(n) =\u2212r (l) + 2r(l)nM\u22121 ,\n\u2206\u03b8(l) =\nM\u22121X\nn=0\n\u03c8(l)(n) Pr(l)\u03b8 (n),\n\u03b8(l) = \u0010\u03b8(l\u22121) + \u2206\u03b8(l)\u0011 mod\u03c0.\n(6)\nwhere\u03b1 >1is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f62e61f3a204f6772207701710a2e01494bea48c97c6113fc3ab5699a05ce43f",
+            "evidence_id": "E8f5598891adc0c86-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2016,
+                "page": 4,
+                "section": "Method",
+                "section_index": 6,
+                "start": 1116,
+                "text": "refinement.We denote the\nsigned shortest-path residual in the\u03c0-periodic space by\n\u27e8x\u27e9\u03c0 = ((x+\u03c0/2) mod\u03c0)\u2212\u03c0/2,\u27e8x\u27e9 \u03c0 \u2208[\u2212\u03c0/2, \u03c0/2).\nAtthefirstdecoderlayer,Mangularbinsuniformlycover\nthefullresidualdomain,withcandidates\u03c8 (1)(n) =\u2212\u03c0/2 +\nn\u03c0/M,n= 0, . . . , M\u22121. To avoid the discontinuity of\nlinear decoding at the periodic boundary, we decode the\nfirst-layer residual using the circular first moment:\n\u2206\u03b8(1) = 12 atan2\n M\u22121X\nn=0\nPr(1)\u03b8 (n) sin\u00102\u03c8(1)(n)\u0011 ,\nM\u22121X\nn=0\nPr(1)\u03b8 (n) cos\u00102\u03c8(1)(n)\u0011 !. (5)\nThe doubled-angle representation maps the\u03c0-periodic ori-\nentation space to a full circle, making the first and last\nbins adjacent. The first-layer orientation is then updated as\n\u03b8(1) = (\u03b8(0) + \u2206\u03b8(1)) mod\u03c0.\nFor decoder layersl\u22652, the residual support is progres-\nsively contracted:\nr(l) = \u03c02\u03b1l\u22121 , \u03c8 (l)(n) =\u2212r (l) + 2r(l)nM\u22121 ,\n\u2206\u03b8(l) =\nM\u22121X\nn=0\n\u03c8(l)(n) Pr(l)\u03b8 (n),\n\u03b8(l) = \u0010\u03b8(l\u22121) + \u2206\u03b8(l)\u0011 mod\u03c0.\n(6)\nwhere\u03b1 >1is "
+              }
+            ],
+            "text": "refinement.We denote the\nsigned shortest-path residual in the\u03c0-periodic space by\n\u27e8x\u27e9\u03c0 = ((x+\u03c0/2) mod\u03c0)\u2212\u03c0/2,\u27e8x\u27e9 \u03c0 \u2208[\u2212\u03c0/2, \u03c0/2).\nAtthefirstdecoderlayer,Mangularbinsuniformlycover\nthefullresidualdomain,withcandidates\u03c8 (1)(n) =\u2212\u03c0/2 +\nn\u03c0/M,n= 0, . . . , M\u22121. To avoid the discontinuity of\nlinear decoding at the periodic boundary, we decode the\nfirst-layer residual using the circular first moment:\n\u2206\u03b8(1) = 12 atan2\n M\u22121X\nn=0\nPr(1)\u03b8 (n) sin\u00102\u03c8(1)(n)\u0011 ,\nM\u22121X\nn=0\nPr(1)\u03b8 (n) cos\u00102\u03c8(1)(n)\u0011 !. (5)\nThe doubled-angle representation maps the\u03c0-periodic ori-\nentation space to a full circle, making the first and last\nbins adjacent. The first-layer orientation is then updated as\n\u03b8(1) = (\u03b8(0) + \u2206\u03b8(1)) mod\u03c0.\nFor decoder layersl\u22652, the residual support is progres-\nsively contracted:\nr(l) = \u03c02\u03b1l\u22121 , \u03c8 (l)(n) =\u2212r (l) + 2r(l)nM\u22121 ,\n\u2206\u03b8(l) =\nM\u22121X\nn=0\n\u03c8(l)(n) Pr(l)\u03b8 (n),\n\u03b8(l) = \u0010\u03b8(l\u22121) + \u2206\u03b8(l)\u0011 mod\u03c0.\n(6)\nwhere\u03b1 >1is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0022"
+        ],
+        "excerpt": "ori-\nentedbox.Itfurthercalibratesclassificationconfidenceusing\nuncertainty statistics extracted from the predicted boundary\nand angular distributions.\nUnified OBB quality supervision.For thek-th matched\nprediction at decoder layerl, we convert the Gaussian KLD\nloss (Yang et al. 2021c) into a bounded localization quality:\nq(l)k = max \u00101\u2212 LKLD \u0010b(l)k ,b \u22c6k\u0011 ,0 \u0011 .(7)\nWe detachq(l)k from the computation graph. As a complete-OBB measure, it reflects the joint effects of center, scale,\naspect-ratio, and orientation errors. We use it as the positive\nsoft target in Varifocal Loss. The same quality also weights\nboth distribution refinement objectives:\nLFGL = 1Km\nLX\nl=1\nKmX\nk=1\nq(l)k\n\u0010\n\u2113(l)B,k +\u2113 (l)A,k\n\u0011\n,(8)\nwhere\u2113 B and\u2113 A denote the boundary and angular distri-\nbution refinement losses, respectively;Km is the number of\nmatched queries, andLis the number of decoder layers.\nDistribution-aware ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8a121d033e977a434285cee2cc28235b2493515dbec76ed9a7b3588c118fd902",
+            "evidence_id": "E8f5598891adc0c86-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3741,
+                "page": 4,
+                "section": "Method",
+                "section_index": 6,
+                "start": 2842,
+                "text": "ori-\nentedbox.Itfurthercalibratesclassificationconfidenceusing\nuncertainty statistics extracted from the predicted boundary\nand angular distributions.\nUnified OBB quality supervision.For thek-th matched\nprediction at decoder layerl, we convert the Gaussian KLD\nloss (Yang et al. 2021c) into a bounded localization quality:\nq(l)k = max \u00101\u2212 LKLD \u0010b(l)k ,b \u22c6k\u0011 ,0 \u0011 .(7)\nWe detachq(l)k from the computation graph. As a complete-OBB measure, it reflects the joint effects of center, scale,\naspect-ratio, and orientation errors. We use it as the positive\nsoft target in Varifocal Loss. The same quality also weights\nboth distribution refinement objectives:\nLFGL = 1Km\nLX\nl=1\nKmX\nk=1\nq(l)k\n\u0010\n\u2113(l)B,k +\u2113 (l)A,k\n\u0011\n,(8)\nwhere\u2113 B and\u2113 A denote the boundary and angular distri-\nbution refinement losses, respectively;Km is the number of\nmatched queries, andLis the number of decoder layers.\nDistribution-aware "
+              }
+            ],
+            "text": "ori-\nentedbox.Itfurthercalibratesclassificationconfidenceusing\nuncertainty statistics extracted from the predicted boundary\nand angular distributions.\nUnified OBB quality supervision.For thek-th matched\nprediction at decoder layerl, we convert the Gaussian KLD\nloss (Yang et al. 2021c) into a bounded localization quality:\nq(l)k = max \u00101\u2212 LKLD \u0010b(l)k ,b \u22c6k\u0011 ,0 \u0011 .(7)\nWe detachq(l)k from the computation graph. As a complete-OBB measure, it reflects the joint effects of center, scale,\naspect-ratio, and orientation errors. We use it as the positive\nsoft target in Varifocal Loss. The same quality also weights\nboth distribution refinement objectives:\nLFGL = 1Km\nLX\nl=1\nKmX\nk=1\nq(l)k\n\u0010\n\u2113(l)B,k +\u2113 (l)A,k\n\u0011\n,(8)\nwhere\u2113 B and\u2113 A denote the boundary and angular distri-\nbution refinement losses, respectively;Km is the number of\nmatched queries, andLis the number of decoder layers.\nDistribution-aware "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0027"
+        ],
+        "excerpt": "52.681.857.6\nRiO-DETRv2-x 64.6M 528G 30.0 87.7 86.3 62.5 79.0 81.0 85.3 88.9 90.8 87.0 88.4 71.5 70.6 78.1 80.3 77.3 54.1 80.9 59.4\nTable 1: Comparison with representative real-time oriented object detectors on the DOTA-1.0 test set. For each matched model\nscale, the best and second-best overall results are highlighted inboldand underlined, respectively.\nOrientation reliability also depends on the intrinsic shape\nof the predicted box. Near-square objects have ambiguous\nprincipal directions even when their angular distributions\nare concentrated. We therefore define the anisotropy of the\nfinal decoded box as\na(L) = 1\u2212 min(w(L), h(L))max(w(L), h(L)) .(10)\nAngular entropy captures predictive uncertainty, whereas\nanisotropy captures intrinsic identifiability of orientation.\nWe concatenate layer-wise angular uncertainty statistics and\nfinal-box anisotropy with boundary distribution ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "009db9de1d18dbbe916a4ef9ba359ba17b12e372f7acf0a349b5fc1c76e3db9e",
+            "evidence_id": "E8f5598891adc0c86-B0027",
+            "pages": [
+              5
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3916,
+                "page": 5,
+                "section": "Method",
+                "section_index": 7,
+                "start": 3027,
+                "text": "52.681.857.6\nRiO-DETRv2-x 64.6M 528G 30.0 87.7 86.3 62.5 79.0 81.0 85.3 88.9 90.8 87.0 88.4 71.5 70.6 78.1 80.3 77.3 54.1 80.9 59.4\nTable 1: Comparison with representative real-time oriented object detectors on the DOTA-1.0 test set. For each matched model\nscale, the best and second-best overall results are highlighted inboldand underlined, respectively.\nOrientation reliability also depends on the intrinsic shape\nof the predicted box. Near-square objects have ambiguous\nprincipal directions even when their angular distributions\nare concentrated. We therefore define the anisotropy of the\nfinal decoded box as\na(L) = 1\u2212 min(w(L), h(L))max(w(L), h(L)) .(10)\nAngular entropy captures predictive uncertainty, whereas\nanisotropy captures intrinsic identifiability of orientation.\nWe concatenate layer-wise angular uncertainty statistics and\nfinal-box anisotropy with boundary distribution "
+              }
+            ],
+            "text": "52.681.857.6\nRiO-DETRv2-x 64.6M 528G 30.0 87.7 86.3 62.5 79.0 81.0 85.3 88.9 90.8 87.0 88.4 71.5 70.6 78.1 80.3 77.3 54.1 80.9 59.4\nTable 1: Comparison with representative real-time oriented object detectors on the DOTA-1.0 test set. For each matched model\nscale, the best and second-best overall results are highlighted inboldand underlined, respectively.\nOrientation reliability also depends on the intrinsic shape\nof the predicted box. Near-square objects have ambiguous\nprincipal directions even when their angular distributions\nare concentrated. We therefore define the anisotropy of the\nfinal decoded box as\na(L) = 1\u2212 min(w(L), h(L))max(w(L), h(L)) .(10)\nAngular entropy captures predictive uncertainty, whereas\nanisotropy captures intrinsic identifiability of orientation.\nWe concatenate layer-wise angular uncertainty statistics and\nfinal-box anisotropy with boundary distribution "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0030"
+        ],
+        "excerpt": "split\nintotraining,validation,andtestingsetswitharatioof1:1:2.\nAI-TOD-R.AI-TOD-R (Xu et al. 2024) is a large-scale\nbenchmark for oriented tiny object detection, containing\n28,036 images and 752,460 oriented instances across eight\ncategories. Each image has a resolution of800\u00d7800, while\nthe mean object size is only approximately10.6pixels.\nThe dataset presents substantial challenges arising from ex-\ntremelysmallobjectscales,arbitraryorientations,denseob-\nject arrangements, and imbalanced category distributions.\nImplementation Details\nFor all datasets, models are trained on thetrainvalset and\nevaluatedonthetestsetfollowingtheirofficialprotocols.Re-\nsultsofDOTAarereturnedbytheofficialserver.Allmodels\nare trained on 2 NVIDIA A800 or 4 RTX3090 GPUs. All\nlatenciesaremeasuredequallyonasingleNVIDIAT4GPU\nusing TensorRT 10 with FP16 following the same setting of\nRiO-DETR (Hu et al. 2026). More ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "212e30c7b66c94454c113709e8a14087f3c3c24ffd8e2ae0d5d3528668c47898",
+            "evidence_id": "E8f5598891adc0c86-B0030",
+            "pages": [
+              5
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1746,
+                "page": 5,
+                "section": "Experiments",
+                "section_index": 8,
+                "start": 849,
+                "text": "split\nintotraining,validation,andtestingsetswitharatioof1:1:2.\nAI-TOD-R.AI-TOD-R (Xu et al. 2024) is a large-scale\nbenchmark for oriented tiny object detection, containing\n28,036 images and 752,460 oriented instances across eight\ncategories. Each image has a resolution of800\u00d7800, while\nthe mean object size is only approximately10.6pixels.\nThe dataset presents substantial challenges arising from ex-\ntremelysmallobjectscales,arbitraryorientations,denseob-\nject arrangements, and imbalanced category distributions.\nImplementation Details\nFor all datasets, models are trained on thetrainvalset and\nevaluatedonthetestsetfollowingtheirofficialprotocols.Re-\nsultsofDOTAarereturnedbytheofficialserver.Allmodels\nare trained on 2 NVIDIA A800 or 4 RTX3090 GPUs. All\nlatenciesaremeasuredequallyonasingleNVIDIAT4GPU\nusing TensorRT 10 with FP16 following the same setting of\nRiO-DETR (Hu et al. 2026). More "
+              }
+            ],
+            "text": "split\nintotraining,validation,andtestingsetswitharatioof1:1:2.\nAI-TOD-R.AI-TOD-R (Xu et al. 2024) is a large-scale\nbenchmark for oriented tiny object detection, containing\n28,036 images and 752,460 oriented instances across eight\ncategories. Each image has a resolution of800\u00d7800, while\nthe mean object size is only approximately10.6pixels.\nThe dataset presents substantial challenges arising from ex-\ntremelysmallobjectscales,arbitraryorientations,denseob-\nject arrangements, and imbalanced category distributions.\nImplementation Details\nFor all datasets, models are trained on thetrainvalset and\nevaluatedonthetestsetfollowingtheirofficialprotocols.Re-\nsultsofDOTAarereturnedbytheofficialserver.Allmodels\nare trained on 2 NVIDIA A800 or 4 RTX3090 GPUs. All\nlatenciesaremeasuredequallyonasingleNVIDIAT4GPU\nusing TensorRT 10 with FP16 following the same setting of\nRiO-DETR (Hu et al. 2026). More "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0033"
+        ],
+        "excerpt": "55.11\nRiO-DETR-x 62.5M 324G 17.31 51.80 77.43 53.82\nRiO-DETRv2-x 64.6M 325G 17.48 53.46 78.32 55.33\nTable 2: Performance comparison with state-of-the-art real-\ntime oriented object detectors on DIOR-R.\n2025),RiO-DETR(Huetal.2026),O 2-RTDETR(Dingetal.\n2026), Oriented R-CNN (Xie et al. 2021), S2A-Net (Han\net al. 2021), Oriented RepPoints (Li et al. 2022b), ARS-\nDETR (Zeng et al. 2024), DCFL (Xu et al. 2023, 2024) and\nRHINO-DETR (Lee et al. 2025).\nResultsonDOTA-1.0.AsshowninTable1,RiO-DETRv2\nconsistentlyimproveslocalizationaccuracyoverRiO-DETR\nacross all model scales with nearly unchanged computa-\ntional cost. Specifically, RiO-DETRv2-n/s/m/l/x achieves\n49.3/51.8/53.2/53.7/54.1 mAP50-95, outperforming the cor-\nModel Params. FLOPs Lat. mAP 50-95 AP50 AP75\nOriented R-CNN\u2020 41.1M 297G \u2013 11.2 33.2 4.3\nS2A-Net\u2020 38.6M 271G \u2013 10.8 33.4 3.3\nOriented RepPoints\u2020 36.6M 269G \u2013 13.0 40.3 4.2\nARS-DETR\u2020 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5c8164577bbe87d10fe79a2d9d8e12874df4f57097d2b4b8dfebf4207819b299",
+            "evidence_id": "E8f5598891adc0c86-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2444,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 9,
+                "start": 1546,
+                "text": "55.11\nRiO-DETR-x 62.5M 324G 17.31 51.80 77.43 53.82\nRiO-DETRv2-x 64.6M 325G 17.48 53.46 78.32 55.33\nTable 2: Performance comparison with state-of-the-art real-\ntime oriented object detectors on DIOR-R.\n2025),RiO-DETR(Huetal.2026),O 2-RTDETR(Dingetal.\n2026), Oriented R-CNN (Xie et al. 2021), S2A-Net (Han\net al. 2021), Oriented RepPoints (Li et al. 2022b), ARS-\nDETR (Zeng et al. 2024), DCFL (Xu et al. 2023, 2024) and\nRHINO-DETR (Lee et al. 2025).\nResultsonDOTA-1.0.AsshowninTable1,RiO-DETRv2\nconsistentlyimproveslocalizationaccuracyoverRiO-DETR\nacross all model scales with nearly unchanged computa-\ntional cost. Specifically, RiO-DETRv2-n/s/m/l/x achieves\n49.3/51.8/53.2/53.7/54.1 mAP50-95, outperforming the cor-\nModel Params. FLOPs Lat. mAP 50-95 AP50 AP75\nOriented R-CNN\u2020 41.1M 297G \u2013 11.2 33.2 4.3\nS2A-Net\u2020 38.6M 271G \u2013 10.8 33.4 3.3\nOriented RepPoints\u2020 36.6M 269G \u2013 13.0 40.3 4.2\nARS-DETR\u2020 "
+              }
+            ],
+            "text": "55.11\nRiO-DETR-x 62.5M 324G 17.31 51.80 77.43 53.82\nRiO-DETRv2-x 64.6M 325G 17.48 53.46 78.32 55.33\nTable 2: Performance comparison with state-of-the-art real-\ntime oriented object detectors on DIOR-R.\n2025),RiO-DETR(Huetal.2026),O 2-RTDETR(Dingetal.\n2026), Oriented R-CNN (Xie et al. 2021), S2A-Net (Han\net al. 2021), Oriented RepPoints (Li et al. 2022b), ARS-\nDETR (Zeng et al. 2024), DCFL (Xu et al. 2023, 2024) and\nRHINO-DETR (Lee et al. 2025).\nResultsonDOTA-1.0.AsshowninTable1,RiO-DETRv2\nconsistentlyimproveslocalizationaccuracyoverRiO-DETR\nacross all model scales with nearly unchanged computa-\ntional cost. Specifically, RiO-DETRv2-n/s/m/l/x achieves\n49.3/51.8/53.2/53.7/54.1 mAP50-95, outperforming the cor-\nModel Params. FLOPs Lat. mAP 50-95 AP50 AP75\nOriented R-CNN\u2020 41.1M 297G \u2013 11.2 33.2 4.3\nS2A-Net\u2020 38.6M 271G \u2013 10.8 33.4 3.3\nOriented RepPoints\u2020 36.6M 269G \u2013 13.0 40.3 4.2\nARS-DETR\u2020 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0034"
+        ],
+        "excerpt": "41.1M 250G 25.32 14.3 41.1 5.8\nDCFL (S2A-Net)\u2020 38.6M 271G \u2013 17.5 49.6 7.9\nRHINO-DETR 50.8M 383G 35.56 17.7 53.9 5.7\nYOLO26m-obb 21.2M 97G 5.10 19.8 56.58.5\nRiO-DETR-m 18.6M 102G 6.51 18.2 54.5 6.2\nRiO-DETRv2-m 19.5M 103G 6.70 21.0 55.7 10.4\nYOLO26x-obb 57.6M 324G 17.31 19.9 56.8 8.8\nRiO-DETR-x 62.5M 336G 21.03 18.6 55.2 6.6\nRiO-DETRv2-x 64.6M 339G 21.23 20.6 59.2 8.6\nTable 3: Comparison with state-of-the-art oriented object\ndetectors on the AI-TOD-R benchmark.\u2020denotes results\nreported by the official benchmark (Xu et al. 2024).\nresponding baselines by 2.2/2.4/1.6/1.2/1.5 points with only\nmarginal increases in parameters and FLOPs. The consis-\ntent AP75 gains further confirm improved fine-grained OBB\nlocalization.Undercomparablecomputationalbudgets,RiO-\nDETRv2 also surpasses real-time competitors in mAP50-95\nat all scales while retaining competitive AP50. Slight AP50\nvariations at some ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8a249b9b663fb560b0c4a5c20ba42f4c118d0d566959ac0d56e5425db4d53a4e",
+            "evidence_id": "E8f5598891adc0c86-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3342,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 9,
+                "start": 2444,
+                "text": "41.1M 250G 25.32 14.3 41.1 5.8\nDCFL (S2A-Net)\u2020 38.6M 271G \u2013 17.5 49.6 7.9\nRHINO-DETR 50.8M 383G 35.56 17.7 53.9 5.7\nYOLO26m-obb 21.2M 97G 5.10 19.8 56.58.5\nRiO-DETR-m 18.6M 102G 6.51 18.2 54.5 6.2\nRiO-DETRv2-m 19.5M 103G 6.70 21.0 55.7 10.4\nYOLO26x-obb 57.6M 324G 17.31 19.9 56.8 8.8\nRiO-DETR-x 62.5M 336G 21.03 18.6 55.2 6.6\nRiO-DETRv2-x 64.6M 339G 21.23 20.6 59.2 8.6\nTable 3: Comparison with state-of-the-art oriented object\ndetectors on the AI-TOD-R benchmark.\u2020denotes results\nreported by the official benchmark (Xu et al. 2024).\nresponding baselines by 2.2/2.4/1.6/1.2/1.5 points with only\nmarginal increases in parameters and FLOPs. The consis-\ntent AP75 gains further confirm improved fine-grained OBB\nlocalization.Undercomparablecomputationalbudgets,RiO-\nDETRv2 also surpasses real-time competitors in mAP50-95\nat all scales while retaining competitive AP50. Slight AP50\nvariations at some "
+              }
+            ],
+            "text": "41.1M 250G 25.32 14.3 41.1 5.8\nDCFL (S2A-Net)\u2020 38.6M 271G \u2013 17.5 49.6 7.9\nRHINO-DETR 50.8M 383G 35.56 17.7 53.9 5.7\nYOLO26m-obb 21.2M 97G 5.10 19.8 56.58.5\nRiO-DETR-m 18.6M 102G 6.51 18.2 54.5 6.2\nRiO-DETRv2-m 19.5M 103G 6.70 21.0 55.7 10.4\nYOLO26x-obb 57.6M 324G 17.31 19.9 56.8 8.8\nRiO-DETR-x 62.5M 336G 21.03 18.6 55.2 6.6\nRiO-DETRv2-x 64.6M 339G 21.23 20.6 59.2 8.6\nTable 3: Comparison with state-of-the-art oriented object\ndetectors on the AI-TOD-R benchmark.\u2020denotes results\nreported by the official benchmark (Xu et al. 2024).\nresponding baselines by 2.2/2.4/1.6/1.2/1.5 points with only\nmarginal increases in parameters and FLOPs. The consis-\ntent AP75 gains further confirm improved fine-grained OBB\nlocalization.Undercomparablecomputationalbudgets,RiO-\nDETRv2 also surpasses real-time competitors in mAP50-95\nat all scales while retaining competitive AP50. Slight AP50\nvariations at some "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0036"
+        ],
+        "excerpt": "51.80 77.43 53.82\nw/ Global-axis distribution 52.19 77.22 54.20\nw/ Object-aligned distribution (Ours) 52.88 77.74 54.66\nTable 5: Ablation study on OABDR of RiO-DETRv2-x.\nmAP50-95and78.32AP 50,outperformingYOLO26x-obbby\n1.18and1.84pointswhilemaintainingsimilarcomputational\ncostandlatency.Theimprovementsbecomemoreevidentat\nAP75,whereRiO-DETRv2providesmoreaccurateoriented\nbox localization under stricter IoU requirements.\nResultsonAI-TOD-R.AI-TOD-Rischallengingduetoits\ntiny, densely distributed, and arbitrarily oriented objects, for\nwhich small boundary or angular errors can cause substan-\ntial IoU degradation. As shown in Table 3, RiO-DETRv2-m\nimproves mAP50-95 from 18.2 to 21.0 and AP75 from 6.2\nto 10.4 over RiO-DETR, while RiO-DETRv2-x gains 2.0\nmAP50-95 and 4.0 AP50. Under comparable computational\nbudgets, RiO-DETRv2 also outperforms YOLO26-obb in\nmAP50-95 at both scales and achieves a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bbc35e70991b8f3dc546ad3a84f364654b9dff81586525cd32d055f7ded970a2",
+            "evidence_id": "E8f5598891adc0c86-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1331,
+                "page": 7,
+                "section": "Experiments",
+                "section_index": 10,
+                "start": 432,
+                "text": "51.80 77.43 53.82\nw/ Global-axis distribution 52.19 77.22 54.20\nw/ Object-aligned distribution (Ours) 52.88 77.74 54.66\nTable 5: Ablation study on OABDR of RiO-DETRv2-x.\nmAP50-95and78.32AP 50,outperformingYOLO26x-obbby\n1.18and1.84pointswhilemaintainingsimilarcomputational\ncostandlatency.Theimprovementsbecomemoreevidentat\nAP75,whereRiO-DETRv2providesmoreaccurateoriented\nbox localization under stricter IoU requirements.\nResultsonAI-TOD-R.AI-TOD-Rischallengingduetoits\ntiny, densely distributed, and arbitrarily oriented objects, for\nwhich small boundary or angular errors can cause substan-\ntial IoU degradation. As shown in Table 3, RiO-DETRv2-m\nimproves mAP50-95 from 18.2 to 21.0 and AP75 from 6.2\nto 10.4 over RiO-DETR, while RiO-DETRv2-x gains 2.0\nmAP50-95 and 4.0 AP50. Under comparable computational\nbudgets, RiO-DETRv2 also outperforms YOLO26-obb in\nmAP50-95 at both scales and achieves a "
+              }
+            ],
+            "text": "51.80 77.43 53.82\nw/ Global-axis distribution 52.19 77.22 54.20\nw/ Object-aligned distribution (Ours) 52.88 77.74 54.66\nTable 5: Ablation study on OABDR of RiO-DETRv2-x.\nmAP50-95and78.32AP 50,outperformingYOLO26x-obbby\n1.18and1.84pointswhilemaintainingsimilarcomputational\ncostandlatency.Theimprovementsbecomemoreevidentat\nAP75,whereRiO-DETRv2providesmoreaccurateoriented\nbox localization under stricter IoU requirements.\nResultsonAI-TOD-R.AI-TOD-Rischallengingduetoits\ntiny, densely distributed, and arbitrarily oriented objects, for\nwhich small boundary or angular errors can cause substan-\ntial IoU degradation. As shown in Table 3, RiO-DETRv2-m\nimproves mAP50-95 from 18.2 to 21.0 and AP75 from 6.2\nto 10.4 over RiO-DETR, while RiO-DETRv2-x gains 2.0\nmAP50-95 and 4.0 AP50. Under comparable computational\nbudgets, RiO-DETRv2 also outperforms YOLO26-obb in\nmAP50-95 at both scales and achieves a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0042"
+        ],
+        "excerpt": "We presentRiO-DETRv2, a geometry-aware uncertainty\nrefinement framework for real-time end-to-end oriented ob-\nject detection. It models boundaries in an object-aligned\nframe, refines orientation through circular-to-local residual\ndistributions,andalignsclassificationandlocalizationusing\ncomplete-OBB quality. Experiments on DOTA-1.0, DIOR-\nR, and AI-TOD-R demonstrate consistent localization gains\nwith comparable computational cost, establishing a better\nspeed\u2013accuracy trade-off for real-time oriented object de-\ntection.Limitation and Future Work:We further observe\nanincreasinglypronouncedtrade-offamongevaluationmet-\nrics between recall and precision as detector performance\nimproves in the field of oriented object detection. Future\nwork may focus on balancing overall detection quality and\ndeveloping more informative evaluation protocols. We also\nencourage future studies to report ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bbfc7f8b165a878abf323122b14f658581ef412f17d1d6ea45aca009ba54cba6",
+            "evidence_id": "E8f5598891adc0c86-B0042",
+            "pages": [
+              7
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 7,
+                "section": "Conclusion",
+                "section_index": 13,
+                "start": 0,
+                "text": "We presentRiO-DETRv2, a geometry-aware uncertainty\nrefinement framework for real-time end-to-end oriented ob-\nject detection. It models boundaries in an object-aligned\nframe, refines orientation through circular-to-local residual\ndistributions,andalignsclassificationandlocalizationusing\ncomplete-OBB quality. Experiments on DOTA-1.0, DIOR-\nR, and AI-TOD-R demonstrate consistent localization gains\nwith comparable computational cost, establishing a better\nspeed\u2013accuracy trade-off for real-time oriented object de-\ntection.Limitation and Future Work:We further observe\nanincreasinglypronouncedtrade-offamongevaluationmet-\nrics between recall and precision as detector performance\nimproves in the field of oriented object detection. Future\nwork may focus on balancing overall detection quality and\ndeveloping more informative evaluation protocols. We also\nencourage future studies to report "
+              }
+            ],
+            "text": "We presentRiO-DETRv2, a geometry-aware uncertainty\nrefinement framework for real-time end-to-end oriented ob-\nject detection. It models boundaries in an object-aligned\nframe, refines orientation through circular-to-local residual\ndistributions,andalignsclassificationandlocalizationusing\ncomplete-OBB quality. Experiments on DOTA-1.0, DIOR-\nR, and AI-TOD-R demonstrate consistent localization gains\nwith comparable computational cost, establishing a better\nspeed\u2013accuracy trade-off for real-time oriented object de-\ntection.Limitation and Future Work:We further observe\nanincreasinglypronouncedtrade-offamongevaluationmet-\nrics between recall and precision as detector performance\nimproves in the field of oriented object detection. Future\nwork may focus on balancing overall detection quality and\ndeveloping more informative evaluation protocols. We also\nencourage future studies to report "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0086"
+        ],
+        "excerpt": "calibration.\nF Analysis of Near-Square Objects\nMotivationandprotocol.Long-edgecanonicalizationas-\nsigns the local horizontal axis to the major axis of an OBB,\nproviding consistent side semantics for anisotropic objects.\nHowever, as the aspect ratio approaches one, the major axis\nbecomes weakly identifiable and a small geometric per-\nturbation can exchange the two axes, causing an approxi-\nmately90 \u25e6 parameterization switch. We study this degener-\nate regime using the predictions of RiO-DETRv2-x on the\ncomplete DIOR-R test set, which contains 11,738 images\nand 124,438 annotated objects. For each GT box, we de-\nfiner= max(w, h)/min(w, h)and divide the objects into\n[1.0,1.2),[1.2,1.5), and[1.5,\u221e). Predictions are matched\nto GTs class-wise and in descending confidence order, inde-\npendently at IoU thresholds 0.5 and 0.75.\nForeveryTPatIoU0.5,wereportthestandard\u03c0-periodic\nangular errorE 180. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Latency Measurement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3f0139736dd95afbc1d965e46e0ae1e1e0773df08ae04a744cbb2d45f9d555b0",
+            "evidence_id": "E8f5598891adc0c86-B0086",
+            "pages": [
+              14
+            ],
+            "section": "Appendix: Latency Measurement",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1967,
+                "page": 14,
+                "section": "Appendix: Latency Measurement",
+                "section_index": 35,
+                "start": 1068,
+                "text": "calibration.\nF Analysis of Near-Square Objects\nMotivationandprotocol.Long-edgecanonicalizationas-\nsigns the local horizontal axis to the major axis of an OBB,\nproviding consistent side semantics for anisotropic objects.\nHowever, as the aspect ratio approaches one, the major axis\nbecomes weakly identifiable and a small geometric per-\nturbation can exchange the two axes, causing an approxi-\nmately90 \u25e6 parameterization switch. We study this degener-\nate regime using the predictions of RiO-DETRv2-x on the\ncomplete DIOR-R test set, which contains 11,738 images\nand 124,438 annotated objects. For each GT box, we de-\nfiner= max(w, h)/min(w, h)and divide the objects into\n[1.0,1.2),[1.2,1.5), and[1.5,\u221e). Predictions are matched\nto GTs class-wise and in descending confidence order, inde-\npendently at IoU thresholds 0.5 and 0.75.\nForeveryTPatIoU0.5,wereportthestandard\u03c0-periodic\nangular errorE 180. "
+              }
+            ],
+            "text": "calibration.\nF Analysis of Near-Square Objects\nMotivationandprotocol.Long-edgecanonicalizationas-\nsigns the local horizontal axis to the major axis of an OBB,\nproviding consistent side semantics for anisotropic objects.\nHowever, as the aspect ratio approaches one, the major axis\nbecomes weakly identifiable and a small geometric per-\nturbation can exchange the two axes, causing an approxi-\nmately90 \u25e6 parameterization switch. We study this degener-\nate regime using the predictions of RiO-DETRv2-x on the\ncomplete DIOR-R test set, which contains 11,738 images\nand 124,438 annotated objects. For each GT box, we de-\nfiner= max(w, h)/min(w, h)and divide the objects into\n[1.0,1.2),[1.2,1.5), and[1.5,\u221e). Predictions are matched\nto GTs class-wise and in descending confidence order, inde-\npendently at IoU thresholds 0.5 and 0.75.\nForeveryTPatIoU0.5,wereportthestandard\u03c0-periodic\nangular errorE 180. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0088"
+        ],
+        "excerpt": "three groups,\nmean matched IoU varies by only 0.008 and R@75 remains\nbetween 71.30 and 72.68. Meanwhile, angular entropy in-\ncreases monotonically from 0.380 for elongated objects to\n0.515 for near-square objects, indicating that the predicted\ndistributions expose the weak orientation identifiability of\nthisregime.Theseobservationsrefinethescopeofthelong-\nedge representation: its object-aligned side semantics are\nstable away from the square degeneracy; near that limit, the\ncanonical frame can switch, but the resulting ambiguity is\nlargelyparameterizationlevel,preservesOBBgeometry,and\nis reflected by higher angular uncertainty.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Latency Measurement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d498fe4532bb833d2a1312e214db5eca66c5b51bbb5918dc04da8831dc9a6b9d",
+            "evidence_id": "E8f5598891adc0c86-B0088",
+            "pages": [
+              14
+            ],
+            "section": "Appendix: Latency Measurement",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3499,
+                "page": 14,
+                "section": "Appendix: Latency Measurement",
+                "section_index": 35,
+                "start": 2865,
+                "text": "three groups,\nmean matched IoU varies by only 0.008 and R@75 remains\nbetween 71.30 and 72.68. Meanwhile, angular entropy in-\ncreases monotonically from 0.380 for elongated objects to\n0.515 for near-square objects, indicating that the predicted\ndistributions expose the weak orientation identifiability of\nthisregime.Theseobservationsrefinethescopeofthelong-\nedge representation: its object-aligned side semantics are\nstable away from the square degeneracy; near that limit, the\ncanonical frame can switch, but the resulting ambiguity is\nlargelyparameterizationlevel,preservesOBBgeometry,and\nis reflected by higher angular uncertainty."
+              }
+            ],
+            "text": "three groups,\nmean matched IoU varies by only 0.008 and R@75 remains\nbetween 71.30 and 72.68. Meanwhile, angular entropy in-\ncreases monotonically from 0.380 for elongated objects to\n0.515 for near-square objects, indicating that the predicted\ndistributions expose the weak orientation identifiability of\nthisregime.Theseobservationsrefinethescopeofthelong-\nedge representation: its object-aligned side semantics are\nstable away from the square degeneracy; near that limit, the\ncanonical frame can switch, but the resulting ambiguity is\nlargelyparameterizationlevel,preservesOBBgeometry,and\nis reflected by higher angular uncertainty."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.29159",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.29159",
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Standard test set evaluation on the official DOTA-1.0 server and standard test sets of DIOR-R and AI-TOD-R, corroborated by latency measurements using TensorRT FP16 on an NVIDIA T4 GPU.",
+          "final_evaluation_signal": "Standard COCO-style oriented bounding box metrics (mAP50-95, AP50, AP75) computed via official evaluation servers and benchmark protocols against held-out ground truth annotations.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised training losses including Varifocal loss, L1 loss, Gaussian KLD loss, fine-grained distribution refinement losses, and auxiliary distillation losses computed against ground-truth labels.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0002",
+          "E8f5598891adc0c86-B0007",
+          "E8f5598891adc0c86-B0008",
+          "E8f5598891adc0c86-B0016",
+          "E8f5598891adc0c86-B0020",
+          "E8f5598891adc0c86-B0022",
+          "E8f5598891adc0c86-B0027",
+          "E8f5598891adc0c86-B0030",
+          "E8f5598891adc0c86-B0033",
+          "E8f5598891adc0c86-B0034",
+          "E8f5598891adc0c86-B0036",
+          "E8f5598891adc0c86-B0042",
+          "E8f5598891adc0c86-B0086",
+          "E8f5598891adc0c86-B0088"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "0c3d5e376da9d7f90c2cd21ae076721814a3c6be223a345b22b4b97640c58b8b"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.29159",
+        "claim_evidence_alignment": "Reported performance gains over RiO-DETR and existing detectors align with empirical tables, particularly demonstrating higher accuracy on strict localization thresholds (mAP50-95 and AP75) with negligible computational overhead.",
+        "context_id": "8f5598891adc0c869958c6b3e5817275f04e02326bad0d7043f61f7e9b1510ea",
+        "decision": "pass",
+        "evaluation_assessment": "The model is evaluated across three established aerial detection benchmarks (DOTA-1.0 official test server, DIOR-R, and AI-TOD-R) across five model scales, reporting standardized mAP50-95, AP50, AP75, and TensorRT latency measurements against relevant real-time baselines. Component ablations and in-depth analyses of distributional uncertainty and near-square degeneracies validate specific design claims.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Standard test set evaluation on the official DOTA-1.0 server and standard test sets of DIOR-R and AI-TOD-R, corroborated by latency measurements using TensorRT FP16 on an NVIDIA T4 GPU.",
+          "final_evaluation_signal": "Standard COCO-style oriented bounding box evaluation metrics (mAP50-95, AP50, AP75) computed via official evaluation servers and benchmark protocols against held-out ground truth annotations.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised loss objectives including Varifocal loss, L1 loss, Gaussian KLD loss, fine-grained distribution refinement losses, and auxiliary distillation losses computed against ground-truth labels.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E8f5598891adc0c86-B0002",
+          "E8f5598891adc0c86-B0007",
+          "E8f5598891adc0c86-B0008",
+          "E8f5598891adc0c86-B0016",
+          "E8f5598891adc0c86-B0020",
+          "E8f5598891adc0c86-B0022",
+          "E8f5598891adc0c86-B0027",
+          "E8f5598891adc0c86-B0030",
+          "E8f5598891adc0c86-B0033",
+          "E8f5598891adc0c86-B0034",
+          "E8f5598891adc0c86-B0036",
+          "E8f5598891adc0c86-B0042",
+          "E8f5598891adc0c86-B0086",
+          "E8f5598891adc0c86-B0088"
+        ],
+        "limitations": "The authors explicitly analyze precision-recall trade-offs across varying thresholds, the impact of confidence calibration on AP50, and representation ambiguities (canonical-axis exchange) for near-square objects.",
+        "method_assessment": "The methodology is thoroughly detailed, formulating boundary distributions in an object-aligned coordinate frame, handling rotational periodicity through circular-to-local residual refinement, and supervising multi-task branches using Gaussian KLD-derived complete-OBB localization quality alongside distribution-aware confidence calibration.",
+        "quality_rationale": "The manuscript presents a sound, well-motivated architectural extension to real-time oriented DETRs with thorough mathematical descriptions, clear ablation studies, and robust benchmarking on standard datasets without methodological circularity.",
+        "scoped_contribution": "The paper introduces RiO-DETRv2, an end-to-end real-time oriented object detection transformer incorporating Object-Aligned Boundary Distribution Refinement, Circular-to-Local Angular Residual Refinement, and Unified OBB Quality-Aligned Learning.",
+        "source_content_hash": "0c3d5e376da9d7f90c2cd21ae076721814a3c6be223a345b22b4b97640c58b8b"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a sound, well-motivated architectural extension to real-time oriented DETRs with thorough mathematical descriptions, clear ablation studies, and robust benchmarking on standard datasets without methodological circularity.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "0c3d5e376da9d7f90c2cd21ae076721814a3c6be223a345b22b4b97640c58b8b",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly analyze precision-recall trade-offs across varying thresholds, the impact of confidence calibration on AP50, and representation ambiguities (canonical-axis exchange) for near-square objects."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -165,7 +1551,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

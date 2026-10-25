@@ -1,51 +1,47 @@
 {
-  "abstract_summary": "Long-term agent memory is shifting from predefined workflows toward learnable policies for memory construction and retrieval. Existing learning-based methods either optimize construction alone or combine retrieval-side online reinforcement learning (RL) with offline construction supervision, limiting co-adaptation b...",
+  "abstract_summary": "Weight-only quantization keeps LLM activations in floating point and stores weights as low-bit integers, turning the dominant workload into floating-point-integer (FP-INT) general matrix multiplication. Recent quantizers reach a 2-3-bit average with mixed precision, but hardware has not kept pace: GPUs dequantize we...",
   "alternate_urls": [
-    "https://arxiv.org/abs/2610.29671v1",
-    "https://arxiv.org/abs/2610.29671"
+    "https://arxiv.org/abs/2610.30480v1",
+    "https://arxiv.org/abs/2610.30480"
   ],
   "appeared_in_latest_run": true,
-  "arxiv_id": "2610.29671",
+  "arxiv_id": "2610.30480",
   "authors": [
-    "Zhiqian Xia",
-    "Jielong Tang",
-    "Ling-An Zeng",
-    "Shixiong Kai",
-    "Rong Yao",
-    "Hao Kong",
-    "Xiao Dong",
-    "Wei Wang",
-    "Mingxuan Yuan",
-    "Siyu Xia",
-    "Haifeng Xia"
+    "Faraz Tahmasebi",
+    "Haocheng Xu",
+    "Andrew Trauger",
+    "Yomal Perera",
+    "Zhenyu Tang",
+    "Nael Chowdhury",
+    "Sitao Huang"
   ],
-  "canonical_id": "arxiv:2610.29671",
-  "citation": "Uni-Mem: Learning a Long-Horizon Agentic Memory Manager with Unified Online Policy Optimization. Zhiqian Xia, Jielong Tang, Ling-An Zeng, Shixiong Kai, Rong Yao, Hao Kong, Xiao Dong, Wei Wang, Mingxuan Yuan, Siyu Xia, Haifeng Xia. 2026-10-21. https://arxiv.org/abs/2610.29671v1",
-  "detail_json": "papers/uni-mem-learning-a-long-horizon-agentic-memory-manager-with-unified-online-policy-op-5d246acb.json",
-  "detail_page": "papers/uni-mem-learning-a-long-horizon-agentic-memory-manager-with-unified-online-policy-op-5d246acb.html",
+  "canonical_id": "arxiv:2610.30480",
+  "citation": "FIGFLEX: A Mixed-Precision FP-INT GEMM Accelerator Co-Designed with Low-Bit LLM Quantization. Faraz Tahmasebi, Haocheng Xu, Andrew Trauger, Yomal Perera, Zhenyu Tang, Nael Chowdhury, Sitao Huang. 2026-10-21. https://arxiv.org/abs/2610.30480v1",
+  "detail_json": "papers/figflex-a-mixed-precision-fp-int-gemm-accelerator-co-designed-with-low-bit-llm-quant-802c0536.json",
+  "detail_page": "papers/figflex-a-mixed-precision-fp-int-gemm-accelerator-co-designed-with-low-bit-llm-quant-802c0536.html",
   "doi": null,
   "effective_sort_date": "2026-10-21",
-  "first_seen_at": "2026-10-22 09:07:36",
-  "first_seen_date": "2026-10-22",
+  "first_seen_at": "2026-10-25 10:07:55",
+  "first_seen_date": "2026-10-25",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-10-23 09:02:20",
-  "last_seen_date": "2026-10-23",
+  "last_seen_at": "2026-10-25 10:08:02",
+  "last_seen_date": "2026-10-25",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-21",
   "library_admission": "review",
-  "newly_discovered_in_latest_run": false,
-  "notified_at": "2026-10-22 09:08:38",
-  "notified_date": "2026-10-22",
+  "newly_discovered_in_latest_run": true,
+  "notified_at": null,
+  "notified_date": null,
   "openalex_id": null,
   "pinned": false,
   "provenance": {
     "curated": false,
     "curation_note": null,
     "date_source": "arxiv",
-    "first_seen_at": "2026-10-22 09:07:36",
-    "generated_at": "2026-10-23 09:07:13",
-    "last_seen_at": "2026-10-23 09:02:20",
+    "first_seen_at": "2026-10-25 10:07:55",
+    "generated_at": "2026-10-25 10:08:36",
+    "last_seen_at": "2026-10-25 10:08:02",
     "metadata_sources": [
       "arxiv"
     ],
@@ -56,7 +52,7 @@
     "screening_source": "deterministic rules",
     "source_ids": {
       "arxiv": [
-        "2610.29671"
+        "2610.30480"
       ]
     }
   },
@@ -79,27 +75,20 @@
   "publication_status": "preprint",
   "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
-  "related_topics": [
-    "agent-memory",
-    "benchmark",
-    "memory-benchmark"
-  ],
+  "related_topics": [],
   "relevance": {
     "curation_note": null,
     "decision": "maybe",
     "public_label": "Possible match",
-    "reason": "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.",
+    "reason": "Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.",
     "review_status": null,
-    "score": 69,
-    "tags": [
-      "agent-memory",
-      "benchmark"
-    ]
+    "score": 45,
+    "tags": []
   },
   "relevance_decision": "maybe",
-  "relevance_label": "Memory benchmark/evaluation",
-  "relevance_reason": "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.",
-  "relevance_score": 69,
+  "relevance_label": "Memory architecture or policy",
+  "relevance_reason": "Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.",
+  "relevance_score": 45,
   "research_note": null,
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
@@ -111,7 +100,7 @@
     "assessment_version": null,
     "assessor_model": null,
     "assessor_type": null,
-    "combined_rank_score": 0.69,
+    "combined_rank_score": 0.45,
     "concerns": [],
     "concise_summary": null,
     "confidence": "unknown",
@@ -139,10 +128,10 @@
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
-  "source_id": "2610.29671",
+  "source_id": "2610.30480",
   "source_ids": {
     "arxiv": [
-      "2610.29671"
+      "2610.30480"
     ]
   },
   "source_updated_date": "2026-10-21",
@@ -188,10 +177,7 @@
     "possible_key_claims": [],
     "relation_to_agentic_memory": "Agentic-AI connection exists, but memory focus is weak or indirect"
   },
-  "tags": [
-    "agent-memory",
-    "benchmark"
-  ],
-  "title": "Uni-Mem: Learning a Long-Horizon Agentic Memory Manager with Unified Online Policy Optimization",
-  "url": "https://arxiv.org/abs/2610.29671v1"
+  "tags": [],
+  "title": "FIGFLEX: A Mixed-Precision FP-INT GEMM Accelerator Co-Designed with Low-Bit LLM Quantization",
+  "url": "https://arxiv.org/abs/2610.30480v1"
 }

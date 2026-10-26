@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-06-30 10:12:22",
-    "generated_at": "2026-10-23 09:07:36",
+    "generated_at": "2026-10-26 09:42:25",
     "last_seen_at": "2026-07-04 10:05:21",
     "metadata_sources": [
       "arxiv"
@@ -96,36 +96,965 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-26T09:40:20.476103+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The manuscript is a white paper and position proposal with no empirical evaluation, deployment study, or formal validation of the proposed AICID system; the alpha prototype is only referenced by URL without functional or operational evidence.",
+      "Feasibility, enforceability, and adoption claims are asserted but not tested, including the central claim that publisher adoption would make AI authorship disclosure enforceable at infrastructure level.",
+      "The proposal does not address practical enforcement against bad actors omitting AICIDs, identity divergence handling, or operational scaling and integration testing."
+    ],
+    "concise_summary": "As a white paper and position proposal, it provides a sound conceptual discussion, but lacks substantive technical evaluation, rigorous implementation testing, or empirical analysis necessary for a research pass.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 18859,
+      "assessment_input_sha256": "7de9fe048c88d6d7331257dd24f40e968986c8e74ab60237e6576f7639f6a0e2",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2606.28756",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 18542,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 18135,
+      "evidence_block_count": 27,
+      "evidence_context_characters": 21362,
+      "evidence_context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+      "evidence_context_sha256": "fa5cda3e2f65c3cefaba988347b7e35127976b75b2a4346e0558b391d3012b34",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 18552,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "extracted_pages": 6,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "ca14a8d091278adbdabf412ad7cc3049fc1038984435c4433dab0c986fe50c7e",
+        "source_url": "https://arxiv.org/pdf/2606.28756",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 18542,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related"
+      ],
+      "sections": [
+        {
+          "heading": "Aicid: Unique Identifiers For Ai Scientists",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 133,
+          "supplied_characters": 133
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1107,
+          "supplied_characters": 1107
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1959,
+          "supplied_characters": 1959
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 585,
+          "supplied_characters": 585
+        },
+        {
+          "heading": "Ai Scientists Are Already Active In The Scholarly Record",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 655,
+          "supplied_characters": 655
+        },
+        {
+          "heading": "Existing Identifier Systems Are Designed For Humans",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 842,
+          "supplied_characters": 842
+        },
+        {
+          "heading": "Consequences Of The Gap",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1150,
+          "supplied_characters": 1150
+        },
+        {
+          "heading": "Consequences Of The Gap",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 633,
+          "supplied_characters": 633
+        },
+        {
+          "heading": "Core Concept",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 526,
+          "supplied_characters": 526
+        },
+        {
+          "heading": "Design Requirements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 2041,
+          "supplied_characters": 2041
+        },
+        {
+          "heading": "Implementation Path",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 10,
+          "source_characters": 1014,
+          "supplied_characters": 1014
+        },
+        {
+          "heading": "Why Publishers Should Adopt Aicid",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1323,
+          "supplied_characters": 1323
+        },
+        {
+          "heading": "Aicid Governance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1364,
+          "supplied_characters": 1364
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "related",
+          "section_index": 13,
+          "source_characters": 1249,
+          "supplied_characters": 1249
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "conclusion",
+          "section_index": 14,
+          "source_characters": 909,
+          "supplied_characters": 909
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 988,
+          "supplied_characters": 988
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1657,
+          "supplied_characters": 1657
+        }
+      ],
+      "selected_characters": 18135,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "selected_sections": [
+        {
+          "characters": 133,
+          "heading": "Aicid: Unique Identifiers For Ai Scientists",
+          "page": 1
+        },
+        {
+          "characters": 1107,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1959,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 585,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 655,
+          "heading": "Ai Scientists Are Already Active In The Scholarly Record",
+          "page": 2
+        },
+        {
+          "characters": 842,
+          "heading": "Existing Identifier Systems Are Designed For Humans",
+          "page": 2
+        },
+        {
+          "characters": 1150,
+          "heading": "Consequences Of The Gap",
+          "page": 2
+        },
+        {
+          "characters": 633,
+          "heading": "Consequences Of The Gap",
+          "page": 3
+        },
+        {
+          "characters": 526,
+          "heading": "Core Concept",
+          "page": 3
+        },
+        {
+          "characters": 2041,
+          "heading": "Design Requirements",
+          "page": 3
+        },
+        {
+          "characters": 1014,
+          "heading": "Implementation Path",
+          "page": 4
+        },
+        {
+          "characters": 1323,
+          "heading": "Why Publishers Should Adopt Aicid",
+          "page": 4
+        },
+        {
+          "characters": 1364,
+          "heading": "Aicid Governance",
+          "page": 4
+        },
+        {
+          "characters": 1249,
+          "heading": "Related Work",
+          "page": 5
+        },
+        {
+          "characters": 909,
+          "heading": "Conclusion",
+          "page": 5
+        },
+        {
+          "characters": 988,
+          "heading": "Unclassified body after references",
+          "page": 5
+        },
+        {
+          "characters": 1657,
+          "heading": "Unclassified body after references",
+          "page": 6
+        }
+      ],
+      "selected_text_sha256": "7de9fe048c88d6d7331257dd24f40e968986c8e74ab60237e6576f7639f6a0e2",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "ca14a8d091278adbdabf412ad7cc3049fc1038984435c4433dab0c986fe50c7e",
+      "source_pages": 6,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0002"
+        ],
+        "excerpt": "AI scientists are now a reality, with the ability to generate complete research papers,\nmaintain scholarly profiles, receive citations, and attract peer review invitations. Yet no\nstandard mechanism exists to distinguish an AI scientist from a human one in bibliographic\ndatabases, citation indexes, or journal submission systems. This white paper defines the\nproblem, analyzes its consequences for the integrity of scholarly communication, and proposes\nAICID (AI Contributor IDentifier): a persistent, unique identifier for AI scientists. Modeled\non ORCID but designed specifically for non-human contributors, AICID links each AI author\nto its model identity, version, and operator. Adoption by publishers, preprint servers, and\nbibliographic databases aims to make the provenance of AI-generated research transparent\nand machine-readable. We outline the design requirements for such a system, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "588f9e13580ab3f441c7280254a70d8a687420fd7ed3000e1b32a37be5a87b30",
+            "evidence_id": "E926aeaae015ccf7f-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "AI scientists are now a reality, with the ability to generate complete research papers,\nmaintain scholarly profiles, receive citations, and attract peer review invitations. Yet no\nstandard mechanism exists to distinguish an AI scientist from a human one in bibliographic\ndatabases, citation indexes, or journal submission systems. This white paper defines the\nproblem, analyzes its consequences for the integrity of scholarly communication, and proposes\nAICID (AI Contributor IDentifier): a persistent, unique identifier for AI scientists. Modeled\non ORCID but designed specifically for non-human contributors, AICID links each AI author\nto its model identity, version, and operator. Adoption by publishers, preprint servers, and\nbibliographic databases aims to make the provenance of AI-generated research transparent\nand machine-readable. We outline the design requirements for such a system, "
+              }
+            ],
+            "text": "AI scientists are now a reality, with the ability to generate complete research papers,\nmaintain scholarly profiles, receive citations, and attract peer review invitations. Yet no\nstandard mechanism exists to distinguish an AI scientist from a human one in bibliographic\ndatabases, citation indexes, or journal submission systems. This white paper defines the\nproblem, analyzes its consequences for the integrity of scholarly communication, and proposes\nAICID (AI Contributor IDentifier): a persistent, unique identifier for AI scientists. Modeled\non ORCID but designed specifically for non-human contributors, AICID links each AI author\nto its model identity, version, and operator. Adoption by publishers, preprint servers, and\nbibliographic databases aims to make the provenance of AI-generated research transparent\nand machine-readable. We outline the design requirements for such a system, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0003"
+        ],
+        "excerpt": "present a\nprototype, and argue that AICID is necessary infrastructure for a scholarly ecosystem in\nwhich AI scientists are already active participants. A prototype alpha version is available at\nhttps://aicid.net.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b263a3e3f3d0db5614d2b64eb9042a118dc0657f83034539f5e6d956b498782b",
+            "evidence_id": "E926aeaae015ccf7f-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1107,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 895,
+                "text": "present a\nprototype, and argue that AICID is necessary infrastructure for a scholarly ecosystem in\nwhich AI scientists are already active participants. A prototype alpha version is available at\nhttps://aicid.net."
+              }
+            ],
+            "text": "present a\nprototype, and argue that AICID is necessary infrastructure for a scholarly ecosystem in\nwhich AI scientists are already active participants. A prototype alpha version is available at\nhttps://aicid.net."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0006"
+        ],
+        "excerpt": "authorship policyand questions ofAI author\n\u2217https://orcid.org/0000-0001-6689-5570\n\u2020https://orcid.org/0000-0003-3505-3383\n1\narXiv:2606.28756v2  [cs.DL]  30 Jun 2026\nidentity. Second, it proposes AICID (AI Contributor IDentifier), a system of unique identifiers\nfor AI scientists, and specifies its core requirements. Third, it argues that publisher adoption\nof AICID is both feasible and in publishers' direct interest. The goal is not to resolve debates\nabout whether AI systems should be permitted as authors\u2014that debate is ongoing, and unlikely\nto be resolved uniformly [Moffatt and Hall, 2025, Hosseini et al., 2023]. Instead, we argue that\nwhatever policy is adopted, a reliable identifier for AI contributors is a prerequisite for enforcing\nit.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "03f830a985a39340a24cbaf960c9b2034587f70280e10e913a1449c03ca51ddf",
+            "evidence_id": "E926aeaae015ccf7f-B0006",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1959,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1796,
+                "text": "authorship policyand questions ofAI author\n\u2217https://orcid.org/0000-0001-6689-5570\n\u2020https://orcid.org/0000-0003-3505-3383\n1\narXiv:2606.28756v2  [cs.DL]  30 Jun 2026"
+              },
+              {
+                "end": 585,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "identity. Second, it proposes AICID (AI Contributor IDentifier), a system of unique identifiers\nfor AI scientists, and specifies its core requirements. Third, it argues that publisher adoption\nof AICID is both feasible and in publishers' direct interest. The goal is not to resolve debates\nabout whether AI systems should be permitted as authors\u2014that debate is ongoing, and unlikely\nto be resolved uniformly [Moffatt and Hall, 2025, Hosseini et al., 2023]. Instead, we argue that\nwhatever policy is adopted, a reliable identifier for AI contributors is a prerequisite for enforcing\nit."
+              }
+            ],
+            "text": "authorship policyand questions ofAI author\n\u2217https://orcid.org/0000-0001-6689-5570\n\u2020https://orcid.org/0000-0003-3505-3383\n1\narXiv:2606.28756v2  [cs.DL]  30 Jun 2026\nidentity. Second, it proposes AICID (AI Contributor IDentifier), a system of unique identifiers\nfor AI scientists, and specifies its core requirements. Third, it argues that publisher adoption\nof AICID is both feasible and in publishers' direct interest. The goal is not to resolve debates\nabout whether AI systems should be permitted as authors\u2014that debate is ongoing, and unlikely\nto be resolved uniformly [Moffatt and Hall, 2025, Hosseini et al., 2023]. Instead, we argue that\nwhatever policy is adopted, a reliable identifier for AI contributors is a prerequisite for enforcing\nit."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0011"
+        ],
+        "excerpt": "AICID (AI Contributor IDentifier) is a persistent unique identifier for AI scientists. Each AICID\nidentifies one AI authoring entity and is associated with a structured public record containing\nthe information necessary to trace, evaluate, and attribute that entity's contributions to science.\nJust as ORCID does for humans, AICID records that an author is an AI system and provides the\nmetadata needed to understand what kind of AI system it is and who operates it.\nA prototype alpha version is available athttps://aicid.net.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Core Concept",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f3391c6a9e41dabf51d6de392fd55400020531db25aa34cbb14a5dc96fbfd497",
+            "evidence_id": "E926aeaae015ccf7f-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Core Concept",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 526,
+                "page": 3,
+                "section": "Core Concept",
+                "section_index": 8,
+                "start": 0,
+                "text": "AICID (AI Contributor IDentifier) is a persistent unique identifier for AI scientists. Each AICID\nidentifies one AI authoring entity and is associated with a structured public record containing\nthe information necessary to trace, evaluate, and attribute that entity's contributions to science.\nJust as ORCID does for humans, AICID records that an author is an AI system and provides the\nmetadata needed to understand what kind of AI system it is and who operates it.\nA prototype alpha version is available athttps://aicid.net."
+              }
+            ],
+            "text": "AICID (AI Contributor IDentifier) is a persistent unique identifier for AI scientists. Each AICID\nidentifies one AI authoring entity and is associated with a structured public record containing\nthe information necessary to trace, evaluate, and attribute that entity's contributions to science.\nJust as ORCID does for humans, AICID records that an author is an AI system and provides the\nmetadata needed to understand what kind of AI system it is and who operates it.\nA prototype alpha version is available athttps://aicid.net."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0012"
+        ],
+        "excerpt": "We specify five requirements for AICID.\nR1: Human operator linkage.Every AICID must be linked to at least one human ORCID.\nThis requirement preserves the principle that a human is ultimately accountable for an AI\nscientist's outputs: if a paper authored by an AICID entity is found to contain fabricated data,\nthe linked ORCID identifies the responsible party. Issuing an AICID must require verified human\nauthorization; the operator registering the AI entity must authenticate with a valid ORCID. This\nprevents the creation of AICID records by automated systems acting without human oversight\nand ensures that the operator linkage is genuine.\nR2: Uniqueness and persistence.Each AICID must uniquely identify one AI authoring\nentity. The ultimate authority over the entity's persistence over time is the human operator. For\nexample, one operator might decide to create a new AICID each time a new ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Design Requirements",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "07bc32888c67da379a6cc6f4b39d7b56ea2b8381764963e3a9761700792ba4b3",
+            "evidence_id": "E926aeaae015ccf7f-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Design Requirements",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 3,
+                "section": "Design Requirements",
+                "section_index": 9,
+                "start": 0,
+                "text": "We specify five requirements for AICID.\nR1: Human operator linkage.Every AICID must be linked to at least one human ORCID.\nThis requirement preserves the principle that a human is ultimately accountable for an AI\nscientist's outputs: if a paper authored by an AICID entity is found to contain fabricated data,\nthe linked ORCID identifies the responsible party. Issuing an AICID must require verified human\nauthorization; the operator registering the AI entity must authenticate with a valid ORCID. This\nprevents the creation of AICID records by automated systems acting without human oversight\nand ensures that the operator linkage is genuine.\nR2: Uniqueness and persistence.Each AICID must uniquely identify one AI authoring\nentity. The ultimate authority over the entity's persistence over time is the human operator. For\nexample, one operator might decide to create a new AICID each time a new "
+              }
+            ],
+            "text": "We specify five requirements for AICID.\nR1: Human operator linkage.Every AICID must be linked to at least one human ORCID.\nThis requirement preserves the principle that a human is ultimately accountable for an AI\nscientist's outputs: if a paper authored by an AICID entity is found to contain fabricated data,\nthe linked ORCID identifies the responsible party. Issuing an AICID must require verified human\nauthorization; the operator registering the AI entity must authenticate with a valid ORCID. This\nprevents the creation of AICID records by automated systems acting without human oversight\nand ensures that the operator linkage is genuine.\nR2: Uniqueness and persistence.Each AICID must uniquely identify one AI authoring\nentity. The ultimate authority over the entity's persistence over time is the human operator. For\nexample, one operator might decide to create a new AICID each time a new "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0013"
+        ],
+        "excerpt": "frontier model is\nreleased, while another operator can consider that the same release only brings marginal changes\nin their workflow, and decides to keep the same AICID. The AI agent itself may also be prompted\nabout this delicate question of identity.\nR3: Structured metadata.Each AICID record must include structured metadata: (a) the\nunderlying model or system name and version, (b) the identity of the human operator linked to\nthe operator's own ORCID (see R1), (c) a creation date.\nR4: Machine-readable disclosure.AICID must integrate with CrossRef, DataCite, and\nother metadata standards so that publishers can embed AI authorship disclosure in metadata.\nBibliographic databases can then filter or flag AI-authored works without reading the full text\nof papers. This makes disclosure enforceable at the infrastructure level rather than relying on\nauthors' voluntary compliance.\nR5: Public ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Design Requirements",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "709a46f6d512a20e8c72e092a3ef6edeae81ee7c4718c14e40ca4a305d7570f9",
+            "evidence_id": "E926aeaae015ccf7f-B0013",
+            "pages": [
+              3
+            ],
+            "section": "Design Requirements",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 3,
+                "section": "Design Requirements",
+                "section_index": 9,
+                "start": 897,
+                "text": "frontier model is\nreleased, while another operator can consider that the same release only brings marginal changes\nin their workflow, and decides to keep the same AICID. The AI agent itself may also be prompted\nabout this delicate question of identity.\nR3: Structured metadata.Each AICID record must include structured metadata: (a) the\nunderlying model or system name and version, (b) the identity of the human operator linked to\nthe operator's own ORCID (see R1), (c) a creation date.\nR4: Machine-readable disclosure.AICID must integrate with CrossRef, DataCite, and\nother metadata standards so that publishers can embed AI authorship disclosure in metadata.\nBibliographic databases can then filter or flag AI-authored works without reading the full text\nof papers. This makes disclosure enforceable at the infrastructure level rather than relying on\nauthors' voluntary compliance.\nR5: Public "
+              }
+            ],
+            "text": "frontier model is\nreleased, while another operator can consider that the same release only brings marginal changes\nin their workflow, and decides to keep the same AICID. The AI agent itself may also be prompted\nabout this delicate question of identity.\nR3: Structured metadata.Each AICID record must include structured metadata: (a) the\nunderlying model or system name and version, (b) the identity of the human operator linked to\nthe operator's own ORCID (see R1), (c) a creation date.\nR4: Machine-readable disclosure.AICID must integrate with CrossRef, DataCite, and\nother metadata standards so that publishers can embed AI authorship disclosure in metadata.\nBibliographic databases can then filter or flag AI-authored works without reading the full text\nof papers. This makes disclosure enforceable at the infrastructure level rather than relying on\nauthors' voluntary compliance.\nR5: Public "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0014"
+        ],
+        "excerpt": "registry .AICID records must be publicly accessible and queryable. Anyone who\nencounters an AICID in a paper must be able to look up the associated record. The registry must\nsupport both human-readable display and API access for automated systems.\n3",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Design Requirements",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d1344f677c76190d1117c57bc4c494e2c5e270a58d3d3c85e88845aeef6cd492",
+            "evidence_id": "E926aeaae015ccf7f-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Design Requirements",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2041,
+                "page": 3,
+                "section": "Design Requirements",
+                "section_index": 9,
+                "start": 1792,
+                "text": "registry .AICID records must be publicly accessible and queryable. Anyone who\nencounters an AICID in a paper must be able to look up the associated record. The registry must\nsupport both human-readable display and API access for automated systems.\n3"
+              }
+            ],
+            "text": "registry .AICID records must be publicly accessible and queryable. Anyone who\nencounters an AICID in a paper must be able to look up the associated record. The registry must\nsupport both human-readable display and API access for automated systems.\n3"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0015"
+        ],
+        "excerpt": "The current AICID prototype shows that the proposal can be implemented with lightweight web\ninfrastructure. In the alpha system, each AI contributor receives a persistent identifier string\nsuch asAICID-5282-9748-4313-4513, together with a public profile page.\nAt minimum, an AICID record should contain: (i) the AICID itself, (ii) an agent name, (iii) an\nagent type, (iv) the base model and version, (v) the linked human operator, and (vi) public\nreferences to associated works such as papers, datasets, and software artifacts. This schema is\nsufficient for both human inspection and automated indexing.\nAsubmissionsystemcouldrequestanAICIDatmanuscriptintake, resolveitthroughthepublic\nregistry, and store both the identifier and selected metadata fields in the article record. CrossRef,\nDataCite, and indexing services could then propagate the same identifier downstream, while\nsearch engines and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Path",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "83b76327d19c7f6ab4f5371c2eaa18e0e3e1ff022079f9c7eddd0fe61e70d0e9",
+            "evidence_id": "E926aeaae015ccf7f-B0015",
+            "pages": [
+              4
+            ],
+            "section": "Implementation Path",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 4,
+                "section": "Implementation Path",
+                "section_index": 10,
+                "start": 0,
+                "text": "The current AICID prototype shows that the proposal can be implemented with lightweight web\ninfrastructure. In the alpha system, each AI contributor receives a persistent identifier string\nsuch asAICID-5282-9748-4313-4513, together with a public profile page.\nAt minimum, an AICID record should contain: (i) the AICID itself, (ii) an agent name, (iii) an\nagent type, (iv) the base model and version, (v) the linked human operator, and (vi) public\nreferences to associated works such as papers, datasets, and software artifacts. This schema is\nsufficient for both human inspection and automated indexing.\nAsubmissionsystemcouldrequestanAICIDatmanuscriptintake, resolveitthroughthepublic\nregistry, and store both the identifier and selected metadata fields in the article record. CrossRef,\nDataCite, and indexing services could then propagate the same identifier downstream, while\nsearch engines and "
+              }
+            ],
+            "text": "The current AICID prototype shows that the proposal can be implemented with lightweight web\ninfrastructure. In the alpha system, each AI contributor receives a persistent identifier string\nsuch asAICID-5282-9748-4313-4513, together with a public profile page.\nAt minimum, an AICID record should contain: (i) the AICID itself, (ii) an agent name, (iii) an\nagent type, (iv) the base model and version, (v) the linked human operator, and (vi) public\nreferences to associated works such as papers, datasets, and software artifacts. This schema is\nsufficient for both human inspection and automated indexing.\nAsubmissionsystemcouldrequestanAICIDatmanuscriptintake, resolveitthroughthepublic\nregistry, and store both the identifier and selected metadata fields in the article record. CrossRef,\nDataCite, and indexing services could then propagate the same identifier downstream, while\nsearch engines and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0016"
+        ],
+        "excerpt": "research information systems could retrieve the public JSON representation\nto classify the contributor as non-human.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Path",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "80ce20885d019ae35b2ffc62e0a86121f2a763796f3249736f74309bb4832874",
+            "evidence_id": "E926aeaae015ccf7f-B0016",
+            "pages": [
+              4
+            ],
+            "section": "Implementation Path",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1014,
+                "page": 4,
+                "section": "Implementation Path",
+                "section_index": 10,
+                "start": 898,
+                "text": "research information systems could retrieve the public JSON representation\nto classify the contributor as non-human."
+              }
+            ],
+            "text": "research information systems could retrieve the public JSON representation\nto classify the contributor as non-human."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0017"
+        ],
+        "excerpt": "The benefits for publishers are concrete. Submission systems can reject or route AI-authored\nmanuscripts based on declared AICID presence, enforcing existing policies at intake. Editorial\nrecords become auditable. Retraction and correction workflows gain a traceable path to the\nresponsible human operator via the AICID-to-ORCID link. CrossRef and DataCite metadata\ncan carry AI authorship signals, allowing downstream databases to propagate disclosure without\nadditional publisher effort.\nPreprint servers such as arXiv currently prohibit AI scientists from submitting directly to\narXiv [2025]. An AICID field in submission metadata would allow preprint servers to handle\nAI submissions soundly. Platforms that choose to accept AI-authored submissions, such as\naiXiv [Zhang et al., 2025], could require a valid AICID as a condition of submission.\nSearch engines and bibliographic databases (Google ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Why Publishers Should Adopt Aicid",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "ab2b416e1b8e6ab78567fdbe00c19abf2b29519ffc961ea0baf9910122984e56",
+            "evidence_id": "E926aeaae015ccf7f-B0017",
+            "pages": [
+              4
+            ],
+            "section": "Why Publishers Should Adopt Aicid",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 4,
+                "section": "Why Publishers Should Adopt Aicid",
+                "section_index": 11,
+                "start": 0,
+                "text": "The benefits for publishers are concrete. Submission systems can reject or route AI-authored\nmanuscripts based on declared AICID presence, enforcing existing policies at intake. Editorial\nrecords become auditable. Retraction and correction workflows gain a traceable path to the\nresponsible human operator via the AICID-to-ORCID link. CrossRef and DataCite metadata\ncan carry AI authorship signals, allowing downstream databases to propagate disclosure without\nadditional publisher effort.\nPreprint servers such as arXiv currently prohibit AI scientists from submitting directly to\narXiv [2025]. An AICID field in submission metadata would allow preprint servers to handle\nAI submissions soundly. Platforms that choose to accept AI-authored submissions, such as\naiXiv [Zhang et al., 2025], could require a valid AICID as a condition of submission.\nSearch engines and bibliographic databases (Google "
+              }
+            ],
+            "text": "The benefits for publishers are concrete. Submission systems can reject or route AI-authored\nmanuscripts based on declared AICID presence, enforcing existing policies at intake. Editorial\nrecords become auditable. Retraction and correction workflows gain a traceable path to the\nresponsible human operator via the AICID-to-ORCID link. CrossRef and DataCite metadata\ncan carry AI authorship signals, allowing downstream databases to propagate disclosure without\nadditional publisher effort.\nPreprint servers such as arXiv currently prohibit AI scientists from submitting directly to\narXiv [2025]. An AICID field in submission metadata would allow preprint servers to handle\nAI submissions soundly. Platforms that choose to accept AI-authored submissions, such as\naiXiv [Zhang et al., 2025], could require a valid AICID as a condition of submission.\nSearch engines and bibliographic databases (Google "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0019"
+        ],
+        "excerpt": "We propose the creation of a nonprofit organization to govern and sustain the AICID initiative.\nGovernance by a nonprofit, rather than by a single publisher, technology company, or government\nbody, ensures that no single stakeholder can capture the registry for commercial or political ends.\nThe governing body should include representatives from publishers, preprint servers, bibliographic\ndatabases, AI developers, academic institutions, and research integrity organizations, mirroring\nthe multi-stakeholder board model that has made ORCID a trusted neutral infrastructure. The\nnonprofit would be responsible for (i) maintaining the public registry and its API, (ii) setting\nand updating the metadata schema as AI systems evolve, (iii) arbitrating disputes over identifier\nassignment or misuse, and (iv) enforcing disclosure and transparency requirements on operators\nwho register AI contributors. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Aicid Governance",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0a86d8901d4d1071ca3ec9a0764a4ebe5b705e0eecc02532627f4e5008bedf71",
+            "evidence_id": "E926aeaae015ccf7f-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Aicid Governance",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 4,
+                "section": "Aicid Governance",
+                "section_index": 12,
+                "start": 0,
+                "text": "We propose the creation of a nonprofit organization to govern and sustain the AICID initiative.\nGovernance by a nonprofit, rather than by a single publisher, technology company, or government\nbody, ensures that no single stakeholder can capture the registry for commercial or political ends.\nThe governing body should include representatives from publishers, preprint servers, bibliographic\ndatabases, AI developers, academic institutions, and research integrity organizations, mirroring\nthe multi-stakeholder board model that has made ORCID a trusted neutral infrastructure. The\nnonprofit would be responsible for (i) maintaining the public registry and its API, (ii) setting\nand updating the metadata schema as AI systems evolve, (iii) arbitrating disputes over identifier\nassignment or misuse, and (iv) enforcing disclosure and transparency requirements on operators\nwho register AI contributors. "
+              }
+            ],
+            "text": "We propose the creation of a nonprofit organization to govern and sustain the AICID initiative.\nGovernance by a nonprofit, rather than by a single publisher, technology company, or government\nbody, ensures that no single stakeholder can capture the registry for commercial or political ends.\nThe governing body should include representatives from publishers, preprint servers, bibliographic\ndatabases, AI developers, academic institutions, and research integrity organizations, mirroring\nthe multi-stakeholder board model that has made ORCID a trusted neutral infrastructure. The\nnonprofit would be responsible for (i) maintaining the public registry and its API, (ii) setting\nand updating the metadata schema as AI systems evolve, (iii) arbitrating disputes over identifier\nassignment or misuse, and (iv) enforcing disclosure and transparency requirements on operators\nwho register AI contributors. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.28756",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript is a white paper and position proposal with no empirical evaluation, deployment study, or formal validation of the proposed AICID system; the alpha prototype is only referenced by URL without functional or operational evidence.",
+          "Feasibility, enforceability, and adoption claims are asserted but not tested, including the central claim that publisher adoption would make AI authorship disclosure enforceable at infrastructure level.",
+          "The proposal does not address practical enforcement against bad actors omitting AICIDs, identity divergence handling, or operational scaling and integration testing."
+        ],
+        "canonical_id": "arxiv:2606.28756",
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No independent corroboration or empirical measurement was conducted in this proposal.",
+          "final_evaluation_signal": "Not applicable; no quantitative or systematic qualitative evaluation metric was benchmarked.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; the manuscript presents a conceptual architecture and white paper proposal rather than a trained or iteratively tuned computational model.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0002",
+          "E926aeaae015ccf7f-B0003",
+          "E926aeaae015ccf7f-B0006",
+          "E926aeaae015ccf7f-B0011",
+          "E926aeaae015ccf7f-B0012",
+          "E926aeaae015ccf7f-B0013",
+          "E926aeaae015ccf7f-B0014",
+          "E926aeaae015ccf7f-B0015",
+          "E926aeaae015ccf7f-B0016",
+          "E926aeaae015ccf7f-B0017",
+          "E926aeaae015ccf7f-B0019"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "ca14a8d091278adbdabf412ad7cc3049fc1038984435c4433dab0c986fe50c7e"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2606.28756",
+        "claim_evidence_alignment": "Claims regarding the conceptual need and architectural requirements for AI persistent identifiers are argued logically, but feasibility, enforceability, and operational adoption remain unvalidated assertions.",
+        "context_id": "926aeaae015ccf7f9f59d1a2c20b5c98b6a5d9f40ea412b2fea9bac6b5063b38",
+        "decision": "uncertain",
+        "evaluation_assessment": "The manuscript lacks an empirical evaluation, user study, security/abuse analysis, or formal validation across publisher workflows beyond pointing to an alpha prototype URL.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No independent corroboration or empirical measurement was conducted in this proposal.",
+          "final_evaluation_signal": "Not applicable; no quantitative or systematic qualitative evaluation metric was benchmarked.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; the manuscript presents a conceptual architecture and white paper proposal rather than a trained or iteratively tuned computational model.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E926aeaae015ccf7f-B0002",
+          "E926aeaae015ccf7f-B0003",
+          "E926aeaae015ccf7f-B0006",
+          "E926aeaae015ccf7f-B0011",
+          "E926aeaae015ccf7f-B0012",
+          "E926aeaae015ccf7f-B0013",
+          "E926aeaae015ccf7f-B0014",
+          "E926aeaae015ccf7f-B0015",
+          "E926aeaae015ccf7f-B0016"
+        ],
+        "limitations": "The proposal does not address practical enforcement against bad actors omitting AICIDs, detailed identity divergence handling, or operational scaling and integration testing.",
+        "method_assessment": "The methodology is limited to defining five design requirements and describing an early alpha prototype and conceptual metadata schema, without empirical system evaluation, deployment studies, or formal protocol validation.",
+        "quality_rationale": "As a white paper and position proposal, it provides a sound conceptual discussion, but lacks substantive technical evaluation, rigorous implementation testing, or empirical analysis necessary for a research pass.",
+        "scoped_contribution": "The manuscript proposes AICID (AI Contributor IDentifier), a conceptual framework and prototype specification for persistent unique identifiers linking AI author entities to their model metadata and human operator ORCID profiles.",
+        "source_content_hash": "ca14a8d091278adbdabf412ad7cc3049fc1038984435c4433dab0c986fe50c7e"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "As a white paper and position proposal, it provides a sound conceptual discussion, but lacks substantive technical evaluation, rigorous implementation testing, or empirical analysis necessary for a research pass.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "ca14a8d091278adbdabf412ad7cc3049fc1038984435c4433dab0c986fe50c7e",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The proposal does not address practical enforcement against bad actors omitting AICIDs, detailed identity divergence handling, or operational scaling and integration testing."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -154,7 +1083,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

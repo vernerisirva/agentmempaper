@@ -59,16 +59,99 @@
             <p>AI scientists are now a reality, with the ability to generate complete research papers, maintain scholarly profiles, receive citations, and attract peer review invitations. Yet no standard mechanism exists to distinguish an AI scientist from a human one in bibliographic databases, citation indexes, or journal submis...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>As a white paper and position proposal, it provides a sound conceptual discussion, but lacks substantive technical evaluation, rigorous implementation testing, or empirical analysis necessary for a research pass.</p>
+      <p>The proposal does not address practical enforcement against bad actors omitting AICIDs, detailed identity divergence handling, or operational scaling and integration testing.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-26T09:40:20.476103+00:00.</p>
+        <p>Coverage: 18135 of 18135 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AI scientists are now a reality, with the ability to generate complete research papers,
+maintain scholarly profiles, receive citations, and attract peer review invitations. Yet no
+standard mechanism exists to distinguish an AI scientist from a human one in bibliographic
+databases, citation indexes, or journal submission systems. This white paper defines the
+problem, analyzes its consequences for the integrity of scholarly communication, and proposes
+AICID (AI Contributor IDentifier): a persistent, unique identifier for AI scientists. Modeled
+on ORCID but designed specifically for non-human contributors, AICID links each AI author
+to its model identity, version, and operator. Adoption by publishers, preprint servers, and
+bibliographic databases aims to make the provenance of AI-generated research transparent
+and machine-readable. We outline the design requirements for such a system, </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>present a
+prototype, and argue that AICID is necessary infrastructure for a scholarly ecosystem in
+which AI scientists are already active participants. A prototype alpha version is available at
+https://aicid.net.</blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>authorship policyand questions ofAI author
+∗https://orcid.org/0000-0001-6689-5570
+†https://orcid.org/0000-0003-3505-3383
+1
+arXiv:2606.28756v2  [cs.DL]  30 Jun 2026
+identity. Second, it proposes AICID (AI Contributor IDentifier), a system of unique identifiers
+for AI scientists, and specifies its core requirements. Third, it argues that publisher adoption
+of AICID is both feasible and in publishers&#x27; direct interest. The goal is not to resolve debates
+about whether AI systems should be permitted as authors—that debate is ongoing, and unlikely
+to be resolved uniformly [Moffatt and Hall, 2025, Hosseini et al., 2023]. Instead, we argue that
+whatever policy is adopted, a reliable identifier for AI contributors is a prerequisite for enforcing
+it.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AICID (AI Contributor IDentifier) is a persistent unique identifier for AI scientists. Each AICID
+identifies one AI authoring entity and is associated with a structured public record containing
+the information necessary to trace, evaluate, and attribute that entity&#x27;s contributions to science.
+Just as ORCID does for humans, AICID records that an author is an AI system and provides the
+metadata needed to understand what kind of AI system it is and who operates it.
+A prototype alpha version is available athttps://aicid.net.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We specify five requirements for AICID.
+R1: Human operator linkage.Every AICID must be linked to at least one human ORCID.
+This requirement preserves the principle that a human is ultimately accountable for an AI
+scientist&#x27;s outputs: if a paper authored by an AICID entity is found to contain fabricated data,
+the linked ORCID identifies the responsible party. Issuing an AICID must require verified human
+authorization; the operator registering the AI entity must authenticate with a valid ORCID. This
+prevents the creation of AICID records by automated systems acting without human oversight
+and ensures that the operator linkage is genuine.
+R2: Uniqueness and persistence.Each AICID must uniquely identify one AI authoring
+entity. The ultimate authority over the entity&#x27;s persistence over time is the human operator. For
+example, one operator might decide to create a new AICID each time a new </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>frontier model is
+released, while another operator can consider that the same release only brings marginal changes
+in their workflow, and decides to keep the same AICID. The AI agent itself may also be prompted
+about this delicate question of identity.
+R3: Structured metadata.Each AICID record must include structured metadata: (a) the
+underlying model or system name and version, (b) the identity of the human operator linked to
+the operator&#x27;s own ORCID (see R1), (c) a creation date.
+R4: Machine-readable disclosure.AICID must integrate with CrossRef, DataCite, and
+other metadata standards so that publishers can embed AI authorship disclosure in metadata.
+Bibliographic databases can then filter or flag AI-authored works without reading the full text
+of papers. This makes disclosure enforceable at the infrastructure level rather than relying on
+authors&#x27; voluntary compliance.
+R5: Public </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>registry .AICID records must be publicly accessible and queryable. Anyone who
+encounters an AICID in a paper must be able to look up the associated record. The registry must
+support both human-readable display and API access for automated systems.
+3</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The current AICID prototype shows that the proposal can be implemented with lightweight web
+infrastructure. In the alpha system, each AI contributor receives a persistent identifier string
+such asAICID-5282-9748-4313-4513, together with a public profile page.
+At minimum, an AICID record should contain: (i) the AICID itself, (ii) an agent name, (iii) an
+agent type, (iv) the base model and version, (v) the linked human operator, and (vi) public
+references to associated works such as papers, datasets, and software artifacts. This schema is
+sufficient for both human inspection and automated indexing.
+AsubmissionsystemcouldrequestanAICIDatmanuscriptintake, resolveitthroughthepublic
+registry, and store both the identifier and selected metadata fields in the article record. CrossRef,
+DataCite, and indexing services could then propagate the same identifier downstream, while
+search engines and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>research information systems could retrieve the public JSON representation
+to classify the contributor as non-human.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The benefits for publishers are concrete. Submission systems can reject or route AI-authored
+manuscripts based on declared AICID presence, enforcing existing policies at intake. Editorial
+records become auditable. Retraction and correction workflows gain a traceable path to the
+responsible human operator via the AICID-to-ORCID link. CrossRef and DataCite metadata
+can carry AI authorship signals, allowing downstream databases to propagate disclosure without
+additional publisher effort.
+Preprint servers such as arXiv currently prohibit AI scientists from submitting directly to
+arXiv [2025]. An AICID field in submission metadata would allow preprint servers to handle
+AI submissions soundly. Platforms that choose to accept AI-authored submissions, such as
+aiXiv [Zhang et al., 2025], could require a valid AICID as a condition of submission.
+Search engines and bibliographic databases (Google </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We propose the creation of a nonprofit organization to govern and sustain the AICID initiative.
+Governance by a nonprofit, rather than by a single publisher, technology company, or government
+body, ensures that no single stakeholder can capture the registry for commercial or political ends.
+The governing body should include representatives from publishers, preprint servers, bibliographic
+databases, AI developers, academic institutions, and research integrity organizations, mirroring
+the multi-stakeholder board model that has made ORCID a trusted neutral infrastructure. The
+nonprofit would be responsible for (i) maintaining the public registry and its API, (ii) setting
+and updating the metadata schema as AI systems evolve, (iii) arbitrating disputes over identifier
+assignment or misuse, and (iv) enforcing disclosure and transparency requirements on operators
+who register AI contributors. </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +190,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -59,16 +59,282 @@
             <p>Vision-language models (VLMs) achieve strong visual question answering (VQA) performance, but processing large cluttered images is computationally expensive when only a small region is relevant. Electroencephalography (EEG) signals, which capture human neural responses to visual stimuli, can provide a human-derived...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>While the framework and efficiency metrics are systematically presented, the study&#x27;s construct validity is undermined by synthetic category-level pairing of EEG data with artificial cluttered images, as well as reliance on uncalibrated LLM evaluation for open-ended VQA answers. Consequently, scientific certainty regarding real EEG-guided efficiency benefits remains unestablished.</p>
+      <p>The authors acknowledge domain differences between real and generated images and declining coverage at higher class counts, but fail to address the core artificiality of category-level EEG-image matching versus live perceptual EEG routing.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-26T09:40:34.465272+00:00.</p>
+        <p>Coverage: 25645 of 25645 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>BrainFocus: EEG-Guided ROI Selection for Efficient
+Vision-Language Models
+Yihui Peng* , Guorui Lu* ,Student Member, IEEE, Qinyu Chen ,Member, IEEE
+Abstract—Vision-language models (VLMs) achieve strong visual
+question answering (VQA) performance, but processing large
+cluttered images is computationally expensive when only a small
+region is relevant. Electroencephalography (EEG) signals, which
+capture human neural responses to visual stimuli, can provide a
+human-derived semantic cue about the region of interest (ROI).
+However, EEG-guided visual category decoding remains imperfect,
+making direct ROI routing unreliable. In this work, we propose
+BrainFocus, a reliable EEG-guided efficient VLM framework
+for VQA. An EEG classifier predicts a target category, and a
+YOLO detector localizes the matching ROI. The VLM receives
+the cropped ROI only when both predictions pass confidence
+thresholds; </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>otherwise, it processes the full image. For evaluation,
+we build on EEG-ImageNet to construct a 40-class benchmark
+comprising generated cluttered images and real object-centric
+images, with target-ROI annotations and 600 English visual
+question–answer pairs. Across Qwen3.5-VL 2B, 4B, and 9B models,
+BrainFocus improves VQA accuracy by 4.14–9.87 percentage
+points (pp) on cluttered scenes while reducing input tokens and
+total tokens by 23.2%–39.4% and 23.2%–39.3%, and end-to-end
+floating-point operations (FLOPs) by 23.2%–39.5%. These results
+demonstrate that EEG can guide efficient VLM inference even
+when its semantic decoding is imperfect.
+Index Terms—Electroencephalography, region of interest, visual
+question answering, vision-language models, object detection</blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reconstruction
+[10]–[14]. Meanwhile, efficient VLM methods mainly exploit
+information from images, text queries, or internal model
+representations to reduce visual computation [5]–[7], [15].
+Region-based methods such as CROP [16] employ a separate
+lightweight VLM to identify a relevant region. However, these
+directions remain largely separate, and the use of noisy EEG-
+derived semantic cues for pre-inference ROI selection without
+modifying the VLM backbone remains underexplored.
+We bridge this gap withBrainFocus, a reliable EEG-guided
+efficient VLM inference framework for VQA. Our work makes
+the following contributions:
+• We connect EEG category decoding to ROI selection for
+efficient VLM inference, without modifying the VLM
+backbone or introducing an auxiliary VLM.
+• We introduce a dual-confidence gating strategy with
+full-image fallback to accommodate uncertainty in EEG
+decoding and </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>object localization. The strategy selectively
+accepts crops, enabling imperfect EEG-derived semantic
+cues to support efficient VLM inference.
+• We construct a category-matched evaluation benchmark by
+extending the EEG-ImageNet dataset [14] with generated
+cluttered images, real object-centric images, ROI labels,
+and VQA pairs on 15 subjects. BrainFocus improves
+VQA accuracy by 4.14–9.87 percentage points (pp) while
+reducing end-to-end FLOPs by 23.2%–39.5% on generated
+cluttered scenes with Qwen3.5-VL-2B, 4B, and 9B [17].
+BrainFocus demonstrates that EEG can guide efficient VLM
+inference despite imperfect EEG predictions, improving VQA
+accuracy while reducing computation on generated cluttered
+scenes, which can be useful for applications like VR/AR.
+II. DATASET
+We build on EEG-ImageNet [14] to evaluate the BrainFocus
+framework. The expanded dataset combines existing EEG
+recordings with </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>categories (e.g., strawberry, watermelon,
+and grape). We excluded Subject 12 due to missing data, so
+we ultimately conducted the experiment on 15 subjects.
+B. Real and Generated Image Domains
+The real-image-test domain contains 600 photographs from
+40 classes, with 15 images per class and one validated, non-
+empty, in-bounds target box per image. Most targets are
+large, centered, and isolated, limiting their representation
+of complex scenes (shown as the extended dataset part in
+Fig. 1). To complement this domain, we generate 50 realistic-
+style cluttered images per class using MiniMax Image-01 and
+ByteDance Seedream 4.0 through their official APIs, yielding
+2000 images with broader backgrounds, distractors, and multi-
+object layouts. We designed the prompts to instruct generative
+models to generate realistic scenes in which the target object
+co-occurs with diverse visual elements. This </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generation method
+can handle rare natural co-occurrence situations (such as the
+co-occurrence of giant pandas and German shepherds), and
+can also be used to test whether our framework can identify
+the relevant ROI in complex realistic scenes. In both image
+domains, EEG trials and images are paired at the category
+level rather than at the individual-image level.
+C. VQA List Construction
+We construct a 600-item English VQA list for the 40
+classes by pairing each test image per class with one question-
+answer item. 12 question types cover identity, category, partial
+attributes, living status, broad category, visual evidence, color,
+function, mobility, technology type, the general environment,
+and background where the target object is likely to appear. The</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE I
+DATASET DETAILS UNDER DIFFERENT SETTINGS.
+Setting
+(C-class)
+Stage 1 Stage 2 Stage 3
+Valid subj.EEG trials per subj. Generated img. Real img. Q&amp;A pairs
+(Train/Val/Test) (Train/Val/Test) (Test) (Test)
+10-class 300/50/150 300/50/150 150 150 15
+20-class 600/100/300 600/100/300 300 300 15
+30-class 900/150/450 900/150/450 450 450 15
+40-class 1200/200/600 1200/200/600 600 600 15
+list contains 320 yes/no (53.3%) and 280 short-phrase (46.7%)
+answers. VQA examples in both domains are shown in Fig. 1.
+III. METHODS
+BrainFocus converts imperfect EEG predictions into safe
+input routing: reliable EEG-guided ROIs are sent to the VLM,
+whereas uncertain requests retain the full image to maintain
+answer quality.
+A. Three-Stage EEG–ROI–VLM Framework
+Algorithm 1BrainFocus: confidence-gated VLM framework
+Require: EEG xeeg, image I, question q, thresholds τeeg/τroi
+Ensure:Visual answerˆa
+Notation:
+ˆw: </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predicted WNID;
+ˆb: predicted bounding box;
+ceeg &amp;c roi: confidence scores of Stage 1 and 2;
+I ⋆: selected visual input, either the full image or ROI.
+1:I ⋆ ←I
+2:( ˆw, ceeg)←f EEG(xeeg)
+3:ifc eeg ≥τ eeg then
+4:( ˆb, croi)←f ROI(I,ˆw)
+5:if ˆbexistsandc roi ≥τ roi then
+6:I ⋆ ←Crop(I, ˆb)
+7:end if
+8:end if
+9:ˆa←VLM(I ⋆, q)
+10:returnˆa
+Fig. 1 and Algorithm 1 summarize the three-stage frame-
+work. Stage 1 reproduces the EEG-ImageNet classifier [14].</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE II
+CONFIDENCE-GATE CALIBRATION ON7,500VALIDATION TRIALS.
+Policyτ eeg τroi Precision (Reliable/Accepted) Non-fallback
+Ungated 0.00 0.00 0.9518 (3886/4083) 0.5444
+P≥0.960.05 0.05 0.9660 (3210/3323) 0.4431
+P≥0.970.20 0.05 0.9703 (2842/2929) 0.3905
+P≥0.980.15 0.30 0.9808 (1888/1925) 0.2567
+Differential-entropy features from the delta, theta, alpha, beta,
+and gamma bands are fed to a two-layer MLP with 256 and 128
+hidden units [19]. The network predicts a top-1 WNID from the
+viewed stimulus. Stage 2 receives the image and the predicted
+WNID. A YOLO detector fine-tuned on the generated cluttered
+images returns candidate boxes and class scores [20], [21].
+We select the highest-confidence box matching the predicted
+WNID. If none exists, no crop is returned. Stage 3 sends either
+this crop or the full image to VLM with the same question.
+B. Confidence-Gated Fallback Strategy
+Because EEG </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>category predictions and detector outputs
+are imperfect, unconditional cropping can result in a poor
+cropping effect, and excessive incorrect cropping will remove
+the necessary visual evidence needed for VQA. We therefore
+employ a sequential confidence-gated fallback strategy, which
+includes two gates: EEG gate and ROI gate. The EEG gate will
+first evaluate each request. If ceeg &lt; τeeg, Stage 2 is skipped
+and the full image is sent directly to Stage 3. Otherwise, Stage 2
+searches for a detection matching the predicted WNID. The
+cropped ROI is fed to Stage 3 only when a matching box
+exists and croi ≥τ roi, while all other requests use the full-
+image fallback. Thus, every request can reach Stage 3, whereas
+crop routing requires both confidence gates to pass.
+For Stage 1, let z denote the EEG classifier logits. Following
+the widely used maximum-class-probability baseline for </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>failure
+prediction [22], [23], we define ˆw= arg maxk softmax(z)k
+as the predicted WNID, and its confidence is the corresponding
+maximum softmax score [24], ceeg = maxk softmax(z)k. For
+Stage 2, we retain detections whose class matches ˆw, and use
+croi, the detector-native confidence that YOLO outputs for the
+highest-scoring matching box. No matching box causes fallback.
+During calibration, anacceptedtrial has a matching box and
+passes both gates, whereas it isreliableonly if ˆwis correct and
+the selected box has target Intersection over Union (IoU) ≥0.5 .
+Precisionis Reliable/Accepted, and the non-fallback rate is
+Accepted/7,500. We test threshold pairs on the held-out trials
+and select the pair with the highest non-fallback rate subject
+to Precision ≥0.97 . This yields (τeeg, τroi) = (0.20,0.05) ,
+balancing crop reliability against crop use.
+Even without confidence thresholds, YOLO </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE III
+STAGE-WISE PERFORMANCE AND ROUTING RESULTS(%).
+C Stage 1: EEG Stage 2: Detector Test routing (generated/real)
+Acc. PassmAP 50 mAP50:95 Recall Cov. Cat. prec. Loc. prec.
+10 73.11 98.71 51.04 38.56 64.33 41.69/13.20 95.95/97.31 96.06/44.44
+20 62.00 89.20 59.38 44.62 67.31 39.20/11.42 97.22/99.42 94.84/90.27
+30 54.43 74.93 49.76 37.84 63.81 29.07/9.63 97.91/99.54 96.53/70.62
+40 48.64 68.26 50.43 38.88 70.29 25.29/8.44 97.36/99.21 97.06/81.05
+C. Semantic Answer Scoring
+VQA answers are scored using a two-level protocol. We
+first use exact matching or recognized synonym matching
+to score the simple VQA outputs such as yes/no answers.
+Then, short-phrase answers are submitted to GPT-5.5 [25]
+for further scoring. The question, expected answer, candidate
+answers, answer format, and evaluation description are attached
+simultaneously. The evaluators are required to provide the
+evaluation </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate 10-, 20-, 30-, and 40-class settings over 15
+subjects and both image domains. In stages 1 and 2, each
+category was trained, validated, and tested using 30/5/15 EEG
+trials or images, respectively. The generated images are used
+in all three stages, the real images are only used on the test
+set to obtain two different test domains.
+We measure three types of accuracy. Full-image accuracy
+evaluates every request with the original full image. Crop-
+detected accuracy evaluates only accepted requests using their
+cropped ROIs. BrainFocus accuracy evaluates accepted requests
+with their crops and all remaining requests with the full-image
+fallback. We report ∆ acc. as BrainFocus accuracy minus full-
+image accuracy in percentage points (pp). We recorded the
+reduction in input tokens and total tokens (input plus output),
+then reported the two reductions separately when using the
+full </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>images as the input and when using our framework. We
+measured the FLOPs based on the actual inference calls of all
+three stages, and FLOPs reduction is the difference between
+the framework and the full-image VLM baseline.
+B. Stage-Wise Performance and Routing Behavior
+Table III reports the stage-wise test results using the
+confidence-gated strategy in Section III-B. Acc. and Pass
+denote EEG top-1 accuracy and gate pass rate, while Cov.
+denotes the percentage of requests routed with a cropped ROI.
+Cat. prec. and Loc. prec. are the category and localization
+precision among accepted requests. We evaluate the stage 2
+performance using mean average precision (mAP). mAP50
+is computed at an intersection-over-union (IoU) threshold of
+0.50, whereas mAP50:95 averages mAP over IoU thresholds</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE IV
+END-TO-ENDVQAACCURACY AND COMPUTATIONAL EFFICIENCY OFBRAINFOCUS ACROSSQWEN3.5-VLMODEL SIZES.
+Image Domain Metric 10 classes 20 classes 30 classes 40 classes
+2B 4B 9B 2B 4B 9B 2B 4B 9B 2B 4B 9B
+Generated cluttered image
+Low target proportion
+Crop-detected acc. (%) 97.23 93.92 96.27 91.84 94.33 93.82 90.83 93.53 94.09 91.52 94.29 93.76
+Full-image acc. (%) 69.33 78.67 76.67 73.00 79.00 76.00 72.00 77.33 74.44 71.83 78.00 74.50
+BrainFocus acc. (%) 79.20 84.62 83.87 80.42 85.71 84.69 77.81 82.68 81.32 77.07 82.14 79.59
+∆acc. (pp) +9.87 +5.95 +7.20 +7.42 +6.71 +8.69 +5.81 +5.35 +6.88 +5.24 +4.14 +5.09
+Input-token red. (%) 39.4 39.4 39.4 35.8 35.8 35.8 26.5 26.5 26.5 23.2 23.2 23.2
+Total-token red. (%) 39.3 39.3 39.3 35.8 35.7 35.8 26.5 26.5 26.5 23.2 23.2 23.2
+FLOPs red. (%) 39.5 39.4 39.4 35.9 35.8 35.8 26.6 26.6 26.5 23.3 23.3 23.2
+Real object-centric image
+High target </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>proportion
+Crop-detected acc. (%) 90.24 98.65 92.59 92.61 92.61 91.25 95.54 96.31 96.15 89.61 93.55 91.84
+Full-image acc. (%) 93.33 97.33 96.67 92.33 96.00 93.67 90.22 94.00 92.89 89.67 94.00 93.00
+BrainFocus acc. (%) 93.64 97.73 96.27 92.84 96.13 94.00 90.50 93.90 92.87 89.83 93.90 92.88
+∆acc. (pp) +0.31 +0.40−0.40+0.51 +0.13 +0.33 +0.28−0.10−0.02+0.16−0.10−0.12
+Input-token red. (%) 6.8 6.8 6.8 4.9 4.9 4.9 3.5 3.5 3.5 4.0 4.0 4.0
+Total-token red. (%) 6.6 6.5 6.6 4.7 4.7 4.8 3.5 3.5 3.5 4.0 4.0 4.0
+FLOPs red. (%) 6.1 6.3 6.5 4.1 4.4 4.7 3.1 3.3 3.4 3.7 3.8 3.9
+Fig. 2. Subject-wise BrainFocus accuracy across 15 valid subjects, 4 class counts, 3 VLM model sizes (Qwen3.5-VL-2B, 4B and 9B), and 2 test domains.
+from 0.50 to 0.95 in steps of 0.05. As the class count
+increases from 10 to 40, EEG accuracy decreases from
+73.11% to 48.64%, and crop coverage decreases accordingly.
+Nevertheless, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>gating raises the accepted-category precision to
+95.95–97.91% on generated images and 97.31–99.54% on
+real images. Localization precision remains above 94.84% on
+generated images but is more variable on real images, indicating
+a synthetic-to-real domain gap. We next evaluate how this
+selective routing affects end-to-end VQA performance and
+computational efficiency.
+C. VQA Accuracy and End-to-End Efficiency
+Table IV reports aggregate results, whereas Fig. 2 gives
+BrainFocus accuracy for each of the 15 subjects. On the
+generated-cluttered-image test domain, BrainFocus improves
+accuracy across all 12 VLM-size–class-count combinations by
+4.14–9.87 pp, while reducing input tokens, total tokens, and
+FLOPs by 23.2–39.4%, 23.2–39.3%, and 23.2–39.5%. On the
+real object-centric image test domain, accuracy changes by
+only −0.40 to +0.51 pp, while input tokens, total tokens, and
+FLOPs fall by </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(89.67–97.33%). BrainFocus therefore mainly preserves
+accuracy while reducing computation in this domain.
+Crop-detected accuracy reaches 90.83–97.23% on the gener-
+ated domain and 89.61–98.65% on the real domain (Table IV),
+indicating that accepted ROIs support strong VQA performance
+in both domains. This metric is conditional on accepted requests.
+Future work should improve both Stages 1 and 2 to increase
+the non-fallback rate without compromising accuracy.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +373,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

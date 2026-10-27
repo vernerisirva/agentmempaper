@@ -59,16 +59,266 @@
             <p>Self-supervised Vision Transformers (ViTs) like DINO encode rich semantics, enabling training-free segmentation of objects from the background and discovery of their parts via feature clustering. This paper focuses on part discovery: partitioning a foreground object into semantic parts. Existing approaches produce i...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers sound empirical motivation supported by an analysis of 26k foreground patches, a clear and modular training-free design, systematic ablations isolating key components, and convincing gains across multiple standard benchmarks.</p>
+      <p>The authors transparently discuss the requirement of predefining part granularity K and the sensitivity of structural edge extraction to illumination variations, shadows, or low-contrast textures.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-27T09:38:13.719916+00:00.</p>
+        <p>Coverage: 66577 of 66577 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Self-supervised Vision Transformers (ViTs) like DINO encode rich semantics,
+enabling training-free segmentation of objects from the background and discovery
+of their parts via feature clustering. This paper focuses on part discovery: par-
+titioning a foreground object into semantic parts. Existing approaches produce
+imprecise part boundaries. We trace this to the rigid ViT patch grid used in training
+DINO, where patches straddling boundaries contain pixels from multiple parts.
+While DINO&#x27;s invariance-based training could absorb this pixel-level mixing into
+clean features, experiments with over 26K foreground patches show it does not:
+boundary-overlapping patches produce features with higher entropy and lower
+assignment confidence, blurring predicted part boundaries. Rather than make the
+massive effort of retraining DINO over geometrically coherent regions, an easier
+approach is to take </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>boundaries directly from a boundary detector, which supplies
+the geometric information DINO&#x27;s features lack. Motivated by this, we introduce
+Part-DINO, a training-free framework that combines boundaries from low-level
+image segmentation with DINO&#x27;s semantic features. We use the boundaries to
+partition the image into regions, pool DINO features within each region, and group
+them to discover parts. Without any training, Part-DINO produces structurally
+coherent part assignments, outperforming training-free baselines across four stan-
+dard benchmarks (CUB, CelebA, PartImageNet-OOD, PartImageNet-Seg) and
+remaining competitive with weakly-supervised and unsupervised methods.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>aligned with
+physical boundaries. Rather than retrain DINO over geometrically coherent regions at massive cost,
+an easier approach is to fuse it with an independent boundary detector.
+Motivated by this, we propose Part-DINO, a training-free framework that combines the accurate
+boundaries from low-level image segmentation with the semantic information of DINO features. The
+boundaries partition the image into regions whose contours align with object geometry. We then pool
+DINO features within each region and use them for semantic grouping, assigning each region to its
+nearest part prototype.
+We evaluate Part-DINO across four standard part-discovery benchmarks (CUB (Wah et al., 2011),
+CelebA (Liu et al., 2015), and the OOD and Seg splits of PartImageNet(He et al., 2022a)), using
+standard metrics (NME, NMI, and ARI). Part-DINO is training-free: it relies only on the frozen DINO
+features and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>avoids the optimization required by unsupervised methods (which train without labels)
+and weakly-supervised methods (which use image-level labels). Despite this constraint, Part-DINO
+outperforms the patch-based training-free baseline on NME and ARI across all datasets, and on NMI
+for three of four. The slight NMI drop on PartImageNet-OOD reflects a known metric trade-off,
+where ARI rewards spatial coherence over fine fragmentation (Sec.4). Furthermore, Part-DINO
+remains competitive with trained models, demonstrating that integrating image geometry with frozen
+semantic features recovers part structure without learned objectives.
+Our contributions in this paper are:</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Boundary Patches:We now detail the analysis behind the finding that pixel-space mixing
+propagates into feature space Sec.1. For each foreground patch p, we measure four quantities: (1)
+Euclidean distance d(p) of its center to the nearest ground-truth part boundary, (2) its spatial purity
+π(p) =|majority-part pixels|/|p fg|, (3) its feature entropy H(p), computed as the entropy of the
+patch&#x27;s softmax similarity to per-part mean features extracted from clean interior patches, and (4) its
+top-2 assignment margin m(p), the similarity gap between p&#x27;s closest and second-closest part vector.
+Across 26,459 foreground patches, smaller d corresponds to larger patch–boundary overlap. As
+overlap increases, it causes spatial purity (π(p)) to drop (Spearman correlationρ(d, π) = +0.71, Supp.
+Fig.7a), confirming pixel-space mixing. The key finding is that this pixel space mixing propagates
+into the </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>feature space: patches closer to a boundary show higher feature entropy (ρ(d, H) =−0.38)
+and a lower top-2 assignment margin ( ρ(d, m) = +0.36). Furthermore, this boundary mixing is
+widespread: 21.9% of all foreground patches have a purity of π &lt;1. As shown in Figure 1c, H
+and m vary smoothly with distance d, therefore the feature quality degrades continuously as overlap
+increases.
+This analysis has two direct implications for part discovery. First, the spatial unit must respect object
+geometry, since a patch that spans multiple parts cannot preserve the contour separating them. Second,
+the geometric signal must be independent of DINO: as Fig.1d shows, edges derived from DINO
+feature similarity blur at part contours, whereas edges from image contrast remain sharp and aligned
+with physical boundaries. Part-DINO follows from these two constraints: we extract regions from a
+low-level </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given an input image I∈R H×W×3 , our goal is to parse the object into a set of geometrically
+coherent regions R that respect part boundaries. Since we are interested in parts of the object rather
+than the background, we first isolate the foreground by extracting a binary mask Mf g∈ {0,1}H×W
+using foreground extraction methods. Within the foreground M, we compute a structural edge map
+Eedge from the image contrast. We apply the RAMP transform Akbas and Ahuja (2020), which
+estimates a per-pixel contrast magnitude based on local intensity transitions across four orientations
+(0◦,45 ◦,90 ◦,135 ◦). By construction, Eedge depends only on pixel intensities, making it independent
+of DINO&#x27;s feature pipeline that runs in parallel to extract semantic descriptors.
+To generate the atomic regions from this edge map, we apply the Watershed transform Vincent and
+Soille (1991) to Eedge, which treats the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Building upon the regions R extracted in Section 3.1, we compute a semantic representation for each
+such region r∈ R. We first extract the dense DINO feature map Fpatch ∈R Hp×Wp×D from the input
+image, where D is the embedding dimension and (Hp, Wp) is the patch grid. We bilinearly upsample
+this to the image resolution (H, W)to get a per-pixel feature map F∈R H×W×D in which each
+pixel p has a feature vector Fp ∈R D. Each region&#x27;s representation is then the ℓ2-normalised average
+of these features over the pixels assigned to that region:
+ˆfr = 1|r| Xp∈r Fp∥Fp∥2 (1)
+Because each region is bounded by high image contrast pixels rather than by the fixed contour of
+the predetermined patch grid, the pooled feature ˆfr aggregates pixels that lie within a single part,
+avoiding the loss of boundary information that compromises patch-level features.
+To discover K globally consistent parts of an </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>object category, we randomly sample a reference subset
+Dref of N images from the dataset. We then perform K-Means clustering over the complete global
+pool of region features ( ˆfr) from this subset to establish our category-specific semantic dictionary:
+C=c 1, . . . , cK =K-Means
+ [
+Ii∈Dref
+Fi;K
+!
+(2)
+where Fi is the set of region features extracted from image Ii. Each centroid ck ∈ Cacts as a global
+prototype for a specific part, aggregated across instances in the reference set ( Dref). For datasets
+containing multiple object categories, this dictionary is generated independently for each class.</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given a new image Itest, we extract its region set ( R) and the pooled features ( ˆfr) following Sec-
+tion 3.1. Each region r∈ Ris then assigned to its nearest global prototype by maximizing the cosine
+5
+Table 1: Quantitative comparisons on CUB dataset across part granularities K ∈ {4,8,16}. We
+report NME (↓), NMI (↑), and ARI (↑) against weakly-supervised, unsupervised, and training-free
+methods.†indicates replicated with SAM foreground mask
+Method K= 4K= 8K= 16
+NME↓NMI↑ARI↑NME↓NMI↑ARI↑NME↓NMI↑ARI↑
+Weakly-supervised part discovery
+Huang and Li (2020) 11.51 29.74 14.04 11.60 35.72 15.90 12.60 43.92 21.01
+Van Der Klis et al. (2023) 9.12 37.82 15.26 8.52 50.08 26.96 7.64 56.87 38.05
+Choudhury et al. (2021) 9.20 43.50 19.60 - 51.50 28.30 - - -
+Van Der Klis et al. (2023) + ViT-B/14 7.70 52.59 26.66 6.34 65.01 37.90 5.95 68.63 43.41
+PDiscoFormerAniraj et al. (2024) 8.19 52.88 23.22 6.23 67.59 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>41.35 6.44 69.54 49.99
+Unsupervised part discovery
+Xia et al. (2024) 9.92 45.22 19.40 8.58 52.42 26.42 8.27 53.52 33.95
+MPAE Xia et al. (2025) 7.75 58.93 33.73 5.53 68.24 45.85 5.14 79.00 66.56
+Training-Free Part Discovery
+Amir et al. (2021) - 31.18 11.21 - 47.21 19.76 - 50.57 26.14
+Amir et al. (2021)†9.92 39.77 17.94 6.26 54.03 27.18 4.87 56.92 35.10
+Part-DINO (Ours) 8.21 53.93 23.01 6.00 61.84 37.92 4.35 65.45 46.00
+Table 2: Quantitative comparison on CelebA across part granularities K ∈ {4,8,16}. We report
+NME (↓), NMI (↑), and ARI (↑) against weakly-supervised, unsupervised, and training-free methods.
+†indicates replication with SAM foreground masks.
+Method K= 4K= 8K= 16
+NME↓NMI↑ARI↑NME↓NMI↑ARI↑NME↓NMI↑ARI↑
+Weakly-supervised part discovery
+Huang and Li (2020) 8.75 56.69 34.74 7.96 54.80 34.74 7.62 62.22 41.01
+Van Der Klis et al. (2023) 11.11 75.97 69.53 9.82 62.61 51.89 9.46 77.43 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>70.58
+Unsupervised part discovery
+GANSegHe et al. (2022b) 12.26 41.71 28.06 6.18 67.28 56.23 - - -
+Xia et al. (2024) 12.28 50.69 34.57 10.24 58.35 46.78 - - -
+MPAE Xia et al. (2025) 11.44 56.13 37.20 7.55 59.64 41.72 7.10 70.21 60.33
+Training-Free part discovery
+Amir et al. (2021) 11.82 0.17 0.01 11.34 1.19 0.03 - 3.29 0.06
+Amir et al. (2021)†11.36 1.38 0.01 10.74 1.12 0.01 11.42 1.99 0.03
+Part-DINO(Ours) 10.81 45.07 32.20 10.59 41.53 28.59 9.15 41.04 25.20
+similarity:
+k∗ = arg max
+k∈{1,...,K}
 
-        <ul></ul>
+ˆf ⊤r ck
+
+,(3)
+producing a dense part label map L. Since both the extracted region features and the prototypes C lie
+in the same DINO embedding space, this assignment requires no additional training. Every pixel
+within a region receives the same label by construction, so the final part boundaries in L coincide
+with the watershed boundaries computed from Eedge, not the rigid, low-resolution </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>metrics. Normalized Mutual
+Information (NMI) measures the mutual information between predicted cluster assignments and
+ground-truth labels. A high NMI indicates that predicted clusters are strongly aligned with ground-
+truth parts. Adjusted Rand Index (ARI) measures whether pixel pairs from the same ground-truth
+part are assigned the same cluster, and pairs from different parts are assigned different clusters. ARI
+is adjusted for chance, so a random assignment scores near zero. Normalized Mean Error (NME)
+is calculated as the distance between centroid of each predicted region and measure its Euclidean
+distance to the nearest ground-truth keypoint (landmark such as eye or beak), and report the mean of
+these distances normalized by image size. Lower NME implies better centroid alignment.
+Results.Tables 1 and 2 show our quantitative results on the fine-grained CUB and CelebA </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>datasets
+across part granularities (K∈ {4,8,16}). On CUB, Part-DINO outperforms the patch-based training-
+free baseline across all K, improving NMI (56.92→65.45) and ARI (35.10→46.00) at K=16. Despite
+requiring no training, Part-DINO matches or exceeds several weakly-supervised and unsupervised
+methods (Huang and Li, 2020; Van Der Klis et al., 2023; Xia et al., 2024) atK= 16 . On CelebA,
+where the patch-based baseline collapses (ARI &lt; 0.1 across all K), Part-DINO outperforms the
+unsupervised GANSeg at k= 4 (ARI: 32.20 vs. 28.06), though trained methods remain stronger.
+Table 5 shows results on the PartImageNet OOD (PartImageNetO) and Segmentation (PartImageNetS)
+splits. On PartImageNet O, Part-DINO achieves consistently higher ARI but slightly lower NMI
+compared to patch-based baselines. This reflects a known trade-off: NMI favors over-segmentation
+into many small, pure clusters, while </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ARI penalizes such fragmentation. By grouping spatially
+coherent regions, Part-DINO prioritizes structurally consistent parts, leading to higher ARI at the cost
+7
+Table 3: Impact of the atomic unit on CUB (k= 4 ).
+Combining region-based assignment with region-
+based prototypes (row 4) yields the largest improve-
+ment across all metrics.
+Unit Prototypes NME (↓) NMI (↑) ARI (↑)
+Patches Patch-based 9.22 32.83 13.96
+Patches Region-based 8.30 39.33 16.10
+Regions Patch-based 9.02 42.80 18.13
+Regions Region-based 8.21 53.93 23.01
+Table 4: Region generation methods on CUB
+(k= 16 ). Even at coarser granularity, RAMP
++ Watershed outperforms fine-grained SLIC.
+Method Regions NME↓NMI↑ARI↑
+Patches – 4.85 49.03 22.54
+SLIC 250 5.00 58.55 36.94500 4.99 60.78 38.64
+RAMP
++ Watershed
+142 4.44 61.96 43.13
+500 4.35 65.45 46.00
+Table 5: Quantitative comparison on PartImageNet Out-of-Distribution </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(2021)†32.8654.77 37.1957.8740.4159.99 25.59 57.69 27.08 62.92 32.12 64.73
+Part-DINO(Ours) 30.07 63.27 31.14 64.93 30.13 65.42 37.21 66.10 41.54 66.94 41.80 66.97
+of marginally lower NMI. On PartImageNetS, Part-DINO improves over the training-free baseline
+on both NMI and ARI for K ∈ {8,25,50}, maintains an ARI above 66, and outperforms the fully
+trained SOTA MPAE at K = 8 on both metrics (37.21/66.10 vs. 33.51/65.05) despite no training.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Unit (Patches vs Regions):To isolate the impact of the atomic unit, we test all combinations of
+patches and regions for prototype construction and label assignment. As shown in Table 3, improving
+only the prototype quality while keeping patches as the assignment unit (row 2) yields marginal gains
+over the baseline (+6.50 NMI, +2.14 ARI). This is expected: while the target prototypes are cleaner,
+the patch-based assignment still blurs features across part boundaries. Improving only the assignment
+unit while keeping patch-based prototypes (row 3) yields a larger gain (+9.97 NMI, +4.17 ARI), as
+geometric region produces clean query features even when the targets are noisy. Combining both
+changes (row 4), we match region features with region prototypes, reducing mixing on both sides of
+the assignment and improving NMI (32.83→53.93) and ARI (13.96→23.01).
+Region Generation:We compare </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RAMP-based Watershed Akbas and Ahuja (2020, 2014) against
+SLIC Achanta et al. (2012), keeping all other components fixed. As shown in Table 4, both methods
+improve over the patch baseline. At the same granularity of 500 regions, RAMP + Watershed
+improves ARI by +7.36 over SLIC, and even at a coarser granularity (142 regions) outperforms
+fine-grained SLIC (500 regions). The difference is visible in Figure 5b: SLIC impose an explicit
+compactness constraint that trades boundary adherence for spatial uniformity. RAMP + Watershed
+places boundaries along intensity gradients, resulting in regions that respect object geometry.
+Region Granularity.To study the effects of region granularity, we vary the minimum inter-seed
+distance dmin. As shown in Figure 4, finer regions improve part discovery. Decreasing dmin from 15
+to 2 increases the average number of regions from 22 to 500, improving all </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>relies on structural edge map ( Eedge)
+derived from the RAMP transform, explicitly avoiding the use of DINO semantic boundaries. As
+shown in Table 6, compared to a baseline semantic similarity between patch features, structural edges
+consistently perform better across all granularities. The performance the gap widening asK increases,
+at K= 16 , structural edges improve NMI by +9.06 and ARI by +7.05. Figure 5a shows semantic
+edges are blurred at object boundaries, producing regions that bleed across physical contours.
+Computational Efficiency.We compare the computational efficiency of our method with (Amir
+et al., 2021). Both share an identical DINOv2 backbone (~40 ms) and SAM3 masking (~560 ms).
+The main difference lies in Part-DINO&#x27;s region-construction pipeline: RAMP (32 ms), watershed
+(25 ms), merging (6 ms), and pooling (1 ms), which introduces a negligible total overhead of 72 </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We have presented Part-DINO, a training-free framework motivated by an empirical finding: pixel-
+space mixing at boundary patches propagates into feature space. Across 26k foreground patches,
+feature entropy rises and the top-2 assignment margin falls as patch–boundary overlap increases,
+making the ViT patch the bottleneck for spatially precise part discovery. Part-DINO addresses this
+by replacing the patch with regions whose boundaries come from low-level image segmentation
+alone, independent of DINO. We pool DINO features within each region and use them only to group
+regions into parts, not to place boundaries. Part-DINO outperforms the patch-based training-free
+9
+baseline on NME and ARI across all four benchmarks and granularities, and matches or exceeds
+several training-based methods.
+We presenttwo limitations. (1) Fixed part granularity. Part-DINO requires the number of parts
+(K) to </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>be specified in advance. While this is a common assumption across all part discovery
+methods, it limits applicability to settings where the correct granularity is unknown or varies across
+object categories. (2) Dependence on contrast. Because our region boundaries are derived from the
+RAMP transform, which relies on local intensity contrast, the edge response weakens in low-contrast
+scenes, uniform lighting or minimal texture variation between parts, leading to under-segmentation.
+Conversely, strong illumination gradients or cast shadows can introduce spurious edges that do not
+correspond to part boundaries.
+Future work.Part-DINO discovers parts as unlabeled clusters. A natural extension is to assign seman-
+tic labels to these discovered regions by leveraging vision-language models such as CLIP, bridging
+part discovery and open-vocabulary part segmentation.Broader Impact.Positively, our </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the true, natural contours of
+the physical objects.
+E DINO-Free Region Generation
+DINO enters region generation only through the micro-region merge (Sec. 3.1), which absorbs each
+watershed region smaller than smin pixels into its most similar neighbor. Merging only removes
+boundaries and never places one. DINO therefore decides which watershed regions are grouped,
+the same role it plays in region assignment (Sec. 3.3), while boundary placement depends on Eedge
+alone. To confirm that the gains do not depend on this step, we disable it (smin = 0), making region
+generation fully independent of DINO.
+Table 7 reports the result on CUB atK= 16. Disabling the merge adds 18.5 regions per image and
+changes NMI and NME by only 0.03, while ARI drops by 1.91. Even without the merge, Part-DINO
+outperforms the patch-based baseline by +8.09 NMI and +8.82 ARI, with 0.51 lower NME. The
+gains therefore </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>come from the DINO-independent boundaries, not from the merge.
+Table 7: Effect of the DINO-based micro-region merge on CUB (K= 16 ). With smin = 0, region
+generation uses no DINO features. Both Part-DINO rows come from the same run. † replicated with
+SAM foreground mask.
+Method Regions/img NME↓NMI↑ARI↑
+Amir et al. (2021)† – 4.87 56.92 35.10
+Part-DINO (smin = 10, default, rerun) 506.7 4.33 64.98 45.83
+Part-DINO (smin = 0, no merge) 525.2 4.36 65.01 43.92
+Table 8: Timing breakdown (ms), average regions, and clustering performance metrics.
+Runtime Breakdown (ms) Metrics
+Method DINO SAM RAMP Wshed Merge Pool Assign Total Avg. Reg. NME (↓) NMI (↑) ARI (↑)
+(Amir et al., 2021) (patch) 40.0 552.4 0.0 0.0 0.0 6.0 1.1 599.5 1024 4.87 56.92 35.10
+Part-DINO (dmin = 15) 40.2 558.3 32.4 23.8 5.2 1.3 0.4664.923.1 5.20 42.57 25.21
+Part-DINO (dmin = 5) 39.7 562.9 32.8 24.5 6.1 1.3 1.4 672.2 151.1 4.44 </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +357,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

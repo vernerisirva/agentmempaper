@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents</h1>
+          <p class="hero-copy">Xinyu Zhang, Weiwei Sun</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.34673v1">Open paper</a>
+            <a class="paper-detail-link" href="agent-memory-as-recommendation-recommender-system-design-for-long-term-memory-of-llm-a3e1cf7d.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Xinyu Zhang, Weiwei Sun</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-26</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-26</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.34673">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Focuses on persistent or long-term memory for agent behavior.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Large language model (LLM) agents that serve users across many sessions must choose, for every request, the few stored memories that enter a limited context window. This choice largely decides whether the agent answers correctly, and it runs on every request at Web scale. This selection faces three challenges: a lar...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work provides a sound theoretical formulation uniting memory architectures into a recommender cascade and demonstrates strong empirical gains using zero-LLM-call ranking, supported by thorough baseline reproductions, cost measurements, and independent evaluation controls.</p>
+      <p>The authors identify degradation on instances requiring evidence across three or more sessions (kappa &gt;= 3), sensitivity to near-miss filler distractors in complete slates, and performance variations across target answering models.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-27T09:39:15.928264+00:00.</p>
+        <p>Coverage: 72764 of 72764 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cascades and
+factorizes accuracy into the completeness that each stage controls.
+Guided by it, we proposeAgentMemRec, which adapts candidate
+generation, learning to rank and slate construction from recom-
+mender systems and selects memories without any LLM call. On
+multi-session questions of LongMemEval,AgentMemRecoutper-
+forms memory and context-selection methods, including A-Mem,
+HippoRAG 2, DynamicRAG and T-Mem, by 10 to 31 points of ac-
+curacy. It matches an LLM reranker that makes 64 calls per query
+at 3.2 times lower serving cost, and on LoCoMo it outperforms
+Mem0 and Zep without any LLM call at write time. The factoriza-
+tion attributes the gains to slates that more often hold all of the
+evidence, so recommender-system design offers an effective and
+efficient foundation for the long-term memory of LLM agents.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Definition 3.1 (Budgeted slate recommendation).A budgeted slate
+recommendation problem has a distribution of requests𝑥, a cata-
+logue𝐼(𝑥) for each request, a monotone set cost𝑐𝑥 on subsets of
+𝐼(𝑥) , a budget𝐵, and a slate reward𝑅(S,𝑥)∈[ 0, 1] that is observed
+only for the slate shown. A policy𝜋 maps each request to a slate
+with𝑐𝑥(𝜋(𝑥))≤𝐵, and its value is𝑉(𝜋)=E 𝑥[𝑅(𝜋(𝑥),𝑥)].
+A question𝑞 arrives at date𝑡𝑞 with a historyH(𝑞) , the set of
+user and assistant turns in its dated sessions. Memory selection is
+an instance of Definition 3.1. The request is 𝑥=(𝑞,𝑡 𝑞) together
+with the agent&#x27;s state, and the catalogue is 𝐼(𝑥)=H(𝑞) , whose
+units are turns and, optionally, records that cite turns. The cost
+is the token count of the rendered slate, 𝑐=tok◦render , which
+grows as units are added. The reward𝑢(S,𝑞) is the probability that
+the judge accepts the answer that an answering model </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Recommenders meet these three properties with a cascade, and we
+use the cascade to define the space of memory designs.
+Definition 3.2 (Design space).A memory design is a tuple 𝑑=
+(𝜑,𝑔,𝑓,ℎ) . The write-time map𝜑 turns a history into a catalogue
+of units, possibly with side-information. The candidate generator𝑔
+returns a poolP(𝑞)⊆𝜑(H(𝑞)) , the ranker𝑓 orders the pool, and
+the slate builderℎ selectsS𝐵(𝑞)⊆P(𝑞) within the budget. The
+LLM cost of𝑑 counts the LLM calls of𝜑 per history and of𝑔,𝑓 and
+ℎper request.
+Every memory system we compare is a point in this space (Fig-
+ure 2b), and the points differ mainly in where they spend LLM
+calls.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The benchmark marks a gold setG(𝑞)⊆H(𝑞) of turns that contain
+the answer, and a slate is complete when the turns that its units
+render or cite coverG(𝑞) , writtenG(𝑞)⊆S 𝐵(𝑞). For a policy, let
+𝑟pool =Pr[G⊆P] be its pool completeness,𝑟rank =Pr[G⊆S 𝐵|
+G⊆P] its ranking completeness and𝑟slate =Pr[G⊆S 𝐵] its slate
+completeness. Let𝑎c and𝑎i be its mean reward on complete and
+on incomplete slates.
+Proposition 3.3 (Stage factorization).For every cascade with
+S𝐵(𝑞)⊆P(𝑞),Acc(𝜋)=𝑎 i+(𝑎 c−𝑎 i)𝑟 pool𝑟rank.
+Proof. By total expectation over the event 𝐶={G ⊆ S𝐵},
+Acc=𝑎 c Pr[𝐶]+𝑎 i(1−Pr[𝐶]) . SinceS𝐵⊆P , the event𝐶 implies
+G⊆P, soPr[𝐶]=𝑟 pool𝑟rank.□
+Proposition 3.3 separates the item-level stages from set-level
+effects. Candidate generation sets𝑟pool, which bounds every ranker
+since𝑟slate≤𝑟 pool, learning to rank sets𝑟rank, and the gap𝑎c−𝑎 i
+scales both gains. Set-level effects, such as a misleading </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In Equation (2),𝑟pool bounds the product, so the pool must be wide,
+and with 𝐿= 0it must be cheap to build. Like a recommender,
+AgentMemRecnarrows the catalogue with cheap retrieval chan-
+nels. The lexical channel ranks all turns by BM25 [32] over lower-
+cased word tokens. The dense channel ranks them by the cosine
+similarity of bge-m3 embeddings [5]. Reciprocal rank fusion [RRF;
+9] with 𝑘= 60merges the two lists, and the pool P(𝑞) is the
+top𝑁= 128fused turns. The pool size was chosen on develop-
+ment questions by slate completeness after ranking, the product
+𝑟pool𝑟rank, where 128 turns led with 0.912 against 0.879 for 64 turns,
+in-sample for a ranker trained on 64-turn pools.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>When evidence units are independent, the set-level objective re-
+duces to ranking units by their probability of being evidence. The
+ranker therefore learns item relevance from gold labels, and with
+𝐿=0it uses cheap features, as recommender cascades do.Agent-
+MemRecuses a LightGBM model [20] trained with the LambdaRank
+objective [4, 41]. Each (question, pooled turn) pair has ten features.
+Five are cheap relevance signals: the bge-m3 cosine, the logarithms
+of the global dense and BM25 ranks, the position in the fused pool
+and the bge-reranker-v2-m3 cross-encoder score. Five describe the
+turn: whether its role is user, its relative position in its session,
+the logarithms of its age in days and of its length, and the spaCy
+keys it shares with the question. The labels are the gold annota-
+tions of the 152 development questions, with pools from both their
+LongMemEval-S and LongMemEval-M </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The slate stage fills the budget𝐵 from the ranked pool. It walks the
+pool in rank order and adds each turn whose rendered cost still fits.
+The rendered cost of a turn is the increase in the token count of the
+rendered slate when the turn is added, including its session header
+if no earlier turn of that session was selected. A turn that does
+not fit is skipped, and the walk continues. The rendering groups
+the selected turns by session, orders sessions by date and uses the
+official LongMemEval history format (Appendix A). The budget
+is fixed at 𝐵= 2,700tokens, a value set in our first experiment
+before any system was compared, and the evaluation perturbs it
+to 2,400 to 2,700. There is no per-question cutoff, because the fill
+contains every prefix that fits, so a cutoff can only help where a
+lower-ranked turn lowers the value of the slate. On the ranking of
+AgentMemRec, choosing the best </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarks and splits.Like most memory papers, we evaluate on
+LongMemEval-S [40] and LoCoMo [26]. LongMemEval-S (cleaned
+release) has 500 questions over histories of about 50 sessions and
+100k tokens. LongMemEval-M shares its questions over histories
+of about 500 sessions and 1.5M tokens, and serves as a harder third
+setting. We exclude the 30 questions of the unanswerable type and
+compute𝜅 over the other 470. A split fixed before any method run
+assigns 152 of the 500 questions of both variants to development
+and 348 to test, of which 328 are answerable. The primary stratum
+is𝜅≥ 2on test, with 𝑛= 209, and we also report 𝜅≥ 3(49 test
+questions). Label-only and oracle measurements have no learned
+component and use all 300 questions with𝜅≥ 2. LoCoMo has 1,540
+scored questions in 10 conversations. As the field does, we report
+all of them, and we add paired comparisons on test conversations </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3
+to 9, with conversations 0 to 2 for development.
+Answering and judging.On LongMemEval, two answering mod-
+els read every slate: Qwen3-32B [43] with FP8 weights under vLLM,
+and DeepSeek V4.1 Flash [ 13] through one pinned FP8 provider.
+Both decode at temperature 0 with reasoning disabled and the of-
+ficial step-by-step answer prompt of LongMemEval. Final labels
+come from the official GPT-4o judge with its per-type prompts. A
+Qwen3-32B judge with the same prompts agrees with GPT-4o on
+94% to 98% of answers and changes one primary label. On LoCoMo,
+we use the answering model, prompt and judge of T-Mem: GPT-4o-
+mini answers, and the GPT-4o-mini judge is run three times per
+answer. Appendix A gives the serving and judging details.
+Implementation details.Single decodes are unstable: changing
+only the lowest-ranked 100 to 300 tokens of a 2,700-token slate
+changes the judged answer on 91 of </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>300 multi-session questions for
+Qwen and 43 for DeepSeek. The variation comes from the answer-
+ing model, because re-judging identical answers agrees on 99.9% of
+them. We therefore build𝐾= 4slates per question and system, with
+budgets𝐵∈{ 2,400, 2,500, 2,600, 2,700} in the system&#x27;s own order,
+and report the mean judge label. Identical prompts are answered
+once, so Adaptive-k and DynamicRAG, whose slates often stop
+short of the budget, reuse one decode for all four budgets on 86%
+and 52% of questions. T-Mem assembles one context per question
+and uses one decode. Systems are compared by a paired percentile
+bootstrap over questions with 10,000 draws at the 5% level. Labels
+are fixed before each run, and a difference is againwhen it is sig-
+nificantly above zero and alosswhen it is significantly below zero.
+It is atparitywhen it is not significant and is significantly above−3
+points in a </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Xinyu Zhang and Weiwei Sun
+Table 1: Main results on the test questions of LongMemEval-S and LongMemEval-M with evidence in at least two sessions ( 𝜅≥ 2,
+𝑛= 209each). Gains are paired margins. LLM calls are per question, at write time (Write), amortized over the histories each
+build covers, and at selection time (Sel.). Tokens are mean slate lengths. Best in bold, second underlined.
+LongMemEval-S(50 sessions, 100k tokens per history)
+LLM calls↓Accuracy (%)↑
+System Write Sel. Tokens Qwen DeepSeek
+Adaptive-k [37] 0 0 1,470 69.1 76.6
+DynamicRAG-8B [36] 0 1 2,140 67.0 74.2
+HippoRAG 2 [17] 442 1 2,520 59.9 63.2
+A-Mem [42] 979 1 2,540 54.4 58.1
+T-Mem [16] 2,268 0 3,310 70.3 73.2
+Ref (LLM reranker) 0 64 2,530 79.8 89.1
+AgentMemRec0 02,54080.7 89.4
+gain over the strongest memory or selector+10.4 +12.8
+LongMemEval-M(500 sessions, 1.5M tokens per history)
+LLM calls↓Accuracy (%)↑
+System Write Sel. </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and
+MemOS, and above our reproduction of HyperMem from its offi-
+cial code, which scores 72.6 with the same reader (+4.4, a gain).
+Its records cost $0.07 against $16 for the memory of our T-Mem
+reproduction. For RQ1, the recommender formulation outperforms
+every memory and context-selection method on LongMemEval-S
+and LongMemEval-M and matches or exceeds the 64-call reranker
+there, and on LoCoMo it is at parity with T-Mem.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We count a generation by a decoder language model as an LLM
+call, soAgentMemRecmakes none at selection time, and its cross-
+encoder pass is part of its measured serving cost. On LongMemEval-
+M, its median selection latency is 329 ms against 955 ms for Ref, and
+on LongMemEval-S its 90th-percentile latency is 321 ms against
+1,156 ms (Table 8). At saturation on one A100, selection takes 280
+GPU-milliseconds per request forAgentMemRecagainst 891 for
+Ref, 3.2 times less, or $69 against $220 per million requests at a list
+price of $0.89 per A100-hour. Adding the shared pool construction
+to both keeps the ratio at 3.0 in GPU time and, with a persistent
+per-history index, 2.7 in median latency at LongMemEval-M size.
+At write time, the default pipeline makes no LLM call, whereas
+HippoRAG 2, A-Mem and T-Mem make about 440 to 2,270 per
+history, a cost that a deployed memory spreads over the </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>points at 𝜅≥ 2. Accuracy
+on incomplete slates varies more, from 22% to 47%, and tracks
+how much of the gold an incomplete slate still holds. The first
+condition thus holds for complete slates and only approximately
+for incomplete ones, and it begins to fail at 𝜅≥ 3. There, the
+jointly complete slates ofAgentMemRecscore 8.7 points below
+those of the cross-encoder order for Qwen and 6.5 points below for
+DeepSeek. They hold 23 units against 11, most of them turns that the
+cross-encoder ranks low. Label-controlled slates that fill the budget
+around the gold turns show the effect directly (LongMemEval-M,
+one decode, Qwen judge). Ranked near-miss filler (Appendix E)
+costs 17.7 points for Qwen and 4.7 points for DeepSeek against the
+gold turns alone, and 39.4 and 14.1 points at𝜅≥ 3. Random filler of
+the same length costs 7.0 points for Qwen and nothing measurable
+for DeepSeek (−2.3). Adding </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>units can therefore lower the reward,
+by an amount that depends on the answering model. These costs
+do not show that the reward is non-additive, since negative item
+values would produce them too.
+Monotonicity along rankings.The fill beats every cutoff only if
+the reward does not fall as the fill adds units to a prefix of the
+ranking. On the ranking ofAgentMemRecon LongMemEval-S,
+Table 3: Stage factorization on LongMemEval-S test, 𝜅≥ 2
+(𝑛= 209), accuracies in %, so Acc=𝑎 i+(𝑎 c−𝑎 i)𝑟 slate. Slate
+completeness separates the systems, andAgentMemRechas
+the most complete slates with no LLM call. Lower rows rank
+its 128-turn pool (𝑟pool = 0.981, against 0.938 for the 64-turn
+pool of Ref). Best in bold, second underlined.
+Qwen Acc.↑
+System𝑟 slate↑𝑎 c 𝑎i Qwen DeepSeek
+Adaptive-k 0.684 87.1 30.3 69.1 76.6
+DynamicRAG 0.630 86.3 34.0 67.0 74.2
+HippoRAG 2 0.502 89.5 30.0 59.9 63.2
+A-Mem 0.502 86.2 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LongMemEval-S answers by
+GPT-4o-mini, the Qwen3-32B judge agrees with GPT-4o on 97.3%
+(Cohen&#x27;s kappa 0.904). Under the Qwen judge, every primary label</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Xinyu Zhang and Weiwei Sun
+Table 7: LongMemEval-M test,𝜅≥ 2(𝑛= 209), with the GPT-4o judge and four perturbed slates per question. Accuracies are in
+%. LLM calls are generations per question at selection time, or in total at write time, and tokens are approximate mean slate
+lengths. Δ isAgentMemRecminus the row in points, with its label: G gain, P parity, ref. a reference arm without a label. Best
+accuracy in bold, second underlined.
+Write Sel. Accuracy↑Δ
+System Pool / ranker LLM calls LLM calls Tokens Qwen DeepSeek Qwen DeepSeek
+Adaptive-k [37] history / largest gap 0 0 1,180 57.8 60.8+12.2G+20.6G
+DynamicRAG-8B [36] fused 40 / listwise 8B 0 1 2,150 59.3 62.1+10.6G+19.3G
+LongMemEval design [40] rounds / dense, fact keys 251,622 0 2,530 56.3 60.3+13.6G+21.1G
+native top-10, uncapped rounds / dense, fact keys 251,622 0 4,945 64.1 65.6+5.9ref.+15.8ref.
+HippoRAG 2 [17] rounds / fact graph, </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Benchmark / evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd>Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Evaluates memory behavior, safety, or retrieval in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: agent-memory, llm-agents, memory-systems, long-term-memory, benchmark</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-26</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-27 09:33:57</li><li>Last seen by Paper Scout: 2026-10-27 09:33:57</li></ul>
+            <ul><li>arXiv: 2610.34673</li><li>arXiv IDs: 2610.34673</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="agent-memory-as-recommendation-recommender-system-design-for-long-term-memory-of-llm-a3e1cf7d.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents. Xinyu Zhang, Weiwei Sun. 2026-10-26. https://arxiv.org/abs/2610.34673v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

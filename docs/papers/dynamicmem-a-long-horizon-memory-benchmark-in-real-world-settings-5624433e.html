@@ -64,16 +64,255 @@
             <p>LLM agents increasingly act as personal assistants that must remember a user&#x27;s profile over months: who they are (attributes), what they routinely do (habits), and what they prefer (preferences), and keep it updated as jobs, routines, and tastes drift. Existing benchmarks evaluate this &quot;memory&quot; ability through short...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The benchmark provides a well-motivated and rigorous setup for testing long-horizon agent memory across temporal checkpoints. The methodology includes detailed human validation of intermediate generated artifacts, and the evaluation features extensive ablation, error decomposition, and calibration of the LLM judge.</p>
+      <p>The authors explicitly note that the synthetic dataset may not fully capture rare human behaviors and platform-specific idiosyncrasies found in real proprietary user logs, and evaluation relies on 10 seed personas.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-27T09:37:18.477837+00:00.</p>
+        <p>Coverage: 159312 of 159312 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>distributed behavioral
+traces. We introduce DynamicMem, a synthetic benchmark that constructs 15
+months of activity for each user, providing the kind of long-term, multi-app data
+that real users&#x27; privacy keeps out of reach.DynamicMemprovides 15-month, user-
+consistent trajectories averaging 2.2M tokens and 1,772 grounded events per user
+across 16 applications such as e-commerce, fitness, and social platforms. A user&#x27;s
+attributes, habits, and preferences evolve over this period, driven by seasons and
+life events, and every recorded action reflects the user&#x27;s profile at that moment. In
+DynamicMem, user profile is not given explicitly. Each attribute, habit, or preference
+must be inferred from small behavioral signals scattered across different apps. We
+evaluate at five quarterly checkpoints to track how each system scales as the history
+grows. Benchmarking five representative systems </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>five quarterly checkpoints, exposing how performance scales with history length and
+whether systems correctly overwrite superseded values as the profile evolves. To our knowledge,
+DynamicMem is the most fine-grained long-horizon memory benchmark to date: about 2.2M tokens
+per user over 15 months, 17,715 grounded events spanning 16 apps and 66 APIs, 1,837 evolving
+attribute / habit / preference items linked by 383 causally-attributed state transitions, and 4,994 fine-
+grained scoring points across 3,634 checkpoint-based problems. Benchmarking five representative
+memory systems, we surface drawbacks that a single accuracy number hides. First, as the history
+grows, State Completion accuracy falls steadily while Personalized Service does not, even though
+both read the same memory. Second, no system both retains facts that stay true and overwrites facts
+that change; errors concentrate on </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>time, we can generate
+more than one year long trajectories with over two million tokens per user without concatenating
+irrelevant chat histories from other datasets. As shown in Figure 1, the pipeline is organized top-down
+in three stages:(1) Multi-timescale user profile constructionproduces an evolving user profile;(2)
+Intent-conditioned event chain generationwhich turns that profile into coherent multi-step intents; and
+(3) State-consistent multi-app log generationwhich grounds each intent into concrete app interactions.
+Each stage is conditioned on the output of the previous one, so every app log is traceable to the user
+intent and profile state that produced it. We detail each stage below.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>by at least one chain. In this way, every change has correspond-
+ing evidence. Each chain is then generated by LLMs with the current state, the world background,
+and the specific change or stable item it should express. For example, Figure 3 illustrates how an
+event chain embeds user intent: three events across Gmail, LinkedIn, and WhatsApp jointly realize a
+single goal, i.e., obtaining and acting on an EPA VOC certification, triggered by the Q1 regulatory
+update in Figure 2. Each event plays a distinct role, namely, trigger, announce, consequence.
+Human Validation.We manually validate 190 event chains across all users and domains. Each
+chain is assessed for (1)intent coherence: whether events logically follow from the stated intent, and
+(2)state grounding: whether the chain plausibly reflects the associated state change. The generated
+chains achieve 97% intent coherence and 98% state </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>from a handcrafted database, we synthesize responses
+with an LLM conditioned on the user&#x27;s base profile, the step intent, the event-chain context, and the
+current app state, yielding both entity consistency (stable identifiers across references) and behavioral
+consistency (transitions that match application semantics).
+Human Validation.We manually verified consistency along two axes: (i) we randomly sampled
+5 consecutive interaction steps per app. We checked argument validity, state transitions, and entity
+reference consistency; and (ii) 20 complete event chains, checking that later steps are grounded in
+earlier outputs and app states without hallucinated entities. For each chain, we verified that later steps
+were properly grounded in earlier outputs and application states, and that no hallucinated entities or
+invalid references appeared.
+4DynamicMemBenchmark
+DynamicMem turns the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1:Statistics ofDynamicMem
+Trajectory scale
+Users (from PersonaHub) 10
+Time horizon 15 months
+Event chains 1,790
+App-log events 17,715
+Tokens per user∼2.2 M
+Behavioral coverage
+Life domains 6
+Applications 16
+Distinct APIs 66
+Evolving user profile
+Attribute instances 883
+Habit instances 466
+Preference instances 488
+Fields (e.g., &quot;start_time&quot;
+in Fig. 4) 3,702
+State transitions
+(i.e., typed deltas in Fig. 2) 383
+Evaluation tasks
+State-completion problems 1,824
+Personalized-service problems 1,810
+DynamicMem contains two checkpoint task families that
+probe memory at two complementary levels.State Com-
+pletiontests whether a memory-augmented agent canre-
+coverthe user&#x27;s profile at a given checkpoint, e.g., describ-
+ing the user&#x27;s current workout routine or dietary prefer-
+ence.Personalized Servicetests whether the agent can
+act onthat state in downstream services, e.g., reminding
+the </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Both tasks are evaluated using LLM-as-judge method. For each field to be filled, e.g, each&lt;fill&gt;in
+Figure 4, the judge returns two scores: CORE∈ {0,1}, indicating whether the prediction recovers the
+central fact, and DETAIL∈ {0,1,2}, which measures how well it preserves the supporting specifics,
+with 0, 1, and 2 corresponding to incorrect, partially correct, and fully correct details, respectively.
+The final per-field score iss= 0.8·CORE+ 0.2·(DETAIL/2).
+State Completion.We score every field (each&lt;fill&gt;in Figure 4) independently and average into the
+final score. Take the weekend-walk habit in Figure 4: the reference specifies the walk&#x27;s frequency,
+days, start/end time, and location. Suppose the prediction is&quot;Saturday weekly walk at 06:35 by the
+river&quot;against the ground truth of&quot;Saturday/Sunday weekly walk at 06:30–07:30, lakefront trail&quot;.
+Frequency receives CORE=1 (weeklymatches); start </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Baselines.We evaluate five memory systems:Vanilla RAG (RAG)[Lewis et al., 2021],Hip-
+poRAG2[Gutiérrez et al., 2025],MemoryOS[Kang et al., 2025],A-Mem[Xu et al., 2025],Simple-
+Mem[Liu et al., 2025]. We additionally report anOracleupper bound that is given the ground-truth
+evidence required to complete each task item. We focus on query-agnostic memory systems that
+pre-build a persistent per-user memory and then serve many downstream task items efficiently. For
+all baselines, we use gpt-5-mini as the answer-generation LLM and text-embedding-3-large
+for retrieval. Other experiment details are provided in Appendix I.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Finding 1.State Completion performance decreases as the horizon grows, whereas Personalized
+Service performance remains stable and even improves slightly by leveraging the user&#x27;s stateful
+trajectory.
+From C1 to C5, State Completion declines consistently across all memory systems. Compared
+with C1, the C5 score drops by 4.4 points for RAG, 6.6 for HippoRAG2, 8.9 for A-Mem, 14.2 for
+MemoryOS, and 16.7 for SimpleMem, as shown in Figure 5. Surprisingly, Personalized Service
+shows no such degradation for four of the five systems: the C5 score is higher than the C1 score by
+8</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>C1 C2 C3 C4 C5
+Checkpoint
+15
+20
+25
+30
+35
+40
+45
+50Retrieval recall (%)
+-13.8
+-17.7
+-21.8
+-23.7
+-14.4
+-17.5
+-22.2
+-23.6
+-10.9
+-14.7
+-18.7
+-20.1
+(a) SC — evidence retrieval recall
 
-        <ul></ul>
+C1 C2 C3 C4 C5
+Checkpoint
+15
+20
+25
+30
+35
+40
+45
+50Retrieval recall (%)
+-12.6
+-13.6
+-18.9
+-17.8
+-13.1 -12.8
+-20.2 -19.2
+-8.4
+-10.5
+-16.5 -16.4
+(b) PS — evidence retrieval recall
+
+C1 C2 C3 C4 C5
+Checkpoint
+0.275
+0.300
+0.325
+0.350
+0.375
+0.400
+0.425
+0.450Mean top-5 cosine similarity
++0.025
++0.030 +0.035 +0.038
++0.011 +0.009
++0.018 +0.016
+gap +0.065
+gap +0.087
+(c) Query–trajectory alignment (RAG)
+SC query
+PS query
+
+C1 C2 C3 C4 C5
+Checkpoint
+0.275
+0.300
+0.325
+0.350
+0.375
+0.400
+0.425
+0.450Mean top-5 cosine similarity
++0.024
++0.030 +0.030 +0.034
++0.008 +0.004 +0.013 +0.011
+gap +0.050
+gap +0.074
+(d) Query–trajectory alignment (A-Mem)
+SC query
+PS query
+RAG HippoRAG2 A-Mem
+Figure 6: (a, b) Evidence retrieval recall across </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3.Retention and update are separate failure modes. No single architecture wins on both:
+the same mechanism that lets a system hold a stable fact often prevents it from adopting a changed
+one, and this trade-off differs by state family.
+10
+A falling State Completion score could mean two different things: the system might be failing to
+remember a fact it saw long ago, or it might be failing to adopt a fact that has just changed. These are
+different failure modes that need different fixes, but an aggregate curve cannot distinguish them.
+We therefore split each system&#x27;s score into two regimes, both anchored at C1:retentionprobes the
+first mode by re-asking about a fact that has stayed true since C1, whileupdateprobes the second by
+asking about a fact that has since changed. The retention lookback grows with the horizon, so the
+retention row reads as a forgetting curve; both regimes start at </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is also surfaced, leaving the value ambiguous.
+• ALLCLEAR: every layer is present and unambiguous; because the prediction nevertheless failed,
+the failure is attributable to the answer model rather than the memory system.
+We use LLM (gpt-5.4-2026-03-05) to perform error type classification. For each case, the LLM
+receives three inputs: the actual query the memory system was invoked with (the per-key retrieval
+query for SC; the scenario plus task instruction for PS), the gold answer, and the cited evidence list.
+The system&#x27;s prediction is intentionally withheld from the LLM, so the classification reflects what the
+memory system delivered, not how the answer model used it. We sample 300 failures per (system,
+task) combination, stratified across the three state families. The full classification prompts are in
+Appendix K.
+Finding 1.Structured memory shifts the failure profile from detail to </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>36–37% IDENTITY
+MISS, roughly two thirds of MemoryOS&#x27;s failures involve evidence that does not pin down the user&#x27;s
+state. This shape follows from how MemoryOS stores memory: by compacting many logs into a
+multi-level hierarchical summary, retrieval surfaces an abstracted view rather than the specific log
+a precise state query needs. The other four architectures retain memory at finer granularities (raw
+chunks, atomic triples, per-state notes, or per-event consolidations), and a relevant fine-grained entry
+remains within reach more often, leading to fewer relevance-level failures.
+Finding 3.Improving memory is far more actionable than improving the answer model.
+ALLCLEAR—cases where the cited evidence is complete and unambiguous but the prediction is still
+wrong—stays at 2–7% across all ten (system, task) combinations. In more than 93% of failures, the
+bottleneck is what the memory </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DynamicMem is designed for diagnostic memory evaluation in real-world settings, not for claiming
+full behavioral realism across all dimensions of human activity. As a synthetic benchmark, it may
+still miss rare behaviors and platform-specific idiosyncrasies that appear in proprietary real user logs.</blockquote></details></li><li><strong>Contribution clarity — pages 24–25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our current DynamicMem instantiation uses gemini-3-flash-preview as the construction model
+for data synthesis and evaluation-task authoring. All construction prompts are issued with structured
+JSON output constraints, and generated objects are parsed and checked against the expected schema
+24
+before they are consumed by later stages. The implementation is provider-agnostic: the same construc-
+tion pipeline can be run through Gemini-style generate_content endpoints or OpenAI-compatible
+/chat/completionsendpoints, as long as the backend supports reliable JSON generation.
+The synthesis pipeline uses the same model family across the main construction stages: base-profile
+expansion, world-background generation, domain-state evolution, intent-conditioned event-chain
+generation, and app-log grounding. At each stage, the model receives only the structured context
+needed for that stage, and the </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>uses top_k=10, and SimpleMem uses top_k=10 across its semantic, keyword, and structured
+retrieval channels. Measured by retrieved-memory context size, the average STATECOMPLETION
+context is 12.6k tokens for RAG, 12.8k for HippoRAG2, 15.6k for A-Mem, 12.7k for MemoryOS,
+and 20.8k for SimpleMem; for PERSONALIZEDSERVICE, the corresponding averages are 14.6k,
+14.1k, 17.0k, 12.9k, and 20.7k tokens.
+LLM-as-Judge Setup and Reliability.We use gpt-5.4 [OpenAI, 2025] as the judge model for
+scoring of STATECOMPLETIONand PERSONALIZEDSERVICE. Since both tasks require semantic
+matching beyond exact string overlap, the judge compares each prediction against the corresponding
+gold state or service reference and produces structured judgments. To verify judge reliability, we
+manually audited a calibration slice from user 001 across four systems: A-Mem, HippoRAG2,
+Oracle, and RAG, with 189 judged items </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>per system. We marked a judge result as unreasonable
+when the human auditor found its score or rationale inconsistent with the reference, prediction, or
+task requirements. Across 756 audited judgments, only 28 were marked unreasonable, yielding
+an overall agreement rate of 96.30%. Per-system agreement was 96.30% for A-Mem, 94.71% for
+HippoRAG2, 96.30% for Oracle, and 97.88% for RAG, suggesting that the judge is sufficiently
+reliable for aggregate comparison.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +351,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

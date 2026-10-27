@@ -59,16 +59,209 @@
             <p>Discovering governing equations directly from observational data is a key step towards interpretable scientific machine learning. Current data-driven approaches typically operate on a single dataset, inherently limiting their performance when faced with restricted observations. In practice, multiple datasets are oft...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper presents an impactful, well-formulated, and rigorously tested approach to multi-source PDE discovery that directly resolves significant failure modes of existing single-source discovery techniques under sparse observations.</p>
+      <p>The authors clearly delineate assumptions, including the requirement that datasets share an identical governing structure and coefficients, as well as the substantial computational expense of repeatedly optimizing neural surrogates during the genetic search.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-27T09:37:38.205431+00:00.</p>
+        <p>Coverage: 83698 of 83698 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Discovering governing equations directly from observational data is a key step towards
+interpretable scientific machine learning. Current data-driven approaches typically operate on a
+single dataset, inherently limiting their performance when faced with restricted observations. In
+practice, multiple datasets are often available for the same physical system, distinguished only
+by distinct initial conditions or boundary configurations.  Here, we present a competitive
+optimization framework designed to discover shared partial differential equations (PDEs) from
+multi-source datasets , termed MCO -PDE. The framework first trains independent neural
+surrogates for each data source, and then employs a soft-competitive weighting mechanism to
+dynamically assess dataset credibility and aggregate a consensus global coefficient. Integrated
+with a genetic algorithm for structural search, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mechanism. Rather than treating every dataset equally,
+MCO-PDE assigns each dataset a credibility score based on three diagnostics, including the
+regression residual of the PDE, the condition number of the design matrix, and a leave -out
+generalization error. These scores are converted into softmax weights that determine each
+dataset&#x27;s contribution to a global coefficient estimate; the global coefficients in turn drive a
+unified PDE loss that regularizes all surrogates simultaneously. An exponential moving
+average (EMA) of the global coefficients prevents oscillation and ensures stable convergence.
+The equation-structure search is performed by a genetic algorithm that generates and evolves
+candidate genome representations of PDEs based on the competitive optimization outcomes.
+The MCO-PDE framework is validated on a broad suite of canonical PDEs ranging from one
+to three </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Discovery of the canonical PDEs from multi-source dataset under sparse and noisy data
+We first demonstrate the procedure of the MCO-PDE framework by the discovery of the
+Burgers&#x27; equation, which is written as:
+  ut = –uux + 0.1uxx  (1)
+Seven datasets are generated from different initial conditions on a grid of Nx = 256 spatial
+points and Nt = 201 time steps (Fig. 2a). Each dataset contains 51,456 total observations, from
+which we randomly sample a small number of  data points per case for the  PDE discovery. A
+detailed description of the utilized datasets is provided in Supplementary Information S1.1.
+With only 50 randomly sampled observations per dataset, MCO-PDE successfully identifies
+the correct equation structure ut=c1uux+c2uxx and recovers coefficients c1 = –0.957 ±  0.011 and
+c2 = 0.102 ±  0.003, in close agreement with the true values of –1.0 and 0.1. Currently, no </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>case, the accuracy of identified coefficients will be
+improved to –(4.84 ±  0.062) u and (0.482 ±  8.68 ×  10–4) uxx. These results demonstrate that
+MCO-PDE enables reliable discovery of canonical PDEs from sparse and noisy multi -source
+datasets.
 
-        <ul></ul>
+Comparison with existing methods
+To contextualize the performance gains enabled by multi -source fusion, we compare
+MCO-PDE against seven established single -dataset PDE discovery methods: PDE -FIND3,
+WSINDy4, WeakIdent5, PDE-READ30, GGA17, DISCOVER10, and ABL-PDE31. All methods
+are applied to the same seven Burgers&#x27; equation datasets with 50, 100, and 1000 observations
+per case. For a fair comparison , spatial and temporal derivatives for all baselines were
+obtained by automatic differentiation of surrogate models trained with the corresponding
+number of observations in each case. Derivatives were evaluated on a metadata grid of </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Discovered PDE
+(50 data per case)
+Discovered PDE
+(100 data per case)
+Discovered PDE
+(1000 data per case)
+PDE-FIND ut=C1ux       (1/7) ut=C1uux+C2ux  (2/7) ut=C1uux+C2uxx  (5/7)
+WSINDy ut=C1uux+C2ux  (1/7) ut=C1uux+C2ux  (1/7) ut=C1uux+C2uxx  (7/7)
+WeakIdent ut=C1ux       (2/7) ut=C1u        (2/7) ut=C1uux+C2uxx  (6/7)
+PDE-READ ut=C1uux       (3/7) ut=C1u        (3/7) ut=C1uux+C2uxx  (2/7)
+GGA ut=C1u2xx+C2uxxx (1/7) ut=C1uxx+C2uxxxx (1/7) ut=C1uux+C2uxx  (7/7)
+DISCOVER ut=0          (2/7) ut=C1ux            (3/7) ut=C1uux+C2uxx  (7/7)
+ABL-PDE ut=C1ux            (4/7) ut=C1ux            (3/7) ut=C1uux+C2uxx  (5/7)
+Ours (MCO-PDE) ut=C1uux+C2uxx   ut=C1uux+C2uxx   ut=C1uux+C2uxx
+
+A further practical difficulty is that conventional methods typically require
+case-dependent hyperparameter adjustment, for example in the strength of sparsity
+regularization. Such tuning becomes </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sparsity, MCO-PDE successfully recovers the correct
+equation structure by integrating information from all seven cases, while maintaining high
+coefficient accuracy. This result shows that the underlying PDE can still be identified from
+remarkably limited data even in two spatial dimensions. Notably, conventional single -source
+PDE discovery methods typically require far denser sampling in high -dimensional settings to
+reliably identify the correct terms 29. When the number of observations is increased to 10,000
+per case, MCO-PDE remains robust under Gaussian noise levels of up to 10%, still
+discovering the correct equation with accurate coefficients:
+ ut =−(0.178±0.012)ux–(0.117±0.008)uy+(0.040±7.8×10−4)uxx+(0.039±5.2×10−4)uyy,  (9)
+Next, the discovery of PDEs on irregular computational regions is investigated. Many
+conventional frameworks are predominantly designed for </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>so that the resulting datasets differ substantially in
+both shape and size. The total number of spatiotemporal points ranges from 10 5 to 10 6 per
+case. Despite this complexity, MCO-PDE remains effective. With only 500 observations per
+case, it recovers:
+ ut = (0.153 ± 0.002) uxx + (0.161 ± 0.002) uyy.  (11)
+It correctly identifying the two -dimensional diffusion structure across all irregular domains.
+This performance is notable given that conventional methods typically require around
+twentyfold more data in comparable irregular -domain settings 20. Increasing the number of
+observations to 5,000 per case further improves the coefficient estimates to (0.158±0.002) uxx
+and (0.180±0.002) uyy, respectively.
+
+Fig. 3. Discovery of PDEs from multiple datasets in higher -dimensional and irregular
+settings. (a) , Seven two -dimensional contaminant transport cases with different source </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>only 1,000 data points per case, it successfully recovers the correct equation written as:
+  ut=(0.0076±1.8×10−4) uxx+ (0.0094±1.6×10−4) uyy +(0.0085±1.8×10−4) uzz,  (13)
+The identified coefficients remain close to the ground truth despite the extreme sparsity of the
+sampled observations relative to the full four-dimensional field. With 10,000 observations per
+case, MCO-PDE is robust to 10% Gaussian noise  (Fig. S5). Even in three dimensions, the
+multi-source approach requires much fewer observations per case than single -case methods,
+confirming that the fusion mechanism effectively compensates for the curse of dimensionality
+in data-driven PDE discovery.
+
+Discovery of heterogeneous PDE from multiple-source datasets
+We next assess the proposed  MCO-PDE framework on a more challenging problem,
+discovery of PDEs in heterogeneous media. We consider two-dimensional transient </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the underlying physics.
+With only 500 observations per case, MCO-PDE correctly identifies the expanded form
+of the heterogeneous governing equation. The discovered equation is written as:
+ ut = 8.85×10−4 Kuxx +8.64×10−4 Kuyy+ 7.57×10−4 Kxux+5.07×10−4 Kyuy,  (15)
+Although the estimated coefficients of Kyuy exhibit relatively large discrepancy, this level of
+accuracy is still notable given the complexity of the process and the extreme sparsity of the
+data, with only 500 observations per case, corresponding to 0.38% of the full dataset. As the
+number of observations increases to 1,000 and 5,000 per case, the coefficient estimates
+become progressively more accurate  (Fig. 4). At 5,000 observations per case, all four
+coefficients fall within 4%–12% of the true value 0.001, with standard deviations on the order
+of 10 −5. These results show that MCO-PDE can recover parametric PDEs from </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0,  (18)
+The competitive optimization and model selection process is illustrated in Fig. 5c and Fig.
+S7a. This equation is physically consistent with a weakly nonlinear long -wave regime. The
+dominant first-derivative term represents bulk wave propagation, whereas the much smaller
+third-derivative term provides a dispersive correction. The absence of a nonlinear convective
+contribution indicates that, at this stage, the wave speed is not yet strongly amplitude
+dependent, and the profile evolution remains close to linear advection with weak dispersion.
+In this sense, the discovered form can be understood as a linearized KdV -type description,
+which is consistent with the standard picture of shallow -water long waves before strong
+steepening develops.
+For the pre-breaking stage, the discovered equation becomes:
+ 𝜂𝑡∗ + 0.90𝜂𝑥∗ + 4.75 × 10−4𝜂𝑥𝑥𝑥∗ + 4.31 × 10−2𝜂∗𝜂𝑥∗ = 0,  (19) </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+The competitive optimization and model selection process is illustrated in Fig. 5d and Fig.
+S7b. The appearance of the nonlinear term ( 𝜂∗𝜂𝑥∗) is the key physical change. This term
+encodes amplitude-dependent advection, meaning that higher parts of the wave travel faster
+than lower parts, thereby sharpening the front and driving the system toward breaking. The
+dispersive term remains active, and its larger magnitude suggests that dispersive effects
+become more pronounced as the profile steepens. The recovered equation therefore captures a
+pre-breaking regime governed by the competition between nonlinear steepening and
+dispersive spreading, which is precisely the mechanism classically associated with KdV-type
+wave evolution in shallow water.  From Fig. S7c, it can be found that the left -hand side term
+and right-hand side terms of the discovered PDEs for both pre -steepening </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>coefficients, up to estimation error. This assumption is appropriate for
+many repeated -observation scenarios, but it restricts the applicability of the method when
+different subsets of data arise from distinct physical regimes or are governed by different
+equations. Extending the framework to such settings will likely require an additional
+mechanism for identifying latent groups of datasets and assigning them to different governing
+structures before joint discovery can be carried out. Second, the present framework remains
+computationally demanding. For each candidate equation structure proposed by the genetic
+algorithm, the competitive optimization is utilized to evaluate its cross -dataset consistency
+and estimate the corresponding global coefficients. As a result, discovering a governing
+equation typically requires from tens of minutes to several hours, depending on the </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>important because it suppresses
+structures that appear favourable only through incidental agreement on a particular
+collocation sample.
+The reliability of each case was quantified through a composite score that combines
+predictive consistency and numerical identifiability. Specifically, we computed the
+normalized query error:
+  𝑟𝑠 =
+‖𝐲𝑠𝑞𝑟𝑦−𝜱̂ 𝑠𝑞𝑟𝑦𝛽̂𝑠‖2
+‖𝐲𝑠𝑞𝑟𝑦‖2+𝜀 , (21)
+
+together with the condition number of the support design matrix,
+ 𝜅𝑠 =
+𝜎max(𝛷𝑠sup)
+𝜎min(𝛷𝑠sup)+𝜀,  (22)
+where 𝜎max and 𝜎min denote the largest and smallest singular values, respectively. These
+two quantities were combined as:
+  𝐽𝑠 = 𝑟𝑠 + 𝜆𝜅 log( 𝜅𝑠), (23)
+with 𝜆𝜅 =10-2. Cases with lower scores are therefore preferred, as they correspond
+simultaneously to smaller held-out residuals and better-conditioned coefficient estimation.
+The case scores were converted into soft competitive weights through</blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>𝑤𝑠 =
+𝑒𝑥𝑝(−𝜏𝐽𝑠)
+∑ 𝑒𝑥𝑝𝑗 (−𝜏𝐽𝑗). (24)
+The parameter τ controls the sharpness of the competition. In our implementation, τ was
+increased linearly from 0.1 to 5.0 over the first one -third of the training epochs and then held
+fixed. Early in training, when derivative estimates are still unstable, this schedule yields a
+relatively broad consensus across datasets. As training proceeds, the weighting becomes
+increasingly selective, so that the global estimate is driven more strongly by the most reliable
+cases. The resulting global coefficient vector was defined as a weighted average,
+ 𝛽𝑔𝑙𝑜𝑏𝑎𝑙 = ∑ 𝑤𝑠𝑠 𝛽̂𝑠. (25)
+This coefficient vector should therefore be understood as a cross -dataset consensus estimate
+rather than the fit from any single case.  As the reliability -weighted consensus coefficient
+vector across datasets, and further introduce 𝛽𝐸𝑀𝐴 as its temporally smoothed version. </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>into global coefficients, and returned both the data loss
+and the physics loss. We defined the  loss of a candidate structure as the product of these two
+quantities,
+  Loss = ℒd𝑎𝑡𝑎 × ℒ𝑝𝑑𝑒, (30)
+so that a structure was favored only when it explained the observations accurately and remained
+consistent with the governing physics across datasets. This multiplicative form was used to
+penalize structures that performed well in only one aspect, for example fitting the data while
+failing to satisfy the PDE constraint, or vice versa. In all loss evaluations, collocation-based
+PDE training used 1,000 collocation points by default.
+To improve efficiency, we cached the loss of previously evaluated genomes using a
+canonical genome key obtained by sorting modules and module contents. This avoided
+repeated training when the same structure reappeared in later generations under a different </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>only the most stable term, the
+second candidate contained the two most stable terms, and so forth until the full genome was
+recovered. For each submodel, we re -ran the competitive optimization procedure for 1,000
+epochs and recorded the final data loss and PDE loss. As in the genetic-search stage, these two
+quantities were combined into a single loss measure, as defined in Eq. (30), so that a candidate
+submodel was favored only when it achieved both accurate data reconstruction and good
+cross-dataset physical consistency.
+To balance goodness of fit against structural compactness and coefficient stability, we
+defined a physics-informed information criterion based on the mean coefficient of variation of
+the retained terms,
+ CV =
+1
+𝑚 ∑ CV𝑘𝑚𝑘=1 ,  (32)
+where m is the number of terms in the current submodel, and then combined it with the loss as:
+ PIC = Loss × CV.  (33)
+This </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>criterion favors submodels that simultaneously satisfy three requirements: low physical
+residual, good agreement with the observed data, and stable coefficient estimates across
+datasets. For a single dataset, instead of comparing coefficients across cases, we partitioned the
+spatial domain into five local windows, generated meta-data within each window over the full
+temporal range, and re-estimated the coefficients accordingly. The mean coefficient of variation
+across these local windows was then used to rank the terms and to compute the PIC29.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +300,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

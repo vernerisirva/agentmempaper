@@ -36,7 +36,7 @@
   "last_seen_date": "2026-06-29",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-26 13:04:09",
   "notified_date": "2026-06-26",
@@ -47,7 +47,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-26 13:01:47",
-    "generated_at": "2026-10-26 09:42:01",
+    "generated_at": "2026-10-27 09:39:49",
     "last_seen_at": "2026-06-29 11:31:44",
     "metadata_sources": [
       "openalex",
@@ -120,36 +120,2738 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-27T09:37:18.477837+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.99,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The benchmark provides a well-motivated and rigorous setup for testing long-horizon agent memory across temporal checkpoints. The methodology includes detailed human validation of intermediate generated artifacts, and the evaluation features extensive ablation, error decomposition, and calibration of the LLM judge.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 165107,
+      "assessment_input_sha256": "b7bc34e05bc5d2f122142e7d0563a263dc8ae458e2620da27ea9d3b27699e3d9",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2606.22877",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 161524,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 159312,
+      "evidence_block_count": 216,
+      "evidence_context_characters": 188106,
+      "evidence_context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+      "evidence_context_sha256": "42aea3be2be0c15491a7e7859d12a53b22782fe3068b3a23115bdf5313d687bf",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 161612,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "extracted_pages": 45,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "53f5dafcf351bddfc2c6cd0420b8bd7f7fd25e009c2f0cb2f5b70783efcea5a4",
+        "source_url": "https://arxiv.org/pdf/2606.22877",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 161524,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Dynamicmem: A Long-Horizon Memory Benchmark",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "results",
+          "section_index": 0,
+          "source_characters": 339,
+          "supplied_characters": 339
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2453,
+          "supplied_characters": 2453
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 384,
+          "supplied_characters": 384
+        },
+        {
+          "heading": "Q1 Q2 Q3",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 96,
+          "supplied_characters": 96
+        },
+        {
+          "heading": "\ud835\udeab \ud835\udeab \ud835\udeab",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 241,
+          "supplied_characters": 241
+        },
+        {
+          "heading": "Background",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 315,
+          "supplied_characters": 315
+        },
+        {
+          "heading": "Api3 Api4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 398,
+          "supplied_characters": 398
+        },
+        {
+          "heading": "T1 T2 T3",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 3574,
+          "supplied_characters": 3574
+        },
+        {
+          "heading": "T1 T2 T3",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2759,
+          "supplied_characters": 2759
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 9,
+          "source_characters": 2465,
+          "supplied_characters": 2465
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 10,
+          "source_characters": 930,
+          "supplied_characters": 930
+        },
+        {
+          "heading": "Q4 2023 Q1 2024 Q2 2024 Q3 2024 Q4 2024",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 349,
+          "supplied_characters": 349
+        },
+        {
+          "heading": "Background",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 12,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Add\"Epa Voc",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2850,
+          "supplied_characters": 2850
+        },
+        {
+          "heading": "Add\"Epa Voc",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1822,
+          "supplied_characters": 1822
+        },
+        {
+          "heading": "Intent-Conditioned Event Chain Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2715,
+          "supplied_characters": 2715
+        },
+        {
+          "heading": "State-Consistent Multi-App Log Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 3213,
+          "supplied_characters": 3213
+        },
+        {
+          "heading": "Checkpoint-Based Evaluation And Dataset Statistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 1334,
+          "supplied_characters": 1334
+        },
+        {
+          "heading": "Checkpoint-Based Evaluation And Dataset Statistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 312,
+          "supplied_characters": 312
+        },
+        {
+          "heading": "Task Families",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 3890,
+          "supplied_characters": 3890
+        },
+        {
+          "heading": "C1 C2 C3 C4 C5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 678,
+          "supplied_characters": 678
+        },
+        {
+          "heading": "Evaluation Protocol And Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 1342,
+          "supplied_characters": 1342
+        },
+        {
+          "heading": "Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 619,
+          "supplied_characters": 619
+        },
+        {
+          "heading": "Results Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 576,
+          "supplied_characters": 576
+        },
+        {
+          "heading": "C1 C2 C3 C4 C5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 4495,
+          "supplied_characters": 4495
+        },
+        {
+          "heading": "C1 C2 C3 C4 C5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 3800,
+          "supplied_characters": 3800
+        },
+        {
+          "heading": "C1 C2 C3 C4 C5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 5207,
+          "supplied_characters": 5207
+        },
+        {
+          "heading": "C1 C2 C3 C4 C5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Error Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 3554,
+          "supplied_characters": 3554
+        },
+        {
+          "heading": "Error Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 2034,
+          "supplied_characters": 2034
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 30,
+          "source_characters": 1445,
+          "supplied_characters": 1445
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 3517,
+          "supplied_characters": 3517
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 3865,
+          "supplied_characters": 3865
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 279,
+          "supplied_characters": 279
+        },
+        {
+          "heading": "Impact Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 790,
+          "supplied_characters": 790
+        },
+        {
+          "heading": "Limitation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "limitations",
+          "section_index": 35,
+          "source_characters": 300,
+          "supplied_characters": 300
+        },
+        {
+          "heading": "Appendix: A Extended Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 3453,
+          "supplied_characters": 3453
+        },
+        {
+          "heading": "Appendix: A Extended Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 2267,
+          "supplied_characters": 2267
+        },
+        {
+          "heading": "Appendix: Schema",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 416,
+          "supplied_characters": 416
+        },
+        {
+          "heading": "Appendix: Construction Procedure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 1441,
+          "supplied_characters": 1441
+        },
+        {
+          "heading": "Appendix: Construction Procedure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 1396,
+          "supplied_characters": 1396
+        },
+        {
+          "heading": "Appendix: Role In The Overall Pipeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 573,
+          "supplied_characters": 573
+        },
+        {
+          "heading": "Appendix: Data Schema And Representation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 320,
+          "supplied_characters": 320
+        },
+        {
+          "heading": "Appendix: Data Schema And Representation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 1997,
+          "supplied_characters": 1997
+        },
+        {
+          "heading": "Appendix: Mapping To Prior Frameworks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 700,
+          "supplied_characters": 700
+        },
+        {
+          "heading": "Appendix: Adopted Domains And Definitions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 302,
+          "supplied_characters": 302
+        },
+        {
+          "heading": "Appendix: Adopted Domains And Definitions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 3973,
+          "supplied_characters": 3973
+        },
+        {
+          "heading": "Appendix: Adopted Domains And Definitions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 3078,
+          "supplied_characters": 3078
+        },
+        {
+          "heading": "Appendix: In-Domain Validation (Rules 1\u20135)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 977,
+          "supplied_characters": 977
+        },
+        {
+          "heading": "Appendix: In-Domain Validation (Rules 1\u20135)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 2846,
+          "supplied_characters": 2846
+        },
+        {
+          "heading": "Appendix: Cross-Domain Validation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 1871,
+          "supplied_characters": 1871
+        },
+        {
+          "heading": "Appendix: G Log Schema",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 12,
+          "supplied_characters": 12
+        },
+        {
+          "heading": "Appendix: App Apis Used",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 1333,
+          "supplied_characters": 1333
+        },
+        {
+          "heading": "Appendix: Input-Output Schema For Each Api",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 1134,
+          "supplied_characters": 1134
+        },
+        {
+          "heading": "Appendix: Synthesis Model And Structured Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 293,
+          "supplied_characters": 293
+        },
+        {
+          "heading": "Appendix: Synthesis Model And Structured Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 794,
+          "supplied_characters": 794
+        },
+        {
+          "heading": "Appendix: Application-Level State During Log Grounding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 678,
+          "supplied_characters": 678
+        },
+        {
+          "heading": "Appendix: Checkpoint State Validation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 1292,
+          "supplied_characters": 1292
+        },
+        {
+          "heading": "Appendix: Evaluation Task Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 1945,
+          "supplied_characters": 1945
+        },
+        {
+          "heading": "Appendix: Evaluation Task Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 1208,
+          "supplied_characters": 1208
+        },
+        {
+          "heading": "Appendix: Detailed Experiment Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 3564,
+          "supplied_characters": 3564
+        },
+        {
+          "heading": "Appendix: Detailed Experiment Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 1359,
+          "supplied_characters": 1359
+        },
+        {
+          "heading": "Appendix: Llm-As-A-Judge Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 2831,
+          "supplied_characters": 2831
+        },
+        {
+          "heading": "In Every Field Judgment, Writeanalysisbeforecore_Correctanddetail_Quality. [Example]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 68,
+          "supplied_characters": 68
+        },
+        {
+          "heading": "In Every Field Judgment, Writeanalysisbeforecore_Correctanddetail_Quality. [Example]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 2093,
+          "supplied_characters": 2093
+        },
+        {
+          "heading": "Decide Core_Correct. Set True When The Predicted Response Captures That Core Service Value, Even If Details Are",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "body",
+          "section_index": 65,
+          "source_characters": 1378,
+          "supplied_characters": 1378
+        },
+        {
+          "heading": "In Every Field Judgment, Writeanalysisbeforecore_Correctanddetail_Quality. [Example]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 159,
+          "supplied_characters": 159
+        },
+        {
+          "heading": "In Every Field Judgment, Writeanalysisbeforecore_Correctanddetail_Quality. [Example]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 213,
+          "supplied_characters": 213
+        },
+        {
+          "heading": "Appendix: Answer Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 1678,
+          "supplied_characters": 1678
+        },
+        {
+          "heading": "Appendix: Answer Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 349,
+          "supplied_characters": 349
+        },
+        {
+          "heading": "Appendix: Trajectory Synthesis Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 437,
+          "supplied_characters": 437
+        },
+        {
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "body",
+          "section_index": 71,
+          "source_characters": 1146,
+          "supplied_characters": 1146
+        },
+        {
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "body",
+          "section_index": 72,
+          "source_characters": 3221,
+          "supplied_characters": 3221
+        },
+        {
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 32,
+          "role": "body",
+          "section_index": 73,
+          "source_characters": 2779,
+          "supplied_characters": 2779
+        },
+        {
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 33,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 3758,
+          "supplied_characters": 3758
+        },
+        {
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "body",
+          "section_index": 75,
+          "source_characters": 2438,
+          "supplied_characters": 2438
+        },
+        {
+          "heading": "Appendix: Evaluation Task Construction Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "appendix",
+          "section_index": 76,
+          "source_characters": 1047,
+          "supplied_characters": 1047
+        },
+        {
+          "heading": "Appendix: Evaluation Task Construction Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "appendix",
+          "section_index": 77,
+          "source_characters": 1082,
+          "supplied_characters": 1082
+        },
+        {
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 78,
+          "source_characters": 2771,
+          "supplied_characters": 2771
+        },
+        {
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 79,
+          "source_characters": 384,
+          "supplied_characters": 384
+        },
+        {
+          "heading": "Do Not Use A Fixed Universal Key Like Preference_Statement; Synthesize Request-Facing Keys That Decompose The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 80,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 81,
+          "source_characters": 2822,
+          "supplied_characters": 2822
+        },
+        {
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 37,
+          "role": "body",
+          "section_index": 82,
+          "source_characters": 1536,
+          "supplied_characters": 1536
+        },
+        {
+          "heading": "Every Filled Value In Reference_Output Must Be Supported By State_Value; For List-Valued State Preserve Source",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 37,
+          "role": "body",
+          "section_index": 83,
+          "source_characters": 53,
+          "supplied_characters": 53
+        },
+        {
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 37,
+          "role": "body",
+          "section_index": 84,
+          "source_characters": 1947,
+          "supplied_characters": 1947
+        },
+        {
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 38,
+          "role": "body",
+          "section_index": 85,
+          "source_characters": 3088,
+          "supplied_characters": 3088
+        },
+        {
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 39,
+          "role": "body",
+          "section_index": 86,
+          "source_characters": 1017,
+          "supplied_characters": 1017
+        },
+        {
+          "heading": "Decision Tree",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 39,
+          "role": "body",
+          "section_index": 87,
+          "source_characters": 1498,
+          "supplied_characters": 1498
+        },
+        {
+          "heading": "Decision Tree",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 40,
+          "role": "body",
+          "section_index": 88,
+          "source_characters": 572,
+          "supplied_characters": 572
+        },
+        {
+          "heading": "Output Format ( Json )",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 40,
+          "role": "body",
+          "section_index": 89,
+          "source_characters": 1503,
+          "supplied_characters": 1503
+        },
+        {
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 40,
+          "role": "appendix",
+          "section_index": 90,
+          "source_characters": 816,
+          "supplied_characters": 816
+        },
+        {
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 41,
+          "role": "appendix",
+          "section_index": 91,
+          "source_characters": 3002,
+          "supplied_characters": 3002
+        },
+        {
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 42,
+          "role": "appendix",
+          "section_index": 92,
+          "source_characters": 3137,
+          "supplied_characters": 3137
+        },
+        {
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 43,
+          "role": "appendix",
+          "section_index": 93,
+          "source_characters": 1180,
+          "supplied_characters": 1180
+        },
+        {
+          "heading": "Decision Tree",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 43,
+          "role": "body",
+          "section_index": 94,
+          "source_characters": 1408,
+          "supplied_characters": 1408
+        },
+        {
+          "heading": "Decision Tree",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 44,
+          "role": "body",
+          "section_index": 95,
+          "source_characters": 557,
+          "supplied_characters": 557
+        },
+        {
+          "heading": "Output Format ( Json )",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 44,
+          "role": "body",
+          "section_index": 96,
+          "source_characters": 1222,
+          "supplied_characters": 1222
+        },
+        {
+          "heading": "Question :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 44,
+          "role": "body",
+          "section_index": 97,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 44,
+          "role": "appendix",
+          "section_index": 98,
+          "source_characters": 542,
+          "supplied_characters": 542
+        },
+        {
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 45,
+          "role": "appendix",
+          "section_index": 99,
+          "source_characters": 39,
+          "supplied_characters": 39
+        },
+        {
+          "heading": "Question :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 45,
+          "role": "body",
+          "section_index": 100,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 45,
+          "role": "appendix",
+          "section_index": 101,
+          "source_characters": 680,
+          "supplied_characters": 680
+        },
+        {
+          "heading": "Question :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 45,
+          "role": "body",
+          "section_index": 102,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 45,
+          "role": "appendix",
+          "section_index": 103,
+          "source_characters": 745,
+          "supplied_characters": 745
+        }
+      ],
+      "selected_characters": 159312,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "selected_sections": [
+        {
+          "characters": 339,
+          "heading": "Dynamicmem: A Long-Horizon Memory Benchmark",
+          "page": 1
+        },
+        {
+          "characters": 2453,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 384,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 96,
+          "heading": "Q1 Q2 Q3",
+          "page": 2
+        },
+        {
+          "characters": 241,
+          "heading": "\ud835\udeab \ud835\udeab \ud835\udeab",
+          "page": 2
+        },
+        {
+          "characters": 315,
+          "heading": "Background",
+          "page": 2
+        },
+        {
+          "characters": 398,
+          "heading": "Api3 Api4",
+          "page": 2
+        },
+        {
+          "characters": 3574,
+          "heading": "T1 T2 T3",
+          "page": 2
+        },
+        {
+          "characters": 2759,
+          "heading": "T1 T2 T3",
+          "page": 3
+        },
+        {
+          "characters": 2465,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 930,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 349,
+          "heading": "Q4 2023 Q1 2024 Q2 2024 Q3 2024 Q4 2024",
+          "page": 4
+        },
+        {
+          "characters": 54,
+          "heading": "Background",
+          "page": 4
+        },
+        {
+          "characters": 2850,
+          "heading": "Add\"Epa Voc",
+          "page": 4
+        },
+        {
+          "characters": 1822,
+          "heading": "Add\"Epa Voc",
+          "page": 5
+        },
+        {
+          "characters": 2715,
+          "heading": "Intent-Conditioned Event Chain Generation",
+          "page": 5
+        },
+        {
+          "characters": 3213,
+          "heading": "State-Consistent Multi-App Log Generation",
+          "page": 6
+        },
+        {
+          "characters": 1334,
+          "heading": "Checkpoint-Based Evaluation And Dataset Statistics",
+          "page": 6
+        },
+        {
+          "characters": 312,
+          "heading": "Checkpoint-Based Evaluation And Dataset Statistics",
+          "page": 7
+        },
+        {
+          "characters": 3890,
+          "heading": "Task Families",
+          "page": 7
+        },
+        {
+          "characters": 678,
+          "heading": "C1 C2 C3 C4 C5",
+          "page": 8
+        },
+        {
+          "characters": 1342,
+          "heading": "Evaluation Protocol And Metrics",
+          "page": 8
+        },
+        {
+          "characters": 619,
+          "heading": "Experiment",
+          "page": 8
+        },
+        {
+          "characters": 576,
+          "heading": "Results Analysis",
+          "page": 8
+        },
+        {
+          "characters": 4495,
+          "heading": "C1 C2 C3 C4 C5",
+          "page": 9
+        },
+        {
+          "characters": 3800,
+          "heading": "C1 C2 C3 C4 C5",
+          "page": 10
+        },
+        {
+          "characters": 5207,
+          "heading": "C1 C2 C3 C4 C5",
+          "page": 11
+        },
+        {
+          "characters": 423,
+          "heading": "C1 C2 C3 C4 C5",
+          "page": 12
+        },
+        {
+          "characters": 3554,
+          "heading": "Error Analysis",
+          "page": 12
+        },
+        {
+          "characters": 2034,
+          "heading": "Error Analysis",
+          "page": 13
+        },
+        {
+          "characters": 1445,
+          "heading": "Conclusion",
+          "page": 13
+        },
+        {
+          "characters": 3517,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 3865,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 279,
+          "heading": "Unclassified body after references",
+          "page": 16
+        },
+        {
+          "characters": 790,
+          "heading": "Impact Statement",
+          "page": 17
+        },
+        {
+          "characters": 300,
+          "heading": "Limitation",
+          "page": 17
+        },
+        {
+          "characters": 3453,
+          "heading": "Appendix: A Extended Related Work",
+          "page": 17
+        },
+        {
+          "characters": 2267,
+          "heading": "Appendix: A Extended Related Work",
+          "page": 18
+        },
+        {
+          "characters": 416,
+          "heading": "Appendix: Schema",
+          "page": 18
+        },
+        {
+          "characters": 1441,
+          "heading": "Appendix: Construction Procedure",
+          "page": 18
+        },
+        {
+          "characters": 1396,
+          "heading": "Appendix: Construction Procedure",
+          "page": 19
+        },
+        {
+          "characters": 573,
+          "heading": "Appendix: Role In The Overall Pipeline",
+          "page": 19
+        },
+        {
+          "characters": 320,
+          "heading": "Appendix: Data Schema And Representation",
+          "page": 19
+        },
+        {
+          "characters": 1997,
+          "heading": "Appendix: Data Schema And Representation",
+          "page": 20
+        },
+        {
+          "characters": 700,
+          "heading": "Appendix: Mapping To Prior Frameworks",
+          "page": 20
+        },
+        {
+          "characters": 302,
+          "heading": "Appendix: Adopted Domains And Definitions",
+          "page": 20
+        },
+        {
+          "characters": 3973,
+          "heading": "Appendix: Adopted Domains And Definitions",
+          "page": 21
+        },
+        {
+          "characters": 3078,
+          "heading": "Appendix: Adopted Domains And Definitions",
+          "page": 22
+        },
+        {
+          "characters": 977,
+          "heading": "Appendix: In-Domain Validation (Rules 1\u20135)",
+          "page": 22
+        },
+        {
+          "characters": 2846,
+          "heading": "Appendix: In-Domain Validation (Rules 1\u20135)",
+          "page": 23
+        },
+        {
+          "characters": 1871,
+          "heading": "Appendix: Cross-Domain Validation",
+          "page": 23
+        },
+        {
+          "characters": 12,
+          "heading": "Appendix: G Log Schema",
+          "page": 24
+        },
+        {
+          "characters": 1333,
+          "heading": "Appendix: App Apis Used",
+          "page": 24
+        },
+        {
+          "characters": 1134,
+          "heading": "Appendix: Input-Output Schema For Each Api",
+          "page": 24
+        },
+        {
+          "characters": 293,
+          "heading": "Appendix: Synthesis Model And Structured Generation",
+          "page": 24
+        },
+        {
+          "characters": 794,
+          "heading": "Appendix: Synthesis Model And Structured Generation",
+          "page": 25
+        },
+        {
+          "characters": 678,
+          "heading": "Appendix: Application-Level State During Log Grounding",
+          "page": 25
+        },
+        {
+          "characters": 1292,
+          "heading": "Appendix: Checkpoint State Validation",
+          "page": 25
+        },
+        {
+          "characters": 1945,
+          "heading": "Appendix: Evaluation Task Construction",
+          "page": 25
+        },
+        {
+          "characters": 1208,
+          "heading": "Appendix: Evaluation Task Construction",
+          "page": 26
+        },
+        {
+          "characters": 3564,
+          "heading": "Appendix: Detailed Experiment Setup",
+          "page": 26
+        },
+        {
+          "characters": 1359,
+          "heading": "Appendix: Detailed Experiment Setup",
+          "page": 27
+        },
+        {
+          "characters": 2831,
+          "heading": "Appendix: Llm-As-A-Judge Prompt",
+          "page": 27
+        },
+        {
+          "characters": 68,
+          "heading": "In Every Field Judgment, Writeanalysisbeforecore_Correctanddetail_Quality. [Example]",
+          "page": 27
+        },
+        {
+          "characters": 2093,
+          "heading": "In Every Field Judgment, Writeanalysisbeforecore_Correctanddetail_Quality. [Example]",
+          "page": 28
+        },
+        {
+          "characters": 1378,
+          "heading": "Decide Core_Correct. Set True When The Predicted Response Captures That Core Service Value, Even If Details Are",
+          "page": 28
+        },
+        {
+          "characters": 159,
+          "heading": "In Every Field Judgment, Writeanalysisbeforecore_Correctanddetail_Quality. [Example]",
+          "page": 28
+        },
+        {
+          "characters": 213,
+          "heading": "In Every Field Judgment, Writeanalysisbeforecore_Correctanddetail_Quality. [Example]",
+          "page": 29
+        },
+        {
+          "characters": 1678,
+          "heading": "Appendix: Answer Prompt",
+          "page": 29
+        },
+        {
+          "characters": 349,
+          "heading": "Appendix: Answer Prompt",
+          "page": 30
+        },
+        {
+          "characters": 437,
+          "heading": "Appendix: Trajectory Synthesis Prompt",
+          "page": 30
+        },
+        {
+          "characters": 1146,
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "page": 30
+        },
+        {
+          "characters": 3221,
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "page": 31
+        },
+        {
+          "characters": 2779,
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "page": 32
+        },
+        {
+          "characters": 3758,
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "page": 33
+        },
+        {
+          "characters": 2438,
+          "heading": "Choose Specific Values: No Vague Or Placeholder Text. [Consistency Rules]",
+          "page": 34
+        },
+        {
+          "characters": 1047,
+          "heading": "Appendix: Evaluation Task Construction Prompt",
+          "page": 34
+        },
+        {
+          "characters": 1082,
+          "heading": "Appendix: Evaluation Task Construction Prompt",
+          "page": 35
+        },
+        {
+          "characters": 2771,
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "page": 35
+        },
+        {
+          "characters": 384,
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "page": 36
+        },
+        {
+          "characters": 208,
+          "heading": "Do Not Use A Fixed Universal Key Like Preference_Statement; Synthesize Request-Facing Keys That Decompose The",
+          "page": 36
+        },
+        {
+          "characters": 2822,
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "page": 36
+        },
+        {
+          "characters": 1536,
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "page": 37
+        },
+        {
+          "characters": 53,
+          "heading": "Every Filled Value In Reference_Output Must Be Supported By State_Value; For List-Valued State Preserve Source",
+          "page": 37
+        },
+        {
+          "characters": 1947,
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "page": 37
+        },
+        {
+          "characters": 3088,
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "page": 38
+        },
+        {
+          "characters": 1017,
+          "heading": "Before Finalizing, Silently Confirm: Answerability, Service_Realism, Full_Field_Dependency, Low_Leakage, Out-",
+          "page": 39
+        },
+        {
+          "characters": 1498,
+          "heading": "Decision Tree",
+          "page": 39
+        },
+        {
+          "characters": 572,
+          "heading": "Decision Tree",
+          "page": 40
+        },
+        {
+          "characters": 1503,
+          "heading": "Output Format ( Json )",
+          "page": 40
+        },
+        {
+          "characters": 816,
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "page": 40
+        },
+        {
+          "characters": 3002,
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "page": 41
+        },
+        {
+          "characters": 3137,
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "page": 42
+        },
+        {
+          "characters": 1180,
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "page": 43
+        },
+        {
+          "characters": 1408,
+          "heading": "Decision Tree",
+          "page": 43
+        },
+        {
+          "characters": 557,
+          "heading": "Decision Tree",
+          "page": 44
+        },
+        {
+          "characters": 1222,
+          "heading": "Output Format ( Json )",
+          "page": 44
+        },
+        {
+          "characters": 423,
+          "heading": "Question :",
+          "page": 44
+        },
+        {
+          "characters": 542,
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "page": 44
+        },
+        {
+          "characters": 39,
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "page": 45
+        },
+        {
+          "characters": 423,
+          "heading": "Question :",
+          "page": 45
+        },
+        {
+          "characters": 680,
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "page": 45
+        },
+        {
+          "characters": 423,
+          "heading": "Question :",
+          "page": 45
+        },
+        {
+          "characters": 745,
+          "heading": "Appendix: I T E D _ E V I D E N C E :",
+          "page": 45
+        }
+      ],
+      "selected_text_sha256": "b7bc34e05bc5d2f122142e7d0563a263dc8ae458e2620da27ea9d3b27699e3d9",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "53f5dafcf351bddfc2c6cd0420b8bd7f7fd25e009c2f0cb2f5b70783efcea5a4",
+      "source_pages": 45,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0003"
+        ],
+        "excerpt": "distributed behavioral\ntraces. We introduce DynamicMem, a synthetic benchmark that constructs 15\nmonths of activity for each user, providing the kind of long-term, multi-app data\nthat real users' privacy keeps out of reach.DynamicMemprovides 15-month, user-\nconsistent trajectories averaging 2.2M tokens and 1,772 grounded events per user\nacross 16 applications such as e-commerce, fitness, and social platforms. A user's\nattributes, habits, and preferences evolve over this period, driven by seasons and\nlife events, and every recorded action reflects the user's profile at that moment. In\nDynamicMem, user profile is not given explicitly. Each attribute, habit, or preference\nmust be inferred from small behavioral signals scattered across different apps. We\nevaluate at five quarterly checkpoints to track how each system scales as the history\ngrows. Benchmarking five representative systems ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e1f378b34f0afdcbc4a1afb5d9bd72e752661db626531f4d671f7b815558eb45",
+            "evidence_id": "E2fb690e764615f5e-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 896,
+                "text": "distributed behavioral\ntraces. We introduce DynamicMem, a synthetic benchmark that constructs 15\nmonths of activity for each user, providing the kind of long-term, multi-app data\nthat real users' privacy keeps out of reach.DynamicMemprovides 15-month, user-\nconsistent trajectories averaging 2.2M tokens and 1,772 grounded events per user\nacross 16 applications such as e-commerce, fitness, and social platforms. A user's\nattributes, habits, and preferences evolve over this period, driven by seasons and\nlife events, and every recorded action reflects the user's profile at that moment. In\nDynamicMem, user profile is not given explicitly. Each attribute, habit, or preference\nmust be inferred from small behavioral signals scattered across different apps. We\nevaluate at five quarterly checkpoints to track how each system scales as the history\ngrows. Benchmarking five representative systems "
+              }
+            ],
+            "text": "distributed behavioral\ntraces. We introduce DynamicMem, a synthetic benchmark that constructs 15\nmonths of activity for each user, providing the kind of long-term, multi-app data\nthat real users' privacy keeps out of reach.DynamicMemprovides 15-month, user-\nconsistent trajectories averaging 2.2M tokens and 1,772 grounded events per user\nacross 16 applications such as e-commerce, fitness, and social platforms. A user's\nattributes, habits, and preferences evolve over this period, driven by seasons and\nlife events, and every recorded action reflects the user's profile at that moment. In\nDynamicMem, user profile is not given explicitly. Each attribute, habit, or preference\nmust be inferred from small behavioral signals scattered across different apps. We\nevaluate at five quarterly checkpoints to track how each system scales as the history\ngrows. Benchmarking five representative systems "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0016"
+        ],
+        "excerpt": "five quarterly checkpoints, exposing how performance scales with history length and\nwhether systems correctly overwrite superseded values as the profile evolves. To our knowledge,\nDynamicMem is the most fine-grained long-horizon memory benchmark to date: about 2.2M tokens\nper user over 15 months, 17,715 grounded events spanning 16 apps and 66 APIs, 1,837 evolving\nattribute / habit / preference items linked by 383 causally-attributed state transitions, and 4,994 fine-\ngrained scoring points across 3,634 checkpoint-based problems. Benchmarking five representative\nmemory systems, we surface drawbacks that a single accuracy number hides. First, as the history\ngrows, State Completion accuracy falls steadily while Personalized Service does not, even though\nboth read the same memory. Second, no system both retains facts that stay true and overwrites facts\nthat change; errors concentrate on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "T1 T2 T3",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "59ed02cd3db7475f91698568c0ea7660512297ff2058458c4c8bd3c824ee6932",
+            "evidence_id": "E2fb690e764615f5e-B0016",
+            "pages": [
+              3
+            ],
+            "section": "T1 T2 T3",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2517,
+                "page": 3,
+                "section": "T1 T2 T3",
+                "section_index": 8,
+                "start": 1621,
+                "text": "five quarterly checkpoints, exposing how performance scales with history length and\nwhether systems correctly overwrite superseded values as the profile evolves. To our knowledge,\nDynamicMem is the most fine-grained long-horizon memory benchmark to date: about 2.2M tokens\nper user over 15 months, 17,715 grounded events spanning 16 apps and 66 APIs, 1,837 evolving\nattribute / habit / preference items linked by 383 causally-attributed state transitions, and 4,994 fine-\ngrained scoring points across 3,634 checkpoint-based problems. Benchmarking five representative\nmemory systems, we surface drawbacks that a single accuracy number hides. First, as the history\ngrows, State Completion accuracy falls steadily while Personalized Service does not, even though\nboth read the same memory. Second, no system both retains facts that stay true and overwrites facts\nthat change; errors concentrate on "
+              }
+            ],
+            "text": "five quarterly checkpoints, exposing how performance scales with history length and\nwhether systems correctly overwrite superseded values as the profile evolves. To our knowledge,\nDynamicMem is the most fine-grained long-horizon memory benchmark to date: about 2.2M tokens\nper user over 15 months, 17,715 grounded events spanning 16 apps and 66 APIs, 1,837 evolving\nattribute / habit / preference items linked by 383 causally-attributed state transitions, and 4,994 fine-\ngrained scoring points across 3,634 checkpoint-based problems. Benchmarking five representative\nmemory systems, we surface drawbacks that a single accuracy number hides. First, as the history\ngrows, State Completion accuracy falls steadily while Personalized Service does not, even though\nboth read the same memory. Second, no system both retains facts that stay true and overwrites facts\nthat change; errors concentrate on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0021"
+        ],
+        "excerpt": "time, we can generate\nmore than one year long trajectories with over two million tokens per user without concatenating\nirrelevant chat histories from other datasets. As shown in Figure 1, the pipeline is organized top-down\nin three stages:(1) Multi-timescale user profile constructionproduces an evolving user profile;(2)\nIntent-conditioned event chain generationwhich turns that profile into coherent multi-step intents; and\n(3) State-consistent multi-app log generationwhich grounds each intent into concrete app interactions.\nEach stage is conditioned on the output of the previous one, so every app log is traceable to the user\nintent and profile state that produced it. We detail each stage below.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "043d56db18ffa4f8c17df69aff22eef6812dac9ba842a5f9f4969d19d32f502b",
+            "evidence_id": "E2fb690e764615f5e-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 930,
+                "page": 4,
+                "section": "Related Work",
+                "section_index": 10,
+                "start": 228,
+                "text": "time, we can generate\nmore than one year long trajectories with over two million tokens per user without concatenating\nirrelevant chat histories from other datasets. As shown in Figure 1, the pipeline is organized top-down\nin three stages:(1) Multi-timescale user profile constructionproduces an evolving user profile;(2)\nIntent-conditioned event chain generationwhich turns that profile into coherent multi-step intents; and\n(3) State-consistent multi-app log generationwhich grounds each intent into concrete app interactions.\nEach stage is conditioned on the output of the previous one, so every app log is traceable to the user\nintent and profile state that produced it. We detail each stage below."
+              }
+            ],
+            "text": "time, we can generate\nmore than one year long trajectories with over two million tokens per user without concatenating\nirrelevant chat histories from other datasets. As shown in Figure 1, the pipeline is organized top-down\nin three stages:(1) Multi-timescale user profile constructionproduces an evolving user profile;(2)\nIntent-conditioned event chain generationwhich turns that profile into coherent multi-step intents; and\n(3) State-consistent multi-app log generationwhich grounds each intent into concrete app interactions.\nEach stage is conditioned on the output of the previous one, so every app log is traceable to the user\nintent and profile state that produced it. We detail each stage below."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0032"
+        ],
+        "excerpt": "by at least one chain. In this way, every change has correspond-\ning evidence. Each chain is then generated by LLMs with the current state, the world background,\nand the specific change or stable item it should express. For example, Figure 3 illustrates how an\nevent chain embeds user intent: three events across Gmail, LinkedIn, and WhatsApp jointly realize a\nsingle goal, i.e., obtaining and acting on an EPA VOC certification, triggered by the Q1 regulatory\nupdate in Figure 2. Each event plays a distinct role, namely, trigger, announce, consequence.\nHuman Validation.We manually validate 190 event chains across all users and domains. Each\nchain is assessed for (1)intent coherence: whether events logically follow from the stated intent, and\n(2)state grounding: whether the chain plausibly reflects the associated state change. The generated\nchains achieve 97% intent coherence and 98% state ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Intent-Conditioned Event Chain Generation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4c652c1f24521a57ca508543a61cad0be1c1cf5eb1f9516c38b3d3b5fe45d7c1",
+            "evidence_id": "E2fb690e764615f5e-B0032",
+            "pages": [
+              5
+            ],
+            "section": "Intent-Conditioned Event Chain Generation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2694,
+                "page": 5,
+                "section": "Intent-Conditioned Event Chain Generation",
+                "section_index": 15,
+                "start": 1796,
+                "text": "by at least one chain. In this way, every change has correspond-\ning evidence. Each chain is then generated by LLMs with the current state, the world background,\nand the specific change or stable item it should express. For example, Figure 3 illustrates how an\nevent chain embeds user intent: three events across Gmail, LinkedIn, and WhatsApp jointly realize a\nsingle goal, i.e., obtaining and acting on an EPA VOC certification, triggered by the Q1 regulatory\nupdate in Figure 2. Each event plays a distinct role, namely, trigger, announce, consequence.\nHuman Validation.We manually validate 190 event chains across all users and domains. Each\nchain is assessed for (1)intent coherence: whether events logically follow from the stated intent, and\n(2)state grounding: whether the chain plausibly reflects the associated state change. The generated\nchains achieve 97% intent coherence and 98% state "
+              }
+            ],
+            "text": "by at least one chain. In this way, every change has correspond-\ning evidence. Each chain is then generated by LLMs with the current state, the world background,\nand the specific change or stable item it should express. For example, Figure 3 illustrates how an\nevent chain embeds user intent: three events across Gmail, LinkedIn, and WhatsApp jointly realize a\nsingle goal, i.e., obtaining and acting on an EPA VOC certification, triggered by the Q1 regulatory\nupdate in Figure 2. Each event plays a distinct role, namely, trigger, announce, consequence.\nHuman Validation.We manually validate 190 event chains across all users and domains. Each\nchain is assessed for (1)intent coherence: whether events logically follow from the stated intent, and\n(2)state grounding: whether the chain plausibly reflects the associated state change. The generated\nchains achieve 97% intent coherence and 98% state "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0036"
+        ],
+        "excerpt": "from a handcrafted database, we synthesize responses\nwith an LLM conditioned on the user's base profile, the step intent, the event-chain context, and the\ncurrent app state, yielding both entity consistency (stable identifiers across references) and behavioral\nconsistency (transitions that match application semantics).\nHuman Validation.We manually verified consistency along two axes: (i) we randomly sampled\n5 consecutive interaction steps per app. We checked argument validity, state transitions, and entity\nreference consistency; and (ii) 20 complete event chains, checking that later steps are grounded in\nearlier outputs and app states without hallucinated entities. For each chain, we verified that later steps\nwere properly grounded in earlier outputs and application states, and that no hallucinated entities or\ninvalid references appeared.\n4DynamicMemBenchmark\nDynamicMem turns the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "State-Consistent Multi-App Log Generation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a501d39066dad0d1bc6f867ed77bbc13e13e953505852e00d2353298b4aeb430",
+            "evidence_id": "E2fb690e764615f5e-B0036",
+            "pages": [
+              6
+            ],
+            "section": "State-Consistent Multi-App Log Generation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2691,
+                "page": 6,
+                "section": "State-Consistent Multi-App Log Generation",
+                "section_index": 16,
+                "start": 1798,
+                "text": "from a handcrafted database, we synthesize responses\nwith an LLM conditioned on the user's base profile, the step intent, the event-chain context, and the\ncurrent app state, yielding both entity consistency (stable identifiers across references) and behavioral\nconsistency (transitions that match application semantics).\nHuman Validation.We manually verified consistency along two axes: (i) we randomly sampled\n5 consecutive interaction steps per app. We checked argument validity, state transitions, and entity\nreference consistency; and (ii) 20 complete event chains, checking that later steps are grounded in\nearlier outputs and app states without hallucinated entities. For each chain, we verified that later steps\nwere properly grounded in earlier outputs and application states, and that no hallucinated entities or\ninvalid references appeared.\n4DynamicMemBenchmark\nDynamicMem turns the "
+              }
+            ],
+            "text": "from a handcrafted database, we synthesize responses\nwith an LLM conditioned on the user's base profile, the step intent, the event-chain context, and the\ncurrent app state, yielding both entity consistency (stable identifiers across references) and behavioral\nconsistency (transitions that match application semantics).\nHuman Validation.We manually verified consistency along two axes: (i) we randomly sampled\n5 consecutive interaction steps per app. We checked argument validity, state transitions, and entity\nreference consistency; and (ii) 20 complete event chains, checking that later steps are grounded in\nearlier outputs and app states without hallucinated entities. For each chain, we verified that later steps\nwere properly grounded in earlier outputs and application states, and that no hallucinated entities or\ninvalid references appeared.\n4DynamicMemBenchmark\nDynamicMem turns the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0040"
+        ],
+        "excerpt": "Table 1:Statistics ofDynamicMem\nTrajectory scale\nUsers (from PersonaHub) 10\nTime horizon 15 months\nEvent chains 1,790\nApp-log events 17,715\nTokens per user\u223c2.2 M\nBehavioral coverage\nLife domains 6\nApplications 16\nDistinct APIs 66\nEvolving user profile\nAttribute instances 883\nHabit instances 466\nPreference instances 488\nFields (e.g., \"start_time\"\nin Fig. 4) 3,702\nState transitions\n(i.e., typed deltas in Fig. 2) 383\nEvaluation tasks\nState-completion problems 1,824\nPersonalized-service problems 1,810\nDynamicMem contains two checkpoint task families that\nprobe memory at two complementary levels.State Com-\npletiontests whether a memory-augmented agent canre-\ncoverthe user's profile at a given checkpoint, e.g., describ-\ning the user's current workout routine or dietary prefer-\nence.Personalized Servicetests whether the agent can\nact onthat state in downstream services, e.g., reminding\nthe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Task Families",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0481fcae1b6b17ee13ffab29739c5d088fd58e89e2c80bd3c5e222819edabac2",
+            "evidence_id": "E2fb690e764615f5e-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Task Families",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 7,
+                "section": "Task Families",
+                "section_index": 19,
+                "start": 0,
+                "text": "Table 1:Statistics ofDynamicMem\nTrajectory scale\nUsers (from PersonaHub) 10\nTime horizon 15 months\nEvent chains 1,790\nApp-log events 17,715\nTokens per user\u223c2.2 M\nBehavioral coverage\nLife domains 6\nApplications 16\nDistinct APIs 66\nEvolving user profile\nAttribute instances 883\nHabit instances 466\nPreference instances 488\nFields (e.g., \"start_time\"\nin Fig. 4) 3,702\nState transitions\n(i.e., typed deltas in Fig. 2) 383\nEvaluation tasks\nState-completion problems 1,824\nPersonalized-service problems 1,810\nDynamicMem contains two checkpoint task families that\nprobe memory at two complementary levels.State Com-\npletiontests whether a memory-augmented agent canre-\ncoverthe user's profile at a given checkpoint, e.g., describ-\ning the user's current workout routine or dietary prefer-\nence.Personalized Servicetests whether the agent can\nact onthat state in downstream services, e.g., reminding\nthe "
+              }
+            ],
+            "text": "Table 1:Statistics ofDynamicMem\nTrajectory scale\nUsers (from PersonaHub) 10\nTime horizon 15 months\nEvent chains 1,790\nApp-log events 17,715\nTokens per user\u223c2.2 M\nBehavioral coverage\nLife domains 6\nApplications 16\nDistinct APIs 66\nEvolving user profile\nAttribute instances 883\nHabit instances 466\nPreference instances 488\nFields (e.g., \"start_time\"\nin Fig. 4) 3,702\nState transitions\n(i.e., typed deltas in Fig. 2) 383\nEvaluation tasks\nState-completion problems 1,824\nPersonalized-service problems 1,810\nDynamicMem contains two checkpoint task families that\nprobe memory at two complementary levels.State Com-\npletiontests whether a memory-augmented agent canre-\ncoverthe user's profile at a given checkpoint, e.g., describ-\ning the user's current workout routine or dietary prefer-\nence.Personalized Servicetests whether the agent can\nact onthat state in downstream services, e.g., reminding\nthe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0046"
+        ],
+        "excerpt": "Both tasks are evaluated using LLM-as-judge method. For each field to be filled, e.g, each<fill>in\nFigure 4, the judge returns two scores: CORE\u2208 {0,1}, indicating whether the prediction recovers the\ncentral fact, and DETAIL\u2208 {0,1,2}, which measures how well it preserves the supporting specifics,\nwith 0, 1, and 2 corresponding to incorrect, partially correct, and fully correct details, respectively.\nThe final per-field score iss= 0.8\u00b7CORE+ 0.2\u00b7(DETAIL/2).\nState Completion.We score every field (each<fill>in Figure 4) independently and average into the\nfinal score. Take the weekend-walk habit in Figure 4: the reference specifies the walk's frequency,\ndays, start/end time, and location. Suppose the prediction is\"Saturday weekly walk at 06:35 by the\nriver\"against the ground truth of\"Saturday/Sunday weekly walk at 06:30\u201307:30, lakefront trail\".\nFrequency receives CORE=1 (weeklymatches); start ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol And Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6c0d0f210aaafca00dd7e0ee85c776164664e7c7b9c22ab4e2422d2326fb9192",
+            "evidence_id": "E2fb690e764615f5e-B0046",
+            "pages": [
+              8
+            ],
+            "section": "Evaluation Protocol And Metrics",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 8,
+                "section": "Evaluation Protocol And Metrics",
+                "section_index": 21,
+                "start": 0,
+                "text": "Both tasks are evaluated using LLM-as-judge method. For each field to be filled, e.g, each<fill>in\nFigure 4, the judge returns two scores: CORE\u2208 {0,1}, indicating whether the prediction recovers the\ncentral fact, and DETAIL\u2208 {0,1,2}, which measures how well it preserves the supporting specifics,\nwith 0, 1, and 2 corresponding to incorrect, partially correct, and fully correct details, respectively.\nThe final per-field score iss= 0.8\u00b7CORE+ 0.2\u00b7(DETAIL/2).\nState Completion.We score every field (each<fill>in Figure 4) independently and average into the\nfinal score. Take the weekend-walk habit in Figure 4: the reference specifies the walk's frequency,\ndays, start/end time, and location. Suppose the prediction is\"Saturday weekly walk at 06:35 by the\nriver\"against the ground truth of\"Saturday/Sunday weekly walk at 06:30\u201307:30, lakefront trail\".\nFrequency receives CORE=1 (weeklymatches); start "
+              }
+            ],
+            "text": "Both tasks are evaluated using LLM-as-judge method. For each field to be filled, e.g, each<fill>in\nFigure 4, the judge returns two scores: CORE\u2208 {0,1}, indicating whether the prediction recovers the\ncentral fact, and DETAIL\u2208 {0,1,2}, which measures how well it preserves the supporting specifics,\nwith 0, 1, and 2 corresponding to incorrect, partially correct, and fully correct details, respectively.\nThe final per-field score iss= 0.8\u00b7CORE+ 0.2\u00b7(DETAIL/2).\nState Completion.We score every field (each<fill>in Figure 4) independently and average into the\nfinal score. Take the weekend-walk habit in Figure 4: the reference specifies the walk's frequency,\ndays, start/end time, and location. Suppose the prediction is\"Saturday weekly walk at 06:35 by the\nriver\"against the ground truth of\"Saturday/Sunday weekly walk at 06:30\u201307:30, lakefront trail\".\nFrequency receives CORE=1 (weeklymatches); start "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0048"
+        ],
+        "excerpt": "Baselines.We evaluate five memory systems:Vanilla RAG (RAG)[Lewis et al., 2021],Hip-\npoRAG2[Guti\u00e9rrez et al., 2025],MemoryOS[Kang et al., 2025],A-Mem[Xu et al., 2025],Simple-\nMem[Liu et al., 2025]. We additionally report anOracleupper bound that is given the ground-truth\nevidence required to complete each task item. We focus on query-agnostic memory systems that\npre-build a persistent per-user memory and then serve many downstream task items efficiently. For\nall baselines, we use gpt-5-mini as the answer-generation LLM and text-embedding-3-large\nfor retrieval. Other experiment details are provided in Appendix I.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2c4aaa9dd62bf4278fa5c1af73c55cdf29eb02f07d642d50ad1a4fdf54460bc3",
+            "evidence_id": "E2fb690e764615f5e-B0048",
+            "pages": [
+              8
+            ],
+            "section": "Experiment",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 619,
+                "page": 8,
+                "section": "Experiment",
+                "section_index": 22,
+                "start": 0,
+                "text": "Baselines.We evaluate five memory systems:Vanilla RAG (RAG)[Lewis et al., 2021],Hip-\npoRAG2[Guti\u00e9rrez et al., 2025],MemoryOS[Kang et al., 2025],A-Mem[Xu et al., 2025],Simple-\nMem[Liu et al., 2025]. We additionally report anOracleupper bound that is given the ground-truth\nevidence required to complete each task item. We focus on query-agnostic memory systems that\npre-build a persistent per-user memory and then serve many downstream task items efficiently. For\nall baselines, we use gpt-5-mini as the answer-generation LLM and text-embedding-3-large\nfor retrieval. Other experiment details are provided in Appendix I."
+              }
+            ],
+            "text": "Baselines.We evaluate five memory systems:Vanilla RAG (RAG)[Lewis et al., 2021],Hip-\npoRAG2[Guti\u00e9rrez et al., 2025],MemoryOS[Kang et al., 2025],A-Mem[Xu et al., 2025],Simple-\nMem[Liu et al., 2025]. We additionally report anOracleupper bound that is given the ground-truth\nevidence required to complete each task item. We focus on query-agnostic memory systems that\npre-build a persistent per-user memory and then serve many downstream task items efficiently. For\nall baselines, we use gpt-5-mini as the answer-generation LLM and text-embedding-3-large\nfor retrieval. Other experiment details are provided in Appendix I."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0049"
+        ],
+        "excerpt": "Finding 1.State Completion performance decreases as the horizon grows, whereas Personalized\nService performance remains stable and even improves slightly by leveraging the user's stateful\ntrajectory.\nFrom C1 to C5, State Completion declines consistently across all memory systems. Compared\nwith C1, the C5 score drops by 4.4 points for RAG, 6.6 for HippoRAG2, 8.9 for A-Mem, 14.2 for\nMemoryOS, and 16.7 for SimpleMem, as shown in Figure 5. Surprisingly, Personalized Service\nshows no such degradation for four of the five systems: the C5 score is higher than the C1 score by\n8",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ea7103568a7c54aa3a52e4def620c66c9190859ad7a06b2a0da129c1e4c3dc77",
+            "evidence_id": "E2fb690e764615f5e-B0049",
+            "pages": [
+              8
+            ],
+            "section": "Results Analysis",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 576,
+                "page": 8,
+                "section": "Results Analysis",
+                "section_index": 23,
+                "start": 0,
+                "text": "Finding 1.State Completion performance decreases as the horizon grows, whereas Personalized\nService performance remains stable and even improves slightly by leveraging the user's stateful\ntrajectory.\nFrom C1 to C5, State Completion declines consistently across all memory systems. Compared\nwith C1, the C5 score drops by 4.4 points for RAG, 6.6 for HippoRAG2, 8.9 for A-Mem, 14.2 for\nMemoryOS, and 16.7 for SimpleMem, as shown in Figure 5. Surprisingly, Personalized Service\nshows no such degradation for four of the five systems: the C5 score is higher than the C1 score by\n8"
+              }
+            ],
+            "text": "Finding 1.State Completion performance decreases as the horizon grows, whereas Personalized\nService performance remains stable and even improves slightly by leveraging the user's stateful\ntrajectory.\nFrom C1 to C5, State Completion declines consistently across all memory systems. Compared\nwith C1, the C5 score drops by 4.4 points for RAG, 6.6 for HippoRAG2, 8.9 for A-Mem, 14.2 for\nMemoryOS, and 16.7 for SimpleMem, as shown in Figure 5. Surprisingly, Personalized Service\nshows no such degradation for four of the five systems: the C5 score is higher than the C1 score by\n8"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0050"
+        ],
+        "excerpt": "C1 C2 C3 C4 C5\nCheckpoint\n15\n20\n25\n30\n35\n40\n45\n50Retrieval recall (%)\n-13.8\n-17.7\n-21.8\n-23.7\n-14.4\n-17.5\n-22.2\n-23.6\n-10.9\n-14.7\n-18.7\n-20.1\n(a) SC \u2014 evidence retrieval recall\n\nC1 C2 C3 C4 C5\nCheckpoint\n15\n20\n25\n30\n35\n40\n45\n50Retrieval recall (%)\n-12.6\n-13.6\n-18.9\n-17.8\n-13.1 -12.8\n-20.2 -19.2\n-8.4\n-10.5\n-16.5 -16.4\n(b) PS \u2014 evidence retrieval recall\n\nC1 C2 C3 C4 C5\nCheckpoint\n0.275\n0.300\n0.325\n0.350\n0.375\n0.400\n0.425\n0.450Mean top-5 cosine similarity\n+0.025\n+0.030 +0.035 +0.038\n+0.011 +0.009\n+0.018 +0.016\ngap +0.065\ngap +0.087\n(c) Query\u2013trajectory alignment (RAG)\nSC query\nPS query\n\nC1 C2 C3 C4 C5\nCheckpoint\n0.275\n0.300\n0.325\n0.350\n0.375\n0.400\n0.425\n0.450Mean top-5 cosine similarity\n+0.024\n+0.030 +0.030 +0.034\n+0.008 +0.004 +0.013 +0.011\ngap +0.050\ngap +0.074\n(d) Query\u2013trajectory alignment (A-Mem)\nSC query\nPS query\nRAG HippoRAG2 A-Mem\nFigure 6: (a, b) Evidence retrieval recall across ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "C1 C2 C3 C4 C5",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ad4977280a4bfcd38f0a878924ef874c8d961efcb970195dea4716b7c609ef12",
+            "evidence_id": "E2fb690e764615f5e-B0050",
+            "pages": [
+              9
+            ],
+            "section": "C1 C2 C3 C4 C5",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 9,
+                "section": "C1 C2 C3 C4 C5",
+                "section_index": 24,
+                "start": 0,
+                "text": "C1 C2 C3 C4 C5\nCheckpoint\n15\n20\n25\n30\n35\n40\n45\n50Retrieval recall (%)\n-13.8\n-17.7\n-21.8\n-23.7\n-14.4\n-17.5\n-22.2\n-23.6\n-10.9\n-14.7\n-18.7\n-20.1\n(a) SC \u2014 evidence retrieval recall\n\nC1 C2 C3 C4 C5\nCheckpoint\n15\n20\n25\n30\n35\n40\n45\n50Retrieval recall (%)\n-12.6\n-13.6\n-18.9\n-17.8\n-13.1 -12.8\n-20.2 -19.2\n-8.4\n-10.5\n-16.5 -16.4\n(b) PS \u2014 evidence retrieval recall\n\nC1 C2 C3 C4 C5\nCheckpoint\n0.275\n0.300\n0.325\n0.350\n0.375\n0.400\n0.425\n0.450Mean top-5 cosine similarity\n+0.025\n+0.030 +0.035 +0.038\n+0.011 +0.009\n+0.018 +0.016\ngap +0.065\ngap +0.087\n(c) Query\u2013trajectory alignment (RAG)\nSC query\nPS query\n\nC1 C2 C3 C4 C5\nCheckpoint\n0.275\n0.300\n0.325\n0.350\n0.375\n0.400\n0.425\n0.450Mean top-5 cosine similarity\n+0.024\n+0.030 +0.030 +0.034\n+0.008 +0.004 +0.013 +0.011\ngap +0.050\ngap +0.074\n(d) Query\u2013trajectory alignment (A-Mem)\nSC query\nPS query\nRAG HippoRAG2 A-Mem\nFigure 6: (a, b) Evidence retrieval recall across "
+              }
+            ],
+            "text": "C1 C2 C3 C4 C5\nCheckpoint\n15\n20\n25\n30\n35\n40\n45\n50Retrieval recall (%)\n-13.8\n-17.7\n-21.8\n-23.7\n-14.4\n-17.5\n-22.2\n-23.6\n-10.9\n-14.7\n-18.7\n-20.1\n(a) SC \u2014 evidence retrieval recall\n\nC1 C2 C3 C4 C5\nCheckpoint\n15\n20\n25\n30\n35\n40\n45\n50Retrieval recall (%)\n-12.6\n-13.6\n-18.9\n-17.8\n-13.1 -12.8\n-20.2 -19.2\n-8.4\n-10.5\n-16.5 -16.4\n(b) PS \u2014 evidence retrieval recall\n\nC1 C2 C3 C4 C5\nCheckpoint\n0.275\n0.300\n0.325\n0.350\n0.375\n0.400\n0.425\n0.450Mean top-5 cosine similarity\n+0.025\n+0.030 +0.035 +0.038\n+0.011 +0.009\n+0.018 +0.016\ngap +0.065\ngap +0.087\n(c) Query\u2013trajectory alignment (RAG)\nSC query\nPS query\n\nC1 C2 C3 C4 C5\nCheckpoint\n0.275\n0.300\n0.325\n0.350\n0.375\n0.400\n0.425\n0.450Mean top-5 cosine similarity\n+0.024\n+0.030 +0.030 +0.034\n+0.008 +0.004 +0.013 +0.011\ngap +0.050\ngap +0.074\n(d) Query\u2013trajectory alignment (A-Mem)\nSC query\nPS query\nRAG HippoRAG2 A-Mem\nFigure 6: (a, b) Evidence retrieval recall across "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0059"
+        ],
+        "excerpt": "3.Retention and update are separate failure modes. No single architecture wins on both:\nthe same mechanism that lets a system hold a stable fact often prevents it from adopting a changed\none, and this trade-off differs by state family.\n10\nA falling State Completion score could mean two different things: the system might be failing to\nremember a fact it saw long ago, or it might be failing to adopt a fact that has just changed. These are\ndifferent failure modes that need different fixes, but an aggregate curve cannot distinguish them.\nWe therefore split each system's score into two regimes, both anchored at C1:retentionprobes the\nfirst mode by re-asking about a fact that has stayed true since C1, whileupdateprobes the second by\nasking about a fact that has since changed. The retention lookback grows with the horizon, so the\nretention row reads as a forgetting curve; both regimes start at ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "C1 C2 C3 C4 C5",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d6fde4b1f2667c4d61412b7aff524cb004544c4dba78888c271ed91949468660",
+            "evidence_id": "E2fb690e764615f5e-B0059",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "C1 C2 C3 C4 C5",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3800,
+                "page": 10,
+                "section": "C1 C2 C3 C4 C5",
+                "section_index": 25,
+                "start": 3562,
+                "text": "3.Retention and update are separate failure modes. No single architecture wins on both:\nthe same mechanism that lets a system hold a stable fact often prevents it from adopting a changed\none, and this trade-off differs by state family.\n10"
+              },
+              {
+                "end": 661,
+                "page": 11,
+                "section": "C1 C2 C3 C4 C5",
+                "section_index": 26,
+                "start": 0,
+                "text": "A falling State Completion score could mean two different things: the system might be failing to\nremember a fact it saw long ago, or it might be failing to adopt a fact that has just changed. These are\ndifferent failure modes that need different fixes, but an aggregate curve cannot distinguish them.\nWe therefore split each system's score into two regimes, both anchored at C1:retentionprobes the\nfirst mode by re-asking about a fact that has stayed true since C1, whileupdateprobes the second by\nasking about a fact that has since changed. The retention lookback grows with the horizon, so the\nretention row reads as a forgetting curve; both regimes start at "
+              }
+            ],
+            "text": "3.Retention and update are separate failure modes. No single architecture wins on both:\nthe same mechanism that lets a system hold a stable fact often prevents it from adopting a changed\none, and this trade-off differs by state family.\n10\nA falling State Completion score could mean two different things: the system might be failing to\nremember a fact it saw long ago, or it might be failing to adopt a fact that has just changed. These are\ndifferent failure modes that need different fixes, but an aggregate curve cannot distinguish them.\nWe therefore split each system's score into two regimes, both anchored at C1:retentionprobes the\nfirst mode by re-asking about a fact that has stayed true since C1, whileupdateprobes the second by\nasking about a fact that has since changed. The retention lookback grows with the horizon, so the\nretention row reads as a forgetting curve; both regimes start at "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0068"
+        ],
+        "excerpt": "is also surfaced, leaving the value ambiguous.\n\u2022 ALLCLEAR: every layer is present and unambiguous; because the prediction nevertheless failed,\nthe failure is attributable to the answer model rather than the memory system.\nWe use LLM (gpt-5.4-2026-03-05) to perform error type classification. For each case, the LLM\nreceives three inputs: the actual query the memory system was invoked with (the per-key retrieval\nquery for SC; the scenario plus task instruction for PS), the gold answer, and the cited evidence list.\nThe system's prediction is intentionally withheld from the LLM, so the classification reflects what the\nmemory system delivered, not how the answer model used it. We sample 300 failures per (system,\ntask) combination, stratified across the three state families. The full classification prompts are in\nAppendix K.\nFinding 1.Structured memory shifts the failure profile from detail to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Error Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f149f515c7a8e37ad2d2fc3266fd6b24af83b3d869f62c0d868a6d3073c6d665",
+            "evidence_id": "E2fb690e764615f5e-B0068",
+            "pages": [
+              12
+            ],
+            "section": "Error Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2693,
+                "page": 12,
+                "section": "Error Analysis",
+                "section_index": 28,
+                "start": 1793,
+                "text": "is also surfaced, leaving the value ambiguous.\n\u2022 ALLCLEAR: every layer is present and unambiguous; because the prediction nevertheless failed,\nthe failure is attributable to the answer model rather than the memory system.\nWe use LLM (gpt-5.4-2026-03-05) to perform error type classification. For each case, the LLM\nreceives three inputs: the actual query the memory system was invoked with (the per-key retrieval\nquery for SC; the scenario plus task instruction for PS), the gold answer, and the cited evidence list.\nThe system's prediction is intentionally withheld from the LLM, so the classification reflects what the\nmemory system delivered, not how the answer model used it. We sample 300 failures per (system,\ntask) combination, stratified across the three state families. The full classification prompts are in\nAppendix K.\nFinding 1.Structured memory shifts the failure profile from detail to "
+              }
+            ],
+            "text": "is also surfaced, leaving the value ambiguous.\n\u2022 ALLCLEAR: every layer is present and unambiguous; because the prediction nevertheless failed,\nthe failure is attributable to the answer model rather than the memory system.\nWe use LLM (gpt-5.4-2026-03-05) to perform error type classification. For each case, the LLM\nreceives three inputs: the actual query the memory system was invoked with (the per-key retrieval\nquery for SC; the scenario plus task instruction for PS), the gold answer, and the cited evidence list.\nThe system's prediction is intentionally withheld from the LLM, so the classification reflects what the\nmemory system delivered, not how the answer model used it. We sample 300 failures per (system,\ntask) combination, stratified across the three state families. The full classification prompts are in\nAppendix K.\nFinding 1.Structured memory shifts the failure profile from detail to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0071"
+        ],
+        "excerpt": "36\u201337% IDENTITY\nMISS, roughly two thirds of MemoryOS's failures involve evidence that does not pin down the user's\nstate. This shape follows from how MemoryOS stores memory: by compacting many logs into a\nmulti-level hierarchical summary, retrieval surfaces an abstracted view rather than the specific log\na precise state query needs. The other four architectures retain memory at finer granularities (raw\nchunks, atomic triples, per-state notes, or per-event consolidations), and a relevant fine-grained entry\nremains within reach more often, leading to fewer relevance-level failures.\nFinding 3.Improving memory is far more actionable than improving the answer model.\nALLCLEAR\u2014cases where the cited evidence is complete and unambiguous but the prediction is still\nwrong\u2014stays at 2\u20137% across all ten (system, task) combinations. In more than 93% of failures, the\nbottleneck is what the memory ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Error Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "98f75f70ed2c142306aea9e42324307267414228374bd5fc9e08020e67a9c911",
+            "evidence_id": "E2fb690e764615f5e-B0071",
+            "pages": [
+              13
+            ],
+            "section": "Error Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 13,
+                "section": "Error Analysis",
+                "section_index": 29,
+                "start": 896,
+                "text": "36\u201337% IDENTITY\nMISS, roughly two thirds of MemoryOS's failures involve evidence that does not pin down the user's\nstate. This shape follows from how MemoryOS stores memory: by compacting many logs into a\nmulti-level hierarchical summary, retrieval surfaces an abstracted view rather than the specific log\na precise state query needs. The other four architectures retain memory at finer granularities (raw\nchunks, atomic triples, per-state notes, or per-event consolidations), and a relevant fine-grained entry\nremains within reach more often, leading to fewer relevance-level failures.\nFinding 3.Improving memory is far more actionable than improving the answer model.\nALLCLEAR\u2014cases where the cited evidence is complete and unambiguous but the prediction is still\nwrong\u2014stays at 2\u20137% across all ten (system, task) combinations. In more than 93% of failures, the\nbottleneck is what the memory "
+              }
+            ],
+            "text": "36\u201337% IDENTITY\nMISS, roughly two thirds of MemoryOS's failures involve evidence that does not pin down the user's\nstate. This shape follows from how MemoryOS stores memory: by compacting many logs into a\nmulti-level hierarchical summary, retrieval surfaces an abstracted view rather than the specific log\na precise state query needs. The other four architectures retain memory at finer granularities (raw\nchunks, atomic triples, per-state notes, or per-event consolidations), and a relevant fine-grained entry\nremains within reach more often, leading to fewer relevance-level failures.\nFinding 3.Improving memory is far more actionable than improving the answer model.\nALLCLEAR\u2014cases where the cited evidence is complete and unambiguous but the prediction is still\nwrong\u2014stays at 2\u20137% across all ten (system, task) combinations. In more than 93% of failures, the\nbottleneck is what the memory "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0085"
+        ],
+        "excerpt": "DynamicMem is designed for diagnostic memory evaluation in real-world settings, not for claiming\nfull behavioral realism across all dimensions of human activity. As a synthetic benchmark, it may\nstill miss rare behaviors and platform-specific idiosyncrasies that appear in proprietary real user logs.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7bfc8d6372ba0c9e1e2ef25a843477c5a311e84583a5d4179977c2e0be279f11",
+            "evidence_id": "E2fb690e764615f5e-B0085",
+            "pages": [
+              17
+            ],
+            "section": "Limitation",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 300,
+                "page": 17,
+                "section": "Limitation",
+                "section_index": 35,
+                "start": 0,
+                "text": "DynamicMem is designed for diagnostic memory evaluation in real-world settings, not for claiming\nfull behavioral realism across all dimensions of human activity. As a synthetic benchmark, it may\nstill miss rare behaviors and platform-specific idiosyncrasies that appear in proprietary real user logs."
+              }
+            ],
+            "text": "DynamicMem is designed for diagnostic memory evaluation in real-world settings, not for claiming\nfull behavioral realism across all dimensions of human activity. As a synthetic benchmark, it may\nstill miss rare behaviors and platform-specific idiosyncrasies that appear in proprietary real user logs."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0125"
+        ],
+        "excerpt": "Our current DynamicMem instantiation uses gemini-3-flash-preview as the construction model\nfor data synthesis and evaluation-task authoring. All construction prompts are issued with structured\nJSON output constraints, and generated objects are parsed and checked against the expected schema\n24\nbefore they are consumed by later stages. The implementation is provider-agnostic: the same construc-\ntion pipeline can be run through Gemini-style generate_content endpoints or OpenAI-compatible\n/chat/completionsendpoints, as long as the backend supports reliable JSON generation.\nThe synthesis pipeline uses the same model family across the main construction stages: base-profile\nexpansion, world-background generation, domain-state evolution, intent-conditioned event-chain\ngeneration, and app-log grounding. At each stage, the model receives only the structured context\nneeded for that stage, and the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 24,
+        "pages": [
+          24,
+          25
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Synthesis Model And Structured Generation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c2c2d24dfb8123295055b8b453b5d6601f1098d60c51e9fff9ce75ab581522c8",
+            "evidence_id": "E2fb690e764615f5e-B0125",
+            "pages": [
+              24,
+              25
+            ],
+            "section": "Appendix: Synthesis Model And Structured Generation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 293,
+                "page": 24,
+                "section": "Appendix: Synthesis Model And Structured Generation",
+                "section_index": 54,
+                "start": 0,
+                "text": "Our current DynamicMem instantiation uses gemini-3-flash-preview as the construction model\nfor data synthesis and evaluation-task authoring. All construction prompts are issued with structured\nJSON output constraints, and generated objects are parsed and checked against the expected schema\n24"
+              },
+              {
+                "end": 605,
+                "page": 25,
+                "section": "Appendix: Synthesis Model And Structured Generation",
+                "section_index": 55,
+                "start": 0,
+                "text": "before they are consumed by later stages. The implementation is provider-agnostic: the same construc-\ntion pipeline can be run through Gemini-style generate_content endpoints or OpenAI-compatible\n/chat/completionsendpoints, as long as the backend supports reliable JSON generation.\nThe synthesis pipeline uses the same model family across the main construction stages: base-profile\nexpansion, world-background generation, domain-state evolution, intent-conditioned event-chain\ngeneration, and app-log grounding. At each stage, the model receives only the structured context\nneeded for that stage, and the "
+              }
+            ],
+            "text": "Our current DynamicMem instantiation uses gemini-3-flash-preview as the construction model\nfor data synthesis and evaluation-task authoring. All construction prompts are issued with structured\nJSON output constraints, and generated objects are parsed and checked against the expected schema\n24\nbefore they are consumed by later stages. The implementation is provider-agnostic: the same construc-\ntion pipeline can be run through Gemini-style generate_content endpoints or OpenAI-compatible\n/chat/completionsendpoints, as long as the backend supports reliable JSON generation.\nThe synthesis pipeline uses the same model family across the main construction stages: base-profile\nexpansion, world-background generation, domain-state evolution, intent-conditioned event-chain\ngeneration, and app-log grounding. At each stage, the model receives only the structured context\nneeded for that stage, and the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0138"
+        ],
+        "excerpt": "uses top_k=10, and SimpleMem uses top_k=10 across its semantic, keyword, and structured\nretrieval channels. Measured by retrieved-memory context size, the average STATECOMPLETION\ncontext is 12.6k tokens for RAG, 12.8k for HippoRAG2, 15.6k for A-Mem, 12.7k for MemoryOS,\nand 20.8k for SimpleMem; for PERSONALIZEDSERVICE, the corresponding averages are 14.6k,\n14.1k, 17.0k, 12.9k, and 20.7k tokens.\nLLM-as-Judge Setup and Reliability.We use gpt-5.4 [OpenAI, 2025] as the judge model for\nscoring of STATECOMPLETIONand PERSONALIZEDSERVICE. Since both tasks require semantic\nmatching beyond exact string overlap, the judge compares each prediction against the corresponding\ngold state or service reference and produces structured judgments. To verify judge reliability, we\nmanually audited a calibration slice from user 001 across four systems: A-Mem, HippoRAG2,\nOracle, and RAG, with 189 judged items ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 27,
+        "pages": [
+          27
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Detailed Experiment Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7691c732a7a7e4bb1482fe43a9b1f1c9c4613e3d2499cb49cff0840154fdd44a",
+            "evidence_id": "E2fb690e764615f5e-B0138",
+            "pages": [
+              27
+            ],
+            "section": "Appendix: Detailed Experiment Setup",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 27,
+                "section": "Appendix: Detailed Experiment Setup",
+                "section_index": 61,
+                "start": 0,
+                "text": "uses top_k=10, and SimpleMem uses top_k=10 across its semantic, keyword, and structured\nretrieval channels. Measured by retrieved-memory context size, the average STATECOMPLETION\ncontext is 12.6k tokens for RAG, 12.8k for HippoRAG2, 15.6k for A-Mem, 12.7k for MemoryOS,\nand 20.8k for SimpleMem; for PERSONALIZEDSERVICE, the corresponding averages are 14.6k,\n14.1k, 17.0k, 12.9k, and 20.7k tokens.\nLLM-as-Judge Setup and Reliability.We use gpt-5.4 [OpenAI, 2025] as the judge model for\nscoring of STATECOMPLETIONand PERSONALIZEDSERVICE. Since both tasks require semantic\nmatching beyond exact string overlap, the judge compares each prediction against the corresponding\ngold state or service reference and produces structured judgments. To verify judge reliability, we\nmanually audited a calibration slice from user 001 across four systems: A-Mem, HippoRAG2,\nOracle, and RAG, with 189 judged items "
+              }
+            ],
+            "text": "uses top_k=10, and SimpleMem uses top_k=10 across its semantic, keyword, and structured\nretrieval channels. Measured by retrieved-memory context size, the average STATECOMPLETION\ncontext is 12.6k tokens for RAG, 12.8k for HippoRAG2, 15.6k for A-Mem, 12.7k for MemoryOS,\nand 20.8k for SimpleMem; for PERSONALIZEDSERVICE, the corresponding averages are 14.6k,\n14.1k, 17.0k, 12.9k, and 20.7k tokens.\nLLM-as-Judge Setup and Reliability.We use gpt-5.4 [OpenAI, 2025] as the judge model for\nscoring of STATECOMPLETIONand PERSONALIZEDSERVICE. Since both tasks require semantic\nmatching beyond exact string overlap, the judge compares each prediction against the corresponding\ngold state or service reference and produces structured judgments. To verify judge reliability, we\nmanually audited a calibration slice from user 001 across four systems: A-Mem, HippoRAG2,\nOracle, and RAG, with 189 judged items "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0139"
+        ],
+        "excerpt": "per system. We marked a judge result as unreasonable\nwhen the human auditor found its score or rationale inconsistent with the reference, prediction, or\ntask requirements. Across 756 audited judgments, only 28 were marked unreasonable, yielding\nan overall agreement rate of 96.30%. Per-system agreement was 96.30% for A-Mem, 94.71% for\nHippoRAG2, 96.30% for Oracle, and 97.88% for RAG, suggesting that the judge is sufficiently\nreliable for aggregate comparison.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 27,
+        "pages": [
+          27
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Detailed Experiment Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "23a0bc03ed634939170b07433dd3b2744c03801389c4bdd675fac0c44b96ffbf",
+            "evidence_id": "E2fb690e764615f5e-B0139",
+            "pages": [
+              27
+            ],
+            "section": "Appendix: Detailed Experiment Setup",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1359,
+                "page": 27,
+                "section": "Appendix: Detailed Experiment Setup",
+                "section_index": 61,
+                "start": 897,
+                "text": "per system. We marked a judge result as unreasonable\nwhen the human auditor found its score or rationale inconsistent with the reference, prediction, or\ntask requirements. Across 756 audited judgments, only 28 were marked unreasonable, yielding\nan overall agreement rate of 96.30%. Per-system agreement was 96.30% for A-Mem, 94.71% for\nHippoRAG2, 96.30% for Oracle, and 97.88% for RAG, suggesting that the judge is sufficiently\nreliable for aggregate comparison."
+              }
+            ],
+            "text": "per system. We marked a judge result as unreasonable\nwhen the human auditor found its score or rationale inconsistent with the reference, prediction, or\ntask requirements. Across 756 audited judgments, only 28 were marked unreasonable, yielding\nan overall agreement rate of 96.30%. Per-system agreement was 96.30% for A-Mem, 94.71% for\nHippoRAG2, 96.30% for Oracle, and 97.88% for RAG, suggesting that the judge is sufficiently\nreliable for aggregate comparison."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.22877",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2606.22877",
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "A manual human audit of 756 judge decisions found 96.3% agreement, and evidence retrieval recall independently corroborated the reported memory-bottleneck findings.",
+          "final_evaluation_signal": "Headline outcomes are produced by an LLM-as-a-judge scoring rubric against validated reference states, with supporting retrieval-recall and query-alignment measurements.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The evaluated memory systems are existing baselines run off-the-shelf with fixed memory construction and retrieval configurations; no system is trained, tuned, or selected on DynamicMem.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0003",
+          "E2fb690e764615f5e-B0016",
+          "E2fb690e764615f5e-B0021",
+          "E2fb690e764615f5e-B0032",
+          "E2fb690e764615f5e-B0036",
+          "E2fb690e764615f5e-B0040",
+          "E2fb690e764615f5e-B0046",
+          "E2fb690e764615f5e-B0048",
+          "E2fb690e764615f5e-B0049",
+          "E2fb690e764615f5e-B0059",
+          "E2fb690e764615f5e-B0068",
+          "E2fb690e764615f5e-B0071",
+          "E2fb690e764615f5e-B0085",
+          "E2fb690e764615f5e-B0125",
+          "E2fb690e764615f5e-B0138",
+          "E2fb690e764615f5e-B0139"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "53f5dafcf351bddfc2c6cd0420b8bd7f7fd25e009c2f0cb2f5b70783efcea5a4"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2606.22877",
+        "claim_evidence_alignment": "Claims regarding the degradation of profile reconstruction over long horizons, divergent behavior between service and state completion tasks, and retrieval bottlenecks causing >93% of failures are consistently backed by experimental data and stratified diagnostics.",
+        "context_id": "2fb690e764615f5ece67cef083d03e8cd2d4af458b1a8fa5cdb09fcc46e01896",
+        "decision": "pass",
+        "evaluation_assessment": "The study benchmarks five existing memory architectures (Vanilla RAG, HippoRAG2, MemoryOS, A-Mem, SimpleMem) and an Oracle upper bound, complemented by temporal scalability tracking, retention vs. update trade-off analysis, evidence retrieval recall, and a precedence-based error classification.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Manual human audit of 756 judge decisions showed 96.3% agreement, and retrieval evidence recall directly corroborated failure patterns independently of the final answer generation model.",
+          "final_evaluation_signal": "LLM-as-a-judge scoring with Core+Detail rubrics evaluated against validated reference states, supported by human agreement audits and retrieval recall measurements.",
+          "independent_corroboration": "present",
+          "optimization_signal": "None directly tuned on the benchmark; existing baseline systems were evaluated off-the-shelf using fixed memory construction and retrieval configurations.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E2fb690e764615f5e-B0003",
+          "E2fb690e764615f5e-B0016",
+          "E2fb690e764615f5e-B0021",
+          "E2fb690e764615f5e-B0032",
+          "E2fb690e764615f5e-B0036",
+          "E2fb690e764615f5e-B0040",
+          "E2fb690e764615f5e-B0046",
+          "E2fb690e764615f5e-B0048",
+          "E2fb690e764615f5e-B0049",
+          "E2fb690e764615f5e-B0050",
+          "E2fb690e764615f5e-B0059",
+          "E2fb690e764615f5e-B0068",
+          "E2fb690e764615f5e-B0071",
+          "E2fb690e764615f5e-B0085",
+          "E2fb690e764615f5e-B0125",
+          "E2fb690e764615f5e-B0138",
+          "E2fb690e764615f5e-B0139"
+        ],
+        "limitations": "The authors explicitly note that the synthetic dataset may not fully capture rare human behaviors and platform-specific idiosyncrasies found in real proprietary user logs, and evaluation relies on 10 seed personas.",
+        "method_assessment": "The construction pipeline generates evolving profiles across 6 life domains factorized into attributes, habits, and preferences, turns them into intent-driven event chains, and grounds them into state-consistent multi-app logs with structured schemas and stateful app tracking.",
+        "quality_rationale": "The benchmark provides a well-motivated and rigorous setup for testing long-horizon agent memory across temporal checkpoints. The methodology includes detailed human validation of intermediate generated artifacts, and the evaluation features extensive ablation, error decomposition, and calibration of the LLM judge.",
+        "scoped_contribution": "DynamicMem, a synthetic long-horizon benchmark evaluating memory-augmented LLM personal assistants across 15-month, 16-app grounded behavioral trajectories at five quarterly checkpoints via state completion and personalized service tasks.",
+        "source_content_hash": "53f5dafcf351bddfc2c6cd0420b8bd7f7fd25e009c2f0cb2f5b70783efcea5a4"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The benchmark provides a well-motivated and rigorous setup for testing long-horizon agent memory across temporal checkpoints. The methodology includes detailed human validation of intermediate generated artifacts, and the evaluation features extensive ablation, error decomposition, and calibration of the LLM judge.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "53f5dafcf351bddfc2c6cd0420b8bd7f7fd25e009c2f0cb2f5b70783efcea5a4",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly note that the synthetic dataset may not fully capture rare human behaviors and platform-specific idiosyncrasies found in real proprietary user logs, and evaluation relies on 10 seed personas."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -183,7 +2885,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

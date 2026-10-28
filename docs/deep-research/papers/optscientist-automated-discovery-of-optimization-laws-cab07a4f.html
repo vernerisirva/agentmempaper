@@ -59,16 +59,279 @@
             <p>Many scientific phenomena are best understood as outcomes of underlying optimization problems, yet automated scientific discovery has largely focused on recovering equations that describe observed input-output patterns. We introduce OptScientist, a novel automated framework for discovering compact symbolic optimizat...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides a well-formulated scientific contribution, rigorous mathematical foundations, clear architectural specifics, and strong empirical validation across a broad benchmark and real-world datasets with adequate controls and baselines [E36faff0f38e38439-B0007, E36faff0f38e38439-B0034, E36faff0f38e38439-B0128].</p>
+      <p>The authors explicitly discuss key limitations, noting that the method relies on phenomena admitting an underlying optimization formulation and noting bounds when phenomena diverge fundamentally from optimization mechanics [E36faff0f38e38439-B0066].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-28T10:23:04.723929+00:00.</p>
+        <p>Coverage: 138409 of 138409 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Many scientific phenomena are best understood as outcomes of underlying op-
+timization problems, yet automated scientific discovery has largely focused on
+recovering equations that describe observed input–output patterns. We introduce
+OptScientist, a novel automated framework for discovering compact symbolic
+optimization laws directly from data. OptScientist comprises (i) a model that
+infers symbolic optimization problems by first learning to represent data as an
+optimization problem and then extracting its symbolic form, and (ii) an LLM agen-
+tic system embedding the model in a discovery process that integrates theoretical
+priors from scientific literature, discovers candidate laws, abstracts their underlying
+mechanisms, and suggests new data to collect. We first evaluate OptScientist on
+OptFeynman, a novel benchmark of 99 physics-derived optimization problems,
+where OptScientist </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>recovers ground-truth laws for over 80% of the problems and
+remains robust to noisy contextual information, while substantially outperforming
+machine-learning, symbolic, and LLM-based model-discovery baselines. On hu-
+man risky choice and central-bank monetary policy, OptScientist discovers compact
+symbolic optimization laws that achieve held-out predictive performance compet-
+itive with leading baselines, while using few parameters and substantially fewer
+tokens than LLM baselines. Overall, OptScientist extends automated scientific
+discovery to uncovering optimization laws that generate observed phenomena,
+enabling automated theory building across the physical, biological, behavioral, and
+social sciences.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>symbolic optimization laws from
+real-world data remains a fundamental challenge.
+To address these challenges, we introduceOptScientist,a novel framework that uses AI methods to
+automate the discovery of optimization laws.OptScientist has two components: a novel symbolic-
+discovery model and an agentic research system. First, the symbolic-discovery model (OptScientist
+Model) learns to represent observational data as an optimization problem using a hierarchical opti-
+mization network with an optimization representation bottleneck, enabling denoising, information
+compression, and automatic extraction of interpretable features. It then distills this learned opti-
+mization representation into a compact symbolic optimization problem. The second component, the
+OptScientist Agent, places this discovered symbolic model inside an automated scientific-discovery
+loop. A Theory Prior Agent proposes </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>scientific priors, candidate variables and mechanism hypotheses.
+An Experiment Agent then uses the OptScientist Model to search for compact symbolic optimization
+laws from data. Finally, a Scientific Critic and Theory Abstraction Agent evaluates and selects the
+discovered laws, abstracts the selected laws into a general form and qualitative mechanisms, and
+suggests new variables or data for the next round of discovery. Together, the model and agent form
+an iterative system for proposing, discovering and refining optimization laws.
+We conduct three experiments spanning physical systems, human behaviour, and macroeconomic
+policy. First, to test whether the core OptScientist Model can recover ground-truth optimization laws
+(Sec. 4.1), we introduceOptFeynman(Sec. 5.1), a novel synthetic benchmark of 99 optimization
+problems derived from analytic physics equations, where observations are </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generated as noisy samples
+from the induced optimization landscapes. On held-out contexts, OptScientist Model shows strong
+recovery of the generating laws, achieving perfect exact-order recovery on 88 of 99 discrete problems
+and 78 of 99 continuous problems, while substantially outperforming machine-learning, symbolic-
+regression, and LLM model-discovery baselines. Our results also suggest that OptScientist remains
+robust even when context variables are noisy. We then apply OptScientist to two autonomous
+scientific-discovery tasks on real-world data for which the underlying laws are unknown. In human
+decisions under risk and ambiguity (Sec. 4.2), OptScientist discovers an optimization law combining
+expected reward, cognitive switching cost and counterfactual reward. In central-bank monetary
+decisions (Sec. 4.3), it discovers a law in which observed policy tracks a latent subjective </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>target
+through squared-error minimization. Across both domains, the discovered laws remain competitive
+with the strongest baselines while using near-minimal parameter counts and symbolic complexity,
+and substantially fewer output tokens than LLM-based model-discovery methods.
+Overall, our contributions are threefold. First, we introduce the OptScientist Model, which, to the
+best of our knowledge, is the first scientific machine-learning framework for learning symbolic
+optimization problems directly from observational data. Second, for science, we develop OptScientist,
+a hybrid symbolic–LLM system that extends automated scientific discovery to optimization-law
+discovery in domains associated with optimization models. Third, at the paradigm level, we contribute
+to inverse optimization, revealed preference and related fields by moving beyond parameter estimation
+for pre-specified </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To discover compact optimization laws from data directly, the OptScientist Model consists of two
+stages: the Optimization Learner (OptLearner; see Figure 1a Left) and the Optimization Discoverer
+(OptDiscover; see Figure 1a Right).</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>latent optimization problem. Under Eq. (3), observed outcomes are treated as
+stochastic samples from the learned optimization landscape. Learning therefore reconstructs the
+latent landscape on which observed outcomes arise as preferred solutions. This corresponds to the
+representation-learning step in Figure 1 (a,b).
+Optimization representation bottleneck.OptLearner builds on the BL backbone to represent
+observational data as a single optimization problem. Its early layers denoise and compress the
+observations, capturing interactions and latent features that may be difficult to express in the original
+coordinates. The final layer consists of a single BL block, forming an optimization representation
+bottleneck with learnable objective and optional constraint components, each potentially comprising
+multiple branches,
+max
+y∈Y
+U(x,y)| {z }
+[λ0]
+s.t.C(x,y)| {z }
+[λ1]
+≤0,T(x,y)| {z }
+[λ2]
+= </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Optimization Learner represents observational data as an optimization problem, but the learned
+representation is not yet a compact symbolic law. The Optimization Discoverer (OptDiscover)
+addresses this by extracting the symbolic form of the learned optimization problem, as illustrated
+in Figure 1 (a,b). After OptLearner is trained, its parameters are frozen. OptDiscover then distills
+the components of the optimization representation bottleneck into compact symbolic expressions.
+This bottleneck consists of three types of components: objective terms Uθ, inequality-constraint
+terms Cθ, and equality-constraint terms Tθ, with each type optionally comprising multiple branches.
+OptDiscover searches for a compact symbolic expression for each active component,
+bHj = arg minF∈F Ωj
+1
+M
+MX
+m=1
+[F(x m,y m)−H θ,j (xm,y m)]2 , H θ,j ∈ {Uθ, Cθ, Tθ}.(7)
+Here FΩj denotes the symbolic search space for </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate OptScientist Model onOptFeynman, a new benchmark for optimization-law discov-
+ery, and the full framework on two real-world scientific-discovery tasks, with comparisons against
+machine-learning models, symbolic regression, and LLM model-discovery methods. The LLM base-
+lines include an LLM-only researcher, GeCCo (Rmus et al., 2026) as a code-assisted LLM approach,
+and Model Discovery Agent (MDA; Murphy, 2026) as a Bayesian experiment-design approach. All
+LLM methods use DeepSeek-V4-Flash, the same LLM used by the optional OptScientist Agent. Data
+and evaluation are provided in Sec. 5, and comparison methods in Appendix B.1.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>T2 −T 1
+d
+max
+d
 
-        <ul></ul>
+T2 −T 1
+d
+rmax r
+1
+r2 maxr
+1
+r2
+dmax
+d
+1
+d
+max
+d
+1
+d
+We first tested whether OptScientist Model can
+recover ground-truth optimization laws from
+observations. OptFeynman converts analytic
+physics equations into latent optimization prob-
+lems and generates observations via Gibbs sam-
+pling. Because the generating objective is
+known, recovery can be evaluated directly on un-
+seen test contexts by comparing the preference
+order and Gibbs distribution of the recovered
+and ground-truth laws.Notably, this experiment
+evaluates only the OptScientist Model, without
+any LLM assistance.
+Ground-truth recovery on OptFeynman.
+OptScientist shows the strongest out-of-sample
+ability to recover the true optimization law
+across both discrete and continuous decision
+variables (Figure 3). For discrete decision vari-
+ables, it achieves perfect exact-order recovery on 88/99 problems, </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>indicating that the recovered
+symbolic laws induce preference orders approximately equivalent to the ground-truth laws. For con-
+7
+a b
+OptFeynman
+I. Physics → Optimization Form
+II. Gibbs Sampling → Observations
+c
+d
+e
+Figure 3:Recovering ground-truth optimization laws on OptFeynman. a,OptFeynman converts
+analytic physics equations into latent optimization problems and generates observations by Gibbs
+sampling from the induced landscapes.b,c,For discrete decision variables, OptScientist shows
+the strongest out-of-sample ability to recover the true optimization law on unseen test contexts,
+outperforming baselines. It achieves perfect exact-order recovery on 88/99 tasks, indicating that
+the recovered symbolic laws induce preference orders approximately equivalent to the ground-truth
+laws.d,e,For continuous decision variables, the advantage persists on unseen test contexts across
+increasingly </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>variables.We next evaluated whether recovery remains reliable when
+the training observations are corrupted by context noise (Figure 4). Specifically, Gaussian noise is
+added to the training context variables, while validation and test contexts remain clean. Under this
+setting, OptScientist remains the strongest method for out-of-sample recovery of the true optimization
+law. It achieves perfect exact-order recovery on 92/99 discrete problems and on 76/99 continuous
+problems at K= 10 , K= 50 and K= 100 . These results show that OptScientist can recover
+9
+approximately equivalent ground-truth optimization laws even when the training observations are
+corrupted by context noise.
+Representative recovered laws.Table 1 shows representative examples of successful symbolic
+recovery. The comparison focuses on the decision-relevant part of each optimization law after
+pruning numerical constants and </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and calibration performance with seven numerical constants, including an AUC
+of 0.865, a probability MSE of 0.137, and an ECE of 0.116. Full predictive metrics and complexity
+definitions are reported in Additional Experimental Details, Appendix B.3.5. These results show that
+repeated human choice in CPC18 can be compressed into a simple optimization principle combining
+immediate reward, cognitive switching cost and counterfactual reward.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predictive
+performance. The full expression and branch-level complexities are reported in Appendix B.4.4.
+Near-best performance with near-minimal complexity.Across baselines and OptScientist variants,
+the single-U law achieves the best point estimates for exact and direction accuracy (Figure 6b),
+reaching 78.6% and 85.7%, respectively, on the out-of-time test set with only 11 numerical parameters.
+The constrained variant remains competitive at 71.4% and 78.6%, respectively, with the same
+parameter count. Full metrics and complexity details are reported in Appendix B.4.5.</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmark design.To evaluate whether OptScientist can recover symbolic optimization laws, we
+constructOptFeynman, a benchmark derived from the AI Feynman equation collection (Udrescu
+&amp; Tegmark, 2020). The original benchmark asks whether a method can recover an input–output
+equation. OptFeynman poses a different question: whether a method can recover the symbolic
+optimization problem that generates observed outcomes. Each analytic equation is therefore treated as
+a latent objective landscape, and the observed data are sampled as noisy outcomes of this landscape.
+Optimization construction.For each multivariate Feynman equation, we separate its variables into
+a contextxand a decision variabley. The original equation defines the ground-truth objective,
+U(x, y) =f(x, y).
+Single-variable equations are excluded because they do not define a context-dependent decision
+problem, leaving 99 </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>noise.
+Evaluation.Evaluation is based on the utility-representation view of optimization. By Debreu&#x27;s
+continuous utility representation theorem, preferences can be represented by a utility function when
+the preference relation is complete, transitive, and continuous (Debreu et al., 1953).
+Theorem 5.1 (Continuous utility representation, Debreu) Let Z ⊆Rn, and let ⪰ be a complete,
+transitive, and continuous preference relation on Z. Then there exists a continuous function u:Z →
+Rsuch that, for allz 1, z2 ∈ Z,
+z1 ⪰z 2 ⇐ ⇒u(z 1)≥u(z 2).
+This result motivates our evaluation: an equivalent optimization problem should preserve the prefer-
+ence structure induced by the latent objective, while also explaining its stochastic realizations. Since
+OptFeynman provides the generating objective U(x, y), we evaluate whether the learned score and
+the distilled symbolic score recover the same ordinal and </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>probabilistic structure.
+For each context xi, let Yi ={y i1, . . . , yiK} be the candidate outcome set. In discrete tasks, Yi
+contains the five candidate actions; in continuous tasks, it contains sampled continuous candidates.
+The ground-truth objective induces an ordered listπ i = (j1, . . . , jK),
+U(x i, yij1 )≥U(x i, yij2 )≥ · · · ≥U(xi, yijK ),
+with bπi defined analogously by the recovered score bS. Exact preference-order accuracy measures
+whether bπi =π i, and pairwise accuracy measures whether each pairwise comparison has the same
+direction under U and bS. These metrics test whether the recovered score represents the same
+optimization problem up to order-preserving transformations.
+Because the observations are generated by Gibbs sampling, we also evaluate the induced stochastic
+landscape. For discrete tasks, the Gibbs distribution is computed over the five candidate actions. </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>output tokens than LLM-based automated model-discovery approaches. These
+results establish symbolic optimization-law discovery as a new direction for automated scientific
+discovery and provide a general framework for learning compact optimization principles underlying
+observed phenomena.
+Limitations and Future Research.When the structure of ground-truth models deviates substantially
+from an optimization formulation, our approach is likely to fail. Although, mathematically, a broad
+class of laws not originally formulated as optimization problems can be represented in optimization
+form, the OptFeynman results show that OptScientist can recover the original laws from such
+representations. Future research is needed to characterize the limits of the optimization assumption
+and identify the classes of models that remain discoverable within a feasible computational budget.
+15</blockquote></details></li><li><strong>Contribution clarity — page 30</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Statistical analysis.We report additional statistics for the OptFeynman experiments in Figures 3
+and 4. The analysis uses results from the OptLearner score and the final OptScientist symbolic law
+produced by OptDiscover for 99 OptFeynman problems under each combination of decision type
+(discrete or continuous) and training condition. Throughout this section,OptLearner scorerefers to
+the learned optimization score before symbolic distillation, andOptScientist lawrefers to the final
+symbolic optimization law produced by OptDiscover. We useCleanfor the original OptFeynman
+setting andNoisy-contextfor the noisy-context version defined in Sec. 5.1, in which Gaussian noise
+is added only to the training contexts. Each problem is treated as one observation when computing
+statistics across the benchmark. One duplicated record in the continuous Clean setting contained
+identical metrics and was </blockquote></details></li><li><strong>Contribution clarity — page 31</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>exact-order recovery denotes a task with exact-order accuracy equal to one.
+Perfect exact-order recovery.Table 3 summarizes perfect ground-truth recovery. For discrete
+outcomes, OptScientist recovers the complete ground-truth preference order on88/99 Clean problems
+and 92/99 Noisy-context problems. For continuous outcomes, it achieves perfect recovery on 78/99
+Clean problems and 76/99 Noisy-context problems at K= 10 , 50, and 100. The stability of these
+counts as K increases shows that the recovered laws from OptScientist continue to preserve the full
+ordering over increasingly dense sets of candidate outcomes.
+The learned OptLearner score has substantially fewer perfectly recovered problems. In the continuous
+Clean setting, the count decreases from 30/99 at K= 10 to 14/99 at K= 100 . This difference
+is also visible in the discrete setting, where OptLearner achieves perfect recovery on </blockquote></details></li><li><strong>Contribution clarity — pages 33–34</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>baselines by mean
+exact-order accuracy, BL and Neural EBM, achieve exact-order accuracies of 0.719 and 0.294, with
+perfect recovery on 14.1% and 10.1% of tasks, respectively. OptScientist retains exact-order accuracy
+0.866and perfectly recovers78/99tasks.
+Pairwise and distributional metrics provide complementary views of recovery. Several baselines
+preserve a substantial fraction of pairwise comparisons or closely approximate the Gibbs distribution
+while showing considerably weaker recovery of the complete ordering. For example, Neural EBM
+33
+Table 9:Exact-order recovery before and after OptDiscover complexity control.Mean accuracy
+is computed across matched OptFeynman problems. Initial denotes the recovered symbolic expression
+before expression-level reduction, and Final denotes the compact symbolic expression after it. The
+final column reports the number of problems with perfect </blockquote></details></li><li><strong>Contribution clarity — page 35</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mechanism that generated the observations.
+The OptFeynman results therefore highlight the value of learning the optimization landscape from
+data before symbolic distillation, particularly when informative domain priors are unavailable or
+incomplete.
+LLM baseline protocol.For the LLM-based baselines on OptFeynman, model generation, revision,
+and selection use only the training and validation splits. All methods use the same DeepSeek-V4-
+Flash model and follow their original discovery procedures with a unified budget of eight discovery
+rounds. To prevent semantic leakage from physics-specific notation, all OptFeynman variable names
+are replaced with neutral identifiers before being provided to the LLMs. The held-out test set is
+never exposed during model discovery or model selection. After the final model is selected, its
+predictive model is evaluated directly on the test set using the </blockquote></details></li><li><strong>Contribution clarity — page 40</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 13 reports held-out test performance. All uncertainty values are bootstrapped standard errors
+from 10,000 quarter-level resamples with replacement. Parameter count follows the plotting conven-
+tion: for neural and tree models it counts model parameters or tree capacity, whereas for symbolic
+models it counts distinct numerical constants in the final expression. Symbolic structural complexity
+is reported separately.
+OptScientist shows the strongest overall out-of-time predictive performance. It attains the lowest
+MSE and highest R2, exact policy-stance accuracy and direction accuracy, while symbolic regression
+achieves a slightly lower MAE. OptScientist-C also remains competitive, with exact and direction
+accuracies of0.7143and0.7857, respectively.
+Under decision-relevant structural-complexity accounting, the single-U OptScientist law has effective
+complexity 131, the constrained </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +370,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

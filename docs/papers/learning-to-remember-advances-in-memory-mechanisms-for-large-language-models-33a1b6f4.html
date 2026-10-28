@@ -22,16 +22,16 @@
           </nav>
           <p class="eyebrow">Structured paper detail</p>
           <h1>Learning to Remember: Advances in Memory Mechanisms for Large Language Models</h1>
-          <p class="hero-copy">Chenye Han, Hongche Yu, Mengyue Wu, Dell Zhang, Jixiang Luo</p>
+          <p class="hero-copy">Chen-Ye Han, Hong-Chew Yu, Meng-Yue Wu, Dell Zhang, Ji-Xiang Luo</p>
           <div class="paper-detail-actions">
-            <a class="paper-link" href="https://arxiv.org/abs/2610.35089v1">Open paper</a>
+            <a class="paper-link" href="https://www.semanticscholar.org/paper/70c1c4f061c15e7ae74fcd369d07e073eedd4225">Open paper</a>
             <a class="paper-detail-link" href="learning-to-remember-advances-in-memory-mechanisms-for-large-language-models-33a1b6f4.json">Download paper JSON</a>
           </div>
         </header>
         <section class="paper-detail-layout">
           <section class="detail-panel">
             <p class="section-kicker">Authors</p>
-            <p>Chenye Han, Hongche Yu, Mengyue Wu, Dell Zhang, Jixiang Luo</p>
+            <p>Chen-Ye Han, Hong-Chew Yu, Meng-Yue Wu, Dell Zhang, Ji-Xiang Luo</p>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Publication/date metadata</p>
@@ -46,7 +46,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Sources</p>
-            <ul><li>arXiv</li></ul>
+            <ul><li>arXiv</li><li>Semantic Scholar</li></ul>
             <div class="secondary-links"><a href="https://arxiv.org/abs/2610.35089">arXiv</a></div>
           </section>
           <section class="detail-panel">
@@ -59,16 +59,323 @@
             <p>Memory has become a central mechanism for extending large language models (LLMs) beyond fixed context windows, stateless interaction, and static parametric knowledge. This survey organizes the literature around three complementary dimensions: the life cycle of memory, the storage substrate, and the system role that...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous, well-scoped survey that establishes clear conceptual taxonomies and lifecycle-oriented analytical tools for LLM memory systems without overclaiming empirical findings beyond its scope as a literature synthesis [E5a9e96da6f3f1244-B0008, E5a9e96da6f3f1244-B0100].</p>
+      <p>The manuscript explicitly discusses current gaps across memory architectures, including challenges in reliable memory writing, privacy, deletion/governance, error amplification, and fragmented benchmark evaluation [E5a9e96da6f3f1244-B0088, E5a9e96da6f3f1244-B0091, E5a9e96da6f3f1244-B0095, E5a9e96da6f3f1244-B0097].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-28T10:22:22.577945+00:00.</p>
+        <p>Coverage: 117441 of 117441 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Memory has become a central mechanism for extending large language models
+(LLMs) beyond fixed context windows, stateless interaction, and static paramet-
+ric knowledge. This survey organizes the literature around three complementary
+dimensions: the life cycle of memory, the storage substrate, and the system
+role that memory plays in LLM-based agents, while using cognitive-science-
+inspired memory concepts as a lightweight conceptual motivation rather than
+as a separate technical contribution or implementation family. On this basis, we
+distinguish three mechanism families: nonparametric memory, where information
+is stored outside model parameters in text, graph, multimodal, or database-like
+structures; parametric memory, where information is stored or accessed through
+activations, key-value caches, learned modules, adapter-based parameterizations,
+or model weights; and memory for agent </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evolution, where stored experiences
+support reinforcement learning, continual learning, procedural reuse, context
+engineering, and agent harness design. Evaluation is treated as a separate cross-
+cutting component rather than as a memory mechanism. Unlike surveys that
+focus primarily on retrieval-augmented generation or long-context modeling, this
+paper emphasizes the full memory life cycle: construction, maintenance, retrieval,
+consolidation, forgetting, governance, and evaluation. By aligning conceptual
+motivations, computational memory mechanisms, benchmarks, and deployment
+concerns, the survey provides a structured roadmap for designing memory-
+augmented LLM agents that are persistent, adaptive, auditable, and safe to
+update over time.
+1
+arXiv:2610.35089v1  [cs.IR]  26 Oct 2026
+Keywords:Large language model; Memory mechanism; Agent memory;
+Retrieval-augmented generation; Long-term </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>substrates while still making both conceptual
+grounding and evaluation central to the survey.
+The central contribution of this survey is aconceptual-motivation–lifecycle–
+substrate–role–evaluation alignment frameworkfor comparing LLM memory research.
+Instead of grouping systems only by implementation type, this framework aligns
+five questions: which conceptual memory distinctions motivate the design without
+2
+themselves constituting a memory mechanism, what lifecycle operations a memory
+mechanism supports, which substrate realizes the memory, what role the memory plays
+in an LLM-based system, and how the claimed benefit is evaluated. On this basis,
+the contributions of this survey are threefold. (1) We provide a consolidated map of
+LLM memory systems that uses cognitive-science-inspired concepts only as a com-
+pact vocabulary for motivating three computational memory-mechanism families </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and
+the evaluation resources used to test them. (2) We analyze representative methods
+through a shared set of lifecycle questions: what is written, where it is stored, how it is
+retrieved, how it is updated or forgotten, how persistent it is, and how it is governed.
+(3) We synthesize benchmark trends and future challenges, highlighting where existing
+systems still struggle with reliable writing, temporal updates, privacy, deletion, hallu-
+cination control, and long-horizon utility. This alignment-oriented framing makes the
+relationships among conceptual motivation, memory substrates, system roles, evalua-
+tion protocols, and deployment risks explicit, thereby providing a common basis for
+comparing otherwise heterogeneous memory-augmented LLM systems.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This survey focuses on methods in which memory is an explicit design object rather
+than a generic byproduct of long prompts or model scale. The literature was selected by
+combining keyword-driven search with backward and forward citation tracing. Search
+terms included combinations ofLLM memory,agent memory,long-term memory,
+episodic memory,semantic memory,procedural memory,graph memory,multimodal
+memory,KV cache,model editing,memory benchmark, andself-evolving agents. The
+search covered peer-reviewed venues, preprints, benchmark papers, benchmark repos-
+itories, system documentation, and project pages when they introduced a concrete
+memory architecture or operational interface.
+We include systems that specify how memory is written, stored, retrieved, updated,
+compressed, forgotten, governed, or evaluated. The reviewed literature covers external
+memory stores, graph-based memory, </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>multimodal memory, KV-cache and activation
+memory, weight- or module-level memory, self-evolving agents, cognitive-science mem-
+ory analogies, and benchmarks that test memory persistence or long-horizon behavior.
+A method is included when memory is central to the mechanism or evaluation claim,
+not merely an incidental implementation detail. We exclude methods that only perform
+one-off retrieval, prompt compression, or long-context inference unless they directly
+address memory persistence, lifecycle management, update behavior, or memory-
+guided future action. This scope makes the paper a mechanism-centered survey rather
+than a general survey of RAG, long-context modeling, or agent frameworks.</blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Memory overlaps with retrieval-augmented generation (RAG) and long-context mod-
+eling, but it is not identical to either. RAG is primarily retrieval-centered: the original
+RAG formulation retrieves Wikipedia passages from a dense vector index with a
+neural retriever, while later RAG-style systems may use sparse, dense, or hybrid
+3
+retrieval (Lewis et al. 2020; Karpukhin et al. 2020). Long-context modeling is capacity-
+centered: the system attempts to process more tokens within a single inference context.
+Memory is lifecycle-centered: it requires decisions about what to store, how to rep-
+resent it, when to update it, how to resolve conflicts, how to delete it, and how to
+evaluate whether it improves future behavior. This distinction is important because
+a system may have a long context window or a retriever without having reliable
+long-term memory.
+The remainder of this paper is </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rewards, failures, workflows, code traces, and other experience artifacts so that
+agents can improve their future behavior.Evaluationis not a memory substrate; it is
+the empirical layer used to determine whether these designs produce reliable long-term
+behavior rather than superficial recall.
+T able 1Survey-level organization of LLM memory research. The table summarizes one conceptual-
+motivation layer, three computational memory-mechanism families, and one cross-cutting evaluation
+component, including the main substrate or target, system-level role, and reviewed subcategories.
+Survey compo-
+nent
+Where memory
+resides
+Main role in the sys-
+tem
+Reviewed subcategories
+Conceptual moti-
+vation
+Cognitive-science theo-
+ries and human-memory
+analogies rather than a
+computational storage
+substrate
+Provides the conceptual
+vocabulary for separating
+memory types, lifecycle
+operations, and </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>T able 2Cross-cutting comparison dimensions for memory mechanisms. The same questions are
+used throughout the survey to move beyond method-by-method enumeration.
+Dimension Nonparametric
+memory
+Parametric
+memory
+Agent-evolution
+memory
+Key design
+question
+Memory unit Text records,
+embeddings,
+triples, events,
+media anchors
+Hidden states,
+KV pairs, adapter
+deltas, trainable
+vectors, edited
+weights
+Trajectories,
+rewards, failures,
+workflows, skills,
+code traces
+What exactly
+is treated as
+a reusable
+memory
+object?
+Write policy Extraction, sum-
+marization, graph
+construction,
+database update
+Cache construc-
+tion, gradient
+update, adapter-
+based adaptation,
+model editing
+Reflection,
+reinforcement
+learning, skill
+abstraction, har-
+ness state capture
+Who decides
+what should
+be stored,
+and under
+what con-
+fidence
+threshold?
+Persistence Often cross-session
+and inspectable
+Ranges from
+transient </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>control
+over experience
+reuse and self-
+modification
+How can
+the system
+prove what it
+remembered
+and remove
+it when
+needed?
+Conceptual motivation
+Episodic, semantic, working, and
+procedural memory
+consolidation and forgetting
+Memory lifecycle
+write, store, retrieve, update
+consolidate, forget, govern
+conceptual
+vocabulary only
+Computational memory families
+Nonparametric
+memory
+text, graph, database
+and multimodal stores
+Parametric
+memory
+activation, KV-cache,
+adapter module, and
+weight memory
+Agent-evolution
+memory
+experience, skills,
+workflows, context,
+and harness state</blockquote></details></li><li><strong>Contribution clarity — pages 21–22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>provides
+movie-scale QA, LongVideoBench (Wu et al. 2024b) evaluates interleaved long-context
+21
+T able 8Classification of memory evaluation resources. The table separates evaluation target,
+memory capability, interaction format, and representative benchmark instead of using
+method-centered columns.
+Benchmark
+family
+Evaluation tar-
+get
+Memory capabil-
+ity
+T ask format Representative bench-
+marks
+Plain-text
+benchmarks
+Conversation,
+user profile, long
+documents, assis-
+tant memory
+Multi-session recall,
+temporal update,
+abstention, hallu-
+cination control,
+personalization,
+long-context control
+QA, summa-
+rization, user
+modeling,
+memory judg-
+ing
+LoCoMo
+LoCoMo+
+LongMemEval
+BEAM
+PersonaMem
+MemoryAgentBench
+LifelongAgentBench
+Minerva
+HaluMem
+LTM-QA
+TENURE
+∞Bench
+LongBench
+LongBench v2
+NoLiMa
+Multimodal
+benchmarks
+Video, image,
+egocentric
+stream, robotic
+memory
+Visual ground-
+ing, long </blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A benchmark should reveal not only whether the correct answer is produced, but
+also whether memory was written, updated, retrieved, and used correctly. Table 9
+summarizes representative capabilities and failure modes that should be measured
+across memory systems.
+T able 9Capability-oriented evaluation dimensions for memory-augmented LLMs.
+Capability What to measure Typical failure mode Possible metrics
+Persistence Whether important
+information remains
+available across sessions
+The agent forgets
+durable facts or long-
+term preferences
+Memory recall,
+answer accuracy over
+delayed queries
+Update and con-
+flict handling
+Whether newer evidence
+revises older memory
+The agent retrieves stale
+or contradictory facts
+Update accuracy, con-
+tradiction resolution
+rate
+Selective writing Whether the system
+stores useful information
+without accumulating
+noise
+Over-writing irrelevant
+details or </blockquote></details></li><li><strong>Contribution clarity — pages 23–24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term systems fail when they write too much, write too little, or write incorrect
+abstractions. Better memory construction should distinguish durable facts, transient
+preferences, temporary task states, and uncertain observations. It should also support
+explicit contradiction handling and confidence-aware revision. Future research should
+23
+move beyond heuristic summarization toward write policies that are evaluated against
+delayed downstream tasks, not only immediate extraction quality.</blockquote></details></li><li><strong>Contribution clarity — pages 24–25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory often contains personal, proprietary, or task-sensitive informa-
+tion. Multi-user, multi-agent, and edge–cloud settings require access control, prove-
+nance tracking, permission-aware retrieval, conflict management, secure deletion, and
+privacy-preserving personalized memory management (Chen et al. 2026c). Paramet-
+ric memory is especially challenging because a single remembered fact may not be
+directly inspectable or removable. Practical memory systems should therefore expose
+deletion logs, memory scopes, user consent controls, and policy-aware retrieval filters.
+24
+These governance mechanisms should be treated as core technical components rather
+than deployment afterthoughts.</blockquote></details></li><li><strong>Contribution clarity — page 25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Current benchmarks cover long-context retrieval, conversational memory, multimodal
+understanding, and simulation environments, but evaluation remains fragmented.
+Future benchmarks should measure memory write quality, update correctness, absten-
+tion, hallucinated memory use, privacy leakage, temporal consistency, and downstream
+task success. They should also distinguish between genuine memory use and success
+through long-context pattern matching. One practical approach is to evaluate agents
+under controlled memory ablations, where memory contents are removed, corrupted,
+delayed, or replaced to test whether the model truly depends on the intended memory
+mechanism.</blockquote></details></li><li><strong>Contribution clarity — page 25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Memory research for LLMs has moved from simple retrieval augmentation toward a
+diverse ecosystem of nonparametric stores, graph memories, multimodal memories,
+parametric memory modules, and self-evolving agent systems. This survey organized
+the literature around a lightweight cognitive-science-inspired conceptual motivation
+layer, three computational mechanism families—nonparametric memory, parametric
+memory, and memory for agent evolution—and a cross-cutting evaluation layer that
+tests whether these mechanisms produce durable benefits. Across these families, the
+central design questions are how to construct memory, how to manage and consolidate
+it, how to retrieve it reliably, how to forget or delete it safely, and how to evaluate
+its contribution to long-term behavior. The next generation of memory-augmented
+agents will likely combine text, graph, multimodal, activation, and </blockquote></details></li><li><strong>Contribution clarity — page 26</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>No new dataset was
+created or analyzed for this manuscript.
+Code availability
+Not applicable. This article is a survey and does not introduce new code or software.
+Authors&#x27; contributions
+All authors contributed to the manuscript.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +414,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,15 +430,15 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-26</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-27 09:33:57</li><li>Last seen by Paper Scout: 2026-10-27 09:34:04</li></ul>
-            <ul><li>arXiv: 2610.35089</li><li>arXiv IDs: 2610.35089</li></ul>
+            <ul><li>Metadata sources: arxiv, semantic_scholar</li><li>Latest revision / source update: 2026-10-26</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-27 09:33:57</li><li>Last seen by Paper Scout: 2026-10-28 10:19:00</li></ul>
+            <ul><li>arXiv: 2610.35089</li><li>Semantic Scholar: 70c1c4f061c15e7ae74fcd369d07e073eedd4225</li><li>arXiv IDs: 2610.35089</li><li>Semantic Scholar IDs: 70c1c4f061c15e7ae74fcd369d07e073eedd4225</li></ul>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Exports</p>
             <p><a href="learning-to-remember-advances-in-memory-mechanisms-for-large-language-models-33a1b6f4.json">Download paper JSON</a></p>
             <details class="paper-more">
               <summary>Citation text</summary>
-              <p>Learning to Remember: Advances in Memory Mechanisms for Large Language Models. Chenye Han, Hongche Yu, Mengyue Wu, Dell Zhang, Jixiang Luo. 2026-10-26. https://arxiv.org/abs/2610.35089v1</p>
+              <p>Learning to Remember: Advances in Memory Mechanisms for Large Language Models. Chen-Ye Han, Hong-Chew Yu, Meng-Yue Wu, Dell Zhang, Ji-Xiang Luo. 2026-10-26. https://www.semanticscholar.org/paper/70c1c4f061c15e7ae74fcd369d07e073eedd4225</p>
             </details>
           </section>
         </section>

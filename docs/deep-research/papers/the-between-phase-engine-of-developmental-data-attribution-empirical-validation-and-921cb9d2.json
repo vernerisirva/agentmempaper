@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-06 11:16:16",
-    "generated_at": "2026-10-27 09:40:12",
+    "generated_at": "2026-10-28 10:23:58",
     "last_seen_at": "2026-07-06 11:16:16",
     "metadata_sources": [
       "openalex"
@@ -96,36 +96,64 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-10-28T10:21:17.454137+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Manuscript unavailable; no scientific decision.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 2078,
+      "extraction_complete": false,
+      "version": "coverage-v1"
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
     "full_text_assessed": false,
     "full_text_url": null,
-    "gate_version": null,
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+      "No extractable manuscript text was available."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "manuscript_unavailable",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Manuscript unavailable; no scientific decision.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "bbde7fef695f4e6b16301d9365e4d5fe2b403670f6aba5e0a18b2cee91ff9002",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

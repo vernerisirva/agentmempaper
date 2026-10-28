@@ -32,7 +32,7 @@
   "last_seen_date": "2026-08-02",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-06-22",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-26 13:04:09",
   "notified_date": "2026-06-26",
@@ -43,7 +43,7 @@
     "curation_note": "manually added",
     "date_source": "arxiv",
     "first_seen_at": "2026-06-26 13:01:43",
-    "generated_at": "2026-10-27 09:39:49",
+    "generated_at": "2026-10-28 10:23:29",
     "last_seen_at": "2026-08-02 07:52:27",
     "metadata_sources": [
       "arxiv",
@@ -116,36 +116,1796 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-28T10:21:18.862549+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The work presents a substantial, well-scoped contribution to LLM agent procedural memory benchmarking and transfer evaluation. The methodology, dataset construction QA, experimental controls, and ablation studies are thorough and convincingly executed.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 66877,
+      "assessment_input_sha256": "de7ba74e028b2f796f5075e3ef8cad266f17a324fbcf3ff4e912802278deb5c6",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2606.23127",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 65317,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 64406,
+      "evidence_block_count": 102,
+      "evidence_context_characters": 76932,
+      "evidence_context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+      "evidence_context_sha256": "baa0aff92f4b3641f6c5358a4cb17d4f32060e0169684dd977cc109c208998dc",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 65351,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "extracted_pages": 18,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "1ef4d116e01ef8ebc920704576c4e2357b7864838a719996e54711456746f006",
+        "source_url": "https://arxiv.org/pdf/2606.23127",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 65317,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Managing Procedural Memory In Llm Agents:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 184,
+          "supplied_characters": 184
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1164,
+          "supplied_characters": 1164
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2372,
+          "supplied_characters": 2372
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3159,
+          "supplied_characters": 3159
+        },
+        {
+          "heading": "After: A Benchmark For Skill",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 4,
+          "source_characters": 68,
+          "supplied_characters": 68
+        },
+        {
+          "heading": "Gaia 466 \u2013\u2717 \u2713 \u2717",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 94,
+          "supplied_characters": 94
+        },
+        {
+          "heading": "After382 6\u2713 \u2713 \u2713",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 765,
+          "supplied_characters": 765
+        },
+        {
+          "heading": "Benchmark Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 7,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Benchmark Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 1950,
+          "supplied_characters": 1950
+        },
+        {
+          "heading": "Benchmark Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 828,
+          "supplied_characters": 828
+        },
+        {
+          "heading": "Benchmark Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 922,
+          "supplied_characters": 922
+        },
+        {
+          "heading": "Evaluation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 11,
+          "source_characters": 432,
+          "supplied_characters": 432
+        },
+        {
+          "heading": "Procedural-Memory Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 808,
+          "supplied_characters": 808
+        },
+        {
+          "heading": "Evolution: Benchmark Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 1063,
+          "supplied_characters": 1063
+        },
+        {
+          "heading": "Experiments And Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 437,
+          "supplied_characters": 437
+        },
+        {
+          "heading": "Static Skill Valuation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 109,
+          "supplied_characters": 109
+        },
+        {
+          "heading": "Ds Genai Pm Infra Aggregate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 2614,
+          "supplied_characters": 2614
+        },
+        {
+          "heading": "Llm-Guided Skill Improvement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 981,
+          "supplied_characters": 981
+        },
+        {
+          "heading": "Framework-Guided Skill Improvement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 973,
+          "supplied_characters": 973
+        },
+        {
+          "heading": "Framework-Guided Skill Improvement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 138,
+          "supplied_characters": 138
+        },
+        {
+          "heading": "Skill Transfer Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 915,
+          "supplied_characters": 915
+        },
+        {
+          "heading": "Pm  Pm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 6,
+          "supplied_characters": 6
+        },
+        {
+          "heading": "Pm  Ds",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 6,
+          "supplied_characters": 6
+        },
+        {
+          "heading": "Ds  Pm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 6,
+          "supplied_characters": 6
+        },
+        {
+          "heading": "Ds  Ds",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1565,
+          "supplied_characters": 1565
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "conclusion",
+          "section_index": 25,
+          "source_characters": 541,
+          "supplied_characters": 541
+        },
+        {
+          "heading": "Limitation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "limitations",
+          "section_index": 26,
+          "source_characters": 294,
+          "supplied_characters": 294
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "limitations",
+          "section_index": 27,
+          "source_characters": 1246,
+          "supplied_characters": 1246
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1256,
+          "supplied_characters": 1256
+        },
+        {
+          "heading": "Evaluating Machine Learning Agents On Machine",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 300,
+          "supplied_characters": 300
+        },
+        {
+          "heading": "On The Effect Of Instruction Tuning Loss On General-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 806,
+          "supplied_characters": 806
+        },
+        {
+          "heading": "Bench Pro: Can Ai Agents Solve Long-Horizon Soft-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1082,
+          "supplied_characters": 1082
+        },
+        {
+          "heading": "International Conference On Learning Representa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 5035,
+          "supplied_characters": 5035
+        },
+        {
+          "heading": "International Conference On Learning Representa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 3808,
+          "supplied_characters": 3808
+        },
+        {
+          "heading": "Appendix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 4668,
+          "supplied_characters": 4668
+        },
+        {
+          "heading": "Appendix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 776,
+          "supplied_characters": 776
+        },
+        {
+          "heading": "T2 T3 T7T4 T5 T6T1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 2280,
+          "supplied_characters": 2280
+        },
+        {
+          "heading": "Appendix: Data Splits",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 619,
+          "supplied_characters": 619
+        },
+        {
+          "heading": "Appendix: Data Splits",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Appendix: Task Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 824,
+          "supplied_characters": 824
+        },
+        {
+          "heading": "Appendix: Task Origins",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 1052,
+          "supplied_characters": 1052
+        },
+        {
+          "heading": "Appendix: Quality Assurance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 152,
+          "supplied_characters": 152
+        },
+        {
+          "heading": "Appendix: Clarity\u2014 Instruction.Md Is Unambigu-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 31,
+          "supplied_characters": 31
+        },
+        {
+          "heading": "Appendix: Skill Fit\u2014 Success Requires The Declared",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "Appendix: Realism\u2014 The Scenario Is Plausible For The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Appendix: Verifier Soundness\u2014 The Verifier Rejects Ad-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 46,
+          "supplied_characters": 46
+        },
+        {
+          "heading": "Appendix: No Oracle Leakage\u2014 The Instruction Contains",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 60,
+          "supplied_characters": 60
+        },
+        {
+          "heading": "Appendix: Determinism\u2014 Repeated Runs Against Re-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Appendix: Self-Containment\u2014 All Materials Are In The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 578,
+          "supplied_characters": 578
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 505,
+          "supplied_characters": 505
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 4041,
+          "supplied_characters": 4041
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 475,
+          "supplied_characters": 475
+        },
+        {
+          "heading": "Appendix: I Train Split Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 2962,
+          "supplied_characters": 2962
+        },
+        {
+          "heading": "Appendix: J Full Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 4299,
+          "supplied_characters": 4299
+        },
+        {
+          "heading": "Appendix: K Single Refinement Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 2551,
+          "supplied_characters": 2551
+        },
+        {
+          "heading": "Appendix: K Single Refinement Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 2300,
+          "supplied_characters": 2300
+        }
+      ],
+      "selected_characters": 64406,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "selected_sections": [
+        {
+          "characters": 184,
+          "heading": "Managing Procedural Memory In Llm Agents:",
+          "page": 1
+        },
+        {
+          "characters": 1164,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2372,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3159,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 68,
+          "heading": "After: A Benchmark For Skill",
+          "page": 2
+        },
+        {
+          "characters": 94,
+          "heading": "Gaia 466 \u2013\u2717 \u2713 \u2717",
+          "page": 2
+        },
+        {
+          "characters": 765,
+          "heading": "After382 6\u2713 \u2713 \u2713",
+          "page": 2
+        },
+        {
+          "characters": 93,
+          "heading": "Benchmark Design",
+          "page": 2
+        },
+        {
+          "characters": 1950,
+          "heading": "Benchmark Design",
+          "page": 3
+        },
+        {
+          "characters": 828,
+          "heading": "Benchmark Construction",
+          "page": 3
+        },
+        {
+          "characters": 922,
+          "heading": "Benchmark Construction",
+          "page": 4
+        },
+        {
+          "characters": 432,
+          "heading": "Evaluation Protocol",
+          "page": 4
+        },
+        {
+          "characters": 808,
+          "heading": "Procedural-Memory Optimization",
+          "page": 4
+        },
+        {
+          "characters": 1063,
+          "heading": "Evolution: Benchmark Evaluation",
+          "page": 4
+        },
+        {
+          "characters": 437,
+          "heading": "Experiments And Results",
+          "page": 4
+        },
+        {
+          "characters": 109,
+          "heading": "Static Skill Valuation",
+          "page": 4
+        },
+        {
+          "characters": 2614,
+          "heading": "Ds Genai Pm Infra Aggregate",
+          "page": 5
+        },
+        {
+          "characters": 981,
+          "heading": "Llm-Guided Skill Improvement",
+          "page": 5
+        },
+        {
+          "characters": 973,
+          "heading": "Framework-Guided Skill Improvement",
+          "page": 5
+        },
+        {
+          "characters": 138,
+          "heading": "Framework-Guided Skill Improvement",
+          "page": 6
+        },
+        {
+          "characters": 915,
+          "heading": "Skill Transfer Analysis",
+          "page": 6
+        },
+        {
+          "characters": 6,
+          "heading": "Pm  Pm",
+          "page": 6
+        },
+        {
+          "characters": 6,
+          "heading": "Pm  Ds",
+          "page": 6
+        },
+        {
+          "characters": 6,
+          "heading": "Ds  Pm",
+          "page": 6
+        },
+        {
+          "characters": 1565,
+          "heading": "Ds  Ds",
+          "page": 6
+        },
+        {
+          "characters": 541,
+          "heading": "Conclusion",
+          "page": 6
+        },
+        {
+          "characters": 294,
+          "heading": "Limitation",
+          "page": 6
+        },
+        {
+          "characters": 1246,
+          "heading": "Limitations",
+          "page": 7
+        },
+        {
+          "characters": 1256,
+          "heading": "Unclassified body after references",
+          "page": 7
+        },
+        {
+          "characters": 300,
+          "heading": "Evaluating Machine Learning Agents On Machine",
+          "page": 7
+        },
+        {
+          "characters": 806,
+          "heading": "On The Effect Of Instruction Tuning Loss On General-",
+          "page": 7
+        },
+        {
+          "characters": 1082,
+          "heading": "Bench Pro: Can Ai Agents Solve Long-Horizon Soft-",
+          "page": 7
+        },
+        {
+          "characters": 5035,
+          "heading": "International Conference On Learning Representa-",
+          "page": 8
+        },
+        {
+          "characters": 3808,
+          "heading": "International Conference On Learning Representa-",
+          "page": 9
+        },
+        {
+          "characters": 4668,
+          "heading": "Appendix",
+          "page": 10
+        },
+        {
+          "characters": 776,
+          "heading": "Appendix",
+          "page": 11
+        },
+        {
+          "characters": 2280,
+          "heading": "T2 T3 T7T4 T5 T6T1",
+          "page": 11
+        },
+        {
+          "characters": 619,
+          "heading": "Appendix: Data Splits",
+          "page": 11
+        },
+        {
+          "characters": 17,
+          "heading": "Appendix: Data Splits",
+          "page": 12
+        },
+        {
+          "characters": 824,
+          "heading": "Appendix: Task Format",
+          "page": 12
+        },
+        {
+          "characters": 1052,
+          "heading": "Appendix: Task Origins",
+          "page": 12
+        },
+        {
+          "characters": 152,
+          "heading": "Appendix: Quality Assurance",
+          "page": 12
+        },
+        {
+          "characters": 31,
+          "heading": "Appendix: Clarity\u2014 Instruction.Md Is Unambigu-",
+          "page": 12
+        },
+        {
+          "characters": 7,
+          "heading": "Appendix: Skill Fit\u2014 Success Requires The Declared",
+          "page": 12
+        },
+        {
+          "characters": 89,
+          "heading": "Appendix: Realism\u2014 The Scenario Is Plausible For The",
+          "page": 12
+        },
+        {
+          "characters": 46,
+          "heading": "Appendix: Verifier Soundness\u2014 The Verifier Rejects Ad-",
+          "page": 12
+        },
+        {
+          "characters": 60,
+          "heading": "Appendix: No Oracle Leakage\u2014 The Instruction Contains",
+          "page": 12
+        },
+        {
+          "characters": 54,
+          "heading": "Appendix: Determinism\u2014 Repeated Runs Against Re-",
+          "page": 12
+        },
+        {
+          "characters": 578,
+          "heading": "Appendix: Self-Containment\u2014 All Materials Are In The",
+          "page": 12
+        },
+        {
+          "characters": 505,
+          "heading": "Appendix: Experimental Setup",
+          "page": 12
+        },
+        {
+          "characters": 4041,
+          "heading": "Appendix: Experimental Setup",
+          "page": 13
+        },
+        {
+          "characters": 475,
+          "heading": "Appendix: Experimental Setup",
+          "page": 14
+        },
+        {
+          "characters": 2962,
+          "heading": "Appendix: I Train Split Results",
+          "page": 15
+        },
+        {
+          "characters": 4299,
+          "heading": "Appendix: J Full Results",
+          "page": 16
+        },
+        {
+          "characters": 2551,
+          "heading": "Appendix: K Single Refinement Results",
+          "page": 17
+        },
+        {
+          "characters": 2300,
+          "heading": "Appendix: K Single Refinement Results",
+          "page": 18
+        }
+      ],
+      "selected_text_sha256": "de7ba74e028b2f796f5075e3ef8cad266f17a324fbcf3ff4e912802278deb5c6",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "1ef4d116e01ef8ebc920704576c4e2357b7864838a719996e54711456746f006",
+      "source_pages": 18,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0002"
+        ],
+        "excerpt": "Procedural memory is increasingly used to\nimprove LLM agents on recurring workplace\ntasks, yet its ability to produce reusable skills\nremains poorly understood. We introduce AF-\nTER, a benchmark of 382 realistic enterprise\ntasks spanning six professional roles and 22\nprocedural skills, designed to evaluate how\nskills transfer across tasks, roles, and model\nbackbones. The benchmark includes con-\ntrolled evaluation settings for local improve-\nment, cross-task transfer, cross-role transfer,\nand cross-model generalization. Experiments\nshow that procedural memory delivers consis-\ntent gains in industrial workflows: a single\nrefinement round improves aggregate perfor-\nmance by 3.7-6.7 points, while skills evolved\nfrom diverse multi-model execution traces\nachieve 73.1% cross-model test accuracy, out-\nperforming all single-model trace sources. We\nfurther find that some skills generalize ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "47fed677c440ebb05dc24ba619300ac86a32b4bdda49497b9707912fde5f2de2",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Procedural memory is increasingly used to\nimprove LLM agents on recurring workplace\ntasks, yet its ability to produce reusable skills\nremains poorly understood. We introduce AF-\nTER, a benchmark of 382 realistic enterprise\ntasks spanning six professional roles and 22\nprocedural skills, designed to evaluate how\nskills transfer across tasks, roles, and model\nbackbones. The benchmark includes con-\ntrolled evaluation settings for local improve-\nment, cross-task transfer, cross-role transfer,\nand cross-model generalization. Experiments\nshow that procedural memory delivers consis-\ntent gains in industrial workflows: a single\nrefinement round improves aggregate perfor-\nmance by 3.7-6.7 points, while skills evolved\nfrom diverse multi-model execution traces\nachieve 73.1% cross-model test accuracy, out-\nperforming all single-model trace sources. We\nfurther find that some skills generalize "
+              }
+            ],
+            "text": "Procedural memory is increasingly used to\nimprove LLM agents on recurring workplace\ntasks, yet its ability to produce reusable skills\nremains poorly understood. We introduce AF-\nTER, a benchmark of 382 realistic enterprise\ntasks spanning six professional roles and 22\nprocedural skills, designed to evaluate how\nskills transfer across tasks, roles, and model\nbackbones. The benchmark includes con-\ntrolled evaluation settings for local improve-\nment, cross-task transfer, cross-role transfer,\nand cross-model generalization. Experiments\nshow that procedural memory delivers consis-\ntent gains in industrial workflows: a single\nrefinement round improves aggregate perfor-\nmance by 3.7-6.7 points, while skills evolved\nfrom diverse multi-model execution traces\nachieve 73.1% cross-model test accuracy, out-\nperforming all single-model trace sources. We\nfurther find that some skills generalize "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0008"
+        ],
+        "excerpt": "experience. General agent\nbenchmarks contain realistic tasks, but usually lack\nthe role\u2013skill structure needed to test whether pro-\ncedural knowledge learned in one workplace con-\ntext transfers to another. The field therefore lacks\na controlled setting for a practical question:when\ndoes experience produce reusable procedural struc-\nture, and when does it merely overfit to where it\nwas observed?\nTo address this, we propose:\n\u2022 AFTER, a benchmark for procedural skill\ntransfer in LLM agents.AFTER 1 contains 382\nrealistic workplace tasks across six professional\nroles and 22 procedural skills, mixing single- and\nmulti-skill workflows, and controlled splits that\nmeasure specificity (in-context gain) and gener-\nality (held-out task, cross-role, and cross-model\ntransfer). This structure reflects industrial agent\ndeployments, where procedural knowledge must\nbe reusable across recurring tasks, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "47b77f158f139b3613e361cc00cdeb924a7c3876b057e42dfba30d78aa9027c0",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2111,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1214,
+                "text": "experience. General agent\nbenchmarks contain realistic tasks, but usually lack\nthe role\u2013skill structure needed to test whether pro-\ncedural knowledge learned in one workplace con-\ntext transfers to another. The field therefore lacks\na controlled setting for a practical question:when\ndoes experience produce reusable procedural struc-\nture, and when does it merely overfit to where it\nwas observed?\nTo address this, we propose:\n\u2022 AFTER, a benchmark for procedural skill\ntransfer in LLM agents.AFTER 1 contains 382\nrealistic workplace tasks across six professional\nroles and 22 procedural skills, mixing single- and\nmulti-skill workflows, and controlled splits that\nmeasure specificity (in-context gain) and gener-\nality (held-out task, cross-role, and cross-model\ntransfer). This structure reflects industrial agent\ndeployments, where procedural knowledge must\nbe reusable across recurring tasks, "
+              }
+            ],
+            "text": "experience. General agent\nbenchmarks contain realistic tasks, but usually lack\nthe role\u2013skill structure needed to test whether pro-\ncedural knowledge learned in one workplace con-\ntext transfers to another. The field therefore lacks\na controlled setting for a practical question:when\ndoes experience produce reusable procedural struc-\nture, and when does it merely overfit to where it\nwas observed?\nTo address this, we propose:\n\u2022 AFTER, a benchmark for procedural skill\ntransfer in LLM agents.AFTER 1 contains 382\nrealistic workplace tasks across six professional\nroles and 22 procedural skills, mixing single- and\nmulti-skill workflows, and controlled splits that\nmeasure specificity (in-context gain) and gener-\nality (held-out task, cross-role, and cross-model\ntransfer). This structure reflects industrial agent\ndeployments, where procedural knowledge must\nbe reusable across recurring tasks, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0013"
+        ],
+        "excerpt": "AFTER382 6\u2713 \u2713 \u2713\nTable 1: Comparison with existing agent and skill bench-\nmarks. \u2713 supported, \u223c partial, \u2717 not supported. AF-\nTER uniquely combines role structure, skill annotations,\nand transfer splits.\nAFTER is a benchmark for evaluating procedu-\nral skill transfer in LLM agents. It contains 382\nrealistic workplace tasks spanning six professional\nroles and 22 procedural skills. Unlike prior agent\nbenchmarks that focus on task completion, AF-\nTER evaluates procedural knowledge transferabil-\nity across contexts. It combines a role-driven task\u2013\nskill structure with controlled splits for cross-task,\ncross-role, and cross-model transfer (Figure 2). Ta-\nble 1 summarizes the key differences from prior\nbenchmarks; a detailed discussion is provided in\nAppendix A.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "After382 6\u2713 \u2713 \u2713",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ddbc1911fa3636340ef3bbaf4a2bae289516b552ba3fe3f5a00bc458f34f191b",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0013",
+            "pages": [
+              2
+            ],
+            "section": "After382 6\u2713 \u2713 \u2713",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 765,
+                "page": 2,
+                "section": "After382 6\u2713 \u2713 \u2713",
+                "section_index": 6,
+                "start": 0,
+                "text": "AFTER382 6\u2713 \u2713 \u2713\nTable 1: Comparison with existing agent and skill bench-\nmarks. \u2713 supported, \u223c partial, \u2717 not supported. AF-\nTER uniquely combines role structure, skill annotations,\nand transfer splits.\nAFTER is a benchmark for evaluating procedu-\nral skill transfer in LLM agents. It contains 382\nrealistic workplace tasks spanning six professional\nroles and 22 procedural skills. Unlike prior agent\nbenchmarks that focus on task completion, AF-\nTER evaluates procedural knowledge transferabil-\nity across contexts. It combines a role-driven task\u2013\nskill structure with controlled splits for cross-task,\ncross-role, and cross-model transfer (Figure 2). Ta-\nble 1 summarizes the key differences from prior\nbenchmarks; a detailed discussion is provided in\nAppendix A."
+              }
+            ],
+            "text": "AFTER382 6\u2713 \u2713 \u2713\nTable 1: Comparison with existing agent and skill bench-\nmarks. \u2713 supported, \u223c partial, \u2717 not supported. AF-\nTER uniquely combines role structure, skill annotations,\nand transfer splits.\nAFTER is a benchmark for evaluating procedu-\nral skill transfer in LLM agents. It contains 382\nrealistic workplace tasks spanning six professional\nroles and 22 procedural skills. Unlike prior agent\nbenchmarks that focus on task completion, AF-\nTER evaluates procedural knowledge transferabil-\nity across contexts. It combines a role-driven task\u2013\nskill structure with controlled splits for cross-task,\ncross-role, and cross-model transfer (Figure 2). Ta-\nble 1 summarizes the key differences from prior\nbenchmarks; a detailed discussion is provided in\nAppendix A."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0014"
+        ],
+        "excerpt": "Roles.The six roles cover common functions in\ntechnology organizations: Data Engineers (DE;\n2\na b\nc d e\nFigure 2:AFTER overview. (a)Role\u2013skill matrix spanning six professional roles and five capability areas; red\nborders indicate skills shared across four roles.(b)Task sources: 56 adapted and 326 newly authored tasks.(c)\nDistribution of single- and multi-skill tasks by role.(d)Transfer evaluation across tasks, roles, and models.(e)\nCross-role transfer and role-specific skill specialization.\ndata pipelines), Data Scientists (DS; statistical and\nML analysis), Generative AI Engineers (GenAI;\nLLM applications), Infrastructure Engineers (In-\nfra; cloud and deployment), Project Managers\n(PM; business documents), and Software Engineers\n(SWE; application code). Roles define how skills\nare instantiated: for example, a PDF skill may sup-\nport invoice extraction for DE, document ingestion\nfor ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Design",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fa6b670ea7b46d18945aad0674e465174c3ed9d43ab3127fe56ff2d5f10b497e",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0014",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Benchmark Design",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 93,
+                "page": 2,
+                "section": "Benchmark Design",
+                "section_index": 7,
+                "start": 0,
+                "text": "Roles.The six roles cover common functions in\ntechnology organizations: Data Engineers (DE;\n2"
+              },
+              {
+                "end": 801,
+                "page": 3,
+                "section": "Benchmark Design",
+                "section_index": 8,
+                "start": 0,
+                "text": "a b\nc d e\nFigure 2:AFTER overview. (a)Role\u2013skill matrix spanning six professional roles and five capability areas; red\nborders indicate skills shared across four roles.(b)Task sources: 56 adapted and 326 newly authored tasks.(c)\nDistribution of single- and multi-skill tasks by role.(d)Transfer evaluation across tasks, roles, and models.(e)\nCross-role transfer and role-specific skill specialization.\ndata pipelines), Data Scientists (DS; statistical and\nML analysis), Generative AI Engineers (GenAI;\nLLM applications), Infrastructure Engineers (In-\nfra; cloud and deployment), Project Managers\n(PM; business documents), and Software Engineers\n(SWE; application code). Roles define how skills\nare instantiated: for example, a PDF skill may sup-\nport invoice extraction for DE, document ingestion\nfor "
+              }
+            ],
+            "text": "Roles.The six roles cover common functions in\ntechnology organizations: Data Engineers (DE;\n2\na b\nc d e\nFigure 2:AFTER overview. (a)Role\u2013skill matrix spanning six professional roles and five capability areas; red\nborders indicate skills shared across four roles.(b)Task sources: 56 adapted and 326 newly authored tasks.(c)\nDistribution of single- and multi-skill tasks by role.(d)Transfer evaluation across tasks, roles, and models.(e)\nCross-role transfer and role-specific skill specialization.\ndata pipelines), Data Scientists (DS; statistical and\nML analysis), Generative AI Engineers (GenAI;\nLLM applications), Infrastructure Engineers (In-\nfra; cloud and deployment), Project Managers\n(PM; business documents), and Software Engineers\n(SWE; application code). Roles define how skills\nare instantiated: for example, a PDF skill may sup-\nport invoice extraction for DE, document ingestion\nfor "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0017"
+        ],
+        "excerpt": "Tasks come from two high-level sources.Adapted\ntasksare drawn from SkillsBench (Li et al., 2026),\nSWE-bench Verified (Jimenez et al., 2024) and\nPro (Deng et al., 2025), MLE-bench (Chan et al.,\n2025), FeatureBench (Zhou et al., 2026b), RE-\nBench (Wijk et al., 2025), Terminal-Bench (Mer-\nrill et al., 2026), CodeScaleBench(Sourcegraph,\n2024), DevOps-Gym (Tang et al., 2026), SRE-\nskills-bench(Rootly AI Labs, 2025), and issues\nfrom popular open-source repositories. We pre-\nserve the core problem and success criterion, but\nrewrite each instruction as a self-contained work-\nplace request and re-implement verification as a\npytest suite.Newly designed taskscover scenarios\nnot available in prior benchmarks; they are either\npractitioner-designed or first drafted with a frontier\nLLM and then expert-refined into realistic work-\n3",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Construction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dc027cf90697ce544b903035a505d834a7d4821c3b98d2585ef1352e36cafeb5",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Benchmark Construction",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 828,
+                "page": 3,
+                "section": "Benchmark Construction",
+                "section_index": 9,
+                "start": 0,
+                "text": "Tasks come from two high-level sources.Adapted\ntasksare drawn from SkillsBench (Li et al., 2026),\nSWE-bench Verified (Jimenez et al., 2024) and\nPro (Deng et al., 2025), MLE-bench (Chan et al.,\n2025), FeatureBench (Zhou et al., 2026b), RE-\nBench (Wijk et al., 2025), Terminal-Bench (Mer-\nrill et al., 2026), CodeScaleBench(Sourcegraph,\n2024), DevOps-Gym (Tang et al., 2026), SRE-\nskills-bench(Rootly AI Labs, 2025), and issues\nfrom popular open-source repositories. We pre-\nserve the core problem and success criterion, but\nrewrite each instruction as a self-contained work-\nplace request and re-implement verification as a\npytest suite.Newly designed taskscover scenarios\nnot available in prior benchmarks; they are either\npractitioner-designed or first drafted with a frontier\nLLM and then expert-refined into realistic work-\n3"
+              }
+            ],
+            "text": "Tasks come from two high-level sources.Adapted\ntasksare drawn from SkillsBench (Li et al., 2026),\nSWE-bench Verified (Jimenez et al., 2024) and\nPro (Deng et al., 2025), MLE-bench (Chan et al.,\n2025), FeatureBench (Zhou et al., 2026b), RE-\nBench (Wijk et al., 2025), Terminal-Bench (Mer-\nrill et al., 2026), CodeScaleBench(Sourcegraph,\n2024), DevOps-Gym (Tang et al., 2026), SRE-\nskills-bench(Rootly AI Labs, 2025), and issues\nfrom popular open-source repositories. We pre-\nserve the core problem and success criterion, but\nrewrite each instruction as a self-contained work-\nplace request and re-implement verification as a\npytest suite.Newly designed taskscover scenarios\nnot available in prior benchmarks; they are either\npractitioner-designed or first drafted with a frontier\nLLM and then expert-refined into realistic work-\n3"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0020"
+        ],
+        "excerpt": "We evaluate skills throughspecificity(source-\ncontext improvement) andgenerality(transfer un-\nder distribution shift) and report two accuracy met-\nrics. Let passed\u2217k, t denote the number of tests\npassed on attempt k of task t, and total\u2217t the total\nnumber of tests.\nM1= 1Ntasks Xt 1Natt Xk passedk,ttotalt (1)\nM2= 1Ntasks Xt 1Natt Xk \u22ae[passedk,t =total t]\n(2)\nM1 measures partial progress, while M2 mea-\nsures complete task success.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ab4004b3ac58c9b68d4337eefcddb3882296a6fd3e7ea3200ea43196e8de9336",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 432,
+                "page": 4,
+                "section": "Evaluation Protocol",
+                "section_index": 11,
+                "start": 0,
+                "text": "We evaluate skills throughspecificity(source-\ncontext improvement) andgenerality(transfer un-\nder distribution shift) and report two accuracy met-\nrics. Let passed\u2217k, t denote the number of tests\npassed on attempt k of task t, and total\u2217t the total\nnumber of tests.\nM1= 1Ntasks Xt 1Natt Xk passedk,ttotalt (1)\nM2= 1Ntasks Xt 1Natt Xk \u22ae[passedk,t =total t]\n(2)\nM1 measures partial progress, while M2 mea-\nsures complete task success."
+              }
+            ],
+            "text": "We evaluate skills throughspecificity(source-\ncontext improvement) andgenerality(transfer un-\nder distribution shift) and report two accuracy met-\nrics. Let passed\u2217k, t denote the number of tests\npassed on attempt k of task t, and total\u2217t the total\nnumber of tests.\nM1= 1Ntasks Xt 1Natt Xk passedk,ttotalt (1)\nM2= 1Ntasks Xt 1Natt Xk \u22ae[passedk,t =total t]\n(2)\nM1 measures partial progress, while M2 mea-\nsures complete task success."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0022"
+        ],
+        "excerpt": "Interface\nTo compare procedural-memory systems on AF-\nTER, we use EVOLUTION, a lightweight harness\nthat standardizes trace collection, skill versioning,\nupdate execution, and transfer measurement. Skills\nare stored as versioned SKILL.md artifacts with\nY AML metadata and markdown bodies; each exe-\ncution emits a trace linked to the active skill ver-\nsion, making updates and evaluations reproducible.\nEVOLUTIONsupports full-skill updates through a\nCOLLECT\u2013DIAGNOSE\u2013REVISE\u2013PROMOTEcycle.\nWe denote by \u03c1 thereflector: the model or proce-\ndure that inspects traces, summarizes failure modes,\nand proposes a revised skill body. For current skill\nversion s(v) and source trace pool Dsrc, the update\nis s(v+1) =U \u03c1(s(v),D src). Thus, EVOLUTION\nfixes trace collection, validation, promotion, roll-\nback, and lineage tracking, while the reflector \u03c1\nmay vary across experiments or external systems.\nWe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evolution: Benchmark Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bdf51dfd668c6954e69cc53a6fa80fbf234877b2a4199221cced16d3ce48b1d9",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Evolution: Benchmark Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 4,
+                "section": "Evolution: Benchmark Evaluation",
+                "section_index": 13,
+                "start": 0,
+                "text": "Interface\nTo compare procedural-memory systems on AF-\nTER, we use EVOLUTION, a lightweight harness\nthat standardizes trace collection, skill versioning,\nupdate execution, and transfer measurement. Skills\nare stored as versioned SKILL.md artifacts with\nY AML metadata and markdown bodies; each exe-\ncution emits a trace linked to the active skill ver-\nsion, making updates and evaluations reproducible.\nEVOLUTIONsupports full-skill updates through a\nCOLLECT\u2013DIAGNOSE\u2013REVISE\u2013PROMOTEcycle.\nWe denote by \u03c1 thereflector: the model or proce-\ndure that inspects traces, summarizes failure modes,\nand proposes a revised skill body. For current skill\nversion s(v) and source trace pool Dsrc, the update\nis s(v+1) =U \u03c1(s(v),D src). Thus, EVOLUTION\nfixes trace collection, validation, promotion, roll-\nback, and lineage tracking, while the reflector \u03c1\nmay vary across experiments or external systems.\nWe "
+              }
+            ],
+            "text": "Interface\nTo compare procedural-memory systems on AF-\nTER, we use EVOLUTION, a lightweight harness\nthat standardizes trace collection, skill versioning,\nupdate execution, and transfer measurement. Skills\nare stored as versioned SKILL.md artifacts with\nY AML metadata and markdown bodies; each exe-\ncution emits a trace linked to the active skill ver-\nsion, making updates and evaluations reproducible.\nEVOLUTIONsupports full-skill updates through a\nCOLLECT\u2013DIAGNOSE\u2013REVISE\u2013PROMOTEcycle.\nWe denote by \u03c1 thereflector: the model or proce-\ndure that inspects traces, summarizes failure modes,\nand proposes a revised skill body. For current skill\nversion s(v) and source trace pool Dsrc, the update\nis s(v+1) =U \u03c1(s(v),D src). Thus, EVOLUTION\nfixes trace collection, validation, promotion, roll-\nback, and lineage tracking, while the reflector \u03c1\nmay vary across experiments or external systems.\nWe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0026"
+        ],
+        "excerpt": "DS GenAI PM Infra Aggregate\nModel Size \u2205H G \u2206 \u2205H G \u2206 \u2205H G \u2206 \u2205H G \u2206 \u2205Best\u2206\nGPT 5.4 L 42.0 47.055.0 +13.0 40.043.140.0 +3.1 38.544.633.8 +6.1 50.0 48.756.3 +6.3 47.6 50.1 +2.5\nGPT 5.4 Mini 4 M 43.0 33.048.0 +5.0 35.8 31.645.3 +9.5 27.7 24.630.8 +3.1 60.043.7 48.7 -11.3 44.0 44.9 +0.9\nDeepSeek V4 Flash L 28.7 29.633.9 +5.2 31.6 30.535.8 +4.2 11.4 17.118.1 +6.7 48.8 46.3 41.2 -7.6 34.6 37.1 +2.5\nNemotron 3 120B M 29.631.328.7 +1.7 42.1 36.8 35.8 -6.3 14.3 21.924.8 +10.5 37.5 31.241.3 +3.8 31.9 33.0 +1.1\nGemma 4 31B M 45.5 45.049.5 +4.0 35.3 35.3 33.7 -1.6 10.0 13.923.9 +13.9 43.145.644.4 +2.5 38.5 41.3 +2.8\nGemma 4 26B A4B M 37.5 42.048.0 +10.5 37.440.0 40.0 +2.6 16.924.620.0 +7.7 34.4 28.140.0 +5.6 36.2 39.7 +3.5\nGemma 4 E4B S 20.5 18.524.5 +4.0 15.3 23.729.5 +14.2 8.5 11.513.1 +4.6 13.8 14.421.2 +7.4 19.4 24.0 +4.6\nQwen 3.5-397B-FP8 L 36.0 35.240.2 +4.2 35.3 35.538.7 +3.4 12.3 13.516.9 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ds Genai Pm Infra Aggregate",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e799a233d8aa5b1fa101421270458e00b19a5fa22f26ab5b44891e622a2eab1b",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Ds Genai Pm Infra Aggregate",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 5,
+                "section": "Ds Genai Pm Infra Aggregate",
+                "section_index": 16,
+                "start": 0,
+                "text": "DS GenAI PM Infra Aggregate\nModel Size \u2205H G \u2206 \u2205H G \u2206 \u2205H G \u2206 \u2205H G \u2206 \u2205Best\u2206\nGPT 5.4 L 42.0 47.055.0 +13.0 40.043.140.0 +3.1 38.544.633.8 +6.1 50.0 48.756.3 +6.3 47.6 50.1 +2.5\nGPT 5.4 Mini 4 M 43.0 33.048.0 +5.0 35.8 31.645.3 +9.5 27.7 24.630.8 +3.1 60.043.7 48.7 -11.3 44.0 44.9 +0.9\nDeepSeek V4 Flash L 28.7 29.633.9 +5.2 31.6 30.535.8 +4.2 11.4 17.118.1 +6.7 48.8 46.3 41.2 -7.6 34.6 37.1 +2.5\nNemotron 3 120B M 29.631.328.7 +1.7 42.1 36.8 35.8 -6.3 14.3 21.924.8 +10.5 37.5 31.241.3 +3.8 31.9 33.0 +1.1\nGemma 4 31B M 45.5 45.049.5 +4.0 35.3 35.3 33.7 -1.6 10.0 13.923.9 +13.9 43.145.644.4 +2.5 38.5 41.3 +2.8\nGemma 4 26B A4B M 37.5 42.048.0 +10.5 37.440.0 40.0 +2.6 16.924.620.0 +7.7 34.4 28.140.0 +5.6 36.2 39.7 +3.5\nGemma 4 E4B S 20.5 18.524.5 +4.0 15.3 23.729.5 +14.2 8.5 11.513.1 +4.6 13.8 14.421.2 +7.4 19.4 24.0 +4.6\nQwen 3.5-397B-FP8 L 36.0 35.240.2 +4.2 35.3 35.538.7 +3.4 12.3 13.516.9 "
+              }
+            ],
+            "text": "DS GenAI PM Infra Aggregate\nModel Size \u2205H G \u2206 \u2205H G \u2206 \u2205H G \u2206 \u2205H G \u2206 \u2205Best\u2206\nGPT 5.4 L 42.0 47.055.0 +13.0 40.043.140.0 +3.1 38.544.633.8 +6.1 50.0 48.756.3 +6.3 47.6 50.1 +2.5\nGPT 5.4 Mini 4 M 43.0 33.048.0 +5.0 35.8 31.645.3 +9.5 27.7 24.630.8 +3.1 60.043.7 48.7 -11.3 44.0 44.9 +0.9\nDeepSeek V4 Flash L 28.7 29.633.9 +5.2 31.6 30.535.8 +4.2 11.4 17.118.1 +6.7 48.8 46.3 41.2 -7.6 34.6 37.1 +2.5\nNemotron 3 120B M 29.631.328.7 +1.7 42.1 36.8 35.8 -6.3 14.3 21.924.8 +10.5 37.5 31.241.3 +3.8 31.9 33.0 +1.1\nGemma 4 31B M 45.5 45.049.5 +4.0 35.3 35.3 33.7 -1.6 10.0 13.923.9 +13.9 43.145.644.4 +2.5 38.5 41.3 +2.8\nGemma 4 26B A4B M 37.5 42.048.0 +10.5 37.440.0 40.0 +2.6 16.924.620.0 +7.7 34.4 28.140.0 +5.6 36.2 39.7 +3.5\nGemma 4 E4B S 20.5 18.524.5 +4.0 15.3 23.729.5 +14.2 8.5 11.513.1 +4.6 13.8 14.421.2 +7.4 19.4 24.0 +4.6\nQwen 3.5-397B-FP8 L 36.0 35.240.2 +4.2 35.3 35.538.7 +3.4 12.3 13.516.9 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0031"
+        ],
+        "excerpt": "Framework Seed Narrow Diverse\n\u2206tr \u2206te \u2206tr \u2206te\nCodex GPT-5.5 57.1 -1.7 +0.4 -2.5 +8.3\nHermes 58.4 +3.6 -1.4 +3.7 +18.0\nMemento 52.4 -12.7 +0.1 +3.8 +2.0\nMemP 56.6 +13.9 +2.5 +7.3 +0.0\nEvoSkill 52.5 +14.9 -2.7 -5.7 -3.9\nTable 3: Train and test M1 gains over handcrafted skills\non pdf, xlsx, and pptx tasks using a shared Qwen3.5-\n35B-A3B solver, averaged over pdf, xlsx, and pptx.\nSeed = handcraft test M1; \u2206tr / \u2206te = evolved\u2212seed on\ntrain / test (same task set per condition). Trace and skill\nmanagement are framework-specific. Narrow: n= 1 ;\nDiverse:n= 5. Colors denote test gains.\nWe evaluate procedural memory frameworks on\nskill evolution from execution traces. Table 3 com-\npares five approaches under narrow ( n= 1 ) and\ndiverse (n= 5 ) evolution. We run frameworks\nthrough the same Evolution harness under identical\nconditions with shared Qwen3.5-35B-A3B solver,\ntask pool, and train/test ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Framework-Guided Skill Improvement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b30bac948625225b30d0d16a7633b1a12b0c451a03d725110cd5315d9b6a192f",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0031",
+            "pages": [
+              5
+            ],
+            "section": "Framework-Guided Skill Improvement",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 5,
+                "section": "Framework-Guided Skill Improvement",
+                "section_index": 18,
+                "start": 0,
+                "text": "Framework Seed Narrow Diverse\n\u2206tr \u2206te \u2206tr \u2206te\nCodex GPT-5.5 57.1 -1.7 +0.4 -2.5 +8.3\nHermes 58.4 +3.6 -1.4 +3.7 +18.0\nMemento 52.4 -12.7 +0.1 +3.8 +2.0\nMemP 56.6 +13.9 +2.5 +7.3 +0.0\nEvoSkill 52.5 +14.9 -2.7 -5.7 -3.9\nTable 3: Train and test M1 gains over handcrafted skills\non pdf, xlsx, and pptx tasks using a shared Qwen3.5-\n35B-A3B solver, averaged over pdf, xlsx, and pptx.\nSeed = handcraft test M1; \u2206tr / \u2206te = evolved\u2212seed on\ntrain / test (same task set per condition). Trace and skill\nmanagement are framework-specific. Narrow: n= 1 ;\nDiverse:n= 5. Colors denote test gains.\nWe evaluate procedural memory frameworks on\nskill evolution from execution traces. Table 3 com-\npares five approaches under narrow ( n= 1 ) and\ndiverse (n= 5 ) evolution. We run frameworks\nthrough the same Evolution harness under identical\nconditions with shared Qwen3.5-35B-A3B solver,\ntask pool, and train/test "
+              }
+            ],
+            "text": "Framework Seed Narrow Diverse\n\u2206tr \u2206te \u2206tr \u2206te\nCodex GPT-5.5 57.1 -1.7 +0.4 -2.5 +8.3\nHermes 58.4 +3.6 -1.4 +3.7 +18.0\nMemento 52.4 -12.7 +0.1 +3.8 +2.0\nMemP 56.6 +13.9 +2.5 +7.3 +0.0\nEvoSkill 52.5 +14.9 -2.7 -5.7 -3.9\nTable 3: Train and test M1 gains over handcrafted skills\non pdf, xlsx, and pptx tasks using a shared Qwen3.5-\n35B-A3B solver, averaged over pdf, xlsx, and pptx.\nSeed = handcraft test M1; \u2206tr / \u2206te = evolved\u2212seed on\ntrain / test (same task set per condition). Trace and skill\nmanagement are framework-specific. Narrow: n= 1 ;\nDiverse:n= 5. Colors denote test gains.\nWe evaluate procedural memory frameworks on\nskill evolution from execution traces. Table 3 com-\npares five approaches under narrow ( n= 1 ) and\ndiverse (n= 5 ) evolution. We run frameworks\nthrough the same Evolution harness under identical\nconditions with shared Qwen3.5-35B-A3B solver,\ntask pool, and train/test "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0033"
+        ],
+        "excerpt": "We analyze skill transfer along three practically\nimportant dimensions: cross-model generalization,\ncross-role transfer, and inference efficiency.\nAll Traces Sonnet 4 Qwen 27B Qwen 9B Llama 8B\nSource Model Experience\n0\n20\n40\n60\n80\nT est Accuracy (%)\n73.1\n36.0\n48.8\n59.4\n55.5\nDiverse\nFigure 4: Cross-model transfer: test accuracy when\nskills are evolved from traces of different source models\nversus diverse traces from all models.\nCross-model transfer.A key question is whether\nskills must be evolved from traces of the same\nmodel that will use them. Figure 4 shows that\nskills evolved combining experience from multi-\nple source models substantially outperform single-\nmodel sources: 73.1% versus 36.0\u201359.4%. Surpris-\ningly, weaker source models provide better trans-\nferable signal than stronger models, suggesting that\nprocedural knowledge benefits from imperfect exe-\ncutions.\n10\n 5\n 0 5 10 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Skill Transfer Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f27cb6f7e7da614772a6cdf4a121b77e43c86cbd40395c20391dc739e1751a84",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Skill Transfer Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 6,
+                "section": "Skill Transfer Analysis",
+                "section_index": 20,
+                "start": 0,
+                "text": "We analyze skill transfer along three practically\nimportant dimensions: cross-model generalization,\ncross-role transfer, and inference efficiency.\nAll Traces Sonnet 4 Qwen 27B Qwen 9B Llama 8B\nSource Model Experience\n0\n20\n40\n60\n80\nT est Accuracy (%)\n73.1\n36.0\n48.8\n59.4\n55.5\nDiverse\nFigure 4: Cross-model transfer: test accuracy when\nskills are evolved from traces of different source models\nversus diverse traces from all models.\nCross-model transfer.A key question is whether\nskills must be evolved from traces of the same\nmodel that will use them. Figure 4 shows that\nskills evolved combining experience from multi-\nple source models substantially outperform single-\nmodel sources: 73.1% versus 36.0\u201359.4%. Surpris-\ningly, weaker source models provide better trans-\nferable signal than stronger models, suggesting that\nprocedural knowledge benefits from imperfect exe-\ncutions.\n10\n 5\n 0 5 10 "
+              }
+            ],
+            "text": "We analyze skill transfer along three practically\nimportant dimensions: cross-model generalization,\ncross-role transfer, and inference efficiency.\nAll Traces Sonnet 4 Qwen 27B Qwen 9B Llama 8B\nSource Model Experience\n0\n20\n40\n60\n80\nT est Accuracy (%)\n73.1\n36.0\n48.8\n59.4\n55.5\nDiverse\nFigure 4: Cross-model transfer: test accuracy when\nskills are evolved from traces of different source models\nversus diverse traces from all models.\nCross-model transfer.A key question is whether\nskills must be evolved from traces of the same\nmodel that will use them. Figure 4 shows that\nskills evolved combining experience from multi-\nple source models substantially outperform single-\nmodel sources: 73.1% versus 36.0\u201359.4%. Surpris-\ningly, weaker source models provide better trans-\nferable signal than stronger models, suggesting that\nprocedural knowledge benefits from imperfect exe-\ncutions.\n10\n 5\n 0 5 10 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0038"
+        ],
+        "excerpt": "DS  DS\n+11.7\n-4.8\n-7.5\n+6.2\nFigure 5: Cross-role transfer for the pdf skill. In-role\nevolution (PM to PM, DS to DS) yields gains, while\napplying a skill evolved for one role to another (PM to\nDS, DS to PM) hurts performance.\nCross-role generalization.Skills evolved within\none professional role may not transfer effectively\nto other roles. Figure 5 illustrates this for the pdf\nskill: while in-role evolution yields gains of +11.7\n(PM) and +6.2 (DS), applying a skill evolved for\none role to another produces losses of -4.8 to -7.5\npoints. This asymmetry arises because different\nroles use the same skill for different purposes (e.g.,\npdf extraction for executive summaries in PM ver-\nsus data ingestion in DS). Role-specific specializa-\ntion emerges naturally during evolution.\nNo Skill Handcrafted Evolved\nSkill Condition\n0\n100\n200\n300\n400\n500\n600\nT otal T okens ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ds  Ds",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6720ebdfe4a761c9c3686684b0e00dc6faa73c4b56038bc47c4903c9111fd60d",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0038",
+            "pages": [
+              6
+            ],
+            "section": "Ds  Ds",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 865,
+                "page": 6,
+                "section": "Ds  Ds",
+                "section_index": 24,
+                "start": 0,
+                "text": "DS  DS\n+11.7\n-4.8\n-7.5\n+6.2\nFigure 5: Cross-role transfer for the pdf skill. In-role\nevolution (PM to PM, DS to DS) yields gains, while\napplying a skill evolved for one role to another (PM to\nDS, DS to PM) hurts performance.\nCross-role generalization.Skills evolved within\none professional role may not transfer effectively\nto other roles. Figure 5 illustrates this for the pdf\nskill: while in-role evolution yields gains of +11.7\n(PM) and +6.2 (DS), applying a skill evolved for\none role to another produces losses of -4.8 to -7.5\npoints. This asymmetry arises because different\nroles use the same skill for different purposes (e.g.,\npdf extraction for executive summaries in PM ver-\nsus data ingestion in DS). Role-specific specializa-\ntion emerges naturally during evolution.\nNo Skill Handcrafted Evolved\nSkill Condition\n0\n100\n200\n300\n400\n500\n600\nT otal T okens "
+              }
+            ],
+            "text": "DS  DS\n+11.7\n-4.8\n-7.5\n+6.2\nFigure 5: Cross-role transfer for the pdf skill. In-role\nevolution (PM to PM, DS to DS) yields gains, while\napplying a skill evolved for one role to another (PM to\nDS, DS to PM) hurts performance.\nCross-role generalization.Skills evolved within\none professional role may not transfer effectively\nto other roles. Figure 5 illustrates this for the pdf\nskill: while in-role evolution yields gains of +11.7\n(PM) and +6.2 (DS), applying a skill evolved for\none role to another produces losses of -4.8 to -7.5\npoints. This asymmetry arises because different\nroles use the same skill for different purposes (e.g.,\npdf extraction for executive summaries in PM ver-\nsus data ingestion in DS). Role-specific specializa-\ntion emerges naturally during evolution.\nNo Skill Handcrafted Evolved\nSkill Condition\n0\n100\n200\n300\n400\n500\n600\nT otal T okens "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0042"
+        ],
+        "excerpt": "Benchmark coverage. AFTER targets\ntechnology-sector roles and workplace tasks\ndrawn partly from authors' practice, which may\nunderrepresent domains such as healthcare, legal,\nor scientific research. The 22 skills span five\ncapability areas but intentionally exclude open-\nended creative or conversational tasks, limiting\nconclusions to procedural, tool-use-oriented\nworkflows.\nEvaluation scope. Our experiments fix the\ntrace budget per evolution run to enable controlled\ncomparison; real deployments may accumulate far\nlarger trace pools, and the relationship between\ntrace volume and transfer quality remains an open\nquestion. Evaluation uses automated pytest verifi-\ncation, which measures functional correctness but\ndoes not capture qualities such as code readability,\nrobustness to edge cases beyond the test suite, or\nuser preference.\nModel and framework selection. We evaluate\na representative ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "74ed940f18b1a2ce17e31160caff14a61b3815965991e5afb352ee4a06c397c6",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0042",
+            "pages": [
+              7
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Limitations",
+                "section_index": 27,
+                "start": 0,
+                "text": "Benchmark coverage. AFTER targets\ntechnology-sector roles and workplace tasks\ndrawn partly from authors' practice, which may\nunderrepresent domains such as healthcare, legal,\nor scientific research. The 22 skills span five\ncapability areas but intentionally exclude open-\nended creative or conversational tasks, limiting\nconclusions to procedural, tool-use-oriented\nworkflows.\nEvaluation scope. Our experiments fix the\ntrace budget per evolution run to enable controlled\ncomparison; real deployments may accumulate far\nlarger trace pools, and the relationship between\ntrace volume and transfer quality remains an open\nquestion. Evaluation uses automated pytest verifi-\ncation, which measures functional correctness but\ndoes not capture qualities such as code readability,\nrobustness to edge cases beyond the test suite, or\nuser preference.\nModel and framework selection. We evaluate\na representative "
+              }
+            ],
+            "text": "Benchmark coverage. AFTER targets\ntechnology-sector roles and workplace tasks\ndrawn partly from authors' practice, which may\nunderrepresent domains such as healthcare, legal,\nor scientific research. The 22 skills span five\ncapability areas but intentionally exclude open-\nended creative or conversational tasks, limiting\nconclusions to procedural, tool-use-oriented\nworkflows.\nEvaluation scope. Our experiments fix the\ntrace budget per evolution run to enable controlled\ncomparison; real deployments may accumulate far\nlarger trace pools, and the relationship between\ntrace volume and transfer quality remains an open\nquestion. Evaluation uses automated pytest verifi-\ncation, which measures functional correctness but\ndoes not capture qualities such as code readability,\nrobustness to edge cases beyond the test suite, or\nuser preference.\nModel and framework selection. We evaluate\na representative "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0070"
+        ],
+        "excerpt": "Each (role, skill) cell in the benchmark has tasks\nsplit into three folds: train (50%), validation (25%),\nand test (25%). The train split provides traces for\nskill evolution. The validation split enables hyper-\nparameter tuning and prevents overfitting during\nevolution. The test split provides a final evaluation,\nensuring reported numbers reflect genuine general-\nization.\nFor cross-role experiments, an additional split\nstructure holds out entire roles. When measuring\ncross-role transfer for the PDF skill, we might train\non DE-PDF, DS-PDF, and PM-PDF tasks, then\nevaluate on GenAI-PDF tasks that were never seen\n11\nduring evolution.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11,
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Data Splits",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e6f40d79e4965329613dc538579e26ddef5b65e9e09ac30d4011bad66ce26b51",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0070",
+            "pages": [
+              11,
+              12
+            ],
+            "section": "Appendix: Data Splits",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 619,
+                "page": 11,
+                "section": "Appendix: Data Splits",
+                "section_index": 37,
+                "start": 0,
+                "text": "Each (role, skill) cell in the benchmark has tasks\nsplit into three folds: train (50%), validation (25%),\nand test (25%). The train split provides traces for\nskill evolution. The validation split enables hyper-\nparameter tuning and prevents overfitting during\nevolution. The test split provides a final evaluation,\nensuring reported numbers reflect genuine general-\nization.\nFor cross-role experiments, an additional split\nstructure holds out entire roles. When measuring\ncross-role transfer for the PDF skill, we might train\non DE-PDF, DS-PDF, and PM-PDF tasks, then\nevaluate on GenAI-PDF tasks that were never seen\n11"
+              },
+              {
+                "end": 17,
+                "page": 12,
+                "section": "Appendix: Data Splits",
+                "section_index": 38,
+                "start": 0,
+                "text": "during evolution."
+              }
+            ],
+            "text": "Each (role, skill) cell in the benchmark has tasks\nsplit into three folds: train (50%), validation (25%),\nand test (25%). The train split provides traces for\nskill evolution. The validation split enables hyper-\nparameter tuning and prevents overfitting during\nevolution. The test split provides a final evaluation,\nensuring reported numbers reflect genuine general-\nization.\nFor cross-role experiments, an additional split\nstructure holds out entire roles. When measuring\ncross-role transfer for the PDF skill, we might train\non DE-PDF, DS-PDF, and PM-PDF tasks, then\nevaluate on GenAI-PDF tasks that were never seen\n11\nduring evolution."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0071"
+        ],
+        "excerpt": "Each task in AFTER follows a consistent structure:\n\u2022 Metadata( task.toml): task name, role, re-\nquired skills, difficulty, and data source attribu-\ntion.\n\u2022 Instructions( instruction.md): realistic re-\nquest mimicking how a colleague might describe\nthe work.\n\u2022 Input files( inputs/): authentic data in work-\nplace formats (Excel, PDF, CSV , JSON).\n\u2022 Verification( tests/test_outputs.py): pytest\nassertions for automated correctness checking.\nTask instructions deliberately omit implemen-\ntation details that should come from procedural\nmemory. For example, an instruction might say,\n\"extract the transaction table* from the bank state-\nment\" without specifying which library to use, how\nto handle multi-page documents, or the output for-\nmat. These procedural details should be supplied\nby the skill.\nE Benchmark Construction",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Task Format",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0a80736281cc7d364465c021eb9d9fd126a4dc2b631dbae8644d3392ef734492",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0071",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Task Format",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 824,
+                "page": 12,
+                "section": "Appendix: Task Format",
+                "section_index": 39,
+                "start": 0,
+                "text": "Each task in AFTER follows a consistent structure:\n\u2022 Metadata( task.toml): task name, role, re-\nquired skills, difficulty, and data source attribu-\ntion.\n\u2022 Instructions( instruction.md): realistic re-\nquest mimicking how a colleague might describe\nthe work.\n\u2022 Input files( inputs/): authentic data in work-\nplace formats (Excel, PDF, CSV , JSON).\n\u2022 Verification( tests/test_outputs.py): pytest\nassertions for automated correctness checking.\nTask instructions deliberately omit implemen-\ntation details that should come from procedural\nmemory. For example, an instruction might say,\n\"extract the transaction table* from the bank state-\nment\" without specifying which library to use, how\nto handle multi-page documents, or the output for-\nmat. These procedural details should be supplied\nby the skill.\nE Benchmark Construction"
+              }
+            ],
+            "text": "Each task in AFTER follows a consistent structure:\n\u2022 Metadata( task.toml): task name, role, re-\nquired skills, difficulty, and data source attribu-\ntion.\n\u2022 Instructions( instruction.md): realistic re-\nquest mimicking how a colleague might describe\nthe work.\n\u2022 Input files( inputs/): authentic data in work-\nplace formats (Excel, PDF, CSV , JSON).\n\u2022 Verification( tests/test_outputs.py): pytest\nassertions for automated correctness checking.\nTask instructions deliberately omit implemen-\ntation details that should come from procedural\nmemory. For example, an instruction might say,\n\"extract the transaction table* from the bank state-\nment\" without specifying which library to use, how\nto handle multi-page documents, or the output for-\nmat. These procedural details should be supplied\nby the skill.\nE Benchmark Construction"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0081"
+        ],
+        "excerpt": "task directory or generated from a fixed seed.\nAutomated checks operationalize B.4\u2013B.5 and\nC.7\u2013C.8: a static metadata and path-contract au-\ndit, a reference-solution calibration run, and an\nadversarial gate that substitutes empty, constant,\nand random outputs and requires the verifier to fail\non all three. Two authors then independently re-\nviewed every task against the full rubric. A task\nwas accepted only when both reviewers returned\naccepton every criterion. Disagreements led to\nrewriting and re-review. Total human-review effort\nwas approximately 32 hours per reviewer.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Self-Containment\u2014 All Materials Are In The",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "51bac390cc7ce4e806fe0f739efbfa524de9eef358940d03243862ad14852b7d",
+            "evidence_id": "Eb5cc8a8adfb0501c-B0081",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Self-Containment\u2014 All Materials Are In The",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 578,
+                "page": 12,
+                "section": "Appendix: Self-Containment\u2014 All Materials Are In The",
+                "section_index": 48,
+                "start": 0,
+                "text": "task directory or generated from a fixed seed.\nAutomated checks operationalize B.4\u2013B.5 and\nC.7\u2013C.8: a static metadata and path-contract au-\ndit, a reference-solution calibration run, and an\nadversarial gate that substitutes empty, constant,\nand random outputs and requires the verifier to fail\non all three. Two authors then independently re-\nviewed every task against the full rubric. A task\nwas accepted only when both reviewers returned\naccepton every criterion. Disagreements led to\nrewriting and re-review. Total human-review effort\nwas approximately 32 hours per reviewer."
+              }
+            ],
+            "text": "task directory or generated from a fixed seed.\nAutomated checks operationalize B.4\u2013B.5 and\nC.7\u2013C.8: a static metadata and path-contract au-\ndit, a reference-solution calibration run, and an\nadversarial gate that substitutes empty, constant,\nand random outputs and requires the verifier to fail\non all three. Two authors then independently re-\nviewed every task against the full rubric. A task\nwas accepted only when both reviewers returned\naccepton every criterion. Disagreements led to\nrewriting and re-review. Total human-review effort\nwas approximately 32 hours per reviewer."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.23127",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2606.23127",
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline gains are measured by deterministic pytest suites on held-out test splits, not by the reflectors or validation signal used to select skill revisions.",
+          "final_evaluation_signal": "Automated pytest verification suites score functional correctness on held-out test tasks.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Execution traces and model-based reflectors revise SKILL.md bodies during evolution, with promotion conditioned on validation performance.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0002",
+          "Eb5cc8a8adfb0501c-B0008",
+          "Eb5cc8a8adfb0501c-B0013",
+          "Eb5cc8a8adfb0501c-B0014",
+          "Eb5cc8a8adfb0501c-B0017",
+          "Eb5cc8a8adfb0501c-B0020",
+          "Eb5cc8a8adfb0501c-B0022",
+          "Eb5cc8a8adfb0501c-B0026",
+          "Eb5cc8a8adfb0501c-B0031",
+          "Eb5cc8a8adfb0501c-B0033",
+          "Eb5cc8a8adfb0501c-B0038",
+          "Eb5cc8a8adfb0501c-B0042",
+          "Eb5cc8a8adfb0501c-B0070",
+          "Eb5cc8a8adfb0501c-B0071",
+          "Eb5cc8a8adfb0501c-B0081"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "1ef4d116e01ef8ebc920704576c4e2357b7864838a719996e54711456746f006"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2606.23127",
+        "claim_evidence_alignment": "Claims regarding cross-model transfer gains from diverse execution traces and cross-role performance drops due to role over-specialization are directly substantiated by held-out test splits and clear empirical comparisons.",
+        "context_id": "b5cc8a8adfb0501cdaabb0cd904baeac188eefa3108c8dbb9e4e7af89bdd8aee",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluations span multiple open- and closed-weight models across size tiers, testing static skills, single-round LLM refinement, multi-system trace evolution, cross-model transfer, and cross-role transfer. Metrics evaluate both partial progress (M1) and complete task pass rate (M2), demonstrating rigorous empirical control.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance and transfer metrics are evaluated via programmatic, deterministic pytest suites on held-out test sets rather than LLM-judge self-evaluation.",
+          "final_evaluation_signal": "Automated objective pytest execution suites testing functional correctness on held-out test tasks.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Execution failure traces and model-based reflectors/optimizers revising SKILL.md documents during training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eb5cc8a8adfb0501c-B0002",
+          "Eb5cc8a8adfb0501c-B0008",
+          "Eb5cc8a8adfb0501c-B0013",
+          "Eb5cc8a8adfb0501c-B0014",
+          "Eb5cc8a8adfb0501c-B0017",
+          "Eb5cc8a8adfb0501c-B0020",
+          "Eb5cc8a8adfb0501c-B0022",
+          "Eb5cc8a8adfb0501c-B0026",
+          "Eb5cc8a8adfb0501c-B0031",
+          "Eb5cc8a8adfb0501c-B0033",
+          "Eb5cc8a8adfb0501c-B0038",
+          "Eb5cc8a8adfb0501c-B0042",
+          "Eb5cc8a8adfb0501c-B0070",
+          "Eb5cc8a8adfb0501c-B0071",
+          "Eb5cc8a8adfb0501c-B0081"
+        ],
+        "limitations": "The authors document key limitations, including a restriction to technology-sector procedural tasks excluding conversational workflows, fixed trace budgets during evolution, and verification relying strictly on pytest assertions without subjective preference or readability metrics.",
+        "method_assessment": "The benchmark design explicitly disaggregates procedural skills from dynamic retrieval and tests generalization using clean train, validation, and test splits across roles and models. Benchmark construction and quality assurance include deterministic pytest test suites, automated adversarial checks, and dual independent human expert verification.",
+        "quality_rationale": "The work presents a substantial, well-scoped contribution to LLM agent procedural memory benchmarking and transfer evaluation. The methodology, dataset construction QA, experimental controls, and ablation studies are thorough and convincingly executed.",
+        "scoped_contribution": "The paper introduces AFTER, a benchmark of 382 workplace tasks across six professional roles and 22 procedural skills, along with the EVOLUTION framework to evaluate how LLM agent procedural memory transfers across tasks, roles, and model backbones.",
+        "source_content_hash": "1ef4d116e01ef8ebc920704576c4e2357b7864838a719996e54711456746f006"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work presents a substantial, well-scoped contribution to LLM agent procedural memory benchmarking and transfer evaluation. The methodology, dataset construction QA, experimental controls, and ablation studies are thorough and convincingly executed.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "1ef4d116e01ef8ebc920704576c4e2357b7864838a719996e54711456746f006",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors document key limitations, including a restriction to technology-sector procedural tasks excluding conversational workflows, fixed trace budgets during evolution, and verification relying strictly on pytest assertions without subjective preference or readability metrics."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -179,7 +1939,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

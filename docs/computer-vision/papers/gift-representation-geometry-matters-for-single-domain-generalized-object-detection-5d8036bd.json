@@ -22,13 +22,13 @@
   "first_seen_at": "2026-10-27 09:36:11",
   "first_seen_date": "2026-10-27",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-10-27 09:36:28",
-  "last_seen_date": "2026-10-27",
+  "is_new": false,
+  "last_seen_at": "2026-10-28 10:20:19",
+  "last_seen_date": "2026-10-28",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-26",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-27 09:36:49",
   "notified_date": "2026-10-27",
   "openalex_id": null,
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-27 09:36:11",
-    "generated_at": "2026-10-27 09:40:15",
-    "last_seen_at": "2026-10-27 09:36:28",
+    "generated_at": "2026-10-28 10:24:02",
+    "last_seen_at": "2026-10-28 10:20:19",
     "metadata_sources": [
       "arxiv"
     ],
@@ -101,36 +101,1689 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-28T10:22:04.787555+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous, well-motivated parameter-efficient fine-tuning technique backed by formal linear algebra foundations and thorough benchmarking against relevant baselines. The experimental validation is transparent, ablated across architectures and datasets, and clearly demonstrates stated performance gains without methodological circularity.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 74289,
+      "assessment_input_sha256": "e5dfc5c5e0f006cdbe6bcd5f969a15de446747eb032724abff6d04a89955569f",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.35374",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 72900,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 72100,
+      "evidence_block_count": 94,
+      "evidence_context_characters": 84396,
+      "evidence_context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+      "evidence_context_sha256": "93cf5f1e311f74faf52197079b3bacc714d22ec01190b50eceef1fe574c09358",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 72942,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "extracted_pages": 22,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "ce469016f9918ff61b5b0601409109dc7e4e7fa69b557141deeb378cda96da87",
+        "source_url": "https://arxiv.org/pdf/2610.35374",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 72900,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Gift: Representation Geometry Matters For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 528,
+          "supplied_characters": 528
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1522,
+          "supplied_characters": 1522
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 882,
+          "supplied_characters": 882
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3435,
+          "supplied_characters": 3435
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 3891,
+          "supplied_characters": 3891
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 2345,
+          "supplied_characters": 2345
+        },
+        {
+          "heading": "Preliminaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1576,
+          "supplied_characters": 1576
+        },
+        {
+          "heading": "Preliminaries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1127,
+          "supplied_characters": 1127
+        },
+        {
+          "heading": "Fine-Tuning With Geometric Preservation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1966,
+          "supplied_characters": 1966
+        },
+        {
+          "heading": "Channel-Level Scaling For Stable Feature Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 2192,
+          "supplied_characters": 2192
+        },
+        {
+          "heading": "Benchmarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 1442,
+          "supplied_characters": 1442
+        },
+        {
+          "heading": "Benchmarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 3283,
+          "supplied_characters": 3283
+        },
+        {
+          "heading": "Comparison With State-Of-The-Art S-Dgod Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 1482,
+          "supplied_characters": 1482
+        },
+        {
+          "heading": "Comparison With State-Of-The-Art S-Dgod Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 13,
+          "source_characters": 149,
+          "supplied_characters": 149
+        },
+        {
+          "heading": "Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 14,
+          "source_characters": 752,
+          "supplied_characters": 752
+        },
+        {
+          "heading": "Ablation Studies And Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 3441,
+          "supplied_characters": 3441
+        },
+        {
+          "heading": "Ablation Studies And Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 2553,
+          "supplied_characters": 2553
+        },
+        {
+          "heading": "Visualization Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 1177,
+          "supplied_characters": 1177
+        },
+        {
+          "heading": "Visualization Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 1178,
+          "supplied_characters": 1178
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 19,
+          "source_characters": 868,
+          "supplied_characters": 868
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 828,
+          "supplied_characters": 828
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 2968,
+          "supplied_characters": 2968
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 3582,
+          "supplied_characters": 3582
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 3802,
+          "supplied_characters": 3802
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 3667,
+          "supplied_characters": 3667
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1392,
+          "supplied_characters": 1392
+        },
+        {
+          "heading": "Appendix: Additional Ablation Studies And Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 26,
+          "source_characters": 42,
+          "supplied_characters": 42
+        },
+        {
+          "heading": "Appendix: Position Of The Hr Matrices Within The Transformer Blocks.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 27,
+          "source_characters": 1819,
+          "supplied_characters": 1819
+        },
+        {
+          "heading": "Appendix: Performance On Domain Generalized Semantic Segmentation.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 1057,
+          "supplied_characters": 1057
+        },
+        {
+          "heading": "Appendix: Performance Across Different Vfms.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 285,
+          "supplied_characters": 285
+        },
+        {
+          "heading": "Appendix: Performance Across Different Vfms.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 30,
+          "source_characters": 1664,
+          "supplied_characters": 1664
+        },
+        {
+          "heading": "We Adopt The Data Augmentation Pipeline Provided By Mmdetection And Use Only The Basic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1028,
+          "supplied_characters": 1028
+        },
+        {
+          "heading": "Appendix: Detailed Results On Diverse Weather Dataset.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 940,
+          "supplied_characters": 940
+        },
+        {
+          "heading": "Appendix: Detailed Results On Diverse Weather Dataset.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 2717,
+          "supplied_characters": 2717
+        },
+        {
+          "heading": "Appendix: Results On Daytime-Sunny.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 691,
+          "supplied_characters": 691
+        },
+        {
+          "heading": "Appendix: Results On Unseen Target Domain.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 608,
+          "supplied_characters": 608
+        },
+        {
+          "heading": "Appendix: Results On Unseen Target Domain.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 3586,
+          "supplied_characters": 3586
+        },
+        {
+          "heading": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 998,
+          "supplied_characters": 998
+        },
+        {
+          "heading": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 2150,
+          "supplied_characters": 2150
+        },
+        {
+          "heading": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 616,
+          "supplied_characters": 616
+        },
+        {
+          "heading": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 1871,
+          "supplied_characters": 1871
+        }
+      ],
+      "selected_characters": 72100,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "selected_sections": [
+        {
+          "characters": 528,
+          "heading": "Gift: Representation Geometry Matters For",
+          "page": 1
+        },
+        {
+          "characters": 1522,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 882,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3435,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 3891,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 2345,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 1576,
+          "heading": "Preliminaries",
+          "page": 4
+        },
+        {
+          "characters": 1127,
+          "heading": "Preliminaries",
+          "page": 5
+        },
+        {
+          "characters": 1966,
+          "heading": "Fine-Tuning With Geometric Preservation",
+          "page": 5
+        },
+        {
+          "characters": 2192,
+          "heading": "Channel-Level Scaling For Stable Feature Selection",
+          "page": 6
+        },
+        {
+          "characters": 1442,
+          "heading": "Benchmarks",
+          "page": 6
+        },
+        {
+          "characters": 3283,
+          "heading": "Benchmarks",
+          "page": 7
+        },
+        {
+          "characters": 1482,
+          "heading": "Comparison With State-Of-The-Art S-Dgod Methods",
+          "page": 7
+        },
+        {
+          "characters": 149,
+          "heading": "Comparison With State-Of-The-Art S-Dgod Methods",
+          "page": 8
+        },
+        {
+          "characters": 752,
+          "heading": "Methods",
+          "page": 8
+        },
+        {
+          "characters": 3441,
+          "heading": "Ablation Studies And Analysis",
+          "page": 8
+        },
+        {
+          "characters": 2553,
+          "heading": "Ablation Studies And Analysis",
+          "page": 9
+        },
+        {
+          "characters": 1177,
+          "heading": "Visualization Results",
+          "page": 9
+        },
+        {
+          "characters": 1178,
+          "heading": "Visualization Results",
+          "page": 10
+        },
+        {
+          "characters": 868,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 828,
+          "heading": "Back matter: Acknowledgments",
+          "page": 11
+        },
+        {
+          "characters": 2968,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3582,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 3802,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 3667,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 1392,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 42,
+          "heading": "Appendix: Additional Ablation Studies And Analysis",
+          "page": 16
+        },
+        {
+          "characters": 1819,
+          "heading": "Appendix: Position Of The Hr Matrices Within The Transformer Blocks.",
+          "page": 16
+        },
+        {
+          "characters": 1057,
+          "heading": "Appendix: Performance On Domain Generalized Semantic Segmentation.",
+          "page": 16
+        },
+        {
+          "characters": 285,
+          "heading": "Appendix: Performance Across Different Vfms.",
+          "page": 16
+        },
+        {
+          "characters": 1664,
+          "heading": "Appendix: Performance Across Different Vfms.",
+          "page": 17
+        },
+        {
+          "characters": 1028,
+          "heading": "We Adopt The Data Augmentation Pipeline Provided By Mmdetection And Use Only The Basic",
+          "page": 17
+        },
+        {
+          "characters": 940,
+          "heading": "Appendix: Detailed Results On Diverse Weather Dataset.",
+          "page": 17
+        },
+        {
+          "characters": 2717,
+          "heading": "Appendix: Detailed Results On Diverse Weather Dataset.",
+          "page": 18
+        },
+        {
+          "characters": 691,
+          "heading": "Appendix: Results On Daytime-Sunny.",
+          "page": 18
+        },
+        {
+          "characters": 608,
+          "heading": "Appendix: Results On Unseen Target Domain.",
+          "page": 18
+        },
+        {
+          "characters": 3586,
+          "heading": "Appendix: Results On Unseen Target Domain.",
+          "page": 19
+        },
+        {
+          "characters": 998,
+          "heading": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+          "page": 19
+        },
+        {
+          "characters": 2150,
+          "heading": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+          "page": 20
+        },
+        {
+          "characters": 616,
+          "heading": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+          "page": 21
+        },
+        {
+          "characters": 1871,
+          "heading": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+          "page": 22
+        }
+      ],
+      "selected_text_sha256": "e5dfc5c5e0f006cdbe6bcd5f969a15de446747eb032724abff6d04a89955569f",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "ce469016f9918ff61b5b0601409109dc7e4e7fa69b557141deeb378cda96da87",
+      "source_pages": 22,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0002"
+        ],
+        "excerpt": "Single-Domain Generalized Object Detection (S-DGOD) aims to generalize from a\nsingle source domain to unseen domains under distribution shifts. Existing efforts\nmainly focus on simulating unseen domains or suppressing domain-specific factors.\nHowever, they largely overlook the intrinsic generalization capability embedded\nin Vision Foundation Models (VFMs). In this work, we show that unconstrained\nfine-tuning disrupts the geometric structure of pre-trained representations, which\nencodes domain-invariant semantics. Motivated by this, we proposeGeometric-\nInvarianceFine-Tuning (GIFT), a geometric-aware fine-tuning method for VFMs.\nSpecifically, we introduce a series of learnable Householder reflections to the\npre-trained weights to encourage geometry-consistent adaptation under domain\nshift. In addition, we propose a lightweight channel-wise scaling to facilitate\neffective task-specific ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2c80cde8e9c452d8a0df8058038e8f6a746aafd1e0386fc2b9c07316f03c2cdc",
+            "evidence_id": "E71ba411cc6508cef-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Single-Domain Generalized Object Detection (S-DGOD) aims to generalize from a\nsingle source domain to unseen domains under distribution shifts. Existing efforts\nmainly focus on simulating unseen domains or suppressing domain-specific factors.\nHowever, they largely overlook the intrinsic generalization capability embedded\nin Vision Foundation Models (VFMs). In this work, we show that unconstrained\nfine-tuning disrupts the geometric structure of pre-trained representations, which\nencodes domain-invariant semantics. Motivated by this, we proposeGeometric-\nInvarianceFine-Tuning (GIFT), a geometric-aware fine-tuning method for VFMs.\nSpecifically, we introduce a series of learnable Householder reflections to the\npre-trained weights to encourage geometry-consistent adaptation under domain\nshift. In addition, we propose a lightweight channel-wise scaling to facilitate\neffective task-specific "
+              }
+            ],
+            "text": "Single-Domain Generalized Object Detection (S-DGOD) aims to generalize from a\nsingle source domain to unseen domains under distribution shifts. Existing efforts\nmainly focus on simulating unseen domains or suppressing domain-specific factors.\nHowever, they largely overlook the intrinsic generalization capability embedded\nin Vision Foundation Models (VFMs). In this work, we show that unconstrained\nfine-tuning disrupts the geometric structure of pre-trained representations, which\nencodes domain-invariant semantics. Motivated by this, we proposeGeometric-\nInvarianceFine-Tuning (GIFT), a geometric-aware fine-tuning method for VFMs.\nSpecifically, we introduce a series of learnable Householder reflections to the\npre-trained weights to encourage geometry-consistent adaptation under domain\nshift. In addition, we propose a lightweight channel-wise scaling to facilitate\neffective task-specific "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0003"
+        ],
+        "excerpt": "adaptation. Extensive experiments demonstrate that GIFT\noutperforms state-of-the-art (SOTA) approaches on two S-DGOD benchmarks.\nNotably, by introducing fewer than 1% additional trainable parameters into the\nfrozen backbone, the proposed method achieves improvements of +7.9% and +2.9%\nin mPC over the previous SOTA on the Cityscapes-C and Diverse Weather Dataset,\nrespectively. This finding highlights that preserving representation geometry is\ncrucial for robust domain generalization, establishing GIFT as a principled and\nefficient solution to domain shift. The code is available at https://github.com/\nzhangyin1996/GIFT.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "da425039039a33e3f9d12afb0a5dbe6811c4c642d5416f882e07bbbdf499e86c",
+            "evidence_id": "E71ba411cc6508cef-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1522,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 897,
+                "text": "adaptation. Extensive experiments demonstrate that GIFT\noutperforms state-of-the-art (SOTA) approaches on two S-DGOD benchmarks.\nNotably, by introducing fewer than 1% additional trainable parameters into the\nfrozen backbone, the proposed method achieves improvements of +7.9% and +2.9%\nin mPC over the previous SOTA on the Cityscapes-C and Diverse Weather Dataset,\nrespectively. This finding highlights that preserving representation geometry is\ncrucial for robust domain generalization, establishing GIFT as a principled and\nefficient solution to domain shift. The code is available at https://github.com/\nzhangyin1996/GIFT."
+              }
+            ],
+            "text": "adaptation. Extensive experiments demonstrate that GIFT\noutperforms state-of-the-art (SOTA) approaches on two S-DGOD benchmarks.\nNotably, by introducing fewer than 1% additional trainable parameters into the\nfrozen backbone, the proposed method achieves improvements of +7.9% and +2.9%\nin mPC over the previous SOTA on the Cityscapes-C and Diverse Weather Dataset,\nrespectively. This finding highlights that preserving representation geometry is\ncrucial for robust domain generalization, establishing GIFT as a principled and\nefficient solution to domain shift. The code is available at https://github.com/\nzhangyin1996/GIFT."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0018"
+        ],
+        "excerpt": "geometry-preserving adaptation mechanism. A Householder reflection refers to a linear transfor-\nmation that performs a reflection with respect to a hyperplane defined by a unit vectorv\u2208R d, referred\nto as the Householder vector. The corresponding Householder matrix H\u2208R d\u00d7d is constructed as\nfollows:\nH=I\u22122vv \u22a4 subject to\u2225v\u2225 2 = 1(6)\nwhere I denotes the identity matrix and superscript \u22a4 indicates the transpose of a matrix. A key\ngeometric property of H is itsorthogonality( H \u22a4H=I ), which ensures that the transformation is\nan isometry. For any two feature vectorsx 1,x 2, the transformation preserves their inner product:\n\u27e8Hx 1,Hx 2\u27e9= (Hx 1)\u22a4(Hx 2) =x \u22a41 H \u22a4Hx 2 =x \u22a41 x2 (7)\n4\nInput\nDetection Head\nMulti\n-\nHead \nAttention\nVFM  Block\nOutput\nN \n\u00d7\nRotation\n \nMatrix\n(a)\n \nFine\n-\nTuning\n \nwith Geometric Preservation \n(b)\n \nChannel\n-\nLevel Scaling\n...\ns\n1\n \n>\n \n1\ns\n2\n \n< \n1\ns\n3\n \n>\n \n1\ns\nC\n \n> ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Preliminaries",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ca4e8d9f510fef014490fed96189e0e5f5fc335d66ce7aa6a6d7610d763db876",
+            "evidence_id": "E71ba411cc6508cef-B0018",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Preliminaries",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1576,
+                "page": 4,
+                "section": "Preliminaries",
+                "section_index": 6,
+                "start": 895,
+                "text": "geometry-preserving adaptation mechanism. A Householder reflection refers to a linear transfor-\nmation that performs a reflection with respect to a hyperplane defined by a unit vectorv\u2208R d, referred\nto as the Householder vector. The corresponding Householder matrix H\u2208R d\u00d7d is constructed as\nfollows:\nH=I\u22122vv \u22a4 subject to\u2225v\u2225 2 = 1(6)\nwhere I denotes the identity matrix and superscript \u22a4 indicates the transpose of a matrix. A key\ngeometric property of H is itsorthogonality( H \u22a4H=I ), which ensures that the transformation is\nan isometry. For any two feature vectorsx 1,x 2, the transformation preserves their inner product:\n\u27e8Hx 1,Hx 2\u27e9= (Hx 1)\u22a4(Hx 2) =x \u22a41 H \u22a4Hx 2 =x \u22a41 x2 (7)\n4"
+              },
+              {
+                "end": 214,
+                "page": 5,
+                "section": "Preliminaries",
+                "section_index": 7,
+                "start": 0,
+                "text": "Input\nDetection Head\nMulti\n-\nHead \nAttention\nVFM  Block\nOutput\nN \n\u00d7\nRotation\n \nMatrix\n(a)\n \nFine\n-\nTuning\n \nwith Geometric Preservation \n(b)\n \nChannel\n-\nLevel Scaling\n...\ns\n1\n \n>\n \n1\ns\n2\n \n< \n1\ns\n3\n \n>\n \n1\ns\nC\n \n> "
+              }
+            ],
+            "text": "geometry-preserving adaptation mechanism. A Householder reflection refers to a linear transfor-\nmation that performs a reflection with respect to a hyperplane defined by a unit vectorv\u2208R d, referred\nto as the Householder vector. The corresponding Householder matrix H\u2208R d\u00d7d is constructed as\nfollows:\nH=I\u22122vv \u22a4 subject to\u2225v\u2225 2 = 1(6)\nwhere I denotes the identity matrix and superscript \u22a4 indicates the transpose of a matrix. A key\ngeometric property of H is itsorthogonality( H \u22a4H=I ), which ensures that the transformation is\nan isometry. For any two feature vectorsx 1,x 2, the transformation preserves their inner product:\n\u27e8Hx 1,Hx 2\u27e9= (Hx 1)\u22a4(Hx 2) =x \u22a41 H \u22a4Hx 2 =x \u22a41 x2 (7)\n4\nInput\nDetection Head\nMulti\n-\nHead \nAttention\nVFM  Block\nOutput\nN \n\u00d7\nRotation\n \nMatrix\n(a)\n \nFine\n-\nTuning\n \nwith Geometric Preservation \n(b)\n \nChannel\n-\nLevel Scaling\n...\ns\n1\n \n>\n \n1\ns\n2\n \n< \n1\ns\n3\n \n>\n \n1\ns\nC\n \n> "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0021"
+        ],
+        "excerpt": "As shown in Fig. 3, for a frozen VFM withN Transformer blocks, we propose a geometric-preserving\nfine-tuning strategy that adapts the model while maintaining the intrinsic geometry of the pre-trained\nrepresentation space. Instead of directly updating the backbone weights, we introduce a learnable\nrotation matrix R, defined as the product of r Householder Reflection (HR) matrices, and integrate it\ninto the frozen weights of theQ,K,V, andOutputprojection layers. The transformed weights Wrot\ncan be represented as:\nWrot =RW=\n rY\ni=1\nHi\n!\nW=\n rY\ni=1\n(I\u22122v iv\u22a4i )\n!\nW,(8)\nwhere Hi =I\u22122v iv\u22a4i denotes the i-th HR matrix and vi is a learnable unit vector. W denotes the\noriginal frozen projection weights. Since each HR matrix Hi is orthogonal, the product of orthogonal\nmatrices remains orthogonal, thus the transformation R also satisfies R\u22a4R=I . Consequently, for\nany pair of weight vectorsw 1 andw ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Fine-Tuning With Geometric Preservation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0c2b170ec47af242883654bd77431a429baa11254dc4230f4259158b7ef894a4",
+            "evidence_id": "E71ba411cc6508cef-B0021",
+            "pages": [
+              5
+            ],
+            "section": "Fine-Tuning With Geometric Preservation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 5,
+                "section": "Fine-Tuning With Geometric Preservation",
+                "section_index": 8,
+                "start": 0,
+                "text": "As shown in Fig. 3, for a frozen VFM withN Transformer blocks, we propose a geometric-preserving\nfine-tuning strategy that adapts the model while maintaining the intrinsic geometry of the pre-trained\nrepresentation space. Instead of directly updating the backbone weights, we introduce a learnable\nrotation matrix R, defined as the product of r Householder Reflection (HR) matrices, and integrate it\ninto the frozen weights of theQ,K,V, andOutputprojection layers. The transformed weights Wrot\ncan be represented as:\nWrot =RW=\n rY\ni=1\nHi\n!\nW=\n rY\ni=1\n(I\u22122v iv\u22a4i )\n!\nW,(8)\nwhere Hi =I\u22122v iv\u22a4i denotes the i-th HR matrix and vi is a learnable unit vector. W denotes the\noriginal frozen projection weights. Since each HR matrix Hi is orthogonal, the product of orthogonal\nmatrices remains orthogonal, thus the transformation R also satisfies R\u22a4R=I . Consequently, for\nany pair of weight vectorsw 1 andw "
+              }
+            ],
+            "text": "As shown in Fig. 3, for a frozen VFM withN Transformer blocks, we propose a geometric-preserving\nfine-tuning strategy that adapts the model while maintaining the intrinsic geometry of the pre-trained\nrepresentation space. Instead of directly updating the backbone weights, we introduce a learnable\nrotation matrix R, defined as the product of r Householder Reflection (HR) matrices, and integrate it\ninto the frozen weights of theQ,K,V, andOutputprojection layers. The transformed weights Wrot\ncan be represented as:\nWrot =RW=\n rY\ni=1\nHi\n!\nW=\n rY\ni=1\n(I\u22122v iv\u22a4i )\n!\nW,(8)\nwhere Hi =I\u22122v iv\u22a4i denotes the i-th HR matrix and vi is a learnable unit vector. W denotes the\noriginal frozen projection weights. Since each HR matrix Hi is orthogonal, the product of orthogonal\nmatrices remains orthogonal, thus the transformation R also satisfies R\u22a4R=I . Consequently, for\nany pair of weight vectorsw 1 andw "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0022"
+        ],
+        "excerpt": "2, their inner product is preserved:\n\u27e8Rw1,Rw 2\u27e9=\u27e8w 1,w 2\u27e9.(9)\nIn particular, the\u2113 2 norm and pairwise distances remain invariant:\n\u2225Rw\u22252 =\u2225w\u2225 2,\u2225Rw 1 \u2212Rw 2\u22252 =\u2225w 1 \u2212w 2\u22252.(10)\nThese properties ensure that R rotates the parameter space without altering its geometry, thereby\npreserving the structural stability of the pre-trained model and mitigating distortions from direct\nweight updates.\nIn practice, directly applying R may induce large changes in the pre-trained weights. To ensure\nstable optimization, we employ a residual update mechanism. Specifically, we first compute the\ndifference between the rotated and original weights, and then modulate this residual using a learnable\ngate vector g\u2208R Dout, initialized to all ones so that all output channels contribute equally at the start\nof training:\n\u2206Wmod =g\u2299\u2206W=g\u2299(W rot \u2212W) =g\u2299(RW\u2212W)(11)\nwhere \u2299 denotes element-wise multiplication across columns ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Fine-Tuning With Geometric Preservation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1999bfca4ce2268cf783ed7068ebf8584f5ef401e8d02d5d946f769040eb5432",
+            "evidence_id": "E71ba411cc6508cef-B0022",
+            "pages": [
+              5
+            ],
+            "section": "Fine-Tuning With Geometric Preservation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1800,
+                "page": 5,
+                "section": "Fine-Tuning With Geometric Preservation",
+                "section_index": 8,
+                "start": 900,
+                "text": "2, their inner product is preserved:\n\u27e8Rw1,Rw 2\u27e9=\u27e8w 1,w 2\u27e9.(9)\nIn particular, the\u2113 2 norm and pairwise distances remain invariant:\n\u2225Rw\u22252 =\u2225w\u2225 2,\u2225Rw 1 \u2212Rw 2\u22252 =\u2225w 1 \u2212w 2\u22252.(10)\nThese properties ensure that R rotates the parameter space without altering its geometry, thereby\npreserving the structural stability of the pre-trained model and mitigating distortions from direct\nweight updates.\nIn practice, directly applying R may induce large changes in the pre-trained weights. To ensure\nstable optimization, we employ a residual update mechanism. Specifically, we first compute the\ndifference between the rotated and original weights, and then modulate this residual using a learnable\ngate vector g\u2208R Dout, initialized to all ones so that all output channels contribute equally at the start\nof training:\n\u2206Wmod =g\u2299\u2206W=g\u2299(W rot \u2212W) =g\u2299(RW\u2212W)(11)\nwhere \u2299 denotes element-wise multiplication across columns "
+              }
+            ],
+            "text": "2, their inner product is preserved:\n\u27e8Rw1,Rw 2\u27e9=\u27e8w 1,w 2\u27e9.(9)\nIn particular, the\u2113 2 norm and pairwise distances remain invariant:\n\u2225Rw\u22252 =\u2225w\u2225 2,\u2225Rw 1 \u2212Rw 2\u22252 =\u2225w 1 \u2212w 2\u22252.(10)\nThese properties ensure that R rotates the parameter space without altering its geometry, thereby\npreserving the structural stability of the pre-trained model and mitigating distortions from direct\nweight updates.\nIn practice, directly applying R may induce large changes in the pre-trained weights. To ensure\nstable optimization, we employ a residual update mechanism. Specifically, we first compute the\ndifference between the rotated and original weights, and then modulate this residual using a learnable\ngate vector g\u2208R Dout, initialized to all ones so that all output channels contribute equally at the start\nof training:\n\u2206Wmod =g\u2299\u2206W=g\u2299(W rot \u2212W) =g\u2299(RW\u2212W)(11)\nwhere \u2299 denotes element-wise multiplication across columns "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0024"
+        ],
+        "excerpt": "Preserving the pretrained semantic structure is necessary but not sufficient for single-domain gener-\nalization. To identify task-specific features that are consistent under source-domain variations, we\nintroduce a learnable channel-wise scaling matrixS, initialized to zeros:\nWsca =SW,S= diag(s 1, . . . , sC)(12)\nwhere Wsca denotes the re-scaled weights, and each diagonal element of S modulates the importance\nof a single feature channel.\nTo measure feature stability, we adopt gradient consistency as a proxy. Let fi(x) denote the output of\nthei-th feature channel. The gradient of the detection lossLwith respect to the scalings i is:\nG= \u2202L\u2202f \u2032i fi(x), f \u2032i (x) =s ifi(x)(13)\nThe expected gradient over the source domain can be viewed as an indicator of how consistently\nchannel i contributes across intra-domain variations. Channels that consistently contribute to loss\nreduction exhibit ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Channel-Level Scaling For Stable Feature Selection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dbe4b16751acf693534804f5270d984f45255a4eeb2220a0921163fcfdf492cf",
+            "evidence_id": "E71ba411cc6508cef-B0024",
+            "pages": [
+              6
+            ],
+            "section": "Channel-Level Scaling For Stable Feature Selection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 6,
+                "section": "Channel-Level Scaling For Stable Feature Selection",
+                "section_index": 9,
+                "start": 0,
+                "text": "Preserving the pretrained semantic structure is necessary but not sufficient for single-domain gener-\nalization. To identify task-specific features that are consistent under source-domain variations, we\nintroduce a learnable channel-wise scaling matrixS, initialized to zeros:\nWsca =SW,S= diag(s 1, . . . , sC)(12)\nwhere Wsca denotes the re-scaled weights, and each diagonal element of S modulates the importance\nof a single feature channel.\nTo measure feature stability, we adopt gradient consistency as a proxy. Let fi(x) denote the output of\nthei-th feature channel. The gradient of the detection lossLwith respect to the scalings i is:\nG= \u2202L\u2202f \u2032i fi(x), f \u2032i (x) =s ifi(x)(13)\nThe expected gradient over the source domain can be viewed as an indicator of how consistently\nchannel i contributes across intra-domain variations. Channels that consistently contribute to loss\nreduction exhibit "
+              }
+            ],
+            "text": "Preserving the pretrained semantic structure is necessary but not sufficient for single-domain gener-\nalization. To identify task-specific features that are consistent under source-domain variations, we\nintroduce a learnable channel-wise scaling matrixS, initialized to zeros:\nWsca =SW,S= diag(s 1, . . . , sC)(12)\nwhere Wsca denotes the re-scaled weights, and each diagonal element of S modulates the importance\nof a single feature channel.\nTo measure feature stability, we adopt gradient consistency as a proxy. Let fi(x) denote the output of\nthei-th feature channel. The gradient of the detection lossLwith respect to the scalings i is:\nG= \u2202L\u2202f \u2032i fi(x), f \u2032i (x) =s ifi(x)(13)\nThe expected gradient over the source domain can be viewed as an indicator of how consistently\nchannel i contributes across intra-domain variations. Channels that consistently contribute to loss\nreduction exhibit "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0025"
+        ],
+        "excerpt": "non-zero expected gradients, while spurious channels tend to produce gradients\nwith high variance but near-zero mean. During stochastic optimization, gradients are accumulated\nover iterations:\nsTi =s 0i \u2212\u03b7\nTX\nt=1\nGti (14)\nwhere \u03b7 denotes the learning rate. Under SGD optimization, channels with consistently aligned\ngradients tend to accumulate larger updates over training iterations, while unstable channels with\nhighly varying gradients are less consistently reinforced.\nThe final updated weights Wnew are obtained by adding the scaled residual to the original weights,\ntogether with a diagonal scaling branch to allow per-channel adjustment:\nWnew =W+\u00b5\u2206W mod +\u03bbW sca (15)\nwhere the balancing coefficients\u00b5and\u03bbare implemented as learnable scalar parameters.\nImportantly, the orthogonal rotation branch primarily preserves relational geometric structure, such\nas pairwise angular relationships and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Channel-Level Scaling For Stable Feature Selection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3f14bcfbcf3bc02e1a7e2a1cf78d2b0b7b116b44b3b139f2be1c3bbb9c31ce59",
+            "evidence_id": "E71ba411cc6508cef-B0025",
+            "pages": [
+              6
+            ],
+            "section": "Channel-Level Scaling For Stable Feature Selection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 6,
+                "section": "Channel-Level Scaling For Stable Feature Selection",
+                "section_index": 9,
+                "start": 894,
+                "text": "non-zero expected gradients, while spurious channels tend to produce gradients\nwith high variance but near-zero mean. During stochastic optimization, gradients are accumulated\nover iterations:\nsTi =s 0i \u2212\u03b7\nTX\nt=1\nGti (14)\nwhere \u03b7 denotes the learning rate. Under SGD optimization, channels with consistently aligned\ngradients tend to accumulate larger updates over training iterations, while unstable channels with\nhighly varying gradients are less consistently reinforced.\nThe final updated weights Wnew are obtained by adding the scaled residual to the original weights,\ntogether with a diagonal scaling branch to allow per-channel adjustment:\nWnew =W+\u00b5\u2206W mod +\u03bbW sca (15)\nwhere the balancing coefficients\u00b5and\u03bbare implemented as learnable scalar parameters.\nImportantly, the orthogonal rotation branch primarily preserves relational geometric structure, such\nas pairwise angular relationships and "
+              }
+            ],
+            "text": "non-zero expected gradients, while spurious channels tend to produce gradients\nwith high variance but near-zero mean. During stochastic optimization, gradients are accumulated\nover iterations:\nsTi =s 0i \u2212\u03b7\nTX\nt=1\nGti (14)\nwhere \u03b7 denotes the learning rate. Under SGD optimization, channels with consistently aligned\ngradients tend to accumulate larger updates over training iterations, while unstable channels with\nhighly varying gradients are less consistently reinforced.\nThe final updated weights Wnew are obtained by adding the scaled residual to the original weights,\ntogether with a diagonal scaling branch to allow per-channel adjustment:\nWnew =W+\u00b5\u2206W mod +\u03bbW sca (15)\nwhere the balancing coefficients\u00b5and\u03bbare implemented as learnable scalar parameters.\nImportantly, the orthogonal rotation branch primarily preserves relational geometric structure, such\nas pairwise angular relationships and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0027"
+        ],
+        "excerpt": "Datasets and Evaluation Metrics.Following existing S-DGOD methods [ 63, 29, 30], we evaluate\nour method on two benchmarks: the Diverse Weather Dataset (DWD) [51] and Cityscapes-C [35].\nDWDcomprises five scenarios: Daytime-Sunny (DS.), Daytime-Foggy (DF.), Dusk-Rainy (DR.),\nNight-Rainy (NR.), and Night-Sunny (NS.).Cityscapes-Cis a benchmark for evaluating detection\nrobustness under common corruptions. It generates 15 corruption types with 5 severity levels.\nFor evaluation, we report mean Average Precision (mAP50) to measure detection performance and\nmean Performance under Corruption (mPC) to evaluate robustness. For DWD [51], mPC is computed\nas the average mAP over four weather conditions, while for Cityscapes-C [35], it averages mAP50\nacross all corruption types and severity levels.\nImplementation Details.We use DINOv2-Large [ 37] as the default VFM, while results with other\nVFMs are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarks",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "72bde4efeeb898fc7c2f0c7bcf80f5ca123ece9d5c14b68a4db62b6518da2bfa",
+            "evidence_id": "E71ba411cc6508cef-B0027",
+            "pages": [
+              6
+            ],
+            "section": "Benchmarks",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 6,
+                "section": "Benchmarks",
+                "section_index": 10,
+                "start": 0,
+                "text": "Datasets and Evaluation Metrics.Following existing S-DGOD methods [ 63, 29, 30], we evaluate\nour method on two benchmarks: the Diverse Weather Dataset (DWD) [51] and Cityscapes-C [35].\nDWDcomprises five scenarios: Daytime-Sunny (DS.), Daytime-Foggy (DF.), Dusk-Rainy (DR.),\nNight-Rainy (NR.), and Night-Sunny (NS.).Cityscapes-Cis a benchmark for evaluating detection\nrobustness under common corruptions. It generates 15 corruption types with 5 severity levels.\nFor evaluation, we report mean Average Precision (mAP50) to measure detection performance and\nmean Performance under Corruption (mPC) to evaluate robustness. For DWD [51], mPC is computed\nas the average mAP over four weather conditions, while for Cityscapes-C [35], it averages mAP50\nacross all corruption types and severity levels.\nImplementation Details.We use DINOv2-Large [ 37] as the default VFM, while results with other\nVFMs are "
+              }
+            ],
+            "text": "Datasets and Evaluation Metrics.Following existing S-DGOD methods [ 63, 29, 30], we evaluate\nour method on two benchmarks: the Diverse Weather Dataset (DWD) [51] and Cityscapes-C [35].\nDWDcomprises five scenarios: Daytime-Sunny (DS.), Daytime-Foggy (DF.), Dusk-Rainy (DR.),\nNight-Rainy (NR.), and Night-Sunny (NS.).Cityscapes-Cis a benchmark for evaluating detection\nrobustness under common corruptions. It generates 15 corruption types with 5 severity levels.\nFor evaluation, we report mean Average Precision (mAP50) to measure detection performance and\nmean Performance under Corruption (mPC) to evaluate robustness. For DWD [51], mPC is computed\nas the average mAP over four weather conditions, while for Cityscapes-C [35], it averages mAP50\nacross all corruption types and severity levels.\nImplementation Details.We use DINOv2-Large [ 37] as the default VFM, while results with other\nVFMs are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0028"
+        ],
+        "excerpt": "reported in Appendix A.3. For DWD, we employ Faster R-CNN [41] and DINO [60] (a\nDETR-based detector) as detection heads, respectively. For Cityscapes-C, Faster R-CNN is used as\nthe detection head. All models are trained for 12 epochs using the AdamW optimizer with \u03b21 = 0.9\nand \u03b22 = 0.999, a learning rate of 1\u00d710 \u22124, and a batch size of 2. By default, the number of HR\nmatrices is set to r= 6 , and only the last n= 16 Transformer blocks are fine-tuned. All experiments\nare implemented inMMDetection[5] and conducted on a single RTX 3090 GPU.\n6\nTable 2: Comparison with SOTA methods on Cityscapes-C [35]. mPC denotes the average perfor-\nmance across 15 different corruption types. For fairness, we adopt Faster R-CNN [41] as the detection\nhead. 'Baseline' denotes a fully frozen DINOv2 [37] backbone with only the Faster R-CNN detection\nhead. '\u2020' denotes unreported results re-implemented with the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarks",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3b2c89511cefa8912f78c45ec80e6bd49ee47baeef062605aa8ea5d2f523801b",
+            "evidence_id": "E71ba411cc6508cef-B0028",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Benchmarks",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1442,
+                "page": 6,
+                "section": "Benchmarks",
+                "section_index": 10,
+                "start": 897,
+                "text": "reported in Appendix A.3. For DWD, we employ Faster R-CNN [41] and DINO [60] (a\nDETR-based detector) as detection heads, respectively. For Cityscapes-C, Faster R-CNN is used as\nthe detection head. All models are trained for 12 epochs using the AdamW optimizer with \u03b21 = 0.9\nand \u03b22 = 0.999, a learning rate of 1\u00d710 \u22124, and a batch size of 2. By default, the number of HR\nmatrices is set to r= 6 , and only the last n= 16 Transformer blocks are fine-tuned. All experiments\nare implemented inMMDetection[5] and conducted on a single RTX 3090 GPU.\n6"
+              },
+              {
+                "end": 353,
+                "page": 7,
+                "section": "Benchmarks",
+                "section_index": 11,
+                "start": 0,
+                "text": "Table 2: Comparison with SOTA methods on Cityscapes-C [35]. mPC denotes the average perfor-\nmance across 15 different corruption types. For fairness, we adopt Faster R-CNN [41] as the detection\nhead. 'Baseline' denotes a fully frozen DINOv2 [37] backbone with only the Faster R-CNN detection\nhead. '\u2020' denotes unreported results re-implemented with the "
+              }
+            ],
+            "text": "reported in Appendix A.3. For DWD, we employ Faster R-CNN [41] and DINO [60] (a\nDETR-based detector) as detection heads, respectively. For Cityscapes-C, Faster R-CNN is used as\nthe detection head. All models are trained for 12 epochs using the AdamW optimizer with \u03b21 = 0.9\nand \u03b22 = 0.999, a learning rate of 1\u00d710 \u22124, and a batch size of 2. By default, the number of HR\nmatrices is set to r= 6 , and only the last n= 16 Transformer blocks are fine-tuned. All experiments\nare implemented inMMDetection[5] and conducted on a single RTX 3090 GPU.\n6\nTable 2: Comparison with SOTA methods on Cityscapes-C [35]. mPC denotes the average perfor-\nmance across 15 different corruption types. For fairness, we adopt Faster R-CNN [41] as the detection\nhead. 'Baseline' denotes a fully frozen DINOv2 [37] backbone with only the Faster R-CNN detection\nhead. '\u2020' denotes unreported results re-implemented with the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0030"
+        ],
+        "excerpt": "33.1 13.7 25.2 31.5 39.5 42.5 38.9 42.1 35.9 31.8 29.3\nSoMA\u2020 [59] 53.5 16.4 19.2 15.3 39.4 31.4 37.7 15.0 28.2 36.7 47.2 51.5 45.9 50.9 42.3 36.3 34.2\nCauvis [30] 54.6 16.8 19.8 15.2 41.4 34.0 39.2 15.8 29.8 36.7 48.8 53.0 49.5 52.0 43.9 38.8 35.6\nGIFT (Ours) 62.7 23.2 25.1 20.6 49.8 43.2 48.0 19.2 39.8 44.2 58.2 61.4 58.0 61.0 53.3 48.1 43.5\nTable 3: Comparison with SOTA methods on\nDWD [51]. mPC denotes the average performance\nacross 4 different adverse weather conditions.\nMethods DS. DF. DR. NR. NS. mPC\nTraditional S-DGOD\nIN [21] 43.9 28.5 22.8 12.6 29.6 23.4\nSW [38] 50.6 30.8 26.3 13.7 33.4 26.1\nISW [7] 51.3 31.8 25.9 14.1 33.2 26.3\nFRCNN [41] 56.2 33.5 28.0 14.2 35.8 27.9\nCDSD [51] 56.1 33.5 28.2 16.6 36.6 28.7\nOA-DG [29] 55.8 38.3 33.9 16.8 38.0 31.8\nClipGap [47] 52.5 38.5 32.3 18.7 36.9 31.6\nG-NAS [52] 56.1 36.4 35.1 17.4 45.0 33.5\nPDD [31] 53.6 39.1 33.7 19.2 38.5 32.6\nUFR [34] ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarks",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "37fd4f8cdd976ed3bf887bda5d3c6e53e9648f904496242bc13feedf5dddd8c3",
+            "evidence_id": "E71ba411cc6508cef-B0030",
+            "pages": [
+              7
+            ],
+            "section": "Benchmarks",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2150,
+                "page": 7,
+                "section": "Benchmarks",
+                "section_index": 11,
+                "start": 1252,
+                "text": "33.1 13.7 25.2 31.5 39.5 42.5 38.9 42.1 35.9 31.8 29.3\nSoMA\u2020 [59] 53.5 16.4 19.2 15.3 39.4 31.4 37.7 15.0 28.2 36.7 47.2 51.5 45.9 50.9 42.3 36.3 34.2\nCauvis [30] 54.6 16.8 19.8 15.2 41.4 34.0 39.2 15.8 29.8 36.7 48.8 53.0 49.5 52.0 43.9 38.8 35.6\nGIFT (Ours) 62.7 23.2 25.1 20.6 49.8 43.2 48.0 19.2 39.8 44.2 58.2 61.4 58.0 61.0 53.3 48.1 43.5\nTable 3: Comparison with SOTA methods on\nDWD [51]. mPC denotes the average performance\nacross 4 different adverse weather conditions.\nMethods DS. DF. DR. NR. NS. mPC\nTraditional S-DGOD\nIN [21] 43.9 28.5 22.8 12.6 29.6 23.4\nSW [38] 50.6 30.8 26.3 13.7 33.4 26.1\nISW [7] 51.3 31.8 25.9 14.1 33.2 26.3\nFRCNN [41] 56.2 33.5 28.0 14.2 35.8 27.9\nCDSD [51] 56.1 33.5 28.2 16.6 36.6 28.7\nOA-DG [29] 55.8 38.3 33.9 16.8 38.0 31.8\nClipGap [47] 52.5 38.5 32.3 18.7 36.9 31.6\nG-NAS [52] 56.1 36.4 35.1 17.4 45.0 33.5\nPDD [31] 53.6 39.1 33.7 19.2 38.5 32.6\nUFR [34] "
+              }
+            ],
+            "text": "33.1 13.7 25.2 31.5 39.5 42.5 38.9 42.1 35.9 31.8 29.3\nSoMA\u2020 [59] 53.5 16.4 19.2 15.3 39.4 31.4 37.7 15.0 28.2 36.7 47.2 51.5 45.9 50.9 42.3 36.3 34.2\nCauvis [30] 54.6 16.8 19.8 15.2 41.4 34.0 39.2 15.8 29.8 36.7 48.8 53.0 49.5 52.0 43.9 38.8 35.6\nGIFT (Ours) 62.7 23.2 25.1 20.6 49.8 43.2 48.0 19.2 39.8 44.2 58.2 61.4 58.0 61.0 53.3 48.1 43.5\nTable 3: Comparison with SOTA methods on\nDWD [51]. mPC denotes the average performance\nacross 4 different adverse weather conditions.\nMethods DS. DF. DR. NR. NS. mPC\nTraditional S-DGOD\nIN [21] 43.9 28.5 22.8 12.6 29.6 23.4\nSW [38] 50.6 30.8 26.3 13.7 33.4 26.1\nISW [7] 51.3 31.8 25.9 14.1 33.2 26.3\nFRCNN [41] 56.2 33.5 28.0 14.2 35.8 27.9\nCDSD [51] 56.1 33.5 28.2 16.6 36.6 28.7\nOA-DG [29] 55.8 38.3 33.9 16.8 38.0 31.8\nClipGap [47] 52.5 38.5 32.3 18.7 36.9 31.6\nG-NAS [52] 56.1 36.4 35.1 17.4 45.0 33.5\nPDD [31] 53.6 39.1 33.7 19.2 38.5 32.6\nUFR [34] "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0031"
+        ],
+        "excerpt": "58.6 39.6 33.2 19.2 40.8 33.2\nParameter-Efficient Fine-Tuning S-DGOD\nDetection Head: Faster R-CNN[41]\nSoMA [59] 49.3 38.2 37.9 24.5 41.9 35.6\nCauvis [30] 72.2 52.3 61.3 44.1 58.3 54.1\nGIFT (Ours) 73.9 54.9 64.4 47.1 61.7 57.0\nDetection Head: DETR-based DINO[60]\nSoMA [59] 69.4 51.0 59.3 47.6 59.3 54.3\nCauvis [30] 73.7 56.5 64.6 47.6 61.2 57.5\nGIFT (Ours) 76.0 58.3 65.9 49.9 63.3 59.4\nTable 4: Ablation study of geometric preser-\nvation (GP) and channel-wise scaling (CS) on\nDWD, using DINO [60] as the detection head.\nGP CS DF. DR. NR. NS. mPC\n- - 53.5 60.8 42.6 59.5 54.1\n-\u2713 57.1 62.9 46.8 60.7 56.9\n\u2713- 57.8 64.2 49.7 62.5 58.6\n\u2713 \u2713 58.3 65.9 49.9 63.3 59.4\nTable 5: Comparison of different PEFT methods\non DINOv2 with DETR-based [60] detector.\nMethods DF. DR. NR. NS. mPC\nFrozen 53.5 60.8 42.6 59.5 54.1\nAdaFormer [6] 54.6 61.1 42.1 59.1 54.2\nLoRA [20] 54.5 61.2 44.7 59.3 54.9\nVPT [22] 54.6 60.6 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarks",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "10143431a0ca6285fb446b5c0a34fa452144779d49f4a7d99ca4025d3a853e4c",
+            "evidence_id": "E71ba411cc6508cef-B0031",
+            "pages": [
+              7
+            ],
+            "section": "Benchmarks",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3050,
+                "page": 7,
+                "section": "Benchmarks",
+                "section_index": 11,
+                "start": 2150,
+                "text": "58.6 39.6 33.2 19.2 40.8 33.2\nParameter-Efficient Fine-Tuning S-DGOD\nDetection Head: Faster R-CNN[41]\nSoMA [59] 49.3 38.2 37.9 24.5 41.9 35.6\nCauvis [30] 72.2 52.3 61.3 44.1 58.3 54.1\nGIFT (Ours) 73.9 54.9 64.4 47.1 61.7 57.0\nDetection Head: DETR-based DINO[60]\nSoMA [59] 69.4 51.0 59.3 47.6 59.3 54.3\nCauvis [30] 73.7 56.5 64.6 47.6 61.2 57.5\nGIFT (Ours) 76.0 58.3 65.9 49.9 63.3 59.4\nTable 4: Ablation study of geometric preser-\nvation (GP) and channel-wise scaling (CS) on\nDWD, using DINO [60] as the detection head.\nGP CS DF. DR. NR. NS. mPC\n- - 53.5 60.8 42.6 59.5 54.1\n-\u2713 57.1 62.9 46.8 60.7 56.9\n\u2713- 57.8 64.2 49.7 62.5 58.6\n\u2713 \u2713 58.3 65.9 49.9 63.3 59.4\nTable 5: Comparison of different PEFT methods\non DINOv2 with DETR-based [60] detector.\nMethods DF. DR. NR. NS. mPC\nFrozen 53.5 60.8 42.6 59.5 54.1\nAdaFormer [6] 54.6 61.1 42.1 59.1 54.2\nLoRA [20] 54.5 61.2 44.7 59.3 54.9\nVPT [22] 54.6 60.6 "
+              }
+            ],
+            "text": "58.6 39.6 33.2 19.2 40.8 33.2\nParameter-Efficient Fine-Tuning S-DGOD\nDetection Head: Faster R-CNN[41]\nSoMA [59] 49.3 38.2 37.9 24.5 41.9 35.6\nCauvis [30] 72.2 52.3 61.3 44.1 58.3 54.1\nGIFT (Ours) 73.9 54.9 64.4 47.1 61.7 57.0\nDetection Head: DETR-based DINO[60]\nSoMA [59] 69.4 51.0 59.3 47.6 59.3 54.3\nCauvis [30] 73.7 56.5 64.6 47.6 61.2 57.5\nGIFT (Ours) 76.0 58.3 65.9 49.9 63.3 59.4\nTable 4: Ablation study of geometric preser-\nvation (GP) and channel-wise scaling (CS) on\nDWD, using DINO [60] as the detection head.\nGP CS DF. DR. NR. NS. mPC\n- - 53.5 60.8 42.6 59.5 54.1\n-\u2713 57.1 62.9 46.8 60.7 56.9\n\u2713- 57.8 64.2 49.7 62.5 58.6\n\u2713 \u2713 58.3 65.9 49.9 63.3 59.4\nTable 5: Comparison of different PEFT methods\non DINOv2 with DETR-based [60] detector.\nMethods DF. DR. NR. NS. mPC\nFrozen 53.5 60.8 42.6 59.5 54.1\nAdaFormer [6] 54.6 61.1 42.1 59.1 54.2\nLoRA [20] 54.5 61.2 44.7 59.3 54.9\nVPT [22] 54.6 60.6 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0032"
+        ],
+        "excerpt": "45.7 60.9 55.5\nRein [50] 55.0 62.4 45.2 59.4 55.5\nSPT [49] 55.7 62.6 46.6 60.6 56.4\nCausalTune [61] 57.1 63.8 47.2 61.4 57.4\nSoMA [59] 51.0 59.3 47.6 59.3 54.3\nCauvis [30] 56.5 64.6 47.6 61.2 57.5\nGIFT (Ours) 58.3 65.9 49.9 63.3 59.4",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmarks",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0ef9e5f8df36479b2f5332906c26fe13bc6134d52f85e18b419f962dcaf4cd4a",
+            "evidence_id": "E71ba411cc6508cef-B0032",
+            "pages": [
+              7
+            ],
+            "section": "Benchmarks",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3283,
+                "page": 7,
+                "section": "Benchmarks",
+                "section_index": 11,
+                "start": 3050,
+                "text": "45.7 60.9 55.5\nRein [50] 55.0 62.4 45.2 59.4 55.5\nSPT [49] 55.7 62.6 46.6 60.6 56.4\nCausalTune [61] 57.1 63.8 47.2 61.4 57.4\nSoMA [59] 51.0 59.3 47.6 59.3 54.3\nCauvis [30] 56.5 64.6 47.6 61.2 57.5\nGIFT (Ours) 58.3 65.9 49.9 63.3 59.4"
+              }
+            ],
+            "text": "45.7 60.9 55.5\nRein [50] 55.0 62.4 45.2 59.4 55.5\nSPT [49] 55.7 62.6 46.6 60.6 56.4\nCausalTune [61] 57.1 63.8 47.2 61.4 57.4\nSoMA [59] 51.0 59.3 47.6 59.3 54.3\nCauvis [30] 56.5 64.6 47.6 61.2 57.5\nGIFT (Ours) 58.3 65.9 49.9 63.3 59.4"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0036"
+        ],
+        "excerpt": "Effectiveness of Each Component.We present detailed ablation experiments on geometric preser-\nvation (GP) and channel-wise scaling (CS) across both benchmarks, shown in Table 4 for DWD\nand Fig. 5 for Cityscapes-C. The results show that both GP and GIFT (GP combined with CS)\nimprove over the baseline across all target domains (4 for DWD and 15 for Cityscapes-C). Notably,\nlarger gains on Cityscapes-C highlight their effectiveness under more challenging domain shifts.\nWe also notice that CS further improves performance particularly when built upon a geometrically\nstable representation, underscoring the importance of preserving stable geometric representations for\ndownstream task-specific adaptation.\nTrainable Parameter Efficiency.To evaluate the training efficiency of GIFT, we compare the\nefficiency-effectiveness trade-offs of different methods built upon DINOv2-Large. As shown in\nFig. 4, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Studies And Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "28e3bd637fe1916e9ed33a336dfc985bddddc8c47f30aa3904a8f10091108beb",
+            "evidence_id": "E71ba411cc6508cef-B0036",
+            "pages": [
+              8
+            ],
+            "section": "Ablation Studies And Analysis",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 8,
+                "section": "Ablation Studies And Analysis",
+                "section_index": 15,
+                "start": 0,
+                "text": "Effectiveness of Each Component.We present detailed ablation experiments on geometric preser-\nvation (GP) and channel-wise scaling (CS) across both benchmarks, shown in Table 4 for DWD\nand Fig. 5 for Cityscapes-C. The results show that both GP and GIFT (GP combined with CS)\nimprove over the baseline across all target domains (4 for DWD and 15 for Cityscapes-C). Notably,\nlarger gains on Cityscapes-C highlight their effectiveness under more challenging domain shifts.\nWe also notice that CS further improves performance particularly when built upon a geometrically\nstable representation, underscoring the importance of preserving stable geometric representations for\ndownstream task-specific adaptation.\nTrainable Parameter Efficiency.To evaluate the training efficiency of GIFT, we compare the\nefficiency-effectiveness trade-offs of different methods built upon DINOv2-Large. As shown in\nFig. 4, "
+              }
+            ],
+            "text": "Effectiveness of Each Component.We present detailed ablation experiments on geometric preser-\nvation (GP) and channel-wise scaling (CS) across both benchmarks, shown in Table 4 for DWD\nand Fig. 5 for Cityscapes-C. The results show that both GP and GIFT (GP combined with CS)\nimprove over the baseline across all target domains (4 for DWD and 15 for Cityscapes-C). Notably,\nlarger gains on Cityscapes-C highlight their effectiveness under more challenging domain shifts.\nWe also notice that CS further improves performance particularly when built upon a geometrically\nstable representation, underscoring the importance of preserving stable geometric representations for\ndownstream task-specific adaptation.\nTrainable Parameter Efficiency.To evaluate the training efficiency of GIFT, we compare the\nefficiency-effectiveness trade-offs of different methods built upon DINOv2-Large. As shown in\nFig. 4, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0070"
+        ],
+        "excerpt": "We additionally evaluate GIFT on the domain generalized semantic segmentation (DGSS) task. We\nuse Rein [50] as baseline and following previous methods [50, 2, 59, 61], we compare our method\nwith existing DGSS methods on two setups: (1) Cityscapes (C.) [8] \u2192 BDD100K (B.) [56], Mapillary\n(M.) [36] and (2) GTA5 (G.) [42] \u2192 (C.), (B.), (M.). As shown in Table 9, our method achieves the\nbest results in 3 out of 5 cases and the second-best results in 1 case compared to VFM-based methods.\nThese results demonstrate that the proposed geometry-preserving fine-tuning strategy generalizes\nbeyond object detection and is also effective for domain generalized semantic segmentation.\nTable 9: DGSS performance of our proposed GIFT. (C.), (B.), (M.), and (G.) denote Cityscapes,\nBDD100K, Mapillary and GTA5 datasets, respectively.\nMethods C.\u2192B. C.\u2192M. G.\u2192C. G.\u2192B. G.\u2192M.\nRein [50] 63.54 74.03 66.40 60.40 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Performance On Domain Generalized Semantic Segmentation.",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5acf43131ea654f431b257da5cf7d075ad358c07137cea685f2444e1f4d08b9e",
+            "evidence_id": "E71ba411cc6508cef-B0070",
+            "pages": [
+              16
+            ],
+            "section": "Appendix: Performance On Domain Generalized Semantic Segmentation.",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 16,
+                "section": "Appendix: Performance On Domain Generalized Semantic Segmentation.",
+                "section_index": 28,
+                "start": 0,
+                "text": "We additionally evaluate GIFT on the domain generalized semantic segmentation (DGSS) task. We\nuse Rein [50] as baseline and following previous methods [50, 2, 59, 61], we compare our method\nwith existing DGSS methods on two setups: (1) Cityscapes (C.) [8] \u2192 BDD100K (B.) [56], Mapillary\n(M.) [36] and (2) GTA5 (G.) [42] \u2192 (C.), (B.), (M.). As shown in Table 9, our method achieves the\nbest results in 3 out of 5 cases and the second-best results in 1 case compared to VFM-based methods.\nThese results demonstrate that the proposed geometry-preserving fine-tuning strategy generalizes\nbeyond object detection and is also effective for domain generalized semantic segmentation.\nTable 9: DGSS performance of our proposed GIFT. (C.), (B.), (M.), and (G.) denote Cityscapes,\nBDD100K, Mapillary and GTA5 datasets, respectively.\nMethods C.\u2192B. C.\u2192M. G.\u2192C. G.\u2192B. G.\u2192M.\nRein [50] 63.54 74.03 66.40 60.40 "
+              }
+            ],
+            "text": "We additionally evaluate GIFT on the domain generalized semantic segmentation (DGSS) task. We\nuse Rein [50] as baseline and following previous methods [50, 2, 59, 61], we compare our method\nwith existing DGSS methods on two setups: (1) Cityscapes (C.) [8] \u2192 BDD100K (B.) [56], Mapillary\n(M.) [36] and (2) GTA5 (G.) [42] \u2192 (C.), (B.), (M.). As shown in Table 9, our method achieves the\nbest results in 3 out of 5 cases and the second-best results in 1 case compared to VFM-based methods.\nThese results demonstrate that the proposed geometry-preserving fine-tuning strategy generalizes\nbeyond object detection and is also effective for domain generalized semantic segmentation.\nTable 9: DGSS performance of our proposed GIFT. (C.), (B.), (M.), and (G.) denote Cityscapes,\nBDD100K, Mapillary and GTA5 datasets, respectively.\nMethods C.\u2192B. C.\u2192M. G.\u2192C. G.\u2192B. G.\u2192M.\nRein [50] 63.54 74.03 66.40 60.40 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0072"
+        ],
+        "excerpt": "We further validate the proposed method using three different VFMs,i.e., EV A02-Large [15, 14],\nSAM-Huge [28], and DINOv2-Large [ 37]. As shown in Table 10, our method achieves strong\nperformance across all three VFM backbones, demonstrating strong generalization. Specifically, our\n16\nTable 10: Performance of different VFMs with a DETR-based [60] detection head. \"Avg.\" indicates\nthe mean mAP across the five conditions.\nVFMsFine-tune Method DS. DF. DR. NR. NS. Avg. mPC\nEV A02-Large [15, 14] Freeze 63.0 45.2 48.6 27.3 38.8 44.6 40.0\n+ Rein [50] 68.3 49.2 54.8 32.2 48.1 50.5(+5.9\u2191) 46.1(+6.1\u2191)\n+ Cauvis [30] 69.7 50.2 57.6 34.2 48.1 52.0(+7.4\u2191) 47.5(+7.5\u2191)\n+ Ours 71.6 51.3 59.2 35.9 49.2 53.4(+8.8\u2191) 48.9(+8.9\u2191)\nSAM-Huge [28] Freeze 69.7 50.5 52.5 28.8 52.9 50.9 46.2\n+ Rein [50] 70.0 51.9 54.0 30.9 54.4 52.2(+1.3\u2191) 47.8(+1.6\u2191)\n+ Cauvis [30] 72.2 53.755.8 31.9 55.753.9 (+3.0\u2191) 49.3(+3.1\u2191)\n+ ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16,
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Performance Across Different Vfms.",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "af6e7d0bd3799c4ccb893fe41b380fc65dc946531972849664d3d87d408bb6bc",
+            "evidence_id": "E71ba411cc6508cef-B0072",
+            "pages": [
+              16,
+              17
+            ],
+            "section": "Appendix: Performance Across Different Vfms.",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 285,
+                "page": 16,
+                "section": "Appendix: Performance Across Different Vfms.",
+                "section_index": 29,
+                "start": 0,
+                "text": "We further validate the proposed method using three different VFMs,i.e., EV A02-Large [15, 14],\nSAM-Huge [28], and DINOv2-Large [ 37]. As shown in Table 10, our method achieves strong\nperformance across all three VFM backbones, demonstrating strong generalization. Specifically, our\n16"
+              },
+              {
+                "end": 612,
+                "page": 17,
+                "section": "Appendix: Performance Across Different Vfms.",
+                "section_index": 30,
+                "start": 0,
+                "text": "Table 10: Performance of different VFMs with a DETR-based [60] detection head. \"Avg.\" indicates\nthe mean mAP across the five conditions.\nVFMsFine-tune Method DS. DF. DR. NR. NS. Avg. mPC\nEV A02-Large [15, 14] Freeze 63.0 45.2 48.6 27.3 38.8 44.6 40.0\n+ Rein [50] 68.3 49.2 54.8 32.2 48.1 50.5(+5.9\u2191) 46.1(+6.1\u2191)\n+ Cauvis [30] 69.7 50.2 57.6 34.2 48.1 52.0(+7.4\u2191) 47.5(+7.5\u2191)\n+ Ours 71.6 51.3 59.2 35.9 49.2 53.4(+8.8\u2191) 48.9(+8.9\u2191)\nSAM-Huge [28] Freeze 69.7 50.5 52.5 28.8 52.9 50.9 46.2\n+ Rein [50] 70.0 51.9 54.0 30.9 54.4 52.2(+1.3\u2191) 47.8(+1.6\u2191)\n+ Cauvis [30] 72.2 53.755.8 31.9 55.753.9 (+3.0\u2191) 49.3(+3.1\u2191)\n+ "
+              }
+            ],
+            "text": "We further validate the proposed method using three different VFMs,i.e., EV A02-Large [15, 14],\nSAM-Huge [28], and DINOv2-Large [ 37]. As shown in Table 10, our method achieves strong\nperformance across all three VFM backbones, demonstrating strong generalization. Specifically, our\n16\nTable 10: Performance of different VFMs with a DETR-based [60] detection head. \"Avg.\" indicates\nthe mean mAP across the five conditions.\nVFMsFine-tune Method DS. DF. DR. NR. NS. Avg. mPC\nEV A02-Large [15, 14] Freeze 63.0 45.2 48.6 27.3 38.8 44.6 40.0\n+ Rein [50] 68.3 49.2 54.8 32.2 48.1 50.5(+5.9\u2191) 46.1(+6.1\u2191)\n+ Cauvis [30] 69.7 50.2 57.6 34.2 48.1 52.0(+7.4\u2191) 47.5(+7.5\u2191)\n+ Ours 71.6 51.3 59.2 35.9 49.2 53.4(+8.8\u2191) 48.9(+8.9\u2191)\nSAM-Huge [28] Freeze 69.7 50.5 52.5 28.8 52.9 50.9 46.2\n+ Rein [50] 70.0 51.9 54.0 30.9 54.4 52.2(+1.3\u2191) 47.8(+1.6\u2191)\n+ Cauvis [30] 72.2 53.755.8 31.9 55.753.9 (+3.0\u2191) 49.3(+3.1\u2191)\n+ "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0073"
+        ],
+        "excerpt": "Ours 72.853.6 56.2 33.1 55.7 54.3(+3.4\u2191) 49.7(+3.5\u2191)\nDINOv2-Large [37] Freeze 71.2 53.5 60.8 42.6 59.5 57.5 54.1\n+ Rein [50] 72.8 55.0 62.4 45.2 59.4 59.0(+1.5\u2191) 55.5(+1.4\u2191)\n+ Cauvis [30] 73.7 56.5 64.6 47.6 61.2 60.7(+3.2\u2191) 57.5(+3.4\u2191)\n+ Ours 76.0 58.3 65.9 49.9 63.3 62.7(+5.2\u2191) 59.4(+5.3\u2191)\nmethod achieves 48.9% mPC on the EV A02 [14] backbone, surpassing frozen EV A02 by a large\nmargin (+8.9%). Moreover, it brings a +5.3% improvement on the DINOv2 [ 37] backbone and\nachieves a satisfactory performance (49.7% mPC) on SAM [28]. In addition, our method still has\nsignificant advantages over the current best method Cauvis [30], achieving improvements of +1.4%,\n+0.4%, and +1.9% on EV A02, SAM and DINOv2 backbones, respectively. These results indicate that\nour method enhances the performance of different VFMs and provides stable improvements across\ndiverse weather conditions, highlighting ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Performance Across Different Vfms.",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "65825a691788d20bb3ff86520e669e17730217d1b61a37521849021d35b58919",
+            "evidence_id": "E71ba411cc6508cef-B0073",
+            "pages": [
+              17
+            ],
+            "section": "Appendix: Performance Across Different Vfms.",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1509,
+                "page": 17,
+                "section": "Appendix: Performance Across Different Vfms.",
+                "section_index": 30,
+                "start": 612,
+                "text": "Ours 72.853.6 56.2 33.1 55.7 54.3(+3.4\u2191) 49.7(+3.5\u2191)\nDINOv2-Large [37] Freeze 71.2 53.5 60.8 42.6 59.5 57.5 54.1\n+ Rein [50] 72.8 55.0 62.4 45.2 59.4 59.0(+1.5\u2191) 55.5(+1.4\u2191)\n+ Cauvis [30] 73.7 56.5 64.6 47.6 61.2 60.7(+3.2\u2191) 57.5(+3.4\u2191)\n+ Ours 76.0 58.3 65.9 49.9 63.3 62.7(+5.2\u2191) 59.4(+5.3\u2191)\nmethod achieves 48.9% mPC on the EV A02 [14] backbone, surpassing frozen EV A02 by a large\nmargin (+8.9%). Moreover, it brings a +5.3% improvement on the DINOv2 [ 37] backbone and\nachieves a satisfactory performance (49.7% mPC) on SAM [28]. In addition, our method still has\nsignificant advantages over the current best method Cauvis [30], achieving improvements of +1.4%,\n+0.4%, and +1.9% on EV A02, SAM and DINOv2 backbones, respectively. These results indicate that\nour method enhances the performance of different VFMs and provides stable improvements across\ndiverse weather conditions, highlighting "
+              }
+            ],
+            "text": "Ours 72.853.6 56.2 33.1 55.7 54.3(+3.4\u2191) 49.7(+3.5\u2191)\nDINOv2-Large [37] Freeze 71.2 53.5 60.8 42.6 59.5 57.5 54.1\n+ Rein [50] 72.8 55.0 62.4 45.2 59.4 59.0(+1.5\u2191) 55.5(+1.4\u2191)\n+ Cauvis [30] 73.7 56.5 64.6 47.6 61.2 60.7(+3.2\u2191) 57.5(+3.4\u2191)\n+ Ours 76.0 58.3 65.9 49.9 63.3 62.7(+5.2\u2191) 59.4(+5.3\u2191)\nmethod achieves 48.9% mPC on the EV A02 [14] backbone, surpassing frozen EV A02 by a large\nmargin (+8.9%). Moreover, it brings a +5.3% improvement on the DINOv2 [ 37] backbone and\nachieves a satisfactory performance (49.7% mPC) on SAM [28]. In addition, our method still has\nsignificant advantages over the current best method Cauvis [30], achieving improvements of +1.4%,\n+0.4%, and +1.9% on EV A02, SAM and DINOv2 backbones, respectively. These results indicate that\nour method enhances the performance of different VFMs and provides stable improvements across\ndiverse weather conditions, highlighting "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0094"
+        ],
+        "excerpt": "domain generalization, where the\ndetector needs to generalize to both unseen domains and novel categories, remains unexplored. Ex-\ntending the proposed framework to open-vocabulary domain generalization is an important direction\nfor future work.\n22",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "473dca2bccc19afc1f351e5bdcd2c2424ab3ac33d56cd2b7e6fa3111b33af273",
+            "evidence_id": "E71ba411cc6508cef-B0094",
+            "pages": [
+              22
+            ],
+            "section": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1871,
+                "page": 22,
+                "section": "Appendix: Results On Cityscapes-C From Level-1 To Level-5.",
+                "section_index": 40,
+                "start": 1623,
+                "text": "domain generalization, where the\ndetector needs to generalize to both unseen domains and novel categories, remains unexplored. Ex-\ntending the proposed framework to open-vocabulary domain generalization is an important direction\nfor future work.\n22"
+              }
+            ],
+            "text": "domain generalization, where the\ndetector needs to generalize to both unseen domains and novel categories, remains unexplored. Ex-\ntending the proposed framework to open-vocabulary domain generalization is an important direction\nfor future work.\n22"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.35374",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.35374",
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline gains are measured on distinct unseen target domains and corruption severities with standard ground-truth labels, and the method is additionally validated across multiple VFM backbones and a semantic segmentation task.",
+          "final_evaluation_signal": "Standard mAP50 and mPC metrics computed on held-out unseen corruption and adverse-weather test sets using ground-truth annotations.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised detection losses computed only on the source-domain training sets (clean Cityscapes and Daytime-Sunny DWD), with no target-domain data or labels used during training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0002",
+          "E71ba411cc6508cef-B0003",
+          "E71ba411cc6508cef-B0018",
+          "E71ba411cc6508cef-B0021",
+          "E71ba411cc6508cef-B0022",
+          "E71ba411cc6508cef-B0024",
+          "E71ba411cc6508cef-B0025",
+          "E71ba411cc6508cef-B0027",
+          "E71ba411cc6508cef-B0028",
+          "E71ba411cc6508cef-B0030",
+          "E71ba411cc6508cef-B0031",
+          "E71ba411cc6508cef-B0032",
+          "E71ba411cc6508cef-B0036",
+          "E71ba411cc6508cef-B0070",
+          "E71ba411cc6508cef-B0072",
+          "E71ba411cc6508cef-B0073",
+          "E71ba411cc6508cef-B0094"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "ce469016f9918ff61b5b0601409109dc7e4e7fa69b557141deeb378cda96da87"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.35374",
+        "claim_evidence_alignment": "Reported experimental numbers directly substantiate the claimed improvements (+7.9% mPC on Cityscapes-C and +2.9% mPC on DWD over prior state-of-the-art) with less than 1% trainable parameters. Ablation studies support the isolated benefits of both geometric preservation and channel scaling.",
+        "context_id": "71ba411cc6508cef2d4c53cfb99684df1df0bfa8258947e63505f96eaa6056e9",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical evaluation is extensive, testing on standard S-DGOD benchmarks (Cityscapes-C and Diverse Weather Dataset) across multiple detector heads (Faster R-CNN and DINO) and multiple foundation models (DINOv2, EVA-02, SAM). Comparisons with existing PEFT methods and traditional generalization techniques show consistent gains in mPC and mAP50, corroborated by component ablations and domain-generalized semantic segmentation experiments.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely on standard ground-truth labeled test sets across distinct unseen domains and corruptions without target-domain adaptation during training.",
+          "final_evaluation_signal": "Standard object detection metrics (mAP50 and mPC) evaluated on held-out unseen adverse weather conditions and synthetic corruption datasets.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Standard supervised object detection losses computed exclusively on the source domain training set (e.g., clean Cityscapes or Daytime-Sunny DWD).",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E71ba411cc6508cef-B0002",
+          "E71ba411cc6508cef-B0003",
+          "E71ba411cc6508cef-B0018",
+          "E71ba411cc6508cef-B0021",
+          "E71ba411cc6508cef-B0022",
+          "E71ba411cc6508cef-B0024",
+          "E71ba411cc6508cef-B0025",
+          "E71ba411cc6508cef-B0027",
+          "E71ba411cc6508cef-B0028",
+          "E71ba411cc6508cef-B0030",
+          "E71ba411cc6508cef-B0031",
+          "E71ba411cc6508cef-B0032",
+          "E71ba411cc6508cef-B0036",
+          "E71ba411cc6508cef-B0070",
+          "E71ba411cc6508cef-B0072",
+          "E71ba411cc6508cef-B0073",
+          "E71ba411cc6508cef-B0094"
+        ],
+        "limitations": "The authors explicitly address limitations, noting performance sensitivity when pre-trained representations are misaligned with downstream domains (such as infrared or remote sensing), residual GPU memory footprints from large backbones, and the restriction to closed-vocabulary detection setups.",
+        "method_assessment": "The methodology is mathematically grounded and clearly specified, detailing how orthogonal Householder matrices preserve inner products and vector distances alongside residual gating and learnable diagonal channel scaling. Implementation specifics regarding target layers, rotation rank, trainable block numbers, and optimization settings are comprehensively documented.",
+        "quality_rationale": "The manuscript presents a rigorous, well-motivated parameter-efficient fine-tuning technique backed by formal linear algebra foundations and thorough benchmarking against relevant baselines. The experimental validation is transparent, ablated across architectures and datasets, and clearly demonstrates stated performance gains without methodological circularity.",
+        "scoped_contribution": "The paper introduces GIFT (Geometric-Invariance Fine-Tuning), a parameter-efficient fine-tuning approach for Vision Foundation Models applied to single-domain generalized object detection (S-DGOD). GIFT couples learnable Householder reflections on frozen attention weights with channel-wise scaling to preserve pre-trained representation geometry while adapting task features.",
+        "source_content_hash": "ce469016f9918ff61b5b0601409109dc7e4e7fa69b557141deeb378cda96da87"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous, well-motivated parameter-efficient fine-tuning technique backed by formal linear algebra foundations and thorough benchmarking against relevant baselines. The experimental validation is transparent, ablated across architectures and datasets, and clearly demonstrates stated performance gains without methodological circularity.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "ce469016f9918ff61b5b0601409109dc7e4e7fa69b557141deeb378cda96da87",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly address limitations, noting performance sensitivity when pre-trained representations are misaligned with downstream domains (such as infrared or remote sensing), residual GPU memory footprints from large backbones, and the restriction to closed-vocabulary detection setups."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -159,7 +1812,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

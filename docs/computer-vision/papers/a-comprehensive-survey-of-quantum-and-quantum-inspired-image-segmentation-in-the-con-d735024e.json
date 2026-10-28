@@ -28,7 +28,7 @@
   "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-21 15:58:19",
   "notified_date": "2026-09-21",
@@ -39,7 +39,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:58:07",
-    "generated_at": "2026-10-27 09:40:15",
+    "generated_at": "2026-10-28 10:24:02",
     "last_seen_at": "2026-09-21 15:58:07",
     "metadata_sources": [
       "openalex"
@@ -98,36 +98,2300 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-28T10:21:38.176316+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "As a comprehensive review article, it provides an adequately described literature search protocol, sound taxonomical structuring, objective technical comparison across paradigms, and rigorous positioning relative to modern deep learning methods.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 165031,
+      "assessment_input_sha256": "b60c45b2af0a89d4c3ca9969bf556405f24697843216aa75b66fd7cb9671de64",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.21203/rs.3.rs-11007930/v1",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 161813,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 158433,
+      "evidence_block_count": 204,
+      "evidence_context_characters": 187075,
+      "evidence_context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+      "evidence_context_sha256": "02d63675132d110f6a01a623c8cbaf3242faf3d5b97fde38a1d48eae92c60804",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 161893,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "extracted_pages": 41,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "933cd50f7aec0fc587b9ed2fe3b94d67c9526cf6e041adc7050720e680c6e44c",
+        "source_url": "https://www.researchsquare.com/article/rs-11007930/latest.pdf",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 161813,
+      "scientific_body_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 1301,
+          "supplied_characters": 1301
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2717,
+          "supplied_characters": 2717
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1565,
+          "supplied_characters": 1565
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 4568,
+          "supplied_characters": 4568
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 2555,
+          "supplied_characters": 2555
+        },
+        {
+          "heading": "Non-/Q_Uantum Image Segmentation Paradigms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 475,
+          "supplied_characters": 475
+        },
+        {
+          "heading": "Classical Image Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 644,
+          "supplied_characters": 644
+        },
+        {
+          "heading": "Classical Image Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 237,
+          "supplied_characters": 237
+        },
+        {
+          "heading": "Thresholding. Thresholding Provides A Computationally Simple Approach For Separating Image Regions According",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1544,
+          "supplied_characters": 1544
+        },
+        {
+          "heading": "Clustering. Clustering Provides An Unsupervised Approach To Image Segmentation. Pixels Or Image Regions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 854,
+          "supplied_characters": 854
+        },
+        {
+          "heading": "Clustering. Clustering Provides An Unsupervised Approach To Image Segmentation. Pixels Or Image Regions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2133,
+          "supplied_characters": 2133
+        },
+        {
+          "heading": "Region-Based. Region-Based Segmentation Methods Identify Connected Image Regions According To Their Spatial Or",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 11,
+          "source_characters": 624,
+          "supplied_characters": 624
+        },
+        {
+          "heading": "Graph-Based. Graph-Based Segmentation Methods Represent An Image As A Graph, Where Pixels Are Conceptualized",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 499,
+          "supplied_characters": 499
+        },
+        {
+          "heading": "Energy Minimization. Energy Minimization Provides A General Framework For Image Segmentation By Formulating",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 346,
+          "supplied_characters": 346
+        },
+        {
+          "heading": "Limitations. Though Classical Methods Are Interpretable, Relatively Simple To Implement, And Computational",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 14,
+          "source_characters": 406,
+          "supplied_characters": 406
+        },
+        {
+          "heading": "Machine Learning Image Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 624,
+          "supplied_characters": 624
+        },
+        {
+          "heading": "Conditional Random Fields. Crfs Were Introduced By Lafferty Et Al. [ 121] As A Probabilistic Framework For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 657,
+          "supplied_characters": 657
+        },
+        {
+          "heading": "Support Vector Machines. Svms Are Supervised Learning Methods That Classify Data By Learning A Decision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 717,
+          "supplied_characters": 717
+        },
+        {
+          "heading": "Ensemble Learning. Ensemble Learning Combines Multiple Classi/F_Iers To Improve Segmentation Robustness And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 848,
+          "supplied_characters": 848
+        },
+        {
+          "heading": "Random Forests. Random Forests Are Ensemble Learning Methods Introduced By Breiman [ 28] That Combine",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 19,
+          "source_characters": 122,
+          "supplied_characters": 122
+        },
+        {
+          "heading": "Random Forests. Random Forests Are Ensemble Learning Methods Introduced By Breiman [ 28] That Combine",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 20,
+          "source_characters": 657,
+          "supplied_characters": 657
+        },
+        {
+          "heading": "Limitations. Although Machine Learning Methods Can Improve Segmentation Beyond Purely Handcrafted Classical",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 565,
+          "supplied_characters": 565
+        },
+        {
+          "heading": "Deep Learning Image Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1425,
+          "supplied_characters": 1425
+        },
+        {
+          "heading": "Encoder-Decoder Architecture. Another In/F_Luential Family Of Segmentation Models Is The Encoder-Decoder Archi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 1119,
+          "supplied_characters": 1119
+        },
+        {
+          "heading": "Encoder-Decoder Architecture. Another In/F_Luential Family Of Segmentation Models Is The Encoder-Decoder Archi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 24,
+          "source_characters": 1494,
+          "supplied_characters": 1494
+        },
+        {
+          "heading": "Foundation Models. Image Segmentation Can Also Be Performed Using Foundation Models. Foundation Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 912,
+          "supplied_characters": 912
+        },
+        {
+          "heading": "Limitations. Though Deep Learning Models Offer Considerable Advancements Over Traditional Image Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "limitations",
+          "section_index": 26,
+          "source_characters": 1655,
+          "supplied_characters": 1655
+        },
+        {
+          "heading": "Limitations. Though Deep Learning Models Offer Considerable Advancements Over Traditional Image Segmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "limitations",
+          "section_index": 27,
+          "source_characters": 330,
+          "supplied_characters": 330
+        },
+        {
+          "heading": "Taxonomy Of /Q_Uantum Image Segmentation Approaches",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 2600,
+          "supplied_characters": 2600
+        },
+        {
+          "heading": "Taxonomy Of /Q_Uantum Image Segmentation Approaches",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1629,
+          "supplied_characters": 1629
+        },
+        {
+          "heading": "Tensor Network",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1737,
+          "supplied_characters": 1737
+        },
+        {
+          "heading": "Hybrid /Q_Uantum-Classical",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 2861,
+          "supplied_characters": 2861
+        },
+        {
+          "heading": "Fully /Q_Uantum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 928,
+          "supplied_characters": 928
+        },
+        {
+          "heading": "Fully /Q_Uantum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 262,
+          "supplied_characters": 262
+        },
+        {
+          "heading": "Review Of /Q_Uantum Image Segmentation Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 34,
+          "source_characters": 160,
+          "supplied_characters": 160
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 35,
+          "source_characters": 3482,
+          "supplied_characters": 3482
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "methods",
+          "section_index": 36,
+          "source_characters": 2453,
+          "supplied_characters": 2453
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 37,
+          "source_characters": 2414,
+          "supplied_characters": 2414
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "methods",
+          "section_index": 38,
+          "source_characters": 1186,
+          "supplied_characters": 1186
+        },
+        {
+          "heading": "Clustering. Quantum-Inspired Clustering Methods Incorporate Quantum-Mechanical Or Probabilistic Principles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "methods",
+          "section_index": 39,
+          "source_characters": 1354,
+          "supplied_characters": 1354
+        },
+        {
+          "heading": "Neural Networks. Quantum-Inspired Neural Network Approaches Incorporate Quantum-Mechanical Concepts Into",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 1094,
+          "supplied_characters": 1094
+        },
+        {
+          "heading": "Neural Networks. Quantum-Inspired Neural Network Approaches Incorporate Quantum-Mechanical Concepts Into",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 3088,
+          "supplied_characters": 3088
+        },
+        {
+          "heading": "Tensor Network Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "methods",
+          "section_index": 42,
+          "source_characters": 478,
+          "supplied_characters": 478
+        },
+        {
+          "heading": "Tensor Network-Based Representation. Selvan Et Al. [ 181] Utilize Mps Tensor Networks To Perform Patch-Based",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 788,
+          "supplied_characters": 788
+        },
+        {
+          "heading": "Tensor Network Neural Architectures. Konar Et Al. [ 114] Introduce A Shallow, Self-Supervised 3D Tensor Neural",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "methods",
+          "section_index": 44,
+          "source_characters": 914,
+          "supplied_characters": 914
+        },
+        {
+          "heading": "Hybrid /Q_Uantum-Classical Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "methods",
+          "section_index": 45,
+          "source_characters": 1982,
+          "supplied_characters": 1982
+        },
+        {
+          "heading": "Hybrid /Q_Uantum-Classical Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "methods",
+          "section_index": 46,
+          "source_characters": 1352,
+          "supplied_characters": 1352
+        },
+        {
+          "heading": "Clustering. Hybrid Quantum-Classical Clustering Methods Combine Classical Feature Processing With Quantum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "methods",
+          "section_index": 47,
+          "source_characters": 853,
+          "supplied_characters": 853
+        },
+        {
+          "heading": "Hybrid Deep Learning Architectures. Hybrid Architecture-Integration Methods Incorporate Parameterized Quantum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "methods",
+          "section_index": 48,
+          "source_characters": 1602,
+          "supplied_characters": 1602
+        },
+        {
+          "heading": "Hybrid Deep Learning Architectures. Hybrid Architecture-Integration Methods Incorporate Parameterized Quantum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "methods",
+          "section_index": 49,
+          "source_characters": 1672,
+          "supplied_characters": 1672
+        },
+        {
+          "heading": "Fully /Q_Uantum Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "methods",
+          "section_index": 50,
+          "source_characters": 375,
+          "supplied_characters": 375
+        },
+        {
+          "heading": "Neqr-Based. Neqr-Based Methods Use Neqr To Encode Pixel Intensities And Spatial Information Into Quantum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "methods",
+          "section_index": 51,
+          "source_characters": 761,
+          "supplied_characters": 761
+        },
+        {
+          "heading": "Neqr-Based. Neqr-Based Methods Use Neqr To Encode Pixel Intensities And Spatial Information Into Quantum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "methods",
+          "section_index": 52,
+          "source_characters": 1175,
+          "supplied_characters": 1175
+        },
+        {
+          "heading": "Amplitude Encoding. Amplitude Encoding-Based Methods Encode Image Features Into The Amplitudes Of Quantum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "methods",
+          "section_index": 53,
+          "source_characters": 335,
+          "supplied_characters": 335
+        },
+        {
+          "heading": "Graph-Based. Graph-Based Methods Formulate Image Segmentation As An Optimization Problem Over A Graph",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "introduction",
+          "section_index": 54,
+          "source_characters": 1417,
+          "supplied_characters": 1417
+        },
+        {
+          "heading": "Positioning /Q_Uantum And /Q_Uantum-Inspired Approaches Within The Image Segmentation Landscape",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 1891,
+          "supplied_characters": 1891
+        },
+        {
+          "heading": "Positioning /Q_Uantum And /Q_Uantum-Inspired Approaches Within The Image Segmentation Landscape",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 1001,
+          "supplied_characters": 1001
+        },
+        {
+          "heading": "Supervision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 1427,
+          "supplied_characters": 1427
+        },
+        {
+          "heading": "Data Requirements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 1523,
+          "supplied_characters": 1523
+        },
+        {
+          "heading": "Data Requirements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 214,
+          "supplied_characters": 214
+        },
+        {
+          "heading": "Computational Requirements And Scalability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 3319,
+          "supplied_characters": 3319
+        },
+        {
+          "heading": "Interpretability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 471,
+          "supplied_characters": 471
+        },
+        {
+          "heading": "Interpretability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 1664,
+          "supplied_characters": 1664
+        },
+        {
+          "heading": "Hardware",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 2056,
+          "supplied_characters": 2056
+        },
+        {
+          "heading": "Application Fields",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 358,
+          "supplied_characters": 358
+        },
+        {
+          "heading": "Application Fields",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 65,
+          "source_characters": 773,
+          "supplied_characters": 773
+        },
+        {
+          "heading": "Comparison Of /Q_Uantum Image Segmentation Approaches",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 222,
+          "supplied_characters": 222
+        },
+        {
+          "heading": "Domain Distribution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 2187,
+          "supplied_characters": 2187
+        },
+        {
+          "heading": "Image Encoding And Representation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 2444,
+          "supplied_characters": 2444
+        },
+        {
+          "heading": "Mera [116]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 336,
+          "supplied_characters": 336
+        },
+        {
+          "heading": "Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "body",
+          "section_index": 70,
+          "source_characters": 1719,
+          "supplied_characters": 1719
+        },
+        {
+          "heading": "Research Gaps And Future Outlook",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "conclusion",
+          "section_index": 71,
+          "source_characters": 836,
+          "supplied_characters": 836
+        },
+        {
+          "heading": "Standardized Evaluation And Benchmarking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "results",
+          "section_index": 72,
+          "source_characters": 1162,
+          "supplied_characters": 1162
+        },
+        {
+          "heading": "Standardized Evaluation And Benchmarking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "results",
+          "section_index": 73,
+          "source_characters": 454,
+          "supplied_characters": 454
+        },
+        {
+          "heading": "Tcga-Gbm [178]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 853,
+          "supplied_characters": 853
+        },
+        {
+          "heading": "Cbis-Ddsm [176] [98]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "body",
+          "section_index": 75,
+          "source_characters": 1667,
+          "supplied_characters": 1667
+        },
+        {
+          "heading": "Cbis-Ddsm [176] [98]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "body",
+          "section_index": 76,
+          "source_characters": 542,
+          "supplied_characters": 542
+        },
+        {
+          "heading": "Image Representation And Encoding Bo/T_Tleneck",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "body",
+          "section_index": 77,
+          "source_characters": 3872,
+          "supplied_characters": 3872
+        },
+        {
+          "heading": "Image Representation And Encoding Bo/T_Tleneck",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "body",
+          "section_index": 78,
+          "source_characters": 180,
+          "supplied_characters": 180
+        },
+        {
+          "heading": "Scalability Towards Real-World Images",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "body",
+          "section_index": 79,
+          "source_characters": 1801,
+          "supplied_characters": 1801
+        },
+        {
+          "heading": "Reproducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "body",
+          "section_index": 80,
+          "source_characters": 1604,
+          "supplied_characters": 1604
+        },
+        {
+          "heading": "Integration With Deep Learning And Foundation Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 32,
+          "role": "body",
+          "section_index": 81,
+          "source_characters": 1367,
+          "supplied_characters": 1367
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 32,
+          "role": "conclusion",
+          "section_index": 82,
+          "source_characters": 2127,
+          "supplied_characters": 2127
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 33,
+          "role": "conclusion",
+          "section_index": 83,
+          "source_characters": 2444,
+          "supplied_characters": 2444
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 33,
+          "role": "body",
+          "section_index": 84,
+          "source_characters": 272,
+          "supplied_characters": 272
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 33,
+          "role": "body",
+          "section_index": 85,
+          "source_characters": 1543,
+          "supplied_characters": 1543
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "body",
+          "section_index": 86,
+          "source_characters": 6058,
+          "supplied_characters": 6058
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 87,
+          "source_characters": 5913,
+          "supplied_characters": 5913
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 88,
+          "source_characters": 5902,
+          "supplied_characters": 5902
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 37,
+          "role": "body",
+          "section_index": 89,
+          "source_characters": 6057,
+          "supplied_characters": 6057
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 38,
+          "role": "body",
+          "section_index": 90,
+          "source_characters": 6004,
+          "supplied_characters": 6004
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 39,
+          "role": "body",
+          "section_index": 91,
+          "source_characters": 6109,
+          "supplied_characters": 6109
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 40,
+          "role": "body",
+          "section_index": 92,
+          "source_characters": 5864,
+          "supplied_characters": 5864
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 41,
+          "role": "body",
+          "section_index": 93,
+          "source_characters": 3652,
+          "supplied_characters": 3652
+        }
+      ],
+      "selected_characters": 158433,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "selected_sections": [
+        {
+          "characters": 1301,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 2717,
+          "heading": "Abstract / front matter",
+          "page": 2
+        },
+        {
+          "characters": 1565,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 4568,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 2555,
+          "heading": "Introduction",
+          "page": 4
+        },
+        {
+          "characters": 475,
+          "heading": "Non-/Q_Uantum Image Segmentation Paradigms",
+          "page": 4
+        },
+        {
+          "characters": 644,
+          "heading": "Classical Image Segmentation",
+          "page": 4
+        },
+        {
+          "characters": 237,
+          "heading": "Classical Image Segmentation",
+          "page": 5
+        },
+        {
+          "characters": 1544,
+          "heading": "Thresholding. Thresholding Provides A Computationally Simple Approach For Separating Image Regions According",
+          "page": 5
+        },
+        {
+          "characters": 854,
+          "heading": "Clustering. Clustering Provides An Unsupervised Approach To Image Segmentation. Pixels Or Image Regions",
+          "page": 5
+        },
+        {
+          "characters": 2133,
+          "heading": "Clustering. Clustering Provides An Unsupervised Approach To Image Segmentation. Pixels Or Image Regions",
+          "page": 6
+        },
+        {
+          "characters": 624,
+          "heading": "Region-Based. Region-Based Segmentation Methods Identify Connected Image Regions According To Their Spatial Or",
+          "page": 6
+        },
+        {
+          "characters": 499,
+          "heading": "Graph-Based. Graph-Based Segmentation Methods Represent An Image As A Graph, Where Pixels Are Conceptualized",
+          "page": 6
+        },
+        {
+          "characters": 346,
+          "heading": "Energy Minimization. Energy Minimization Provides A General Framework For Image Segmentation By Formulating",
+          "page": 6
+        },
+        {
+          "characters": 406,
+          "heading": "Limitations. Though Classical Methods Are Interpretable, Relatively Simple To Implement, And Computational",
+          "page": 7
+        },
+        {
+          "characters": 624,
+          "heading": "Machine Learning Image Segmentation",
+          "page": 7
+        },
+        {
+          "characters": 657,
+          "heading": "Conditional Random Fields. Crfs Were Introduced By Lafferty Et Al. [ 121] As A Probabilistic Framework For",
+          "page": 7
+        },
+        {
+          "characters": 717,
+          "heading": "Support Vector Machines. Svms Are Supervised Learning Methods That Classify Data By Learning A Decision",
+          "page": 7
+        },
+        {
+          "characters": 848,
+          "heading": "Ensemble Learning. Ensemble Learning Combines Multiple Classi/F_Iers To Improve Segmentation Robustness And",
+          "page": 7
+        },
+        {
+          "characters": 122,
+          "heading": "Random Forests. Random Forests Are Ensemble Learning Methods Introduced By Breiman [ 28] That Combine",
+          "page": 7
+        },
+        {
+          "characters": 657,
+          "heading": "Random Forests. Random Forests Are Ensemble Learning Methods Introduced By Breiman [ 28] That Combine",
+          "page": 8
+        },
+        {
+          "characters": 565,
+          "heading": "Limitations. Although Machine Learning Methods Can Improve Segmentation Beyond Purely Handcrafted Classical",
+          "page": 8
+        },
+        {
+          "characters": 1425,
+          "heading": "Deep Learning Image Segmentation",
+          "page": 8
+        },
+        {
+          "characters": 1119,
+          "heading": "Encoder-Decoder Architecture. Another In/F_Luential Family Of Segmentation Models Is The Encoder-Decoder Archi-",
+          "page": 8
+        },
+        {
+          "characters": 1494,
+          "heading": "Encoder-Decoder Architecture. Another In/F_Luential Family Of Segmentation Models Is The Encoder-Decoder Archi-",
+          "page": 9
+        },
+        {
+          "characters": 912,
+          "heading": "Foundation Models. Image Segmentation Can Also Be Performed Using Foundation Models. Foundation Models",
+          "page": 9
+        },
+        {
+          "characters": 1655,
+          "heading": "Limitations. Though Deep Learning Models Offer Considerable Advancements Over Traditional Image Segmentation",
+          "page": 9
+        },
+        {
+          "characters": 330,
+          "heading": "Limitations. Though Deep Learning Models Offer Considerable Advancements Over Traditional Image Segmentation",
+          "page": 10
+        },
+        {
+          "characters": 2600,
+          "heading": "Taxonomy Of /Q_Uantum Image Segmentation Approaches",
+          "page": 10
+        },
+        {
+          "characters": 1629,
+          "heading": "Taxonomy Of /Q_Uantum Image Segmentation Approaches",
+          "page": 11
+        },
+        {
+          "characters": 1737,
+          "heading": "Tensor Network",
+          "page": 11
+        },
+        {
+          "characters": 2861,
+          "heading": "Hybrid /Q_Uantum-Classical",
+          "page": 12
+        },
+        {
+          "characters": 928,
+          "heading": "Fully /Q_Uantum",
+          "page": 12
+        },
+        {
+          "characters": 262,
+          "heading": "Fully /Q_Uantum",
+          "page": 13
+        },
+        {
+          "characters": 160,
+          "heading": "Review Of /Q_Uantum Image Segmentation Methods",
+          "page": 13
+        },
+        {
+          "characters": 3482,
+          "heading": "Methodology",
+          "page": 13
+        },
+        {
+          "characters": 2453,
+          "heading": "Methodology",
+          "page": 14
+        },
+        {
+          "characters": 2414,
+          "heading": "Methodology",
+          "page": 15
+        },
+        {
+          "characters": 1186,
+          "heading": "Methodology",
+          "page": 16
+        },
+        {
+          "characters": 1354,
+          "heading": "Clustering. Quantum-Inspired Clustering Methods Incorporate Quantum-Mechanical Or Probabilistic Principles",
+          "page": 16
+        },
+        {
+          "characters": 1094,
+          "heading": "Neural Networks. Quantum-Inspired Neural Network Approaches Incorporate Quantum-Mechanical Concepts Into",
+          "page": 16
+        },
+        {
+          "characters": 3088,
+          "heading": "Neural Networks. Quantum-Inspired Neural Network Approaches Incorporate Quantum-Mechanical Concepts Into",
+          "page": 17
+        },
+        {
+          "characters": 478,
+          "heading": "Tensor Network Methods",
+          "page": 17
+        },
+        {
+          "characters": 788,
+          "heading": "Tensor Network-Based Representation. Selvan Et Al. [ 181] Utilize Mps Tensor Networks To Perform Patch-Based",
+          "page": 18
+        },
+        {
+          "characters": 914,
+          "heading": "Tensor Network Neural Architectures. Konar Et Al. [ 114] Introduce A Shallow, Self-Supervised 3D Tensor Neural",
+          "page": 18
+        },
+        {
+          "characters": 1982,
+          "heading": "Hybrid /Q_Uantum-Classical Methods",
+          "page": 18
+        },
+        {
+          "characters": 1352,
+          "heading": "Hybrid /Q_Uantum-Classical Methods",
+          "page": 19
+        },
+        {
+          "characters": 853,
+          "heading": "Clustering. Hybrid Quantum-Classical Clustering Methods Combine Classical Feature Processing With Quantum",
+          "page": 19
+        },
+        {
+          "characters": 1602,
+          "heading": "Hybrid Deep Learning Architectures. Hybrid Architecture-Integration Methods Incorporate Parameterized Quantum",
+          "page": 19
+        },
+        {
+          "characters": 1672,
+          "heading": "Hybrid Deep Learning Architectures. Hybrid Architecture-Integration Methods Incorporate Parameterized Quantum",
+          "page": 20
+        },
+        {
+          "characters": 375,
+          "heading": "Fully /Q_Uantum Methods",
+          "page": 20
+        },
+        {
+          "characters": 761,
+          "heading": "Neqr-Based. Neqr-Based Methods Use Neqr To Encode Pixel Intensities And Spatial Information Into Quantum",
+          "page": 20
+        },
+        {
+          "characters": 1175,
+          "heading": "Neqr-Based. Neqr-Based Methods Use Neqr To Encode Pixel Intensities And Spatial Information Into Quantum",
+          "page": 21
+        },
+        {
+          "characters": 335,
+          "heading": "Amplitude Encoding. Amplitude Encoding-Based Methods Encode Image Features Into The Amplitudes Of Quantum",
+          "page": 21
+        },
+        {
+          "characters": 1417,
+          "heading": "Graph-Based. Graph-Based Methods Formulate Image Segmentation As An Optimization Problem Over A Graph",
+          "page": 21
+        },
+        {
+          "characters": 1891,
+          "heading": "Positioning /Q_Uantum And /Q_Uantum-Inspired Approaches Within The Image Segmentation Landscape",
+          "page": 22
+        },
+        {
+          "characters": 1001,
+          "heading": "Positioning /Q_Uantum And /Q_Uantum-Inspired Approaches Within The Image Segmentation Landscape",
+          "page": 23
+        },
+        {
+          "characters": 1427,
+          "heading": "Supervision",
+          "page": 23
+        },
+        {
+          "characters": 1523,
+          "heading": "Data Requirements",
+          "page": 23
+        },
+        {
+          "characters": 214,
+          "heading": "Data Requirements",
+          "page": 24
+        },
+        {
+          "characters": 3319,
+          "heading": "Computational Requirements And Scalability",
+          "page": 24
+        },
+        {
+          "characters": 471,
+          "heading": "Interpretability",
+          "page": 24
+        },
+        {
+          "characters": 1664,
+          "heading": "Interpretability",
+          "page": 25
+        },
+        {
+          "characters": 2056,
+          "heading": "Hardware",
+          "page": 25
+        },
+        {
+          "characters": 358,
+          "heading": "Application Fields",
+          "page": 25
+        },
+        {
+          "characters": 773,
+          "heading": "Application Fields",
+          "page": 26
+        },
+        {
+          "characters": 222,
+          "heading": "Comparison Of /Q_Uantum Image Segmentation Approaches",
+          "page": 26
+        },
+        {
+          "characters": 2187,
+          "heading": "Domain Distribution",
+          "page": 26
+        },
+        {
+          "characters": 2444,
+          "heading": "Image Encoding And Representation",
+          "page": 27
+        },
+        {
+          "characters": 336,
+          "heading": "Mera [116]",
+          "page": 27
+        },
+        {
+          "characters": 1719,
+          "heading": "Datasets",
+          "page": 28
+        },
+        {
+          "characters": 836,
+          "heading": "Research Gaps And Future Outlook",
+          "page": 28
+        },
+        {
+          "characters": 1162,
+          "heading": "Standardized Evaluation And Benchmarking",
+          "page": 28
+        },
+        {
+          "characters": 454,
+          "heading": "Standardized Evaluation And Benchmarking",
+          "page": 29
+        },
+        {
+          "characters": 853,
+          "heading": "Tcga-Gbm [178]",
+          "page": 29
+        },
+        {
+          "characters": 1667,
+          "heading": "Cbis-Ddsm [176] [98]",
+          "page": 29
+        },
+        {
+          "characters": 542,
+          "heading": "Cbis-Ddsm [176] [98]",
+          "page": 30
+        },
+        {
+          "characters": 3872,
+          "heading": "Image Representation And Encoding Bo/T_Tleneck",
+          "page": 30
+        },
+        {
+          "characters": 180,
+          "heading": "Image Representation And Encoding Bo/T_Tleneck",
+          "page": 31
+        },
+        {
+          "characters": 1801,
+          "heading": "Scalability Towards Real-World Images",
+          "page": 31
+        },
+        {
+          "characters": 1604,
+          "heading": "Reproducibility",
+          "page": 31
+        },
+        {
+          "characters": 1367,
+          "heading": "Integration With Deep Learning And Foundation Models",
+          "page": 32
+        },
+        {
+          "characters": 2127,
+          "heading": "Conclusion",
+          "page": 32
+        },
+        {
+          "characters": 2444,
+          "heading": "Conclusion",
+          "page": 33
+        },
+        {
+          "characters": 272,
+          "heading": "Back matter: Acknowledgments",
+          "page": 33
+        },
+        {
+          "characters": 1543,
+          "heading": "Unclassified body after references",
+          "page": 33
+        },
+        {
+          "characters": 6058,
+          "heading": "Unclassified body after references",
+          "page": 34
+        },
+        {
+          "characters": 5913,
+          "heading": "Unclassified body after references",
+          "page": 35
+        },
+        {
+          "characters": 5902,
+          "heading": "Unclassified body after references",
+          "page": 36
+        },
+        {
+          "characters": 6057,
+          "heading": "Unclassified body after references",
+          "page": 37
+        },
+        {
+          "characters": 6004,
+          "heading": "Unclassified body after references",
+          "page": 38
+        },
+        {
+          "characters": 6109,
+          "heading": "Unclassified body after references",
+          "page": 39
+        },
+        {
+          "characters": 5864,
+          "heading": "Unclassified body after references",
+          "page": 40
+        },
+        {
+          "characters": 3652,
+          "heading": "Unclassified body after references",
+          "page": 41
+        }
+      ],
+      "selected_text_sha256": "b60c45b2af0a89d4c3ca9969bf556405f24697843216aa75b66fd7cb9671de64",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "933cd50f7aec0fc587b9ed2fe3b94d67c9526cf6e041adc7050720e680c6e44c",
+      "source_pages": 41,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0004"
+        ],
+        "excerpt": "quantum-inspired image segmentation methods within the broader context of modern segmentation research. To\nestablish this context, we /f_irst examine the evolution of image segmentation methodologies, covering classical image processing\ntechniques, machine learning approaches, and contemporary deep learning architectures. We then organize the existing quantum image\nsegmentation literature into four categories: quantum-inspired, tensor network-based, hybrid quantum-classical, and fully quantum\nmethods. Across these categories, we analyze computational principles, image encoding and representation strategies, application\ndomains, and datasets. We further compare quantum and quantum-inspired approaches with established segmentation paradigms\nin terms of supervision, scalability, and hardware requirements. Our analysis indicates that quantum-inspired methods currently\nrepresent the most ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "35a7ae0e52b320241055600bed6140858fff0d0c70146130343eda24dfbea95c",
+            "evidence_id": "Edf16302f7977c559-B0004",
+            "pages": [
+              2
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2221,
+                "page": 2,
+                "section": "Abstract / front matter",
+                "section_index": 1,
+                "start": 1325,
+                "text": "quantum-inspired image segmentation methods within the broader context of modern segmentation research. To\nestablish this context, we /f_irst examine the evolution of image segmentation methodologies, covering classical image processing\ntechniques, machine learning approaches, and contemporary deep learning architectures. We then organize the existing quantum image\nsegmentation literature into four categories: quantum-inspired, tensor network-based, hybrid quantum-classical, and fully quantum\nmethods. Across these categories, we analyze computational principles, image encoding and representation strategies, application\ndomains, and datasets. We further compare quantum and quantum-inspired approaches with established segmentation paradigms\nin terms of supervision, scalability, and hardware requirements. Our analysis indicates that quantum-inspired methods currently\nrepresent the most "
+              }
+            ],
+            "text": "quantum-inspired image segmentation methods within the broader context of modern segmentation research. To\nestablish this context, we /f_irst examine the evolution of image segmentation methodologies, covering classical image processing\ntechniques, machine learning approaches, and contemporary deep learning architectures. We then organize the existing quantum image\nsegmentation literature into four categories: quantum-inspired, tensor network-based, hybrid quantum-classical, and fully quantum\nmethods. Across these categories, we analyze computational principles, image encoding and representation strategies, application\ndomains, and datasets. We further compare quantum and quantum-inspired approaches with established segmentation paradigms\nin terms of supervision, scalability, and hardware requirements. Our analysis indicates that quantum-inspired methods currently\nrepresent the most "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0013"
+        ],
+        "excerpt": "methods within the broader segmentation landscape, making it difficult for researchers to obtain\nan overview of the /f_ield.\nTo address these gaps, this survey reviews quantum and quantum-inspired image segmentation methods within\nthe context of modern segmentation research. We /f_irst discuss the major paradigms of image segmentation, including\nclassical, machine learning, and deep learning approaches, to establish the broader methodological landscape. Building\nupon this foundation, we organize the existing quantum image segmentation literature into four major categories:\nquantum-inspired methods, tensor network-based approaches, hybrid quantum-classical frameworks, and fully quantum\nalgorithms. Quantum-inspired methods adapt concepts from quantum mechanics or quantum computing within classical\ncomputational frameworks and do not require quantum hardware. Tensor network approaches use ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a4a2f8f178298e9a978d57eb2bc62c7b9b2ef6f5067b7516e1b403b678f16a0b",
+            "evidence_id": "Edf16302f7977c559-B0013",
+            "pages": [
+              4
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1030,
+                "page": 4,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 131,
+                "text": "methods within the broader segmentation landscape, making it difficult for researchers to obtain\nan overview of the /f_ield.\nTo address these gaps, this survey reviews quantum and quantum-inspired image segmentation methods within\nthe context of modern segmentation research. We /f_irst discuss the major paradigms of image segmentation, including\nclassical, machine learning, and deep learning approaches, to establish the broader methodological landscape. Building\nupon this foundation, we organize the existing quantum image segmentation literature into four major categories:\nquantum-inspired methods, tensor network-based approaches, hybrid quantum-classical frameworks, and fully quantum\nalgorithms. Quantum-inspired methods adapt concepts from quantum mechanics or quantum computing within classical\ncomputational frameworks and do not require quantum hardware. Tensor network approaches use "
+              }
+            ],
+            "text": "methods within the broader segmentation landscape, making it difficult for researchers to obtain\nan overview of the /f_ield.\nTo address these gaps, this survey reviews quantum and quantum-inspired image segmentation methods within\nthe context of modern segmentation research. We /f_irst discuss the major paradigms of image segmentation, including\nclassical, machine learning, and deep learning approaches, to establish the broader methodological landscape. Building\nupon this foundation, we organize the existing quantum image segmentation literature into four major categories:\nquantum-inspired methods, tensor network-based approaches, hybrid quantum-classical frameworks, and fully quantum\nalgorithms. Quantum-inspired methods adapt concepts from quantum mechanics or quantum computing within classical\ncomputational frameworks and do not require quantum hardware. Tensor network approaches use "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0046"
+        ],
+        "excerpt": "that can occur\nacross different methodological categories. The proposed taxonomy therefore focuses on how quantum and quantum-\ninspired techniques are integrated into the overall segmentation approach.\nBased on this criterion, we distinguish four main categories: quantum-inspired, tensor network-based, hybrid\nquantum-classical, and fully quantum methods. Tensor network methods are treated separately because, although often\nquantum-inspired, they use tensor network representations as their primary computational framework rather than\ndirectly adapting quantum algorithms. Figure 2 summarizes the taxonomy and its subcategories, which are based on\nthe primary methodological mechanism.\nFig. 2. Four-category taxonomy of quantum and quantum-inspired image segmentation methods and their subcategories.\n9\n3.1 /Q_uantum-Inspired\nQuantum-inspired methods employ mathematical concepts derived from ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Taxonomy Of /Q_Uantum Image Segmentation Approaches",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c760d854a64b25bb8be78738ca95bd3123cbdd2f3055a3bba115c4027f91c75d",
+            "evidence_id": "Edf16302f7977c559-B0046",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Taxonomy Of /Q_Uantum Image Segmentation Approaches",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2600,
+                "page": 10,
+                "section": "Taxonomy Of /Q_Uantum Image Segmentation Approaches",
+                "section_index": 28,
+                "start": 1795,
+                "text": "that can occur\nacross different methodological categories. The proposed taxonomy therefore focuses on how quantum and quantum-\ninspired techniques are integrated into the overall segmentation approach.\nBased on this criterion, we distinguish four main categories: quantum-inspired, tensor network-based, hybrid\nquantum-classical, and fully quantum methods. Tensor network methods are treated separately because, although often\nquantum-inspired, they use tensor network representations as their primary computational framework rather than\ndirectly adapting quantum algorithms. Figure 2 summarizes the taxonomy and its subcategories, which are based on\nthe primary methodological mechanism.\nFig. 2. Four-category taxonomy of quantum and quantum-inspired image segmentation methods and their subcategories.\n9"
+              },
+              {
+                "end": 90,
+                "page": 11,
+                "section": "Taxonomy Of /Q_Uantum Image Segmentation Approaches",
+                "section_index": 29,
+                "start": 0,
+                "text": "3.1 /Q_uantum-Inspired\nQuantum-inspired methods employ mathematical concepts derived from "
+              }
+            ],
+            "text": "that can occur\nacross different methodological categories. The proposed taxonomy therefore focuses on how quantum and quantum-\ninspired techniques are integrated into the overall segmentation approach.\nBased on this criterion, we distinguish four main categories: quantum-inspired, tensor network-based, hybrid\nquantum-classical, and fully quantum methods. Tensor network methods are treated separately because, although often\nquantum-inspired, they use tensor network representations as their primary computational framework rather than\ndirectly adapting quantum algorithms. Figure 2 summarizes the taxonomy and its subcategories, which are based on\nthe primary methodological mechanism.\nFig. 2. Four-category taxonomy of quantum and quantum-inspired image segmentation methods and their subcategories.\n9\n3.1 /Q_uantum-Inspired\nQuantum-inspired methods employ mathematical concepts derived from "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0058"
+        ],
+        "excerpt": "A structured literature search was conducted to identify research on quantum and tensor network-based image\nsegmentation published between January 2015 and through July 2026. The primary database used for the search was\nLens.org, complemented by targeted searches in the ACM Digital Library and Google Scholar. AI-assisted tools were\nadditionally used to identify potentially relevant publications and related work, but publications were included only\nafter independent veri/f_ication against the stated inclusion criteria. AI-assisted search was used as a supplementary tool\nrather than as an independent source for determining inclusion.\nThe primary search strings were \"Quantum AND Image AND Segmentation\" and \"Tensor AND Network AND Image\nAND Segmentation\". The search was intentionally broad to account for the heterogeneous terminology used across the\n/f_ield, where related approaches may be ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fdffa1ee0a304c44d7bb21cf881bd0fa7758095a9d2ab8344d6b36ac815fac13",
+            "evidence_id": "Edf16302f7977c559-B0058",
+            "pages": [
+              13
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 13,
+                "section": "Methodology",
+                "section_index": 35,
+                "start": 0,
+                "text": "A structured literature search was conducted to identify research on quantum and tensor network-based image\nsegmentation published between January 2015 and through July 2026. The primary database used for the search was\nLens.org, complemented by targeted searches in the ACM Digital Library and Google Scholar. AI-assisted tools were\nadditionally used to identify potentially relevant publications and related work, but publications were included only\nafter independent veri/f_ication against the stated inclusion criteria. AI-assisted search was used as a supplementary tool\nrather than as an independent source for determining inclusion.\nThe primary search strings were \"Quantum AND Image AND Segmentation\" and \"Tensor AND Network AND Image\nAND Segmentation\". The search was intentionally broad to account for the heterogeneous terminology used across the\n/f_ield, where related approaches may be "
+              }
+            ],
+            "text": "A structured literature search was conducted to identify research on quantum and tensor network-based image\nsegmentation published between January 2015 and through July 2026. The primary database used for the search was\nLens.org, complemented by targeted searches in the ACM Digital Library and Google Scholar. AI-assisted tools were\nadditionally used to identify potentially relevant publications and related work, but publications were included only\nafter independent veri/f_ication against the stated inclusion criteria. AI-assisted search was used as a supplementary tool\nrather than as an independent source for determining inclusion.\nThe primary search strings were \"Quantum AND Image AND Segmentation\" and \"Tensor AND Network AND Image\nAND Segmentation\". The search was intentionally broad to account for the heterogeneous terminology used across the\n/f_ield, where related approaches may be "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0061"
+        ],
+        "excerpt": "returned\n29,403 publications, of which approximately 100 records were screened. The results were then combined and checked\nfor duplicates and methodological relevance. Publications whose relevance or methodological classi/f_ication could\nnot be determined from the title and abstract were examined in full text. After applying the inclusion criteria, 42\npublications were selected for the /f_inal survey, comprising 19 quantum-inspired, four tensor network, eleven hybrid\nquantum-classical, and eight fully quantum approaches. The resulting collection was categorized according to the\ntaxonomy introduced in Section 3 and forms the basis for the comparative analysis and discussion of research gaps\npresented in the remainder of this survey. The /f_lowchart in Figure 3 depicts the search process.\n12\nTable 1. Overview of literature by segmentation paradigm, publication status, and venue.\nParadigm ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13,
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d1c6c0bb9aeddee12fce758811ba7cfe269c2f9e236de50cca3742e1f4cac3d8",
+            "evidence_id": "Edf16302f7977c559-B0061",
+            "pages": [
+              13,
+              14
+            ],
+            "section": "Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3482,
+                "page": 13,
+                "section": "Methodology",
+                "section_index": 35,
+                "start": 2682,
+                "text": "returned\n29,403 publications, of which approximately 100 records were screened. The results were then combined and checked\nfor duplicates and methodological relevance. Publications whose relevance or methodological classi/f_ication could\nnot be determined from the title and abstract were examined in full text. After applying the inclusion criteria, 42\npublications were selected for the /f_inal survey, comprising 19 quantum-inspired, four tensor network, eleven hybrid\nquantum-classical, and eight fully quantum approaches. The resulting collection was categorized according to the\ntaxonomy introduced in Section 3 and forms the basis for the comparative analysis and discussion of research gaps\npresented in the remainder of this survey. The /f_lowchart in Figure 3 depicts the search process.\n12"
+              },
+              {
+                "end": 98,
+                "page": 14,
+                "section": "Methodology",
+                "section_index": 36,
+                "start": 0,
+                "text": "Table 1. Overview of literature by segmentation paradigm, publication status, and venue.\nParadigm "
+              }
+            ],
+            "text": "returned\n29,403 publications, of which approximately 100 records were screened. The results were then combined and checked\nfor duplicates and methodological relevance. Publications whose relevance or methodological classi/f_ication could\nnot be determined from the title and abstract were examined in full text. After applying the inclusion criteria, 42\npublications were selected for the /f_inal survey, comprising 19 quantum-inspired, four tensor network, eleven hybrid\nquantum-classical, and eight fully quantum approaches. The resulting collection was categorized according to the\ntaxonomy introduced in Section 3 and forms the basis for the comparative analysis and discussion of research gaps\npresented in the remainder of this survey. The /f_lowchart in Figure 3 depicts the search process.\n12\nTable 1. Overview of literature by segmentation paradigm, publication status, and venue.\nParadigm "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0126"
+        ],
+        "excerpt": "The analysis of existing quantum and quantum-inspired image segmentation approaches reveals substantial research\nactivity in exploring the potential of quantum technologies for image analysis. However, the reviewed literature\nalso highlights several open challenges that currently limit their practical applicability and their transition toward\nreal-world applications. While classical and deep learning-based segmentation methods bene/f_it from mature evaluation\nframeworks, large-scale datasets, and highly optimized architectures, quantum approaches remain constrained by\nscalability, data representation, and integration with modern learning paradigms. The following sections discuss these\nkey research gaps and outline future directions toward more comparable, scalable, and practically relevant quantum\nimage segmentation methods.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 28,
+        "pages": [
+          28
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Research Gaps And Future Outlook",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8c241847be4e9b4ae6ce2b537dd749eda9d9bd259a0d3876a5aec7ce95660c6a",
+            "evidence_id": "Edf16302f7977c559-B0126",
+            "pages": [
+              28
+            ],
+            "section": "Research Gaps And Future Outlook",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 836,
+                "page": 28,
+                "section": "Research Gaps And Future Outlook",
+                "section_index": 71,
+                "start": 0,
+                "text": "The analysis of existing quantum and quantum-inspired image segmentation approaches reveals substantial research\nactivity in exploring the potential of quantum technologies for image analysis. However, the reviewed literature\nalso highlights several open challenges that currently limit their practical applicability and their transition toward\nreal-world applications. While classical and deep learning-based segmentation methods bene/f_it from mature evaluation\nframeworks, large-scale datasets, and highly optimized architectures, quantum approaches remain constrained by\nscalability, data representation, and integration with modern learning paradigms. The following sections discuss these\nkey research gaps and outline future directions toward more comparable, scalable, and practically relevant quantum\nimage segmentation methods."
+              }
+            ],
+            "text": "The analysis of existing quantum and quantum-inspired image segmentation approaches reveals substantial research\nactivity in exploring the potential of quantum technologies for image analysis. However, the reviewed literature\nalso highlights several open challenges that currently limit their practical applicability and their transition toward\nreal-world applications. While classical and deep learning-based segmentation methods bene/f_it from mature evaluation\nframeworks, large-scale datasets, and highly optimized architectures, quantum approaches remain constrained by\nscalability, data representation, and integration with modern learning paradigms. The following sections discuss these\nkey research gaps and outline future directions toward more comparable, scalable, and practically relevant quantum\nimage segmentation methods."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0127"
+        ],
+        "excerpt": "A major limitation identi/f_ied across the reviewed quantum image segmentation literature is the absence of consistent\nevaluation protocols. Classical and deep learning approaches are typically assessed using established benchmark\ndatasets, including Cityscapes, COCO, BraTS, and PASCAL VOC, together with widely adopted metrics such as the Dice\ncoefficient, Intersection over Union (IoU), mean Intersection over Union (mIoU), and boundary-aware measures [ 142].\nThe situation is considerably less consistent for quantum and quantum-inspired approaches. Existing studies differ\nin their choice of datasets, image resolutions, preprocessing procedures, experimental con/f_igurations, and evaluation\nmetrics, which makes direct comparison between reported results difficult. In particular, performance obtained on small\nor synthetic images cannot readily be compared with results from methods ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 28,
+        "pages": [
+          28
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Standardized Evaluation And Benchmarking",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0de4de53837899c0dac4d94482a9e98539abca5c37d05150b607026784e16154",
+            "evidence_id": "Edf16302f7977c559-B0127",
+            "pages": [
+              28
+            ],
+            "section": "Standardized Evaluation And Benchmarking",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 28,
+                "section": "Standardized Evaluation And Benchmarking",
+                "section_index": 72,
+                "start": 0,
+                "text": "A major limitation identi/f_ied across the reviewed quantum image segmentation literature is the absence of consistent\nevaluation protocols. Classical and deep learning approaches are typically assessed using established benchmark\ndatasets, including Cityscapes, COCO, BraTS, and PASCAL VOC, together with widely adopted metrics such as the Dice\ncoefficient, Intersection over Union (IoU), mean Intersection over Union (mIoU), and boundary-aware measures [ 142].\nThe situation is considerably less consistent for quantum and quantum-inspired approaches. Existing studies differ\nin their choice of datasets, image resolutions, preprocessing procedures, experimental con/f_igurations, and evaluation\nmetrics, which makes direct comparison between reported results difficult. In particular, performance obtained on small\nor synthetic images cannot readily be compared with results from methods "
+              }
+            ],
+            "text": "A major limitation identi/f_ied across the reviewed quantum image segmentation literature is the absence of consistent\nevaluation protocols. Classical and deep learning approaches are typically assessed using established benchmark\ndatasets, including Cityscapes, COCO, BraTS, and PASCAL VOC, together with widely adopted metrics such as the Dice\ncoefficient, Intersection over Union (IoU), mean Intersection over Union (mIoU), and boundary-aware measures [ 142].\nThe situation is considerably less consistent for quantum and quantum-inspired approaches. Existing studies differ\nin their choice of datasets, image resolutions, preprocessing procedures, experimental con/f_igurations, and evaluation\nmetrics, which makes direct comparison between reported results difficult. In particular, performance obtained on small\nor synthetic images cannot readily be compared with results from methods "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0133"
+        ],
+        "excerpt": "One of the most fundamental challenges identi/f_ied across quantum and hybrid quantum-classical image segmentation\nmethods is the representation and encoding of classical image data in quantum form. Unlike classical segmentation\nalgorithms, which operate directly on pixel arrays or learned feature representations, quantum algorithms require the\ninput data to be encoded into quantum states before processing. Consequently, many existing methods rely on dedicated\nquantum image representations, such as NEQR, FRQI, or angle encoding, despite their well-known limitations.\nThese encoding schemes are primarily designed to represent classical image information in quantum states rather\nthan to provide task-speci/f_ic representations optimized for segmentation. Although mathematically elegant, their\npractical implementation can involve costly state preparation, introduce additional computational ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 30,
+        "pages": [
+          30
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Image Representation And Encoding Bo/T_Tleneck",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b3bd73a29588d23e0a6493fc75915d375b8f9b57c377d2739ce493cbd7c4ba1c",
+            "evidence_id": "Edf16302f7977c559-B0133",
+            "pages": [
+              30
+            ],
+            "section": "Image Representation And Encoding Bo/T_Tleneck",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 30,
+                "section": "Image Representation And Encoding Bo/T_Tleneck",
+                "section_index": 77,
+                "start": 0,
+                "text": "One of the most fundamental challenges identi/f_ied across quantum and hybrid quantum-classical image segmentation\nmethods is the representation and encoding of classical image data in quantum form. Unlike classical segmentation\nalgorithms, which operate directly on pixel arrays or learned feature representations, quantum algorithms require the\ninput data to be encoded into quantum states before processing. Consequently, many existing methods rely on dedicated\nquantum image representations, such as NEQR, FRQI, or angle encoding, despite their well-known limitations.\nThese encoding schemes are primarily designed to represent classical image information in quantum states rather\nthan to provide task-speci/f_ic representations optimized for segmentation. Although mathematically elegant, their\npractical implementation can involve costly state preparation, introduce additional computational "
+              }
+            ],
+            "text": "One of the most fundamental challenges identi/f_ied across quantum and hybrid quantum-classical image segmentation\nmethods is the representation and encoding of classical image data in quantum form. Unlike classical segmentation\nalgorithms, which operate directly on pixel arrays or learned feature representations, quantum algorithms require the\ninput data to be encoded into quantum states before processing. Consequently, many existing methods rely on dedicated\nquantum image representations, such as NEQR, FRQI, or angle encoding, despite their well-known limitations.\nThese encoding schemes are primarily designed to represent classical image information in quantum states rather\nthan to provide task-speci/f_ic representations optimized for segmentation. Although mathematically elegant, their\npractical implementation can involve costly state preparation, introduce additional computational "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0138"
+        ],
+        "excerpt": "Although an \ud835\udc5b-qubit quantum system has a state space of dimension 2\ud835\udc5b,this representational capacity does not\ndirectly translate into efficient processing of large classical images. Current quantum image segmentation approaches\nnevertheless remain limited to relatively small image sizes, particularly in fully quantum settings. Many fully quantum\nmethods are therefore evaluated on binary or grayscale images and small synthetic examples (e.g., [ 56, 165, 215]). As\nimage resolution and feature dimensionality increase, the required number of qubits, state-preparation operations, circuit\ndepth, hardware connectivity, and measurement operations can become substantial. On current quantum hardware,\nnoise, gate errors, and /f_inite coherence times further restrict the size and complexity of circuits that can be executed\nreliably.\nOvercoming this scalability limitation remains a fundamental ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 31,
+        "pages": [
+          31
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Scalability Towards Real-World Images",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bc07826c9dbd7428f7c3da4b6dde36458bc95107a9f052671f19551fd7f40d58",
+            "evidence_id": "Edf16302f7977c559-B0138",
+            "pages": [
+              31
+            ],
+            "section": "Scalability Towards Real-World Images",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 31,
+                "section": "Scalability Towards Real-World Images",
+                "section_index": 79,
+                "start": 0,
+                "text": "Although an \ud835\udc5b-qubit quantum system has a state space of dimension 2\ud835\udc5b,this representational capacity does not\ndirectly translate into efficient processing of large classical images. Current quantum image segmentation approaches\nnevertheless remain limited to relatively small image sizes, particularly in fully quantum settings. Many fully quantum\nmethods are therefore evaluated on binary or grayscale images and small synthetic examples (e.g., [ 56, 165, 215]). As\nimage resolution and feature dimensionality increase, the required number of qubits, state-preparation operations, circuit\ndepth, hardware connectivity, and measurement operations can become substantial. On current quantum hardware,\nnoise, gate errors, and /f_inite coherence times further restrict the size and complexity of circuits that can be executed\nreliably.\nOvercoming this scalability limitation remains a fundamental "
+              }
+            ],
+            "text": "Although an \ud835\udc5b-qubit quantum system has a state space of dimension 2\ud835\udc5b,this representational capacity does not\ndirectly translate into efficient processing of large classical images. Current quantum image segmentation approaches\nnevertheless remain limited to relatively small image sizes, particularly in fully quantum settings. Many fully quantum\nmethods are therefore evaluated on binary or grayscale images and small synthetic examples (e.g., [ 56, 165, 215]). As\nimage resolution and feature dimensionality increase, the required number of qubits, state-preparation operations, circuit\ndepth, hardware connectivity, and measurement operations can become substantial. On current quantum hardware,\nnoise, gate errors, and /f_inite coherence times further restrict the size and complexity of circuits that can be executed\nreliably.\nOvercoming this scalability limitation remains a fundamental "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0141"
+        ],
+        "excerpt": "A further research gap identi/f_ied across the surveyed literature concerns the reproducibility of quantum and quantum-\ninspired image segmentation methods. Although many studies report promising results, the information required to\nindependently reproduce them is often incomplete. A number of studies do not provide publicly accessible source\ncode, quantum circuits, trained parameters, complete hyperparameter con/f_igurations, or sufficiently detailed descrip-\ntions of preprocessing and experimental settings. For quantum methods, reproducibility is further complicated by\nhardware-dependent factors such as qubit connectivity, transpilation, noise, calibration, measurement shots, and\nbackend con/f_iguration. This makes it difficult to verify reported results and perform reliable comparisons, particularly\nbecause outcomes can depend strongly on implementation-speci/f_ic choices such as ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 31,
+        "pages": [
+          31
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reproducibility",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "357ed8ce66025c80a7e0cf646f9eda9f678abc921ce6644bdf23bdbd24a561c7",
+            "evidence_id": "Edf16302f7977c559-B0141",
+            "pages": [
+              31
+            ],
+            "section": "Reproducibility",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 31,
+                "section": "Reproducibility",
+                "section_index": 80,
+                "start": 0,
+                "text": "A further research gap identi/f_ied across the surveyed literature concerns the reproducibility of quantum and quantum-\ninspired image segmentation methods. Although many studies report promising results, the information required to\nindependently reproduce them is often incomplete. A number of studies do not provide publicly accessible source\ncode, quantum circuits, trained parameters, complete hyperparameter con/f_igurations, or sufficiently detailed descrip-\ntions of preprocessing and experimental settings. For quantum methods, reproducibility is further complicated by\nhardware-dependent factors such as qubit connectivity, transpilation, noise, calibration, measurement shots, and\nbackend con/f_iguration. This makes it difficult to verify reported results and perform reliable comparisons, particularly\nbecause outcomes can depend strongly on implementation-speci/f_ic choices such as "
+              }
+            ],
+            "text": "A further research gap identi/f_ied across the surveyed literature concerns the reproducibility of quantum and quantum-\ninspired image segmentation methods. Although many studies report promising results, the information required to\nindependently reproduce them is often incomplete. A number of studies do not provide publicly accessible source\ncode, quantum circuits, trained parameters, complete hyperparameter con/f_igurations, or sufficiently detailed descrip-\ntions of preprocessing and experimental settings. For quantum methods, reproducibility is further complicated by\nhardware-dependent factors such as qubit connectivity, transpilation, noise, calibration, measurement shots, and\nbackend con/f_iguration. This makes it difficult to verify reported results and perform reliable comparisons, particularly\nbecause outcomes can depend strongly on implementation-speci/f_ic choices such as "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Edf16302f7977c559-B0150"
+        ],
+        "excerpt": "robust evidence of a practical advantage over strong classical and deep learning baselines.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 33,
+        "pages": [
+          33
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c6090eb78da9f4f9f93cc3ce033f038075e7674729346ee2092aa9d817e08c04",
+            "evidence_id": "Edf16302f7977c559-B0150",
+            "pages": [
+              33
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 2444,
+                "page": 33,
+                "section": "Conclusion",
+                "section_index": 83,
+                "start": 2353,
+                "text": "robust evidence of a practical advantage over strong classical and deep learning baselines."
+              }
+            ],
+            "text": "robust evidence of a practical advantage over strong classical and deep learning baselines."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://www.researchsquare.com/article/rs-11007930/latest.pdf",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.21203/rs.3.rs-11007930/v1",
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No optimization loop exists in this survey paper; reported outcomes are qualitative syntheses of the surveyed literature.",
+          "final_evaluation_signal": "Qualitative comparative analysis of 42 surveyed publications based on explicit inclusion/exclusion criteria and structured taxonomical categorization.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; this manuscript is a systematic literature survey and does not optimize a model or algorithm.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "Edf16302f7977c559-B0004",
+          "Edf16302f7977c559-B0013",
+          "Edf16302f7977c559-B0046",
+          "Edf16302f7977c559-B0058",
+          "Edf16302f7977c559-B0061",
+          "Edf16302f7977c559-B0126",
+          "Edf16302f7977c559-B0127",
+          "Edf16302f7977c559-B0133",
+          "Edf16302f7977c559-B0138",
+          "Edf16302f7977c559-B0141",
+          "Edf16302f7977c559-B0150"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "933cd50f7aec0fc587b9ed2fe3b94d67c9526cf6e041adc7050720e680c6e44c"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.21203/rs.3.rs-11007930/v1",
+        "claim_evidence_alignment": "Conclusions are thoroughly aligned with the reviewed literature, clearly highlighting that fully quantum methods remain constrained by NISQ hardware and that empirical quantum advantages over deep learning baselines remain unproven.",
+        "context_id": "df16302f7977c559695015e823ab3cdad9c181cdbd3f30c4bc6a52b3344b54b3",
+        "decision": "pass",
+        "evaluation_assessment": "The survey critically synthesizes the surveyed literature, analyzing technical characteristics such as image representations, hardware backends, dataset usage, supervision regimes, and computational bottlenecks without making unwarranted empirical claims.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No optimization loop exists in this survey paper; reported outcomes are qualitative syntheses of the surveyed literature.",
+          "final_evaluation_signal": "Qualitative comparative analysis of 42 surveyed publications based on explicit inclusion/exclusion criteria and structured taxonomical categorization.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; this manuscript is a systematic literature survey and does not optimize a model or algorithm.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "Edf16302f7977c559-B0004",
+          "Edf16302f7977c559-B0013",
+          "Edf16302f7977c559-B0046",
+          "Edf16302f7977c559-B0058",
+          "Edf16302f7977c559-B0061",
+          "Edf16302f7977c559-B0126",
+          "Edf16302f7977c559-B0127",
+          "Edf16302f7977c559-B0133",
+          "Edf16302f7977c559-B0138",
+          "Edf16302f7977c559-B0141",
+          "Edf16302f7977c559-B0150"
+        ],
+        "limitations": "The authors explicitly discuss key field-level limitations, including non-standardized benchmarks, lack of reproducible experimental details, input encoding bottlenecks, and hardware noise.",
+        "method_assessment": "The manuscript specifies search strings, databases (Lens.org, ACM Digital Library, Google Scholar), timeframes (2015 to mid-2026), and transparent screening criteria, yielding 42 reviewed papers that are categorized systematically across multiple dimensions.",
+        "quality_rationale": "As a comprehensive review article, it provides an adequately described literature search protocol, sound taxonomical structuring, objective technical comparison across paradigms, and rigorous positioning relative to modern deep learning methods.",
+        "scoped_contribution": "A structured review and taxonomy organizing quantum and quantum-inspired image segmentation literature into four paradigms (quantum-inspired, tensor networks, hybrid quantum-classical, and fully quantum) and positioning them against classical and deep learning methods.",
+        "source_content_hash": "933cd50f7aec0fc587b9ed2fe3b94d67c9526cf6e041adc7050720e680c6e44c"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "As a comprehensive review article, it provides an adequately described literature search protocol, sound taxonomical structuring, objective technical comparison across paradigms, and rigorous positioning relative to modern deep learning methods.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "933cd50f7aec0fc587b9ed2fe3b94d67c9526cf6e041adc7050720e680c6e44c",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly discuss key field-level limitations, including non-standardized benchmarks, lack of reproducible experimental details, input encoding bottlenecks, and hardware noise."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -156,7 +2420,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

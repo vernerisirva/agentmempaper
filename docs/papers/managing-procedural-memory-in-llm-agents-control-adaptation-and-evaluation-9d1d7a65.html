@@ -64,16 +64,287 @@
             <p>Procedural memory is increasingly used to improve LLM agents on recurring workplace tasks, yet its ability to produce reusable skills remains poorly understood. We introduce AFTER, a benchmark of 382 realistic enterprise tasks spanning six professional roles and 22 procedural skills, designed to evaluate how skills...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work presents a substantial, well-scoped contribution to LLM agent procedural memory benchmarking and transfer evaluation. The methodology, dataset construction QA, experimental controls, and ablation studies are thorough and convincingly executed.</p>
+      <p>The authors document key limitations, including a restriction to technology-sector procedural tasks excluding conversational workflows, fixed trace budgets during evolution, and verification relying strictly on pytest assertions without subjective preference or readability metrics.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-28T10:21:18.862549+00:00.</p>
+        <p>Coverage: 64406 of 64406 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Procedural memory is increasingly used to
+improve LLM agents on recurring workplace
+tasks, yet its ability to produce reusable skills
+remains poorly understood. We introduce AF-
+TER, a benchmark of 382 realistic enterprise
+tasks spanning six professional roles and 22
+procedural skills, designed to evaluate how
+skills transfer across tasks, roles, and model
+backbones. The benchmark includes con-
+trolled evaluation settings for local improve-
+ment, cross-task transfer, cross-role transfer,
+and cross-model generalization. Experiments
+show that procedural memory delivers consis-
+tent gains in industrial workflows: a single
+refinement round improves aggregate perfor-
+mance by 3.7-6.7 points, while skills evolved
+from diverse multi-model execution traces
+achieve 73.1% cross-model test accuracy, out-
+performing all single-model trace sources. We
+further find that some skills generalize </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>experience. General agent
+benchmarks contain realistic tasks, but usually lack
+the role–skill structure needed to test whether pro-
+cedural knowledge learned in one workplace con-
+text transfers to another. The field therefore lacks
+a controlled setting for a practical question:when
+does experience produce reusable procedural struc-
+ture, and when does it merely overfit to where it
+was observed?
+To address this, we propose:
+• AFTER, a benchmark for procedural skill
+transfer in LLM agents.AFTER 1 contains 382
+realistic workplace tasks across six professional
+roles and 22 procedural skills, mixing single- and
+multi-skill workflows, and controlled splits that
+measure specificity (in-context gain) and gener-
+ality (held-out task, cross-role, and cross-model
+transfer). This structure reflects industrial agent
+deployments, where procedural knowledge must
+be reusable across recurring tasks, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AFTER382 6✓ ✓ ✓
+Table 1: Comparison with existing agent and skill bench-
+marks. ✓ supported, ∼ partial, ✗ not supported. AF-
+TER uniquely combines role structure, skill annotations,
+and transfer splits.
+AFTER is a benchmark for evaluating procedu-
+ral skill transfer in LLM agents. It contains 382
+realistic workplace tasks spanning six professional
+roles and 22 procedural skills. Unlike prior agent
+benchmarks that focus on task completion, AF-
+TER evaluates procedural knowledge transferabil-
+ity across contexts. It combines a role-driven task–
+skill structure with controlled splits for cross-task,
+cross-role, and cross-model transfer (Figure 2). Ta-
+ble 1 summarizes the key differences from prior
+benchmarks; a detailed discussion is provided in
+Appendix A.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Roles.The six roles cover common functions in
+technology organizations: Data Engineers (DE;
+2
+a b
+c d e
+Figure 2:AFTER overview. (a)Role–skill matrix spanning six professional roles and five capability areas; red
+borders indicate skills shared across four roles.(b)Task sources: 56 adapted and 326 newly authored tasks.(c)
+Distribution of single- and multi-skill tasks by role.(d)Transfer evaluation across tasks, roles, and models.(e)
+Cross-role transfer and role-specific skill specialization.
+data pipelines), Data Scientists (DS; statistical and
+ML analysis), Generative AI Engineers (GenAI;
+LLM applications), Infrastructure Engineers (In-
+fra; cloud and deployment), Project Managers
+(PM; business documents), and Software Engineers
+(SWE; application code). Roles define how skills
+are instantiated: for example, a PDF skill may sup-
+port invoice extraction for DE, document ingestion
+for </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Tasks come from two high-level sources.Adapted
+tasksare drawn from SkillsBench (Li et al., 2026),
+SWE-bench Verified (Jimenez et al., 2024) and
+Pro (Deng et al., 2025), MLE-bench (Chan et al.,
+2025), FeatureBench (Zhou et al., 2026b), RE-
+Bench (Wijk et al., 2025), Terminal-Bench (Mer-
+rill et al., 2026), CodeScaleBench(Sourcegraph,
+2024), DevOps-Gym (Tang et al., 2026), SRE-
+skills-bench(Rootly AI Labs, 2025), and issues
+from popular open-source repositories. We pre-
+serve the core problem and success criterion, but
+rewrite each instruction as a self-contained work-
+place request and re-implement verification as a
+pytest suite.Newly designed taskscover scenarios
+not available in prior benchmarks; they are either
+practitioner-designed or first drafted with a frontier
+LLM and then expert-refined into realistic work-
+3</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate skills throughspecificity(source-
+context improvement) andgenerality(transfer un-
+der distribution shift) and report two accuracy met-
+rics. Let passed∗k, t denote the number of tests
+passed on attempt k of task t, and total∗t the total
+number of tests.
+M1= 1Ntasks Xt 1Natt Xk passedk,ttotalt (1)
+M2= 1Ntasks Xt 1Natt Xk ⊮[passedk,t =total t]
+(2)
+M1 measures partial progress, while M2 mea-
+sures complete task success.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Interface
+To compare procedural-memory systems on AF-
+TER, we use EVOLUTION, a lightweight harness
+that standardizes trace collection, skill versioning,
+update execution, and transfer measurement. Skills
+are stored as versioned SKILL.md artifacts with
+Y AML metadata and markdown bodies; each exe-
+cution emits a trace linked to the active skill ver-
+sion, making updates and evaluations reproducible.
+EVOLUTIONsupports full-skill updates through a
+COLLECT–DIAGNOSE–REVISE–PROMOTEcycle.
+We denote by ρ thereflector: the model or proce-
+dure that inspects traces, summarizes failure modes,
+and proposes a revised skill body. For current skill
+version s(v) and source trace pool Dsrc, the update
+is s(v+1) =U ρ(s(v),D src). Thus, EVOLUTION
+fixes trace collection, validation, promotion, roll-
+back, and lineage tracking, while the reflector ρ
+may vary across experiments or external systems.
+We </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DS GenAI PM Infra Aggregate
+Model Size ∅H G ∆ ∅H G ∆ ∅H G ∆ ∅H G ∆ ∅Best∆
+GPT 5.4 L 42.0 47.055.0 +13.0 40.043.140.0 +3.1 38.544.633.8 +6.1 50.0 48.756.3 +6.3 47.6 50.1 +2.5
+GPT 5.4 Mini 4 M 43.0 33.048.0 +5.0 35.8 31.645.3 +9.5 27.7 24.630.8 +3.1 60.043.7 48.7 -11.3 44.0 44.9 +0.9
+DeepSeek V4 Flash L 28.7 29.633.9 +5.2 31.6 30.535.8 +4.2 11.4 17.118.1 +6.7 48.8 46.3 41.2 -7.6 34.6 37.1 +2.5
+Nemotron 3 120B M 29.631.328.7 +1.7 42.1 36.8 35.8 -6.3 14.3 21.924.8 +10.5 37.5 31.241.3 +3.8 31.9 33.0 +1.1
+Gemma 4 31B M 45.5 45.049.5 +4.0 35.3 35.3 33.7 -1.6 10.0 13.923.9 +13.9 43.145.644.4 +2.5 38.5 41.3 +2.8
+Gemma 4 26B A4B M 37.5 42.048.0 +10.5 37.440.0 40.0 +2.6 16.924.620.0 +7.7 34.4 28.140.0 +5.6 36.2 39.7 +3.5
+Gemma 4 E4B S 20.5 18.524.5 +4.0 15.3 23.729.5 +14.2 8.5 11.513.1 +4.6 13.8 14.421.2 +7.4 19.4 24.0 +4.6
+Qwen 3.5-397B-FP8 L 36.0 35.240.2 +4.2 35.3 35.538.7 +3.4 12.3 13.516.9 </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Framework Seed Narrow Diverse
+∆tr ∆te ∆tr ∆te
+Codex GPT-5.5 57.1 -1.7 +0.4 -2.5 +8.3
+Hermes 58.4 +3.6 -1.4 +3.7 +18.0
+Memento 52.4 -12.7 +0.1 +3.8 +2.0
+MemP 56.6 +13.9 +2.5 +7.3 +0.0
+EvoSkill 52.5 +14.9 -2.7 -5.7 -3.9
+Table 3: Train and test M1 gains over handcrafted skills
+on pdf, xlsx, and pptx tasks using a shared Qwen3.5-
+35B-A3B solver, averaged over pdf, xlsx, and pptx.
+Seed = handcraft test M1; ∆tr / ∆te = evolved−seed on
+train / test (same task set per condition). Trace and skill
+management are framework-specific. Narrow: n= 1 ;
+Diverse:n= 5. Colors denote test gains.
+We evaluate procedural memory frameworks on
+skill evolution from execution traces. Table 3 com-
+pares five approaches under narrow ( n= 1 ) and
+diverse (n= 5 ) evolution. We run frameworks
+through the same Evolution harness under identical
+conditions with shared Qwen3.5-35B-A3B solver,
+task pool, and train/test </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We analyze skill transfer along three practically
+important dimensions: cross-model generalization,
+cross-role transfer, and inference efficiency.
+All Traces Sonnet 4 Qwen 27B Qwen 9B Llama 8B
+Source Model Experience
+0
+20
+40
+60
+80
+T est Accuracy (%)
+73.1
+36.0
+48.8
+59.4
+55.5
+Diverse
+Figure 4: Cross-model transfer: test accuracy when
+skills are evolved from traces of different source models
+versus diverse traces from all models.
+Cross-model transfer.A key question is whether
+skills must be evolved from traces of the same
+model that will use them. Figure 4 shows that
+skills evolved combining experience from multi-
+ple source models substantially outperform single-
+model sources: 73.1% versus 36.0–59.4%. Surpris-
+ingly, weaker source models provide better trans-
+ferable signal than stronger models, suggesting that
+procedural knowledge benefits from imperfect exe-
+cutions.
+10
+ 5
+ 0 5 10 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DS  DS
++11.7
+-4.8
+-7.5
++6.2
+Figure 5: Cross-role transfer for the pdf skill. In-role
+evolution (PM to PM, DS to DS) yields gains, while
+applying a skill evolved for one role to another (PM to
+DS, DS to PM) hurts performance.
+Cross-role generalization.Skills evolved within
+one professional role may not transfer effectively
+to other roles. Figure 5 illustrates this for the pdf
+skill: while in-role evolution yields gains of +11.7
+(PM) and +6.2 (DS), applying a skill evolved for
+one role to another produces losses of -4.8 to -7.5
+points. This asymmetry arises because different
+roles use the same skill for different purposes (e.g.,
+pdf extraction for executive summaries in PM ver-
+sus data ingestion in DS). Role-specific specializa-
+tion emerges naturally during evolution.
+No Skill Handcrafted Evolved
+Skill Condition
+0
+100
+200
+300
+400
+500
+600
+T otal T okens </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmark coverage. AFTER targets
+technology-sector roles and workplace tasks
+drawn partly from authors&#x27; practice, which may
+underrepresent domains such as healthcare, legal,
+or scientific research. The 22 skills span five
+capability areas but intentionally exclude open-
+ended creative or conversational tasks, limiting
+conclusions to procedural, tool-use-oriented
+workflows.
+Evaluation scope. Our experiments fix the
+trace budget per evolution run to enable controlled
+comparison; real deployments may accumulate far
+larger trace pools, and the relationship between
+trace volume and transfer quality remains an open
+question. Evaluation uses automated pytest verifi-
+cation, which measures functional correctness but
+does not capture qualities such as code readability,
+robustness to edge cases beyond the test suite, or
+user preference.
+Model and framework selection. We evaluate
+a representative </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Each (role, skill) cell in the benchmark has tasks
+split into three folds: train (50%), validation (25%),
+and test (25%). The train split provides traces for
+skill evolution. The validation split enables hyper-
+parameter tuning and prevents overfitting during
+evolution. The test split provides a final evaluation,
+ensuring reported numbers reflect genuine general-
+ization.
+For cross-role experiments, an additional split
+structure holds out entire roles. When measuring
+cross-role transfer for the PDF skill, we might train
+on DE-PDF, DS-PDF, and PM-PDF tasks, then
+evaluate on GenAI-PDF tasks that were never seen
+11
+during evolution.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Each task in AFTER follows a consistent structure:
+• Metadata( task.toml): task name, role, re-
+quired skills, difficulty, and data source attribu-
+tion.
+• Instructions( instruction.md): realistic re-
+quest mimicking how a colleague might describe
+the work.
+• Input files( inputs/): authentic data in work-
+place formats (Excel, PDF, CSV , JSON).
+• Verification( tests/test_outputs.py): pytest
+assertions for automated correctness checking.
+Task instructions deliberately omit implemen-
+tation details that should come from procedural
+memory. For example, an instruction might say,
+&quot;extract the transaction table* from the bank state-
+ment&quot; without specifying which library to use, how
+to handle multi-page documents, or the output for-
+mat. These procedural details should be supplied
+by the skill.
+E Benchmark Construction</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>task directory or generated from a fixed seed.
+Automated checks operationalize B.4–B.5 and
+C.7–C.8: a static metadata and path-contract au-
+dit, a reference-solution calibration run, and an
+adversarial gate that substitutes empty, constant,
+and random outputs and requires the verifier to fail
+on all three. Two authors then independently re-
+viewed every task against the full rubric. A task
+was accepted only when both reviewers returned
+accepton every criterion. Disagreements led to
+rewriting and re-review. Total human-review effort
+was approximately 32 hours per reviewer.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +383,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

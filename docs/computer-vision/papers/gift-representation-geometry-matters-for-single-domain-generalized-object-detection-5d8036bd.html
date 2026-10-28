@@ -59,16 +59,267 @@
             <p>Single-Domain Generalized Object Detection (S-DGOD) aims to generalize from a single source domain to unseen domains under distribution shifts. Existing efforts mainly focus on simulating unseen domains or suppressing domain-specific factors. However, they largely overlook the intrinsic generalization capability emb...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous, well-motivated parameter-efficient fine-tuning technique backed by formal linear algebra foundations and thorough benchmarking against relevant baselines. The experimental validation is transparent, ablated across architectures and datasets, and clearly demonstrates stated performance gains without methodological circularity.</p>
+      <p>The authors explicitly address limitations, noting performance sensitivity when pre-trained representations are misaligned with downstream domains (such as infrared or remote sensing), residual GPU memory footprints from large backbones, and the restriction to closed-vocabulary detection setups.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-28T10:22:04.787555+00:00.</p>
+        <p>Coverage: 72100 of 72100 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Single-Domain Generalized Object Detection (S-DGOD) aims to generalize from a
+single source domain to unseen domains under distribution shifts. Existing efforts
+mainly focus on simulating unseen domains or suppressing domain-specific factors.
+However, they largely overlook the intrinsic generalization capability embedded
+in Vision Foundation Models (VFMs). In this work, we show that unconstrained
+fine-tuning disrupts the geometric structure of pre-trained representations, which
+encodes domain-invariant semantics. Motivated by this, we proposeGeometric-
+InvarianceFine-Tuning (GIFT), a geometric-aware fine-tuning method for VFMs.
+Specifically, we introduce a series of learnable Householder reflections to the
+pre-trained weights to encourage geometry-consistent adaptation under domain
+shift. In addition, we propose a lightweight channel-wise scaling to facilitate
+effective task-specific </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>adaptation. Extensive experiments demonstrate that GIFT
+outperforms state-of-the-art (SOTA) approaches on two S-DGOD benchmarks.
+Notably, by introducing fewer than 1% additional trainable parameters into the
+frozen backbone, the proposed method achieves improvements of +7.9% and +2.9%
+in mPC over the previous SOTA on the Cityscapes-C and Diverse Weather Dataset,
+respectively. This finding highlights that preserving representation geometry is
+crucial for robust domain generalization, establishing GIFT as a principled and
+efficient solution to domain shift. The code is available at https://github.com/
+zhangyin1996/GIFT.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>geometry-preserving adaptation mechanism. A Householder reflection refers to a linear transfor-
+mation that performs a reflection with respect to a hyperplane defined by a unit vectorv∈R d, referred
+to as the Householder vector. The corresponding Householder matrix H∈R d×d is constructed as
+follows:
+H=I−2vv ⊤ subject to∥v∥ 2 = 1(6)
+where I denotes the identity matrix and superscript ⊤ indicates the transpose of a matrix. A key
+geometric property of H is itsorthogonality( H ⊤H=I ), which ensures that the transformation is
+an isometry. For any two feature vectorsx 1,x 2, the transformation preserves their inner product:
+⟨Hx 1,Hx 2⟩= (Hx 1)⊤(Hx 2) =x ⊤1 H ⊤Hx 2 =x ⊤1 x2 (7)
+4
+Input
+Detection Head
+Multi
+-
+Head
+Attention
+VFM  Block
+Output
+N
+×
+Rotation
 
-        <ul></ul>
+Matrix
+(a)
+
+Fine
+-
+Tuning
+
+with Geometric Preservation
+(b)
+
+Channel
+-
+Level Scaling
+...
+s
+1
+
+&gt;
+
+1
+s
+2
+
+&lt;
+1
+s
+3
+
+&gt;
+
+1
+s
+C
+
+&gt; </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As shown in Fig. 3, for a frozen VFM withN Transformer blocks, we propose a geometric-preserving
+fine-tuning strategy that adapts the model while maintaining the intrinsic geometry of the pre-trained
+representation space. Instead of directly updating the backbone weights, we introduce a learnable
+rotation matrix R, defined as the product of r Householder Reflection (HR) matrices, and integrate it
+into the frozen weights of theQ,K,V, andOutputprojection layers. The transformed weights Wrot
+can be represented as:
+Wrot =RW=
+ rY
+i=1
+Hi
+!
+W=
+ rY
+i=1
+(I−2v iv⊤i )
+!
+W,(8)
+where Hi =I−2v iv⊤i denotes the i-th HR matrix and vi is a learnable unit vector. W denotes the
+original frozen projection weights. Since each HR matrix Hi is orthogonal, the product of orthogonal
+matrices remains orthogonal, thus the transformation R also satisfies R⊤R=I . Consequently, for
+any pair of weight vectorsw 1 andw </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2, their inner product is preserved:
+⟨Rw1,Rw 2⟩=⟨w 1,w 2⟩.(9)
+In particular, theℓ 2 norm and pairwise distances remain invariant:
+∥Rw∥2 =∥w∥ 2,∥Rw 1 −Rw 2∥2 =∥w 1 −w 2∥2.(10)
+These properties ensure that R rotates the parameter space without altering its geometry, thereby
+preserving the structural stability of the pre-trained model and mitigating distortions from direct
+weight updates.
+In practice, directly applying R may induce large changes in the pre-trained weights. To ensure
+stable optimization, we employ a residual update mechanism. Specifically, we first compute the
+difference between the rotated and original weights, and then modulate this residual using a learnable
+gate vector g∈R Dout, initialized to all ones so that all output channels contribute equally at the start
+of training:
+∆Wmod =g⊙∆W=g⊙(W rot −W) =g⊙(RW−W)(11)
+where ⊙ denotes element-wise multiplication across columns </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Preserving the pretrained semantic structure is necessary but not sufficient for single-domain gener-
+alization. To identify task-specific features that are consistent under source-domain variations, we
+introduce a learnable channel-wise scaling matrixS, initialized to zeros:
+Wsca =SW,S= diag(s 1, . . . , sC)(12)
+where Wsca denotes the re-scaled weights, and each diagonal element of S modulates the importance
+of a single feature channel.
+To measure feature stability, we adopt gradient consistency as a proxy. Let fi(x) denote the output of
+thei-th feature channel. The gradient of the detection lossLwith respect to the scalings i is:
+G= ∂L∂f ′i fi(x), f ′i (x) =s ifi(x)(13)
+The expected gradient over the source domain can be viewed as an indicator of how consistently
+channel i contributes across intra-domain variations. Channels that consistently contribute to loss
+reduction exhibit </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>non-zero expected gradients, while spurious channels tend to produce gradients
+with high variance but near-zero mean. During stochastic optimization, gradients are accumulated
+over iterations:
+sTi =s 0i −η
+TX
+t=1
+Gti (14)
+where η denotes the learning rate. Under SGD optimization, channels with consistently aligned
+gradients tend to accumulate larger updates over training iterations, while unstable channels with
+highly varying gradients are less consistently reinforced.
+The final updated weights Wnew are obtained by adding the scaled residual to the original weights,
+together with a diagonal scaling branch to allow per-channel adjustment:
+Wnew =W+µ∆W mod +λW sca (15)
+where the balancing coefficientsµandλare implemented as learnable scalar parameters.
+Importantly, the orthogonal rotation branch primarily preserves relational geometric structure, such
+as pairwise angular relationships and </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets and Evaluation Metrics.Following existing S-DGOD methods [ 63, 29, 30], we evaluate
+our method on two benchmarks: the Diverse Weather Dataset (DWD) [51] and Cityscapes-C [35].
+DWDcomprises five scenarios: Daytime-Sunny (DS.), Daytime-Foggy (DF.), Dusk-Rainy (DR.),
+Night-Rainy (NR.), and Night-Sunny (NS.).Cityscapes-Cis a benchmark for evaluating detection
+robustness under common corruptions. It generates 15 corruption types with 5 severity levels.
+For evaluation, we report mean Average Precision (mAP50) to measure detection performance and
+mean Performance under Corruption (mPC) to evaluate robustness. For DWD [51], mPC is computed
+as the average mAP over four weather conditions, while for Cityscapes-C [35], it averages mAP50
+across all corruption types and severity levels.
+Implementation Details.We use DINOv2-Large [ 37] as the default VFM, while results with other
+VFMs are </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reported in Appendix A.3. For DWD, we employ Faster R-CNN [41] and DINO [60] (a
+DETR-based detector) as detection heads, respectively. For Cityscapes-C, Faster R-CNN is used as
+the detection head. All models are trained for 12 epochs using the AdamW optimizer with β1 = 0.9
+and β2 = 0.999, a learning rate of 1×10 −4, and a batch size of 2. By default, the number of HR
+matrices is set to r= 6 , and only the last n= 16 Transformer blocks are fine-tuned. All experiments
+are implemented inMMDetection[5] and conducted on a single RTX 3090 GPU.
+6
+Table 2: Comparison with SOTA methods on Cityscapes-C [35]. mPC denotes the average perfor-
+mance across 15 different corruption types. For fairness, we adopt Faster R-CNN [41] as the detection
+head. &#x27;Baseline&#x27; denotes a fully frozen DINOv2 [37] backbone with only the Faster R-CNN detection
+head. &#x27;†&#x27; denotes unreported results re-implemented with the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>33.1 13.7 25.2 31.5 39.5 42.5 38.9 42.1 35.9 31.8 29.3
+SoMA† [59] 53.5 16.4 19.2 15.3 39.4 31.4 37.7 15.0 28.2 36.7 47.2 51.5 45.9 50.9 42.3 36.3 34.2
+Cauvis [30] 54.6 16.8 19.8 15.2 41.4 34.0 39.2 15.8 29.8 36.7 48.8 53.0 49.5 52.0 43.9 38.8 35.6
+GIFT (Ours) 62.7 23.2 25.1 20.6 49.8 43.2 48.0 19.2 39.8 44.2 58.2 61.4 58.0 61.0 53.3 48.1 43.5
+Table 3: Comparison with SOTA methods on
+DWD [51]. mPC denotes the average performance
+across 4 different adverse weather conditions.
+Methods DS. DF. DR. NR. NS. mPC
+Traditional S-DGOD
+IN [21] 43.9 28.5 22.8 12.6 29.6 23.4
+SW [38] 50.6 30.8 26.3 13.7 33.4 26.1
+ISW [7] 51.3 31.8 25.9 14.1 33.2 26.3
+FRCNN [41] 56.2 33.5 28.0 14.2 35.8 27.9
+CDSD [51] 56.1 33.5 28.2 16.6 36.6 28.7
+OA-DG [29] 55.8 38.3 33.9 16.8 38.0 31.8
+ClipGap [47] 52.5 38.5 32.3 18.7 36.9 31.6
+G-NAS [52] 56.1 36.4 35.1 17.4 45.0 33.5
+PDD [31] 53.6 39.1 33.7 19.2 38.5 32.6
+UFR [34] </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>58.6 39.6 33.2 19.2 40.8 33.2
+Parameter-Efficient Fine-Tuning S-DGOD
+Detection Head: Faster R-CNN[41]
+SoMA [59] 49.3 38.2 37.9 24.5 41.9 35.6
+Cauvis [30] 72.2 52.3 61.3 44.1 58.3 54.1
+GIFT (Ours) 73.9 54.9 64.4 47.1 61.7 57.0
+Detection Head: DETR-based DINO[60]
+SoMA [59] 69.4 51.0 59.3 47.6 59.3 54.3
+Cauvis [30] 73.7 56.5 64.6 47.6 61.2 57.5
+GIFT (Ours) 76.0 58.3 65.9 49.9 63.3 59.4
+Table 4: Ablation study of geometric preser-
+vation (GP) and channel-wise scaling (CS) on
+DWD, using DINO [60] as the detection head.
+GP CS DF. DR. NR. NS. mPC
+- - 53.5 60.8 42.6 59.5 54.1
+-✓ 57.1 62.9 46.8 60.7 56.9
+✓- 57.8 64.2 49.7 62.5 58.6
+✓ ✓ 58.3 65.9 49.9 63.3 59.4
+Table 5: Comparison of different PEFT methods
+on DINOv2 with DETR-based [60] detector.
+Methods DF. DR. NR. NS. mPC
+Frozen 53.5 60.8 42.6 59.5 54.1
+AdaFormer [6] 54.6 61.1 42.1 59.1 54.2
+LoRA [20] 54.5 61.2 44.7 59.3 54.9
+VPT [22] 54.6 60.6 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>45.7 60.9 55.5
+Rein [50] 55.0 62.4 45.2 59.4 55.5
+SPT [49] 55.7 62.6 46.6 60.6 56.4
+CausalTune [61] 57.1 63.8 47.2 61.4 57.4
+SoMA [59] 51.0 59.3 47.6 59.3 54.3
+Cauvis [30] 56.5 64.6 47.6 61.2 57.5
+GIFT (Ours) 58.3 65.9 49.9 63.3 59.4</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Effectiveness of Each Component.We present detailed ablation experiments on geometric preser-
+vation (GP) and channel-wise scaling (CS) across both benchmarks, shown in Table 4 for DWD
+and Fig. 5 for Cityscapes-C. The results show that both GP and GIFT (GP combined with CS)
+improve over the baseline across all target domains (4 for DWD and 15 for Cityscapes-C). Notably,
+larger gains on Cityscapes-C highlight their effectiveness under more challenging domain shifts.
+We also notice that CS further improves performance particularly when built upon a geometrically
+stable representation, underscoring the importance of preserving stable geometric representations for
+downstream task-specific adaptation.
+Trainable Parameter Efficiency.To evaluate the training efficiency of GIFT, we compare the
+efficiency-effectiveness trade-offs of different methods built upon DINOv2-Large. As shown in
+Fig. 4, </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We additionally evaluate GIFT on the domain generalized semantic segmentation (DGSS) task. We
+use Rein [50] as baseline and following previous methods [50, 2, 59, 61], we compare our method
+with existing DGSS methods on two setups: (1) Cityscapes (C.) [8] → BDD100K (B.) [56], Mapillary
+(M.) [36] and (2) GTA5 (G.) [42] → (C.), (B.), (M.). As shown in Table 9, our method achieves the
+best results in 3 out of 5 cases and the second-best results in 1 case compared to VFM-based methods.
+These results demonstrate that the proposed geometry-preserving fine-tuning strategy generalizes
+beyond object detection and is also effective for domain generalized semantic segmentation.
+Table 9: DGSS performance of our proposed GIFT. (C.), (B.), (M.), and (G.) denote Cityscapes,
+BDD100K, Mapillary and GTA5 datasets, respectively.
+Methods C.→B. C.→M. G.→C. G.→B. G.→M.
+Rein [50] 63.54 74.03 66.40 60.40 </blockquote></details></li><li><strong>Contribution clarity — pages 16–17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We further validate the proposed method using three different VFMs,i.e., EV A02-Large [15, 14],
+SAM-Huge [28], and DINOv2-Large [ 37]. As shown in Table 10, our method achieves strong
+performance across all three VFM backbones, demonstrating strong generalization. Specifically, our
+16
+Table 10: Performance of different VFMs with a DETR-based [60] detection head. &quot;Avg.&quot; indicates
+the mean mAP across the five conditions.
+VFMsFine-tune Method DS. DF. DR. NR. NS. Avg. mPC
+EV A02-Large [15, 14] Freeze 63.0 45.2 48.6 27.3 38.8 44.6 40.0
++ Rein [50] 68.3 49.2 54.8 32.2 48.1 50.5(+5.9↑) 46.1(+6.1↑)
++ Cauvis [30] 69.7 50.2 57.6 34.2 48.1 52.0(+7.4↑) 47.5(+7.5↑)
++ Ours 71.6 51.3 59.2 35.9 49.2 53.4(+8.8↑) 48.9(+8.9↑)
+SAM-Huge [28] Freeze 69.7 50.5 52.5 28.8 52.9 50.9 46.2
++ Rein [50] 70.0 51.9 54.0 30.9 54.4 52.2(+1.3↑) 47.8(+1.6↑)
++ Cauvis [30] 72.2 53.755.8 31.9 55.753.9 (+3.0↑) 49.3(+3.1↑)
++ </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Ours 72.853.6 56.2 33.1 55.7 54.3(+3.4↑) 49.7(+3.5↑)
+DINOv2-Large [37] Freeze 71.2 53.5 60.8 42.6 59.5 57.5 54.1
++ Rein [50] 72.8 55.0 62.4 45.2 59.4 59.0(+1.5↑) 55.5(+1.4↑)
++ Cauvis [30] 73.7 56.5 64.6 47.6 61.2 60.7(+3.2↑) 57.5(+3.4↑)
++ Ours 76.0 58.3 65.9 49.9 63.3 62.7(+5.2↑) 59.4(+5.3↑)
+method achieves 48.9% mPC on the EV A02 [14] backbone, surpassing frozen EV A02 by a large
+margin (+8.9%). Moreover, it brings a +5.3% improvement on the DINOv2 [ 37] backbone and
+achieves a satisfactory performance (49.7% mPC) on SAM [28]. In addition, our method still has
+significant advantages over the current best method Cauvis [30], achieving improvements of +1.4%,
++0.4%, and +1.9% on EV A02, SAM and DINOv2 backbones, respectively. These results indicate that
+our method enhances the performance of different VFMs and provides stable improvements across
+diverse weather conditions, highlighting </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>domain generalization, where the
+detector needs to generalize to both unseen domains and novel categories, remains unexplored. Ex-
+tending the proposed framework to open-vocabulary domain generalization is an important direction
+for future work.
+22</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +358,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +374,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-26</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-27 09:36:11</li><li>Last seen by Paper Scout: 2026-10-27 09:36:28</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-26</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-27 09:36:11</li><li>Last seen by Paper Scout: 2026-10-28 10:20:19</li></ul>
             <ul><li>arXiv: 2610.35374</li><li>arXiv IDs: 2610.35374</li></ul>
           </section>
           <section class="detail-panel">

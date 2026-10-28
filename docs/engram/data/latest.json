@@ -1,23 +1,136 @@
 {
   "digest_quality_warning_count": 0,
-  "latest_run_date": "2026-10-27",
+  "latest_run_date": "2026-10-28",
   "latest_run_summary": {
-    "Candidates fetched": "85",
-    "Irrelevant": "77",
+    "Candidates fetched": "89",
+    "Irrelevant": "79",
     "Maybe relevant": "0",
-    "New unique papers": "76",
-    "Relevant": "8",
-    "Run ID": "54",
-    "Source summary": "arxiv: 3, openalex: 81, semantic_scholar: 1"
+    "New unique papers": "80",
+    "Relevant": "10",
+    "Run ID": "55",
+    "Source summary": "arxiv: 5, openalex: 82, semantic_scholar: 2"
   },
-  "newly_discovered_papers": [],
+  "newly_discovered_papers": [
+    {
+      "abstract_summary": "Conditional memory layers, such as DeepSeek's Engram, attach large hashed n-gram tables to a language model, and removing them from DeepSeek-V4.1-Flash costs 36.8 PopQA points. Low-bit quantization loses long-tail facts first, and the standard remedy, giving more bits to frequently accessed rows, backfires: refining...",
+      "alternate_urls": [
+        "https://arxiv.org/abs/2610.35985v1",
+        "https://arxiv.org/abs/2610.35985"
+      ],
+      "appeared_in_latest_run": true,
+      "arxiv_id": "2610.35985",
+      "authors": [
+        "Tianqi Chen",
+        "Xunchao Li",
+        "Linchuan Xie",
+        "Guanghua Yu",
+        "Jianchen Zhu",
+        "Peisong Wang",
+        "Jian Cheng"
+      ],
+      "canonical_id": "arxiv:2610.35985",
+      "citation": "Let the Gate Decide: Per-Lookup Precision for Quantized Conditional Memory in LLMs. Tianqi Chen, Xunchao Li, Linchuan Xie, Guanghua Yu, Jianchen Zhu, Peisong Wang, Jian Cheng. 2026-10-26. https://arxiv.org/abs/2610.35985v1",
+      "detail_json": "papers/let-the-gate-decide-per-lookup-precision-for-quantized-conditional-memory-in-llms-b7877141.json",
+      "detail_page": "papers/let-the-gate-decide-per-lookup-precision-for-quantized-conditional-memory-in-llms-b7877141.html",
+      "doi": null,
+      "effective_sort_date": "2026-10-26",
+      "first_seen_at": "2026-10-28 10:19:24",
+      "first_seen_date": "2026-10-28",
+      "future_date": false,
+      "is_new": true,
+      "last_seen_at": "2026-10-28 10:19:29",
+      "last_seen_date": "2026-10-28",
+      "latest_relevant_date_bucket": 0,
+      "latest_revision_date": "2026-10-26",
+      "library_admission": "review",
+      "newly_discovered_in_latest_run": true,
+      "notified_at": "2026-10-28 10:19:58",
+      "notified_date": "2026-10-28",
+      "openalex_id": null,
+      "pinned": false,
+      "publication_date": "2026-10-26",
+      "publication_date_confidence": "high",
+      "publication_date_precision": "day",
+      "publication_date_source": "arxiv",
+      "publication_status": "preprint",
+      "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
+      "publication_year": "2026",
+      "relevance_decision": "relevant",
+      "relevance_label": "Engram / conditional-memory study",
+      "relevance_reason": "Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.",
+      "relevance_score": 92,
+      "research_note": null,
+      "review_status": null,
+      "scholarly_quality": {
+        "applied_score_cap": null,
+        "applied_score_cap_reason": null,
+        "assessed_at": "2026-10-28T10:22:20.184375+00:00",
+        "assessment_scope": "title_and_abstract",
+        "assessment_version": "quality-promotion-v2",
+        "assessor_model": null,
+        "assessor_type": "deterministic",
+        "combined_rank_score": 0.92,
+        "concerns": [],
+        "concise_summary": "Independent scientific assessments have not been performed.",
+        "confidence": "low",
+        "coverage": {
+          "assessment_input_characters": 1154,
+          "extraction_complete": false,
+          "version": "coverage-v1"
+        },
+        "curation_note": null,
+        "dimension_scores": {},
+        "downranked": false,
+        "evidence": [],
+        "full_text_assessed": false,
+        "full_text_url": null,
+        "gate_version": "dual-promotion-v3",
+        "manual_override": false,
+        "missing_information": [
+          "No extractable manuscript text was available."
+        ],
+        "overall_quality_score": null,
+        "paper_type": "unclear",
+        "positive_signals": [],
+        "promotion": {
+          "outcome": "not_assessed"
+        },
+        "rationale": "Independent scientific assessments have not been performed.",
+        "recommendation": "unknown",
+        "rubric_version": "scholarly-rubric-v2",
+        "source_content_hash": "de7be740d7d9b9c05cc63ece9e6b3c7972b33f33b8d82028aad6242606c336ce",
+        "status": "uncertain",
+        "suppressed": false,
+        "uncertainty": "No promotion; review candidates may remain pending indefinitely."
+      },
+      "semantic_scholar_id": null,
+      "source": "arxiv",
+      "source_id": "2610.35985",
+      "source_ids": {
+        "arxiv": [
+          "2610.35985"
+        ]
+      },
+      "source_updated_date": "2026-10-26",
+      "sources": [
+        "arxiv"
+      ],
+      "tags": [
+        "engram",
+        "conditional-memory",
+        "hashed-ngram-memory"
+      ],
+      "title": "Let the Gate Decide: Per-Lookup Precision for Quantized Conditional Memory in LLMs",
+      "url": "https://arxiv.org/abs/2610.35985v1"
+    }
+  ],
   "source_diagnostics": [
     "openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.",
     "openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.",
     "openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.",
-    "semantic_scholar failed for 'Engram': Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.",
+    "semantic_scholar: incomplete discovery window for 'Engram'; single-page record limit reached.",
     "semantic_scholar failed for 'conditional memory language model': Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.",
     "semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.",
-    "semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached."
+    "semantic_scholar failed for 'tokenizer-agnostic Engram': Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources."
   ]
 }

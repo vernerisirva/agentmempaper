@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents</h1>
+          <p class="hero-copy">Navyansh Mahla, Sashank Vandrangi</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2610.32752">Open paper</a>
+            <a class="paper-detail-link" href="actionrag-evidence-refining-graph-diffusion-for-long-term-memory-in-llm-agents-10760a0d.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Navyansh Mahla, Sashank Vandrangi</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-23</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-23</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.32752v1">arXiv</a><a href="https://arxiv.org/abs/2610.32752">arXiv</a><a href="https://openalex.org/W7223683094">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Focuses on persistent or long-term memory for agent behavior.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>LLM agents need long-term memory that can recover precise and mutually consistent evidence from growing interaction histories, particularly when answers depend on relations among facts rather than isolated semantic matches. Current memory pipelines remain vulnerable at two stages: indexing errors can fragment repeat...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The paper provides an adequately scoped, well-formulated, and thoroughly ablated contribution to knowledge graph RAG. The evaluation relies on standardized objective benchmarks with clear comparative baselines and transparently documents both strengths and task-specific weaknesses.</p>
+      <p>The manuscript explicitly discusses limitations, including weaker performance on narrative multi-hop tasks relative to full-corpus or agentic iterative search, performance degradation under growing distractor volumes in EventQA, and reliance on fixed heuristic diffusion hyperparameters.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-26T09:41:18.655802+00:00.</p>
+        <p>Coverage: 42105 of 42105 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LLM agents need long-term memory that can recover precise and mutually consistent ev-
+idence from growing interaction histories, particularly when answers depend on relations
+among facts rather than isolated semantic matches. Current memory pipelines remain
+vulnerable at two stages: indexing errors can fragment repeated entities or merge distinct
+ones, and online retrieval often treats initial similarity scores as final even when the sur-
+rounding graph provides evidence for revising them. We introduceActionRAG, a graph
+memory architecture that couples cautious indexing with query-time graph retroevaluation.
+Its indexing pipeline reconciles type labels and applies tiered entity resolution. Given a
+query, dual-channel entity and triple retrieval forms an initial evidence set and induces a
+bounded local graph. Query-conditioned receiver-normalized diffusion refines triple scores
+using </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>local path structure. Seed protection, hub-penalized flux, and triple materialization
+preserve direct evidence while recovering missed connections. We evaluate ActionRAG on
+MemoryAgentBench (MAB), which tests accurate retrieval, conflict resolution, long-range
+understanding, and test-time learning. Across its eight deterministic-scoring columns, Ac-
+tionRAG achieves 55.1 average accuracy, improving over the strongest retrieval-based mem-
+ory baseline by 5.4 points. Under MAB&#x27;s query-time cost accounting, mean synthesis cost
+stays below$0.001 per query on the four reported cost columns, and the sum of separately
+measured retrieval-sidep 99 components is 440.7 ms on our consumer Apple Silicon setup.
+Keywords:graph retrieval-augmented generation; graph diffusion filtering; memory-
+augmented LLM agents; knowledge graphs</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>agents on six of
+the eight columns where the unweighted mean of these heterogeneous scores is 55.1, 5.4
+points above HippoRAG-v2.
+Contributions.
+•A cautious graph-indexing pipeline with label reconciliation, tiered entity resolution,
+provenance preservation, and conflict-aware summarization.
+•An evidence-refining local graph diffusion method that combines dual-channel retrieval
+with relational retroevaluation, yielding the highest reported score among retrieval-
+based memory agents on six of the eight deterministic MAB columns.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ActionRAG separates persistent memory construction from query-local retrieval. It assumes
+that each query touches only a bounded neighborhood of the accumulated interaction graph,
+so evidence diffusion operates on a query-conditioned subgraph rather than the corpus-level
+graph. Figure 1 summarizes the online pipeline.
+Offline indexing(§3.2) converts multi-turn interaction histories into a typed entity–
+relation graph. An LLM extracts typed (head,relation,tail) triples, entity mentions are
+canonicalized, and entity and triple descriptions are embedded with BGE-M3 (Chen et al.,
+ActionRAG
+2024). Postgres stores the graph, its pgvector indices, and source-chunk back-pointers for
+every triple.
+Online retrieval(§3.3) encodes the query once and retrieves the top-K E entities and
+top-KT concrete triples in parallel. Hop-capped expansion induces a bounded item graph,
+and receiver-normalized </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>diffusion refines its scores through the closed-form solvex=α(I−
+(1−α)P) −1s. Seed protection and pruning preserve high raw-similarity evidence, while
+hub-penalized flux materializes missing triples. The ordered evidence items are mapped
+to their source chunks and packed under a token budget as [fact #N] entries for answer
+generation.
+Notation.We write the typed graph asG= (E, R, T) with entity setE, relation-type set
+R, and typed triple setT⊆E×R×E. For a queryq, the retrieval-time item setV⊆T∪E
+contains the triples surfaced by seed expansion together with any orphan entities that
+lack outgoing relations in the local subgraph. Online &quot;relation&quot; retrieval therefore means
+retrieval of concrete triples inT, not relation types inR. We denote the nonnegative raw
+query-similarity scores bys∈R |V|≥0 and the refined scores byx∈R |V| . LetA∈R |V|×|V|
+be the symmetric path-weighted adjacency,D= </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The indexer turns an interaction history into an entity–relation graph and records the
+source chunk for every graph item. Chunks are processed in parallel, but names and types
+are resolved across the complete batch before the graph is updated.
+Structured extraction and temporal grounding.For each chunk, an LLM emits
+typed entity mentions and directed (head,relation,tail) mentions with textual descriptions.
+The current type vocabulary is supplied as a soft constraint, allowing the extractor to
+introduce a more specific label when no existing type is suitable. Dates, durations, and
+temporal phrases are retained inside the corresponding entity or relation description rather
+than represented as graph nodes. When a dialogue has a session timestamp, relative phrases
+such as &quot;yesterday&quot; or &quot;last week&quot; are converted to absolute dates using that timestamp.
+The resolved date is stored in the fact </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>description instead of creating a separate node for it.
+Label reconciliation.Free-form extraction improves coverage but can produce several
+names for the same entity type. Before updating the graph, the indexer groups proposed
+types using name and description similarity, maps each group to an existing canonical type
+when possible, and registers unmatched groups as new types. Alias chains are resolved
+before the resulting type map is applied to the batch.
+Entity resolution.Mentions are resolved after their types have been canonicalized. A
+unique node with the same normalized name and a compatible type is reused directly. If
+no exact match exists, the indexer reuses a fuzzy name match only when it is the clear
+best candidate. All remaining mentions are grouped by normalized name, canonical type,
+and description similarity. One node is then created for each group before any relations </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Motivation.Semantic retrieval scores graph items independently. It can therefore re-
+trieve two strongly matching facts while missing the relation that connects them, simply
+because the connecting relation is not itself similar to the query. Unrestricted graph ex-
+pansion has the opposite problem: high-degree entities introduce many generic facts and
+consume the context budget. ActionRAG treats the initial retrieval as a proposal rather
+than a final result. It constructs a bounded query-local graph, retroevaluates each proposed
+item using nearby evidence, removes weak proposals, and exposes useful relations that were
+absent from the initial set.
+Dual-channel proposal.Letz=ϕ(Q) be the embedding of queryQ. Independent
+nearest neighbor searches over entity and concrete triple descriptions recover referential and
+predicate-level matches, respectively. Their union, followed by bounded graph </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>endpoints are treated as direct local evidence. High-degree
+noise is controlled by the expansion cutoff before diffusion and by the hub penalty during
+materialization. These quantities define the symmetric item affinity
+Aij =
+(
+exp(−βdij)r ij, i̸=jandd ij ≤H,
+0,otherwise. (1)
+Traversal costs select the path, while the final affinity uses the hop length and the strongest
+positive triple relevance on that selected path. Thus, two items interact strongly only when
+ActionRAG
+they are connected by a short path with query-relevant evidence. This max-relevance choice
+lets a salient bridge support diffusion even when nearby path triples mainly serve as context
+carriers; traversal cost selects among candidate paths and hop decay limits long bridges.
+Receiver-normalized diffusion.LetD= diag(A1) andP=D −1A, with an all-zero
+row for an isolated item. ActionRAG refines the seed scores through
+x=αs+ </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(1−α)P x, x=α
+
+I−(1−α)P
+−1s.(2)
+The orientation ofPis important. It acts directly on the column vectorx, so a non-isolated
+item receives
+xi =αs i + (1−α)
+P
+j AijxjP
+k Aik
+.(3)
+Each item therefore combines its own semantic evidence with a relevance-weighted average
+of its neighbors. Normalization belongs to the receiving item, which makes the operator
+an evidence smoother rather than probability-mass transport. Sinceρ((1−α)P)&lt;1 for
+α∈(0,1), the fixed point is unique and the closed-form solve is well defined.
+Pruning and evidence materialization.Diffusion can weaken an isolated but highly
+query-relevant item, so ActionRAG protects the strongest raw-similarity items. The re-
+tained index set is
+m= max
+j
+xj,K=
+(
+{i:x i ≥εm} ∪TopS(s), m &gt;0,
+TopS(s), m= 0, (4)
+whereSis the number of protected raw-score items. The second branch is the all-zero
+fallback: if no item receives positive diffused </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>score, only the protected raw-score items are
+retained. To recover triples that were not proposed initially, every concrete tripleτ∈π ij
+between retained items receives the flux score
+Fijτ = (xi +x j) exp(−βdij)r+τ hihj, h i = min
+
+1, 1log max(∆i,2)  ,(5)
+where ∆ i is the maximum local degree among the endpoints ofv i. The factorsh i andh j
+prevent hubs from dominating merely because they participate in many paths. A unique
+unseen triple receives the aggregate score
+Fτ = maxi,j∈K
+τ∈π ij
+Fijτ .
+The highest-flux triples absent fromV 0 are materialized as additional evidence, up to a
+budget ofLtriples. This changes only the query-local candidate set, not the stored graph.
+Context assembly .The evidence order is intentionally two stage: retained seed-supported
+items are packed first by diffused score, then materialized bridge triples are appended by
+flux. The retained and materialized </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>obtainP, using a zero row for each isolated item
+solve Eq. (2) forx
+retainKaccording to Eq. (4)
+foreachunseen tripleτon a path between retained itemsdo
+compute pairwise flux entriesF ijτ using Eq. (5)
+aggregate duplicate entries byF τ = maxi,j Fijτ
+M ←unique triples with the top-Laggregate flux scores
+V ∗ ← {vi :i∈ K} ∪ M
+returnretained items ordered byx i, followed by materialized triples ordered byF τ</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmark and scoring.The eight columns aggregate finer-grained datasets: SH-
+DocQA and MH-DocQA from RULER, three context-length variants of EventQA, five in-
+context classification datasets for MCC, Redial for Recom, Detective QA, and four context-
+length variants each for FC-SH and FC-MH. Following MAB, we use substring exact match
+for DocQA, EventQA, and fact consolidation, exact match for MCC and Detective QA,
+and Recall@5 for Recom. We preserve MAB&#x27;s within-column aggregation and report the
+ActionRAG
+unweighted mean of the eight column scores as the &quot;deterministic average.&quot; Tasks requiring
+an LLM judge are excluded from this aggregate.
+ActionRAG configuration.Each query retrieves the ten nearest entities and ten nearest
+concrete triples. Entity seeds are expanded by at most two hops and triple seeds by one
+hop, after which the initial set is capped at 200 items. The query-local </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>graph uses hop
+boundH=3, distance-decay rateβ=1, and minimum traversal costδ=0.01. We apply one
+receiver-normalized solve with direct-evidence weightα=0.15; no second diffusion round is
+performed. Items scoring belowε=0.10 times the maximum refined score are pruned, except
+for theS=10 strongest initial items, and at mostL=5 unseen triples are materialized using
+Eq. (5). Retrieved graph facts are packed into a 7,000-token context. Full retrieval settings
+appear in Appendix C.
+Indexing follows Section 3.2 and uses Claude Haiku 4.5 for extraction and graph sum-
+marization. BGE-M3 (∼560M parameters) supplies all embeddings (Chen et al., 2024), and
+gpt-4o-mini generates the final answers for direct comparison with MAB Table 17.
+All ActionRAG experiments were run on a consumer Apple Silicon laptop (macOS
+26.5.2, Darwin 25.5.0, arm64). In comparison, MAB reports HippoRAG-v2 timings on
+four </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 reports eight deterministic MAB columns across long-context, RAG, structure-
+augmented, and agentic-memory baselines. ActionRAG (three runs) is grouped as structure-
+augmented and uses MAB&#x27;s gpt-4o-mini generator.
+Table 2 shows complementary indexing and retrieval effects: the full pipeline scores 55.1
+on the reconciled graph but 45.5 on the raw graph and 48.9 with summarization without
+reconciliation. Base retrieval on the reconciled graph reaches 45.0. The best result therefore
+combines reconciled, summarized indexing with query-local refinement.
+ActionRAG has the highest reported retrieval-based score on six columns and an un-
+weighted mean of 55.1, 5.4 points above HippoRAG-v2. MIRIX (4.1-mini) leads the com-
+bined structure-augmented/agentic group on MH-DocQA and Detective QA, but uses iter-
+ative search and GPT-4.1-mini rather than ActionRAG&#x27;s single retrieval pass and </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MAB uses gpt-4o-mini
+as the answer generator. Avg. is the unweighted mean of the eight heterogeneous
+displayed scores. Bold marks the global column best and underline marks the best
+among structure-augmented RAG and agentic memory agents.
+AR TTL LRU CR Overall
+Agent type SH MH Event MCC Recom DetQA FC-SH FC-MH Avg.
+Long-context agents
+GPT-4o-mini (128K) 64.0 43.0 59.082.015.163.445.0 5.0 47.1
+GPT-4.1-mini (1M)83.066.082.675.6 16.7 56.3 36.0 5.0 52.7
+Simple RAG agents
+BM25 66.0 56.0 74.6 75.4 13.6 52.1 48.0 3.0 48.6
+Embedding RAG agents
+Contriever 22.0 31.0 66.8 70.6 15.2 42.3 18.0 7.0 34.1
+Text-Embed-3-Small 60.0 44.0 63.0 70.0 15.3 54.9 28.0 3.0 42.3
+Text-Embed-3-Large 54.0 44.0 70.0 72.4 16.2 56.3 28.0 4.0 43.1
+Qwen3-Embedding-4B 57.0 47.0 71.4 78.0 12.2 59.2 29.0 3.0 44.6
+Structure-augmented RAG agents
+RAPTOR 29.0 38.0 45.8 59.4 12.3 42.3 14.0 1.0 30.2
+GraphRAG 47.0 47.0 34.4 39.8 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>9.8 39.4 14.0 2.0 29.2
+MemoRAG 29.0 33.0 56.0 77.0 13.1 50.7 21.0 7.0 35.9
+HippoRAG-v2 76.0 66.0 67.6 61.4 10.2 57.7 54.0 5.0 49.7
+Mem0 25.0 32.0 37.5 32.4 10.0 36.6 18.0 2.0 24.2
+Cognee 31.0 26.0 26.8 35.4 10.1 29.6 28.0 3.0 23.7
+Zep 44.0 25.0 42.5 62.8 12.1 28.2 7.0 3.0 28.1
+ActionRAG 77.0
+±1.0
+63.0
+±1.0
+77.1
+±0.8
+82.0
+±1.1
+18.2
+±0.4
+46.7
+±0.9
+61.3
+±1.2
+15.5
+±0.7
+55.1
+±0.9
+Agentic memory agents
+Self-RAG 35.0 42.0 31.8 11.6 12.8 35.2 19.0 3.0 23.8
+MemGPT 41.0 38.0 26.2 67.6 14.0 42.3 28.0 3.0 32.5
+MIRIX 62.0 61.0 29.8 38.4 9.8 40.8 14.0 2.0 32.2
+MIRIX (4.1-mini) 73.075.0 53.0 61.0 10.3 62.0 20.0 3.0 44.7
+Table 2: Component attribution on MAB deterministic aggregate.
+Graph construction Recon. Summ. Base PPR ActionRAG
+Raw exact-match triplet graph string only none 43.0 45.4 45.5
+Summarized exact-match graph string only node/rel. 43.8 46.0 48.9
+Reconciled ActionRAG graph node/type/rel. </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>node/rel.+prov. 45.0 47.0 55.1</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>53.0 49.0 36.0 12.0 38.4
+Cognee 34.0 42.0 42.0 41.0 18.0 35.4
+Mem0 35.0 37.0 35.0 29.0 26.0 32.4
+Self-RAG 19.0 13.0 6.0 15.0 5.0 11.6
+ActionRAG94.0 91.0 86.0 76.0 63.0 82.0
+Table 4: Per-query cost ($) / score on four MAB columns and the baselines are from MAB
+Table 17 under November 2025 prices.
+Agent MH-DocQA MCC DetQA FC-SH
+GPT-4o-mini LC 0.010 / 43.0 0.008 / 82.0 0.010 / 63.4 0.010 / 45.0
+GPT-4.1-mini LC 0.043 / 66.0 0.011 / 75.6 0.013 / 56.3 0.027 / 36.0
+BM25 + gpt-4o-mini&lt;0.001 / 56.0 0.006 / 75.4 0.006 / 52.1&lt;0.001 / 48.0
+MIRIX (4.1-mini) 0.016 / 75.0 0.010 / 61.0 0.011 / 62.0 0.019 / 20.0
+ActionRAG0.00109 / 63.0 0.00031 / 82.0 0.00116 / 46.7 0.00111 / 61.3
+ActionRAG costs at most$0.00116/query. It matches GPT-4o-mini long context on
+MCC at lower cost and on MH-DocQA/FC-SH it is 39×/17×cheaper than GPT-4.1-mini/
+MIRIX, with a three-point MH gap and higher FC-SH score.
+Retrieval </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ActionRAG combines reconciled graph construction with query-local receiver-normalized
+diffusion, pruning, and materialization for long-term agent memory. Across eight hetero-
+geneous deterministic MAB columns, it records the highest reported retrieval-based score
+on six and an unweighted mean of 55.1. Component ablations indicate that the best con-
+figuration combines reconciled, summarized indexing with retrieval-time refinement. Gains
+center on test-time learning and conflict resolution where weaker MH-DocQA and Detec-
+tiveQA results expose limits for narrative evidence. It also maintains low query cost and
+sub-half-second main-evaluation retrieval, while packed context remains nearly constant as
+the graph grows. Future work can include better algorithms for graph expansion which are
+more robust to hyperparameter values.</blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 6: One-at-a-time MCC sensitivity. Each row changes one default.
+Config BANK CLINIC NLU TREC-C TREC-F MCC avg
+default (α=.15,H= 3,ε=.1,L= 5,S= 10) 94.0 91.0 86.0 76.0 63.0 82.0
+α= 0.05 94.0 90.0 85.0 82.0 63.0 82.8
+α= 0.50 92.0 89.0 86.0 79.0 64.0 82.0
+α= 0.85 95.0 89.0 86.0 86.0 68.0 84.8
+H= 1 93.0 88.0 87.0 83.0 63.0 82.8
+H= 5 92.0 89.0 87.0 80.0 66.0 82.8
+ε= 0.0 93.0 90.0 85.0 80.0 68.0 83.2
+ε= 0.3 93.0 89.0 85.0 84.0 62.0 82.6
+L= 0 93.0 88.0 87.0 84.0 65.0 83.4
+L= 10 92.0 89.0 87.0 80.0 63.0 82.2
+S= 0 93.0 89.0 87.0 80.0 62.0 82.2
+S= 20 93.0 89.0 86.0 80.0 63.0 82.2
+MCC means span 82.0–84.8. Bothα= 0.85 (84.8) andL= 0 (83.4) exceed the fixed
+default, so it is not MCC-optimal and materialization is not uniformly beneficial and all
+settings remain within 2.8 points.
+Table 7: MCC embedding sensitivity with fixed graph and retrieval settings.
+Embedder Dim BANK CLINIC NLU TREC-C </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rises 25%/32% atp 50/p99 and mean score falls 4.2 points
+as distractors increase.
+Appendix C. ActionRAG configuration
+All MAB columns use one fixed configuration: Claude Haiku 4.5 extraction/summarization,
+BGE-M3 embeddings, and gpt-4o-mini synthesis. Table 9 maps implementation settings to
+Section 3.3; implementationK R corresponds to paperK T .
+Table 9: Fixed ActionRAG retrieval configuration.
+Setting Symbol Value Setting Symbol Value
+entity seedsK E 10 hop capH3
+concrete triple seedsK T 10 distance decayβ1.0
+entity expansion depthD E 2 traversal floorδ0.01
+triple expansion depthD T 1 direct-evidence weightα0.15
+neighbors per expansion n/a 8 prune thresholdε0.10
+hub-degree cutoff n/a 80 protected raw-score itemsS10
+initial item-pool capK init 200 materialized triplesL5
+final triple cap n/a 200 retrieved-context budget n/a 7,000 tokens
+The implementation usesc τ = max(0.01,1−cos(z, </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ϕ(τ))) and one diffusion solve.
+Inper intermediarymode, unseen path triples receive pairwise flux and duplicates are
+merged by maximumF τ , and the topLbecome temporary query-local evidence.
+Appendix D. Retrieval latency protocol
+We measure isolated retrieval, excluding answer generation, on the same Apple Silicon
+laptop with local Postgres/pgvector and no discrete GPU. Diffusion timing covers 50 MH-
+DocQA queries after initialization and includes local-graph construction, path scoring, solv-
+ing, pruning, materialization, and packing, but excludes query embedding. BGE-M3 em-
+bedding is measured separately at batch size one with normalized embeddings, 20 warm-ups,
+and 200 measured calls. The reportedp 99 adds the two componentp 99 values and we omit
+concurrent full-retrieval wall time because database and Python scheduling make it more
+variable.</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Memory architecture / system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory mechanisms or governance for LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Core agent-memory paper</li>
+              <li>Tags: agent-memory, llm-agents, long-term-memory, memory-systems</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-27</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-26 09:36:58</li><li>Last seen by Paper Scout: 2026-10-28 10:18:33</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.32752</li><li>arXiv: 2610.32752</li><li>OpenAlex: W7223683094</li><li>OpenAlex IDs: W7223683094</li><li>arXiv IDs: 2610.32752</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="actionrag-evidence-refining-graph-diffusion-for-long-term-memory-in-llm-agents-10760a0d.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents. Navyansh Mahla, Sashank Vandrangi. 2026-10-23. https://doi.org/10.48550/arxiv.2610.32752</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

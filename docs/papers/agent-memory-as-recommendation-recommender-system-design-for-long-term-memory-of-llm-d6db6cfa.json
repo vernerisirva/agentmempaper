@@ -1,0 +1,1808 @@
+{
+  "abstract_summary": "Large language model (LLM) agents that serve users across many sessions must choose, for every request, the few stored memories that enter a limited context window. This choice largely decides whether the agent answers correctly, and it runs on every request at Web scale. This selection faces three challenges: a lar...",
+  "alternate_urls": [
+    "https://doi.org/10.48550/arxiv.2610.34673",
+    "https://arxiv.org/abs/2610.34673v1",
+    "https://arxiv.org/abs/2610.34673",
+    "https://openalex.org/W7223960487"
+  ],
+  "appeared_in_latest_run": true,
+  "arxiv_id": "2610.34673",
+  "authors": [
+    "Xinyu Zhang",
+    "Weiwei Sun"
+  ],
+  "canonical_id": "doi:10.48550/arxiv.2610.34673",
+  "citation": "Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents. Xinyu Zhang, Weiwei Sun. 2026-10-26. https://doi.org/10.48550/arxiv.2610.34673",
+  "detail_json": "papers/agent-memory-as-recommendation-recommender-system-design-for-long-term-memory-of-llm-d6db6cfa.json",
+  "detail_page": "papers/agent-memory-as-recommendation-recommender-system-design-for-long-term-memory-of-llm-d6db6cfa.html",
+  "doi": "10.48550/arxiv.2610.34673",
+  "effective_sort_date": "2026-10-26",
+  "first_seen_at": "2026-10-27 09:33:57",
+  "first_seen_date": "2026-10-27",
+  "future_date": false,
+  "is_new": false,
+  "last_seen_at": "2026-10-29 10:42:51",
+  "last_seen_date": "2026-10-29",
+  "latest_relevant_date_bucket": 0,
+  "latest_revision_date": null,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": true,
+  "notified_at": "2026-10-27 09:35:09",
+  "notified_date": "2026-10-27",
+  "openalex_id": "W7223960487",
+  "pinned": false,
+  "provenance": {
+    "curated": false,
+    "curation_note": null,
+    "date_source": "openalex",
+    "first_seen_at": "2026-10-27 09:33:57",
+    "generated_at": "2026-10-29 10:47:34",
+    "last_seen_at": "2026-10-29 10:42:51",
+    "metadata_sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "publication_date_confidence": "medium",
+    "publication_date_precision": "day",
+    "publication_date_source": "openalex",
+    "relevance_source": "deterministic screening",
+    "screening_source": "deterministic rules",
+    "source_ids": {
+      "arxiv": [
+        "2610.34673"
+      ],
+      "openalex": [
+        "W7223960487"
+      ]
+    }
+  },
+  "publication": {
+    "confidence": "medium",
+    "date": "2026-10-26",
+    "display": "Published 2026-10-26",
+    "latest_revision_date": null,
+    "precision": "day",
+    "publication_date_confidence": "medium",
+    "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
+    "year": "2026"
+  },
+  "publication_date": "2026-10-26",
+  "publication_date_confidence": "medium",
+  "publication_date_precision": "day",
+  "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
+  "publication_year": "2026",
+  "related_topics": [
+    "agent-memory",
+    "benchmark",
+    "llm-agents",
+    "long-term-memory",
+    "memory-benchmark",
+    "memory-systems"
+  ],
+  "relevance": {
+    "curation_note": null,
+    "decision": "relevant",
+    "public_label": "Highly relevant",
+    "reason": "Focuses on persistent or long-term memory for agent behavior.",
+    "review_status": null,
+    "score": 100,
+    "tags": [
+      "agent-memory",
+      "llm-agents",
+      "memory-systems",
+      "long-term-memory",
+      "benchmark"
+    ]
+  },
+  "relevance_decision": "relevant",
+  "relevance_label": "Memory benchmark/evaluation",
+  "relevance_reason": "Focuses on persistent or long-term memory for agent behavior.",
+  "relevance_score": 100,
+  "research_note": null,
+  "review_status": null,
+  "schema_version": "paper-scout-card-v2",
+  "scholarly_quality": {
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-10-27T09:39:15.928264+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
+    "combined_rank_score": 1.0,
+    "concerns": [],
+    "concise_summary": "The work provides a sound theoretical formulation uniting memory architectures into a recommender cascade and demonstrates strong empirical gains using zero-LLM-call ranking, supported by thorough baseline reproductions, cost measurements, and independent evaluation controls.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 74933,
+      "assessment_input_sha256": "46ad1e358b3916ceb5cf8d04899f4cf05f46584697810267a1ac122b50a5ef84",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.34673",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 73349,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 72764,
+      "evidence_block_count": 104,
+      "evidence_context_characters": 85754,
+      "evidence_context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+      "evidence_context_sha256": "34092941ff5219bb9f55d18f0456987759522a1ad2847fe5fd02da4f09189192",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 73371,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "02fb8fa92dd72e30bb00ab7e7bd6f634b5f2e95a83e90d37fe78b42d409ea6b5",
+        "source_url": "https://arxiv.org/pdf/2610.34673",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 73349,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 192,
+          "supplied_characters": 192
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1726,
+          "supplied_characters": 1726
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1299,
+          "supplied_characters": 1299
+        },
+        {
+          "heading": "Llm Calls",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 2246,
+          "supplied_characters": 2246
+        },
+        {
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1206,
+          "supplied_characters": 1206
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 3182,
+          "supplied_characters": 3182
+        },
+        {
+          "heading": "Agent Memory As Recommendation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 197,
+          "supplied_characters": 197
+        },
+        {
+          "heading": "Memory Selection As Slate Recommendation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1675,
+          "supplied_characters": 1675
+        },
+        {
+          "heading": "Memory Selection As Slate Recommendation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2207,
+          "supplied_characters": 2207
+        },
+        {
+          "heading": "The Design Space",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 641,
+          "supplied_characters": 641
+        },
+        {
+          "heading": "Three Results About The Space",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 1965,
+          "supplied_characters": 1965
+        },
+        {
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1493,
+          "supplied_characters": 1493
+        },
+        {
+          "heading": "The Design Problem",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 12,
+          "source_characters": 2118,
+          "supplied_characters": 2118
+        },
+        {
+          "heading": "Candidate Generation: Raising\ud835\udc5f Pool",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 685,
+          "supplied_characters": 685
+        },
+        {
+          "heading": "Learning To Rank: Raising\ud835\udc5f Rank",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 927,
+          "supplied_characters": 927
+        },
+        {
+          "heading": "Slate Construction: The Fill",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 960,
+          "supplied_characters": 960
+        },
+        {
+          "heading": "Slate Construction: The Fill",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 92,
+          "supplied_characters": 92
+        },
+        {
+          "heading": "Optional Write-Time Records",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 565,
+          "supplied_characters": 565
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 4341,
+          "supplied_characters": 4341
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 323,
+          "supplied_characters": 323
+        },
+        {
+          "heading": "Rq1: Recommendation Against Llm-Built",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1132,
+          "supplied_characters": 1132
+        },
+        {
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 4018,
+          "supplied_characters": 4018
+        },
+        {
+          "heading": "Rq2: Which Terms Of The Factorization Carry",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1669,
+          "supplied_characters": 1669
+        },
+        {
+          "heading": "Rq2: Which Terms Of The Factorization Carry",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 4022,
+          "supplied_characters": 4022
+        },
+        {
+          "heading": "Rq3: Cost",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1455,
+          "supplied_characters": 1455
+        },
+        {
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 659,
+          "supplied_characters": 659
+        },
+        {
+          "heading": "When Item-Wise Ranking Suffices",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 3659,
+          "supplied_characters": 3659
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 27,
+          "source_characters": 903,
+          "supplied_characters": 903
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 589,
+          "supplied_characters": 589
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 10424,
+          "supplied_characters": 10424
+        },
+        {
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 794,
+          "supplied_characters": 794
+        },
+        {
+          "heading": "Sion Block Follows The Official Template With The Session Date And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 269,
+          "supplied_characters": 269
+        },
+        {
+          "heading": "Starts With A Fixed Header And Lists The Selected Turns Under Session",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 191,
+          "supplied_characters": 191
+        },
+        {
+          "heading": "Qwen3-32B Runs With Fp8 Weights Under Vllm With Thinking Dis-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 251,
+          "supplied_characters": 251
+        },
+        {
+          "heading": "The Gpt-4O Judge Uses The Official Per-Type Prompts At Temperature",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 1041,
+          "supplied_characters": 1041
+        },
+        {
+          "heading": "Of Both Longmemeval Variants Is The Same As Under Gpt-4O Except",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 167,
+          "supplied_characters": 167
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 596,
+          "supplied_characters": 596
+        },
+        {
+          "heading": "Combination Exceeds Every Single Feature Group By 13 To 41",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 303,
+          "supplied_characters": 303
+        },
+        {
+          "heading": "Table 5: Accuracy (%) On The Longmemeval-S Test Questions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 290,
+          "supplied_characters": 290
+        },
+        {
+          "heading": "System Qwen\u2191Deepseek\u2191Qwen\u2191Deepseek\u2191",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1699,
+          "supplied_characters": 1699
+        },
+        {
+          "heading": "System Qwen\u2191Deepseek\u2191Qwen\u2191Deepseek\u2191",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 3003,
+          "supplied_characters": 3003
+        },
+        {
+          "heading": "Llm Calls. Every Selector That Drops A Mention Gives A Wrong",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 2978,
+          "supplied_characters": 2978
+        },
+        {
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 4612,
+          "supplied_characters": 4612
+        }
+      ],
+      "selected_characters": 72764,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 192,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1726,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1299,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2246,
+          "heading": "Llm Calls",
+          "page": 1
+        },
+        {
+          "characters": 1206,
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "page": 2
+        },
+        {
+          "characters": 3182,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 197,
+          "heading": "Agent Memory As Recommendation",
+          "page": 2
+        },
+        {
+          "characters": 1675,
+          "heading": "Memory Selection As Slate Recommendation",
+          "page": 2
+        },
+        {
+          "characters": 2207,
+          "heading": "Memory Selection As Slate Recommendation",
+          "page": 3
+        },
+        {
+          "characters": 641,
+          "heading": "The Design Space",
+          "page": 3
+        },
+        {
+          "characters": 1965,
+          "heading": "Three Results About The Space",
+          "page": 3
+        },
+        {
+          "characters": 1493,
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "page": 4
+        },
+        {
+          "characters": 2118,
+          "heading": "The Design Problem",
+          "page": 4
+        },
+        {
+          "characters": 685,
+          "heading": "Candidate Generation: Raising\ud835\udc5f Pool",
+          "page": 4
+        },
+        {
+          "characters": 927,
+          "heading": "Learning To Rank: Raising\ud835\udc5f Rank",
+          "page": 4
+        },
+        {
+          "characters": 960,
+          "heading": "Slate Construction: The Fill",
+          "page": 4
+        },
+        {
+          "characters": 92,
+          "heading": "Slate Construction: The Fill",
+          "page": 5
+        },
+        {
+          "characters": 565,
+          "heading": "Optional Write-Time Records",
+          "page": 5
+        },
+        {
+          "characters": 4341,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 323,
+          "heading": "Results",
+          "page": 5
+        },
+        {
+          "characters": 1132,
+          "heading": "Rq1: Recommendation Against Llm-Built",
+          "page": 5
+        },
+        {
+          "characters": 4018,
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "page": 6
+        },
+        {
+          "characters": 1669,
+          "heading": "Rq2: Which Terms Of The Factorization Carry",
+          "page": 6
+        },
+        {
+          "characters": 4022,
+          "heading": "Rq2: Which Terms Of The Factorization Carry",
+          "page": 7
+        },
+        {
+          "characters": 1455,
+          "heading": "Rq3: Cost",
+          "page": 7
+        },
+        {
+          "characters": 659,
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "page": 8
+        },
+        {
+          "characters": 3659,
+          "heading": "When Item-Wise Ranking Suffices",
+          "page": 8
+        },
+        {
+          "characters": 903,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 589,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 10424,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 794,
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "page": 10
+        },
+        {
+          "characters": 269,
+          "heading": "Sion Block Follows The Official Template With The Session Date And",
+          "page": 10
+        },
+        {
+          "characters": 191,
+          "heading": "Starts With A Fixed Header And Lists The Selected Turns Under Session",
+          "page": 10
+        },
+        {
+          "characters": 251,
+          "heading": "Qwen3-32B Runs With Fp8 Weights Under Vllm With Thinking Dis-",
+          "page": 10
+        },
+        {
+          "characters": 1041,
+          "heading": "The Gpt-4O Judge Uses The Official Per-Type Prompts At Temperature",
+          "page": 10
+        },
+        {
+          "characters": 167,
+          "heading": "Of Both Longmemeval Variants Is The Same As Under Gpt-4O Except",
+          "page": 10
+        },
+        {
+          "characters": 596,
+          "heading": "Appendix: Implementation Details",
+          "page": 10
+        },
+        {
+          "characters": 303,
+          "heading": "Combination Exceeds Every Single Feature Group By 13 To 41",
+          "page": 10
+        },
+        {
+          "characters": 290,
+          "heading": "Table 5: Accuracy (%) On The Longmemeval-S Test Questions",
+          "page": 10
+        },
+        {
+          "characters": 1699,
+          "heading": "System Qwen\u2191Deepseek\u2191Qwen\u2191Deepseek\u2191",
+          "page": 10
+        },
+        {
+          "characters": 3003,
+          "heading": "System Qwen\u2191Deepseek\u2191Qwen\u2191Deepseek\u2191",
+          "page": 11
+        },
+        {
+          "characters": 2978,
+          "heading": "Llm Calls. Every Selector That Drops A Mention Gives A Wrong",
+          "page": 11
+        },
+        {
+          "characters": 4612,
+          "heading": "Xinyu Zhang And Weiwei Sun",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "46ad1e358b3916ceb5cf8d04899f4cf05f46584697810267a1ac122b50a5ef84",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "02fb8fa92dd72e30bb00ab7e7bd6f634b5f2e95a83e90d37fe78b42d409ea6b5",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
+    "curation_note": null,
+    "dimension_scores": {},
+    "downranked": false,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0003"
+        ],
+        "excerpt": "cascades and\nfactorizes accuracy into the completeness that each stage controls.\nGuided by it, we proposeAgentMemRec, which adapts candidate\ngeneration, learning to rank and slate construction from recom-\nmender systems and selects memories without any LLM call. On\nmulti-session questions of LongMemEval,AgentMemRecoutper-\nforms memory and context-selection methods, including A-Mem,\nHippoRAG 2, DynamicRAG and T-Mem, by 10 to 31 points of ac-\ncuracy. It matches an LLM reranker that makes 64 calls per query\nat 3.2 times lower serving cost, and on LoCoMo it outperforms\nMem0 and Zep without any LLM call at write time. The factoriza-\ntion attributes the gains to slates that more often hold all of the\nevidence, so recommender-system design offers an effective and\nefficient foundation for the long-term memory of LLM agents.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3f7ea0575ac957e918f8f6825b057d43a9a9c9bd615e74e41f81925ed76f7ee5",
+            "evidence_id": "E0a374318391a9499-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1726,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 899,
+                "text": "cascades and\nfactorizes accuracy into the completeness that each stage controls.\nGuided by it, we proposeAgentMemRec, which adapts candidate\ngeneration, learning to rank and slate construction from recom-\nmender systems and selects memories without any LLM call. On\nmulti-session questions of LongMemEval,AgentMemRecoutper-\nforms memory and context-selection methods, including A-Mem,\nHippoRAG 2, DynamicRAG and T-Mem, by 10 to 31 points of ac-\ncuracy. It matches an LLM reranker that makes 64 calls per query\nat 3.2 times lower serving cost, and on LoCoMo it outperforms\nMem0 and Zep without any LLM call at write time. The factoriza-\ntion attributes the gains to slates that more often hold all of the\nevidence, so recommender-system design offers an effective and\nefficient foundation for the long-term memory of LLM agents."
+              }
+            ],
+            "text": "cascades and\nfactorizes accuracy into the completeness that each stage controls.\nGuided by it, we proposeAgentMemRec, which adapts candidate\ngeneration, learning to rank and slate construction from recom-\nmender systems and selects memories without any LLM call. On\nmulti-session questions of LongMemEval,AgentMemRecoutper-\nforms memory and context-selection methods, including A-Mem,\nHippoRAG 2, DynamicRAG and T-Mem, by 10 to 31 points of ac-\ncuracy. It matches an LLM reranker that makes 64 calls per query\nat 3.2 times lower serving cost, and on LoCoMo it outperforms\nMem0 and Zep without any LLM call at write time. The factoriza-\ntion attributes the gains to slates that more often hold all of the\nevidence, so recommender-system design offers an effective and\nefficient foundation for the long-term memory of LLM agents."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0016"
+        ],
+        "excerpt": "Definition 3.1 (Budgeted slate recommendation).A budgeted slate\nrecommendation problem has a distribution of requests\ud835\udc65, a cata-\nlogue\ud835\udc3c(\ud835\udc65) for each request, a monotone set cost\ud835\udc50\ud835\udc65 on subsets of\n\ud835\udc3c(\ud835\udc65) , a budget\ud835\udc35, and a slate reward\ud835\udc45(S,\ud835\udc65)\u2208[ 0, 1] that is observed\nonly for the slate shown. A policy\ud835\udf0b maps each request to a slate\nwith\ud835\udc50\ud835\udc65(\ud835\udf0b(\ud835\udc65))\u2264\ud835\udc35, and its value is\ud835\udc49(\ud835\udf0b)=E \ud835\udc65[\ud835\udc45(\ud835\udf0b(\ud835\udc65),\ud835\udc65)].\nA question\ud835\udc5e arrives at date\ud835\udc61\ud835\udc5e with a historyH(\ud835\udc5e) , the set of\nuser and assistant turns in its dated sessions. Memory selection is\nan instance of Definition 3.1. The request is \ud835\udc65=(\ud835\udc5e,\ud835\udc61 \ud835\udc5e) together\nwith the agent's state, and the catalogue is \ud835\udc3c(\ud835\udc65)=H(\ud835\udc5e) , whose\nunits are turns and, optionally, records that cite turns. The cost\nis the token count of the rendered slate, \ud835\udc50=tok\u25e6render , which\ngrows as units are added. The reward\ud835\udc62(S,\ud835\udc5e) is the probability that\nthe judge accepts the answer that an answering model ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory Selection As Slate Recommendation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bc1e5192d5bcaf6721f9f6355ac6fc867d6d809792dd82ca48737036ebf316ad",
+            "evidence_id": "E0a374318391a9499-B0016",
+            "pages": [
+              2
+            ],
+            "section": "Memory Selection As Slate Recommendation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 886,
+                "page": 2,
+                "section": "Memory Selection As Slate Recommendation",
+                "section_index": 7,
+                "start": 0,
+                "text": "Definition 3.1 (Budgeted slate recommendation).A budgeted slate\nrecommendation problem has a distribution of requests\ud835\udc65, a cata-\nlogue\ud835\udc3c(\ud835\udc65) for each request, a monotone set cost\ud835\udc50\ud835\udc65 on subsets of\n\ud835\udc3c(\ud835\udc65) , a budget\ud835\udc35, and a slate reward\ud835\udc45(S,\ud835\udc65)\u2208[ 0, 1] that is observed\nonly for the slate shown. A policy\ud835\udf0b maps each request to a slate\nwith\ud835\udc50\ud835\udc65(\ud835\udf0b(\ud835\udc65))\u2264\ud835\udc35, and its value is\ud835\udc49(\ud835\udf0b)=E \ud835\udc65[\ud835\udc45(\ud835\udf0b(\ud835\udc65),\ud835\udc65)].\nA question\ud835\udc5e arrives at date\ud835\udc61\ud835\udc5e with a historyH(\ud835\udc5e) , the set of\nuser and assistant turns in its dated sessions. Memory selection is\nan instance of Definition 3.1. The request is \ud835\udc65=(\ud835\udc5e,\ud835\udc61 \ud835\udc5e) together\nwith the agent's state, and the catalogue is \ud835\udc3c(\ud835\udc65)=H(\ud835\udc5e) , whose\nunits are turns and, optionally, records that cite turns. The cost\nis the token count of the rendered slate, \ud835\udc50=tok\u25e6render , which\ngrows as units are added. The reward\ud835\udc62(S,\ud835\udc5e) is the probability that\nthe judge accepts the answer that an answering model "
+              }
+            ],
+            "text": "Definition 3.1 (Budgeted slate recommendation).A budgeted slate\nrecommendation problem has a distribution of requests\ud835\udc65, a cata-\nlogue\ud835\udc3c(\ud835\udc65) for each request, a monotone set cost\ud835\udc50\ud835\udc65 on subsets of\n\ud835\udc3c(\ud835\udc65) , a budget\ud835\udc35, and a slate reward\ud835\udc45(S,\ud835\udc65)\u2208[ 0, 1] that is observed\nonly for the slate shown. A policy\ud835\udf0b maps each request to a slate\nwith\ud835\udc50\ud835\udc65(\ud835\udf0b(\ud835\udc65))\u2264\ud835\udc35, and its value is\ud835\udc49(\ud835\udf0b)=E \ud835\udc65[\ud835\udc45(\ud835\udf0b(\ud835\udc65),\ud835\udc65)].\nA question\ud835\udc5e arrives at date\ud835\udc61\ud835\udc5e with a historyH(\ud835\udc5e) , the set of\nuser and assistant turns in its dated sessions. Memory selection is\nan instance of Definition 3.1. The request is \ud835\udc65=(\ud835\udc5e,\ud835\udc61 \ud835\udc5e) together\nwith the agent's state, and the catalogue is \ud835\udc3c(\ud835\udc65)=H(\ud835\udc5e) , whose\nunits are turns and, optionally, records that cite turns. The cost\nis the token count of the rendered slate, \ud835\udc50=tok\u25e6render , which\ngrows as units are added. The reward\ud835\udc62(S,\ud835\udc5e) is the probability that\nthe judge accepts the answer that an answering model "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0021"
+        ],
+        "excerpt": "Recommenders meet these three properties with a cascade, and we\nuse the cascade to define the space of memory designs.\nDefinition 3.2 (Design space).A memory design is a tuple \ud835\udc51=\n(\ud835\udf11,\ud835\udc54,\ud835\udc53,\u210e) . The write-time map\ud835\udf11 turns a history into a catalogue\nof units, possibly with side-information. The candidate generator\ud835\udc54\nreturns a poolP(\ud835\udc5e)\u2286\ud835\udf11(H(\ud835\udc5e)) , the ranker\ud835\udc53 orders the pool, and\nthe slate builder\u210e selectsS\ud835\udc35(\ud835\udc5e)\u2286P(\ud835\udc5e) within the budget. The\nLLM cost of\ud835\udc51 counts the LLM calls of\ud835\udf11 per history and of\ud835\udc54,\ud835\udc53 and\n\u210eper request.\nEvery memory system we compare is a point in this space (Fig-\nure 2b), and the points differ mainly in where they spend LLM\ncalls.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Design Space",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8b5ff5221b58a738cead2274d8e537230dc0c3f7eb79f039f872f0555ec8dc05",
+            "evidence_id": "E0a374318391a9499-B0021",
+            "pages": [
+              3
+            ],
+            "section": "The Design Space",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 641,
+                "page": 3,
+                "section": "The Design Space",
+                "section_index": 9,
+                "start": 0,
+                "text": "Recommenders meet these three properties with a cascade, and we\nuse the cascade to define the space of memory designs.\nDefinition 3.2 (Design space).A memory design is a tuple \ud835\udc51=\n(\ud835\udf11,\ud835\udc54,\ud835\udc53,\u210e) . The write-time map\ud835\udf11 turns a history into a catalogue\nof units, possibly with side-information. The candidate generator\ud835\udc54\nreturns a poolP(\ud835\udc5e)\u2286\ud835\udf11(H(\ud835\udc5e)) , the ranker\ud835\udc53 orders the pool, and\nthe slate builder\u210e selectsS\ud835\udc35(\ud835\udc5e)\u2286P(\ud835\udc5e) within the budget. The\nLLM cost of\ud835\udc51 counts the LLM calls of\ud835\udf11 per history and of\ud835\udc54,\ud835\udc53 and\n\u210eper request.\nEvery memory system we compare is a point in this space (Fig-\nure 2b), and the points differ mainly in where they spend LLM\ncalls."
+              }
+            ],
+            "text": "Recommenders meet these three properties with a cascade, and we\nuse the cascade to define the space of memory designs.\nDefinition 3.2 (Design space).A memory design is a tuple \ud835\udc51=\n(\ud835\udf11,\ud835\udc54,\ud835\udc53,\u210e) . The write-time map\ud835\udf11 turns a history into a catalogue\nof units, possibly with side-information. The candidate generator\ud835\udc54\nreturns a poolP(\ud835\udc5e)\u2286\ud835\udf11(H(\ud835\udc5e)) , the ranker\ud835\udc53 orders the pool, and\nthe slate builder\u210e selectsS\ud835\udc35(\ud835\udc5e)\u2286P(\ud835\udc5e) within the budget. The\nLLM cost of\ud835\udc51 counts the LLM calls of\ud835\udf11 per history and of\ud835\udc54,\ud835\udc53 and\n\u210eper request.\nEvery memory system we compare is a point in this space (Fig-\nure 2b), and the points differ mainly in where they spend LLM\ncalls."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0022"
+        ],
+        "excerpt": "The benchmark marks a gold setG(\ud835\udc5e)\u2286H(\ud835\udc5e) of turns that contain\nthe answer, and a slate is complete when the turns that its units\nrender or cite coverG(\ud835\udc5e) , writtenG(\ud835\udc5e)\u2286S \ud835\udc35(\ud835\udc5e). For a policy, let\n\ud835\udc5fpool =Pr[G\u2286P] be its pool completeness,\ud835\udc5frank =Pr[G\u2286S \ud835\udc35|\nG\u2286P] its ranking completeness and\ud835\udc5fslate =Pr[G\u2286S \ud835\udc35] its slate\ncompleteness. Let\ud835\udc4ec and\ud835\udc4ei be its mean reward on complete and\non incomplete slates.\nProposition 3.3 (Stage factorization).For every cascade with\nS\ud835\udc35(\ud835\udc5e)\u2286P(\ud835\udc5e),Acc(\ud835\udf0b)=\ud835\udc4e i+(\ud835\udc4e c\u2212\ud835\udc4e i)\ud835\udc5f pool\ud835\udc5frank.\nProof. By total expectation over the event \ud835\udc36={G \u2286 S\ud835\udc35},\nAcc=\ud835\udc4e c Pr[\ud835\udc36]+\ud835\udc4e i(1\u2212Pr[\ud835\udc36]) . SinceS\ud835\udc35\u2286P , the event\ud835\udc36 implies\nG\u2286P, soPr[\ud835\udc36]=\ud835\udc5f pool\ud835\udc5frank.\u25a1\nProposition 3.3 separates the item-level stages from set-level\neffects. Candidate generation sets\ud835\udc5fpool, which bounds every ranker\nsince\ud835\udc5fslate\u2264\ud835\udc5f pool, learning to rank sets\ud835\udc5frank, and the gap\ud835\udc4ec\u2212\ud835\udc4e i\nscales both gains. Set-level effects, such as a misleading ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Three Results About The Space",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0d8c8e8dd6fad85db916e6479788871a468400f0b880c33443f02ccc6e464795",
+            "evidence_id": "E0a374318391a9499-B0022",
+            "pages": [
+              3
+            ],
+            "section": "Three Results About The Space",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 3,
+                "section": "Three Results About The Space",
+                "section_index": 10,
+                "start": 0,
+                "text": "The benchmark marks a gold setG(\ud835\udc5e)\u2286H(\ud835\udc5e) of turns that contain\nthe answer, and a slate is complete when the turns that its units\nrender or cite coverG(\ud835\udc5e) , writtenG(\ud835\udc5e)\u2286S \ud835\udc35(\ud835\udc5e). For a policy, let\n\ud835\udc5fpool =Pr[G\u2286P] be its pool completeness,\ud835\udc5frank =Pr[G\u2286S \ud835\udc35|\nG\u2286P] its ranking completeness and\ud835\udc5fslate =Pr[G\u2286S \ud835\udc35] its slate\ncompleteness. Let\ud835\udc4ec and\ud835\udc4ei be its mean reward on complete and\non incomplete slates.\nProposition 3.3 (Stage factorization).For every cascade with\nS\ud835\udc35(\ud835\udc5e)\u2286P(\ud835\udc5e),Acc(\ud835\udf0b)=\ud835\udc4e i+(\ud835\udc4e c\u2212\ud835\udc4e i)\ud835\udc5f pool\ud835\udc5frank.\nProof. By total expectation over the event \ud835\udc36={G \u2286 S\ud835\udc35},\nAcc=\ud835\udc4e c Pr[\ud835\udc36]+\ud835\udc4e i(1\u2212Pr[\ud835\udc36]) . SinceS\ud835\udc35\u2286P , the event\ud835\udc36 implies\nG\u2286P, soPr[\ud835\udc36]=\ud835\udc5f pool\ud835\udc5frank.\u25a1\nProposition 3.3 separates the item-level stages from set-level\neffects. Candidate generation sets\ud835\udc5fpool, which bounds every ranker\nsince\ud835\udc5fslate\u2264\ud835\udc5f pool, learning to rank sets\ud835\udc5frank, and the gap\ud835\udc4ec\u2212\ud835\udc4e i\nscales both gains. Set-level effects, such as a misleading "
+              }
+            ],
+            "text": "The benchmark marks a gold setG(\ud835\udc5e)\u2286H(\ud835\udc5e) of turns that contain\nthe answer, and a slate is complete when the turns that its units\nrender or cite coverG(\ud835\udc5e) , writtenG(\ud835\udc5e)\u2286S \ud835\udc35(\ud835\udc5e). For a policy, let\n\ud835\udc5fpool =Pr[G\u2286P] be its pool completeness,\ud835\udc5frank =Pr[G\u2286S \ud835\udc35|\nG\u2286P] its ranking completeness and\ud835\udc5fslate =Pr[G\u2286S \ud835\udc35] its slate\ncompleteness. Let\ud835\udc4ec and\ud835\udc4ei be its mean reward on complete and\non incomplete slates.\nProposition 3.3 (Stage factorization).For every cascade with\nS\ud835\udc35(\ud835\udc5e)\u2286P(\ud835\udc5e),Acc(\ud835\udf0b)=\ud835\udc4e i+(\ud835\udc4e c\u2212\ud835\udc4e i)\ud835\udc5f pool\ud835\udc5frank.\nProof. By total expectation over the event \ud835\udc36={G \u2286 S\ud835\udc35},\nAcc=\ud835\udc4e c Pr[\ud835\udc36]+\ud835\udc4e i(1\u2212Pr[\ud835\udc36]) . SinceS\ud835\udc35\u2286P , the event\ud835\udc36 implies\nG\u2286P, soPr[\ud835\udc36]=\ud835\udc5f pool\ud835\udc5frank.\u25a1\nProposition 3.3 separates the item-level stages from set-level\neffects. Candidate generation sets\ud835\udc5fpool, which bounds every ranker\nsince\ud835\udc5fslate\u2264\ud835\udc5f pool, learning to rank sets\ud835\udc5frank, and the gap\ud835\udc4ec\u2212\ud835\udc4e i\nscales both gains. Set-level effects, such as a misleading "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0030"
+        ],
+        "excerpt": "In Equation (2),\ud835\udc5fpool bounds the product, so the pool must be wide,\nand with \ud835\udc3f= 0it must be cheap to build. Like a recommender,\nAgentMemRecnarrows the catalogue with cheap retrieval chan-\nnels. The lexical channel ranks all turns by BM25 [32] over lower-\ncased word tokens. The dense channel ranks them by the cosine\nsimilarity of bge-m3 embeddings [5]. Reciprocal rank fusion [RRF;\n9] with \ud835\udc58= 60merges the two lists, and the pool P(\ud835\udc5e) is the\ntop\ud835\udc41= 128fused turns. The pool size was chosen on develop-\nment questions by slate completeness after ranking, the product\n\ud835\udc5fpool\ud835\udc5frank, where 128 turns led with 0.912 against 0.879 for 64 turns,\nin-sample for a ranker trained on 64-turn pools.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Candidate Generation: Raising\ud835\udc5f Pool",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9401286847a52534cf147fe0054acf44c9bf050eaf9dd25f79d19b579408d567",
+            "evidence_id": "E0a374318391a9499-B0030",
+            "pages": [
+              4
+            ],
+            "section": "Candidate Generation: Raising\ud835\udc5f Pool",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 685,
+                "page": 4,
+                "section": "Candidate Generation: Raising\ud835\udc5f Pool",
+                "section_index": 13,
+                "start": 0,
+                "text": "In Equation (2),\ud835\udc5fpool bounds the product, so the pool must be wide,\nand with \ud835\udc3f= 0it must be cheap to build. Like a recommender,\nAgentMemRecnarrows the catalogue with cheap retrieval chan-\nnels. The lexical channel ranks all turns by BM25 [32] over lower-\ncased word tokens. The dense channel ranks them by the cosine\nsimilarity of bge-m3 embeddings [5]. Reciprocal rank fusion [RRF;\n9] with \ud835\udc58= 60merges the two lists, and the pool P(\ud835\udc5e) is the\ntop\ud835\udc41= 128fused turns. The pool size was chosen on develop-\nment questions by slate completeness after ranking, the product\n\ud835\udc5fpool\ud835\udc5frank, where 128 turns led with 0.912 against 0.879 for 64 turns,\nin-sample for a ranker trained on 64-turn pools."
+              }
+            ],
+            "text": "In Equation (2),\ud835\udc5fpool bounds the product, so the pool must be wide,\nand with \ud835\udc3f= 0it must be cheap to build. Like a recommender,\nAgentMemRecnarrows the catalogue with cheap retrieval chan-\nnels. The lexical channel ranks all turns by BM25 [32] over lower-\ncased word tokens. The dense channel ranks them by the cosine\nsimilarity of bge-m3 embeddings [5]. Reciprocal rank fusion [RRF;\n9] with \ud835\udc58= 60merges the two lists, and the pool P(\ud835\udc5e) is the\ntop\ud835\udc41= 128fused turns. The pool size was chosen on develop-\nment questions by slate completeness after ranking, the product\n\ud835\udc5fpool\ud835\udc5frank, where 128 turns led with 0.912 against 0.879 for 64 turns,\nin-sample for a ranker trained on 64-turn pools."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0031"
+        ],
+        "excerpt": "When evidence units are independent, the set-level objective re-\nduces to ranking units by their probability of being evidence. The\nranker therefore learns item relevance from gold labels, and with\n\ud835\udc3f=0it uses cheap features, as recommender cascades do.Agent-\nMemRecuses a LightGBM model [20] trained with the LambdaRank\nobjective [4, 41]. Each (question, pooled turn) pair has ten features.\nFive are cheap relevance signals: the bge-m3 cosine, the logarithms\nof the global dense and BM25 ranks, the position in the fused pool\nand the bge-reranker-v2-m3 cross-encoder score. Five describe the\nturn: whether its role is user, its relative position in its session,\nthe logarithms of its age in days and of its length, and the spaCy\nkeys it shares with the question. The labels are the gold annota-\ntions of the 152 development questions, with pools from both their\nLongMemEval-S and LongMemEval-M ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Learning To Rank: Raising\ud835\udc5f Rank",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d4c177fa628b42f442290feaeef810b2674bd13abcaa03317107a76416df9f67",
+            "evidence_id": "E0a374318391a9499-B0031",
+            "pages": [
+              4
+            ],
+            "section": "Learning To Rank: Raising\ud835\udc5f Rank",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 4,
+                "section": "Learning To Rank: Raising\ud835\udc5f Rank",
+                "section_index": 14,
+                "start": 0,
+                "text": "When evidence units are independent, the set-level objective re-\nduces to ranking units by their probability of being evidence. The\nranker therefore learns item relevance from gold labels, and with\n\ud835\udc3f=0it uses cheap features, as recommender cascades do.Agent-\nMemRecuses a LightGBM model [20] trained with the LambdaRank\nobjective [4, 41]. Each (question, pooled turn) pair has ten features.\nFive are cheap relevance signals: the bge-m3 cosine, the logarithms\nof the global dense and BM25 ranks, the position in the fused pool\nand the bge-reranker-v2-m3 cross-encoder score. Five describe the\nturn: whether its role is user, its relative position in its session,\nthe logarithms of its age in days and of its length, and the spaCy\nkeys it shares with the question. The labels are the gold annota-\ntions of the 152 development questions, with pools from both their\nLongMemEval-S and LongMemEval-M "
+              }
+            ],
+            "text": "When evidence units are independent, the set-level objective re-\nduces to ranking units by their probability of being evidence. The\nranker therefore learns item relevance from gold labels, and with\n\ud835\udc3f=0it uses cheap features, as recommender cascades do.Agent-\nMemRecuses a LightGBM model [20] trained with the LambdaRank\nobjective [4, 41]. Each (question, pooled turn) pair has ten features.\nFive are cheap relevance signals: the bge-m3 cosine, the logarithms\nof the global dense and BM25 ranks, the position in the fused pool\nand the bge-reranker-v2-m3 cross-encoder score. Five describe the\nturn: whether its role is user, its relative position in its session,\nthe logarithms of its age in days and of its length, and the spaCy\nkeys it shares with the question. The labels are the gold annota-\ntions of the 152 development questions, with pools from both their\nLongMemEval-S and LongMemEval-M "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0033"
+        ],
+        "excerpt": "The slate stage fills the budget\ud835\udc35 from the ranked pool. It walks the\npool in rank order and adds each turn whose rendered cost still fits.\nThe rendered cost of a turn is the increase in the token count of the\nrendered slate when the turn is added, including its session header\nif no earlier turn of that session was selected. A turn that does\nnot fit is skipped, and the walk continues. The rendering groups\nthe selected turns by session, orders sessions by date and uses the\nofficial LongMemEval history format (Appendix A). The budget\nis fixed at \ud835\udc35= 2,700tokens, a value set in our first experiment\nbefore any system was compared, and the evaluation perturbs it\nto 2,400 to 2,700. There is no per-question cutoff, because the fill\ncontains every prefix that fits, so a cutoff can only help where a\nlower-ranked turn lowers the value of the slate. On the ranking of\nAgentMemRec, choosing the best ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Slate Construction: The Fill",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c3b90fd9dc3c9555f3a9df8ff29c3ce50ae4fc0e2db854abfcfd234aa8ea8986",
+            "evidence_id": "E0a374318391a9499-B0033",
+            "pages": [
+              4
+            ],
+            "section": "Slate Construction: The Fill",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 4,
+                "section": "Slate Construction: The Fill",
+                "section_index": 15,
+                "start": 0,
+                "text": "The slate stage fills the budget\ud835\udc35 from the ranked pool. It walks the\npool in rank order and adds each turn whose rendered cost still fits.\nThe rendered cost of a turn is the increase in the token count of the\nrendered slate when the turn is added, including its session header\nif no earlier turn of that session was selected. A turn that does\nnot fit is skipped, and the walk continues. The rendering groups\nthe selected turns by session, orders sessions by date and uses the\nofficial LongMemEval history format (Appendix A). The budget\nis fixed at \ud835\udc35= 2,700tokens, a value set in our first experiment\nbefore any system was compared, and the evaluation perturbs it\nto 2,400 to 2,700. There is no per-question cutoff, because the fill\ncontains every prefix that fits, so a cutoff can only help where a\nlower-ranked turn lowers the value of the slate. On the ranking of\nAgentMemRec, choosing the best "
+              }
+            ],
+            "text": "The slate stage fills the budget\ud835\udc35 from the ranked pool. It walks the\npool in rank order and adds each turn whose rendered cost still fits.\nThe rendered cost of a turn is the increase in the token count of the\nrendered slate when the turn is added, including its session header\nif no earlier turn of that session was selected. A turn that does\nnot fit is skipped, and the walk continues. The rendering groups\nthe selected turns by session, orders sessions by date and uses the\nofficial LongMemEval history format (Appendix A). The budget\nis fixed at \ud835\udc35= 2,700tokens, a value set in our first experiment\nbefore any system was compared, and the evaluation perturbs it\nto 2,400 to 2,700. There is no per-question cutoff, because the fill\ncontains every prefix that fits, so a cutoff can only help where a\nlower-ranked turn lowers the value of the slate. On the ranking of\nAgentMemRec, choosing the best "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0036"
+        ],
+        "excerpt": "Benchmarks and splits.Like most memory papers, we evaluate on\nLongMemEval-S [40] and LoCoMo [26]. LongMemEval-S (cleaned\nrelease) has 500 questions over histories of about 50 sessions and\n100k tokens. LongMemEval-M shares its questions over histories\nof about 500 sessions and 1.5M tokens, and serves as a harder third\nsetting. We exclude the 30 questions of the unanswerable type and\ncompute\ud835\udf05 over the other 470. A split fixed before any method run\nassigns 152 of the 500 questions of both variants to development\nand 348 to test, of which 328 are answerable. The primary stratum\nis\ud835\udf05\u2265 2on test, with \ud835\udc5b= 209, and we also report \ud835\udf05\u2265 3(49 test\nquestions). Label-only and oracle measurements have no learned\ncomponent and use all 300 questions with\ud835\udf05\u2265 2. LoCoMo has 1,540\nscored questions in 10 conversations. As the field does, we report\nall of them, and we add paired comparisons on test conversations ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7983f81b4813438dce637030641b43a12ad35e5589e1b565a10a5f1821ae3c43",
+            "evidence_id": "E0a374318391a9499-B0036",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 0,
+                "text": "Benchmarks and splits.Like most memory papers, we evaluate on\nLongMemEval-S [40] and LoCoMo [26]. LongMemEval-S (cleaned\nrelease) has 500 questions over histories of about 50 sessions and\n100k tokens. LongMemEval-M shares its questions over histories\nof about 500 sessions and 1.5M tokens, and serves as a harder third\nsetting. We exclude the 30 questions of the unanswerable type and\ncompute\ud835\udf05 over the other 470. A split fixed before any method run\nassigns 152 of the 500 questions of both variants to development\nand 348 to test, of which 328 are answerable. The primary stratum\nis\ud835\udf05\u2265 2on test, with \ud835\udc5b= 209, and we also report \ud835\udf05\u2265 3(49 test\nquestions). Label-only and oracle measurements have no learned\ncomponent and use all 300 questions with\ud835\udf05\u2265 2. LoCoMo has 1,540\nscored questions in 10 conversations. As the field does, we report\nall of them, and we add paired comparisons on test conversations "
+              }
+            ],
+            "text": "Benchmarks and splits.Like most memory papers, we evaluate on\nLongMemEval-S [40] and LoCoMo [26]. LongMemEval-S (cleaned\nrelease) has 500 questions over histories of about 50 sessions and\n100k tokens. LongMemEval-M shares its questions over histories\nof about 500 sessions and 1.5M tokens, and serves as a harder third\nsetting. We exclude the 30 questions of the unanswerable type and\ncompute\ud835\udf05 over the other 470. A split fixed before any method run\nassigns 152 of the 500 questions of both variants to development\nand 348 to test, of which 328 are answerable. The primary stratum\nis\ud835\udf05\u2265 2on test, with \ud835\udc5b= 209, and we also report \ud835\udf05\u2265 3(49 test\nquestions). Label-only and oracle measurements have no learned\ncomponent and use all 300 questions with\ud835\udf05\u2265 2. LoCoMo has 1,540\nscored questions in 10 conversations. As the field does, we report\nall of them, and we add paired comparisons on test conversations "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0037"
+        ],
+        "excerpt": "3\nto 9, with conversations 0 to 2 for development.\nAnswering and judging.On LongMemEval, two answering mod-\nels read every slate: Qwen3-32B [43] with FP8 weights under vLLM,\nand DeepSeek V4.1 Flash [ 13] through one pinned FP8 provider.\nBoth decode at temperature 0 with reasoning disabled and the of-\nficial step-by-step answer prompt of LongMemEval. Final labels\ncome from the official GPT-4o judge with its per-type prompts. A\nQwen3-32B judge with the same prompts agrees with GPT-4o on\n94% to 98% of answers and changes one primary label. On LoCoMo,\nwe use the answering model, prompt and judge of T-Mem: GPT-4o-\nmini answers, and the GPT-4o-mini judge is run three times per\nanswer. Appendix A gives the serving and judging details.\nImplementation details.Single decodes are unstable: changing\nonly the lowest-ranked 100 to 300 tokens of a 2,700-token slate\nchanges the judged answer on 91 of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2abd3a944387f450188fb534e3fb74d7d72e1e6d34234024dbca31d33f308eb6",
+            "evidence_id": "E0a374318391a9499-B0037",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 899,
+                "text": "3\nto 9, with conversations 0 to 2 for development.\nAnswering and judging.On LongMemEval, two answering mod-\nels read every slate: Qwen3-32B [43] with FP8 weights under vLLM,\nand DeepSeek V4.1 Flash [ 13] through one pinned FP8 provider.\nBoth decode at temperature 0 with reasoning disabled and the of-\nficial step-by-step answer prompt of LongMemEval. Final labels\ncome from the official GPT-4o judge with its per-type prompts. A\nQwen3-32B judge with the same prompts agrees with GPT-4o on\n94% to 98% of answers and changes one primary label. On LoCoMo,\nwe use the answering model, prompt and judge of T-Mem: GPT-4o-\nmini answers, and the GPT-4o-mini judge is run three times per\nanswer. Appendix A gives the serving and judging details.\nImplementation details.Single decodes are unstable: changing\nonly the lowest-ranked 100 to 300 tokens of a 2,700-token slate\nchanges the judged answer on 91 of "
+              }
+            ],
+            "text": "3\nto 9, with conversations 0 to 2 for development.\nAnswering and judging.On LongMemEval, two answering mod-\nels read every slate: Qwen3-32B [43] with FP8 weights under vLLM,\nand DeepSeek V4.1 Flash [ 13] through one pinned FP8 provider.\nBoth decode at temperature 0 with reasoning disabled and the of-\nficial step-by-step answer prompt of LongMemEval. Final labels\ncome from the official GPT-4o judge with its per-type prompts. A\nQwen3-32B judge with the same prompts agrees with GPT-4o on\n94% to 98% of answers and changes one primary label. On LoCoMo,\nwe use the answering model, prompt and judge of T-Mem: GPT-4o-\nmini answers, and the GPT-4o-mini judge is run three times per\nanswer. Appendix A gives the serving and judging details.\nImplementation details.Single decodes are unstable: changing\nonly the lowest-ranked 100 to 300 tokens of a 2,700-token slate\nchanges the judged answer on 91 of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0038"
+        ],
+        "excerpt": "300 multi-session questions for\nQwen and 43 for DeepSeek. The variation comes from the answer-\ning model, because re-judging identical answers agrees on 99.9% of\nthem. We therefore build\ud835\udc3e= 4slates per question and system, with\nbudgets\ud835\udc35\u2208{ 2,400, 2,500, 2,600, 2,700} in the system's own order,\nand report the mean judge label. Identical prompts are answered\nonce, so Adaptive-k and DynamicRAG, whose slates often stop\nshort of the budget, reuse one decode for all four budgets on 86%\nand 52% of questions. T-Mem assembles one context per question\nand uses one decode. Systems are compared by a paired percentile\nbootstrap over questions with 10,000 draws at the 5% level. Labels\nare fixed before each run, and a difference is againwhen it is sig-\nnificantly above zero and alosswhen it is significantly below zero.\nIt is atparitywhen it is not significant and is significantly above\u22123\npoints in a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "60a4a1a014d63bf23694f9180ac18019bce83b0490d1689507981b456c2c3ace",
+            "evidence_id": "E0a374318391a9499-B0038",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2693,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 1797,
+                "text": "300 multi-session questions for\nQwen and 43 for DeepSeek. The variation comes from the answer-\ning model, because re-judging identical answers agrees on 99.9% of\nthem. We therefore build\ud835\udc3e= 4slates per question and system, with\nbudgets\ud835\udc35\u2208{ 2,400, 2,500, 2,600, 2,700} in the system's own order,\nand report the mean judge label. Identical prompts are answered\nonce, so Adaptive-k and DynamicRAG, whose slates often stop\nshort of the budget, reuse one decode for all four budgets on 86%\nand 52% of questions. T-Mem assembles one context per question\nand uses one decode. Systems are compared by a paired percentile\nbootstrap over questions with 10,000 draws at the 5% level. Labels\nare fixed before each run, and a difference is againwhen it is sig-\nnificantly above zero and alosswhen it is significantly below zero.\nIt is atparitywhen it is not significant and is significantly above\u22123\npoints in a "
+              }
+            ],
+            "text": "300 multi-session questions for\nQwen and 43 for DeepSeek. The variation comes from the answer-\ning model, because re-judging identical answers agrees on 99.9% of\nthem. We therefore build\ud835\udc3e= 4slates per question and system, with\nbudgets\ud835\udc35\u2208{ 2,400, 2,500, 2,600, 2,700} in the system's own order,\nand report the mean judge label. Identical prompts are answered\nonce, so Adaptive-k and DynamicRAG, whose slates often stop\nshort of the budget, reuse one decode for all four budgets on 86%\nand 52% of questions. T-Mem assembles one context per question\nand uses one decode. Systems are compared by a paired percentile\nbootstrap over questions with 10,000 draws at the 5% level. Labels\nare fixed before each run, and a difference is againwhen it is sig-\nnificantly above zero and alosswhen it is significantly below zero.\nIt is atparitywhen it is not significant and is significantly above\u22123\npoints in a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0044"
+        ],
+        "excerpt": "Xinyu Zhang and Weiwei Sun\nTable 1: Main results on the test questions of LongMemEval-S and LongMemEval-M with evidence in at least two sessions ( \ud835\udf05\u2265 2,\n\ud835\udc5b= 209each). Gains are paired margins. LLM calls are per question, at write time (Write), amortized over the histories each\nbuild covers, and at selection time (Sel.). Tokens are mean slate lengths. Best in bold, second underlined.\nLongMemEval-S(50 sessions, 100k tokens per history)\nLLM calls\u2193Accuracy (%)\u2191\nSystem Write Sel. Tokens Qwen DeepSeek\nAdaptive-k [37] 0 0 1,470 69.1 76.6\nDynamicRAG-8B [36] 0 1 2,140 67.0 74.2\nHippoRAG 2 [17] 442 1 2,520 59.9 63.2\nA-Mem [42] 979 1 2,540 54.4 58.1\nT-Mem [16] 2,268 0 3,310 70.3 73.2\nRef (LLM reranker) 0 64 2,530 79.8 89.1\nAgentMemRec0 02,54080.7 89.4\ngain over the strongest memory or selector+10.4 +12.8\nLongMemEval-M(500 sessions, 1.5M tokens per history)\nLLM calls\u2193Accuracy (%)\u2191\nSystem Write Sel. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Xinyu Zhang And Weiwei Sun",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "25ec367fc4f5a26294c06fe58fe9950695f7745c5c65326ebf80bb9ed9f91b7a",
+            "evidence_id": "E0a374318391a9499-B0044",
+            "pages": [
+              6
+            ],
+            "section": "Xinyu Zhang And Weiwei Sun",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "Xinyu Zhang And Weiwei Sun",
+                "section_index": 21,
+                "start": 0,
+                "text": "Xinyu Zhang and Weiwei Sun\nTable 1: Main results on the test questions of LongMemEval-S and LongMemEval-M with evidence in at least two sessions ( \ud835\udf05\u2265 2,\n\ud835\udc5b= 209each). Gains are paired margins. LLM calls are per question, at write time (Write), amortized over the histories each\nbuild covers, and at selection time (Sel.). Tokens are mean slate lengths. Best in bold, second underlined.\nLongMemEval-S(50 sessions, 100k tokens per history)\nLLM calls\u2193Accuracy (%)\u2191\nSystem Write Sel. Tokens Qwen DeepSeek\nAdaptive-k [37] 0 0 1,470 69.1 76.6\nDynamicRAG-8B [36] 0 1 2,140 67.0 74.2\nHippoRAG 2 [17] 442 1 2,520 59.9 63.2\nA-Mem [42] 979 1 2,540 54.4 58.1\nT-Mem [16] 2,268 0 3,310 70.3 73.2\nRef (LLM reranker) 0 64 2,530 79.8 89.1\nAgentMemRec0 02,54080.7 89.4\ngain over the strongest memory or selector+10.4 +12.8\nLongMemEval-M(500 sessions, 1.5M tokens per history)\nLLM calls\u2193Accuracy (%)\u2191\nSystem Write Sel. "
+              }
+            ],
+            "text": "Xinyu Zhang and Weiwei Sun\nTable 1: Main results on the test questions of LongMemEval-S and LongMemEval-M with evidence in at least two sessions ( \ud835\udf05\u2265 2,\n\ud835\udc5b= 209each). Gains are paired margins. LLM calls are per question, at write time (Write), amortized over the histories each\nbuild covers, and at selection time (Sel.). Tokens are mean slate lengths. Best in bold, second underlined.\nLongMemEval-S(50 sessions, 100k tokens per history)\nLLM calls\u2193Accuracy (%)\u2191\nSystem Write Sel. Tokens Qwen DeepSeek\nAdaptive-k [37] 0 0 1,470 69.1 76.6\nDynamicRAG-8B [36] 0 1 2,140 67.0 74.2\nHippoRAG 2 [17] 442 1 2,520 59.9 63.2\nA-Mem [42] 979 1 2,540 54.4 58.1\nT-Mem [16] 2,268 0 3,310 70.3 73.2\nRef (LLM reranker) 0 64 2,530 79.8 89.1\nAgentMemRec0 02,54080.7 89.4\ngain over the strongest memory or selector+10.4 +12.8\nLongMemEval-M(500 sessions, 1.5M tokens per history)\nLLM calls\u2193Accuracy (%)\u2191\nSystem Write Sel. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0048"
+        ],
+        "excerpt": "and\nMemOS, and above our reproduction of HyperMem from its offi-\ncial code, which scores 72.6 with the same reader (+4.4, a gain).\nIts records cost $0.07 against $16 for the memory of our T-Mem\nreproduction. For RQ1, the recommender formulation outperforms\nevery memory and context-selection method on LongMemEval-S\nand LongMemEval-M and matches or exceeds the 64-call reranker\nthere, and on LoCoMo it is at parity with T-Mem.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Xinyu Zhang And Weiwei Sun",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "eb6e43d33cefb93fd48f481603d6bc263ccd9b039f29406a7d8d6dc90ab07329",
+            "evidence_id": "E0a374318391a9499-B0048",
+            "pages": [
+              6
+            ],
+            "section": "Xinyu Zhang And Weiwei Sun",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4018,
+                "page": 6,
+                "section": "Xinyu Zhang And Weiwei Sun",
+                "section_index": 21,
+                "start": 3592,
+                "text": "and\nMemOS, and above our reproduction of HyperMem from its offi-\ncial code, which scores 72.6 with the same reader (+4.4, a gain).\nIts records cost $0.07 against $16 for the memory of our T-Mem\nreproduction. For RQ1, the recommender formulation outperforms\nevery memory and context-selection method on LongMemEval-S\nand LongMemEval-M and matches or exceeds the 64-call reranker\nthere, and on LoCoMo it is at parity with T-Mem."
+              }
+            ],
+            "text": "and\nMemOS, and above our reproduction of HyperMem from its offi-\ncial code, which scores 72.6 with the same reader (+4.4, a gain).\nIts records cost $0.07 against $16 for the memory of our T-Mem\nreproduction. For RQ1, the recommender formulation outperforms\nevery memory and context-selection method on LongMemEval-S\nand LongMemEval-M and matches or exceeds the 64-call reranker\nthere, and on LoCoMo it is at parity with T-Mem."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0056"
+        ],
+        "excerpt": "We count a generation by a decoder language model as an LLM\ncall, soAgentMemRecmakes none at selection time, and its cross-\nencoder pass is part of its measured serving cost. On LongMemEval-\nM, its median selection latency is 329 ms against 955 ms for Ref, and\non LongMemEval-S its 90th-percentile latency is 321 ms against\n1,156 ms (Table 8). At saturation on one A100, selection takes 280\nGPU-milliseconds per request forAgentMemRecagainst 891 for\nRef, 3.2 times less, or $69 against $220 per million requests at a list\nprice of $0.89 per A100-hour. Adding the shared pool construction\nto both keeps the ratio at 3.0 in GPU time and, with a persistent\nper-history index, 2.7 in median latency at LongMemEval-M size.\nAt write time, the default pipeline makes no LLM call, whereas\nHippoRAG 2, A-Mem and T-Mem make about 440 to 2,270 per\nhistory, a cost that a deployed memory spreads over the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq3: Cost",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "035a196779fe7415fc7841d21add4e4392f1668244b4437cccc970930b7e352e",
+            "evidence_id": "E0a374318391a9499-B0056",
+            "pages": [
+              7
+            ],
+            "section": "Rq3: Cost",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 7,
+                "section": "Rq3: Cost",
+                "section_index": 24,
+                "start": 0,
+                "text": "We count a generation by a decoder language model as an LLM\ncall, soAgentMemRecmakes none at selection time, and its cross-\nencoder pass is part of its measured serving cost. On LongMemEval-\nM, its median selection latency is 329 ms against 955 ms for Ref, and\non LongMemEval-S its 90th-percentile latency is 321 ms against\n1,156 ms (Table 8). At saturation on one A100, selection takes 280\nGPU-milliseconds per request forAgentMemRecagainst 891 for\nRef, 3.2 times less, or $69 against $220 per million requests at a list\nprice of $0.89 per A100-hour. Adding the shared pool construction\nto both keeps the ratio at 3.0 in GPU time and, with a persistent\nper-history index, 2.7 in median latency at LongMemEval-M size.\nAt write time, the default pipeline makes no LLM call, whereas\nHippoRAG 2, A-Mem and T-Mem make about 440 to 2,270 per\nhistory, a cost that a deployed memory spreads over the "
+              }
+            ],
+            "text": "We count a generation by a decoder language model as an LLM\ncall, soAgentMemRecmakes none at selection time, and its cross-\nencoder pass is part of its measured serving cost. On LongMemEval-\nM, its median selection latency is 329 ms against 955 ms for Ref, and\non LongMemEval-S its 90th-percentile latency is 321 ms against\n1,156 ms (Table 8). At saturation on one A100, selection takes 280\nGPU-milliseconds per request forAgentMemRecagainst 891 for\nRef, 3.2 times less, or $69 against $220 per million requests at a list\nprice of $0.89 per A100-hour. Adding the shared pool construction\nto both keeps the ratio at 3.0 in GPU time and, with a persistent\nper-history index, 2.7 in median latency at LongMemEval-M size.\nAt write time, the default pipeline makes no LLM call, whereas\nHippoRAG 2, A-Mem and T-Mem make about 440 to 2,270 per\nhistory, a cost that a deployed memory spreads over the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0060"
+        ],
+        "excerpt": "points at \ud835\udf05\u2265 2. Accuracy\non incomplete slates varies more, from 22% to 47%, and tracks\nhow much of the gold an incomplete slate still holds. The first\ncondition thus holds for complete slates and only approximately\nfor incomplete ones, and it begins to fail at \ud835\udf05\u2265 3. There, the\njointly complete slates ofAgentMemRecscore 8.7 points below\nthose of the cross-encoder order for Qwen and 6.5 points below for\nDeepSeek. They hold 23 units against 11, most of them turns that the\ncross-encoder ranks low. Label-controlled slates that fill the budget\naround the gold turns show the effect directly (LongMemEval-M,\none decode, Qwen judge). Ranked near-miss filler (Appendix E)\ncosts 17.7 points for Qwen and 4.7 points for DeepSeek against the\ngold turns alone, and 39.4 and 14.1 points at\ud835\udf05\u2265 3. Random filler of\nthe same length costs 7.0 points for Qwen and nothing measurable\nfor DeepSeek (\u22122.3). Adding ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "When Item-Wise Ranking Suffices",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2b4b3e226c6a4c41eab0211f7d99778e8b7858aa867dbc0970f88a8fcb326dfb",
+            "evidence_id": "E0a374318391a9499-B0060",
+            "pages": [
+              8
+            ],
+            "section": "When Item-Wise Ranking Suffices",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 8,
+                "section": "When Item-Wise Ranking Suffices",
+                "section_index": 26,
+                "start": 900,
+                "text": "points at \ud835\udf05\u2265 2. Accuracy\non incomplete slates varies more, from 22% to 47%, and tracks\nhow much of the gold an incomplete slate still holds. The first\ncondition thus holds for complete slates and only approximately\nfor incomplete ones, and it begins to fail at \ud835\udf05\u2265 3. There, the\njointly complete slates ofAgentMemRecscore 8.7 points below\nthose of the cross-encoder order for Qwen and 6.5 points below for\nDeepSeek. They hold 23 units against 11, most of them turns that the\ncross-encoder ranks low. Label-controlled slates that fill the budget\naround the gold turns show the effect directly (LongMemEval-M,\none decode, Qwen judge). Ranked near-miss filler (Appendix E)\ncosts 17.7 points for Qwen and 4.7 points for DeepSeek against the\ngold turns alone, and 39.4 and 14.1 points at\ud835\udf05\u2265 3. Random filler of\nthe same length costs 7.0 points for Qwen and nothing measurable\nfor DeepSeek (\u22122.3). Adding "
+              }
+            ],
+            "text": "points at \ud835\udf05\u2265 2. Accuracy\non incomplete slates varies more, from 22% to 47%, and tracks\nhow much of the gold an incomplete slate still holds. The first\ncondition thus holds for complete slates and only approximately\nfor incomplete ones, and it begins to fail at \ud835\udf05\u2265 3. There, the\njointly complete slates ofAgentMemRecscore 8.7 points below\nthose of the cross-encoder order for Qwen and 6.5 points below for\nDeepSeek. They hold 23 units against 11, most of them turns that the\ncross-encoder ranks low. Label-controlled slates that fill the budget\naround the gold turns show the effect directly (LongMemEval-M,\none decode, Qwen judge). Ranked near-miss filler (Appendix E)\ncosts 17.7 points for Qwen and 4.7 points for DeepSeek against the\ngold turns alone, and 39.4 and 14.1 points at\ud835\udf05\u2265 3. Random filler of\nthe same length costs 7.0 points for Qwen and nothing measurable\nfor DeepSeek (\u22122.3). Adding "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0061"
+        ],
+        "excerpt": "units can therefore lower the reward,\nby an amount that depends on the answering model. These costs\ndo not show that the reward is non-additive, since negative item\nvalues would produce them too.\nMonotonicity along rankings.The fill beats every cutoff only if\nthe reward does not fall as the fill adds units to a prefix of the\nranking. On the ranking ofAgentMemRecon LongMemEval-S,\nTable 3: Stage factorization on LongMemEval-S test, \ud835\udf05\u2265 2\n(\ud835\udc5b= 209), accuracies in %, so Acc=\ud835\udc4e i+(\ud835\udc4e c\u2212\ud835\udc4e i)\ud835\udc5f slate. Slate\ncompleteness separates the systems, andAgentMemRechas\nthe most complete slates with no LLM call. Lower rows rank\nits 128-turn pool (\ud835\udc5fpool = 0.981, against 0.938 for the 64-turn\npool of Ref). Best in bold, second underlined.\nQwen Acc.\u2191\nSystem\ud835\udc5f slate\u2191\ud835\udc4e c \ud835\udc4ei Qwen DeepSeek\nAdaptive-k 0.684 87.1 30.3 69.1 76.6\nDynamicRAG 0.630 86.3 34.0 67.0 74.2\nHippoRAG 2 0.502 89.5 30.0 59.9 63.2\nA-Mem 0.502 86.2 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "When Item-Wise Ranking Suffices",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "79efcb3c09ee585ac7c9d13dbd75f0581e627a147fa88264f91211e540bdaec0",
+            "evidence_id": "E0a374318391a9499-B0061",
+            "pages": [
+              8
+            ],
+            "section": "When Item-Wise Ranking Suffices",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2696,
+                "page": 8,
+                "section": "When Item-Wise Ranking Suffices",
+                "section_index": 26,
+                "start": 1797,
+                "text": "units can therefore lower the reward,\nby an amount that depends on the answering model. These costs\ndo not show that the reward is non-additive, since negative item\nvalues would produce them too.\nMonotonicity along rankings.The fill beats every cutoff only if\nthe reward does not fall as the fill adds units to a prefix of the\nranking. On the ranking ofAgentMemRecon LongMemEval-S,\nTable 3: Stage factorization on LongMemEval-S test, \ud835\udf05\u2265 2\n(\ud835\udc5b= 209), accuracies in %, so Acc=\ud835\udc4e i+(\ud835\udc4e c\u2212\ud835\udc4e i)\ud835\udc5f slate. Slate\ncompleteness separates the systems, andAgentMemRechas\nthe most complete slates with no LLM call. Lower rows rank\nits 128-turn pool (\ud835\udc5fpool = 0.981, against 0.938 for the 64-turn\npool of Ref). Best in bold, second underlined.\nQwen Acc.\u2191\nSystem\ud835\udc5f slate\u2191\ud835\udc4e c \ud835\udc4ei Qwen DeepSeek\nAdaptive-k 0.684 87.1 30.3 69.1 76.6\nDynamicRAG 0.630 86.3 34.0 67.0 74.2\nHippoRAG 2 0.502 89.5 30.0 59.9 63.2\nA-Mem 0.502 86.2 "
+              }
+            ],
+            "text": "units can therefore lower the reward,\nby an amount that depends on the answering model. These costs\ndo not show that the reward is non-additive, since negative item\nvalues would produce them too.\nMonotonicity along rankings.The fill beats every cutoff only if\nthe reward does not fall as the fill adds units to a prefix of the\nranking. On the ranking ofAgentMemRecon LongMemEval-S,\nTable 3: Stage factorization on LongMemEval-S test, \ud835\udf05\u2265 2\n(\ud835\udc5b= 209), accuracies in %, so Acc=\ud835\udc4e i+(\ud835\udc4e c\u2212\ud835\udc4e i)\ud835\udc5f slate. Slate\ncompleteness separates the systems, andAgentMemRechas\nthe most complete slates with no LLM call. Lower rows rank\nits 128-turn pool (\ud835\udc5fpool = 0.981, against 0.938 for the 64-turn\npool of Ref). Best in bold, second underlined.\nQwen Acc.\u2191\nSystem\ud835\udc5f slate\u2191\ud835\udc4e c \ud835\udc4ei Qwen DeepSeek\nAdaptive-k 0.684 87.1 30.3 69.1 76.6\nDynamicRAG 0.630 86.3 34.0 67.0 74.2\nHippoRAG 2 0.502 89.5 30.0 59.9 63.2\nA-Mem 0.502 86.2 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0084"
+        ],
+        "excerpt": "LongMemEval-S answers by\nGPT-4o-mini, the Qwen3-32B judge agrees with GPT-4o on 97.3%\n(Cohen's kappa 0.904). Under the Qwen judge, every primary label",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Gpt-4O Judge Uses The Official Per-Type Prompts At Temperature",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c2e025cbac5b6144d724b09792f3685c90f16332cb1e6178d6986839481291fb",
+            "evidence_id": "E0a374318391a9499-B0084",
+            "pages": [
+              10
+            ],
+            "section": "The Gpt-4O Judge Uses The Official Per-Type Prompts At Temperature",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1041,
+                "page": 10,
+                "section": "The Gpt-4O Judge Uses The Official Per-Type Prompts At Temperature",
+                "section_index": 34,
+                "start": 891,
+                "text": "LongMemEval-S answers by\nGPT-4o-mini, the Qwen3-32B judge agrees with GPT-4o on 97.3%\n(Cohen's kappa 0.904). Under the Qwen judge, every primary label"
+              }
+            ],
+            "text": "LongMemEval-S answers by\nGPT-4o-mini, the Qwen3-32B judge agrees with GPT-4o on 97.3%\n(Cohen's kappa 0.904). Under the Qwen judge, every primary label"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0a374318391a9499-B0099"
+        ],
+        "excerpt": "Xinyu Zhang and Weiwei Sun\nTable 7: LongMemEval-M test,\ud835\udf05\u2265 2(\ud835\udc5b= 209), with the GPT-4o judge and four perturbed slates per question. Accuracies are in\n%. LLM calls are generations per question at selection time, or in total at write time, and tokens are approximate mean slate\nlengths. \u0394 isAgentMemRecminus the row in points, with its label: G gain, P parity, ref. a reference arm without a label. Best\naccuracy in bold, second underlined.\nWrite Sel. Accuracy\u2191\u0394\nSystem Pool / ranker LLM calls LLM calls Tokens Qwen DeepSeek Qwen DeepSeek\nAdaptive-k [37] history / largest gap 0 0 1,180 57.8 60.8+12.2G+20.6G\nDynamicRAG-8B [36] fused 40 / listwise 8B 0 1 2,150 59.3 62.1+10.6G+19.3G\nLongMemEval design [40] rounds / dense, fact keys 251,622 0 2,530 56.3 60.3+13.6G+21.1G\nnative top-10, uncapped rounds / dense, fact keys 251,622 0 4,945 64.1 65.6+5.9ref.+15.8ref.\nHippoRAG 2 [17] rounds / fact graph, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Xinyu Zhang And Weiwei Sun",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7cf1399048c9fa27b25d5c8a2de88a6736b188631221b18e7f4407a37369775c",
+            "evidence_id": "E0a374318391a9499-B0099",
+            "pages": [
+              12
+            ],
+            "section": "Xinyu Zhang And Weiwei Sun",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 12,
+                "section": "Xinyu Zhang And Weiwei Sun",
+                "section_index": 42,
+                "start": 0,
+                "text": "Xinyu Zhang and Weiwei Sun\nTable 7: LongMemEval-M test,\ud835\udf05\u2265 2(\ud835\udc5b= 209), with the GPT-4o judge and four perturbed slates per question. Accuracies are in\n%. LLM calls are generations per question at selection time, or in total at write time, and tokens are approximate mean slate\nlengths. \u0394 isAgentMemRecminus the row in points, with its label: G gain, P parity, ref. a reference arm without a label. Best\naccuracy in bold, second underlined.\nWrite Sel. Accuracy\u2191\u0394\nSystem Pool / ranker LLM calls LLM calls Tokens Qwen DeepSeek Qwen DeepSeek\nAdaptive-k [37] history / largest gap 0 0 1,180 57.8 60.8+12.2G+20.6G\nDynamicRAG-8B [36] fused 40 / listwise 8B 0 1 2,150 59.3 62.1+10.6G+19.3G\nLongMemEval design [40] rounds / dense, fact keys 251,622 0 2,530 56.3 60.3+13.6G+21.1G\nnative top-10, uncapped rounds / dense, fact keys 251,622 0 4,945 64.1 65.6+5.9ref.+15.8ref.\nHippoRAG 2 [17] rounds / fact graph, "
+              }
+            ],
+            "text": "Xinyu Zhang and Weiwei Sun\nTable 7: LongMemEval-M test,\ud835\udf05\u2265 2(\ud835\udc5b= 209), with the GPT-4o judge and four perturbed slates per question. Accuracies are in\n%. LLM calls are generations per question at selection time, or in total at write time, and tokens are approximate mean slate\nlengths. \u0394 isAgentMemRecminus the row in points, with its label: G gain, P parity, ref. a reference arm without a label. Best\naccuracy in bold, second underlined.\nWrite Sel. Accuracy\u2191\u0394\nSystem Pool / ranker LLM calls LLM calls Tokens Qwen DeepSeek Qwen DeepSeek\nAdaptive-k [37] history / largest gap 0 0 1,180 57.8 60.8+12.2G+20.6G\nDynamicRAG-8B [36] fused 40 / listwise 8B 0 1 2,150 59.3 62.1+10.6G+19.3G\nLongMemEval design [40] rounds / dense, fact keys 251,622 0 2,530 56.3 60.3+13.6G+21.1G\nnative top-10, uncapped rounds / dense, fact keys 251,622 0 4,945 64.1 65.6+5.9ref.+15.8ref.\nHippoRAG 2 [17] rounds / fact graph, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.34673",
+    "gate_version": "dual-promotion-v3",
+    "manual_override": false,
+    "missing_information": [],
+    "overall_quality_score": null,
+    "paper_type": "theoretical",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.34673",
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline accuracy is measured on held-out test splits with independent answering models and external LLM judges, with 97.3% agreement between GPT-4o and Qwen3-32B judges.",
+          "final_evaluation_signal": "Held-out test question-answering accuracy judged by GPT-4o and Qwen3-32B over answers from Qwen3-32B, DeepSeek V4.1 Flash, and GPT-4o-mini.",
+          "independent_corroboration": "present",
+          "optimization_signal": "LightGBM LambdaRank trained on gold turn annotations from the 152 development questions, or distilled from Qwen3-8B offline scores.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E0a374318391a9499-B0003",
+          "E0a374318391a9499-B0016",
+          "E0a374318391a9499-B0021",
+          "E0a374318391a9499-B0022",
+          "E0a374318391a9499-B0030",
+          "E0a374318391a9499-B0031",
+          "E0a374318391a9499-B0033",
+          "E0a374318391a9499-B0036",
+          "E0a374318391a9499-B0037",
+          "E0a374318391a9499-B0038",
+          "E0a374318391a9499-B0044",
+          "E0a374318391a9499-B0048",
+          "E0a374318391a9499-B0056",
+          "E0a374318391a9499-B0060",
+          "E0a374318391a9499-B0061",
+          "E0a374318391a9499-B0084",
+          "E0a374318391a9499-B0099"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "02fb8fa92dd72e30bb00ab7e7bd6f634b5f2e95a83e90d37fe78b42d409ea6b5"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.34673",
+        "claim_evidence_alignment": "Claims that AgentMemRec outperforms turn-level context selectors and LLM-built memories by 10 to 33 points while matching a 64-call LLM reranker at 3.2x lower latency and cost are supported by comprehensive tables, calibrations across GPT-4o and Qwen judges, and error/filler analyses.",
+        "context_id": "0a374318391a949961bdfa89c2b79b4d9a9ef8a70b2da73fddce3443677c646b",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluations are rigorous across LongMemEval-S, LongMemEval-M, and LoCoMo, accounting for inference non-determinism via multi-budget decoding, paired bootstrap statistical tests, and explicit factorizations separating candidate recall, ranking completeness, and complete slate rewards.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline QA accuracy is validated on held-out test instances with independent answering models and external LLM judges, showing strong agreement (97.3% between GPT-4o and Qwen3-32B judges) across multiple decodes.",
+          "final_evaluation_signal": "End-to-end downstream question-answering accuracy evaluated on held-out test splits using GPT-4o and Qwen3-32B judges across answer generations from Qwen3-32B, DeepSeek V4.1 Flash, and GPT-4o-mini.",
+          "independent_corroboration": "present",
+          "optimization_signal": "LightGBM LambdaRank trained on pairwise gold turn annotations from the 152 development questions (or distilled from Qwen3-8B offline scores).",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E0a374318391a9499-B0003",
+          "E0a374318391a9499-B0016",
+          "E0a374318391a9499-B0021",
+          "E0a374318391a9499-B0022",
+          "E0a374318391a9499-B0030",
+          "E0a374318391a9499-B0031",
+          "E0a374318391a9499-B0033",
+          "E0a374318391a9499-B0036",
+          "E0a374318391a9499-B0037",
+          "E0a374318391a9499-B0038",
+          "E0a374318391a9499-B0044",
+          "E0a374318391a9499-B0048",
+          "E0a374318391a9499-B0056",
+          "E0a374318391a9499-B0060",
+          "E0a374318391a9499-B0061",
+          "E0a374318391a9499-B0084",
+          "E0a374318391a9499-B0099"
+        ],
+        "limitations": "The authors identify degradation on instances requiring evidence across three or more sessions (kappa >= 3), sensitivity to near-miss filler distractors in complete slates, and performance variations across target answering models.",
+        "method_assessment": "The method is clearly specified: a 128-candidate pool formed from BM25 and bge-m3 dense embeddings via reciprocal rank fusion, scored with a 10-feature LightGBM LambdaRank model trained on development split gold annotations, followed by greedy budget filling without per-query cutoffs.",
+        "quality_rationale": "The work provides a sound theoretical formulation uniting memory architectures into a recommender cascade and demonstrates strong empirical gains using zero-LLM-call ranking, supported by thorough baseline reproductions, cost measurements, and independent evaluation controls.",
+        "scoped_contribution": "The paper formalizes long-term LLM agent memory selection as budgeted slate recommendation and presents AgentMemRec, a non-LLM cascade using reciprocal rank fusion over lexical/dense channels, LightGBM LambdaRank over ten inexpensive features, and budget filling.",
+        "source_content_hash": "02fb8fa92dd72e30bb00ab7e7bd6f634b5f2e95a83e90d37fe78b42d409ea6b5"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work provides a sound theoretical formulation uniting memory architectures into a recommender cascade and demonstrates strong empirical gains using zero-LLM-call ranking, supported by thorough baseline reproductions, cost measurements, and independent evaluation controls.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "02fb8fa92dd72e30bb00ab7e7bd6f634b5f2e95a83e90d37fe78b42d409ea6b5",
+    "status": "pass",
+    "suppressed": false,
+    "uncertainty": "The authors identify degradation on instances requiring evidence across three or more sessions (kappa >= 3), sensitivity to near-miss filler distractors in complete slates, and performance variations across target answering models."
+  },
+  "semantic_scholar_id": null,
+  "source": "openalex",
+  "source_id": "W7223960487",
+  "source_ids": {
+    "arxiv": [
+      "2610.34673"
+    ],
+    "openalex": [
+      "W7223960487"
+    ]
+  },
+  "source_updated_date": "2026-10-28",
+  "sources": [
+    "openalex",
+    "arxiv"
+  ],
+  "ssrn_id": null,
+  "structured_card": {
+    "evidence_or_evaluation": {
+      "confidence": "medium",
+      "provenance": "metadata",
+      "value": "Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata."
+    },
+    "key_contribution": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "limitations_or_uncertainty": {
+      "confidence": "high",
+      "provenance": "rule",
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
+    },
+    "method_or_system_type": {
+      "confidence": "medium",
+      "provenance": "metadata",
+      "value": "Benchmark / evaluation"
+    },
+    "relation_to_agentic_memory": {
+      "confidence": "medium",
+      "provenance": "metadata",
+      "value": "Evaluates memory behavior, safety, or retrieval in LLM agents"
+    },
+    "research_relevance": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Directly relevant to agentic-memory research based on screening evidence."
+    }
+  },
+  "structured_sections": {
+    "evidence_or_evaluation_signals": [],
+    "method_or_system_type": "Benchmark / evaluation",
+    "possible_key_claims": [],
+    "relation_to_agentic_memory": "Evaluates memory behavior, safety, or retrieval in LLM agents"
+  },
+  "tags": [
+    "agent-memory",
+    "llm-agents",
+    "memory-systems",
+    "long-term-memory",
+    "benchmark"
+  ],
+  "title": "Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents",
+  "url": "https://doi.org/10.48550/arxiv.2610.34673"
+}

@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:58:05",
-    "generated_at": "2026-10-28 10:24:02",
+    "generated_at": "2026-10-29 10:48:06",
     "last_seen_at": "2026-09-21 15:58:05",
     "metadata_sources": [
       "openalex"
@@ -96,36 +96,63 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
+    "assessed_at": "2026-10-29T10:45:53.549726+00:00",
     "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Manuscript unavailable; no scientific decision.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 109,
+      "extraction_complete": false,
+      "version": "coverage-v1"
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
     "full_text_assessed": false,
     "full_text_url": null,
-    "gate_version": null,
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "Not enough paper content was available for a defensible scholarly-quality score.",
+      "No extractable manuscript text was available."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "systems_or_application",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "manuscript_unavailable",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Manuscript unavailable; no scientific decision.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "d2c176aa4d68a286e16bf1e5b034f53eeb34ed4ed088b35a1dc3c9538c1f5d6b",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

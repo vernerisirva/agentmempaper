@@ -32,7 +32,7 @@
   "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-21 15:58:19",
   "notified_date": "2026-09-21",
@@ -43,7 +43,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:56:20",
-    "generated_at": "2026-10-28 10:24:02",
+    "generated_at": "2026-10-29 10:48:06",
     "last_seen_at": "2026-09-21 15:56:20",
     "metadata_sources": [
       "openalex",
@@ -114,36 +114,1501 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-29T10:45:56.709051+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The study provides clear architectural innovations, transparent experimental controls, comprehensive comparisons against SOTA detectors on a standard benchmark, and detailed ablations validating the hybrid encoder and query selection mechanisms.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 58259,
+      "assessment_input_sha256": "7595ac5d88ccf91bd943204e2596e0303b958cb2fa4ef95f4d05d2e6788ea44c",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2304.08069",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 56905,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 56147,
+      "evidence_block_count": 77,
+      "evidence_context_characters": 65787,
+      "evidence_context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+      "evidence_context_sha256": "db20926c13cb4fbfe6fed3bd9699531ebc0215c06b6339eb5a497f0338a926f9",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 56931,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "01018b33f15723f057b1b65c4ae6958e8cc99b75acf1ca434467c9f5f0782f15",
+        "source_url": "https://arxiv.org/pdf/2304.08069",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 56905,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Detrs Beat Yolos On Real-Time Object Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 327,
+          "supplied_characters": 327
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1698,
+          "supplied_characters": 1698
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2063,
+          "supplied_characters": 2063
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3709,
+          "supplied_characters": 3709
+        },
+        {
+          "heading": "Real-Time Object Detectors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 676,
+          "supplied_characters": 676
+        },
+        {
+          "heading": "End-To-End Object Detectors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1313,
+          "supplied_characters": 1313
+        },
+        {
+          "heading": "End-To-End Object Detectors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 703,
+          "supplied_characters": 703
+        },
+        {
+          "heading": "Analysis Of Nms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 2974,
+          "supplied_characters": 2974
+        },
+        {
+          "heading": "End-To-End Speed Benchmark",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 931,
+          "supplied_characters": 931
+        },
+        {
+          "heading": "End-To-End Speed Benchmark",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 754,
+          "supplied_characters": 754
+        },
+        {
+          "heading": "Model Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 775,
+          "supplied_characters": 775
+        },
+        {
+          "heading": "Efficient Hybrid Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 3214,
+          "supplied_characters": 3214
+        },
+        {
+          "heading": "Efficient Hybrid Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1754,
+          "supplied_characters": 1754
+        },
+        {
+          "heading": "Uncertainty-Minimal Query Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "limitations",
+          "section_index": 13,
+          "source_characters": 2156,
+          "supplied_characters": 2156
+        },
+        {
+          "heading": "Uncertainty-Minimal Query Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "limitations",
+          "section_index": 14,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Dqlood",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1522,
+          "supplied_characters": 1522
+        },
+        {
+          "heading": "Scaled Rt-Detr",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1138,
+          "supplied_characters": 1138
+        },
+        {
+          "heading": "Comparison With Sota",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1843,
+          "supplied_characters": 1843
+        },
+        {
+          "heading": "Comparison With Sota",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 2744,
+          "supplied_characters": 2744
+        },
+        {
+          "heading": "Ablation Study On Hybrid Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 1282,
+          "supplied_characters": 1282
+        },
+        {
+          "heading": "Ablation Study On Query Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 518,
+          "supplied_characters": 518
+        },
+        {
+          "heading": "Ablation Study On Query Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 1055,
+          "supplied_characters": 1055
+        },
+        {
+          "heading": "Ablation Study On Decoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 733,
+          "supplied_characters": 733
+        },
+        {
+          "heading": "Limitation And Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "limitations",
+          "section_index": 23,
+          "source_characters": 1444,
+          "supplied_characters": 1444
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 24,
+          "source_characters": 1184,
+          "supplied_characters": 1184
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 288,
+          "supplied_characters": 288
+        },
+        {
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 603,
+          "supplied_characters": 603
+        },
+        {
+          "heading": "Group Detr: Fast Training Convergence With Decoupled One-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 27,
+          "source_characters": 546,
+          "supplied_characters": 546
+        },
+        {
+          "heading": "Supervision: A Simple Yet Effective Network Distillation Alter-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1097,
+          "supplied_characters": 1097
+        },
+        {
+          "heading": "Of The Ieee/Cvf Conference On Computer Vision And Pattern",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 270,
+          "supplied_characters": 270
+        },
+        {
+          "heading": "The Ieee/Cvf Conference On Computer Vision And Pattern",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1638,
+          "supplied_characters": 1638
+        },
+        {
+          "heading": "Ings Of The Ieee/Cvf International Conference On Computer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 217,
+          "supplied_characters": 217
+        },
+        {
+          "heading": "Ings Of The Ieee/Cvf Conference On Computer Vision And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1126,
+          "supplied_characters": 1126
+        },
+        {
+          "heading": "Ings Of The Ieee/Cvf Conference On Computer Vision And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 4382,
+          "supplied_characters": 4382
+        },
+        {
+          "heading": "Ings Of The Ieee/Cvf Conference On Computer Vision And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 60,
+          "supplied_characters": 60
+        },
+        {
+          "heading": "Experimental Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 35,
+          "source_characters": 1393,
+          "supplied_characters": 1393
+        },
+        {
+          "heading": "Comparison With Lighter Yolo Detectors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 1844,
+          "supplied_characters": 1844
+        },
+        {
+          "heading": "Large-Scale Pre-Training For Rt-Detr",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "methods",
+          "section_index": 37,
+          "source_characters": 444,
+          "supplied_characters": 444
+        },
+        {
+          "heading": "Large-Scale Pre-Training For Rt-Detr",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "methods",
+          "section_index": 38,
+          "source_characters": 2152,
+          "supplied_characters": 2152
+        },
+        {
+          "heading": "Visualization Of Predictions With Different",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1696,
+          "supplied_characters": 1696
+        },
+        {
+          "heading": "Visualization Of Predictions With Different",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 975,
+          "supplied_characters": 975
+        },
+        {
+          "heading": "Visualization Of Rt-Detr Predictions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 165,
+          "supplied_characters": 165
+        },
+        {
+          "heading": "Visualization Of Rt-Detr Predictions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 644,
+          "supplied_characters": 644
+        }
+      ],
+      "selected_characters": 56147,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 327,
+          "heading": "Detrs Beat Yolos On Real-Time Object Detection",
+          "page": 1
+        },
+        {
+          "characters": 1698,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2063,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3709,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 676,
+          "heading": "Real-Time Object Detectors",
+          "page": 2
+        },
+        {
+          "characters": 1313,
+          "heading": "End-To-End Object Detectors",
+          "page": 2
+        },
+        {
+          "characters": 703,
+          "heading": "End-To-End Object Detectors",
+          "page": 3
+        },
+        {
+          "characters": 2974,
+          "heading": "Analysis Of Nms",
+          "page": 3
+        },
+        {
+          "characters": 931,
+          "heading": "End-To-End Speed Benchmark",
+          "page": 3
+        },
+        {
+          "characters": 754,
+          "heading": "End-To-End Speed Benchmark",
+          "page": 4
+        },
+        {
+          "characters": 775,
+          "heading": "Model Overview",
+          "page": 4
+        },
+        {
+          "characters": 3214,
+          "heading": "Efficient Hybrid Encoder",
+          "page": 4
+        },
+        {
+          "characters": 1754,
+          "heading": "Efficient Hybrid Encoder",
+          "page": 5
+        },
+        {
+          "characters": 2156,
+          "heading": "Uncertainty-Minimal Query Selection",
+          "page": 5
+        },
+        {
+          "characters": 97,
+          "heading": "Uncertainty-Minimal Query Selection",
+          "page": 6
+        },
+        {
+          "characters": 1522,
+          "heading": "Dqlood",
+          "page": 6
+        },
+        {
+          "characters": 1138,
+          "heading": "Scaled Rt-Detr",
+          "page": 6
+        },
+        {
+          "characters": 1843,
+          "heading": "Comparison With Sota",
+          "page": 6
+        },
+        {
+          "characters": 2744,
+          "heading": "Comparison With Sota",
+          "page": 7
+        },
+        {
+          "characters": 1282,
+          "heading": "Ablation Study On Hybrid Encoder",
+          "page": 7
+        },
+        {
+          "characters": 518,
+          "heading": "Ablation Study On Query Selection",
+          "page": 7
+        },
+        {
+          "characters": 1055,
+          "heading": "Ablation Study On Query Selection",
+          "page": 8
+        },
+        {
+          "characters": 733,
+          "heading": "Ablation Study On Decoder",
+          "page": 8
+        },
+        {
+          "characters": 1444,
+          "heading": "Limitation And Discussion",
+          "page": 8
+        },
+        {
+          "characters": 1184,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 288,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 603,
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "page": 9
+        },
+        {
+          "characters": 546,
+          "heading": "Group Detr: Fast Training Convergence With Decoupled One-",
+          "page": 9
+        },
+        {
+          "characters": 1097,
+          "heading": "Supervision: A Simple Yet Effective Network Distillation Alter-",
+          "page": 9
+        },
+        {
+          "characters": 270,
+          "heading": "Of The Ieee/Cvf Conference On Computer Vision And Pattern",
+          "page": 9
+        },
+        {
+          "characters": 1638,
+          "heading": "The Ieee/Cvf Conference On Computer Vision And Pattern",
+          "page": 9
+        },
+        {
+          "characters": 217,
+          "heading": "Ings Of The Ieee/Cvf International Conference On Computer",
+          "page": 9
+        },
+        {
+          "characters": 1126,
+          "heading": "Ings Of The Ieee/Cvf Conference On Computer Vision And",
+          "page": 9
+        },
+        {
+          "characters": 4382,
+          "heading": "Ings Of The Ieee/Cvf Conference On Computer Vision And",
+          "page": 10
+        },
+        {
+          "characters": 60,
+          "heading": "Ings Of The Ieee/Cvf Conference On Computer Vision And",
+          "page": 11
+        },
+        {
+          "characters": 1393,
+          "heading": "Experimental Settings",
+          "page": 11
+        },
+        {
+          "characters": 1844,
+          "heading": "Comparison With Lighter Yolo Detectors",
+          "page": 11
+        },
+        {
+          "characters": 444,
+          "heading": "Large-Scale Pre-Training For Rt-Detr",
+          "page": 11
+        },
+        {
+          "characters": 2152,
+          "heading": "Large-Scale Pre-Training For Rt-Detr",
+          "page": 12
+        },
+        {
+          "characters": 1696,
+          "heading": "Visualization Of Predictions With Different",
+          "page": 12
+        },
+        {
+          "characters": 975,
+          "heading": "Visualization Of Predictions With Different",
+          "page": 13
+        },
+        {
+          "characters": 165,
+          "heading": "Visualization Of Rt-Detr Predictions",
+          "page": 13
+        },
+        {
+          "characters": 644,
+          "heading": "Visualization Of Rt-Detr Predictions",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "7595ac5d88ccf91bd943204e2596e0303b958cb2fa4ef95f4d05d2e6788ea44c",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "01018b33f15723f057b1b65c4ae6958e8cc99b75acf1ca434467c9f5f0782f15",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0003"
+        ],
+        "excerpt": "to expeditiously\nprocess multi-scale features by decoupling intra-scale inter-\naction and cross-scale fusion to improve speed. Then, we\npropose the uncertainty-minimal query selection to provide\nhigh-quality initial queries to the decoder, thereby improv-\ning accuracy. In addition, RT-DETR supports flexible speed\ntuning by adjusting the number of decoder layers to adapt\nto various scenarios without retraining. Our RT-DETR-R50\n/ R101 achieves 53.1% / 54.3% AP on COCO and 108 / 74\nFPS on T4 GPU, outperforming previously advanced YOLOs\nin both speed and accuracy. Furthermore, RT-DETR-R50\noutperforms DINO-R50 by 2.2% AP in accuracy and about\n21 times in FPS. After pre-training with Objects365, RT-\nDETR-R50 / R101 achieves 55.3% / 56.2% AP . The project\npage: https://zhao-yian.github.io/RTDETR.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "892bcf7b37584b83be898595ff3907b670c60c3b917f9f0b6347e52f74bbcc27",
+            "evidence_id": "Ecfb8b8fbdef09979-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1698,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 898,
+                "text": "to expeditiously\nprocess multi-scale features by decoupling intra-scale inter-\naction and cross-scale fusion to improve speed. Then, we\npropose the uncertainty-minimal query selection to provide\nhigh-quality initial queries to the decoder, thereby improv-\ning accuracy. In addition, RT-DETR supports flexible speed\ntuning by adjusting the number of decoder layers to adapt\nto various scenarios without retraining. Our RT-DETR-R50\n/ R101 achieves 53.1% / 54.3% AP on COCO and 108 / 74\nFPS on T4 GPU, outperforming previously advanced YOLOs\nin both speed and accuracy. Furthermore, RT-DETR-R50\noutperforms DINO-R50 by 2.2% AP in accuracy and about\n21 times in FPS. After pre-training with Objects365, RT-\nDETR-R50 / R101 achieves 55.3% / 56.2% AP . The project\npage: https://zhao-yian.github.io/RTDETR."
+              }
+            ],
+            "text": "to expeditiously\nprocess multi-scale features by decoupling intra-scale inter-\naction and cross-scale fusion to improve speed. Then, we\npropose the uncertainty-minimal query selection to provide\nhigh-quality initial queries to the decoder, thereby improv-\ning accuracy. In addition, RT-DETR supports flexible speed\ntuning by adjusting the number of decoder layers to adapt\nto various scenarios without retraining. Our RT-DETR-R50\n/ R101 achieves 53.1% / 54.3% AP on COCO and 108 / 74\nFPS on T4 GPU, outperforming previously advanced YOLOs\nin both speed and accuracy. Furthermore, RT-DETR-R50\noutperforms DINO-R50 by 2.2% AP in accuracy and about\n21 times in FPS. After pre-training with Objects365, RT-\nDETR-R50 / R101 achieves 55.3% / 56.2% AP . The project\npage: https://zhao-yian.github.io/RTDETR."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0019"
+        ],
+        "excerpt": "To enable a fair comparison of the end-to-end speed of var-\nious real-time detectors, we establish an end-to-end speed\nbenchmark. Considering that the execution time of NMS is\ninfluenced by the input, it is necessary to choose a bench-\nmark dataset and calculate the average execution time across\nmultiple images. We choose COCO val2017 [20] as the\nbenchmark dataset and append the NMS post-processing\nplugin of TensorRT for YOLO detectors as mentioned above.\nSpecifically, we test the average inference time of the de-\ntector according to the NMS thresholds of the correspond-\ning accuracy taken on the benchmark dataset, excluding\nI/O and MemoryCopy operations. We utilize the bench-\nmark to test the end-to-end speed of anchor-based detectors\nYOLOv5 [11] and YOLOv7 [38], as well as anchor-free de-\ntectors PP-YOLOE [40], YOLOv6 [16] and YOLOv8 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "End-To-End Speed Benchmark",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3382d95d78098da9c6940babb8d0cb06a04e62e0e830f656084b7bad60bcece5",
+            "evidence_id": "Ecfb8b8fbdef09979-B0019",
+            "pages": [
+              3
+            ],
+            "section": "End-To-End Speed Benchmark",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 848,
+                "page": 3,
+                "section": "End-To-End Speed Benchmark",
+                "section_index": 8,
+                "start": 0,
+                "text": "To enable a fair comparison of the end-to-end speed of var-\nious real-time detectors, we establish an end-to-end speed\nbenchmark. Considering that the execution time of NMS is\ninfluenced by the input, it is necessary to choose a bench-\nmark dataset and calculate the average execution time across\nmultiple images. We choose COCO val2017 [20] as the\nbenchmark dataset and append the NMS post-processing\nplugin of TensorRT for YOLO detectors as mentioned above.\nSpecifically, we test the average inference time of the de-\ntector according to the NMS thresholds of the correspond-\ning accuracy taken on the benchmark dataset, excluding\nI/O and MemoryCopy operations. We utilize the bench-\nmark to test the end-to-end speed of anchor-based detectors\nYOLOv5 [11] and YOLOv7 [38], as well as anchor-free de-\ntectors PP-YOLOE [40], YOLOv6 [16] and YOLOv8 "
+              }
+            ],
+            "text": "To enable a fair comparison of the end-to-end speed of var-\nious real-time detectors, we establish an end-to-end speed\nbenchmark. Considering that the execution time of NMS is\ninfluenced by the input, it is necessary to choose a bench-\nmark dataset and calculate the average execution time across\nmultiple images. We choose COCO val2017 [20] as the\nbenchmark dataset and append the NMS post-processing\nplugin of TensorRT for YOLO detectors as mentioned above.\nSpecifically, we test the average inference time of the de-\ntector according to the NMS thresholds of the correspond-\ning accuracy taken on the benchmark dataset, excluding\nI/O and MemoryCopy operations. We utilize the bench-\nmark to test the end-to-end speed of anchor-based detectors\nYOLOv5 [11] and YOLOv7 [38], as well as anchor-free de-\ntectors PP-YOLOE [40], YOLOv6 [16] and YOLOv8 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0024"
+        ],
+        "excerpt": "cross-scale feature interaction.\n\u2022 C \u2192 D: Variant D decouples intra-scale interaction and\ncross-scale fusion by utilizing the single-scale Transformer\nencoder for the former and a PANet-style [ 22] structure\nfor the latter.\n\u2022 D \u2192 E: Variant E enhances the intra-scale interaction and\ncross-scale fusion based on D, adopting an efficient hybrid\nencoder designed by us.\nHybrid design. Based on the above analysis, we rethink\nthe structure of the encoder and propose an efficient hybrid\nencoder, consisting of two modules, namely the Attention-\nbased Intra-scale Feature Interaction (AIFI) and the CNN-\nbased Cross-scale Feature Fusion (CCFF). Specifically, AIFI\nfurther reduces the computational cost based on variant D\nby performing the intra-scale interaction only on S5 with\nthe single-scale Transformer encoder. The reason is that\napplying the self-attention operation to high-level features\nwith ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Efficient Hybrid Encoder",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3da5907a1985932a89d903c506d2f489f573f48e00187f7ca91a5132becb1f29",
+            "evidence_id": "Ecfb8b8fbdef09979-B0024",
+            "pages": [
+              4
+            ],
+            "section": "Efficient Hybrid Encoder",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2683,
+                "page": 4,
+                "section": "Efficient Hybrid Encoder",
+                "section_index": 11,
+                "start": 1784,
+                "text": "cross-scale feature interaction.\n\u2022 C \u2192 D: Variant D decouples intra-scale interaction and\ncross-scale fusion by utilizing the single-scale Transformer\nencoder for the former and a PANet-style [ 22] structure\nfor the latter.\n\u2022 D \u2192 E: Variant E enhances the intra-scale interaction and\ncross-scale fusion based on D, adopting an efficient hybrid\nencoder designed by us.\nHybrid design. Based on the above analysis, we rethink\nthe structure of the encoder and propose an efficient hybrid\nencoder, consisting of two modules, namely the Attention-\nbased Intra-scale Feature Interaction (AIFI) and the CNN-\nbased Cross-scale Feature Fusion (CCFF). Specifically, AIFI\nfurther reduces the computational cost based on variant D\nby performing the intra-scale interaction only on S5 with\nthe single-scale Transformer encoder. The reason is that\napplying the self-attention operation to high-level features\nwith "
+              }
+            ],
+            "text": "cross-scale feature interaction.\n\u2022 C \u2192 D: Variant D decouples intra-scale interaction and\ncross-scale fusion by utilizing the single-scale Transformer\nencoder for the former and a PANet-style [ 22] structure\nfor the latter.\n\u2022 D \u2192 E: Variant E enhances the intra-scale interaction and\ncross-scale fusion based on D, adopting an efficient hybrid\nencoder designed by us.\nHybrid design. Based on the above analysis, we rethink\nthe structure of the encoder and propose an efficient hybrid\nencoder, consisting of two modules, namely the Attention-\nbased Intra-scale Feature Interaction (AIFI) and the CNN-\nbased Cross-scale Feature Fusion (CCFF). Specifically, AIFI\nfurther reduces the computational cost based on variant D\nby performing the intra-scale interaction only on S5 with\nthe single-scale Transformer encoder. The reason is that\napplying the self-attention operation to high-level features\nwith "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0025"
+        ],
+        "excerpt": "richer semantic concepts captures the connection be-\ntween conceptual entities, which facilitates the localization\nand recognition of objects by subsequent modules. How-\never, the intra-scale interactions of lower-level features are\nunnecessary due to the lack of semantic concepts and the\nrisk of duplication and confusion with high-level feature in-\nteractions. To verify this opinion, we perform the intra-scale\ninteraction only on S5 in variant D, and the experimental\nresults are reported in Table 3 (see row DS5). Compared to\nS3\nS4\nS5\n Uncertainty-minimal Query Selection\n Decoder & Head\nF5\n  Efficient Hybrid Encoder\nC\nFusion\nConv1x1 s1\nBN\nSiLU\nConv3x3 s2\nBN\nSiLU\nFusion\nFusion\nPosition Embedding\nImage Feature\nObject Query\nAIFI\nFigure 4. Overview of RT-DETR. We feed the features from the last three stages of the backbone into the encoder. The efficient hybrid\nencoder transforms multi-scale ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Efficient Hybrid Encoder",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1c58eca5c538feff0f3629faeccb6717591940ab0e47df7593513ad95f6c636c",
+            "evidence_id": "Ecfb8b8fbdef09979-B0025",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Efficient Hybrid Encoder",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3214,
+                "page": 4,
+                "section": "Efficient Hybrid Encoder",
+                "section_index": 11,
+                "start": 2683,
+                "text": "richer semantic concepts captures the connection be-\ntween conceptual entities, which facilitates the localization\nand recognition of objects by subsequent modules. How-\never, the intra-scale interactions of lower-level features are\nunnecessary due to the lack of semantic concepts and the\nrisk of duplication and confusion with high-level feature in-\nteractions. To verify this opinion, we perform the intra-scale\ninteraction only on S5 in variant D, and the experimental\nresults are reported in Table 3 (see row DS5). Compared to"
+              },
+              {
+                "end": 369,
+                "page": 5,
+                "section": "Efficient Hybrid Encoder",
+                "section_index": 12,
+                "start": 0,
+                "text": "S3\nS4\nS5\n Uncertainty-minimal Query Selection\n Decoder & Head\nF5\n  Efficient Hybrid Encoder\nC\nFusion\nConv1x1 s1\nBN\nSiLU\nConv3x3 s2\nBN\nSiLU\nFusion\nFusion\nPosition Embedding\nImage Feature\nObject Query\nAIFI\nFigure 4. Overview of RT-DETR. We feed the features from the last three stages of the backbone into the encoder. The efficient hybrid\nencoder transforms multi-scale "
+              }
+            ],
+            "text": "richer semantic concepts captures the connection be-\ntween conceptual entities, which facilitates the localization\nand recognition of objects by subsequent modules. How-\never, the intra-scale interactions of lower-level features are\nunnecessary due to the lack of semantic concepts and the\nrisk of duplication and confusion with high-level feature in-\nteractions. To verify this opinion, we perform the intra-scale\ninteraction only on S5 in variant D, and the experimental\nresults are reported in Table 3 (see row DS5). Compared to\nS3\nS4\nS5\n Uncertainty-minimal Query Selection\n Decoder & Head\nF5\n  Efficient Hybrid Encoder\nC\nFusion\nConv1x1 s1\nBN\nSiLU\nConv3x3 s2\nBN\nSiLU\nFusion\nFusion\nPosition Embedding\nImage Feature\nObject Query\nAIFI\nFigure 4. Overview of RT-DETR. We feed the features from the last three stages of the backbone into the encoder. The efficient hybrid\nencoder transforms multi-scale "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0029"
+        ],
+        "excerpt": "detector.\nTo address this problem, we propose the uncertainty mini-\nmal query selection scheme, which explicitly constructs and\noptimizes the epistemic uncertainty to model the joint latent\nvariable of encoder features, thereby providing high-quality\nqueries for the decoder. Specifically, the feature uncertainty\nU is defined as the discrepancy between the predicted dis-\ntributions of localization P and classification C in Eq. (2).\nTo minimize the uncertainty of the queries, we integrate\nthe uncertainty into the loss function for the gradient-based\noptimization in Eq. (3).\nU ( \u02c6X ) =\u2225P( \u02c6X ) \u2212 C( \u02c6X )\u2225, \u02c6X \u2208 RD (2)\nL( \u02c6X , \u02c6Y, Y) =Lbox(\u02c6b, b) +Lcls(U ( \u02c6X ), \u02c6c, c) (3)\nwhere \u02c6Y and Y denote the prediction and ground truth,\n\u02c6Y = {\u02c6c, \u02c6b}, \u02c6c and \u02c6b represent the category and bounding\nbox respectively, \u02c6X represent the encoder feature.\nEffectiveness analysis. To analyze the effectiveness ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Uncertainty-Minimal Query Selection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b5be1c0aad2444ab40f995e1fe22b3ef08b441a2a0eea4ab39aedcd4f163b1d2",
+            "evidence_id": "Ecfb8b8fbdef09979-B0029",
+            "pages": [
+              5
+            ],
+            "section": "Uncertainty-Minimal Query Selection",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 5,
+                "section": "Uncertainty-Minimal Query Selection",
+                "section_index": 13,
+                "start": 898,
+                "text": "detector.\nTo address this problem, we propose the uncertainty mini-\nmal query selection scheme, which explicitly constructs and\noptimizes the epistemic uncertainty to model the joint latent\nvariable of encoder features, thereby providing high-quality\nqueries for the decoder. Specifically, the feature uncertainty\nU is defined as the discrepancy between the predicted dis-\ntributions of localization P and classification C in Eq. (2).\nTo minimize the uncertainty of the queries, we integrate\nthe uncertainty into the loss function for the gradient-based\noptimization in Eq. (3).\nU ( \u02c6X ) =\u2225P( \u02c6X ) \u2212 C( \u02c6X )\u2225, \u02c6X \u2208 RD (2)\nL( \u02c6X , \u02c6Y, Y) =Lbox(\u02c6b, b) +Lcls(U ( \u02c6X ), \u02c6c, c) (3)\nwhere \u02c6Y and Y denote the prediction and ground truth,\n\u02c6Y = {\u02c6c, \u02c6b}, \u02c6c and \u02c6b represent the category and bounding\nbox respectively, \u02c6X represent the encoder feature.\nEffectiveness analysis. To analyze the effectiveness "
+              }
+            ],
+            "text": "detector.\nTo address this problem, we propose the uncertainty mini-\nmal query selection scheme, which explicitly constructs and\noptimizes the epistemic uncertainty to model the joint latent\nvariable of encoder features, thereby providing high-quality\nqueries for the decoder. Specifically, the feature uncertainty\nU is defined as the discrepancy between the predicted dis-\ntributions of localization P and classification C in Eq. (2).\nTo minimize the uncertainty of the queries, we integrate\nthe uncertainty into the loss function for the gradient-based\noptimization in Eq. (3).\nU ( \u02c6X ) =\u2225P( \u02c6X ) \u2212 C( \u02c6X )\u2225, \u02c6X \u2208 RD (2)\nL( \u02c6X , \u02c6Y, Y) =Lbox(\u02c6b, b) +Lcls(U ( \u02c6X ), \u02c6c, c) (3)\nwhere \u02c6Y and Y denote the prediction and ground truth,\n\u02c6Y = {\u02c6c, \u02c6b}, \u02c6c and \u02c6b represent the category and bounding\nbox respectively, \u02c6X represent the encoder feature.\nEffectiveness analysis. To analyze the effectiveness "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0037"
+        ],
+        "excerpt": "with existing DETRs using the same backbone.\nModel Backbone #Epochs #Params (M) GFLOPs FPS bs=1 APval APval50 APval75 APvalS APvalM APvalL\nReal-time Object Detectors\nYOLOv5-L [11] - 300 46 109 54 49.0 67.3 - - - -\nYOLOv5-X [11] - 300 86 205 43 50.7 68.9 - - - -\nPPYOLOE-L [40] - 300 52 110 94 51.4 68.9 55.6 31.4 55.3 66.1\nPPYOLOE-X [40] - 300 98 206 60 52.3 69.9 56.5 33.3 56.3 66.4\nYOLOv6-L [16] - 300 59 150 99 52.8 70.3 57.7 34.4 58.1 70.1\nYOLOv7-L [38] - 300 36 104 55 51.2 69.7 55.5 35.2 55.9 66.7\nYOLOv7-X [38] - 300 71 189 45 52.9 71.1 57.4 36.9 57.7 68.6\nYOLOv8-L [12] - - 43 165 71 52.9 69.8 57.5 35.3 58.3 69.8\nYOLOv8-X [12] - - 68 257 50 53.9 71.0 58.7 35.7 59.3 70.7\nEnd-to-end Object Detectors\nDETR-DC5 [4] R50 500 41 187 - 43.3 63.1 45.9 22.5 47.3 61.1\nDETR-DC5 [4] R101 500 60 253 - 44.9 64.7 47.7 23.7 49.5 62.3\nAnchor-DETR-DC5 [39] R50 50 39 172 - 44.2 64.7 47.5 24.7 48.2 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Sota",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e30142e379b1b9102912a8b339a30379dbe941cd128ecccbdd1feaddbe7a34f7",
+            "evidence_id": "Ecfb8b8fbdef09979-B0037",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Comparison With Sota",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1843,
+                "page": 6,
+                "section": "Comparison With Sota",
+                "section_index": 17,
+                "start": 1799,
+                "text": "with existing DETRs using the same backbone."
+              },
+              {
+                "end": 846,
+                "page": 7,
+                "section": "Comparison With Sota",
+                "section_index": 18,
+                "start": 0,
+                "text": "Model Backbone #Epochs #Params (M) GFLOPs FPS bs=1 APval APval50 APval75 APvalS APvalM APvalL\nReal-time Object Detectors\nYOLOv5-L [11] - 300 46 109 54 49.0 67.3 - - - -\nYOLOv5-X [11] - 300 86 205 43 50.7 68.9 - - - -\nPPYOLOE-L [40] - 300 52 110 94 51.4 68.9 55.6 31.4 55.3 66.1\nPPYOLOE-X [40] - 300 98 206 60 52.3 69.9 56.5 33.3 56.3 66.4\nYOLOv6-L [16] - 300 59 150 99 52.8 70.3 57.7 34.4 58.1 70.1\nYOLOv7-L [38] - 300 36 104 55 51.2 69.7 55.5 35.2 55.9 66.7\nYOLOv7-X [38] - 300 71 189 45 52.9 71.1 57.4 36.9 57.7 68.6\nYOLOv8-L [12] - - 43 165 71 52.9 69.8 57.5 35.3 58.3 69.8\nYOLOv8-X [12] - - 68 257 50 53.9 71.0 58.7 35.7 59.3 70.7\nEnd-to-end Object Detectors\nDETR-DC5 [4] R50 500 41 187 - 43.3 63.1 45.9 22.5 47.3 61.1\nDETR-DC5 [4] R101 500 60 253 - 44.9 64.7 47.7 23.7 49.5 62.3\nAnchor-DETR-DC5 [39] R50 50 39 172 - 44.2 64.7 47.5 24.7 48.2 "
+              }
+            ],
+            "text": "with existing DETRs using the same backbone.\nModel Backbone #Epochs #Params (M) GFLOPs FPS bs=1 APval APval50 APval75 APvalS APvalM APvalL\nReal-time Object Detectors\nYOLOv5-L [11] - 300 46 109 54 49.0 67.3 - - - -\nYOLOv5-X [11] - 300 86 205 43 50.7 68.9 - - - -\nPPYOLOE-L [40] - 300 52 110 94 51.4 68.9 55.6 31.4 55.3 66.1\nPPYOLOE-X [40] - 300 98 206 60 52.3 69.9 56.5 33.3 56.3 66.4\nYOLOv6-L [16] - 300 59 150 99 52.8 70.3 57.7 34.4 58.1 70.1\nYOLOv7-L [38] - 300 36 104 55 51.2 69.7 55.5 35.2 55.9 66.7\nYOLOv7-X [38] - 300 71 189 45 52.9 71.1 57.4 36.9 57.7 68.6\nYOLOv8-L [12] - - 43 165 71 52.9 69.8 57.5 35.3 58.3 69.8\nYOLOv8-X [12] - - 68 257 50 53.9 71.0 58.7 35.7 59.3 70.7\nEnd-to-end Object Detectors\nDETR-DC5 [4] R50 500 41 187 - 43.3 63.1 45.9 22.5 47.3 61.1\nDETR-DC5 [4] R101 500 60 253 - 44.9 64.7 47.7 23.7 49.5 62.3\nAnchor-DETR-DC5 [39] R50 50 39 172 - 44.2 64.7 47.5 24.7 48.2 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0038"
+        ],
+        "excerpt": "60.6\nAnchor-DETR-DC5 [39] R101 50 - - - 45.1 65.7 48.8 25.8 49.4 61.6\nConditional-DETR-DC5 [27] R50 108 44 195 - 45.1 65.4 48.5 25.3 49.0 62.2\nConditional-DETR-DC5 [27] R101 108 63 262 - 45.9 66.8 49.5 27.2 50.3 63.3\nEfficient-DETR [42] R50 36 35 210 - 45.1 63.1 49.1 28.3 48.4 59.0\nEfficient-DETR [42] R101 36 54 289 - 45.7 64.1 49.5 28.2 49.1 60.2\nSMCA-DETR [9] R50 108 40 152 - 45.6 65.5 49.1 25.9 49.3 62.6\nSMCA-DETR [9] R101 108 58 218 - 46.3 66.6 50.2 27.2 50.5 63.2\nDeformable-DETR [45] R50 50 40 173 - 46.2 65.2 50.0 28.8 49.2 61.7\nDAB-Deformable-DETR [23] R50 50 48 195 - 46.9 66.0 50.8 30.1 50.4 62.5\nDAB-Deformable-DETR++ [23] R50 50 47 - - 48.7 67.2 53.0 31.4 51.6 63.9\nDN-Deformable-DETR [17] R50 50 48 195 - 48.6 67.4 52.7 31.0 52.0 63.7\nDN-Deformable-DETR++ [17] R50 50 47 - - 49.5 67.6 53.8 31.3 52.6 65.4\nDINO-Deformable-DETR [44] R50 36 47 279 5 50.9 69.0 55.3 34.6 54.1 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Sota",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3a51a6ab2925de5e94d148406f71bb5c30a9883d9c5625b1985b6e801a16bd9a",
+            "evidence_id": "Ecfb8b8fbdef09979-B0038",
+            "pages": [
+              7
+            ],
+            "section": "Comparison With Sota",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1735,
+                "page": 7,
+                "section": "Comparison With Sota",
+                "section_index": 18,
+                "start": 846,
+                "text": "60.6\nAnchor-DETR-DC5 [39] R101 50 - - - 45.1 65.7 48.8 25.8 49.4 61.6\nConditional-DETR-DC5 [27] R50 108 44 195 - 45.1 65.4 48.5 25.3 49.0 62.2\nConditional-DETR-DC5 [27] R101 108 63 262 - 45.9 66.8 49.5 27.2 50.3 63.3\nEfficient-DETR [42] R50 36 35 210 - 45.1 63.1 49.1 28.3 48.4 59.0\nEfficient-DETR [42] R101 36 54 289 - 45.7 64.1 49.5 28.2 49.1 60.2\nSMCA-DETR [9] R50 108 40 152 - 45.6 65.5 49.1 25.9 49.3 62.6\nSMCA-DETR [9] R101 108 58 218 - 46.3 66.6 50.2 27.2 50.5 63.2\nDeformable-DETR [45] R50 50 40 173 - 46.2 65.2 50.0 28.8 49.2 61.7\nDAB-Deformable-DETR [23] R50 50 48 195 - 46.9 66.0 50.8 30.1 50.4 62.5\nDAB-Deformable-DETR++ [23] R50 50 47 - - 48.7 67.2 53.0 31.4 51.6 63.9\nDN-Deformable-DETR [17] R50 50 48 195 - 48.6 67.4 52.7 31.0 52.0 63.7\nDN-Deformable-DETR++ [17] R50 50 47 - - 49.5 67.6 53.8 31.3 52.6 65.4\nDINO-Deformable-DETR [44] R50 36 47 279 5 50.9 69.0 55.3 34.6 54.1 "
+              }
+            ],
+            "text": "60.6\nAnchor-DETR-DC5 [39] R101 50 - - - 45.1 65.7 48.8 25.8 49.4 61.6\nConditional-DETR-DC5 [27] R50 108 44 195 - 45.1 65.4 48.5 25.3 49.0 62.2\nConditional-DETR-DC5 [27] R101 108 63 262 - 45.9 66.8 49.5 27.2 50.3 63.3\nEfficient-DETR [42] R50 36 35 210 - 45.1 63.1 49.1 28.3 48.4 59.0\nEfficient-DETR [42] R101 36 54 289 - 45.7 64.1 49.5 28.2 49.1 60.2\nSMCA-DETR [9] R50 108 40 152 - 45.6 65.5 49.1 25.9 49.3 62.6\nSMCA-DETR [9] R101 108 58 218 - 46.3 66.6 50.2 27.2 50.5 63.2\nDeformable-DETR [45] R50 50 40 173 - 46.2 65.2 50.0 28.8 49.2 61.7\nDAB-Deformable-DETR [23] R50 50 48 195 - 46.9 66.0 50.8 30.1 50.4 62.5\nDAB-Deformable-DETR++ [23] R50 50 47 - - 48.7 67.2 53.0 31.4 51.6 63.9\nDN-Deformable-DETR [17] R50 50 48 195 - 48.6 67.4 52.7 31.0 52.0 63.7\nDN-Deformable-DETR++ [17] R50 50 47 - - 49.5 67.6 53.8 31.3 52.6 65.4\nDINO-Deformable-DETR [44] R50 36 47 279 5 50.9 69.0 55.3 34.6 54.1 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0039"
+        ],
+        "excerpt": "64.6\nReal-time End-to-end Object Detector (ours)\nRT-DETR R50 72 42 136 108 53.1 71.3 57.7 34.8 58.0 70.0\nRT-DETR R101 72 76 259 74 54.3 72.7 58.6 36.0 58.8 72.1\nTable 2. Comparison with SOTA (only L and X models of YOLO detectors, see Appendix for the comparison with S and M models). We\ndo not test the speed of other DETRs, except for DINO-Deformable-DETR [44] for comparison, as they are not real-time detectors. Our\nRT-DETR outperforms the state-of-the-art YOLO detectors and DETRs in both speed and accuracy.\nWe test the speed of DINO-Deformable-DETR [44] accord-\ning to the settings of the corresponding accuracy taken on\nCOCO val2017 for comparison, i.e., the speed is tested\nwith TensorRT FP16 and the input size is (800, 1333). Ta-\nble 2 shows that RT-DETR outperforms all DETRs with the\nsame backbone in both speed and accuracy. Compared to\nDINO-Deformable-DETR-R50, RT-DETR-R50 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With Sota",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "af792ee7e379a002c30ff9185ee993fa705af58d9713100d3d44b4d2b544a79d",
+            "evidence_id": "Ecfb8b8fbdef09979-B0039",
+            "pages": [
+              7
+            ],
+            "section": "Comparison With Sota",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2624,
+                "page": 7,
+                "section": "Comparison With Sota",
+                "section_index": 18,
+                "start": 1735,
+                "text": "64.6\nReal-time End-to-end Object Detector (ours)\nRT-DETR R50 72 42 136 108 53.1 71.3 57.7 34.8 58.0 70.0\nRT-DETR R101 72 76 259 74 54.3 72.7 58.6 36.0 58.8 72.1\nTable 2. Comparison with SOTA (only L and X models of YOLO detectors, see Appendix for the comparison with S and M models). We\ndo not test the speed of other DETRs, except for DINO-Deformable-DETR [44] for comparison, as they are not real-time detectors. Our\nRT-DETR outperforms the state-of-the-art YOLO detectors and DETRs in both speed and accuracy.\nWe test the speed of DINO-Deformable-DETR [44] accord-\ning to the settings of the corresponding accuracy taken on\nCOCO val2017 for comparison, i.e., the speed is tested\nwith TensorRT FP16 and the input size is (800, 1333). Ta-\nble 2 shows that RT-DETR outperforms all DETRs with the\nsame backbone in both speed and accuracy. Compared to\nDINO-Deformable-DETR-R50, RT-DETR-R50 "
+              }
+            ],
+            "text": "64.6\nReal-time End-to-end Object Detector (ours)\nRT-DETR R50 72 42 136 108 53.1 71.3 57.7 34.8 58.0 70.0\nRT-DETR R101 72 76 259 74 54.3 72.7 58.6 36.0 58.8 72.1\nTable 2. Comparison with SOTA (only L and X models of YOLO detectors, see Appendix for the comparison with S and M models). We\ndo not test the speed of other DETRs, except for DINO-Deformable-DETR [44] for comparison, as they are not real-time detectors. Our\nRT-DETR outperforms the state-of-the-art YOLO detectors and DETRs in both speed and accuracy.\nWe test the speed of DINO-Deformable-DETR [44] accord-\ning to the settings of the corresponding accuracy taken on\nCOCO val2017 for comparison, i.e., the speed is tested\nwith TensorRT FP16 and the input size is (800, 1333). Ta-\nble 2 shows that RT-DETR outperforms all DETRs with the\nsame backbone in both speed and accuracy. Compared to\nDINO-Deformable-DETR-R50, RT-DETR-R50 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0041"
+        ],
+        "excerpt": "We evaluate the indicators of the variants designed\nin Sec. 4.2, including AP (trained with1\u00d7 configuration), the\nnumber of parameters, and the latency, Table 3. Compared\nto baseline A, variant B improves accuracy by 1.9% AP and\nincreases the latency by 54%. This proves that the intra-\nscale feature interaction is significant, but the single-scale\nTransformer encoder is computationally expensive. Variant\nC delivers a 0.7% AP improvement over B and increases\nthe latency by 20%. This shows that the cross-scale feature\nfusion is also necessary but the multi-scale Transformer en-\ncoder requires higher computational cost. Variant D delivers\na 0.8% AP improvement over C, but reduces latency by 8%,\nsuggesting that decoupling intra-scale interaction and cross-\nscale fusion not only reduces computational cost but also\nimproves accuracy. Compared to variant D, DS5 reduces the\nlatency by 35% but ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study On Hybrid Encoder",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "739054678248c61b01fe33ebca73ba9e04ab4e100d9c40748142d7371210340b",
+            "evidence_id": "Ecfb8b8fbdef09979-B0041",
+            "pages": [
+              7
+            ],
+            "section": "Ablation Study On Hybrid Encoder",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "Ablation Study On Hybrid Encoder",
+                "section_index": 19,
+                "start": 0,
+                "text": "We evaluate the indicators of the variants designed\nin Sec. 4.2, including AP (trained with1\u00d7 configuration), the\nnumber of parameters, and the latency, Table 3. Compared\nto baseline A, variant B improves accuracy by 1.9% AP and\nincreases the latency by 54%. This proves that the intra-\nscale feature interaction is significant, but the single-scale\nTransformer encoder is computationally expensive. Variant\nC delivers a 0.7% AP improvement over B and increases\nthe latency by 20%. This shows that the cross-scale feature\nfusion is also necessary but the multi-scale Transformer en-\ncoder requires higher computational cost. Variant D delivers\na 0.8% AP improvement over C, but reduces latency by 8%,\nsuggesting that decoupling intra-scale interaction and cross-\nscale fusion not only reduces computational cost but also\nimproves accuracy. Compared to variant D, DS5 reduces the\nlatency by 35% but "
+              }
+            ],
+            "text": "We evaluate the indicators of the variants designed\nin Sec. 4.2, including AP (trained with1\u00d7 configuration), the\nnumber of parameters, and the latency, Table 3. Compared\nto baseline A, variant B improves accuracy by 1.9% AP and\nincreases the latency by 54%. This proves that the intra-\nscale feature interaction is significant, but the single-scale\nTransformer encoder is computationally expensive. Variant\nC delivers a 0.7% AP improvement over B and increases\nthe latency by 20%. This shows that the cross-scale feature\nfusion is also necessary but the multi-scale Transformer en-\ncoder requires higher computational cost. Variant D delivers\na 0.8% AP improvement over C, but reduces latency by 8%,\nsuggesting that decoupling intra-scale interaction and cross-\nscale fusion not only reduces computational cost but also\nimproves accuracy. Compared to variant D, DS5 reduces the\nlatency by 35% but "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0043"
+        ],
+        "excerpt": "We conduct an ablation study on uncertainty-minimal query\nselection, and the results are reported on RT-DETR-R50 with\n1\u00d7 configuration, Table 4. The query selection in RT-DETR\nselects the top K (K = 300) encoder features according\nto the classification scores as the content queries, and the\nprediction boxes corresponding to the selected features are\nused as initial position queries. We compare the encoder\nfeatures selected by the two query selection schemes on\nCOCO val2017 and calculate the proportions of classi-\nVariant AP(%) #Params(M) Latency(ms)\nA 43.0 31 7.2\nB 44.9 32 11.1\nC 45.6 32 13.3\nD 46.4 35 12.2\nDS5 46.8 35 7.9\nE 47.9 42 9.3\nTable 3. The indicators of the set of variants illustrated in Figure 3.\nQuery selection AP(%) Propcls\u2191(%) Propboth\u2191(%)\nVanilla 47.9 0.35 0.30\nUncertainty-minimal 48.7 0.82 0.67\nTable 4. Results of the ablation study on uncertainty-minimal\nquery selection. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study On Query Selection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "607476864dab4ef37f80fb0dd70b582c1820e0d4f32c40a4b6cd23bea34f4f51",
+            "evidence_id": "Ecfb8b8fbdef09979-B0043",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Ablation Study On Query Selection",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 518,
+                "page": 7,
+                "section": "Ablation Study On Query Selection",
+                "section_index": 20,
+                "start": 0,
+                "text": "We conduct an ablation study on uncertainty-minimal query\nselection, and the results are reported on RT-DETR-R50 with\n1\u00d7 configuration, Table 4. The query selection in RT-DETR\nselects the top K (K = 300) encoder features according\nto the classification scores as the content queries, and the\nprediction boxes corresponding to the selected features are\nused as initial position queries. We compare the encoder\nfeatures selected by the two query selection schemes on\nCOCO val2017 and calculate the proportions of classi-"
+              },
+              {
+                "end": 382,
+                "page": 8,
+                "section": "Ablation Study On Query Selection",
+                "section_index": 21,
+                "start": 0,
+                "text": "Variant AP(%) #Params(M) Latency(ms)\nA 43.0 31 7.2\nB 44.9 32 11.1\nC 45.6 32 13.3\nD 46.4 35 12.2\nDS5 46.8 35 7.9\nE 47.9 42 9.3\nTable 3. The indicators of the set of variants illustrated in Figure 3.\nQuery selection AP(%) Propcls\u2191(%) Propboth\u2191(%)\nVanilla 47.9 0.35 0.30\nUncertainty-minimal 48.7 0.82 0.67\nTable 4. Results of the ablation study on uncertainty-minimal\nquery selection. "
+              }
+            ],
+            "text": "We conduct an ablation study on uncertainty-minimal query\nselection, and the results are reported on RT-DETR-R50 with\n1\u00d7 configuration, Table 4. The query selection in RT-DETR\nselects the top K (K = 300) encoder features according\nto the classification scores as the content queries, and the\nprediction boxes corresponding to the selected features are\nused as initial position queries. We compare the encoder\nfeatures selected by the two query selection schemes on\nCOCO val2017 and calculate the proportions of classi-\nVariant AP(%) #Params(M) Latency(ms)\nA 43.0 31 7.2\nB 44.9 32 11.1\nC 45.6 32 13.3\nD 46.4 35 12.2\nDS5 46.8 35 7.9\nE 47.9 42 9.3\nTable 3. The indicators of the set of variants illustrated in Figure 3.\nQuery selection AP(%) Propcls\u2191(%) Propboth\u2191(%)\nVanilla 47.9 0.35 0.30\nUncertainty-minimal 48.7 0.82 0.67\nTable 4. Results of the ablation study on uncertainty-minimal\nquery selection. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0044"
+        ],
+        "excerpt": "Propcls and Propboth represent the proportion of\nclassification score and both scores greater than 0.5 respectively.\nfication scores greater than 0.5 and both classification and\nIoU scores greater than 0.5, respectively. The results show\nthat the encoder features selected by uncertainty-minimal\nquery selection not only increase the proportion of high clas-\nsification scores ( 0.82% vs 0.35%) but also provide more\nhigh-quality features (0.67% vs 0.30%). We also evaluate\nthe accuracy of the detectors trained with the two query selec-\ntion schemes on COCO val2017, where the uncertainty-\nminimal query selection achieves an improvement of 0.8%\nAP (48.7% AP vs 47.9% AP).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study On Query Selection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cf5f90a028466527564448ab2784af83fcbd0029172a5ba9642f4d00da744fa7",
+            "evidence_id": "Ecfb8b8fbdef09979-B0044",
+            "pages": [
+              8
+            ],
+            "section": "Ablation Study On Query Selection",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1055,
+                "page": 8,
+                "section": "Ablation Study On Query Selection",
+                "section_index": 21,
+                "start": 382,
+                "text": "Propcls and Propboth represent the proportion of\nclassification score and both scores greater than 0.5 respectively.\nfication scores greater than 0.5 and both classification and\nIoU scores greater than 0.5, respectively. The results show\nthat the encoder features selected by uncertainty-minimal\nquery selection not only increase the proportion of high clas-\nsification scores ( 0.82% vs 0.35%) but also provide more\nhigh-quality features (0.67% vs 0.30%). We also evaluate\nthe accuracy of the detectors trained with the two query selec-\ntion schemes on COCO val2017, where the uncertainty-\nminimal query selection achieves an improvement of 0.8%\nAP (48.7% AP vs 47.9% AP)."
+              }
+            ],
+            "text": "Propcls and Propboth represent the proportion of\nclassification score and both scores greater than 0.5 respectively.\nfication scores greater than 0.5 and both classification and\nIoU scores greater than 0.5, respectively. The results show\nthat the encoder features selected by uncertainty-minimal\nquery selection not only increase the proportion of high clas-\nsification scores ( 0.82% vs 0.35%) but also provide more\nhigh-quality features (0.67% vs 0.30%). We also evaluate\nthe accuracy of the detectors trained with the two query selec-\ntion schemes on COCO val2017, where the uncertainty-\nminimal query selection achieves an improvement of 0.8%\nAP (48.7% AP vs 47.9% AP)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0045"
+        ],
+        "excerpt": "Table 5 shows the inference latency and accuracy of each de-\ncoder layer of RT-DETR-R50 trained with different numbers\nof decoder layers. When the number of decoder layers is set\nto 6, the RT-DETR-R50 achieves the best accuracy 53.1%\nAP. Furthermore, we observe that the difference in accuracy\nbetween adjacent decoder layers gradually decreases as the\nindex of the decoder layer increases. Taking the column RT-\nDETR-R50-Det6 as an example, using 5-th decoder layer\nfor inference only loses 0.1% AP (53.1% AP vs 53.0% AP)\nin accuracy, while reducing latency by 0.5 ms (9.3 ms vs 8.8\nms). Therefore, RT-DETR supports flexible speed tuning by\nadjusting the number of decoder layers without retraining,\nthus improving its practicality.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study On Decoder",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cf2414ee46240af71e9f098d9717ace74c73ea0f9e7e39337c453d70f8e507ac",
+            "evidence_id": "Ecfb8b8fbdef09979-B0045",
+            "pages": [
+              8
+            ],
+            "section": "Ablation Study On Decoder",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 733,
+                "page": 8,
+                "section": "Ablation Study On Decoder",
+                "section_index": 22,
+                "start": 0,
+                "text": "Table 5 shows the inference latency and accuracy of each de-\ncoder layer of RT-DETR-R50 trained with different numbers\nof decoder layers. When the number of decoder layers is set\nto 6, the RT-DETR-R50 achieves the best accuracy 53.1%\nAP. Furthermore, we observe that the difference in accuracy\nbetween adjacent decoder layers gradually decreases as the\nindex of the decoder layer increases. Taking the column RT-\nDETR-R50-Det6 as an example, using 5-th decoder layer\nfor inference only loses 0.1% AP (53.1% AP vs 53.0% AP)\nin accuracy, while reducing latency by 0.5 ms (9.3 ms vs 8.8\nms). Therefore, RT-DETR supports flexible speed tuning by\nadjusting the number of decoder layers without retraining,\nthus improving its practicality."
+              }
+            ],
+            "text": "Table 5 shows the inference latency and accuracy of each de-\ncoder layer of RT-DETR-R50 trained with different numbers\nof decoder layers. When the number of decoder layers is set\nto 6, the RT-DETR-R50 achieves the best accuracy 53.1%\nAP. Furthermore, we observe that the difference in accuracy\nbetween adjacent decoder layers gradually decreases as the\nindex of the decoder layer increases. Taking the column RT-\nDETR-R50-Det6 as an example, using 5-th decoder layer\nfor inference only loses 0.1% AP (53.1% AP vs 53.0% AP)\nin accuracy, while reducing latency by 0.5 ms (9.3 ms vs 8.8\nms). Therefore, RT-DETR supports flexible speed tuning by\nadjusting the number of decoder layers without retraining,\nthus improving its practicality."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0046"
+        ],
+        "excerpt": "Limitation. Although the proposed RT-DETR outperforms\nthe state-of-the-art real-time detectors and end-to-end detec-\ntors with similar size in both speed and accuracy, it shares the\nsame limitation as the other DETRs, i.e., the performance on\nsmall objects is still inferior than the strong real-time detec-\ntors. According to Table 2, RT-DETR-R50 is0.5% AP lower\nID AP(%) Latency(ms)Det4 Det5 Det6 Det7\n7 - - - 52.6 9.6\n6 - - 53.1 52.6 9.3\n5 - 52.9 53.0 52.5 8.8\n4 52.7 52.7 52.7 52.1 8.3\n3 52.4 52.3 52.4 51.5 7.9\n2 51.6 51.3 51.3 50.6 7.5\n1 49.6 48.8 49.1 48.3 7.0\nTable 5. Results of the ablation study on decoder. ID indicates\ndecoder layer index. Detk represents detector with k decoder layers.\nAll results are reported on RT-DETR-R50 with6\u00d7 configuration.\nthan the highest APvalS in the L model (YOLOv8-L) and RT-\nDETR-R101 is 0.9% AP lower than the highest APvalS in the\nX model (YOLOv7-X). ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitation And Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "64a6819917345f6972a7621d6615f4d4efafd6ec85e21f860a2e80163e721fc5",
+            "evidence_id": "Ecfb8b8fbdef09979-B0046",
+            "pages": [
+              8
+            ],
+            "section": "Limitation And Discussion",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 8,
+                "section": "Limitation And Discussion",
+                "section_index": 23,
+                "start": 0,
+                "text": "Limitation. Although the proposed RT-DETR outperforms\nthe state-of-the-art real-time detectors and end-to-end detec-\ntors with similar size in both speed and accuracy, it shares the\nsame limitation as the other DETRs, i.e., the performance on\nsmall objects is still inferior than the strong real-time detec-\ntors. According to Table 2, RT-DETR-R50 is0.5% AP lower\nID AP(%) Latency(ms)Det4 Det5 Det6 Det7\n7 - - - 52.6 9.6\n6 - - 53.1 52.6 9.3\n5 - 52.9 53.0 52.5 8.8\n4 52.7 52.7 52.7 52.1 8.3\n3 52.4 52.3 52.4 51.5 7.9\n2 51.6 51.3 51.3 50.6 7.5\n1 49.6 48.8 49.1 48.3 7.0\nTable 5. Results of the ablation study on decoder. ID indicates\ndecoder layer index. Detk represents detector with k decoder layers.\nAll results are reported on RT-DETR-R50 with6\u00d7 configuration.\nthan the highest APvalS in the L model (YOLOv8-L) and RT-\nDETR-R101 is 0.9% AP lower than the highest APvalS in the\nX model (YOLOv7-X). "
+              }
+            ],
+            "text": "Limitation. Although the proposed RT-DETR outperforms\nthe state-of-the-art real-time detectors and end-to-end detec-\ntors with similar size in both speed and accuracy, it shares the\nsame limitation as the other DETRs, i.e., the performance on\nsmall objects is still inferior than the strong real-time detec-\ntors. According to Table 2, RT-DETR-R50 is0.5% AP lower\nID AP(%) Latency(ms)Det4 Det5 Det6 Det7\n7 - - - 52.6 9.6\n6 - - 53.1 52.6 9.3\n5 - 52.9 53.0 52.5 8.8\n4 52.7 52.7 52.7 52.1 8.3\n3 52.4 52.3 52.4 51.5 7.9\n2 51.6 51.3 51.3 50.6 7.5\n1 49.6 48.8 49.1 48.3 7.0\nTable 5. Results of the ablation study on decoder. ID indicates\ndecoder layer index. Detk represents detector with k decoder layers.\nAll results are reported on RT-DETR-R50 with6\u00d7 configuration.\nthan the highest APvalS in the L model (YOLOv8-L) and RT-\nDETR-R101 is 0.9% AP lower than the highest APvalS in the\nX model (YOLOv7-X). "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2304.08069",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2304.08069",
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline outcomes are established on external COCO ground-truth annotations and hardware-level TensorRT latency measurements, not on the uncertainty or query-selection signals optimized during training.",
+          "final_evaluation_signal": "Standard COCO val2017 metrics (AP, AP50, AP75, APS/M/L) and TensorRT FP16 latency/FPS measured on T4 GPU.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised training loss combining DETR bounding-box regression and the uncertainty-integrated classification loss against COCO ground-truth labels.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0003",
+          "Ecfb8b8fbdef09979-B0019",
+          "Ecfb8b8fbdef09979-B0024",
+          "Ecfb8b8fbdef09979-B0025",
+          "Ecfb8b8fbdef09979-B0029",
+          "Ecfb8b8fbdef09979-B0037",
+          "Ecfb8b8fbdef09979-B0038",
+          "Ecfb8b8fbdef09979-B0039",
+          "Ecfb8b8fbdef09979-B0041",
+          "Ecfb8b8fbdef09979-B0043",
+          "Ecfb8b8fbdef09979-B0044",
+          "Ecfb8b8fbdef09979-B0045",
+          "Ecfb8b8fbdef09979-B0046"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "01018b33f15723f057b1b65c4ae6958e8cc99b75acf1ca434467c9f5f0782f15"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2304.08069",
+        "claim_evidence_alignment": "Reported metrics directly support the speed and accuracy advantages claimed over contemporary YOLO variants and prior DETR models, with clear acknowledgement of minor AP degradation on small objects compared to specific YOLO architectures.",
+        "context_id": "cfb8b8fbdef09979b36546e8895fdb6892df896464e78ec97677fdfc65dfbb98",
+        "decision": "pass",
+        "evaluation_assessment": "The model is evaluated on MS COCO val2017 with standardized metrics (AP, AP50, AP75, APS/M/L) and end-to-end latency benchmarks on T4 GPUs using TensorRT FP16, accompanied by thorough ablation studies confirming each component's utility.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely on standard external ground-truth COCO annotations and hardware-level TensorRT latency measurements across validation sets.",
+          "final_evaluation_signal": "Standard COCO evaluation benchmark metrics (AP, APS, APM, APL) and TensorRT FP16 inference latency on T4 GPU.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised training loss combining standard DETR bounding box regression and uncertainty-integrated classification loss against ground-truth labels.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ecfb8b8fbdef09979-B0003",
+          "Ecfb8b8fbdef09979-B0019",
+          "Ecfb8b8fbdef09979-B0024",
+          "Ecfb8b8fbdef09979-B0025",
+          "Ecfb8b8fbdef09979-B0029",
+          "Ecfb8b8fbdef09979-B0037",
+          "Ecfb8b8fbdef09979-B0038",
+          "Ecfb8b8fbdef09979-B0039",
+          "Ecfb8b8fbdef09979-B0041",
+          "Ecfb8b8fbdef09979-B0043",
+          "Ecfb8b8fbdef09979-B0044",
+          "Ecfb8b8fbdef09979-B0045",
+          "Ecfb8b8fbdef09979-B0046"
+        ],
+        "limitations": "The authors explicitly disclose that RT-DETR lags slightly behind strong YOLO baselines (e.g., YOLOv8-L and YOLOv7-X) on small object detection AP (APS).",
+        "method_assessment": "The methodology is thoroughly detailed, describing the decoupling of intra-scale interactions from cross-scale fusion, the formulation of uncertainty-minimal query selection combining classification and localization discrepancy into the training loss, and flexible speed tuning via decoder layer pruning.",
+        "quality_rationale": "The study provides clear architectural innovations, transparent experimental controls, comprehensive comparisons against SOTA detectors on a standard benchmark, and detailed ablations validating the hybrid encoder and query selection mechanisms.",
+        "scoped_contribution": "The paper introduces RT-DETR, a real-time end-to-end DETR architecture featuring an efficient hybrid encoder (AIFI and CCFF) and uncertainty-minimal query selection, achieving competitive latency and accuracy trade-offs without NMS post-processing.",
+        "source_content_hash": "01018b33f15723f057b1b65c4ae6958e8cc99b75acf1ca434467c9f5f0782f15"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study provides clear architectural innovations, transparent experimental controls, comprehensive comparisons against SOTA detectors on a standard benchmark, and detailed ablations validating the hybrid encoder and query selection mechanisms.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "01018b33f15723f057b1b65c4ae6958e8cc99b75acf1ca434467c9f5f0782f15",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly disclose that RT-DETR lags slightly behind strong YOLO baselines (e.g., YOLOv8-L and YOLOv7-X) on small object detection AP (APS)."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -176,7 +1641,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

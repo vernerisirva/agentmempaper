@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Novel or Not? PatEx-Gym: Agentic Prior-Art Search for Novelty Assessment in Patent Examination</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Novel or Not? PatEx-Gym: Agentic Prior-Art Search for Novelty Assessment in Patent Examination</h1>
+          <p class="hero-copy">Qiyao Wang, Xinyi Chen, Hongbo Wang, Jiayuan Lu, Jianhang Li, Minghuan Tan, Yuan Lin, Min Yang</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2610.33503">Open paper</a>
+            <a class="paper-detail-link" href="novel-or-not-patex-gym-agentic-prior-art-search-for-novelty-assessment-in-patent-exa-e5a794b7.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Qiyao Wang, Xinyi Chen, Hongbo Wang, Jiayuan Lu, Jianhang Li, Minghuan Tan, Yuan Lin, Min Yang</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-24</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-24</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.33503v1">arXiv</a><a href="https://arxiv.org/abs/2610.33503">arXiv</a><a href="https://openalex.org/W7224018471">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies autonomous or deep research agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Patent examination is a challenging real-world task that requires agents to discover sparse prior art, iteratively refine queries, inspect technical evidence, and produce novelty assessments documented in Office Actions (OAs) across heterogeneous scientific and technical domains. However, existing benchmarks largely...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work provides a well-scoped, rigorously evaluated contribution to agentic search in a demanding domain. Evaluation metrics are objective and grounded in real-world USPTO examiner citations, method descriptions and ablations are thorough, and claim-evidence alignment is strong.</p>
+      <p>The authors acknowledge that even top frontier models struggle with prior-art recall (Select-R remaining below 33%), and final decision accuracy correlates only moderately with full examination and retrieval quality.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-28T10:22:42.801651+00:00.</p>
+        <p>Coverage: 65242 of 65242 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>largely
+focus on static and limited candidate sets, leaving the full search–reasoning–assessment process underexplored.
+We presentPatEx-Gym, the first framework for developing and evaluating agents for patent examination,
+which integrates three components. First,PatEx-Benchprovides 1K realistic examination tasks, two large-scale
+retrieval corpora containing over 1M patents and 52K scientific papers, and a harness runtime supporting
+iterative search, document visits, reasoning, and OA generation. Second, we introducePASS, an annotation-free
+Prior-Art AgenticSearch TrajectorySynthesis framework. Specifically, it exploits document visits as implicit
+relevance signals and evidence-acquisition anchors to model intra-turn query behavior, inter-turn search
+progression, and trajectory-level evidence and outcome quality, yieldingPatEx-SynData. Third, we train
+PatEx-Agentat the 4B scale via </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>behavior
+analysisandtheconstructionofhigh-qualitytrajectoryfortrainingstrongerpatentexaminationagents.
+More importantly, PatEx-Gym also serves as a challenging testbed for general search agents, since its
+broad coverage across IPC sections naturally spans heterogeneous scientific and technical domains,
+requiring agents to perform cross-domainquery adaptation,tool use,evidence integration,technical
+reasoning, andreport generation.Our main contributions are as follows:
+• WeintroducePatEx-Bench,thefirstbenchmarkforagenticprior-artsearchandnoveltyassessment
+in patent examination scenario, comprising 1K realistic tasks. It&#x27;s supported by large-scalePatent-
+1M,Paper-52K, and a diverse search toolset for prior-art search, reasoning, and OA generation.
+• We proposePASS,i.e., Prior-Art AgenticSearch TrajectorySynthesis, a annotation-free framework
+that synthesizes high-quality prior-art search </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>trajectories. By treating document visits as implicit
+relevance signals and evidence-acquisition anchors, PASS models intra- and inter-turn search
+2
+Novel or Not? PatEx-Gym: Agentic Prior-Art Search for Novelty Assessment in Patent Examination
+behavior and progression, together with rollout-level evidence and outcome quality, yielding
+PatEx-SynData, which contains 3K filtered trajectories for agent training.
+• Building on PatEx-SynData, we developPatEx-Agentat4Bscale via SFT for prior-art search and
+novelty assessment in patent examination. Despite its compact scale, our PatEx-Agent exhibits
+strong performance and establishes a lightweight baseline: the 4B variant performs comparably
+to models with∼30B parameters and achieves Searched Recall (Search-R) on par with Qwen3.7-
+Max. This also demonstrates the potential of lightweight agents for efficient local deployment in
+practical patent </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As shown in Figure 1, we construct a sandbox-based execution environment using harbor [Harbor
+Team, 2026], equipping them with a diverse prior-art search toolset, including Boolean keyword
+4
+Novel or Not? PatEx-Gym: Agentic Prior-Art Search for Novelty Assessment in Patent Examination
+search, sparse retrieval (BM25 [Robertson et al., 1994]), and dense retrieval (BGE-M3 [Chen et al.,
+2024]), together with basic workspace tools, e.g.,ReadandWrite. Notably, the search tools return
+only the bibliographic metadata, titles, and abstracts of documents. We further provide visit tools
+to support progressive disclosure of prior-art information, allowing agents to dynamically inspect
+documents they deem more relevant or potentially novelty-defeating and access richer content such
+as claims. Therefore, the agent primarily operates through 3 action types,Reasoning,Search, and
+Visit.
+Based on these </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>overall quality score of generated OA is
+Score=𝔼 𝑞𝑖∼Q
+ 1
+6𝐹𝑖+ 56𝑄𝑖(𝑜𝑖,ˆ𝑜𝑖)×10.(2)
+(2) Decision and Statutory-ground Accuracy.To assess substantive correctness beyond document
+quality, we measure the agreement between the generated OA and the ground-truth prosecution
+outcome at two levels: the final decision and the applicable statutory grounds. We quantify these
+aspects using Decision Accuracy (Dec.) and Statute F1 (Stat.), respectively. For each generated
+OA𝑜𝑖, we extract its predicted decision𝑦𝑖 and statutory-ground set𝐵𝑖, and compare them with the
+ground-truth labelsˆ𝑦𝑖 and ˆ𝐵𝑖:
+Dec.=𝔼 𝑞𝑖∼Q
+
+𝕀[𝑦𝑖 =ˆ𝑦𝑖]
+
+,Stat.=𝔼 𝑞𝑖∼Q
+ 2|𝐵𝑖∩ ˆ𝐵𝑖|
+|𝐵𝑖|+| ˆ𝐵𝑖|
+
+. (3)
+Where𝕀[·]denotes the indicator function.
+(3) Prior-art Discovery and Select.We trace the examiner-cited prior art through successive stages
+of the agent&#x27;s search trajectory, from retrieval and inspection to final selection in the OA. </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fixed constructions; F, mechanical engineering, lighting,
+heating, weapons, and blasting; G, physics; and H, electricity.
+funnel-style recall as
+Search-R=𝔼 𝑞𝑖∼Q
+| ˆ𝑅𝑖∩𝑆 𝑖|
+| ˆ𝑅𝑖|
+
+,Visit-R=𝔼 𝑞𝑖∼Q
+| ˆ𝑅𝑖∩𝑉𝑖|
+| ˆ𝑅𝑖|
+
+,
+Select-R=𝔼 𝑞𝑖∼Q
+| ˆ𝑅𝑖∩𝑅 𝑖|
+| ˆ𝑅𝑖|
+
+.
+(4)
+where the Searched Recall (Search-R), Visited Recall (Visit-R), and Selected Recall (Select-R) measure
+the recall of examiner-cited referencesˆ𝑅𝑖 at the retrieval, access, and final-use stages, respectively.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Data Collection and Processing.PatEx-Bench is grounded in verifiable patent prosecution records
+sourced from publicly available USPTO research datasets , which contains examiner-authored OAs.
+As official examination decisions issued by qualified USPTO examiners, these OAs carry procedural
+legal effect and provide authoritative, professionally validated golden labels rather than synthetic
+annotations. For each𝑞𝑖, we retain the first OA and the application in its originally filed version,
+including its bibliographic metadata, abstract, specification, and claims, ultimately yielding1Ktasks.
+This preserves the initial claims available to the agent instead of the final granted document. To
+support prior-art search, we further constructPatent-1MandPaper-52Kfrom publicly accessible
+Google Patent and Scholar, respectively. We standardize heterogeneous identifiers and fields into a
+unified </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given an application𝑞𝑖, we employ a teacher model to interact with the harness and generate a
+complete prior-art search and OA generation trajectory𝜏𝑖. This synthesis process isannotation-free
+and requires no examiner-cited references, enabling scalable trajectory generation directly from
+large-scale structured patent collections. In the progressive search-then-visit paradigm of PatEx-Gym,
+each visit not only reflects an implicit relevance judgment over the retrieved candidates [Zhou et al.,
+2026], analogous to clickthrough-based implicit feedback in Web search [Joachims et al., 2005],
+but also marks the acquisition of richer document-level evidence. Based on this observation, PASS
+views visit actions as natural anchors and performs visit-guided relevance-aware segmentation to
+decompose each raw trajectory𝜏𝑖 into semantically coherent search turns,i.e.,
+𝜏𝑖 ={𝑇 1,𝑇 2,...,𝑇 𝐾}, 𝑇 𝑘 = </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>      {z          }
+Outcome Quality
+.
+(6)
+where 𝑠intra𝑖 and 𝑠inter𝑖 represent search behavior within and across turns, respectively,𝑠evi𝑖 and 𝑠out𝑖
+evaluate evidence grounding and final examination quality at the trajectory level.
+Turn-Level Query Behavior and Search Progression Quality.We analyze the concrete search
+behavior in a trajectory through intra- and inter-turn analysis.(1)At each turn𝑇𝑘, theintra-turn
+score 𝑠intra𝑖,𝑘 measures how efficiently the agent turns retrieved candidates into inspections, computed
+via NDCG over visited documents against the search results.(2)For turn pair(𝑇𝑘,𝑇𝑘+1), theinter-turn
+score 𝑠inter𝑖,𝑘 captures how the search query meaningfully evolves across turns, measuring whether
+S𝑘+1 reflects a substantive shift or refinement fromS𝑘 in response to the information acquired inV𝑘,
+rather than merely rephrasing the previous query. A high𝑠𝑖,𝑘 inter indicates </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>clear query progression,
+such as introducing new concepts based on newly acquired evidence.
+Trajectory-Level Evidence Grounding and Outcome Quality.Beyond search behavior, we further
+assess the quality of the final OA and the evidence grounding of the selected references.(1)We
+leverage theevidencescore 𝑠evi𝑖 measures that every entry in the selected reference setE𝑖 is grounded
+in the content the agent actually inspected. Specifically, we leverage an LLM to tell whether the
+office-action statements referring to it are supported by its visited passages.(2)Theoutcomescore
+𝑠out𝑖 evaluates the final OA𝑦𝑖 without ground-truth reference. It leverages an LLM to evaluate two
+aspects: whether each claim is explicitly resolved with appropriate justification, and whether the
+references supporting statutory rejections are properly grounded in the selected evidence.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rollouts.
+(II) Criterion 2: Tournament-Based Ranking.Trajectories surviving strict rejection are ranked
+by a pairwise tournament overs𝑖. For each pair(𝜏𝑖,𝜏 𝑗), we compare their four-dimensional score and
+declare𝜏 𝑖 the winner if it outperforms𝜏𝑗 on a strict majority of four dimensions:
+𝜏𝑖≻𝜏 𝑗 ⇐⇒
+∑︁
+𝑑∈D
+𝕀[𝑠𝑑𝑖 &gt; 𝑠𝑑𝑗]&gt; |D|2 .(7)
+whereD={intra,inter,evi,out} . The tournament score𝑊𝑖 for ranking is the total number of pairwise
+wins,
+𝑊𝑖 =
+∑︁
+𝑗≠𝑖
+𝕀[𝜏𝑖≻𝜏 𝑗],(8)
+This aggregation preserves the vector structure ofs𝑖 without collapsing it into a scalar, keeping distinct
+failure modes separable and enabling ranking-based rejection sampling for trajectory selection.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>turn- and trajectory-level
+quality scores after filtering out invalid trajectories using Criterion 1. After filtering, we retain 6,321
+trajectories within the admissible budget and rank them using the tournament-based procedure
+described in Section 4.1.3. Finally, we select the top∼3K high-quality trajectories according to their
+tournament scores as the training data, termedPatEx-SynData. As shown in Fig. 4, we provide
+an overview of the PASS data curation process: (a) illustrates the progressive filtering of teacher-
+generated trajectories from the initial 10K seeds through the two selection criteria, while (b) presents
+the token-length and tool-call distributions of the resulting trajectories.</blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For a training trajectory from our PatEx-SynData𝜏=(𝑎 1,𝑧 1,𝑎 2,𝑧 2,...,𝑎 𝑇,𝑧𝑇), where𝑎𝑡 denote the
+model output (reasoning𝑟𝑡 and tool calls𝑢𝑡), and𝑧𝑡 refers to harness-returned tool results at turn𝑡,
+respectively. We perform supervised fine-tuning (SFT) on the model with environment masking,i.e.
+LSFT =−
+𝑇∑︁
+𝑡=1
+|𝑎𝑡|∑︁
+𝑗=1
+log𝑝 𝜃
+
+𝑎(𝑗)𝑡 |𝑎 (&lt;𝑗)𝑡 ,𝜏&lt;𝑡
+
+(9)
+9
+Novel or Not? PatEx-Gym: Agentic Prior-Art Search for Novelty Assessment in Patent Examination
+where the loss is computed only over output tokens𝑎(𝑗)𝑡 , conditioned on the preceding context
+(𝑎(&lt;𝑗)𝑡 ,𝜏&lt;𝑡), while all system, user, and harness-message tokens are masked from the training objective.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>highest available setting (e.g.,xhighor
+max), indicated by the corresponding postfix. We use the evaluation criteria defined in Section 3.3
+to provide a multi-dimensional assessment of prior-art search performance, averaging scores from 3
+LLM judges,i.e.,Claude-Opus-4.7,Gemini-3.5-Flash, andGPT-5.5. All judges use a temperature of 0
+and a maximum output length of 8,192 tokens.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Score Dec. Stat. Search-R Visit-R Select-R
+Codex Harness
+Claude-Opus-5-max7.3487.0 56.9 48.7 35.6 32.4
+Qwen3.8-Max-xhigh 6.76 85.6 54.8 41.4 30.1 29.1
+GLM-5.3-max 6.71 86.7 54.5 40.4 29.4 28.4
+Claude-Opus-4.7-max 6.55 86.6 55.6 41.6 28.7 26.2
+DeepSeek-V4-Flash-0731-max 6.17 79.9 50.2 44.1 26.8 24.7
+Qwen3.7-Max-xhigh 5.98 84.1 50.0 36.1 25.9 24.1
+Qwen3.6-27B 5.9687.651.6 35.5 21.8 19.5
+Qwen3.5-397A17B 5.55 83.7 47.5 30.4 17.3 16.8
+Qwen3.6-35A3B 5.55 84.9 45.7 35.3 20.6 20.3
+Kimi-K2.6-max 5.27 76.4 43.8 37.8 24.7 19.3
+Qwen3.5-9B 4.55 81.9 46.4 27.6 15.5 14.4
+Qwen3.5-4B 3.79 69.7 38.9 23.2 12.1 12.0
+Ours
+PatEx-Agent-4B 5.41 82.9 45.7 38.7 23.2 18.2
+Δvs. Base +42.7% +18.9% +17.5% +66.8% +91.7% +51.7%
+yielding consistent gains across all search and reasoning metrics, ranging from +17.5% to +91.7%.
+These results suggest that effective prior-art discovery is not solely determined by model </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>scale, but
+can be substantially improved by explicitly training search and reasoning capabilities.
+Decision accuracy alone does not capture examination quality.Qwen3.6-27B achieves the highest
+Decision Accuracy of 87.6%, yet its Score and Select-R remain substantially below those of Claude-
+Opus-5-max, at 5.96 vs. 7.34 and 19.5 vs. 32.4, respectively. Decision Accuracy also shows only
+moderate rank agreement with the Score, with Kendall&#x27;s𝜏 of 0.550. These results indicate that
+correct final decisions do not necessarily imply equally strong prior-art discovery or overall OA quality.
+Additionally, we compute the agreement among the three LLM judges, obtaining Kendall&#x27;s𝑊= 0.849,
+which demonstrates strong consistency in their quality rankings and supports the reliability of our
+LLM-based evaluation.
+Broader prior-art discovery does not always translate into better reference </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>15.46 19.90 24.12
+SPLADE-v313.96 17.51 24.28 29.25
+Dense Retriever
+BGE-M3 15.98 19.65 26.06 31.87
+jina-embedding-v5-text-small 18.08 23.05 30.32 37.25
+jina-embedding-v5-text-nano 20.73 25.57 33.40 39.90
+Qwen3-Embedding-0.6B 20.02 25.76 33.08 38.19
+Qwen3-Embedding-4B 21.66 27.64 35.62 42.62
+Qwen3-Embedding-8B 21.56 27.98 35.53 43.63
+PaECTER 21.48 27.23 36.11 42.30
+PatEmbed-Large22.69 28.60 38.19 45.98
+Prior-Art Agentic Searchw/ the Same Budget
+Claude-Opus-5-max 19.3327.99 37.37 45.71
+Claude-Opus-4.7-max19.8927.58 36.00 40.78
+Qwen3.8-Max-0813-xhigh 18.26 27.68 37.74 40.73
+GLM-5.3-max 16.98 26.48 36.53 39.98
+DeepSeek-V4-Flash-0731-max 17.62 25.19 36.40 43.25
+Qwen3.7-Max-xhigh 17.57 25.80 34.97 36.66
+Qwen3.5-9B 15.65 22.02 27.19 28.36
+Qwen3.5-4B 14.91 19.19 23.61 24.06
+Ours
+PatEx-Agent-4B 16.10 24.20 31.80 36.36
+Δvs. Base +8.0% +26.1% +34.7% +51.1%
+0 20 40 60
+Paper Recall (%)
+Qwen3.6 </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>R@10 R@20 R@50 R@100
+16.1
+24.2
+31.8
+36.4
+11.6
+17.1
+23.8 26.6
+14.9
+19.2
+23.6 24.1
+(b) Agent recall at K
+PatEx-Agent Random Qwen3.5-4B
+Figure 6|Ablation of sampling strategies for prior-art search.
+To isolate the effect of trajectory
+selection, we randomly sample
+3K trajectories from the same
+generated pool, matching the
+size of PatEx-SynData, and train
+the same backbone with identi-
+cal settings. Random sampling
+provides only limited and incon-
+sistent gains over the Qwen3.5-
+4B base model. In particular,
+random sampling reduces R@10
+from 14.9 to 11.6 (-22.1%) and
+R@20 from 19.2 to 17.1 (-10.9%), while Select-R also drops slightly from 12.03 to 11.96 (-0.6%). In
+contrast, training on PASS-filtered trajectories raises Select-R to 18.24 (+51.6%). Under the same
+data budget and training procedure, this gap highlights the importance of PASS&#x27;s multidimensional
+quality assessment helps select </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Search Visit Select 10 20 50 100
+10
+20
+30
+40Recall (%)
+Tool Isolation
+Full
+BM25-Only
+Bool Only
+BGE-M3-Only
+Search Visit Select 10 20 50 100
+10
+20
+30
+40
+Embedding
+w/ BGE-M3
+w/ Qwen-Emb
+w/ PatEmbed
+Base PatEx-Agent
+Figure 7| Retrieval recall under tool isolation (left) and semantic-
+retriever replacement (right). Where Qwen-Emb refers to Qwen3-
+Embedding-0.6B.
+We conduct a search-tool ab-
+lation study by isolating the
+Boolean, BM25, and BGE-M3 re-
+triever, with only one enabled.
+As shown in Fig. 7 (left), the full
+toolset provides the strongest
+retrieval performance, while
+Boolean-only search causes the
+largest degradation. More
+importantly, under the same
+Boolean-only constraint, our
+PatEx-Agent improves Search-R
+from 10.08 to 25.12 (+149.2%)
+and Visit-R from 6.35 to 16.14 (+154.2%) over the backbone. This indicates that PatEx-Agent learns
+more effective query construction and search </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Autonomous research-agent system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies agents that perform or evaluate multi-step research workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Research-agent benchmark/evaluation</li>
+              <li>Tags: deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-28</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-27 09:35:10</li><li>Last seen by Paper Scout: 2026-10-29 10:43:32</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.33503</li><li>arXiv: 2610.33503</li><li>OpenAlex: W7224018471</li><li>OpenAlex IDs: W7224018471</li><li>arXiv IDs: 2610.33503</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="novel-or-not-patex-gym-agentic-prior-art-search-for-novelty-assessment-in-patent-exa-e5a794b7.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Novel or Not? PatEx-Gym: Agentic Prior-Art Search for Novelty Assessment in Patent Examination. Qiyao Wang, Xinyi Chen, Hongbo Wang, Jiayuan Lu, Jianhang Li, Minghuan Tan, Yuan Lin, Min Yang. 2026-10-24. https://doi.org/10.48550/arxiv.2610.33503</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

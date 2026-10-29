@@ -24,13 +24,13 @@
   "first_seen_at": "2026-10-28 10:20:00",
   "first_seen_date": "2026-10-28",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-10-28 10:20:18",
-  "last_seen_date": "2026-10-28",
+  "is_new": false,
+  "last_seen_at": "2026-10-29 10:44:39",
+  "last_seen_date": "2026-10-29",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-27",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-28 10:20:39",
   "notified_date": "2026-10-28",
   "openalex_id": null,
@@ -40,8 +40,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-10-28 10:20:00",
-    "generated_at": "2026-10-28 10:24:02",
-    "last_seen_at": "2026-10-28 10:20:18",
+    "generated_at": "2026-10-29 10:48:06",
+    "last_seen_at": "2026-10-29 10:44:39",
     "metadata_sources": [
       "arxiv"
     ],
@@ -111,36 +111,1596 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-29T10:46:51.750004+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a scoped architectural and training innovation with precise mathematical descriptions, reproducible implementation details, rigorous ablations, and extensive cross-task empirical validation using objective standard benchmarks.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 55854,
+      "assessment_input_sha256": "81b059993a284cf36bcee1583e8a3d02e7467f06b7a51b32cf0af5ce8503d7db",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.36719",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 54559,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 54354,
+      "evidence_block_count": 72,
+      "evidence_context_characters": 63184,
+      "evidence_context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+      "evidence_context_sha256": "e148206afdb5851607c58a1115ecbf72b024692dab443daece5cdd61d9cbee7c",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 54583,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "fa320ac95d1eac7ae1624e72ca80629859ef1fdc3671d3b8d520223869393fa7",
+        "source_url": "https://arxiv.org/pdf/2610.36719",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 54559,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 213,
+          "supplied_characters": 213
+        },
+        {
+          "heading": "Dior-R Obb",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 2385,
+          "supplied_characters": 2385
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "appendix",
+          "section_index": 2,
+          "source_characters": 2530,
+          "supplied_characters": 2530
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 3,
+          "source_characters": 3320,
+          "supplied_characters": 3320
+        },
+        {
+          "heading": "Appendix: Training Strategies And General-Purpose Backbone Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 4,
+          "source_characters": 2897,
+          "supplied_characters": 2897
+        },
+        {
+          "heading": "Appendix: Training Strategies And General-Purpose Backbone Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "appendix",
+          "section_index": 5,
+          "source_characters": 389,
+          "supplied_characters": 389
+        },
+        {
+          "heading": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 4665,
+          "supplied_characters": 4665
+        },
+        {
+          "heading": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 5285,
+          "supplied_characters": 5285
+        },
+        {
+          "heading": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Table I",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 4335,
+          "supplied_characters": 4335
+        },
+        {
+          "heading": "Table I",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Table Ii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 290,
+          "supplied_characters": 290
+        },
+        {
+          "heading": "Table Iii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1376,
+          "supplied_characters": 1376
+        },
+        {
+          "heading": "Appendix: Training Objective",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 13,
+          "source_characters": 206,
+          "supplied_characters": 206
+        },
+        {
+          "heading": "Table Iv",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 589,
+          "supplied_characters": 589
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 15,
+          "source_characters": 1813,
+          "supplied_characters": 1813
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 16,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Table V",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 5301,
+          "supplied_characters": 5301
+        },
+        {
+          "heading": "Table V",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 618,
+          "supplied_characters": 618
+        },
+        {
+          "heading": "Appendix: Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 19,
+          "source_characters": 1038,
+          "supplied_characters": 1038
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 664,
+          "supplied_characters": 664
+        },
+        {
+          "heading": "Towards A Unified Transformer-Based Framework For Object Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 3636,
+          "supplied_characters": 3636
+        },
+        {
+          "heading": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 2181,
+          "supplied_characters": 2181
+        },
+        {
+          "heading": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 324,
+          "supplied_characters": 324
+        },
+        {
+          "heading": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 5108,
+          "supplied_characters": 5108
+        },
+        {
+          "heading": "Appendix: Imageclassification Ontinyimagenet",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 25,
+          "source_characters": 753,
+          "supplied_characters": 753
+        },
+        {
+          "heading": "Appendix: Imageclassification Ontinyimagenet",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 26,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Table Vi",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 813,
+          "supplied_characters": 813
+        },
+        {
+          "heading": "Table Vii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1687,
+          "supplied_characters": 1687
+        },
+        {
+          "heading": "Table Vii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Table Viii",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 463,
+          "supplied_characters": 463
+        },
+        {
+          "heading": "Table Ix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 626,
+          "supplied_characters": 626
+        },
+        {
+          "heading": "Table Ix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Table X",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 533,
+          "supplied_characters": 533
+        },
+        {
+          "heading": "Table Xi",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 307,
+          "supplied_characters": 307
+        }
+      ],
+      "selected_characters": 54354,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 213,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 2385,
+          "heading": "Dior-R Obb",
+          "page": 1
+        },
+        {
+          "characters": 2530,
+          "heading": "Appendix: Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3320,
+          "heading": "Appendix: Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2897,
+          "heading": "Appendix: Training Strategies And General-Purpose Backbone Design",
+          "page": 2
+        },
+        {
+          "characters": 389,
+          "heading": "Appendix: Training Strategies And General-Purpose Backbone Design",
+          "page": 3
+        },
+        {
+          "characters": 4665,
+          "heading": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+          "page": 3
+        },
+        {
+          "characters": 5285,
+          "heading": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+          "page": 4
+        },
+        {
+          "characters": 1,
+          "heading": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+          "page": 5
+        },
+        {
+          "characters": 4335,
+          "heading": "Table I",
+          "page": 5
+        },
+        {
+          "characters": 1,
+          "heading": "Table I",
+          "page": 6
+        },
+        {
+          "characters": 290,
+          "heading": "Table Ii",
+          "page": 6
+        },
+        {
+          "characters": 1376,
+          "heading": "Table Iii",
+          "page": 6
+        },
+        {
+          "characters": 206,
+          "heading": "Appendix: Training Objective",
+          "page": 6
+        },
+        {
+          "characters": 589,
+          "heading": "Table Iv",
+          "page": 6
+        },
+        {
+          "characters": 1813,
+          "heading": "Appendix: Implementation Details",
+          "page": 6
+        },
+        {
+          "characters": 1,
+          "heading": "Appendix: Implementation Details",
+          "page": 7
+        },
+        {
+          "characters": 5301,
+          "heading": "Table V",
+          "page": 7
+        },
+        {
+          "characters": 618,
+          "heading": "Table V",
+          "page": 8
+        },
+        {
+          "characters": 1038,
+          "heading": "Appendix: Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 664,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 3636,
+          "heading": "Towards A Unified Transformer-Based Framework For Object Detection",
+          "page": 8
+        },
+        {
+          "characters": 2181,
+          "heading": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+          "page": 8
+        },
+        {
+          "characters": 324,
+          "heading": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+          "page": 9
+        },
+        {
+          "characters": 5108,
+          "heading": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+          "page": 10
+        },
+        {
+          "characters": 753,
+          "heading": "Appendix: Imageclassification Ontinyimagenet",
+          "page": 10
+        },
+        {
+          "characters": 2,
+          "heading": "Appendix: Imageclassification Ontinyimagenet",
+          "page": 11
+        },
+        {
+          "characters": 813,
+          "heading": "Table Vi",
+          "page": 11
+        },
+        {
+          "characters": 1687,
+          "heading": "Table Vii",
+          "page": 11
+        },
+        {
+          "characters": 2,
+          "heading": "Table Vii",
+          "page": 12
+        },
+        {
+          "characters": 463,
+          "heading": "Table Viii",
+          "page": 12
+        },
+        {
+          "characters": 626,
+          "heading": "Table Ix",
+          "page": 12
+        },
+        {
+          "characters": 2,
+          "heading": "Table Ix",
+          "page": 13
+        },
+        {
+          "characters": 533,
+          "heading": "Table X",
+          "page": 13
+        },
+        {
+          "characters": 307,
+          "heading": "Table Xi",
+          "page": 13
+        }
+      ],
+      "selected_text_sha256": "81b059993a284cf36bcee1583e8a3d02e7467f06b7a51b32cf0af5ce8503d7db",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "fa320ac95d1eac7ae1624e72ca80629859ef1fdc3671d3b8d520223869393fa7",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0007"
+        ],
+        "excerpt": "typically contribute to the representation only\nimplicitly through attention.\nWe propose SAGE, an enhanced ViT-Adapter backbone\nthat aims to improve feature representations by explicitly\nexploiting information encoded in self-supervised ViTs. Our\ncontributions comprise three innovations at the architectural,\ntraining-paradigm, and training-strategy levels:\nContribution 1 (Architecture): Saliency-guided ViT-\nAdapter enhancement.We explicitly extract DINO-style\nCLS-token saliency to guide scale-adaptive residual soft gat-\ning, register-token FiLM modulation, and a Laplacian high-\nfrequency enhancer. Temperature-controlled softmax (\u03c4=\n2.0) enables learnable multi-depth fusion as an alternative to\narXiv:2610.36719v1  [cs.CV]  27 Oct 2026\n2\nDEIMv2's fixed layer selection [5,8,11]. A2\u00d72sub-crop\nbranch and difference-aware gated fusion are used to recover\nhigh-resolution details.\nContribution 2 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6d6dabcdc10df1d6bddd069127c4785567c6562b77d7865624f239752cbd4395",
+            "evidence_id": "Ea7e4dbe9950962fc-B0007",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2530,
+                "page": 1,
+                "section": "Appendix: Introduction",
+                "section_index": 2,
+                "start": 1787,
+                "text": "typically contribute to the representation only\nimplicitly through attention.\nWe propose SAGE, an enhanced ViT-Adapter backbone\nthat aims to improve feature representations by explicitly\nexploiting information encoded in self-supervised ViTs. Our\ncontributions comprise three innovations at the architectural,\ntraining-paradigm, and training-strategy levels:\nContribution 1 (Architecture): Saliency-guided ViT-\nAdapter enhancement.We explicitly extract DINO-style\nCLS-token saliency to guide scale-adaptive residual soft gat-\ning, register-token FiLM modulation, and a Laplacian high-\nfrequency enhancer. Temperature-controlled softmax (\u03c4=\n2.0) enables learnable multi-depth fusion as an alternative to\narXiv:2610.36719v1  [cs.CV]  27 Oct 2026"
+              },
+              {
+                "end": 157,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "2\nDEIMv2's fixed layer selection [5,8,11]. A2\u00d72sub-crop\nbranch and difference-aware gated fusion are used to recover\nhigh-resolution details.\nContribution 2 "
+              }
+            ],
+            "text": "typically contribute to the representation only\nimplicitly through attention.\nWe propose SAGE, an enhanced ViT-Adapter backbone\nthat aims to improve feature representations by explicitly\nexploiting information encoded in self-supervised ViTs. Our\ncontributions comprise three innovations at the architectural,\ntraining-paradigm, and training-strategy levels:\nContribution 1 (Architecture): Saliency-guided ViT-\nAdapter enhancement.We explicitly extract DINO-style\nCLS-token saliency to guide scale-adaptive residual soft gat-\ning, register-token FiLM modulation, and a Laplacian high-\nfrequency enhancer. Temperature-controlled softmax (\u03c4=\n2.0) enables learnable multi-depth fusion as an alternative to\narXiv:2610.36719v1  [cs.CV]  27 Oct 2026\n2\nDEIMv2's fixed layer selection [5,8,11]. A2\u00d72sub-crop\nbranch and difference-aware gated fusion are used to recover\nhigh-resolution details.\nContribution 2 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0008"
+        ],
+        "excerpt": "(Training paradigm): Annealing-based\nenhancement.A three-stage, proportion-based cosine anneal-\ning schedule gradually reduces the contribution of all enhance-\nment modules toward identity mapping.\nContribution 3 (Training strategy): Two-stage, quality-\naware training.We smoothly transition from focal loss to\nVFL within a single training run to address the cold-start\nproblem, and combine this transition with saliency-guided\nquery initialization and a semantic-consistency loss.\nOur ablation studies indicate that combining the annealing\nschedule with two-stage VFL improves performance. The\nresults suggest a positive interaction between the two mecha-\nnisms, indicating that their effects may be complementary.\nSAGE achieves state-of-the-art or competitive results across\nmultiple vision tasks under single-scale inference without\nTTA. The same enhanced backbone is used across tasks,\nwith only ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8a290bdda1ba6b5778e81f5dd23149fc9e02729838d82df7f040c005721f0e78",
+            "evidence_id": "Ea7e4dbe9950962fc-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1057,
+                "page": 2,
+                "section": "Appendix: Introduction",
+                "section_index": 3,
+                "start": 157,
+                "text": "(Training paradigm): Annealing-based\nenhancement.A three-stage, proportion-based cosine anneal-\ning schedule gradually reduces the contribution of all enhance-\nment modules toward identity mapping.\nContribution 3 (Training strategy): Two-stage, quality-\naware training.We smoothly transition from focal loss to\nVFL within a single training run to address the cold-start\nproblem, and combine this transition with saliency-guided\nquery initialization and a semantic-consistency loss.\nOur ablation studies indicate that combining the annealing\nschedule with two-stage VFL improves performance. The\nresults suggest a positive interaction between the two mecha-\nnisms, indicating that their effects may be complementary.\nSAGE achieves state-of-the-art or competitive results across\nmultiple vision tasks under single-scale inference without\nTTA. The same enhanced backbone is used across tasks,\nwith only "
+              }
+            ],
+            "text": "(Training paradigm): Annealing-based\nenhancement.A three-stage, proportion-based cosine anneal-\ning schedule gradually reduces the contribution of all enhance-\nment modules toward identity mapping.\nContribution 3 (Training strategy): Two-stage, quality-\naware training.We smoothly transition from focal loss to\nVFL within a single training run to address the cold-start\nproblem, and combine this transition with saliency-guided\nquery initialization and a semantic-consistency loss.\nOur ablation studies indicate that combining the annealing\nschedule with two-stage VFL improves performance. The\nresults suggest a positive interaction between the two mecha-\nnisms, indicating that their effects may be complementary.\nSAGE achieves state-of-the-art or competitive results across\nmultiple vision tasks under single-scale inference without\nTTA. The same enhanced backbone is used across tasks,\nwith only "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0014"
+        ],
+        "excerpt": "SAGE is an enhanced ViT-Adapter backbone\nwith three main components: (1) a saliency-guided feature-\nenhancement architecture, (2) an annealing-based training\nparadigm, and (3) a two-stage, quality-aware training strategy.\nThe enhancement modules are jointly controlled by the anneal-\ning coefficient\u03bb. Fig. 2 illustrates the overall architecture.\nAs shown in Fig. 2, the forward pass follows three parallel\npaths.(i) SPM path:The inputxis fed into the SPM CNN\npyramid [9] to generate four-scale featuresC 1:4. The query\nsequencecis updated by MSDeformAttn, andC 1 is subse-\nquently reconstructed asF spm,1 =C 1 +U p(Fspm,2).(ii) ViT\npath:The ViT produces representations from all layers. CLS\u2013\npatch cosine similarity at two-thirds depth yields the saliency\npriorS, while multi-depth aggregation fuses sampled layers\ninto four features \u02c6X1:4 using learned softmax weights. These\nfeatures are enhanced ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Training Strategies And General-Purpose Backbone Design",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a8fc413ca7b681c79d4507c1f1071978b1b741d4e5ba9278b0d8c5c10dc65d0a",
+            "evidence_id": "Ea7e4dbe9950962fc-B0014",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Training Strategies And General-Purpose Backbone Design",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2692,
+                "page": 2,
+                "section": "Appendix: Training Strategies And General-Purpose Backbone Design",
+                "section_index": 4,
+                "start": 1792,
+                "text": "SAGE is an enhanced ViT-Adapter backbone\nwith three main components: (1) a saliency-guided feature-\nenhancement architecture, (2) an annealing-based training\nparadigm, and (3) a two-stage, quality-aware training strategy.\nThe enhancement modules are jointly controlled by the anneal-\ning coefficient\u03bb. Fig. 2 illustrates the overall architecture.\nAs shown in Fig. 2, the forward pass follows three parallel\npaths.(i) SPM path:The inputxis fed into the SPM CNN\npyramid [9] to generate four-scale featuresC 1:4. The query\nsequencecis updated by MSDeformAttn, andC 1 is subse-\nquently reconstructed asF spm,1 =C 1 +U p(Fspm,2).(ii) ViT\npath:The ViT produces representations from all layers. CLS\u2013\npatch cosine similarity at two-thirds depth yields the saliency\npriorS, while multi-depth aggregation fuses sampled layers\ninto four features \u02c6X1:4 using learned softmax weights. These\nfeatures are enhanced "
+              }
+            ],
+            "text": "SAGE is an enhanced ViT-Adapter backbone\nwith three main components: (1) a saliency-guided feature-\nenhancement architecture, (2) an annealing-based training\nparadigm, and (3) a two-stage, quality-aware training strategy.\nThe enhancement modules are jointly controlled by the anneal-\ning coefficient\u03bb. Fig. 2 illustrates the overall architecture.\nAs shown in Fig. 2, the forward pass follows three parallel\npaths.(i) SPM path:The inputxis fed into the SPM CNN\npyramid [9] to generate four-scale featuresC 1:4. The query\nsequencecis updated by MSDeformAttn, andC 1 is subse-\nquently reconstructed asF spm,1 =C 1 +U p(Fspm,2).(ii) ViT\npath:The ViT produces representations from all layers. CLS\u2013\npatch cosine similarity at two-thirds depth yields the saliency\npriorS, while multi-depth aggregation fuses sampled layers\ninto four features \u02c6X1:4 using learned softmax weights. These\nfeatures are enhanced "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0017"
+        ],
+        "excerpt": "Weighted \nSum\n\u0de0\ud835\udc4b1\n\u0de0\ud835\udc4b2\n\u0de0\ud835\udc4b3\n\u0de0\ud835\udc4b4\n\uff08c\uff09Difference-aware Local fusion\n1\u00d71 Conv \u00b7 \nSyncBN \u00b7 \nGELU\n1\u00d71 Conv \u00b7  SyncBN\nGELU \u00b7  3\u00d73 Conv \u00b7 \u03c3\ud835\udc3f\n\ud835\udc39\ud835\udc56\n|\ud835\udc39\ud835\udc56 \u2212 \ud835\udc3f\u2032|\n\ud835\udc3f\u2032\nConcat.\n\u2299\n\ud835\udc54\n+\nGateNet\n\ud835\udc4c\ud835\udc56\n\ud835\udc4c\ud835\udc56\nReplaceable\nFig. 2. Overview of the SAGE architecture. The input image is processed in three parallel paths: (1) SPM CNN pyramid generating multi-scale featuresC 1:4;\n(2) ViT backbone producing all layer outputs (patch/CLS/register tokens), from which the saliency priorSand multi-depth aggregated features \u02c6X1:4 are\nderived; (3) a 2\u00d72 local-detail branch extractingL. The aggregated features are per-scale enhanced (HF/FiLM), interact with SPM queries via MSDeformAttn,\nand are fused through residual soft gating (F i =F spm,i +X vit,i \u00b7G i) and difference-aware local fusion, followed by SyncBN and a task-specific decoder.\n(a) CLS\u2013Patch similarity prior:Sfrom 2/3-depth tokens via L2-norm cosine similarity, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4a2c94d475df5fd482919a6fc498c88f8b906f6f8a74de58cbbf66cc51b90691",
+            "evidence_id": "Ea7e4dbe9950962fc-B0017",
+            "pages": [
+              3
+            ],
+            "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1781,
+                "page": 3,
+                "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+                "section_index": 6,
+                "start": 895,
+                "text": "Weighted \nSum\n\u0de0\ud835\udc4b1\n\u0de0\ud835\udc4b2\n\u0de0\ud835\udc4b3\n\u0de0\ud835\udc4b4\n\uff08c\uff09Difference-aware Local fusion\n1\u00d71 Conv \u00b7 \nSyncBN \u00b7 \nGELU\n1\u00d71 Conv \u00b7  SyncBN\nGELU \u00b7  3\u00d73 Conv \u00b7 \u03c3\ud835\udc3f\n\ud835\udc39\ud835\udc56\n|\ud835\udc39\ud835\udc56 \u2212 \ud835\udc3f\u2032|\n\ud835\udc3f\u2032\nConcat.\n\u2299\n\ud835\udc54\n+\nGateNet\n\ud835\udc4c\ud835\udc56\n\ud835\udc4c\ud835\udc56\nReplaceable\nFig. 2. Overview of the SAGE architecture. The input image is processed in three parallel paths: (1) SPM CNN pyramid generating multi-scale featuresC 1:4;\n(2) ViT backbone producing all layer outputs (patch/CLS/register tokens), from which the saliency priorSand multi-depth aggregated features \u02c6X1:4 are\nderived; (3) a 2\u00d72 local-detail branch extractingL. The aggregated features are per-scale enhanced (HF/FiLM), interact with SPM queries via MSDeformAttn,\nand are fused through residual soft gating (F i =F spm,i +X vit,i \u00b7G i) and difference-aware local fusion, followed by SyncBN and a task-specific decoder.\n(a) CLS\u2013Patch similarity prior:Sfrom 2/3-depth tokens via L2-norm cosine similarity, "
+              }
+            ],
+            "text": "Weighted \nSum\n\u0de0\ud835\udc4b1\n\u0de0\ud835\udc4b2\n\u0de0\ud835\udc4b3\n\u0de0\ud835\udc4b4\n\uff08c\uff09Difference-aware Local fusion\n1\u00d71 Conv \u00b7 \nSyncBN \u00b7 \nGELU\n1\u00d71 Conv \u00b7  SyncBN\nGELU \u00b7  3\u00d73 Conv \u00b7 \u03c3\ud835\udc3f\n\ud835\udc39\ud835\udc56\n|\ud835\udc39\ud835\udc56 \u2212 \ud835\udc3f\u2032|\n\ud835\udc3f\u2032\nConcat.\n\u2299\n\ud835\udc54\n+\nGateNet\n\ud835\udc4c\ud835\udc56\n\ud835\udc4c\ud835\udc56\nReplaceable\nFig. 2. Overview of the SAGE architecture. The input image is processed in three parallel paths: (1) SPM CNN pyramid generating multi-scale featuresC 1:4;\n(2) ViT backbone producing all layer outputs (patch/CLS/register tokens), from which the saliency priorSand multi-depth aggregated features \u02c6X1:4 are\nderived; (3) a 2\u00d72 local-detail branch extractingL. The aggregated features are per-scale enhanced (HF/FiLM), interact with SPM queries via MSDeformAttn,\nand are fused through residual soft gating (F i =F spm,i +X vit,i \u00b7G i) and difference-aware local fusion, followed by SyncBN and a task-specific decoder.\n(a) CLS\u2013Patch similarity prior:Sfrom 2/3-depth tokens via L2-norm cosine similarity, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0018"
+        ],
+        "excerpt": "standardization, sigmoid. (b) Multi-depth aggregation: sampled layers\nfused into \u02c6X1:4 via temperature-softmax weights. (c) Difference-aware local fusion:Y i =F i +\u03c3(GateNet([F i,L \u2032,|F i \u2212L \u2032|]))\u2299L \u2032 for high-resolution\nscales.\n2\u00d72sub-crops, each of which is processed independently\nby the final blocks of the shared ViT. The resulting features\nare stitched into a global feature mapLand fused intoF 1:2\nthrough difference-aware local fusion.\nAfter these paths are combined, saliency-guided residual\nsoft gating modulates only the ViT residual features (F i =\nFspm,i +X vit,i \u00b7G i, whereG i = 1 +s max\u03b1i(2Si \u22121)).\nThe resulting four-scale features are normalized by SyncBN\nto produceY \u20321:4. These features are passed to a task-specific\ndecoder, such as the MaskDINO [4] pixel and transformer\ndecoders with 300 queries for detection and segmentation, or\nother heads for classification, pose ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "90ab728c5df85579e0ecdeff65d040730a7f9147e3b9b82932f783fe369201bb",
+            "evidence_id": "Ea7e4dbe9950962fc-B0018",
+            "pages": [
+              3
+            ],
+            "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2672,
+                "page": 3,
+                "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+                "section_index": 6,
+                "start": 1781,
+                "text": "standardization, sigmoid. (b) Multi-depth aggregation: sampled layers\nfused into \u02c6X1:4 via temperature-softmax weights. (c) Difference-aware local fusion:Y i =F i +\u03c3(GateNet([F i,L \u2032,|F i \u2212L \u2032|]))\u2299L \u2032 for high-resolution\nscales.\n2\u00d72sub-crops, each of which is processed independently\nby the final blocks of the shared ViT. The resulting features\nare stitched into a global feature mapLand fused intoF 1:2\nthrough difference-aware local fusion.\nAfter these paths are combined, saliency-guided residual\nsoft gating modulates only the ViT residual features (F i =\nFspm,i +X vit,i \u00b7G i, whereG i = 1 +s max\u03b1i(2Si \u22121)).\nThe resulting four-scale features are normalized by SyncBN\nto produceY \u20321:4. These features are passed to a task-specific\ndecoder, such as the MaskDINO [4] pixel and transformer\ndecoders with 300 queries for detection and segmentation, or\nother heads for classification, pose "
+              }
+            ],
+            "text": "standardization, sigmoid. (b) Multi-depth aggregation: sampled layers\nfused into \u02c6X1:4 via temperature-softmax weights. (c) Difference-aware local fusion:Y i =F i +\u03c3(GateNet([F i,L \u2032,|F i \u2212L \u2032|]))\u2299L \u2032 for high-resolution\nscales.\n2\u00d72sub-crops, each of which is processed independently\nby the final blocks of the shared ViT. The resulting features\nare stitched into a global feature mapLand fused intoF 1:2\nthrough difference-aware local fusion.\nAfter these paths are combined, saliency-guided residual\nsoft gating modulates only the ViT residual features (F i =\nFspm,i +X vit,i \u00b7G i, whereG i = 1 +s max\u03b1i(2Si \u22121)).\nThe resulting four-scale features are normalized by SyncBN\nto produceY \u20321:4. These features are passed to a task-specific\ndecoder, such as the MaskDINO [4] pixel and transformer\ndecoders with 300 queries for detection and segmentation, or\nother heads for classification, pose "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0021"
+        ],
+        "excerpt": "subsequent sigmoid:\n\u00b5= 1N\nNX\ni=1\nsi,\n\u03c3std =\nvuut 1\nN\nNX\ni=1\n(si \u2212\u00b5) 2 +\u03f5,\ns\u2032i = si \u2212\u00b5\u03c3std\n(2)\nThird, sigmoid activation produces the saliency mapS\u2208\n(0,1) H\u00d7W , which highlights potentially salient foreground\n4\nregions without additional annotations or pretraining:\nSi =\u03c3(s \u2032i) = 11 +e \u2212s\u2032i (3)\nWe extract saliency from the two-thirds-depth layer, which\nbalances semantic abstraction for foreground-background dis-\ncrimination with sufficient spatial detail to localize foreground\nboundaries.\n2) Scale-Adaptive Residual Soft Gating:We design a resid-\nual gate centered at 1.0 to enhance salient foreground regions\nwhile suppressing less-salient regions. This design avoids the\noverly aggressive behavior of binary masks, which can discard\nbackground context, and the limitation of conventional multi-\nplicative gates, which only attenuate features. The modulation\napplied to the ViT residual featureX ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db54a8558d1ad2b03e4c6e64900133f48798ba059de68650183ee413bfedac6b",
+            "evidence_id": "Ea7e4dbe9950962fc-B0021",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4665,
+                "page": 3,
+                "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+                "section_index": 6,
+                "start": 4458,
+                "text": "subsequent sigmoid:\n\u00b5= 1N\nNX\ni=1\nsi,\n\u03c3std =\nvuut 1\nN\nNX\ni=1\n(si \u2212\u00b5) 2 +\u03f5,\ns\u2032i = si \u2212\u00b5\u03c3std\n(2)\nThird, sigmoid activation produces the saliency mapS\u2208\n(0,1) H\u00d7W , which highlights potentially salient foreground"
+              },
+              {
+                "end": 692,
+                "page": 4,
+                "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+                "section_index": 7,
+                "start": 0,
+                "text": "4\nregions without additional annotations or pretraining:\nSi =\u03c3(s \u2032i) = 11 +e \u2212s\u2032i (3)\nWe extract saliency from the two-thirds-depth layer, which\nbalances semantic abstraction for foreground-background dis-\ncrimination with sufficient spatial detail to localize foreground\nboundaries.\n2) Scale-Adaptive Residual Soft Gating:We design a resid-\nual gate centered at 1.0 to enhance salient foreground regions\nwhile suppressing less-salient regions. This design avoids the\noverly aggressive behavior of binary masks, which can discard\nbackground context, and the limitation of conventional multi-\nplicative gates, which only attenuate features. The modulation\napplied to the ViT residual featureX "
+              }
+            ],
+            "text": "subsequent sigmoid:\n\u00b5= 1N\nNX\ni=1\nsi,\n\u03c3std =\nvuut 1\nN\nNX\ni=1\n(si \u2212\u00b5) 2 +\u03f5,\ns\u2032i = si \u2212\u00b5\u03c3std\n(2)\nThird, sigmoid activation produces the saliency mapS\u2208\n(0,1) H\u00d7W , which highlights potentially salient foreground\n4\nregions without additional annotations or pretraining:\nSi =\u03c3(s \u2032i) = 11 +e \u2212s\u2032i (3)\nWe extract saliency from the two-thirds-depth layer, which\nbalances semantic abstraction for foreground-background dis-\ncrimination with sufficient spatial detail to localize foreground\nboundaries.\n2) Scale-Adaptive Residual Soft Gating:We design a resid-\nual gate centered at 1.0 to enhance salient foreground regions\nwhile suppressing less-salient regions. This design avoids the\noverly aggressive behavior of binary masks, which can discard\nbackground context, and the limitation of conventional multi-\nplicative gates, which only attenuate features. The modulation\napplied to the ViT residual featureX "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0022"
+        ],
+        "excerpt": "vit is defined as follows:\nGi =clamp(1 +s max \u00b7\u03b1 i \u00b7(2S i \u22121),1\u2212s max,1 +s max)\n(4)\nwherei\u2208 {1,2,3}indexes the scale group (stride 4/8, 16,\n32),\u03b1 i =\u03c3(\u03b2 i)\u2208(0,1)is a learnable per-scale weight, and\nsmax = 0.20bounds the modulation range.(2S\u22121)maps\n[0,1]saliency to[\u22121,1]\u2014 foreground regions (S>0.5)\nobtainG>1(enhancement by at most 20%), background\nregions (S<0.5) obtainG<1(suppression but not\nzeroing). The learnable per-scale weights\u03b1 i are initialized\nto{0.20,0.50,0.80}, encouraging stronger gating on deeper\nscales where semantic information is more reliable. The final\nfeature at each scale is:\nFi =F spm,i +X vit,i \u00b7G i (5)\nWe leave the SPM baseline ungated to preserve a stable multi-\nscale structural foundation, while the ViT residual features\nprovide foreground-background discrimination.\n3) Register-Token FiLM Modulation:Modern self-\nsupervised ViTs contain register or memory ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d7516d38d930ea64f2ea73982048cd1a7a9e462f697b08123b76593a613e2c5b",
+            "evidence_id": "Ea7e4dbe9950962fc-B0022",
+            "pages": [
+              4
+            ],
+            "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1583,
+                "page": 4,
+                "section": "\ud835\udc3f \u2208 \u211d\ud835\udc36\u00d7\ud835\udc3b/16\u00d7\ud835\udc4a/16",
+                "section_index": 7,
+                "start": 692,
+                "text": "vit is defined as follows:\nGi =clamp(1 +s max \u00b7\u03b1 i \u00b7(2S i \u22121),1\u2212s max,1 +s max)\n(4)\nwherei\u2208 {1,2,3}indexes the scale group (stride 4/8, 16,\n32),\u03b1 i =\u03c3(\u03b2 i)\u2208(0,1)is a learnable per-scale weight, and\nsmax = 0.20bounds the modulation range.(2S\u22121)maps\n[0,1]saliency to[\u22121,1]\u2014 foreground regions (S>0.5)\nobtainG>1(enhancement by at most 20%), background\nregions (S<0.5) obtainG<1(suppression but not\nzeroing). The learnable per-scale weights\u03b1 i are initialized\nto{0.20,0.50,0.80}, encouraging stronger gating on deeper\nscales where semantic information is more reliable. The final\nfeature at each scale is:\nFi =F spm,i +X vit,i \u00b7G i (5)\nWe leave the SPM baseline ungated to preserve a stable multi-\nscale structural foundation, while the ViT residual features\nprovide foreground-background discrimination.\n3) Register-Token FiLM Modulation:Modern self-\nsupervised ViTs contain register or memory "
+              }
+            ],
+            "text": "vit is defined as follows:\nGi =clamp(1 +s max \u00b7\u03b1 i \u00b7(2S i \u22121),1\u2212s max,1 +s max)\n(4)\nwherei\u2208 {1,2,3}indexes the scale group (stride 4/8, 16,\n32),\u03b1 i =\u03c3(\u03b2 i)\u2208(0,1)is a learnable per-scale weight, and\nsmax = 0.20bounds the modulation range.(2S\u22121)maps\n[0,1]saliency to[\u22121,1]\u2014 foreground regions (S>0.5)\nobtainG>1(enhancement by at most 20%), background\nregions (S<0.5) obtainG<1(suppression but not\nzeroing). The learnable per-scale weights\u03b1 i are initialized\nto{0.20,0.50,0.80}, encouraging stronger gating on deeper\nscales where semantic information is more reliable. The final\nfeature at each scale is:\nFi =F spm,i +X vit,i \u00b7G i (5)\nWe leave the SPM baseline ungated to preserve a stable multi-\nscale structural foundation, while the ViT residual features\nprovide foreground-background discrimination.\n3) Register-Token FiLM Modulation:Modern self-\nsupervised ViTs contain register or memory "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0028"
+        ],
+        "excerpt": "TABLE I\nCOMPARISON WITH STATE-OF-THE-ART METHODS ONCOCOVAL2017. ALL RESULTS USE SINGLE-SCALE INFERENCE WITHOUTTTA. PARAMETER\nCOUNTS REFER TO THE BACKBONE. THE BEST RESULTS ARE SHOWN IN BOLD,AND THE SECOND-BEST RESULTS ARE UNDERLINED.\nMethod Backbone Params Pretrain Data bbox AP bbox AP@.50 segm AP segm AP@.50\nDINO [3] ResNet-50 25M IN-1K 49.0 67.0 \u2014 \u2014\nMaskDINO [4] ResNet-50 25M IN-1K 51.7 70.5 45.0 68.0\nD-FINE-X [6] HGNetv2-B5 30M O365 59.3 78.0 \u2014 \u2014\nRT-DETRv4-X [17] HGNetv2-B4 22M O365 57.0 75.0 \u2014 \u2014\nDEIMv2-X [7] HGNetv2-B4 22M O365 57.8 76.0 \u2014 \u2014\nDINO [3] Swin-L 197M IN-22K 58.5 78.0 \u2014 \u2014\nViTDet [12] ViT-H 632M IN-22K 58.7 78.5 50.9 72.0\nMaskDINO [4] Swin-L 197M IN-22K 58.3 78.0 52.1 73.0\nViT-Adapter-L [9] ViT-L 304M IN-22K 58.8 78.5 51.1 72.5\nCo-DETR [5] Swin-L 197M IN-22K 60.7 79.0 \u2014 \u2014\nRF-DETR-2XL [8] ViT-B 86M O365 60.1 78.5 49.9 73.1\nSAGE (ours) ViT-B 86M O365 61.1 79.5 54.4 78.5\nSAGE ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table I",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fbbd3ea26fe30d123d7ada5a9fba39c8a49f65101904c007ab47d589241ea7b0",
+            "evidence_id": "Ea7e4dbe9950962fc-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Table I",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 5,
+                "section": "Table I",
+                "section_index": 9,
+                "start": 0,
+                "text": "TABLE I\nCOMPARISON WITH STATE-OF-THE-ART METHODS ONCOCOVAL2017. ALL RESULTS USE SINGLE-SCALE INFERENCE WITHOUTTTA. PARAMETER\nCOUNTS REFER TO THE BACKBONE. THE BEST RESULTS ARE SHOWN IN BOLD,AND THE SECOND-BEST RESULTS ARE UNDERLINED.\nMethod Backbone Params Pretrain Data bbox AP bbox AP@.50 segm AP segm AP@.50\nDINO [3] ResNet-50 25M IN-1K 49.0 67.0 \u2014 \u2014\nMaskDINO [4] ResNet-50 25M IN-1K 51.7 70.5 45.0 68.0\nD-FINE-X [6] HGNetv2-B5 30M O365 59.3 78.0 \u2014 \u2014\nRT-DETRv4-X [17] HGNetv2-B4 22M O365 57.0 75.0 \u2014 \u2014\nDEIMv2-X [7] HGNetv2-B4 22M O365 57.8 76.0 \u2014 \u2014\nDINO [3] Swin-L 197M IN-22K 58.5 78.0 \u2014 \u2014\nViTDet [12] ViT-H 632M IN-22K 58.7 78.5 50.9 72.0\nMaskDINO [4] Swin-L 197M IN-22K 58.3 78.0 52.1 73.0\nViT-Adapter-L [9] ViT-L 304M IN-22K 58.8 78.5 51.1 72.5\nCo-DETR [5] Swin-L 197M IN-22K 60.7 79.0 \u2014 \u2014\nRF-DETR-2XL [8] ViT-B 86M O365 60.1 78.5 49.9 73.1\nSAGE (ours) ViT-B 86M O365 61.1 79.5 54.4 78.5\nSAGE "
+              }
+            ],
+            "text": "TABLE I\nCOMPARISON WITH STATE-OF-THE-ART METHODS ONCOCOVAL2017. ALL RESULTS USE SINGLE-SCALE INFERENCE WITHOUTTTA. PARAMETER\nCOUNTS REFER TO THE BACKBONE. THE BEST RESULTS ARE SHOWN IN BOLD,AND THE SECOND-BEST RESULTS ARE UNDERLINED.\nMethod Backbone Params Pretrain Data bbox AP bbox AP@.50 segm AP segm AP@.50\nDINO [3] ResNet-50 25M IN-1K 49.0 67.0 \u2014 \u2014\nMaskDINO [4] ResNet-50 25M IN-1K 51.7 70.5 45.0 68.0\nD-FINE-X [6] HGNetv2-B5 30M O365 59.3 78.0 \u2014 \u2014\nRT-DETRv4-X [17] HGNetv2-B4 22M O365 57.0 75.0 \u2014 \u2014\nDEIMv2-X [7] HGNetv2-B4 22M O365 57.8 76.0 \u2014 \u2014\nDINO [3] Swin-L 197M IN-22K 58.5 78.0 \u2014 \u2014\nViTDet [12] ViT-H 632M IN-22K 58.7 78.5 50.9 72.0\nMaskDINO [4] Swin-L 197M IN-22K 58.3 78.0 52.1 73.0\nViT-Adapter-L [9] ViT-L 304M IN-22K 58.8 78.5 51.1 72.5\nCo-DETR [5] Swin-L 197M IN-22K 60.7 79.0 \u2014 \u2014\nRF-DETR-2XL [8] ViT-B 86M O365 60.1 78.5 49.9 73.1\nSAGE (ours) ViT-B 86M O365 61.1 79.5 54.4 78.5\nSAGE "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0033"
+        ],
+        "excerpt": "TABLE II\nMODULE CONTRIBUTIONS(COCOVAL2017, VIT-B).\nConfiguration bbox AP segm AP\u2206bbox\nBaseline 57.70 51.05 \u2014\n+ Saliency modulation 58.90 52.25 +1.20\n+ Annealing 60.07 53.46 +1.17\n+ Dyn. agg. + local detail 60.91 54.23 +0.84\n+ Two-stage VFL + sem.61.10 54.40+0.19\nFull SAGE 61.10 54.40 +3.40",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Ii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "72e0670d494c37f347e1fdd7484430daebc3e1559a5532cddbd6f5f5be8c8fca",
+            "evidence_id": "Ea7e4dbe9950962fc-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Table Ii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 290,
+                "page": 6,
+                "section": "Table Ii",
+                "section_index": 11,
+                "start": 0,
+                "text": "TABLE II\nMODULE CONTRIBUTIONS(COCOVAL2017, VIT-B).\nConfiguration bbox AP segm AP\u2206bbox\nBaseline 57.70 51.05 \u2014\n+ Saliency modulation 58.90 52.25 +1.20\n+ Annealing 60.07 53.46 +1.17\n+ Dyn. agg. + local detail 60.91 54.23 +0.84\n+ Two-stage VFL + sem.61.10 54.40+0.19\nFull SAGE 61.10 54.40 +3.40"
+              }
+            ],
+            "text": "TABLE II\nMODULE CONTRIBUTIONS(COCOVAL2017, VIT-B).\nConfiguration bbox AP segm AP\u2206bbox\nBaseline 57.70 51.05 \u2014\n+ Saliency modulation 58.90 52.25 +1.20\n+ Annealing 60.07 53.46 +1.17\n+ Dyn. agg. + local detail 60.91 54.23 +0.84\n+ Two-stage VFL + sem.61.10 54.40+0.19\nFull SAGE 61.10 54.40 +3.40"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0034"
+        ],
+        "excerpt": "TABLE III\nANNEALING SCHEDULE ABLATION(COCOVAL2017, VIT-B).\nStrategy bbox AP@.50\u2206bbox\nNo anneal (\u03bb= 1) 60.15 53.62 \u2014\n2-stage (no ramp-up) 59.21 52.61 -0.94\nLinear anneal 60.09 53.64 -0.06\n3-stage + FREEZE 60.91 54.23 +0.76\n2) Saliency-Guided Query Initialization:Standard DETR\ndecoder queries are typically initialized using learnable em-\nbeddings or selected from encoder outputs according to top-\nkscores. These approaches do not explicitly use the DINO\nsaliency prior computed by the backbone. We therefore use\nthe backbone saliency prior to guide query initialization, as\nan alternative to standard top-kselection:\nwq,h,w =\u03c3(M q,h,w)\u00b7 \u2225F:,h,w\u22252,f initq = X\nh,w\nwq,h,w \u00b7F :,h,w\n(18)\nThis produces the initialization featuresf initq \u2208R Q\u00d7C, which\naggregate information from salient spatial regions and com-\nplement the saliency-guided residual gating in the backbone.\n3) Semantic Consistency ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "842fccd5e142596b0e9d614beff9bf5b582cdc48d0f48eba0c9ac51a6ec89938",
+            "evidence_id": "Ea7e4dbe9950962fc-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Table Iii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 6,
+                "section": "Table Iii",
+                "section_index": 12,
+                "start": 0,
+                "text": "TABLE III\nANNEALING SCHEDULE ABLATION(COCOVAL2017, VIT-B).\nStrategy bbox AP@.50\u2206bbox\nNo anneal (\u03bb= 1) 60.15 53.62 \u2014\n2-stage (no ramp-up) 59.21 52.61 -0.94\nLinear anneal 60.09 53.64 -0.06\n3-stage + FREEZE 60.91 54.23 +0.76\n2) Saliency-Guided Query Initialization:Standard DETR\ndecoder queries are typically initialized using learnable em-\nbeddings or selected from encoder outputs according to top-\nkscores. These approaches do not explicitly use the DINO\nsaliency prior computed by the backbone. We therefore use\nthe backbone saliency prior to guide query initialization, as\nan alternative to standard top-kselection:\nwq,h,w =\u03c3(M q,h,w)\u00b7 \u2225F:,h,w\u22252,f initq = X\nh,w\nwq,h,w \u00b7F :,h,w\n(18)\nThis produces the initialization featuresf initq \u2208R Q\u00d7C, which\naggregate information from salient spatial regions and com-\nplement the saliency-guided residual gating in the backbone.\n3) Semantic Consistency "
+              }
+            ],
+            "text": "TABLE III\nANNEALING SCHEDULE ABLATION(COCOVAL2017, VIT-B).\nStrategy bbox AP@.50\u2206bbox\nNo anneal (\u03bb= 1) 60.15 53.62 \u2014\n2-stage (no ramp-up) 59.21 52.61 -0.94\nLinear anneal 60.09 53.64 -0.06\n3-stage + FREEZE 60.91 54.23 +0.76\n2) Saliency-Guided Query Initialization:Standard DETR\ndecoder queries are typically initialized using learnable em-\nbeddings or selected from encoder outputs according to top-\nkscores. These approaches do not explicitly use the DINO\nsaliency prior computed by the backbone. We therefore use\nthe backbone saliency prior to guide query initialization, as\nan alternative to standard top-kselection:\nwq,h,w =\u03c3(M q,h,w)\u00b7 \u2225F:,h,w\u22252,f initq = X\nh,w\nwq,h,w \u00b7F :,h,w\n(18)\nThis produces the initialization featuresf initq \u2208R Q\u00d7C, which\naggregate information from salient spatial regions and com-\nplement the saliency-guided residual gating in the backbone.\n3) Semantic Consistency "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0037"
+        ],
+        "excerpt": "TABLE IV\nTWO-STAGEVFLTRAINING STRATEGY ABLATION(COCOVAL2017,\nVIT-B).\nStrategy Anneal bbox AP segm AP\u2206AP\nVFL from scratch\u00d760.69 53.80 \u2014\nTwo-stage VFL\u00d760.15 53.62\u22120.54\nVFL from scratch\u271360.09 53.64\u22120.60\nTwo-stage VFL\u271360.91 54.23+0.22\nIV. EXPERIMENTS\nA. Datasets and Evaluation Metrics\nWe evaluate SAGE on four benchmarks:COCO[18] for\nobject detection, instance segmentation, and keypoint esti-\nmation;ADE20Kfor semantic and instance segmentation;\nTinyImageNetfor image classification; andDIOR-Rfor\noriented object detection. All results are obtained using single-\nscale inference without TTA.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Iv",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2df2490e87f88b5aebf85cfebd29c69b9de8f87353f46d1ffc7b5c79253bb1b2",
+            "evidence_id": "Ea7e4dbe9950962fc-B0037",
+            "pages": [
+              6
+            ],
+            "section": "Table Iv",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 589,
+                "page": 6,
+                "section": "Table Iv",
+                "section_index": 14,
+                "start": 0,
+                "text": "TABLE IV\nTWO-STAGEVFLTRAINING STRATEGY ABLATION(COCOVAL2017,\nVIT-B).\nStrategy Anneal bbox AP segm AP\u2206AP\nVFL from scratch\u00d760.69 53.80 \u2014\nTwo-stage VFL\u00d760.15 53.62\u22120.54\nVFL from scratch\u271360.09 53.64\u22120.60\nTwo-stage VFL\u271360.91 54.23+0.22\nIV. EXPERIMENTS\nA. Datasets and Evaluation Metrics\nWe evaluate SAGE on four benchmarks:COCO[18] for\nobject detection, instance segmentation, and keypoint esti-\nmation;ADE20Kfor semantic and instance segmentation;\nTinyImageNetfor image classification; andDIOR-Rfor\noriented object detection. All results are obtained using single-\nscale inference without TTA."
+              }
+            ],
+            "text": "TABLE IV\nTWO-STAGEVFLTRAINING STRATEGY ABLATION(COCOVAL2017,\nVIT-B).\nStrategy Anneal bbox AP segm AP\u2206AP\nVFL from scratch\u00d760.69 53.80 \u2014\nTwo-stage VFL\u00d760.15 53.62\u22120.54\nVFL from scratch\u271360.09 53.64\u22120.60\nTwo-stage VFL\u271360.91 54.23+0.22\nIV. EXPERIMENTS\nA. Datasets and Evaluation Metrics\nWe evaluate SAGE on four benchmarks:COCO[18] for\nobject detection, instance segmentation, and keypoint esti-\nmation;ADE20Kfor semantic and instance segmentation;\nTinyImageNetfor image classification; andDIOR-Rfor\noriented object detection. All results are obtained using single-\nscale inference without TTA."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0041"
+        ],
+        "excerpt": "TABLE V\nCROSS-TASK COMPARISON OFSAGEWITH REPRESENTATIVE METHODS. THE BEST RESULT IS SHOWN IN BOLD,AND THE SECOND-BEST RESULT IS\nUNDERLINED. ALL REPORTED RESULTS ARE SINGLE-MODALITY(VISION-ONLY),AND SINGLE-SCALE WITHOUT TEST-TIME AUGMENTATION(TTA).\nTask & Dataset Method Backbone Backbone Params. Pre-training Metric Baseline SAGE-B SAGE-L\nObject Detection\n(COCO)\nCo-DETR [5] Swin-L 197M IN-22K\nBox AP\n60.7\n61.1 62.8RF-DETR-2XL [8] ViT-B 86M O365 60.1\nD-FINE-X [6] HGNetv2-B5 30M O365 59.3\nInstance Segmentation\n(COCO)\nMaskDINO [4] Swin-L 197M IN-22K\nMask AP\n52.1\n54.4 55.3ViTDet [12] ViT-H 632M IN-22K 50.9\nViT-Adapter-L [9] ViT-L 304M IN-22K 51.1\nInstance Segmentation\n(ADE20K)\nOneFormer + ViT-P [20] DiNAT-L + ViT-P 300M IN-22K\nMask AP\n40.7\n42.5 44.9Mask2Former + DiNAT DiNAT-L 200M IN-22K 35.4\nOneFormer [20] DiNAT-L 200M IN-22K 37.1\nSemantic Segmentation\n(ADE20K)\nMask2Former [21] Swin-L 197M ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table V",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cf4a4d737fa4cc5f4a5616607baadf995c9803008ee8dfaa9a4a3624a4587335",
+            "evidence_id": "Ea7e4dbe9950962fc-B0041",
+            "pages": [
+              7
+            ],
+            "section": "Table V",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 7,
+                "section": "Table V",
+                "section_index": 17,
+                "start": 0,
+                "text": "TABLE V\nCROSS-TASK COMPARISON OFSAGEWITH REPRESENTATIVE METHODS. THE BEST RESULT IS SHOWN IN BOLD,AND THE SECOND-BEST RESULT IS\nUNDERLINED. ALL REPORTED RESULTS ARE SINGLE-MODALITY(VISION-ONLY),AND SINGLE-SCALE WITHOUT TEST-TIME AUGMENTATION(TTA).\nTask & Dataset Method Backbone Backbone Params. Pre-training Metric Baseline SAGE-B SAGE-L\nObject Detection\n(COCO)\nCo-DETR [5] Swin-L 197M IN-22K\nBox AP\n60.7\n61.1 62.8RF-DETR-2XL [8] ViT-B 86M O365 60.1\nD-FINE-X [6] HGNetv2-B5 30M O365 59.3\nInstance Segmentation\n(COCO)\nMaskDINO [4] Swin-L 197M IN-22K\nMask AP\n52.1\n54.4 55.3ViTDet [12] ViT-H 632M IN-22K 50.9\nViT-Adapter-L [9] ViT-L 304M IN-22K 51.1\nInstance Segmentation\n(ADE20K)\nOneFormer + ViT-P [20] DiNAT-L + ViT-P 300M IN-22K\nMask AP\n40.7\n42.5 44.9Mask2Former + DiNAT DiNAT-L 200M IN-22K 35.4\nOneFormer [20] DiNAT-L 200M IN-22K 37.1\nSemantic Segmentation\n(ADE20K)\nMask2Former [21] Swin-L 197M "
+              }
+            ],
+            "text": "TABLE V\nCROSS-TASK COMPARISON OFSAGEWITH REPRESENTATIVE METHODS. THE BEST RESULT IS SHOWN IN BOLD,AND THE SECOND-BEST RESULT IS\nUNDERLINED. ALL REPORTED RESULTS ARE SINGLE-MODALITY(VISION-ONLY),AND SINGLE-SCALE WITHOUT TEST-TIME AUGMENTATION(TTA).\nTask & Dataset Method Backbone Backbone Params. Pre-training Metric Baseline SAGE-B SAGE-L\nObject Detection\n(COCO)\nCo-DETR [5] Swin-L 197M IN-22K\nBox AP\n60.7\n61.1 62.8RF-DETR-2XL [8] ViT-B 86M O365 60.1\nD-FINE-X [6] HGNetv2-B5 30M O365 59.3\nInstance Segmentation\n(COCO)\nMaskDINO [4] Swin-L 197M IN-22K\nMask AP\n52.1\n54.4 55.3ViTDet [12] ViT-H 632M IN-22K 50.9\nViT-Adapter-L [9] ViT-L 304M IN-22K 51.1\nInstance Segmentation\n(ADE20K)\nOneFormer + ViT-P [20] DiNAT-L + ViT-P 300M IN-22K\nMask AP\n40.7\n42.5 44.9Mask2Former + DiNAT DiNAT-L 200M IN-22K 35.4\nOneFormer [20] DiNAT-L 200M IN-22K 37.1\nSemantic Segmentation\n(ADE20K)\nMask2Former [21] Swin-L 197M "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0042"
+        ],
+        "excerpt": "IN-22K\nmIoU (%)\n56.1\n58.760.3ViT-Adapter-L + UPerNet [9] ViT-L 304M IN-22K 58.0\nUPerNet [22] InternImage-H 1.08B IN-22K 59.9\nRotated Detection\n(DIOR-R)\nRiO-DETR-X [19] HGNetV2-B5 33M IN-1K\nAP50\n77.43\n78.3 78.8RT-DETRv2-OBB-X [23] HGNetV2-B5 33M IN-1K 76.52\nYOLO26x-OBB [24] YOLO26x 56M \u2013 76.48\nImage Classification\n(TinyImageNet)\nCLAdapter [25] ViT-L 304M IN-22K\nTop-1 (%)\n94.21\n91.4694.76Swin-L/4 [26] Swin-L/4 196M IN-22K 91.35\nDeiT-B/16-D [27] DeiT-B/16-D 87M IN-1K 87.29\nKeypoint Estimation\n(COCO-Keypoint)\nRTMPose-L [28] CSPNeXt-L 26M IN-1K\nAP\n75.8\n76.078.5ViTPose-B [29] ViT-B 86M IN-1K 75.8ViTPose-L [29] ViT-L 306M IN-1K 78.3\nViTPose-H [29] ViT-H 631M IN-1K79.1\n*SAGE-B and SAGE-L denote SAGE with ViT-B (86M parameters) and ViT-L (304M parameters), respectively. Both of them use O365 pre-training.\n\u2022SAGE ViT-B vs. Co-DETR: SAGE-B has fewer than\nhalf as many backbone parameters as Co-DETR ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table V",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8103ac484a72d0d46d7d43eb5fecb53300f1a59a02a0f15da5221ceaa6578703",
+            "evidence_id": "Ea7e4dbe9950962fc-B0042",
+            "pages": [
+              7
+            ],
+            "section": "Table V",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 7,
+                "section": "Table V",
+                "section_index": 17,
+                "start": 897,
+                "text": "IN-22K\nmIoU (%)\n56.1\n58.760.3ViT-Adapter-L + UPerNet [9] ViT-L 304M IN-22K 58.0\nUPerNet [22] InternImage-H 1.08B IN-22K 59.9\nRotated Detection\n(DIOR-R)\nRiO-DETR-X [19] HGNetV2-B5 33M IN-1K\nAP50\n77.43\n78.3 78.8RT-DETRv2-OBB-X [23] HGNetV2-B5 33M IN-1K 76.52\nYOLO26x-OBB [24] YOLO26x 56M \u2013 76.48\nImage Classification\n(TinyImageNet)\nCLAdapter [25] ViT-L 304M IN-22K\nTop-1 (%)\n94.21\n91.4694.76Swin-L/4 [26] Swin-L/4 196M IN-22K 91.35\nDeiT-B/16-D [27] DeiT-B/16-D 87M IN-1K 87.29\nKeypoint Estimation\n(COCO-Keypoint)\nRTMPose-L [28] CSPNeXt-L 26M IN-1K\nAP\n75.8\n76.078.5ViTPose-B [29] ViT-B 86M IN-1K 75.8ViTPose-L [29] ViT-L 306M IN-1K 78.3\nViTPose-H [29] ViT-H 631M IN-1K79.1\n*SAGE-B and SAGE-L denote SAGE with ViT-B (86M parameters) and ViT-L (304M parameters), respectively. Both of them use O365 pre-training.\n\u2022SAGE ViT-B vs. Co-DETR: SAGE-B has fewer than\nhalf as many backbone parameters as Co-DETR "
+              }
+            ],
+            "text": "IN-22K\nmIoU (%)\n56.1\n58.760.3ViT-Adapter-L + UPerNet [9] ViT-L 304M IN-22K 58.0\nUPerNet [22] InternImage-H 1.08B IN-22K 59.9\nRotated Detection\n(DIOR-R)\nRiO-DETR-X [19] HGNetV2-B5 33M IN-1K\nAP50\n77.43\n78.3 78.8RT-DETRv2-OBB-X [23] HGNetV2-B5 33M IN-1K 76.52\nYOLO26x-OBB [24] YOLO26x 56M \u2013 76.48\nImage Classification\n(TinyImageNet)\nCLAdapter [25] ViT-L 304M IN-22K\nTop-1 (%)\n94.21\n91.4694.76Swin-L/4 [26] Swin-L/4 196M IN-22K 91.35\nDeiT-B/16-D [27] DeiT-B/16-D 87M IN-1K 87.29\nKeypoint Estimation\n(COCO-Keypoint)\nRTMPose-L [28] CSPNeXt-L 26M IN-1K\nAP\n75.8\n76.078.5ViTPose-B [29] ViT-B 86M IN-1K 75.8ViTPose-L [29] ViT-L 306M IN-1K 78.3\nViTPose-H [29] ViT-H 631M IN-1K79.1\n*SAGE-B and SAGE-L denote SAGE with ViT-B (86M parameters) and ViT-L (304M parameters), respectively. Both of them use O365 pre-training.\n\u2022SAGE ViT-B vs. Co-DETR: SAGE-B has fewer than\nhalf as many backbone parameters as Co-DETR "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0047"
+        ],
+        "excerpt": "8\nversus 304M for SAGE-L. On ADE20K semantic segmenta-\ntion, SAGE-B achieves 58.7 mIoU, exceeding the 58.0 mIoU\nreported for ViT-Adapter-L + UPerNet, while SAGE-L reaches\n60.3 mIoU compared with 59.9 for UPerNet [22]. The latter\nuses a substantially larger backbone. Across tasks, we use\nexisting or lightweight decoders where possible (Sec. IV-B).\nThese results demonstrate the potential versatility of SAGE\nacross different visual prediction tasks, although differences\nin pre-training data and training configurations limit strict\ncross-paper comparisons. Further details are provided in the\nsupplementary material.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table V",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "baf5bb6efe50462c43a6e23af6ee839a7bb78f10c3b857bd63d0ccccb7d6aa0e",
+            "evidence_id": "Ea7e4dbe9950962fc-B0047",
+            "pages": [
+              8
+            ],
+            "section": "Table V",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 618,
+                "page": 8,
+                "section": "Table V",
+                "section_index": 18,
+                "start": 0,
+                "text": "8\nversus 304M for SAGE-L. On ADE20K semantic segmenta-\ntion, SAGE-B achieves 58.7 mIoU, exceeding the 58.0 mIoU\nreported for ViT-Adapter-L + UPerNet, while SAGE-L reaches\n60.3 mIoU compared with 59.9 for UPerNet [22]. The latter\nuses a substantially larger backbone. Across tasks, we use\nexisting or lightweight decoders where possible (Sec. IV-B).\nThese results demonstrate the potential versatility of SAGE\nacross different visual prediction tasks, although differences\nin pre-training data and training configurations limit strict\ncross-paper comparisons. Further details are provided in the\nsupplementary material."
+              }
+            ],
+            "text": "8\nversus 304M for SAGE-L. On ADE20K semantic segmenta-\ntion, SAGE-B achieves 58.7 mIoU, exceeding the 58.0 mIoU\nreported for ViT-Adapter-L + UPerNet, while SAGE-L reaches\n60.3 mIoU compared with 59.9 for UPerNet [22]. The latter\nuses a substantially larger backbone. Across tasks, we use\nexisting or lightweight decoders where possible (Sec. IV-B).\nThese results demonstrate the potential versatility of SAGE\nacross different visual prediction tasks, although differences\nin pre-training data and training configurations limit strict\ncross-paper comparisons. Further details are provided in the\nsupplementary material."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0060"
+        ],
+        "excerpt": "report parameter counts and pre-training configura-\ntions to provide context, not to imply that all comparisons are\nstrictly controlled. When configuration details are unavailable,\nthey are marked as unspecified rather than inferred.\nVI. COCO OBJECTDETECTION ANDINSTANCE\nSEGMENTATION\nAs shown in Table VI, SAGE-L achieves 62.8 box AP\nand 55.3 mask AP, exceeding the strongest listed baselines\nfor these metrics by 2.1 and 3.2 points, respectively. It also\nachieves 81.3 box AP50 and 79.9 mask AP50, indicating strong\nperformance at an IoU threshold of 0.50.\nA useful comparison is between SAGE-B and RF-DETR-\n2XL. Both are reported with a ViT-B backbone, 86M pa-\nrameters, and O365 pre-training. SAGE-B improves box AP\nfrom 60.1 to 61.1 and box AP 50 from 78.5 to 79.5. This\ncomparison provides evidence of competitiveness at a similar\nbackbone scale. SAGE-L achieves further gains, suggesting\nthat ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d03e1d108b4981360acab6fe952eebb5e2fa3e9a2ff985eabef243a68fc33d9e",
+            "evidence_id": "Ea7e4dbe9950962fc-B0060",
+            "pages": [
+              10
+            ],
+            "section": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1987,
+                "page": 10,
+                "section": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+                "section_index": 24,
+                "start": 1088,
+                "text": "report parameter counts and pre-training configura-\ntions to provide context, not to imply that all comparisons are\nstrictly controlled. When configuration details are unavailable,\nthey are marked as unspecified rather than inferred.\nVI. COCO OBJECTDETECTION ANDINSTANCE\nSEGMENTATION\nAs shown in Table VI, SAGE-L achieves 62.8 box AP\nand 55.3 mask AP, exceeding the strongest listed baselines\nfor these metrics by 2.1 and 3.2 points, respectively. It also\nachieves 81.3 box AP50 and 79.9 mask AP50, indicating strong\nperformance at an IoU threshold of 0.50.\nA useful comparison is between SAGE-B and RF-DETR-\n2XL. Both are reported with a ViT-B backbone, 86M pa-\nrameters, and O365 pre-training. SAGE-B improves box AP\nfrom 60.1 to 61.1 and box AP 50 from 78.5 to 79.5. This\ncomparison provides evidence of competitiveness at a similar\nbackbone scale. SAGE-L achieves further gains, suggesting\nthat "
+              }
+            ],
+            "text": "report parameter counts and pre-training configura-\ntions to provide context, not to imply that all comparisons are\nstrictly controlled. When configuration details are unavailable,\nthey are marked as unspecified rather than inferred.\nVI. COCO OBJECTDETECTION ANDINSTANCE\nSEGMENTATION\nAs shown in Table VI, SAGE-L achieves 62.8 box AP\nand 55.3 mask AP, exceeding the strongest listed baselines\nfor these metrics by 2.1 and 3.2 points, respectively. It also\nachieves 81.3 box AP50 and 79.9 mask AP50, indicating strong\nperformance at an IoU threshold of 0.50.\nA useful comparison is between SAGE-B and RF-DETR-\n2XL. Both are reported with a ViT-B backbone, 86M pa-\nrameters, and O365 pre-training. SAGE-B improves box AP\nfrom 60.1 to 61.1 and box AP 50 from 78.5 to 79.5. This\ncomparison provides evidence of competitiveness at a similar\nbackbone scale. SAGE-L achieves further gains, suggesting\nthat "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0064"
+        ],
+        "excerpt": "to ViT-L\nfurther improves AP 50 by 0.5 points.\nBoth SAGE configurations outperform the listed baselines in\nthis comparison. SAGE-B uses an 86M-parameter backbone,\ncompared with 33M for RiO-DETR-X. However, the methods\ndiffer in backbone size, pre-training data, and task-specific\ncomponents. The comparison therefore supports SAGE's com-\npetitive performance but does not establish a strictly controlled\nparameter-efficiency advantage.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2be7d08f4b2f28f36699b5646d00667277e8ad28a9455b9319db70d0cb610062",
+            "evidence_id": "Ea7e4dbe9950962fc-B0064",
+            "pages": [
+              10
+            ],
+            "section": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 5108,
+                "page": 10,
+                "section": "Detrv2: Improved Baseline With Bag-Of-Freebies For Real-Time Detection",
+                "section_index": 24,
+                "start": 4673,
+                "text": "to ViT-L\nfurther improves AP 50 by 0.5 points.\nBoth SAGE configurations outperform the listed baselines in\nthis comparison. SAGE-B uses an 86M-parameter backbone,\ncompared with 33M for RiO-DETR-X. However, the methods\ndiffer in backbone size, pre-training data, and task-specific\ncomponents. The comparison therefore supports SAGE's com-\npetitive performance but does not establish a strictly controlled\nparameter-efficiency advantage."
+              }
+            ],
+            "text": "to ViT-L\nfurther improves AP 50 by 0.5 points.\nBoth SAGE configurations outperform the listed baselines in\nthis comparison. SAGE-B uses an 86M-parameter backbone,\ncompared with 33M for RiO-DETR-X. However, the methods\ndiffer in backbone size, pre-training data, and task-specific\ncomponents. The comparison therefore supports SAGE's com-\npetitive performance but does not establish a strictly controlled\nparameter-efficiency advantage."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0068"
+        ],
+        "excerpt": "backbone\narchitecture.\nXI. KEYPOINTDETECTION ONCOCO\nAs reported in Table XI, SAGE-L achieves 78.5 AP\non COCO keypoint detection. The strongest listed baseline,\nViTPose-H, achieves 79.1 AP with a 631M-parameter ViT-\nH backbone, whereas SAGE-L uses a 304M-parameter back-\nbone. SAGE-L is therefore competitive with a smaller back-\nbone in this comparison. SAGE-B achieves 76.0 AP, exceeding\nthe 75.8 AP reported for both ViTPose-B and RTMPose with\nCSPNeXt-L.\nThese results indicate that SAGE is competitive at both\nViT-B and ViT-L scales. Both SAGE configurations use O365\nv2 pre-training, whereas the listed baselines differ in pre-\ntraining data and parameter count. The results therefore sup-\nport SAGE's competitiveness and suggest favorable parameter\nefficiency in this comparison: SAGE-L approaches the re-\n12",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11,
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Vii",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "05decf88109d473b6d525e1c59e1284aefb5ab6e9fa3c6c59b713c61c53a3acc",
+            "evidence_id": "Ea7e4dbe9950962fc-B0068",
+            "pages": [
+              11,
+              12
+            ],
+            "section": "Table Vii",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1687,
+                "page": 11,
+                "section": "Table Vii",
+                "section_index": 28,
+                "start": 877,
+                "text": "backbone\narchitecture.\nXI. KEYPOINTDETECTION ONCOCO\nAs reported in Table XI, SAGE-L achieves 78.5 AP\non COCO keypoint detection. The strongest listed baseline,\nViTPose-H, achieves 79.1 AP with a 631M-parameter ViT-\nH backbone, whereas SAGE-L uses a 304M-parameter back-\nbone. SAGE-L is therefore competitive with a smaller back-\nbone in this comparison. SAGE-B achieves 76.0 AP, exceeding\nthe 75.8 AP reported for both ViTPose-B and RTMPose with\nCSPNeXt-L.\nThese results indicate that SAGE is competitive at both\nViT-B and ViT-L scales. Both SAGE configurations use O365\nv2 pre-training, whereas the listed baselines differ in pre-\ntraining data and parameter count. The results therefore sup-\nport SAGE's competitiveness and suggest favorable parameter\nefficiency in this comparison: SAGE-L approaches the re-"
+              },
+              {
+                "end": 2,
+                "page": 12,
+                "section": "Table Vii",
+                "section_index": 29,
+                "start": 0,
+                "text": "12"
+              }
+            ],
+            "text": "backbone\narchitecture.\nXI. KEYPOINTDETECTION ONCOCO\nAs reported in Table XI, SAGE-L achieves 78.5 AP\non COCO keypoint detection. The strongest listed baseline,\nViTPose-H, achieves 79.1 AP with a 631M-parameter ViT-\nH backbone, whereas SAGE-L uses a 304M-parameter back-\nbone. SAGE-L is therefore competitive with a smaller back-\nbone in this comparison. SAGE-B achieves 76.0 AP, exceeding\nthe 75.8 AP reported for both ViTPose-B and RTMPose with\nCSPNeXt-L.\nThese results indicate that SAGE is competitive at both\nViT-B and ViT-L scales. Both SAGE configurations use O365\nv2 pre-training, whereas the listed baselines differ in pre-\ntraining data and parameter count. The results therefore sup-\nport SAGE's competitiveness and suggest favorable parameter\nefficiency in this comparison: SAGE-L approaches the re-\n12"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0070"
+        ],
+        "excerpt": "TABLE IX\nDETAILED COMPARISON ONDIOR-RORIENTED OBJECT DETECTION.\nMethod Backbone Params Pre-training Data AP 50 (%)\nRiO-DETR-X [19] HGNetV2-B5 33M IN-1K 77.43\nRT-DETRv2-OBB-X [23] HGNetV2-B5 33M IN-1K 76.52\nYOLO26x-OBB [24] YOLO26x 56M \u2013 76.48\nOriented R-CNN + RingMoE-KC [32] RingMoE-KC 1000M RingMOSS 76.04\nRT-DETRv2-OBB-L [23] HGNetV2-B4 13.6M IN-1K 75.69\nOriented R-CNN + SkySense V2 [33] MoE 1994M \u2013 75.29\nSAGE (ours) ViT-B 86M O365 78.30\nSAGE (ours) ViT-L 304M O36578.80\nported ViTPose-H result with roughly half as many backbone\nparameters. They do not, however, establish an advantage\nunder strictly matched conditions.\n13",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Table Ix",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7f0fbd8ce6684ac65572462470b8f9307f6ac4e4d00054873b80691ec2f2cc7e",
+            "evidence_id": "Ea7e4dbe9950962fc-B0070",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Table Ix",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 626,
+                "page": 12,
+                "section": "Table Ix",
+                "section_index": 31,
+                "start": 0,
+                "text": "TABLE IX\nDETAILED COMPARISON ONDIOR-RORIENTED OBJECT DETECTION.\nMethod Backbone Params Pre-training Data AP 50 (%)\nRiO-DETR-X [19] HGNetV2-B5 33M IN-1K 77.43\nRT-DETRv2-OBB-X [23] HGNetV2-B5 33M IN-1K 76.52\nYOLO26x-OBB [24] YOLO26x 56M \u2013 76.48\nOriented R-CNN + RingMoE-KC [32] RingMoE-KC 1000M RingMOSS 76.04\nRT-DETRv2-OBB-L [23] HGNetV2-B4 13.6M IN-1K 75.69\nOriented R-CNN + SkySense V2 [33] MoE 1994M \u2013 75.29\nSAGE (ours) ViT-B 86M O365 78.30\nSAGE (ours) ViT-L 304M O36578.80\nported ViTPose-H result with roughly half as many backbone\nparameters. They do not, however, establish an advantage\nunder strictly matched conditions."
+              },
+              {
+                "end": 2,
+                "page": 13,
+                "section": "Table Ix",
+                "section_index": 32,
+                "start": 0,
+                "text": "13"
+              }
+            ],
+            "text": "TABLE IX\nDETAILED COMPARISON ONDIOR-RORIENTED OBJECT DETECTION.\nMethod Backbone Params Pre-training Data AP 50 (%)\nRiO-DETR-X [19] HGNetV2-B5 33M IN-1K 77.43\nRT-DETRv2-OBB-X [23] HGNetV2-B5 33M IN-1K 76.52\nYOLO26x-OBB [24] YOLO26x 56M \u2013 76.48\nOriented R-CNN + RingMoE-KC [32] RingMoE-KC 1000M RingMOSS 76.04\nRT-DETRv2-OBB-L [23] HGNetV2-B4 13.6M IN-1K 75.69\nOriented R-CNN + SkySense V2 [33] MoE 1994M \u2013 75.29\nSAGE (ours) ViT-B 86M O365 78.30\nSAGE (ours) ViT-L 304M O36578.80\nported ViTPose-H result with roughly half as many backbone\nparameters. They do not, however, establish an advantage\nunder strictly matched conditions.\n13"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.36719",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.36719",
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline results are measured with standard ground-truth evaluation protocols on established external benchmarks, independent of the training losses.",
+          "final_evaluation_signal": "Ground-truth benchmark metrics on COCO, ADE20K, DIOR-R, and TinyImageNet.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised training losses including focal loss, Varifocal Loss with IoU soft targets, box/mask losses, and a semantic consistency loss.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0007",
+          "Ea7e4dbe9950962fc-B0008",
+          "Ea7e4dbe9950962fc-B0014",
+          "Ea7e4dbe9950962fc-B0017",
+          "Ea7e4dbe9950962fc-B0018",
+          "Ea7e4dbe9950962fc-B0021",
+          "Ea7e4dbe9950962fc-B0022",
+          "Ea7e4dbe9950962fc-B0028",
+          "Ea7e4dbe9950962fc-B0033",
+          "Ea7e4dbe9950962fc-B0034",
+          "Ea7e4dbe9950962fc-B0037",
+          "Ea7e4dbe9950962fc-B0041",
+          "Ea7e4dbe9950962fc-B0042",
+          "Ea7e4dbe9950962fc-B0047",
+          "Ea7e4dbe9950962fc-B0060",
+          "Ea7e4dbe9950962fc-B0064",
+          "Ea7e4dbe9950962fc-B0068",
+          "Ea7e4dbe9950962fc-B0070"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "fa320ac95d1eac7ae1624e72ca80629859ef1fdc3671d3b8d520223869393fa7"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.36719",
+        "claim_evidence_alignment": "Reported performance metrics (e.g., 62.8 box AP and 55.3 mask AP on COCO val2017) align with the experimental evidence, and the authors explicitly caveat cross-paper comparisons regarding differing pretraining data (Objects365 vs ImageNet) and parameter counts.",
+        "context_id": "a7e4dbe9950962fc2f94702ef2b401254b0a6ea9f08ac427bc1f90e83de3cf41",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation spans six diverse vision tasks across seven established benchmarks (COCO detection, instance segmentation, keypoint detection, ADE20K semantic and instance segmentation, DIOR-R oriented detection, and TinyImageNet classification) with comprehensive ablation studies breaking down individual module contributions and annealing strategies.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance claims are validated using standard ground-truth evaluation protocols on established external benchmarks (COCO, ADE20K, DIOR-R, TinyImageNet).",
+          "final_evaluation_signal": "Standard ground-truth benchmark metrics including COCO AP/mAP, ADE20K mIoU, DIOR-R AP50, and classification Top-1 accuracy.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Standard multi-task supervised training losses including focal loss, Varifocal Loss (IoU soft targets), box L1/GIoU loss, mask loss, and semantic consistency loss.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea7e4dbe9950962fc-B0007",
+          "Ea7e4dbe9950962fc-B0008",
+          "Ea7e4dbe9950962fc-B0014",
+          "Ea7e4dbe9950962fc-B0017",
+          "Ea7e4dbe9950962fc-B0018",
+          "Ea7e4dbe9950962fc-B0021",
+          "Ea7e4dbe9950962fc-B0022",
+          "Ea7e4dbe9950962fc-B0028",
+          "Ea7e4dbe9950962fc-B0033",
+          "Ea7e4dbe9950962fc-B0034",
+          "Ea7e4dbe9950962fc-B0037",
+          "Ea7e4dbe9950962fc-B0041",
+          "Ea7e4dbe9950962fc-B0042",
+          "Ea7e4dbe9950962fc-B0047",
+          "Ea7e4dbe9950962fc-B0060",
+          "Ea7e4dbe9950962fc-B0064",
+          "Ea7e4dbe9950962fc-B0068",
+          "Ea7e4dbe9950962fc-B0070"
+        ],
+        "limitations": "The authors transparently note that baseline models vary in pretraining corpora (O365 vs IN-22K/IN-1K) and detector parameter counts, preventing isolated attribution of all performance margins exclusively to the backbone architecture.",
+        "method_assessment": "The methodology is thoroughly detailed mathematically and architecturally, providing clear formulations for DINO-style saliency computation, residual gating, FiLM modulation, Laplacian filtering, layer aggregation softmax, and the three-stage cosine annealing schedule.",
+        "quality_rationale": "The manuscript presents a scoped architectural and training innovation with precise mathematical descriptions, reproducible implementation details, rigorous ablations, and extensive cross-task empirical validation using objective standard benchmarks.",
+        "scoped_contribution": "The paper introduces SAGE (Saliency-Annealed Gated Encoder), an enhanced ViT-Adapter architecture incorporating class-token saliency gating, register-token FiLM modulation, Laplacian high-frequency enhancement, dynamic multi-layer aggregation, and local crop fusion, combined with a 3-stage annealing schedule and a two-stage focal-to-VFL transition.",
+        "source_content_hash": "fa320ac95d1eac7ae1624e72ca80629859ef1fdc3671d3b8d520223869393fa7"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a scoped architectural and training innovation with precise mathematical descriptions, reproducible implementation details, rigorous ablations, and extensive cross-task empirical validation using objective standard benchmarks.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "fa320ac95d1eac7ae1624e72ca80629859ef1fdc3671d3b8d520223869393fa7",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently note that baseline models vary in pretraining corpora (O365 vs IN-22K/IN-1K) and detector parameter counts, preventing isolated attribution of all performance margins exclusively to the backbone architecture."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -169,7 +1729,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

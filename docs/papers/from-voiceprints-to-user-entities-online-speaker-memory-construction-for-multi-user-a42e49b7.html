@@ -59,16 +59,259 @@
             <p>Personalized spoken agents must identify speakers before accessing user-specific memory, yet memory benchmarks typically assume correctly attributed histories. We argue that voiceprints are observations of identity, not identities themselves, and formulate online speaker-memory construction to maintain persistent us...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers a rigorous, well-motivated, and novel framing of speaker attribution in conversational memory, accompanied by extensive empirical analysis across real longitudinal datasets and realistic conversational stress tests. The experiments are methodologically transparent and properly controlled.</p>
+      <p>The manuscript comprehensively documents limitations, noting that LoCoMo-ID uses synthetic voices rather than spontaneous overlapping multi-party recordings, that condition shifts rely on acoustic simulations, and that the identity-gated access protocol serves as an experimental proxy rather than a production biometric security system.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-29T10:46:36.868050+00:00.</p>
+        <p>Coverage: 83272 of 83272 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Personalized spoken agents must identify
+speakers before accessing user-specific mem-
+ory, yet memory benchmarks typically as-
+sume correctly attributed histories. We ar-
+gue that voiceprints are observations of iden-
+tity, not identities themselves, and formulate
+online speaker-memory construction to main-
+tain persistent user entities as acoustic evi-
+dence evolves. We introduce EvoSpeaker-
+Mem, a training-free layer for causal speaker
+routing, selective acoustic-state updates, and
+identity-partitioned memory writes and re-
+trieval through a replaceable text-memory
+backend. We also construct LoCoMo-ID,
+a spoken-memory benchmark with hidden
+speaker identities, speaker-sensitive queries,
+simulated recording-condition shifts, and four-
+speaker identity-confusion tests. On longitu-
+dinal SMIIP-TV , genuine-probe rejection un-
+der a frozen near-enrollment threshold rises
+from 29.8% to </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A speaker encoder maps the incoming audio to a
+length-normalized embedding et. For center-based
+policies, we score existing entities by cosine simi-
+larity:
+st,k = e⊤t ck∥et∥∥ck∥ .(2)
+The system creates a new entity initialized with
+et if the registry is empty or the highest entity
+score st falls below τmerge; otherwise, it links
+the turn to the highest-scoring entity. We set
+τmerge at the equal-error-rate (EER) operating point
+computed from genuine and impostor speaker-
+verification scores on reference voices, and keep it
+fixed throughout online processing.
+Unrestricted updating can adapt a center to
+changing acoustic evidence, but an incorrect link
+1Interactive demo: https://anonymous-user428.
+github.io/evo-speaker-mem-demo
+2
+Figure 1: Overview of EvoSpeakerMem as a speech support layer for replaceable textual-memory backends.
+Acoustic routing assigns each turn to a persistent user </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>entity before its content is written to memory.
+can also make subsequent errors self-reinforcing.
+We therefore separateassignmentfromcenter up-
+date. After a turn is linked, the center changes only
+if st ≥τ update, where τupdate &gt; τmerge imposes a
+stricter requirement for modifying persistent acous-
+tic state. An accepted update uses
+ck ← nkck +e tnk + 1 .(3)
+The count nk increases on every acceptedLINK,
+including those that leave the center unchanged.
+Thus a turn can contribute textual facts without
+necessarily changing the acoustic representation
+used for future matching.
+We compare FIXED, which retains the first em-
+bedding; UPDATE, which updates on everyLINK;
+and GATEDUPDATE, which applies the stricter up-
+date condition. A multi-exemplar alternative stores
+accepted embeddings in Ek and scores an entity by
+the mean of its topmin(m,|E k|) cosine similarities,
+for a fixed neighborhood </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Construction
+Figure 1 illustrates the speech-to-memory pipeline.
+For each spoken turn, an audio LLM (Xu et al.,
+2025b) generates a transcript, while a speaker-
+embedding model extracts acoustic identity evi-
+dence. The router (Section 2.2) assigns the turn to
+an existing local entity or creates a new one. The
+transcript, assigned entity identifier, and timestamp
+are then passed to a replaceable text-memory back-
+end (Fang et al., 2026), which extracts and indexes
+atomic facts within the corresponding user&#x27;s mem-
+ory partition. Each entity thus maintains acoustic
+state and user-attributed textual memory, while tran-
+script semantics do not influence acoustic routing
+or center updates.
+At query time, read-only voice matching against
+the registry identifies the relevant entity and re-
+stricts retrieval to its memory partition; unmatched
+requests receive no personal memory. The same </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1.883 1.583
+ECAPA + diarization
+FB3 ↑76.96 77.06 77.06 77.09
+FNUR↓0.08 0.07 0.07 0.07
+Clusters/Gold 1.150 1.117 1.117 1.117
+Condition-
+shifted
+ECAPA-only
+FB3 ↑74.18 93.54 92.73 96.62
+FNUR↓2.00 0.90 0.94 0.55
+Clusters/Gold 6.833 3.600 3.733 2.567
+ECAPA + diarization
+FB3 ↑81.05 81.23 81.20 81.04
+FNUR↓0.15 0.10 0.10 0.09
+Clusters/Gold 1.317 1.167 1.167 1.150
+Table 1: Online speaker-memory construction results on LoCoMo-ID clean speech and recording-shifted condition.
+Acoustic evidence distinguishes ECAPA-only routing from routing augmented with session-level diarization. We
+report partition quality ( FB3) and fragmentation-related indicators (FNUR and Clusters/Gold). All rates are
+percentages except Clusters/Gold.
+ECAPA-based cross-session association. We in-
+clude diarization as an alternative speaker-linking
+approach that groups turns by speaker within each
+session. However, diarization </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate online speaker-memory construction
+using a causal first-seen binding protocol. When a
+local entity is first created, it is bound to the gold
+speaker of that turn only for post-hoc scoring. The
+6https://anonymous.4open.science/r/
+EvoSpeakerMem-4AF1
+binding is immutable and never affects routing, up-
+dating, or memory construction; a later assignment
+is correct only when it matches this binding. This
+avoids future-aware cluster matching, which could
+relabel entities after observing the full sequence
+and hide online routing errors.
+Each turn is categorized into one of five mutually
+exclusive routing outcomes: new-speaker creation,
+new-speaker linking, known-speaker creation, cor-
+rect known-speaker linking, and wrong-target link-
+ing. These outcomes capture two complementary
+failure modes of online entity maintenance: frag-
+mentation, where a known speaker is assigned to
+a new </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>D.1.
+Condition ECAPA policy C/W/D QA QA|Correct
+Clean Fixed 4084/0/29 71.41 71.91
+Update 3993/115/5 73.43 75.63
+Gated update 4110/0/375.2775.33
+KNN 3993/116/4 73.6475.86
+Condition-shifted Fixed 4079/1/33 60.15 60.65
+Update 3993/115/5 70.24 72.35
+Gated update 4109/0/4 71.77 71.84
+KNN 3993/116/472.40 74.58
+Table 4: Top-1 private-access results on 4,113 speaker-
+sensitive query audios under clean and shifted condition.
+C/W/D denotes correct, wrong, and denied authoriza-
+tions; QA requires correct authorization and a judge-
+correct answer (%). KNN denotes All-exemplar KNN.</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>user, anddeniedwhen no entity
+reaches the threshold. Let C, W , and D be the
+mutually exclusive counts of these outcomes and
+Nq =C+W+D.
+Let Aq ∈ {correct,wrong,denied}denote the
+authorization outcome for query q, and let Jq ∈
+{0,1} denote the binary LoCoMo judgment of an-
+swer correctness. To couple access correctness
+with answer utility, we define end-to-end identity-
+gated QA as
+QA = 1Nq
+NqX
+q=1
+1[Aq = correct]Jq.(4)
+Denials, wrong authorizations, and incorrect or
+unparseable answers therefore receive zero credit.
+We additionally report
+QA|Correct = 1C
+NqX
+q=1
+1[Aq = correct]Jq,(5)
+7
+Acoustic evidence / policy Online IDF B3 C / W / D Targeted QA(n= 19) Full QA(n= 1,371)
+ECAPA / Fixed98.8496.54 1342 / 18 / 1178.9567.83
+ECAPA / Update 93.35 95.45 1335 / 32 / 478.9572.06
+ECAPA / Gated update 96.2597.771368 / 0 / 378.95 73.60
+ECAPA / All-exemplar KNN 94.85 97.20 1335 / 33 / </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>378.9571.99
+Parakeet+ECAPA / Fixed 74.03 72.86 1335 / 32 / 4 68.42 71.48
+Parakeet+ECAPA / Update 71.96 72.57 1333 / 32 / 6 73.68 72.28
+Parakeet+ECAPA / Gated update 73.87 73.10 1334 / 32 / 5 68.42 72.21
+Parakeet+ECAPA / All-exemplar KNN 71.93 72.60 1335 / 32 / 4 73.68 72.36
+Table 5: Four-speaker interleaved stress test: ten clean collections, 11,764 history turns, and 40 gold speakers.
+Online ID excludes missing predictions. C/W/D counts correct/wrong/denied authorizations on 1,371 queries. Both
+QA columns require correct authorization and a judge-correct answer; targeted QA uses 19 gated items among 20
+diagnostics. Rates are percentages. This differs from the standard 4,113-query condition.
+which isolates memory retrieval and answer gener-
+ation among correctly authorized queries.
+Table 4 reports identity-gated QA for ECAPA-
+only routing, with corresponding diarization-
+augmented </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our evaluation has several limitations. LoCoMo-
+ID uses synthetic voices; shifted-condition sim-
+ulates session-dependent rooms, microphones,
+device chains, and noise rather than naturally
+recorded, overlapping multi-user conversations.
+The standard clean and shifted-condition collec-
+tions each contain two participants. Our four-
+speaker stress test interleaves two synthetic, fact-
+conflicting stories at session boundaries, preserving
+within-story chronology; it does not represent nat-
+urally recorded, overlapping four-party dialogue.
+Its full-query evaluation covers only the ten clean
+collections. The two-to-four-speaker SMIIP-TV
+streams evaluate entity maintenance over repeated
+recordings rather than dialogue-memory QA. The
+Parakeet comparison combines session-local di-
+arization with the same ECAPA cross-session reg-
+istry, not an independently evaluated published sys-
+tem. We vary </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>within-encoder changes
+in below-threshold genuine rate are the relevant
+cross-encoder diagnostics.
+Table 7 and Figures 2–3 compare the matched-
+set verification results. ReDimNet2-B6 consis-
+tently improves absolute verification separability.
+For example, its EER is 3.34% at 0–1 days and
+6.35% at 365–450 days, compared with 9.71% and
+14.09% for ECAPA on the same utterance set. Nev-
+ertheless, ReDimNet2-B6&#x27;s below-threshold gen-
+uine rate increases from 5.19% to 12.96% over the
+same interval. Thus, stronger acoustic representa-
+tions reduce the severity of longitudinal mismatch
+but do not make a single enrollment embedding a
+time-invariant entity key.</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Matched-set fixed-template verification at representative enrollment–probe gaps. EER and Below-τ are
+percentages. The comparison uses the 205,765 text-independent utterances successfully processed by both encoders,
+with identical enrollment utterances, genuine probes, impostor trials, and time buckets. Each encoder uses its own
+threshold frozen after near-enrollment calibration at target FAR=2% (τECAPA = 0.4752; τReDimNet2 = 0.6131), so
+threshold values are not compared directly. ReDimNet2-B6 lowers absolute error, but both encoders exhibit higher
+EER and a larger below-threshold genuine rate at longer gaps.
+0-1 1-3 3-7 7-14 14-30 30-60 60-100
+Enrollment-to-probe gap (days)
+3
+4
+5
+6
+7
+8
+9
+10
+11Pooled EER (%)
+Within-release short-term drift: verification separability
+0-1 1-3 3-7 7-14 14-30 30-60 60-100
+Enrollment-to-probe gap (days)
+5
+10
+15
+20
+25
+30
+35
+40FNUR at encoder-specific frozen </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>authorization and a judge-correct answer; targeted raw judge (20) requires only a judge-correct
+answer and includes the non-gated item. C/W/D are full-set authorization counts. QA |Correct conditions full strict
+QA on C. All rates are percentages; KNN denotes All-exemplar KNN.
+τupdate Entities Online (%) B 3 F1 (%) Query assigned / 5958 W / 4113 QA (%)
+0.50 106 97.23 98.41 5953 115 73.33
+0.54 110 98.65 99.11 5954 32 74.81
+0.58 113 99.64 99.54 5955 0 75.27
+0.62 114 99.64 99.54 5955 0 75.27
+0.66 114 99.64 99.55 5955 0 75.47
+0.70 118 99.61 99.45 5955 0 75.44
+Table 15: Clean ECAPA gated-update sweep, fixed merge threshold 0.489. Routing/cluster scores and query
+assigned are from the upstream replay; W and QA are from the separate complete downstream threshold-sweep
+runs, not the default-run main table.
+Condition ECAPA policy&lt;1s: correct /n1–&lt;2s: correct /n≥2s: correct /n
+Clean Gated update </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +350,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +366,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-27</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-28 10:18:03</li><li>Last seen by Paper Scout: 2026-10-28 10:18:29</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-27</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-28 10:18:03</li><li>Last seen by Paper Scout: 2026-10-29 10:42:50</li></ul>
             <ul><li>arXiv: 2610.36713</li><li>arXiv IDs: 2610.36713</li></ul>
           </section>
           <section class="detail-panel">

@@ -33,7 +33,7 @@
   "last_seen_date": "2026-08-02",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-26 13:04:09",
   "notified_date": "2026-06-26",
@@ -44,7 +44,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-26 13:01:31",
-    "generated_at": "2026-10-28 10:23:29",
+    "generated_at": "2026-10-29 10:47:34",
     "last_seen_at": "2026-08-02 07:52:26",
     "metadata_sources": [
       "openalex",
@@ -114,36 +114,2666 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-29T10:45:33.197070+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a scoped conceptual framing ('context collapse'), provides an explicit and reproducible architecture, and validates claims through extensive multi-model benchmarking, retrieval-level diagnostics, context-shuffle counterfactuals, and ablation experiments.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 138162,
+      "assessment_input_sha256": "6240b6118dff9fd82f55eaf852926059fdd56dc8e2211c88e7afe4535741abf9",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7165816678",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 135413,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 132637,
+      "evidence_block_count": 185,
+      "evidence_context_characters": 157630,
+      "evidence_context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+      "evidence_context_sha256": "b2d857efebf1f40580780f085cdec2c3d2fce9ca8cca41d2ea9de188c215c966",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 135483,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "extracted_pages": 36,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "895e408a6a0e6124515c8dc07321d147d3f3515bd3aadb76a1975b719627a147",
+        "source_url": "https://arxiv.org/pdf/2606.22844",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 135413,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Ramem: Contextual Reinstatement For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 238,
+          "supplied_characters": 238
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1637,
+          "supplied_characters": 1637
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1503,
+          "supplied_characters": 1503
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3687,
+          "supplied_characters": 3687
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 803,
+          "supplied_characters": 803
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 1390,
+          "supplied_characters": 1390
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 268,
+          "supplied_characters": 268
+        },
+        {
+          "heading": "Episodic Memory Anchoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1678,
+          "supplied_characters": 1678
+        },
+        {
+          "heading": "Episodic Memory Anchoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 601,
+          "supplied_characters": 601
+        },
+        {
+          "heading": "Recall Condition Induction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1698,
+          "supplied_characters": 1698
+        },
+        {
+          "heading": "Validity-Aware Memory Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 292,
+          "supplied_characters": 292
+        },
+        {
+          "heading": "Validity-Aware Memory Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 3150,
+          "supplied_characters": 3150
+        },
+        {
+          "heading": "Context-Preserved Evidence Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1066,
+          "supplied_characters": 1066
+        },
+        {
+          "heading": "Context-Preserved Evidence Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 206,
+          "supplied_characters": 206
+        },
+        {
+          "heading": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 3620,
+          "supplied_characters": 3620
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 465,
+          "supplied_characters": 465
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 701,
+          "supplied_characters": 701
+        },
+        {
+          "heading": "Main Results On Long-Term Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 1623,
+          "supplied_characters": 1623
+        },
+        {
+          "heading": "Evidence Retrieval Diagnostics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1273,
+          "supplied_characters": 1273
+        },
+        {
+          "heading": "Context Collapse Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 900,
+          "supplied_characters": 900
+        },
+        {
+          "heading": "Context Collapse Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1855,
+          "supplied_characters": 1855
+        },
+        {
+          "heading": "Context Shuffle Test",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1341,
+          "supplied_characters": 1341
+        },
+        {
+          "heading": "Context Shuffle Test",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 815,
+          "supplied_characters": 815
+        },
+        {
+          "heading": "Hyper-Parameter Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 1152,
+          "supplied_characters": 1152
+        },
+        {
+          "heading": "Component Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1063,
+          "supplied_characters": 1063
+        },
+        {
+          "heading": "Efficiency Analysis & Qualitative Case Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 530,
+          "supplied_characters": 530
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 26,
+          "source_characters": 634,
+          "supplied_characters": 634
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 2075,
+          "supplied_characters": 2075
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 3574,
+          "supplied_characters": 3574
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 3761,
+          "supplied_characters": 3761
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 3690,
+          "supplied_characters": 3690
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 3811,
+          "supplied_characters": 3811
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 3792,
+          "supplied_characters": 3792
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 363,
+          "supplied_characters": 363
+        },
+        {
+          "heading": "Appendix: Limitations And Broader Impact",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 32,
+          "supplied_characters": 32
+        },
+        {
+          "heading": "Appendix: Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 1172,
+          "supplied_characters": 1172
+        },
+        {
+          "heading": "Appendix: Broader Impact",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 759,
+          "supplied_characters": 759
+        },
+        {
+          "heading": "Appendix: B Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 14,
+          "supplied_characters": 14
+        },
+        {
+          "heading": "Appendix: Llm Agents And Long-Term Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 1611,
+          "supplied_characters": 1611
+        },
+        {
+          "heading": "Appendix: Llm Agents And Long-Term Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 2877,
+          "supplied_characters": 2877
+        },
+        {
+          "heading": "Appendix: Context Management And Agentic Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 2227,
+          "supplied_characters": 2227
+        },
+        {
+          "heading": "Appendix: Context Management And Agentic Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 1528,
+          "supplied_characters": 1528
+        },
+        {
+          "heading": "Appendix: End-To-End Pipeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 1819,
+          "supplied_characters": 1819
+        },
+        {
+          "heading": "Appendix: Dialogue Normalization And Episodic Memory Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 776,
+          "supplied_characters": 776
+        },
+        {
+          "heading": "Appendix: Dialogue Normalization And Episodic Memory Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 2618,
+          "supplied_characters": 2618
+        },
+        {
+          "heading": "Appendix: Multi-View Indexing And Frozen Memory Stores",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 1395,
+          "supplied_characters": 1395
+        },
+        {
+          "heading": "Appendix: Multi-View Indexing And Frozen Memory Stores",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 402,
+          "supplied_characters": 402
+        },
+        {
+          "heading": "Appendix: Contextual Recall And Selective Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 3597,
+          "supplied_characters": 3597
+        },
+        {
+          "heading": "Appendix: Contextual Recall And Selective Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 1034,
+          "supplied_characters": 1034
+        },
+        {
+          "heading": "Appendix: Context-Preserved Answer Generation And Diagnostics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 3311,
+          "supplied_characters": 3311
+        },
+        {
+          "heading": "Appendix: Local Model Serving And Experimental Reproducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 1926,
+          "supplied_characters": 1926
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 2632,
+          "supplied_characters": 2632
+        },
+        {
+          "heading": "Appendix: Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 3052,
+          "supplied_characters": 3052
+        },
+        {
+          "heading": "Create Separate Entries For Separate Facts, Preferences, Plans, Events, Locations, Relationships, Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 372,
+          "supplied_characters": 372
+        },
+        {
+          "heading": "Create Separate Entries For Separate Facts, Preferences, Plans, Events, Locations, Relationships, Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 1486,
+          "supplied_characters": 1486
+        },
+        {
+          "heading": "What Minimal Information Would Be Sufficient To Answer The Question?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 236,
+          "supplied_characters": 236
+        },
+        {
+          "heading": "What Minimal Information Would Be Sufficient To Answer The Question?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 1074,
+          "supplied_characters": 1074
+        },
+        {
+          "heading": "Appendix: Analysis Of Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 1413,
+          "supplied_characters": 1413
+        },
+        {
+          "heading": "Appendix: Analysis Of Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 3757,
+          "supplied_characters": 3757
+        },
+        {
+          "heading": "Appendix: Context Collapse Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 612,
+          "supplied_characters": 612
+        },
+        {
+          "heading": "Appendix: Context Collapse Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 4192,
+          "supplied_characters": 4192
+        },
+        {
+          "heading": "Appendix: Context Shuffle Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 384,
+          "supplied_characters": 384
+        },
+        {
+          "heading": "Appendix: Context Shuffle Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 4288,
+          "supplied_characters": 4288
+        },
+        {
+          "heading": "Appendix: Temporal Buffer Sensitivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 899,
+          "supplied_characters": 899
+        },
+        {
+          "heading": "Appendix: Temporal Buffer Sensitivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 3834,
+          "supplied_characters": 3834
+        },
+        {
+          "heading": "Appendix: Temporal Buffer Sensitivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 1447,
+          "supplied_characters": 1447
+        },
+        {
+          "heading": "Appendix: Retrieval Budget Sensitivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 2419,
+          "supplied_characters": 2419
+        },
+        {
+          "heading": "Appendix: Retrieval Budget Sensitivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 4044,
+          "supplied_characters": 4044
+        },
+        {
+          "heading": "Appendix: Efficiency And Cost Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 193,
+          "supplied_characters": 193
+        },
+        {
+          "heading": "Appendix: Efficiency And Cost Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 32,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 3247,
+          "supplied_characters": 3247
+        },
+        {
+          "heading": "Appendix: Full Component Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 32,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 887,
+          "supplied_characters": 887
+        },
+        {
+          "heading": "Appendix: Full Component Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 33,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 2402,
+          "supplied_characters": 2402
+        },
+        {
+          "heading": "Appendix: Efficiency And Cost Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 33,
+          "role": "appendix",
+          "section_index": 72,
+          "source_characters": 1935,
+          "supplied_characters": 1935
+        },
+        {
+          "heading": "Appendix: Efficiency And Cost Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "appendix",
+          "section_index": 73,
+          "source_characters": 2028,
+          "supplied_characters": 2028
+        },
+        {
+          "heading": "Appendix: Qualitative Case Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "appendix",
+          "section_index": 74,
+          "source_characters": 574,
+          "supplied_characters": 574
+        },
+        {
+          "heading": "Invalid: 2022-03-20\u20132022-03-27, Gaming Platform Participation. James Created A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "body",
+          "section_index": 75,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "Invalid:2022-09-20\u20132022-10-03, Game Streaming Feedback. James Streamed A Game",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "body",
+          "section_index": 76,
+          "source_characters": 34,
+          "supplied_characters": 34
+        },
+        {
+          "heading": "Invalid: 2022-09-18\u20132022-09-20, Game Streaming Plans. James Started Streaming",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "body",
+          "section_index": 77,
+          "source_characters": 31,
+          "supplied_characters": 31
+        },
+        {
+          "heading": "Gt / Valid: 2022-07-09\u20132022-07-22, Extreme Sports Interest. James Became Interested",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "body",
+          "section_index": 78,
+          "source_characters": 429,
+          "supplied_characters": 429
+        },
+        {
+          "heading": "Gt / Valid: 2022-07-09\u20132022-07-22, Extreme Sports Interest. James Became Interested",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 79,
+          "source_characters": 1020,
+          "supplied_characters": 1020
+        },
+        {
+          "heading": "Invalid:2023-12-31\u20132024-01-06, Accident And Marriage News. Evan Confirmed That",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 80,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Invalid:2024-01-06\u20132024-01-10, Family And Partner Support. Sam Discussed Evan'S",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 81,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Invalid:2024-01-06\u20132024-01-10, Family Support After Marriage Announcement. Evan",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 82,
+          "source_characters": 64,
+          "supplied_characters": 64
+        },
+        {
+          "heading": "Gt / Valid: 2023-08-13\u20132023-08-15, Vacation Details. Evan Shared Details About A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 83,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Invalid:2023-12-31\u20132024-01-06, Accident And Marriage News. Evan Confirmed That",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 84,
+          "source_characters": 596,
+          "supplied_characters": 596
+        },
+        {
+          "heading": "Invalid: 2022-06-03\u20132022-06-05, Regional Video Game Tournament. Nate Shared A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 85,
+          "source_characters": 51,
+          "supplied_characters": 51
+        },
+        {
+          "heading": "Invalid:2022-08-22\u20132022-09-05, Gaming Tournament And Career. Nate Won An Inter-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 86,
+          "source_characters": 53,
+          "supplied_characters": 53
+        },
+        {
+          "heading": "Invalid: 2022-04-21\u20132022-05-02, Gaming Tournament Mention. Nate Mentioned An",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 87,
+          "source_characters": 30,
+          "supplied_characters": 30
+        },
+        {
+          "heading": "Invalid: 2022-04-21\u20132022-05-02, Gaming Tournament Mention. Nate Mentioned An",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 88,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Same Session / Related: 2022-10-09\u20132022-10-21, Board Game Meeting. Nate Met",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 89,
+          "source_characters": 35,
+          "supplied_characters": 35
+        },
+        {
+          "heading": "Same Session / Related: 2022-10-09\u20132022-10-21, Game Convention Attendance. Nate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 90,
+          "source_characters": 46,
+          "supplied_characters": 46
+        },
+        {
+          "heading": "Gt / Valid: 2022-10-09\u20132022-10-21, Recent Movie And Game Preferences. Nate Men-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 91,
+          "source_characters": 298,
+          "supplied_characters": 298
+        }
+      ],
+      "selected_characters": 132637,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "selected_sections": [
+        {
+          "characters": 238,
+          "heading": "Ramem: Contextual Reinstatement For",
+          "page": 1
+        },
+        {
+          "characters": 1637,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1503,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3687,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 803,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1390,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 268,
+          "heading": "Method",
+          "page": 3
+        },
+        {
+          "characters": 1678,
+          "heading": "Episodic Memory Anchoring",
+          "page": 3
+        },
+        {
+          "characters": 601,
+          "heading": "Episodic Memory Anchoring",
+          "page": 4
+        },
+        {
+          "characters": 1698,
+          "heading": "Recall Condition Induction",
+          "page": 4
+        },
+        {
+          "characters": 292,
+          "heading": "Validity-Aware Memory Retrieval",
+          "page": 4
+        },
+        {
+          "characters": 3150,
+          "heading": "Validity-Aware Memory Retrieval",
+          "page": 5
+        },
+        {
+          "characters": 1066,
+          "heading": "Context-Preserved Evidence Synthesis",
+          "page": 5
+        },
+        {
+          "characters": 206,
+          "heading": "Context-Preserved Evidence Synthesis",
+          "page": 6
+        },
+        {
+          "characters": 3620,
+          "heading": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+          "page": 6
+        },
+        {
+          "characters": 465,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 701,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 1623,
+          "heading": "Main Results On Long-Term Memory",
+          "page": 7
+        },
+        {
+          "characters": 1273,
+          "heading": "Evidence Retrieval Diagnostics",
+          "page": 7
+        },
+        {
+          "characters": 900,
+          "heading": "Context Collapse Analysis",
+          "page": 7
+        },
+        {
+          "characters": 1855,
+          "heading": "Context Collapse Analysis",
+          "page": 8
+        },
+        {
+          "characters": 1341,
+          "heading": "Context Shuffle Test",
+          "page": 8
+        },
+        {
+          "characters": 815,
+          "heading": "Context Shuffle Test",
+          "page": 9
+        },
+        {
+          "characters": 1152,
+          "heading": "Hyper-Parameter Analysis",
+          "page": 9
+        },
+        {
+          "characters": 1063,
+          "heading": "Component Analysis",
+          "page": 9
+        },
+        {
+          "characters": 530,
+          "heading": "Efficiency Analysis & Qualitative Case Studies",
+          "page": 10
+        },
+        {
+          "characters": 634,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 2075,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 3574,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3761,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 3690,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 3811,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 3792,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 363,
+          "heading": "Unclassified body after references",
+          "page": 16
+        },
+        {
+          "characters": 32,
+          "heading": "Appendix: Limitations And Broader Impact",
+          "page": 16
+        },
+        {
+          "characters": 1172,
+          "heading": "Appendix: Limitations",
+          "page": 16
+        },
+        {
+          "characters": 759,
+          "heading": "Appendix: Broader Impact",
+          "page": 16
+        },
+        {
+          "characters": 14,
+          "heading": "Appendix: B Related Work",
+          "page": 16
+        },
+        {
+          "characters": 1611,
+          "heading": "Appendix: Llm Agents And Long-Term Memory",
+          "page": 16
+        },
+        {
+          "characters": 2877,
+          "heading": "Appendix: Llm Agents And Long-Term Memory",
+          "page": 17
+        },
+        {
+          "characters": 2227,
+          "heading": "Appendix: Context Management And Agentic Retrieval",
+          "page": 17
+        },
+        {
+          "characters": 1528,
+          "heading": "Appendix: Context Management And Agentic Retrieval",
+          "page": 18
+        },
+        {
+          "characters": 1819,
+          "heading": "Appendix: End-To-End Pipeline",
+          "page": 18
+        },
+        {
+          "characters": 776,
+          "heading": "Appendix: Dialogue Normalization And Episodic Memory Construction",
+          "page": 18
+        },
+        {
+          "characters": 2618,
+          "heading": "Appendix: Dialogue Normalization And Episodic Memory Construction",
+          "page": 19
+        },
+        {
+          "characters": 1395,
+          "heading": "Appendix: Multi-View Indexing And Frozen Memory Stores",
+          "page": 19
+        },
+        {
+          "characters": 402,
+          "heading": "Appendix: Multi-View Indexing And Frozen Memory Stores",
+          "page": 20
+        },
+        {
+          "characters": 3597,
+          "heading": "Appendix: Contextual Recall And Selective Retrieval",
+          "page": 20
+        },
+        {
+          "characters": 1034,
+          "heading": "Appendix: Contextual Recall And Selective Retrieval",
+          "page": 21
+        },
+        {
+          "characters": 3311,
+          "heading": "Appendix: Context-Preserved Answer Generation And Diagnostics",
+          "page": 21
+        },
+        {
+          "characters": 1926,
+          "heading": "Appendix: Local Model Serving And Experimental Reproducibility",
+          "page": 22
+        },
+        {
+          "characters": 2632,
+          "heading": "Appendix: Experimental Setup",
+          "page": 22
+        },
+        {
+          "characters": 3052,
+          "heading": "Appendix: Experimental Setup",
+          "page": 23
+        },
+        {
+          "characters": 372,
+          "heading": "Create Separate Entries For Separate Facts, Preferences, Plans, Events, Locations, Relationships, Work",
+          "page": 23
+        },
+        {
+          "characters": 1486,
+          "heading": "Create Separate Entries For Separate Facts, Preferences, Plans, Events, Locations, Relationships, Work",
+          "page": 24
+        },
+        {
+          "characters": 236,
+          "heading": "What Minimal Information Would Be Sufficient To Answer The Question?",
+          "page": 24
+        },
+        {
+          "characters": 1074,
+          "heading": "What Minimal Information Would Be Sufficient To Answer The Question?",
+          "page": 25
+        },
+        {
+          "characters": 1413,
+          "heading": "Appendix: Analysis Of Main Results",
+          "page": 25
+        },
+        {
+          "characters": 3757,
+          "heading": "Appendix: Analysis Of Main Results",
+          "page": 26
+        },
+        {
+          "characters": 612,
+          "heading": "Appendix: Context Collapse Analysis",
+          "page": 26
+        },
+        {
+          "characters": 4192,
+          "heading": "Appendix: Context Collapse Analysis",
+          "page": 27
+        },
+        {
+          "characters": 384,
+          "heading": "Appendix: Context Shuffle Results",
+          "page": 27
+        },
+        {
+          "characters": 4288,
+          "heading": "Appendix: Context Shuffle Results",
+          "page": 28
+        },
+        {
+          "characters": 899,
+          "heading": "Appendix: Temporal Buffer Sensitivity",
+          "page": 28
+        },
+        {
+          "characters": 3834,
+          "heading": "Appendix: Temporal Buffer Sensitivity",
+          "page": 29
+        },
+        {
+          "characters": 1447,
+          "heading": "Appendix: Temporal Buffer Sensitivity",
+          "page": 30
+        },
+        {
+          "characters": 2419,
+          "heading": "Appendix: Retrieval Budget Sensitivity",
+          "page": 30
+        },
+        {
+          "characters": 4044,
+          "heading": "Appendix: Retrieval Budget Sensitivity",
+          "page": 31
+        },
+        {
+          "characters": 193,
+          "heading": "Appendix: Efficiency And Cost Results",
+          "page": 31
+        },
+        {
+          "characters": 3247,
+          "heading": "Appendix: Efficiency And Cost Results",
+          "page": 32
+        },
+        {
+          "characters": 887,
+          "heading": "Appendix: Full Component Analysis",
+          "page": 32
+        },
+        {
+          "characters": 2402,
+          "heading": "Appendix: Full Component Analysis",
+          "page": 33
+        },
+        {
+          "characters": 1935,
+          "heading": "Appendix: Efficiency And Cost Analysis",
+          "page": 33
+        },
+        {
+          "characters": 2028,
+          "heading": "Appendix: Efficiency And Cost Analysis",
+          "page": 34
+        },
+        {
+          "characters": 574,
+          "heading": "Appendix: Qualitative Case Studies",
+          "page": 34
+        },
+        {
+          "characters": 45,
+          "heading": "Invalid: 2022-03-20\u20132022-03-27, Gaming Platform Participation. James Created A",
+          "page": 34
+        },
+        {
+          "characters": 34,
+          "heading": "Invalid:2022-09-20\u20132022-10-03, Game Streaming Feedback. James Streamed A Game",
+          "page": 34
+        },
+        {
+          "characters": 31,
+          "heading": "Invalid: 2022-09-18\u20132022-09-20, Game Streaming Plans. James Started Streaming",
+          "page": 34
+        },
+        {
+          "characters": 429,
+          "heading": "Gt / Valid: 2022-07-09\u20132022-07-22, Extreme Sports Interest. James Became Interested",
+          "page": 34
+        },
+        {
+          "characters": 1020,
+          "heading": "Gt / Valid: 2022-07-09\u20132022-07-22, Extreme Sports Interest. James Became Interested",
+          "page": 35
+        },
+        {
+          "characters": 47,
+          "heading": "Invalid:2023-12-31\u20132024-01-06, Accident And Marriage News. Evan Confirmed That",
+          "page": 35
+        },
+        {
+          "characters": 27,
+          "heading": "Invalid:2024-01-06\u20132024-01-10, Family And Partner Support. Sam Discussed Evan'S",
+          "page": 35
+        },
+        {
+          "characters": 64,
+          "heading": "Invalid:2024-01-06\u20132024-01-10, Family Support After Marriage Announcement. Evan",
+          "page": 35
+        },
+        {
+          "characters": 47,
+          "heading": "Gt / Valid: 2023-08-13\u20132023-08-15, Vacation Details. Evan Shared Details About A",
+          "page": 35
+        },
+        {
+          "characters": 596,
+          "heading": "Invalid:2023-12-31\u20132024-01-06, Accident And Marriage News. Evan Confirmed That",
+          "page": 35
+        },
+        {
+          "characters": 51,
+          "heading": "Invalid: 2022-06-03\u20132022-06-05, Regional Video Game Tournament. Nate Shared A",
+          "page": 35
+        },
+        {
+          "characters": 53,
+          "heading": "Invalid:2022-08-22\u20132022-09-05, Gaming Tournament And Career. Nate Won An Inter-",
+          "page": 35
+        },
+        {
+          "characters": 30,
+          "heading": "Invalid: 2022-04-21\u20132022-05-02, Gaming Tournament Mention. Nate Mentioned An",
+          "page": 35
+        },
+        {
+          "characters": 24,
+          "heading": "Invalid: 2022-04-21\u20132022-05-02, Gaming Tournament Mention. Nate Mentioned An",
+          "page": 36
+        },
+        {
+          "characters": 35,
+          "heading": "Same Session / Related: 2022-10-09\u20132022-10-21, Board Game Meeting. Nate Met",
+          "page": 36
+        },
+        {
+          "characters": 46,
+          "heading": "Same Session / Related: 2022-10-09\u20132022-10-21, Game Convention Attendance. Nate",
+          "page": 36
+        },
+        {
+          "characters": 298,
+          "heading": "Gt / Valid: 2022-10-09\u20132022-10-21, Recent Movie And Game Preferences. Nate Men-",
+          "page": 36
+        }
+      ],
+      "selected_text_sha256": "6240b6118dff9fd82f55eaf852926059fdd56dc8e2211c88e7afe4535741abf9",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "895e408a6a0e6124515c8dc07321d147d3f3515bd3aadb76a1975b719627a147",
+      "source_pages": 36,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0002"
+        ],
+        "excerpt": "Long-term memory has become increasingly important for LLM agents that operate\nacross extended interactions and evolving task contexts. Recent memory systems\nhave made past experiences more persistent, compact, and retrievable, but retrieval\nalone does not ensure that a memory provides valid evidence for the current\nquery. When experiences are compressed into reusable fragments, memories from\ndifferent situations may appear equally relevant if they involve recurring entities\nor user states. We refer to this failure ascontext collapse: memories lose the\nsurrounding context needed to judge whether they provide valid evidence for the\ncurrent query. To address this problem, we proposeContextual Reinstatement for\nAgentic Memory (RaMem), a framework that turns retrieved memory fragments\ninto contextually verifiable evidence. RaMem operates through four coordinated\nstages: (i)evidence ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "75d93623bc540531a213b0fe5a7951215f120bfc7621b40df35842a2d0713923",
+            "evidence_id": "E73967383527d2121-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Long-term memory has become increasingly important for LLM agents that operate\nacross extended interactions and evolving task contexts. Recent memory systems\nhave made past experiences more persistent, compact, and retrievable, but retrieval\nalone does not ensure that a memory provides valid evidence for the current\nquery. When experiences are compressed into reusable fragments, memories from\ndifferent situations may appear equally relevant if they involve recurring entities\nor user states. We refer to this failure ascontext collapse: memories lose the\nsurrounding context needed to judge whether they provide valid evidence for the\ncurrent query. To address this problem, we proposeContextual Reinstatement for\nAgentic Memory (RaMem), a framework that turns retrieved memory fragments\ninto contextually verifiable evidence. RaMem operates through four coordinated\nstages: (i)evidence "
+              }
+            ],
+            "text": "Long-term memory has become increasingly important for LLM agents that operate\nacross extended interactions and evolving task contexts. Recent memory systems\nhave made past experiences more persistent, compact, and retrievable, but retrieval\nalone does not ensure that a memory provides valid evidence for the current\nquery. When experiences are compressed into reusable fragments, memories from\ndifferent situations may appear equally relevant if they involve recurring entities\nor user states. We refer to this failure ascontext collapse: memories lose the\nsurrounding context needed to judge whether they provide valid evidence for the\ncurrent query. To address this problem, we proposeContextual Reinstatement for\nAgentic Memory (RaMem), a framework that turns retrieved memory fragments\ninto contextually verifiable evidence. RaMem operates through four coordinated\nstages: (i)evidence "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0003"
+        ],
+        "excerpt": "anchoringgrounds each memory in its original episodic\nconditions, especially event time, mention time, session span, and participants; (ii)\nrecall condition inductionderives the evidence conditions implied by the query;\n(iii)validity-aware retrievaluses these conditions to prioritize context-compatible\nmemories while retaining content-relevant candidates as fallback evidence; and\n(iv)context-preserved synthesiskeeps the selected memories' structured context\navailable to the generator. Experiments on long-term memory benchmarks show\nthat RaMem consistently improves performance over strong memory baselines,\nwith average F1 gains of more than 10% across several backbones. Code is available\nathttps://github.com/weiyang930/RaMem-Release.git.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "facd862d76d5dd4f1062c470dd7eba227499b61b6a29528bc3cd258b7aa6c9d9",
+            "evidence_id": "E73967383527d2121-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1637,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 891,
+                "text": "anchoringgrounds each memory in its original episodic\nconditions, especially event time, mention time, session span, and participants; (ii)\nrecall condition inductionderives the evidence conditions implied by the query;\n(iii)validity-aware retrievaluses these conditions to prioritize context-compatible\nmemories while retaining content-relevant candidates as fallback evidence; and\n(iv)context-preserved synthesiskeeps the selected memories' structured context\navailable to the generator. Experiments on long-term memory benchmarks show\nthat RaMem consistently improves performance over strong memory baselines,\nwith average F1 gains of more than 10% across several backbones. Code is available\nathttps://github.com/weiyang930/RaMem-Release.git."
+              }
+            ],
+            "text": "anchoringgrounds each memory in its original episodic\nconditions, especially event time, mention time, session span, and participants; (ii)\nrecall condition inductionderives the evidence conditions implied by the query;\n(iii)validity-aware retrievaluses these conditions to prioritize context-compatible\nmemories while retaining content-relevant candidates as fallback evidence; and\n(iv)context-preserved synthesiskeeps the selected memories' structured context\navailable to the generator. Experiments on long-term memory benchmarks show\nthat RaMem consistently improves performance over strong memory baselines,\nwith average F1 gains of more than 10% across several backbones. Code is available\nathttps://github.com/weiyang930/RaMem-Release.git."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0009"
+        ],
+        "excerpt": "mention time, session span, and participants. Second,\nRecall Condition Inductiondecomposes the query into an information need and a contextual\nrecall frame that specifies what valid evidence should satisfy. Third,Validity-Aware Retrieval\nprioritizes memories whose episodic coordinates match the recall frame while retaining content-\nrelevant candidates as fallback evidence. Finally,Context-Preserved Synthesispasses the selected\nmemories to the generator with their structured context intact. Because contextual cues can be\nincomplete or noisy, RaMem applies reinstatement selectively and activates context-aware retrieval\nonly when the relevant cues can be grounded reliably.\nThe main contributions of this work are as follows:\n2\n\u2022 We identifycontext collapseas a central failure mode of long-term agent memory: memories\ncan appear relevant but be misused as evidence when the agent cannot verify ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0ebfed90f84f9ba4174ea498c998bfc4222c7d818180240d9811c2ed71edbc1e",
+            "evidence_id": "E73967383527d2121-B0009",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3687,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2955,
+                "text": "mention time, session span, and participants. Second,\nRecall Condition Inductiondecomposes the query into an information need and a contextual\nrecall frame that specifies what valid evidence should satisfy. Third,Validity-Aware Retrieval\nprioritizes memories whose episodic coordinates match the recall frame while retaining content-\nrelevant candidates as fallback evidence. Finally,Context-Preserved Synthesispasses the selected\nmemories to the generator with their structured context intact. Because contextual cues can be\nincomplete or noisy, RaMem applies reinstatement selectively and activates context-aware retrieval\nonly when the relevant cues can be grounded reliably.\nThe main contributions of this work are as follows:\n2"
+              },
+              {
+                "end": 167,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 0,
+                "text": "\u2022 We identifycontext collapseas a central failure mode of long-term agent memory: memories\ncan appear relevant but be misused as evidence when the agent cannot verify "
+              }
+            ],
+            "text": "mention time, session span, and participants. Second,\nRecall Condition Inductiondecomposes the query into an information need and a contextual\nrecall frame that specifies what valid evidence should satisfy. Third,Validity-Aware Retrieval\nprioritizes memories whose episodic coordinates match the recall frame while retaining content-\nrelevant candidates as fallback evidence. Finally,Context-Preserved Synthesispasses the selected\nmemories to the generator with their structured context intact. Because contextual cues can be\nincomplete or noisy, RaMem applies reinstatement selectively and activates context-aware retrieval\nonly when the relevant cues can be grounded reliably.\nThe main contributions of this work are as follows:\n2\n\u2022 We identifycontext collapseas a central failure mode of long-term agent memory: memories\ncan appear relevant but be misused as evidence when the agent cannot verify "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0014"
+        ],
+        "excerpt": "A central source of context collapse is that memory units often become reusable fragments whose\napplicability conditions are weakly represented. Although such fragments may preserve useful\ncontent, they do not expose enough context to verify when the content can serve as evidence. RaMem\ntherefore anchors each memory to the conditions under which it was observed, forming anepisodic\nevidence unit. Each memory mi consists of a content field xi and an episodic context field ei:\nmi = (xi, ei). The content xi is a self-contained restatement of the remembered information, while\nei records the coordinates needed for contextual verification:\nei ={\u03c4 eventi , \u03c4mentioni , \u03c4sessioni , pi, \u2113i, ui, zi}.(1)\nHere \u03c4 eventi is the time of the described event when inferable,\u03c4 mentioni denotes an explicitly mentioned\ntemporal cue when available, and\u03c4 sessioni = [sstarti , sendi ] is the session span in ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Episodic Memory Anchoring",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8d38c21ba2fd35d910c756c2be807a77c4ac0ad1ac4e7890718ae4eb9cad389f",
+            "evidence_id": "E73967383527d2121-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Episodic Memory Anchoring",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 3,
+                "section": "Episodic Memory Anchoring",
+                "section_index": 7,
+                "start": 0,
+                "text": "A central source of context collapse is that memory units often become reusable fragments whose\napplicability conditions are weakly represented. Although such fragments may preserve useful\ncontent, they do not expose enough context to verify when the content can serve as evidence. RaMem\ntherefore anchors each memory to the conditions under which it was observed, forming anepisodic\nevidence unit. Each memory mi consists of a content field xi and an episodic context field ei:\nmi = (xi, ei). The content xi is a self-contained restatement of the remembered information, while\nei records the coordinates needed for contextual verification:\nei ={\u03c4 eventi , \u03c4mentioni , \u03c4sessioni , pi, \u2113i, ui, zi}.(1)\nHere \u03c4 eventi is the time of the described event when inferable,\u03c4 mentioni denotes an explicitly mentioned\ntemporal cue when available, and\u03c4 sessioni = [sstarti , sendi ] is the session span in "
+              }
+            ],
+            "text": "A central source of context collapse is that memory units often become reusable fragments whose\napplicability conditions are weakly represented. Although such fragments may preserve useful\ncontent, they do not expose enough context to verify when the content can serve as evidence. RaMem\ntherefore anchors each memory to the conditions under which it was observed, forming anepisodic\nevidence unit. Each memory mi consists of a content field xi and an episodic context field ei:\nmi = (xi, ei). The content xi is a self-contained restatement of the remembered information, while\nei records the coordinates needed for contextual verification:\nei ={\u03c4 eventi , \u03c4mentioni , \u03c4sessioni , pi, \u2113i, ui, zi}.(1)\nHere \u03c4 eventi is the time of the described event when inferable,\u03c4 mentioni denotes an explicitly mentioned\ntemporal cue when available, and\u03c4 sessioni = [sstarti , sendi ] is the session span in "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0017"
+        ],
+        "excerpt": "A query specifies not only what information is needed, but also the conditions under which a memory\ncan serve as valid evidence. These conditions may be either explicit or implicit: explicit anchors\ninclude named entities or dates, while implicit anchors arise from temporal cues, referenced events,\nor evolving user state. Therefore, we map each query q into an information need rq and a contextual\nrecall frame cq: q7\u2192(r q, cq). The information need rq captures what is being requested, while cq\nrecords the recall conditions that constrain which episode can provide valid evidence:\ncq ={\u02c6\u03c4q,\u02c6pq, \u02c6\u2113q,\u02c6uq,\u02c6zq}.(2)\nHere \u02c6\u03c4q is a grounded time range when inferable, \u02c6pq denotes people or participants, \u02c6\u2113q denotes\nlocations,\u02c6uq denotes entities, and\u02c6zq denotes topic or episode hints.\nThe recall frame separates the requested information from the evidence conditions that a supporting\nmemory should ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Recall Condition Induction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4c4ce46e2c2f354abaa18ef1f2a599e1ff95b6f1eb4cbf7dc4bcdeb4ff48d43f",
+            "evidence_id": "E73967383527d2121-B0017",
+            "pages": [
+              4
+            ],
+            "section": "Recall Condition Induction",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 4,
+                "section": "Recall Condition Induction",
+                "section_index": 9,
+                "start": 0,
+                "text": "A query specifies not only what information is needed, but also the conditions under which a memory\ncan serve as valid evidence. These conditions may be either explicit or implicit: explicit anchors\ninclude named entities or dates, while implicit anchors arise from temporal cues, referenced events,\nor evolving user state. Therefore, we map each query q into an information need rq and a contextual\nrecall frame cq: q7\u2192(r q, cq). The information need rq captures what is being requested, while cq\nrecords the recall conditions that constrain which episode can provide valid evidence:\ncq ={\u02c6\u03c4q,\u02c6pq, \u02c6\u2113q,\u02c6uq,\u02c6zq}.(2)\nHere \u02c6\u03c4q is a grounded time range when inferable, \u02c6pq denotes people or participants, \u02c6\u2113q denotes\nlocations,\u02c6uq denotes entities, and\u02c6zq denotes topic or episode hints.\nThe recall frame separates the requested information from the evidence conditions that a supporting\nmemory should "
+              }
+            ],
+            "text": "A query specifies not only what information is needed, but also the conditions under which a memory\ncan serve as valid evidence. These conditions may be either explicit or implicit: explicit anchors\ninclude named entities or dates, while implicit anchors arise from temporal cues, referenced events,\nor evolving user state. Therefore, we map each query q into an information need rq and a contextual\nrecall frame cq: q7\u2192(r q, cq). The information need rq captures what is being requested, while cq\nrecords the recall conditions that constrain which episode can provide valid evidence:\ncq ={\u02c6\u03c4q,\u02c6pq, \u02c6\u2113q,\u02c6uq,\u02c6zq}.(2)\nHere \u02c6\u03c4q is a grounded time range when inferable, \u02c6pq denotes people or participants, \u02c6\u2113q denotes\nlocations,\u02c6uq denotes entities, and\u02c6zq denotes topic or episode hints.\nThe recall frame separates the requested information from the evidence conditions that a supporting\nmemory should "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0021"
+        ],
+        "excerpt": "grounded,\nCcontent(q),otherwise. (3)\nHere \u2295 denotes ordered concatenation, and Dedupfirst keeps the first occurrence of each memory\naccording to its identifier. Thus, grounded context gives priority to memories that are applicable\nunder the query's evidence conditions, while content-relevant candidates are retained as fallback\nevidence. When the induced context is uncertain, it is not imposed as a hard constraint.\nFor temporal conditions, V(q) is instantiated with session-overlap compatibility. Given a grounded\nquery range \u02c6\u03c4q = [tstartq , tendq ] and a memory session span \u03c4 sessioni = [sstarti , sendi ], memory mi is\ntemporally compatible if\nsstarti \u2264t endq ands endi \u2265t startq .(4)\nA small buffer can be added around \u02c6\u03c4q to tolerate mismatch between event time and mention time.\nWithin the compatible set, memories are ordered by content relevance and temporal proximity, where\nproximity ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Validity-Aware Memory Retrieval",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f007a1a2cc3312ff21d4e0c680de24aa0f106d33f8800301bb87b44f3d7c90c0",
+            "evidence_id": "E73967383527d2121-B0021",
+            "pages": [
+              5
+            ],
+            "section": "Validity-Aware Memory Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2398,
+                "page": 5,
+                "section": "Validity-Aware Memory Retrieval",
+                "section_index": 11,
+                "start": 1500,
+                "text": "grounded,\nCcontent(q),otherwise. (3)\nHere \u2295 denotes ordered concatenation, and Dedupfirst keeps the first occurrence of each memory\naccording to its identifier. Thus, grounded context gives priority to memories that are applicable\nunder the query's evidence conditions, while content-relevant candidates are retained as fallback\nevidence. When the induced context is uncertain, it is not imposed as a hard constraint.\nFor temporal conditions, V(q) is instantiated with session-overlap compatibility. Given a grounded\nquery range \u02c6\u03c4q = [tstartq , tendq ] and a memory session span \u03c4 sessioni = [sstarti , sendi ], memory mi is\ntemporally compatible if\nsstarti \u2264t endq ands endi \u2265t startq .(4)\nA small buffer can be added around \u02c6\u03c4q to tolerate mismatch between event time and mention time.\nWithin the compatible set, memories are ordered by content relevance and temporal proximity, where\nproximity "
+              }
+            ],
+            "text": "grounded,\nCcontent(q),otherwise. (3)\nHere \u2295 denotes ordered concatenation, and Dedupfirst keeps the first occurrence of each memory\naccording to its identifier. Thus, grounded context gives priority to memories that are applicable\nunder the query's evidence conditions, while content-relevant candidates are retained as fallback\nevidence. When the induced context is uncertain, it is not imposed as a hard constraint.\nFor temporal conditions, V(q) is instantiated with session-overlap compatibility. Given a grounded\nquery range \u02c6\u03c4q = [tstartq , tendq ] and a memory session span \u03c4 sessioni = [sstarti , sendi ], memory mi is\ntemporally compatible if\nsstarti \u2264t endq ands endi \u2265t startq .(4)\nA small buffer can be added around \u02c6\u03c4q to tolerate mismatch between event time and mention time.\nWithin the compatible set, memories are ordered by content relevance and temporal proximity, where\nproximity "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0025"
+        ],
+        "excerpt": "F1 BLEU F1 BLEU F1 BLEU F1 BLEU F1 BLEU\nGPT-4o\nLoCoMo 28.00 18.47 9.09 5.78 16.47 14.8061.56 54.1928.78 23.31\nReadAgent 14.61 9.95 4.16 3.19 8.84 8.37 12.46 10.29 10.02 7.95\nMemoryBank 6.49 4.69 2.47 2.43 6.43 5.30 8.28 7.10 5.92 4.88\nMemGPT 30.36 22.83 17.29 13.18 12.24 11.87 40.16 36.35 25.01 21.06\nA-Mem 32.86 23.76 39.41 31.23 17.10 15.84 44.43 38.97 33.45 27.45\nLightMem 28.15 21.83 36.53 29.12 13.38 11.54 33.76 28.02 27.96 22.63\nMem0 35.13 27.56 52.38 44.15 17.73 15.92 39.12 35.43 36.09 30.77\nSimpleMem 35.89 32.83 56.71 20.57 18.23 16.34 45.41 39.25 39.06 27.25\nRaMem (Ours)47.31 39.08 60.09 45.35 25.58 20.4752.87 47.08 51.66 43.60\nGPT-4.1-mini\nLoCoMo 25.02 21.62 12.04 10.63 19.05 17.07 18.68 15.87 18.70 16.30\nReadAgent 6.48 5.60 5.31 4.23 7.66 6.62 9.18 7.91 7.16 6.09\nMemoryBank 5.00 4.68 5.94 4.78 5.16 4.52 5.72 4.86 5.46 4.71\nMemGPT 17.72 16.02 19.44 16.54 11.29 10.18 25.59 24.25 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2c8e36b86efc8c7b1db224982af3dab8f7eeb186609c844694e7ef779f6da9d0",
+            "evidence_id": "E73967383527d2121-B0025",
+            "pages": [
+              6
+            ],
+            "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+                "section_index": 14,
+                "start": 0,
+                "text": "F1 BLEU F1 BLEU F1 BLEU F1 BLEU F1 BLEU\nGPT-4o\nLoCoMo 28.00 18.47 9.09 5.78 16.47 14.8061.56 54.1928.78 23.31\nReadAgent 14.61 9.95 4.16 3.19 8.84 8.37 12.46 10.29 10.02 7.95\nMemoryBank 6.49 4.69 2.47 2.43 6.43 5.30 8.28 7.10 5.92 4.88\nMemGPT 30.36 22.83 17.29 13.18 12.24 11.87 40.16 36.35 25.01 21.06\nA-Mem 32.86 23.76 39.41 31.23 17.10 15.84 44.43 38.97 33.45 27.45\nLightMem 28.15 21.83 36.53 29.12 13.38 11.54 33.76 28.02 27.96 22.63\nMem0 35.13 27.56 52.38 44.15 17.73 15.92 39.12 35.43 36.09 30.77\nSimpleMem 35.89 32.83 56.71 20.57 18.23 16.34 45.41 39.25 39.06 27.25\nRaMem (Ours)47.31 39.08 60.09 45.35 25.58 20.4752.87 47.08 51.66 43.60\nGPT-4.1-mini\nLoCoMo 25.02 21.62 12.04 10.63 19.05 17.07 18.68 15.87 18.70 16.30\nReadAgent 6.48 5.60 5.31 4.23 7.66 6.62 9.18 7.91 7.16 6.09\nMemoryBank 5.00 4.68 5.94 4.78 5.16 4.52 5.72 4.86 5.46 4.71\nMemGPT 17.72 16.02 19.44 16.54 11.29 10.18 25.59 24.25 "
+              }
+            ],
+            "text": "F1 BLEU F1 BLEU F1 BLEU F1 BLEU F1 BLEU\nGPT-4o\nLoCoMo 28.00 18.47 9.09 5.78 16.47 14.8061.56 54.1928.78 23.31\nReadAgent 14.61 9.95 4.16 3.19 8.84 8.37 12.46 10.29 10.02 7.95\nMemoryBank 6.49 4.69 2.47 2.43 6.43 5.30 8.28 7.10 5.92 4.88\nMemGPT 30.36 22.83 17.29 13.18 12.24 11.87 40.16 36.35 25.01 21.06\nA-Mem 32.86 23.76 39.41 31.23 17.10 15.84 44.43 38.97 33.45 27.45\nLightMem 28.15 21.83 36.53 29.12 13.38 11.54 33.76 28.02 27.96 22.63\nMem0 35.13 27.56 52.38 44.15 17.73 15.92 39.12 35.43 36.09 30.77\nSimpleMem 35.89 32.83 56.71 20.57 18.23 16.34 45.41 39.25 39.06 27.25\nRaMem (Ours)47.31 39.08 60.09 45.35 25.58 20.4752.87 47.08 51.66 43.60\nGPT-4.1-mini\nLoCoMo 25.02 21.62 12.04 10.63 19.05 17.07 18.68 15.87 18.70 16.30\nReadAgent 6.48 5.60 5.31 4.23 7.66 6.62 9.18 7.91 7.16 6.09\nMemoryBank 5.00 4.68 5.94 4.78 5.16 4.52 5.72 4.86 5.46 4.71\nMemGPT 17.72 16.02 19.44 16.54 11.29 10.18 25.59 24.25 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0026"
+        ],
+        "excerpt": "18.51 16.75\nA-Mem 25.06 17.32 51.01 44.75 13.22 14.75 41.02 36.99 32.58 28.45\nLightMem 24.96 21.66 20.55 18.39 19.21 17.68 33.79 29.66 24.63 21.85\nMem0 30.14 27.62 48.91 44.82 16.43 14.94 41.30 36.17 34.20 30.89\nSimpleMem 43.46 38.8258.62 50.1019.76 18.04 51.12 43.53 43.24 37.62\nRaMem (Ours)43.7335.99 61.5747.02 26.35 21.73 58.14 51.48 54.23 45.86\nQwen3-8b\nLoCoMo 13.50 9.20 6.80 5.50 10.10 8.80 14.50 11.20 11.23 8.68\nReadAgent 7.20 5.10 3.50 3.10 5.50 5.40 8.10 6.20 6.08 4.95\nMemoryBank 9.50 7.10 3.80 2.50 7.50 6.50 9.20 7.50 7.50 5.90\nMemGPT 14.20 9.80 5.50 4.20 12.50 10.80 11.50 9.10 10.93 8.48\nA-Mem 20.50 13.80 22.50 18.20 13.20 10.50 26.80 21.50 20.75 16.00\nLightMem 18.53 14.23 26.78 21.52 14.12 11.24 29.48 23.83 22.23 17.71\nMem0 22.42 16.83 32.48 26.13 15.23 12.54 33.05 27.24 25.80 20.69\nSimpleMem 28.97 24.93 42.85 36.4915.35 13.9046.62 40.69 33.45 29.00\nRaMem (Ours)36.10 28.07 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db45cf660f76d7878d73224d9761273bd3f929615bc89f76d38c41bfdc24aa0d",
+            "evidence_id": "E73967383527d2121-B0026",
+            "pages": [
+              6
+            ],
+            "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 6,
+                "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+                "section_index": 14,
+                "start": 899,
+                "text": "18.51 16.75\nA-Mem 25.06 17.32 51.01 44.75 13.22 14.75 41.02 36.99 32.58 28.45\nLightMem 24.96 21.66 20.55 18.39 19.21 17.68 33.79 29.66 24.63 21.85\nMem0 30.14 27.62 48.91 44.82 16.43 14.94 41.30 36.17 34.20 30.89\nSimpleMem 43.46 38.8258.62 50.1019.76 18.04 51.12 43.53 43.24 37.62\nRaMem (Ours)43.7335.99 61.5747.02 26.35 21.73 58.14 51.48 54.23 45.86\nQwen3-8b\nLoCoMo 13.50 9.20 6.80 5.50 10.10 8.80 14.50 11.20 11.23 8.68\nReadAgent 7.20 5.10 3.50 3.10 5.50 5.40 8.10 6.20 6.08 4.95\nMemoryBank 9.50 7.10 3.80 2.50 7.50 6.50 9.20 7.50 7.50 5.90\nMemGPT 14.20 9.80 5.50 4.20 12.50 10.80 11.50 9.10 10.93 8.48\nA-Mem 20.50 13.80 22.50 18.20 13.20 10.50 26.80 21.50 20.75 16.00\nLightMem 18.53 14.23 26.78 21.52 14.12 11.24 29.48 23.83 22.23 17.71\nMem0 22.42 16.83 32.48 26.13 15.23 12.54 33.05 27.24 25.80 20.69\nSimpleMem 28.97 24.93 42.85 36.4915.35 13.9046.62 40.69 33.45 29.00\nRaMem (Ours)36.10 28.07 "
+              }
+            ],
+            "text": "18.51 16.75\nA-Mem 25.06 17.32 51.01 44.75 13.22 14.75 41.02 36.99 32.58 28.45\nLightMem 24.96 21.66 20.55 18.39 19.21 17.68 33.79 29.66 24.63 21.85\nMem0 30.14 27.62 48.91 44.82 16.43 14.94 41.30 36.17 34.20 30.89\nSimpleMem 43.46 38.8258.62 50.1019.76 18.04 51.12 43.53 43.24 37.62\nRaMem (Ours)43.7335.99 61.5747.02 26.35 21.73 58.14 51.48 54.23 45.86\nQwen3-8b\nLoCoMo 13.50 9.20 6.80 5.50 10.10 8.80 14.50 11.20 11.23 8.68\nReadAgent 7.20 5.10 3.50 3.10 5.50 5.40 8.10 6.20 6.08 4.95\nMemoryBank 9.50 7.10 3.80 2.50 7.50 6.50 9.20 7.50 7.50 5.90\nMemGPT 14.20 9.80 5.50 4.20 12.50 10.80 11.50 9.10 10.93 8.48\nA-Mem 20.50 13.80 22.50 18.20 13.20 10.50 26.80 21.50 20.75 16.00\nLightMem 18.53 14.23 26.78 21.52 14.12 11.24 29.48 23.83 22.23 17.71\nMem0 22.42 16.83 32.48 26.13 15.23 12.54 33.05 27.24 25.80 20.69\nSimpleMem 28.97 24.93 42.85 36.4915.35 13.9046.62 40.69 33.45 29.00\nRaMem (Ours)36.10 28.07 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0027"
+        ],
+        "excerpt": "44.1732.72 17.7113.79 50.59 44.88 44.55 37.33\nQwen2.5-3b\nLoCoMo 4.61 4.29 3.11 2.71 4.55 5.97 7.03 5.69 4.83 4.67\nReadAgent 2.47 1.78 3.01 3.01 5.57 5.22 3.25 2.51 3.58 3.13\nMemoryBank 3.60 3.39 1.72 1.97 6.63 6.58 4.11 3.32 4.02 3.82\nMemGPT 5.07 4.31 2.94 2.95 7.04 7.10 7.26 5.52 5.58 4.97\nA-Mem 12.57 9.0127.59 25.077.12 7.28 17.23 13.12 16.13 13.62\nLightMem 16.43 11.39 6.92 4.56 8.06 7.23 18.28 15.24 12.42 9.61\nMem0 16.89 11.54 8.52 6.23 10.24 8.82 16.47 12.43 13.03 9.76\nSimpleMem 17.03 11.87 21.47 19.50 12.52 10.19 20.90 18.01 17.98 14.89\nRaMem (Ours)21.74 15.1724.45 17.0013.68 11.41 26.95 22.72 24.65 19.44\nWhen contextual reinstatement is not activated, Cctxq is empty and the same operation reduces to\ncontent-based evidence selection. This construction preserves broad content coverage while giving\npriority to memories whose evidence conditions match the query's recall frame.\nThe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "388deb429bcd54c05f210f1211861ef69574056fa5323b816d7e74d71789ccd3",
+            "evidence_id": "E73967383527d2121-B0027",
+            "pages": [
+              6
+            ],
+            "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2691,
+                "page": 6,
+                "section": "F1 Bleu F1 Bleu F1 Bleu F1 Bleu F1 Bleu",
+                "section_index": 14,
+                "start": 1795,
+                "text": "44.1732.72 17.7113.79 50.59 44.88 44.55 37.33\nQwen2.5-3b\nLoCoMo 4.61 4.29 3.11 2.71 4.55 5.97 7.03 5.69 4.83 4.67\nReadAgent 2.47 1.78 3.01 3.01 5.57 5.22 3.25 2.51 3.58 3.13\nMemoryBank 3.60 3.39 1.72 1.97 6.63 6.58 4.11 3.32 4.02 3.82\nMemGPT 5.07 4.31 2.94 2.95 7.04 7.10 7.26 5.52 5.58 4.97\nA-Mem 12.57 9.0127.59 25.077.12 7.28 17.23 13.12 16.13 13.62\nLightMem 16.43 11.39 6.92 4.56 8.06 7.23 18.28 15.24 12.42 9.61\nMem0 16.89 11.54 8.52 6.23 10.24 8.82 16.47 12.43 13.03 9.76\nSimpleMem 17.03 11.87 21.47 19.50 12.52 10.19 20.90 18.01 17.98 14.89\nRaMem (Ours)21.74 15.1724.45 17.0013.68 11.41 26.95 22.72 24.65 19.44\nWhen contextual reinstatement is not activated, Cctxq is empty and the same operation reduces to\ncontent-based evidence selection. This construction preserves broad content coverage while giving\npriority to memories whose evidence conditions match the query's recall frame.\nThe "
+              }
+            ],
+            "text": "44.1732.72 17.7113.79 50.59 44.88 44.55 37.33\nQwen2.5-3b\nLoCoMo 4.61 4.29 3.11 2.71 4.55 5.97 7.03 5.69 4.83 4.67\nReadAgent 2.47 1.78 3.01 3.01 5.57 5.22 3.25 2.51 3.58 3.13\nMemoryBank 3.60 3.39 1.72 1.97 6.63 6.58 4.11 3.32 4.02 3.82\nMemGPT 5.07 4.31 2.94 2.95 7.04 7.10 7.26 5.52 5.58 4.97\nA-Mem 12.57 9.0127.59 25.077.12 7.28 17.23 13.12 16.13 13.62\nLightMem 16.43 11.39 6.92 4.56 8.06 7.23 18.28 15.24 12.42 9.61\nMem0 16.89 11.54 8.52 6.23 10.24 8.82 16.47 12.43 13.03 9.76\nSimpleMem 17.03 11.87 21.47 19.50 12.52 10.19 20.90 18.01 17.98 14.89\nRaMem (Ours)21.74 15.1724.45 17.0013.68 11.41 26.95 22.72 24.65 19.44\nWhen contextual reinstatement is not activated, Cctxq is empty and the same operation reduces to\ncontent-based evidence selection. This construction preserves broad content coverage while giving\npriority to memories whose evidence conditions match the query's recall frame.\nThe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0030"
+        ],
+        "excerpt": "We evaluate whether RaMem improves long-term agent memory by making retrieved memories\ncontextually verifiable as evidence. Our experiments follow the SimpleMem [Liu et al., 2026] protocol\non LoCoMo [Maharana et al., 2024] and LongMemEval [Wu et al., 2024]. We evaluate across four\nbackbones, GPT-4o, GPT-4.1-mini, Qwen2.5-3B, and Qwen3-8B, and report token-level F1 and\nBLEU-1 as the primary metrics. Full details and implementation are provided in Appendix D.1.\n6\nTable 2: Retrieval diagnostics on LoCoMo. RaMem improves both ground-truth memory recall and\nranking across backbone models. Lower values are better for CappedRank@10, HitOnlyRank, and\nGenFailGivenRetrieved.\nBackbone Method R@1 R@3 R@5 R@10 MRR CappedRank@10 HitOnlyRank GenFailGivenRetrieved\nGPT-4.1-mini SimpleMem 0.3662 0.5636 0.6364 0.7221 0.4908 8.5292 8.3831 0.8336Ours0.4175 0.6305 0.6961 0.7890 0.5476 5.9844 5.6510 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5804e83959da619317380c2369ca18f5080d43d8223c32bc0a6b0a6dc0752d7a",
+            "evidence_id": "E73967383527d2121-B0030",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 465,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 15,
+                "start": 0,
+                "text": "We evaluate whether RaMem improves long-term agent memory by making retrieved memories\ncontextually verifiable as evidence. Our experiments follow the SimpleMem [Liu et al., 2026] protocol\non LoCoMo [Maharana et al., 2024] and LongMemEval [Wu et al., 2024]. We evaluate across four\nbackbones, GPT-4o, GPT-4.1-mini, Qwen2.5-3B, and Qwen3-8B, and report token-level F1 and\nBLEU-1 as the primary metrics. Full details and implementation are provided in Appendix D.1.\n6"
+              },
+              {
+                "end": 424,
+                "page": 7,
+                "section": "Experiments",
+                "section_index": 16,
+                "start": 0,
+                "text": "Table 2: Retrieval diagnostics on LoCoMo. RaMem improves both ground-truth memory recall and\nranking across backbone models. Lower values are better for CappedRank@10, HitOnlyRank, and\nGenFailGivenRetrieved.\nBackbone Method R@1 R@3 R@5 R@10 MRR CappedRank@10 HitOnlyRank GenFailGivenRetrieved\nGPT-4.1-mini SimpleMem 0.3662 0.5636 0.6364 0.7221 0.4908 8.5292 8.3831 0.8336Ours0.4175 0.6305 0.6961 0.7890 0.5476 5.9844 5.6510 "
+              }
+            ],
+            "text": "We evaluate whether RaMem improves long-term agent memory by making retrieved memories\ncontextually verifiable as evidence. Our experiments follow the SimpleMem [Liu et al., 2026] protocol\non LoCoMo [Maharana et al., 2024] and LongMemEval [Wu et al., 2024]. We evaluate across four\nbackbones, GPT-4o, GPT-4.1-mini, Qwen2.5-3B, and Qwen3-8B, and report token-level F1 and\nBLEU-1 as the primary metrics. Full details and implementation are provided in Appendix D.1.\n6\nTable 2: Retrieval diagnostics on LoCoMo. RaMem improves both ground-truth memory recall and\nranking across backbone models. Lower values are better for CappedRank@10, HitOnlyRank, and\nGenFailGivenRetrieved.\nBackbone Method R@1 R@3 R@5 R@10 MRR CappedRank@10 HitOnlyRank GenFailGivenRetrieved\nGPT-4.1-mini SimpleMem 0.3662 0.5636 0.6364 0.7221 0.4908 8.5292 8.3831 0.8336Ours0.4175 0.6305 0.6961 0.7890 0.5476 5.9844 5.6510 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0031"
+        ],
+        "excerpt": "0.8109\nQwen2.5-3B SimpleMem 0.2740 0.4539 0.5234 0.6247 0.3968 10.0006 9.8928 0.9230Ours0.3054 0.4776 0.5809 0.6901 0.4313 8.0143 7.6847 0.9113\nQwen3-8B SimpleMem 0.2870 0.4903 0.5526 0.6617 0.4178 9.7390 9.6429 0.8693Ours0.3292 0.5435 0.6266 0.7351 0.4669 7.2532 6.9594 0.8340",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d669a28cd224021fb48853735d5fa269343a82b077e7828bc5c6f97dcbe6405c",
+            "evidence_id": "E73967383527d2121-B0031",
+            "pages": [
+              7
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 701,
+                "page": 7,
+                "section": "Experiments",
+                "section_index": 16,
+                "start": 424,
+                "text": "0.8109\nQwen2.5-3B SimpleMem 0.2740 0.4539 0.5234 0.6247 0.3968 10.0006 9.8928 0.9230Ours0.3054 0.4776 0.5809 0.6901 0.4313 8.0143 7.6847 0.9113\nQwen3-8B SimpleMem 0.2870 0.4903 0.5526 0.6617 0.4178 9.7390 9.6429 0.8693Ours0.3292 0.5435 0.6266 0.7351 0.4669 7.2532 6.9594 0.8340"
+              }
+            ],
+            "text": "0.8109\nQwen2.5-3B SimpleMem 0.2740 0.4539 0.5234 0.6247 0.3968 10.0006 9.8928 0.9230Ours0.3054 0.4776 0.5809 0.6901 0.4313 8.0143 7.6847 0.9113\nQwen3-8B SimpleMem 0.2870 0.4903 0.5526 0.6617 0.4178 9.7390 9.6429 0.8693Ours0.3292 0.5435 0.6266 0.7351 0.4669 7.2532 6.9594 0.8340"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0037"
+        ],
+        "excerpt": "Figure 3:Context collapse mitigation across backbones. Each subplot corresponds to one backbone\nand compares SimpleMem with our method on three diagnostic metrics: D@1, RankGap, and GT\nR@10. Lower is better for D@1 and RankGap, while higher is better for GT R@10.\nTable 3: Context shuffle test. Memory content is kept unchanged, while selected context fields are\nshuffled across memory entries. We report both all verified questions and the temporal-triggered\nsubset. Lower is better for D@1 and RankGap.\nBackbone Subset Variant F1\u2191GT R@10\u2191MRR\u2191D@1\u2193RankGap\u2193\nGPT-4.1-mini\nAll Verified GT\nOriginal0.5291 0.7550 0.5323 0.3428 2.0278\nShuffle temporal 0.5004 0.6744 0.4871 0.5753 5.2974\nShuffle full context 0.5079 0.6638 0.4822 0.5872 5.3965\nTemporal-triggered\nOriginal0.6009 0.8066 0.5249 0.2642 1.0404\nShuffle temporal 0.4985 0.2358 0.1796 0.8160 21.5029\nShuffle full context 0.5180 0.2358 0.1762 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Context Collapse Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3ab56adf56062584376405a095699bc70ad529101c34961bcabe8827c618c47b",
+            "evidence_id": "E73967383527d2121-B0037",
+            "pages": [
+              8
+            ],
+            "section": "Context Collapse Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 8,
+                "section": "Context Collapse Analysis",
+                "section_index": 20,
+                "start": 0,
+                "text": "Figure 3:Context collapse mitigation across backbones. Each subplot corresponds to one backbone\nand compares SimpleMem with our method on three diagnostic metrics: D@1, RankGap, and GT\nR@10. Lower is better for D@1 and RankGap, while higher is better for GT R@10.\nTable 3: Context shuffle test. Memory content is kept unchanged, while selected context fields are\nshuffled across memory entries. We report both all verified questions and the temporal-triggered\nsubset. Lower is better for D@1 and RankGap.\nBackbone Subset Variant F1\u2191GT R@10\u2191MRR\u2191D@1\u2193RankGap\u2193\nGPT-4.1-mini\nAll Verified GT\nOriginal0.5291 0.7550 0.5323 0.3428 2.0278\nShuffle temporal 0.5004 0.6744 0.4871 0.5753 5.2974\nShuffle full context 0.5079 0.6638 0.4822 0.5872 5.3965\nTemporal-triggered\nOriginal0.6009 0.8066 0.5249 0.2642 1.0404\nShuffle temporal 0.4985 0.2358 0.1796 0.8160 21.5029\nShuffle full context 0.5180 0.2358 0.1762 "
+              }
+            ],
+            "text": "Figure 3:Context collapse mitigation across backbones. Each subplot corresponds to one backbone\nand compares SimpleMem with our method on three diagnostic metrics: D@1, RankGap, and GT\nR@10. Lower is better for D@1 and RankGap, while higher is better for GT R@10.\nTable 3: Context shuffle test. Memory content is kept unchanged, while selected context fields are\nshuffled across memory entries. We report both all verified questions and the temporal-triggered\nsubset. Lower is better for D@1 and RankGap.\nBackbone Subset Variant F1\u2191GT R@10\u2191MRR\u2191D@1\u2193RankGap\u2193\nGPT-4.1-mini\nAll Verified GT\nOriginal0.5291 0.7550 0.5323 0.3428 2.0278\nShuffle temporal 0.5004 0.6744 0.4871 0.5753 5.2974\nShuffle full context 0.5079 0.6638 0.4822 0.5872 5.3965\nTemporal-triggered\nOriginal0.6009 0.8066 0.5249 0.2642 1.0404\nShuffle temporal 0.4985 0.2358 0.1796 0.8160 21.5029\nShuffle full context 0.5180 0.2358 0.1762 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0038"
+        ],
+        "excerpt": "0.8302 22.0116\nQwen3-8B\nAll Verified GT\nOriginal0.4522 0.6925 0.4502 0.3702 2.1427\nShuffle temporal 0.4287 0.6204 0.4116 0.6518 5.7768\nShuffle full context 0.4347 0.6157 0.4053 0.6631 5.7634\nTemporal-triggered\nOriginal0.5317 0.7170 0.4271 0.2736 1.2350\nShuffle temporal 0.4081 0.1840 0.1250 0.8726 22.9595\nShuffle full context 0.4134 0.1840 0.1242 0.8868 23.0952\nentities, topics, or keywords with the query but fail its evidence conditions. RaMem consistently\nreduces this interference, lowering D@1 to 0.3495, 0.3846, and 0.4796 across the three backbones.\nIt also reduces RankGap by more than three points on GPT-4.1-mini and Qwen3-8B and by nearly\nthree points on Qwen2.5-3B, while improving GT R@10 across all backbones. These results show\nthat RaMem suppresses context-invalid memories without losing the answer-supporting memory,\ndirectly supporting our claim that contextual reinstatement ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Context Collapse Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e517af08006cd9908b9ac6d778f4310c636d5b658b060d1f37a698daa4028bda",
+            "evidence_id": "E73967383527d2121-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Context Collapse Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 8,
+                "section": "Context Collapse Analysis",
+                "section_index": 20,
+                "start": 894,
+                "text": "0.8302 22.0116\nQwen3-8B\nAll Verified GT\nOriginal0.4522 0.6925 0.4502 0.3702 2.1427\nShuffle temporal 0.4287 0.6204 0.4116 0.6518 5.7768\nShuffle full context 0.4347 0.6157 0.4053 0.6631 5.7634\nTemporal-triggered\nOriginal0.5317 0.7170 0.4271 0.2736 1.2350\nShuffle temporal 0.4081 0.1840 0.1250 0.8726 22.9595\nShuffle full context 0.4134 0.1840 0.1242 0.8868 23.0952\nentities, topics, or keywords with the query but fail its evidence conditions. RaMem consistently\nreduces this interference, lowering D@1 to 0.3495, 0.3846, and 0.4796 across the three backbones.\nIt also reduces RankGap by more than three points on GPT-4.1-mini and Qwen3-8B and by nearly\nthree points on Qwen2.5-3B, while improving GT R@10 across all backbones. These results show\nthat RaMem suppresses context-invalid memories without losing the answer-supporting memory,\ndirectly supporting our claim that contextual reinstatement "
+              }
+            ],
+            "text": "0.8302 22.0116\nQwen3-8B\nAll Verified GT\nOriginal0.4522 0.6925 0.4502 0.3702 2.1427\nShuffle temporal 0.4287 0.6204 0.4116 0.6518 5.7768\nShuffle full context 0.4347 0.6157 0.4053 0.6631 5.7634\nTemporal-triggered\nOriginal0.5317 0.7170 0.4271 0.2736 1.2350\nShuffle temporal 0.4081 0.1840 0.1250 0.8726 22.9595\nShuffle full context 0.4134 0.1840 0.1242 0.8868 23.0952\nentities, topics, or keywords with the query but fail its evidence conditions. RaMem consistently\nreduces this interference, lowering D@1 to 0.3495, 0.3846, and 0.4796 across the three backbones.\nIt also reduces RankGap by more than three points on GPT-4.1-mini and Qwen3-8B and by nearly\nthree points on Qwen2.5-3B, while improving GT R@10 across all backbones. These results show\nthat RaMem suppresses context-invalid memories without losing the answer-supporting memory,\ndirectly supporting our claim that contextual reinstatement "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0041"
+        ],
+        "excerpt": "GPT-4.1-mini and from 0.7170 to 0.1840 on Qwen3-8B, while D@1 rises from 0.2642\nto 0.8160 and from 0.2736 to 0.8726, respectively. Full-context shuffling follows the same pattern,\nsuggesting that the dominant failure comes from corrupted session-level temporal grounding. These\nresults show that contextual metadata is not decorative prompt information; it must remain correctly\nbound to memory content to guide retrieval toward the correct episode.\n8\nFigure 4: Sensitivity to the temporal reinstatement window. Each subplot shows the effect of varying\nthe temporal buffer on F1 and GT R@10.\nTable 4: Component analysis on the temporal-triggered subset. We report the most diagnostic\nablations in the main text. Lower is better for D@1 and RankGap.\nBackbone Variant F1\u2191BLEU1\u2191GT R@10\u2191D@1\u2193RankGap\u2193\nGPT-4.1-mini\nFull0.5957 0.5319 0.8066 0.2736 1.0354\nw/o Session Context 0.5596 0.4922 0.5708 0.5189 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Context Shuffle Test",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "911ae8e836a07fd3a8645b6740c8d10321ef29aece903f9476c48169727a0482",
+            "evidence_id": "E73967383527d2121-B0041",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Context Shuffle Test",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1341,
+                "page": 8,
+                "section": "Context Shuffle Test",
+                "section_index": 21,
+                "start": 890,
+                "text": "GPT-4.1-mini and from 0.7170 to 0.1840 on Qwen3-8B, while D@1 rises from 0.2642\nto 0.8160 and from 0.2736 to 0.8726, respectively. Full-context shuffling follows the same pattern,\nsuggesting that the dominant failure comes from corrupted session-level temporal grounding. These\nresults show that contextual metadata is not decorative prompt information; it must remain correctly\nbound to memory content to guide retrieval toward the correct episode.\n8"
+              },
+              {
+                "end": 444,
+                "page": 9,
+                "section": "Context Shuffle Test",
+                "section_index": 22,
+                "start": 0,
+                "text": "Figure 4: Sensitivity to the temporal reinstatement window. Each subplot shows the effect of varying\nthe temporal buffer on F1 and GT R@10.\nTable 4: Component analysis on the temporal-triggered subset. We report the most diagnostic\nablations in the main text. Lower is better for D@1 and RankGap.\nBackbone Variant F1\u2191BLEU1\u2191GT R@10\u2191D@1\u2193RankGap\u2193\nGPT-4.1-mini\nFull0.5957 0.5319 0.8066 0.2736 1.0354\nw/o Session Context 0.5596 0.4922 0.5708 0.5189 "
+              }
+            ],
+            "text": "GPT-4.1-mini and from 0.7170 to 0.1840 on Qwen3-8B, while D@1 rises from 0.2642\nto 0.8160 and from 0.2736 to 0.8726, respectively. Full-context shuffling follows the same pattern,\nsuggesting that the dominant failure comes from corrupted session-level temporal grounding. These\nresults show that contextual metadata is not decorative prompt information; it must remain correctly\nbound to memory content to guide retrieval toward the correct episode.\n8\nFigure 4: Sensitivity to the temporal reinstatement window. Each subplot shows the effect of varying\nthe temporal buffer on F1 and GT R@10.\nTable 4: Component analysis on the temporal-triggered subset. We report the most diagnostic\nablations in the main text. Lower is better for D@1 and RankGap.\nBackbone Variant F1\u2191BLEU1\u2191GT R@10\u2191D@1\u2193RankGap\u2193\nGPT-4.1-mini\nFull0.5957 0.5319 0.8066 0.2736 1.0354\nw/o Session Context 0.5596 0.4922 0.5708 0.5189 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0042"
+        ],
+        "excerpt": "10.0492\nw/o Context-Aware Ranking 0.5693 0.5018 0.5708 0.5283 12.6332\nw/o Context-Preserved Generation 0.5626 0.4968 0.8066 0.2736 1.0354\nQwen3-8B\nFull0.5226 0.4695 0.7217 0.2783 1.1685\nw/o Session Context 0.4578 0.4097 0.4245 0.5849 11.9565\nw/o Context-Aware Ranking 0.4642 0.4162 0.4434 0.5755 14.7735\nw/o Context-Preserved Generation 0.4248 0.3567 0.7217 0.2783 1.1685",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Context Shuffle Test",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c8540d069a84e685dea5013a0d44484bfe9ca6dcba67cc56136a448c85579bb9",
+            "evidence_id": "E73967383527d2121-B0042",
+            "pages": [
+              9
+            ],
+            "section": "Context Shuffle Test",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 815,
+                "page": 9,
+                "section": "Context Shuffle Test",
+                "section_index": 22,
+                "start": 444,
+                "text": "10.0492\nw/o Context-Aware Ranking 0.5693 0.5018 0.5708 0.5283 12.6332\nw/o Context-Preserved Generation 0.5626 0.4968 0.8066 0.2736 1.0354\nQwen3-8B\nFull0.5226 0.4695 0.7217 0.2783 1.1685\nw/o Session Context 0.4578 0.4097 0.4245 0.5849 11.9565\nw/o Context-Aware Ranking 0.4642 0.4162 0.4434 0.5755 14.7735\nw/o Context-Preserved Generation 0.4248 0.3567 0.7217 0.2783 1.1685"
+              }
+            ],
+            "text": "10.0492\nw/o Context-Aware Ranking 0.5693 0.5018 0.5708 0.5283 12.6332\nw/o Context-Preserved Generation 0.5626 0.4968 0.8066 0.2736 1.0354\nQwen3-8B\nFull0.5226 0.4695 0.7217 0.2783 1.1685\nw/o Session Context 0.4578 0.4097 0.4245 0.5849 11.9565\nw/o Context-Aware Ranking 0.4642 0.4162 0.4434 0.5755 14.7735\nw/o Context-Preserved Generation 0.4248 0.3567 0.7217 0.2783 1.1685"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0074"
+        ],
+        "excerpt": "This work studies contextual reinstatement for long-term agent memory under textual interaction\nhistories. The current instantiation primarily relies on session-level temporal grounding, participant\nand entity cues, and structured memory fields to determine whether retrieved memories are contextu-\nally valid evidence. Richer forms of context, such as causal dependencies, affective states, evolving\ntask goals, or implicit social relations, may require more expressive memory representations and\ngrounding mechanisms. The framework also depends on the quality of upstream memory extraction\nand query analysis. Missing episodic conditions in the memory bank, or incorrectly grounded recall\nconditions from the query, can still limit retrieval quality. In addition, contextual verification intro-\nduces design choices about how strictly recall conditions should constrain retrieval and how ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "60bec4ad2b79300af93a4ec81e268a34811510edd2a7fe9f6da84bfd344208f3",
+            "evidence_id": "E73967383527d2121-B0074",
+            "pages": [
+              16
+            ],
+            "section": "Appendix: Limitations",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 16,
+                "section": "Appendix: Limitations",
+                "section_index": 35,
+                "start": 0,
+                "text": "This work studies contextual reinstatement for long-term agent memory under textual interaction\nhistories. The current instantiation primarily relies on session-level temporal grounding, participant\nand entity cues, and structured memory fields to determine whether retrieved memories are contextu-\nally valid evidence. Richer forms of context, such as causal dependencies, affective states, evolving\ntask goals, or implicit social relations, may require more expressive memory representations and\ngrounding mechanisms. The framework also depends on the quality of upstream memory extraction\nand query analysis. Missing episodic conditions in the memory bank, or incorrectly grounded recall\nconditions from the query, can still limit retrieval quality. In addition, contextual verification intro-\nduces design choices about how strictly recall conditions should constrain retrieval and how "
+              }
+            ],
+            "text": "This work studies contextual reinstatement for long-term agent memory under textual interaction\nhistories. The current instantiation primarily relies on session-level temporal grounding, participant\nand entity cues, and structured memory fields to determine whether retrieved memories are contextu-\nally valid evidence. Richer forms of context, such as causal dependencies, affective states, evolving\ntask goals, or implicit social relations, may require more expressive memory representations and\ngrounding mechanisms. The framework also depends on the quality of upstream memory extraction\nand query analysis. Missing episodic conditions in the memory bank, or incorrectly grounded recall\nconditions from the query, can still limit retrieval quality. In addition, contextual verification intro-\nduces design choices about how strictly recall conditions should constrain retrieval and how "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0124"
+        ],
+        "excerpt": "backbones. On GPT-4o, RaMem improves average F1\nby 12.60 points and average BLEU by 16.35 points over SimpleMem. It also achieves the best F1\nin MultiHop, Temporal, and OpenDomain categories, while remaining competitive with the full-\nhistory LoCoMo setting on SingleHop questions. On GPT-4.1-mini, RaMem improves average F1\nby 10.99 points and average BLEU by 8.24 points. The largest category-level improvements appear\nin OpenDomain and SingleHop questions, where F1 increases from 19.76 to 26.35 and from 51.12\n25\nTable 5: Performance comparison on LongMemEval-S. Following the SimpleMem protocol, we use\ngpt-4.1-mini as the LLM judge and report accuracy across temporal, multi-session, knowledge-\nupdate, and single-session memory categories.\nCategory Full-context Mem0 LightMem SimpleMem RaMem\nTemporal 27.06 40.60 85.71 83.4686.47\nMulti-Session 30.08 50.37 47.37 60.92 65.41\nKnowledge-Update ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 25,
+        "pages": [
+          25,
+          26
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Analysis Of Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "567495653cba9efe08097692fd4f19ff5e1f6c6744ca0374c6c94fcff498cba9",
+            "evidence_id": "E73967383527d2121-B0124",
+            "pages": [
+              25,
+              26
+            ],
+            "section": "Appendix: Analysis Of Main Results",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1413,
+                "page": 25,
+                "section": "Appendix: Analysis Of Main Results",
+                "section_index": 57,
+                "start": 897,
+                "text": "backbones. On GPT-4o, RaMem improves average F1\nby 12.60 points and average BLEU by 16.35 points over SimpleMem. It also achieves the best F1\nin MultiHop, Temporal, and OpenDomain categories, while remaining competitive with the full-\nhistory LoCoMo setting on SingleHop questions. On GPT-4.1-mini, RaMem improves average F1\nby 10.99 points and average BLEU by 8.24 points. The largest category-level improvements appear\nin OpenDomain and SingleHop questions, where F1 increases from 19.76 to 26.35 and from 51.12\n25"
+              },
+              {
+                "end": 381,
+                "page": 26,
+                "section": "Appendix: Analysis Of Main Results",
+                "section_index": 58,
+                "start": 0,
+                "text": "Table 5: Performance comparison on LongMemEval-S. Following the SimpleMem protocol, we use\ngpt-4.1-mini as the LLM judge and report accuracy across temporal, multi-session, knowledge-\nupdate, and single-session memory categories.\nCategory Full-context Mem0 LightMem SimpleMem RaMem\nTemporal 27.06 40.60 85.71 83.4686.47\nMulti-Session 30.08 50.37 47.37 60.92 65.41\nKnowledge-Update "
+              }
+            ],
+            "text": "backbones. On GPT-4o, RaMem improves average F1\nby 12.60 points and average BLEU by 16.35 points over SimpleMem. It also achieves the best F1\nin MultiHop, Temporal, and OpenDomain categories, while remaining competitive with the full-\nhistory LoCoMo setting on SingleHop questions. On GPT-4.1-mini, RaMem improves average F1\nby 10.99 points and average BLEU by 8.24 points. The largest category-level improvements appear\nin OpenDomain and SingleHop questions, where F1 increases from 19.76 to 26.35 and from 51.12\n25\nTable 5: Performance comparison on LongMemEval-S. Following the SimpleMem protocol, we use\ngpt-4.1-mini as the LLM judge and report accuracy across temporal, multi-session, knowledge-\nupdate, and single-session memory categories.\nCategory Full-context Mem0 LightMem SimpleMem RaMem\nTemporal 27.06 40.60 85.71 83.4686.47\nMulti-Session 30.08 50.37 47.37 60.92 65.41\nKnowledge-Update "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0125"
+        ],
+        "excerpt": "41.03 69.2392.3079.48 83.33\nSingle-Session-User 47.14 87.14 88.5785.71 87.14\nSingle-Session-Assistant 32.14 48.21 21.43 75.00 78.57\nSingle-Session-Preference 60.00 63.33 76.67 76.67 80.00\nAverage 39.57 59.81 68.67 76.87 80.15\nto 58.14, respectively. This suggests that contextual reinstatement is not merely helping temporally\nphrased questions. It also helps the model select the correct episode or state when multiple memories\nshare entities or topics.\nOpen-source models show the same pattern. On Qwen3-8B, RaMem improves average F1 by 11.10\npoints and average BLEU by 8.33 points over SimpleMem. The method improves MultiHop F1\nfrom 28.97 to 36.10 and SingleHop F1 from 46.62 to 50.59, showing that contextually valid retrieval\nbenefits both compositional reasoning and direct factual lookup. On Qwen2.5-3B, RaMem improves\naverage F1 from 17.98 to 24.65 and average BLEU from 14.89 to 19.44. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 26,
+        "pages": [
+          26
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Analysis Of Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bd380543732b3c041cb0358fa8c69ce0cbdc56bb258fe2b3f3c7cab665a1dc4c",
+            "evidence_id": "E73967383527d2121-B0125",
+            "pages": [
+              26
+            ],
+            "section": "Appendix: Analysis Of Main Results",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1277,
+                "page": 26,
+                "section": "Appendix: Analysis Of Main Results",
+                "section_index": 58,
+                "start": 381,
+                "text": "41.03 69.2392.3079.48 83.33\nSingle-Session-User 47.14 87.14 88.5785.71 87.14\nSingle-Session-Assistant 32.14 48.21 21.43 75.00 78.57\nSingle-Session-Preference 60.00 63.33 76.67 76.67 80.00\nAverage 39.57 59.81 68.67 76.87 80.15\nto 58.14, respectively. This suggests that contextual reinstatement is not merely helping temporally\nphrased questions. It also helps the model select the correct episode or state when multiple memories\nshare entities or topics.\nOpen-source models show the same pattern. On Qwen3-8B, RaMem improves average F1 by 11.10\npoints and average BLEU by 8.33 points over SimpleMem. The method improves MultiHop F1\nfrom 28.97 to 36.10 and SingleHop F1 from 46.62 to 50.59, showing that contextually valid retrieval\nbenefits both compositional reasoning and direct factual lookup. On Qwen2.5-3B, RaMem improves\naverage F1 from 17.98 to 24.65 and average BLEU from 14.89 to 19.44. "
+              }
+            ],
+            "text": "41.03 69.2392.3079.48 83.33\nSingle-Session-User 47.14 87.14 88.5785.71 87.14\nSingle-Session-Assistant 32.14 48.21 21.43 75.00 78.57\nSingle-Session-Preference 60.00 63.33 76.67 76.67 80.00\nAverage 39.57 59.81 68.67 76.87 80.15\nto 58.14, respectively. This suggests that contextual reinstatement is not merely helping temporally\nphrased questions. It also helps the model select the correct episode or state when multiple memories\nshare entities or topics.\nOpen-source models show the same pattern. On Qwen3-8B, RaMem improves average F1 by 11.10\npoints and average BLEU by 8.33 points over SimpleMem. The method improves MultiHop F1\nfrom 28.97 to 36.10 and SingleHop F1 from 46.62 to 50.59, showing that contextually valid retrieval\nbenefits both compositional reasoning and direct factual lookup. On Qwen2.5-3B, RaMem improves\naverage F1 from 17.98 to 24.65 and average BLEU from 14.89 to 19.44. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0130"
+        ],
+        "excerpt": "D@1\u2193AvgD@5\u2193RankGap\u2193GT R@10\u2191F1\u2191\nGPT-4.1-mini SimpleMem 0.4366 3.4514 5.4135 0.6842 0.5107Ours0.3495 3.1336 2.1502 0.7510 0.5290\nQwen3-8B SimpleMem 0.4588 3.3909 6.1638 0.6036 0.4117Ours0.3846 3.0589 2.4664 0.6826 0.4489\nQwen2.5-3B SimpleMem 0.5414 3.6317 6.4248 0.5676 0.2207Ours0.4796 3.3554 3.5679 0.6246 0.2281\nTable 7: Full context collapse analysis. The baseline is SimpleMem. D@K measures whether at least\none context distractor appears in the top-K retrieved memories. AvgDTop5 is the average number of\ncontext distractors in the top-5 memories. RankGap is the rank of the ground-truth memory minus\nthe rank of the best context distractor. Lower values are better for D@K, AvgDTop5, and RankGap.\nSetting Backbone Method N D@1\u2193D@3\u2193D@5\u2193AvgDTop5\u2193RankGap\u2193GT R@5\u2191GT R@10\u2191MRR\u2191F1\u2191\nAll Verified GT\nQwen3-8B SimpleMem 1499 0.4416 0.8599 0.9626 3.2642 5.6976 0.5243 0.6144 0.3991 0.4138Ours 14990.3702 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 27,
+        "pages": [
+          27
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Context Collapse Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1eb10b5857c240d112f65c54b9f72d29232d1fee2914cd0c8d7971779522c6bf",
+            "evidence_id": "E73967383527d2121-B0130",
+            "pages": [
+              27
+            ],
+            "section": "Appendix: Context Collapse Analysis",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1168,
+                "page": 27,
+                "section": "Appendix: Context Collapse Analysis",
+                "section_index": 60,
+                "start": 270,
+                "text": "D@1\u2193AvgD@5\u2193RankGap\u2193GT R@10\u2191F1\u2191\nGPT-4.1-mini SimpleMem 0.4366 3.4514 5.4135 0.6842 0.5107Ours0.3495 3.1336 2.1502 0.7510 0.5290\nQwen3-8B SimpleMem 0.4588 3.3909 6.1638 0.6036 0.4117Ours0.3846 3.0589 2.4664 0.6826 0.4489\nQwen2.5-3B SimpleMem 0.5414 3.6317 6.4248 0.5676 0.2207Ours0.4796 3.3554 3.5679 0.6246 0.2281\nTable 7: Full context collapse analysis. The baseline is SimpleMem. D@K measures whether at least\none context distractor appears in the top-K retrieved memories. AvgDTop5 is the average number of\ncontext distractors in the top-5 memories. RankGap is the rank of the ground-truth memory minus\nthe rank of the best context distractor. Lower values are better for D@K, AvgDTop5, and RankGap.\nSetting Backbone Method N D@1\u2193D@3\u2193D@5\u2193AvgDTop5\u2193RankGap\u2193GT R@5\u2191GT R@10\u2191MRR\u2191F1\u2191\nAll Verified GT\nQwen3-8B SimpleMem 1499 0.4416 0.8599 0.9626 3.2642 5.6976 0.5243 0.6144 0.3991 0.4138Ours 14990.3702 "
+              }
+            ],
+            "text": "D@1\u2193AvgD@5\u2193RankGap\u2193GT R@10\u2191F1\u2191\nGPT-4.1-mini SimpleMem 0.4366 3.4514 5.4135 0.6842 0.5107Ours0.3495 3.1336 2.1502 0.7510 0.5290\nQwen3-8B SimpleMem 0.4588 3.3909 6.1638 0.6036 0.4117Ours0.3846 3.0589 2.4664 0.6826 0.4489\nQwen2.5-3B SimpleMem 0.5414 3.6317 6.4248 0.5676 0.2207Ours0.4796 3.3554 3.5679 0.6246 0.2281\nTable 7: Full context collapse analysis. The baseline is SimpleMem. D@K measures whether at least\none context distractor appears in the top-K retrieved memories. AvgDTop5 is the average number of\ncontext distractors in the top-5 memories. RankGap is the rank of the ground-truth memory minus\nthe rank of the best context distractor. Lower values are better for D@K, AvgDTop5, and RankGap.\nSetting Backbone Method N D@1\u2193D@3\u2193D@5\u2193AvgDTop5\u2193RankGap\u2193GT R@5\u2191GT R@10\u2191MRR\u2191F1\u2191\nAll Verified GT\nQwen3-8B SimpleMem 1499 0.4416 0.8599 0.9626 3.2642 5.6976 0.5243 0.6144 0.3991 0.4138Ours 14990.3702 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E73967383527d2121-B0131"
+        ],
+        "excerpt": "0.8025 0.9320 2.9533 2.1427 0.6011 0.6925 0.4502 0.4522\nQwen2.5-3B SimpleMem 1503 0.5223 0.8862 0.9647 3.5037 6.0253 0.4970 0.5768 0.3773 0.2250Ours 15020.4627 0.8329 0.9427 3.2550 3.3185 0.5473 0.6332 0.4112 0.2315\nGPT-4.1-mini SimpleMem 1514 0.4273 0.8943 0.9789 3.3785 5.1934 0.6156 0.6896 0.4751 0.5109Ours 15140.3428 0.8309 0.9551 3.0773 2.0278 0.6737 0.7550 0.5323 0.5291\nContext-Confusable\nQwen3-8B SimpleMem 1443 0.4588 0.8933 1.0000 3.3909 6.1638 0.5100 0.6036 0.3926 0.4117Ours 14430.3846 0.8337 0.9605 3.0589 2.4664 0.5925 0.6826 0.4452 0.4489\nQwen2.5-3B SimpleMem 1450 0.5414 0.9186 1.0000 3.6317 6.4248 0.4862 0.5676 0.3735 0.2207Ours 14490.4796 0.8585 0.9655 3.3554 3.5679 0.5411 0.6246 0.4094 0.2281\nGPT-4.1-mini SimpleMem 1482 0.4366 0.9136 1.0000 3.4514 5.4135 0.6093 0.6842 0.4740 0.5107Ours 14820.3495 0.8468 0.9669 3.1336 2.1502 0.6694 0.7510 0.5330 0.5290\nsession mismatch. This ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 27,
+        "pages": [
+          27
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Context Collapse Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5d6e93e4c224beec1820e9573d3b3b8c75032b9e4f918190b0fb8193b5576e06",
+            "evidence_id": "E73967383527d2121-B0131",
+            "pages": [
+              27
+            ],
+            "section": "Appendix: Context Collapse Analysis",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2068,
+                "page": 27,
+                "section": "Appendix: Context Collapse Analysis",
+                "section_index": 60,
+                "start": 1168,
+                "text": "0.8025 0.9320 2.9533 2.1427 0.6011 0.6925 0.4502 0.4522\nQwen2.5-3B SimpleMem 1503 0.5223 0.8862 0.9647 3.5037 6.0253 0.4970 0.5768 0.3773 0.2250Ours 15020.4627 0.8329 0.9427 3.2550 3.3185 0.5473 0.6332 0.4112 0.2315\nGPT-4.1-mini SimpleMem 1514 0.4273 0.8943 0.9789 3.3785 5.1934 0.6156 0.6896 0.4751 0.5109Ours 15140.3428 0.8309 0.9551 3.0773 2.0278 0.6737 0.7550 0.5323 0.5291\nContext-Confusable\nQwen3-8B SimpleMem 1443 0.4588 0.8933 1.0000 3.3909 6.1638 0.5100 0.6036 0.3926 0.4117Ours 14430.3846 0.8337 0.9605 3.0589 2.4664 0.5925 0.6826 0.4452 0.4489\nQwen2.5-3B SimpleMem 1450 0.5414 0.9186 1.0000 3.6317 6.4248 0.4862 0.5676 0.3735 0.2207Ours 14490.4796 0.8585 0.9655 3.3554 3.5679 0.5411 0.6246 0.4094 0.2281\nGPT-4.1-mini SimpleMem 1482 0.4366 0.9136 1.0000 3.4514 5.4135 0.6093 0.6842 0.4740 0.5107Ours 14820.3495 0.8468 0.9669 3.1336 2.1502 0.6694 0.7510 0.5330 0.5290\nsession mismatch. This "
+              }
+            ],
+            "text": "0.8025 0.9320 2.9533 2.1427 0.6011 0.6925 0.4502 0.4522\nQwen2.5-3B SimpleMem 1503 0.5223 0.8862 0.9647 3.5037 6.0253 0.4970 0.5768 0.3773 0.2250Ours 15020.4627 0.8329 0.9427 3.2550 3.3185 0.5473 0.6332 0.4112 0.2315\nGPT-4.1-mini SimpleMem 1514 0.4273 0.8943 0.9789 3.3785 5.1934 0.6156 0.6896 0.4751 0.5109Ours 15140.3428 0.8309 0.9551 3.0773 2.0278 0.6737 0.7550 0.5323 0.5291\nContext-Confusable\nQwen3-8B SimpleMem 1443 0.4588 0.8933 1.0000 3.3909 6.1638 0.5100 0.6036 0.3926 0.4117Ours 14430.3846 0.8337 0.9605 3.0589 2.4664 0.5925 0.6826 0.4452 0.4489\nQwen2.5-3B SimpleMem 1450 0.5414 0.9186 1.0000 3.6317 6.4248 0.4862 0.5676 0.3735 0.2207Ours 14490.4796 0.8585 0.9655 3.3554 3.5679 0.5411 0.6246 0.4094 0.2281\nGPT-4.1-mini SimpleMem 1482 0.4366 0.9136 1.0000 3.4514 5.4135 0.6093 0.6842 0.4740 0.5107Ours 14820.3495 0.8468 0.9669 3.1336 2.1502 0.6694 0.7510 0.5330 0.5290\nsession mismatch. This "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.22844",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7165816678",
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Objective token-overlap metrics and ground-truth memory-index diagnostics on established external benchmarks corroborate the reported gains, and the LongMemEval-S judge is a separate evaluation signal from the system's retrieval and generation pipeline.",
+          "final_evaluation_signal": "Headline outcomes are established by token-level F1 and BLEU-1 on LoCoMo, verified ground-truth retrieval diagnostics, and GPT-4.1-mini judge accuracy on LongMemEval-S.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system is a hand-designed, prompt-based and rule-based pipeline with no end-to-end parameter training, reward modeling, or benchmark-driven selection reported; design choices such as the temporal buffer are tuned but the headline outcome is not optimized against a learned or automated evaluator.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E73967383527d2121-B0002",
+          "E73967383527d2121-B0003",
+          "E73967383527d2121-B0009",
+          "E73967383527d2121-B0014",
+          "E73967383527d2121-B0017",
+          "E73967383527d2121-B0021",
+          "E73967383527d2121-B0025",
+          "E73967383527d2121-B0026",
+          "E73967383527d2121-B0027",
+          "E73967383527d2121-B0030",
+          "E73967383527d2121-B0031",
+          "E73967383527d2121-B0037",
+          "E73967383527d2121-B0038",
+          "E73967383527d2121-B0041",
+          "E73967383527d2121-B0042",
+          "E73967383527d2121-B0074",
+          "E73967383527d2121-B0124",
+          "E73967383527d2121-B0125",
+          "E73967383527d2121-B0130",
+          "E73967383527d2121-B0131"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "895e408a6a0e6124515c8dc07321d147d3f3515bd3aadb76a1975b719627a147"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7165816678",
+        "claim_evidence_alignment": "Claims that RaMem mitigates context collapse and improves answer accuracy/evidence retrieval over strong structured-memory baselines like SimpleMem are directly corroborated by empirical gains across both proprietary and open-source models.",
+        "context_id": "73967383527d2121e6a9d80a34b3acd76d7184af6fe08596463930291321c3af",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation is robust and comprehensive across multiple models (GPT-4o, GPT-4.1-mini, Qwen3-8B, Qwen2.5-3B) on LoCoMo and LongMemEval-S benchmarks. The authors report token-level metrics (F1, BLEU-1), retrieval diagnostics (Recall@K, MRR), distractor analysis (D@1, RankGap), context shuffling, and ablation studies isolating component effects.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely on established external benchmark datasets (LoCoMo, LongMemEval) with objective token-level matching (F1, BLEU-1) and ground-truth index retrieval metrics.",
+          "final_evaluation_signal": "Token-level F1 and BLEU-1 on the LoCoMo benchmark, verified ground-truth retrieval diagnostics (Recall@K, MRR, D@1), and GPT-4.1-mini LLM-as-a-judge accuracy on LongMemEval-S.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Rule-based/prompt-based heuristic and modular pipeline design without end-to-end parameter training or internal optimization against the benchmark evaluation metrics.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E73967383527d2121-B0002",
+          "E73967383527d2121-B0003",
+          "E73967383527d2121-B0009",
+          "E73967383527d2121-B0014",
+          "E73967383527d2121-B0017",
+          "E73967383527d2121-B0021",
+          "E73967383527d2121-B0025",
+          "E73967383527d2121-B0026",
+          "E73967383527d2121-B0027",
+          "E73967383527d2121-B0030",
+          "E73967383527d2121-B0031",
+          "E73967383527d2121-B0037",
+          "E73967383527d2121-B0038",
+          "E73967383527d2121-B0041",
+          "E73967383527d2121-B0042",
+          "E73967383527d2121-B0074",
+          "E73967383527d2121-B0124",
+          "E73967383527d2121-B0125",
+          "E73967383527d2121-B0130",
+          "E73967383527d2121-B0131"
+        ],
+        "limitations": "The authors explicitly discuss reliance on session-level temporal grounding and prompt extraction quality, ambiguity handling in query analysis, and the restriction to text benchmarks rather than multimodal or deployed tool-use environments.",
+        "method_assessment": "The methodology is thoroughly detailed, describing episodic evidence unit schema construction, prompt-based extraction, query recall condition induction, selective activation based on grounded cues, session-overlap candidate filtering, and context-preserved answer generation.",
+        "quality_rationale": "The manuscript presents a scoped conceptual framing ('context collapse'), provides an explicit and reproducible architecture, and validates claims through extensive multi-model benchmarking, retrieval-level diagnostics, context-shuffle counterfactuals, and ablation experiments.",
+        "scoped_contribution": "The paper introduces RaMem (Contextual Reinstatement for Agentic Memory), an episodic memory framework designed to mitigate context collapse by anchoring memories to episodic metadata (session spans, event/mention times, entities), inducing recall frames from queries, prioritizing validity-aware evidence, and retaining structured context during synthesis.",
+        "source_content_hash": "895e408a6a0e6124515c8dc07321d147d3f3515bd3aadb76a1975b719627a147"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a scoped conceptual framing ('context collapse'), provides an explicit and reproducible architecture, and validates claims through extensive multi-model benchmarking, retrieval-level diagnostics, context-shuffle counterfactuals, and ablation experiments.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "895e408a6a0e6124515c8dc07321d147d3f3515bd3aadb76a1975b719627a147",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly discuss reliance on session-level temporal grounding and prompt extraction quality, ambiguity handling in query analysis, and the restriction to text benchmarks rather than multimodal or deployed tool-use environments."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -177,7 +2807,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

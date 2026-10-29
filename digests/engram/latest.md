@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-28](2026-10-28.md).
+Latest daily digest: [2026-10-29](2026-10-29.md).
 
-# Paper Scout Digest - 2026-10-28
+# Paper Scout Digest - 2026-10-29
 
 ## Run Summary
 
-- **Run ID:** 55
-- **Candidates fetched:** 89
+- **Run ID:** 56
+- **Candidates fetched:** 90
 - **New unique papers:** 80
-- **Relevant:** 10
+- **Relevant:** 12
 - **Maybe relevant:** 0
-- **Irrelevant:** 79
-- **Source summary:** arxiv: 5, openalex: 82, semantic_scholar: 2
+- **Irrelevant:** 78
+- **Source summary:** arxiv: 4, openalex: 83, semantic_scholar: 3
 
 ## Source Warnings
 
@@ -20,18 +20,8 @@ Latest daily digest: [2026-10-28](2026-10-28.md).
 - openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
 - openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'Engram'; single-page record limit reached.
-- semantic_scholar failed for 'conditional memory language model': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
-- semantic_scholar failed for 'tokenizer-agnostic Engram': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
 
-## Highly Relevant
-
-### [Let the Gate Decide: Per-Lookup Precision for Quantized Conditional Memory in LLMs](https://arxiv.org/abs/2610.35985v1)
-
-- **Authors:** Tianqi Chen, Xunchao Li, Linchuan Xie, Guanghua Yu, Jianchen Zhu, Peisong Wang, et al.
-- **Date:** 2026-10-26
-- **Source:** arxiv
-- **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
-- **Tags:** engram, conditional-memory, hashed-ngram-memory
-- **Abstract summary:** Conditional memory layers, such as DeepSeek's Engram, attach large hashed n-gram tables to a language model, and removing them from DeepSeek-V4.1-Flash costs 36.8 PopQA points. Low-bit quantization loses long-tail facts first, and the standard remedy, giving more bits to frequently accessed rows, backfires: refining...
+No new relevant or maybe-relevant papers found.

@@ -64,16 +64,234 @@
             <p>Long-term memory has become increasingly important for LLM agents that operate across extended interactions and evolving task contexts. Recent memory systems have made past experiences more persistent, compact, and retrievable, but retrieval alone does not ensure that a memory provides valid evidence for the current...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a scoped conceptual framing (&#x27;context collapse&#x27;), provides an explicit and reproducible architecture, and validates claims through extensive multi-model benchmarking, retrieval-level diagnostics, context-shuffle counterfactuals, and ablation experiments.</p>
+      <p>The authors explicitly discuss reliance on session-level temporal grounding and prompt extraction quality, ambiguity handling in query analysis, and the restriction to text benchmarks rather than multimodal or deployed tool-use environments.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-29T10:45:33.197070+00:00.</p>
+        <p>Coverage: 132637 of 132637 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory has become increasingly important for LLM agents that operate
+across extended interactions and evolving task contexts. Recent memory systems
+have made past experiences more persistent, compact, and retrievable, but retrieval
+alone does not ensure that a memory provides valid evidence for the current
+query. When experiences are compressed into reusable fragments, memories from
+different situations may appear equally relevant if they involve recurring entities
+or user states. We refer to this failure ascontext collapse: memories lose the
+surrounding context needed to judge whether they provide valid evidence for the
+current query. To address this problem, we proposeContextual Reinstatement for
+Agentic Memory (RaMem), a framework that turns retrieved memory fragments
+into contextually verifiable evidence. RaMem operates through four coordinated
+stages: (i)evidence </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>anchoringgrounds each memory in its original episodic
+conditions, especially event time, mention time, session span, and participants; (ii)
+recall condition inductionderives the evidence conditions implied by the query;
+(iii)validity-aware retrievaluses these conditions to prioritize context-compatible
+memories while retaining content-relevant candidates as fallback evidence; and
+(iv)context-preserved synthesiskeeps the selected memories&#x27; structured context
+available to the generator. Experiments on long-term memory benchmarks show
+that RaMem consistently improves performance over strong memory baselines,
+with average F1 gains of more than 10% across several backbones. Code is available
+athttps://github.com/weiyang930/RaMem-Release.git.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mention time, session span, and participants. Second,
+Recall Condition Inductiondecomposes the query into an information need and a contextual
+recall frame that specifies what valid evidence should satisfy. Third,Validity-Aware Retrieval
+prioritizes memories whose episodic coordinates match the recall frame while retaining content-
+relevant candidates as fallback evidence. Finally,Context-Preserved Synthesispasses the selected
+memories to the generator with their structured context intact. Because contextual cues can be
+incomplete or noisy, RaMem applies reinstatement selectively and activates context-aware retrieval
+only when the relevant cues can be grounded reliably.
+The main contributions of this work are as follows:
+2
+• We identifycontext collapseas a central failure mode of long-term agent memory: memories
+can appear relevant but be misused as evidence when the agent cannot verify </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A central source of context collapse is that memory units often become reusable fragments whose
+applicability conditions are weakly represented. Although such fragments may preserve useful
+content, they do not expose enough context to verify when the content can serve as evidence. RaMem
+therefore anchors each memory to the conditions under which it was observed, forming anepisodic
+evidence unit. Each memory mi consists of a content field xi and an episodic context field ei:
+mi = (xi, ei). The content xi is a self-contained restatement of the remembered information, while
+ei records the coordinates needed for contextual verification:
+ei ={τ eventi , τmentioni , τsessioni , pi, ℓi, ui, zi}.(1)
+Here τ eventi is the time of the described event when inferable,τ mentioni denotes an explicitly mentioned
+temporal cue when available, andτ sessioni = [sstarti , sendi ] is the session span in </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A query specifies not only what information is needed, but also the conditions under which a memory
+can serve as valid evidence. These conditions may be either explicit or implicit: explicit anchors
+include named entities or dates, while implicit anchors arise from temporal cues, referenced events,
+or evolving user state. Therefore, we map each query q into an information need rq and a contextual
+recall frame cq: q7→(r q, cq). The information need rq captures what is being requested, while cq
+records the recall conditions that constrain which episode can provide valid evidence:
+cq ={ˆτq,ˆpq, ˆℓq,ˆuq,ˆzq}.(2)
+Here ˆτq is a grounded time range when inferable, ˆpq denotes people or participants, ˆℓq denotes
+locations,ˆuq denotes entities, andˆzq denotes topic or episode hints.
+The recall frame separates the requested information from the evidence conditions that a supporting
+memory should </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>grounded,
+Ccontent(q),otherwise. (3)
+Here ⊕ denotes ordered concatenation, and Dedupfirst keeps the first occurrence of each memory
+according to its identifier. Thus, grounded context gives priority to memories that are applicable
+under the query&#x27;s evidence conditions, while content-relevant candidates are retained as fallback
+evidence. When the induced context is uncertain, it is not imposed as a hard constraint.
+For temporal conditions, V(q) is instantiated with session-overlap compatibility. Given a grounded
+query range ˆτq = [tstartq , tendq ] and a memory session span τ sessioni = [sstarti , sendi ], memory mi is
+temporally compatible if
+sstarti ≤t endq ands endi ≥t startq .(4)
+A small buffer can be added around ˆτq to tolerate mismatch between event time and mention time.
+Within the compatible set, memories are ordered by content relevance and temporal proximity, where
+proximity </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>F1 BLEU F1 BLEU F1 BLEU F1 BLEU F1 BLEU
+GPT-4o
+LoCoMo 28.00 18.47 9.09 5.78 16.47 14.8061.56 54.1928.78 23.31
+ReadAgent 14.61 9.95 4.16 3.19 8.84 8.37 12.46 10.29 10.02 7.95
+MemoryBank 6.49 4.69 2.47 2.43 6.43 5.30 8.28 7.10 5.92 4.88
+MemGPT 30.36 22.83 17.29 13.18 12.24 11.87 40.16 36.35 25.01 21.06
+A-Mem 32.86 23.76 39.41 31.23 17.10 15.84 44.43 38.97 33.45 27.45
+LightMem 28.15 21.83 36.53 29.12 13.38 11.54 33.76 28.02 27.96 22.63
+Mem0 35.13 27.56 52.38 44.15 17.73 15.92 39.12 35.43 36.09 30.77
+SimpleMem 35.89 32.83 56.71 20.57 18.23 16.34 45.41 39.25 39.06 27.25
+RaMem (Ours)47.31 39.08 60.09 45.35 25.58 20.4752.87 47.08 51.66 43.60
+GPT-4.1-mini
+LoCoMo 25.02 21.62 12.04 10.63 19.05 17.07 18.68 15.87 18.70 16.30
+ReadAgent 6.48 5.60 5.31 4.23 7.66 6.62 9.18 7.91 7.16 6.09
+MemoryBank 5.00 4.68 5.94 4.78 5.16 4.52 5.72 4.86 5.46 4.71
+MemGPT 17.72 16.02 19.44 16.54 11.29 10.18 25.59 24.25 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>18.51 16.75
+A-Mem 25.06 17.32 51.01 44.75 13.22 14.75 41.02 36.99 32.58 28.45
+LightMem 24.96 21.66 20.55 18.39 19.21 17.68 33.79 29.66 24.63 21.85
+Mem0 30.14 27.62 48.91 44.82 16.43 14.94 41.30 36.17 34.20 30.89
+SimpleMem 43.46 38.8258.62 50.1019.76 18.04 51.12 43.53 43.24 37.62
+RaMem (Ours)43.7335.99 61.5747.02 26.35 21.73 58.14 51.48 54.23 45.86
+Qwen3-8b
+LoCoMo 13.50 9.20 6.80 5.50 10.10 8.80 14.50 11.20 11.23 8.68
+ReadAgent 7.20 5.10 3.50 3.10 5.50 5.40 8.10 6.20 6.08 4.95
+MemoryBank 9.50 7.10 3.80 2.50 7.50 6.50 9.20 7.50 7.50 5.90
+MemGPT 14.20 9.80 5.50 4.20 12.50 10.80 11.50 9.10 10.93 8.48
+A-Mem 20.50 13.80 22.50 18.20 13.20 10.50 26.80 21.50 20.75 16.00
+LightMem 18.53 14.23 26.78 21.52 14.12 11.24 29.48 23.83 22.23 17.71
+Mem0 22.42 16.83 32.48 26.13 15.23 12.54 33.05 27.24 25.80 20.69
+SimpleMem 28.97 24.93 42.85 36.4915.35 13.9046.62 40.69 33.45 29.00
+RaMem (Ours)36.10 28.07 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>44.1732.72 17.7113.79 50.59 44.88 44.55 37.33
+Qwen2.5-3b
+LoCoMo 4.61 4.29 3.11 2.71 4.55 5.97 7.03 5.69 4.83 4.67
+ReadAgent 2.47 1.78 3.01 3.01 5.57 5.22 3.25 2.51 3.58 3.13
+MemoryBank 3.60 3.39 1.72 1.97 6.63 6.58 4.11 3.32 4.02 3.82
+MemGPT 5.07 4.31 2.94 2.95 7.04 7.10 7.26 5.52 5.58 4.97
+A-Mem 12.57 9.0127.59 25.077.12 7.28 17.23 13.12 16.13 13.62
+LightMem 16.43 11.39 6.92 4.56 8.06 7.23 18.28 15.24 12.42 9.61
+Mem0 16.89 11.54 8.52 6.23 10.24 8.82 16.47 12.43 13.03 9.76
+SimpleMem 17.03 11.87 21.47 19.50 12.52 10.19 20.90 18.01 17.98 14.89
+RaMem (Ours)21.74 15.1724.45 17.0013.68 11.41 26.95 22.72 24.65 19.44
+When contextual reinstatement is not activated, Cctxq is empty and the same operation reduces to
+content-based evidence selection. This construction preserves broad content coverage while giving
+priority to memories whose evidence conditions match the query&#x27;s recall frame.
+The </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate whether RaMem improves long-term agent memory by making retrieved memories
+contextually verifiable as evidence. Our experiments follow the SimpleMem [Liu et al., 2026] protocol
+on LoCoMo [Maharana et al., 2024] and LongMemEval [Wu et al., 2024]. We evaluate across four
+backbones, GPT-4o, GPT-4.1-mini, Qwen2.5-3B, and Qwen3-8B, and report token-level F1 and
+BLEU-1 as the primary metrics. Full details and implementation are provided in Appendix D.1.
+6
+Table 2: Retrieval diagnostics on LoCoMo. RaMem improves both ground-truth memory recall and
+ranking across backbone models. Lower values are better for CappedRank@10, HitOnlyRank, and
+GenFailGivenRetrieved.
+Backbone Method R@1 R@3 R@5 R@10 MRR CappedRank@10 HitOnlyRank GenFailGivenRetrieved
+GPT-4.1-mini SimpleMem 0.3662 0.5636 0.6364 0.7221 0.4908 8.5292 8.3831 0.8336Ours0.4175 0.6305 0.6961 0.7890 0.5476 5.9844 5.6510 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.8109
+Qwen2.5-3B SimpleMem 0.2740 0.4539 0.5234 0.6247 0.3968 10.0006 9.8928 0.9230Ours0.3054 0.4776 0.5809 0.6901 0.4313 8.0143 7.6847 0.9113
+Qwen3-8B SimpleMem 0.2870 0.4903 0.5526 0.6617 0.4178 9.7390 9.6429 0.8693Ours0.3292 0.5435 0.6266 0.7351 0.4669 7.2532 6.9594 0.8340</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 3:Context collapse mitigation across backbones. Each subplot corresponds to one backbone
+and compares SimpleMem with our method on three diagnostic metrics: D@1, RankGap, and GT
+R@10. Lower is better for D@1 and RankGap, while higher is better for GT R@10.
+Table 3: Context shuffle test. Memory content is kept unchanged, while selected context fields are
+shuffled across memory entries. We report both all verified questions and the temporal-triggered
+subset. Lower is better for D@1 and RankGap.
+Backbone Subset Variant F1↑GT R@10↑MRR↑D@1↓RankGap↓
+GPT-4.1-mini
+All Verified GT
+Original0.5291 0.7550 0.5323 0.3428 2.0278
+Shuffle temporal 0.5004 0.6744 0.4871 0.5753 5.2974
+Shuffle full context 0.5079 0.6638 0.4822 0.5872 5.3965
+Temporal-triggered
+Original0.6009 0.8066 0.5249 0.2642 1.0404
+Shuffle temporal 0.4985 0.2358 0.1796 0.8160 21.5029
+Shuffle full context 0.5180 0.2358 0.1762 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.8302 22.0116
+Qwen3-8B
+All Verified GT
+Original0.4522 0.6925 0.4502 0.3702 2.1427
+Shuffle temporal 0.4287 0.6204 0.4116 0.6518 5.7768
+Shuffle full context 0.4347 0.6157 0.4053 0.6631 5.7634
+Temporal-triggered
+Original0.5317 0.7170 0.4271 0.2736 1.2350
+Shuffle temporal 0.4081 0.1840 0.1250 0.8726 22.9595
+Shuffle full context 0.4134 0.1840 0.1242 0.8868 23.0952
+entities, topics, or keywords with the query but fail its evidence conditions. RaMem consistently
+reduces this interference, lowering D@1 to 0.3495, 0.3846, and 0.4796 across the three backbones.
+It also reduces RankGap by more than three points on GPT-4.1-mini and Qwen3-8B and by nearly
+three points on Qwen2.5-3B, while improving GT R@10 across all backbones. These results show
+that RaMem suppresses context-invalid memories without losing the answer-supporting memory,
+directly supporting our claim that contextual reinstatement </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>GPT-4.1-mini and from 0.7170 to 0.1840 on Qwen3-8B, while D@1 rises from 0.2642
+to 0.8160 and from 0.2736 to 0.8726, respectively. Full-context shuffling follows the same pattern,
+suggesting that the dominant failure comes from corrupted session-level temporal grounding. These
+results show that contextual metadata is not decorative prompt information; it must remain correctly
+bound to memory content to guide retrieval toward the correct episode.
+8
+Figure 4: Sensitivity to the temporal reinstatement window. Each subplot shows the effect of varying
+the temporal buffer on F1 and GT R@10.
+Table 4: Component analysis on the temporal-triggered subset. We report the most diagnostic
+ablations in the main text. Lower is better for D@1 and RankGap.
+Backbone Variant F1↑BLEU1↑GT R@10↑D@1↓RankGap↓
+GPT-4.1-mini
+Full0.5957 0.5319 0.8066 0.2736 1.0354
+w/o Session Context 0.5596 0.4922 0.5708 0.5189 </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>10.0492
+w/o Context-Aware Ranking 0.5693 0.5018 0.5708 0.5283 12.6332
+w/o Context-Preserved Generation 0.5626 0.4968 0.8066 0.2736 1.0354
+Qwen3-8B
+Full0.5226 0.4695 0.7217 0.2783 1.1685
+w/o Session Context 0.4578 0.4097 0.4245 0.5849 11.9565
+w/o Context-Aware Ranking 0.4642 0.4162 0.4434 0.5755 14.7735
+w/o Context-Preserved Generation 0.4248 0.3567 0.7217 0.2783 1.1685</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This work studies contextual reinstatement for long-term agent memory under textual interaction
+histories. The current instantiation primarily relies on session-level temporal grounding, participant
+and entity cues, and structured memory fields to determine whether retrieved memories are contextu-
+ally valid evidence. Richer forms of context, such as causal dependencies, affective states, evolving
+task goals, or implicit social relations, may require more expressive memory representations and
+grounding mechanisms. The framework also depends on the quality of upstream memory extraction
+and query analysis. Missing episodic conditions in the memory bank, or incorrectly grounded recall
+conditions from the query, can still limit retrieval quality. In addition, contextual verification intro-
+duces design choices about how strictly recall conditions should constrain retrieval and how </blockquote></details></li><li><strong>Contribution clarity — pages 25–26</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>backbones. On GPT-4o, RaMem improves average F1
+by 12.60 points and average BLEU by 16.35 points over SimpleMem. It also achieves the best F1
+in MultiHop, Temporal, and OpenDomain categories, while remaining competitive with the full-
+history LoCoMo setting on SingleHop questions. On GPT-4.1-mini, RaMem improves average F1
+by 10.99 points and average BLEU by 8.24 points. The largest category-level improvements appear
+in OpenDomain and SingleHop questions, where F1 increases from 19.76 to 26.35 and from 51.12
+25
+Table 5: Performance comparison on LongMemEval-S. Following the SimpleMem protocol, we use
+gpt-4.1-mini as the LLM judge and report accuracy across temporal, multi-session, knowledge-
+update, and single-session memory categories.
+Category Full-context Mem0 LightMem SimpleMem RaMem
+Temporal 27.06 40.60 85.71 83.4686.47
+Multi-Session 30.08 50.37 47.37 60.92 65.41
+Knowledge-Update </blockquote></details></li><li><strong>Contribution clarity — page 26</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>41.03 69.2392.3079.48 83.33
+Single-Session-User 47.14 87.14 88.5785.71 87.14
+Single-Session-Assistant 32.14 48.21 21.43 75.00 78.57
+Single-Session-Preference 60.00 63.33 76.67 76.67 80.00
+Average 39.57 59.81 68.67 76.87 80.15
+to 58.14, respectively. This suggests that contextual reinstatement is not merely helping temporally
+phrased questions. It also helps the model select the correct episode or state when multiple memories
+share entities or topics.
+Open-source models show the same pattern. On Qwen3-8B, RaMem improves average F1 by 11.10
+points and average BLEU by 8.33 points over SimpleMem. The method improves MultiHop F1
+from 28.97 to 36.10 and SingleHop F1 from 46.62 to 50.59, showing that contextually valid retrieval
+benefits both compositional reasoning and direct factual lookup. On Qwen2.5-3B, RaMem improves
+average F1 from 17.98 to 24.65 and average BLEU from 14.89 to 19.44. </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>D@1↓AvgD@5↓RankGap↓GT R@10↑F1↑
+GPT-4.1-mini SimpleMem 0.4366 3.4514 5.4135 0.6842 0.5107Ours0.3495 3.1336 2.1502 0.7510 0.5290
+Qwen3-8B SimpleMem 0.4588 3.3909 6.1638 0.6036 0.4117Ours0.3846 3.0589 2.4664 0.6826 0.4489
+Qwen2.5-3B SimpleMem 0.5414 3.6317 6.4248 0.5676 0.2207Ours0.4796 3.3554 3.5679 0.6246 0.2281
+Table 7: Full context collapse analysis. The baseline is SimpleMem. D@K measures whether at least
+one context distractor appears in the top-K retrieved memories. AvgDTop5 is the average number of
+context distractors in the top-5 memories. RankGap is the rank of the ground-truth memory minus
+the rank of the best context distractor. Lower values are better for D@K, AvgDTop5, and RankGap.
+Setting Backbone Method N D@1↓D@3↓D@5↓AvgDTop5↓RankGap↓GT R@5↑GT R@10↑MRR↑F1↑
+All Verified GT
+Qwen3-8B SimpleMem 1499 0.4416 0.8599 0.9626 3.2642 5.6976 0.5243 0.6144 0.3991 0.4138Ours 14990.3702 </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.8025 0.9320 2.9533 2.1427 0.6011 0.6925 0.4502 0.4522
+Qwen2.5-3B SimpleMem 1503 0.5223 0.8862 0.9647 3.5037 6.0253 0.4970 0.5768 0.3773 0.2250Ours 15020.4627 0.8329 0.9427 3.2550 3.3185 0.5473 0.6332 0.4112 0.2315
+GPT-4.1-mini SimpleMem 1514 0.4273 0.8943 0.9789 3.3785 5.1934 0.6156 0.6896 0.4751 0.5109Ours 15140.3428 0.8309 0.9551 3.0773 2.0278 0.6737 0.7550 0.5323 0.5291
+Context-Confusable
+Qwen3-8B SimpleMem 1443 0.4588 0.8933 1.0000 3.3909 6.1638 0.5100 0.6036 0.3926 0.4117Ours 14430.3846 0.8337 0.9605 3.0589 2.4664 0.5925 0.6826 0.4452 0.4489
+Qwen2.5-3B SimpleMem 1450 0.5414 0.9186 1.0000 3.6317 6.4248 0.4862 0.5676 0.3735 0.2207Ours 14490.4796 0.8585 0.9655 3.3554 3.5679 0.5411 0.6246 0.4094 0.2281
+GPT-4.1-mini SimpleMem 1482 0.4366 0.9136 1.0000 3.4514 5.4135 0.6093 0.6842 0.4740 0.5107Ours 14820.3495 0.8468 0.9669 3.1336 2.1502 0.6694 0.7510 0.5330 0.5290
+session mismatch. This </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +330,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Letting AI Formulate the Research Question: Autonomous Research Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Letting AI Formulate the Research Question: Autonomous Research Agents</h1>
+          <p class="hero-copy">Ko Fujimura</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.39620v1">Open paper</a>
+            <a class="paper-detail-link" href="letting-ai-formulate-the-research-question-autonomous-research-agents-5a24a539.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Ko Fujimura</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-29</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-29</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.39620">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies AI-scientist or scientific-discovery agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Systems such as The AI Scientist have shown that AI agents can carry out and write up research, but in those demonstrations humans chose the research area and selected the outputs to show. We study letting the AI formulate the research question itself, and we report every run. Our system gives an off-the-shelf codin...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>AI assessment inconclusive</h2>
+      <p>While the experimental logging, reproducibility framework, and candor regarding protocol deviations are commendable, the paper&#x27;s substantive evaluation of scientific quality rests entirely on uncalibrated external LLM reviewers without human expert corroboration across only five runs. Under conservative curation standards, the lack of independent ground truth or human calibration for paper quality warrants an uncertain verdict.</p>
+      <p>The authors explicitly disclose protocol deviations (post-hoc counting of the pilot run), sample size limits (five runs, single research model family), lack of human evaluation, and the tendency of agents to converge on narrow open-data resources.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-30T10:46:27.028014+00:00.</p>
+        <p>Coverage: 53439 of 53439 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Systems such as The AI Scientist have shown that AI agents can carry out and write up
+research, but in those demonstrations humans chose the research area and selected the outputs
+to show. We study letting the AI formulate the research question itself, and we report every
+run. Our system gives an off-the-shelf coding agent an instruction document and two skills: one
+for formulating the question, in which the agent diverges from recent technologies into problems
+of other fields, screens its candidates for known failure modes and obtains a critique from a
+different model; and one for peer review, in which a reviewer from another model family re-
+runs the study from its records before the agent revises the paper. Over 13 development runs,
+changes to the one or two sentences that set the research area coincided with large shifts in what
+the candidate questions and the chosen papers were </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>about, which led us to the area of a new
+technology applied to a societal problem. We froze the system after a pilot run and report five
+consecutive runs: the pilot, counted by a disclosed amendment to the pre-registration, and four
+pre-registered runs. All five runs went from question formulation to a revised, re-computable
+paper, with local computation on a laptop and no research input from humans, and external
+AI reviewers reading only the papers judged them at or near workshop level. We release the
+system, the five papers and the records needed to reproduce them.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>plain: a general-
+purpose coding agent, an instruction document, and two skills (structured instructions loaded on
+demand), with no bespoke orchestration code or experiment templates. The research-question skill
+is a procedure for formulating questions that targets failure modes we observed while developing
+the system: questions whose answer follows from definitions, technologies used as decoration, and
+questions with no public ground truth. A different model critiques the top candidates once, and a
+reviewer from another model family re-runs the study from its records before the agent revises the
+paper.
+We froze the system after a pilot run and report five consecutive runs: the pilot and four pre-
+registered runs. The pilot was counted by an amendment made after three of the later results had
+been seen, which we report as a deviation (Section 5). Our contributions are:
+1.Autonomy </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>without research intervention.All five runs completed question formulation,
+experiments, writing, AI review and revision, with local computation on a laptop. The records
+contain no research advice and no permission requests; the only inputs after the start were fixed
+messages to resume after usage limits and to relay the review (Section 6.1).
+2.Setting the research area.Over 13 development runs, changes to the sentences of the
+instructions that set the area coincided with large shifts in what the candidate questions and
+the chosen papers were about. We describe the path to the technology×societal-problem setting
+and argue that more specific settings could yield correspondingly specific themes (Section 4).
+3.A procedure for formulating research questionsand what it produced: 77 candidate
+questions across nine societal fields, and the reasons candidates were discarded (Section </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>6.2).
+4.Cross-model critique and review inside the loop.The critic changed how the chosen
+question was compared and measured in every run, and the reviewer re-computed every first
+draft and found problems of interpretation that the agent then fixed (Sections 6.3–6.4).
+5.An external AI evaluationof the five final papers by reviewers from two further model
+families (Section 6.6), and the release of the system, the papers and the records.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>nothing
+it writes other than the instructions is visible to the research session. During development these
+assessments led to the next version of the instructions; during the evaluation runs the instructions
+were frozen.
+Theresearch agentis Codex CLI with gpt-6.1-sol (reasoning effort xhigh), started in a ded-
+icated directory with the instruction document as its first message. It formulates the question,
+carries out the study and writes the paper, using its tools, web search and local computation.
+Through an API it may call one other model, the critic, within a budget of US$20.
+Thecriticis gpt-6-astra (reasoning effort xhigh, with web search). The research agent sends
+it its top five candidate questions without its scores or ranking (4) and receives one critique (5).
+Whether to adopt each point is the research agent&#x27;s decision.
+Therevieweris Claude Code with Claude Opus 5.5 (effort </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>xhigh), without API keys. It works
+on a copy of the tagged draft and its records (8), re-runs the study through its verification entry
+point, checks that plans precede results, searches for prior work, and writes a review with a verdict,
+six scores and numbered findings (9). The research agent then has two hours to respond and submit
+the final version.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and closest prior work (not the scores or the preferred candidate); verify any prior work it cites;
+classify each point as adopted or not, with reasons; and re-score if needed, keeping the original
+scores. Rankings or new topics proposed by the critic may not be used as grounds for adopting
+or rejecting a candidate.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>didate with feasibility 2 or less is first narrowed and re-scored. Write a pre-mortem (the one-
+sentence claim if it succeeds, the three likely first objections and the responses), and run a safety
+check.
+The skill also lists types of study to avoid, such as quantitative re-confirmation of a known concern
+and applying an existing measurement to a new target only. The checks and scores are the agent&#x27;s
+own judgments, recorded with reasons; nothing enforces them.
+Thepeer-review skill(about 1,800 words) tells the reviewer to record its prior expectation
+from the title and research question, to re-run the verification steps on a copy of the tagged commit
+without calling AI APIs, to check the timeline of plans and results, the evidence for each claim, the
+cited and the missing prior work, and to write the report. A separate review instruction (about
+1,600 words) starts the reviewer.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The research agent keeps the records of its run in its directory, under version control. They are
+append-only and consist of:
+•plans and topic-selection records, committed before the experiments that use them;
+•a timeline of events, and every input from the human or the management agent, by type;
+•each claim with its evidence and whether it is exploratory;
+•each API call with its request, response and cost;
+•an environment manifest with the deadlines;
+•Git tags for the first draft and the final version, and a SHA-256 list of the files;
+•asingleverificationentrypointthatregeneratesthereportednumbers, tablesandfigureswithout
+AI calls.
+These records are what the reviewer checks (step 8) and what the management agent reads after the
+run (step 11). Research sessions use a configuration directory separate from the human&#x27;s, so that
+the human&#x27;s own skills, memories and earlier conversations are </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We first ran a pilot (run 014) with the English instructions and, after seeing its result, froze the
+system without changing it. We then pre-registered the evaluation: the system (SHA-256 of every
+file), the models and settings, the time and resource limits, the inclusion rules (every run whose
+start message is sent is reported; no run is excluded or repeated after its result is seen), and five
+counted runs, 015 to 019, excluding the pilot. After runs 015–017 had finished and their results
+had been seen, and before run 018 started, we amended the plan to count the pilot as the first run,
+8
+Table 2:Time and inputs. &quot;Topic&quot; is minutes from start to topic selection (excluding stops); &quot;Draft&quot;,
+&quot;Stops&quot; and &quot;Active&quot; are hours:minutes from start to the draft tag, of usage-limit stops, and their difference;
+&quot;Margin&quot; is the time left before the draft deadline (12 h plus stops). &quot;Resumes&quot; counts </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fixed resumption
+messages after usage limits + after other stops. &quot;Perm.&quot; are permission requests and &quot;Advice&quot; research-
+content inputs recorded in the run&#x27;s intervention log. &quot;Review&quot; and &quot;Resp.&quot; are minutes of the AI review
+and of the agent&#x27;s response. &quot;API&quot; is the cost of the critique in US dollars, as recorded by the agent; in run
+017 the agent recorded a range because it could not determine how long cached input was retained. Times
+are rounded from seconds, so Active may differ from Draft minus Stops by one minute.
+Run Topic Draft Stops Active Margin Resumes Perm. Advice Review Resp. API
+014 64 11:05 1:53 9:12 2:48 2 + 1 0 0 28 57 2.02
+015 54 14:30 2:48 11:42 0:18 3 + 1 0 0 44 49 2.02
+016 72 11:46 1:53 9:54 2:06 2 + 0 0 0 20 69 1.94
+017 33 7:26 0:59 6:27 5:33 1 + 0 0 0 31 42 1.95–2.02
+018 60 18:01 6:18 11:43 0:17 4 + 0 0 0 73 75 1.99
+because its filled instructions, skills, models </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and settings were identical to those of the later runs
+(verified by re-deploying the frozen files and comparing them); run 019 was therefore not made.
+The amendment added a run whose result had been seen and ended the series one run early, so we
+report it as a deviation. The pilot also differed in that the research workspace contained no earlier
+runs. Versions v1.10 to v1.10.4 differ only in the version label and the run number.
+We report, for each run, the times, stops and inputs from the run records and the management
+records; the candidates and their fates; the critique and the agent&#x27;s decisions on each point; and
+the in-loop review and the agent&#x27;s response. All numbers in the tables are generated by a script
+from these records.
+External AI evaluation (E1).The pre-registration required re-review by AI reviewers from
+at least two model families other than the researcher&#x27;s. Before </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sending any review, we fixed the
+prompt, the output schema and the scripts. Two reviewers, Gemini 4 Argon (thinking level high,
+Google Search tool) and Muse Wonder (reasoning effort max, web-search tool), each reviewed each
+final paper twice in independent requests. They saw only the paper and could search the web;
+they were not given the code, data or records. They were told that the paper was produced by
+an autonomous AI research system. They scored the six axes of our review instructions, gave a
+verdict, an overall score on the ICLR scale (1–10) as a full paper at a strong venue in the paper&#x27;s
+own field, judgments of whether the paper would be accepted at a workshop in its field (acceptance
+rate about 70%) and at the main track of a top venue in its field (about 25–30%), and rated
+the research question. These are uncalibrated AI assessments of the papers alone, not calibrated
+against </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The critic raised 21 to 26 points per run, mostly adopted (Table 4). It never changed the chosen
+candidate, but in every run it changed how the chosen question was compared or measured:
+•Run 014: the evaluation moved from the smoothness of embedding trajectories to held-out false
+alarms and misses, with calibration in earlier years and testing in later years, and gains were
+reported separately because they were rare.
+•Run 015: the decision served by the published summaries was made explicit, and the exact
+distribution of the number of exceeding sites became the comparison; the critic pointed out, and
+the agent accepted, that the narrowing of nested bounds is mathematics, not a finding.
+11
+Table 5:In-loop review (Claude Opus 5.5 with the run records) of the first drafts: verdict, scores (1–5) on
+correctness, verifiability, novelty, generality, usefulness and clarity, findings by severity, </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Thereviewerre-raneveryfirstdraftfromitssingleentrypointandreproducedthereportednumbers
+(Table 5); verifiability was 5 in all runs. In run 018, for example, the regenerated paper and claims
+file were byte-identical to the submitted ones, and refits of the primary and six control models
+reproduced the archived predictions exactly. Four drafts received &quot;major revision&quot; and one &quot;minor
+revision&quot;. Novelty (2–3), generality (2) and clarity (2) were low in all runs.
+The leading findings concerned interpretation, not execution. In run 014, the adjustment being
+tested had little to correct, so its null effect was largely predictable. In run 015, much of the result
+followed from exact moment properties of a 50-member ensemble. In run 016, the same declaration
+database served as both truth and audit labels. In run 017, the abstract led with the largest of four
+split estimates and omitted planned </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>conditions with different results. In run 018, the only critical
+finding of the series: planned null controls (permuted embeddings, other random seeds) produced
+changes as large as the real embeddings, yet the draft&#x27;s abstract presented the increment without
+applying the qualification rule the agent had itself written before seeing the results. All 40 findings
+were adopted (29) or partly adopted (11). The agents rewrote abstracts around the answer, added
+the planned conditions they had omitted, and in run 018 restated the main result as &quot;an increment
+attributable to the embeddings was not established&quot;. The final versions were not reviewed again.</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>All 20 reviews returned valid output; none reported recognising the papers. Gemini 4 Argon judged
+all five papers workshop level, with overall scores of 5 or 6 (mean 5.4) and main-track judgments
+of &quot;borderline&quot; or &quot;no&quot;. Muse Wonder was stricter: overall 3 to 5 (mean 4.1), workshop level &quot;yes&quot;
+in 3 and &quot;borderline&quot; in 7 of 10 reviews, main track &quot;no&quot; in all, and two &quot;reject&quot; verdicts (runs
+014 and 015). The two reviewers disagreed most on run 015 (minor revision and 6/10 versus reject
+or major revision and 4/10). They agreed on the profile: correctness high (4.4 and 3.8), novelty
+(3.0 and 2.2), generality (2.6 and 2.0) and clarity (2.3 and 2.0) low, the same profile as the in-loop
+reviews. They rated the research questions themselves at 3.2 and 3.4 out of 5, and in 19 of 20
+reviews they judged the main answer &quot;partly&quot; predictable from the design. Verifiability from the
+paper alone was </blockquote></details></li><li><strong>Contribution clarity — pages 13–14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rated 4.3 by Gemini and 2.8 by Muse, below the in-loop 5.0; the in-loop reviewer
+had the records, but it was also a different model and reviewed the first drafts. The two reviews of
+13
+Table 7:External AI evaluation of the final papers (PDF, paper and web search only, two reviews per
+paper). Axis scores are means over the two reviews; &quot;Overall&quot; lists the two ICLR-scale scores; verdicts are
+m (minor revision), M (major revision) or R (reject); WS and Main are workshop-level and main-track-level
+judgments, Y (yes), B (borderline) or N (no).
+Reviewer Run Corr. Verif. Nov. Gen. Use. Clar. Overall Verdict WS Main
+Gemini 4 Argon 014 4.0 4.0 3.0 2.0 3.0 2.0 5/5 M/M Y/Y N/N
+015 5.0 5.0 3.0 3.0 3.0 3.0 6/6 m/m Y/Y B/B
+016 4.5 5.0 3.0 2.5 3.5 2.0 6/5 M/M Y/Y B/N
+017 4.0 4.0 3.0 3.0 3.0 2.5 6/5 m/M Y/Y B/N
+018 4.5 3.5 3.0 2.5 3.0 2.0 5/5 M/M Y/Y N/N
+mean4.4 4.3 3.0 2.6 3.1 2.3 5.4
+Muse Wonder 014 </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3.5 3.0 2.0 2.0 3.0 2.0 4/3 M/R Y/B N/N
+015 4.0 3.0 2.0 2.0 3.0 2.0 4/4 R/M B/B N/N
+016 4.0 2.5 2.0 2.0 3.0 2.0 4/5 M/M B/B N/N
+017 3.5 3.0 2.0 2.0 3.0 2.0 5/4 M/M Y/B N/N
+018 4.0 2.5 3.0 2.0 3.0 2.0 4/4 M/M B/Y N/N
+mean3.8 2.8 2.2 2.0 3.0 2.0 4.1
+the same paper differed by 0.4 (Gemini) and 0.6 (Muse) points overall on average.</blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Five runs with one research model are a small sample, and we made no ablation, so we cannot
+attribute outcomes to the question procedure, the critic or the reviewer. All evaluations are by AI
+models; a human evaluation is planned separately. The in-loop reviewer is from the same family
+as the management agent. We counted the pilot run after seeing three results, and we chose the
+PDF reviews as the main external result after seeing the Markdown reviews; both are reported as
+deviations. The external reviewers read only the papers, so their verifiability scores do not reflect
+the records. Topic selection consulted a critique by another model, and the hint toward societal
+problems in the instructions shaped the domain. The lessons on the area setting (Section 4)
+come from development runs in which the research model, its environment and other parts of
+the instructions also changed, so they </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>are observations rather than controlled comparisons. Re-
+computation by the reviewer re-ran the agent&#x27;s own code on the first draft; it is not an independent
+implementation, and it does not establish the correctness of reference labels or the validity of
+interpretations. Isolation from earlier runs relied on separate configuration and on the instructions,
+not on access control. The external ratings are uncalibrated AI judgments of the papers alone.
+This paper was drafted by the management agent from the records (Appendix B).</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>AI-scientist / discovery workflow</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies autonomous scientific-discovery or hypothesis-generation workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 96/100</li>
+              <li>Screening category: AI scientist / discovery system</li>
+              <li>Tags: deep-research-agents, ai-scientist</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-29</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-30 10:43:55</li><li>Last seen by Paper Scout: 2026-10-30 10:43:58</li></ul>
+            <ul><li>arXiv: 2610.39620</li><li>arXiv IDs: 2610.39620</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="letting-ai-formulate-the-research-question-autonomous-research-agents-5a24a539.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Letting AI Formulate the Research Question: Autonomous Research Agents. Ko Fujimura. 2026-10-29. https://arxiv.org/abs/2610.39620v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

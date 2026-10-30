@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do AI Scientists Know What&#x27;s New?</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Do AI Scientists Know What&#x27;s New?</h1>
+          <p class="hero-copy">Miri Liu, Xiayu Zhao, Encheng Xie, ChengXiang Zhai</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2610.36511">Open paper</a>
+            <a class="paper-detail-link" href="do-ai-scientists-know-what-s-new-0629152d.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Miri Liu, Xiayu Zhao, Encheng Xie, ChengXiang Zhai</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-27</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-27</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.36511v1">arXiv</a><a href="https://arxiv.org/abs/2610.36511">arXiv</a><a href="https://openalex.org/W7224131948">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies AI-scientist or scientific-discovery agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>A major challenge facing AI scientific discovery pipelines is how to determine when a generated idea is meaningfully novel. Ideally, novelty checks in these pipelines must be able to reject non-novel ideas while not rejecting too many novel ideas, and they should also be able to distinguish which parts of a proposal...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work addresses an important failure mode in autonomous scientific discovery pipelines with sound methodology, comprehensive benchmarking, robust statistical comparisons, and solid empirical grounding.</p>
+      <p>The authors clearly delineate limitations, including reliance on fixed-pool retrieval rather than live web search, domain restriction to AI research, heuristics in dimension weighting, and the eventual decay of temporal cutoffs.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-29T10:46:15.975911+00:00.</p>
+        <p>Coverage: 105672 of 105672 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A major challenge facing AI scientific discov-
+ery pipelines is how to determine when a gen-
+erated idea is meaningfully novel. Ideally, nov-
+elty checks in these pipelines must be able to
+reject non-novel ideas whilenotrejecting too
+many novel ideas, and they should also be able
+to distinguish which parts of a proposal are
+non-novel, as opposed to opaquely discarding
+entire proposals. We design an analytical frame-
+work for evaluation of novelty checks with tem-
+poral ground truth at both the proposal- and
+claim-level, using four datasets of 1,060 pro-
+posals built from published papers, reviewer
+disputes, and generated ideas matching ones
+the field went on to publish. Auditing exist-
+ing novelty checks with this framework, we
+find that checks with high rejection rates on
+non-novel work also tend to have high false
+alarms on ideas that are later realized by hu-
+man researchers, and </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>observe that checks built
+to evaluate proposals as a whole can point to
+claim-level prior art only by rejecting the whole
+proposal. We therefore introduce CLAIMNOV,
+a fine-grained, interpretable claim-level nov-
+elty module. CLAIMNOVcatches 97% of dis-
+guised papers at a 1.5% false-alarm rate, and
+its claim-level novelty profile cuts the LLM
+judge&#x27;s false alarms from 11.8% to 1.5%. Be-
+cause its verdict rests on claim-level evidence,
+CLAIMNOValso keeps proposals that build
+on established contributions, rejecting only 3%
+of ICLR-accepted proposals with a reviewer-
+disputed contribution and keeping 91 of 100
+novel proposals with one spliced prior con-
+tribution, against 76 for the strongest exist-
+ing check. Code and data are available at
+https://github.com/emmatliu/claimnov.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>introduceCLAIMNOV, a fine-grained, inter-
+pretable novelty module that treats claims as the
+basic unit of novelty.
+• We propose anevaluation frameworkfor nov-
+elty checks in end-to-end AI scientist pipelines
+which draws upon temporal ground truth from the
+published record and from reviewer comments
+at a whole-proposal and claim-level, with four
+datasets totaling 1,060 proposals (§4.4).
+• We auditseven existing novelty checksalong-
+side CLAIMNOV. The checks that reject the
+most non-novel work also reject the most work
+later realized by human researchers, and checks
+that judge proposals as a whole can only iden-
+tify claim-level established work by rejecting an
+entire proposal.
+• CLAIMNOVcatches 97% of disguised papers
+while rejecting only 1.5% of later realized ideas.
+It correctly preserves partially novel work, keep-
+ing 91 of 100 proposals with a spliced prior con-
+tribution against 76 </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We introduce CLAIMNOV, an interpretable, claim-
+level novelty module for research proposals that
+can be dropped directly into any AI for scientific
+discovery pipeline with a novelty check. As shown
+in Figure 2, CLAIMNOVextracts typed claims
+from research proposals, retrieves relevant same-
+dimension claims from a pool of claims extracted
+from prior art, scores the entailment per extracted
+claim, aggregates into a novelty score, and passes
+the full claim profile to a verdict judge for a binary
+novel or non-novel decision. For validation experi-
+ments, see Appendix O, and for exact prompts, see
+Appendix C.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>During the claim extraction stage, CLAIMNOV
+takes the title and description from the research
+proposal P and produces, with an LLM (gpt-4o-
+mini set to temperature 0), a list of contribution
+claimsC P ={c 1, . . . , cm}.
+Each claim ci is typed with a dimension dc and
+an attribute-value pair (ca, cv). Dimensions are
+drawn from {Problem, Methodology, Resource,
+Result}, while an attribute represents the axis along
+which two works can be compared. For instance,
+for a Result claim, the attribute may be classifica-
+tion accuracy on CIFAR-10, and the value may be
+an improvement from 30.1% to 76.9%. We aim to
+extract a small number of claims per proposal (2.4–
+2.7 on average, the prompt allowing 1–4), based
+on conventions in AI research. We process each
+paper in the reference pool Π through this stage
+once, using its abstract as the description text, to
+produce pool claimsC Π.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>During the claim retrieval stage, CLAIMNOVtakes
+a claim c from the previous stage&#x27;s list of claims,
+embeds its text together with its paper&#x27;s title with
+text-embedding-3-large, and produces a set of
+relevant pool claims R(c) for comparison to that
+claim.
+To obtain such a set, we retrieve the k-nearest
+(by cosine similarity) pool claims of the same di-
+mension, keeping at most one claim per pool paper.
+We determine k by pool size, taking k=10 as the
+minimum based on an independent retrieval valida-
+tion (see Appendix O), and for larger pools we use
+the heuristic k= 0.2n d, where nd is the number of
+pool papers with a claim in that dimension, capped
+at 40. This gives k=10 for the disguise pools and
+k≈35for the anchor pools (§4.4).</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>During the claim entailment stage, CLAIMNOV
+judges the entailment of every pair (c, c′) for c′ ∈
+R(c) with an LLM (gpt-4o-mini at temperature
+0), giving titles and abstracts of pool papers as
+context.
+The judge rates the extent to which the pool
+claim entails or covers the proposal claim on an
+ordinal scale ℓ(c, c′)∈ {1, . . . ,5}: 1 unrelated, 2
+shared topic only, 3 partial coverage with impor-
+tant details differing, 4 strong coverage with minor
+details missing, and 5 full coverage of the claim&#x27;s
+substantive content. We map these levels onto the
+unit interval by taking e(c, c′) = (ℓ(c, c′)−1)/4∈
+[0,1].</blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>During the novelty aggregation stage, we first take
+the sorted eis from the previous stage and combine
+3
+them into one coverage score a(c)∈[0,1] for each
+claim as a rank-discounted mean:
+a(c) =
+Pkc
+i=1 αi−1eiPkc
+i=1 αi−1 , ν(c) = 1−a(c), (1)
+Here, α=0.5, which balances the importance
+of the strongest match against the weaker ones,
+and kc = min(k,|R(c)|) , which prevents a claim
+with very few relevant pool claims from having an
+inflated score.
+We then combine claim scores into a proposal-
+level score using dimension weights wd (Problem
+0.4, Result 0.3, Methodology 0.2, Resource 0.1)
+and per-claim importance weights imp(c), which
+are uniform for proposals and set to each claim&#x27;s
+share of support passages when scoring a full paper.
+The dimension weights encode a prior about con-
+tribution types in AI research; they can be tuned to
+adapt CLAIMNOVto other fields.
+A(P) = Pc∈CP wdc </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Finally, the novelty verdict stage of CLAIMNOV
+assembles previous evidence produced by the mod-
+ule into a profile Φ(P) which is evaluated by a
+stronger judge (claude-sonnet-4-6). Φ(P) lists
+the proposal&#x27;s extracted claims with matched prior
+claims, their sources (and their abstracts), and the
+entailment levels.
+From the judge, we receive a verdict of pass or
+fail. If the proposal fails, CLAIMNOValso outputs
+the prior art paper p∗ ∈Π , its subset of claims
+S⊆C P , and a one- or two-sentence reason. For
+the exact prompt, please see Appendix C.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Because six of the seven novelty checks we eval-
+uate use an LLM as a judge at some point (and
+CLAIMNOValso does so), we fix a cutoff T=
+March 2026 and exclusively evaluate models with
+earlier cutoffs. This mitigates the risk of mod-
+els recognizing post-T papers from training data.
+We run each check with Sonnet 4.6 (training
+cutoff January 2026), which is the same model
+CLAIMNOVuses as the final verdict judge (for ear-
+lier, lightweight stages, CLAIMNOVuses gpt-4o-
+mini). As we explain in more detail in §4.4, we
+use Sonnet 4.6 to generate ideas, disguise existing
+papers, and rewrite disputed papers as research pro-
+posals, and Opus 4.6 (training cutoff August 2025)
+as the labeler.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We collect data and establish ground truth for two
+levels of non-novelty. In both cases, we aim to
+collect data that falls after our temporal cutoff of
+T=March 2026, to avoid LLM judge awareness.
+Already-done ideas ( n=400, whole-proposal
+level).For this data, novelty checks should cor-
+rectly reject a disguised proposal if the source pa-
+per is in the pool, but shouldnotreject when the
+source is removed (making the proposal novel rela-
+tive to the pool). We collect n= 100 ICML 2026
+spotlight papers, filtering for papers where the v1
+arXiv appearedafter T , and disguise each paper as
+a new research proposal at four increasingly chal-
+lenging to spot levels of disguise. Rung 1 swaps
+the voice, rung 2 paraphrases, rung 3 reframes the
+paper with a different motivation, reordered con-
+tributions, and an unnamed method, and rung 4
+restructures it adversarially from a different the-
+oretical </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>starting point with generalized numbers.
+Because rungs 3 and 4 may depart significantly
+from the original paper, we accept them only when
+a verifier (Sonnet 4.6) confirms that the core con-
+tributions are the same. To ensure the disguise is
+challenging, we require that at most 2% of the dis-
+guise&#x27;s 6-grams appear in the source, regenerating
+up to three times; for more details and prompts, see
+Appendix D. We then form a reference pool from
+the source plus up to 19 pre-T papers closest to the
+proposal by embedding, which we take from the
+source&#x27;s reference list and Semantic Scholar rec-
+ommendations. We drop five sources whose pools
+contain only the source, leaving 380 disguises (all
+400 in Appendix K).
+Claim-disputed ideas (n=160, claim level).For
+this data, novelty checks should correctly find a
+prior work B that establishes a specific claim. We
+use a regex prefilter and gpt-5-nano </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>classification
+to mine 8.3k ICLR 2022–23 reviews in which a
+reviewer identified a paper A&#x27;s contribution as al-
+ready established by some prior paper B. We then
+rewrite each A in proposal voice with Sonnet 4.6
+and the rung-1 prompt provided in Appendix D
+and plant B among 19 pre- T papers to serve as
+distractors. We also record the final ICLR deci-
+sion (62 accepted, 96 rejected, 2 unknown) as an
+additional axis of analysis of novelty check perfor-
+mance. Of n= 200 pairs of papers (A, B), we
+keep n= 160 with usable pools, and we annotate a
+sample for genuine disputes (see Appendix F). Un-
+like the other sets, these papers predate T and may
+appear in a judge&#x27;s training data. In this case the
+ground truth is reviewer attribution (and not some
+post-Tevent), so we consider this acceptable.
+Later-realized ideas ( n=400, whole-proposal
+level).For this data, novelty checks should </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cor-
+rectlypassthe proposal, because the pool does not
+contain the idea and researchers went on to realize
+some of its contributions. We collect n=30 anchor
+papers, where each anchor paper was published
+in NeurIPS 2025 proceedings and has at least 50
+citing papers that fall after T . We exclude bench-
+marks, datasets, and surveys (which may be cited
+5
+primarily for use), then generate new proposals
+based on the remaining anchor abstracts. We con-
+struct a relevant works pool (median 174 papers,
+capped at 400 papers) for each anchor from its ref-
+erence list plus any citing papers that come before
+T , as well as a follow-up pool F of the citing pa-
+pers that come after T (median 124 papers). We
+use each anchor paper to generate n=100 ideas
+from Sonnet 4.6, producing n=3000 proposals to-
+tal. For each of these proposals, Opus 4.6 writes a
+contribution list, then labels each contribution </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>as
+established or not by the 8 papers in the pool near-
+est to the idea (bytext-embedding-3-small over
+title and abstract) and, separately, by the 8 nearest
+papers in F . We identify later-realized ideas as
+proposals with at least one contribution established
+in F and none established in the pool. From the
+407 proposals of this kind generated from 26 of
+the 30 anchors, we draw 400 at random to consti-
+tute this dataset. We provide labeling prompts in
+Appendix E.
+Hybrid proposals (n=100, claim level).For this
+data, novelty checks should correctly pass the pro-
+posalandcorrectly name the paper whose contri-
+bution it contains. We take n= 100 later-realized
+(and thus assumed novel) ideas from the previous
+dataset and, for each, a pool paper B which was
+moderately similar (ranked 5–15 by cosine simi-
+larity), then ask Sonnet 4.6 to rewrite these ideas
+so that B&#x27;s core contribution is also </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>included. Son-
+net 4.6 verifies that the splice preserved the original
+contributions while adding the new one.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>On whole proposals (Table 1), all checks except
+ARC and ScholarEval catch at least 338 of 380
+disguises, but most checkscontinueto reject af-
+ter the source is removed. For instance, Si et al.
+catches all 380 but also rejects 359 when the source
+is no longer present in the pool. All checks except
+CLAIMNOVand CoI-Agent also reject a large share
+of ideas the field went on to publish. Si et al. rejects
+96%, ResearchAgent 98.5%, AI Scientist v1 52%,
+and AI-Scientist-v2 39%. ARC and ScholarEval
+reject 0.0%, but do so by rejecting almost nothing.
+CLAIMNOVand CoI-Agent are clear outliers
+in their ability to balance the two. Both catch
+almost every disguise (367 and 368 of 380, re-
+spectively) while rejecting few later-realized ideas
+(1.5% and 3.8%). CLAIMNOVhas the highest
+J (+0.95) and ∆ (+0.92), whereas the next best
+pipeline checks after CoI-Agent are at +0.56 and
++0.76. The </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RATESNET SCORES
+Check Caught↑ Named↑ Src. out↓ FA↓ J↑ ∆↑
+Deployed
+AI Scientist v1380292 91 51.8% +0.48 +0.76
+CoI-Agent 368 362 31 3.8% +0.93 +0.89
+Si et al.380 379359 96.0% +0.04 +0.06
+ARC 85 850 0.0% +0.22 +0.22
+Extract.
+ResearchAgent† 338 — 260 98.5% -0.10 +0.21
+ScholarEval† 0 —0 0.0% +0.00 +0.00
+AI-Scientist-v2† 362 — 117 39.2% +0.56 +0.64
+OpenNovelty-style 379 37938 11.5% +0.88 +0.90
+CLAIMNOV(ours) 367 366 18 1.5% +0.95 +0.92
+– w/o claim profile (judge over top-8 abstracts)373 367 57 11.8% +0.86 +0.83
+– w/o verdict judge (graded check)349 345 20 1.8% +0.90 +0.87
+– per-claim verdict rule380 360 197 56.8% +0.43 +0.48
+– fixed retrieval depth (k=10)367 366 18 2.0% +0.95 +0.92
+Table 1: Evaluation results on whole-proposal data for all checks, where every check is run with Sonnet 4.6 as its
+judge (excluding ARC, which is lexical). Caught and Src. out count rejections of the n= 380 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate CLAIMNOVand the seven existing
+checks on claim-level data (Table 2) and find that
+CLAIMNOVcorrectly treats a disputed claim as
+a claim-level finding, and not a reason to reject
+an entire research proposal. It rejects only 3% of
+accepted ICLR proposals, the lowest rate of any
+check that catches disguises (10% for CoI-Agent
+and 47–81% for Si et al., AI Scientist v1, and Re-
+searchAgent). All of the whole-proposal checks we
+evaluate name prior art only alongside a rejection,
+so Si et al. namesB for 47% by rejecting about 80%
+of proposals, and CoI-Agent passes 89%, meaning
+it can nameBfor only the remaining 11%.
+Considering this design choice in existing
+checks, we separate attribution from the verdict
+by pairing each verdict with thesameattribution
+ranking. CLAIMNOV&#x27;s top-rated profile paper is B
+for 21% of proposals, while the pool paper nearest
+to the whole proposal by dense </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ARC 3% 0% 0% 0%
+ResearchAgent 47% 66% — —
+ScholarEval 0% 0% — —
+AI-Sci.-v2 16% 14% — —
+OpenNov.-style 8% 7% 17% 12%
+CLAIMNOV(ours) 3% 3% 21% 20%
+– w/o claim profile13% 9% 15% 7%
+– w/o verdict judge6% 9% 21% 20%
+– per-claim rule21% 20% 21% 15%
+Verdict + shared ranking
+CoI + dense top-1 10% 11% 37% 31%
+CoI + BM25 top-1 10% 11% 26% 23%
+CLAIMNOV+ dense (ours) 3% 3% 37% 36%
+CLAIMNOV+ BM25 (ours) 3% 3% 26% 24%
+Table 2: Claim-level prior art ( n=160, Sonnet 4.6
+judge). Rej. acc./Rej. rej.: rejection rate on the 62
+ICLR-accepted and 96 ICLR-rejected proposals (lower
+is better only for accepted proposals). Names B: share
+whose top-ranked paper is the reviewer&#x27;s B. On pass:
+same, counting only passed proposals. Note most ex-
+isting checks name a paper only when rejecting. The
+bottom rows pair a verdict with the pool paper nearest
+to the whole proposal by dense embedding or BM25 to
+separate final </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to the isolation we per-
+form in §5.2), CLAIMNOVkeeps 67 hybrids with
+B named, against 53 for CoI-Agent (p=.004). The
+OpenNovelty-style baseline keeps 64, but this is
+at the cost of 11.5% false alarms on later-realized
+ideas (Table 1). When CLAIMNOVsuccessfully
+extracts the spliced claim as its own claim (as op-
+Check Passes↑ NamesB↑ on pass↑
+AI Scientist v1 18 23 0
+CoI-Agent 76 11 0
+Si et al. 0 63 0</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ARC1000 0
+ResearchAgent 2 — —
+ScholarEval100— —
+AI-Scientist-v2 29 — —
+OpenNov.-style 83 68 64
+CLAIMNOV(ours) 91 25 18
+– w/o claim profile68 42 14
+Verdict + shared ranking
+CoI + dense top-1 76 7 6
+CoI + BM25 top-1 767453
+CLAIMNOV+ dense (ours) 91 7 7
+CLAIMNOV+ BM25 (ours) 91 74 67
+Table 3: Hybrid proposals (n=100, Sonnet 4.6 judge).
+Names B: the top-ranked paper is the spliced paper B
+(as in Table 2). On pass: B is named and the proposal
+passes. —: no paper returned. Bold: best, underline:
+second.
+posed to missing it or absorbing it into a different
+claim), the entailment judge rates B at level 4 or 5,
+and the verdict stage properly reads one established
+claim among several novel ones as a proposal that
+builds on prior work. We consider these ratings
+reliable, as 13 of the 15 papers rated at level 4 or
+above are B, and this entailment level is reached
+by only 9 of 400 later-realized </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our work employs several heuristics in how we
+consider sets of proposals or papers to be novel or
+non-novel, and this is not as clean as if we had a
+&quot;true&quot; dataset. We also focus exclusively on AI re-
+search. In practice, this is where most AI-scientist
+work also concentrates, so this aligns well, but if
+we want AI-scientist pipelines to be more widely
+applicable, then assumptions like the ones we make
+about dimension weights (problem contributions
+being more valuable than other contributions, for
+instance) might not generalize and would require
+further tuning for different fields, thus impeding
+adoption. We also consider only English-language
+research, which can further skew generalization.
+Because our pools are fixed lists of prior work
+rather than open search, consisting of 20 papers
+for disguises and disputed pairs and up to 400 for
+generated ideas, we have limited ability to </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>81/100
+raw agreement with Cohen&#x27;s κ= 0.62 , (ii) 73/100
+and κ=0.47, and (iii) 52/100 and κ=0.40, and we
+drop the dispute-type labels due to the low kappa
+value. A third annotator then marked the 63 rows
+with any disagreements, blinded to the labels of the
+first two annotators. By 2-of-3 majority we find
+that we have 59/100 genuine disputes with 67/100
+having correctly-identified B. We use the 40 pairs
+that have a genuine dispute and correct B as the
+label-clean subset, 36 of which have usable pools
+(Table 12). All three annotators have graduate-level
+education in English in the relevant research field.
+Question Agreement κ
+Dispute is genuine 81/100 .62
+Bis the correct prior art 73/100 .47
+Dispute type (dropped) 52/100 .40
+Table 11: Raw agreement and Cohen&#x27;s κ between the
+first two annotators.
+We give the annotation instructions below. The
+audit of later-realized and sorter-matched </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>AI-scientist / discovery workflow</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies autonomous scientific-discovery or hypothesis-generation workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 93/100</li>
+              <li>Screening category: AI scientist / discovery system</li>
+              <li>Tags: ai-scientist, deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-29</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-28 10:19:07</li><li>Last seen by Paper Scout: 2026-10-30 10:44:03</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.36511</li><li>arXiv: 2610.36511</li><li>OpenAlex: W7224131948</li><li>OpenAlex IDs: W7224131948</li><li>arXiv IDs: 2610.36511</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="do-ai-scientists-know-what-s-new-0629152d.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Do AI Scientists Know What&#x27;s New?. Miri Liu, Xiayu Zhao, Encheng Xie, ChengXiang Zhai. 2026-10-27. https://doi.org/10.48550/arxiv.2610.36511</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

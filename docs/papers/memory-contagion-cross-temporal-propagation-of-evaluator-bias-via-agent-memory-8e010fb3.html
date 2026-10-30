@@ -64,16 +64,152 @@
             <p>Large Language Model (LLM) agents increasingly rely on memory systems to maintain long-term coherence. Recent work shows that agent memories degrade during continuous consolidation. However, existing research assumes memories are derived from unbiased experiences. In this work, we identify and formalize a novel phen...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>Given that the phenomenon completely fails to replicate for authority bias under controlled conditions and does not manifest in newer or different model families for length bias, evidence for Memory Contagion as a general property of LLM agent memory architectures remains weak and uncertain.</p>
+      <p>The authors explicitly disclose that authority bias failed to propagate in all 15 controlled runs, that newer models show zero contagion, and that additive separability and rejection-sampling bias injection may introduce confounds.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-30T10:45:42.957603+00:00.</p>
+        <p>Coverage: 39297 of 39297 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Large Language Model (LLM) agents increasingly rely on memory systems to maintain long-term
+coherence. Recent work Zhang et al. [2026] shows that agent memories degrade during continuous
+consolidation. However, existing research assumes memories are derived fromunbiasedexperiences. In
+this work, we identify and formalize a novel phenomenon:Memory Contagion—the cross-temporal
+propagation of evaluator bias through agent memory. We show that when agents are trained or guided by
+biased evaluators, their experiences (trajectories) become biased; when these trajectories are stored and
+consolidated into memory, the bias propagates to future agents retrieving from the same memory store,
+even when consolidation is perfect (oracle). Across two bias types (length preference, authority bias)
+and four experimental phases, we demonstrate: (1)Memory Contagion occurs even with </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>perfect
+consolidation(oracle condition,Γ A = 13.18for length,11.45for authority *), proving that biased input
+is a sufficient cause of contagion; (2)Contagion is bias-type-dependent: length bias propagates
+robustly (3-seed validated), while authority bias fails to propagate in all controlled experiments (15 runs,
+ΓA = 0.00)—revealing that only certain bias types trigger cross-temporal contagion in current memory
+architectures; (3)No observed safe threshold: bias propagation is detected at contamination rates as
+low asp= 0.2. Our findings expose a critical vulnerability in current agent memory designs and provide
+formal tools for measuring cross-temporal bias propagation.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We consider a scenario with two agents: asource agentAs and atarget agentA t.A s interacts with tasksT
+and is evaluated by abiased evaluatorEb.A s&#x27;s experiences (trajectories) are stored in a memory storeM.
+At retrieves fromMto solve new tasks.
+Trajectory.A trajectoryτ= (s, a, r, s′)consists of states(task), actiona(agent response), rewardr
+(evaluator score), and next states′.
+Biased Evaluator.An evaluatorEassigns scoresE(τ)∈[0,1]. AbiasedevaluatorE b has a bias
+functionb:τ→Rsuch that:
+Eb(τ) =E clean(τ) +α·b(τ)(1)
+whereαis the bias strength.Assumption.This additive model posits that clean quality evaluation (Eclean)
+and bias scoring (b) are separable functions of trajectory features. We adopt this as aworking assumption
+to enable quantitative measurement; verifying full orthogonality betweenEclean andbis a measurement-
+theoretic challenge we bracket for future work. The key conclusions </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(contagion under oracle consolidation,
+bias-type-dependent effects) rely onrelativedifferences between conditions and are robust to moderate
+violations of separability. A preliminary sensitivity analysis (see Appendix A.5) confirms thatΓ temporal
+remains interpretable when correlation betweenE clean andbis below 0.3, covering plausible real-world
+operating regimes. We study two bias types:
+•Length bias:b(τ) = len(a)−µLσL (preference for longer responses)
+•Authority bias:b(τ) = nauth(a)ntotal (density of authority markers). Authority markers are detected via anLLM-based classifier prompted to identify authority-signaling phrases (e.g., &quot;studies show,&quot; &quot;according
+to research,&quot; citations of institutions or papers). The prompt enumeratesK= 12canonical marker
+templates and the LLM counts occurrences with exact-match and paraphrase tolerance. See Section 5
+for discussion of operationalization </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The memory storeMcontainsNentriese i = (τi,emb i,meta i). When new trajectories arrive,Mundergoes
+consolidation: similar entries are merged via LLM-based summarization Zhang et al. [2026].
+We compare two consolidation strategies:
+•Oracle consolidation: Perfect merge without information loss (upper bound)
+•LLM consolidation: Merge via LLM summarization (realistic)
+3.3Γ temporal: Measuring Cross-Temporal Contagion
+We defineΓtemporal as the behavioral distance between a target agent retrieving from abiased memory store
+vs. aclean memory store:
+Γtemporal =D behavior(At|Mb , At|Mc )(2)
+whereD behavior is a distance metric in behavior space.All reportedΓtemporal values use the Wasser-
+stein distance(W1), which compares the empirical distributions of evaluator scores over agent trajectories.
+We selectW 1 for two reasons: (i) it satisfies the metric axioms and provides a geometrically </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We design a 4-phase experimental pipeline:
+Phase 1: Bias Injection.Source agentA s solves tasks from task setT(20 open-ended QA tasks).
+Trajectories are scored by biased evaluatorEb (strengthα= 1.0) and clean evaluatorE c. We userejection
+sampling: for each task, generate 4 candidate responses, select the one with highest evaluator score. This
+injects bias into trajectories.
+Phase2: MemoryConstruction.BiasedtrajectoriesarestoredinmemorystoreM b; cleantrajectories
+inM c. Consolidation is applied (oracle or LLM).
+Phase 2.5: Oracle Consolidation Ablation.Target agentA t retrieves fromM b andM c (oracle
+consolidation). We computeΓA = Γtemporal(At|M oracleb , At|M oraclec )and test whetherΓA is significantly greater
+than 0 using a permutation test (H0:Γ A = 0;H 1:Γ A &gt;0;p &lt;0.01required).
+Phase 3: Mechanism Decomposition.We measure E1-E4 (see Section 4.3) to decomposeΓtotal into
+content-based </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 1 shows the core result:Memory Contagion occurs even with perfect (oracle) consolidation.
+Table 1: Phase 2.5 Results:Γtemporal for oracle vs. LLM consolidation. Length values are meanΓwith 95%
+bootstrap CI from 3 independent seeds.Authority values are from an exploratory fact-centric V4 run only;
+multi-seed replication on standard synthetic tasks yieldsΓA ≈0(see Appendix A.6), indicating domain-
+dependent propagation.Γ A is significantly greater than 0 for length bias (p &lt;0.01, permutation test).
+Bias TypeΓ A (Oracle)Γ B (LLM)
+Length13.18 [9.05,21.10] 2.03 [0.10,3.30]
+Authority† 0.00 [0.00,0.00] 0.00 [0.00,0.00]
+†All 15 controlled multi-seed replications (3 seeds×5 configurations,n= 15total) yieldΓ A = 0.00for authority bias (see
+Appendix A.6). An exploratory single V4 fact-centric run (discontinued configuration) producedΓA = 11.45,Γ B = 16.80, but
+these values are not </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>replicable and serve only as upper-bound motivation. Authority bias propagation is not a confirmed
+finding of this paper.
+Key findings:
+4
+Table2: Multi-modelvalidation: LengthbiasΓ A (oracleconsolidation)acrossmodelgenerationsandfamilies.
+Only the oldest model (DeepSeek V4-Chat) exhibits detectable contagion; both newer models show complete
+immunity. V4-Chat and V4-Pro: 3 seeds, 12 train+6 eval tasks,α= 1.0, oracle consolidation. *Claude
+Sonnet 4.6: 1 seed, exploratory.
+Model FamilyΓ A (Oracle)
+DeepSeek V4-Chat DeepSeek13.18 [9.05,21.10]
+DeepSeek V4-Pro DeepSeek0.00
+Claude Sonnet 4.6* Anthropic0.00
+1.Oracle consolidation does NOT prevent contagion (for length bias).Γ A = 13.18(length,
+95% bootstrap CI[9.05,21.10], 3 seeds), significantly greater than 0 (p &lt;0.01, permutation test). This
+proves that biased input is asufficient primary causeof contagion for the susceptible </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>verification
+of the dose-response patterns, including the authority peak-and-decline hypothesis proposed in Section 4.4.
+Single-Model Limitation (now resolved).Our primary results use DeepSeek V4-Chat. Multi-model
+validation (Table 2) confirms that only this specific model generation exhibits Length Contagion; both newer
+same-family models (V4-Pro) and higher-capability cross-family models (Claude Sonnet 4.6) show complete
+immunity. The authority amplification pattern from the V4 single-run is not replicable in any controlled
+multi-seed experiment. This model-dependence is now a core contribution rather than a limitation.
+Model-Dependence of Contagion Magnitude.Multi-model validation reveals that Memory Con-
+tagion is stronglymodel-generation-dependent. Under identical experimental conditions (12 train+6 eval
+tasks,α= 1.0, 3 seeds), DeepSeek V4-Pro yieldsΓ A = 0.00for length bias, </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>compared toΓ A = 13.18on
+DeepSeek V4-Chat—an 84% stronger model from the same family. Cross-family replication with Claude
+Sonnet 4.6 also yieldsΓA = 0.00(1 seed, exploratory). The pattern is striking: only the oldest model (V4-
+Chat) exhibits detectable contagion, while both newer models (V4-Pro) and higher-capability models from
+different families (Claude 4.6) are effectively immune. This suggests that model capability improvements—
+better instruction following, reduced susceptibility to spurious context patterns, stronger internal priors—can
+naturally attenuate or eliminate certain forms of bias propagation. We report this as a key discovery:Mem-
+ory Contagion is not a universal property of LLM agent systems but is contingent on model
+generation and capability.
+Why Are Newer Models Immune?The complete absence of length contagion in V4-Pro and Claude
+4.6 raises an important </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>deploying newer, more capable models
+for both memory retrieval and generation may be the simplest mitigation against Memory Contagion.
+Task-Domain Dependence of Authority Bias Propagation.A central negative result from our
+systematic multi-seed replication concerns the domain sensitivity of authority bias. Across 5 independent
+experimental configurations (3 seeds each,n= 15total), including both synthetic open-ended QA and explic-
+itly fact-centric tasks (prompts requesting citations to specific named studies and institutions), authority bias
+consistently fails to propagate:ΓA = 0.00(95% CI[0.00,0.00]) in all configurations. This sharply contrasts
+with length bias, which propagates robustly under identical settings (ΓA = 13.18,p &lt;0.01). We interpret
+this as evidence that authority bias contagion requires conditions beyond simple fact-centricity—possibly
+evaluator training on </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>citation-verification tasks, or memory architectures that explicitly represent source
+provenance. This negative result does not undermine the Memory Contagion thesis; rather, it strengthens
+its core contribution:contagion mechanisms are fundamentally bias-type-dependent, and length
+preference represents a reliably reproducible form of Memory Contagion, while authority bias
+propagation remains an open challenge.
+Limitation in Bias Injection Method.Our rejection-sampling approach selects trajectories that
+maximize a biased evaluator&#x27;s score. This may co-select for unmeasured quality features (e.g., fluency,
+coherence) correlated with the evaluator&#x27;s preference, potentially inflating contagion estimates. Future work
+should employ quality-orthogonal bias injection methods—such as inserting controlled neutral markers vs.
+authority cues—to isolate pure bias effects from confounding quality </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We verify that bias injection succeeds by measuringβ, the bias strength in generated trajectories:
+β= 1N Xτ∈D b b(τ)− 1N Xτ∈D c b(τ)(6)
+For length bias,β= 0.14(mean length: 298 words vs. 290 words, statistically significant). For authority
+bias,β= 0.21(mean authority density: 0.15 vs. 0.07).</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As noted in Section 5, authority bias propagation is task-contingent. In preliminary multi-seed runs (3
+seeds,α= 1.0) on the 20 synthetic open-ended QA tasks used for length bias experiments, authority bias
+fails to propagate:Γ A = 0.00 [0.00,0.00]for all seeds. All candidate responses scored similarly regardless
+of authority-marker density, confirming that authority signals require fact-grounded semantic context (e.g.,
+HotpotQA, ScienceQA) to be distinguishable from general response quality. We report this negative result
+for completeness and to motivate future work on domain-specific bias injection. The authority values in
+Table 1 (*) are therefore from a fact-centric V4 run (Section 5).</blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We report the full results of systematic multi-seed authority bias experiments across 5 independent config-
+urations (3 seeds each,n= 15total): 4 on synthetic open-ended QA, 1 on fact-centric tasks with explicit
+instructions to cite named studies and institutions. In all configurations,Γ A = 0.00(95% bootstrap CI
+12
+[0.00,0.00]). This finding demonstrates that authority bias contagion is not elicitable under the current
+experimental paradigm—regardless of task domain or prompting strategy. The single V4 run reported in
+Table 1 uses a distinct fact-centric task set (HotpotQA-style) with a different experimental pipeline and
+serves as an exploratory outlier; its results are not replicated in any of our controlled multi-seed experi-
+ments. We conclude thatlength preference represents a reliably reproducible form of Memory
+Contagion, while authority bias propagation remains an open </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +248,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -30,13 +30,13 @@
   "first_seen_at": "2026-10-29 10:42:59",
   "first_seen_date": "2026-10-29",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-10-29 10:42:59",
-  "last_seen_date": "2026-10-29",
+  "is_new": false,
+  "last_seen_at": "2026-10-30 10:43:28",
+  "last_seen_date": "2026-10-30",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-10-29 10:43:22",
   "notified_date": "2026-10-29",
   "openalex_id": "W4407785632",
@@ -46,8 +46,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-10-29 10:42:59",
-    "generated_at": "2026-10-29 10:47:34",
-    "last_seen_at": "2026-10-29 10:42:59",
+    "generated_at": "2026-10-30 10:47:20",
+    "last_seen_at": "2026-10-30 10:43:28",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -115,36 +115,2107 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-30T10:46:12.269954+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The study offers a rigorous conceptual framing, comprehensive empirical comparisons across both agent architectures and post-training regimes, and clear experimental validation supported by objective ground-truth answer metrics and retrieval recall.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 65980,
+      "assessment_input_sha256": "292ff612eca8b8b47d0de4e7f33c07cb7a9ad2c0ea35b88c403df993fc72a7f6",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.1038/s41467-026-78807-z",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 64977,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 63541,
+      "evidence_block_count": 89,
+      "evidence_context_characters": 74921,
+      "evidence_context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+      "evidence_context_sha256": "1397a87c3ff570578b6ce98fab6d25c4b69351893fa2b5398c6f2e76b8f7fb63",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 240,
+      "excluded_sections": [
+        {
+          "characters": 122,
+          "heading": "References",
+          "page": 16,
+          "reason": "explicit_back_matter"
+        },
+        {
+          "characters": 118,
+          "heading": "References",
+          "page": 19,
+          "reason": "explicit_back_matter"
+        }
+      ],
+      "extracted_characters": 65013,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "extracted_pages": 19,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "00bebd646867d111ddf4ae8460e824362848c1e4138be0f6d05c71b3936b3497",
+        "source_url": "https://arxiv.org/pdf/2502.13957",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 64977,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "section_roles_detected": [
+        "body",
+        "discussion",
+        "introduction",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "discussion",
+        "introduction",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 703,
+          "supplied_characters": 703
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1490,
+          "supplied_characters": 1490
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2603,
+          "supplied_characters": 2603
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2072,
+          "supplied_characters": 2072
+        },
+        {
+          "heading": "A Framework For Supervising The Search Process",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 2329,
+          "supplied_characters": 2329
+        },
+        {
+          "heading": "Reasoning-Reflection Improves Search Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 1025,
+          "supplied_characters": 1025
+        },
+        {
+          "heading": "Reasoning-Reflection Improves Search Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 2346,
+          "supplied_characters": 2346
+        },
+        {
+          "heading": "Reasoning-Reflection Improves Search Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 1149,
+          "supplied_characters": 1149
+        },
+        {
+          "heading": "Process-Level Preference Optimization Enhances Agent Behavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2007,
+          "supplied_characters": 2007
+        },
+        {
+          "heading": "Critic-Guided Inference And Cross-Model Transfer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 2043,
+          "supplied_characters": 2043
+        },
+        {
+          "heading": "Process Supervision Generalizes Better Than Outcome Supervision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 462,
+          "supplied_characters": 462
+        },
+        {
+          "heading": "Process Supervision Generalizes Better Than Outcome Supervision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 65,
+          "supplied_characters": 65
+        },
+        {
+          "heading": "Need To Identify The Last",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 43,
+          "supplied_characters": 43
+        },
+        {
+          "heading": "Start By Searching For The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 92,
+          "supplied_characters": 92
+        },
+        {
+          "heading": "William Lyon Mackenzie King",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 51,
+          "supplied_characters": 51
+        },
+        {
+          "heading": "Mackenzie King'S Father Was",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2018,
+          "supplied_characters": 2018
+        },
+        {
+          "heading": "State Action",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 2700,
+          "supplied_characters": 2700
+        },
+        {
+          "heading": "State Action",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1635,
+          "supplied_characters": 1635
+        },
+        {
+          "heading": "Quality Of Process Supervision Signals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 411,
+          "supplied_characters": 411
+        },
+        {
+          "heading": "Outcome Supervision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1578,
+          "supplied_characters": 1578
+        },
+        {
+          "heading": "Outcome Supervision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1246,
+          "supplied_characters": 1246
+        },
+        {
+          "heading": "Scaling Properties Of Data Efficiency And Inference Compute",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1765,
+          "supplied_characters": 1765
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "discussion",
+          "section_index": 22,
+          "source_characters": 2664,
+          "supplied_characters": 2664
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "discussion",
+          "section_index": 23,
+          "source_characters": 200,
+          "supplied_characters": 200
+        },
+        {
+          "heading": "Prm (Gpt)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1217,
+          "supplied_characters": 1217
+        },
+        {
+          "heading": "Prm (Gpt)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1224,
+          "supplied_characters": 1224
+        },
+        {
+          "heading": "Materials And Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "methods",
+          "section_index": 26,
+          "source_characters": 443,
+          "supplied_characters": 443
+        },
+        {
+          "heading": "Benchmark Datasets And Evaluation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "methods",
+          "section_index": 27,
+          "source_characters": 1462,
+          "supplied_characters": 1462
+        },
+        {
+          "heading": "Retrieval Corpora And Information-Retrieval Environment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 979,
+          "supplied_characters": 979
+        },
+        {
+          "heading": "High-Level Markov Decision Process Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 335,
+          "supplied_characters": 335
+        },
+        {
+          "heading": "High-Level Markov Decision Process Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1216,
+          "supplied_characters": 1216
+        },
+        {
+          "heading": "Functional Decomposition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 794,
+          "supplied_characters": 794
+        },
+        {
+          "heading": "Baseline Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1209,
+          "supplied_characters": 1209
+        },
+        {
+          "heading": "Re 2Search And Re2Search++",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 727,
+          "supplied_characters": 727
+        },
+        {
+          "heading": "Trajectory Generation And Filtering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 578,
+          "supplied_characters": 578
+        },
+        {
+          "heading": "Preference Annotation And Reward Tuples",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1106,
+          "supplied_characters": 1106
+        },
+        {
+          "heading": "Post-Training Objectives For The Actor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 36,
+          "source_characters": 1737,
+          "supplied_characters": 1737
+        },
+        {
+          "heading": "Critic Training And Critic-Guided Inference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "methods",
+          "section_index": 37,
+          "source_characters": 1621,
+          "supplied_characters": 1621
+        },
+        {
+          "heading": "Backbone Models, Prompts And Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "methods",
+          "section_index": 38,
+          "source_characters": 1000,
+          "supplied_characters": 1000
+        },
+        {
+          "heading": "Backbone Models, Prompts And Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 39,
+          "source_characters": 1715,
+          "supplied_characters": 1715
+        },
+        {
+          "heading": "Backbone Models, Prompts And Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "methods",
+          "section_index": 40,
+          "source_characters": 2179,
+          "supplied_characters": 2179
+        },
+        {
+          "heading": "Data And Code Availability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 482,
+          "supplied_characters": 482
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 13,
+          "supplied_characters": 13
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 4176,
+          "supplied_characters": 4176
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 4429,
+          "supplied_characters": 4429
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 1332,
+          "supplied_characters": 1332
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 318,
+          "supplied_characters": 318
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 552,
+          "supplied_characters": 552
+        }
+      ],
+      "selected_characters": 63541,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "selected_sections": [
+        {
+          "characters": 703,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1490,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2603,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2072,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2329,
+          "heading": "A Framework For Supervising The Search Process",
+          "page": 2
+        },
+        {
+          "characters": 1025,
+          "heading": "Reasoning-Reflection Improves Search Architecture",
+          "page": 2
+        },
+        {
+          "characters": 2346,
+          "heading": "Reasoning-Reflection Improves Search Architecture",
+          "page": 3
+        },
+        {
+          "characters": 1149,
+          "heading": "Reasoning-Reflection Improves Search Architecture",
+          "page": 4
+        },
+        {
+          "characters": 2007,
+          "heading": "Process-Level Preference Optimization Enhances Agent Behavior",
+          "page": 4
+        },
+        {
+          "characters": 2043,
+          "heading": "Critic-Guided Inference And Cross-Model Transfer",
+          "page": 4
+        },
+        {
+          "characters": 462,
+          "heading": "Process Supervision Generalizes Better Than Outcome Supervision",
+          "page": 4
+        },
+        {
+          "characters": 65,
+          "heading": "Process Supervision Generalizes Better Than Outcome Supervision",
+          "page": 5
+        },
+        {
+          "characters": 43,
+          "heading": "Need To Identify The Last",
+          "page": 5
+        },
+        {
+          "characters": 92,
+          "heading": "Start By Searching For The",
+          "page": 5
+        },
+        {
+          "characters": 51,
+          "heading": "William Lyon Mackenzie King",
+          "page": 5
+        },
+        {
+          "characters": 2018,
+          "heading": "Mackenzie King'S Father Was",
+          "page": 5
+        },
+        {
+          "characters": 2700,
+          "heading": "State Action",
+          "page": 6
+        },
+        {
+          "characters": 1635,
+          "heading": "State Action",
+          "page": 7
+        },
+        {
+          "characters": 411,
+          "heading": "Quality Of Process Supervision Signals",
+          "page": 7
+        },
+        {
+          "characters": 1578,
+          "heading": "Outcome Supervision",
+          "page": 8
+        },
+        {
+          "characters": 1246,
+          "heading": "Outcome Supervision",
+          "page": 9
+        },
+        {
+          "characters": 1765,
+          "heading": "Scaling Properties Of Data Efficiency And Inference Compute",
+          "page": 9
+        },
+        {
+          "characters": 2664,
+          "heading": "Discussion",
+          "page": 9
+        },
+        {
+          "characters": 200,
+          "heading": "Discussion",
+          "page": 10
+        },
+        {
+          "characters": 1217,
+          "heading": "Prm (Gpt)",
+          "page": 10
+        },
+        {
+          "characters": 1224,
+          "heading": "Prm (Gpt)",
+          "page": 11
+        },
+        {
+          "characters": 443,
+          "heading": "Materials And Methods",
+          "page": 11
+        },
+        {
+          "characters": 1462,
+          "heading": "Benchmark Datasets And Evaluation Protocol",
+          "page": 11
+        },
+        {
+          "characters": 979,
+          "heading": "Retrieval Corpora And Information-Retrieval Environment",
+          "page": 11
+        },
+        {
+          "characters": 335,
+          "heading": "High-Level Markov Decision Process Formulation",
+          "page": 11
+        },
+        {
+          "characters": 1216,
+          "heading": "High-Level Markov Decision Process Formulation",
+          "page": 12
+        },
+        {
+          "characters": 794,
+          "heading": "Functional Decomposition",
+          "page": 12
+        },
+        {
+          "characters": 1209,
+          "heading": "Baseline Agents",
+          "page": 12
+        },
+        {
+          "characters": 727,
+          "heading": "Re 2Search And Re2Search++",
+          "page": 12
+        },
+        {
+          "characters": 578,
+          "heading": "Trajectory Generation And Filtering",
+          "page": 13
+        },
+        {
+          "characters": 1106,
+          "heading": "Preference Annotation And Reward Tuples",
+          "page": 13
+        },
+        {
+          "characters": 1737,
+          "heading": "Post-Training Objectives For The Actor",
+          "page": 13
+        },
+        {
+          "characters": 1621,
+          "heading": "Critic Training And Critic-Guided Inference",
+          "page": 14
+        },
+        {
+          "characters": 1000,
+          "heading": "Backbone Models, Prompts And Implementation Details",
+          "page": 14
+        },
+        {
+          "characters": 1715,
+          "heading": "Backbone Models, Prompts And Implementation Details",
+          "page": 15
+        },
+        {
+          "characters": 2179,
+          "heading": "Backbone Models, Prompts And Implementation Details",
+          "page": 16
+        },
+        {
+          "characters": 482,
+          "heading": "Data And Code Availability",
+          "page": 16
+        },
+        {
+          "characters": 13,
+          "heading": "Unclassified body after references",
+          "page": 16
+        },
+        {
+          "characters": 4176,
+          "heading": "Unclassified body after references",
+          "page": 17
+        },
+        {
+          "characters": 4429,
+          "heading": "Unclassified body after references",
+          "page": 18
+        },
+        {
+          "characters": 1332,
+          "heading": "Unclassified body after references",
+          "page": 19
+        },
+        {
+          "characters": 318,
+          "heading": "Unclassified body after references",
+          "page": 19
+        },
+        {
+          "characters": 552,
+          "heading": "Back matter: Acknowledgments",
+          "page": 19
+        }
+      ],
+      "selected_text_sha256": "292ff612eca8b8b47d0de4e7f33c07cb7a9ad2c0ea35b88c403df993fc72a7f6",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "00bebd646867d111ddf4ae8460e824362848c1e4138be0f6d05c71b3936b3497",
+      "source_pages": 19,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": [
+        "Structurally bounded citation prefixes excluded; ambiguous back matter, body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0007"
+        ],
+        "excerpt": "RAG-Gym, a framework that moves the training paradigm from outcome-based signals to\nprocess-level supervision. We formulate agentic search as a Markov Decision Process (MDP) in which search queries act as\nmacro-actions. This approach enables fine-grained supervision of intermediate search steps rather than focusing solely on\nfinal outcomes. Agents can therefore learn coherent and verifiable search trajectories that logically support their conclusions.\nUsing this framework, we systematically decompose and optimize search agents along three key dimensions: architecture\ndesign, parameter optimization, and action evaluation. This allows us to identify the specific design choices that drive optimal\nperformance.\nWe identify reasoning reflection as a powerful but underexplored capability for search agents and introduce a new agent\narchitecture called Re2Search (Reason, Reflection, Search) that ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "33c6c678f34cabbb7ed6485ed792c27ec5259987755e1a671822e9c05b53a0fc",
+            "evidence_id": "E9ee82ea09dc187d0-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 989,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 89,
+                "text": "RAG-Gym, a framework that moves the training paradigm from outcome-based signals to\nprocess-level supervision. We formulate agentic search as a Markov Decision Process (MDP) in which search queries act as\nmacro-actions. This approach enables fine-grained supervision of intermediate search steps rather than focusing solely on\nfinal outcomes. Agents can therefore learn coherent and verifiable search trajectories that logically support their conclusions.\nUsing this framework, we systematically decompose and optimize search agents along three key dimensions: architecture\ndesign, parameter optimization, and action evaluation. This allows us to identify the specific design choices that drive optimal\nperformance.\nWe identify reasoning reflection as a powerful but underexplored capability for search agents and introduce a new agent\narchitecture called Re2Search (Reason, Reflection, Search) that "
+              }
+            ],
+            "text": "RAG-Gym, a framework that moves the training paradigm from outcome-based signals to\nprocess-level supervision. We formulate agentic search as a Markov Decision Process (MDP) in which search queries act as\nmacro-actions. This approach enables fine-grained supervision of intermediate search steps rather than focusing solely on\nfinal outcomes. Agents can therefore learn coherent and verifiable search trajectories that logically support their conclusions.\nUsing this framework, we systematically decompose and optimize search agents along three key dimensions: architecture\ndesign, parameter optimization, and action evaluation. This allows us to identify the specific design choices that drive optimal\nperformance.\nWe identify reasoning reflection as a powerful but underexplored capability for search agents and introduce a new agent\narchitecture called Re2Search (Reason, Reflection, Search) that "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0008"
+        ],
+        "excerpt": "embodies this approach. At each step, Re2Search reasons toward\nthe final answer and explicitly reflects on its reasoning process to uncover knowledge gaps. By integrating Re2Search with the\noptimal strategies discovered through RAG-Gym, we develop Re2Search++, a process-supervised agent that achieves strong\nperformance on multi-hop and medical information-seeking benchmarks. Re2Search++ surpasses robust outcome-supervised\nbaselines33, 34, especially in out-of-domain evaluations.\nOur analysis shows that these improvements arise from a greater ability to generate effective search queries, not just from\noptimizing answers. This is supported by substantial increases in the retrieval recall of ground-truth documents. We also find\nthat the search heuristics learned through process supervision transfer well, enabling critics trained on open-source trajectories\nto guide proprietary models ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "497a67980acbe71d1e96e27f09ced9170e86f78a6c14db213f032bfa6512435a",
+            "evidence_id": "E9ee82ea09dc187d0-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1883,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 989,
+                "text": "embodies this approach. At each step, Re2Search reasons toward\nthe final answer and explicitly reflects on its reasoning process to uncover knowledge gaps. By integrating Re2Search with the\noptimal strategies discovered through RAG-Gym, we develop Re2Search++, a process-supervised agent that achieves strong\nperformance on multi-hop and medical information-seeking benchmarks. Re2Search++ surpasses robust outcome-supervised\nbaselines33, 34, especially in out-of-domain evaluations.\nOur analysis shows that these improvements arise from a greater ability to generate effective search queries, not just from\noptimizing answers. This is supported by substantial increases in the retrieval recall of ground-truth documents. We also find\nthat the search heuristics learned through process supervision transfer well, enabling critics trained on open-source trajectories\nto guide proprietary models "
+              }
+            ],
+            "text": "embodies this approach. At each step, Re2Search reasons toward\nthe final answer and explicitly reflects on its reasoning process to uncover knowledge gaps. By integrating Re2Search with the\noptimal strategies discovered through RAG-Gym, we develop Re2Search++, a process-supervised agent that achieves strong\nperformance on multi-hop and medical information-seeking benchmarks. Re2Search++ surpasses robust outcome-supervised\nbaselines33, 34, especially in out-of-domain evaluations.\nOur analysis shows that these improvements arise from a greater ability to generate effective search queries, not just from\noptimizing answers. This is supported by substantial increases in the retrieval recall of ground-truth documents. We also find\nthat the search heuristics learned through process supervision transfer well, enabling critics trained on open-source trajectories\nto guide proprietary models "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0011"
+        ],
+        "excerpt": "reinforce a flawed search\ntrajectory. Conversely, a rigorous and necessary search step might be unfairly penalized if the subsequent answer generation is\nunsuccessful.\nBuilding on the MDP formulation, we introduce RAG-Gym, a framework that decomposes the agentic design space into\nthree coupled dimensions that enable process-level supervision (Fig. 1c). The first dimension is architecture design, which\ndefines the agent's internal cognitive flow and verification loops. The second is parameter optimization, which trains the actor\nusing supervised, preference, or reinforcement learning. The third is action evaluation, which trains an external critic to guide\ndecision-making at inference. This modularity allows us to isolate the contributions of each component and move beyond the\nlimitations of outcome-supervised baselines.\nWe evaluate our approach on four knowledge-intensive benchmarks: ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Framework For Supervising The Search Process",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d29c83c0ccb701816947448ec13fe231fba1aefbd6c78337510ac55e37d5b335",
+            "evidence_id": "E9ee82ea09dc187d0-B0011",
+            "pages": [
+              2
+            ],
+            "section": "A Framework For Supervising The Search Process",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 2,
+                "section": "A Framework For Supervising The Search Process",
+                "section_index": 4,
+                "start": 895,
+                "text": "reinforce a flawed search\ntrajectory. Conversely, a rigorous and necessary search step might be unfairly penalized if the subsequent answer generation is\nunsuccessful.\nBuilding on the MDP formulation, we introduce RAG-Gym, a framework that decomposes the agentic design space into\nthree coupled dimensions that enable process-level supervision (Fig. 1c). The first dimension is architecture design, which\ndefines the agent's internal cognitive flow and verification loops. The second is parameter optimization, which trains the actor\nusing supervised, preference, or reinforcement learning. The third is action evaluation, which trains an external critic to guide\ndecision-making at inference. This modularity allows us to isolate the contributions of each component and move beyond the\nlimitations of outcome-supervised baselines.\nWe evaluate our approach on four knowledge-intensive benchmarks: "
+              }
+            ],
+            "text": "reinforce a flawed search\ntrajectory. Conversely, a rigorous and necessary search step might be unfairly penalized if the subsequent answer generation is\nunsuccessful.\nBuilding on the MDP formulation, we introduce RAG-Gym, a framework that decomposes the agentic design space into\nthree coupled dimensions that enable process-level supervision (Fig. 1c). The first dimension is architecture design, which\ndefines the agent's internal cognitive flow and verification loops. The second is parameter optimization, which trains the actor\nusing supervised, preference, or reinforcement learning. The third is action evaluation, which trains an external critic to guide\ndecision-making at inference. This modularity allows us to isolate the contributions of each component and move beyond the\nlimitations of outcome-supervised baselines.\nWe evaluate our approach on four knowledge-intensive benchmarks: "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0012"
+        ],
+        "excerpt": "HotpotQA39, 2WikiMultihopQA40, Bamboogle15,\nand MedQA41. For the first three, we report Exact Match (EM) and F1, and for MedQA, we report accuracy. Macro averages\nare computed by treating accuracy as EM and F1 in the multi-choice setting. Unless otherwise noted, process-reward data\nfor actor and critic training consists of 1,000 questions sampled from HotpotQA or MedQA. Generalization is assessed on\n2WikiMultihopQA and Bamboogle using models tuned on HotpotQA. Details about model training and evaluation are provided\nin the Methods.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "A Framework For Supervising The Search Process",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6eb92cf8c6c33060bd187d862888e91802441a5ac17b49221c22a57f63e504df",
+            "evidence_id": "E9ee82ea09dc187d0-B0012",
+            "pages": [
+              2
+            ],
+            "section": "A Framework For Supervising The Search Process",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2329,
+                "page": 2,
+                "section": "A Framework For Supervising The Search Process",
+                "section_index": 4,
+                "start": 1792,
+                "text": "HotpotQA39, 2WikiMultihopQA40, Bamboogle15,\nand MedQA41. For the first three, we report Exact Match (EM) and F1, and for MedQA, we report accuracy. Macro averages\nare computed by treating accuracy as EM and F1 in the multi-choice setting. Unless otherwise noted, process-reward data\nfor actor and critic training consists of 1,000 questions sampled from HotpotQA or MedQA. Generalization is assessed on\n2WikiMultihopQA and Bamboogle using models tuned on HotpotQA. Details about model training and evaluation are provided\nin the Methods."
+              }
+            ],
+            "text": "HotpotQA39, 2WikiMultihopQA40, Bamboogle15,\nand MedQA41. For the first three, we report Exact Match (EM) and F1, and for MedQA, we report accuracy. Macro averages\nare computed by treating accuracy as EM and F1 in the multi-choice setting. Unless otherwise noted, process-reward data\nfor actor and critic training consists of 1,000 questions sampled from HotpotQA or MedQA. Generalization is assessed on\n2WikiMultihopQA and Bamboogle using models tuned on HotpotQA. Details about model training and evaluation are provided\nin the Methods."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0013"
+        ],
+        "excerpt": "To systematically address the limitations of current agentic search systems, we first decompose the cognitive requirements of\nsearch agents into six distinct functional modules: Answer Generation, Question Reasoning, Retrieval Augmentation, Query\nGeneration, Document Summarization, and Reasoning Reflection (Fig. 2a). Existing architectures do not instantiate this full\nstack. For example, standard RAG systems retrieve based solely on keywords without reasoning, while existing search agents\nsuch as ReAct interleave thought and action but lack an explicit mechanism to target generated queries toward answer reasoning.\nAs shown in Fig. 2b, only our proposed Re2Search architecture incorporates the Reasoning Reflection module, which serves as\na dedicated verification loop.\nThis mechanism fundamentally alters the search trajectory. Instead of immediately issuing queries based on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reasoning-Reflection Improves Search Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "41523515748640bafdbda053dfebaca9c7a3af7c1f43203812f53aae64759afe",
+            "evidence_id": "E9ee82ea09dc187d0-B0013",
+            "pages": [
+              2
+            ],
+            "section": "Reasoning-Reflection Improves Search Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 884,
+                "page": 2,
+                "section": "Reasoning-Reflection Improves Search Architecture",
+                "section_index": 5,
+                "start": 0,
+                "text": "To systematically address the limitations of current agentic search systems, we first decompose the cognitive requirements of\nsearch agents into six distinct functional modules: Answer Generation, Question Reasoning, Retrieval Augmentation, Query\nGeneration, Document Summarization, and Reasoning Reflection (Fig. 2a). Existing architectures do not instantiate this full\nstack. For example, standard RAG systems retrieve based solely on keywords without reasoning, while existing search agents\nsuch as ReAct interleave thought and action but lack an explicit mechanism to target generated queries toward answer reasoning.\nAs shown in Fig. 2b, only our proposed Re2Search architecture incorporates the Reasoning Reflection module, which serves as\na dedicated verification loop.\nThis mechanism fundamentally alters the search trajectory. Instead of immediately issuing queries based on "
+              }
+            ],
+            "text": "To systematically address the limitations of current agentic search systems, we first decompose the cognitive requirements of\nsearch agents into six distinct functional modules: Answer Generation, Question Reasoning, Retrieval Augmentation, Query\nGeneration, Document Summarization, and Reasoning Reflection (Fig. 2a). Existing architectures do not instantiate this full\nstack. For example, standard RAG systems retrieve based solely on keywords without reasoning, while existing search agents\nsuch as ReAct interleave thought and action but lack an explicit mechanism to target generated queries toward answer reasoning.\nAs shown in Fig. 2b, only our proposed Re2Search architecture incorporates the Reasoning Reflection module, which serves as\na dedicated verification loop.\nThis mechanism fundamentally alters the search trajectory. Instead of immediately issuing queries based on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0019"
+        ],
+        "excerpt": "Having established the architectural advantages of reasoning-reflection, we next investigate how different supervision signals\ninfluence the agent's ability to navigate the information retrieval state space. We compare Zero-Shot Learning (ZSL) with\nthree optimization regimes: Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Proximal Policy\nOptimization (PPO), as illustrated in Fig. 3a.\nOur analysis reveals a clear distinction in how supervision affects agent behavior, depending on the complexity of the\nagent's cognitive architecture. As shown in Fig. 3b, process supervision consistently improves performance over zero-shot\nbaselines. However, the optimal training algorithm depends on the agent type. For single-step agents such as Direct, CoT, and\nstandard RAG, SFT is sufficient to reach peak performance, and DPO or PPO provide little additional benefit. In ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Process-Level Preference Optimization Enhances Agent Behavior",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5470c56508ba17bc47789995ec52fa8e0f05fce14f4c16ef9df923a03b8ba5b2",
+            "evidence_id": "E9ee82ea09dc187d0-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Process-Level Preference Optimization Enhances Agent Behavior",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 4,
+                "section": "Process-Level Preference Optimization Enhances Agent Behavior",
+                "section_index": 8,
+                "start": 0,
+                "text": "Having established the architectural advantages of reasoning-reflection, we next investigate how different supervision signals\ninfluence the agent's ability to navigate the information retrieval state space. We compare Zero-Shot Learning (ZSL) with\nthree optimization regimes: Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Proximal Policy\nOptimization (PPO), as illustrated in Fig. 3a.\nOur analysis reveals a clear distinction in how supervision affects agent behavior, depending on the complexity of the\nagent's cognitive architecture. As shown in Fig. 3b, process supervision consistently improves performance over zero-shot\nbaselines. However, the optimal training algorithm depends on the agent type. For single-step agents such as Direct, CoT, and\nstandard RAG, SFT is sufficient to reach peak performance, and DPO or PPO provide little additional benefit. In "
+              }
+            ],
+            "text": "Having established the architectural advantages of reasoning-reflection, we next investigate how different supervision signals\ninfluence the agent's ability to navigate the information retrieval state space. We compare Zero-Shot Learning (ZSL) with\nthree optimization regimes: Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Proximal Policy\nOptimization (PPO), as illustrated in Fig. 3a.\nOur analysis reveals a clear distinction in how supervision affects agent behavior, depending on the complexity of the\nagent's cognitive architecture. As shown in Fig. 3b, process supervision consistently improves performance over zero-shot\nbaselines. However, the optimal training algorithm depends on the agent type. For single-step agents such as Direct, CoT, and\nstandard RAG, SFT is sufficient to reach peak performance, and DPO or PPO provide little additional benefit. In "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0022"
+        ],
+        "excerpt": "To further refine the search process at runtime, we employ critic-guided action selection. Here, a reward model scores N\ncandidate actions at each step, and the agent executes the highest-scoring option using a Best-of-N strategy. As illustrated in\nFig. 4a, this mechanism steers the agent away from unproductive retrieval loops and toward verifiable evidence.\nOur results show that the effectiveness of inference-time guidance depends on the structural complexity of the agent. On\ngeneral-domain benchmarks, critic guidance improves F1 scores for reasoning-enhanced architectures such as CoT, RAG,\nReAct, Search-o1, and Re2Search, as shown in Fig. 4b and 4c. In contrast, simple Direct prompting does not benefit from\nthis intervention. The limitation of single-step methods is even more pronounced on the domain-specific MedQA benchmark\n(Fig. 4b). In this setting, only multi-step agents such as ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Critic-Guided Inference And Cross-Model Transfer",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4fc9b02c5fa43465c818a1a7cd02d264e9ba0cf9ff5fcd1c34a2cc2446c809c4",
+            "evidence_id": "E9ee82ea09dc187d0-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Critic-Guided Inference And Cross-Model Transfer",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 4,
+                "section": "Critic-Guided Inference And Cross-Model Transfer",
+                "section_index": 9,
+                "start": 0,
+                "text": "To further refine the search process at runtime, we employ critic-guided action selection. Here, a reward model scores N\ncandidate actions at each step, and the agent executes the highest-scoring option using a Best-of-N strategy. As illustrated in\nFig. 4a, this mechanism steers the agent away from unproductive retrieval loops and toward verifiable evidence.\nOur results show that the effectiveness of inference-time guidance depends on the structural complexity of the agent. On\ngeneral-domain benchmarks, critic guidance improves F1 scores for reasoning-enhanced architectures such as CoT, RAG,\nReAct, Search-o1, and Re2Search, as shown in Fig. 4b and 4c. In contrast, simple Direct prompting does not benefit from\nthis intervention. The limitation of single-step methods is even more pronounced on the domain-specific MedQA benchmark\n(Fig. 4b). In this setting, only multi-step agents such as "
+              }
+            ],
+            "text": "To further refine the search process at runtime, we employ critic-guided action selection. Here, a reward model scores N\ncandidate actions at each step, and the agent executes the highest-scoring option using a Best-of-N strategy. As illustrated in\nFig. 4a, this mechanism steers the agent away from unproductive retrieval loops and toward verifiable evidence.\nOur results show that the effectiveness of inference-time guidance depends on the structural complexity of the agent. On\ngeneral-domain benchmarks, critic guidance improves F1 scores for reasoning-enhanced architectures such as CoT, RAG,\nReAct, Search-o1, and Re2Search, as shown in Fig. 4b and 4c. In contrast, simple Direct prompting does not benefit from\nthis intervention. The limitation of single-step methods is even more pronounced on the domain-specific MedQA benchmark\n(Fig. 4b). In this setting, only multi-step agents such as "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0025"
+        ],
+        "excerpt": "We integrate the optimal components identified in our framework, namely the Re2Search architecture, DPO training, and\ncritic-guided inference, into a unified system called Re 2Search++. To isolate the impact of supervision style, we compare\nthis process-supervised approach with strong outcome-supervised baselines, specifically Search-R1 and R1-Searcher, which\nreinforce trajectories based solely on the correctness of the final answer as shown in Fig. 5a.\n4/19\nanswer reasoning     & reflection\nRAG ReAct / Search-o1 Re Search",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Process Supervision Generalizes Better Than Outcome Supervision",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "31f8c2a512841d206cde00eee5f8c0399b5f2ca390c0507f14ca6bcd1e0431d4",
+            "evidence_id": "E9ee82ea09dc187d0-B0025",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Process Supervision Generalizes Better Than Outcome Supervision",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 462,
+                "page": 4,
+                "section": "Process Supervision Generalizes Better Than Outcome Supervision",
+                "section_index": 10,
+                "start": 0,
+                "text": "We integrate the optimal components identified in our framework, namely the Re2Search architecture, DPO training, and\ncritic-guided inference, into a unified system called Re 2Search++. To isolate the impact of supervision style, we compare\nthis process-supervised approach with strong outcome-supervised baselines, specifically Search-R1 and R1-Searcher, which\nreinforce trajectories based solely on the correctness of the final answer as shown in Fig. 5a.\n4/19"
+              },
+              {
+                "end": 65,
+                "page": 5,
+                "section": "Process Supervision Generalizes Better Than Outcome Supervision",
+                "section_index": 11,
+                "start": 0,
+                "text": "answer reasoning     & reflection\nRAG ReAct / Search-o1 Re Search"
+              }
+            ],
+            "text": "We integrate the optimal components identified in our framework, namely the Re2Search architecture, DPO training, and\ncritic-guided inference, into a unified system called Re 2Search++. To isolate the impact of supervision style, we compare\nthis process-supervised approach with strong outcome-supervised baselines, specifically Search-R1 and R1-Searcher, which\nreinforce trajectories based solely on the correctness of the final answer as shown in Fig. 5a.\n4/19\nanswer reasoning     & reflection\nRAG ReAct / Search-o1 Re Search"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0033"
+        ],
+        "excerpt": "search strategies.c,Average number of search queries generated by Re 2Search agents during\ninference. Process-supervised agents consistently exhibit more active information-seeking behavior compared to zero-shot\nbaselines (ZSL), correlating with improved answer quality.\ndegradation on out-of-domain datasets. In contrast, Re2Search++ achieves superior generalization, particularly on the unseen\nBamboogle benchmark, while maintaining comparable or better performance than outcome-supervised agents on their respective\nin-domain tasks. This performance gap highlights the phenomenon of reward hacking that arises with outcome supervision.\nWhen supervision is sparse and provided only at the end of the trajectory, agents may learn to exploit parametric memory to\nguess answers and perform superficial searches that merely satisfy the training loop.\nWe further validate this hypothesis by analyzing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "State Action",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "be51e7f41b7a773524b0b3da6997919692245d8e3fceed9f479dc09bc9029c93",
+            "evidence_id": "E9ee82ea09dc187d0-B0033",
+            "pages": [
+              6
+            ],
+            "section": "State Action",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 6,
+                "section": "State Action",
+                "section_index": 16,
+                "start": 897,
+                "text": "search strategies.c,Average number of search queries generated by Re 2Search agents during\ninference. Process-supervised agents consistently exhibit more active information-seeking behavior compared to zero-shot\nbaselines (ZSL), correlating with improved answer quality.\ndegradation on out-of-domain datasets. In contrast, Re2Search++ achieves superior generalization, particularly on the unseen\nBamboogle benchmark, while maintaining comparable or better performance than outcome-supervised agents on their respective\nin-domain tasks. This performance gap highlights the phenomenon of reward hacking that arises with outcome supervision.\nWhen supervision is sparse and provided only at the end of the trajectory, agents may learn to exploit parametric memory to\nguess answers and perform superficial searches that merely satisfy the training loop.\nWe further validate this hypothesis by analyzing "
+              }
+            ],
+            "text": "search strategies.c,Average number of search queries generated by Re 2Search agents during\ninference. Process-supervised agents consistently exhibit more active information-seeking behavior compared to zero-shot\nbaselines (ZSL), correlating with improved answer quality.\ndegradation on out-of-domain datasets. In contrast, Re2Search++ achieves superior generalization, particularly on the unseen\nBamboogle benchmark, while maintaining comparable or better performance than outcome-supervised agents on their respective\nin-domain tasks. This performance gap highlights the phenomenon of reward hacking that arises with outcome supervision.\nWhen supervision is sparse and provided only at the end of the trajectory, agents may learn to exploit parametric memory to\nguess answers and perform superficial searches that merely satisfy the training loop.\nWe further validate this hypothesis by analyzing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0034"
+        ],
+        "excerpt": "retrieval recall distributions in Fig. 5b. Outcome-supervised agents\nfrequently achieve low retrieval recall, indicating that their correct answers often result from ungrounded predictions or reliance\non parametric memory rather than retrieved evidence. In contrast, Re2Search++ demonstrates significantly higher retrieval\nrecall across both Llama-3.1 and Qwen-2.5 backbones, showing that process supervision aligns the agent with the actual utility\nof retrieved evidence. As shown in Fig. 5d, this improved grounding does not come at the cost of efficiency. Re 2Search++\nattains higher accuracy with comparable or fewer search actions than baselines, reflecting a more targeted query strategy. By\nrewarding the steps of evidence gathering, we produce an agent that is verifiable and faithful and remains effective even when\nencountering unfamiliar questions where internal knowledge is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "State Action",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b2ae37f5f0711de90ff4196090c06232a092714ab9e8248edd5b8a59daef5a8b",
+            "evidence_id": "E9ee82ea09dc187d0-B0034",
+            "pages": [
+              6
+            ],
+            "section": "State Action",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2682,
+                "page": 6,
+                "section": "State Action",
+                "section_index": 16,
+                "start": 1795,
+                "text": "retrieval recall distributions in Fig. 5b. Outcome-supervised agents\nfrequently achieve low retrieval recall, indicating that their correct answers often result from ungrounded predictions or reliance\non parametric memory rather than retrieved evidence. In contrast, Re2Search++ demonstrates significantly higher retrieval\nrecall across both Llama-3.1 and Qwen-2.5 backbones, showing that process supervision aligns the agent with the actual utility\nof retrieved evidence. As shown in Fig. 5d, this improved grounding does not come at the cost of efficiency. Re 2Search++\nattains higher accuracy with comparable or fewer search actions than baselines, reflecting a more targeted query strategy. By\nrewarding the steps of evidence gathering, we produce an agent that is verifiable and faithful and remains effective even when\nencountering unfamiliar questions where internal knowledge is "
+              }
+            ],
+            "text": "retrieval recall distributions in Fig. 5b. Outcome-supervised agents\nfrequently achieve low retrieval recall, indicating that their correct answers often result from ungrounded predictions or reliance\non parametric memory rather than retrieved evidence. In contrast, Re2Search++ demonstrates significantly higher retrieval\nrecall across both Llama-3.1 and Qwen-2.5 backbones, showing that process supervision aligns the agent with the actual utility\nof retrieved evidence. As shown in Fig. 5d, this improved grounding does not come at the cost of efficiency. Re 2Search++\nattains higher accuracy with comparable or fewer search actions than baselines, reflecting a more targeted query strategy. By\nrewarding the steps of evidence gathering, we produce an agent that is verifiable and faithful and remains effective even when\nencountering unfamiliar questions where internal knowledge is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0038"
+        ],
+        "excerpt": "Outcome Supervision\nQuestion\nsearch answer\nsearch\nsearch search answer\nQuestion\nsearch\nsearch\nsearch\nanswer\nsearch\nanswer\nsearch search\nanswer\nsearch answer\nProcess Supervision\na b\nc\nd\nFigure 5.Process supervision yields superior generalization and search efficiency compared to outcome supervision. a,\nConceptual contrast between outcome-only supervision, which rewards only the final answer, and process supervision, which\nassigns feedback at each intermediate search step.b,Retrieval recall distributions on HotpotQA and 2WikiMultihopQA for\noutcome-supervised baselines (ReAct, Search-o1, Search-R1, R1-Searcher) versus process-supervised Re2Search++\n(Llama-3.1-8B and Qwen-2.5-7B backbones). Process-supervised agents consistently achieve higher recall of ground-truth\ndocuments.c,Performance (F1) across in-domain and out-of-domain benchmarks. Re 2Search++ matches or ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Outcome Supervision",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "62a2420ef89e0298755519b5b00ef16bfb463c56eb0b4487038bed04a0a0cac7",
+            "evidence_id": "E9ee82ea09dc187d0-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Outcome Supervision",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 873,
+                "page": 8,
+                "section": "Outcome Supervision",
+                "section_index": 19,
+                "start": 0,
+                "text": "Outcome Supervision\nQuestion\nsearch answer\nsearch\nsearch search answer\nQuestion\nsearch\nsearch\nsearch\nanswer\nsearch\nanswer\nsearch search\nanswer\nsearch answer\nProcess Supervision\na b\nc\nd\nFigure 5.Process supervision yields superior generalization and search efficiency compared to outcome supervision. a,\nConceptual contrast between outcome-only supervision, which rewards only the final answer, and process supervision, which\nassigns feedback at each intermediate search step.b,Retrieval recall distributions on HotpotQA and 2WikiMultihopQA for\noutcome-supervised baselines (ReAct, Search-o1, Search-R1, R1-Searcher) versus process-supervised Re2Search++\n(Llama-3.1-8B and Qwen-2.5-7B backbones). Process-supervised agents consistently achieve higher recall of ground-truth\ndocuments.c,Performance (F1) across in-domain and out-of-domain benchmarks. Re 2Search++ matches or "
+              }
+            ],
+            "text": "Outcome Supervision\nQuestion\nsearch answer\nsearch\nsearch search answer\nQuestion\nsearch\nsearch\nsearch\nanswer\nsearch\nanswer\nsearch search\nanswer\nsearch answer\nProcess Supervision\na b\nc\nd\nFigure 5.Process supervision yields superior generalization and search efficiency compared to outcome supervision. a,\nConceptual contrast between outcome-only supervision, which rewards only the final answer, and process supervision, which\nassigns feedback at each intermediate search step.b,Retrieval recall distributions on HotpotQA and 2WikiMultihopQA for\noutcome-supervised baselines (ReAct, Search-o1, Search-R1, R1-Searcher) versus process-supervised Re2Search++\n(Llama-3.1-8B and Qwen-2.5-7B backbones). Process-supervised agents consistently achieve higher recall of ground-truth\ndocuments.c,Performance (F1) across in-domain and out-of-domain benchmarks. Re 2Search++ matches or "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0040"
+        ],
+        "excerpt": "retrieval settings. An agent may produce a factually correct\nfinal answer by relying on parametric memory or exploiting spurious correlations, even if its search trajectory is irrelevant\nor hallucinated. Rollout methods, which validate based solely on the final answer, tend to reinforce these flawed trajectories\nwithout discrimination.\nIn contrast, model-based supervision, particularly when distilled from GPT-4o, demonstrates greater robustness to noise.\nAs detailed in Fig. 6c, GPT-4o annotations show the highest agreement with human ground-truth judgments, reaching 85.8%\non MedQA, and achieve high recall in retrieving ground-truth documents, such as 84.5% on 2WikiMultihopQA. Critics trained\non these signals consistently deliver the best downstream performance, achieving 57.9% F1 on 2WikiMultihopQA and 72.0%\naccuracy on MedQA. These results suggest that strong model-based annotators are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Outcome Supervision",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c6d46bfa3c235fa624cc29e6e2ebe46fd49a0f90e1109bfceb431cb80db80f44",
+            "evidence_id": "E9ee82ea09dc187d0-B0040",
+            "pages": [
+              9
+            ],
+            "section": "Outcome Supervision",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1086,
+                "page": 9,
+                "section": "Outcome Supervision",
+                "section_index": 20,
+                "start": 186,
+                "text": "retrieval settings. An agent may produce a factually correct\nfinal answer by relying on parametric memory or exploiting spurious correlations, even if its search trajectory is irrelevant\nor hallucinated. Rollout methods, which validate based solely on the final answer, tend to reinforce these flawed trajectories\nwithout discrimination.\nIn contrast, model-based supervision, particularly when distilled from GPT-4o, demonstrates greater robustness to noise.\nAs detailed in Fig. 6c, GPT-4o annotations show the highest agreement with human ground-truth judgments, reaching 85.8%\non MedQA, and achieve high recall in retrieving ground-truth documents, such as 84.5% on 2WikiMultihopQA. Critics trained\non these signals consistently deliver the best downstream performance, achieving 57.9% F1 on 2WikiMultihopQA and 72.0%\naccuracy on MedQA. These results suggest that strong model-based annotators are "
+              }
+            ],
+            "text": "retrieval settings. An agent may produce a factually correct\nfinal answer by relying on parametric memory or exploiting spurious correlations, even if its search trajectory is irrelevant\nor hallucinated. Rollout methods, which validate based solely on the final answer, tend to reinforce these flawed trajectories\nwithout discrimination.\nIn contrast, model-based supervision, particularly when distilled from GPT-4o, demonstrates greater robustness to noise.\nAs detailed in Fig. 6c, GPT-4o annotations show the highest agreement with human ground-truth judgments, reaching 85.8%\non MedQA, and achieve high recall in retrieving ground-truth documents, such as 84.5% on 2WikiMultihopQA. Critics trained\non these signals consistently deliver the best downstream performance, achieving 57.9% F1 on 2WikiMultihopQA and 72.0%\naccuracy on MedQA. These results suggest that strong model-based annotators are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0043"
+        ],
+        "excerpt": "domain-specific reasoning requires more extensive data.\nInference Compute.We also investigate the relationship between computational budget and performance using a Best-of- N\ninference strategy. As illustrated in Fig. 6f, increasing the candidate pool size N leads to consistent performance gains up\nto a saturation point, typically between N=15 and N=20 . Beyond this range, returns diminish and, in some cases such as\nMedQA, performance declines. For example, accuracy drops from 72.8% at N=15 to 71.2% at N=20 . This decline likely\nresults from a reward hacking effect, where a larger sample size increases the chance of generating semantically flawed but\nhigh-scoring adversarial actions that can mislead the critic. These results indicate that a moderate inference budget, with N\naround 10 to 15, offers the best balance between accuracy and computational cost.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Scaling Properties Of Data Efficiency And Inference Compute",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "203bfbc5f1334e2ba765e9589aee2845e735951e7cf65cb7f3e002cc2b8daf60",
+            "evidence_id": "E9ee82ea09dc187d0-B0043",
+            "pages": [
+              9
+            ],
+            "section": "Scaling Properties Of Data Efficiency And Inference Compute",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1765,
+                "page": 9,
+                "section": "Scaling Properties Of Data Efficiency And Inference Compute",
+                "section_index": 21,
+                "start": 899,
+                "text": "domain-specific reasoning requires more extensive data.\nInference Compute.We also investigate the relationship between computational budget and performance using a Best-of- N\ninference strategy. As illustrated in Fig. 6f, increasing the candidate pool size N leads to consistent performance gains up\nto a saturation point, typically between N=15 and N=20 . Beyond this range, returns diminish and, in some cases such as\nMedQA, performance declines. For example, accuracy drops from 72.8% at N=15 to 71.2% at N=20 . This decline likely\nresults from a reward hacking effect, where a larger sample size increases the chance of generating semantically flawed but\nhigh-scoring adversarial actions that can mislead the critic. These results indicate that a moderate inference budget, with N\naround 10 to 15, offers the best balance between accuracy and computational cost."
+              }
+            ],
+            "text": "domain-specific reasoning requires more extensive data.\nInference Compute.We also investigate the relationship between computational budget and performance using a Best-of- N\ninference strategy. As illustrated in Fig. 6f, increasing the candidate pool size N leads to consistent performance gains up\nto a saturation point, typically between N=15 and N=20 . Beyond this range, returns diminish and, in some cases such as\nMedQA, performance declines. For example, accuracy drops from 72.8% at N=15 to 71.2% at N=20 . This decline likely\nresults from a reward hacking effect, where a larger sample size increases the chance of generating semantically flawed but\nhigh-scoring adversarial actions that can mislead the critic. These results indicate that a moderate inference budget, with N\naround 10 to 15, offers the best balance between accuracy and computational cost."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0046"
+        ],
+        "excerpt": "framework offers a practical approach for deploying these systems by leveraging portable critics.\nWe find that a critic trained on process data from a smaller open-source model can successfully guide the inference of entirely\ndifferent backbone models. This demonstrates that the core principles of effective information seeking are generalizable logic\npatterns rather than model-specific artifacts. Such transferability suggests a cost-effective deployment paradigm in which\nlightweight, open-source critics can guide the reasoning processes of larger, black-box systems without requiring access to their\ninternal weights.\nWhile our results show that process supervision improves reliability and generalization, several challenges remain. The\napproach depends on high-quality reward signals, and we found that rollout-based rewards can be noisy in retrieval settings\n9/19",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "75eea3f5c73f3ee9e38582fdc0651a08e22c5ca3c1cc5bac5d17e5b702127431",
+            "evidence_id": "E9ee82ea09dc187d0-B0046",
+            "pages": [
+              9
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 2664,
+                "page": 9,
+                "section": "Discussion",
+                "section_index": 22,
+                "start": 1792,
+                "text": "framework offers a practical approach for deploying these systems by leveraging portable critics.\nWe find that a critic trained on process data from a smaller open-source model can successfully guide the inference of entirely\ndifferent backbone models. This demonstrates that the core principles of effective information seeking are generalizable logic\npatterns rather than model-specific artifacts. Such transferability suggests a cost-effective deployment paradigm in which\nlightweight, open-source critics can guide the reasoning processes of larger, black-box systems without requiring access to their\ninternal weights.\nWhile our results show that process supervision improves reliability and generalization, several challenges remain. The\napproach depends on high-quality reward signals, and we found that rollout-based rewards can be noisy in retrieval settings\n9/19"
+              }
+            ],
+            "text": "framework offers a practical approach for deploying these systems by leveraging portable critics.\nWe find that a critic trained on process data from a smaller open-source model can successfully guide the inference of entirely\ndifferent backbone models. This demonstrates that the core principles of effective information seeking are generalizable logic\npatterns rather than model-specific artifacts. Such transferability suggests a cost-effective deployment paradigm in which\nlightweight, open-source critics can guide the reasoning processes of larger, black-box systems without requiring access to their\ninternal weights.\nWhile our results show that process supervision improves reliability and generalization, several challenges remain. The\napproach depends on high-quality reward signals, and we found that rollout-based rewards can be noisy in retrieval settings\n9/19"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0049"
+        ],
+        "excerpt": "Bamboogle) show performance gains over the ZSL baseline (dashed\nline) with as few as 250 samples, while the medical-domain task (MedQA) requires larger datasets to converge.f,Inference\ncompute scaling via Best-of-Nsampling. Performance typically improves with candidate pool sizeN, saturating between 15\nand 20 actions.\n10/19\nbecause coincidental answer correctness may create false positives. As a result, stronger model-based annotators are currently\nmore effective, although they may introduce additional bias and cost. Our evaluation also focuses primarily on benchmark\nquestion-answering settings, and broader validation across open-ended search tasks, domains, and retrieval environments will\nbe important in future work. In addition, critic-guided Best-of-N inference increases computational cost, although moderate\ncandidate pool sizes provide a favorable trade-off between accuracy and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Prm (Gpt)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "02c4ff1ba8ea973539e9131113f0604bc794210a4756b0b09cafeaf34d86c1e1",
+            "evidence_id": "E9ee82ea09dc187d0-B0049",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Prm (Gpt)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1217,
+                "page": 10,
+                "section": "Prm (Gpt)",
+                "section_index": 24,
+                "start": 892,
+                "text": "Bamboogle) show performance gains over the ZSL baseline (dashed\nline) with as few as 250 samples, while the medical-domain task (MedQA) requires larger datasets to converge.f,Inference\ncompute scaling via Best-of-Nsampling. Performance typically improves with candidate pool sizeN, saturating between 15\nand 20 actions.\n10/19"
+              },
+              {
+                "end": 569,
+                "page": 11,
+                "section": "Prm (Gpt)",
+                "section_index": 25,
+                "start": 0,
+                "text": "because coincidental answer correctness may create false positives. As a result, stronger model-based annotators are currently\nmore effective, although they may introduce additional bias and cost. Our evaluation also focuses primarily on benchmark\nquestion-answering settings, and broader validation across open-ended search tasks, domains, and retrieval environments will\nbe important in future work. In addition, critic-guided Best-of-N inference increases computational cost, although moderate\ncandidate pool sizes provide a favorable trade-off between accuracy and "
+              }
+            ],
+            "text": "Bamboogle) show performance gains over the ZSL baseline (dashed\nline) with as few as 250 samples, while the medical-domain task (MedQA) requires larger datasets to converge.f,Inference\ncompute scaling via Best-of-Nsampling. Performance typically improves with candidate pool sizeN, saturating between 15\nand 20 actions.\n10/19\nbecause coincidental answer correctness may create false positives. As a result, stronger model-based annotators are currently\nmore effective, although they may introduce additional bias and cost. Our evaluation also focuses primarily on benchmark\nquestion-answering settings, and broader validation across open-ended search tasks, domains, and retrieval environments will\nbe important in future work. In addition, critic-guided Best-of-N inference increases computational cost, although moderate\ncandidate pool sizes provide a favorable trade-off between accuracy and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0052"
+        ],
+        "excerpt": "We benchmark agents on four tasks that require extensive knowledge and reasoning. These include three multi-hop question\nanswering datasets grounded in Wikipedia (HotpotQA39, 2WikiMultihopQA40, and Bamboogle15) as well as a multiple-choice\nmedical dataset, MedQA41. To ensure consistent comparisons and enable process-supervision training, we adopt standardized\ndataset splits.\nFor HotpotQA, we use the last 1,000 validation questions for evaluation and the first 1,000 for constructing the process-\nreward dataset that trains actors and critics. 2WikiMultihopQA contains multi-hop questions with systematically curated\nreasoning chains, and we evaluate on the last 1,000 questions from the development set. Bamboogle is a manually constructed\nbenchmark that probes compositional reasoning, featuring two-hop questions whose supporting facts are present in Wikipedia\nbut are challenging to retrieve ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Datasets And Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4799608963d8efc08dc89744b5edc79d9cca9741a812f4d3628f9abe72320f8b",
+            "evidence_id": "E9ee82ea09dc187d0-B0052",
+            "pages": [
+              11
+            ],
+            "section": "Benchmark Datasets And Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 11,
+                "section": "Benchmark Datasets And Evaluation Protocol",
+                "section_index": 27,
+                "start": 0,
+                "text": "We benchmark agents on four tasks that require extensive knowledge and reasoning. These include three multi-hop question\nanswering datasets grounded in Wikipedia (HotpotQA39, 2WikiMultihopQA40, and Bamboogle15) as well as a multiple-choice\nmedical dataset, MedQA41. To ensure consistent comparisons and enable process-supervision training, we adopt standardized\ndataset splits.\nFor HotpotQA, we use the last 1,000 validation questions for evaluation and the first 1,000 for constructing the process-\nreward dataset that trains actors and critics. 2WikiMultihopQA contains multi-hop questions with systematically curated\nreasoning chains, and we evaluate on the last 1,000 questions from the development set. Bamboogle is a manually constructed\nbenchmark that probes compositional reasoning, featuring two-hop questions whose supporting facts are present in Wikipedia\nbut are challenging to retrieve "
+              }
+            ],
+            "text": "We benchmark agents on four tasks that require extensive knowledge and reasoning. These include three multi-hop question\nanswering datasets grounded in Wikipedia (HotpotQA39, 2WikiMultihopQA40, and Bamboogle15) as well as a multiple-choice\nmedical dataset, MedQA41. To ensure consistent comparisons and enable process-supervision training, we adopt standardized\ndataset splits.\nFor HotpotQA, we use the last 1,000 validation questions for evaluation and the first 1,000 for constructing the process-\nreward dataset that trains actors and critics. 2WikiMultihopQA contains multi-hop questions with systematically curated\nreasoning chains, and we evaluate on the last 1,000 questions from the development set. Bamboogle is a manually constructed\nbenchmark that probes compositional reasoning, featuring two-hop questions whose supporting facts are present in Wikipedia\nbut are challenging to retrieve "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0053"
+        ],
+        "excerpt": "together. We evaluate on the entire 125-question test set. MedQA comprises professional medical\nexamination questions, such as those in the USMLE format, with four-way multiple-choice answers. We focus on the English\nsplit and evaluate on the standard 1,273-question test set. For process supervision, we sample 1,000 questions from the MedQA\ntraining set to construct process-reward trajectories, mirroring the approach used for HotpotQA.\nFor HotpotQA, 2WikiMultihopQA, and Bamboogle, we report Exact Match (EM) and token-level F1. For MedQA, we\nreport accuracy.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Datasets And Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ac58f4854d1ddc106f6f3a4422932066072a55953e13cb0177c5c082f5261b98",
+            "evidence_id": "E9ee82ea09dc187d0-B0053",
+            "pages": [
+              11
+            ],
+            "section": "Benchmark Datasets And Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1462,
+                "page": 11,
+                "section": "Benchmark Datasets And Evaluation Protocol",
+                "section_index": 27,
+                "start": 899,
+                "text": "together. We evaluate on the entire 125-question test set. MedQA comprises professional medical\nexamination questions, such as those in the USMLE format, with four-way multiple-choice answers. We focus on the English\nsplit and evaluate on the standard 1,273-question test set. For process supervision, we sample 1,000 questions from the MedQA\ntraining set to construct process-reward trajectories, mirroring the approach used for HotpotQA.\nFor HotpotQA, 2WikiMultihopQA, and Bamboogle, we report Exact Match (EM) and token-level F1. For MedQA, we\nreport accuracy."
+              }
+            ],
+            "text": "together. We evaluate on the entire 125-question test set. MedQA comprises professional medical\nexamination questions, such as those in the USMLE format, with four-way multiple-choice answers. We focus on the English\nsplit and evaluate on the standard 1,273-question test set. For process supervision, we sample 1,000 questions from the MedQA\ntraining set to construct process-reward trajectories, mirroring the approach used for HotpotQA.\nFor HotpotQA, 2WikiMultihopQA, and Bamboogle, we report Exact Match (EM) and token-level F1. For MedQA, we\nreport accuracy."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0054"
+        ],
+        "excerpt": "For HotpotQA, 2WikiMultihopQA, and Bamboogle, agents retrieve evidence from English Wikipedia. For MedQA, we use\na domain-specific corpus consisting of medical textbooks and StatPearls articles, pre-processed into a retrieval collection as\ndescribed in prior work43\nAll agents interact with a unified hybrid retrieval pipeline. We combine lexical and dense retrieval using Reciprocal Rank\nFusion44. For Wikipedia-based tasks, BM2545 serves as the lexical retriever and BGE-Base46 as the dense retriever. On MedQA,\nwe use BM25 together with MedCPT47. For each query, the top 32 documents from the fused ranking are retrieved, appended\nto the agent's history, and made available at subsequent reasoning steps\nRetrieval hyperparameters, including retriever types, fusion scheme, and number of documents per query, remain fixed\nacross agents. This ensures that observed performance differences reflect ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Retrieval Corpora And Information-Retrieval Environment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "330847895955d0b62f824c2ff7521b28f8b0d54ade5f81d809df00d6108d23f0",
+            "evidence_id": "E9ee82ea09dc187d0-B0054",
+            "pages": [
+              11
+            ],
+            "section": "Retrieval Corpora And Information-Retrieval Environment",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 11,
+                "section": "Retrieval Corpora And Information-Retrieval Environment",
+                "section_index": 28,
+                "start": 0,
+                "text": "For HotpotQA, 2WikiMultihopQA, and Bamboogle, agents retrieve evidence from English Wikipedia. For MedQA, we use\na domain-specific corpus consisting of medical textbooks and StatPearls articles, pre-processed into a retrieval collection as\ndescribed in prior work43\nAll agents interact with a unified hybrid retrieval pipeline. We combine lexical and dense retrieval using Reciprocal Rank\nFusion44. For Wikipedia-based tasks, BM2545 serves as the lexical retriever and BGE-Base46 as the dense retriever. On MedQA,\nwe use BM25 together with MedCPT47. For each query, the top 32 documents from the fused ranking are retrieved, appended\nto the agent's history, and made available at subsequent reasoning steps\nRetrieval hyperparameters, including retriever types, fusion scheme, and number of documents per query, remain fixed\nacross agents. This ensures that observed performance differences reflect "
+              }
+            ],
+            "text": "For HotpotQA, 2WikiMultihopQA, and Bamboogle, agents retrieve evidence from English Wikipedia. For MedQA, we use\na domain-specific corpus consisting of medical textbooks and StatPearls articles, pre-processed into a retrieval collection as\ndescribed in prior work43\nAll agents interact with a unified hybrid retrieval pipeline. We combine lexical and dense retrieval using Reciprocal Rank\nFusion44. For Wikipedia-based tasks, BM2545 serves as the lexical retriever and BGE-Base46 as the dense retriever. On MedQA,\nwe use BM25 together with MedCPT47. For each query, the top 32 documents from the fused ranking are retrieved, appended\nto the agent's history, and made available at subsequent reasoning steps\nRetrieval hyperparameters, including retriever types, fusion scheme, and number of documents per query, remain fixed\nacross agents. This ensures that observed performance differences reflect "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0056"
+        ],
+        "excerpt": "We frame agentic search as a high-level Markov decision process (MDP) where the agent interacts with the retrieval environment\nusing discrete macro-actions\nAt each stept, the state is defined as\nst = (Q,Ht ), (1)\nwhereQis the original question andH t is the information-seeking history\nHt ={(q 1,D 1), . . . ,(qt\u22121 ,D t\u22121 )}. (2)\n11/19\nEachq i represents a search query andD i is the corresponding set of retrieved documents. The initial history isH 1 =\u2205\nThe action space consists of both query actions and answer actions\nA=A q \u222aA p. (3)\nActions in Aq correspond to issuing a search query, while actions in Ap correspond to producing a candidate final answer. When\nthe agent selects a query action at \u2208A q, it is interpreted as a query qt. The IR function IR(qt ) retrieves documents Dt, and the\npair(q t ,D t )is appended to the history to forms t+1. If the agent selects an answer actiona t \u2208A p, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11,
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "High-Level Markov Decision Process Formulation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "83404554b79fb7f82b79aa47030b8568ff23f9385492486b820e35930b8a6a80",
+            "evidence_id": "E9ee82ea09dc187d0-B0056",
+            "pages": [
+              11,
+              12
+            ],
+            "section": "High-Level Markov Decision Process Formulation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 335,
+                "page": 11,
+                "section": "High-Level Markov Decision Process Formulation",
+                "section_index": 29,
+                "start": 0,
+                "text": "We frame agentic search as a high-level Markov decision process (MDP) where the agent interacts with the retrieval environment\nusing discrete macro-actions\nAt each stept, the state is defined as\nst = (Q,Ht ), (1)\nwhereQis the original question andH t is the information-seeking history\nHt ={(q 1,D 1), . . . ,(qt\u22121 ,D t\u22121 )}. (2)\n11/19"
+              },
+              {
+                "end": 563,
+                "page": 12,
+                "section": "High-Level Markov Decision Process Formulation",
+                "section_index": 30,
+                "start": 0,
+                "text": "Eachq i represents a search query andD i is the corresponding set of retrieved documents. The initial history isH 1 =\u2205\nThe action space consists of both query actions and answer actions\nA=A q \u222aA p. (3)\nActions in Aq correspond to issuing a search query, while actions in Ap correspond to producing a candidate final answer. When\nthe agent selects a query action at \u2208A q, it is interpreted as a query qt. The IR function IR(qt ) retrieves documents Dt, and the\npair(q t ,D t )is appended to the history to forms t+1. If the agent selects an answer actiona t \u2208A p, "
+              }
+            ],
+            "text": "We frame agentic search as a high-level Markov decision process (MDP) where the agent interacts with the retrieval environment\nusing discrete macro-actions\nAt each stept, the state is defined as\nst = (Q,Ht ), (1)\nwhereQis the original question andH t is the information-seeking history\nHt ={(q 1,D 1), . . . ,(qt\u22121 ,D t\u22121 )}. (2)\n11/19\nEachq i represents a search query andD i is the corresponding set of retrieved documents. The initial history isH 1 =\u2205\nThe action space consists of both query actions and answer actions\nA=A q \u222aA p. (3)\nActions in Aq correspond to issuing a search query, while actions in Ap correspond to producing a candidate final answer. When\nthe agent selects a query action at \u2208A q, it is interpreted as a query qt. The IR function IR(qt ) retrieves documents Dt, and the\npair(q t ,D t )is appended to the history to forms t+1. If the agent selects an answer actiona t \u2208A p, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0061"
+        ],
+        "excerpt": "Our proposed Re2Search agent instantiates all six functional modules, with reasoning reflection as the central addition. At each\nstep, the reasoning model generates a step-by-step explanation and a tentative answer. It then identifies the first claim in the\nreasoning that is not supported by the current history and formulates this claim as a targeted query. This approach ensures that\neach search action addresses a specific knowledge gap in the answer construction process and reduces reliance on generic or\nheuristic queries.\nRe2Search++ refers to the complete system that integrates the Re2Search architecture with process-level direct preference\noptimization (see Fig. 3a) and critic-guided inference (see Fig. 4a).\n12/19",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Re 2Search And Re2Search++",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e0a5151e1438d9dad41d549b3efeaef5416d2a96172eaba008267588a49c34df",
+            "evidence_id": "E9ee82ea09dc187d0-B0061",
+            "pages": [
+              12
+            ],
+            "section": "Re 2Search And Re2Search++",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 727,
+                "page": 12,
+                "section": "Re 2Search And Re2Search++",
+                "section_index": 33,
+                "start": 0,
+                "text": "Our proposed Re2Search agent instantiates all six functional modules, with reasoning reflection as the central addition. At each\nstep, the reasoning model generates a step-by-step explanation and a tentative answer. It then identifies the first claim in the\nreasoning that is not supported by the current history and formulates this claim as a targeted query. This approach ensures that\neach search action addresses a specific knowledge gap in the answer construction process and reduces reliance on generic or\nheuristic queries.\nRe2Search++ refers to the complete system that integrates the Re2Search architecture with process-level direct preference\noptimization (see Fig. 3a) and critic-guided inference (see Fig. 4a).\n12/19"
+              }
+            ],
+            "text": "Our proposed Re2Search agent instantiates all six functional modules, with reasoning reflection as the central addition. At each\nstep, the reasoning model generates a step-by-step explanation and a tentative answer. It then identifies the first claim in the\nreasoning that is not supported by the current history and formulates this claim as a targeted query. This approach ensures that\neach search action addresses a specific knowledge gap in the answer construction process and reduces reliance on generic or\nheuristic queries.\nRe2Search++ refers to the complete system that integrates the Re2Search architecture with process-level direct preference\noptimization (see Fig. 3a) and critic-guided inference (see Fig. 4a).\n12/19"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0063"
+        ],
+        "excerpt": "Candidate actions at a given state are ranked, rather than scored independently, by an external annotator according to three\ncriteria:\n\u2022 Sufficiency: if the existing history already supports answering the question, an answer action is preferred over additional\nsearches.\n\u2022 Utility: queries should be precise, actionable and directly relevant to resolving the question, avoiding unnecessary or\ntangential details.\n\u2022 Non-redundancy: actions that introduce new, informative content are preferred over those that repeat or slightly rephrase\nprevious queries.\nWe primarily use GPT-4o as the annotator to produce ranked lists of candidate actions. For MedQA, a subset of trajectories\nis also annotated by medically trained co-authors. This enables us to measure agreement between human experts and reward\nmodels trained on GPT-4o preferences, as reported in Fig. 6c.\nThe final process-reward dataset ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Preference Annotation And Reward Tuples",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "29c67729283ba1662ca80dc4759208afdadf1a046c0e9117a8ab595c82b10fda",
+            "evidence_id": "E9ee82ea09dc187d0-B0063",
+            "pages": [
+              13
+            ],
+            "section": "Preference Annotation And Reward Tuples",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 13,
+                "section": "Preference Annotation And Reward Tuples",
+                "section_index": 35,
+                "start": 0,
+                "text": "Candidate actions at a given state are ranked, rather than scored independently, by an external annotator according to three\ncriteria:\n\u2022 Sufficiency: if the existing history already supports answering the question, an answer action is preferred over additional\nsearches.\n\u2022 Utility: queries should be precise, actionable and directly relevant to resolving the question, avoiding unnecessary or\ntangential details.\n\u2022 Non-redundancy: actions that introduce new, informative content are preferred over those that repeat or slightly rephrase\nprevious queries.\nWe primarily use GPT-4o as the annotator to produce ranked lists of candidate actions. For MedQA, a subset of trajectories\nis also annotated by medically trained co-authors. This enables us to measure agreement between human experts and reward\nmodels trained on GPT-4o preferences, as reported in Fig. 6c.\nThe final process-reward dataset "
+              }
+            ],
+            "text": "Candidate actions at a given state are ranked, rather than scored independently, by an external annotator according to three\ncriteria:\n\u2022 Sufficiency: if the existing history already supports answering the question, an answer action is preferred over additional\nsearches.\n\u2022 Utility: queries should be precise, actionable and directly relevant to resolving the question, avoiding unnecessary or\ntangential details.\n\u2022 Non-redundancy: actions that introduce new, informative content are preferred over those that repeat or slightly rephrase\nprevious queries.\nWe primarily use GPT-4o as the annotator to produce ranked lists of candidate actions. For MedQA, a subset of trajectories\nis also annotated by medically trained co-authors. This enables us to measure agreement between human experts and reward\nmodels trained on GPT-4o preferences, as reported in Fig. 6c.\nThe final process-reward dataset "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0065"
+        ],
+        "excerpt": "We investigate three post-training objectives defined over the process-reward dataset: supervised fine-tuning (SFT), direct\npreference optimization (DPO), and proximal policy optimization (PPO). Let D denote the set of state-action pairs or triples\nderived from the preference data\nSupervised fine-tuning (SFT)49.SFT treats preferred actions as demonstrations and maximizes their log-likelihood under\nthe policy:\nLSFT(\u03b8) =\u2212E (s,a+)\u223cD\n\u0002\nlog\u03c0 \u03b8 (a+ |s) \u0003 .(5)\nThis objective encourages the actor to imitate high-quality trajectories but does not explicitly model less-preferred alternatives\nDirect preference optimization (DPO) 50.DPO reformulates each preference as a pair (a+,a \u2212) for a shared state s and\nencourages the policy to favora + overa \u2212 relative to a reference policy\u03c0 ref:\nLDPO(\u03b8) =\u2212E (s,a+,a\u2212)\u223cD\n\u0002\nlog\u03c3\n\u0000\n\u03b2\u2206 \u03b8 (s,a +,a \u2212)\u0001\u0003 ,(6)\nwhere\n\u2206\u03b8 (s,a +,a \u2212) =log \u03c0\u03b8 (a+ |s)\u03c0ref(a+ |s) \u2212log \u03c0\u03b8 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Post-Training Objectives For The Actor",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ea1d762a7266c7087f4e94e1dd77f43b620e71a346e3fe3111d68a4e8f3ad936",
+            "evidence_id": "E9ee82ea09dc187d0-B0065",
+            "pages": [
+              13
+            ],
+            "section": "Post-Training Objectives For The Actor",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 13,
+                "section": "Post-Training Objectives For The Actor",
+                "section_index": 36,
+                "start": 0,
+                "text": "We investigate three post-training objectives defined over the process-reward dataset: supervised fine-tuning (SFT), direct\npreference optimization (DPO), and proximal policy optimization (PPO). Let D denote the set of state-action pairs or triples\nderived from the preference data\nSupervised fine-tuning (SFT)49.SFT treats preferred actions as demonstrations and maximizes their log-likelihood under\nthe policy:\nLSFT(\u03b8) =\u2212E (s,a+)\u223cD\n\u0002\nlog\u03c0 \u03b8 (a+ |s) \u0003 .(5)\nThis objective encourages the actor to imitate high-quality trajectories but does not explicitly model less-preferred alternatives\nDirect preference optimization (DPO) 50.DPO reformulates each preference as a pair (a+,a \u2212) for a shared state s and\nencourages the policy to favora + overa \u2212 relative to a reference policy\u03c0 ref:\nLDPO(\u03b8) =\u2212E (s,a+,a\u2212)\u223cD\n\u0002\nlog\u03c3\n\u0000\n\u03b2\u2206 \u03b8 (s,a +,a \u2212)\u0001\u0003 ,(6)\nwhere\n\u2206\u03b8 (s,a +,a \u2212) =log \u03c0\u03b8 (a+ |s)\u03c0ref(a+ |s) \u2212log \u03c0\u03b8 "
+              }
+            ],
+            "text": "We investigate three post-training objectives defined over the process-reward dataset: supervised fine-tuning (SFT), direct\npreference optimization (DPO), and proximal policy optimization (PPO). Let D denote the set of state-action pairs or triples\nderived from the preference data\nSupervised fine-tuning (SFT)49.SFT treats preferred actions as demonstrations and maximizes their log-likelihood under\nthe policy:\nLSFT(\u03b8) =\u2212E (s,a+)\u223cD\n\u0002\nlog\u03c0 \u03b8 (a+ |s) \u0003 .(5)\nThis objective encourages the actor to imitate high-quality trajectories but does not explicitly model less-preferred alternatives\nDirect preference optimization (DPO) 50.DPO reformulates each preference as a pair (a+,a \u2212) for a shared state s and\nencourages the policy to favora + overa \u2212 relative to a reference policy\u03c0 ref:\nLDPO(\u03b8) =\u2212E (s,a+,a\u2212)\u223cD\n\u0002\nlog\u03c3\n\u0000\n\u03b2\u2206 \u03b8 (s,a +,a \u2212)\u0001\u0003 ,(6)\nwhere\n\u2206\u03b8 (s,a +,a \u2212) =log \u03c0\u03b8 (a+ |s)\u03c0ref(a+ |s) \u2212log \u03c0\u03b8 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0067"
+        ],
+        "excerpt": "We train an external critic to predict process-level preferences between candidate actions. The critic shares the same backbone\nfamily as the actor and is trained with a Bradley-Terry-style pairwise objective55. Given a state s and two actions a+ and a\u2212,\nthe critic is optimized to assign a higher score toa + by maximizing\nJ(\u03c6) =E (s,a+,a\u2212)\u223cD\n\u0002\nlog\u03c3\n\u0000\nr\u03c6 (s,a +)\u2212r \u03c6 (s,a \u2212)\u0001\u0003 .(8)\nHere,\u03c3denotes the sigmoid function, andr \u03c6 (s,a)represents the scalar score predicted by the critic for actionain states.\nAt inference time, when critic guidance is enabled, we use a Best-of- N strategy. For each state st, the actor samples N\ncandidate actions {a1, . . . ,aN}. The critic scores each candidate, and the action with the highest score is executed. If the\nselected action is a query, the environment returns retrieved documents and the process continues. If it is a final answer, the\nepisode ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Critic Training And Critic-Guided Inference",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9d7056b9ceec90244f500882db5438d737348ad3f7349029237f1428365096e6",
+            "evidence_id": "E9ee82ea09dc187d0-B0067",
+            "pages": [
+              14
+            ],
+            "section": "Critic Training And Critic-Guided Inference",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 14,
+                "section": "Critic Training And Critic-Guided Inference",
+                "section_index": 37,
+                "start": 0,
+                "text": "We train an external critic to predict process-level preferences between candidate actions. The critic shares the same backbone\nfamily as the actor and is trained with a Bradley-Terry-style pairwise objective55. Given a state s and two actions a+ and a\u2212,\nthe critic is optimized to assign a higher score toa + by maximizing\nJ(\u03c6) =E (s,a+,a\u2212)\u223cD\n\u0002\nlog\u03c3\n\u0000\nr\u03c6 (s,a +)\u2212r \u03c6 (s,a \u2212)\u0001\u0003 .(8)\nHere,\u03c3denotes the sigmoid function, andr \u03c6 (s,a)represents the scalar score predicted by the critic for actionain states.\nAt inference time, when critic guidance is enabled, we use a Best-of- N strategy. For each state st, the actor samples N\ncandidate actions {a1, . . . ,aN}. The critic scores each candidate, and the action with the highest score is executed. If the\nselected action is a query, the environment returns retrieved documents and the process continues. If it is a final answer, the\nepisode "
+              }
+            ],
+            "text": "We train an external critic to predict process-level preferences between candidate actions. The critic shares the same backbone\nfamily as the actor and is trained with a Bradley-Terry-style pairwise objective55. Given a state s and two actions a+ and a\u2212,\nthe critic is optimized to assign a higher score toa + by maximizing\nJ(\u03c6) =E (s,a+,a\u2212)\u223cD\n\u0002\nlog\u03c3\n\u0000\nr\u03c6 (s,a +)\u2212r \u03c6 (s,a \u2212)\u0001\u0003 .(8)\nHere,\u03c3denotes the sigmoid function, andr \u03c6 (s,a)represents the scalar score predicted by the critic for actionain states.\nAt inference time, when critic guidance is enabled, we use a Best-of- N strategy. For each state st, the actor samples N\ncandidate actions {a1, . . . ,aN}. The critic scores each candidate, and the action with the highest score is executed. If the\nselected action is a query, the environment returns retrieved documents and the process continues. If it is a final answer, the\nepisode "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0072"
+        ],
+        "excerpt": "is generated.\",\n}\n\"'\n15/19\nPrompt 3: Prompt template for ranking candidate actions with GPT-4o\nYou are a decision-evaluation assistant. Your task is to rank the proposed actions from the most appropriate to the least\nappropriate as the next step in a sequential decision-making process aimed at solving a given question.\n### Original Question:\n{{question}}\n### Information-Seeking History:\n{{curr_history}}\n### Proposed Next Actions:\n{{actions_text}}\n### Important Assumption\nThe agent has no prior knowledge about the subject matter. It must rely solely on the information-seeking history\nprovided to evaluate and answer the original question. Assumptions not explicitly supported by the history must not\ninfluence the ranking of proposed actions.\n### Evaluation Criteria for Appropriateness\n1. **Sufficiency Check**:\n- Determine whether the available information is sufficient to directly answer ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15,
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Backbone Models, Prompts And Implementation Details",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1f5ab77f12f90361b685e0eea151e01e99d7dbb17a426555604b2a27dccc8d16",
+            "evidence_id": "E9ee82ea09dc187d0-B0072",
+            "pages": [
+              15,
+              16
+            ],
+            "section": "Backbone Models, Prompts And Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1715,
+                "page": 15,
+                "section": "Backbone Models, Prompts And Implementation Details",
+                "section_index": 39,
+                "start": 1689,
+                "text": "is generated.\",\n}\n\"'\n15/19"
+              },
+              {
+                "end": 871,
+                "page": 16,
+                "section": "Backbone Models, Prompts And Implementation Details",
+                "section_index": 40,
+                "start": 0,
+                "text": "Prompt 3: Prompt template for ranking candidate actions with GPT-4o\nYou are a decision-evaluation assistant. Your task is to rank the proposed actions from the most appropriate to the least\nappropriate as the next step in a sequential decision-making process aimed at solving a given question.\n### Original Question:\n{{question}}\n### Information-Seeking History:\n{{curr_history}}\n### Proposed Next Actions:\n{{actions_text}}\n### Important Assumption\nThe agent has no prior knowledge about the subject matter. It must rely solely on the information-seeking history\nprovided to evaluate and answer the original question. Assumptions not explicitly supported by the history must not\ninfluence the ranking of proposed actions.\n### Evaluation Criteria for Appropriateness\n1. **Sufficiency Check**:\n- Determine whether the available information is sufficient to directly answer "
+              }
+            ],
+            "text": "is generated.\",\n}\n\"'\n15/19\nPrompt 3: Prompt template for ranking candidate actions with GPT-4o\nYou are a decision-evaluation assistant. Your task is to rank the proposed actions from the most appropriate to the least\nappropriate as the next step in a sequential decision-making process aimed at solving a given question.\n### Original Question:\n{{question}}\n### Information-Seeking History:\n{{curr_history}}\n### Proposed Next Actions:\n{{actions_text}}\n### Important Assumption\nThe agent has no prior knowledge about the subject matter. It must rely solely on the information-seeking history\nprovided to evaluate and answer the original question. Assumptions not explicitly supported by the history must not\ninfluence the ranking of proposed actions.\n### Evaluation Criteria for Appropriateness\n1. **Sufficiency Check**:\n- Determine whether the available information is sufficient to directly answer "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2502.13957",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected.",
+      "Structurally bounded citation prefixes excluded; ambiguous back matter, body and detected appendices retained where budget permits."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.1038/s41467-026-78807-z",
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline gains are measured against gold benchmark answers and ground-truth document recall across four datasets, independent of the GPT-4o preference signal used for optimization.",
+          "final_evaluation_signal": "Objective ground-truth benchmark metrics: Exact Match, token-level F1, multiple-choice accuracy, and ground-truth document retrieval recall.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Process preference annotations produced primarily by GPT-4o ranking of candidate actions, used to train the actor via DPO/PPO and to train the critic reward model.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0007",
+          "E9ee82ea09dc187d0-B0008",
+          "E9ee82ea09dc187d0-B0011",
+          "E9ee82ea09dc187d0-B0012",
+          "E9ee82ea09dc187d0-B0013",
+          "E9ee82ea09dc187d0-B0019",
+          "E9ee82ea09dc187d0-B0022",
+          "E9ee82ea09dc187d0-B0025",
+          "E9ee82ea09dc187d0-B0033",
+          "E9ee82ea09dc187d0-B0034",
+          "E9ee82ea09dc187d0-B0038",
+          "E9ee82ea09dc187d0-B0040",
+          "E9ee82ea09dc187d0-B0043",
+          "E9ee82ea09dc187d0-B0046",
+          "E9ee82ea09dc187d0-B0049",
+          "E9ee82ea09dc187d0-B0052",
+          "E9ee82ea09dc187d0-B0053",
+          "E9ee82ea09dc187d0-B0054",
+          "E9ee82ea09dc187d0-B0056",
+          "E9ee82ea09dc187d0-B0061",
+          "E9ee82ea09dc187d0-B0063",
+          "E9ee82ea09dc187d0-B0065",
+          "E9ee82ea09dc187d0-B0067",
+          "E9ee82ea09dc187d0-B0072"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "00bebd646867d111ddf4ae8460e824362848c1e4138be0f6d05c71b3936b3497"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.1038/s41467-026-78807-z",
+        "claim_evidence_alignment": "Reported empirical gains on multi-hop reasoning, out-of-domain transfer, and higher retrieval recall directly substantiate the claims that process supervision encourages more targeted querying and mitigates outcome-based shortcutting.",
+        "context_id": "9ee82ea09dc187d0f6056da777fc5f1292f3491b93e9b08913d19bd0cd512e18",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation spans four established QA benchmarks (HotpotQA, 2WikiMultihopQA, Bamboogle, MedQA) under fixed retrieval backbones, comparing against multiple strong baseline architectures and outcome-supervised systems using objective ground-truth Exact Match, F1, and accuracy alongside retrieval recall metrics.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance is validated using standardized gold benchmark ground-truth answers and ground-truth document retrieval recall across four datasets.",
+          "final_evaluation_signal": "Objective ground-truth evaluation metrics: Exact Match (EM), token-level F1, multiple-choice accuracy against reference answers, and ground-truth document retrieval recall.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Process preference annotations derived primarily from GPT-4o rankings (guided by sufficiency, utility, and non-redundancy criteria) used for DPO and critic reward model training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E9ee82ea09dc187d0-B0007",
+          "E9ee82ea09dc187d0-B0008",
+          "E9ee82ea09dc187d0-B0011",
+          "E9ee82ea09dc187d0-B0012",
+          "E9ee82ea09dc187d0-B0013",
+          "E9ee82ea09dc187d0-B0019",
+          "E9ee82ea09dc187d0-B0022",
+          "E9ee82ea09dc187d0-B0025",
+          "E9ee82ea09dc187d0-B0033",
+          "E9ee82ea09dc187d0-B0034",
+          "E9ee82ea09dc187d0-B0038",
+          "E9ee82ea09dc187d0-B0040",
+          "E9ee82ea09dc187d0-B0043",
+          "E9ee82ea09dc187d0-B0046",
+          "E9ee82ea09dc187d0-B0049",
+          "E9ee82ea09dc187d0-B0052",
+          "E9ee82ea09dc187d0-B0053",
+          "E9ee82ea09dc187d0-B0054",
+          "E9ee82ea09dc187d0-B0056",
+          "E9ee82ea09dc187d0-B0061",
+          "E9ee82ea09dc187d0-B0063",
+          "E9ee82ea09dc187d0-B0065",
+          "E9ee82ea09dc187d0-B0067",
+          "E9ee82ea09dc187d0-B0072"
+        ],
+        "limitations": "The authors clearly acknowledge the dependence on high-quality external annotation models (such as GPT-4o), failure of rollout-based PRMs in retrieval tasks due to false positives, increased compute for Best-of-N inference, and current evaluation scope limited to benchmark QA.",
+        "method_assessment": "The methodology is thoroughly detailed, decomposing agent actions into discrete macro-actions, detailing trajectory filtering, preference pair generation via external LLM/expert annotation, actor post-training (SFT, DPO, PPO), and training a separate Bradley-Terry critic for Best-of-N guidance.",
+        "quality_rationale": "The study offers a rigorous conceptual framing, comprehensive empirical comparisons across both agent architectures and post-training regimes, and clear experimental validation supported by objective ground-truth answer metrics and retrieval recall.",
+        "scoped_contribution": "The manuscript introduces RAG-Gym, an MDP-based framework for process-level supervision of autonomous search agents, along with the Re2Search architecture featuring reasoning reflection and its optimized pipeline Re2Search++.",
+        "source_content_hash": "00bebd646867d111ddf4ae8460e824362848c1e4138be0f6d05c71b3936b3497"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study offers a rigorous conceptual framing, comprehensive empirical comparisons across both agent architectures and post-training regimes, and clear experimental validation supported by objective ground-truth answer metrics and retrieval recall.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "00bebd646867d111ddf4ae8460e824362848c1e4138be0f6d05c71b3936b3497",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors clearly acknowledge the dependence on high-quality external annotation models (such as GPT-4o), failure of rollout-based PRMs in retrieval tasks due to false positives, increased compute for Best-of-N inference, and current evaluation scope limited to benchmark QA."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -157,7 +2228,7 @@
       "W4407785632"
     ]
   },
-  "source_updated_date": "2026-10-28",
+  "source_updated_date": "2026-10-29",
   "sources": [
     "openalex",
     "arxiv"
@@ -177,7 +2248,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

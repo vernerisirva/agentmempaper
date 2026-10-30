@@ -59,16 +59,243 @@
             <p>Abstract Large language models (LLMs) are transforming web search by shifting from document ranking to synthesizing answers, and are increasingly deployed as autonomous agentic search systems that iteratively interact with external knowledge sources. Despite this progress, building effective search agents remains ch...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers a rigorous conceptual framing, comprehensive empirical comparisons across both agent architectures and post-training regimes, and clear experimental validation supported by objective ground-truth answer metrics and retrieval recall.</p>
+      <p>The authors clearly acknowledge the dependence on high-quality external annotation models (such as GPT-4o), failure of rollout-based PRMs in retrieval tasks due to false positives, increased compute for Best-of-N inference, and current evaluation scope limited to benchmark QA.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: Nature Communications. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-30T10:46:12.269954+00:00.</p>
+        <p>Coverage: 63541 of 63541 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RAG-Gym, a framework that moves the training paradigm from outcome-based signals to
+process-level supervision. We formulate agentic search as a Markov Decision Process (MDP) in which search queries act as
+macro-actions. This approach enables fine-grained supervision of intermediate search steps rather than focusing solely on
+final outcomes. Agents can therefore learn coherent and verifiable search trajectories that logically support their conclusions.
+Using this framework, we systematically decompose and optimize search agents along three key dimensions: architecture
+design, parameter optimization, and action evaluation. This allows us to identify the specific design choices that drive optimal
+performance.
+We identify reasoning reflection as a powerful but underexplored capability for search agents and introduce a new agent
+architecture called Re2Search (Reason, Reflection, Search) that </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>embodies this approach. At each step, Re2Search reasons toward
+the final answer and explicitly reflects on its reasoning process to uncover knowledge gaps. By integrating Re2Search with the
+optimal strategies discovered through RAG-Gym, we develop Re2Search++, a process-supervised agent that achieves strong
+performance on multi-hop and medical information-seeking benchmarks. Re2Search++ surpasses robust outcome-supervised
+baselines33, 34, especially in out-of-domain evaluations.
+Our analysis shows that these improvements arise from a greater ability to generate effective search queries, not just from
+optimizing answers. This is supported by substantial increases in the retrieval recall of ground-truth documents. We also find
+that the search heuristics learned through process supervision transfer well, enabling critics trained on open-source trajectories
+to guide proprietary models </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reinforce a flawed search
+trajectory. Conversely, a rigorous and necessary search step might be unfairly penalized if the subsequent answer generation is
+unsuccessful.
+Building on the MDP formulation, we introduce RAG-Gym, a framework that decomposes the agentic design space into
+three coupled dimensions that enable process-level supervision (Fig. 1c). The first dimension is architecture design, which
+defines the agent&#x27;s internal cognitive flow and verification loops. The second is parameter optimization, which trains the actor
+using supervised, preference, or reinforcement learning. The third is action evaluation, which trains an external critic to guide
+decision-making at inference. This modularity allows us to isolate the contributions of each component and move beyond the
+limitations of outcome-supervised baselines.
+We evaluate our approach on four knowledge-intensive benchmarks: </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>HotpotQA39, 2WikiMultihopQA40, Bamboogle15,
+and MedQA41. For the first three, we report Exact Match (EM) and F1, and for MedQA, we report accuracy. Macro averages
+are computed by treating accuracy as EM and F1 in the multi-choice setting. Unless otherwise noted, process-reward data
+for actor and critic training consists of 1,000 questions sampled from HotpotQA or MedQA. Generalization is assessed on
+2WikiMultihopQA and Bamboogle using models tuned on HotpotQA. Details about model training and evaluation are provided
+in the Methods.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To systematically address the limitations of current agentic search systems, we first decompose the cognitive requirements of
+search agents into six distinct functional modules: Answer Generation, Question Reasoning, Retrieval Augmentation, Query
+Generation, Document Summarization, and Reasoning Reflection (Fig. 2a). Existing architectures do not instantiate this full
+stack. For example, standard RAG systems retrieve based solely on keywords without reasoning, while existing search agents
+such as ReAct interleave thought and action but lack an explicit mechanism to target generated queries toward answer reasoning.
+As shown in Fig. 2b, only our proposed Re2Search architecture incorporates the Reasoning Reflection module, which serves as
+a dedicated verification loop.
+This mechanism fundamentally alters the search trajectory. Instead of immediately issuing queries based on </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Having established the architectural advantages of reasoning-reflection, we next investigate how different supervision signals
+influence the agent&#x27;s ability to navigate the information retrieval state space. We compare Zero-Shot Learning (ZSL) with
+three optimization regimes: Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and Proximal Policy
+Optimization (PPO), as illustrated in Fig. 3a.
+Our analysis reveals a clear distinction in how supervision affects agent behavior, depending on the complexity of the
+agent&#x27;s cognitive architecture. As shown in Fig. 3b, process supervision consistently improves performance over zero-shot
+baselines. However, the optimal training algorithm depends on the agent type. For single-step agents such as Direct, CoT, and
+standard RAG, SFT is sufficient to reach peak performance, and DPO or PPO provide little additional benefit. In </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To further refine the search process at runtime, we employ critic-guided action selection. Here, a reward model scores N
+candidate actions at each step, and the agent executes the highest-scoring option using a Best-of-N strategy. As illustrated in
+Fig. 4a, this mechanism steers the agent away from unproductive retrieval loops and toward verifiable evidence.
+Our results show that the effectiveness of inference-time guidance depends on the structural complexity of the agent. On
+general-domain benchmarks, critic guidance improves F1 scores for reasoning-enhanced architectures such as CoT, RAG,
+ReAct, Search-o1, and Re2Search, as shown in Fig. 4b and 4c. In contrast, simple Direct prompting does not benefit from
+this intervention. The limitation of single-step methods is even more pronounced on the domain-specific MedQA benchmark
+(Fig. 4b). In this setting, only multi-step agents such as </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We integrate the optimal components identified in our framework, namely the Re2Search architecture, DPO training, and
+critic-guided inference, into a unified system called Re 2Search++. To isolate the impact of supervision style, we compare
+this process-supervised approach with strong outcome-supervised baselines, specifically Search-R1 and R1-Searcher, which
+reinforce trajectories based solely on the correctness of the final answer as shown in Fig. 5a.
+4/19
+answer reasoning     &amp; reflection
+RAG ReAct / Search-o1 Re Search</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>search strategies.c,Average number of search queries generated by Re 2Search agents during
+inference. Process-supervised agents consistently exhibit more active information-seeking behavior compared to zero-shot
+baselines (ZSL), correlating with improved answer quality.
+degradation on out-of-domain datasets. In contrast, Re2Search++ achieves superior generalization, particularly on the unseen
+Bamboogle benchmark, while maintaining comparable or better performance than outcome-supervised agents on their respective
+in-domain tasks. This performance gap highlights the phenomenon of reward hacking that arises with outcome supervision.
+When supervision is sparse and provided only at the end of the trajectory, agents may learn to exploit parametric memory to
+guess answers and perform superficial searches that merely satisfy the training loop.
+We further validate this hypothesis by analyzing </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>retrieval recall distributions in Fig. 5b. Outcome-supervised agents
+frequently achieve low retrieval recall, indicating that their correct answers often result from ungrounded predictions or reliance
+on parametric memory rather than retrieved evidence. In contrast, Re2Search++ demonstrates significantly higher retrieval
+recall across both Llama-3.1 and Qwen-2.5 backbones, showing that process supervision aligns the agent with the actual utility
+of retrieved evidence. As shown in Fig. 5d, this improved grounding does not come at the cost of efficiency. Re 2Search++
+attains higher accuracy with comparable or fewer search actions than baselines, reflecting a more targeted query strategy. By
+rewarding the steps of evidence gathering, we produce an agent that is verifiable and faithful and remains effective even when
+encountering unfamiliar questions where internal knowledge is </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Outcome Supervision
+Question
+search answer
+search
+search search answer
+Question
+search
+search
+search
+answer
+search
+answer
+search search
+answer
+search answer
+Process Supervision
+a b
+c
+d
+Figure 5.Process supervision yields superior generalization and search efficiency compared to outcome supervision. a,
+Conceptual contrast between outcome-only supervision, which rewards only the final answer, and process supervision, which
+assigns feedback at each intermediate search step.b,Retrieval recall distributions on HotpotQA and 2WikiMultihopQA for
+outcome-supervised baselines (ReAct, Search-o1, Search-R1, R1-Searcher) versus process-supervised Re2Search++
+(Llama-3.1-8B and Qwen-2.5-7B backbones). Process-supervised agents consistently achieve higher recall of ground-truth
+documents.c,Performance (F1) across in-domain and out-of-domain benchmarks. Re 2Search++ matches or </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>retrieval settings. An agent may produce a factually correct
+final answer by relying on parametric memory or exploiting spurious correlations, even if its search trajectory is irrelevant
+or hallucinated. Rollout methods, which validate based solely on the final answer, tend to reinforce these flawed trajectories
+without discrimination.
+In contrast, model-based supervision, particularly when distilled from GPT-4o, demonstrates greater robustness to noise.
+As detailed in Fig. 6c, GPT-4o annotations show the highest agreement with human ground-truth judgments, reaching 85.8%
+on MedQA, and achieve high recall in retrieving ground-truth documents, such as 84.5% on 2WikiMultihopQA. Critics trained
+on these signals consistently deliver the best downstream performance, achieving 57.9% F1 on 2WikiMultihopQA and 72.0%
+accuracy on MedQA. These results suggest that strong model-based annotators are </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>domain-specific reasoning requires more extensive data.
+Inference Compute.We also investigate the relationship between computational budget and performance using a Best-of- N
+inference strategy. As illustrated in Fig. 6f, increasing the candidate pool size N leads to consistent performance gains up
+to a saturation point, typically between N=15 and N=20 . Beyond this range, returns diminish and, in some cases such as
+MedQA, performance declines. For example, accuracy drops from 72.8% at N=15 to 71.2% at N=20 . This decline likely
+results from a reward hacking effect, where a larger sample size increases the chance of generating semantically flawed but
+high-scoring adversarial actions that can mislead the critic. These results indicate that a moderate inference budget, with N
+around 10 to 15, offers the best balance between accuracy and computational cost.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>framework offers a practical approach for deploying these systems by leveraging portable critics.
+We find that a critic trained on process data from a smaller open-source model can successfully guide the inference of entirely
+different backbone models. This demonstrates that the core principles of effective information seeking are generalizable logic
+patterns rather than model-specific artifacts. Such transferability suggests a cost-effective deployment paradigm in which
+lightweight, open-source critics can guide the reasoning processes of larger, black-box systems without requiring access to their
+internal weights.
+While our results show that process supervision improves reliability and generalization, several challenges remain. The
+approach depends on high-quality reward signals, and we found that rollout-based rewards can be noisy in retrieval settings
+9/19</blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Bamboogle) show performance gains over the ZSL baseline (dashed
+line) with as few as 250 samples, while the medical-domain task (MedQA) requires larger datasets to converge.f,Inference
+compute scaling via Best-of-Nsampling. Performance typically improves with candidate pool sizeN, saturating between 15
+and 20 actions.
+10/19
+because coincidental answer correctness may create false positives. As a result, stronger model-based annotators are currently
+more effective, although they may introduce additional bias and cost. Our evaluation also focuses primarily on benchmark
+question-answering settings, and broader validation across open-ended search tasks, domains, and retrieval environments will
+be important in future work. In addition, critic-guided Best-of-N inference increases computational cost, although moderate
+candidate pool sizes provide a favorable trade-off between accuracy and </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We benchmark agents on four tasks that require extensive knowledge and reasoning. These include three multi-hop question
+answering datasets grounded in Wikipedia (HotpotQA39, 2WikiMultihopQA40, and Bamboogle15) as well as a multiple-choice
+medical dataset, MedQA41. To ensure consistent comparisons and enable process-supervision training, we adopt standardized
+dataset splits.
+For HotpotQA, we use the last 1,000 validation questions for evaluation and the first 1,000 for constructing the process-
+reward dataset that trains actors and critics. 2WikiMultihopQA contains multi-hop questions with systematically curated
+reasoning chains, and we evaluate on the last 1,000 questions from the development set. Bamboogle is a manually constructed
+benchmark that probes compositional reasoning, featuring two-hop questions whose supporting facts are present in Wikipedia
+but are challenging to retrieve </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>together. We evaluate on the entire 125-question test set. MedQA comprises professional medical
+examination questions, such as those in the USMLE format, with four-way multiple-choice answers. We focus on the English
+split and evaluate on the standard 1,273-question test set. For process supervision, we sample 1,000 questions from the MedQA
+training set to construct process-reward trajectories, mirroring the approach used for HotpotQA.
+For HotpotQA, 2WikiMultihopQA, and Bamboogle, we report Exact Match (EM) and token-level F1. For MedQA, we
+report accuracy.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For HotpotQA, 2WikiMultihopQA, and Bamboogle, agents retrieve evidence from English Wikipedia. For MedQA, we use
+a domain-specific corpus consisting of medical textbooks and StatPearls articles, pre-processed into a retrieval collection as
+described in prior work43
+All agents interact with a unified hybrid retrieval pipeline. We combine lexical and dense retrieval using Reciprocal Rank
+Fusion44. For Wikipedia-based tasks, BM2545 serves as the lexical retriever and BGE-Base46 as the dense retriever. On MedQA,
+we use BM25 together with MedCPT47. For each query, the top 32 documents from the fused ranking are retrieved, appended
+to the agent&#x27;s history, and made available at subsequent reasoning steps
+Retrieval hyperparameters, including retriever types, fusion scheme, and number of documents per query, remain fixed
+across agents. This ensures that observed performance differences reflect </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We frame agentic search as a high-level Markov decision process (MDP) where the agent interacts with the retrieval environment
+using discrete macro-actions
+At each stept, the state is defined as
+st = (Q,Ht ), (1)
+whereQis the original question andH t is the information-seeking history
+Ht ={(q 1,D 1), . . . ,(qt−1 ,D t−1 )}. (2)
+11/19
+Eachq i represents a search query andD i is the corresponding set of retrieved documents. The initial history isH 1 =∅
+The action space consists of both query actions and answer actions
+A=A q ∪A p. (3)
+Actions in Aq correspond to issuing a search query, while actions in Ap correspond to producing a candidate final answer. When
+the agent selects a query action at ∈A q, it is interpreted as a query qt. The IR function IR(qt ) retrieves documents Dt, and the
+pair(q t ,D t )is appended to the history to forms t+1. If the agent selects an answer actiona t ∈A p, </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our proposed Re2Search agent instantiates all six functional modules, with reasoning reflection as the central addition. At each
+step, the reasoning model generates a step-by-step explanation and a tentative answer. It then identifies the first claim in the
+reasoning that is not supported by the current history and formulates this claim as a targeted query. This approach ensures that
+each search action addresses a specific knowledge gap in the answer construction process and reduces reliance on generic or
+heuristic queries.
+Re2Search++ refers to the complete system that integrates the Re2Search architecture with process-level direct preference
+optimization (see Fig. 3a) and critic-guided inference (see Fig. 4a).
+12/19</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Candidate actions at a given state are ranked, rather than scored independently, by an external annotator according to three
+criteria:
+• Sufficiency: if the existing history already supports answering the question, an answer action is preferred over additional
+searches.
+• Utility: queries should be precise, actionable and directly relevant to resolving the question, avoiding unnecessary or
+tangential details.
+• Non-redundancy: actions that introduce new, informative content are preferred over those that repeat or slightly rephrase
+previous queries.
+We primarily use GPT-4o as the annotator to produce ranked lists of candidate actions. For MedQA, a subset of trajectories
+is also annotated by medically trained co-authors. This enables us to measure agreement between human experts and reward
+models trained on GPT-4o preferences, as reported in Fig. 6c.
+The final process-reward dataset </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We investigate three post-training objectives defined over the process-reward dataset: supervised fine-tuning (SFT), direct
+preference optimization (DPO), and proximal policy optimization (PPO). Let D denote the set of state-action pairs or triples
+derived from the preference data
+Supervised fine-tuning (SFT)49.SFT treats preferred actions as demonstrations and maximizes their log-likelihood under
+the policy:
+LSFT(θ) =−E (s,a+)∼D
 
-        <ul></ul>
+logπ θ (a+ |s)  .(5)
+This objective encourages the actor to imitate high-quality trajectories but does not explicitly model less-preferred alternatives
+Direct preference optimization (DPO) 50.DPO reformulates each preference as a pair (a+,a −) for a shared state s and
+encourages the policy to favora + overa − relative to a reference policyπ ref:
+LDPO(θ) =−E (s,a+,a−)∼D
+
+logσ
+
+β∆ θ (s,a +,a −) ,(6)
+where
+∆θ (s,a +,a −) =log πθ (a+ |s)πref(a+ |s) −log πθ </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We train an external critic to predict process-level preferences between candidate actions. The critic shares the same backbone
+family as the actor and is trained with a Bradley-Terry-style pairwise objective55. Given a state s and two actions a+ and a−,
+the critic is optimized to assign a higher score toa + by maximizing
+J(φ) =E (s,a+,a−)∼D
+
+logσ
+
+rφ (s,a +)−r φ (s,a −) .(8)
+Here,σdenotes the sigmoid function, andr φ (s,a)represents the scalar score predicted by the critic for actionain states.
+At inference time, when critic guidance is enabled, we use a Best-of- N strategy. For each state st, the actor samples N
+candidate actions {a1, . . . ,aN}. The critic scores each candidate, and the action with the highest score is executed. If the
+selected action is a query, the environment returns retrieved documents and the process continues. If it is a final answer, the
+episode </blockquote></details></li><li><strong>Contribution clarity — pages 15–16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is generated.&quot;,
+}
+&quot;&#x27;
+15/19
+Prompt 3: Prompt template for ranking candidate actions with GPT-4o
+You are a decision-evaluation assistant. Your task is to rank the proposed actions from the most appropriate to the least
+appropriate as the next step in a sequential decision-making process aimed at solving a given question.
+### Original Question:
+{{question}}
+### Information-Seeking History:
+{{curr_history}}
+### Proposed Next Actions:
+{{actions_text}}
+### Important Assumption
+The agent has no prior knowledge about the subject matter. It must rely solely on the information-seeking history
+provided to evaluate and answer the original question. Assumptions not explicitly supported by the history must not
+influence the ranking of proposed actions.
+### Evaluation Criteria for Appropriateness
+1. **Sufficiency Check**:
+- Determine whether the available information is sufficient to directly answer </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +334,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +350,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-28</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-29 10:42:59</li><li>Last seen by Paper Scout: 2026-10-29 10:42:59</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-10-29</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-29 10:42:59</li><li>Last seen by Paper Scout: 2026-10-30 10:43:28</li></ul>
             <ul><li>DOI: 10.1038/s41467-026-78807-z</li><li>arXiv: 2502.13957</li><li>OpenAlex: W4407785632</li><li>OpenAlex IDs: W4407785632</li><li>arXiv IDs: 2502.13957</li></ul>
           </section>
           <section class="detail-panel">

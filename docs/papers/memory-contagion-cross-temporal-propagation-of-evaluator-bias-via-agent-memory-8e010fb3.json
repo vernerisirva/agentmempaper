@@ -37,7 +37,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-26 13:01:31",
-    "generated_at": "2026-10-29 10:47:34",
+    "generated_at": "2026-10-30 10:47:20",
     "last_seen_at": "2026-08-02 07:52:26",
     "metadata_sources": [
       "openalex",
@@ -109,36 +109,1432 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-10-30T10:45:42.957603+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.9,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The headline authority-bias contagion result (\u0393A = 11.45) is explicitly non-replicable: all 15 controlled multi-seed runs yield \u0393A = 0.00, so the abstract's authority-bias claim is not supported by reproducible evidence.",
+      "The only reproducible positive result (length bias, \u0393A = 13.18) is confined to a single older model generation; newer same-family and cross-family models show complete immunity (\u0393A = 0.00), undermining the claimed generality of Memory Contagion.",
+      "The evaluation is based on a very small synthetic task set (20 open-ended QA tasks, 12 train + 6 eval) with rejection-sampling bias injection that the authors acknowledge may co-select unmeasured quality features, leaving the core effect potentially confounded."
+    ],
+    "concise_summary": "Given that the phenomenon completely fails to replicate for authority bias under controlled conditions and does not manifest in newer or different model families for length bias, evidence for Memory Contagion as a general property of LLM agent memory architectures remains weak and uncertain.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 41062,
+      "assessment_input_sha256": "c552340f1288e3a93b1d40c7800bbe160a0fca0f4607800e59785cbbc9eb0b77",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2606.23195",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 40346,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 39297,
+      "evidence_block_count": 58,
+      "evidence_context_characters": 46434,
+      "evidence_context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+      "evidence_context_sha256": "bfb35917d3bd5a1c272988ddc819d15af59124a70fdedc3d5ea4d1f7705864bb",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 40370,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "9ce4252b68d0b13ae73d05d838494c7545c16573cbd3a3cafcc0a2bef00496e5",
+        "source_url": "https://arxiv.org/pdf/2606.23195",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 40346,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Memory Contagion: Cross-Temporal Propagation Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 146,
+          "supplied_characters": 146
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1553,
+          "supplied_characters": 1553
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1782,
+          "supplied_characters": 1782
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1752,
+          "supplied_characters": 1752
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 2195,
+          "supplied_characters": 2195
+        },
+        {
+          "heading": "Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 1805,
+          "supplied_characters": 1805
+        },
+        {
+          "heading": "Memory Store And Consolidation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1463,
+          "supplied_characters": 1463
+        },
+        {
+          "heading": "Mechanism Decomposition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 513,
+          "supplied_characters": 513
+        },
+        {
+          "heading": "Experimental Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 1237,
+          "supplied_characters": 1237
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 1027,
+          "supplied_characters": 1027
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 3242,
+          "supplied_characters": 3242
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 2188,
+          "supplied_characters": 2188
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 1899,
+          "supplied_characters": 1899
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "discussion",
+          "section_index": 13,
+          "source_characters": 194,
+          "supplied_characters": 194
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "discussion",
+          "section_index": 14,
+          "source_characters": 2538,
+          "supplied_characters": 2538
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "discussion",
+          "section_index": 15,
+          "source_characters": 4607,
+          "supplied_characters": 4607
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "discussion",
+          "section_index": 16,
+          "source_characters": 2739,
+          "supplied_characters": 2739
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 17,
+          "source_characters": 164,
+          "supplied_characters": 164
+        },
+        {
+          "heading": "Memory Contagion Occurs Even With Perfect (Oracle) Consolidation For Length Bias On Older Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 197,
+          "supplied_characters": 197
+        },
+        {
+          "heading": "Consolidationattenuateslengthbias(\u0393 B = 2.03, 84%Reduction), Confirmingthatsummarization-Based",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 62,
+          "supplied_characters": 62
+        },
+        {
+          "heading": "Authority Bias Fails To Propagate In All 15 Controlled Multi-Seed Experiments, Indicating That Not All",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 108,
+          "supplied_characters": 108
+        },
+        {
+          "heading": "Propagation Is Detected At Contamination Rates As Low Asp= 0.2, With No Observed Safe Threshold",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 329,
+          "supplied_characters": 329
+        },
+        {
+          "heading": "Propagation Is Detected At Contamination Rates As Low Asp= 0.2, With No Observed Safe Threshold",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 261,
+          "supplied_characters": 261
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 2307,
+          "supplied_characters": 2307
+        },
+        {
+          "heading": "Appendix: Additional Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 24,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Appendix: Phase 1: Bias Injection Validation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 25,
+          "source_characters": 292,
+          "supplied_characters": 292
+        },
+        {
+          "heading": "Appendix: Full Dose-Response Curves",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 26,
+          "source_characters": 218,
+          "supplied_characters": 218
+        },
+        {
+          "heading": "Appendix: Retrieved Memory Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 27,
+          "source_characters": 283,
+          "supplied_characters": 283
+        },
+        {
+          "heading": "Appendix: Authority Bias On Non-Fact-Centric Tasks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 698,
+          "supplied_characters": 698
+        },
+        {
+          "heading": "Appendix: Sensitivity Analysis: Additive Model Assumption",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 753,
+          "supplied_characters": 753
+        },
+        {
+          "heading": "Appendix: Authority Bias: Domain-Dependent Propagation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 30,
+          "source_characters": 317,
+          "supplied_characters": 317
+        },
+        {
+          "heading": "Appendix: Authority Bias: Domain-Dependent Propagation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 757,
+          "supplied_characters": 757
+        },
+        {
+          "heading": "Appendix: Retrieval Log Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 1651,
+          "supplied_characters": 1651
+        }
+      ],
+      "selected_characters": 39297,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 146,
+          "heading": "Memory Contagion: Cross-Temporal Propagation Of",
+          "page": 1
+        },
+        {
+          "characters": 1553,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1782,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1752,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2195,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 1805,
+          "heading": "Problem Formulation",
+          "page": 3
+        },
+        {
+          "characters": 1463,
+          "heading": "Memory Store And Consolidation",
+          "page": 3
+        },
+        {
+          "characters": 513,
+          "heading": "Mechanism Decomposition",
+          "page": 4
+        },
+        {
+          "characters": 1237,
+          "heading": "Experimental Design",
+          "page": 4
+        },
+        {
+          "characters": 1027,
+          "heading": "Results",
+          "page": 4
+        },
+        {
+          "characters": 3242,
+          "heading": "Results",
+          "page": 5
+        },
+        {
+          "characters": 2188,
+          "heading": "Results",
+          "page": 6
+        },
+        {
+          "characters": 1899,
+          "heading": "Results",
+          "page": 7
+        },
+        {
+          "characters": 194,
+          "heading": "Discussion",
+          "page": 7
+        },
+        {
+          "characters": 2538,
+          "heading": "Discussion",
+          "page": 8
+        },
+        {
+          "characters": 4607,
+          "heading": "Discussion",
+          "page": 9
+        },
+        {
+          "characters": 2739,
+          "heading": "Discussion",
+          "page": 10
+        },
+        {
+          "characters": 164,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 197,
+          "heading": "Memory Contagion Occurs Even With Perfect (Oracle) Consolidation For Length Bias On Older Models",
+          "page": 10
+        },
+        {
+          "characters": 62,
+          "heading": "Consolidationattenuateslengthbias(\u0393 B = 2.03, 84%Reduction), Confirmingthatsummarization-Based",
+          "page": 10
+        },
+        {
+          "characters": 108,
+          "heading": "Authority Bias Fails To Propagate In All 15 Controlled Multi-Seed Experiments, Indicating That Not All",
+          "page": 10
+        },
+        {
+          "characters": 329,
+          "heading": "Propagation Is Detected At Contamination Rates As Low Asp= 0.2, With No Observed Safe Threshold",
+          "page": 10
+        },
+        {
+          "characters": 261,
+          "heading": "Propagation Is Detected At Contamination Rates As Low Asp= 0.2, With No Observed Safe Threshold",
+          "page": 11
+        },
+        {
+          "characters": 2307,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 20,
+          "heading": "Appendix: Additional Results",
+          "page": 12
+        },
+        {
+          "characters": 292,
+          "heading": "Appendix: Phase 1: Bias Injection Validation",
+          "page": 12
+        },
+        {
+          "characters": 218,
+          "heading": "Appendix: Full Dose-Response Curves",
+          "page": 12
+        },
+        {
+          "characters": 283,
+          "heading": "Appendix: Retrieved Memory Analysis",
+          "page": 12
+        },
+        {
+          "characters": 698,
+          "heading": "Appendix: Authority Bias On Non-Fact-Centric Tasks",
+          "page": 12
+        },
+        {
+          "characters": 753,
+          "heading": "Appendix: Sensitivity Analysis: Additive Model Assumption",
+          "page": 12
+        },
+        {
+          "characters": 317,
+          "heading": "Appendix: Authority Bias: Domain-Dependent Propagation",
+          "page": 12
+        },
+        {
+          "characters": 757,
+          "heading": "Appendix: Authority Bias: Domain-Dependent Propagation",
+          "page": 13
+        },
+        {
+          "characters": 1651,
+          "heading": "Appendix: Retrieval Log Analysis",
+          "page": 13
+        }
+      ],
+      "selected_text_sha256": "c552340f1288e3a93b1d40c7800bbe160a0fca0f4607800e59785cbbc9eb0b77",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "9ce4252b68d0b13ae73d05d838494c7545c16573cbd3a3cafcc0a2bef00496e5",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0002"
+        ],
+        "excerpt": "Large Language Model (LLM) agents increasingly rely on memory systems to maintain long-term\ncoherence. Recent work Zhang et al. [2026] shows that agent memories degrade during continuous\nconsolidation. However, existing research assumes memories are derived fromunbiasedexperiences. In\nthis work, we identify and formalize a novel phenomenon:Memory Contagion\u2014the cross-temporal\npropagation of evaluator bias through agent memory. We show that when agents are trained or guided by\nbiased evaluators, their experiences (trajectories) become biased; when these trajectories are stored and\nconsolidated into memory, the bias propagates to future agents retrieving from the same memory store,\neven when consolidation is perfect (oracle). Across two bias types (length preference, authority bias)\nand four experimental phases, we demonstrate: (1)Memory Contagion occurs even with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "525c4c9e3eac0968d1570be62ce925564e0086ce40b98be205ba3c0dade4bced",
+            "evidence_id": "Ea0e3b49f84a9676f-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 874,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Large Language Model (LLM) agents increasingly rely on memory systems to maintain long-term\ncoherence. Recent work Zhang et al. [2026] shows that agent memories degrade during continuous\nconsolidation. However, existing research assumes memories are derived fromunbiasedexperiences. In\nthis work, we identify and formalize a novel phenomenon:Memory Contagion\u2014the cross-temporal\npropagation of evaluator bias through agent memory. We show that when agents are trained or guided by\nbiased evaluators, their experiences (trajectories) become biased; when these trajectories are stored and\nconsolidated into memory, the bias propagates to future agents retrieving from the same memory store,\neven when consolidation is perfect (oracle). Across two bias types (length preference, authority bias)\nand four experimental phases, we demonstrate: (1)Memory Contagion occurs even with "
+              }
+            ],
+            "text": "Large Language Model (LLM) agents increasingly rely on memory systems to maintain long-term\ncoherence. Recent work Zhang et al. [2026] shows that agent memories degrade during continuous\nconsolidation. However, existing research assumes memories are derived fromunbiasedexperiences. In\nthis work, we identify and formalize a novel phenomenon:Memory Contagion\u2014the cross-temporal\npropagation of evaluator bias through agent memory. We show that when agents are trained or guided by\nbiased evaluators, their experiences (trajectories) become biased; when these trajectories are stored and\nconsolidated into memory, the bias propagates to future agents retrieving from the same memory store,\neven when consolidation is perfect (oracle). Across two bias types (length preference, authority bias)\nand four experimental phases, we demonstrate: (1)Memory Contagion occurs even with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0003"
+        ],
+        "excerpt": "perfect\nconsolidation(oracle condition,\u0393 A = 13.18for length,11.45for authority *), proving that biased input\nis a sufficient cause of contagion; (2)Contagion is bias-type-dependent: length bias propagates\nrobustly (3-seed validated), while authority bias fails to propagate in all controlled experiments (15 runs,\n\u0393A = 0.00)\u2014revealing that only certain bias types trigger cross-temporal contagion in current memory\narchitectures; (3)No observed safe threshold: bias propagation is detected at contamination rates as\nlow asp= 0.2. Our findings expose a critical vulnerability in current agent memory designs and provide\nformal tools for measuring cross-temporal bias propagation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "7c84765141042eb5b398e19d97f0286217abdbc6cf3cbbafe6c7c445d489797f",
+            "evidence_id": "Ea0e3b49f84a9676f-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1553,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 874,
+                "text": "perfect\nconsolidation(oracle condition,\u0393 A = 13.18for length,11.45for authority *), proving that biased input\nis a sufficient cause of contagion; (2)Contagion is bias-type-dependent: length bias propagates\nrobustly (3-seed validated), while authority bias fails to propagate in all controlled experiments (15 runs,\n\u0393A = 0.00)\u2014revealing that only certain bias types trigger cross-temporal contagion in current memory\narchitectures; (3)No observed safe threshold: bias propagation is detected at contamination rates as\nlow asp= 0.2. Our findings expose a critical vulnerability in current agent memory designs and provide\nformal tools for measuring cross-temporal bias propagation."
+              }
+            ],
+            "text": "perfect\nconsolidation(oracle condition,\u0393 A = 13.18for length,11.45for authority *), proving that biased input\nis a sufficient cause of contagion; (2)Contagion is bias-type-dependent: length bias propagates\nrobustly (3-seed validated), while authority bias fails to propagate in all controlled experiments (15 runs,\n\u0393A = 0.00)\u2014revealing that only certain bias types trigger cross-temporal contagion in current memory\narchitectures; (3)No observed safe threshold: bias propagation is detected at contamination rates as\nlow asp= 0.2. Our findings expose a critical vulnerability in current agent memory designs and provide\nformal tools for measuring cross-temporal bias propagation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0011"
+        ],
+        "excerpt": "We consider a scenario with two agents: asource agentAs and atarget agentA t.A s interacts with tasksT\nand is evaluated by abiased evaluatorEb.A s's experiences (trajectories) are stored in a memory storeM.\nAt retrieves fromMto solve new tasks.\nTrajectory.A trajectory\u03c4= (s, a, r, s\u2032)consists of states(task), actiona(agent response), rewardr\n(evaluator score), and next states\u2032.\nBiased Evaluator.An evaluatorEassigns scoresE(\u03c4)\u2208[0,1]. AbiasedevaluatorE b has a bias\nfunctionb:\u03c4\u2192Rsuch that:\nEb(\u03c4) =E clean(\u03c4) +\u03b1\u00b7b(\u03c4)(1)\nwhere\u03b1is the bias strength.Assumption.This additive model posits that clean quality evaluation (Eclean)\nand bias scoring (b) are separable functions of trajectory features. We adopt this as aworking assumption\nto enable quantitative measurement; verifying full orthogonality betweenEclean andbis a measurement-\ntheoretic challenge we bracket for future work. The key conclusions ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Problem Formulation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4ff538348b850b644d1faf4fd0f81a27397e44cf4491e0a4e6ff72634595f52d",
+            "evidence_id": "Ea0e3b49f84a9676f-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Problem Formulation",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 3,
+                "section": "Problem Formulation",
+                "section_index": 5,
+                "start": 0,
+                "text": "We consider a scenario with two agents: asource agentAs and atarget agentA t.A s interacts with tasksT\nand is evaluated by abiased evaluatorEb.A s's experiences (trajectories) are stored in a memory storeM.\nAt retrieves fromMto solve new tasks.\nTrajectory.A trajectory\u03c4= (s, a, r, s\u2032)consists of states(task), actiona(agent response), rewardr\n(evaluator score), and next states\u2032.\nBiased Evaluator.An evaluatorEassigns scoresE(\u03c4)\u2208[0,1]. AbiasedevaluatorE b has a bias\nfunctionb:\u03c4\u2192Rsuch that:\nEb(\u03c4) =E clean(\u03c4) +\u03b1\u00b7b(\u03c4)(1)\nwhere\u03b1is the bias strength.Assumption.This additive model posits that clean quality evaluation (Eclean)\nand bias scoring (b) are separable functions of trajectory features. We adopt this as aworking assumption\nto enable quantitative measurement; verifying full orthogonality betweenEclean andbis a measurement-\ntheoretic challenge we bracket for future work. The key conclusions "
+              }
+            ],
+            "text": "We consider a scenario with two agents: asource agentAs and atarget agentA t.A s interacts with tasksT\nand is evaluated by abiased evaluatorEb.A s's experiences (trajectories) are stored in a memory storeM.\nAt retrieves fromMto solve new tasks.\nTrajectory.A trajectory\u03c4= (s, a, r, s\u2032)consists of states(task), actiona(agent response), rewardr\n(evaluator score), and next states\u2032.\nBiased Evaluator.An evaluatorEassigns scoresE(\u03c4)\u2208[0,1]. AbiasedevaluatorE b has a bias\nfunctionb:\u03c4\u2192Rsuch that:\nEb(\u03c4) =E clean(\u03c4) +\u03b1\u00b7b(\u03c4)(1)\nwhere\u03b1is the bias strength.Assumption.This additive model posits that clean quality evaluation (Eclean)\nand bias scoring (b) are separable functions of trajectory features. We adopt this as aworking assumption\nto enable quantitative measurement; verifying full orthogonality betweenEclean andbis a measurement-\ntheoretic challenge we bracket for future work. The key conclusions "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0012"
+        ],
+        "excerpt": "(contagion under oracle consolidation,\nbias-type-dependent effects) rely onrelativedifferences between conditions and are robust to moderate\nviolations of separability. A preliminary sensitivity analysis (see Appendix A.5) confirms that\u0393 temporal\nremains interpretable when correlation betweenE clean andbis below 0.3, covering plausible real-world\noperating regimes. We study two bias types:\n\u2022Length bias:b(\u03c4) = len(a)\u2212\u00b5L\u03c3L (preference for longer responses)\n\u2022Authority bias:b(\u03c4) = nauth(a)ntotal (density of authority markers). Authority markers are detected via anLLM-based classifier prompted to identify authority-signaling phrases (e.g., \"studies show,\" \"according\nto research,\" citations of institutions or papers). The prompt enumeratesK= 12canonical marker\ntemplates and the LLM counts occurrences with exact-match and paraphrase tolerance. See Section 5\nfor discussion of operationalization ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Problem Formulation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d58bd9042d09d07b471b09296aad9ebd00929d5bd61fb73353990618af59a2ed",
+            "evidence_id": "Ea0e3b49f84a9676f-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Problem Formulation",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1799,
+                "page": 3,
+                "section": "Problem Formulation",
+                "section_index": 5,
+                "start": 899,
+                "text": "(contagion under oracle consolidation,\nbias-type-dependent effects) rely onrelativedifferences between conditions and are robust to moderate\nviolations of separability. A preliminary sensitivity analysis (see Appendix A.5) confirms that\u0393 temporal\nremains interpretable when correlation betweenE clean andbis below 0.3, covering plausible real-world\noperating regimes. We study two bias types:\n\u2022Length bias:b(\u03c4) = len(a)\u2212\u00b5L\u03c3L (preference for longer responses)\n\u2022Authority bias:b(\u03c4) = nauth(a)ntotal (density of authority markers). Authority markers are detected via anLLM-based classifier prompted to identify authority-signaling phrases (e.g., \"studies show,\" \"according\nto research,\" citations of institutions or papers). The prompt enumeratesK= 12canonical marker\ntemplates and the LLM counts occurrences with exact-match and paraphrase tolerance. See Section 5\nfor discussion of operationalization "
+              }
+            ],
+            "text": "(contagion under oracle consolidation,\nbias-type-dependent effects) rely onrelativedifferences between conditions and are robust to moderate\nviolations of separability. A preliminary sensitivity analysis (see Appendix A.5) confirms that\u0393 temporal\nremains interpretable when correlation betweenE clean andbis below 0.3, covering plausible real-world\noperating regimes. We study two bias types:\n\u2022Length bias:b(\u03c4) = len(a)\u2212\u00b5L\u03c3L (preference for longer responses)\n\u2022Authority bias:b(\u03c4) = nauth(a)ntotal (density of authority markers). Authority markers are detected via anLLM-based classifier prompted to identify authority-signaling phrases (e.g., \"studies show,\" \"according\nto research,\" citations of institutions or papers). The prompt enumeratesK= 12canonical marker\ntemplates and the LLM counts occurrences with exact-match and paraphrase tolerance. See Section 5\nfor discussion of operationalization "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0014"
+        ],
+        "excerpt": "The memory storeMcontainsNentriese i = (\u03c4i,emb i,meta i). When new trajectories arrive,Mundergoes\nconsolidation: similar entries are merged via LLM-based summarization Zhang et al. [2026].\nWe compare two consolidation strategies:\n\u2022Oracle consolidation: Perfect merge without information loss (upper bound)\n\u2022LLM consolidation: Merge via LLM summarization (realistic)\n3.3\u0393 temporal: Measuring Cross-Temporal Contagion\nWe define\u0393temporal as the behavioral distance between a target agent retrieving from abiased memory store\nvs. aclean memory store:\n\u0393temporal =D behavior(At|Mb , At|Mc )(2)\nwhereD behavior is a distance metric in behavior space.All reported\u0393temporal values use the Wasser-\nstein distance(W1), which compares the empirical distributions of evaluator scores over agent trajectories.\nWe selectW 1 for two reasons: (i) it satisfies the metric axioms and provides a geometrically ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory Store And Consolidation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4b0d640d96a6eb2385bd23079f5792dbcd78dc60a5681bb310cb95a606b92949",
+            "evidence_id": "Ea0e3b49f84a9676f-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Memory Store And Consolidation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 3,
+                "section": "Memory Store And Consolidation",
+                "section_index": 6,
+                "start": 0,
+                "text": "The memory storeMcontainsNentriese i = (\u03c4i,emb i,meta i). When new trajectories arrive,Mundergoes\nconsolidation: similar entries are merged via LLM-based summarization Zhang et al. [2026].\nWe compare two consolidation strategies:\n\u2022Oracle consolidation: Perfect merge without information loss (upper bound)\n\u2022LLM consolidation: Merge via LLM summarization (realistic)\n3.3\u0393 temporal: Measuring Cross-Temporal Contagion\nWe define\u0393temporal as the behavioral distance between a target agent retrieving from abiased memory store\nvs. aclean memory store:\n\u0393temporal =D behavior(At|Mb , At|Mc )(2)\nwhereD behavior is a distance metric in behavior space.All reported\u0393temporal values use the Wasser-\nstein distance(W1), which compares the empirical distributions of evaluator scores over agent trajectories.\nWe selectW 1 for two reasons: (i) it satisfies the metric axioms and provides a geometrically "
+              }
+            ],
+            "text": "The memory storeMcontainsNentriese i = (\u03c4i,emb i,meta i). When new trajectories arrive,Mundergoes\nconsolidation: similar entries are merged via LLM-based summarization Zhang et al. [2026].\nWe compare two consolidation strategies:\n\u2022Oracle consolidation: Perfect merge without information loss (upper bound)\n\u2022LLM consolidation: Merge via LLM summarization (realistic)\n3.3\u0393 temporal: Measuring Cross-Temporal Contagion\nWe define\u0393temporal as the behavioral distance between a target agent retrieving from abiased memory store\nvs. aclean memory store:\n\u0393temporal =D behavior(At|Mb , At|Mc )(2)\nwhereD behavior is a distance metric in behavior space.All reported\u0393temporal values use the Wasser-\nstein distance(W1), which compares the empirical distributions of evaluator scores over agent trajectories.\nWe selectW 1 for two reasons: (i) it satisfies the metric axioms and provides a geometrically "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0017"
+        ],
+        "excerpt": "We design a 4-phase experimental pipeline:\nPhase 1: Bias Injection.Source agentA s solves tasks from task setT(20 open-ended QA tasks).\nTrajectories are scored by biased evaluatorEb (strength\u03b1= 1.0) and clean evaluatorE c. We userejection\nsampling: for each task, generate 4 candidate responses, select the one with highest evaluator score. This\ninjects bias into trajectories.\nPhase2: MemoryConstruction.BiasedtrajectoriesarestoredinmemorystoreM b; cleantrajectories\ninM c. Consolidation is applied (oracle or LLM).\nPhase 2.5: Oracle Consolidation Ablation.Target agentA t retrieves fromM b andM c (oracle\nconsolidation). We compute\u0393A = \u0393temporal(At|M oracleb , At|M oraclec )and test whether\u0393A is significantly greater\nthan 0 using a permutation test (H0:\u0393 A = 0;H 1:\u0393 A >0;p <0.01required).\nPhase 3: Mechanism Decomposition.We measure E1-E4 (see Section 4.3) to decompose\u0393total into\ncontent-based ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Design",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d9b059fccb81815f3cbc2a191d5c1071577642ce04c308cb945df14f30658414",
+            "evidence_id": "Ea0e3b49f84a9676f-B0017",
+            "pages": [
+              4
+            ],
+            "section": "Experimental Design",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 4,
+                "section": "Experimental Design",
+                "section_index": 8,
+                "start": 0,
+                "text": "We design a 4-phase experimental pipeline:\nPhase 1: Bias Injection.Source agentA s solves tasks from task setT(20 open-ended QA tasks).\nTrajectories are scored by biased evaluatorEb (strength\u03b1= 1.0) and clean evaluatorE c. We userejection\nsampling: for each task, generate 4 candidate responses, select the one with highest evaluator score. This\ninjects bias into trajectories.\nPhase2: MemoryConstruction.BiasedtrajectoriesarestoredinmemorystoreM b; cleantrajectories\ninM c. Consolidation is applied (oracle or LLM).\nPhase 2.5: Oracle Consolidation Ablation.Target agentA t retrieves fromM b andM c (oracle\nconsolidation). We compute\u0393A = \u0393temporal(At|M oracleb , At|M oraclec )and test whether\u0393A is significantly greater\nthan 0 using a permutation test (H0:\u0393 A = 0;H 1:\u0393 A >0;p <0.01required).\nPhase 3: Mechanism Decomposition.We measure E1-E4 (see Section 4.3) to decompose\u0393total into\ncontent-based "
+              }
+            ],
+            "text": "We design a 4-phase experimental pipeline:\nPhase 1: Bias Injection.Source agentA s solves tasks from task setT(20 open-ended QA tasks).\nTrajectories are scored by biased evaluatorEb (strength\u03b1= 1.0) and clean evaluatorE c. We userejection\nsampling: for each task, generate 4 candidate responses, select the one with highest evaluator score. This\ninjects bias into trajectories.\nPhase2: MemoryConstruction.BiasedtrajectoriesarestoredinmemorystoreM b; cleantrajectories\ninM c. Consolidation is applied (oracle or LLM).\nPhase 2.5: Oracle Consolidation Ablation.Target agentA t retrieves fromM b andM c (oracle\nconsolidation). We compute\u0393A = \u0393temporal(At|M oracleb , At|M oraclec )and test whether\u0393A is significantly greater\nthan 0 using a permutation test (H0:\u0393 A = 0;H 1:\u0393 A >0;p <0.01required).\nPhase 3: Mechanism Decomposition.We measure E1-E4 (see Section 4.3) to decompose\u0393total into\ncontent-based "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0019"
+        ],
+        "excerpt": "Figure 1 shows the core result:Memory Contagion occurs even with perfect (oracle) consolidation.\nTable 1: Phase 2.5 Results:\u0393temporal for oracle vs. LLM consolidation. Length values are mean\u0393with 95%\nbootstrap CI from 3 independent seeds.Authority values are from an exploratory fact-centric V4 run only;\nmulti-seed replication on standard synthetic tasks yields\u0393A \u22480(see Appendix A.6), indicating domain-\ndependent propagation.\u0393 A is significantly greater than 0 for length bias (p <0.01, permutation test).\nBias Type\u0393 A (Oracle)\u0393 B (LLM)\nLength13.18 [9.05,21.10] 2.03 [0.10,3.30]\nAuthority\u2020 0.00 [0.00,0.00] 0.00 [0.00,0.00]\n\u2020All 15 controlled multi-seed replications (3 seeds\u00d75 configurations,n= 15total) yield\u0393 A = 0.00for authority bias (see\nAppendix A.6). An exploratory single V4 fact-centric run (discontinued configuration) produced\u0393A = 11.45,\u0393 B = 16.80, but\nthese values are not ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fdf99d7f3db41a5fb52474be86a00dca6ec206873df2f592ea02e4678306522f",
+            "evidence_id": "Ea0e3b49f84a9676f-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 4,
+                "section": "Results",
+                "section_index": 9,
+                "start": 0,
+                "text": "Figure 1 shows the core result:Memory Contagion occurs even with perfect (oracle) consolidation.\nTable 1: Phase 2.5 Results:\u0393temporal for oracle vs. LLM consolidation. Length values are mean\u0393with 95%\nbootstrap CI from 3 independent seeds.Authority values are from an exploratory fact-centric V4 run only;\nmulti-seed replication on standard synthetic tasks yields\u0393A \u22480(see Appendix A.6), indicating domain-\ndependent propagation.\u0393 A is significantly greater than 0 for length bias (p <0.01, permutation test).\nBias Type\u0393 A (Oracle)\u0393 B (LLM)\nLength13.18 [9.05,21.10] 2.03 [0.10,3.30]\nAuthority\u2020 0.00 [0.00,0.00] 0.00 [0.00,0.00]\n\u2020All 15 controlled multi-seed replications (3 seeds\u00d75 configurations,n= 15total) yield\u0393 A = 0.00for authority bias (see\nAppendix A.6). An exploratory single V4 fact-centric run (discontinued configuration) produced\u0393A = 11.45,\u0393 B = 16.80, but\nthese values are not "
+              }
+            ],
+            "text": "Figure 1 shows the core result:Memory Contagion occurs even with perfect (oracle) consolidation.\nTable 1: Phase 2.5 Results:\u0393temporal for oracle vs. LLM consolidation. Length values are mean\u0393with 95%\nbootstrap CI from 3 independent seeds.Authority values are from an exploratory fact-centric V4 run only;\nmulti-seed replication on standard synthetic tasks yields\u0393A \u22480(see Appendix A.6), indicating domain-\ndependent propagation.\u0393 A is significantly greater than 0 for length bias (p <0.01, permutation test).\nBias Type\u0393 A (Oracle)\u0393 B (LLM)\nLength13.18 [9.05,21.10] 2.03 [0.10,3.30]\nAuthority\u2020 0.00 [0.00,0.00] 0.00 [0.00,0.00]\n\u2020All 15 controlled multi-seed replications (3 seeds\u00d75 configurations,n= 15total) yield\u0393 A = 0.00for authority bias (see\nAppendix A.6). An exploratory single V4 fact-centric run (discontinued configuration) produced\u0393A = 11.45,\u0393 B = 16.80, but\nthese values are not "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0020"
+        ],
+        "excerpt": "replicable and serve only as upper-bound motivation. Authority bias propagation is not a confirmed\nfinding of this paper.\nKey findings:\n4\nTable2: Multi-modelvalidation: Lengthbias\u0393 A (oracleconsolidation)acrossmodelgenerationsandfamilies.\nOnly the oldest model (DeepSeek V4-Chat) exhibits detectable contagion; both newer models show complete\nimmunity. V4-Chat and V4-Pro: 3 seeds, 12 train+6 eval tasks,\u03b1= 1.0, oracle consolidation. *Claude\nSonnet 4.6: 1 seed, exploratory.\nModel Family\u0393 A (Oracle)\nDeepSeek V4-Chat DeepSeek13.18 [9.05,21.10]\nDeepSeek V4-Pro DeepSeek0.00\nClaude Sonnet 4.6* Anthropic0.00\n1.Oracle consolidation does NOT prevent contagion (for length bias).\u0393 A = 13.18(length,\n95% bootstrap CI[9.05,21.10], 3 seeds), significantly greater than 0 (p <0.01, permutation test). This\nproves that biased input is asufficient primary causeof contagion for the susceptible ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d6fbb1f3f8be9fbfd3a559aa0adaaa58c2c9fc215e4f16a4a20f8f72d1141b2a",
+            "evidence_id": "Ea0e3b49f84a9676f-B0020",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1027,
+                "page": 4,
+                "section": "Results",
+                "section_index": 9,
+                "start": 890,
+                "text": "replicable and serve only as upper-bound motivation. Authority bias propagation is not a confirmed\nfinding of this paper.\nKey findings:\n4"
+              },
+              {
+                "end": 745,
+                "page": 5,
+                "section": "Results",
+                "section_index": 10,
+                "start": 0,
+                "text": "Table2: Multi-modelvalidation: Lengthbias\u0393 A (oracleconsolidation)acrossmodelgenerationsandfamilies.\nOnly the oldest model (DeepSeek V4-Chat) exhibits detectable contagion; both newer models show complete\nimmunity. V4-Chat and V4-Pro: 3 seeds, 12 train+6 eval tasks,\u03b1= 1.0, oracle consolidation. *Claude\nSonnet 4.6: 1 seed, exploratory.\nModel Family\u0393 A (Oracle)\nDeepSeek V4-Chat DeepSeek13.18 [9.05,21.10]\nDeepSeek V4-Pro DeepSeek0.00\nClaude Sonnet 4.6* Anthropic0.00\n1.Oracle consolidation does NOT prevent contagion (for length bias).\u0393 A = 13.18(length,\n95% bootstrap CI[9.05,21.10], 3 seeds), significantly greater than 0 (p <0.01, permutation test). This\nproves that biased input is asufficient primary causeof contagion for the susceptible "
+              }
+            ],
+            "text": "replicable and serve only as upper-bound motivation. Authority bias propagation is not a confirmed\nfinding of this paper.\nKey findings:\n4\nTable2: Multi-modelvalidation: Lengthbias\u0393 A (oracleconsolidation)acrossmodelgenerationsandfamilies.\nOnly the oldest model (DeepSeek V4-Chat) exhibits detectable contagion; both newer models show complete\nimmunity. V4-Chat and V4-Pro: 3 seeds, 12 train+6 eval tasks,\u03b1= 1.0, oracle consolidation. *Claude\nSonnet 4.6: 1 seed, exploratory.\nModel Family\u0393 A (Oracle)\nDeepSeek V4-Chat DeepSeek13.18 [9.05,21.10]\nDeepSeek V4-Pro DeepSeek0.00\nClaude Sonnet 4.6* Anthropic0.00\n1.Oracle consolidation does NOT prevent contagion (for length bias).\u0393 A = 13.18(length,\n95% bootstrap CI[9.05,21.10], 3 seeds), significantly greater than 0 (p <0.01, permutation test). This\nproves that biased input is asufficient primary causeof contagion for the susceptible "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0035"
+        ],
+        "excerpt": "verification\nof the dose-response patterns, including the authority peak-and-decline hypothesis proposed in Section 4.4.\nSingle-Model Limitation (now resolved).Our primary results use DeepSeek V4-Chat. Multi-model\nvalidation (Table 2) confirms that only this specific model generation exhibits Length Contagion; both newer\nsame-family models (V4-Pro) and higher-capability cross-family models (Claude Sonnet 4.6) show complete\nimmunity. The authority amplification pattern from the V4 single-run is not replicable in any controlled\nmulti-seed experiment. This model-dependence is now a core contribution rather than a limitation.\nModel-Dependence of Contagion Magnitude.Multi-model validation reveals that Memory Con-\ntagion is stronglymodel-generation-dependent. Under identical experimental conditions (12 train+6 eval\ntasks,\u03b1= 1.0, 3 seeds), DeepSeek V4-Pro yields\u0393 A = 0.00for length bias, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "74eada6ea7299f1022f66edffaa02596a25a60ca47567f3423c97be568343e4f",
+            "evidence_id": "Ea0e3b49f84a9676f-B0035",
+            "pages": [
+              9
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 3536,
+                "page": 9,
+                "section": "Discussion",
+                "section_index": 15,
+                "start": 2642,
+                "text": "verification\nof the dose-response patterns, including the authority peak-and-decline hypothesis proposed in Section 4.4.\nSingle-Model Limitation (now resolved).Our primary results use DeepSeek V4-Chat. Multi-model\nvalidation (Table 2) confirms that only this specific model generation exhibits Length Contagion; both newer\nsame-family models (V4-Pro) and higher-capability cross-family models (Claude Sonnet 4.6) show complete\nimmunity. The authority amplification pattern from the V4 single-run is not replicable in any controlled\nmulti-seed experiment. This model-dependence is now a core contribution rather than a limitation.\nModel-Dependence of Contagion Magnitude.Multi-model validation reveals that Memory Con-\ntagion is stronglymodel-generation-dependent. Under identical experimental conditions (12 train+6 eval\ntasks,\u03b1= 1.0, 3 seeds), DeepSeek V4-Pro yields\u0393 A = 0.00for length bias, "
+              }
+            ],
+            "text": "verification\nof the dose-response patterns, including the authority peak-and-decline hypothesis proposed in Section 4.4.\nSingle-Model Limitation (now resolved).Our primary results use DeepSeek V4-Chat. Multi-model\nvalidation (Table 2) confirms that only this specific model generation exhibits Length Contagion; both newer\nsame-family models (V4-Pro) and higher-capability cross-family models (Claude Sonnet 4.6) show complete\nimmunity. The authority amplification pattern from the V4 single-run is not replicable in any controlled\nmulti-seed experiment. This model-dependence is now a core contribution rather than a limitation.\nModel-Dependence of Contagion Magnitude.Multi-model validation reveals that Memory Con-\ntagion is stronglymodel-generation-dependent. Under identical experimental conditions (12 train+6 eval\ntasks,\u03b1= 1.0, 3 seeds), DeepSeek V4-Pro yields\u0393 A = 0.00for length bias, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0036"
+        ],
+        "excerpt": "compared to\u0393 A = 13.18on\nDeepSeek V4-Chat\u2014an 84% stronger model from the same family. Cross-family replication with Claude\nSonnet 4.6 also yields\u0393A = 0.00(1 seed, exploratory). The pattern is striking: only the oldest model (V4-\nChat) exhibits detectable contagion, while both newer models (V4-Pro) and higher-capability models from\ndifferent families (Claude 4.6) are effectively immune. This suggests that model capability improvements\u2014\nbetter instruction following, reduced susceptibility to spurious context patterns, stronger internal priors\u2014can\nnaturally attenuate or eliminate certain forms of bias propagation. We report this as a key discovery:Mem-\nory Contagion is not a universal property of LLM agent systems but is contingent on model\ngeneration and capability.\nWhy Are Newer Models Immune?The complete absence of length contagion in V4-Pro and Claude\n4.6 raises an important ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "66034be86952aec77df1651389ee877350d969ae422ddb6d466fb4843429a3cc",
+            "evidence_id": "Ea0e3b49f84a9676f-B0036",
+            "pages": [
+              9
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 4425,
+                "page": 9,
+                "section": "Discussion",
+                "section_index": 15,
+                "start": 3536,
+                "text": "compared to\u0393 A = 13.18on\nDeepSeek V4-Chat\u2014an 84% stronger model from the same family. Cross-family replication with Claude\nSonnet 4.6 also yields\u0393A = 0.00(1 seed, exploratory). The pattern is striking: only the oldest model (V4-\nChat) exhibits detectable contagion, while both newer models (V4-Pro) and higher-capability models from\ndifferent families (Claude 4.6) are effectively immune. This suggests that model capability improvements\u2014\nbetter instruction following, reduced susceptibility to spurious context patterns, stronger internal priors\u2014can\nnaturally attenuate or eliminate certain forms of bias propagation. We report this as a key discovery:Mem-\nory Contagion is not a universal property of LLM agent systems but is contingent on model\ngeneration and capability.\nWhy Are Newer Models Immune?The complete absence of length contagion in V4-Pro and Claude\n4.6 raises an important "
+              }
+            ],
+            "text": "compared to\u0393 A = 13.18on\nDeepSeek V4-Chat\u2014an 84% stronger model from the same family. Cross-family replication with Claude\nSonnet 4.6 also yields\u0393A = 0.00(1 seed, exploratory). The pattern is striking: only the oldest model (V4-\nChat) exhibits detectable contagion, while both newer models (V4-Pro) and higher-capability models from\ndifferent families (Claude 4.6) are effectively immune. This suggests that model capability improvements\u2014\nbetter instruction following, reduced susceptibility to spurious context patterns, stronger internal priors\u2014can\nnaturally attenuate or eliminate certain forms of bias propagation. We report this as a key discovery:Mem-\nory Contagion is not a universal property of LLM agent systems but is contingent on model\ngeneration and capability.\nWhy Are Newer Models Immune?The complete absence of length contagion in V4-Pro and Claude\n4.6 raises an important "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0038"
+        ],
+        "excerpt": "deploying newer, more capable models\nfor both memory retrieval and generation may be the simplest mitigation against Memory Contagion.\nTask-Domain Dependence of Authority Bias Propagation.A central negative result from our\nsystematic multi-seed replication concerns the domain sensitivity of authority bias. Across 5 independent\nexperimental configurations (3 seeds each,n= 15total), including both synthetic open-ended QA and explic-\nitly fact-centric tasks (prompts requesting citations to specific named studies and institutions), authority bias\nconsistently fails to propagate:\u0393A = 0.00(95% CI[0.00,0.00]) in all configurations. This sharply contrasts\nwith length bias, which propagates robustly under identical settings (\u0393A = 13.18,p <0.01). We interpret\nthis as evidence that authority bias contagion requires conditions beyond simple fact-centricity\u2014possibly\nevaluator training on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d6f16aff7f919679a99fbcd6e028a097401af03fd58e94d08af0c6e19dac5124",
+            "evidence_id": "Ea0e3b49f84a9676f-B0038",
+            "pages": [
+              10
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 1600,
+                "page": 10,
+                "section": "Discussion",
+                "section_index": 16,
+                "start": 712,
+                "text": "deploying newer, more capable models\nfor both memory retrieval and generation may be the simplest mitigation against Memory Contagion.\nTask-Domain Dependence of Authority Bias Propagation.A central negative result from our\nsystematic multi-seed replication concerns the domain sensitivity of authority bias. Across 5 independent\nexperimental configurations (3 seeds each,n= 15total), including both synthetic open-ended QA and explic-\nitly fact-centric tasks (prompts requesting citations to specific named studies and institutions), authority bias\nconsistently fails to propagate:\u0393A = 0.00(95% CI[0.00,0.00]) in all configurations. This sharply contrasts\nwith length bias, which propagates robustly under identical settings (\u0393A = 13.18,p <0.01). We interpret\nthis as evidence that authority bias contagion requires conditions beyond simple fact-centricity\u2014possibly\nevaluator training on "
+              }
+            ],
+            "text": "deploying newer, more capable models\nfor both memory retrieval and generation may be the simplest mitigation against Memory Contagion.\nTask-Domain Dependence of Authority Bias Propagation.A central negative result from our\nsystematic multi-seed replication concerns the domain sensitivity of authority bias. Across 5 independent\nexperimental configurations (3 seeds each,n= 15total), including both synthetic open-ended QA and explic-\nitly fact-centric tasks (prompts requesting citations to specific named studies and institutions), authority bias\nconsistently fails to propagate:\u0393A = 0.00(95% CI[0.00,0.00]) in all configurations. This sharply contrasts\nwith length bias, which propagates robustly under identical settings (\u0393A = 13.18,p <0.01). We interpret\nthis as evidence that authority bias contagion requires conditions beyond simple fact-centricity\u2014possibly\nevaluator training on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0039"
+        ],
+        "excerpt": "citation-verification tasks, or memory architectures that explicitly represent source\nprovenance. This negative result does not undermine the Memory Contagion thesis; rather, it strengthens\nits core contribution:contagion mechanisms are fundamentally bias-type-dependent, and length\npreference represents a reliably reproducible form of Memory Contagion, while authority bias\npropagation remains an open challenge.\nLimitation in Bias Injection Method.Our rejection-sampling approach selects trajectories that\nmaximize a biased evaluator's score. This may co-select for unmeasured quality features (e.g., fluency,\ncoherence) correlated with the evaluator's preference, potentially inflating contagion estimates. Future work\nshould employ quality-orthogonal bias injection methods\u2014such as inserting controlled neutral markers vs.\nauthority cues\u2014to isolate pure bias effects from confounding quality ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "248e9b9b922444988abdd8b6cd58b367e9c0ce1e2d54a659163e168e322ad5a7",
+            "evidence_id": "Ea0e3b49f84a9676f-B0039",
+            "pages": [
+              10
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 2497,
+                "page": 10,
+                "section": "Discussion",
+                "section_index": 16,
+                "start": 1600,
+                "text": "citation-verification tasks, or memory architectures that explicitly represent source\nprovenance. This negative result does not undermine the Memory Contagion thesis; rather, it strengthens\nits core contribution:contagion mechanisms are fundamentally bias-type-dependent, and length\npreference represents a reliably reproducible form of Memory Contagion, while authority bias\npropagation remains an open challenge.\nLimitation in Bias Injection Method.Our rejection-sampling approach selects trajectories that\nmaximize a biased evaluator's score. This may co-select for unmeasured quality features (e.g., fluency,\ncoherence) correlated with the evaluator's preference, potentially inflating contagion estimates. Future work\nshould employ quality-orthogonal bias injection methods\u2014such as inserting controlled neutral markers vs.\nauthority cues\u2014to isolate pure bias effects from confounding quality "
+              }
+            ],
+            "text": "citation-verification tasks, or memory architectures that explicitly represent source\nprovenance. This negative result does not undermine the Memory Contagion thesis; rather, it strengthens\nits core contribution:contagion mechanisms are fundamentally bias-type-dependent, and length\npreference represents a reliably reproducible form of Memory Contagion, while authority bias\npropagation remains an open challenge.\nLimitation in Bias Injection Method.Our rejection-sampling approach selects trajectories that\nmaximize a biased evaluator's score. This may co-select for unmeasured quality features (e.g., fluency,\ncoherence) correlated with the evaluator's preference, potentially inflating contagion estimates. Future work\nshould employ quality-orthogonal bias injection methods\u2014such as inserting controlled neutral markers vs.\nauthority cues\u2014to isolate pure bias effects from confounding quality "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0050"
+        ],
+        "excerpt": "We verify that bias injection succeeds by measuring\u03b2, the bias strength in generated trajectories:\n\u03b2= 1N X\u03c4\u2208D b b(\u03c4)\u2212 1N X\u03c4\u2208D c b(\u03c4)(6)\nFor length bias,\u03b2= 0.14(mean length: 298 words vs. 290 words, statistically significant). For authority\nbias,\u03b2= 0.21(mean authority density: 0.15 vs. 0.07).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Phase 1: Bias Injection Validation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0a47b95f2374bac6155b021edaa5472adf9ddd1e15489f3b4b6407ca482f7b14",
+            "evidence_id": "Ea0e3b49f84a9676f-B0050",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Phase 1: Bias Injection Validation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 292,
+                "page": 12,
+                "section": "Appendix: Phase 1: Bias Injection Validation",
+                "section_index": 25,
+                "start": 0,
+                "text": "We verify that bias injection succeeds by measuring\u03b2, the bias strength in generated trajectories:\n\u03b2= 1N X\u03c4\u2208D b b(\u03c4)\u2212 1N X\u03c4\u2208D c b(\u03c4)(6)\nFor length bias,\u03b2= 0.14(mean length: 298 words vs. 290 words, statistically significant). For authority\nbias,\u03b2= 0.21(mean authority density: 0.15 vs. 0.07)."
+              }
+            ],
+            "text": "We verify that bias injection succeeds by measuring\u03b2, the bias strength in generated trajectories:\n\u03b2= 1N X\u03c4\u2208D b b(\u03c4)\u2212 1N X\u03c4\u2208D c b(\u03c4)(6)\nFor length bias,\u03b2= 0.14(mean length: 298 words vs. 290 words, statistically significant). For authority\nbias,\u03b2= 0.21(mean authority density: 0.15 vs. 0.07)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0053"
+        ],
+        "excerpt": "As noted in Section 5, authority bias propagation is task-contingent. In preliminary multi-seed runs (3\nseeds,\u03b1= 1.0) on the 20 synthetic open-ended QA tasks used for length bias experiments, authority bias\nfails to propagate:\u0393 A = 0.00 [0.00,0.00]for all seeds. All candidate responses scored similarly regardless\nof authority-marker density, confirming that authority signals require fact-grounded semantic context (e.g.,\nHotpotQA, ScienceQA) to be distinguishable from general response quality. We report this negative result\nfor completeness and to motivate future work on domain-specific bias injection. The authority values in\nTable 1 (*) are therefore from a fact-centric V4 run (Section 5).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Authority Bias On Non-Fact-Centric Tasks",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0e02a242f66bae242d378fff76c11d465a8e105ceb01efa9c7ece803cf3b1305",
+            "evidence_id": "Ea0e3b49f84a9676f-B0053",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Authority Bias On Non-Fact-Centric Tasks",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 698,
+                "page": 12,
+                "section": "Appendix: Authority Bias On Non-Fact-Centric Tasks",
+                "section_index": 28,
+                "start": 0,
+                "text": "As noted in Section 5, authority bias propagation is task-contingent. In preliminary multi-seed runs (3\nseeds,\u03b1= 1.0) on the 20 synthetic open-ended QA tasks used for length bias experiments, authority bias\nfails to propagate:\u0393 A = 0.00 [0.00,0.00]for all seeds. All candidate responses scored similarly regardless\nof authority-marker density, confirming that authority signals require fact-grounded semantic context (e.g.,\nHotpotQA, ScienceQA) to be distinguishable from general response quality. We report this negative result\nfor completeness and to motivate future work on domain-specific bias injection. The authority values in\nTable 1 (*) are therefore from a fact-centric V4 run (Section 5)."
+              }
+            ],
+            "text": "As noted in Section 5, authority bias propagation is task-contingent. In preliminary multi-seed runs (3\nseeds,\u03b1= 1.0) on the 20 synthetic open-ended QA tasks used for length bias experiments, authority bias\nfails to propagate:\u0393 A = 0.00 [0.00,0.00]for all seeds. All candidate responses scored similarly regardless\nof authority-marker density, confirming that authority signals require fact-grounded semantic context (e.g.,\nHotpotQA, ScienceQA) to be distinguishable from general response quality. We report this negative result\nfor completeness and to motivate future work on domain-specific bias injection. The authority values in\nTable 1 (*) are therefore from a fact-centric V4 run (Section 5)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0055"
+        ],
+        "excerpt": "We report the full results of systematic multi-seed authority bias experiments across 5 independent config-\nurations (3 seeds each,n= 15total): 4 on synthetic open-ended QA, 1 on fact-centric tasks with explicit\ninstructions to cite named studies and institutions. In all configurations,\u0393 A = 0.00(95% bootstrap CI\n12\n[0.00,0.00]). This finding demonstrates that authority bias contagion is not elicitable under the current\nexperimental paradigm\u2014regardless of task domain or prompting strategy. The single V4 run reported in\nTable 1 uses a distinct fact-centric task set (HotpotQA-style) with a different experimental pipeline and\nserves as an exploratory outlier; its results are not replicated in any of our controlled multi-seed experi-\nments. We conclude thatlength preference represents a reliably reproducible form of Memory\nContagion, while authority bias propagation remains an open ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Authority Bias: Domain-Dependent Propagation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4b2da19ae275745818a40fa6e8f819ad5ef7166a126f331dfe4b94eff90e74a8",
+            "evidence_id": "Ea0e3b49f84a9676f-B0055",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Appendix: Authority Bias: Domain-Dependent Propagation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 317,
+                "page": 12,
+                "section": "Appendix: Authority Bias: Domain-Dependent Propagation",
+                "section_index": 30,
+                "start": 0,
+                "text": "We report the full results of systematic multi-seed authority bias experiments across 5 independent config-\nurations (3 seeds each,n= 15total): 4 on synthetic open-ended QA, 1 on fact-centric tasks with explicit\ninstructions to cite named studies and institutions. In all configurations,\u0393 A = 0.00(95% bootstrap CI\n12"
+              },
+              {
+                "end": 573,
+                "page": 13,
+                "section": "Appendix: Authority Bias: Domain-Dependent Propagation",
+                "section_index": 31,
+                "start": 0,
+                "text": "[0.00,0.00]). This finding demonstrates that authority bias contagion is not elicitable under the current\nexperimental paradigm\u2014regardless of task domain or prompting strategy. The single V4 run reported in\nTable 1 uses a distinct fact-centric task set (HotpotQA-style) with a different experimental pipeline and\nserves as an exploratory outlier; its results are not replicated in any of our controlled multi-seed experi-\nments. We conclude thatlength preference represents a reliably reproducible form of Memory\nContagion, while authority bias propagation remains an open "
+              }
+            ],
+            "text": "We report the full results of systematic multi-seed authority bias experiments across 5 independent config-\nurations (3 seeds each,n= 15total): 4 on synthetic open-ended QA, 1 on fact-centric tasks with explicit\ninstructions to cite named studies and institutions. In all configurations,\u0393 A = 0.00(95% bootstrap CI\n12\n[0.00,0.00]). This finding demonstrates that authority bias contagion is not elicitable under the current\nexperimental paradigm\u2014regardless of task domain or prompting strategy. The single V4 run reported in\nTable 1 uses a distinct fact-centric task set (HotpotQA-style) with a different experimental pipeline and\nserves as an exploratory outlier; its results are not replicated in any of our controlled multi-seed experi-\nments. We conclude thatlength preference represents a reliably reproducible form of Memory\nContagion, while authority bias propagation remains an open "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.23195",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The headline authority-bias contagion result (\u0393A = 11.45) is explicitly non-replicable: all 15 controlled multi-seed runs yield \u0393A = 0.00, so the abstract's authority-bias claim is not supported by reproducible evidence.",
+          "The only reproducible positive result (length bias, \u0393A = 13.18) is confined to a single older model generation; newer same-family and cross-family models show complete immunity (\u0393A = 0.00), undermining the claimed generality of Memory Contagion.",
+          "The evaluation is based on a very small synthetic task set (20 open-ended QA tasks, 12 train + 6 eval) with rejection-sampling bias injection that the authors acknowledge may co-select unmeasured quality features, leaving the core effect potentially confounded."
+        ],
+        "canonical_id": "doi:10.48550/arxiv.2606.23195",
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The paper studies an empirical phenomenon of bias propagation using explicit behavioral metric comparisons rather than optimizing a system against an automated judge.",
+          "final_evaluation_signal": "Wasserstein distance (W1) between distributions of evaluator scores (response length and authority marker counts) on target agent responses.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Rejection sampling during bias injection selects source agent responses maximizing the biased evaluator score (length or authority markers).",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0002",
+          "Ea0e3b49f84a9676f-B0003",
+          "Ea0e3b49f84a9676f-B0011",
+          "Ea0e3b49f84a9676f-B0012",
+          "Ea0e3b49f84a9676f-B0014",
+          "Ea0e3b49f84a9676f-B0017",
+          "Ea0e3b49f84a9676f-B0019",
+          "Ea0e3b49f84a9676f-B0020",
+          "Ea0e3b49f84a9676f-B0035",
+          "Ea0e3b49f84a9676f-B0036",
+          "Ea0e3b49f84a9676f-B0038",
+          "Ea0e3b49f84a9676f-B0039",
+          "Ea0e3b49f84a9676f-B0050",
+          "Ea0e3b49f84a9676f-B0053",
+          "Ea0e3b49f84a9676f-B0055"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "9ce4252b68d0b13ae73d05d838494c7545c16573cbd3a3cafcc0a2bef00496e5"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2606.23195",
+        "claim_evidence_alignment": "While the authors honestly document negative multi-seed replications and model immunity in the text and appendices, the title and abstract still introduce Memory Contagion and authority bias numbers (\u0393A = 11.45) derived from non-replicable exploratory runs, resulting in tension with the evidence that authority bias does not replicate and length bias does not generalize beyond an older model generation.",
+        "context_id": "a0e3b49f84a9676f005d6f5e8c787dca631ae20cc346dd669d141ec3153440da",
+        "decision": "uncertain",
+        "evaluation_assessment": "The empirical findings show substantial fragility: authority bias completely fails to propagate across all 15 controlled multi-seed experiments (yielding \u0393 = 0.00), leaving the preliminary positive authority numbers non-replicable. Furthermore, length bias contagion vanishes entirely (\u0393 = 0.00) in newer/stronger models (DeepSeek V4-Pro and Claude Sonnet 4.6), isolating the observed phenomenon to an older model and a single bias type on a small synthetic task set.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The paper studies an empirical phenomenon of bias propagation using explicit behavioral metric comparisons rather than optimizing a system against an automated judge.",
+          "final_evaluation_signal": "Wasserstein distance (W1) between distributions of evaluator scores (response length and authority marker counts) on target agent responses.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Rejection sampling during bias injection selects source agent responses maximizing the biased evaluator score (length or authority markers).",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea0e3b49f84a9676f-B0002",
+          "Ea0e3b49f84a9676f-B0003",
+          "Ea0e3b49f84a9676f-B0011",
+          "Ea0e3b49f84a9676f-B0012",
+          "Ea0e3b49f84a9676f-B0014",
+          "Ea0e3b49f84a9676f-B0017",
+          "Ea0e3b49f84a9676f-B0019",
+          "Ea0e3b49f84a9676f-B0020",
+          "Ea0e3b49f84a9676f-B0035",
+          "Ea0e3b49f84a9676f-B0036",
+          "Ea0e3b49f84a9676f-B0038",
+          "Ea0e3b49f84a9676f-B0053",
+          "Ea0e3b49f84a9676f-B0055"
+        ],
+        "limitations": "The authors explicitly disclose that authority bias failed to propagate in all 15 controlled runs, that newer models show zero contagion, and that additive separability and rejection-sampling bias injection may introduce confounds.",
+        "method_assessment": "The methodology formalizes bias propagation by comparing target agent behavior retrieving from biased vs. clean memory stores across consolidation conditions. However, the evaluation relies on a very small set of open-ended QA tasks (20 tasks, 12 train and 6 eval), and synthetic rejection sampling whose validity is admitted to risk co-selecting unmeasured quality features.",
+        "quality_rationale": "Given that the phenomenon completely fails to replicate for authority bias under controlled conditions and does not manifest in newer or different model families for length bias, evidence for Memory Contagion as a general property of LLM agent memory architectures remains weak and uncertain.",
+        "scoped_contribution": "The paper investigates 'Memory Contagion'\u2014the propagation of evaluator bias across episodes via external agent memory stores\u2014formalizing a distributional metric (Wasserstein distance of behavioral scores) and evaluating it across length and authority biases under oracle and LLM consolidation.",
+        "source_content_hash": "9ce4252b68d0b13ae73d05d838494c7545c16573cbd3a3cafcc0a2bef00496e5"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "Given that the phenomenon completely fails to replicate for authority bias under controlled conditions and does not manifest in newer or different model families for length bias, evidence for Memory Contagion as a general property of LLM agent memory architectures remains weak and uncertain.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "9ce4252b68d0b13ae73d05d838494c7545c16573cbd3a3cafcc0a2bef00496e5",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly disclose that authority bias failed to propagate in all 15 controlled runs, that newer models show zero contagion, and that additive separability and rejection-sampling bias injection may introduce confounds."
   },
   "semantic_scholar_id": "74d393a345e6fb29308dde0940b7f6b2c8976afe",
   "source": "openalex",
@@ -176,7 +1572,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

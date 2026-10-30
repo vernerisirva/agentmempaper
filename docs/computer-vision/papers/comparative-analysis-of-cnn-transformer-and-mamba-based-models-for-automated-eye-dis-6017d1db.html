@@ -59,16 +59,150 @@
             <p>We present a comparative analysis of six models belonging to Convolutional Neural Network (CNN), Transformer, and Mamba families for automated eye disease classification from fundus images under identical experimental conditions. To the best of our knowledge, our work is the first to explore Mamba-based models for a...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers a rigorous, well-controlled comparative baseline that addresses past methodological issues (such as post-augmentation splitting) in the literature on EDID. Statistical testing, bootstrap resampling, and ablation analyses provide strong positive scientific evidence.</p>
+      <p>The authors transparently report key limitations including single-seed training runs due to computational constraints, evaluation restricted to a single dataset (EDID), potential unremoved near-duplicates across splits, and fixed identical classification head configurations.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: PLoS ONE. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-10-30T10:47:00.587683+00:00.</p>
+        <p>Coverage: 68546 of 68546 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We present a comparative analysis of six models belonging to Convolutional Neu-
+ral Network (CNN), Transformer, and Mamba families for automated eye disease
+classification from fundus images under identical experimental conditions. To the best
+of our knowledge, our work is the first to explore Mamba-based models for auto-
+mated multi-class eye disease classification from color fundus images. Our analysis
+suggests that, when evaluated fairly, modern CNN, Transformer, and Mamba-based
+models provide similar performance for eye disease classification on the Eye Disease
+Image Dataset (EDID). Along with analyzing individual model performance, we further
+evaluate performance using a logit-level ensemble of the top three models. The
+ensemble results imply that these model families capture partially complementary
+visual features, resulting in a slight performance gain when combined. In </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mod-
+els have not received any attention for automated eye disease classification, despite
+their recent success in other vision tasks. We adopt a unified pipeline for preprocess-
+ing, model training, and evaluation to ensure methodological fairness. In this setting,
+we systematically evaluate two representative architectures from each model family
+to compare their relative performance. Additionally, we construct a logit-level ensem-
+ble of the top-performing models to investigate whether combining diverse architec-
+tural paradigms yields complementary performance gains. Through this design, our
+work aims to provide a fair and transparent empirical comparison that clarifies how
+architectural choices influence performance under carefully controlled experimental
+conditions.
+Recent works
+Recent work in automated eye disease classification using the EDID has explored
+CNNs, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+label quality. We partitioned the dataset into training, validation, and test sets using a stratified 70-10-20% split to pre-
+serve class distributions. A fixed random seed (224) was used to ensure reproducibility. Using scikit-learn, the split was
+performed once at the file level, before oversampling or data augmentation, to prevent data leakage. To assess the risk
+of image-level leakage across splits, we performed a full pairwise near-duplicate check using Structural Similarity Index
+Measure (SSIM) [31] (threshold ≥ 0.98) across all 2,824,276 class-bucketed image pairs among the 5,318 original fundus
+images. We identified 152 near-duplicate pairs, of which 71 crossed split boundaries. We did not remove these 71 pairs
+because they did not alter the basis of our comparative evaluation. All six models were trained and evaluated on the
+identical data split, and therefore the same </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>potentially overlapping samples were present in the evaluation set for every
+model. Consequently, no individual model received an advantage from this overlap relative to the others, and the relative
+Fig 1. Representative fundus images from the EDID. Each cell corresponds to one of the nine fundus image categories (Healthy, CSCR, DR, ODE,
+GLC, MS, MYA, RD, and RP) with three example images per category.
+https://doi.org/10.1371/journal.pone.0360171.g001
+PLOS One | https://doi.org/10.1371/journal.pone.0360171 October 26, 2026 5 / 19
+performance comparisons among the six models remain valid. This situation also differs from the systematic leakage
+reported in prior EDID studies [12,13,16,17], where models were trained directly on augmented or oversampled versions
+of validation/test images.
+To address class imbalance in the training set, classes containing fewer than 500 images were </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>study
+We constructed models using six backbones belonging to three architectural families: CNN-based models (RegNetY [32]
+and ConvNeXt [33]), Transformer-based models (Data-Efficient Image Transformer (DeiT) [34] and SwinV2 [35]), and
+Mamba-based models (Vision Mamba (Vim) [36] and MambaVision [37]). We chose these backbones because they are
+widely adopted across diverse vision tasks, were introduced from 2020 onward, achieve strong ImageNet-1k top-1 accu-
+racy as a proxy for general representational capability, and reflect substantially different design philosophies within each
+architectural family rather than closely related variants of the same approach. For CNNs, RegNetY represents a classical
+inductive-bias-heavy design with structured width progression and channel-wise squeeze-and-excitation attention, while
+ConvNeXt represents a modernized CNN that incorporates </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Model construction
+All backbone models used in this study (see Table 2) were pre-trained on the ImageNet-1k dataset. To ensure a fair and
+controlled comparison across different architectures, we replaced each backbone&#x27;s original classification head with our
+customized classification head. Using a consistent head design across all models prevents performance differences from
+PLOS One | https://doi.org/10.1371/journal.pone.0360171 October 26, 2026 10 / 19
+being influenced by variations in classifier architecture, allowing the evaluation to focus primarily on the representational
+capabilities of the backbones themselves. This design choice is particularly important because classification head design
+involves many architectural design choices, including layer depth, neuron count, activation functions, normalization meth-
+ods, pooling strategies, and regularization techniques. Tuning </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mean
+and max. Mean fusion aggregates the predictions by computing the average of the logits produced by each individual
+model, resulting in a consensus prediction that reflects all models equally. In contrast, max fusion selects the maximum
+logit across models for each class, thereby emphasizing the most confident prediction among ensemble members.
+Training setup
+All of our models were trained using the same hyperparameter configuration. The models were trained for 50 epochs with
+a batch size of 32. The model parameters were optimized using the AdamW optimizer with a learning rate of 1 × 10–4  and
+a weight decay of 0.01 to prevent overfitting. Gradient clipping with a maximum norm of 1.0 was applied, and Exponen-
+tial Moving Average (EMA) with a decay rate (α = 0.999 ) was employed for stable and reliable training. The model was
+optimized using the cross-entropy loss function. The </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Performance of individual models
+A comparative evaluation of our models comprising CNN-, Transformer-, and Mamba-based backbones under the same
+experimental setting is presented in Table 3. To assess the stability of the reported metrics for a fixed trained model, we
+reported 95% bootstrap confidence intervals alongside each point estimate, taken as the 2.5th and 97.5th percentiles of
+the bootstrap distribution. These intervals were computed via 1000 bootstrap resamples of the test-set predictions, drawn
+with replacement and using a fixed random seed to ensure reproducibility. Overall, performance differences across archi-
+tectural families were relatively small. This indicates that all three architectural families are equally suitable for retina-
+oriented eye disease classification.
+Among the CNN-based models, ConvNeXt-B achieves the strongest performance. It also performs best </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>across most
+metrics, obtaining the highest micro-accuracy (0.7900) and macro-accuracy (0.7666), along with a competitive F1 score
+(0.7523) and AUC-ROC (0.9623). It demonstrates improved performance over RegNetY-16GF, with higher micro- and
+macro-accuracy and F1 score. For Transformer-based models, SwinV2-B substantially outperforms DeiT-B on all reported
+metrics. In particular, SwinV2-B achieves the highest AUC-ROC (0.9671) among all evaluated models, while also attain-
+ing second-best results in micro-accuracy (0.7844), macro-accuracy (0.7560), and F1 score (0.7530). This indicates that
+Table 3. Performance comparison of CNN-, Transformer-, and Mamba-based backbones on the EDID.
+Type Model Micro Accuracy Macro Accuracy F1 Score AUC-ROC
+CNN RegNetY-16GF 0.7759 (0.7495 — 0.8013) 0.7329 (0.6859 — 0.7745) 0.7451 (0.7039 — 0.7778) 0.9600 (0.9477 — 0.9705)
+ConvNeXt-B 0.7900 (0.7646 — </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.8155) 0.7666 (0.7286 — 0.8057) 0.7523 (0.7161 — 0.7866) 0.9623 (0.9530 — 0.9702)
+Transformer DeiT-B 0.7382 (0.7100 — 0.7646) 0.7077 (0.6656 — 0.7483) 0.7030 (0.6645 — 0.7380) 0.9548 (0.9452 — 0.9643)
+SwinV2-B 0.7844 (0.7589 — 0.8098) 0.7560 (0.7146 — 0.7987) 0.7530 (0.7145 — 0.7859) 0.9671 (0.9595 — 0.9738)
+Mamba Vim-B 0.7571 (0.7316 — 0.7825) 0.7284 (0.6866 — 0.7715) 0.7293 (0.6907 — 0.7662) 0.9571 (0.9470 — 0.9666)
+MambaVision-B 0.7844 (0.7589 — 0.8107) 0.7486 (0.7091 — 0.7884) 0.7582 (0.7205 — 0.7902) 0.9647 (0.9578 — 0.9710)
+Values in parentheses denote 95% bootstrap confidence intervals, obtained by resampling the test-set predictions of each model with replacement (1000
+iterations). Best values are bolded, second best results are underlined.
+https://doi.org/10.1371/journal.pone.0360171.t003
+PLOS One | https://doi.org/10.1371/journal.pone.0360171 October 26, 2026 12 / </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and achieving the highest overall F1
+score, it required relatively low computational cost, low memory usage, faster training, and achieved the highest inference
+throughput among all models. Moreover, it substantially outperformed Vim-B in both predictive performance and runtime
+efficiency. Overall, these results reflect differences in how the evaluated models balance computational resources and
+predictive capacity, depending on their architectural design.
+Significance testing
+We performed pairwise McNemar tests [39] of significance with Holm–Bonferroni correction [40] between all models on
+the test set (see Fig 3). Our significance testing shows that RegNetY-16GF, ConvNeXt-B, SwinV2-B, and MambaVision-B
+do not differ significantly from one another in their error patterns despite differences in overall accuracy, yet all four signifi-
+cantly outperform DeiT-B. Although Vim-B was one </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>architectures yields more robust perfor-
+mance than any single model. Max fusion achieved the highest micro-accuracy (0.7966), macro-accuracy (0.7777), and
+F1 score (0.7734). It had particularly notable gains in macro-accuracy and F1 score, indicating improved class-balanced
+performance and a better precision–recall trade-off. Mean fusion, while slightly inferior in accuracy-based metrics, attained
+the best AUC-ROC, suggesting more calibrated predictions and stronger threshold-independent discriminative ability. Nev-
+ertheless, max fusion was found to be the preferable option, as its superior accuracy and F1 performance indicate a more
+effective preservation of strong class-wise predictions from individual models, which is critical for overall classification
+reliability.
+Class-wise performance
+Table 6 presents a detailed class-wise comparison of ConvNeXt-B, MambaVision-B, SwinV2-B, </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To evaluate whether oversampling caused inflated minority-class performance, we conducted an ablation study using
+ConvNeXt-B under three settings: the original imbalanced split, class-weighted cross-entropy, and replication-based
+oversampling (Tables 7 and 8). If oversampling had caused memorization, the heavily replicated minority classes would
+be expected to achieve unusually high accuracy. However, CSCR and MS remained the most difficult classes under over-
+sampling, with accuracies of 0.650 and 0.483, respectively, while weighted cross-entropy achieved higher scores on both
+classes without sample duplication. Oversampling also reduced performance on some majority classes, such as Healthy,
+indicating a redistribution of class sensitivity rather than artificial inflation. Overall, oversampling achieved the best
+micro-accuracy (0.7900), F1 score (0.7523), and AUC-ROC (0.9623), </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>combining them can yield modest improvements in robustness and class-balanced per-
+formance. Class-wise analysis reveals that diseases with distinct anatomical or pathological patterns are detected more
+reliably, while conditions with subtle or overlapping visual characteristics remain challenging.
+This study has some limitations. First, all experiments were conducted only on the EDID dataset, so the findings may not
+generalize well to retinal images from different clinical settings, imaging devices, or patient populations. Second, only six repre-
+sentative backbone architectures were evaluated in this study. Third, all models used the same classification head to maintain
+a fair comparison, which may not reflect the best possible performance of each architecture with customized designs. Fourth,
+all models were trained once due to computational constraints, so the reported results </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>are based on single training runs. The
+Table 7. Comparison of different class-balancing strategies using ConvNeXt-B under identical experimental conditions.
+Method Micro Accuracy Macro Accuracy F1 Score AUC-ROC
+Original Split 0.7721 0.7048 0.7272 0.9617
+Weighted Crossentropy 0.7467 0.7739 0.7337 0.9595
+Oversampling 0.7900 0.7666 0.7523 0.9623
+https://doi.org/10.1371/journal.pone.0360171.t007
+Table 8. Class-wise accuracy comparison of different class-balancing strategies using ConvNeXt-B under identical experimental conditions.
+Method Healthy CSCR DR ODE GLC MS MYA RD RP
+Original Split 0.755 0.400 0.894 0.800 0.822 0.685 0.460 0.920 0.607
+Weighted Crossentropy 0.696 0.750 0.920 0.840 0.544 0.674 0.870 0.920 0.750
+Oversampling 0.637 0.650 0.964 0.800 0.837 0.483 0.680 0.920 0.929
+https://doi.org/10.1371/journal.pone.0360171.t008</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +241,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +257,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-10-28</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-29 10:44:44</li><li>Last seen by Paper Scout: 2026-10-29 10:44:44</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-10-29</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-29 10:44:44</li><li>Last seen by Paper Scout: 2026-10-30 10:45:09</li></ul>
             <ul><li>DOI: 10.1371/journal.pone.0360171</li><li>OpenAlex: W7223672222</li><li>OpenAlex IDs: W7223672222</li></ul>
           </section>
           <section class="detail-panel">

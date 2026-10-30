@@ -1,0 +1,100 @@
+# Paper Scout Live Smoke Report - 2026-10-30
+
+- **CI mode:** True
+- **Sources attempted:** 3
+- **Sources succeeded:** 3
+- **Sources failed:** 0
+- **Raw records:** 625
+- **Candidates fetched:** 523
+- **Unique papers:** 496
+- **State initialized:** True
+- **Idempotency passed:** True
+
+## Sources
+
+### arxiv
+
+- Status: Success
+- Queries attempted: 6
+- Raw records: 425
+- Converted candidates: 422
+- Sample title: Retrieval as Traversal: Value-Indexed Memory for Stateful Long-Context Agents
+- Sample source ID: 2610.40545
+- Sample URL: https://arxiv.org/abs/2610.40545v1
+- Sample published date: 2026-10-29
+- Abstract: yes
+
+### openalex
+
+- Status: Success
+- Queries attempted: 4
+- Raw records: 100
+- Converted candidates: 100
+- Sample title: MemoryTax: The Bitter Lesson of Agent Memory
+- Sample source ID: W7223250543
+- Sample URL: https://arxiv.org/abs/2610.29823
+- Sample published date: 2026-10-21
+- Abstract: yes
+
+### semantic_scholar
+
+- Status: Success
+- Queries attempted: 4
+- Raw records: 100
+- Converted candidates: 1
+- Sample title: Learning to Remember: Advances in Memory Mechanisms for Large Language Models
+- Sample source ID: 70c1c4f061c15e7ae74fcd369d07e073eedd4225
+- Sample URL: https://www.semanticscholar.org/paper/70c1c4f061c15e7ae74fcd369d07e073eedd4225
+- Sample published date: 2026-10-26
+- Abstract: yes
+
+
+## Decisions
+
+- relevant: 29
+- maybe: 62
+- irrelevant: 405
+
+## Top Relevant Or Maybe Papers
+
+- **Recovery Budgets for Persistent AI-Agent Memory: Reproducibility Artifact** (relevant, 100/100): Studies governed shared memory or persistent memory protocols for LLM agents. https://doi.org/10.5281/zenodo.23623901
+- **RL-Guided Temporal Localization for Dual-Channel Retrieval in Long-Horizon Agent Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://arxiv.org/abs/2610.23598
+- **Memory Internalization via Test-Time Training for Long-Video Understanding** (relevant, 100/100): Studies how cross-episode experience can be converted into reusable procedural memory and distilled into a language model's weights. https://arxiv.org/abs/2610.26910
+- **Learning to Remember: Advances in Memory Mechanisms for Large Language Models** (relevant, 100/100): Discusses Engram-style or parametric memory mechanisms for language models. https://arxiv.org/abs/2610.35089v1
+- **Learning to Remember: Advances in Memory Mechanisms for Large Language Models** (relevant, 100/100): Discusses Engram-style or parametric memory mechanisms for language models. https://arxiv.org/abs/2610.35089
+- **Finding Is Not Returning, Returning Is Not Reconstructing: A Multi-Dimensional Evaluation of Agent Social Re-entry** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://arxiv.org/abs/2610.39781v1
+- **CALM: Conflict-Aware Lifecycle Memory Governance for Long-Horizon Language Agents** (relevant, 100/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://arxiv.org/abs/2610.38573v1
+- **Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://arxiv.org/abs/2610.34673
+- **TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces** (relevant, 99/100): Studies memory systems or memory modules for LLM agents. https://doi.org/10.48550/arxiv.2610.36918
+- **MemoryTax: The Bitter Lesson of Agent Memory** (relevant, 99/100): Studies memory systems or memory modules for LLM agents. https://arxiv.org/abs/2610.29823
+
+## Source Failures
+
+- None
+
+## Deduplication Examples
+
+- arxiv:2610.40545: arxiv:2610.40545, arxiv:2610.40545
+- arxiv:2610.40350: arxiv:2610.40350, arxiv:2610.40350, arxiv:2610.40350
+- arxiv:2610.40191: arxiv:2610.40191, arxiv:2610.40191
+- arxiv:2610.40031: arxiv:2610.40031, arxiv:2610.40031
+- arxiv:2610.39790: arxiv:2610.39790, arxiv:2610.39790
+- arxiv:2610.39781: arxiv:2610.39781, arxiv:2610.39781
+- arxiv:2610.39714: arxiv:2610.39714, arxiv:2610.39714
+- arxiv:2610.39532: arxiv:2610.39532, arxiv:2610.39532
+- arxiv:2610.37935: arxiv:2610.37935, arxiv:2610.37935
+- arxiv:2610.35089: arxiv:2610.35089, arxiv:2610.35089, semantic_scholar:70c1c4f061c15e7ae74fcd369d07e073eedd4225
+- arxiv:2610.34724: arxiv:2610.34724, arxiv:2610.34724, arxiv:2610.34724
+- arxiv:2610.32464: arxiv:2610.32464, arxiv:2610.32464
+- arxiv:2610.31401: arxiv:2610.31401, arxiv:2610.31401
+- arxiv:2610.40649: arxiv:2610.40649, arxiv:2610.40649
+- arxiv:2610.40565: arxiv:2610.40565, arxiv:2610.40565
+- arxiv:2610.40023: arxiv:2610.40023, arxiv:2610.40023
+- arxiv:2610.39795: arxiv:2610.39795, arxiv:2610.39795
+- arxiv:2610.39671: arxiv:2610.39671, arxiv:2610.39671
+- arxiv:2610.39417: arxiv:2610.39417, arxiv:2610.39417
+- doi:10.66977/xsci.2610.002q: openalex:W7221537227, openalex:W7221537227
+- doi:10.48550/arxiv.2610.35089: openalex:W7223835807, openalex:W7223835807
+- doi:10.48550/arxiv.2610.26926: openalex:W7223088741, openalex:W7223088741
+- doi:10.48550/arxiv.2610.26825: openalex:W7223001506, openalex:W7223001506
+- doi:10.48550/arxiv.2610.25425: openalex:W7223000881, openalex:W7223000881

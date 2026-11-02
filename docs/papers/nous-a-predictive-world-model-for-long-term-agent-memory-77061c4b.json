@@ -37,7 +37,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-26 13:01:31",
-    "generated_at": "2026-11-01 12:01:57",
+    "generated_at": "2026-11-02 12:04:11",
     "last_seen_at": "2026-08-02 07:52:26",
     "metadata_sources": [
       "openalex",
@@ -110,36 +110,901 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-11-02T12:02:24.576531+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.99,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Manuscript identity or acquisition provenance is unverified.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 48610,
+      "assessment_input_sha256": "9b19aa2b05199861a30551e3696088bae3cfa4c4ac1d6fa162e5b91f63647d26",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 47119,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 46552,
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 47143,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "f09dd6a7bdfa8a7841e12459f2ff26aeac962f13e9f50dec2997359f171e1bda",
+        "source_url": "https://arxiv.org/pdf/2606.22030",
+        "verified": false
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 47119,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 203,
+          "supplied_characters": 203
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1972,
+          "supplied_characters": 1972
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1610,
+          "supplied_characters": 1610
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2845,
+          "supplied_characters": 2845
+        },
+        {
+          "heading": "Background And Related W Ork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 1633,
+          "supplied_characters": 1633
+        },
+        {
+          "heading": "Background And Related W Ork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 4307,
+          "supplied_characters": 4307
+        },
+        {
+          "heading": "Core Abstractions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "abstract",
+          "section_index": 6,
+          "source_characters": 254,
+          "supplied_characters": 254
+        },
+        {
+          "heading": "Core Abstractions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "abstract",
+          "section_index": 7,
+          "source_characters": 587,
+          "supplied_characters": 587
+        },
+        {
+          "heading": "Information-Theoretic Surprise",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 454,
+          "supplied_characters": 454
+        },
+        {
+          "heading": "Bayesian Update",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 860,
+          "supplied_characters": 860
+        },
+        {
+          "heading": "Entropy Decay",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 479,
+          "supplied_characters": 479
+        },
+        {
+          "heading": "Identity Resolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 322,
+          "supplied_characters": 322
+        },
+        {
+          "heading": "Observed-Values Aggregation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 311,
+          "supplied_characters": 311
+        },
+        {
+          "heading": "Observed-Values Aggregation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 258,
+          "supplied_characters": 258
+        },
+        {
+          "heading": "Pipelines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 750,
+          "supplied_characters": 750
+        },
+        {
+          "heading": "Benchmark",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 282,
+          "supplied_characters": 282
+        },
+        {
+          "heading": "Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1082,
+          "supplied_characters": 1082
+        },
+        {
+          "heading": "Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 693,
+          "supplied_characters": 693
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 798,
+          "supplied_characters": 798
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 2082,
+          "supplied_characters": 2082
+        },
+        {
+          "heading": "Failure Bucket Breakdown",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 405,
+          "supplied_characters": 405
+        },
+        {
+          "heading": "Sh 529 (63%) 129 (15%) 154 (18%) 29 (3%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 40,
+          "supplied_characters": 40
+        },
+        {
+          "heading": "Mh 89 (32%) 92 (33%) 18 (6%) 24 (9%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 36,
+          "supplied_characters": 36
+        },
+        {
+          "heading": "T 175 (55%) 65 (20%) 62 (19%) 19 (6%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 37,
+          "supplied_characters": 37
+        },
+        {
+          "heading": "Od 40 (42%) 21 (22%) 0 (0%) 35 (37%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 135,
+          "supplied_characters": 135
+        },
+        {
+          "heading": "Od 40 (42%) 21 (22%) 0 (0%) 35 (37%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1053,
+          "supplied_characters": 1053
+        },
+        {
+          "heading": "Context Recall As A Diagnostic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 463,
+          "supplied_characters": 463
+        },
+        {
+          "heading": "Ablations: What Actually",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 27,
+          "source_characters": 2270,
+          "supplied_characters": 2270
+        },
+        {
+          "heading": "When Belief-Updating Helps:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 378,
+          "supplied_characters": 378
+        },
+        {
+          "heading": "When Belief-Updating Helps:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 4014,
+          "supplied_characters": 4014
+        },
+        {
+          "heading": "Security: Provenance-Capped",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 282,
+          "supplied_characters": 282
+        },
+        {
+          "heading": "Security: Provenance-Capped",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 4498,
+          "supplied_characters": 4498
+        },
+        {
+          "heading": "Security: Provenance-Capped",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1119,
+          "supplied_characters": 1119
+        },
+        {
+          "heading": "Limitations And Future Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "limitations",
+          "section_index": 33,
+          "source_characters": 1951,
+          "supplied_characters": 1951
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 34,
+          "source_characters": 1506,
+          "supplied_characters": 1506
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 35,
+          "source_characters": 733,
+          "supplied_characters": 733
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 94,
+          "supplied_characters": 94
+        },
+        {
+          "heading": "Philosophical Transactions Of The Royal Society",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 163,
+          "supplied_characters": 163
+        },
+        {
+          "heading": "Llm Agents Via Poisoning Memory Or Knowledge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 260,
+          "supplied_characters": 260
+        },
+        {
+          "heading": "Production-Ready Ai Agents With Scalable Long-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 916,
+          "supplied_characters": 916
+        },
+        {
+          "heading": "Bayesian Brain: The Role Of Uncertainty In Neu-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "limitations",
+          "section_index": 40,
+          "source_characters": 389,
+          "supplied_characters": 389
+        },
+        {
+          "heading": "Vances In Neural Information Processing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 1020,
+          "supplied_characters": 1020
+        },
+        {
+          "heading": "Poral Belief Consistency And Opinion Drift In Llm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 343,
+          "supplied_characters": 343
+        },
+        {
+          "heading": "For Agentic Applications 2026: Asi06 Memory And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 143,
+          "supplied_characters": 143
+        },
+        {
+          "heading": "Applications- The-Benchmark-For-Agentic-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 44,
+          "source_characters": 368,
+          "supplied_characters": 368
+        },
+        {
+          "heading": "For Ai Agents: Formal Belief Revision Semantics For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "For Ai Agents: Formal Belief Revision Semantics For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 2100,
+          "supplied_characters": 2100
+        }
+      ],
+      "selected_characters": 46552,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 203,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1972,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1610,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2845,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1633,
+          "heading": "Background And Related W Ork",
+          "page": 2
+        },
+        {
+          "characters": 4307,
+          "heading": "Background And Related W Ork",
+          "page": 3
+        },
+        {
+          "characters": 254,
+          "heading": "Core Abstractions",
+          "page": 3
+        },
+        {
+          "characters": 587,
+          "heading": "Core Abstractions",
+          "page": 4
+        },
+        {
+          "characters": 454,
+          "heading": "Information-Theoretic Surprise",
+          "page": 4
+        },
+        {
+          "characters": 860,
+          "heading": "Bayesian Update",
+          "page": 4
+        },
+        {
+          "characters": 479,
+          "heading": "Entropy Decay",
+          "page": 4
+        },
+        {
+          "characters": 322,
+          "heading": "Identity Resolution",
+          "page": 4
+        },
+        {
+          "characters": 311,
+          "heading": "Observed-Values Aggregation",
+          "page": 4
+        },
+        {
+          "characters": 258,
+          "heading": "Observed-Values Aggregation",
+          "page": 5
+        },
+        {
+          "characters": 750,
+          "heading": "Pipelines",
+          "page": 5
+        },
+        {
+          "characters": 282,
+          "heading": "Benchmark",
+          "page": 5
+        },
+        {
+          "characters": 1082,
+          "heading": "Metrics",
+          "page": 5
+        },
+        {
+          "characters": 693,
+          "heading": "Baselines",
+          "page": 5
+        },
+        {
+          "characters": 798,
+          "heading": "Results",
+          "page": 5
+        },
+        {
+          "characters": 2082,
+          "heading": "Results",
+          "page": 6
+        },
+        {
+          "characters": 405,
+          "heading": "Failure Bucket Breakdown",
+          "page": 6
+        },
+        {
+          "characters": 40,
+          "heading": "Sh 529 (63%) 129 (15%) 154 (18%) 29 (3%)",
+          "page": 6
+        },
+        {
+          "characters": 36,
+          "heading": "Mh 89 (32%) 92 (33%) 18 (6%) 24 (9%)",
+          "page": 6
+        },
+        {
+          "characters": 37,
+          "heading": "T 175 (55%) 65 (20%) 62 (19%) 19 (6%)",
+          "page": 6
+        },
+        {
+          "characters": 135,
+          "heading": "Od 40 (42%) 21 (22%) 0 (0%) 35 (37%)",
+          "page": 6
+        },
+        {
+          "characters": 1053,
+          "heading": "Od 40 (42%) 21 (22%) 0 (0%) 35 (37%)",
+          "page": 7
+        },
+        {
+          "characters": 463,
+          "heading": "Context Recall As A Diagnostic",
+          "page": 7
+        },
+        {
+          "characters": 2270,
+          "heading": "Ablations: What Actually",
+          "page": 7
+        },
+        {
+          "characters": 378,
+          "heading": "When Belief-Updating Helps:",
+          "page": 7
+        },
+        {
+          "characters": 4014,
+          "heading": "When Belief-Updating Helps:",
+          "page": 8
+        },
+        {
+          "characters": 282,
+          "heading": "Security: Provenance-Capped",
+          "page": 8
+        },
+        {
+          "characters": 4498,
+          "heading": "Security: Provenance-Capped",
+          "page": 9
+        },
+        {
+          "characters": 1119,
+          "heading": "Security: Provenance-Capped",
+          "page": 10
+        },
+        {
+          "characters": 1951,
+          "heading": "Limitations And Future Work",
+          "page": 10
+        },
+        {
+          "characters": 1506,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 733,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 94,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 163,
+          "heading": "Philosophical Transactions Of The Royal Society",
+          "page": 12
+        },
+        {
+          "characters": 260,
+          "heading": "Llm Agents Via Poisoning Memory Or Knowledge",
+          "page": 12
+        },
+        {
+          "characters": 916,
+          "heading": "Production-Ready Ai Agents With Scalable Long-",
+          "page": 12
+        },
+        {
+          "characters": 389,
+          "heading": "Bayesian Brain: The Role Of Uncertainty In Neu-",
+          "page": 12
+        },
+        {
+          "characters": 1020,
+          "heading": "Vances In Neural Information Processing Systems",
+          "page": 12
+        },
+        {
+          "characters": 343,
+          "heading": "Poral Belief Consistency And Opinion Drift In Llm",
+          "page": 12
+        },
+        {
+          "characters": 143,
+          "heading": "For Agentic Applications 2026: Asi06 Memory And",
+          "page": 12
+        },
+        {
+          "characters": 368,
+          "heading": "Applications- The-Benchmark-For-Agentic-",
+          "page": 12
+        },
+        {
+          "characters": 54,
+          "heading": "For Ai Agents: Formal Belief Revision Semantics For",
+          "page": 12
+        },
+        {
+          "characters": 2100,
+          "heading": "For Ai Agents: Formal Belief Revision Semantics For",
+          "page": 13
+        }
+      ],
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
     "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_url": "https://arxiv.org/pdf/2606.22030",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "integrity_failure",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Manuscript identity or acquisition provenance is unverified.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "f09dd6a7bdfa8a7841e12459f2ff26aeac962f13e9f50dec2997359f171e1bda",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -173,7 +1038,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

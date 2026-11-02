@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlowMoDE: Coarse-to-fine Flow Matching for Detail-aware Sim-to-Real Monocular Depth Estimation</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>FlowMoDE: Coarse-to-fine Flow Matching for Detail-aware Sim-to-Real Monocular Depth Estimation</h1>
+          <p class="hero-copy">Liangjing Shao, Wanhao Liu, Jinsong Lin, Zhiwei Fang, Hongliang Ren</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.41190v1">Open paper</a>
+            <a class="paper-detail-link" href="flowmode-coarse-to-fine-flow-matching-for-detail-aware-sim-to-real-monocular-depth-e-873adf4d.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Liangjing Shao, Wanhao Liu, Jinsong Lin, Zhiwei Fang, Hongliang Ren</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-30</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-30</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.41190">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies 3D vision, depth estimation, or geometric visual understanding.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Monocular depth estimation is a fundamental capability for 3D spatial perception in robotic and intelligent systems. While data-driven discriminative methods have achieved compelling performance for monocular depth estimation, generative approaches can reconstruct fine structural details with stronger generalization...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a clear and technically sound method, thoroughly validated across multiple external standard benchmarks with solid ablations and explicit discussion of failure modes and efficiency trade-offs.</p>
+      <p>The authors transparently report that patch embedding can introduce flying pixels and that training solely on indoor synthetic data causes blurred boundaries in distant regions [E496d30410c596036-B0039].</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-02T12:03:55.082873+00:00.</p>
+        <p>Coverage: 35185 of 35185 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sim-to-real and cross-scene generalization. The core
+architecture first conducts coarse-level decoding conditioned on
+diffused features extracted from a pre-trained semantic encoder,
+and subsequently restores fine-grained structural patterns via
+expanded decoding layers. Trained exclusively on a single syn-
+thetic indoor dataset, our proposed method outperforms prior
+methods across five real-world indoor and outdoor datasets,
+yielding an average 14.1% reduction in relative error against
+state-of-the-art works as well as 9.9% reduction in chamfer
+distance for point cloud reconstruction. We further validate
+the generalization capability of FlowMoDE on realistic robotic
+scenes, with qualitative comparisons against state-of-the-art
+methods. The project page is https://flowmode-shao.netlify.app/.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>simple source distri-
+butionp 0 to the data distributionp 1 over timestept. The
+generative process is governed by the ODE:
+dxt
+dt =v θ(xt, t), x0 ∼p 0, x1 ∼p 1, t∈[0,1](1)
+In conditional flow matching, the intermediate point isx t =
+(1−t)x 0 +tx 1. The training loss minimizes theℓ 2 distance
+𝒕
+𝑻
+Semantic
+Encoder
+Patch Embed
+Semantic
+Decoder
+Coarse
+Decoder
+Fine-grained
+Decoder
+Modulation
+Upsample
+t
+t
+ t
+Concatenation
+Single-step Training
+Two-step Inference
+𝒙𝒕
+𝒙𝟎
+(GT)
+𝜺 𝒗𝒕 = 𝜺 − 𝒙𝟎 ෝ𝒗𝒕𝓛
+c
+× 𝟎. 𝟓 × 𝟎. 𝟓
+SiLU
+Linear
+MSA
+MLP
+Norm
+Norm
+Scaleattn Shiftattn Gateattn
+Scaleffn Shiftffn Gateffn
+Decoder Block w/ Modulation
+Add
+Noise
+Input
+𝒙𝟏~𝓝(𝟎, 𝟏)
+𝒗𝟏
+𝒙𝟎.𝟓
+𝒙𝟎
+𝒗𝟐
+In Out
+Pred Depth
+Final Layer
+Modulation
+Fig. 2. Pipeline of the proposed method.
+between the predicted velocity field and the analytical target
+x1 −x 0:
+LCFM(θ) =E
+h
+
+vθ(xt, t)−(x1 −x 0)
+
+22i.(2)
+B. Overview
+The overall pipeline of the </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>proposed method is demon-
+strated in Fig. 2. Given an input imageI, the corresponding
+ground-truth depth map with noiseD t and its semantic
+feature maps, the proposed coarse-to-fine velocity prediction
+modelF dif fpredict the velocity mapˆv=F dif f([I, Dt]|s)
+for interpolation matching at the training stage. At the
+inference stage, given the input imageIand random noise
+x1 ∼ N(0,1), FlowMoDE subsequently utilizes the shared
+coarse-to-fine velocity prediction model for twice to predict
+the depth map ˆD.
+C. Coarse-to-Fine Velocity Prediction
+Firstly, shown as Eq.3, semantic features 0 of the input
+imageIis extracted by a semantic encoderF sem, which
+can be pretrained models such as DINOv2.
+s0 =Linear ds→dc (N orm(Fsem(I)))(3)
+whered s is the dimension of the output from semantic
+encoder, which meansF sem(I)∈R B× HP × WP ×ds. Moreover,
+dc is the dimension of the condition token, which is </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE I
+RESULTS ONMARIGOLD BENCHMARKS. ∗VAE ENCODER&amp; DECODER ARE NOT CONSIDERED IN ORIGINAL REPORTEDFLOPS CALCULATION. #NO
+REPORTED VALUE,ESTIMATED FROM THE DESCRIPTION IN THE ORIGINAL PAPER.BEST MODELSFROMALL modelsARE IN BOLD,WHILE
+SECONDBEST MODELS ARE UNDERLINED. BEST RESULTS AND SECONDBEST RESULTS FROMSim-to-Real Generative ModelsARE MARKED BY
+CORRESPONDING COLORS.
+NYUv2 KITTI ETH3D ScanNet DIODEMethod Year TrainingData FLOPs(G) AR↓δ 1↑ AR↓δ 1↑ AR↓δ 1↑ AR↓δ 1↑ AR↓δ 1↑ AvgRank
+Data-driven Discrimitive Models
+MiDaS [15] 2020 2M 184.6 11.1 88.5 23.6 63.0 18.4 75.2 12.1 84.6 33.2 71.5 19.2
+DiverseDepth [22] 2021 320K 207.8 11.7 87.5 19.0 70.4 22.8 69.4 10.9 88.2 37.6 63.1 19.6
+LeReS [23] 2021 354K 190.4 9.0 91.6 14.9 78.4 17.1 77.7 9.1 91.7 27.1 76.6 16.7
+Omnidata [24] 2021 12.2M 195.4 7.4 94.5 14.9 83.5 16.6 77.8 7.5 93.6 33.9 74.2 16.7
+DPT [16] 2021 1.4M 449.2 9.8 90.3 10.0 90.1 7.8 </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>92.3 6.6 95.7 5.6 96.5 35.7 75.6 12.2
+Lotus [12] 2025 59K 5237.2 ∗ 5.4 96.8 8.5 92.2 5.9 97.0 5.9 95.7 22.8 73.8 10.2
+DepthMaster [13] 2026 74K 5241.5 ∗ 5.0 97.2 8.2 93.7 5.3 97.4 5.5 96.7 21.5 77.6 6.9
+PPD [7] 2026 54K 18158.8 4.3 97.4 8.0 93.1 4.5 97.7 4.5 97.3 24.5 76.9 6.1
+FlowMoDE - 54K 3140.1 4.0 98.1 6.2 95.9 3.9 98.8 4.3 97.6 18.8 80.4 2.2</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given ground-truth (GT) depth mapDand noiseϵ, the
+target velocity map isv ∗ =ϵ−D. The single coarse-to-fine
+flow matching modelF dif foutputs predicted velocity map
+ˆvfrom the input imageIand noisy GT depth mapD t from
+Eq. 5. We utilize MSE between prediction and target velocity
+as the loss function for training, formulated as Eq. 12.
+L=
+P
+i mi||ˆv−v∗||22P
+i mi +ϵ (12)
+wheremdenotes the mask of valid depth, where value of
+invalid area will be set to 0.
+E. Two-step Inference
+During training stage, semantic tokenssare extracted once
+from the input RGB image. Firstly, the shared coarse-to-fine
+networkF dif fpredicts velocity map from the concatenation
+of input RGB imageIand random noisex 1 ∼ N(0,1).
+The original noise map is further diffused by the predicted
+velocity map, formulated as Eq. 13.
+x0.5 =x 1 −0.5× Fdif f([x1, I−0.5]|s)(13)
+As Eq. 14 shows,x 0.5 concatenated with the input </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We utilize frozen DINOv2-B from MoGe as our semantic
+encoder. The dimensions of semantic decoder, coarse decoder
+and fine-grained decoder are respectively set to 384, 384
+and 768. We train the proposed model on single dataset
+Hypersim [28], which consists of 54K high-quality synthetic
+indoor frames and corresponding depth maps. The proposed
+model is trained for 200 epochs (2000 sampling steps for
+each epoch) with a batch size of 4 and a fixed learning rate
+of 1e-4, while all training samples are resized to 640×480.
+All experiments are implemented on a NVIDIA H100 GPU.
+B. Comparison Results: Monocular Depth Estimation
+All methods are evaluated on five diverse real-world
+datasets NYUv2 [29], KITTI [30], ETH3D [31], ScanNet
+[32] and DIODE [33] following Marigold [10], resizing
+all samples to a resolution with a long edge of 768. We
+compared our model with existing discriminative models
+and </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generative models. For DIODE, we directly use masks
+provided officially, while some works such as PPD [7] use
+Sobel to filter areas with high gradient and RANSAC to align
+pixels in their papers. We utilize absolute relative error (AB)
+and accuracy (δ) formulated as Eq.15 and Eq. 16, whereD
+is the ground truth of the depth map and ˆDis the predicted
+depth map, to evaluate the performance.
+AR = 1|D| Xˆd∈D |d− ˆd|/d(15)
+Input / GT FlowMoDE PPD DepthMaster InfiniDepth MoGe UniDepth v2
+NYUv2DIODEETH3DScannetKITTI
+Fig. 3. Qualitative comparison on indoor examples (first four rows) and outdoor examples (last four rows). Figures in the second row of each sample are
+GT and corresponding error maps based on Abs Rel.
+δ= 1|D|
+( ˆd∈D|max( dˆd , ˆdd )&lt;1.25 ) (16)
+The quantitative comparison results are shown in Table
+I. Our model outperforms existing generative models across
+five datasets, </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>QUANTITATIVE COMPARISON OF POINT CLOUD RECONSTRUCTION
+BASED ON MONOCULAR DEPTH ESTIMATION. BEST RESULTS AND
+SECONDBEST RESULTS ARE MARKED BY CORRESPONDING COLORS.
+Near-field Far-field
+NYUv2 ETH3D MeanMethod
+Acc↓ CD↓ Acc↓ CD↓ Acc↓ CD↓
+UniDepth v2 86.7 117.2 332.4 427.1 209.6 272.2
+MoGe 92.7 121.4 352.4 448.7 222.6 285.1
+InfiniDepth 100.4 130.7 352.3 463.3 226.4 297.0
+DepthMaster 100.0 120.9 321.8 322.3 210.9 221.6
+PPD 172.2 160.3 840.7 596.4 506.5 378.4
+FlowMoDE 89.3 100.2 269.6 299.1 179.5 199.7
+to compare with our model. Accuracy (Acc) and Chamfer
+Distance (CD) formulated as Eq. 18 and Eq. 19 based on
+point clouds from depth maps (Eq. 17) are utilized as the
+InputFlowMoDEDepthMaster
+MoGeUniDepth v2
+Fig. 4. Comparison of point cloud reconstruction based on estimated depth
+maps.
+metrics for point cloud reconstruction.
+P(u, v) =K−1[u, v,1]D(u, v)(17)
+Acc= 1|P| Xp∈P ming∈G ||p−g|| 2 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE III
+ABLATIONSTUDIES ONVELOCITYPREDICTIONMODEL.
+NYUv2 KITTI ETH3D ScanNet DIODEAblation Settings AR↓ δ1 ↑ AR↓ δ1 ↑ AR↓ δ1 ↑ AR↓ δ1 ↑ AR↓ δ1 ↑
+Full Model 4.0 98.1 6.2 95.9 3.9 98.8 4.3 97.6 18.8 80.4#
+Semantic
+Decoder
+Coarse
+Decoder
+Fine-grained
+Decoder Configurations of Decoders
+I 4-Layer 8-Layer × 5.8 97.2 8.3 94.0 6.1 97.4 5.6 96.8 21.7 78.7
+II 4-Layer × 8-Layer 5.5 97.5 8.9 93.8 5.9 97.5 5.3 97.2 20.7 79.6
+III × 12-Layer × 6.2 96.8 10.5 89.6 8.2 95.7 6.1 96.3 22.1 77.9
+IV × × 12-Layer 5.5 97.4 9.8 92.3 6.9 97.0 5.4 96.9 21.4 79.0
+V × 6-Layer 6-Layer 5.5 97.3 9.8 92.5 6.0 97.6 5.3 96.8 20.5 79.8
+VI 4-Layer 6-Layer 2-Layer 6.0 96.9 8.8 93.7 6.3 97.3 6.0 96.2 21.6 78.6
+VII 2-Layer 6-Layer 4-Layer 6.0 96.8 9.3 92.8 6.6 97.1 5.8 96.6 22.5 77.9
+Injection of Semantic Feature
+VIII Cross Attention 6.3 96.6 34.2 42.5 8.2 94.5 6.0 96.5 23.5 75.6
+IX Concatenation 5.2 97.5 8.2 94.1 5.5 97.9 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE V
+ABLATION STUDIES ON FLOW MATCHING STEPS.BEST MODELSARE IN
+BOLD,WHILESECONDBEST MODELS ARE UNDERLINED.
+NYUv2 KITTI ETH3D ScanNet DIODESteps AR δ1 AR δ1 AR δ1 AR δ1 AR δ1
+1 4.4 98.1 7.5 94.7 4.6 98.5 4.5 97.6 18.8 80.3
+2 4.0 98.1 6.2 95.9 3.9 98.8 4.3 97.6 18.8 80.4
+4 4.1 98.0 6.5 95.6 4.0 98.7 4.3 97.5 18.9 80.3
+6 4.2 98.0 6.7 95.4 4.1 98.7 4.4 97.5 19.0 80.2
+8 4.2 98.0 6.7 95.4 4.1 98.7 4.4 97.5 19.0 80.2</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>COMPARISON OFCOMPUTATIONALCOST ANDEFFICIENCY
+Methods GFLOPs ms/image Mem(GB) Params(M)
+UniDepth v2 1925.0 23.3 3.98 353.8
+MoGe 3108.0 56.8 3.65 314.2
+DepthMaster 5241.5 94.7 6.71 1028.2
+PPD 18158.8 193.7 4.22 804.2
+FlowMoDE 3140.1 53.4 1.87 398.7
+parameters (Params) to evaluate the model size. Meanwhile,
+GFLOPs and inference speed (ms per image) are utilized to
+evaluate the efficiency of models. As shown in Table VI,
+the proposed FlowMoDE incurs higher latency and model
+weight overhead compared with UniDepth v2, but achieves
+significantly lower computational cost than prior generative
+depth models.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this paper, we present FlowMoDE, a flow-matching
+generative model for sim-to-real monocular depth estimation
+to recover fine structural details. Trained solely on synthetic
+data, our model outperforms prior methods on five diverse
+benchmarks. We further validate its strong ability to re-
+construct fine-grained geometry in various robotic scenarios
+against state-of-the-art approaches. With fewer Transformer
+blocks and minimal inference steps, FlowMoDE is lighter
+and more efficient than existing generative depth models.
+Still, patch embedding in our flow-matching pipeline may
+produce occasional flying pixels. Moreover, training only on
+near-field indoor synthetic data combined with patch-wise
+denoising can cause blurred edges for distant regions.</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>3D / geometric vision</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Geometric vision task; relation to 2D detection is indirect</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 93/100</li>
+              <li>Screening category: 3D / depth</li>
+              <li>Tags: 3d-vision, depth, synthetic-data</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-30</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-02 12:01:29</li><li>Last seen by Paper Scout: 2026-11-02 12:01:29</li></ul>
+            <ul><li>arXiv: 2610.41190</li><li>arXiv IDs: 2610.41190</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="flowmode-coarse-to-fine-flow-matching-for-detail-aware-sim-to-real-monocular-depth-e-873adf4d.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>FlowMoDE: Coarse-to-fine Flow Matching for Detail-aware Sim-to-Real Monocular Depth Estimation. Liangjing Shao, Wanhao Liu, Jinsong Lin, Zhiwei Fang, Hongliang Ren. 2026-10-30. https://arxiv.org/abs/2610.41190v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

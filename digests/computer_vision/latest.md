@@ -1,17 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-30](2026-10-30.md).
+Latest daily digest: [2026-11-02](2026-11-02.md).
 
-# Paper Scout Digest - 2026-10-30
+# Paper Scout Digest - 2026-11-02
 
 ## Run Summary
 
-- **Run ID:** 33
+- **Run ID:** 34
 - **Candidates fetched:** 452
-- **New unique papers:** 417
-- **Relevant:** 73
-- **Maybe relevant:** 228
-- **Irrelevant:** 151
+- **New unique papers:** 420
+- **Relevant:** 74
+- **Maybe relevant:** 226
+- **Irrelevant:** 152
 - **Source summary:** arxiv: 352, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
@@ -26,1588 +26,1158 @@ Latest daily digest: [2026-10-30](2026-10-30.md).
 - semantic_scholar: incomplete discovery window for 'real-time object detection'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'YOLO detector'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'open-vocabulary object detection'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'visual representation learning'; single-page record limit reached.
+- semantic_scholar failed for 'visual representation learning': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [LucidLyra: Feed-Forward Generative 3D Scene Reconstruction and Joint Understanding via Multi-Task Distillation](https://arxiv.org/abs/2610.40495v1)
+### [SAGE: Saliency-Annealed Gated Encoder for Universal Vision Recognition](https://arxiv.org/abs/2610.36719)
 
-- **Authors:** Oliver Hahn, Rodrigo Marcuzzi, Sangeetha Grama Srinivasan, Alessandro Burzio, Sherwin Bahmani, Jiahui Huang, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
+- **Authors:** Le Yang, Yucheng Huang, Junyu Chen, Qi Dang, Kong Xin, Haifeng Huo, et al.
+- **Date:** 2026-10-27
+- **Source:** openalex
 - **Relevance:** relevant (100/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation, visual-representation, 3d-vision
-- **Abstract summary:** We present LucidLyra, a framework that makes generatively reconstructed 3D scenes directly queryable for semantics and instances in a feed-forward manner from video latents. While generative 3D reconstruction can synthesize virtual environments from a single image, downstream applications in robotics and physical AI...
+- **Reason:** Studies object-detection architecture, training, or evaluation.
+- **Tags:** object-detection, segmentation, pose, vision-transformer, visual-representation, benchmark, metrics
+- **Abstract summary:** When adapting self-supervised Vision Transformers (ViTs) to dense prediction, existing methods often treat the ViT as a passive feature extractor and may underuse the rich priors encoded in its representations, including saliency, global context, and high-frequency details. We propose SAGE (Saliency-Annealed Gated E...
 
-### [YOLOF-MLD: A Multi-Level Distillation Framework for Efficient Object Detection](https://arxiv.org/abs/2610.39408v1)
+### [Implementation of YOLOv5 for Fingerling Detection under Turbid Conditions in an Ex-Tin Mining Pond](https://journal.ugm.ac.id/juliet/article/view/121918)
 
-- **Authors:** Xiaolong Wu, Liming Zheng, Zitong Liu, Yue Zheng
-- **Date:** 2026-10-29
-- **Source:** arxiv
+- **Authors:** Indra Dwisaputra, Sirlus Andreanto Jasman Duli, Eko Sulistyo, Evvin Faristasari, Ali Rospawan, Fadillah Aslammy Pratama Sayti, et al.
+- **Date:** 2026-10-30
+- **Source:** openalex
 - **Relevance:** relevant (99/100)
-- **Reason:** Studies object-detection architecture, training, or evaluation.
-- **Tags:** object-detection, backbone, efficient-vision, edge-deployment
-- **Abstract summary:** Efficient object detection on resource-constrained edge devices is essential for safety-critical applications such as fire-smoke monitoring. However, current lightweight frameworks, such as YOLO26, still rely on the parameter-dense multi-branch Feature Pyramid Network (FPN), preventing full exploitation of their lig...
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** object-detection, yolo, efficient-vision
+- **Abstract summary:** The utilization of ex-tin mining ponds for freshwater aquaculture in Bangka Belitung requires reliable monitoring technology, particularly for fingerling counting under variable water clarity conditions. Manual counting is time-consuming, labor-intensive, and may increase fish stress due to repeated handling. This s...
 
-### [TreemapMix: Dirichlet-Controlled Multi-Image Augmentation for Probability and Ordinal Supervision](https://arxiv.org/abs/2610.38265v1)
+### [From Object Detection to RNA Interaction: Evaluating YOLOv8 and CNNs on RRI Data](https://doi.org/10.1007/978-1-0716-5567-2_12)
 
-- **Authors:** Ejafa Bassam, Konstantin Garbers, Yingsheng Geng, Dalton Jens, Jiaxu Qian, Guyue Liu
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** relevant (98/100)
-- **Reason:** Studies object-detection architecture, training, or evaluation.
-- **Tags:** object-detection, segmentation, visual-representation, benchmark
-- **Abstract summary:** Data augmentation improves visual recognition by exposing models to synthetic training examples that encourage generalization beyond the observed data. Mixed-sample methods extend this idea by combining multiple images. However, many common approaches either mix only pairs of images or rely on fixed small layouts, l...
-
-### [An Efficient Real Time Steel Defect Detection using YOLO-based Approach](https://doi.org/10.5281/zenodo.23730988)
-
-- **Authors:** Muskan Garg, Nishu Kumari, Anushka Gupta, Vandana Niranjan
-- **Date:** 2026-10-28
+- **Authors:** Trilok Sai Vaddanam, Swetha Varadarajan
+- **Date:** 2026-10-29
 - **Source:** openalex
 - **Relevance:** relevant (96/100)
 - **Reason:** Studies YOLO-family or real-time object detection.
 - **Tags:** object-detection, yolo
-- **Abstract summary:** In this paper an optimized deep learning model has been proposed for automated Steel Surface Defect Detection [1] to mark the disadvantages of manual inspection methods and baseline object detection models. Steel surface has so many defects which can seriously attack safety and integrity of the product if it’s not d...
+- **Abstract summary:** No abstract available.
 
-### [AVPS-360: A Spatial Audio-Visual Benchmark for Instance Segmentation and Tracking of Sound-Producing Persons](https://arxiv.org/abs/2610.40480v1)
+### [Human fall detection based on improved YOLOv8](https://doi.org/10.1117/12.3132646)
 
-- **Authors:** Yifu Sun, Parthasaarathy Sudarsanam, Tuomas Virtanen, Archontis Politis
+- **Authors:** Qiming Sha
 - **Date:** 2026-10-29
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (96/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation, visual-representation
-- **Abstract summary:** Audio-visual instance segmentation (AVIS) segments and tracks individual sound-producing objects in videos. Existing benchmarks predominantly use monaural audio, which lacks inter-channel cues for spatially distinguishing concurrent sound sources. We introduce AVPS-360 (Audio-Visual Person Segmentation 360), a spati...
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** object-detection, yolo, efficient-vision
+- **Abstract summary:** To address the issues of low accuracy and inaccurate localization in human fall detection algorithms, this paper conducts relevant research and proposes an improved YOLOv8-based human fall detection algorithm. First, the original loss function is replaced with the EIOU loss function to optimize the model, accelerate...
 
-### [Feature-enhanced and lightweight object detection method for UAV perspective](https://doi.org/10.1117/12.3136279)
+### [OPEN-SOURCE SOFTWARE FOR THERMOGRAPHIC ANALYSIS OF THE HUMAN HAND USING YOLO INSTANCE SEGMENTATION](https://doi.org/10.13174/pjambp.28.10.2026.04)
 
-- **Authors:** Zifang Yang
+- **Authors:** Marcin Andrzej Piotrowski
 - **Date:** 2026-10-28
 - **Source:** openalex
 - **Relevance:** relevant (96/100)
 - **Reason:** Studies YOLO-family or real-time object detection.
-- **Tags:** object-detection, yolo, efficient-vision, edge-deployment
-- **Abstract summary:** Unmanned aerial vehicle (UAV) target detection faces significant challenges such as extreme scale variations, complex background interference, and limited computational resources on mobile edge devices. To address the high miss rate of small objects and high computational redundancy, this paper proposes FSD-YOLO, a...
+- **Tags:** yolo, segmentation, benchmark, metrics
+- **Abstract summary:** Introduction: This note presents the concept and implementation of dedicated software for the automated analysis of thermograms of the skin surface of the human hand. Standard tools supplied by thermal camera manufacturers often restrict access to raw radiometric data, hamper batch data processing, and force relianc...
 
-### [RoSAMDepth: Robust Self-supervised Depth Estimation Leveraging Segment Anything Model](https://arxiv.org/abs/2610.38587v1)
+### [Towards real-time 3D object detection in LiDAR-only scenario: Semi-supervised learning, point cloud density augmentation and knowledge distillation](https://doi.org/10.1016/j.cviu.2026.104985)
 
-- **Authors:** Xuanang Gao, Zhiwei Ning, Gengming Zhang, Jiaxi Cao, Runze Yang, Zhonglong Zheng, et al.
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** relevant (96/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation, depth
-- **Abstract summary:** Robust depth estimation aims to maintain high-quality depths across diverse conditions. However, most existing methods estimate depth without taking into account the object-level information. As a result, the predicted depth may easily deviate within objects and become blurred under adverse conditions. To overcome t...
-
-### [TRIM: Temporal Run-Time Monitoring of 3D Object Detection via Activation Statistics](https://arxiv.org/abs/2610.38613v1)
-
-- **Authors:** Hakan Yekta Yatbaz, Konstantinos Koufos, Mehrdad Dianati
-- **Date:** 2026-10-28
-- **Source:** arxiv
+- **Authors:** Jisu Kang, Wooseok Shin, Sung Won Han
+- **Date:** 2026-10-27
+- **Source:** openalex
 - **Relevance:** relevant (96/100)
 - **Reason:** Studies object-detection architecture, training, or evaluation.
-- **Tags:** object-detection, 3d-vision, benchmark
-- **Abstract summary:** Reliable perception is essential to intelligent transportation systems, yet deep neural networks can silently miss safety-critical objects while continuing to produce apparently plausible outputs. Existing run-time monitors for 3D object detection generally assess each frame independently and therefore cannot exploi...
+- **Tags:** object-detection, 3d-vision, efficient-vision
+- **Abstract summary:** No abstract available.
 
-### [BiHashFormer: Hash-Driven Dual-Branch Transformer for Efficient Object Detection in HRW Shots](https://arxiv.org/abs/2610.39937v1)
+### [A Patch is More Than a Token](https://arxiv.org/abs/2610.41814v1)
 
-- **Authors:** Jingchen Huang, Wenxi Li, Chenyang Lyu, Moran Liu, Haozhe Lin, Yuchen Guo
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (94/100)
-- **Reason:** Studies object-detection architecture, training, or evaluation.
-- **Tags:** object-detection, efficient-vision, metrics
-- **Abstract summary:** Recent advances in gigapixel-level imaging have brought High-Resolution Wide shots to the forefront of research. However, these images present significant challenges: extreme sparsity of foreground, gigapixel-level resolutions and interleaving of foreground and background. This causes traditional detectors and atten...
-
-### [Robust LIDAR Sensor-to-Sensor Domain Generalization via Accumulated-Point Scene Completion](https://arxiv.org/abs/2610.39516v1)
-
-- **Authors:** Christoph B Rist, Larissa T Triess, Markus Enzweiler, Dariu M Gavrila
-- **Date:** 2026-10-29
+- **Authors:** Zixiong Wang, Haiping Ma
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** relevant (93/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation, 3d-vision
-- **Abstract summary:** We study domain generalization for LIDAR semantic segmentation. Deep neural networks achieve strong performance on 3D point clouds, yet real-world LIDAR exhibits sensor-specific sampling patterns that hinder transfer across datasets. In many applications, performance on completely unseen sensors is crucial. A model...
-
-### [ACD-GS: Asymmetric Curvature-aware Densification for 3D Gaussian Splatting](https://arxiv.org/abs/2610.39399v1)
-
-- **Authors:** Houqiang Zhong, Tianchi Zhu, Qiang Hu, Xiaoyun Zhang, Li Song, Wenjun Zhang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
-- **Tags:** 3d-vision, efficient-vision
-- **Abstract summary:** 3D Gaussian Splatting (3DGS) has emerged as a powerful paradigm for real-time photorealistic novel view synthesis. However, its training-time densification remains largely heuristic, often resulting in redundant Gaussian proliferation and inaccurate geometric reconstruction. Existing methods predominantly rely on fi...
-
-### [Aligning Misaligned Benchmarks for Single-View Novel View Synthesis](https://arxiv.org/abs/2610.38349v1)
-
-- **Authors:** Yang-Che Tseng, Erqun Dong, Jeong-gi Kwak, Gopal Sharma, Shakiba Kheradmand, Stephan Garbin, et al.
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
-- **Tags:** 3d-vision
-- **Abstract summary:** While single-view novel view synthesis methods have been dramatically enhanced recently, how to quantify their performance has yet to be standardized. In this work, we demonstrate that an important factor lies in how each method's own reference frame is aligned with the so-called ground-truth pose. Existing methods...
-
-### [BudSplat: Feed-forward 3D Gaussian Splatting under a Rendering Budget](https://arxiv.org/abs/2610.38278v1)
-
-- **Authors:** Muyu Xu, Fangneng Zhan, Yu Wei, Ling Shao, Shijian Lu
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
-- **Tags:** 3d-vision, efficient-vision
-- **Abstract summary:** Feed-forward 3D Gaussian Splatting has recently emerged as a promising alternative to per-scene optimization, enabling fast novel view synthesis by predicting Gaussian primitives directly from input images. However, it quickly faces a bottleneck of rendering efficiency while scaling from sparse to dense multi-view i...
-
-### [Calibrating Track-Query Updates at Test Time for Multi-Object Tracking](https://arxiv.org/abs/2610.38494v1)
-
-- **Authors:** Riku Inoue, Shogo Sato, Yu Mitsuzumi, Kazuhiko Murasaki, Tomoyasu Shimada, Takashi Sano
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies multi-object or visual object tracking.
-- **Tags:** tracking, metrics
-- **Abstract summary:** Multi-Object Tracking (MOT) requires localizing multiple objects and maintaining their identities over time. Recent query-propagation trackers carry target-specific representations across frames and update them with current-frame image features, yet identity association remains difficult when visually similar target...
-
-### [Cross-Encoder Anchor Refinement for Zero-Shot Anomaly Detection](https://arxiv.org/abs/2610.39727v1)
-
-- **Authors:** Kaisong Ji, Ziyang Xu, Chang Bian, Yu Zhou, Wenyu Liu, Xinggang Wang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
 - **Reason:** Studies visual backbones or vision-transformer architecture.
-- **Tags:** vision-transformer
-- **Abstract summary:** Zero-shot anomaly detection aims to transfer anomaly discrimination from auxiliary training domains to unseen categories while localizing subtle defects. A key challenge is to construct discriminative references that combine contextual representations with complementary local evidence. We present Cross-Encoder Ancho...
+- **Tags:** vision-transformer, backbone
+- **Abstract summary:** Vision Transformers represent each image patch through a canonical token produced under one observation condition. That token is a powerful interface, but it is still one realized state of the patch. We introduce PMTT, which establishes two foundations: a patch representation object can extend from one canonical sta...
 
-### [Data Scaling Laws in Stereo Matching: From In-domain Fitting to Cross-domain Generalization](https://arxiv.org/abs/2610.38600v1)
+### [ACSAN: All-Convolutional Self-Attention Network Integrating Convolutional Operations with Vision Transformer](https://arxiv.org/abs/2610.35375)
 
-- **Authors:** Tong Zhao, Di Liang, Yiming Zeng, Bo Xu, Yingzhi Tang, Chen Bai
-- **Date:** 2026-10-28
+- **Authors:** Zimian Wei, Tianqi Zhang, Hengyue Pan
+- **Date:** 2026-10-26
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer, visual-representation, benchmark
+- **Abstract summary:** In the past few years, Vision Transformer (ViT) has achieved excellent performance in the field of computer vision. However, there still some problems remain. For instance, ViTs heavily rely on large-scale training data since they simply contain a large number of trainable parameters, which slows down their learning...
+
+### [Bacterial Species Classification from Full-Plate Culture Images Using Deep Learning: A Comparative Study of CNNs and Vision Transformers](https://doi.org/10.21203/rs.3.rs-11151354/v1)
+
+- **Authors:** Abdulsalam Abdulsattar Abdulazez, Hussein Salim Abed, Aythem Khairi Kareem, Mustafa Nadhim Owaid, Ahmed Adil Nafea
+- **Date:** 2026-10-29
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer, visual-representation
+- **Abstract summary:** Abstract Accurate identification of bacterial species from culture plates is essential for microbiological analysis, yet conventional identification procedures can be time-consuming and dependent on specialized expertise. This study investigates the feasibility of automated multiclass bacterial identification direct...
+
+### [FlowMoDE: Coarse-to-fine Flow Matching for Detail-aware Sim-to-Real Monocular Depth Estimation](https://arxiv.org/abs/2610.41190v1)
+
+- **Authors:** Liangjing Shao, Wanhao Liu, Jinsong Lin, Zhiwei Fang, Hongliang Ren
+- **Date:** 2026-10-30
 - **Source:** arxiv
-- **Relevance:** relevant (91/100)
+- **Relevance:** relevant (93/100)
 - **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
-- **Tags:** 3d-vision, synthetic-data
-- **Abstract summary:** In the era of large models, stereo matching is developing towards generalizable foundation models trained on million-scale synthetic images. However, how model performance scales up with synthetic data is still underexplored. In this work, we preliminarily investigate the in-domain and cross-domain data scaling laws...
+- **Tags:** 3d-vision, depth, synthetic-data
+- **Abstract summary:** Monocular depth estimation is a fundamental capability for 3D spatial perception in robotic and intelligent systems. While data-driven discriminative methods have achieved compelling performance for monocular depth estimation, generative approaches can reconstruct fine structural details with stronger generalization...
 
-### [Deep Learning Based Cell Segmentation of 3D Confocal Images of Wood for Enzymatic Hydrolysis Applications](https://doi.org/10.64898/2026.10.26.761974)
+### [IGDA-ICMH: an Importance Guided Feature and Network Dual Adaptation Framework towards Image Compression for Machine and Human Vision](https://arxiv.org/abs/2610.41924v1)
 
-- **Authors:** Abdelmalek Faraj, Solmaz Hossein Khani, Gabriel Paës, Yassin Refahi
+- **Authors:** Yanbo Gao, Xinyu Zhao, Shuai Li, Xun Cai, Mao Ye, Li Li
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies object-detection architecture, training, or evaluation.
+- **Tags:** object-detection, visual-representation
+- **Abstract summary:** With the surge of machine vision applications, image compression for both machine and human vision (ICMH) has become an important research area. Existing studies mainly focus on task-specific adaptation or multi-task joint optimization, yet they often overlook the unequal contributions of different features and netw...
+
+### [Matching Workloads to Blackwell: Power-Resolved Benchmarking of NVIDIA B200 and B300 across HPC and AI Workloads](https://arxiv.org/abs/2610.41919v1)
+
+- **Authors:** Mohsen Zand, Trung Dac Nguyen, H. Birali Runesha
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer, 3d-vision, efficient-vision
+- **Abstract summary:** We evaluate NVIDIA B200 and B300 (Blackwell Ultra) GPUs on two independent eight-GPU clusters, spanning computer-vision inference and training, LLM inference with Llama-3-8B and 70B~\cite{llama3}, and six production HPC codes. The B300 is not a uniform successor to the B200: it trails by up to 5.6$\times$ on convolu...
+
+### [Rethinking Asymmetry in Self-Supervised 3D Geometry Learning](https://arxiv.org/abs/2610.42092v1)
+
+- **Authors:** Gyeongjin Kang, Freeman Cheng, Botao Ye, Weijie Lyu, Ming-Hsuan Yang, Eunbyung Park
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies pose estimation or keypoint localization.
+- **Tags:** pose, visual-representation
+- **Abstract summary:** Self-supervised learning relies on asymmetry between what a model observes and what it must explain. Recent methods learn 3D geometry from unposed images by predicting cameras and scene structure, then rendering held-out views. To avoid trivial solutions, they impose this asymmetry in the input space, restricting ho...
+
+### [Transferable adversarial attacks on vision transformers via Patches Restructuring](https://doi.org/10.1007/s10791-026-10735-4)
+
+- **Authors:** Yuhang Zhao, Huipeng Zhou, Qing Fan, Hongyu Xie, Zijie Pan, Yajie Wang, et al.
 - **Date:** 2026-10-28
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer, visual-representation, benchmark
+- **Abstract summary:** Vision Transformers (ViTs) have achieved strong performance in image recognition, but their vulnerability to transferable adversarial examples remains an important security concern. Existing transfer-based attacks are mostly designed from the perspective of convolutional neural networks or input-level transformation...
+
+### [Automated tracking of the colonization process of oil-degrading bacteria in intertidal zone soil based on deep learning image segmentation](https://doi.org/10.1117/12.3135078)
+
+- **Authors:** Fei Cheng
+- **Date:** 2026-10-29
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation
-- **Abstract summary:** Plant cell walls are an abundant renewable resource for biobased products, but their recalcitrance limits enzymatic hydrolysis efficiency. Cell and tissue morphological parameters provide reliable biomarkers for predicting enzymatic hydrolysis efficiency. Accurate cell segmentation in 3D microscopy images is essenti...
+- **Tags:** segmentation, metrics
+- **Abstract summary:** Due to its persistence and impact on local ecosystems, oil pollution in coastal intertidal zones poses a significant environmental threat. For optimizing bioremediation strategies, effectively tracking the colonization dynamics of oil-degrading bacteria in these heterogeneous soils is crucial, but technical challeng...
 
-### [DEQ-Stereo: Deep Euilibrium Video Stereo Matching via Adaptive Convergence](https://arxiv.org/abs/2610.39701v1)
+### [Deniz Aracı Tespiti ve Sayımı için YOLO Modellerinin Görüntü Tabanlı Karşılaştırmalı Analizi](https://doi.org/10.61150/dasc.2026010206)
 
-- **Authors:** Kiljoon Han, Kyumin Hwang, Wonheok Choi, Jeonghoon Kim, Sunghoom Im
-- **Date:** 2026-10-29
-- **Source:** arxiv
+- **Authors:** Burçe Benli
+- **Date:** 2026-10-30
+- **Source:** openalex
 - **Relevance:** relevant (91/100)
-- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
-- **Tags:** 3d-vision
-- **Abstract summary:** Iterative refinement models have significantly improved stereo matching accuracy, but their rigid, fixed update schedules incur heavy computational costs and a strict trade-off between speed and accuracy. This challenge is magnified in video streams, where traditional online methods resort to reducing feature channe...
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** yolo
+- **Abstract summary:** Deniz trafiğinin izlenmesi, güvenlik ve gözetim faaliyetleri ile otonom deniz sistemleri gibi uygulamalarda görüntü tabanlı nesne tespiti kritik bir rol oynamaktadır. Bununla birlikte, deniz yüzeyindeki araçların görüntü tabanlı olarak tespit edilmesi, karasal ortamlardaki nesne tespitine kıyasla daha zorlu bir prob...
 
-### [Efficacy of Monocular Depth Estimation in Lunar Environments](https://arxiv.org/abs/2610.38080v1)
-
-- **Authors:** Michael W. Lanighan, Kenji Brameld, Seth Gee
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
-- **Tags:** depth
-- **Abstract summary:** Recent advances in monocular depth estimation have demonstrated highly accurate 3D reconstructions within in-distribution terrestrial domains. This study investigates the efficacy of several state-of-the-art approaches to reconstruct out-of-distribution lunar environments using the NASA Ames Polar Optical Lunar Anal...
-
-### [ElasticFormer: Detecting Objects in HRW Shots via Elastic Computing Vision Transformer](https://arxiv.org/abs/2610.39946v1)
+### [ElasticFormer: Detecting Objects in HRW Shots via Elastic Computing Vision Transformer](https://arxiv.org/abs/2610.39946)
 
 - **Authors:** Wenxi Li, Jingchen Huang, Chenyang Lyu, Moran Liu, Haozhe Lin, Guiguang Ding, et al.
 - **Date:** 2026-10-29
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies visual backbones or vision-transformer architecture.
 - **Tags:** vision-transformer, efficient-vision, benchmark, metrics
 - **Abstract summary:** Recent advances in gigapixel-level imaging have brought High-Resolution Wide shots to the forefront of research. However, these images present significant challenges: extreme sparsity of foreground, gigapixel-level resolutions and diverse target counts. This makes traditional close-up detectors inaccurate and slow a...
 
-### [Evaluating Vision Transformers for Stain Robustness and Calibration in Low-Resource Digital Pathology](https://doi.org/10.21203/rs.3.rs-11111456/v1)
+### [Embedding Geological Constraints for Realistic Seismic Image Segmentation](https://doi.org/10.2118/236014-ms)
 
-- **Authors:** Abir Hasan, Sadia Yasmin, Ripa Akter, Md. Abdul Awal
+- **Authors:** C. T. Ang, A.H. Elsheikh
+- **Date:** 2026-11-02
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
+- **Tags:** segmentation
+- **Abstract summary:** Abstract Deep learning has shown considerable potential for automating seismic interpretation; however, most existing approaches rely solely on seismic amplitudes and often produce predictions that are mathematically accurate but geologically unrealistic. This study proposes a geological constrained deep learning me...
+
+### [FoAViS: Analyzing Learned Fixation Strategies in a Foveated Active Vision System](https://arxiv.org/abs/2610.41987v1)
+
+- **Authors:** Valentin Hassler, Jonathan Henrich, Yohaï-Eliel Berreby, Haoze Zhu, Alexander Ecker
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
+- **Tags:** segmentation
+- **Abstract summary:** Human vision is foveated and active: resolution is highest at the fovea and falls off towards the periphery, and fixations are actively directed to locations of interest. Building a machine system that processes information in the same way lets us study gaze behavior in a controlled setting where the system's compon...
+
+### [Hard Sample-Conditioned Decorrelated Attention for Robust Face Recognition](https://arxiv.org/abs/2610.41789v1)
+
+- **Authors:** Tahar Chettaoui, Guray Ozgur, Eduarda Caldeira, Naser Damer, Fadi Boutros
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer
+- **Abstract summary:** Multi-head attention in Vision Transformers (ViTs) allows independent attention patterns across heads, but without explicit regularization, heads may learn redundant patterns rather than complementary roles. Correlation-based penalties encourage head disentanglement, yet apply uniform regularization across all train...
+
+### [Inter-Frame Predictive Contour Coding for Semantic Map Compression](https://arxiv.org/abs/2610.40887v1)
+
+- **Authors:** Runyu Yang, Hyomin Choi, Fabien Racapé, Ivan V. Bajić
+- **Date:** 2026-10-29
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
+- **Tags:** segmentation
+- **Abstract summary:** Dynamic semantic maps have become an important intermediate representation for many computer vision applications. Efficient lossless compression of such maps is essential for reducing storage and transmission costs. Existing contour-based semantic map compression methods mainly exploit spatial redundancy within indi...
+
+### [MotorSense: A Video-EMG Dataset of Motoric Representations for Action Understanding](https://arxiv.org/abs/2610.41127v1)
+
+- **Authors:** Eadom Dessalene, Michael Maynord, Amir-Hossein Shahidzadeh, Botao He, Yasamin Tabatabaee, Ruoshi Liu, et al.
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies visual representation learning or large visual encoders.
+- **Tags:** visual-representation
+- **Abstract summary:** Computer vision models learn hand action only from its visual consequences, without access to the underlying embodied motor signals. We address this absence with MotorSense, the first large-scale paired egocentric video and surface electromyography (EMG) dataset. MotorSense pairs bimanual EMG bands with egocentric v...
+
+### [PBSR: Pseudo-Burst Super-Resolution via Zero-Shot Novel View Synthesis](https://arxiv.org/abs/2610.41258v1)
+
+- **Authors:** Yuki Kondo, Norimichi Ukita
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
+- **Tags:** 3d-vision
+- **Abstract summary:** Burst super-resolution (BSR) achieves higher reconstruction fidelity than single-image super-resolution (SISR) by aggregating sub-pixel information from multiple frames. However, it requires a burst of frames captured under near-static conditions, and such frames are unavailable for single photographs or archival im...
+
+### [Pre-Event DEM-Based Deep-Seated Landslide Susceptibility Mapping Using a Vision Transformer in the Kii Mountains, Japan](https://doi.org/10.59490/6ad2937c6ee698573e4dd024)
+
+- **Authors:** Teruyuki Kikuchi, T. Yamada, S. Fukaya, M. Matsuzawa
+- **Date:** 2026-10-29
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer
+- **Abstract summary:** This study evaluates deep-seated landslide susceptibility using pre-event LiDAR-derived DEM data from the 2011 Kii Peninsula heavy rainfall disaster. Terrain parameters representing gravitational deformation were calculated and used as inputs to compare a Convolutional Neural Network (CNN) and a Vision Transformer (...
+
+### [Prior-Guided Single-Exposure HDR Novel View Synthesis via Base-Gain Representation](https://arxiv.org/abs/2610.41011v1)
+
+- **Authors:** Armin Shafiee Sarvestani, Sheyang Tang, Jialu Xu, Zhou Wang
+- **Date:** 2026-10-29
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
+- **Tags:** 3d-vision
+- **Abstract summary:** Single-exposure high dynamic range (HDR) novel view synthesis (NVS) recovers HDR scenes from low dynamic range (LDR) views captured at a single exposure and estimates camera response function (CRF) for LDR re-exposure. Without HDR ground-truth, using single-exposure LDR views as the sole source of direct supervision...
+
+### [Progressive multi-scale learning for lightweight YOLO-based multi-disease detection in chest X-ray](https://doi.org/10.3389/fmed.2026.1901057)
+
+- **Authors:** Shanweichen Chen, Quan Wang, LiHong Zhu, Fengmei Su
+- **Date:** 2026-10-29
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** yolo
+- **Abstract summary:** Background Chest X-ray (CXR) is a primary imaging modality for thoracic disease screening, but manual interpretation of multi-disease cases can be limited by radiologist workload and variability in diagnostic experience, increasing the risk of missed abnormalities, particularly for small lesions. Although deep learn...
+
+### [Shifting Focus by Reliability: Geometric Fusion Modulation for Robust RGB-T Detection](https://arxiv.org/abs/2610.41204v1)
+
+- **Authors:** Liuyin Shi, Chengqi Li, Wenbo He
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies object-detection architecture, training, or evaluation.
+- **Tags:** object-detection
+- **Abstract summary:** RGB-thermal (RGB-T) object detectors combine visible and thermal imagery for robust detection, but signal corruption in either stream can substantially degrade accuracy. Restoration-based methods incur significant latency and do not consistently improve downstream accuracy, raising a more direct question: rather tha...
+
+### [The First Deep Learning all-sky List of Fermi-LAT Gamma-ray Sources](https://arxiv.org/abs/2610.37287)
+
+- **Authors:** Saptashwa Bhattacharyya, G. Principe, Dmitry V. Malyshev, Roberto Ruiz de Austri, Gabrijela Zaharijaš, S. Caron, et al.
 - **Date:** 2026-10-27
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
-- **Reason:** Studies visual backbones or vision-transformer architecture.
-- **Tags:** vision-transformer
-- **Abstract summary:** No abstract available.
-
-### [Geometry-Aware Trajectory State Modeling for Few-Shot Action Recognition](https://arxiv.org/abs/2610.38482v1)
-
-- **Authors:** Zhiqi Miao, Marko Haralović, Stanislav Levendeev, Sarvesh Angadi, Jannatul Ferdous, Dan-Cristian Ploesteanu, et al.
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies visual representation learning or large visual encoders.
-- **Tags:** visual-representation
-- **Abstract summary:** Few-shot action recognition (FSAR) requires representations that expose discriminative motion dynamics from only a few labeled videos. Recent trajectory-based methods leverage long-term point tracks for explicit temporal correspondence, but often treat trajectories as carriers of sampled visual features or summarize...
-
-### [InfantNet: A Large Scale Dataset for Infant Body Pose and Shape Estimation](https://arxiv.org/abs/2610.40467v1)
-
-- **Authors:** Zhipeng Hui, Jiahao Wang, Xun Dong, Guofeng Zhang, Xingrui Wang, Jiawei Peng, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies pose estimation or keypoint localization.
-- **Tags:** pose
-- **Abstract summary:** Infant pose and shape estimation is essential for applications in childcare, developmental monitoring, and medical diagnosis. However, existing methods and datasets are largely designed for adults, and direct transfer to infants fails due to substantial differences in body proportions, articulation limits, and frequ...
-
-### [LLM-Enhanced Pollution Source Attribution: A Multimodal Framework Integrating Vision Transformers with Semantic Feature Extraction](https://doi.org/10.56831/psen-09-299)
-
-- **Authors:** Unknown authors
-- **Date:** 2026-10-28
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies visual backbones or vision-transformer architecture.
-- **Tags:** vision-transformer
-- **Abstract summary:** Traditional pollution source attribution relies on expensive chemical speciation and handcrafted statistical models that cannot leverage the rich semantic information embedded in environmental monitoring metadata.We present EnhancedPollutionAttributorWithLLMs, a novel multimodal framework that integrates Large Langu...
-
-### [MLLM-GS: Multimodal Large Language Model Prior-Guided Fast Novel View Synthesis in Extreme Environments](https://arxiv.org/abs/2610.39936v1)
-
-- **Authors:** Zhiliang Wu, Xinye Zheng, Kun Li, Fei Wang, Hao Guo, Yanyan Wei, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
-- **Tags:** 3d-vision
-- **Abstract summary:** Novel view synthesis (NVS) in degraded scenes aims to reconstruct 3D scenes from multi-view observations affected by various degradations, and to generate clear and photorealistic images at unseen viewpoints. Despite recent advances, existing methods often rely on degradation-specific models, limiting their generali...
-
-### [Pre-trained vision transformer for fine-grained cinematic shot scale recognition](https://doi.org/10.1117/12.3136388)
-
-- **Authors:** Yichen He, Minghai Yao
-- **Date:** 2026-10-28
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies visual backbones or vision-transformer architecture.
-- **Tags:** vision-transformer, benchmark
-- **Abstract summary:** Automatic cinematic shot scale recognition supports video indexing, editing, and computational film analysis, yet adjacent scales and diverse film styles make nine-class recognition difficult. This paper evaluates an ImageNet-pre-trained Vision Transformer Base/16 (ViT-B/16) and introduces CineFormer, a label-compat...
-
-### [Segment Anything Model Based Context Guided Mamba Unet for Medical Image Segmentation](https://arxiv.org/abs/2610.40029v1)
-
-- **Authors:** Chenchen Wang, You Zhou
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
 - **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
 - **Tags:** segmentation
-- **Abstract summary:** Medical image segmentation is crucial for clinical diagnosis and treatment planning, requiring both global contextual understanding and fine-grained structural precision. While the Segment Anything Model (SAM) demonstrates strong generalization capabilities, its direct application to medical images often lacks domai...
-
-### [Spectral Invariant Fusion and Refinement for Domain Generalized Semantic Segmentation](https://arxiv.org/abs/2610.39926v1)
-
-- **Authors:** Yansong Bai, Yunzhi Zhuge, Xinzhuo Yu, Lu Zhang, Jin Zhan, Pingping Zhang, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation
-- **Abstract summary:** Domain generalized semantic segmentation is challenging because it requires accurate dense prediction on unseen domains without any access to target-domain data during training. Existing methods improve transferability through data diversification, invariant learning, or direct use of foundation models, but they oft...
-
-### [Test-time fine-tuning of large-scale vision foundation models for data-efficient electronic waste segmentation](https://doi.org/10.1038/s41598-026-77031-5)
-
-- **Authors:** Aseni Senanayake, Mehrtash Tafazzoli Harandi, Nilakshan Kunananthaseelan, Mehrdad Arashpour
-- **Date:** 2026-10-26
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies visual representation learning or large visual encoders.
-- **Tags:** visual-representation
-- **Abstract summary:** Electronic waste (e-waste) recycling is crucial for resource conservation and environmental sustainability. Recent advances in artificial intelligence (AI), particularly deep learning, have shown strong potential to advance waste recognition and recycling. However, deep learning-based e-waste recognition remains cha...
-
-### [Textual Response-Aware Guidance for Zero-Shot Adversarial Robustness of Vision-Language Models](https://arxiv.org/abs/2610.40309v1)
-
-- **Authors:** Yubo Cui, Xianchao Guan, Zheng Zhang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies visual representation learning or large visual encoders.
-- **Tags:** visual-representation, vision-language
-- **Abstract summary:** Vision-language models (VLMs) exhibit strong zero-shot generalization but remain vulnerable to adversarial attacks. Existing adversarial fine-tuning methods often use pre-trained model guidance to preserve image--text alignment while improving robustness. Our analysis of visual representation drift reveals complemen...
-
-### [Volley3D: Unified 3D Full-Sequence Reconstruction from Monocular Broadcasts](https://arxiv.org/abs/2610.38358v1)
-
-- **Authors:** Noâm Boussouf, Adrien Maglo, Mohamed Chaouch, Hideo Saito
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies 3D vision, depth estimation, or geometric visual understanding.
-- **Tags:** 3d-vision
-- **Abstract summary:** 3D reconstruction from single-view sports broadcast is a pivotal capability for automated analytics and immersive AR/VR replays, yet notoriously ill-posed due to difficult-to-calibrate moving cameras and depth ambiguity. Unlike widely studied racket sports, team sports such as volleyball feature unpredictable multi-...
-
-### [Comprehensive empirical evaluation of feature extractors in computer vision](https://arxiv.org/abs/2610.39551v1)
-
-- **Authors:** Murat Isik
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** relevant (89/100)
-- **Reason:** Studies efficient or real-time visual inference.
-- **Tags:** efficient-vision
-- **Abstract summary:** Feature detection and matching are fundamental components in computer vision, underpinning a broad spectrum of applications. This study offers a comprehensive evaluation of traditional feature detections and descriptors, analyzing methods such as Scale Invariant Feature Transform (SIFT), Speeded-Up Robust Features (...
+- **Abstract summary:** Aims: We develop a deep-learning-based pipeline to construct a list of γ-ray sources and to quantitatively assess the impact of background uncertainties on source detection and characterization. This work extends and enhances the existing AutoSource-ID algorithm, previously adopted on optical observations, for appli...
 
 ## Maybe Relevant
 
-### [Event-SAMA: Language-Grounded Video Object Segmentation on Neuromorphic Event Streams](https://arxiv.org/abs/2610.39676v1)
+### [A real-time deep learning method for detection and localization of non-emerged cabbage seedlings](https://doi.org/10.3389/fpls.2026.1984989)
 
-- **Authors:** Sergei Fedorchenko, Max Zehnder, Nikola Zubić, Rong Zou, Davide Scaramuzza
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (64/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** segmentation, vision-transformer
-- **Abstract summary:** Event cameras offer microsecond temporal resolution, high dynamic range and no motion blur, but referring video object segmentation (RVOS) lacks event-stream datasets and models. We introduce Event-SAMA-239K, a synthetic-event conversion of the SAMA-239K grounded video-chat corpus and all additional SAMA training da...
-
-### [Joint Rigid Alignment and Morphable Reconstruction from Partial 3D Face Scans](https://arxiv.org/abs/2610.39161v1)
-
-- **Authors:** Eli A. Underwood, Nicolas Rondan, Angel V. Peterchev, J. Matias Di Martino
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (64/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** pose, 3d-vision
-- **Abstract summary:** Aligning a partial, real-world 3D face scan to a canonical representation requires solving two coupled problems at once: estimating the rigid pose that brings the scan into a common frame, and completing the facial shape in regions the scan never observed. Existing pipelines typically decouple these steps, running a...
-
-### [Automated Intracranial Hemorrhage Segmentation in CT Images Using Attention U-Net with Deep Supervision and Test-Time Augmentation](https://doi.org/10.3390/diagnostics16213545)
-
-- **Authors:** Kenza Chenni, Altin Kuqo, Ergys Xhukellari, Lavdie Rada
-- **Date:** 2026-10-28
-- **Source:** openalex
-- **Relevance:** maybe (59/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** segmentation
-- **Abstract summary:** Background/Objectives: Intracranial hemorrhage is a life-threatening condition that requires rapid and accurate diagnosis using computed tomography (CT). Manual segmentation is time-consuming and subject to interobserver variability, motivating the development of automated segmentation methods. This study proposes a...
-
-### [A MAF-YOLO-based method for small object detection in aerial construction-site images](https://doi.org/10.1117/12.3136633)
-
-- **Authors:** Xiaopei Rong, Xin He
+- **Authors:** Xin Chen, Kang Han, Teng Liu, Xiaotong Kong, Aniruddha Maity, Peng Peng, et al.
 - **Date:** 2026-10-28
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** object-detection, yolo, efficient-vision
-- **Abstract summary:** To address the small target scale, complex background, frequent occlusion, and dust and illumination interference encountered when detecting safety helmets, workers, vehicles, trucks, and hooks in UAV top-view construction-site images, this paper proposes MAF-YOLO, a lightweight small-object detector based on YOLO11...
+- **Tags:** yolo, efficient-vision, metrics
+- **Abstract summary:** Real-time detection and localization of non-emerged seedlings play a pivotal role in effective vegetable crop management. Traditionally, checking the non-emergence of crop seedlings relies on labor-intensive and time-consuming manual inspections. To address this issue, this paper introduces a precise, rapid, and rea...
 
-### [Agentic LinkDreamer: Adaptive Neuro-Fuzzy World-Model Decision Making for Intermittent V2X Cooperative Perception](https://arxiv.org/abs/2610.39258v1)
+### [AEMFOD: Asymptotic Elimination Multi-Scale Fusion for Real-Time UAV Traffic Detection](https://doi.org/10.3390/drones10110818)
 
-- **Authors:** Zhaoyu Liu, Dongmin Wang, Liu Cao, Jijing Cai, Kai Fang, Syed Ishtiaque Ahmed, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
+- **Authors:** Bo Shao, Yingxun Wang, Jiang Bo Zhao, Zhihao Cai
+- **Date:** 2026-10-30
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, backbone, benchmark, metrics
+- **Abstract summary:** Object detection is a fundamental perception capability for UAV-based intelligent transportation systems, underpinning applications including traffic monitoring, incident detection, and collision warning. However, reliable detection from aerial imagery remains difficult because UAV scenes typically contain multi-sca...
+
+### [AI-Based Breast Cancer Diagnosis Using Ultrasound and MRI Images Through Deep Learning](https://doi.org/10.5281/zenodo.23845772)
+
+- **Authors:** Akram Safsafa
+- **Date:** 2026-10-31
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo
+- **Abstract summary:** Developed a deep learning-based medical imaging project focused on breast cancer lesion detection and segmentation using ultrasound and MRI images. Implemented and evaluated multiple deep learning architectures, including U-Net++, U-Net3+, Attention U-Net, TransUNet, DeepLabV3, and YOLOv11. Conducted experiments usi...
+
+### [AI-Based Hybrid Deep Learning Framework for Accurate Brain Tumor Classification from MRI Images Using CNN and Vision Transformer](https://doi.org/10.64388/irev10i4-1724400)
+
+- **Authors:** Sachin Kadam, Dr. Brijendra Gupta
+- **Date:** 2026-10-28
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** vision-transformer
+- **Abstract summary:** Brain tumors remain among the most life-threatening neurological disorders, and their outcome depends heavily on how early and how accurately they are diagnosed. Magnetic Resonance Imaging (MRI) is the modality of choice for tumor evaluation, yet manual reading of MRI scans is slow and subject to inter-observer disa...
+
+### [AI-Based Smart Weapon Detection and Threat Assessment in CCTV Surveillance: A Review](https://doi.org/10.5281/zenodo.23801391)
+
+- **Authors:** Disha Narayan Kale, Bangar A. P, S. B. Bhosale, Dr. A. A. Khatri
+- **Date:** 2026-10-30
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, efficient-vision
+- **Abstract summary:** Closed-circuit television (CCTV) networks now produce far more footage than human operators can watch, and delayed recognition of an armed person can cost lives. This paper reviews AI-based approaches to weapon detection and threat assessment in CCTV surveillance. Four recent studies are examined in detail: an edge-...
+
+### [Analysis of the OWLv2 model usage for real-time object detection](https://doi.org/10.15828/2075-8545-2026-18-5-673-680)
+
+- **Authors:** K.Yu. Ustyuzhanin, F.T. Ziganshina, R.R. Sadykova
+- **Date:** 2026-10-31
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, vision-transformer, efficient-vision
+- **Abstract summary:** The implementation of an AI-enabled video processing system for industry often faces a trade-off between accuracy, speed, cost, and safety.The authors present a plan and scheme of operation of an industrial AI system for searching objects in images in real time using only local budget solutions from the user segment...
+
+### [Awarenessnet-det: an explainable real-time UAV object detection and decision-support framework for operational situational awareness](https://doi.org/10.1007/s11760-026-05840-2)
+
+- **Authors:** Mustafa Melikşah Özmen, Bekir Aksoy
+- **Date:** 2026-10-31
+- **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
 - **Tags:** object-detection
-- **Abstract summary:** Intermittent vehicle-to-everything (V2X) communication can remove collaborator information needed for cooperative perception, degrading object detection during link outages. Existing recovery methods reconstruct missing features but rarely determine when to trust predictions, reuse historical observations, or reques...
+- **Abstract summary:** No abstract available.
 
-### [Anatomical Prior-Guided Routing for 3D Lung Tumor Segmentation](https://arxiv.org/abs/2610.39414v1)
+### [Benchmarking deep learning architectures for land-cover semantic segmentation: insights from the DeepGlobe dataset](https://doi.org/10.1080/19479832.2026.2748661)
 
-- **Authors:** Uihyeon Maeng, Jonghun Kim, Hyunjin Park
+- **Authors:** Surabhi Lingwal, Banit Negi, Jitendra Singh Rauthan, Abhilekh Bartwal, Mukul Ramola
 - **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** segmentation
-- **Abstract summary:** Accurate lung tumor segmentation in computed tomography (CT) is essential for treatment planning, response assessment, and quantitative imaging analysis. However, 3D lung tumor segmentation remains challenging because tumors occupy only a small portion of the whole volume and exhibit heterogeneous appearances across...
-
-### [BRACHIO: Broad Representations Across Centres for Head-and-neck Imaging Oncology (HECKTOR 2026)](https://arxiv.org/abs/2610.40068v1)
-
-- **Authors:** Roxanne De Maeyer, Ine Dirks, Yannick Brackenier, Simon DeKeyser, Jef Vandemeulebroucke, Vicky De Ridder
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** segmentation, vision-transformer
-- **Abstract summary:** The HECKTOR 2026 challenge benchmarks machine learning for head and neck cancer, where teams delineate primary and nodal tumour volumes, perform TN staging, and predict recurrence-free survival (RFS). This report describes the submissions for the HECKTOR challenge of team nucli. As the three tasks span both dense an...
-
-### [CAD-WAM: Anticipating Geometry for Text-to-CAD Generation](https://arxiv.org/abs/2610.39306v1)
-
-- **Authors:** Zhengyang Li, Weijie Zheng, Yuxin Cui, Sijie Wang, Wenjie Feng, Qiyu Kang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** 3d-vision
-- **Abstract summary:** Generating editable computer-aided design (CAD) models from text requires selecting operations that produce the intended changes to the geometry constructed so far. An incorrect operation can compromise subsequent steps, making reliable multi-step generation challenging. Existing methods based on large language mode...
-
-### [CASE: Concept-Aware Segmentation from Positive and Negative Visual Exemplars](https://arxiv.org/abs/2610.39396v1)
-
-- **Authors:** Yi-Jen Tsai, Yen-Yu Lin, Chien-Yao Wang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** segmentation, benchmark
-- **Abstract summary:** Few-shot semantic segmentation typically identifies target objects based on positive support examples of a single semantic class. In practice, however, positive cues alone are often underspecified: for instance, "red cars" may be confused with cars of all colors, "vehicles" may include cars that should be excluded,...
-
-### [Comparative Analysis and Adaptation Strategies of Vision Foundation Models in Dermoscopic Image Segmentation](https://doi.org/10.46387/bjesr.2018519)
-
-- **Authors:** Kenan Akyol, Mesut Şeker
-- **Date:** 2026-10-27
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** segmentation, vision-transformer, visual-representation
-- **Abstract summary:** Accurate segmentation of skin lesions is of critical clinical importance for early melanoma diagnosis; however, the direct application of large foundation models like the Segment Anything Model (SAM) to medical images characterized by low contrast and fuzzy boundaries remains insufficient due to substantial domain g...
+- **Tags:** segmentation, efficient-vision, metrics
+- **Abstract summary:** Accurate semantic segmentation of satellite imagery is essential for land-use analysis, environmental monitoring, and disaster management. This study systematically benchmarks five deep learning architectures—U-Net, PSPNet, DeepLabV3+, SegNet, and FCN-8s—using the DeepGlobe Land-Cover Classification dataset under un...
 
-### [ConvRoute-ViT: Convolutional Token Routing for Efficient Vision Transformers](https://arxiv.org/abs/2610.38284v1)
+### [Benchmarking YOLO generations for explainable incremental threat detection: weight initialisation, architecture, and training budget](https://doi.org/10.1007/s11554-026-01999-6)
+
+- **Authors:** Mani Ghahremani, Anna Rösner, Mishanil Kazreen, Morgan Woodford, Gelayol Golcarenarenji
+- **Date:** 2026-10-28
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision, edge-deployment, benchmark
+- **Abstract summary:** Abstract Incremental learning frameworks for real-time object detection have attracted growing interest in security-critical surveillance, yet empirical evaluations comparing modern You Only Look Once (YOLO) generations under controlled initialisation conditions remain scarce. Kutlu and Emiroğlu [1] reported an mAP@...
+
+### [Beyond CLIP: Calibrated (Few-Shot) Defect Detection With System One Decision Models](https://arxiv.org/abs/2610.41199v1)
+
+- **Authors:** Fadel M. Megahed, Ying-Ju Chen
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** vision-transformer, visual-representation
+- **Abstract summary:** Cameras and vision sensors are widely used for product and process inspection in manufacturing environments. Traditionally, this process required thousands of images of both nominal and defective products to train such models. Recent research shows that vision transformer (ViT) models, such as CLIP, can reduce this...
+
+### [Brain tumor segmentation, classification, and severity prediction using deep transfer learning and convolutional long short-term memory](https://doi.org/10.19101/ijatee.2025.121221250)
+
+- **Authors:** V. Chanemougavel, Jayanthi K B
+- **Date:** 2026-10-31
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** segmentation
+- **Abstract summary:** A brain tumor (BT) arises due to the abnormal growth of cells. It ranks among the primary fatal malignancies for adults globally. Tumor treatment relies on early tumor recognition. The diagnosis is usually performed using medical imaging techniques, which assist in the accurate evaluation of the patient's brain. The...
+
+### [CLAHE-RATSNet: a deep learning framework for accurate lung nodule segmentation in computed tomography images](https://doi.org/10.1186/s12880-026-02991-z)
+
+- **Authors:** Mahender Erukala, Suresh Kumar Sanampudi
+- **Date:** 2026-10-31
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
+- **Tags:** segmentation
+- **Abstract summary:** Abstract Lung nodule segmentation from computed tomography (CT) images is a crucial task for computer-aided diagnosis, treatment planning, and early diagnosis of lung cancer. Unfortunately, the segmentation of nodules is difficult in practice due to several factors, such as low contrast, small size, weak boundaries...
+
+### [ConvRoute-ViT: Convolutional Token Routing for Efficient Vision Transformers](https://arxiv.org/abs/2610.38284)
 
 - **Authors:** Manish Das, Shiv Ram Dubey, Satish Kumar Singh
 - **Date:** 2026-10-28
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
 - **Tags:** vision-transformer, visual-representation, efficient-vision
 - **Abstract summary:** Vision Transformers (ViTs) achieve strong image recognition performance, but their self-attention increases quadratically with the number of input tokens and makes them computationally expensive. The standard implementation of ViT models treats all patch tokens with equal importance across every layer of the model....
 
-### [FastBEVFusion: Simple Multi-Modal Fusion for 3D Object Detection at 50 FPS](https://doi.org/10.48550/arxiv.2610.37153)
+### [Development of a Spatial-Temporal YOLO-NAS Framework for Real-Time Drowning-Risk Detection in Open-Water Recreational Areas](https://doi.org/10.47738/jads.v7i4.1515)
 
-- **Authors:** Tom Sanitz, Emre Gülsoylu, Simone Frintrop, C Wilms
-- **Date:** 2026-10-27
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: robotics or driving system where the vision contribution is not clearly the subject.
-- **Tags:** object-detection, 3d-vision, depth, efficient-vision, benchmark
-- **Abstract summary:** Reliable real-time 3D object detection based on LiDAR and camera data is critical for safety in autonomous driving, where systems must accurately perceive their surroundings with minimal latency. Many state-of-the-art systems achieve high-quality detection results but fail to meet real-time constraints, limiting the...
-
-### [HILIPS: A human-in-the-loop image labeling pipeline for visual-semantic ambiguity](https://doi.org/10.1016/j.softx.2026.103173)
-
-- **Authors:** Taehyung Noh, Beejin Son, Junghyun Kim, Haein Yeo, Kyungsik Han
-- **Date:** 2026-10-27
+- **Authors:** Rahmat Fauzi
+- **Date:** 2026-10-29
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** object-detection, yolo, segmentation
-- **Abstract summary:** Image labeling in industrial environments frequently encounters visual-semantic ambiguity, where visually similar objects cannot be distinguished by appearance alone. We present HILIPS (Human-In-the-Loop Image Labeling Pipeline for Semantic ambiguity), a three-stage framework that integrates multimodal large languag...
+- **Tags:** yolo, efficient-vision
+- **Abstract summary:** Although effective in swimming pools, automated drowning surveillance in open-water recreational areas remains challenging because of dynamic conditions such as water reflections, lighting variations, wave motion, and crowded scenes. This study proposes the YOLO-NAS-SO (You Only Look Once – Neural Architecture Searc...
 
-### [Hyperspectral Imaging and Deep Learning for Disaster Monitoring Systems](https://doi.org/10.1002/9781394386536.ch8)
+### [Diagnostic Performance of a Vision Transformer Model in Differentiating Cicatricial from Non-Cicatricial Alopecia in Trichoscopic Images](https://doi.org/10.5826/dpc.1604a7549)
 
-- **Authors:** P. Shanmuga Sundari, J. Karthikeyan, Sunil Kumar Palaniyappan, R. Vishnu Priya
-- **Date:** 2026-10-27
+- **Authors:** Ahmet Sait Şahin, Abdurrahim Yılmaz, Buğra Burç Dağtaş, Ozan Erdem, Mehmet Salih Gurel
+- **Date:** 2026-10-29
 - **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** vision-transformer
+- **Abstract summary:** No abstract available.
+
+### [FCD-YOLO: An Improved Object Detection Algorithm for Wind Turbine Blade Surface Damage Detection](https://doi.org/10.66729/jhpap202604013)
+
+- **Authors:** Rui Zhao, Chenyu Wang, Zixiang Yue
+- **Date:** 2026-10-30
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision
+- **Abstract summary:** Among routine wind turbine maintenance activities, the timely and accurate detection of blade surface damage is crucial for maintaining structural integrity and ensuring operational safety. In practical on-site wind farm inspection workflows, aerial images captured via unmanned aerial vehicles (UAVs) frequently suff...
+
+### [FlexReader: Towards Adaptive Decoding Paths for Efficient Arbitrary-Length Scene Text Recognition](https://arxiv.org/abs/2610.41426v1)
+
+- **Authors:** Zhibin Ma, Pengwen Dai, Zhigang Yao, Xugong Qin, Wenqi Ren, Xiaochun Cao
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
+- **Tags:** visual-representation
+- **Abstract summary:** Existing Scene Text Recognition (STR) models are inherently coupled with a specific decoding strategy by their training paradigms, limiting their flexibility in deployment across diverse recognition scenarios. In this paper, we propose FlexReader, an STR model that supports multiple decoding strides, enabling a sing...
+
+### [From prototype to deployment: a systematic review of real-time YOLO-based deep learning methods for railway track defect detection](https://doi.org/10.1007/s10462-026-11751-y)
+
+- **Authors:** Muhammed Coşkun Irmak, Tolga Aydın
+- **Date:** 2026-10-31
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision, edge-deployment
+- **Abstract summary:** Railway infrastructure safety relies on the timely detection of track defects, the failure of which can result in severe operational disruptions and accidents. Recent advances in deep learning and computer vision, particularly YOLO-based object detection, have produced encouraging solutions for in-service railway in...
+
+### [GLA-YOLO: A Lightweight YOLO-Based Network for Industrial Surface Defect Detection](https://doi.org/10.21203/rs.3.rs-11179045/v1)
+
+- **Authors:** JIAYI LI, Norrima Binti Mokhtar, Wenjunliang Zhang, Muhammad Amirul Aiman Asri, QIYUAN QIN, Mahidzal Bin Dahari, et al.
+- **Date:** 2026-10-30
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision, edge-deployment
+- **Abstract summary:** Abstract Surface defect detection is essential to quality assurance in modern manufacturing, affecting product reliability, production efficiency, and operational safety across diverse industrial sectors. Despite significant advances in deep learning-based object detection, industrial defect inspection remains uniqu...
+
+### [HazeGuard-YOLO26: Code, Model Weights and Training Artifacts for Restoration-Free Hazy Object Detection](https://doi.org/10.17632/nvgyryx7ct)
+
+- **Authors:** Wenquan Huang
+- **Date:** 2026-10-29
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, efficient-vision, edge-deployment
+- **Abstract summary:** This record contains the implementation and trained weights of HazeGuard-YOLO26, a restoration-free lightweight detector for drone-view hazy scenes. The archive includes the modified Ultralytics source tree with the three proposed modules — the C2Haze-Contrast Gated (C2HCG) block, the Fog Vehicle Spectral Gating (FV...
+
+### [HEC-YOLO: A lightweight industrial surface defect detector with a feature-preserving backbone and context-guided fusion](https://doi.org/10.1007/s44443-026-01377-z)
+
+- **Authors:** Tun Wen, Jie Lyu, Zhiwei Lin, Lumei Su, Yiming Zhang, Xinyu Huang
+- **Date:** 2026-10-28
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** yolo, backbone, efficient-vision, edge-deployment
+- **Abstract summary:** Deploying accurate defect detectors on resource-constrained edge devices requires balancing computational cost and feature representation quality. To address this challenge, we propose HEC-YOLO, a lightweight detector for tiny and low-contrast industrial surface defects. The backbone is redesigned with a Multi-Scale...
+
+### [Let LiDAR Decide Where to Look: Geometry-Measured Token Selection for Efficient Sparse Latent World Models](https://arxiv.org/abs/2610.40935v1)
+
+- **Authors:** Zeping Zhang, Zhuoya Zhao, Robert Laganière
+- **Date:** 2026-10-29
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** backbone, visual-representation, efficient-vision, benchmark
+- **Abstract summary:** Vision-centric autonomous driving models encode thousands of image tokens per frame, yet most depict sky, buildings, or empty road---content irrelevant to planning. Worse, these tokens dilute the planner's attention: we show that randomly discarding 75% of tokens already outperforms the dense model, because the plan...
+
+### [Measuring What Matters: A Causal Reliance Score for Histopathology Image Segmentation](https://arxiv.org/abs/2610.41763v1)
+
+- **Authors:** Samuel Thomas, Daniel Tweneboah Anyimadu, Ahmed Karam Eldaly, Somaia Elsheikh, Mohammed M. Abdelsamea
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** segmentation, vision-transformer
+- **Abstract summary:** Reliable histopathology segmentation requires models that rely on pathology-relevant structures rather than spurious background correlations. In this work, we argue that improving architectures alone is insufficient if models continue to rely on spurious correlations rather than pathology-relevant features. We intro...
+
+### [ObjectGuidedMap: An Object-Aware Model for Robust Bird's Eye View Map Prediction in High-Occlusion Scenarios](https://arxiv.org/abs/2610.41834v1)
+
+- **Authors:** Christian Bohn, Harsh Yadav, Klaus Friedrichs, Hasan Tercan, Tobias Meisen
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, benchmark
+- **Abstract summary:** Accurate BEV map prediction is a critical component of autonomous driving systems, enabling downstream planning and control. Recent approaches such as Mask2Map achieve strong performance by predicting vectorized, instance-level map elements directly from multi-view images. However, existing BEV map prediction models...
+
+### [OT-CAL: Optimal-Transport-Guided Adaptive Sample Selection for Efficient Visual Learning](https://arxiv.org/abs/2610.41677v1)
+
+- **Authors:** Suryansh Talukdar, Jin Soung Yoo
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
+- **Tags:** visual-representation
+- **Abstract summary:** Deep neural networks for image recognition are typically trained using mini-batches, with a forward pass to compute predictions and losses followed by a more computationally expensive backward pass to update model parameters. However, not all training samples contribute equally to learning, suggesting that computati...
+
+### [Real Time Object Identification and Movement Tracking through YOLO/DeepSORT and Optical Flow Techniques](https://doi.org/10.5281/zenodo.23863489)
+
+- **Authors:** Ashutosh Kumar
+- **Date:** 2026-11-01
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, yolo, tracking, efficient-vision
+- **Abstract summary:** This research presents a computer vision framework for real-time object detection, multi-object tracking, and motion analysis using YOLOv9, DeepSORT, and optical flow techniques. The proposed system integrates YOLOv9 for object identification, DeepSORT for maintaining object identities across video frames, and three...
+
+### [ReVEAL: Eliciting Role-Aware Latent Visual Evidence from MLLMs for Reasoning Video Object Segmentation](https://arxiv.org/abs/2610.41257v1)
+
+- **Authors:** Zhongyuan Bao, Cunjie He, Lejun Zhang, Zenglin Xu, Yanwei Fu
+- **Date:** 2026-10-30
+- **Source:** arxiv
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
 - **Tags:** segmentation
-- **Abstract summary:** As natural disasters become more frequent and severe, there's a growing need for an advanced monitoring system that can detect them early and assess their impact accurately. Hyperspectral imaging (HSI) collects detailed spectral data across hundreds of adjacent bands. This makes it a powerful tool for finding and st...
+- **Abstract summary:** Reasoning video object segmentation (ReVOS) requires segmenting the target specified by an implicit query throughout a video. Existing MLLM-based methods typically require costly cross-model alignment, tying MLLM training to a downstream segmentation model. We present ReVEAL, a decoupled thinking-with-video framewor...
 
-### [Improving automated pneumonia screening with self-supervised Vision Transformers and forensic image validation](https://doi.org/10.1007/s44584-026-00005-w)
+### [SAF-RTDETR: Spatially Aligned High-Resolution Feature Fusion for Small Object Detection in UAV Imagery](https://doi.org/10.21203/rs.3.rs-11390432/v1)
 
-- **Authors:** Abu Hanzala, Md Sajjad, Md. Sadekur Rahman, Ridoun Hossain Gaddafi, Ohidujjaman Ohidujjaman
+- **Authors:** Ming Zhang, Jiahui He, Dongmei Ma
+- **Date:** 2026-10-30
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection, detr, efficient-vision, metrics
+- **Abstract summary:** Abstract Backbone downsampling weakens small objects in unmanned aerial vehicle imagery, whereas direct use of shallow features also amplifies structured background. We propose SAF-RTDETR, a four-scale RT-DETR extension that treats high-resolution detection as selective feature fusion. A grouped sampling unit aligns...
+
+### [SAFARI: Semantic- And Frontier-driven Autonomous Risk Inspection](https://arxiv.org/abs/2610.41456v1)
+
+- **Authors:** Ugur Kafkasyali, Mihnea Toader, Julia Richter, Turcan Tuna, Cesar Cadena, Marco Hutter
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** object-detection
+- **Abstract summary:** Robotic exploration can reduce human exposure to hazardous environments by autonomously searching unknown areas for objects of interest while constructing a complete, risk-aware map. However, existing autonomous exploration approaches typically prioritize geometric coverage or information gain, without explicitly co...
+
+### [Segment Anything Pancreas: A Unified MRI Segmentation Model for Pancreatic Cancer Radiotherapy](https://arxiv.org/abs/2610.41063v1)
+
+- **Authors:** Zach Eidex, Mojtaba Safari, Kundan Thind, Parag J. Parikh, Zhen Tian, Xiaofeng Yang
+- **Date:** 2026-10-29
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** segmentation
+- **Abstract summary:** Background: Limited tumor annotations and incomplete labels across MRI datasets hinder unified segmentation of pancreatic tumors and organs at risk (OARs) for MRI-guided radiotherapy. Purpose: We propose Pancreas-MedNeXt, a unified model that segments the whole pancreas, its subregions, tumors, and surrounding OARs...
+
+### [Shifted Window Temporal Transformer for YOLO-Guided Phase Recognition in Laparoscopic Cholecystectomy Surgery](https://arxiv.org/abs/2610.35005)
+
+- **Authors:** Sheekar Banerjee, Md. Shahabuddin, Md. Mahbub Hasan Akash, Nabilah, Mohammad Arafat Hussain
 - **Date:** 2026-10-26
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** vision-transformer, visual-representation
-- **Abstract summary:** Pneumonia remains a major cause of morbidity and mortality worldwide, and reliable interpretation of chest X-ray (CXR) images can be challenging because of visual overlap among pulmonary abnormalities and variability in image characteristics. In this study proposes a self-supervised learning (SSL)-based Vision Trans...
+- **Tags:** yolo, vision-transformer
+- **Abstract summary:** Intelligent operating rooms require accurate awareness of surgical workflow for better intra-operative decisions, teamwork, and surgical documentation. Therefore, accurately recognizing surgical phase during surgery is crucial. However, previous artificial intelligence-based methods provide fluctuating predictions f...
 
-### [Knowledge-structured and evidence-aware semantic self-distillation for glomerular pathology foundation model](https://arxiv.org/abs/2610.38346v1)
+### [Task-Performance Routing for Multi-Teacher Distillation in CT Medical Image Segmentation](https://arxiv.org/abs/2610.41362v1)
 
-- **Authors:** Qiming He, Jing Li, Zihan Wang, Tian Guan, Yifei Ma, Zimo Zhao, et al.
-- **Date:** 2026-10-28
+- **Authors:** Jiaye Yang, Yao Liu, Die Dai, Hanwen Zhang, Peiyuan Jiang, Qiao Liu, et al.
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** visual-representation
-- **Abstract summary:** Visual foundation models learn rich pathological morphology but lack explicit concept-level supervision. Vision--language pretraining can provide this supervision but requires costly image--text pairs. Here, we introduce GloSAGE, a semantic self-distillation framework that uses lesion profiles predicted by a pretrai...
+- **Tags:** segmentation, efficient-vision
+- **Abstract summary:** Pre-trained models offer complementary strengths in CT organ segmentation, but their relative accuracy varies across organs and spatial regions. Multi-teacher knowledge distillation can combine these strengths in a single student, yet global or instance-level teacher weights overlook variation within a 3D volume. We...
 
-### [LiDAR-SHIELD: A Fully Dockerized Adversarial Robustness Assessment Framework for LiDAR-Based 3D Perception Models](https://arxiv.org/abs/2610.39848v1)
+### [Вестник ЗКУ](https://doi.org/10.37238/2960-1371.2960-138x.2026.103(3).26)
 
-- **Authors:** Alexandros Gkillas, Ioulia Kapsali, Christos Anagnostopoulos, Aris S. Lalos
+- **Authors:** Е.А. Тулегенов, Н.О. Мекебаев, Ж.А. Орынтаева, Ө.М. Белқожа
 - **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: robotics or driving system where the vision contribution is not clearly the subject.
-- **Tags:** object-detection, segmentation, 3d-vision
-- **Abstract summary:** LiDAR-based 3D perception underpins autonomous driving and robotics, yet deploying these models safely requires stress-testing them against adversarial inputs before real-world use. Although state-of-the-art adversarial attacks exist, their implementations are often fragmented across individual repositories, each ti...
-
-### [MetaRefine: Score Refinement with Multi-Level Features for Image Assessment](https://arxiv.org/abs/2610.40487v1)
-
-- **Authors:** Chuanzhi Xu, Chengkun Yue, Haolan Guo, Xuanhua Yin, Boyu Wei, Zihan Deng, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
-- **Tags:** visual-representation
-- **Abstract summary:** An image's original dimensions, aspect ratio, and composition provide important cues that can affect its technical and aesthetic quality. Image assessment methods use resizing, cropping, padding, or patch sampling to accommodate different input sizes. However, these operations can alter or obscure original geometric...
-
-### [Morphology-Aware Channel-Decoupled Mamba Network for Medical Image Segmentation](https://arxiv.org/abs/2610.40085v1)
-
-- **Authors:** Chenchen Wang, You Zhou
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** segmentation
-- **Abstract summary:** Accurate multi-organ segmentation in computed tomography (CT) is essential for computer-aided diagnosis, treatment planning, and disease monitoring. However, substantial variations in organ shape and size, together with low tissue contrast and ambiguous boundaries, complicate the modeling of heterogeneous anatomical...
-
-### [NUViT: Vision Transformers for Fourier Space Data](https://arxiv.org/abs/2610.32041)
-
-- **Authors:** Jeffrey Gu, Robert Heeter, Ellen D. Zhong
-- **Date:** 2026-10-23
 - **Source:** openalex
 - **Relevance:** maybe (55/100)
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** vision-transformer, visual-representation
-- **Abstract summary:** Vision Transformers (ViTs) have demonstrated strong performance in many computer vision tasks but do not naturally extend beyond the natural image domain. One important example is Fourier-space data, which is used to represent a rich and diverse set of modalities, including medical imaging and microscopy. Standard V...
+- **Tags:** object-detection, yolo, segmentation, efficient-vision, metrics
+- **Abstract summary:** The rapid growth in the volume of Earth remote sensing data acquired from new-generation satellite constellations (Sentinel, Landsat, WorldView, GaoFen, etc.) makes manual image interpretation increasingly impractical and necessitates the adoption of artificial intelligence methods. This article reviews modern deep...
 
-### [PairCLIP-SWA: Similarity-Guided Balancing and Stochastic Weight Averaging for Generalized Deepfake Image Detection with OpenCLIP](https://arxiv.org/abs/2610.37874v1)
+### [A Self-Supervised Pose Estimation Approach for Construction Machines](https://arxiv.org/abs/2610.41673v1)
 
-- **Authors:** Md. Nakib, Sudipto Sarkar, A. J. A. Jubayer Talukder, Mohammad Ariful Haque
-- **Date:** 2026-10-27
+- **Authors:** Alaa Alshubbak, Daniel Görges
+- **Date:** 2026-10-30
 - **Source:** arxiv
-- **Relevance:** maybe (55/100)
+- **Relevance:** maybe (51/100)
 - **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** vision-transformer
-- **Abstract summary:** Deepfake detectors are almost always deployed as the single checkpoint that scored best on a validation split, yet the reliability of that choice is rarely measured. We measure it with PairCLIP-SWA, a single-backbone detector that adapts an OpenCLIP ViT-L/14 visual tower by progressive block unfreezing on a class-ba...
+- **Tags:** pose
+- **Abstract summary:** Pose estimation is a computer vision task used to estimate a skeleton of dynamic systems to predict future movements. Most of the research in this direction is based on a supervised learning approach which requires a massive amount of labeled datasets. In this paper, a self-supervised three-stage model based on a co...
 
-### [RASS-YOLO: refinement, alignment, and scale-selective supervision for object detection in electric power operations](https://doi.org/10.1117/12.3136345)
+### [Development and evaluation of automated organ segmentation models for abdominal ultrasound in injured children](https://doi.org/10.64898/2026.10.27.26366648)
 
-- **Authors:** Xinhao Ma
-- **Date:** 2026-10-28
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: uses an existing detector or model without a clearly general method contribution.
-- **Tags:** object-detection, yolo, efficient-vision
-- **Abstract summary:** YOLOv12 combines Area Attention with R-ELAN and therefore provides a strong real-time baseline for electric-power-operation detection. When applied to this task, however, the detector remains challenged by slender weak-boundary objects, cross-scale spatial misalignment, and insufficient high-resolution supervision f...
-
-### [RepConTUR: A Report-Conditioned Volumetric Multimodal Model for Abdominal Tumor Segmentation](https://arxiv.org/abs/2610.40094v1)
-
-- **Authors:** Seunghwan Lee, Sangjoon Park, Jongmin Lee, Yoon Jo Kim, Wonyoung Cho, Jin Sung Kim, et al.
+- **Authors:** Newton Addo, Kush Narang, Ritik Sinha, Naina Sabbineni, Shabir Din, Wilson Huang, et al.
 - **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** segmentation, vision-language
-- **Abstract summary:** Tumor delineation is required for radiotherapy planning, yet automatic segmentation is limited by errors, predominantly false positives, that distort dose and increase editing time. The radiology report accompanies the scan and localizes disease at the suborgan level, but existing text-promptable models condition on...
-
-### [ROAD: Modern Adversarial Training for Simple One-Step Distillation at Scale](https://arxiv.org/abs/2610.39539v1)
-
-- **Authors:** Xiaoou Li, Shan You, Tao Huang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** visual-representation, benchmark
-- **Abstract summary:** One-step distillation turns pretrained diffusion models into fast generators, but strong results often require substantial training machinery and compute. Pure adversarial distillation offers a simpler route, yet has struggled at modern text-to-image scale. To address this limitation, we propose ROAD (Representation...
-
-### [Smart Vehicle Identification and Tracking Using YOLO-Based License Plate Recognition](https://doi.org/10.48175/ijarsct-40347)
-
-- **Authors:** Ms. Aashita Shrishail Hirmukhe and Ms. Asha Mane
-- **Date:** 2026-10-28
 - **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** yolo
-- **Abstract summary:** Manual verification of vehicle registration plates can be time consuming and error-prone. This paper details a functional prototype which enables license plate detection, reading and results presentation. Once images or videos have been uploaded the system uses Python to detect license plates within them, and then e...
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
+- **Tags:** segmentation
+- **Abstract summary:** Background: Accurate organ segmentation in pediatric focused assessment with sonography in trauma (FAST) is an important prerequisite for automated image analysis and image quality assessment, but manual segmentation is time-intensive, subject to inter- and intra-observer variability, and limits the scalability of d...
 
-### [Sparse tensor networks for individual tree diameter estimation in mixed forests](https://arxiv.org/abs/2610.37784v1)
+### [Open-Weight MLLMs Cannot Compare What They Cannot Name](https://arxiv.org/abs/2610.41841v1)
 
-- **Authors:** Clara Lößl, Fabian Ewald Fassnacht, Viacheslav Barkov
-- **Date:** 2026-10-27
+- **Authors:** Wenxin Su, Anna Kreshuk
+- **Date:** 2026-10-30
 - **Source:** arxiv
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** segmentation, 3d-vision
-- **Abstract summary:** Measurements of tree diameter at breast height (DBH) are fundamental to forest inventories, but manual surveys across entire stands or regions are impractical. UAV-borne laser scanning (ULS) enables scalable automated forest surveys, yet canopy occlusion makes accurate DBH estimation from ULS point clouds non-trivia...
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
+- **Tags:** visual-representation, synthetic-data
+- **Abstract summary:** Multimodal Large Language Models (MLLMs) are increasingly capable of understanding images and performing complex visual reasoning, suggesting the possibility of using them to automate biological image analysis. This need is becoming increasingly urgent as advances in technology continue to generate ever larger and m...
 
-### [Vehicle Detection and Counting in Secure Valley Parking Using CNN and YOLO](https://doi.org/10.48175/ijarsct-40331)
+### [Spatial Atlas-Informed Loss Ensembles for Whole-Body PSMA PET/CT Metastasis Segmentation](https://arxiv.org/abs/2610.40834v1)
 
-- **Authors:** Ms. Samruddhi Tushar Ogale and Ms. Asha Mane
-- **Date:** 2026-10-27
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** yolo
-- **Abstract summary:** When trying to manage vehicles in a car park or on a roadside, there can often be issues with keeping the number of vehicles consistent. This project uses computer vision to try to detect and count these vehicles. A YOLOv8 model was trained to detect vehicles. A unique dataset containing 5 classes (Ambulance, Bus, C...
-
-### [YOLO-MAG: an edge-preserving and bilateral dual-gated YOLO11 network for small object detection in UAV aerial imagery](https://doi.org/10.1038/s41598-026-76441-9)
-
-- **Authors:** Ruiqing Zhang, Hongtian Zhang, Tiezhu Li
-- **Date:** 2026-10-27
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** object-detection, yolo, backbone, efficient-vision
-- **Abstract summary:** Abstract Small object detection in unmanned aerial vehicle (UAV) imagery is severely hindered by low spatial resolution, faint boundaries, drastic scale variations, and complex background interference. To address these vulnerabilities, we propose YOLO-MAG, an edge-preserving architecture built upon YOLO11 for aerial...
-
-### [Beyond Ground Truth: A Heuristic Unsupervised Quality Assurance Engine for Diagnosing Calibrational Blindness in Dental Segmentation](https://arxiv.org/abs/2610.40587v1)
-
-- **Authors:** Fatematuj Johura Mim
+- **Authors:** Grant N. Chau, Bashirul A. Biswas, Biratal Wagle, Matthew E. Maeder, Michael S. Leapman, James B. Yu, et al.
 - **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (51/100)
 - **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
 - **Tags:** segmentation
-- **Abstract summary:** In real-world clinical settings, dental X-ray segmentation using deep learning methods suffers from reliability issues. Even when the segmentation quality is bad, deep learning models show high confidence in their predictions (calibrational blindness). Moreover, in real use, doctors do not have ground-truth masks to...
+- **Abstract summary:** Existing whole-body PSMA PET/CT prostate metastasis segmentation methods generally rely on images alone, without explicitly incorporating where metastases tend to occur. We investigate whether a population metastasis atlas can improve lesion detection when integrated into model training. We constructed voxel-wise me...
 
-### [Evaluating Cultural Knowledge Editing in Vision-Language Models](https://arxiv.org/abs/2610.39602v1)
+### [With foundation-model features, aggregator complexity does not improve cross-hospital discrimination in gastric whole-slide image classification](https://arxiv.org/abs/2610.41328v1)
 
-- **Authors:** Malvina Nikandrou, Georgios Pantazopoulos, Ioannis Konstas, Alessandro Suglia
-- **Date:** 2026-10-29
+- **Authors:** Nheng Vanchhay, Ali Hussain, Khan Ziaullah, Moon-Il Joo, Md Ariful Islam Mozumder, Rashedul Islam Sumon, et al.
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (51/100)
 - **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** visual-representation, vision-language
-- **Abstract summary:** Current Vision-Language Models (VLMs) frequently fail to recognize culture-specific concepts, especially from underrepresented regions. Effectively injecting this long-tail knowledge into existing models remains a challenge. In this work, we investigate knowledge editing as a targeted alternative by introducing Cult...
+- **Tags:** visual-representation
+- **Abstract summary:** Whole-slide image classifiers are usually developed within one hospital and often go untested at unseen hospitals. We assembled 5,036 haematoxylin-and-eosin-stained gastric slides from five Korean hospitals, scanned at 20x and 40x, and compared multiple-instance learning aggregators under leave-one-hospital-out vali...
 
-### [RADIOlogy: A Single-Pass Approach to Training-Free Zero-Shot Anomaly Detection](https://arxiv.org/abs/2610.40580v1)
+### [A lightweight deep learning architecture for crack segmentation in structural health monitoring](https://doi.org/10.1016/j.engappai.2026.116578)
 
-- **Authors:** Joaquín Figueira, Giacomo D'Amicantonio, Egor Bondarau
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** segmentation, vision-language
-- **Abstract summary:** Current zero-shot anomaly detection methods often rely on complex prompt-learning techniques or computationally expensive sliding-window strategies to achieve fine-grained visual alignment to detect small-scale anomalies. This reliance stems from the fundamental limitation of standard CLIP architectures, where [CLS]...
-
-### [The Power Watershed as a Differentiable Segmentation Layer](https://arxiv.org/abs/2610.38516v1)
-
-- **Authors:** Galia Akl, Laurent Najman, Hugues Talbot
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** segmentation, synthetic-data
-- **Abstract summary:** Can a Watershed transform, the classical tool of morphological segmentation, be placed at the end of a deep network and trained through? The Power Watershed (PW) is the limit of the seeded Random Walker (RW) as p grows to infinity with edge weights raised to the power p. At every finite p the RW solves a sparse posi...
-
-### [What Survives Label Downsampling? Exact Region Survival for Coarse Segmentation Targets](https://arxiv.org/abs/2610.39880v1)
-
-- **Authors:** Zhiyuan Zhang, Yukun Ou, San Tek Choi
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** segmentation, benchmark
-- **Abstract summary:** Segmentation networks that predict at an output stride are trained against label maps downsampled by strided sampling, nearest-neighbor resampling or majority pooling. These methods label each coarse grid cell on its own, so a region that wins no cell is absent from the target and receives no positive label. We pres...
-
-### [A 211K Parameter Foundation Model: Genetic Prompting in Neural Cellular Automata](https://arxiv.org/abs/2610.38776v1)
-
-- **Authors:** John Kalkhof, Niklas Ihm, Daniel Kirste, Anirban Mukhopadhyay
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** The scale of modern foundation models enables broad task generalization. In medical imaging, where segmentation demands vary widely across clinical contexts, such flexibility is invaluable. But current models, such as SAM trade adaptability for scale, locking their utility behind high-end infrastructure and leaving...
-
-### [A Dual-Stage Deep Learning Framework for Fine-Crack Segmentation in High-Resolution UAV Images for Bridge Inspection](https://doi.org/10.3390/rs18213712)
-
-- **Authors:** Alyssa Yu, 梅文胜, Dapeng Zhu
-- **Date:** 2026-10-28
+- **Authors:** Michal Oszczudlowski, Ryan M. Gibson, Gordon Morison, Jacob König
+- **Date:** 2026-10-30
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** efficient-vision, metrics
-- **Abstract summary:** Fine-crack segmentation in high-resolution UAV images of bridges is hindered by weak crack signals, complex backgrounds, and substantial computational demands. This study proposes a dual-stage framework combining lightweight grid-wise screening with graph-enhanced segmentation. CrackClsNet identifies candidate regio...
+- **Tags:** edge-deployment, metrics
+- **Abstract summary:** Automated crack segmentation is a key component of vision-based structural health monitoring for civil infrastructure. However, many deep learning approaches remain computationally demanding for embedded edge devices and exhibit limited generalisation across diverse materials and imaging conditions. This paper prese...
 
-### [A Novel Approach to Evaluating Evaluation Metrics for Multi-Output Structured Prediction](https://arxiv.org/abs/2610.39162v1)
+### [An Empirical Study on Learning Rooftop Solar Potential from Satellite Imagery Directly Without Explicit Geometry](https://arxiv.org/abs/2610.41111v1)
 
-- **Authors:** Akshay Vyas, Angelo Pimienta, Nicholas Ruozzi
+- **Authors:** Joshua Lee
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Rooftop solar potential estimation often relies on LiDAR, digital surface models (DSMs), or pipelines that explicitly reconstruct roof geometry before estimating solar potential. We propose Direct Rooftop Solar Prediction (DRSP), an end-to-end formulation that maps satellite imagery and coarse regional sunlight info...
+
+### [AquaProbe: Efficient Adaptation of Frozen Vision Models for Underwater Images](https://arxiv.org/abs/2610.40900v1)
+
+- **Authors:** Md Shihabul Islam Shovo, Nishi Kanta Paul, Trung Dong, Xiaomin Lin
 - **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** In multi-output structured prediction tasks, while only one ground truth label may be provided in the training data, multiple equally valid outputs may be possible, making reliable evaluation a persistent challenge. We postulate that human evaluators implicitly use task-specific invariants, e.g., object boundaries i...
-
-### [A Unified Benchmark for Aerial-Enhanced Autonomous Driving: The KITScenes Aerial Dataset](https://arxiv.org/abs/2610.40455v1)
-
-- **Authors:** Daniel Lengerer, Richard Schwarzkopf, Jonas Merkert, Fabian Immel, Rupert Polley, Frank Bieder, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Aerial imagery provides complementary spatial context for autonomous driving by exposing road structure beyond the immediate perception range of onboard sensors. Yet map construction from aerial imagery, aerial-assisted online HD mapping, and cross-view localization are typically studied on separate data and benchma...
-
-### [Agent-Wise Test-Time Normalization for Camera-Based Cooperative Perception with Corrupted Collaborators](https://arxiv.org/abs/2610.39505v1)
-
-- **Authors:** Yu Wang, Shaohua Wang, Yicheng Li, Kecheng Sun
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Intermediate-fusion cooperative perception lets a vehicle detect objects beyond its own field of view by fusing features shared by nearby agents. When only a collaborator's cameras are degraded by fog, motion blur or exposure errors, the features it shares drift away from the training distribution while the ego inpu...
-
-### [Aligning Medical Vision Language Models at the Capability Boundary with Entropy Adaptive Rubric Grounding](https://arxiv.org/abs/2610.39835v1)
-
-- **Authors:** Hongyu Bai, Jiaqi Zeng, Chunzheng Zhu
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Medical diagnostic reasoning requires verifiable links between visual evidence and clinical knowledge, yet current medical vision language models are aligned with objectives that reward the wrong behavior. Uniform supervised fine tuning lets easy cases dominate updates while clinically critical boundary cases satura...
-
-### [Annotation-Free Representation Learning for Polyp Retrieval in Colonoscopy Videos](https://arxiv.org/abs/2610.39648v1)
-
-- **Authors:** Luca Parolari, Lamberto Ballan, Carlo Biffi, Loic Le Folgoc
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Colonoscopy is inherently comparative: reliable visual assessment of polyps often depends on complementary views acquired under different viewpoints and imaging conditions. Retrieving such views requires polyp tracklet representations, which recent contrastive methods learn from temporal cues but still build from ma...
-
-### [AskStream: When and What to Ask Proactively under Uncertainty in Streaming Video Understanding](https://arxiv.org/abs/2610.38678v1)
-
-- **Authors:** Lu Wang, Zhuoran Jin, Longxiang Wang, Junhong Chen, Yupu Hao, Yao Xu, et al.
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Recent advances in multimodal large language models have increased interest in interaction paradigms for video understanding. The evolution from offline to streaming and proactive interaction has gradually shifted models from passive responders toward more proactive agents that can decide when to answer. However, ex...
-
-### [Automatic Iconographic Annotation of Medieval Illuminations: Comparing Generative Vision-Language Models and Supervised Discriminative Classifiers](https://arxiv.org/abs/2610.38462v1)
-
-- **Authors:** Vincent Jolivet, Lucas Terriel, Chahan Vidal-Gor{è}ne
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** The large-scale digitisation of medieval manuscripts creates a growing need for automated iconographic indexing. We evaluate two complementary paradigms for this task on 9,735 full-folio images annotated with 2,333 TIMEL concepts: generative Vision-Language Models (VLM) and supervised discriminative classifiers (SDC...
-
-### [Benchmarking color judgment in multimodal LLMs with CIE-computable ground truth](https://arxiv.org/abs/2610.40212v1)
-
-- **Authors:** Shuwei Yue, Kaida Xiao, Zhihua Wang, Qiao Chen
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Multimodal large language models (MLLMs) are now used as zero-shot judges of image quality, but their color judgments are rarely tested with colorimetric ground truth. We present a five-task benchmark based on the CIE colorimetric framework: AWB pair judgment, skin-tone bias direction, CCT estimation, CIE Delta E 20...
-
-### [Can Event Detectors Leave the Broadcast Camera? Evidence from Tennis](https://arxiv.org/abs/2610.38042v1)
-
-- **Authors:** David Soeiro-Vuong, Andre-Louis Rochet
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Ball bounces and racket hits are the events from which tennis statistics are derived, and on monocular video the two are easy to confuse. We release a benchmark of 345 bounce and hit annotations at frame level on eight clips that mix broadcast, fixed elevated, phone and court-level viewpoints, with a frozen developm...
-
-### [Classifying Urban Locations by Cyclist Facility Usage and Directional Alignment: A Validated Camera-Based Framework from Multi-Site Observations](https://arxiv.org/abs/2610.38045v1)
-
-- **Authors:** Ao He, Mohit Gupta, Deborah Salon, Ricardo Eiris, Vivian W. H. Wong
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Objectives: Agencies invest in bicycle facilities but lack tools to assess whether cyclists use them as designed. We examine whether usage patterns follow facility configurations and whether higher bike lane usage is associated with less wrong-way riding. Methods: Motion-triggered cameras covered 19 deployments at 1...
-
-### [Complementing Text Based Moderation with Multimodal Grounding: Detecting Fraudulent Inducement Behaviors on Short Video Platforms](https://arxiv.org/abs/2610.38185v1)
-
-- **Authors:** Xiaoyong Yu
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: touches vision, but the excluded framing leaves the visual contribution unclear.
 - **Tags:** metrics
-- **Abstract summary:** Short video platforms have become a primary channel for black and gray industry operations in internet finance, where inducements such as prompts to like, follow, join private chat groups, or click external links frequently steer users toward fraud. Because such videos are short, dynamic, and often convey intent thr...
+- **Abstract summary:** Reliable visual perception is essential for safe autonomous underwater exploration. Yet vision models pretrained on terrestrial images become less reliable underwater, where turbidity, backscatter, and wavelength-dependent attenuation alter scene appearance. Existing adaptation methods either spread adapters equally...
 
-### [Confidence Filtering in Video-Based Gait Assessment: Measurement Error versus Selection Shift](https://arxiv.org/abs/2610.39704v1)
+### [AVID: A Weakly Aligned RGB-Infrared Dataset and Perturbation Benchmark for Tiny Aerial Targets](https://arxiv.org/abs/2610.40949v1)
 
-- **Authors:** David Regev, Eran Beeri Bamani
+- **Authors:** Dharini Raghavan, Vishnu Rao, Sethu Selvi S
+- **Date:** 2026-10-29
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** benchmark
+- **Abstract summary:** Long-range detection of small drones is complicated by their visual similarity to birds and by the limited detail available from ground-based cameras. Combining visible and infrared observations offers complementary information, but their usefulness depends on target size, cross-modal alignment, and image quality. W...
+
+### [Beyond Trial-and-Error: A Geospatial-Guided Active Reasoning Framework for Robust Aerial Vision-and-Language Navigation](https://arxiv.org/abs/2610.41446v1)
+
+- **Authors:** Jiawei Ge, Wenkang Gong, Jiuxin Cao, Bo Liu, Lei Cui, Haoran Wang, et al.
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Aerial Vision-and-Language Navigation (VLN) requires UAVs to locate language-specified goals in large-scale urban environments, where objects often appear small and visually ambiguous from high-altitude viewpoints. Existing methods largely follow a reactive paradigm common in indoor VLN, repeatedly updating navigati...
+
+### [CalibSwitch: Observation-Driven Camera-LiDAR Extrinsic Recovery and Selective Maintenance for Multimodal Perception](https://arxiv.org/abs/2610.41352v1)
+
+- **Authors:** Haifa Zhang, Yijing Wang, Zhiqiang Zuo
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** efficient-vision, edge-deployment, benchmark
+- **Abstract summary:** Camera--LiDAR perception on mobile robots and intelligent vehicles depends on reliable sensor geometry throughout deployment. Installation variations create uncertainty in the initial extrinsics, while changing observation quality makes frame-wise estimates fluctuate during operation. This paper presents CalibSwitch...
+
+### [CAMEL: Cross-Architecture Masked Embedding Learning for Ultra-Lightweight Retinal Foundation Models](https://arxiv.org/abs/2610.40954v1)
+
+- **Authors:** Andre Guarnier De Mitri, Giovani Decico Lucafo, Miller Matheus Lima Anacleto Rocha, Diego Furtado Silva
 - **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Video-based gait assessment often keeps only high-confidence pose observations, which can lower measurement error but change the movement assessed. We compared confidence selection with budget-matched random selection in a Parkinson-related cohort (n = 96) and an NF2-related replication cohort (n = 18). In the Parki...
+- **Abstract summary:** Recent progress in deep learning has substantially advanced automated grading of ophthalmologic pathologies, supported by large annotated datasets and improved representation learning. However, a significant gap remains between state-of-the-art performance and clinical scalability. In particular, foundation models h...
 
-### [Convex Potential Learning for Optimal Transport Between Medical Images](https://arxiv.org/abs/2610.37844v1)
+### [Computational Performance of ONNX Runtime and NCNN Frameworks for Real-Time Motorcycle Detection on Raspberry Pi 5: A Yogyakarta CCTV Case Study](https://journal.unesa.ac.id/index.php/inajet/article/view/53551)
 
-- **Authors:** Hongyu Kan, Ivan Medri, Natasha Ironside, Kristofor Pas, Richard Corp, Shinjini Kundu, et al.
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Computing optimal transport maps between medical images plays a fundamental role in morphological analysis. However, existing methods are either difficult to scale to large 3D medical images or rely on regularized formulations that provide only approximate transport maps. To improve the accuracy of downstream medica...
-
-### [CrossWeave: Cross-Modal Scene and Instance Retrieval from Sparse 2D-3D Alignment](https://arxiv.org/abs/2610.40525v1)
-
-- **Authors:** Aadith Warrier, Gnana Prakash Punnavajhala, Siddharth Tourani, Muhammad Haris Khan, Avinash Sharma, Madhava Krishna
+- **Authors:** Rifqi Zufar, Ahmad Baihaqi, Hidayatul Munawaroh, Vriza Wahyu Saputra, Abi Nizar Sutranggono
 - **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Cross-modal scene and instance retrieval aims to retrieve a corresponding 3D environment or object given query 2D images, serving as a foundational mechanism for spatial reasoning in robotics and AR/VR. Existing methods achieve this by learning alignment only at the level of whole scenes or objects, which provides n...
-
-### [Decision-Level Error Attribution and Depth-Aware Safety Evaluation of Monocular RGB Human Tracking for Autonomous Robot Navigation](https://arxiv.org/abs/2610.40199v1)
-
-- **Authors:** Abdulahi Taiwo, Chijioke Cyriacus Ekechi
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Monocular RGB tracking is useful for robots operating near people, but perception errors affect binary stop/proceed decisions in ways that geometric accuracy metrics do not capture. We examine how much decision error arises from the safety rule versus perception. We prove that lateral-only distance is a lower bound...
-
-### [Decoding Geometry, Not Tokens: Efficient VLMs for Robot Affordance and Trajectory Prediction](https://arxiv.org/abs/2610.39416v1)
-
-- **Authors:** Akila Ayanthi, Darshana Priyasad, Tharindu Fernando, Dimity Miller, Sridha Sridharan, Clinton Fookes, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language, efficient-vision
-- **Abstract summary:** Predicting where to grasp and how to move is fundamentally a geometry problem. Vision-language models treat it as language generation instead. They tokenize spatial coordinates into text and decode them autoregressively. This mechanism ignores spatial structure and truncates continuous precision. Errors compound acr...
-
-### [Diagnosing the Reference Gap: What Visual Scaffolds Can and Cannot Fix in Multimodal Reasoning](https://arxiv.org/abs/2610.39419v1)
-
-- **Authors:** Guizhen Chen, Weiwen Xu, Wotao Yin, Anh Tuan Luu, Hou Pong Chan
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Multimodal large language models can recognize visual content yet struggle to reason reliably over it across multiple steps. In counting, a model may see all objects but lose track of which ones it has counted. We argue that such failures, commonly attributed to perception, reveal a reference gap: the failure to bin...
-
-### [Difficulty Calibration Across Time for Membership Inference in Diffusion Models](https://arxiv.org/abs/2610.40616v1)
-
-- **Authors:** Michael Joseph, Yedid Hoshen
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Modern diffusion models are trained on massive datasets that often include copyrighted or private images. Membership inference attacks (MIAs) address this by testing whether a given image was in a model's training set. The standard approach scores an image by its reconstruction loss and flags low-loss images as memb...
-
-### [DINOv2 for PET: A Pre-Training Domain Benchmark Across Classification, Segmentation, and Prognosis](https://arxiv.org/abs/2610.40018v1)
-
-- **Authors:** Roxanne De Maeyer, Yannick Brackenier, Vicky De Ridder, Simon DeKeyser, Maarten Larmuseau, Jef Vandemeulebroucke
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** DINO (self-DIstillation with NO labels) has become a stan- dard for self-supervised pre-training, producing features that generalise across datasets and downstream tasks. In medical imaging it has been adopted mainly for radiology (X-ray, CT and MRI), where even natural- image DINO features transfer well. In the lit...
-
-### [Don't Ask the LLM: Visual Token Pruning with Spectral Structure and Semantic Relevance](https://arxiv.org/abs/2610.38303v1)
-
-- **Authors:** Intaek Shin, Geuntaek Lim, Sungjune Park, Yukyung Choi
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language, efficient-vision
-- **Abstract summary:** Large vision-language models (LVLMs) represent images and videos as long visual-token sequences, substantially increasing inference costs. These costs motivate visual-token pruning, whose effectiveness depends on both what signal is used for selection and when that signal becomes available. Our analysis reveals comp...
-
-### [DOSE: Dominance-Guided Ordinal Severity Estimation from Sparse Relative Annotations](https://arxiv.org/abs/2610.39584v1)
-
-- **Authors:** Tushir Sahu, Hideaki Hayashi, Hajime Nagahara
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Medical severity estimation commonly relies on absolute grade annotations, which are fundamentally ordinal, yet existing methods often treat the grades as independent categories. Learning-to-rank methods, which can be trained using relative annotations based on severity comparisons of image pairs, can provide contin...
-
-### [EditAgent: Rethinking Agentic Image Editing](https://arxiv.org/abs/2610.39664v1)
-
-- **Authors:** Haiyang Xu, Tianyu Wang, Jialu Li, Jiteng Mu, Yuanjun Xiong, Jianming Zhang, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Agentic image editors decompose complex requests into steps, but when a step fails, they mostly retry with the same narrow set of tools and a judge that scores each output by eye directly. We argue that such agents are bounded by two spaces: the action space of what the agent can do, and the observation space of wha...
-
-### [Efficient Covariance-Aware Vicinal Latent Diffusion for Continuous Conditional Image Generation](https://arxiv.org/abs/2610.39277v1)
-
-- **Authors:** Xin Ding, Shuo Huang, Zhenglong Ding, Sen Zhang, Nenglun Chen, Peibei Cao, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Continuous Conditional Generative Modeling (CCGM) aims to synthesize high-dimensional data conditioned on continuously valued scalar labels. However, existing continuous diffusion models face severe data sparsity under imbalanced and long-tailed label distributions, which can lead to visual artifacts and condition i...
-
-### [EgoContact: Evaluating Physical Intelligence with Egocentric Video](https://arxiv.org/abs/2610.39167v1)
-
-- **Authors:** Adam Deryło, Alexey Gavryushin, Daniel Cremers, Marc Pollefeys, Xi Wang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Egocentric video has emerged as one of the most scalable sources of data for learning generalizable manipulation priors. Yet, despite its growing use in pretraining robotic policies, it has been underutilized as a validation tool for physical intelligence, a key component of which is understanding where to make cont...
-
-### [EPC-RawDC: Equivariant Physics Constrained 3D Diffusion with Raw Data Consistency for CBCT to CT Image Synthesis](https://arxiv.org/abs/2610.40046v1)
-
-- **Authors:** Alzahra Altalib, Chunhui Li, Alessandro Perelli
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: touches vision, but the excluded framing leaves the visual contribution unclear.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Cone beam computed tomography (CBCT) is widely used for image guided and adaptive radiotherapy, but scatter, noise, reconstruction artifacts, and inaccurate Hounsfield units limit its quantitative use. Recent diffusion approaches for CBCT to CT synthesis remain largely image driven, with limited use of the underlyin...
-
-### [ESAD-Net: an efficient steel adaptive detection network for real-time surface defect detection](https://doi.org/10.1038/s41598-026-54738-z)
-
-- **Authors:** Li Xiaoshan, Chen Mingming
-- **Date:** 2026-10-28
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** efficient-vision, edge-deployment
-- **Abstract summary:** Steel surface defect detection is a critical component of quality control in the steel industry. Traditional detection methods face technical challenges including low accuracy and poor real-time performance. This paper proposes ESAD-Net (Efficient Steel Adaptive Detection Network), which achieves an average inferenc...
+- **Tags:** efficient-vision
+- **Abstract summary:** The acceleration of Smart City initiatives across Indonesia has intensified the demand for localized Intelligent Transportation Systems. Although micro-architectures like YOLOv26n offer optimized layer configurations, executing these models for real-time motorcycle detection on standalone edge computers often presen...
 
-### [Fight World Model: Customizable Combat through Visual Interaction Proxies](https://arxiv.org/abs/2610.40607v1)
+### [Coupled or Independent? Fault Coupling in Agentic Medical Vision Systems](https://arxiv.org/abs/2610.40913v1)
 
-- **Authors:** Jiahua Li, Zixu John, Tom Zhong, Fuping Wu, Tianhao Xu, Ruicheng Zhang, et al.
+- **Authors:** Nishi Kanta Paul, Md Shihabul Islam Shovo, Md Mostafijur Rahman, Jamil Fayyad
 - **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** A playable, programmable game world must maintain persistent state, enforce executable rules, and support extensible gameplay mechanics. Existing video world models can generate plausible combat, yet struggle to keep hit reactions and health updates consistent with game rules. We introduce Fight World Model (FWM), w...
+- **Tags:** vision-language
+- **Abstract summary:** Vision-language agents equipped with tools expose intermediate outputs for inspection and comparison with the model's reasoning, which may offer safety benefits over single-shot models. This paper tests that potential benefit when the sensor reading itself is untrusted, so that the tool and reasoning channels share...
 
-### [Frequency-Adaptive Gaussian Grids for Efficient Image Representation](https://arxiv.org/abs/2610.38007v1)
+### [Deep learning for segmentation, detection, and grading of lumbar disc herniation and related structures on MRI: a systematic review](https://doi.org/10.1016/j.inat.2026.102421)
 
-- **Authors:** Anatolii Evdokimov, Stavros Diolatzis, Bingxuan Li, Akshay Jindal, Patsorn Sangkloy, Qi Sun
+- **Authors:** Somayeh Haji Ahmadi, Mansoureh Shekarchizadeh Esfahani, Abolfazl Koozari, Mohammadreza Elhaie
+- **Date:** 2026-11-01
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** metrics
+- **Abstract summary:** Background Deep learning (DL) has been investigated for segmentation, localization, detection, and grading on lumbar magnetic resonance imaging (MRI). These tasks support different aspects of lumbar disc herniation assessment, and technical performance does not establish clinical benefit. Methods PubMed, Embase, the...
+
+### [Deep learning-based underwater fish monitoring: A comprehensive review of detection, tracking, counting, and behavior analysis](https://doi.org/10.1016/j.oceaneng.2026.128745)
+
+- **Authors:** Haitao Liu, S.M. Atik Shariar, Ruoling Deng, Tujie Wu
 - **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Neural representation has emerged as a powerful tool to mitigate the demand for increasingly higher-resolution images. However, a fundamental trade-off remains between structured (e.g., feature grids, which offer spatial consistency) and unstructured (e.g., 2D Gaussians, which adaptively capture local variances) rep...
-
-### [From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models](https://arxiv.org/abs/2610.39543v1)
-
-- **Authors:** Yixue Zhang, Wenke Xia, Kun Wu, Wenbo Yu, Pei Ren, Junnan Nie, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Reasoning informs decision-making by connecting intended actions with their expected consequences. Recent vision-language-action (VLA) models incorporate embodied chains of thought (ECoTs) to guide action generation. However, such guidance remains implicit, as actions are conditioned on ECoTs rather than explicitly...
-
-### [From the Superderivative to a Relative-Gradient Edge Operator](https://arxiv.org/abs/2610.38530v1)
-
-- **Authors:** Alejandro Garnung Menéndez
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** synthetic-data
-- **Abstract summary:** First-derivative edge detectors such as Sobel, Prewitt, Roberts and Scharr measure absolute grey-level differences. We revisit the log-gradient magnitude, a relative-gradient edge operator, and motivate it by analogy with the superderivative, a multiplicative derivative in which the independent variable is perturbed...
-
-### [GOFish: Full Field-of-View Gaussian Splatting and Mesh Extraction](https://arxiv.org/abs/2610.37818v1)
-
-- **Authors:** Allen Tu, Meher Gitika Karumuri, Shifan Zhu, Hailing Wang, Yen-Liang Lin, David Held, et al.
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Robots, autonomous vehicles, and consumer 360° cameras use fisheye lenses for wide fields of view (FoVs). Simulation-ready digital twins require photorealistic rendering across the full FoV and an aligned collision mesh. However, prior fisheye Gaussian Splatting methods only rasterize up to 180° and do not produce m...
-
-### [Greenscapes: Optimized Vegetation Configurations in Cities](https://arxiv.org/abs/2610.40007v1)
-
-- **Authors:** Patryk Bartkowiak, Marcin Marlewski, Paweł Wójcik, Jae Joong Lee, Dominik L. Michels, Bedrich Benes, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Vegetation plays a central role in cities, serving functional roles such as balancing shade and sky exposure, shaping the microclimate, carbon sequestration, and providing acoustic screening. Furthermore, aesthetic choices in landscape styles (formal, modernist, picturesque) are important for citizens' well-being an...
-
-### [HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model](https://arxiv.org/abs/2610.40373v1)
-
-- **Authors:** Rongxing Ding, Hongyu Qu, Kehong Wu, Xudong Wang, Fan Zhang, Xinguang Xiang, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Vision-Language-Action (VLA) models have demonstrated promising capabilities in robotic manipulation by integrating visual perception, language understanding, and action generation. Recent advances have further incorporated future prediction to enhance the understanding of environmental dynamics and task progression...
-
-### [How Much Should a VLA Trust Its Reasoning? Step-Level Guidance as a Measured Action-Value Function](https://arxiv.org/abs/2610.40002v1)
-
-- **Authors:** Dabin Seo, Eunhyek Joa
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Reasoning vision-language-action (VLA) policies write a reasoning trace and then decode the action from it. A wrong trace yields a wrong action, and even a correct-looking trace can mislead the plan. Existing remedies ask whether the reasoning is right. We ask how strongly it should steer. CoC-CFG applies classifier...
-
-### [Information-Driven Collaborative Autonomy for Heterogeneous UAV/UGV Teams](https://arxiv.org/abs/2610.39379v1)
-
-- **Authors:** Joshua Yuriv Pilipovsky
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** This paper considers coordinating a heterogeneous team of unmanned aerial vehicles (UAVs) and unmanned ground vehicles (UGVs) traversing a domain containing an unknown number of potentially hazardous targets. The UAVs provide aerial sensing using onboard optical cameras, adapting their trajectories to ground routes...
-
-### [inkGround: Benchmarking Fine-grained Visual Grounding Capabilities of Vision-Language Models for Cursive Handwriting in the Wild](https://arxiv.org/abs/2610.38720v1)
-
-- **Authors:** Sidra Hanif
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Human handwriting is produced as an ordered sequence of pen movements, but an offline image keeps only the final ink. Handwriting trajectory recovery aims to restore the ordered stroke points and their pen-up/pen-down transitions. Existing image-trajectory pair datasets are recorded with digitizing tablets under con...
-
-### [IntReal: A Real-World Dataset and Benchmark for Multimodal Interleaved Generation](https://arxiv.org/abs/2610.38425v1)
-
-- **Authors:** Shaohan Yu, Jie Qin, Wende Tan, Haiwen Diao, Limeng Qiao, Yueming Lyu, et al.
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Humans routinely consume multimodal content, where textual and visual information is naturally interleaved. Although Unified Multimodal Models (UMMs) can jointly generate text and images, multimodal interleaved generation remains largely underexplored. Progress in this area is hindered by two key limitations: (1) th...
-
-### [Kinematic Causal Attribution: Black-Box Explanations of Motion versus Geometry for 4D Point-Cloud Video Models](https://arxiv.org/abs/2610.39147v1)
-
-- **Authors:** Zerui Wang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** 4D perception models, which classify 3D point-cloud videos, are being built into robots, assistive monitoring and AR, yet before deploying one a practitioner cannot check which cue it relies on: how a body part moves, or what shape it has. 3D attribution is single-frame, video attribution is confined to RGB pixels,...
-
-### [Learning a Motion Manifold to Constrain Ambiguity in Unsupervised 4D Medical Image Interpolation](https://arxiv.org/abs/2610.40121v1)
-
-- **Authors:** Haojin Li, Huazhu Fu, Heng Li, Jiang Liu
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Unsupervised 4D medical image interpolation reconstructs intermediate anatomical states from temporally sparse observations without intermediate supervision. Distinct motion fields may attain comparable endpoint agreement while producing different intermediate anatomy, giving rise to motion ambiguity. This ambiguity...
-
-### [Look at Where You Think: Localization-Head Alignment for Fine-Grained Perception in Thinking VLMs](https://arxiv.org/abs/2610.39649v1)
-
-- **Authors:** Yuan Wang, Wei Wu, Hongning Wang
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Thinking vision-language models reason for thousands of tokens, yet still miss small details in high-resolution images. Zooming methods pay for extra inference passes, and outcome rewards never tell the model where to look at. In Qwen3.5-4B, we find that the bottleneck is selection, not seeing: a few attention heads...
-
-### [LoRe-MIM: Lost-or-Replaced Masked Image Modeling for Self-Supervised Representation Learning in Whole-Body PET/CT](https://arxiv.org/abs/2610.40284v1)
-
-- **Authors:** Amartya Bhattacharya, Bashirul Azam Biswas, Biratal Raj Wagle, Michael S. Leapman, Matthew E. Maeder, James B. Yu, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Deep learning models for whole-body positron emission tomography/computed tomography (PET/CT) hold significant clinical potential for disease detection, treatment planning, and response assessment. However, the time and cost associated with expert annotations remain major bottlenecks in developing robust and general...
-
-### [Luggage re-identification: A study of strategies towards a real-world application](https://arxiv.org/abs/2610.40643v1)
-
-- **Authors:** Quentin Dhôte, Romaric Audigier
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Luggage re-identification (ReID) is a critical task in video surveillance for forensics, security or border management (suspicious or abandoned luggage recognition), as well as luggage management (lost luggage recovery). It enables the association of observations of the same luggage across disjoint camera views in c...
-
-### [M-PFT: Angular Margin for Calibrated Prompt-Tuning of Fine-Tuned Vision-Language Models](https://arxiv.org/abs/2610.39861v1)
-
-- **Authors:** Shihab Aaqil Ahamed, Mohamed Ansaff, Nang Khin Myat Lay Phyu, Udaya Sampath K. Perera Miriya Thanthrige, Chamira U. S. Edussooriya, Ranga Rodrigo, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Prompt-tuning has emerged as a parameter-efficient technique for adapting large-scale vision-language models (VLMs) to downstream tasks while keeping the pre-trained weights frozen. However, prompt-tuned VLMs often suffer from a base-to-novel dual miscalibration problem, where models typically show underconfidence o...
-
-### [Meta-Initialization of Implicit Neural Representations to Accelerate Deformable Medical Image Registration](https://arxiv.org/abs/2610.37965v1)
-
-- **Authors:** Marat O. Zinovev, Dmitry V. Sorokin
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Implicit neural representation (INR) methods for deformable medical image registration require the network parameters to be optimized for each new image pair, making adaptation speed a practical limitation. This work investigates whether early adaptation can be accelerated using an initialization learned from a coll...
-
-### [Mind The Gap (MTG-AD): Dataset and Fine-grained Evaluation for End-to-End Inline Audio Descriptions](https://arxiv.org/abs/2610.39955v1)
-
-- **Authors:** Subhashini Venugopalan, Jenny Tan, Taylor Roper, Jimmy Tobin, Anton Kast, Alicia Martin, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Audio descriptions (AD) are essential for making visual media accessible to blind and low-vision (BLV) users. While Multimodal Large Language Models (MLLMs) offer a scalable solution for generating audio descriptions on-demand, their performance on ``inline'' audio descriptions -- which must fit within existing sile...
-
-### [MOSAIC-Flow: Orthogonal-Axis and Status-Conditioned Fusion for Missing-Sequence Completion in Brain Tumor MRI](https://arxiv.org/abs/2610.39534v1)
-
-- **Authors:** Pengli Zhu, Zhihao Peng, Yixuan Yuan
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Missing-sequence completion is important for comprehensive brain tumor characterization, but cross-modal fusion can obscure sequence-specific contrast and lose fine-grained three-dimensional tumor detail. To address this challenge, we introduce Modality-aware Orthogonal-axis Status-conditioned Attentive Integration...
-
-### [MRC-MMAgent: Reinforcement Learning for Multi-Role Collaboration in Multimodal Tool-Using Agents](https://arxiv.org/abs/2610.39324v1)
-
-- **Authors:** Shengqin Wang, Jie Jin, Xiaofan Li, Wentao Yan, Yu Cheng, Qingsong HuYihang Chen, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: touches vision, but the excluded framing leaves the visual contribution unclear.
-- **Tags:** vision-language
-- **Abstract summary:** Multimodal tool-using agents augment vision-language models with access to external information and capabilities, enabling them to solve knowledge-intensive and visually complex tasks that cannot be addressed using visual context alone. However, existing reinforcement learning pipelines largely train single-role age...
-
-### [Multi-Dataset Deep Learning for Automated Multiple Sclerosis Lesion Segmentation in Multimodal Brain MRI](https://doi.org/10.21203/rs.3.rs-11134819/v1)
-
-- **Authors:** Mahmoud Elsayed, Mostafa Elhoshy, Nahla Bishri, Ahmed I. Saleh
-- **Date:** 2026-10-28
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
 - **Abstract summary:** No abstract available.
 
-### [Multi-level Constrained Learning for Underwater Image Enhancement](https://arxiv.org/abs/2610.39183v1)
+### [Development of a Deep Learning-Based Algorithm for Detection and Analysis of Retinal Fluid Regions in OCT Images](https://doi.org/10.3103/s1060992x2560212x)
 
-- **Authors:** Wangtao Bao, Liping Xie, Kanjian Zhang, Huimin Lu
+- **Authors:** Nataly Yu. Ilyasova, A. B. Shpyakin, Nikita Sergeevich Demin, N. A. Gavrilova, B. A. Kasygulova
+- **Date:** 2026-10-30
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Abstract This paper presents the development of an algorithm for detecting and analyzing retinal fluid regions in optical coherence tomography (OCT) images using deep learning methods. The study addresses the urgent problem of automatic segmentation and quantitative analysis of intraretinal, subretinal, and retinal...
+
+### [Different Models, Shared Failures: Auditing Frozen-Encoder Pools for Medical Segmentation](https://arxiv.org/abs/2610.41790v1)
+
+- **Authors:** Eunseob Choi, Kyeonghun Kim, Hyuk-Jae Lee, Nam-Joon Kim
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Average segmentation accuracy and model count do not reveal whether models fail on the same cases. We present CoFailMed, an audit of correlated failures in pretrained-encoder pools for medical segmentation. Across five 2D tasks, we evaluate 11 public pretrained encoders (a controlled sample, not a census) using froz...
+
+### [Don't Just Impute, Detect: Task-Aware Diffusion Pipelines for Edge Anomaly Detection](https://arxiv.org/abs/2610.40732v1)
+
+- **Authors:** Jeongsu Park, Taehyeon Yun, Geonwoo Kim, Yuji Lim, Moohong Min
 - **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Underwater image enhancement aims to correct color and recover detail degraded by wavelength-dependent attenuation, scattering, and noise. Paired-reference supervision constrains output similarity, but does not by itself specify the color mapping, the strength of local detail corrections, or consistency with the deg...
+- **Abstract summary:** Industrial Internet of Things (IIoT) edge pipelines routinely lose contiguous blocks of multi-sensor data to network dropouts and hardware faults. The standard remedy is a disjointed "impute-then-detect" pipeline whose imputer is trained only for Mean Squared Error (MSE). Such an imputer fills a missing block with t...
 
-### [Neighbourhood shortcuts in building damage assessment from very-high-resolution satellite imagery: diagnosis and a building-evidence plug-in](https://arxiv.org/abs/2610.38162v1)
+### [DrawSplat: Atlanta World-Guided Implicit Gaussian SLAM for Indoor Reconstruction](https://arxiv.org/abs/2610.41602v1)
 
-- **Authors:** JianChong Guo, YuTing Wan, Kefan Li, AiLong Ma, YanFei Zhong
-- **Date:** 2026-10-28
+- **Authors:** Fan Zhu, Zhisong Xu, Ziyu Chen, Zhenjun Zhao, Takayuki Okatani
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Building damage assessment (BDA) from very-high-resolution imagery supports disaster response, and deep models now achieve high overall accuracy on public benchmarks. Because damage is spatially clustered, most buildings share the damage level of their neighbours, so overall scores are dominated by such buildings, w...
+- **Abstract summary:** RGB-D SLAM requires accurate online tracking, high-quality rendering, and geometrically consistent reconstruction. Existing Gaussian SLAM methods mainly optimize Gaussian primitives with photometric, depth, or local frame-to-model constraints, which are often insufficient in indoor scenes with weak textures, large p...
 
-### [OneScene-Bench: Do Vision-Language Models Integrate Evidence Across Views?](https://arxiv.org/abs/2610.38926v1)
+### [Dreams Are Cheaper Than Flights: Curated World-Model Data Improves Aerial Detection](https://arxiv.org/abs/2610.41030v1)
 
-- **Authors:** Swathi Suhas, Anurag Das, Bernt Schiele, Jonas Fischer
-- **Date:** 2026-10-28
+- **Authors:** Rugved Katole, Vedant Patil, Jenna Kline, Christopher Stewart
+- **Date:** 2026-10-29
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** synthetic-data
+- **Abstract summary:** Robot perception is increasingly data driven, yet field data is slow, costly, and sometimes disruptive to collect. Video world models offer a cheaper source: seeded with real frames, they extend a recorded scene into new footage with the deployment's sensor, altitude, and environment. We ask whether such synthetic d...
+
+### [Drone-PUR: From Visual Clue Discovery to Understanding and Reasoning in UAV Scenes](https://arxiv.org/abs/2610.40801v1)
+
+- **Authors:** Jiahe Wu, Bing Cao, Xingyue Guo, Ruipu Zhao, Beiming Yu, Jiekang Feng, et al.
+- **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-language
-- **Abstract summary:** Vision-language models (VLMs) increasingly process multiple views of the same scene, but it remains unclear whether they integrate these observations into a coherent scene-level representation. Existing multi-image evaluations do not isolate this capability, as tasks may admit correct solutions through independent p...
+- **Abstract summary:** The reasoning capabilities of vision-language models (VLMs) can be limited by incomplete or inaccurate visual observations in the general domain. In unmanned aerial vehicle (UAV) scenes, small targets, subtle attributes, and changing viewpoints further complicate perception and understanding. Therefore, we introduce...
 
-### [Open-set multi-view seahorse re-identification from underwater photograph sequences](https://arxiv.org/abs/2610.39857v1)
+### [Enhancing Medical Lesion Segmentation via Several Simple Modules](https://arxiv.org/abs/2610.41652v1)
 
-- **Authors:** Tristan Fauvel, Sylvie Louisy, Patrick Louisy, Thomas Fauvel
-- **Date:** 2026-10-29
+- **Authors:** Ruichen Li, Zhao Yao
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Automated animal re-identification from photograph sequences can facilitate minimally invasive Capture-Mark-Recapture studies at scale. Yet, photographs taken during an observation session can vary greatly in quality, not always providing the necessary information for accurate re-identification. In this paper, we pr...
+- **Abstract summary:** This work introduces three lightweight enhancement modules for medical lesion segmentation to improve clinical applicability, particularly under data-scarce and computationally constrained environments. Current mainstream methods struggle with the lack of high-quality annotations for rare pathologies, which often le...
 
-### [PathCowork: Learning from real-world pathology practice to build AI copilots](https://arxiv.org/abs/2610.39441v1)
+### [FieldGuideRAG: Image-Grounded GraphRAG for Fine-Grained Recognition with Vision-Language Models](https://arxiv.org/abs/2610.40971v1)
 
-- **Authors:** Sheng Wang, Jialu Yao, Maria V. Rossi, Shunsuke Koga, Esther Baranov, MacLean P. Nasrallah, et al.
+- **Authors:** Jiacheng Ding, Yanliang Qi, Cong Guo, Peihua Mai
 - **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-language
-- **Abstract summary:** Medical AI learns from the answers doctors record, but rarely from how they interpret the evidence to reach them. Here we introduce PathCowork, a framework that turns pathologists' narrated examinations into supervision for visual grounding and procedures that guide diagnostic AI agents. Synchronized gaze, narration...
+- **Abstract summary:** We present FieldGuideRAG, a training-free GraphRAG method in which a vision-language model, or VLM, recognizes fine-grained species by comparing the query with real photographs stored on the nodes of a knowledge graph. Multimodal GraphRAG systems describe each entity in text, and text conveys little of the visual de...
 
-### [PhysCount: Do MLLMs Count Visual Appearances or Physical Entities?](https://arxiv.org/abs/2610.40530v1)
+### [From Evaluation to Evolution: Benchmarking Image Editing and Evolving Image Models](https://arxiv.org/abs/2610.41210v1)
 
-- **Authors:** Lidong Lu, Jiaxin Lv, Liangrui Dong, Xinyi Mao, Lidong Zou, Zhenquan Li, et al.
-- **Date:** 2026-10-29
+- **Authors:** Jun He, Canmiao Fu, Ying Zhang, Zhipeng Huang, Chenyu Mu, Yazhen Xie, et al.
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Images reveal appearances, but counting often asks about physical objects. A single entity may be visible directly, in several reflections, or through glass, so detecting every visible occurrence does not determine how many entities are present. Existing visual counting benchmarks rarely separate these two operation...
+- **Abstract summary:** Real-world image editing requires coordinating multiple visual transformations with content preservation and reference constraints, yet aggregate scores can readily obscure unmet local requirements. Effective evaluation must therefore identify local failures and translate them into priorities for subsequent model im...
 
-### [PicturePerfect: Diffusion-based Same-identity Facial Replacement](https://arxiv.org/abs/2610.39344v1)
+### [FusionGait-transformer: multimodal transformer-based framework for robust gait recognition and gait-condition classification](https://doi.org/10.11591/ijict.v15i4.pp1902-1920)
 
-- **Authors:** Manik Dhingra, Yashesh Savani, Mahesh Reddy, Antoine Mercier, Jiahe Liu, Guillaume Berger
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: touches vision, but the excluded framing leaves the visual contribution unclear.
-- **Tags:** vision-adjacent
-- **Abstract summary:** With the growing success of diffusion models in computer vision, we explore their potential for same-identity facial replacement in photographs. Specifically, we propose a diffusion-based method, built on top of a pre-trained text-to-image model, that takes as input a portrait image of a person and a second referenc...
-
-### [PriorMaskMap: Robust Online Vectorized Map Construction with Biased Priors](https://arxiv.org/abs/2610.39283v1)
-
-- **Authors:** Haoming Xu, Wei Li, Yu Hu
-- **Date:** 2026-10-29
-- **Source:** arxiv
+- **Authors:** Kiran Kumar S V N Madupu, Madiraju Jagadeeshwar, Naren Kodali, G. Soma Sekhar
+- **Date:** 2026-10-30
+- **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** benchmark
-- **Abstract summary:** Online vectorized map construction provides autonomous vehicles with essential, real-time semantic and geometric scene understanding. While leveraging prior maps presents an opportunity to improve accuracy, they are often biased due to outdated information or temporary road changes. Existing methods, which typically...
+- **Tags:** vision-adjacent
+- **Abstract summary:** Gait analysis benefits from both full-body motion context and accurate temporal dynamics. Vision-only approaches degrade under occlusion and viewpoint change, while inertial-only approaches miss full body context. FusionGait transformer is a multimodal framework that fuses pose and silhouette representations with in...
 
-### [Quantum-Inspired Convolutional Networks for High-Resolution Pseudo-Label Generation from Multimodal Earth Observation Data](https://arxiv.org/abs/2610.39773v1)
+### [GazeRIB: Systematic Evaluation of Multi-Reader Gaze-Guided Chest X-ray Learning](https://arxiv.org/abs/2610.42152v1)
 
-- **Authors:** Abhishek Singh, Giovanni Cuozzo, Alexander Jacob, Claudia Notarnicola
-- **Date:** 2026-10-29
+- **Authors:** Nattakorn Kittisut, Roy M. Gabriel, Marly van Assen, Mohammadreza Zandehshahvar, Carlo N. De Cecco, Elizabeth A. Krupinski, et al.
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Accurate land-cover mapping from multimodal Earth observation (EO) data remains a challenge in regions where high-resolution annotations are scarce or costly to obtain. This work introduces a quantum convolutional encoder-decoder network for pseudo-label generation using Sentinel-1 SAR and Sentinel-2 multispectral i...
+- **Abstract summary:** Radiologists' visual attention can supervise medical image learning, but how reader panel composition affects its value remains untested. We evaluated GazeRIB (Gaze-guided Radiologist-Informed Blackout), which masks unviewed regions during training and uses unmasked images at inference. Eight experts repeatedly read...
 
-### [REEL: Same Frames, Different Answers and Different Costs](https://arxiv.org/abs/2610.38158v1)
+### [GenDSR: Transferring Representations from Video Generation Models for Dynamic Spatial Reasoning](https://arxiv.org/abs/2610.41314v1)
 
-- **Authors:** Xin Liang, Jiangpeng He
-- **Date:** 2026-10-28
+- **Authors:** Ke Yang, Zhenyu Zhang, Jun Li
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-language
-- **Abstract summary:** Video understanding keeps moving toward longer recordings, and the longer a recording is, the more questions can be asked about it. But processing it again for every question does not scale, so many systems watch the video once, build a memory, and answer later questions from it. Yet what to remember is decided befo...
+- **Abstract summary:** Dynamic spatial reasoning is essential for connecting visual intelligence to thephysical world, yet remains challenging for vision-language models (VLMs), which must preserve scene state while tracking how spatial relations evolve over time. Meanwhile, video generation models (VGMs), trained to synthesize temporally...
 
-### [Rethinking Neural Thickets Without Weight Perturbations](https://arxiv.org/abs/2610.40649v1)
+### [GRIT: Gradient Masking for Visually Misgrounded Tokens in Text-Rich Reasoning](https://arxiv.org/abs/2610.41629v1)
 
-- **Authors:** Nicolas Dufour, Elouan Gardès, Amil Dravid, Patrick Pérez, Loic Landrieu
+- **Authors:** Chanseul Cho, Noori Bae, Dongheon Lee, Youngmin Ro
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-language
+- **Abstract summary:** Reinforcement learning with verifiable rewards (RLVR) has recently been extended to vision-language models (VLMs), yet its effectiveness remains limited for text-rich reasoning tasks. We highlight a key factor contributing to this limitation: models frequently arrive at correct final answers despite misperceiving vi...
+
+### [Grounding Image Composition with Label-Conditioned Visual Evidence](https://arxiv.org/abs/2610.41080v1)
+
+- **Authors:** Armin Dadras, Tingyu Lin, Robert Sablatnig, Franziska Proksa, Markus Seidl
 - **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** The Neural Thickets hypothesis posits that pretrained language models lie in dense neighborhoods of task-specific experts in weight space, which random Gaussian perturbations can uncover. We reproduce the reported gains, but show that they do not require this geometric explanation. Perturbing a single decoder block...
+- **Tags:** vision-language
+- **Abstract summary:** Image composition labels such as center, diagonal, or rule of thirds describe visual structure rather than object categories. KU-PCP provides image-level labels and class-specific geometric elements, but does not show which visible regions people associate with each of its nine classes. We introduce KU-PCP Elements...
 
-### [Seeing and Imagining as One: Unified Video Generation and 4D Perception for Embodied World Modeling](https://arxiv.org/abs/2610.39232v1)
+### [Hawkeye: Reading Illegible Text with Vision Language Models](https://arxiv.org/abs/2610.41254v1)
 
-- **Authors:** Haitang Feng, Zhuoman Liu, Zhennan Wang, Sheng Wang, Juelin Li, Chengzhi Zhao, et al.
-- **Date:** 2026-10-29
+- **Authors:** Brian Tang, Kang G. Shin
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Embodied world models should not only imagine plausible futures, but also perceive the geometric, semantic, and motion structure of the evolving world. We present GenSight, a unified embodied world model that brings future video generation and dense perception into a single pretrained video diffusion transformer. Ge...
+- **Tags:** vision-language
+- **Abstract summary:** While modern Vision-Language Models (VLMs) have been remarkably successful in general scene text recognition, they consistently struggle with the long-tail distribution of text that is degraded by motion blur or low resolution. These limitations are particularly apparent in egocentric applications like smart glasses...
 
-### [Self-training for cross-centre coronary vessel segmentation in X-ray angiography using pre-contrast frame subtraction](https://arxiv.org/abs/2610.40302v1)
+### [ImageTTS: Repurposing Pretrained Image Diffusion Transformers for Speech Synthesis](https://arxiv.org/abs/2610.34807)
 
-- **Authors:** Danial Moafi, Aida Moafi, Mostafa Aryafar, Ashkan Sami, Maryam Aryafar
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Deep learning models for coronary vessel segmentation in X-ray angiography often perform poorly on data from centres that were not represented in training. Apart from differences in equipment, the labels of the largest public dataset (ARCADE) are incomplete, as only the segments defined in the SYNTAX score are annot...
-
-### [Seven Years of TESS Precovery Observations of the Dwarf-planet Candidate 2026 ED$_{138}$](https://arxiv.org/abs/2610.40106v1)
-
-- **Authors:** Te Han, Jeroen Audenaert, Daniel Muthukrishna, Matthew Holman, George R. Ricker
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** The trans-Neptunian object 2026 ED$_{138}$ was announced in 2026 October as the first dwarf-planet candidate in our solar system discovered by the Vera C. Rubin Observatory. The Transiting Exoplanet Survey Satellite (TESS) observed it in five month-long sectors between 2019 and 2026, four of them before its discover...
-
-### [Silhouette-Based Gaitomics for Frailty Assessment in Older Adults](https://arxiv.org/abs/2610.38223v1)
-
-- **Authors:** Laura McDaniel, Ryan Roemmich, Crystal Szczesny, Peter Abadir, Rama Chellappa, Basudha Pal
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Walking offers a window into physical function that may support interpretable video-based frailty assessment. We developed silhouette-based "gaitomics" to connect frailty predictions with measurable patterns of body configuration and movement. In 66 older adults assessed using the Fried Frailty Phenotype, standardiz...
-
-### [Soil Moisture Estimation in Precision Agriculture: A Knowledge Distillation Approach](https://arxiv.org/abs/2610.40432v1)
-
-- **Authors:** Mohammed Rakib, Vrinda Nagula, Arunkumar Bagavathi
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** efficient-vision
-- **Abstract summary:** Accurate soil moisture estimation is critical for precision agriculture, influencing irrigation, fertilization, and harvesting strategies. Traditional methods primarily rely on meteorological and soil property data, while recent approaches incorporate visual modalities such as aerial and geospatial imagery. However,...
-
-### [SparseTokenGS: Gaussian-based Sparse-View CBCT Reconstruction via Reusable Token Pool](https://arxiv.org/abs/2610.38360v1)
-
-- **Authors:** Zihan Deng, Zhenzhen Gong, Yujie Liu, Jiaxin Gong, Dingkun Liu, Kexian Xie, et al.
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Sparse-view cone-beam computed tomography is widely used for fast, low-dose volumetric imaging and lesion localization in dentistry and image-guided interventions, but it introduces severe artifacts. Feed-forward Gaussian methods transfer the reconstruction cost to training and decode each coordinate from projection...
-
-### [SSQA: Sibling-Selective Quadtree Attention for Hierarchical Modeling in Perception Tasks](https://arxiv.org/abs/2610.38320v1)
-
-- **Authors:** Yufan Chen, Arnav Bali, Angela Liu, Laura Zheng, Ming C. Lin
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Perception tasks for navigation in robotics, including aerial platforms such as drones and autonomous driving systems, are inherently structured. Drone-mounted cameras typically capture sky above, terrain below, and obstacles or man-made structures in between, while driving data often contains organized road layouts...
-
-### [Structure-retained low-rank adapters for weather synthesis](https://arxiv.org/abs/2610.38413v1)
-
-- **Authors:** Shunxin Wang, Alexandros Stergiou, Luuk Spreeuwers, Estefania Talavera, Nicola Strisciuglio
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Real-world deployment of computer vision models, particularly in outdoor scenarios, is often limited by environmental interferences, such as adverse weather. Improving model robustness across weather conditions is thus critical for reliability. However, sourcing high-quality data relevant to isolated weather effects...
-
-### [Subspace Image Synthesis for Style-Invariant Object Recognition](https://doi.org/10.64898/2026.10.21.759598)
-
-- **Authors:** Hayato Ono, Ayumu Yamashita, Kaoru Amano, Masataka Sawayama
+- **Authors:** Hanchen Pei, Shujie Liu, Yayue Deng, Fangyun Wei, Yanqing Liu, Jianwei Yu, et al.
 - **Date:** 2026-10-26
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: touches vision, but the excluded framing leaves the visual contribution unclear.
-- **Tags:** visual-representation, efficient-vision, benchmark
-- **Abstract summary:** Human-like behavior in visual models does not necessarily imply human-like internal computation. When a model recognizes objects robustly across changes in visual style, what internal computations support this behavior, and which are relevant to human perception? We addressed this question by pruning style-robust ne...
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Pretrained image-generation models have been successfully repurposed for various downstream visual tasks. Whether their learned representations and generative priors can transfer beyond vision to other modalities remains largely unresolved, particularly for speech synthesis, which requires linguistic fidelity and pr...
 
-### [SymAnt: Grounding Long-Horizon Action Anticipation with Adaptable Symbolic Priors](https://arxiv.org/abs/2610.40632v1)
+### [ItemCompass: Real-Time Edge-AI Wearable Vision for Tag-Free Domestic Object Retrieval](https://arxiv.org/abs/2610.38629)
 
-- **Authors:** Fnu Aryan, Yaqi Xie, Joseph Campbell, Woojun Kim, Kwonjoon Lee, Hossein Nourkhiz Mahjoub, et al.
-- **Date:** 2026-10-29
+- **Authors:** Tsz Lok Cheung, Jeff K. T. Tang, Anthony Kong, Zackary P. T. Sin
+- **Date:** 2026-10-28
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Misplacing household objects disrupts daily routines, especially for elderly users. ItemCompass addresses this with a real-time, tag-free wearable AR system that builds a persistent digital twin of the home for natural language object retrieval. A custom eyewear node streams visual and inertial data to an edge serve...
+
+### [Learning Clean Generative Processes from Noisy Measurements](https://arxiv.org/abs/2610.42036v1)
+
+- **Authors:** Fabian Kruse, Lorenzo Baldassari, Ivan Dokmanić
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** As robots and intelligent systems increasingly interact with humans, they must anticipate long sequences of future actions from only brief observations. While purely neural models typically require extensive observations to predict future actions and remain difficult to interpret and adjust, symbolic priors offer a...
+- **Abstract summary:** We study how to learn a generative model of clean images using only noisy observations. Diffusion processes and their generalizations to non-Gaussian noise require posterior predictions at every noise level. We first show that it is possible to learn these predictions from independent noisy views using Noise2Noise r...
 
-### [TACOS: Terrain-Aware COntact Supervision for Visual Footstep Planning](https://arxiv.org/abs/2610.37806v1)
+### [MATS: A Multi-Agent Framework for Controllable and Reflective Tumor Synthesis](https://arxiv.org/abs/2610.41159v1)
 
-- **Authors:** Jean-Michel Fortin, William Larrivée-Hardy, Gabriel Jeanson, Olivier Gamache, Daniele De Martini, François Pomerleau, et al.
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Humans navigate their environment based on their vision system, anticipating how the ground will respond before committing to a step. Self-supervised learning could provide legged robots the same ability, but the supervisory signal is typically chosen on intuition, and its effect on what the model learns is rarely e...
-
-### [TaskFrame: Connecting Task-Level Planning with Frame-Level Control for Game Agents](https://arxiv.org/abs/2610.40276v1)
-
-- **Authors:** Guangzhi Wang, Junfu Pu, Yiran Wang, Xingyilang Yin, Honghao Chen, Cheng Cheng, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Building general game agents requires both high-level task reasoning and low-latency action control in rapidly changing visual environments. These capabilities favor models with substantially different computational profiles, making them difficult to realize within a single model. In this work, we present TaskFrame,...
-
-### [Telling Is Not Seeing: Textual Personas Rarely Make Vision-Language Models Answer Like the People They Describe](https://arxiv.org/abs/2610.39331v1)
-
-- **Authors:** Jiawei Chen
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Vision-language models (VLMs) are increasingly prompted with personas, such as "You have low vision", to stand in for people in user studies. We ask whether a persona makes a model see like the person it describes. We compare persona answers with measured people with low vision, color blindness or hearing loss, and...
-
-### [TokenRepel: Generating Diverse Image Sets Without Compromising Quality](https://arxiv.org/abs/2610.39913v1)
-
-- **Authors:** Qingtao Yu, Zhen Wang, Ning Lai, Boyang Hu, Hongdong Li, Dylan Campbell
-- **Date:** 2026-10-29
+- **Authors:** Zhongnan Shi, Keyang Zhou, Siyi Li, Qichao Ying, Xinchen Ma, Shuyi Gong, et al.
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: touches vision, but the excluded framing leaves the visual contribution unclear.
 - **Tags:** vision-adjacent
-- **Abstract summary:** We present an inference-time approach that enhances the visual diversity of image sets generated by text-to-image models, without compromising the average image quality. Our method leverages the intrinsic geometry of hidden representations in pretrained models to diversify images generated from the same prompt. Firs...
+- **Abstract summary:** Synthesizing realistic tumors on medical images helps address data scarcity for clinical AI. Existing diffusion-based methods, however, lack fine-grained attribute-level controllability, closed-loop quality verification, and awareness of which morphological patterns are underrepresented in the target distribution. W...
 
-### [TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation](https://arxiv.org/abs/2610.40349v1)
+### [Mechanistic Interpretability for End-to-End Self-Driving](https://arxiv.org/abs/2610.41185v1)
 
-- **Authors:** Haozhe Zhang, Gu Zhang, Zirui Zou, Yuzheng Chen, Jinlong Wu, Zixuan Hu, et al.
-- **Date:** 2026-10-29
+- **Authors:** Manav Gagvani, Benjamin Namikas, Sivamurugan Velmurugan, Nysa Kumar, Shrey Sharma, Thomas Peterson, et al.
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** End-to-end (E2E) autonomous driving models achieve strong planning performance but remain largely opaque, limiting observability and trust. We apply mechanistic interpretability to E2E driving by training Sparse Autoencoders (SAEs) on the internal activations of a simple, single-camera end-to-end path planning model...
+
+### [Movens-Zero: Scaling Humanoid Motion Foundation Models with Large-Scale Human Videos](https://arxiv.org/abs/2610.41877v1)
+
+- **Authors:** Wendong Bu, Tinghong Ye, Qizhou Wang, Jiacheng Li, Zhiqi Ge, Yuze Lin, et al.
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Scaling humanoid motion foundation models is constrained by the scarcity of diverse, robot-executable data and by the difficulty of jointly learning from heterogeneous multimodal inputs while supporting real-time closed-loop control. We present Movens-5M, constructed from raw Internet videos through clip generation,...
+
+### [Nereus: A Large-Scale Underwater Dataset for Fine-Grained Attribute Understanding and Grounded Counting Perception](https://arxiv.org/abs/2610.41705v1)
+
+- **Authors:** Jingtao Deng, Zihao Jin, Yuehe Chen, Feixiang He, Shuiwang Li, Dan Zeng
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Underwater imagery records rich ecological information and supports applications such as science communication, fishery monitoring, ecological conservation, and oceanographic research. Beyond general scene understanding, these applications require models to recognize fine-grained biological traits and reason over sp...
+
+### [OpenVIO: A Versatile Open-Source Visual-Inertial Odometry System](https://arxiv.org/abs/2610.41671v1)
+
+- **Authors:** Seungwon Choi
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Visual-inertial odometry (VIO) is a fundamental topic in robotics research. Beyond research, VIO has been adopted in a wide range of products. In this manuscript, we present OpenVIO, an open-source VIO system for research and practical applications. It is released under the MIT license. OpenVIO supports pinhole and...
+
+### [Parse Before You Execute: Efficient Spatial Reasoning with Executable Primitives](https://arxiv.org/abs/2610.41389v1)
+
+- **Authors:** Xiwei Liu, Yulong Li, Xinling Zhuang, Xuhui Li, Yichen Li, Haolin Yang, et al.
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-language
-- **Abstract summary:** Human demonstrations offer an efficient and scalable source of data for dexterous robot manipulation, but differences in sensing and hand morphology complicate the transfer of contact-rich interactions. We present TouchBridge, a hardware--software co-designed framework for human-to-robot data transformation. A weara...
+- **Abstract summary:** Spatial reasoning in Vision-Language Models (VLMs) has increasingly benefited from tool-integrated pipelines that ground computation in explicit geometry. However, existing systems often compile queries into relatively open-ended artifacts, such as code, task constraints, tool plans, or gathered evidence, leaving wh...
 
-### [Uncertainty-aware Coarse-to-Fine Main Pancreatic Duct Segmentation for Width Measurement in 3D MRCP](https://arxiv.org/abs/2610.40073v1)
+### [PathoJev: Efficient Pathology Decisions from Shared Visual Context](https://arxiv.org/abs/2610.40752v1)
 
-- **Authors:** Zipei Zhang, Jaakko Sahlsten, Mikko Saukkoriipi, Johanna Ronkainen, Mona Lehto, Akseli Aittoniemi, et al.
+- **Authors:** Chengyang Zhang, Wenchuan Zhang, Bo Li, Xinyu Liu, Jiaming Yang, Mengran Li, et al.
 - **Date:** 2026-10-29
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Assessment of the main pancreatic duct (MPD) from volumetric magnetic resonance cholangiopancreatography (MRCP) scans is an essential task for ductal dilatation diagnosis and pancreatic cancer analysis. However, manual assessment is affected by reader variability in which automated analysis may assist. Nevertheless,...
+- **Abstract summary:** Pathology workflows require multiple visual judgments about the same slide, from identifying tumor type to assessing grade and invasion. Generating and parsing a separate textual response for each structured question adds latency between visual evidence and usable decisions. Building on the System One paradigm, we i...
 
-### [UniRA: Unified Representation Alignment and Auto-Encoding for Efficient Diffusion Generation](https://arxiv.org/abs/2610.39948v1)
+### [Quantifying Localized Tumor-Infiltrating Lymphocytes by Deep Learning on H&E Images: Analytical Validation and Prognostic Value in Lung Adenocarcinoma](https://doi.org/10.64898/2026.10.23.26366340)
 
-- **Authors:** An Lanji, Dawei Liu, Jin Li, Haoran Xu, Mei Chen, Yu Tian
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: touches vision, but the excluded framing leaves the visual contribution unclear.
-- **Tags:** benchmark
-- **Abstract summary:** Diffusion transformers (DiTs) have become the dominant architecture for high-fidelity image synthesis, yet they suffer from slow training convergence and high computational cost. Two recent lines of work address this from complementary angles: Representation Alignment (REPA) accelerates DiT training by aligning inte...
-
-### [Unlocking Any-Order Generation in Pretrained Autoregressive Image Models](https://arxiv.org/abs/2610.39293v1)
-
-- **Authors:** Rishav Pramanik, Marco Pedersoli, Zhaozheng Yin
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** benchmark
-- **Abstract summary:** Autoregressive (AR) image generators are powerful in principle but inflexible in practice: training with a fixed raster-scan order hardcodes a single factorization of the image distribution into the model, leaving it unable to inpaint, outpaint, or edit at inference time. Existing solutions, including the modern dis...
-
-### [UnMixMamba: Unmixing Guided State Space Subpixel Mapping of Crops from MODIS Time Series](https://arxiv.org/abs/2610.38507v1)
-
-- **Authors:** Motasem Alkayid, Yimin Zhu, Naser El-Sheimy, Lincoln Linlin Xu
+- **Authors:** Bolesław L. Osinski, Kshitij Ingale, Aileen Huang, Ben Terdich, Yoni Muller, Rohan Prakash Joshi, et al.
 - **Date:** 2026-10-28
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Abstract Tumor-infiltrating lymphocytes (TILs) are a critical determinant of response to immune checkpoint inhibitor (ICI) therapy in lung adenocarcinoma (LUAD). However, assessing the clinical utility of TIL quantification is challenging due to subjective manual scoring and differences in methodology, including som...
+
+### [ReLift: Dense 3D Tracking as Lifted Trajectory Repair](https://arxiv.org/abs/2610.42136v1)
+
+- **Authors:** Assaf Singer, Maroun Khriesh, Noam Rotstein, Yoni Kasten, Or Litany
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** metrics
-- **Abstract summary:** Subpixel mapping (SPM) of crop types from \SI{250}{m} Moderate Resolution Imaging Spectroradiometer (MODIS) time series to field-scale Agriculture and Agri-Food Canada (AAFC) labels supports acreage estimation and agricultural monitoring. Three difficulties remain: (i)~spectral-temporal coupling and mixed pixels tha...
+- **Tags:** vision-adjacent
+- **Abstract summary:** Dense 3D tracking from monocular video requires establishing point correspondences over time, estimating their depth, and inferring their trajectories during occlusion. Existing methods typically learn these tasks jointly, a demanding objective given the scarcity of 4D supervision. We show that strong pretrained 2D...
 
-### [V-CAPE: Visual Consistency Assessment for Product Image Editing](https://arxiv.org/abs/2610.38611v1)
+### [RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory](https://arxiv.org/abs/2610.42141v1)
 
-- **Authors:** Iaroslav Melekhov, Roberto Alcover Couso, Francesco Taioli, Daniel Coelho, Artur Bekasov, Virginia Fernandez Arguedas, et al.
-- **Date:** 2026-10-28
+- **Authors:** Shengguang Wu, Suning Huang, Cherie Ho, Ria Doshi, Hao Zhu, Serena Yeung-Levy
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Recent work shows that a frozen robot policy performs far better inside an agent harness, where control code decides when to query the policy, consult vision tools, or command the arm directly. Yet today these harnesses are built by hand and redesigned for each new robot or benchmark. We show that harness design can...
+
+### [SACQ: Structure-Aware Codebook Quantization for Ultra-Low-Bit Vision-Language-Action Models](https://arxiv.org/abs/2610.41408v1)
+
+- **Authors:** Haesung Lee, Insu Han
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-language, efficient-vision
+- **Abstract summary:** Vision-Language-Action (VLA) models enable capable robot behavior, but their large memory footprint limits deployment on resource-constrained robotic platforms. Weight quantization is a natural remedy, yet post-training quantization (PTQ) recipes inherited from large language models degrade when applied to VLAs at u...
+
+### [SAR-TS-BERT: Physics-Guided Self-Supervised Pre-Training With Polarimetric Features for SAR Time-Series Crop Classification](https://arxiv.org/abs/2610.41728v1)
+
+- **Authors:** Jieqiu Wang, Yuhan Zhang, Bo Zheng, Shaoming Zhang
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Multitemporal synthetic aperture radar (SAR) imagery provides continuous, cloud-free observations of crop phenology for agricultural monitoring in cloudy and rainy regions, yet high-accuracy classification typically requires extensive labeled samples. Although self-supervised pre-training mitigates label dependency...
+
+### [Single-Annotation, Multi-Hypothesis Segmentation with Semantic-Spatial Residual Banks](https://arxiv.org/abs/2610.41069v1)
+
+- **Authors:** Armin Dadras, Robert Sablatnig, Franziska Proksa, Markus Seidl
+- **Date:** 2026-10-29
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Multi-rater segmentation datasets show that a single image can admit several valid masks, yet most training sets expose only one annotation per image. We study single-annotation multi-hypothesis segmentation: each training image exposes one fixed mask, while the model must return a finite bank that covers held-out h...
+
+### [Think in 360°: Benchmarking and Bootstrapping Panoramic Video Reasoning](https://arxiv.org/abs/2610.42082v1)
+
+- **Authors:** Lidong Lu, Lidong Zou, Xinyi Mao, Jiaxin Lv, Zhenquan Li, Liangrui Dong, et al.
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** A panoramic video captures all directions around the camera, but relevant evidence can appear in different directions and at different times. Understanding it requires models to connect observations across the viewing sphere and time. We introduce PanoVideoBench, the first manually annotated benchmark for comprehens...
+
+### [TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents](https://arxiv.org/abs/2610.41216v1)
+
+- **Authors:** Kehong Gong, Xiaoxu Zheng, Guanli Hou, Seunghun Lee, Mengqi Guo, Runjia Tan, et al.
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-language
-- **Abstract summary:** Recent advances in generative image editing enable complex transformations such as background replacement, object manipulation, and pose adjustment from natural language instructions. However, verifying that these transformations preserve visual consistency, defined as the preservation of an object's intrinsic visua...
+- **Abstract summary:** Robot agents built on vision-language models depend on both the planner and its harness: the tools, feedback, memory, and recovery logic around it. Can improvements to a large teacher's harness be carried into a compact agent with lower inference compute cost? We present TinyAstral, a two-stage approach. We first fr...
 
-### [VeriCUA: Verification as Agentic Exploration for Computer-Using Agents](https://arxiv.org/abs/2610.40578v1)
+### [VariaFlow: Uncertainty-Aware Flow Matching for Unsupervised Anomaly Detection](https://arxiv.org/abs/2610.41494v1)
 
-- **Authors:** Qiushi Sun, Da Yu, Alexander Knop, Amer Sinha, Lingpeng Kong, Ben Kao, et al.
+- **Authors:** Arnela Hadzic, Martin Urschler, Cosmin I. Bercea
+- **Date:** 2026-10-30
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-adjacent
+- **Abstract summary:** Reconstruction-based anomaly detection no longer fails at reconstruction. Generative models produce high-quality pseudo-healthy reconstructions, and the remaining difficulty is the step of scoring residuals. The residual between a scan and its reconstruction has two indistinguishable sources, genuine pathology and t...
+
+### [WebOverlay: High-Throughput Vision-Only Distillation for Extreme Aspect-Ratio Web Overlay Detection](https://arxiv.org/abs/2610.41037v1)
+
+- **Authors:** Jiannan Huang, Jerry Ding, Li Yu, Zhenting Li
 - **Date:** 2026-10-29
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** vision-language, efficient-vision
+- **Abstract summary:** Web overlays, such as cookie consent banners, newsletter prompts, and age gates, obstruct automated web crawlers and degrade downstream document representations. While proprietary multimodal Large Language Models (MLLMs) can accurately identify overlays, their latency and inference cost preclude web-scale ingestion....
+
+### [When Depth Lies: Benchmarking Vision-Language Models on Mirror-Induced RGB-D Ambiguity](https://arxiv.org/abs/2610.41651v1)
+
+- **Authors:** Hao Yin, Tianchen Guo, Heming Du, Yan Ke, Yanbin Liu, Xin Yu
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-language
-- **Abstract summary:** Building and scaling computer-using agents (CUAs) across desktop, mobile, and web environments requires reliable task-completion verification for data curation, evaluation, and reinforcement learning. Typical automated approaches prompt vision-language models (VLMs) to judge trajectories or generate programs to insp...
+- **Abstract summary:** Vision-language models (VLMs) have made significant progress in spatial reasoning, particularly by integrating RGB images with depth data, which is often assumed to faithfully reflect physical distances. However, mirrors violate this assumption: they distort depth readings while reproducing object appearances, makin...
 
-### [VideoMemBench: How Well Do MLLMs Remember in Video Conversations?](https://arxiv.org/abs/2610.40131v1)
+### [When the Simulator Fails, Not the Policy: Auditing Contact Artifacts in Simulated Robot Benchmarks](https://arxiv.org/abs/2610.41857v1)
 
-- **Authors:** Zhengdong Hu, Chao Wang, Kaituo Feng, Huanjin Yao, Mingfei Lu, Hehe Fan, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Multimodal large language models (MLLMs) can now process hour-long videos, making extended multi-turn dialogue over a single video a natural mode of use. Sustaining such a dialogue requires more than answering each question in isolation: the model must retrieve and reuse information established earlier in the conver...
-
-### [Vision Tomography: Towards Portable 3D Bidirectional Face-Skull Inference from Visual Data](https://arxiv.org/abs/2610.38065v1)
-
-- **Authors:** Zidu Wang, Meng Xu, Miao Xu, Hengyuan Ma, Jiankuo Zhao, Xutao Li, et al.
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Traditional computed tomography (CT) can capture paired 3D face and skull geometry, but it remains costly, fixed in location, and exposes patients to radiation. For applications such as remote diagnostics, digital healthcare, forensic identification, missing-person investigation, and archaeological analysis, there i...
-
-### [Vision-Based Density Estimation for Adaptive Traffic Control](https://arxiv.org/abs/2610.38497v1)
-
-- **Authors:** Mohammad Usaid, Deepak Silaych, Hrithik Mhatre, Archak Mittal
-- **Date:** 2026-10-28
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Traffic congestion is becoming a critical challenge in rapidly growing urban centers, particularly in developing nations where rapid urbanization and inadequate transport infrastructure place increasing strain on transport networks. In highly heterogeneous and chaotic traffic flows, camera-based traffic-state estima...
-
-### [Visually Irrelevant Hallucinations in Medical Vision-Language Models](https://arxiv.org/abs/2610.38389v1)
-
-- **Authors:** Ke Zou, Nan Zhou, Tao Yang, Meng Liu, Linchao He, Zehui Liao, et al.
-- **Date:** 2026-10-28
+- **Authors:** Alex Zhou, Junhao Wu, Xueyang Zhou, Yixiao Huo, Hongcheng Gao, Di Zhu, et al.
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-language
-- **Abstract summary:** Medical vision-language models (VLMs) show strong performance in radiology report generation (RRG) and medical visual question answering (Med-VQA), producing free-form clinical descriptions and answers from medical images. However, they may generate clinically meaningful statements that lack visual evidence or contr...
+- **Abstract summary:** Simulation benchmarks score robot policies by success rate, and every failed episode counts against the policy. Many of these failures are the simulator's fault, not the policy's; we find the cause and fix it. Testing a vision language action model and a world action model in simulation, we find that the policy ofte...
 
-### [What Actually Matters? A Paired Evaluation of Inference Settings for $π_{0.5}$ on BEHAVIOR-1K](https://arxiv.org/abs/2610.37917v1)
+### [WorkIng: A Real-World and Synthetic Highway Work-Zone Benchmark Dataset for Autonomous Navigation](https://arxiv.org/abs/2610.41772v1)
 
-- **Authors:** Ruben Hammele, Samira Huber, Mohammad Nazeri, Amirreza Payandeh, Alexandyr T. Card, Aaron Nguyen, et al.
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Vision-Language-Action (VLA) models offer a promising paradigm for general-purpose household robotics. However, inference and data-collection strategies that have been deployed in smaller-scale settings do not necessarily generalize to large-scale, diverse task suites. To address this gap, we conduct a systematic, p...
-
-### [What do MLLMs know about 'Waldo'? Evaluating Visual Reasoning under Multi-Instance Multi-Object Challenges](https://arxiv.org/abs/2610.38957v1)
-
-- **Authors:** Saumya Mundra, Ajoy Mondal, Vineeth N Balasubramanian, C. V. Jawahar
-- **Date:** 2026-10-28
+- **Authors:** Xujun Xie, Dominik Rößle, Adithya Mohan, Daniel Cremers, Torsten Schön
+- **Date:** 2026-10-30
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
-- **Abstract summary:** Recent advances in Multimodal Large Language Models (MLLMs) have led to significant progress in visual reasoning capabilities. However, existing benchmarks curate image-question pairs pertaining to object categories with few instances, enabling trivial object referencing and limited visual ambiguity. In this work, w...
-
-### [Where Can We Fool the Model's Mind? Response-Guided Semantic Probing and Adaptive Routing for Transferable Attacks on Black-Box MLLMs](https://arxiv.org/abs/2610.38013v1)
-
-- **Authors:** Ahmed Abdelnaby, Mohamed Elmahallawy
-- **Date:** 2026-10-27
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Multimodal Large Language Models (MLLMs) ground language in visual evidence, yet their semantic reasoning can be exploited through transferable black-box adversarial attacks. Existing attacks typically allocate perturbations using surrogate-model saliency, which may not reflect how an unseen MLLM semantically interp...
-
-### [Where Do Vision Language Models Fail at 3D Reasoning?](https://arxiv.org/abs/2610.39639v1)
-
-- **Authors:** Khai Le-Duc, Nguyen Kim Hai Bui, An Ngo, Nam D. Hoang, Yueqi Song, Jiarui Liu, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-language
-- **Abstract summary:** Vision-language models can get individual judgments right while struggling to recover and consistently use the exact properties of a 3D object. To characterize this gap, we introduce BedBench, a controlled benchmark of thirteen procedurally generated tasks spanning individual judgments and composite answers. Across...
-
-### [WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining](https://arxiv.org/abs/2610.39278v1)
-
-- **Authors:** Yuhao Lu, Jiongxu Chen, Hexiang Wei, Jiajin Wu, Juelin Li, Mingjian Liang, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Predicting future physical states stands as a central challenge in embodied intelligence. Existing video world models leave 3D dynamics implicit, action-based formulations remain tied to specific robot configurations, and 3D motion prediction models use flow-only supervision, providing a limited learning signal for...
-
-### [WorldProbe: When Video World Models Fall Apart under Long-Horizon Spatial Exploration](https://arxiv.org/abs/2610.39721v1)
-
-- **Authors:** Minqi Wang, Jie Peng, Hejun Dong, Ruchang Yao, Puyi Wang, Siyuan Huang, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** Video world models generate future visual observations from camera or action inputs, with the goal of synthesizing persistent 3D worlds that can be explored across time and space. Existing benchmarks typically evaluate short interactions or rely on camera trajectories fixed before generation. The performance of vide...
-
-### [Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities](https://arxiv.org/abs/2610.39301v1)
-
-- **Authors:** Yunhang Shen, Zhangquan Chen, Xiaotian Li, Zhongpeng Cai, Qing Zhou, Zekai Zhang, et al.
-- **Date:** 2026-10-29
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
-- **Tags:** vision-adjacent
-- **Abstract summary:** We present Youtu-Parsing-Omni, an omni-modal parser that converts documents, images, audio, and video into structured records grounded in space and time, providing a perception layer for agents that read, locate, and cite evidence across modalities. Its design rests on one encoder for every modality and one schema f...
+- **Abstract summary:** Highway work zones are critical edge cases for autonomous vehicles (AVs), combining atypical geometries and jurisdiction-specific regulations that existing benchmarks fail to capture: real-world datasets lack 360° multi-modal, full-scene 3D work zone annotation, and no single recorded site can span the layouts and r...

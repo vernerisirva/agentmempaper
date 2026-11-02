@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Specific Do I Need to Be? Effects of User Query Underspecification on Deep Research Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>How Specific Do I Need to Be? Effects of User Query Underspecification on Deep Research Agents</h1>
+          <p class="hero-copy">Yi Wen, Xiangjue Dong, Bingxuan Li, Hangxiao Zhu, Leo Zhicheng Liu, Yu Zhang, James Caverlee</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2610.39413">Open paper</a>
+            <a class="paper-detail-link" href="how-specific-do-i-need-to-be-effects-of-user-query-underspecification-on-deep-resear-bb2d4e07.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Yi Wen, Xiangjue Dong, Bingxuan Li, Hangxiao Zhu, Leo Zhicheng Liu, Yu Zhang, James Caverlee</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-10-29</dd></div>
+              <div><dt>Publication date</dt><dd>2026-10-29</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2610.39413v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2610.39413">DOI</a><a href="https://openalex.org/W7224811690">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies autonomous or deep research agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Deep research agents (DRAs) conduct long-horizon reasoning, search, and literature synthesis to provide long-form answers to complex, domain-specific questions. These agents are typically trained and evaluated on fully specified user queries. However, real-world user queries can often be underspecified. We introduce...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>This study addresses an important gap in understanding the robustness of autonomous research agents under realistic, imperfect user prompts. The experimental design is rigorous, methodologically sound, transparently scoped, and thoroughly validated.</p>
+      <p>The authors explicitly acknowledge limitations including a predominant focus on English queries, evaluation restricted to agents with accessible intermediate trajectories, and lack of coverage for proprietary closed-source systems without exposed traces.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-02T12:03:37.159474+00:00.</p>
+        <p>Coverage: 60496 of 60496 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents (DRAs) conduct long-
+horizon reasoning, search, and literature syn-
+thesis to provide long-form answers to com-
+plex, domain-specific questions. These agents
+are typically trained and evaluated on fully
+specified user queries. However, real-world
+user queries can often be underspecified. We
+introduce UNDERSPEC-DR, a framework for
+systematically evaluating how underspecified
+queries affect agents&#x27; final answer quality and
+intermediate search behavior. Across three
+DRAs we evaluated, underspecification sub-
+stantially reduces how well DRA&#x27;s answers
+fulfill users&#x27; information needs, even though
+they remain grounded in cited evidence. Our
+analysis of intermediate search behavior sug-
+gests a possible explanation: DRAs conduct
+broader searches that draw less on the origi-
+nal user query but rely more on their learned
+prior during training, which can be misaligned
+with </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reports that
+are difficult to verify, which makes it hard to mea-
+sure how much underspecification harms the final
+answer DRAs generated and whether the they re-
+solved ambiguity. Moreover, unlike standalone
+LLMs, DRAs interact with external tools over long-
+horizon task execution. Inspecting this intermedi-
+ate process might provide an additional lens for
+understanding the effect of user query underspeci-
+fication on DRA.
+To this end, we introduce UNDERSPEC-DR, a
+framework for investigating DRA&#x27;s answer qual-
+ity and intermediate search behavior under user
+queries with controlled levels of underspecification,
+as illustrated in Figure 1. To ensure that the under-
+specified queries reflect realistic forms of under-
+specification, we analyze initial–final query pairs
+1
+arXiv:2610.39413v1  [cs.CL]  29 Oct 2026
+or q
+q
+variant
+Complete Query q
+Search: imminent
+fracture risk by
+index site </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Answer: The
+question is
+ambiguous, and I
+assume ... [21]
+Exploration
+&quot;Could you specify ...?&quot;
+&quot;I assume you are asking ...&quot;
+&quot;The user asked ...&quot;
+RQ3
+unseen
+term
+RQ2
+RQ2
+Figure 1: Overview of UNDERSPEC-DR. (a) From 176 initial–final query pairs in researchers&#x27; conversations
+with DRAs, we identify three omitted information types:scope( qs),terminology( qt), andpreference( qp). We
+then rewrite benchmark queries into matched variants with an LLM followed by human verification. (b) Each
+agent answers the complete query q or a variant qr by alternating search queries sk and retrieved documents
+Dk. Highlighted search-query tokens come from the user query (blue), earlier search queries (yellow), retrieved
+documents (green), or parametric knowledge (red). (c) We analyze answer quality (RQ1), whether agents recognize
+underspecification (RQ2), and search behavior (RQ3).
+collected from </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Let q denote a fully specified query (complete
+query) that expresses a user&#x27;s information need,
+and let Sd(a;q) denote an evaluation function that
+scores answer a on one dimension d of answer qual-
+ity (e.g., rubric coverage or citation precision). An
+underspecification operator ur, with r∈ {S,T,P},
+removesscope constraints( r=S ) or obscures
+technical terminology( r=T ) oruser prefer-
+ences( r=P ) in q, yielding the query variant
+qr =u r(q). Each operator is applied only when
+the corresponding information is present in q and
+the fully underspecified variant qU is obtained by
+applying all applicable operators jointly. Given
+a query, an agent π produces a search trajectory
+τ= (s 1, D1, . . . , sm, Dm), where sk is the k-th
+search query and Dk is the corresponding set of
+retrieved documents retrieved for it, follwed by a
+final answer aπ(·), respectively. We quantify the
+effect of </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Underspecification
+To ground the framework in real user behavior,
+we collect the conversation logs of three junior
+researchers in electrical engineering, computer sci-
+ence, and construction science fields with DR Tulu
+(Shao et al., 2026) over a two-week period. See
+details in Appendix C. We focused on junior re-
+searchers because they constitute a substantial seg-
+ment of deep research agent users and may struggle
+to fully articulate their information needs due to
+3
+Rubric Removed / Obscured Information Example # Query Variants</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>query.
+We characterize the types of information omitted
+from users&#x27; initial queries through inductive cod-
+ing analysis (Thomas, 2006). The first and second
+authors independently examine each initial–final
+query pair, identify information that is newly speci-
+fied in the final query, and assign descriptive codes
+to characterize the type of information added. They
+then compare their codes and categories, discuss
+discrepancies, and consolidate conceptually sim-
+ilar categories through consensus. This iterative
+process result in three higher-level categories of in-
+formation that users commonly omitted from their
+initial queries:scope,terminology, andpreferences.
+Scopespecifies the boundaries of the research ques-
+tion, such as the time period, place, population, or
+domain.Terminologyidentifies precise technical
+concepts or domain-specific entities.Preferences
+specify the user&#x27;s </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We formalize each category as a rewriting rubric
+(Table 1) and prompt GPT-5.4 mini to generate un-
+derspecified query variants (see Appendix A.1 for
+the prompts). To verify whether these variants re-
+semble naturally occurring underspecified queries,
+we conduct a Turing-style discrimination test (Tur-
+ing, 1950). We first apply the rewriting procedure
+to the clarified queries in our collected query pairs
+from real users. We then pair each generated vari-
+ant with its corresponding human-written initial
+query and ask a separate model to identify which
+query is AI-generated and which is human-written.
+We repeat the test twice, shuffling the order
+of the human-written and AI-generated queries
+in each run. Across 486 generated variants de-
+rived from 176 clarified queries, GPT-4o achieves
+identification accuracies of 58% and 54%, respec-
+tively, slightly higher than random guessing. </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Variants
+The first and second authors each validated half
+of the generated query variants, checking whether
+the targeted information was removed or obscured,
+non-target information was preserved, and the re-
+sulting query remained natural and coherent. Over-
+all, 6% of the variants were revised to improve
+4
+Figure 2: Effects of query underspecification on answer quality across three benchmarks and DRAs.Top:Mean
+paired score changes (underspecified variant minus complete query). Filled and outlined bars indicate significant
+and nonsignificant differences, respectively, based on paired Wilcoxon signed-rank tests ( ∗p &lt; .05, ∗∗p &lt; .01,
+∗∗∗p &lt; .001).Bottom:Proportions of matched queries with lower scores (below zero) or higher scores (above
+zero), with colors indicating the magnitude of change. Segment labels are percentages; score changes within ±0.02
+are omitted.
+naturalness, and 8% were </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Models and harnesses.We evaluate three com-
+mon deep research agents:DR Tulu-8B(Shao
+et al., 2026), which operates within an MCP-based
+agent framework with three tools: web search, sci-
+entific paper search, and webpage browsing. Its
+interaction protocol supports reasoning, tool call-
+ing, answer generation, and citation. The sec-
+ond one isGPT-5.4 with tools, which uses the
+same agent framework and tool set as DR Tulu.
+Tongyi-DR(Tongyi DeepResearch Team et al.,
+2025) is equipped with tools for web search, web-
+page browsing, Google Scholar search, Python exe-
+cution, and file parsing. Unlike DR Tulu-8B, which
+submits a single query per search tool call, Tongyi-
+DR supports multiple queries within a single search
+tool call.
+Benchmarks and answer quality metrics.We
+use three benchmarks of open-ended research
+questions requiring long-form answers: 500 ran-
+domly sampled queries from </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ResearchQA (Yifei
+et al., 2026); the ScholarQA-CS, ScholarQA-Multi,
+and ScholarQA-CS2 subsets of ScholarQA-Bench
+(Asai et al., 2026); and DeepResearch Bench (Du
+et al., 2026). We use Gemini 3.1 Pro as the
+judge to score each answer forrubric-based cov-
+erage, following each benchmark&#x27;s official eval-
+uation protocol: query-specific rubrics for Re-
+searchQA and ScholarQA-Bench, and general
+rubrics with a reference answer for DeepResearch
+Bench. These scores measure how well an an-
+swer fulfills the original query&#x27;s information needs.
+We also assess the extent to which answers are
+grounded in retrieved evidence, usingDocument
+utilizationto measure how much of the retrieved
+material is cited andCitation precisionto mea-
+sure whether the cited evidence supports the an-
+swer&#x27;s claims. For each answer, we compute
+Document Utilization= # cited/#retrieved and
+Citation Precision= # </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>supporting/#cited where
+#retrieved is the total number of documents re-
+trieved during the whole search process, #cited is
+the number of documents cited in the final answer,
+and #supporting is the number of cited documents
+that support the claims for which they are cited. To
+compute #supporting, we use Gemini 3.1 pro as a
+judge to examine the content of each cited docu-
+ment and assess whether it supports the associated
+claims in the answer. Only ScholarQA-Bench and
+DeepResearch Bench support separate evaluation
+of citation quality, so we evaluate citation-related
+metrics only for DR Tulu-8B and GPT-5.4 with
+tools on these two benchmarks, excluding Tongyi-
+5
+Model Metric Fully underspec. w/o preference w/o scope w/o term
+DR Tulu Document Utilization+2.85% ∗∗∗ +0.01% +1.51% ∗ +0.07%Citation Precision+0.45% +1.40%−2.88% +2.17%
+GPT-5.4 w/ Tools Document Utilization−0.44% +1.98% +2.11% ∗∗ </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>not
+decline.
+Search behavior metrics.We adopt measures
+from prior work on agentic search behavior anal-
+ysis.Query drift(Ning et al., 2026) measures the
+semantic shift between the first and last search
+queries in the whole deep research process. For
+a trajectory containing m search queries, we com-
+pute drift as 1−cos(v 1,v m), where v1 and vm
+are the embeddings of the first and final search
+queries, respectively, obtained using OpenAI&#x27;s
+text-embedding-3-small model. Higher values
+indicate greater semantic drift.Query trajectory
+type(Ning et al., 2026) characterizes how consecu-
+tive search queries are reformulated. We use GPT-
+5.4 mini to classify each transition sk →s k+1
+into one of four types:Specialization(adding con-
+straints to narrow the search),Generalization(re-
+laxing constraints to broaden the search),Explo-
+ration(shifting to a different facet of the same
+topic), </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>orRepetition(issuing an identical or near-
+duplicate query). We report the proportion of tran-
+sitions of each type in a complete trajectory.Query
+provenance(Zhang et al., 2026) attributes each to-
+ken of sk to the first of four sources in which it
+occurs: theuser query, theprevious search queries
+s&lt;k, theretrieved documents D&lt;k, or none of these
+(untraced; attributed to parametric knowledge or
+memory). Provenance shares are computed per
+search tool call and then averaged.Document nov-
+elty(Zhang et al., 2026) measures the fraction of
+documents retrieved at each search step that have
+not appeared in earlier steps. Higher values in-
+dicate more newly retrieved documents, whereas
+lower values indicate greater retrieval redundancy.
+Context-driven term adoption rate(Ning et al.,
+2026) measures the fraction of newly introduced
+search-query terms that appear in previously re-
+trieved </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Affect Answer Quality?
+DRAs cannot reliably infer users&#x27; information
+needs.Figure 2 shows that rubric-based cover-
+age scores decline for a large proportion of un-
+derspecified queries even when only one key detail
+is omitted or obscured. Among different infor-
+mation types, removing scope constraints or ob-
+scuring technical terminology produces substantial
+mean score reductions that are statistically signifi-
+cant across most agents and benchmarks. In con-
+trast, removing user preferences generally produces
+smaller reductions that are often not statistically
+significant. As user queries become more under-
+specified, scores decline further.
+Query underspecification does not lead to
+more hallucination.Table 2 shows no statistically
+significant change in citation precision even un-
+der full underspecification condition. Document
+utilization in the final answer also shows no </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sta-
+tistically significant decline: it even increases in
+three of the eight settings. Together with the de-
+cline in rubric-based coverage, these results suggest
+that underspecification primarily reduces alignment
+with the user&#x27;s original information needs, with no
+evidence of increased hallucination among cited
+claims.
+Stronger specifically-trained deep research
+capability come with greater sensitivity to query
+6
+0 25 50 75 100
+Share of runs (%)
+qP
+qS
+qT
+qU
+qP
+qS
+qT
+qU
+qP
+qS
+qT
+qU
+25 75
+13 87
+20 80
+17 82
+10 90
+95
+7 92
+10 89
+21 77
+13 86
+7 16 77
+16 12 72
+DR Tulu
+Tongyi DR
+GPT-5.4
+w/ Tools
+Ask Assume Unaware
+Figure 3: Clarification behavior under un-
+derspecification across three benchmarks.
+Agents either ask for clarification (Ask), state
+assumptions (Assume), or proceed without
+recognizing omissions (Unaware).
+Figure 4: Scaled performance drop by underspecification type,
+pooled across </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a
+large proportion of underspecified queries (Figure
+2), DRAs generally cannot identify that key infor-
+mation is missing: Unaware is the most frequent
+category across all different DRAs (Figure 3; Ta-
+ble 4). Even when they acknowledge ambiguity,
+they usually answer under one or more stated as-
+sumptions rather than ask the user for clarification.
+Across agents, Tongyi-DR shows the least explicit
+awareness, whereas DR Tulu-8B and GPT-5.4 with
+tools more often state assumptions.
+Stated assumptions do not guarantee better
+answers, and even worse.Although stating as-
+sumptions is DRAs&#x27; predominant response strategy
+upon recognizing underspecification, Assume runs
+exhibit larger answer-quality losses than Unaware
+runs in three of the four conditions, as shown in
+Figure 4. One possible explanation is that unrecog-
+nized underspecification may be mild enough for
+DRAs to infer a plausible </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Affect Intermediate Search Behavior?
+DRAs change search direction more often and
+investigate less deeply.This shift is most evident
+under the most underspecified variant, with more
+Exploration and fewer Specialization transitions
+across all three DRAs (Figure 5). Obscuring tech-
+nical terminology also has a pronounced effect on
+search strategy. These changes indicate more fre-
+quent switches between different facets of a topic
+and fewer refinements that add constraints to nar-
+row the search. Changes in the proportions of Gen-
+eralization and Repetition are generally smaller and
+are not statistically significant in most comparisons.
+Searches become less grounded in user
+queries and draw more on parametric knowl-
+edge.According to Figure 6, the share of search-
+7
+Figure 5: Changes in search-query transition types un-
+der underspecification. Values show mean paired dif-
+ferences </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Language.Our experiments primarily use En-
+glish queries; DeepResearch Bench includes tasks
+in Chinese. Underspecification may take dif-
+ferent forms in other languages and extending
+UNDERSPEC-DR to these settings is a natural di-
+rection for future work.
+Coverage of agents.Our evaluation covers three
+agents whose intermediate search and tool-use tra-
+jectories are accessible for analysis. We do not
+evaluate closed-source deep research systems that
+do not expose these trajectories, as this would pre-
+vent us from analyzing their search behavior. These
+systems may employ different search and clarifica-
+tion strategies.
+Ethics Statement
+Our study does not involve the generation of harm-
+ful content. Its main implication is a risk for users:
+when a query is underspecified, current DRAs may
+return a well-cited answer to a broader or differ-
+ent question than the one the user intended, </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reasoning
+trajectory, and final response:Ask,Assume,Un-
+aware.
+We then prompted GPT-5.4 mini to annotate the
+same 192 responses using these categories. Co-
+hen&#x27;s κ between the human and model annotations
+is 0.92, indicating almost perfect agreement. Fol-
+lowing this validation step, we used the same model
+and prompt to annotate all responses. The classi-
+fication prompt is provided in Appendix A.2, and
+each label is accompanied by a brief justification.
+E Examples of Underspecified Queries
+We contrast four examples from ResearchQA in
+which removing scope information or obscuring
+technical terminology has different effects on
+the answers generated by DR Tulu-8B. Both the
+complete-query answer and the underspecified-
+query answer are evaluated against the origi-
+nal query&#x27;s rubrics by Gemini 3.1 Pro. Struck-
+through text marks removed scope information in
+the without-scope variants ( qS). </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Autonomous research-agent system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies agents that perform or evaluate multi-step research workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Autonomous research agent workflow</li>
+              <li>Tags: deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-02</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-10-30 10:43:52</li><li>Last seen by Paper Scout: 2026-11-02 12:00:13</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2610.39413</li><li>arXiv: 2610.39413</li><li>OpenAlex: W7224811690</li><li>OpenAlex IDs: W7224811690</li><li>arXiv IDs: 2610.39413</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="how-specific-do-i-need-to-be-effects-of-user-query-underspecification-on-deep-resear-bb2d4e07.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>How Specific Do I Need to Be? Effects of User Query Underspecification on Deep Research Agents. Yi Wen, Xiangjue Dong, Bingxuan Li, Hangxiao Zhu, Leo Zhicheng Liu, Yu Zhang, James Caverlee. 2026-10-29. https://arxiv.org/abs/2610.39413</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

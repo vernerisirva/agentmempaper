@@ -34,7 +34,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-06 11:16:16",
-    "generated_at": "2026-10-30 10:47:40",
+    "generated_at": "2026-11-02 12:04:40",
     "last_seen_at": "2026-07-06 11:16:16",
     "metadata_sources": [
       "openalex"
@@ -95,36 +95,1209 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-02T12:02:44.642760+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The empirical base is a heavily skewed convenience sample: 88.9% of entries come from Google Research's self-selected public directory, and education data are missing for 89.8% of the 450 records, leaving only 46 senior, public-facing researchers for the substantive analysis.",
+      "The analysis is purely descriptive with no statistical models or causal identification, so claims about brain drain, environment-versus-training effects, and industry-wide mobility are not established beyond qualitative consistency with prior work."
+    ],
+    "concise_summary": "The study provides basic descriptive tabulations on a heavily skewed convenience sample with nearly 90% missing educational data. Because the empirical base is small and non-representative, scientific confidence in broader conclusions is limited, justifying an uncertain rating.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 28479,
+      "assessment_input_sha256": "3e92053c327e744b41f05486181a4b065b6d894d83aebef54a5a952cda9a734b",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.21203/rs.3.rs-10145541/v1",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 27678,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 27097,
+      "evidence_block_count": 41,
+      "evidence_context_characters": 32135,
+      "evidence_context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+      "evidence_context_sha256": "10a1403747eb99de7aa972aa117ccf4a9f54d4e6fae2eb9ef3602594196122af",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 27698,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "extracted_pages": 11,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "086e16c6748c45d80e5a037bf46ad7cf8ea7bc19e38bd973f236e489c1e05616",
+        "source_url": "https://www.researchsquare.com/article/rs-10145541/latest.pdf",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 27678,
+      "scientific_body_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "related"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "related"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 586,
+          "supplied_characters": 586
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 252,
+          "supplied_characters": 252
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 2212,
+          "supplied_characters": 2212
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 554,
+          "supplied_characters": 554
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 806,
+          "supplied_characters": 806
+        },
+        {
+          "heading": "We Introduce Maang-Ai-450, A Dataset Of 450 Ai Researchers Spanning Seven",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 440,
+          "supplied_characters": 440
+        },
+        {
+          "heading": "We Situate These Empirical Patterns Within The Literature Synth Esised By The Consensus",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 374,
+          "supplied_characters": 374
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 7,
+          "source_characters": 1356,
+          "supplied_characters": 1356
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 8,
+          "source_characters": 2042,
+          "supplied_characters": 2042
+        },
+        {
+          "heading": "Sources",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1183,
+          "supplied_characters": 1183
+        },
+        {
+          "heading": "Sources",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 777,
+          "supplied_characters": 777
+        },
+        {
+          "heading": "Inclusion And Exclusion Criteria",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1052,
+          "supplied_characters": 1052
+        },
+        {
+          "heading": "Data Schema",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 186,
+          "supplied_characters": 186
+        },
+        {
+          "heading": "Coverage And Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "limitations",
+          "section_index": 13,
+          "source_characters": 467,
+          "supplied_characters": 467
+        },
+        {
+          "heading": "Coverage And Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "limitations",
+          "section_index": 14,
+          "source_characters": 327,
+          "supplied_characters": 327
+        },
+        {
+          "heading": "Citation Distribution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1337,
+          "supplied_characters": 1337
+        },
+        {
+          "heading": "Phd Institutional Origins",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 735,
+          "supplied_characters": 735
+        },
+        {
+          "heading": "Phd Institutional Origins",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 849,
+          "supplied_characters": 849
+        },
+        {
+          "heading": "Mit 2",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 943,
+          "supplied_characters": 943
+        },
+        {
+          "heading": "Geographic Diversity Of Undergraduate Origins",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 274,
+          "supplied_characters": 274
+        },
+        {
+          "heading": "Geographic Diversity Of Undergraduate Origins",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 631,
+          "supplied_characters": 631
+        },
+        {
+          "heading": "T Uring Award And Nobel Prize Concentration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 765,
+          "supplied_characters": 765
+        },
+        {
+          "heading": "Career Mobility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 751,
+          "supplied_characters": 751
+        },
+        {
+          "heading": "Implications For The Brain Drain Hypothesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "discussion",
+          "section_index": 23,
+          "source_characters": 858,
+          "supplied_characters": 858
+        },
+        {
+          "heading": "Implications For The Brain Drain Hypothesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "discussion",
+          "section_index": 24,
+          "source_characters": 1066,
+          "supplied_characters": 1066
+        },
+        {
+          "heading": "Limitations And F Uture W Ork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "limitations",
+          "section_index": 25,
+          "source_characters": 1449,
+          "supplied_characters": 1449
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 26,
+          "source_characters": 726,
+          "supplied_characters": 726
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 27,
+          "source_characters": 1370,
+          "supplied_characters": 1370
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1291,
+          "supplied_characters": 1291
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1438,
+          "supplied_characters": 1438
+        }
+      ],
+      "selected_characters": 27097,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_sections": [
+        {
+          "characters": 586,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 252,
+          "heading": "Abstract / front matter",
+          "page": 2
+        },
+        {
+          "characters": 2212,
+          "heading": "Abstract",
+          "page": 2
+        },
+        {
+          "characters": 554,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 806,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 440,
+          "heading": "We Introduce Maang-Ai-450, A Dataset Of 450 Ai Researchers Spanning Seven",
+          "page": 3
+        },
+        {
+          "characters": 374,
+          "heading": "We Situate These Empirical Patterns Within The Literature Synth Esised By The Consensus",
+          "page": 3
+        },
+        {
+          "characters": 1356,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 2042,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 1183,
+          "heading": "Sources",
+          "page": 4
+        },
+        {
+          "characters": 777,
+          "heading": "Sources",
+          "page": 5
+        },
+        {
+          "characters": 1052,
+          "heading": "Inclusion And Exclusion Criteria",
+          "page": 5
+        },
+        {
+          "characters": 186,
+          "heading": "Data Schema",
+          "page": 5
+        },
+        {
+          "characters": 467,
+          "heading": "Coverage And Limitations",
+          "page": 5
+        },
+        {
+          "characters": 327,
+          "heading": "Coverage And Limitations",
+          "page": 6
+        },
+        {
+          "characters": 1337,
+          "heading": "Citation Distribution",
+          "page": 6
+        },
+        {
+          "characters": 735,
+          "heading": "Phd Institutional Origins",
+          "page": 6
+        },
+        {
+          "characters": 849,
+          "heading": "Phd Institutional Origins",
+          "page": 7
+        },
+        {
+          "characters": 943,
+          "heading": "Mit 2",
+          "page": 7
+        },
+        {
+          "characters": 274,
+          "heading": "Geographic Diversity Of Undergraduate Origins",
+          "page": 7
+        },
+        {
+          "characters": 631,
+          "heading": "Geographic Diversity Of Undergraduate Origins",
+          "page": 8
+        },
+        {
+          "characters": 765,
+          "heading": "T Uring Award And Nobel Prize Concentration",
+          "page": 8
+        },
+        {
+          "characters": 751,
+          "heading": "Career Mobility",
+          "page": 8
+        },
+        {
+          "characters": 858,
+          "heading": "Implications For The Brain Drain Hypothesis",
+          "page": 8
+        },
+        {
+          "characters": 1066,
+          "heading": "Implications For The Brain Drain Hypothesis",
+          "page": 9
+        },
+        {
+          "characters": 1449,
+          "heading": "Limitations And F Uture W Ork",
+          "page": 9
+        },
+        {
+          "characters": 726,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 1370,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 1291,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 1438,
+          "heading": "Unclassified body after references",
+          "page": 11
+        }
+      ],
+      "selected_text_sha256": "3e92053c327e744b41f05486181a4b065b6d894d83aebef54a5a952cda9a734b",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "086e16c6748c45d80e5a037bf46ad7cf8ea7bc19e38bd973f236e489c1e05616",
+      "source_pages": 11,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0002"
+        ],
+        "excerpt": "The migration of elite academic researchers to industrial AI laboratories has reshaped\nthe global research landscape, yet systematic evidence on the educati onal backgrounds,\ninstitutional trajectories, and citation impact of researchers at maj or technology companies\nremains scarce. We introduce MAANG-AI-450, a curated dataset of 450 AI researchers\naffiliated with Google Research, Google Brain, Google DeepMind, Meta F AIR , Apple\nMachine Learning Research, Amazon Science, and Netflix Research. The dat aset is Google-\ndominated by construction (88.9% of entries), reflecting the relative accessibility of Google\nResearch's public personnel directory; results should be inter preted with this sampling\ncaveat in mind. For a focal subset of 46 researchers with complete rec ords, we document\nPhD institutional origins, undergraduate backgrounds, and Google Scholar c itation counts\n(retrieved ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "dfbb683e8018197a33e29f8c0781516e12541178d7a5ca7437fed73b96f0ead2",
+            "evidence_id": "E623dd0dbfa0200f5-B0002",
+            "pages": [
+              2
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 2,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "The migration of elite academic researchers to industrial AI laboratories has reshaped\nthe global research landscape, yet systematic evidence on the educati onal backgrounds,\ninstitutional trajectories, and citation impact of researchers at maj or technology companies\nremains scarce. We introduce MAANG-AI-450, a curated dataset of 450 AI researchers\naffiliated with Google Research, Google Brain, Google DeepMind, Meta F AIR , Apple\nMachine Learning Research, Amazon Science, and Netflix Research. The dat aset is Google-\ndominated by construction (88.9% of entries), reflecting the relative accessibility of Google\nResearch's public personnel directory; results should be inter preted with this sampling\ncaveat in mind. For a focal subset of 46 researchers with complete rec ords, we document\nPhD institutional origins, undergraduate backgrounds, and Google Scholar c itation counts\n(retrieved "
+              }
+            ],
+            "text": "The migration of elite academic researchers to industrial AI laboratories has reshaped\nthe global research landscape, yet systematic evidence on the educati onal backgrounds,\ninstitutional trajectories, and citation impact of researchers at maj or technology companies\nremains scarce. We introduce MAANG-AI-450, a curated dataset of 450 AI researchers\naffiliated with Google Research, Google Brain, Google DeepMind, Meta F AIR , Apple\nMachine Learning Research, Amazon Science, and Netflix Research. The dat aset is Google-\ndominated by construction (88.9% of entries), reflecting the relative accessibility of Google\nResearch's public personnel directory; results should be inter preted with this sampling\ncaveat in mind. For a focal subset of 46 researchers with complete rec ords, we document\nPhD institutional origins, undergraduate backgrounds, and Google Scholar c itation counts\n(retrieved "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0007"
+        ],
+        "excerpt": "major industrial AI laboratories, constructed primarily from Google Res earch's public\npersonnel directory and supplemented by Meta F AIR, Apple MLR, Amazon S cience,\nand Netflix Research.\n2. For a focal subset of 46 researchers with complete bibliometric and ed ucational records,\nwe characterise the citation distribution, identify the most common PhD-granting\ninstitutions, and document the geographic diversity of undergraduate origins.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Introduce Maang-Ai-450, A Dataset Of 450 Ai Researchers Spanning Seven",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d0959a674a79011f970d950131268bfe1c8e55a54a8609d4f81d9c211f36b59a",
+            "evidence_id": "E623dd0dbfa0200f5-B0007",
+            "pages": [
+              3
+            ],
+            "section": "We Introduce Maang-Ai-450, A Dataset Of 450 Ai Researchers Spanning Seven",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 440,
+                "page": 3,
+                "section": "We Introduce Maang-Ai-450, A Dataset Of 450 Ai Researchers Spanning Seven",
+                "section_index": 5,
+                "start": 0,
+                "text": "major industrial AI laboratories, constructed primarily from Google Res earch's public\npersonnel directory and supplemented by Meta F AIR, Apple MLR, Amazon S cience,\nand Netflix Research.\n2. For a focal subset of 46 researchers with complete bibliometric and ed ucational records,\nwe characterise the citation distribution, identify the most common PhD-granting\ninstitutions, and document the geographic diversity of undergraduate origins."
+              }
+            ],
+            "text": "major industrial AI laboratories, constructed primarily from Google Res earch's public\npersonnel directory and supplemented by Meta F AIR, Apple MLR, Amazon S cience,\nand Netflix Research.\n2. For a focal subset of 46 researchers with complete bibliometric and ed ucational records,\nwe characterise the citation distribution, identify the most common PhD-granting\ninstitutions, and document the geographic diversity of undergraduate origins."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0013"
+        ],
+        "excerpt": "We constructed MAANG-AI-450 from three primary sources.\nGoogle Research personnel directory . The Google Research website (research.google/people/)\nlists researchers alphabetically across 74 pages of approximately 30 entr ies each. We system-\natically scraped pages 1 through 20, yielding 315 entries for researchers w ith surnames in\nthe range A\u2013F. An additional 85 entries from later pages were collected opportu nistically,\nfor a total of approximately 400 Google Research, Brain, and DeepMind entri es. Individual\nprofile pages ( research.google/people/slug /) provide brief biographical text including\neducation for senior researchers.\nGoogle Scholar organisational label searches. For Meta F AIR researchers, the\nquery mauthors=label:machine learning+meta+fair on the Google Scholar author search\nreturned the 40 most-cited researchers; we retained 19 with confirm ed current or recent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sources",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "071bb96c32e83971f80cdf24cccc9064e72641885c76de5807ca9517e51c9cf8",
+            "evidence_id": "E623dd0dbfa0200f5-B0013",
+            "pages": [
+              4
+            ],
+            "section": "Sources",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 4,
+                "section": "Sources",
+                "section_index": 9,
+                "start": 0,
+                "text": "We constructed MAANG-AI-450 from three primary sources.\nGoogle Research personnel directory . The Google Research website (research.google/people/)\nlists researchers alphabetically across 74 pages of approximately 30 entr ies each. We system-\natically scraped pages 1 through 20, yielding 315 entries for researchers w ith surnames in\nthe range A\u2013F. An additional 85 entries from later pages were collected opportu nistically,\nfor a total of approximately 400 Google Research, Brain, and DeepMind entri es. Individual\nprofile pages ( research.google/people/slug /) provide brief biographical text including\neducation for senior researchers.\nGoogle Scholar organisational label searches. For Meta F AIR researchers, the\nquery mauthors=label:machine learning+meta+fair on the Google Scholar author search\nreturned the 40 most-cited researchers; we retained 19 with confirm ed current or recent "
+              }
+            ],
+            "text": "We constructed MAANG-AI-450 from three primary sources.\nGoogle Research personnel directory . The Google Research website (research.google/people/)\nlists researchers alphabetically across 74 pages of approximately 30 entr ies each. We system-\natically scraped pages 1 through 20, yielding 315 entries for researchers w ith surnames in\nthe range A\u2013F. An additional 85 entries from later pages were collected opportu nistically,\nfor a total of approximately 400 Google Research, Brain, and DeepMind entri es. Individual\nprofile pages ( research.google/people/slug /) provide brief biographical text including\neducation for senior researchers.\nGoogle Scholar organisational label searches. For Meta F AIR researchers, the\nquery mauthors=label:machine learning+meta+fair on the Google Scholar author search\nreturned the 40 most-cited researchers; we retained 19 with confirm ed current or recent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0014"
+        ],
+        "excerpt": "Meta\naffiliation. Apple MLR, Amazon Science, and Netflix Research researchers we re identified\nvia analogous label queries.\nManually curated focal subset. For 46 researchers with public biographical pages\non Google Research, institutional homepages, or Wikipedia, we additionall y recorded\n3\nDhanda\nTable 1: Dataset schema for MAANG-AI-450.\nField Type Description\nid integer Unique row identifier\nname string Researcher full name\ncompany string MAANG company (Google / Meta / Apple / Amazon / Netflix)\ndivision string Lab or division (e.g., Google Brain, Meta F AIR)\nresearch areas string Semicolon-separated research topics\nscholar citations integer Google Scholar citation count (June 2026)\neducation undergrad string Undergraduate institution, degree, and year\neducation phd string PhD institution, field, and year\nstatus string current / former\nnotes string Notable achievements, prizes, career ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sources",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "804eb64190574e68f7bf4058c09e957e2173395f125dc6589c5a67054c2fcd93",
+            "evidence_id": "E623dd0dbfa0200f5-B0014",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Sources",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1183,
+                "page": 4,
+                "section": "Sources",
+                "section_index": 9,
+                "start": 892,
+                "text": "Meta\naffiliation. Apple MLR, Amazon Science, and Netflix Research researchers we re identified\nvia analogous label queries.\nManually curated focal subset. For 46 researchers with public biographical pages\non Google Research, institutional homepages, or Wikipedia, we additionall y recorded\n3"
+              },
+              {
+                "end": 607,
+                "page": 5,
+                "section": "Sources",
+                "section_index": 10,
+                "start": 0,
+                "text": "Dhanda\nTable 1: Dataset schema for MAANG-AI-450.\nField Type Description\nid integer Unique row identifier\nname string Researcher full name\ncompany string MAANG company (Google / Meta / Apple / Amazon / Netflix)\ndivision string Lab or division (e.g., Google Brain, Meta F AIR)\nresearch areas string Semicolon-separated research topics\nscholar citations integer Google Scholar citation count (June 2026)\neducation undergrad string Undergraduate institution, degree, and year\neducation phd string PhD institution, field, and year\nstatus string current / former\nnotes string Notable achievements, prizes, career "
+              }
+            ],
+            "text": "Meta\naffiliation. Apple MLR, Amazon Science, and Netflix Research researchers we re identified\nvia analogous label queries.\nManually curated focal subset. For 46 researchers with public biographical pages\non Google Research, institutional homepages, or Wikipedia, we additionall y recorded\n3\nDhanda\nTable 1: Dataset schema for MAANG-AI-450.\nField Type Description\nid integer Unique row identifier\nname string Researcher full name\ncompany string MAANG company (Google / Meta / Apple / Amazon / Netflix)\ndivision string Lab or division (e.g., Google Brain, Meta F AIR)\nresearch areas string Semicolon-separated research topics\nscholar citations integer Google Scholar citation count (June 2026)\neducation undergrad string Undergraduate institution, degree, and year\neducation phd string PhD institution, field, and year\nstatus string current / former\nnotes string Notable achievements, prizes, career "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0016"
+        ],
+        "excerpt": "Inclusion criteria: (i) the researcher appears in a publicly accessible company AI resear ch\ndirectory or in a top-40 Google Scholar author list for the relevant organisati onal label; (ii)\nthe researcher has a confirmed AI or ML research role (not solely engineer ing or management);\n(iii) the individual's name and affiliation are unambiguous (no initials- only entries).\nExclusion criteria: (i) researchers listed as \"research software engineer\" or \"product\nmanager\" without evidence of independent research output; (ii) res earchers where two\nindividuals share an identical name with no disambiguating information (four cases removed);\n(iii) for the focal subset specifically: researchers whose Google Sc holar page is absent,\nunverified, or belongs to a different person with the same name.\nNo deduplication across company directories was performed, though manual inspection\nfound no ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Inclusion And Exclusion Criteria",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8c6bb572f2df7596fd9275f9179424dda146bf12d80ec7e144a58019d384624b",
+            "evidence_id": "E623dd0dbfa0200f5-B0016",
+            "pages": [
+              5
+            ],
+            "section": "Inclusion And Exclusion Criteria",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 5,
+                "section": "Inclusion And Exclusion Criteria",
+                "section_index": 11,
+                "start": 0,
+                "text": "Inclusion criteria: (i) the researcher appears in a publicly accessible company AI resear ch\ndirectory or in a top-40 Google Scholar author list for the relevant organisati onal label; (ii)\nthe researcher has a confirmed AI or ML research role (not solely engineer ing or management);\n(iii) the individual's name and affiliation are unambiguous (no initials- only entries).\nExclusion criteria: (i) researchers listed as \"research software engineer\" or \"product\nmanager\" without evidence of independent research output; (ii) res earchers where two\nindividuals share an identical name with no disambiguating information (four cases removed);\n(iii) for the focal subset specifically: researchers whose Google Sc holar page is absent,\nunverified, or belongs to a different person with the same name.\nNo deduplication across company directories was performed, though manual inspection\nfound no "
+              }
+            ],
+            "text": "Inclusion criteria: (i) the researcher appears in a publicly accessible company AI resear ch\ndirectory or in a top-40 Google Scholar author list for the relevant organisati onal label; (ii)\nthe researcher has a confirmed AI or ML research role (not solely engineer ing or management);\n(iii) the individual's name and affiliation are unambiguous (no initials- only entries).\nExclusion criteria: (i) researchers listed as \"research software engineer\" or \"product\nmanager\" without evidence of independent research output; (ii) res earchers where two\nindividuals share an identical name with no disambiguating information (four cases removed);\n(iii) for the focal subset specifically: researchers whose Google Sc holar page is absent,\nunverified, or belongs to a different person with the same name.\nNo deduplication across company directories was performed, though manual inspection\nfound no "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0019"
+        ],
+        "excerpt": "The dataset captures a convenience sample biased towards senior, pub lic-facing researchers:\nGoogle Research's directory is self-selected and overrepresent s publication-active scientists.\nNetflix Research and Amazon Science contribute fewer than 15 entries eac h due to less\naccessible public directories. Education data is missing for 404 of 450 r esearchers (89.8%),\nlimiting multivariate analyses to the focal subset. Table 2 shows t he distribution by company.\n4\nAcademic Origins and Research Impact at MAANG\nTable 2: Researcher distribution by company in MAANG-AI-450.\nCompany / Lab Count % of total\nGoogle Research / Brain / DeepMind 400 88.9\nMeta F AIR / AMI Labs 19 4.2\nApple ML Research 12 2.7\nAmazon Science / Alexa 9 2.0\nNetflix Research 2 0.4\nJoint / visiting 8 1.8\nT otal 450 100.0",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coverage And Limitations",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4af3a31942b44a2f168c760c252faba0f6dfc11dca79cf06b7982993f478868c",
+            "evidence_id": "E623dd0dbfa0200f5-B0019",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Coverage And Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 467,
+                "page": 5,
+                "section": "Coverage And Limitations",
+                "section_index": 13,
+                "start": 0,
+                "text": "The dataset captures a convenience sample biased towards senior, pub lic-facing researchers:\nGoogle Research's directory is self-selected and overrepresent s publication-active scientists.\nNetflix Research and Amazon Science contribute fewer than 15 entries eac h due to less\naccessible public directories. Education data is missing for 404 of 450 r esearchers (89.8%),\nlimiting multivariate analyses to the focal subset. Table 2 shows t he distribution by company.\n4"
+              },
+              {
+                "end": 327,
+                "page": 6,
+                "section": "Coverage And Limitations",
+                "section_index": 14,
+                "start": 0,
+                "text": "Academic Origins and Research Impact at MAANG\nTable 2: Researcher distribution by company in MAANG-AI-450.\nCompany / Lab Count % of total\nGoogle Research / Brain / DeepMind 400 88.9\nMeta F AIR / AMI Labs 19 4.2\nApple ML Research 12 2.7\nAmazon Science / Alexa 9 2.0\nNetflix Research 2 0.4\nJoint / visiting 8 1.8\nT otal 450 100.0"
+              }
+            ],
+            "text": "The dataset captures a convenience sample biased towards senior, pub lic-facing researchers:\nGoogle Research's directory is self-selected and overrepresent s publication-active scientists.\nNetflix Research and Amazon Science contribute fewer than 15 entries eac h due to less\naccessible public directories. Education data is missing for 404 of 450 r esearchers (89.8%),\nlimiting multivariate analyses to the focal subset. Table 2 shows t he distribution by company.\n4\nAcademic Origins and Research Impact at MAANG\nTable 2: Researcher distribution by company in MAANG-AI-450.\nCompany / Lab Count % of total\nGoogle Research / Brain / DeepMind 400 88.9\nMeta F AIR / AMI Labs 19 4.2\nApple ML Research 12 2.7\nAmazon Science / Alexa 9 2.0\nNetflix Research 2 0.4\nJoint / visiting 8 1.8\nT otal 450 100.0"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0020"
+        ],
+        "excerpt": "Among the 46 researchers with complete citation data, the distribution is highly right-skewed\n(Table 3). The most-cited researcher, Geoffrey Hinton (Google Brain; Nobe l Prize in Physics\n2024, shared), has accumulated 1,055,926 citations as of June 2026. The mean citation coun t\nacross all 46 is approximately 145,700 and the median is approximately 96,600, confir ming\nthe expected right skew.\nThe top five researchers (10.9% of the focal subset) account for 2.77 million citations out\nof a focal-subset total of 6.70 million\u201441.3% of the total. The top ten researche rs (21.7%)\naccount for 4.06 million citations, or 60.6% of the total. A reverse-Pareto analy sis reveals\nthat 39.1% of researchers (18 of 46) account for 80% of total citations.\nTo quantify inequality formally, we compute the Gini coefficient ov er the 46 citation\ncounts sorted in ascending order:\nG = 2 \u2211ni=1 i xi\nn \u2211ni=1 xi \u2212 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Citation Distribution",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "99dc3b19a47c2d5ee004c18888de08c6d0671e30d37dec99fd74ad4f1f69827b",
+            "evidence_id": "E623dd0dbfa0200f5-B0020",
+            "pages": [
+              6
+            ],
+            "section": "Citation Distribution",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "Citation Distribution",
+                "section_index": 15,
+                "start": 0,
+                "text": "Among the 46 researchers with complete citation data, the distribution is highly right-skewed\n(Table 3). The most-cited researcher, Geoffrey Hinton (Google Brain; Nobe l Prize in Physics\n2024, shared), has accumulated 1,055,926 citations as of June 2026. The mean citation coun t\nacross all 46 is approximately 145,700 and the median is approximately 96,600, confir ming\nthe expected right skew.\nThe top five researchers (10.9% of the focal subset) account for 2.77 million citations out\nof a focal-subset total of 6.70 million\u201441.3% of the total. The top ten researche rs (21.7%)\naccount for 4.06 million citations, or 60.6% of the total. A reverse-Pareto analy sis reveals\nthat 39.1% of researchers (18 of 46) account for 80% of total citations.\nTo quantify inequality formally, we compute the Gini coefficient ov er the 46 citation\ncounts sorted in ascending order:\nG = 2 \u2211ni=1 i xi\nn \u2211ni=1 xi \u2212 "
+              }
+            ],
+            "text": "Among the 46 researchers with complete citation data, the distribution is highly right-skewed\n(Table 3). The most-cited researcher, Geoffrey Hinton (Google Brain; Nobe l Prize in Physics\n2024, shared), has accumulated 1,055,926 citations as of June 2026. The mean citation coun t\nacross all 46 is approximately 145,700 and the median is approximately 96,600, confir ming\nthe expected right skew.\nThe top five researchers (10.9% of the focal subset) account for 2.77 million citations out\nof a focal-subset total of 6.70 million\u201441.3% of the total. The top ten researche rs (21.7%)\naccount for 4.06 million citations, or 60.6% of the total. A reverse-Pareto analy sis reveals\nthat 39.1% of researchers (18 of 46) account for 80% of total citations.\nTo quantify inequality formally, we compute the Gini coefficient ov er the 46 citation\ncounts sorted in ascending order:\nG = 2 \u2211ni=1 i xi\nn \u2211ni=1 xi \u2212 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0021"
+        ],
+        "excerpt": "n + 1n , (1)\nwhere xi is the i-th citation count (ascending) and n = 46. This yields G = 0.57, substantially\nhigher than income inequality in most developed economies (US Gini \u2248 0.41) and consistent\nwith the hyper-concentration typical of scientific output distrib utions (Lotka, 1926; Redner,\n1998). The finding is in line with prior observations that citation distri butions in science\nfollow a power law with Pareto-like concentration.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Citation Distribution",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fc078fefca95d98fa48850c5ffa779b25532a0b55c9a40923c58b91e14ba1d9e",
+            "evidence_id": "E623dd0dbfa0200f5-B0021",
+            "pages": [
+              6
+            ],
+            "section": "Citation Distribution",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1337,
+                "page": 6,
+                "section": "Citation Distribution",
+                "section_index": 15,
+                "start": 899,
+                "text": "n + 1n , (1)\nwhere xi is the i-th citation count (ascending) and n = 46. This yields G = 0.57, substantially\nhigher than income inequality in most developed economies (US Gini \u2248 0.41) and consistent\nwith the hyper-concentration typical of scientific output distrib utions (Lotka, 1926; Redner,\n1998). The finding is in line with prior observations that citation distri butions in science\nfollow a power law with Pareto-like concentration."
+              }
+            ],
+            "text": "n + 1n , (1)\nwhere xi is the i-th citation count (ascending) and n = 46. This yields G = 0.57, substantially\nhigher than income inequality in most developed economies (US Gini \u2248 0.41) and consistent\nwith the hyper-concentration typical of scientific output distrib utions (Lotka, 1926; Redner,\n1998). The finding is in line with prior observations that citation distri butions in science\nfollow a power law with Pareto-like concentration."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0022"
+        ],
+        "excerpt": "Table 4 lists PhD-granting institutions appearing more than once among t he 32 focal-subset\nresearchers with complete PhD records. Five institutions account for 14 of these 32 cases\n(43.8%): Universit\u00b4 e de Montr\u00b4 eal, Stanford, University of Toronto, MIT,and the Cambridge\u2013\nEdinburgh axis (researchers with Cambridge undergraduate and then Ed inburgh/UCL\ndoctorates, notably Hinton and Hassabis). This concentration at a small numb er of elite\nresearch universities mirrors the prestige hierarchy document ed for academic CS hiring\n(Clauset et al., 2015).\nThree high-citation outliers received PhDs at institutions not typ ically classified among\nthe world's top-ten CS programmes. Tom\u00b4 a\u02c7 s Mikolov (word2vec) earned aPhD from Brno\n5\nDhanda\nTable 3: Top ten researchers by Google Scholar citation count in the focal subset (June\n2026).\nName Company / Lab Citations PhD Institution\nGeoffrey Hinton ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Phd Institutional Origins",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3edfc745bc77a90439c9976dd98a79e691b87c8368273db75a911db93cabb864",
+            "evidence_id": "E623dd0dbfa0200f5-B0022",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Phd Institutional Origins",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 735,
+                "page": 6,
+                "section": "Phd Institutional Origins",
+                "section_index": 16,
+                "start": 0,
+                "text": "Table 4 lists PhD-granting institutions appearing more than once among t he 32 focal-subset\nresearchers with complete PhD records. Five institutions account for 14 of these 32 cases\n(43.8%): Universit\u00b4 e de Montr\u00b4 eal, Stanford, University of Toronto, MIT,and the Cambridge\u2013\nEdinburgh axis (researchers with Cambridge undergraduate and then Ed inburgh/UCL\ndoctorates, notably Hinton and Hassabis). This concentration at a small numb er of elite\nresearch universities mirrors the prestige hierarchy document ed for academic CS hiring\n(Clauset et al., 2015).\nThree high-citation outliers received PhDs at institutions not typ ically classified among\nthe world's top-ten CS programmes. Tom\u00b4 a\u02c7 s Mikolov (word2vec) earned aPhD from Brno\n5"
+              },
+              {
+                "end": 163,
+                "page": 7,
+                "section": "Phd Institutional Origins",
+                "section_index": 17,
+                "start": 0,
+                "text": "Dhanda\nTable 3: Top ten researchers by Google Scholar citation count in the focal subset (June\n2026).\nName Company / Lab Citations PhD Institution\nGeoffrey Hinton "
+              }
+            ],
+            "text": "Table 4 lists PhD-granting institutions appearing more than once among t he 32 focal-subset\nresearchers with complete PhD records. Five institutions account for 14 of these 32 cases\n(43.8%): Universit\u00b4 e de Montr\u00b4 eal, Stanford, University of Toronto, MIT,and the Cambridge\u2013\nEdinburgh axis (researchers with Cambridge undergraduate and then Ed inburgh/UCL\ndoctorates, notably Hinton and Hassabis). This concentration at a small numb er of elite\nresearch universities mirrors the prestige hierarchy document ed for academic CS hiring\n(Clauset et al., 2015).\nThree high-citation outliers received PhDs at institutions not typ ically classified among\nthe world's top-ten CS programmes. Tom\u00b4 a\u02c7 s Mikolov (word2vec) earned aPhD from Brno\n5\nDhanda\nTable 3: Top ten researchers by Google Scholar citation count in the focal subset (June\n2026).\nName Company / Lab Citations PhD Institution\nGeoffrey Hinton "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0024"
+        ],
+        "excerpt": "MIT 2\nCambridge / Edinburgh / UCL (UK) 2\nOther (one each) 21\nUniversity of Technology (Czech Republic) and reached 200,925 citations; Al ex Smola earned\na PhD from TU Berlin and reached 220,414; Koray Kavukcuoglu earned a PhD from NYU\nand reached 335,930. All three were subsequently hired into top-tier in dustrial labs (Meta\nF AIR, Amazon, Google DeepMind). These cases are consistent with \u2014though do not causally\nestablish\u2014Way et al.'s finding that current environment is associat ed with long-run research\nprominence; researcher-level talent selection into elite labs r emains a competing explanation.\nFuture work using a matched pre/post design (e.g., publication output before and after\njoining industry) would be needed to disentangle the two mechanis ms. Institutional prestige\ncould also be quantified using field-normalised CSRankings scores (Cl auset et al., 2015)\nrather than the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mit 2",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0ee5771614ed290b38956249d66a0e9d98ab31228e77f504bd97dfb4fc6ecd51",
+            "evidence_id": "E623dd0dbfa0200f5-B0024",
+            "pages": [
+              7
+            ],
+            "section": "Mit 2",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 7,
+                "section": "Mit 2",
+                "section_index": 18,
+                "start": 0,
+                "text": "MIT 2\nCambridge / Edinburgh / UCL (UK) 2\nOther (one each) 21\nUniversity of Technology (Czech Republic) and reached 200,925 citations; Al ex Smola earned\na PhD from TU Berlin and reached 220,414; Koray Kavukcuoglu earned a PhD from NYU\nand reached 335,930. All three were subsequently hired into top-tier in dustrial labs (Meta\nF AIR, Amazon, Google DeepMind). These cases are consistent with \u2014though do not causally\nestablish\u2014Way et al.'s finding that current environment is associat ed with long-run research\nprominence; researcher-level talent selection into elite labs r emains a competing explanation.\nFuture work using a matched pre/post design (e.g., publication output before and after\njoining industry) would be needed to disentangle the two mechanis ms. Institutional prestige\ncould also be quantified using field-normalised CSRankings scores (Cl auset et al., 2015)\nrather than the "
+              }
+            ],
+            "text": "MIT 2\nCambridge / Edinburgh / UCL (UK) 2\nOther (one each) 21\nUniversity of Technology (Czech Republic) and reached 200,925 citations; Al ex Smola earned\na PhD from TU Berlin and reached 220,414; Koray Kavukcuoglu earned a PhD from NYU\nand reached 335,930. All three were subsequently hired into top-tier in dustrial labs (Meta\nF AIR, Amazon, Google DeepMind). These cases are consistent with \u2014though do not causally\nestablish\u2014Way et al.'s finding that current environment is associat ed with long-run research\nprominence; researcher-level talent selection into elite labs r emains a competing explanation.\nFuture work using a matched pre/post design (e.g., publication output before and after\njoining industry) would be needed to disentangle the two mechanis ms. Institutional prestige\ncould also be quantified using field-normalised CSRankings scores (Cl auset et al., 2015)\nrather than the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0033"
+        ],
+        "excerpt": "The dataset has four major limitations. (1) Company imbalance: Google Research\nis overrepresented (88.9% of entries) due to the accessibility of i ts public directory; the\nlabel \"MAANG\" is therefore aspirational rather than descriptive of balanced coverage.\nFuture work should extend to Microsoft Research, OpenAI, NVIDIA Rese arch, Anthropic,\nand IBM Research. (2) Education missingness: education data is absent for 89.8%\nof researchers, restricting multivariate analyses to the focal sub set and raising concerns\nabout selection bias (biographical pages exist primarily for prominent re searchers). (3)\nCitation proxy: citation counts are a noisy proxy for research impact and are field-inflate d\nfor NLP and computer vision relative to algorithm theory or hardware research . (4) No\nstatistical models: the analysis is descriptive. Adding regression models of the form\nlog(citations) \u223c PhD rank ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations And F Uture W Ork",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "bb67bc7e543635266d45bad99f7fd6127f0e4e57c741c074a28deb435dd99526",
+            "evidence_id": "E623dd0dbfa0200f5-B0033",
+            "pages": [
+              9
+            ],
+            "section": "Limitations And F Uture W Ork",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 9,
+                "section": "Limitations And F Uture W Ork",
+                "section_index": 25,
+                "start": 0,
+                "text": "The dataset has four major limitations. (1) Company imbalance: Google Research\nis overrepresented (88.9% of entries) due to the accessibility of i ts public directory; the\nlabel \"MAANG\" is therefore aspirational rather than descriptive of balanced coverage.\nFuture work should extend to Microsoft Research, OpenAI, NVIDIA Rese arch, Anthropic,\nand IBM Research. (2) Education missingness: education data is absent for 89.8%\nof researchers, restricting multivariate analyses to the focal sub set and raising concerns\nabout selection bias (biographical pages exist primarily for prominent re searchers). (3)\nCitation proxy: citation counts are a noisy proxy for research impact and are field-inflate d\nfor NLP and computer vision relative to algorithm theory or hardware research . (4) No\nstatistical models: the analysis is descriptive. Adding regression models of the form\nlog(citations) \u223c PhD rank "
+              }
+            ],
+            "text": "The dataset has four major limitations. (1) Company imbalance: Google Research\nis overrepresented (88.9% of entries) due to the accessibility of i ts public directory; the\nlabel \"MAANG\" is therefore aspirational rather than descriptive of balanced coverage.\nFuture work should extend to Microsoft Research, OpenAI, NVIDIA Rese arch, Anthropic,\nand IBM Research. (2) Education missingness: education data is absent for 89.8%\nof researchers, restricting multivariate analyses to the focal sub set and raising concerns\nabout selection bias (biographical pages exist primarily for prominent re searchers). (3)\nCitation proxy: citation counts are a noisy proxy for research impact and are field-inflate d\nfor NLP and computer vision relative to algorithm theory or hardware research . (4) No\nstatistical models: the analysis is descriptive. Adding regression models of the form\nlog(citations) \u223c PhD rank "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://www.researchsquare.com/article/rs-10145541/latest.pdf",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "methods_or_algorithm",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The empirical base is a heavily skewed convenience sample: 88.9% of entries come from Google Research's self-selected public directory, and education data are missing for 89.8% of the 450 records, leaving only 46 senior, public-facing researchers for the substantive analysis.",
+          "The analysis is purely descriptive with no statistical models or causal identification, so claims about brain drain, environment-versus-training effects, and industry-wide mobility are not established beyond qualitative consistency with prior work."
+        ],
+        "canonical_id": "doi:10.21203/rs.3.rs-10145541/v1",
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No iterative model optimization, tuning, or learned evaluator is used in this descriptive bibliometric study.",
+          "final_evaluation_signal": "Descriptive statistics computed directly over the curated focal subset using Google Scholar citation counts and institutional tallies.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Manual scraping, filtering, and curation criteria based on public directory presence and Google Scholar search labels.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0002",
+          "E623dd0dbfa0200f5-B0007",
+          "E623dd0dbfa0200f5-B0013",
+          "E623dd0dbfa0200f5-B0014",
+          "E623dd0dbfa0200f5-B0016",
+          "E623dd0dbfa0200f5-B0019",
+          "E623dd0dbfa0200f5-B0020",
+          "E623dd0dbfa0200f5-B0021",
+          "E623dd0dbfa0200f5-B0022",
+          "E623dd0dbfa0200f5-B0024",
+          "E623dd0dbfa0200f5-B0033"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "086e16c6748c45d80e5a037bf46ad7cf8ea7bc19e38bd973f236e489c1e05616"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.21203/rs.3.rs-10145541/v1",
+        "claim_evidence_alignment": "While broad claims regarding the 'brain drain' and the effects of environment versus training are framed carefully as qualitative patterns, the tiny and highly selected sample of 46 individuals cannot reliably substantiate conclusions about industry-wide research mobility or impact dynamics.",
+        "context_id": "623dd0dbfa0200f5b5d6bce5eb6dbb5361ecaa6eec4c31e99e18778ca18a9bdf",
+        "decision": "uncertain",
+        "evaluation_assessment": "The empirical evaluation is limited to elementary descriptive statistics (Gini coefficient, top-N shares, institutional frequency counts) on a highly non-random focal subset of 46 senior, public-facing researchers, with no formal statistical modeling or causal identification.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No iterative model optimization, tuning, or learned evaluator is utilized in this purely descriptive bibliometric study.",
+          "final_evaluation_signal": "Descriptive statistics computed directly over the curated focal subset (Google Scholar citation counts and institutional tallies).",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Manual scraping, filtering, and curation criteria based on public directory presence and Google Scholar search labels.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E623dd0dbfa0200f5-B0002",
+          "E623dd0dbfa0200f5-B0007",
+          "E623dd0dbfa0200f5-B0013",
+          "E623dd0dbfa0200f5-B0014",
+          "E623dd0dbfa0200f5-B0016",
+          "E623dd0dbfa0200f5-B0019",
+          "E623dd0dbfa0200f5-B0020",
+          "E623dd0dbfa0200f5-B0021",
+          "E623dd0dbfa0200f5-B0022",
+          "E623dd0dbfa0200f5-B0024",
+          "E623dd0dbfa0200f5-B0033"
+        ],
+        "limitations": "The author transparently notes extreme company imbalance, substantial missing educational data, reliance on unadjusted Google Scholar citations, and the lack of inferential regression models.",
+        "method_assessment": "The methodology consists of opportunistic web scraping from Google Research directory pages and targeted Google Scholar label queries, leading to severe sampling bias (88.9% Google affiliates) and 89.8% missingness in education data across the 450 records.",
+        "quality_rationale": "The study provides basic descriptive tabulations on a heavily skewed convenience sample with nearly 90% missing educational data. Because the empirical base is small and non-representative, scientific confidence in broader conclusions is limited, justifying an uncertain rating.",
+        "scoped_contribution": "The manuscript presents MAANG-AI-450, a descriptive dataset of 450 AI researchers across major technology companies, alongside a summary analysis of citation distributions and educational backgrounds for a focal subset of 46 researchers.",
+        "source_content_hash": "086e16c6748c45d80e5a037bf46ad7cf8ea7bc19e38bd973f236e489c1e05616"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study provides basic descriptive tabulations on a heavily skewed convenience sample with nearly 90% missing educational data. Because the empirical base is small and non-representative, scientific confidence in broader conclusions is limited, justifying an uncertain rating.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "086e16c6748c45d80e5a037bf46ad7cf8ea7bc19e38bd973f236e489c1e05616",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The author transparently notes extreme company imbalance, substantial missing educational data, reliance on unadjusted Google Scholar citations, and the lack of inferential regression models."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -153,7 +1326,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -59,16 +59,259 @@
             <p>Long-term memory enables large language model (LLM) agents to maintain personalized and temporally coherent interactions, but repeated LLM inference for memory admission, extraction, and organization introduces substantial cost and latency. We present SLICE-Mem, a lightweight memory framework that combines salience-...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers a rigorous, well-controlled evaluation of an efficient long-term memory architecture with detailed ablations, honest discussion of negative or mixed consolidation impacts, and clear methodological documentation.</p>
+      <p>The authors transparently document limitations, including restriction to user turns, performance plateaus/drops from offline consolidation on certain tasks, lack of heterogeneous external document support, and reliance on proxy diagnostics.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-02T12:03:13.404791+00:00.</p>
+        <p>Coverage: 87917 of 87917 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>modifiers, then assembles the
+corresponding text spans into concise memory entries. This process preserves surface evidence and
+turn-level provenance without generative LLM calls during online admission or extraction. Of-
+fline consolidation subsequently addresses redundancy and conflicting information through relation
+classification and entry-status updates while preserving the original memory text. We evaluate
+SLICE-Mem on Memora Weekly and LongMemEval-S using 8B and 30B Qwen backbones for
+memory construction and consolidation, with answer generation and judging held fixed. In the 30B
+comparison, the online pipeline achieves 46.60 versus 46.68 F AMA on Memora Weekly and 56.8%
+versus 59.3% accuracy on LongMemEval-S relative to the generative-memory baseline MemOS [16].
+It reduces total LLM token consumption by 92.4% and 99.5% and reported memory-construction
+time by 84.8% and 61.0%, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>respectively. Separate evaluation of the online and consolidated states
+reveals task- and backbone-dependent effects of consolidation. Together, these results demonstrate
+a favorable effectiveness–cost trade-off for selective, non-generative memory formation while high-
+lighting the need for evidence-preserving consolidation.
+Our main contributions are threefold:
+•We develop a compact Salience Gate that learns context-aware memory admission from
+consensus-based LLM annotations and released admission labels, filtering user turns before
+extraction and embedding without generative LLM inference at deployment.
+•We design a deterministic, semantic-dependency-guided extractor that converts admitted
+turns into concise memory entries while preserving surface evidence and turn-level provenance.
+Together with the Gate, it enables online memory formation without generative LLM calls.
+•We evaluate </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As illustrated in Figure 1, SLICE-Mem separates online memory formation from offline consoli-
+dation. Given a dialogueU= (u 1, . . . , uT ), with speaker, text, and timestamp for each turn, the
+online pipeline admits informative user turns, extracts predicate-centered statements, and inserts
+their embeddings with timestamp and provenance. Admission and extraction use a compact clas-
+sifier and deterministic linguistic rules without generative LLM calls. Consolidation subsequently
+reconciles relations among stored entries without rewriting their text.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Gate predicts whether retaining a user turn may support future continuity, personalization,
+factual consistency, or plan completion. For a target user turnu t, letH (k)t contain up tokim-
+mediately preceding dialogue messages. We constructz t = Pack(H (k)t , ut), using explicit markers
+to distinguish the context from the target. The Gate encodes this input and predicts admission
+through a single-logit classification head:
+pt =σ
 
-        <ul></ul>
+w⊤ Encθ(zt) +b  , g(u t) =1[p t ≥τ g].(1)
+Here, Encθ(zt)∈R d is thed-dimensional pooled input representation produced by the encoder with
+parametersθ, andw∈R d andb∈Rare the learnable classification-head parameters. The sigmoid
+functionσmaps the logit top t, the estimated probability that the target turn merits retention
+given its context. The admission thresholdτ g determines whether the turn proceeds to extraction:
+the indicator function1[·] returns 1 </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We use HanLP [10], an NLP toolkit, to obtain tokenization, part-of-speech tags, named entities,
+and semantic dependencies for each admitted user turn. Based on these analyses, deterministic
+4
+rules divide the turn into clauses and select predicates with informative arguments and modifiers.
+For a candidate predicatep, the score is
+S(p) =
+X
+r∈R
+αrIr(p) +B(p)−P(p),(2)
+whereI r(p) indicates the presence of an outgoing relation in semantic role groupr,α r is its fixed
+weight, andBandPencode content-cue bonuses and structural penalties. Role groups cover
+patients or objects, actors, time, purpose/reason/condition, and location. Appendix A.3 details
+selection and realization; numerical settings are collected in Appendix B.1.
+For each selected predicate, the extractor follows semantic dependencies to identify its argu-
+ments and modifiers, extending the text span when needed to retain important </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>entities and quan-
+tities. It then takes the corresponding contiguous span from the source, preserving the original
+word order. Deterministic rules convert first-person expressions into user-attributed statements
+and restore missing subjects or omitted source content where possible. These operations require no
+generative LLM calls. Related or overlapping units may be merged to preserve context, and units
+exceeding the per-turn limit are combined rather than discarded. A coverage check measures how
+much content from the cleaned source remains in the extracted text. If coverage is insufficient or no
+usable unit is produced, the extractor attempts to retain a normalized version of the cleaned source
+instead. This fallback reduces information loss, although some turns may still yield no entry. The
+extracted units are concatenated in order intom t = Concat(ft,1, . . . , ft,nt), wheref t,i </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>After online memory construction, SLICE-Mem performs offline consolidation to identify redun-
+dant or outdated information among stored entries [7, 22]. It updates entry statuses to guide sub-
+sequent retrieval while preserving the original text, embeddings, and timestamps, without deleting
+or rewriting memories.
+The procedure begins with deterministic rules for clear duplicates and changes in mutually
+exclusive personal attributes. Duplicate detection considers whether entries refer to the same
+occurrence, so similar descriptions of separate events remain available. State changes are processed
+in timestamp order, allowing a return to an earlier value to be retained as a new transition. For
+entries that remain active, the system retrieves similar candidates whose message timestamps are no
+later than the target&#x27;s. A LLM then classifies the relation between the target and each </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>candidate.
+The four possible decisions areignore, which leaves the entries unchanged,dedup, which marks
+the later duplicate as redundant,supersede, which marks the older entry as outdated and links it
+to its replacement, andqualify, which records a compatible relation while retaining both entries.
+Before applying a decision that would exclude an entry from ordinary retrieval, the system checks
+the stated relation, its scope, and supporting text from the target. Unsupported decisions are
+ignored. Additional checks enforce consistent status changes and replacement links. The prompt
+also directs the model to retain complementary information and avoid replacing an entire entry
+when only part of its content conflicts. Subsequent retrieval normally uses active entries. Questions
+matching predefined temporal or state-change cues can additionally retrieve outdated entries and
+follow their </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarks and baselines.We evaluate on Memora Weekly [25] and LongMemEval-S [27],
+comparing SLICE-Mem with LangMem [14], A-MEM [30], Mem0 [6], MemOS [16], and Light-
+Mem [8]. The quarterly subset of Memora contributes Gate supervision, while the weekly subset
+is used for end-to-end evaluation. Supervision construction and split handling are described in
+Appendix A.1; model configurations and evaluation settings are detailed in Appendix B.1.
+Experimental settings.We evaluate memory construction and consolidation using 8B and 30B
+Qwen backbones, while fixing answer generation to Qwen3-30B-A3B-Instruct-2507 and judging to
+GPT-OSS-20B. The construction backbones are used only by LLM-dependent components and
+their paired consolidators. SLICE-Mem Online and the variant without the Salience Gate do not
+use a generative construction backbone. For each benchmark, we reuse one fixed evaluation </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Tables 1 and 2 compare effectiveness and efficiency on Memora Weekly and LongMemEval-S under
+the 30B and 8B construction settings, with answer generation and judging held fixed. We report
+the online and consolidated states separately. All costs reported for the consolidated state include
+both online memory construction and offline consolidation; total LLM tokens additionally include
+answer generation. The online scores are from separate QA runs rather than matched reruns of the
+consolidated states; the comparison protocol and its limits are described in Appendix B.2.
+6
+Memora W eekly .At theτ g = 0.2 operating point selected by the nine-threshold end-to-end
+sweep (Appendix C.3), SLICE-Mem&#x27;s separate main-table evaluation under the shared 30720-token
+QA context achieves 46.60 F AMA in both the 30B and 8B comparisons. This is 0.08 points below
+MemOS in the 30B block and 3.22 points above </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MemOS in the 8B block. These results are
+obtained without generative LLM calls for online admission or extraction. In the 30B comparison,
+SLICE-Mem uses 0.536M total LLM tokens and reports 0.362 h of parsing-plus-embedding time,
+compared with 7.009M tokens and 2.378 h for MemOS, reducing token consumption by 92.4%
+and the compared time values by 84.8%. Relative to LightMem, the online pipeline reduces total
+tokens by 79.2% and 83.4% and reported construction time by 64.5% and 76.0% in the 30B and 8B
+comparisons, respectively. These are comparisons of recorded implementation-stage timings, not
+uniformly instrumented end-to-end latency; Appendix B.2 details the accounting boundary.
+After consolidation, F AMA is 46.74 with the 30B consolidator and 47.29 with the 8B consolida-
+tor. The corresponding combined construction-and-consolidation times are 0.874 and 0.819 h, with
+2532 consolidation </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>construction does not depend on a generative backbone. Its 0.913M total
+tokens consist entirely of answer-generation input and output, and its reported construction time is
+31.679 h. Relative to MemOS in the 30B comparison, these represent reductions of 99.5% in total
+tokens and 61.0% in construction time. Relative to A-MEM in the 8B comparison, the reductions
+are 99.6% and 27.3%, respectively. The Gate, dependency parser, and embedding model still incur
+computation; eliminating generative construction calls therefore does not imply zero construction
+cost.
+The consolidated state reaches 56.0% accuracy with both backbones, compared with 56.8% for
+the online evaluation. The 30B consolidated state uses 57.650M total tokens and 59762 construc-
+tion/consolidation calls, 44.7% and 51.9% below LightMem, respectively, while achieving 5.2 per-
+centage points higher accuracy. The 8B consolidated </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Does the Gate retain useful evidence?At the deployed operating point, the Gate retains
+28.1% of Memora Weekly user turns, filtering approximately 72% of candidates before parsing
+7
+Table 1: Effectiveness and stage-wise cost on Memora Weekly. Summary, Update, and QA report
+input/output tokens in millions (M); QA denotes answer generation. Bold and underlined values
+indicate the best and second-best effectiveness or cost within each block. SLICE-Mem Online and
+w/o Salience Gate share one fixed evaluation per method across blocks. – indicates no value for
+the metric and + Consolidation includes the online and offline stages.
+Method F AMA↑ Summary (M) Update (M) QA (M) Total (M)↓Calls↓Time (h)↓
+In Out In Out In Out
+Qwen3-30B-A3B-Instruct-2507
+LangMem 24.05 5.339 0.675 6.484 1.067 1.929 0.057 15.551 3039 10.639
+A-Mem 35.67 0.858 0.193 4.985 0.984 2.9990.04810.067 2732 3.777
+Mem0 43.08 13.780 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.819
+w/o Salience Gate 43.610 0– – 0.457 0.0590.516 00.761
+w/o Extractor 44.05 0.629 0.100 – – 0.431 0.061 1.221 1345 0.358
+w/o Both 46.48 1.171 0.239 – – 0.430 0.059 1.899 1566 0.835
+and embedding. The shared online evaluation achieves 46.60 F AMA in both comparison blocks
+(Table 1). Retention alone does not establish evidence quality: the end-to-end threshold scan in
+Table 5 directly tests how more aggressive filtering affects downstream performance. Together,
+these results show that substantial filtering can preserve competitive answer quality, while the
+sensitivity analysis identifies the cost of discarding additional turns.
+Independent validation of salience judgments.On a disjoint, human-annotated set of 150
+turns, the selected Gate configuration achieves an AUPRC of 0.898±0.021 over three training seeds.
+Human and teacher admission decisions agree on 140 examples (93.3%). The </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>context window
+is selected using Gate validation loss, not the human-audit scores. This provides independent
+evidence for the learned admission signal, although the audit uses one annotator and stratified
+sampling rather than the natural stream distribution. Context-dependent turns remain harder: a
+representative model obtains AUPRC 0.844 on those turns versus 0.935 on self-contained turns.
+8
+Table 2: Effectiveness and stage-wise cost on LongMemEval-S. Summary, Update, and QA report
+input/output tokens in millions (M); QA denotes answer generation. Bold and underlined values
+indicate the best and second-best effectiveness or cost within each block.
+Method Acc. (%)↑ Summary (M) Update (M) QA (M) Total (M)↓Calls↓Time (h)↓
+In Out In Out In Out
+Qwen3-30B-A3B-Instruct-2507
+LangMem 23.6 127.598 11.619 142.472 24.825 3.252 0.060 309.827 47634 300.459
+A-Mem 56.8 58.789 4.226 136.010 6.753 12.385 </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Contributions of Gate and Extractor.Here,w/o Gateprocesses all candidate user turns with
+the deterministic extractor;w/o Extractorretains the Gate but replaces deterministic extraction
+9
+with LLM-based extraction;w/o Bothomits the Gate and uses LLM-based extraction. Thus,
+removing the Extractor does not mean storing raw turns. In the 30B Memora block, removing both
+components yields 44.64 F AMA and retaining only the Gate yields 48.02. The shared non-generative
+evaluations obtain 43.61 with the dependency extractor alone and 46.60 with both components. In
+the 8B comparison, neither component alone improves on the 46.48 no-component configuration,
+whereas their combination reaches 46.60. Thus, the effectiveness gains from individual components
+are not uniform across the paired comparisons. The cost effects are clearer: the Gate-only variants
+still invoke generative extraction, while the </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SLICE-Mem separates the cost of forming useful memories online from the cost and risks of later
+reconciliation. Against the five baseline frameworks in Tables 1 and 2, the results show that
+selective admission and deterministic extraction can preserve competitive downstream performance
+with substantially fewer generative calls and tokens. They do not establish a universal runtime
+advantage, and the total cost of a consolidated system must include its offline stage. Component
+training and teacher annotation are additional preparation costs outside the reported operational
+comparisons.
+10
+Consolidation is not uniformly beneficial. Status-based suppression can restrict retrieval of
+useful historical evidence even when the original text remains stored. The Memora 30B and 8B
+results differ, motivating policies that preserve complementary episodes and defer uncertain relation
+decisions. The </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evaluation measures downstream effectiveness and operational cost, but does not
+isolate the effects of individual relation decisions or quantify changes in store compactness.
+The present pipeline admits only user turns, limiting coverage of assistant-authored evidence.
+The one-annotator Gate audit and automatic extractor diagnostics at the deployedτ g = 0.2 do not
+establish proposition-level factuality or complete coreference resolution. The fixed HanLP parser
+and extraction rules have not been systematically stress-tested under domain shift, disfluency, or
+controlled parser errors. The threshold is selected from a full nine-point end-to-end sweep on
+Memora Weekly, also used for reporting. Exact-string de-duplication does not rule out semantic
+overlap. Evaluation is limited to two dialogue-memory benchmarks, without heterogeneous-source
+testing such as RHELM [34].</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Multi-Session
+Chat (MSC) [29], ESConv [18], Conversation Chronicles [12], Life Event Dialog (LED) [5], and
+Taskmaster-2 [3]. Each dataset contributes 300 examples, split into 240 training and 60 validation
+examples. Candidate user turns are independently annotated by DeepSeek-V4-Pro, GLM-5.2, and
+Kimi-K2.6 using the protocol above. The second source contains 500 hard-labeled examples derived
+directly from the releasedshare memoryannotations in the quarterly subset of Memora [25]. We
+sample 50 examples for each of ten personas, with 40 for training and 10 for validation, and keep
+each conversation group within a single split. User turns of at most 60 characters that exactly match
+a user utterance in the weekly or monthly subsets are discarded and replaced from the remaining
+pool to reduce the over-representation of shared boilerplate. The overlap filter targets short exact
+matches across </blockquote></details></li><li><strong>Contribution clarity — pages 22–23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and hardware.Published baseline numbers are not reused because their
+hardware, model endpoints, and accounting conventions differ from ours. All methods are rerun
+on the same benchmark inputs, using official implementations and method-specific configurations
+where available. We use Qwen3-30B-A3B-Instruct-2507 as the answer-generation model for every
+system and GPT-OSS-20B as the fixed judge. For LLM-dependent memory construction, we evalu-
+ate Qwen3-30B-A3B-Instruct-2507 and Qwen3-8B; offline consolidation uses the model scale paired
+22
+with the corresponding construction setting. The Salience Gate and dependency extractor are un-
+changed across these settings. We standardize the evaluation prompt and, where architectures
+permit, the retrieval budget, while preserving method-specific construction logic. API calls, token
+usage, and construction-stage runtimes are collected from the </blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>accuracy is the proportion of correctly answered questions. Open-ended answers are graded
+by GPT-OSS-20B using a fixed evaluation prompt.
+We report three operational cost measures.Callscounts generative LLM invocations during
+memory construction and consolidation, excluding answer generation and judging. Token consump-
+tion is separated into Summary, Update, and QA input/output tokens. Main-table token counts
+are in millions (M), summed across the evaluated personas or groups; Total includes all three stages
+and excludes judging. Totals are calculated from unrounded counts. LightMem&#x27;s construction costs
+include its online and offline update stages.Runtimereports construction-stage time recorded in
+the evaluation runs, with offline reconciliation added for consolidated rows. These measurements
+describe the recorded memory-processing stages rather than the latency of answer generation </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We construct an independent human-annotated set of 150 user turns from the five conversational
+datasets, with 30 examples per source. Sampling is stratified by context dependence and teacher
+agreement. The set is disjoint from the Gate training and validation data. One annotator inde-
+pendently applies the same admission criteria, yielding 84 positive examples. This set is used only
+for component-level evaluation and is excluded from training, early stopping, context-window se-
+lection, and operating-threshold selection. We report AUPRC and fixed-threshold precision, recall,
+F1, and macro-F1. Confidence intervals for window comparisons use paired bootstrap resampling
+of the same 150 examples (10000 resamples), with predictions averaged across seeds.
+Independent human evaluation.Table 4 reports performance on the independent 150-example
+human-annotated set. Values are means and standard </blockquote></details></li><li><strong>Contribution clarity — pages 24–25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>deviations over three training seeds, and the
+reporting threshold is fixed at 0.5. The human annotations are not used for training, early stopping,
+context-window selection, or operating-threshold selection. Using paired bootstrap resampling on
+the same 150 examples and predictions averaged across seeds,k= 1 improves AUPRC overk= 3 by
+0.043, with a 95% confidence interval of [0.007,0.085]. Relative tok= 5, the AUPRC difference is
+0.026 and its confidence interval includes zero, whereas the F1 difference is 0.100 and its confidence
+interval excludes zero. Human and teacher admission decisions agree on 140 of 150 examples
+24
+(93.3%). For a representativek= 1 seed, AUPRC is 0.935 on context-self-contained turns and
+0.844 on context-dependent turns. The human set has 84 positive examples (56%) because it
+is stratified for auditing rather than sampled to match the natural class distribution. </blockquote></details></li><li><strong>Contribution clarity — page 25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>False rejections remove evidence from all subsequent processing, so the sweep includes high-recall
+operating points. We evaluate the complete memory-and-QA pipeline at all nine thresholdsτ g ∈
+{0.1,0.2, . . . ,0.9}on the same Memora Weekly stream of 11860 candidate user turns. We use
+τg = 0.2 in the main comparisons because it yields the highest overall F AMA in this end-to-end
+sweep. LongMemEval-S uses the same threshold without separate tuning. Reporting all nine
+settings makes the selection transparent but does not provide an independent test of the selected
+operating point on Memora Weekly; a separate QA run on the same benchmark does not create
+a held-out dataset. Table 5 reports downstream performance and computational cost for all nine
+settings. Atτ g = 0.2, the sweep obtains 48.54 F AMA, retains 28.1% of candidate turns, and
+records 0.362 h of parsing-plus-embedding time. For </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +350,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

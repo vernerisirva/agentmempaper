@@ -39,7 +39,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-26 13:01:43",
-    "generated_at": "2026-11-01 12:01:57",
+    "generated_at": "2026-11-02 12:04:11",
     "last_seen_at": "2026-06-26 20:43:53",
     "metadata_sources": [
       "openalex",
@@ -111,36 +111,792 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-11-02T12:02:57.244250+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Manuscript identity or acquisition provenance is unverified.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 43910,
+      "assessment_input_sha256": "41281ecd095522b1f8c73d54aa6bd802b3bfa6989e6b070e91f53b20f02dd557",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 42524,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 42006,
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 42544,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "extracted_pages": 11,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "daa099d52d3c5febdf3b0225255adc511306068ec58c85bca8b6d77e1dc65d82",
+        "source_url": "https://arxiv.org/pdf/2606.21144",
+        "verified": false
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 42524,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Adamem: Learning What To Remember With Adaptive Memory Policies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 304,
+          "supplied_characters": 304
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1473,
+          "supplied_characters": 1473
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2343,
+          "supplied_characters": 2343
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2193,
+          "supplied_characters": 2193
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 1162,
+          "supplied_characters": 1162
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 875,
+          "supplied_characters": 875
+        },
+        {
+          "heading": "Design Principles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1013,
+          "supplied_characters": 1013
+        },
+        {
+          "heading": "Formalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1808,
+          "supplied_characters": 1808
+        },
+        {
+          "heading": "Task Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 197,
+          "supplied_characters": 197
+        },
+        {
+          "heading": "Task Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 866,
+          "supplied_characters": 866
+        },
+        {
+          "heading": "Data Generation And Annotations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 876,
+          "supplied_characters": 876
+        },
+        {
+          "heading": "Design For Memory Write Control",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1575,
+          "supplied_characters": 1575
+        },
+        {
+          "heading": "Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 438,
+          "supplied_characters": 438
+        },
+        {
+          "heading": "Extractor Feedback Qa Accuracy\u2206Memory Volume",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 859,
+          "supplied_characters": 859
+        },
+        {
+          "heading": "Main Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 441,
+          "supplied_characters": 441
+        },
+        {
+          "heading": "Extraction And Update Cadence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 695,
+          "supplied_characters": 695
+        },
+        {
+          "heading": "Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 404,
+          "supplied_characters": 404
+        },
+        {
+          "heading": "Main Results: Overall Effectiveness",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 1365,
+          "supplied_characters": 1365
+        },
+        {
+          "heading": "Extractor Feedback Extraction F1 Recall@5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 343,
+          "supplied_characters": 343
+        },
+        {
+          "heading": "Memory Write-Control Behavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 3854,
+          "supplied_characters": 3854
+        },
+        {
+          "heading": "Memory Write-Control Behavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1272,
+          "supplied_characters": 1272
+        },
+        {
+          "heading": "Robustness Of The Main Comparison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1537,
+          "supplied_characters": 1537
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 22,
+          "source_characters": 892,
+          "supplied_characters": 892
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "limitations",
+          "section_index": 23,
+          "source_characters": 1167,
+          "supplied_characters": 1167
+        },
+        {
+          "heading": "This Work Was Conducted While Xingyu Chen Was",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "An Intern At Tencent And Was Supported By The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "Tencent Rhino-Bird Research Program (Project",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 71,
+          "supplied_characters": 71
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Production-Ready Ai Agents With Scalable Long-Term",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 394,
+          "supplied_characters": 394
+        },
+        {
+          "heading": "Personalization For Multimodal Large Language Mod-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 308,
+          "supplied_characters": 308
+        },
+        {
+          "heading": "Ing Long-Horizon Memory For Multi-Party Collabora-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 541,
+          "supplied_characters": 541
+        },
+        {
+          "heading": "Retrieval-Augmented Generation For Knowledge-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 251,
+          "supplied_characters": 251
+        },
+        {
+          "heading": "Self-Evolving Memory Architecture Via Autoresearch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 32,
+          "source_characters": 269,
+          "supplied_characters": 269
+        },
+        {
+          "heading": "What Deserves Memory: Adaptive Memory Distil-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 94,
+          "supplied_characters": 94
+        },
+        {
+          "heading": "Annual Meeting Of The Association For Computational",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 1360,
+          "supplied_characters": 1360
+        },
+        {
+          "heading": "Annual Acm Symposium On User Interface Software",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 63,
+          "supplied_characters": 63
+        },
+        {
+          "heading": "Annual Acm Symposium On User Interface Software",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 5228,
+          "supplied_characters": 5228
+        },
+        {
+          "heading": "Qa Judge Mem0 Adamem\u220695% Ci Wins",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 3179,
+          "supplied_characters": 3179
+        },
+        {
+          "heading": "Appendix: Data Quality Control",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 923,
+          "supplied_characters": 923
+        },
+        {
+          "heading": "Appendix: Data Quality Control",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 1185,
+          "supplied_characters": 1185
+        }
+      ],
+      "selected_characters": 42006,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_sections": [
+        {
+          "characters": 304,
+          "heading": "Adamem: Learning What To Remember With Adaptive Memory Policies",
+          "page": 1
+        },
+        {
+          "characters": 1473,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2343,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2193,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1162,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 875,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1013,
+          "heading": "Design Principles",
+          "page": 3
+        },
+        {
+          "characters": 1808,
+          "heading": "Formalization",
+          "page": 3
+        },
+        {
+          "characters": 197,
+          "heading": "Task Format",
+          "page": 3
+        },
+        {
+          "characters": 866,
+          "heading": "Task Format",
+          "page": 4
+        },
+        {
+          "characters": 876,
+          "heading": "Data Generation And Annotations",
+          "page": 4
+        },
+        {
+          "characters": 1575,
+          "heading": "Design For Memory Write Control",
+          "page": 4
+        },
+        {
+          "characters": 438,
+          "heading": "Methods",
+          "page": 4
+        },
+        {
+          "characters": 859,
+          "heading": "Extractor Feedback Qa Accuracy\u2206Memory Volume",
+          "page": 5
+        },
+        {
+          "characters": 441,
+          "heading": "Main Evaluation",
+          "page": 5
+        },
+        {
+          "characters": 695,
+          "heading": "Extraction And Update Cadence",
+          "page": 5
+        },
+        {
+          "characters": 404,
+          "heading": "Metrics",
+          "page": 5
+        },
+        {
+          "characters": 1365,
+          "heading": "Main Results: Overall Effectiveness",
+          "page": 5
+        },
+        {
+          "characters": 343,
+          "heading": "Extractor Feedback Extraction F1 Recall@5",
+          "page": 6
+        },
+        {
+          "characters": 3854,
+          "heading": "Memory Write-Control Behavior",
+          "page": 6
+        },
+        {
+          "characters": 1272,
+          "heading": "Memory Write-Control Behavior",
+          "page": 7
+        },
+        {
+          "characters": 1537,
+          "heading": "Robustness Of The Main Comparison",
+          "page": 7
+        },
+        {
+          "characters": 892,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 1167,
+          "heading": "Limitations",
+          "page": 8
+        },
+        {
+          "characters": 45,
+          "heading": "This Work Was Conducted While Xingyu Chen Was",
+          "page": 8
+        },
+        {
+          "characters": 45,
+          "heading": "An Intern At Tencent And Was Supported By The",
+          "page": 8
+        },
+        {
+          "characters": 71,
+          "heading": "Tencent Rhino-Bird Research Program (Project",
+          "page": 8
+        },
+        {
+          "characters": 98,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 394,
+          "heading": "Production-Ready Ai Agents With Scalable Long-Term",
+          "page": 8
+        },
+        {
+          "characters": 308,
+          "heading": "Personalization For Multimodal Large Language Mod-",
+          "page": 8
+        },
+        {
+          "characters": 541,
+          "heading": "Ing Long-Horizon Memory For Multi-Party Collabora-",
+          "page": 8
+        },
+        {
+          "characters": 251,
+          "heading": "Retrieval-Augmented Generation For Knowledge-",
+          "page": 8
+        },
+        {
+          "characters": 269,
+          "heading": "Self-Evolving Memory Architecture Via Autoresearch",
+          "page": 8
+        },
+        {
+          "characters": 94,
+          "heading": "What Deserves Memory: Adaptive Memory Distil-",
+          "page": 8
+        },
+        {
+          "characters": 1360,
+          "heading": "Annual Meeting Of The Association For Computational",
+          "page": 8
+        },
+        {
+          "characters": 63,
+          "heading": "Annual Acm Symposium On User Interface Software",
+          "page": 8
+        },
+        {
+          "characters": 5228,
+          "heading": "Annual Acm Symposium On User Interface Software",
+          "page": 9
+        },
+        {
+          "characters": 3179,
+          "heading": "Qa Judge Mem0 Adamem\u220695% Ci Wins",
+          "page": 10
+        },
+        {
+          "characters": 923,
+          "heading": "Appendix: Data Quality Control",
+          "page": 10
+        },
+        {
+          "characters": 1185,
+          "heading": "Appendix: Data Quality Control",
+          "page": 11
+        }
+      ],
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_pages": 11,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
     "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_url": "https://arxiv.org/pdf/2606.21144",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "integrity_failure",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Manuscript identity or acquisition provenance is unverified.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "daa099d52d3c5febdf3b0225255adc511306068ec58c85bca8b6d77e1dc65d82",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -174,7 +930,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

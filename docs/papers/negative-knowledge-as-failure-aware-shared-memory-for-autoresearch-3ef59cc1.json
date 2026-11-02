@@ -23,7 +23,7 @@
   "last_seen_date": "2026-06-26",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-26 14:06:20",
   "notified_date": "2026-06-26",
@@ -34,7 +34,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-26 14:04:48",
-    "generated_at": "2026-11-01 12:01:57",
+    "generated_at": "2026-11-02 12:04:11",
     "last_seen_at": "2026-06-26 20:43:51",
     "metadata_sources": [
       "openalex",
@@ -103,36 +103,1666 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-02T12:02:58.027111+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper presents a well-scoped architectural concept backed by a clear implementation schema and solid empirical validation. Deterministic evaluators eliminate subjective scoring bias, and experimental comparisons cleanly isolate the value of structured negative memory against direct retry and raw self-debugging.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 47490,
+      "assessment_input_sha256": "13c35d6c8552105dd0c65afd424aaae1e8a3d79aa691baebcef576316cdb509c",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7165816402",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 46168,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 45408,
+      "evidence_block_count": 64,
+      "evidence_context_characters": 53815,
+      "evidence_context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+      "evidence_context_sha256": "8394032d310b63a2468aad81c97d05413bfe66dcf6541badbd405d238f6715e6",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 46192,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "6d5005a6509fca3310cda61fb7c3a09dba4e23e60baaae4d16aedbf1b4fe04e4",
+        "source_url": "https://arxiv.org/pdf/2606.21024",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 46168,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 81,
+          "supplied_characters": 81
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1227,
+          "supplied_characters": 1227
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3177,
+          "supplied_characters": 3177
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2381,
+          "supplied_characters": 2381
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 4,
+          "source_characters": 540,
+          "supplied_characters": 540
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 1905,
+          "supplied_characters": 1905
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 6,
+          "source_characters": 2538,
+          "supplied_characters": 2538
+        },
+        {
+          "heading": "Case Study: Negative Knowledge In A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 844,
+          "supplied_characters": 844
+        },
+        {
+          "heading": "Case Study: Negative Knowledge In A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 811,
+          "supplied_characters": 811
+        },
+        {
+          "heading": "Stage 1: Building The Knowledge Bank",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 816,
+          "supplied_characters": 816
+        },
+        {
+          "heading": "Stage 2: Research On Bkdv Nonlinear Phenomena",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 615,
+          "supplied_characters": 615
+        },
+        {
+          "heading": "Trace Analysis: How Negative Knowledge Changes A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1283,
+          "supplied_characters": 1283
+        },
+        {
+          "heading": "Cross-System Transfer To Burgers-Nls",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 566,
+          "supplied_characters": 566
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "conclusion",
+          "section_index": 13,
+          "source_characters": 635,
+          "supplied_characters": 635
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "conclusion",
+          "section_index": 14,
+          "source_characters": 66,
+          "supplied_characters": 66
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 364,
+          "supplied_characters": 364
+        },
+        {
+          "heading": "Autonomous Chemical Research With Large Language Mod-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 355,
+          "supplied_characters": 355
+        },
+        {
+          "heading": "Toward Rigorous Assessment Of Language Agents For Data-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 281,
+          "supplied_characters": 281
+        },
+        {
+          "heading": "Stochastic Transport In Upper Ocean Dynamics Annual",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 370,
+          "supplied_characters": 370
+        },
+        {
+          "heading": "Benchmarking Language Model Agents For Data-Driven",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 498,
+          "supplied_characters": 498
+        },
+        {
+          "heading": "Abilistic Model Checking With Continuous Reward Do-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 101,
+          "supplied_characters": 101
+        },
+        {
+          "heading": "Engineering For Adaptive And Self-Managing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 2364,
+          "supplied_characters": 2364
+        },
+        {
+          "heading": "Engineering For Adaptive And Self-Managing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 222,
+          "supplied_characters": 222
+        },
+        {
+          "heading": "Engineering For Adaptive And Self-Managing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 2148,
+          "supplied_characters": 2148
+        },
+        {
+          "heading": "Appendix: Benchmark And Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 24,
+          "source_characters": 1679,
+          "supplied_characters": 1679
+        },
+        {
+          "heading": "Appendix: Benchmark And Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 25,
+          "source_characters": 722,
+          "supplied_characters": 722
+        },
+        {
+          "heading": "Code And Error Output From Round 1 Larger Batch Size Of 512, 8 Epochs, And Onecycle",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 162,
+          "supplied_characters": 162
+        },
+        {
+          "heading": "Only The Distilled Negative-Knowledge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1323,
+          "supplied_characters": 1323
+        },
+        {
+          "heading": "Appendix: Example: Task 072 In Scienceagentbench",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 1956,
+          "supplied_characters": 1956
+        },
+        {
+          "heading": "Appendix: Example: Task 072 In Scienceagentbench",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 1430,
+          "supplied_characters": 1430
+        },
+        {
+          "heading": "Appendix: Research Graph Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 30,
+          "source_characters": 1612,
+          "supplied_characters": 1612
+        },
+        {
+          "heading": "Appendix: Research Graph Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 242,
+          "supplied_characters": 242
+        },
+        {
+          "heading": "Appendix: Stage 1: Knowledge Bank Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 2382,
+          "supplied_characters": 2382
+        },
+        {
+          "heading": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 1283,
+          "supplied_characters": 1283
+        },
+        {
+          "heading": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 1332,
+          "supplied_characters": 1332
+        },
+        {
+          "heading": "Appendix: Agent Trace Catalogue",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 2548,
+          "supplied_characters": 2548
+        },
+        {
+          "heading": "Appendix: Agent Trace Catalogue",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 624,
+          "supplied_characters": 624
+        },
+        {
+          "heading": "Appendix: Burgers-Nls Cross-System Transfer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 3344,
+          "supplied_characters": 3344
+        },
+        {
+          "heading": "Appendix: Burgers-Nls Cross-System Transfer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 581,
+          "supplied_characters": 581
+        }
+      ],
+      "selected_characters": 45408,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 81,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1227,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 3177,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2381,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 540,
+          "heading": "Method",
+          "page": 2
+        },
+        {
+          "characters": 1905,
+          "heading": "Method",
+          "page": 3
+        },
+        {
+          "characters": 2538,
+          "heading": "Evaluation",
+          "page": 3
+        },
+        {
+          "characters": 844,
+          "heading": "Case Study: Negative Knowledge In A",
+          "page": 3
+        },
+        {
+          "characters": 811,
+          "heading": "Case Study: Negative Knowledge In A",
+          "page": 4
+        },
+        {
+          "characters": 816,
+          "heading": "Stage 1: Building The Knowledge Bank",
+          "page": 4
+        },
+        {
+          "characters": 615,
+          "heading": "Stage 2: Research On Bkdv Nonlinear Phenomena",
+          "page": 4
+        },
+        {
+          "characters": 1283,
+          "heading": "Trace Analysis: How Negative Knowledge Changes A",
+          "page": 4
+        },
+        {
+          "characters": 566,
+          "heading": "Cross-System Transfer To Burgers-Nls",
+          "page": 4
+        },
+        {
+          "characters": 635,
+          "heading": "Conclusion",
+          "page": 4
+        },
+        {
+          "characters": 66,
+          "heading": "Conclusion",
+          "page": 5
+        },
+        {
+          "characters": 364,
+          "heading": "Unclassified body after references",
+          "page": 5
+        },
+        {
+          "characters": 355,
+          "heading": "Autonomous Chemical Research With Large Language Mod-",
+          "page": 5
+        },
+        {
+          "characters": 281,
+          "heading": "Toward Rigorous Assessment Of Language Agents For Data-",
+          "page": 5
+        },
+        {
+          "characters": 370,
+          "heading": "Stochastic Transport In Upper Ocean Dynamics Annual",
+          "page": 5
+        },
+        {
+          "characters": 498,
+          "heading": "Benchmarking Language Model Agents For Data-Driven",
+          "page": 5
+        },
+        {
+          "characters": 101,
+          "heading": "Abilistic Model Checking With Continuous Reward Do-",
+          "page": 5
+        },
+        {
+          "characters": 2364,
+          "heading": "Engineering For Adaptive And Self-Managing Systems",
+          "page": 5
+        },
+        {
+          "characters": 222,
+          "heading": "Engineering For Adaptive And Self-Managing Systems",
+          "page": 6
+        },
+        {
+          "characters": 2148,
+          "heading": "Engineering For Adaptive And Self-Managing Systems",
+          "page": 7
+        },
+        {
+          "characters": 1679,
+          "heading": "Appendix: Benchmark And Baselines",
+          "page": 7
+        },
+        {
+          "characters": 722,
+          "heading": "Appendix: Benchmark And Baselines",
+          "page": 8
+        },
+        {
+          "characters": 162,
+          "heading": "Code And Error Output From Round 1 Larger Batch Size Of 512, 8 Epochs, And Onecycle",
+          "page": 8
+        },
+        {
+          "characters": 1323,
+          "heading": "Only The Distilled Negative-Knowledge",
+          "page": 8
+        },
+        {
+          "characters": 1956,
+          "heading": "Appendix: Example: Task 072 In Scienceagentbench",
+          "page": 8
+        },
+        {
+          "characters": 1430,
+          "heading": "Appendix: Example: Task 072 In Scienceagentbench",
+          "page": 9
+        },
+        {
+          "characters": 1612,
+          "heading": "Appendix: Research Graph Protocol",
+          "page": 9
+        },
+        {
+          "characters": 242,
+          "heading": "Appendix: Research Graph Protocol",
+          "page": 10
+        },
+        {
+          "characters": 2382,
+          "heading": "Appendix: Stage 1: Knowledge Bank Construction",
+          "page": 10
+        },
+        {
+          "characters": 1283,
+          "heading": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+          "page": 10
+        },
+        {
+          "characters": 1332,
+          "heading": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+          "page": 11
+        },
+        {
+          "characters": 2548,
+          "heading": "Appendix: Agent Trace Catalogue",
+          "page": 11
+        },
+        {
+          "characters": 624,
+          "heading": "Appendix: Agent Trace Catalogue",
+          "page": 12
+        },
+        {
+          "characters": 3344,
+          "heading": "Appendix: Burgers-Nls Cross-System Transfer",
+          "page": 12
+        },
+        {
+          "characters": 581,
+          "heading": "Appendix: Burgers-Nls Cross-System Transfer",
+          "page": 13
+        }
+      ],
+      "selected_text_sha256": "13c35d6c8552105dd0c65afd424aaae1e8a3d79aa691baebcef576316cdb509c",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "6d5005a6509fca3310cda61fb7c3a09dba4e23e60baaae4d16aedbf1b4fe04e4",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0002"
+        ],
+        "excerpt": "AI-assisted research systems generate many failed\nattempts, but those failures rarely become a\ndurable, shared knowledge asset. We propose\nanegative knowledge memory layer: a curator\nagent converts each failed attempt into a bounded,\ntyped record in a shared bank, and a downstream\nresearch agent explicitly adopts or rejects those\nrecords before proposing its next experiment. We\nevaluate this layer in two settings: same-task\nretry on ScienceAgentBench and cross-task scien-\ntific research on two nonlinear math-physics PDE\nproblems. The negative knowledge layer outper-\nforms vanilla AutoResearch baselines while using\nfewer tokens; agents with the negative knowledge\nbank solve new tasks that all baselines fail to solve\nin PDE systems research. We also show that the\nprevious negative knowledge bank can transfer\nand enhance AutoResearch on different PDE prob-\nlems. These results suggest that ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f4d6c88dcf26c092a2868719e73664fd0e8e43c8666b1f3a2d47d9777995518c",
+            "evidence_id": "E988de1269a6649d6-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "AI-assisted research systems generate many failed\nattempts, but those failures rarely become a\ndurable, shared knowledge asset. We propose\nanegative knowledge memory layer: a curator\nagent converts each failed attempt into a bounded,\ntyped record in a shared bank, and a downstream\nresearch agent explicitly adopts or rejects those\nrecords before proposing its next experiment. We\nevaluate this layer in two settings: same-task\nretry on ScienceAgentBench and cross-task scien-\ntific research on two nonlinear math-physics PDE\nproblems. The negative knowledge layer outper-\nforms vanilla AutoResearch baselines while using\nfewer tokens; agents with the negative knowledge\nbank solve new tasks that all baselines fail to solve\nin PDE systems research. We also show that the\nprevious negative knowledge bank can transfer\nand enhance AutoResearch on different PDE prob-\nlems. These results suggest that "
+              }
+            ],
+            "text": "AI-assisted research systems generate many failed\nattempts, but those failures rarely become a\ndurable, shared knowledge asset. We propose\nanegative knowledge memory layer: a curator\nagent converts each failed attempt into a bounded,\ntyped record in a shared bank, and a downstream\nresearch agent explicitly adopts or rejects those\nrecords before proposing its next experiment. We\nevaluate this layer in two settings: same-task\nretry on ScienceAgentBench and cross-task scien-\ntific research on two nonlinear math-physics PDE\nproblems. The negative knowledge layer outper-\nforms vanilla AutoResearch baselines while using\nfewer tokens; agents with the negative knowledge\nbank solve new tasks that all baselines fail to solve\nin PDE systems research. We also show that the\nprevious negative knowledge bank can transfer\nand enhance AutoResearch on different PDE prob-\nlems. These results suggest that "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0011"
+        ],
+        "excerpt": "Layer\nWe introduce anegative knowledge memory layerthat turns\neach failed attempt into a reusable record rather than a tran-\nsient log entry. Unlike prior agent-memory architectures\nthat accumulate successful skills, episodic interactions, or\nlong-term context (Wang et al., 2023; Park et al., 2023;\nPacker et al., 2023), this layer is explicitly designed for fail-\nure. Our method combines a structured negative knowledge\nrecord with a multi-agent workflow (Wu et al., 2023): a\ncurator agentwrites records from finished-attempt artifacts\n2\nNegative Knowledge as Failure-aware Shared Memory for AutoResearch\ninto a sharedbank, and aresearch agentreads the bank\nbefore proposing the next experiment.\nThe schema has three design properties. (1)Attempt-level:\neach record describes one finished attempt. (2)Bounded:\nrecords follow prompt-level length and structure limits, so\nan entire bank can be ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e1f4836ca14ef28e4fdfb7f1b6ba7bbcce6796f9058055e074a2fbd1a97c0b73",
+            "evidence_id": "E988de1269a6649d6-B0011",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 540,
+                "page": 2,
+                "section": "Method",
+                "section_index": 4,
+                "start": 0,
+                "text": "Layer\nWe introduce anegative knowledge memory layerthat turns\neach failed attempt into a reusable record rather than a tran-\nsient log entry. Unlike prior agent-memory architectures\nthat accumulate successful skills, episodic interactions, or\nlong-term context (Wang et al., 2023; Park et al., 2023;\nPacker et al., 2023), this layer is explicitly designed for fail-\nure. Our method combines a structured negative knowledge\nrecord with a multi-agent workflow (Wu et al., 2023): a\ncurator agentwrites records from finished-attempt artifacts\n2"
+              },
+              {
+                "end": 354,
+                "page": 3,
+                "section": "Method",
+                "section_index": 5,
+                "start": 0,
+                "text": "Negative Knowledge as Failure-aware Shared Memory for AutoResearch\ninto a sharedbank, and aresearch agentreads the bank\nbefore proposing the next experiment.\nThe schema has three design properties. (1)Attempt-level:\neach record describes one finished attempt. (2)Bounded:\nrecords follow prompt-level length and structure limits, so\nan entire bank can be "
+              }
+            ],
+            "text": "Layer\nWe introduce anegative knowledge memory layerthat turns\neach failed attempt into a reusable record rather than a tran-\nsient log entry. Unlike prior agent-memory architectures\nthat accumulate successful skills, episodic interactions, or\nlong-term context (Wang et al., 2023; Park et al., 2023;\nPacker et al., 2023), this layer is explicitly designed for fail-\nure. Our method combines a structured negative knowledge\nrecord with a multi-agent workflow (Wu et al., 2023): a\ncurator agentwrites records from finished-attempt artifacts\n2\nNegative Knowledge as Failure-aware Shared Memory for AutoResearch\ninto a sharedbank, and aresearch agentreads the bank\nbefore proposing the next experiment.\nThe schema has three design properties. (1)Attempt-level:\neach record describes one finished attempt. (2)Bounded:\nrecords follow prompt-level length and structure limits, so\nan entire bank can be "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0012"
+        ],
+        "excerpt": "passed to an agent inline. (3)Typed:\nthe failure-classification fields take their values from closed\nvocabularies, so the curator must commit to an explicit fail-\nure class rather than describe the failure in free prose. These\nproperties make records portable, auditable, and reusable\nacross attempts. Each record contains bounded fields for the\nfailure layer, scope, degree, recommended action, and risk;\nSection A provides a detailed example.\nThecuratoris a separate agent from the one that ran the\nattempt; once that attempt finishes, the curator combines\nthe artifacts it left behind (e.g., the executed code, execution\noutput, or reasoning notes) into one schema-conforming\nrecord. This separation reduces self-assessment bias: the\ncurator sees frozen artifacts rather than the failed agent's\nown near-miss narrative.\nTheresearch agentthen reads from the knowledge bank\nbefore launching its ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ec837d69baed2adad5f81e10845d2023a4ae95d2fddd399d18db8fc9f4d22127",
+            "evidence_id": "E988de1269a6649d6-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1250,
+                "page": 3,
+                "section": "Method",
+                "section_index": 5,
+                "start": 354,
+                "text": "passed to an agent inline. (3)Typed:\nthe failure-classification fields take their values from closed\nvocabularies, so the curator must commit to an explicit fail-\nure class rather than describe the failure in free prose. These\nproperties make records portable, auditable, and reusable\nacross attempts. Each record contains bounded fields for the\nfailure layer, scope, degree, recommended action, and risk;\nSection A provides a detailed example.\nThecuratoris a separate agent from the one that ran the\nattempt; once that attempt finishes, the curator combines\nthe artifacts it left behind (e.g., the executed code, execution\noutput, or reasoning notes) into one schema-conforming\nrecord. This separation reduces self-assessment bias: the\ncurator sees frozen artifacts rather than the failed agent's\nown near-miss narrative.\nTheresearch agentthen reads from the knowledge bank\nbefore launching its "
+              }
+            ],
+            "text": "passed to an agent inline. (3)Typed:\nthe failure-classification fields take their values from closed\nvocabularies, so the curator must commit to an explicit fail-\nure class rather than describe the failure in free prose. These\nproperties make records portable, auditable, and reusable\nacross attempts. Each record contains bounded fields for the\nfailure layer, scope, degree, recommended action, and risk;\nSection A provides a detailed example.\nThecuratoris a separate agent from the one that ran the\nattempt; once that attempt finishes, the curator combines\nthe artifacts it left behind (e.g., the executed code, execution\noutput, or reasoning notes) into one schema-conforming\nrecord. This separation reduces self-assessment bias: the\ncurator sees frozen artifacts rather than the failed agent's\nown near-miss narrative.\nTheresearch agentthen reads from the knowledge bank\nbefore launching its "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0013"
+        ],
+        "excerpt": "attempt under an explicit grounding\nrequirement: each record must be marked as adopted or\nrejected, with a justification tying the decision to the specific\nfailure mode the record describes. This turns documented\nfailures into active constraints on the next attempt. The\nresearch agent's output is the next attempt itself, whose\nartifacts feed the curator pass that follows and add a new\nrecord to the bank, closing the workflow loop.\nThe central goal is for a scientific project to pay for a failed\nroute only once, then redirect later attempts toward routes\nnot yet ruled out. We evaluate this design in same-task retry\nand cross-task transfer settings.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cb5aa1d618df8fe4b780166cb433cde5cad08cbd79aaec5f2226e89ecdcd2e27",
+            "evidence_id": "E988de1269a6649d6-B0013",
+            "pages": [
+              3
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1905,
+                "page": 3,
+                "section": "Method",
+                "section_index": 5,
+                "start": 1250,
+                "text": "attempt under an explicit grounding\nrequirement: each record must be marked as adopted or\nrejected, with a justification tying the decision to the specific\nfailure mode the record describes. This turns documented\nfailures into active constraints on the next attempt. The\nresearch agent's output is the next attempt itself, whose\nartifacts feed the curator pass that follows and add a new\nrecord to the bank, closing the workflow loop.\nThe central goal is for a scientific project to pay for a failed\nroute only once, then redirect later attempts toward routes\nnot yet ruled out. We evaluate this design in same-task retry\nand cross-task transfer settings."
+              }
+            ],
+            "text": "attempt under an explicit grounding\nrequirement: each record must be marked as adopted or\nrejected, with a justification tying the decision to the specific\nfailure mode the record describes. This turns documented\nfailures into active constraints on the next attempt. The\nresearch agent's output is the next attempt itself, whose\nartifacts feed the curator pass that follows and add a new\nrecord to the bank, closing the workflow loop.\nThe central goal is for a scientific project to pay for a failed\nroute only once, then redirect later attempts toward routes\nnot yet ruled out. We evaluate this design in same-task retry\nand cross-task transfer settings."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0014"
+        ],
+        "excerpt": "This section evaluates the negative knowledge layer in a con-\ntrolled same-task retry setting on a scientific-coding bench-\nmark. We test whether a structured record of a failed attempt\nhelps a fresh agent repair the same task without access to\nthe original conversation. We compare negative-knowledge\nretry with direct retry and self-debug baselines, measuring\npass rate and the size of the memory object handed to the\nnext attempt.\nExperimental setup.All experiments in this section use\nClaude Sonnet 4.6 (Anthropic, 2026) on the deterministic-\nevaluation subset of ScienceAgentBench (Chen et al., 2024),\nwhere outcomes are verified by programmatic evaluators.\nWe compare five conditions: Base (first attempt), Retry\n(fresh agent, no memory; identical to Base up to resam-\npling), Self-debug (Chen et al., 2023) (three rounds\nof raw failure feedback: each later attempt sees the previ-\nous code ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "95843265d4ddd78776c95581def538a2ad421ab68b8ce260e567c9fbda491466",
+            "evidence_id": "E988de1269a6649d6-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 3,
+                "section": "Evaluation",
+                "section_index": 6,
+                "start": 0,
+                "text": "This section evaluates the negative knowledge layer in a con-\ntrolled same-task retry setting on a scientific-coding bench-\nmark. We test whether a structured record of a failed attempt\nhelps a fresh agent repair the same task without access to\nthe original conversation. We compare negative-knowledge\nretry with direct retry and self-debug baselines, measuring\npass rate and the size of the memory object handed to the\nnext attempt.\nExperimental setup.All experiments in this section use\nClaude Sonnet 4.6 (Anthropic, 2026) on the deterministic-\nevaluation subset of ScienceAgentBench (Chen et al., 2024),\nwhere outcomes are verified by programmatic evaluators.\nWe compare five conditions: Base (first attempt), Retry\n(fresh agent, no memory; identical to Base up to resam-\npling), Self-debug (Chen et al., 2023) (three rounds\nof raw failure feedback: each later attempt sees the previ-\nous code "
+              }
+            ],
+            "text": "This section evaluates the negative knowledge layer in a con-\ntrolled same-task retry setting on a scientific-coding bench-\nmark. We test whether a structured record of a failed attempt\nhelps a fresh agent repair the same task without access to\nthe original conversation. We compare negative-knowledge\nretry with direct retry and self-debug baselines, measuring\npass rate and the size of the memory object handed to the\nnext attempt.\nExperimental setup.All experiments in this section use\nClaude Sonnet 4.6 (Anthropic, 2026) on the deterministic-\nevaluation subset of ScienceAgentBench (Chen et al., 2024),\nwhere outcomes are verified by programmatic evaluators.\nWe compare five conditions: Base (first attempt), Retry\n(fresh agent, no memory; identical to Base up to resam-\npling), Self-debug (Chen et al., 2023) (three rounds\nof raw failure feedback: each later attempt sees the previ-\nous code "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0015"
+        ],
+        "excerpt": "and execution output), Negative knowledge\nretry (one structured record), and Deep negative\nknowledge retry (one record distilled from three\nfailed rounds). We reportpass rate(% tasks passing the\ndeterministic evaluator) andmemory size, the tokens of the\nmemory object shown to the next attempt. Full benchmark\nand baseline details are in Section B.\nTable 1.Performance on deterministic-eval ScienceAgentBench.\nNegative knowledge retry uses one failed round, self-debug uses\nthree rounds, and deep negative knowledge retry distills three\nrounds into one record.\nMethod Pass rate (%) Memory (tokens)\nBase 31.6 \u2013\nRetry 31.6 \u2013\nNegative knowledge retry 36.8 296 (\u221273.3%)\nSelf-debug 44.7 1,109 (baseline)\nDeep negative knowledge retry47.4795 (\u221228.3%)\nMain result.Table 1 shows three things. First, plain\nretry does not improve performance, but adding one struc-\ntured negative-knowledge record does: Base ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "de331ea29e13b1348611d0ec2150973896c3f4cd98a40032e1d1b0dfaab7dfaa",
+            "evidence_id": "E988de1269a6649d6-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 3,
+                "section": "Evaluation",
+                "section_index": 6,
+                "start": 897,
+                "text": "and execution output), Negative knowledge\nretry (one structured record), and Deep negative\nknowledge retry (one record distilled from three\nfailed rounds). We reportpass rate(% tasks passing the\ndeterministic evaluator) andmemory size, the tokens of the\nmemory object shown to the next attempt. Full benchmark\nand baseline details are in Section B.\nTable 1.Performance on deterministic-eval ScienceAgentBench.\nNegative knowledge retry uses one failed round, self-debug uses\nthree rounds, and deep negative knowledge retry distills three\nrounds into one record.\nMethod Pass rate (%) Memory (tokens)\nBase 31.6 \u2013\nRetry 31.6 \u2013\nNegative knowledge retry 36.8 296 (\u221273.3%)\nSelf-debug 44.7 1,109 (baseline)\nDeep negative knowledge retry47.4795 (\u221228.3%)\nMain result.Table 1 shows three things. First, plain\nretry does not improve performance, but adding one struc-\ntured negative-knowledge record does: Base "
+              }
+            ],
+            "text": "and execution output), Negative knowledge\nretry (one structured record), and Deep negative\nknowledge retry (one record distilled from three\nfailed rounds). We reportpass rate(% tasks passing the\ndeterministic evaluator) andmemory size, the tokens of the\nmemory object shown to the next attempt. Full benchmark\nand baseline details are in Section B.\nTable 1.Performance on deterministic-eval ScienceAgentBench.\nNegative knowledge retry uses one failed round, self-debug uses\nthree rounds, and deep negative knowledge retry distills three\nrounds into one record.\nMethod Pass rate (%) Memory (tokens)\nBase 31.6 \u2013\nRetry 31.6 \u2013\nNegative knowledge retry 36.8 296 (\u221273.3%)\nSelf-debug 44.7 1,109 (baseline)\nDeep negative knowledge retry47.4795 (\u221228.3%)\nMain result.Table 1 shows three things. First, plain\nretry does not improve performance, but adding one struc-\ntured negative-knowledge record does: Base "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0016"
+        ],
+        "excerpt": "reaches a\npass rate of 31.6%, and Retry remains at 31.6%; by con-\ntrast, Negative knowledge retry raises the pass\nrate to 36.8%. The gain comes from an explicit record\nof what failed and how to change course, not from retry-\ning itself. Second, distilling three failed rounds into one\nDeep negative knowledge record (47.4%) outper-\nforms raw three-round self-debug ( 44.7%), with the gap\nconcentrated on the hard subset where raw self-debug has\nalready failed; this suggests structured negative knowledge\ncan carry guidance that raw feedback alone does not. Third,\nnegative-knowledge records achieve these gains while using\n28.3% and 73.3% fewer tokens than self-debug, so the layer\npreserves useful repair information in a more compact form.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "df051fbf2067094ca418273bb8ccb696bc166ba4ea8f8c0a736cd78a9ce859fa",
+            "evidence_id": "E988de1269a6649d6-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2538,
+                "page": 3,
+                "section": "Evaluation",
+                "section_index": 6,
+                "start": 1796,
+                "text": "reaches a\npass rate of 31.6%, and Retry remains at 31.6%; by con-\ntrast, Negative knowledge retry raises the pass\nrate to 36.8%. The gain comes from an explicit record\nof what failed and how to change course, not from retry-\ning itself. Second, distilling three failed rounds into one\nDeep negative knowledge record (47.4%) outper-\nforms raw three-round self-debug ( 44.7%), with the gap\nconcentrated on the hard subset where raw self-debug has\nalready failed; this suggests structured negative knowledge\ncan carry guidance that raw feedback alone does not. Third,\nnegative-knowledge records achieve these gains while using\n28.3% and 73.3% fewer tokens than self-debug, so the layer\npreserves useful repair information in a more compact form."
+              }
+            ],
+            "text": "reaches a\npass rate of 31.6%, and Retry remains at 31.6%; by con-\ntrast, Negative knowledge retry raises the pass\nrate to 36.8%. The gain comes from an explicit record\nof what failed and how to change course, not from retry-\ning itself. Second, distilling three failed rounds into one\nDeep negative knowledge record (47.4%) outper-\nforms raw three-round self-debug ( 44.7%), with the gap\nconcentrated on the hard subset where raw self-debug has\nalready failed; this suggests structured negative knowledge\ncan carry guidance that raw feedback alone does not. Third,\nnegative-knowledge records achieve these gains while using\n28.3% and 73.3% fewer tokens than self-debug, so the layer\npreserves useful repair information in a more compact form."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0020"
+        ],
+        "excerpt": "Stage 2 tests whether the knowledge bank transfers to three\nnew mathematical physics sub-tasks in the coupled BKdV\nsystem:Test-Asoliton stability near the m= 0 manifold,\nTest-BGaussian wave-packet decomposition into a soliton\ntrain, andTest-CKdV-soliton interaction with a Burgers\nbore. We compare four conditions applied on the AutoRe-\nsearch pipeline:Base(no bank),Base+Pos(positive records\nonly),Base+Neg(negative bank only), andBase+Pos+Neg\n(full bank). Each cell is allowed up to three AutoResearch\nrounds and is judged by deterministic physics-aware checks;\ndetailed definitions and settings are in Section C.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage 2: Research On Bkdv Nonlinear Phenomena",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3bbc42cb3645999b8ec8fa826bb51242f04bfdca5caa35bde8bc237d4374f2db",
+            "evidence_id": "E988de1269a6649d6-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Stage 2: Research On Bkdv Nonlinear Phenomena",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 615,
+                "page": 4,
+                "section": "Stage 2: Research On Bkdv Nonlinear Phenomena",
+                "section_index": 10,
+                "start": 0,
+                "text": "Stage 2 tests whether the knowledge bank transfers to three\nnew mathematical physics sub-tasks in the coupled BKdV\nsystem:Test-Asoliton stability near the m= 0 manifold,\nTest-BGaussian wave-packet decomposition into a soliton\ntrain, andTest-CKdV-soliton interaction with a Burgers\nbore. We compare four conditions applied on the AutoRe-\nsearch pipeline:Base(no bank),Base+Pos(positive records\nonly),Base+Neg(negative bank only), andBase+Pos+Neg\n(full bank). Each cell is allowed up to three AutoResearch\nrounds and is judged by deterministic physics-aware checks;\ndetailed definitions and settings are in Section C."
+              }
+            ],
+            "text": "Stage 2 tests whether the knowledge bank transfers to three\nnew mathematical physics sub-tasks in the coupled BKdV\nsystem:Test-Asoliton stability near the m= 0 manifold,\nTest-BGaussian wave-packet decomposition into a soliton\ntrain, andTest-CKdV-soliton interaction with a Burgers\nbore. We compare four conditions applied on the AutoRe-\nsearch pipeline:Base(no bank),Base+Pos(positive records\nonly),Base+Neg(negative bank only), andBase+Pos+Neg\n(full bank). Each cell is allowed up to three AutoResearch\nrounds and is judged by deterministic physics-aware checks;\ndetailed definitions and settings are in Section C."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0021"
+        ],
+        "excerpt": "proposal\nTo inspect the mechanism behind the table, we examine\nthe Test-C/Base+Neg trace. After the baseline run on the\nbore-soliton interaction exhibits bore-driven instability, the\nagent consults the relevant negative-knowledge record, fol-\nTable 2.Transfer of the knowledge bank to three BKdV sub-tasks.\nCondition Test-A Test-B Test-C Success\nBase\u00d7 \u00d7 \u00d70/3\nBase+Pos\u00d7 \u00d7\u27131/3\nBase+Neg\u2713 \u2713 \u27133/3\nBase+Pos+Neg\u2713 \u2713 \u27133/3\nlows its prescription by changing only one component of\nthe previous proposal, and explicitly rejects two alternative\nroutes the bank also rules out. The cell then succeeds in\ntwo rounds. This shows the operational role of negative\nknowledge: not merely a warning, but a reusable constraint\nthat narrows the next experimental proposal.\nThe weaker Base+Pos result reflects a feature particular\nto numerical-simulation research: successful methods do\nnot always transfer between related ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Trace Analysis: How Negative Knowledge Changes A",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2dee1e3d49847da3d5ec25d834c29fad5e9cafb08cb32a2450bad25178294a9b",
+            "evidence_id": "E988de1269a6649d6-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Trace Analysis: How Negative Knowledge Changes A",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 4,
+                "section": "Trace Analysis: How Negative Knowledge Changes A",
+                "section_index": 11,
+                "start": 0,
+                "text": "proposal\nTo inspect the mechanism behind the table, we examine\nthe Test-C/Base+Neg trace. After the baseline run on the\nbore-soliton interaction exhibits bore-driven instability, the\nagent consults the relevant negative-knowledge record, fol-\nTable 2.Transfer of the knowledge bank to three BKdV sub-tasks.\nCondition Test-A Test-B Test-C Success\nBase\u00d7 \u00d7 \u00d70/3\nBase+Pos\u00d7 \u00d7\u27131/3\nBase+Neg\u2713 \u2713 \u27133/3\nBase+Pos+Neg\u2713 \u2713 \u27133/3\nlows its prescription by changing only one component of\nthe previous proposal, and explicitly rejects two alternative\nroutes the bank also rules out. The cell then succeeds in\ntwo rounds. This shows the operational role of negative\nknowledge: not merely a warning, but a reusable constraint\nthat narrows the next experimental proposal.\nThe weaker Base+Pos result reflects a feature particular\nto numerical-simulation research: successful methods do\nnot always transfer between related "
+              }
+            ],
+            "text": "proposal\nTo inspect the mechanism behind the table, we examine\nthe Test-C/Base+Neg trace. After the baseline run on the\nbore-soliton interaction exhibits bore-driven instability, the\nagent consults the relevant negative-knowledge record, fol-\nTable 2.Transfer of the knowledge bank to three BKdV sub-tasks.\nCondition Test-A Test-B Test-C Success\nBase\u00d7 \u00d7 \u00d70/3\nBase+Pos\u00d7 \u00d7\u27131/3\nBase+Neg\u2713 \u2713 \u27133/3\nBase+Pos+Neg\u2713 \u2713 \u27133/3\nlows its prescription by changing only one component of\nthe previous proposal, and explicitly rejects two alternative\nroutes the bank also rules out. The cell then succeeds in\ntwo rounds. This shows the operational role of negative\nknowledge: not merely a warning, but a reusable constraint\nthat narrows the next experimental proposal.\nThe weaker Base+Pos result reflects a feature particular\nto numerical-simulation research: successful methods do\nnot always transfer between related "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0023"
+        ],
+        "excerpt": "We also test whether the BKdV knowledge bank can help\non a substantially different coupled system, Burgers-NLS\n(BNLS) (Dombret et al., 2023). In a three-round AutoRe-\nsearch setting, agents without any bank fail all four BNLS\ntasks, while agents given only the BKdV bank solve two\nof them. This suggests that the bank is not only task-local\nmemory: some of its numerical failures, diagnostics, and\nmethod warnings transfer to a different nonlinear PDE sys-\ntem and become a useful collective asset for the research\nteam. Details of the BNLS setup are in Section C.5.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cross-System Transfer To Burgers-Nls",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c2536c2a339afdd3ec2dce3a45874ee006c712fcc9e9a9e30e1312104e2fb121",
+            "evidence_id": "E988de1269a6649d6-B0023",
+            "pages": [
+              4
+            ],
+            "section": "Cross-System Transfer To Burgers-Nls",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 566,
+                "page": 4,
+                "section": "Cross-System Transfer To Burgers-Nls",
+                "section_index": 12,
+                "start": 0,
+                "text": "We also test whether the BKdV knowledge bank can help\non a substantially different coupled system, Burgers-NLS\n(BNLS) (Dombret et al., 2023). In a three-round AutoRe-\nsearch setting, agents without any bank fail all four BNLS\ntasks, while agents given only the BKdV bank solve two\nof them. This suggests that the bank is not only task-local\nmemory: some of its numerical failures, diagnostics, and\nmethod warnings transfer to a different nonlinear PDE sys-\ntem and become a useful collective asset for the research\nteam. Details of the BNLS setup are in Section C.5."
+              }
+            ],
+            "text": "We also test whether the BKdV knowledge bank can help\non a substantially different coupled system, Burgers-NLS\n(BNLS) (Dombret et al., 2023). In a three-round AutoRe-\nsearch setting, agents without any bank fail all four BNLS\ntasks, while agents given only the BKdV bank solve two\nof them. This suggests that the bank is not only task-local\nmemory: some of its numerical failures, diagnostics, and\nmethod warnings transfer to a different nonlinear PDE sys-\ntem and become a useful collective asset for the research\nteam. Details of the BNLS setup are in Section C.5."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0024"
+        ],
+        "excerpt": "We introduced a negative knowledge memory layer: a cu-\nrator agent writes each failed attempt as a bounded, typed\nrecord into a shared bank, and a downstream research agent\nmust adopt or reject those records before its next experiment.\nOn ScienceAgentBench, structured records improve retry\npass rate at lower token cost than raw self-debug; on two\ncoupled PDE systems, the bank enables cross-task trans-\nfer that no-bank baselines fail. Within the limits of small\nsample sizes and the models studied, this is a first step to-\nward maintaining negative knowledge as shared epistemic\ninfrastructure for AI-engaged scientific research.\n4\nNegative Knowledge as Failure-aware Shared Memory for AutoResearch",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "72b2aae411f005bd7a7292afa2451eb90db11b38d1e7ef66524a43185115dbf4",
+            "evidence_id": "E988de1269a6649d6-B0024",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 635,
+                "page": 4,
+                "section": "Conclusion",
+                "section_index": 13,
+                "start": 0,
+                "text": "We introduced a negative knowledge memory layer: a cu-\nrator agent writes each failed attempt as a bounded, typed\nrecord into a shared bank, and a downstream research agent\nmust adopt or reject those records before its next experiment.\nOn ScienceAgentBench, structured records improve retry\npass rate at lower token cost than raw self-debug; on two\ncoupled PDE systems, the bank enables cross-task trans-\nfer that no-bank baselines fail. Within the limits of small\nsample sizes and the models studied, this is a first step to-\nward maintaining negative knowledge as shared epistemic\ninfrastructure for AI-engaged scientific research.\n4"
+              },
+              {
+                "end": 66,
+                "page": 5,
+                "section": "Conclusion",
+                "section_index": 14,
+                "start": 0,
+                "text": "Negative Knowledge as Failure-aware Shared Memory for AutoResearch"
+              }
+            ],
+            "text": "We introduced a negative knowledge memory layer: a cu-\nrator agent writes each failed attempt as a bounded, typed\nrecord into a shared bank, and a downstream research agent\nmust adopt or reject those records before its next experiment.\nOn ScienceAgentBench, structured records improve retry\npass rate at lower token cost than raw self-debug; on two\ncoupled PDE systems, the bank enables cross-task trans-\nfer that no-bank baselines fail. Within the limits of small\nsample sizes and the models studied, this is a first step to-\nward maintaining negative knowledge as shared epistemic\ninfrastructure for AI-engaged scientific research.\n4\nNegative Knowledge as Failure-aware Shared Memory for AutoResearch"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0037"
+        ],
+        "excerpt": "ScienceAgentBench (Chen et al., 2024) is a benchmark for evaluating language agents on data-driven scientific discovery\ntasks drawn from real scientific workflows. It contains 102 tasks extracted from peer-reviewed scientific publications and\nevaluates whether an agent can produce an executable solution for each task. We use its deterministic-evaluation subset of\n38 tasks to ensure all reported outcomes are verified by programmatic evaluators.\nWe compare five conditions, which differ only in whether and how failure information is shown to a subsequent attempt.\nThree are baselines and two use the negative knowledge layer:\n\u2022Base: the first attempt on each task, without any additional failure memory.\n\u2022Retry : a fresh agent invocation on the same task, without access to the previous conversation, code, outputs, or\nnegative-knowledge memory.\n\u2022Self-debug (Chen et al., 2023; 2024): later ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Benchmark And Baselines",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e34a2c8b1560ed9a7b7d3ba7bfedf931ded0478690b265c4ef41cfe290e4cdee",
+            "evidence_id": "E988de1269a6649d6-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Appendix: Benchmark And Baselines",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 7,
+                "section": "Appendix: Benchmark And Baselines",
+                "section_index": 24,
+                "start": 0,
+                "text": "ScienceAgentBench (Chen et al., 2024) is a benchmark for evaluating language agents on data-driven scientific discovery\ntasks drawn from real scientific workflows. It contains 102 tasks extracted from peer-reviewed scientific publications and\nevaluates whether an agent can produce an executable solution for each task. We use its deterministic-evaluation subset of\n38 tasks to ensure all reported outcomes are verified by programmatic evaluators.\nWe compare five conditions, which differ only in whether and how failure information is shown to a subsequent attempt.\nThree are baselines and two use the negative knowledge layer:\n\u2022Base: the first attempt on each task, without any additional failure memory.\n\u2022Retry : a fresh agent invocation on the same task, without access to the previous conversation, code, outputs, or\nnegative-knowledge memory.\n\u2022Self-debug (Chen et al., 2023; 2024): later "
+              }
+            ],
+            "text": "ScienceAgentBench (Chen et al., 2024) is a benchmark for evaluating language agents on data-driven scientific discovery\ntasks drawn from real scientific workflows. It contains 102 tasks extracted from peer-reviewed scientific publications and\nevaluates whether an agent can produce an executable solution for each task. We use its deterministic-evaluation subset of\n38 tasks to ensure all reported outcomes are verified by programmatic evaluators.\nWe compare five conditions, which differ only in whether and how failure information is shown to a subsequent attempt.\nThree are baselines and two use the negative knowledge layer:\n\u2022Base: the first attempt on each task, without any additional failure memory.\n\u2022Retry : a fresh agent invocation on the same task, without access to the previous conversation, code, outputs, or\nnegative-knowledge memory.\n\u2022Self-debug (Chen et al., 2023; 2024): later "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0041"
+        ],
+        "excerpt": "record\nPer-channel least-squares regression:\nnp.linalg.lstsq applied separately to\neach of the 17 channels\nPass(0.763)\ndispatch logs, the median end-to-end token usage per task (all rounds, plus curation, plus the final attempt) is \u224856k for\nthree-round self-debug, \u224853k for depth-1 negative-knowledge retry (first attempt, a curator pass of \u224819k, and one retry),\nand \u2248101k for deep negative-knowledge retry, which consumes the same three failed rounds plus a deep curator pass (\u224827k)\nand one further attempt. Curation is therefore a real cost; the compact record amortises it when a failure is stored, shared, or\nconsulted more than once.BaseandRetryhave no additional memory object.\nAll ScienceAgentBench sub-agent prompts use the same fixed template. The template contains four blocks: the task\ninstruction copied from the benchmark, a data block with the folder tree and dataset preview, an ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Only The Distilled Negative-Knowledge",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4d392598a76f3654f7df3eafa30b2d757375fbcbe3e49729b42caf3f3cdd6396",
+            "evidence_id": "E988de1269a6649d6-B0041",
+            "pages": [
+              8
+            ],
+            "section": "Only The Distilled Negative-Knowledge",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 8,
+                "section": "Only The Distilled Negative-Knowledge",
+                "section_index": 27,
+                "start": 0,
+                "text": "record\nPer-channel least-squares regression:\nnp.linalg.lstsq applied separately to\neach of the 17 channels\nPass(0.763)\ndispatch logs, the median end-to-end token usage per task (all rounds, plus curation, plus the final attempt) is \u224856k for\nthree-round self-debug, \u224853k for depth-1 negative-knowledge retry (first attempt, a curator pass of \u224819k, and one retry),\nand \u2248101k for deep negative-knowledge retry, which consumes the same three failed rounds plus a deep curator pass (\u224827k)\nand one further attempt. Curation is therefore a real cost; the compact record amortises it when a failure is stored, shared, or\nconsulted more than once.BaseandRetryhave no additional memory object.\nAll ScienceAgentBench sub-agent prompts use the same fixed template. The template contains four blocks: the task\ninstruction copied from the benchmark, a data block with the folder tree and dataset preview, an "
+              }
+            ],
+            "text": "record\nPer-channel least-squares regression:\nnp.linalg.lstsq applied separately to\neach of the 17 channels\nPass(0.763)\ndispatch logs, the median end-to-end token usage per task (all rounds, plus curation, plus the final attempt) is \u224856k for\nthree-round self-debug, \u224853k for depth-1 negative-knowledge retry (first attempt, a curator pass of \u224819k, and one retry),\nand \u2248101k for deep negative-knowledge retry, which consumes the same three failed rounds plus a deep curator pass (\u224827k)\nand one further attempt. Curation is therefore a real cost; the compact record amortises it when a failure is stored, shared, or\nconsulted more than once.BaseandRetryhave no additional memory object.\nAll ScienceAgentBench sub-agent prompts use the same fixed template. The template contains four blocks: the task\ninstruction copied from the benchmark, a data block with the folder tree and dataset preview, an "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0054"
+        ],
+        "excerpt": "u (green) and the KdV wave field v\n(orange) at t= 0,0.8,1.4,5.9 . Figure reproduced from Holm et al. (2025); it depicts the target phenomenology for Test-B (Gaussian\nwave-packet decomposition), not an agent output.\nEvaluation criteria.A cell counts as useful only if its integration completes without NaN and total mass drift stays below\n8%. The remaining task-specific gates are:\n10\nNegative Knowledge as Failure-aware Shared Memory for AutoResearch\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 0.0\n(a)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 5.0\n(b)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 7.0\n(c)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 10.0\n(d)\nBurgers: Mean flow velocity u KdV: Wave parameter v\nFigure 4.Bore\u2013soliton fusion (basis of Test-C).A Burgers bore (the u\u22483 front, green) overtakes two slower, weak KdV solitons\n(orange) and sweeps them together, fusing them into a single compound soliton that rides at the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "72e40015b7fe706fafdc4444bbd821e317851858cd4a9e0066540382b9b8ce03",
+            "evidence_id": "E988de1269a6649d6-B0054",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1283,
+                "page": 10,
+                "section": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+                "section_index": 33,
+                "start": 900,
+                "text": "u (green) and the KdV wave field v\n(orange) at t= 0,0.8,1.4,5.9 . Figure reproduced from Holm et al. (2025); it depicts the target phenomenology for Test-B (Gaussian\nwave-packet decomposition), not an agent output.\nEvaluation criteria.A cell counts as useful only if its integration completes without NaN and total mass drift stays below\n8%. The remaining task-specific gates are:\n10"
+              },
+              {
+                "end": 517,
+                "page": 11,
+                "section": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+                "section_index": 34,
+                "start": 0,
+                "text": "Negative Knowledge as Failure-aware Shared Memory for AutoResearch\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 0.0\n(a)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 5.0\n(b)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 7.0\n(c)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 10.0\n(d)\nBurgers: Mean flow velocity u KdV: Wave parameter v\nFigure 4.Bore\u2013soliton fusion (basis of Test-C).A Burgers bore (the u\u22483 front, green) overtakes two slower, weak KdV solitons\n(orange) and sweeps them together, fusing them into a single compound soliton that rides at the "
+              }
+            ],
+            "text": "u (green) and the KdV wave field v\n(orange) at t= 0,0.8,1.4,5.9 . Figure reproduced from Holm et al. (2025); it depicts the target phenomenology for Test-B (Gaussian\nwave-packet decomposition), not an agent output.\nEvaluation criteria.A cell counts as useful only if its integration completes without NaN and total mass drift stays below\n8%. The remaining task-specific gates are:\n10\nNegative Knowledge as Failure-aware Shared Memory for AutoResearch\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 0.0\n(a)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 5.0\n(b)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 7.0\n(c)\n10 20 30 40 50 60 70 80\n0\n1\n2\n3\nt = 10.0\n(d)\nBurgers: Mean flow velocity u KdV: Wave parameter v\nFigure 4.Bore\u2013soliton fusion (basis of Test-C).A Burgers bore (the u\u22483 front, green) overtakes two slower, weak KdV solitons\n(orange) and sweeps them together, fusing them into a single compound soliton that rides at the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0055"
+        ],
+        "excerpt": "bore front; snapshots at t= 0,5,7,10 .\nFigure reproduced from Holm et al. (2025); it depicts the target bore\u2013soliton interaction for Test-C (KdV-soliton interaction with a Burgers\nbore), not an agent output.\n\u2022 Test-A(soliton stability): max(|u|,|v|)<15 , vmax(T)/v max(0)\u22650.25 , and a single dominant peak (npeaks(\u22650.4) =\n1 or top-to-second peak ratio >1.5 ). The amplitude floor is calibrated to BKdV-S7's quantified \u221262.8% off-manifold\ndecay; the single-peak gate rejects chaotic fragmentation.\n\u2022 Test-B(soliton-train fission): max(|u|,|v|)<15 , vmax(T)\u22650.8 , and at least two dominant peaks (npeaks(\u22650.8)\u22652 ).\n\u2022 Test-C(bore-soliton interaction): max(|u|,|v|)<10 with the additional constraint umax <5 (the bore must remain\nbounded; IC hasu L = 1.5),v max(T)\u22650.5, and at least one dominant peak (n peaks(\u22650.5)\u22651).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fb934a57703f3699f9ca2b8106749ac019bdcbc2d00e3c32ac991b3cc5c1219f",
+            "evidence_id": "E988de1269a6649d6-B0055",
+            "pages": [
+              11
+            ],
+            "section": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1332,
+                "page": 11,
+                "section": "Appendix: Stage 2: Sub-Task Setup And Evaluation",
+                "section_index": 34,
+                "start": 517,
+                "text": "bore front; snapshots at t= 0,5,7,10 .\nFigure reproduced from Holm et al. (2025); it depicts the target bore\u2013soliton interaction for Test-C (KdV-soliton interaction with a Burgers\nbore), not an agent output.\n\u2022 Test-A(soliton stability): max(|u|,|v|)<15 , vmax(T)/v max(0)\u22650.25 , and a single dominant peak (npeaks(\u22650.4) =\n1 or top-to-second peak ratio >1.5 ). The amplitude floor is calibrated to BKdV-S7's quantified \u221262.8% off-manifold\ndecay; the single-peak gate rejects chaotic fragmentation.\n\u2022 Test-B(soliton-train fission): max(|u|,|v|)<15 , vmax(T)\u22650.8 , and at least two dominant peaks (npeaks(\u22650.8)\u22652 ).\n\u2022 Test-C(bore-soliton interaction): max(|u|,|v|)<10 with the additional constraint umax <5 (the bore must remain\nbounded; IC hasu L = 1.5),v max(T)\u22650.5, and at least one dominant peak (n peaks(\u22650.5)\u22651)."
+              }
+            ],
+            "text": "bore front; snapshots at t= 0,5,7,10 .\nFigure reproduced from Holm et al. (2025); it depicts the target bore\u2013soliton interaction for Test-C (KdV-soliton interaction with a Burgers\nbore), not an agent output.\n\u2022 Test-A(soliton stability): max(|u|,|v|)<15 , vmax(T)/v max(0)\u22650.25 , and a single dominant peak (npeaks(\u22650.4) =\n1 or top-to-second peak ratio >1.5 ). The amplitude floor is calibrated to BKdV-S7's quantified \u221262.8% off-manifold\ndecay; the single-peak gate rejects chaotic fragmentation.\n\u2022 Test-B(soliton-train fission): max(|u|,|v|)<15 , vmax(T)\u22650.8 , and at least two dominant peaks (npeaks(\u22650.8)\u22652 ).\n\u2022 Test-C(bore-soliton interaction): max(|u|,|v|)<10 with the additional constraint umax <5 (the bore must remain\nbounded; IC hasu L = 1.5),v max(T)\u22650.5, and at least one dominant peak (n peaks(\u22650.5)\u22651)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0061"
+        ],
+        "excerpt": "BNLS's wave is the complex NLS field above\n(quantum-pressure dispersion and a focusing cubic, giving modulational instability and envelope solitons). This shared\nskeleton with a different wave mechanism is what makes BNLS a stringent transfer target.\nThe study uses four BNLS tasks and four memory conditions: no bank, BKdV-only bank, NLS-specific bank, and the\ncombined NLS+BKdV bank; all BNLS sub-agents run on Claude Sonnet 4.6. The NLS bank contains 21 entries curated\nfrom eight BNLS stress tests; the BKdV bank reuses a 30-entry snapshot of the BKdV study's bank (10 positive and 20\nnegative entries).\nSub-task specifications.Each task runs on a periodic domain [\u221215,15] with Nx = 256 and saves snapshots of (u, N, \u03d5);\nPASS is decided by a deterministic phenomenon check on the final snapshot.Test-A NLS-soliton stability on Mcs:bright\nsoliton N(x,0) =A 2 sech2(A(x+ 5)) with A= 1.5 and u=N \u03d5 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Burgers-Nls Cross-System Transfer",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b552615135efc90f5603d6034eb3e55a9da4d68d119392cd0a33ea1526fa3c88",
+            "evidence_id": "E988de1269a6649d6-B0061",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Burgers-Nls Cross-System Transfer",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 12,
+                "section": "Appendix: Burgers-Nls Cross-System Transfer",
+                "section_index": 37,
+                "start": 894,
+                "text": "BNLS's wave is the complex NLS field above\n(quantum-pressure dispersion and a focusing cubic, giving modulational instability and envelope solitons). This shared\nskeleton with a different wave mechanism is what makes BNLS a stringent transfer target.\nThe study uses four BNLS tasks and four memory conditions: no bank, BKdV-only bank, NLS-specific bank, and the\ncombined NLS+BKdV bank; all BNLS sub-agents run on Claude Sonnet 4.6. The NLS bank contains 21 entries curated\nfrom eight BNLS stress tests; the BKdV bank reuses a 30-entry snapshot of the BKdV study's bank (10 positive and 20\nnegative entries).\nSub-task specifications.Each task runs on a periodic domain [\u221215,15] with Nx = 256 and saves snapshots of (u, N, \u03d5);\nPASS is decided by a deterministic phenomenon check on the final snapshot.Test-A NLS-soliton stability on Mcs:bright\nsoliton N(x,0) =A 2 sech2(A(x+ 5)) with A= 1.5 and u=N \u03d5 "
+              }
+            ],
+            "text": "BNLS's wave is the complex NLS field above\n(quantum-pressure dispersion and a focusing cubic, giving modulational instability and envelope solitons). This shared\nskeleton with a different wave mechanism is what makes BNLS a stringent transfer target.\nThe study uses four BNLS tasks and four memory conditions: no bank, BKdV-only bank, NLS-specific bank, and the\ncombined NLS+BKdV bank; all BNLS sub-agents run on Claude Sonnet 4.6. The NLS bank contains 21 entries curated\nfrom eight BNLS stress tests; the BKdV bank reuses a 30-entry snapshot of the BKdV study's bank (10 positive and 20\nnegative entries).\nSub-task specifications.Each task runs on a periodic domain [\u221215,15] with Nx = 256 and saves snapshots of (u, N, \u03d5);\nPASS is decided by a deterministic phenomenon check on the final snapshot.Test-A NLS-soliton stability on Mcs:bright\nsoliton N(x,0) =A 2 sech2(A(x+ 5)) with A= 1.5 and u=N \u03d5 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0063"
+        ],
+        "excerpt": "the research deliverable is a characterisation of \u2225m\u22252(t) relaxation (decay /\nplateau / growth), wherem=u\u2212N \u03d5 x.\nTable 5.BNLS cross-system transfer. The domain-matched NLS bank solves three of four tasks; the BKdV-only bank transfers partially\nbut also creates negative transfer on one task.\nCondition Test-A Test-B Test-C Test-D Success\nNo bank\u00d7 \u00d7 \u00d7 \u00d70/4\nBKdV only\u2713\u00d7 \u00d7\u27132/4\nNLS only\u2713 \u2713 \u2713\u00d73/4\nNLS + BKdV\u2713 \u2713 \u2713\u00d73/4\nThe headline result is that domain-matched negative knowledge is the most reliable transfer signal: the NLS bank lifts the\nno-bank baseline from 0/4 to 3/4. Adding the BKdV bank to the NLS bank gives no additional task success in this run,\n12\nNegative Knowledge as Failure-aware Shared Memory for AutoResearch\nsuggesting that cross-domain numerical knowledge is useful only when the receiving agent can distinguish transferable\nmechanisms from mismatched ones.\nThe BKdV-only condition is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Burgers-Nls Cross-System Transfer",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "df067d9a0ba9fb16661114e66b39bc7d6cb9d2bd62f62694c849f49133ea9a6b",
+            "evidence_id": "E988de1269a6649d6-B0063",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Appendix: Burgers-Nls Cross-System Transfer",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3344,
+                "page": 12,
+                "section": "Appendix: Burgers-Nls Cross-System Transfer",
+                "section_index": 37,
+                "start": 2690,
+                "text": "the research deliverable is a characterisation of \u2225m\u22252(t) relaxation (decay /\nplateau / growth), wherem=u\u2212N \u03d5 x.\nTable 5.BNLS cross-system transfer. The domain-matched NLS bank solves three of four tasks; the BKdV-only bank transfers partially\nbut also creates negative transfer on one task.\nCondition Test-A Test-B Test-C Test-D Success\nNo bank\u00d7 \u00d7 \u00d7 \u00d70/4\nBKdV only\u2713\u00d7 \u00d7\u27132/4\nNLS only\u2713 \u2713 \u2713\u00d73/4\nNLS + BKdV\u2713 \u2713 \u2713\u00d73/4\nThe headline result is that domain-matched negative knowledge is the most reliable transfer signal: the NLS bank lifts the\nno-bank baseline from 0/4 to 3/4. Adding the BKdV bank to the NLS bank gives no additional task success in this run,\n12"
+              },
+              {
+                "end": 245,
+                "page": 13,
+                "section": "Appendix: Burgers-Nls Cross-System Transfer",
+                "section_index": 38,
+                "start": 0,
+                "text": "Negative Knowledge as Failure-aware Shared Memory for AutoResearch\nsuggesting that cross-domain numerical knowledge is useful only when the receiving agent can distinguish transferable\nmechanisms from mismatched ones.\nThe BKdV-only condition is "
+              }
+            ],
+            "text": "the research deliverable is a characterisation of \u2225m\u22252(t) relaxation (decay /\nplateau / growth), wherem=u\u2212N \u03d5 x.\nTable 5.BNLS cross-system transfer. The domain-matched NLS bank solves three of four tasks; the BKdV-only bank transfers partially\nbut also creates negative transfer on one task.\nCondition Test-A Test-B Test-C Test-D Success\nNo bank\u00d7 \u00d7 \u00d7 \u00d70/4\nBKdV only\u2713\u00d7 \u00d7\u27132/4\nNLS only\u2713 \u2713 \u2713\u00d73/4\nNLS + BKdV\u2713 \u2713 \u2713\u00d73/4\nThe headline result is that domain-matched negative knowledge is the most reliable transfer signal: the NLS bank lifts the\nno-bank baseline from 0/4 to 3/4. Adding the BKdV bank to the NLS bank gives no additional task success in this run,\n12\nNegative Knowledge as Failure-aware Shared Memory for AutoResearch\nsuggesting that cross-domain numerical knowledge is useful only when the receiving agent can distinguish transferable\nmechanisms from mismatched ones.\nThe BKdV-only condition is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E988de1269a6649d6-B0064"
+        ],
+        "excerpt": "informative because it both helps and misleads. It solves two tasks, showing that some\nBurgers-side numerical lessons transfer. On Test-B, however, BKdV-only knowledge produces negative transfer: the agent\nfollows a method family that is validated for BKdV-like dynamics but anti-diffusive under the BNLS variational sign\nconvention.\n13",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Burgers-Nls Cross-System Transfer",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "af112f4367fbf03bd48729bb75e27342a260bf72a0bca0255f1bc1579e879970",
+            "evidence_id": "E988de1269a6649d6-B0064",
+            "pages": [
+              13
+            ],
+            "section": "Appendix: Burgers-Nls Cross-System Transfer",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 581,
+                "page": 13,
+                "section": "Appendix: Burgers-Nls Cross-System Transfer",
+                "section_index": 38,
+                "start": 245,
+                "text": "informative because it both helps and misleads. It solves two tasks, showing that some\nBurgers-side numerical lessons transfer. On Test-B, however, BKdV-only knowledge produces negative transfer: the agent\nfollows a method family that is validated for BKdV-like dynamics but anti-diffusive under the BNLS variational sign\nconvention.\n13"
+              }
+            ],
+            "text": "informative because it both helps and misleads. It solves two tasks, showing that some\nBurgers-side numerical lessons transfer. On Test-B, however, BKdV-only knowledge produces negative transfer: the agent\nfollows a method family that is validated for BKdV-like dynamics but anti-diffusive under the BNLS variational sign\nconvention.\n13"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.21024",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7165816402",
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The headline outcomes are established by external programmatic checks and deterministic physics criteria that do not depend on the curator agent.",
+          "final_evaluation_signal": "Programmatic deterministic evaluators on ScienceAgentBench and physics-based numerical gates (mass drift, boundedness, peak counts) on the PDE tasks.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Curator agents synthesize failed run artifacts into typed schema records specifying failure mechanisms and prescriptive actions.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E988de1269a6649d6-B0002",
+          "E988de1269a6649d6-B0011",
+          "E988de1269a6649d6-B0012",
+          "E988de1269a6649d6-B0013",
+          "E988de1269a6649d6-B0014",
+          "E988de1269a6649d6-B0015",
+          "E988de1269a6649d6-B0016",
+          "E988de1269a6649d6-B0020",
+          "E988de1269a6649d6-B0021",
+          "E988de1269a6649d6-B0023",
+          "E988de1269a6649d6-B0024",
+          "E988de1269a6649d6-B0037",
+          "E988de1269a6649d6-B0041",
+          "E988de1269a6649d6-B0054",
+          "E988de1269a6649d6-B0055",
+          "E988de1269a6649d6-B0061",
+          "E988de1269a6649d6-B0063",
+          "E988de1269a6649d6-B0064"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "6d5005a6509fca3310cda61fb7c3a09dba4e23e60baaae4d16aedbf1b4fe04e4"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7165816402",
+        "claim_evidence_alignment": "Claims regarding improved retry pass rates with smaller memory footprints on ScienceAgentBench (e.g., 36.8% vs 31.6% base retry; 47.4% deep retry vs 44.7% raw self-debug) and cross-task transfer on coupled PDEs are directly supported by the tabular results and trace analyses.",
+        "context_id": "988de1269a6649d6d21241c55d9ff664d9a217df990475e0b4594c3f1842a2b7",
+        "decision": "pass",
+        "evaluation_assessment": "The framework is evaluated across two distinct empirical environments: 38 deterministic tasks from ScienceAgentBench and numerical research problems on nonlinear coupled PDE systems (BKdV and BNLS). The outcomes are tracked against sensible baselines using objective deterministic programmatic checks, pass rates, and context memory footprints.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The headline evaluation relies on external programmatic unit tests and physics-based integration checks that operate independently of the curator agent.",
+          "final_evaluation_signal": "Independent programmatic determinism checks on ScienceAgentBench tasks and explicit numerical simulation criteria (such as mass conservation thresholds and peak amplitude gates) for PDE systems.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Curator agents synthesize failed run artifacts into typed schema records specifying failure mechanisms and prescriptive actions.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E988de1269a6649d6-B0002",
+          "E988de1269a6649d6-B0011",
+          "E988de1269a6649d6-B0012",
+          "E988de1269a6649d6-B0013",
+          "E988de1269a6649d6-B0014",
+          "E988de1269a6649d6-B0015",
+          "E988de1269a6649d6-B0016",
+          "E988de1269a6649d6-B0020",
+          "E988de1269a6649d6-B0021",
+          "E988de1269a6649d6-B0023",
+          "E988de1269a6649d6-B0024",
+          "E988de1269a6649d6-B0037",
+          "E988de1269a6649d6-B0041",
+          "E988de1269a6649d6-B0054",
+          "E988de1269a6649d6-B0055",
+          "E988de1269a6649d6-B0061",
+          "E988de1269a6649d6-B0063",
+          "E988de1269a6649d6-B0064"
+        ],
+        "limitations": "The authors transparently discuss constraints, including small sample sizes on PDE benchmarks, negative transfer risks when transferring across systems with incompatible mathematical properties, and the upfront token cost incurred by the curator pass.",
+        "method_assessment": "The methodology clearly delineates the roles of the curator and research agents, formalizing a structured schema with controlled vocabularies for failure classification and actionable prescription. Its multi-agent setup decouples attempt execution from failure summarization to mitigate self-assessment bias.",
+        "quality_rationale": "The paper presents a well-scoped architectural concept backed by a clear implementation schema and solid empirical validation. Deterministic evaluators eliminate subjective scoring bias, and experimental comparisons cleanly isolate the value of structured negative memory against direct retry and raw self-debugging.",
+        "scoped_contribution": "The paper introduces a negative knowledge memory layer for autonomous research workflows, where a curator agent converts failed experimental attempts into bounded, typed records stored in a shared bank that downstream research agents adopt or reject before proposing subsequent experiments.",
+        "source_content_hash": "6d5005a6509fca3310cda61fb7c3a09dba4e23e60baaae4d16aedbf1b4fe04e4"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper presents a well-scoped architectural concept backed by a clear implementation schema and solid empirical validation. Deterministic evaluators eliminate subjective scoring bias, and experimental comparisons cleanly isolate the value of structured negative memory against direct retry and raw self-debugging.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "6d5005a6509fca3310cda61fb7c3a09dba4e23e60baaae4d16aedbf1b4fe04e4",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently discuss constraints, including small sample sizes on PDE benchmarks, negative transfer risks when transferring across systems with incompatible mathematical properties, and the upfront token cost incurred by the curator pass."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -165,7 +1795,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

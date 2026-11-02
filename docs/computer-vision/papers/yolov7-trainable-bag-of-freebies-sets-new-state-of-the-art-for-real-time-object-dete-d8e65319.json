@@ -27,7 +27,7 @@
   "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-21 15:58:19",
   "notified_date": "2026-09-21",
@@ -38,7 +38,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:55:04",
-    "generated_at": "2026-10-30 10:47:43",
+    "generated_at": "2026-11-02 12:04:44",
     "last_seen_at": "2026-09-21 15:55:04",
     "metadata_sources": [
       "openalex",
@@ -111,36 +111,1648 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-02T12:02:25.647021+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "YOLOv7 provides a well-engineered, thoroughly benchmarked real-time detection family with clear ablations on all claimed architectural and optimization components. The evaluation uses standard objective benchmarks and standardized measurement protocols.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 69361,
+      "assessment_input_sha256": "fff446ebd8b29b54353742cb529510bc6db013f543b4d5738ad9967d571c7b5e",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2207.02696",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 67436,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 66784,
+      "evidence_block_count": 92,
+      "evidence_context_characters": 79091,
+      "evidence_context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+      "evidence_context_sha256": "2e8b60b34a6521736eac8e47ce1d3546b8d7612986b84c03842bd7864cf99480",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 67464,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "extracted_pages": 15,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "61827f8908649249cbe20f75a96c2899fae0ec2e1a888869572271eb5fd0ca4f",
+        "source_url": "https://arxiv.org/pdf/2207.02696",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 67436,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 286,
+          "supplied_characters": 286
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 898,
+          "supplied_characters": 898
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2589,
+          "supplied_characters": 2589
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1869,
+          "supplied_characters": 1869
+        },
+        {
+          "heading": "Real-Time Object Detectors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 931,
+          "supplied_characters": 931
+        },
+        {
+          "heading": "Model Re-Parameterization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1203,
+          "supplied_characters": 1203
+        },
+        {
+          "heading": "Model Scaling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1654,
+          "supplied_characters": 1654
+        },
+        {
+          "heading": "Model Scaling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 476,
+          "supplied_characters": 476
+        },
+        {
+          "heading": "Extended Efficient Layer Aggregation Networks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2795,
+          "supplied_characters": 2795
+        },
+        {
+          "heading": "Model Scaling For Concatenation-Based Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 591,
+          "supplied_characters": 591
+        },
+        {
+          "heading": "Model Scaling For Concatenation-Based Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2101,
+          "supplied_characters": 2101
+        },
+        {
+          "heading": "Planned Re-Parameterized Convolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1714,
+          "supplied_characters": 1714
+        },
+        {
+          "heading": "Planned Re-Parameterized Convolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 572,
+          "supplied_characters": 572
+        },
+        {
+          "heading": "Coarse For Auxiliary And Fine For Lead Loss",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 4391,
+          "supplied_characters": 4391
+        },
+        {
+          "heading": "Coarse For Auxiliary And Fine For Lead Loss",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1966,
+          "supplied_characters": 1966
+        },
+        {
+          "heading": "Other Trainable Bag-Of-Freebies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1004,
+          "supplied_characters": 1004
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 1435,
+          "supplied_characters": 1435
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 2524,
+          "supplied_characters": 2524
+        },
+        {
+          "heading": "Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 816,
+          "supplied_characters": 816
+        },
+        {
+          "heading": "Comparison With State-Of-The-Arts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 989,
+          "supplied_characters": 989
+        },
+        {
+          "heading": "Comparison With State-Of-The-Arts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 534,
+          "supplied_characters": 534
+        },
+        {
+          "heading": "Proposed Compound Scaling Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 1122,
+          "supplied_characters": 1122
+        },
+        {
+          "heading": "Proposed Planned Re-Parameterized Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 2411,
+          "supplied_characters": 2411
+        },
+        {
+          "heading": "Proposed Planned Re-Parameterized Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 88,
+          "supplied_characters": 88
+        },
+        {
+          "heading": "Proposed Assistant Loss For Auxiliary Head",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 3082,
+          "supplied_characters": 3082
+        },
+        {
+          "heading": "Conclusions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 25,
+          "source_characters": 621,
+          "supplied_characters": 621
+        },
+        {
+          "heading": "The Authors Wish To Thank National Center For High-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 51,
+          "supplied_characters": 51
+        },
+        {
+          "heading": "Performance Computing (Nchc) For Providing Computa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 83,
+          "supplied_characters": 83
+        },
+        {
+          "heading": "Performance Computing (Nchc) For Providing Computa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 2981,
+          "supplied_characters": 2981
+        },
+        {
+          "heading": "More Comparison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 867,
+          "supplied_characters": 867
+        },
+        {
+          "heading": "More Comparison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 856,
+          "supplied_characters": 856
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 858,
+          "supplied_characters": 858
+        },
+        {
+          "heading": "Ceedings Of The European Conference On Computer Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Ieee Transactions On Pattern Analysis And Machine Intel-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 447,
+          "supplied_characters": 447
+        },
+        {
+          "heading": "In Proceedings Of The Ieee/Cvf International Conference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 269,
+          "supplied_characters": 269
+        },
+        {
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 478,
+          "supplied_characters": 478
+        },
+        {
+          "heading": "Ings Of The Ieee/Cvf International Conference On Com-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 261,
+          "supplied_characters": 261
+        },
+        {
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 527,
+          "supplied_characters": 527
+        },
+        {
+          "heading": "Proceedings Of The Ieee/Cvf Conference On Computer Vi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 217,
+          "supplied_characters": 217
+        },
+        {
+          "heading": "Conference On Computer Vision And Pattern Recognition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 664,
+          "supplied_characters": 664
+        },
+        {
+          "heading": "Tection And Semantic Segmentation For Autonomous Driv-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 340,
+          "supplied_characters": 340
+        },
+        {
+          "heading": "Advances In Neural Information Processing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 526,
+          "supplied_characters": 526
+        },
+        {
+          "heading": "Learning Scalable Feature Pyramid Architecture For Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "methods",
+          "section_index": 42,
+          "source_characters": 360,
+          "supplied_characters": 360
+        },
+        {
+          "heading": "Pandnets: Linear Over-Parameterization To Train Compact",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 525,
+          "supplied_characters": 525
+        },
+        {
+          "heading": "Pandnets: Linear Over-Parameterization To Train Compact",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 5930,
+          "supplied_characters": 5930
+        },
+        {
+          "heading": "Pandnets: Linear Over-Parameterization To Train Compact",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 5881,
+          "supplied_characters": 5881
+        },
+        {
+          "heading": "Pandnets: Linear Over-Parameterization To Train Compact",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 5793,
+          "supplied_characters": 5793
+        }
+      ],
+      "selected_characters": 66784,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "selected_sections": [
+        {
+          "characters": 286,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 898,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2589,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1869,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 931,
+          "heading": "Real-Time Object Detectors",
+          "page": 2
+        },
+        {
+          "characters": 1203,
+          "heading": "Model Re-Parameterization",
+          "page": 2
+        },
+        {
+          "characters": 1654,
+          "heading": "Model Scaling",
+          "page": 2
+        },
+        {
+          "characters": 476,
+          "heading": "Model Scaling",
+          "page": 3
+        },
+        {
+          "characters": 2795,
+          "heading": "Extended Efficient Layer Aggregation Networks",
+          "page": 3
+        },
+        {
+          "characters": 591,
+          "heading": "Model Scaling For Concatenation-Based Models",
+          "page": 3
+        },
+        {
+          "characters": 2101,
+          "heading": "Model Scaling For Concatenation-Based Models",
+          "page": 4
+        },
+        {
+          "characters": 1714,
+          "heading": "Planned Re-Parameterized Convolution",
+          "page": 4
+        },
+        {
+          "characters": 572,
+          "heading": "Planned Re-Parameterized Convolution",
+          "page": 5
+        },
+        {
+          "characters": 4391,
+          "heading": "Coarse For Auxiliary And Fine For Lead Loss",
+          "page": 5
+        },
+        {
+          "characters": 1966,
+          "heading": "Coarse For Auxiliary And Fine For Lead Loss",
+          "page": 6
+        },
+        {
+          "characters": 1004,
+          "heading": "Other Trainable Bag-Of-Freebies",
+          "page": 6
+        },
+        {
+          "characters": 1435,
+          "heading": "Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 2524,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 816,
+          "heading": "Baselines",
+          "page": 7
+        },
+        {
+          "characters": 989,
+          "heading": "Comparison With State-Of-The-Arts",
+          "page": 7
+        },
+        {
+          "characters": 534,
+          "heading": "Comparison With State-Of-The-Arts",
+          "page": 8
+        },
+        {
+          "characters": 1122,
+          "heading": "Proposed Compound Scaling Method",
+          "page": 8
+        },
+        {
+          "characters": 2411,
+          "heading": "Proposed Planned Re-Parameterized Model",
+          "page": 8
+        },
+        {
+          "characters": 88,
+          "heading": "Proposed Planned Re-Parameterized Model",
+          "page": 9
+        },
+        {
+          "characters": 3082,
+          "heading": "Proposed Assistant Loss For Auxiliary Head",
+          "page": 9
+        },
+        {
+          "characters": 621,
+          "heading": "Conclusions",
+          "page": 9
+        },
+        {
+          "characters": 51,
+          "heading": "The Authors Wish To Thank National Center For High-",
+          "page": 9
+        },
+        {
+          "characters": 83,
+          "heading": "Performance Computing (Nchc) For Providing Computa-",
+          "page": 9
+        },
+        {
+          "characters": 2981,
+          "heading": "Performance Computing (Nchc) For Providing Computa-",
+          "page": 10
+        },
+        {
+          "characters": 867,
+          "heading": "More Comparison",
+          "page": 10
+        },
+        {
+          "characters": 856,
+          "heading": "More Comparison",
+          "page": 11
+        },
+        {
+          "characters": 858,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 208,
+          "heading": "Ceedings Of The European Conference On Computer Vision",
+          "page": 12
+        },
+        {
+          "characters": 447,
+          "heading": "Ieee Transactions On Pattern Analysis And Machine Intel-",
+          "page": 12
+        },
+        {
+          "characters": 269,
+          "heading": "In Proceedings Of The Ieee/Cvf International Conference",
+          "page": 12
+        },
+        {
+          "characters": 478,
+          "heading": "Ceedings Of The Ieee/Cvf Conference On Computer Vision",
+          "page": 12
+        },
+        {
+          "characters": 261,
+          "heading": "Ings Of The Ieee/Cvf International Conference On Com-",
+          "page": 12
+        },
+        {
+          "characters": 527,
+          "heading": "Ieee/Cvf Conference On Computer Vision And Pattern",
+          "page": 12
+        },
+        {
+          "characters": 217,
+          "heading": "Proceedings Of The Ieee/Cvf Conference On Computer Vi-",
+          "page": 12
+        },
+        {
+          "characters": 664,
+          "heading": "Conference On Computer Vision And Pattern Recognition",
+          "page": 12
+        },
+        {
+          "characters": 340,
+          "heading": "Tection And Semantic Segmentation For Autonomous Driv-",
+          "page": 12
+        },
+        {
+          "characters": 526,
+          "heading": "Advances In Neural Information Processing Systems",
+          "page": 12
+        },
+        {
+          "characters": 360,
+          "heading": "Learning Scalable Feature Pyramid Architecture For Object",
+          "page": 12
+        },
+        {
+          "characters": 525,
+          "heading": "Pandnets: Linear Over-Parameterization To Train Compact",
+          "page": 12
+        },
+        {
+          "characters": 5930,
+          "heading": "Pandnets: Linear Over-Parameterization To Train Compact",
+          "page": 13
+        },
+        {
+          "characters": 5881,
+          "heading": "Pandnets: Linear Over-Parameterization To Train Compact",
+          "page": 14
+        },
+        {
+          "characters": 5793,
+          "heading": "Pandnets: Linear Over-Parameterization To Train Compact",
+          "page": 15
+        }
+      ],
+      "selected_text_sha256": "fff446ebd8b29b54353742cb529510bc6db013f543b4d5738ad9967d571c7b5e",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "61827f8908649249cbe20f75a96c2899fae0ec2e1a888869572271eb5fd0ca4f",
+      "source_pages": 15,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0002"
+        ],
+        "excerpt": "YOLOv7 surpasses all known object detectors in both\nspeed and accuracy in the range from 5 FPS to 160 FPS\nand has the highest accuracy 56.8% AP among all known\nreal-time object detectors with 30 FPS or higher on GPU\nV100. YOLOv7-E6 object detector (56 FPS V100, 55.9%\nAP) outperforms both transformer-based detector SWIN-\nL Cascade-Mask R-CNN (9.2 FPS A100, 53.9% AP) by\n509% in speed and 2% in accuracy, and convolutional-\nbased detector ConvNeXt-XL Cascade-Mask R-CNN (8.6\nFPS A100, 55.2% AP) by 551% in speed and 0.7% AP\nin accuracy, as well as YOLOv7 outperforms: YOLOR,\nYOLOX, Scaled-YOLOv4, YOLOv5, DETR, Deformable\nDETR, DINO-5scale-R50, ViT-Adapter-B and many other\nobject detectors in speed and accuracy. Moreover, we train\nYOLOv7 only on MS COCO dataset from scratch without\nusing any other datasets or pre-trained weights. Source\ncode is released in https://github.com/WongKinYiu/yolov7.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5bdd05bb200be56761ea5027aefa27589138e8182321360a8d947642f2ea3868",
+            "evidence_id": "Ebf6fd74853201daa-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "YOLOv7 surpasses all known object detectors in both\nspeed and accuracy in the range from 5 FPS to 160 FPS\nand has the highest accuracy 56.8% AP among all known\nreal-time object detectors with 30 FPS or higher on GPU\nV100. YOLOv7-E6 object detector (56 FPS V100, 55.9%\nAP) outperforms both transformer-based detector SWIN-\nL Cascade-Mask R-CNN (9.2 FPS A100, 53.9% AP) by\n509% in speed and 2% in accuracy, and convolutional-\nbased detector ConvNeXt-XL Cascade-Mask R-CNN (8.6\nFPS A100, 55.2% AP) by 551% in speed and 0.7% AP\nin accuracy, as well as YOLOv7 outperforms: YOLOR,\nYOLOX, Scaled-YOLOv4, YOLOv5, DETR, Deformable\nDETR, DINO-5scale-R50, ViT-Adapter-B and many other\nobject detectors in speed and accuracy. Moreover, we train\nYOLOv7 only on MS COCO dataset from scratch without\nusing any other datasets or pre-trained weights. Source\ncode is released in https://github.com/WongKinYiu/yolov7."
+              }
+            ],
+            "text": "YOLOv7 surpasses all known object detectors in both\nspeed and accuracy in the range from 5 FPS to 160 FPS\nand has the highest accuracy 56.8% AP among all known\nreal-time object detectors with 30 FPS or higher on GPU\nV100. YOLOv7-E6 object detector (56 FPS V100, 55.9%\nAP) outperforms both transformer-based detector SWIN-\nL Cascade-Mask R-CNN (9.2 FPS A100, 53.9% AP) by\n509% in speed and 2% in accuracy, and convolutional-\nbased detector ConvNeXt-XL Cascade-Mask R-CNN (8.6\nFPS A100, 55.2% AP) by 551% in speed and 0.7% AP\nin accuracy, as well as YOLOv7 outperforms: YOLOR,\nYOLOX, Scaled-YOLOv4, YOLOv5, DETR, Deformable\nDETR, DINO-5scale-R50, ViT-Adapter-B and many other\nobject detectors in speed and accuracy. Moreover, we train\nYOLOv7 only on MS COCO dataset from scratch without\nusing any other datasets or pre-trained weights. Source\ncode is released in https://github.com/WongKinYiu/yolov7."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0007"
+        ],
+        "excerpt": "fol-\nlows: (1) we design several trainable bag-of-freebies meth-\nods, so that real-time object detection can greatly improve\nthe detection accuracy without increasing the inference\ncost; (2) for the evolution of object detection methods, we\nfound two new issues, namely how re-parameterized mod-\nule replaces original module, and how dynamic label as-\nsignment strategy deals with assignment to different output\nlayers. In addition, we also propose methods to address the\ndifficulties arising from these issues; (3) we propose \"ex-\ntend\" and \"compound scaling\" methods for the real-time\nobject detector that can effectively utilize parameters and\ncomputation; and (4) the method we proposed can effec-\ntively reduce about 40% parameters and 50% computation\nof state-of-the-art real-time object detector, and has faster\ninference speed and higher detection accuracy.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5a4ac22ac003abadcb40db659d5029f287abaae4c9792aab39c293c20e341ecf",
+            "evidence_id": "Ebf6fd74853201daa-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1869,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1004,
+                "text": "fol-\nlows: (1) we design several trainable bag-of-freebies meth-\nods, so that real-time object detection can greatly improve\nthe detection accuracy without increasing the inference\ncost; (2) for the evolution of object detection methods, we\nfound two new issues, namely how re-parameterized mod-\nule replaces original module, and how dynamic label as-\nsignment strategy deals with assignment to different output\nlayers. In addition, we also propose methods to address the\ndifficulties arising from these issues; (3) we propose \"ex-\ntend\" and \"compound scaling\" methods for the real-time\nobject detector that can effectively utilize parameters and\ncomputation; and (4) the method we proposed can effec-\ntively reduce about 40% parameters and 50% computation\nof state-of-the-art real-time object detector, and has faster\ninference speed and higher detection accuracy."
+              }
+            ],
+            "text": "fol-\nlows: (1) we design several trainable bag-of-freebies meth-\nods, so that real-time object detection can greatly improve\nthe detection accuracy without increasing the inference\ncost; (2) for the evolution of object detection methods, we\nfound two new issues, namely how re-parameterized mod-\nule replaces original module, and how dynamic label as-\nsignment strategy deals with assignment to different output\nlayers. In addition, we also propose methods to address the\ndifficulties arising from these issues; (3) we propose \"ex-\ntend\" and \"compound scaling\" methods for the real-time\nobject detector that can effectively utilize parameters and\ncomputation; and (4) the method we proposed can effec-\ntively reduce about 40% parameters and 50% computation\nof state-of-the-art real-time object detector, and has faster\ninference speed and higher detection accuracy."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0014"
+        ],
+        "excerpt": "the original architecture at all, but use group convolution to increase the cardinality of the added features, and combine the\nfeatures of different groups in a shuffle and merge cardinality manner. This way of operation can enhance the features learned by different\nfeature maps and improve the use of parameters and calculations.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Model Scaling",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e86103934ba0b2a001b01709eacabc997f410851c6d48e7732d7f711c5b517f4",
+            "evidence_id": "Ebf6fd74853201daa-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Model Scaling",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 476,
+                "page": 3,
+                "section": "Model Scaling",
+                "section_index": 7,
+                "start": 145,
+                "text": "the original architecture at all, but use group convolution to increase the cardinality of the added features, and combine the\nfeatures of different groups in a shuffle and merge cardinality manner. This way of operation can enhance the features learned by different\nfeature maps and improve the use of parameters and calculations."
+              }
+            ],
+            "text": "the original architecture at all, but use group convolution to increase the cardinality of the added features, and combine the\nfeatures of different groups in a shuffle and merge cardinality manner. This way of operation can enhance the features learned by different\nfeature maps and improve the use of parameters and calculations."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0016"
+        ],
+        "excerpt": "different layers to learn more diverse features.\nThe gradient analysis approach described above makes in-\nferences faster and more accurate. ELAN [1] in Figure 2 (c)\nconsiders the following design strategy \u2013 \"How to design an\nefficient network?.\" They came out with a conclusion: By\ncontrolling the shortest longest gradient path, a deeper net-\nwork can learn and converge effectively. In this paper, we\npropose Extended-ELAN (E-ELAN) based on ELAN and\nits main architecture is shown in Figure 2 (d).\nRegardless of the gradient path length and the stacking\nnumber of computational blocks in large-scale ELAN, it has\nreached a stable state. If more computational blocks are\nstacked unlimitedly, this stable state may be destroyed, and\nthe parameter utilization rate will decrease. The proposed\nE-ELAN uses expand, shuffle, merge cardinality to achieve\nthe ability to continuously enhance the learning ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Extended Efficient Layer Aggregation Networks",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4c9fc77b50cf95920cdd7f0c8a1c45fc702d6bab49c263f7dadff3dd92d01d7e",
+            "evidence_id": "Ebf6fd74853201daa-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Extended Efficient Layer Aggregation Networks",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 3,
+                "section": "Extended Efficient Layer Aggregation Networks",
+                "section_index": 8,
+                "start": 894,
+                "text": "different layers to learn more diverse features.\nThe gradient analysis approach described above makes in-\nferences faster and more accurate. ELAN [1] in Figure 2 (c)\nconsiders the following design strategy \u2013 \"How to design an\nefficient network?.\" They came out with a conclusion: By\ncontrolling the shortest longest gradient path, a deeper net-\nwork can learn and converge effectively. In this paper, we\npropose Extended-ELAN (E-ELAN) based on ELAN and\nits main architecture is shown in Figure 2 (d).\nRegardless of the gradient path length and the stacking\nnumber of computational blocks in large-scale ELAN, it has\nreached a stable state. If more computational blocks are\nstacked unlimitedly, this stable state may be destroyed, and\nthe parameter utilization rate will decrease. The proposed\nE-ELAN uses expand, shuffle, merge cardinality to achieve\nthe ability to continuously enhance the learning "
+              }
+            ],
+            "text": "different layers to learn more diverse features.\nThe gradient analysis approach described above makes in-\nferences faster and more accurate. ELAN [1] in Figure 2 (c)\nconsiders the following design strategy \u2013 \"How to design an\nefficient network?.\" They came out with a conclusion: By\ncontrolling the shortest longest gradient path, a deeper net-\nwork can learn and converge effectively. In this paper, we\npropose Extended-ELAN (E-ELAN) based on ELAN and\nits main architecture is shown in Figure 2 (d).\nRegardless of the gradient path length and the stacking\nnumber of computational blocks in large-scale ELAN, it has\nreached a stable state. If more computational blocks are\nstacked unlimitedly, this stable state may be destroyed, and\nthe parameter utilization rate will decrease. The proposed\nE-ELAN uses expand, shuffle, merge cardinality to achieve\nthe ability to continuously enhance the learning "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0021"
+        ],
+        "excerpt": "inferred from the above phenomenon that\nwe cannot analyze different scaling factors separately for\na concatenation-based model but must be considered to-\ngether. Take scaling-up depth as an example, such an ac-\ntion will cause a ratio change between the input channel and\noutput channel of a transition layer, which may lead to a de-\ncrease in the hardware usage of the model. Therefore, we\nmust propose the corresponding compound model scaling\nmethod for a concatenation-based model. When we scale\nthe depth factor of a computational block, we must also cal-\nculate the change of the output channel of that block. Then,\nwe will perform width factor scaling with the same amount\nof change on the transition layers, and the result is shown\nin Figure 3 (c). Our proposed compound scaling method\ncan maintain the properties that the model had at the initial\ndesign and maintains the optimal structure.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Model Scaling For Concatenation-Based Models",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d5e3442e33bab9fec9909ef057c84a96459b1bd9c0dbe4fcd0d0c358f55c2e86",
+            "evidence_id": "Ebf6fd74853201daa-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Model Scaling For Concatenation-Based Models",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2101,
+                "page": 4,
+                "section": "Model Scaling For Concatenation-Based Models",
+                "section_index": 10,
+                "start": 1203,
+                "text": "inferred from the above phenomenon that\nwe cannot analyze different scaling factors separately for\na concatenation-based model but must be considered to-\ngether. Take scaling-up depth as an example, such an ac-\ntion will cause a ratio change between the input channel and\noutput channel of a transition layer, which may lead to a de-\ncrease in the hardware usage of the model. Therefore, we\nmust propose the corresponding compound model scaling\nmethod for a concatenation-based model. When we scale\nthe depth factor of a computational block, we must also cal-\nculate the change of the output channel of that block. Then,\nwe will perform width factor scaling with the same amount\nof change on the transition layers, and the result is shown\nin Figure 3 (c). Our proposed compound scaling method\ncan maintain the properties that the model had at the initial\ndesign and maintains the optimal structure."
+              }
+            ],
+            "text": "inferred from the above phenomenon that\nwe cannot analyze different scaling factors separately for\na concatenation-based model but must be considered to-\ngether. Take scaling-up depth as an example, such an ac-\ntion will cause a ratio change between the input channel and\noutput channel of a transition layer, which may lead to a de-\ncrease in the hardware usage of the model. Therefore, we\nmust propose the corresponding compound model scaling\nmethod for a concatenation-based model. When we scale\nthe depth factor of a computational block, we must also cal-\nculate the change of the output channel of that block. Then,\nwe will perform width factor scaling with the same amount\nof change on the transition layers, and the result is shown\nin Figure 3 (c). Our proposed compound scaling method\ncan maintain the properties that the model had at the initial\ndesign and maintains the optimal structure."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0023"
+        ],
+        "excerpt": "different architectures,\nwe find that the identity connection in RepConv destroys\nthe residual in ResNet and the concatenation in DenseNet,\nwhich provides more diversity of gradients for different fea-\nture maps. For the above reasons, we use RepConv with-\nout identity connection (RepConvN) to design the architec-\nture of planned re-parameterized convolution. In our think-\ning, when a convolutional layer with residual or concate-\nnation is replaced by re-parameterized convolution, there\nshould be no identity connection. Figure 4 shows an exam-\nple of our designed \"planned re-parameterized convolution\"\nused in PlainNet and ResNet. As for the complete planned\nre-parameterized convolution experiment in residual-based\nmodel and concatenation-based model, it will be presented\nin the ablation study session.\n4\nFigure 5: Coarse for auxiliary and fine for lead head label assigner. Compare with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Planned Re-Parameterized Convolution",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "78f789eeb8afddc5853ea1b7be87d16d352a66b6f0a2a24e74ac0b63ddd3add2",
+            "evidence_id": "Ebf6fd74853201daa-B0023",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Planned Re-Parameterized Convolution",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1714,
+                "page": 4,
+                "section": "Planned Re-Parameterized Convolution",
+                "section_index": 11,
+                "start": 900,
+                "text": "different architectures,\nwe find that the identity connection in RepConv destroys\nthe residual in ResNet and the concatenation in DenseNet,\nwhich provides more diversity of gradients for different fea-\nture maps. For the above reasons, we use RepConv with-\nout identity connection (RepConvN) to design the architec-\nture of planned re-parameterized convolution. In our think-\ning, when a convolutional layer with residual or concate-\nnation is replaced by re-parameterized convolution, there\nshould be no identity connection. Figure 4 shows an exam-\nple of our designed \"planned re-parameterized convolution\"\nused in PlainNet and ResNet. As for the complete planned\nre-parameterized convolution experiment in residual-based\nmodel and concatenation-based model, it will be presented\nin the ablation study session.\n4"
+              },
+              {
+                "end": 83,
+                "page": 5,
+                "section": "Planned Re-Parameterized Convolution",
+                "section_index": 12,
+                "start": 0,
+                "text": "Figure 5: Coarse for auxiliary and fine for lead head label assigner. Compare with "
+              }
+            ],
+            "text": "different architectures,\nwe find that the identity connection in RepConv destroys\nthe residual in ResNet and the concatenation in DenseNet,\nwhich provides more diversity of gradients for different fea-\nture maps. For the above reasons, we use RepConv with-\nout identity connection (RepConvN) to design the architec-\nture of planned re-parameterized convolution. In our think-\ning, when a convolutional layer with residual or concate-\nnation is replaced by re-parameterized convolution, there\nshould be no identity connection. Figure 4 shows an exam-\nple of our designed \"planned re-parameterized convolution\"\nused in PlainNet and ResNet. As for the complete planned\nre-parameterized convolution experiment in residual-based\nmodel and concatenation-based model, it will be presented\nin the ablation study session.\n4\nFigure 5: Coarse for auxiliary and fine for lead head label assigner. Compare with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0027"
+        ],
+        "excerpt": "deriva-\ntive issue, i.e., \"How to assign soft label to auxiliary head\nand lead head ?\" To the best of our knowledge, the relevant\nliterature has not explored this issue so far. The results of\nthe most popular method at present is as shown in Figure 5\n(c), which is to separate auxiliary head and lead head, and\nthen use their own prediction results and the ground truth\nto execute label assignment. The method proposed in this\npaper is a new label assignment method that guides both\nauxiliary head and lead head by the lead head prediction.\nIn other words, we use lead head prediction as guidance to\ngenerate coarse-to-fine hierarchical labels, which are used\nfor auxiliary head and lead head learning, respectively. The\ntwo proposed deep supervision label assignment strategies\nare shown in Figure 5 (d) and (e), respectively.\nLead head guided label assigner is mainly calculated\nbased on the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coarse For Auxiliary And Fine For Lead Loss",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b75e2ff595c7e76f4cc4746a1ac83280d115f0c54453e09f2c4e42720745602a",
+            "evidence_id": "Ebf6fd74853201daa-B0027",
+            "pages": [
+              5
+            ],
+            "section": "Coarse For Auxiliary And Fine For Lead Loss",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2676,
+                "page": 5,
+                "section": "Coarse For Auxiliary And Fine For Lead Loss",
+                "section_index": 13,
+                "start": 1782,
+                "text": "deriva-\ntive issue, i.e., \"How to assign soft label to auxiliary head\nand lead head ?\" To the best of our knowledge, the relevant\nliterature has not explored this issue so far. The results of\nthe most popular method at present is as shown in Figure 5\n(c), which is to separate auxiliary head and lead head, and\nthen use their own prediction results and the ground truth\nto execute label assignment. The method proposed in this\npaper is a new label assignment method that guides both\nauxiliary head and lead head by the lead head prediction.\nIn other words, we use lead head prediction as guidance to\ngenerate coarse-to-fine hierarchical labels, which are used\nfor auxiliary head and lead head learning, respectively. The\ntwo proposed deep supervision label assignment strategies\nare shown in Figure 5 (d) and (e), respectively.\nLead head guided label assigner is mainly calculated\nbased on the "
+              }
+            ],
+            "text": "deriva-\ntive issue, i.e., \"How to assign soft label to auxiliary head\nand lead head ?\" To the best of our knowledge, the relevant\nliterature has not explored this issue so far. The results of\nthe most popular method at present is as shown in Figure 5\n(c), which is to separate auxiliary head and lead head, and\nthen use their own prediction results and the ground truth\nto execute label assignment. The method proposed in this\npaper is a new label assignment method that guides both\nauxiliary head and lead head by the lead head prediction.\nIn other words, we use lead head prediction as guidance to\ngenerate coarse-to-fine hierarchical labels, which are used\nfor auxiliary head and lead head learning, respectively. The\ntwo proposed deep supervision label assignment strategies\nare shown in Figure 5 (d) and (e), respectively.\nLead head guided label assigner is mainly calculated\nbased on the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0029"
+        ],
+        "excerpt": "process we gen-\nerate two different sets of soft label, i.e., coarse label and\nfine label, where fine label is the same as the soft label gen-\nerated by lead head guided label assigner, and coarse label\nis generated by allowing more grids to be treated as posi-\ntive target by relaxing the constraints of the positive sample\nassignment process. The reason for this is that the learning\nability of an auxiliary head is not as strong as that of a lead\nhead, and in order to avoid losing the information that needs\nto be learned, we will focus on optimizing the recall of aux-\niliary head in the object detection task. As for the output\nof lead head, we can filter the high precision results from\nthe high recall results as the final output. However, we must\nnote that if the additional weight of coarse label is close to\n5\nTable 1: Comparison of baseline object detectors.\nModel #Param. FLOPs Size AP ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coarse For Auxiliary And Fine For Lead Loss",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7840211c73936b2d065fb215f3a61f604c8e52dad0de37bc19c92440da476348",
+            "evidence_id": "Ebf6fd74853201daa-B0029",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Coarse For Auxiliary And Fine For Lead Loss",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4391,
+                "page": 5,
+                "section": "Coarse For Auxiliary And Fine For Lead Loss",
+                "section_index": 13,
+                "start": 3571,
+                "text": "process we gen-\nerate two different sets of soft label, i.e., coarse label and\nfine label, where fine label is the same as the soft label gen-\nerated by lead head guided label assigner, and coarse label\nis generated by allowing more grids to be treated as posi-\ntive target by relaxing the constraints of the positive sample\nassignment process. The reason for this is that the learning\nability of an auxiliary head is not as strong as that of a lead\nhead, and in order to avoid losing the information that needs\nto be learned, we will focus on optimizing the recall of aux-\niliary head in the object detection task. As for the output\nof lead head, we can filter the high precision results from\nthe high recall results as the final output. However, we must\nnote that if the additional weight of coarse label is close to\n5"
+              },
+              {
+                "end": 78,
+                "page": 6,
+                "section": "Coarse For Auxiliary And Fine For Lead Loss",
+                "section_index": 14,
+                "start": 0,
+                "text": "Table 1: Comparison of baseline object detectors.\nModel #Param. FLOPs Size AP "
+              }
+            ],
+            "text": "process we gen-\nerate two different sets of soft label, i.e., coarse label and\nfine label, where fine label is the same as the soft label gen-\nerated by lead head guided label assigner, and coarse label\nis generated by allowing more grids to be treated as posi-\ntive target by relaxing the constraints of the positive sample\nassignment process. The reason for this is that the learning\nability of an auxiliary head is not as strong as that of a lead\nhead, and in order to avoid losing the information that needs\nto be learned, we will focus on optimizing the recall of aux-\niliary head in the object detection task. As for the output\nof lead head, we can filter the high precision results from\nthe high recall results as the final output. However, we must\nnote that if the additional weight of coarse label is close to\n5\nTable 1: Comparison of baseline object detectors.\nModel #Param. FLOPs Size AP "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0035"
+        ],
+        "excerpt": "We use Microsoft COCO dataset to conduct experiments\nand validate our object detection method. All our experi-\nments did not use pre-trained models. That is, all models\nwere trained from scratch. During the development pro-\ncess, we used train 2017 set for training, and then used val\n2017 set for verification and choosing hyperparameters. Fi-\nnally, we show the performance of object detection on the\ntest 2017 set and compare it with the state-of-the-art object\ndetection algorithms. Detailed training parameter settings\nare described in Appendix.\nWe designed basic model for edge GPU, normal GPU,\nand cloud GPU, and they are respectively called YOLOv7-\ntiny, YOLOv7, and YOLOv7-W6. At the same time, we\nalso use basic model for model scaling for different ser-\nvice requirements and get different types of models. For\nYOLOv7, we do stack scaling on neck, and use the pro-\nposed compound scaling ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e2f887976df7f622d1cc4c65ee812722eaf305196257c6db12af69a65c62642d",
+            "evidence_id": "Ebf6fd74853201daa-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 16,
+                "start": 0,
+                "text": "We use Microsoft COCO dataset to conduct experiments\nand validate our object detection method. All our experi-\nments did not use pre-trained models. That is, all models\nwere trained from scratch. During the development pro-\ncess, we used train 2017 set for training, and then used val\n2017 set for verification and choosing hyperparameters. Fi-\nnally, we show the performance of object detection on the\ntest 2017 set and compare it with the state-of-the-art object\ndetection algorithms. Detailed training parameter settings\nare described in Appendix.\nWe designed basic model for edge GPU, normal GPU,\nand cloud GPU, and they are respectively called YOLOv7-\ntiny, YOLOv7, and YOLOv7-W6. At the same time, we\nalso use basic model for model scaling for different ser-\nvice requirements and get different types of models. For\nYOLOv7, we do stack scaling on neck, and use the pro-\nposed compound scaling "
+              }
+            ],
+            "text": "We use Microsoft COCO dataset to conduct experiments\nand validate our object detection method. All our experi-\nments did not use pre-trained models. That is, all models\nwere trained from scratch. During the development pro-\ncess, we used train 2017 set for training, and then used val\n2017 set for verification and choosing hyperparameters. Fi-\nnally, we show the performance of object detection on the\ntest 2017 set and compare it with the state-of-the-art object\ndetection algorithms. Detailed training parameter settings\nare described in Appendix.\nWe designed basic model for edge GPU, normal GPU,\nand cloud GPU, and they are respectively called YOLOv7-\ntiny, YOLOv7, and YOLOv7-W6. At the same time, we\nalso use basic model for model scaling for different ser-\nvice requirements and get different types of models. For\nYOLOv7, we do stack scaling on neck, and use the pro-\nposed compound scaling "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0038"
+        ],
+        "excerpt": "161 51.4% / 51.2% 69.7% 55.9% 31.8% 55.5% 65.0%\nYOLOv7-X 71.3M 189.9G 640 114 53.1% / 52.9% 71.2% 57.8% 33.8% 57.1% 67.4%\nYOLOv5-N6 (r6.1) [23] 3.2M 18.4G 1280 123 - / 36.0% - - - - -\nYOLOv5-S6 (r6.1) [23] 12.6M 67.2G 1280 122 - / 44.8% - - - - -\nYOLOv5-M6 (r6.1) [23] 35.7M 200.0G 1280 90 - / 51.3% - - - - -\nYOLOv5-L6 (r6.1) [23] 76.8M 445.6G 1280 63 - / 53.7% - - - - -\nYOLOv5-X6 (r6.1) [23] 140.7M 839.2G 1280 38 - / 55.0% - - - - -\nYOLOR-P6 [81] 37.2M 325.6G 1280 76 53.9% / 53.5% 71.4% 58.9% 36.1% 57.7% 65.6%\nYOLOR-W6 [81] 79.8G 453.2G 1280 66 55.2% / 54.8% 72.7% 60.5% 37.7% 59.1% 67.1%\nYOLOR-E6 [81] 115.8M 683.2G 1280 45 55.8% / 55.7% 73.4% 61.1% 38.4% 59.7% 67.7%\nYOLOR-D6 [81] 151.7M 935.6G 1280 34 56.5% / 56.1% 74.1% 61.9% 38.9% 60.4% 68.7%\nYOLOv7-W6 70.4M 360.0G 1280 84 54.9% / 54.6% 72.6% 60.1% 37.3% 58.7% 67.1%\nYOLOv7-E6 97.2M 515.2G 1280 56 56.0% / 55.9% 73.5% 61.2% 38.0% 59.9% ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9eda068113221a4f63259ed7c2255618a7c47eb2eeeeabfa388714e05eca733d",
+            "evidence_id": "Ebf6fd74853201daa-B0038",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2161,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 17,
+                "start": 1262,
+                "text": "161 51.4% / 51.2% 69.7% 55.9% 31.8% 55.5% 65.0%\nYOLOv7-X 71.3M 189.9G 640 114 53.1% / 52.9% 71.2% 57.8% 33.8% 57.1% 67.4%\nYOLOv5-N6 (r6.1) [23] 3.2M 18.4G 1280 123 - / 36.0% - - - - -\nYOLOv5-S6 (r6.1) [23] 12.6M 67.2G 1280 122 - / 44.8% - - - - -\nYOLOv5-M6 (r6.1) [23] 35.7M 200.0G 1280 90 - / 51.3% - - - - -\nYOLOv5-L6 (r6.1) [23] 76.8M 445.6G 1280 63 - / 53.7% - - - - -\nYOLOv5-X6 (r6.1) [23] 140.7M 839.2G 1280 38 - / 55.0% - - - - -\nYOLOR-P6 [81] 37.2M 325.6G 1280 76 53.9% / 53.5% 71.4% 58.9% 36.1% 57.7% 65.6%\nYOLOR-W6 [81] 79.8G 453.2G 1280 66 55.2% / 54.8% 72.7% 60.5% 37.7% 59.1% 67.1%\nYOLOR-E6 [81] 115.8M 683.2G 1280 45 55.8% / 55.7% 73.4% 61.1% 38.4% 59.7% 67.7%\nYOLOR-D6 [81] 151.7M 935.6G 1280 34 56.5% / 56.1% 74.1% 61.9% 38.9% 60.4% 68.7%\nYOLOv7-W6 70.4M 360.0G 1280 84 54.9% / 54.6% 72.6% 60.1% 37.3% 58.7% 67.1%\nYOLOv7-E6 97.2M 515.2G 1280 56 56.0% / 55.9% 73.5% 61.2% 38.0% 59.9% "
+              }
+            ],
+            "text": "161 51.4% / 51.2% 69.7% 55.9% 31.8% 55.5% 65.0%\nYOLOv7-X 71.3M 189.9G 640 114 53.1% / 52.9% 71.2% 57.8% 33.8% 57.1% 67.4%\nYOLOv5-N6 (r6.1) [23] 3.2M 18.4G 1280 123 - / 36.0% - - - - -\nYOLOv5-S6 (r6.1) [23] 12.6M 67.2G 1280 122 - / 44.8% - - - - -\nYOLOv5-M6 (r6.1) [23] 35.7M 200.0G 1280 90 - / 51.3% - - - - -\nYOLOv5-L6 (r6.1) [23] 76.8M 445.6G 1280 63 - / 53.7% - - - - -\nYOLOv5-X6 (r6.1) [23] 140.7M 839.2G 1280 38 - / 55.0% - - - - -\nYOLOR-P6 [81] 37.2M 325.6G 1280 76 53.9% / 53.5% 71.4% 58.9% 36.1% 57.7% 65.6%\nYOLOR-W6 [81] 79.8G 453.2G 1280 66 55.2% / 54.8% 72.7% 60.5% 37.7% 59.1% 67.1%\nYOLOR-E6 [81] 115.8M 683.2G 1280 45 55.8% / 55.7% 73.4% 61.1% 38.4% 59.7% 67.7%\nYOLOR-D6 [81] 151.7M 935.6G 1280 34 56.5% / 56.1% 74.1% 61.9% 38.9% 60.4% 68.7%\nYOLOv7-W6 70.4M 360.0G 1280 84 54.9% / 54.6% 72.6% 60.1% 37.3% 58.7% 67.1%\nYOLOv7-E6 97.2M 515.2G 1280 56 56.0% / 55.9% 73.5% 61.2% 38.0% 59.9% "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0039"
+        ],
+        "excerpt": "68.4%\nYOLOv7-D6 154.7M 806.8G 1280 44 56.6% / 56.3% 74.0% 61.8% 38.8% 60.1% 69.5%\nYOLOv7-E6E 151.7M 843.2G 1280 36 56.8% / 56.8% 74.4% 62.1% 39.3% 60.5% 69.0%\n1 Our FLOPs is calaculated by rectangle input resolution like 640 \u00d7 640 or 1280 \u00d7 1280.\n2 Our inference time is estimated by using letterbox resize input image to make its long side equals to 640 or 1280.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db3de839487c6095f056a92797d4a4e9081fe205b1e3c1a9ed1dec496e116f76",
+            "evidence_id": "Ebf6fd74853201daa-B0039",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2524,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 17,
+                "start": 2161,
+                "text": "68.4%\nYOLOv7-D6 154.7M 806.8G 1280 44 56.6% / 56.3% 74.0% 61.8% 38.8% 60.1% 69.5%\nYOLOv7-E6E 151.7M 843.2G 1280 36 56.8% / 56.8% 74.4% 62.1% 39.3% 60.5% 69.0%\n1 Our FLOPs is calaculated by rectangle input resolution like 640 \u00d7 640 or 1280 \u00d7 1280.\n2 Our inference time is estimated by using letterbox resize input image to make its long side equals to 640 or 1280."
+              }
+            ],
+            "text": "68.4%\nYOLOv7-D6 154.7M 806.8G 1280 44 56.6% / 56.3% 74.0% 61.8% 38.8% 60.1% 69.5%\nYOLOv7-E6E 151.7M 843.2G 1280 36 56.8% / 56.8% 74.4% 62.1% 39.3% 60.5% 69.0%\n1 Our FLOPs is calaculated by rectangle input resolution like 640 \u00d7 640 or 1280 \u00d7 1280.\n2 Our inference time is estimated by using letterbox resize input image to make its long side equals to 640 or 1280."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0044"
+        ],
+        "excerpt": "47.0M 125.5G 640 51.7% 70.1% 56.0%\nwidth only (1.25 w) 73.4M 195.5G 640 52.4% 70.9% 57.1%\ndepth only (2.0 d) 69.3M 187.6G 640 52.7% 70.8% 57.3%\ncompound (v7-X) 71.3M 189.9G 640 52.9% 71.1% 57.5%\nimprovement - - - +1.2 +1.0 +1.5",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Proposed Compound Scaling Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "768a3fa6a0e5e06f4a3bc73bdc114ab8968b5499519cff4f74b19cff01ac0a7d",
+            "evidence_id": "Ebf6fd74853201daa-B0044",
+            "pages": [
+              8
+            ],
+            "section": "Proposed Compound Scaling Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1122,
+                "page": 8,
+                "section": "Proposed Compound Scaling Method",
+                "section_index": 21,
+                "start": 895,
+                "text": "47.0M 125.5G 640 51.7% 70.1% 56.0%\nwidth only (1.25 w) 73.4M 195.5G 640 52.4% 70.9% 57.1%\ndepth only (2.0 d) 69.3M 187.6G 640 52.7% 70.8% 57.3%\ncompound (v7-X) 71.3M 189.9G 640 52.9% 71.1% 57.5%\nimprovement - - - +1.2 +1.0 +1.5"
+              }
+            ],
+            "text": "47.0M 125.5G 640 51.7% 70.1% 56.0%\nwidth only (1.25 w) 73.4M 195.5G 640 52.4% 70.9% 57.1%\ndepth only (2.0 d) 69.3M 187.6G 640 52.7% 70.8% 57.3%\ncompound (v7-X) 71.3M 189.9G 640 52.9% 71.1% 57.5%\nimprovement - - - +1.2 +1.0 +1.5"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0046"
+        ],
+        "excerpt": "model.\nModel AP val APval50 APval75 APvalS APvalM APvalL\nbase (3-S ELAN) 52.26% 70.41% 56.77% 35.81% 57.00% 67.59%\nFigure 6 (a) 52.18% 70.34% 56.90% 35.71% 56.83% 67.51%\nFigure 6 (b) 52.30% 70.30% 56.92% 35.76% 56.95% 67.74%\nFigure 6 (c) 52.33% 70.56% 56.91% 35.90% 57.06% 67.50%\nFigure 6 (d) 52.17% 70.32% 56.82% 35.33% 57.06% 68.09%\nFigure 6 (e) 52.23% 70.20% 56.81% 35.34% 56.97% 66.88%\nvolution block that conforms to our design strategy, we ad-\nditionally design a reversed dark block for the experiment,\nwhose architecture is shown in Figure 7. Since the CSP-\nDarknet with dark block and reversed dark block has exactly\nthe same amount of parameters and operations, it is fair to\ncompare. The experiment results illustrated in Table 5 fully\nconfirm that the proposed planned re-parameterized model\nis equally effective on residual-based model. We find that\nthe design of RepCSPResNet [85] also ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Proposed Planned Re-Parameterized Model",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "aca848ba180231d974776bc8bd7e74ffd79641ba7a9390f457ca70da185c3b02",
+            "evidence_id": "Ebf6fd74853201daa-B0046",
+            "pages": [
+              8
+            ],
+            "section": "Proposed Planned Re-Parameterized Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1799,
+                "page": 8,
+                "section": "Proposed Planned Re-Parameterized Model",
+                "section_index": 22,
+                "start": 899,
+                "text": "model.\nModel AP val APval50 APval75 APvalS APvalM APvalL\nbase (3-S ELAN) 52.26% 70.41% 56.77% 35.81% 57.00% 67.59%\nFigure 6 (a) 52.18% 70.34% 56.90% 35.71% 56.83% 67.51%\nFigure 6 (b) 52.30% 70.30% 56.92% 35.76% 56.95% 67.74%\nFigure 6 (c) 52.33% 70.56% 56.91% 35.90% 57.06% 67.50%\nFigure 6 (d) 52.17% 70.32% 56.82% 35.33% 57.06% 68.09%\nFigure 6 (e) 52.23% 70.20% 56.81% 35.34% 56.97% 66.88%\nvolution block that conforms to our design strategy, we ad-\nditionally design a reversed dark block for the experiment,\nwhose architecture is shown in Figure 7. Since the CSP-\nDarknet with dark block and reversed dark block has exactly\nthe same amount of parameters and operations, it is fair to\ncompare. The experiment results illustrated in Table 5 fully\nconfirm that the proposed planned re-parameterized model\nis equally effective on residual-based model. We find that\nthe design of RepCSPResNet [85] also "
+              }
+            ],
+            "text": "model.\nModel AP val APval50 APval75 APvalS APvalM APvalL\nbase (3-S ELAN) 52.26% 70.41% 56.77% 35.81% 57.00% 67.59%\nFigure 6 (a) 52.18% 70.34% 56.90% 35.71% 56.83% 67.51%\nFigure 6 (b) 52.30% 70.30% 56.92% 35.76% 56.95% 67.74%\nFigure 6 (c) 52.33% 70.56% 56.91% 35.90% 57.06% 67.50%\nFigure 6 (d) 52.17% 70.32% 56.82% 35.33% 57.06% 68.09%\nFigure 6 (e) 52.23% 70.20% 56.81% 35.34% 56.97% 66.88%\nvolution block that conforms to our design strategy, we ad-\nditionally design a reversed dark block for the experiment,\nwhose architecture is shown in Figure 7. Since the CSP-\nDarknet with dark block and reversed dark block has exactly\nthe same amount of parameters and operations, it is fair to\ncompare. The experiment results illustrated in Table 5 fully\nconfirm that the proposed planned re-parameterized model\nis equally effective on residual-based model. We find that\nthe design of RepCSPResNet [85] also "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0047"
+        ],
+        "excerpt": "fit our design pat-\ntern.\nFigure 7: Reversed CSPDarknet. We reverse the position of 1 \u00d7 1\nand 3 \u00d7 3 convolutional layer in dark block to fit our planned re-\nparameterized model design strategy.\nTable 5: Ablation study on planned RepResidual model.\nModel AP val APval50 APval75 APvalS APvalM APvalL\nbase (YOLOR-W6) 54.82% 72.39% 59.95% 39.68% 59.38% 68.30%\nRepCSP 54.67% 72.50% 59.58% 40.22% 59.61% 67.87%\nRCSP 54.36% 71.95% 59.54% 40.15% 59.02% 67.44%\nRepRCSP 54.85% 72.51% 60.08% 40.53% 59.52% 68.06%\nbase (YOLOR-CSP) 50.81% 69.47% 55.28% 33.74% 56.01% 65.38%\nRepRCSP 50.91% 69.54% 55.55% 34.44% 55.74% 65.46%\n8\nFigure 8: Objectness map predicted by different methods at auxiliary head and lead head.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Proposed Planned Re-Parameterized Model",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d1d54fb7158bc41084533964117eb5ae857b6177de2c65ab640a8d5d198c4a61",
+            "evidence_id": "Ebf6fd74853201daa-B0047",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Proposed Planned Re-Parameterized Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2411,
+                "page": 8,
+                "section": "Proposed Planned Re-Parameterized Model",
+                "section_index": 22,
+                "start": 1799,
+                "text": "fit our design pat-\ntern.\nFigure 7: Reversed CSPDarknet. We reverse the position of 1 \u00d7 1\nand 3 \u00d7 3 convolutional layer in dark block to fit our planned re-\nparameterized model design strategy.\nTable 5: Ablation study on planned RepResidual model.\nModel AP val APval50 APval75 APvalS APvalM APvalL\nbase (YOLOR-W6) 54.82% 72.39% 59.95% 39.68% 59.38% 68.30%\nRepCSP 54.67% 72.50% 59.58% 40.22% 59.61% 67.87%\nRCSP 54.36% 71.95% 59.54% 40.15% 59.02% 67.44%\nRepRCSP 54.85% 72.51% 60.08% 40.53% 59.52% 68.06%\nbase (YOLOR-CSP) 50.81% 69.47% 55.28% 33.74% 56.01% 65.38%\nRepRCSP 50.91% 69.54% 55.55% 34.44% 55.74% 65.46%\n8"
+              },
+              {
+                "end": 88,
+                "page": 9,
+                "section": "Proposed Planned Re-Parameterized Model",
+                "section_index": 23,
+                "start": 0,
+                "text": "Figure 8: Objectness map predicted by different methods at auxiliary head and lead head."
+              }
+            ],
+            "text": "fit our design pat-\ntern.\nFigure 7: Reversed CSPDarknet. We reverse the position of 1 \u00d7 1\nand 3 \u00d7 3 convolutional layer in dark block to fit our planned re-\nparameterized model design strategy.\nTable 5: Ablation study on planned RepResidual model.\nModel AP val APval50 APval75 APvalS APvalM APvalL\nbase (YOLOR-W6) 54.82% 72.39% 59.95% 39.68% 59.38% 68.30%\nRepCSP 54.67% 72.50% 59.58% 40.22% 59.61% 67.87%\nRCSP 54.36% 71.95% 59.54% 40.15% 59.02% 67.44%\nRepRCSP 54.85% 72.51% 60.08% 40.53% 59.52% 68.06%\nbase (YOLOR-CSP) 50.81% 69.47% 55.28% 33.74% 56.01% 65.38%\nRepRCSP 50.91% 69.54% 55.55% 34.44% 55.74% 65.46%\n8\nFigure 8: Objectness map predicted by different methods at auxiliary head and lead head."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0049"
+        ],
+        "excerpt": "it\nwill indeed help lead head to extract the residual informa-\ntion from the consistant targets.\nTable 6: Ablation study on proposed auxiliary head.\nModel Size AP val APval50 APval75\nbase (v7-E6) 1280 55.6% 73.2% 60.7%\nindependent 1280 55.8% 73.4% 60.9%\nlead guided 1280 55.9% 73.5% 61.0%\ncoarse-to-fine lead guided 1280 55.9% 73.5% 61.1%\nimprovement - +0.3 +0.3 +0.4\nIn Table 7 we further analyze the effect of the proposed\ncoarse-to-fine lead guided label assignment method on the\ndecoder of auxiliary head. That is, we compared the results\nof with/without the introduction of upper bound constraint.\nJudging from the numbers in the Table, the method of con-\nstraining the upper bound of objectness by the distance from\nthe center of the object can achieve better performance.\nTable 7: Ablation study on constrained auxiliary head.\nModel Size AP val APval50 APval75\nbase (v7-E6) 1280 55.6% 73.2% ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Proposed Assistant Loss For Auxiliary Head",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d6d863e0c3b08f0c99f410a29c869faf6d09fcd6723a1a20c57b604a7e71ee1d",
+            "evidence_id": "Ebf6fd74853201daa-B0049",
+            "pages": [
+              9
+            ],
+            "section": "Proposed Assistant Loss For Auxiliary Head",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 9,
+                "section": "Proposed Assistant Loss For Auxiliary Head",
+                "section_index": 24,
+                "start": 894,
+                "text": "it\nwill indeed help lead head to extract the residual informa-\ntion from the consistant targets.\nTable 6: Ablation study on proposed auxiliary head.\nModel Size AP val APval50 APval75\nbase (v7-E6) 1280 55.6% 73.2% 60.7%\nindependent 1280 55.8% 73.4% 60.9%\nlead guided 1280 55.9% 73.5% 61.0%\ncoarse-to-fine lead guided 1280 55.9% 73.5% 61.1%\nimprovement - +0.3 +0.3 +0.4\nIn Table 7 we further analyze the effect of the proposed\ncoarse-to-fine lead guided label assignment method on the\ndecoder of auxiliary head. That is, we compared the results\nof with/without the introduction of upper bound constraint.\nJudging from the numbers in the Table, the method of con-\nstraining the upper bound of objectness by the distance from\nthe center of the object can achieve better performance.\nTable 7: Ablation study on constrained auxiliary head.\nModel Size AP val APval50 APval75\nbase (v7-E6) 1280 55.6% 73.2% "
+              }
+            ],
+            "text": "it\nwill indeed help lead head to extract the residual informa-\ntion from the consistant targets.\nTable 6: Ablation study on proposed auxiliary head.\nModel Size AP val APval50 APval75\nbase (v7-E6) 1280 55.6% 73.2% 60.7%\nindependent 1280 55.8% 73.4% 60.9%\nlead guided 1280 55.9% 73.5% 61.0%\ncoarse-to-fine lead guided 1280 55.9% 73.5% 61.1%\nimprovement - +0.3 +0.3 +0.4\nIn Table 7 we further analyze the effect of the proposed\ncoarse-to-fine lead guided label assignment method on the\ndecoder of auxiliary head. That is, we compared the results\nof with/without the introduction of upper bound constraint.\nJudging from the numbers in the Table, the method of con-\nstraining the upper bound of objectness by the distance from\nthe center of the object can achieve better performance.\nTable 7: Ablation study on constrained auxiliary head.\nModel Size AP val APval50 APval75\nbase (v7-E6) 1280 55.6% 73.2% "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2207.02696",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2207.02696",
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The reported gains are corroborated by standard COCO val and test-dev AP measurements, which are external to the lead-head-guided label assignment used during training.",
+          "final_evaluation_signal": "Headline outcomes are reported as standard MS COCO AP metrics on val and test-dev sets against held-out ground-truth annotations.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system is trained with supervised classification, regression, and objectness losses, with soft labels generated by the lead head's own predictions guiding both auxiliary and lead heads.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0002",
+          "Ebf6fd74853201daa-B0007",
+          "Ebf6fd74853201daa-B0014",
+          "Ebf6fd74853201daa-B0016",
+          "Ebf6fd74853201daa-B0021",
+          "Ebf6fd74853201daa-B0023",
+          "Ebf6fd74853201daa-B0027",
+          "Ebf6fd74853201daa-B0029",
+          "Ebf6fd74853201daa-B0035",
+          "Ebf6fd74853201daa-B0038",
+          "Ebf6fd74853201daa-B0039",
+          "Ebf6fd74853201daa-B0044",
+          "Ebf6fd74853201daa-B0046",
+          "Ebf6fd74853201daa-B0047",
+          "Ebf6fd74853201daa-B0049"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "61827f8908649249cbe20f75a96c2899fae0ec2e1a888869572271eb5fd0ca4f"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2207.02696",
+        "claim_evidence_alignment": "Reported performance metrics (e.g., reaching up to 56.8% AP on MS COCO test-dev/val at real-time speeds) directly support the claim of advancing state-of-the-art Pareto frontiers in accuracy and inference speed without pre-trained backbones.",
+        "context_id": "bf6fd74853201daa1aab717f09f3502c52d4cb7ceeb6ee765ee61ab91ea08a56",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation is conducted systematically on the standard MS COCO benchmark from scratch, comparing comprehensively against contemporary real-time detectors (PP-YOLOE, YOLOR, YOLOX, YOLOv5) across parameter counts, FLOPs, and FPS on standard hardware. Extensive ablation studies validate the specific contributions of compound scaling, planned RepConv, and auxiliary label guidance.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The headline gains are corroborated by standard COCO val and test-dev AP benchmarks, run independently of the internal lead-guided label assigner.",
+          "final_evaluation_signal": "Standard Microsoft COCO average precision (AP) metrics evaluated against held-out ground truth annotations.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Standard multi-task loss optimization (classification, regression, objectness) using supervised ground truth and soft labels guided by the lead head.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ebf6fd74853201daa-B0002",
+          "Ebf6fd74853201daa-B0007",
+          "Ebf6fd74853201daa-B0014",
+          "Ebf6fd74853201daa-B0016",
+          "Ebf6fd74853201daa-B0021",
+          "Ebf6fd74853201daa-B0023",
+          "Ebf6fd74853201daa-B0027",
+          "Ebf6fd74853201daa-B0029",
+          "Ebf6fd74853201daa-B0035",
+          "Ebf6fd74853201daa-B0038",
+          "Ebf6fd74853201daa-B0039",
+          "Ebf6fd74853201daa-B0044",
+          "Ebf6fd74853201daa-B0046",
+          "Ebf6fd74853201daa-B0047",
+          "Ebf6fd74853201daa-B0049"
+        ],
+        "limitations": "The manuscript focuses almost exclusively on MS COCO and GPU architectures, providing limited discussion on cross-domain generalization, specialized hardware quantization behavior, or theoretical boundaries of the multi-head auxiliary loss weighting.",
+        "method_assessment": "The methodology is clearly articulated, providing structural rationale for gradient path preservation in E-ELAN, mathematically motivated compound scaling across depth and width, re-parameterization adjustments to avoid breaking residual/concatenation flows, and hierarchical soft-label assignment between auxiliary and lead heads.",
+        "quality_rationale": "YOLOv7 provides a well-engineered, thoroughly benchmarked real-time detection family with clear ablations on all claimed architectural and optimization components. The evaluation uses standard objective benchmarks and standardized measurement protocols.",
+        "scoped_contribution": "The paper introduces YOLOv7, a real-time object detection framework incorporating extended efficient layer aggregation networks (E-ELAN), compound model scaling for concatenation-based architectures, planned re-parameterized convolution, and a coarse-to-fine lead-head guided dynamic label assignment strategy.",
+        "source_content_hash": "61827f8908649249cbe20f75a96c2899fae0ec2e1a888869572271eb5fd0ca4f"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "YOLOv7 provides a well-engineered, thoroughly benchmarked real-time detection family with clear ablations on all claimed architectural and optimization components. The evaluation uses standard objective benchmarks and standardized measurement protocols.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "61827f8908649249cbe20f75a96c2899fae0ec2e1a888869572271eb5fd0ca4f",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript focuses almost exclusively on MS COCO and GPU architectures, providing limited discussion on cross-domain generalization, specialized hardware quantization behavior, or theoretical boundaries of the multi-head auxiliary loss weighting."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -173,7 +1785,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

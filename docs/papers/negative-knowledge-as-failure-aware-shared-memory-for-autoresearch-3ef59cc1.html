@@ -64,16 +64,269 @@
             <p>AI-assisted research systems generate many failed attempts, but those failures rarely become a durable, shared knowledge asset. We propose a negative knowledge memory layer: a curator agent converts each failed attempt into a bounded, typed record in a shared bank, and a downstream research agent explicitly adopts o...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper presents a well-scoped architectural concept backed by a clear implementation schema and solid empirical validation. Deterministic evaluators eliminate subjective scoring bias, and experimental comparisons cleanly isolate the value of structured negative memory against direct retry and raw self-debugging.</p>
+      <p>The authors transparently discuss constraints, including small sample sizes on PDE benchmarks, negative transfer risks when transferring across systems with incompatible mathematical properties, and the upfront token cost incurred by the curator pass.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-02T12:02:58.027111+00:00.</p>
+        <p>Coverage: 45408 of 45408 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AI-assisted research systems generate many failed
+attempts, but those failures rarely become a
+durable, shared knowledge asset. We propose
+anegative knowledge memory layer: a curator
+agent converts each failed attempt into a bounded,
+typed record in a shared bank, and a downstream
+research agent explicitly adopts or rejects those
+records before proposing its next experiment. We
+evaluate this layer in two settings: same-task
+retry on ScienceAgentBench and cross-task scien-
+tific research on two nonlinear math-physics PDE
+problems. The negative knowledge layer outper-
+forms vanilla AutoResearch baselines while using
+fewer tokens; agents with the negative knowledge
+bank solve new tasks that all baselines fail to solve
+in PDE systems research. We also show that the
+previous negative knowledge bank can transfer
+and enhance AutoResearch on different PDE prob-
+lems. These results suggest that </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Layer
+We introduce anegative knowledge memory layerthat turns
+each failed attempt into a reusable record rather than a tran-
+sient log entry. Unlike prior agent-memory architectures
+that accumulate successful skills, episodic interactions, or
+long-term context (Wang et al., 2023; Park et al., 2023;
+Packer et al., 2023), this layer is explicitly designed for fail-
+ure. Our method combines a structured negative knowledge
+record with a multi-agent workflow (Wu et al., 2023): a
+curator agentwrites records from finished-attempt artifacts
+2
+Negative Knowledge as Failure-aware Shared Memory for AutoResearch
+into a sharedbank, and aresearch agentreads the bank
+before proposing the next experiment.
+The schema has three design properties. (1)Attempt-level:
+each record describes one finished attempt. (2)Bounded:
+records follow prompt-level length and structure limits, so
+an entire bank can be </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>passed to an agent inline. (3)Typed:
+the failure-classification fields take their values from closed
+vocabularies, so the curator must commit to an explicit fail-
+ure class rather than describe the failure in free prose. These
+properties make records portable, auditable, and reusable
+across attempts. Each record contains bounded fields for the
+failure layer, scope, degree, recommended action, and risk;
+Section A provides a detailed example.
+Thecuratoris a separate agent from the one that ran the
+attempt; once that attempt finishes, the curator combines
+the artifacts it left behind (e.g., the executed code, execution
+output, or reasoning notes) into one schema-conforming
+record. This separation reduces self-assessment bias: the
+curator sees frozen artifacts rather than the failed agent&#x27;s
+own near-miss narrative.
+Theresearch agentthen reads from the knowledge bank
+before launching its </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>attempt under an explicit grounding
+requirement: each record must be marked as adopted or
+rejected, with a justification tying the decision to the specific
+failure mode the record describes. This turns documented
+failures into active constraints on the next attempt. The
+research agent&#x27;s output is the next attempt itself, whose
+artifacts feed the curator pass that follows and add a new
+record to the bank, closing the workflow loop.
+The central goal is for a scientific project to pay for a failed
+route only once, then redirect later attempts toward routes
+not yet ruled out. We evaluate this design in same-task retry
+and cross-task transfer settings.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This section evaluates the negative knowledge layer in a con-
+trolled same-task retry setting on a scientific-coding bench-
+mark. We test whether a structured record of a failed attempt
+helps a fresh agent repair the same task without access to
+the original conversation. We compare negative-knowledge
+retry with direct retry and self-debug baselines, measuring
+pass rate and the size of the memory object handed to the
+next attempt.
+Experimental setup.All experiments in this section use
+Claude Sonnet 4.6 (Anthropic, 2026) on the deterministic-
+evaluation subset of ScienceAgentBench (Chen et al., 2024),
+where outcomes are verified by programmatic evaluators.
+We compare five conditions: Base (first attempt), Retry
+(fresh agent, no memory; identical to Base up to resam-
+pling), Self-debug (Chen et al., 2023) (three rounds
+of raw failure feedback: each later attempt sees the previ-
+ous code </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and execution output), Negative knowledge
+retry (one structured record), and Deep negative
+knowledge retry (one record distilled from three
+failed rounds). We reportpass rate(% tasks passing the
+deterministic evaluator) andmemory size, the tokens of the
+memory object shown to the next attempt. Full benchmark
+and baseline details are in Section B.
+Table 1.Performance on deterministic-eval ScienceAgentBench.
+Negative knowledge retry uses one failed round, self-debug uses
+three rounds, and deep negative knowledge retry distills three
+rounds into one record.
+Method Pass rate (%) Memory (tokens)
+Base 31.6 –
+Retry 31.6 –
+Negative knowledge retry 36.8 296 (−73.3%)
+Self-debug 44.7 1,109 (baseline)
+Deep negative knowledge retry47.4795 (−28.3%)
+Main result.Table 1 shows three things. First, plain
+retry does not improve performance, but adding one struc-
+tured negative-knowledge record does: Base </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reaches a
+pass rate of 31.6%, and Retry remains at 31.6%; by con-
+trast, Negative knowledge retry raises the pass
+rate to 36.8%. The gain comes from an explicit record
+of what failed and how to change course, not from retry-
+ing itself. Second, distilling three failed rounds into one
+Deep negative knowledge record (47.4%) outper-
+forms raw three-round self-debug ( 44.7%), with the gap
+concentrated on the hard subset where raw self-debug has
+already failed; this suggests structured negative knowledge
+can carry guidance that raw feedback alone does not. Third,
+negative-knowledge records achieve these gains while using
+28.3% and 73.3% fewer tokens than self-debug, so the layer
+preserves useful repair information in a more compact form.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Stage 2 tests whether the knowledge bank transfers to three
+new mathematical physics sub-tasks in the coupled BKdV
+system:Test-Asoliton stability near the m= 0 manifold,
+Test-BGaussian wave-packet decomposition into a soliton
+train, andTest-CKdV-soliton interaction with a Burgers
+bore. We compare four conditions applied on the AutoRe-
+search pipeline:Base(no bank),Base+Pos(positive records
+only),Base+Neg(negative bank only), andBase+Pos+Neg
+(full bank). Each cell is allowed up to three AutoResearch
+rounds and is judged by deterministic physics-aware checks;
+detailed definitions and settings are in Section C.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>proposal
+To inspect the mechanism behind the table, we examine
+the Test-C/Base+Neg trace. After the baseline run on the
+bore-soliton interaction exhibits bore-driven instability, the
+agent consults the relevant negative-knowledge record, fol-
+Table 2.Transfer of the knowledge bank to three BKdV sub-tasks.
+Condition Test-A Test-B Test-C Success
+Base× × ×0/3
+Base+Pos× ×✓1/3
+Base+Neg✓ ✓ ✓3/3
+Base+Pos+Neg✓ ✓ ✓3/3
+lows its prescription by changing only one component of
+the previous proposal, and explicitly rejects two alternative
+routes the bank also rules out. The cell then succeeds in
+two rounds. This shows the operational role of negative
+knowledge: not merely a warning, but a reusable constraint
+that narrows the next experimental proposal.
+The weaker Base+Pos result reflects a feature particular
+to numerical-simulation research: successful methods do
+not always transfer between related </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We also test whether the BKdV knowledge bank can help
+on a substantially different coupled system, Burgers-NLS
+(BNLS) (Dombret et al., 2023). In a three-round AutoRe-
+search setting, agents without any bank fail all four BNLS
+tasks, while agents given only the BKdV bank solve two
+of them. This suggests that the bank is not only task-local
+memory: some of its numerical failures, diagnostics, and
+method warnings transfer to a different nonlinear PDE sys-
+tem and become a useful collective asset for the research
+team. Details of the BNLS setup are in Section C.5.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We introduced a negative knowledge memory layer: a cu-
+rator agent writes each failed attempt as a bounded, typed
+record into a shared bank, and a downstream research agent
+must adopt or reject those records before its next experiment.
+On ScienceAgentBench, structured records improve retry
+pass rate at lower token cost than raw self-debug; on two
+coupled PDE systems, the bank enables cross-task trans-
+fer that no-bank baselines fail. Within the limits of small
+sample sizes and the models studied, this is a first step to-
+ward maintaining negative knowledge as shared epistemic
+infrastructure for AI-engaged scientific research.
+4
+Negative Knowledge as Failure-aware Shared Memory for AutoResearch</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ScienceAgentBench (Chen et al., 2024) is a benchmark for evaluating language agents on data-driven scientific discovery
+tasks drawn from real scientific workflows. It contains 102 tasks extracted from peer-reviewed scientific publications and
+evaluates whether an agent can produce an executable solution for each task. We use its deterministic-evaluation subset of
+38 tasks to ensure all reported outcomes are verified by programmatic evaluators.
+We compare five conditions, which differ only in whether and how failure information is shown to a subsequent attempt.
+Three are baselines and two use the negative knowledge layer:
+•Base: the first attempt on each task, without any additional failure memory.
+•Retry : a fresh agent invocation on the same task, without access to the previous conversation, code, outputs, or
+negative-knowledge memory.
+•Self-debug (Chen et al., 2023; 2024): later </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>record
+Per-channel least-squares regression:
+np.linalg.lstsq applied separately to
+each of the 17 channels
+Pass(0.763)
+dispatch logs, the median end-to-end token usage per task (all rounds, plus curation, plus the final attempt) is ≈56k for
+three-round self-debug, ≈53k for depth-1 negative-knowledge retry (first attempt, a curator pass of ≈19k, and one retry),
+and ≈101k for deep negative-knowledge retry, which consumes the same three failed rounds plus a deep curator pass (≈27k)
+and one further attempt. Curation is therefore a real cost; the compact record amortises it when a failure is stored, shared, or
+consulted more than once.BaseandRetryhave no additional memory object.
+All ScienceAgentBench sub-agent prompts use the same fixed template. The template contains four blocks: the task
+instruction copied from the benchmark, a data block with the folder tree and dataset preview, an </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>u (green) and the KdV wave field v
+(orange) at t= 0,0.8,1.4,5.9 . Figure reproduced from Holm et al. (2025); it depicts the target phenomenology for Test-B (Gaussian
+wave-packet decomposition), not an agent output.
+Evaluation criteria.A cell counts as useful only if its integration completes without NaN and total mass drift stays below
+8%. The remaining task-specific gates are:
+10
+Negative Knowledge as Failure-aware Shared Memory for AutoResearch
+10 20 30 40 50 60 70 80
+0
+1
+2
+3
+t = 0.0
+(a)
+10 20 30 40 50 60 70 80
+0
+1
+2
+3
+t = 5.0
+(b)
+10 20 30 40 50 60 70 80
+0
+1
+2
+3
+t = 7.0
+(c)
+10 20 30 40 50 60 70 80
+0
+1
+2
+3
+t = 10.0
+(d)
+Burgers: Mean flow velocity u KdV: Wave parameter v
+Figure 4.Bore–soliton fusion (basis of Test-C).A Burgers bore (the u≈3 front, green) overtakes two slower, weak KdV solitons
+(orange) and sweeps them together, fusing them into a single compound soliton that rides at the </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>bore front; snapshots at t= 0,5,7,10 .
+Figure reproduced from Holm et al. (2025); it depicts the target bore–soliton interaction for Test-C (KdV-soliton interaction with a Burgers
+bore), not an agent output.
+• Test-A(soliton stability): max(|u|,|v|)&lt;15 , vmax(T)/v max(0)≥0.25 , and a single dominant peak (npeaks(≥0.4) =
+1 or top-to-second peak ratio &gt;1.5 ). The amplitude floor is calibrated to BKdV-S7&#x27;s quantified −62.8% off-manifold
+decay; the single-peak gate rejects chaotic fragmentation.
+• Test-B(soliton-train fission): max(|u|,|v|)&lt;15 , vmax(T)≥0.8 , and at least two dominant peaks (npeaks(≥0.8)≥2 ).
+• Test-C(bore-soliton interaction): max(|u|,|v|)&lt;10 with the additional constraint umax &lt;5 (the bore must remain
+bounded; IC hasu L = 1.5),v max(T)≥0.5, and at least one dominant peak (n peaks(≥0.5)≥1).</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>BNLS&#x27;s wave is the complex NLS field above
+(quantum-pressure dispersion and a focusing cubic, giving modulational instability and envelope solitons). This shared
+skeleton with a different wave mechanism is what makes BNLS a stringent transfer target.
+The study uses four BNLS tasks and four memory conditions: no bank, BKdV-only bank, NLS-specific bank, and the
+combined NLS+BKdV bank; all BNLS sub-agents run on Claude Sonnet 4.6. The NLS bank contains 21 entries curated
+from eight BNLS stress tests; the BKdV bank reuses a 30-entry snapshot of the BKdV study&#x27;s bank (10 positive and 20
+negative entries).
+Sub-task specifications.Each task runs on a periodic domain [−15,15] with Nx = 256 and saves snapshots of (u, N, ϕ);
+PASS is decided by a deterministic phenomenon check on the final snapshot.Test-A NLS-soliton stability on Mcs:bright
+soliton N(x,0) =A 2 sech2(A(x+ 5)) with A= 1.5 and u=N ϕ </blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the research deliverable is a characterisation of ∥m∥2(t) relaxation (decay /
+plateau / growth), wherem=u−N ϕ x.
+Table 5.BNLS cross-system transfer. The domain-matched NLS bank solves three of four tasks; the BKdV-only bank transfers partially
+but also creates negative transfer on one task.
+Condition Test-A Test-B Test-C Test-D Success
+No bank× × × ×0/4
+BKdV only✓× ×✓2/4
+NLS only✓ ✓ ✓×3/4
+NLS + BKdV✓ ✓ ✓×3/4
+The headline result is that domain-matched negative knowledge is the most reliable transfer signal: the NLS bank lifts the
+no-bank baseline from 0/4 to 3/4. Adding the BKdV bank to the NLS bank gives no additional task success in this run,
+12
+Negative Knowledge as Failure-aware Shared Memory for AutoResearch
+suggesting that cross-domain numerical knowledge is useful only when the receiving agent can distinguish transferable
+mechanisms from mismatched ones.
+The BKdV-only condition is </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>informative because it both helps and misleads. It solves two tasks, showing that some
+Burgers-side numerical lessons transfer. On Test-B, however, BKdV-only knowledge produces negative transfer: the agent
+follows a method family that is validated for BKdV-like dynamics but anti-diffusive under the BNLS variational sign
+convention.
+13</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +365,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

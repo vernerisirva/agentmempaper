@@ -1,21 +1,22 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-10-30](2026-10-30.md).
+Latest daily digest: [2026-11-02](2026-11-02.md).
 
-# Paper Scout Digest - 2026-10-30
+# Paper Scout Digest - 2026-11-02
 
 ## Run Summary
 
-- **Run ID:** 57
-- **Candidates fetched:** 91
-- **New unique papers:** 80
+- **Run ID:** 59
+- **Candidates fetched:** 105
+- **New unique papers:** 94
 - **Relevant:** 14
 - **Maybe relevant:** 0
-- **Irrelevant:** 77
-- **Source summary:** arxiv: 4, openalex: 84, semantic_scholar: 3
+- **Irrelevant:** 91
+- **Source summary:** arxiv: 2, openalex: 100, semantic_scholar: 3
 
 ## Source Warnings
 
+- openalex: incomplete discovery window for 'deepseek engram'; single-page record limit reached.
 - openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
 - openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.
@@ -26,12 +27,12 @@ Latest daily digest: [2026-10-30](2026-10-30.md).
 
 ## Highly Relevant
 
-### [Let the Gate Decide: Per-Lookup Precision for Quantized Conditional Memory in LLMs](https://doi.org/10.48550/arxiv.2610.35985)
+### [Dynamic Engram: Answering from an Exact n-gram Memory Injected at Inference Time](https://doi.org/10.5281/zenodo.23803702)
 
-- **Authors:** Tianqi Chen, Xunchao Li, Linchuan Xie, Guanghua Yu, Jianchen Zhu, Peisong Wang, et al.
-- **Date:** 2026-10-26
+- **Authors:** Marcello Violini, Lorenzo Nargiso
+- **Date:** 2026-10-30
 - **Source:** openalex
 - **Relevance:** relevant (92/100)
 - **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
 - **Tags:** engram, conditional-memory, hashed-ngram-memory
-- **Abstract summary:** Conditional memory layers, such as DeepSeek's Engram, attach large hashed n-gram tables to a language model, and removing them from DeepSeek-V4.1-Flash costs 36.8 PopQA points. Low-bit quantization loses long-tail facts first, and the standard remedy, giving more bits to frequently accessed rows, backfires: refining...
+- **Abstract summary:** Instead of writing particular memories into a language model (by fine-tuning, model editing or optimized rows of an n-gram table), we train the model once to handle memories in general, and then inject any new memory on demand, with no training, no optimization and no change to the weights. Conditional memory throug...

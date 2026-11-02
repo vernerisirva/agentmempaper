@@ -59,16 +59,137 @@
             <p>No abstract summary available.</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>The study provides basic descriptive tabulations on a heavily skewed convenience sample with nearly 90% missing educational data. Because the empirical base is small and non-representative, scientific confidence in broader conclusions is limited, justifying an uncertain rating.</p>
+      <p>The author transparently notes extreme company imbalance, substantial missing educational data, reliance on unadjusted Google Scholar citations, and the lack of inferential regression models.</p>
       <p>Publication: preprint. Source metadata identifies a working manuscript/preprint; peer review is not established.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-02T12:02:44.642760+00:00.</p>
+        <p>Coverage: 27097 of 27097 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The migration of elite academic researchers to industrial AI laboratories has reshaped
+the global research landscape, yet systematic evidence on the educati onal backgrounds,
+institutional trajectories, and citation impact of researchers at maj or technology companies
+remains scarce. We introduce MAANG-AI-450, a curated dataset of 450 AI researchers
+affiliated with Google Research, Google Brain, Google DeepMind, Meta F AIR , Apple
+Machine Learning Research, Amazon Science, and Netflix Research. The dat aset is Google-
+dominated by construction (88.9% of entries), reflecting the relative accessibility of Google
+Research&#x27;s public personnel directory; results should be inter preted with this sampling
+caveat in mind. For a focal subset of 46 researchers with complete rec ords, we document
+PhD institutional origins, undergraduate backgrounds, and Google Scholar c itation counts
+(retrieved </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>major industrial AI laboratories, constructed primarily from Google Res earch&#x27;s public
+personnel directory and supplemented by Meta F AIR, Apple MLR, Amazon S cience,
+and Netflix Research.
+2. For a focal subset of 46 researchers with complete bibliometric and ed ucational records,
+we characterise the citation distribution, identify the most common PhD-granting
+institutions, and document the geographic diversity of undergraduate origins.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We constructed MAANG-AI-450 from three primary sources.
+Google Research personnel directory . The Google Research website (research.google/people/)
+lists researchers alphabetically across 74 pages of approximately 30 entr ies each. We system-
+atically scraped pages 1 through 20, yielding 315 entries for researchers w ith surnames in
+the range A–F. An additional 85 entries from later pages were collected opportu nistically,
+for a total of approximately 400 Google Research, Brain, and DeepMind entri es. Individual
+profile pages ( research.google/people/slug /) provide brief biographical text including
+education for senior researchers.
+Google Scholar organisational label searches. For Meta F AIR researchers, the
+query mauthors=label:machine learning+meta+fair on the Google Scholar author search
+returned the 40 most-cited researchers; we retained 19 with confirm ed current or recent </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Meta
+affiliation. Apple MLR, Amazon Science, and Netflix Research researchers we re identified
+via analogous label queries.
+Manually curated focal subset. For 46 researchers with public biographical pages
+on Google Research, institutional homepages, or Wikipedia, we additionall y recorded
+3
+Dhanda
+Table 1: Dataset schema for MAANG-AI-450.
+Field Type Description
+id integer Unique row identifier
+name string Researcher full name
+company string MAANG company (Google / Meta / Apple / Amazon / Netflix)
+division string Lab or division (e.g., Google Brain, Meta F AIR)
+research areas string Semicolon-separated research topics
+scholar citations integer Google Scholar citation count (June 2026)
+education undergrad string Undergraduate institution, degree, and year
+education phd string PhD institution, field, and year
+status string current / former
+notes string Notable achievements, prizes, career </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Inclusion criteria: (i) the researcher appears in a publicly accessible company AI resear ch
+directory or in a top-40 Google Scholar author list for the relevant organisati onal label; (ii)
+the researcher has a confirmed AI or ML research role (not solely engineer ing or management);
+(iii) the individual&#x27;s name and affiliation are unambiguous (no initials- only entries).
+Exclusion criteria: (i) researchers listed as &quot;research software engineer&quot; or &quot;product
+manager&quot; without evidence of independent research output; (ii) res earchers where two
+individuals share an identical name with no disambiguating information (four cases removed);
+(iii) for the focal subset specifically: researchers whose Google Sc holar page is absent,
+unverified, or belongs to a different person with the same name.
+No deduplication across company directories was performed, though manual inspection
+found no </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The dataset captures a convenience sample biased towards senior, pub lic-facing researchers:
+Google Research&#x27;s directory is self-selected and overrepresent s publication-active scientists.
+Netflix Research and Amazon Science contribute fewer than 15 entries eac h due to less
+accessible public directories. Education data is missing for 404 of 450 r esearchers (89.8%),
+limiting multivariate analyses to the focal subset. Table 2 shows t he distribution by company.
+4
+Academic Origins and Research Impact at MAANG
+Table 2: Researcher distribution by company in MAANG-AI-450.
+Company / Lab Count % of total
+Google Research / Brain / DeepMind 400 88.9
+Meta F AIR / AMI Labs 19 4.2
+Apple ML Research 12 2.7
+Amazon Science / Alexa 9 2.0
+Netflix Research 2 0.4
+Joint / visiting 8 1.8
+T otal 450 100.0</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Among the 46 researchers with complete citation data, the distribution is highly right-skewed
+(Table 3). The most-cited researcher, Geoffrey Hinton (Google Brain; Nobe l Prize in Physics
+2024, shared), has accumulated 1,055,926 citations as of June 2026. The mean citation coun t
+across all 46 is approximately 145,700 and the median is approximately 96,600, confir ming
+the expected right skew.
+The top five researchers (10.9% of the focal subset) account for 2.77 million citations out
+of a focal-subset total of 6.70 million—41.3% of the total. The top ten researche rs (21.7%)
+account for 4.06 million citations, or 60.6% of the total. A reverse-Pareto analy sis reveals
+that 39.1% of researchers (18 of 46) account for 80% of total citations.
+To quantify inequality formally, we compute the Gini coefficient ov er the 46 citation
+counts sorted in ascending order:
+G = 2 ∑ni=1 i xi
+n ∑ni=1 xi − </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>n + 1n , (1)
+where xi is the i-th citation count (ascending) and n = 46. This yields G = 0.57, substantially
+higher than income inequality in most developed economies (US Gini ≈ 0.41) and consistent
+with the hyper-concentration typical of scientific output distrib utions (Lotka, 1926; Redner,
+1998). The finding is in line with prior observations that citation distri butions in science
+follow a power law with Pareto-like concentration.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 4 lists PhD-granting institutions appearing more than once among t he 32 focal-subset
+researchers with complete PhD records. Five institutions account for 14 of these 32 cases
+(43.8%): Universit´ e de Montr´ eal, Stanford, University of Toronto, MIT,and the Cambridge–
+Edinburgh axis (researchers with Cambridge undergraduate and then Ed inburgh/UCL
+doctorates, notably Hinton and Hassabis). This concentration at a small numb er of elite
+research universities mirrors the prestige hierarchy document ed for academic CS hiring
+(Clauset et al., 2015).
+Three high-citation outliers received PhDs at institutions not typ ically classified among
+the world&#x27;s top-ten CS programmes. Tom´ aˇ s Mikolov (word2vec) earned aPhD from Brno
+5
+Dhanda
+Table 3: Top ten researchers by Google Scholar citation count in the focal subset (June
+2026).
+Name Company / Lab Citations PhD Institution
+Geoffrey Hinton </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MIT 2
+Cambridge / Edinburgh / UCL (UK) 2
+Other (one each) 21
+University of Technology (Czech Republic) and reached 200,925 citations; Al ex Smola earned
+a PhD from TU Berlin and reached 220,414; Koray Kavukcuoglu earned a PhD from NYU
+and reached 335,930. All three were subsequently hired into top-tier in dustrial labs (Meta
+F AIR, Amazon, Google DeepMind). These cases are consistent with —though do not causally
+establish—Way et al.&#x27;s finding that current environment is associat ed with long-run research
+prominence; researcher-level talent selection into elite labs r emains a competing explanation.
+Future work using a matched pre/post design (e.g., publication output before and after
+joining industry) would be needed to disentangle the two mechanis ms. Institutional prestige
+could also be quantified using field-normalised CSRankings scores (Cl auset et al., 2015)
+rather than the </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The dataset has four major limitations. (1) Company imbalance: Google Research
+is overrepresented (88.9% of entries) due to the accessibility of i ts public directory; the
+label &quot;MAANG&quot; is therefore aspirational rather than descriptive of balanced coverage.
+Future work should extend to Microsoft Research, OpenAI, NVIDIA Rese arch, Anthropic,
+and IBM Research. (2) Education missingness: education data is absent for 89.8%
+of researchers, restricting multivariate analyses to the focal sub set and raising concerns
+about selection bias (biographical pages exist primarily for prominent re searchers). (3)
+Citation proxy: citation counts are a noisy proxy for research impact and are field-inflate d
+for NLP and computer vision relative to algorithm theory or hardware research . (4) No
+statistical models: the analysis is descriptive. Adding regression models of the form
+log(citations) ∼ PhD rank </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +228,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

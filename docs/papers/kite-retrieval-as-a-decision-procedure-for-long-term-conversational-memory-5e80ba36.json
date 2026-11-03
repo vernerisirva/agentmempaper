@@ -26,12 +26,12 @@
   "first_seen_date": "2026-11-02",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-11-02 11:58:56",
-  "last_seen_date": "2026-11-02",
+  "last_seen_at": "2026-11-03 11:35:10",
+  "last_seen_date": "2026-11-03",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-10-30",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-02 12:00:03",
   "notified_date": "2026-11-02",
   "openalex_id": null,
@@ -41,8 +41,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-02 11:58:53",
-    "generated_at": "2026-11-02 12:04:11",
-    "last_seen_at": "2026-11-02 11:58:56",
+    "generated_at": "2026-11-03 11:40:18",
+    "last_seen_at": "2026-11-03 11:35:10",
     "metadata_sources": [
       "arxiv"
     ],
@@ -109,36 +109,2302 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-03T11:38:53.621956+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents an inventive, non-circular, vector-free approach to conversational memory retrieval, thoroughly describes system components and prompts, and validates design choices through standard benchmarks, objective recall metrics, and well-designed ablation experiments.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 59183,
+      "assessment_input_sha256": "045ac081bf2391108dd59d3e5bd79f441c2554095f7e1c538b93418b2100cbe6",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2610.41521",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 57656,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 56713,
+      "evidence_block_count": 89,
+      "evidence_context_characters": 67636,
+      "evidence_context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+      "evidence_context_sha256": "74f16620440a608cffe9cbe5868031c78a6b7830daa20caf9da87b211d508bfe",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 57684,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "extracted_pages": 15,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "fc7014c4a72101d984a1286e4fa33a843b30ec70f97b841f1c649c9568097190",
+        "source_url": "https://arxiv.org/pdf/2610.41521",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 57656,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Kite: Retrieval As Adecisionprocedure For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 310,
+          "supplied_characters": 310
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1325,
+          "supplied_characters": 1325
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2238,
+          "supplied_characters": 2238
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 83,
+          "supplied_characters": 83
+        },
+        {
+          "heading": "Vector Similarity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Appendix: Query Embedding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 5,
+          "source_characters": 168,
+          "supplied_characters": 168
+        },
+        {
+          "heading": "Top-18 Cutoff",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Appendix: Structured Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 7,
+          "source_characters": 102,
+          "supplied_characters": 102
+        },
+        {
+          "heading": "Appendix: V Idence Pac K   \u00b7  3 / 18 Row S Sh Ow N",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 8,
+          "source_characters": 102,
+          "supplied_characters": 102
+        },
+        {
+          "heading": "Appendix: Top-18 Pack",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 9,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "S11 F 4  \u2192  D11:4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Appendix: Outcome",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 11,
+          "source_characters": 2339,
+          "supplied_characters": 2339
+        },
+        {
+          "heading": "Long-Term Memory For Llm Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1192,
+          "supplied_characters": 1192
+        },
+        {
+          "heading": "Long-Term Memory For Llm Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 311,
+          "supplied_characters": 311
+        },
+        {
+          "heading": "Memory Organization And Index Governance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1254,
+          "supplied_characters": 1254
+        },
+        {
+          "heading": "Query Alignment And Executable Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1933,
+          "supplied_characters": 1933
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 1615,
+          "supplied_characters": 1615
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 167,
+          "supplied_characters": 167
+        },
+        {
+          "heading": "Conversation \u2192",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 14,
+          "supplied_characters": 14
+        },
+        {
+          "heading": "Source-Linked Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Memory Settles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Question \u2192",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 10,
+          "supplied_characters": 10
+        },
+        {
+          "heading": "Inspectable Plan",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 16,
+          "supplied_characters": 16
+        },
+        {
+          "heading": "Follow The Thread \u2192",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 19,
+          "supplied_characters": 19
+        },
+        {
+          "heading": "Answer + Receipts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1084,
+          "supplied_characters": 1084
+        },
+        {
+          "heading": "J Ul Y  2026 Wit H  Two Dogs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 2225,
+          "supplied_characters": 2225
+        },
+        {
+          "heading": "Governed Knowledge Index",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1364,
+          "supplied_characters": 1364
+        },
+        {
+          "heading": "Governed Knowledge Index",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1873,
+          "supplied_characters": 1873
+        },
+        {
+          "heading": "Index-Grounded Query Compilation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1756,
+          "supplied_characters": 1756
+        },
+        {
+          "heading": "Retrieval As A Decision Procedure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 902,
+          "supplied_characters": 902
+        },
+        {
+          "heading": "Retrieval As A Decision Procedure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 2212,
+          "supplied_characters": 2212
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 31,
+          "source_characters": 1420,
+          "supplied_characters": 1420
+        },
+        {
+          "heading": "Benchmark Performance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 886,
+          "supplied_characters": 886
+        },
+        {
+          "heading": "Benchmark Performance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 33,
+          "source_characters": 2435,
+          "supplied_characters": 2435
+        },
+        {
+          "heading": "Effectiveness Of Deterministic Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 1032,
+          "supplied_characters": 1032
+        },
+        {
+          "heading": "Effectiveness Of Deterministic Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1304,
+          "supplied_characters": 1304
+        },
+        {
+          "heading": "Effectiveness Of V Ocabulary Governance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 1254,
+          "supplied_characters": 1254
+        },
+        {
+          "heading": "Ablation Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 37,
+          "source_characters": 1267,
+          "supplied_characters": 1267
+        },
+        {
+          "heading": "Ablation Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 38,
+          "source_characters": 643,
+          "supplied_characters": 643
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 39,
+          "source_characters": 1585,
+          "supplied_characters": 1585
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 2571,
+          "supplied_characters": 2571
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 4758,
+          "supplied_characters": 4758
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 577,
+          "supplied_characters": 577
+        },
+        {
+          "heading": "Appendix: A Llm Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 806,
+          "supplied_characters": 806
+        },
+        {
+          "heading": "Appendix: Experimental Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 22,
+          "supplied_characters": 22
+        },
+        {
+          "heading": "Appendix: Benchmarks And Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 1503,
+          "supplied_characters": 1503
+        },
+        {
+          "heading": "Appendix: Baseline Evaluation Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 1235,
+          "supplied_characters": 1235
+        },
+        {
+          "heading": "Appendix: Baseline Evaluation Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 83,
+          "supplied_characters": 83
+        },
+        {
+          "heading": "Appendix: Kite Implementation Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 4043,
+          "supplied_characters": 4043
+        },
+        {
+          "heading": "Appendix: Prompt Templates",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 195,
+          "supplied_characters": 195
+        },
+        {
+          "heading": "Appendix: Prompt Templates",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 495,
+          "supplied_characters": 495
+        },
+        {
+          "heading": "Appendix: Memory Extraction Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 1495,
+          "supplied_characters": 1495
+        },
+        {
+          "heading": "Appendix: Memory Extraction Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 83,
+          "supplied_characters": 83
+        },
+        {
+          "heading": "Appendix: Topic V Ocabulary Consolidation Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 837,
+          "supplied_characters": 837
+        },
+        {
+          "heading": "Topic Pairs:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 94,
+          "supplied_characters": 94
+        },
+        {
+          "heading": "Appendix: Index-Grounded Query Compilation Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 914,
+          "supplied_characters": 914
+        },
+        {
+          "heading": "Appendix: Index-Grounded Query Compilation Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 365,
+          "supplied_characters": 365
+        }
+      ],
+      "selected_characters": 56713,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "selected_sections": [
+        {
+          "characters": 310,
+          "heading": "Kite: Retrieval As Adecisionprocedure For",
+          "page": 1
+        },
+        {
+          "characters": 1325,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2238,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 83,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 17,
+          "heading": "Vector Similarity",
+          "page": 2
+        },
+        {
+          "characters": 168,
+          "heading": "Appendix: Query Embedding",
+          "page": 2
+        },
+        {
+          "characters": 97,
+          "heading": "Top-18 Cutoff",
+          "page": 2
+        },
+        {
+          "characters": 102,
+          "heading": "Appendix: Structured Extraction",
+          "page": 2
+        },
+        {
+          "characters": 102,
+          "heading": "Appendix: V Idence Pac K   \u00b7  3 / 18 Row S Sh Ow N",
+          "page": 2
+        },
+        {
+          "characters": 20,
+          "heading": "Appendix: Top-18 Pack",
+          "page": 2
+        },
+        {
+          "characters": 17,
+          "heading": "S11 F 4  \u2192  D11:4",
+          "page": 2
+        },
+        {
+          "characters": 2339,
+          "heading": "Appendix: Outcome",
+          "page": 2
+        },
+        {
+          "characters": 1192,
+          "heading": "Long-Term Memory For Llm Agents",
+          "page": 2
+        },
+        {
+          "characters": 311,
+          "heading": "Long-Term Memory For Llm Agents",
+          "page": 3
+        },
+        {
+          "characters": 1254,
+          "heading": "Memory Organization And Index Governance",
+          "page": 3
+        },
+        {
+          "characters": 1933,
+          "heading": "Query Alignment And Executable Retrieval",
+          "page": 3
+        },
+        {
+          "characters": 1615,
+          "heading": "Method",
+          "page": 3
+        },
+        {
+          "characters": 167,
+          "heading": "Method",
+          "page": 4
+        },
+        {
+          "characters": 14,
+          "heading": "Conversation \u2192",
+          "page": 4
+        },
+        {
+          "characters": 20,
+          "heading": "Source-Linked Memory",
+          "page": 4
+        },
+        {
+          "characters": 26,
+          "heading": "Memory Settles",
+          "page": 4
+        },
+        {
+          "characters": 10,
+          "heading": "Question \u2192",
+          "page": 4
+        },
+        {
+          "characters": 16,
+          "heading": "Inspectable Plan",
+          "page": 4
+        },
+        {
+          "characters": 19,
+          "heading": "Follow The Thread \u2192",
+          "page": 4
+        },
+        {
+          "characters": 1084,
+          "heading": "Answer + Receipts",
+          "page": 4
+        },
+        {
+          "characters": 2225,
+          "heading": "J Ul Y  2026 Wit H  Two Dogs",
+          "page": 4
+        },
+        {
+          "characters": 1364,
+          "heading": "Governed Knowledge Index",
+          "page": 4
+        },
+        {
+          "characters": 1873,
+          "heading": "Governed Knowledge Index",
+          "page": 5
+        },
+        {
+          "characters": 1756,
+          "heading": "Index-Grounded Query Compilation",
+          "page": 5
+        },
+        {
+          "characters": 902,
+          "heading": "Retrieval As A Decision Procedure",
+          "page": 5
+        },
+        {
+          "characters": 2212,
+          "heading": "Retrieval As A Decision Procedure",
+          "page": 6
+        },
+        {
+          "characters": 1420,
+          "heading": "Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 886,
+          "heading": "Benchmark Performance",
+          "page": 6
+        },
+        {
+          "characters": 2435,
+          "heading": "Benchmark Performance",
+          "page": 7
+        },
+        {
+          "characters": 1032,
+          "heading": "Effectiveness Of Deterministic Retrieval",
+          "page": 7
+        },
+        {
+          "characters": 1304,
+          "heading": "Effectiveness Of Deterministic Retrieval",
+          "page": 8
+        },
+        {
+          "characters": 1254,
+          "heading": "Effectiveness Of V Ocabulary Governance",
+          "page": 8
+        },
+        {
+          "characters": 1267,
+          "heading": "Ablation Studies",
+          "page": 8
+        },
+        {
+          "characters": 643,
+          "heading": "Ablation Studies",
+          "page": 9
+        },
+        {
+          "characters": 1585,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 2571,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 4758,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 577,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 806,
+          "heading": "Appendix: A Llm Statement",
+          "page": 11
+        },
+        {
+          "characters": 22,
+          "heading": "Appendix: Experimental Details",
+          "page": 11
+        },
+        {
+          "characters": 1503,
+          "heading": "Appendix: Benchmarks And Evaluation Metrics",
+          "page": 11
+        },
+        {
+          "characters": 1235,
+          "heading": "Appendix: Baseline Evaluation Settings",
+          "page": 11
+        },
+        {
+          "characters": 83,
+          "heading": "Appendix: Baseline Evaluation Settings",
+          "page": 12
+        },
+        {
+          "characters": 4043,
+          "heading": "Appendix: Kite Implementation Settings",
+          "page": 12
+        },
+        {
+          "characters": 195,
+          "heading": "Appendix: Prompt Templates",
+          "page": 12
+        },
+        {
+          "characters": 495,
+          "heading": "Appendix: Prompt Templates",
+          "page": 13
+        },
+        {
+          "characters": 1495,
+          "heading": "Appendix: Memory Extraction Prompt",
+          "page": 13
+        },
+        {
+          "characters": 83,
+          "heading": "Appendix: Memory Extraction Prompt",
+          "page": 14
+        },
+        {
+          "characters": 837,
+          "heading": "Appendix: Topic V Ocabulary Consolidation Prompt",
+          "page": 14
+        },
+        {
+          "characters": 94,
+          "heading": "Topic Pairs:",
+          "page": 14
+        },
+        {
+          "characters": 914,
+          "heading": "Appendix: Index-Grounded Query Compilation Prompt",
+          "page": 14
+        },
+        {
+          "characters": 365,
+          "heading": "Appendix: Index-Grounded Query Compilation Prompt",
+          "page": 15
+        }
+      ],
+      "selected_text_sha256": "045ac081bf2391108dd59d3e5bd79f441c2554095f7e1c538b93418b2100cbe6",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "fc7014c4a72101d984a1286e4fa33a843b30ec70f97b841f1c649c9568097190",
+      "source_pages": 15,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0002"
+        ],
+        "excerpt": "Many long-term memory systems for LLM agents are built around embedding-based retrieval. Al-\nthough effective for semantic matching, similarity ranking alone does not establish whether re-\ntrieved memories satisfy the conditions implied by a question. In this paper, we introduce KITE\n(Knowledge-IndexedTemporalEvidence), a vector-free framework that formulates memory re-\ntrieval as an explicit decision procedure. KITE organizes multi-session conversations as structured\nknowledge indexed by a governed topic vocabulary, which evolves through controlled expansion\nand consolidation. At query time, questions are compiled into inspectable retrieval plans over the\nsame knowledge index that guides memory construction. The plans are then executed through fixed\nlookup and ranking operations, while sparse lexical retrieval recovers surface details omitted from\nthe structured representation. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "16b83fcd3b748f0208840e142d55f425178193af72e3c32eb88ba886ef2f60d9",
+            "evidence_id": "E3188de074b774dfe-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Many long-term memory systems for LLM agents are built around embedding-based retrieval. Al-\nthough effective for semantic matching, similarity ranking alone does not establish whether re-\ntrieved memories satisfy the conditions implied by a question. In this paper, we introduce KITE\n(Knowledge-IndexedTemporalEvidence), a vector-free framework that formulates memory re-\ntrieval as an explicit decision procedure. KITE organizes multi-session conversations as structured\nknowledge indexed by a governed topic vocabulary, which evolves through controlled expansion\nand consolidation. At query time, questions are compiled into inspectable retrieval plans over the\nsame knowledge index that guides memory construction. The plans are then executed through fixed\nlookup and ranking operations, while sparse lexical retrieval recovers surface details omitted from\nthe structured representation. "
+              }
+            ],
+            "text": "Many long-term memory systems for LLM agents are built around embedding-based retrieval. Al-\nthough effective for semantic matching, similarity ranking alone does not establish whether re-\ntrieved memories satisfy the conditions implied by a question. In this paper, we introduce KITE\n(Knowledge-IndexedTemporalEvidence), a vector-free framework that formulates memory re-\ntrieval as an explicit decision procedure. KITE organizes multi-session conversations as structured\nknowledge indexed by a governed topic vocabulary, which evolves through controlled expansion\nand consolidation. At query time, questions are compiled into inspectable retrieval plans over the\nsame knowledge index that guides memory construction. The plans are then executed through fixed\nlookup and ranking operations, while sparse lexical retrieval recovers surface details omitted from\nthe structured representation. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0014"
+        ],
+        "excerpt": "an animal shelter\n\na n e a r by  b re ed er\nFigure 1: Comparison of embedding retrieval and KITE's retrieval with explicit constraints.\nTo this end, we propose KITE 1 (Knowledge-IndexedTemporalEvidence), a vector-free framework for long-horizon\nconversational memory that organizes multi-session interactions into structured knowledge indexed by a governed\ntopic vocabulary. Each memory entry is enriched with typed contextual and temporal facets, providing complementary\naccess paths beyond topics. At query time, KITE compiles a natural-language question into an inspectable retrieval\nplan over the same governed knowledge index, specifying the conditions to apply. The validated plan is then executed\nthrough explicit lookup and ranking operations, making evidence selection deterministic. KITE also supplements the\nprimary path with sparse lexical retrieval to recover surface details missed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Outcome",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c01e28e8912be206f3605e26cb734c03100e84eec5e9d80a1fd79a110f1ec615",
+            "evidence_id": "E3188de074b774dfe-B0014",
+            "pages": [
+              2
+            ],
+            "section": "Appendix: Outcome",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 2,
+                "section": "Appendix: Outcome",
+                "section_index": 11,
+                "start": 0,
+                "text": "an animal shelter\n\na n e a r by  b re ed er\nFigure 1: Comparison of embedding retrieval and KITE's retrieval with explicit constraints.\nTo this end, we propose KITE 1 (Knowledge-IndexedTemporalEvidence), a vector-free framework for long-horizon\nconversational memory that organizes multi-session interactions into structured knowledge indexed by a governed\ntopic vocabulary. Each memory entry is enriched with typed contextual and temporal facets, providing complementary\naccess paths beyond topics. At query time, KITE compiles a natural-language question into an inspectable retrieval\nplan over the same governed knowledge index, specifying the conditions to apply. The validated plan is then executed\nthrough explicit lookup and ranking operations, making evidence selection deterministic. KITE also supplements the\nprimary path with sparse lexical retrieval to recover surface details missed "
+              }
+            ],
+            "text": "an animal shelter\n\na n e a r by  b re ed er\nFigure 1: Comparison of embedding retrieval and KITE's retrieval with explicit constraints.\nTo this end, we propose KITE 1 (Knowledge-IndexedTemporalEvidence), a vector-free framework for long-horizon\nconversational memory that organizes multi-session interactions into structured knowledge indexed by a governed\ntopic vocabulary. Each memory entry is enriched with typed contextual and temporal facets, providing complementary\naccess paths beyond topics. At query time, KITE compiles a natural-language question into an inspectable retrieval\nplan over the same governed knowledge index, specifying the conditions to apply. The validated plan is then executed\nthrough explicit lookup and ranking operations, making evidence selection deterministic. KITE also supplements the\nprimary path with sparse lexical retrieval to recover surface details missed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0024"
+        ],
+        "excerpt": "To connect memory organization with evidence selection, KITE formulates long-term conversational memory retrieval\nas an explicit decision procedure over a governed knowledge index. As illustrated in Figure 2, each session is converted\ninto structured memory entries indexed under a governed topic vocabulary and enriched with contextual and temporal\nfacets. At query time, KITE uses the same knowledge index to compile each question into an inspectable retrieval\nplan that specifies the conditions for selecting evidence. The validated plan is then executed deterministically through\nfixed lookup and ranking operations, while sparse lexical retrieval provides complementary evidence.\nConsider a sequence of dated conversation sessionsU= (u 1, . . . , um)ordered chronologically. Given a later natural-\nlanguage questionq, the retrieval task is to recover evidence from this history that supports an ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "044968953f304a3596a5b89a80ac641e749b9bf5abf717259db93052303ad227",
+            "evidence_id": "E3188de074b774dfe-B0024",
+            "pages": [
+              3
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 3,
+                "section": "Method",
+                "section_index": 16,
+                "start": 0,
+                "text": "To connect memory organization with evidence selection, KITE formulates long-term conversational memory retrieval\nas an explicit decision procedure over a governed knowledge index. As illustrated in Figure 2, each session is converted\ninto structured memory entries indexed under a governed topic vocabulary and enriched with contextual and temporal\nfacets. At query time, KITE uses the same knowledge index to compile each question into an inspectable retrieval\nplan that specifies the conditions for selecting evidence. The validated plan is then executed deterministically through\nfixed lookup and ranking operations, while sparse lexical retrieval provides complementary evidence.\nConsider a sequence of dated conversation sessionsU= (u 1, . . . , um)ordered chronologically. Given a later natural-\nlanguage questionq, the retrieval task is to recover evidence from this history that supports an "
+              }
+            ],
+            "text": "To connect memory organization with evidence selection, KITE formulates long-term conversational memory retrieval\nas an explicit decision procedure over a governed knowledge index. As illustrated in Figure 2, each session is converted\ninto structured memory entries indexed under a governed topic vocabulary and enriched with contextual and temporal\nfacets. At query time, KITE uses the same knowledge index to compile each question into an inspectable retrieval\nplan that specifies the conditions for selecting evidence. The validated plan is then executed deterministically through\nfixed lookup and ranking operations, while sparse lexical retrieval provides complementary evidence.\nConsider a sequence of dated conversation sessionsU= (u 1, . . . , um)ordered chronologically. Given a later natural-\nlanguage questionq, the retrieval task is to recover evidence from this history that supports an "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0025"
+        ],
+        "excerpt": "answer. KITE constructs\na set of structured memory entriesMfromUand selects relevant entries via a knowledge-indexed retrieval path.\nLet\u03a3be the set of governed index keys. Memory indexing and query compilation are defined as\nI:M\u21922 \u03a3,Q P :X \u2192\u03a0,(1)\nwhereXis the space of natural-language questions and\u03a0is the space of retrieval plans. For eachm\u2208M,I(m)\u2286\u03a3\nspecifies its index keys, and these assignments form the knowledge indexP. Given this index,Q P(q) =\u03c0compiles a\nqueryqinto a retrieval plan\u03c0whose indexed references resolve to the same keys used to organize the stored memories.\nAfter validation, the indexed path executes the plan\u03c0and returns a ranked evidence sequenceE q as\nEq =D P,\u03b8(\u03c0) = Rank\u03b8 (ExecP(\u03c0)),(2)\n3\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nKITE Vector-free Time-aware Source-linked FactsKnowledge-Indexed T emporal Evidence",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "366709d815ac7a85d5e9c270da909bd926051905d40c05c1a1869159b99308d7",
+            "evidence_id": "E3188de074b774dfe-B0025",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Method",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1615,
+                "page": 3,
+                "section": "Method",
+                "section_index": 16,
+                "start": 900,
+                "text": "answer. KITE constructs\na set of structured memory entriesMfromUand selects relevant entries via a knowledge-indexed retrieval path.\nLet\u03a3be the set of governed index keys. Memory indexing and query compilation are defined as\nI:M\u21922 \u03a3,Q P :X \u2192\u03a0,(1)\nwhereXis the space of natural-language questions and\u03a0is the space of retrieval plans. For eachm\u2208M,I(m)\u2286\u03a3\nspecifies its index keys, and these assignments form the knowledge indexP. Given this index,Q P(q) =\u03c0compiles a\nqueryqinto a retrieval plan\u03c0whose indexed references resolve to the same keys used to organize the stored memories.\nAfter validation, the indexed path executes the plan\u03c0and returns a ranked evidence sequenceE q as\nEq =D P,\u03b8(\u03c0) = Rank\u03b8 (ExecP(\u03c0)),(2)\n3"
+              },
+              {
+                "end": 167,
+                "page": 4,
+                "section": "Method",
+                "section_index": 17,
+                "start": 0,
+                "text": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nKITE Vector-free Time-aware Source-linked FactsKnowledge-Indexed T emporal Evidence"
+              }
+            ],
+            "text": "answer. KITE constructs\na set of structured memory entriesMfromUand selects relevant entries via a knowledge-indexed retrieval path.\nLet\u03a3be the set of governed index keys. Memory indexing and query compilation are defined as\nI:M\u21922 \u03a3,Q P :X \u2192\u03a0,(1)\nwhereXis the space of natural-language questions and\u03a0is the space of retrieval plans. For eachm\u2208M,I(m)\u2286\u03a3\nspecifies its index keys, and these assignments form the knowledge indexP. Given this index,Q P(q) =\u03c0compiles a\nqueryqinto a retrieval plan\u03c0whose indexed references resolve to the same keys used to organize the stored memories.\nAfter validation, the indexed path executes the plan\u03c0and returns a ranked evidence sequenceE q as\nEq =D P,\u03b8(\u03c0) = Rank\u03b8 (ExecP(\u03c0)),(2)\n3\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nKITE Vector-free Time-aware Source-linked FactsKnowledge-Indexed T emporal Evidence"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0037"
+        ],
+        "excerpt": "Structured memory entries and provenance.Rather than indexing raw dialogue directly, KITE converts each\nconversation session into structured memory entries. Each entry can be represented as\nm=\u27e8x m, \u03c1m, Tm, Am\u27e9,(3)\nwherex m is the self-contained memory content and\u03c1 m its provenance, including the source session and supporting\nutterances. The setT m holds the entry's governed topics, whileA m stores typed contextual and temporal facets, such\nas entities and events. These fields separate evidence from the structured information used to index and retrieve it.\nFor each session, the extraction model processes the dialogue with the current topic vocabulary as context, produc-\ning source-linked entries with facet annotations. Relative time expressions are also resolved against the date of the\ncorresponding session whenever possible, while candidate memory entries without valid provenance are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Governed Knowledge Index",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2d118712ef5d40843e13373239e669768f37ebce123e52809be7e7d30bd0d27d",
+            "evidence_id": "E3188de074b774dfe-B0037",
+            "pages": [
+              4
+            ],
+            "section": "Governed Knowledge Index",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 4,
+                "section": "Governed Knowledge Index",
+                "section_index": 26,
+                "start": 0,
+                "text": "Structured memory entries and provenance.Rather than indexing raw dialogue directly, KITE converts each\nconversation session into structured memory entries. Each entry can be represented as\nm=\u27e8x m, \u03c1m, Tm, Am\u27e9,(3)\nwherex m is the self-contained memory content and\u03c1 m its provenance, including the source session and supporting\nutterances. The setT m holds the entry's governed topics, whileA m stores typed contextual and temporal facets, such\nas entities and events. These fields separate evidence from the structured information used to index and retrieve it.\nFor each session, the extraction model processes the dialogue with the current topic vocabulary as context, produc-\ning source-linked entries with facet annotations. Relative time expressions are also resolved against the date of the\ncorresponding session whenever possible, while candidate memory entries without valid provenance are "
+              }
+            ],
+            "text": "Structured memory entries and provenance.Rather than indexing raw dialogue directly, KITE converts each\nconversation session into structured memory entries. Each entry can be represented as\nm=\u27e8x m, \u03c1m, Tm, Am\u27e9,(3)\nwherex m is the self-contained memory content and\u03c1 m its provenance, including the source session and supporting\nutterances. The setT m holds the entry's governed topics, whileA m stores typed contextual and temporal facets, such\nas entities and events. These fields separate evidence from the structured information used to index and retrieve it.\nFor each session, the extraction model processes the dialogue with the current topic vocabulary as context, produc-\ning source-linked entries with facet annotations. Relative time expressions are also resolved against the date of the\ncorresponding session whenever possible, while candidate memory entries without valid provenance are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0038"
+        ],
+        "excerpt": "discarded.\nGoverned topic vocabulary.Rather than assuming a complete ontology in advance, KITE derives its topic vocab-\nulary from the accumulated conversation history. Starting from a small set of canonical roots, the extraction model\nreuses existing topics when possible and gradually proposes more specific children when new concepts emerge. To\nensure consistency, new topics must fit within the existing hierarchy, which helps maintain a stable index over time.\n4\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nV ocabulary expansion is further controlled by keeping proposed topics provisional until they recur across multiple\nsessions and time periods, rather than admitting each new topic as soon as it first appears. As the vocabulary evolves,\npotentially redundant sibling topics are consolidated, with their memory entries redirected to the selected ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Governed Knowledge Index",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4be30ab1a284c89938b460fa3ced37bd31df29e82b4ed459e55912bdc6557cee",
+            "evidence_id": "E3188de074b774dfe-B0038",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Governed Knowledge Index",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1364,
+                "page": 4,
+                "section": "Governed Knowledge Index",
+                "section_index": 26,
+                "start": 897,
+                "text": "discarded.\nGoverned topic vocabulary.Rather than assuming a complete ontology in advance, KITE derives its topic vocab-\nulary from the accumulated conversation history. Starting from a small set of canonical roots, the extraction model\nreuses existing topics when possible and gradually proposes more specific children when new concepts emerge. To\nensure consistency, new topics must fit within the existing hierarchy, which helps maintain a stable index over time.\n4"
+              },
+              {
+                "end": 428,
+                "page": 5,
+                "section": "Governed Knowledge Index",
+                "section_index": 27,
+                "start": 0,
+                "text": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nV ocabulary expansion is further controlled by keeping proposed topics provisional until they recur across multiple\nsessions and time periods, rather than admitting each new topic as soon as it first appears. As the vocabulary evolves,\npotentially redundant sibling topics are consolidated, with their memory entries redirected to the selected "
+              }
+            ],
+            "text": "discarded.\nGoverned topic vocabulary.Rather than assuming a complete ontology in advance, KITE derives its topic vocab-\nulary from the accumulated conversation history. Starting from a small set of canonical roots, the extraction model\nreuses existing topics when possible and gradually proposes more specific children when new concepts emerge. To\nensure consistency, new topics must fit within the existing hierarchy, which helps maintain a stable index over time.\n4\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nV ocabulary expansion is further controlled by keeping proposed topics provisional until they recur across multiple\nsessions and time periods, rather than admitting each new topic as soon as it first appears. As the vocabulary evolves,\npotentially redundant sibling topics are consolidated, with their memory entries redirected to the selected "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0041"
+        ],
+        "excerpt": "Shared-index grounding.Query compilation uses the same knowledge index built during memory construction, so\neach question is interpreted against the stored vocabulary and entities. Thus, references inferred from the question can\nbe resolved to existing index keys, keeping query interpretation aligned with memory organization. The compiler then\nmaps the question to these keys, while the executor determines which memories satisfy the resulting conditions.\nTyped retrieval plans.Each question is compiled into a typed retrieval plan that makes its evidence requirements\nexplicit before execution. Formally, the plan consists of one or more subqueries\n\u03c0= (\u03c0 1, . . . , \u03c0n), \u03c0 i =\u27e8select,where,pipe\u27e9, i= 1, . . . , n.(6)\nHere,selectdetermines the retrieval granularity for each subquery, whilewherespecifies the indexed and temporal\nconditions on evidence. Finally,pipeapplies fixed operations to the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Index-Grounded Query Compilation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "623779a57492b22c29a34d9074268b76f0d4bdf88b4d28b884a607879d1ea312",
+            "evidence_id": "E3188de074b774dfe-B0041",
+            "pages": [
+              5
+            ],
+            "section": "Index-Grounded Query Compilation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 5,
+                "section": "Index-Grounded Query Compilation",
+                "section_index": 28,
+                "start": 0,
+                "text": "Shared-index grounding.Query compilation uses the same knowledge index built during memory construction, so\neach question is interpreted against the stored vocabulary and entities. Thus, references inferred from the question can\nbe resolved to existing index keys, keeping query interpretation aligned with memory organization. The compiler then\nmaps the question to these keys, while the executor determines which memories satisfy the resulting conditions.\nTyped retrieval plans.Each question is compiled into a typed retrieval plan that makes its evidence requirements\nexplicit before execution. Formally, the plan consists of one or more subqueries\n\u03c0= (\u03c0 1, . . . , \u03c0n), \u03c0 i =\u27e8select,where,pipe\u27e9, i= 1, . . . , n.(6)\nHere,selectdetermines the retrieval granularity for each subquery, whilewherespecifies the indexed and temporal\nconditions on evidence. Finally,pipeapplies fixed operations to the "
+              }
+            ],
+            "text": "Shared-index grounding.Query compilation uses the same knowledge index built during memory construction, so\neach question is interpreted against the stored vocabulary and entities. Thus, references inferred from the question can\nbe resolved to existing index keys, keeping query interpretation aligned with memory organization. The compiler then\nmaps the question to these keys, while the executor determines which memories satisfy the resulting conditions.\nTyped retrieval plans.Each question is compiled into a typed retrieval plan that makes its evidence requirements\nexplicit before execution. Formally, the plan consists of one or more subqueries\n\u03c0= (\u03c0 1, . . . , \u03c0n), \u03c0 i =\u27e8select,where,pipe\u27e9, i= 1, . . . , n.(6)\nHere,selectdetermines the retrieval granularity for each subquery, whilewherespecifies the indexed and temporal\nconditions on evidence. Finally,pipeapplies fixed operations to the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0042"
+        ],
+        "excerpt": "results, such as sorting, limiting, or counting.\nSubqueries can be linked sequentially, allowing results from an earlier step to constrain the search performed in\nsubsequent stages. These dependencies keep multi-hop retrieval explicit in the plan while preserving fixed execution.\nPlan validation.Before execution, each plan is validated against a fixed typed grammar and the knowledge index.\nIndexed references are resolved to valid keys in the governed representation. Speaker mentions are mapped to par-\nticipant constraints, while temporal expressions are normalized into explicit ranges. Plans with unresolved references\nor unsupported structures are rejected. The validated plan is executed by the retrieval executor without further model\nintervention, drawing a clear boundary between model-based interpretation and deterministic evidence selection.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Index-Grounded Query Compilation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1639b3fcbbe1ba7d378e35087f10f15dacc6eec757f6c21d29d567bd7f57d28f",
+            "evidence_id": "E3188de074b774dfe-B0042",
+            "pages": [
+              5
+            ],
+            "section": "Index-Grounded Query Compilation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1756,
+                "page": 5,
+                "section": "Index-Grounded Query Compilation",
+                "section_index": 28,
+                "start": 900,
+                "text": "results, such as sorting, limiting, or counting.\nSubqueries can be linked sequentially, allowing results from an earlier step to constrain the search performed in\nsubsequent stages. These dependencies keep multi-hop retrieval explicit in the plan while preserving fixed execution.\nPlan validation.Before execution, each plan is validated against a fixed typed grammar and the knowledge index.\nIndexed references are resolved to valid keys in the governed representation. Speaker mentions are mapped to par-\nticipant constraints, while temporal expressions are normalized into explicit ranges. Plans with unresolved references\nor unsupported structures are rejected. The validated plan is executed by the retrieval executor without further model\nintervention, drawing a clear boundary between model-based interpretation and deterministic evidence selection."
+              }
+            ],
+            "text": "results, such as sorting, limiting, or counting.\nSubqueries can be linked sequentially, allowing results from an earlier step to constrain the search performed in\nsubsequent stages. These dependencies keep multi-hop retrieval explicit in the plan while preserving fixed execution.\nPlan validation.Before execution, each plan is validated against a fixed typed grammar and the knowledge index.\nIndexed references are resolved to valid keys in the governed representation. Speaker mentions are mapped to par-\nticipant constraints, while temporal expressions are normalized into explicit ranges. Plans with unresolved references\nor unsupported structures are rejected. The validated plan is executed by the retrieval executor without further model\nintervention, drawing a clear boundary between model-based interpretation and deterministic evidence selection."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0043"
+        ],
+        "excerpt": "Deterministic plan execution.Given a validated subquery\u03c0 i, KITE evaluates its indexed conditions through the\ncorresponding posting lists. Requested keys within the same type are treated as alternatives, whereas conditions across\ntypes must hold jointly. The initial candidate set is therefore\nC(\u03c0 i) =\n\\\na\u2208A(\u03c0i)\n\uf8eb\n\uf8ed [\ns\u2208\u03c0i,a\nPa[s]\n\uf8f6\n\uf8f8 ,(7)\nwhereA(\u03c0 i)denotes the set of constrained key types and\u03c0 i,a \u2286\u03a3 a contains the requested index keys of typea.\nTemporal and lexical conditions further filter this initial candidate set before thepipeoperations are applied.\nIn practice, the executor narrows down the set of candidate memories according to the conditions encoded in the\nretrieval plan. For dependent subqueries, results from preceding steps are carried forward as constraints on later\nretrieval. With these operations fixed, the same index and validated plan always yield the same candidate ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Retrieval As A Decision Procedure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "431a0f0bfa919bf39ff5441f3bfe5f4215d25ad8a3f3dcd62afdf969c67f1c23",
+            "evidence_id": "E3188de074b774dfe-B0043",
+            "pages": [
+              5
+            ],
+            "section": "Retrieval As A Decision Procedure",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 5,
+                "section": "Retrieval As A Decision Procedure",
+                "section_index": 29,
+                "start": 0,
+                "text": "Deterministic plan execution.Given a validated subquery\u03c0 i, KITE evaluates its indexed conditions through the\ncorresponding posting lists. Requested keys within the same type are treated as alternatives, whereas conditions across\ntypes must hold jointly. The initial candidate set is therefore\nC(\u03c0 i) =\n\\\na\u2208A(\u03c0i)\n\uf8eb\n\uf8ed [\ns\u2208\u03c0i,a\nPa[s]\n\uf8f6\n\uf8f8 ,(7)\nwhereA(\u03c0 i)denotes the set of constrained key types and\u03c0 i,a \u2286\u03a3 a contains the requested index keys of typea.\nTemporal and lexical conditions further filter this initial candidate set before thepipeoperations are applied.\nIn practice, the executor narrows down the set of candidate memories according to the conditions encoded in the\nretrieval plan. For dependent subqueries, results from preceding steps are carried forward as constraints on later\nretrieval. With these operations fixed, the same index and validated plan always yield the same candidate "
+              }
+            ],
+            "text": "Deterministic plan execution.Given a validated subquery\u03c0 i, KITE evaluates its indexed conditions through the\ncorresponding posting lists. Requested keys within the same type are treated as alternatives, whereas conditions across\ntypes must hold jointly. The initial candidate set is therefore\nC(\u03c0 i) =\n\\\na\u2208A(\u03c0i)\n\uf8eb\n\uf8ed [\ns\u2208\u03c0i,a\nPa[s]\n\uf8f6\n\uf8f8 ,(7)\nwhereA(\u03c0 i)denotes the set of constrained key types and\u03c0 i,a \u2286\u03a3 a contains the requested index keys of typea.\nTemporal and lexical conditions further filter this initial candidate set before thepipeoperations are applied.\nIn practice, the executor narrows down the set of candidate memories according to the conditions encoded in the\nretrieval plan. For dependent subqueries, results from preceding steps are carried forward as constraints on later\nretrieval. With these operations fixed, the same index and validated plan always yield the same candidate "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0044"
+        ],
+        "excerpt": "set.\n5\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nControlled relaxation and no-match.When exact execution produces no candidates, KITE applies a predefined\nsequence of relaxations. Each step broadens only designated conditions while preserving bindings from prior retrieval\nstages. The effective conditions remain explicit throughout, and execution stops at the first non-empty result. If all\npermitted relaxations fail, the indexed path explicitly returns no match under the current index and execution policy.\nExplicit evidence ranking.After condition evaluation determines the candidate set, KITE orders the retained mem-\nories using a fixed scoring policy\nS\u03b8(m, \u03c0) =\nX\nj\u2208J\nwj \u03d5j(m, \u03c0),(8)\nwhere each\u03d5 j(m, \u03c0)captures an interpretable match between memory entrymand retrieval plan\u03c0, andw j is its\ncorresponding weight under the scoring policy\u03b8. In ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Retrieval As A Decision Procedure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f596338b60ca83dc6a0956b105657dc303485ff2b597bb908265253366aa308d",
+            "evidence_id": "E3188de074b774dfe-B0044",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Retrieval As A Decision Procedure",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 902,
+                "page": 5,
+                "section": "Retrieval As A Decision Procedure",
+                "section_index": 29,
+                "start": 896,
+                "text": "set.\n5"
+              },
+              {
+                "end": 885,
+                "page": 6,
+                "section": "Retrieval As A Decision Procedure",
+                "section_index": 30,
+                "start": 0,
+                "text": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nControlled relaxation and no-match.When exact execution produces no candidates, KITE applies a predefined\nsequence of relaxations. Each step broadens only designated conditions while preserving bindings from prior retrieval\nstages. The effective conditions remain explicit throughout, and execution stops at the first non-empty result. If all\npermitted relaxations fail, the indexed path explicitly returns no match under the current index and execution policy.\nExplicit evidence ranking.After condition evaluation determines the candidate set, KITE orders the retained mem-\nories using a fixed scoring policy\nS\u03b8(m, \u03c0) =\nX\nj\u2208J\nwj \u03d5j(m, \u03c0),(8)\nwhere each\u03d5 j(m, \u03c0)captures an interpretable match between memory entrymand retrieval plan\u03c0, andw j is its\ncorresponding weight under the scoring policy\u03b8. In "
+              }
+            ],
+            "text": "set.\n5\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nControlled relaxation and no-match.When exact execution produces no candidates, KITE applies a predefined\nsequence of relaxations. Each step broadens only designated conditions while preserving bindings from prior retrieval\nstages. The effective conditions remain explicit throughout, and execution stops at the first non-empty result. If all\npermitted relaxations fail, the indexed path explicitly returns no match under the current index and execution policy.\nExplicit evidence ranking.After condition evaluation determines the candidate set, KITE orders the retained mem-\nories using a fixed scoring policy\nS\u03b8(m, \u03c0) =\nX\nj\u2208J\nwj \u03d5j(m, \u03c0),(8)\nwhere each\u03d5 j(m, \u03c0)captures an interpretable match between memory entrymand retrieval plan\u03c0, andw j is its\ncorresponding weight under the scoring policy\u03b8. In "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0045"
+        ],
+        "excerpt": "practice, exact matches on index keys receive the strongest\npreference, while broader hierarchical matches or agreement on additional typed facets provide supporting signals.\nFor example, a memory matching both the queried entity and event outscores one linked only through a broader topic.\nRanking is applied only after condition checks admit the candidates, so it changes their ordering rather than eligibility.\nFor fixedP,\u03c0, and\u03b8, the scores are deterministic, while the basis of each ranking decision remains inspectable.\nSparse lexical support.Structured memory is designed to capture reusable concepts and retrieval cues, but this\nabstraction may omit surface-form details preserved in the source text, such as rare names or numerical values. To\nretain access to such information, KITE augments the indexed path with a deterministic sparse lexical channel. The\nranked evidence from both paths ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Retrieval As A Decision Procedure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "01d2280645ad4cfe36b7e49175e074ab579a0719bff960c31205d7860713e019",
+            "evidence_id": "E3188de074b774dfe-B0045",
+            "pages": [
+              6
+            ],
+            "section": "Retrieval As A Decision Procedure",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1784,
+                "page": 6,
+                "section": "Retrieval As A Decision Procedure",
+                "section_index": 30,
+                "start": 885,
+                "text": "practice, exact matches on index keys receive the strongest\npreference, while broader hierarchical matches or agreement on additional typed facets provide supporting signals.\nFor example, a memory matching both the queried entity and event outscores one linked only through a broader topic.\nRanking is applied only after condition checks admit the candidates, so it changes their ordering rather than eligibility.\nFor fixedP,\u03c0, and\u03b8, the scores are deterministic, while the basis of each ranking decision remains inspectable.\nSparse lexical support.Structured memory is designed to capture reusable concepts and retrieval cues, but this\nabstraction may omit surface-form details preserved in the source text, such as rare names or numerical values. To\nretain access to such information, KITE augments the indexed path with a deterministic sparse lexical channel. The\nranked evidence from both paths "
+              }
+            ],
+            "text": "practice, exact matches on index keys receive the strongest\npreference, while broader hierarchical matches or agreement on additional typed facets provide supporting signals.\nFor example, a memory matching both the queried entity and event outscores one linked only through a broader topic.\nRanking is applied only after condition checks admit the candidates, so it changes their ordering rather than eligibility.\nFor fixedP,\u03c0, and\u03b8, the scores are deterministic, while the basis of each ranking decision remains inspectable.\nSparse lexical support.Structured memory is designed to capture reusable concepts and retrieval cues, but this\nabstraction may omit surface-form details preserved in the source text, such as rare names or numerical values. To\nretain access to such information, KITE augments the indexed path with a deterministic sparse lexical channel. The\nranked evidence from both paths "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0047"
+        ],
+        "excerpt": "Benchmarks.We evaluate KITE on two long-term conversational memory benchmarks, LoCoMo (Maharana et al.,\n2024) and LongMemEval-S (Wu et al., 2025). Specifically, the LoCoMo experiments cover 1,540 questions across\nten multi-session conversations, while LongMemEval-S comprises 500 questions over longer interaction histories.\nBaselines.We compare KITE against prior memory systems, namely Mem0 (Chhikara et al., 2025), Zep (Ras-\nmussen et al., 2025), MemOS (Li et al., 2025), and EverMemOS (Hu et al., 2026a). We also consider Naive RAG as\na retrieval baseline and full-context inference over the complete conversation history as a non-retrieval reference.\nEvaluation protocol.We evaluate answer quality using LLM-as-a-judge accuracy, reported overall and by question\ncategory. Throughout the KITE experiments,gpt-4.1-miniserves as both reader and judge. The reader receives\nonly the question and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "425e32c7f239000e06117c3df40a0851249c4d0d9a32b6448d97a5c240a498e9",
+            "evidence_id": "E3188de074b774dfe-B0047",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 31,
+                "start": 0,
+                "text": "Benchmarks.We evaluate KITE on two long-term conversational memory benchmarks, LoCoMo (Maharana et al.,\n2024) and LongMemEval-S (Wu et al., 2025). Specifically, the LoCoMo experiments cover 1,540 questions across\nten multi-session conversations, while LongMemEval-S comprises 500 questions over longer interaction histories.\nBaselines.We compare KITE against prior memory systems, namely Mem0 (Chhikara et al., 2025), Zep (Ras-\nmussen et al., 2025), MemOS (Li et al., 2025), and EverMemOS (Hu et al., 2026a). We also consider Naive RAG as\na retrieval baseline and full-context inference over the complete conversation history as a non-retrieval reference.\nEvaluation protocol.We evaluate answer quality using LLM-as-a-judge accuracy, reported overall and by question\ncategory. Throughout the KITE experiments,gpt-4.1-miniserves as both reader and judge. The reader receives\nonly the question and "
+              }
+            ],
+            "text": "Benchmarks.We evaluate KITE on two long-term conversational memory benchmarks, LoCoMo (Maharana et al.,\n2024) and LongMemEval-S (Wu et al., 2025). Specifically, the LoCoMo experiments cover 1,540 questions across\nten multi-session conversations, while LongMemEval-S comprises 500 questions over longer interaction histories.\nBaselines.We compare KITE against prior memory systems, namely Mem0 (Chhikara et al., 2025), Zep (Ras-\nmussen et al., 2025), MemOS (Li et al., 2025), and EverMemOS (Hu et al., 2026a). We also consider Naive RAG as\na retrieval baseline and full-context inference over the complete conversation history as a non-retrieval reference.\nEvaluation protocol.We evaluate answer quality using LLM-as-a-judge accuracy, reported overall and by question\ncategory. Throughout the KITE experiments,gpt-4.1-miniserves as both reader and judge. The reader receives\nonly the question and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0048"
+        ],
+        "excerpt": "retrieved evidence, without the full conversation history, and answers strictly from this context.\nImplementation details.Unless otherwise specified, KITE combines plan-guided retrieval over the knowledge\nindex with a sparse lexical channel under a fixed fusion strategy. We use small benchmark-specific seed vocabularies\nand apply the same governance procedure across both benchmarks. Further implementation details are provided in\nAppendices B\u2013C, and the source code is available athttps://github.com/memoket/memoket-kite.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "914952161749fb7b47268b97a0dbc9c453212e016cf30c77f906fa91fec2d586",
+            "evidence_id": "E3188de074b774dfe-B0048",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1420,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 31,
+                "start": 896,
+                "text": "retrieved evidence, without the full conversation history, and answers strictly from this context.\nImplementation details.Unless otherwise specified, KITE combines plan-guided retrieval over the knowledge\nindex with a sparse lexical channel under a fixed fusion strategy. We use small benchmark-specific seed vocabularies\nand apply the same governance procedure across both benchmarks. Further implementation details are provided in\nAppendices B\u2013C, and the source code is available athttps://github.com/memoket/memoket-kite."
+              }
+            ],
+            "text": "retrieved evidence, without the full conversation history, and answers strictly from this context.\nImplementation details.Unless otherwise specified, KITE combines plan-guided retrieval over the knowledge\nindex with a sparse lexical channel under a fixed fusion strategy. We use small benchmark-specific seed vocabularies\nand apply the same governance procedure across both benchmarks. Further implementation details are provided in\nAppendices B\u2013C, and the source code is available athttps://github.com/memoket/memoket-kite."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0049"
+        ],
+        "excerpt": "Superior vector-free performance.Tables 1 and 2 show that KITE achieves the highest overall accuracy among\nthe compared systems without relying on dense embeddings or neural reranking. It reaches an accuracy of 93.5%\non LoCoMo, outperforming EverMemOS by 0.4 percentage points, and 86.0% on the LongMemEval-S questions,\nwidening the margin to 3.0 percentage points. Compared with full-context inference, KITE further improves accuracy\nby 2.6 and 29.2 percentage points on LoCoMo and LongMemEval-S, respectively. Overall, these results show that\nstrong long-term memory performance does not require dense similarity retrieval or full-history input to the reader.\nStrong temporal and multi-hop reasoning.Notably, the strongest advantage of KITE appears in temporal reason-\ning, where it achieves 92.2% on LoCoMo and 85.7% on LongMemEval-S, with the latter exceeding the next-best result\n6",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Performance",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "60798c71013cdae041a3f9aea1080c2fcaf0c5035597bd48f98bcce30cc55242",
+            "evidence_id": "E3188de074b774dfe-B0049",
+            "pages": [
+              6
+            ],
+            "section": "Benchmark Performance",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 886,
+                "page": 6,
+                "section": "Benchmark Performance",
+                "section_index": 32,
+                "start": 0,
+                "text": "Superior vector-free performance.Tables 1 and 2 show that KITE achieves the highest overall accuracy among\nthe compared systems without relying on dense embeddings or neural reranking. It reaches an accuracy of 93.5%\non LoCoMo, outperforming EverMemOS by 0.4 percentage points, and 86.0% on the LongMemEval-S questions,\nwidening the margin to 3.0 percentage points. Compared with full-context inference, KITE further improves accuracy\nby 2.6 and 29.2 percentage points on LoCoMo and LongMemEval-S, respectively. Overall, these results show that\nstrong long-term memory performance does not require dense similarity retrieval or full-history input to the reader.\nStrong temporal and multi-hop reasoning.Notably, the strongest advantage of KITE appears in temporal reason-\ning, where it achieves 92.2% on LoCoMo and 85.7% on LongMemEval-S, with the latter exceeding the next-best result\n6"
+              }
+            ],
+            "text": "Superior vector-free performance.Tables 1 and 2 show that KITE achieves the highest overall accuracy among\nthe compared systems without relying on dense embeddings or neural reranking. It reaches an accuracy of 93.5%\non LoCoMo, outperforming EverMemOS by 0.4 percentage points, and 86.0% on the LongMemEval-S questions,\nwidening the margin to 3.0 percentage points. Compared with full-context inference, KITE further improves accuracy\nby 2.6 and 29.2 percentage points on LoCoMo and LongMemEval-S, respectively. Overall, these results show that\nstrong long-term memory performance does not require dense similarity retrieval or full-history input to the reader.\nStrong temporal and multi-hop reasoning.Notably, the strongest advantage of KITE appears in temporal reason-\ning, where it achieves 92.2% on LoCoMo and 85.7% on LongMemEval-S, with the latter exceeding the next-best result\n6"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0050"
+        ],
+        "excerpt": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nTable 1: Comparison of memory systems on LoCoMo using LLM-as-a-judge accuracy (%).\nSystem A vg. Tokens\nAccuracy (%)\nSingle Multi Temp Open Overall\nNaive RAG0.7k42.6 42.6 67.9 71.9 49.7\nFull Context 20.3k 94.5 90.1 88.2 70.8 90.9\nMem0 1.0k 69.0 61.7 58.3 50.0 64.2\nZep 1.4k 90.8 81.9 77.3 75.0 85.4\nMemOS 2.5k 85.4 79.4 75.1 64.6 80.8\nEverMemOS 2.3k96.791.8 89.7 76.0 93.1\nKITE 1.5k 95.293.3 92.2 83.3 93.5\nAvg. Tokens denotes average reader-context tokens. Best results arebolded.\nTable 2: Comparison of memory systems on LongMemEval-S using LLM-as-a-judge accuracy (%).\nSystem A vg. Tokens\nAccuracy (%)\nSS-U SS-A SS-P Multi Know Temp Overall\nNaive RAG 5.1k 90.098.253.3 48.9 67.9 39.8 61.0\nFull Context 105.1k 87.1 89.3 36.7 45.1 76.9 31.6 56.8\nMem01.1k82.9 26.8 90.0 63.2 66.7 72.2 66.4\nZep 1.6k 92.9 75.0 53.3 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Performance",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e0311f372b779466620b0fe1ee86c33eb1699b7b2082a1d56379b8c10780d95b",
+            "evidence_id": "E3188de074b774dfe-B0050",
+            "pages": [
+              7
+            ],
+            "section": "Benchmark Performance",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 7,
+                "section": "Benchmark Performance",
+                "section_index": 33,
+                "start": 0,
+                "text": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nTable 1: Comparison of memory systems on LoCoMo using LLM-as-a-judge accuracy (%).\nSystem A vg. Tokens\nAccuracy (%)\nSingle Multi Temp Open Overall\nNaive RAG0.7k42.6 42.6 67.9 71.9 49.7\nFull Context 20.3k 94.5 90.1 88.2 70.8 90.9\nMem0 1.0k 69.0 61.7 58.3 50.0 64.2\nZep 1.4k 90.8 81.9 77.3 75.0 85.4\nMemOS 2.5k 85.4 79.4 75.1 64.6 80.8\nEverMemOS 2.3k96.791.8 89.7 76.0 93.1\nKITE 1.5k 95.293.3 92.2 83.3 93.5\nAvg. Tokens denotes average reader-context tokens. Best results arebolded.\nTable 2: Comparison of memory systems on LongMemEval-S using LLM-as-a-judge accuracy (%).\nSystem A vg. Tokens\nAccuracy (%)\nSS-U SS-A SS-P Multi Know Temp Overall\nNaive RAG 5.1k 90.098.253.3 48.9 67.9 39.8 61.0\nFull Context 105.1k 87.1 89.3 36.7 45.1 76.9 31.6 56.8\nMem01.1k82.9 26.8 90.0 63.2 66.7 72.2 66.4\nZep 1.6k 92.9 75.0 53.3 "
+              }
+            ],
+            "text": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nTable 1: Comparison of memory systems on LoCoMo using LLM-as-a-judge accuracy (%).\nSystem A vg. Tokens\nAccuracy (%)\nSingle Multi Temp Open Overall\nNaive RAG0.7k42.6 42.6 67.9 71.9 49.7\nFull Context 20.3k 94.5 90.1 88.2 70.8 90.9\nMem0 1.0k 69.0 61.7 58.3 50.0 64.2\nZep 1.4k 90.8 81.9 77.3 75.0 85.4\nMemOS 2.5k 85.4 79.4 75.1 64.6 80.8\nEverMemOS 2.3k96.791.8 89.7 76.0 93.1\nKITE 1.5k 95.293.3 92.2 83.3 93.5\nAvg. Tokens denotes average reader-context tokens. Best results arebolded.\nTable 2: Comparison of memory systems on LongMemEval-S using LLM-as-a-judge accuracy (%).\nSystem A vg. Tokens\nAccuracy (%)\nSS-U SS-A SS-P Multi Know Temp Overall\nNaive RAG 5.1k 90.098.253.3 48.9 67.9 39.8 61.0\nFull Context 105.1k 87.1 89.3 36.7 45.1 76.9 31.6 56.8\nMem01.1k82.9 26.8 90.0 63.2 66.7 72.2 66.4\nZep 1.6k 92.9 75.0 53.3 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0051"
+        ],
+        "excerpt": "47.4 74.4 54.1 63.2\nMemOS 1.4k 95.7 67.996.770.7 74.4 77.4 77.8\nEverMemOS 2.8k 97.1 85.7 93.3 73.7 89.7 77.4 83.0\nKITE 1.6k98.685.7 63.382.0 91.0 85.7 86.0\nSS-U, SS-A, and SS-P denote single-session user, assistant, and preference questions; Know and Temp refer to knowledge-update\nand temporal-reasoning questions.\nby 8.3 percentage points. This gain is consistent with KITE's explicit treatment of time, where temporal information\nis preserved during memory construction and translated into constraints at query time to identify chronologically ap-\npropriate evidence. Beyond temporal reasoning, KITE also excels on multi-hop questions by carrying previously\ngathered evidence forward across dependent retrieval steps to connect information between different sessions.\nCompact reader context.Despite its high accuracy, KITE averages 1.5k reader-context tokens per question on\nLoCoMo and 1.6k on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Performance",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c999416d685dfd9696649d31bb62394a4d7f7f6d73e785c2b762875d66cfe53d",
+            "evidence_id": "E3188de074b774dfe-B0051",
+            "pages": [
+              7
+            ],
+            "section": "Benchmark Performance",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 7,
+                "section": "Benchmark Performance",
+                "section_index": 33,
+                "start": 897,
+                "text": "47.4 74.4 54.1 63.2\nMemOS 1.4k 95.7 67.996.770.7 74.4 77.4 77.8\nEverMemOS 2.8k 97.1 85.7 93.3 73.7 89.7 77.4 83.0\nKITE 1.6k98.685.7 63.382.0 91.0 85.7 86.0\nSS-U, SS-A, and SS-P denote single-session user, assistant, and preference questions; Know and Temp refer to knowledge-update\nand temporal-reasoning questions.\nby 8.3 percentage points. This gain is consistent with KITE's explicit treatment of time, where temporal information\nis preserved during memory construction and translated into constraints at query time to identify chronologically ap-\npropriate evidence. Beyond temporal reasoning, KITE also excels on multi-hop questions by carrying previously\ngathered evidence forward across dependent retrieval steps to connect information between different sessions.\nCompact reader context.Despite its high accuracy, KITE averages 1.5k reader-context tokens per question on\nLoCoMo and 1.6k on "
+              }
+            ],
+            "text": "47.4 74.4 54.1 63.2\nMemOS 1.4k 95.7 67.996.770.7 74.4 77.4 77.8\nEverMemOS 2.8k 97.1 85.7 93.3 73.7 89.7 77.4 83.0\nKITE 1.6k98.685.7 63.382.0 91.0 85.7 86.0\nSS-U, SS-A, and SS-P denote single-session user, assistant, and preference questions; Know and Temp refer to knowledge-update\nand temporal-reasoning questions.\nby 8.3 percentage points. This gain is consistent with KITE's explicit treatment of time, where temporal information\nis preserved during memory construction and translated into constraints at query time to identify chronologically ap-\npropriate evidence. Beyond temporal reasoning, KITE also excels on multi-hop questions by carrying previously\ngathered evidence forward across dependent retrieval steps to connect information between different sessions.\nCompact reader context.Despite its high accuracy, KITE averages 1.5k reader-context tokens per question on\nLoCoMo and 1.6k on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0052"
+        ],
+        "excerpt": "LongMemEval-S. By comparison, EverMemOS uses 2.3k and 2.8k tokens, respectively, while\nfull-context inference requires 20.3k and 105.1k. Together, these results show that KITE combines leading overall\naccuracy with a compact evidence set, substantially reducing the amount of information presented to the reader.\nPreference reasoning remains challenging.However, KITE is less competitive on single-session preference ques-\ntions, achieving an accuracy of 63.3% on the LongMemEval-S benchmark. This result points to the difficulty of\nconsistently aligning indirect or paraphrased preference expressions with the indexed memory representation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Performance",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "27d48deb33e3799303a1ce79e896006dd4c200909b87580ab5225576d6508465",
+            "evidence_id": "E3188de074b774dfe-B0052",
+            "pages": [
+              7
+            ],
+            "section": "Benchmark Performance",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2435,
+                "page": 7,
+                "section": "Benchmark Performance",
+                "section_index": 33,
+                "start": 1794,
+                "text": "LongMemEval-S. By comparison, EverMemOS uses 2.3k and 2.8k tokens, respectively, while\nfull-context inference requires 20.3k and 105.1k. Together, these results show that KITE combines leading overall\naccuracy with a compact evidence set, substantially reducing the amount of information presented to the reader.\nPreference reasoning remains challenging.However, KITE is less competitive on single-session preference ques-\ntions, achieving an accuracy of 63.3% on the LongMemEval-S benchmark. This result points to the difficulty of\nconsistently aligning indirect or paraphrased preference expressions with the indexed memory representation."
+              }
+            ],
+            "text": "LongMemEval-S. By comparison, EverMemOS uses 2.3k and 2.8k tokens, respectively, while\nfull-context inference requires 20.3k and 105.1k. Together, these results show that KITE combines leading overall\naccuracy with a compact evidence set, substantially reducing the amount of information presented to the reader.\nPreference reasoning remains challenging.However, KITE is less competitive on single-session preference ques-\ntions, achieving an accuracy of 63.3% on the LongMemEval-S benchmark. This result points to the difficulty of\nconsistently aligning indirect or paraphrased preference expressions with the indexed memory representation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0053"
+        ],
+        "excerpt": "To isolate the effect of retrieval from memory construction, we freeze the memory store and compare retrieval strate-\ngies over the same representations. We compare dense-vector retrieval, BM25, and their hybrid with KITE's plan-\nguided retrieval. For a controlled comparison, all methods share identical reader settings and reader-context token\nbudgets, with LLM-as-a-judge accuracy and evidence recall measuring answer quality and retrieval effectiveness.\nTable 3 shows that KITE achieves the highest accuracy and recall on both benchmarks with memory construction held\nfixed. Notably, recall is consistently lower than accuracy on LoCoMo because the gold evidence often includes more\ndialogue turns than are strictly necessary to answer the question. A correct answer may therefore be produced without\nretrieving every annotated turn. Even so, KITE improves recall over the hybrid baseline by 7.5 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Effectiveness Of Deterministic Retrieval",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f086642e77aa786c243ec99a1e4720305caaf8e64dd784168c2338afbf5ced34",
+            "evidence_id": "E3188de074b774dfe-B0053",
+            "pages": [
+              7
+            ],
+            "section": "Effectiveness Of Deterministic Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Effectiveness Of Deterministic Retrieval",
+                "section_index": 34,
+                "start": 0,
+                "text": "To isolate the effect of retrieval from memory construction, we freeze the memory store and compare retrieval strate-\ngies over the same representations. We compare dense-vector retrieval, BM25, and their hybrid with KITE's plan-\nguided retrieval. For a controlled comparison, all methods share identical reader settings and reader-context token\nbudgets, with LLM-as-a-judge accuracy and evidence recall measuring answer quality and retrieval effectiveness.\nTable 3 shows that KITE achieves the highest accuracy and recall on both benchmarks with memory construction held\nfixed. Notably, recall is consistently lower than accuracy on LoCoMo because the gold evidence often includes more\ndialogue turns than are strictly necessary to answer the question. A correct answer may therefore be produced without\nretrieving every annotated turn. Even so, KITE improves recall over the hybrid baseline by 7.5 "
+              }
+            ],
+            "text": "To isolate the effect of retrieval from memory construction, we freeze the memory store and compare retrieval strate-\ngies over the same representations. We compare dense-vector retrieval, BM25, and their hybrid with KITE's plan-\nguided retrieval. For a controlled comparison, all methods share identical reader settings and reader-context token\nbudgets, with LLM-as-a-judge accuracy and evidence recall measuring answer quality and retrieval effectiveness.\nTable 3 shows that KITE achieves the highest accuracy and recall on both benchmarks with memory construction held\nfixed. Notably, recall is consistently lower than accuracy on LoCoMo because the gold evidence often includes more\ndialogue turns than are strictly necessary to answer the question. A correct answer may therefore be produced without\nretrieving every annotated turn. Even so, KITE improves recall over the hybrid baseline by 7.5 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0054"
+        ],
+        "excerpt": "percentage points,\nindicating that KITE retrieves a fuller set of supporting evidence, rather than only the most relevant matches.\n7\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nTable 3: Accuracy (%) and recall (%) of retrieval\nstrategies over fixed memories.\nRetrieval\nStrategy\nLoCoMo LongMemEval-S\nAcc. Rec. Acc. Rec.\nDense 85.4 78.1 76.9 90.5\nBM25 81.3 73.2 72.4 84.6\nHybrid 87.8 79.9 78.0 92.8\nKITE93.5 87.4 86.0 97.6\nTable 4: Comparison of topic vocabulary policies for memory\nindexing on LoCoMo.\nV ocabulary Policy A vg.Topics A vg.Tokens Acc.(%) Rec.(%)\nFixed V ocabulary 12.0 2.1k 91.094.2\nImmediate Expansion 72.41.5k87.9 78.3\nDelayed Expansion 62.5 1.6k 91.7 82.7\nKITE 58.0 1.6k93.587.4\nTable 5: Ablation study of KITE on LoCoMo using LLM-as-a-judge accuracy (%).\nCategory\nIndexing Retrieval Ranking\nFull KITE\nw/o Facets Indexed Only Lexical Only ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Effectiveness Of Deterministic Retrieval",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f8e43c131001e2146dd97d4be947f8f16f52081ea9856f5514aa1476ec3e1fcc",
+            "evidence_id": "E3188de074b774dfe-B0054",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Effectiveness Of Deterministic Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1032,
+                "page": 7,
+                "section": "Effectiveness Of Deterministic Retrieval",
+                "section_index": 34,
+                "start": 900,
+                "text": "percentage points,\nindicating that KITE retrieves a fuller set of supporting evidence, rather than only the most relevant matches.\n7"
+              },
+              {
+                "end": 763,
+                "page": 8,
+                "section": "Effectiveness Of Deterministic Retrieval",
+                "section_index": 35,
+                "start": 0,
+                "text": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nTable 3: Accuracy (%) and recall (%) of retrieval\nstrategies over fixed memories.\nRetrieval\nStrategy\nLoCoMo LongMemEval-S\nAcc. Rec. Acc. Rec.\nDense 85.4 78.1 76.9 90.5\nBM25 81.3 73.2 72.4 84.6\nHybrid 87.8 79.9 78.0 92.8\nKITE93.5 87.4 86.0 97.6\nTable 4: Comparison of topic vocabulary policies for memory\nindexing on LoCoMo.\nV ocabulary Policy A vg.Topics A vg.Tokens Acc.(%) Rec.(%)\nFixed V ocabulary 12.0 2.1k 91.094.2\nImmediate Expansion 72.41.5k87.9 78.3\nDelayed Expansion 62.5 1.6k 91.7 82.7\nKITE 58.0 1.6k93.587.4\nTable 5: Ablation study of KITE on LoCoMo using LLM-as-a-judge accuracy (%).\nCategory\nIndexing Retrieval Ranking\nFull KITE\nw/o Facets Indexed Only Lexical Only "
+              }
+            ],
+            "text": "percentage points,\nindicating that KITE retrieves a fuller set of supporting evidence, rather than only the most relevant matches.\n7\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nTable 3: Accuracy (%) and recall (%) of retrieval\nstrategies over fixed memories.\nRetrieval\nStrategy\nLoCoMo LongMemEval-S\nAcc. Rec. Acc. Rec.\nDense 85.4 78.1 76.9 90.5\nBM25 81.3 73.2 72.4 84.6\nHybrid 87.8 79.9 78.0 92.8\nKITE93.5 87.4 86.0 97.6\nTable 4: Comparison of topic vocabulary policies for memory\nindexing on LoCoMo.\nV ocabulary Policy A vg.Topics A vg.Tokens Acc.(%) Rec.(%)\nFixed V ocabulary 12.0 2.1k 91.094.2\nImmediate Expansion 72.41.5k87.9 78.3\nDelayed Expansion 62.5 1.6k 91.7 82.7\nKITE 58.0 1.6k93.587.4\nTable 5: Ablation study of KITE on LoCoMo using LLM-as-a-judge accuracy (%).\nCategory\nIndexing Retrieval Ranking\nFull KITE\nw/o Facets Indexed Only Lexical Only "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0055"
+        ],
+        "excerpt": "Recency Neural\nSingle 93.2 93.5 85.0 64.4 94.895.2\nMulti 90.4 87.6 86.9 69.195.093.3\nTemporal 87.9 86.3 71.3 45.5 91.692.2\nOpen 67.7 71.9 64.6 52.1 72.983.3\nOverall90.0 89.5 81.2 60.6 92.893.5\nBy contrast, LongMemEval-S measures session-level recall, which is uniformly higher across methods. Nevertheless,\nKITE is consistently stronger in recall and answer accuracy. This further supports the efficacy of KITE's deterministic\nretrieval, which evaluates explicit query conditions before ranking rather than relying on relevance scores alone.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Effectiveness Of Deterministic Retrieval",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "69950bd34e5a71b38adedeefed2aac8e26ca0a07047e6320b43b5d0c0461ff03",
+            "evidence_id": "E3188de074b774dfe-B0055",
+            "pages": [
+              8
+            ],
+            "section": "Effectiveness Of Deterministic Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1304,
+                "page": 8,
+                "section": "Effectiveness Of Deterministic Retrieval",
+                "section_index": 35,
+                "start": 763,
+                "text": "Recency Neural\nSingle 93.2 93.5 85.0 64.4 94.895.2\nMulti 90.4 87.6 86.9 69.195.093.3\nTemporal 87.9 86.3 71.3 45.5 91.692.2\nOpen 67.7 71.9 64.6 52.1 72.983.3\nOverall90.0 89.5 81.2 60.6 92.893.5\nBy contrast, LongMemEval-S measures session-level recall, which is uniformly higher across methods. Nevertheless,\nKITE is consistently stronger in recall and answer accuracy. This further supports the efficacy of KITE's deterministic\nretrieval, which evaluates explicit query conditions before ranking rather than relying on relevance scores alone."
+              }
+            ],
+            "text": "Recency Neural\nSingle 93.2 93.5 85.0 64.4 94.895.2\nMulti 90.4 87.6 86.9 69.195.093.3\nTemporal 87.9 86.3 71.3 45.5 91.692.2\nOpen 67.7 71.9 64.6 52.1 72.983.3\nOverall90.0 89.5 81.2 60.6 92.893.5\nBy contrast, LongMemEval-S measures session-level recall, which is uniformly higher across methods. Nevertheless,\nKITE is consistently stronger in recall and answer accuracy. This further supports the efficacy of KITE's deterministic\nretrieval, which evaluates explicit query conditions before ranking rather than relying on relevance scores alone."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0056"
+        ],
+        "excerpt": "In addition, we examine how governance of the topic vocabulary affects index growth and query compilation on\nLoCoMo. All variants start from the same canonical topic roots and process conversations in chronological order.\nFixed Vocabularykeeps the initial topic set unchanged, whereasImmediate Expansionadmits valid new topics as soon\nas they are proposed.Delayed Expansionkeeps proposed topics provisional until they recur across multiple sessions\nand time periods, while KITE further consolidates redundant sibling topics. Each variant uses its resulting topic\nvocabulary for both memory indexing and query compilation, with all other experimental settings remaining fixed.\nTable 4 illustrates the value of governing topic evolution rather than simply restricting or expanding the vocabulary.\nImmediate Expansionyields the lowest recall and accuracy, suggesting that related evidence is scattered ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Effectiveness Of V Ocabulary Governance",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "16ca79e58c36da856a27afb49984523bf5e466d04c4fb87e246962fe4d37db35",
+            "evidence_id": "E3188de074b774dfe-B0056",
+            "pages": [
+              8
+            ],
+            "section": "Effectiveness Of V Ocabulary Governance",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 8,
+                "section": "Effectiveness Of V Ocabulary Governance",
+                "section_index": 36,
+                "start": 0,
+                "text": "In addition, we examine how governance of the topic vocabulary affects index growth and query compilation on\nLoCoMo. All variants start from the same canonical topic roots and process conversations in chronological order.\nFixed Vocabularykeeps the initial topic set unchanged, whereasImmediate Expansionadmits valid new topics as soon\nas they are proposed.Delayed Expansionkeeps proposed topics provisional until they recur across multiple sessions\nand time periods, while KITE further consolidates redundant sibling topics. Each variant uses its resulting topic\nvocabulary for both memory indexing and query compilation, with all other experimental settings remaining fixed.\nTable 4 illustrates the value of governing topic evolution rather than simply restricting or expanding the vocabulary.\nImmediate Expansionyields the lowest recall and accuracy, suggesting that related evidence is scattered "
+              }
+            ],
+            "text": "In addition, we examine how governance of the topic vocabulary affects index growth and query compilation on\nLoCoMo. All variants start from the same canonical topic roots and process conversations in chronological order.\nFixed Vocabularykeeps the initial topic set unchanged, whereasImmediate Expansionadmits valid new topics as soon\nas they are proposed.Delayed Expansionkeeps proposed topics provisional until they recur across multiple sessions\nand time periods, while KITE further consolidates redundant sibling topics. Each variant uses its resulting topic\nvocabulary for both memory indexing and query compilation, with all other experimental settings remaining fixed.\nTable 4 illustrates the value of governing topic evolution rather than simply restricting or expanding the vocabulary.\nImmediate Expansionyields the lowest recall and accuracy, suggesting that related evidence is scattered "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0057"
+        ],
+        "excerpt": "across too\nmany labels. Conversely,Fixed Vocabularyachieves higher recall, but its longer reader context may include tangential\nmemories that complicate answer generation. With controlled admission and consolidation, KITE achieves the highest\naccuracy with fewer topics than expansion-only variants and the same average context length asDelayed Expansion.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Effectiveness Of V Ocabulary Governance",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f6cf4b9840a2dbb8f72d18ded4fdda1489c9933d032c970ffc6363ae64f69d43",
+            "evidence_id": "E3188de074b774dfe-B0057",
+            "pages": [
+              8
+            ],
+            "section": "Effectiveness Of V Ocabulary Governance",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1254,
+                "page": 8,
+                "section": "Effectiveness Of V Ocabulary Governance",
+                "section_index": 36,
+                "start": 899,
+                "text": "across too\nmany labels. Conversely,Fixed Vocabularyachieves higher recall, but its longer reader context may include tangential\nmemories that complicate answer generation. With controlled admission and consolidation, KITE achieves the highest\naccuracy with fewer topics than expansion-only variants and the same average context length asDelayed Expansion."
+              }
+            ],
+            "text": "across too\nmany labels. Conversely,Fixed Vocabularyachieves higher recall, but its longer reader context may include tangential\nmemories that complicate answer generation. With controlled admission and consolidation, KITE achieves the highest\naccuracy with fewer topics than expansion-only variants and the same average context length asDelayed Expansion."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0058"
+        ],
+        "excerpt": "We conduct ablation studies on LoCoMo to evaluate the main design choices of KITE. As shown in Table 5, each\nexperiment changes one part of the pipeline with the rest fixed. This isolates the contribution of each design choice.\nTyped facets.Removing typed facets while retaining topic indexing reduces overall accuracy from 93.5% to 90.0%.\nThe largest declines occur on open-domain and temporal questions, at 15.6 and 4.3 percentage points, respectively.\nThese cases often hinge on distinctions beyond broad thematic alignment, including contextual attributes and temporal\ncues. Such facets complement the topic hierarchy with finer-grained constraints for isolating supporting evidence.\nRetrieval channels.We evaluate both retrieval channels separately and in combination to assess their individual con-\ntributions. Specifically,Indexed Onlyretains only plan-guided retrieval over the governed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Studies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8865e817424d9b062a2ef5deccfda091e119b5e3e23a8fcf000deacecbf8b640",
+            "evidence_id": "E3188de074b774dfe-B0058",
+            "pages": [
+              8
+            ],
+            "section": "Ablation Studies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 8,
+                "section": "Ablation Studies",
+                "section_index": 37,
+                "start": 0,
+                "text": "We conduct ablation studies on LoCoMo to evaluate the main design choices of KITE. As shown in Table 5, each\nexperiment changes one part of the pipeline with the rest fixed. This isolates the contribution of each design choice.\nTyped facets.Removing typed facets while retaining topic indexing reduces overall accuracy from 93.5% to 90.0%.\nThe largest declines occur on open-domain and temporal questions, at 15.6 and 4.3 percentage points, respectively.\nThese cases often hinge on distinctions beyond broad thematic alignment, including contextual attributes and temporal\ncues. Such facets complement the topic hierarchy with finer-grained constraints for isolating supporting evidence.\nRetrieval channels.We evaluate both retrieval channels separately and in combination to assess their individual con-\ntributions. Specifically,Indexed Onlyretains only plan-guided retrieval over the governed "
+              }
+            ],
+            "text": "We conduct ablation studies on LoCoMo to evaluate the main design choices of KITE. As shown in Table 5, each\nexperiment changes one part of the pipeline with the rest fixed. This isolates the contribution of each design choice.\nTyped facets.Removing typed facets while retaining topic indexing reduces overall accuracy from 93.5% to 90.0%.\nThe largest declines occur on open-domain and temporal questions, at 15.6 and 4.3 percentage points, respectively.\nThese cases often hinge on distinctions beyond broad thematic alignment, including contextual attributes and temporal\ncues. Such facets complement the topic hierarchy with finer-grained constraints for isolating supporting evidence.\nRetrieval channels.We evaluate both retrieval channels separately and in combination to assess their individual con-\ntributions. Specifically,Indexed Onlyretains only plan-guided retrieval over the governed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0059"
+        ],
+        "excerpt": "knowledge index, whereas\nLexical Onlyuses the sparse lexical channel alone. The indexed variant outperforms its lexical counterpart across all\nquestion categories, while their combination in full KITE achieves the highest overall accuracy. These results support\nthe indexed path as the primary retrieval mechanism, with lexical matching providing complementary evidence.\n8\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nExplicit ranking.To assess the role of evidence ranking, we replace the explicit scoring policy with two alterna-\ntives.Recencyprioritizes memories from newer sessions, whereasNeuralevaluates query\u2013memory relevance with a\npretrained cross-encoder. The sharp decline underRecencyindicates that favoring newer memories alone is insuffi-\ncient for prioritizing the supporting evidence. AlthoughNeuralperforms better on multi-hop questions, the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Studies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c1ddf7f6ca4d5eb9f265d4da5b01c87788b23af1543b37ad97986e52c7f5f014",
+            "evidence_id": "E3188de074b774dfe-B0059",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Ablation Studies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1267,
+                "page": 8,
+                "section": "Ablation Studies",
+                "section_index": 37,
+                "start": 895,
+                "text": "knowledge index, whereas\nLexical Onlyuses the sparse lexical channel alone. The indexed variant outperforms its lexical counterpart across all\nquestion categories, while their combination in full KITE achieves the highest overall accuracy. These results support\nthe indexed path as the primary retrieval mechanism, with lexical matching providing complementary evidence.\n8"
+              },
+              {
+                "end": 525,
+                "page": 9,
+                "section": "Ablation Studies",
+                "section_index": 38,
+                "start": 0,
+                "text": "KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nExplicit ranking.To assess the role of evidence ranking, we replace the explicit scoring policy with two alterna-\ntives.Recencyprioritizes memories from newer sessions, whereasNeuralevaluates query\u2013memory relevance with a\npretrained cross-encoder. The sharp decline underRecencyindicates that favoring newer memories alone is insuffi-\ncient for prioritizing the supporting evidence. AlthoughNeuralperforms better on multi-hop questions, the "
+              }
+            ],
+            "text": "knowledge index, whereas\nLexical Onlyuses the sparse lexical channel alone. The indexed variant outperforms its lexical counterpart across all\nquestion categories, while their combination in full KITE achieves the highest overall accuracy. These results support\nthe indexed path as the primary retrieval mechanism, with lexical matching providing complementary evidence.\n8\nKITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT\nExplicit ranking.To assess the role of evidence ranking, we replace the explicit scoring policy with two alterna-\ntives.Recencyprioritizes memories from newer sessions, whereasNeuralevaluates query\u2013memory relevance with a\npretrained cross-encoder. The sharp decline underRecencyindicates that favoring newer memories alone is insuffi-\ncient for prioritizing the supporting evidence. AlthoughNeuralperforms better on multi-hop questions, the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0060"
+        ],
+        "excerpt": "explicit\npolicy achieves higher overall accuracy by 0.7 percentage points while keeping ranking decisions inspectable.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Studies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "325f344f2a8ae580bc3b16bab6437ac250ec1f63423daa51bcf2493abf191bfc",
+            "evidence_id": "E3188de074b774dfe-B0060",
+            "pages": [
+              9
+            ],
+            "section": "Ablation Studies",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 643,
+                "page": 9,
+                "section": "Ablation Studies",
+                "section_index": 38,
+                "start": 525,
+                "text": "explicit\npolicy achieves higher overall accuracy by 0.7 percentage points while keeping ranking decisions inspectable."
+              }
+            ],
+            "text": "explicit\npolicy achieves higher overall accuracy by 0.7 percentage points while keeping ranking decisions inspectable."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E3188de074b774dfe-B0075"
+        ],
+        "excerpt": "accuracy.LLM-as-a-judge accuracy is the percentage of generated answers judged correct by an LLM\nevaluator. For KITE, we usegpt-4.1-minias the judge and report accuracy overall and by question category.\nEvidence recall.Evidence recall measures the fraction of annotated supporting evidence recovered by retrieval. For\na questionq, recall is computed as\nrq = |Gq \u2229R q||Gq| ,|G q|>0,(9)\nwhereG q andR q denote the sets of annotated and retrieved evidence units, respectively. Units are LoCoMo dialogue\nturns and LongMemEval-S sessions. We report the averager q over questions with annotated supporting evidence.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Benchmarks And Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "907c6b8698c336a8bb57faa1503f324edef99b22a1b24ea31c499091c87bd0a9",
+            "evidence_id": "E3188de074b774dfe-B0075",
+            "pages": [
+              11
+            ],
+            "section": "Appendix: Benchmarks And Evaluation Metrics",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1503,
+                "page": 11,
+                "section": "Appendix: Benchmarks And Evaluation Metrics",
+                "section_index": 45,
+                "start": 894,
+                "text": "accuracy.LLM-as-a-judge accuracy is the percentage of generated answers judged correct by an LLM\nevaluator. For KITE, we usegpt-4.1-minias the judge and report accuracy overall and by question category.\nEvidence recall.Evidence recall measures the fraction of annotated supporting evidence recovered by retrieval. For\na questionq, recall is computed as\nrq = |Gq \u2229R q||Gq| ,|G q|>0,(9)\nwhereG q andR q denote the sets of annotated and retrieved evidence units, respectively. Units are LoCoMo dialogue\nturns and LongMemEval-S sessions. We report the averager q over questions with annotated supporting evidence."
+              }
+            ],
+            "text": "accuracy.LLM-as-a-judge accuracy is the percentage of generated answers judged correct by an LLM\nevaluator. For KITE, we usegpt-4.1-minias the judge and report accuracy overall and by question category.\nEvidence recall.Evidence recall measures the fraction of annotated supporting evidence recovered by retrieval. For\na questionq, recall is computed as\nrq = |Gq \u2229R q||Gq| ,|G q|>0,(9)\nwhereG q andR q denote the sets of annotated and retrieved evidence units, respectively. Units are LoCoMo dialogue\nturns and LongMemEval-S sessions. We report the averager q over questions with annotated supporting evidence."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2610.41521",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2610.41521",
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evidence recall is computed against benchmark-annotated gold evidence units, independent of the LLM judge, and moves in the same direction as accuracy across retrieval-strategy comparisons.",
+          "final_evaluation_signal": "Headline outcomes are LLM-as-a-judge accuracy using gpt-4.1-mini as judge, supplemented by objective evidence recall against annotated gold dialogue turns and sessions.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system's design choices\u2014topic governance rules, extraction prompts, query compilation prompts, fixed scoring weights, and reciprocal rank fusion\u2014are hand-designed and not tuned against the reported accuracy metric.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E3188de074b774dfe-B0002",
+          "E3188de074b774dfe-B0014",
+          "E3188de074b774dfe-B0024",
+          "E3188de074b774dfe-B0025",
+          "E3188de074b774dfe-B0037",
+          "E3188de074b774dfe-B0038",
+          "E3188de074b774dfe-B0041",
+          "E3188de074b774dfe-B0042",
+          "E3188de074b774dfe-B0043",
+          "E3188de074b774dfe-B0044",
+          "E3188de074b774dfe-B0045",
+          "E3188de074b774dfe-B0047",
+          "E3188de074b774dfe-B0048",
+          "E3188de074b774dfe-B0049",
+          "E3188de074b774dfe-B0050",
+          "E3188de074b774dfe-B0051",
+          "E3188de074b774dfe-B0052",
+          "E3188de074b774dfe-B0053",
+          "E3188de074b774dfe-B0054",
+          "E3188de074b774dfe-B0055",
+          "E3188de074b774dfe-B0056",
+          "E3188de074b774dfe-B0057",
+          "E3188de074b774dfe-B0058",
+          "E3188de074b774dfe-B0059"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "fc7014c4a72101d984a1286e4fa33a843b30ec70f97b841f1c649c9568097190"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2610.41521",
+        "claim_evidence_alignment": "Claims regarding superior temporal and multi-hop reasoning, compact reader context sizes (1.5k\u20131.6k tokens), and strong performance without dense embeddings are well supported by quantitative benchmark and ablation tables.",
+        "context_id": "3188de074b774dfebc398391c35ff59b1719937c8ac9501c62dcf0c2300f2c4a",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation is conducted across two recognized benchmarks (LoCoMo and LongMemEval-S) comparing against competitive persistent memory baselines, dense retrieval, and full-context models using both LLM-as-a-judge accuracy and objective ground-truth evidence recall. In addition, extensive ablations clearly isolate the contributions of faceted indexing, deterministic ranking, topic governance, and dual retrieval paths.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Objective evidence recall computed against annotated gold dialogue turns (LoCoMo) and gold sessions (LongMemEval-S).",
+          "final_evaluation_signal": "LLM-as-a-judge accuracy evaluating answer correctness along with objective ground-truth evidence recall across annotated conversation turns/sessions.",
+          "independent_corroboration": "present",
+          "optimization_signal": "System rules, prompt engineering, and heuristic rank-fusion parameters designed for memory extraction and query plan execution.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E3188de074b774dfe-B0002",
+          "E3188de074b774dfe-B0014",
+          "E3188de074b774dfe-B0025",
+          "E3188de074b774dfe-B0037",
+          "E3188de074b774dfe-B0038",
+          "E3188de074b774dfe-B0041",
+          "E3188de074b774dfe-B0042",
+          "E3188de074b774dfe-B0044",
+          "E3188de074b774dfe-B0045",
+          "E3188de074b774dfe-B0047",
+          "E3188de074b774dfe-B0048",
+          "E3188de074b774dfe-B0049",
+          "E3188de074b774dfe-B0050",
+          "E3188de074b774dfe-B0051",
+          "E3188de074b774dfe-B0052",
+          "E3188de074b774dfe-B0053",
+          "E3188de074b774dfe-B0054",
+          "E3188de074b774dfe-B0055",
+          "E3188de074b774dfe-B0056",
+          "E3188de074b774dfe-B0057",
+          "E3188de074b774dfe-B0058",
+          "E3188de074b774dfe-B0059",
+          "E3188de074b774dfe-B0060",
+          "E3188de074b774dfe-B0075"
+        ],
+        "limitations": "The authors transparently report that the method underperforms on single-session preference queries (63.3% on LongMemEval-S) due to difficulties in capturing indirect or paraphrased preference expressions into the structured index.",
+        "method_assessment": "The methodology is thoroughly detailed, specifying structured extraction schemas, governance rules for vocabulary expansion and consolidation, index structures, query compilation grammar, and deterministic plan execution with rule-based scoring and reciprocal rank fusion.",
+        "quality_rationale": "The manuscript presents an inventive, non-circular, vector-free approach to conversational memory retrieval, thoroughly describes system components and prompts, and validates design choices through standard benchmarks, objective recall metrics, and well-designed ablation experiments.",
+        "scoped_contribution": "The paper introduces KITE, a vector-free conversational memory framework that organizes multi-session dialogue into structured, faceted facts under an evolving topic vocabulary and evaluates retrieval as an explicit, plan-compiled decision procedure executed over index postings alongside sparse lexical search.",
+        "source_content_hash": "fc7014c4a72101d984a1286e4fa33a843b30ec70f97b841f1c649c9568097190"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents an inventive, non-circular, vector-free approach to conversational memory retrieval, thoroughly describes system components and prompts, and validates design choices through standard benchmarks, objective recall metrics, and well-designed ablation experiments.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "fc7014c4a72101d984a1286e4fa33a843b30ec70f97b841f1c649c9568097190",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently report that the method underperforms on single-session preference queries (63.3% on LongMemEval-S) due to difficulties in capturing indirect or paraphrased preference expressions into the structured index."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -167,7 +2433,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

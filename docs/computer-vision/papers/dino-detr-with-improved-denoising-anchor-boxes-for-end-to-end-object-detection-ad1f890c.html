@@ -64,16 +64,184 @@
             <p>We present DINO (\textbf{D}ETR with \textbf{I}mproved de\textbf{N}oising anch\textbf{O}r boxes), a state-of-the-art end-to-end object detector. % in this paper. DINO improves over previous DETR-like models in performance and efficiency by using a contrastive way for denoising training, a mixed query selection method...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study provides a well-defined method, robust standard benchmark empirical validation, consistent ablations against strong baselines, and clear architectural descriptions meeting scientific quality standards.</p>
+      <p>The manuscript addresses computational trade-offs such as GFLOPS, training throughput, and memory constraints across varying numbers of decoder layers and denoising query budgets, though evaluation is primarily focused on COCO.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-03T11:38:33.783261+00:00.</p>
+        <p>Coverage: 54926 of 54926 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>forward twice scheme for box pre-
+diction. DINO achieves 49 .4AP in 12 epochs and 51 .3AP in 24 epochs
+on COCO with a ResNet-50 backbone and multi-scale features, yield-
+ing a significant improvement of +6.0AP and +2.7AP, respectively,
+compared to DN-DETR, the previous best DETR-like model. DINO
+scales well in both model size and data size. Without bells and whistles,
+after pre-training on the Objects365 dataset with a SwinL backbone,
+DINO obtains the best results on both COCO val2017 (63.2AP) and
+test-dev (63.3AP). Compared to other models on the leaderboard,
+DINO significantly reduces its model size and pre-training data size
+while achieving better results. Our code will be available at https:
+//github.com/IDEACVR/DINO.
+Keywords: Object Detection; Detection Transformer; End-to-End De-
+tector</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>contrastive denoising trainingby adding both positive and negative
+samples of the same ground truth at the same time. After adding two different
+noises to the same ground truth box, we mark the box with a smaller noise as
+positive and the other as negative. The contrastive denoising training helps the
+model to avoid duplicate outputs of the same target. Second, the dynamic an-
+chor box formulation of queries links DETR-like models with classical two-stage
+models. Hence we propose a mixed query selectionmethod, which helps better
+initialize the queries. We select initial anchor boxes as positional queries from the
+output of the encoder, similar to [41,39]. However, we leave the content queries
+learnable as before, encouraging the first decoder layer to focus on the spatial
+prior. Third, to leverage the refined box information from later layers to help
+optimize the parameters of their </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>scale. The generated noises are no larger than λ as DN-DETR wants the model
+to reconstruct the ground truth (GT) from moderately noised queries. In our
+method, we have two hyper-parameters λ1 and λ2, where λ1 &lt; λ2. As shown in
+the concentric squares in Fig. 3, we generate two types of CDN queries: positive
+queries and negative queries. Positive queries within the inner square have a
+noise scale smaller than λ1 and are expected to reconstruct their corresponding
+ground truth boxes. Negative queries between the inner and outer squares have a
+noise scale larger than λ1 and smaller than λ2. They are are expected to predict
+&quot;no object&quot;. We usually adopt small λ2 because hard negative samples closer to
+8 H. Zhang, F. Li, S. Liu, et al.
+reconstruction
+loss
+Decoder Layers x M
+CDN group0 CDN group1
+reconstruction
+loss
+no
+object
+positive negative positive negative
+no
+object
+1 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>query selection
+approach. As shown in Fig. 5 (c), we only initialize anchor boxes using the
+position information associated with the selected top-K features, but leave the
+content queries static as before. Note that Deformable DETR [41] utilizes the
+top-K features to enhance not only the positional queries but also the content
+queries. As the selected features are preliminary content features without further
+refinement, they could be ambiguous and misleading to the decoder. For example,
+a selected feature may contain multiple objects or be only part of an object. In
+contrast, our mixed query selection approach only enhances the positional queries
+with top-K selected features and keeps the content queries learnable as before. It
+helps the model to use better positional information to pool more comprehensive
+content features from the encoder.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>early
+layer. Hence we propose another way called look forward twice to perform box
+update, where the parameters of layer- i are influenced by losses of both layer- i
+and layer-(i + 1), as shown in Fig. 6 (b). For each predicted offset ∆bi, it will be
+used to update box twice, one for b′i and another for b(pred)i+1 , hence we name our
+method as look forward twice.
+The final precision of a predicted box b(pred)i is determined by two factors:
+the quality of the initial box bi−1 and the predicted offset of the box ∆bi. The
+look forward once scheme optimizes the latter only, as the gradient information
+is detached from layer-i to layer-(i − 1). In contrast, we improve both the initial
+box bi−1 and the predicted box offset ∆bi. A simple way to improving the quality
+is supervising the final box b′i of layer i with the output of the next layer ∆bi+1.
+Hence we use the sum of b′i and ∆bi+1 as the </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predicted box of layer-( i + 1).
+More specifically, given an input box bi−1 for the i-th layer, we obtain the
+final prediction box b(pred)i by:
+∆bi = Layeri(bi−1), b ′i = Update(bi−1, ∆bi),
+bi = Detach(b′i), b (pred)i = Update(b′i−1, ∆bi), (2)
+where b′i is the undetached version of bi. The term Update(·, ·) is a function that
+refines the box bi−1 by the predicted box offset ∆bi. We adopt the same way for
+box update 3 as in Deformable DETR [41].</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Model Epochs AP AP 50 AP75 APS APM APL GFLOPS Params FPS
+Faster-RCNN(5scale) [30] 12 37.9 58 .8 41 .1 22 .4 41 .1 49 .1 207 40M 21∗
+DETR(DC5) [3] 12 15.5 29 .4 14 .5 4 .3 15 .1 26 .7 225 41M 20
+Deformable DETR(4scale)[41] 12 41.1 − − − − 196 40M 24
+DAB-DETR(DC5)† [21] 12 38.0 60 .3 39 .8 19 .2 40 .9 55 .4 256 44M 17
+Dynamic DETR(5scale) [8] 12 42.9 61 .0 46 .3 24 .6 44 .9 54 .4 − 58M −
+Dynamic Head(5scale) [7] 12 43.0 60 .7 46 .8 24 .7 46 .4 53 .9 − − −
+HTC(5scale) [4] 12 42.3 − − − − − 441 80M 5∗
+DN-Deformable-DETR(4scale)† [17] 12 43.4 61 .9 47 .2 24 .8 46 .8 59 .4 265 48M 23
+DINO-4scale† 12 49.0(+5.6) 66.6 53.5 32.0(+7.2) 52.3 63.0 279 47M 24
+DINO-5scale† 12 49.4(+6.0) 66.9 53.8 32.3(+7.5) 52.5 63.9 860 47M 10
+T able 1.Results for DINO and other detection models with the ResNet50 backbone on
+COCO val2017 trained with 12 epochs (the so called 1× setting). For models </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DINO: DETR with Improved DeNoising Anchor Boxes 13
+Model Epochs AP AP 50 AP75 APS APM APL
+Faster-RCNN [30] 108 42.0 62 .4 44 .2 20 .5 45 .8 61 .1
+DETR(DC5) [41] 500 43.3 63 .1 45 .9 22 .5 47 .3 61 .1
+Deformable DETR [41] 50 46.2 65 .2 50 .0 28 .8 49 .2 61 .7
+SMCA-R [11] 50 43.7 63 .6 47 .2 24 .2 47 .0 60 .4
+TSP-RCNN-R [34] 96 45.0 64 .5 49 .6 29 .7 47 .7 58 .0
+Dynamic DETR(5scale) [7] 50 47.2 65 .9 51 .1 28 .6 49 .3 59 .1
+DAB-Deformable-DETR [21] 50 46.9 66 .0 50 .8 30 .1 50 .4 62 .5
+DN-Deformable-DETR [17] 50 48.6 67 .4 52 .7 31 .0 52 .0 63 .7
+DINO-4scale 24 50.4(+1.8) 68.3 54 .8 33 .3 53 .7 64 .8
+DINO-5scale 24 51.3(+2.7) 69.1 56 .0 34 .5 54 .2 65 .8
+DINO-4scale 36 50.9(+2.3) 69.0 55 .3 34 .6 54 .1 64 .6
+DINO-5scale 36 51.2(+2.6) 69.0 55 .8 35 .0 54 .3 65 .3
+T able 2.Results for DINO and other detection models with the ResNet-50 backbone
+on COCO val2017 trained with more epochs (24, </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>14 H. Zhang, F. Li, S. Liu, et al.
+Method Params Backbone Pre-trainingDataset Detection Pre-trainingDataset UseMask End-to-end val2017 (AP) test-dev (AP)w/o TTA w/ TTAw/o TTA w/ TTA
+SwinL [23] 284M IN-22K-14M O365 ✓ 57.1 58 .0 57.7 58 .7
+DyHead [7] ≥ 284M IN-22K-14M Unknown* − 58.4 − 60.6
+Soft Teacher+SwinL [38] 284M IN-22K-14M O365 ✓ 60.1 60 .7 − 61.3
+GLIP [18] ≥ 284M IN-22K-14M FourODs [18],GoldG+ [18,15] − 60.8 − 61.5
+Florence-CoSwin-H[40] ≥ 637M FLD-900M [40] FLD-9M [40] − 62.0 − 62.4
+SwinV2-G [22] 3.0B IN-22K-ext-70M [22] O365 ✓ 61.9 62 .5 − 63.1
+DINO-SwinL(Ours) 218M IN-22K-14M O365 ✓ 63.1 63.2 63.2 63.3
+T able 3.Comparison of the best detection models on MS-COCO. Similar to DETR [3],
+we use the term &quot;end-to-end&quot; to indicate if a model is free from hand-crafted compo-
+nents like RPN and NMS. The term &quot;use mask&quot; means whether a model is trained with
+instance segmentation </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To compare with SOTA results, we use the publicly available SwinL [23] back-
+bone pre-trained on ImageNet-22K. We first pre-train DINO on the Objects365
+[33] dataset and then fine-tune it on COCO. As shown in Table 3, DINO achieves
+the best results of 63 .2AP and 63 .3AP on COCO val2017 and test-dev,
+which demonstrate its strong scalability to larger model size and data size. Note
+that all the previous SOTA models in Table 3 do not use Transformer decoder-
+based detection heads (HTC++ [4] and DyHead [7]). It is the first time that
+an end-to-end Transformer detector is established as a SOTA model on the
+leaderboard [1]. Compared with the previous SOTA models, we use a much
+smaller model size (1 /15 parameters compared with SwinV2-G [22]), backbone
+pre-training data size (1/60 images compared with Florence), and detection pre-
+training data size (1 /5 images compared with Florence), while </blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Effectiveness of New Algorithm Components:To validate the effectiveness
+of our proposed methods, we build a strong baseline with optimized DN-DETR
+and pure query selection as described in section 3.1. We include all the pipeline
+optimization and engineering techniques (see section 4.1 and Appendix D) in the
+strong baseline. The result of the strong baseline is available in Table 4 Row 3.
+We also present the result of optimized DN-DETR without pure query selection
+from Deformable DETR [41] in Table 4 Row 2. While our strong baseline out-
+performs all previous models, our three new methods in DINO further improve
+the performance significantly.
+DINO: DETR with Improved DeNoising Anchor Boxes 15
+#Row QS CDN LFT AP AP 50 AP75 APS APM APL</blockquote></details></li><li><strong>Contribution clarity — page 21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Objects365 [33] is a large-scale detection data set with over 1 .7M annotated
+images for training and 80, 000 annotated images for validation. To use the data
+more efficiently, We select the first 5, 000 out of 80 , 000 validation images as our
+validation set and add the others to training. We pre-train DINO on Objects365
+for 26 epochs using 64 Nvidia A100 GPUs and fine-tune the model on COCO
+for 18 epochs using 16 Nvidia A100 GPUS. Each GPU has a local batch size of 1
+image only. In the fine-tuning stage, we enlarge the image size to 1.5× (i.e., with
+max size 1200 × 2000). This adds around 0 .5 AP to the final result. To reduce
+the GPU memory usage, we leverage checkpointing [6] and mixed precision [26]
+during training. Moreover, we use 1000 DN queries for this large model.</blockquote></details></li><li><strong>Contribution clarity — pages 21–22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Basic hyper-parameters. For hyper-parameters, as in DN-DETR, we use
+a 6-layer Transformer encoder and a 6-layer Transformer decoder and 256 as
+the hidden feature dimension. We set the initial learning rate (lr) as 1 × 10−4
+and adopt a simple lr scheduler, which drops lr at the 11-th, 20-th, and 30-th
+epoch by multiplying 0.1 for the 12, 24, and 36 epoch settings with RestNet50,
+respectively. We use the AdamW [16,24] optimizer with weight decay of 1× 10−4
+and train our model on Nvidia A100 GPUs with batch size 16. Since DN-DETR
+22 H. Zhang, F. Li, S. Liu, et al.
+[17] adopts 300 decoder queries and 3 patterns [37], we use 300×3 = 900 decoder
+queries with the same computation cost. Learning schedules of our DINO with
+SwinL are available in the appendix.
+Loss function. We use the L1 loss and GIOU [32] loss for box regression and
+focal loss [19] with α = 0.25, γ= 2 for classification. As in </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DETR [3], we add
+auxiliary losses after each decoder layer. Similar to Deformable DETR [41], we
+add extra intermediate losses after the query selection module, with the same
+components as for each decoder layer. We use the same loss coefficients as in
+DAB-DETR [21] and DN-DETR [17], that is, 1 .0 for classification loss, 5 .0 for
+L1 loss, and 2 .0 for GIOU loss.
+Detailed model components. We also optimize the detection pipeline used in
+DAB-DETR [21] and DN-DETR [17]. Following DN-Deformable-DETR [17], we
+use the same multi-scale approach as in Deformable DETR [41] and adopt the
+deformable attention. DN-DETR uses different prediction heads with unshared
+parameters in different decoder layers. In addition, we introduce dynamic denois-
+ing group to increase denoising training efficiency and alleviate memory overhead
+(see Appendix D.1). In this work, we find that using a shared prediction </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +280,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

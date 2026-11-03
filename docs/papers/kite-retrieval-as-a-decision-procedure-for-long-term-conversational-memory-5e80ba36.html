@@ -59,16 +59,252 @@
             <p>Many long-term memory systems for LLM agents are built around embedding-based retrieval. Al- though effective for semantic matching, similarity ranking alone does not establish whether re- trieved memories satisfy the conditions implied by a question. In this paper, we introduce KITE (Knowledge-Indexed Temporal Evid...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents an inventive, non-circular, vector-free approach to conversational memory retrieval, thoroughly describes system components and prompts, and validates design choices through standard benchmarks, objective recall metrics, and well-designed ablation experiments.</p>
+      <p>The authors transparently report that the method underperforms on single-session preference queries (63.3% on LongMemEval-S) due to difficulties in capturing indirect or paraphrased preference expressions into the structured index.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-03T11:38:53.621956+00:00.</p>
+        <p>Coverage: 56713 of 56713 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Many long-term memory systems for LLM agents are built around embedding-based retrieval. Al-
+though effective for semantic matching, similarity ranking alone does not establish whether re-
+trieved memories satisfy the conditions implied by a question. In this paper, we introduce KITE
+(Knowledge-IndexedTemporalEvidence), a vector-free framework that formulates memory re-
+trieval as an explicit decision procedure. KITE organizes multi-session conversations as structured
+knowledge indexed by a governed topic vocabulary, which evolves through controlled expansion
+and consolidation. At query time, questions are compiled into inspectable retrieval plans over the
+same knowledge index that guides memory construction. The plans are then executed through fixed
+lookup and ranking operations, while sparse lexical retrieval recovers surface details omitted from
+the structured representation. </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>an animal shelter
 
-        <ul></ul>
+a n e a r by  b re ed er
+Figure 1: Comparison of embedding retrieval and KITE&#x27;s retrieval with explicit constraints.
+To this end, we propose KITE 1 (Knowledge-IndexedTemporalEvidence), a vector-free framework for long-horizon
+conversational memory that organizes multi-session interactions into structured knowledge indexed by a governed
+topic vocabulary. Each memory entry is enriched with typed contextual and temporal facets, providing complementary
+access paths beyond topics. At query time, KITE compiles a natural-language question into an inspectable retrieval
+plan over the same governed knowledge index, specifying the conditions to apply. The validated plan is then executed
+through explicit lookup and ranking operations, making evidence selection deterministic. KITE also supplements the
+primary path with sparse lexical retrieval to recover surface details missed </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To connect memory organization with evidence selection, KITE formulates long-term conversational memory retrieval
+as an explicit decision procedure over a governed knowledge index. As illustrated in Figure 2, each session is converted
+into structured memory entries indexed under a governed topic vocabulary and enriched with contextual and temporal
+facets. At query time, KITE uses the same knowledge index to compile each question into an inspectable retrieval
+plan that specifies the conditions for selecting evidence. The validated plan is then executed deterministically through
+fixed lookup and ranking operations, while sparse lexical retrieval provides complementary evidence.
+Consider a sequence of dated conversation sessionsU= (u 1, . . . , um)ordered chronologically. Given a later natural-
+language questionq, the retrieval task is to recover evidence from this history that supports an </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>answer. KITE constructs
+a set of structured memory entriesMfromUand selects relevant entries via a knowledge-indexed retrieval path.
+LetΣbe the set of governed index keys. Memory indexing and query compilation are defined as
+I:M→2 Σ,Q P :X →Π,(1)
+whereXis the space of natural-language questions andΠis the space of retrieval plans. For eachm∈M,I(m)⊆Σ
+specifies its index keys, and these assignments form the knowledge indexP. Given this index,Q P(q) =πcompiles a
+queryqinto a retrieval planπwhose indexed references resolve to the same keys used to organize the stored memories.
+After validation, the indexed path executes the planπand returns a ranked evidence sequenceE q as
+Eq =D P,θ(π) = Rankθ (ExecP(π)),(2)
+3
+KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT
+KITE Vector-free Time-aware Source-linked FactsKnowledge-Indexed T emporal Evidence</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Structured memory entries and provenance.Rather than indexing raw dialogue directly, KITE converts each
+conversation session into structured memory entries. Each entry can be represented as
+m=⟨x m, ρm, Tm, Am⟩,(3)
+wherex m is the self-contained memory content andρ m its provenance, including the source session and supporting
+utterances. The setT m holds the entry&#x27;s governed topics, whileA m stores typed contextual and temporal facets, such
+as entities and events. These fields separate evidence from the structured information used to index and retrieve it.
+For each session, the extraction model processes the dialogue with the current topic vocabulary as context, produc-
+ing source-linked entries with facet annotations. Relative time expressions are also resolved against the date of the
+corresponding session whenever possible, while candidate memory entries without valid provenance are </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>discarded.
+Governed topic vocabulary.Rather than assuming a complete ontology in advance, KITE derives its topic vocab-
+ulary from the accumulated conversation history. Starting from a small set of canonical roots, the extraction model
+reuses existing topics when possible and gradually proposes more specific children when new concepts emerge. To
+ensure consistency, new topics must fit within the existing hierarchy, which helps maintain a stable index over time.
+4
+KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT
+V ocabulary expansion is further controlled by keeping proposed topics provisional until they recur across multiple
+sessions and time periods, rather than admitting each new topic as soon as it first appears. As the vocabulary evolves,
+potentially redundant sibling topics are consolidated, with their memory entries redirected to the selected </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Shared-index grounding.Query compilation uses the same knowledge index built during memory construction, so
+each question is interpreted against the stored vocabulary and entities. Thus, references inferred from the question can
+be resolved to existing index keys, keeping query interpretation aligned with memory organization. The compiler then
+maps the question to these keys, while the executor determines which memories satisfy the resulting conditions.
+Typed retrieval plans.Each question is compiled into a typed retrieval plan that makes its evidence requirements
+explicit before execution. Formally, the plan consists of one or more subqueries
+π= (π 1, . . . , πn), π i =⟨select,where,pipe⟩, i= 1, . . . , n.(6)
+Here,selectdetermines the retrieval granularity for each subquery, whilewherespecifies the indexed and temporal
+conditions on evidence. Finally,pipeapplies fixed operations to the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>results, such as sorting, limiting, or counting.
+Subqueries can be linked sequentially, allowing results from an earlier step to constrain the search performed in
+subsequent stages. These dependencies keep multi-hop retrieval explicit in the plan while preserving fixed execution.
+Plan validation.Before execution, each plan is validated against a fixed typed grammar and the knowledge index.
+Indexed references are resolved to valid keys in the governed representation. Speaker mentions are mapped to par-
+ticipant constraints, while temporal expressions are normalized into explicit ranges. Plans with unresolved references
+or unsupported structures are rejected. The validated plan is executed by the retrieval executor without further model
+intervention, drawing a clear boundary between model-based interpretation and deterministic evidence selection.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deterministic plan execution.Given a validated subqueryπ i, KITE evaluates its indexed conditions through the
+corresponding posting lists. Requested keys within the same type are treated as alternatives, whereas conditions across
+types must hold jointly. The initial candidate set is therefore
+C(π i) =
+\
+a∈A(πi)
+
+ [
+s∈πi,a
+Pa[s]
+
+ ,(7)
+whereA(π i)denotes the set of constrained key types andπ i,a ⊆Σ a contains the requested index keys of typea.
+Temporal and lexical conditions further filter this initial candidate set before thepipeoperations are applied.
+In practice, the executor narrows down the set of candidate memories according to the conditions encoded in the
+retrieval plan. For dependent subqueries, results from preceding steps are carried forward as constraints on later
+retrieval. With these operations fixed, the same index and validated plan always yield the same candidate </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>set.
+5
+KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT
+Controlled relaxation and no-match.When exact execution produces no candidates, KITE applies a predefined
+sequence of relaxations. Each step broadens only designated conditions while preserving bindings from prior retrieval
+stages. The effective conditions remain explicit throughout, and execution stops at the first non-empty result. If all
+permitted relaxations fail, the indexed path explicitly returns no match under the current index and execution policy.
+Explicit evidence ranking.After condition evaluation determines the candidate set, KITE orders the retained mem-
+ories using a fixed scoring policy
+Sθ(m, π) =
+X
+j∈J
+wj ϕj(m, π),(8)
+where eachϕ j(m, π)captures an interpretable match between memory entrymand retrieval planπ, andw j is its
+corresponding weight under the scoring policyθ. In </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>practice, exact matches on index keys receive the strongest
+preference, while broader hierarchical matches or agreement on additional typed facets provide supporting signals.
+For example, a memory matching both the queried entity and event outscores one linked only through a broader topic.
+Ranking is applied only after condition checks admit the candidates, so it changes their ordering rather than eligibility.
+For fixedP,π, andθ, the scores are deterministic, while the basis of each ranking decision remains inspectable.
+Sparse lexical support.Structured memory is designed to capture reusable concepts and retrieval cues, but this
+abstraction may omit surface-form details preserved in the source text, such as rare names or numerical values. To
+retain access to such information, KITE augments the indexed path with a deterministic sparse lexical channel. The
+ranked evidence from both paths </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarks.We evaluate KITE on two long-term conversational memory benchmarks, LoCoMo (Maharana et al.,
+2024) and LongMemEval-S (Wu et al., 2025). Specifically, the LoCoMo experiments cover 1,540 questions across
+ten multi-session conversations, while LongMemEval-S comprises 500 questions over longer interaction histories.
+Baselines.We compare KITE against prior memory systems, namely Mem0 (Chhikara et al., 2025), Zep (Ras-
+mussen et al., 2025), MemOS (Li et al., 2025), and EverMemOS (Hu et al., 2026a). We also consider Naive RAG as
+a retrieval baseline and full-context inference over the complete conversation history as a non-retrieval reference.
+Evaluation protocol.We evaluate answer quality using LLM-as-a-judge accuracy, reported overall and by question
+category. Throughout the KITE experiments,gpt-4.1-miniserves as both reader and judge. The reader receives
+only the question and </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>retrieved evidence, without the full conversation history, and answers strictly from this context.
+Implementation details.Unless otherwise specified, KITE combines plan-guided retrieval over the knowledge
+index with a sparse lexical channel under a fixed fusion strategy. We use small benchmark-specific seed vocabularies
+and apply the same governance procedure across both benchmarks. Further implementation details are provided in
+Appendices B–C, and the source code is available athttps://github.com/memoket/memoket-kite.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Superior vector-free performance.Tables 1 and 2 show that KITE achieves the highest overall accuracy among
+the compared systems without relying on dense embeddings or neural reranking. It reaches an accuracy of 93.5%
+on LoCoMo, outperforming EverMemOS by 0.4 percentage points, and 86.0% on the LongMemEval-S questions,
+widening the margin to 3.0 percentage points. Compared with full-context inference, KITE further improves accuracy
+by 2.6 and 29.2 percentage points on LoCoMo and LongMemEval-S, respectively. Overall, these results show that
+strong long-term memory performance does not require dense similarity retrieval or full-history input to the reader.
+Strong temporal and multi-hop reasoning.Notably, the strongest advantage of KITE appears in temporal reason-
+ing, where it achieves 92.2% on LoCoMo and 85.7% on LongMemEval-S, with the latter exceeding the next-best result
+6</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT
+Table 1: Comparison of memory systems on LoCoMo using LLM-as-a-judge accuracy (%).
+System A vg. Tokens
+Accuracy (%)
+Single Multi Temp Open Overall
+Naive RAG0.7k42.6 42.6 67.9 71.9 49.7
+Full Context 20.3k 94.5 90.1 88.2 70.8 90.9
+Mem0 1.0k 69.0 61.7 58.3 50.0 64.2
+Zep 1.4k 90.8 81.9 77.3 75.0 85.4
+MemOS 2.5k 85.4 79.4 75.1 64.6 80.8
+EverMemOS 2.3k96.791.8 89.7 76.0 93.1
+KITE 1.5k 95.293.3 92.2 83.3 93.5
+Avg. Tokens denotes average reader-context tokens. Best results arebolded.
+Table 2: Comparison of memory systems on LongMemEval-S using LLM-as-a-judge accuracy (%).
+System A vg. Tokens
+Accuracy (%)
+SS-U SS-A SS-P Multi Know Temp Overall
+Naive RAG 5.1k 90.098.253.3 48.9 67.9 39.8 61.0
+Full Context 105.1k 87.1 89.3 36.7 45.1 76.9 31.6 56.8
+Mem01.1k82.9 26.8 90.0 63.2 66.7 72.2 66.4
+Zep 1.6k 92.9 75.0 53.3 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>47.4 74.4 54.1 63.2
+MemOS 1.4k 95.7 67.996.770.7 74.4 77.4 77.8
+EverMemOS 2.8k 97.1 85.7 93.3 73.7 89.7 77.4 83.0
+KITE 1.6k98.685.7 63.382.0 91.0 85.7 86.0
+SS-U, SS-A, and SS-P denote single-session user, assistant, and preference questions; Know and Temp refer to knowledge-update
+and temporal-reasoning questions.
+by 8.3 percentage points. This gain is consistent with KITE&#x27;s explicit treatment of time, where temporal information
+is preserved during memory construction and translated into constraints at query time to identify chronologically ap-
+propriate evidence. Beyond temporal reasoning, KITE also excels on multi-hop questions by carrying previously
+gathered evidence forward across dependent retrieval steps to connect information between different sessions.
+Compact reader context.Despite its high accuracy, KITE averages 1.5k reader-context tokens per question on
+LoCoMo and 1.6k on </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LongMemEval-S. By comparison, EverMemOS uses 2.3k and 2.8k tokens, respectively, while
+full-context inference requires 20.3k and 105.1k. Together, these results show that KITE combines leading overall
+accuracy with a compact evidence set, substantially reducing the amount of information presented to the reader.
+Preference reasoning remains challenging.However, KITE is less competitive on single-session preference ques-
+tions, achieving an accuracy of 63.3% on the LongMemEval-S benchmark. This result points to the difficulty of
+consistently aligning indirect or paraphrased preference expressions with the indexed memory representation.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To isolate the effect of retrieval from memory construction, we freeze the memory store and compare retrieval strate-
+gies over the same representations. We compare dense-vector retrieval, BM25, and their hybrid with KITE&#x27;s plan-
+guided retrieval. For a controlled comparison, all methods share identical reader settings and reader-context token
+budgets, with LLM-as-a-judge accuracy and evidence recall measuring answer quality and retrieval effectiveness.
+Table 3 shows that KITE achieves the highest accuracy and recall on both benchmarks with memory construction held
+fixed. Notably, recall is consistently lower than accuracy on LoCoMo because the gold evidence often includes more
+dialogue turns than are strictly necessary to answer the question. A correct answer may therefore be produced without
+retrieving every annotated turn. Even so, KITE improves recall over the hybrid baseline by 7.5 </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>percentage points,
+indicating that KITE retrieves a fuller set of supporting evidence, rather than only the most relevant matches.
+7
+KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT
+Table 3: Accuracy (%) and recall (%) of retrieval
+strategies over fixed memories.
+Retrieval
+Strategy
+LoCoMo LongMemEval-S
+Acc. Rec. Acc. Rec.
+Dense 85.4 78.1 76.9 90.5
+BM25 81.3 73.2 72.4 84.6
+Hybrid 87.8 79.9 78.0 92.8
+KITE93.5 87.4 86.0 97.6
+Table 4: Comparison of topic vocabulary policies for memory
+indexing on LoCoMo.
+V ocabulary Policy A vg.Topics A vg.Tokens Acc.(%) Rec.(%)
+Fixed V ocabulary 12.0 2.1k 91.094.2
+Immediate Expansion 72.41.5k87.9 78.3
+Delayed Expansion 62.5 1.6k 91.7 82.7
+KITE 58.0 1.6k93.587.4
+Table 5: Ablation study of KITE on LoCoMo using LLM-as-a-judge accuracy (%).
+Category
+Indexing Retrieval Ranking
+Full KITE
+w/o Facets Indexed Only Lexical Only </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Recency Neural
+Single 93.2 93.5 85.0 64.4 94.895.2
+Multi 90.4 87.6 86.9 69.195.093.3
+Temporal 87.9 86.3 71.3 45.5 91.692.2
+Open 67.7 71.9 64.6 52.1 72.983.3
+Overall90.0 89.5 81.2 60.6 92.893.5
+By contrast, LongMemEval-S measures session-level recall, which is uniformly higher across methods. Nevertheless,
+KITE is consistently stronger in recall and answer accuracy. This further supports the efficacy of KITE&#x27;s deterministic
+retrieval, which evaluates explicit query conditions before ranking rather than relying on relevance scores alone.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In addition, we examine how governance of the topic vocabulary affects index growth and query compilation on
+LoCoMo. All variants start from the same canonical topic roots and process conversations in chronological order.
+Fixed Vocabularykeeps the initial topic set unchanged, whereasImmediate Expansionadmits valid new topics as soon
+as they are proposed.Delayed Expansionkeeps proposed topics provisional until they recur across multiple sessions
+and time periods, while KITE further consolidates redundant sibling topics. Each variant uses its resulting topic
+vocabulary for both memory indexing and query compilation, with all other experimental settings remaining fixed.
+Table 4 illustrates the value of governing topic evolution rather than simply restricting or expanding the vocabulary.
+Immediate Expansionyields the lowest recall and accuracy, suggesting that related evidence is scattered </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>across too
+many labels. Conversely,Fixed Vocabularyachieves higher recall, but its longer reader context may include tangential
+memories that complicate answer generation. With controlled admission and consolidation, KITE achieves the highest
+accuracy with fewer topics than expansion-only variants and the same average context length asDelayed Expansion.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We conduct ablation studies on LoCoMo to evaluate the main design choices of KITE. As shown in Table 5, each
+experiment changes one part of the pipeline with the rest fixed. This isolates the contribution of each design choice.
+Typed facets.Removing typed facets while retaining topic indexing reduces overall accuracy from 93.5% to 90.0%.
+The largest declines occur on open-domain and temporal questions, at 15.6 and 4.3 percentage points, respectively.
+These cases often hinge on distinctions beyond broad thematic alignment, including contextual attributes and temporal
+cues. Such facets complement the topic hierarchy with finer-grained constraints for isolating supporting evidence.
+Retrieval channels.We evaluate both retrieval channels separately and in combination to assess their individual con-
+tributions. Specifically,Indexed Onlyretains only plan-guided retrieval over the governed </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>knowledge index, whereas
+Lexical Onlyuses the sparse lexical channel alone. The indexed variant outperforms its lexical counterpart across all
+question categories, while their combination in full KITE achieves the highest overall accuracy. These results support
+the indexed path as the primary retrieval mechanism, with lexical matching providing complementary evidence.
+8
+KITE: Retrieval as a Decision Procedure for Long-Term Conversational MemoryPREPRINT
+Explicit ranking.To assess the role of evidence ranking, we replace the explicit scoring policy with two alterna-
+tives.Recencyprioritizes memories from newer sessions, whereasNeuralevaluates query–memory relevance with a
+pretrained cross-encoder. The sharp decline underRecencyindicates that favoring newer memories alone is insuffi-
+cient for prioritizing the supporting evidence. AlthoughNeuralperforms better on multi-hop questions, the </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>explicit
+policy achieves higher overall accuracy by 0.7 percentage points while keeping ranking decisions inspectable.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>accuracy.LLM-as-a-judge accuracy is the percentage of generated answers judged correct by an LLM
+evaluator. For KITE, we usegpt-4.1-minias the judge and report accuracy overall and by question category.
+Evidence recall.Evidence recall measures the fraction of annotated supporting evidence recovered by retrieval. For
+a questionq, recall is computed as
+rq = |Gq ∩R q||Gq| ,|G q|&gt;0,(9)
+whereG q andR q denote the sets of annotated and retrieved evidence units, respectively. Units are LoCoMo dialogue
+turns and LongMemEval-S sessions. We report the averager q over questions with annotated supporting evidence.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +343,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +359,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-30</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-02 11:58:53</li><li>Last seen by Paper Scout: 2026-11-02 11:58:56</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-10-30</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-02 11:58:53</li><li>Last seen by Paper Scout: 2026-11-03 11:35:10</li></ul>
             <ul><li>arXiv: 2610.41521</li><li>arXiv IDs: 2610.41521</li></ul>
           </section>
           <section class="detail-panel">

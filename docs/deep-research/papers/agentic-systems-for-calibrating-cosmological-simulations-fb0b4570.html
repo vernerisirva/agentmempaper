@@ -59,16 +59,167 @@
             <p>Calibrating a cosmological simulation is an expensive, high-dimensional parameter optimization task. Previous works employ Bayesian optimization for automation, which treats the simulator as a black box and precludes the incorporation of human domain knowledge or workflow into the selection policy. We propose Agenti...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study presents a clear, well-scoped methodology with an objective, simulator-derived quantitative metric (reduced chi-squared based on cosmic variance). The experimental protocol includes baseline comparisons, confidence intervals across 20 runs, and detailed documentation in the appendix.</p>
+      <p>The authors acknowledge that testing is limited to a single simulator setup and matter power spectrum observable, and that formal ablations isolating the exact contribution of each workspace component (e.g., guide vs proxy) remain future work.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-03T11:39:30.963764+00:00.</p>
+        <p>Coverage: 43781 of 43781 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Calibrating a cosmological simulation is an expensive, high-dimensional parameter
+optimization task. Previous works employ Bayesian optimization for automation,
+which treats the simulator as a black box and precludes the incorporation of
+human domain knowledge or workflow into the selection policy. We propose
+AGENTICTUNER, an agentic calibration pipeline with a present-day large language
+model serving as the optimizer who proposes the next parameter trial. We show that
+these agents can achieve competitive calibration performance at a fraction of the
+CPU cost when they are given informal, human-readable priors (such as codebase,
+documentation, and heuristic guides that seasoned scientists may possess). We
+hope this work serves as an early step toward AI scientists that can carry out
+complex, long-horizon scientific tasks. A starter code is available on GitHub.1</blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>calibration pipeline in which
+an LLM agent can reason about the search landscape, form hypotheses, and retrieve the relevant
+domain knowledge priors. Like a human scientist, it can(a)consult documentation, source code, or
+a running record of previous experiments and(b)query low-resolution proxy simulation to narrow
+down a portion of the parameter space before committing to an expensive run. Our findings show
+1https://github.com/chaipattira/SimulationCalibrator
+Accepted to the 9th annual workshop for Machine Learning &amp; the Physical Sciences (ML4PS).
+arXiv:2610.40685v1  [astro-ph.IM]  26 Oct 2026
+Rev. 07.31.2026
+Notebook 𝒩t⁽ⁱ⁾
+&lt;/&gt;
+Codebase 𝒞
+Trial history 𝒟t
+Low-resolution probe
+Guide 𝒢
+Observe ot,i
+clear context and spawn new agent
+Simulator ℳ
+Target power spectrum
+AgenticTuner
+|χ²-1|&lt; 0.5
+θt+1
+Simulated power
+spectrum
+STOP
+Figure 1: Overview of AGENTICTUNER. At each step t, the agent </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Task.We approach the calibration of an expensive, intractable-likelihood simulator [ 12, 19, 21] as
+an optimization problem. For a chosen parameter vector θtrue ∈Θ⊂R d, we run a forward simulator
+M to generate a target observable xtarget =M(θ true). The goal of calibration is to search for a
+point estimate
+ˆθ= arg min
+θ∈Θ
+d
 
-        <ul></ul>
+M(θ), xtarget s.t. Pt c(θt)≤B ,(1)
+where d(·,·) is a discrepancy metric defined via the statistical goodness-of-fit of the observable and
+c(θ) is the computational cost of running one forward pass of the simulator. As a constraint, we
+specify that the total cost of running these trials (e.g., CPU hours, wall-clock time) cannot exceed a
+predetermined budget B. For cosmological simulators, M is typically a very complex non-linear
+mapping, making Eq. 1 a non-convex optimization objective.
+Baseline.A standard non-convex optimization technique is BO [ 20, 1], which </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>treats Eq. 1 as a
+sequential decision process. At each step t, BO fits a probabilistic surrogate model to the trial
+history Dt ={(θ τ , dτ , cτ )}τ≤t , and uses an acquisition function α(θ;D t) to propose the next point,
+θt+1 = arg maxθ∈Θ α(θ;D t). The most common surrogate is a Gaussian process [GP; 20], with
+tree-based and density-based alternatives also in use (e.g., TPE [ 5], SMAC [15]). Regardless of
+surrogate choice, BO treats the optimization process as a black box with a non-informative prior,
+which prevents the integration of domain-specific knowledge or workflow into the selection policy.
+We choose GP as the baseline because it was the most sample-efficient method in preliminary
+experiments comparing multiple derivative-free optimizers for this class of problem. Appendix A
+outlines our baseline implementation of GP-BO.
+Configuration.We center our study on a sufficiently </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>challenging numerical task of calibrating
+a cosmological simulation. We use MP-Gadget [ 6, 18], a particle-based (N-body) cosmological
+simulation that evolves dark matter, gas, stars, and black holes via gravity and hydrodynamics, as the
+forward simulator M. For a chosen 12-parameter vector θtrue (defined in Table 1), M generates the
+target observablextarget from Eq. 1 in the form of a matter power spectrumP target(k;θ true)∈R nbins:
+a statistic measuring matter clustering strength as a function of scale k, evaluated at nbins Fourier
+2
+2 4 6 8 10 12 14
+100
+101
+102
+reduced 2
+2 4 6 8 10 12 14 16 18
+ 2 4 6 8 10 12
+ 0 4 8 12 16 20 24 28
+ 2 4 6 8 10 12 14 16
+2 4 6 8 10 12 14
+trial #
+100
+101
+102
+reduced 2
+1 2 3 4 5 6 7 8 9 10
+trial #
+1 2 3 4 5 6 7
+trial #
+2 4 6 8 10
+trial #
+2 4 6 8 10 12
+trial #
+converged band [0.5,1.5] GP-BO LLM agent converged run
+Figure 2: Reduced- ˜χ2 vs. trial number for </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AGENTICTUNER(teal) and BO baseline (orange). We
+present ten representative runs from our 20 experiments for legibility. To stress test our algorithm, we
+reduced the allowed CPU budget for both methods in the bottom row, which explains the total lack of
+convergence in BO runs.
+bins. For a given simulation configuration, this vector is expected to have intrinsic noise distributed
+as an i.i.d. isotropic Gaussian. Appendix A provides more details on simulation and job settings.
+We instantiate the discrepancy d(·,·) from Eq. 1 as the mode-weighted reduced chi-squared between
+simulated and target spectra,
+˜χ2 = χ2
+nbins
+,whereχ 2 = X
+i
+
+P simi −P targeti 2
+σ2i ,(2)
+and σ2i is the cosmic variance,i.e.the statistical noise from measuring clustering in a finite volume
+(full expression and k-range in Appendix A). A trial is considered converged when ˜χ2 &lt;1 , i.e., once
+the simulated spectrum </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>matches the target to within the cosmic-variance noise floor. The CPU hours
+spent on trialtdetermine its costc(θ t)from Eq. 1.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Loop design.AGENTICTUNERis an agentic simulation calibration system that replaces an acquisi-
+tion function with an LLM as the optimizer (see Figure 1). The central loop of AGENTICTUNERis
+orchestrated by the external harness, which is separate from and independent of the LLM. Each
+iteration t begins with the instantiation of a stateless LLM instance within a sandboxed container that
+conceals the hidden ground truth θtrue. Because LLM performance has been shown to deteriorate
+with a monotonically increasing context window [8, 27, 26], we opt to clear the context [3] after the
+LLM calls an expensive simulator for the proposed trial θt+1. When the simulation is finished, the
+harness mediates the evaluation process by calculating ˜χ2(θt+1) and either restarting the loop with a
+fresh agent or stopping the search if˜χ2 &lt;1or a fixed CPU-hour budget is exhausted.
+Exploration.Let t index </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>matter power spectrum simulator PROBE(θ cosmo), implemented using CAMB [14], to obtain
+a dark-matter-only proxy for the power spectrum. The resulting power spectrum is an approximation
+in that PROBE only accepts cosmological parameters and thus neglects the effects of the remaining
+baryonic or subgrid parameters. We expect the agent to use the low-resolution proxy to narrow down
+the relevant cosmology before proceeding with the expensive high-resolution simulation.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To compare AGENTICTUNERand BO baseline in reaching convergence within a fixed budget, we run
+the experiment 20 times with different random seeds, true parameters, and simulator initial conditions.
+Calibration performance.Our results show that by incorporating the informal prior into the
+selection policy, AGENTICTUNERachieves convergence using a median of 8.5 simulation calls (68%
+CI: 6.0–14.1). In comparison, the simulation cost is nearly twice as low as BO, which requires
+a median of 17.5 calls (14.4–24.2). Figure 2 depicts the reduced ˜χ2 trajectory for some example
+runs. We find that the trajectory of AGENTICTUNER(teal) shows a consistent downward trend with
+occasional bumps, while the BO baseline (orange) fluctuates for many trials before occasionally
+dropping. Because BO&#x27;s oscillatory trajectory persists well beyond the early exploration phase, we
+hypothesize that the LLM agent&#x27;s </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>advantage is due in part to its access to informative physical priors.
+Anatomy of reasoning.To gain insight into the LLM&#x27;s decision-making process while tackling a
+long-horizon task, we examine the lab notebook and reasoning trace during the first and last half of
+each run&#x27;s invocations (see Figure 3). The LLM begins each new invocation with no memory other
+than what is written to disk, necessitating a fixed reorientation cost (about 30% of the budget) by
+scanning the workspace files. During the early stages, the agent focuses on calling cheap PROBE
+proxies (7%) and doing residual analysis (6%), initially to localize the cosmological parameters and
+later to narrow the sweep of each. It also checks for degeneracies between the parameters before
+0.0 0.2 0.4 0.6 0.8 1.0
+Position within invocation&#x27;s tool calls (0 = first call, 1 = last)
+Early invocations
+Late invocations
+Early / Late share </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this work, we present AGENTICTUNER, an agentic calibration system that uses an LLM agent
+to propose the parameter point based on trial history and human-authored priors. We evaluate our
+system in calibrating a costly cosmological simulation and find that AGENTICTUNERoutperforms
+the Bayesian optimization baseline in simulation cost across all runs. Auditing the reasoning trace
+of the LLM agent demonstrates its ability to adapt the search strategy during a run from active tool
+use to synthesizing previous findings. These results suggest that natural-language priors significantly
+improve the selection process.
+Future work includes evaluating AGENTICTUNERon a broader set of observables and ablating its
+context components (guide, codebase, low-resolution probe) to isolate what drives sample efficiency.
+It would also be useful to replicate our findings with open-weight LLMs, which we </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +258,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

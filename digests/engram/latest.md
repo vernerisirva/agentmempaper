@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-02](2026-11-02.md).
+Latest daily digest: [2026-11-03](2026-11-03.md).
 
-# Paper Scout Digest - 2026-11-02
+# Paper Scout Digest - 2026-11-03
 
 ## Run Summary
 
-- **Run ID:** 59
-- **Candidates fetched:** 105
-- **New unique papers:** 94
-- **Relevant:** 14
+- **Run ID:** 60
+- **Candidates fetched:** 104
+- **New unique papers:** 92
+- **Relevant:** 13
 - **Maybe relevant:** 0
 - **Irrelevant:** 91
-- **Source summary:** arxiv: 2, openalex: 100, semantic_scholar: 3
+- **Source summary:** arxiv: 2, openalex: 100, semantic_scholar: 2
 
 ## Source Warnings
 
@@ -25,14 +25,4 @@ Latest daily digest: [2026-11-02](2026-11-02.md).
 - semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
 
-## Highly Relevant
-
-### [Dynamic Engram: Answering from an Exact n-gram Memory Injected at Inference Time](https://doi.org/10.5281/zenodo.23803702)
-
-- **Authors:** Marcello Violini, Lorenzo Nargiso
-- **Date:** 2026-10-30
-- **Source:** openalex
-- **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
-- **Tags:** engram, conditional-memory, hashed-ngram-memory
-- **Abstract summary:** Instead of writing particular memories into a language model (by fine-tuning, model editing or optimized rows of an n-gram table), we train the model once to handle memories in general, and then inject any new memory on demand, with no training, no optimization and no change to the weights. Conditional memory throug...
+No new relevant or maybe-relevant papers found.

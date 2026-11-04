@@ -23,13 +23,13 @@
   "first_seen_at": "2026-11-03 11:37:35",
   "first_seen_date": "2026-11-03",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-11-03 11:37:35",
-  "last_seen_date": "2026-11-03",
+  "is_new": false,
+  "last_seen_at": "2026-11-04 11:52:58",
+  "last_seen_date": "2026-11-04",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-02",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-03 11:37:50",
   "notified_date": "2026-11-03",
   "openalex_id": null,
@@ -39,8 +39,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-03 11:37:35",
-    "generated_at": "2026-11-03 11:40:52",
-    "last_seen_at": "2026-11-03 11:37:35",
+    "generated_at": "2026-11-04 11:56:11",
+    "last_seen_at": "2026-11-04 11:52:58",
     "metadata_sources": [
       "arxiv"
     ],
@@ -102,36 +102,1718 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-04T11:54:47.079231+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript provides a well-motivated architectural design addressing known domain shift challenges in remote sensing dense prediction. The experimental design is rigorous, evaluating multiple shift modalities (geographic, spectral, and cross-dataset) with comprehensive baselines, detailed ablation studies, and efficiency profiles.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 69293,
+      "assessment_input_sha256": "ef6a48d4d506cbf4bacdd84220626e445f0895ee961830808c79653cbef66d63",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.03382",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 67616,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 66750,
+      "evidence_block_count": 96,
+      "evidence_context_characters": 79557,
+      "evidence_context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+      "evidence_context_sha256": "74d47c10392db1d3fd2a60783c40ce1c892eca622988e05d616bbd9f1a4af372",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 67644,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "extracted_pages": 15,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "b94d0796f7bab716665f8631dde1cb73876846df4829f11e49fc3068d3bb8f38",
+        "source_url": "https://arxiv.org/pdf/2611.03382",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 67616,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Ascor: Asymmetric Semantic-Spatial Learning For Remote Sensing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 628,
+          "supplied_characters": 628
+        },
+        {
+          "heading": "Article Info",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 138,
+          "supplied_characters": 138
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 2098,
+          "supplied_characters": 2098
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2610,
+          "supplied_characters": 2610
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 2039,
+          "supplied_characters": 2039
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1904,
+          "supplied_characters": 1904
+        },
+        {
+          "heading": "Remote Sensing Semantic Segmentation And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 2570,
+          "supplied_characters": 2570
+        },
+        {
+          "heading": "Vision-Language And Foundation Models For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1102,
+          "supplied_characters": 1102
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1189,
+          "supplied_characters": 1189
+        },
+        {
+          "heading": "Sam-Style Foundation Models For Remote",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1795,
+          "supplied_characters": 1795
+        },
+        {
+          "heading": "Parameter-Efficient Adaptation And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2131,
+          "supplied_characters": 2131
+        },
+        {
+          "heading": "Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 766,
+          "supplied_characters": 766
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 901,
+          "supplied_characters": 901
+        },
+        {
+          "heading": "Text-Conditioned Semantic Branch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1300,
+          "supplied_characters": 1300
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1650,
+          "supplied_characters": 1650
+        },
+        {
+          "heading": "Task-Specific Dense Branch",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 3399,
+          "supplied_characters": 3399
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 219,
+          "supplied_characters": 219
+        },
+        {
+          "heading": "Reliability-Guided Complementary Fusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 3233,
+          "supplied_characters": 3233
+        },
+        {
+          "heading": "Optimization And Training Strategy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 1029,
+          "supplied_characters": 1029
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 19,
+          "source_characters": 623,
+          "supplied_characters": 623
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 2690,
+          "supplied_characters": 2690
+        },
+        {
+          "heading": "After Both Branches Are Frozen, The Reliability Router Is",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 140,
+          "supplied_characters": 140
+        },
+        {
+          "heading": "Comparison With State-Of-The-Art Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 22,
+          "source_characters": 1017,
+          "supplied_characters": 1017
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 4008,
+          "supplied_characters": 4008
+        },
+        {
+          "heading": "Component Generalization Across Domain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1228,
+          "supplied_characters": 1228
+        },
+        {
+          "heading": "Class-Wise Complementarity Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 456,
+          "supplied_characters": 456
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 2778,
+          "supplied_characters": 2778
+        },
+        {
+          "heading": "Analysis Of The Reliability-Router Objective",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 798,
+          "supplied_characters": 798
+        },
+        {
+          "heading": "Parameter Efficiency",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 900,
+          "supplied_characters": 900
+        },
+        {
+          "heading": "Runtime Overhead Of Reliability-Guided",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 514,
+          "supplied_characters": 514
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1806,
+          "supplied_characters": 1806
+        },
+        {
+          "heading": "Qualitative And Diagnostic Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1891,
+          "supplied_characters": 1891
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1352,
+          "supplied_characters": 1352
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 264,
+          "supplied_characters": 264
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 34,
+          "source_characters": 1266,
+          "supplied_characters": 1266
+        },
+        {
+          "heading": "This Work Was Supported By The Natural Science Foun-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 106,
+          "supplied_characters": 106
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 1226,
+          "supplied_characters": 1226
+        },
+        {
+          "heading": "Rsprompter: Learning To Prompt For Remote Sensing Instance Segmen-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 235,
+          "supplied_characters": 235
+        },
+        {
+          "heading": "Decoder With Atrous Separable Convolution For Semantic Image Segmen-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 734,
+          "supplied_characters": 734
+        },
+        {
+          "heading": "In: Proceedings Of The Ieee/Cvf Conference On Computer Vision And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1514,
+          "supplied_characters": 1514
+        },
+        {
+          "heading": "Sensing Benchmark Dataset For Cross-City Semantic Segmentation Using",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "results",
+          "section_index": 40,
+          "source_characters": 1620,
+          "supplied_characters": 1620
+        },
+        {
+          "heading": "For Domain Generalization In Semantic Segmentation Of Remote Sensing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 127,
+          "supplied_characters": 127
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 8188,
+          "supplied_characters": 8188
+        },
+        {
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 568,
+          "supplied_characters": 568
+        }
+      ],
+      "selected_characters": 66750,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "selected_sections": [
+        {
+          "characters": 628,
+          "heading": "Ascor: Asymmetric Semantic-Spatial Learning For Remote Sensing",
+          "page": 1
+        },
+        {
+          "characters": 138,
+          "heading": "Article Info",
+          "page": 1
+        },
+        {
+          "characters": 2098,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2610,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2039,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 2
+        },
+        {
+          "characters": 1904,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 3
+        },
+        {
+          "characters": 2570,
+          "heading": "Remote Sensing Semantic Segmentation And",
+          "page": 3
+        },
+        {
+          "characters": 1102,
+          "heading": "Vision-Language And Foundation Models For",
+          "page": 3
+        },
+        {
+          "characters": 1189,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 4
+        },
+        {
+          "characters": 1795,
+          "heading": "Sam-Style Foundation Models For Remote",
+          "page": 4
+        },
+        {
+          "characters": 2131,
+          "heading": "Parameter-Efficient Adaptation And",
+          "page": 4
+        },
+        {
+          "characters": 766,
+          "heading": "Overview",
+          "page": 4
+        },
+        {
+          "characters": 901,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 5
+        },
+        {
+          "characters": 1300,
+          "heading": "Text-Conditioned Semantic Branch",
+          "page": 5
+        },
+        {
+          "characters": 1650,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 6
+        },
+        {
+          "characters": 3399,
+          "heading": "Task-Specific Dense Branch",
+          "page": 6
+        },
+        {
+          "characters": 219,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 7
+        },
+        {
+          "characters": 3233,
+          "heading": "Reliability-Guided Complementary Fusion",
+          "page": 7
+        },
+        {
+          "characters": 1029,
+          "heading": "Optimization And Training Strategy",
+          "page": 7
+        },
+        {
+          "characters": 623,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 2690,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 8
+        },
+        {
+          "characters": 140,
+          "heading": "After Both Branches Are Frozen, The Reliability Router Is",
+          "page": 8
+        },
+        {
+          "characters": 1017,
+          "heading": "Comparison With State-Of-The-Art Methods",
+          "page": 8
+        },
+        {
+          "characters": 4008,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 9
+        },
+        {
+          "characters": 1228,
+          "heading": "Component Generalization Across Domain",
+          "page": 9
+        },
+        {
+          "characters": 456,
+          "heading": "Class-Wise Complementarity Analysis",
+          "page": 9
+        },
+        {
+          "characters": 2778,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 10
+        },
+        {
+          "characters": 798,
+          "heading": "Analysis Of The Reliability-Router Objective",
+          "page": 10
+        },
+        {
+          "characters": 900,
+          "heading": "Parameter Efficiency",
+          "page": 10
+        },
+        {
+          "characters": 514,
+          "heading": "Runtime Overhead Of Reliability-Guided",
+          "page": 10
+        },
+        {
+          "characters": 1806,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 11
+        },
+        {
+          "characters": 1891,
+          "heading": "Qualitative And Diagnostic Analysis",
+          "page": 11
+        },
+        {
+          "characters": 1352,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 12
+        },
+        {
+          "characters": 264,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 13
+        },
+        {
+          "characters": 1266,
+          "heading": "Conclusion",
+          "page": 13
+        },
+        {
+          "characters": 106,
+          "heading": "This Work Was Supported By The Natural Science Foun-",
+          "page": 13
+        },
+        {
+          "characters": 1226,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 235,
+          "heading": "Rsprompter: Learning To Prompt For Remote Sensing Instance Segmen-",
+          "page": 13
+        },
+        {
+          "characters": 734,
+          "heading": "Decoder With Atrous Separable Convolution For Semantic Image Segmen-",
+          "page": 13
+        },
+        {
+          "characters": 1514,
+          "heading": "In: Proceedings Of The Ieee/Cvf Conference On Computer Vision And",
+          "page": 13
+        },
+        {
+          "characters": 1620,
+          "heading": "Sensing Benchmark Dataset For Cross-City Semantic Segmentation Using",
+          "page": 13
+        },
+        {
+          "characters": 127,
+          "heading": "For Domain Generalization In Semantic Segmentation Of Remote Sensing",
+          "page": 13
+        },
+        {
+          "characters": 8188,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 14
+        },
+        {
+          "characters": 568,
+          "heading": "Ascor: Semantic-Spatial Domain Generalization",
+          "page": 15
+        }
+      ],
+      "selected_text_sha256": "ef6a48d4d506cbf4bacdd84220626e445f0895ee961830808c79653cbef66d63",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "b94d0796f7bab716665f8631dde1cb73876846df4829f11e49fc3068d3bb8f38",
+      "source_pages": 15,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0003"
+        ],
+        "excerpt": "Source-onlydomaingeneralizationforremotesensingsemanticsegmentationaimstoachievereliable\npredictioninunseendomainswithoutaccessingtarget-domaindataduringtraining.Visionfoundation\nmodels offer transferable knowledge for this task, but its effective use faces two challenges. Category\nrecognitionremainsvulnerabletosource-specificvisualcues.Learningtask-specificdenserepresenta-\ntionsalsorisksexcessivesource-domainspecialization,potentiallyweakeningpretrainedtransferabil-\nity.Tosolvetheseproblems,weproposeASCoR,anasymmetricsemantic\u2013spatiallearningframework\nbuilt on SAM3. We exploit SAM3's concept-aware segmentation priors to provide explicit category\nguidance beyond source-domain visual observations. Specifically, the text-conditioned semantic\nbranch associates dense predictions with class-name prompts. Its Probe-Once Dynamic Adaptive\nLoRA allocates a constrained adaptation budget across ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5f87d98ae6ced5321ba9212c75426d25264e53cbc138e6faf7ac6dcd3ceae970",
+            "evidence_id": "E0365ee6dd13c7f14-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "Source-onlydomaingeneralizationforremotesensingsemanticsegmentationaimstoachievereliable\npredictioninunseendomainswithoutaccessingtarget-domaindataduringtraining.Visionfoundation\nmodels offer transferable knowledge for this task, but its effective use faces two challenges. Category\nrecognitionremainsvulnerabletosource-specificvisualcues.Learningtask-specificdenserepresenta-\ntionsalsorisksexcessivesource-domainspecialization,potentiallyweakeningpretrainedtransferabil-\nity.Tosolvetheseproblems,weproposeASCoR,anasymmetricsemantic\u2013spatiallearningframework\nbuilt on SAM3. We exploit SAM3's concept-aware segmentation priors to provide explicit category\nguidance beyond source-domain visual observations. Specifically, the text-conditioned semantic\nbranch associates dense predictions with class-name prompts. Its Probe-Once Dynamic Adaptive\nLoRA allocates a constrained adaptation budget across "
+              }
+            ],
+            "text": "Source-onlydomaingeneralizationforremotesensingsemanticsegmentationaimstoachievereliable\npredictioninunseendomainswithoutaccessingtarget-domaindataduringtraining.Visionfoundation\nmodels offer transferable knowledge for this task, but its effective use faces two challenges. Category\nrecognitionremainsvulnerabletosource-specificvisualcues.Learningtask-specificdenserepresenta-\ntionsalsorisksexcessivesource-domainspecialization,potentiallyweakeningpretrainedtransferabil-\nity.Tosolvetheseproblems,weproposeASCoR,anasymmetricsemantic\u2013spatiallearningframework\nbuilt on SAM3. We exploit SAM3's concept-aware segmentation priors to provide explicit category\nguidance beyond source-domain visual observations. Specifically, the text-conditioned semantic\nbranch associates dense predictions with class-name prompts. Its Probe-Once Dynamic Adaptive\nLoRA allocates a constrained adaptation budget across "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0004"
+        ],
+        "excerpt": "encoder blocks to control source-specific\nspecialization.Acomplementarytask-specificdensebranchlearnsmulti-scalespatialrepresentations\nupon a separate frozen SAM3 image encoder. The two branches are integrated through a lightweight\nreliability router that applies bounded spatial correction according to local prediction reliability. The\nentire framework requires only source-domain supervision. Extensive experiments on the ISPRS,\nLoveDA, and OpenEarthMap benchmark datasets demonstrate the effectiveness of ASCoR across\ndiverse domain shifts. On six ISPRS transfers, ASCoR achieves a state-of-the-art average mIoU of\n68.61%, surpassing the previous best method by 2.69 percentage points. It further achieves the best\nperformance on all three LoveDA/OpenEarthMap transfers, reaching 59.07%, 47.95%, and 49.38%\nmIoU on Rural-to-Urban, Urban-to-Rural, and Urban-to-OpenEarthMap, respectively. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "32a40d150b33cca01e353d4faf1c371346a8a7725bdad8589f86d03afe621311",
+            "evidence_id": "E0365ee6dd13c7f14-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1788,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 896,
+                "text": "encoder blocks to control source-specific\nspecialization.Acomplementarytask-specificdensebranchlearnsmulti-scalespatialrepresentations\nupon a separate frozen SAM3 image encoder. The two branches are integrated through a lightweight\nreliability router that applies bounded spatial correction according to local prediction reliability. The\nentire framework requires only source-domain supervision. Extensive experiments on the ISPRS,\nLoveDA, and OpenEarthMap benchmark datasets demonstrate the effectiveness of ASCoR across\ndiverse domain shifts. On six ISPRS transfers, ASCoR achieves a state-of-the-art average mIoU of\n68.61%, surpassing the previous best method by 2.69 percentage points. It further achieves the best\nperformance on all three LoveDA/OpenEarthMap transfers, reaching 59.07%, 47.95%, and 49.38%\nmIoU on Rural-to-Urban, Urban-to-Rural, and Urban-to-OpenEarthMap, respectively. "
+              }
+            ],
+            "text": "encoder blocks to control source-specific\nspecialization.Acomplementarytask-specificdensebranchlearnsmulti-scalespatialrepresentations\nupon a separate frozen SAM3 image encoder. The two branches are integrated through a lightweight\nreliability router that applies bounded spatial correction according to local prediction reliability. The\nentire framework requires only source-domain supervision. Extensive experiments on the ISPRS,\nLoveDA, and OpenEarthMap benchmark datasets demonstrate the effectiveness of ASCoR across\ndiverse domain shifts. On six ISPRS transfers, ASCoR achieves a state-of-the-art average mIoU of\n68.61%, surpassing the previous best method by 2.69 percentage points. It further achieves the best\nperformance on all three LoveDA/OpenEarthMap transfers, reaching 59.07%, 47.95%, and 49.38%\nmIoU on Rural-to-Urban, Urban-to-Rural, and Urban-to-OpenEarthMap, respectively. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0010"
+        ],
+        "excerpt": "propose ASCoR, an asym-\nmetricsemantic\u2013spatiallearningframeworkbuiltonSAM3.\nFigure 1(b) contrasts our framework with the representative\nvisual-driven DG paradigm. To strengthen category dis-\ncrimination beyond source-domain visual cues, we exploit\nSAM3'sconcept-awaresegmentationcapabilitytoconstruct\na text-conditioned semantic branch (TCSB). By associating\ndense predictions with class-name prompts, TCSB intro-\nduces an explicit semantic reference for recognizing land-\ncover categories across variations in visual appearance.\nTo further exploit task-specific spatial information, we\ndevelopacomplementarytask-specificdensebranch(TSDB)\nupon a separate SAM3 encoder whose pretrained weights\nremain frozen. Multi-scale dense decoding extracts spa-\ntially detailed representations from hierarchical features,\nsupported by bounded structure injection that incorporates\nboundary and geometric cues. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d1a50ada6e0d2469703a4336ec26afe968266bb5c73897395b14a27e15c48d17",
+            "evidence_id": "E0365ee6dd13c7f14-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 2,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 4,
+                "start": 894,
+                "text": "propose ASCoR, an asym-\nmetricsemantic\u2013spatiallearningframeworkbuiltonSAM3.\nFigure 1(b) contrasts our framework with the representative\nvisual-driven DG paradigm. To strengthen category dis-\ncrimination beyond source-domain visual cues, we exploit\nSAM3'sconcept-awaresegmentationcapabilitytoconstruct\na text-conditioned semantic branch (TCSB). By associating\ndense predictions with class-name prompts, TCSB intro-\nduces an explicit semantic reference for recognizing land-\ncover categories across variations in visual appearance.\nTo further exploit task-specific spatial information, we\ndevelopacomplementarytask-specificdensebranch(TSDB)\nupon a separate SAM3 encoder whose pretrained weights\nremain frozen. Multi-scale dense decoding extracts spa-\ntially detailed representations from hierarchical features,\nsupported by bounded structure injection that incorporates\nboundary and geometric cues. "
+              }
+            ],
+            "text": "propose ASCoR, an asym-\nmetricsemantic\u2013spatiallearningframeworkbuiltonSAM3.\nFigure 1(b) contrasts our framework with the representative\nvisual-driven DG paradigm. To strengthen category dis-\ncrimination beyond source-domain visual cues, we exploit\nSAM3'sconcept-awaresegmentationcapabilitytoconstruct\na text-conditioned semantic branch (TCSB). By associating\ndense predictions with class-name prompts, TCSB intro-\nduces an explicit semantic reference for recognizing land-\ncover categories across variations in visual appearance.\nTo further exploit task-specific spatial information, we\ndevelopacomplementarytask-specificdensebranch(TSDB)\nupon a separate SAM3 encoder whose pretrained weights\nremain frozen. Multi-scale dense decoding extracts spa-\ntially detailed representations from hierarchical features,\nsupported by bounded structure injection that incorporates\nboundary and geometric cues. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0011"
+        ],
+        "excerpt": "Complementary supervision\nfromTCSBdirectsthislearningtowardregionswhereitsse-\nmanticpredictionsarelessreliable.Alightweightreliability\nrouterthenestimatesthelocalutilityofthedensepredictions\nZ. Wang et al.:Preprint submitted to ElsevierPage 2 of 15\nASCoR: Semantic-Spatial Domain Generalization\nandappliesboundedspatialcorrection.Together,thesecom-\nponents enable task-specific spatial evidence to supplement\ncategory-level semantic guidance.\nWe further introduce Probe-Once Dynamic Adaptive\nLoRA to controladaptation capacity within TCSB. By allo-\ncating a constrained low-rank budget across encoder blocks\naccording to their source-task adaptation responses, this\nstrategy supports task-specific learning with limited modi-\nfication of pretrained representations. The complete frame-\nwork is optimized exclusively with source-domain ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4528ad4136fe1730e8262be556c556a9f6efc4e5b82d98a480053193a1649485",
+            "evidence_id": "E0365ee6dd13c7f14-B0011",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2039,
+                "page": 2,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 4,
+                "start": 1791,
+                "text": "Complementary supervision\nfromTCSBdirectsthislearningtowardregionswhereitsse-\nmanticpredictionsarelessreliable.Alightweightreliability\nrouterthenestimatesthelocalutilityofthedensepredictions\nZ. Wang et al.:Preprint submitted to ElsevierPage 2 of 15"
+              },
+              {
+                "end": 586,
+                "page": 3,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 5,
+                "start": 0,
+                "text": "ASCoR: Semantic-Spatial Domain Generalization\nandappliesboundedspatialcorrection.Together,thesecom-\nponents enable task-specific spatial evidence to supplement\ncategory-level semantic guidance.\nWe further introduce Probe-Once Dynamic Adaptive\nLoRA to controladaptation capacity within TCSB. By allo-\ncating a constrained low-rank budget across encoder blocks\naccording to their source-task adaptation responses, this\nstrategy supports task-specific learning with limited modi-\nfication of pretrained representations. The complete frame-\nwork is optimized exclusively with source-domain "
+              }
+            ],
+            "text": "Complementary supervision\nfromTCSBdirectsthislearningtowardregionswhereitsse-\nmanticpredictionsarelessreliable.Alightweightreliability\nrouterthenestimatesthelocalutilityofthedensepredictions\nZ. Wang et al.:Preprint submitted to ElsevierPage 2 of 15\nASCoR: Semantic-Spatial Domain Generalization\nandappliesboundedspatialcorrection.Together,thesecom-\nponents enable task-specific spatial evidence to supplement\ncategory-level semantic guidance.\nWe further introduce Probe-Once Dynamic Adaptive\nLoRA to controladaptation capacity within TCSB. By allo-\ncating a constrained low-rank budget across encoder blocks\naccording to their source-task adaptation responses, this\nstrategy supports task-specific learning with limited modi-\nfication of pretrained representations. The complete frame-\nwork is optimized exclusively with source-domain "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0012"
+        ],
+        "excerpt": "supervi-\nsion.\nExtensiveexperimentsontheISPRS,LoveDA,andOpe-\nnEarthMap benchmark datasets demonstrate the effective-\nness of ASCoR across nine transfers. ASCoR achieves a\nstate-of-the-artaveragemIoUof68.61%onsixISPRStrans-\nfers,exceedingthepreviousbestmethodby2.69percentage\npoints. It also achieves the best performance on all three\nLoveDA/OpenEarthMap transfers. Systematic ablations es-\ntablish the contributions of the proposed components, sup-\nportedbyfeaturevisualizationsandspatialreliabilityanaly-\nses that provide insight into their complementary behavior.\nThe main contributions of this work are summarized as\nfollows:\n\u2022Tothebestofourknowledge,wearethefirsttointro-\nduce SAM3-based text-conditioned semantic model-\ningintosource-onlydomaingeneralizationforremote\nsensingsemanticsegmentation,providingexplicitcat-\negory guidance beyond source-domain visual obser-\nvations.\n\u2022We develop an ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d7e155baff883b48cab17507bc135ef055467f645973e0787f4e51d2cbc636a5",
+            "evidence_id": "E0365ee6dd13c7f14-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1483,
+                "page": 3,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 5,
+                "start": 586,
+                "text": "supervi-\nsion.\nExtensiveexperimentsontheISPRS,LoveDA,andOpe-\nnEarthMap benchmark datasets demonstrate the effective-\nness of ASCoR across nine transfers. ASCoR achieves a\nstate-of-the-artaveragemIoUof68.61%onsixISPRStrans-\nfers,exceedingthepreviousbestmethodby2.69percentage\npoints. It also achieves the best performance on all three\nLoveDA/OpenEarthMap transfers. Systematic ablations es-\ntablish the contributions of the proposed components, sup-\nportedbyfeaturevisualizationsandspatialreliabilityanaly-\nses that provide insight into their complementary behavior.\nThe main contributions of this work are summarized as\nfollows:\n\u2022Tothebestofourknowledge,wearethefirsttointro-\nduce SAM3-based text-conditioned semantic model-\ningintosource-onlydomaingeneralizationforremote\nsensingsemanticsegmentation,providingexplicitcat-\negory guidance beyond source-domain visual obser-\nvations.\n\u2022We develop an "
+              }
+            ],
+            "text": "supervi-\nsion.\nExtensiveexperimentsontheISPRS,LoveDA,andOpe-\nnEarthMap benchmark datasets demonstrate the effective-\nness of ASCoR across nine transfers. ASCoR achieves a\nstate-of-the-artaveragemIoUof68.61%onsixISPRStrans-\nfers,exceedingthepreviousbestmethodby2.69percentage\npoints. It also achieves the best performance on all three\nLoveDA/OpenEarthMap transfers. Systematic ablations es-\ntablish the contributions of the proposed components, sup-\nportedbyfeaturevisualizationsandspatialreliabilityanaly-\nses that provide insight into their complementary behavior.\nThe main contributions of this work are summarized as\nfollows:\n\u2022Tothebestofourknowledge,wearethefirsttointro-\nduce SAM3-based text-conditioned semantic model-\ningintosource-onlydomaingeneralizationforremote\nsensingsemanticsegmentation,providingexplicitcat-\negory guidance beyond source-domain visual obser-\nvations.\n\u2022We develop an "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0032"
+        ],
+        "excerpt": "ASCoR: Semantic-Spatial Domain Generalization\nlearned updates provides a source-task response score. For\nblock\ud835\udc59containing\ud835\udc40 \ud835\udc59 adaptedtransformations,thescoreis\n\ud835\udc60\ud835\udc59= 1\ud835\udc40\ud835\udc59\n\ud835\udc40\ud835\udc59\u2211\n\ud835\udc5a=1\n\u2016\u2016\u2016\ud835\udc01(\ud835\udc5d)\ud835\udc59,\ud835\udc5a\ud835\udc00(\ud835\udc5d)\ud835\udc59,\ud835\udc5a\u2016\u2016\u20162\ud835\udc39.(2)\nA fixed total budget\ud835\udc35is distributed across the\ud835\udc3fcandidate\nblocks:\n\u0303 \ud835\udc5f\ud835\udc59=\ud835\udc5f min+(\ud835\udc35\u2212\ud835\udc3f\ud835\udc5f min) \ud835\udc60\ud835\udc59\u2211\n\ud835\udc57\u2208\ue238\ud835\udc60\ud835\udc57\n,\n\ud835\udc2b\u2217=\u03a0 \ue22f(\u0303\ud835\udc2b).\n(3)\nHere,\ue238is the candidate-block set. The projection\u03a0\ue22f pro-\nduces integer ranks whose sum equals\ud835\udc35, with each rank\nbounded by\ud835\udc5fmin and\ud835\udc5f max. Stronger probe responses there-\nfore receive more adaptation capacity without increasing\nthe total rank budget. Adaptive-rank PEFT methods have\nexplored importance-based allocation and multi-rank learn-\ning (Zhang et al., 2023; Valipour et al., 2023). ASCoR\nperforms allocation once after probing, separating capacity\nestimation from final task learning and keeping the active\nrank structure fixed thereafter.\nChanging the rank map also requires ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f16f4080b161733d5a1e8a9361c0aa098eec652a73f6a9f02cd1e668e39666e1",
+            "evidence_id": "E0365ee6dd13c7f14-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 14,
+                "start": 0,
+                "text": "ASCoR: Semantic-Spatial Domain Generalization\nlearned updates provides a source-task response score. For\nblock\ud835\udc59containing\ud835\udc40 \ud835\udc59 adaptedtransformations,thescoreis\n\ud835\udc60\ud835\udc59= 1\ud835\udc40\ud835\udc59\n\ud835\udc40\ud835\udc59\u2211\n\ud835\udc5a=1\n\u2016\u2016\u2016\ud835\udc01(\ud835\udc5d)\ud835\udc59,\ud835\udc5a\ud835\udc00(\ud835\udc5d)\ud835\udc59,\ud835\udc5a\u2016\u2016\u20162\ud835\udc39.(2)\nA fixed total budget\ud835\udc35is distributed across the\ud835\udc3fcandidate\nblocks:\n\u0303 \ud835\udc5f\ud835\udc59=\ud835\udc5f min+(\ud835\udc35\u2212\ud835\udc3f\ud835\udc5f min) \ud835\udc60\ud835\udc59\u2211\n\ud835\udc57\u2208\ue238\ud835\udc60\ud835\udc57\n,\n\ud835\udc2b\u2217=\u03a0 \ue22f(\u0303\ud835\udc2b).\n(3)\nHere,\ue238is the candidate-block set. The projection\u03a0\ue22f pro-\nduces integer ranks whose sum equals\ud835\udc35, with each rank\nbounded by\ud835\udc5fmin and\ud835\udc5f max. Stronger probe responses there-\nfore receive more adaptation capacity without increasing\nthe total rank budget. Adaptive-rank PEFT methods have\nexplored importance-based allocation and multi-rank learn-\ning (Zhang et al., 2023; Valipour et al., 2023). ASCoR\nperforms allocation once after probing, separating capacity\nestimation from final task learning and keeping the active\nrank structure fixed thereafter.\nChanging the rank map also requires "
+              }
+            ],
+            "text": "ASCoR: Semantic-Spatial Domain Generalization\nlearned updates provides a source-task response score. For\nblock\ud835\udc59containing\ud835\udc40 \ud835\udc59 adaptedtransformations,thescoreis\n\ud835\udc60\ud835\udc59= 1\ud835\udc40\ud835\udc59\n\ud835\udc40\ud835\udc59\u2211\n\ud835\udc5a=1\n\u2016\u2016\u2016\ud835\udc01(\ud835\udc5d)\ud835\udc59,\ud835\udc5a\ud835\udc00(\ud835\udc5d)\ud835\udc59,\ud835\udc5a\u2016\u2016\u20162\ud835\udc39.(2)\nA fixed total budget\ud835\udc35is distributed across the\ud835\udc3fcandidate\nblocks:\n\u0303 \ud835\udc5f\ud835\udc59=\ud835\udc5f min+(\ud835\udc35\u2212\ud835\udc3f\ud835\udc5f min) \ud835\udc60\ud835\udc59\u2211\n\ud835\udc57\u2208\ue238\ud835\udc60\ud835\udc57\n,\n\ud835\udc2b\u2217=\u03a0 \ue22f(\u0303\ud835\udc2b).\n(3)\nHere,\ue238is the candidate-block set. The projection\u03a0\ue22f pro-\nduces integer ranks whose sum equals\ud835\udc35, with each rank\nbounded by\ud835\udc5fmin and\ud835\udc5f max. Stronger probe responses there-\nfore receive more adaptation capacity without increasing\nthe total rank budget. Adaptive-rank PEFT methods have\nexplored importance-based allocation and multi-rank learn-\ning (Zhang et al., 2023; Valipour et al., 2023). ASCoR\nperforms allocation once after probing, separating capacity\nestimation from final task learning and keeping the active\nrank structure fixed thereafter.\nChanging the rank map also requires "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0036"
+        ],
+        "excerpt": "frequency\nvariationswithoutchangingpixelcorrespondence,allowing\nthe original annotations to supervise both views. Training\non these views exposes the dense branch to alternative\nappearances of the same labeled structures while retaining\ndirect supervision on the original source images.\nTo encourage complementarity, the frozen TCSB addi-\ntionally directs TSDB learning toward pixels that it handles\nless reliably. The weighting uses TCSB's probability for the\nground-truthcategory,sopixelsreceivinganincorrecthigh-\nconfidencepredictioncanstillobtainstrongcomplementary\nsupervision. For a randomized source image, the weight at\npixel\ud835\udc5dis\n\ud835\udf14\ud835\udc5d=clip [(1\u2212\ud835\udc43 \ud835\udc34\ud835\udc66\ud835\udc5d,\ud835\udc5d)\ud835\udefe,0, \ud835\udf14max],(6)\nwhere\ud835\udc43 \ud835\udc34\ud835\udc66\ud835\udc5d,\ud835\udc5d is TCSB's probability for the ground-truth cat-\negory on that randomized view. Pixels assigned a high\nprobability for the correct category receive less additional\nemphasis. The complementary objective is a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Task-Specific Dense Branch",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9db625be36e2d8571880739902e093dd3d3631c171e2cbc872f5d31342293d1f",
+            "evidence_id": "E0365ee6dd13c7f14-B0036",
+            "pages": [
+              6
+            ],
+            "section": "Task-Specific Dense Branch",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2569,
+                "page": 6,
+                "section": "Task-Specific Dense Branch",
+                "section_index": 15,
+                "start": 1678,
+                "text": "frequency\nvariationswithoutchangingpixelcorrespondence,allowing\nthe original annotations to supervise both views. Training\non these views exposes the dense branch to alternative\nappearances of the same labeled structures while retaining\ndirect supervision on the original source images.\nTo encourage complementarity, the frozen TCSB addi-\ntionally directs TSDB learning toward pixels that it handles\nless reliably. The weighting uses TCSB's probability for the\nground-truthcategory,sopixelsreceivinganincorrecthigh-\nconfidencepredictioncanstillobtainstrongcomplementary\nsupervision. For a randomized source image, the weight at\npixel\ud835\udc5dis\n\ud835\udf14\ud835\udc5d=clip [(1\u2212\ud835\udc43 \ud835\udc34\ud835\udc66\ud835\udc5d,\ud835\udc5d)\ud835\udefe,0, \ud835\udf14max],(6)\nwhere\ud835\udc43 \ud835\udc34\ud835\udc66\ud835\udc5d,\ud835\udc5d is TCSB's probability for the ground-truth cat-\negory on that randomized view. Pixels assigned a high\nprobability for the correct category receive less additional\nemphasis. The complementary objective is a "
+              }
+            ],
+            "text": "frequency\nvariationswithoutchangingpixelcorrespondence,allowing\nthe original annotations to supervise both views. Training\non these views exposes the dense branch to alternative\nappearances of the same labeled structures while retaining\ndirect supervision on the original source images.\nTo encourage complementarity, the frozen TCSB addi-\ntionally directs TSDB learning toward pixels that it handles\nless reliably. The weighting uses TCSB's probability for the\nground-truthcategory,sopixelsreceivinganincorrecthigh-\nconfidencepredictioncanstillobtainstrongcomplementary\nsupervision. For a randomized source image, the weight at\npixel\ud835\udc5dis\n\ud835\udf14\ud835\udc5d=clip [(1\u2212\ud835\udc43 \ud835\udc34\ud835\udc66\ud835\udc5d,\ud835\udc5d)\ud835\udefe,0, \ud835\udf14max],(6)\nwhere\ud835\udc43 \ud835\udc34\ud835\udc66\ud835\udc5d,\ud835\udc5d is TCSB's probability for the ground-truth cat-\negory on that randomized view. Pixels assigned a high\nprobability for the correct category receive less additional\nemphasis. The complementary objective is a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0040"
+        ],
+        "excerpt": "target labels.\nA lightweight spatial network produces a sigmoid gate\nand applies bounded correction to the primary semantic\nprediction:\n\ud835\udc54\ud835\udc5d=\ud835\udf0e (\ue233\ud835\udf13(\ud835\udc11)\ud835\udc5d),\n\ud835\udc0f\ud835\udc39\ud835\udc5d =\ud835\udc0f \ud835\udc34\ud835\udc5d +\ud835\udefd\ud835\udc54 \ud835\udc5d(\ud835\udc0f\ud835\udc35\ud835\udc5d \u2212\ud835\udc0f\ud835\udc34\ud835\udc5d). (9)\nHere,\ud835\udefdsetsthemaximumcontributionofthedensebranch.\nTCSB remains the primary estimate, and TSDB supplies\na spatially varying residual correction. The gate allows the\namountofdenseevidencetovaryacrosstheimageinsteadof\nimposing the same mixing weight everywhere. Its bounded\ncontribution maintains the intended asymmetric roles of the\ntwo branches.\nRouter supervision measures the value of a correction\nusing source labels. Disagreement alone does not estab-\nlish that TSDB should be trusted, since either branch may\nbe incorrect. We therefore supervise the gate according to\nwhether TSDB increases the probability assigned to the\nground-truth category. At valid disagreement pixels, the\nrelative utility target ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reliability-Guided Complementary Fusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "80a991e8517c67728ad262ff3247c6a64104c41dbc91e496f202ebd0322afb23",
+            "evidence_id": "E0365ee6dd13c7f14-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Reliability-Guided Complementary Fusion",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1785,
+                "page": 7,
+                "section": "Reliability-Guided Complementary Fusion",
+                "section_index": 17,
+                "start": 895,
+                "text": "target labels.\nA lightweight spatial network produces a sigmoid gate\nand applies bounded correction to the primary semantic\nprediction:\n\ud835\udc54\ud835\udc5d=\ud835\udf0e (\ue233\ud835\udf13(\ud835\udc11)\ud835\udc5d),\n\ud835\udc0f\ud835\udc39\ud835\udc5d =\ud835\udc0f \ud835\udc34\ud835\udc5d +\ud835\udefd\ud835\udc54 \ud835\udc5d(\ud835\udc0f\ud835\udc35\ud835\udc5d \u2212\ud835\udc0f\ud835\udc34\ud835\udc5d). (9)\nHere,\ud835\udefdsetsthemaximumcontributionofthedensebranch.\nTCSB remains the primary estimate, and TSDB supplies\na spatially varying residual correction. The gate allows the\namountofdenseevidencetovaryacrosstheimageinsteadof\nimposing the same mixing weight everywhere. Its bounded\ncontribution maintains the intended asymmetric roles of the\ntwo branches.\nRouter supervision measures the value of a correction\nusing source labels. Disagreement alone does not estab-\nlish that TSDB should be trusted, since either branch may\nbe incorrect. We therefore supervise the gate according to\nwhether TSDB increases the probability assigned to the\nground-truth category. At valid disagreement pixels, the\nrelative utility target "
+              }
+            ],
+            "text": "target labels.\nA lightweight spatial network produces a sigmoid gate\nand applies bounded correction to the primary semantic\nprediction:\n\ud835\udc54\ud835\udc5d=\ud835\udf0e (\ue233\ud835\udf13(\ud835\udc11)\ud835\udc5d),\n\ud835\udc0f\ud835\udc39\ud835\udc5d =\ud835\udc0f \ud835\udc34\ud835\udc5d +\ud835\udefd\ud835\udc54 \ud835\udc5d(\ud835\udc0f\ud835\udc35\ud835\udc5d \u2212\ud835\udc0f\ud835\udc34\ud835\udc5d). (9)\nHere,\ud835\udefdsetsthemaximumcontributionofthedensebranch.\nTCSB remains the primary estimate, and TSDB supplies\na spatially varying residual correction. The gate allows the\namountofdenseevidencetovaryacrosstheimageinsteadof\nimposing the same mixing weight everywhere. Its bounded\ncontribution maintains the intended asymmetric roles of the\ntwo branches.\nRouter supervision measures the value of a correction\nusing source labels. Disagreement alone does not estab-\nlish that TSDB should be trusted, since either branch may\nbe incorrect. We therefore supervise the gate according to\nwhether TSDB increases the probability assigned to the\nground-truth category. At valid disagreement pixels, the\nrelative utility target "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0042"
+        ],
+        "excerpt": "objective is\n\ue238\ud835\udc45=\ue238 fuse +\ud835\udf06\ud835\udc62(\ud835\udc52)\ue238util+\ud835\udf06cons\ue238cons.(12)\nBothsegmentationbranchesremainfrozenduringthisstage,\nkeeping the predictors fixed while the router learns their\nrelative utility. Fused semantic supervision evaluates the\ncombined prediction, utility learning supplies correction-\nspecific guidance at disagreement pixels, and cross-view\nconsistency encourages stable gate responses under appear-\nance perturbations. Ground-truth category probabilities are\nused only to construct supervision targets; inference relies\nentirely on the branch predictions.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reliability-Guided Complementary Fusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f3bce6d62cbcb445c632e1487f529afdc81b7eeef773a615c7f8c3a76009c93b",
+            "evidence_id": "E0365ee6dd13c7f14-B0042",
+            "pages": [
+              7
+            ],
+            "section": "Reliability-Guided Complementary Fusion",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3233,
+                "page": 7,
+                "section": "Reliability-Guided Complementary Fusion",
+                "section_index": 17,
+                "start": 2680,
+                "text": "objective is\n\ue238\ud835\udc45=\ue238 fuse +\ud835\udf06\ud835\udc62(\ud835\udc52)\ue238util+\ud835\udf06cons\ue238cons.(12)\nBothsegmentationbranchesremainfrozenduringthisstage,\nkeeping the predictors fixed while the router learns their\nrelative utility. Fused semantic supervision evaluates the\ncombined prediction, utility learning supplies correction-\nspecific guidance at disagreement pixels, and cross-view\nconsistency encourages stable gate responses under appear-\nance perturbations. Ground-truth category probabilities are\nused only to construct supervision targets; inference relies\nentirely on the branch predictions."
+              }
+            ],
+            "text": "objective is\n\ue238\ud835\udc45=\ue238 fuse +\ud835\udf06\ud835\udc62(\ud835\udc52)\ue238util+\ud835\udf06cons\ue238cons.(12)\nBothsegmentationbranchesremainfrozenduringthisstage,\nkeeping the predictors fixed while the router learns their\nrelative utility. Fused semantic supervision evaluates the\ncombined prediction, utility learning supplies correction-\nspecific guidance at disagreement pixels, and cross-view\nconsistency encourages stable gate responses under appear-\nance perturbations. Ground-truth category probabilities are\nused only to construct supervision targets; inference relies\nentirely on the branch predictions."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0045"
+        ],
+        "excerpt": "Datasets and transfer settings.We evaluate source-only\ndomain generalization on three remote-sensing semantic\nsegmentation benchmarks. For the ISPRS setting, Potsdam\nIRRG, Potsdam RGB, and Vaihingen IRRG are denoted by\n\ud835\udc43(\ud835\udc56),\ud835\udc43(\ud835\udc5f), and\ud835\udc49, respectively. We consider all six directed\ntransfers among these domains. The resulting evaluation\ncovers an unseen geographic region, an unseen spectral\nconfiguration, and their compound shift. The six-class label\nspacecontainsimpervioussurface,building,lowvegetation,\ntree, car, and clutter/background. For LoveDA (Wang et al.,\nZ. Wang et al.:Preprint submitted to ElsevierPage 7 of 15",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3a5372775b3c7ced0d732b96b70a780e21058a6bb6c3c93aea139f35705b13c4",
+            "evidence_id": "E0365ee6dd13c7f14-B0045",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 623,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 19,
+                "start": 0,
+                "text": "Datasets and transfer settings.We evaluate source-only\ndomain generalization on three remote-sensing semantic\nsegmentation benchmarks. For the ISPRS setting, Potsdam\nIRRG, Potsdam RGB, and Vaihingen IRRG are denoted by\n\ud835\udc43(\ud835\udc56),\ud835\udc43(\ud835\udc5f), and\ud835\udc49, respectively. We consider all six directed\ntransfers among these domains. The resulting evaluation\ncovers an unseen geographic region, an unseen spectral\nconfiguration, and their compound shift. The six-class label\nspacecontainsimpervioussurface,building,lowvegetation,\ntree, car, and clutter/background. For LoveDA (Wang et al.,\nZ. Wang et al.:Preprint submitted to ElsevierPage 7 of 15"
+              }
+            ],
+            "text": "Datasets and transfer settings.We evaluate source-only\ndomain generalization on three remote-sensing semantic\nsegmentation benchmarks. For the ISPRS setting, Potsdam\nIRRG, Potsdam RGB, and Vaihingen IRRG are denoted by\n\ud835\udc43(\ud835\udc56),\ud835\udc43(\ud835\udc5f), and\ud835\udc49, respectively. We consider all six directed\ntransfers among these domains. The resulting evaluation\ncovers an unseen geographic region, an unseen spectral\nconfiguration, and their compound shift. The six-class label\nspacecontainsimpervioussurface,building,lowvegetation,\ntree, car, and clutter/background. For LoveDA (Wang et al.,\nZ. Wang et al.:Preprint submitted to ElsevierPage 7 of 15"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0046"
+        ],
+        "excerpt": "ASCoR: Semantic-Spatial Domain Generalization\nTable 1\nDatasets and protocols for the nine source-only DG transfers.\nDomain shift Source domain Target domain Task Train Eval. Image size Classes\nGeographic Potsdam IRRG Vaihingen IRRG P(i)2V 3456 398512\u00d75126\nGeographic Vaihingen IRRG Potsdam IRRG V2P(i) 344 2016512\u00d75126\nSpectral Potsdam RGB Potsdam IRRG P(r)2P(i) 3456 2016512\u00d75126\nSpectral Potsdam IRRG Potsdam RGB P(i)2P(r) 3456 2016512\u00d75126\nGeographic + spectral Potsdam RGB Vaihingen IRRG P(r)2V 3456 398512\u00d75126\nGeographic + spectral Vaihingen IRRG Potsdam RGB V2P(r) 344 2016512\u00d75126\nScene composition LoveDA Urban LoveDA Rural U2R 1156 9921024\u00d710247\nScene composition LoveDA Rural LoveDA Urban R2U 1366 6771024\u00d710247\nCross-dataset LoveDA Urban OpenEarthMap U2OEM 1156 3841024\u00d710247\nImage size refers to prepared images/crops before resizing to512\u00d7512for network input. Both label protocols ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6a86782bc31304000beb30e8afbce8a1e44d2aef9b43af4fab268354d38f62ac",
+            "evidence_id": "E0365ee6dd13c7f14-B0046",
+            "pages": [
+              8
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 8,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 20,
+                "start": 0,
+                "text": "ASCoR: Semantic-Spatial Domain Generalization\nTable 1\nDatasets and protocols for the nine source-only DG transfers.\nDomain shift Source domain Target domain Task Train Eval. Image size Classes\nGeographic Potsdam IRRG Vaihingen IRRG P(i)2V 3456 398512\u00d75126\nGeographic Vaihingen IRRG Potsdam IRRG V2P(i) 344 2016512\u00d75126\nSpectral Potsdam RGB Potsdam IRRG P(r)2P(i) 3456 2016512\u00d75126\nSpectral Potsdam IRRG Potsdam RGB P(i)2P(r) 3456 2016512\u00d75126\nGeographic + spectral Potsdam RGB Vaihingen IRRG P(r)2V 3456 398512\u00d75126\nGeographic + spectral Vaihingen IRRG Potsdam RGB V2P(r) 344 2016512\u00d75126\nScene composition LoveDA Urban LoveDA Rural U2R 1156 9921024\u00d710247\nScene composition LoveDA Rural LoveDA Urban R2U 1366 6771024\u00d710247\nCross-dataset LoveDA Urban OpenEarthMap U2OEM 1156 3841024\u00d710247\nImage size refers to prepared images/crops before resizing to512\u00d7512for network input. Both label protocols "
+              }
+            ],
+            "text": "ASCoR: Semantic-Spatial Domain Generalization\nTable 1\nDatasets and protocols for the nine source-only DG transfers.\nDomain shift Source domain Target domain Task Train Eval. Image size Classes\nGeographic Potsdam IRRG Vaihingen IRRG P(i)2V 3456 398512\u00d75126\nGeographic Vaihingen IRRG Potsdam IRRG V2P(i) 344 2016512\u00d75126\nSpectral Potsdam RGB Potsdam IRRG P(r)2P(i) 3456 2016512\u00d75126\nSpectral Potsdam IRRG Potsdam RGB P(i)2P(r) 3456 2016512\u00d75126\nGeographic + spectral Potsdam RGB Vaihingen IRRG P(r)2V 3456 398512\u00d75126\nGeographic + spectral Vaihingen IRRG Potsdam RGB V2P(r) 344 2016512\u00d75126\nScene composition LoveDA Urban LoveDA Rural U2R 1156 9921024\u00d710247\nScene composition LoveDA Rural LoveDA Urban R2U 1366 6771024\u00d710247\nCross-dataset LoveDA Urban OpenEarthMap U2OEM 1156 3841024\u00d710247\nImage size refers to prepared images/crops before resizing to512\u00d7512for network input. Both label protocols "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0050"
+        ],
+        "excerpt": "We compare ASCoR with representative segmentation\nmethods across nine transfers on the ISPRS, LoveDA, and\nOpenEarthMap benchmark datasets. Figure 3 summarizes\nthe overall performance, while Tables 2 and 3 report the\nclass-wise results.\n.25\n.50\n.75\n1.00\nP(i)2V\n68.58\nV2P(i)\n59.87\nP(r)2P(i)\n77.24\nP(i)2P(r)\n79.51\nP(r)2V\n65.98\nV2P(r)\n60.49\nR2U\n59.07\nU2R\n47.95\nU2OEM\n49.38\nSAM3 (baseline)\nDeepLabV3+\nDAFormer\nCrossEarth\nEarthAdapter\nASCoR (ours)\nFigure 3:Overall performance comparison across nine source-\nonly DG transfers on ISPRS, LoveDA, and OpenEarthMap.\nEach axis is normalized by the highest mIoU among the\ncompared methods for that task; numerical annotations report\nthe original mIoU (%).\nResults on ISPRS.AsreportedinTable2,ASCoRachieves\nthehighestmIoUinfourofthesixdirectedISPRStransfers,\nwith an average of 68.61%. This exceeds the 65.92% mean\nof EarthAdapter and the 65.68% mean of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With State-Of-The-Art Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f9702660ed233b01ca74a1ff675a74e0c3420e710608b15e8a3ed8af08c96ff4",
+            "evidence_id": "E0365ee6dd13c7f14-B0050",
+            "pages": [
+              8
+            ],
+            "section": "Comparison With State-Of-The-Art Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 8,
+                "section": "Comparison With State-Of-The-Art Methods",
+                "section_index": 22,
+                "start": 0,
+                "text": "We compare ASCoR with representative segmentation\nmethods across nine transfers on the ISPRS, LoveDA, and\nOpenEarthMap benchmark datasets. Figure 3 summarizes\nthe overall performance, while Tables 2 and 3 report the\nclass-wise results.\n.25\n.50\n.75\n1.00\nP(i)2V\n68.58\nV2P(i)\n59.87\nP(r)2P(i)\n77.24\nP(i)2P(r)\n79.51\nP(r)2V\n65.98\nV2P(r)\n60.49\nR2U\n59.07\nU2R\n47.95\nU2OEM\n49.38\nSAM3 (baseline)\nDeepLabV3+\nDAFormer\nCrossEarth\nEarthAdapter\nASCoR (ours)\nFigure 3:Overall performance comparison across nine source-\nonly DG transfers on ISPRS, LoveDA, and OpenEarthMap.\nEach axis is normalized by the highest mIoU among the\ncompared methods for that task; numerical annotations report\nthe original mIoU (%).\nResults on ISPRS.AsreportedinTable2,ASCoRachieves\nthehighestmIoUinfourofthesixdirectedISPRStransfers,\nwith an average of 68.61%. This exceeds the 65.92% mean\nof EarthAdapter and the 65.68% mean of "
+              }
+            ],
+            "text": "We compare ASCoR with representative segmentation\nmethods across nine transfers on the ISPRS, LoveDA, and\nOpenEarthMap benchmark datasets. Figure 3 summarizes\nthe overall performance, while Tables 2 and 3 report the\nclass-wise results.\n.25\n.50\n.75\n1.00\nP(i)2V\n68.58\nV2P(i)\n59.87\nP(r)2P(i)\n77.24\nP(i)2P(r)\n79.51\nP(r)2V\n65.98\nV2P(r)\n60.49\nR2U\n59.07\nU2R\n47.95\nU2OEM\n49.38\nSAM3 (baseline)\nDeepLabV3+\nDAFormer\nCrossEarth\nEarthAdapter\nASCoR (ours)\nFigure 3:Overall performance comparison across nine source-\nonly DG transfers on ISPRS, LoveDA, and OpenEarthMap.\nEach axis is normalized by the highest mIoU among the\ncompared methods for that task; numerical annotations report\nthe original mIoU (%).\nResults on ISPRS.AsreportedinTable2,ASCoRachieves\nthehighestmIoUinfourofthesixdirectedISPRStransfers,\nwith an average of 68.61%. This exceeds the 65.92% mean\nof EarthAdapter and the 65.68% mean of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0052"
+        ],
+        "excerpt": "ASCoR: Semantic-Spatial Domain Generalization\nTable 2\nPer-class IoU and mIoU (%) on six ISPRS transfers. Bold and underlined values indicate the best and second-best results. Surf:\nimpervious surface; Bldg: building; Vegt: low vegetation; Clut: clutter/background. SAM3 denotes the zero-shot baseline.\nMethod Backbone Task Surf Bldg Vegt Tree Car Clut mIoU Task Surf Bldg Vegt Tree Car Clut mIoU\nSAM3 (baseline) SAM3\nP(i)2V\n9.47 83.46 20.32 48.36 60.25 2.12 37.33\nV2P(i)\n17.17 70.15 9.37 35.27 62.51 4.51 33.17\nDeepLabV3+ R101 9.15 60.94 17.60 52.28 7.61 2.54 25.02 29.32 39.45 29.17 24.92 37.42 0.00 26.72\nSegFormer MiT-B5 60.58 74.72 27.68 63.69 33.38 7.56 44.60 66.01 70.94 48.53 13.19 65.98 3.00 44.61\nDAFormer MiT-B5 61.48 75.53 42.87 66.57 34.52 9.99 48.49 62.22 70.86 43.09 13.86 64.31 6.95 43.55\nHRDA MiT-B5 64.14 76.65 42.06 65.11 28.72 13.52 48.37 68.64 77.24 46.33 11.05 64.12 6.48 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a4277794d1721b179989155dc5966afc6eddc8a78b110ce8470ce656c45cab7a",
+            "evidence_id": "E0365ee6dd13c7f14-B0052",
+            "pages": [
+              9
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 9,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 23,
+                "start": 0,
+                "text": "ASCoR: Semantic-Spatial Domain Generalization\nTable 2\nPer-class IoU and mIoU (%) on six ISPRS transfers. Bold and underlined values indicate the best and second-best results. Surf:\nimpervious surface; Bldg: building; Vegt: low vegetation; Clut: clutter/background. SAM3 denotes the zero-shot baseline.\nMethod Backbone Task Surf Bldg Vegt Tree Car Clut mIoU Task Surf Bldg Vegt Tree Car Clut mIoU\nSAM3 (baseline) SAM3\nP(i)2V\n9.47 83.46 20.32 48.36 60.25 2.12 37.33\nV2P(i)\n17.17 70.15 9.37 35.27 62.51 4.51 33.17\nDeepLabV3+ R101 9.15 60.94 17.60 52.28 7.61 2.54 25.02 29.32 39.45 29.17 24.92 37.42 0.00 26.72\nSegFormer MiT-B5 60.58 74.72 27.68 63.69 33.38 7.56 44.60 66.01 70.94 48.53 13.19 65.98 3.00 44.61\nDAFormer MiT-B5 61.48 75.53 42.87 66.57 34.52 9.99 48.49 62.22 70.86 43.09 13.86 64.31 6.95 43.55\nHRDA MiT-B5 64.14 76.65 42.06 65.11 28.72 13.52 48.37 68.64 77.24 46.33 11.05 64.12 6.48 "
+              }
+            ],
+            "text": "ASCoR: Semantic-Spatial Domain Generalization\nTable 2\nPer-class IoU and mIoU (%) on six ISPRS transfers. Bold and underlined values indicate the best and second-best results. Surf:\nimpervious surface; Bldg: building; Vegt: low vegetation; Clut: clutter/background. SAM3 denotes the zero-shot baseline.\nMethod Backbone Task Surf Bldg Vegt Tree Car Clut mIoU Task Surf Bldg Vegt Tree Car Clut mIoU\nSAM3 (baseline) SAM3\nP(i)2V\n9.47 83.46 20.32 48.36 60.25 2.12 37.33\nV2P(i)\n17.17 70.15 9.37 35.27 62.51 4.51 33.17\nDeepLabV3+ R101 9.15 60.94 17.60 52.28 7.61 2.54 25.02 29.32 39.45 29.17 24.92 37.42 0.00 26.72\nSegFormer MiT-B5 60.58 74.72 27.68 63.69 33.38 7.56 44.60 66.01 70.94 48.53 13.19 65.98 3.00 44.61\nDAFormer MiT-B5 61.48 75.53 42.87 66.57 34.52 9.99 48.49 62.22 70.86 43.09 13.86 64.31 6.95 43.55\nHRDA MiT-B5 64.14 76.65 42.06 65.11 28.72 13.52 48.37 68.64 77.24 46.33 11.05 64.12 6.48 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0053"
+        ],
+        "excerpt": "45.64\nCrossEarth ViT-L 83.60 91.7063.80 70.20 59.5036.3067.50 77.1080.80 61.30 38.90 82.90 8.4058.20\nEarthAdapter DINOv2-L 77.28 88.16 59.37 71.7158.01 18.64 62.20 76.21 86.98 63.5645.27 86.332.1660.08\nASCoR (ours)SAM3 80.87 88.57 65.15 74.66 69.1333.10 68.58 72.81 85.04 54.8160.2981.74 4.54 59.87\nSAM3 (baseline) SAM3\nP(r)2P(i)\n17.17 70.15 9.37 35.27 62.51 4.51 33.17\nP(i)2P(r)\n27.22 75.39 31.86 33.39 66.51 4.58 39.83\nDeepLabV3+ R101 73.68 76.42 46.36 71.00 87.87 25.44 63.46 66.95 81.76 52.62 69.82 88.01 18.29 62.91\nSegFormer MiT-B5 82.12 89.98 51.51 72.27 89.69 27.35 68.82 80.22 92.38 56.55 56.28 89.56 19.50 65.75\nDAFormer MiT-B5 82.06 89.03 44.03 71.77 88.05 22.21 66.19 81.95 92.06 67.02 68.85 89.84 32.54 72.04\nHRDA MiT-B5 81.94 84.24 36.89 70.07 89.69 18.97 63.63 80.59 90.97 66.14 70.85 88.58 31.63 71.46\nCrossEarth ViT-L 86.10 91.50 73.8079.70 91.9043.80 77.80 86.30 93.50 73.80 74.00 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "91d625eb4ee47e1314fe37fdd38077bede0d8e0847fe09bfdb97e299429769fb",
+            "evidence_id": "E0365ee6dd13c7f14-B0053",
+            "pages": [
+              9
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 9,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 23,
+                "start": 893,
+                "text": "45.64\nCrossEarth ViT-L 83.60 91.7063.80 70.20 59.5036.3067.50 77.1080.80 61.30 38.90 82.90 8.4058.20\nEarthAdapter DINOv2-L 77.28 88.16 59.37 71.7158.01 18.64 62.20 76.21 86.98 63.5645.27 86.332.1660.08\nASCoR (ours)SAM3 80.87 88.57 65.15 74.66 69.1333.10 68.58 72.81 85.04 54.8160.2981.74 4.54 59.87\nSAM3 (baseline) SAM3\nP(r)2P(i)\n17.17 70.15 9.37 35.27 62.51 4.51 33.17\nP(i)2P(r)\n27.22 75.39 31.86 33.39 66.51 4.58 39.83\nDeepLabV3+ R101 73.68 76.42 46.36 71.00 87.87 25.44 63.46 66.95 81.76 52.62 69.82 88.01 18.29 62.91\nSegFormer MiT-B5 82.12 89.98 51.51 72.27 89.69 27.35 68.82 80.22 92.38 56.55 56.28 89.56 19.50 65.75\nDAFormer MiT-B5 82.06 89.03 44.03 71.77 88.05 22.21 66.19 81.95 92.06 67.02 68.85 89.84 32.54 72.04\nHRDA MiT-B5 81.94 84.24 36.89 70.07 89.69 18.97 63.63 80.59 90.97 66.14 70.85 88.58 31.63 71.46\nCrossEarth ViT-L 86.10 91.50 73.8079.70 91.9043.80 77.80 86.30 93.50 73.80 74.00 "
+              }
+            ],
+            "text": "45.64\nCrossEarth ViT-L 83.60 91.7063.80 70.20 59.5036.3067.50 77.1080.80 61.30 38.90 82.90 8.4058.20\nEarthAdapter DINOv2-L 77.28 88.16 59.37 71.7158.01 18.64 62.20 76.21 86.98 63.5645.27 86.332.1660.08\nASCoR (ours)SAM3 80.87 88.57 65.15 74.66 69.1333.10 68.58 72.81 85.04 54.8160.2981.74 4.54 59.87\nSAM3 (baseline) SAM3\nP(r)2P(i)\n17.17 70.15 9.37 35.27 62.51 4.51 33.17\nP(i)2P(r)\n27.22 75.39 31.86 33.39 66.51 4.58 39.83\nDeepLabV3+ R101 73.68 76.42 46.36 71.00 87.87 25.44 63.46 66.95 81.76 52.62 69.82 88.01 18.29 62.91\nSegFormer MiT-B5 82.12 89.98 51.51 72.27 89.69 27.35 68.82 80.22 92.38 56.55 56.28 89.56 19.50 65.75\nDAFormer MiT-B5 82.06 89.03 44.03 71.77 88.05 22.21 66.19 81.95 92.06 67.02 68.85 89.84 32.54 72.04\nHRDA MiT-B5 81.94 84.24 36.89 70.07 89.69 18.97 63.63 80.59 90.97 66.14 70.85 88.58 31.63 71.46\nCrossEarth ViT-L 86.10 91.50 73.8079.70 91.9043.80 77.80 86.30 93.50 73.80 74.00 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0060"
+        ],
+        "excerpt": "ASCoR: Semantic-Spatial Domain Generalization\nTable 3\nPer-class IoU and mIoU (%) on LoveDA and OpenEarthMap.\nBold and underlined values rank first and second within each\ntransfer. Bkgd: background; Bldg: building; Rd: road; Wtr:\nwater; Barr: barren; Frst: forest; Agri: agriculture.\nMethod Bkgd Bldg Rd Wtr Barr Frst Agri mIoU (%)\nPerformance comparison: LoveDA Rural\u2192LoveDA Urban\nSAM3 (baseline) 17.87 53.01 55.71 58.74 34.85 50.69 43.31 44.88\nDeepLabV3+ R101 34.56 48.35 38.70 56.61 34.02 36.27 45.92 42.06\nSegFormer-B5 34.06 52.63 54.30 71.79 43.53 38.81 52.77 49.70\nDAFormer 35.49 52.74 51.51 73.10 45.03 47.13 53.20 51.17\nHRDA 38.80 51.19 48.06 72.47 46.01 34.60 56.65 49.68\nCrossEarth 39.80 63.30 57.3075.9051.80 55.00 62.50 57.90\nEarthAdapter 42.16 60.19 58.12 75.21 53.0850.09 61.64 57.21\nASCoR (ours) 42.63 65.87 58.3074.70 51.6258.3462.04 59.07\nPerformance comparison: LoveDA Urban\u2192LoveDA ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "02289c8bb5c752df62e99204185c88fcb1f52cce582a3403fadf7cbac0130560",
+            "evidence_id": "E0365ee6dd13c7f14-B0060",
+            "pages": [
+              10
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 10,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 26,
+                "start": 0,
+                "text": "ASCoR: Semantic-Spatial Domain Generalization\nTable 3\nPer-class IoU and mIoU (%) on LoveDA and OpenEarthMap.\nBold and underlined values rank first and second within each\ntransfer. Bkgd: background; Bldg: building; Rd: road; Wtr:\nwater; Barr: barren; Frst: forest; Agri: agriculture.\nMethod Bkgd Bldg Rd Wtr Barr Frst Agri mIoU (%)\nPerformance comparison: LoveDA Rural\u2192LoveDA Urban\nSAM3 (baseline) 17.87 53.01 55.71 58.74 34.85 50.69 43.31 44.88\nDeepLabV3+ R101 34.56 48.35 38.70 56.61 34.02 36.27 45.92 42.06\nSegFormer-B5 34.06 52.63 54.30 71.79 43.53 38.81 52.77 49.70\nDAFormer 35.49 52.74 51.51 73.10 45.03 47.13 53.20 51.17\nHRDA 38.80 51.19 48.06 72.47 46.01 34.60 56.65 49.68\nCrossEarth 39.80 63.30 57.3075.9051.80 55.00 62.50 57.90\nEarthAdapter 42.16 60.19 58.12 75.21 53.0850.09 61.64 57.21\nASCoR (ours) 42.63 65.87 58.3074.70 51.6258.3462.04 59.07\nPerformance comparison: LoveDA Urban\u2192LoveDA "
+              }
+            ],
+            "text": "ASCoR: Semantic-Spatial Domain Generalization\nTable 3\nPer-class IoU and mIoU (%) on LoveDA and OpenEarthMap.\nBold and underlined values rank first and second within each\ntransfer. Bkgd: background; Bldg: building; Rd: road; Wtr:\nwater; Barr: barren; Frst: forest; Agri: agriculture.\nMethod Bkgd Bldg Rd Wtr Barr Frst Agri mIoU (%)\nPerformance comparison: LoveDA Rural\u2192LoveDA Urban\nSAM3 (baseline) 17.87 53.01 55.71 58.74 34.85 50.69 43.31 44.88\nDeepLabV3+ R101 34.56 48.35 38.70 56.61 34.02 36.27 45.92 42.06\nSegFormer-B5 34.06 52.63 54.30 71.79 43.53 38.81 52.77 49.70\nDAFormer 35.49 52.74 51.51 73.10 45.03 47.13 53.20 51.17\nHRDA 38.80 51.19 48.06 72.47 46.01 34.60 56.65 49.68\nCrossEarth 39.80 63.30 57.3075.9051.80 55.00 62.50 57.90\nEarthAdapter 42.16 60.19 58.12 75.21 53.0850.09 61.64 57.21\nASCoR (ours) 42.63 65.87 58.3074.70 51.6258.3462.04 59.07\nPerformance comparison: LoveDA Urban\u2192LoveDA "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0062"
+        ],
+        "excerpt": "25.25 63.04 6.63 45.89 61.51 42.19\nASCoR (ours) 49.51 70.0245.44 70.444.9851.8153.46 49.38\nTable 4\nComponent ablation across three representative transfers.\nValues are mIoU (%).\nTCSB AR TSDB Router U2R P(r)2P(i) P(r)2V Avg.\n\u2013 \u2013 \u2013 \u2013 27.94 33.17 37.33 32.81\n\u2713\u2013 \u2013 \u2013 45.65 76.78 65.10 62.51\n\u2713 \u2713\u2013 \u2013 46.88 76.88 64.69 62.82\n\u2013 \u2013\u2713\u2013 35.01 69.98 51.74 52.24\n\u2713 \u2713 \u2713\u2013 47.45 77.07 65.37 63.30\n\u2713 \u2713 \u2713 \u2713 47.95 77.24 65.98 63.72\nAR: probe-once adaptive rank allocation in TCSB. Without AR,\nTCSB uses uniform rank 64. The all-dash row denotes zero-shot\nSAM3. Dual-branch variants without the router use a fixed TSDB\nweight of 0.1.\nincreases the TCSB score by 1.23 points, with marked\nimprovements for water, barren land, and forest. TSDB pro-\nvidesadditionalevidenceforbackground,buildings,andwa-\nter. The fixed combination reaches 47.45%, and reliability-\nguided fusion increases mIoU to 47.95%. This ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2a42a5430e199abd4029aef143cf0507059a06bdfb347fb5d33c220c9e97ef0f",
+            "evidence_id": "E0365ee6dd13c7f14-B0062",
+            "pages": [
+              10
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2678,
+                "page": 10,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 26,
+                "start": 1795,
+                "text": "25.25 63.04 6.63 45.89 61.51 42.19\nASCoR (ours) 49.51 70.0245.44 70.444.9851.8153.46 49.38\nTable 4\nComponent ablation across three representative transfers.\nValues are mIoU (%).\nTCSB AR TSDB Router U2R P(r)2P(i) P(r)2V Avg.\n\u2013 \u2013 \u2013 \u2013 27.94 33.17 37.33 32.81\n\u2713\u2013 \u2013 \u2013 45.65 76.78 65.10 62.51\n\u2713 \u2713\u2013 \u2013 46.88 76.88 64.69 62.82\n\u2013 \u2013\u2713\u2013 35.01 69.98 51.74 52.24\n\u2713 \u2713 \u2713\u2013 47.45 77.07 65.37 63.30\n\u2713 \u2713 \u2713 \u2713 47.95 77.24 65.98 63.72\nAR: probe-once adaptive rank allocation in TCSB. Without AR,\nTCSB uses uniform rank 64. The all-dash row denotes zero-shot\nSAM3. Dual-branch variants without the router use a fixed TSDB\nweight of 0.1.\nincreases the TCSB score by 1.23 points, with marked\nimprovements for water, barren land, and forest. TSDB pro-\nvidesadditionalevidenceforbackground,buildings,andwa-\nter. The fixed combination reaches 47.45%, and reliability-\nguided fusion increases mIoU to 47.95%. This "
+              }
+            ],
+            "text": "25.25 63.04 6.63 45.89 61.51 42.19\nASCoR (ours) 49.51 70.0245.44 70.444.9851.8153.46 49.38\nTable 4\nComponent ablation across three representative transfers.\nValues are mIoU (%).\nTCSB AR TSDB Router U2R P(r)2P(i) P(r)2V Avg.\n\u2013 \u2013 \u2013 \u2013 27.94 33.17 37.33 32.81\n\u2713\u2013 \u2013 \u2013 45.65 76.78 65.10 62.51\n\u2713 \u2713\u2013 \u2013 46.88 76.88 64.69 62.82\n\u2013 \u2013\u2713\u2013 35.01 69.98 51.74 52.24\n\u2713 \u2713 \u2713\u2013 47.45 77.07 65.37 63.30\n\u2713 \u2713 \u2713 \u2713 47.95 77.24 65.98 63.72\nAR: probe-once adaptive rank allocation in TCSB. Without AR,\nTCSB uses uniform rank 64. The all-dash row denotes zero-shot\nSAM3. Dual-branch variants without the router use a fixed TSDB\nweight of 0.1.\nincreases the TCSB score by 1.23 points, with marked\nimprovements for water, barren land, and forest. TSDB pro-\nvidesadditionalevidenceforbackground,buildings,andwa-\nter. The fixed combination reaches 47.45%, and reliability-\nguided fusion increases mIoU to 47.95%. This "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0065"
+        ],
+        "excerpt": "Table 7 distinguishes physically allocated task-specific\nparameters from the subset that is active under the final\nrank configuration. This distinction is necessary because\nDynamicAdaptiveLoRAretainsmaximum-ranktensorsfor\nflexibleallocationbutactivatesonlytheslicesselectedbythe\nlearned rank map.\nThe complete framework contains 1.721B resident pa-\nrameters, of which 40.302M (2.341%) are task-specific.\nStage-wise optimization keeps the largest number of si-\nmultaneously trainable parameters to 27.715M, equivalent\nto 1.61% of the complete model. Router learning updates\nonly 4,033 parameters, and the final forward computation\nactivates 30.865M task-specific parameters (1.793%). This\ndesign concentrates task learning in a small set of param-\neters while retaining the pretrained representations of both\nbranches. The two SAM3 encoders account for most of the\ntotal model size and inference cost.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Parameter Efficiency",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9736750a2e3202c310cf9d7ca52f34b845cb772d8a217cd6a97decd10e7a2ca9",
+            "evidence_id": "E0365ee6dd13c7f14-B0065",
+            "pages": [
+              10
+            ],
+            "section": "Parameter Efficiency",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 10,
+                "section": "Parameter Efficiency",
+                "section_index": 28,
+                "start": 0,
+                "text": "Table 7 distinguishes physically allocated task-specific\nparameters from the subset that is active under the final\nrank configuration. This distinction is necessary because\nDynamicAdaptiveLoRAretainsmaximum-ranktensorsfor\nflexibleallocationbutactivatesonlytheslicesselectedbythe\nlearned rank map.\nThe complete framework contains 1.721B resident pa-\nrameters, of which 40.302M (2.341%) are task-specific.\nStage-wise optimization keeps the largest number of si-\nmultaneously trainable parameters to 27.715M, equivalent\nto 1.61% of the complete model. Router learning updates\nonly 4,033 parameters, and the final forward computation\nactivates 30.865M task-specific parameters (1.793%). This\ndesign concentrates task learning in a small set of param-\neters while retaining the pretrained representations of both\nbranches. The two SAM3 encoders account for most of the\ntotal model size and inference cost."
+              }
+            ],
+            "text": "Table 7 distinguishes physically allocated task-specific\nparameters from the subset that is active under the final\nrank configuration. This distinction is necessary because\nDynamicAdaptiveLoRAretainsmaximum-ranktensorsfor\nflexibleallocationbutactivatesonlytheslicesselectedbythe\nlearned rank map.\nThe complete framework contains 1.721B resident pa-\nrameters, of which 40.302M (2.341%) are task-specific.\nStage-wise optimization keeps the largest number of si-\nmultaneously trainable parameters to 27.715M, equivalent\nto 1.61% of the complete model. Router learning updates\nonly 4,033 parameters, and the final forward computation\nactivates 30.865M task-specific parameters (1.793%). This\ndesign concentrates task learning in a small set of param-\neters while retaining the pretrained representations of both\nbranches. The two SAM3 encoders account for most of the\ntotal model size and inference cost."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0068"
+        ],
+        "excerpt": "(pp)\n\u2713\u2013 \u2013 47.93 \u2013\n\u2713 \u2713\u2013 47.94 +0.01\n\u2713 \u2713 \u2713 47.95+0.02\nTable 7\nParameter analysis. \"Trainable\" counts physically allocated\ntask-specific parameters, following the conventional PEFT\nreporting protocol. \"Active\" counts parameters participating in\nthe final forward computation.\nModel/component Total Trainable Ratio Active\n(M) (M) (%) (M)\nTCSB 853.09 12.583 1.475 3.146\nTSDB 868.22 27.715 3.192 27.715\nComplete framework1721.32 40.302 2.341 30.865\nTable 8\nInference latency of fixed and learned dual-branch fusion. The\nreported time includes both branches and the corresponding\nfusion operation.\nFusion strategy\ud835\udc43(\ud835\udc5f)\u2192\ud835\udc43(\ud835\udc56)\ud835\udc43(\ud835\udc5f)\u2192\ud835\udc49Average Overhead\nFixed\ud835\udc64 \ud835\udc35 =0.1525.51 522.33 523.92 \u2013\nReliability-guided 527.02 523.83 525.42 +0.29%\nto 0.29% overhead relative to fixed fusion. Most inference\ntime is spent computing the two SAM3 branch predictions,\nwhile reliability-guided correction requires little ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ascor: Semantic-Spatial Domain Generalization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b0f9741eb3d2d73b103cfe0a060cf5a35c87329be7993177ea2bf5c5f317456c",
+            "evidence_id": "E0365ee6dd13c7f14-B0068",
+            "pages": [
+              11
+            ],
+            "section": "Ascor: Semantic-Spatial Domain Generalization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1783,
+                "page": 11,
+                "section": "Ascor: Semantic-Spatial Domain Generalization",
+                "section_index": 30,
+                "start": 894,
+                "text": "(pp)\n\u2713\u2013 \u2013 47.93 \u2013\n\u2713 \u2713\u2013 47.94 +0.01\n\u2713 \u2713 \u2713 47.95+0.02\nTable 7\nParameter analysis. \"Trainable\" counts physically allocated\ntask-specific parameters, following the conventional PEFT\nreporting protocol. \"Active\" counts parameters participating in\nthe final forward computation.\nModel/component Total Trainable Ratio Active\n(M) (M) (%) (M)\nTCSB 853.09 12.583 1.475 3.146\nTSDB 868.22 27.715 3.192 27.715\nComplete framework1721.32 40.302 2.341 30.865\nTable 8\nInference latency of fixed and learned dual-branch fusion. The\nreported time includes both branches and the corresponding\nfusion operation.\nFusion strategy\ud835\udc43(\ud835\udc5f)\u2192\ud835\udc43(\ud835\udc56)\ud835\udc43(\ud835\udc5f)\u2192\ud835\udc49Average Overhead\nFixed\ud835\udc64 \ud835\udc35 =0.1525.51 522.33 523.92 \u2013\nReliability-guided 527.02 523.83 525.42 +0.29%\nto 0.29% overhead relative to fixed fusion. Most inference\ntime is spent computing the two SAM3 branch predictions,\nwhile reliability-guided correction requires little "
+              }
+            ],
+            "text": "(pp)\n\u2713\u2013 \u2013 47.93 \u2013\n\u2713 \u2713\u2013 47.94 +0.01\n\u2713 \u2713 \u2713 47.95+0.02\nTable 7\nParameter analysis. \"Trainable\" counts physically allocated\ntask-specific parameters, following the conventional PEFT\nreporting protocol. \"Active\" counts parameters participating in\nthe final forward computation.\nModel/component Total Trainable Ratio Active\n(M) (M) (%) (M)\nTCSB 853.09 12.583 1.475 3.146\nTSDB 868.22 27.715 3.192 27.715\nComplete framework1721.32 40.302 2.341 30.865\nTable 8\nInference latency of fixed and learned dual-branch fusion. The\nreported time includes both branches and the corresponding\nfusion operation.\nFusion strategy\ud835\udc43(\ud835\udc5f)\u2192\ud835\udc43(\ud835\udc56)\ud835\udc43(\ud835\udc5f)\u2192\ud835\udc49Average Overhead\nFixed\ud835\udc64 \ud835\udc35 =0.1525.51 522.33 523.92 \u2013\nReliability-guided 527.02 523.83 525.42 +0.29%\nto 0.29% overhead relative to fixed fusion. Most inference\ntime is spent computing the two SAM3 branch predictions,\nwhile reliability-guided correction requires little "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.03382",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2611.03382",
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline results are measured on held-out target domains using objective pixel-level annotations, not the source-domain losses used for training.",
+          "final_evaluation_signal": "Target-domain ground-truth masks scored by class-wise IoU and mIoU on unseen transfers.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Source-domain pixel-wise cross-entropy, complementary error-weighted loss, and router utility/consistency supervision.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0003",
+          "E0365ee6dd13c7f14-B0004",
+          "E0365ee6dd13c7f14-B0010",
+          "E0365ee6dd13c7f14-B0011",
+          "E0365ee6dd13c7f14-B0032",
+          "E0365ee6dd13c7f14-B0036",
+          "E0365ee6dd13c7f14-B0040",
+          "E0365ee6dd13c7f14-B0042",
+          "E0365ee6dd13c7f14-B0045",
+          "E0365ee6dd13c7f14-B0046",
+          "E0365ee6dd13c7f14-B0050",
+          "E0365ee6dd13c7f14-B0052",
+          "E0365ee6dd13c7f14-B0053",
+          "E0365ee6dd13c7f14-B0060",
+          "E0365ee6dd13c7f14-B0062",
+          "E0365ee6dd13c7f14-B0065",
+          "E0365ee6dd13c7f14-B0068"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "b94d0796f7bab716665f8631dde1cb73876846df4829f11e49fc3068d3bb8f38"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.03382",
+        "claim_evidence_alignment": "Reported performance metrics directly support the claims: ASCoR achieves top average mIoU on ISPRS transfers (68.61%) and leads across all three LoveDA/OpenEarthMap shifts, with parameter counts and latency numbers showing PEFT efficiency (updating under 1.61% resident parameters during any stage).",
+        "context_id": "0365ee6dd13c7f143ad8a5874babb41d169cf30e35d616e6910af2a0eeaeb60e",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation covers nine directed domain shifts across ISPRS (Potsdam and Vaihingen), LoveDA (Urban and Rural), and OpenEarthMap benchmarks, comparing against established CNN/Transformer segmenters, UDA methods, and foundation-model adaptation baselines using standard class-wise IoU and mIoU. Ablations cleanly isolate the contributions of adaptive rank allocation, dense branch guidance, and router optimization objectives.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The model is evaluated strictly on unseen target domains (ISPRS cross-city/spectral transfers, LoveDA Rural/Urban, and OpenEarthMap) against objective ground-truth pixel annotations.",
+          "final_evaluation_signal": "Target-domain ground-truth semantic segmentation masks evaluated using standard class-wise IoU and mean Intersection over Union (mIoU).",
+          "independent_corroboration": "present",
+          "optimization_signal": "Source-domain pixel-level cross-entropy loss alongside residual complementary error weighting and gate utility/consistency supervision.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E0365ee6dd13c7f14-B0003",
+          "E0365ee6dd13c7f14-B0004",
+          "E0365ee6dd13c7f14-B0010",
+          "E0365ee6dd13c7f14-B0011",
+          "E0365ee6dd13c7f14-B0012",
+          "E0365ee6dd13c7f14-B0032",
+          "E0365ee6dd13c7f14-B0036",
+          "E0365ee6dd13c7f14-B0040",
+          "E0365ee6dd13c7f14-B0042",
+          "E0365ee6dd13c7f14-B0045",
+          "E0365ee6dd13c7f14-B0046",
+          "E0365ee6dd13c7f14-B0050",
+          "E0365ee6dd13c7f14-B0052",
+          "E0365ee6dd13c7f14-B0053",
+          "E0365ee6dd13c7f14-B0060",
+          "E0365ee6dd13c7f14-B0062",
+          "E0365ee6dd13c7f14-B0065",
+          "E0365ee6dd13c7f14-B0068"
+        ],
+        "limitations": "The work relies on large foundation models (two frozen SAM3 encoders resulting in 1.72B total resident parameters), requiring significant compute resources for inference, and assumes access to pre-defined category text prompts.",
+        "method_assessment": "The methodology is thoroughly detailed, describing a three-stage sequential training procedure where TCSB adapts with Probe-Once Dynamic Adaptive LoRA, TSDB trains with complementary error-weighted loss on original and randomized views, and the reliability router learns bounded gate weights using source-domain utility and consistency objectives without modifying pretrained backbone weights.",
+        "quality_rationale": "The manuscript provides a well-motivated architectural design addressing known domain shift challenges in remote sensing dense prediction. The experimental design is rigorous, evaluating multiple shift modalities (geographic, spectral, and cross-dataset) with comprehensive baselines, detailed ablation studies, and efficiency profiles.",
+        "scoped_contribution": "The paper introduces ASCoR, an asymmetric dual-branch SAM3-based architecture for source-only domain generalization in remote sensing semantic segmentation, combining a text-conditioned semantic branch with adaptive low-rank allocation, a task-specific dense branch with complementary spatial supervision, and a lightweight reliability router for bounded spatial fusion.",
+        "source_content_hash": "b94d0796f7bab716665f8631dde1cb73876846df4829f11e49fc3068d3bb8f38"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript provides a well-motivated architectural design addressing known domain shift challenges in remote sensing dense prediction. The experimental design is rigorous, evaluating multiple shift modalities (geographic, spectral, and cross-dataset) with comprehensive baselines, detailed ablation studies, and efficiency profiles.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "b94d0796f7bab716665f8631dde1cb73876846df4829f11e49fc3068d3bb8f38",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The work relies on large foundation models (two frozen SAM3 encoders resulting in 1.72B total resident parameters), requiring significant compute resources for inference, and assumes access to pre-defined category text prompts."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -160,7 +1842,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

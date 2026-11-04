@@ -29,7 +29,7 @@
   "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-21 15:58:19",
   "notified_date": "2026-09-21",
@@ -40,7 +40,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:54:52",
-    "generated_at": "2026-11-03 11:40:52",
+    "generated_at": "2026-11-04 11:56:11",
     "last_seen_at": "2026-09-21 15:54:52",
     "metadata_sources": [
       "openalex",
@@ -111,36 +111,1286 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-04T11:54:07.481878+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The work provides clear, scoped empirical advances with transparent ablation studies, consistent hardware benchmarking, and well-supported claims on a standard computer vision benchmark.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 31540,
+      "assessment_input_sha256": "495c4c8e9feba0f48c2d7f9a98772a0d967689447fc04ae7283a42315d50bed9",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2107.08430",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 30817,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 30731,
+      "evidence_block_count": 41,
+      "evidence_context_characters": 35600,
+      "evidence_context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+      "evidence_context_sha256": "b85f1f276a1eb015c5b5036a2277f92a7dd3db17f23bcdb97765529a53f6e8b9",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 30829,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "extracted_pages": 7,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "8b3d8689b65887885b5f6f1061ff9c278a59bcdfa2063ca0a0484d00040e8889",
+        "source_url": "https://arxiv.org/pdf/2107.08430",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 30817,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 718,
+          "supplied_characters": 718
+        },
+        {
+          "heading": "Coco Ap (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 545,
+          "supplied_characters": 545
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1266,
+          "supplied_characters": 1266
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1016,
+          "supplied_characters": 1016
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 1603,
+          "supplied_characters": 1603
+        },
+        {
+          "heading": "Yolox-Darknet53",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 3241,
+          "supplied_characters": 3241
+        },
+        {
+          "heading": "Yolox-Darknet53",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 2050,
+          "supplied_characters": 2050
+        },
+        {
+          "heading": "Coco Ap (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 2407,
+          "supplied_characters": 2407
+        },
+        {
+          "heading": "Coco Ap (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 4149,
+          "supplied_characters": 4149
+        },
+        {
+          "heading": "Other Backbones",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 175,
+          "supplied_characters": 175
+        },
+        {
+          "heading": "Other Backbones",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 3314,
+          "supplied_characters": 3314
+        },
+        {
+          "heading": "Comparison With The Sota",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 938,
+          "supplied_characters": 938
+        },
+        {
+          "heading": "Comparison With The Sota",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1933,
+          "supplied_characters": 1933
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "conclusion",
+          "section_index": 13,
+          "source_characters": 982,
+          "supplied_characters": 982
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 935,
+          "supplied_characters": 935
+        },
+        {
+          "heading": "Copy-Paste Is A Strong Data Augmentation Method For Instance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 15,
+          "source_characters": 2240,
+          "supplied_characters": 2240
+        },
+        {
+          "heading": "Former: Hierarchical Vision Transformer Using Shifted Win-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 166,
+          "supplied_characters": 166
+        },
+        {
+          "heading": "Instance-Wise Quality Distribution Sampling For Object Detec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 503,
+          "supplied_characters": 503
+        },
+        {
+          "heading": "Faster R-Cnn: Towards Real-Time Object Detection With Region",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 2550,
+          "supplied_characters": 2550
+        }
+      ],
+      "selected_characters": 30731,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "selected_sections": [
+        {
+          "characters": 718,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 545,
+          "heading": "Coco Ap (%)",
+          "page": 1
+        },
+        {
+          "characters": 1266,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1016,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1603,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 3241,
+          "heading": "Yolox-Darknet53",
+          "page": 2
+        },
+        {
+          "characters": 2050,
+          "heading": "Yolox-Darknet53",
+          "page": 3
+        },
+        {
+          "characters": 2407,
+          "heading": "Coco Ap (%)",
+          "page": 3
+        },
+        {
+          "characters": 4149,
+          "heading": "Coco Ap (%)",
+          "page": 4
+        },
+        {
+          "characters": 175,
+          "heading": "Other Backbones",
+          "page": 4
+        },
+        {
+          "characters": 3314,
+          "heading": "Other Backbones",
+          "page": 5
+        },
+        {
+          "characters": 938,
+          "heading": "Comparison With The Sota",
+          "page": 5
+        },
+        {
+          "characters": 1933,
+          "heading": "Comparison With The Sota",
+          "page": 6
+        },
+        {
+          "characters": 982,
+          "heading": "Conclusion",
+          "page": 6
+        },
+        {
+          "characters": 935,
+          "heading": "Unclassified body after references",
+          "page": 6
+        },
+        {
+          "characters": 2240,
+          "heading": "Copy-Paste Is A Strong Data Augmentation Method For Instance",
+          "page": 7
+        },
+        {
+          "characters": 166,
+          "heading": "Former: Hierarchical Vision Transformer Using Shifted Win-",
+          "page": 7
+        },
+        {
+          "characters": 503,
+          "heading": "Instance-Wise Quality Distribution Sampling For Object Detec-",
+          "page": 7
+        },
+        {
+          "characters": 2550,
+          "heading": "Faster R-Cnn: Towards Real-Time Object Detection With Region",
+          "page": 7
+        }
+      ],
+      "selected_text_sha256": "495c4c8e9feba0f48c2d7f9a98772a0d967689447fc04ae7283a42315d50bed9",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "8b3d8689b65887885b5f6f1061ff9c278a59bcdfa2063ca0a0484d00040e8889",
+      "source_pages": 7,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0003"
+        ],
+        "excerpt": "In this report, we present some experienced improve-\nments to YOLO series, forming a new high-performance\ndetector \u2014 YOLOX. We switch the YOLO detector to an\nanchor-free manner and conduct other advanced detection\ntechniques, i.e., a decoupled head and the leading label\nassignment strategy SimOTA to achieve state-of-the-art re-\nsults across a large scale range of models: F or YOLO-\nNano with only 0.91M parameters and 1.08G FLOPs, we\nget 25.3% AP on COCO, surpassing NanoDet by 1.8% AP;\nfor YOLOv3, one of the most widely used detectors in in-\ndustry, we boost it to 47.3% AP on COCO, outperform-\ning the current best practice by 3.0% AP; for YOLOX-L\nwith roughly the same amount of parameters as YOLOv4-\nCSP , YOLOv5-L, we achieve 50.0% AP on COCO at a\nspeed of 68.9 FPS on Tesla V100, exceeding YOLOv5-L\nby 1.8% AP . Further , we won the 1st Place on Streaming\nPerception Challenge (Workshop on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a92a131565cfef0ca11ac7fce5f80396b816d6fa6e356f5e7465f97d4c726e67",
+            "evidence_id": "Ecf1caee74d5a759a-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "In this report, we present some experienced improve-\nments to YOLO series, forming a new high-performance\ndetector \u2014 YOLOX. We switch the YOLO detector to an\nanchor-free manner and conduct other advanced detection\ntechniques, i.e., a decoupled head and the leading label\nassignment strategy SimOTA to achieve state-of-the-art re-\nsults across a large scale range of models: F or YOLO-\nNano with only 0.91M parameters and 1.08G FLOPs, we\nget 25.3% AP on COCO, surpassing NanoDet by 1.8% AP;\nfor YOLOv3, one of the most widely used detectors in in-\ndustry, we boost it to 47.3% AP on COCO, outperform-\ning the current best practice by 3.0% AP; for YOLOX-L\nwith roughly the same amount of parameters as YOLOv4-\nCSP , YOLOv5-L, we achieve 50.0% AP on COCO at a\nspeed of 68.9 FPS on Tesla V100, exceeding YOLOv5-L\nby 1.8% AP . Further , we won the 1st Place on Streaming\nPerception Challenge (Workshop on "
+              }
+            ],
+            "text": "In this report, we present some experienced improve-\nments to YOLO series, forming a new high-performance\ndetector \u2014 YOLOX. We switch the YOLO detector to an\nanchor-free manner and conduct other advanced detection\ntechniques, i.e., a decoupled head and the leading label\nassignment strategy SimOTA to achieve state-of-the-art re-\nsults across a large scale range of models: F or YOLO-\nNano with only 0.91M parameters and 1.08G FLOPs, we\nget 25.3% AP on COCO, surpassing NanoDet by 1.8% AP;\nfor YOLOv3, one of the most widely used detectors in in-\ndustry, we boost it to 47.3% AP on COCO, outperform-\ning the current best practice by 3.0% AP; for YOLOX-L\nwith roughly the same amount of parameters as YOLOv4-\nCSP , YOLOv5-L, we achieve 50.0% AP on COCO at a\nspeed of 68.9 FPS on Tesla V100, exceeding YOLOv5-L\nby 1.8% AP . Further , we won the 1st Place on Streaming\nPerception Challenge (Workshop on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0008"
+        ],
+        "excerpt": "We choose YOLOv3 [25] with Darknet53 as our base-\nline. In the following part, we will walk through the whole\nsystem designs in YOLOX step by step.\nImplementation details Our training settings are mostly\nconsistent from the baseline to our final model. We train\nthe models for a total of 300 epochs with 5 epochs warm-\nup on COCO train2017 [17]. We use stochastic gradi-\nent descent (SGD) for training. We use a learning rate of\nlr\u00d7BatchSize/64 (linear scaling [8]), with a initial lr =\n0.01 and the cosine lr schedule. The weight decay is 0.0005\nand the SGD momentum is 0.9. The batch size is 128 by\ndefault to typical 8-GPU devices. Other batch sizes in-\nclude single GPU training also work well. The input size\nis evenly drawn from 448 to 832 with 32 strides. FPS and\n2https://github.com/ultralytics/yolov3\n3https://github.com/RangiLyu/nanodet\nModels Coupled Head Decoupled Head\nVanilla YOLO 38.5 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Yolox-Darknet53",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8b48cbeccf6d5609d52591dbaf59aac6649db2ca6f54c3b24db7cc59aeb2822d",
+            "evidence_id": "Ecf1caee74d5a759a-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Yolox-Darknet53",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 2,
+                "section": "Yolox-Darknet53",
+                "section_index": 5,
+                "start": 0,
+                "text": "We choose YOLOv3 [25] with Darknet53 as our base-\nline. In the following part, we will walk through the whole\nsystem designs in YOLOX step by step.\nImplementation details Our training settings are mostly\nconsistent from the baseline to our final model. We train\nthe models for a total of 300 epochs with 5 epochs warm-\nup on COCO train2017 [17]. We use stochastic gradi-\nent descent (SGD) for training. We use a learning rate of\nlr\u00d7BatchSize/64 (linear scaling [8]), with a initial lr =\n0.01 and the cosine lr schedule. The weight decay is 0.0005\nand the SGD momentum is 0.9. The batch size is 128 by\ndefault to typical 8-GPU devices. Other batch sizes in-\nclude single GPU training also work well. The input size\nis evenly drawn from 448 to 832 with 32 strides. FPS and\n2https://github.com/ultralytics/yolov3\n3https://github.com/RangiLyu/nanodet\nModels Coupled Head Decoupled Head\nVanilla YOLO 38.5 "
+              }
+            ],
+            "text": "We choose YOLOv3 [25] with Darknet53 as our base-\nline. In the following part, we will walk through the whole\nsystem designs in YOLOX step by step.\nImplementation details Our training settings are mostly\nconsistent from the baseline to our final model. We train\nthe models for a total of 300 epochs with 5 epochs warm-\nup on COCO train2017 [17]. We use stochastic gradi-\nent descent (SGD) for training. We use a learning rate of\nlr\u00d7BatchSize/64 (linear scaling [8]), with a initial lr =\n0.01 and the cosine lr schedule. The weight decay is 0.0005\nand the SGD momentum is 0.9. The batch size is 128 by\ndefault to typical 8-GPU devices. Other batch sizes in-\nclude single GPU training also work well. The input size\nis evenly drawn from 448 to 832 with 32 strides. FPS and\n2https://github.com/ultralytics/yolov3\n3https://github.com/RangiLyu/nanodet\nModels Coupled Head Decoupled Head\nVanilla YOLO 38.5 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0009"
+        ],
+        "excerpt": "39.6\nEnd-to-end YOLO 34.3 (-4.2) 38.8 (-0.8)\nTable 1: The effect of decoupled head for end-to-end YOLO\nin terms of AP (%) on COCO.\nlatency in this report are all measured with FP16-precision\nand batch=1 on a single Tesla V100.\nYOLOv3 baseline Our baseline adopts the architec-\nture of DarkNet53 backbone and an SPP layer, referred\nto YOLOv3-SPP in some papers [1, 7]. We slightly\nchange some training strategies compared to the orig-\ninal implementation [25], adding EMA weights updat-\ning, cosine lr schedule, IoU loss and IoU-aware branch.\nWe use BCE Loss for training cls and obj branch,\nand IoU Loss for training reg branch. These gen-\neral training tricks are orthogonal to the key improve-\nment of YOLOX, we thus put them on the baseline.\nMoreover, we only conduct RandomHorizontalFlip,\nColorJitter and multi-scale for data augmentation and\ndiscard the RandomResizedCrop strategy, because ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Yolox-Darknet53",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0b98aba28a282ff1f7a041ca008fd485d10cf1a1cb6ea807f3e8c3199ea7bb5b",
+            "evidence_id": "Ecf1caee74d5a759a-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Yolox-Darknet53",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 2,
+                "section": "Yolox-Darknet53",
+                "section_index": 5,
+                "start": 900,
+                "text": "39.6\nEnd-to-end YOLO 34.3 (-4.2) 38.8 (-0.8)\nTable 1: The effect of decoupled head for end-to-end YOLO\nin terms of AP (%) on COCO.\nlatency in this report are all measured with FP16-precision\nand batch=1 on a single Tesla V100.\nYOLOv3 baseline Our baseline adopts the architec-\nture of DarkNet53 backbone and an SPP layer, referred\nto YOLOv3-SPP in some papers [1, 7]. We slightly\nchange some training strategies compared to the orig-\ninal implementation [25], adding EMA weights updat-\ning, cosine lr schedule, IoU loss and IoU-aware branch.\nWe use BCE Loss for training cls and obj branch,\nand IoU Loss for training reg branch. These gen-\neral training tricks are orthogonal to the key improve-\nment of YOLOX, we thus put them on the baseline.\nMoreover, we only conduct RandomHorizontalFlip,\nColorJitter and multi-scale for data augmentation and\ndiscard the RandomResizedCrop strategy, because "
+              }
+            ],
+            "text": "39.6\nEnd-to-end YOLO 34.3 (-4.2) 38.8 (-0.8)\nTable 1: The effect of decoupled head for end-to-end YOLO\nin terms of AP (%) on COCO.\nlatency in this report are all measured with FP16-precision\nand batch=1 on a single Tesla V100.\nYOLOv3 baseline Our baseline adopts the architec-\nture of DarkNet53 backbone and an SPP layer, referred\nto YOLOv3-SPP in some papers [1, 7]. We slightly\nchange some training strategies compared to the orig-\ninal implementation [25], adding EMA weights updat-\ning, cosine lr schedule, IoU loss and IoU-aware branch.\nWe use BCE Loss for training cls and obj branch,\nand IoU Loss for training reg branch. These gen-\neral training tricks are orthogonal to the key improve-\nment of YOLOX, we thus put them on the baseline.\nMoreover, we only conduct RandomHorizontalFlip,\nColorJitter and multi-scale for data augmentation and\ndiscard the RandomResizedCrop strategy, because "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0010"
+        ],
+        "excerpt": "we\nfound the RandomResizedCrop is kind of overlapped\nwith the planned mosaic augmentation. With those en-\nhancements, our baseline achieves 38.5% AP on COCOval,\nas shown in Tab. 2.\nDecoupled head In object detection, the conflict between\nclassification and regression tasks is a well-known prob-\nlem [27, 34]. Thus the decoupled head for classification\nand localization is widely used in the most of one-stage and\ntwo-stage detectors [16, 29, 35, 34]. However, as YOLO\nseries' backbones and feature pyramids ( e.g., FPN [13],\nPAN [20].) continuously evolving, their detection heads re-\nmain coupled as shown in Fig. 2.\nOur two analytical experiments indicate that the coupled\ndetection head may harm the performance. 1). Replacing\nYOLO's head with a decoupled one greatly improves the\nconverging speed as shown in Fig. 3. 2). The decoupled\nhead is essential to the end-to-end version of YOLO ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Yolox-Darknet53",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "63b02ebe3a297cd1e845601b05328f26561944a253821524c8dddb1a8c495dc8",
+            "evidence_id": "Ecf1caee74d5a759a-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Yolox-Darknet53",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2687,
+                "page": 2,
+                "section": "Yolox-Darknet53",
+                "section_index": 5,
+                "start": 1795,
+                "text": "we\nfound the RandomResizedCrop is kind of overlapped\nwith the planned mosaic augmentation. With those en-\nhancements, our baseline achieves 38.5% AP on COCOval,\nas shown in Tab. 2.\nDecoupled head In object detection, the conflict between\nclassification and regression tasks is a well-known prob-\nlem [27, 34]. Thus the decoupled head for classification\nand localization is widely used in the most of one-stage and\ntwo-stage detectors [16, 29, 35, 34]. However, as YOLO\nseries' backbones and feature pyramids ( e.g., FPN [13],\nPAN [20].) continuously evolving, their detection heads re-\nmain coupled as shown in Fig. 2.\nOur two analytical experiments indicate that the coupled\ndetection head may harm the performance. 1). Replacing\nYOLO's head with a decoupled one greatly improves the\nconverging speed as shown in Fig. 3. 2). The decoupled\nhead is essential to the end-to-end version of YOLO "
+              }
+            ],
+            "text": "we\nfound the RandomResizedCrop is kind of overlapped\nwith the planned mosaic augmentation. With those en-\nhancements, our baseline achieves 38.5% AP on COCOval,\nas shown in Tab. 2.\nDecoupled head In object detection, the conflict between\nclassification and regression tasks is a well-known prob-\nlem [27, 34]. Thus the decoupled head for classification\nand localization is widely used in the most of one-stage and\ntwo-stage detectors [16, 29, 35, 34]. However, as YOLO\nseries' backbones and feature pyramids ( e.g., FPN [13],\nPAN [20].) continuously evolving, their detection heads re-\nmain coupled as shown in Fig. 2.\nOur two analytical experiments indicate that the coupled\ndetection head may harm the performance. 1). Replacing\nYOLO's head with a decoupled one greatly improves the\nconverging speed as shown in Fig. 3. 2). The decoupled\nhead is essential to the end-to-end version of YOLO "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0011"
+        ],
+        "excerpt": "(will\nbe described next). One can tell from Tab. 1, the end-to-\nend property decreases by 4.2% AP with the coupled head,\nwhile the decreasing reduces to 0.8% AP for a decoupled\nhead. We thus replace the YOLO detect head with a lite de-\ncoupled head as in Fig. 2. Concretely, it contains a 1 \u00d7 1\nconv layer to reduce the channel dimension, followed by\ntwo parallel branches with two 3 \u00d7 3 conv layers respec-\ntively. We report the inference time with batch=1 on V100\nin Tab. 2 and the lite decoupled head brings additional 1.1\nms (11.6 ms v.s. 10.5 ms).\n2\n!\u00d7#\u00d7\n1024\n512\n256\nFPN\nfeature\n!5\n!4\n!3\n!\u00d7#\u00d7\n#&'(\u210e*+\u00d7-\n+\n#&'(\u210e*+\u00d74\n+\n#&'(\u210e*+\u00d71\nCls.\nReg.\nObj.\n!\u00d7#\u00d7256\n\u00d72\n!\u00d7#\u00d7256\n\u00d72\nCls.!\u00d7#\u00d7C\n!\u00d7#\u00d74\n!\u00d7#\u00d71\nReg.\nIoU.\nYOLOv3~v5 \nCoupledHead\nYOLOX\nDecoupledHead\nFeature\n1\u00d71conv\n3\u00d73conv\n!\u00d7#\u00d7256\nFigure 2: Illustration of the difference between YOLOv3 head and the proposed decoupled head. For each level of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Yolox-Darknet53",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3f6da0e7b58cf9a6e51a872014ea1508e65acd0dd7996dafe92364e55c34c31b",
+            "evidence_id": "Ecf1caee74d5a759a-B0011",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Yolox-Darknet53",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3241,
+                "page": 2,
+                "section": "Yolox-Darknet53",
+                "section_index": 5,
+                "start": 2687,
+                "text": "(will\nbe described next). One can tell from Tab. 1, the end-to-\nend property decreases by 4.2% AP with the coupled head,\nwhile the decreasing reduces to 0.8% AP for a decoupled\nhead. We thus replace the YOLO detect head with a lite de-\ncoupled head as in Fig. 2. Concretely, it contains a 1 \u00d7 1\nconv layer to reduce the channel dimension, followed by\ntwo parallel branches with two 3 \u00d7 3 conv layers respec-\ntively. We report the inference time with batch=1 on V100\nin Tab. 2 and the lite decoupled head brings additional 1.1\nms (11.6 ms v.s. 10.5 ms).\n2"
+              },
+              {
+                "end": 334,
+                "page": 3,
+                "section": "Yolox-Darknet53",
+                "section_index": 6,
+                "start": 0,
+                "text": "!\u00d7#\u00d7\n1024\n512\n256\nFPN\nfeature\n!5\n!4\n!3\n!\u00d7#\u00d7\n#&'(\u210e*+\u00d7-\n+\n#&'(\u210e*+\u00d74\n+\n#&'(\u210e*+\u00d71\nCls.\nReg.\nObj.\n!\u00d7#\u00d7256\n\u00d72\n!\u00d7#\u00d7256\n\u00d72\nCls.!\u00d7#\u00d7C\n!\u00d7#\u00d74\n!\u00d7#\u00d71\nReg.\nIoU.\nYOLOv3~v5 \nCoupledHead\nYOLOX\nDecoupledHead\nFeature\n1\u00d71conv\n3\u00d73conv\n!\u00d7#\u00d7256\nFigure 2: Illustration of the difference between YOLOv3 head and the proposed decoupled head. For each level of "
+              }
+            ],
+            "text": "(will\nbe described next). One can tell from Tab. 1, the end-to-\nend property decreases by 4.2% AP with the coupled head,\nwhile the decreasing reduces to 0.8% AP for a decoupled\nhead. We thus replace the YOLO detect head with a lite de-\ncoupled head as in Fig. 2. Concretely, it contains a 1 \u00d7 1\nconv layer to reduce the channel dimension, followed by\ntwo parallel branches with two 3 \u00d7 3 conv layers respec-\ntively. We report the inference time with batch=1 on V100\nin Tab. 2 and the lite decoupled head brings additional 1.1\nms (11.6 ms v.s. 10.5 ms).\n2\n!\u00d7#\u00d7\n1024\n512\n256\nFPN\nfeature\n!5\n!4\n!3\n!\u00d7#\u00d7\n#&'(\u210e*+\u00d7-\n+\n#&'(\u210e*+\u00d74\n+\n#&'(\u210e*+\u00d71\nCls.\nReg.\nObj.\n!\u00d7#\u00d7256\n\u00d72\n!\u00d7#\u00d7256\n\u00d72\nCls.!\u00d7#\u00d7C\n!\u00d7#\u00d74\n!\u00d7#\u00d71\nReg.\nIoU.\nYOLOv3~v5 \nCoupledHead\nYOLOX\nDecoupledHead\nFeature\n1\u00d71conv\n3\u00d73conv\n!\u00d7#\u00d7256\nFigure 2: Illustration of the difference between YOLOv3 head and the proposed decoupled head. For each level of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0014"
+        ],
+        "excerpt": "COCO AP (%)\nEpochs\nDecoupled head\nYOLO head\nFigure 3: Training curves for detectors with YOLOv3 head\nor decoupled head. We evaluate the AP on COCOval every\n10 epochs. It is obvious that the decoupled head converges\nmuch faster than the YOLOv3 head and achieves better re-\nsult finally.\nStrong data augmentation We add Mosaic and MixUp\ninto our augmentation strategies to boost YOLOX's per-\nformance. Mosaic is an efficient augmentation strategy\nproposed by ultralytics-YOLOv3 2. It is then widely used\nin YOLOv4 [1], YOLOv5 [7] and other detectors [3].\nMixUp [10] is originally designed for image classification\ntask but then modified in BoF [38] for object detection train-\ning. We adopt the MixUp and Mosaic implementation in\nour model and close it for the last 15 epochs, achieving\n42.0% AP in Tab. 2. After using strong data augmentation,\nwe found ImageNet pre-training is no more beneficial, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coco Ap (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f38dcaf24cdc279300c4395f4ea8cef9cb904c55f179ab9d89ff79654421403a",
+            "evidence_id": "Ecf1caee74d5a759a-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Coco Ap (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 3,
+                "section": "Coco Ap (%)",
+                "section_index": 7,
+                "start": 0,
+                "text": "COCO AP (%)\nEpochs\nDecoupled head\nYOLO head\nFigure 3: Training curves for detectors with YOLOv3 head\nor decoupled head. We evaluate the AP on COCOval every\n10 epochs. It is obvious that the decoupled head converges\nmuch faster than the YOLOv3 head and achieves better re-\nsult finally.\nStrong data augmentation We add Mosaic and MixUp\ninto our augmentation strategies to boost YOLOX's per-\nformance. Mosaic is an efficient augmentation strategy\nproposed by ultralytics-YOLOv3 2. It is then widely used\nin YOLOv4 [1], YOLOv5 [7] and other detectors [3].\nMixUp [10] is originally designed for image classification\ntask but then modified in BoF [38] for object detection train-\ning. We adopt the MixUp and Mosaic implementation in\nour model and close it for the last 15 epochs, achieving\n42.0% AP in Tab. 2. After using strong data augmentation,\nwe found ImageNet pre-training is no more beneficial, "
+              }
+            ],
+            "text": "COCO AP (%)\nEpochs\nDecoupled head\nYOLO head\nFigure 3: Training curves for detectors with YOLOv3 head\nor decoupled head. We evaluate the AP on COCOval every\n10 epochs. It is obvious that the decoupled head converges\nmuch faster than the YOLOv3 head and achieves better re-\nsult finally.\nStrong data augmentation We add Mosaic and MixUp\ninto our augmentation strategies to boost YOLOX's per-\nformance. Mosaic is an efficient augmentation strategy\nproposed by ultralytics-YOLOv3 2. It is then widely used\nin YOLOv4 [1], YOLOv5 [7] and other detectors [3].\nMixUp [10] is originally designed for image classification\ntask but then modified in BoF [38] for object detection train-\ning. We adopt the MixUp and Mosaic implementation in\nour model and close it for the last 15 epochs, achieving\n42.0% AP in Tab. 2. After using strong data augmentation,\nwe found ImageNet pre-training is no more beneficial, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0016"
+        ],
+        "excerpt": "anchor-based detectors. Anchor-free mechanism sig-\nnificantly reduces the number of design parameters which\nneed heuristic tuning and many tricks involved ( e.g., An-\nchor Clustering [24], Grid Sensitive [11].) for good per-\nformance, making the detector, especially its training and\ndecoding phase, considerably simpler [29].\nSwitching YOLO to an anchor-free manner is quite sim-\nple. We reduce the predictions for each location from 3 to 1\nand make them directly predict four values, i.e., two offsets\nin terms of the left-top corner of the grid, and the height\nand width of the predicted box. We assign the center lo-\n3\nMethods AP (%) Parameters GFLOPs Latency FPS\nYOLOv3-ultralytics2 44.3 63.00 M 157.3 10.5 ms 95.2\nYOLOv3 baseline 38.5 63.00 M 157.3 10.5 ms 95.2\n+decoupled head 39.6 (+1.1) 63.86 M 186.0 11.6 ms 86.2\n+strong augmentation 42.0 (+2.4) 63.86 M 186.0 11.6 ms 86.2\n+anchor-free 42.9 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coco Ap (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3221fbc9c76b42929c2fd06b5c1e9e59b87f43014bafac15bf6f6ce2d1b50690",
+            "evidence_id": "Ecf1caee74d5a759a-B0016",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Coco Ap (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2407,
+                "page": 3,
+                "section": "Coco Ap (%)",
+                "section_index": 7,
+                "start": 1785,
+                "text": "anchor-based detectors. Anchor-free mechanism sig-\nnificantly reduces the number of design parameters which\nneed heuristic tuning and many tricks involved ( e.g., An-\nchor Clustering [24], Grid Sensitive [11].) for good per-\nformance, making the detector, especially its training and\ndecoding phase, considerably simpler [29].\nSwitching YOLO to an anchor-free manner is quite sim-\nple. We reduce the predictions for each location from 3 to 1\nand make them directly predict four values, i.e., two offsets\nin terms of the left-top corner of the grid, and the height\nand width of the predicted box. We assign the center lo-\n3"
+              },
+              {
+                "end": 278,
+                "page": 4,
+                "section": "Coco Ap (%)",
+                "section_index": 8,
+                "start": 0,
+                "text": "Methods AP (%) Parameters GFLOPs Latency FPS\nYOLOv3-ultralytics2 44.3 63.00 M 157.3 10.5 ms 95.2\nYOLOv3 baseline 38.5 63.00 M 157.3 10.5 ms 95.2\n+decoupled head 39.6 (+1.1) 63.86 M 186.0 11.6 ms 86.2\n+strong augmentation 42.0 (+2.4) 63.86 M 186.0 11.6 ms 86.2\n+anchor-free 42.9 "
+              }
+            ],
+            "text": "anchor-based detectors. Anchor-free mechanism sig-\nnificantly reduces the number of design parameters which\nneed heuristic tuning and many tricks involved ( e.g., An-\nchor Clustering [24], Grid Sensitive [11].) for good per-\nformance, making the detector, especially its training and\ndecoding phase, considerably simpler [29].\nSwitching YOLO to an anchor-free manner is quite sim-\nple. We reduce the predictions for each location from 3 to 1\nand make them directly predict four values, i.e., two offsets\nin terms of the left-top corner of the grid, and the height\nand width of the predicted box. We assign the center lo-\n3\nMethods AP (%) Parameters GFLOPs Latency FPS\nYOLOv3-ultralytics2 44.3 63.00 M 157.3 10.5 ms 95.2\nYOLOv3 baseline 38.5 63.00 M 157.3 10.5 ms 95.2\n+decoupled head 39.6 (+1.1) 63.86 M 186.0 11.6 ms 86.2\n+strong augmentation 42.0 (+2.4) 63.86 M 186.0 11.6 ms 86.2\n+anchor-free 42.9 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0017"
+        ],
+        "excerpt": "(+0.9) 63.72 M 185.3 11.1 ms 90.1\n+multi positives 45.0 (+2.1) 63.72 M 185.3 11.1 ms 90.1\n+SimOTA 47.3 (+2.3) 63.72 M 185.3 11.1 ms 90.1\n+NMS free (optional) 46.5 (-0.8) 67.27 M 205.1 13.5 ms 74.1\nTable 2: Roadmap of YOLOX-Darknet53 in terms of AP (%) on COCOval. All the models are tested at640\u00d7640 resolution,\nwith FP16-precision and batch=1 on a Tesla V100. The latency and FPS in this table are measured without post-processing.\ncation of each object as the positive sample and pre-define\na scale range, as done in [29], to designate the FPN level\nfor each object. Such modification reduces the parameters\nand GFLOPs of the detector and makes it faster, but obtains\nbetter performance \u2013 42.9% AP as shown in Tab. 2.\nMulti positives To be consistent with the assigning rule of\nYOLOv3, the above anchor-free version selects only ONE\npositive sample (the center location) for each object ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coco Ap (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ccc468daf0b8c09d763f0ebe4a7c436af197407a35a614b1f636ef7763332c2d",
+            "evidence_id": "Ecf1caee74d5a759a-B0017",
+            "pages": [
+              4
+            ],
+            "section": "Coco Ap (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1167,
+                "page": 4,
+                "section": "Coco Ap (%)",
+                "section_index": 8,
+                "start": 278,
+                "text": "(+0.9) 63.72 M 185.3 11.1 ms 90.1\n+multi positives 45.0 (+2.1) 63.72 M 185.3 11.1 ms 90.1\n+SimOTA 47.3 (+2.3) 63.72 M 185.3 11.1 ms 90.1\n+NMS free (optional) 46.5 (-0.8) 67.27 M 205.1 13.5 ms 74.1\nTable 2: Roadmap of YOLOX-Darknet53 in terms of AP (%) on COCOval. All the models are tested at640\u00d7640 resolution,\nwith FP16-precision and batch=1 on a Tesla V100. The latency and FPS in this table are measured without post-processing.\ncation of each object as the positive sample and pre-define\na scale range, as done in [29], to designate the FPN level\nfor each object. Such modification reduces the parameters\nand GFLOPs of the detector and makes it faster, but obtains\nbetter performance \u2013 42.9% AP as shown in Tab. 2.\nMulti positives To be consistent with the assigning rule of\nYOLOv3, the above anchor-free version selects only ONE\npositive sample (the center location) for each object "
+              }
+            ],
+            "text": "(+0.9) 63.72 M 185.3 11.1 ms 90.1\n+multi positives 45.0 (+2.1) 63.72 M 185.3 11.1 ms 90.1\n+SimOTA 47.3 (+2.3) 63.72 M 185.3 11.1 ms 90.1\n+NMS free (optional) 46.5 (-0.8) 67.27 M 205.1 13.5 ms 74.1\nTable 2: Roadmap of YOLOX-Darknet53 in terms of AP (%) on COCOval. All the models are tested at640\u00d7640 resolution,\nwith FP16-precision and batch=1 on a Tesla V100. The latency and FPS in this table are measured without post-processing.\ncation of each object as the positive sample and pre-define\na scale range, as done in [29], to designate the FPN level\nfor each object. Such modification reduces the parameters\nand GFLOPs of the detector and makes it faster, but obtains\nbetter performance \u2013 42.9% AP as shown in Tab. 2.\nMulti positives To be consistent with the assigning rule of\nYOLOv3, the above anchor-free version selects only ONE\npositive sample (the center location) for each object "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0018"
+        ],
+        "excerpt": "mean-\nwhile ignores other high quality predictions. However, opti-\nmizing those high quality predictions may also bring benefi-\ncial gradients, which may alleviates the extreme imbalance\nof positive/negative sampling during training. We simply\nassigns the center 3\u00d73 area as positives, also named \"center\nsampling\" in FCOS [29]. The performance of the detector\nimproves to 45.0% AP as in Tab. 2, already surpassing the\ncurrent best practice of ultralytics-YOLOv3 (44.3% AP2).\nSimOTA Advanced label assignment is another important\nprogress of object detection in recent years. Based on our\nown study OTA [4], we conclude four key insights for an\nadvanced label assignment: 1). loss/quality aware, 2). cen-\nter prior, 3). dynamic number of positive anchors 4 for each\nground-truth (abbreviated as dynamic top-k), 4). global\nview. OTA meets all four rules above, hence we choose\nit as a candidate label ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coco Ap (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6a606f7f923241b494a2da88dc21557478a915f82022955fc906988408b32b2a",
+            "evidence_id": "Ecf1caee74d5a759a-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Coco Ap (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2067,
+                "page": 4,
+                "section": "Coco Ap (%)",
+                "section_index": 8,
+                "start": 1167,
+                "text": "mean-\nwhile ignores other high quality predictions. However, opti-\nmizing those high quality predictions may also bring benefi-\ncial gradients, which may alleviates the extreme imbalance\nof positive/negative sampling during training. We simply\nassigns the center 3\u00d73 area as positives, also named \"center\nsampling\" in FCOS [29]. The performance of the detector\nimproves to 45.0% AP as in Tab. 2, already surpassing the\ncurrent best practice of ultralytics-YOLOv3 (44.3% AP2).\nSimOTA Advanced label assignment is another important\nprogress of object detection in recent years. Based on our\nown study OTA [4], we conclude four key insights for an\nadvanced label assignment: 1). loss/quality aware, 2). cen-\nter prior, 3). dynamic number of positive anchors 4 for each\nground-truth (abbreviated as dynamic top-k), 4). global\nview. OTA meets all four rules above, hence we choose\nit as a candidate label "
+              }
+            ],
+            "text": "mean-\nwhile ignores other high quality predictions. However, opti-\nmizing those high quality predictions may also bring benefi-\ncial gradients, which may alleviates the extreme imbalance\nof positive/negative sampling during training. We simply\nassigns the center 3\u00d73 area as positives, also named \"center\nsampling\" in FCOS [29]. The performance of the detector\nimproves to 45.0% AP as in Tab. 2, already surpassing the\ncurrent best practice of ultralytics-YOLOv3 (44.3% AP2).\nSimOTA Advanced label assignment is another important\nprogress of object detection in recent years. Based on our\nown study OTA [4], we conclude four key insights for an\nadvanced label assignment: 1). loss/quality aware, 2). cen-\nter prior, 3). dynamic number of positive anchors 4 for each\nground-truth (abbreviated as dynamic top-k), 4). global\nview. OTA meets all four rules above, hence we choose\nit as a candidate label "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0019"
+        ],
+        "excerpt": "assigning strategy.\nSpecifically, OTA [4] analyzes the label assignment from\na global perspective and formulate the assigning proce-\ndure as an Optimal Transport (OT) problem, producing\nthe SOTA performance among the current assigning strate-\ngies [12, 41, 36, 22, 37]. However, in practice we found\nsolving OT problem via Sinkhorn-Knopp algorithm brings\n25% extra training time, which is quite expensive for train-\ning 300 epochs. We thus simplify it to dynamic top-k strat-\negy, named SimOTA, to get an approximate solution.\n4The term \"anchor\" refers to \"anchor point\" in the context of anchor-\nfree detectors and \"grid\" in the context of YOLO.\nWe briefly introduce SimOTA here. SimOTA first calcu-\nlates pair-wise matching degree, represented by cost [4, 5,\n12, 2] or quality [33] for each prediction-gt pair. For exam-\nple, in SimOTA, the cost between gtgi and predictionpj is\ncalculated as:\ncij ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coco Ap (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9d05b10d99ccee747a2b80c3a8421731708c1cb7630e3b78a3f23427bb6041f3",
+            "evidence_id": "Ecf1caee74d5a759a-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Coco Ap (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2967,
+                "page": 4,
+                "section": "Coco Ap (%)",
+                "section_index": 8,
+                "start": 2067,
+                "text": "assigning strategy.\nSpecifically, OTA [4] analyzes the label assignment from\na global perspective and formulate the assigning proce-\ndure as an Optimal Transport (OT) problem, producing\nthe SOTA performance among the current assigning strate-\ngies [12, 41, 36, 22, 37]. However, in practice we found\nsolving OT problem via Sinkhorn-Knopp algorithm brings\n25% extra training time, which is quite expensive for train-\ning 300 epochs. We thus simplify it to dynamic top-k strat-\negy, named SimOTA, to get an approximate solution.\n4The term \"anchor\" refers to \"anchor point\" in the context of anchor-\nfree detectors and \"grid\" in the context of YOLO.\nWe briefly introduce SimOTA here. SimOTA first calcu-\nlates pair-wise matching degree, represented by cost [4, 5,\n12, 2] or quality [33] for each prediction-gt pair. For exam-\nple, in SimOTA, the cost between gtgi and predictionpj is\ncalculated as:\ncij "
+              }
+            ],
+            "text": "assigning strategy.\nSpecifically, OTA [4] analyzes the label assignment from\na global perspective and formulate the assigning proce-\ndure as an Optimal Transport (OT) problem, producing\nthe SOTA performance among the current assigning strate-\ngies [12, 41, 36, 22, 37]. However, in practice we found\nsolving OT problem via Sinkhorn-Knopp algorithm brings\n25% extra training time, which is quite expensive for train-\ning 300 epochs. We thus simplify it to dynamic top-k strat-\negy, named SimOTA, to get an approximate solution.\n4The term \"anchor\" refers to \"anchor point\" in the context of anchor-\nfree detectors and \"grid\" in the context of YOLO.\nWe briefly introduce SimOTA here. SimOTA first calcu-\nlates pair-wise matching degree, represented by cost [4, 5,\n12, 2] or quality [33] for each prediction-gt pair. For exam-\nple, in SimOTA, the cost between gtgi and predictionpj is\ncalculated as:\ncij "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0020"
+        ],
+        "excerpt": "=Lclsij +\u03bbLregij , (1)\nwhere\u03bb is a balancing coefficient. Lclsij andLregij are class-\nficiation loss and regression loss between gt gi and predic-\ntion pj. Then, for gt gi, we select the top k predictions\nwith the least cost within a fixed center region as its positive\nsamples. Finally, the corresponding grids of those positive\npredictions are assigned as positives, while the rest grids\nare negatives. Noted that the value k varies for different\nground-truth. Please refer to Dynamic k Estimation strat-\negy in OTA [4] for more details.\nSimOTA not only reduces the training time but also\navoids additional solver hyperparameters in Sinkhorn-\nKnopp algorithm. As shown in Tab. 2, SimOTA raises the\ndetector from 45.0% AP to 47.3% AP, higher than the SOTA\nultralytics-YOLOv3 by 3.0% AP, showing the power of the\nadvanced assigning strategy.\nEnd-to-end YOLO We follow [39] to add two additional\nconv ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coco Ap (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c824a4c345c48f19ac94b66990e640d424f18d55d6ab15ca8c0f9e76a3c025e7",
+            "evidence_id": "Ecf1caee74d5a759a-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Coco Ap (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3867,
+                "page": 4,
+                "section": "Coco Ap (%)",
+                "section_index": 8,
+                "start": 2967,
+                "text": "=Lclsij +\u03bbLregij , (1)\nwhere\u03bb is a balancing coefficient. Lclsij andLregij are class-\nficiation loss and regression loss between gt gi and predic-\ntion pj. Then, for gt gi, we select the top k predictions\nwith the least cost within a fixed center region as its positive\nsamples. Finally, the corresponding grids of those positive\npredictions are assigned as positives, while the rest grids\nare negatives. Noted that the value k varies for different\nground-truth. Please refer to Dynamic k Estimation strat-\negy in OTA [4] for more details.\nSimOTA not only reduces the training time but also\navoids additional solver hyperparameters in Sinkhorn-\nKnopp algorithm. As shown in Tab. 2, SimOTA raises the\ndetector from 45.0% AP to 47.3% AP, higher than the SOTA\nultralytics-YOLOv3 by 3.0% AP, showing the power of the\nadvanced assigning strategy.\nEnd-to-end YOLO We follow [39] to add two additional\nconv "
+              }
+            ],
+            "text": "=Lclsij +\u03bbLregij , (1)\nwhere\u03bb is a balancing coefficient. Lclsij andLregij are class-\nficiation loss and regression loss between gt gi and predic-\ntion pj. Then, for gt gi, we select the top k predictions\nwith the least cost within a fixed center region as its positive\nsamples. Finally, the corresponding grids of those positive\npredictions are assigned as positives, while the rest grids\nare negatives. Noted that the value k varies for different\nground-truth. Please refer to Dynamic k Estimation strat-\negy in OTA [4] for more details.\nSimOTA not only reduces the training time but also\navoids additional solver hyperparameters in Sinkhorn-\nKnopp algorithm. As shown in Tab. 2, SimOTA raises the\ndetector from 45.0% AP to 47.3% AP, higher than the SOTA\nultralytics-YOLOv3 by 3.0% AP, showing the power of the\nadvanced assigning strategy.\nEnd-to-end YOLO We follow [39] to add two additional\nconv "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0022"
+        ],
+        "excerpt": "Besides DarkNet53, we also test YOLOX on other back-\nbones with different sizes, where YOLOX achieves consis-\ntent improvements against all the corresponding counter-\nparts.\n4\nModels AP (%) Parameters GFLOPs Latency\nYOLOv5-S 36.7 7.3 M 17.1 8.7 ms\nYOLOX-S 39.6 (+2.9) 9.0 M 26.8 9.8 ms\nYOLOv5-M 44.5 21.4 M 51.4 11.1 ms\nYOLOX-M 46.4 (+1.9) 25.3 M 73.8 12.3 ms\nYOLOv5-L 48.2 47.1 M 115.6 13.7 ms\nYOLOX-L 50.0 (+1.8) 54.2 M 155.6 14.5 ms\nYOLOv5-X 50.4 87.8 M 219.0 16.0 ms\nYOLOX-X 51.2 (+0.8) 99.1 M 281.9 17.3 ms\nTable 3: Comparison of YOLOX and YOLOv5 in terms\nof AP (%) on COCO. All the models are tested at 640 \u00d7\n640 resolution, with FP16-precision and batch=1 on a Tesla\nV100.\nModels AP (%) Parameters GFLOPs\nYOLOv4-Tiny [30] 21.7 6.06 M 6.96\nPPYOLO-Tiny 22.7 4.20 M -\nYOLOX-Tiny 32.8 (+10.1) 5.06 M 6.45\nNanoDet3 23.5 0.95 M 1.20\nYOLOX-Nano 25.3 (+1.8) 0.91 M 1.08\nTable 4: Comparison of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Other Backbones",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "96cd23c820d2894c99bccae3c93c0cbe7a80d530424d77a187165230f61167de",
+            "evidence_id": "Ecf1caee74d5a759a-B0022",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Other Backbones",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 175,
+                "page": 4,
+                "section": "Other Backbones",
+                "section_index": 9,
+                "start": 0,
+                "text": "Besides DarkNet53, we also test YOLOX on other back-\nbones with different sizes, where YOLOX achieves consis-\ntent improvements against all the corresponding counter-\nparts.\n4"
+              },
+              {
+                "end": 716,
+                "page": 5,
+                "section": "Other Backbones",
+                "section_index": 10,
+                "start": 0,
+                "text": "Models AP (%) Parameters GFLOPs Latency\nYOLOv5-S 36.7 7.3 M 17.1 8.7 ms\nYOLOX-S 39.6 (+2.9) 9.0 M 26.8 9.8 ms\nYOLOv5-M 44.5 21.4 M 51.4 11.1 ms\nYOLOX-M 46.4 (+1.9) 25.3 M 73.8 12.3 ms\nYOLOv5-L 48.2 47.1 M 115.6 13.7 ms\nYOLOX-L 50.0 (+1.8) 54.2 M 155.6 14.5 ms\nYOLOv5-X 50.4 87.8 M 219.0 16.0 ms\nYOLOX-X 51.2 (+0.8) 99.1 M 281.9 17.3 ms\nTable 3: Comparison of YOLOX and YOLOv5 in terms\nof AP (%) on COCO. All the models are tested at 640 \u00d7\n640 resolution, with FP16-precision and batch=1 on a Tesla\nV100.\nModels AP (%) Parameters GFLOPs\nYOLOv4-Tiny [30] 21.7 6.06 M 6.96\nPPYOLO-Tiny 22.7 4.20 M -\nYOLOX-Tiny 32.8 (+10.1) 5.06 M 6.45\nNanoDet3 23.5 0.95 M 1.20\nYOLOX-Nano 25.3 (+1.8) 0.91 M 1.08\nTable 4: Comparison of "
+              }
+            ],
+            "text": "Besides DarkNet53, we also test YOLOX on other back-\nbones with different sizes, where YOLOX achieves consis-\ntent improvements against all the corresponding counter-\nparts.\n4\nModels AP (%) Parameters GFLOPs Latency\nYOLOv5-S 36.7 7.3 M 17.1 8.7 ms\nYOLOX-S 39.6 (+2.9) 9.0 M 26.8 9.8 ms\nYOLOv5-M 44.5 21.4 M 51.4 11.1 ms\nYOLOX-M 46.4 (+1.9) 25.3 M 73.8 12.3 ms\nYOLOv5-L 48.2 47.1 M 115.6 13.7 ms\nYOLOX-L 50.0 (+1.8) 54.2 M 155.6 14.5 ms\nYOLOv5-X 50.4 87.8 M 219.0 16.0 ms\nYOLOX-X 51.2 (+0.8) 99.1 M 281.9 17.3 ms\nTable 3: Comparison of YOLOX and YOLOv5 in terms\nof AP (%) on COCO. All the models are tested at 640 \u00d7\n640 resolution, with FP16-precision and batch=1 on a Tesla\nV100.\nModels AP (%) Parameters GFLOPs\nYOLOv4-Tiny [30] 21.7 6.06 M 6.96\nPPYOLO-Tiny 22.7 4.20 M -\nYOLOX-Tiny 32.8 (+10.1) 5.06 M 6.45\nNanoDet3 23.5 0.95 M 1.20\nYOLOX-Nano 25.3 (+1.8) 0.91 M 1.08\nTable 4: Comparison of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0024"
+        ],
+        "excerpt": "augmentation In our experiments,\nall the models keep almost the same learning schedule and\noptimizing parameters as depicted in 2.1. However, we\nfound that the suitable augmentation strategy varies across\ndifferent size of models. As Tab. 5 shows, while apply-\ning MixUp for YOLOX-L can improve AP by 0.9%, it is\nbetter to weaken the augmentation for small models like\nYOLOX-Nano. Specifically, we remove the mix up aug-\nmentation and weaken the mosaic (reduce the scale range\nfrom [0.1, 2.0] to [0.5, 1.5]) when training small models,\ni.e., YOLOX-S, YOLOX-Tiny, and YOLOX-Nano. Such a\nmodification improves YOLOX-Nano's AP from 24.0% to\n25.3%.\nFor large models, we also found that stronger augmenta-\ntion is more helpful. Indeed, our MixUp implementation is\npart of heavier than the original version in [38]. Inspired\nby Copypaste [6], we jittered both images by a random sam-\npled scale factor ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Other Backbones",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7476a594967790230030c24f061a5673e1820ddfc26a417de09741242d060075",
+            "evidence_id": "Ecf1caee74d5a759a-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Other Backbones",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2511,
+                "page": 5,
+                "section": "Other Backbones",
+                "section_index": 10,
+                "start": 1615,
+                "text": "augmentation In our experiments,\nall the models keep almost the same learning schedule and\noptimizing parameters as depicted in 2.1. However, we\nfound that the suitable augmentation strategy varies across\ndifferent size of models. As Tab. 5 shows, while apply-\ning MixUp for YOLOX-L can improve AP by 0.9%, it is\nbetter to weaken the augmentation for small models like\nYOLOX-Nano. Specifically, we remove the mix up aug-\nmentation and weaken the mosaic (reduce the scale range\nfrom [0.1, 2.0] to [0.5, 1.5]) when training small models,\ni.e., YOLOX-S, YOLOX-Tiny, and YOLOX-Nano. Such a\nmodification improves YOLOX-Nano's AP from 24.0% to\n25.3%.\nFor large models, we also found that stronger augmenta-\ntion is more helpful. Indeed, our MixUp implementation is\npart of heavier than the original version in [38]. Inspired\nby Copypaste [6], we jittered both images by a random sam-\npled scale factor "
+              }
+            ],
+            "text": "augmentation In our experiments,\nall the models keep almost the same learning schedule and\noptimizing parameters as depicted in 2.1. However, we\nfound that the suitable augmentation strategy varies across\ndifferent size of models. As Tab. 5 shows, while apply-\ning MixUp for YOLOX-L can improve AP by 0.9%, it is\nbetter to weaken the augmentation for small models like\nYOLOX-Nano. Specifically, we remove the mix up aug-\nmentation and weaken the mosaic (reduce the scale range\nfrom [0.1, 2.0] to [0.5, 1.5]) when training small models,\ni.e., YOLOX-S, YOLOX-Tiny, and YOLOX-Nano. Such a\nmodification improves YOLOX-Nano's AP from 24.0% to\n25.3%.\nFor large models, we also found that stronger augmenta-\ntion is more helpful. Indeed, our MixUp implementation is\npart of heavier than the original version in [38]. Inspired\nby Copypaste [6], we jittered both images by a random sam-\npled scale factor "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0025"
+        ],
+        "excerpt": "before mixing up them. To understand the\npower of Mixup with scale jittering, we compare it with\nCopypaste on YOLOX-L. Noted that Copypaste requires\nextra instance mask annotations while MixUp does not. But\nas shown in Tab. 5, these two methods achieve competitive\nperformance, indicating that MixUp with scale jittering is a\nqualified replacement for Copypaste when no instance mask\nannotation is available.\nModels Scale Jit. Extra Aug. AP (%)\nYOLOX-Nano [0.5, 1.5] - 25.3[0.1, 2.0] MixUp 24.0 (-1.3)\nYOLOX-L\n[0.1, 2.0] - 48.6\n[0.1, 2.0] MixUp 49.5 (+0.9)\n[0.1, 2.0] Copypaste [6] 49.4\nTable 5: Effects of data augmentation under different model\nsizes. \"Scale Jit.\" stands for the range of scale jittering\nfor mosaic image. Instance mask annotations from COCO\ntrainval are used when adopting Copypaste.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Other Backbones",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bf84b1241141c61ccaae52299856f0e6486a40509e4af35a8f3be0d1091d8a4d",
+            "evidence_id": "Ecf1caee74d5a759a-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Other Backbones",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3314,
+                "page": 5,
+                "section": "Other Backbones",
+                "section_index": 10,
+                "start": 2511,
+                "text": "before mixing up them. To understand the\npower of Mixup with scale jittering, we compare it with\nCopypaste on YOLOX-L. Noted that Copypaste requires\nextra instance mask annotations while MixUp does not. But\nas shown in Tab. 5, these two methods achieve competitive\nperformance, indicating that MixUp with scale jittering is a\nqualified replacement for Copypaste when no instance mask\nannotation is available.\nModels Scale Jit. Extra Aug. AP (%)\nYOLOX-Nano [0.5, 1.5] - 25.3[0.1, 2.0] MixUp 24.0 (-1.3)\nYOLOX-L\n[0.1, 2.0] - 48.6\n[0.1, 2.0] MixUp 49.5 (+0.9)\n[0.1, 2.0] Copypaste [6] 49.4\nTable 5: Effects of data augmentation under different model\nsizes. \"Scale Jit.\" stands for the range of scale jittering\nfor mosaic image. Instance mask annotations from COCO\ntrainval are used when adopting Copypaste."
+              }
+            ],
+            "text": "before mixing up them. To understand the\npower of Mixup with scale jittering, we compare it with\nCopypaste on YOLOX-L. Noted that Copypaste requires\nextra instance mask annotations while MixUp does not. But\nas shown in Tab. 5, these two methods achieve competitive\nperformance, indicating that MixUp with scale jittering is a\nqualified replacement for Copypaste when no instance mask\nannotation is available.\nModels Scale Jit. Extra Aug. AP (%)\nYOLOX-Nano [0.5, 1.5] - 25.3[0.1, 2.0] MixUp 24.0 (-1.3)\nYOLOX-L\n[0.1, 2.0] - 48.6\n[0.1, 2.0] MixUp 49.5 (+0.9)\n[0.1, 2.0] Copypaste [6] 49.4\nTable 5: Effects of data augmentation under different model\nsizes. \"Scale Jit.\" stands for the range of scale jittering\nfor mosaic image. Instance mask annotations from COCO\ntrainval are used when adopting Copypaste."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0026"
+        ],
+        "excerpt": "There is a tradition to show the SOTA comparing table as\nin Tab. 6. However, keep in mind that the inference speed\nof the models in this table is often uncontrolled, as speed\nvaries with software and hardware. We thus use the same\nhardware and code base for all the YOLO series in Fig. 1,\nplotting the somewhat controlled speed/accuracy curve.\nWe notice that there are some high performance YOLO\nseries with larger model sizes like Scale-YOLOv4 [30] and\nYOLOv5-P6 [7]. And the current Transformer based detec-\ntors [21] push the accuracy-SOTA to \u223c60 AP. Due to the\ntime and resource limitation, we did not explore those im-\nportant features in this report. However, they are already in\nour scope.\n4. 1st Place on Streaming Perception Challenge\n(W AD at CVPR 2021)\nStreaming Perception Challenge on W AD 2021 is a joint\nevaluation of accuracy and latency through a recently pro-\nposed metric: ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With The Sota",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "eefd5591a02c6b134717baba727d09644cee678d09e1fe9194b8832228cbdcd9",
+            "evidence_id": "Ecf1caee74d5a759a-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Comparison With The Sota",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 5,
+                "section": "Comparison With The Sota",
+                "section_index": 11,
+                "start": 0,
+                "text": "There is a tradition to show the SOTA comparing table as\nin Tab. 6. However, keep in mind that the inference speed\nof the models in this table is often uncontrolled, as speed\nvaries with software and hardware. We thus use the same\nhardware and code base for all the YOLO series in Fig. 1,\nplotting the somewhat controlled speed/accuracy curve.\nWe notice that there are some high performance YOLO\nseries with larger model sizes like Scale-YOLOv4 [30] and\nYOLOv5-P6 [7]. And the current Transformer based detec-\ntors [21] push the accuracy-SOTA to \u223c60 AP. Due to the\ntime and resource limitation, we did not explore those im-\nportant features in this report. However, they are already in\nour scope.\n4. 1st Place on Streaming Perception Challenge\n(W AD at CVPR 2021)\nStreaming Perception Challenge on W AD 2021 is a joint\nevaluation of accuracy and latency through a recently pro-\nposed metric: "
+              }
+            ],
+            "text": "There is a tradition to show the SOTA comparing table as\nin Tab. 6. However, keep in mind that the inference speed\nof the models in this table is often uncontrolled, as speed\nvaries with software and hardware. We thus use the same\nhardware and code base for all the YOLO series in Fig. 1,\nplotting the somewhat controlled speed/accuracy curve.\nWe notice that there are some high performance YOLO\nseries with larger model sizes like Scale-YOLOv4 [30] and\nYOLOv5-P6 [7]. And the current Transformer based detec-\ntors [21] push the accuracy-SOTA to \u223c60 AP. Due to the\ntime and resource limitation, we did not explore those im-\nportant features in this report. However, they are already in\nour scope.\n4. 1st Place on Streaming Perception Challenge\n(W AD at CVPR 2021)\nStreaming Perception Challenge on W AD 2021 is a joint\nevaluation of accuracy and latency through a recently pro-\nposed metric: "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0027"
+        ],
+        "excerpt": "streaming accuracy [15]. The key insight be-\n5\nMethod Backbone Size FPS AP (%) AP50 AP75 APS APM APL\n(V100)\nYOLOv3 + ASFF* [18] Darknet-53 608 45.5 42.4 63.0 47.4 25.5 45.7 52.3\nYOLOv3 + ASFF* [18] Darknet-53 800 29.4 43.9 64.1 49.2 27.0 46.6 53.4\nEfficientDet-D0 [28] Efficient-B0 512 98.0 33.8 52.2 35.8 12.0 38.3 51.2\nEfficientDet-D1 [28] Efficient-B1 640 74.1 39.6 58.6 42.3 17.9 44.3 56.0\nEfficientDet-D2 [28] Efficient-B2 768 56.5 43.0 62.3 46.2 22.5 47.0 58.4\nEfficientDet-D3 [28] Efficient-B3 896 34.5 45.8 65.0 49.3 26.6 49.4 59.8\nPP-YOLOv2 [11] ResNet50-vd-dcn 640 68.9 49.5 68.2 54.4 30.7 52.9 61.2\nPP-YOLOv2 [11] ResNet101-vd-dcn 640 50.3 50.3 69.0 55.3 31.6 53.9 62.4\nYOLOv4 [1] CSPDarknet-53 608 62.0 43.5 65.7 47.3 26.7 46.7 53.3\nYOLOv4-CSP [30] Modified CSP 640 73.0 47.5 66.2 51.7 28.2 51.2 59.8\nYOLOv3-ultralytics2 Darknet-53 640 95.2 44.3 64.6 - - - -\nYOLOv5-M [7] Modified CSP v5 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With The Sota",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fc22a399132d28da8484651c58aaf4246e56ad002e6b477d91c609e5ad2fe8ca",
+            "evidence_id": "Ecf1caee74d5a759a-B0027",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Comparison With The Sota",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 938,
+                "page": 5,
+                "section": "Comparison With The Sota",
+                "section_index": 11,
+                "start": 892,
+                "text": "streaming accuracy [15]. The key insight be-\n5"
+              },
+              {
+                "end": 853,
+                "page": 6,
+                "section": "Comparison With The Sota",
+                "section_index": 12,
+                "start": 0,
+                "text": "Method Backbone Size FPS AP (%) AP50 AP75 APS APM APL\n(V100)\nYOLOv3 + ASFF* [18] Darknet-53 608 45.5 42.4 63.0 47.4 25.5 45.7 52.3\nYOLOv3 + ASFF* [18] Darknet-53 800 29.4 43.9 64.1 49.2 27.0 46.6 53.4\nEfficientDet-D0 [28] Efficient-B0 512 98.0 33.8 52.2 35.8 12.0 38.3 51.2\nEfficientDet-D1 [28] Efficient-B1 640 74.1 39.6 58.6 42.3 17.9 44.3 56.0\nEfficientDet-D2 [28] Efficient-B2 768 56.5 43.0 62.3 46.2 22.5 47.0 58.4\nEfficientDet-D3 [28] Efficient-B3 896 34.5 45.8 65.0 49.3 26.6 49.4 59.8\nPP-YOLOv2 [11] ResNet50-vd-dcn 640 68.9 49.5 68.2 54.4 30.7 52.9 61.2\nPP-YOLOv2 [11] ResNet101-vd-dcn 640 50.3 50.3 69.0 55.3 31.6 53.9 62.4\nYOLOv4 [1] CSPDarknet-53 608 62.0 43.5 65.7 47.3 26.7 46.7 53.3\nYOLOv4-CSP [30] Modified CSP 640 73.0 47.5 66.2 51.7 28.2 51.2 59.8\nYOLOv3-ultralytics2 Darknet-53 640 95.2 44.3 64.6 - - - -\nYOLOv5-M [7] Modified CSP v5 "
+              }
+            ],
+            "text": "streaming accuracy [15]. The key insight be-\n5\nMethod Backbone Size FPS AP (%) AP50 AP75 APS APM APL\n(V100)\nYOLOv3 + ASFF* [18] Darknet-53 608 45.5 42.4 63.0 47.4 25.5 45.7 52.3\nYOLOv3 + ASFF* [18] Darknet-53 800 29.4 43.9 64.1 49.2 27.0 46.6 53.4\nEfficientDet-D0 [28] Efficient-B0 512 98.0 33.8 52.2 35.8 12.0 38.3 51.2\nEfficientDet-D1 [28] Efficient-B1 640 74.1 39.6 58.6 42.3 17.9 44.3 56.0\nEfficientDet-D2 [28] Efficient-B2 768 56.5 43.0 62.3 46.2 22.5 47.0 58.4\nEfficientDet-D3 [28] Efficient-B3 896 34.5 45.8 65.0 49.3 26.6 49.4 59.8\nPP-YOLOv2 [11] ResNet50-vd-dcn 640 68.9 49.5 68.2 54.4 30.7 52.9 61.2\nPP-YOLOv2 [11] ResNet101-vd-dcn 640 50.3 50.3 69.0 55.3 31.6 53.9 62.4\nYOLOv4 [1] CSPDarknet-53 608 62.0 43.5 65.7 47.3 26.7 46.7 53.3\nYOLOv4-CSP [30] Modified CSP 640 73.0 47.5 66.2 51.7 28.2 51.2 59.8\nYOLOv3-ultralytics2 Darknet-53 640 95.2 44.3 64.6 - - - -\nYOLOv5-M [7] Modified CSP v5 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0028"
+        ],
+        "excerpt": "640 90.1 44.5 63.1 - - - -\nYOLOv5-L [7] Modified CSP v5 640 73.0 48.2 66.9 - - - -\nYOLOv5-X [7] Modified CSP v5 640 62.5 50.4 68.8 - - - -\nYOLOX-DarkNet53 Darknet-53 640 90.1 47.4 67.3 52.1 27.5 51.5 60.9\nYOLOX-M Modified CSP v5 640 81.3 46.4 65.4 50.6 26.3 51.0 59.9\nYOLOX-L Modified CSP v5 640 69.0 50.0 68.5 54.5 29.8 54.5 64.4\nYOLOX-X Modified CSP v5 640 57.8 51.2 69.6 55.7 31.2 56.1 66.1\nTable 6: Comparison of the speed and accuracy of different object detectors on COCO 2017test-dev. We select all the models\ntrained on 300 epochs for fair comparison.\nhind this metric is to jointly evaluate the output of the entire\nperception stack at every time instant, forcing the stack to\nconsider the amount of streaming data that should be ig-\nnored while computation is occurring [15]. We found that\nthe best trade-off point for the metric on 30 FPS data stream\nis a powerful model with the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparison With The Sota",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7d1d5ca11b55ff3f1e93ee1cacf4f1147d70195d667fc14e8624fa3b1c4687e5",
+            "evidence_id": "Ecf1caee74d5a759a-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Comparison With The Sota",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1744,
+                "page": 6,
+                "section": "Comparison With The Sota",
+                "section_index": 12,
+                "start": 853,
+                "text": "640 90.1 44.5 63.1 - - - -\nYOLOv5-L [7] Modified CSP v5 640 73.0 48.2 66.9 - - - -\nYOLOv5-X [7] Modified CSP v5 640 62.5 50.4 68.8 - - - -\nYOLOX-DarkNet53 Darknet-53 640 90.1 47.4 67.3 52.1 27.5 51.5 60.9\nYOLOX-M Modified CSP v5 640 81.3 46.4 65.4 50.6 26.3 51.0 59.9\nYOLOX-L Modified CSP v5 640 69.0 50.0 68.5 54.5 29.8 54.5 64.4\nYOLOX-X Modified CSP v5 640 57.8 51.2 69.6 55.7 31.2 56.1 66.1\nTable 6: Comparison of the speed and accuracy of different object detectors on COCO 2017test-dev. We select all the models\ntrained on 300 epochs for fair comparison.\nhind this metric is to jointly evaluate the output of the entire\nperception stack at every time instant, forcing the stack to\nconsider the amount of streaming data that should be ig-\nnored while computation is occurring [15]. We found that\nthe best trade-off point for the metric on 30 FPS data stream\nis a powerful model with the "
+              }
+            ],
+            "text": "640 90.1 44.5 63.1 - - - -\nYOLOv5-L [7] Modified CSP v5 640 73.0 48.2 66.9 - - - -\nYOLOv5-X [7] Modified CSP v5 640 62.5 50.4 68.8 - - - -\nYOLOX-DarkNet53 Darknet-53 640 90.1 47.4 67.3 52.1 27.5 51.5 60.9\nYOLOX-M Modified CSP v5 640 81.3 46.4 65.4 50.6 26.3 51.0 59.9\nYOLOX-L Modified CSP v5 640 69.0 50.0 68.5 54.5 29.8 54.5 64.4\nYOLOX-X Modified CSP v5 640 57.8 51.2 69.6 55.7 31.2 56.1 66.1\nTable 6: Comparison of the speed and accuracy of different object detectors on COCO 2017test-dev. We select all the models\ntrained on 300 epochs for fair comparison.\nhind this metric is to jointly evaluate the output of the entire\nperception stack at every time instant, forcing the stack to\nconsider the amount of streaming data that should be ig-\nnored while computation is occurring [15]. We found that\nthe best trade-off point for the metric on 30 FPS data stream\nis a powerful model with the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2107.08430",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2107.08430",
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance and speed-accuracy trade-offs are verified on the standard MS COCO 2017 test-dev benchmark and corroborated by winning 1st place in the CVPR 2021 Streaming Perception Challenge.",
+          "final_evaluation_signal": "Standard COCO average precision (AP) metrics computed on held-out COCO validation and test-dev splits.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised training losses (BCE classification and objectness losses, IoU regression loss) with dynamic sample assignment via SimOTA on COCO train2017.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0003",
+          "Ecf1caee74d5a759a-B0008",
+          "Ecf1caee74d5a759a-B0009",
+          "Ecf1caee74d5a759a-B0010",
+          "Ecf1caee74d5a759a-B0011",
+          "Ecf1caee74d5a759a-B0014",
+          "Ecf1caee74d5a759a-B0016",
+          "Ecf1caee74d5a759a-B0017",
+          "Ecf1caee74d5a759a-B0018",
+          "Ecf1caee74d5a759a-B0019",
+          "Ecf1caee74d5a759a-B0020",
+          "Ecf1caee74d5a759a-B0022",
+          "Ecf1caee74d5a759a-B0024",
+          "Ecf1caee74d5a759a-B0025",
+          "Ecf1caee74d5a759a-B0026",
+          "Ecf1caee74d5a759a-B0027",
+          "Ecf1caee74d5a759a-B0028"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "8b3d8689b65887885b5f6f1061ff9c278a59bcdfa2063ca0a0484d00040e8889"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2107.08430",
+        "claim_evidence_alignment": "Reported performance metrics (e.g., 47.3% AP for YOLOX-DarkNet53, 50.0% AP for YOLOX-L, and comparisons on tiny/nano models) directly substantiate claims of exceeding prior YOLO baselines while maintaining real-time efficiency.",
+        "context_id": "cf1caee74d5a759ac06191eaee5f10d178bdbfd1c950d0c3bb76319b0dc64775",
+        "decision": "pass",
+        "evaluation_assessment": "Empirical evaluations are conducted rigorously on the standard MS COCO benchmark (val and test-dev splits). The authors provide systematic component-by-component ablations, speed-latency-accuracy Pareto curves under consistent GPU hardware, and side-by-side comparisons with contemporary detectors (YOLOv3, YOLOv4, YOLOv5, and EfficientDet).",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance and speed-accuracy trade-offs are verified on the standard MS COCO 2017 test-dev benchmark and corroborated by winning 1st place in the CVPR 2021 Streaming Perception Challenge.",
+          "final_evaluation_signal": "Standard COCO average precision (AP) metrics computed on held-out COCO validation and test-dev splits.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised training losses (BCE classification loss, BCE objectness loss, and IoU bounding box regression loss) with dynamic sample assignment via SimOTA on COCO train2017.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ecf1caee74d5a759a-B0003",
+          "Ecf1caee74d5a759a-B0008",
+          "Ecf1caee74d5a759a-B0009",
+          "Ecf1caee74d5a759a-B0010",
+          "Ecf1caee74d5a759a-B0011",
+          "Ecf1caee74d5a759a-B0014",
+          "Ecf1caee74d5a759a-B0016",
+          "Ecf1caee74d5a759a-B0017",
+          "Ecf1caee74d5a759a-B0018",
+          "Ecf1caee74d5a759a-B0019",
+          "Ecf1caee74d5a759a-B0020",
+          "Ecf1caee74d5a759a-B0022",
+          "Ecf1caee74d5a759a-B0024",
+          "Ecf1caee74d5a759a-B0025",
+          "Ecf1caee74d5a759a-B0026",
+          "Ecf1caee74d5a759a-B0027",
+          "Ecf1caee74d5a759a-B0028"
+        ],
+        "limitations": "The authors explicitly note that higher-capacity Transformer-based detectors and extremely large models (such as YOLOv5-P6) were not explored due to computational constraints, and that the optional end-to-end NMS-free modification incurs a mild drop in AP and latency.",
+        "method_assessment": "The methodology is thoroughly detailed, describing architectural adjustments (decoupling classification and regression heads), the anchor-free formulation, data augmentation protocols (MixUp and Mosaic adjustments), and the dynamic top-k approximation of optimal transport (SimOTA). Training parameters, loss formulations, and ablation steps are explicitly reported.",
+        "quality_rationale": "The work provides clear, scoped empirical advances with transparent ablation studies, consistent hardware benchmarking, and well-supported claims on a standard computer vision benchmark.",
+        "scoped_contribution": "The paper introduces YOLOX, adapting the YOLO detection family to an anchor-free architecture integrated with a decoupled detection head, multi-positive center sampling, and the SimOTA dynamic label assignment strategy across multiple model scales.",
+        "source_content_hash": "8b3d8689b65887885b5f6f1061ff9c278a59bcdfa2063ca0a0484d00040e8889"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work provides clear, scoped empirical advances with transparent ablation studies, consistent hardware benchmarking, and well-supported claims on a standard computer vision benchmark.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "8b3d8689b65887885b5f6f1061ff9c278a59bcdfa2063ca0a0484d00040e8889",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly note that higher-capacity Transformer-based detectors and extremely large models (such as YOLOv5-P6) were not explored due to computational constraints, and that the optional end-to-end NMS-free modification incurs a mild drop in AP and latency."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -173,7 +1423,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

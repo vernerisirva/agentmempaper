@@ -59,16 +59,320 @@
             <p>Source-only domain generalization (DG) for remote sensing semantic segmentation seeks reliable predictions in unseen domains without target-domain data during training. Although vision foundation models offer transferable knowledge, category recognition remains sensitive to source-specific visual cues, while task-sp...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript provides a well-motivated architectural design addressing known domain shift challenges in remote sensing dense prediction. The experimental design is rigorous, evaluating multiple shift modalities (geographic, spectral, and cross-dataset) with comprehensive baselines, detailed ablation studies, and efficiency profiles.</p>
+      <p>The work relies on large foundation models (two frozen SAM3 encoders resulting in 1.72B total resident parameters), requiring significant compute resources for inference, and assumes access to pre-defined category text prompts.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-04T11:54:47.079231+00:00.</p>
+        <p>Coverage: 66750 of 66750 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Source-onlydomaingeneralizationforremotesensingsemanticsegmentationaimstoachievereliable
+predictioninunseendomainswithoutaccessingtarget-domaindataduringtraining.Visionfoundation
+models offer transferable knowledge for this task, but its effective use faces two challenges. Category
+recognitionremainsvulnerabletosource-specificvisualcues.Learningtask-specificdenserepresenta-
+tionsalsorisksexcessivesource-domainspecialization,potentiallyweakeningpretrainedtransferabil-
+ity.Tosolvetheseproblems,weproposeASCoR,anasymmetricsemantic–spatiallearningframework
+built on SAM3. We exploit SAM3&#x27;s concept-aware segmentation priors to provide explicit category
+guidance beyond source-domain visual observations. Specifically, the text-conditioned semantic
+branch associates dense predictions with class-name prompts. Its Probe-Once Dynamic Adaptive
+LoRA allocates a constrained adaptation budget across </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>encoder blocks to control source-specific
+specialization.Acomplementarytask-specificdensebranchlearnsmulti-scalespatialrepresentations
+upon a separate frozen SAM3 image encoder. The two branches are integrated through a lightweight
+reliability router that applies bounded spatial correction according to local prediction reliability. The
+entire framework requires only source-domain supervision. Extensive experiments on the ISPRS,
+LoveDA, and OpenEarthMap benchmark datasets demonstrate the effectiveness of ASCoR across
+diverse domain shifts. On six ISPRS transfers, ASCoR achieves a state-of-the-art average mIoU of
+68.61%, surpassing the previous best method by 2.69 percentage points. It further achieves the best
+performance on all three LoveDA/OpenEarthMap transfers, reaching 59.07%, 47.95%, and 49.38%
+mIoU on Rural-to-Urban, Urban-to-Rural, and Urban-to-OpenEarthMap, respectively. </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>propose ASCoR, an asym-
+metricsemantic–spatiallearningframeworkbuiltonSAM3.
+Figure 1(b) contrasts our framework with the representative
+visual-driven DG paradigm. To strengthen category dis-
+crimination beyond source-domain visual cues, we exploit
+SAM3&#x27;sconcept-awaresegmentationcapabilitytoconstruct
+a text-conditioned semantic branch (TCSB). By associating
+dense predictions with class-name prompts, TCSB intro-
+duces an explicit semantic reference for recognizing land-
+cover categories across variations in visual appearance.
+To further exploit task-specific spatial information, we
+developacomplementarytask-specificdensebranch(TSDB)
+upon a separate SAM3 encoder whose pretrained weights
+remain frozen. Multi-scale dense decoding extracts spa-
+tially detailed representations from hierarchical features,
+supported by bounded structure injection that incorporates
+boundary and geometric cues. </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Complementary supervision
+fromTCSBdirectsthislearningtowardregionswhereitsse-
+manticpredictionsarelessreliable.Alightweightreliability
+routerthenestimatesthelocalutilityofthedensepredictions
+Z. Wang et al.:Preprint submitted to ElsevierPage 2 of 15
+ASCoR: Semantic-Spatial Domain Generalization
+andappliesboundedspatialcorrection.Together,thesecom-
+ponents enable task-specific spatial evidence to supplement
+category-level semantic guidance.
+We further introduce Probe-Once Dynamic Adaptive
+LoRA to controladaptation capacity within TCSB. By allo-
+cating a constrained low-rank budget across encoder blocks
+according to their source-task adaptation responses, this
+strategy supports task-specific learning with limited modi-
+fication of pretrained representations. The complete frame-
+work is optimized exclusively with source-domain </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>supervi-
+sion.
+ExtensiveexperimentsontheISPRS,LoveDA,andOpe-
+nEarthMap benchmark datasets demonstrate the effective-
+ness of ASCoR across nine transfers. ASCoR achieves a
+state-of-the-artaveragemIoUof68.61%onsixISPRStrans-
+fers,exceedingthepreviousbestmethodby2.69percentage
+points. It also achieves the best performance on all three
+LoveDA/OpenEarthMap transfers. Systematic ablations es-
+tablish the contributions of the proposed components, sup-
+portedbyfeaturevisualizationsandspatialreliabilityanaly-
+ses that provide insight into their complementary behavior.
+The main contributions of this work are summarized as
+follows:
+•Tothebestofourknowledge,wearethefirsttointro-
+duce SAM3-based text-conditioned semantic model-
+ingintosource-onlydomaingeneralizationforremote
+sensingsemanticsegmentation,providingexplicitcat-
+egory guidance beyond source-domain visual obser-
+vations.
+•We develop an </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ASCoR: Semantic-Spatial Domain Generalization
+learned updates provides a source-task response score. For
+block𝑙containing𝑀 𝑙 adaptedtransformations,thescoreis
+𝑠𝑙= 1𝑀𝑙
+𝑀𝑙∑
+𝑚=1
+‖‖‖𝐁(𝑝)𝑙,𝑚𝐀(𝑝)𝑙,𝑚‖‖‖2𝐹.(2)
+A fixed total budget𝐵is distributed across the𝐿candidate
+blocks:
+̃ 𝑟𝑙=𝑟 min+(𝐵−𝐿𝑟 min) 𝑠𝑙∑
+𝑗∈𝑠𝑗
+,
+𝐫∗=Π (̃𝐫).
+(3)
+Here,is the candidate-block set. The projectionΠ pro-
+duces integer ranks whose sum equals𝐵, with each rank
+bounded by𝑟min and𝑟 max. Stronger probe responses there-
+fore receive more adaptation capacity without increasing
+the total rank budget. Adaptive-rank PEFT methods have
+explored importance-based allocation and multi-rank learn-
+ing (Zhang et al., 2023; Valipour et al., 2023). ASCoR
+performs allocation once after probing, separating capacity
+estimation from final task learning and keeping the active
+rank structure fixed thereafter.
+Changing the rank map also requires </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>frequency
+variationswithoutchangingpixelcorrespondence,allowing
+the original annotations to supervise both views. Training
+on these views exposes the dense branch to alternative
+appearances of the same labeled structures while retaining
+direct supervision on the original source images.
+To encourage complementarity, the frozen TCSB addi-
+tionally directs TSDB learning toward pixels that it handles
+less reliably. The weighting uses TCSB&#x27;s probability for the
+ground-truthcategory,sopixelsreceivinganincorrecthigh-
+confidencepredictioncanstillobtainstrongcomplementary
+supervision. For a randomized source image, the weight at
+pixel𝑝is
+𝜔𝑝=clip [(1−𝑃 𝐴𝑦𝑝,𝑝)𝛾,0, 𝜔max],(6)
+where𝑃 𝐴𝑦𝑝,𝑝 is TCSB&#x27;s probability for the ground-truth cat-
+egory on that randomized view. Pixels assigned a high
+probability for the correct category receive less additional
+emphasis. The complementary objective is a </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>target labels.
+A lightweight spatial network produces a sigmoid gate
+and applies bounded correction to the primary semantic
+prediction:
+𝑔𝑝=𝜎 (𝜓(𝐑)𝑝),
+𝐏𝐹𝑝 =𝐏 𝐴𝑝 +𝛽𝑔 𝑝(𝐏𝐵𝑝 −𝐏𝐴𝑝). (9)
+Here,𝛽setsthemaximumcontributionofthedensebranch.
+TCSB remains the primary estimate, and TSDB supplies
+a spatially varying residual correction. The gate allows the
+amountofdenseevidencetovaryacrosstheimageinsteadof
+imposing the same mixing weight everywhere. Its bounded
+contribution maintains the intended asymmetric roles of the
+two branches.
+Router supervision measures the value of a correction
+using source labels. Disagreement alone does not estab-
+lish that TSDB should be trusted, since either branch may
+be incorrect. We therefore supervise the gate according to
+whether TSDB increases the probability assigned to the
+ground-truth category. At valid disagreement pixels, the
+relative utility target </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>objective is
+𝑅= fuse +𝜆𝑢(𝑒)util+𝜆conscons.(12)
+Bothsegmentationbranchesremainfrozenduringthisstage,
+keeping the predictors fixed while the router learns their
+relative utility. Fused semantic supervision evaluates the
+combined prediction, utility learning supplies correction-
+specific guidance at disagreement pixels, and cross-view
+consistency encourages stable gate responses under appear-
+ance perturbations. Ground-truth category probabilities are
+used only to construct supervision targets; inference relies
+entirely on the branch predictions.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets and transfer settings.We evaluate source-only
+domain generalization on three remote-sensing semantic
+segmentation benchmarks. For the ISPRS setting, Potsdam
+IRRG, Potsdam RGB, and Vaihingen IRRG are denoted by
+𝑃(𝑖),𝑃(𝑟), and𝑉, respectively. We consider all six directed
+transfers among these domains. The resulting evaluation
+covers an unseen geographic region, an unseen spectral
+configuration, and their compound shift. The six-class label
+spacecontainsimpervioussurface,building,lowvegetation,
+tree, car, and clutter/background. For LoveDA (Wang et al.,
+Z. Wang et al.:Preprint submitted to ElsevierPage 7 of 15</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ASCoR: Semantic-Spatial Domain Generalization
+Table 1
+Datasets and protocols for the nine source-only DG transfers.
+Domain shift Source domain Target domain Task Train Eval. Image size Classes
+Geographic Potsdam IRRG Vaihingen IRRG P(i)2V 3456 398512×5126
+Geographic Vaihingen IRRG Potsdam IRRG V2P(i) 344 2016512×5126
+Spectral Potsdam RGB Potsdam IRRG P(r)2P(i) 3456 2016512×5126
+Spectral Potsdam IRRG Potsdam RGB P(i)2P(r) 3456 2016512×5126
+Geographic + spectral Potsdam RGB Vaihingen IRRG P(r)2V 3456 398512×5126
+Geographic + spectral Vaihingen IRRG Potsdam RGB V2P(r) 344 2016512×5126
+Scene composition LoveDA Urban LoveDA Rural U2R 1156 9921024×10247
+Scene composition LoveDA Rural LoveDA Urban R2U 1366 6771024×10247
+Cross-dataset LoveDA Urban OpenEarthMap U2OEM 1156 3841024×10247
+Image size refers to prepared images/crops before resizing to512×512for network input. Both label protocols </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We compare ASCoR with representative segmentation
+methods across nine transfers on the ISPRS, LoveDA, and
+OpenEarthMap benchmark datasets. Figure 3 summarizes
+the overall performance, while Tables 2 and 3 report the
+class-wise results.
+.25
+.50
+.75
+1.00
+P(i)2V
+68.58
+V2P(i)
+59.87
+P(r)2P(i)
+77.24
+P(i)2P(r)
+79.51
+P(r)2V
+65.98
+V2P(r)
+60.49
+R2U
+59.07
+U2R
+47.95
+U2OEM
+49.38
+SAM3 (baseline)
+DeepLabV3+
+DAFormer
+CrossEarth
+EarthAdapter
+ASCoR (ours)
+Figure 3:Overall performance comparison across nine source-
+only DG transfers on ISPRS, LoveDA, and OpenEarthMap.
+Each axis is normalized by the highest mIoU among the
+compared methods for that task; numerical annotations report
+the original mIoU (%).
+Results on ISPRS.AsreportedinTable2,ASCoRachieves
+thehighestmIoUinfourofthesixdirectedISPRStransfers,
+with an average of 68.61%. This exceeds the 65.92% mean
+of EarthAdapter and the 65.68% mean of </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ASCoR: Semantic-Spatial Domain Generalization
+Table 2
+Per-class IoU and mIoU (%) on six ISPRS transfers. Bold and underlined values indicate the best and second-best results. Surf:
+impervious surface; Bldg: building; Vegt: low vegetation; Clut: clutter/background. SAM3 denotes the zero-shot baseline.
+Method Backbone Task Surf Bldg Vegt Tree Car Clut mIoU Task Surf Bldg Vegt Tree Car Clut mIoU
+SAM3 (baseline) SAM3
+P(i)2V
+9.47 83.46 20.32 48.36 60.25 2.12 37.33
+V2P(i)
+17.17 70.15 9.37 35.27 62.51 4.51 33.17
+DeepLabV3+ R101 9.15 60.94 17.60 52.28 7.61 2.54 25.02 29.32 39.45 29.17 24.92 37.42 0.00 26.72
+SegFormer MiT-B5 60.58 74.72 27.68 63.69 33.38 7.56 44.60 66.01 70.94 48.53 13.19 65.98 3.00 44.61
+DAFormer MiT-B5 61.48 75.53 42.87 66.57 34.52 9.99 48.49 62.22 70.86 43.09 13.86 64.31 6.95 43.55
+HRDA MiT-B5 64.14 76.65 42.06 65.11 28.72 13.52 48.37 68.64 77.24 46.33 11.05 64.12 6.48 </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>45.64
+CrossEarth ViT-L 83.60 91.7063.80 70.20 59.5036.3067.50 77.1080.80 61.30 38.90 82.90 8.4058.20
+EarthAdapter DINOv2-L 77.28 88.16 59.37 71.7158.01 18.64 62.20 76.21 86.98 63.5645.27 86.332.1660.08
+ASCoR (ours)SAM3 80.87 88.57 65.15 74.66 69.1333.10 68.58 72.81 85.04 54.8160.2981.74 4.54 59.87
+SAM3 (baseline) SAM3
+P(r)2P(i)
+17.17 70.15 9.37 35.27 62.51 4.51 33.17
+P(i)2P(r)
+27.22 75.39 31.86 33.39 66.51 4.58 39.83
+DeepLabV3+ R101 73.68 76.42 46.36 71.00 87.87 25.44 63.46 66.95 81.76 52.62 69.82 88.01 18.29 62.91
+SegFormer MiT-B5 82.12 89.98 51.51 72.27 89.69 27.35 68.82 80.22 92.38 56.55 56.28 89.56 19.50 65.75
+DAFormer MiT-B5 82.06 89.03 44.03 71.77 88.05 22.21 66.19 81.95 92.06 67.02 68.85 89.84 32.54 72.04
+HRDA MiT-B5 81.94 84.24 36.89 70.07 89.69 18.97 63.63 80.59 90.97 66.14 70.85 88.58 31.63 71.46
+CrossEarth ViT-L 86.10 91.50 73.8079.70 91.9043.80 77.80 86.30 93.50 73.80 74.00 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ASCoR: Semantic-Spatial Domain Generalization
+Table 3
+Per-class IoU and mIoU (%) on LoveDA and OpenEarthMap.
+Bold and underlined values rank first and second within each
+transfer. Bkgd: background; Bldg: building; Rd: road; Wtr:
+water; Barr: barren; Frst: forest; Agri: agriculture.
+Method Bkgd Bldg Rd Wtr Barr Frst Agri mIoU (%)
+Performance comparison: LoveDA Rural→LoveDA Urban
+SAM3 (baseline) 17.87 53.01 55.71 58.74 34.85 50.69 43.31 44.88
+DeepLabV3+ R101 34.56 48.35 38.70 56.61 34.02 36.27 45.92 42.06
+SegFormer-B5 34.06 52.63 54.30 71.79 43.53 38.81 52.77 49.70
+DAFormer 35.49 52.74 51.51 73.10 45.03 47.13 53.20 51.17
+HRDA 38.80 51.19 48.06 72.47 46.01 34.60 56.65 49.68
+CrossEarth 39.80 63.30 57.3075.9051.80 55.00 62.50 57.90
+EarthAdapter 42.16 60.19 58.12 75.21 53.0850.09 61.64 57.21
+ASCoR (ours) 42.63 65.87 58.3074.70 51.6258.3462.04 59.07
+Performance comparison: LoveDA Urban→LoveDA </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>25.25 63.04 6.63 45.89 61.51 42.19
+ASCoR (ours) 49.51 70.0245.44 70.444.9851.8153.46 49.38
+Table 4
+Component ablation across three representative transfers.
+Values are mIoU (%).
+TCSB AR TSDB Router U2R P(r)2P(i) P(r)2V Avg.
+– – – – 27.94 33.17 37.33 32.81
+✓– – – 45.65 76.78 65.10 62.51
+✓ ✓– – 46.88 76.88 64.69 62.82
+– –✓– 35.01 69.98 51.74 52.24
+✓ ✓ ✓– 47.45 77.07 65.37 63.30
+✓ ✓ ✓ ✓ 47.95 77.24 65.98 63.72
+AR: probe-once adaptive rank allocation in TCSB. Without AR,
+TCSB uses uniform rank 64. The all-dash row denotes zero-shot
+SAM3. Dual-branch variants without the router use a fixed TSDB
+weight of 0.1.
+increases the TCSB score by 1.23 points, with marked
+improvements for water, barren land, and forest. TSDB pro-
+videsadditionalevidenceforbackground,buildings,andwa-
+ter. The fixed combination reaches 47.45%, and reliability-
+guided fusion increases mIoU to 47.95%. This </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 7 distinguishes physically allocated task-specific
+parameters from the subset that is active under the final
+rank configuration. This distinction is necessary because
+DynamicAdaptiveLoRAretainsmaximum-ranktensorsfor
+flexibleallocationbutactivatesonlytheslicesselectedbythe
+learned rank map.
+The complete framework contains 1.721B resident pa-
+rameters, of which 40.302M (2.341%) are task-specific.
+Stage-wise optimization keeps the largest number of si-
+multaneously trainable parameters to 27.715M, equivalent
+to 1.61% of the complete model. Router learning updates
+only 4,033 parameters, and the final forward computation
+activates 30.865M task-specific parameters (1.793%). This
+design concentrates task learning in a small set of param-
+eters while retaining the pretrained representations of both
+branches. The two SAM3 encoders account for most of the
+total model size and inference cost.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(pp)
+✓– – 47.93 –
+✓ ✓– 47.94 +0.01
+✓ ✓ ✓ 47.95+0.02
+Table 7
+Parameter analysis. &quot;Trainable&quot; counts physically allocated
+task-specific parameters, following the conventional PEFT
+reporting protocol. &quot;Active&quot; counts parameters participating in
+the final forward computation.
+Model/component Total Trainable Ratio Active
+(M) (M) (%) (M)
+TCSB 853.09 12.583 1.475 3.146
+TSDB 868.22 27.715 3.192 27.715
+Complete framework1721.32 40.302 2.341 30.865
+Table 8
+Inference latency of fixed and learned dual-branch fusion. The
+reported time includes both branches and the corresponding
+fusion operation.
+Fusion strategy𝑃(𝑟)→𝑃(𝑖)𝑃(𝑟)→𝑉Average Overhead
+Fixed𝑤 𝐵 =0.1525.51 522.33 523.92 –
+Reliability-guided 527.02 523.83 525.42 +0.29%
+to 0.29% overhead relative to fixed fusion. Most inference
+time is spent computing the two SAM3 branch predictions,
+while reliability-guided correction requires little </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +411,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +427,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-02</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-03 11:37:35</li><li>Last seen by Paper Scout: 2026-11-03 11:37:35</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-02</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-03 11:37:35</li><li>Last seen by Paper Scout: 2026-11-04 11:52:58</li></ul>
             <ul><li>arXiv: 2611.03382</li><li>arXiv IDs: 2611.03382</li></ul>
           </section>
           <section class="detail-panel">

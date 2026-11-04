@@ -24,13 +24,13 @@
   "first_seen_at": "2026-11-03 11:35:07",
   "first_seen_date": "2026-11-03",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-11-03 11:35:32",
-  "last_seen_date": "2026-11-03",
+  "is_new": false,
+  "last_seen_at": "2026-11-04 11:50:13",
+  "last_seen_date": "2026-11-04",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-02",
   "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-03 11:36:19",
   "notified_date": "2026-11-03",
   "openalex_id": null,
@@ -40,8 +40,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-03 11:35:07",
-    "generated_at": "2026-11-03 11:40:18",
-    "last_seen_at": "2026-11-03 11:35:32",
+    "generated_at": "2026-11-04 11:55:36",
+    "last_seen_at": "2026-11-04 11:50:13",
     "metadata_sources": [
       "arxiv"
     ],
@@ -108,36 +108,2193 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-04T11:54:25.688072+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The headline gains are established on a small author-constructed benchmark of 50 cases with only 10-15 cases per depth stratum, and the authors explicitly state that larger independent evaluations are needed to establish robustness [E96340e533c113cf7-B0003, E96340e533c113cf7-B0035, E96340e533c113cf7-B0051].",
+      "Retained experimental records are incomplete: the number of evaluation runs per configuration and the size of the double-annotated subset were not preserved, and action-decision evaluation plus a premise-gate ablation were omitted because their aggregation could not be reconstructed [E96340e533c113cf7-B0038, E96340e533c113cf7-B0054].",
+      "No significance tests were run, so the reported depth-wise differences and public-benchmark comparisons do not establish reliable superiority or even absence of degradation [E96340e533c113cf7-B0046, E96340e533c113cf7-B0054].",
+      "Relation typing, counterfactual verification, and alternative-support assessment all use the same LLM, so their errors can be correlated, and the manuscript provides no independent guarantee against correlated errors across proposal, verification, and support assessment [E96340e533c113cf7-B0051, E96340e533c113cf7-B0055]."
+    ],
+    "concise_summary": "While the conceptual framework for dependency-aware cascade revision is coherent and interesting, the scientific foundation is weakened by critical reporting gaps admitted by the authors, including incomplete retained experimental records, unpreserved evaluation run counts, and a benchmark size of only 50 cases [E96340e533c113cf7-B0038, E96340e533c113cf7-B0054]. Given these uncertainties and the small sample scale, uncertain is the scientifically prudent judgment.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 66970,
+      "assessment_input_sha256": "c83e8f78f3bd2e9f46fcdd0e3850c08a0cd47b83f1cc9936fa68fe8af673d78d",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.02912",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 66798,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 63118,
+      "evidence_block_count": 107,
+      "evidence_context_characters": 76726,
+      "evidence_context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+      "evidence_context_sha256": "7661b667da54ac019f5c8031d03f2d9a9ec3eebbae727d3b0251d95901fe913d",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 66834,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "extracted_pages": 19,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "96f8e76a675333902ffc5dfb6ce1f5c89c8c9bb7905aed41104067bb6696ffdb",
+        "source_url": "https://arxiv.org/pdf/2611.02912",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 66798,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 374,
+          "supplied_characters": 374
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1567,
+          "supplied_characters": 1567
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2307,
+          "supplied_characters": 2307
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1192,
+          "supplied_characters": 1192
+        },
+        {
+          "heading": "We Identify How Local State Changes Invalidate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 104,
+          "supplied_characters": 104
+        },
+        {
+          "heading": "We Introduce Stategraph, Whose Main Method-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 282,
+          "supplied_characters": 282
+        },
+        {
+          "heading": "We Introducestatechangebench, A Controlled",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 193,
+          "supplied_characters": 193
+        },
+        {
+          "heading": "We Evaluate Stategraph Against Eight Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 148,
+          "supplied_characters": 148
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 8,
+          "source_characters": 1063,
+          "supplied_characters": 1063
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 9,
+          "source_characters": 2324,
+          "supplied_characters": 2324
+        },
+        {
+          "heading": "State Dependency Graph",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1145,
+          "supplied_characters": 1145
+        },
+        {
+          "heading": "Two Distinct Tasks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 479,
+          "supplied_characters": 479
+        },
+        {
+          "heading": "Two Distinct Tasks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 276,
+          "supplied_characters": 276
+        },
+        {
+          "heading": "A Consistency Property",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1427,
+          "supplied_characters": 1427
+        },
+        {
+          "heading": "Stategraph",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 492,
+          "supplied_characters": 492
+        },
+        {
+          "heading": "State Representation And Direct Revision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 889,
+          "supplied_characters": 889
+        },
+        {
+          "heading": "Dependency Candidate Discovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1014,
+          "supplied_characters": 1014
+        },
+        {
+          "heading": "Dependency Candidate Discovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 976,
+          "supplied_characters": 976
+        },
+        {
+          "heading": "Counterfactual Dependency Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1803,
+          "supplied_characters": 1803
+        },
+        {
+          "heading": "Counterfactual Dependency Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1062,
+          "supplied_characters": 1062
+        },
+        {
+          "heading": "Conservative Cascade Revision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1187,
+          "supplied_characters": 1187
+        },
+        {
+          "heading": "Premise- And Action-Aware State Use",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1026,
+          "supplied_characters": 1026
+        },
+        {
+          "heading": "What Existing Benchmarks Do Not Isolate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 727,
+          "supplied_characters": 727
+        },
+        {
+          "heading": "Case Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 836,
+          "supplied_characters": 836
+        },
+        {
+          "heading": "Construction And Quality Control",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 472,
+          "supplied_characters": 472
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 270,
+          "supplied_characters": 270
+        },
+        {
+          "heading": "Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 26,
+          "source_characters": 1419,
+          "supplied_characters": 1419
+        },
+        {
+          "heading": "Rq1: Direct State Revision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 488,
+          "supplied_characters": 488
+        },
+        {
+          "heading": "Rq2: Dependency Recovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 755,
+          "supplied_characters": 755
+        },
+        {
+          "heading": "Rq2: Dependency Recovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 497,
+          "supplied_characters": 497
+        },
+        {
+          "heading": "Rq3: Cascade Revision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 2279,
+          "supplied_characters": 2279
+        },
+        {
+          "heading": "Rq4: Supplementary Evaluation On",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 31,
+          "source_characters": 662,
+          "supplied_characters": 662
+        },
+        {
+          "heading": "Ablations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 174,
+          "supplied_characters": 174
+        },
+        {
+          "heading": "Ablations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 33,
+          "source_characters": 1746,
+          "supplied_characters": 1746
+        },
+        {
+          "heading": "Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 602,
+          "supplied_characters": 602
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 35,
+          "source_characters": 1010,
+          "supplied_characters": 1010
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "limitations",
+          "section_index": 36,
+          "source_characters": 147,
+          "supplied_characters": 147
+        },
+        {
+          "heading": "Statechangebench Cases And Depth Strata. Stat-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 573,
+          "supplied_characters": 573
+        },
+        {
+          "heading": "Statechangebench Cases And Depth Strata. Stat-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 1894,
+          "supplied_characters": 1894
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 458,
+          "supplied_characters": 458
+        },
+        {
+          "heading": "Production-Ready Ai Agents With Scalable Long-Term",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 239,
+          "supplied_characters": 239
+        },
+        {
+          "heading": "Tions Of The Association For Computational Linguis-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 472,
+          "supplied_characters": 472
+        },
+        {
+          "heading": "Fourteenth International Conference On Learning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 329,
+          "supplied_characters": 329
+        },
+        {
+          "heading": "Non-Parametric Continual Learning For Large Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 266,
+          "supplied_characters": 266
+        },
+        {
+          "heading": "Uating Memory In Llm Agents Via Incremental Multi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 200,
+          "supplied_characters": 200
+        },
+        {
+          "heading": "Robiologically Inspired Long-Term Memory For Large",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 226,
+          "supplied_characters": 226
+        },
+        {
+          "heading": "Of The 2025 Conference On Empirical Methods In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 46,
+          "source_characters": 464,
+          "supplied_characters": 464
+        },
+        {
+          "heading": "Of The 2025 Conference On Empirical Methods In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "methods",
+          "section_index": 47,
+          "source_characters": 5181,
+          "supplied_characters": 5181
+        },
+        {
+          "heading": "Appendix Contents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Appendix: Answer And Action Generation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 35,
+          "supplied_characters": 35
+        },
+        {
+          "heading": "Appendix: Hard Negatives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Appendix: Additional Experimental Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 326,
+          "supplied_characters": 326
+        },
+        {
+          "heading": "Appendix: Direct State Revision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 717,
+          "supplied_characters": 717
+        },
+        {
+          "heading": "Appendix: Dependency Recovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 598,
+          "supplied_characters": 598
+        },
+        {
+          "heading": "Appendix: Cascade Revision And Computational Cost",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 983,
+          "supplied_characters": 983
+        },
+        {
+          "heading": "Appendix: Generic Long-Term Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 353,
+          "supplied_characters": 353
+        },
+        {
+          "heading": "Appendix: Full Diagnostic Ablations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 868,
+          "supplied_characters": 868
+        },
+        {
+          "heading": "Appendix: Implementation And Reproducibility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 2034,
+          "supplied_characters": 2034
+        },
+        {
+          "heading": "Appendix: Impact-Set And Closure Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 1937,
+          "supplied_characters": 1937
+        },
+        {
+          "heading": "Appendix: Prompt Templates",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 85,
+          "supplied_characters": 85
+        },
+        {
+          "heading": "Appendix: State Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 511,
+          "supplied_characters": 511
+        },
+        {
+          "heading": "Appendix: State Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 352,
+          "supplied_characters": 352
+        },
+        {
+          "heading": "Appendix: Direct Revision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 766,
+          "supplied_characters": 766
+        },
+        {
+          "heading": "Appendix: Dependency Candidate Discovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 312,
+          "supplied_characters": 312
+        },
+        {
+          "heading": "Appendix: Dependency Direction And Type",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 622,
+          "supplied_characters": 622
+        },
+        {
+          "heading": "Appendix: Counterfactual Dependency Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 713,
+          "supplied_characters": 713
+        },
+        {
+          "heading": "Appendix: Counterfactual Dependency Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 102,
+          "supplied_characters": 102
+        },
+        {
+          "heading": "Appendix: Alternative Support Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 537,
+          "supplied_characters": 537
+        },
+        {
+          "heading": "Appendix: Premise Checking And Action Gating",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 199,
+          "supplied_characters": 199
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 353,
+          "supplied_characters": 353
+        },
+        {
+          "heading": "Appendix: Answer And Action Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 1106,
+          "supplied_characters": 1106
+        },
+        {
+          "heading": "Context: {Retrieved_Context}",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 71,
+          "source_characters": 31,
+          "supplied_characters": 31
+        },
+        {
+          "heading": "Context: {Retrieved_Context}",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 72,
+          "source_characters": 364,
+          "supplied_characters": 364
+        },
+        {
+          "heading": "Appendix: Benchmark Statistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 73,
+          "source_characters": 439,
+          "supplied_characters": 439
+        },
+        {
+          "heading": "Appendix: Stratum Specification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 74,
+          "source_characters": 1168,
+          "supplied_characters": 1168
+        },
+        {
+          "heading": "Appendix: Annotation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 75,
+          "source_characters": 374,
+          "supplied_characters": 374
+        },
+        {
+          "heading": "Appendix: Hard Negatives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 76,
+          "source_characters": 128,
+          "supplied_characters": 128
+        },
+        {
+          "heading": "Appendix: Study Case",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 77,
+          "source_characters": 3355,
+          "supplied_characters": 3355
+        }
+      ],
+      "selected_characters": 63118,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "selected_sections": [
+        {
+          "characters": 374,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1567,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2307,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1192,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 104,
+          "heading": "We Identify How Local State Changes Invalidate",
+          "page": 2
+        },
+        {
+          "characters": 282,
+          "heading": "We Introduce Stategraph, Whose Main Method-",
+          "page": 2
+        },
+        {
+          "characters": 193,
+          "heading": "We Introducestatechangebench, A Controlled",
+          "page": 2
+        },
+        {
+          "characters": 148,
+          "heading": "We Evaluate Stategraph Against Eight Memory",
+          "page": 2
+        },
+        {
+          "characters": 1063,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 2324,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1145,
+          "heading": "State Dependency Graph",
+          "page": 3
+        },
+        {
+          "characters": 479,
+          "heading": "Two Distinct Tasks",
+          "page": 3
+        },
+        {
+          "characters": 276,
+          "heading": "Two Distinct Tasks",
+          "page": 4
+        },
+        {
+          "characters": 1427,
+          "heading": "A Consistency Property",
+          "page": 4
+        },
+        {
+          "characters": 492,
+          "heading": "Stategraph",
+          "page": 4
+        },
+        {
+          "characters": 889,
+          "heading": "State Representation And Direct Revision",
+          "page": 4
+        },
+        {
+          "characters": 1014,
+          "heading": "Dependency Candidate Discovery",
+          "page": 4
+        },
+        {
+          "characters": 976,
+          "heading": "Dependency Candidate Discovery",
+          "page": 5
+        },
+        {
+          "characters": 1803,
+          "heading": "Counterfactual Dependency Verification",
+          "page": 5
+        },
+        {
+          "characters": 1062,
+          "heading": "Counterfactual Dependency Verification",
+          "page": 6
+        },
+        {
+          "characters": 1187,
+          "heading": "Conservative Cascade Revision",
+          "page": 6
+        },
+        {
+          "characters": 1026,
+          "heading": "Premise- And Action-Aware State Use",
+          "page": 6
+        },
+        {
+          "characters": 727,
+          "heading": "What Existing Benchmarks Do Not Isolate",
+          "page": 6
+        },
+        {
+          "characters": 836,
+          "heading": "Case Design",
+          "page": 7
+        },
+        {
+          "characters": 472,
+          "heading": "Construction And Quality Control",
+          "page": 7
+        },
+        {
+          "characters": 270,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 1419,
+          "heading": "Setup",
+          "page": 7
+        },
+        {
+          "characters": 488,
+          "heading": "Rq1: Direct State Revision",
+          "page": 7
+        },
+        {
+          "characters": 755,
+          "heading": "Rq2: Dependency Recovery",
+          "page": 7
+        },
+        {
+          "characters": 497,
+          "heading": "Rq2: Dependency Recovery",
+          "page": 8
+        },
+        {
+          "characters": 2279,
+          "heading": "Rq3: Cascade Revision",
+          "page": 8
+        },
+        {
+          "characters": 662,
+          "heading": "Rq4: Supplementary Evaluation On",
+          "page": 8
+        },
+        {
+          "characters": 174,
+          "heading": "Ablations",
+          "page": 8
+        },
+        {
+          "characters": 1746,
+          "heading": "Ablations",
+          "page": 9
+        },
+        {
+          "characters": 602,
+          "heading": "Analysis",
+          "page": 9
+        },
+        {
+          "characters": 1010,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 147,
+          "heading": "Limitations",
+          "page": 9
+        },
+        {
+          "characters": 573,
+          "heading": "Statechangebench Cases And Depth Strata. Stat-",
+          "page": 9
+        },
+        {
+          "characters": 1894,
+          "heading": "Statechangebench Cases And Depth Strata. Stat-",
+          "page": 10
+        },
+        {
+          "characters": 458,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 239,
+          "heading": "Production-Ready Ai Agents With Scalable Long-Term",
+          "page": 10
+        },
+        {
+          "characters": 472,
+          "heading": "Tions Of The Association For Computational Linguis-",
+          "page": 10
+        },
+        {
+          "characters": 329,
+          "heading": "Fourteenth International Conference On Learning",
+          "page": 10
+        },
+        {
+          "characters": 266,
+          "heading": "Non-Parametric Continual Learning For Large Language",
+          "page": 10
+        },
+        {
+          "characters": 200,
+          "heading": "Uating Memory In Llm Agents Via Incremental Multi-",
+          "page": 10
+        },
+        {
+          "characters": 226,
+          "heading": "Robiologically Inspired Long-Term Memory For Large",
+          "page": 10
+        },
+        {
+          "characters": 464,
+          "heading": "Of The 2025 Conference On Empirical Methods In",
+          "page": 10
+        },
+        {
+          "characters": 5181,
+          "heading": "Of The 2025 Conference On Empirical Methods In",
+          "page": 11
+        },
+        {
+          "characters": 17,
+          "heading": "Appendix Contents",
+          "page": 12
+        },
+        {
+          "characters": 35,
+          "heading": "Appendix: Answer And Action Generation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17",
+          "page": 12
+        },
+        {
+          "characters": 17,
+          "heading": "Appendix: Hard Negatives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19",
+          "page": 12
+        },
+        {
+          "characters": 326,
+          "heading": "Appendix: Additional Experimental Results",
+          "page": 12
+        },
+        {
+          "characters": 717,
+          "heading": "Appendix: Direct State Revision",
+          "page": 12
+        },
+        {
+          "characters": 598,
+          "heading": "Appendix: Dependency Recovery",
+          "page": 13
+        },
+        {
+          "characters": 983,
+          "heading": "Appendix: Cascade Revision And Computational Cost",
+          "page": 13
+        },
+        {
+          "characters": 353,
+          "heading": "Appendix: Generic Long-Term Memory",
+          "page": 13
+        },
+        {
+          "characters": 868,
+          "heading": "Appendix: Full Diagnostic Ablations",
+          "page": 14
+        },
+        {
+          "characters": 2034,
+          "heading": "Appendix: Implementation And Reproducibility",
+          "page": 14
+        },
+        {
+          "characters": 1937,
+          "heading": "Appendix: Impact-Set And Closure Metrics",
+          "page": 15
+        },
+        {
+          "characters": 85,
+          "heading": "Appendix: Prompt Templates",
+          "page": 15
+        },
+        {
+          "characters": 511,
+          "heading": "Appendix: State Extraction",
+          "page": 15
+        },
+        {
+          "characters": 352,
+          "heading": "Appendix: State Extraction",
+          "page": 16
+        },
+        {
+          "characters": 766,
+          "heading": "Appendix: Direct Revision",
+          "page": 16
+        },
+        {
+          "characters": 312,
+          "heading": "Appendix: Dependency Candidate Discovery",
+          "page": 16
+        },
+        {
+          "characters": 622,
+          "heading": "Appendix: Dependency Direction And Type",
+          "page": 16
+        },
+        {
+          "characters": 713,
+          "heading": "Appendix: Counterfactual Dependency Verification",
+          "page": 16
+        },
+        {
+          "characters": 102,
+          "heading": "Appendix: Counterfactual Dependency Verification",
+          "page": 17
+        },
+        {
+          "characters": 537,
+          "heading": "Appendix: Alternative Support Detection",
+          "page": 17
+        },
+        {
+          "characters": 199,
+          "heading": "Appendix: Premise Checking And Action Gating",
+          "page": 17
+        },
+        {
+          "characters": 353,
+          "heading": "Unclassified body after references",
+          "page": 17
+        },
+        {
+          "characters": 1106,
+          "heading": "Appendix: Answer And Action Generation",
+          "page": 17
+        },
+        {
+          "characters": 31,
+          "heading": "Context: {Retrieved_Context}",
+          "page": 17
+        },
+        {
+          "characters": 364,
+          "heading": "Context: {Retrieved_Context}",
+          "page": 18
+        },
+        {
+          "characters": 439,
+          "heading": "Appendix: Benchmark Statistics",
+          "page": 18
+        },
+        {
+          "characters": 1168,
+          "heading": "Appendix: Stratum Specification",
+          "page": 18
+        },
+        {
+          "characters": 374,
+          "heading": "Appendix: Annotation Protocol",
+          "page": 18
+        },
+        {
+          "characters": 128,
+          "heading": "Appendix: Hard Negatives",
+          "page": 19
+        },
+        {
+          "characters": 3355,
+          "heading": "Appendix: Study Case",
+          "page": 19
+        }
+      ],
+      "selected_text_sha256": "c83e8f78f3bd2e9f46fcdd0e3850c08a0cd47b83f1cc9936fa68fe8af673d78d",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "96f8e76a675333902ffc5dfb6ce1f5c89c8c9bb7905aed41104067bb6696ffdb",
+      "source_pages": 19,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0002"
+        ],
+        "excerpt": "Long-lived agents rely on persistent memory\nof users, tasks and decisions, and this memory\nmust stay consistent with a world that keeps\nchanging. When an upstream fact changes,\nhowever, memory systems can revise the con-\ntradicted memory itself while the beliefs, plans\nand actions derived from it remain accepted,\neven though they have lost their support. We\ntherefore formulate dependency-aware state re-\nvision, which asks not only what changed but\nalso which dependent states should no longer\nbe trusted. To address it, StateGraph maintains\nan evolving state dependency graph whose\nedges are recovered from interaction histories.\nIts core design is counterfactual verification:\neach candidate edge is tested by asking whether\nthe dependent state would survive the loss of its\npremise, which separates support dependence\nfrom semantic relatedness, and revision then\ninvalidates a dependent state ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b21ca7fcf9804efc80b23bbb97b6af9d9d4a8a0b670aebd6e2a0d6d879bec93d",
+            "evidence_id": "E96340e533c113cf7-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Long-lived agents rely on persistent memory\nof users, tasks and decisions, and this memory\nmust stay consistent with a world that keeps\nchanging. When an upstream fact changes,\nhowever, memory systems can revise the con-\ntradicted memory itself while the beliefs, plans\nand actions derived from it remain accepted,\neven though they have lost their support. We\ntherefore formulate dependency-aware state re-\nvision, which asks not only what changed but\nalso which dependent states should no longer\nbe trusted. To address it, StateGraph maintains\nan evolving state dependency graph whose\nedges are recovered from interaction histories.\nIts core design is counterfactual verification:\neach candidate edge is tested by asking whether\nthe dependent state would survive the loss of its\npremise, which separates support dependence\nfrom semantic relatedness, and revision then\ninvalidates a dependent state "
+              }
+            ],
+            "text": "Long-lived agents rely on persistent memory\nof users, tasks and decisions, and this memory\nmust stay consistent with a world that keeps\nchanging. When an upstream fact changes,\nhowever, memory systems can revise the con-\ntradicted memory itself while the beliefs, plans\nand actions derived from it remain accepted,\neven though they have lost their support. We\ntherefore formulate dependency-aware state re-\nvision, which asks not only what changed but\nalso which dependent states should no longer\nbe trusted. To address it, StateGraph maintains\nan evolving state dependency graph whose\nedges are recovered from interaction histories.\nIts core design is counterfactual verification:\neach candidate edge is tested by asking whether\nthe dependent state would survive the loss of its\npremise, which separates support dependence\nfrom semantic relatedness, and revision then\ninvalidates a dependent state "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0003"
+        ],
+        "excerpt": "only when a strict\ndependency fails and no independent support\npath survives. To test this design, we intro-\nduce StateChangeBench, a controlled bench-\nmark of 50 author-constructed cases annotated\nwith cascade depth, hard negatives and action\nconsequences. On it, StateGraph's Impact-F1\nmargin over a CUPMem reimplementation is\n6.9 percentage points at depth 1 and 26.0 at\ndepth 3+. On public long-term memory bench-\nmarks, its point estimates are comparable to\nor higher than those of the evaluated baselines\non most datasets. These results provide ini-\ntial evidence that explicit dependency tracking\ncan improve selective memory revision under\nchanging conditions.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "7b3e2e4886ca4990ca789cb64d330ee1acf707601b8c8fa8deb87ffc83d58813",
+            "evidence_id": "E96340e533c113cf7-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1567,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 899,
+                "text": "only when a strict\ndependency fails and no independent support\npath survives. To test this design, we intro-\nduce StateChangeBench, a controlled bench-\nmark of 50 author-constructed cases annotated\nwith cascade depth, hard negatives and action\nconsequences. On it, StateGraph's Impact-F1\nmargin over a CUPMem reimplementation is\n6.9 percentage points at depth 1 and 26.0 at\ndepth 3+. On public long-term memory bench-\nmarks, its point estimates are comparable to\nor higher than those of the evaluated baselines\non most datasets. These results provide ini-\ntial evidence that explicit dependency tracking\ncan improve selective memory revision under\nchanging conditions."
+              }
+            ],
+            "text": "only when a strict\ndependency fails and no independent support\npath survives. To test this design, we intro-\nduce StateChangeBench, a controlled bench-\nmark of 50 author-constructed cases annotated\nwith cascade depth, hard negatives and action\nconsequences. On it, StateGraph's Impact-F1\nmargin over a CUPMem reimplementation is\n6.9 percentage points at depth 1 and 26.0 at\ndepth 3+. On public long-term memory bench-\nmarks, its point estimates are comparable to\nor higher than those of the evaluated baselines\non most datasets. These results provide ini-\ntial evidence that explicit dependency tracking\ncan improve selective memory revision under\nchanging conditions."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0009"
+        ],
+        "excerpt": "ological contribution is recovering support de-\npendencies from interaction histories and ver-\nifying them counterfactually; its propagation\nstage applies established dependency-directed\nrevision with explicit support and scope checks\nrather than invalidating every reachable state.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Introduce Stategraph, Whose Main Method-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "62cd85dea0bdee51a3452b72a76735c7f49ccd60c413394a3e3b5677051e8dd6",
+            "evidence_id": "E96340e533c113cf7-B0009",
+            "pages": [
+              2
+            ],
+            "section": "We Introduce Stategraph, Whose Main Method-",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 282,
+                "page": 2,
+                "section": "We Introduce Stategraph, Whose Main Method-",
+                "section_index": 5,
+                "start": 0,
+                "text": "ological contribution is recovering support de-\npendencies from interaction histories and ver-\nifying them counterfactually; its propagation\nstage applies established dependency-directed\nrevision with explicit support and scope checks\nrather than invalidating every reachable state."
+              }
+            ],
+            "text": "ological contribution is recovering support de-\npendencies from interaction histories and ver-\nifying them counterfactually; its propagation\nstage applies established dependency-directed\nrevision with explicit support and scope checks\nrather than invalidating every reachable state."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0010"
+        ],
+        "excerpt": "50-case benchmark annotating dependency\nstructure, cascade depth, hard negatives and ac-\ntion consequences, with metrics for dependency\nrecovery, multi-hop impact and over-/under-\ninvalidation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Introducestatechangebench, A Controlled",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "9db11cecde577fef60c8c36a5e261ca61b0d3084358d0805e6ceee7244421f18",
+            "evidence_id": "E96340e533c113cf7-B0010",
+            "pages": [
+              2
+            ],
+            "section": "We Introducestatechangebench, A Controlled",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 193,
+                "page": 2,
+                "section": "We Introducestatechangebench, A Controlled",
+                "section_index": 6,
+                "start": 0,
+                "text": "50-case benchmark annotating dependency\nstructure, cascade depth, hard negatives and ac-\ntion consequences, with metrics for dependency\nrecovery, multi-hop impact and over-/under-\ninvalidation."
+              }
+            ],
+            "text": "50-case benchmark annotating dependency\nstructure, cascade depth, hard negatives and ac-\ntion consequences, with metrics for dependency\nrecovery, multi-hop impact and over-/under-\ninvalidation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0018"
+        ],
+        "excerpt": "Let xt be new evidence.Direct revisionidentifies\nthe states whose validityx t itself settles:\nDt ={s\u2208S t :x t updates or contradictss}.\n(3)\nThis is the task existing systems address.Cascade\nrevisiontakes the resulting invalidated set It \u2286\nDt and asks whichotherstates or pending actions\nrequire revision:\nAffected(It)\u2286(S t \u222aA t)\\D t.(4)\nThe central difficulty is that Affected(It) isnot\nthe set R(It) of states reachable from It over de-\npendency edges:\nAffected(It)\u2286R(I t),(5)\n3\nwith strict inclusion when independent support\nor scope restrictions leave reachable nodes CUR-\nRENT. Weak dependencies require uncertainty han-\ndling, not wholesale invalidation. Cascade revision\nmust identify the nodes requiring revision rather\nthan invalidate all ofR(I t).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Two Distinct Tasks",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "1aada93c8f92ea6a9b6160aa67073da64e732c6e224358f67a75abbfbeef689e",
+            "evidence_id": "E96340e533c113cf7-B0018",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Two Distinct Tasks",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 479,
+                "page": 3,
+                "section": "Two Distinct Tasks",
+                "section_index": 11,
+                "start": 0,
+                "text": "Let xt be new evidence.Direct revisionidentifies\nthe states whose validityx t itself settles:\nDt ={s\u2208S t :x t updates or contradictss}.\n(3)\nThis is the task existing systems address.Cascade\nrevisiontakes the resulting invalidated set It \u2286\nDt and asks whichotherstates or pending actions\nrequire revision:\nAffected(It)\u2286(S t \u222aA t)\\D t.(4)\nThe central difficulty is that Affected(It) isnot\nthe set R(It) of states reachable from It over de-\npendency edges:\nAffected(It)\u2286R(I t),(5)\n3"
+              },
+              {
+                "end": 276,
+                "page": 4,
+                "section": "Two Distinct Tasks",
+                "section_index": 12,
+                "start": 0,
+                "text": "with strict inclusion when independent support\nor scope restrictions leave reachable nodes CUR-\nRENT. Weak dependencies require uncertainty han-\ndling, not wholesale invalidation. Cascade revision\nmust identify the nodes requiring revision rather\nthan invalidate all ofR(I t)."
+              }
+            ],
+            "text": "Let xt be new evidence.Direct revisionidentifies\nthe states whose validityx t itself settles:\nDt ={s\u2208S t :x t updates or contradictss}.\n(3)\nThis is the task existing systems address.Cascade\nrevisiontakes the resulting invalidated set It \u2286\nDt and asks whichotherstates or pending actions\nrequire revision:\nAffected(It)\u2286(S t \u222aA t)\\D t.(4)\nThe central difficulty is that Affected(It) isnot\nthe set R(It) of states reachable from It over de-\npendency edges:\nAffected(It)\u2286R(I t),(5)\n3\nwith strict inclusion when independent support\nor scope restrictions leave reachable nodes CUR-\nRENT. Weak dependencies require uncertainty han-\ndling, not wholesale invalidation. Cascade revision\nmust identify the nodes requiring revision rather\nthan invalidate all ofR(I t)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0026"
+        ],
+        "excerpt": "For each candidate si \u2192s j, we probe whether sj\nsurvives antecedent invalidation:\nIf si were no longer a valid current\npremise, and all other evidence in the\nverification context remained unchanged,\nwoulds j still hold?\nand label the edge from the answer:\n\u2022 STRICT\u2014 sj does not survive in the verification\ncontext. Its support there runs throughs i.\n\u2022 WEAK\u2014 si contributes to sj's support, but sj\nis not defeated without it: either its validity be-\ncomes undetermined, or independent support al-\nready in the verification context still establishes\nit.\n\u2022 NONE\u2014 sj is unaffected. The states were re-\nlated, not dependent.\nThe verifier rejects judgments inconsistent with\ntheir counterfactual outcome. Accepted STRICT\nand WEAKedges retain direction, relation type and\ndependency strength; NONEedges do not propa-\ngate. The counterfactual probe is designed to distin-\nguish support dependence from ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Counterfactual Dependency Verification",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6157b2d5daa9b18bc1150d53cf19cb06c2583d66b11997cbf42b4bef4ab66c09",
+            "evidence_id": "E96340e533c113cf7-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Counterfactual Dependency Verification",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 5,
+                "section": "Counterfactual Dependency Verification",
+                "section_index": 18,
+                "start": 0,
+                "text": "For each candidate si \u2192s j, we probe whether sj\nsurvives antecedent invalidation:\nIf si were no longer a valid current\npremise, and all other evidence in the\nverification context remained unchanged,\nwoulds j still hold?\nand label the edge from the answer:\n\u2022 STRICT\u2014 sj does not survive in the verification\ncontext. Its support there runs throughs i.\n\u2022 WEAK\u2014 si contributes to sj's support, but sj\nis not defeated without it: either its validity be-\ncomes undetermined, or independent support al-\nready in the verification context still establishes\nit.\n\u2022 NONE\u2014 sj is unaffected. The states were re-\nlated, not dependent.\nThe verifier rejects judgments inconsistent with\ntheir counterfactual outcome. Accepted STRICT\nand WEAKedges retain direction, relation type and\ndependency strength; NONEedges do not propa-\ngate. The counterfactual probe is designed to distin-\nguish support dependence from "
+              }
+            ],
+            "text": "For each candidate si \u2192s j, we probe whether sj\nsurvives antecedent invalidation:\nIf si were no longer a valid current\npremise, and all other evidence in the\nverification context remained unchanged,\nwoulds j still hold?\nand label the edge from the answer:\n\u2022 STRICT\u2014 sj does not survive in the verification\ncontext. Its support there runs throughs i.\n\u2022 WEAK\u2014 si contributes to sj's support, but sj\nis not defeated without it: either its validity be-\ncomes undetermined, or independent support al-\nready in the verification context still establishes\nit.\n\u2022 NONE\u2014 sj is unaffected. The states were re-\nlated, not dependent.\nThe verifier rejects judgments inconsistent with\ntheir counterfactual outcome. Accepted STRICT\nand WEAKedges retain direction, relation type and\ndependency strength; NONEedges do not propa-\ngate. The counterfactual probe is designed to distin-\nguish support dependence from "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0030"
+        ],
+        "excerpt": "Breadth-first propagation from It (Algorithm 1) fol-\nlows verified edges and Table 1. Each step checks\nstrength, independent support, state type and tem-\nporal/conditional scope; only new downstream\nconsequences trigger further traversal. Marking\nweakly supported states UNCERTAINrather than\nSTALEparallels confidence-gated selective predic-\ntion, which abstains on low-confidence outputs in-\nstead of committing to them (Zheng et al., 2026).\nHere b identifies the root and p the failed path. Is-\nNew requires an unseen root/node/effect and a new\nstatus or support-provenance effect; weaker effects\ndo not overwrite stronger ones.\nEdge Alt. support Consequence\nSTRICTnone STALE/ NEEDS-RECOMPUTE\nSTRICTsurvives CURRENT(re-grounded)\nWEAKnone UNCERTAIN/ Downweight\nWEAKsurvives CURRENT\nNONEnot assessed No propagation\nInvalid action premise none Block / Replan\nTable 1: Conservative revision rule, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conservative Cascade Revision",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "bb5b9dce214915c194b8a73a5d4f535f6de3c99ea4bd920b0f663c70506a6c2f",
+            "evidence_id": "E96340e533c113cf7-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Conservative Cascade Revision",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 6,
+                "section": "Conservative Cascade Revision",
+                "section_index": 20,
+                "start": 0,
+                "text": "Breadth-first propagation from It (Algorithm 1) fol-\nlows verified edges and Table 1. Each step checks\nstrength, independent support, state type and tem-\nporal/conditional scope; only new downstream\nconsequences trigger further traversal. Marking\nweakly supported states UNCERTAINrather than\nSTALEparallels confidence-gated selective predic-\ntion, which abstains on low-confidence outputs in-\nstead of committing to them (Zheng et al., 2026).\nHere b identifies the root and p the failed path. Is-\nNew requires an unseen root/node/effect and a new\nstatus or support-provenance effect; weaker effects\ndo not overwrite stronger ones.\nEdge Alt. support Consequence\nSTRICTnone STALE/ NEEDS-RECOMPUTE\nSTRICTsurvives CURRENT(re-grounded)\nWEAKnone UNCERTAIN/ Downweight\nWEAKsurvives CURRENT\nNONEnot assessed No propagation\nInvalid action premise none Block / Replan\nTable 1: Conservative revision rule, "
+              }
+            ],
+            "text": "Breadth-first propagation from It (Algorithm 1) fol-\nlows verified edges and Table 1. Each step checks\nstrength, independent support, state type and tem-\nporal/conditional scope; only new downstream\nconsequences trigger further traversal. Marking\nweakly supported states UNCERTAINrather than\nSTALEparallels confidence-gated selective predic-\ntion, which abstains on low-confidence outputs in-\nstead of committing to them (Zheng et al., 2026).\nHere b identifies the root and p the failed path. Is-\nNew requires an unseen root/node/effect and a new\nstatus or support-provenance effect; weaker effects\ndo not overwrite stronger ones.\nEdge Alt. support Consequence\nSTRICTnone STALE/ NEEDS-RECOMPUTE\nSTRICTsurvives CURRENT(re-grounded)\nWEAKnone UNCERTAIN/ Downweight\nWEAKsurvives CURRENT\nNONEnot assessed No propagation\nInvalid action premise none Block / Replan\nTable 1: Conservative revision rule, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0035"
+        ],
+        "excerpt": "Each case includes history, pre-existing states\nand dependencies, new evidence, and a query\nor pending action. Gold labels specify every\nstate's post-revision status, invalidation depth/-\npath, STRICT/WEAKstrength, surviving-support\nconditions and action (proceed,revise-plan,ask-\nclarification). Strata cover depth 0\u20133+, implic-\nit/weak dependencies, alternative support, tempo-\nrary exceptions, historical states and action conse-\nquences.\nHard negatives.Weak dependencies, surviving\nsupport and scope-narrowing exceptions test se-\nlective revision against indiscriminate invalidation.\nStateChangeBench has 50 cases: 10/15/15/10 at\ndepth 0/1/2/3+, including 17 hard negatives (34%)\nand 36 action-consequence cases (72%). We report\nover-invalidation alongside recall; Appendix C, Ta-\nble 9, provides the specification and distribution.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Case Design",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "041dcecf109ddbdf3df9b467cba92eeeffba5c0283d30a91ab22f0748d360a57",
+            "evidence_id": "E96340e533c113cf7-B0035",
+            "pages": [
+              7
+            ],
+            "section": "Case Design",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 836,
+                "page": 7,
+                "section": "Case Design",
+                "section_index": 23,
+                "start": 0,
+                "text": "Each case includes history, pre-existing states\nand dependencies, new evidence, and a query\nor pending action. Gold labels specify every\nstate's post-revision status, invalidation depth/-\npath, STRICT/WEAKstrength, surviving-support\nconditions and action (proceed,revise-plan,ask-\nclarification). Strata cover depth 0\u20133+, implic-\nit/weak dependencies, alternative support, tempo-\nrary exceptions, historical states and action conse-\nquences.\nHard negatives.Weak dependencies, surviving\nsupport and scope-narrowing exceptions test se-\nlective revision against indiscriminate invalidation.\nStateChangeBench has 50 cases: 10/15/15/10 at\ndepth 0/1/2/3+, including 17 hard negatives (34%)\nand 36 action-consequence cases (72%). We report\nover-invalidation alongside recall; Appendix C, Ta-\nble 9, provides the specification and distribution."
+              }
+            ],
+            "text": "Each case includes history, pre-existing states\nand dependencies, new evidence, and a query\nor pending action. Gold labels specify every\nstate's post-revision status, invalidation depth/-\npath, STRICT/WEAKstrength, surviving-support\nconditions and action (proceed,revise-plan,ask-\nclarification). Strata cover depth 0\u20133+, implic-\nit/weak dependencies, alternative support, tempo-\nrary exceptions, historical states and action conse-\nquences.\nHard negatives.Weak dependencies, surviving\nsupport and scope-narrowing exceptions test se-\nlective revision against indiscriminate invalidation.\nStateChangeBench has 50 cases: 10/15/15/10 at\ndepth 0/1/2/3+, including 17 hard negatives (34%)\nand 36 action-consequence cases (72%). We report\nover-invalidation alongside recall; Appendix C, Ta-\nble 9, provides the specification and distribution."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0036"
+        ],
+        "excerpt": "Cases are seeded from interaction data (Wu et al.,\n2025) and organized under a stratum specification.\nHuman annotators label post-update state status,\ncascade depth and dependency type. Agreement\non a double-annotated subset, whose size was not\nrecorded, is reported separately for these dimen-\nsions, with Cohen's \u03ba values of 0.7915, 1.0000\nand 0.5583, respectively. Dependency paths, down-\nstream revision targets and preservation conditions\nare specified in Appendix C.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Construction And Quality Control",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d62d81bac984ab89ed6717feac304bbc83b59e979eef1e41121215ebeeef3c7c",
+            "evidence_id": "E96340e533c113cf7-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Construction And Quality Control",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 472,
+                "page": 7,
+                "section": "Construction And Quality Control",
+                "section_index": 24,
+                "start": 0,
+                "text": "Cases are seeded from interaction data (Wu et al.,\n2025) and organized under a stratum specification.\nHuman annotators label post-update state status,\ncascade depth and dependency type. Agreement\non a double-annotated subset, whose size was not\nrecorded, is reported separately for these dimen-\nsions, with Cohen's \u03ba values of 0.7915, 1.0000\nand 0.5583, respectively. Dependency paths, down-\nstream revision targets and preservation conditions\nare specified in Appendix C."
+              }
+            ],
+            "text": "Cases are seeded from interaction data (Wu et al.,\n2025) and organized under a stratum specification.\nHuman annotators label post-update state status,\ncascade depth and dependency type. Agreement\non a double-annotated subset, whose size was not\nrecorded, is reported separately for these dimen-\nsions, with Cohen's \u03ba values of 0.7915, 1.0000\nand 0.5583, respectively. Dependency paths, down-\nstream revision targets and preservation conditions\nare specified in Appendix C."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0038"
+        ],
+        "excerpt": "Baselines.Baselines are vector RAG (Lewis\net al., 2020), time-decay RAG, summary memory,\nMem0 (Chhikara et al., 2025), Zep/Graphiti (Ras-\nmussen et al., 2025), A-MEM (Xu et al., 2025),\nCUPMem (Chao et al., 2026) and Full Context.\nWe reimplement CUPMem within the shared evalu-\nation framework. Reported token usage covers\nthe complete memory-processing and response\npipeline: on cascade revision, CUPMem uses\n90.6K tokens per case versus StateGraph's 12.5K\n(approximately 7.2\u00d7), distinct from the matched\nanswer-time context budget.\nPorted-mechanism condition.Mem0 and CUP-\nMem augmented with cascade revision isolate the\nmechanism's contribution while retaining their ex-\ntraction and retrieval.\nProtocol.The reported experiments use\nDeepSeek-v4-Flash. StateChangeBench results\npool counts across repeated evaluation runs\nper configuration (Appendix A.7); the number\nof runs per configuration was ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Setup",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f16953a188b62bc93f80c98220311e92041063ba6dfc0f0bf4dcf2e50f59f305",
+            "evidence_id": "E96340e533c113cf7-B0038",
+            "pages": [
+              7
+            ],
+            "section": "Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "Setup",
+                "section_index": 26,
+                "start": 0,
+                "text": "Baselines.Baselines are vector RAG (Lewis\net al., 2020), time-decay RAG, summary memory,\nMem0 (Chhikara et al., 2025), Zep/Graphiti (Ras-\nmussen et al., 2025), A-MEM (Xu et al., 2025),\nCUPMem (Chao et al., 2026) and Full Context.\nWe reimplement CUPMem within the shared evalu-\nation framework. Reported token usage covers\nthe complete memory-processing and response\npipeline: on cascade revision, CUPMem uses\n90.6K tokens per case versus StateGraph's 12.5K\n(approximately 7.2\u00d7), distinct from the matched\nanswer-time context budget.\nPorted-mechanism condition.Mem0 and CUP-\nMem augmented with cascade revision isolate the\nmechanism's contribution while retaining their ex-\ntraction and retrieval.\nProtocol.The reported experiments use\nDeepSeek-v4-Flash. StateChangeBench results\npool counts across repeated evaluation runs\nper configuration (Appendix A.7); the number\nof runs per configuration was "
+              }
+            ],
+            "text": "Baselines.Baselines are vector RAG (Lewis\net al., 2020), time-decay RAG, summary memory,\nMem0 (Chhikara et al., 2025), Zep/Graphiti (Ras-\nmussen et al., 2025), A-MEM (Xu et al., 2025),\nCUPMem (Chao et al., 2026) and Full Context.\nWe reimplement CUPMem within the shared evalu-\nation framework. Reported token usage covers\nthe complete memory-processing and response\npipeline: on cascade revision, CUPMem uses\n90.6K tokens per case versus StateGraph's 12.5K\n(approximately 7.2\u00d7), distinct from the matched\nanswer-time context budget.\nPorted-mechanism condition.Mem0 and CUP-\nMem augmented with cascade revision isolate the\nmechanism's contribution while retaining their ex-\ntraction and retrieval.\nProtocol.The reported experiments use\nDeepSeek-v4-Flash. StateChangeBench results\npool counts across repeated evaluation runs\nper configuration (Appendix A.7); the number\nof runs per configuration was "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0044"
+        ],
+        "excerpt": "54.1\nCUPMem 75.8 62.9 49.1 64.3\nFull Context 72.5 57.8 42.6 59.5\nMem0 + Cascade 73.4 62.1 51.0 63.6\nCUPMem + Cascade 79.2 70.4 61.7 71.5\nStateGraph 82.7 79.3 75.1 79.5\nMem0 drops from 65.1% to 47.2% F1 at\ndepth 1/2. In the depth strata of this benchmark,\nStateGraph's margin over CUPMem is 6.9 per-\ncentage points at depth 1 (82.7% versus 75.8%)\nand 26.0 at depth 3+ (Figure 3; \u00a77). With 10\u201315\ncases per stratum, we report this as an observed\npattern on StateChangeBench rather than a gen-\neral depth trend. Its CVR is 7.6%, versus CUP-\nMem's 35.1%; the other unaugmented baselines\nrange from 38.9% to 78.2%. Counterfactual veri-\nfication and alternative-support checks limit over-\ninvalidation to 5.2%.\nRevision errors\nMethod Over-Inv.\u2193Under-Inv.\u2193CVR\u2193\nVector RAG 31.4 73.5 78.2\nTime-decay RAG 28.7 69.8 74.5\nSummary Memory 19.8 48.4 56.1\nMem0 17.2 44.1 51.8\nZep / Graphiti 15.6 40.8 46.3\nA-MEM 14.9 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq3: Cascade Revision",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0e4a46aa0b331bb7c4f606c301c648037acce4333eb527ce784d0c58dba82c72",
+            "evidence_id": "E96340e533c113cf7-B0044",
+            "pages": [
+              8
+            ],
+            "section": "Rq3: Cascade Revision",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1789,
+                "page": 8,
+                "section": "Rq3: Cascade Revision",
+                "section_index": 30,
+                "start": 889,
+                "text": "54.1\nCUPMem 75.8 62.9 49.1 64.3\nFull Context 72.5 57.8 42.6 59.5\nMem0 + Cascade 73.4 62.1 51.0 63.6\nCUPMem + Cascade 79.2 70.4 61.7 71.5\nStateGraph 82.7 79.3 75.1 79.5\nMem0 drops from 65.1% to 47.2% F1 at\ndepth 1/2. In the depth strata of this benchmark,\nStateGraph's margin over CUPMem is 6.9 per-\ncentage points at depth 1 (82.7% versus 75.8%)\nand 26.0 at depth 3+ (Figure 3; \u00a77). With 10\u201315\ncases per stratum, we report this as an observed\npattern on StateChangeBench rather than a gen-\neral depth trend. Its CVR is 7.6%, versus CUP-\nMem's 35.1%; the other unaugmented baselines\nrange from 38.9% to 78.2%. Counterfactual veri-\nfication and alternative-support checks limit over-\ninvalidation to 5.2%.\nRevision errors\nMethod Over-Inv.\u2193Under-Inv.\u2193CVR\u2193\nVector RAG 31.4 73.5 78.2\nTime-decay RAG 28.7 69.8 74.5\nSummary Memory 19.8 48.4 56.1\nMem0 17.2 44.1 51.8\nZep / Graphiti 15.6 40.8 46.3\nA-MEM 14.9 "
+              }
+            ],
+            "text": "54.1\nCUPMem 75.8 62.9 49.1 64.3\nFull Context 72.5 57.8 42.6 59.5\nMem0 + Cascade 73.4 62.1 51.0 63.6\nCUPMem + Cascade 79.2 70.4 61.7 71.5\nStateGraph 82.7 79.3 75.1 79.5\nMem0 drops from 65.1% to 47.2% F1 at\ndepth 1/2. In the depth strata of this benchmark,\nStateGraph's margin over CUPMem is 6.9 per-\ncentage points at depth 1 (82.7% versus 75.8%)\nand 26.0 at depth 3+ (Figure 3; \u00a77). With 10\u201315\ncases per stratum, we report this as an observed\npattern on StateChangeBench rather than a gen-\neral depth trend. Its CVR is 7.6%, versus CUP-\nMem's 35.1%; the other unaugmented baselines\nrange from 38.9% to 78.2%. Counterfactual veri-\nfication and alternative-support checks limit over-\ninvalidation to 5.2%.\nRevision errors\nMethod Over-Inv.\u2193Under-Inv.\u2193CVR\u2193\nVector RAG 31.4 73.5 78.2\nTime-decay RAG 28.7 69.8 74.5\nSummary Memory 19.8 48.4 56.1\nMem0 17.2 44.1 51.8\nZep / Graphiti 15.6 40.8 46.3\nA-MEM 14.9 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0046"
+        ],
+        "excerpt": "Public Memory Benchmarks\nThis supplementary evaluation checks whether\nadding dependency revision coincides with lower\nperformance on standard long-term memory tasks.\nUsing State Answer Accuracy, StateGraph scores\n52.0% on STALE versus CUPMem's 51.7%, and\n53.9% on LongMemEval (Wu et al., 2025) versus\nMem0's 51.3%. On MemoryAgentBench it scores\n36.6%, below A-MEM's 43.1% and above CUP-\nMem's 28.1%. Its point estimates are comparable\nto or higher than those of the evaluated baselines\non five of the six benchmarks. We did not run\nsignificance tests, so these results do not establish\nthe absence of degradation. Appendix A, Table 7,\nreports all six benchmarks.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq4: Supplementary Evaluation On",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8a58c27c4639549a243ba51a3e0f374c8acf2f5949ee840fb68584a2e80d7ab2",
+            "evidence_id": "E96340e533c113cf7-B0046",
+            "pages": [
+              8
+            ],
+            "section": "Rq4: Supplementary Evaluation On",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 662,
+                "page": 8,
+                "section": "Rq4: Supplementary Evaluation On",
+                "section_index": 31,
+                "start": 0,
+                "text": "Public Memory Benchmarks\nThis supplementary evaluation checks whether\nadding dependency revision coincides with lower\nperformance on standard long-term memory tasks.\nUsing State Answer Accuracy, StateGraph scores\n52.0% on STALE versus CUPMem's 51.7%, and\n53.9% on LongMemEval (Wu et al., 2025) versus\nMem0's 51.3%. On MemoryAgentBench it scores\n36.6%, below A-MEM's 43.1% and above CUP-\nMem's 28.1%. Its point estimates are comparable\nto or higher than those of the evaluated baselines\non five of the six benchmarks. We did not run\nsignificance tests, so these results do not establish\nthe absence of degradation. Appendix A, Table 7,\nreports all six benchmarks."
+              }
+            ],
+            "text": "Public Memory Benchmarks\nThis supplementary evaluation checks whether\nadding dependency revision coincides with lower\nperformance on standard long-term memory tasks.\nUsing State Answer Accuracy, StateGraph scores\n52.0% on STALE versus CUPMem's 51.7%, and\n53.9% on LongMemEval (Wu et al., 2025) versus\nMem0's 51.3%. On MemoryAgentBench it scores\n36.6%, below A-MEM's 43.1% and above CUP-\nMem's 28.1%. Its point estimates are comparable\nto or higher than those of the evaluated baselines\non five of the six benchmarks. We did not run\nsignificance tests, so these results do not establish\nthe absence of degradation. Appendix A, Table 7,\nreports all six benchmarks."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0047"
+        ],
+        "excerpt": "We remove one mechanism at a time using\nDeepSeek-v4-Flash on all 50 StateChangeBench\ncases and depths (Table 3). Depth-wise results and\ncosts appear in Appendix A, Table 8.\n8\nMemory revision\nConfiguration All F1\u2191Over-Inv.\u2193CVR\u2193\nFull StateGraph 79.5 5.2 7.6\nw/o Counterfactual\nVerification 65.9 19.0 23.0\nw/o Alternative\nSupport 68.2 21.0 19.0\nw/o Conservative\nRevision 62.8 25.0 28.0\nw/o Cascade\nPropagation 45.6 7.0 51.0\nLLM-only Revision 46.7 29.0 41.0\nTable 3: Ablations on the full 50-case State-\nChangeBench using DeepSeek-v4-Flash. All values\nare percentages. Depth-wise results, under-invalidation\nand costs appear in Table 8.\nObservation 1: verification limits over-\ninvalidation.Removing counterfactual ver-\nification propagates over all candidate edges:\nover-invalidation rises from 5.2% to 19.0% and\nImpact-F1 falls to 65.9 as false edges propagate\ndownstream.\nObservation 2: conservative ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablations",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "37c5e7f634ac22809ede84fe490d10810f0d938c09515b45f435f1804553681b",
+            "evidence_id": "E96340e533c113cf7-B0047",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Ablations",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 174,
+                "page": 8,
+                "section": "Ablations",
+                "section_index": 32,
+                "start": 0,
+                "text": "We remove one mechanism at a time using\nDeepSeek-v4-Flash on all 50 StateChangeBench\ncases and depths (Table 3). Depth-wise results and\ncosts appear in Appendix A, Table 8.\n8"
+              },
+              {
+                "end": 724,
+                "page": 9,
+                "section": "Ablations",
+                "section_index": 33,
+                "start": 0,
+                "text": "Memory revision\nConfiguration All F1\u2191Over-Inv.\u2193CVR\u2193\nFull StateGraph 79.5 5.2 7.6\nw/o Counterfactual\nVerification 65.9 19.0 23.0\nw/o Alternative\nSupport 68.2 21.0 19.0\nw/o Conservative\nRevision 62.8 25.0 28.0\nw/o Cascade\nPropagation 45.6 7.0 51.0\nLLM-only Revision 46.7 29.0 41.0\nTable 3: Ablations on the full 50-case State-\nChangeBench using DeepSeek-v4-Flash. All values\nare percentages. Depth-wise results, under-invalidation\nand costs appear in Table 8.\nObservation 1: verification limits over-\ninvalidation.Removing counterfactual ver-\nification propagates over all candidate edges:\nover-invalidation rises from 5.2% to 19.0% and\nImpact-F1 falls to 65.9 as false edges propagate\ndownstream.\nObservation 2: conservative "
+              }
+            ],
+            "text": "We remove one mechanism at a time using\nDeepSeek-v4-Flash on all 50 StateChangeBench\ncases and depths (Table 3). Depth-wise results and\ncosts appear in Appendix A, Table 8.\n8\nMemory revision\nConfiguration All F1\u2191Over-Inv.\u2193CVR\u2193\nFull StateGraph 79.5 5.2 7.6\nw/o Counterfactual\nVerification 65.9 19.0 23.0\nw/o Alternative\nSupport 68.2 21.0 19.0\nw/o Conservative\nRevision 62.8 25.0 28.0\nw/o Cascade\nPropagation 45.6 7.0 51.0\nLLM-only Revision 46.7 29.0 41.0\nTable 3: Ablations on the full 50-case State-\nChangeBench using DeepSeek-v4-Flash. All values\nare percentages. Depth-wise results, under-invalidation\nand costs appear in Table 8.\nObservation 1: verification limits over-\ninvalidation.Removing counterfactual ver-\nification propagates over all candidate edges:\nover-invalidation rises from 5.2% to 19.0% and\nImpact-F1 falls to 65.9 as false edges propagate\ndownstream.\nObservation 2: conservative "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0051"
+        ],
+        "excerpt": "Long-term agents can fail not only by forgetting\nor by remembering the wrong thing, but by con-\ntinuing to trust conclusions whose grounds have\ndisappeared. We formulated dependency-aware\nstate revision and introduced StateGraph, which\nrecovers dependencies, verifies them counterfactu-\nally and propagates revisions selectively, together\nwith StateChangeBench for measuring this capa-\nbility. StateGraph addresses downstream loss of\nsupport that may remain unresolved after direct\nmemory revision. Experiments on a small con-\ntrolled cascade benchmark suggest benefits from\nexplicit dependency verification and selective prop-\nagation. Larger independent evaluations are needed\nto establish robustness across domains, backbones\nand extended interaction histories. An open prob-\nlem is how to verify dependencies without relying\non the same model that proposes them: the cur-\nrent pipeline provides ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e61f1f1ba6219157f842f1eae723d8c1c9cffdd0185e4612d03f295292b5ea2d",
+            "evidence_id": "E96340e533c113cf7-B0051",
+            "pages": [
+              9
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 9,
+                "section": "Conclusion",
+                "section_index": 35,
+                "start": 0,
+                "text": "Long-term agents can fail not only by forgetting\nor by remembering the wrong thing, but by con-\ntinuing to trust conclusions whose grounds have\ndisappeared. We formulated dependency-aware\nstate revision and introduced StateGraph, which\nrecovers dependencies, verifies them counterfactu-\nally and propagates revisions selectively, together\nwith StateChangeBench for measuring this capa-\nbility. StateGraph addresses downstream loss of\nsupport that may remain unresolved after direct\nmemory revision. Experiments on a small con-\ntrolled cascade benchmark suggest benefits from\nexplicit dependency verification and selective prop-\nagation. Larger independent evaluations are needed\nto establish robustness across domains, backbones\nand extended interaction histories. An open prob-\nlem is how to verify dependencies without relying\non the same model that proposes them: the cur-\nrent pipeline provides "
+              }
+            ],
+            "text": "Long-term agents can fail not only by forgetting\nor by remembering the wrong thing, but by con-\ntinuing to trust conclusions whose grounds have\ndisappeared. We formulated dependency-aware\nstate revision and introduced StateGraph, which\nrecovers dependencies, verifies them counterfactu-\nally and propagates revisions selectively, together\nwith StateChangeBench for measuring this capa-\nbility. StateGraph addresses downstream loss of\nsupport that may remain unresolved after direct\nmemory revision. Experiments on a small con-\ntrolled cascade benchmark suggest benefits from\nexplicit dependency verification and selective prop-\nagation. Larger independent evaluations are needed\nto establish robustness across domains, backbones\nand extended interaction histories. An open prob-\nlem is how to verify dependencies without relying\non the same model that proposes them: the cur-\nrent pipeline provides "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0054"
+        ],
+        "excerpt": "eChangeBench isolates cascade reasoning through\nauthor-constructed English cases, a written stra-\ntum specification and double annotation of a subset\n(Appendix C); the broader memory benchmarks\nprovide complementary coverage. With 50 cases\nand 10\u201315 cases per depth stratum, and without sig-\nnificance tests, the depth-wise differences should\nbe read as initial evidence.\nOur retained records are incomplete. They do\nnot preserve the number of evaluation runs per con-\nfiguration or the size of the double-annotated sub-\nset, so these quantities are not reported. For the\n9\nsame reason, this version omits the action-decision\nevaluation and the premise-gate ablation: their ag-\ngregation could not be reconstructed from the re-\nmaining records. We plan to rerun these evalua-\ntions with complete logging in a future version.\nThese results do not establish performance across\nother backbones, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Statechangebench Cases And Depth Strata. Stat-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "87083633bb73d2f1650ccef22c8fc3498df8f95d63561a4cd413566b73bcf0e2",
+            "evidence_id": "E96340e533c113cf7-B0054",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Statechangebench Cases And Depth Strata. Stat-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 573,
+                "page": 9,
+                "section": "Statechangebench Cases And Depth Strata. Stat-",
+                "section_index": 37,
+                "start": 0,
+                "text": "eChangeBench isolates cascade reasoning through\nauthor-constructed English cases, a written stra-\ntum specification and double annotation of a subset\n(Appendix C); the broader memory benchmarks\nprovide complementary coverage. With 50 cases\nand 10\u201315 cases per depth stratum, and without sig-\nnificance tests, the depth-wise differences should\nbe read as initial evidence.\nOur retained records are incomplete. They do\nnot preserve the number of evaluation runs per con-\nfiguration or the size of the double-annotated sub-\nset, so these quantities are not reported. For the\n9"
+              },
+              {
+                "end": 318,
+                "page": 10,
+                "section": "Statechangebench Cases And Depth Strata. Stat-",
+                "section_index": 38,
+                "start": 0,
+                "text": "same reason, this version omits the action-decision\nevaluation and the premise-gate ablation: their ag-\ngregation could not be reconstructed from the re-\nmaining records. We plan to rerun these evalua-\ntions with complete logging in a future version.\nThese results do not establish performance across\nother backbones, "
+              }
+            ],
+            "text": "eChangeBench isolates cascade reasoning through\nauthor-constructed English cases, a written stra-\ntum specification and double annotation of a subset\n(Appendix C); the broader memory benchmarks\nprovide complementary coverage. With 50 cases\nand 10\u201315 cases per depth stratum, and without sig-\nnificance tests, the depth-wise differences should\nbe read as initial evidence.\nOur retained records are incomplete. They do\nnot preserve the number of evaluation runs per con-\nfiguration or the size of the double-annotated sub-\nset, so these quantities are not reported. For the\n9\nsame reason, this version omits the action-decision\nevaluation and the premise-gate ablation: their ag-\ngregation could not be reconstructed from the re-\nmaining records. We plan to rerun these evalua-\ntions with complete logging in a future version.\nThese results do not establish performance across\nother backbones, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E96340e533c113cf7-B0055"
+        ],
+        "excerpt": "languages, multimodal inputs or\nmulti-agent deployments.\nRelation typing, counterfactual verification and\nalternative-support assessment use the same LLM,\nso their errors can be correlated. CVR checks clo-\nsure using the system's support judgments and is\nnot an independent validation of those judgments;\ngold-labeled impact and invalidation metrics pro-\nvide complementary outcome evaluation. WEAK\nedges trigger reassessment without recursive prop-\nagation, restricting cascades to verified STRICT\ndependencies. Propagation uses lineage-aware cy-\ncle handling; mutually supporting cycles require\nseparate validation. Verification adds write-time\ncomputation; the tables report total per-case LLM\ntokens and latency, with costs depending on work-\nload and serving conditions.\nEthics Statement\nStateGraph addresses outdated premises and un-\nsupported downstream actions through counterfac-\ntual ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Statechangebench Cases And Depth Strata. Stat-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a14f248cdd7042c7760c1b9c652c2f5993c8148c5be3e51848ae8745e4e8dc6c",
+            "evidence_id": "E96340e533c113cf7-B0055",
+            "pages": [
+              10
+            ],
+            "section": "Statechangebench Cases And Depth Strata. Stat-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1212,
+                "page": 10,
+                "section": "Statechangebench Cases And Depth Strata. Stat-",
+                "section_index": 38,
+                "start": 318,
+                "text": "languages, multimodal inputs or\nmulti-agent deployments.\nRelation typing, counterfactual verification and\nalternative-support assessment use the same LLM,\nso their errors can be correlated. CVR checks clo-\nsure using the system's support judgments and is\nnot an independent validation of those judgments;\ngold-labeled impact and invalidation metrics pro-\nvide complementary outcome evaluation. WEAK\nedges trigger reassessment without recursive prop-\nagation, restricting cascades to verified STRICT\ndependencies. Propagation uses lineage-aware cy-\ncle handling; mutually supporting cycles require\nseparate validation. Verification adds write-time\ncomputation; the tables report total per-case LLM\ntokens and latency, with costs depending on work-\nload and serving conditions.\nEthics Statement\nStateGraph addresses outdated premises and un-\nsupported downstream actions through counterfac-\ntual "
+              }
+            ],
+            "text": "languages, multimodal inputs or\nmulti-agent deployments.\nRelation typing, counterfactual verification and\nalternative-support assessment use the same LLM,\nso their errors can be correlated. CVR checks clo-\nsure using the system's support judgments and is\nnot an independent validation of those judgments;\ngold-labeled impact and invalidation metrics pro-\nvide complementary outcome evaluation. WEAK\nedges trigger reassessment without recursive prop-\nagation, restricting cascades to verified STRICT\ndependencies. Propagation uses lineage-aware cy-\ncle handling; mutually supporting cycles require\nseparate validation. Verification adds write-time\ncomputation; the tables report total per-case LLM\ntokens and latency, with costs depending on work-\nload and serving conditions.\nEthics Statement\nStateGraph addresses outdated premises and un-\nsupported downstream actions through counterfac-\ntual "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.02912",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "case_study",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The headline gains are established on a small author-constructed benchmark of 50 cases with only 10-15 cases per depth stratum, and the authors explicitly state that larger independent evaluations are needed to establish robustness [E96340e533c113cf7-B0003, E96340e533c113cf7-B0035, E96340e533c113cf7-B0051].",
+          "Retained experimental records are incomplete: the number of evaluation runs per configuration and the size of the double-annotated subset were not preserved, and action-decision evaluation plus a premise-gate ablation were omitted because their aggregation could not be reconstructed [E96340e533c113cf7-B0038, E96340e533c113cf7-B0054].",
+          "No significance tests were run, so the reported depth-wise differences and public-benchmark comparisons do not establish reliable superiority or even absence of degradation [E96340e533c113cf7-B0046, E96340e533c113cf7-B0054].",
+          "Relation typing, counterfactual verification, and alternative-support assessment all use the same LLM, so their errors can be correlated, and the manuscript provides no independent guarantee against correlated errors across proposal, verification, and support assessment [E96340e533c113cf7-B0051, E96340e533c113cf7-B0055]."
+        ],
+        "canonical_id": "arxiv:2611.02912",
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "StateChangeBench outcomes are scored against human gold annotations, and supplementary results are reported on six public long-term memory benchmarks [E96340e533c113cf7-B0036, E96340e533c113cf7-B0046, E96340e533c113cf7-B0079].",
+          "final_evaluation_signal": "Headline outcomes are measured by Impact-F1, over-/under-invalidation, and CVR against human-annotated gold labels on StateChangeBench, plus State Answer Accuracy on public benchmarks [E96340e533c113cf7-B0036, E96340e533c113cf7-B0043, E96340e533c113cf7-B0046, E96340e533c113cf7-B0084].",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system's dependency graph is shaped by DeepSeek-v4-Flash through candidate discovery, relation typing, counterfactual verification, and alternative-support assessment, with no reported training or tuning loop [E96340e533c113cf7-B0026, E96340e533c113cf7-B0038, E96340e533c113cf7-B0055].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E96340e533c113cf7-B0002",
+          "E96340e533c113cf7-B0003",
+          "E96340e533c113cf7-B0009",
+          "E96340e533c113cf7-B0010",
+          "E96340e533c113cf7-B0018",
+          "E96340e533c113cf7-B0026",
+          "E96340e533c113cf7-B0030",
+          "E96340e533c113cf7-B0035",
+          "E96340e533c113cf7-B0036",
+          "E96340e533c113cf7-B0038",
+          "E96340e533c113cf7-B0044",
+          "E96340e533c113cf7-B0046",
+          "E96340e533c113cf7-B0047",
+          "E96340e533c113cf7-B0051",
+          "E96340e533c113cf7-B0054",
+          "E96340e533c113cf7-B0055"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "96f8e76a675333902ffc5dfb6ce1f5c89c8c9bb7905aed41104067bb6696ffdb"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.02912",
+        "claim_evidence_alignment": "Reported margins on StateChangeBench (e.g., 26.0 point margin over CUPMem at depth 3+) align with the stated numbers, but generalizability is limited by the tiny 50-case dataset, single-LLM pipeline dependencies, and lack of statistical significance testing [E96340e533c113cf7-B0003, E96340e533c113cf7-B0044, E96340e533c113cf7-B0046, E96340e533c113cf7-B0054]. Broader public benchmark evaluation shows only modest, mixed results across standard memory tasks [E96340e533c113cf7-B0046].",
+        "context_id": "96340e533c113cf7564af3a8d64a1339050fade64edb8320b1e8a1055d682b9b",
+        "decision": "uncertain",
+        "evaluation_assessment": "Evaluation relies heavily on StateChangeBench, a small author-constructed benchmark of 50 cases with only 10 to 15 cases per depth stratum [E96340e533c113cf7-B0010, E96340e533c113cf7-B0035]. The authors acknowledge that retained experimental records are incomplete, failing to preserve the number of pooled evaluation runs or the sample size of the double-annotated agreement subset, and omitting action-decision results due to lost records [E96340e533c113cf7-B0038, E96340e533c113cf7-B0054].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline outcomes on StateChangeBench are evaluated against human gold-standard status annotations, and supplementary tests are conducted across six public benchmarks including LongMemEval and STALE [E96340e533c113cf7-B0036, E96340e533c113cf7-B0046, E96340e533c113cf7-B0079].",
+          "final_evaluation_signal": "Impact-F1 and over-/under-invalidation measured against human-annotated gold target sets and dependency closures on StateChangeBench, as well as external accuracy on standard long-term memory benchmarks [E96340e533c113cf7-B0036, E96340e533c113cf7-B0043, E96340e533c113cf7-B0046, E96340e533c113cf7-B0084].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Heuristic and prompt-driven in-context prompting utilizing DeepSeek-v4-Flash for candidate discovery, relation typing, and counterfactual verification [E96340e533c113cf7-B0026, E96340e533c113cf7-B0038, E96340e533c113cf7-B0092].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E96340e533c113cf7-B0002",
+          "E96340e533c113cf7-B0003",
+          "E96340e533c113cf7-B0009",
+          "E96340e533c113cf7-B0010",
+          "E96340e533c113cf7-B0018",
+          "E96340e533c113cf7-B0026",
+          "E96340e533c113cf7-B0030",
+          "E96340e533c113cf7-B0035",
+          "E96340e533c113cf7-B0036",
+          "E96340e533c113cf7-B0038",
+          "E96340e533c113cf7-B0044",
+          "E96340e533c113cf7-B0046",
+          "E96340e533c113cf7-B0047",
+          "E96340e533c113cf7-B0054"
+        ],
+        "limitations": "The manuscript transparently admits severe record-keeping limitations, including unrecorded evaluation run counts, unknown annotation sample sizes, omitted action-decision evaluations, and potential correlated errors from using the same LLM for candidate proposal and verification [E96340e533c113cf7-B0051, E96340e533c113cf7-B0054, E96340e533c113cf7-B0055].",
+        "method_assessment": "The methodology is explicitly articulated, detailing bounded candidate discovery, counterfactual dependency verification into strict/weak/none categories, and conservative cascade revision tracking alternative support [E96340e533c113cf7-B0009, E96340e533c113cf7-B0026, E96340e533c113cf7-B0030]. Prompt structures, schemas, and algorithmic routines are thoroughly documented [E96340e533c113cf7-B0030, E96340e533c113cf7-B0088].",
+        "quality_rationale": "While the conceptual framework for dependency-aware cascade revision is coherent and interesting, the scientific foundation is weakened by critical reporting gaps admitted by the authors, including incomplete retained experimental records, unpreserved evaluation run counts, and a benchmark size of only 50 cases [E96340e533c113cf7-B0038, E96340e533c113cf7-B0054]. Given these uncertainties and the small sample scale, uncertain is the scientifically prudent judgment.",
+        "scoped_contribution": "The paper introduces dependency-aware state revision for long-term agent memory, implemented via StateGraph which recovers and counterfactually verifies latent dependencies to propagate state invalidations, and introduces StateChangeBench, a 50-case controlled cascade benchmark [E96340e533c113cf7-B0002, E96340e533c113cf7-B0009, E96340e533c113cf7-B0010].",
+        "source_content_hash": "96f8e76a675333902ffc5dfb6ce1f5c89c8c9bb7905aed41104067bb6696ffdb"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the conceptual framework for dependency-aware cascade revision is coherent and interesting, the scientific foundation is weakened by critical reporting gaps admitted by the authors, including incomplete retained experimental records, unpreserved evaluation run counts, and a benchmark size of only 50 cases [E96340e533c113cf7-B0038, E96340e533c113cf7-B0054]. Given these uncertainties and the small sample scale, uncertain is the scientifically prudent judgment.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "96f8e76a675333902ffc5dfb6ce1f5c89c8c9bb7905aed41104067bb6696ffdb",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript transparently admits severe record-keeping limitations, including unrecorded evaluation run counts, unknown annotation sample sizes, omitted action-decision evaluations, and potential correlated errors from using the same LLM for candidate proposal and verification [E96340e533c113cf7-B0051, E96340e533c113cf7-B0054, E96340e533c113cf7-B0055]."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -166,7 +2323,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -64,16 +64,390 @@
             <p>This paper presents a new vision Transformer, called Swin Transformer, that capably serves as a general-purpose backbone for computer vision. Challenges in adapting Transformer from language to vision arise from differences between the two domains, such as large variations in the scale of visual entities and the hig...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a landmark, well-motivated architectural advancement with exhaustive empirical validation across distinct visual perception tasks, strong ablations, and solid technical execution.</p>
+      <p>The authors observe that custom hardware kernel optimizations are not fully developed compared to mature cuDNN CNN operations, and fine-tuning across disparate resolutions requires positional bias interpolation [E9a7c4d895298f5f3-B0027, E9a7c4d895298f5f3-B0041].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-05T11:52:41.889008+00:00.</p>
+        <p>Coverage: 67692 of 67692 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This paper presents a new vision Transformer, called
+Swin Transformer, that capably serves as a general-purpose
+backbone for computer vision. Challenges in adapting
+Transformer from language to vision arise from differences
+between the two domains, such as large variations in the
+scale of visual entities and the high resolution of pixels
+in images compared to words in text. To address these
+differences, we propose a hierarchical Transformer whose
+representation is computed with Shifted windows. The
+shifted windowing scheme brings greater efficiency by lim-
+iting self-attention computation to non-overlapping local
+windows while also allowing for cross-window connection.
+This hierarchical architecture has the flexibility to model
+at various scales and has linear computational complexity
+with respect to image size. These qualities of Swin Trans-
+former make it compatible with a broad range </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>of vision
+tasks, including image classification (87.3 top-1 accuracy
+on ImageNet-1K) and dense prediction tasks such as object
+detection (58.7 box AP and 51.1 mask AP on COCO test-
+dev) and semantic segmentation (53.5 mIoU on ADE20K
+val). Its performance surpasses the previous state-of-the-
+art by a large margin of +2.7 box AP and +2.6 mask AP on
+COCO, and +3.2 mIoU on ADE20K, demonstrating the po-
+tential of Transformer-based models as vision backbones.
+The hierarchical design and the shifted window approach
+also prove beneficial for all-MLP architectures. The code
+and models are publicly available athttps://github.
+com/microsoft/Swin-Transformer.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>difference
+is the much higher resolution of pixels in images com-
+pared to words in passages of text. There exist many vi-
+sion tasks such as semantic segmentation that require dense
+prediction at the pixel level, and this would be intractable
+for Transformer on high-resolution images, as the compu-
+tational complexity of its self-attention is quadratic to im-
+age size. To overcome these issues, we propose a general-
+purpose Transformer backbone, called Swin Transformer,
+which constructs hierarchical feature maps and has linear
+computational complexity to image size. As illustrated in
+Figure 1(a), Swin Transformer constructs a hierarchical rep-
+resentation by starting from small-sized patches (outlined in
+gray) and gradually merging neighboring patches in deeper
+Transformer layers. With these hierarchical feature maps,
+the Swin Transformer model can conveniently leverage ad-
+vanced </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>techniques for dense prediction such as feature pyra-
+mid networks (FPN) [42] or U-Net [51]. The linear compu-
+tational complexity is achieved by computing self-attention
+locally within non-overlapping windows that partition an
+image (outlined in red). The number of patches in each
+window is fixed, and thus the complexity becomes linear
+to image size. These merits make Swin Transformer suit-
+able as a general-purpose backbone for various vision tasks,
+in contrast to previous Transformer based architectures [20]
+which produce feature maps of a single resolution and have
+quadratic complexity.
+A key design element of Swin Transformer is its shift
+of the window partition between consecutive self-attention
+layers, as illustrated in Figure 2. The shifted windows
+bridge the windows of the preceding layer, providing con-
+nections among them that significantly enhance modeling
+power (see Table </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>An overview of the Swin Transformer architecture is pre-
+sented in Figure 3, which illustrates the tiny version (Swin-
+T). It first splits an input RGB image into non-overlapping
+patches by a patch splitting module, like ViT. Each patch is
+treated as a &quot;token&quot; and its feature is set as a concatenation
+of the raw pixel RGB values. In our implementation, we use
+a patch size of 4× 4 and thus the feature dimension of each
+patch is 4× 4× 3 = 48 . A linear embedding layer is ap-
+plied on this raw-valued feature to project it to an arbitrary
+dimension (denoted asC).
+Several Transformer blocks with modified self-attention
+computation (Swin Transformer blocks) are applied on these
+patch tokens. The Transformer blocks maintain the number
+of tokens (H4× W4 ), and together with the linear embedding
+are referred to as &quot;Stage 1&quot;.
+To produce a hierarchical representation, the number of
+tokens is </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reduced by patch merging layers as the network
+gets deeper. The first patch merging layer concatenates the
+features of each group of 2× 2 neighboring patches, and
+applies a linear layer on the 4C-dimensional concatenated
+features. This reduces the number of tokens by a multiple
+of 2× 2 = 4 (2× downsampling of resolution), and the out-
+put dimension is set to 2C. Swin Transformer blocks are
+applied afterwards for feature transformation, with the res-
+olution kept at H8 × W8 . This first block of patch merging
+and feature transformation is denoted as &quot;Stage 2&quot;. The pro-
+cedure is repeated twice, as &quot;Stage 3&quot; and &quot;Stage 4&quot;, with
+output resolutions of H16× W16 and H32× W32 , respectively.
+These stages jointly produce a hierarchical representation,
+3
+(a) Architecture
+MLP
+LN
+LN
+W-MSA
+(b) Two Successive Swin Transformer Blocks
+MLP
+LN
+LN
+SW-MSAImages
+Swin
+Transformer
+Block
+Linear </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The standard Transformer architecture [64] and its adap-
+tation for image classification [20] both conduct global self-
+attention, where the relationships between a token and all
+other tokens are computed. The global computation leads to
+quadratic complexity with respect to the number of tokens,
+making it unsuitable for many vision problems requiring an
+immense set of tokens for dense prediction or to represent a
+high-resolution image.
+Self-attention in non-overlapped windows For efficient
+modeling, we propose to compute self-attention within lo-
+cal windows. The windows are arranged to evenly partition
+the image in a non-overlapping manner. Supposing each
+window containsM×M patches, the computational com-
+plexity of a global MSA module and a window based one
+on an image ofh×w patches are3:
+Ω(MSA) = 4hwC 2 + 2(hw)2C, (1)
+Ω(W-MSA) = 4hwC 2 + 2M 2hwC, (2)
+where the former is quadratic to </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>patch number hw, and the
+latter is linear whenM is fixed (set to 7 by default). Global
+self-attention computation is generally unaffordable for a
+largehw, while the window based self-attention is scalable.
+Shifted window partitioning in successive blocks The
+window-based self-attention module lacks connections
+across windows, which limits its modeling power. To intro-
+duce cross-window connections while maintaining the effi-
+cient computation of non-overlapping windows, we propose
+a shifted window partitioning approach which alternates be-
+tween two partitioning configurations in consecutive Swin
+Transformer blocks.
+As illustrated in Figure 2, the first module uses a regular
+window partitioning strategy which starts from the top-left
+pixel, and the 8× 8 feature map is evenly partitioned into
+2× 2 windows of size 4× 4 (M = 4). Then, the next mod-
+ule adopts a windowing configuration that </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is shifted from
+that of the preceding layer, by displacing the windows by
+(⌊ M2⌋,⌊ M2⌋) pixels from the regularly partitioned windows.
+With the shifted window partitioning approach, consec-
+utive Swin Transformer blocks are computed as
+ˆzl = W-MSA (LN (zl−1)) + zl−1,
+zl = MLP (LN (ˆzl)) + ˆzl,
+ˆzl+1 = SW-MSA (LN (zl)) + zl,
+zl+1 = MLP (LN (ˆzl+1)) + ˆzl+1, (3)
+where ˆzl and zl denote the output features of the (S)W-
+MSA module and the MLP module for blockl, respectively;
+3We omit SoftMax computation in determining complexity.
+4
+CC
+cyclic shift
+A
+AC
+B
+window partition
+reverse cyclic shift
+A
+AC
+B
+C
+...
+masked
+MSA
+A
+B
+AA
+B
+masked
+MSA
+Figure 4. Illustration of an efficient batch computation approach
+for self-attention in shifted window partitioning.
+W-MSA and SW-MSA denote window based multi-head
+self-attention using regular and shifted window partitioning
+configurations, respectively.
+The </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>shifted window partitioning approach introduces
+connections between neighboring non-overlapping win-
+dows in the previous layer and is found to be effective in im-
+age classification, object detection, and semantic segmenta-
+tion, as shown in Table 4.
+Efficient batch computation for shifted configuration
+An issue with shifted window partitioning is that it will re-
+sult in more windows, from⌈ hM⌉×⌈ wM⌉ to (⌈ hM⌉ + 1)×
+(⌈ wM⌉+1) in the shifted configuration, and some of the win-
+dows will be smaller than M×M 4. A naive solution is to
+pad the smaller windows to a size of M×M and mask
+out the padded values when computing attention. When
+the number of windows in regular partitioning is small, e.g.
+2× 2, the increased computation with this naive solution is
+considerable (2× 2→ 3× 3, which is 2.25 times greater).
+Here, we propose a more efficient batch computation ap-
+proach by </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cyclic-shifting toward the top-left direction, as il-
+lustrated in Figure 4. After this shift, a batched window may
+be composed of several sub-windows that are not adjacent
+in the feature map, so a masking mechanism is employed to
+limit self-attention computation to within each sub-window.
+With the cyclic-shift, the number of batched windows re-
+mains the same as that of regular window partitioning, and
+thus is also efficient. The low latency of this approach is
+shown in Table 5.
+Relative position bias In computing self-attention, we
+follow [49, 1, 32, 33] by including a relative position bias
+B∈ RM 2×M 2 to each head in computing similarity:
+Attention(Q,K,V ) = SoftMax(QK T/√d +B)V, (4)
+whereQ,K,V ∈ RM 2×d are the query, key and value ma-
+trices;d is the query/key dimension, andM 2 is the number
+of patches in a window. Since the relative position along
+each axis lies in the range[−M + </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Settings For image classification, we benchmark the pro-
+posed Swin Transformer on ImageNet-1K [19], which con-
+tains 1.28M training images and 50K validation images
+from 1,000 classes. The top-1 accuracy on a single crop
+is reported. We consider two training settings:
+• Regular ImageNet-1K training . This setting mostly
+follows [63]. We employ an AdamW [37] optimizer
+for 300 epochs using a cosine decay learning rate
+scheduler and 20 epochs of linear warm-up. A batch
+size of 1024, an initial learning rate of 0.001, and a
+5
+weight decay of 0.05 are used. We include most of
+the augmentation and regularization strategies of [63]
+in training, except for repeated augmentation [31] and
+EMA [45], which do not enhance performance. Note
+that this is contrary to [63] where repeated augmenta-
+tion is crucial to stabilize the training of ViT.
+• Pre-training on ImageNet-22K and fine-tuning </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mod-
+els achieve significantly better speed-accuracy trade-offs:
+Swin-B obtains 86.4% top-1 accuracy, which is 2.4% higher
+than that of ViT with similar inference throughput (84.7
+vs. 85.9 images/sec) and slightly lower FLOPs (47.0G vs.
+55.4G). The larger Swin-L model achieves 87.3% top-1 ac-
+curacy, +0.9% better than that of the Swin-B model.
+(a) Regular ImageNet-1K trained models
+method imagesize #param. FLOPs throughput(image / s) ImageNettop-1 acc.
+RegNetY-4G [48] 2242 21M 4.0G 1156.7 80.0
+RegNetY-8G [48] 2242 39M 8.0G 591.6 81.7
+RegNetY-16G [48] 2242 84M 16.0G 334.7 82.9
+EffNet-B3 [58] 3002 12M 1.8G 732.1 81.6
+EffNet-B4 [58] 3802 19M 4.2G 349.4 82.9
+EffNet-B5 [58] 4562 30M 9.9G 169.1 83.6
+EffNet-B6 [58] 5282 43M 19.0G 96.9 84.0
+EffNet-B7 [58] 6002 66M 37.0G 55.1 84.3
+ViT-B/16 [20] 3842 86M 55.4G 85.9 77.9
+ViT-L/16 [20] 3842 307M 190.7G 27.3 76.5
+DeiT-S [63] 2242 22M 4.6G 940.4 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>79.8
+DeiT-B [63] 2242 86M 17.5G 292.3 81.8
+DeiT-B [63] 3842 86M 55.4G 85.9 83.1
+Swin-T 2242 29M 4.5G 755.2 81.3
+Swin-S 2242 50M 8.7G 436.9 83.0
+Swin-B 2242 88M 15.4G 278.1 83.5
+Swin-B 3842 88M 47.0G 84.7 84.5
+(b) ImageNet-22K pre-trained models
+method imagesize #param. FLOPs throughput(image / s) ImageNettop-1 acc.
+R-101x3 [38] 3842 388M 204.6G - 84.4
+R-152x4 [38] 4802 937M 840.5G - 85.4
+ViT-B/16 [20] 3842 86M 55.4G 85.9 84.0
+ViT-L/16 [20] 3842 307M 190.7G 27.3 85.2
+Swin-B 2242 88M 15.4G 278.1 85.2
+Swin-B 3842 88M 47.0G 84.7 86.4
+Swin-L 3842 197M 103.9G 42.1 87.3
+Table 1. Comparison of different backbones on ImageNet-1K clas-
+sification. Throughput is measured using the GitHub repository
+of [68] and a V100 GPU, following [63].</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>multi-scale training [7], 6x
+schedule (72 epochs), soft-NMS [5], and ImageNet-22K
+pre-trained model as initialization.
+We compare our Swin Transformer to standard Con-
+6
+(a) Various frameworks
+Method Backbone APbox APbox50 APbox75 #param. FLOPs FPS
+Cascade
+Mask R-CNN
+R-50 46.3 64.3 50.5 82M 739G 18.0
+Swin-T 50.5 69.3 54.9 86M 745G 15.3
+ATSS R-50 43.5 61.9 47.0 32M 205G 28.3Swin-T 47.2 66.5 51.3 36M 215G 22.3
+RepPointsV2 R-50 46.5 64.6 50.3 42M 274G 13.6Swin-T 50.0 68.5 54.2 45M 283G 12.0
+Sparse
+R-CNN
+R-50 44.5 63.4 48.2 106M 166G 21.0
+Swin-T 47.9 67.3 52.3 110M 172G 18.4
+(b) Various backbones w. Cascade Mask R-CNN
+APboxAPbox50 APbox75 APmaskAPmask50 APmask75 paramFLOPsFPS
+DeiT-S† 48.0 67.2 51.7 41.4 64.2 44.3 80M 889G 10.4
+R50 46.3 64.3 50.5 40.1 61.7 43.4 82M 739G 18.0
+Swin-T 50.5 69.3 54.9 43.7 66.6 47.1 86M 745G 15.3
+X101-32 48.1 66.5 52.4 41.6 63.9 45.2 101M 819G 12.8
+Swin-S 51.8 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>70.4 56.3 44.7 67.9 48.5 107M 838G 12.0
+X101-64 48.3 66.4 52.3 41.7 64.0 45.1 140M 972G 10.4
+Swin-B 51.9 70.9 56.5 45.0 68.4 48.7 145M 982G 11.6
+(c) System-level Comparison
+Method mini-val test-dev #param. FLOPsAPbox APmask APbox APmask
+RepPointsV2* [12] - - 52.1 - - -
+GCNet* [7] 51.8 44.7 52.3 45.4 - 1041G
+RelationNet++* [13] - - 52.7 - - -
+SpineNet-190 [21] 52.6 - 52.8 - 164M 1885G
+ResNeSt-200* [78] 52.5 - 53.3 47.1 - -
+EfficientDet-D7 [59] 54.4 - 55.1 - 77M 410G
+DetectoRS* [46] - - 55.7 48.5 - -
+YOLOv4 P7* [4] - - 55.8 - - -
+Copy-paste [26] 55.9 47.2 56.0 47.4 185M 1440G
+X101-64 (HTC++) 52.3 46.0 - - 155M 1033G
+Swin-B (HTC++) 56.4 49.1 - - 160M 1043G
+Swin-L (HTC++) 57.1 49.5 57.7 50.2 284M 1470G
+Swin-L (HTC++)* 58.0 50.4 58.7 51.1 284M -
+Table 2. Results on COCO object detection and instance segmen-
+tation. †denotes that additional decovolution layers are used to
+produce hierarchical </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Backbone mIoU score
+DANet [23] ResNet-101 45.2 - 69M 1119G 15.2
+DLab.v3+ [11] ResNet-101 44.1 - 63M 1021G 16.0
+ACNet [24] ResNet-101 45.9 38.5 -
+DNL [71] ResNet-101 46.0 56.2 69M 1249G 14.8
+OCRNet [73] ResNet-101 45.3 56.0 56M 923G 19.3
+UperNet [69] ResNet-101 44.9 - 86M 1029G 20.1
+OCRNet [73] HRNet-w48 45.7 - 71M 664G 12.5
+DLab.v3+ [11] ResNeSt-101 46.9 55.1 66M 1051G 11.9
+DLab.v3+ [11] ResNeSt-200 48.4 - 88M 1381G 8.1
+SETR [81] T-Large ‡ 50.3 61.7 308M - -
+UperNet DeiT-S † 44.0 - 52M 1099G 16.2
+UperNet Swin-T 46.1 - 60M 945G 18.5
+UperNet Swin-S 49.3 - 81M 1038G 15.2
+UperNet Swin-B ‡ 51.6 - 121M 1841G 8.7
+UperNet Swin-L ‡ 53.5 62.8 234M 3230G 6.2
+Table 3. Results of semantic segmentation on the ADE20K val
+and test set. † indicates additional deconvolution layers are used
+to produce hierarchical feature maps.‡ indicates that the model is
+pre-trained on ImageNet-22K.
+under different </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ImageNet COCO ADE20k
+top-1 top-5 APbox APmask mIoU
+w/o shifting 80.2 95.1 47.7 41.5 43.3
+shifted windows 81.3 95.6 50.5 43.7 46.1
+no pos. 80.1 94.9 49.2 42.6 43.8
+abs. pos. 80.5 95.2 49.0 42.4 43.2
+abs.+rel. pos. 81.3 95.6 50.2 43.4 44.0
+rel. pos. w/o app. 79.3 94.7 48.2 41.9 44.1
+rel. pos. 81.3 95.6 50.5 43.7 46.1
+Table 4. Ablation study on the shifted windows approach and dif-
+ferent position embedding methods on three benchmarks, using
+the Swin-T architecture. w/o shifting: all self-attention modules
+adopt regular window partitioning, without shifting; abs. pos.: ab-
+solute position embedding term of ViT; rel. pos.: the default set-
+tings with an additional relative position bias term (see Eq. (4));
+app.: the first scaled dot-product term in Eq. (4).
+categories. It has 25K images in total, with 20K for training,
+2K for validation, and another 3K for testing. We utilize
+UperNet [69] </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>top-1 accuracy on
+ImageNet-1K, +1.3/+1.5 box AP and +1.1/+1.3 mask AP
+method MSA in a stage (ms) Arch. (FPS)S1 S2 S3 S4 T S B
+sliding window (naive) 122.5 38.3 12.1 7.6 183 109 77
+sliding window (kernel) 7.6 4.7 2.7 1.8 488 283 187
+Performer [14] 4.8 2.8 1.8 1.5 638 370 241
+window (w/o shifting) 2.8 1.7 1.2 0.9 770 444 280
+shifted window (padding) 3.3 2.3 1.9 2.2 670 371 236
+shifted window (cyclic) 3.0 1.9 1.3 1.0 755 437 278
+Table 5. Real speed of different self-attention computation meth-
+ods and implementations on a V100 GPU.
+on COCO, and +2.3/+2.9 mIoU on ADE20K in relation to
+those without position encoding and with absolute position
+embedding, respectively, indicating the effectiveness of the
+relative position bias. Also note that while the inclusion of
+absolute position embedding improves image classification
+accuracy (+0.4%), it harms object detection and semantic
+segmentation </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ImageNet COCO ADE20k
+Backbone top-1 top-5 APbox APmask mIoU
+sliding window Swin-T 81.4 95.6 50.2 43.5 45.8
+Performer [14] Swin-T 79.0 94.2 - - -
+shifted window Swin-T 81.3 95.6 50.5 43.7 46.1
+Table 6. Accuracy of Swin Transformer using different methods
+for self-attention computation on three benchmarks.
+sentation and has linear computational complexity with re-
+spect to input image size. Swin Transformer achieves the
+state-of-the-art performance on COCO object detection and
+ADE20K semantic segmentation, significantly surpassing
+previous best methods. We hope that Swin Transformer&#x27;s
+strong performance on various vision problems will encour-
+age unified modeling of vision and language signals.
+As a key element of Swin Transformer, the shifted win-
+dow based self-attention is shown to be effective and effi-
+cient on vision problems, and we look forward to investi-
+gating its use in </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +486,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

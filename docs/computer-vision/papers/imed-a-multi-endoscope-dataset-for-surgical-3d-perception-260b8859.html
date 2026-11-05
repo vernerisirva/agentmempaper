@@ -59,16 +59,140 @@
             <p>We introduce iMED, the first synchronized multi-endoscope dataset for robot-assisted minimally invasive surgery (RAMIS), designed to address a fundamental limitation in surgical vision benchmarking: the absence of independent held-out viewpoints. Existing surgical datasets capture single-trajectory sequences from a...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript provides a rigorously constructed surgical dataset addressing a prominent methodological issue in surgical novel view synthesis (trajectory overfitting) and supports its claims with extensive benchmarking and thorough technical ablations.</p>
+      <p>The authors document key limitations including hand-guided motion in ex vivo sessions, the requirement of marker inpainting for dynamic sequences, and baseline/trocar field-of-view constraints inherent to surgical robotics.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-05T11:53:09.016113+00:00.</p>
+        <p>Coverage: 63222 of 63222 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>iMED: A Multi-Endoscope Dataset for Surgical
+3D Perception
+Sierra Bonilla1, Fengyi Jiang2, Chinedu Nwoye2, Jingpei Lu2, Kailey Reardon2,
+Humphrey W. Chow2, Francisco Vasconcelos1, Sophia Bano1, Adam Schmidt2,
+and Omid Mohareri2
+1 University College London, London WC1E 6BT, United Kingdom
+2 Advanced Research, Intuitive, Sunnyvale, CA 94086, USA
+sierra.bonilla.21@ucl.ac.uk
+Abstract.We introduce iMED, the first synchronized multi-endoscope
+dataset for robot-assisted minimally invasive surgery (RAMIS), designed
+to address a fundamental limitation in surgical vision benchmarking: the
+absence of independent held-out viewpoints. Existing surgical datasets
+capture single-trajectory sequences from a single endoscope, making it
+impossible to distinguish geometric generalization from photometric in-
+terpolation along a narrow forward-facing path. iMED provides 340 se-
+quences (≈170K synchronized </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>timepoints with 4 views per timepoint)
+recorded simultaneously from two independent stereo endoscopes across
+ex vivo, postmortem, and live surgical settings, spanning 14 specimens
+with diverse anatomical regions and motion regimes. The dataset in-
+cludes calibrated camera intrinsics, ArUco-based frame-wise pose esti-
+mates with uncertainty quantification, instrument segmentation masks,
+andrichclinicalmetadata.Usingatrain-on-one-endoscope,test-on-another
+evaluation protocol, we benchmark 23 state-of-the-art methods across
+rigidanddeformablenovelviewsynthesis,poseestimation,featurematch-
+ing, and monocular depth estimation. Our experiments show that meth-
+ods relying primarily on photometric supervision degrade substantially
+under this held-out-endoscope setting, while methods with explicit ge-
+ometric regularization are more robust across views in our benchmark.
+Notably, large-scale </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>test poses
+lie along the same forward-facing trajectory, where test views are typically sam-
+pled from nearby frames in time so differ only slightly in view. A complementary
+evaluation is to test generalization under larger viewpoint shifts. In classic multi-
+camera dynamic-scene benchmarks, this protocol is well established: models are
+trained on a subset of cameras and evaluated on held-out cameras [8,28,34].
+To address this limitation in surgical vision, we introduceiMED, the first
+multi-endoscope dataset for RAMIS, providing synchronized recordings from
+two physically independent stereo endoscopes, four camera streams with over-
+lapping fields of view, enabling cross-trajectory geometric validation (see Fig. 1).
+The dataset comprises 340 sequences totaling∼170K synchronized timepoints
+(4 frames×60 FPS) across diverse surgical scenarios: 10ex vivoorgan spec-
+imens (chicken, porcine, </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and 3D tool labels is provided.
+Using iMED, we evaluate 23 SOTA algorithms across tasks central to 3D
+perception: rigid NVS, deformable (online &amp; not) NVS, camera pose estima-
+tion, feature matching, and depth estimation. Our analysis suggests that, under
+this held-out-endoscope protocol, methods relying primarily on photometric su-
+pervision degrade under physically independent viewpoints, while methods with
+explicit geometric regularization are more robust across views. Depth super-
+vision has representation-dependent effects, and large multi-domain foundation
+models often transfer well to surgical imagery compared with surgical-only train-
+ing or aggressive fine-tuning. We define train-on-one-endoscope, test-on-another
+evaluation protocols that eliminate trajectory overlap and measure geometric
+generalization across physically independent cameras, a standard in multi-view
+human </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>photometric appearance using sequence-level
+statistics to ensure robustness against per-frame artifacts. See Suppl. Sec. 6.4
+for evaluation of multiple normalization strategies.
+We capture four HDMI streams from two hardware-synchronized endoscopes
+separated by 2.6±1.2 cm with 18.7°±10.0°orientation difference (Fig. 3). This
+2.6cminter-cameraseparationissubstantiallylargerthanthe4mmintra-endoscope
+stereobaseline,representingupto50%ofthetypical6-13cmlaparoscopicfieldof
+view [61,65]. Synchronization accuracy across≈170K frame pairs achieved mean
+timing difference of 3.36 ms (SD = 3.90 ms), much less than the≈17ms frame du-
+ration. See Suppl. Sec. 6.1 for complete hardware synchronization methodology
+and timing analysis. All sequences are compressed using H.264 CRF 18 encoding;
+we recommend GPU-accelerated decoding (NVDEC) for efficient processing.
+Calibration StrategyDue to hardware </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To provide the reference camera trajectories, we employ an ArUco marker-based
+pose estimation pipeline computing relative transformations between endoscopes
+(Fig. 4). For each 5.7mm ArUco marker detected in both cameras, we estimate 6-
+DOF poses using a Perspective-n-Point solver [27] with known marker geometry
+and camera intrinsics. We aggregate observations across a sliding window and
+compute rel. camera-to-camera transformations for commonly visible markers.
+The full pipeline consists of five stages: (1)RANSAC Initialization and
+Refinement:To handle detection errors and occlusions, we use RANSAC [17]
+to identify inlier observations based on angular and translational consistency
+thresholds. We then refine the best hypothesis by minimizing bidirectional re-
+projection error across all inlier marker corners using Levenberg-Marquardt op-
+timization [33,40]. (2)Stereo Fusion:Each </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>17.00 0.83
+In vivo (live) 11.87 0.58
+accuracy at 5cm working distance. We release trajectories, raw calibration seqs,
+and recomp code; summary results appear in Tab. 3, (ablations in Suppl 6.5).</blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>increase
+monotonically as the rendering approaches the test camera pose, which is ob-
+served for vanilla NeRF. However, dep-sup NeRF exhibits non-monotonic SSIM
+trends, where geometric convergence does not yield better photometric values.
+10 S. Bonilla et al.
+T able 4:NVS benchmarks. Methods trained onEndoscope 2and evaluated onEndo-
+scope 1. Rigid and deformable methods perform offline optimization vs. online methods
+incrementally update the scene using only the most recent observations during acqui-
+sition (see Sec. 4.1). FPS excludes SfM [55] preprocessing.
+Method Depth PSNR↑SSIM↑ Render (FPS)↑Train (FPS)↑
+Rigid Novel View Synthesis
+NeRF [41] x 17.24 0.65 0.11 0.21
+NeRF [41] DA [71] 16.29 0.55 0.11 0.19
+NeRF [41] FS [67] 15.93 0.55 0.11 0.18
+3DGS [30] x 14.82 0.59 487.62 0.59
+3DGS [30] DA [71] 14.77 0.63 509.99 0.36
+3DGS [30] FS [67] 15.33 0.63 497.43 0.31
+Deformable Novel View </blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Methods.Weevaluatemonoculardepthpredictiononcalibratedstereoendoscopy
+sequences using reference depth obtained from a SOTA stereo prior [67]. Given a
+iMED 13
+T able 5:Pose estimation and feature matching benchmarking results. Temporal con-
+sistencymeasuresrot.driftacrossseqs.withtool-tissuedeformationandstaticcameras.
+Method Rot. Err.(°)↓Temporal Drift(°)↓Inlier Rate (%)↑Avg Inliers↑
+RoMa [15] 1.79±1.41 1.41 78.1 3905
+MASt3R [32] 1.81±1.38 1.38 70.3 1676
+GIM+LG [37,57] 1.87±1.48 0.41 43.1 264
+ALIKE+LG [37,76] 1.91±1.52 0.64 68.2 211
+LoFTR [60] 1.91±1.40 0.43 47.2 513
+DISK+LG [37,64] 1.93±1.52 0.59 55.2 446
+XFeat [49] 2.13±1.47 0.77 25.9 854
+SP+LG [13,37] 2.15±1.41 0.70 34.2 74
+EndoMatcher [70] 3.40±1.91 2.11 39.9 1255
+SIFT [39] 4.04±14.45 5.44 52.9 91
+Fig. 8:Qualitative comparison of mono. depth estimation compared toinferredstereo
+depth [67]. Error maps show abs. depth error after </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.111 0.936 0.992 0.998
+MoGe-V2 [66] Yes 0.109 0.014 0.140 0.889 0.989 0.998
+EndoDAC [11] Yes 0.119 0.017 0.164 0.854 0.968 0.994
+Endo3R [21] Yes 0.187 0.023 0.236 0.704 0.927 0.972
+UniDepth-V2 [48] No 11.573 1.098 2.465 0.000 0.000 0.000
+MoGe-V2 [66] No 14.556 1.329 2.683 0.000 0.000 0.000
+Limitations.Ex vivosequences use hand-guided (non-robotic) endoscope mo-
+tion, resulting in less smooth trajectories than robotic manipulation. For dy-
+namiccamerasequenceswhereArUcocalibrationmarkersremainvisiblethrough-
+out, mask-based preprocessing is used to exclude markers [35]. Viewpoint diver-
+sity is lower than classic multi-view datasets because surgical acquisition is con-
+strained by trocar placement, visibility, and safe camera motion. More subject
+and anatomical diversity is important future work.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +231,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +247,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-03</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-04 11:52:57</li><li>Last seen by Paper Scout: 2026-11-04 11:52:57</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-03</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-04 11:52:57</li><li>Last seen by Paper Scout: 2026-11-05 11:51:39</li></ul>
             <ul><li>DOI: 10.1007/978-3-032-37393-9_19</li><li>arXiv: 2611.04755</li><li>arXiv IDs: 2611.04755</li></ul>
           </section>
           <section class="detail-panel">

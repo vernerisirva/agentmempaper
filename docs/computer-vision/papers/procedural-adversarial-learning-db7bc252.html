@@ -59,16 +59,165 @@
             <p>For many computer vision tasks, neural networks can be trained to produce a low average error, yet they still fail on seemingly simple scenes. Reducing these failures requires first finding them, but they may not be in a fixed dataset. We study procedural adversarial learning (PAL), a framework of minimax training a...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study presents a clear, well-scoped framework supported by rigorous algorithmic formulations, comprehensive empirical baselines, appropriate ablation and baseline comparisons, and honest disclosure of evaluation limits.</p>
+      <p>The authors acknowledge that black-box searches can miss difficult cases in higher-dimensional procedural spaces (such as Chair-Full) and examine discrepancies between single-model and cross-model adversarial evaluations.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-06T11:53:14.412346+00:00.</p>
+        <p>Coverage: 59741 of 59741 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For many computer vision tasks, neural networks can be trained to produce a
+low average error, yet they still fail on seemingly simple scenes. Reducing
+these failures requires first finding them, but they may not be in a fixed dataset.
+We study procedural adversarial learning (PAL), a framework of minimax train-
+ing and adversarial evaluation which searches the input space of a procedural
+generator for difficult instances. The procedural generator is an interpretable
+program mapping a low-dimensional vector of control parameters (e.g. layout,
+lighting, pose) to a rendered image and its label. We introduce the Simple-
+PAT algorithm, which uses zeroth-order optimization in the procedural gener-
+ator&#x27;s parameter space to propose adversarial training samples that are gener-
+ated on demand. We also create PAL-Dojo, a collection of efficient procedu-
+ral generators for surface normal </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>estimation, image segmentation, and human
+pose estimation. Against a cross-model black-box adversary with 50M aggre-
+gate queries, Simple-PAT reduces worst-case error by a geometric mean of3.15×
+compared to standard training and2.63×compared to the strongest robust train-
+ing baseline. Code is available athttps://github.com/princeton-vl/
+procedural-adversarial-learning.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>previously
+handled.
+We propose Simple-PAT, a simple algorithm for procedural adversarial training using adversaries
+that attack via zeroth-order optimization. Simple-PAT consists of a learner that trains the model
+through minibatch gradient descent and an adversary that uses Covariance Matrix Adaptation Evo-
+lution Strategy (CMA-ES) Hansen &amp; Ostermeier (2001) to search on procedural controls to generate
+the next minibatch based on existing cases the model finds challenging.
+To analyze PAT algorithms, we develop PAL-Dojo, a suite of procedural generators for three vision
+tasks: surface normal estimation, human pose estimation, and image segmentation. We design these
+2
+Preprint
+generators to control the scenes&#x27; layout, lighting, shapes, and poses using between 13 and 69 param-
+eters. We prioritize simplicity and efficiency of generation to facilitate algorithmic development.
+We evaluate </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>trained models on PAL-Dojo by treating them as a black box and adversarially attacking
+with a large query budget. We use a single-model adversary with 2M queries and a cross-model
+adversary with a total of 50M queries. In Figure 1, we compare Simple-PAT to a naive learner that
+samples every batch uniformly from the parameter space (uniform training), and to two methods
+that reweight uniform samples based on their loss (CVaR and tilted ERM). Under the cross-model
+adversary, Simple-PAT lowers the worst case on every task, by a geometric mean of3.15×relative to
+uniform training and2.63×relative to the strongest other method on each task. We also evaluate the
+robustness of SOTA foundation models using the PAL-Dojo generators, finding severe failure cases
+with our adversary. This demonstrates that PAL-Dojo, though visually simple, provides sufficient
+challenge to SOTA models.
+In summary, our </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>contributions are threefold: (1) Procedural Adversarial Learning (PAL), a frame-
+work that pairs minimax training under a procedural generator with worst-case evaluation by an
+adaptive adversary; (2) Simple-PAT, a simple yet effective procedural adversarial training algorithm;
+(3) PAL-Dojo, a suite of simple, efficient but sufficiently hard procedural generators for vision tasks,
+designed to facilitate the study of PAL.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We design our adversarial training procedure Simple-PAT around three principles: (1)coverage:the
+model must be presented with examples near the worst-case example (2)diversity:each batch the
+model receives should contain maximally distinct examples (3)computation reuse:samples which
+we render and evaluate should be used to update the network. Though simple, these principles
+allow us to design an algorithm whose training throughput is comparable to uniform training, while
+achieving a large reduction in evaluation worst-case error.
+Algorithm 1 describes Simple-PAT. We maintainkCMA-ES instancesπ 1, . . . , πk. At each step we
+select a batch usingn 0 uniform samples andλsamples from eachπ i. We run a forward pass on
+every data point and use the results to update the CMA-ES parameters. We then run a backward pass
+and optimization step, as in standard neural network training. EveryRsteps we </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our primary evaluation, procedural adversarial evaluation (PAE), is a worst-case search against each
+network after it has completed training; we describe this in the following subsections. The true worst
+case cannot be computed with a finite number of queries, so we use best-effort adversaries that probe
+each model as a black box subject to a compute budget, and we refer to the worst case an adversary
+finds as theevaluation worst case. We consider two PAE adversaries: a single-model adversary
+that searches against each model separately, and a cross-model adversary that pools the worst cases
+found across models. We also evaluate every model on the same test set of 65,536 scenes sampled
+uniformly at random.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our single-model evaluation protocol uses a black-box optimizer to search for the procedural pa-
+rameters that produce the worst loss for a given network. We use a budget of 2 million queries,
+which represents39%of the overall training budget of 5.12 million samples. We split this between
+1 million samples of a DIRECT-L search (Gablonsky &amp; Kelley, 2001) and 1 million samples of a
+CMA-ES search. This CMA-ES search differs from the search performed during training in several
+important ways: (1) it uses a population size of 512 instead of 28 (2) it updates a full covariance
+matrix instead of a diagonal parameterization (3) IPOP restarts are permitted (4) the objective is
+stationary, allowing for better convergence (Hansen et al., 2019). Combined, these settings give the
+evaluation a substantially more powerful search than training.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For our cross-model evaluation, we pool the worst cases across training seeds and training proce-
+dures. We evaluate each network on the worst cases found by the black-box optimizer against other
+networks. We report the overall worst loss among the single-model evaluation and the evaluation
+on other networks&#x27; worst cases. In our experiments, we have five methods and 5 seeds per method.
+Thus, the cross-model evaluation has a total of 50M queries, though each model is still only queried
+2M times.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Cross-model,5×10 7 queries Test set, 65,536 scenes
+Task Method Worst case↓pvs. Simple-PAT Max↓Median↓
+Normals Uniform (Adam) 49.7±1.10.0079 10.63±0.321.636±0.022
+angle (◦) Uniform (Muon) 43.4±3.00.0079 5.53±0.470.8904±0.0041
+Tilted 37.1±1.40.0079 8.06±0.643.732±0.020
+CVaR 38.4±2.20.0079 5.186±0.0921.8097±0.0081
+Simple-PA T 16.0±2.3— 3.51±0.221.713±0.018
+Chair-Simple Uniform (Adam) 4.58±0.220.0079 0.50±0.732.13e-5±4.3e-6
+BCE Uniform (Muon) 4.766±0.0590.0079 0.00394±0.000885.55e-6±6.7e-7
+Tilted 3.16±0.160.0079 0.0053±0.00163.5e-4±1.0e-4
+CVaR 3.64±0.210.0079 0.0084±0.00868.7e-5±2.3e-5
+Simple-PA T 0.72±0.70— 0.030±0.0521.88e-5±4.7e-6
+Chair-Full Uniform (Adam) 3.22±0.170.0079 0.0263±0.00737.5e-5±1.4e-5
+BCE Uniform (Muon) 2.50±0.270.0079 0.0156±0.00471.892e-5±7.7e-7
+Tilted 2.23±0.140.0079 0.0073±0.00111.709e-4±6.2e-6
+CVaR 2.49±0.410.0079 0.0101±0.00415.13e-5±1.2e-6
+Simple-PA T 0.81±0.46— </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.029±0.0125.6e-5±2.0e-5
+Pose Uniform (Adam) 700±1200.0079 201±2826.14±0.16
+MPJPE (mm) Uniform (Muon) 569±540.0079 114±1816.09±0.15
+Tilted 554±620.0079 151±2038.05±0.11
+CVaR 547±480.0079 154±2839.84±0.33
+Simple-PA T 320±35— 97±1526.9±1.4
+Table 2: Cross-model evaluation worst case for various training methods. Each entry is the mean of
+5 seeds with±1 standard deviation shown. In the &quot;pvs. Simple-PAT&quot; column we give the two-sided
+Mann-Whitneyp-value comparing our method to baselines.
+Table 2 shows our primary results. We report metrics with the stronger cross-model adversary
+(Section B.2 discusses the single-model adversary results). Simple-PAT is the most robust on all
+four tasks. Compared to uniform Muon, it reduces the cross-model worst case error by2.71×on
+normals,6.64×on chair-simple,3.08×on chair-full, and1.78×on pose. Against the strongest
+baseline for each task, the reductions </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>are2.31×,4.41×,2.74×, and1.71×.
+We reportp-values computed with a Mann-Whitney test. With the cross-model evaluation, samples
+are not independent but they are exchangeable under the null hypothesis; thus the Mann-Whitney
+test is valid. All sixteen comparisons are significant at ap= 0.05margin. In fact, they all achieve
+ap-value of 0.0079, indicating that every Simple-PAT seed&#x27;s worst case is better than every seed of
+every other baseline.
+Typical case cost.Our primary goal is to improve worst-case performance, but Simple-PAT gener-
+ally performs well on typical cases as well. On Pose and Normals, Simple-PAT has the best median
+performance among the robust training methods, and the lowest test set maximum error across all
+8
+Preprint
+82.8°
+ 3.3°
+ 2.98 BCE
+ 1.2e-4 BCE
+0.792 BCE
+ 7.1e-4 BCE
+ 1020 mm
+ 43 mm
+Normals: MoGe-2 (64 px)
+Input Label SOTA model Simple-PAT
+Chair-Simple: SAM 3
+Input </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0 20 40
+Uniform (Adam)
+Uniform
+CVaR
+Tilted
+Simple-PAT
+Normals (°)
+0 200 400 600
+Pose (MPJPE, mm)
+0 2 4
+Chair-Simple (BCE)
+0 1 2 3
+Chair-Full (BCE)
+Single-model worst case Cross-model worst case
+Figure 5: Cross-model evaluation worst case compared to single-model evaluation worst case.
+In Figure 5 we compare the single-model evaluation and cross-model evaluation. Since the cross-
+model evaluation pools the worst cases, it reports errors greater than or equal to the single-model
+evaluation. On normals, the two evaluations nearly agree, with the cross-model adversary increasing
+the worst case by at most5%for every method. On pose and chair-simple, the increase is at most
+1.54×and1.69×respectively 2.
+On the chair-full task, however, single-model searches missed difficult cases for the Simple-PAT
+models. The cross-model adversary increased Simple-PAT&#x27;s worst case by2.65×, compared with
+at </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>most1.58×for the baselines. Given that chair-full is the task with the highest dimensionality
+(69 parameters), this is not surprising since the optimization problem is more challenging. This
+reveals the difficulty of evaluating the worst case in complex environments; we therefore report the
+cross-model evaluation as our primary metric, since pooling searches across models gives a stronger
+adversary.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +256,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +272,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-04</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-05 11:51:37</li><li>Last seen by Paper Scout: 2026-11-05 11:51:37</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-04</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-05 11:51:37</li><li>Last seen by Paper Scout: 2026-11-06 11:50:36</li></ul>
             <ul><li>arXiv: 2611.06890</li><li>arXiv IDs: 2611.06890</li></ul>
           </section>
           <section class="detail-panel">

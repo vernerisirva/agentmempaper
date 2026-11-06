@@ -59,16 +59,300 @@
             <p>Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting improvements in robot capabilities from physical interaction. In this work, we study embodied recursive self-improvement (RSI) through real-world e...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>While the empirical exploration of coding agents in physical robotics is detailed and offers valuable qualitative insights, the experimental rigor is undermined by reporting development-stage cumulative success rather than isolated held-out evaluations of final policies, along with unmatched seed baselines in simulation benchmarks. Given these methodological and evaluation uncertainties, an uncertain verdict is appropriate.</p>
+      <p>The authors transparently report limitations, including that offline programs can fail on unseen variations, contact-rich tasks often require online intervention, and human guidance was used during exploration deadlocks.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-06T11:52:57.099629+00:00.</p>
+        <p>Coverage: 73656 of 73656 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable
+robot behavior, raising the question of how such agents can produce lasting improvements in robot
+capabilities from physical interaction. In this work, we study embodied recursive self-improvement
+(RSI) throughreal-worldexploration, code refinement, and deployment using PyRUA-REAL, a
+framework in which coding agents retain interaction experience as persistent memory and reusable
+executable skills that inform subsequent exploration and improvement. Our empirical study places
+physical manipulation at the center of the improvement process, examining how agents collaborate,
+what kinds of execution feedback support effective code refinement, and how task specifications
+and previously acquired skills influence robustness and task transfer. We further investigate the
+efficiency and capability of the </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>resulting programs when deployed without involving an online agent
+for decision-making.Across eight real-world tasks, PyRUA-REAL achieves an average success rate
+of 91.1%.In complementary evaluation on 42 tasks from the RoboDojo benchmark, it achieves an
+average success rate of 84.4%. This study provides empirical guidance for turning physical exploration
+into reusable robot skills that support continued improvement and robust, efficient deployment.
+Project Page:https://dagroup-pku.github.io/PyRUA-Lean/real/
+Keywords:Agentic Robot, Embodied RSI, Code as Policies</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Exploration and Adaptive Learning) as
+an embodied RSI framework for this study (Figure 1). A researcher agent selects experimental objectives and
+technicalapproaches, whileanengineeragentimplementsprograms, executesrobottrials, anddiagnosesfailures.
+Their interaction connects local code improvement with task-level reassessment. A persistent repository records
+environmental facts, attempted approaches, execution outcomes, and reusable implementations, allowing
+later experiments to build on earlier experience while model parameters remain fixed. For deployment, the
+resulting code can be frozen and executed without runtime language-model calls, while still responding to live
+observations through its perception, control, and recovery routines. This separation enables us to study both
+the process of developing robot capabilities and the behavior of the programs that retain them.
+2</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our experiments cover eight manipulation tasks on a dual-arm Franka platform, spanning reasoning, long-
+horizon execution, precise contact, deformable objects, and bimanual coordination. Recorded development
+success averages 91.1% across tasks. These rates aggregate attempts across code revisions; frozen-program
+performance is evaluated separately. Complementary evaluation on 42 RoboDojo tasks yields 84.82% success,
+averaged equally over five capability groups, compared with reported results of 50.35% for PyRUA-Lean and
+22.48% for GPT-6-Astra. Our main contributions can be summarized as:
+• An empirical study of skill acquisition and continued improvement through real-world interaction.Across
+eight physical manipulation tasks, we trace how coding agents turn exploration experience into executable
+robot skills and improve them beyond first successful rollout, documenting gains and </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>PyRUA-REAL consists of three components:improvement,execution, andexperience, as illustrated in Figure 2.
+The system receives a human-provided task goal (goal) and a task specification (survey), which describes
+the required coverage of objects, positions, orientations, and task variants. With the underlying agent model
+parameters held fixed, the system develops task programs through code generation, testing, and feedback
+analysis. The resulting task program runs independently of the development agents.
+The improvement component comprises two agents with complementary responsibilities. Theresearcher
+manages the overall technical approach and specifies the objective, stopping criteria, and relevant experience
+for each experiment. Theengineerimplements these requirements, diagnoses problems through environmental
+interaction, and revises the code. They coordinate through </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Physical exploration produces agent-free programs for seven of the eight tasks (Figure 5). These programs
+execute using live perception, control, and recovery logic without runtime language-model calls. Approximate
+time to first success ranges from 1.5 hours for block storage to 45 hours for Push T, indicating substantial
+variation in acquisition cost across tasks. Ethernet insertion remains unsuccessful without online agent
+participation in the reported development record.
+Across the seven tasks with agent-free solutions, recorded development success ranges from 91.67% to 100%
+(Figure 5b). These rates aggregate attempts across program revisions and describe the development record
+rather than the reliability of a single frozen program. Successful execution times also vary substantially across
+tasks (Figure 5c); their task-specific endpoints are defined in Appendix C.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>V1 V2 V3 V4 V5 V6 V7
+Version
+800
+1000
+1200
+1400
+Execution time (s)
+(f) Execution
+Figure 6.Continued improvement after first success.Columns show five-block stacking, tic-tac-toe, and Hanoi.
+(a–c) Success rate; (d–f) execution time, including reset. Shading in (d) shows the interquartile range. Points are
+observed values; dashed curves are exponential moving averages (α= 0.35).
+tic-tac-toe, and Hanoi. Successive program versions show further gains, with occasional regressions and
+different trajectories across tasks. Figure 6 compares completion and execution time across the three tasks;
+Figure 7 shows stacking placement errors in position and angle. The results presented here are from exploring
+process and do not represent the final results of repeat tests.
+Stacking improves gradually across revisions. Repeated refinement of the transfer routine improves both
+execution time and placement </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>estimates. Median stack–unstack cycle time falls from 285.3 to 156.0s, while
+mean visually estimated lateral error decreases from 2.69 to 0.44mm for stacking (Figures 6 d and 7 a).
+Full-cycle success rises from 88.7% to 98.7% across the two reported smooth-stage evaluations; these stage-level
+rates are distinct from the cumulative success curve in the figure. Despite local regressions, the reductions in
+time and estimated error extend across multiple revisions, consistent with incremental improvements to a
+repeatedly executed routine. Mean absolute angular error for stacking also falls from 1.37 to 0.25◦ (Figure 7b).
+These errors are visual estimates, rather than independent measurements of physical accuracy.
+Tic-tac-toe shows a significant change after a motion-strategy revision. Success rate rises from 50% in the
+first version grow to 100% in the next, with later regressions before </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Generalization
+12 tasks
+Precision
+8 tasks
+Long-horizon
+8 tasks
+Memory
+6 tasks
+Open
+8 tasks
+40
+60
+80
+100
+0 25 50 75 100
+PyRUA-REAL
+PyRUA-Lean
+GPT-6-Astra
+84.42
+50.35
+22.48
+0 25 50 75 100
+PyRUA-REAL
+PyRUA-Lean
+GPT-6-Astra
+88.53
+55.26
+28.97
+(a) Success across five capabilities (b) Overall success (%)
+(c) Overall benchmark score
+PyRUA-REAL (ours) PyRUA-Lean GPT-6-Astra
+Figure 8.Complementary RoboDojo evaluation.Reported results for PyRUA-REAL, PyRUA-Lean, and GPT-
+6-Astra in the October 24, 2026 comparison snapshot: (a) success rates by capability, (b) overall success, and (c)
+benchmark score. Overall metrics weight the five groups equally; radar labels give task counts. PyRUA-Lean results
+are from its official evaluation. Full method comparisons, with column-best values in bold, appear in Appendix D.
+Across 42 RoboDojo tasks, PyRUA-REAL&#x27;s frozen programs achieve 84.42% capability-averaged </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We examine H3 by investigating how execution experience becomes actionable evidence for embodied RSI.
+Physical diagnostic traces connect inspected observations to program revisions and subsequent validation,
+while a simulation study compares feedback interfaces under a fixed revision budget.
+Reliable improvement requires reliable execution feedback.Apparent execution failures can originate
+in perception or verification. In tic-tac-toe, merging two touching rings causes a false placement rejection;
+correcting the detector makes the same image pass the unchanged acceptance criterion, without moving the
+robot. In stacking, successful cycles still produce large reported block-return errors. Inspection reveals an
+unintended camera view; correcting view selection lowers the visual error estimates, but does not independently
+establish more accurate motion. Embodied RSI must therefore identify </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reports (BS†), or video and joint trajectories (BVJ). All conditions include success,
+termination reason, action count, and timing. BS additionally supplies sampled numeric robot and ground-truth
+object states to the revising agent (†: privileged diagnostics); BVJ adds complete camera video and synchronized joint
+trajectories. Each task–condition pair has one development session and 18 test executions across six held-out layouts.
+The final group weights the four tasks equally.
+state). Each GPT-6-Astra Medium session generates an initial program and makes five revisions on two
+development layouts. Final programs are evaluated in 18 executions across six held-out layouts, with test
+outcomes withheld from the revising agent. Mean success is 15.3% for B, 45.8% for BS, and 54.2% for BVJ
+(Figure 11). Compared with B, BS increases success from 3/18 to 12/18 on Stack blocks, from 1/18 to
+13/18 </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>on Push T, and from 7/18 to 8/18 on Deposit coin. Both B and BS record 0/18 on Imitate sorting
+sequence, while BVJ achieves 3/18. The higher mean success with BVJ accompanies lower mean optimizer
+time than B: 25.4 versus 31.8 minutes for initial generation and all five revisions. Token usage is slightly
+higher, at 3.65 versus 3.54 million, including cached inputs. Optimizer time covers agent turns and their
+tools, excluding separate development and test evaluations. These results show task-dependent benefits from
+richer revision feedback; the BS condition additionally differs in access to privileged object-state information.
+Each task–condition pair has one development session, so variability across independent sessions remains
+unmeasured. Appendix A provides the full eight-condition protocol and cost analysis.</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Robot programs become more robust to unseen scenarios when informed with explicit descrip-
+tions of the task variations (H4).Agents initially develop programs under an instruction to maximize
+success on hidden test scenarios. We then provide numerical specifications and images defining the workspace
+boundaries and the ranges of target positions and orientations, and continue exploration and program revision.
+We evaluate both program versions on the same held-out scenarios, measuring robustness as success across
+these variations. Mean success increases in all five RoboDojo categories, with gains of 11.4–36.6 percentage
+points (Figure 12). Open tasks improve from 14.4% to 51.0%, while Memory improves from 53.8% to 65.2%.
+At the task level, Stack bowls improves from 0.0% to 86.4% and Fasten screws from 9.1% to 81.8%, although
+gains are not universal: Swap blocks declines from 68.2% to </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>w/o
+experience
+w/
+experience
+0
+20
+40
+60Success (%)
+21.3%
+40.0%
+0 25 50
+Success gain (pp)
+Classify by language
+Play stacking toy
+Imitate sorting sequence
+General pickup
+Make toast
+Fill egg holder
+Push T
+Swap blocks
++50
++50
++30
++10
++10
+0
+0
+0
+a Mean success b Gain from experience
+Figure 13.Transfer from a primitive-skill library to new tasks.Agents develop programs for eight target tasks
+with or without access to primitive skills acquired on earlier tasks. (a) Mean success rate across the target tasks. (b)
+Per-task success-rate differences, computed as with-library minus without-library performance. Red markers indicate
+positive gains; gray markers indicate no change. Five of the eight tasks benefit from the library.
+Previously developed primitive skills support positive transfer to new tasks(H5).In a separate
+eight-task comparison, agents start new-task exploration with or without a </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Hanoi
+0
+30
+60
+90
+120Elapsed time (min)
+93.3
+103.7
+28.2
+44.6
+8.99
+19.8
+29.5
+10.6
+13.7
+2.99
+Timeout Timeout
+16.72
+GPT-6-Astra PyRUA-Lean PyRUA-REAL Other time Agent time
+Figure 14.Execution time and online thinking overhead.Offline times are successful-run medians including reset;
+online bars show recorded times. Dashed outlines mark non-completion within 120 minutes with unmeasured timing
+splits. Development time is excluded.
+Converting online exploration into fixed programs avoids repeated agent decisions(H6).In
+offline coding mode, the programs for tic-tac-toe, five-block stacking, and Tower of Hanoi complete execution
+and reset without runtime language-model calls, with median successful cycle times of 8.99, 2.99, and 16.72
+minutes, respectively. On tic-tac-toe and stacking, online coding with PyRUA-Lean takes approximately
+4.6–5.0 times as long as offline coding with PyRUA-REAL; </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>online action selection with GPT-6-Astra takes
+approximately 9.9–11.5 times as long (Figure 14). Agent thinking accounts for 63–90% of the recorded online
+execution time. For stacking, PyRUA-Lean spends 10.6 of 13.7 minutes thinking; its remaining 3.1 minutes
+are close to the program&#x27;s 2.99-minute cycle. Thus, most of this observed timing gap comes from waiting
+for agent decisions. Neither online baseline completes Hanoi within 120 minutes. The comparison concerns
+execution time and excludes the cost of online exploration and program development.
+Precise, contact-rich tasks can still require online agent assistance.The efficiency of offline coding
+depends on whether the frozen program handles the conditions encountered during execution. Ethernet
+insertion, which requires precise connector alignment and contact with the port, exposes a limitation of
+the current code: the development </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>records contain 0/4 successes with scripted execution and 10/17 with a
+workflow using GPT-6-Astra Medium for online decisions. This assisted workflow combines programmed
+motion with online assessment and decisions between stages; it does not yet provide agent-free execution in
+offline coding mode. In one successful run, motion takes 281.8s and inter-stage checks and decision gaps
+take 220.8s, accounting for 44% of the total 502.7s. These gaps include visual checks and human review and
+therefore cannot be attributed entirely to agent thinking. The higher observed success rate supports retaining
+online assistance where the current program remains unreliable.
+15</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Method selection can limit self-improvement.The deadlocks in Section 4.4 suggest that progress
+can be limited by which methods an agent considers. Depth and calibration errors constrained geometric
+localization: stacking progressed with local visual alignment and contact feedback, while Hanoi combined
+coarse localization with wrist-camera feedback. In simulated general pickup, success improved after a human
+suggested SigLIP, a visual model the agent had initially overlooked. These cases indicate that the ability
+to implement and refine a method does not ensure that useful alternatives will be explored. A practical
+implication is to include explicit comparisons of alternative perception and control strategies when the current
+approach repeatedly fails.
+Human assistance can shape the skills agents acquire.The SigLIP case in the preceding paragraph
+illustrates how guidance can expand the </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>methods considered during exploration. Human input also resolved
+an episode in which an agent repeatedly routed around a false contact detection. When human assistance was
+unavailable, the Hanoi agent developed a strategy for pushing hard-to-grasp disks into accessible positions; this
+strategy was later reused in tic-tac-toe. These observations suggest that intervention affects both immediate
+progress and the recovery skills retained for future tasks. Reports of autonomous improvement should therefore
+document what humans contributed and which operations the resulting program performs independently. The
+cases motivate studying when to intervene, without establishing an optimal level of assistance.
+Offline programs may still need online agent assistance.Successful online exploration and conversion
+into an executable program do not ensure that its encoded logic covers every situation </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>independently initialized exploration session per
+task–condition pair. The main comparison contains 32 sessions, each with one initial generation and five
+revisions. Every final program is tested on six layouts with three executions per layout: 18 executions per cell
+and 576 in total. The fixed-revision comparison in Figure 11 uses revision 5, while Figure 16 uses the separate
+retrospective selection rule below. Figure 15 displays the full revision trajectories.
+0 1 2 3 4 5</blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Cost through the selected version.Figure 16 uses all eight conditions; B, BS, and BVJ are labeled,
+while hollow diamonds mark privileged diagnostic conditions. For each task–condition pair, all revisions 0–5
+are scored on the same six test layouts using the first valid execution per layout, including at revision 5. If
+any revision achieves at least 4/6 successes, we select the highest-scoring revision, breaking ties in favor of the
+earliest. Otherwise, we retain revision 5, even if an earlier revision has a higher score below 4/6. Selection
+uses test scores, not development scores; the selected-version scores are therefore retrospective summaries.
+Costs sum recorded optimizer turns, including retries, from initial generation through the selected revision.
+Each plotted coordinate is the arithmetic mean over four tasks. The ordinary least-squares fit across the eight
+condition means hasR2 </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>= 0.691.
+All sessions continue through revision 5. Selected-version costs measure work accumulated through the selected
+revision; Table 3 reports these costs alongside the full exploration costs.
+Across the eight condition means, selected-version success is associated with lower cumulative optimizer time
+(R2 = 0.691). With video and joint trajectories, selected-version success is 58.3%, compared with 12.5% for
+basic outcomes; cumulative optimizer time is 19.1 versus 31.8 minutes and tokens are 2.43 versus 3.54 million.
+Because selection uses test outcomes, these retrospective summaries do not establish that an agent could
+identify the selected version or stop at it online.
+15 20 25 30 35
+Optimizer time to selected version (min)
+0
+25
+50
+75
+100
+Selected-version success (%) B: Basic outcomes
+BS†: Numeric states
+BVJ: Video + joints
+OLS fit: R² = 0.691
+Figure 16.Retrospective </blockquote></details></li><li><strong>Contribution clarity — page 25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>D Full RoboDojo Results
+The official PyRUA-REAL values are documented in its evaluation summary. Its separately reported self-run
+is not used here. Evaluation seeds for the other baseline rows are not specified in the leaderboard snapshot.
+Table 5.Full RoboDojo comparison from the leaderboard snapshot&#x27;s October 24, 2026 leaderboard snapshot. Capability
+columns report success rates (%); the final two columns weight the five capabilities equally. Best values in each column
+are bold. These are reported results, not a matched-seed comparison: our evaluation uses seed 0, whereas the official
+PyRUA-REAL evaluation uses seed 3.
+Method Gen. Prec. Long. Memory Open Avg. SR Avg. score
+Agent
+PyRUA-Lean 43.17 38.25 43.75 68.33 58.25 50.35 55.26
+HexaShell-Preview 34.50 32.00 31.50 81.00 55.25 46.85 53.18
+EmbodiedEvo 30.83 16.25 21.75 76.67 49.25 38.95 45.08
+GPT-6-Astra 30.50 4.00 8.25 38.67 31.00 </blockquote></details></li><li><strong>Contribution clarity — page 25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>22.48 28.97
+DeepSeek-Flash 1.67 0.00 0.00 1.67 6.25 1.92 2.99
+GPT-5.5 0.00 0.00 0.00 1.67 2.75 0.88 1.13
+Agent hybrids
+WorldScape-R2 SI (+WAM) 35.83 15.50 34.25 63.67 47.50 39.35 46.58
+PhysicalRSI (+VLA) 15.62 32.50 37.33 46.56 24.92 31.39 36.27
+Ours
+PyRUA-REAL (ours)72.33 91.50 80.00 95.55 88.24 84.42 88.53
+25</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +391,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +407,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-04</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-05 11:48:51</li><li>Last seen by Paper Scout: 2026-11-05 11:48:51</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-04</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-05 11:48:51</li><li>Last seen by Paper Scout: 2026-11-06 11:48:09</li></ul>
             <ul><li>arXiv: 2611.06768</li><li>arXiv IDs: 2611.06768</li></ul>
           </section>
           <section class="detail-panel">

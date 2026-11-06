@@ -19,13 +19,13 @@
   "first_seen_at": "2026-11-05 11:51:37",
   "first_seen_date": "2026-11-05",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-11-05 11:51:37",
-  "last_seen_date": "2026-11-05",
+  "is_new": false,
+  "last_seen_at": "2026-11-06 11:50:36",
+  "last_seen_date": "2026-11-06",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-04",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-05 11:51:57",
   "notified_date": "2026-11-05",
   "openalex_id": null,
@@ -35,8 +35,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-05 11:51:37",
-    "generated_at": "2026-11-05 11:55:34",
-    "last_seen_at": "2026-11-05 11:51:37",
+    "generated_at": "2026-11-06 11:54:03",
+    "last_seen_at": "2026-11-06 11:50:36",
     "metadata_sources": [
       "arxiv"
     ],
@@ -96,36 +96,2093 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-06T11:53:14.412346+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The study presents a clear, well-scoped framework supported by rigorous algorithmic formulations, comprehensive empirical baselines, appropriate ablation and baseline comparisons, and honest disclosure of evaluation limits.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 63085,
+      "assessment_input_sha256": "31f4f04ddf12be9bedaf5cc481b82aa3fb80d11306be6d699001e18032215ec8",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.06890",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 60932,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 59741,
+      "evidence_block_count": 100,
+      "evidence_context_characters": 71987,
+      "evidence_context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+      "evidence_context_sha256": "2fe57d0143e95cbbf2ec397deb5e5a1f8bf15f231122e376ce61cb90f43d860b",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 60978,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "extracted_pages": 24,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "bdc2a20b6eddb4915f17f0b1ddb31d9351bf62429fc2895d667a2ea940c53738",
+        "source_url": "https://arxiv.org/pdf/2611.06890",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 60932,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 148,
+          "supplied_characters": 148
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1263,
+          "supplied_characters": 1263
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2285,
+          "supplied_characters": 2285
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 171,
+          "supplied_characters": 171
+        },
+        {
+          "heading": "Bce\u2193",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 3366,
+          "supplied_characters": 3366
+        },
+        {
+          "heading": "Bce\u2193",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1545,
+          "supplied_characters": 1545
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 2690,
+          "supplied_characters": 2690
+        },
+        {
+          "heading": "Procedurallygeneratedtasks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 186,
+          "supplied_characters": 186
+        },
+        {
+          "heading": "Procedurallygeneratedtasks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 478,
+          "supplied_characters": 478
+        },
+        {
+          "heading": "The Training Data Need Not Be Fixed In Advance. At Each Training Step We Selectbparameter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 467,
+          "supplied_characters": 467
+        },
+        {
+          "heading": "The Worst Case Can Be Evaluated Over The Entire Parameter Space. We Consider The Absolute",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1103,
+          "supplied_characters": 1103
+        },
+        {
+          "heading": "Normalestimation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 573,
+          "supplied_characters": 573
+        },
+        {
+          "heading": "Normalestimation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 720,
+          "supplied_characters": 720
+        },
+        {
+          "heading": "Objectsegmentation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2058,
+          "supplied_characters": 2058
+        },
+        {
+          "heading": "Humanposeestimation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1198,
+          "supplied_characters": 1198
+        },
+        {
+          "heading": "Humanposeestimation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 332,
+          "supplied_characters": 332
+        },
+        {
+          "heading": "Performancecharacteristics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 209,
+          "supplied_characters": 209
+        },
+        {
+          "heading": "Adversarialtraining",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 2789,
+          "supplied_characters": 2789
+        },
+        {
+          "heading": "Adversarialtraining",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 561,
+          "supplied_characters": 561
+        },
+        {
+          "heading": "Experimentsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 19,
+          "source_characters": 126,
+          "supplied_characters": 126
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 714,
+          "supplied_characters": 714
+        },
+        {
+          "heading": "Single-Modelevaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 840,
+          "supplied_characters": 840
+        },
+        {
+          "heading": "Cross-Modelevaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 499,
+          "supplied_characters": 499
+        },
+        {
+          "heading": "Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 735,
+          "supplied_characters": 735
+        },
+        {
+          "heading": "Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 160,
+          "supplied_characters": 160
+        },
+        {
+          "heading": "Hyperparameters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 301,
+          "supplied_characters": 301
+        },
+        {
+          "heading": "Mainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 26,
+          "source_characters": 2523,
+          "supplied_characters": 2523
+        },
+        {
+          "heading": "Mainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 27,
+          "source_characters": 1211,
+          "supplied_characters": 1211
+        },
+        {
+          "heading": "Worstcaseevaluation Ofstate-Of-The-Artmodels",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 28,
+          "source_characters": 1685,
+          "supplied_characters": 1685
+        },
+        {
+          "heading": "Trainingsamplingconcentration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 29,
+          "source_characters": 581,
+          "supplied_characters": 581
+        },
+        {
+          "heading": "Trainingsamplingconcentration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 30,
+          "source_characters": 726,
+          "supplied_characters": 726
+        },
+        {
+          "heading": "Comparing Thesingle-Modeladversary Andcross-Modeladversary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1299,
+          "supplied_characters": 1299
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 32,
+          "source_characters": 904,
+          "supplied_characters": 904
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 33,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 69,
+          "supplied_characters": 69
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 3548,
+          "supplied_characters": 3548
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 3688,
+          "supplied_characters": 3688
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 3998,
+          "supplied_characters": 3998
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 952,
+          "supplied_characters": 952
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Hyperparameters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 649,
+          "supplied_characters": 649
+        },
+        {
+          "heading": "Muon Is Applied To The Matrix And Convolution Parameters Except The Output Head, And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 748,
+          "supplied_characters": 748
+        },
+        {
+          "heading": "Appendix: Additionalanalyses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Appendix: Adam Vsmuon Forworstcaseperformance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 55,
+          "supplied_characters": 55
+        },
+        {
+          "heading": "Worst Case (Deg)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 76,
+          "supplied_characters": 76
+        },
+        {
+          "heading": "T Est-Set Max (Deg)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 19,
+          "supplied_characters": 19
+        },
+        {
+          "heading": "Adam Muon",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 337,
+          "supplied_characters": 337
+        },
+        {
+          "heading": "Timizer Learns Rarely-Seen Training Data Better",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 47,
+          "source_characters": 135,
+          "supplied_characters": 135
+        },
+        {
+          "heading": "Evaluate This On The Normal Estimation Task Us-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Ing 15 Seeds For Each Combination Of Opti-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 42,
+          "supplied_characters": 42
+        },
+        {
+          "heading": "Mizer (Muon Or Adam) And Training Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 50,
+          "source_characters": 271,
+          "supplied_characters": 271
+        },
+        {
+          "heading": "A Significant Improvement For Uniform Train-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 271,
+          "supplied_characters": 271
+        },
+        {
+          "heading": "A Significant Improvement For Uniform Train-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Evaluation With Asingle-Modeladversary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 1925,
+          "supplied_characters": 1925
+        },
+        {
+          "heading": "Appendix: Proceduralgeneratordesign",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 1324,
+          "supplied_characters": 1324
+        },
+        {
+          "heading": "Appendix: Proceduralgeneratordesign",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 2976,
+          "supplied_characters": 2976
+        },
+        {
+          "heading": "Appendix: Proceduralgeneratordesign",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: State-Of-The-Artfoundationmodelworst-Case",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 1404,
+          "supplied_characters": 1404
+        },
+        {
+          "heading": "Appendix: Single-Modelevaluationworst-Casevisualizations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 211,
+          "supplied_characters": 211
+        },
+        {
+          "heading": "Appendix: Single-Modelevaluationworst-Casevisualizations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Normals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 206,
+          "supplied_characters": 206
+        },
+        {
+          "heading": "Bce",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 250,
+          "supplied_characters": 250
+        },
+        {
+          "heading": "Bce",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 255,
+          "supplied_characters": 255
+        },
+        {
+          "heading": "Appendix: Pose",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 209,
+          "supplied_characters": 209
+        },
+        {
+          "heading": "Appendix: Cross-Modelevaluationworst-Casevisualizations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 209,
+          "supplied_characters": 209
+        },
+        {
+          "heading": "Appendix: Cross-Modelevaluationworst-Casevisualizations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Normals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 206,
+          "supplied_characters": 206
+        },
+        {
+          "heading": "Bce",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 249,
+          "supplied_characters": 249
+        },
+        {
+          "heading": "Bce",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 254,
+          "supplied_characters": 254
+        },
+        {
+          "heading": "Appendix: Pose",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Appendix: Proceduralgenerators",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 121,
+          "supplied_characters": 121
+        },
+        {
+          "heading": "Appendix: Proceduralgenerators",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Normals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 72,
+          "source_characters": 72,
+          "supplied_characters": 72
+        },
+        {
+          "heading": "Appendix: Chair-Simple",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 73,
+          "source_characters": 80,
+          "supplied_characters": 80
+        },
+        {
+          "heading": "Appendix: Chair-Simple",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 74,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Chair-Full",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 75,
+          "source_characters": 75,
+          "supplied_characters": 75
+        },
+        {
+          "heading": "Appendix: Pose",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 76,
+          "source_characters": 72,
+          "supplied_characters": 72
+        }
+      ],
+      "selected_characters": 59741,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "selected_sections": [
+        {
+          "characters": 148,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1263,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2285,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 171,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 3366,
+          "heading": "Bce\u2193",
+          "page": 2
+        },
+        {
+          "characters": 1545,
+          "heading": "Bce\u2193",
+          "page": 3
+        },
+        {
+          "characters": 2690,
+          "heading": "Relatedwork",
+          "page": 3
+        },
+        {
+          "characters": 186,
+          "heading": "Procedurallygeneratedtasks",
+          "page": 3
+        },
+        {
+          "characters": 478,
+          "heading": "Procedurallygeneratedtasks",
+          "page": 4
+        },
+        {
+          "characters": 467,
+          "heading": "The Training Data Need Not Be Fixed In Advance. At Each Training Step We Selectbparameter",
+          "page": 4
+        },
+        {
+          "characters": 1103,
+          "heading": "The Worst Case Can Be Evaluated Over The Entire Parameter Space. We Consider The Absolute",
+          "page": 4
+        },
+        {
+          "characters": 573,
+          "heading": "Normalestimation",
+          "page": 4
+        },
+        {
+          "characters": 720,
+          "heading": "Normalestimation",
+          "page": 5
+        },
+        {
+          "characters": 2058,
+          "heading": "Objectsegmentation",
+          "page": 5
+        },
+        {
+          "characters": 1198,
+          "heading": "Humanposeestimation",
+          "page": 5
+        },
+        {
+          "characters": 332,
+          "heading": "Humanposeestimation",
+          "page": 6
+        },
+        {
+          "characters": 209,
+          "heading": "Performancecharacteristics",
+          "page": 6
+        },
+        {
+          "characters": 2789,
+          "heading": "Adversarialtraining",
+          "page": 6
+        },
+        {
+          "characters": 561,
+          "heading": "Adversarialtraining",
+          "page": 7
+        },
+        {
+          "characters": 126,
+          "heading": "Experimentsetup",
+          "page": 7
+        },
+        {
+          "characters": 714,
+          "heading": "Evaluation",
+          "page": 7
+        },
+        {
+          "characters": 840,
+          "heading": "Single-Modelevaluation",
+          "page": 7
+        },
+        {
+          "characters": 499,
+          "heading": "Cross-Modelevaluation",
+          "page": 7
+        },
+        {
+          "characters": 735,
+          "heading": "Baselines",
+          "page": 7
+        },
+        {
+          "characters": 160,
+          "heading": "Baselines",
+          "page": 8
+        },
+        {
+          "characters": 301,
+          "heading": "Hyperparameters",
+          "page": 8
+        },
+        {
+          "characters": 2523,
+          "heading": "Mainresults",
+          "page": 8
+        },
+        {
+          "characters": 1211,
+          "heading": "Mainresults",
+          "page": 9
+        },
+        {
+          "characters": 1685,
+          "heading": "Worstcaseevaluation Ofstate-Of-The-Artmodels",
+          "page": 9
+        },
+        {
+          "characters": 581,
+          "heading": "Trainingsamplingconcentration",
+          "page": 9
+        },
+        {
+          "characters": 726,
+          "heading": "Trainingsamplingconcentration",
+          "page": 10
+        },
+        {
+          "characters": 1299,
+          "heading": "Comparing Thesingle-Modeladversary Andcross-Modeladversary",
+          "page": 10
+        },
+        {
+          "characters": 904,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 8,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 69,
+          "heading": "Back matter: Acknowledgments",
+          "page": 11
+        },
+        {
+          "characters": 3548,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3688,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 3998,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 952,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 8,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 649,
+          "heading": "Appendix: Hyperparameters",
+          "page": 15
+        },
+        {
+          "characters": 748,
+          "heading": "Muon Is Applied To The Matrix And Convolution Parameters Except The Output Head, And",
+          "page": 15
+        },
+        {
+          "characters": 20,
+          "heading": "Appendix: Additionalanalyses",
+          "page": 15
+        },
+        {
+          "characters": 55,
+          "heading": "Appendix: Adam Vsmuon Forworstcaseperformance",
+          "page": 15
+        },
+        {
+          "characters": 76,
+          "heading": "Worst Case (Deg)",
+          "page": 15
+        },
+        {
+          "characters": 19,
+          "heading": "T Est-Set Max (Deg)",
+          "page": 15
+        },
+        {
+          "characters": 337,
+          "heading": "Adam Muon",
+          "page": 15
+        },
+        {
+          "characters": 135,
+          "heading": "Timizer Learns Rarely-Seen Training Data Better",
+          "page": 15
+        },
+        {
+          "characters": 47,
+          "heading": "Evaluate This On The Normal Estimation Task Us-",
+          "page": 15
+        },
+        {
+          "characters": 42,
+          "heading": "Ing 15 Seeds For Each Combination Of Opti-",
+          "page": 15
+        },
+        {
+          "characters": 271,
+          "heading": "Mizer (Muon Or Adam) And Training Method",
+          "page": 15
+        },
+        {
+          "characters": 271,
+          "heading": "A Significant Improvement For Uniform Train-",
+          "page": 15
+        },
+        {
+          "characters": 8,
+          "heading": "A Significant Improvement For Uniform Train-",
+          "page": 16
+        },
+        {
+          "characters": 1925,
+          "heading": "Appendix: Evaluation With Asingle-Modeladversary",
+          "page": 16
+        },
+        {
+          "characters": 1324,
+          "heading": "Appendix: Proceduralgeneratordesign",
+          "page": 16
+        },
+        {
+          "characters": 2976,
+          "heading": "Appendix: Proceduralgeneratordesign",
+          "page": 17
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Proceduralgeneratordesign",
+          "page": 18
+        },
+        {
+          "characters": 1404,
+          "heading": "Appendix: State-Of-The-Artfoundationmodelworst-Case",
+          "page": 18
+        },
+        {
+          "characters": 211,
+          "heading": "Appendix: Single-Modelevaluationworst-Casevisualizations",
+          "page": 18
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Single-Modelevaluationworst-Casevisualizations",
+          "page": 19
+        },
+        {
+          "characters": 206,
+          "heading": "Appendix: Normals",
+          "page": 19
+        },
+        {
+          "characters": 250,
+          "heading": "Bce",
+          "page": 19
+        },
+        {
+          "characters": 255,
+          "heading": "Bce",
+          "page": 20
+        },
+        {
+          "characters": 209,
+          "heading": "Appendix: Pose",
+          "page": 20
+        },
+        {
+          "characters": 209,
+          "heading": "Appendix: Cross-Modelevaluationworst-Casevisualizations",
+          "page": 20
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Cross-Modelevaluationworst-Casevisualizations",
+          "page": 21
+        },
+        {
+          "characters": 206,
+          "heading": "Appendix: Normals",
+          "page": 21
+        },
+        {
+          "characters": 249,
+          "heading": "Bce",
+          "page": 21
+        },
+        {
+          "characters": 254,
+          "heading": "Bce",
+          "page": 22
+        },
+        {
+          "characters": 208,
+          "heading": "Appendix: Pose",
+          "page": 22
+        },
+        {
+          "characters": 121,
+          "heading": "Appendix: Proceduralgenerators",
+          "page": 22
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Proceduralgenerators",
+          "page": 23
+        },
+        {
+          "characters": 72,
+          "heading": "Appendix: Normals",
+          "page": 23
+        },
+        {
+          "characters": 80,
+          "heading": "Appendix: Chair-Simple",
+          "page": 23
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Chair-Simple",
+          "page": 24
+        },
+        {
+          "characters": 75,
+          "heading": "Appendix: Chair-Full",
+          "page": 24
+        },
+        {
+          "characters": 72,
+          "heading": "Appendix: Pose",
+          "page": 24
+        }
+      ],
+      "selected_text_sha256": "31f4f04ddf12be9bedaf5cc481b82aa3fb80d11306be6d699001e18032215ec8",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "bdc2a20b6eddb4915f17f0b1ddb31d9351bf62429fc2895d667a2ea940c53738",
+      "source_pages": 24,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0002"
+        ],
+        "excerpt": "For many computer vision tasks, neural networks can be trained to produce a\nlow average error, yet they still fail on seemingly simple scenes. Reducing\nthese failures requires first finding them, but they may not be in a fixed dataset.\nWe study procedural adversarial learning (PAL), a framework of minimax train-\ning and adversarial evaluation which searches the input space of a procedural\ngenerator for difficult instances. The procedural generator is an interpretable\nprogram mapping a low-dimensional vector of control parameters (e.g. layout,\nlighting, pose) to a rendered image and its label. We introduce the Simple-\nPAT algorithm, which uses zeroth-order optimization in the procedural gener-\nator's parameter space to propose adversarial training samples that are gener-\nated on demand. We also create PAL-Dojo, a collection of efficient procedu-\nral generators for surface normal ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c636d1a675f098ecb6ff1e58b716dec3205fcb4614745adc0cee12b72c1beaf2",
+            "evidence_id": "E022ddeb2cc3e8200-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "For many computer vision tasks, neural networks can be trained to produce a\nlow average error, yet they still fail on seemingly simple scenes. Reducing\nthese failures requires first finding them, but they may not be in a fixed dataset.\nWe study procedural adversarial learning (PAL), a framework of minimax train-\ning and adversarial evaluation which searches the input space of a procedural\ngenerator for difficult instances. The procedural generator is an interpretable\nprogram mapping a low-dimensional vector of control parameters (e.g. layout,\nlighting, pose) to a rendered image and its label. We introduce the Simple-\nPAT algorithm, which uses zeroth-order optimization in the procedural gener-\nator's parameter space to propose adversarial training samples that are gener-\nated on demand. We also create PAL-Dojo, a collection of efficient procedu-\nral generators for surface normal "
+              }
+            ],
+            "text": "For many computer vision tasks, neural networks can be trained to produce a\nlow average error, yet they still fail on seemingly simple scenes. Reducing\nthese failures requires first finding them, but they may not be in a fixed dataset.\nWe study procedural adversarial learning (PAL), a framework of minimax train-\ning and adversarial evaluation which searches the input space of a procedural\ngenerator for difficult instances. The procedural generator is an interpretable\nprogram mapping a low-dimensional vector of control parameters (e.g. layout,\nlighting, pose) to a rendered image and its label. We introduce the Simple-\nPAT algorithm, which uses zeroth-order optimization in the procedural gener-\nator's parameter space to propose adversarial training samples that are gener-\nated on demand. We also create PAL-Dojo, a collection of efficient procedu-\nral generators for surface normal "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0003"
+        ],
+        "excerpt": "estimation, image segmentation, and human\npose estimation. Against a cross-model black-box adversary with 50M aggre-\ngate queries, Simple-PAT reduces worst-case error by a geometric mean of3.15\u00d7\ncompared to standard training and2.63\u00d7compared to the strongest robust train-\ning baseline. Code is available athttps://github.com/princeton-vl/\nprocedural-adversarial-learning.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bbb22cc3e2e3c36c0af9246161e9c4580c7874b07214341aa4a92085d00e9c18",
+            "evidence_id": "E022ddeb2cc3e8200-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1263,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 891,
+                "text": "estimation, image segmentation, and human\npose estimation. Against a cross-model black-box adversary with 50M aggre-\ngate queries, Simple-PAT reduces worst-case error by a geometric mean of3.15\u00d7\ncompared to standard training and2.63\u00d7compared to the strongest robust train-\ning baseline. Code is available athttps://github.com/princeton-vl/\nprocedural-adversarial-learning."
+              }
+            ],
+            "text": "estimation, image segmentation, and human\npose estimation. Against a cross-model black-box adversary with 50M aggre-\ngate queries, Simple-PAT reduces worst-case error by a geometric mean of3.15\u00d7\ncompared to standard training and2.63\u00d7compared to the strongest robust train-\ning baseline. Code is available athttps://github.com/princeton-vl/\nprocedural-adversarial-learning."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0010"
+        ],
+        "excerpt": "previously\nhandled.\nWe propose Simple-PAT, a simple algorithm for procedural adversarial training using adversaries\nthat attack via zeroth-order optimization. Simple-PAT consists of a learner that trains the model\nthrough minibatch gradient descent and an adversary that uses Covariance Matrix Adaptation Evo-\nlution Strategy (CMA-ES) Hansen & Ostermeier (2001) to search on procedural controls to generate\nthe next minibatch based on existing cases the model finds challenging.\nTo analyze PAT algorithms, we develop PAL-Dojo, a suite of procedural generators for three vision\ntasks: surface normal estimation, human pose estimation, and image segmentation. We design these\n2\nPreprint\ngenerators to control the scenes' layout, lighting, shapes, and poses using between 13 and 69 param-\neters. We prioritize simplicity and efficiency of generation to facilitate algorithmic development.\nWe evaluate ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bce\u2193",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6de17523fa2eb9c2f732f20e6f9c0909cc1737893507f281063f3d27731aea17",
+            "evidence_id": "E022ddeb2cc3e8200-B0010",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Bce\u2193",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3366,
+                "page": 2,
+                "section": "Bce\u2193",
+                "section_index": 4,
+                "start": 2691,
+                "text": "previously\nhandled.\nWe propose Simple-PAT, a simple algorithm for procedural adversarial training using adversaries\nthat attack via zeroth-order optimization. Simple-PAT consists of a learner that trains the model\nthrough minibatch gradient descent and an adversary that uses Covariance Matrix Adaptation Evo-\nlution Strategy (CMA-ES) Hansen & Ostermeier (2001) to search on procedural controls to generate\nthe next minibatch based on existing cases the model finds challenging.\nTo analyze PAT algorithms, we develop PAL-Dojo, a suite of procedural generators for three vision\ntasks: surface normal estimation, human pose estimation, and image segmentation. We design these\n2"
+              },
+              {
+                "end": 222,
+                "page": 3,
+                "section": "Bce\u2193",
+                "section_index": 5,
+                "start": 0,
+                "text": "Preprint\ngenerators to control the scenes' layout, lighting, shapes, and poses using between 13 and 69 param-\neters. We prioritize simplicity and efficiency of generation to facilitate algorithmic development.\nWe evaluate "
+              }
+            ],
+            "text": "previously\nhandled.\nWe propose Simple-PAT, a simple algorithm for procedural adversarial training using adversaries\nthat attack via zeroth-order optimization. Simple-PAT consists of a learner that trains the model\nthrough minibatch gradient descent and an adversary that uses Covariance Matrix Adaptation Evo-\nlution Strategy (CMA-ES) Hansen & Ostermeier (2001) to search on procedural controls to generate\nthe next minibatch based on existing cases the model finds challenging.\nTo analyze PAT algorithms, we develop PAL-Dojo, a suite of procedural generators for three vision\ntasks: surface normal estimation, human pose estimation, and image segmentation. We design these\n2\nPreprint\ngenerators to control the scenes' layout, lighting, shapes, and poses using between 13 and 69 param-\neters. We prioritize simplicity and efficiency of generation to facilitate algorithmic development.\nWe evaluate "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0011"
+        ],
+        "excerpt": "trained models on PAL-Dojo by treating them as a black box and adversarially attacking\nwith a large query budget. We use a single-model adversary with 2M queries and a cross-model\nadversary with a total of 50M queries. In Figure 1, we compare Simple-PAT to a naive learner that\nsamples every batch uniformly from the parameter space (uniform training), and to two methods\nthat reweight uniform samples based on their loss (CVaR and tilted ERM). Under the cross-model\nadversary, Simple-PAT lowers the worst case on every task, by a geometric mean of3.15\u00d7relative to\nuniform training and2.63\u00d7relative to the strongest other method on each task. We also evaluate the\nrobustness of SOTA foundation models using the PAL-Dojo generators, finding severe failure cases\nwith our adversary. This demonstrates that PAL-Dojo, though visually simple, provides sufficient\nchallenge to SOTA models.\nIn summary, our ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bce\u2193",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "04293057956a796fec9c5d340d857442c90ff4d9e3293c35ddd100e54cfc2b8c",
+            "evidence_id": "E022ddeb2cc3e8200-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Bce\u2193",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1122,
+                "page": 3,
+                "section": "Bce\u2193",
+                "section_index": 5,
+                "start": 222,
+                "text": "trained models on PAL-Dojo by treating them as a black box and adversarially attacking\nwith a large query budget. We use a single-model adversary with 2M queries and a cross-model\nadversary with a total of 50M queries. In Figure 1, we compare Simple-PAT to a naive learner that\nsamples every batch uniformly from the parameter space (uniform training), and to two methods\nthat reweight uniform samples based on their loss (CVaR and tilted ERM). Under the cross-model\nadversary, Simple-PAT lowers the worst case on every task, by a geometric mean of3.15\u00d7relative to\nuniform training and2.63\u00d7relative to the strongest other method on each task. We also evaluate the\nrobustness of SOTA foundation models using the PAL-Dojo generators, finding severe failure cases\nwith our adversary. This demonstrates that PAL-Dojo, though visually simple, provides sufficient\nchallenge to SOTA models.\nIn summary, our "
+              }
+            ],
+            "text": "trained models on PAL-Dojo by treating them as a black box and adversarially attacking\nwith a large query budget. We use a single-model adversary with 2M queries and a cross-model\nadversary with a total of 50M queries. In Figure 1, we compare Simple-PAT to a naive learner that\nsamples every batch uniformly from the parameter space (uniform training), and to two methods\nthat reweight uniform samples based on their loss (CVaR and tilted ERM). Under the cross-model\nadversary, Simple-PAT lowers the worst case on every task, by a geometric mean of3.15\u00d7relative to\nuniform training and2.63\u00d7relative to the strongest other method on each task. We also evaluate the\nrobustness of SOTA foundation models using the PAL-Dojo generators, finding severe failure cases\nwith our adversary. This demonstrates that PAL-Dojo, though visually simple, provides sufficient\nchallenge to SOTA models.\nIn summary, our "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0012"
+        ],
+        "excerpt": "contributions are threefold: (1) Procedural Adversarial Learning (PAL), a frame-\nwork that pairs minimax training under a procedural generator with worst-case evaluation by an\nadaptive adversary; (2) Simple-PAT, a simple yet effective procedural adversarial training algorithm;\n(3) PAL-Dojo, a suite of simple, efficient but sufficiently hard procedural generators for vision tasks,\ndesigned to facilitate the study of PAL.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bce\u2193",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c7c5c5b61c4f1e3d8a081c652e6d9cda88bd04bdca6de274140a96dcedf317ee",
+            "evidence_id": "E022ddeb2cc3e8200-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Bce\u2193",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1545,
+                "page": 3,
+                "section": "Bce\u2193",
+                "section_index": 5,
+                "start": 1122,
+                "text": "contributions are threefold: (1) Procedural Adversarial Learning (PAL), a frame-\nwork that pairs minimax training under a procedural generator with worst-case evaluation by an\nadaptive adversary; (2) Simple-PAT, a simple yet effective procedural adversarial training algorithm;\n(3) PAL-Dojo, a suite of simple, efficient but sufficiently hard procedural generators for vision tasks,\ndesigned to facilitate the study of PAL."
+              }
+            ],
+            "text": "contributions are threefold: (1) Procedural Adversarial Learning (PAL), a frame-\nwork that pairs minimax training under a procedural generator with worst-case evaluation by an\nadaptive adversary; (2) Simple-PAT, a simple yet effective procedural adversarial training algorithm;\n(3) PAL-Dojo, a suite of simple, efficient but sufficiently hard procedural generators for vision tasks,\ndesigned to facilitate the study of PAL."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0028"
+        ],
+        "excerpt": "We design our adversarial training procedure Simple-PAT around three principles: (1)coverage:the\nmodel must be presented with examples near the worst-case example (2)diversity:each batch the\nmodel receives should contain maximally distinct examples (3)computation reuse:samples which\nwe render and evaluate should be used to update the network. Though simple, these principles\nallow us to design an algorithm whose training throughput is comparable to uniform training, while\nachieving a large reduction in evaluation worst-case error.\nAlgorithm 1 describes Simple-PAT. We maintainkCMA-ES instances\u03c0 1, . . . , \u03c0k. At each step we\nselect a batch usingn 0 uniform samples and\u03bbsamples from each\u03c0 i. We run a forward pass on\nevery data point and use the results to update the CMA-ES parameters. We then run a backward pass\nand optimization step, as in standard neural network training. EveryRsteps we ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adversarialtraining",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "786601a1d82bdcdc057f9c2b0bbf25206ba50845ef5a9abe94ba84a118e41bd0",
+            "evidence_id": "E022ddeb2cc3e8200-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Adversarialtraining",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "Adversarialtraining",
+                "section_index": 17,
+                "start": 0,
+                "text": "We design our adversarial training procedure Simple-PAT around three principles: (1)coverage:the\nmodel must be presented with examples near the worst-case example (2)diversity:each batch the\nmodel receives should contain maximally distinct examples (3)computation reuse:samples which\nwe render and evaluate should be used to update the network. Though simple, these principles\nallow us to design an algorithm whose training throughput is comparable to uniform training, while\nachieving a large reduction in evaluation worst-case error.\nAlgorithm 1 describes Simple-PAT. We maintainkCMA-ES instances\u03c0 1, . . . , \u03c0k. At each step we\nselect a batch usingn 0 uniform samples and\u03bbsamples from each\u03c0 i. We run a forward pass on\nevery data point and use the results to update the CMA-ES parameters. We then run a backward pass\nand optimization step, as in standard neural network training. EveryRsteps we "
+              }
+            ],
+            "text": "We design our adversarial training procedure Simple-PAT around three principles: (1)coverage:the\nmodel must be presented with examples near the worst-case example (2)diversity:each batch the\nmodel receives should contain maximally distinct examples (3)computation reuse:samples which\nwe render and evaluate should be used to update the network. Though simple, these principles\nallow us to design an algorithm whose training throughput is comparable to uniform training, while\nachieving a large reduction in evaluation worst-case error.\nAlgorithm 1 describes Simple-PAT. We maintainkCMA-ES instances\u03c0 1, . . . , \u03c0k. At each step we\nselect a batch usingn 0 uniform samples and\u03bbsamples from each\u03c0 i. We run a forward pass on\nevery data point and use the results to update the CMA-ES parameters. We then run a backward pass\nand optimization step, as in standard neural network training. EveryRsteps we "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0033"
+        ],
+        "excerpt": "Our primary evaluation, procedural adversarial evaluation (PAE), is a worst-case search against each\nnetwork after it has completed training; we describe this in the following subsections. The true worst\ncase cannot be computed with a finite number of queries, so we use best-effort adversaries that probe\neach model as a black box subject to a compute budget, and we refer to the worst case an adversary\nfinds as theevaluation worst case. We consider two PAE adversaries: a single-model adversary\nthat searches against each model separately, and a cross-model adversary that pools the worst cases\nfound across models. We also evaluate every model on the same test set of 65,536 scenes sampled\nuniformly at random.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2a4fc734995d89223e1f4729cb170aba03e87503c5c8c52650efae4e4e1878e9",
+            "evidence_id": "E022ddeb2cc3e8200-B0033",
+            "pages": [
+              7
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 714,
+                "page": 7,
+                "section": "Evaluation",
+                "section_index": 20,
+                "start": 0,
+                "text": "Our primary evaluation, procedural adversarial evaluation (PAE), is a worst-case search against each\nnetwork after it has completed training; we describe this in the following subsections. The true worst\ncase cannot be computed with a finite number of queries, so we use best-effort adversaries that probe\neach model as a black box subject to a compute budget, and we refer to the worst case an adversary\nfinds as theevaluation worst case. We consider two PAE adversaries: a single-model adversary\nthat searches against each model separately, and a cross-model adversary that pools the worst cases\nfound across models. We also evaluate every model on the same test set of 65,536 scenes sampled\nuniformly at random."
+              }
+            ],
+            "text": "Our primary evaluation, procedural adversarial evaluation (PAE), is a worst-case search against each\nnetwork after it has completed training; we describe this in the following subsections. The true worst\ncase cannot be computed with a finite number of queries, so we use best-effort adversaries that probe\neach model as a black box subject to a compute budget, and we refer to the worst case an adversary\nfinds as theevaluation worst case. We consider two PAE adversaries: a single-model adversary\nthat searches against each model separately, and a cross-model adversary that pools the worst cases\nfound across models. We also evaluate every model on the same test set of 65,536 scenes sampled\nuniformly at random."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0034"
+        ],
+        "excerpt": "Our single-model evaluation protocol uses a black-box optimizer to search for the procedural pa-\nrameters that produce the worst loss for a given network. We use a budget of 2 million queries,\nwhich represents39%of the overall training budget of 5.12 million samples. We split this between\n1 million samples of a DIRECT-L search (Gablonsky & Kelley, 2001) and 1 million samples of a\nCMA-ES search. This CMA-ES search differs from the search performed during training in several\nimportant ways: (1) it uses a population size of 512 instead of 28 (2) it updates a full covariance\nmatrix instead of a diagonal parameterization (3) IPOP restarts are permitted (4) the objective is\nstationary, allowing for better convergence (Hansen et al., 2019). Combined, these settings give the\nevaluation a substantially more powerful search than training.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Single-Modelevaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "27aac4dd1ee589ed93dc5b82b7d3a443b76e6b334fdc020d3322f4524d3ae9ff",
+            "evidence_id": "E022ddeb2cc3e8200-B0034",
+            "pages": [
+              7
+            ],
+            "section": "Single-Modelevaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 840,
+                "page": 7,
+                "section": "Single-Modelevaluation",
+                "section_index": 21,
+                "start": 0,
+                "text": "Our single-model evaluation protocol uses a black-box optimizer to search for the procedural pa-\nrameters that produce the worst loss for a given network. We use a budget of 2 million queries,\nwhich represents39%of the overall training budget of 5.12 million samples. We split this between\n1 million samples of a DIRECT-L search (Gablonsky & Kelley, 2001) and 1 million samples of a\nCMA-ES search. This CMA-ES search differs from the search performed during training in several\nimportant ways: (1) it uses a population size of 512 instead of 28 (2) it updates a full covariance\nmatrix instead of a diagonal parameterization (3) IPOP restarts are permitted (4) the objective is\nstationary, allowing for better convergence (Hansen et al., 2019). Combined, these settings give the\nevaluation a substantially more powerful search than training."
+              }
+            ],
+            "text": "Our single-model evaluation protocol uses a black-box optimizer to search for the procedural pa-\nrameters that produce the worst loss for a given network. We use a budget of 2 million queries,\nwhich represents39%of the overall training budget of 5.12 million samples. We split this between\n1 million samples of a DIRECT-L search (Gablonsky & Kelley, 2001) and 1 million samples of a\nCMA-ES search. This CMA-ES search differs from the search performed during training in several\nimportant ways: (1) it uses a population size of 512 instead of 28 (2) it updates a full covariance\nmatrix instead of a diagonal parameterization (3) IPOP restarts are permitted (4) the objective is\nstationary, allowing for better convergence (Hansen et al., 2019). Combined, these settings give the\nevaluation a substantially more powerful search than training."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0035"
+        ],
+        "excerpt": "For our cross-model evaluation, we pool the worst cases across training seeds and training proce-\ndures. We evaluate each network on the worst cases found by the black-box optimizer against other\nnetworks. We report the overall worst loss among the single-model evaluation and the evaluation\non other networks' worst cases. In our experiments, we have five methods and 5 seeds per method.\nThus, the cross-model evaluation has a total of 50M queries, though each model is still only queried\n2M times.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cross-Modelevaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ba74aa7e62dca842628c0defffb2f1c20dc6afa57d20ff876bd5845b5d8a47bb",
+            "evidence_id": "E022ddeb2cc3e8200-B0035",
+            "pages": [
+              7
+            ],
+            "section": "Cross-Modelevaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 499,
+                "page": 7,
+                "section": "Cross-Modelevaluation",
+                "section_index": 22,
+                "start": 0,
+                "text": "For our cross-model evaluation, we pool the worst cases across training seeds and training proce-\ndures. We evaluate each network on the worst cases found by the black-box optimizer against other\nnetworks. We report the overall worst loss among the single-model evaluation and the evaluation\non other networks' worst cases. In our experiments, we have five methods and 5 seeds per method.\nThus, the cross-model evaluation has a total of 50M queries, though each model is still only queried\n2M times."
+              }
+            ],
+            "text": "For our cross-model evaluation, we pool the worst cases across training seeds and training proce-\ndures. We evaluate each network on the worst cases found by the black-box optimizer against other\nnetworks. We report the overall worst loss among the single-model evaluation and the evaluation\non other networks' worst cases. In our experiments, we have five methods and 5 seeds per method.\nThus, the cross-model evaluation has a total of 50M queries, though each model is still only queried\n2M times."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0038"
+        ],
+        "excerpt": "Cross-model,5\u00d710 7 queries Test set, 65,536 scenes\nTask Method Worst case\u2193pvs. Simple-PAT Max\u2193Median\u2193\nNormals Uniform (Adam) 49.7\u00b11.10.0079 10.63\u00b10.321.636\u00b10.022\nangle (\u25e6) Uniform (Muon) 43.4\u00b13.00.0079 5.53\u00b10.470.8904\u00b10.0041\nTilted 37.1\u00b11.40.0079 8.06\u00b10.643.732\u00b10.020\nCVaR 38.4\u00b12.20.0079 5.186\u00b10.0921.8097\u00b10.0081\nSimple-PA T 16.0\u00b12.3\u2014 3.51\u00b10.221.713\u00b10.018\nChair-Simple Uniform (Adam) 4.58\u00b10.220.0079 0.50\u00b10.732.13e-5\u00b14.3e-6\nBCE Uniform (Muon) 4.766\u00b10.0590.0079 0.00394\u00b10.000885.55e-6\u00b16.7e-7\nTilted 3.16\u00b10.160.0079 0.0053\u00b10.00163.5e-4\u00b11.0e-4\nCVaR 3.64\u00b10.210.0079 0.0084\u00b10.00868.7e-5\u00b12.3e-5\nSimple-PA T 0.72\u00b10.70\u2014 0.030\u00b10.0521.88e-5\u00b14.7e-6\nChair-Full Uniform (Adam) 3.22\u00b10.170.0079 0.0263\u00b10.00737.5e-5\u00b11.4e-5\nBCE Uniform (Muon) 2.50\u00b10.270.0079 0.0156\u00b10.00471.892e-5\u00b17.7e-7\nTilted 2.23\u00b10.140.0079 0.0073\u00b10.00111.709e-4\u00b16.2e-6\nCVaR 2.49\u00b10.410.0079 0.0101\u00b10.00415.13e-5\u00b11.2e-6\nSimple-PA T 0.81\u00b10.46\u2014 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mainresults",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "651a84f0aaca3f702e4b07b3e7540aa74ceef812b7e977c10d4179fd10616b1a",
+            "evidence_id": "E022ddeb2cc3e8200-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Mainresults",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 8,
+                "section": "Mainresults",
+                "section_index": 26,
+                "start": 0,
+                "text": "Cross-model,5\u00d710 7 queries Test set, 65,536 scenes\nTask Method Worst case\u2193pvs. Simple-PAT Max\u2193Median\u2193\nNormals Uniform (Adam) 49.7\u00b11.10.0079 10.63\u00b10.321.636\u00b10.022\nangle (\u25e6) Uniform (Muon) 43.4\u00b13.00.0079 5.53\u00b10.470.8904\u00b10.0041\nTilted 37.1\u00b11.40.0079 8.06\u00b10.643.732\u00b10.020\nCVaR 38.4\u00b12.20.0079 5.186\u00b10.0921.8097\u00b10.0081\nSimple-PA T 16.0\u00b12.3\u2014 3.51\u00b10.221.713\u00b10.018\nChair-Simple Uniform (Adam) 4.58\u00b10.220.0079 0.50\u00b10.732.13e-5\u00b14.3e-6\nBCE Uniform (Muon) 4.766\u00b10.0590.0079 0.00394\u00b10.000885.55e-6\u00b16.7e-7\nTilted 3.16\u00b10.160.0079 0.0053\u00b10.00163.5e-4\u00b11.0e-4\nCVaR 3.64\u00b10.210.0079 0.0084\u00b10.00868.7e-5\u00b12.3e-5\nSimple-PA T 0.72\u00b10.70\u2014 0.030\u00b10.0521.88e-5\u00b14.7e-6\nChair-Full Uniform (Adam) 3.22\u00b10.170.0079 0.0263\u00b10.00737.5e-5\u00b11.4e-5\nBCE Uniform (Muon) 2.50\u00b10.270.0079 0.0156\u00b10.00471.892e-5\u00b17.7e-7\nTilted 2.23\u00b10.140.0079 0.0073\u00b10.00111.709e-4\u00b16.2e-6\nCVaR 2.49\u00b10.410.0079 0.0101\u00b10.00415.13e-5\u00b11.2e-6\nSimple-PA T 0.81\u00b10.46\u2014 "
+              }
+            ],
+            "text": "Cross-model,5\u00d710 7 queries Test set, 65,536 scenes\nTask Method Worst case\u2193pvs. Simple-PAT Max\u2193Median\u2193\nNormals Uniform (Adam) 49.7\u00b11.10.0079 10.63\u00b10.321.636\u00b10.022\nangle (\u25e6) Uniform (Muon) 43.4\u00b13.00.0079 5.53\u00b10.470.8904\u00b10.0041\nTilted 37.1\u00b11.40.0079 8.06\u00b10.643.732\u00b10.020\nCVaR 38.4\u00b12.20.0079 5.186\u00b10.0921.8097\u00b10.0081\nSimple-PA T 16.0\u00b12.3\u2014 3.51\u00b10.221.713\u00b10.018\nChair-Simple Uniform (Adam) 4.58\u00b10.220.0079 0.50\u00b10.732.13e-5\u00b14.3e-6\nBCE Uniform (Muon) 4.766\u00b10.0590.0079 0.00394\u00b10.000885.55e-6\u00b16.7e-7\nTilted 3.16\u00b10.160.0079 0.0053\u00b10.00163.5e-4\u00b11.0e-4\nCVaR 3.64\u00b10.210.0079 0.0084\u00b10.00868.7e-5\u00b12.3e-5\nSimple-PA T 0.72\u00b10.70\u2014 0.030\u00b10.0521.88e-5\u00b14.7e-6\nChair-Full Uniform (Adam) 3.22\u00b10.170.0079 0.0263\u00b10.00737.5e-5\u00b11.4e-5\nBCE Uniform (Muon) 2.50\u00b10.270.0079 0.0156\u00b10.00471.892e-5\u00b17.7e-7\nTilted 2.23\u00b10.140.0079 0.0073\u00b10.00111.709e-4\u00b16.2e-6\nCVaR 2.49\u00b10.410.0079 0.0101\u00b10.00415.13e-5\u00b11.2e-6\nSimple-PA T 0.81\u00b10.46\u2014 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0039"
+        ],
+        "excerpt": "0.029\u00b10.0125.6e-5\u00b12.0e-5\nPose Uniform (Adam) 700\u00b11200.0079 201\u00b12826.14\u00b10.16\nMPJPE (mm) Uniform (Muon) 569\u00b1540.0079 114\u00b11816.09\u00b10.15\nTilted 554\u00b1620.0079 151\u00b12038.05\u00b10.11\nCVaR 547\u00b1480.0079 154\u00b12839.84\u00b10.33\nSimple-PA T 320\u00b135\u2014 97\u00b11526.9\u00b11.4\nTable 2: Cross-model evaluation worst case for various training methods. Each entry is the mean of\n5 seeds with\u00b11 standard deviation shown. In the \"pvs. Simple-PAT\" column we give the two-sided\nMann-Whitneyp-value comparing our method to baselines.\nTable 2 shows our primary results. We report metrics with the stronger cross-model adversary\n(Section B.2 discusses the single-model adversary results). Simple-PAT is the most robust on all\nfour tasks. Compared to uniform Muon, it reduces the cross-model worst case error by2.71\u00d7on\nnormals,6.64\u00d7on chair-simple,3.08\u00d7on chair-full, and1.78\u00d7on pose. Against the strongest\nbaseline for each task, the reductions ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mainresults",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6c595554b7b31d90956b561179de1bf3001497b983cabc079bd357ea498ca76d",
+            "evidence_id": "E022ddeb2cc3e8200-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Mainresults",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 8,
+                "section": "Mainresults",
+                "section_index": 26,
+                "start": 895,
+                "text": "0.029\u00b10.0125.6e-5\u00b12.0e-5\nPose Uniform (Adam) 700\u00b11200.0079 201\u00b12826.14\u00b10.16\nMPJPE (mm) Uniform (Muon) 569\u00b1540.0079 114\u00b11816.09\u00b10.15\nTilted 554\u00b1620.0079 151\u00b12038.05\u00b10.11\nCVaR 547\u00b1480.0079 154\u00b12839.84\u00b10.33\nSimple-PA T 320\u00b135\u2014 97\u00b11526.9\u00b11.4\nTable 2: Cross-model evaluation worst case for various training methods. Each entry is the mean of\n5 seeds with\u00b11 standard deviation shown. In the \"pvs. Simple-PAT\" column we give the two-sided\nMann-Whitneyp-value comparing our method to baselines.\nTable 2 shows our primary results. We report metrics with the stronger cross-model adversary\n(Section B.2 discusses the single-model adversary results). Simple-PAT is the most robust on all\nfour tasks. Compared to uniform Muon, it reduces the cross-model worst case error by2.71\u00d7on\nnormals,6.64\u00d7on chair-simple,3.08\u00d7on chair-full, and1.78\u00d7on pose. Against the strongest\nbaseline for each task, the reductions "
+              }
+            ],
+            "text": "0.029\u00b10.0125.6e-5\u00b12.0e-5\nPose Uniform (Adam) 700\u00b11200.0079 201\u00b12826.14\u00b10.16\nMPJPE (mm) Uniform (Muon) 569\u00b1540.0079 114\u00b11816.09\u00b10.15\nTilted 554\u00b1620.0079 151\u00b12038.05\u00b10.11\nCVaR 547\u00b1480.0079 154\u00b12839.84\u00b10.33\nSimple-PA T 320\u00b135\u2014 97\u00b11526.9\u00b11.4\nTable 2: Cross-model evaluation worst case for various training methods. Each entry is the mean of\n5 seeds with\u00b11 standard deviation shown. In the \"pvs. Simple-PAT\" column we give the two-sided\nMann-Whitneyp-value comparing our method to baselines.\nTable 2 shows our primary results. We report metrics with the stronger cross-model adversary\n(Section B.2 discusses the single-model adversary results). Simple-PAT is the most robust on all\nfour tasks. Compared to uniform Muon, it reduces the cross-model worst case error by2.71\u00d7on\nnormals,6.64\u00d7on chair-simple,3.08\u00d7on chair-full, and1.78\u00d7on pose. Against the strongest\nbaseline for each task, the reductions "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0040"
+        ],
+        "excerpt": "are2.31\u00d7,4.41\u00d7,2.74\u00d7, and1.71\u00d7.\nWe reportp-values computed with a Mann-Whitney test. With the cross-model evaluation, samples\nare not independent but they are exchangeable under the null hypothesis; thus the Mann-Whitney\ntest is valid. All sixteen comparisons are significant at ap= 0.05margin. In fact, they all achieve\nap-value of 0.0079, indicating that every Simple-PAT seed's worst case is better than every seed of\nevery other baseline.\nTypical case cost.Our primary goal is to improve worst-case performance, but Simple-PAT gener-\nally performs well on typical cases as well. On Pose and Normals, Simple-PAT has the best median\nperformance among the robust training methods, and the lowest test set maximum error across all\n8\nPreprint\n82.8\u00b0\n 3.3\u00b0\n 2.98 BCE\n 1.2e-4 BCE\n0.792 BCE\n 7.1e-4 BCE\n 1020 mm\n 43 mm\nNormals: MoGe-2 (64 px)\nInput Label SOTA model Simple-PAT\nChair-Simple: SAM 3\nInput ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mainresults",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "399d3c13179124a2d0a2a7511231017fb3539203a26aeb31f5a09d29da47145b",
+            "evidence_id": "E022ddeb2cc3e8200-B0040",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Mainresults",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2523,
+                "page": 8,
+                "section": "Mainresults",
+                "section_index": 26,
+                "start": 1791,
+                "text": "are2.31\u00d7,4.41\u00d7,2.74\u00d7, and1.71\u00d7.\nWe reportp-values computed with a Mann-Whitney test. With the cross-model evaluation, samples\nare not independent but they are exchangeable under the null hypothesis; thus the Mann-Whitney\ntest is valid. All sixteen comparisons are significant at ap= 0.05margin. In fact, they all achieve\nap-value of 0.0079, indicating that every Simple-PAT seed's worst case is better than every seed of\nevery other baseline.\nTypical case cost.Our primary goal is to improve worst-case performance, but Simple-PAT gener-\nally performs well on typical cases as well. On Pose and Normals, Simple-PAT has the best median\nperformance among the robust training methods, and the lowest test set maximum error across all\n8"
+              },
+              {
+                "end": 165,
+                "page": 9,
+                "section": "Mainresults",
+                "section_index": 27,
+                "start": 0,
+                "text": "Preprint\n82.8\u00b0\n 3.3\u00b0\n 2.98 BCE\n 1.2e-4 BCE\n0.792 BCE\n 7.1e-4 BCE\n 1020 mm\n 43 mm\nNormals: MoGe-2 (64 px)\nInput Label SOTA model Simple-PAT\nChair-Simple: SAM 3\nInput "
+              }
+            ],
+            "text": "are2.31\u00d7,4.41\u00d7,2.74\u00d7, and1.71\u00d7.\nWe reportp-values computed with a Mann-Whitney test. With the cross-model evaluation, samples\nare not independent but they are exchangeable under the null hypothesis; thus the Mann-Whitney\ntest is valid. All sixteen comparisons are significant at ap= 0.05margin. In fact, they all achieve\nap-value of 0.0079, indicating that every Simple-PAT seed's worst case is better than every seed of\nevery other baseline.\nTypical case cost.Our primary goal is to improve worst-case performance, but Simple-PAT gener-\nally performs well on typical cases as well. On Pose and Normals, Simple-PAT has the best median\nperformance among the robust training methods, and the lowest test set maximum error across all\n8\nPreprint\n82.8\u00b0\n 3.3\u00b0\n 2.98 BCE\n 1.2e-4 BCE\n0.792 BCE\n 7.1e-4 BCE\n 1020 mm\n 43 mm\nNormals: MoGe-2 (64 px)\nInput Label SOTA model Simple-PAT\nChair-Simple: SAM 3\nInput "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0047"
+        ],
+        "excerpt": "0 20 40\nUniform (Adam)\nUniform\nCVaR\nTilted\nSimple-PAT\nNormals (\u00b0)\n0 200 400 600\nPose (MPJPE, mm)\n0 2 4\nChair-Simple (BCE)\n0 1 2 3\nChair-Full (BCE)\nSingle-model worst case Cross-model worst case\nFigure 5: Cross-model evaluation worst case compared to single-model evaluation worst case.\nIn Figure 5 we compare the single-model evaluation and cross-model evaluation. Since the cross-\nmodel evaluation pools the worst cases, it reports errors greater than or equal to the single-model\nevaluation. On normals, the two evaluations nearly agree, with the cross-model adversary increasing\nthe worst case by at most5%for every method. On pose and chair-simple, the increase is at most\n1.54\u00d7and1.69\u00d7respectively 2.\nOn the chair-full task, however, single-model searches missed difficult cases for the Simple-PAT\nmodels. The cross-model adversary increased Simple-PAT's worst case by2.65\u00d7, compared with\nat ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparing Thesingle-Modeladversary Andcross-Modeladversary",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a5bf0eea1f1076e3f51f1674f456d310c79b02749a67331cb306e73edf794971",
+            "evidence_id": "E022ddeb2cc3e8200-B0047",
+            "pages": [
+              10
+            ],
+            "section": "Comparing Thesingle-Modeladversary Andcross-Modeladversary",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 10,
+                "section": "Comparing Thesingle-Modeladversary Andcross-Modeladversary",
+                "section_index": 31,
+                "start": 0,
+                "text": "0 20 40\nUniform (Adam)\nUniform\nCVaR\nTilted\nSimple-PAT\nNormals (\u00b0)\n0 200 400 600\nPose (MPJPE, mm)\n0 2 4\nChair-Simple (BCE)\n0 1 2 3\nChair-Full (BCE)\nSingle-model worst case Cross-model worst case\nFigure 5: Cross-model evaluation worst case compared to single-model evaluation worst case.\nIn Figure 5 we compare the single-model evaluation and cross-model evaluation. Since the cross-\nmodel evaluation pools the worst cases, it reports errors greater than or equal to the single-model\nevaluation. On normals, the two evaluations nearly agree, with the cross-model adversary increasing\nthe worst case by at most5%for every method. On pose and chair-simple, the increase is at most\n1.54\u00d7and1.69\u00d7respectively 2.\nOn the chair-full task, however, single-model searches missed difficult cases for the Simple-PAT\nmodels. The cross-model adversary increased Simple-PAT's worst case by2.65\u00d7, compared with\nat "
+              }
+            ],
+            "text": "0 20 40\nUniform (Adam)\nUniform\nCVaR\nTilted\nSimple-PAT\nNormals (\u00b0)\n0 200 400 600\nPose (MPJPE, mm)\n0 2 4\nChair-Simple (BCE)\n0 1 2 3\nChair-Full (BCE)\nSingle-model worst case Cross-model worst case\nFigure 5: Cross-model evaluation worst case compared to single-model evaluation worst case.\nIn Figure 5 we compare the single-model evaluation and cross-model evaluation. Since the cross-\nmodel evaluation pools the worst cases, it reports errors greater than or equal to the single-model\nevaluation. On normals, the two evaluations nearly agree, with the cross-model adversary increasing\nthe worst case by at most5%for every method. On pose and chair-simple, the increase is at most\n1.54\u00d7and1.69\u00d7respectively 2.\nOn the chair-full task, however, single-model searches missed difficult cases for the Simple-PAT\nmodels. The cross-model adversary increased Simple-PAT's worst case by2.65\u00d7, compared with\nat "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0048"
+        ],
+        "excerpt": "most1.58\u00d7for the baselines. Given that chair-full is the task with the highest dimensionality\n(69 parameters), this is not surprising since the optimization problem is more challenging. This\nreveals the difficulty of evaluating the worst case in complex environments; we therefore report the\ncross-model evaluation as our primary metric, since pooling searches across models gives a stronger\nadversary.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Comparing Thesingle-Modeladversary Andcross-Modeladversary",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "71e1c94590bb1a38cd62254806247f6dad3885e3b96075a2d421a5277eeb4093",
+            "evidence_id": "E022ddeb2cc3e8200-B0048",
+            "pages": [
+              10
+            ],
+            "section": "Comparing Thesingle-Modeladversary Andcross-Modeladversary",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1299,
+                "page": 10,
+                "section": "Comparing Thesingle-Modeladversary Andcross-Modeladversary",
+                "section_index": 31,
+                "start": 897,
+                "text": "most1.58\u00d7for the baselines. Given that chair-full is the task with the highest dimensionality\n(69 parameters), this is not surprising since the optimization problem is more challenging. This\nreveals the difficulty of evaluating the worst case in complex environments; we therefore report the\ncross-model evaluation as our primary metric, since pooling searches across models gives a stronger\nadversary."
+              }
+            ],
+            "text": "most1.58\u00d7for the baselines. Given that chair-full is the task with the highest dimensionality\n(69 parameters), this is not surprising since the optimization problem is more challenging. This\nreveals the difficulty of evaluating the worst case in complex environments; we therefore report the\ncross-model evaluation as our primary metric, since pooling searches across models gives a stronger\nadversary."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.06890",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2611.06890",
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The evaluation adversary uses a substantially more powerful search configuration than training, and the fixed 65,536-scene uniform test set provides an additional measurement outside the training optimization loop.",
+          "final_evaluation_signal": "Worst-case ground-truth task loss discovered by post-hoc black-box search using DIRECT-L and full-covariance CMA-ES with IPOP restarts, pooled across models for the cross-model adversary, plus fixed uniform test-set metrics.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Minibatch forward loss on candidate parameter vectors proposed by internal zeroth-order CMA-ES instances during training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0002",
+          "E022ddeb2cc3e8200-B0003",
+          "E022ddeb2cc3e8200-B0010",
+          "E022ddeb2cc3e8200-B0011",
+          "E022ddeb2cc3e8200-B0012",
+          "E022ddeb2cc3e8200-B0028",
+          "E022ddeb2cc3e8200-B0033",
+          "E022ddeb2cc3e8200-B0034",
+          "E022ddeb2cc3e8200-B0035",
+          "E022ddeb2cc3e8200-B0038",
+          "E022ddeb2cc3e8200-B0039",
+          "E022ddeb2cc3e8200-B0040",
+          "E022ddeb2cc3e8200-B0047",
+          "E022ddeb2cc3e8200-B0048"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "bdc2a20b6eddb4915f17f0b1ddb31d9351bf62429fc2895d667a2ea940c53738"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.06890",
+        "claim_evidence_alignment": "Reported claims of substantial reductions in worst-case error across all four tasks are directly backed by quantitative experimental results and significance tests.",
+        "context_id": "022ddeb2cc3e82003b5ade9eef4e7cadf514416286fb73b02fc5dcce008e505a",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation includes both single-model and cross-model black-box adversarial searches up to 50M total queries, comparing Simple-PAT against standard uniform training and robust objectives (CVaR, Tilted ERM) across multiple seeds with statistical significance testing.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Models were evaluated using a separate test set of 65,536 uniformly sampled scenes and cross-model adversarial transfers generated from distinct optimization budgets and architectures.",
+          "final_evaluation_signal": "Worst-case ground-truth task loss (angular error, BCE, MPJPE) discovered by an independent post-hoc black-box search (DIRECT-L and full-covariance CMA-ES with IPOP restarts across 50M cross-model queries) as well as fixed uniform test set metrics.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Minibatch forward loss evaluated on candidate parameter vectors proposed by internal zeroth-order CMA-ES instances during training.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E022ddeb2cc3e8200-B0002",
+          "E022ddeb2cc3e8200-B0003",
+          "E022ddeb2cc3e8200-B0010",
+          "E022ddeb2cc3e8200-B0011",
+          "E022ddeb2cc3e8200-B0012",
+          "E022ddeb2cc3e8200-B0028",
+          "E022ddeb2cc3e8200-B0033",
+          "E022ddeb2cc3e8200-B0034",
+          "E022ddeb2cc3e8200-B0035",
+          "E022ddeb2cc3e8200-B0038",
+          "E022ddeb2cc3e8200-B0039",
+          "E022ddeb2cc3e8200-B0040",
+          "E022ddeb2cc3e8200-B0047",
+          "E022ddeb2cc3e8200-B0048"
+        ],
+        "limitations": "The authors acknowledge that black-box searches can miss difficult cases in higher-dimensional procedural spaces (such as Chair-Full) and examine discrepancies between single-model and cross-model adversarial evaluations.",
+        "method_assessment": "The methodology is thoroughly detailed, describing the procedural generators, parameter dimensionality, and the Simple-PAT training algorithm that combines uniform sampling and zeroth-order CMA-ES search with periodic restarts.",
+        "quality_rationale": "The study presents a clear, well-scoped framework supported by rigorous algorithmic formulations, comprehensive empirical baselines, appropriate ablation and baseline comparisons, and honest disclosure of evaluation limits.",
+        "scoped_contribution": "The paper introduces procedural adversarial learning (PAL), proposing Simple-PAT\u2014an adversarial training method using CMA-ES over procedural parameter spaces\u2014and PAL-Dojo, a benchmark suite of procedural generators across surface normal estimation, object segmentation, and human pose estimation.",
+        "source_content_hash": "bdc2a20b6eddb4915f17f0b1ddb31d9351bf62429fc2895d667a2ea940c53738"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study presents a clear, well-scoped framework supported by rigorous algorithmic formulations, comprehensive empirical baselines, appropriate ablation and baseline comparisons, and honest disclosure of evaluation limits.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "bdc2a20b6eddb4915f17f0b1ddb31d9351bf62429fc2895d667a2ea940c53738",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors acknowledge that black-box searches can miss difficult cases in higher-dimensional procedural spaces (such as Chair-Full) and examine discrepancies between single-model and cross-model adversarial evaluations."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -154,7 +2211,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

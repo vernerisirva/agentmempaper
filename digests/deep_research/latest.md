@@ -1,25 +1,24 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-05](2026-11-05.md).
+Latest daily digest: [2026-11-06](2026-11-06.md).
 
-# Paper Scout Digest - 2026-11-05
+# Paper Scout Digest - 2026-11-06
 
 ## Run Summary
 
-- **Run ID:** 128
-- **Candidates fetched:** 91
-- **New unique papers:** 86
-- **Relevant:** 11
-- **Maybe relevant:** 10
-- **Irrelevant:** 70
-- **Source summary:** arxiv: 40, openalex: 50, semantic_scholar: 1
+- **Run ID:** 129
+- **Candidates fetched:** 140
+- **New unique papers:** 136
+- **Relevant:** 13
+- **Maybe relevant:** 9
+- **Irrelevant:** 118
+- **Source summary:** arxiv: 40, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
-- arxiv: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
-- openalex failed for 'deep research agent': http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-10-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
-- openalex failed for 'AI scientist': http error for https://api.openalex.org/works?search=AI+scientist&filter=from_publication_date%3A2026-10-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
@@ -28,34 +27,84 @@ Latest daily digest: [2026-11-05](2026-11-05.md).
 
 ## Highly Relevant
 
-### [STARLI | FLAGSHIP 13 FISSION Ten Research Design Monographs | Flagships 141-150 / 300 Author: 33 | White Rainbow Epoch | Research Design Working Edition v1.2 This ten-volume STARLI series examines trustworthy AI-assisted micro/nanorobotic experiments and nano-quantum measurement systems. The common research question is how to bind physical observation, decision authority, calibration uncertainty, and independently reconstructable evidence without mistaking computational confidence for experimental proof. Each volume is a 777-page English, nonclinical prospective research design containing 30 mathematical research plates, 82 chapters, 410 separately paginated research studies, 200 Research Gates with six mechanistic annotations, and 33 Phoenix Answer Embryos. Across the ten volumes, the collection contains 300 research plates, 820 chapters, 4,100 study pages, 2,000 Research Gates, and 330 Phoenix candidates. Research scope by flagship F141 | Microrobotic Autonomous Control Authority Envelope at the Limit — Defines physical authority envelopes for microrobotic control, including credential expiry, actuator veto, permission transfer, and independently observed safe stopping. F142 | AI Nano-Quantum System Trustworthy Refusal Decision at the Limit — Studies when an AI-guided nano-quantum system must refuse action, separating calibrated abstention from indiscriminate rejection and unsafe confidence. F143 | Microscale Autonomous Experimental Design at the Limit — Examines autonomous microscale experimental design under specimen, information, energy, and permission budgets, with causal identification and independent replication. F144 | AI Quantum Sensing Uncertainty Calibration at the Limit — Investigates calibration of quantum-sensing uncertainty, including shared drift, covariance, phase ambiguity, photon budgets, and fair classical comparisons. F145 | Nanorobotic Closed-Loop Control Replayability at the Limit — Tests whether nanorobotic closed-loop decisions can be replayed from raw sensor data, actuator histories, calibration versions, and unselected failures. F146 | AI-Driven Microscale Active Sampling at the Limit — Designs AI-driven active sampling experiments that jointly measure analyte recovery, physical disturbance, resource cost, and contamination under blinded controls. F147 | Nano-Quantum System Human Review Mechanism at the Limit — Evaluates human review of nano-quantum decisions through signed authority, contradictory permissions, case-level uncertainty, and independent physical vetoes. F148 | AI Autonomous Research Agent Safety Boundary at the Limit — Defines safety boundaries for autonomous research agents across instrument access, sample authorization, unsafe tool composition, and immutable evidence. F149 | Microrobotic Autonomous System Interlaboratory Generalization at the Limit — Tests transfer of frozen microrobotic protocols between laboratories with different geometries, materials, calibration trees, operators, and failure environments. F150 | AI Nano-Quantum Trustworthy Autonomous Laboratory at the Limit — Integrates sample custody, microrobotic actuation, quantum/classical readouts, controlled autonomy, human oversight, and cross-site evidence reconstruction. Scientific boundary and publication status These books provide falsifiable research questions, candidate mathematical models, prospective blinded tests, competing explanations, negative-result criteria, and successor research interfaces. They do not report performed experiments or establish clinical efficacy, autonomous deployment safety, or quantum advantage. Independent expert verification of physical assumptions, formula applicability, all bibliographic relationships, and the scientific independence of closely related designs remains necessary. Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/](https://doi.org/10.5281/zenodo.23901010)
+### [El Agente Fármaco: A Scalable AI Scientist for Drug Discovery](https://doi.org/10.48550/arxiv.2611.03832)
 
-- **Authors:** 政恩 馮
+- **Authors:** Marcel Müller, Mohammad Ghazi Vakili, Yoshihiro Ogura, Ella Ashoori, Shimeng Wang, Alessandro Silva Nascimento, et al.
+- **Date:** 2026-11-02
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Computational drug discovery offers a growing range of tools for proposing and evaluating molecules, but combining them and deciding what to do next still requires substantial expert effort. Here, we introduce El Agente Fármaco, an AI scientist that uses modern large language model (LLM) technology to turn discovery...
+
+### [EvoNova Scientist: A Neuro-Symbolic Multi-Agent Framework for Physical Constraint-Preserving Autonomous Scientific Discovery](https://doi.org/10.5281/zenodo.23942796)
+
+- **Authors:** Roman Pokushko, Maria V. Pokushko
+- **Date:** 2026-11-04
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Abstract — The acceleration of scientific discovery requires transitioning from specialized predictive models to fully autonomous scientific agents capable of continuous hypothesis generation, symbolic modeling, and experimental verification. However, first-generation AI discovery systems face a fundamental dichotom...
+
+### [IdeaTaste: Do LLMs Share the Research Taste of Human Researchers?](https://arxiv.org/abs/2611.03424)
+
+- **Authors:** Shanshan Zhong, Chen Xu, Jingjie Ning, Zhengzhong Liu, Aviral Kumar, Chenyan Xiong
+- **Date:** 2026-11-02
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Research taste, the judgment of what to read, which problems to pursue, and which methods to try, increasingly shapes the work of AI scientists, yet it remains far less understood than their ability to execute research. We introduce IdeaTaste, a benchmark that scores an LLM by how closely the research proposals it w...
+
+### [Reimagining computational quantum research with AI scientists](https://arxiv.org/abs/2611.02833)
+
+- **Authors:** Yuxuan Du, Hanqing Zhao, Xinbiao Wang, Yiming Lu, Kaining Zhang, Dacheng Tao
+- **Date:** 2026-11-02
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** AI scientists are expanding automated research across scientific domains, yet their ability to turn the scientific record into a foundation for autonomous discovery remains elusive. Here we uncover a fundamental barrier to this transition and demonstrate a route to overcome it in computational quantum science, where...
+
+### [STARLI / RESEARCH FAMILY III / FLAGSHIPS 281–285 Ten Research Flagships · Letters to Future Laboratories Five research architectures for calibration succession, automated discovery, collaboration, self-repair and quantum sensor recovery. F281 | NANO-QUANTUM RESEARCH SYSTEM CROSS-GENERATION CALIBRATION AT THE LIMIT Three-coupling: long-horizon scientific memory × traceable calibration and reference transfer × intergenerational evidence transfer. The primary proposal tests measurement unit definition survival under a concealed challenge: swap a noncommutable reference standard. Measures: reference-transfer bias \[nT\]; separate witness: uncertainty coverage \[fraction\]. Strong comparator: independent reference magnetometry with fixed calibration transfer. Failures remain reportable. F282 | INTELLIGENT MICROROBOTIC AUTOMATED SCIENTIFIC DISCOVERY AT THE LIMIT Three-coupling: long-horizon scientific memory × modular autonomous infrastructure × uncertainty-aware bounded decision. The primary proposal tests sequential experiment acquisition bias under a concealed challenge: change a microgripper contact force. Measures: held-out experiment information gain \[bits\]; separate witness: hypothesis replication success \[fraction\]. Strong comparator: randomized factorial design and classical active learning under matched budgets. Failures remain reportable. F283 | NANO-QUANTUM RESEARCH AGENT COLLABORATION AT THE LIMIT Three-coupling: long-horizon scientific memory × modular autonomous infrastructure × intergenerational evidence transfer. The primary proposal tests conflicting measurement ontology negotiation under a concealed challenge: corrupt one agent clock. Measures: causally valid agreement \[fraction\]; separate witness: external reconstruction success \[fraction\]. Strong comparator: single authorized controller with independent scientific adjudicator. Failures remain reportable. F284 | MICROSCALE RESEARCH PLATFORM AUTONOMOUS REPAIR AT THE LIMIT Three-coupling: long-horizon scientific memory × modular autonomous infrastructure × intergenerational evidence transfer. The primary proposal tests reference-sensor replacement after failure under a concealed challenge: mask a cleaning reagent carryover. Measures: verified restoration yield \[fraction\]; separate witness: post-repair alignment bias \[um\]. Strong comparator: manual maintenance under frozen physical qualification limits. Failures remain reportable. F285 | QUANTUM SENSOR RESOURCE CYCLING AND RECOVERY AT THE LIMIT Three-coupling: long-horizon scientific memory × modular autonomous infrastructure × intergenerational evidence transfer. The primary proposal tests microcoil solder fatigue under a concealed challenge: reuse a shield with unlogged hysteresis. Measures: sensor functional recovery \[fraction\]; separate witness: recovered component mass \[mg\]. Strong comparator: new-component replacement with matched metrology and life-cycle accounting. Failures remain reportable. FORMAT Each flagship: 777 English pages · 30 formula plates · 82 chapters / 410 one-page investigations · 200 three-letter Research Gates · 33 Phoenix proposals. All assertions are candidate research designs, not experimental outcomes. STARLI / RESEARCH FAMILY III / FLAGSHIPS 286–290 Evidence, Renewal and Independent Succession Five bounded designs for energy autonomy, remote experimental operation, digital twins, regional quantum networks, and research resilience. F286 | NANOROBOTIC RESEARCH ENERGY AUTONOMY AT THE LIMIT Three-coupling: long-horizon scientific memory × modular autonomous infrastructure × intergenerational evidence transfer. The primary proposal tests heat accumulation during power recovery under a concealed challenge: insert a low-voltage reset. Measures: usable autonomous runtime \[h\]; separate witness: mission abort probability \[fraction\]. Strong comparator: tethered power with full mission and sample-integrity matched accounting. Failures remain reportable. F287 | MICROSCALE AUTONOMOUS RESEARCH STATION REMOTE OPERATION AT THE LIMIT Three-coupling: long-horizon scientific memory × modular autonomous infrastructure × intergenerational evidence transfer. The primary proposal tests teleoperation feedback bandwidth under a concealed challenge: insert a duplicate remote command. Measures: remote command causal latency \[s\]; separate witness: blind mission completion \[fraction\]. Strong comparator: local supervised microfluidic operation at matched physical and operator budgets. Failures remain reportable. F288 | NANO-QUANTUM LABORATORY TRUSTWORTHY DIGITAL TWIN AT THE LIMIT Three-coupling: long-horizon scientific memory × modular autonomous infrastructure × intergenerational evidence transfer. The primary proposal tests microfluidic geometry representation error under a concealed challenge: substitute an untrained device geometry. Measures: normalized held-out physical residual \[dimensionless\]; separate witness: calibration parameter identifiability \[fraction\]. Strong](https://doi.org/10.5281/zenodo.23935352)
+
+- **Authors:** 33
+- **Date:** 2026-11-04
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** STARLI / RESEARCH FAMILY III / FLAGSHIPS 281–285 Ten Research Flagships · Letters to Future Laboratories Five research architectures for calibration succession, automated discovery, collaboration, self-repair and quantum sensor recovery. F281 | NANO-QUANTUM RESEARCH SYSTEM CROSS-GENERATION CALIBRATION AT THE LIMIT T...
+
+### [CORE: Coarse-to-Fine Search with Context Management for Deep Research](https://arxiv.org/abs/2611.07859v1)
+
+- **Authors:** Hoang Tran Vuong, Ngoc Quan Pham, Hung Bui, Fatih Porikli, Dat Quoc Nguyen
+- **Date:** 2026-11-05
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep research agents answer complex questions through repeated search. They rely on a harness that runs their tool calls and returns evidence to their context. This creates a trade-off: Search works best over long passages, which give enough context for reliable semantic matching. But the returned evidence should be...
+
+### [Mind2Report: Expert-Level Commercial Report Synthesis via Cognitive Deep Research Agent](https://doi.org/10.1145/3799682.3840672)
+
+- **Authors:** Mingyue Cheng, Daoyu Wang, Qi Liu, Shuo Yu, Xiaoyu Tao, Yuqian Wang, et al.
 - **Date:** 2026-11-03
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** STARLI | FLAGSHIP 13 FISSION Ten Research Design Monographs | Flagships 141-150 / 300 Author: 33 | White Rainbow Epoch | Research Design Working Edition v1.2 This ten-volume STARLI series examines trustworthy AI-assisted micro/nanorobotic experiments and nano-quantum measurement systems. The common research question...
+- **Abstract summary:** Synthesizing informative commercial reports from massive and noisy web sources is critical for high-stakes business decisions. Although recent deep research agents (DRAs) achieve notable progress, their reports remain limited in quality, reliability, and coverage. These mainly stem from ambiguous intents that cause...
 
 ## Maybe Relevant
 
-### [Learning by Doing: Autonomously Compiling and Curating Agent Skills from Verified Traces](https://doi.org/10.48550/arxiv.2611.01386)
+### [Deep Learning Frontiers: Advanced Architectures and Intelligent Applications](https://doi.org/10.5281/zenodo.23910335)
 
-- **Authors:** Daniel Chalef, Peter Evans, Pavlo Paliychuk, Mehul Patel, Preston Rasmussen, Jack Ryan
-- **Date:** 2026-11-01
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** Memory systems for production LLM agents mostly store semantic memory (facts about users and domains) or episodic memory (earlier interactions). Research systems such as Trace2Skill, WikiSkill, and SkillRevise learn procedures from agent runs, package them as Skills, and evaluate them on benchmarks. We describe Zep...
-
-### [Self-Driving ERP: An Autonomous Enterprise System Integrating Sixty AI Capabilities, from LLMs and RAG to AI Agents](https://doi.org/10.5281/zenodo.23880860)
-
-- **Authors:** Salim Thowfeek
-- **Date:** 2026-11-02
+- **Authors:** Dr. L. Lakshmaiah, Dr. Sudhakara Reddy M, Dr. Raju Anitha, Dr. K. Nageswara Reddy.
+- **Date:** 2026-10-30
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
 - **Tags:** research-adjacent
-- **Abstract summary:** This research presents the Self-Driving ERP, an autonomous enterprise system in which 60 AI capabilities, from large language models (LLMs) and retrieval-augmented generation (RAG) to AI agents, are built into ten ERP modules: Sales & CRM, Purchase, Inventory, Accounting, HR & Payroll, Projects, Manufacturing, Helpd...
+- **Abstract summary:** The rapid advancement of Artificial Intelligence (AI) has transformed the way information is processed, knowledge is generated, and intelligent decisions are made across diverse domains. Deep Learning, as a major branch of machine learning, has emerged as a powerful technology for developing intelligent systems capa...

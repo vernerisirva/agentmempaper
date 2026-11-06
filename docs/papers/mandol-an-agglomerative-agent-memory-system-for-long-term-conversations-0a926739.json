@@ -31,7 +31,7 @@
   "last_seen_date": "2026-08-09",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-30 10:11:37",
   "notified_date": "2026-06-30",
@@ -42,7 +42,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-06-30 10:07:18",
-    "generated_at": "2026-11-05 11:54:58",
+    "generated_at": "2026-11-06 11:53:28",
     "last_seen_at": "2026-08-09 06:27:16",
     "metadata_sources": [
       "openalex",
@@ -118,36 +118,1686 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-06T11:52:22.802633+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.99,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript provides a sound systems-oriented contribution addressing latency and fragmentation bottlenecks in LLM agent memory architectures. The empirical evidence across established conversational benchmarks and thorough systems benchmarking is complete and robust.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 62617,
+      "assessment_input_sha256": "a3317b42fd744f21a3fc4f44d4bd1ef03806de741222dad34676cb7ac766ff41",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7166901562",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 61623,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 60878,
+      "evidence_block_count": 80,
+      "evidence_context_characters": 71433,
+      "evidence_context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+      "evidence_context_sha256": "3b83ccfcb68f6e86d8870558dbbf70d255b545214d9a57193c31ea2a834bf827",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 61641,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "extracted_pages": 10,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "437b64aa60540d4c1d741433ee95768e4d2cea92392bc5eb32ddf7c2f4403f50",
+        "source_url": "https://arxiv.org/pdf/2606.29778",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 61623,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Mandol: An Agglomerative Agent Memory System For Long-Term",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 284,
+          "supplied_characters": 284
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1706,
+          "supplied_characters": 1706
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3896,
+          "supplied_characters": 3896
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3068,
+          "supplied_characters": 3068
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 777,
+          "supplied_characters": 777
+        },
+        {
+          "heading": "Memory Representation And Storage",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 2453,
+          "supplied_characters": 2453
+        },
+        {
+          "heading": "Memory Retrieval Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 387,
+          "supplied_characters": 387
+        },
+        {
+          "heading": "Memory Retrieval Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 1781,
+          "supplied_characters": 1781
+        },
+        {
+          "heading": "Mandol System Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 549,
+          "supplied_characters": 549
+        },
+        {
+          "heading": "Hierarchical Memory Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 824,
+          "supplied_characters": 824
+        },
+        {
+          "heading": "Basic Memory Layer.This Layer Uniformly Represents Raw",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1572,
+          "supplied_characters": 1572
+        },
+        {
+          "heading": "High-Level Abstract Memory Layer.This Layer Leverages An",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "abstract",
+          "section_index": 11,
+          "source_characters": 1392,
+          "supplied_characters": 1392
+        },
+        {
+          "heading": "Memory Extraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 491,
+          "supplied_characters": 491
+        },
+        {
+          "heading": "Crud Api",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 31,
+          "supplied_characters": 31
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 556,
+          "supplied_characters": 556
+        },
+        {
+          "heading": "Agglomerative Semantic Data Structure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 2421,
+          "supplied_characters": 2421
+        },
+        {
+          "heading": "Quantitative Query Mechanism",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 506,
+          "supplied_characters": 506
+        },
+        {
+          "heading": "Query-Adaptive Routing.Mandol Maintains Multiple Mem-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 259,
+          "supplied_characters": 259
+        },
+        {
+          "heading": "Query-Adaptive Routing.Mandol Maintains Multiple Mem-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 191,
+          "supplied_characters": 191
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 1740,
+          "supplied_characters": 1740
+        },
+        {
+          "heading": "Quantitative Denoising And Conflict Resolution.After Hy-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 2801,
+          "supplied_characters": 2801
+        },
+        {
+          "heading": "Token-Constrained High-Quality Context Generation.After",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 428,
+          "supplied_characters": 428
+        },
+        {
+          "heading": "Token-Constrained High-Quality Context Generation.After",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 768,
+          "supplied_characters": 768
+        },
+        {
+          "heading": "Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 4384,
+          "supplied_characters": 4384
+        },
+        {
+          "heading": "Ev Aluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 563,
+          "supplied_characters": 563
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 25,
+          "source_characters": 572,
+          "supplied_characters": 572
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 26,
+          "source_characters": 2965,
+          "supplied_characters": 2965
+        },
+        {
+          "heading": "Accuracy And Token Efficiency Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 27,
+          "source_characters": 1871,
+          "supplied_characters": 1871
+        },
+        {
+          "heading": "Accuracy And Token Efficiency Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 28,
+          "source_characters": 1910,
+          "supplied_characters": 1910
+        },
+        {
+          "heading": "System Performance Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 29,
+          "source_characters": 2938,
+          "supplied_characters": 2938
+        },
+        {
+          "heading": "Resource Consumption",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 372,
+          "supplied_characters": 372
+        },
+        {
+          "heading": "Resource Consumption",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1028,
+          "supplied_characters": 1028
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 32,
+          "source_characters": 662,
+          "supplied_characters": 662
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 3627,
+          "supplied_characters": 3627
+        },
+        {
+          "heading": "Appendix: A Self-Organizing Memory Operating System For Structured Long-Horizon",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 4126,
+          "supplied_characters": 4126
+        },
+        {
+          "heading": "Appendix: A Self-Organizing Memory Operating System For Structured Long-Horizon",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 6979,
+          "supplied_characters": 6979
+        }
+      ],
+      "selected_characters": 60878,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_sections": [
+        {
+          "characters": 284,
+          "heading": "Mandol: An Agglomerative Agent Memory System For Long-Term",
+          "page": 1
+        },
+        {
+          "characters": 1706,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 3896,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3068,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 777,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 2453,
+          "heading": "Memory Representation And Storage",
+          "page": 2
+        },
+        {
+          "characters": 387,
+          "heading": "Memory Retrieval Methods",
+          "page": 2
+        },
+        {
+          "characters": 1781,
+          "heading": "Memory Retrieval Methods",
+          "page": 3
+        },
+        {
+          "characters": 549,
+          "heading": "Mandol System Design",
+          "page": 3
+        },
+        {
+          "characters": 824,
+          "heading": "Hierarchical Memory Model",
+          "page": 3
+        },
+        {
+          "characters": 1572,
+          "heading": "Basic Memory Layer.This Layer Uniformly Represents Raw",
+          "page": 3
+        },
+        {
+          "characters": 1392,
+          "heading": "High-Level Abstract Memory Layer.This Layer Leverages An",
+          "page": 3
+        },
+        {
+          "characters": 491,
+          "heading": "Memory Extraction",
+          "page": 4
+        },
+        {
+          "characters": 31,
+          "heading": "Crud Api",
+          "page": 4
+        },
+        {
+          "characters": 556,
+          "heading": "Results",
+          "page": 4
+        },
+        {
+          "characters": 2421,
+          "heading": "Agglomerative Semantic Data Structure",
+          "page": 4
+        },
+        {
+          "characters": 506,
+          "heading": "Quantitative Query Mechanism",
+          "page": 4
+        },
+        {
+          "characters": 259,
+          "heading": "Query-Adaptive Routing.Mandol Maintains Multiple Mem-",
+          "page": 4
+        },
+        {
+          "characters": 191,
+          "heading": "Query-Adaptive Routing.Mandol Maintains Multiple Mem-",
+          "page": 5
+        },
+        {
+          "characters": 1740,
+          "heading": "Results",
+          "page": 5
+        },
+        {
+          "characters": 2801,
+          "heading": "Quantitative Denoising And Conflict Resolution.After Hy-",
+          "page": 5
+        },
+        {
+          "characters": 428,
+          "heading": "Token-Constrained High-Quality Context Generation.After",
+          "page": 5
+        },
+        {
+          "characters": 768,
+          "heading": "Token-Constrained High-Quality Context Generation.After",
+          "page": 6
+        },
+        {
+          "characters": 4384,
+          "heading": "Implementation",
+          "page": 6
+        },
+        {
+          "characters": 563,
+          "heading": "Ev Aluation",
+          "page": 6
+        },
+        {
+          "characters": 572,
+          "heading": "Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 2965,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 1871,
+          "heading": "Accuracy And Token Efficiency Results",
+          "page": 7
+        },
+        {
+          "characters": 1910,
+          "heading": "Accuracy And Token Efficiency Results",
+          "page": 8
+        },
+        {
+          "characters": 2938,
+          "heading": "System Performance Results",
+          "page": 8
+        },
+        {
+          "characters": 372,
+          "heading": "Resource Consumption",
+          "page": 8
+        },
+        {
+          "characters": 1028,
+          "heading": "Resource Consumption",
+          "page": 9
+        },
+        {
+          "characters": 662,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 3627,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 4126,
+          "heading": "Appendix: A Self-Organizing Memory Operating System For Structured Long-Horizon",
+          "page": 9
+        },
+        {
+          "characters": 6979,
+          "heading": "Appendix: A Self-Organizing Memory Operating System For Structured Long-Horizon",
+          "page": 10
+        }
+      ],
+      "selected_text_sha256": "a3317b42fd744f21a3fc4f44d4bd1ef03806de741222dad34676cb7ac766ff41",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "437b64aa60540d4c1d741433ee95768e4d2cea92392bc5eb32ddf7c2f4403f50",
+      "source_pages": 10,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0002"
+        ],
+        "excerpt": "Long-term conversational agents need to remember and query\ncross-session, multi-typed information with complex correlations.\nExisting agent memory systems rely on heterogeneous vector and\ngraph databases, which fragment memory information and cause\nhigh cross-database I/O latency. For retrieval, common RAG-style\nmethods tend to introduce noise, miss correlated clues, and lack\ntoken budget control, degrading LLM accuracy and efficiency.\nWe propose Mandol, an agglomerative memory system that con-\nsolidates fragmented memory representations and storage into a\nunified memory-native architecture. Its core components include:\n(1) ahierarchical memory modelthat organizes memory into a ba-\nsic layer representing raw memory information and a high-level\nabstract layer that agglomerates basic memories into traceable ab-\nstract memories, both uniformly represented as structured semantic\ngraphs; (2) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b18133fccd3b7c9e57c8d747545bfcb2a31c9d39435c76cf256b242768c1b73e",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Long-term conversational agents need to remember and query\ncross-session, multi-typed information with complex correlations.\nExisting agent memory systems rely on heterogeneous vector and\ngraph databases, which fragment memory information and cause\nhigh cross-database I/O latency. For retrieval, common RAG-style\nmethods tend to introduce noise, miss correlated clues, and lack\ntoken budget control, degrading LLM accuracy and efficiency.\nWe propose Mandol, an agglomerative memory system that con-\nsolidates fragmented memory representations and storage into a\nunified memory-native architecture. Its core components include:\n(1) ahierarchical memory modelthat organizes memory into a ba-\nsic layer representing raw memory information and a high-level\nabstract layer that agglomerates basic memories into traceable ab-\nstract memories, both uniformly represented as structured semantic\ngraphs; (2) "
+              }
+            ],
+            "text": "Long-term conversational agents need to remember and query\ncross-session, multi-typed information with complex correlations.\nExisting agent memory systems rely on heterogeneous vector and\ngraph databases, which fragment memory information and cause\nhigh cross-database I/O latency. For retrieval, common RAG-style\nmethods tend to introduce noise, miss correlated clues, and lack\ntoken budget control, degrading LLM accuracy and efficiency.\nWe propose Mandol, an agglomerative memory system that con-\nsolidates fragmented memory representations and storage into a\nunified memory-native architecture. Its core components include:\n(1) ahierarchical memory modelthat organizes memory into a ba-\nsic layer representing raw memory information and a high-level\nabstract layer that agglomerates basic memories into traceable ab-\nstract memories, both uniformly represented as structured semantic\ngraphs; (2) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0003"
+        ],
+        "excerpt": "anagglomerative semantic data structurecombiningSe-\nmanticMapandSemanticGraph, which natively fuses key-value,\nvector, and graph structures and provides unified hybrid retrieval\noperators to eliminate cross-database I/O; and (3) aquantitative\nquery mechanismwith query-adaptive routing, quantitative denois-\ning and conflict resolution, and token-constrained context gener-\nation, all without involving LLMs during retrieval. Experiments\non two widely used long-term conversation benchmarks, LoCoMo\nand LongMemEval, show that Mandol achieves the best overall\naccuracy among representative agent memory systems. For perfor-\nmance comparison, Mandol also obtains a5.4\u00d7 retrieval speedup\nand a4.8\u00d7 insertion speedup under 10 QPS concurrent load, while\nstill maintaining low latency on consumer-grade hardware.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "496562956ff2e40f75c3745645014f9f4a034bc544b72271017c3ca3a9ddea71",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1706,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 900,
+                "text": "anagglomerative semantic data structurecombiningSe-\nmanticMapandSemanticGraph, which natively fuses key-value,\nvector, and graph structures and provides unified hybrid retrieval\noperators to eliminate cross-database I/O; and (3) aquantitative\nquery mechanismwith query-adaptive routing, quantitative denois-\ning and conflict resolution, and token-constrained context gener-\nation, all without involving LLMs during retrieval. Experiments\non two widely used long-term conversation benchmarks, LoCoMo\nand LongMemEval, show that Mandol achieves the best overall\naccuracy among representative agent memory systems. For perfor-\nmance comparison, Mandol also obtains a5.4\u00d7 retrieval speedup\nand a4.8\u00d7 insertion speedup under 10 QPS concurrent load, while\nstill maintaining low latency on consumer-grade hardware."
+              }
+            ],
+            "text": "anagglomerative semantic data structurecombiningSe-\nmanticMapandSemanticGraph, which natively fuses key-value,\nvector, and graph structures and provides unified hybrid retrieval\noperators to eliminate cross-database I/O; and (3) aquantitative\nquery mechanismwith query-adaptive routing, quantitative denois-\ning and conflict resolution, and token-constrained context gener-\nation, all without involving LLMs during retrieval. Experiments\non two widely used long-term conversation benchmarks, LoCoMo\nand LongMemEval, show that Mandol achieves the best overall\naccuracy among representative agent memory systems. For perfor-\nmance comparison, Mandol also obtains a5.4\u00d7 retrieval speedup\nand a4.8\u00d7 insertion speedup under 10 QPS concurrent load, while\nstill maintaining low latency on consumer-grade hardware."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0008"
+        ],
+        "excerpt": "a unified memory-native\narchitecture. Its core modules and techniques include:\n(1)Hierarchical memory model.We organize memory into a ba-\nsic memory layer and a high-level abstract memory layer, both\nuniformly represented as structured semantic graphs. The basic\narXiv:2606.29778v1  [cs.DB]  29 Jun 2026\nlayer represents raw memory through memory units, spaces, and\nexplicit/implicit relationships. The abstract layer automatically ag-\nglomerates basic memories into compact abstractions, including\nepisodic memory (event chains), semantic memory (entity graphs),\nand emotional memory (user preferences). These abstractions main-\ntain traceable links back to the original basic memories, ensuring\nevidence grounding while supporting abstract reasoning.\n(2)Agglomerative semantic data structures.We design a unified\nin-memory data structure combiningSemanticMapandSemantic-\nGraph, which natively fuses ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "94b4a8bbe23e868cc1e9eada674c82f4e18ab2bb8d9350faf3010c794b9fb6d0",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0008",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3896,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 3593,
+                "text": "a unified memory-native\narchitecture. Its core modules and techniques include:\n(1)Hierarchical memory model.We organize memory into a ba-\nsic memory layer and a high-level abstract memory layer, both\nuniformly represented as structured semantic graphs. The basic\narXiv:2606.29778v1  [cs.DB]  29 Jun 2026"
+              },
+              {
+                "end": 597,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "layer represents raw memory through memory units, spaces, and\nexplicit/implicit relationships. The abstract layer automatically ag-\nglomerates basic memories into compact abstractions, including\nepisodic memory (event chains), semantic memory (entity graphs),\nand emotional memory (user preferences). These abstractions main-\ntain traceable links back to the original basic memories, ensuring\nevidence grounding while supporting abstract reasoning.\n(2)Agglomerative semantic data structures.We design a unified\nin-memory data structure combiningSemanticMapandSemantic-\nGraph, which natively fuses "
+              }
+            ],
+            "text": "a unified memory-native\narchitecture. Its core modules and techniques include:\n(1)Hierarchical memory model.We organize memory into a ba-\nsic memory layer and a high-level abstract memory layer, both\nuniformly represented as structured semantic graphs. The basic\narXiv:2606.29778v1  [cs.DB]  29 Jun 2026\nlayer represents raw memory through memory units, spaces, and\nexplicit/implicit relationships. The abstract layer automatically ag-\nglomerates basic memories into compact abstractions, including\nepisodic memory (event chains), semantic memory (entity graphs),\nand emotional memory (user preferences). These abstractions main-\ntain traceable links back to the original basic memories, ensuring\nevidence grounding while supporting abstract reasoning.\n(2)Agglomerative semantic data structures.We design a unified\nin-memory data structure combiningSemanticMapandSemantic-\nGraph, which natively fuses "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0009"
+        ],
+        "excerpt": "key-value, vector, and graph structures\nand provides unified hybrid retrieval operators to eliminate cross-\ndatabase I/O. This agglomerative design removes the I/O latency\nof heterogeneous storage. The data structures also connect to an\nunderlying persistent database for cold or long-term memory.\n(3)Quantitative retrieval mechanism.We replace the traditional\nRAG-style recall-then-rank paradigm with a pipeline of query-\nadaptive routing, quantitative denoising and conflict resolution,\nand token-constrained context generation. Query-adaptive routing\ndynamically selects and queries relevant memory sources based\non query intent. Quantitative denoising and conflict resolution\nthen remove noise and contradictory information from different\nsources. Finally, a compact high-quality context is generated under\ntoken constraints by jointly optimizing relevance and diversity, all\nwithout invoking ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "29beb101195caedcd784098f5c81cdf409870606361a1c4ad6de7e49715a8da0",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1494,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 597,
+                "text": "key-value, vector, and graph structures\nand provides unified hybrid retrieval operators to eliminate cross-\ndatabase I/O. This agglomerative design removes the I/O latency\nof heterogeneous storage. The data structures also connect to an\nunderlying persistent database for cold or long-term memory.\n(3)Quantitative retrieval mechanism.We replace the traditional\nRAG-style recall-then-rank paradigm with a pipeline of query-\nadaptive routing, quantitative denoising and conflict resolution,\nand token-constrained context generation. Query-adaptive routing\ndynamically selects and queries relevant memory sources based\non query intent. Quantitative denoising and conflict resolution\nthen remove noise and contradictory information from different\nsources. Finally, a compact high-quality context is generated under\ntoken constraints by jointly optimizing relevance and diversity, all\nwithout invoking "
+              }
+            ],
+            "text": "key-value, vector, and graph structures\nand provides unified hybrid retrieval operators to eliminate cross-\ndatabase I/O. This agglomerative design removes the I/O latency\nof heterogeneous storage. The data structures also connect to an\nunderlying persistent database for cold or long-term memory.\n(3)Quantitative retrieval mechanism.We replace the traditional\nRAG-style recall-then-rank paradigm with a pipeline of query-\nadaptive routing, quantitative denoising and conflict resolution,\nand token-constrained context generation. Query-adaptive routing\ndynamically selects and queries relevant memory sources based\non query intent. Quantitative denoising and conflict resolution\nthen remove noise and contradictory information from different\nsources. Finally, a compact high-quality context is generated under\ntoken constraints by jointly optimizing relevance and diversity, all\nwithout invoking "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0010"
+        ],
+        "excerpt": "LLMs during retrieval.\nCompared to representative open-source memory systems, in-\ncluding Mem0, Zep, MemU [33], MemOS, and EverMemOS [14],\nMandol achieves the highest overall accuracy on LoCoMo (92.21%)\nand LongMemEval (88.40%). It also obtains the best system perfor-\nmance: under a 10 QPS concurrent serving setting, Mandol reduces\nSearch mean latency by5.4\u00d7 and Add mean latency by4.8\u00d7 over\nthe fastest baselines, and it maintains lower latency than existing\nsystems even on consumer-grade hardware. Mandol is available at\nhttps://github.com/AgentCombo/Mandol.\nIn summary, this paper makes the following contributions.\n\u2022 We propose a hierarchical memory model that uniformly repre-\nsents basic and abstract memories through structured semantic\ngraphs, and agglomerates basic memories into traceable high-\nlevel abstractions, solving the unified representation problem.\n\u2022 We design an ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fac6f046aa72592298f5cf3bf7627fdfe0ffec25e586bf81b303e4d3e0d37e8d",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2381,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1494,
+                "text": "LLMs during retrieval.\nCompared to representative open-source memory systems, in-\ncluding Mem0, Zep, MemU [33], MemOS, and EverMemOS [14],\nMandol achieves the highest overall accuracy on LoCoMo (92.21%)\nand LongMemEval (88.40%). It also obtains the best system perfor-\nmance: under a 10 QPS concurrent serving setting, Mandol reduces\nSearch mean latency by5.4\u00d7 and Add mean latency by4.8\u00d7 over\nthe fastest baselines, and it maintains lower latency than existing\nsystems even on consumer-grade hardware. Mandol is available at\nhttps://github.com/AgentCombo/Mandol.\nIn summary, this paper makes the following contributions.\n\u2022 We propose a hierarchical memory model that uniformly repre-\nsents basic and abstract memories through structured semantic\ngraphs, and agglomerates basic memories into traceable high-\nlevel abstractions, solving the unified representation problem.\n\u2022 We design an "
+              }
+            ],
+            "text": "LLMs during retrieval.\nCompared to representative open-source memory systems, in-\ncluding Mem0, Zep, MemU [33], MemOS, and EverMemOS [14],\nMandol achieves the highest overall accuracy on LoCoMo (92.21%)\nand LongMemEval (88.40%). It also obtains the best system perfor-\nmance: under a 10 QPS concurrent serving setting, Mandol reduces\nSearch mean latency by5.4\u00d7 and Add mean latency by4.8\u00d7 over\nthe fastest baselines, and it maintains lower latency than existing\nsystems even on consumer-grade hardware. Mandol is available at\nhttps://github.com/AgentCombo/Mandol.\nIn summary, this paper makes the following contributions.\n\u2022 We propose a hierarchical memory model that uniformly repre-\nsents basic and abstract memories through structured semantic\ngraphs, and agglomerates basic memories into traceable high-\nlevel abstractions, solving the unified representation problem.\n\u2022 We design an "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0028"
+        ],
+        "excerpt": "Existing systems combine vector databases, graph databases, and\nother databases, which fragment memory and force hybrid queries\nto cross database boundaries with high I/O and serialization over-\nhead. Guided by the hierarchical memory model, Mandol replaces\nthis architecture with an agglomerative semantic data structure\ncomposed ofSemanticMapandSemanticGraph, which natively fuses\nkey-value storage, vector indexes, and graph topology within a\nsingle address space. Figure 2 shows how these semantic data struc-\ntures support both unified storage and the downstream quantitative\nretrieval pipeline. The left side corresponds to the in-memory or-\nganization, while the right side corresponds to the retrieval stages\nintroduced in Section 3.3.\nSemanticMapcombines key-value storage and vector structures\nto support heterogeneous data storage and semantic queries over\nmemory units. It uses the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agglomerative Semantic Data Structure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e50eefa9d904701d3f0518a2eb18a884597b18610eae19de1a222abe42fe699c",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0028",
+            "pages": [
+              4
+            ],
+            "section": "Agglomerative Semantic Data Structure",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 4,
+                "section": "Agglomerative Semantic Data Structure",
+                "section_index": 15,
+                "start": 0,
+                "text": "Existing systems combine vector databases, graph databases, and\nother databases, which fragment memory and force hybrid queries\nto cross database boundaries with high I/O and serialization over-\nhead. Guided by the hierarchical memory model, Mandol replaces\nthis architecture with an agglomerative semantic data structure\ncomposed ofSemanticMapandSemanticGraph, which natively fuses\nkey-value storage, vector indexes, and graph topology within a\nsingle address space. Figure 2 shows how these semantic data struc-\ntures support both unified storage and the downstream quantitative\nretrieval pipeline. The left side corresponds to the in-memory or-\nganization, while the right side corresponds to the retrieval stages\nintroduced in Section 3.3.\nSemanticMapcombines key-value storage and vector structures\nto support heterogeneous data storage and semantic queries over\nmemory units. It uses the "
+              }
+            ],
+            "text": "Existing systems combine vector databases, graph databases, and\nother databases, which fragment memory and force hybrid queries\nto cross database boundaries with high I/O and serialization over-\nhead. Guided by the hierarchical memory model, Mandol replaces\nthis architecture with an agglomerative semantic data structure\ncomposed ofSemanticMapandSemanticGraph, which natively fuses\nkey-value storage, vector indexes, and graph topology within a\nsingle address space. Figure 2 shows how these semantic data struc-\ntures support both unified storage and the downstream quantitative\nretrieval pipeline. The left side corresponds to the in-memory or-\nganization, while the right side corresponds to the retrieval stages\nintroduced in Section 3.3.\nSemanticMapcombines key-value storage and vector structures\nto support heterogeneous data storage and semantic queries over\nmemory units. It uses the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0029"
+        ],
+        "excerpt": "memory unit ID as the key and records\nspace membership via metadata for memory space isolation. The\nvalue stores raw information and the semantic vector. Mandol pro-\nvides three types of indexes: an inverted index on raw memory\ninformation (e.g., dialogue text) for keyword retrieval, and opti-\nmized dense and sparse vector indexes for low-latency semantic\nretrieval.\nSemanticGraphuses a lightweight adjacency list to store explicit\nstructural edges and obtains implicit semantic relationships on\ndemand from SemanticMap's indexes. SemanticMap and Seman-\nticGraph share the same Memory Unit IDs, so every operation\n(lookup, filtering, vector search, graph traversal) returns the same\nidentifiers. This makes hybrid retrieval atomic: a memory unit re-\ntrieved by dense search can be expanded through graph traversal\nand filtered by space metadata within the unified data structures.\nTogether, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agglomerative Semantic Data Structure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3896ef077cb5b740434051df35eaee6adc23c2e8854e11ec562f9b73c8c3a929",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0029",
+            "pages": [
+              4
+            ],
+            "section": "Agglomerative Semantic Data Structure",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1787,
+                "page": 4,
+                "section": "Agglomerative Semantic Data Structure",
+                "section_index": 15,
+                "start": 894,
+                "text": "memory unit ID as the key and records\nspace membership via metadata for memory space isolation. The\nvalue stores raw information and the semantic vector. Mandol pro-\nvides three types of indexes: an inverted index on raw memory\ninformation (e.g., dialogue text) for keyword retrieval, and opti-\nmized dense and sparse vector indexes for low-latency semantic\nretrieval.\nSemanticGraphuses a lightweight adjacency list to store explicit\nstructural edges and obtains implicit semantic relationships on\ndemand from SemanticMap's indexes. SemanticMap and Seman-\nticGraph share the same Memory Unit IDs, so every operation\n(lookup, filtering, vector search, graph traversal) returns the same\nidentifiers. This makes hybrid retrieval atomic: a memory unit re-\ntrieved by dense search can be expanded through graph traversal\nand filtered by space metadata within the unified data structures.\nTogether, "
+              }
+            ],
+            "text": "memory unit ID as the key and records\nspace membership via metadata for memory space isolation. The\nvalue stores raw information and the semantic vector. Mandol pro-\nvides three types of indexes: an inverted index on raw memory\ninformation (e.g., dialogue text) for keyword retrieval, and opti-\nmized dense and sparse vector indexes for low-latency semantic\nretrieval.\nSemanticGraphuses a lightweight adjacency list to store explicit\nstructural edges and obtains implicit semantic relationships on\ndemand from SemanticMap's indexes. SemanticMap and Seman-\nticGraph share the same Memory Unit IDs, so every operation\n(lookup, filtering, vector search, graph traversal) returns the same\nidentifiers. This makes hybrid retrieval atomic: a memory unit re-\ntrieved by dense search can be expanded through graph traversal\nand filtered by space metadata within the unified data structures.\nTogether, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0030"
+        ],
+        "excerpt": "SemanticMap and SemanticGraph form a unified stor-\nage view, physically realizing the structured semantic graph and\neliminating multi-database fragmentation.\nTo support flexible retrieval, the system provides a set of atomic\nhybrid operators that natively operate on SemanticMap and Seman-\nticGraph, covering unit, space, relationship, and multi-hop queries.\nThese operators can be composed into complex retrieval plans and\nare detailed in Section 4. The active memory layer connects to an\nunderlying embedded persistence backend, DuckDB, for cold or\nlong-term storage through the asynchronous paging mechanism\ndescribed in Section 4.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agglomerative Semantic Data Structure",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f6f8fcb8c99dc6e049d48647ccbe44457c660ab3f5448e6374acdab95a6758c2",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0030",
+            "pages": [
+              4
+            ],
+            "section": "Agglomerative Semantic Data Structure",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2421,
+                "page": 4,
+                "section": "Agglomerative Semantic Data Structure",
+                "section_index": 15,
+                "start": 1787,
+                "text": "SemanticMap and SemanticGraph form a unified stor-\nage view, physically realizing the structured semantic graph and\neliminating multi-database fragmentation.\nTo support flexible retrieval, the system provides a set of atomic\nhybrid operators that natively operate on SemanticMap and Seman-\nticGraph, covering unit, space, relationship, and multi-hop queries.\nThese operators can be composed into complex retrieval plans and\nare detailed in Section 4. The active memory layer connects to an\nunderlying embedded persistence backend, DuckDB, for cold or\nlong-term storage through the asynchronous paging mechanism\ndescribed in Section 4."
+              }
+            ],
+            "text": "SemanticMap and SemanticGraph form a unified stor-\nage view, physically realizing the structured semantic graph and\neliminating multi-database fragmentation.\nTo support flexible retrieval, the system provides a set of atomic\nhybrid operators that natively operate on SemanticMap and Seman-\nticGraph, covering unit, space, relationship, and multi-hop queries.\nThese operators can be composed into complex retrieval plans and\nare detailed in Section 4. The active memory layer connects to an\nunderlying embedded persistence backend, DuckDB, for cold or\nlong-term storage through the asynchronous paging mechanism\ndescribed in Section 4."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0035"
+        ],
+        "excerpt": "brid recall, the candidate set faces two issues: intra-source noise,\nwhere semantic relevance scores follow a long-tail distribution with\nweakly relevant memories scattered in the low-score region, and\ncross-source conflicts, where different sources may describe the\nsame event or stale abstractions contradict newer evidence. Mandol\naddresses both in two stages.\nIntra-source denoising.Traditional static thresholds or methods\nbased on mean and standard deviation assume a specific score dis-\ntribution and are easily disturbed by extremely high or low scores,\ncausing unstable filtering. Since different queries can produce non-\nnormal score distributions, we apply a dynamic threshold based\non the median absolute deviation (MAD), which robustly filters\nlow-scoring noisy candidates without assuming normality:\n\ud835\udf0f\ud835\udc5a\ud835\udc4e\ud835\udc51 =median(\ud835\udc46 \ud835\udc50\ud835\udc52)\u2212\ud835\udf05\u00b7MAD(\ud835\udc46 \ud835\udc50\ud835\udc52),(1)\nwhere MAD(\ud835\udc46\ud835\udc50\ud835\udc52)=median(|\ud835\udc46 \ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)\u2212median(\ud835\udc46 \ud835\udc50\ud835\udc52)|) . ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b2e385939e5f944df9041f7208970754c8145824a18a42b1af5e74d5af718b1b",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0035",
+            "pages": [
+              5
+            ],
+            "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 5,
+                "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+                "section_index": 20,
+                "start": 0,
+                "text": "brid recall, the candidate set faces two issues: intra-source noise,\nwhere semantic relevance scores follow a long-tail distribution with\nweakly relevant memories scattered in the low-score region, and\ncross-source conflicts, where different sources may describe the\nsame event or stale abstractions contradict newer evidence. Mandol\naddresses both in two stages.\nIntra-source denoising.Traditional static thresholds or methods\nbased on mean and standard deviation assume a specific score dis-\ntribution and are easily disturbed by extremely high or low scores,\ncausing unstable filtering. Since different queries can produce non-\nnormal score distributions, we apply a dynamic threshold based\non the median absolute deviation (MAD), which robustly filters\nlow-scoring noisy candidates without assuming normality:\n\ud835\udf0f\ud835\udc5a\ud835\udc4e\ud835\udc51 =median(\ud835\udc46 \ud835\udc50\ud835\udc52)\u2212\ud835\udf05\u00b7MAD(\ud835\udc46 \ud835\udc50\ud835\udc52),(1)\nwhere MAD(\ud835\udc46\ud835\udc50\ud835\udc52)=median(|\ud835\udc46 \ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)\u2212median(\ud835\udc46 \ud835\udc50\ud835\udc52)|) . "
+              }
+            ],
+            "text": "brid recall, the candidate set faces two issues: intra-source noise,\nwhere semantic relevance scores follow a long-tail distribution with\nweakly relevant memories scattered in the low-score region, and\ncross-source conflicts, where different sources may describe the\nsame event or stale abstractions contradict newer evidence. Mandol\naddresses both in two stages.\nIntra-source denoising.Traditional static thresholds or methods\nbased on mean and standard deviation assume a specific score dis-\ntribution and are easily disturbed by extremely high or low scores,\ncausing unstable filtering. Since different queries can produce non-\nnormal score distributions, we apply a dynamic threshold based\non the median absolute deviation (MAD), which robustly filters\nlow-scoring noisy candidates without assuming normality:\n\ud835\udf0f\ud835\udc5a\ud835\udc4e\ud835\udc51 =median(\ud835\udc46 \ud835\udc50\ud835\udc52)\u2212\ud835\udf05\u00b7MAD(\ud835\udc46 \ud835\udc50\ud835\udc52),(1)\nwhere MAD(\ud835\udc46\ud835\udc50\ud835\udc52)=median(|\ud835\udc46 \ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)\u2212median(\ud835\udc46 \ud835\udc50\ud835\udc52)|) . "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0036"
+        ],
+        "excerpt": "Candidates\nbelow\ud835\udf0f\ud835\udc5a\ud835\udc4e\ud835\udc51 are discarded. For example, a query to the episodic\nmemory recalls 50 candidates, with a median\ud835\udc46\ud835\udc50\ud835\udc52 score of 0.8 and\na computed MAD of 0.1. With \ud835\udf05= 2.5, the dynamic threshold\nbecomes0.8\u2212 0.25 = 0.55, and only candidates with scores above\n0.55 proceed to the next stage.\nCross-source conflict resolution.After intra-source denoising, can-\ndidates from different sources may still conflict or contain redun-\ndancy. The system compares memory unit content across sources:\nif units involve the same entities but give inconsistent descriptions,\nor if abstract nodes trace back to the same basic memory identifiers,\nthey are marked as conflicting. For each conflicting candidate \ud835\udc50\ud835\udc56,\nMandol computes an arbitration score \ud835\udc46\ud835\udc4e\ud835\udc5f\ud835\udc4f(\ud835\udc50\ud835\udc56) that balances se-\nmantic relevance\ud835\udc46\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56), temporal freshness\ud835\udc53\ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56), and source\nconfidence\ud835\udc53 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)of the candidate\ud835\udc50 \ud835\udc56:\n\ud835\udc46\ud835\udc4e\ud835\udc5f\ud835\udc4f(\ud835\udc50\ud835\udc56)=\ud835\udc64 \ud835\udc5f\ud835\udc52\ud835\udc59\u00b7\ud835\udc46 \ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)+\ud835\udc64 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "54fcad5bdcd0a7743931f2e708d2a45f9583f95d3e8bc80693c3b7c7ffc311c5",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0036",
+            "pages": [
+              5
+            ],
+            "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 5,
+                "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+                "section_index": 20,
+                "start": 898,
+                "text": "Candidates\nbelow\ud835\udf0f\ud835\udc5a\ud835\udc4e\ud835\udc51 are discarded. For example, a query to the episodic\nmemory recalls 50 candidates, with a median\ud835\udc46\ud835\udc50\ud835\udc52 score of 0.8 and\na computed MAD of 0.1. With \ud835\udf05= 2.5, the dynamic threshold\nbecomes0.8\u2212 0.25 = 0.55, and only candidates with scores above\n0.55 proceed to the next stage.\nCross-source conflict resolution.After intra-source denoising, can-\ndidates from different sources may still conflict or contain redun-\ndancy. The system compares memory unit content across sources:\nif units involve the same entities but give inconsistent descriptions,\nor if abstract nodes trace back to the same basic memory identifiers,\nthey are marked as conflicting. For each conflicting candidate \ud835\udc50\ud835\udc56,\nMandol computes an arbitration score \ud835\udc46\ud835\udc4e\ud835\udc5f\ud835\udc4f(\ud835\udc50\ud835\udc56) that balances se-\nmantic relevance\ud835\udc46\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56), temporal freshness\ud835\udc53\ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56), and source\nconfidence\ud835\udc53 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)of the candidate\ud835\udc50 \ud835\udc56:\n\ud835\udc46\ud835\udc4e\ud835\udc5f\ud835\udc4f(\ud835\udc50\ud835\udc56)=\ud835\udc64 \ud835\udc5f\ud835\udc52\ud835\udc59\u00b7\ud835\udc46 \ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)+\ud835\udc64 "
+              }
+            ],
+            "text": "Candidates\nbelow\ud835\udf0f\ud835\udc5a\ud835\udc4e\ud835\udc51 are discarded. For example, a query to the episodic\nmemory recalls 50 candidates, with a median\ud835\udc46\ud835\udc50\ud835\udc52 score of 0.8 and\na computed MAD of 0.1. With \ud835\udf05= 2.5, the dynamic threshold\nbecomes0.8\u2212 0.25 = 0.55, and only candidates with scores above\n0.55 proceed to the next stage.\nCross-source conflict resolution.After intra-source denoising, can-\ndidates from different sources may still conflict or contain redun-\ndancy. The system compares memory unit content across sources:\nif units involve the same entities but give inconsistent descriptions,\nor if abstract nodes trace back to the same basic memory identifiers,\nthey are marked as conflicting. For each conflicting candidate \ud835\udc50\ud835\udc56,\nMandol computes an arbitration score \ud835\udc46\ud835\udc4e\ud835\udc5f\ud835\udc4f(\ud835\udc50\ud835\udc56) that balances se-\nmantic relevance\ud835\udc46\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56), temporal freshness\ud835\udc53\ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56), and source\nconfidence\ud835\udc53 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)of the candidate\ud835\udc50 \ud835\udc56:\n\ud835\udc46\ud835\udc4e\ud835\udc5f\ud835\udc4f(\ud835\udc50\ud835\udc56)=\ud835\udc64 \ud835\udc5f\ud835\udc52\ud835\udc59\u00b7\ud835\udc46 \ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)+\ud835\udc64 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0037"
+        ],
+        "excerpt": "\ud835\udc61\ud835\udc52\ud835\udc5a\ud835\udc5d\u00b7\ud835\udc53 \ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56)+\ud835\udc64 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52\u00b7\ud835\udc53 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56),(2)\nwhere\ud835\udc53\ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56) models an exponential decay based on the elapsed\ntime, giving higher scores to more recent information.\ud835\udc53\ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)\nassigns a confidence weight according to the memory source. Specif-\nically, basic memory receives the highest weight (1.0) because it\ncontains raw dialogue information. Episodic memory receives a\nmedium weight (0.8), and semantic memory receives the lowest\nweight (0.6), as they have different levels of abstraction. Mandol\ngreedily keeps the highest-scoring record and discards stale or re-\ndundant alternatives. Continuing with the example of Mike's trip\nto Beijing, an emotional memory records an older preference \"likes\ncoffee\", while a recent basic memory unit captures \"I tried Longjing\ntea at a teahouse and loved it. I want to explore more Chinese teas\".\nFor a drink recommendation query, the basic memory ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2a7bc01ee98be9553dc3a93d98f9d79d87be075766f4a0a39b0f2de5154baba0",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0037",
+            "pages": [
+              5
+            ],
+            "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2679,
+                "page": 5,
+                "section": "Quantitative Denoising And Conflict Resolution.After Hy-",
+                "section_index": 20,
+                "start": 1793,
+                "text": "\ud835\udc61\ud835\udc52\ud835\udc5a\ud835\udc5d\u00b7\ud835\udc53 \ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56)+\ud835\udc64 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52\u00b7\ud835\udc53 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56),(2)\nwhere\ud835\udc53\ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56) models an exponential decay based on the elapsed\ntime, giving higher scores to more recent information.\ud835\udc53\ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)\nassigns a confidence weight according to the memory source. Specif-\nically, basic memory receives the highest weight (1.0) because it\ncontains raw dialogue information. Episodic memory receives a\nmedium weight (0.8), and semantic memory receives the lowest\nweight (0.6), as they have different levels of abstraction. Mandol\ngreedily keeps the highest-scoring record and discards stale or re-\ndundant alternatives. Continuing with the example of Mike's trip\nto Beijing, an emotional memory records an older preference \"likes\ncoffee\", while a recent basic memory unit captures \"I tried Longjing\ntea at a teahouse and loved it. I want to explore more Chinese teas\".\nFor a drink recommendation query, the basic memory "
+              }
+            ],
+            "text": "\ud835\udc61\ud835\udc52\ud835\udc5a\ud835\udc5d\u00b7\ud835\udc53 \ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56)+\ud835\udc64 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52\u00b7\ud835\udc53 \ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56),(2)\nwhere\ud835\udc53\ud835\udc61\ud835\udc56\ud835\udc5a\ud835\udc52(\ud835\udc50\ud835\udc56) models an exponential decay based on the elapsed\ntime, giving higher scores to more recent information.\ud835\udc53\ud835\udc60\ud835\udc5c\ud835\udc62\ud835\udc5f\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56)\nassigns a confidence weight according to the memory source. Specif-\nically, basic memory receives the highest weight (1.0) because it\ncontains raw dialogue information. Episodic memory receives a\nmedium weight (0.8), and semantic memory receives the lowest\nweight (0.6), as they have different levels of abstraction. Mandol\ngreedily keeps the highest-scoring record and discards stale or re-\ndundant alternatives. Continuing with the example of Mike's trip\nto Beijing, an emotional memory records an older preference \"likes\ncoffee\", while a recent basic memory unit captures \"I tried Longjing\ntea at a teahouse and loved it. I want to explore more Chinese teas\".\nFor a drink recommendation query, the basic memory "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0039"
+        ],
+        "excerpt": "conflict resolution, the remaining candidate set may still exceed the\ntoken budget. Simple top-\ud835\udc3e truncation may retain candidates with\nlow information density or drop critical supplementary evidence.\nTo construct a compact yet comprehensive context, Mandol jointly\noptimizes relevance and diversity under the token budget, priori-\ntizing highly relevant memories while preserving complementary\nevidence from different sources.\n5\nWe adopt a greedy iterative selection algorithm based on joint\noptimization of relevance and diversity, introducing a maximal\nmarginal relevance (MMR) objective:\nMMR(\ud835\udc50\ud835\udc56|\ud835\udc46)=\ud835\udf06\u00b7Rel(\ud835\udc50 \ud835\udc56)\u2212(1\u2212\ud835\udf06)\u00b7Red(\ud835\udc50 \ud835\udc56,\ud835\udc46),(3)\nwhere Rel(\ud835\udc50\ud835\udc56) is the cross-encoder relevance score \ud835\udc46\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56), and\nRed(\ud835\udc50 \ud835\udc56,\ud835\udc46) measures the maximum redundancy between the can-\ndidate\ud835\udc50\ud835\udc56 and the already selected set\ud835\udc46, based on entity and mem-\nory source overlap. The algorithm greedily adds candidates with\nthe highest ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Token-Constrained High-Quality Context Generation.After",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cc6cf1019a6869983f05ca9caec56940bc7045182093cd61412d05b131a6fc30",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0039",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Token-Constrained High-Quality Context Generation.After",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 428,
+                "page": 5,
+                "section": "Token-Constrained High-Quality Context Generation.After",
+                "section_index": 21,
+                "start": 0,
+                "text": "conflict resolution, the remaining candidate set may still exceed the\ntoken budget. Simple top-\ud835\udc3e truncation may retain candidates with\nlow information density or drop critical supplementary evidence.\nTo construct a compact yet comprehensive context, Mandol jointly\noptimizes relevance and diversity under the token budget, priori-\ntizing highly relevant memories while preserving complementary\nevidence from different sources.\n5"
+              },
+              {
+                "end": 469,
+                "page": 6,
+                "section": "Token-Constrained High-Quality Context Generation.After",
+                "section_index": 22,
+                "start": 0,
+                "text": "We adopt a greedy iterative selection algorithm based on joint\noptimization of relevance and diversity, introducing a maximal\nmarginal relevance (MMR) objective:\nMMR(\ud835\udc50\ud835\udc56|\ud835\udc46)=\ud835\udf06\u00b7Rel(\ud835\udc50 \ud835\udc56)\u2212(1\u2212\ud835\udf06)\u00b7Red(\ud835\udc50 \ud835\udc56,\ud835\udc46),(3)\nwhere Rel(\ud835\udc50\ud835\udc56) is the cross-encoder relevance score \ud835\udc46\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56), and\nRed(\ud835\udc50 \ud835\udc56,\ud835\udc46) measures the maximum redundancy between the can-\ndidate\ud835\udc50\ud835\udc56 and the already selected set\ud835\udc46, based on entity and mem-\nory source overlap. The algorithm greedily adds candidates with\nthe highest "
+              }
+            ],
+            "text": "conflict resolution, the remaining candidate set may still exceed the\ntoken budget. Simple top-\ud835\udc3e truncation may retain candidates with\nlow information density or drop critical supplementary evidence.\nTo construct a compact yet comprehensive context, Mandol jointly\noptimizes relevance and diversity under the token budget, priori-\ntizing highly relevant memories while preserving complementary\nevidence from different sources.\n5\nWe adopt a greedy iterative selection algorithm based on joint\noptimization of relevance and diversity, introducing a maximal\nmarginal relevance (MMR) objective:\nMMR(\ud835\udc50\ud835\udc56|\ud835\udc46)=\ud835\udf06\u00b7Rel(\ud835\udc50 \ud835\udc56)\u2212(1\u2212\ud835\udf06)\u00b7Red(\ud835\udc50 \ud835\udc56,\ud835\udc46),(3)\nwhere Rel(\ud835\udc50\ud835\udc56) is the cross-encoder relevance score \ud835\udc46\ud835\udc50\ud835\udc52(\ud835\udc50\ud835\udc56), and\nRed(\ud835\udc50 \ud835\udc56,\ud835\udc46) measures the maximum redundancy between the can-\ndidate\ud835\udc50\ud835\udc56 and the already selected set\ud835\udc46, based on entity and mem-\nory source overlap. The algorithm greedily adds candidates with\nthe highest "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0047"
+        ],
+        "excerpt": "Datasets and baselines.We evaluate Mandol on two widely used\nlong-term conversational memory benchmarks.LoCoMo[ 29] pro-\nvides 10 long multi-session conversations with 1,986 questions\nand ground-truth answers, designed to test retrieval and reasoning\nover long conversational histories. Following prior work, we eval-\nuate four question types: single-hop recall, multi-hop reasoning,\ntemporal reasoning, and open-domain grounding, corresponding\nto the Single, Multi, Temp., and Open columns in Table 3.Long-\nMemEval[ 43] contains 500 manually curated questions over long\n6\nTable 3: LoCoMo accuracy (%) comparison among different memory systems.\u2020denotes our reproduced results.\nBackbone System Avg. Tok. Single Multi Temp. Open Overall\nGPT-4o-mini\nMem0 1.0k 66.71 58.16 55.45 40.62 61.00\nMemU 4.0k 72.77 62.41 33.96 46.88 61.15\nMemOS 2.5k 81.45 69.15 72.27 60.42 75.87\nZep 1.4k 88.11 71.99 74.45 66.67 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e9073b4e9842f49bc26fe49e8458009f340905b0935535db75cd3df4157c5c6f",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0047",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 572,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 25,
+                "start": 0,
+                "text": "Datasets and baselines.We evaluate Mandol on two widely used\nlong-term conversational memory benchmarks.LoCoMo[ 29] pro-\nvides 10 long multi-session conversations with 1,986 questions\nand ground-truth answers, designed to test retrieval and reasoning\nover long conversational histories. Following prior work, we eval-\nuate four question types: single-hop recall, multi-hop reasoning,\ntemporal reasoning, and open-domain grounding, corresponding\nto the Single, Multi, Temp., and Open columns in Table 3.Long-\nMemEval[ 43] contains 500 manually curated questions over long\n6"
+              },
+              {
+                "end": 328,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 26,
+                "start": 0,
+                "text": "Table 3: LoCoMo accuracy (%) comparison among different memory systems.\u2020denotes our reproduced results.\nBackbone System Avg. Tok. Single Multi Temp. Open Overall\nGPT-4o-mini\nMem0 1.0k 66.71 58.16 55.45 40.62 61.00\nMemU 4.0k 72.77 62.41 33.96 46.88 61.15\nMemOS 2.5k 81.45 69.15 72.27 60.42 75.87\nZep 1.4k 88.11 71.99 74.45 66.67 "
+              }
+            ],
+            "text": "Datasets and baselines.We evaluate Mandol on two widely used\nlong-term conversational memory benchmarks.LoCoMo[ 29] pro-\nvides 10 long multi-session conversations with 1,986 questions\nand ground-truth answers, designed to test retrieval and reasoning\nover long conversational histories. Following prior work, we eval-\nuate four question types: single-hop recall, multi-hop reasoning,\ntemporal reasoning, and open-domain grounding, corresponding\nto the Single, Multi, Temp., and Open columns in Table 3.Long-\nMemEval[ 43] contains 500 manually curated questions over long\n6\nTable 3: LoCoMo accuracy (%) comparison among different memory systems.\u2020denotes our reproduced results.\nBackbone System Avg. Tok. Single Multi Temp. Open Overall\nGPT-4o-mini\nMem0 1.0k 66.71 58.16 55.45 40.62 61.00\nMemU 4.0k 72.77 62.41 33.96 46.88 61.15\nMemOS 2.5k 81.45 69.15 72.27 60.42 75.87\nZep 1.4k 88.11 71.99 74.45 66.67 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0048"
+        ],
+        "excerpt": "81.06\nEverMemOS\u2020 2.5k 91.68 82.74 79.34 70.1486.13\nMandol (Ours)2.0k93.82 85.11 89.1065.6389.48\nGPT-4.1-mini\nMem0 1.0k 68.97 61.70 58.26 50.00 64.20\nMemU 4.0k 74.91 72.34 43.61 54.17 66.67\nMemOS 2.5k 85.37 79.43 75.08 64.58 80.76\nZep 1.4k 90.84 81.91 77.26 75.00 85.22\nEverMemOS\u2020 2.3k 95.32 89.01 90.1377.43 91.97\nMandol (Ours)1.9k95.36 92.2087.8579.17 92.21\nTable 4: LongMemEval accuracy (%) comparison among different memory systems.\nBackbone System Avg. Tok. SS-Pref SS-Asst Temporal Multi-S Know. Upd. SS-User Overall\nGPT-4o-mini\nMemU 0.5k 76.70 19.60 17.30 42.10 41.00 67.10 38.40\nMem0 1.1k 90.00 26.78 72.18 63.15 66.67 82.86 66.40\nZep 1.6k 53.30 75.00 54.10 47.40 74.40 92.90 63.80\nMemOS 1.4k96.6767.86 77.44 70.67 74.26 95.71 77.80\nMandol (Ours)2.1k96.67 98.21 78.95 74.44 88.46 97.14 85.00\nGPT-4.1-mini EverMemOS 2.8k 93.33 85.71 77.44 73.68 89.7497.14 83.00Mandol (Ours)2.3k96.67 98.21 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a569ba41b3c86b92b8bcee06db0cf60cf2ebd93e7b68b66b9527b265b0ce52db",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0048",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1224,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 26,
+                "start": 328,
+                "text": "81.06\nEverMemOS\u2020 2.5k 91.68 82.74 79.34 70.1486.13\nMandol (Ours)2.0k93.82 85.11 89.1065.6389.48\nGPT-4.1-mini\nMem0 1.0k 68.97 61.70 58.26 50.00 64.20\nMemU 4.0k 74.91 72.34 43.61 54.17 66.67\nMemOS 2.5k 85.37 79.43 75.08 64.58 80.76\nZep 1.4k 90.84 81.91 77.26 75.00 85.22\nEverMemOS\u2020 2.3k 95.32 89.01 90.1377.43 91.97\nMandol (Ours)1.9k95.36 92.2087.8579.17 92.21\nTable 4: LongMemEval accuracy (%) comparison among different memory systems.\nBackbone System Avg. Tok. SS-Pref SS-Asst Temporal Multi-S Know. Upd. SS-User Overall\nGPT-4o-mini\nMemU 0.5k 76.70 19.60 17.30 42.10 41.00 67.10 38.40\nMem0 1.1k 90.00 26.78 72.18 63.15 66.67 82.86 66.40\nZep 1.6k 53.30 75.00 54.10 47.40 74.40 92.90 63.80\nMemOS 1.4k96.6767.86 77.44 70.67 74.26 95.71 77.80\nMandol (Ours)2.1k96.67 98.21 78.95 74.44 88.46 97.14 85.00\nGPT-4.1-mini EverMemOS 2.8k 93.33 85.71 77.44 73.68 89.7497.14 83.00Mandol (Ours)2.3k96.67 98.21 "
+              }
+            ],
+            "text": "81.06\nEverMemOS\u2020 2.5k 91.68 82.74 79.34 70.1486.13\nMandol (Ours)2.0k93.82 85.11 89.1065.6389.48\nGPT-4.1-mini\nMem0 1.0k 68.97 61.70 58.26 50.00 64.20\nMemU 4.0k 74.91 72.34 43.61 54.17 66.67\nMemOS 2.5k 85.37 79.43 75.08 64.58 80.76\nZep 1.4k 90.84 81.91 77.26 75.00 85.22\nEverMemOS\u2020 2.3k 95.32 89.01 90.1377.43 91.97\nMandol (Ours)1.9k95.36 92.2087.8579.17 92.21\nTable 4: LongMemEval accuracy (%) comparison among different memory systems.\nBackbone System Avg. Tok. SS-Pref SS-Asst Temporal Multi-S Know. Upd. SS-User Overall\nGPT-4o-mini\nMemU 0.5k 76.70 19.60 17.30 42.10 41.00 67.10 38.40\nMem0 1.1k 90.00 26.78 72.18 63.15 66.67 82.86 66.40\nZep 1.6k 53.30 75.00 54.10 47.40 74.40 92.90 63.80\nMemOS 1.4k96.6767.86 77.44 70.67 74.26 95.71 77.80\nMandol (Ours)2.1k96.67 98.21 78.95 74.44 88.46 97.14 85.00\nGPT-4.1-mini EverMemOS 2.8k 93.33 85.71 77.44 73.68 89.7497.14 83.00Mandol (Ours)2.3k96.67 98.21 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0049"
+        ],
+        "excerpt": "87.22 77.44 89.74 98.57 88.40\nuser-assistant interaction histories. Following prior work, we eval-\nuate six question types: single-session user preferences, single-\nsession assistant information, temporal reasoning, multi-session\nreasoning, knowledge update, and single-session user information,\ncorresponding to the SS-Pref, SS-Asst, Temporal, Multi-S, Know.\nUpd., and SS-User columns in Table 4. We compare Mandol with\nrepresentative open-source memory systems, including Mem0 [6],\nMemU [33], Zep [38], MemOS [25], and EverMemOS [14].\nMetrics and environments.To evaluate retrieval quality, we use\nQA accuracy on the two benchmarks. QA accuracy is defined as\nthe percentage of questions whose generated answers are judged\ncorrect or semantically consistent with the ground-truth answers.\nFollowing prior memory system evaluations, we use GPT-4o-mini\nand GPT-4.1-mini as the answer-generation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "78e0f9984ed8f7040ce5ab7d5c9fa28e29f9f32f4bc507cc53f6c94dc5bc229d",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0049",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2118,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 26,
+                "start": 1224,
+                "text": "87.22 77.44 89.74 98.57 88.40\nuser-assistant interaction histories. Following prior work, we eval-\nuate six question types: single-session user preferences, single-\nsession assistant information, temporal reasoning, multi-session\nreasoning, knowledge update, and single-session user information,\ncorresponding to the SS-Pref, SS-Asst, Temporal, Multi-S, Know.\nUpd., and SS-User columns in Table 4. We compare Mandol with\nrepresentative open-source memory systems, including Mem0 [6],\nMemU [33], Zep [38], MemOS [25], and EverMemOS [14].\nMetrics and environments.To evaluate retrieval quality, we use\nQA accuracy on the two benchmarks. QA accuracy is defined as\nthe percentage of questions whose generated answers are judged\ncorrect or semantically consistent with the ground-truth answers.\nFollowing prior memory system evaluations, we use GPT-4o-mini\nand GPT-4.1-mini as the answer-generation "
+              }
+            ],
+            "text": "87.22 77.44 89.74 98.57 88.40\nuser-assistant interaction histories. Following prior work, we eval-\nuate six question types: single-session user preferences, single-\nsession assistant information, temporal reasoning, multi-session\nreasoning, knowledge update, and single-session user information,\ncorresponding to the SS-Pref, SS-Asst, Temporal, Multi-S, Know.\nUpd., and SS-User columns in Table 4. We compare Mandol with\nrepresentative open-source memory systems, including Mem0 [6],\nMemU [33], Zep [38], MemOS [25], and EverMemOS [14].\nMetrics and environments.To evaluate retrieval quality, we use\nQA accuracy on the two benchmarks. QA accuracy is defined as\nthe percentage of questions whose generated answers are judged\ncorrect or semantically consistent with the ground-truth answers.\nFollowing prior memory system evaluations, we use GPT-4o-mini\nand GPT-4.1-mini as the answer-generation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0050"
+        ],
+        "excerpt": "backbones and adopt\nthe LLM-based answer correctness evaluation script from Ever-\nMemOS [14]. To evaluate system performance, we follow the per-\nformance measurement setup of MemOS [ 25] and measure API-\nlevel Search latency and Add latency. Search latency measures the\nend-to-end time for retrieving relevant memories given an input\nquery, while Add latency measures the online insertion time, in-\ncluding representation generation and index updates. Latency is\nmeasured in milliseconds. We conduct our main experiments on\na cloud server equipped with one NVIDIA H800 GPU with 80 GB\nmemory, 20 Intel Xeon Platinum 8458P vCPUs, and 120 GB system\nmemory. For additional local deployment analysis, we evaluate\nMandol on a laptop equipped with an Intel Core Ultra 9 275HX\nCPU, 96 GB system memory, and an NVIDIA RTX 5090 Laptop\nGPU with 24 GB memory.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6d0cb9b35a973ecde37b237f9316c192e4544fdee05dced679c793cd14ffd70a",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0050",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2965,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 26,
+                "start": 2118,
+                "text": "backbones and adopt\nthe LLM-based answer correctness evaluation script from Ever-\nMemOS [14]. To evaluate system performance, we follow the per-\nformance measurement setup of MemOS [ 25] and measure API-\nlevel Search latency and Add latency. Search latency measures the\nend-to-end time for retrieving relevant memories given an input\nquery, while Add latency measures the online insertion time, in-\ncluding representation generation and index updates. Latency is\nmeasured in milliseconds. We conduct our main experiments on\na cloud server equipped with one NVIDIA H800 GPU with 80 GB\nmemory, 20 Intel Xeon Platinum 8458P vCPUs, and 120 GB system\nmemory. For additional local deployment analysis, we evaluate\nMandol on a laptop equipped with an Intel Core Ultra 9 275HX\nCPU, 96 GB system memory, and an NVIDIA RTX 5090 Laptop\nGPU with 24 GB memory."
+              }
+            ],
+            "text": "backbones and adopt\nthe LLM-based answer correctness evaluation script from Ever-\nMemOS [14]. To evaluate system performance, we follow the per-\nformance measurement setup of MemOS [ 25] and measure API-\nlevel Search latency and Add latency. Search latency measures the\nend-to-end time for retrieving relevant memories given an input\nquery, while Add latency measures the online insertion time, in-\ncluding representation generation and index updates. Latency is\nmeasured in milliseconds. We conduct our main experiments on\na cloud server equipped with one NVIDIA H800 GPU with 80 GB\nmemory, 20 Intel Xeon Platinum 8458P vCPUs, and 120 GB system\nmemory. For additional local deployment analysis, we evaluate\nMandol on a laptop equipped with an Intel Core Ultra 9 275HX\nCPU, 96 GB system memory, and an NVIDIA RTX 5090 Laptop\nGPU with 24 GB memory."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0051"
+        ],
+        "excerpt": "Tables 3 and 4 summarize the accuracy and average token usage\non LoCoMo and LongMemEval. In these tables,\u2020 marks our repro-\nduced EverMemOS results;bolddenotes the best result; underlined\nvalues denote the second-best result. Mandol achieves the best\noverall accuracy on both benchmarks under all reported backbone\nsettings. On LoCoMo, Mandol improves the strongest baseline by\n3.35 percentage points under GPT-4o-mini and by 0.24 percentage\npoints under GPT-4.1-mini, reaching 89.48% and 92.21% overall\naccuracy, respectively. On LongMemEval, Mandol improves the\nstrongest baseline by 7.20 percentage points under GPT-4o-mini\nand by 5.40 percentage points under GPT-4.1-mini, reaching 85.00%\nand 88.40% overall accuracy, respectively.\nAcross question categories, Mandol is particularly effective for\nreasoning and temporal memory queries. On LoCoMo, Mandol\nachieves the best accuracy on single-hop ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Accuracy And Token Efficiency Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "78c18b0dad45f014b54b45cbe7ae472af9a9276789ac3cca6f4f11ebd76b776e",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0051",
+            "pages": [
+              7
+            ],
+            "section": "Accuracy And Token Efficiency Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 7,
+                "section": "Accuracy And Token Efficiency Results",
+                "section_index": 27,
+                "start": 0,
+                "text": "Tables 3 and 4 summarize the accuracy and average token usage\non LoCoMo and LongMemEval. In these tables,\u2020 marks our repro-\nduced EverMemOS results;bolddenotes the best result; underlined\nvalues denote the second-best result. Mandol achieves the best\noverall accuracy on both benchmarks under all reported backbone\nsettings. On LoCoMo, Mandol improves the strongest baseline by\n3.35 percentage points under GPT-4o-mini and by 0.24 percentage\npoints under GPT-4.1-mini, reaching 89.48% and 92.21% overall\naccuracy, respectively. On LongMemEval, Mandol improves the\nstrongest baseline by 7.20 percentage points under GPT-4o-mini\nand by 5.40 percentage points under GPT-4.1-mini, reaching 85.00%\nand 88.40% overall accuracy, respectively.\nAcross question categories, Mandol is particularly effective for\nreasoning and temporal memory queries. On LoCoMo, Mandol\nachieves the best accuracy on single-hop "
+              }
+            ],
+            "text": "Tables 3 and 4 summarize the accuracy and average token usage\non LoCoMo and LongMemEval. In these tables,\u2020 marks our repro-\nduced EverMemOS results;bolddenotes the best result; underlined\nvalues denote the second-best result. Mandol achieves the best\noverall accuracy on both benchmarks under all reported backbone\nsettings. On LoCoMo, Mandol improves the strongest baseline by\n3.35 percentage points under GPT-4o-mini and by 0.24 percentage\npoints under GPT-4.1-mini, reaching 89.48% and 92.21% overall\naccuracy, respectively. On LongMemEval, Mandol improves the\nstrongest baseline by 7.20 percentage points under GPT-4o-mini\nand by 5.40 percentage points under GPT-4.1-mini, reaching 85.00%\nand 88.40% overall accuracy, respectively.\nAcross question categories, Mandol is particularly effective for\nreasoning and temporal memory queries. On LoCoMo, Mandol\nachieves the best accuracy on single-hop "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0057"
+        ],
+        "excerpt": "aligning with the\nother systems.\nTable 5 summarizes the latency results in milliseconds. On the\nserver setting, Mandol achieves the best Search latency across\nP99, P90, and mean latency. Compared with the second-fastest\nsystem MemOS, Mandol reduces P99 Search latency from 777.1 ms\nto 94.8 ms, achieving about an 8.2\u00d7 speedup, and reduces mean\nSearch latency from 440.5 ms to 82.2 ms, achieving about a 5.4\u00d7\nspeedup. Mandol also achieves the best Add latency. For P99 Add\n0 400 800\n0\n2\n4\n6\n8 (a) RAM\n0 400 800\n(b) GPU memory\nTime (s)\nUsage (GiB)\nMem0 MemOS EverMemOS Mandol\nFigure 3: Resource usage during the end-to-end workload.\nlatency, compared with the second-fastest system, Zep, Mandol\nachieves about a 5.6\u00d7 speedup. For mean Add latency, compared\nwith the second-fastest system MemOS, Mandol achieves about\na 4.8\u00d7 speedup. The local deployment results further show that\nMandol remains ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "System Performance Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5178cf113564087a78bf03d9015ce2a74cff47d18d6b64210f0e41737db1cbcc",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0057",
+            "pages": [
+              8
+            ],
+            "section": "System Performance Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 8,
+                "section": "System Performance Results",
+                "section_index": 29,
+                "start": 898,
+                "text": "aligning with the\nother systems.\nTable 5 summarizes the latency results in milliseconds. On the\nserver setting, Mandol achieves the best Search latency across\nP99, P90, and mean latency. Compared with the second-fastest\nsystem MemOS, Mandol reduces P99 Search latency from 777.1 ms\nto 94.8 ms, achieving about an 8.2\u00d7 speedup, and reduces mean\nSearch latency from 440.5 ms to 82.2 ms, achieving about a 5.4\u00d7\nspeedup. Mandol also achieves the best Add latency. For P99 Add\n0 400 800\n0\n2\n4\n6\n8 (a) RAM\n0 400 800\n(b) GPU memory\nTime (s)\nUsage (GiB)\nMem0 MemOS EverMemOS Mandol\nFigure 3: Resource usage during the end-to-end workload.\nlatency, compared with the second-fastest system, Zep, Mandol\nachieves about a 5.6\u00d7 speedup. For mean Add latency, compared\nwith the second-fastest system MemOS, Mandol achieves about\na 4.8\u00d7 speedup. The local deployment results further show that\nMandol remains "
+              }
+            ],
+            "text": "aligning with the\nother systems.\nTable 5 summarizes the latency results in milliseconds. On the\nserver setting, Mandol achieves the best Search latency across\nP99, P90, and mean latency. Compared with the second-fastest\nsystem MemOS, Mandol reduces P99 Search latency from 777.1 ms\nto 94.8 ms, achieving about an 8.2\u00d7 speedup, and reduces mean\nSearch latency from 440.5 ms to 82.2 ms, achieving about a 5.4\u00d7\nspeedup. Mandol also achieves the best Add latency. For P99 Add\n0 400 800\n0\n2\n4\n6\n8 (a) RAM\n0 400 800\n(b) GPU memory\nTime (s)\nUsage (GiB)\nMem0 MemOS EverMemOS Mandol\nFigure 3: Resource usage during the end-to-end workload.\nlatency, compared with the second-fastest system, Zep, Mandol\nachieves about a 5.6\u00d7 speedup. For mean Add latency, compared\nwith the second-fastest system MemOS, Mandol achieves about\na 4.8\u00d7 speedup. The local deployment results further show that\nMandol remains "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0058"
+        ],
+        "excerpt": "efficient even on a laptop. Its local Search latency\nand Add latency are even lower than the server-side latency of\nMemOS.\nThe latency advantage mainly comes from three factors. First,\nmany existing memory systems rely on external database services,\nso each query requires serialization, database execution, result\ntransfer, and parsing before the Python-side pipeline can continue.\nThis database round trip becomes a substantial overhead on the\nserving path. Second, multi-store systems further introduce cross-\ndatabase orchestration overhead, such as retrieving candidates from\na vector store and then issuing additional filtering, expansion, or\nrelation queries to a graph or relational store. These steps increase\nboth tail latency and mean latency. Third, Mandol adopts an in-\nprocess memory architecture, where retrieval indexes, structured\nmemory links, and active memory states are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "System Performance Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8249dae4b7d91195ea43aea151e054718471d358cd8dcf844c9e309b788c31b1",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0058",
+            "pages": [
+              8
+            ],
+            "section": "System Performance Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2682,
+                "page": 8,
+                "section": "System Performance Results",
+                "section_index": 29,
+                "start": 1791,
+                "text": "efficient even on a laptop. Its local Search latency\nand Add latency are even lower than the server-side latency of\nMemOS.\nThe latency advantage mainly comes from three factors. First,\nmany existing memory systems rely on external database services,\nso each query requires serialization, database execution, result\ntransfer, and parsing before the Python-side pipeline can continue.\nThis database round trip becomes a substantial overhead on the\nserving path. Second, multi-store systems further introduce cross-\ndatabase orchestration overhead, such as retrieving candidates from\na vector store and then issuing additional filtering, expansion, or\nrelation queries to a graph or relational store. These steps increase\nboth tail latency and mean latency. Third, Mandol adopts an in-\nprocess memory architecture, where retrieval indexes, structured\nmemory links, and active memory states are "
+              }
+            ],
+            "text": "efficient even on a laptop. Its local Search latency\nand Add latency are even lower than the server-side latency of\nMemOS.\nThe latency advantage mainly comes from three factors. First,\nmany existing memory systems rely on external database services,\nso each query requires serialization, database execution, result\ntransfer, and parsing before the Python-side pipeline can continue.\nThis database round trip becomes a substantial overhead on the\nserving path. Second, multi-store systems further introduce cross-\ndatabase orchestration overhead, such as retrieving candidates from\na vector store and then issuing additional filtering, expansion, or\nrelation queries to a graph or relational store. These steps increase\nboth tail latency and mean latency. Third, Mandol adopts an in-\nprocess memory architecture, where retrieval indexes, structured\nmemory links, and active memory states are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0061"
+        ],
+        "excerpt": "data, retrieval indexes, cached representations, and\nstructured links inside the native in-memory process. GPU memory\nusage is similar across systems because the loaded embedding and\nreranking models are the same under the unified retrieval-model\nsetting. Finally, Mandol completes the LoCoMo workload in 86.18 s,\n4.2\u20139.9\u00d7 faster than the compared systems. This speedup mainly\ncomes from its in-memory construction and update pipeline, which\navoids external database writes and cross-store coordination.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Resource Consumption",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bc08872cb6e51bfb6172340f0e6ed3e7a4c46a2c2484344b1b5d6af4c6bbea3e",
+            "evidence_id": "E6c10bd36f4a4d4a1-B0061",
+            "pages": [
+              9
+            ],
+            "section": "Resource Consumption",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1028,
+                "page": 9,
+                "section": "Resource Consumption",
+                "section_index": 31,
+                "start": 525,
+                "text": "data, retrieval indexes, cached representations, and\nstructured links inside the native in-memory process. GPU memory\nusage is similar across systems because the loaded embedding and\nreranking models are the same under the unified retrieval-model\nsetting. Finally, Mandol completes the LoCoMo workload in 86.18 s,\n4.2\u20139.9\u00d7 faster than the compared systems. This speedup mainly\ncomes from its in-memory construction and update pipeline, which\navoids external database writes and cross-store coordination."
+              }
+            ],
+            "text": "data, retrieval indexes, cached representations, and\nstructured links inside the native in-memory process. GPU memory\nusage is similar across systems because the loaded embedding and\nreranking models are the same under the unified retrieval-model\nsetting. Finally, Mandol completes the LoCoMo workload in 86.18 s,\n4.2\u20139.9\u00d7 faster than the compared systems. This speedup mainly\ncomes from its in-memory construction and update pipeline, which\navoids external database writes and cross-store coordination."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.29778",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7166901562",
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Retrieved contexts are validated through end-to-end question answering against benchmark ground truth using separate LLM judges, and system performance is measured by objective API-level latency profiling.",
+          "final_evaluation_signal": "The headline outcomes are established by downstream QA accuracy on LoCoMo and LongMemEval using GPT-4o-mini and GPT-4.1-mini answer generation with an LLM-based correctness script, plus direct wall-clock latency measurements.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The retrieval pipeline is shaped by static pretrained retrieval models (Qwen3-Embedding-0.6B and bge-reranker-v2-m3) plus hand-designed heuristic scoring formulas such as MAD thresholding, exponential time decay, and MMR.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0002",
+          "E6c10bd36f4a4d4a1-B0003",
+          "E6c10bd36f4a4d4a1-B0008",
+          "E6c10bd36f4a4d4a1-B0009",
+          "E6c10bd36f4a4d4a1-B0010",
+          "E6c10bd36f4a4d4a1-B0028",
+          "E6c10bd36f4a4d4a1-B0029",
+          "E6c10bd36f4a4d4a1-B0030",
+          "E6c10bd36f4a4d4a1-B0035",
+          "E6c10bd36f4a4d4a1-B0036",
+          "E6c10bd36f4a4d4a1-B0037",
+          "E6c10bd36f4a4d4a1-B0039",
+          "E6c10bd36f4a4d4a1-B0047",
+          "E6c10bd36f4a4d4a1-B0048",
+          "E6c10bd36f4a4d4a1-B0049",
+          "E6c10bd36f4a4d4a1-B0050",
+          "E6c10bd36f4a4d4a1-B0051",
+          "E6c10bd36f4a4d4a1-B0057",
+          "E6c10bd36f4a4d4a1-B0058",
+          "E6c10bd36f4a4d4a1-B0061"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "437b64aa60540d4c1d741433ee95768e4d2cea92392bc5eb32ddf7c2f4403f50"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7166901562",
+        "claim_evidence_alignment": "Claims of superior retrieval accuracy, lower token consumption, and substantial latency reductions (e.g., 5.4x search speedup, 4.8x add speedup under 10 QPS) are supported by comparative tables and profiling across server and consumer hardware.",
+        "context_id": "6c10bd36f4a4d4a16f1a87e1294c02cd0153071300f94f32501c06908f1ca43b",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation covers both task quality across two established long-context conversational benchmarks (LoCoMo and LongMemEval) with multiple LLM generation backbones, and systems-level measurements (P99/P90/mean search and insertion latencies, RAM/GPU footprint). Mandol consistently outperforms standard baselines like Mem0, Zep, and EverMemOS in both accuracy and speed.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Retrieved contexts are assessed through end-to-end question answering evaluated on benchmark ground truth using independent LLM judges, alongside wall-clock API latency measurements.",
+          "final_evaluation_signal": "Downstream QA task accuracy evaluated on external benchmarks (LoCoMo and LongMemEval) via established GPT-4o-mini and GPT-4.1-mini evaluation scripts, as well as direct system latency profiling.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pre-trained static retrieval models (Qwen3-Embedding-0.6B and bge-reranker-v2-m3) combined with heuristic scoring formulas (MAD thresholding, exponential time decay, and MMR).",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E6c10bd36f4a4d4a1-B0002",
+          "E6c10bd36f4a4d4a1-B0003",
+          "E6c10bd36f4a4d4a1-B0008",
+          "E6c10bd36f4a4d4a1-B0009",
+          "E6c10bd36f4a4d4a1-B0010",
+          "E6c10bd36f4a4d4a1-B0028",
+          "E6c10bd36f4a4d4a1-B0029",
+          "E6c10bd36f4a4d4a1-B0030",
+          "E6c10bd36f4a4d4a1-B0035",
+          "E6c10bd36f4a4d4a1-B0036",
+          "E6c10bd36f4a4d4a1-B0037",
+          "E6c10bd36f4a4d4a1-B0039",
+          "E6c10bd36f4a4d4a1-B0047",
+          "E6c10bd36f4a4d4a1-B0048",
+          "E6c10bd36f4a4d4a1-B0049",
+          "E6c10bd36f4a4d4a1-B0050",
+          "E6c10bd36f4a4d4a1-B0051",
+          "E6c10bd36f4a4d4a1-B0057",
+          "E6c10bd36f4a4d4a1-B0058",
+          "E6c10bd36f4a4d4a1-B0061"
+        ],
+        "limitations": "The manuscript identifies that high-level memory extraction depends on an LLM during offline ingestion and notes slight underperformance on specific subtasks against models with significantly larger embedding and reranker backbones.",
+        "method_assessment": "The system design is thoroughly documented with clear architectural layers, explicit formulas for MAD thresholding and cross-source conflict resolution, and detailed API designs backed by embedded DuckDB persistence. Retrieval executes entirely via non-LLM algorithmic operations, eliminating runtime model inference overhead.",
+        "quality_rationale": "The manuscript provides a sound systems-oriented contribution addressing latency and fragmentation bottlenecks in LLM agent memory architectures. The empirical evidence across established conversational benchmarks and thorough systems benchmarking is complete and robust.",
+        "scoped_contribution": "The paper introduces Mandol, an in-process, memory-native long-term agent memory system integrating a hierarchical structured semantic graph, in-memory unified data structures (SemanticMap and SemanticGraph), and an LLM-free quantitative retrieval mechanism featuring adaptive routing, MAD-based denoising, freshness arbitration, and MMR-based context selection.",
+        "source_content_hash": "437b64aa60540d4c1d741433ee95768e4d2cea92392bc5eb32ddf7c2f4403f50"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript provides a sound systems-oriented contribution addressing latency and fragmentation bottlenecks in LLM agent memory architectures. The empirical evidence across established conversational benchmarks and thorough systems benchmarking is complete and robust.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "437b64aa60540d4c1d741433ee95768e4d2cea92392bc5eb32ddf7c2f4403f50",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript identifies that high-level memory extraction depends on an LLM during offline ingestion and notes slight underperformance on specific subtasks against models with significantly larger embedding and reranker backbones."
   },
   "semantic_scholar_id": "7c31c2a517bcab53fd7c6d2767c3f53356e5bdb8",
   "source": "openalex",
@@ -185,7 +1835,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-18 08:12:20",
-    "generated_at": "2026-11-05 11:55:29",
+    "generated_at": "2026-11-06 11:53:59",
     "last_seen_at": "2026-07-23 08:49:00",
     "metadata_sources": [
       "openalex"
@@ -99,9 +99,9 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-18T08:05:19.609343+00:00",
+    "assessed_at": "2026-11-06T11:51:54.124252+00:00",
     "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-promotion-v1",
+    "assessment_version": "quality-promotion-v2",
     "assessor_model": null,
     "assessor_type": "deterministic",
     "combined_rank_score": 0.93,
@@ -119,7 +119,7 @@
     "evidence": [],
     "full_text_assessed": false,
     "full_text_url": null,
-    "gate_version": "dual-promotion-v1",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
       "No extractable manuscript text was available."
@@ -128,13 +128,29 @@
     "paper_type": "survey_or_review",
     "positive_signals": [],
     "promotion": {
-      "adjudicator_model": "anthropic/claude-sonnet-4.6",
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
       "outcome": "manuscript_unavailable",
-      "primary_model": "deepseek/deepseek-v4-pro-0813"
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
     },
     "rationale": "Manuscript unavailable; no scientific decision.",
     "recommendation": "unknown",
-    "rubric_version": "scholarly-rubric-v1",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "6771786aa636c87f0ef81a1462d0db5114b1f1f13c75480d1abffd6cc8bc904b",
     "status": "uncertain",
     "suppressed": false,

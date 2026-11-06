@@ -43,7 +43,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-22 08:47:27",
-    "generated_at": "2026-11-05 11:55:29",
+    "generated_at": "2026-11-06 11:53:59",
     "last_seen_at": "2026-07-28 09:07:57",
     "metadata_sources": [
       "openalex",
@@ -110,36 +110,1276 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-06T11:51:55.499186+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Scientific response or integrity validation failed; technical review pending.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 95664,
+      "assessment_input_sha256": "8c44d221a5788cab605b5245b687e12e0598b43406adaab13bc65fa884809cfb",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7170225285",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 92012,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 90472,
+      "evidence_block_count": 132,
+      "evidence_context_characters": 111722,
+      "evidence_context_id": "8edaff2d76f3a5f3dbbdb19bf7fdedac43df56c5076d5d1cde88c30f2c627b8c",
+      "evidence_context_sha256": "74e5f9ab2c4421fc3a5073f6b5decd32e7a3663d6f3099271e91816d6953bbf8",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 92068,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "extracted_pages": 29,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "9b436e8801a98c8fd10921fa5eef25b8d7654a0b04a3dfcdfba29d52d7ecd912",
+        "source_url": "https://arxiv.org/pdf/2607.18665",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 92012,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 305,
+          "supplied_characters": 305
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1509,
+          "supplied_characters": 1509
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1083,
+          "supplied_characters": 1083
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 3,
+          "source_characters": 2797,
+          "supplied_characters": 2797
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 1039,
+          "supplied_characters": 1039
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 5,
+          "source_characters": 660,
+          "supplied_characters": 660
+        },
+        {
+          "heading": "Scihazard",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 926,
+          "supplied_characters": 926
+        },
+        {
+          "heading": "Data Generation Pipeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 708,
+          "supplied_characters": 708
+        },
+        {
+          "heading": "Track 1: Substance-Driven Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1179,
+          "supplied_characters": 1179
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Track 2: Scenario-Driven Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 914,
+          "supplied_characters": 914
+        },
+        {
+          "heading": "Hazard Severity Labeling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1122,
+          "supplied_characters": 1122
+        },
+        {
+          "heading": "Oversafety Question Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 414,
+          "supplied_characters": 414
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Benchmark Distribution Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 619,
+          "supplied_characters": 619
+        },
+        {
+          "heading": "Motivation For Harm Decomposition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1481,
+          "supplied_characters": 1481
+        },
+        {
+          "heading": "Metric Formulation4.2.1Executabilitybranch: Importance-Weighted Dynamic Checklist",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1158,
+          "supplied_characters": 1158
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 2445,
+          "supplied_characters": 2445
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 993,
+          "supplied_characters": 993
+        },
+        {
+          "heading": "Human Annotation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 897,
+          "supplied_characters": 897
+        },
+        {
+          "heading": "Inter-Annotator Agreement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1372,
+          "supplied_characters": 1372
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 1497,
+          "supplied_characters": 1497
+        },
+        {
+          "heading": "Metric-Expert Alignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1559,
+          "supplied_characters": 1559
+        },
+        {
+          "heading": "Metric Robustness Under Perturbation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 299,
+          "supplied_characters": 299
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 24,
+          "source_characters": 2031,
+          "supplied_characters": 2031
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 25,
+          "source_characters": 555,
+          "supplied_characters": 555
+        },
+        {
+          "heading": "Experimental Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 26,
+          "source_characters": 940,
+          "supplied_characters": 940
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 27,
+          "source_characters": 3079,
+          "supplied_characters": 3079
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 28,
+          "source_characters": 279,
+          "supplied_characters": 279
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 29,
+          "source_characters": 1140,
+          "supplied_characters": 1140
+        },
+        {
+          "heading": "Back matter: Acknowledgements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 129,
+          "supplied_characters": 129
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 31,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 2930,
+          "supplied_characters": 2930
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 33,
+          "source_characters": 923,
+          "supplied_characters": 923
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "results",
+          "section_index": 34,
+          "source_characters": 4218,
+          "supplied_characters": 4218
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "results",
+          "section_index": 35,
+          "source_characters": 1383,
+          "supplied_characters": 1383
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "results",
+          "section_index": 36,
+          "source_characters": 3258,
+          "supplied_characters": 3258
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "results",
+          "section_index": 37,
+          "source_characters": 3146,
+          "supplied_characters": 3146
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "results",
+          "section_index": 38,
+          "source_characters": 3078,
+          "supplied_characters": 3078
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "results",
+          "section_index": 39,
+          "source_characters": 1712,
+          "supplied_characters": 1712
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "results",
+          "section_index": 40,
+          "source_characters": 4281,
+          "supplied_characters": 4281
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "results",
+          "section_index": 41,
+          "source_characters": 875,
+          "supplied_characters": 875
+        },
+        {
+          "heading": "Appendix: Algorithm Flow",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 144,
+          "supplied_characters": 144
+        },
+        {
+          "heading": "Appendix: Refusal Indicator Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 827,
+          "supplied_characters": 827
+        },
+        {
+          "heading": "Appendix: Scoring Pipeline: Full Algorithmic Specification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 406,
+          "supplied_characters": 406
+        },
+        {
+          "heading": "Appendix: E-Branch Specification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 1209,
+          "supplied_characters": 1209
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "results",
+          "section_index": 46,
+          "source_characters": 2363,
+          "supplied_characters": 2363
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "results",
+          "section_index": 47,
+          "source_characters": 254,
+          "supplied_characters": 254
+        },
+        {
+          "heading": "Appendix: N-Branch Specification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 1531,
+          "supplied_characters": 1531
+        },
+        {
+          "heading": "Appendix: Web Retrieval Reproducibility And Caching Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 2026,
+          "supplied_characters": 2026
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "results",
+          "section_index": 50,
+          "source_characters": 409,
+          "supplied_characters": 409
+        },
+        {
+          "heading": "Appendix: Variant Definitions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 2339,
+          "supplied_characters": 2339
+        },
+        {
+          "heading": "Appendix: Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 411,
+          "supplied_characters": 411
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "results",
+          "section_index": 53,
+          "source_characters": 3374,
+          "supplied_characters": 3374
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "results",
+          "section_index": 54,
+          "source_characters": 1211,
+          "supplied_characters": 1211
+        },
+        {
+          "heading": "Appendix: Finding 3: Pervasive Safety-Utility Misalignment.",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 982,
+          "supplied_characters": 982
+        },
+        {
+          "heading": "Appendix: Finding 4: Open-Source Vs. Closed-Source Safety Profiles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 822,
+          "supplied_characters": 822
+        },
+        {
+          "heading": "Appendix: Finding 5: Science-Specific Models Offer No Safety Advantage",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 499,
+          "supplied_characters": 499
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "results",
+          "section_index": 58,
+          "source_characters": 251,
+          "supplied_characters": 251
+        },
+        {
+          "heading": "Appendix: Finding 6: Agentic Framework Comparison: Deerflow Vs. Webthinker",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 1876,
+          "supplied_characters": 1876
+        },
+        {
+          "heading": "Appendix: The Necessity Of Scihazard And Thedeharm-Score",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 1221,
+          "supplied_characters": 1221
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "results",
+          "section_index": 61,
+          "source_characters": 2161,
+          "supplied_characters": 2161
+        },
+        {
+          "heading": "Appendix: Design Rationale: Decomposition Into Executability And Net-New Risk",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 2203,
+          "supplied_characters": 2203
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "results",
+          "section_index": 63,
+          "source_characters": 570,
+          "supplied_characters": 570
+        },
+        {
+          "heading": "Appendix: Limitations And Future Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 3183,
+          "supplied_characters": 3183
+        },
+        {
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "results",
+          "section_index": 65,
+          "source_characters": 863,
+          "supplied_characters": 863
+        }
+      ],
+      "selected_characters": 90472,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "selected_sections": [
+        {
+          "characters": 305,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1509,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1083,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2797,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 2
+        },
+        {
+          "characters": 1039,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 660,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 3
+        },
+        {
+          "characters": 926,
+          "heading": "Scihazard",
+          "page": 3
+        },
+        {
+          "characters": 708,
+          "heading": "Data Generation Pipeline",
+          "page": 3
+        },
+        {
+          "characters": 1179,
+          "heading": "Track 1: Substance-Driven Generation",
+          "page": 3
+        },
+        {
+          "characters": 98,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 4
+        },
+        {
+          "characters": 914,
+          "heading": "Track 2: Scenario-Driven Generation",
+          "page": 4
+        },
+        {
+          "characters": 1122,
+          "heading": "Hazard Severity Labeling",
+          "page": 4
+        },
+        {
+          "characters": 414,
+          "heading": "Oversafety Question Generation",
+          "page": 4
+        },
+        {
+          "characters": 208,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 5
+        },
+        {
+          "characters": 619,
+          "heading": "Benchmark Distribution Analysis",
+          "page": 5
+        },
+        {
+          "characters": 1481,
+          "heading": "Motivation For Harm Decomposition",
+          "page": 5
+        },
+        {
+          "characters": 1158,
+          "heading": "Metric Formulation4.2.1Executabilitybranch: Importance-Weighted Dynamic Checklist",
+          "page": 5
+        },
+        {
+          "characters": 2445,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 6
+        },
+        {
+          "characters": 993,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 7
+        },
+        {
+          "characters": 897,
+          "heading": "Human Annotation",
+          "page": 7
+        },
+        {
+          "characters": 1372,
+          "heading": "Inter-Annotator Agreement",
+          "page": 7
+        },
+        {
+          "characters": 1497,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 8
+        },
+        {
+          "characters": 1559,
+          "heading": "Metric-Expert Alignment",
+          "page": 8
+        },
+        {
+          "characters": 299,
+          "heading": "Metric Robustness Under Perturbation",
+          "page": 8
+        },
+        {
+          "characters": 2031,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 9
+        },
+        {
+          "characters": 555,
+          "heading": "Experimental Setup",
+          "page": 9
+        },
+        {
+          "characters": 940,
+          "heading": "Experimental Analysis",
+          "page": 9
+        },
+        {
+          "characters": 3079,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 10
+        },
+        {
+          "characters": 279,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 11
+        },
+        {
+          "characters": 1140,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 129,
+          "heading": "Back matter: Acknowledgements",
+          "page": 11
+        },
+        {
+          "characters": 98,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 12
+        },
+        {
+          "characters": 2930,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 923,
+          "heading": "Evaluation",
+          "page": 12
+        },
+        {
+          "characters": 4218,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 13
+        },
+        {
+          "characters": 1383,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 14
+        },
+        {
+          "characters": 3258,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 15
+        },
+        {
+          "characters": 3146,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 16
+        },
+        {
+          "characters": 3078,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 17
+        },
+        {
+          "characters": 1712,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 18
+        },
+        {
+          "characters": 4281,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 19
+        },
+        {
+          "characters": 875,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 20
+        },
+        {
+          "characters": 144,
+          "heading": "Appendix: Algorithm Flow",
+          "page": 20
+        },
+        {
+          "characters": 827,
+          "heading": "Appendix: Refusal Indicator Implementation Details",
+          "page": 20
+        },
+        {
+          "characters": 406,
+          "heading": "Appendix: Scoring Pipeline: Full Algorithmic Specification",
+          "page": 20
+        },
+        {
+          "characters": 1209,
+          "heading": "Appendix: E-Branch Specification",
+          "page": 20
+        },
+        {
+          "characters": 2363,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 21
+        },
+        {
+          "characters": 254,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 22
+        },
+        {
+          "characters": 1531,
+          "heading": "Appendix: N-Branch Specification",
+          "page": 22
+        },
+        {
+          "characters": 2026,
+          "heading": "Appendix: Web Retrieval Reproducibility And Caching Protocol",
+          "page": 22
+        },
+        {
+          "characters": 409,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 23
+        },
+        {
+          "characters": 2339,
+          "heading": "Appendix: Variant Definitions",
+          "page": 23
+        },
+        {
+          "characters": 411,
+          "heading": "Appendix: Results",
+          "page": 23
+        },
+        {
+          "characters": 3374,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 24
+        },
+        {
+          "characters": 1211,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 25
+        },
+        {
+          "characters": 982,
+          "heading": "Appendix: Finding 3: Pervasive Safety-Utility Misalignment.",
+          "page": 25
+        },
+        {
+          "characters": 822,
+          "heading": "Appendix: Finding 4: Open-Source Vs. Closed-Source Safety Profiles",
+          "page": 25
+        },
+        {
+          "characters": 499,
+          "heading": "Appendix: Finding 5: Science-Specific Models Offer No Safety Advantage",
+          "page": 25
+        },
+        {
+          "characters": 251,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 26
+        },
+        {
+          "characters": 1876,
+          "heading": "Appendix: Finding 6: Agentic Framework Comparison: Deerflow Vs. Webthinker",
+          "page": 26
+        },
+        {
+          "characters": 1221,
+          "heading": "Appendix: The Necessity Of Scihazard And Thedeharm-Score",
+          "page": 26
+        },
+        {
+          "characters": 2161,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 27
+        },
+        {
+          "characters": 2203,
+          "heading": "Appendix: Design Rationale: Decomposition Into Executability And Net-New Risk",
+          "page": 27
+        },
+        {
+          "characters": 570,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 28
+        },
+        {
+          "characters": 3183,
+          "heading": "Appendix: Limitations And Future Work",
+          "page": 28
+        },
+        {
+          "characters": 863,
+          "heading": "Deepsafe-Scihazard: A Benchmark For Measuring Scientific Safety Risks With Decomposed Harm Scoring",
+          "page": 29
+        }
+      ],
+      "selected_text_sha256": "8c44d221a5788cab605b5245b687e12e0598b43406adaab13bc65fa884809cfb",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "9b436e8801a98c8fd10921fa5eef25b8d7654a0b04a3dfcdfba29d52d7ecd912",
+      "source_pages": 29,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
     "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_url": "https://arxiv.org/pdf/2607.18665",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "protocol_failure",
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google"
+    },
+    "rationale": "Scientific response or integrity validation failed; technical review pending.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "9b436e8801a98c8fd10921fa5eef25b8d7654a0b04a3dfcdfba29d52d7ecd912",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -173,7 +1413,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

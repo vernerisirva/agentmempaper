@@ -1,23 +1,23 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-05](2026-11-05.md).
+Latest daily digest: [2026-11-06](2026-11-06.md).
 
-# Paper Scout Digest - 2026-11-05
+# Paper Scout Digest - 2026-11-06
 
 ## Run Summary
 
-- **Run ID:** 62
-- **Candidates fetched:** 57
-- **New unique papers:** 50
-- **Relevant:** 5
+- **Run ID:** 63
+- **Candidates fetched:** 103
+- **New unique papers:** 97
+- **Relevant:** 8
 - **Maybe relevant:** 0
-- **Irrelevant:** 52
-- **Source summary:** arxiv: 3, openalex: 50, semantic_scholar: 4
+- **Irrelevant:** 95
+- **Source summary:** arxiv: 1, openalex: 100, semantic_scholar: 2
 
 ## Source Warnings
 
-- openalex failed for 'deepseek engram': http error for https://api.openalex.org/works?search=deepseek+engram&filter=from_publication_date%3A2026-09-21&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'hashed memory language model': http error for https://api.openalex.org/works?search=hashed+memory+language+model&filter=from_publication_date%3A2026-10-26&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex: incomplete discovery window for 'deepseek engram'; single-page record limit reached.
+- openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
 - openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'Engram'; single-page record limit reached.

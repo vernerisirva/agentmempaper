@@ -59,16 +59,162 @@
             <p>Agent memory systems are increasingly evaluated against RAG and full-context baselines, but reported gains often mix changes in the memory method with changes in the language model, embedding model, or retrieval pipeline, making it unclear what is actually being measured. We present MemDelta, a controlled evaluation...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous, well-designed measurement study that cleanly exposes critical methodological confounds in LLM agent memory evaluation with substantial empirical support and controlled statistical contrasts.</p>
+      <p>The authors clearly acknowledge key limitations, including restricting the Mem0 comparison to 88 instances across 2 question types due to write-path compute costs, reliance on synthetic benchmark dialogues, and approximate rather than identical embedding matching for Mem0.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-09T12:32:39.895876+00:00.</p>
+        <p>Coverage: 42678 of 42678 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Agent memory systems are increasingly evaluated against RAG and full-context
+baselines, but reported gains often mix changes in the memory method with changes
+in the language model, embedding model, or retrieval pipeline, making it unclear
+what is actually being measured. We presentMemDelta, a controlled evaluation
+protocol that varies one component at a time on LongMemEval-S (500 questions,
+50+ sessions, three model families). Four findings emerge: (1) verbatim RAG
+matches full-context GPT-4o-mini (47.2% vs. 49.8%, p= 0.34), but the ranking
+reverses across models: Gemini gains +14pp from full context, while Sonnet
+gains +31pp from RAG, partly because it refuses 63% of full-context queries;
+(2) swapping only the embedding model in an identical pipeline shifts accuracy
+by +6.2pp at n= 500 (p= 0.004 ), and Mem0 beats MiniLM-RAG by +11pp
+but loses to cloud-RAG by 1.2pp, so one variable </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>benchmarks. The
+gap we identify is methodological: the field lacks a protocol that varies one component at a time,
+holds the rest fixed, and reports whether observed differences survive a significance test.
+We presentMemDelta, a controlled evaluation protocol for agent memory systems. The protocol is
+deliberately simple: vary one component at a time while holding the rest of the pipeline fixed. We
+apply this principle to four common sources of hidden variation, shown in Figure 1: retrieval quality,
+embedding choice, language-model behavior, and write-path cost. Retrieval quality asks whether the
+relevant evidence is actually surfaced. Embedding choice asks whether a reported memory gain is
+instead a better vector representation. Model behavior asks whether the generator uses, ignores, or
+refuses the supplied evidence. Write-path cost asks whether a memory system&#x27;s advantage comes
+from </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our evaluation is designed around a single principle:vary one factor at a time. Rather than
+comparing systems that differ along multiple axes simultaneously, we construct paired conditions
+that isolate one variable while holding the model, judge, questions, and input history fixed (Figure 2).</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 defines the seven strategies, ordered by write-path complexity. Each receives the same user
+history and evaluation questions; they differ only in how prior information is made available to the
+answering model.
+Three design choices deserve explanation. First, S1 (full context) is not intended as a practical
+deployment strategy; it is a diagnostic control that removes retrieval as a bottleneck, allowing us
+to measure whether a model can use information when it is explicitly present. Second, S4b is
+byte-identical to S4 except for the embedding model. The chunking, top-k, vector-store code, prompt
+template, answer model, and judge are all held fixed. Any accuracy difference between S4 and S4b
+is therefore attributable to embedding quality alone. Third, S3 (Mem0) uses OpenAI embeddings
+4
+Table 2: Controlled comparisons. Each row varies one factor; all others are held fixed.
+Comparison </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Varied factor Held fixedn
+S0→S4→S4b Retrieval quality Model, judge, data 500
+Srand vs S4 Retrieval relevance Chunking, top-k, model 500
+S1 vs S4×3 models Base-model behavior Strategy, judge, data 100–500
+S4 vs S4b Embedding model Pipeline code, data, model 500
+S4b vs S3 (Mem0) Write-path complexity Embedding (≈matched), model 88
+S2 vs S4 Storage control Model, judge, data 100
+internally (text-embedding-ada-002), while S4b uses text-embedding-3-small. These are
+different models from the same provider; the comparison approximately but not perfectly controls for
+embedding quality. We use S4b as the closest available controlled baseline for isolating the effect of
+LLM extraction on the write path, and note this imperfect match as a limitation.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Dataset.LongMemEval-S [Wu et al., 2024]: 500 questions across 6 types (single-session-user:
+70, single-session-assistant: 56, single-session-preference: 30, temporal-reasoning: 133, knowledge-
+update: 78, multi-session: 133). Each instance has 39–66 sessions (mean 50.2), totaling ∼115K
+tokens. The question-type diversity lets us check whether pairwise effects are uniform or concentrated
+in specific subsets.
+Models.We run the full strategy matrix withGPT-4o-mini( n= 500 ) and evaluate selected
+comparisons withClaude Sonnet( n= 300–500) andGemini 2.5 Flash( n= 100). The purpose of
+three answer models is a robustness check on the protocol itself: if a memory conclusion is robust,
+the relative ordering of strategies should persist across models. If the ordering reverses when only
+the answer model changes, then the benchmark result is confounded by model-specific long-context
+behavior rather </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rect/incorrect against ground truth).
+Because the design is paired, any judge bias constant across strategies cancels in pairwise compar-
+isons.
+Metrics. Accuracywith 95% bootstrap CIs (2,000 resamples).Paired significance:McNemar&#x27;s
+test on per-question correctness for each comparison in Table 2.Write-path cost:wall-clock
+ingest time, LLM call count, and dollar cost per instance. Cost is not secondary: a strategy that
+5
+Table 3: Main results (GPT-4o-mini, n= 500 unless noted). McNemar vs. S4: * p &lt; .05, ** p &lt; .01,
+***p &lt; .001.
+StrategyNAccuracy 95% CI vs. S4 (p)
+S0: No Memory 500 2.2% [1.0, 3.6]−45.0pp***
+S_rand: Random RAG 500 3.2% [1.8, 4.8]−44.0pp***
+S2: Self-Memory 100 42.0% [32.0, 52.0]−5.2pp*
+S4: Verbatim RAG (MiniLM) 500 47.2% [42.8, 51.4] —
+S1: Full Context 500 49.8% [45.6, 54.0]+2.6pp
+S4b: Verbatim RAG (cloud) 500 53.4% [49.0, 57.8]+6.2pp**
+Table 4: Cross-model comparison on </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>matched instances.
+ModelnS4 (RAG) S1 (Full)∆
+GPT-4o-mini 500 47.2 49.8+2.6pp
+Claude Sonnet 300 44.7 14.0−30.7pp
+Sonnet (truncated, 47K) 100 61.0 38.0−23.0pp
+Gemini 2.5 Flash 100 56.070.0+14.0pp
+wins by 2pp at 100× the ingest cost is a different artifact than one that wins at parity, and the
+controlled-comparison framing is what makes that trade-off legible.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Varied:base model (GPT-4o-mini, Sonnet, Gemini).Fixed:strategy, data, judge.
+The same S1-vs-S4 comparison yields three qualitatively different conclusions. On GPT-4o-mini,
+they are indistinguishable (p= 0.34). On Gemini Flash, full context wins by +14pp. On Sonnet,
+retrieval wins by+31pp.
+A paper evaluated on a single model would draw a confident conclusion, and that conclusion would
+be different depending on which model was chosen.
+Sonnet&#x27;s length-driven failure.63% (188/300) of Sonnet&#x27;s full-context errors are explicit refusals:
+&quot;I don&#x27;t see this in our conversation history,&quot; despite the answer being present in the 115K-token
+context. A truncated-context control (∼47K tokens) reduces refusals from 63% to 41% and raises
+accuracy from 14% to 38%, consistent with a length-driven attention failure. Even at 47K, Sonnet
+trails RAG (61%).
+The refusal pattern is not uniform across question </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Varied:embedding model (MiniLM → cloud).Fixed:retrieval code, chunking, data, answer model,
+judge.
+Switching embeddings within an otherwise identical pipeline raises accuracy from 47.2% to 53.4%
+(+6.2pp, p= 0.004). The gains are largest on temporal ( +10.5pp), multi-session (+11.3pp), and
+single-session-user (+11.4pp). The direction is not uniform: cloud embeddings underperform on
+SS-Asst and SS-Pref.
+This is a hidden confound in memory comparisons. A single component swap, costing nothing on the
+write path, produces gains comparable to those attributed to architectural changes. Papers comparing
+systems with different embeddings may be confounding embedding quality with architecture.
+Qualitative examples.The embedding effect is concrete: it changes which passages are retrieved,
+and thus which answers are correct. For the question &quot;How long is your daily commute?&quot; (ground
+truth: 45 </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Varied:write-path complexity (0 LLM calls → 1,000+).Fixed:embedding ( ≈matched), answer
+model, judge.
+On the 88 matched instances where comparison is feasible, Mem0 (72.7%) does not outperform
+verbatim RAG with comparable embeddings (73.9%, p= 1.0, McNemar; 90% CI on ∆: [ −10.8,
++8.4]pp). Note that p= 1.0 indicates the paired disagreements are balanced, not that the systems are
+provably equivalent; the wide CI reflects the small sample size. On SS-User, both score 88.2%. On
+multi-session, S3 (20%) does not outperform S4b (25%).
+7
+Table 6: Matched comparison on 88 instances where S3 produced valid results (68 SS-User + 20
+Multi-Session, GPT-4o-mini). S3 was evaluated on the first 100 dataset instances (ordered by question
+type in the benchmark) due to its high write-path cost (∼120 min/instance). Of 100 runs, 12 failed
+due to Mem0 API errors (empty responses, database lock timeouts, or </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>extraction crashes); these are
+excluded rather than counted as incorrect, which may slightly favor S3.
+Strategy Overall SS-User (n= 68) Multi-Sess (n= 20)
+S1: Full Context 60.2% 72.1% 20.0%
+S4: Verbatim RAG (MiniLM) 61.4% 76.5% 10.0%
+S3: Mem0 72.7% 88.2% 20.0%
+S4b: Verbatim RAG (cloud)73.9%88.2%25.0%
+Table 7: Write-path cost per instance ( ∼50 sessions). Cost from pilot ( n= 5); accuracy from full
+runs.
+Strategy Ingest time LLM calls Write cost Accuracy
+S0: No memory 0 s 0 $0 2.2%
+S4b: Verbatim RAG∼60 s 0 $0.01 53.4%
+S2: Self-memory∼90 min∼250 $0.34 42.0%
+S3: Mem0∼120 min 1,000+ $0.50+ 72.7% †
+Scope.This comparison covers 2 of 6 question types. On temporal reasoning and knowledge-
+update questions, where extraction might plausibly help most, we were unable to run S3 due to cost
+constraints. We therefore do not claim extraction is generally unhelpful. We report that, on the
+subset where </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>availability.
+3. Test onat least two model familiesand report whether rank orderings are stable.
+4. Discloseembedding modelsand report embedding-swap sensitivity.
+5. Reportwrite-path cost(LLM calls, time, dollars) alongside accuracy.
+6. Usematched-instance comparisonswhen evaluating costly systems on subsets.
+We release the evaluation protocol, code, and all results as open-source. Extended discussion,
+including analysis of when architecture might matter, is in Appendix B.
+Limitations.Mem0 was evaluated on 88 instances covering 2 of 6 question types; temporal reasoning
+and knowledge-update questions, where extraction might help most, are not covered. Sonnet full-
+context was evaluated on 300 of 500 instances (4 of 6 types) due to prohibitive cost. All results are
+on LongMemEval-S, which uses synthetic dialogues that may favor verbatim retrieval over extraction
+due to higher lexical </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>overlap; generalization to real user data is untested. GPT-4o-mini judges all
+models (effect sizes are too large for judge bias to explain, but human spot-checks would strengthen
+confidence). The S4b-vs-S3 comparison uses different OpenAI embedding models (text-embedding-
+3-small vs. ada-002), so the embedding control is approximate. We report controlled contrasts, not an
+additive causal model; the variables may interact.
+9</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>All accuracy judgments use GPT-4o-mini with a binary prompt: given the ground-truth answer and
+the model&#x27;s response, output YES if the response contains the correct information, NO otherwise.
+The judge does not see the question context or memory, only the ground truth and the candidate
+answer. This avoids inflating scores for verbose but incorrect responses.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +253,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

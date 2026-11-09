@@ -28,13 +28,13 @@
   "first_seen_at": "2026-11-06 11:49:29",
   "first_seen_date": "2026-11-06",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-11-06 11:49:29",
-  "last_seen_date": "2026-11-06",
+  "is_new": false,
+  "last_seen_at": "2026-11-09 12:30:09",
+  "last_seen_date": "2026-11-09",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-06 11:49:47",
   "notified_date": "2026-11-06",
   "openalex_id": "W7119689058",
@@ -44,8 +44,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-11-06 11:49:29",
-    "generated_at": "2026-11-06 11:53:59",
-    "last_seen_at": "2026-11-06 11:49:29",
+    "generated_at": "2026-11-09 12:35:02",
+    "last_seen_at": "2026-11-09 12:30:09",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -107,36 +107,2599 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-09T12:34:19.642954+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Mind2Report provides an actionable, clearly articulated architectural design addressing specific failure modes in commercial agentic research. The validation is robust, featuring extensive baseline comparisons, transparent prompting details, ablation studies, and independent human expert correlation analysis.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 92425,
+      "assessment_input_sha256": "dab9b6ae6199d5776df9bf7caef99686d7321623a5c6c7ee85d02c54d8d29ad2",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.1145/3799682.3840672",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 89571,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 87329,
+      "evidence_block_count": 149,
+      "evidence_context_characters": 105971,
+      "evidence_context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+      "evidence_context_sha256": "1478f7dd5f46314cc58ae1b84edbadfe048374b5556deee2f0167db2b244f116",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 89619,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "extracted_pages": 25,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "8b4dcd422a19af8373493b408b11f51c12ecb9948131c0a9e6bfa3e5e81371d5",
+        "source_url": "https://arxiv.org/pdf/2601.04879",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 89571,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Mind2Report: Expert-Level Commercial Report Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 389,
+          "supplied_characters": 389
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1854,
+          "supplied_characters": 1854
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 759,
+          "supplied_characters": 759
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 4510,
+          "supplied_characters": 4510
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 956,
+          "supplied_characters": 956
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 180,
+          "supplied_characters": 180
+        },
+        {
+          "heading": "Automated Report Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1472,
+          "supplied_characters": 1472
+        },
+        {
+          "heading": "Deep Research Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1479,
+          "supplied_characters": 1479
+        },
+        {
+          "heading": "Deep Research Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1628,
+          "supplied_characters": 1628
+        },
+        {
+          "heading": "Mind2Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 224,
+          "supplied_characters": 224
+        },
+        {
+          "heading": "Problem Definition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 10,
+          "source_characters": 889,
+          "supplied_characters": 889
+        },
+        {
+          "heading": "Overview Of Mind2Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1153,
+          "supplied_characters": 1153
+        },
+        {
+          "heading": "Intent-Driven Outline Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1276,
+          "supplied_characters": 1276
+        },
+        {
+          "heading": "Memory-Outline Co-Evolving Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2006,
+          "supplied_characters": 2006
+        },
+        {
+          "heading": "Coherent-Preserved Iterative Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1098,
+          "supplied_characters": 1098
+        },
+        {
+          "heading": "Qrc-Eval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 164,
+          "supplied_characters": 164
+        },
+        {
+          "heading": "Dataset Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 916,
+          "supplied_characters": 916
+        },
+        {
+          "heading": "H100 \u2026Bf16 495",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1022,
+          "supplied_characters": 1022
+        },
+        {
+          "heading": "Dataset Key Features",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1242,
+          "supplied_characters": 1242
+        },
+        {
+          "heading": "Multi-Dimensional Evaluation Strategy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 1289,
+          "supplied_characters": 1289
+        },
+        {
+          "heading": "Multi-Dimensional Evaluation Strategy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 1643,
+          "supplied_characters": 1643
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 260,
+          "supplied_characters": 260
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 22,
+          "source_characters": 1593,
+          "supplied_characters": 1593
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 989,
+          "supplied_characters": 989
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 24,
+          "source_characters": 1426,
+          "supplied_characters": 1426
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 903,
+          "supplied_characters": 903
+        },
+        {
+          "heading": "In-Depth Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 318,
+          "supplied_characters": 318
+        },
+        {
+          "heading": "In-Depth Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 3758,
+          "supplied_characters": 3758
+        },
+        {
+          "heading": "Evaluation Consistency Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 28,
+          "source_characters": 215,
+          "supplied_characters": 215
+        },
+        {
+          "heading": "Evaluation Consistency Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 29,
+          "source_characters": 1930,
+          "supplied_characters": 1930
+        },
+        {
+          "heading": "Id \u2013 21",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 34,
+          "supplied_characters": 34
+        },
+        {
+          "heading": "Id \u2013 22",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 2225,
+          "supplied_characters": 2225
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 32,
+          "source_characters": 638,
+          "supplied_characters": 638
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 33,
+          "source_characters": 359,
+          "supplied_characters": 359
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 351,
+          "supplied_characters": 351
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 3145,
+          "supplied_characters": 3145
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 5043,
+          "supplied_characters": 5043
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 4650,
+          "supplied_characters": 4650
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 2342,
+          "supplied_characters": 2342
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 107,
+          "supplied_characters": 107
+        },
+        {
+          "heading": "Domain # Representative Query",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 29,
+          "supplied_characters": 29
+        },
+        {
+          "heading": "Frontier Technol-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Strategic Impact Analysis Of Large Language Model Price Wars On The Global",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 337,
+          "supplied_characters": 337
+        },
+        {
+          "heading": "Biomedical Sci-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Asia Cell And Gene Therapy Capacity Map Covering Cryochain Logistics, Tech",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 319,
+          "supplied_characters": 319
+        },
+        {
+          "heading": "Appendix: A The Qrc-Eval Dataset Statistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 981,
+          "supplied_characters": 981
+        },
+        {
+          "heading": "Appendix: B The Qrc-Eval Evaluation Strategy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 912,
+          "supplied_characters": 912
+        },
+        {
+          "heading": "The Llm-As-A-Judge Llmlogic:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 719,
+          "supplied_characters": 719
+        },
+        {
+          "heading": "The Llm-As-A-Judge Llmlogic:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 3959,
+          "supplied_characters": 3959
+        },
+        {
+          "heading": "The Llm-As-A-Judge Llmlogic:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 1145,
+          "supplied_characters": 1145
+        },
+        {
+          "heading": "Appendix: Experimental Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 2245,
+          "supplied_characters": 2245
+        },
+        {
+          "heading": "Intent Clarification Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 2275,
+          "supplied_characters": 2275
+        },
+        {
+          "heading": "Writing Guidance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 199,
+          "supplied_characters": 199
+        },
+        {
+          "heading": "Deep Understanding Of User Needs. Identify Core Objectives: Clarify The User'S Main Goals And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 220,
+          "supplied_characters": 220
+        },
+        {
+          "heading": "Structural Design Of Chapters. Hierarchical Problem Decomposition: Break Down Complex Topics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "introduction",
+          "section_index": 54,
+          "source_characters": 107,
+          "supplied_characters": 107
+        },
+        {
+          "heading": "Structural Design Of Chapters. Hierarchical Problem Decomposition: Break Down Complex Topics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "introduction",
+          "section_index": 55,
+          "source_characters": 243,
+          "supplied_characters": 243
+        },
+        {
+          "heading": "Chapter Content Planning. Clear Summary Theme: Use<Summary> Tags To Provide A Complete",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 654,
+          "supplied_characters": 654
+        },
+        {
+          "heading": "Sq Quality Standards",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 1484,
+          "supplied_characters": 1484
+        },
+        {
+          "heading": "Research Topic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 756,
+          "supplied_characters": 756
+        },
+        {
+          "heading": "Research Topic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 599,
+          "supplied_characters": 599
+        },
+        {
+          "heading": "Execution Steps",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 15,
+          "supplied_characters": 15
+        },
+        {
+          "heading": "Identify The Core Topic And Key Analytical Dimensions Of The User'S Request. 2. Review The Reference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 142,
+          "supplied_characters": 142
+        },
+        {
+          "heading": "Field Specifications",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 261,
+          "supplied_characters": 261
+        },
+        {
+          "heading": "Output Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 289,
+          "supplied_characters": 289
+        },
+        {
+          "heading": "Input Data",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 341,
+          "supplied_characters": 341
+        },
+        {
+          "heading": "Evaluation Types",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "results",
+          "section_index": 65,
+          "source_characters": 750,
+          "supplied_characters": 750
+        },
+        {
+          "heading": "Query: \"Who Invented Calculus? What Were The Respective Contributions Of Newton And Leibniz?\"",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "introduction",
+          "section_index": 66,
+          "source_characters": 445,
+          "supplied_characters": 445
+        },
+        {
+          "heading": "Output Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 261,
+          "supplied_characters": 261
+        },
+        {
+          "heading": "Integrity Evaluation Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "results",
+          "section_index": 68,
+          "source_characters": 541,
+          "supplied_characters": 541
+        },
+        {
+          "heading": "Evaluation Dimensions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "results",
+          "section_index": 69,
+          "source_characters": 493,
+          "supplied_characters": 493
+        },
+        {
+          "heading": "Judgment Criteria",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 70,
+          "source_characters": 198,
+          "supplied_characters": 198
+        },
+        {
+          "heading": "Evaluation Workflow",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "results",
+          "section_index": 71,
+          "source_characters": 19,
+          "supplied_characters": 19
+        },
+        {
+          "heading": "Quick Review \u2013 Skim The Text To Capture Its Overall Message. 2. Cross-Check \u2013 Verify Whether All",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 72,
+          "source_characters": 361,
+          "supplied_characters": 361
+        },
+        {
+          "heading": "Output Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 73,
+          "source_characters": 101,
+          "supplied_characters": 101
+        },
+        {
+          "heading": "Input Data",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 575,
+          "supplied_characters": 575
+        },
+        {
+          "heading": "Evaluation Framework",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "results",
+          "section_index": 75,
+          "source_characters": 258,
+          "supplied_characters": 258
+        },
+        {
+          "heading": "Context Sensitivity \u2013 Adjust Time Thresholds According To The Nature Of The Topic. 2. Allowance For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 76,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Context Sensitivity \u2013 Adjust Time Thresholds According To The Nature Of The Topic. 2. Allowance For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 77,
+          "source_characters": 90,
+          "supplied_characters": 90
+        },
+        {
+          "heading": "Special Cases",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 78,
+          "source_characters": 288,
+          "supplied_characters": 288
+        },
+        {
+          "heading": "Output Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 79,
+          "source_characters": 114,
+          "supplied_characters": 114
+        },
+        {
+          "heading": "Input Data",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 80,
+          "source_characters": 611,
+          "supplied_characters": 611
+        },
+        {
+          "heading": "Evaluation Framework",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "results",
+          "section_index": 81,
+          "source_characters": 325,
+          "supplied_characters": 325
+        },
+        {
+          "heading": "Output Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 82,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Input Data",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 83,
+          "source_characters": 666,
+          "supplied_characters": 666
+        },
+        {
+          "heading": "Generation Rules",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 84,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Generation Rules",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 85,
+          "source_characters": 331,
+          "supplied_characters": 331
+        },
+        {
+          "heading": "Output Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 86,
+          "source_characters": 483,
+          "supplied_characters": 483
+        },
+        {
+          "heading": "Core Constraints",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 87,
+          "source_characters": 16,
+          "supplied_characters": 16
+        },
+        {
+          "heading": "Truth First: Use Only Factual Data From The \"Reference Materials.\" Do Not Fabricate Or Introduce",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 88,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Writing Standards",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 89,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Logical Rigor: Each Paragraph Should Focus On One Central Argument, Supported By Facts And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 90,
+          "source_characters": 694,
+          "supplied_characters": 694
+        },
+        {
+          "heading": "Depth And Insight: Analyze Causal Mechanisms Rather Than Merely Describing Phenomena. Integrate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 91,
+          "source_characters": 173,
+          "supplied_characters": 173
+        },
+        {
+          "heading": "Expression Standards: Highlight Key Data, Conclusions, Trends, And Pain Points In Bold. Maintain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "conclusion",
+          "section_index": 92,
+          "source_characters": 292,
+          "supplied_characters": 292
+        },
+        {
+          "heading": "Use Of Visual Tools",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 93,
+          "source_characters": 838,
+          "supplied_characters": 838
+        },
+        {
+          "heading": "Content Generation User Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 94,
+          "source_characters": 789,
+          "supplied_characters": 789
+        },
+        {
+          "heading": "Context Information",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 95,
+          "source_characters": 238,
+          "supplied_characters": 238
+        },
+        {
+          "heading": "All Data And Facts Must Come Directly From The Reference Materials. Fabrication Or Cross-Entity Use Is",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 96,
+          "source_characters": 267,
+          "supplied_characters": 267
+        },
+        {
+          "heading": "Which Llm Training Scenario\u2014Large-Scale Foundational Models, Fine-Tuning Of Midsize Models, Or",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "methods",
+          "section_index": 97,
+          "source_characters": 41,
+          "supplied_characters": 41
+        },
+        {
+          "heading": "Should The Analysis Include Availability, Supply-Chain Constraints, Or Projected 2025 Price Trends?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 98,
+          "source_characters": 1120,
+          "supplied_characters": 1120
+        },
+        {
+          "heading": "Should The Analysis Include Availability, Supply-Chain Constraints, Or Projected 2025 Price Trends?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 99,
+          "source_characters": 75,
+          "supplied_characters": 75
+        }
+      ],
+      "selected_characters": 87329,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "selected_sections": [
+        {
+          "characters": 389,
+          "heading": "Mind2Report: Expert-Level Commercial Report Synthesis",
+          "page": 1
+        },
+        {
+          "characters": 1854,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 759,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4510,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 956,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 180,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1472,
+          "heading": "Automated Report Synthesis",
+          "page": 3
+        },
+        {
+          "characters": 1479,
+          "heading": "Deep Research Agents",
+          "page": 3
+        },
+        {
+          "characters": 1628,
+          "heading": "Deep Research Agents",
+          "page": 4
+        },
+        {
+          "characters": 224,
+          "heading": "Mind2Report",
+          "page": 4
+        },
+        {
+          "characters": 889,
+          "heading": "Problem Definition",
+          "page": 4
+        },
+        {
+          "characters": 1153,
+          "heading": "Overview Of Mind2Report",
+          "page": 4
+        },
+        {
+          "characters": 1276,
+          "heading": "Intent-Driven Outline Formulation",
+          "page": 5
+        },
+        {
+          "characters": 2006,
+          "heading": "Memory-Outline Co-Evolving Search",
+          "page": 5
+        },
+        {
+          "characters": 1098,
+          "heading": "Coherent-Preserved Iterative Synthesis",
+          "page": 5
+        },
+        {
+          "characters": 164,
+          "heading": "Qrc-Eval",
+          "page": 6
+        },
+        {
+          "characters": 916,
+          "heading": "Dataset Construction",
+          "page": 6
+        },
+        {
+          "characters": 1022,
+          "heading": "H100 \u2026Bf16 495",
+          "page": 6
+        },
+        {
+          "characters": 1242,
+          "heading": "Dataset Key Features",
+          "page": 6
+        },
+        {
+          "characters": 1289,
+          "heading": "Multi-Dimensional Evaluation Strategy",
+          "page": 6
+        },
+        {
+          "characters": 1643,
+          "heading": "Multi-Dimensional Evaluation Strategy",
+          "page": 7
+        },
+        {
+          "characters": 260,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 1593,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 989,
+          "heading": "Experimental Setup",
+          "page": 8
+        },
+        {
+          "characters": 1426,
+          "heading": "Main Results",
+          "page": 8
+        },
+        {
+          "characters": 903,
+          "heading": "Ablation Study",
+          "page": 8
+        },
+        {
+          "characters": 318,
+          "heading": "In-Depth Analysis",
+          "page": 8
+        },
+        {
+          "characters": 3758,
+          "heading": "In-Depth Analysis",
+          "page": 9
+        },
+        {
+          "characters": 215,
+          "heading": "Evaluation Consistency Analysis",
+          "page": 9
+        },
+        {
+          "characters": 1930,
+          "heading": "Evaluation Consistency Analysis",
+          "page": 10
+        },
+        {
+          "characters": 34,
+          "heading": "Id \u2013 21",
+          "page": 10
+        },
+        {
+          "characters": 2225,
+          "heading": "Id \u2013 22",
+          "page": 10
+        },
+        {
+          "characters": 638,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 359,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 351,
+          "heading": "Back matter: Acknowledgments",
+          "page": 11
+        },
+        {
+          "characters": 3145,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 5043,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 4650,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 2342,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 107,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 29,
+          "heading": "Domain # Representative Query",
+          "page": 15
+        },
+        {
+          "characters": 21,
+          "heading": "Frontier Technol-",
+          "page": 15
+        },
+        {
+          "characters": 337,
+          "heading": "Strategic Impact Analysis Of Large Language Model Price Wars On The Global",
+          "page": 15
+        },
+        {
+          "characters": 20,
+          "heading": "Biomedical Sci-",
+          "page": 15
+        },
+        {
+          "characters": 319,
+          "heading": "Asia Cell And Gene Therapy Capacity Map Covering Cryochain Logistics, Tech",
+          "page": 15
+        },
+        {
+          "characters": 981,
+          "heading": "Appendix: A The Qrc-Eval Dataset Statistics",
+          "page": 15
+        },
+        {
+          "characters": 912,
+          "heading": "Appendix: B The Qrc-Eval Evaluation Strategy",
+          "page": 15
+        },
+        {
+          "characters": 719,
+          "heading": "The Llm-As-A-Judge Llmlogic:",
+          "page": 15
+        },
+        {
+          "characters": 3959,
+          "heading": "The Llm-As-A-Judge Llmlogic:",
+          "page": 16
+        },
+        {
+          "characters": 1145,
+          "heading": "The Llm-As-A-Judge Llmlogic:",
+          "page": 17
+        },
+        {
+          "characters": 2245,
+          "heading": "Appendix: Experimental Details",
+          "page": 17
+        },
+        {
+          "characters": 2275,
+          "heading": "Intent Clarification Prompt",
+          "page": 18
+        },
+        {
+          "characters": 199,
+          "heading": "Writing Guidance",
+          "page": 18
+        },
+        {
+          "characters": 220,
+          "heading": "Deep Understanding Of User Needs. Identify Core Objectives: Clarify The User'S Main Goals And",
+          "page": 18
+        },
+        {
+          "characters": 107,
+          "heading": "Structural Design Of Chapters. Hierarchical Problem Decomposition: Break Down Complex Topics",
+          "page": 18
+        },
+        {
+          "characters": 243,
+          "heading": "Structural Design Of Chapters. Hierarchical Problem Decomposition: Break Down Complex Topics",
+          "page": 19
+        },
+        {
+          "characters": 654,
+          "heading": "Chapter Content Planning. Clear Summary Theme: Use<Summary> Tags To Provide A Complete",
+          "page": 19
+        },
+        {
+          "characters": 1484,
+          "heading": "Sq Quality Standards",
+          "page": 19
+        },
+        {
+          "characters": 756,
+          "heading": "Research Topic",
+          "page": 19
+        },
+        {
+          "characters": 599,
+          "heading": "Research Topic",
+          "page": 20
+        },
+        {
+          "characters": 15,
+          "heading": "Execution Steps",
+          "page": 20
+        },
+        {
+          "characters": 142,
+          "heading": "Identify The Core Topic And Key Analytical Dimensions Of The User'S Request. 2. Review The Reference",
+          "page": 20
+        },
+        {
+          "characters": 261,
+          "heading": "Field Specifications",
+          "page": 20
+        },
+        {
+          "characters": 289,
+          "heading": "Output Format",
+          "page": 20
+        },
+        {
+          "characters": 341,
+          "heading": "Input Data",
+          "page": 20
+        },
+        {
+          "characters": 750,
+          "heading": "Evaluation Types",
+          "page": 20
+        },
+        {
+          "characters": 445,
+          "heading": "Query: \"Who Invented Calculus? What Were The Respective Contributions Of Newton And Leibniz?\"",
+          "page": 20
+        },
+        {
+          "characters": 261,
+          "heading": "Output Format",
+          "page": 20
+        },
+        {
+          "characters": 541,
+          "heading": "Integrity Evaluation Prompt",
+          "page": 21
+        },
+        {
+          "characters": 493,
+          "heading": "Evaluation Dimensions",
+          "page": 21
+        },
+        {
+          "characters": 198,
+          "heading": "Judgment Criteria",
+          "page": 21
+        },
+        {
+          "characters": 19,
+          "heading": "Evaluation Workflow",
+          "page": 21
+        },
+        {
+          "characters": 361,
+          "heading": "Quick Review \u2013 Skim The Text To Capture Its Overall Message. 2. Cross-Check \u2013 Verify Whether All",
+          "page": 21
+        },
+        {
+          "characters": 101,
+          "heading": "Output Format",
+          "page": 21
+        },
+        {
+          "characters": 575,
+          "heading": "Input Data",
+          "page": 21
+        },
+        {
+          "characters": 258,
+          "heading": "Evaluation Framework",
+          "page": 21
+        },
+        {
+          "characters": 208,
+          "heading": "Context Sensitivity \u2013 Adjust Time Thresholds According To The Nature Of The Topic. 2. Allowance For",
+          "page": 21
+        },
+        {
+          "characters": 90,
+          "heading": "Context Sensitivity \u2013 Adjust Time Thresholds According To The Nature Of The Topic. 2. Allowance For",
+          "page": 22
+        },
+        {
+          "characters": 288,
+          "heading": "Special Cases",
+          "page": 22
+        },
+        {
+          "characters": 114,
+          "heading": "Output Format",
+          "page": 22
+        },
+        {
+          "characters": 611,
+          "heading": "Input Data",
+          "page": 22
+        },
+        {
+          "characters": 325,
+          "heading": "Evaluation Framework",
+          "page": 22
+        },
+        {
+          "characters": 98,
+          "heading": "Output Format",
+          "page": 22
+        },
+        {
+          "characters": 666,
+          "heading": "Input Data",
+          "page": 22
+        },
+        {
+          "characters": 423,
+          "heading": "Generation Rules",
+          "page": 22
+        },
+        {
+          "characters": 331,
+          "heading": "Generation Rules",
+          "page": 23
+        },
+        {
+          "characters": 483,
+          "heading": "Output Format",
+          "page": 23
+        },
+        {
+          "characters": 16,
+          "heading": "Core Constraints",
+          "page": 23
+        },
+        {
+          "characters": 423,
+          "heading": "Truth First: Use Only Factual Data From The \"Reference Materials.\" Do Not Fabricate Or Introduce",
+          "page": 23
+        },
+        {
+          "characters": 17,
+          "heading": "Writing Standards",
+          "page": 23
+        },
+        {
+          "characters": 694,
+          "heading": "Logical Rigor: Each Paragraph Should Focus On One Central Argument, Supported By Facts And",
+          "page": 23
+        },
+        {
+          "characters": 173,
+          "heading": "Depth And Insight: Analyze Causal Mechanisms Rather Than Merely Describing Phenomena. Integrate",
+          "page": 23
+        },
+        {
+          "characters": 292,
+          "heading": "Expression Standards: Highlight Key Data, Conclusions, Trends, And Pain Points In Bold. Maintain",
+          "page": 23
+        },
+        {
+          "characters": 838,
+          "heading": "Use Of Visual Tools",
+          "page": 23
+        },
+        {
+          "characters": 789,
+          "heading": "Content Generation User Prompt",
+          "page": 24
+        },
+        {
+          "characters": 238,
+          "heading": "Context Information",
+          "page": 24
+        },
+        {
+          "characters": 267,
+          "heading": "All Data And Facts Must Come Directly From The Reference Materials. Fabrication Or Cross-Entity Use Is",
+          "page": 24
+        },
+        {
+          "characters": 41,
+          "heading": "Which Llm Training Scenario\u2014Large-Scale Foundational Models, Fine-Tuning Of Midsize Models, Or",
+          "page": 24
+        },
+        {
+          "characters": 1120,
+          "heading": "Should The Analysis Include Availability, Supply-Chain Constraints, Or Projected 2025 Price Trends?",
+          "page": 24
+        },
+        {
+          "characters": 75,
+          "heading": "Should The Analysis Include Availability, Supply-Chain Constraints, Or Projected 2025 Price Trends?",
+          "page": 25
+        }
+      ],
+      "selected_text_sha256": "dab9b6ae6199d5776df9bf7caef99686d7321623a5c6c7ee85d02c54d8d29ad2",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "8b4dcd422a19af8373493b408b11f51c12ecb9948131c0a9e6bfa3e5e81371d5",
+      "source_pages": 25,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0002"
+        ],
+        "excerpt": "Synthesizing informative commercial reports from massive and noisy web sources is critical for\nhigh-stakes business decisions. Although recent deep research agents (DRAs) achieve notable\nprogress, their reports remain limited in quality, reliability, and coverage. These mainly stem\nfrom ambiguous intents that cause search drift, retrieved web content that rapidly saturates the\ncontext window, and single-pass synthesis that limits report comprehensiveness. In this work,\nwe propose Mind2Report, a cognitive deep research agent that emulates commercial analysts\nto synthesize expert-level reports. Mind2Report first probes fine-grained commercial intent to\nestablish a structured outline, then recursively explores web sources and distills validated evidence\ninto research memory to preserve context efficiency. Meanwhile, the research memory and outline\ncontinuously co-evolve, refining the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b4d00287efdd8cc2ae10c4d42c0e3a897a174b3b61b6f9afa1d127cccf610f9f",
+            "evidence_id": "E786b6a0331f408c0-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Synthesizing informative commercial reports from massive and noisy web sources is critical for\nhigh-stakes business decisions. Although recent deep research agents (DRAs) achieve notable\nprogress, their reports remain limited in quality, reliability, and coverage. These mainly stem\nfrom ambiguous intents that cause search drift, retrieved web content that rapidly saturates the\ncontext window, and single-pass synthesis that limits report comprehensiveness. In this work,\nwe propose Mind2Report, a cognitive deep research agent that emulates commercial analysts\nto synthesize expert-level reports. Mind2Report first probes fine-grained commercial intent to\nestablish a structured outline, then recursively explores web sources and distills validated evidence\ninto research memory to preserve context efficiency. Meanwhile, the research memory and outline\ncontinuously co-evolve, refining the "
+              }
+            ],
+            "text": "Synthesizing informative commercial reports from massive and noisy web sources is critical for\nhigh-stakes business decisions. Although recent deep research agents (DRAs) achieve notable\nprogress, their reports remain limited in quality, reliability, and coverage. These mainly stem\nfrom ambiguous intents that cause search drift, retrieved web content that rapidly saturates the\ncontext window, and single-pass synthesis that limits report comprehensiveness. In this work,\nwe propose Mind2Report, a cognitive deep research agent that emulates commercial analysts\nto synthesize expert-level reports. Mind2Report first probes fine-grained commercial intent to\nestablish a structured outline, then recursively explores web sources and distills validated evidence\ninto research memory to preserve context efficiency. Meanwhile, the research memory and outline\ncontinuously co-evolve, refining the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0008"
+        ],
+        "excerpt": "hallucinated reports\n[40, 48]. Third, single-pass synthesis often under-\nuses the collected evidence, resulting in reports\nwith limited information richness and insufficient\nanalytical depth [40, 47]. As illustrated in Fig-\nure 1, these motivate us to develop a commercial\ndeep research agent that follows the rigorous\nworkflow of professional analysts, from require-\nment clarification and evidence management to\ncomprehensive report synthesis.\nToaddressthesechallenges, weproposeMind2Report, acognitivedeepresearchagentthatemulatesprofessional\ncommercial analysts to synthesize expert-level commercial reports. To mitigate search drift caused by\nambiguous commercial queries, Mind2Report first probes fine-grained commercial intent to establish a\nstructured report outline. It then recursively explores web sources and distills validated evidence with source\ncitations into research memory, which ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c9e120bc60979f9f47472b275e3615f6e55efb7042ade3b2e80a0042bcb33d0d",
+            "evidence_id": "E786b6a0331f408c0-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2816,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1917,
+                "text": "hallucinated reports\n[40, 48]. Third, single-pass synthesis often under-\nuses the collected evidence, resulting in reports\nwith limited information richness and insufficient\nanalytical depth [40, 47]. As illustrated in Fig-\nure 1, these motivate us to develop a commercial\ndeep research agent that follows the rigorous\nworkflow of professional analysts, from require-\nment clarification and evidence management to\ncomprehensive report synthesis.\nToaddressthesechallenges, weproposeMind2Report, acognitivedeepresearchagentthatemulatesprofessional\ncommercial analysts to synthesize expert-level commercial reports. To mitigate search drift caused by\nambiguous commercial queries, Mind2Report first probes fine-grained commercial intent to establish a\nstructured report outline. It then recursively explores web sources and distills validated evidence with source\ncitations into research memory, which "
+              }
+            ],
+            "text": "hallucinated reports\n[40, 48]. Third, single-pass synthesis often under-\nuses the collected evidence, resulting in reports\nwith limited information richness and insufficient\nanalytical depth [40, 47]. As illustrated in Fig-\nure 1, these motivate us to develop a commercial\ndeep research agent that follows the rigorous\nworkflow of professional analysts, from require-\nment clarification and evidence management to\ncomprehensive report synthesis.\nToaddressthesechallenges, weproposeMind2Report, acognitivedeepresearchagentthatemulatesprofessional\ncommercial analysts to synthesize expert-level commercial reports. To mitigate search drift caused by\nambiguous commercial queries, Mind2Report first probes fine-grained commercial intent to establish a\nstructured report outline. It then recursively explores web sources and distills validated evidence with source\ncitations into research memory, which "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0010"
+        ],
+        "excerpt": "holistic evaluation framework covering report quality, reliability, and coverage,\nwhere each dimension contains specialized metrics designed to capture critical aspects of commercial reports.\nExtensive experiments demonstrate that Mind2Report consistently outperforms leading proprietary and\nopen-source DRAs, including OpenAI and Gemini DRAs [6, 30]. Detailed ablation studies further verify the\neffectiveness of each module and analyze the challenges they address. Moreover, we verify the alignment\nbetween our proposed metrics and human expert judgment, demonstrating the rationality of QRC-Eval metrics\nfor commercial deep research assessment. Overall, we hope Mind2Report and QRC-Eval can contribute to the\nfuture development of commercial deep research agents and evaluation strategies.\n2\nOur contributions can be summarized as follows:\n\u2022 We propose Mind2Report, a cognitive deep research agent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5837992a7286223d294509192070ff730ce03e75253a03b36be525102aaee66c",
+            "evidence_id": "E786b6a0331f408c0-B0010",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4510,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 3716,
+                "text": "holistic evaluation framework covering report quality, reliability, and coverage,\nwhere each dimension contains specialized metrics designed to capture critical aspects of commercial reports.\nExtensive experiments demonstrate that Mind2Report consistently outperforms leading proprietary and\nopen-source DRAs, including OpenAI and Gemini DRAs [6, 30]. Detailed ablation studies further verify the\neffectiveness of each module and analyze the challenges they address. Moreover, we verify the alignment\nbetween our proposed metrics and human expert judgment, demonstrating the rationality of QRC-Eval metrics\nfor commercial deep research assessment. Overall, we hope Mind2Report and QRC-Eval can contribute to the\nfuture development of commercial deep research agents and evaluation strategies.\n2"
+              },
+              {
+                "end": 106,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 0,
+                "text": "Our contributions can be summarized as follows:\n\u2022 We propose Mind2Report, a cognitive deep research agent "
+              }
+            ],
+            "text": "holistic evaluation framework covering report quality, reliability, and coverage,\nwhere each dimension contains specialized metrics designed to capture critical aspects of commercial reports.\nExtensive experiments demonstrate that Mind2Report consistently outperforms leading proprietary and\nopen-source DRAs, including OpenAI and Gemini DRAs [6, 30]. Detailed ablation studies further verify the\neffectiveness of each module and analyze the challenges they address. Moreover, we verify the alignment\nbetween our proposed metrics and human expert judgment, demonstrating the rationality of QRC-Eval metrics\nfor commercial deep research assessment. Overall, we hope Mind2Report and QRC-Eval can contribute to the\nfuture development of commercial deep research agents and evaluation strategies.\n2\nOur contributions can be summarized as follows:\n\u2022 We propose Mind2Report, a cognitive deep research agent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0021"
+        ],
+        "excerpt": "Figure 2 illustrates the framework of Mind2Report for synthesizing commercial reports from an initial query\nQ. The key design is to maintain an evidence-centered research state throughout the deep research process.\nFirst, Mind2Report probes fine-grained commercial intent and constructs an initial outline that converts an\nunderspecified request into a structured analytical scaffold. Second, guided by the outline, Mind2Report\ninvokes specialized search agents to recursively explore web sources and distill observations into validated\nevidence stored in research memory. Each memory entry preserves compact evidence content, its citation\nsource, and its association with the corresponding outline node. Meanwhile, the research memory and outline\ncontinuously co-evolve: the outline constrains evidence acquisition, while accumulated memory evidence\nupdates the evidence state of each outline node ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overview Of Mind2Report",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "157022fbd348e1e14de86de643e2d31dfa7b7c21ef20ccc91b0821ae6df9121f",
+            "evidence_id": "E786b6a0331f408c0-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Overview Of Mind2Report",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 4,
+                "section": "Overview Of Mind2Report",
+                "section_index": 11,
+                "start": 0,
+                "text": "Figure 2 illustrates the framework of Mind2Report for synthesizing commercial reports from an initial query\nQ. The key design is to maintain an evidence-centered research state throughout the deep research process.\nFirst, Mind2Report probes fine-grained commercial intent and constructs an initial outline that converts an\nunderspecified request into a structured analytical scaffold. Second, guided by the outline, Mind2Report\ninvokes specialized search agents to recursively explore web sources and distill observations into validated\nevidence stored in research memory. Each memory entry preserves compact evidence content, its citation\nsource, and its association with the corresponding outline node. Meanwhile, the research memory and outline\ncontinuously co-evolve: the outline constrains evidence acquisition, while accumulated memory evidence\nupdates the evidence state of each outline node "
+              }
+            ],
+            "text": "Figure 2 illustrates the framework of Mind2Report for synthesizing commercial reports from an initial query\nQ. The key design is to maintain an evidence-centered research state throughout the deep research process.\nFirst, Mind2Report probes fine-grained commercial intent and constructs an initial outline that converts an\nunderspecified request into a structured analytical scaffold. Second, guided by the outline, Mind2Report\ninvokes specialized search agents to recursively explore web sources and distill observations into validated\nevidence stored in research memory. Each memory entry preserves compact evidence content, its citation\nsource, and its association with the corresponding outline node. Meanwhile, the research memory and outline\ncontinuously co-evolve: the outline constrains evidence acquisition, while accumulated memory evidence\nupdates the evidence state of each outline node "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0025"
+        ],
+        "excerpt": "After obtaining the initial outline, Mind2Report conducts iterative exploration through specialized search\nagents. For each outline nodeoj \u2208O t, a search agent queries heterogeneous web sources using the node-\nlevel requirement and current memory sliceMt(oj), and distills retrieved pages into candidate evidence.\nMind2Report evaluates this evidence through three binary gates: integrity, freshness, and plurality, which\nrespectively assess factual support, topic-dependent temporal validity, and sufficient coverage of required\nexamples or perspectives. If any activated gate fails, the agent generates targeted supplementary queries and\ncontinues exploration until all gates pass or the search horizon is reached. Only validated evidence is stored in\nresearch memory asmi = (ei, ci, oj), where ei is a compact evidence statement,ci the citation source, andoj\nthe associated outline node. This ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory-Outline Co-Evolving Search",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "186b5f4e2ef0a9481f2d8ea16d01693b566ea78d375fa734a899077b6a48cf9d",
+            "evidence_id": "E786b6a0331f408c0-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Memory-Outline Co-Evolving Search",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 5,
+                "section": "Memory-Outline Co-Evolving Search",
+                "section_index": 13,
+                "start": 0,
+                "text": "After obtaining the initial outline, Mind2Report conducts iterative exploration through specialized search\nagents. For each outline nodeoj \u2208O t, a search agent queries heterogeneous web sources using the node-\nlevel requirement and current memory sliceMt(oj), and distills retrieved pages into candidate evidence.\nMind2Report evaluates this evidence through three binary gates: integrity, freshness, and plurality, which\nrespectively assess factual support, topic-dependent temporal validity, and sufficient coverage of required\nexamples or perspectives. If any activated gate fails, the agent generates targeted supplementary queries and\ncontinues exploration until all gates pass or the search horizon is reached. Only validated evidence is stored in\nresearch memory asmi = (ei, ci, oj), where ei is a compact evidence statement,ci the citation source, andoj\nthe associated outline node. This "
+              }
+            ],
+            "text": "After obtaining the initial outline, Mind2Report conducts iterative exploration through specialized search\nagents. For each outline nodeoj \u2208O t, a search agent queries heterogeneous web sources using the node-\nlevel requirement and current memory sliceMt(oj), and distills retrieved pages into candidate evidence.\nMind2Report evaluates this evidence through three binary gates: integrity, freshness, and plurality, which\nrespectively assess factual support, topic-dependent temporal validity, and sufficient coverage of required\nexamples or perspectives. If any activated gate fails, the agent generates targeted supplementary queries and\ncontinues exploration until all gates pass or the search horizon is reached. Only validated evidence is stored in\nresearch memory asmi = (ei, ci, oj), where ei is a compact evidence statement,ci the citation source, andoj\nthe associated outline node. This "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0026"
+        ],
+        "excerpt": "interface lets the main agent interact with search primarily throughMt and\nOt, reducing context saturation while preserving citation tracing.\nResearch memory further enables the outline to evolve with accumulated evidence, distinguishing Mind2Report\nfrom query-level search refinement. After validated entriesmi are returned for oj, Mind2Report updates\nMt+1 = Mt \u222am i and Ot+1 = Update(Ot, Mt+1). Memory entries sharing the same outline node and\ncitation sources are also merged before synthesis to reduce fragmentation. Consequently, each outline node\nis progressively enriched with supporting evidence and remaining gaps rather than remaining a static plan.\nSubsequent search is conditioned on bothOt+1 and Mt+1(oj): supported aspects can be reused for synthesis,\nwhile uncovered aspects trigger targeted exploration. In this way, the outline guides evidence acquisition,\nwhile accumulated memory ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory-Outline Co-Evolving Search",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e5af95ef2a336167b8b3653dd0f4c4012f535a02b2024a00740a70f79570f9e2",
+            "evidence_id": "E786b6a0331f408c0-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Memory-Outline Co-Evolving Search",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 5,
+                "section": "Memory-Outline Co-Evolving Search",
+                "section_index": 13,
+                "start": 895,
+                "text": "interface lets the main agent interact with search primarily throughMt and\nOt, reducing context saturation while preserving citation tracing.\nResearch memory further enables the outline to evolve with accumulated evidence, distinguishing Mind2Report\nfrom query-level search refinement. After validated entriesmi are returned for oj, Mind2Report updates\nMt+1 = Mt \u222am i and Ot+1 = Update(Ot, Mt+1). Memory entries sharing the same outline node and\ncitation sources are also merged before synthesis to reduce fragmentation. Consequently, each outline node\nis progressively enriched with supporting evidence and remaining gaps rather than remaining a static plan.\nSubsequent search is conditioned on bothOt+1 and Mt+1(oj): supported aspects can be reused for synthesis,\nwhile uncovered aspects trigger targeted exploration. In this way, the outline guides evidence acquisition,\nwhile accumulated memory "
+              }
+            ],
+            "text": "interface lets the main agent interact with search primarily throughMt and\nOt, reducing context saturation while preserving citation tracing.\nResearch memory further enables the outline to evolve with accumulated evidence, distinguishing Mind2Report\nfrom query-level search refinement. After validated entriesmi are returned for oj, Mind2Report updates\nMt+1 = Mt \u222am i and Ot+1 = Update(Ot, Mt+1). Memory entries sharing the same outline node and\ncitation sources are also merged before synthesis to reduce fragmentation. Consequently, each outline node\nis progressively enriched with supporting evidence and remaining gaps rather than remaining a static plan.\nSubsequent search is conditioned on bothOt+1 and Mt+1(oj): supported aspects can be reused for synthesis,\nwhile uncovered aspects trigger targeted exploration. In this way, the outline guides evidence acquisition,\nwhile accumulated memory "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0028"
+        ],
+        "excerpt": "Mind2Report produces the final commercial report through coherent-preserved iterative synthesis with citation\ntracing. Given the final outlineOT, research memoryMT, and citation source registryCT, the agent generates\nthe report section by section following the outline hierarchy. For each section, Mind2Report retrieves the\nassociated memory evidence and consolidates evidence supported by the same citation sources into coherent\nanalytical support. The preceding report context is used to preserve discourse continuity, while factual\nstatements remain grounded in section-level memory rather than the entire search trace. This allows the\nagent to synthesize each segment under a compact local evidence context and improves the reuse of collected\nevidence. Citation placeholders are then matched back to the source registryCT maintained in the research\nstate, producing a final reportR with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Coherent-Preserved Iterative Synthesis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "74e2195a63098d2e5100ba97cec0d644d26af6404458ce900730b05d5552e4f7",
+            "evidence_id": "E786b6a0331f408c0-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Coherent-Preserved Iterative Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 5,
+                "section": "Coherent-Preserved Iterative Synthesis",
+                "section_index": 14,
+                "start": 0,
+                "text": "Mind2Report produces the final commercial report through coherent-preserved iterative synthesis with citation\ntracing. Given the final outlineOT, research memoryMT, and citation source registryCT, the agent generates\nthe report section by section following the outline hierarchy. For each section, Mind2Report retrieves the\nassociated memory evidence and consolidates evidence supported by the same citation sources into coherent\nanalytical support. The preceding report context is used to preserve discourse continuity, while factual\nstatements remain grounded in section-level memory rather than the entire search trace. This allows the\nagent to synthesize each segment under a compact local evidence context and improves the reuse of collected\nevidence. Citation placeholders are then matched back to the source registryCT maintained in the research\nstate, producing a final reportR with "
+              }
+            ],
+            "text": "Mind2Report produces the final commercial report through coherent-preserved iterative synthesis with citation\ntracing. Given the final outlineOT, research memoryMT, and citation source registryCT, the agent generates\nthe report section by section following the outline hierarchy. For each section, Mind2Report retrieves the\nassociated memory evidence and consolidates evidence supported by the same citation sources into coherent\nanalytical support. The preceding report context is used to preserve discourse continuity, while factual\nstatements remain grounded in section-level memory rather than the entire search trace. This allows the\nagent to synthesize each segment under a compact local evidence context and improves the reuse of collected\nevidence. Citation placeholders are then matched back to the source registryCT maintained in the research\nstate, producing a final reportR with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0033"
+        ],
+        "excerpt": "H100 \u2026BF16 495 \nTFLOPS SXM5. \nQuery: in 2023-2025\n[12] www.news.ai/2018\n[41] www.tech.com/2025\nQuery: H100 vs. MI300X\nWikipedia\narXiv Bloomberg\nGov\nReports https://www.tech.com/market/ai/chips/h100-report.pdf\n\u00d8 Segment Count = 4\n\u00d8 Valuable Assets: pdf, csv\u2026\nFigure 3Overview of the QRC-Eval, a commercial query\nsuite and a holistic evaluation strategy designed for assessing\ncommercial reports via quality, reliability, and coverage.\nAs shown in Figure 3, we construct a dataset\ncomprising 200 time-sensitive commercial queries\nmanually crafted by business experts to ensure\nprofessional quality. The design process incorpo-\nrates complex analytic intents to simulate real-\nworld business scenarios. To evaluate generaliza-\ntion capabilities across diverse commercial sce-\nnarios, we distribute these queries roughly evenly\namong six distinct commercial domains. Further-\nmore, this manual creation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "H100 \u2026Bf16 495",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f03c8d0e50521df3f2cc4b0b566be2e452054d78f8303ee896925ed4187161b7",
+            "evidence_id": "E786b6a0331f408c0-B0033",
+            "pages": [
+              6
+            ],
+            "section": "H100 \u2026Bf16 495",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "H100 \u2026Bf16 495",
+                "section_index": 17,
+                "start": 0,
+                "text": "H100 \u2026BF16 495 \nTFLOPS SXM5. \nQuery: in 2023-2025\n[12] www.news.ai/2018\n[41] www.tech.com/2025\nQuery: H100 vs. MI300X\nWikipedia\narXiv Bloomberg\nGov\nReports https://www.tech.com/market/ai/chips/h100-report.pdf\n\u00d8 Segment Count = 4\n\u00d8 Valuable Assets: pdf, csv\u2026\nFigure 3Overview of the QRC-Eval, a commercial query\nsuite and a holistic evaluation strategy designed for assessing\ncommercial reports via quality, reliability, and coverage.\nAs shown in Figure 3, we construct a dataset\ncomprising 200 time-sensitive commercial queries\nmanually crafted by business experts to ensure\nprofessional quality. The design process incorpo-\nrates complex analytic intents to simulate real-\nworld business scenarios. To evaluate generaliza-\ntion capabilities across diverse commercial sce-\nnarios, we distribute these queries roughly evenly\namong six distinct commercial domains. Further-\nmore, this manual creation "
+              }
+            ],
+            "text": "H100 \u2026BF16 495 \nTFLOPS SXM5. \nQuery: in 2023-2025\n[12] www.news.ai/2018\n[41] www.tech.com/2025\nQuery: H100 vs. MI300X\nWikipedia\narXiv Bloomberg\nGov\nReports https://www.tech.com/market/ai/chips/h100-report.pdf\n\u00d8 Segment Count = 4\n\u00d8 Valuable Assets: pdf, csv\u2026\nFigure 3Overview of the QRC-Eval, a commercial query\nsuite and a holistic evaluation strategy designed for assessing\ncommercial reports via quality, reliability, and coverage.\nAs shown in Figure 3, we construct a dataset\ncomprising 200 time-sensitive commercial queries\nmanually crafted by business experts to ensure\nprofessional quality. The design process incorpo-\nrates complex analytic intents to simulate real-\nworld business scenarios. To evaluate generaliza-\ntion capabilities across diverse commercial sce-\nnarios, we distribute these queries roughly evenly\namong six distinct commercial domains. Further-\nmore, this manual creation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0037"
+        ],
+        "excerpt": "We formalize the final report as an ordered sequence of claim-source pairs, so QRC-Eval evaluates final\nreports and citation sources, avoiding assumptions about specific agent workflows. The quality dimension\nevaluates content relevance by measuring the alignment between claims and keypoints. We also assess the\nstructure via hierarchical headers to ensure the logical coherence. Reliability ensures trustworthiness through\nthe hallucination rate which penalizes claims that lack support from citation sources. We further measure\ntemporality by verifying that source timestamps satisfy the temporal constraints and evaluate consistency by\ndetecting numerical or logical contradictions across the context. Coverage includes source breadth, which\nquantifies information diversity, and search depth, which evaluates path segments of retrieved sources. Given\nthe potential biases of LLM-as-a-judge ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Dimensional Evaluation Strategy",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6c2f836b3436e40711bde03ee913c4edd1b8e35a361ce2ed7a11b791abeffc41",
+            "evidence_id": "E786b6a0331f408c0-B0037",
+            "pages": [
+              6
+            ],
+            "section": "Multi-Dimensional Evaluation Strategy",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 6,
+                "section": "Multi-Dimensional Evaluation Strategy",
+                "section_index": 19,
+                "start": 0,
+                "text": "We formalize the final report as an ordered sequence of claim-source pairs, so QRC-Eval evaluates final\nreports and citation sources, avoiding assumptions about specific agent workflows. The quality dimension\nevaluates content relevance by measuring the alignment between claims and keypoints. We also assess the\nstructure via hierarchical headers to ensure the logical coherence. Reliability ensures trustworthiness through\nthe hallucination rate which penalizes claims that lack support from citation sources. We further measure\ntemporality by verifying that source timestamps satisfy the temporal constraints and evaluate consistency by\ndetecting numerical or logical contradictions across the context. Coverage includes source breadth, which\nquantifies information diversity, and search depth, which evaluates path segments of retrieved sources. Given\nthe potential biases of LLM-as-a-judge "
+              }
+            ],
+            "text": "We formalize the final report as an ordered sequence of claim-source pairs, so QRC-Eval evaluates final\nreports and citation sources, avoiding assumptions about specific agent workflows. The quality dimension\nevaluates content relevance by measuring the alignment between claims and keypoints. We also assess the\nstructure via hierarchical headers to ensure the logical coherence. Reliability ensures trustworthiness through\nthe hallucination rate which penalizes claims that lack support from citation sources. We further measure\ntemporality by verifying that source timestamps satisfy the temporal constraints and evaluate consistency by\ndetecting numerical or logical contradictions across the context. Coverage includes source breadth, which\nquantifies information diversity, and search depth, which evaluates path segments of retrieved sources. Given\nthe potential biases of LLM-as-a-judge "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0038"
+        ],
+        "excerpt": "evaluation [51], we prioritize standard or deterministic calculations\nwhenever objective signals are available, such as keypoint matching, timestamp verification, URL accessibility,\nsource-domain statistics, and path-based depth. We only employ LLM-as-a-judge for semantic judgments\nthat are difficult to calculate with rule-based metrics, such as structure (Str.), hallucination (Hall.), and\n6\nTable 1Performance of Mind2Report against leading baselines through QRC-Eval. Key metrics include relevance\n(Rel.), structure (Str.), hallucination (Hall.), temporality (Temp.), consistency (Cons.), normalized breadth (Brd.),\nnormalized depth (Dep.), report length (Len.), and time (Time).Boldmeans the best andunderline is the second best.\nMethods Quality Reliability Coverage Avg. Profile\nRel.\u2191Str.\u2191Hall.\u2193Temp.\u2191Cons.\u2191Brd.\u2191Dep.\u2191RankLen. Time\nProprietary DRAs\no3 Deep Research 63.52 79.18 10.48 79.85 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Dimensional Evaluation Strategy",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ae314a01b9f0a7dd5760591ce69881800fbf85902e514b76dc898bebf6c58054",
+            "evidence_id": "E786b6a0331f408c0-B0038",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Multi-Dimensional Evaluation Strategy",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1289,
+                "page": 6,
+                "section": "Multi-Dimensional Evaluation Strategy",
+                "section_index": 19,
+                "start": 895,
+                "text": "evaluation [51], we prioritize standard or deterministic calculations\nwhenever objective signals are available, such as keypoint matching, timestamp verification, URL accessibility,\nsource-domain statistics, and path-based depth. We only employ LLM-as-a-judge for semantic judgments\nthat are difficult to calculate with rule-based metrics, such as structure (Str.), hallucination (Hall.), and\n6"
+              },
+              {
+                "end": 501,
+                "page": 7,
+                "section": "Multi-Dimensional Evaluation Strategy",
+                "section_index": 20,
+                "start": 0,
+                "text": "Table 1Performance of Mind2Report against leading baselines through QRC-Eval. Key metrics include relevance\n(Rel.), structure (Str.), hallucination (Hall.), temporality (Temp.), consistency (Cons.), normalized breadth (Brd.),\nnormalized depth (Dep.), report length (Len.), and time (Time).Boldmeans the best andunderline is the second best.\nMethods Quality Reliability Coverage Avg. Profile\nRel.\u2191Str.\u2191Hall.\u2193Temp.\u2191Cons.\u2191Brd.\u2191Dep.\u2191RankLen. Time\nProprietary DRAs\no3 Deep Research 63.52 79.18 10.48 79.85 "
+              }
+            ],
+            "text": "evaluation [51], we prioritize standard or deterministic calculations\nwhenever objective signals are available, such as keypoint matching, timestamp verification, URL accessibility,\nsource-domain statistics, and path-based depth. We only employ LLM-as-a-judge for semantic judgments\nthat are difficult to calculate with rule-based metrics, such as structure (Str.), hallucination (Hall.), and\n6\nTable 1Performance of Mind2Report against leading baselines through QRC-Eval. Key metrics include relevance\n(Rel.), structure (Str.), hallucination (Hall.), temporality (Temp.), consistency (Cons.), normalized breadth (Brd.),\nnormalized depth (Dep.), report length (Len.), and time (Time).Boldmeans the best andunderline is the second best.\nMethods Quality Reliability Coverage Avg. Profile\nRel.\u2191Str.\u2191Hall.\u2193Temp.\u2191Cons.\u2191Brd.\u2191Dep.\u2191RankLen. Time\nProprietary DRAs\no3 Deep Research 63.52 79.18 10.48 79.85 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0040"
+        ],
+        "excerpt": "1.0021.93k 385s\nconsistency (Cons.). Additionally, we track profile metrics including report length (Len.) and processing time\n(Time). These serve as references and do not influence the final ranking. Detailed metrics formulas appear in\nAppendix B.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Dimensional Evaluation Strategy",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "15f3936ec996e6b6723871c0e4664a890da1fab3edcf67b9f8436526517087dd",
+            "evidence_id": "E786b6a0331f408c0-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Multi-Dimensional Evaluation Strategy",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1643,
+                "page": 7,
+                "section": "Multi-Dimensional Evaluation Strategy",
+                "section_index": 20,
+                "start": 1395,
+                "text": "1.0021.93k 385s\nconsistency (Cons.). Additionally, we track profile metrics including report length (Len.) and processing time\n(Time). These serve as references and do not influence the final ranking. Detailed metrics formulas appear in\nAppendix B."
+              }
+            ],
+            "text": "1.0021.93k 385s\nconsistency (Cons.). Additionally, we track profile metrics including report length (Len.) and processing time\n(Time). These serve as references and do not influence the final ranking. Detailed metrics formulas appear in\nAppendix B."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0042"
+        ],
+        "excerpt": "Baselines.We evaluate Mind2Report against a comprehensive set of baselines categorized into three distinct\ngroups. The first group encompasses proprietary deep research agents, including o3 Deep Research [30],\no4-mini Deep Research [30], Gemini Deep Research [6], Grok Deep Search, and Perplexity Deep Research.\nThe second group comprises open-source training-based DRAs, specifically WebThinker [23], MiroThinker\n[29], and Tongyi-DeepResearch [22]. Finally, we compare against open-source workflow-based DRAs that\norchestrate LLMs and external tools for deep research tasks, including MiroFlow [37], OpenManus [24], and\nOWL [17]. For each baseline, we use its official API, released checkpoint, or official repository, and follow the\nrecommended settings whenever available. For methods without explicit query rewriting or expansion, we\napply the same intent probing algorithm as Mind2Report to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2d84e3e4775c541d82b561a860f1aeb8a5383e5bf3f66d6ddd307784d82c9b34",
+            "evidence_id": "E786b6a0331f408c0-B0042",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 22,
+                "start": 0,
+                "text": "Baselines.We evaluate Mind2Report against a comprehensive set of baselines categorized into three distinct\ngroups. The first group encompasses proprietary deep research agents, including o3 Deep Research [30],\no4-mini Deep Research [30], Gemini Deep Research [6], Grok Deep Search, and Perplexity Deep Research.\nThe second group comprises open-source training-based DRAs, specifically WebThinker [23], MiroThinker\n[29], and Tongyi-DeepResearch [22]. Finally, we compare against open-source workflow-based DRAs that\norchestrate LLMs and external tools for deep research tasks, including MiroFlow [37], OpenManus [24], and\nOWL [17]. For each baseline, we use its official API, released checkpoint, or official repository, and follow the\nrecommended settings whenever available. For methods without explicit query rewriting or expansion, we\napply the same intent probing algorithm as Mind2Report to "
+              }
+            ],
+            "text": "Baselines.We evaluate Mind2Report against a comprehensive set of baselines categorized into three distinct\ngroups. The first group encompasses proprietary deep research agents, including o3 Deep Research [30],\no4-mini Deep Research [30], Gemini Deep Research [6], Grok Deep Search, and Perplexity Deep Research.\nThe second group comprises open-source training-based DRAs, specifically WebThinker [23], MiroThinker\n[29], and Tongyi-DeepResearch [22]. Finally, we compare against open-source workflow-based DRAs that\norchestrate LLMs and external tools for deep research tasks, including MiroFlow [37], OpenManus [24], and\nOWL [17]. For each baseline, we use its official API, released checkpoint, or official repository, and follow the\nrecommended settings whenever available. For methods without explicit query rewriting or expansion, we\napply the same intent probing algorithm as Mind2Report to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0043"
+        ],
+        "excerpt": "reformulate the query for a fairer comparison.\nImplementation Details.We employ DeepSeek-V3.1 [ 25] as the backbone LLM and DeepSeek-R1 [15]\nspecifically for outline generation. To ensure fairness, we standardize inference parameters across all LLMs.\nWe equip all methods with identical Google Search tools, except proprietary DRAs whose internal tools\nare inaccessible. For reproducibility, cached webpage snapshots are used preferentially when available. To\nensure stability, we execute three independent runs for each method and report the average metrics. For all\nLLM-as-a-Judge scenarios, we adopt Gemini 2.5 Pro [6] as the unified evaluator. Detailed parameters are\nprovided in Appendix D.\n7\nTable 2Component-wise ablation study. We remove modules to evaluate their contributions to overall performance\nacross quality, reliability, coverage, and reporting profile dimensions. The w/ and w/o ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "077ad19be9d53066cbb6ae45240071657da5b5eabac150254671e7197f96f570",
+            "evidence_id": "E786b6a0331f408c0-B0043",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1593,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 22,
+                "start": 896,
+                "text": "reformulate the query for a fairer comparison.\nImplementation Details.We employ DeepSeek-V3.1 [ 25] as the backbone LLM and DeepSeek-R1 [15]\nspecifically for outline generation. To ensure fairness, we standardize inference parameters across all LLMs.\nWe equip all methods with identical Google Search tools, except proprietary DRAs whose internal tools\nare inaccessible. For reproducibility, cached webpage snapshots are used preferentially when available. To\nensure stability, we execute three independent runs for each method and report the average metrics. For all\nLLM-as-a-Judge scenarios, we adopt Gemini 2.5 Pro [6] as the unified evaluator. Detailed parameters are\nprovided in Appendix D.\n7"
+              },
+              {
+                "end": 199,
+                "page": 8,
+                "section": "Experimental Setup",
+                "section_index": 23,
+                "start": 0,
+                "text": "Table 2Component-wise ablation study. We remove modules to evaluate their contributions to overall performance\nacross quality, reliability, coverage, and reporting profile dimensions. The w/ and w/o "
+              }
+            ],
+            "text": "reformulate the query for a fairer comparison.\nImplementation Details.We employ DeepSeek-V3.1 [ 25] as the backbone LLM and DeepSeek-R1 [15]\nspecifically for outline generation. To ensure fairness, we standardize inference parameters across all LLMs.\nWe equip all methods with identical Google Search tools, except proprietary DRAs whose internal tools\nare inaccessible. For reproducibility, cached webpage snapshots are used preferentially when available. To\nensure stability, we execute three independent runs for each method and report the average metrics. For all\nLLM-as-a-Judge scenarios, we adopt Gemini 2.5 Pro [6] as the unified evaluator. Detailed parameters are\nprovided in Appendix D.\n7\nTable 2Component-wise ablation study. We remove modules to evaluate their contributions to overall performance\nacross quality, reliability, coverage, and reporting profile dimensions. The w/ and w/o "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0044"
+        ],
+        "excerpt": "denote with and without,\nrespectively.\nComponent Configuration Quality Reliability Coverage Profile\nRel.\u2191Str.\u2191Hall.\u2193Temp.\u2191Cons.\u2191Brd.\u2191Dep.\u2191Len. Time\nFull Agent Mind2Report 75.42 85.24 6.12 90.53 75.82 80.85 84.2521.9k 385s\nw/ Intent-Driven w/o Intent Clarification 68.35 81.10 7.45 88.20 73.15 62.00 77.50 19.5k 350s\nOutline Formulation w/o Outline Generation 64.20 60.50 12.80 84.10 68.40 46.00 70.00 14.2k 310s\nw/ Memory-Outline w/o Evidence Distilling 71.50 80.40 13.55 87.60 58.30 79.00 81.25 22.1k 370s\nCo-Evolving Search w/o Research Memory 69.80 78.20 10.20 70.40 65.90 52.50 53.75 15.8k 290s\nw/ Coherent-Preserved w/o Evidence Merging 70.10 76.50 14.25 85.10 64.80 74.50 77.50 18.4k 340s\nIterative Synthesis w/o Iterative Synthesis 62.40 65.30 19.80 82.50 55.20 42.50 47.50 5.8k 125s",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "201eaa6509365f09b3bcb18ecebbd849732ceba17927a9f2d4fb6c66b42bd078",
+            "evidence_id": "E786b6a0331f408c0-B0044",
+            "pages": [
+              8
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 989,
+                "page": 8,
+                "section": "Experimental Setup",
+                "section_index": 23,
+                "start": 199,
+                "text": "denote with and without,\nrespectively.\nComponent Configuration Quality Reliability Coverage Profile\nRel.\u2191Str.\u2191Hall.\u2193Temp.\u2191Cons.\u2191Brd.\u2191Dep.\u2191Len. Time\nFull Agent Mind2Report 75.42 85.24 6.12 90.53 75.82 80.85 84.2521.9k 385s\nw/ Intent-Driven w/o Intent Clarification 68.35 81.10 7.45 88.20 73.15 62.00 77.50 19.5k 350s\nOutline Formulation w/o Outline Generation 64.20 60.50 12.80 84.10 68.40 46.00 70.00 14.2k 310s\nw/ Memory-Outline w/o Evidence Distilling 71.50 80.40 13.55 87.60 58.30 79.00 81.25 22.1k 370s\nCo-Evolving Search w/o Research Memory 69.80 78.20 10.20 70.40 65.90 52.50 53.75 15.8k 290s\nw/ Coherent-Preserved w/o Evidence Merging 70.10 76.50 14.25 85.10 64.80 74.50 77.50 18.4k 340s\nIterative Synthesis w/o Iterative Synthesis 62.40 65.30 19.80 82.50 55.20 42.50 47.50 5.8k 125s"
+              }
+            ],
+            "text": "denote with and without,\nrespectively.\nComponent Configuration Quality Reliability Coverage Profile\nRel.\u2191Str.\u2191Hall.\u2193Temp.\u2191Cons.\u2191Brd.\u2191Dep.\u2191Len. Time\nFull Agent Mind2Report 75.42 85.24 6.12 90.53 75.82 80.85 84.2521.9k 385s\nw/ Intent-Driven w/o Intent Clarification 68.35 81.10 7.45 88.20 73.15 62.00 77.50 19.5k 350s\nOutline Formulation w/o Outline Generation 64.20 60.50 12.80 84.10 68.40 46.00 70.00 14.2k 310s\nw/ Memory-Outline w/o Evidence Distilling 71.50 80.40 13.55 87.60 58.30 79.00 81.25 22.1k 370s\nCo-Evolving Search w/o Research Memory 69.80 78.20 10.20 70.40 65.90 52.50 53.75 15.8k 290s\nw/ Coherent-Preserved w/o Evidence Merging 70.10 76.50 14.25 85.10 64.80 74.50 77.50 18.4k 340s\nIterative Synthesis w/o Iterative Synthesis 62.40 65.30 19.80 82.50 55.20 42.50 47.50 5.8k 125s"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0054"
+        ],
+        "excerpt": "Alignment of QRC-Eval with Human Experts.To validate the reliability of QRC-Eval, we solicited expert\nratings across quality, reliability, and coverage dimensions. We engaged a panel of financial analysts to score\n9\nNVIDIA H100 vs. AMD MI300X: Which for LLM Training in 2026?\nQuery\nReasoning\nTrace\nResearch Memory\nHardware needs stable software.\nVerifying 'CUDA Moat' and\nMegatron-LM support to assess\ntraining reliability.\nQuery: NVIDIA CUDA vs AMD ROCm stability for LLM training 2026\n[1] https ://www .thundercompute .com >\u2026> rocm-vs-cuda-gpu-computing\n[2] https ://discuss .pytorch .org >\u2026> why_is_cuda_faster_than_rocm\n[3] https ://medium .com >\u2026> choosing -the -right -gpu -for -local -llm-use\n[1]: NVIDIA vs AMD: The 2025 Showdown ... In today's market update, stock prices are\nfluctuating. However, for tech enthusiasts, the specs are out. NVIDIA's H100 has been the\nking for a while. The new ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Consistency Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1d0deba68d0fe61a4dc489dd91c004e6b52ec0e18ad904ec7588276a4f9911e8",
+            "evidence_id": "E786b6a0331f408c0-B0054",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Evaluation Consistency Analysis",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 215,
+                "page": 9,
+                "section": "Evaluation Consistency Analysis",
+                "section_index": 28,
+                "start": 0,
+                "text": "Alignment of QRC-Eval with Human Experts.To validate the reliability of QRC-Eval, we solicited expert\nratings across quality, reliability, and coverage dimensions. We engaged a panel of financial analysts to score\n9"
+              },
+              {
+                "end": 685,
+                "page": 10,
+                "section": "Evaluation Consistency Analysis",
+                "section_index": 29,
+                "start": 0,
+                "text": "NVIDIA H100 vs. AMD MI300X: Which for LLM Training in 2026?\nQuery\nReasoning\nTrace\nResearch Memory\nHardware needs stable software.\nVerifying 'CUDA Moat' and\nMegatron-LM support to assess\ntraining reliability.\nQuery: NVIDIA CUDA vs AMD ROCm stability for LLM training 2026\n[1] https ://www .thundercompute .com >\u2026> rocm-vs-cuda-gpu-computing\n[2] https ://discuss .pytorch .org >\u2026> why_is_cuda_faster_than_rocm\n[3] https ://medium .com >\u2026> choosing -the -right -gpu -for -local -llm-use\n[1]: NVIDIA vs AMD: The 2025 Showdown ... In today's market update, stock prices are\nfluctuating. However, for tech enthusiasts, the specs are out. NVIDIA's H100 has been the\nking for a while. The new "
+              }
+            ],
+            "text": "Alignment of QRC-Eval with Human Experts.To validate the reliability of QRC-Eval, we solicited expert\nratings across quality, reliability, and coverage dimensions. We engaged a panel of financial analysts to score\n9\nNVIDIA H100 vs. AMD MI300X: Which for LLM Training in 2026?\nQuery\nReasoning\nTrace\nResearch Memory\nHardware needs stable software.\nVerifying 'CUDA Moat' and\nMegatron-LM support to assess\ntraining reliability.\nQuery: NVIDIA CUDA vs AMD ROCm stability for LLM training 2026\n[1] https ://www .thundercompute .com >\u2026> rocm-vs-cuda-gpu-computing\n[2] https ://discuss .pytorch .org >\u2026> why_is_cuda_faster_than_rocm\n[3] https ://medium .com >\u2026> choosing -the -right -gpu -for -local -llm-use\n[1]: NVIDIA vs AMD: The 2025 Showdown ... In today's market update, stock prices are\nfluctuating. However, for tech enthusiasts, the specs are out. NVIDIA's H100 has been the\nking for a while. The new "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0059"
+        ],
+        "excerpt": "QRC-Eval with human expert\njudgments via Spearman correlation. Absolute values near1\ndenote strong alignment.\nMetrics Human Expert Dimensions\nQuality Reliability CoverageOverall\nQuality\nRelevance\u21910.7840.342 0.457 0.653\nStructure\u21910.6210.289 0.315 0.546\nReliability\nHallucination\u2193-0.413-0.825-0.258 -0.692\nTemporality\u21910.3170.6480.224 0.529\nConsistency\u21910.4560.7230.381 0.627\nCoverage\nSource Breadth\u21910.552 0.3260.7640.583\nSearch Depth\u21910.519 0.2950.7180.614\nAverage Rank\u2193-0.815 -0.807 -0.753-0.916\nConsistency of LLM and Human Judgment.Dur-\ning dataset annotation, human experts indepen-\ndently annotate keypoints for each commercial\nquery, with inter-annotator agreement reaching\n\u03b1 = 0.82, indicating reliable consensus. For met-\nrics requiring semantic judgment, including struc-\nture (Str.), hallucination (Hall.), and consistency\n(Cons.), we use Gemini 2.5 Pro as the unified\nLLM-as-a-Judge ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Id \u2013 22",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bc71a66c924d50da109e2db43acf1616c864f2adc6922ebb40f1c80e9355d00b",
+            "evidence_id": "E786b6a0331f408c0-B0059",
+            "pages": [
+              10
+            ],
+            "section": "Id \u2013 22",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1784,
+                "page": 10,
+                "section": "Id \u2013 22",
+                "section_index": 31,
+                "start": 894,
+                "text": "QRC-Eval with human expert\njudgments via Spearman correlation. Absolute values near1\ndenote strong alignment.\nMetrics Human Expert Dimensions\nQuality Reliability CoverageOverall\nQuality\nRelevance\u21910.7840.342 0.457 0.653\nStructure\u21910.6210.289 0.315 0.546\nReliability\nHallucination\u2193-0.413-0.825-0.258 -0.692\nTemporality\u21910.3170.6480.224 0.529\nConsistency\u21910.4560.7230.381 0.627\nCoverage\nSource Breadth\u21910.552 0.3260.7640.583\nSearch Depth\u21910.519 0.2950.7180.614\nAverage Rank\u2193-0.815 -0.807 -0.753-0.916\nConsistency of LLM and Human Judgment.Dur-\ning dataset annotation, human experts indepen-\ndently annotate keypoints for each commercial\nquery, with inter-annotator agreement reaching\n\u03b1 = 0.82, indicating reliable consensus. For met-\nrics requiring semantic judgment, including struc-\nture (Str.), hallucination (Hall.), and consistency\n(Cons.), we use Gemini 2.5 Pro as the unified\nLLM-as-a-Judge "
+              }
+            ],
+            "text": "QRC-Eval with human expert\njudgments via Spearman correlation. Absolute values near1\ndenote strong alignment.\nMetrics Human Expert Dimensions\nQuality Reliability CoverageOverall\nQuality\nRelevance\u21910.7840.342 0.457 0.653\nStructure\u21910.6210.289 0.315 0.546\nReliability\nHallucination\u2193-0.413-0.825-0.258 -0.692\nTemporality\u21910.3170.6480.224 0.529\nConsistency\u21910.4560.7230.381 0.627\nCoverage\nSource Breadth\u21910.552 0.3260.7640.583\nSearch Depth\u21910.519 0.2950.7180.614\nAverage Rank\u2193-0.815 -0.807 -0.753-0.916\nConsistency of LLM and Human Judgment.Dur-\ning dataset annotation, human experts indepen-\ndently annotate keypoints for each commercial\nquery, with inter-annotator agreement reaching\n\u03b1 = 0.82, indicating reliable consensus. For met-\nrics requiring semantic judgment, including struc-\nture (Str.), hallucination (Hall.), and consistency\n(Cons.), we use Gemini 2.5 Pro as the unified\nLLM-as-a-Judge "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0060"
+        ],
+        "excerpt": "evaluator. We further compare\nthese metrics with human expert ratings and\nobserve a strong agreement rate of 0.94. Specif-\nically, structure aligns most closely with human\nquality judgments, hallucination and consistency\nwith reliability judgments, and the overall au-\ntomatic ranking shows the strongest agreement\nwith human satisfaction. These results support\nLLM-as-a-Judge as a controlled complement to\ndeterministic metrics in QRC-Eval.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Id \u2013 22",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "868e36521646e9d14a5d0d0feb21996e25de39c2bfad67e9bcfba30e00a21d56",
+            "evidence_id": "E786b6a0331f408c0-B0060",
+            "pages": [
+              10
+            ],
+            "section": "Id \u2013 22",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2225,
+                "page": 10,
+                "section": "Id \u2013 22",
+                "section_index": 31,
+                "start": 1784,
+                "text": "evaluator. We further compare\nthese metrics with human expert ratings and\nobserve a strong agreement rate of 0.94. Specif-\nically, structure aligns most closely with human\nquality judgments, hallucination and consistency\nwith reliability judgments, and the overall au-\ntomatic ranking shows the strongest agreement\nwith human satisfaction. These results support\nLLM-as-a-Judge as a controlled complement to\ndeterministic metrics in QRC-Eval."
+              }
+            ],
+            "text": "evaluator. We further compare\nthese metrics with human expert ratings and\nobserve a strong agreement rate of 0.94. Specif-\nically, structure aligns most closely with human\nquality judgments, hallucination and consistency\nwith reliability judgments, and the overall au-\ntomatic ranking shows the strongest agreement\nwith human satisfaction. These results support\nLLM-as-a-Judge as a controlled complement to\ndeterministic metrics in QRC-Eval."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2601.04879",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.1145/3799682.3840672",
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Human financial expert ratings on 50 sampled reports show strong Spearman correlation with automatic metrics and a 0.94 agreement rate for LLM-as-a-judge semantic judgments.",
+          "final_evaluation_signal": "QRC-Eval metrics combining expert-annotated keypoint recall, deterministic temporal and source metadata checks, and Gemini 2.5 Pro LLM-as-a-judge scoring for structure, hallucination, and consistency.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Prompt-based integrity, freshness, and plurality validation gates that regulate evidence storage and search query expansion during inference.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0002",
+          "E786b6a0331f408c0-B0008",
+          "E786b6a0331f408c0-B0010",
+          "E786b6a0331f408c0-B0021",
+          "E786b6a0331f408c0-B0025",
+          "E786b6a0331f408c0-B0026",
+          "E786b6a0331f408c0-B0028",
+          "E786b6a0331f408c0-B0033",
+          "E786b6a0331f408c0-B0037",
+          "E786b6a0331f408c0-B0038",
+          "E786b6a0331f408c0-B0040",
+          "E786b6a0331f408c0-B0042",
+          "E786b6a0331f408c0-B0043",
+          "E786b6a0331f408c0-B0044",
+          "E786b6a0331f408c0-B0054",
+          "E786b6a0331f408c0-B0059",
+          "E786b6a0331f408c0-B0060"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "8b4dcd422a19af8373493b408b11f51c12ecb9948131c0a9e6bfa3e5e81371d5"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.1145/3799682.3840672",
+        "claim_evidence_alignment": "Reported findings match the empirical results, showing consistent performance advantages over baselines across quality, reliability, and coverage metrics, supported by ablation experiments isolating the utility of each architectural module.",
+        "context_id": "786b6a0331f408c0b677ecdd935a93d95aedca2af3928f1d48400c3b6059da76",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation is conducted across proprietary and open-source deep research agent baselines on the QRC-Eval suite using rule-based metrics (relevance, temporality, breadth, depth) complemented by Gemini 2.5 Pro LLM-as-a-judge for semantic structure, consistency, and hallucination. The study includes component ablations and domain-level analysis across six commercial sectors.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Human financial expert judgments were gathered across 50 sampled reports, demonstrating strong Spearman rank correlation with automatic metrics and a 0.94 agreement rate on semantic judgments.",
+          "final_evaluation_signal": "The QRC-Eval benchmark combining expert-annotated keypoint recall, deterministic temporal and source metadata checks, and separate LLM-as-a-judge (Gemini 2.5 Pro) scoring for structure, consistency, and hallucination.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Internal heuristic and prompt-based validation gates (integrity, freshness, and plurality checks via LLM prompts) regulating evidence storage and search query expansion during inference.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E786b6a0331f408c0-B0002",
+          "E786b6a0331f408c0-B0008",
+          "E786b6a0331f408c0-B0010",
+          "E786b6a0331f408c0-B0021",
+          "E786b6a0331f408c0-B0025",
+          "E786b6a0331f408c0-B0026",
+          "E786b6a0331f408c0-B0028",
+          "E786b6a0331f408c0-B0033",
+          "E786b6a0331f408c0-B0037",
+          "E786b6a0331f408c0-B0038",
+          "E786b6a0331f408c0-B0040",
+          "E786b6a0331f408c0-B0042",
+          "E786b6a0331f408c0-B0043",
+          "E786b6a0331f408c0-B0044",
+          "E786b6a0331f408c0-B0054",
+          "E786b6a0331f408c0-B0059",
+          "E786b6a0331f408c0-B0060"
+        ],
+        "limitations": "The authors document clear failure modes and operational constraints, including risks of accepting shallow or noisy consensus evidence, web crawling/scraping access restrictions, and minor discourse boundary inconsistencies in staged section generation.",
+        "method_assessment": "The methodology is thoroughly detailed, specifying exact prompts and execution pipelines for intent probing, chapter tree outline generation, evidence validation gating (integrity, freshness, plurality), memory updates, and section-by-section iterative synthesis grounded in source registries.",
+        "quality_rationale": "Mind2Report provides an actionable, clearly articulated architectural design addressing specific failure modes in commercial agentic research. The validation is robust, featuring extensive baseline comparisons, transparent prompting details, ablation studies, and independent human expert correlation analysis.",
+        "scoped_contribution": "The paper introduces Mind2Report, a cognitive deep research agent framework designed for long-form commercial report synthesis via intent clarification, memory-outline co-evolution, and iterative synthesis, along with QRC-Eval, a benchmark of 200 expert-crafted commercial queries and a multi-dimensional evaluation suite.",
+        "source_content_hash": "8b4dcd422a19af8373493b408b11f51c12ecb9948131c0a9e6bfa3e5e81371d5"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "Mind2Report provides an actionable, clearly articulated architectural design addressing specific failure modes in commercial agentic research. The validation is robust, featuring extensive baseline comparisons, transparent prompting details, ablation studies, and independent human expert correlation analysis.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "8b4dcd422a19af8373493b408b11f51c12ecb9948131c0a9e6bfa3e5e81371d5",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors document clear failure modes and operational constraints, including risks of accepting shallow or noisy consensus evidence, web crawling/scraping access restrictions, and minor discourse boundary inconsistencies in staged section generation."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -149,7 +2712,7 @@
       "W7119689058"
     ]
   },
-  "source_updated_date": "2026-11-04",
+  "source_updated_date": "2026-11-08",
   "sources": [
     "openalex",
     "arxiv"
@@ -169,7 +2732,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

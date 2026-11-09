@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CORE: Coarse-to-Fine Search with Context Management for Deep Research</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>CORE: Coarse-to-Fine Search with Context Management for Deep Research</h1>
+          <p class="hero-copy">Hoang Tran Vuong, Pham Ngoc Quan, Hung Bui, Fatih Porikli, Dat Quoc Nguyen</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.07859">Open paper</a>
+            <a class="paper-detail-link" href="core-coarse-to-fine-search-with-context-management-for-deep-research-ab8f94aa.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Hoang Tran Vuong, Pham Ngoc Quan, Hung Bui, Fatih Porikli, Dat Quoc Nguyen</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-05</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-05</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.07859v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2611.07859">DOI</a><a href="https://openalex.org/W7225375953">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies autonomous or deep research agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Deep research agents answer complex questions through repeated search. They rely on a harness that runs their tool calls and returns evidence to their context. This creates a trade-off: Search works best over long passages, which give enough context for reliable semantic matching. But the returned evidence should be...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work provides a clear, reproducible, training-free architectural advance for deep research harnesses with thorough benchmarking across multiple scales and models, complete baseline controls, and explicit ablations.</p>
+      <p>The authors transparently discuss the boundary conditions, notably that the empirical findings are evaluated on closed-search benchmarks with static corpora and reference answers, leaving open-ended live web browsing to future work.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-06T11:52:40.389313+00:00.</p>
+        <p>Coverage: 76245 of 76245 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents answer complex ques-
+tions through repeated search. They rely on
+a harness that runs their tool calls and re-
+turns evidence to their context. This cre-
+ates a trade-off: Search works best over long
+passages, which give enough context for re-
+liable semantic matching. But the returned
+evidence should be short, because every ob-
+servation stays in the agent&#x27;s context for the
+rest of the trajectory. We introduceCORE, a
+training-free harness that combines coarse-to-
+fine search with context management. CORE
+retrieves passages with a dense retriever. It
+then reuses the token-level similarities from
+a late-interaction reranker to return only the
+most relevant snippet from each passage. Con-
+text management lets the agent expand the con-
+text around sources it has already retrieved and
+suppresses repeated snippets. In controlled
+closed-search comparisons with the </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>late-interaction model (Khattab
+and Zaharia, 2020; Chaffin, 2025), whose token-
+level similarities also locate the most relevant snip-
+pet within each passage at no additional encod-
+ing cost. CORE&#x27;s context manager lets the agent
+expandthe context around previously retrieved
+sources anddeduplicatessnippets across searches.
+Our contributions are as follows:
+• Coarse-to-fine search.CORE searches at the
+passage level but returns evidence at the snip-
+pet level. It reuses the token-level similarities
+computed during late-interaction reranking to
+locate the most relevant snippet in each pas-
+sage, without any additional encoding.
+• A training-free harness.CORE combines
+coarse-to-fine search with context manage-
+ment and works with any agent model with-
+out retraining. Context management offsets
+the narrowness of snippet-level evidence by
+letting the agent expand the context </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>parent-
+document identifier and passage offsets. We encode
+the raw text of each passage with an embedding
+model and store the normalized vectors in an inner-
+product index. Appendix A.4 provides indexing
+details for all passagesp d,k fromD.
+We form eqby concatenating the sub-queryq with
+any text r the agent produced in the same turn, after
+removing tool-call content.
+LetEmb denote the embedding model. The can-
+didate passages being relevant toqis:
+P(q, r) = Top-Kc
+
+Emb(eq)⊤Emb(pd,k) | ∀pd,k ∈ D(3)
+where Top-Kc selects the top Kc = 300 rele-
+vant passages. The selected candidates are further
+reranked for fine-grained evidence before present-
+ing to the agent.
+Fine-Grained Reranking.To refine the dense
+ranking and identify local query–passage matches,
+we employ a late-interaction ColBERT-based
+model (Chaffin, 2025). For the sub-query q and a
+candidate passage p∈ P(q, r), let h1, . . . </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>,hlq and
+v1, . . . ,vlp denote their retained ColBERT token
+representations, where lq and lp are the respective
+numbers of tokens. The passage score spass(q, p)
+is then computed as:
+sij(q, p) =h⊤i vj (4)
+spass(q, p) =
+lqX
+i=1
+max
+1≤j≤lp
+sij(q, p)(5)
+This ColBERT MaxSim operator (Khattab and Za-
+haria, 2020) sums over all query-token representa-
+tions, the strongest match each one has with any
+passage token. Candidates are considered in de-
+scending order of spass(q, p), and up to Kf = 10
+passages are selected, with at most one passage per
+parent document. If fewer than Kf distinct doc-
+uments are available, the remaining positions are
+filled with previously skipped passages in score or-
+der. Importantly, the token-level similarity matrix
+computed during reranking is then reused to select
+fine-grained evidence within the retained passages.
+Within each retained passage p, we construct </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a
+set Gp of segments over the ColBERT token repre-
+sentations, aiming for 20 segments with 50% over-lap. Because meaningful segment boundaries must
+fall on integer token positions, the actual number of
+segments and their overlap may differ slightly from
+these targets. Each nonempty segment [a, b)∈ Gp,
+with1≤a &lt; b≤l p + 1, is scored as:
+sseg(q, p;a, b) =
+lqX
+i=1
+max
+a≤j&lt;b
+sij(q, p)(6)
+The highest-scoring segment—selected as the
+snippet representing the passage—is mapped back
+to its corresponding text in the passage, and its
+boundaries are expanded to the nearest whitespace
+boundaries to prevent subword splitting. Because
+snippet selection reuses the similarity matrix com-
+puted during passage reranking, it does not require
+any additional encoding. The resulting search
+observation contains an ordered set of snippets,
+each accompanied by its metadata including rank,
+parent-document </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>it,
+whilecross-search deduplicationreplaces snippets
+already shown to the agent with compact references
+in new search observations.
+Context Expansion.To expand the context
+around a previously visited passage, the agent is-
+sues a sub-query q together with the identifiers of
+previously retrieved passages. This action typically
+happens when a snippet in its context mentions
+an entity or relation whose details it needs for the
+next step. For each requested document d with at
+least one indexed passage, context management
+performs a semantic search restricted to that docu-
+ment:
+k⋆ = arg max
+∀pd,k∈d
+Emb(q)⊤Emb(pd,k)(7)
+The selected passage pd,k⋆ is expanded with its
+predecessor pd,k⋆−1, when one exists. The two pas-
+sages are merged into a single contiguous excerpt
+of the original document, with the overlapping char-
+acter span they share included only once.
+Compared with issuing another </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deduplication.As the research
+progresses, later sub-queries may retrieve snippets
+that already appeared in earlier search observations,
+and parallel sub-queries within a single search call
+may return the same snippet. Because the first oc-
+currence remains in the agent&#x27;s context, showing
+the same text again increases token cost without
+adding new evidence. Context management there-
+fore tracks the snippets already shown to the agent
+and replaces any repeated occurrences with com-
+pact references.
+For each question, CORE maintains a set H,
+initially empty, containing the keys of all snippets
+shown to the agent so far. For a search result e,
+which consists of a snippet and its metadata, the
+key combines the parent-document identifier with
+a hash hash of the whitespace-normalized snippet:
+κ(e) =
+
+docid(e), hash(snippet(e))
+
+,(8)
+Within each search call, results from all sub-
+queries are </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Closed-search benchmarks.We evaluate on
+three benchmarks. The first is the standard
+BrowseComp-Plus (Chen et al., 2026c), which has
+830 questions over a fixed corpus of 100K web
+documents. The other two are more challenging be-
+cause their corpora are much larger: BrowseComp-
+Wikipedia (Yang et al., 2026) has 232 questions
+over 6M Wikipedia articles, and BrowseComp-
+PlusCM (Sharifymoghaddam et al., 2026) has 57
+questions over 553M ClimbMix documents. More
+details of these benchmarks are presented in Ap-
+pendix A.1.
+Harnesses.We compare CORE with two re-
+cent state-of-the-art open-source harnesses: Tongyi
+DeepResearch (Tongyi DeepResearch Team et al.,
+2025) and OpenResearcher (Li et al., 2026b).
+Agent Models.We use three agent models in the
+main harness comparison: GPT-5.4 (high reason-
+ing effort), Qwen3.8-27B (Qwen Team, 2026), and
+Tongyi-DeepResearch-30B-A3B (Tongyi DeepRe-
+search </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tokenizer.
+All three harnesses search the same AgentIR-4B
+passage index. They use the same procedure to
+add the agent&#x27;s reasoning text, when available, to
+query encoding. Within each model–benchmark
+comparison, we also fix the agent checkpoint, infer-
+ence settings, question set, corpus, answer judge,
+and agent context budget. Tongyi DeepResearch
+and OpenResearcher retrieve passages by dense
+similarity alone, while CORE also reranks can-
+didates with the late-interaction model Reason-
+ModernColBERT (Chaffin, 2025). Appendices A.4
+and B.2 describe these tools.
+Evaluation.Following prior work (Tongyi Deep-
+Research Team et al., 2025; Chen et al., 2026c;
+Yang et al., 2026; Sharifymoghaddam et al., 2026;
+Li et al., 2026b), we use an LLM as a judge to
+compute answer accuracy. In particular, we use
+GPT-5.5 at high reasoning effort as the judge, so
+that no evaluated model grades its own </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>responses.
+The judge compares each answer with the refer-
+ence answer using the same grading rubric for all
+three benchmarks. We report two quality metrics.
+Answer accuracy is the percentage of questions
+judged correct. Evidence recall is the fraction of an-
+notated relevant documents that the agent retrieves,
+averaged over questions. To measure cost, we re-
+port median peak context, mean output tokens per
+search call, and mean number of search calls per
+question. Appendices A.5 and B.1 describe the
+judging procedure, how metrics are aggregated,
+and how incomplete runs are handled.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 compares answer accuracy, evidence recall,
+and search resource use across the three bench-
+marks.
+Answer Accuracy and Evidence Recall.CORE
+achieves the highest answer accuracy and evidence
+recall in every model–benchmark group, produc-
+ing new state-of-the-art results. On BrowseComp-
+Plus, it improves both metrics over the stronger
+baseline, OpenResearcher, for all three agent mod-
+Agent
+model Harness Answeraccuracy↑ Evidencerecall↑ Peakcontext↓ Tokens/search↓ Searchcalls
+(a) BrowseComp-Plus
+GPT-5.4
+Tongyi DeepResearch 84.70 81.53 93,500 26,316 4.5
+OpenResearcher 91.45 89.5535,3233,690 12.1
+CORE (ours)94.94 94.4742,7323,36516.8
+Tongyi-DeepResearch-
+30B-A3B
+Tongyi DeepResearch 65.66 68.74 80,771 15,259 5.2
+OpenResearcher 79.88 83.9941,912 1,44720.6
+CORE (ours)80.12 85.3843,527 1,713 19.6
+Qwen3.8-27B
+Tongyi DeepResearch 77.71 71.53 68,318 20,757 3.7
+OpenResearcher 80.72 75.77 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>27,1263,0226.0
+CORE (ours)87.11 83.17 25,1883,701 5.1
+(b) BrowseComp-Wikipedia
+GPT-5.4
+Tongyi DeepResearch 30.17 28.18 264,668 26,068 9.1
+OpenResearcher 42.67 49.40229,0424,994 30.9
+CORE (ours)51.29 57.92257,0044,45941.7
+Tongyi-DeepResearch-
+30B-A3B
+Tongyi DeepResearch 17.24 18.7685,87613,642 7.0
+OpenResearcher 27.16 33.16 89,7241,59837.4
+CORE (ours)28.45 35.5789,784 1,777 35.0
+Qwen3.8-27B
+Tongyi DeepResearch 22.41 23.20 183,132 22,098 6.4
+OpenResearcher 25.86 27.80147,724 4,10513.0
+CORE (ours)34.05 39.04160,280 4,533 13.8
+(c) BrowseComp-PlusCM
+GPT-5.4
+Tongyi DeepResearch 50.88 10.78 259,128 23,606 8.1
+OpenResearcher 56.14 15.65 98,627 4,028 26.8
+CORE (ours)68.42 20.44 96,383 3,71527.2
+Tongyi-DeepResearch-
+30B-A3B
+Tongyi DeepResearch 24.56 5.5684,26513,237 6.2
+OpenResearcher 31.58 7.70 88,7001,41434.9
+CORE (ours)45.61 11.5189,489 1,590 32.2
+Qwen3.8-27B
+Tongyi DeepResearch 33.33 6.55 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>search
+configurations uses context management.
+Table 2 shows that, without access to the cor-
+Configuration Answeraccuracy (%)↑
+No tools 4.58
+Coarse retrieval only 62.61
+Coarse-to-fine search tool only 70.84
+Full CORE80.12
+Table 2: Component analysis on BrowseComp-Plus
+with Tongyi-DeepResearch-30B-A3B. All tool-enabled
+configurations share the AgentIR-4B passage index, in-
+ference settings, and context budget.
+pus, the agent answers only 4.58% of questions
+correctly, so it must rely on retrieved evidence.
+Coarse retrieval alone raises accuracy to 62.61%.
+With search still the only tool, coarse-to-fine search
+adds 8.23 percentage points (70.84%). This gain
+comes only from returning more relevant, com-
+pact snippets. Context management adds a further
+9.28 points (80.12%). Overall, the two compo-
+nents together improve accuracy by 17.51 percent-
+age points over coarse retrieval only, and </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our experiments examine multi-step information
+seeking on three benchmarks with fixed text col-
+lections and reference answers. We chose this set-
+ting on purpose because it allows controlled, re-
+producible comparisons across harnesses. Fixed
+corpora do not capture the dynamic and hetero-
+geneous nature of the open web, and reference-
+answer-based evaluation may not fully reflect the
+quality of long-form synthesis in less constrained
+research tasks. Evaluating on live web search and
+open-ended research reports is beyond the scope
+of this work. We leave it to future research, which
+could test whether our findings carry over beyond
+fixed-corpus question answering.</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Autonomous research-agent system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies agents that perform or evaluate multi-step research workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Autonomous research agent workflow</li>
+              <li>Tags: deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-08</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-06 11:49:20</li><li>Last seen by Paper Scout: 2026-11-09 12:30:09</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.07859</li><li>arXiv: 2611.07859</li><li>OpenAlex: W7225375953</li><li>OpenAlex IDs: W7225375953</li><li>arXiv IDs: 2611.07859</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="core-coarse-to-fine-search-with-context-management-for-deep-research-ab8f94aa.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>CORE: Coarse-to-Fine Search with Context Management for Deep Research. Hoang Tran Vuong, Pham Ngoc Quan, Hung Bui, Fatih Porikli, Dat Quoc Nguyen. 2026-11-05. https://arxiv.org/abs/2611.07859</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coati: Host-Grounded Execution for Installable Mobile GUI Agents</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Coati: Host-Grounded Execution for Installable Mobile GUI Agents</h1>
+          <p class="hero-copy">Yudou Ying, Pu Shi, Hanlei Shi, Yuhua Zheng</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.02644">Open paper</a>
+            <a class="paper-detail-link" href="coati-host-grounded-execution-for-installable-mobile-gui-agents-ce82fd2e.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Yudou Ying, Pu Shi, Hanlei Shi, Yuhua Zheng</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-02</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-02</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.02644v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2611.02644">DOI</a><a href="https://openalex.org/W7225174843">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies memory systems or memory modules for LLM agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Mobile GUI agents can carry out tasks across apps, yet most run on a separate computer that drives a phone over the Android Debug Bridge (ADB), out of reach of ordinary users and of the apps through which most people reach Web services. We present Coati, a source-available agent that users install as an Android app....</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work presents a clearly articulated systems contribution with rigorous benchmarking against baseline implementations under strict, controlled step and access constraints, supported by targeted ablation and hardware deployment studies.</p>
+      <p>The authors document key limitations including sensitivity to fast exploration on deep routes, hardware dependencies for local GPU OCR, reliance on external LLM endpoints for privacy-sensitive data, and restrictions on AccessibilityService distribution.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-04T11:55:16.064058+00:00.</p>
+        <p>Coverage: 66666 of 66666 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Mobile GUI agents can carry out tasks across apps, yet most run
+on a separate computer that drives a phone over the Android De-
+bug Bridge (ADB), out of reach of ordinary users and of the apps
+through which most people reach Web services. We presentCoati,
+a source-available agent that users install as an Android app. Its
+runtime on the phone, the host, records what a model alone can-
+not see: the effect of each action at its target, result screens across
+apps, and the progress of repeated steps.VerifyLoopchecks action
+outcomes and completion claims against host evidence and reports
+a completion it cannot audit as unverified.AppMemorybuilds
+per-app procedural memory from observations that the interface
+supports and reuses it on later visits. Arouted fast executorlets
+a lightweight selection model take simple, confident steps and lets
+the host repeat loops of simple steps that the large </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>model plans
+once. On all 116 AndroidWorld tasks, with Gemini 3.8 Flash as every
+agent&#x27;s backbone, Coati succeeds on 86.5% of the tasks over three
+trials, ahead of the strongest open-source agent Artemis (77.6% with
+the same accessibility-only access, 76.5% even when allowed ADB)
+and far ahead of FinalRun and Midscene (about 59%), and Verify-
+Loop cuts false completion claims by about a third at comparable
+success. In everyday use, the fast executor cuts the median time of
+phone tasks by 39% at comparable success and runs three of four
+loop tasks 2.8–5.4× faster with 6–9× fewer model tokens, while
+AppMemory shortens a repeated deep route in an unfamiliar app
+from 18.5 steps to 6–7. On an Android 16 phone, routed execution
+completes all 27 benchmark runs with 76% fewer Reasoning calls on
+the critical path. Host evidence, not model self-assessment, makes
+an installable agent reliable and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>32, 39].
+We presentCoati, a source-available Android agent that users in-
+stall as an app. Coati is designed to address the reliability, execution-
+efficiency, and repeated-use challenges of installable mobile agents.
+Its core principle ishost-grounded execution: the model proposes an
+action, while evidence recorded by the host—the information col-
+lected by Coati&#x27;s runtime on the phone—determines the outcome.
+We implement this principle with three mechanisms.(1)Veri-
+fyLoopchecks each action against the interface changes it causes
+and audits completion claims using the result screens of the appli-
+cations involved and the progress of delegated loops. When the
+available evidence is insufficient, it reports the task as unverified
+rather than complete.(2)AppMemorystores interface observa-
+tions as per-application guidance only when they are supported
+by the interface and the task passes </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the completion audit. It then
+retrieves this guidance during later visits.(3)Routed fast execu-
+torreduces the cost of model calls. A lightweight typed selector
+handles simple, confident actions from host-built candidates, while
+the Reasoning model handles uncertain steps, application switches,
+and text entry under a user-selectable speed–accuracy mode. For
+repeated simple actions, the Reasoning model plans the loop once,
+and the host executes it item by item while recording the handled
+items. Together, these mechanisms use the same host evidence to
+improve execution efficiency and constrain what the agent can
+claim and remember.
+We compare Coati with the strongest open-source agents on all
+116 AndroidWorld tasks. All agents use Gemini 3.8 Flash as the
+backbone model and run on the same device with the same task
+instances and execution protocol. Coati achieves an average task
+success </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rate of 86.5% across three trials, ahead of the strongest open-
+source agent Artemis (77.6% with the same accessibility-only access,
+and 76.5% even when allowed ADB), and far ahead of FinalRun and
+Midscene (about 59%). At comparable success rates, VerifyLoop
+reduces false completion claims by about one third (Section 4.2–
+4.3). Beyond AndroidWorld, whose tasks are short first visits, we
+evaluate execution efficiency and repeated use in everyday settings.
+Compared with a per-step Reasoning configuration, the routed
+fast executor reduces the median execution time of phone tasks by
+39% at comparable success. It also makes three of four loop tasks
+2.8–5.4× faster while reducing model token usage by 6–9×. For
+repeated deep navigation in an unfamiliar application, AppMemory
+reduces the average execution length from 18.5 steps to 6–7 steps
+(Section 4.4–4.5).
+Overall, Coati unifies action </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Execution
+Traditional Observe–Think–Act agents proceed to the next reason-
+ing step immediately after issuing an action. A successful return
+from the Android interface only indicates that the operation was ac-
+cepted; undetected failures, unexpected pop-ups, and page drift may
+propagate, and repeated attempts under an unchanged interface
+may lead to unproductive loops. VerifyLoop extends execution to
+Coati: Host-Grounded Execution for Installable Mobile GUI Agents Conference&#x27;17, July 2017, Washington, DC, USA
+Table 1: Verification outcomes and corresponding control
+decisions in VerifyLoop.
+Outcome Interpretation Control Decision
+SUCCESS The expected transi-
+tion is observed.
+Continue from the new
+state.
+FAILED The action is ineffec-
+tive or the expected
+state is absent.
+Return failure feed-
+back and replan.
+DRIFTED Execution enters a
+task-incompatible
+state.
+Recover from the ob-
+served </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cell at 4% of the screen) and 𝜎(𝑜𝑡) the screen
+signature. VerifyLoop counts theconsecutivefailed attempts of the
+current action,
+𝑁𝑡 =max
+
+𝑛:𝜙(𝑎 𝑡−𝑘)=𝜙(𝑎 𝑡)∧𝜎(𝑜 𝑡−𝑘)=𝜎(𝑜 𝑡)
+∧𝑣𝑡−𝑘 ∈{FAILED,DRIFTED},0≤𝑘&lt;𝑛
+
+,
+(8)
+Table 2: AppMemory admission and update decisions.
+Decision Condition Action
+MATCHEDExisting fact Keep𝑀 𝑖 unchanged.
+NEW New/changed fact
+and𝐸 𝑡 =1
+Sanitize and add toC 𝑖.
+UNKNOWNInsufficient evidence Discard the observation.
+NO_CHANGENo valid difference Preserve𝑀 𝑖.
+EDITBounded additions Apply a constrained local edit.
+SUMMARIZE Redundancy or capac-
+ity limit
+Reorganize under validation.
+Waits and screenshots neither count toward nor reset the run,
+while any successful action resets it.
+Completion assessment.When a route claims completion, Ver-
+ifyLoop runs a bounded audit𝑐𝑡 =𝐶(𝑔,𝑜 𝑡,𝜖𝑡) with a Fast model. It
+compares the current screen, the last result screen from every </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>other
+application used, and any delegated-loop record against the values
+specified by the task. A rejected claim returns to execution and
+sends the reason to the Reasoning route; an unavailable audit ends
+the task with an explicit unverified status rather than plain success.
+For information-seeking tasks, the audit also reads the answer from
+the final screen.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experience
+AppMemory maintains aPer-App Living Manualof reusable page
+landmarks, functional relations and recovery instructions tied to the
+application identity and interface encountered on the user&#x27;s device.
+This avoids treating generic documentation or complete trajectories
+as authoritative when versions, enabled features, dynamic content
+or sensitive values differ.
+Manual Initialization and Retrieval.For each application 𝑖,
+AppMemory maintains a Living Manual𝑀𝑖 bound to the application
+identity𝑖𝑑𝑖 =(𝑝𝑘𝑔 𝑖,𝑠𝑖𝑔𝑖), with the observed version and locale
+stored as compatibility metadata:
+𝑀(0)𝑖 =
+(
+𝑆𝑖,if a package-bound seed exists,
+Empty(𝑖𝑑𝑖),otherwise, (9)
+where a seed may define protected sections𝑃𝑖 that subsequent on-
+line updates cannot overwrite. Before each step,𝑚𝑡 =𝑅(𝑀 𝑖,𝑔,𝑈𝑡)
+retrieves an application overview and a bounded set of page entries
+relevant to the task and the current </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AndroidWorld.AndroidWorld [25] has 116 parameterized tasks
+across 20 applications (61 easy, 36 medium, 19 hard), each with an
+official step budget and an evaluator that inspects the resulting app
+state rather than the agent&#x27;s claim. Every agent runs in the same
+Android 13 emulator (Pixel 6 profile) with Gemini 3.8 Flash through
+Google&#x27;s API as its backbone, on the same task instances (seed 30),
+budgets and official evaluators. A harness starts each task, waits
+for the agent, submits the answer of information tasks and calls
+the evaluator; the emulator is cold-restarted every ten episodes.
+Coati runs in its per-step configuration (C2: the Reasoning route
+on every step, VerifyLoop on) for three trials; the ablation C1 turns
+VerifyLoop off. The open-source agents Artemis [10], FinalRun [8]
+and Midscene.js [21] run with their released code through the same
+harness, with their model calls </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>redirected to the same backbone;
+Artemis is run both in its accessibility-only (GUI) mode, matching
+Coati&#x27;s access, and, for one trial, with the ADB access its release
+expects, while Midscene&#x27;s default thinking level is rejected by the
+API, so we use the lowest accepted level. Episodes in which the
+environment failed before the agent acted are excluded and rerun
+under the same rule for every agent (Appendix B). We report the
+success rate (SR, partial scores as given by the evaluators), pass 3
+(tasks solved in all three trials), the false-completion rate (declared
+completions that the evaluator judged failed), and time and model
+tokens per episode.
+These agents report far higher success in their own evaluations
+(around 90% on this benchmark), and two deliberate choices ac-
+count for the gap here, neither of them the backbone model. First,
+every agent is held to AndroidWorld&#x27;s official </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>per-task step budget
+(about ten steps for a simple task), whereas the opponents&#x27; released
+configurations plan up to roughly 120 steps; under the official bud-
+get most of their failures here are step-limit cut-offs rather than
+wrong decisions. Second, several of their reported successes drive
+Table 3: AndroidWorld, all 116 tasks, Gemini 3.8 Flash as
+every agent&#x27;s backbone, same emulator, task instances, bud-
+gets and evaluators. SR: success rate (%), mean over trials.
+False done: share of declared completions that the evaluator
+judged failed (%). Time: mean seconds per episode; tokens:
+mean thousands per episode, as reported by each agent&#x27;s
+model API. Midscene, FinalRun and Artemis (ADB) drive the
+phone over ADB; Coati and Artemis (GUI) use the accessi-
+bility API only. A dash is a value the agent does not report
+through the harness.
+Agent Trials SR pass 3 False done Time </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Tokens
+Midscene.js 1 59.1 – 7.5 179 222
+FinalRun 1 59.9 – 14.5 224 177
+Artemis (ADB) 1 76.5 – – 185 –
+Artemis (GUI) 3 77.6 69.8 – 209 –
+Coati386.5 81.9 5.4172 154
+apps through ADB and root SQL writes to private databases; we
+compare every agent through the on-screen interface only and do
+not credit ADB-won tasks, since an installed consumer agent has
+no such access. The gap is not a stronger model on their side: the
+leaderboard&#x27;s near-perfect entries include a Gemini 3.7 submission,
+a Flash-tier backbone no stronger than the Gemini 3.8 Flash every
+agent uses here. We therefore read Table 3 as a controlled, stan-
+dardized comparison under one step budget and one interface, not
+as a reproduction of each agent&#x27;s headline figure.
+Everyday use.RQ3 and RQ4 use an emulator of the same profile
+with Google&#x27;s stock applications and two open fixture apps whose
+state can be checked programmatically </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 3 compares the agents under identical conditions. Coati
+reaches 86.5% on average (89.7, 87.1 and 82.8 across the three tri-
+als, sample standard deviation 3.5) and solves 95 of the 116 tasks
+(81.9%) in all three trials. The strongest opponent, Artemis, reaches
+77.6% over three trials with the same accessibility-only access, and
+76.5% in one trial even when allowed ADB; FinalRun and Midscene
+solve 69.5 (59.9%) and 68.5 (59.1%) in their trial. Coati thus leads
+the fairest comparison, Artemis without ADB, by 8.9 percentage
+points, leads Artemis-with-ADB by ten while using no ADB itself,
+and leads FinalRun and Midscene by about 27, with fewer tokens
+per episode than any and a mean time among theirs. The lead is not
+from claiming success more readily (5.4% false completions, against
+14.5% and 7.5% for FinalRun and Midscene). Much of it comes from
+apps whose tasks enter or edit many </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 4 isolates VerifyLoop. Without it, 9 of Coati&#x27;s 112 declared
+completions were false (8.0%) and nothing caught them. With it,
+the audit rejected 61 completion claims over the three trials (about
+twenty per trial); 40 of those tasks were then solved and 21 ended as
+honest reported failures, and only 16 of 299 accepted completions
+were false (5.4%). The false-completion rate thus fell from 8.0% to
+5.4%, by about a third, at comparable success: C1 reaches 89.7%
+in its single trial and C2 reaches the same 89.7% in its matching
+first trial (86.5% averaged over three, the spread being trial-to-trial
+variance rather than a cost of the audit).
+Host evidence matters most where a model cannot see the result.
+In a routed run of &quot;hide every listing marked Sold&quot; before loop
+records existed, the fast executor hid one of six sold listings and
+claimed completion; the remaining five were below the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>configu-
+rations. A camera task was excluded because its result check read
+the wrong directory for both.
+Loops of simple steps show the fast executor at its best (Table 5).
+On R1–R3 the routed configuration with loop delegation is 2.8–5.4×
+faster and uses 6–9× fewer tokens, at equal or higher success: the
+Reasoning model plans the loop once, the selector finds the control,
+and the host repeats it on every item without a model call. Without
+loop delegation the same selector failed these tasks, scrolling past
+the first rows or stopping after one item. R4, where the condition
+to stop is a price several rows below the refresh control, gains little:
+the stop condition is not visible from the control, and the loop hands
+the task back to the Reasoning model, which checks it. An earlier
+version kept scrolling in this case until the step limit; ending a loop
+after eight actions without an item </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>handled fixed it.
+Conference&#x27;17, July 2017, Washington, DC, USA Shi et al.
+Table 5: Loops of simple steps in Car Market&#x27;s repeat mode,
+five runs per configuration (R4 routed: three runs after the
+stop rule of Section 3.4). Time: mean seconds; steps: mean
+(fast-route steps in parentheses); tokens: mean thousands.
+Classic Routed + loops
+Task OK Time Steps Tok. OK Time Steps Tok.
+R1 first 10 to favorites 5/5 140 13 145 5/55012 (11)21
+R2 six given IDs to compare 5/5 309 25 304 5/55714 (13)33
+R3 hide every Sold listing 4/5 210 22 245 5/56314 (13)39
+R4 refresh until price drops 5/5 100 9 101 3/3928 (7)90
+Table 6: AppMemory on a deep route in an unfamiliar app
+(Manual Lab, open the &quot;Archive&quot; page four menus deep) and
+on a familiar app (Messages, Advanced settings). Steps and
+seconds per run; each learning session starts from an empty
+manual.
+App Memory Run 1 Run 2 Run 3 Run 4
+Manual Lab off 14 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>/ 171 19 / 198 18 / 183 19 / 198
+session 1 19 / 2866 / 61 6 / 61 6 / 61
+session 2 14 / 1387 / 80 7 / 71 7 / 85
+session 3 15 / 1637 / 77 7 / 77 7 / 117
+Messages off 5 / 46 5 / 49 5 / 52 5 / 46
+session 1 5 / 43 5 / 46 6 / 88 5 / 49
+On a phone.On an Android 16 phone with nine tasks over native,
+canvas, mixed, permission-dialog and Flutter screens (Appendix D),
+routed execution completes all 27 runs against 26 for per-step Rea-
+soning, cuts the mean task time from 137.5 s to 105.2 s (median from
+110.5 s to 78.6 s), is faster on eight of the nine tasks, and reduces
+critical-path Reasoning calls from 285 to 67 (81% of steps decided
+on the fast route). Before a fast step taps a commit control such as
+Submit order, a one-call pre-commit gate checks the screen against
+the task; on the phone it stopped an order with two copies instead
+of three (Appendix D.3). Routed execution takes more steps </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 6 shows three independent learning sessions on a deep route
+in an app the model has never seen. Without memory, every run
+explores: 18.5 steps and 190 s at the median. In each session the
+first run explores and the manual learns the route from it; every
+later run goes there directly, in 6–7 steps and a median of 77 s, 2.5×
+faster, with all nine later runs successful. The effect is specific to
+unfamiliar apps: on a familiar stock app the model already knows
+the route, and memory neither helps nor hurts. The manual also
+survived an app update that moved the entry points (version 2 of
+the fixture replaces two bottom tabs with a hub page): after learning
+on version 1, runs on version 2 took 6 steps against 13–15 without
+memory.
+The effect carries over to routed execution on the phone of RQ3:
+from an empty manual, the first deep-route run explored for 22
+steps (222 s), and the next two </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Harness.All agents run through one harness that instantiates
+AndroidWorld tasks from the official registry (seed 30), applies the
+official step budgets, records every attempt in a per-emulator ledger,
+cold restarts the emulator every ten attempts, and scores with the
+official evaluators. The harness refuses to resume an experiment
+whose identity (task instance, parameters, sources and model con-
+figuration) differs from the stored one, so every reported episode
+ran under one configuration.
+Environment failures and resumption.An episode is excluded
+and rerun, for every agent alike, only when the environment failed
+before the agent could act: AndroidWorld&#x27;s own task setup raised an
+error (for example a missing tool or an uninitialized database), the
+agent&#x27;s driver did not start, or no model response arrived at all. One
+task, MarkorCreateFolder, names its folder after the current time
+to </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>31.0 31.03/3 295.234.3 13.7
+L2 native, search and text entry 3/3 78.7 6.0 6.0 3/332.46.3 0.0
+L3 native, dependent setting 3/3 60.9 5.0 5.0 3/321.25.0 0.0
+W1 custom canvas, no tree 3/3 99.1 7.0 7.0 3/382.79.0 0.7
+W2 canvas and text entry 3/3100.57.7 7.7 3/3 120.8 16.3 1.0
+O1 native form with painted widgets 3/3 238.1 15.7 15.7 3/3191.919.0 2.7
+P1 system permission dialog 3/3 159.5 9.7 10.7 3/371.511.7 2.0
+G1 Flutter, login and tabs 3/3 128.7 8.0 8.0 3/385.510.3 1.3
+G2 Flutter, settings 3/3 51.8 4.0 4.0 3/345.57.0 1.0
+All (27 runs)26/27 137.5 10.4 285 total27/27 105.213.267 total</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Memory architecture / system</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory mechanisms or governance for LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Core agent-memory paper</li>
+              <li>Tags: memory-types, agent-memory, memory-systems, llm-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-07</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-03 11:35:07</li><li>Last seen by Paper Scout: 2026-11-09 12:29:23</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.02644</li><li>arXiv: 2611.02644</li><li>OpenAlex: W7225174843</li><li>OpenAlex IDs: W7225174843</li><li>arXiv IDs: 2611.02644</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="coati-host-grounded-execution-for-installable-mobile-gui-agents-ce82fd2e.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Coati: Host-Grounded Execution for Installable Mobile GUI Agents. Yudou Ying, Pu Shi, Hanlei Shi, Yuhua Zheng. 2026-11-02. https://arxiv.org/abs/2611.02644</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

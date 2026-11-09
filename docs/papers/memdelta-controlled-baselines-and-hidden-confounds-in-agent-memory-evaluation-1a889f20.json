@@ -27,7 +27,7 @@
   "last_seen_date": "2026-08-09",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-06-30 10:11:37",
   "notified_date": "2026-06-30",
@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-06-30 10:07:18",
-    "generated_at": "2026-11-08 12:11:49",
+    "generated_at": "2026-11-09 12:34:40",
     "last_seen_at": "2026-08-09 06:27:16",
     "metadata_sources": [
       "openalex",
@@ -115,36 +115,1717 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-09T12:32:39.895876+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.99,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous, well-designed measurement study that cleanly exposes critical methodological confounds in LLM agent memory evaluation with substantial empirical support and controlled statistical contrasts.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 45286,
+      "assessment_input_sha256": "2a5535f18b9a6cb621d22874798836ae70c25ac33c44cf508d35431cd2b929b3",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2606.29914",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 43790,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 42678,
+      "evidence_block_count": 78,
+      "evidence_context_characters": 52606,
+      "evidence_context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+      "evidence_context_sha256": "5c30c44edcaa3992c5409e67e0ad9bf2ef952a4c0ad6abb1cc0f10c78bb7d425",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 43814,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "extracted_pages": 13,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "6b04097181a353fd7ced3c423f85e8bd479c3458672fb96e712e0cedb817ce1f",
+        "source_url": "https://arxiv.org/pdf/2606.29914",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 43790,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Memdelta: Controlled Baselines And Hidden",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 88,
+          "supplied_characters": 88
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1301,
+          "supplied_characters": 1301
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1901,
+          "supplied_characters": 1901
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 4077,
+          "supplied_characters": 4077
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 740,
+          "supplied_characters": 740
+        },
+        {
+          "heading": "A Controlled Evaluation Protocol.We Introducememdelta, A Protocol That Isolates",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 105,
+          "supplied_characters": 105
+        },
+        {
+          "heading": "Controlled Empirical Results Across Model Families.We Apply Memdelta On",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 6,
+          "source_characters": 175,
+          "supplied_characters": 175
+        },
+        {
+          "heading": "A Cost-Matched Audit Of Mem0 Versus Verbatim Rag.We Compare Mem0 Against",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 176,
+          "supplied_characters": 176
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 8,
+          "source_characters": 2574,
+          "supplied_characters": 2574
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 9,
+          "source_characters": 1411,
+          "supplied_characters": 1411
+        },
+        {
+          "heading": "Evaluation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 10,
+          "source_characters": 293,
+          "supplied_characters": 293
+        },
+        {
+          "heading": "Strategies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 801,
+          "supplied_characters": 801
+        },
+        {
+          "heading": "Strategies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 848,
+          "supplied_characters": 848
+        },
+        {
+          "heading": "Controlled Comparisons",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 294,
+          "supplied_characters": 294
+        },
+        {
+          "heading": "Dataset And Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1163,
+          "supplied_characters": 1163
+        },
+        {
+          "heading": "Execution And Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 324,
+          "supplied_characters": 324
+        },
+        {
+          "heading": "Build Context.Issue The Strategy'S Retrieval Call And Construct The Answer Prompt (S0:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 198,
+          "supplied_characters": 198
+        },
+        {
+          "heading": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 833,
+          "supplied_characters": 833
+        },
+        {
+          "heading": "Retrieval Quality: Rag Matches Full Context",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 697,
+          "supplied_characters": 697
+        },
+        {
+          "heading": "Model Behavior: Three Models, Three Conclusions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "conclusion",
+          "section_index": 20,
+          "source_characters": 1338,
+          "supplied_characters": 1338
+        },
+        {
+          "heading": "Model Behavior: Three Models, Three Conclusions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 21,
+          "source_characters": 1209,
+          "supplied_characters": 1209
+        },
+        {
+          "heading": "Embedding Choice: A Single Swap Rivals Architectural Gains",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1468,
+          "supplied_characters": 1468
+        },
+        {
+          "heading": "Write-Path Cost: A Matched Comparison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 535,
+          "supplied_characters": 535
+        },
+        {
+          "heading": "Write-Path Cost: A Matched Comparison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1795,
+          "supplied_characters": 1795
+        },
+        {
+          "heading": "Per-Question-Type Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1189,
+          "supplied_characters": 1189
+        },
+        {
+          "heading": "Summary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 279,
+          "supplied_characters": 279
+        },
+        {
+          "heading": "Summary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1044,
+          "supplied_characters": 1044
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 28,
+          "source_characters": 2210,
+          "supplied_characters": 2210
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 2697,
+          "supplied_characters": 2697
+        },
+        {
+          "heading": "Appendix: Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 30,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Appendix: Retrieval Configuration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "Parameter Value",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 15,
+          "supplied_characters": 15
+        },
+        {
+          "heading": "Chunk Size\u223c512 Tokens",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Chunk Overlap 0 (No Overlap)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 28,
+          "supplied_characters": 28
+        },
+        {
+          "heading": "Top-Kretrieval 10",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Similarity Metric Cosine (Chromadb Default)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 43,
+          "supplied_characters": 43
+        },
+        {
+          "heading": "S4 Embedding All-Minilm-L6-V2 (384-Dim)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 39,
+          "supplied_characters": 39
+        },
+        {
+          "heading": "S4B Embedding Openai Text-Embedding-3-Small (1536-Dim)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 219,
+          "supplied_characters": 219
+        },
+        {
+          "heading": "Appendix: Strategy Configurations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 691,
+          "supplied_characters": 691
+        },
+        {
+          "heading": "Appendix: Llm Judge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 360,
+          "supplied_characters": 360
+        },
+        {
+          "heading": "Appendix: Worked Examples",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 163,
+          "supplied_characters": 163
+        },
+        {
+          "heading": "Question (Gt) S4 (Minilm) S4B (Cloud) Gpt S1 Sonnet S1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 73,
+          "supplied_characters": 73
+        },
+        {
+          "heading": "Min Each Way)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Where Did You Redeem",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 103,
+          "supplied_characters": 103
+        },
+        {
+          "heading": "About Coupons\"\u2717",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 118,
+          "supplied_characters": 118
+        },
+        {
+          "heading": "About Playlists\"\u2717",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 424,
+          "supplied_characters": 424
+        },
+        {
+          "heading": "Appendix: B Extended Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Appendix: What Controlled Evaluation Reveals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 1009,
+          "supplied_characters": 1009
+        },
+        {
+          "heading": "Appendix: Why Does Embedding Choice Matter So Much?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 946,
+          "supplied_characters": 946
+        },
+        {
+          "heading": "Appendix: When Might Architecture Matter?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 2183,
+          "supplied_characters": 2183
+        },
+        {
+          "heading": "Appendix: When Might Architecture Matter?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 3848,
+          "supplied_characters": 3848
+        }
+      ],
+      "selected_characters": 42678,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "selected_sections": [
+        {
+          "characters": 88,
+          "heading": "Memdelta: Controlled Baselines And Hidden",
+          "page": 1
+        },
+        {
+          "characters": 1301,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1901,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4077,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 740,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 105,
+          "heading": "A Controlled Evaluation Protocol.We Introducememdelta, A Protocol That Isolates",
+          "page": 3
+        },
+        {
+          "characters": 175,
+          "heading": "Controlled Empirical Results Across Model Families.We Apply Memdelta On",
+          "page": 3
+        },
+        {
+          "characters": 176,
+          "heading": "A Cost-Matched Audit Of Mem0 Versus Verbatim Rag.We Compare Mem0 Against",
+          "page": 3
+        },
+        {
+          "characters": 2574,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1411,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 293,
+          "heading": "Evaluation Protocol",
+          "page": 4
+        },
+        {
+          "characters": 801,
+          "heading": "Strategies",
+          "page": 4
+        },
+        {
+          "characters": 848,
+          "heading": "Strategies",
+          "page": 5
+        },
+        {
+          "characters": 294,
+          "heading": "Controlled Comparisons",
+          "page": 5
+        },
+        {
+          "characters": 1163,
+          "heading": "Dataset And Models",
+          "page": 5
+        },
+        {
+          "characters": 324,
+          "heading": "Execution And Metrics",
+          "page": 5
+        },
+        {
+          "characters": 198,
+          "heading": "Build Context.Issue The Strategy'S Retrieval Call And Construct The Answer Prompt (S0:",
+          "page": 5
+        },
+        {
+          "characters": 423,
+          "heading": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+          "page": 5
+        },
+        {
+          "characters": 833,
+          "heading": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+          "page": 6
+        },
+        {
+          "characters": 697,
+          "heading": "Retrieval Quality: Rag Matches Full Context",
+          "page": 6
+        },
+        {
+          "characters": 1338,
+          "heading": "Model Behavior: Three Models, Three Conclusions",
+          "page": 6
+        },
+        {
+          "characters": 1209,
+          "heading": "Model Behavior: Three Models, Three Conclusions",
+          "page": 7
+        },
+        {
+          "characters": 1468,
+          "heading": "Embedding Choice: A Single Swap Rivals Architectural Gains",
+          "page": 7
+        },
+        {
+          "characters": 535,
+          "heading": "Write-Path Cost: A Matched Comparison",
+          "page": 7
+        },
+        {
+          "characters": 1795,
+          "heading": "Write-Path Cost: A Matched Comparison",
+          "page": 8
+        },
+        {
+          "characters": 1189,
+          "heading": "Per-Question-Type Analysis",
+          "page": 8
+        },
+        {
+          "characters": 279,
+          "heading": "Summary",
+          "page": 8
+        },
+        {
+          "characters": 1044,
+          "heading": "Summary",
+          "page": 9
+        },
+        {
+          "characters": 2210,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 2697,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 24,
+          "heading": "Appendix: Implementation Details",
+          "page": 11
+        },
+        {
+          "characters": 50,
+          "heading": "Appendix: Retrieval Configuration",
+          "page": 11
+        },
+        {
+          "characters": 15,
+          "heading": "Parameter Value",
+          "page": 11
+        },
+        {
+          "characters": 21,
+          "heading": "Chunk Size\u223c512 Tokens",
+          "page": 11
+        },
+        {
+          "characters": 28,
+          "heading": "Chunk Overlap 0 (No Overlap)",
+          "page": 11
+        },
+        {
+          "characters": 17,
+          "heading": "Top-Kretrieval 10",
+          "page": 11
+        },
+        {
+          "characters": 43,
+          "heading": "Similarity Metric Cosine (Chromadb Default)",
+          "page": 11
+        },
+        {
+          "characters": 39,
+          "heading": "S4 Embedding All-Minilm-L6-V2 (384-Dim)",
+          "page": 11
+        },
+        {
+          "characters": 219,
+          "heading": "S4B Embedding Openai Text-Embedding-3-Small (1536-Dim)",
+          "page": 11
+        },
+        {
+          "characters": 691,
+          "heading": "Appendix: Strategy Configurations",
+          "page": 11
+        },
+        {
+          "characters": 360,
+          "heading": "Appendix: Llm Judge",
+          "page": 11
+        },
+        {
+          "characters": 163,
+          "heading": "Appendix: Worked Examples",
+          "page": 11
+        },
+        {
+          "characters": 73,
+          "heading": "Question (Gt) S4 (Minilm) S4B (Cloud) Gpt S1 Sonnet S1",
+          "page": 11
+        },
+        {
+          "characters": 97,
+          "heading": "Min Each Way)",
+          "page": 11
+        },
+        {
+          "characters": 103,
+          "heading": "Where Did You Redeem",
+          "page": 11
+        },
+        {
+          "characters": 118,
+          "heading": "About Coupons\"\u2717",
+          "page": 11
+        },
+        {
+          "characters": 424,
+          "heading": "About Playlists\"\u2717",
+          "page": 11
+        },
+        {
+          "characters": 21,
+          "heading": "Appendix: B Extended Discussion",
+          "page": 12
+        },
+        {
+          "characters": 1009,
+          "heading": "Appendix: What Controlled Evaluation Reveals",
+          "page": 12
+        },
+        {
+          "characters": 946,
+          "heading": "Appendix: Why Does Embedding Choice Matter So Much?",
+          "page": 12
+        },
+        {
+          "characters": 2183,
+          "heading": "Appendix: When Might Architecture Matter?",
+          "page": 12
+        },
+        {
+          "characters": 3848,
+          "heading": "Appendix: When Might Architecture Matter?",
+          "page": 13
+        }
+      ],
+      "selected_text_sha256": "2a5535f18b9a6cb621d22874798836ae70c25ac33c44cf508d35431cd2b929b3",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "6b04097181a353fd7ced3c423f85e8bd479c3458672fb96e712e0cedb817ce1f",
+      "source_pages": 13,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0002"
+        ],
+        "excerpt": "Agent memory systems are increasingly evaluated against RAG and full-context\nbaselines, but reported gains often mix changes in the memory method with changes\nin the language model, embedding model, or retrieval pipeline, making it unclear\nwhat is actually being measured. We presentMemDelta, a controlled evaluation\nprotocol that varies one component at a time on LongMemEval-S (500 questions,\n50+ sessions, three model families). Four findings emerge: (1) verbatim RAG\nmatches full-context GPT-4o-mini (47.2% vs. 49.8%, p= 0.34), but the ranking\nreverses across models: Gemini gains +14pp from full context, while Sonnet\ngains +31pp from RAG, partly because it refuses 63% of full-context queries;\n(2) swapping only the embedding model in an identical pipeline shifts accuracy\nby +6.2pp at n= 500 (p= 0.004 ), and Mem0 beats MiniLM-RAG by +11pp\nbut loses to cloud-RAG by 1.2pp, so one variable ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "81d5012cd55a2e6c9cece6d2e077a19ad4cfd83d0efeb56071560c6f2a82ea95",
+            "evidence_id": "Eb000b8cc2f8c0840-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Agent memory systems are increasingly evaluated against RAG and full-context\nbaselines, but reported gains often mix changes in the memory method with changes\nin the language model, embedding model, or retrieval pipeline, making it unclear\nwhat is actually being measured. We presentMemDelta, a controlled evaluation\nprotocol that varies one component at a time on LongMemEval-S (500 questions,\n50+ sessions, three model families). Four findings emerge: (1) verbatim RAG\nmatches full-context GPT-4o-mini (47.2% vs. 49.8%, p= 0.34), but the ranking\nreverses across models: Gemini gains +14pp from full context, while Sonnet\ngains +31pp from RAG, partly because it refuses 63% of full-context queries;\n(2) swapping only the embedding model in an identical pipeline shifts accuracy\nby +6.2pp at n= 500 (p= 0.004 ), and Mem0 beats MiniLM-RAG by +11pp\nbut loses to cloud-RAG by 1.2pp, so one variable "
+              }
+            ],
+            "text": "Agent memory systems are increasingly evaluated against RAG and full-context\nbaselines, but reported gains often mix changes in the memory method with changes\nin the language model, embedding model, or retrieval pipeline, making it unclear\nwhat is actually being measured. We presentMemDelta, a controlled evaluation\nprotocol that varies one component at a time on LongMemEval-S (500 questions,\n50+ sessions, three model families). Four findings emerge: (1) verbatim RAG\nmatches full-context GPT-4o-mini (47.2% vs. 49.8%, p= 0.34), but the ranking\nreverses across models: Gemini gains +14pp from full context, while Sonnet\ngains +31pp from RAG, partly because it refuses 63% of full-context queries;\n(2) swapping only the embedding model in an identical pipeline shifts accuracy\nby +6.2pp at n= 500 (p= 0.004 ), and Mem0 beats MiniLM-RAG by +11pp\nbut loses to cloud-RAG by 1.2pp, so one variable "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0008"
+        ],
+        "excerpt": "benchmarks. The\ngap we identify is methodological: the field lacks a protocol that varies one component at a time,\nholds the rest fixed, and reports whether observed differences survive a significance test.\nWe presentMemDelta, a controlled evaluation protocol for agent memory systems. The protocol is\ndeliberately simple: vary one component at a time while holding the rest of the pipeline fixed. We\napply this principle to four common sources of hidden variation, shown in Figure 1: retrieval quality,\nembedding choice, language-model behavior, and write-path cost. Retrieval quality asks whether the\nrelevant evidence is actually surfaced. Embedding choice asks whether a reported memory gain is\ninstead a better vector representation. Model behavior asks whether the generator uses, ignores, or\nrefuses the supplied evidence. Write-path cost asks whether a memory system's advantage comes\nfrom ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f4083e7621772ef27c421045119628a0175e168295802f314212dfcbd98f71d3",
+            "evidence_id": "Eb000b8cc2f8c0840-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2574,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1676,
+                "text": "benchmarks. The\ngap we identify is methodological: the field lacks a protocol that varies one component at a time,\nholds the rest fixed, and reports whether observed differences survive a significance test.\nWe presentMemDelta, a controlled evaluation protocol for agent memory systems. The protocol is\ndeliberately simple: vary one component at a time while holding the rest of the pipeline fixed. We\napply this principle to four common sources of hidden variation, shown in Figure 1: retrieval quality,\nembedding choice, language-model behavior, and write-path cost. Retrieval quality asks whether the\nrelevant evidence is actually surfaced. Embedding choice asks whether a reported memory gain is\ninstead a better vector representation. Model behavior asks whether the generator uses, ignores, or\nrefuses the supplied evidence. Write-path cost asks whether a memory system's advantage comes\nfrom "
+              }
+            ],
+            "text": "benchmarks. The\ngap we identify is methodological: the field lacks a protocol that varies one component at a time,\nholds the rest fixed, and reports whether observed differences survive a significance test.\nWe presentMemDelta, a controlled evaluation protocol for agent memory systems. The protocol is\ndeliberately simple: vary one component at a time while holding the rest of the pipeline fixed. We\napply this principle to four common sources of hidden variation, shown in Figure 1: retrieval quality,\nembedding choice, language-model behavior, and write-path cost. Retrieval quality asks whether the\nrelevant evidence is actually surfaced. Embedding choice asks whether a reported memory gain is\ninstead a better vector representation. Model behavior asks whether the generator uses, ignores, or\nrefuses the supplied evidence. Write-path cost asks whether a memory system's advantage comes\nfrom "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0020"
+        ],
+        "excerpt": "Our evaluation is designed around a single principle:vary one factor at a time. Rather than\ncomparing systems that differ along multiple axes simultaneously, we construct paired conditions\nthat isolate one variable while holding the model, judge, questions, and input history fixed (Figure 2).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d21958b059b0aeefaf6b43f2ec70d7af41296f19bbdc8acf9a3165cd3e861608",
+            "evidence_id": "Eb000b8cc2f8c0840-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 293,
+                "page": 4,
+                "section": "Evaluation Protocol",
+                "section_index": 10,
+                "start": 0,
+                "text": "Our evaluation is designed around a single principle:vary one factor at a time. Rather than\ncomparing systems that differ along multiple axes simultaneously, we construct paired conditions\nthat isolate one variable while holding the model, judge, questions, and input history fixed (Figure 2)."
+              }
+            ],
+            "text": "Our evaluation is designed around a single principle:vary one factor at a time. Rather than\ncomparing systems that differ along multiple axes simultaneously, we construct paired conditions\nthat isolate one variable while holding the model, judge, questions, and input history fixed (Figure 2)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0021"
+        ],
+        "excerpt": "Table 1 defines the seven strategies, ordered by write-path complexity. Each receives the same user\nhistory and evaluation questions; they differ only in how prior information is made available to the\nanswering model.\nThree design choices deserve explanation. First, S1 (full context) is not intended as a practical\ndeployment strategy; it is a diagnostic control that removes retrieval as a bottleneck, allowing us\nto measure whether a model can use information when it is explicitly present. Second, S4b is\nbyte-identical to S4 except for the embedding model. The chunking, top-k, vector-store code, prompt\ntemplate, answer model, and judge are all held fixed. Any accuracy difference between S4 and S4b\nis therefore attributable to embedding quality alone. Third, S3 (Mem0) uses OpenAI embeddings\n4\nTable 2: Controlled comparisons. Each row varies one factor; all others are held fixed.\nComparison ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Strategies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3193554d60e37b47b5c28c01c18a4ed3aff41e65a63f33b42c445ba2aa3c43b5",
+            "evidence_id": "Eb000b8cc2f8c0840-B0021",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Strategies",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 801,
+                "page": 4,
+                "section": "Strategies",
+                "section_index": 11,
+                "start": 0,
+                "text": "Table 1 defines the seven strategies, ordered by write-path complexity. Each receives the same user\nhistory and evaluation questions; they differ only in how prior information is made available to the\nanswering model.\nThree design choices deserve explanation. First, S1 (full context) is not intended as a practical\ndeployment strategy; it is a diagnostic control that removes retrieval as a bottleneck, allowing us\nto measure whether a model can use information when it is explicitly present. Second, S4b is\nbyte-identical to S4 except for the embedding model. The chunking, top-k, vector-store code, prompt\ntemplate, answer model, and judge are all held fixed. Any accuracy difference between S4 and S4b\nis therefore attributable to embedding quality alone. Third, S3 (Mem0) uses OpenAI embeddings\n4"
+              },
+              {
+                "end": 99,
+                "page": 5,
+                "section": "Strategies",
+                "section_index": 12,
+                "start": 0,
+                "text": "Table 2: Controlled comparisons. Each row varies one factor; all others are held fixed.\nComparison "
+              }
+            ],
+            "text": "Table 1 defines the seven strategies, ordered by write-path complexity. Each receives the same user\nhistory and evaluation questions; they differ only in how prior information is made available to the\nanswering model.\nThree design choices deserve explanation. First, S1 (full context) is not intended as a practical\ndeployment strategy; it is a diagnostic control that removes retrieval as a bottleneck, allowing us\nto measure whether a model can use information when it is explicitly present. Second, S4b is\nbyte-identical to S4 except for the embedding model. The chunking, top-k, vector-store code, prompt\ntemplate, answer model, and judge are all held fixed. Any accuracy difference between S4 and S4b\nis therefore attributable to embedding quality alone. Third, S3 (Mem0) uses OpenAI embeddings\n4\nTable 2: Controlled comparisons. Each row varies one factor; all others are held fixed.\nComparison "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0022"
+        ],
+        "excerpt": "Varied factor Held fixedn\nS0\u2192S4\u2192S4b Retrieval quality Model, judge, data 500\nSrand vs S4 Retrieval relevance Chunking, top-k, model 500\nS1 vs S4\u00d73 models Base-model behavior Strategy, judge, data 100\u2013500\nS4 vs S4b Embedding model Pipeline code, data, model 500\nS4b vs S3 (Mem0) Write-path complexity Embedding (\u2248matched), model 88\nS2 vs S4 Storage control Model, judge, data 100\ninternally (text-embedding-ada-002), while S4b uses text-embedding-3-small. These are\ndifferent models from the same provider; the comparison approximately but not perfectly controls for\nembedding quality. We use S4b as the closest available controlled baseline for isolating the effect of\nLLM extraction on the write path, and note this imperfect match as a limitation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Strategies",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "df9c4bbcccefa547b32d4f46902bfb6d06d56ecb0a0675f50187bfa192dbbf97",
+            "evidence_id": "Eb000b8cc2f8c0840-B0022",
+            "pages": [
+              5
+            ],
+            "section": "Strategies",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 848,
+                "page": 5,
+                "section": "Strategies",
+                "section_index": 12,
+                "start": 99,
+                "text": "Varied factor Held fixedn\nS0\u2192S4\u2192S4b Retrieval quality Model, judge, data 500\nSrand vs S4 Retrieval relevance Chunking, top-k, model 500\nS1 vs S4\u00d73 models Base-model behavior Strategy, judge, data 100\u2013500\nS4 vs S4b Embedding model Pipeline code, data, model 500\nS4b vs S3 (Mem0) Write-path complexity Embedding (\u2248matched), model 88\nS2 vs S4 Storage control Model, judge, data 100\ninternally (text-embedding-ada-002), while S4b uses text-embedding-3-small. These are\ndifferent models from the same provider; the comparison approximately but not perfectly controls for\nembedding quality. We use S4b as the closest available controlled baseline for isolating the effect of\nLLM extraction on the write path, and note this imperfect match as a limitation."
+              }
+            ],
+            "text": "Varied factor Held fixedn\nS0\u2192S4\u2192S4b Retrieval quality Model, judge, data 500\nSrand vs S4 Retrieval relevance Chunking, top-k, model 500\nS1 vs S4\u00d73 models Base-model behavior Strategy, judge, data 100\u2013500\nS4 vs S4b Embedding model Pipeline code, data, model 500\nS4b vs S3 (Mem0) Write-path complexity Embedding (\u2248matched), model 88\nS2 vs S4 Storage control Model, judge, data 100\ninternally (text-embedding-ada-002), while S4b uses text-embedding-3-small. These are\ndifferent models from the same provider; the comparison approximately but not perfectly controls for\nembedding quality. We use S4b as the closest available controlled baseline for isolating the effect of\nLLM extraction on the write path, and note this imperfect match as a limitation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0024"
+        ],
+        "excerpt": "Dataset.LongMemEval-S [Wu et al., 2024]: 500 questions across 6 types (single-session-user:\n70, single-session-assistant: 56, single-session-preference: 30, temporal-reasoning: 133, knowledge-\nupdate: 78, multi-session: 133). Each instance has 39\u201366 sessions (mean 50.2), totaling \u223c115K\ntokens. The question-type diversity lets us check whether pairwise effects are uniform or concentrated\nin specific subsets.\nModels.We run the full strategy matrix withGPT-4o-mini( n= 500 ) and evaluate selected\ncomparisons withClaude Sonnet( n= 300\u2013500) andGemini 2.5 Flash( n= 100). The purpose of\nthree answer models is a robustness check on the protocol itself: if a memory conclusion is robust,\nthe relative ordering of strategies should persist across models. If the ordering reverses when only\nthe answer model changes, then the benchmark result is confounded by model-specific long-context\nbehavior rather ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Dataset And Models",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b0028fc34f128a1fb1bcdabd208e57b9fcf9636f19d70086424e602022addb25",
+            "evidence_id": "Eb000b8cc2f8c0840-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Dataset And Models",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 5,
+                "section": "Dataset And Models",
+                "section_index": 14,
+                "start": 0,
+                "text": "Dataset.LongMemEval-S [Wu et al., 2024]: 500 questions across 6 types (single-session-user:\n70, single-session-assistant: 56, single-session-preference: 30, temporal-reasoning: 133, knowledge-\nupdate: 78, multi-session: 133). Each instance has 39\u201366 sessions (mean 50.2), totaling \u223c115K\ntokens. The question-type diversity lets us check whether pairwise effects are uniform or concentrated\nin specific subsets.\nModels.We run the full strategy matrix withGPT-4o-mini( n= 500 ) and evaluate selected\ncomparisons withClaude Sonnet( n= 300\u2013500) andGemini 2.5 Flash( n= 100). The purpose of\nthree answer models is a robustness check on the protocol itself: if a memory conclusion is robust,\nthe relative ordering of strategies should persist across models. If the ordering reverses when only\nthe answer model changes, then the benchmark result is confounded by model-specific long-context\nbehavior rather "
+              }
+            ],
+            "text": "Dataset.LongMemEval-S [Wu et al., 2024]: 500 questions across 6 types (single-session-user:\n70, single-session-assistant: 56, single-session-preference: 30, temporal-reasoning: 133, knowledge-\nupdate: 78, multi-session: 133). Each instance has 39\u201366 sessions (mean 50.2), totaling \u223c115K\ntokens. The question-type diversity lets us check whether pairwise effects are uniform or concentrated\nin specific subsets.\nModels.We run the full strategy matrix withGPT-4o-mini( n= 500 ) and evaluate selected\ncomparisons withClaude Sonnet( n= 300\u2013500) andGemini 2.5 Flash( n= 100). The purpose of\nthree answer models is a robustness check on the protocol itself: if a memory conclusion is robust,\nthe relative ordering of strategies should persist across models. If the ordering reverses when only\nthe answer model changes, then the benchmark result is confounded by model-specific long-context\nbehavior rather "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0028"
+        ],
+        "excerpt": "rect/incorrect against ground truth).\nBecause the design is paired, any judge bias constant across strategies cancels in pairwise compar-\nisons.\nMetrics. Accuracywith 95% bootstrap CIs (2,000 resamples).Paired significance:McNemar's\ntest on per-question correctness for each comparison in Table 2.Write-path cost:wall-clock\ningest time, LLM call count, and dollar cost per instance. Cost is not secondary: a strategy that\n5\nTable 3: Main results (GPT-4o-mini, n= 500 unless noted). McNemar vs. S4: * p < .05, ** p < .01,\n***p < .001.\nStrategyNAccuracy 95% CI vs. S4 (p)\nS0: No Memory 500 2.2% [1.0, 3.6]\u221245.0pp***\nS_rand: Random RAG 500 3.2% [1.8, 4.8]\u221244.0pp***\nS2: Self-Memory 100 42.0% [32.0, 52.0]\u22125.2pp*\nS4: Verbatim RAG (MiniLM) 500 47.2% [42.8, 51.4] \u2014\nS1: Full Context 500 49.8% [45.6, 54.0]+2.6pp\nS4b: Verbatim RAG (cloud) 500 53.4% [49.0, 57.8]+6.2pp**\nTable 4: Cross-model comparison on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d5b8b6b5e1dca7ee281b3059ddac3c64da676ad14eff6653bbe3a22fbc35dfaa",
+            "evidence_id": "Eb000b8cc2f8c0840-B0028",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 423,
+                "page": 5,
+                "section": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+                "section_index": 17,
+                "start": 0,
+                "text": "rect/incorrect against ground truth).\nBecause the design is paired, any judge bias constant across strategies cancels in pairwise compar-\nisons.\nMetrics. Accuracywith 95% bootstrap CIs (2,000 resamples).Paired significance:McNemar's\ntest on per-question correctness for each comparison in Table 2.Write-path cost:wall-clock\ningest time, LLM call count, and dollar cost per instance. Cost is not secondary: a strategy that\n5"
+              },
+              {
+                "end": 474,
+                "page": 6,
+                "section": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+                "section_index": 18,
+                "start": 0,
+                "text": "Table 3: Main results (GPT-4o-mini, n= 500 unless noted). McNemar vs. S4: * p < .05, ** p < .01,\n***p < .001.\nStrategyNAccuracy 95% CI vs. S4 (p)\nS0: No Memory 500 2.2% [1.0, 3.6]\u221245.0pp***\nS_rand: Random RAG 500 3.2% [1.8, 4.8]\u221244.0pp***\nS2: Self-Memory 100 42.0% [32.0, 52.0]\u22125.2pp*\nS4: Verbatim RAG (MiniLM) 500 47.2% [42.8, 51.4] \u2014\nS1: Full Context 500 49.8% [45.6, 54.0]+2.6pp\nS4b: Verbatim RAG (cloud) 500 53.4% [49.0, 57.8]+6.2pp**\nTable 4: Cross-model comparison on "
+              }
+            ],
+            "text": "rect/incorrect against ground truth).\nBecause the design is paired, any judge bias constant across strategies cancels in pairwise compar-\nisons.\nMetrics. Accuracywith 95% bootstrap CIs (2,000 resamples).Paired significance:McNemar's\ntest on per-question correctness for each comparison in Table 2.Write-path cost:wall-clock\ningest time, LLM call count, and dollar cost per instance. Cost is not secondary: a strategy that\n5\nTable 3: Main results (GPT-4o-mini, n= 500 unless noted). McNemar vs. S4: * p < .05, ** p < .01,\n***p < .001.\nStrategyNAccuracy 95% CI vs. S4 (p)\nS0: No Memory 500 2.2% [1.0, 3.6]\u221245.0pp***\nS_rand: Random RAG 500 3.2% [1.8, 4.8]\u221244.0pp***\nS2: Self-Memory 100 42.0% [32.0, 52.0]\u22125.2pp*\nS4: Verbatim RAG (MiniLM) 500 47.2% [42.8, 51.4] \u2014\nS1: Full Context 500 49.8% [45.6, 54.0]+2.6pp\nS4b: Verbatim RAG (cloud) 500 53.4% [49.0, 57.8]+6.2pp**\nTable 4: Cross-model comparison on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0029"
+        ],
+        "excerpt": "matched instances.\nModelnS4 (RAG) S1 (Full)\u2206\nGPT-4o-mini 500 47.2 49.8+2.6pp\nClaude Sonnet 300 44.7 14.0\u221230.7pp\nSonnet (truncated, 47K) 100 61.0 38.0\u221223.0pp\nGemini 2.5 Flash 100 56.070.0+14.0pp\nwins by 2pp at 100\u00d7 the ingest cost is a different artifact than one that wins at parity, and the\ncontrolled-comparison framing is what makes that trade-off legible.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "98ec1e78528ea32f8f7ade2a1f9f1f065b99cc6f89816fcff4ee7998085fddc9",
+            "evidence_id": "Eb000b8cc2f8c0840-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 833,
+                "page": 6,
+                "section": "Judge.Score The Answer With Gpt-4O-Mini Using A Fixed Binary Judging Prompt (Cor-",
+                "section_index": 18,
+                "start": 474,
+                "text": "matched instances.\nModelnS4 (RAG) S1 (Full)\u2206\nGPT-4o-mini 500 47.2 49.8+2.6pp\nClaude Sonnet 300 44.7 14.0\u221230.7pp\nSonnet (truncated, 47K) 100 61.0 38.0\u221223.0pp\nGemini 2.5 Flash 100 56.070.0+14.0pp\nwins by 2pp at 100\u00d7 the ingest cost is a different artifact than one that wins at parity, and the\ncontrolled-comparison framing is what makes that trade-off legible."
+              }
+            ],
+            "text": "matched instances.\nModelnS4 (RAG) S1 (Full)\u2206\nGPT-4o-mini 500 47.2 49.8+2.6pp\nClaude Sonnet 300 44.7 14.0\u221230.7pp\nSonnet (truncated, 47K) 100 61.0 38.0\u221223.0pp\nGemini 2.5 Flash 100 56.070.0+14.0pp\nwins by 2pp at 100\u00d7 the ingest cost is a different artifact than one that wins at parity, and the\ncontrolled-comparison framing is what makes that trade-off legible."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0031"
+        ],
+        "excerpt": "Varied:base model (GPT-4o-mini, Sonnet, Gemini).Fixed:strategy, data, judge.\nThe same S1-vs-S4 comparison yields three qualitatively different conclusions. On GPT-4o-mini,\nthey are indistinguishable (p= 0.34). On Gemini Flash, full context wins by +14pp. On Sonnet,\nretrieval wins by+31pp.\nA paper evaluated on a single model would draw a confident conclusion, and that conclusion would\nbe different depending on which model was chosen.\nSonnet's length-driven failure.63% (188/300) of Sonnet's full-context errors are explicit refusals:\n\"I don't see this in our conversation history,\" despite the answer being present in the 115K-token\ncontext. A truncated-context control (\u223c47K tokens) reduces refusals from 63% to 41% and raises\naccuracy from 14% to 38%, consistent with a length-driven attention failure. Even at 47K, Sonnet\ntrails RAG (61%).\nThe refusal pattern is not uniform across question ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Model Behavior: Three Models, Three Conclusions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a3b54d17af20aa4bb4017a262b965adf74b038709cdbae5a85739810daef5678",
+            "evidence_id": "Eb000b8cc2f8c0840-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Model Behavior: Three Models, Three Conclusions",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 6,
+                "section": "Model Behavior: Three Models, Three Conclusions",
+                "section_index": 20,
+                "start": 0,
+                "text": "Varied:base model (GPT-4o-mini, Sonnet, Gemini).Fixed:strategy, data, judge.\nThe same S1-vs-S4 comparison yields three qualitatively different conclusions. On GPT-4o-mini,\nthey are indistinguishable (p= 0.34). On Gemini Flash, full context wins by +14pp. On Sonnet,\nretrieval wins by+31pp.\nA paper evaluated on a single model would draw a confident conclusion, and that conclusion would\nbe different depending on which model was chosen.\nSonnet's length-driven failure.63% (188/300) of Sonnet's full-context errors are explicit refusals:\n\"I don't see this in our conversation history,\" despite the answer being present in the 115K-token\ncontext. A truncated-context control (\u223c47K tokens) reduces refusals from 63% to 41% and raises\naccuracy from 14% to 38%, consistent with a length-driven attention failure. Even at 47K, Sonnet\ntrails RAG (61%).\nThe refusal pattern is not uniform across question "
+              }
+            ],
+            "text": "Varied:base model (GPT-4o-mini, Sonnet, Gemini).Fixed:strategy, data, judge.\nThe same S1-vs-S4 comparison yields three qualitatively different conclusions. On GPT-4o-mini,\nthey are indistinguishable (p= 0.34). On Gemini Flash, full context wins by +14pp. On Sonnet,\nretrieval wins by+31pp.\nA paper evaluated on a single model would draw a confident conclusion, and that conclusion would\nbe different depending on which model was chosen.\nSonnet's length-driven failure.63% (188/300) of Sonnet's full-context errors are explicit refusals:\n\"I don't see this in our conversation history,\" despite the answer being present in the 115K-token\ncontext. A truncated-context control (\u223c47K tokens) reduces refusals from 63% to 41% and raises\naccuracy from 14% to 38%, consistent with a length-driven attention failure. Even at 47K, Sonnet\ntrails RAG (61%).\nThe refusal pattern is not uniform across question "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0034"
+        ],
+        "excerpt": "Varied:embedding model (MiniLM \u2192 cloud).Fixed:retrieval code, chunking, data, answer model,\njudge.\nSwitching embeddings within an otherwise identical pipeline raises accuracy from 47.2% to 53.4%\n(+6.2pp, p= 0.004). The gains are largest on temporal ( +10.5pp), multi-session (+11.3pp), and\nsingle-session-user (+11.4pp). The direction is not uniform: cloud embeddings underperform on\nSS-Asst and SS-Pref.\nThis is a hidden confound in memory comparisons. A single component swap, costing nothing on the\nwrite path, produces gains comparable to those attributed to architectural changes. Papers comparing\nsystems with different embeddings may be confounding embedding quality with architecture.\nQualitative examples.The embedding effect is concrete: it changes which passages are retrieved,\nand thus which answers are correct. For the question \"How long is your daily commute?\" (ground\ntruth: 45 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Embedding Choice: A Single Swap Rivals Architectural Gains",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3eb2065fbb20d7de430b0d42f6f3aa3f0406ab71d263c708ed579760c79592b5",
+            "evidence_id": "Eb000b8cc2f8c0840-B0034",
+            "pages": [
+              7
+            ],
+            "section": "Embedding Choice: A Single Swap Rivals Architectural Gains",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 7,
+                "section": "Embedding Choice: A Single Swap Rivals Architectural Gains",
+                "section_index": 22,
+                "start": 0,
+                "text": "Varied:embedding model (MiniLM \u2192 cloud).Fixed:retrieval code, chunking, data, answer model,\njudge.\nSwitching embeddings within an otherwise identical pipeline raises accuracy from 47.2% to 53.4%\n(+6.2pp, p= 0.004). The gains are largest on temporal ( +10.5pp), multi-session (+11.3pp), and\nsingle-session-user (+11.4pp). The direction is not uniform: cloud embeddings underperform on\nSS-Asst and SS-Pref.\nThis is a hidden confound in memory comparisons. A single component swap, costing nothing on the\nwrite path, produces gains comparable to those attributed to architectural changes. Papers comparing\nsystems with different embeddings may be confounding embedding quality with architecture.\nQualitative examples.The embedding effect is concrete: it changes which passages are retrieved,\nand thus which answers are correct. For the question \"How long is your daily commute?\" (ground\ntruth: 45 "
+              }
+            ],
+            "text": "Varied:embedding model (MiniLM \u2192 cloud).Fixed:retrieval code, chunking, data, answer model,\njudge.\nSwitching embeddings within an otherwise identical pipeline raises accuracy from 47.2% to 53.4%\n(+6.2pp, p= 0.004). The gains are largest on temporal ( +10.5pp), multi-session (+11.3pp), and\nsingle-session-user (+11.4pp). The direction is not uniform: cloud embeddings underperform on\nSS-Asst and SS-Pref.\nThis is a hidden confound in memory comparisons. A single component swap, costing nothing on the\nwrite path, produces gains comparable to those attributed to architectural changes. Papers comparing\nsystems with different embeddings may be confounding embedding quality with architecture.\nQualitative examples.The embedding effect is concrete: it changes which passages are retrieved,\nand thus which answers are correct. For the question \"How long is your daily commute?\" (ground\ntruth: 45 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0036"
+        ],
+        "excerpt": "Varied:write-path complexity (0 LLM calls \u2192 1,000+).Fixed:embedding ( \u2248matched), answer\nmodel, judge.\nOn the 88 matched instances where comparison is feasible, Mem0 (72.7%) does not outperform\nverbatim RAG with comparable embeddings (73.9%, p= 1.0, McNemar; 90% CI on \u2206: [ \u221210.8,\n+8.4]pp). Note that p= 1.0 indicates the paired disagreements are balanced, not that the systems are\nprovably equivalent; the wide CI reflects the small sample size. On SS-User, both score 88.2%. On\nmulti-session, S3 (20%) does not outperform S4b (25%).\n7\nTable 6: Matched comparison on 88 instances where S3 produced valid results (68 SS-User + 20\nMulti-Session, GPT-4o-mini). S3 was evaluated on the first 100 dataset instances (ordered by question\ntype in the benchmark) due to its high write-path cost (\u223c120 min/instance). Of 100 runs, 12 failed\ndue to Mem0 API errors (empty responses, database lock timeouts, or ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Write-Path Cost: A Matched Comparison",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ad59533371b297c7f778fdea4e7511685fc8e466c55666081dc7a36c89b29ae2",
+            "evidence_id": "Eb000b8cc2f8c0840-B0036",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Write-Path Cost: A Matched Comparison",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 535,
+                "page": 7,
+                "section": "Write-Path Cost: A Matched Comparison",
+                "section_index": 23,
+                "start": 0,
+                "text": "Varied:write-path complexity (0 LLM calls \u2192 1,000+).Fixed:embedding ( \u2248matched), answer\nmodel, judge.\nOn the 88 matched instances where comparison is feasible, Mem0 (72.7%) does not outperform\nverbatim RAG with comparable embeddings (73.9%, p= 1.0, McNemar; 90% CI on \u2206: [ \u221210.8,\n+8.4]pp). Note that p= 1.0 indicates the paired disagreements are balanced, not that the systems are\nprovably equivalent; the wide CI reflects the small sample size. On SS-User, both score 88.2%. On\nmulti-session, S3 (20%) does not outperform S4b (25%).\n7"
+              },
+              {
+                "end": 362,
+                "page": 8,
+                "section": "Write-Path Cost: A Matched Comparison",
+                "section_index": 24,
+                "start": 0,
+                "text": "Table 6: Matched comparison on 88 instances where S3 produced valid results (68 SS-User + 20\nMulti-Session, GPT-4o-mini). S3 was evaluated on the first 100 dataset instances (ordered by question\ntype in the benchmark) due to its high write-path cost (\u223c120 min/instance). Of 100 runs, 12 failed\ndue to Mem0 API errors (empty responses, database lock timeouts, or "
+              }
+            ],
+            "text": "Varied:write-path complexity (0 LLM calls \u2192 1,000+).Fixed:embedding ( \u2248matched), answer\nmodel, judge.\nOn the 88 matched instances where comparison is feasible, Mem0 (72.7%) does not outperform\nverbatim RAG with comparable embeddings (73.9%, p= 1.0, McNemar; 90% CI on \u2206: [ \u221210.8,\n+8.4]pp). Note that p= 1.0 indicates the paired disagreements are balanced, not that the systems are\nprovably equivalent; the wide CI reflects the small sample size. On SS-User, both score 88.2%. On\nmulti-session, S3 (20%) does not outperform S4b (25%).\n7\nTable 6: Matched comparison on 88 instances where S3 produced valid results (68 SS-User + 20\nMulti-Session, GPT-4o-mini). S3 was evaluated on the first 100 dataset instances (ordered by question\ntype in the benchmark) due to its high write-path cost (\u223c120 min/instance). Of 100 runs, 12 failed\ndue to Mem0 API errors (empty responses, database lock timeouts, or "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0037"
+        ],
+        "excerpt": "extraction crashes); these are\nexcluded rather than counted as incorrect, which may slightly favor S3.\nStrategy Overall SS-User (n= 68) Multi-Sess (n= 20)\nS1: Full Context 60.2% 72.1% 20.0%\nS4: Verbatim RAG (MiniLM) 61.4% 76.5% 10.0%\nS3: Mem0 72.7% 88.2% 20.0%\nS4b: Verbatim RAG (cloud)73.9%88.2%25.0%\nTable 7: Write-path cost per instance ( \u223c50 sessions). Cost from pilot ( n= 5); accuracy from full\nruns.\nStrategy Ingest time LLM calls Write cost Accuracy\nS0: No memory 0 s 0 $0 2.2%\nS4b: Verbatim RAG\u223c60 s 0 $0.01 53.4%\nS2: Self-memory\u223c90 min\u223c250 $0.34 42.0%\nS3: Mem0\u223c120 min 1,000+ $0.50+ 72.7% \u2020\nScope.This comparison covers 2 of 6 question types. On temporal reasoning and knowledge-\nupdate questions, where extraction might plausibly help most, we were unable to run S3 due to cost\nconstraints. We therefore do not claim extraction is generally unhelpful. We report that, on the\nsubset where ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Write-Path Cost: A Matched Comparison",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2c1d2b5925fb5e811790ef280f72392e15c6b15c392b90dcbf2abb29837ec323",
+            "evidence_id": "Eb000b8cc2f8c0840-B0037",
+            "pages": [
+              8
+            ],
+            "section": "Write-Path Cost: A Matched Comparison",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1261,
+                "page": 8,
+                "section": "Write-Path Cost: A Matched Comparison",
+                "section_index": 24,
+                "start": 362,
+                "text": "extraction crashes); these are\nexcluded rather than counted as incorrect, which may slightly favor S3.\nStrategy Overall SS-User (n= 68) Multi-Sess (n= 20)\nS1: Full Context 60.2% 72.1% 20.0%\nS4: Verbatim RAG (MiniLM) 61.4% 76.5% 10.0%\nS3: Mem0 72.7% 88.2% 20.0%\nS4b: Verbatim RAG (cloud)73.9%88.2%25.0%\nTable 7: Write-path cost per instance ( \u223c50 sessions). Cost from pilot ( n= 5); accuracy from full\nruns.\nStrategy Ingest time LLM calls Write cost Accuracy\nS0: No memory 0 s 0 $0 2.2%\nS4b: Verbatim RAG\u223c60 s 0 $0.01 53.4%\nS2: Self-memory\u223c90 min\u223c250 $0.34 42.0%\nS3: Mem0\u223c120 min 1,000+ $0.50+ 72.7% \u2020\nScope.This comparison covers 2 of 6 question types. On temporal reasoning and knowledge-\nupdate questions, where extraction might plausibly help most, we were unable to run S3 due to cost\nconstraints. We therefore do not claim extraction is generally unhelpful. We report that, on the\nsubset where "
+              }
+            ],
+            "text": "extraction crashes); these are\nexcluded rather than counted as incorrect, which may slightly favor S3.\nStrategy Overall SS-User (n= 68) Multi-Sess (n= 20)\nS1: Full Context 60.2% 72.1% 20.0%\nS4: Verbatim RAG (MiniLM) 61.4% 76.5% 10.0%\nS3: Mem0 72.7% 88.2% 20.0%\nS4b: Verbatim RAG (cloud)73.9%88.2%25.0%\nTable 7: Write-path cost per instance ( \u223c50 sessions). Cost from pilot ( n= 5); accuracy from full\nruns.\nStrategy Ingest time LLM calls Write cost Accuracy\nS0: No memory 0 s 0 $0 2.2%\nS4b: Verbatim RAG\u223c60 s 0 $0.01 53.4%\nS2: Self-memory\u223c90 min\u223c250 $0.34 42.0%\nS3: Mem0\u223c120 min 1,000+ $0.50+ 72.7% \u2020\nScope.This comparison covers 2 of 6 question types. On temporal reasoning and knowledge-\nupdate questions, where extraction might plausibly help most, we were unable to run S3 due to cost\nconstraints. We therefore do not claim extraction is generally unhelpful. We report that, on the\nsubset where "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0044"
+        ],
+        "excerpt": "availability.\n3. Test onat least two model familiesand report whether rank orderings are stable.\n4. Discloseembedding modelsand report embedding-swap sensitivity.\n5. Reportwrite-path cost(LLM calls, time, dollars) alongside accuracy.\n6. Usematched-instance comparisonswhen evaluating costly systems on subsets.\nWe release the evaluation protocol, code, and all results as open-source. Extended discussion,\nincluding analysis of when architecture might matter, is in Appendix B.\nLimitations.Mem0 was evaluated on 88 instances covering 2 of 6 question types; temporal reasoning\nand knowledge-update questions, where extraction might help most, are not covered. Sonnet full-\ncontext was evaluated on 300 of 500 instances (4 of 6 types) due to prohibitive cost. All results are\non LongMemEval-S, which uses synthetic dialogues that may favor verbatim retrieval over extraction\ndue to higher lexical ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4fef364f4bfd4309b6b1cc5782bd40a6b06f9c8fed3b31f2416fbcfafb7f92e0",
+            "evidence_id": "Eb000b8cc2f8c0840-B0044",
+            "pages": [
+              9
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 1783,
+                "page": 9,
+                "section": "Conclusion",
+                "section_index": 28,
+                "start": 888,
+                "text": "availability.\n3. Test onat least two model familiesand report whether rank orderings are stable.\n4. Discloseembedding modelsand report embedding-swap sensitivity.\n5. Reportwrite-path cost(LLM calls, time, dollars) alongside accuracy.\n6. Usematched-instance comparisonswhen evaluating costly systems on subsets.\nWe release the evaluation protocol, code, and all results as open-source. Extended discussion,\nincluding analysis of when architecture might matter, is in Appendix B.\nLimitations.Mem0 was evaluated on 88 instances covering 2 of 6 question types; temporal reasoning\nand knowledge-update questions, where extraction might help most, are not covered. Sonnet full-\ncontext was evaluated on 300 of 500 instances (4 of 6 types) due to prohibitive cost. All results are\non LongMemEval-S, which uses synthetic dialogues that may favor verbatim retrieval over extraction\ndue to higher lexical "
+              }
+            ],
+            "text": "availability.\n3. Test onat least two model familiesand report whether rank orderings are stable.\n4. Discloseembedding modelsand report embedding-swap sensitivity.\n5. Reportwrite-path cost(LLM calls, time, dollars) alongside accuracy.\n6. Usematched-instance comparisonswhen evaluating costly systems on subsets.\nWe release the evaluation protocol, code, and all results as open-source. Extended discussion,\nincluding analysis of when architecture might matter, is in Appendix B.\nLimitations.Mem0 was evaluated on 88 instances covering 2 of 6 question types; temporal reasoning\nand knowledge-update questions, where extraction might help most, are not covered. Sonnet full-\ncontext was evaluated on 300 of 500 instances (4 of 6 types) due to prohibitive cost. All results are\non LongMemEval-S, which uses synthetic dialogues that may favor verbatim retrieval over extraction\ndue to higher lexical "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0045"
+        ],
+        "excerpt": "overlap; generalization to real user data is untested. GPT-4o-mini judges all\nmodels (effect sizes are too large for judge bias to explain, but human spot-checks would strengthen\nconfidence). The S4b-vs-S3 comparison uses different OpenAI embedding models (text-embedding-\n3-small vs. ada-002), so the embedding control is approximate. We report controlled contrasts, not an\nadditive causal model; the variables may interact.\n9",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5fd9e01da0a3e29722651de2ff7a85437ba9f222645807445623b1da99e74090",
+            "evidence_id": "Eb000b8cc2f8c0840-B0045",
+            "pages": [
+              9
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 2210,
+                "page": 9,
+                "section": "Conclusion",
+                "section_index": 28,
+                "start": 1783,
+                "text": "overlap; generalization to real user data is untested. GPT-4o-mini judges all\nmodels (effect sizes are too large for judge bias to explain, but human spot-checks would strengthen\nconfidence). The S4b-vs-S3 comparison uses different OpenAI embedding models (text-embedding-\n3-small vs. ada-002), so the embedding control is approximate. We report controlled contrasts, not an\nadditive causal model; the variables may interact.\n9"
+              }
+            ],
+            "text": "overlap; generalization to real user data is untested. GPT-4o-mini judges all\nmodels (effect sizes are too large for judge bias to explain, but human spot-checks would strengthen\nconfidence). The S4b-vs-S3 comparison uses different OpenAI embedding models (text-embedding-\n3-small vs. ada-002), so the embedding control is approximate. We report controlled contrasts, not an\nadditive causal model; the variables may interact.\n9"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0060"
+        ],
+        "excerpt": "All accuracy judgments use GPT-4o-mini with a binary prompt: given the ground-truth answer and\nthe model's response, output YES if the response contains the correct information, NO otherwise.\nThe judge does not see the question context or memory, only the ground truth and the candidate\nanswer. This avoids inflating scores for verbose but incorrect responses.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Llm Judge",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ca7a2745d66c83fcbdcd2d6a177304d5cecf447d0e57acd9eb7a279fd2c4869c",
+            "evidence_id": "Eb000b8cc2f8c0840-B0060",
+            "pages": [
+              11
+            ],
+            "section": "Appendix: Llm Judge",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 360,
+                "page": 11,
+                "section": "Appendix: Llm Judge",
+                "section_index": 40,
+                "start": 0,
+                "text": "All accuracy judgments use GPT-4o-mini with a binary prompt: given the ground-truth answer and\nthe model's response, output YES if the response contains the correct information, NO otherwise.\nThe judge does not see the question context or memory, only the ground truth and the candidate\nanswer. This avoids inflating scores for verbose but incorrect responses."
+              }
+            ],
+            "text": "All accuracy judgments use GPT-4o-mini with a binary prompt: given the ground-truth answer and\nthe model's response, output YES if the response contains the correct information, NO otherwise.\nThe judge does not see the question context or memory, only the ground truth and the candidate\nanswer. This avoids inflating scores for verbose but incorrect responses."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.29914",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "case_study",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2606.29914",
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The headline outcomes are established by ground-truth answer matching under a fixed judge prompt, paired statistical testing, and cross-model-family replications rather than by any signal used to shape the systems.",
+          "final_evaluation_signal": "Correctness is scored by GPT-4o-mini using a fixed binary prompt against ground-truth answers, with paired McNemar tests and bootstrap confidence intervals.",
+          "independent_corroboration": "present",
+          "optimization_signal": "No system under study is trained, tuned, or reward-adapted in this work; the compared strategies are fixed off-the-shelf pipelines (verbatim RAG, full context, Mem0, scratchpad) with no in-the-loop optimization against the judge.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0002",
+          "Eb000b8cc2f8c0840-B0008",
+          "Eb000b8cc2f8c0840-B0020",
+          "Eb000b8cc2f8c0840-B0021",
+          "Eb000b8cc2f8c0840-B0022",
+          "Eb000b8cc2f8c0840-B0024",
+          "Eb000b8cc2f8c0840-B0028",
+          "Eb000b8cc2f8c0840-B0029",
+          "Eb000b8cc2f8c0840-B0031",
+          "Eb000b8cc2f8c0840-B0034",
+          "Eb000b8cc2f8c0840-B0036",
+          "Eb000b8cc2f8c0840-B0037",
+          "Eb000b8cc2f8c0840-B0044",
+          "Eb000b8cc2f8c0840-B0045",
+          "Eb000b8cc2f8c0840-B0060"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "6b04097181a353fd7ced3c423f85e8bd479c3458672fb96e712e0cedb817ce1f"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2606.29914",
+        "claim_evidence_alignment": "Claims that memory gains can be confounded by embedding models, model-specific long-context refusal behaviors, and undisclosed write-path computation are thoroughly corroborated by the controlled experiments and statistical analyses.",
+        "context_id": "b000b8cc2f8c084039bf6604b261e4a4d919a217c19feb6920c5ecf6924cf2c9",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical audit evaluates three LLM families (GPT-4o-mini, Claude Sonnet, Gemini 2.5 Flash), reports bootstrap confidence intervals and McNemar significance tests, and quantifies write-path computational overhead (time, LLM calls, dollar cost).",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations rely on objective ground-truth answer matching, paired statistical tests (McNemar), and cross-model family validations across GPT-4o-mini, Claude Sonnet, and Gemini Flash.",
+          "final_evaluation_signal": "Binary correctness scoring against ground-truth answers using an independent fixed prompt with GPT-4o-mini, complemented by paired McNemar statistical testing.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Fixed off-the-shelf memory architectures, standard RAG pipelines, and pre-trained LLMs evaluated without in-the-loop parameter tuning or reward-driven prompt adaptation.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Eb000b8cc2f8c0840-B0002",
+          "Eb000b8cc2f8c0840-B0008",
+          "Eb000b8cc2f8c0840-B0021",
+          "Eb000b8cc2f8c0840-B0022",
+          "Eb000b8cc2f8c0840-B0024",
+          "Eb000b8cc2f8c0840-B0028",
+          "Eb000b8cc2f8c0840-B0029",
+          "Eb000b8cc2f8c0840-B0031",
+          "Eb000b8cc2f8c0840-B0034",
+          "Eb000b8cc2f8c0840-B0036",
+          "Eb000b8cc2f8c0840-B0037",
+          "Eb000b8cc2f8c0840-B0044",
+          "Eb000b8cc2f8c0840-B0045"
+        ],
+        "limitations": "The authors clearly acknowledge key limitations, including restricting the Mem0 comparison to 88 instances across 2 question types due to write-path compute costs, reliance on synthetic benchmark dialogues, and approximate rather than identical embedding matching for Mem0.",
+        "method_assessment": "The methodology constructs rigorous pairwise comparisons on LongMemEval-S (500 questions), holding prompts, chunking, retrieval logic, and base models constant while varying single components such as embeddings (MiniLM vs OpenAI text-embedding-3-small) and context lengths.",
+        "quality_rationale": "The manuscript presents a rigorous, well-designed measurement study that cleanly exposes critical methodological confounds in LLM agent memory evaluation with substantial empirical support and controlled statistical contrasts.",
+        "scoped_contribution": "MemDelta is a controlled empirical evaluation protocol for agent memory systems that isolates retrieval quality, embedding model choice, language model behavior, and write-path cost by varying one factor at a time.",
+        "source_content_hash": "6b04097181a353fd7ced3c423f85e8bd479c3458672fb96e712e0cedb817ce1f"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous, well-designed measurement study that cleanly exposes critical methodological confounds in LLM agent memory evaluation with substantial empirical support and controlled statistical contrasts.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "6b04097181a353fd7ced3c423f85e8bd479c3458672fb96e712e0cedb817ce1f",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors clearly acknowledge key limitations, including restricting the Mem0 comparison to 88 instances across 2 question types due to write-path compute costs, reliance on synthetic benchmark dialogues, and approximate rather than identical embedding matching for Mem0."
   },
   "semantic_scholar_id": "e188192b0740b7f057f24700093d30e47c7c97f0",
   "source": "openalex",
@@ -182,7 +1863,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

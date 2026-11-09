@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Encoding Memory in World Models with Test-Time Model-Based Reinforcement Learning</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Encoding Memory in World Models with Test-Time Model-Based Reinforcement Learning</h1>
+          <p class="hero-copy">Maxime Burchi, Fayaz Ali Dharejo, Radu Timofte</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.09625v1">Open paper</a>
+            <a class="paper-detail-link" href="encoding-memory-in-world-models-with-test-time-model-based-reinforcement-learning-59f65a68.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Maxime Burchi, Fayaz Ali Dharejo, Radu Timofte</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-06</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-06</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.09625">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Evaluates memory mechanisms or benchmarks for LLM agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Model-based reinforcement learning (MBRL) approaches have demonstrated strong performance across diverse domains in recent years, learning accurate world models from agent trajectories. However, despite this progress, current approaches still struggle to surpass human performance on tasks that require long-term memo...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The work addresses a clear limitation in model-based RL through a principled, well-ablated approach. The evaluation is comprehensive across multiple baselines and environments, supported by compute-matched controls and external benchmark validations.</p>
+      <p>The authors explicitly discuss and quantify the computational overhead of performing gradient-based optimization during evaluation episodes, as well as the need for exploration-phase adaptations in future work.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-09T12:33:22.336339+00:00.</p>
+        <p>Coverage: 75521 of 75521 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We introduce TT-MBRL, a novel learning framework for MBRL that takes advantage of test-time
+observations to learn episode-specific patterns and acquire long-term memory. TT-MBRL learns
+a unique world model and policy for each evaluation episode. In contrast to training time, where
+model parameters are shared across all episodes in the replay buffer, this allows the agent to fine-
+tune its parameters to each individual episode. An overview of the proposed method is provided in
+Figure 3.
+Figure 3: During training, the world model learns to predict the common patterns shared among
+multiple episode trajectories collected during exploration. The agent can solely rely on contextual
+memory to identify patterns that are unique to each new episode, which can lead to incoherent future
+predictions. At test time, the agent can leverage both contextual and neural memory. This allows the
+world model </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>At test time, the agent initializes test-time network parameters (ϕ ′,θ ′,ψ ′) with the set of weights
+learned during the training phase (ϕ,θ,ψ) at the beginning of each episode. A dedicated test-time
+replay buffer is also created to store observations collected within the current evaluation episode.
+Analogous to the training procedure, the agent samples mini-batches of trajectories to update its
+parameters. We find it beneficial to draw half of the trajectories from the training replay buffer and
+the other half from the test-time buffer. This strategy acts as a form of regularization, mitigating
+overfitting to the limited test-time observations, which could otherwise degrade performance. When
+the number of test-time samples is smaller than the required world model sequence length, mini-
+batches are concatenated with trajectories from the training buffer. We also freeze the encoder </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and
+decoder parameters and drop the reconstruction loss at test time to improve TT-MBRL efficiency,
+preserving the representation space learned during training. Unlike the sequential and dynamics
+networks, which must adapt to the specific layout and structure of each new episode, the encoder
+and decoder learn general visual representations that are independent of their temporal ordering.
+4
+Freezing these parameters significantly reduces evaluation time without impacting performance.
+We provide an empirical analysis of these design choices in Section 4.3. For each new policy step,
+the world model loss optimizes the test-time parametersϕ ′ as follows:
+L(ϕ′) = 1BT
+BX
+b=1
+TX
+t=1
+h
+βpredLpred(ϕ′) +βdynLdyn(ϕ′) +βrepLrep(ϕ′)i (5)
+With the test-time prediction lossL pred(ϕ′)omitting the reconstruction objective:
+Lpred(ϕ′) =−logp ϕ′(rt |s t)
+reward predictor loss
+−logp ϕ′(ct |s t)
+continue </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Further details on the proposed Memory Maze 2D environment are
+provided in Appendix A.5.
+5
+Table 1: Memory Maze 2D benchmark comparison for all maze sizes (100M env steps). We show
+the impact of TT-MBRL on the performance for each method. The reported scores are averaged
+over three runs with 100 evaluation episodes. We also report Human mean scores over 10 episodes.
+Mem Maze 2D
+9×9
+Mem Maze 2D
+11×11
+Mem Maze 2D
+13×13
+Mem Maze 2D
+15×15Method
+Human126.2 172.0 195.0 201.0
+Oracle137.2 215.4 276.6 311.4
+DreamerV3 (TBTT)121.2±3.0 185.9±11.3 108.0±8.8 46.2±7.6
++ TT-MBRL (Ours)122.1±1.1 189.4±6.8 207.2±10.9 185.0±17.6
+TWISTER84.8±0.8 100.0±5.9 95.3±10.2 72.0±3.2
++ TT-MBRL (Ours)113.7±1.8 178.7±4.4 224.2±6.1 240.1±17.6
+R2I123.1±0.2 200.3±6.3222.9±6.6 171.6±24.3
++ TT-MBRL (Ours)123.1±0.2199.2±4.2233.4±8.3 244.3±7.2
+Table 2: Evaluation of the impact of TT-MBRL on world model predictions on Memory </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Maze 2D
+15×15. We aggregate all metrics over 100 unseen trajectories of 64 frames from distinct episodes.
+Method KL div↓FVD↓PSNR↑SSIM↑LPIPS↓
+DreamerV3 (TBTT)114.6 104.5 10.3 0.552 0.283
++ TT-MBRL (Ours)66.0 55.2 16.3 0.642 0.241
+TWISTER28.7 89.1 13.1 0.578 0.292
++ TT-MBRL (Ours)13.2 57.1 15.7 0.641 0.262
+R2I52.0 115.4 10.1 0.541 0.304
++ TT-MBRL (Ours)13.8 45.7 15.8 0.675 0.246
+Results.To evaluate the effectiveness of TT-MBRL, we consider three recent world model
+architectures: DreamerV3 (Hafner et al., 2023), which employs an RNN-based world model;
+TWISTER (Burchi &amp; Timofte, 2025), which relies on a Transformer-based architecture; and
+R2I (Samsami et al., 2024), which is built on S4. Table 1 shows the results obtained after train-
+ing 100M environment steps on each maze size. We also record the performance of a human player
+to estimate the capabilities of each method compared to human </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>each method. The reported scores are averaged over
+three runs with 100 episodes for evaluation.†denotes the results taken from Samsami et al. (2024).
+We also report TT-MBRL results for R2I with a budget of 400M environment steps over six runs.
+Mem Maze
+9×9
+Mem Maze
+11×11
+Mem Maze
+13×13
+Mem Maze
+15×15Method
+Human26.4 44.3 55.5 67.7
+Oracle34.8 58.0 74.5 87.7
+IMPALA† 23.5 28.5 27.0 18.5
+IMPALA† (400M steps)26.5 35.0 36.5 27.5
+DreamerV3 (TBTT)32.7±0.833.0±1.4 22.1±1.8 6.0±0.3
++ TT-MBRL (Ours)32.5±0.737.8±1.1 32.5±3.2 7.9±1.3
+TWISTER28.2±0.6 33.5±0.9 29.7±2.4 23.1±0.5
++ TT-MBRL (Ours)30.6±0.8 42.1±0.3 42.3±1.9 31.5±1.8
+R2I32.5±0.645.9±1.6 45.9±1.3 20.3±1.1
++ TT-MBRL (Ours)32.3±0.547.8±2.6 53.0±1.8 29.3±4.7
+R2I (400M steps)33.7±0.3 52.3±0.9 60.1±1.6 42.0±5.8
++ TT-MBRL (Ours)33.8±0.6 52.4±1.4 63.0±1.5 54.1±3.5
+Table 4: Evaluation of the impact of TT-MBRL on world model predictions on Memory </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Maze
+15×15. We aggregate all metrics over 100 unseen trajectories of 64 frames from distinct episodes.
+Method KL div↓FVD↓PSNR↑SSIM↑LPIPS↓
+DreamerV3 (TBTT)21.7 67.7 25.0 0.771 0.211
++ TT-MBRL (Ours)20.1 61.7 26.2 0.789 0.190
+TWISTER51.8 63.8 24.6 0.756 0.230
++ TT-MBRL (Ours)46.3 49.1 26.2 0.792 0.187
+R2I61.3 114.1 21.1 0.687 0.319
++ TT-MBRL (Ours)38.3 85.2 24.0 0.750 0.252
+R2I (400M steps)54.2 111.1 21.7 0.697 0.290
++ TT-MBRL (Ours)29.3 70.7 26.0 0.784 0.192
+Results.We train DreamerV3, TWISTER, and R2I world models for 100M environment steps on
+all Memory Maze sizes. Following Samsami et al. (2024), we further train R2I up to 400M envi-
+ronment steps and include the results obtained by IMPALA (Espeholt et al., 2018), which serves
+as a strong model-free baseline for comparison. Table 3 compares the results obtained by each
+method. Despite the increased observation complexity of the 3D </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>introduces
+a trade-off, as it delays the benefits of adaptation. To overcome both limitations, we propose mixing
+trajectories collected at test time with samples from the training replay buffer (Test+Train Data, No
+Prefill), effectively acting as a form of regularization. This approach mitigates early overfitting while
+enabling immediate adaptation, leading to more stable and consistent performance improvements.
+To verify that the gain in performance is due to TT-MBRL rather than additional inference compute,
+we also perform a compute-matched evaluation. We study the impact of additional compute on per-
+formance when only training trajectories are available (Train Data Only). The comparison confirms
+that the performance gain is due to TT-MBRL rather than additional compute budget.
+Table 5: Impact of replay buffer sampling strategy on TT-MBRL performance on Memory Maze
+2D 15×15. </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Combining training and test-time trajectories (Test+Train Data, No Prefill) consistently
+achieves the best performance across all world model architectures.
+Method w/o TT-MBRL Train Data
+Only
+Test Data Only Test+Train Data
+No Prefill 1024 Prefill No Prefill 1024 Prefill
+DreamerV346.2 47.0 117.6 173.5185.0149.6
+TWISTER72.0 69.2 167.6 210.1240.1207.1
+R2I171.6 171.7 218.8 240.1244.3237.5
+Reconstruction Loss and Parameter Freezing.Table 6 shows the impact of freezing or updating
+encoder/decoder parameters using the reconstruction loss at test time. We find that the two variants
+achieve comparable performance across different world model architectures. These findings are
+as expected, given that encoder representations are independent of their temporal ordering. The
+episode-specific information is instead captured by the sequential and dynamics network parameters.
+However, unfreezing these </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>where the agent occasionally fails to accurately
+reach the target sphere. TT-MBRL mitigates this issue by enabling the agent to better detect and
+correct such errors. Detailed results for individual tasks are provided in Appendix A.9.
+Table 7: DMC results (20 tasks, 1M env steps).
+Method Mean Median
+DreamerV3776.2 842.2
++TT-MBRL (Ours)788.2 850.3
+Table 8: Atari results (26 tasks, 400K env steps).
+Method Mean Median IQM
+DreamerV3109.5% 44.3% 0.502
++TT-MBRL (Ours)111.1%46.1%0.514</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>state-of-the-art results on Memory Maze. We find that the effectiveness of
+TT-MBRL scales proportionally to the number of environment steps collected at test-time. These
+results highlight the potential of parameter-based memory as a powerful complement to contextual
+memory in MBRL systems. More broadly, our findings suggest that test-time learning constitutes a
+promising direction for developing agents capable of long-term planning.
+5.1 LIMITATIONS ANDFUTUREWORK.
+The primary limitation of our approach is the reduced evaluation efficiency resulting from the use
+of gradient-based optimization at test time. TT-MBRL requires learning a distinct world model and
+behavior policy for each evaluation episode, leading to increased computational cost and longer eval-
+uation times. While this overhead remains manageable in environments such as Memory Maze, it
+may become prohibitive in settings that </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Benchmark / evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd>Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Evaluates memory behavior, safety, or retrieval in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: long-term-memory, benchmark, agent-memory, memory-systems, llm-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-06</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-09 12:28:51</li><li>Last seen by Paper Scout: 2026-11-09 12:29:10</li></ul>
+            <ul><li>arXiv: 2611.09625</li><li>arXiv IDs: 2611.09625</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="encoding-memory-in-world-models-with-test-time-model-based-reinforcement-learning-59f65a68.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Encoding Memory in World Models with Test-Time Model-Based Reinforcement Learning. Maxime Burchi, Fayaz Ali Dharejo, Radu Timofte. 2026-11-06. https://arxiv.org/abs/2611.09625v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

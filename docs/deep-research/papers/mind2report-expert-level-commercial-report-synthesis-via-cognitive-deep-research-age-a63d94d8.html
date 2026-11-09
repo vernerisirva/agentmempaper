@@ -59,16 +59,207 @@
             <p>Synthesizing informative commercial reports from massive and noisy web sources is critical for high-stakes business decisions. Although recent deep research agents (DRAs) achieve notable progress, their reports remain limited in quality, reliability, and coverage. These mainly stem from ambiguous intents that cause...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>Mind2Report provides an actionable, clearly articulated architectural design addressing specific failure modes in commercial agentic research. The validation is robust, featuring extensive baseline comparisons, transparent prompting details, ablation studies, and independent human expert correlation analysis.</p>
+      <p>The authors document clear failure modes and operational constraints, including risks of accepting shallow or noisy consensus evidence, web crawling/scraping access restrictions, and minor discourse boundary inconsistencies in staged section generation.</p>
       <p>Publication: peer reviewed. OpenAlex records a published conference location: ACM International Conference on Information and Knowledge Management (CIKM). Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-09T12:34:19.642954+00:00.</p>
+        <p>Coverage: 87329 of 87329 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Synthesizing informative commercial reports from massive and noisy web sources is critical for
+high-stakes business decisions. Although recent deep research agents (DRAs) achieve notable
+progress, their reports remain limited in quality, reliability, and coverage. These mainly stem
+from ambiguous intents that cause search drift, retrieved web content that rapidly saturates the
+context window, and single-pass synthesis that limits report comprehensiveness. In this work,
+we propose Mind2Report, a cognitive deep research agent that emulates commercial analysts
+to synthesize expert-level reports. Mind2Report first probes fine-grained commercial intent to
+establish a structured outline, then recursively explores web sources and distills validated evidence
+into research memory to preserve context efficiency. Meanwhile, the research memory and outline
+continuously co-evolve, refining the </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>hallucinated reports
+[40, 48]. Third, single-pass synthesis often under-
+uses the collected evidence, resulting in reports
+with limited information richness and insufficient
+analytical depth [40, 47]. As illustrated in Fig-
+ure 1, these motivate us to develop a commercial
+deep research agent that follows the rigorous
+workflow of professional analysts, from require-
+ment clarification and evidence management to
+comprehensive report synthesis.
+Toaddressthesechallenges, weproposeMind2Report, acognitivedeepresearchagentthatemulatesprofessional
+commercial analysts to synthesize expert-level commercial reports. To mitigate search drift caused by
+ambiguous commercial queries, Mind2Report first probes fine-grained commercial intent to establish a
+structured report outline. It then recursively explores web sources and distills validated evidence with source
+citations into research memory, which </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>holistic evaluation framework covering report quality, reliability, and coverage,
+where each dimension contains specialized metrics designed to capture critical aspects of commercial reports.
+Extensive experiments demonstrate that Mind2Report consistently outperforms leading proprietary and
+open-source DRAs, including OpenAI and Gemini DRAs [6, 30]. Detailed ablation studies further verify the
+effectiveness of each module and analyze the challenges they address. Moreover, we verify the alignment
+between our proposed metrics and human expert judgment, demonstrating the rationality of QRC-Eval metrics
+for commercial deep research assessment. Overall, we hope Mind2Report and QRC-Eval can contribute to the
+future development of commercial deep research agents and evaluation strategies.
+2
+Our contributions can be summarized as follows:
+• We propose Mind2Report, a cognitive deep research agent </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 2 illustrates the framework of Mind2Report for synthesizing commercial reports from an initial query
+Q. The key design is to maintain an evidence-centered research state throughout the deep research process.
+First, Mind2Report probes fine-grained commercial intent and constructs an initial outline that converts an
+underspecified request into a structured analytical scaffold. Second, guided by the outline, Mind2Report
+invokes specialized search agents to recursively explore web sources and distill observations into validated
+evidence stored in research memory. Each memory entry preserves compact evidence content, its citation
+source, and its association with the corresponding outline node. Meanwhile, the research memory and outline
+continuously co-evolve: the outline constrains evidence acquisition, while accumulated memory evidence
+updates the evidence state of each outline node </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>After obtaining the initial outline, Mind2Report conducts iterative exploration through specialized search
+agents. For each outline nodeoj ∈O t, a search agent queries heterogeneous web sources using the node-
+level requirement and current memory sliceMt(oj), and distills retrieved pages into candidate evidence.
+Mind2Report evaluates this evidence through three binary gates: integrity, freshness, and plurality, which
+respectively assess factual support, topic-dependent temporal validity, and sufficient coverage of required
+examples or perspectives. If any activated gate fails, the agent generates targeted supplementary queries and
+continues exploration until all gates pass or the search horizon is reached. Only validated evidence is stored in
+research memory asmi = (ei, ci, oj), where ei is a compact evidence statement,ci the citation source, andoj
+the associated outline node. This </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>interface lets the main agent interact with search primarily throughMt and
+Ot, reducing context saturation while preserving citation tracing.
+Research memory further enables the outline to evolve with accumulated evidence, distinguishing Mind2Report
+from query-level search refinement. After validated entriesmi are returned for oj, Mind2Report updates
+Mt+1 = Mt ∪m i and Ot+1 = Update(Ot, Mt+1). Memory entries sharing the same outline node and
+citation sources are also merged before synthesis to reduce fragmentation. Consequently, each outline node
+is progressively enriched with supporting evidence and remaining gaps rather than remaining a static plan.
+Subsequent search is conditioned on bothOt+1 and Mt+1(oj): supported aspects can be reused for synthesis,
+while uncovered aspects trigger targeted exploration. In this way, the outline guides evidence acquisition,
+while accumulated memory </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Mind2Report produces the final commercial report through coherent-preserved iterative synthesis with citation
+tracing. Given the final outlineOT, research memoryMT, and citation source registryCT, the agent generates
+the report section by section following the outline hierarchy. For each section, Mind2Report retrieves the
+associated memory evidence and consolidates evidence supported by the same citation sources into coherent
+analytical support. The preceding report context is used to preserve discourse continuity, while factual
+statements remain grounded in section-level memory rather than the entire search trace. This allows the
+agent to synthesize each segment under a compact local evidence context and improves the reuse of collected
+evidence. Citation placeholders are then matched back to the source registryCT maintained in the research
+state, producing a final reportR with </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>H100 …BF16 495
+TFLOPS SXM5.
+Query: in 2023-2025
+[12] www.news.ai/2018
+[41] www.tech.com/2025
+Query: H100 vs. MI300X
+Wikipedia
+arXiv Bloomberg
+Gov
+Reports https://www.tech.com/market/ai/chips/h100-report.pdf
+Ø Segment Count = 4
+Ø Valuable Assets: pdf, csv…
+Figure 3Overview of the QRC-Eval, a commercial query
+suite and a holistic evaluation strategy designed for assessing
+commercial reports via quality, reliability, and coverage.
+As shown in Figure 3, we construct a dataset
+comprising 200 time-sensitive commercial queries
+manually crafted by business experts to ensure
+professional quality. The design process incorpo-
+rates complex analytic intents to simulate real-
+world business scenarios. To evaluate generaliza-
+tion capabilities across diverse commercial sce-
+narios, we distribute these queries roughly evenly
+among six distinct commercial domains. Further-
+more, this manual creation </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We formalize the final report as an ordered sequence of claim-source pairs, so QRC-Eval evaluates final
+reports and citation sources, avoiding assumptions about specific agent workflows. The quality dimension
+evaluates content relevance by measuring the alignment between claims and keypoints. We also assess the
+structure via hierarchical headers to ensure the logical coherence. Reliability ensures trustworthiness through
+the hallucination rate which penalizes claims that lack support from citation sources. We further measure
+temporality by verifying that source timestamps satisfy the temporal constraints and evaluate consistency by
+detecting numerical or logical contradictions across the context. Coverage includes source breadth, which
+quantifies information diversity, and search depth, which evaluates path segments of retrieved sources. Given
+the potential biases of LLM-as-a-judge </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evaluation [51], we prioritize standard or deterministic calculations
+whenever objective signals are available, such as keypoint matching, timestamp verification, URL accessibility,
+source-domain statistics, and path-based depth. We only employ LLM-as-a-judge for semantic judgments
+that are difficult to calculate with rule-based metrics, such as structure (Str.), hallucination (Hall.), and
+6
+Table 1Performance of Mind2Report against leading baselines through QRC-Eval. Key metrics include relevance
+(Rel.), structure (Str.), hallucination (Hall.), temporality (Temp.), consistency (Cons.), normalized breadth (Brd.),
+normalized depth (Dep.), report length (Len.), and time (Time).Boldmeans the best andunderline is the second best.
+Methods Quality Reliability Coverage Avg. Profile
+Rel.↑Str.↑Hall.↓Temp.↑Cons.↑Brd.↑Dep.↑RankLen. Time
+Proprietary DRAs
+o3 Deep Research 63.52 79.18 10.48 79.85 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1.0021.93k 385s
+consistency (Cons.). Additionally, we track profile metrics including report length (Len.) and processing time
+(Time). These serve as references and do not influence the final ranking. Detailed metrics formulas appear in
+Appendix B.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Baselines.We evaluate Mind2Report against a comprehensive set of baselines categorized into three distinct
+groups. The first group encompasses proprietary deep research agents, including o3 Deep Research [30],
+o4-mini Deep Research [30], Gemini Deep Research [6], Grok Deep Search, and Perplexity Deep Research.
+The second group comprises open-source training-based DRAs, specifically WebThinker [23], MiroThinker
+[29], and Tongyi-DeepResearch [22]. Finally, we compare against open-source workflow-based DRAs that
+orchestrate LLMs and external tools for deep research tasks, including MiroFlow [37], OpenManus [24], and
+OWL [17]. For each baseline, we use its official API, released checkpoint, or official repository, and follow the
+recommended settings whenever available. For methods without explicit query rewriting or expansion, we
+apply the same intent probing algorithm as Mind2Report to </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reformulate the query for a fairer comparison.
+Implementation Details.We employ DeepSeek-V3.1 [ 25] as the backbone LLM and DeepSeek-R1 [15]
+specifically for outline generation. To ensure fairness, we standardize inference parameters across all LLMs.
+We equip all methods with identical Google Search tools, except proprietary DRAs whose internal tools
+are inaccessible. For reproducibility, cached webpage snapshots are used preferentially when available. To
+ensure stability, we execute three independent runs for each method and report the average metrics. For all
+LLM-as-a-Judge scenarios, we adopt Gemini 2.5 Pro [6] as the unified evaluator. Detailed parameters are
+provided in Appendix D.
+7
+Table 2Component-wise ablation study. We remove modules to evaluate their contributions to overall performance
+across quality, reliability, coverage, and reporting profile dimensions. The w/ and w/o </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>denote with and without,
+respectively.
+Component Configuration Quality Reliability Coverage Profile
+Rel.↑Str.↑Hall.↓Temp.↑Cons.↑Brd.↑Dep.↑Len. Time
+Full Agent Mind2Report 75.42 85.24 6.12 90.53 75.82 80.85 84.2521.9k 385s
+w/ Intent-Driven w/o Intent Clarification 68.35 81.10 7.45 88.20 73.15 62.00 77.50 19.5k 350s
+Outline Formulation w/o Outline Generation 64.20 60.50 12.80 84.10 68.40 46.00 70.00 14.2k 310s
+w/ Memory-Outline w/o Evidence Distilling 71.50 80.40 13.55 87.60 58.30 79.00 81.25 22.1k 370s
+Co-Evolving Search w/o Research Memory 69.80 78.20 10.20 70.40 65.90 52.50 53.75 15.8k 290s
+w/ Coherent-Preserved w/o Evidence Merging 70.10 76.50 14.25 85.10 64.80 74.50 77.50 18.4k 340s
+Iterative Synthesis w/o Iterative Synthesis 62.40 65.30 19.80 82.50 55.20 42.50 47.50 5.8k 125s</blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Alignment of QRC-Eval with Human Experts.To validate the reliability of QRC-Eval, we solicited expert
+ratings across quality, reliability, and coverage dimensions. We engaged a panel of financial analysts to score
+9
+NVIDIA H100 vs. AMD MI300X: Which for LLM Training in 2026?
+Query
+Reasoning
+Trace
+Research Memory
+Hardware needs stable software.
+Verifying &#x27;CUDA Moat&#x27; and
+Megatron-LM support to assess
+training reliability.
+Query: NVIDIA CUDA vs AMD ROCm stability for LLM training 2026
+[1] https ://www .thundercompute .com &gt;…&gt; rocm-vs-cuda-gpu-computing
+[2] https ://discuss .pytorch .org &gt;…&gt; why_is_cuda_faster_than_rocm
+[3] https ://medium .com &gt;…&gt; choosing -the -right -gpu -for -local -llm-use
+[1]: NVIDIA vs AMD: The 2025 Showdown ... In today&#x27;s market update, stock prices are
+fluctuating. However, for tech enthusiasts, the specs are out. NVIDIA&#x27;s H100 has been the
+king for a while. The new </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>QRC-Eval with human expert
+judgments via Spearman correlation. Absolute values near1
+denote strong alignment.
+Metrics Human Expert Dimensions
+Quality Reliability CoverageOverall
+Quality
+Relevance↑0.7840.342 0.457 0.653
+Structure↑0.6210.289 0.315 0.546
+Reliability
+Hallucination↓-0.413-0.825-0.258 -0.692
+Temporality↑0.3170.6480.224 0.529
+Consistency↑0.4560.7230.381 0.627
+Coverage
+Source Breadth↑0.552 0.3260.7640.583
+Search Depth↑0.519 0.2950.7180.614
+Average Rank↓-0.815 -0.807 -0.753-0.916
+Consistency of LLM and Human Judgment.Dur-
+ing dataset annotation, human experts indepen-
+dently annotate keypoints for each commercial
+query, with inter-annotator agreement reaching
+α = 0.82, indicating reliable consensus. For met-
+rics requiring semantic judgment, including struc-
+ture (Str.), hallucination (Hall.), and consistency
+(Cons.), we use Gemini 2.5 Pro as the unified
+LLM-as-a-Judge </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evaluator. We further compare
+these metrics with human expert ratings and
+observe a strong agreement rate of 0.94. Specif-
+ically, structure aligns most closely with human
+quality judgments, hallucination and consistency
+with reliability judgments, and the overall au-
+tomatic ranking shows the strongest agreement
+with human satisfaction. These results support
+LLM-as-a-Judge as a controlled complement to
+deterministic metrics in QRC-Eval.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +298,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +314,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-04</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-06 11:49:29</li><li>Last seen by Paper Scout: 2026-11-06 11:49:29</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-08</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-06 11:49:29</li><li>Last seen by Paper Scout: 2026-11-09 12:30:09</li></ul>
             <ul><li>DOI: 10.1145/3799682.3840672</li><li>arXiv: 2601.04879</li><li>OpenAlex: W7119689058</li><li>OpenAlex IDs: W7119689058</li><li>arXiv IDs: 2601.04879</li></ul>
           </section>
           <section class="detail-panel">

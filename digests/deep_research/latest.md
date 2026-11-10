@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-09](2026-11-09.md).
+Latest daily digest: [2026-11-10](2026-11-10.md).
 
-# Paper Scout Digest - 2026-11-09
+# Paper Scout Digest - 2026-11-10
 
 ## Run Summary
 
-- **Run ID:** 130
-- **Candidates fetched:** 126
-- **New unique papers:** 124
-- **Relevant:** 16
-- **Maybe relevant:** 3
-- **Irrelevant:** 107
-- **Source summary:** arxiv: 26, openalex: 100, semantic_scholar: 0
+- **Run ID:** 131
+- **Candidates fetched:** 124
+- **New unique papers:** 121
+- **Relevant:** 11
+- **Maybe relevant:** 2
+- **Irrelevant:** 111
+- **Source summary:** arxiv: 24, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -20,49 +20,41 @@ Latest daily digest: [2026-11-09](2026-11-09.md).
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
-- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [Does an Open Targets dossier skill help an AI scientist agent? An OpenScientist experiment](https://doi.org/10.5281/zenodo.24026258)
+### [Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists](https://arxiv.org/abs/2611.12184v1)
 
-- **Authors:** Chris Mungall
-- **Date:** 2026-11-06
-- **Source:** openalex
-- **Relevance:** relevant (96/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** deep-research-agents, ai-scientist
-- **Abstract summary:** Files from a small experiment on whether an agent skill for the Open Targets Platform improves how the OpenScientist autonomous research agent answers drug-target questions. Two questions were each run under three conditions: OpenScientist's built-in skills only; the generic database-lookup skill from K-Dense's scie...
-
-### [Artificial Intelligence Changes Cognition Systems](https://doi.org/10.21686/2500-3925-2026-5-70-82)
-
-- **Authors:** Vladimir Vorozhikhin, Елена Игоревна Ларионова, Tatiana I. Chinaeva
-- **Date:** 2026-11-05
-- **Source:** openalex
+- **Authors:** Guowei Xu, Jiaru Zou, Mete Erdogan, Haotian Ye, Pan Lu, James Zou
+- **Date:** 2026-11-09
+- **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Purpose of the study. Humanity is at a turning point in its development, which is reflected in the change in the regimes of global processes, the growth of global hypercompetition for the future. Digital transformation is also entering a new phase. The processes of automation, digitalization, and the formation of in...
+- **Abstract summary:** Scientific discovery requires ideas that are original, useful, and non-obvious. Yet AI scientists are typically given as much task information as possible during idea generation, which can anchor generation toward familiar approaches. Inspired by the cognitive framework of Blind Variation and Selective Retention (BV...
 
-### [CORE: Coarse-to-Fine Search with Context Management for Deep Research](https://arxiv.org/abs/2611.07859)
+### [Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery](https://arxiv.org/abs/2611.12762v1)
 
-- **Authors:** Hoang Tran Vuong, Pham Ngoc Quan, Hung Bui, Fatih Porikli, Dat Quoc Nguyen
-- **Date:** 2026-11-05
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents answer complex questions through repeated search. They rely on a harness that runs their tool calls and returns evidence to their context. This creates a trade-off: Search works best over long passages, which give enough context for reliable semantic matching. But the returned evidence should be...
+- **Authors:** Weida Wang, Benteng Chen, Yigeng Jiang, Shuchen Pu, Weiping Shen, Zichao Liu, et al.
+- **Date:** 2026-11-09
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it. Through explicit monitoring and control, the system revises its understanding of evidence, assumptions, and unresolved questions, then uses these...
 
-### [From Human–AI Collaboration to Autonomous Scholarly Agents: A Transparent Model for Rapid Publication of AI-Generated Research](https://doi.org/10.5281/zenodo.24031244)
+## Maybe Relevant
 
-- **Authors:** paul alan penfold
-- **Date:** 2026-11-07
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** AI systems can now carry out most stages of a research pipeline, and a few venues accept work that AI agents have led. The rules for doing this responsibly are uneven. We ask what is known about autonomous research agents and AI review, what publishers and AI-led venues require, and what a transparent publication mo...
+### [DeepResearch RewardBench: Evaluating Reward Models for Deep Research Report](https://arxiv.org/abs/2611.10156v1)
+
+- **Authors:** Shudong Liu, Yuting Zhong, Guanhua Chen, Xinyi Yang, Junnan Liu, Lidia S. Chao, et al.
+- **Date:** 2026-11-06
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** benchmark
+- **Abstract summary:** Empowered by Large Language Models (LLMs), deep research systems integrate online information into research reports through multi-step web searching and information synthesis. Evaluating these reports presents a significant challenge due to their long context, high information density, and domain specificity, necess...

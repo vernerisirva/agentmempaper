@@ -59,16 +59,166 @@
             <p>While Large Language Models (LLMs) excel as static solvers, transforming them into autonomous agents remains challenging. This transition requires continuous environmental interaction, yet current agents lack the necessary persistent procedural memory. Existing approaches predominantly employ Retrieval-Augmented Gen...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The contribution is substantive and well-scoped, the methodological presentation is complete, and empirical validation across multiple interactive environments confirms the effectiveness and efficiency claims with appropriate baselines and controls.</p>
+      <p>The authors clearly acknowledge key limitations, including the necessity of white-box access to intermediate model activations, vulnerability to cold-start when positive trajectories are sparse, heuristic dependency for identifying degenerate steps, and static application of the steering vector across all execution steps.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-09T06:27:33+00:00.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-10T12:06:36.437327+00:00.</p>
+        <p>Coverage: 73890 of 73890 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While Large Language Models (LLMs) excel
+as static solvers, transforming them into au-
+tonomous agents remains challenging. This
+transition requires continuous environmental
+interaction, yet current agents lack the neces-
+sary persistent procedural memory. Existing
+approaches predominantly employ Retrieval-
+Augmented Generation (RAG) to inject ex-
+plicit textual guidelines into model contexts.
+However, relying solely on symbolic instruc-
+tions can introduce a text-action disconnect,
+frequently failing to activate the internal rep-
+resentations necessary for correct task execu-
+tion. To address this, the paper introducesNeu-
+ral Procedural Memory (NPM), a training-
+free framework that represents agent memory
+through implicit activation steering rather than
+explicit instructions. By distilling procedural
+skills from historical contrastive experiences
+into steering vectors in the </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>implicit
+activation steering as an effective path for repre-
+senting procedural memory in LLM agents.
+Our contributions are summarized as follows:
+• This paper proposes Neural Procedural Mem-
+ory (NPM), a training-free framework that in-
+tegrates implicit activation steering into agent
+memory, enabling effective intrinsic behav-
+ioral modulation.
+• This paper introduces a dual-granularity ex-
+traction method using both inter-trajectory
+and intra-trajectory contrasts, offering a flex-
+ible intervention mechanism and mitigating
+the reliance on successful demonstrations.
+• Extensive experiments demonstrate that acti-
+vation steering serves as an effective carrier
+for agentic skills, yielding interpretable vec-
+tors that correlate with specific task behaviors.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We introduceNeural Procedural Memory
+(NPM), a training-free framework designed to in-
+ternalize agentic skills directly into the model&#x27;s
+activation space. The framework shown in Fig-
+ure 2 consists of three phases: (1)Contrastive
+Experience Construction(§3.1), which isolates
+effective reasoning patterns from historical failures;
+(2)Steering Vector Extraction(§3.2), which dis-
+tills discrete textual contrasts into continuous steer-
+ing vectors; and (3)Inference-Time Intervention
+(§3.3), where these vectors are dynamically synthe-
+sized and injected to modulate the agent&#x27;s behavior.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>against the degenerate one
+within the trajectory. The contrastive pair is con-
+structed by grouping the steps into two sets:
+Pintra =
 
-        <ul></ul>
+(Seff, Sdeg)|S deg ̸=∅
+
+.(2)
+This intra-trajectory contrast isolates specific de-
+generate modes from the otherwise valid reasoning
+process. (Quantitative analysis of heuristic isola-
+tion rules is provided in Appendix C.2).</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generation, we inject the synthesized vector
+into the residual stream at each time step t.
+For a target layer l, the intervened activation
+˜hl,t is computed as:
+˜hl,t =h l,t +α·v l(q)(5)
+where hl,t denotes the original hidden state of
+the current token, and α is a scalar parameter
+controlling the intervention strength.
+By shifting the activation distribution, NPM im-
+plicitly nudges the agent&#x27;s intuition away from
+known failure modes and towards effective reason-
+ing paths. Detailed storage and latency analyses
+are provided in Appendix D.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate the proposed framework using
+MiniCPM3-4B (Hu et al., 2024) and Qwen3 mod-
+els (4B and 8B) (Yang et al., 2025) across four
+agent benchmarks: ALFWorld (Shridhar et al.,
+2021), WebShop (Yao et al., 2022), Science-
+World (Wang et al., 2022), and BabyAI (Chevalier-
+Boisvert et al., 2019). The evaluation relies on
+the success rate for ALFWorld and the average
+reward for the remaining environments. Detailed
+descriptions of each simulated environment and
+task configurations are deferred to Appendix A.
+We compareNPMagainst baselines represent-
+ing no memory, explicit textual memory, and
+implicit activation steering. The explicit base-
+lines augment the model context, utilizingIn-
+sights(Zhao et al., 2024) for global procedural
+guidelines orWorkflows(Wang et al., 2025b) for
+concrete execution patterns. The implicit steering
+baselines includeCAA(Panickssery et al., </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>competitive performance
+without occupying context window tokens.
+Complementary Synergy of Hybrid Memory.
+Integrating implicit steering with explicit work-
+flows yields the highest overall performance, set-
+ting the top average scores across all three back-
+bone models. Combining both memory forms on
+Qwen3-8B elevates the success rate on ALFWorld
+to 66.42 percent and reaches a peak score of 31.89
+on ScienceWorld. This synergy indicates that ex-
+plicit text and implicit representations operate as a
+complementary system. Textual workflows supply
+high-level symbolic planning steps, whereas NPM
+provides direct neural intervention to ensure adher-
+ence to these plans during long execution horizons.
+This persistent modulation helps prevent the agent
+5
+Table 1:The overall performance comparison.We report the success rate (%) for ALFWorld and the average
+reward for WebShop, ScienceWorld, and </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>BabyAI. &quot;Avg&quot; denotes the average score across the four benchmarks.
+Model Paradigm Method ALFWorld WebShop ScienceWorld BabyAI Avg
+MiniCPM3-4B
+None No Memory 23.88 32.21 7.29 27.00 22.60
+Explicit Insights 28.36 47.96 10.0 27.78 28.53Workflows 32.8454.9710.5 32.39 32.68
+Implicit
+CAA 23.88 13.85 6.29 30.29 18.58
+Mass-Mean 26.87 34.21 8.02 29.73 24.71
+NPM (Ours) 31.34 43.53 8.70 31.91 28.87
+Hybrid NPM + Workflows38.8151.2110.97 36.90 34.47
+Qwen3-4B
+None No Memory 30.60 44.81 18.40 18.75 28.14
+Explicit Insights 44.03 40.72 22.59 12.09 29.86Workflows 52.99 45.7323.5914.60 34.23
+Implicit
+CAA 26.87 25.52 11.48 3.48 16.84
+Mass-Mean 29.10 39.07 18.16 17.82 26.04
+NPM (Ours) 40.3048.0018.20 19.04 31.39
+Hybrid NPM + Workflows61.1947.84 21.9719.38 37.60
+Qwen3-8B
+None No Memory 39.55 46.25 24.98 11.74 30.63
+Explicit Insights 46.27 45.22 28.09 7.77 31.84Workflows 62.69 48.93 29.57 10.40 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>37.90
+Implicit
+CAA 47.01 20.66 9.17 14.31 22.79
+Mass-Mean 49.25 44.26 25.32 8.71 31.89
+NPM (Ours) 56.72 48.24 26.07 14.26 36.32
+Hybrid NPM + Workflows66.42 53.94 31.89 15.31 41.89
+from deviating from prompt-based instructions dur-
+ing extended interactions.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While our proposed approach demonstrates promis-
+ing results, there are several aspects that could be
+improved. Firstly, the framework requires direct
+intervention in the residual stream, restricting its
+application to open architectures where internal
+activation spaces are completely accessible. Fur-
+thermore, building the contrastive repository relies
+on the agent occasionally generating successful tra-
+jectories, which introduces a cold-start problem in
+complex environments. Additionally, extracting
+degenerate steps relies on heuristics such as action
+redundancy or format invalidity. These conditions
+struggle to identify implicit logical fallacies with-
+out explicit environment errors. Finally, synthe-
+sized vectors compress procedural knowledge into
+a single representation applied constantly during
+generation. This static modulation lacks the flexi-
+bility to shift between </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +257,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

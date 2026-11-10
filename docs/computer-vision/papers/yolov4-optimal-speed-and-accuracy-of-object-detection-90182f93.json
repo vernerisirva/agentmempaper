@@ -27,7 +27,7 @@
   "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-21 15:58:19",
   "notified_date": "2026-09-21",
@@ -38,7 +38,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:54:40",
-    "generated_at": "2026-11-09 12:35:04",
+    "generated_at": "2026-11-10 12:09:20",
     "last_seen_at": "2026-09-21 15:54:40",
     "metadata_sources": [
       "openalex",
@@ -109,36 +109,1968 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-10T12:06:08.999758+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous empirical study that systematically unifies and benchmarks practical object detection optimizations. The methodology is clearly defined, the ablations are comprehensive, and performance claims are backed by standardized MS COCO metrics and multi-platform latency tests.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 71824,
+      "assessment_input_sha256": "768a5ea7c3c0c6865fbbe3cdb70817c1049472144019c42c0dca834bfb9ff254",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2004.10934",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 69678,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 69103,
+      "evidence_block_count": 98,
+      "evidence_context_characters": 82127,
+      "evidence_context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+      "evidence_context_sha256": "5f74f3f02d367aa0f8c2716229d84c74d4f6155c4fa5e3df5fa0b43a607adb58",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 69710,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "extracted_pages": 17,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "531196e36fc7e5e4190328039882671aba0ec1c6e2518102183eaf926635f502",
+        "source_url": "https://arxiv.org/pdf/2004.10934",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 69678,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Yolov4: Optimal Speed And Accuracy Of Object Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 293,
+          "supplied_characters": 293
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1060,
+          "supplied_characters": 1060
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1648,
+          "supplied_characters": 1648
+        },
+        {
+          "heading": "We Develope An Efficient And Powerful Object Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 109,
+          "supplied_characters": 109
+        },
+        {
+          "heading": "We Verify The Influence Of State-Of-The-Art Bag-Of-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 88,
+          "supplied_characters": 88
+        },
+        {
+          "heading": "We Modify State-Of-The-Art Methods And Make Them",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 140,
+          "supplied_characters": 140
+        },
+        {
+          "heading": "We Modify State-Of-The-Art Methods And Make Them",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Object Detection Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 2497,
+          "supplied_characters": 2497
+        },
+        {
+          "heading": "Bag Of Freebies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 5857,
+          "supplied_characters": 5857
+        },
+        {
+          "heading": "Bag Of Specials",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 5953,
+          "supplied_characters": 5953
+        },
+        {
+          "heading": "Bag Of Specials",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 411,
+          "supplied_characters": 411
+        },
+        {
+          "heading": "Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 11,
+          "source_characters": 570,
+          "supplied_characters": 570
+        },
+        {
+          "heading": "Selection Of Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 3274,
+          "supplied_characters": 3274
+        },
+        {
+          "heading": "Selection Of Bof And Bos",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1367,
+          "supplied_characters": 1367
+        },
+        {
+          "heading": "Additional Improvements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1839,
+          "supplied_characters": 1839
+        },
+        {
+          "heading": "Additional Improvements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Yolov4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 850,
+          "supplied_characters": 850
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 214,
+          "supplied_characters": 214
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 2341,
+          "supplied_characters": 2341
+        },
+        {
+          "heading": "Influence Of Different Features On Classifier",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1358,
+          "supplied_characters": 1358
+        },
+        {
+          "heading": "Influence Of Different Features On Detector",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 2010,
+          "supplied_characters": 2010
+        },
+        {
+          "heading": "Influence Of Different Features On Detector",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 882,
+          "supplied_characters": 882
+        },
+        {
+          "heading": "Influence Of Different Backbones And Pre-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1638,
+          "supplied_characters": 1638
+        },
+        {
+          "heading": "Influence Of Different Mini-Batch Size On Detec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 918,
+          "supplied_characters": 918
+        },
+        {
+          "heading": "Influence Of Different Mini-Batch Size On Detec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 175,
+          "supplied_characters": 175
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 886,
+          "supplied_characters": 886
+        },
+        {
+          "heading": "Conclusions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 26,
+          "source_characters": 582,
+          "supplied_characters": 582
+        },
+        {
+          "heading": "The Authors Wish To Thank Glenn Jocher For The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 128,
+          "supplied_characters": 128
+        },
+        {
+          "heading": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 3032,
+          "supplied_characters": 3032
+        },
+        {
+          "heading": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 3374,
+          "supplied_characters": 3374
+        },
+        {
+          "heading": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 2837,
+          "supplied_characters": 2837
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 345,
+          "supplied_characters": 345
+        },
+        {
+          "heading": "Of The Ieee Conference On Computer Vision And Pattern",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 1230,
+          "supplied_characters": 1230
+        },
+        {
+          "heading": "Tector Using Localization Uncertainty For Autonomous Driv-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "limitations",
+          "section_index": 34,
+          "source_characters": 221,
+          "supplied_characters": 221
+        },
+        {
+          "heading": "Object Detection Via Region-Based Fully Convolutional Net-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 664,
+          "supplied_characters": 664
+        },
+        {
+          "heading": "Spinenet: Learning Scale-Permuted Backbone For Recog-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 421,
+          "supplied_characters": 421
+        },
+        {
+          "heading": "Retinamask: Learning To Predict Masks Improves State-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 695,
+          "supplied_characters": 695
+        },
+        {
+          "heading": "Learning Scalable Feature Pyramid Architecture For Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "methods",
+          "section_index": 38,
+          "source_characters": 503,
+          "supplied_characters": 503
+        },
+        {
+          "heading": "Ieee Conference On Computer Vision And Pattern Recog-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 203,
+          "supplied_characters": 203
+        },
+        {
+          "heading": "Detector: Hierarchical Trinity Architecture Search For Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "methods",
+          "section_index": 40,
+          "source_characters": 564,
+          "supplied_characters": 564
+        },
+        {
+          "heading": "Conference On Computer Vision And Pattern Recognition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 334,
+          "supplied_characters": 334
+        },
+        {
+          "heading": "Delving Deep Into Rectifiers: Surpassing Human-Level Per-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 112,
+          "supplied_characters": 112
+        },
+        {
+          "heading": "The Ieee International Conference On Computer Vision",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 145,
+          "supplied_characters": 145
+        },
+        {
+          "heading": "Spatial Pyramid Pooling In Deep Convolutional Networks For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 305,
+          "supplied_characters": 305
+        },
+        {
+          "heading": "Spatial Pyramid Pooling In Deep Convolutional Networks For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 5844,
+          "supplied_characters": 5844
+        },
+        {
+          "heading": "Spatial Pyramid Pooling In Deep Convolutional Networks For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 5705,
+          "supplied_characters": 5705
+        },
+        {
+          "heading": "Spatial Pyramid Pooling In Deep Convolutional Networks For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 5310,
+          "supplied_characters": 5310
+        }
+      ],
+      "selected_characters": 69103,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "selected_sections": [
+        {
+          "characters": 293,
+          "heading": "Yolov4: Optimal Speed And Accuracy Of Object Detection",
+          "page": 1
+        },
+        {
+          "characters": 1060,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1648,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 109,
+          "heading": "We Develope An Efficient And Powerful Object Detection",
+          "page": 1
+        },
+        {
+          "characters": 88,
+          "heading": "We Verify The Influence Of State-Of-The-Art Bag-Of-",
+          "page": 1
+        },
+        {
+          "characters": 140,
+          "heading": "We Modify State-Of-The-Art Methods And Make Them",
+          "page": 1
+        },
+        {
+          "characters": 26,
+          "heading": "We Modify State-Of-The-Art Methods And Make Them",
+          "page": 2
+        },
+        {
+          "characters": 2497,
+          "heading": "Object Detection Models",
+          "page": 2
+        },
+        {
+          "characters": 5857,
+          "heading": "Bag Of Freebies",
+          "page": 3
+        },
+        {
+          "characters": 5953,
+          "heading": "Bag Of Specials",
+          "page": 4
+        },
+        {
+          "characters": 411,
+          "heading": "Bag Of Specials",
+          "page": 5
+        },
+        {
+          "characters": 570,
+          "heading": "Methodology",
+          "page": 5
+        },
+        {
+          "characters": 3274,
+          "heading": "Selection Of Architecture",
+          "page": 5
+        },
+        {
+          "characters": 1367,
+          "heading": "Selection Of Bof And Bos",
+          "page": 6
+        },
+        {
+          "characters": 1839,
+          "heading": "Additional Improvements",
+          "page": 6
+        },
+        {
+          "characters": 47,
+          "heading": "Additional Improvements",
+          "page": 7
+        },
+        {
+          "characters": 850,
+          "heading": "Yolov4",
+          "page": 7
+        },
+        {
+          "characters": 214,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 2341,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 1358,
+          "heading": "Influence Of Different Features On Classifier",
+          "page": 8
+        },
+        {
+          "characters": 2010,
+          "heading": "Influence Of Different Features On Detector",
+          "page": 8
+        },
+        {
+          "characters": 882,
+          "heading": "Influence Of Different Features On Detector",
+          "page": 9
+        },
+        {
+          "characters": 1638,
+          "heading": "Influence Of Different Backbones And Pre-",
+          "page": 9
+        },
+        {
+          "characters": 918,
+          "heading": "Influence Of Different Mini-Batch Size On Detec-",
+          "page": 9
+        },
+        {
+          "characters": 175,
+          "heading": "Influence Of Different Mini-Batch Size On Detec-",
+          "page": 10
+        },
+        {
+          "characters": 886,
+          "heading": "Results",
+          "page": 10
+        },
+        {
+          "characters": 582,
+          "heading": "Conclusions",
+          "page": 10
+        },
+        {
+          "characters": 98,
+          "heading": "The Authors Wish To Thank Glenn Jocher For The",
+          "page": 10
+        },
+        {
+          "characters": 128,
+          "heading": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+          "page": 10
+        },
+        {
+          "characters": 3032,
+          "heading": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+          "page": 11
+        },
+        {
+          "characters": 3374,
+          "heading": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+          "page": 12
+        },
+        {
+          "characters": 2837,
+          "heading": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+          "page": 13
+        },
+        {
+          "characters": 345,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 1230,
+          "heading": "Of The Ieee Conference On Computer Vision And Pattern",
+          "page": 14
+        },
+        {
+          "characters": 221,
+          "heading": "Tector Using Localization Uncertainty For Autonomous Driv-",
+          "page": 14
+        },
+        {
+          "characters": 664,
+          "heading": "Object Detection Via Region-Based Fully Convolutional Net-",
+          "page": 14
+        },
+        {
+          "characters": 421,
+          "heading": "Spinenet: Learning Scale-Permuted Backbone For Recog-",
+          "page": 14
+        },
+        {
+          "characters": 695,
+          "heading": "Retinamask: Learning To Predict Masks Improves State-",
+          "page": 14
+        },
+        {
+          "characters": 503,
+          "heading": "Learning Scalable Feature Pyramid Architecture For Object",
+          "page": 14
+        },
+        {
+          "characters": 203,
+          "heading": "Ieee Conference On Computer Vision And Pattern Recog-",
+          "page": 14
+        },
+        {
+          "characters": 564,
+          "heading": "Detector: Hierarchical Trinity Architecture Search For Object",
+          "page": 14
+        },
+        {
+          "characters": 334,
+          "heading": "Conference On Computer Vision And Pattern Recognition",
+          "page": 14
+        },
+        {
+          "characters": 112,
+          "heading": "Delving Deep Into Rectifiers: Surpassing Human-Level Per-",
+          "page": 14
+        },
+        {
+          "characters": 145,
+          "heading": "The Ieee International Conference On Computer Vision",
+          "page": 14
+        },
+        {
+          "characters": 305,
+          "heading": "Spatial Pyramid Pooling In Deep Convolutional Networks For",
+          "page": 14
+        },
+        {
+          "characters": 5844,
+          "heading": "Spatial Pyramid Pooling In Deep Convolutional Networks For",
+          "page": 15
+        },
+        {
+          "characters": 5705,
+          "heading": "Spatial Pyramid Pooling In Deep Convolutional Networks For",
+          "page": 16
+        },
+        {
+          "characters": 5310,
+          "heading": "Spatial Pyramid Pooling In Deep Convolutional Networks For",
+          "page": 17
+        }
+      ],
+      "selected_text_sha256": "768a5ea7c3c0c6865fbbe3cdb70817c1049472144019c42c0dca834bfb9ff254",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "531196e36fc7e5e4190328039882671aba0ec1c6e2518102183eaf926635f502",
+      "source_pages": 17,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0002"
+        ],
+        "excerpt": "There are a huge number of features which are said to\nimprove Convolutional Neural Network (CNN) accuracy.\nPractical testing of combinations of such features on large\ndatasets, and theoretical justification of the result, is re-\nquired. Some features operate on certain models exclusively\nand for certain problems exclusively, or only for small-scale\ndatasets; while some features, such as batch-normalization\nand residual-connections, are applicable to the majority of\nmodels, tasks, and datasets. We assume that such universal\nfeatures include Weighted-Residual-Connections (WRC),\nCross-Stage-Partial-connections (CSP), Cross mini-Batch\nNormalization (CmBN), Self-adversarial-training (SAT)\nand Mish-activation. We use new features: WRC, CSP ,\nCmBN, SAT, Mish activation, Mosaic data augmentation,\nCmBN, DropBlock regularization, and CIoU loss, and com-\nbine some of them to achieve ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ca336cb184ab565060aae4b1a8a3bd5c1f6d9a65b16bb7c6a3ac286994e04aca",
+            "evidence_id": "E055c2b905f487af7-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 885,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "There are a huge number of features which are said to\nimprove Convolutional Neural Network (CNN) accuracy.\nPractical testing of combinations of such features on large\ndatasets, and theoretical justification of the result, is re-\nquired. Some features operate on certain models exclusively\nand for certain problems exclusively, or only for small-scale\ndatasets; while some features, such as batch-normalization\nand residual-connections, are applicable to the majority of\nmodels, tasks, and datasets. We assume that such universal\nfeatures include Weighted-Residual-Connections (WRC),\nCross-Stage-Partial-connections (CSP), Cross mini-Batch\nNormalization (CmBN), Self-adversarial-training (SAT)\nand Mish-activation. We use new features: WRC, CSP ,\nCmBN, SAT, Mish activation, Mosaic data augmentation,\nCmBN, DropBlock regularization, and CIoU loss, and com-\nbine some of them to achieve "
+              }
+            ],
+            "text": "There are a huge number of features which are said to\nimprove Convolutional Neural Network (CNN) accuracy.\nPractical testing of combinations of such features on large\ndatasets, and theoretical justification of the result, is re-\nquired. Some features operate on certain models exclusively\nand for certain problems exclusively, or only for small-scale\ndatasets; while some features, such as batch-normalization\nand residual-connections, are applicable to the majority of\nmodels, tasks, and datasets. We assume that such universal\nfeatures include Weighted-Residual-Connections (WRC),\nCross-Stage-Partial-connections (CSP), Cross mini-Batch\nNormalization (CmBN), Self-adversarial-training (SAT)\nand Mish-activation. We use new features: WRC, CSP ,\nCmBN, SAT, Mish activation, Mosaic data augmentation,\nCmBN, DropBlock regularization, and CIoU loss, and com-\nbine some of them to achieve "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0003"
+        ],
+        "excerpt": "state-of-the-art results: 43.5%\nAP (65.7% AP 50) for the MS COCO dataset at a real-\ntime speed of \u223c65 FPS on Tesla V100. Source code is at\nhttps://github.com/AlexeyAB/darknet.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "75b1cc081f6fb5657b86929c843a8b4ecc473ab5d654a34e561ae11179fd8969",
+            "evidence_id": "E055c2b905f487af7-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1060,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 885,
+                "text": "state-of-the-art results: 43.5%\nAP (65.7% AP 50) for the MS COCO dataset at a real-\ntime speed of \u223c65 FPS on Tesla V100. Source code is at\nhttps://github.com/AlexeyAB/darknet."
+              }
+            ],
+            "text": "state-of-the-art results: 43.5%\nAP (65.7% AP 50) for the MS COCO dataset at a real-\ntime speed of \u223c65 FPS on Tesla V100. Source code is at\nhttps://github.com/AlexeyAB/darknet."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0006"
+        ],
+        "excerpt": "model. It makes everyone can use a 1080 Ti or 2080 Ti\nGPU to train a super fast and accurate object detector.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Develope An Efficient And Powerful Object Detection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7c7ae21d330df9703ccaedc4e1c58b2f20fb16716808e2d034a627ffde0e0f1b",
+            "evidence_id": "E055c2b905f487af7-B0006",
+            "pages": [
+              1
+            ],
+            "section": "We Develope An Efficient And Powerful Object Detection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 109,
+                "page": 1,
+                "section": "We Develope An Efficient And Powerful Object Detection",
+                "section_index": 3,
+                "start": 0,
+                "text": "model. It makes everyone can use a 1080 Ti or 2080 Ti\nGPU to train a super fast and accurate object detector."
+              }
+            ],
+            "text": "model. It makes everyone can use a 1080 Ti or 2080 Ti\nGPU to train a super fast and accurate object detector."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0008"
+        ],
+        "excerpt": "more effecient and suitable for single GPU training,\nincluding CBN [89], PAN [49], SAM [85], etc.\n1\narXiv:2004.10934v1  [cs.CV]  23 Apr 2020\nFigure 2: Object detector.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Modify State-Of-The-Art Methods And Make Them",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "be647daeed48df64cb2086523b1c060b8143b06566b5bd8724417f212b20b229",
+            "evidence_id": "E055c2b905f487af7-B0008",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "We Modify State-Of-The-Art Methods And Make Them",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 140,
+                "page": 1,
+                "section": "We Modify State-Of-The-Art Methods And Make Them",
+                "section_index": 5,
+                "start": 0,
+                "text": "more effecient and suitable for single GPU training,\nincluding CBN [89], PAN [49], SAM [85], etc.\n1\narXiv:2004.10934v1  [cs.CV]  23 Apr 2020"
+              },
+              {
+                "end": 26,
+                "page": 2,
+                "section": "We Modify State-Of-The-Art Methods And Make Them",
+                "section_index": 6,
+                "start": 0,
+                "text": "Figure 2: Object detector."
+              }
+            ],
+            "text": "more effecient and suitable for single GPU training,\nincluding CBN [89], PAN [49], SAM [85], etc.\n1\narXiv:2004.10934v1  [cs.CV]  23 Apr 2020\nFigure 2: Object detector."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0030"
+        ],
+        "excerpt": "together with\nour numerous experiments, show that CSPDarknet53 neu-\nral network is the optimal model of the two as the backbone\nfor a detector.\nThe influence of the receptive field with different sizes is\nsummarized as follows:\n\u2022 Up to the object size - allows viewing the entire object\n\u2022 Up to network size - allows viewing the context around\nthe object\n\u2022 Exceeding the network size - increases the number of\nconnections between the image point and the final ac-\ntivation\nWe add the SPP block over the CSPDarknet53, since it\nsignificantly increases the receptive field, separates out the\nmost significant context features and causes almost no re-\nduction of the network operation speed. We use PANet as\nthe method of parameter aggregation from different back-\nbone levels for different detector levels, instead of the FPN\nused in YOLOv3.\nFinally, we choose CSPDarknet53 backbone, SPP addi-\ntional ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Selection Of Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a627ec41e36192d29627ad9e0d1cdeb0d5330338fe45bc59dbd0201deba23200",
+            "evidence_id": "E055c2b905f487af7-B0030",
+            "pages": [
+              5
+            ],
+            "section": "Selection Of Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2680,
+                "page": 5,
+                "section": "Selection Of Architecture",
+                "section_index": 12,
+                "start": 1782,
+                "text": "together with\nour numerous experiments, show that CSPDarknet53 neu-\nral network is the optimal model of the two as the backbone\nfor a detector.\nThe influence of the receptive field with different sizes is\nsummarized as follows:\n\u2022 Up to the object size - allows viewing the entire object\n\u2022 Up to network size - allows viewing the context around\nthe object\n\u2022 Exceeding the network size - increases the number of\nconnections between the image point and the final ac-\ntivation\nWe add the SPP block over the CSPDarknet53, since it\nsignificantly increases the receptive field, separates out the\nmost significant context features and causes almost no re-\nduction of the network operation speed. We use PANet as\nthe method of parameter aggregation from different back-\nbone levels for different detector levels, instead of the FPN\nused in YOLOv3.\nFinally, we choose CSPDarknet53 backbone, SPP addi-\ntional "
+              }
+            ],
+            "text": "together with\nour numerous experiments, show that CSPDarknet53 neu-\nral network is the optimal model of the two as the backbone\nfor a detector.\nThe influence of the receptive field with different sizes is\nsummarized as follows:\n\u2022 Up to the object size - allows viewing the entire object\n\u2022 Up to network size - allows viewing the context around\nthe object\n\u2022 Exceeding the network size - increases the number of\nconnections between the image point and the final ac-\ntivation\nWe add the SPP block over the CSPDarknet53, since it\nsignificantly increases the receptive field, separates out the\nmost significant context features and causes almost no re-\nduction of the network operation speed. We use PANet as\nthe method of parameter aggregation from different back-\nbone levels for different detector levels, instead of the FPN\nused in YOLOv3.\nFinally, we choose CSPDarknet53 backbone, SPP addi-\ntional "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0031"
+        ],
+        "excerpt": "module, PANet path-aggregation neck, and YOLOv3\n(anchor based) head as the architecture of YOLOv4.\nIn the future we plan to expand significantly the content\nof Bag of Freebies (BoF) for the detector, which theoreti-\ncally can address some problems and increase the detector\naccuracy, and sequentially check the influence of each fea-\nture in an experimental fashion.\nWe do not use Cross-GPU Batch Normalization (CGBN\nor SyncBN) or expensive specialized devices. This al-\nlows anyone to reproduce our state-of-the-art outcomes on\na conventional graphic processor e.g. GTX 1080Ti or RTX\n2080Ti.\n5",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Selection Of Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "79b1956b8a69777b6702211cd1ce5ca35023276fcb1716ee84d4f77e3a59d34f",
+            "evidence_id": "E055c2b905f487af7-B0031",
+            "pages": [
+              5
+            ],
+            "section": "Selection Of Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3274,
+                "page": 5,
+                "section": "Selection Of Architecture",
+                "section_index": 12,
+                "start": 2680,
+                "text": "module, PANet path-aggregation neck, and YOLOv3\n(anchor based) head as the architecture of YOLOv4.\nIn the future we plan to expand significantly the content\nof Bag of Freebies (BoF) for the detector, which theoreti-\ncally can address some problems and increase the detector\naccuracy, and sequentially check the influence of each fea-\nture in an experimental fashion.\nWe do not use Cross-GPU Batch Normalization (CGBN\nor SyncBN) or expensive specialized devices. This al-\nlows anyone to reproduce our state-of-the-art outcomes on\na conventional graphic processor e.g. GTX 1080Ti or RTX\n2080Ti.\n5"
+              }
+            ],
+            "text": "module, PANet path-aggregation neck, and YOLOv3\n(anchor based) head as the architecture of YOLOv4.\nIn the future we plan to expand significantly the content\nof Bag of Freebies (BoF) for the detector, which theoreti-\ncally can address some problems and increase the detector\naccuracy, and sequentially check the influence of each fea-\nture in an experimental fashion.\nWe do not use Cross-GPU Batch Normalization (CGBN\nor SyncBN) or expensive specialized devices. This al-\nlows anyone to reproduce our state-of-the-art outcomes on\na conventional graphic processor e.g. GTX 1080Ti or RTX\n2080Ti.\n5"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0034"
+        ],
+        "excerpt": "In order to make the designed detector more suitable for\ntraining on single GPU, we made additional design and im-\nprovement as follows:\n\u2022 We introduce a new method of data augmentation Mo-\nsaic, and Self-Adversarial Training (SAT)\n\u2022 We select optimal hyper-parameters while applying\ngenetic algorithms\n\u2022 We modify some exsiting methods to make our design\nsuitble for efficient training and detection - modified\nSAM, modified PAN, and Cross mini-Batch Normal-\nization (CmBN)\nMosaic represents a new data augmentation method that\nmixes 4 training images. Thus 4 different contexts are\nFigure 3: Mosaic represents a new method of data augmen-\ntation.\nmixed, while CutMix mixes only 2 input images. This al-\nlows detection of objects outside their normal context. In\naddition, batch normalization calculates activation statistics\nfrom 4 different images on each layer. This significantly\nreduces the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Additional Improvements",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f50a0428be66e6971efe72eb16006b3389a7e543801e03726358b19bfcae5268",
+            "evidence_id": "E055c2b905f487af7-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Additional Improvements",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 6,
+                "section": "Additional Improvements",
+                "section_index": 14,
+                "start": 0,
+                "text": "In order to make the designed detector more suitable for\ntraining on single GPU, we made additional design and im-\nprovement as follows:\n\u2022 We introduce a new method of data augmentation Mo-\nsaic, and Self-Adversarial Training (SAT)\n\u2022 We select optimal hyper-parameters while applying\ngenetic algorithms\n\u2022 We modify some exsiting methods to make our design\nsuitble for efficient training and detection - modified\nSAM, modified PAN, and Cross mini-Batch Normal-\nization (CmBN)\nMosaic represents a new data augmentation method that\nmixes 4 training images. Thus 4 different contexts are\nFigure 3: Mosaic represents a new method of data augmen-\ntation.\nmixed, while CutMix mixes only 2 input images. This al-\nlows detection of objects outside their normal context. In\naddition, batch normalization calculates activation statistics\nfrom 4 different images on each layer. This significantly\nreduces the "
+              }
+            ],
+            "text": "In order to make the designed detector more suitable for\ntraining on single GPU, we made additional design and im-\nprovement as follows:\n\u2022 We introduce a new method of data augmentation Mo-\nsaic, and Self-Adversarial Training (SAT)\n\u2022 We select optimal hyper-parameters while applying\ngenetic algorithms\n\u2022 We modify some exsiting methods to make our design\nsuitble for efficient training and detection - modified\nSAM, modified PAN, and Cross mini-Batch Normal-\nization (CmBN)\nMosaic represents a new data augmentation method that\nmixes 4 training images. Thus 4 different contexts are\nFigure 3: Mosaic represents a new method of data augmen-\ntation.\nmixed, while CutMix mixes only 2 input images. This al-\nlows detection of objects outside their normal context. In\naddition, batch normalization calculates activation statistics\nfrom 4 different images on each layer. This significantly\nreduces the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0035"
+        ],
+        "excerpt": "need for a large mini-batch size.\nSelf-Adversarial Training (SAT) also represents a new\ndata augmentation technique that operates in 2 forward\nbackward stages. In the 1st stage the neural network alters\nthe original image instead of the network weights. In this\nway the neural network executes an adversarial attack on it-\nself, altering the original image to create the deception that\nthere is no desired object on the image. In the 2nd stage, the\nneural network is trained to detect an object on this modified\nimage in the normal way.\nFigure 4: Cross mini-Batch Normalization.\nCmBN represents a CBN modified version, as shown\nin Figure 4, defined as Cross mini-Batch Normalization\n(CmBN). This collects statistics only between mini-batches\nwithin a single batch.\nWe modify SAM from spatial-wise attention to point-\nwise attention, and replace shortcut connection of PAN to\nconcatenation, as shown ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Additional Improvements",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1ae433dc5843c78cdab2dba576c24acdfb7ccbb39c1b74e09ac7e6d6c8abd169",
+            "evidence_id": "E055c2b905f487af7-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Additional Improvements",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 6,
+                "section": "Additional Improvements",
+                "section_index": 14,
+                "start": 897,
+                "text": "need for a large mini-batch size.\nSelf-Adversarial Training (SAT) also represents a new\ndata augmentation technique that operates in 2 forward\nbackward stages. In the 1st stage the neural network alters\nthe original image instead of the network weights. In this\nway the neural network executes an adversarial attack on it-\nself, altering the original image to create the deception that\nthere is no desired object on the image. In the 2nd stage, the\nneural network is trained to detect an object on this modified\nimage in the normal way.\nFigure 4: Cross mini-Batch Normalization.\nCmBN represents a CBN modified version, as shown\nin Figure 4, defined as Cross mini-Batch Normalization\n(CmBN). This collects statistics only between mini-batches\nwithin a single batch.\nWe modify SAM from spatial-wise attention to point-\nwise attention, and replace shortcut connection of PAN to\nconcatenation, as shown "
+              }
+            ],
+            "text": "need for a large mini-batch size.\nSelf-Adversarial Training (SAT) also represents a new\ndata augmentation technique that operates in 2 forward\nbackward stages. In the 1st stage the neural network alters\nthe original image instead of the network weights. In this\nway the neural network executes an adversarial attack on it-\nself, altering the original image to create the deception that\nthere is no desired object on the image. In the 2nd stage, the\nneural network is trained to detect an object on this modified\nimage in the normal way.\nFigure 4: Cross mini-Batch Normalization.\nCmBN represents a CBN modified version, as shown\nin Figure 4, defined as Cross mini-Batch Normalization\n(CmBN). This collects statistics only between mini-batches\nwithin a single batch.\nWe modify SAM from spatial-wise attention to point-\nwise attention, and replace shortcut connection of PAN to\nconcatenation, as shown "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0036"
+        ],
+        "excerpt": "in Figure 5 and Figure 6, respec-\ntively.\n6\nFigure 5: Modified SAM.\nFigure 6: Modified PAN.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Additional Improvements",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7ce2cba7584f3d40117ab02afb29012eaf0c7934da5be1a47a83273cae96be60",
+            "evidence_id": "E055c2b905f487af7-B0036",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Additional Improvements",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1839,
+                "page": 6,
+                "section": "Additional Improvements",
+                "section_index": 14,
+                "start": 1796,
+                "text": "in Figure 5 and Figure 6, respec-\ntively.\n6"
+              },
+              {
+                "end": 47,
+                "page": 7,
+                "section": "Additional Improvements",
+                "section_index": 15,
+                "start": 0,
+                "text": "Figure 5: Modified SAM.\nFigure 6: Modified PAN."
+              }
+            ],
+            "text": "in Figure 5 and Figure 6, respec-\ntively.\n6\nFigure 5: Modified SAM.\nFigure 6: Modified PAN."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0037"
+        ],
+        "excerpt": "In this section, we shall elaborate the details of YOLOv4.\nYOLOv4 consists of:\n\u2022 Backbone: CSPDarknet53 [81]\n\u2022 Neck: SPP [25], PAN [49]\n\u2022 Head: YOLOv3 [63]\nYOLO v4 uses:\n\u2022 Bag of Freebies (BoF) for backbone: CutMix and\nMosaic data augmentation, DropBlock regularization,\nClass label smoothing\n\u2022 Bag of Specials (BoS) for backbone: Mish activa-\ntion, Cross-stage partial connections (CSP), Multi-\ninput weighted residual connections (MiWRC)\n\u2022 Bag of Freebies (BoF) for detector: CIoU-loss,\nCmBN, DropBlock regularization, Mosaic data aug-\nmentation, Self-Adversarial Training, Eliminate grid\nsensitivity, Using multiple anchors for a single ground\ntruth, Cosine annealing scheduler [52], Optimal hyper-\nparameters, Random training shapes\n\u2022 Bag of Specials (BoS) for detector: Mish activation,\nSPP-block, SAM-block, PAN path-aggregation block,\nDIoU-NMS",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Yolov4",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2ea60e3e3b1daa7923f391b7ff0363962944f1d2c5c7ecda060c76baf47d7c6c",
+            "evidence_id": "E055c2b905f487af7-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Yolov4",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 850,
+                "page": 7,
+                "section": "Yolov4",
+                "section_index": 16,
+                "start": 0,
+                "text": "In this section, we shall elaborate the details of YOLOv4.\nYOLOv4 consists of:\n\u2022 Backbone: CSPDarknet53 [81]\n\u2022 Neck: SPP [25], PAN [49]\n\u2022 Head: YOLOv3 [63]\nYOLO v4 uses:\n\u2022 Bag of Freebies (BoF) for backbone: CutMix and\nMosaic data augmentation, DropBlock regularization,\nClass label smoothing\n\u2022 Bag of Specials (BoS) for backbone: Mish activa-\ntion, Cross-stage partial connections (CSP), Multi-\ninput weighted residual connections (MiWRC)\n\u2022 Bag of Freebies (BoF) for detector: CIoU-loss,\nCmBN, DropBlock regularization, Mosaic data aug-\nmentation, Self-Adversarial Training, Eliminate grid\nsensitivity, Using multiple anchors for a single ground\ntruth, Cosine annealing scheduler [52], Optimal hyper-\nparameters, Random training shapes\n\u2022 Bag of Specials (BoS) for detector: Mish activation,\nSPP-block, SAM-block, PAN path-aggregation block,\nDIoU-NMS"
+              }
+            ],
+            "text": "In this section, we shall elaborate the details of YOLOv4.\nYOLOv4 consists of:\n\u2022 Backbone: CSPDarknet53 [81]\n\u2022 Neck: SPP [25], PAN [49]\n\u2022 Head: YOLOv3 [63]\nYOLO v4 uses:\n\u2022 Bag of Freebies (BoF) for backbone: CutMix and\nMosaic data augmentation, DropBlock regularization,\nClass label smoothing\n\u2022 Bag of Specials (BoS) for backbone: Mish activa-\ntion, Cross-stage partial connections (CSP), Multi-\ninput weighted residual connections (MiWRC)\n\u2022 Bag of Freebies (BoF) for detector: CIoU-loss,\nCmBN, DropBlock regularization, Mosaic data aug-\nmentation, Self-Adversarial Training, Eliminate grid\nsensitivity, Using multiple anchors for a single ground\ntruth, Cosine annealing scheduler [52], Optimal hyper-\nparameters, Random training shapes\n\u2022 Bag of Specials (BoS) for detector: Mish activation,\nSPP-block, SAM-block, PAN path-aggregation block,\nDIoU-NMS"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0039"
+        ],
+        "excerpt": "In ImageNet image classification experiments, the de-\nfault hyper-parameters are as follows: the training steps is\n8,000,000; the batch size and the mini-batch size are 128\nand 32, respectively; the polynomial decay learning rate\nscheduling strategy is adopted with initial learning rate 0.1;\nthe warm-up steps is 1000; the momentum and weight de-\ncay are respectively set as 0.9 and 0.005. All of our BoS\nexperiments use the same hyper-parameter as the default\nsetting, and in the BoF experiments, we add an additional\n50% training steps. In the BoF experiments, we verify\nMixUp, CutMix, Mosaic, Bluring data augmentation, and\nlabel smoothing regularization methods. In the BoS experi-\nments, we compared the effects of LReLU, Swish, and Mish\nactivation function. All experiments are trained with a 1080\nTi or 2080 Ti GPU.\nIn MS COCO object detection experiments, the de-\nfault hyper-parameters are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c40c1ea8b17aa23898193a2a038e54ff7a501a850e5552d7250de22515304a74",
+            "evidence_id": "E055c2b905f487af7-B0039",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 0,
+                "text": "In ImageNet image classification experiments, the de-\nfault hyper-parameters are as follows: the training steps is\n8,000,000; the batch size and the mini-batch size are 128\nand 32, respectively; the polynomial decay learning rate\nscheduling strategy is adopted with initial learning rate 0.1;\nthe warm-up steps is 1000; the momentum and weight de-\ncay are respectively set as 0.9 and 0.005. All of our BoS\nexperiments use the same hyper-parameter as the default\nsetting, and in the BoF experiments, we add an additional\n50% training steps. In the BoF experiments, we verify\nMixUp, CutMix, Mosaic, Bluring data augmentation, and\nlabel smoothing regularization methods. In the BoS experi-\nments, we compared the effects of LReLU, Swish, and Mish\nactivation function. All experiments are trained with a 1080\nTi or 2080 Ti GPU.\nIn MS COCO object detection experiments, the de-\nfault hyper-parameters are "
+              }
+            ],
+            "text": "In ImageNet image classification experiments, the de-\nfault hyper-parameters are as follows: the training steps is\n8,000,000; the batch size and the mini-batch size are 128\nand 32, respectively; the polynomial decay learning rate\nscheduling strategy is adopted with initial learning rate 0.1;\nthe warm-up steps is 1000; the momentum and weight de-\ncay are respectively set as 0.9 and 0.005. All of our BoS\nexperiments use the same hyper-parameter as the default\nsetting, and in the BoF experiments, we add an additional\n50% training steps. In the BoF experiments, we verify\nMixUp, CutMix, Mosaic, Bluring data augmentation, and\nlabel smoothing regularization methods. In the BoS experi-\nments, we compared the effects of LReLU, Swish, and Mish\nactivation function. All experiments are trained with a 1080\nTi or 2080 Ti GPU.\nIn MS COCO object detection experiments, the de-\nfault hyper-parameters are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0040"
+        ],
+        "excerpt": "as follows: the training steps is\n500,500; the step decay learning rate scheduling strategy is\nadopted with initial learning rate 0.01 and multiply with a\nfactor 0.1 at the 400,000 steps and the 450,000 steps, re-\nspectively; The momentum and weight decay are respec-\ntively set as 0.9 and 0.0005. All architectures use a sin-\ngle GPU to execute multi-scale training in the batch size\nof 64 while mini-batch size is 8 or 4 depend on the ar-\nchitectures and GPU memory limitation. Except for us-\ning genetic algorithm for hyper-parameter search experi-\nments, all other experiments use default setting. Genetic\nalgorithm used YOLOv3-SPP to train with GIoU loss and\nsearch 300 epochs for min-val 5k sets. We adopt searched\nlearning rate 0.00261, momentum 0.949, IoU threshold for\nassigning ground truth 0.213, and loss normalizer 0.07 for\ngenetic algorithm experiments. We have verified a large\nnumber ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f8f57b1ca126fcea772c8bd270f400d6967b3683b8c3957d895ea6ee8dffd844",
+            "evidence_id": "E055c2b905f487af7-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1800,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 900,
+                "text": "as follows: the training steps is\n500,500; the step decay learning rate scheduling strategy is\nadopted with initial learning rate 0.01 and multiply with a\nfactor 0.1 at the 400,000 steps and the 450,000 steps, re-\nspectively; The momentum and weight decay are respec-\ntively set as 0.9 and 0.0005. All architectures use a sin-\ngle GPU to execute multi-scale training in the batch size\nof 64 while mini-batch size is 8 or 4 depend on the ar-\nchitectures and GPU memory limitation. Except for us-\ning genetic algorithm for hyper-parameter search experi-\nments, all other experiments use default setting. Genetic\nalgorithm used YOLOv3-SPP to train with GIoU loss and\nsearch 300 epochs for min-val 5k sets. We adopt searched\nlearning rate 0.00261, momentum 0.949, IoU threshold for\nassigning ground truth 0.213, and loss normalizer 0.07 for\ngenetic algorithm experiments. We have verified a large\nnumber "
+              }
+            ],
+            "text": "as follows: the training steps is\n500,500; the step decay learning rate scheduling strategy is\nadopted with initial learning rate 0.01 and multiply with a\nfactor 0.1 at the 400,000 steps and the 450,000 steps, re-\nspectively; The momentum and weight decay are respec-\ntively set as 0.9 and 0.0005. All architectures use a sin-\ngle GPU to execute multi-scale training in the batch size\nof 64 while mini-batch size is 8 or 4 depend on the ar-\nchitectures and GPU memory limitation. Except for us-\ning genetic algorithm for hyper-parameter search experi-\nments, all other experiments use default setting. Genetic\nalgorithm used YOLOv3-SPP to train with GIoU loss and\nsearch 300 epochs for min-val 5k sets. We adopt searched\nlearning rate 0.00261, momentum 0.949, IoU threshold for\nassigning ground truth 0.213, and loss normalizer 0.07 for\ngenetic algorithm experiments. We have verified a large\nnumber "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0042"
+        ],
+        "excerpt": "training\nFirst, we study the influence of different features on\nclassifier training; specifically, the influence of Class la-\nbel smoothing, the influence of different data augmentation\ntechniques, bilateral blurring, MixUp, CutMix and Mosaic,\nas shown in Fugure 7, and the influence of different activa-\ntions, such as Leaky-ReLU (by default), Swish, and Mish.\nFigure 7: Various method of data augmentation.\nIn our experiments, as illustrated in Table 2, the clas-\nsifier's accuracy is improved by introducing the features\nsuch as: CutMix and Mosaic data augmentation, Class la-\nbel smoothing, and Mish activation. As a result, our BoF-\nbackbone (Bag of Freebies) for classifier training includes\nthe following: CutMix and Mosaic data augmentation and\nClass label smoothing. In addition we use Mish activation\nas a complementary option, as shown in Table 2 and Table\n3.\nTable 2: Influence of BoF ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Influence Of Different Features On Classifier",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c6d86676c8b42ec0d97bdfd1d1ce7004a0a9e8aca4eb8508f761e4bf0d765de8",
+            "evidence_id": "E055c2b905f487af7-B0042",
+            "pages": [
+              8
+            ],
+            "section": "Influence Of Different Features On Classifier",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 8,
+                "section": "Influence Of Different Features On Classifier",
+                "section_index": 19,
+                "start": 0,
+                "text": "training\nFirst, we study the influence of different features on\nclassifier training; specifically, the influence of Class la-\nbel smoothing, the influence of different data augmentation\ntechniques, bilateral blurring, MixUp, CutMix and Mosaic,\nas shown in Fugure 7, and the influence of different activa-\ntions, such as Leaky-ReLU (by default), Swish, and Mish.\nFigure 7: Various method of data augmentation.\nIn our experiments, as illustrated in Table 2, the clas-\nsifier's accuracy is improved by introducing the features\nsuch as: CutMix and Mosaic data augmentation, Class la-\nbel smoothing, and Mish activation. As a result, our BoF-\nbackbone (Bag of Freebies) for classifier training includes\nthe following: CutMix and Mosaic data augmentation and\nClass label smoothing. In addition we use Mish activation\nas a complementary option, as shown in Table 2 and Table\n3.\nTable 2: Influence of BoF "
+              }
+            ],
+            "text": "training\nFirst, we study the influence of different features on\nclassifier training; specifically, the influence of Class la-\nbel smoothing, the influence of different data augmentation\ntechniques, bilateral blurring, MixUp, CutMix and Mosaic,\nas shown in Fugure 7, and the influence of different activa-\ntions, such as Leaky-ReLU (by default), Swish, and Mish.\nFigure 7: Various method of data augmentation.\nIn our experiments, as illustrated in Table 2, the clas-\nsifier's accuracy is improved by introducing the features\nsuch as: CutMix and Mosaic data augmentation, Class la-\nbel smoothing, and Mish activation. As a result, our BoF-\nbackbone (Bag of Freebies) for classifier training includes\nthe following: CutMix and Mosaic data augmentation and\nClass label smoothing. In addition we use Mish activation\nas a complementary option, as shown in Table 2 and Table\n3.\nTable 2: Influence of BoF "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0046"
+        ],
+        "excerpt": "(BoS-detector) on the detector training accu-\nracy, including PAN, RFB, SAM, Gaussian YOLO (G), and\nASFF, as shown in Table 5. In our experiments, the detector\ngets best performance when using SPP, PAN, and SAM.\n8\nTable 4: Ablation Studies of Bag-of-Freebies. (CSPResNeXt50-PANet-SPP, 512x512).\nS M IT GA LS CBN CA DM OA loss AP AP 50 AP75\nMSE 38.0% 60.0% 40.8%\n\u2713 MSE 37.7% 59.9% 40.5%\n\u2713 MSE 39.1% 61.8% 42.0%\n\u2713 MSE 36.9% 59.7% 39.4%\n\u2713 MSE 38.9% 61.7% 41.9%\n\u2713 MSE 33.0% 55.4% 35.4%\n\u2713 MSE 38.4% 60.7% 41.3%\n\u2713 MSE 38.7% 60.7% 41.9%\n\u2713 MSE 35.3% 57.2% 38.0%\n\u2713 GIoU 39.4% 59.4% 42.5%\n\u2713 DIoU 39.1% 58.8% 42.1%\n\u2713 CIoU 39.6% 59.2% 42.6%\n\u2713 \u2713 \u2713 \u2713 CIoU 41.5% 64.0% 44.8%\n\u2713 \u2713 \u2713 CIoU 36.1% 56.5% 38.4%\n\u2713 \u2713 \u2713 \u2713 \u2713 MSE 40.3% 64.0% 43.1%\n\u2713 \u2713 \u2713 \u2713 \u2713 GIoU 42.4% 64.4% 45.9%\n\u2713 \u2713 \u2713 \u2713 \u2713 CIoU 42.4% 64.4% 45.9%\nTable 5: Ablation Studies of Bag-of-Specials. (Size 512x512).\nModel AP AP 50 AP75\nCSPResNeXt50-PANet-SPP 42.4% ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Influence Of Different Features On Detector",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ed04bb2ad324b98dbbcfeb0d87398a8f62af7ad4c42826e8df38aec395debfff",
+            "evidence_id": "E055c2b905f487af7-B0046",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Influence Of Different Features On Detector",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2010,
+                "page": 8,
+                "section": "Influence Of Different Features On Detector",
+                "section_index": 20,
+                "start": 1797,
+                "text": "(BoS-detector) on the detector training accu-\nracy, including PAN, RFB, SAM, Gaussian YOLO (G), and\nASFF, as shown in Table 5. In our experiments, the detector\ngets best performance when using SPP, PAN, and SAM.\n8"
+              },
+              {
+                "end": 684,
+                "page": 9,
+                "section": "Influence Of Different Features On Detector",
+                "section_index": 21,
+                "start": 0,
+                "text": "Table 4: Ablation Studies of Bag-of-Freebies. (CSPResNeXt50-PANet-SPP, 512x512).\nS M IT GA LS CBN CA DM OA loss AP AP 50 AP75\nMSE 38.0% 60.0% 40.8%\n\u2713 MSE 37.7% 59.9% 40.5%\n\u2713 MSE 39.1% 61.8% 42.0%\n\u2713 MSE 36.9% 59.7% 39.4%\n\u2713 MSE 38.9% 61.7% 41.9%\n\u2713 MSE 33.0% 55.4% 35.4%\n\u2713 MSE 38.4% 60.7% 41.3%\n\u2713 MSE 38.7% 60.7% 41.9%\n\u2713 MSE 35.3% 57.2% 38.0%\n\u2713 GIoU 39.4% 59.4% 42.5%\n\u2713 DIoU 39.1% 58.8% 42.1%\n\u2713 CIoU 39.6% 59.2% 42.6%\n\u2713 \u2713 \u2713 \u2713 CIoU 41.5% 64.0% 44.8%\n\u2713 \u2713 \u2713 CIoU 36.1% 56.5% 38.4%\n\u2713 \u2713 \u2713 \u2713 \u2713 MSE 40.3% 64.0% 43.1%\n\u2713 \u2713 \u2713 \u2713 \u2713 GIoU 42.4% 64.4% 45.9%\n\u2713 \u2713 \u2713 \u2713 \u2713 CIoU 42.4% 64.4% 45.9%\nTable 5: Ablation Studies of Bag-of-Specials. (Size 512x512).\nModel AP AP 50 AP75\nCSPResNeXt50-PANet-SPP 42.4% "
+              }
+            ],
+            "text": "(BoS-detector) on the detector training accu-\nracy, including PAN, RFB, SAM, Gaussian YOLO (G), and\nASFF, as shown in Table 5. In our experiments, the detector\ngets best performance when using SPP, PAN, and SAM.\n8\nTable 4: Ablation Studies of Bag-of-Freebies. (CSPResNeXt50-PANet-SPP, 512x512).\nS M IT GA LS CBN CA DM OA loss AP AP 50 AP75\nMSE 38.0% 60.0% 40.8%\n\u2713 MSE 37.7% 59.9% 40.5%\n\u2713 MSE 39.1% 61.8% 42.0%\n\u2713 MSE 36.9% 59.7% 39.4%\n\u2713 MSE 38.9% 61.7% 41.9%\n\u2713 MSE 33.0% 55.4% 35.4%\n\u2713 MSE 38.4% 60.7% 41.3%\n\u2713 MSE 38.7% 60.7% 41.9%\n\u2713 MSE 35.3% 57.2% 38.0%\n\u2713 GIoU 39.4% 59.4% 42.5%\n\u2713 DIoU 39.1% 58.8% 42.1%\n\u2713 CIoU 39.6% 59.2% 42.6%\n\u2713 \u2713 \u2713 \u2713 CIoU 41.5% 64.0% 44.8%\n\u2713 \u2713 \u2713 CIoU 36.1% 56.5% 38.4%\n\u2713 \u2713 \u2713 \u2713 \u2713 MSE 40.3% 64.0% 43.1%\n\u2713 \u2713 \u2713 \u2713 \u2713 GIoU 42.4% 64.4% 45.9%\n\u2713 \u2713 \u2713 \u2713 \u2713 CIoU 42.4% 64.4% 45.9%\nTable 5: Ablation Studies of Bag-of-Specials. (Size 512x512).\nModel AP AP 50 AP75\nCSPResNeXt50-PANet-SPP 42.4% "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0049"
+        ],
+        "excerpt": "weightings. The net\nresult is that backbone CSPDarknet53 is more suitable for\nthe detector than for CSPResNeXt50.\nWe observe that the CSPDarknet53 model demonstrates\na greater ability to increase the detector accuracy owing to\nvarious improvements.\nTable 6: Using different classifier pre-trained weightings for de-\ntector training (all other training parameters are similar in all mod-\nels) .\nModel (with optimal setting) Size AP AP 50 AP75\nCSPResNeXt50-PANet-SPP 512x512 42.4 64.4 45.9\nCSPResNeXt50-PANet-SPP\n(BoF-backbone) 512x512 42.3 64.3 45.7\nCSPResNeXt50-PANet-SPP\n(BoF-backbone + Mish) 512x512 42.3 64.2 45.8\nCSPDarknet53-PANet-SPP\n(BoF-backbone) 512x512 42.4 64.5 46.0\nCSPDarknet53-PANet-SPP\n(BoF-backbone + Mish) 512x512 43.0 64.9 46.5",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Influence Of Different Backbones And Pre-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d4f3fc6dac352dae3eae450db9e6b170ef81788b25c23d7733273bc263a2418c",
+            "evidence_id": "E055c2b905f487af7-B0049",
+            "pages": [
+              9
+            ],
+            "section": "Influence Of Different Backbones And Pre-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1638,
+                "page": 9,
+                "section": "Influence Of Different Backbones And Pre-",
+                "section_index": 22,
+                "start": 893,
+                "text": "weightings. The net\nresult is that backbone CSPDarknet53 is more suitable for\nthe detector than for CSPResNeXt50.\nWe observe that the CSPDarknet53 model demonstrates\na greater ability to increase the detector accuracy owing to\nvarious improvements.\nTable 6: Using different classifier pre-trained weightings for de-\ntector training (all other training parameters are similar in all mod-\nels) .\nModel (with optimal setting) Size AP AP 50 AP75\nCSPResNeXt50-PANet-SPP 512x512 42.4 64.4 45.9\nCSPResNeXt50-PANet-SPP\n(BoF-backbone) 512x512 42.3 64.3 45.7\nCSPResNeXt50-PANet-SPP\n(BoF-backbone + Mish) 512x512 42.3 64.2 45.8\nCSPDarknet53-PANet-SPP\n(BoF-backbone) 512x512 42.4 64.5 46.0\nCSPDarknet53-PANet-SPP\n(BoF-backbone + Mish) 512x512 43.0 64.9 46.5"
+              }
+            ],
+            "text": "weightings. The net\nresult is that backbone CSPDarknet53 is more suitable for\nthe detector than for CSPResNeXt50.\nWe observe that the CSPDarknet53 model demonstrates\na greater ability to increase the detector accuracy owing to\nvarious improvements.\nTable 6: Using different classifier pre-trained weightings for de-\ntector training (all other training parameters are similar in all mod-\nels) .\nModel (with optimal setting) Size AP AP 50 AP75\nCSPResNeXt50-PANet-SPP 512x512 42.4 64.4 45.9\nCSPResNeXt50-PANet-SPP\n(BoF-backbone) 512x512 42.3 64.3 45.7\nCSPResNeXt50-PANet-SPP\n(BoF-backbone + Mish) 512x512 42.3 64.2 45.8\nCSPDarknet53-PANet-SPP\n(BoF-backbone) 512x512 42.4 64.5 46.0\nCSPDarknet53-PANet-SPP\n(BoF-backbone + Mish) 512x512 43.0 64.9 46.5"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0050"
+        ],
+        "excerpt": "tor training\nFinally, we analyze the results obtained with models\ntrained with different mini-batch sizes, and the results are\nshown in Table 7. From the results shown in Table 7, we\nfound that after adding BoF and BoS training strategies, the\nmini-batch size has almost no effect on the detector's per-\nformance. This result shows that after the introduction of\nBoF and BoS, it is no longer necessary to use expensive\nGPUs for training. In other words, anyone can use only a\nconventional GPU to train an excellent detector.\nTable 7: Using different mini-batch size for detector training.\nModel (without OA) Size AP AP 50 AP75\nCSPResNeXt50-PANet-SPP\n(without BoF/BoS, mini-batch 4) 608 37.1 59.2 39.9\nCSPResNeXt50-PANet-SPP\n(without BoF/BoS, mini-batch 8) 608 38.4 60.6 41.6\nCSPDarknet53-PANet-SPP\n(with BoF/BoS, mini-batch 4) 512 41.6 64.1 45.0\nCSPDarknet53-PANet-SPP\n(with BoF/BoS, mini-batch 8) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Influence Of Different Mini-Batch Size On Detec-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5d71bda12f774b4a8c4032993626b0442ccf43aebed1bbfbba271f66b5f45106",
+            "evidence_id": "E055c2b905f487af7-B0050",
+            "pages": [
+              9
+            ],
+            "section": "Influence Of Different Mini-Batch Size On Detec-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 9,
+                "section": "Influence Of Different Mini-Batch Size On Detec-",
+                "section_index": 23,
+                "start": 0,
+                "text": "tor training\nFinally, we analyze the results obtained with models\ntrained with different mini-batch sizes, and the results are\nshown in Table 7. From the results shown in Table 7, we\nfound that after adding BoF and BoS training strategies, the\nmini-batch size has almost no effect on the detector's per-\nformance. This result shows that after the introduction of\nBoF and BoS, it is no longer necessary to use expensive\nGPUs for training. In other words, anyone can use only a\nconventional GPU to train an excellent detector.\nTable 7: Using different mini-batch size for detector training.\nModel (without OA) Size AP AP 50 AP75\nCSPResNeXt50-PANet-SPP\n(without BoF/BoS, mini-batch 4) 608 37.1 59.2 39.9\nCSPResNeXt50-PANet-SPP\n(without BoF/BoS, mini-batch 8) 608 38.4 60.6 41.6\nCSPDarknet53-PANet-SPP\n(with BoF/BoS, mini-batch 4) 512 41.6 64.1 45.0\nCSPDarknet53-PANet-SPP\n(with BoF/BoS, mini-batch 8) "
+              }
+            ],
+            "text": "tor training\nFinally, we analyze the results obtained with models\ntrained with different mini-batch sizes, and the results are\nshown in Table 7. From the results shown in Table 7, we\nfound that after adding BoF and BoS training strategies, the\nmini-batch size has almost no effect on the detector's per-\nformance. This result shows that after the introduction of\nBoF and BoS, it is no longer necessary to use expensive\nGPUs for training. In other words, anyone can use only a\nconventional GPU to train an excellent detector.\nTable 7: Using different mini-batch size for detector training.\nModel (without OA) Size AP AP 50 AP75\nCSPResNeXt50-PANet-SPP\n(without BoF/BoS, mini-batch 4) 608 37.1 59.2 39.9\nCSPResNeXt50-PANet-SPP\n(without BoF/BoS, mini-batch 8) 608 38.4 60.6 41.6\nCSPDarknet53-PANet-SPP\n(with BoF/BoS, mini-batch 4) 512 41.6 64.1 45.0\nCSPDarknet53-PANet-SPP\n(with BoF/BoS, mini-batch 8) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0052"
+        ],
+        "excerpt": "Comparison of the results obtained with other state-\nof-the-art object detectors are shown in Figure 8. Our\nYOLOv4 are located on the Pareto optimality curve and are\nsuperior to the fastest and most accurate detectors in terms\nof both speed and accuracy.\nSince different methods use GPUs of different architec-\ntures for inference time verification, we operate YOLOv4\non commonly adopted GPUs of Maxwell, Pascal, and V olta\narchitectures, and compare them with other state-of-the-art\nmethods. Table 8 lists the frame rate comparison results of\nusing Maxwell GPU, and it can be GTX Titan X (Maxwell)\nor Tesla M40 GPU. Table 9 lists the frame rate comparison\nresults of using Pascal GPU, and it can be Titan X (Pascal),\nTitan Xp, GTX 1080 Ti, or Tesla P100 GPU. As for Table\n10, it lists the frame rate comparison results of using V olta\nGPU, and it can be Titan V olta or Tesla V100 GPU.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "89c0c5388e2200b03c9c49b6d49b34966bd4f97827896f063a19d5174b4692df",
+            "evidence_id": "E055c2b905f487af7-B0052",
+            "pages": [
+              10
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 886,
+                "page": 10,
+                "section": "Results",
+                "section_index": 25,
+                "start": 0,
+                "text": "Comparison of the results obtained with other state-\nof-the-art object detectors are shown in Figure 8. Our\nYOLOv4 are located on the Pareto optimality curve and are\nsuperior to the fastest and most accurate detectors in terms\nof both speed and accuracy.\nSince different methods use GPUs of different architec-\ntures for inference time verification, we operate YOLOv4\non commonly adopted GPUs of Maxwell, Pascal, and V olta\narchitectures, and compare them with other state-of-the-art\nmethods. Table 8 lists the frame rate comparison results of\nusing Maxwell GPU, and it can be GTX Titan X (Maxwell)\nor Tesla M40 GPU. Table 9 lists the frame rate comparison\nresults of using Pascal GPU, and it can be Titan X (Pascal),\nTitan Xp, GTX 1080 Ti, or Tesla P100 GPU. As for Table\n10, it lists the frame rate comparison results of using V olta\nGPU, and it can be Titan V olta or Tesla V100 GPU."
+              }
+            ],
+            "text": "Comparison of the results obtained with other state-\nof-the-art object detectors are shown in Figure 8. Our\nYOLOv4 are located on the Pareto optimality curve and are\nsuperior to the fastest and most accurate detectors in terms\nof both speed and accuracy.\nSince different methods use GPUs of different architec-\ntures for inference time verification, we operate YOLOv4\non commonly adopted GPUs of Maxwell, Pascal, and V olta\narchitectures, and compare them with other state-of-the-art\nmethods. Table 8 lists the frame rate comparison results of\nusing Maxwell GPU, and it can be GTX Titan X (Maxwell)\nor Tesla M40 GPU. Table 9 lists the frame rate comparison\nresults of using Pascal GPU, and it can be Titan X (Pascal),\nTitan Xp, GTX 1080 Ti, or Tesla P100 GPU. As for Table\n10, it lists the frame rate comparison results of using V olta\nGPU, and it can be Titan V olta or Tesla V100 GPU."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0053"
+        ],
+        "excerpt": "We offer a state-of-the-art detector which is faster (FPS)\nand more accurate (MS COCO AP 50...95 and AP 50) than\nall available alternative detectors. The detector described\ncan be trained and used on a conventional GPU with 8-16\nGB-VRAM this makes its broad use possible. The original\nconcept of one-stage anchor-based detectors has proven its\nviability. We have verified a large number of features, and\nselected for use such of them for improving the accuracy of\nboth the classifier and the detector. These features can be\nused as best-practice for future studies and developments.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "017abae8a62ec5bdc018cd6c12165b72223385e04edc720763a6b4cd3f96b329",
+            "evidence_id": "E055c2b905f487af7-B0053",
+            "pages": [
+              10
+            ],
+            "section": "Conclusions",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 582,
+                "page": 10,
+                "section": "Conclusions",
+                "section_index": 26,
+                "start": 0,
+                "text": "We offer a state-of-the-art detector which is faster (FPS)\nand more accurate (MS COCO AP 50...95 and AP 50) than\nall available alternative detectors. The detector described\ncan be trained and used on a conventional GPU with 8-16\nGB-VRAM this makes its broad use possible. The original\nconcept of one-stage anchor-based detectors has proven its\nviability. We have verified a large number of features, and\nselected for use such of them for improving the accuracy of\nboth the classifier and the detector. These features can be\nused as best-practice for future studies and developments."
+              }
+            ],
+            "text": "We offer a state-of-the-art detector which is faster (FPS)\nand more accurate (MS COCO AP 50...95 and AP 50) than\nall available alternative detectors. The detector described\ncan be trained and used on a conventional GPU with 8-16\nGB-VRAM this makes its broad use possible. The original\nconcept of one-stage anchor-based detectors has proven its\nviability. We have verified a large number of features, and\nselected for use such of them for improving the accuracy of\nboth the classifier and the detector. These features can be\nused as best-practice for future studies and developments."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0055"
+        ],
+        "excerpt": "hyper-parameters by using genetic algorithms and solving\nthe grid sensitivity problem https://github.com/\nultralytics/yolov3.\n10\nTable 8: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-\ndev 2017). (Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with\nbatch=1 without using tensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 38 (M) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 512 31 (M) 43.0% 64.9% 46.5% 24.3% 46.1% 55.2%\nYOLOv4 CSPDarknet-53 608 23 (M) 43.5% 65.7% 47.3% 26.7% 46.7% 53.3%\nLearning Rich Features at High-Speed for Single-Shot Object Detection [84]\nLRF VGG-16 300 76.9 (M) 32.0% 51.5% 33.8% 12.6% 34.9% 47.0%\nLRF ResNet-101 300 52.6 (M) 34.3% 54.1% 36.6% 13.2% 38.2% 50.7%\nLRF VGG-16 512 38.5 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "eb22843bd7d08deab1600eb4edc7ef5c23691ae9be83a9b513a2eaf95e6cc57d",
+            "evidence_id": "E055c2b905f487af7-B0055",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 128,
+                "page": 10,
+                "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+                "section_index": 28,
+                "start": 0,
+                "text": "hyper-parameters by using genetic algorithms and solving\nthe grid sensitivity problem https://github.com/\nultralytics/yolov3.\n10"
+              },
+              {
+                "end": 772,
+                "page": 11,
+                "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+                "section_index": 29,
+                "start": 0,
+                "text": "Table 8: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-\ndev 2017). (Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with\nbatch=1 without using tensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 38 (M) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 512 31 (M) 43.0% 64.9% 46.5% 24.3% 46.1% 55.2%\nYOLOv4 CSPDarknet-53 608 23 (M) 43.5% 65.7% 47.3% 26.7% 46.7% 53.3%\nLearning Rich Features at High-Speed for Single-Shot Object Detection [84]\nLRF VGG-16 300 76.9 (M) 32.0% 51.5% 33.8% 12.6% 34.9% 47.0%\nLRF ResNet-101 300 52.6 (M) 34.3% 54.1% 36.6% 13.2% 38.2% 50.7%\nLRF VGG-16 512 38.5 "
+              }
+            ],
+            "text": "hyper-parameters by using genetic algorithms and solving\nthe grid sensitivity problem https://github.com/\nultralytics/yolov3.\n10\nTable 8: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-\ndev 2017). (Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with\nbatch=1 without using tensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 38 (M) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 512 31 (M) 43.0% 64.9% 46.5% 24.3% 46.1% 55.2%\nYOLOv4 CSPDarknet-53 608 23 (M) 43.5% 65.7% 47.3% 26.7% 46.7% 53.3%\nLearning Rich Features at High-Speed for Single-Shot Object Detection [84]\nLRF VGG-16 300 76.9 (M) 32.0% 51.5% 33.8% 12.6% 34.9% 47.0%\nLRF ResNet-101 300 52.6 (M) 34.3% 54.1% 36.6% 13.2% 38.2% 50.7%\nLRF VGG-16 512 38.5 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0058"
+        ],
+        "excerpt": "ResNet-50 800 6.5 (M) 35.7% 55.0% 38.5% 18.9% 38.9% 46.3%\nRetinaNet ResNet-101 800 5.1 (M) 37.8% 57.5% 40.8% 20.2% 41.1% 49.2%\nFeature Selective Anchor-Free Module for Single-Shot Object Detection [102]\nAB+FSAF ResNet-101 800 5.6 (M) 40.9% 61.5% 44.0% 24.0% 44.2% 51.3%\nAB+FSAF ResNeXt-101 800 2.8 (M) 42.9% 63.8% 46.3% 26.6% 46.2% 52.7%\nCornerNet: Detecting objects as paired keypoints [37]\nCornerNet Hourglass 512 4.4 (M) 40.5% 57.8% 45.3% 20.8% 44.8% 56.7%\n11\nTable 9: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-dev 2017).\n(Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with batch=1 without using\ntensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 54 (P) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11,
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "56465834eb3017d524c831ef53fab495cee3deefd2f8764c16db350ed55cbed7",
+            "evidence_id": "E055c2b905f487af7-B0058",
+            "pages": [
+              11,
+              12
+            ],
+            "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3032,
+                "page": 11,
+                "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+                "section_index": 29,
+                "start": 2570,
+                "text": "ResNet-50 800 6.5 (M) 35.7% 55.0% 38.5% 18.9% 38.9% 46.3%\nRetinaNet ResNet-101 800 5.1 (M) 37.8% 57.5% 40.8% 20.2% 41.1% 49.2%\nFeature Selective Anchor-Free Module for Single-Shot Object Detection [102]\nAB+FSAF ResNet-101 800 5.6 (M) 40.9% 61.5% 44.0% 24.0% 44.2% 51.3%\nAB+FSAF ResNeXt-101 800 2.8 (M) 42.9% 63.8% 46.3% 26.6% 46.2% 52.7%\nCornerNet: Detecting objects as paired keypoints [37]\nCornerNet Hourglass 512 4.4 (M) 40.5% 57.8% 45.3% 20.8% 44.8% 56.7%\n11"
+              },
+              {
+                "end": 437,
+                "page": 12,
+                "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+                "section_index": 30,
+                "start": 0,
+                "text": "Table 9: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-dev 2017).\n(Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with batch=1 without using\ntensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 54 (P) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 "
+              }
+            ],
+            "text": "ResNet-50 800 6.5 (M) 35.7% 55.0% 38.5% 18.9% 38.9% 46.3%\nRetinaNet ResNet-101 800 5.1 (M) 37.8% 57.5% 40.8% 20.2% 41.1% 49.2%\nFeature Selective Anchor-Free Module for Single-Shot Object Detection [102]\nAB+FSAF ResNet-101 800 5.6 (M) 40.9% 61.5% 44.0% 24.0% 44.2% 51.3%\nAB+FSAF ResNeXt-101 800 2.8 (M) 42.9% 63.8% 46.3% 26.6% 46.2% 52.7%\nCornerNet: Detecting objects as paired keypoints [37]\nCornerNet Hourglass 512 4.4 (M) 40.5% 57.8% 45.3% 20.8% 44.8% 56.7%\n11\nTable 9: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-dev 2017).\n(Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with batch=1 without using\ntensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 54 (P) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E055c2b905f487af7-B0062"
+        ],
+        "excerpt": "Hourglass-104 - 3.3 (P) 44.9% 62.4% 48.1% 25.6% 47.4% 57.4%\nScale-Aware Trident Networks for Object Detection[42]\nTridentNet ResNet-101 - 2.7 (P) 42.7% 63.6% 46.5% 23.9% 46.6% 56.6%\nTridentNet ResNet-101-DCN - 1.3 (P) 46.8% 67.6% 51.5% 28.0% 51.2% 60.5%\n12\nTable 10: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-dev 2017).\n(Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with batch=1 without using\ntensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 96 (V) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 512 83 (V) 43.0% 64.9% 46.5% 24.3% 46.1% 55.2%\nYOLOv4 CSPDarknet-53 608 62 (V) 43.5% 65.7% 47.3% 26.7% 46.7% 53.3%\nEfficientDet: Scalable and Efficient Object Detection [77]\nEfficientDet-D0 Efficient-B0 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6e6c9d06f5cd5fe969c273a9d2e7b31f725e7cabbe2b6e671555cdc7efe4f39e",
+            "evidence_id": "E055c2b905f487af7-B0062",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3374,
+                "page": 12,
+                "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+                "section_index": 30,
+                "start": 3118,
+                "text": "Hourglass-104 - 3.3 (P) 44.9% 62.4% 48.1% 25.6% 47.4% 57.4%\nScale-Aware Trident Networks for Object Detection[42]\nTridentNet ResNet-101 - 2.7 (P) 42.7% 63.6% 46.5% 23.9% 46.6% 56.6%\nTridentNet ResNet-101-DCN - 1.3 (P) 46.8% 67.6% 51.5% 28.0% 51.2% 60.5%\n12"
+              },
+              {
+                "end": 641,
+                "page": 13,
+                "section": "Hyper-Parameters By Using Genetic Algorithms And Solving",
+                "section_index": 31,
+                "start": 0,
+                "text": "Table 10: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-dev 2017).\n(Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with batch=1 without using\ntensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 96 (V) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 512 83 (V) 43.0% 64.9% 46.5% 24.3% 46.1% 55.2%\nYOLOv4 CSPDarknet-53 608 62 (V) 43.5% 65.7% 47.3% 26.7% 46.7% 53.3%\nEfficientDet: Scalable and Efficient Object Detection [77]\nEfficientDet-D0 Efficient-B0 "
+              }
+            ],
+            "text": "Hourglass-104 - 3.3 (P) 44.9% 62.4% 48.1% 25.6% 47.4% 57.4%\nScale-Aware Trident Networks for Object Detection[42]\nTridentNet ResNet-101 - 2.7 (P) 42.7% 63.6% 46.5% 23.9% 46.6% 56.6%\nTridentNet ResNet-101-DCN - 1.3 (P) 46.8% 67.6% 51.5% 28.0% 51.2% 60.5%\n12\nTable 10: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-dev 2017).\n(Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with batch=1 without using\ntensorRT.)\nMethod Backbone Size FPS AP AP 50 AP75 APS APM APL\nYOLOv4: Optimal Speed and Accuracy of Object Detection\nYOLOv4 CSPDarknet-53 416 96 (V) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%\nYOLOv4 CSPDarknet-53 512 83 (V) 43.0% 64.9% 46.5% 24.3% 46.1% 55.2%\nYOLOv4 CSPDarknet-53 608 62 (V) 43.5% 65.7% 47.3% 26.7% 46.7% 53.3%\nEfficientDet: Scalable and Efficient Object Detection [77]\nEfficientDet-D0 Efficient-B0 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2004.10934",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "systems_or_application",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2004.10934",
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline results are reported on the independent MS COCO test-dev 2017 benchmark and compared against many external detector baselines across Maxwell, Pascal, and Volta GPUs.",
+          "final_evaluation_signal": "Standard MS COCO test-dev 2017 AP metrics and measured FPS across multiple GPU architectures.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised training losses, ablation-selected BoF/BoS components, and genetic-algorithm hyperparameter search on validation subsets.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E055c2b905f487af7-B0002",
+          "E055c2b905f487af7-B0003",
+          "E055c2b905f487af7-B0030",
+          "E055c2b905f487af7-B0031",
+          "E055c2b905f487af7-B0034",
+          "E055c2b905f487af7-B0035",
+          "E055c2b905f487af7-B0037",
+          "E055c2b905f487af7-B0039",
+          "E055c2b905f487af7-B0040",
+          "E055c2b905f487af7-B0042",
+          "E055c2b905f487af7-B0046",
+          "E055c2b905f487af7-B0049",
+          "E055c2b905f487af7-B0050",
+          "E055c2b905f487af7-B0052",
+          "E055c2b905f487af7-B0053",
+          "E055c2b905f487af7-B0055",
+          "E055c2b905f487af7-B0058",
+          "E055c2b905f487af7-B0062"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "531196e36fc7e5e4190328039882671aba0ec1c6e2518102183eaf926635f502"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2004.10934",
+        "claim_evidence_alignment": "Reported claims of 43.5% AP at ~65 FPS on a V100 GPU and strong single-GPU operability are directly evidenced by test-dev 2017 evaluations and batch size ablation studies [E055c2b905f487af7-B0003, E055c2b905f487af7-B0050, E055c2b905f487af7-B0062]. The comparative performance across resolutions and GPU architectures matches the provided empirical data.",
+        "context_id": "055c2b905f487af7948afb0dce5167533247ee079e7cbef92db3e1db62fd6958",
+        "decision": "pass",
+        "evaluation_assessment": "The authors perform extensive ablation experiments on both ImageNet classification and MS COCO object detection to isolate the effects of various architectural and training components [E055c2b905f487af7-B0042, E055c2b905f487af7-B0046, E055c2b905f487af7-B0049]. Benchmarking against dozens of contemporary detectors across multiple GPU architectures (Maxwell, Pascal, Volta) demonstrates superior Pareto-optimal trade-offs between frame rate and standard COCO AP metrics [E055c2b905f487af7-B0052, E055c2b905f487af7-B0055, E055c2b905f487af7-B0058, E055c2b905f487af7-B0062].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance was evaluated on the independent MS COCO test-dev benchmark and compared against dozens of external detector baselines across Maxwell, Pascal, and Volta hardware architectures [E055c2b905f487af7-B0055, E055c2b905f487af7-B0058, E055c2b905f487af7-B0062].",
+          "final_evaluation_signal": "Standard COCO evaluation protocol measuring Average Precision (AP, AP50, AP75) and FPS on the MS COCO test-dev 2017 benchmark across standard GPU platforms [E055c2b905f487af7-B0038, E055c2b905f487af7-B0055].",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised gradient descent utilizing cross-entropy loss, CIoU/GIoU/DIoU bounding box regression losses, and genetic algorithm hyperparameter tuning on validation subsets [E055c2b905f487af7-B0037, E055c2b905f487af7-B0040].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E055c2b905f487af7-B0002",
+          "E055c2b905f487af7-B0003",
+          "E055c2b905f487af7-B0006",
+          "E055c2b905f487af7-B0008",
+          "E055c2b905f487af7-B0030",
+          "E055c2b905f487af7-B0031",
+          "E055c2b905f487af7-B0034",
+          "E055c2b905f487af7-B0035",
+          "E055c2b905f487af7-B0036",
+          "E055c2b905f487af7-B0037",
+          "E055c2b905f487af7-B0039",
+          "E055c2b905f487af7-B0040",
+          "E055c2b905f487af7-B0042",
+          "E055c2b905f487af7-B0046",
+          "E055c2b905f487af7-B0049",
+          "E055c2b905f487af7-B0050",
+          "E055c2b905f487af7-B0052",
+          "E055c2b905f487af7-B0053",
+          "E055c2b905f487af7-B0055",
+          "E055c2b905f487af7-B0058",
+          "E055c2b905f487af7-B0062"
+        ],
+        "limitations": "The work focuses on standard anchor-based 2D detection on GPUs, acknowledging that models optimal for classification do not inherently transfer optimality to detection [E055c2b905f487af7-B0048, E055c2b905f487af7-B0049]. Discussion of memory-constrained training settings is addressed via CmBN and mini-batch ablations [E055c2b905f487af7-B0050].",
+        "method_assessment": "The methodology is thoroughly detailed, describing the backbone selection (CSPDarknet53), neck architecture (SPP and modified PAN), and detection head (YOLOv3) [E055c2b905f487af7-B0030, E055c2b905f487af7-B0037]. Training protocols, modifications (e.g., Cross mini-Batch Normalization, pointwise SAM), and data augmentations (Mosaic, SAT) are clearly specified [E055c2b905f487af7-B0034, E055c2b905f487af7-B0035, E055c2b905f487af7-B0039, E055c2b905f487af7-B0040].",
+        "quality_rationale": "The manuscript presents a rigorous empirical study that systematically unifies and benchmarks practical object detection optimizations. The methodology is clearly defined, the ablations are comprehensive, and performance claims are backed by standardized MS COCO metrics and multi-platform latency tests.",
+        "scoped_contribution": "The paper introduces YOLOv4, an optimized real-time object detection model designed to achieve state-of-the-art accuracy and inference speed while being trainable on a single conventional GPU [E055c2b905f487af7-B0003, E055c2b905f487af7-B0006]. Its contribution includes synthesizing and refining a combination of universal neural network improvements ('Bag of Freebies' and 'Bag of Specials') such as Mosaic data augmentation, Self-Adversarial Training, modified SAM, modified PAN, and CmBN [E055c2b905f487af7-B0034, E055c2b905f487af7-B0037].",
+        "source_content_hash": "531196e36fc7e5e4190328039882671aba0ec1c6e2518102183eaf926635f502"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous empirical study that systematically unifies and benchmarks practical object detection optimizations. The methodology is clearly defined, the ablations are comprehensive, and performance claims are backed by standardized MS COCO metrics and multi-platform latency tests.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "531196e36fc7e5e4190328039882671aba0ec1c6e2518102183eaf926635f502",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The work focuses on standard anchor-based 2D detection on GPUs, acknowledging that models optimal for classification do not inherently transfer optimality to detection [E055c2b905f487af7-B0048, E055c2b905f487af7-B0049]. Discussion of memory-constrained training settings is addressed via CmBN and mini-batch ablations [E055c2b905f487af7-B0050]."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -171,7 +2103,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

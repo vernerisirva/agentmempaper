@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists</title>
+  <meta name="description" content="Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists</h1>
+          <p class="hero-copy">Guowei Xu, Jiaru Zou, Mete Erdogan, Haotian Ye, Pan Lu, James Zou</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.12184v1">Open paper</a>
+            <a class="paper-detail-link" href="blind-variation-selective-retention-improving-creative-idea-generation-in-ai-scienti-c9160785.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Guowei Xu, Jiaru Zou, Mete Erdogan, Haotian Ye, Pan Lu, James Zou</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-09</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-09</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.12184">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies AI-scientist or scientific-discovery agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Scientific discovery requires ideas that are original, useful, and non-obvious. Yet AI scientists are typically given as much task information as possible during idea generation, which can anchor generation toward familiar approaches. Inspired by the cognitive framework of Blind Variation and Selective Retention (BV...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The study presents a clear, theoretically motivated, and experimentally robust contribution to AI-driven scientific discovery. The combination of objective programmatic benchmarks, rigorous baseline comparisons, comprehensive ablations, and blinded human expert validation meets the standard for curated acceptance.</p>
+      <p>The work acknowledges computational requirements of running verified code evaluations, reliance on small dense models for V-usable information estimation, and dependence on LLMs for semantic grouping during large-scale scoring.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-10T12:08:21.105272+00:00.</p>
+        <p>Coverage: 107539 of 107539 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Scientific discovery requires ideas that are original, useful, and non-obvious. Yet AI scientists are typically
+given as much task information as possible during idea generation, which can anchor generation toward
+familiar approaches. Inspired by the cognitive framework ofBlind VariationandSelective Retention
+(BVSR), we propose a discovery framework that separates these two roles of information: it generates
+proposals under deliberately limited task information to broaden exploration, then learns from proposals
+previously verified on the same task and their outcomes to retain promising candidates for costly empirical
+evaluation. We evaluate BVSR across five proposer models and 12 scientific tasks. Limiting task information
+substantially increases proposal originality and non-obviousness, and produces a larger share of highly
+creative and high-utility proposals than existing </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>An AI scientist attempts to solve an automated scientific discovery task T by producing n candidate
+methods. Each candidate c is produced in two stages. Anideationstage reads a problem context I
+(possibly only part of the full problem description S) and returns an idea together with a reference
+paper supporting it. Animplementationstage then reads S and the idea and writes the code. Both
+stages are driven by instruction prompts. We may vary the prompts and the context I. The task
+provides an evaluator that runs a candidate&#x27;s code and returns a scores T (c).
+Measuring creativity.Following Equation 1, each candidate is scored as creativity(c) = (1−p)u(1−
+v), with the three terms computed as follows.
+Originality 1−p . p(c) is the probability that the ideation stage, run again under the same context I
+and prompt, produces the idea ofc:
+p(c) = Pr
+c′
+
+c′ ≡c ,(2)
+where c′ is an independent </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>candidate from the same generator and c′ ≡c denotes that the two
+express the same idea. In practice, we use an LLM to partition the n candidates into groups
+expressing the same idea and estimate p(c) by |g(c)|/n, where g(c) is the group containing c. Because
+1−p tends to be closer to 1 when n is large, we place originality on a log scale and define it as
+1−log|g(c)|/logn . Here, originality refers specifically to generative rarity, following the creativity
+literature, rather than novelty relative to the scientific literature.
+Utility u.We run the candidate&#x27;s code under the task evaluator and normalize its improvement
+over the task&#x27;s baseline score sbaseT by the best improvement achieved by any candidate on T in our
+experiments,s bestT :
+u(c) = max
+ sT (c)−s baseT
+sbestT −s baseT ,0
+
+.(3)
+Non-obviousness 1−v . v(c) measures how much evidence existed at proposal time that the idea
+would </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>work. An LLM judge reads S and the idea, and outputs v(c), where v= 1 means prior
+experience strongly suggests the mechanism will succeed, andv= 0 means its success cannot readily
+be inferred from existing knowledge.
+We assess the reliability of LLM judgments using PhD-level human experts. Human validation of
+both semantic grouping used for originality and non-obviousness is provided in Section 5.4.
+Information level.We vary the information provided in context I and quantify how much it reveals
+about the problem description S using V-usable information [7, 53], a model-dependent analogue of
+mutual information:
+info(I) =H V (S)−H V (S|I),(4)
+where HV (S) and HV (S|I) are the unconditional and conditional V-entropies of S, respectively.
+They measure the uncertainty about S for predictors in V without and with context I. In practice,
+we estimate these quantities using the negative </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To test this empirically, we use Claude Opus 5 to summarize the full problem statementS, producing
+contexts I with varying amounts of information for the same task. Appendix E shows example
+contexts. We then evaluate proposal creativity under each context. Further details on the mod-
+els, benchmarks, and settings are provided in Appendix B. For each task, each model, and each
+information level, we generate 112 proposals.
+Benchmarks.We evaluate 12 tasks across four scientific domains. (1)Biology.We use four single-cell
+analysis tasks [25], namely cell-cell communication, label projection, perturbation prediction, and
+spatially variable genes. (2)Astrodynamics.We use the Cassini [ 30] and Voyager 2 [18] trajectory
+design problems. (3)Machine Learning.We use unsupervised anomaly detection and post-hoc
+probability calibration from MLS Bench [27], along with scaling-law discovery in </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>pretraining and
+U-shaped / double-descent regime from SLDBench [22]. (4)Neuroscience.We use neural activity
+forecasting from ZAPBench [26] with prediction horizons of 16 and 32.
+Models.We evaluate five mainstream LLMs to assess whether our findings generalize across model
+families. These include DeepSeek-V4-Flash, DeepSeek-V4-Pro [6], GLM-5.3 Flash, GLM-5.2 [10], and
+Kimi-K3 [48]. All models have reasoning enabled and access to OpenAlex [31] for literature search.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Prior work improves AI-scientist creativity by modifying prompt instructions. We compare against
+three such baselines: analogical reasoning, cross-domain search, and no-domain search [ 37]. We
+further add one control: BV with the full task description, which separates the effect of limited
+information from that of our prompt. All methods share the same proposer models, candidate
+budget, and reasoning configuration. For each model and task, we generate 112 proposals and
+report in Table 1 the top creativity and top utility, defined here as the mean creativity and utility of
+the top 1% of proposals, together with mean originality and mean non-obviousness.
+Table 1. Comparison of BV with baselines.The highest is shown in bold. Values are mean±SE.
+Method Creativity (↑) Utility (↑) Originality (↑) Non-obviousness (↑)
+BV (Limited Information)0.530±0.043 0.571±0.041 0.955±0.002 0.713±0.012
+BV </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(Full Information)0.462±0.045 0.524±0.043 0.926±0.004 0.609±0.015
+Analogical Reasoning0.429±0.049 0.508±0.050 0.914±0.007 0.492±0.037
+Cross-Domain0.369±0.052 0.531±0.045 0.871±0.012 0.263±0.020
+No-Domain0.117±0.025 0.530±0.050 0.598±0.020 0.104±0.015
+BV achieves the highest creativity, utility, and non-obviousness. On the same tasks, the full task
+description costs the same prompt a large part of its advantage over the baselines: creativity falls
+5
+from 0.530 to 0.462 and non-obviousness from 0.713 to 0.609, indicating that limiting task information
+is a major source of BV&#x27;s gains.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We implement selective retention using a language model with a scalar scoring head. Given a task
+specification S and a candidate x, the model produces a score s=f θ(S, x). For a training run,
+let T contain its top-5% utility candidates. We include all candidates in T and uniformly sample
+candidates B from the remainder. We apply a pairwise logistic loss [3], restricted to comparisons
+between these two groups:
+LSR =
+X
+i∈T
+X
+j∈B
+log(1 + exp[−(si −s j)]).(6)
+Each comparison can be interpreted as a unit of scientific experience: given two previous proposals,
+the model learns which one was more worthy of empirical investment. Aggregating many such
+comparisons trains the selector to exploit past outcomes when screening its future candidates.
+Experimental Setup.To evaluate the effectiveness of our method, we use 5,783 proposals generated
+by the five proposer models on the 12 tasks in Section </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3. Our training dataset consists of a separate
+set of 40,733 proposals on the same tasks. Implementation details are provided in Appendix B.4. To
+assess whether the model can identify low-quality proposals, we ask it to rank the candidates and
+discard those ranked lowest. We vary the discard ratio and measure the fraction of top candidates
+kept. Higher curves indicate better preservation. All screeners receive the same task specification
+and candidate implementation. We compare SR with four zero-shot prompting-based judges:
+Pointwisejudge assigns absolute scores,Setwisejudge repeatedly identifies weak candidates in
+groups,Listwisejudge aggregates sliding-window rankings in the style of RankGPT [ 45], and
+T ournamentjudge uses six rounds of Swiss-system pairwise comparisons [ 38]. The in-context
+learning (ICL) judge also sees four similar verified proposals and their outcomes from the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SR
+training set. We also compare withSFTusing the same backbone, trained with mean-squared error.
+Findings.Figure 3 shows that learned SR preserves top candidates much more effectively than
+prompting-based screeners. The in-context learning baseline, despite seeing verified outcomes of
+similar proposals, performs no significantly better than zero-shot judges. SFT improves preservation
+over many prompt-based methods. Nevertheless, it remains less effective than SR. This result is
+consistent with the motivation that accurate prediction throughout the distribution is a different
+objective from keeping exceptional candidates out of the discard set. At a discard ratio of 50%, SR
+preserves 79% of the top-5% proposals by creativity and 82% of the top-5% proposals by utility. We
+therefore use this SR model to discard the lowest-ranked 50% of proposals in later experiments.
+7</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Beyond the gains of BV and SR individually, we evaluate whether combining information-limited
+generation with experience-based selection improves end-to-end scientific discovery. We evaluate
+its effectiveness by integrating it into SimpleTES [56]. We compare SimpleTES with and without
+BVSR on five tasks introduced earlier: gene expression analysis (spatially variable genes), drug
+response prediction (perturbation prediction), anomaly detection, scaling law discovery, and brain
+activity prediction (ZAPBench horizon 16). We use Kimi-K3 for both configurations. Following the
+SimpleTES setup, we run four parallel search trajectories, each generating 40 proposals per iteration,
+and run for 10 iterations. Figure 4 plots the best score against the cumulative number of empirically
+verified proposals. BVSR achieves higher final scores on all five tasks and exceeds the original
+workflow&#x27;s final </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>score with fewer verification steps. These results show that BVSR can improve
+discovery performance when incorporated into existing AI scientist workflows.
+0 750 1500
+0.86
+0.88
+0.90
+0 750 1500
+0.35
+0.40
+0.45
+0 750 1500
+0.4
+0.5
+0.6
+0 750 1500
+0.85
+0.90
+0.95
+0 750 1500
+−0.028
+−0.024
+−0.020
+Gene analysis Drug prediction Anomaly detection Scaling laws Brain activity
+Proposals verified
+Best score
+SimpleTES + BVSR SimpleTES
+Figure 4. Integrating BVSR into SimpleTES.Best task score as a function of verification steps on five scientific
+tasks. BVSR improves final score and reaches strong solutions with fewer steps. Numbers give how many
+times fewer verified proposals SimpleTES + BVSR needs to reach SimpleTES&#x27;s final score (dotted line).</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We describe three example best programs found by BVSR in Table 2. Each surpasses the best program
+found by SimpleTES under the same budget and the strongest existing baselines on their tasks.
+Table 2.Best programs of our methods and of SimpleTES on example tasks (higher is better). Best baseline:
+SPARK-X for gene expression analysis, Isolation Forest for anomaly detection.
+Task Ours SimpleTES Best Baseline
+Gene Expression Analysis0.9180.906 0.853 [60]
+Anomaly Detection0.6790.629 0.491 [23]
+Scaling Law Discovery0.9670.940 N/A
+Spatially variable genes via the nudged elastic band.The task is to rank genes by how strongly
+their expression is organized in space on a tissue section. The program borrows the nudged elastic
+band method from transition-state theory [17], which finds a minimum-energy path by relaxing a
+chain of images under two projected forces: the true force perpendicular to the </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To assess the individual contributions of BV and SR, we
+compare four configurations: the original SimpleTES,
+SimpleTES with BV alone, SimpleTES with SR alone,
+and the full BVSR. We evaluate all four configurations
+on gene expression analysis and scaling law discovery,
+and track the best task score against verification steps.
+Figure 5 shows that BV and SR each improve the final
+score over SimpleTES, and that combining them works
+best on both tasks. On gene expression analysis, BV
+mainly raises the final score and SR mainly speeds up
+discovery, while BVSR achieves a larger gain than either.
+On scaling law discovery, BVSR again reaches a higher
+score earlier than BV or SR. Because BVSR improves
+upon the stronger component on each task, the two
+components are complementary.
+0 750 1500
+0.86
+0.88
+0.90
+0 750 1500
+0.85
+0.90
+0.95
+Gene analysis Scaling laws
+Proposals verified
+Best score
+SimpleTES </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We conduct two human studies to validate the LLM judgments underlying originality and non-
+obviousness. The former relies on grouping semantically equivalent proposals to estimate their
+frequencies, while the latter assesses whether prior knowledge suggests that a proposal will work.
+Detailed protocols are provided in Appendix F.
+Originality.Five PhD-level researchers each annotate 30 proposal pairs, yielding 150 pairs in total.
+The sample is balanced between pairs grouped together and pairs assigned to different groups
+9
+by the LLM, and covers multiple tasks, proposer models, and generation methods. Evaluators
+judge whether the proposals express the same underlying mechanism. 84% of pairs grouped
+together by the LLM are also judged equivalent by humans (95% CI [0.74,0.92] ), while 73% of pairs
+assigned to different groups are judged distinct (95% CI [0.61,0.82] ). These results support </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+semantic-equivalence judgments used to estimate originality.
+Non-obviousness.Five PhD-level researchers evaluate 150 high-quality proposals from BV and
+Analogical Reasoning (AR) under blinded conditions. All sampled proposals achieve verified scores
+above the best baseline for their respective tasks. Evaluators see the task name and summaries of the
+source paper and proposed method. The summaries are rewritten in a uniform style, and method
+identifiers are removed. Evaluators assess how readily a proposal&#x27;s effectiveness could be inferred
+from the paper and their own knowledge of the literature, using a 1–5 scale with higher scores
+indicating greater non-obviousness. Human ratings correlate with the automatic non-obviousness
+score 1−ˆv at r= 0.56 (95% CI [0.45,0.67] ). BV proposals receive a mean rating of 3.64, compared
+with 2.97 for AR, a difference of 0.67 points (95% CI </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>[0.33,0.99] , p= 0.0006 ). These results support
+the automatic non-obviousness score and show that BV&#x27;s advantage persists under expert judgment.</blockquote></details></li><li><strong>Contribution clarity — pages 25–26</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Proposals are generated by five LLMs: Kimi-K3, GLM-5.2, GLM-5.3-Flash, DeepSeek-V4-Flash
+and DeepSeek-V4-Pro. Originality and non-obviousness (Section 2) are estimated by two OpenAI
+models. For originality, GPT-5.6-Sol reads all mechanism sentences and groups those that express
+25
+similar ideas. For non-obviousness, GPT-5.6-Luna reads the task description, the chosen paper, and
+the proposal, and returnsˆv(x)∈[0,1]. The SR selector is a fine-tuned Qwen3.5-9B-Base model.</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to autonomous/deep research workflows based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>AI-scientist / discovery workflow</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to deep research / autonomous research</dt>
+              <dd>Studies autonomous scientific-discovery or hypothesis-generation workflows</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 93/100</li>
+              <li>Screening category: AI scientist / discovery system</li>
+              <li>Tags: ai-scientist, deep-research-agents</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-09</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-10 12:04:09</li><li>Last seen by Paper Scout: 2026-11-10 12:04:09</li></ul>
+            <ul><li>arXiv: 2611.12184</li><li>arXiv IDs: 2611.12184</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="blind-variation-selective-retention-improving-creative-idea-generation-in-ai-scienti-c9160785.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists. Guowei Xu, Jiaru Zou, Mete Erdogan, Haotian Ye, Pan Lu, James Zou. 2026-11-09. https://arxiv.org/abs/2611.12184v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

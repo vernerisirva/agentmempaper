@@ -23,12 +23,12 @@
   "first_seen_date": "2026-11-09",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-11-09 12:29:09",
-  "last_seen_date": "2026-11-09",
+  "last_seen_at": "2026-11-10 12:03:00",
+  "last_seen_date": "2026-11-10",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-11-06",
-  "library_admission": "review",
-  "newly_discovered_in_latest_run": true,
+  "library_admission": "main",
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-11-09 12:29:59",
   "notified_date": "2026-11-09",
   "openalex_id": null,
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-11-09 12:28:50",
-    "generated_at": "2026-11-09 12:34:40",
-    "last_seen_at": "2026-11-09 12:29:09",
+    "generated_at": "2026-11-10 12:08:54",
+    "last_seen_at": "2026-11-10 12:03:00",
     "metadata_sources": [
       "arxiv"
     ],
@@ -107,36 +107,1987 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-10T12:08:04.657276+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.99,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The study provides clear experimental controls, detailed lifecycle metrics, rigorous ablation across domains and models, and an auxiliary-to-evaluation transfer setup that prevents circular evaluation.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 72514,
+      "assessment_input_sha256": "d64a26996804d3674b97c2b0afe33ff141c37fa510976ec557a3250ac5dbae78",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.09721",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 70432,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 69002,
+      "evidence_block_count": 115,
+      "evidence_context_characters": 83197,
+      "evidence_context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+      "evidence_context_sha256": "657a1afc27299dc999cd243f68796390f5a64b32ddc78fd604589be434f6252c",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 70474,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "extracted_pages": 22,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "471555d9567ad90919922a1b192bb9c67e4a2afde9e595563f9ccc6185b5b5e6",
+        "source_url": "https://arxiv.org/pdf/2611.09721",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 70432,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Memorydojo: Benchmarkingpoisoning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "results",
+          "section_index": 0,
+          "source_characters": 33,
+          "supplied_characters": 33
+        },
+        {
+          "heading": "Throughllm Agentmemory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 1,
+          "source_characters": 206,
+          "supplied_characters": 206
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1265,
+          "supplied_characters": 1265
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2204,
+          "supplied_characters": 2204
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 1733,
+          "supplied_characters": 1733
+        },
+        {
+          "heading": "We Develop Memorydojo, An Extensible Benchmark That Quantifies The Effects Of Memory Poisoning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 5,
+          "source_characters": 86,
+          "supplied_characters": 86
+        },
+        {
+          "heading": "We Define New Metrics That Quantify How Poison Persists And Spreads Within Agent Memory, And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 73,
+          "supplied_characters": 73
+        },
+        {
+          "heading": "We Propose A Memory-Aware Poison Optimization Method That Increases The Effectiveness Of The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 7,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2555,
+          "supplied_characters": 2555
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 115,
+          "supplied_characters": 115
+        },
+        {
+          "heading": "Problemformulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 10,
+          "source_characters": 2545,
+          "supplied_characters": 2545
+        },
+        {
+          "heading": "Memorydojo",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 151,
+          "supplied_characters": 151
+        },
+        {
+          "heading": "Construct 2 Execute 3 Measure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 159,
+          "supplied_characters": 159
+        },
+        {
+          "heading": "Br / Brt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 446,
+          "supplied_characters": 446
+        },
+        {
+          "heading": "Constructingtrajectories",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 2865,
+          "supplied_characters": 2865
+        },
+        {
+          "heading": "Runningtrajectories",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1057,
+          "supplied_characters": 1057
+        },
+        {
+          "heading": "Tracingpoisonthrough Atrajectory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 791,
+          "supplied_characters": 791
+        },
+        {
+          "heading": "Tracingpoisonthrough Atrajectory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 2574,
+          "supplied_characters": 2574
+        },
+        {
+          "heading": "Measuringdownstreambehavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1095,
+          "supplied_characters": 1095
+        },
+        {
+          "heading": "Measuringdownstreambehavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 603,
+          "supplied_characters": 603
+        },
+        {
+          "heading": "Memory-Awarepoisonoptimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1168,
+          "supplied_characters": 1168
+        },
+        {
+          "heading": "Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 318,
+          "supplied_characters": 318
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 359,
+          "supplied_characters": 359
+        },
+        {
+          "heading": "Experimentsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 1050,
+          "supplied_characters": 1050
+        },
+        {
+          "heading": "Experimentsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 24,
+          "source_characters": 1450,
+          "supplied_characters": 1450
+        },
+        {
+          "heading": "Same-Domain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 2911,
+          "supplied_characters": 2911
+        },
+        {
+          "heading": "Same-Domain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 2511,
+          "supplied_characters": 2511
+        },
+        {
+          "heading": "Cross-Domain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1079,
+          "supplied_characters": 1079
+        },
+        {
+          "heading": "Cross-Domain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1053,
+          "supplied_characters": 1053
+        },
+        {
+          "heading": "History-Prefixedcross-Domain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 2657,
+          "supplied_characters": 2657
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 30,
+          "source_characters": 548,
+          "supplied_characters": 548
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 31,
+          "source_characters": 754,
+          "supplied_characters": 754
+        },
+        {
+          "heading": "Ethics Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 159,
+          "supplied_characters": 159
+        },
+        {
+          "heading": "Reproducibility Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 143,
+          "supplied_characters": 143
+        },
+        {
+          "heading": "Aiuse Statement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 401,
+          "supplied_characters": 401
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1928,
+          "supplied_characters": 1928
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 3700,
+          "supplied_characters": 3700
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 3815,
+          "supplied_characters": 3815
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 874,
+          "supplied_characters": 874
+        },
+        {
+          "heading": "Appendix: Appendix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 10,
+          "supplied_characters": 10
+        },
+        {
+          "heading": "Appendix: Benchmarkcomposition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 688,
+          "supplied_characters": 688
+        },
+        {
+          "heading": "Collection / Domain Templates Trajectories Task Sessions Sessions/Run",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 81,
+          "supplied_characters": 81
+        },
+        {
+          "heading": "Workspace 40 26 278 3\u201335",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Travel 20 23 188 3\u201320",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Banking 16 22 168 3\u201315",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 22,
+          "supplied_characters": 22
+        },
+        {
+          "heading": "Slack 21 22 168 3\u201315",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Subtotal 97 93 802 3\u201335",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Cross-Domain 97 31 680 5\u201360",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "History-Prefixed Cross-Domain 97 31 680 5\u201360",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 1047,
+          "supplied_characters": 1047
+        },
+        {
+          "heading": "Same-Domain Workspace Example",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 29,
+          "supplied_characters": 29
+        },
+        {
+          "heading": "Workspace: Create A Four-Hour Family-Reunion Calendar Event From",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Workspace: Create A Hawaii Packing-List File From An Existing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 103,
+          "supplied_characters": 103
+        },
+        {
+          "heading": "Cross-Domain Example",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Slack: Post Employees' Hobbies From Bob'S Inbox To The Company",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Banking: Update An Address And Standing Orders, And Refund A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 262,
+          "supplied_characters": 262
+        },
+        {
+          "heading": "Banking: Update An Address And Standing Orders, And Refund A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 1683,
+          "supplied_characters": 1683
+        },
+        {
+          "heading": "Appendix: Attackobjectives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 762,
+          "supplied_characters": 762
+        },
+        {
+          "heading": "Appendix: Memorytracinginterface",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 247,
+          "supplied_characters": 247
+        },
+        {
+          "heading": "Appendix: Indirectretrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 203,
+          "supplied_characters": 203
+        },
+        {
+          "heading": "Appendix: Indirectretrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 481,
+          "supplied_characters": 481
+        },
+        {
+          "heading": "Appendix: Indirectretrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 731,
+          "supplied_characters": 731
+        },
+        {
+          "heading": "Appendix: Persistence Andpropagationmetrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 767,
+          "supplied_characters": 767
+        },
+        {
+          "heading": "Appendix: Auxiliaryenvironments Andtrajectories",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 504,
+          "supplied_characters": 504
+        },
+        {
+          "heading": "Appendix: Auxiliaryenvironments Andtrajectories",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 589,
+          "supplied_characters": 589
+        },
+        {
+          "heading": "Appendix: Initialization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 3465,
+          "supplied_characters": 3465
+        },
+        {
+          "heading": "Appendix: Initialization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 1420,
+          "supplied_characters": 1420
+        },
+        {
+          "heading": "Appendix: Experimentsetupdetails",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 2475,
+          "supplied_characters": 2475
+        },
+        {
+          "heading": "Appendix: Experimentsetupdetails",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 937,
+          "supplied_characters": 937
+        },
+        {
+          "heading": "Appendix: Same-Domainresults Bydomain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 469,
+          "supplied_characters": 469
+        },
+        {
+          "heading": "Appendix: Same-Domainresults Acrossmodels",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 1112,
+          "supplied_characters": 1112
+        },
+        {
+          "heading": "Appendix: Middle-Insertionsame-Domainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 153,
+          "supplied_characters": 153
+        },
+        {
+          "heading": "Appendix: Cross-Domainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 206,
+          "supplied_characters": 206
+        },
+        {
+          "heading": "Appendix: Cross-Domainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 72,
+          "source_characters": 1804,
+          "supplied_characters": 1804
+        },
+        {
+          "heading": "Appendix: Cross-Domainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 73,
+          "source_characters": 724,
+          "supplied_characters": 724
+        },
+        {
+          "heading": "Appendix: Memory Andtaskutilitycross-Domain",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 74,
+          "source_characters": 333,
+          "supplied_characters": 333
+        }
+      ],
+      "selected_characters": 69002,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "selected_sections": [
+        {
+          "characters": 33,
+          "heading": "Memorydojo: Benchmarkingpoisoning",
+          "page": 1
+        },
+        {
+          "characters": 206,
+          "heading": "Throughllm Agentmemory",
+          "page": 1
+        },
+        {
+          "characters": 1265,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2204,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1733,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 86,
+          "heading": "We Develop Memorydojo, An Extensible Benchmark That Quantifies The Effects Of Memory Poisoning",
+          "page": 2
+        },
+        {
+          "characters": 73,
+          "heading": "We Define New Metrics That Quantify How Poison Persists And Spreads Within Agent Memory, And",
+          "page": 2
+        },
+        {
+          "characters": 98,
+          "heading": "We Propose A Memory-Aware Poison Optimization Method That Increases The Effectiveness Of The",
+          "page": 2
+        },
+        {
+          "characters": 2555,
+          "heading": "Relatedwork",
+          "page": 2
+        },
+        {
+          "characters": 115,
+          "heading": "Relatedwork",
+          "page": 3
+        },
+        {
+          "characters": 2545,
+          "heading": "Problemformulation",
+          "page": 3
+        },
+        {
+          "characters": 151,
+          "heading": "Memorydojo",
+          "page": 3
+        },
+        {
+          "characters": 159,
+          "heading": "Construct 2 Execute 3 Measure",
+          "page": 3
+        },
+        {
+          "characters": 446,
+          "heading": "Br / Brt",
+          "page": 3
+        },
+        {
+          "characters": 2865,
+          "heading": "Constructingtrajectories",
+          "page": 4
+        },
+        {
+          "characters": 1057,
+          "heading": "Runningtrajectories",
+          "page": 4
+        },
+        {
+          "characters": 791,
+          "heading": "Tracingpoisonthrough Atrajectory",
+          "page": 4
+        },
+        {
+          "characters": 2574,
+          "heading": "Tracingpoisonthrough Atrajectory",
+          "page": 5
+        },
+        {
+          "characters": 1095,
+          "heading": "Measuringdownstreambehavior",
+          "page": 5
+        },
+        {
+          "characters": 603,
+          "heading": "Measuringdownstreambehavior",
+          "page": 6
+        },
+        {
+          "characters": 1168,
+          "heading": "Memory-Awarepoisonoptimization",
+          "page": 6
+        },
+        {
+          "characters": 318,
+          "heading": "Architecture",
+          "page": 6
+        },
+        {
+          "characters": 359,
+          "heading": "Evaluation",
+          "page": 6
+        },
+        {
+          "characters": 1050,
+          "heading": "Experimentsetup",
+          "page": 6
+        },
+        {
+          "characters": 1450,
+          "heading": "Experimentsetup",
+          "page": 7
+        },
+        {
+          "characters": 2911,
+          "heading": "Same-Domain",
+          "page": 7
+        },
+        {
+          "characters": 2511,
+          "heading": "Same-Domain",
+          "page": 8
+        },
+        {
+          "characters": 1079,
+          "heading": "Cross-Domain",
+          "page": 8
+        },
+        {
+          "characters": 1053,
+          "heading": "Cross-Domain",
+          "page": 9
+        },
+        {
+          "characters": 2657,
+          "heading": "History-Prefixedcross-Domain",
+          "page": 9
+        },
+        {
+          "characters": 548,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 754,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 159,
+          "heading": "Ethics Statement",
+          "page": 10
+        },
+        {
+          "characters": 143,
+          "heading": "Reproducibility Statement",
+          "page": 10
+        },
+        {
+          "characters": 401,
+          "heading": "Aiuse Statement",
+          "page": 10
+        },
+        {
+          "characters": 1928,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 3700,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3815,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 874,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 10,
+          "heading": "Appendix: Appendix",
+          "page": 14
+        },
+        {
+          "characters": 688,
+          "heading": "Appendix: Benchmarkcomposition",
+          "page": 14
+        },
+        {
+          "characters": 81,
+          "heading": "Collection / Domain Templates Trajectories Task Sessions Sessions/Run",
+          "page": 14
+        },
+        {
+          "characters": 24,
+          "heading": "Workspace 40 26 278 3\u201335",
+          "page": 14
+        },
+        {
+          "characters": 21,
+          "heading": "Travel 20 23 188 3\u201320",
+          "page": 14
+        },
+        {
+          "characters": 22,
+          "heading": "Banking 16 22 168 3\u201315",
+          "page": 14
+        },
+        {
+          "characters": 20,
+          "heading": "Slack 21 22 168 3\u201315",
+          "page": 14
+        },
+        {
+          "characters": 23,
+          "heading": "Subtotal 97 93 802 3\u201335",
+          "page": 14
+        },
+        {
+          "characters": 27,
+          "heading": "Cross-Domain 97 31 680 5\u201360",
+          "page": 14
+        },
+        {
+          "characters": 1047,
+          "heading": "History-Prefixed Cross-Domain 97 31 680 5\u201360",
+          "page": 14
+        },
+        {
+          "characters": 29,
+          "heading": "Same-Domain Workspace Example",
+          "page": 14
+        },
+        {
+          "characters": 20,
+          "heading": "Workspace: Create A Four-Hour Family-Reunion Calendar Event From",
+          "page": 14
+        },
+        {
+          "characters": 103,
+          "heading": "Workspace: Create A Hawaii Packing-List File From An Existing",
+          "page": 14
+        },
+        {
+          "characters": 20,
+          "heading": "Cross-Domain Example",
+          "page": 14
+        },
+        {
+          "characters": 8,
+          "heading": "Slack: Post Employees' Hobbies From Bob'S Inbox To The Company",
+          "page": 14
+        },
+        {
+          "characters": 262,
+          "heading": "Banking: Update An Address And Standing Orders, And Refund A",
+          "page": 14
+        },
+        {
+          "characters": 1683,
+          "heading": "Banking: Update An Address And Standing Orders, And Refund A",
+          "page": 15
+        },
+        {
+          "characters": 762,
+          "heading": "Appendix: Attackobjectives",
+          "page": 15
+        },
+        {
+          "characters": 247,
+          "heading": "Appendix: Memorytracinginterface",
+          "page": 15
+        },
+        {
+          "characters": 203,
+          "heading": "Appendix: Indirectretrieval",
+          "page": 15
+        },
+        {
+          "characters": 481,
+          "heading": "Appendix: Indirectretrieval",
+          "page": 16
+        },
+        {
+          "characters": 731,
+          "heading": "Appendix: Indirectretrieval",
+          "page": 17
+        },
+        {
+          "characters": 767,
+          "heading": "Appendix: Persistence Andpropagationmetrics",
+          "page": 17
+        },
+        {
+          "characters": 504,
+          "heading": "Appendix: Auxiliaryenvironments Andtrajectories",
+          "page": 17
+        },
+        {
+          "characters": 589,
+          "heading": "Appendix: Auxiliaryenvironments Andtrajectories",
+          "page": 18
+        },
+        {
+          "characters": 3465,
+          "heading": "Appendix: Initialization",
+          "page": 18
+        },
+        {
+          "characters": 1420,
+          "heading": "Appendix: Initialization",
+          "page": 19
+        },
+        {
+          "characters": 2475,
+          "heading": "Appendix: Experimentsetupdetails",
+          "page": 19
+        },
+        {
+          "characters": 937,
+          "heading": "Appendix: Experimentsetupdetails",
+          "page": 20
+        },
+        {
+          "characters": 469,
+          "heading": "Appendix: Same-Domainresults Bydomain",
+          "page": 20
+        },
+        {
+          "characters": 1112,
+          "heading": "Appendix: Same-Domainresults Acrossmodels",
+          "page": 20
+        },
+        {
+          "characters": 153,
+          "heading": "Appendix: Middle-Insertionsame-Domainresults",
+          "page": 20
+        },
+        {
+          "characters": 206,
+          "heading": "Appendix: Cross-Domainresults",
+          "page": 20
+        },
+        {
+          "characters": 1804,
+          "heading": "Appendix: Cross-Domainresults",
+          "page": 21
+        },
+        {
+          "characters": 724,
+          "heading": "Appendix: Cross-Domainresults",
+          "page": 22
+        },
+        {
+          "characters": 333,
+          "heading": "Appendix: Memory Andtaskutilitycross-Domain",
+          "page": 22
+        }
+      ],
+      "selected_text_sha256": "d64a26996804d3674b97c2b0afe33ff141c37fa510976ec557a3250ac5dbae78",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "471555d9567ad90919922a1b192bb9c67e4a2afde9e595563f9ccc6185b5b5e6",
+      "source_pages": 22,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0008"
+        ],
+        "excerpt": "an extensible benchmark for comparatively\nevaluating memory architectures under poisoning attacks over long-horizon, multi-session trajectories.\nCurrently, MemoryDojo supports 155 multi-session trajectories covering 4 application domains, and\nis enabled by 5 different agent memory system implementations. Additional memory systems,\nenvironments, and configurations can be easily added for evaluation. We also introduce new metrics\nto better quantify the effects of poisoning across its lifecycle, tracking information on payload\ninsertion, effects of persistence and propagation in memory, retrieval, and cumulative attack success\nmetrics. Finally, we propose a natural adaptive memory-aware poison optimization method that\nperforms iterative refinement of the payload prompt in an auxiliary environment.\nOur experiments reveal substantial variation in poisoning success across memory systems. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "62860bbc6af6d21f32904dd3fec9bb11c80e8eb62f4c9a86758eac56d741f34a",
+            "evidence_id": "E4f17c18f077045b6-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1383,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 488,
+                "text": "an extensible benchmark for comparatively\nevaluating memory architectures under poisoning attacks over long-horizon, multi-session trajectories.\nCurrently, MemoryDojo supports 155 multi-session trajectories covering 4 application domains, and\nis enabled by 5 different agent memory system implementations. Additional memory systems,\nenvironments, and configurations can be easily added for evaluation. We also introduce new metrics\nto better quantify the effects of poisoning across its lifecycle, tracking information on payload\ninsertion, effects of persistence and propagation in memory, retrieval, and cumulative attack success\nmetrics. Finally, we propose a natural adaptive memory-aware poison optimization method that\nperforms iterative refinement of the payload prompt in an auxiliary environment.\nOur experiments reveal substantial variation in poisoning success across memory systems. "
+              }
+            ],
+            "text": "an extensible benchmark for comparatively\nevaluating memory architectures under poisoning attacks over long-horizon, multi-session trajectories.\nCurrently, MemoryDojo supports 155 multi-session trajectories covering 4 application domains, and\nis enabled by 5 different agent memory system implementations. Additional memory systems,\nenvironments, and configurations can be easily added for evaluation. We also introduce new metrics\nto better quantify the effects of poisoning across its lifecycle, tracking information on payload\ninsertion, effects of persistence and propagation in memory, retrieval, and cumulative attack success\nmetrics. Finally, we propose a natural adaptive memory-aware poison optimization method that\nperforms iterative refinement of the payload prompt in an auxiliary environment.\nOur experiments reveal substantial variation in poisoning success across memory systems. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0022"
+        ],
+        "excerpt": "We construct multi-session trajectories using task templates from AgentDojo (Debenedetti et al.,\n2024) across four domains: Workspace, Travel, Banking, and Slack. Each domain provides a stateful\nenvironment and tools for interacting with it. All tasks specify an objective and utility check that\ndetermines whether the objective is achieved. We concatenate tasks into trajectories, treating each task\nexecution as a separate session while carrying environment state forward. To ensure the concatenated\ntasks remain executable, we check task pairs for state conflicts and validate each complete sequence.\nFor each domain, we also define an attacker objective \u03c8, accompanied by a textual description of\nthe behavior that the poison seeks to induce. Using these tasks and conversation histories from\nLongMemEval-S (Wu et al., 2025), we obtain a dataset with three different collections. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Constructingtrajectories",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0047a7bc1269b88f4fc07447694f8a4bceea4fd65cd01dd2d2daaf8c4218bf1e",
+            "evidence_id": "E4f17c18f077045b6-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Constructingtrajectories",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 884,
+                "page": 4,
+                "section": "Constructingtrajectories",
+                "section_index": 14,
+                "start": 0,
+                "text": "We construct multi-session trajectories using task templates from AgentDojo (Debenedetti et al.,\n2024) across four domains: Workspace, Travel, Banking, and Slack. Each domain provides a stateful\nenvironment and tools for interacting with it. All tasks specify an objective and utility check that\ndetermines whether the objective is achieved. We concatenate tasks into trajectories, treating each task\nexecution as a separate session while carrying environment state forward. To ensure the concatenated\ntasks remain executable, we check task pairs for state conflicts and validate each complete sequence.\nFor each domain, we also define an attacker objective \u03c8, accompanied by a textual description of\nthe behavior that the poison seeks to induce. Using these tasks and conversation histories from\nLongMemEval-S (Wu et al., 2025), we obtain a dataset with three different collections. "
+              }
+            ],
+            "text": "We construct multi-session trajectories using task templates from AgentDojo (Debenedetti et al.,\n2024) across four domains: Workspace, Travel, Banking, and Slack. Each domain provides a stateful\nenvironment and tools for interacting with it. All tasks specify an objective and utility check that\ndetermines whether the objective is achieved. We concatenate tasks into trajectories, treating each task\nexecution as a separate session while carrying environment state forward. To ensure the concatenated\ntasks remain executable, we check task pairs for state conflicts and validate each complete sequence.\nFor each domain, we also define an attacker objective \u03c8, accompanied by a textual description of\nthe behavior that the poison seeks to induce. Using these tasks and conversation histories from\nLongMemEval-S (Wu et al., 2025), we obtain a dataset with three different collections. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0028"
+        ],
+        "excerpt": "Throughout a trajectory, MemoryDojo keeps track of various statistics at different timesteps in the\nprocess to better understand how poison interacts with memory. Let D denote a collection of planned\nruns, with trajectory length Tj, insertion session t0,j, and payload pj for run j. The benchmark is\naccompanied by a visualization tool to manually inspect traces (see example in Appendix A.3).\nInsertion.After the insertion-session write, we inspect the memory system for content attributable to\npj using an LLM Judge to classify four categories. Anexactmatch preserves the complete payload\nword for word, atransformedmatch preserves its salient instruction or meaning after rewriting, and a\nfragmentedmatch retains only part of that meaning. If no attributable content is found, we assign\n4\nthe label ofnot observed. Let \u2113insj denote this judgment and C+ ={exact,transformed,fragmented} .\nWe define ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Tracingpoisonthrough Atrajectory",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3767d22b744fe1c8d6c4e61c0b882f2aa07722fb16586361426d7f9452c03b69",
+            "evidence_id": "E4f17c18f077045b6-B0028",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Tracingpoisonthrough Atrajectory",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 791,
+                "page": 4,
+                "section": "Tracingpoisonthrough Atrajectory",
+                "section_index": 16,
+                "start": 0,
+                "text": "Throughout a trajectory, MemoryDojo keeps track of various statistics at different timesteps in the\nprocess to better understand how poison interacts with memory. Let D denote a collection of planned\nruns, with trajectory length Tj, insertion session t0,j, and payload pj for run j. The benchmark is\naccompanied by a visualization tool to manually inspect traces (see example in Appendix A.3).\nInsertion.After the insertion-session write, we inspect the memory system for content attributable to\npj using an LLM Judge to classify four categories. Anexactmatch preserves the complete payload\nword for word, atransformedmatch preserves its salient instruction or meaning after rewriting, and a\nfragmentedmatch retains only part of that meaning. If no attributable content is found, we assign\n4"
+              },
+              {
+                "end": 108,
+                "page": 5,
+                "section": "Tracingpoisonthrough Atrajectory",
+                "section_index": 17,
+                "start": 0,
+                "text": "the label ofnot observed. Let \u2113insj denote this judgment and C+ ={exact,transformed,fragmented} .\nWe define "
+              }
+            ],
+            "text": "Throughout a trajectory, MemoryDojo keeps track of various statistics at different timesteps in the\nprocess to better understand how poison interacts with memory. Let D denote a collection of planned\nruns, with trajectory length Tj, insertion session t0,j, and payload pj for run j. The benchmark is\naccompanied by a visualization tool to manually inspect traces (see example in Appendix A.3).\nInsertion.After the insertion-session write, we inspect the memory system for content attributable to\npj using an LLM Judge to classify four categories. Anexactmatch preserves the complete payload\nword for word, atransformedmatch preserves its salient instruction or meaning after rewriting, and a\nfragmentedmatch retains only part of that meaning. If no attributable content is found, we assign\n4\nthe label ofnot observed. Let \u2113insj denote this judgment and C+ ={exact,transformed,fragmented} .\nWe define "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0032"
+        ],
+        "excerpt": "Retrieval and attribution characterize the poison's presence and exposure routes in later sessions. We\nadditionally measure attack success as a cumulative metric of poisoning across the trajectory. For\neach session t > t0, we evaluate the agent actions and final response against the attacker objective \u03c8.\nLet zt =\u03c8(\u03c4 t)\u2208 {0,1}denote the outcome. Excluding t0 separates later behavior from the agent's\nimmediate response to the poisoned observation.\nBehavioral reach.A run isreachedif the attack objective is achieved in at least one session after\ninsertion. Across a collection of runs,behavioral reach(BR) is the fraction of runs that are reached.\nTask-level behavioral reach(BRT) measures the fraction of post-insertion tasks on which the objective\nis observed, pooled over all post-insertion sessions:\nBR(D) = 1|D| Xj\u2208D I\n\uf8ee\n\uf8f0 X\nt>t0,j\nzj,t \u22651\n\uf8f9\n\uf8fb ,BRT(D) =\nP\nj\u2208D\nP\nt>t0,j zj,tP\nj\u2208D (Tj \u2212t 0,j) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Measuringdownstreambehavior",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "24a67a09cd4f3d6921b4199cd614cbfc70fd7d2ad2f1a1be2ee69dce65c8b5cc",
+            "evidence_id": "E4f17c18f077045b6-B0032",
+            "pages": [
+              5
+            ],
+            "section": "Measuringdownstreambehavior",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 5,
+                "section": "Measuringdownstreambehavior",
+                "section_index": 18,
+                "start": 0,
+                "text": "Retrieval and attribution characterize the poison's presence and exposure routes in later sessions. We\nadditionally measure attack success as a cumulative metric of poisoning across the trajectory. For\neach session t > t0, we evaluate the agent actions and final response against the attacker objective \u03c8.\nLet zt =\u03c8(\u03c4 t)\u2208 {0,1}denote the outcome. Excluding t0 separates later behavior from the agent's\nimmediate response to the poisoned observation.\nBehavioral reach.A run isreachedif the attack objective is achieved in at least one session after\ninsertion. Across a collection of runs,behavioral reach(BR) is the fraction of runs that are reached.\nTask-level behavioral reach(BRT) measures the fraction of post-insertion tasks on which the objective\nis observed, pooled over all post-insertion sessions:\nBR(D) = 1|D| Xj\u2208D I\n\uf8ee\n\uf8f0 X\nt>t0,j\nzj,t \u22651\n\uf8f9\n\uf8fb ,BRT(D) =\nP\nj\u2208D\nP\nt>t0,j zj,tP\nj\u2208D (Tj \u2212t 0,j) "
+              }
+            ],
+            "text": "Retrieval and attribution characterize the poison's presence and exposure routes in later sessions. We\nadditionally measure attack success as a cumulative metric of poisoning across the trajectory. For\neach session t > t0, we evaluate the agent actions and final response against the attacker objective \u03c8.\nLet zt =\u03c8(\u03c4 t)\u2208 {0,1}denote the outcome. Excluding t0 separates later behavior from the agent's\nimmediate response to the poisoned observation.\nBehavioral reach.A run isreachedif the attack objective is achieved in at least one session after\ninsertion. Across a collection of runs,behavioral reach(BR) is the fraction of runs that are reached.\nTask-level behavioral reach(BRT) measures the fraction of post-insertion tasks on which the objective\nis observed, pooled over all post-insertion sessions:\nBR(D) = 1|D| Xj\u2208D I\n\uf8ee\n\uf8f0 X\nt>t0,j\nzj,t \u22651\n\uf8f9\n\uf8fb ,BRT(D) =\nP\nj\u2208D\nP\nt>t0,j zj,tP\nj\u2208D (Tj \u2212t 0,j) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0034"
+        ],
+        "excerpt": "Memory systems differ in how they transform, store, and retrieve past interactions, directly affecting\nwhether a poisoned instruction survives a write, appears in later context, and induces the intended\nbehavior. To study the dynamics of each system under adversarial pressure, we propose a memory-\naware optimization process that iteratively refines a payload to increase behavioral reach (see Figure 4).\nThe LLM optimizer is first provided an attack objective, memory-system description, and domain\ncontext. Starting from seed payloads, each round proposes candidates and evaluates them on synthetic\ntrajectories in an auxiliary environment. Feedback from each iteration guides further revisions. After\na fixed budget, selection maximizes auxiliary BRT subject to a utility threshold. See Appendix A.6\nfor additional details of the optimization process.\nMemory-system\ndescription\nAttack\nobjective ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory-Awarepoisonoptimization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9aa4ec247c62a84b105abdb17ddce4a095447147a763f10ae209f5b8b0371860",
+            "evidence_id": "E4f17c18f077045b6-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Memory-Awarepoisonoptimization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "Memory-Awarepoisonoptimization",
+                "section_index": 20,
+                "start": 0,
+                "text": "Memory systems differ in how they transform, store, and retrieve past interactions, directly affecting\nwhether a poisoned instruction survives a write, appears in later context, and induces the intended\nbehavior. To study the dynamics of each system under adversarial pressure, we propose a memory-\naware optimization process that iteratively refines a payload to increase behavioral reach (see Figure 4).\nThe LLM optimizer is first provided an attack objective, memory-system description, and domain\ncontext. Starting from seed payloads, each round proposes candidates and evaluates them on synthetic\ntrajectories in an auxiliary environment. Feedback from each iteration guides further revisions. After\na fixed budget, selection maximizes auxiliary BRT subject to a utility threshold. See Appendix A.6\nfor additional details of the optimization process.\nMemory-system\ndescription\nAttack\nobjective "
+              }
+            ],
+            "text": "Memory systems differ in how they transform, store, and retrieve past interactions, directly affecting\nwhether a poisoned instruction survives a write, appears in later context, and induces the intended\nbehavior. To study the dynamics of each system under adversarial pressure, we propose a memory-\naware optimization process that iteratively refines a payload to increase behavioral reach (see Figure 4).\nThe LLM optimizer is first provided an attack objective, memory-system description, and domain\ncontext. Starting from seed payloads, each round proposes candidates and evaluates them on synthetic\ntrajectories in an auxiliary environment. Feedback from each iteration guides further revisions. After\na fixed budget, selection maximizes auxiliary BRT subject to a utility threshold. See Appendix A.6\nfor additional details of the optimization process.\nMemory-system\ndescription\nAttack\nobjective "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0038"
+        ],
+        "excerpt": "We evaluate tool-calling agents on five memory systems, selected to cover a wide range of memory\ntypes: A-MEM, Graphiti, Letta, Mem0, and Memora. Their native representations span linked\nnotes, entity\u2013relation graphs, hierarchical memory, extracted facts, and linked semantic and episodic\nmemory. We evaluate GPT-5.6-Luna (OpenAI, 2026) across all trajectory settings and optimize\npoisons for every memory system with Luna as the target and GPT-5.6-Sol as the optimizer. To assess\ntransfer across models, we additionally evaluate GPT-5.4-mini, DeepSeek-V4-Flash-0731 (DeepSeek-\nAI, 2026), and GLM-5.3-Flash (GLM-5-Team, 2026) in the same-domain setting using the Luna-\noptimized payloads. We vary the task-agent and generative memory-side LLM models together, and\nuse GPT-5.6-Luna for LLM judging. For each memory system, we use its native retrieval mechanisms.\nThus, these configurations compare ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "81ab4c475bb5ce48cdeda7e09e578f150f84a808f096bb6bd12e07dd5f6f95a8",
+            "evidence_id": "E4f17c18f077045b6-B0038",
+            "pages": [
+              6
+            ],
+            "section": "Experimentsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 6,
+                "section": "Experimentsetup",
+                "section_index": 23,
+                "start": 0,
+                "text": "We evaluate tool-calling agents on five memory systems, selected to cover a wide range of memory\ntypes: A-MEM, Graphiti, Letta, Mem0, and Memora. Their native representations span linked\nnotes, entity\u2013relation graphs, hierarchical memory, extracted facts, and linked semantic and episodic\nmemory. We evaluate GPT-5.6-Luna (OpenAI, 2026) across all trajectory settings and optimize\npoisons for every memory system with Luna as the target and GPT-5.6-Sol as the optimizer. To assess\ntransfer across models, we additionally evaluate GPT-5.4-mini, DeepSeek-V4-Flash-0731 (DeepSeek-\nAI, 2026), and GLM-5.3-Flash (GLM-5-Team, 2026) in the same-domain setting using the Luna-\noptimized payloads. We vary the task-agent and generative memory-side LLM models together, and\nuse GPT-5.6-Luna for LLM judging. For each memory system, we use its native retrieval mechanisms.\nThus, these configurations compare "
+              }
+            ],
+            "text": "We evaluate tool-calling agents on five memory systems, selected to cover a wide range of memory\ntypes: A-MEM, Graphiti, Letta, Mem0, and Memora. Their native representations span linked\nnotes, entity\u2013relation graphs, hierarchical memory, extracted facts, and linked semantic and episodic\nmemory. We evaluate GPT-5.6-Luna (OpenAI, 2026) across all trajectory settings and optimize\npoisons for every memory system with Luna as the target and GPT-5.6-Sol as the optimizer. To assess\ntransfer across models, we additionally evaluate GPT-5.4-mini, DeepSeek-V4-Flash-0731 (DeepSeek-\nAI, 2026), and GLM-5.3-Flash (GLM-5-Team, 2026) in the same-domain setting using the Luna-\noptimized payloads. We vary the task-agent and generative memory-side LLM models together, and\nuse GPT-5.6-Luna for LLM judging. For each memory system, we use its native retrieval mechanisms.\nThus, these configurations compare "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0039"
+        ],
+        "excerpt": "complete memory integrations, including their different context-\nselection policies and budgets. Additional setup details can be found in Appendix A.7.\n6\nTable 1: Same-domain results for unoptimized and optimized poison for GPT-5.6-Luna.\nMemory System ISR ASR RSR PE PR PP TU BRT BRT|R BR\nUnoptimized\nA-MEM 98.92 25.27 89.84 60.28 8.01 31.71 72.2521.0223.3945.70\nGraphiti 98.39 23.12 33.43 81.86 5.49 12.66 80.49 7.76 23.21 24.73\nLetta 98.92 24.19 64.88 77.28 1.74 20.98 69.46 15.30 23.59 16.67\nMem0 60.75 20.97 56.70 78.11 0.87 21.02 76.66 7.90 13.93 14.52\nMemora 97.85 23.12 86.18 62.36 6.55 31.10 65.72 20.38 23.65 38.71\nOptimized\nA-MEM 97.85 19.35 93.37 37.16 13.29 49.55 60.74 44.01 47.1370.97\nGraphiti 100.00 4.30 30.61 62.67 17.51 19.82 81.42 9.31 30.41 30.11\nLetta 95.70 25.81 72.21 46.48 0.59 52.93 53.6746.2664.06 50.54\nMem0 77.42 9.68 71.65 53.94 4.33 41.73 71.77 21.02 29.33 39.78\nMemora ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "99140556ec47d058414849585f1b15b7f73f81602ddb84effdaec6059bc3cec1",
+            "evidence_id": "E4f17c18f077045b6-B0039",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Experimentsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1050,
+                "page": 6,
+                "section": "Experimentsetup",
+                "section_index": 23,
+                "start": 897,
+                "text": "complete memory integrations, including their different context-\nselection policies and budgets. Additional setup details can be found in Appendix A.7.\n6"
+              },
+              {
+                "end": 746,
+                "page": 7,
+                "section": "Experimentsetup",
+                "section_index": 24,
+                "start": 0,
+                "text": "Table 1: Same-domain results for unoptimized and optimized poison for GPT-5.6-Luna.\nMemory System ISR ASR RSR PE PR PP TU BRT BRT|R BR\nUnoptimized\nA-MEM 98.92 25.27 89.84 60.28 8.01 31.71 72.2521.0223.3945.70\nGraphiti 98.39 23.12 33.43 81.86 5.49 12.66 80.49 7.76 23.21 24.73\nLetta 98.92 24.19 64.88 77.28 1.74 20.98 69.46 15.30 23.59 16.67\nMem0 60.75 20.97 56.70 78.11 0.87 21.02 76.66 7.90 13.93 14.52\nMemora 97.85 23.12 86.18 62.36 6.55 31.10 65.72 20.38 23.65 38.71\nOptimized\nA-MEM 97.85 19.35 93.37 37.16 13.29 49.55 60.74 44.01 47.1370.97\nGraphiti 100.00 4.30 30.61 62.67 17.51 19.82 81.42 9.31 30.41 30.11\nLetta 95.70 25.81 72.21 46.48 0.59 52.93 53.6746.2664.06 50.54\nMem0 77.42 9.68 71.65 53.94 4.33 41.73 71.77 21.02 29.33 39.78\nMemora "
+              }
+            ],
+            "text": "complete memory integrations, including their different context-\nselection policies and budgets. Additional setup details can be found in Appendix A.7.\n6\nTable 1: Same-domain results for unoptimized and optimized poison for GPT-5.6-Luna.\nMemory System ISR ASR RSR PE PR PP TU BRT BRT|R BR\nUnoptimized\nA-MEM 98.92 25.27 89.84 60.28 8.01 31.71 72.2521.0223.3945.70\nGraphiti 98.39 23.12 33.43 81.86 5.49 12.66 80.49 7.76 23.21 24.73\nLetta 98.92 24.19 64.88 77.28 1.74 20.98 69.46 15.30 23.59 16.67\nMem0 60.75 20.97 56.70 78.11 0.87 21.02 76.66 7.90 13.93 14.52\nMemora 97.85 23.12 86.18 62.36 6.55 31.10 65.72 20.38 23.65 38.71\nOptimized\nA-MEM 97.85 19.35 93.37 37.16 13.29 49.55 60.74 44.01 47.1370.97\nGraphiti 100.00 4.30 30.61 62.67 17.51 19.82 81.42 9.31 30.41 30.11\nLetta 95.70 25.81 72.21 46.48 0.59 52.93 53.6746.2664.06 50.54\nMem0 77.42 9.68 71.65 53.94 4.33 41.73 71.77 21.02 29.33 39.78\nMemora "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0044"
+        ],
+        "excerpt": "reach even with roughly equivalent RSR.\nReach varies across models and domains.Evaluation with three additional models reinforces\nthe findings that poisoning effects differ between memory systems, and we observe examples of\n7\n0 10 20 30 40\nReach gain (%)\nA-MEM\nGraphiti\nLetta\nMem0\nMemora\n+25.27\n+5.38\n+33.87\n+25.27\n+27.96\n+22.99\n+1.55\n+30.96\n+13.12\n+9.38\nTrajectory (BR) T ask (BRT)\n(a) Reach gains with Luna.\nGPT-5.6\nLuna\nGPT-5.4\nmini\nDeepSeek\nV4 Flash\nGLM-5.3\nFlash\nA-MEM\nGraphiti\nLetta\nMem0\nMemora\n44.01 23.98 28.91 33.85\n9.31 0.28 3.10 2.12\n46.26 4.94 35.26 15.09\n21.02 1.97 16.22 6.63\n29.76 48.66 38.79 31.73\nT ask reach (BRT, %)\n0\n25\n50 (b) Optimized reach across models.\nFigure 5:Optimization gains and reach across models.(a) Optimized minus unoptimized BR and\nBRT with GPT-5.6-Luna. (b) Heatmap showing optimized BRT across different models.\nsignificant BRT for memory systems across models ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Same-Domain",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0fb6dcd5027343e3b6e0b30f6ca892d1907eb01ba5e49b19e0d73d76cfb0be1d",
+            "evidence_id": "E4f17c18f077045b6-B0044",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Same-Domain",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2911,
+                "page": 7,
+                "section": "Same-Domain",
+                "section_index": 25,
+                "start": 2686,
+                "text": "reach even with roughly equivalent RSR.\nReach varies across models and domains.Evaluation with three additional models reinforces\nthe findings that poisoning effects differ between memory systems, and we observe examples of\n7"
+              },
+              {
+                "end": 674,
+                "page": 8,
+                "section": "Same-Domain",
+                "section_index": 26,
+                "start": 0,
+                "text": "0 10 20 30 40\nReach gain (%)\nA-MEM\nGraphiti\nLetta\nMem0\nMemora\n+25.27\n+5.38\n+33.87\n+25.27\n+27.96\n+22.99\n+1.55\n+30.96\n+13.12\n+9.38\nTrajectory (BR) T ask (BRT)\n(a) Reach gains with Luna.\nGPT-5.6\nLuna\nGPT-5.4\nmini\nDeepSeek\nV4 Flash\nGLM-5.3\nFlash\nA-MEM\nGraphiti\nLetta\nMem0\nMemora\n44.01 23.98 28.91 33.85\n9.31 0.28 3.10 2.12\n46.26 4.94 35.26 15.09\n21.02 1.97 16.22 6.63\n29.76 48.66 38.79 31.73\nT ask reach (BRT, %)\n0\n25\n50 (b) Optimized reach across models.\nFigure 5:Optimization gains and reach across models.(a) Optimized minus unoptimized BR and\nBRT with GPT-5.6-Luna. (b) Heatmap showing optimized BRT across different models.\nsignificant BRT for memory systems across models "
+              }
+            ],
+            "text": "reach even with roughly equivalent RSR.\nReach varies across models and domains.Evaluation with three additional models reinforces\nthe findings that poisoning effects differ between memory systems, and we observe examples of\n7\n0 10 20 30 40\nReach gain (%)\nA-MEM\nGraphiti\nLetta\nMem0\nMemora\n+25.27\n+5.38\n+33.87\n+25.27\n+27.96\n+22.99\n+1.55\n+30.96\n+13.12\n+9.38\nTrajectory (BR) T ask (BRT)\n(a) Reach gains with Luna.\nGPT-5.6\nLuna\nGPT-5.4\nmini\nDeepSeek\nV4 Flash\nGLM-5.3\nFlash\nA-MEM\nGraphiti\nLetta\nMem0\nMemora\n44.01 23.98 28.91 33.85\n9.31 0.28 3.10 2.12\n46.26 4.94 35.26 15.09\n21.02 1.97 16.22 6.63\n29.76 48.66 38.79 31.73\nT ask reach (BRT, %)\n0\n25\n50 (b) Optimized reach across models.\nFigure 5:Optimization gains and reach across models.(a) Optimized minus unoptimized BR and\nBRT with GPT-5.6-Luna. (b) Heatmap showing optimized BRT across different models.\nsignificant BRT for memory systems across models "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0051"
+        ],
+        "excerpt": "Table 2: History-prefixed cross-domain results.\nMemory ISR ASR RSR TU MU BRT BRT|R BR\nA-MEM 97.58 8.06 37.98 79.20 76.86 4.66 12.27 31.45\nGraphiti 100.00 3.23 5.32 82.65 70.16 1.54 28.99 12.90\nLetta 95.97 10.48 7.94 70.47 65.22 0.00 0.00 0.00\nMem0 47.58 12.90 19.38 77.75 64.41 2.58 13.32 21.77\nMemora 96.77 20.16 44.18 77.65 75.005.3212.0345.16\n60 70 80 90\nWithout attack (%)\n60\n70\n80\n90With attack (%)\nA-MEM\nGraphiti\nLetta\nMem0\nMemora Figure 7: Memory utility.\nWe next evaluate poisoning after memory has accumulated benign conversation history. Each\ntrajectory starts from a checkpoint populated with a LongMemEval history of around 50 sessions.\nPoisoning remains effective in populated memory.Table 2 shows lower RSR and BRT for every\nsystem than in the cross-domain experiment without a history prefix. Nevertheless, poison reaches\nlater tasks in four of the five systems. Memora had the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "History-Prefixedcross-Domain",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4d65041bac2199ea1950569f84a5a7d308353c059f7ac43962003c7d681e59ae",
+            "evidence_id": "E4f17c18f077045b6-B0051",
+            "pages": [
+              9
+            ],
+            "section": "History-Prefixedcross-Domain",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 9,
+                "section": "History-Prefixedcross-Domain",
+                "section_index": 29,
+                "start": 0,
+                "text": "Table 2: History-prefixed cross-domain results.\nMemory ISR ASR RSR TU MU BRT BRT|R BR\nA-MEM 97.58 8.06 37.98 79.20 76.86 4.66 12.27 31.45\nGraphiti 100.00 3.23 5.32 82.65 70.16 1.54 28.99 12.90\nLetta 95.97 10.48 7.94 70.47 65.22 0.00 0.00 0.00\nMem0 47.58 12.90 19.38 77.75 64.41 2.58 13.32 21.77\nMemora 96.77 20.16 44.18 77.65 75.005.3212.0345.16\n60 70 80 90\nWithout attack (%)\n60\n70\n80\n90With attack (%)\nA-MEM\nGraphiti\nLetta\nMem0\nMemora Figure 7: Memory utility.\nWe next evaluate poisoning after memory has accumulated benign conversation history. Each\ntrajectory starts from a checkpoint populated with a LongMemEval history of around 50 sessions.\nPoisoning remains effective in populated memory.Table 2 shows lower RSR and BRT for every\nsystem than in the cross-domain experiment without a history prefix. Nevertheless, poison reaches\nlater tasks in four of the five systems. Memora had the "
+              }
+            ],
+            "text": "Table 2: History-prefixed cross-domain results.\nMemory ISR ASR RSR TU MU BRT BRT|R BR\nA-MEM 97.58 8.06 37.98 79.20 76.86 4.66 12.27 31.45\nGraphiti 100.00 3.23 5.32 82.65 70.16 1.54 28.99 12.90\nLetta 95.97 10.48 7.94 70.47 65.22 0.00 0.00 0.00\nMem0 47.58 12.90 19.38 77.75 64.41 2.58 13.32 21.77\nMemora 96.77 20.16 44.18 77.65 75.005.3212.0345.16\n60 70 80 90\nWithout attack (%)\n60\n70\n80\n90With attack (%)\nA-MEM\nGraphiti\nLetta\nMem0\nMemora Figure 7: Memory utility.\nWe next evaluate poisoning after memory has accumulated benign conversation history. Each\ntrajectory starts from a checkpoint populated with a LongMemEval history of around 50 sessions.\nPoisoning remains effective in populated memory.Table 2 shows lower RSR and BRT for every\nsystem than in the cross-domain experiment without a history prefix. Nevertheless, poison reaches\nlater tasks in four of the five systems. Memora had the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0095"
+        ],
+        "excerpt": "For each application domain, we construct a standalone synthetic environment with tools and appli-\ncation state supporting representative tasks that might be executed. The domains cover workspace,\ntravel, banking, and communication tasks. Within each domain, task templates specify user requests\ninvolving information retrieval, state-changing actions, or combinations of tool operations. Each task\nincludes reference tool actions and deterministic checks of legitimate task completion, allowing us to\n17\nmeasure task utility alongside the attack objective. As with MemoryDojo, we concatenate tasks into\ntrajectories of different lengths and perform validity checks.\nThe auxiliary setting uses separate task templates, tool implementations, and application state from\nMemoryDojo. We ensure tools used in this environment have different names from those used in\nMemoryDojo, and these names vary across ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17,
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Auxiliaryenvironments Andtrajectories",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a1c19e00a0a96f134270eab9e4f4ec984e6bb7691b40db8a66925c8ea7679695",
+            "evidence_id": "E4f17c18f077045b6-B0095",
+            "pages": [
+              17,
+              18
+            ],
+            "section": "Appendix: Auxiliaryenvironments Andtrajectories",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 504,
+                "page": 17,
+                "section": "Appendix: Auxiliaryenvironments Andtrajectories",
+                "section_index": 62,
+                "start": 0,
+                "text": "For each application domain, we construct a standalone synthetic environment with tools and appli-\ncation state supporting representative tasks that might be executed. The domains cover workspace,\ntravel, banking, and communication tasks. Within each domain, task templates specify user requests\ninvolving information retrieval, state-changing actions, or combinations of tool operations. Each task\nincludes reference tool actions and deterministic checks of legitimate task completion, allowing us to\n17"
+              },
+              {
+                "end": 396,
+                "page": 18,
+                "section": "Appendix: Auxiliaryenvironments Andtrajectories",
+                "section_index": 63,
+                "start": 0,
+                "text": "measure task utility alongside the attack objective. As with MemoryDojo, we concatenate tasks into\ntrajectories of different lengths and perform validity checks.\nThe auxiliary setting uses separate task templates, tool implementations, and application state from\nMemoryDojo. We ensure tools used in this environment have different names from those used in\nMemoryDojo, and these names vary across "
+              }
+            ],
+            "text": "For each application domain, we construct a standalone synthetic environment with tools and appli-\ncation state supporting representative tasks that might be executed. The domains cover workspace,\ntravel, banking, and communication tasks. Within each domain, task templates specify user requests\ninvolving information retrieval, state-changing actions, or combinations of tool operations. Each task\nincludes reference tool actions and deterministic checks of legitimate task completion, allowing us to\n17\nmeasure task utility alongside the attack objective. As with MemoryDojo, we concatenate tasks into\ntrajectories of different lengths and perform validity checks.\nThe auxiliary setting uses separate task templates, tool implementations, and application state from\nMemoryDojo. We ensure tools used in this environment have different names from those used in\nMemoryDojo, and these names vary across "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0098"
+        ],
+        "excerpt": "payloads and an additionalmemory-property-onlyseed\ncandidate generated by the optimizer from the objective, memory-system description, and domain\nontology. We evaluate the initial candidates on the auxiliary trajectories before beginning feedback-\nguided revision.\nA.6.3 FEEDBACK, REVISION,ANDSELECTION\nStarting from the evaluated initial candidates, we repeat a cycle of proposing revised poison payloads,\ntesting them on the auxiliary trajectories, and providing feedback to the optimizer.\nCandidate proposal.At each round, the optimizer uses the fixed inputs from Section A.6.2,\npreviously evaluated payloads, and their feedback to propose revised poison prompts. Each proposal\nexplains the changes, the suspected bottleneck they address, and the expected improvement. In\naddition, the optimizer can see the best valid candidate evaluated so far and the most recently\nevaluated valid revision. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Initialization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1625035bf9bed9a4249be7c1b0c9a5c262bf50c547f0d0a4208f417ffcd91d6b",
+            "evidence_id": "E4f17c18f077045b6-B0098",
+            "pages": [
+              18
+            ],
+            "section": "Appendix: Initialization",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 18,
+                "section": "Appendix: Initialization",
+                "section_index": 64,
+                "start": 894,
+                "text": "payloads and an additionalmemory-property-onlyseed\ncandidate generated by the optimizer from the objective, memory-system description, and domain\nontology. We evaluate the initial candidates on the auxiliary trajectories before beginning feedback-\nguided revision.\nA.6.3 FEEDBACK, REVISION,ANDSELECTION\nStarting from the evaluated initial candidates, we repeat a cycle of proposing revised poison payloads,\ntesting them on the auxiliary trajectories, and providing feedback to the optimizer.\nCandidate proposal.At each round, the optimizer uses the fixed inputs from Section A.6.2,\npreviously evaluated payloads, and their feedback to propose revised poison prompts. Each proposal\nexplains the changes, the suspected bottleneck they address, and the expected improvement. In\naddition, the optimizer can see the best valid candidate evaluated so far and the most recently\nevaluated valid revision. "
+              }
+            ],
+            "text": "payloads and an additionalmemory-property-onlyseed\ncandidate generated by the optimizer from the objective, memory-system description, and domain\nontology. We evaluate the initial candidates on the auxiliary trajectories before beginning feedback-\nguided revision.\nA.6.3 FEEDBACK, REVISION,ANDSELECTION\nStarting from the evaluated initial candidates, we repeat a cycle of proposing revised poison payloads,\ntesting them on the auxiliary trajectories, and providing feedback to the optimizer.\nCandidate proposal.At each round, the optimizer uses the fixed inputs from Section A.6.2,\npreviously evaluated payloads, and their feedback to propose revised poison prompts. Each proposal\nexplains the changes, the suspected bottleneck they address, and the expected improvement. In\naddition, the optimizer can see the best valid candidate evaluated so far and the most recently\nevaluated valid revision. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0108"
+        ],
+        "excerpt": "We expand the model comparison in Section 6.2 with full metrics in Table 6. All four models\nuse the same selected optimized payloads for each memory system and domain, with insertion in\nthe first session of the same-domain trajectories. Task agents and generative memory components\nchange together, while judges all use GPT-5.6-Luna with medium reasoning. For the task agents\nand memory LLMs, GPT-5.4-mini uses default none reasoning, GPT-5.6-Luna uses default medium\nreasoning, DeepSeek-V4-Flash-0731 uses default high reasoning, and GLM-5.3-Flash uses default\nhigh reasoning.\nFigure 13 separates how often poison is retrieved from how often later behavior satisfies the attack\nobjective. High retrieval can coexist with much lower reach: Letta with GLM has 100% RSR and\n15.09% BRT, compared with 72.21% RSR and 46.26% BRT with Luna. With mini, Graphiti retrieves\npoison on 38.08% of planned later ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Same-Domainresults Acrossmodels",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7f36adc8b8dac4cb6cd937b34e7b597d2778ba1ebc23aadc8ae70f8459479352",
+            "evidence_id": "E4f17c18f077045b6-B0108",
+            "pages": [
+              20
+            ],
+            "section": "Appendix: Same-Domainresults Acrossmodels",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 20,
+                "section": "Appendix: Same-Domainresults Acrossmodels",
+                "section_index": 69,
+                "start": 0,
+                "text": "We expand the model comparison in Section 6.2 with full metrics in Table 6. All four models\nuse the same selected optimized payloads for each memory system and domain, with insertion in\nthe first session of the same-domain trajectories. Task agents and generative memory components\nchange together, while judges all use GPT-5.6-Luna with medium reasoning. For the task agents\nand memory LLMs, GPT-5.4-mini uses default none reasoning, GPT-5.6-Luna uses default medium\nreasoning, DeepSeek-V4-Flash-0731 uses default high reasoning, and GLM-5.3-Flash uses default\nhigh reasoning.\nFigure 13 separates how often poison is retrieved from how often later behavior satisfies the attack\nobjective. High retrieval can coexist with much lower reach: Letta with GLM has 100% RSR and\n15.09% BRT, compared with 72.21% RSR and 46.26% BRT with Luna. With mini, Graphiti retrieves\npoison on 38.08% of planned later "
+              }
+            ],
+            "text": "We expand the model comparison in Section 6.2 with full metrics in Table 6. All four models\nuse the same selected optimized payloads for each memory system and domain, with insertion in\nthe first session of the same-domain trajectories. Task agents and generative memory components\nchange together, while judges all use GPT-5.6-Luna with medium reasoning. For the task agents\nand memory LLMs, GPT-5.4-mini uses default none reasoning, GPT-5.6-Luna uses default medium\nreasoning, DeepSeek-V4-Flash-0731 uses default high reasoning, and GLM-5.3-Flash uses default\nhigh reasoning.\nFigure 13 separates how often poison is retrieved from how often later behavior satisfies the attack\nobjective. High retrieval can coexist with much lower reach: Letta with GLM has 100% RSR and\n15.09% BRT, compared with 72.21% RSR and 46.26% BRT with Luna. With mini, Graphiti retrieves\npoison on 38.08% of planned later "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.09721",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2611.09721",
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluation occurs on unseen MemoryDojo benchmark trajectories across four different models, with task utility and behavioral reach measured outside the auxiliary optimization environment.",
+          "final_evaluation_signal": "Headline outcomes are measured on held-out MemoryDojo trajectories across four application domains and history-prefixed sequences, using deterministic objective checks and session-level behavioral reach metrics.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Payloads are iteratively refined by an LLM optimizer using aggregate behavioral reach, memory lifecycle traces, and failure examples on synthetic trajectories in an auxiliary environment with disjoint tool names and task templates.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0008",
+          "E4f17c18f077045b6-B0022",
+          "E4f17c18f077045b6-B0028",
+          "E4f17c18f077045b6-B0032",
+          "E4f17c18f077045b6-B0034",
+          "E4f17c18f077045b6-B0038",
+          "E4f17c18f077045b6-B0039",
+          "E4f17c18f077045b6-B0044",
+          "E4f17c18f077045b6-B0051",
+          "E4f17c18f077045b6-B0095",
+          "E4f17c18f077045b6-B0098",
+          "E4f17c18f077045b6-B0108"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "471555d9567ad90919922a1b192bb9c67e4a2afde9e595563f9ccc6185b5b5e6"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.09721",
+        "claim_evidence_alignment": "Reported empirical findings directly align with the collected metrics, clearly demonstrating that memory architecture critically shapes poisoning persistence and downstream reach, and highlighting that auxiliary optimization generalizes across target domains and diverse model architectures.",
+        "context_id": "4f17c18f077045b640ddebbb8ac05dcbb28f8375aa55267cc3ae45538472093a",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation systematically assesses five distinct memory systems (A-MEM, Graphiti, Letta, Mem0, Memora) across same-domain, cross-domain, and history-prefixed high-memory pressure settings, further cross-evaluating against four backbone language models (GPT-5.6-Luna, GPT-5.4-mini, DeepSeek-V4-Flash, GLM-5.3-Flash) and measuring both attack success metrics and utility impacts.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluation is carried out on unseen MemoryDojo benchmark trajectories across four different models (GPT-5.6-Luna, GPT-5.4-mini, DeepSeek-V4-Flash, GLM-5.3-Flash), measuring task utility and behavioral reach outside the auxiliary optimization environment.",
+          "final_evaluation_signal": "Benchmark headline outcomes are measured on held-out MemoryDojo trajectories across four application domains and history-prefixed sequences, evaluated via deterministic objective checks and session-level behavioral reach (BR/BRT).",
+          "independent_corroboration": "present",
+          "optimization_signal": "Payloads are iteratively refined by an optimizer model (GPT-5.6-Sol) using aggregate behavioral reach (BRT), memory lifecycle traces, and failure examples on synthetic trajectories inside an auxiliary environment with disjoint tool names and tasks.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E4f17c18f077045b6-B0008",
+          "E4f17c18f077045b6-B0022",
+          "E4f17c18f077045b6-B0028",
+          "E4f17c18f077045b6-B0032",
+          "E4f17c18f077045b6-B0034",
+          "E4f17c18f077045b6-B0038",
+          "E4f17c18f077045b6-B0039",
+          "E4f17c18f077045b6-B0044",
+          "E4f17c18f077045b6-B0051",
+          "E4f17c18f077045b6-B0095",
+          "E4f17c18f077045b6-B0098",
+          "E4f17c18f077045b6-B0108"
+        ],
+        "limitations": "The work explicitly documents key boundaries, including restricting tasks to sandboxed environments, single-point poison insertion, evaluation on five specific open-source memory configurations, and leaving multi-injection attacks and defensive countermeasure designs for future research.",
+        "method_assessment": "The methodology is thoroughly detailed, formalizing trajectory execution over retrieve-interact-write cycles, tracking memory insertion/retrieval/persistence/propagation, and optimizing payloads using an LLM in an auxiliary environment with disjoint tools and tasks to evaluate cross-environment transfer.",
+        "quality_rationale": "The study provides clear experimental controls, detailed lifecycle metrics, rigorous ablation across domains and models, and an auxiliary-to-evaluation transfer setup that prevents circular evaluation.",
+        "scoped_contribution": "The paper introduces MemoryDojo, an extensible empirical benchmark and framework of 155 multi-session trajectories across four application domains designed to trace the lifecycle, persistence, propagation, and behavioral reach of indirect prompt poisoning across five representative LLM agent memory architectures.",
+        "source_content_hash": "471555d9567ad90919922a1b192bb9c67e4a2afde9e595563f9ccc6185b5b5e6"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study provides clear experimental controls, detailed lifecycle metrics, rigorous ablation across domains and models, and an auxiliary-to-evaluation transfer setup that prevents circular evaluation.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "471555d9567ad90919922a1b192bb9c67e4a2afde9e595563f9ccc6185b5b5e6",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The work explicitly documents key boundaries, including restricting tasks to sandboxed environments, single-point poison insertion, evaluation on five specific open-source memory configurations, and leaving multi-injection attacks and defensive countermeasure designs for future research."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -165,7 +2116,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

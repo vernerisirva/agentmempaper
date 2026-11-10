@@ -64,16 +64,310 @@
             <p>There are a huge number of features which are said to improve Convolutional Neural Network (CNN) accuracy. Practical testing of combinations of such features on large datasets, and theoretical justification of the result, is required. Some features operate on certain models exclusively and for certain problems exclu...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous empirical study that systematically unifies and benchmarks practical object detection optimizations. The methodology is clearly defined, the ablations are comprehensive, and performance claims are backed by standardized MS COCO metrics and multi-platform latency tests.</p>
+      <p>The work focuses on standard anchor-based 2D detection on GPUs, acknowledging that models optimal for classification do not inherently transfer optimality to detection [E055c2b905f487af7-B0048, E055c2b905f487af7-B0049]. Discussion of memory-constrained training settings is addressed via CmBN and mini-batch ablations [E055c2b905f487af7-B0050].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-10T12:06:08.999758+00:00.</p>
+        <p>Coverage: 69103 of 69103 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>There are a huge number of features which are said to
+improve Convolutional Neural Network (CNN) accuracy.
+Practical testing of combinations of such features on large
+datasets, and theoretical justification of the result, is re-
+quired. Some features operate on certain models exclusively
+and for certain problems exclusively, or only for small-scale
+datasets; while some features, such as batch-normalization
+and residual-connections, are applicable to the majority of
+models, tasks, and datasets. We assume that such universal
+features include Weighted-Residual-Connections (WRC),
+Cross-Stage-Partial-connections (CSP), Cross mini-Batch
+Normalization (CmBN), Self-adversarial-training (SAT)
+and Mish-activation. We use new features: WRC, CSP ,
+CmBN, SAT, Mish activation, Mosaic data augmentation,
+CmBN, DropBlock regularization, and CIoU loss, and com-
+bine some of them to achieve </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>state-of-the-art results: 43.5%
+AP (65.7% AP 50) for the MS COCO dataset at a real-
+time speed of ∼65 FPS on Tesla V100. Source code is at
+https://github.com/AlexeyAB/darknet.</blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>model. It makes everyone can use a 1080 Ti or 2080 Ti
+GPU to train a super fast and accurate object detector.</blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>more effecient and suitable for single GPU training,
+including CBN [89], PAN [49], SAM [85], etc.
+1
+arXiv:2004.10934v1  [cs.CV]  23 Apr 2020
+Figure 2: Object detector.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>together with
+our numerous experiments, show that CSPDarknet53 neu-
+ral network is the optimal model of the two as the backbone
+for a detector.
+The influence of the receptive field with different sizes is
+summarized as follows:
+• Up to the object size - allows viewing the entire object
+• Up to network size - allows viewing the context around
+the object
+• Exceeding the network size - increases the number of
+connections between the image point and the final ac-
+tivation
+We add the SPP block over the CSPDarknet53, since it
+significantly increases the receptive field, separates out the
+most significant context features and causes almost no re-
+duction of the network operation speed. We use PANet as
+the method of parameter aggregation from different back-
+bone levels for different detector levels, instead of the FPN
+used in YOLOv3.
+Finally, we choose CSPDarknet53 backbone, SPP addi-
+tional </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>module, PANet path-aggregation neck, and YOLOv3
+(anchor based) head as the architecture of YOLOv4.
+In the future we plan to expand significantly the content
+of Bag of Freebies (BoF) for the detector, which theoreti-
+cally can address some problems and increase the detector
+accuracy, and sequentially check the influence of each fea-
+ture in an experimental fashion.
+We do not use Cross-GPU Batch Normalization (CGBN
+or SyncBN) or expensive specialized devices. This al-
+lows anyone to reproduce our state-of-the-art outcomes on
+a conventional graphic processor e.g. GTX 1080Ti or RTX
+2080Ti.
+5</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In order to make the designed detector more suitable for
+training on single GPU, we made additional design and im-
+provement as follows:
+• We introduce a new method of data augmentation Mo-
+saic, and Self-Adversarial Training (SAT)
+• We select optimal hyper-parameters while applying
+genetic algorithms
+• We modify some exsiting methods to make our design
+suitble for efficient training and detection - modified
+SAM, modified PAN, and Cross mini-Batch Normal-
+ization (CmBN)
+Mosaic represents a new data augmentation method that
+mixes 4 training images. Thus 4 different contexts are
+Figure 3: Mosaic represents a new method of data augmen-
+tation.
+mixed, while CutMix mixes only 2 input images. This al-
+lows detection of objects outside their normal context. In
+addition, batch normalization calculates activation statistics
+from 4 different images on each layer. This significantly
+reduces the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>need for a large mini-batch size.
+Self-Adversarial Training (SAT) also represents a new
+data augmentation technique that operates in 2 forward
+backward stages. In the 1st stage the neural network alters
+the original image instead of the network weights. In this
+way the neural network executes an adversarial attack on it-
+self, altering the original image to create the deception that
+there is no desired object on the image. In the 2nd stage, the
+neural network is trained to detect an object on this modified
+image in the normal way.
+Figure 4: Cross mini-Batch Normalization.
+CmBN represents a CBN modified version, as shown
+in Figure 4, defined as Cross mini-Batch Normalization
+(CmBN). This collects statistics only between mini-batches
+within a single batch.
+We modify SAM from spatial-wise attention to point-
+wise attention, and replace shortcut connection of PAN to
+concatenation, as shown </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>in Figure 5 and Figure 6, respec-
+tively.
+6
+Figure 5: Modified SAM.
+Figure 6: Modified PAN.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this section, we shall elaborate the details of YOLOv4.
+YOLOv4 consists of:
+• Backbone: CSPDarknet53 [81]
+• Neck: SPP [25], PAN [49]
+• Head: YOLOv3 [63]
+YOLO v4 uses:
+• Bag of Freebies (BoF) for backbone: CutMix and
+Mosaic data augmentation, DropBlock regularization,
+Class label smoothing
+• Bag of Specials (BoS) for backbone: Mish activa-
+tion, Cross-stage partial connections (CSP), Multi-
+input weighted residual connections (MiWRC)
+• Bag of Freebies (BoF) for detector: CIoU-loss,
+CmBN, DropBlock regularization, Mosaic data aug-
+mentation, Self-Adversarial Training, Eliminate grid
+sensitivity, Using multiple anchors for a single ground
+truth, Cosine annealing scheduler [52], Optimal hyper-
+parameters, Random training shapes
+• Bag of Specials (BoS) for detector: Mish activation,
+SPP-block, SAM-block, PAN path-aggregation block,
+DIoU-NMS</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In ImageNet image classification experiments, the de-
+fault hyper-parameters are as follows: the training steps is
+8,000,000; the batch size and the mini-batch size are 128
+and 32, respectively; the polynomial decay learning rate
+scheduling strategy is adopted with initial learning rate 0.1;
+the warm-up steps is 1000; the momentum and weight de-
+cay are respectively set as 0.9 and 0.005. All of our BoS
+experiments use the same hyper-parameter as the default
+setting, and in the BoF experiments, we add an additional
+50% training steps. In the BoF experiments, we verify
+MixUp, CutMix, Mosaic, Bluring data augmentation, and
+label smoothing regularization methods. In the BoS experi-
+ments, we compared the effects of LReLU, Swish, and Mish
+activation function. All experiments are trained with a 1080
+Ti or 2080 Ti GPU.
+In MS COCO object detection experiments, the de-
+fault hyper-parameters are </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>as follows: the training steps is
+500,500; the step decay learning rate scheduling strategy is
+adopted with initial learning rate 0.01 and multiply with a
+factor 0.1 at the 400,000 steps and the 450,000 steps, re-
+spectively; The momentum and weight decay are respec-
+tively set as 0.9 and 0.0005. All architectures use a sin-
+gle GPU to execute multi-scale training in the batch size
+of 64 while mini-batch size is 8 or 4 depend on the ar-
+chitectures and GPU memory limitation. Except for us-
+ing genetic algorithm for hyper-parameter search experi-
+ments, all other experiments use default setting. Genetic
+algorithm used YOLOv3-SPP to train with GIoU loss and
+search 300 epochs for min-val 5k sets. We adopt searched
+learning rate 0.00261, momentum 0.949, IoU threshold for
+assigning ground truth 0.213, and loss normalizer 0.07 for
+genetic algorithm experiments. We have verified a large
+number </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>training
+First, we study the influence of different features on
+classifier training; specifically, the influence of Class la-
+bel smoothing, the influence of different data augmentation
+techniques, bilateral blurring, MixUp, CutMix and Mosaic,
+as shown in Fugure 7, and the influence of different activa-
+tions, such as Leaky-ReLU (by default), Swish, and Mish.
+Figure 7: Various method of data augmentation.
+In our experiments, as illustrated in Table 2, the clas-
+sifier&#x27;s accuracy is improved by introducing the features
+such as: CutMix and Mosaic data augmentation, Class la-
+bel smoothing, and Mish activation. As a result, our BoF-
+backbone (Bag of Freebies) for classifier training includes
+the following: CutMix and Mosaic data augmentation and
+Class label smoothing. In addition we use Mish activation
+as a complementary option, as shown in Table 2 and Table
+3.
+Table 2: Influence of BoF </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(BoS-detector) on the detector training accu-
+racy, including PAN, RFB, SAM, Gaussian YOLO (G), and
+ASFF, as shown in Table 5. In our experiments, the detector
+gets best performance when using SPP, PAN, and SAM.
+8
+Table 4: Ablation Studies of Bag-of-Freebies. (CSPResNeXt50-PANet-SPP, 512x512).
+S M IT GA LS CBN CA DM OA loss AP AP 50 AP75
+MSE 38.0% 60.0% 40.8%
+✓ MSE 37.7% 59.9% 40.5%
+✓ MSE 39.1% 61.8% 42.0%
+✓ MSE 36.9% 59.7% 39.4%
+✓ MSE 38.9% 61.7% 41.9%
+✓ MSE 33.0% 55.4% 35.4%
+✓ MSE 38.4% 60.7% 41.3%
+✓ MSE 38.7% 60.7% 41.9%
+✓ MSE 35.3% 57.2% 38.0%
+✓ GIoU 39.4% 59.4% 42.5%
+✓ DIoU 39.1% 58.8% 42.1%
+✓ CIoU 39.6% 59.2% 42.6%
+✓ ✓ ✓ ✓ CIoU 41.5% 64.0% 44.8%
+✓ ✓ ✓ CIoU 36.1% 56.5% 38.4%
+✓ ✓ ✓ ✓ ✓ MSE 40.3% 64.0% 43.1%
+✓ ✓ ✓ ✓ ✓ GIoU 42.4% 64.4% 45.9%
+✓ ✓ ✓ ✓ ✓ CIoU 42.4% 64.4% 45.9%
+Table 5: Ablation Studies of Bag-of-Specials. (Size 512x512).
+Model AP AP 50 AP75
+CSPResNeXt50-PANet-SPP 42.4% </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>weightings. The net
+result is that backbone CSPDarknet53 is more suitable for
+the detector than for CSPResNeXt50.
+We observe that the CSPDarknet53 model demonstrates
+a greater ability to increase the detector accuracy owing to
+various improvements.
+Table 6: Using different classifier pre-trained weightings for de-
+tector training (all other training parameters are similar in all mod-
+els) .
+Model (with optimal setting) Size AP AP 50 AP75
+CSPResNeXt50-PANet-SPP 512x512 42.4 64.4 45.9
+CSPResNeXt50-PANet-SPP
+(BoF-backbone) 512x512 42.3 64.3 45.7
+CSPResNeXt50-PANet-SPP
+(BoF-backbone + Mish) 512x512 42.3 64.2 45.8
+CSPDarknet53-PANet-SPP
+(BoF-backbone) 512x512 42.4 64.5 46.0
+CSPDarknet53-PANet-SPP
+(BoF-backbone + Mish) 512x512 43.0 64.9 46.5</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tor training
+Finally, we analyze the results obtained with models
+trained with different mini-batch sizes, and the results are
+shown in Table 7. From the results shown in Table 7, we
+found that after adding BoF and BoS training strategies, the
+mini-batch size has almost no effect on the detector&#x27;s per-
+formance. This result shows that after the introduction of
+BoF and BoS, it is no longer necessary to use expensive
+GPUs for training. In other words, anyone can use only a
+conventional GPU to train an excellent detector.
+Table 7: Using different mini-batch size for detector training.
+Model (without OA) Size AP AP 50 AP75
+CSPResNeXt50-PANet-SPP
+(without BoF/BoS, mini-batch 4) 608 37.1 59.2 39.9
+CSPResNeXt50-PANet-SPP
+(without BoF/BoS, mini-batch 8) 608 38.4 60.6 41.6
+CSPDarknet53-PANet-SPP
+(with BoF/BoS, mini-batch 4) 512 41.6 64.1 45.0
+CSPDarknet53-PANet-SPP
+(with BoF/BoS, mini-batch 8) </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Comparison of the results obtained with other state-
+of-the-art object detectors are shown in Figure 8. Our
+YOLOv4 are located on the Pareto optimality curve and are
+superior to the fastest and most accurate detectors in terms
+of both speed and accuracy.
+Since different methods use GPUs of different architec-
+tures for inference time verification, we operate YOLOv4
+on commonly adopted GPUs of Maxwell, Pascal, and V olta
+architectures, and compare them with other state-of-the-art
+methods. Table 8 lists the frame rate comparison results of
+using Maxwell GPU, and it can be GTX Titan X (Maxwell)
+or Tesla M40 GPU. Table 9 lists the frame rate comparison
+results of using Pascal GPU, and it can be Titan X (Pascal),
+Titan Xp, GTX 1080 Ti, or Tesla P100 GPU. As for Table
+10, it lists the frame rate comparison results of using V olta
+GPU, and it can be Titan V olta or Tesla V100 GPU.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We offer a state-of-the-art detector which is faster (FPS)
+and more accurate (MS COCO AP 50...95 and AP 50) than
+all available alternative detectors. The detector described
+can be trained and used on a conventional GPU with 8-16
+GB-VRAM this makes its broad use possible. The original
+concept of one-stage anchor-based detectors has proven its
+viability. We have verified a large number of features, and
+selected for use such of them for improving the accuracy of
+both the classifier and the detector. These features can be
+used as best-practice for future studies and developments.</blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>hyper-parameters by using genetic algorithms and solving
+the grid sensitivity problem https://github.com/
+ultralytics/yolov3.
+10
+Table 8: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-
+dev 2017). (Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with
+batch=1 without using tensorRT.)
+Method Backbone Size FPS AP AP 50 AP75 APS APM APL
+YOLOv4: Optimal Speed and Accuracy of Object Detection
+YOLOv4 CSPDarknet-53 416 38 (M) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%
+YOLOv4 CSPDarknet-53 512 31 (M) 43.0% 64.9% 46.5% 24.3% 46.1% 55.2%
+YOLOv4 CSPDarknet-53 608 23 (M) 43.5% 65.7% 47.3% 26.7% 46.7% 53.3%
+Learning Rich Features at High-Speed for Single-Shot Object Detection [84]
+LRF VGG-16 300 76.9 (M) 32.0% 51.5% 33.8% 12.6% 34.9% 47.0%
+LRF ResNet-101 300 52.6 (M) 34.3% 54.1% 36.6% 13.2% 38.2% 50.7%
+LRF VGG-16 512 38.5 </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ResNet-50 800 6.5 (M) 35.7% 55.0% 38.5% 18.9% 38.9% 46.3%
+RetinaNet ResNet-101 800 5.1 (M) 37.8% 57.5% 40.8% 20.2% 41.1% 49.2%
+Feature Selective Anchor-Free Module for Single-Shot Object Detection [102]
+AB+FSAF ResNet-101 800 5.6 (M) 40.9% 61.5% 44.0% 24.0% 44.2% 51.3%
+AB+FSAF ResNeXt-101 800 2.8 (M) 42.9% 63.8% 46.3% 26.6% 46.2% 52.7%
+CornerNet: Detecting objects as paired keypoints [37]
+CornerNet Hourglass 512 4.4 (M) 40.5% 57.8% 45.3% 20.8% 44.8% 56.7%
+11
+Table 9: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-dev 2017).
+(Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with batch=1 without using
+tensorRT.)
+Method Backbone Size FPS AP AP 50 AP75 APS APM APL
+YOLOv4: Optimal Speed and Accuracy of Object Detection
+YOLOv4 CSPDarknet-53 416 54 (P) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%
+YOLOv4 CSPDarknet-53 </blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Hourglass-104 - 3.3 (P) 44.9% 62.4% 48.1% 25.6% 47.4% 57.4%
+Scale-Aware Trident Networks for Object Detection[42]
+TridentNet ResNet-101 - 2.7 (P) 42.7% 63.6% 46.5% 23.9% 46.6% 56.6%
+TridentNet ResNet-101-DCN - 1.3 (P) 46.8% 67.6% 51.5% 28.0% 51.2% 60.5%
+12
+Table 10: Comparison of the speed and accuracy of different object detectors on the MS COCO dataset (test-dev 2017).
+(Real-time detectors with FPS 30 or higher are highlighted here. We compare the results with batch=1 without using
+tensorRT.)
+Method Backbone Size FPS AP AP 50 AP75 APS APM APL
+YOLOv4: Optimal Speed and Accuracy of Object Detection
+YOLOv4 CSPDarknet-53 416 96 (V) 41.2% 62.8% 44.3% 20.4% 44.4% 56.0%
+YOLOv4 CSPDarknet-53 512 83 (V) 43.0% 64.9% 46.5% 24.3% 46.1% 55.2%
+YOLOv4 CSPDarknet-53 608 62 (V) 43.5% 65.7% 47.3% 26.7% 46.7% 53.3%
+EfficientDet: Scalable and Efficient Object Detection [77]
+EfficientDet-D0 Efficient-B0 </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +406,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -1,17 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-10](2026-11-10.md).
+Latest daily digest: [2026-11-11](2026-11-11.md).
 
-# Paper Scout Digest - 2026-11-10
+# Paper Scout Digest - 2026-11-11
 
 ## Run Summary
 
-- **Run ID:** 131
+- **Run ID:** 132
 - **Candidates fetched:** 124
-- **New unique papers:** 121
-- **Relevant:** 11
-- **Maybe relevant:** 2
-- **Irrelevant:** 111
+- **New unique papers:** 123
+- **Relevant:** 9
+- **Maybe relevant:** 1
+- **Irrelevant:** 114
 - **Source summary:** arxiv: 24, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
@@ -21,40 +21,8 @@ Latest daily digest: [2026-11-10](2026-11-10.md).
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
-- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
-## Highly Relevant
-
-### [Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists](https://arxiv.org/abs/2611.12184v1)
-
-- **Authors:** Guowei Xu, Jiaru Zou, Mete Erdogan, Haotian Ye, Pan Lu, James Zou
-- **Date:** 2026-11-09
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Scientific discovery requires ideas that are original, useful, and non-obvious. Yet AI scientists are typically given as much task information as possible during idea generation, which can anchor generation toward familiar approaches. Inspired by the cognitive framework of Blind Variation and Selective Retention (BV...
-
-### [Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery](https://arxiv.org/abs/2611.12762v1)
-
-- **Authors:** Weida Wang, Benteng Chen, Yigeng Jiang, Shuchen Pu, Weiping Shen, Zichao Liu, et al.
-- **Date:** 2026-11-09
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it. Through explicit monitoring and control, the system revises its understanding of evidence, assumptions, and unresolved questions, then uses these...
-
-## Maybe Relevant
-
-### [DeepResearch RewardBench: Evaluating Reward Models for Deep Research Report](https://arxiv.org/abs/2611.10156v1)
-
-- **Authors:** Shudong Liu, Yuting Zhong, Guanhua Chen, Xinyi Yang, Junnan Liu, Lidia S. Chao, et al.
-- **Date:** 2026-11-06
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** benchmark
-- **Abstract summary:** Empowered by Large Language Models (LLMs), deep research systems integrate online information into research reports through multi-step web searching and information synthesis. Evaluating these reports presents a significant challenge due to their long context, high information density, and domain specificity, necess...
+No new relevant or maybe-relevant papers found.

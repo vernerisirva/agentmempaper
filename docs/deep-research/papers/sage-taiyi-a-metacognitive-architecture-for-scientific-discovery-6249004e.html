@@ -59,16 +59,271 @@
             <p>We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it. Through explicit monitoring and control, the system revises its understanding of evidence, assumptions, and unresolved questions, then uses these...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>The paper provides an extensive, highly structured conceptual architecture coupled with thorough empirical validation spanning theoretical reasoning tasks, public benchmarks, and physical wet-lab/engineering experiments. Controls, comparisons against standard baselines on identical backbone models, and corroborations via physical measurements satisfy scientific rigor standards.</p>
+      <p>The manuscript notes that human expert guidance remains part of selecting candidate directions for physical validation, and tests are limited to specific application spaces with fixed search budgets [E27d3ad59eb0121ce-B0085, E27d3ad59eb0121ce-B0316].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-11T11:45:33.892319+00:00.</p>
+        <p>Coverage: 126106 of 126106 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Sage-Taiyi: A Metacognitive Architecture for
+Scientific Discovery
+Sage-Taiyi Team, Shanghai Artificial Intelligence Laboratory
+We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific
+understanding to guide what to investigate next and how to investigate it. Through explicit moni-
+toring and control, the system revises its understanding of evidence, assumptions, and unresolved
+questions, then uses these assessments to adapt research targets and select reusable reasoning
+methods. On Taiyi-Bench, an AI co-scientist ideation benchmark comprising 265 tasks from 50
+papers across ten disciplines, Sage-Taiyi ranks first on all eight metrics of historical rediscovery
+and open-ended ideation, achieving an Overall score of 54.0 compared with 47.9 for the strongest
+baseline, AI Scientist-v2. It also performs well on two external scientific ideation </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>that uses accumulated scientific un-
+derstanding to guide what to investigate next and how to investigate it. Through explicit monitoring
+andcontrol,thesystemrevisesitsunderstandingofevidence,assumptions,andunresolvedquestions,
+then uses these assessments to adapt research targets and select reusable reasoning methods. Sage-
+Taiyi achieves leading performance on Taiyi-Bench, AgentIdeaBench, and IG-Arena. On Taiyi-Bench,
+an AI co-scientist ideation benchmark comprising 265 tasks from 50 papers across ten disciplines,
+it ranks first on all eight metrics of historical rediscovery and open-ended ideation, achieving an
+Overall score of 54.0 compared with 47.9 for the strongest baseline, AI Scientist-v2. Five expert-
+guided collaborations further connect its proposals to experimental and computational validation
+1
+a b Sage-Iterative Scientific-
+Agent Workflows
+Taiyi Metacognition-inspired </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Feedback-
+Driven
+Iteration
+State-GuidedReusable Cognitive
+Repertoire
+ Search Regulation
+Selected object-level
+ understanding
+Iterative
+Idea
+Refinement
+Parallel Branch
+Exploration
+Figure 1| (a) Iterative scientific-agent workflows organize discovery through cycles of proposing,
+evaluating, and updating ideas, using evidence, tools, and experiments to guide refinement and pro-
+duceresearchoutputs. (b)Sage-Taiyiconnectsobject-levelscientificsearchwithmeta-levelcognitive
+regulationthroughmonitoringandcontrol. Attheobjectlevel,aTargetTreeorganizessearchtargets,
+while an Idea Graph captures ideas as they are generated and refined. At the meta level, a Cognitive
+RepertoiresuppliesmethodologicalheuristicsandCognitiveOperators,whileaCognitiveStatemain-
+tains a selective representation of object-level scientific understanding alongside monitoring-derived
+assessments that guide subsequent search. </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Sage-Taiyiorganizesscientificdiscoveryintotwolevels,drawingonaccountsofdiscoveryasproblem
+solving [3, 12] and of metacognition as monitoring and control of thinking [13, 14].
+Object level
+Scientific search
+Meta level
+Metacognitive regulation
+Target Tree
+Targets, subtargets and local construction
+Tₜ
+Question
+Heuristics
+Subtarget
+Local strategy
+Subidea
+Research question  q
+Evidence Analogy Inverse design
+Idea Graph
+Ideas and transformation lineage
+Gₜ
+Merge
+Diverge
+Fuse
+Repair
+Evolve
+I₁
+I₂
+I₃
+I₄
+I₅
+I₆
+I₇</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>which organize research paths, and Cog-
+nitive Operators, which perform local reasoning transformations between knowledge states (Sec-
+tions2.3.2–2.3.3). Selecting methods to regulate scientific search is a meta-level decision; applying
+them to develop targets or ideas is object-level search.
+Monitoring and control connect the two levels [9]. Monitoring interprets search outcomes and new
+evidence to update𝐶𝑡 and assess their implications for further search. Control uses𝐶𝑡 to decide
+which target or idea to address, whether to continue, revise, redirect, or stop a branch, and which
+entriesR𝑡⊆R touse. Applyingthesedecisionsandselectedmethodsupdatestheobject-levelsearch
+state:
+𝑞−→
+26666664𝑋𝑡 =(𝑇𝑡,𝐺𝑡,𝐸 𝑡)|             {z             }Object-level search Monitoring⇄Control usingR𝑡 (𝐶𝑡,R)|  {z  }Meta-level resources37777775 Review &amp; Execution−−−−−−−−−−−−−−−→𝑜| {z }Output. (1)
+Theindex 𝑡 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Following Nelson and Narens&#x27; account of the meta level as maintaining a dynamic model of object-
+level cognition [9], the Cognitive State models the current search. It contains two kinds of content.
+The first is a selective, source-linked representation of object-level scientific understanding, retain-
+ing key findings, competing explanations, necessary assumptions, applicability conditions, and unre-
+solved questions. The second consists of monitoring-derived assessments of the evidential status of
+key judgments, unresolved conflicts and uncertainties, and dependencies shared across ideas. The
+former selectively represents what the system currently understands about the scientific problem;
+the latter assesses how this understanding should guide further search. For example, when several
+ideas propose different mechanisms but depend on the same untested premise, monitoring records
+that </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Inspiredbyworkonstrategyselectionasmetareasoning[ 11], controlcombinestheCognitiveState&#x27;s
+assessments with the repertoire&#x27;s applicability conditions to decide which target or idea to address,
+whether to continue, revise, redirect, or stop a branch, and which methods to use. For scientific
+ideation, method selection and the subsequent object-level search update are summarized as:
+8
+R𝑡 = Select(𝑞,𝑋 𝑡,𝐶𝑡+1;R), 𝑋 𝑡+1 = Search(𝑞,𝑋 𝑡,𝐶𝑡+1;R𝑡). (3)
+Select formalizes method selection within meta-level control; Search denotes the subsequent object-
+level application of the selected entries to the chosen target or idea, retaining changes and their
+rationaleintheTargetTree, IdeaGraph, andassociatedevaluations. Decisionsthatcallforexecution
+or validation are carried out through the harness (Section2.5); the requested output, stopping rule,
+and budget govern task </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Taiyi-Bench. Taiyi-Bench examines AI co-scientists&#x27; ability to propose complete, testable research
+routes given a scientist&#x27;s current knowledge. It reconstructs key scientific decisions and their prereq-
+uisites from recent published studies* as directed acyclic graphs (DAGs), then captures nontrivial
+decision points central to each study&#x27;s key innovations, and creates tasks that progressively disclose
+*We select studies first publicly disclosed on or after 1 March 2026, after GPT-5.6-Sol&#x27;s reported knowledge cutoff (16
+February 2026;OpenAI documentation) to reduce training-data contamination risk.
+10
+established decisions.Nodes are selected to capture nontrivial decision points central to each study&#x27;s
+key innovations. Tasks are constructed by progressively disclosing established decisions. At𝐿0, sys-
+tems identify the root scientific problem from broad context; subsequent levels specify </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>at the given in-
+formation level.(3) Coveragemeasures the fraction recovered by the proposal set, while(4) Looka-
+head measures the largest fraction of eligible target and downstream decisions recovered by an indi-
+vidual proposal. Recovery requires necessary prerequisites to be disclosed or established within the
+same proposal. For Open-ended Evaluation, (5) Novelty assesses scientific content beyond prior
+literature. (6) Effectiveness assesses whether the proposed mechanism and discriminating tests ad-
+dress the stated research gap.(7) Feasibility assesses necessary capabilities, scientific constraints,
+and design validity.(8) Diversity measures distinct relevant mechanism classes across the proposed
+ideas. A literature-grounded verifier applies decision-level rubrics and mechanism-equivalence crite-
+ria to score these dimensions. Its assessments show good agreement with human expert </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Leading performance across all metrics. Sage-Taiyi achieves the highest Overall score of 54.0,
+exceeding the strongest baseline, AI Scientist-v2, by 6.1 points (Table3). It ranks first across all
+eight metrics, with Rediscovery and Open-ended scores of 44.6 and 63.3, respectively.
+Table 3| Taiyi-Bench results across 50 articles and 265 case–level tasks. Finding uses𝐿0; the other
+sevenmetricsusesubsequentlevels. Avg. (average)denotesthemeanofthefourmetricswithineach
+evaluation group; Overall averages the two group scores. Scores are reported on a 0–100 scale with
+two decimal places. Bold and underlining mark thehighest and second-highestunrounded values
+in each column, respectively. Abbreviations: Find., Finding; Cover., Coverage; Look., Lookahead;
+Nov., Novelty; Effect., Effectiveness; Feas., Feasibility; Div., Diversity.
+System Rediscovery Open-ended Overall
+Find. Exact Cover. Look. </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>47.85
+Robin (GPT-5.6-Sol) 73.31 7.91 24.88 23.07 32.29 42.17 65.26 49.90 27.47 46.20 39.24
+Sage-Taiyi(GPT-5.6-Sol) 79.70 19.53 40.69 38.55 44.62 70.54 87.81 52.45 42.33 63.28 53.95
+Pairwise comparisons support this aggregate ranking: Sage-Taiyi obtains the highest Elo rating of
+1,322.5 and wins 66.3% of comparisons against AI Scientist-v2 (Figure7). These results show ad-
+vantages in both recovering established scientific decisions and proposing alternative solutions.
+Stronger recovery of scientific decisions. Sage-Taiyi shows stronger recovery of established scien-
+tific decisions from the knowledge disclosed in each task. Its Coverage and Lookahead scores reach
+40.7 and 38.6, exceeding the strongest baseline scores of 35.9 and 33.0; its Exact score is also the
+highest at 19.5 (Table3). Because recovered decisions require their prerequisites to be disclosed or
+established within the </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for each question. The benchmark&#x27;s
+reference library and lineage graph are withheld during generation.
+Table 4| Local AgentIdeaBench results. All systems use GPT-5.6-Sol. The weighted mean uses the
+dimensionweightsfromMoetal.[ 49]. Boldandunderlining indicatethehighestandsecond-highest
+scores in each column, respectively.
+System Originality Impact Feasibility Clarity Specificity Weighted mean
+AI Scientist-v2 6.900 6.275 6.625 7.950 7.750 6.852
+Codex 6.897 6.256 6.205 8.000 7.872 6.786
+Claude Code 6.850 6.150 5.825 7.800 7.675 6.634
+Sage-Taiyi 7.300 6.525 7.050 8.100 8.175 7.195
+Results. OnAgentIdeaBench,Sage-Taiyiachievedaweightedmeanof7.195,comparedwith6.852
+for AI Scientist-v2, the strongest local baseline in the current results (Table4). Sage-Taiyi had the
+highest mean on all five dimensions, with originality and feasibility scores 0.400 and 0.425 points
+higher than AI Scientist-v2, </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and validating their implementation, while Taiyi-Optimizer searches
+the resulting condition or design spaces. Experimental measurements and simulation results return
+as evidence, informing subsequent revisions to ideas, conditions, and constraints. This workflow ex-
+tendsSage-Taiyi&#x27;smonitoring–controllooptopracticalresearch: experimentalandsimulationresults
+inform assessments of research progress and guide subsequent decisions about what to investigate
+and how to proceed.
+Table 5| Scientific contributions and outcomes across five real-world research collaborations.
+Research area Scientific contribution and outcome
+Metal catalysis
+Developed a cobalt-catalysed route to tetrasubstituted allenyl ketones, raising the
+model-reaction yield from trace amounts to84% through reaction-condition opti-
+mization.
+Photochemistry Developed a photocatalytic route to site-selective allylic amination with </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>heteroarylamines, increasing the model-reaction yield from13% to 69%.
+Metamaterials
+Designed a multilayer electromagnetic filter and relaxed a restrictive thickness
+constraint, achieving simulated average transmission of6.2% in the stopband and
+94.5% in the passband.
+Alloy design Jointly designed and optimized magnesium-alloy composition and heat treatment,producing an alloy with a mean measured tensile strength of342 MPa.
+Compressor
+engineering
+Developed and refined a centrifugal-compressor design, achieving a CFD-evaluated
+impeller efficiency of91.5% at a pressure ratio of4.0.
+18</blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>temperature and reaction time remained unchanged. The key changes
+were the replacement of the bidentate dtbpy with the tridentate L20 and of EtZnBr with EtZnOPiv
+(Figure 12, subpanel c). The optimization curve reaches the same 84% yield (Figure13b). The
+optimized conditions were applicable to enynes derived from bioactive molecules and to different
+electron-deficient halides, delivering the allenyl ketones 6, 7 and 8 from flurbiprofen, pyriproxyfen
+and salicin derivatives in 40%, 74% and 86% yield, respectively (Figure12, subpanel d).</blockquote></details></li><li><strong>Contribution clarity — pages 23–24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cobalt dual catalysis
+to give the allylic amine 11 (Figure14, subpanel a).
+Taiyi-OptimizerexploredthisconditionspaceusingtheworkflowdescribedinSection 2.5. Measured
+yields from each batch of experiments guided the selection of subsequent photocatalyst, cobaloxime,
+solvent and additive combinations (Figure15b).
+Results. Under the initial conditions (2 mol% Ir-1, 5 mol% [Co(dmgH)2Py2]PF6, DCE, blue LEDs,
+18 h, room temperature), 11 was formed in 13% yield.Bayesian optimization raised the yield
+to 69%, with the key changes being a switch of solvent from DCE to PhCF3, the addition of 2 equiv.
+PhCOOH and an extension of the reaction time to 36 h (Figure14, subpanel a). The optimization
+curve records a best yield of 68.7%, rounded to 69% in the reaction scheme and text (Figure15b).
+22
+(a)
+Research Problem
+Visible-light allylic
+amination of aniline
+with unactivated alkenes
+Strategy
+N-first </blockquote></details></li><li><strong>Contribution clarity — pages 25–26</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Theoptimizedconfigurationandsimulated
+performance are summarized in Table6.
+24
+Table 6| Metamaterial search ranges, optimized configuration, and simulated performance. Ranges
+specify continuous variables; transmission values are reported band averages.
+Quantity / variable Search range Unit / context Best value
+Optimization reward𝑅meta – Dimensionless 0.822
+Unit-cell period𝑝 [5.0, 9.0] mm 6.5
+Jerusalem-cross arm length𝑎jc [3.0, 5.5] mm 3.95
+T-bar end-load length𝑏jc [0.4, 1.8] mm 0.95
+Jerusalem-cross linewidth𝑤jc [0.2, 0.5] mm 0.30
+Drude wire-grating pitch𝑝𝑤 [1.0, 3.0] mm 2.15
+Drude wire width𝑤𝑤 [0.2, 0.5] mm 0.255
+I-shaped inclusion neck length along
+𝑥, 𝑙neck
+[0.8, 3.5] mm 0.81
+I-shaped inclusion pad length along
+𝑦, 𝑏pad
+[0.5, 2.5] mm 1.60
+Total dielectric stack thicknessℎtotal [3.0, 6.0] mm 3.60
+Middle-layer thickness fraction𝑓mid [0.15, 0.60] Dimensionless 0.435
+Average stopband </blockquote></details></li><li><strong>Contribution clarity — page 30</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>balance
+Mg–4.01Y
+–0.98Nd
+–1.95Gd
+–0.5Zr
+Mean tensile strength – MPa; repeated tests 342
+Representative maximum stress – MPa; single test 340.39
+ThefinalnominalcompositionwasMg–4Y–1Nd–2Gd–0.5Zr, refinedfromtheselecteddesignB,with
+solution treatment at 500◦C for 14 h and ageing at 200◦C for 120 h. Physical synthesis and testing
+yielded a mean tensile strength of 342 MPa across repeated experiments; the representative stress–
+strain curve reaches 340.39 MPa (Figure17c). The composite reward reached its best value of 0.734
+in the second optimization round (Figure17b). This case connects joint composition–processing
+design and expert selection to a physically realized alloy, with experimental feedback supporting
+further refinement.</blockquote></details></li><li><strong>Contribution clarity — page 32</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>millimetres. Table8
+givestheirsearchrangesandoptimizedvalues. Rotationalspeedanddesignmassflowwereretained
+as design-point context. The resulting refinement reduced blade count and rebalanced the inlet and
+outlet angles.
+Results. The best saved configuration and reported CFD performance are summarized in Table8:
+Table8| Compressorsearchranges, bestrecordedconfiguration, andCFDperformance. Bladecount
+is discrete. The reward is impeller efficiency expressed as a fraction.
+Quantity / variable Search range Unit / context Best value
+Optimization reward – Efficiency fraction 0.915
+Outlet blade angle𝛽2𝑏 [115.6, 135.6] ◦ 117.0
+Inlet blade angle𝛽1𝑏 [145.9, 161.9] ◦ 153.0
+Main-blade count𝑍𝑚 {12, 13, 14, 15, 16} Blades 12
+Inlet shroud diameter𝐷1𝑠 [118, 132] mm 129.0
+CFD pressure ratioPR – Dimensionless 4.0
+CFD impeller efficiency – %; CFD result 91.5
+Across three optimization rounds, the </blockquote></details></li><li><strong>Contribution clarity — page 33</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We presented Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific un-
+derstanding to regulate scientific search. Through monitoring and control, a revisable Cognitive
+State and a reusable Cognitive Repertoire guide target selection, idea development, and validation.
+On Taiyi-Bench, Sage-Taiyi leads all eight metrics, achieving an Overall score of 54.0 compared with
+47.9 for the strongest baseline. Five expert-guided collaborations further illustrate how its ideas and
+search formulations connect to experimental and computational validation across chemistry, mate-
+rials science, and engineering.
+Future work will refine the Cognitive Repertoire through accumulated research experience and ex-
+amine its reuse across domains. Building on this repertoire, Sage-Taiyi will scale multi-agent collab-
+oration to explore a broader range of high-value solutions within </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +362,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +378,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-09</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-10 12:04:09</li><li>Last seen by Paper Scout: 2026-11-10 12:04:09</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-09</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-10 12:04:09</li><li>Last seen by Paper Scout: 2026-11-11 11:41:49</li></ul>
             <ul><li>arXiv: 2611.12762</li><li>arXiv IDs: 2611.12762</li></ul>
           </section>
           <section class="detail-panel">

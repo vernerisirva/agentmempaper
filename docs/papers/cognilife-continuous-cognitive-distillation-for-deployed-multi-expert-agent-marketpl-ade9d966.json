@@ -1,0 +1,1853 @@
+{
+  "abstract_summary": "Multi-expert agent marketplaces -- where creators publish domain-specific AI experts for end users to consult -- are an emerging deployment pattern for language technology. A published expert can receive many requests yet little evidence about its creator, who remains active elsewhere: the cold-expert problem. We fr...",
+  "alternate_urls": [
+    "https://arxiv.org/abs/2611.04483",
+    "https://arxiv.org/abs/2611.04483v2",
+    "https://doi.org/10.48550/arxiv.2611.04483",
+    "https://openalex.org/W7225272735"
+  ],
+  "appeared_in_latest_run": true,
+  "arxiv_id": "2611.04483",
+  "authors": [
+    "Xuwei Tan",
+    "Jingchun Huang",
+    "Ming Cai",
+    "Shuang Lyu",
+    "Tiange Wang",
+    "Yinzhi Wang",
+    "Ronghua Shi",
+    "Jingwei Song",
+    "JingSong Yang",
+    "Yinghui Xia",
+    "Hehua Fan",
+    "Yifan Zhou",
+    "Hanxin Chen",
+    "Jiwei Song",
+    "Tianyu Shi"
+  ],
+  "canonical_id": "doi:10.48550/arxiv.2611.04483",
+  "citation": "CogniLife: Continuous Cognitive Distillation for Deployed Multi-Expert Agent Marketplaces. Xuwei Tan, Jingchun Huang, Ming Cai, Shuang Lyu, Tiange Wang, Yinzhi Wang, Ronghua Shi, Jingwei Song, JingSong Yang, Yinghui Xia, Hehua Fan, Yifan Zhou, Hanxin Chen, Jiwei Song, Tianyu Shi. 2026-11-03. https://arxiv.org/abs/2611.04483",
+  "detail_json": "papers/cognilife-continuous-cognitive-distillation-for-deployed-multi-expert-agent-marketpl-ade9d966.json",
+  "detail_page": "papers/cognilife-continuous-cognitive-distillation-for-deployed-multi-expert-agent-marketpl-ade9d966.html",
+  "doi": "10.48550/arxiv.2611.04483",
+  "effective_sort_date": "2026-11-03",
+  "first_seen_at": "2026-11-04 11:50:13",
+  "first_seen_date": "2026-11-04",
+  "future_date": false,
+  "is_new": false,
+  "last_seen_at": "2026-11-11 11:41:13",
+  "last_seen_date": "2026-11-11",
+  "latest_relevant_date_bucket": 0,
+  "latest_revision_date": null,
+  "library_admission": "review",
+  "newly_discovered_in_latest_run": true,
+  "notified_at": "2026-11-04 11:51:22",
+  "notified_date": "2026-11-04",
+  "openalex_id": "W7225272735",
+  "pinned": false,
+  "provenance": {
+    "curated": false,
+    "curation_note": null,
+    "date_source": "openalex",
+    "first_seen_at": "2026-11-04 11:50:13",
+    "generated_at": "2026-11-11 11:46:00",
+    "last_seen_at": "2026-11-11 11:41:13",
+    "metadata_sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "publication_date_confidence": "medium",
+    "publication_date_precision": "day",
+    "publication_date_source": "openalex",
+    "relevance_source": "deterministic screening",
+    "screening_source": "deterministic rules",
+    "source_ids": {
+      "arxiv": [
+        "2611.04483"
+      ],
+      "openalex": [
+        "W7225272735"
+      ]
+    }
+  },
+  "publication": {
+    "confidence": "medium",
+    "date": "2026-11-03",
+    "display": "Published 2026-11-03",
+    "latest_revision_date": null,
+    "precision": "day",
+    "publication_date_confidence": "medium",
+    "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
+    "year": "2026"
+  },
+  "publication_date": "2026-11-03",
+  "publication_date_confidence": "medium",
+  "publication_date_precision": "day",
+  "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
+  "publication_year": "2026",
+  "related_topics": [
+    "agent-memory",
+    "benchmark",
+    "llm-agents",
+    "memory-benchmark",
+    "memory-systems"
+  ],
+  "relevance": {
+    "curation_note": null,
+    "decision": "relevant",
+    "public_label": "Highly relevant",
+    "reason": "Evaluates memory mechanisms or benchmarks for LLM agents.",
+    "review_status": null,
+    "score": 99,
+    "tags": [
+      "benchmark",
+      "agent-memory",
+      "memory-systems",
+      "llm-agents"
+    ]
+  },
+  "relevance_decision": "relevant",
+  "relevance_label": "Memory benchmark/evaluation",
+  "relevance_reason": "Evaluates memory mechanisms or benchmarks for LLM agents.",
+  "relevance_score": 99,
+  "research_note": null,
+  "review_status": null,
+  "schema_version": "paper-scout-card-v2",
+  "scholarly_quality": {
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-11-05T11:53:27.136529+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
+    "combined_rank_score": 0.99,
+    "concerns": [
+      "The core proposed mechanism, cross-expert attribution for cold-expert mitigation, is explicitly neither implemented nor evaluated, so the central scientific claim remains unvalidated.",
+      "The headline PROFYBENCH-V1 result relies on a single o3-mini LLM judge without human or independent ground-truth verification, and the auxiliary four-model audit is explicitly not used to validate results because its aggregate definition and paired records are unavailable.",
+      "The benchmark evaluates only the aggregate Full configuration and does not test cold-expert mitigation, cross-expert transfer, or longitudinal distillation, leaving the paper's titular contribution unsupported by the reported experiments."
+    ],
+    "concise_summary": "While the authors provide commendable transparency about what is implemented versus proposed, the paper's primary conceptual contributions (cross-expert attribution and cold-expert resolution) are entirely unexecuted and unevaluated. Given the reliance on single-model LLM judging on an offline benchmark without validating the titular distillation mechanism, scientific quality warrants an uncertain decision.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 58015,
+      "assessment_input_sha256": "78ca33889edbf32ef4157d365da55993c0175adf368f4b1219124c66ceb414c5",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2611.04483",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 55846,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 55188,
+      "evidence_block_count": 82,
+      "evidence_context_characters": 65766,
+      "evidence_context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+      "evidence_context_sha256": "4e4334c6fa2b8b3a14b2310ef686931fb7c3a3d455105d2fc6f66b6d46bf6329",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 55886,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "extracted_pages": 21,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "567e5f24c00774eab19f800fbb1e900b3547ce4f12b8d8bbaa3f5f4739236182",
+        "source_url": "https://arxiv.org/pdf/2611.04483",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 55846,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Cognilife: Continuous Cognitive Distillation For Deployed",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 282,
+          "supplied_characters": 282
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1407,
+          "supplied_characters": 1407
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2280,
+          "supplied_characters": 2280
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1094,
+          "supplied_characters": 1094
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 2743,
+          "supplied_characters": 2743
+        },
+        {
+          "heading": "Marketplace And Cold Experts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 444,
+          "supplied_characters": 444
+        },
+        {
+          "heading": "Marketplace And Cold Experts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 248,
+          "supplied_characters": 248
+        },
+        {
+          "heading": "Implemented Control Points",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1721,
+          "supplied_characters": 1721
+        },
+        {
+          "heading": "Continuous Distillation Lifecycle",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1249,
+          "supplied_characters": 1249
+        },
+        {
+          "heading": "Continuous Distillation Lifecycle",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 59,
+          "supplied_characters": 59
+        },
+        {
+          "heading": "Cross-Expert Attribution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1507,
+          "supplied_characters": 1507
+        },
+        {
+          "heading": "Creator-Controlled Refinement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 2338,
+          "supplied_characters": 2338
+        },
+        {
+          "heading": "Evaluation And Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 422,
+          "supplied_characters": 422
+        },
+        {
+          "heading": "Evaluation And Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 626,
+          "supplied_characters": 626
+        },
+        {
+          "heading": "Profybench And Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 14,
+          "source_characters": 1266,
+          "supplied_characters": 1266
+        },
+        {
+          "heading": "Task Utility",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1083,
+          "supplied_characters": 1083
+        },
+        {
+          "heading": "Task And Error Patterns",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 799,
+          "supplied_characters": 799
+        },
+        {
+          "heading": "The Tags Locate The Gains In Handling Incom-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 61,
+          "supplied_characters": 61
+        },
+        {
+          "heading": "Llm Preferences And Judge Audit",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 286,
+          "supplied_characters": 286
+        },
+        {
+          "heading": "Llm Preferences And Judge Audit",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 284,
+          "supplied_characters": 284
+        },
+        {
+          "heading": "Runtime And Deployment Observations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1503,
+          "supplied_characters": 1503
+        },
+        {
+          "heading": "Discussion And Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "discussion",
+          "section_index": 21,
+          "source_characters": 935,
+          "supplied_characters": 935
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "limitations",
+          "section_index": 22,
+          "source_characters": 1678,
+          "supplied_characters": 1678
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "limitations",
+          "section_index": 23,
+          "source_characters": 651,
+          "supplied_characters": 651
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Production-Ready Ai Agents With Scalable Long-Term",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1044,
+          "supplied_characters": 1044
+        },
+        {
+          "heading": "A Benchmark For Evaluating Self-Evolving Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 26,
+          "source_characters": 716,
+          "supplied_characters": 716
+        },
+        {
+          "heading": "And Continual Learning Dialogue Systems: Learn-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 410,
+          "supplied_characters": 410
+        },
+        {
+          "heading": "European Chapter Of The Association For Computa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 327,
+          "supplied_characters": 327
+        },
+        {
+          "heading": "Ings Of The 62Nd Annual Meeting Of The Association",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "For Computational Linguistics (Volume 1: Long Pa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 302,
+          "supplied_characters": 302
+        },
+        {
+          "heading": "Association For Computational Linguistics: Emnlp",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 222,
+          "supplied_characters": 222
+        },
+        {
+          "heading": "The 25Th Annual International Acm Sigir Confer-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Ence On Research And Development In Information",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 231,
+          "supplied_characters": 231
+        },
+        {
+          "heading": "Empirical Methods In Natural Language Process-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 34,
+          "source_characters": 392,
+          "supplied_characters": 392
+        },
+        {
+          "heading": "Findings Of The Association For Computational Lin-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 232,
+          "supplied_characters": 232
+        },
+        {
+          "heading": "Findings Of The Association For Computational Lin-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 2021,
+          "supplied_characters": 2021
+        },
+        {
+          "heading": "Appendix: Additional Robustness Panels",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 905,
+          "supplied_characters": 905
+        },
+        {
+          "heading": "Background",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "related",
+          "section_index": 38,
+          "source_characters": 834,
+          "supplied_characters": 834
+        },
+        {
+          "heading": "Appendix: Evaluation Prompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 493,
+          "supplied_characters": 493
+        },
+        {
+          "heading": "Appendix: Evaluation Prompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 2901,
+          "supplied_characters": 2901
+        },
+        {
+          "heading": "Appendix: Evaluation Prompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 3057,
+          "supplied_characters": 3057
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 692,
+          "supplied_characters": 692
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 3692,
+          "supplied_characters": 3692
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 123,
+          "supplied_characters": 123
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 125,
+          "supplied_characters": 125
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 913,
+          "supplied_characters": 913
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 811,
+          "supplied_characters": 811
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 425,
+          "supplied_characters": 425
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 1171,
+          "supplied_characters": 1171
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 179,
+          "supplied_characters": 179
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 4188,
+          "supplied_characters": 4188
+        },
+        {
+          "heading": "Appendix: Implementation Correspondence And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 1553,
+          "supplied_characters": 1553
+        },
+        {
+          "heading": "Thirteen Tasks Have A Three-Run Maximum-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 578,
+          "supplied_characters": 578
+        },
+        {
+          "heading": "Thirteen Tasks Have A Three-Run Maximum-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 1490,
+          "supplied_characters": 1490
+        }
+      ],
+      "selected_characters": 55188,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "selected_sections": [
+        {
+          "characters": 282,
+          "heading": "Cognilife: Continuous Cognitive Distillation For Deployed",
+          "page": 1
+        },
+        {
+          "characters": 1407,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2280,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1094,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2743,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 444,
+          "heading": "Marketplace And Cold Experts",
+          "page": 2
+        },
+        {
+          "characters": 248,
+          "heading": "Marketplace And Cold Experts",
+          "page": 3
+        },
+        {
+          "characters": 1721,
+          "heading": "Implemented Control Points",
+          "page": 3
+        },
+        {
+          "characters": 1249,
+          "heading": "Continuous Distillation Lifecycle",
+          "page": 3
+        },
+        {
+          "characters": 59,
+          "heading": "Continuous Distillation Lifecycle",
+          "page": 4
+        },
+        {
+          "characters": 1507,
+          "heading": "Cross-Expert Attribution",
+          "page": 4
+        },
+        {
+          "characters": 2338,
+          "heading": "Creator-Controlled Refinement",
+          "page": 4
+        },
+        {
+          "characters": 422,
+          "heading": "Evaluation And Results",
+          "page": 4
+        },
+        {
+          "characters": 626,
+          "heading": "Evaluation And Results",
+          "page": 5
+        },
+        {
+          "characters": 1266,
+          "heading": "Profybench And Protocol",
+          "page": 5
+        },
+        {
+          "characters": 1083,
+          "heading": "Task Utility",
+          "page": 5
+        },
+        {
+          "characters": 799,
+          "heading": "Task And Error Patterns",
+          "page": 5
+        },
+        {
+          "characters": 61,
+          "heading": "The Tags Locate The Gains In Handling Incom-",
+          "page": 5
+        },
+        {
+          "characters": 286,
+          "heading": "Llm Preferences And Judge Audit",
+          "page": 5
+        },
+        {
+          "characters": 284,
+          "heading": "Llm Preferences And Judge Audit",
+          "page": 6
+        },
+        {
+          "characters": 1503,
+          "heading": "Runtime And Deployment Observations",
+          "page": 6
+        },
+        {
+          "characters": 935,
+          "heading": "Discussion And Conclusion",
+          "page": 6
+        },
+        {
+          "characters": 1678,
+          "heading": "Limitations",
+          "page": 6
+        },
+        {
+          "characters": 651,
+          "heading": "Limitations",
+          "page": 7
+        },
+        {
+          "characters": 98,
+          "heading": "Unclassified body after references",
+          "page": 7
+        },
+        {
+          "characters": 1044,
+          "heading": "Production-Ready Ai Agents With Scalable Long-Term",
+          "page": 7
+        },
+        {
+          "characters": 716,
+          "heading": "A Benchmark For Evaluating Self-Evolving Agents",
+          "page": 7
+        },
+        {
+          "characters": 410,
+          "heading": "And Continual Learning Dialogue Systems: Learn-",
+          "page": 7
+        },
+        {
+          "characters": 327,
+          "heading": "European Chapter Of The Association For Computa-",
+          "page": 7
+        },
+        {
+          "characters": 50,
+          "heading": "Ings Of The 62Nd Annual Meeting Of The Association",
+          "page": 7
+        },
+        {
+          "characters": 302,
+          "heading": "For Computational Linguistics (Volume 1: Long Pa-",
+          "page": 7
+        },
+        {
+          "characters": 222,
+          "heading": "Association For Computational Linguistics: Emnlp",
+          "page": 7
+        },
+        {
+          "characters": 47,
+          "heading": "The 25Th Annual International Acm Sigir Confer-",
+          "page": 7
+        },
+        {
+          "characters": 231,
+          "heading": "Ence On Research And Development In Information",
+          "page": 7
+        },
+        {
+          "characters": 392,
+          "heading": "Empirical Methods In Natural Language Process-",
+          "page": 7
+        },
+        {
+          "characters": 232,
+          "heading": "Findings Of The Association For Computational Lin-",
+          "page": 7
+        },
+        {
+          "characters": 2021,
+          "heading": "Findings Of The Association For Computational Lin-",
+          "page": 8
+        },
+        {
+          "characters": 905,
+          "heading": "Appendix: Additional Robustness Panels",
+          "page": 8
+        },
+        {
+          "characters": 834,
+          "heading": "Background",
+          "page": 8
+        },
+        {
+          "characters": 493,
+          "heading": "Appendix: Evaluation Prompts",
+          "page": 8
+        },
+        {
+          "characters": 2901,
+          "heading": "Appendix: Evaluation Prompts",
+          "page": 9
+        },
+        {
+          "characters": 3057,
+          "heading": "Appendix: Evaluation Prompts",
+          "page": 10
+        },
+        {
+          "characters": 692,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 10
+        },
+        {
+          "characters": 3692,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 11
+        },
+        {
+          "characters": 123,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 12
+        },
+        {
+          "characters": 125,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 13
+        },
+        {
+          "characters": 913,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 14
+        },
+        {
+          "characters": 811,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 15
+        },
+        {
+          "characters": 425,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 16
+        },
+        {
+          "characters": 1171,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 17
+        },
+        {
+          "characters": 179,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 18
+        },
+        {
+          "characters": 4188,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 19
+        },
+        {
+          "characters": 1553,
+          "heading": "Appendix: Implementation Correspondence And",
+          "page": 20
+        },
+        {
+          "characters": 578,
+          "heading": "Thirteen Tasks Have A Three-Run Maximum-",
+          "page": 20
+        },
+        {
+          "characters": 1490,
+          "heading": "Thirteen Tasks Have A Three-Run Maximum-",
+          "page": 21
+        }
+      ],
+      "selected_text_sha256": "78ca33889edbf32ef4157d365da55993c0175adf368f4b1219124c66ceb414c5",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "567e5f24c00774eab19f800fbb1e900b3547ce4f12b8d8bbaa3f5f4739236182",
+      "source_pages": 21,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
+    "curation_note": null,
+    "dimension_scores": {},
+    "downranked": false,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0002"
+        ],
+        "excerpt": "Multi-expert agent marketplaces\u2014where cre-\nators publish domain-specific AI experts for\nend users to consult\u2014are an emerging de-\nployment pattern for language technology. A\npublished expert can receive many requests\nyet little evidence about its creator, who re-\nmains active elsewhere: thecold-expert prob-\nlem. We frame continuous cognitive distilla-\ntion as converting attributed creator observa-\ntions into revisable decision rules, communi-\ncation patterns, and domain procedures. COG-\nNILIFEproposes a cross-expert attribution de-\nsign for this problem, with Creator Profiles for\ntransferable creator patterns and Expert Jour-\nnals for listing-specific knowledge; this de-\nsign is not yet implemented or evaluated. A\ndeployed platform partially realizes the sur-\nrounding lifecycle through creator-authorized\nauthoring, capability-owned proposal filter-\ning, and reversible consolidation of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "85885ae326b708ebbba071e676b5f0e8764b700c1cc16be2335b6301565200c6",
+            "evidence_id": "E1a95cdeea8476a25-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Multi-expert agent marketplaces\u2014where cre-\nators publish domain-specific AI experts for\nend users to consult\u2014are an emerging de-\nployment pattern for language technology. A\npublished expert can receive many requests\nyet little evidence about its creator, who re-\nmains active elsewhere: thecold-expert prob-\nlem. We frame continuous cognitive distilla-\ntion as converting attributed creator observa-\ntions into revisable decision rules, communi-\ncation patterns, and domain procedures. COG-\nNILIFEproposes a cross-expert attribution de-\nsign for this problem, with Creator Profiles for\ntransferable creator patterns and Expert Jour-\nnals for listing-specific knowledge; this de-\nsign is not yet implemented or evaluated. A\ndeployed platform partially realizes the sur-\nrounding lifecycle through creator-authorized\nauthoring, capability-owned proposal filter-\ning, and reversible consolidation of "
+              }
+            ],
+            "text": "Multi-expert agent marketplaces\u2014where cre-\nators publish domain-specific AI experts for\nend users to consult\u2014are an emerging de-\nployment pattern for language technology. A\npublished expert can receive many requests\nyet little evidence about its creator, who re-\nmains active elsewhere: thecold-expert prob-\nlem. We frame continuous cognitive distilla-\ntion as converting attributed creator observa-\ntions into revisable decision rules, communi-\ncation patterns, and domain procedures. COG-\nNILIFEproposes a cross-expert attribution de-\nsign for this problem, with Creator Profiles for\ntransferable creator patterns and Expert Jour-\nnals for listing-specific knowledge; this de-\nsign is not yet implemented or evaluated. A\ndeployed platform partially realizes the sur-\nrounding lifecycle through creator-authorized\nauthoring, capability-owned proposal filter-\ning, and reversible consolidation of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0003"
+        ],
+        "excerpt": "eligible\nowner-scoped memory. On PROFYBENCH-\nV1, an 85-task offline benchmark built from\nreplay seeds and controlled internal tests, the\nProfy Full configuration as a whole achieves\na mean overall score of 4.65/5 from the\nprimary LLM judge, compared with 4.01\nfor Raw LLM and 4.28 for Expert Prompt,\nwith the largest gains in completeness, speci-\nficity, and missing-information tasks. These\nconfiguration-level scores do not test cold-\nexpert mitigation, cross-expert transfer, or lon-\ngitudinal distillation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e283da80003bd60d9390f4f123e0cf41fd1b891c025ec4062589c5d7b2630c64",
+            "evidence_id": "E1a95cdeea8476a25-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1407,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 897,
+                "text": "eligible\nowner-scoped memory. On PROFYBENCH-\nV1, an 85-task offline benchmark built from\nreplay seeds and controlled internal tests, the\nProfy Full configuration as a whole achieves\na mean overall score of 4.65/5 from the\nprimary LLM judge, compared with 4.01\nfor Raw LLM and 4.28 for Expert Prompt,\nwith the largest gains in completeness, speci-\nficity, and missing-information tasks. These\nconfiguration-level scores do not test cold-\nexpert mitigation, cross-expert transfer, or lon-\ngitudinal distillation."
+              }
+            ],
+            "text": "eligible\nowner-scoped memory. On PROFYBENCH-\nV1, an 85-task offline benchmark built from\nreplay seeds and controlled internal tests, the\nProfy Full configuration as a whole achieves\na mean overall score of 4.65/5 from the\nprimary LLM judge, compared with 4.01\nfor Raw LLM and 4.28 for Expert Prompt,\nwith the largest gains in completeness, speci-\nficity, and missing-information tasks. These\nconfiguration-level scores do not test cold-\nexpert mitigation, cross-expert transfer, or lon-\ngitudinal distillation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0006"
+        ],
+        "excerpt": "expert, and caller; mitigation re-\nmains untested.\n\u2022Creator-controlled maintenance.We describe\nimplemented capability-owned proposal filter-\ning, eligible reversible owner-scoped memory\nmaintenance, and staged revisions of existing\nskills; the cross-expert attribution protocol re-\nmains proposed and unevaluated.\n\u2022Expert-service evaluation.We introduce\nPROFYBENCH-V1, comparing a Full configura-\ntion of supplied expert context and workflows\narXiv:2611.04483v1  [cs.AI]  3 Nov 2026\nChallenge\n(status)\nCOGNILIFEdesign response\nTacit expertise\n(partial)\nElicit commitments, then derive re-\nvisable guidance from attributed evi-\ndence.\nCold experts\n(partial)\nSeed sparse listings; propose reuse of\nrelevant creator evidence.\nEvidence\nattribution\n(proposed)\nResolve source, applicability, and per-\nmitted reuse before routing claims.\nPersistent\nrefinement\n(partial)\nConsolidate scoped memory; ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "57079d4aa6d07a7a02611ae51f6f7348c2575c2be9c29d3c0d963269c2fa396d",
+            "evidence_id": "E1a95cdeea8476a25-B0006",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2280,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1798,
+                "text": "expert, and caller; mitigation re-\nmains untested.\n\u2022Creator-controlled maintenance.We describe\nimplemented capability-owned proposal filter-\ning, eligible reversible owner-scoped memory\nmaintenance, and staged revisions of existing\nskills; the cross-expert attribution protocol re-\nmains proposed and unevaluated.\n\u2022Expert-service evaluation.We introduce\nPROFYBENCH-V1, comparing a Full configura-\ntion of supplied expert context and workflows\narXiv:2611.04483v1  [cs.AI]  3 Nov 2026"
+              },
+              {
+                "end": 407,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "Challenge\n(status)\nCOGNILIFEdesign response\nTacit expertise\n(partial)\nElicit commitments, then derive re-\nvisable guidance from attributed evi-\ndence.\nCold experts\n(partial)\nSeed sparse listings; propose reuse of\nrelevant creator evidence.\nEvidence\nattribution\n(proposed)\nResolve source, applicability, and per-\nmitted reuse before routing claims.\nPersistent\nrefinement\n(partial)\nConsolidate scoped memory; "
+              }
+            ],
+            "text": "expert, and caller; mitigation re-\nmains untested.\n\u2022Creator-controlled maintenance.We describe\nimplemented capability-owned proposal filter-\ning, eligible reversible owner-scoped memory\nmaintenance, and staged revisions of existing\nskills; the cross-expert attribution protocol re-\nmains proposed and unevaluated.\n\u2022Expert-service evaluation.We introduce\nPROFYBENCH-V1, comparing a Full configura-\ntion of supplied expert context and workflows\narXiv:2611.04483v1  [cs.AI]  3 Nov 2026\nChallenge\n(status)\nCOGNILIFEdesign response\nTacit expertise\n(partial)\nElicit commitments, then derive re-\nvisable guidance from attributed evi-\ndence.\nCold experts\n(partial)\nSeed sparse listings; propose reuse of\nrelevant creator evidence.\nEvidence\nattribution\n(proposed)\nResolve source, applicability, and per-\nmitted reuse before routing claims.\nPersistent\nrefinement\n(partial)\nConsolidate scoped memory; "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0013"
+        ],
+        "excerpt": "IMPLEMENTED CONTROL POINTS\n01\nCapability-owned\nproposals\nExpert-capability gap\nEvolution-log filter\nEst. quality \u2265 current skill\nEst. efficiency > current skill\nReview & stage\nExisting skills; no auto-activation\n02\nScoped memory\nmaintenance\n Eligible dialogue\nExtract & deduplicate\nCaller-expert memory\nOptional temporal consolidation\n Facts + evidence + history\nConflict-checked temporal recovery\n03\nCreator-controlled\ndeployment\nCreator-controlled content\nSoul + persona + instructions\n Authored skills\nAuthorized publication\nReleased config + active skills\nBackground maintenance leaves\n stored Soul unchanged.\nPROPOSED  Cross-expert attribution\nCreator evidence\nScope / permission\nProfile / Journal\nConditional target reuse\nFigure 1: Profy marketplace workflow. Solid panels show implemented skill proposals, scoped memory, and\ncreator-authorized publication; dashed purple paths show proposed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implemented Control Points",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "30397fc83b9eec39b56db9d406048a296f8e013e2f37a2e8ad5c552bc1de4b1c",
+            "evidence_id": "E1a95cdeea8476a25-B0013",
+            "pages": [
+              3
+            ],
+            "section": "Implemented Control Points",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 3,
+                "section": "Implemented Control Points",
+                "section_index": 7,
+                "start": 0,
+                "text": "IMPLEMENTED CONTROL POINTS\n01\nCapability-owned\nproposals\nExpert-capability gap\nEvolution-log filter\nEst. quality \u2265 current skill\nEst. efficiency > current skill\nReview & stage\nExisting skills; no auto-activation\n02\nScoped memory\nmaintenance\n Eligible dialogue\nExtract & deduplicate\nCaller-expert memory\nOptional temporal consolidation\n Facts + evidence + history\nConflict-checked temporal recovery\n03\nCreator-controlled\ndeployment\nCreator-controlled content\nSoul + persona + instructions\n Authored skills\nAuthorized publication\nReleased config + active skills\nBackground maintenance leaves\n stored Soul unchanged.\nPROPOSED  Cross-expert attribution\nCreator evidence\nScope / permission\nProfile / Journal\nConditional target reuse\nFigure 1: Profy marketplace workflow. Solid panels show implemented skill proposals, scoped memory, and\ncreator-authorized publication; dashed purple paths show proposed "
+              }
+            ],
+            "text": "IMPLEMENTED CONTROL POINTS\n01\nCapability-owned\nproposals\nExpert-capability gap\nEvolution-log filter\nEst. quality \u2265 current skill\nEst. efficiency > current skill\nReview & stage\nExisting skills; no auto-activation\n02\nScoped memory\nmaintenance\n Eligible dialogue\nExtract & deduplicate\nCaller-expert memory\nOptional temporal consolidation\n Facts + evidence + history\nConflict-checked temporal recovery\n03\nCreator-controlled\ndeployment\nCreator-controlled content\nSoul + persona + instructions\n Authored skills\nAuthorized publication\nReleased config + active skills\nBackground maintenance leaves\n stored Soul unchanged.\nPROPOSED  Cross-expert attribution\nCreator evidence\nScope / permission\nProfile / Journal\nConditional target reuse\nFigure 1: Profy marketplace workflow. Solid panels show implemented skill proposals, scoped memory, and\ncreator-authorized publication; dashed purple paths show proposed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0024"
+        ],
+        "excerpt": "PROFYBENCH-V1 contains 85 instances across\nfive production task families (Table 2), built from\nprivacy-filtered public replay seeds or controlled\ninternal tests. Each instance records its input and\ncontext slots, family, variant, source category, risk\nlevel, checkpoints, and evaluation dimensions.\nCheckpoints specify expected response compo-\nnents. Complete, missing-information, and adver-\nsarial variants probe deliverable quality, omitted\nconstraints, fragmented inputs, and unsafe over-\nconfidence.\nAll 85 instances compare three conditions:Raw\nLLMreceives the request without scaffolding;\nExpert Promptadds a generic expert-role prompt\nand task framing;Profy Fullincludes expert\nmetadata, workflow conventions, and supplied\nprofile/journal context. Cross-listing attribution\nremains a separate, untested proposed mechanism.\nThe primary o3-mini judge scores each output\nwithout condition ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Profybench And Protocol",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "685481f55a0001b58f7ef617013a852db1b110aea9277ac587b2598140b86a99",
+            "evidence_id": "E1a95cdeea8476a25-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Profybench And Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 5,
+                "section": "Profybench And Protocol",
+                "section_index": 14,
+                "start": 0,
+                "text": "PROFYBENCH-V1 contains 85 instances across\nfive production task families (Table 2), built from\nprivacy-filtered public replay seeds or controlled\ninternal tests. Each instance records its input and\ncontext slots, family, variant, source category, risk\nlevel, checkpoints, and evaluation dimensions.\nCheckpoints specify expected response compo-\nnents. Complete, missing-information, and adver-\nsarial variants probe deliverable quality, omitted\nconstraints, fragmented inputs, and unsafe over-\nconfidence.\nAll 85 instances compare three conditions:Raw\nLLMreceives the request without scaffolding;\nExpert Promptadds a generic expert-role prompt\nand task framing;Profy Fullincludes expert\nmetadata, workflow conventions, and supplied\nprofile/journal context. Cross-listing attribution\nremains a separate, untested proposed mechanism.\nThe primary o3-mini judge scores each output\nwithout condition "
+              }
+            ],
+            "text": "PROFYBENCH-V1 contains 85 instances across\nfive production task families (Table 2), built from\nprivacy-filtered public replay seeds or controlled\ninternal tests. Each instance records its input and\ncontext slots, family, variant, source category, risk\nlevel, checkpoints, and evaluation dimensions.\nCheckpoints specify expected response compo-\nnents. Complete, missing-information, and adver-\nsarial variants probe deliverable quality, omitted\nconstraints, fragmented inputs, and unsafe over-\nconfidence.\nAll 85 instances compare three conditions:Raw\nLLMreceives the request without scaffolding;\nExpert Promptadds a generic expert-role prompt\nand task framing;Profy Fullincludes expert\nmetadata, workflow conventions, and supplied\nprofile/journal context. Cross-listing attribution\nremains a separate, untested proposed mechanism.\nThe primary o3-mini judge scores each output\nwithout condition "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0025"
+        ],
+        "excerpt": "labels, given its checkpoints and\nrisk level, on completeness, specificity, action-\nability, coherence, and safety-boundary adherence\nfrom 1\u20135;overall core scoreaverages these di-\nmensions. Family-specific diagnostics and a fixed\nerror vocabulary complement the shared rubric;\npairwise comparisons randomize output order and\nomit checkpoints. Prompts appear in Appendix B.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Profybench And Protocol",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "9740936965158f7d7ba91604e57b926ca54bf193b4f6b80420369a1d837351e7",
+            "evidence_id": "E1a95cdeea8476a25-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Profybench And Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1266,
+                "page": 5,
+                "section": "Profybench And Protocol",
+                "section_index": 14,
+                "start": 894,
+                "text": "labels, given its checkpoints and\nrisk level, on completeness, specificity, action-\nability, coherence, and safety-boundary adherence\nfrom 1\u20135;overall core scoreaverages these di-\nmensions. Family-specific diagnostics and a fixed\nerror vocabulary complement the shared rubric;\npairwise comparisons randomize output order and\nomit checkpoints. Prompts appear in Appendix B."
+              }
+            ],
+            "text": "labels, given its checkpoints and\nrisk level, on completeness, specificity, action-\nability, coherence, and safety-boundary adherence\nfrom 1\u20135;overall core scoreaverages these di-\nmensions. Family-specific diagnostics and a fixed\nerror vocabulary complement the shared rubric;\npairwise comparisons randomize output order and\nomit checkpoints. Prompts appear in Appendix B."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0026"
+        ],
+        "excerpt": "Under the primary o3-mini judge (N=85), Profy\nFull reaches 4.65 overall core score, com-\npared with 4.28 for Expert Prompt and 4.01\nfor Raw LLM (Table 3). The largest dimen-\nsional improvements concern coverage of task re-\nquirements and concrete tailoring: completeness\nSystem Ovr. Comp. Spec. Act. Coh. Safe\nRaw LLM 4.01 3.61 3.38 3.95 4.65 4.48\nExpert Prompt 4.28 4.01 3.62 4.15 4.84 4.78\nProfy Full4.65 4.62 4.26 4.47 4.99 4.92\nTable 3: PROFYBENCH-V1 automatic judge results\n(N=85, 1\u20135 scale, higher is better). Overall (Ovr.) is\nthe average of completeness, specificity, actionability,\ncoherence, and safety-boundary adherence.\nrises from 3.61/4.01\u21924.62 and specificity from\n3.38/3.62\u21924.26. Coherence and safety are near-\nceiling across conditions; completeness, speci-\nficity, and actionability account for most of the\noverall difference.\nPaired task-level comparisons (Appendix Ta-\nble 4) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Task Utility",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5bdfb76855baee32bbab222851574c2e34a39e3d1c50bd4d856eb8c2f509c25b",
+            "evidence_id": "E1a95cdeea8476a25-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Task Utility",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 5,
+                "section": "Task Utility",
+                "section_index": 15,
+                "start": 0,
+                "text": "Under the primary o3-mini judge (N=85), Profy\nFull reaches 4.65 overall core score, com-\npared with 4.28 for Expert Prompt and 4.01\nfor Raw LLM (Table 3). The largest dimen-\nsional improvements concern coverage of task re-\nquirements and concrete tailoring: completeness\nSystem Ovr. Comp. Spec. Act. Coh. Safe\nRaw LLM 4.01 3.61 3.38 3.95 4.65 4.48\nExpert Prompt 4.28 4.01 3.62 4.15 4.84 4.78\nProfy Full4.65 4.62 4.26 4.47 4.99 4.92\nTable 3: PROFYBENCH-V1 automatic judge results\n(N=85, 1\u20135 scale, higher is better). Overall (Ovr.) is\nthe average of completeness, specificity, actionability,\ncoherence, and safety-boundary adherence.\nrises from 3.61/4.01\u21924.62 and specificity from\n3.38/3.62\u21924.26. Coherence and safety are near-\nceiling across conditions; completeness, speci-\nficity, and actionability account for most of the\noverall difference.\nPaired task-level comparisons (Appendix Ta-\nble 4) "
+              }
+            ],
+            "text": "Under the primary o3-mini judge (N=85), Profy\nFull reaches 4.65 overall core score, com-\npared with 4.28 for Expert Prompt and 4.01\nfor Raw LLM (Table 3). The largest dimen-\nsional improvements concern coverage of task re-\nquirements and concrete tailoring: completeness\nSystem Ovr. Comp. Spec. Act. Coh. Safe\nRaw LLM 4.01 3.61 3.38 3.95 4.65 4.48\nExpert Prompt 4.28 4.01 3.62 4.15 4.84 4.78\nProfy Full4.65 4.62 4.26 4.47 4.99 4.92\nTable 3: PROFYBENCH-V1 automatic judge results\n(N=85, 1\u20135 scale, higher is better). Overall (Ovr.) is\nthe average of completeness, specificity, actionability,\ncoherence, and safety-boundary adherence.\nrises from 3.61/4.01\u21924.62 and specificity from\n3.38/3.62\u21924.26. Coherence and safety are near-\nceiling across conditions; completeness, speci-\nficity, and actionability account for most of the\noverall difference.\nPaired task-level comparisons (Appendix Ta-\nble 4) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0030"
+        ],
+        "excerpt": "Pairwise judgments favor Profy Full in 53 of 85\ncomparisons against Raw LLM, versus 31 losses\nand 1 tie (62.4% win rate). This check covers\nonly Raw LLM, and pairwise prompts omit check-\npoints.\nA 60-record subset (20 per condition) was re-\nscored by four additional LLM judges. Because\nthe panel aggregate score lacks a documented defi-\nnition and the paired item-level scores are unavail-\nable for verification, we do not use its summary or\nagreement statistics to support the main compari-\nson. This subset does not provide human valida-\ntion of correctness or safety.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Llm Preferences And Judge Audit",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a75d445dba0bff4b9a0ac83fd2b05a4a4900605411dbbbcc58ff07585257cd22",
+            "evidence_id": "E1a95cdeea8476a25-B0030",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Llm Preferences And Judge Audit",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 286,
+                "page": 5,
+                "section": "Llm Preferences And Judge Audit",
+                "section_index": 18,
+                "start": 0,
+                "text": "Pairwise judgments favor Profy Full in 53 of 85\ncomparisons against Raw LLM, versus 31 losses\nand 1 tie (62.4% win rate). This check covers\nonly Raw LLM, and pairwise prompts omit check-\npoints.\nA 60-record subset (20 per condition) was re-\nscored by four additional LLM judges. Because"
+              },
+              {
+                "end": 284,
+                "page": 6,
+                "section": "Llm Preferences And Judge Audit",
+                "section_index": 19,
+                "start": 0,
+                "text": "the panel aggregate score lacks a documented defi-\nnition and the paired item-level scores are unavail-\nable for verification, we do not use its summary or\nagreement statistics to support the main compari-\nson. This subset does not provide human valida-\ntion of correctness or safety."
+              }
+            ],
+            "text": "Pairwise judgments favor Profy Full in 53 of 85\ncomparisons against Raw LLM, versus 31 losses\nand 1 tie (62.4% win rate). This check covers\nonly Raw LLM, and pairwise prompts omit check-\npoints.\nA 60-record subset (20 per condition) was re-\nscored by four additional LLM judges. Because\nthe panel aggregate score lacks a documented defi-\nnition and the paired item-level scores are unavail-\nable for verification, we do not use its summary or\nagreement statistics to support the main compari-\nson. This subset does not provide human valida-\ntion of correctness or safety."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0031"
+        ],
+        "excerpt": "Elapsed time was recorded for all 85 Profy Full\nruns (median 52.05 s, mean 54.41 s). These mea-\nsurements characterize Full alone; comparable\nbaseline timing was not recorded.\nSupplementary customs benchmark.We fur-\nther evaluate structured deliverables on 52\ncustoms-extraction tasks with three recorded runs\nper task. The mean recorded task score is 0.958\nover 156 valid runs from one configuration, with-\nout a matched baseline; it covers a restricted field\nsubset (389 of 934 fields in an audited task), not\nwhole-declaration accuracy. A packaged exam-\nple specifies source-reviewed objective fields and\na frozen scorer with schema and item-count gates.\nThis domain evaluation complements the LLM-\njudged PROFYBENCH-V1 results with repeated-\nrun measurements of a professional document\nworkflow. Appendix G details the protocol, scor-\ning scope, results, and limitations, and provides\nan ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Runtime And Deployment Observations",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "67bfdaf2fca2d0fd691f5888f6a13170d851effa39202a18b8775d3c2c2f8335",
+            "evidence_id": "E1a95cdeea8476a25-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Runtime And Deployment Observations",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 6,
+                "section": "Runtime And Deployment Observations",
+                "section_index": 20,
+                "start": 0,
+                "text": "Elapsed time was recorded for all 85 Profy Full\nruns (median 52.05 s, mean 54.41 s). These mea-\nsurements characterize Full alone; comparable\nbaseline timing was not recorded.\nSupplementary customs benchmark.We fur-\nther evaluate structured deliverables on 52\ncustoms-extraction tasks with three recorded runs\nper task. The mean recorded task score is 0.958\nover 156 valid runs from one configuration, with-\nout a matched baseline; it covers a restricted field\nsubset (389 of 934 fields in an audited task), not\nwhole-declaration accuracy. A packaged exam-\nple specifies source-reviewed objective fields and\na frozen scorer with schema and item-count gates.\nThis domain evaluation complements the LLM-\njudged PROFYBENCH-V1 results with repeated-\nrun measurements of a professional document\nworkflow. Appendix G details the protocol, scor-\ning scope, results, and limitations, and provides\nan "
+              }
+            ],
+            "text": "Elapsed time was recorded for all 85 Profy Full\nruns (median 52.05 s, mean 54.41 s). These mea-\nsurements characterize Full alone; comparable\nbaseline timing was not recorded.\nSupplementary customs benchmark.We fur-\nther evaluate structured deliverables on 52\ncustoms-extraction tasks with three recorded runs\nper task. The mean recorded task score is 0.958\nover 156 valid runs from one configuration, with-\nout a matched baseline; it covers a restricted field\nsubset (389 of 934 fields in an audited task), not\nwhole-declaration accuracy. A packaged exam-\nple specifies source-reviewed objective fields and\na frozen scorer with schema and item-count gates.\nThis domain evaluation complements the LLM-\njudged PROFYBENCH-V1 results with repeated-\nrun measurements of a professional document\nworkflow. Appendix G details the protocol, scor-\ning scope, results, and limitations, and provides\nan "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0033"
+        ],
+        "excerpt": "COGNILIFEformulates sparse creator evidence in\nmarketplace experts and proposes a cross-expert\nattribution design. The deployed platform in-\ncludes creator-authorized authoring, capability-\nowned proposals, eligible owner-scoped memory\nconsolidation, and staged skill revisions. These\ncontrols do not establish that the proposed rout-\ning improves cold listings or that continuous dis-\ntillation preserves creator fidelity over time; im-\nplementation and direct tests remain future work.\nOn PROFYBENCH-V1 (85 instances drawn\nfrom replay seeds and controlled internal tests,\nthree conditions), the supplied expert context and\nworkflow configuration receives higher automatic-\njudge task-utility scores than both baselines, es-\npecially completeness, specificity, and missing-\ninformation handling. The central design principle\nis to distinguish the creator represented, the caller\ncurrently served, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion And Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "253d280038795959c5d0dffb199695326b341f1507e4a2d6f99374708b01ac38",
+            "evidence_id": "E1a95cdeea8476a25-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Discussion And Conclusion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 6,
+                "section": "Discussion And Conclusion",
+                "section_index": 21,
+                "start": 0,
+                "text": "COGNILIFEformulates sparse creator evidence in\nmarketplace experts and proposes a cross-expert\nattribution design. The deployed platform in-\ncludes creator-authorized authoring, capability-\nowned proposals, eligible owner-scoped memory\nconsolidation, and staged skill revisions. These\ncontrols do not establish that the proposed rout-\ning improves cold listings or that continuous dis-\ntillation preserves creator fidelity over time; im-\nplementation and direct tests remain future work.\nOn PROFYBENCH-V1 (85 instances drawn\nfrom replay seeds and controlled internal tests,\nthree conditions), the supplied expert context and\nworkflow configuration receives higher automatic-\njudge task-utility scores than both baselines, es-\npecially completeness, specificity, and missing-\ninformation handling. The central design principle\nis to distinguish the creator represented, the caller\ncurrently served, "
+              }
+            ],
+            "text": "COGNILIFEformulates sparse creator evidence in\nmarketplace experts and proposes a cross-expert\nattribution design. The deployed platform in-\ncludes creator-authorized authoring, capability-\nowned proposals, eligible owner-scoped memory\nconsolidation, and staged skill revisions. These\ncontrols do not establish that the proposed rout-\ning improves cold listings or that continuous dis-\ntillation preserves creator fidelity over time; im-\nplementation and direct tests remain future work.\nOn PROFYBENCH-V1 (85 instances drawn\nfrom replay seeds and controlled internal tests,\nthree conditions), the supplied expert context and\nworkflow configuration receives higher automatic-\njudge task-utility scores than both baselines, es-\npecially completeness, specificity, and missing-\ninformation handling. The central design principle\nis to distinguish the creator represented, the caller\ncurrently served, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0035"
+        ],
+        "excerpt": "PROFYBENCH-V1 evaluates the utility of the\nsupplied Full configuration. Its 85 replay-\nderived and internally constructed instances\nsupport configuration-level comparisons, with\nsmall family-specific samples and designed vari-\nants. Automated acquisition of creator style,\ncomponent-level effects, controlled cold-listing\nimprovement, cross-listing transfer, and longitu-\ndinal fidelity remain separate evaluation targets;\nthe attribution extension also requires a dedicated\nimplementation. The reported comparison uses\nan o3-mini judge, and pairwise preferences com-\npare Full only with Raw LLM. The auxiliary\nfour-model subset is not used to validate the re-\nsults because its aggregate score definition and\npaired records are unavailable for verification.\nLLM judging remains susceptible to known biases\n(Zheng et al., 2023); correlated errors remain pos-\nsible, and near-ceiling coherence and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3ffce7f3a2577a6a8690de0d6460b1774b63bb754fbd280d3c6f3e5958290847",
+            "evidence_id": "E1a95cdeea8476a25-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 6,
+                "section": "Limitations",
+                "section_index": 22,
+                "start": 0,
+                "text": "PROFYBENCH-V1 evaluates the utility of the\nsupplied Full configuration. Its 85 replay-\nderived and internally constructed instances\nsupport configuration-level comparisons, with\nsmall family-specific samples and designed vari-\nants. Automated acquisition of creator style,\ncomponent-level effects, controlled cold-listing\nimprovement, cross-listing transfer, and longitu-\ndinal fidelity remain separate evaluation targets;\nthe attribution extension also requires a dedicated\nimplementation. The reported comparison uses\nan o3-mini judge, and pairwise preferences com-\npare Full only with Raw LLM. The auxiliary\nfour-model subset is not used to validate the re-\nsults because its aggregate score definition and\npaired records are unavailable for verification.\nLLM judging remains susceptible to known biases\n(Zheng et al., 2023); correlated errors remain pos-\nsible, and near-ceiling coherence and "
+              }
+            ],
+            "text": "PROFYBENCH-V1 evaluates the utility of the\nsupplied Full configuration. Its 85 replay-\nderived and internally constructed instances\nsupport configuration-level comparisons, with\nsmall family-specific samples and designed vari-\nants. Automated acquisition of creator style,\ncomponent-level effects, controlled cold-listing\nimprovement, cross-listing transfer, and longitu-\ndinal fidelity remain separate evaluation targets;\nthe attribution extension also requires a dedicated\nimplementation. The reported comparison uses\nan o3-mini judge, and pairwise preferences com-\npare Full only with Raw LLM. The auxiliary\nfour-model subset is not used to validate the re-\nsults because its aggregate score definition and\npaired records are unavailable for verification.\nLLM judging remains susceptible to known biases\n(Zheng et al., 2023); correlated errors remain pos-\nsible, and near-ceiling coherence and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0079"
+        ],
+        "excerpt": "not establish whole-\ndeclaration correctness or completed business pro-\ncessing. Dataset-wide scoring consistency and re-\nproducible resource availability remain unestab-\nlished. These scores are reported separately from\nPROFYBENCH-V1's 1\u20135 LLM-judge scores.\nResults and execution requirements.The\nmacro-average recorded score is 0.958 and the\nmedian task mean is 0.966 (Table 8). Thirty-five\ntask means are at least 0.95 and 48 are at least",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Implementation Correspondence And",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3c75a294a1fb4ebfceeae0354fdf5c5e8bb07f4dabf5e2013f29f0d5f7c4f224",
+            "evidence_id": "E1a95cdeea8476a25-B0079",
+            "pages": [
+              20
+            ],
+            "section": "Appendix: Implementation Correspondence And",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1553,
+                "page": 20,
+                "section": "Appendix: Implementation Correspondence And",
+                "section_index": 52,
+                "start": 1112,
+                "text": "not establish whole-\ndeclaration correctness or completed business pro-\ncessing. Dataset-wide scoring consistency and re-\nproducible resource availability remain unestab-\nlished. These scores are reported separately from\nPROFYBENCH-V1's 1\u20135 LLM-judge scores.\nResults and execution requirements.The\nmacro-average recorded score is 0.958 and the\nmedian task mean is 0.966 (Table 8). Thirty-five\ntask means are at least 0.95 and 48 are at least"
+              }
+            ],
+            "text": "not establish whole-\ndeclaration correctness or completed business pro-\ncessing. Dataset-wide scoring consistency and re-\nproducible resource availability remain unestab-\nlished. These scores are reported separately from\nPROFYBENCH-V1's 1\u20135 LLM-judge scores.\nResults and execution requirements.The\nmacro-average recorded score is 0.958 and the\nmedian task mean is 0.966 (Table 8). Thirty-five\ntask means are at least 0.95 and 48 are at least"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2611.04483",
+    "gate_version": "dual-promotion-v3",
+    "manual_override": false,
+    "missing_information": [],
+    "overall_quality_score": null,
+    "paper_type": "systems_or_application",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The core proposed mechanism, cross-expert attribution for cold-expert mitigation, is explicitly neither implemented nor evaluated, so the central scientific claim remains unvalidated.",
+          "The headline PROFYBENCH-V1 result relies on a single o3-mini LLM judge without human or independent ground-truth verification, and the auxiliary four-model audit is explicitly not used to validate results because its aggregate definition and paired records are unavailable.",
+          "The benchmark evaluates only the aggregate Full configuration and does not test cold-expert mitigation, cross-expert transfer, or longitudinal distillation, leaving the paper's titular contribution unsupported by the reported experiments."
+        ],
+        "canonical_id": "arxiv:2611.04483",
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "evaluation_independence": {
+          "concern": "moderate",
+          "corroboration_direction": "mixed",
+          "corroboration_summary": "A supplementary customs-extraction benchmark uses a frozen deterministic schema and field-matching scorer over 156 recorded runs, reporting a 0.958 mean task score.",
+          "final_evaluation_signal": "PROFYBENCH-V1 rubric scores and pairwise preferences from the o3-mini LLM judge.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Authored expert context, workflow conventions, profile/journal content, and platform capability-filtering criteria used to configure the Profy Full condition.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0002",
+          "E1a95cdeea8476a25-B0003",
+          "E1a95cdeea8476a25-B0006",
+          "E1a95cdeea8476a25-B0013",
+          "E1a95cdeea8476a25-B0024",
+          "E1a95cdeea8476a25-B0025",
+          "E1a95cdeea8476a25-B0026",
+          "E1a95cdeea8476a25-B0030",
+          "E1a95cdeea8476a25-B0031",
+          "E1a95cdeea8476a25-B0033",
+          "E1a95cdeea8476a25-B0035",
+          "E1a95cdeea8476a25-B0079"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "567e5f24c00774eab19f800fbb1e900b3547ce4f12b8d8bbaa3f5f4739236182"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2611.04483",
+        "claim_evidence_alignment": "The authors explicitly disclaim evaluating cold-expert mitigation, cross-expert transfer, or longitudinal distillation, acknowledging that the benchmark only tests the Full configuration. Because the headlined problem formulation remains unvalidated by empirical implementation or controlled experiments, the empirical support for the proposed solution is incomplete.",
+        "context_id": "1a95cdeea8476a2569ef4a08eec4673dccae2d492f777b2927720885211f9f19",
+        "decision": "uncertain",
+        "evaluation_assessment": "PROFYBENCH-V1 evaluates an offline Full configuration across 85 tasks against two baseline prompts using an o3-mini LLM judge. However, it tests aggregate configuration utility rather than the core cold-expert or cross-expert mechanisms, and the auxiliary 4-judge audit lacks paired verification data, leaving significant uncertainty regarding objective performance.",
+        "evaluation_independence": {
+          "concern": "moderate",
+          "corroboration_direction": "mixed",
+          "corroboration_summary": "A supplementary customs-extraction benchmark evaluates 52 tasks with an objective deterministic schema/matching scorer across 156 runs, achieving a 0.958 mean score.",
+          "final_evaluation_signal": "PROFYBENCH-V1 automated rubric scoring and pairwise preferences conducted via an o3-mini LLM judge.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Authored instructions, context configurations, and platform capability-filtering criteria used to stage expert artifacts.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E1a95cdeea8476a25-B0002",
+          "E1a95cdeea8476a25-B0003",
+          "E1a95cdeea8476a25-B0006",
+          "E1a95cdeea8476a25-B0013",
+          "E1a95cdeea8476a25-B0024",
+          "E1a95cdeea8476a25-B0025",
+          "E1a95cdeea8476a25-B0026",
+          "E1a95cdeea8476a25-B0030",
+          "E1a95cdeea8476a25-B0031",
+          "E1a95cdeea8476a25-B0033",
+          "E1a95cdeea8476a25-B0035",
+          "E1a95cdeea8476a25-B0079"
+        ],
+        "limitations": "The manuscript candidly acknowledges critical limitations: the attribution extension is not implemented or evaluated, the primary evaluation relies on a single LLM judge without human ground-truth verification, and supplementary customs evaluations lack matched baselines.",
+        "method_assessment": "The manuscript clearly demarcates implemented platform controls from purely proposed mechanisms, noting that cross-expert attribution and longitudinal distillation are neither implemented nor evaluated. While the described architecture is lucid, the core mechanisms proposed to solve the formulated cold-expert challenge remain unimplemented conceptual designs.",
+        "quality_rationale": "While the authors provide commendable transparency about what is implemented versus proposed, the paper's primary conceptual contributions (cross-expert attribution and cold-expert resolution) are entirely unexecuted and unevaluated. Given the reliance on single-model LLM judging on an offline benchmark without validating the titular distillation mechanism, scientific quality warrants an uncertain decision.",
+        "scoped_contribution": "The paper formalizes the 'cold-expert' problem in multi-expert marketplaces and describes a conceptual lifecycle ('continuous cognitive distillation') with partially implemented platform controls (capability filtering, scoped memory, deployment authoring) alongside an offline benchmark (PROFYBENCH-V1) evaluating expert utility.",
+        "source_content_hash": "567e5f24c00774eab19f800fbb1e900b3547ce4f12b8d8bbaa3f5f4739236182"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the authors provide commendable transparency about what is implemented versus proposed, the paper's primary conceptual contributions (cross-expert attribution and cold-expert resolution) are entirely unexecuted and unevaluated. Given the reliance on single-model LLM judging on an offline benchmark without validating the titular distillation mechanism, scientific quality warrants an uncertain decision.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "567e5f24c00774eab19f800fbb1e900b3547ce4f12b8d8bbaa3f5f4739236182",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "The manuscript candidly acknowledges critical limitations: the attribution extension is not implemented or evaluated, the primary evaluation relies on a single LLM judge without human ground-truth verification, and supplementary customs evaluations lack matched baselines."
+  },
+  "semantic_scholar_id": null,
+  "source": "openalex",
+  "source_id": "W7225272735",
+  "source_ids": {
+    "arxiv": [
+      "2611.04483"
+    ],
+    "openalex": [
+      "W7225272735"
+    ]
+  },
+  "source_updated_date": "2026-11-10",
+  "sources": [
+    "openalex",
+    "arxiv"
+  ],
+  "ssrn_id": null,
+  "structured_card": {
+    "evidence_or_evaluation": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata."
+    },
+    "key_contribution": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "limitations_or_uncertainty": {
+      "confidence": "high",
+      "provenance": "rule",
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
+    },
+    "method_or_system_type": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Benchmark / evaluation"
+    },
+    "relation_to_agentic_memory": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Evaluates memory behavior, safety, or retrieval in LLM agents"
+    },
+    "research_relevance": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Directly relevant to agentic-memory research based on screening evidence."
+    }
+  },
+  "structured_sections": {
+    "evidence_or_evaluation_signals": [],
+    "method_or_system_type": "Benchmark / evaluation",
+    "possible_key_claims": [],
+    "relation_to_agentic_memory": "Evaluates memory behavior, safety, or retrieval in LLM agents"
+  },
+  "tags": [
+    "benchmark",
+    "agent-memory",
+    "memory-systems",
+    "llm-agents"
+  ],
+  "title": "CogniLife: Continuous Cognitive Distillation for Deployed Multi-Expert Agent Marketplaces",
+  "url": "https://arxiv.org/abs/2611.04483"
+}

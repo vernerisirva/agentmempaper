@@ -1,21 +1,22 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-10](2026-11-10.md).
+Latest daily digest: [2026-11-11](2026-11-11.md).
 
-# Paper Scout Digest - 2026-11-10
+# Paper Scout Digest - 2026-11-11
 
 ## Run Summary
 
-- **Run ID:** 66
-- **Candidates fetched:** 82
-- **New unique papers:** 76
-- **Relevant:** 0
+- **Run ID:** 67
+- **Candidates fetched:** 105
+- **New unique papers:** 99
+- **Relevant:** 7
 - **Maybe relevant:** 0
-- **Irrelevant:** 82
-- **Source summary:** arxiv: 3, openalex: 77, semantic_scholar: 2
+- **Irrelevant:** 98
+- **Source summary:** arxiv: 4, openalex: 100, semantic_scholar: 1
 
 ## Source Warnings
 
+- openalex: incomplete discovery window for 'deepseek engram'; single-page record limit reached.
 - openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
 - openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.

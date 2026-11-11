@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory</h1>
+          <p class="hero-copy">David Yang, Blake Bullwinkel, Amanda Minnich, Mojtaba Amiri, Giorgio Severi</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2611.09721">Open paper</a>
+            <a class="paper-detail-link" href="memorydojo-benchmarking-poisoning-through-llm-agent-memory-f6b21b94.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>David Yang, Blake Bullwinkel, Amanda Minnich, Mojtaba Amiri, Giorgio Severi</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-06</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-06</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.09721v1">arXiv</a><a href="https://arxiv.org/abs/2611.09721">arXiv</a><a href="https://openalex.org/W7225613920">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Evaluates memory mechanisms or benchmarks for LLM agents.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>LLM agents benefit from using memory systems to improve performance on long-horizon, multi-session tasks. However, memory introduces a critical attack surface. Malicious instructions encountered in one session may be stored and propagated through memory before being retrieved and acted upon in later sessions. Becaus...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The study provides clear experimental controls, detailed lifecycle metrics, rigorous ablation across domains and models, and an auxiliary-to-evaluation transfer setup that prevents circular evaluation.</p>
+      <p>The work explicitly documents key boundaries, including restricting tasks to sandboxed environments, single-point poison insertion, evaluation on five specific open-source memory configurations, and leaving multi-injection attacks and defensive countermeasure designs for future research.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-10T12:08:04.657276+00:00.</p>
+        <p>Coverage: 69002 of 69002 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>an extensible benchmark for comparatively
+evaluating memory architectures under poisoning attacks over long-horizon, multi-session trajectories.
+Currently, MemoryDojo supports 155 multi-session trajectories covering 4 application domains, and
+is enabled by 5 different agent memory system implementations. Additional memory systems,
+environments, and configurations can be easily added for evaluation. We also introduce new metrics
+to better quantify the effects of poisoning across its lifecycle, tracking information on payload
+insertion, effects of persistence and propagation in memory, retrieval, and cumulative attack success
+metrics. Finally, we propose a natural adaptive memory-aware poison optimization method that
+performs iterative refinement of the payload prompt in an auxiliary environment.
+Our experiments reveal substantial variation in poisoning success across memory systems. </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We construct multi-session trajectories using task templates from AgentDojo (Debenedetti et al.,
+2024) across four domains: Workspace, Travel, Banking, and Slack. Each domain provides a stateful
+environment and tools for interacting with it. All tasks specify an objective and utility check that
+determines whether the objective is achieved. We concatenate tasks into trajectories, treating each task
+execution as a separate session while carrying environment state forward. To ensure the concatenated
+tasks remain executable, we check task pairs for state conflicts and validate each complete sequence.
+For each domain, we also define an attacker objective ψ, accompanied by a textual description of
+the behavior that the poison seeks to induce. Using these tasks and conversation histories from
+LongMemEval-S (Wu et al., 2025), we obtain a dataset with three different collections. </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Throughout a trajectory, MemoryDojo keeps track of various statistics at different timesteps in the
+process to better understand how poison interacts with memory. Let D denote a collection of planned
+runs, with trajectory length Tj, insertion session t0,j, and payload pj for run j. The benchmark is
+accompanied by a visualization tool to manually inspect traces (see example in Appendix A.3).
+Insertion.After the insertion-session write, we inspect the memory system for content attributable to
+pj using an LLM Judge to classify four categories. Anexactmatch preserves the complete payload
+word for word, atransformedmatch preserves its salient instruction or meaning after rewriting, and a
+fragmentedmatch retains only part of that meaning. If no attributable content is found, we assign
+4
+the label ofnot observed. Let ℓinsj denote this judgment and C+ ={exact,transformed,fragmented} .
+We define </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Retrieval and attribution characterize the poison&#x27;s presence and exposure routes in later sessions. We
+additionally measure attack success as a cumulative metric of poisoning across the trajectory. For
+each session t &gt; t0, we evaluate the agent actions and final response against the attacker objective ψ.
+Let zt =ψ(τ t)∈ {0,1}denote the outcome. Excluding t0 separates later behavior from the agent&#x27;s
+immediate response to the poisoned observation.
+Behavioral reach.A run isreachedif the attack objective is achieved in at least one session after
+insertion. Across a collection of runs,behavioral reach(BR) is the fraction of runs that are reached.
+Task-level behavioral reach(BRT) measures the fraction of post-insertion tasks on which the objective
+is observed, pooled over all post-insertion sessions:
+BR(D) = 1|D| Xj∈D I
+
+ X
+t&gt;t0,j
+zj,t ≥1
+
+ ,BRT(D) =
+P
+j∈D
+P
+t&gt;t0,j zj,tP
+j∈D (Tj −t 0,j) </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Memory systems differ in how they transform, store, and retrieve past interactions, directly affecting
+whether a poisoned instruction survives a write, appears in later context, and induces the intended
+behavior. To study the dynamics of each system under adversarial pressure, we propose a memory-
+aware optimization process that iteratively refines a payload to increase behavioral reach (see Figure 4).
+The LLM optimizer is first provided an attack objective, memory-system description, and domain
+context. Starting from seed payloads, each round proposes candidates and evaluates them on synthetic
+trajectories in an auxiliary environment. Feedback from each iteration guides further revisions. After
+a fixed budget, selection maximizes auxiliary BRT subject to a utility threshold. See Appendix A.6
+for additional details of the optimization process.
+Memory-system
+description
+Attack
+objective </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate tool-calling agents on five memory systems, selected to cover a wide range of memory
+types: A-MEM, Graphiti, Letta, Mem0, and Memora. Their native representations span linked
+notes, entity–relation graphs, hierarchical memory, extracted facts, and linked semantic and episodic
+memory. We evaluate GPT-5.6-Luna (OpenAI, 2026) across all trajectory settings and optimize
+poisons for every memory system with Luna as the target and GPT-5.6-Sol as the optimizer. To assess
+transfer across models, we additionally evaluate GPT-5.4-mini, DeepSeek-V4-Flash-0731 (DeepSeek-
+AI, 2026), and GLM-5.3-Flash (GLM-5-Team, 2026) in the same-domain setting using the Luna-
+optimized payloads. We vary the task-agent and generative memory-side LLM models together, and
+use GPT-5.6-Luna for LLM judging. For each memory system, we use its native retrieval mechanisms.
+Thus, these configurations compare </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>complete memory integrations, including their different context-
+selection policies and budgets. Additional setup details can be found in Appendix A.7.
+6
+Table 1: Same-domain results for unoptimized and optimized poison for GPT-5.6-Luna.
+Memory System ISR ASR RSR PE PR PP TU BRT BRT|R BR
+Unoptimized
+A-MEM 98.92 25.27 89.84 60.28 8.01 31.71 72.2521.0223.3945.70
+Graphiti 98.39 23.12 33.43 81.86 5.49 12.66 80.49 7.76 23.21 24.73
+Letta 98.92 24.19 64.88 77.28 1.74 20.98 69.46 15.30 23.59 16.67
+Mem0 60.75 20.97 56.70 78.11 0.87 21.02 76.66 7.90 13.93 14.52
+Memora 97.85 23.12 86.18 62.36 6.55 31.10 65.72 20.38 23.65 38.71
+Optimized
+A-MEM 97.85 19.35 93.37 37.16 13.29 49.55 60.74 44.01 47.1370.97
+Graphiti 100.00 4.30 30.61 62.67 17.51 19.82 81.42 9.31 30.41 30.11
+Letta 95.70 25.81 72.21 46.48 0.59 52.93 53.6746.2664.06 50.54
+Mem0 77.42 9.68 71.65 53.94 4.33 41.73 71.77 21.02 29.33 39.78
+Memora </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reach even with roughly equivalent RSR.
+Reach varies across models and domains.Evaluation with three additional models reinforces
+the findings that poisoning effects differ between memory systems, and we observe examples of
+7
+0 10 20 30 40
+Reach gain (%)
+A-MEM
+Graphiti
+Letta
+Mem0
+Memora
++25.27
++5.38
++33.87
++25.27
++27.96
++22.99
++1.55
++30.96
++13.12
++9.38
+Trajectory (BR) T ask (BRT)
+(a) Reach gains with Luna.
+GPT-5.6
+Luna
+GPT-5.4
+mini
+DeepSeek
+V4 Flash
+GLM-5.3
+Flash
+A-MEM
+Graphiti
+Letta
+Mem0
+Memora
+44.01 23.98 28.91 33.85
+9.31 0.28 3.10 2.12
+46.26 4.94 35.26 15.09
+21.02 1.97 16.22 6.63
+29.76 48.66 38.79 31.73
+T ask reach (BRT, %)
+0
+25
+50 (b) Optimized reach across models.
+Figure 5:Optimization gains and reach across models.(a) Optimized minus unoptimized BR and
+BRT with GPT-5.6-Luna. (b) Heatmap showing optimized BRT across different models.
+significant BRT for memory systems across models </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 2: History-prefixed cross-domain results.
+Memory ISR ASR RSR TU MU BRT BRT|R BR
+A-MEM 97.58 8.06 37.98 79.20 76.86 4.66 12.27 31.45
+Graphiti 100.00 3.23 5.32 82.65 70.16 1.54 28.99 12.90
+Letta 95.97 10.48 7.94 70.47 65.22 0.00 0.00 0.00
+Mem0 47.58 12.90 19.38 77.75 64.41 2.58 13.32 21.77
+Memora 96.77 20.16 44.18 77.65 75.005.3212.0345.16
+60 70 80 90
+Without attack (%)
+60
+70
+80
+90With attack (%)
+A-MEM
+Graphiti
+Letta
+Mem0
+Memora Figure 7: Memory utility.
+We next evaluate poisoning after memory has accumulated benign conversation history. Each
+trajectory starts from a checkpoint populated with a LongMemEval history of around 50 sessions.
+Poisoning remains effective in populated memory.Table 2 shows lower RSR and BRT for every
+system than in the cross-domain experiment without a history prefix. Nevertheless, poison reaches
+later tasks in four of the five systems. Memora had the </blockquote></details></li><li><strong>Contribution clarity — pages 17–18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For each application domain, we construct a standalone synthetic environment with tools and appli-
+cation state supporting representative tasks that might be executed. The domains cover workspace,
+travel, banking, and communication tasks. Within each domain, task templates specify user requests
+involving information retrieval, state-changing actions, or combinations of tool operations. Each task
+includes reference tool actions and deterministic checks of legitimate task completion, allowing us to
+17
+measure task utility alongside the attack objective. As with MemoryDojo, we concatenate tasks into
+trajectories of different lengths and perform validity checks.
+The auxiliary setting uses separate task templates, tool implementations, and application state from
+MemoryDojo. We ensure tools used in this environment have different names from those used in
+MemoryDojo, and these names vary across </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>payloads and an additionalmemory-property-onlyseed
+candidate generated by the optimizer from the objective, memory-system description, and domain
+ontology. We evaluate the initial candidates on the auxiliary trajectories before beginning feedback-
+guided revision.
+A.6.3 FEEDBACK, REVISION,ANDSELECTION
+Starting from the evaluated initial candidates, we repeat a cycle of proposing revised poison payloads,
+testing them on the auxiliary trajectories, and providing feedback to the optimizer.
+Candidate proposal.At each round, the optimizer uses the fixed inputs from Section A.6.2,
+previously evaluated payloads, and their feedback to propose revised poison prompts. Each proposal
+explains the changes, the suspected bottleneck they address, and the expected improvement. In
+addition, the optimizer can see the best valid candidate evaluated so far and the most recently
+evaluated valid revision. </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We expand the model comparison in Section 6.2 with full metrics in Table 6. All four models
+use the same selected optimized payloads for each memory system and domain, with insertion in
+the first session of the same-domain trajectories. Task agents and generative memory components
+change together, while judges all use GPT-5.6-Luna with medium reasoning. For the task agents
+and memory LLMs, GPT-5.4-mini uses default none reasoning, GPT-5.6-Luna uses default medium
+reasoning, DeepSeek-V4-Flash-0731 uses default high reasoning, and GLM-5.3-Flash uses default
+high reasoning.
+Figure 13 separates how often poison is retrieved from how often later behavior satisfies the attack
+objective. High retrieval can coexist with much lower reach: Letta with GLM has 100% RSR and
+15.09% BRT, compared with 72.21% RSR and 46.26% BRT with Luna. With mini, Graphiti retrieves
+poison on 38.08% of planned later </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Security / robustness evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd>Abstract-level signal: safety, security, or robustness evaluation is mentioned in available metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Studies memory-related safety risks in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 99/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: agent-memory, llm-agents, memory-systems, benchmark, evaluation</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-10</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-09 12:28:50</li><li>Last seen by Paper Scout: 2026-11-11 11:41:07</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.09721</li><li>arXiv: 2611.09721</li><li>OpenAlex: W7225613920</li><li>OpenAlex IDs: W7225613920</li><li>arXiv IDs: 2611.09721</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="memorydojo-benchmarking-poisoning-through-llm-agent-memory-f6b21b94.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory. David Yang, Blake Bullwinkel, Amanda Minnich, Mojtaba Amiri, Giorgio Severi. 2026-11-06. https://doi.org/10.48550/arxiv.2611.09721</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

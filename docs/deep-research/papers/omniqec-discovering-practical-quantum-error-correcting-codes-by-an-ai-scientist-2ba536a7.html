@@ -59,16 +59,249 @@
             <p>Quantum error correction (QEC) is indispensable for scalable fault-tolerant quantum computing. However, discovering QEC codes that remain effective is challenging, as logical performance depends on the interplay between code structure, hardware, syndrome extraction, and decoding, which often impose competing require...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study provides a well-controlled, significant contribution to automated quantum error-correcting code design. The claims are fully substantiated by comprehensive circuit simulations, robust baselines, and ablation experiments across multiple LLM engines.</p>
+      <p>The manuscript transparently discusses computational bottlenecks in circuit simulation and decoder evaluation, reliance on depolarizing noise models, and the need to scale beyond memory experiments to full logical Clifford operations and diverse physical architectures.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: partial_full_text.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-04T09:12:23+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly.</li><li>Quantitative evaluation signals were detected. — page 1</li><li>No suitable baseline comparison was detected in the available text.</li><li>Comparative claims were detected without a suitable baseline in the available text.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-11T11:44:38.357158+00:00.</p>
+        <p>Coverage: 53273 of 53273 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>interplay between code structure, hardware, syndrome extraction, and decoding, which often
+impose competing requirements. Here we introduceOmniQEC, an efficient AI scientist for discovering
+QEC codes suited to deployment on modern quantum processors.OmniQECformulates QEC design
+as an iterative discovery process in which an orchestrator, implemented by advanced large language
+models (LLMs), coordinates code generation, code-level screening, syndrome-extraction synthesis,
+and decoder-based circuit evaluation. At its core,OmniQECcombines a self-evolving reasoning mech-
+anism with a slow–fast synergistic workflow: a fast loop explores candidates using inexpensive code-
+level proxies, whereas a slow loop performs physically grounded circuit-level evaluation and feeds
+the resulting evidence back into the search. We evaluateOmniQECacross four qLDPC construction
+families, three LLM backends, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>specifies a QEC design objective, such as the target code family,
+optimization criterion, physical-qubit budget, connectivity, native gate set, and available ancilla resources. The LLM-based
+orchestrator translates this objective into a structured discovery task, maintains the self-evolving discovery memory, and
+routes information across a dual-loop workflow. In the fast loop, the code-search agent proposes executable code-construction
+programs, which are converted into candidate QEC codes and screened by the code-characterization module using code-level
+properties, including validity, logical-qubit number, code distance, and the code-level proxy such as figure of merit (FOM).
+Promising candidates are promoted to the slow loop, where the circuit-synthesis module compiles validated codes into syndrome-
+extraction circuits and the circuit-evaluation module estimates circuit-level logical </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>error rates using noisy sampling and selected
+decoders. The resulting circuit-level evidence is returned to the orchestrator as slow-loop feedback and incorporated into the
+discovery memory, enabling subsequent iterations to generate improved candidates. The workflow outputs a ranked package
+containing reproducible code-construction programs, discovered codes, compiled circuits, and decoding performance.
+Here we introduceOmniQEC, an AI scientist for discovering practical QEC codes by directly optimizing the circuit-
+level logical error rate (LER), a standard metric of implementation-level QEC performance [20, 21]. Conceptually,
+OmniQECcasts QEC code discovery as an autonomous generate–evaluate–refine process, in which an LLM-based
+orchestrator harnesses aself-evolving reasoning mechanismto propose candidate constructions, invoke purpose-built
+scientific tools for validation, and refine </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>subsequent search strategies using the resulting evidence. In addition, to rec-
+oncile the large search space with the high cost of LER evaluation,OmniQECexploits aslow–fast synergistic workflow.
+The fast loop generates and screens large populations of candidates using inexpensive code-level metrics, whereas the
+slow loop compiles selected candidates into noisy circuits, evaluates their LERs using configurable decoders, and feeds
+the resulting evidence back into both candidate generation and search refinement. In doing so,OmniQECincorpo-
+rates improved physical models and evaluation methods without restructuring the discovery loop. Together, these
+components deliver an efficient, self-evolving AI scientist for physically grounded code–circuit–decoder co-design.
+We systematically evaluateOmniQECunder the practical constraints of deploying qLDPC codes on modern quantum
+processors. </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Specifically, we impose a fixed total physical-qubit budgetNand optimize the circuit-level LER over
+complete code implementations. Across four qLDPC construction families and three LLM backends (i.e., Claude,
+GPT, and DeepSeek), the scaling analysis shows thatOmniQECdiscovers codes with progressively stronger error
+suppression asNincreases, implying an approximately linear resource–performance trend. The discovered codes
+outperform the standard bivariate-bicycle (BB) code with [ [72,12,6] ] whenN= 98 [17], while the strongest Claude
+Opus 4.8 campaign surpasses the BB benchmark with [ [144,12,12] ] atN= 240. Besides, the achieved results reveal
+3
+that the widely used code-level figure of merit Φcode =kd 2/n[17, 26, 36, 45] does not always align with the circuit-level
+LER ranking. This discrepancy suggests a fundamental limitation of automated approaches that optimize code-level
+objectives </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>set of constructions to be rapidly evaluated and ranked. The
+orchestrator selects the top-ranked candidates for the slow loop.
+In the slow loop, each prioritized code from the fast loop is first passed to the circuit-synthesis module, which
+constructs and optimizes a syndrome-extraction circuit under the specified connectivity, native gate set, and scheduling
+constraints. The resulting circuit is then supplied to the circuit-evaluation module, which derives the corresponding
+detector error model [58], generates noisy syndrome samples, and applies the selected decoders to estimate the circuit-
+level logical error rate (LER) [6]. This stage requires repeated noisy sampling and decoding [58, 64], which typically
+takes minutes to hours and is therefore reserved for a selected subset of candidates. The resulting circuit-level
+ranking, together with the associated synthesis, decoding, and </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reasoning records, is fed back to the orchestrator and
+4
+0 50 100 150 200 250 300
+Total qubits
+3
+4
+5
+6
+7
+Code family (label)
+[[n,k,d]] BB
+[[n,k,d]] GLP
+[[n,k,d]] LP
+[[n,k,d]] TB
+[[10,2,3]]
+[[20,2,4]]
+[[20,1,4]]
+[[20,2,5]]
+[[28,4,5]]
+[[30,2,5]]
+[[40,1,6]]
+[[34,2,5]]
+[[38,2,7]] [[46,2,6]]
+[[48,4,8]] [[58,2,7]]
+[[56,6,7]]
+[[58,2,9]]
+[[72,2,9]]
+[[72,4,10]]
+[[72,2,11]]
+[[68,2,10]]
+[[72,4,10]]
+[[80,4,8]]
+[[88,4,10]]
+[[90,4,10]]
+[[96,2,8]]
+[[100,2,13]]
+[[96,4,12]]
+[[102,4,12]]
+[[96,2,12]]
+[[104,4,12]]
+[[96,2,10]]
+[[120,2,15]]
+[[120,4,12]]
+[[128,6,14]]
+[[126,2,15]]
+[[126,4,14]]
+[[144,2,18]]
+[[144,4,16]]
+[[144,8,12]]
+LLM backend (fill)
+Claude
+DeepSeek
+GPT
+BB baseline
+[[72,12,6]]
+[[144,12,12]]
+kd2
+n
+−log10 ( LER )p
+FIG. 2.Circuit-level performance frontier discovered byOmniQEC.Circuit-level performance as a function of the
+physical-qubit budgetN, including data qubits and stabilizer-measurement </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ancillas. The vertical axis reports logical-error
+suppression,−log 10(pLER), wherep LER is the logical error rate per round per logical qubit. Marker fill denotes the LLM
+backend used by the orchestrator, and pie markers indicate codes independently discovered by multiple backends. The BB
+[ [72,12,6] ] and [ [144,12,12] ] codes are included as reference codes. Label color denotes the code family, and circle area is
+proportional to the fast-loop code-level proxy Φ code. The discovered codes form a clear resource–performance frontier, with
+several candidates achieving stronger circuit-level suppression than the BB reference codes despite having smaller Φ code. This
+mismatch shows that code-level proxies can mis-rank operational performance and motivates circuit-level LER as the direct
+discovery objective.
+incorporated into the discovery memory. The orchestrator uses this feedback to </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The modular interface also allows additional
+characterization tools to be incorporated as the framework evolves.
+Circuit-synthesis module. This module operates within the slow loop and maps each selected code to an executable
+syndrome-extraction implementation required for circuit-level evaluation. Guided by the orchestrator, it allocates
+data qubits and ancillas, prepares the encoded state, and determines the protocol for repeated syndrome-extraction
+rounds. The protocol specifies how each stabilizer measurement is decomposed into native operations and how the
+resulting interactions are ordered and scheduled. For CSS codes, this entails separate measurements of theX- and
+Z-type checks specified byH X andH Z.
+The circuit-synthesis module inOmniQECis implemented by integrating two complementary libraries. Within
+each syndrome-extraction round, the required two-qubit interactions are </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>scheduled through edge colouring of the
+associated Tanner graph [43], producing conflict-free parallel circuit layers. The resulting schedule is then compiled
+into a complete Stim circuit [58] comprising state-preparation and reset operations, native entangling gates, ancilla
+measurements, detector definitions and logical-observable annotations. The module also returns circuit-level metrics,
+such as syndrome-extraction depth and two-qubit-gate count, to the orchestrator as feedback for subsequent discovery
+iterations.
+Circuit-evaluation module. This module estimates the logical performance of each synthesized implementation under a
+configurable circuit-level noise model. The physical error rate can be specified by the user or chosen automatically at a
+common operating point slightly below the estimated pseudo-threshold, placing the evaluation in the error-suppression
+regime while </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>retaining a sufficient number of logical failures for tractable direct sampling [64].
+The implementation of this module consists of circuit sampling and modular decoding. For each synthesized
+implementation, the noisy Stim circuit [58] is converted into a detector error model, and sampled to generate detection
+events and logical-observable outcomes. These samples are then passed to a decoder-agnostic interface that can
+accommodate a broad range of decoding algorithms, including matching-based, belief-propagation-based, and neural
+decoders. In the current framework,OmniQECintegrates BP+OSD [50, 75], BP+LSD [74] and Relay-BP [76]. The
+resulting LER estimates and associated decoding records define the circuit-level ranking, which is returned to the
+orchestrator.
+III. EXPERIMENT AL RESUL TS
+We applyOmniQECto the discovery of practical qLDPC codes under explicit hardware budgets. We focus </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>candidates in the high-suppression
+regime, whereas removing feedback increases variability and can steer the search towards circuit-level suboptimal candidates.
+A. Experiment setup and hyperparameter settings
+We conduct systematic experiments to evaluate the capability ofOmniQECto discover practical qLDPC codes
+against the leading BB reference codes with [ [72,12,6] ] and [ [144,12,12] ], whose circuit implementations require total
+physical-qubit budgets ofN= 144 andN= 288, respectively. Specifically, the orchestrator ofOmniQECis instantiated
+with three API-accessed LLM backends, which are Claude Opus 4.8, DeepSeek-V4-Pro, and GPT-5.5. The code-search
+agent explores four qLDPC construction families, i.e., BB, trivariate-bicycle (TB), lifted-product (LP), and generalized
+LP (GLP) codes, as detailed in SI A. We consider 14 total physical-qubit budgets spanningN= 20 toN= 288.
+The </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>hyperparameter settings employed inOmniQECare fixed across all resource budgets and LLM backends. For
+eachN,OmniQECis executed forT= 60 dual-loop iterations. At each iteration, the code-search agent generates
+24 construction programs, each instantiated with 20 random seeds, yielding up to 480 candidate code instances
+before validity checking and deduplication. The resulting code instances are assessed in the fast loop using the
+code-level objective Φ code, after which a subset of the highest-ranking candidates is selected adaptively for slow-loop
+evaluation. In the slow loop, these candidates are compiled into syndrome-extraction memory circuits and evaluated
+using BP+OSD under circuit-level depolarizing noise with physical error ratep= 0.005. Unless stated otherwise, we
+report the LER per syndrome-extraction round and per logical qubit, i.e.,p LER. Refer to SI C for a detailed </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>definition
+forp LER and other experimental details.
+7
+40 80 120 160 200 240
+Total qubits
+0.0M
+0.2M
+0.4M
+0.6M
+0.8M
+1.0M
+1.2M
+1.4M
+1.6MToken
+cost (line)
+0
+2
+4
+6
+8
+10
+12
+14
+16
+Cost (USD)
+FIG. 4.LLM-side token usage and API cost.Bars show total API token consumption, including input, output and
+reasoning tokens, and lines show the corresponding API cost for each backend. Colors denote the LLM backend, using the
+same backend color coding as in Fig. 3.
+B. Scaling performance ofOmniQEC
+We first evaluate the performance ofOmniQECacross different physical-qubit budgetsN, with the results illustrated
+in Fig. 2. For all three LLM backends, the best discovered codes form a clear resource–performance frontier, with the
+LERp LER decreasing approximately exponentially asNincreases. More specifically, all three backends surpass the
+BB [ [72,12,6] ] reference, with the first improvement occurring atN= </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>many codes discovered
+atN≥98 achieve lower circuit-level LER than the BB [ [72,12,6] ] reference. The mismatch is especially evident at
+N= 144, where the best codes found with DeepSeek, Claude and GPT have proxy scores of Φ code = 2.25, 5.56 and
+3.36, respectively, while all outperform the BB reference in circuit-level LER. This rank mismatch underlines the need
+to use LER as a direct objective in practical QEC code design, beyond relying on code-level proxies alone.
+C. Circuit-level validation ofOmniQEC
+We next test whether the advantage of the discovered codes persists across physical error ratesp. To this end, we
+select seven frontier codes discovered byOmniQECfor each LLM backend and perform full physical-error-rate sweeps,
+yielding 21 codes in total. We re-evaluate these codes and the BB [ [72,12,6] ] reference overp∈[0.002,0.01] using
+identical syndrome-extraction and decoding </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>protocols. As shown in Fig. 3a–c, the discovered codes maintain lower
+LER than the BB reference throughout the measured range. At the two endpoints, the strongest candidate achieves
+8
+an LER that is 29.23-fold lower atp= 0.002 and 1.66-fold lower atp= 0.01.
+We further quantify the dependence of the LERp LER onpby fittingp LER ∝p Γ, where Γ is the fitted LER-scaling
+exponent. The representative codes, i.e., [ [48,4,8] ] discovered with GPT, [ [58,2,7] ] discovered with Claude and [ [48,4,8] ]
+discovered with DeepSeek, yield Γ = 5.20, 5.60 and 5.57, respectively. Compared with Γ = 3.79 for the BB reference,
+these results show that the advantage of theOmniQEC-discovered codes persists beyond the single physical error rate
+used during discovery.
+D. Ablation study ofOmniQEC
+We then move on to comprehend the respective roles of the fast and slow loops through ablation experiments. To </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>be
+concrete, we compare the fullOmniQECworkflow with two reduced variants. The fast-loop-only variant, denoted by
+OmniQECw/o slow, removes the circuit-level feedback, so the discovery process is solely based on code-level rankings.
+The no-feedback variant, denoted byOmniQECw/o slow &amp; fast, removes both feedback paths, causing each iteration
+to proceed independently of previous results. For a fair comparison, the top five candidates from each variant are
+evaluated using the same circuit-level protocol.
+The achieved results are demonstrated in Fig. 3d–f. The fullOmniQECworkflow consistently attains stronger and
+more stable error suppression than its ablated variants. At the final iteration, the top-five candidates reach mean error
+suppressions of−log 10(pLER) = 4.61±0.54, 5.17±0.09, and 4.07±0.28 for Claude Opus 4.8, GPT-5.5, and DeepSeek-
+V4-Pro, respectively. Compared with the full </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>workflow,OmniQECw/o slow reaches only 2.14±0.10, 3.20±0.40,
+and 0.84±0.16, whileOmniQECw/o slow &amp; fast reaches 3.86±0.66, 4.25±0.19, and 2.83±1.50. Across the three
+backends and all checkpoints, the full workflow further achieves the highest mean suppression, 4.27, and the lowest
+variance, 0.79. Removing feedback increases the variance substantially to 1.24–1.26. Taken together, these results
+show that the fast loop improves search efficiency, whereas the slow loop is essential for steering discovery towards
+practically relevant circuit-level performance.</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tractable,OmniQECharnesses a purpose-built self-evolving reasoning mechanism, specialized
+scientific tools and a slow–fast synergistic workflow.OmniQECthereby provides a scalable route towards discovering
+practical, high-performing QEC codes.
+Our study points to several broader directions for autonomous QEC design. A first direction is to develop more
+capable and efficient scientific tools forOmniQEC. Its main computational bottleneck is circuit-level verification, which
+limits the number of candidates that can be evaluated using physical evidence. One potential route is to improve key
+components such as syndrome-extraction synthesis [43, 44], circuit simulation and decoding [58, 80–82], together with
+more efficient statistical estimation of logical performance. Because these components are exposed through modular
+interfaces, new tools could be integrated directly intoOmniQEC, enabling </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

@@ -37,7 +37,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-06-30 10:07:18",
-    "generated_at": "2026-11-10 12:08:54",
+    "generated_at": "2026-11-11 11:46:00",
     "last_seen_at": "2026-07-04 10:04:24",
     "metadata_sources": [
       "openalex",
@@ -109,36 +109,1794 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-11T11:44:16.933520+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.9,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The manuscript reports no empirical evaluation, benchmarking, or quantitative validation of the claimed emergent behaviors; the authors explicitly state these behaviors are theoretically motivated but not yet empirically validated.",
+      "Major claims about automatic routing, contradiction detection, and pattern crystallization are presented as conjectures and theoretical intuitions rather than demonstrated results.",
+      "The theoretical propagation guarantees are high-level proof sketches relying on assumptions imported from external literature rather than analyses specific to the proposed protocol."
+    ],
+    "concise_summary": "While the proposed conceptual synthesis of HNSW vector indexing and gossip protocols for agent memory is novel and methodologically coherent, the manuscript lacks any empirical evaluation or rigorous testing in operational multi-agent environments [E0bd5ab62d6777e65-B0043, E0bd5ab62d6777e65-B0047]. In the absence of measured outcomes or validation data to support the behavioral claims, the scientific standing of the system remains uncertain.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 36688,
+      "assessment_input_sha256": "f6a10edbc2544eaf455b7dd5675750ee94900a53b0b9391450f76b4a62f4929e",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2606.28781",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 35936,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 34734,
+      "evidence_block_count": 56,
+      "evidence_context_characters": 41629,
+      "evidence_context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+      "evidence_context_sha256": "56e0a5decb9a78c227c35d5fb8fdf3be0b37da22514b6f49f4a87a41b991822c",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 35962,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "72d8b941e7403cf3401d27b946c0be8d2a70cf0e511130aa45c353c57783490c",
+        "source_url": "https://arxiv.org/pdf/2606.28781",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 35936,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Hyphaedb: A Living Knowledge Topology For Agent-First",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 276,
+          "supplied_characters": 276
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1676,
+          "supplied_characters": 1676
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 626,
+          "supplied_characters": 626
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1608,
+          "supplied_characters": 1608
+        },
+        {
+          "heading": "We Identify The Reinterpretation Of Hnsw Graph Topology As A Communication Fabric For Multi-Agent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 112,
+          "supplied_characters": 112
+        },
+        {
+          "heading": "We Design A Complete Gossip Protocol Adapted For Semantic Knowledge Propagation, Including An",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 280,
+          "supplied_characters": 280
+        },
+        {
+          "heading": "We Present A Reference Implementation On Postgresql With Pgvector And Describe Deployment In A",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 42,
+          "supplied_characters": 42
+        },
+        {
+          "heading": "Agent Memory Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 986,
+          "supplied_characters": 986
+        },
+        {
+          "heading": "Agent Memory Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 507,
+          "supplied_characters": 507
+        },
+        {
+          "heading": "Hnsw And Navigable Small-World Graphs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1514,
+          "supplied_characters": 1514
+        },
+        {
+          "heading": "Gossip Protocols",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 10,
+          "source_characters": 1360,
+          "supplied_characters": 1360
+        },
+        {
+          "heading": "Swarm Intelligence And Emergence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1060,
+          "supplied_characters": 1060
+        },
+        {
+          "heading": "Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 193,
+          "supplied_characters": 193
+        },
+        {
+          "heading": "Primitive 1: Knowledge Nodes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1449,
+          "supplied_characters": 1449
+        },
+        {
+          "heading": "Primitive 2: Topology Edges",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 435,
+          "supplied_characters": 435
+        },
+        {
+          "heading": "Primitive 3: Memory Diffs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 391,
+          "supplied_characters": 391
+        },
+        {
+          "heading": "Multi-Layer Abstraction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "abstract",
+          "section_index": 16,
+          "source_characters": 624,
+          "supplied_characters": 624
+        },
+        {
+          "heading": "Propagation Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 99,
+          "supplied_characters": 99
+        },
+        {
+          "heading": "Propagation Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 905,
+          "supplied_characters": 905
+        },
+        {
+          "heading": "Energy Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 203,
+          "supplied_characters": 203
+        },
+        {
+          "heading": "Energy Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 585,
+          "supplied_characters": 585
+        },
+        {
+          "heading": "Layer Promotion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 812,
+          "supplied_characters": 812
+        },
+        {
+          "heading": "Anti-Entropy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 353,
+          "supplied_characters": 353
+        },
+        {
+          "heading": "Emergent Behaviors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 134,
+          "supplied_characters": 134
+        },
+        {
+          "heading": "Automatic Knowledge Routing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 626,
+          "supplied_characters": 626
+        },
+        {
+          "heading": "Contradiction Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 536,
+          "supplied_characters": 536
+        },
+        {
+          "heading": "Pattern Crystallization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 627,
+          "supplied_characters": 627
+        },
+        {
+          "heading": "Organic Knowledge Decay",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 434,
+          "supplied_characters": 434
+        },
+        {
+          "heading": "Propagation Guarantees",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1356,
+          "supplied_characters": 1356
+        },
+        {
+          "heading": "Convergence Of Layer Promotion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 772,
+          "supplied_characters": 772
+        },
+        {
+          "heading": "Self-Organization Properties",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 596,
+          "supplied_characters": 596
+        },
+        {
+          "heading": "Self-Organization Properties",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 309,
+          "supplied_characters": 309
+        },
+        {
+          "heading": "Technology Stack",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 694,
+          "supplied_characters": 694
+        },
+        {
+          "heading": "Schema Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 635,
+          "supplied_characters": 635
+        },
+        {
+          "heading": "Reference Deployment: Swarm-Driven Development",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 339,
+          "supplied_characters": 339
+        },
+        {
+          "heading": "Reference Deployment: Swarm-Driven Development",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 907,
+          "supplied_characters": 907
+        },
+        {
+          "heading": "Competitive Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 1006,
+          "supplied_characters": 1006
+        },
+        {
+          "heading": "Design Tradeoffs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 442,
+          "supplied_characters": 442
+        },
+        {
+          "heading": "Design Tradeoffs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 664,
+          "supplied_characters": 664
+        },
+        {
+          "heading": "Limitations And Future Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "limitations",
+          "section_index": 39,
+          "source_characters": 1548,
+          "supplied_characters": 1548
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "conclusion",
+          "section_index": 40,
+          "source_characters": 1135,
+          "supplied_characters": 1135
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 41,
+          "source_characters": 570,
+          "supplied_characters": 570
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 2289,
+          "supplied_characters": 2289
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 3019,
+          "supplied_characters": 3019
+        }
+      ],
+      "selected_characters": 34734,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 276,
+          "heading": "Hyphaedb: A Living Knowledge Topology For Agent-First",
+          "page": 1
+        },
+        {
+          "characters": 1676,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 626,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1608,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 112,
+          "heading": "We Identify The Reinterpretation Of Hnsw Graph Topology As A Communication Fabric For Multi-Agent",
+          "page": 2
+        },
+        {
+          "characters": 280,
+          "heading": "We Design A Complete Gossip Protocol Adapted For Semantic Knowledge Propagation, Including An",
+          "page": 2
+        },
+        {
+          "characters": 42,
+          "heading": "We Present A Reference Implementation On Postgresql With Pgvector And Describe Deployment In A",
+          "page": 2
+        },
+        {
+          "characters": 986,
+          "heading": "Agent Memory Systems",
+          "page": 2
+        },
+        {
+          "characters": 507,
+          "heading": "Agent Memory Systems",
+          "page": 3
+        },
+        {
+          "characters": 1514,
+          "heading": "Hnsw And Navigable Small-World Graphs",
+          "page": 3
+        },
+        {
+          "characters": 1360,
+          "heading": "Gossip Protocols",
+          "page": 3
+        },
+        {
+          "characters": 1060,
+          "heading": "Swarm Intelligence And Emergence",
+          "page": 4
+        },
+        {
+          "characters": 193,
+          "heading": "Architecture",
+          "page": 4
+        },
+        {
+          "characters": 1449,
+          "heading": "Primitive 1: Knowledge Nodes",
+          "page": 4
+        },
+        {
+          "characters": 435,
+          "heading": "Primitive 2: Topology Edges",
+          "page": 5
+        },
+        {
+          "characters": 391,
+          "heading": "Primitive 3: Memory Diffs",
+          "page": 5
+        },
+        {
+          "characters": 624,
+          "heading": "Multi-Layer Abstraction",
+          "page": 5
+        },
+        {
+          "characters": 99,
+          "heading": "Propagation Algorithm",
+          "page": 5
+        },
+        {
+          "characters": 905,
+          "heading": "Propagation Algorithm",
+          "page": 6
+        },
+        {
+          "characters": 203,
+          "heading": "Energy Model",
+          "page": 6
+        },
+        {
+          "characters": 585,
+          "heading": "Energy Model",
+          "page": 7
+        },
+        {
+          "characters": 812,
+          "heading": "Layer Promotion",
+          "page": 7
+        },
+        {
+          "characters": 353,
+          "heading": "Anti-Entropy",
+          "page": 7
+        },
+        {
+          "characters": 134,
+          "heading": "Emergent Behaviors",
+          "page": 7
+        },
+        {
+          "characters": 626,
+          "heading": "Automatic Knowledge Routing",
+          "page": 8
+        },
+        {
+          "characters": 536,
+          "heading": "Contradiction Detection",
+          "page": 8
+        },
+        {
+          "characters": 627,
+          "heading": "Pattern Crystallization",
+          "page": 8
+        },
+        {
+          "characters": 434,
+          "heading": "Organic Knowledge Decay",
+          "page": 8
+        },
+        {
+          "characters": 1356,
+          "heading": "Propagation Guarantees",
+          "page": 9
+        },
+        {
+          "characters": 772,
+          "heading": "Convergence Of Layer Promotion",
+          "page": 9
+        },
+        {
+          "characters": 596,
+          "heading": "Self-Organization Properties",
+          "page": 9
+        },
+        {
+          "characters": 309,
+          "heading": "Self-Organization Properties",
+          "page": 10
+        },
+        {
+          "characters": 694,
+          "heading": "Technology Stack",
+          "page": 10
+        },
+        {
+          "characters": 635,
+          "heading": "Schema Design",
+          "page": 10
+        },
+        {
+          "characters": 339,
+          "heading": "Reference Deployment: Swarm-Driven Development",
+          "page": 10
+        },
+        {
+          "characters": 907,
+          "heading": "Reference Deployment: Swarm-Driven Development",
+          "page": 11
+        },
+        {
+          "characters": 1006,
+          "heading": "Competitive Analysis",
+          "page": 11
+        },
+        {
+          "characters": 442,
+          "heading": "Design Tradeoffs",
+          "page": 11
+        },
+        {
+          "characters": 664,
+          "heading": "Design Tradeoffs",
+          "page": 12
+        },
+        {
+          "characters": 1548,
+          "heading": "Limitations And Future Work",
+          "page": 12
+        },
+        {
+          "characters": 1135,
+          "heading": "Conclusion",
+          "page": 12
+        },
+        {
+          "characters": 570,
+          "heading": "Conclusion",
+          "page": 13
+        },
+        {
+          "characters": 2289,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 3019,
+          "heading": "Unclassified body after references",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "f6a10edbc2544eaf455b7dd5675750ee94900a53b0b9391450f76b4a62f4929e",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "72d8b941e7403cf3401d27b946c0be8d2a70cf0e511130aa45c353c57783490c",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0002"
+        ],
+        "excerpt": "Every existing vector database and agent memory framework treats memory as passive storage that\nagents query explicitly. No system propagates knowledge between agents through the memory layer it-\nself. We introduceHyphaeDB, an agent-native memory infrastructure that reinterprets the Hierarchical\nNavigable Small World (HNSW) graph topology\u2014the data structure at the core of every modern vector\ndatabase\u2014not as a search optimization, but as acommunication fabricfor multi-agent AI systems. In\nHyphaeDB, agents are nodes in the vector space with persistent positions, knowledge propagates via\na gossip protocol through the graph's neighbor structure with energy-based attenuation, and emergent\nbehaviors\u2014contradiction detection, pattern crystallization, and consensus formation\u2014arise from the\ncombination of topology, propagation dynamics, and local interaction rules. We present the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "32f850f1b8529fb41c4b6c1e4a5e8078e575326e3de51ffc02f7540932ce86f4",
+            "evidence_id": "E0bd5ab62d6777e65-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 883,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Every existing vector database and agent memory framework treats memory as passive storage that\nagents query explicitly. No system propagates knowledge between agents through the memory layer it-\nself. We introduceHyphaeDB, an agent-native memory infrastructure that reinterprets the Hierarchical\nNavigable Small World (HNSW) graph topology\u2014the data structure at the core of every modern vector\ndatabase\u2014not as a search optimization, but as acommunication fabricfor multi-agent AI systems. In\nHyphaeDB, agents are nodes in the vector space with persistent positions, knowledge propagates via\na gossip protocol through the graph's neighbor structure with energy-based attenuation, and emergent\nbehaviors\u2014contradiction detection, pattern crystallization, and consensus formation\u2014arise from the\ncombination of topology, propagation dynamics, and local interaction rules. We present the "
+              }
+            ],
+            "text": "Every existing vector database and agent memory framework treats memory as passive storage that\nagents query explicitly. No system propagates knowledge between agents through the memory layer it-\nself. We introduceHyphaeDB, an agent-native memory infrastructure that reinterprets the Hierarchical\nNavigable Small World (HNSW) graph topology\u2014the data structure at the core of every modern vector\ndatabase\u2014not as a search optimization, but as acommunication fabricfor multi-agent AI systems. In\nHyphaeDB, agents are nodes in the vector space with persistent positions, knowledge propagates via\na gossip protocol through the graph's neighbor structure with energy-based attenuation, and emergent\nbehaviors\u2014contradiction detection, pattern crystallization, and consensus formation\u2014arise from the\ncombination of topology, propagation dynamics, and local interaction rules. We present the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0003"
+        ],
+        "excerpt": "architecture\nbuilt on three primitives (knowledge nodes, topology edges, and memory diffs), a multi-layer abstrac-\ntion hierarchy with promotion via emergent consensus, and theoretical analysis grounding the system\nin small-world network theory, epidemic broadcast protocols, and swarm intelligence. We provide a\nreference implementation on PostgreSQL with pgvector and describe a concrete deployment in Swarm-\nDriven Development, a multi-agent software engineering methodology. HyphaeDB represents, to our\nknowledge, the first system to combine navigable small-world topology with gossip-based knowledge\npropagation for multi-agent coordination.\nKeywords:multi-agent systems, agent memory, HNSW, gossip protocols, knowledge propagation, swarm\nintelligence, vector databases, emergent behavior",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8613e225f8ab8970b98ee22142c8a7fc7cbfbb6cd0608cfa2e747b4701fee18a",
+            "evidence_id": "E0bd5ab62d6777e65-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1676,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 883,
+                "text": "architecture\nbuilt on three primitives (knowledge nodes, topology edges, and memory diffs), a multi-layer abstrac-\ntion hierarchy with promotion via emergent consensus, and theoretical analysis grounding the system\nin small-world network theory, epidemic broadcast protocols, and swarm intelligence. We provide a\nreference implementation on PostgreSQL with pgvector and describe a concrete deployment in Swarm-\nDriven Development, a multi-agent software engineering methodology. HyphaeDB represents, to our\nknowledge, the first system to combine navigable small-world topology with gossip-based knowledge\npropagation for multi-agent coordination.\nKeywords:multi-agent systems, agent memory, HNSW, gossip protocols, knowledge propagation, swarm\nintelligence, vector databases, emergent behavior"
+              }
+            ],
+            "text": "architecture\nbuilt on three primitives (knowledge nodes, topology edges, and memory diffs), a multi-layer abstrac-\ntion hierarchy with promotion via emergent consensus, and theoretical analysis grounding the system\nin small-world network theory, epidemic broadcast protocols, and swarm intelligence. We provide a\nreference implementation on PostgreSQL with pgvector and describe a concrete deployment in Swarm-\nDriven Development, a multi-agent software engineering methodology. HyphaeDB represents, to our\nknowledge, the first system to combine navigable small-world topology with gossip-based knowledge\npropagation for multi-agent coordination.\nKeywords:multi-agent systems, agent memory, HNSW, gossip protocols, knowledge propagation, swarm\nintelligence, vector databases, emergent behavior"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0005"
+        ],
+        "excerpt": "database or graph, and retrieve it when\nan agent queries for it. Memory is passive. Between writes and reads, the storage layer is inert. It has no\nmechanism to propagate knowledge between agents, no awareness of which agents need what information,\nand no capacity for emergent behavior.\nThis paper introducesHyphaeDB, a fundamentally different primitive for agent memory. HyphaeDB rein-\nterprets the HNSW (Hierarchical Navigable Small World) graph [Malkov and Yashunin, 2020]\u2014the index\nstructure used by every major vector database for approximate nearest neighbor search\u2014as acommunication\nfabricwhere:\n1.Agents are nodesin the vector space with persistent positions that drift based on their work.\n2.Knowledge propagatesvia a gossip protocol through the graph's neighbor structure, with an energy\nmodel that attenuates based on relevance and importance.\n3.Emergent behaviorsarise from the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "bee2aeda4adb1342d8ee2178f6d53004117dda642985b25d7c9ebb14399f6aff",
+            "evidence_id": "E0bd5ab62d6777e65-B0005",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1165,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 274,
+                "text": "database or graph, and retrieve it when\nan agent queries for it. Memory is passive. Between writes and reads, the storage layer is inert. It has no\nmechanism to propagate knowledge between agents, no awareness of which agents need what information,\nand no capacity for emergent behavior.\nThis paper introducesHyphaeDB, a fundamentally different primitive for agent memory. HyphaeDB rein-\nterprets the HNSW (Hierarchical Navigable Small World) graph [Malkov and Yashunin, 2020]\u2014the index\nstructure used by every major vector database for approximate nearest neighbor search\u2014as acommunication\nfabricwhere:\n1.Agents are nodesin the vector space with persistent positions that drift based on their work.\n2.Knowledge propagatesvia a gossip protocol through the graph's neighbor structure, with an energy\nmodel that attenuates based on relevance and importance.\n3.Emergent behaviorsarise from the "
+              }
+            ],
+            "text": "database or graph, and retrieve it when\nan agent queries for it. Memory is passive. Between writes and reads, the storage layer is inert. It has no\nmechanism to propagate knowledge between agents, no awareness of which agents need what information,\nand no capacity for emergent behavior.\nThis paper introducesHyphaeDB, a fundamentally different primitive for agent memory. HyphaeDB rein-\nterprets the HNSW (Hierarchical Navigable Small World) graph [Malkov and Yashunin, 2020]\u2014the index\nstructure used by every major vector database for approximate nearest neighbor search\u2014as acommunication\nfabricwhere:\n1.Agents are nodesin the vector space with persistent positions that drift based on their work.\n2.Knowledge propagatesvia a gossip protocol through the graph's neighbor structure, with an energy\nmodel that attenuates based on relevance and importance.\n3.Emergent behaviorsarise from the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0008"
+        ],
+        "excerpt": "energy-based attenuation model, multi-layer abstraction with promotion via emergent consensus, and\nstanding beacon subscriptions.\n3. We provide theoretical analysis grounding the system's properties in small-world network theory,\nepidemic broadcast models, and swarm intelligence.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Design A Complete Gossip Protocol Adapted For Semantic Knowledge Propagation, Including An",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "cdc6f0295bf708e02f84aab5994beb8e756843d27208ff430b2dbb0182c8fd7f",
+            "evidence_id": "E0bd5ab62d6777e65-B0008",
+            "pages": [
+              2
+            ],
+            "section": "We Design A Complete Gossip Protocol Adapted For Semantic Knowledge Propagation, Including An",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 280,
+                "page": 2,
+                "section": "We Design A Complete Gossip Protocol Adapted For Semantic Knowledge Propagation, Including An",
+                "section_index": 5,
+                "start": 0,
+                "text": "energy-based attenuation model, multi-layer abstraction with promotion via emergent consensus, and\nstanding beacon subscriptions.\n3. We provide theoretical analysis grounding the system's properties in small-world network theory,\nepidemic broadcast models, and swarm intelligence."
+              }
+            ],
+            "text": "energy-based attenuation model, multi-layer abstraction with promotion via emergent consensus, and\nstanding beacon subscriptions.\n3. We provide theoretical analysis grounding the system's properties in small-world network theory,\nepidemic broadcast models, and swarm intelligence."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0009"
+        ],
+        "excerpt": "multi-agent software development workflow.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Present A Reference Implementation On Postgresql With Pgvector And Describe Deployment In A",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fd2e033a4e314404972e7b183d7834a8a61e61ba866a4e0afef617018be16e89",
+            "evidence_id": "E0bd5ab62d6777e65-B0009",
+            "pages": [
+              2
+            ],
+            "section": "We Present A Reference Implementation On Postgresql With Pgvector And Describe Deployment In A",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 42,
+                "page": 2,
+                "section": "We Present A Reference Implementation On Postgresql With Pgvector And Describe Deployment In A",
+                "section_index": 6,
+                "start": 0,
+                "text": "multi-agent software development workflow."
+              }
+            ],
+            "text": "multi-agent software development workflow."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0018"
+        ],
+        "excerpt": "HyphaeDB is built on three primitives. All system functionality\u2014knowledge storage, agent communication,\nsubscription management, consensus formation\u2014reduces to compositions of these constructs.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "35f3491c64f7b7b6639d0d6014e20af39c7f0eae2a60cc8039f7e5d2b10c35c1",
+            "evidence_id": "E0bd5ab62d6777e65-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 193,
+                "page": 4,
+                "section": "Architecture",
+                "section_index": 12,
+                "start": 0,
+                "text": "HyphaeDB is built on three primitives. All system functionality\u2014knowledge storage, agent communication,\nsubscription management, consensus formation\u2014reduces to compositions of these constructs."
+              }
+            ],
+            "text": "HyphaeDB is built on three primitives. All system functionality\u2014knowledge storage, agent communication,\nsubscription management, consensus formation\u2014reduces to compositions of these constructs."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0024"
+        ],
+        "excerpt": "When a knowledge change occurs, the gossip engine creates a memory diff and executes Algorithm 1.\n5\nAlgorithm 1Gossip Propagation\nRequire:diff\u03b4, current nodev\n1:ifE(\u03b4)\u22640orh(\u03b4)\u2265h max(\u03b4)orv\u2208P(\u03b4)then\n2:return\n3:end if\n4:DELIVER(\u03b4,v) {Record delivery; add to inbox if agent/beacon}\n5:P(\u03b4)\u2190P(\u03b4)\u222a {v};h(\u03b4)\u2190h(\u03b4) +1\n6:N\u2190HNSWNEIGHBORS(v, \u2113(\u03b4),K){K nearest at current layer}\n7:foreachu\u2208N\\P(\u03b4)do\n8:r\u2190cos(e \u03b4 ,e u){Semantic relevance}\n9:\u03b9\u2190INTEREST(u,\u03b4){Node's declared interest}\n10:\u03c3\u21900.6\u00b7r+0.3\u00b7\u03b9+0.1\u00b7s(\u03b4){Combined score}\n11:c\u2190\u03c9(v,u) \u22121 {Hop cost}\n12:if\u03c3<\u03c3 min orE(\u03b4)<cthen\n13:continue\n14:end if\n15:\u03b4 \u2032 \u2190COPY(\u03b4);E(\u03b4 \u2032)\u2190E(\u03b4 \u2032)\u2212c\n16:PROPAGATE(\u03b4 \u2032,u)\n17:end for\n18:ifSHOULDPROMOTE(\u03b4,v)then\n19:\u03b4 p \u2190PROMOTE(\u03b4, \u2113(v) +1)\n20:u p \u2190FINDLAYERENTRY(v, \u2113(v) +1)\n21:PROPAGATE(\u03b4 p,u p)\n22:end if\nThe critical difference from standard gossip protocols is line 8: neighbor selection follows HNSW'sse-\nmantictopology rather than ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Propagation Algorithm",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "33c5d9b44645c74d8c6ada9e5aa965caf9668049558c13457c87eb5215c757ca",
+            "evidence_id": "E0bd5ab62d6777e65-B0024",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Propagation Algorithm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 99,
+                "page": 5,
+                "section": "Propagation Algorithm",
+                "section_index": 17,
+                "start": 0,
+                "text": "When a knowledge change occurs, the gossip engine creates a memory diff and executes Algorithm 1.\n5"
+              },
+              {
+                "end": 799,
+                "page": 6,
+                "section": "Propagation Algorithm",
+                "section_index": 18,
+                "start": 0,
+                "text": "Algorithm 1Gossip Propagation\nRequire:diff\u03b4, current nodev\n1:ifE(\u03b4)\u22640orh(\u03b4)\u2265h max(\u03b4)orv\u2208P(\u03b4)then\n2:return\n3:end if\n4:DELIVER(\u03b4,v) {Record delivery; add to inbox if agent/beacon}\n5:P(\u03b4)\u2190P(\u03b4)\u222a {v};h(\u03b4)\u2190h(\u03b4) +1\n6:N\u2190HNSWNEIGHBORS(v, \u2113(\u03b4),K){K nearest at current layer}\n7:foreachu\u2208N\\P(\u03b4)do\n8:r\u2190cos(e \u03b4 ,e u){Semantic relevance}\n9:\u03b9\u2190INTEREST(u,\u03b4){Node's declared interest}\n10:\u03c3\u21900.6\u00b7r+0.3\u00b7\u03b9+0.1\u00b7s(\u03b4){Combined score}\n11:c\u2190\u03c9(v,u) \u22121 {Hop cost}\n12:if\u03c3<\u03c3 min orE(\u03b4)<cthen\n13:continue\n14:end if\n15:\u03b4 \u2032 \u2190COPY(\u03b4);E(\u03b4 \u2032)\u2190E(\u03b4 \u2032)\u2212c\n16:PROPAGATE(\u03b4 \u2032,u)\n17:end for\n18:ifSHOULDPROMOTE(\u03b4,v)then\n19:\u03b4 p \u2190PROMOTE(\u03b4, \u2113(v) +1)\n20:u p \u2190FINDLAYERENTRY(v, \u2113(v) +1)\n21:PROPAGATE(\u03b4 p,u p)\n22:end if\nThe critical difference from standard gossip protocols is line 8: neighbor selection follows HNSW'sse-\nmantictopology rather than "
+              }
+            ],
+            "text": "When a knowledge change occurs, the gossip engine creates a memory diff and executes Algorithm 1.\n5\nAlgorithm 1Gossip Propagation\nRequire:diff\u03b4, current nodev\n1:ifE(\u03b4)\u22640orh(\u03b4)\u2265h max(\u03b4)orv\u2208P(\u03b4)then\n2:return\n3:end if\n4:DELIVER(\u03b4,v) {Record delivery; add to inbox if agent/beacon}\n5:P(\u03b4)\u2190P(\u03b4)\u222a {v};h(\u03b4)\u2190h(\u03b4) +1\n6:N\u2190HNSWNEIGHBORS(v, \u2113(\u03b4),K){K nearest at current layer}\n7:foreachu\u2208N\\P(\u03b4)do\n8:r\u2190cos(e \u03b4 ,e u){Semantic relevance}\n9:\u03b9\u2190INTEREST(u,\u03b4){Node's declared interest}\n10:\u03c3\u21900.6\u00b7r+0.3\u00b7\u03b9+0.1\u00b7s(\u03b4){Combined score}\n11:c\u2190\u03c9(v,u) \u22121 {Hop cost}\n12:if\u03c3<\u03c3 min orE(\u03b4)<cthen\n13:continue\n14:end if\n15:\u03b4 \u2032 \u2190COPY(\u03b4);E(\u03b4 \u2032)\u2190E(\u03b4 \u2032)\u2212c\n16:PROPAGATE(\u03b4 \u2032,u)\n17:end for\n18:ifSHOULDPROMOTE(\u03b4,v)then\n19:\u03b4 p \u2190PROMOTE(\u03b4, \u2113(v) +1)\n20:u p \u2190FINDLAYERENTRY(v, \u2113(v) +1)\n21:PROPAGATE(\u03b4 p,u p)\n22:end if\nThe critical difference from standard gossip protocols is line 8: neighbor selection follows HNSW'sse-\nmantictopology rather than "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0026"
+        ],
+        "excerpt": "Each diff's initial energy determines its propagation radius:\nE0 =E base \u00b7 \u221as\u00b7\u00b5(\u03c4 d)(5)\nwhereE base is a configurable base energy (default 10.0),sis salience, and\u00b5(\u03c4 d)is a type-dependent multi-\nplier:\n6\nTable 1: Energy multipliers by knowledge type.\nType\u00b5TypicalE 0 Propagation Scope\nDecision 2.0\u223c19 Topology-wide\nConstraint 2.0\u223c19 Topology-wide\nRisk 1.5\u223c14 Most of topology\nPattern 1.5\u223c14 Most of topology\nLesson 1.2\u223c11 Broad regional\nFact 1.0\u223c9 Regional\nPreference 0.8\u223c7 Local\nContext 0.5\u223c5 Neighborhood\nTask 0.3\u223c3 Immediate vicinity\nThe square root in Equation 5 compresses the salience range, preventing extreme values from dominating\npropagation. The type multiplier encodes domain knowledge: architectural decisions should propagate\nbroadly; task-specific details should stay local.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Energy Model",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b634c223c0c0fa28d4dd08ba30255d31c04436124b88bca0c4959e64e7d18111",
+            "evidence_id": "E0bd5ab62d6777e65-B0026",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Energy Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 203,
+                "page": 6,
+                "section": "Energy Model",
+                "section_index": 19,
+                "start": 0,
+                "text": "Each diff's initial energy determines its propagation radius:\nE0 =E base \u00b7 \u221as\u00b7\u00b5(\u03c4 d)(5)\nwhereE base is a configurable base energy (default 10.0),sis salience, and\u00b5(\u03c4 d)is a type-dependent multi-\nplier:\n6"
+              },
+              {
+                "end": 585,
+                "page": 7,
+                "section": "Energy Model",
+                "section_index": 20,
+                "start": 0,
+                "text": "Table 1: Energy multipliers by knowledge type.\nType\u00b5TypicalE 0 Propagation Scope\nDecision 2.0\u223c19 Topology-wide\nConstraint 2.0\u223c19 Topology-wide\nRisk 1.5\u223c14 Most of topology\nPattern 1.5\u223c14 Most of topology\nLesson 1.2\u223c11 Broad regional\nFact 1.0\u223c9 Regional\nPreference 0.8\u223c7 Local\nContext 0.5\u223c5 Neighborhood\nTask 0.3\u223c3 Immediate vicinity\nThe square root in Equation 5 compresses the salience range, preventing extreme values from dominating\npropagation. The type multiplier encodes domain knowledge: architectural decisions should propagate\nbroadly; task-specific details should stay local."
+              }
+            ],
+            "text": "Each diff's initial energy determines its propagation radius:\nE0 =E base \u00b7 \u221as\u00b7\u00b5(\u03c4 d)(5)\nwhereE base is a configurable base energy (default 10.0),sis salience, and\u00b5(\u03c4 d)is a type-dependent multi-\nplier:\n6\nTable 1: Energy multipliers by knowledge type.\nType\u00b5TypicalE 0 Propagation Scope\nDecision 2.0\u223c19 Topology-wide\nConstraint 2.0\u223c19 Topology-wide\nRisk 1.5\u223c14 Most of topology\nPattern 1.5\u223c14 Most of topology\nLesson 1.2\u223c11 Broad regional\nFact 1.0\u223c9 Regional\nPreference 0.8\u223c7 Local\nContext 0.5\u223c5 Neighborhood\nTask 0.3\u223c3 Immediate vicinity\nThe square root in Equation 5 compresses the salience range, preventing extreme values from dominating\npropagation. The type multiplier encodes domain knowledge: architectural decisions should propagate\nbroadly; task-specific details should stay local."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0030"
+        ],
+        "excerpt": "When an agent stores a decision about API rate limiting, thecreateddiff propagates outward through\nLayer 0 neighbors. It reaches the code agent (positioned near API topics by virtue of recent work) and\nthe review agent's \"breaking change\" beacon, but not the test agent positioned in a distant region. No\nsubscription was configured; the topology determined relevance.\nThis property follows from the HNSW graph's small-world structure: nodes that are semantically close are\ntopologically close, so gossip naturally reaches relevant agents first. The energy model ensures the diff\nattenuates before reaching irrelevant regions.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Automatic Knowledge Routing",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "7eee2020100a910472798632a8451cb74df43d69194cf897412a5d6a5bc94547",
+            "evidence_id": "E0bd5ab62d6777e65-B0030",
+            "pages": [
+              8
+            ],
+            "section": "Automatic Knowledge Routing",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 626,
+                "page": 8,
+                "section": "Automatic Knowledge Routing",
+                "section_index": 24,
+                "start": 0,
+                "text": "When an agent stores a decision about API rate limiting, thecreateddiff propagates outward through\nLayer 0 neighbors. It reaches the code agent (positioned near API topics by virtue of recent work) and\nthe review agent's \"breaking change\" beacon, but not the test agent positioned in a distant region. No\nsubscription was configured; the topology determined relevance.\nThis property follows from the HNSW graph's small-world structure: nodes that are semantically close are\ntopologically close, so gossip naturally reaches relevant agents first. The energy model ensures the diff\nattenuates before reaching irrelevant regions."
+              }
+            ],
+            "text": "When an agent stores a decision about API rate limiting, thecreateddiff propagates outward through\nLayer 0 neighbors. It reaches the code agent (positioned near API topics by virtue of recent work) and\nthe review agent's \"breaking change\" beacon, but not the test agent positioned in a distant region. No\nsubscription was configured; the topology determined relevance.\nThis property follows from the HNSW graph's small-world structure: nodes that are semantically close are\ntopologically close, so gossip naturally reaches relevant agents first. The energy model ensures the diff\nattenuates before reaching irrelevant regions."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0031"
+        ],
+        "excerpt": "When two cells with high semantic similarity (cos(e a,e b)>\u03b8 sim) but opposing content are stored in prox-\nimity, gossip delivers both signals to the same neighborhood. The system detects the divergence and auto-\nmatically generates acontradictiondiff with bonus energy (1.5\u00d7) for broad propagation.\nThis works because conflicting knowledge occupies nearby positions in the embedding space. The topology\nmakes contradiction detection ageometricproperty rather than an algorithmic one, requiring no explicit\ncontradiction-checking logic.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Contradiction Detection",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4687bf0d4b225c0991812a3a31743c7129748e092b1a2079e5fbb26b1a561103",
+            "evidence_id": "E0bd5ab62d6777e65-B0031",
+            "pages": [
+              8
+            ],
+            "section": "Contradiction Detection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 536,
+                "page": 8,
+                "section": "Contradiction Detection",
+                "section_index": 25,
+                "start": 0,
+                "text": "When two cells with high semantic similarity (cos(e a,e b)>\u03b8 sim) but opposing content are stored in prox-\nimity, gossip delivers both signals to the same neighborhood. The system detects the divergence and auto-\nmatically generates acontradictiondiff with bonus energy (1.5\u00d7) for broad propagation.\nThis works because conflicting knowledge occupies nearby positions in the embedding space. The topology\nmakes contradiction detection ageometricproperty rather than an algorithmic one, requiring no explicit\ncontradiction-checking logic."
+              }
+            ],
+            "text": "When two cells with high semantic similarity (cos(e a,e b)>\u03b8 sim) but opposing content are stored in prox-\nimity, gossip delivers both signals to the same neighborhood. The system detects the divergence and auto-\nmatically generates acontradictiondiff with bonus energy (1.5\u00d7) for broad propagation.\nThis works because conflicting knowledge occupies nearby positions in the embedding space. The topology\nmakes contradiction detection ageometricproperty rather than an algorithmic one, requiring no explicit\ncontradiction-checking logic."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0032"
+        ],
+        "excerpt": "When multiple agents independently store similar observations (e.g., three agents reporting different in-\nstances of batch processing failures), these cells cluster in Layer 0. The consolidation worker detects the\ncluster density, extracts a generalized pattern via LLM, and the pattern cell\u2014with high salience\u2014promotes\nto Layer 1 via the promotion mechanism, propagating broadly.\nThis follows the same positive-feedback dynamics as pheromone accumulation in ant colony optimization\n[Dorigo and St\u00fctzle, 2004]: individual signals reinforce each other through proximity and repetition, pro-\nducing emergent collective knowledge.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pattern Crystallization",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f89cb504fa1c20ca6d7d4ad3a3f855c1ec3e60dd11ec0fb121c214819f54d458",
+            "evidence_id": "E0bd5ab62d6777e65-B0032",
+            "pages": [
+              8
+            ],
+            "section": "Pattern Crystallization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 627,
+                "page": 8,
+                "section": "Pattern Crystallization",
+                "section_index": 26,
+                "start": 0,
+                "text": "When multiple agents independently store similar observations (e.g., three agents reporting different in-\nstances of batch processing failures), these cells cluster in Layer 0. The consolidation worker detects the\ncluster density, extracts a generalized pattern via LLM, and the pattern cell\u2014with high salience\u2014promotes\nto Layer 1 via the promotion mechanism, propagating broadly.\nThis follows the same positive-feedback dynamics as pheromone accumulation in ant colony optimization\n[Dorigo and St\u00fctzle, 2004]: individual signals reinforce each other through proximity and repetition, pro-\nducing emergent collective knowledge."
+              }
+            ],
+            "text": "When multiple agents independently store similar observations (e.g., three agents reporting different in-\nstances of batch processing failures), these cells cluster in Layer 0. The consolidation worker detects the\ncluster density, extracts a generalized pattern via LLM, and the pattern cell\u2014with high salience\u2014promotes\nto Layer 1 via the promotion mechanism, propagating broadly.\nThis follows the same positive-feedback dynamics as pheromone accumulation in ant colony optimization\n[Dorigo and St\u00fctzle, 2004]: individual signals reinforce each other through proximity and repetition, pro-\nducing emergent collective knowledge."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0034"
+        ],
+        "excerpt": "Proposition 1(Propagation Reach).In an HNSW graph with N knowledge nodes and connectivity param-\neter M, a memory diff with sufficient energy reaches all nodes in the same topological neighborhood in\nO(logN)gossip rounds.\nProof sketch.The HNSW graph satisfies the small-world property [Malkov and Ponomarenko, 2016]: av-\nerage path length scales asO(logN)and the clustering coefficient is bounded below by a positive constant.\nBy the epidemic spreading results of Moore and Newman [2000], information propagation on such graphs\ncompletes inO(logN)rounds with fanoutf\u22652. Since our propagation algorithm selects theKhighest-\nscoring neighbors at each hop (withKconfigurable, default 10), the effective fanout exceeds the threshold\nfor rapid propagation. Energy attenuation bounds thescopeof propagation but not its speed within the\nrelevant subgraph.\nProposition 2(Energy-Bounded Scope).A diff with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Propagation Guarantees",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8fdd04487332f067098baaa9ad1b00669c8ad0af40b5415b32ef5276d424c987",
+            "evidence_id": "E0bd5ab62d6777e65-B0034",
+            "pages": [
+              9
+            ],
+            "section": "Propagation Guarantees",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 9,
+                "section": "Propagation Guarantees",
+                "section_index": 28,
+                "start": 0,
+                "text": "Proposition 1(Propagation Reach).In an HNSW graph with N knowledge nodes and connectivity param-\neter M, a memory diff with sufficient energy reaches all nodes in the same topological neighborhood in\nO(logN)gossip rounds.\nProof sketch.The HNSW graph satisfies the small-world property [Malkov and Ponomarenko, 2016]: av-\nerage path length scales asO(logN)and the clustering coefficient is bounded below by a positive constant.\nBy the epidemic spreading results of Moore and Newman [2000], information propagation on such graphs\ncompletes inO(logN)rounds with fanoutf\u22652. Since our propagation algorithm selects theKhighest-\nscoring neighbors at each hop (withKconfigurable, default 10), the effective fanout exceeds the threshold\nfor rapid propagation. Energy attenuation bounds thescopeof propagation but not its speed within the\nrelevant subgraph.\nProposition 2(Energy-Bounded Scope).A diff with "
+              }
+            ],
+            "text": "Proposition 1(Propagation Reach).In an HNSW graph with N knowledge nodes and connectivity param-\neter M, a memory diff with sufficient energy reaches all nodes in the same topological neighborhood in\nO(logN)gossip rounds.\nProof sketch.The HNSW graph satisfies the small-world property [Malkov and Ponomarenko, 2016]: av-\nerage path length scales asO(logN)and the clustering coefficient is bounded below by a positive constant.\nBy the epidemic spreading results of Moore and Newman [2000], information propagation on such graphs\ncompletes inO(logN)rounds with fanoutf\u22652. Since our propagation algorithm selects theKhighest-\nscoring neighbors at each hop (withKconfigurable, default 10), the effective fanout exceeds the threshold\nfor rapid propagation. Energy attenuation bounds thescopeof propagation but not its speed within the\nrelevant subgraph.\nProposition 2(Energy-Bounded Scope).A diff with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0035"
+        ],
+        "excerpt": "initial energy E 0 on a graph with average edge weight\n\u00af\u03c9propagates to at most E 0 \u00b7 \u00af\u03c9nodes.\nProof sketch.Each hop costs at least \u00af\u03c9 \u22121 energy (from the minimum-cost edge). WithE 0 total energy, the\nmaximum number of hops isE 0 \u00b7 \u00af\u03c9. Since each hop visits one new node (by cycle prevention), the bound\nfollows. In practice, the branching factor means fewer nodes are reached in a deep chain but more in a broad\nwavefront, preserving the bound in expectation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Propagation Guarantees",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f9b715571c07a1aae3833a495b8cb46eac1f4a24e5da0ef141a7a2e33321a91f",
+            "evidence_id": "E0bd5ab62d6777e65-B0035",
+            "pages": [
+              9
+            ],
+            "section": "Propagation Guarantees",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1356,
+                "page": 9,
+                "section": "Propagation Guarantees",
+                "section_index": 28,
+                "start": 897,
+                "text": "initial energy E 0 on a graph with average edge weight\n\u00af\u03c9propagates to at most E 0 \u00b7 \u00af\u03c9nodes.\nProof sketch.Each hop costs at least \u00af\u03c9 \u22121 energy (from the minimum-cost edge). WithE 0 total energy, the\nmaximum number of hops isE 0 \u00b7 \u00af\u03c9. Since each hop visits one new node (by cycle prevention), the bound\nfollows. In practice, the branching factor means fewer nodes are reached in a deep chain but more in a broad\nwavefront, preserving the bound in expectation."
+              }
+            ],
+            "text": "initial energy E 0 on a graph with average edge weight\n\u00af\u03c9propagates to at most E 0 \u00b7 \u00af\u03c9nodes.\nProof sketch.Each hop costs at least \u00af\u03c9 \u22121 energy (from the minimum-cost edge). WithE 0 total energy, the\nmaximum number of hops isE 0 \u00b7 \u00af\u03c9. Since each hop visits one new node (by cycle prevention), the bound\nfollows. In practice, the branching factor means fewer nodes are reached in a deep chain but more in a broad\nwavefront, preserving the bound in expectation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0037"
+        ],
+        "excerpt": "Based on the results of Buehler [2025], we conjecture that HyphaeDB's topology will develop several self-\norganizing properties over time:\n1.Emergent hubs: Frequently-confirmed knowledge cells will accumulate connections and become\nhigh-centrality nodes, serving as routing shortcuts.\n2.Modular structure: Topically distinct regions will develop clear boundaries, with higher internal\nconnectivity than cross-boundary connectivity.\n3.Bridge nodes: Interdisciplinary knowledge (e.g., security implications of architectural decisions) will\noccupy positions linking otherwise disconnected modules.\n9\n4.Scale-free degree distribution: The combination of preferential attachment (popular cells attract\nmore gossip) and the HNSW construction process will produce power-law degree distributions in the\nexplicit edge table.\nThese conjectures are testable and form the basis for empirical validation in future ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Self-Organization Properties",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "51dda7a5785fdcba8c410f8f3b92e18150e5009cd76e470cc72d76e34f781187",
+            "evidence_id": "E0bd5ab62d6777e65-B0037",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Self-Organization Properties",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 596,
+                "page": 9,
+                "section": "Self-Organization Properties",
+                "section_index": 30,
+                "start": 0,
+                "text": "Based on the results of Buehler [2025], we conjecture that HyphaeDB's topology will develop several self-\norganizing properties over time:\n1.Emergent hubs: Frequently-confirmed knowledge cells will accumulate connections and become\nhigh-centrality nodes, serving as routing shortcuts.\n2.Modular structure: Topically distinct regions will develop clear boundaries, with higher internal\nconnectivity than cross-boundary connectivity.\n3.Bridge nodes: Interdisciplinary knowledge (e.g., security implications of architectural decisions) will\noccupy positions linking otherwise disconnected modules.\n9"
+              },
+              {
+                "end": 304,
+                "page": 10,
+                "section": "Self-Organization Properties",
+                "section_index": 31,
+                "start": 0,
+                "text": "4.Scale-free degree distribution: The combination of preferential attachment (popular cells attract\nmore gossip) and the HNSW construction process will produce power-law degree distributions in the\nexplicit edge table.\nThese conjectures are testable and form the basis for empirical validation in future "
+              }
+            ],
+            "text": "Based on the results of Buehler [2025], we conjecture that HyphaeDB's topology will develop several self-\norganizing properties over time:\n1.Emergent hubs: Frequently-confirmed knowledge cells will accumulate connections and become\nhigh-centrality nodes, serving as routing shortcuts.\n2.Modular structure: Topically distinct regions will develop clear boundaries, with higher internal\nconnectivity than cross-boundary connectivity.\n3.Bridge nodes: Interdisciplinary knowledge (e.g., security implications of architectural decisions) will\noccupy positions linking otherwise disconnected modules.\n9\n4.Scale-free degree distribution: The combination of preferential attachment (popular cells attract\nmore gossip) and the HNSW construction process will produce power-law degree distributions in the\nexplicit edge table.\nThese conjectures are testable and form the basis for empirical validation in future "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0039"
+        ],
+        "excerpt": "The reference implementation uses PostgreSQL with the pgvector extension [Katz et al., 2024], which pro-\nvides native HNSW indexing. This choice provides ACID transactions, SQL joins for structured queries,\nrecursive CTEs for graph traversal, and HNSW vector search in a single deployment. pgvector 0.8.0 intro-\nduced iterative index scans, which automatically re-scan the HNSW index when filtered queries discard too\nmany neighbors\u2014critical for queries combining vector similarity with metadata filters.\nThe API layer is TypeScript with Express, exposing both a REST API and a Model Context Protocol (MCP)\nserver for native integration with MCP-compatible clients (Claude Code, Cursor, Cline).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Technology Stack",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e1ca13c081117c640d92cd8fd4519fd3f5a6f33a8d34c89d0315cd9ea871dd59",
+            "evidence_id": "E0bd5ab62d6777e65-B0039",
+            "pages": [
+              10
+            ],
+            "section": "Technology Stack",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 694,
+                "page": 10,
+                "section": "Technology Stack",
+                "section_index": 32,
+                "start": 0,
+                "text": "The reference implementation uses PostgreSQL with the pgvector extension [Katz et al., 2024], which pro-\nvides native HNSW indexing. This choice provides ACID transactions, SQL joins for structured queries,\nrecursive CTEs for graph traversal, and HNSW vector search in a single deployment. pgvector 0.8.0 intro-\nduced iterative index scans, which automatically re-scan the HNSW index when filtered queries discard too\nmany neighbors\u2014critical for queries combining vector similarity with metadata filters.\nThe API layer is TypeScript with Express, exposing both a REST API and a Model Context Protocol (MCP)\nserver for native integration with MCP-compatible clients (Claude Code, Cursor, Cline)."
+              }
+            ],
+            "text": "The reference implementation uses PostgreSQL with the pgvector extension [Katz et al., 2024], which pro-\nvides native HNSW indexing. This choice provides ACID transactions, SQL joins for structured queries,\nrecursive CTEs for graph traversal, and HNSW vector search in a single deployment. pgvector 0.8.0 intro-\nduced iterative index scans, which automatically re-scan the HNSW index when filtered queries discard too\nmany neighbors\u2014critical for queries combining vector similarity with metadata filters.\nThe API layer is TypeScript with Express, exposing both a REST API and a Model Context Protocol (MCP)\nserver for native integration with MCP-compatible clients (Claude Code, Cursor, Cline)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0040"
+        ],
+        "excerpt": "The system uses per-layer partial HNSW indexes:\nCREATE INDEX idx_nodes_layer0_embedding\nON knowledge_nodes USING hnsw\n(embedding vector_cosine_ops)\nWITH (m = 24, ef_construction = 128)\nWHERE layer = 0;\nCREATE INDEX idx_nodes_layer1_embedding\nON knowledge_nodes USING hnsw\n(embedding vector_cosine_ops)\nWITH (m = 16, ef_construction = 100)\nWHERE layer = 1;\nRuntime configuration setshnsw.ef_search = 100(up from the default 40) and enableshnsw.iterative_scan\n= relaxed_orderfor filtered queries. Topology neighbors are retrieved via cosine distance ordering with\naLIMITclause, leveraging pgvector's HNSW index forO(logN)neighbor lookup.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Schema Design",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "31cf1f7a6af5f4de5f2f4f99459c83e21b55e51be1450d159e9bd508d3cb2647",
+            "evidence_id": "E0bd5ab62d6777e65-B0040",
+            "pages": [
+              10
+            ],
+            "section": "Schema Design",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 635,
+                "page": 10,
+                "section": "Schema Design",
+                "section_index": 33,
+                "start": 0,
+                "text": "The system uses per-layer partial HNSW indexes:\nCREATE INDEX idx_nodes_layer0_embedding\nON knowledge_nodes USING hnsw\n(embedding vector_cosine_ops)\nWITH (m = 24, ef_construction = 128)\nWHERE layer = 0;\nCREATE INDEX idx_nodes_layer1_embedding\nON knowledge_nodes USING hnsw\n(embedding vector_cosine_ops)\nWITH (m = 16, ef_construction = 100)\nWHERE layer = 1;\nRuntime configuration setshnsw.ef_search = 100(up from the default 40) and enableshnsw.iterative_scan\n= relaxed_orderfor filtered queries. Topology neighbors are retrieved via cosine distance ordering with\naLIMITclause, leveraging pgvector's HNSW index forO(logN)neighbor lookup."
+              }
+            ],
+            "text": "The system uses per-layer partial HNSW indexes:\nCREATE INDEX idx_nodes_layer0_embedding\nON knowledge_nodes USING hnsw\n(embedding vector_cosine_ops)\nWITH (m = 24, ef_construction = 128)\nWHERE layer = 0;\nCREATE INDEX idx_nodes_layer1_embedding\nON knowledge_nodes USING hnsw\n(embedding vector_cosine_ops)\nWITH (m = 16, ef_construction = 100)\nWHERE layer = 1;\nRuntime configuration setshnsw.ef_search = 100(up from the default 40) and enableshnsw.iterative_scan\n= relaxed_orderfor filtered queries. Topology neighbors are retrieved via cosine distance ordering with\naLIMITclause, leveraging pgvector's HNSW index forO(logN)neighbor lookup."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0041"
+        ],
+        "excerpt": "The reference deployment uses Swarm-Driven Development (SDD), a methodology for orchestrating multi-\nagent software development teams. In SDD, specialized agents (specification, code, review, test) collaborate\nacross multi-session development workflows. HyphaeDB provides their shared persistent memory with\nautomatic knowledge routing.\n10\nAn orchestrator hook (withMemory()) wraps each agent function with automatic recall before execution and\nextraction after. Before an agent runs, the hook queries the mesh for task-relevant context, active decisions,\nconstraints, and Jira-scoped knowledge, injecting the results into the agent's system prompt. After the agent\ncompletes, the hook extracts structured memory cells from the output via LLM and stores them in the\ntopology. The agent itself is unaware of the memory system; the hook makes memory transparent.\nTen MCP tools expose the mesh to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reference Deployment: Swarm-Driven Development",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e22ff44ab446a4734cc998eb3b1c2cc5c4b5a65c32d9bb1f0b8238f46ad4ede1",
+            "evidence_id": "E0bd5ab62d6777e65-B0041",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Reference Deployment: Swarm-Driven Development",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 339,
+                "page": 10,
+                "section": "Reference Deployment: Swarm-Driven Development",
+                "section_index": 34,
+                "start": 0,
+                "text": "The reference deployment uses Swarm-Driven Development (SDD), a methodology for orchestrating multi-\nagent software development teams. In SDD, specialized agents (specification, code, review, test) collaborate\nacross multi-session development workflows. HyphaeDB provides their shared persistent memory with\nautomatic knowledge routing.\n10"
+              },
+              {
+                "end": 554,
+                "page": 11,
+                "section": "Reference Deployment: Swarm-Driven Development",
+                "section_index": 35,
+                "start": 0,
+                "text": "An orchestrator hook (withMemory()) wraps each agent function with automatic recall before execution and\nextraction after. Before an agent runs, the hook queries the mesh for task-relevant context, active decisions,\nconstraints, and Jira-scoped knowledge, injecting the results into the agent's system prompt. After the agent\ncompletes, the hook extracts structured memory cells from the output via LLM and stores them in the\ntopology. The agent itself is unaware of the memory system; the hook makes memory transparent.\nTen MCP tools expose the mesh to "
+              }
+            ],
+            "text": "The reference deployment uses Swarm-Driven Development (SDD), a methodology for orchestrating multi-\nagent software development teams. In SDD, specialized agents (specification, code, review, test) collaborate\nacross multi-session development workflows. HyphaeDB provides their shared persistent memory with\nautomatic knowledge routing.\n10\nAn orchestrator hook (withMemory()) wraps each agent function with automatic recall before execution and\nextraction after. Before an agent runs, the hook queries the mesh for task-relevant context, active decisions,\nconstraints, and Jira-scoped knowledge, injecting the results into the agent's system prompt. After the agent\ncompletes, the hook extracts structured memory cells from the output via LLM and stores them in the\ntopology. The agent itself is unaware of the memory system; the hook makes memory transparent.\nTen MCP tools expose the mesh to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0043"
+        ],
+        "excerpt": "Table 2 compares HyphaeDB with existing vector databases and agent memory frameworks across 13 capa-\nbilities.\nTable 2: Capability comparison across memory infrastructure.\nCapability Pinecone Weaviate Mem0 HyphaeDB\nVector search\u2713 \u2713 \u2713 \u2713\nStructured metadata\u2713 \u2713Partial\u2713\nGraph relationships \u2014 Partial \u2014 Native\nMulti-agent awareness \u2014 \u2014 \u2014 Core\nKnowledge propagation \u2014 \u2014 \u2014 Novel\nAutomatic routing \u2014 \u2014 \u2014 Novel\nContradiction detect \u2014 \u2014 \u2014 Emergent\nPattern emergence \u2014 \u2014 \u2014 Emergent\nLayer promotion \u2014 \u2014 \u2014 Novel\nAgent positioning \u2014 \u2014 \u2014 Novel\nStanding beacons \u2014 \u2014 \u2014 Novel\nEnergy propagation \u2014 \u2014 \u2014 Novel\nSelf-hosted (Postgres) \u2014\u2713 \u2713 \u2713\nNine of thirteen capabilities are unique to HyphaeDB. The existing systems\u2014Pinecone ($138M raised,\n$750M valuation), Weaviate ($50\u201367M raised), Mem0 ($24M raised), Milvus/Zilliz ($113M raised)\u2014all\noperate as passive store-and-retrieve engines. They represent the infrastructure ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Competitive Analysis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "1605176fd255392593bc2745baffd17f0a431e3a9836f321c6f0714243478060",
+            "evidence_id": "E0bd5ab62d6777e65-B0043",
+            "pages": [
+              11
+            ],
+            "section": "Competitive Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 11,
+                "section": "Competitive Analysis",
+                "section_index": 36,
+                "start": 0,
+                "text": "Table 2 compares HyphaeDB with existing vector databases and agent memory frameworks across 13 capa-\nbilities.\nTable 2: Capability comparison across memory infrastructure.\nCapability Pinecone Weaviate Mem0 HyphaeDB\nVector search\u2713 \u2713 \u2713 \u2713\nStructured metadata\u2713 \u2713Partial\u2713\nGraph relationships \u2014 Partial \u2014 Native\nMulti-agent awareness \u2014 \u2014 \u2014 Core\nKnowledge propagation \u2014 \u2014 \u2014 Novel\nAutomatic routing \u2014 \u2014 \u2014 Novel\nContradiction detect \u2014 \u2014 \u2014 Emergent\nPattern emergence \u2014 \u2014 \u2014 Emergent\nLayer promotion \u2014 \u2014 \u2014 Novel\nAgent positioning \u2014 \u2014 \u2014 Novel\nStanding beacons \u2014 \u2014 \u2014 Novel\nEnergy propagation \u2014 \u2014 \u2014 Novel\nSelf-hosted (Postgres) \u2014\u2713 \u2713 \u2713\nNine of thirteen capabilities are unique to HyphaeDB. The existing systems\u2014Pinecone ($138M raised,\n$750M valuation), Weaviate ($50\u201367M raised), Mem0 ($24M raised), Milvus/Zilliz ($113M raised)\u2014all\noperate as passive store-and-retrieve engines. They represent the infrastructure "
+              }
+            ],
+            "text": "Table 2 compares HyphaeDB with existing vector databases and agent memory frameworks across 13 capa-\nbilities.\nTable 2: Capability comparison across memory infrastructure.\nCapability Pinecone Weaviate Mem0 HyphaeDB\nVector search\u2713 \u2713 \u2713 \u2713\nStructured metadata\u2713 \u2713Partial\u2713\nGraph relationships \u2014 Partial \u2014 Native\nMulti-agent awareness \u2014 \u2014 \u2014 Core\nKnowledge propagation \u2014 \u2014 \u2014 Novel\nAutomatic routing \u2014 \u2014 \u2014 Novel\nContradiction detect \u2014 \u2014 \u2014 Emergent\nPattern emergence \u2014 \u2014 \u2014 Emergent\nLayer promotion \u2014 \u2014 \u2014 Novel\nAgent positioning \u2014 \u2014 \u2014 Novel\nStanding beacons \u2014 \u2014 \u2014 Novel\nEnergy propagation \u2014 \u2014 \u2014 Novel\nSelf-hosted (Postgres) \u2014\u2713 \u2713 \u2713\nNine of thirteen capabilities are unique to HyphaeDB. The existing systems\u2014Pinecone ($138M raised,\n$750M valuation), Weaviate ($50\u201367M raised), Mem0 ($24M raised), Milvus/Zilliz ($113M raised)\u2014all\noperate as passive store-and-retrieve engines. They represent the infrastructure "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0047"
+        ],
+        "excerpt": "Empirical validation.The emergent behaviors described in Section 5 are theoretically motivated but not\nyet empirically validated. A critical next step is deploying HyphaeDB in production multi-agent work-\nflows and measuring: (a) proportion of relevant knowledge that reaches agents without explicit query; (b)\ntime-to-detection for contradictions; (c) accuracy of crystallized patterns; (d) correspondence between layer\npromotion and human expert agreement.\nCross-project knowledge transfer .The current design operates within a single project. Extending to cross-\nproject knowledge transfer\u2014where patterns learned in Project A propagate to Project B via a \"meta-mesh\"\u2014\nrequires solving relevance filtering across different semantic domains and establishing trust boundaries.\nEmbedding model migration.Changing embedding models invalidates all vector positions. A migra-\ntion strategy involving ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations And Future Work",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b7e3d28e2114f3c28609f67862bffb91910029b1d3fb2f1ceccb340ab3aa0980",
+            "evidence_id": "E0bd5ab62d6777e65-B0047",
+            "pages": [
+              12
+            ],
+            "section": "Limitations And Future Work",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 12,
+                "section": "Limitations And Future Work",
+                "section_index": 39,
+                "start": 0,
+                "text": "Empirical validation.The emergent behaviors described in Section 5 are theoretically motivated but not\nyet empirically validated. A critical next step is deploying HyphaeDB in production multi-agent work-\nflows and measuring: (a) proportion of relevant knowledge that reaches agents without explicit query; (b)\ntime-to-detection for contradictions; (c) accuracy of crystallized patterns; (d) correspondence between layer\npromotion and human expert agreement.\nCross-project knowledge transfer .The current design operates within a single project. Extending to cross-\nproject knowledge transfer\u2014where patterns learned in Project A propagate to Project B via a \"meta-mesh\"\u2014\nrequires solving relevance filtering across different semantic domains and establishing trust boundaries.\nEmbedding model migration.Changing embedding models invalidates all vector positions. A migra-\ntion strategy involving "
+              }
+            ],
+            "text": "Empirical validation.The emergent behaviors described in Section 5 are theoretically motivated but not\nyet empirically validated. A critical next step is deploying HyphaeDB in production multi-agent work-\nflows and measuring: (a) proportion of relevant knowledge that reaches agents without explicit query; (b)\ntime-to-detection for contradictions; (c) accuracy of crystallized patterns; (d) correspondence between layer\npromotion and human expert agreement.\nCross-project knowledge transfer .The current design operates within a single project. Extending to cross-\nproject knowledge transfer\u2014where patterns learned in Project A propagate to Project B via a \"meta-mesh\"\u2014\nrequires solving relevance filtering across different semantic domains and establishing trust boundaries.\nEmbedding model migration.Changing embedding models invalidates all vector positions. A migra-\ntion strategy involving "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.28781",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript reports no empirical evaluation, benchmarking, or quantitative validation of the claimed emergent behaviors; the authors explicitly state these behaviors are theoretically motivated but not yet empirically validated.",
+          "Major claims about automatic routing, contradiction detection, and pattern crystallization are presented as conjectures and theoretical intuitions rather than demonstrated results.",
+          "The theoretical propagation guarantees are high-level proof sketches relying on assumptions imported from external literature rather than analyses specific to the proposed protocol."
+        ],
+        "canonical_id": "doi:10.48550/arxiv.2606.28781",
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No experimental evaluation or independent empirical measurements are reported in the manuscript.",
+          "final_evaluation_signal": "Not applicable; no quantitative or empirical evaluation was conducted in the paper.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; the manuscript presents an architectural design and theoretical formulation without automated optimization loops or model training.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0002",
+          "E0bd5ab62d6777e65-B0005",
+          "E0bd5ab62d6777e65-B0008",
+          "E0bd5ab62d6777e65-B0018",
+          "E0bd5ab62d6777e65-B0024",
+          "E0bd5ab62d6777e65-B0026",
+          "E0bd5ab62d6777e65-B0030",
+          "E0bd5ab62d6777e65-B0031",
+          "E0bd5ab62d6777e65-B0032",
+          "E0bd5ab62d6777e65-B0034",
+          "E0bd5ab62d6777e65-B0035",
+          "E0bd5ab62d6777e65-B0037",
+          "E0bd5ab62d6777e65-B0039",
+          "E0bd5ab62d6777e65-B0040",
+          "E0bd5ab62d6777e65-B0041",
+          "E0bd5ab62d6777e65-B0043",
+          "E0bd5ab62d6777e65-B0047"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "72d8b941e7403cf3401d27b946c0be8d2a70cf0e511130aa45c353c57783490c"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2606.28781",
+        "claim_evidence_alignment": "Major claims regarding emergent behaviors such as automatic routing, contradiction detection, and pattern crystallization are presented as conjectures and theoretical intuitions rather than demonstrated results [E0bd5ab62d6777e65-B0030, E0bd5ab62d6777e65-B0031, E0bd5ab62d6777e65-B0037]. The authors explicitly acknowledge under limitations that these emergent behaviors have not yet been empirically validated [E0bd5ab62d6777e65-B0047].",
+        "context_id": "0bd5ab62d6777e6588e8ed4fc8de8748b1ba9301fb8dbb806ad5682d5be7246c",
+        "decision": "uncertain",
+        "evaluation_assessment": "The manuscript contains no empirical performance evaluation, benchmarking, or quantitative validation of the claimed system behaviors [E0bd5ab62d6777e65-B0047]. The comparison consists solely of a qualitative capability checklist against existing vector databases and memory frameworks [E0bd5ab62d6777e65-B0043].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No experimental evaluation or independent empirical measurements are reported in the manuscript [E0bd5ab62d6777e65-B0047].",
+          "final_evaluation_signal": "Not applicable; no quantitative or empirical evaluation was conducted in the paper [E0bd5ab62d6777e65-B0043, E0bd5ab62d6777e65-B0047].",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; the manuscript presents an architectural system design and theoretical formulation without automated optimization loops or model training [E0bd5ab62d6777e65-B0018, E0bd5ab62d6777e65-B0024].",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E0bd5ab62d6777e65-B0002",
+          "E0bd5ab62d6777e65-B0003",
+          "E0bd5ab62d6777e65-B0005",
+          "E0bd5ab62d6777e65-B0008",
+          "E0bd5ab62d6777e65-B0009",
+          "E0bd5ab62d6777e65-B0018",
+          "E0bd5ab62d6777e65-B0024",
+          "E0bd5ab62d6777e65-B0026",
+          "E0bd5ab62d6777e65-B0030",
+          "E0bd5ab62d6777e65-B0031",
+          "E0bd5ab62d6777e65-B0032",
+          "E0bd5ab62d6777e65-B0034",
+          "E0bd5ab62d6777e65-B0035",
+          "E0bd5ab62d6777e65-B0037",
+          "E0bd5ab62d6777e65-B0039",
+          "E0bd5ab62d6777e65-B0040",
+          "E0bd5ab62d6777e65-B0041",
+          "E0bd5ab62d6777e65-B0043",
+          "E0bd5ab62d6777e65-B0047"
+        ],
+        "limitations": "The manuscript transparently notes significant limitations, notably the lack of empirical validation, unproven convergence properties, vulnerability to adversarial inputs, and challenges surrounding cross-project transfer and embedding migration [E0bd5ab62d6777e65-B0047, E0bd5ab62d6777e65-B0048].",
+        "method_assessment": "The system design defines three core primitives (knowledge nodes, topology edges, and memory diffs) along with an energy-attenuated propagation algorithm and layer promotion rules [E0bd5ab62d6777e65-B0018, E0bd5ab62d6777e65-B0024, E0bd5ab62d6777e65-B0026]. While the architectural concepts and database schemas are clearly outlined [E0bd5ab62d6777e65-B0039, E0bd5ab62d6777e65-B0040], the theoretical analyses are high-level proof sketches reliant on assumptions from external literature [E0bd5ab62d6777e65-B0034, E0bd5ab62d6777e65-B0035].",
+        "quality_rationale": "While the proposed conceptual synthesis of HNSW vector indexing and gossip protocols for agent memory is novel and methodologically coherent, the manuscript lacks any empirical evaluation or rigorous testing in operational multi-agent environments [E0bd5ab62d6777e65-B0043, E0bd5ab62d6777e65-B0047]. In the absence of measured outcomes or validation data to support the behavioral claims, the scientific standing of the system remains uncertain.",
+        "scoped_contribution": "The manuscript proposes HyphaeDB, an agent-first memory architecture reinterpreting HNSW vector graphs as a communication fabric using a gossip protocol with energy-based attenuation for multi-agent knowledge propagation [E0bd5ab62d6777e65-B0002, E0bd5ab62d6777e65-B0005]. It provides theoretical propagation sketches and describes a PostgreSQL/pgvector reference deployment for Swarm-Driven Development [E0bd5ab62d6777e65-B0008, E0bd5ab62d6777e65-B0039, E0bd5ab62d6777e65-B0041].",
+        "source_content_hash": "72d8b941e7403cf3401d27b946c0be8d2a70cf0e511130aa45c353c57783490c"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the proposed conceptual synthesis of HNSW vector indexing and gossip protocols for agent memory is novel and methodologically coherent, the manuscript lacks any empirical evaluation or rigorous testing in operational multi-agent environments [E0bd5ab62d6777e65-B0043, E0bd5ab62d6777e65-B0047]. In the absence of measured outcomes or validation data to support the behavioral claims, the scientific standing of the system remains uncertain.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "72d8b941e7403cf3401d27b946c0be8d2a70cf0e511130aa45c353c57783490c",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript transparently notes significant limitations, notably the lack of empirical validation, unproven convergence properties, vulnerability to adversarial inputs, and challenges surrounding cross-project transfer and embedding migration [E0bd5ab62d6777e65-B0047, E0bd5ab62d6777e65-B0048]."
   },
   "semantic_scholar_id": "2f7ee6adc9ba9c7345bdd550b461a773ba70dbc6",
   "source": "openalex",
@@ -176,7 +1934,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

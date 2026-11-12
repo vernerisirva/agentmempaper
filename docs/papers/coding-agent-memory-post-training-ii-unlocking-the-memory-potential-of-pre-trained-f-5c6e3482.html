@@ -59,16 +59,229 @@
             <p>Language-model agents increasingly tackle long-horizon tasks whose interaction histories exceed the model&#x27;s active context. They must therefore decide what to write down and what to read back, and when to do either. Recent work has begun to use on-policy distillation (OPD) to make memory control part of the policy,...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous investigation into leveraging filesystem priors for language agent memory distillation, supported by extensive baseline comparisons, multi-seed training runs, mechanistic ablations, and external benchmark validation.</p>
+      <p>The authors explicitly state limitations regarding evaluation scope, noting that experiments were restricted to models up to 9B parameters with a single frozen 27B teacher, leaving larger scales and multi-teacher distillation unexamined [E39fdd122f4b637a4-B0043].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-12T12:12:21.089221+00:00.</p>
+        <p>Coverage: 135591 of 135591 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>jointly
+across all five environments with fully asynchronous OPD to learn this file-based memory behavior directly
+from a frozen teacher with a prior for file operations. Task-reward training of file-based memory asks one
+question, whether the student&#x27;s pre-training prior makes the behavior reachable by exploration. Distillation
+asks two. The student has to emit meaningful memory operations, and the frozen teacher has to judge
+what those operations write. A shared interface prior answers both at once. We train CAMP-II-4B and
+CAMP-II-9B from Qwen3.5 models of matching size. On CAMG-II, CAMP-II obtains 2.97 times the gain
+of the strongest OPD baseline, and the memory behavior it learns generalizes to two external benchmarks,
+Terminal-Bench 2.1 and SWE-Bench Pro V2, with improved success rates.
+Our contributions are threefold.
+• A two-sided interface prior for memory distillation. We </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Multi-turn interaction. We consider finite-horizon, partially observable tasks. Given the instruction and
+visible context ht, the student samples response at. The environment executes the response and returns an
+observation for the next invocation. A trajectory τ contains Tτ ≤ H invocations, where H is the horizon.
+Response at contains Lt tokens, and at,&lt;j is its prefix before token j. Write st,j = (ht, at,&lt;j) for the context
+of that token prediction.
+On-policy distillation. OPD trains on contexts and prefixes reached by the student [ 1]. For a sampled token
+x at prefix s, let pθ(x | s) and q(x | s) be its probabilities under the current student and frozen teacher.
+Sampling from the student makes the reverse-KL gradient a policy gradient whose per-token signal is the
+teacher–student log-ratio,
+AOPDθ (s, x) = sg[log q(x | s) − log pθ(x | s)] ,
+LPG(θ) = −E(s,x)∼πθ
 
-        <ul></ul>
+AOPDθ (s, x) log pθ(x </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the file the student wrote earlier is supplied, and the student reads it
+back to recover that state. The per-token signal is
+AOPDi = sg[log qi − log pθ,i] . (3)
+The rollout workers generate with the last published weights θ− while the learner updates θ, so episodes
+from all five environments reach the learner after later weights are published. The update is corrected by the
+5
+Task success (%)
+Method Shop Coding AutoResearch General Visual A vg. ↑
+Frozen control
+Qwen3.5-4B 77.3 27.3 46.1 39.8 36.0 45.3
+Qwen3.5-9B 90.6 26.6 56.2 60.9 36.5 54.2
+Frozen teacher (Qwen3.8-27B) 100.0 63.3 83.6 93.0 40.3 76.0
+Learned-memory methods
+MemOPD 0.0 0.0 0.0 0.0 0.0 0.0
+MemOPD (w/ SFT) 93.0 27.3 39.1 62.5 37.3 51.8
+CompactOPD 93.8 24.2 37.5 61.7 23.6 48.2
+ACM 94.5 21.9 11.7 59.4 8.5 39.2
+HELM 87.5 0.0 9.4 53.1 33.1 36.6
+HELM (single-model) 87.5 29.7 46.9 46.9 38.0 49.8
+Hy-Memory 92.2 27.3 35.9 63.3 25.8 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>48.9
+CAMP-I 85.2 32.0 38.3 68.8 46.5 54.2
+CAMP-II 100.0 37.5 64.1 81.2 40.2 64.6
+CAMP-II-9B 100.0 36.7 73.4 82.0 40.2 66.5
+Table 1 CAMP-II attains the highest average success rate across the CAMG-II test set. Among the 4B
+systems it outperforms CAMP-I, every memory-learning baseline, and the frozen student. The largest gain lands in
+General, and Shop saturates. Scaling the same recipe to a 9B student lifts the average further.
+0.0 0.5 1.0 1.5
+NLL per token (nats)
+bash
+memory tools
+compaction
+0.420.19
+0.910.70
+1.400.98
+(a)
+teacher
+student
+0 50 100
+memory actions (% of all actions)
+21.6%
+7.8%
+5.9%
+(b)
+Figure 3 Both the teacher and the student are most familiar with the file interface, and that interface
+carries the most memory reads and writes. (a) Surprisal, the mean negative log-likelihood per generated token,
+over the five environments under the three memory interfaces. (b) Memory </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>actions as a share of all actions. The file
+interface draws roughly three times the share of the dedicated tools.
+importance ratio ρi = pθ,i/µi, taken against the clipped value ¯ρi = clip(ρi, 1 − ϵ, 1 + ϵ). Over the sampled
+response tokens Bm of an optimizer minibatch, the objective is
+LmOPD(θ) = − 1|Bm| Xi∈Bm min ρiAOPDi , ¯ρiAOPDi 	, (4)
+where Bm excludes instructions, observations and padding, and m indexes the memory interface in the
+controlled comparisons. Equation 4 is the clipped form of the surrogate in Eq. 1. Algorithm 1 in Appendix C
+gives the procedure the workers and the learner run.
+The prefix si is taken from the invocation the student actually produced: its visible context, token positions
+and causal mask [ 34], including invocations after a context replacement, together with the read observations
+the student recorded.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Training. All trainable methods use fresh Qwen3.5-4B and Qwen3.5-9B students [ 46] for 100 learner opti-
+mizer updates with 64 episodes per update, totaling 6,400 episodes per training run, under the equal mixture
+over Shop, Coding, AutoResearch, General, and Visual, trained with fully asynchronous OPD and no task
+rewards. Appendix C gives the remaining training details.
+Baselines. We compare against four trainable memory-learning systems: compact memory with invocation
+reconstruction for MemOPD [34], context editing and retrieval of offloaded history for ACM [ 27], a hierarchical
+memory with provenance and validity checks for HELM [ 30], and a separate writer with a persistent bank
+for Hy-Memory [ 10]. For HELM we report both the published architecture, which pairs a learned memory
+controller with a separate task reasoner, and a single-model adaptation in which one policy fills both </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with the success definitions in Ap-
+pendix A. Trainable methods are trained using the CAMG-II train split and evaluated using the CAMG-II
+test set, and all methods use the same 128 test tasks per domain, giving 640 tasks in total. We measure
+external transfer on the network-free task subsets of Terminal-Bench 2.1 and SWE-Bench Pro V2 [ 7, 39].</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>File-operation priors improve the task success of memory distillation. To test whether file memory is the
+most task-friendly form of agent memory, we compare CAMP-II against the baselines of Section 6.1 (Table 1).
+CAMP-II attains the highest average success rate, 64.6% versus 54.2% for CAMP-I, and the same comparison
+holds across five training seeds, where the five-domain mean is 64.9 with a standard deviation of 0.5 (Table 8),
+and only two domains reach the frozen teacher&#x27;s level, Visual at 40.2% against 40.3% and Shop at 100% for
+both. We attribute the margin to the training signal: the teacher&#x27;s token-level targets supervise each memory
+write as it is sampled, whereas CAMP-I must assign credit for memory operations across the long horizon,
+and task-reward training, as Fei et al. [ 10] analyze, spends much of its exploration on invalid calls and failed
+executions.
+The memory-learning </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>content. The episode that keeps its own memory completes the sequence, the one given another
+8
+0.0
+0.2
+mean |A| (nats)
+0.109
+0.189
+0.219
+(a) Interface decisions
+bash memory
+tools
+compaction
+0.0
+0.8
+mean |A| (nats)
+0.475 0.576
+0.909
+(b) Content tokens
+Figure 5 The negative-advantage problem worsens as the interface becomes less familiar. We score
+every token of the memory actions the student produces under each interface, with the teacher and the student. The
+mean size of the negative advantage rises from the file interface through the memory tools to compaction, (a) on
+interface decisions and (b) on content tokens.
+intact shuffled removed
+0
+0.25
+0.50
+0.75
+1.00purchase score
+1.00
+0.67
+0.45
+−0.33
+−0.22
+Figure 6 An episode&#x27;s later success is caused by the memory it wrote. We continue each episode three
+ways at its first context replacement, leaving the file memory intact, installing another </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>episode&#x27;s memory, or emptying
+it, so the runs differ only in the memory that crosses the boundary.
+episode&#x27;s memory recovers part of it, and the one whose memory is emptied recovers less. When we mask the
+loss on the tokens the policy writes into memory and keep it on the task-action and answer tokens, the gain
+from distillation largely disappears (Fig. 7). Masking the same number of tokens at random instead leaves
+it almost intact, at 63.3 against 64.6, so the loss comes from the supervision on memory content rather than
+from the smaller budget. The improvement therefore lives in learning what to write into memory, which is
+what CAMP-II trains.
+Ablating the interface. To see which part of CAMP-II carries the gain, we ablate the memory interface,
+replacing it with the dedicated memory tools and with compaction in turn. Either substitution costs 16 to
+17 points, and both lie outside the </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CAMG-II test set we compare the mean success
+of CAMP-II with that of variants that (i) replace the file interface by compaction, (ii) replace the file interface by
+the dedicated memory tools, (iii) mask the loss on the memory tokens, and (iv) mask the same number of tokens at
+random. Every variant that touches the memory supervision loses most of the gain, and matching the masked budget
+does not.
+The learned memory behavior transfers outside CAMG-II. We evaluate the initial students, larger same-
+generation models, and the trained CAMP-II policies at 4B and 9B on Terminal-Bench 2.1 and SWE-Bench
+Pro V2 (Table 2). Both trained policies exceed the models they start from on both suites, the 4B policy by 6.9
+points on each. Both also average above a larger model, CAMP-II-4B above the 9B model and CAMP-II-9B
+above the 35B one, and CAMP-II-9B holds the highest score in the table on both </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>suites.
+Table 2 Both trained policies beat a larger same-generation model on the average, with fewer pa-
+rameters. Success rate on Terminal-Bench 2.1 and SWE-Bench Pro V2 for the initial students, same-generation
+larger models, and the trained policies.
+Policy TB 2.1 SWE-Bench Pro V2 A vg.
+Qwen3.5-4B 23.1 11.2 17.1
+Qwen3.5-9B 23.1 23.1 23.1
+Qwen3.5-35B-A3B 33.8 27.4 30.6
+CAMP-II-4B 30.0 18.1 24.1
+CAMP-II-9B 38.0 30.1 34.1</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generalizes to Terminal-Bench 2.1 and SWE-
+Bench Pro V2, where CAMP-II-9B outperforms the larger Qwen3.5-35B-A3B on both benchmarks. Shared
+interface priors are therefore a design consideration for memory OPD, complementary to improving distillation
+objectives or teacher guidance.
+Limitations. The study covers students up to Qwen3.5-9B and a single frozen teacher. Whether the gains
+persist at larger scales or carry over to multi-teacher OPD remains untested.
+10</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A CAMG-II Environment Details
+CAMG-II contains five environments built around long-horizon tasks in which information obtained early can
+matter after the active context is replaced. Shop composes new multi-session tasks from WebShop products.
+Coding, AutoResearch, General, and Visual select executable tasks from SWE-smith, public OpenMLE
+task packages, and MiMo&#x27;s enterprise and website collections, respectively [ 37, 66, 70]. Each environment
+preserves its domain interaction and definition of task success. CAMG-II adds a bounded active context and
+an episode-private workspace that persists across context replacement.</blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>One Coding episode asks the policy to resolve a SWE-smith issue in a specified repository revision [ 70]. Diag-
+nosis, code edits, and test results can span several context windows. The repository and episode workspace
+therefore persist when the active messages are replaced, allowing later actions to reuse earlier evidence. We
+draw issue–repository pairs from CAMG&#x27;s executable collection [ 37]. An admitted task has a complete issue,
+reconstructible repository revision and runtime, an executable hidden grader, and a reference repair that
+passes the declared tests. The policy receives the issue and repository, with ordinary shell access for inspec-
+tion, edits, reproduction, and local tests. Hidden evaluation materials remain outside the acting workspace.
+The retained collection contains 11,218 executable tasks from 93 repositories [ 37].
+An explicit submission ends the repair attempt. An </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>component. The
+overall score is the equally weighted mean of this visual component, visible query fulfillment, and asset
+quality. The rendering configuration, rubric, and judge are common across evaluated methods. We report
+the absolute score as well as task success under a fixed acceptance threshold θV, selected on development
+tasks and held constant across methods and seeds. Empty or visibly broken pages fail the visual criteria.
+Functional requirements not observable from a screenshot require separate declared checks. A visual score
+alone does not certify JavaScript behavior.
+In the main results the five domains are not reported the same way. Shop, Coding and AutoResearch are
+task success rates over the held-out panels. General is a rate as well, but its success is a judge decision:
+the rubric is reduced to accept or reject before the episode is counted. The Visual column keeps the </blockquote></details></li><li><strong>Contribution clarity — page 33</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Environment Reward
+Shop rt = 17 per correct purchase of the session target under the cumulative budget; a wrong purchase
+pays −0.5 and terminates the episode with earlier payments retained. Success requires the full
+six-session sequence.
+Coding R = 1[hidden tests pass on the submitted repository change ] at the submission sentinel;
+rt = −0.01 per recoverable invalid action and at horizon failure.
+AutoResearch R = max(0, m ) + 0.05 1[first execution ] + 0.10 1[first validation], where m is the private grader&#x27;s
+native-metric score of the submitted file and milestone payments are capped at 0.15 per episode;
+rt = −0.01 at action-budget exhaustion or wall-clock termination, and invalid submissions pay 0.
+General R = w⊤r, a weighted rubric over the final answer, delivered files, and post-action system state,
+paid once at finish with required rule checks as gates; rt = −0.1 per invalid action </blockquote></details></li><li><strong>Contribution clarity — page 33</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and −0.01
+when the budget is exhausted without a submission.
+Visual R = mean(rrubric, r fulfilment, r assets), an absolute rubric over screenshots of the delivered page at
+finish (layout, typography, color, whitespace, content), averaged with query fulfilment and asset
+quality; invalid actions pay 0.
+Table 7 Task rewards.
+Seed Shop Coding AutoResearch General Visual A vg.
+1 100.0 37.5 64.1 81.2 40.2 64.6
+2 100.0 39.1 65.6 82.0 41.0 65.5
+3 100.0 38.3 63.3 80.5 39.7 64.4
+4 100.0 36.7 64.8 82.8 40.5 65.0
+5 100.0 38.3 66.4 81.2 40.0 65.2
+Mean ± Std. 100.0 ± 0.0 38.0 ± 0.9 64.8 ± 1.2 81.5 ± 0.9 40.3 ± 0.5 64.9 ± 0.5
+Table 8 Five training seeds of CAMP-II-4B. Task success on the CAMG-II held-out panels, one row per seed,
+with the mean and the standard deviation over seeds. Seed 1 is the run the main text reports. The average column
+weights the five domains equally, and the Visual column </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +320,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +336,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-10</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-11 11:40:36</li><li>Last seen by Paper Scout: 2026-11-11 11:40:59</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-10</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-11 11:40:36</li><li>Last seen by Paper Scout: 2026-11-12 12:08:21</li></ul>
             <ul><li>arXiv: 2611.14009</li><li>arXiv IDs: 2611.14009</li></ul>
           </section>
           <section class="detail-panel">

@@ -28,7 +28,7 @@
   "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-21 15:58:19",
   "notified_date": "2026-09-21",
@@ -39,7 +39,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-21 15:55:28",
-    "generated_at": "2026-11-11 11:46:31",
+    "generated_at": "2026-11-12 12:13:49",
     "last_seen_at": "2026-09-21 15:55:28",
     "metadata_sources": [
       "openalex",
@@ -110,36 +110,1692 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-12T12:11:27.385370+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Mask R-CNN provides an exceptionally clear conceptual contribution, complete and reproducible technical descriptions, and thorough empirical validation across multiple vision tasks with rigorous ablations.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 62832,
+      "assessment_input_sha256": "c65202f9331646653ca65f9dc24431da45e52e2ff96ccdeaa19fbf2df997a0c7",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.1703.06870",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 61683,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 61223,
+      "evidence_block_count": 82,
+      "evidence_context_characters": 71005,
+      "evidence_context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+      "evidence_context_sha256": "0ba594882f1a39122ba91ca0a595204dbedebd93357db5210bad6d6a821e9397",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 61705,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "b595a882b763d55d933543131f32a2c4b6f41d0818d418ef46a2b66f946b67a8",
+        "source_url": "https://arxiv.org/pdf/1703.06870",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 61683,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "body",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Mask R-Cnn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 95,
+          "supplied_characters": 95
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1162,
+          "supplied_characters": 1162
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2914,
+          "supplied_characters": 2914
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3245,
+          "supplied_characters": 3245
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 1885,
+          "supplied_characters": 1885
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 479,
+          "supplied_characters": 479
+        },
+        {
+          "heading": "Mask R-Cnn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 5393,
+          "supplied_characters": 5393
+        },
+        {
+          "heading": "Mask R-Cnn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 3989,
+          "supplied_characters": 3989
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 1907,
+          "supplied_characters": 1907
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 5674,
+          "supplied_characters": 5674
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 550,
+          "supplied_characters": 550
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 991,
+          "supplied_characters": 991
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 870,
+          "supplied_characters": 870
+        },
+        {
+          "heading": "Ap Ap 50 Ap75",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1467,
+          "supplied_characters": 1467
+        },
+        {
+          "heading": "Ablation Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 110,
+          "supplied_characters": 110
+        },
+        {
+          "heading": "Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 15,
+          "source_characters": 2331,
+          "supplied_characters": 2331
+        },
+        {
+          "heading": "Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 1809,
+          "supplied_characters": 1809
+        },
+        {
+          "heading": "Bounding Box Detection Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 1317,
+          "supplied_characters": 1317
+        },
+        {
+          "heading": "Timing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1203,
+          "supplied_characters": 1203
+        },
+        {
+          "heading": "Mask R-Cnn For Human Pose Estimation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 966,
+          "supplied_characters": 966
+        },
+        {
+          "heading": "Mask R-Cnn For Human Pose Estimation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 4321,
+          "supplied_characters": 4321
+        },
+        {
+          "heading": "Mask R-Cnn For Human Pose Estimation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1418,
+          "supplied_characters": 1418
+        },
+        {
+          "heading": "Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 22,
+          "source_characters": 521,
+          "supplied_characters": 521
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 3532,
+          "supplied_characters": 3532
+        },
+        {
+          "heading": "Ap On Test, Almost A 6 Point Improvement Over The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1009,
+          "supplied_characters": 1009
+        },
+        {
+          "heading": "Ap On Test, Almost A 6 Point Improvement Over The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 5823,
+          "supplied_characters": 5823
+        },
+        {
+          "heading": "Radosavovic For Contributions To Code Release And Enhanced",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "introduction",
+          "section_index": 26,
+          "source_characters": 112,
+          "supplied_characters": 112
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 62,
+          "supplied_characters": 62
+        },
+        {
+          "heading": "Human Pose Estimation: New Benchmark And State Of The Art",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 28,
+          "source_characters": 495,
+          "supplied_characters": 495
+        },
+        {
+          "heading": "Outside Net: Detecting Objects In Context With Skip Pooling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1053,
+          "supplied_characters": 1053
+        },
+        {
+          "heading": "Ture Hierarchies For Accurate Object Detection And Semantic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 413,
+          "supplied_characters": 413
+        },
+        {
+          "heading": "Columns For Object Segmentation And Fine-Grained Localiza-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 670,
+          "supplied_characters": 670
+        },
+        {
+          "heading": "Speed/Accuracy Trade-Offs For Modern Convolutional Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 2117,
+          "supplied_characters": 2117
+        },
+        {
+          "heading": "Wards Real-Time Object Detection With Region Proposal Net-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 448,
+          "supplied_characters": 448
+        },
+        {
+          "heading": "Yond Skip Connections: Top-Down Modulation For Object De-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 237,
+          "supplied_characters": 237
+        },
+        {
+          "heading": "Yond Skip Connections: Top-Down Modulation For Object De-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 635,
+          "supplied_characters": 635
+        }
+      ],
+      "selected_characters": 61223,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 95,
+          "heading": "Mask R-Cnn",
+          "page": 1
+        },
+        {
+          "characters": 1162,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2914,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3245,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1885,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 479,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 5393,
+          "heading": "Mask R-Cnn",
+          "page": 3
+        },
+        {
+          "characters": 3989,
+          "heading": "Mask R-Cnn",
+          "page": 4
+        },
+        {
+          "characters": 1907,
+          "heading": "Implementation Details",
+          "page": 4
+        },
+        {
+          "characters": 5674,
+          "heading": "Implementation Details",
+          "page": 5
+        },
+        {
+          "characters": 550,
+          "heading": "Experiments",
+          "page": 5
+        },
+        {
+          "characters": 991,
+          "heading": "Main Results",
+          "page": 5
+        },
+        {
+          "characters": 870,
+          "heading": "Main Results",
+          "page": 6
+        },
+        {
+          "characters": 1467,
+          "heading": "Ap Ap 50 Ap75",
+          "page": 6
+        },
+        {
+          "characters": 110,
+          "heading": "Ablation Experiments",
+          "page": 6
+        },
+        {
+          "characters": 2331,
+          "heading": "Architecture",
+          "page": 6
+        },
+        {
+          "characters": 1809,
+          "heading": "Architecture",
+          "page": 7
+        },
+        {
+          "characters": 1317,
+          "heading": "Bounding Box Detection Results",
+          "page": 7
+        },
+        {
+          "characters": 1203,
+          "heading": "Timing",
+          "page": 7
+        },
+        {
+          "characters": 966,
+          "heading": "Mask R-Cnn For Human Pose Estimation",
+          "page": 7
+        },
+        {
+          "characters": 4321,
+          "heading": "Mask R-Cnn For Human Pose Estimation",
+          "page": 8
+        },
+        {
+          "characters": 1418,
+          "heading": "Mask R-Cnn For Human Pose Estimation",
+          "page": 9
+        },
+        {
+          "characters": 521,
+          "heading": "Implementation",
+          "page": 9
+        },
+        {
+          "characters": 3532,
+          "heading": "Results",
+          "page": 9
+        },
+        {
+          "characters": 1009,
+          "heading": "Ap On Test, Almost A 6 Point Improvement Over The",
+          "page": 9
+        },
+        {
+          "characters": 5823,
+          "heading": "Ap On Test, Almost A 6 Point Improvement Over The",
+          "page": 10
+        },
+        {
+          "characters": 112,
+          "heading": "Radosavovic For Contributions To Code Release And Enhanced",
+          "page": 11
+        },
+        {
+          "characters": 62,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 495,
+          "heading": "Human Pose Estimation: New Benchmark And State Of The Art",
+          "page": 11
+        },
+        {
+          "characters": 1053,
+          "heading": "Outside Net: Detecting Objects In Context With Skip Pooling",
+          "page": 11
+        },
+        {
+          "characters": 413,
+          "heading": "Ture Hierarchies For Accurate Object Detection And Semantic",
+          "page": 11
+        },
+        {
+          "characters": 670,
+          "heading": "Columns For Object Segmentation And Fine-Grained Localiza-",
+          "page": 11
+        },
+        {
+          "characters": 2117,
+          "heading": "Speed/Accuracy Trade-Offs For Modern Convolutional Object",
+          "page": 11
+        },
+        {
+          "characters": 448,
+          "heading": "Wards Real-Time Object Detection With Region Proposal Net-",
+          "page": 11
+        },
+        {
+          "characters": 237,
+          "heading": "Yond Skip Connections: Top-Down Modulation For Object De-",
+          "page": 11
+        },
+        {
+          "characters": 635,
+          "heading": "Yond Skip Connections: Top-Down Modulation For Object De-",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "c65202f9331646653ca65f9dc24431da45e52e2ff96ccdeaa19fbf2df997a0c7",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "b595a882b763d55d933543131f32a2c4b6f41d0818d418ef46a2b66f946b67a8",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0002"
+        ],
+        "excerpt": "We present a conceptually simple, flexible, and general\nframework for object instance segmentation. Our approach\nefficiently detects objects in an image while simultaneously\ngenerating a high-quality segmentation mask for each in-\nstance. The method, called Mask R-CNN, extends Faster\nR-CNN by adding a branch for predicting an object mask in\nparallel with the existing branch for bounding box recogni-\ntion. Mask R-CNN is simple to train and adds only a small\noverhead to Faster R-CNN, running at 5 fps. Moreover,\nMask R-CNN is easy to generalize to other tasks, e.g., al-\nlowing us to estimate human poses in the same framework.\nWe show top results in all three tracks of the COCO suite\nof challenges, including instance segmentation, bounding-\nbox object detection, and person keypoint detection. With-\nout bells and whistles, Mask R-CNN outperforms all ex-\nisting, single-model entries on every ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0bdd7aa5b701eb6638ee342cb74a3414ebf00debe067a3dbe8f67c4b975d2ee0",
+            "evidence_id": "Ef9f795ef903e49e4-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "We present a conceptually simple, flexible, and general\nframework for object instance segmentation. Our approach\nefficiently detects objects in an image while simultaneously\ngenerating a high-quality segmentation mask for each in-\nstance. The method, called Mask R-CNN, extends Faster\nR-CNN by adding a branch for predicting an object mask in\nparallel with the existing branch for bounding box recogni-\ntion. Mask R-CNN is simple to train and adds only a small\noverhead to Faster R-CNN, running at 5 fps. Moreover,\nMask R-CNN is easy to generalize to other tasks, e.g., al-\nlowing us to estimate human poses in the same framework.\nWe show top results in all three tracks of the COCO suite\nof challenges, including instance segmentation, bounding-\nbox object detection, and person keypoint detection. With-\nout bells and whistles, Mask R-CNN outperforms all ex-\nisting, single-model entries on every "
+              }
+            ],
+            "text": "We present a conceptually simple, flexible, and general\nframework for object instance segmentation. Our approach\nefficiently detects objects in an image while simultaneously\ngenerating a high-quality segmentation mask for each in-\nstance. The method, called Mask R-CNN, extends Faster\nR-CNN by adding a branch for predicting an object mask in\nparallel with the existing branch for bounding box recogni-\ntion. Mask R-CNN is simple to train and adds only a small\noverhead to Faster R-CNN, running at 5 fps. Moreover,\nMask R-CNN is easy to generalize to other tasks, e.g., al-\nlowing us to estimate human poses in the same framework.\nWe show top results in all three tracks of the COCO suite\nof challenges, including instance segmentation, bounding-\nbox object detection, and person keypoint detection. With-\nout bells and whistles, Mask R-CNN outperforms all ex-\nisting, single-model entries on every "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0006"
+        ],
+        "excerpt": "given the Faster R-CNN framework, which facilitates\na wide range of flexible architecture designs. Additionally,\nthe mask branch only adds a small computational overhead,\nenabling a fast system and rapid experimentation.\nIn principle Mask R-CNN is an intuitive extension of\nFaster R-CNN, yet constructing the mask branch properly\nis critical for good results. Most importantly, Faster R-\nCNN was not designed for pixel-to-pixel alignment be-\ntween network inputs and outputs. This is most evident in\nhow RoIPool [18, 12], the de facto core operation for at-\ntending to instances, performs coarse spatial quantization\nfor feature extraction. To fix the misalignment, we pro-\npose a simple, quantization-free layer, called RoIAlign, that\nfaithfully preserves exact spatial locations. Despite being\n1Following common terminology, we use object detection to denote\ndetection via bounding boxes, not ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "356fd908e6f7e7f94dbd6b82babda2aad0376da8bc25039e0e441a914acf5a4e",
+            "evidence_id": "Ef9f795ef903e49e4-B0006",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2688,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1793,
+                "text": "given the Faster R-CNN framework, which facilitates\na wide range of flexible architecture designs. Additionally,\nthe mask branch only adds a small computational overhead,\nenabling a fast system and rapid experimentation.\nIn principle Mask R-CNN is an intuitive extension of\nFaster R-CNN, yet constructing the mask branch properly\nis critical for good results. Most importantly, Faster R-\nCNN was not designed for pixel-to-pixel alignment be-\ntween network inputs and outputs. This is most evident in\nhow RoIPool [18, 12], the de facto core operation for at-\ntending to instances, performs coarse spatial quantization\nfor feature extraction. To fix the misalignment, we pro-\npose a simple, quantization-free layer, called RoIAlign, that\nfaithfully preserves exact spatial locations. Despite being\n1Following common terminology, we use object detection to denote\ndetection via bounding boxes, not "
+              }
+            ],
+            "text": "given the Faster R-CNN framework, which facilitates\na wide range of flexible architecture designs. Additionally,\nthe mask branch only adds a small computational overhead,\nenabling a fast system and rapid experimentation.\nIn principle Mask R-CNN is an intuitive extension of\nFaster R-CNN, yet constructing the mask branch properly\nis critical for good results. Most importantly, Faster R-\nCNN was not designed for pixel-to-pixel alignment be-\ntween network inputs and outputs. This is most evident in\nhow RoIPool [18, 12], the de facto core operation for at-\ntending to instances, performs coarse spatial quantization\nfor feature extraction. To fix the misalignment, we pro-\npose a simple, quantization-free layer, called RoIAlign, that\nfaithfully preserves exact spatial locations. Despite being\n1Following common terminology, we use object detection to denote\ndetection via bounding boxes, not "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0015"
+        ],
+        "excerpt": "regression. The features\nused by both stages can be shared for faster inference. We\nrefer readers to [21] for latest, comprehensive comparisons\nbetween Faster R-CNN and other frameworks.\nMask R-CNN: Mask R-CNN adopts the same two-stage\nprocedure, with an identical first stage (which is RPN). In\nthe second stage, in parallel to predicting the class and box\noffset, Mask R-CNN also outputs a binary mask for each\nRoI. This is in contrast to most recent systems, where clas-\nsification depends on mask predictions ( e.g. [33, 10, 26]).\nOur approach follows the spirit of Fast R-CNN [12] that\napplies bounding-box classification and regression in par-\nallel (which turned out to largely simplify the multi-stage\npipeline of original R-CNN [13]).\nFormally, during training, we define a multi-task loss on\neach sampled RoI as L = Lcls + Lbox + Lmask. The clas-\nsification loss Lcls and bounding-box loss ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mask R-Cnn",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "438feb3d7c72cd07fd4acf8fedfcfad05255b9adc603b7ccd319e1bf885f8af1",
+            "evidence_id": "Ef9f795ef903e49e4-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Mask R-Cnn",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 3,
+                "section": "Mask R-Cnn",
+                "section_index": 6,
+                "start": 896,
+                "text": "regression. The features\nused by both stages can be shared for faster inference. We\nrefer readers to [21] for latest, comprehensive comparisons\nbetween Faster R-CNN and other frameworks.\nMask R-CNN: Mask R-CNN adopts the same two-stage\nprocedure, with an identical first stage (which is RPN). In\nthe second stage, in parallel to predicting the class and box\noffset, Mask R-CNN also outputs a binary mask for each\nRoI. This is in contrast to most recent systems, where clas-\nsification depends on mask predictions ( e.g. [33, 10, 26]).\nOur approach follows the spirit of Fast R-CNN [12] that\napplies bounding-box classification and regression in par-\nallel (which turned out to largely simplify the multi-stage\npipeline of original R-CNN [13]).\nFormally, during training, we define a multi-task loss on\neach sampled RoI as L = Lcls + Lbox + Lmask. The clas-\nsification loss Lcls and bounding-box loss "
+              }
+            ],
+            "text": "regression. The features\nused by both stages can be shared for faster inference. We\nrefer readers to [21] for latest, comprehensive comparisons\nbetween Faster R-CNN and other frameworks.\nMask R-CNN: Mask R-CNN adopts the same two-stage\nprocedure, with an identical first stage (which is RPN). In\nthe second stage, in parallel to predicting the class and box\noffset, Mask R-CNN also outputs a binary mask for each\nRoI. This is in contrast to most recent systems, where clas-\nsification depends on mask predictions ( e.g. [33, 10, 26]).\nOur approach follows the spirit of Fast R-CNN [12] that\napplies bounding-box classification and regression in par-\nallel (which turned out to largely simplify the multi-stage\npipeline of original R-CNN [13]).\nFormally, during training, we define a multi-task loss on\neach sampled RoI as L = Lcls + Lbox + Lmask. The clas-\nsification loss Lcls and bounding-box loss "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0016"
+        ],
+        "excerpt": "Lbox are identi-\ncal as those defined in [12]. The mask branch has a Km 2-\ndimensional output for each RoI, which encodes K binary\nmasks of resolution m\u00d7 m, one for each of the K classes.\nTo this we apply a per-pixel sigmoid, and define Lmask as\nthe average binary cross-entropy loss. For an RoI associated\nwith ground-truth class k, Lmask is only defined on thek-th\nmask (other mask outputs do not contribute to the loss).\nOur definition of Lmask allows the network to generate\nmasks for every class without competition among classes;\nwe rely on the dedicated classification branch to predict the\nFigure 3. RoIAlign: The dashed grid rep-\nresents a feature map, the solid lines an RoI\n(with 2\u00d72 bins in this example), and the dots\nthe 4 sampling points in each bin. RoIAlign\ncomputes the value of each sampling point\nby bilinear interpolation from the nearby grid\npoints on the feature map. No ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mask R-Cnn",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "42c56aee38ab5d362d07670bac50f8a8c61350897219927072ae1cb64cd1825b",
+            "evidence_id": "Ef9f795ef903e49e4-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Mask R-Cnn",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2690,
+                "page": 3,
+                "section": "Mask R-Cnn",
+                "section_index": 6,
+                "start": 1796,
+                "text": "Lbox are identi-\ncal as those defined in [12]. The mask branch has a Km 2-\ndimensional output for each RoI, which encodes K binary\nmasks of resolution m\u00d7 m, one for each of the K classes.\nTo this we apply a per-pixel sigmoid, and define Lmask as\nthe average binary cross-entropy loss. For an RoI associated\nwith ground-truth class k, Lmask is only defined on thek-th\nmask (other mask outputs do not contribute to the loss).\nOur definition of Lmask allows the network to generate\nmasks for every class without competition among classes;\nwe rely on the dedicated classification branch to predict the\nFigure 3. RoIAlign: The dashed grid rep-\nresents a feature map, the solid lines an RoI\n(with 2\u00d72 bins in this example), and the dots\nthe 4 sampling points in each bin. RoIAlign\ncomputes the value of each sampling point\nby bilinear interpolation from the nearby grid\npoints on the feature map. No "
+              }
+            ],
+            "text": "Lbox are identi-\ncal as those defined in [12]. The mask branch has a Km 2-\ndimensional output for each RoI, which encodes K binary\nmasks of resolution m\u00d7 m, one for each of the K classes.\nTo this we apply a per-pixel sigmoid, and define Lmask as\nthe average binary cross-entropy loss. For an RoI associated\nwith ground-truth class k, Lmask is only defined on thek-th\nmask (other mask outputs do not contribute to the loss).\nOur definition of Lmask allows the network to generate\nmasks for every class without competition among classes;\nwe rely on the dedicated classification branch to predict the\nFigure 3. RoIAlign: The dashed grid rep-\nresents a feature map, the solid lines an RoI\n(with 2\u00d72 bins in this example), and the dots\nthe 4 sampling points in each bin. RoIAlign\ncomputes the value of each sampling point\nby bilinear interpolation from the nearby grid\npoints on the feature map. No "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0020"
+        ],
+        "excerpt": "quantization of the RoI boundaries\n3\nor bins ( i.e., we use x/16 instead of [x/16]). We use bi-\nlinear interpolation [22] to compute the exact values of the\ninput features at four regularly sampled locations in each\nRoI bin, and aggregate the result (using max or average),\nsee Figure 3 for details. We note that the results are not sen-\nsitive to the exact sampling locations, or how many points\nare sampled, as long as no quantization is performed.\nRoIAlign leads to large improvements as we show in\n\u00a74.2. We also compare to the RoIWarp operation proposed\nin [10]. Unlike RoIAlign, RoIWarp overlooked the align-\nment issue and was implemented in [10] as quantizing RoI\njust like RoIPool. So even though RoIWarp also adopts\nbilinear resampling motivated by [22], it performs on par\nwith RoIPool as shown by experiments (more details in Ta-\nble 2c), demonstrating the crucial role of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mask R-Cnn",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c40f07caf463a5dd500dfe9d2c9b25c1c8afe7d994b4be8b40931b27927e4a1d",
+            "evidence_id": "Ef9f795ef903e49e4-B0020",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Mask R-Cnn",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 5393,
+                "page": 3,
+                "section": "Mask R-Cnn",
+                "section_index": 6,
+                "start": 5357,
+                "text": "quantization of the RoI boundaries\n3"
+              },
+              {
+                "end": 847,
+                "page": 4,
+                "section": "Mask R-Cnn",
+                "section_index": 7,
+                "start": 0,
+                "text": "or bins ( i.e., we use x/16 instead of [x/16]). We use bi-\nlinear interpolation [22] to compute the exact values of the\ninput features at four regularly sampled locations in each\nRoI bin, and aggregate the result (using max or average),\nsee Figure 3 for details. We note that the results are not sen-\nsitive to the exact sampling locations, or how many points\nare sampled, as long as no quantization is performed.\nRoIAlign leads to large improvements as we show in\n\u00a74.2. We also compare to the RoIWarp operation proposed\nin [10]. Unlike RoIAlign, RoIWarp overlooked the align-\nment issue and was implemented in [10] as quantizing RoI\njust like RoIPool. So even though RoIWarp also adopts\nbilinear resampling motivated by [22], it performs on par\nwith RoIPool as shown by experiments (more details in Ta-\nble 2c), demonstrating the crucial role of "
+              }
+            ],
+            "text": "quantization of the RoI boundaries\n3\nor bins ( i.e., we use x/16 instead of [x/16]). We use bi-\nlinear interpolation [22] to compute the exact values of the\ninput features at four regularly sampled locations in each\nRoI bin, and aggregate the result (using max or average),\nsee Figure 3 for details. We note that the results are not sen-\nsitive to the exact sampling locations, or how many points\nare sampled, as long as no quantization is performed.\nRoIAlign leads to large improvements as we show in\n\u00a74.2. We also compare to the RoIWarp operation proposed\nin [10]. Unlike RoIAlign, RoIWarp overlooked the align-\nment issue and was implemented in [10] as quantizing RoI\njust like RoIPool. So even though RoIWarp also adopts\nbilinear resampling motivated by [22], it performs on par\nwith RoIPool as shown by experiments (more details in Ta-\nble 2c), demonstrating the crucial role of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0032"
+        ],
+        "excerpt": "person.98person.94\nchair.97\nchair.80\nchair.71\nchair.94chair.92\nchair.99\nchair.93\nchair.99\nchair.91chair.81chair.98chair.83\nchair.81\nchair.81\nchair.93\nsports ball.99\nperson1.00\ncouch.82\nperson1.00\nperson.99\nperson1.00\nperson1.00person1.00 person.99\nskateboard.99\nperson.90\nperson.98\nperson.99\nperson.91\nperson.99person1.00\nperson.80\nskateboard.98\nFigure 5. More results of Mask R-CNN on COCO test images, using ResNet-101-FPN and running at 5 fps, with 35.7 mask AP (Table 1).\nbackbone AP AP 50 AP75 APS APM APL\nMNC [10] ResNet-101-C4 24.6 44.3 24.8 4.7 25.9 43.6\nFCIS [26] +OHEM ResNet-101-C5-dilated 29.2 49.5 - 7.1 31.3 50.0\nFCIS+++ [26] +OHEM ResNet-101-C5-dilated 33.6 54.5 - - - -\nMask R-CNN ResNet-101-C4 33.1 54.9 34.8 12.1 35.6 51.1\nMask R-CNN ResNet-101-FPN 35.7 58.0 37.8 15.5 38.1 52.4\nMask R-CNN ResNeXt-101-FPN 37.1 60.0 39.4 16.9 39.9 53.5\nTable 1. Instance segmentation mask AP on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4d40d71b3bbac1d2681e619df2762e03b62301787229cdda9ae037450a50b425",
+            "evidence_id": "Ef9f795ef903e49e4-B0032",
+            "pages": [
+              5
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 4972,
+                "page": 5,
+                "section": "Implementation Details",
+                "section_index": 9,
+                "start": 4076,
+                "text": "person.98person.94\nchair.97\nchair.80\nchair.71\nchair.94chair.92\nchair.99\nchair.93\nchair.99\nchair.91chair.81chair.98chair.83\nchair.81\nchair.81\nchair.93\nsports ball.99\nperson1.00\ncouch.82\nperson1.00\nperson.99\nperson1.00\nperson1.00person1.00 person.99\nskateboard.99\nperson.90\nperson.98\nperson.99\nperson.91\nperson.99person1.00\nperson.80\nskateboard.98\nFigure 5. More results of Mask R-CNN on COCO test images, using ResNet-101-FPN and running at 5 fps, with 35.7 mask AP (Table 1).\nbackbone AP AP 50 AP75 APS APM APL\nMNC [10] ResNet-101-C4 24.6 44.3 24.8 4.7 25.9 43.6\nFCIS [26] +OHEM ResNet-101-C5-dilated 29.2 49.5 - 7.1 31.3 50.0\nFCIS+++ [26] +OHEM ResNet-101-C5-dilated 33.6 54.5 - - - -\nMask R-CNN ResNet-101-C4 33.1 54.9 34.8 12.1 35.6 51.1\nMask R-CNN ResNet-101-FPN 35.7 58.0 37.8 15.5 38.1 52.4\nMask R-CNN ResNeXt-101-FPN 37.1 60.0 39.4 16.9 39.9 53.5\nTable 1. Instance segmentation mask AP on "
+              }
+            ],
+            "text": "person.98person.94\nchair.97\nchair.80\nchair.71\nchair.94chair.92\nchair.99\nchair.93\nchair.99\nchair.91chair.81chair.98chair.83\nchair.81\nchair.81\nchair.93\nsports ball.99\nperson1.00\ncouch.82\nperson1.00\nperson.99\nperson1.00\nperson1.00person1.00 person.99\nskateboard.99\nperson.90\nperson.98\nperson.99\nperson.91\nperson.99person1.00\nperson.80\nskateboard.98\nFigure 5. More results of Mask R-CNN on COCO test images, using ResNet-101-FPN and running at 5 fps, with 35.7 mask AP (Table 1).\nbackbone AP AP 50 AP75 APS APM APL\nMNC [10] ResNet-101-C4 24.6 44.3 24.8 4.7 25.9 43.6\nFCIS [26] +OHEM ResNet-101-C5-dilated 29.2 49.5 - 7.1 31.3 50.0\nFCIS+++ [26] +OHEM ResNet-101-C5-dilated 33.6 54.5 - - - -\nMask R-CNN ResNet-101-C4 33.1 54.9 34.8 12.1 35.6 51.1\nMask R-CNN ResNet-101-FPN 35.7 58.0 37.8 15.5 38.1 52.4\nMask R-CNN ResNeXt-101-FPN 37.1 60.0 39.4 16.9 39.9 53.5\nTable 1. Instance segmentation mask AP on "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0034"
+        ],
+        "excerpt": "We perform a thorough comparison of Mask R-CNN to\nthe state of the art along with comprehensive ablations on\nthe COCO dataset [28]. We report the standard COCO met-\nrics including AP (averaged over IoU thresholds), AP 50,\nAP75, and AP S, AP M , AP L (AP at different scales). Un-\nless noted, AP is evaluating usingmask IoU. As in previous\nwork [5, 27], we train using the union of 80k train images\nand a 35k subset of val images ( trainval35k), and re-\nport ablations on the remaining 5k val images (minival).\nWe also report results on test-dev [28].",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a50b81e22c959604ece997741dade0b3cc33d8cd4198681078b52e4a5529ef81",
+            "evidence_id": "Ef9f795ef903e49e4-B0034",
+            "pages": [
+              5
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 550,
+                "page": 5,
+                "section": "Experiments",
+                "section_index": 10,
+                "start": 0,
+                "text": "We perform a thorough comparison of Mask R-CNN to\nthe state of the art along with comprehensive ablations on\nthe COCO dataset [28]. We report the standard COCO met-\nrics including AP (averaged over IoU thresholds), AP 50,\nAP75, and AP S, AP M , AP L (AP at different scales). Un-\nless noted, AP is evaluating usingmask IoU. As in previous\nwork [5, 27], we train using the union of 80k train images\nand a 35k subset of val images ( trainval35k), and re-\nport ablations on the remaining 5k val images (minival).\nWe also report results on test-dev [28]."
+              }
+            ],
+            "text": "We perform a thorough comparison of Mask R-CNN to\nthe state of the art along with comprehensive ablations on\nthe COCO dataset [28]. We report the standard COCO met-\nrics including AP (averaged over IoU thresholds), AP 50,\nAP75, and AP S, AP M , AP L (AP at different scales). Un-\nless noted, AP is evaluating usingmask IoU. As in previous\nwork [5, 27], we train using the union of 80k train images\nand a 35k subset of val images ( trainval35k), and re-\nport ablations on the remaining 5k val images (minival).\nWe also report results on test-dev [28]."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0035"
+        ],
+        "excerpt": "We compare Mask R-CNN to the state-of-the-art meth-\nods in instance segmentation in Table 1. All instantia-\ntions of our model outperform baseline variants of pre-\nvious state-of-the-art models. This includes MNC [10]\nand FCIS [26], the winners of the COCO 2015 and 2016\nsegmentation challenges, respectively. Without bells and\nwhistles, Mask R-CNN with ResNet-101-FPN backbone\noutperforms FCIS+++ [26], which includes multi-scale\ntrain/test, horizontal flip test, and online hard example min-\ning (OHEM) [38]. While outside the scope of this work, we\nexpect many such improvements to be applicable to ours.\nMask R-CNN outputs are visualized in Figures 2 and 5.\nMask R-CNN achieves good results even under challeng-\ning conditions. In Figure 6 we compare our Mask R-CNN\nbaseline and FCIS+++ [26]. FCIS+++ exhibits systematic\nartifacts on overlapping instances, suggesting that it is chal-\nlenged by ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b2efb03f252f873f294da65cae4fa24e0ffac47dd28f2745ded8d4880def37d0",
+            "evidence_id": "Ef9f795ef903e49e4-B0035",
+            "pages": [
+              5
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 5,
+                "section": "Main Results",
+                "section_index": 11,
+                "start": 0,
+                "text": "We compare Mask R-CNN to the state-of-the-art meth-\nods in instance segmentation in Table 1. All instantia-\ntions of our model outperform baseline variants of pre-\nvious state-of-the-art models. This includes MNC [10]\nand FCIS [26], the winners of the COCO 2015 and 2016\nsegmentation challenges, respectively. Without bells and\nwhistles, Mask R-CNN with ResNet-101-FPN backbone\noutperforms FCIS+++ [26], which includes multi-scale\ntrain/test, horizontal flip test, and online hard example min-\ning (OHEM) [38]. While outside the scope of this work, we\nexpect many such improvements to be applicable to ours.\nMask R-CNN outputs are visualized in Figures 2 and 5.\nMask R-CNN achieves good results even under challeng-\ning conditions. In Figure 6 we compare our Mask R-CNN\nbaseline and FCIS+++ [26]. FCIS+++ exhibits systematic\nartifacts on overlapping instances, suggesting that it is chal-\nlenged by "
+              }
+            ],
+            "text": "We compare Mask R-CNN to the state-of-the-art meth-\nods in instance segmentation in Table 1. All instantia-\ntions of our model outperform baseline variants of pre-\nvious state-of-the-art models. This includes MNC [10]\nand FCIS [26], the winners of the COCO 2015 and 2016\nsegmentation challenges, respectively. Without bells and\nwhistles, Mask R-CNN with ResNet-101-FPN backbone\noutperforms FCIS+++ [26], which includes multi-scale\ntrain/test, horizontal flip test, and online hard example min-\ning (OHEM) [38]. While outside the scope of this work, we\nexpect many such improvements to be applicable to ours.\nMask R-CNN outputs are visualized in Figures 2 and 5.\nMask R-CNN achieves good results even under challeng-\ning conditions. In Figure 6 we compare our Mask R-CNN\nbaseline and FCIS+++ [26]. FCIS+++ exhibits systematic\nartifacts on overlapping instances, suggesting that it is chal-\nlenged by "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0036"
+        ],
+        "excerpt": "the fundamental difficulty of instance segmenta-\ntion. Mask R-CNN shows no such artifacts.\n5\nperson1.00\nperson1.00\nperson1.00\nperson1.00\numbrella1.00umbrella.99\ncar.99 car.93\ngiraffe1.00 giraffe1.00\nperson1.00 person1.00\nperson1.00 person1.00\nperson.95\nsports ball1.00\nsports ball.98\nperson1.00\nperson1.00\nperson1.00\ntie.95\ntie1.00\nFCISMask R-CNN\ntrain1.00\ntrain.99\ntrain.80\nperson1.00 person1.00person1.00\nperson1.00\nperson1.00person1.00\nskateboard.98\nperson.99 person.99\nskateboard.99\nhandbag.93\nFigure 6. FCIS+++ [26] (top) vs. Mask R-CNN (bottom, ResNet-101-FPN). FCIS exhibits systematic artifacts on overlapping objects.\nnet-depth-features AP AP 50 AP75\nResNet-50-C4 30.3 51.2 31.5\nResNet-101-C4 32.7 54.2 34.3\nResNet-50-FPN 33.6 55.2 35.3\nResNet-101-FPN 35.4 57.3 37.5\nResNeXt-101-FPN 36.7 59.5 38.9\n(a) Backbone Architecture : Better back-\nbones bring expected gains: deeper networks\ndo ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3767ad6cf2b864b43f941f182d384a3528aa4bf50a6b8882933ce478559acf3e",
+            "evidence_id": "Ef9f795ef903e49e4-B0036",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 991,
+                "page": 5,
+                "section": "Main Results",
+                "section_index": 11,
+                "start": 899,
+                "text": "the fundamental difficulty of instance segmenta-\ntion. Mask R-CNN shows no such artifacts.\n5"
+              },
+              {
+                "end": 802,
+                "page": 6,
+                "section": "Main Results",
+                "section_index": 12,
+                "start": 0,
+                "text": "person1.00\nperson1.00\nperson1.00\nperson1.00\numbrella1.00umbrella.99\ncar.99 car.93\ngiraffe1.00 giraffe1.00\nperson1.00 person1.00\nperson1.00 person1.00\nperson.95\nsports ball1.00\nsports ball.98\nperson1.00\nperson1.00\nperson1.00\ntie.95\ntie1.00\nFCISMask R-CNN\ntrain1.00\ntrain.99\ntrain.80\nperson1.00 person1.00person1.00\nperson1.00\nperson1.00person1.00\nskateboard.98\nperson.99 person.99\nskateboard.99\nhandbag.93\nFigure 6. FCIS+++ [26] (top) vs. Mask R-CNN (bottom, ResNet-101-FPN). FCIS exhibits systematic artifacts on overlapping objects.\nnet-depth-features AP AP 50 AP75\nResNet-50-C4 30.3 51.2 31.5\nResNet-101-C4 32.7 54.2 34.3\nResNet-50-FPN 33.6 55.2 35.3\nResNet-101-FPN 35.4 57.3 37.5\nResNeXt-101-FPN 36.7 59.5 38.9\n(a) Backbone Architecture : Better back-\nbones bring expected gains: deeper networks\ndo "
+              }
+            ],
+            "text": "the fundamental difficulty of instance segmenta-\ntion. Mask R-CNN shows no such artifacts.\n5\nperson1.00\nperson1.00\nperson1.00\nperson1.00\numbrella1.00umbrella.99\ncar.99 car.93\ngiraffe1.00 giraffe1.00\nperson1.00 person1.00\nperson1.00 person1.00\nperson.95\nsports ball1.00\nsports ball.98\nperson1.00\nperson1.00\nperson1.00\ntie.95\ntie1.00\nFCISMask R-CNN\ntrain1.00\ntrain.99\ntrain.80\nperson1.00 person1.00person1.00\nperson1.00\nperson1.00person1.00\nskateboard.98\nperson.99 person.99\nskateboard.99\nhandbag.93\nFigure 6. FCIS+++ [26] (top) vs. Mask R-CNN (bottom, ResNet-101-FPN). FCIS exhibits systematic artifacts on overlapping objects.\nnet-depth-features AP AP 50 AP75\nResNet-50-C4 30.3 51.2 31.5\nResNet-101-C4 32.7 54.2 34.3\nResNet-50-FPN 33.6 55.2 35.3\nResNet-101-FPN 35.4 57.3 37.5\nResNeXt-101-FPN 36.7 59.5 38.9\n(a) Backbone Architecture : Better back-\nbones bring expected gains: deeper networks\ndo "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0038"
+        ],
+        "excerpt": "AP AP 50 AP75\nsoftmax 24.8 44.1 25.1\nsigmoid 30.3 51.2 31.5\n+5.5 +7.1 +6.4\n(b) Multinomial vs. Independent Masks\n(ResNet-50-C4): Decoupling via per-\nclass binary masks (sigmoid) gives large\ngains over multinomial masks (softmax).\nalign? bilinear? agg. AP AP 50 AP75\nRoIPool [12] max 26.9 48.8 26.4\nRoIWarp [10] \u2713 max 27.2 49.2 27.1\u2713 ave 27.1 48.9 27.1\nRoIAlign \u2713 \u2713 max 30.2 51.0 31.8\u2713 \u2713 ave 30.3 51.2 31.5\n(c) RoIAlign (ResNet-50-C4): Mask results with various RoI\nlayers. Our RoIAlign layer improves AP by \u223c3 points and\nAP75 by\u223c5 points. Using proper alignment is the only fac-\ntor that contributes to the large gap between RoI layers.\nAP AP 50 AP75 APbb APbb50 APbb75\nRoIPool 23.6 46.5 21.6 28.2 52.7 26.9\nRoIAlign 30.9 51.8 32.1 34.0 55.3 36.4\n+7.3 + 5.3 +10.5 +5.8 +2.6 +9.5\n(d) RoIAlign (ResNet-50-C5, stride 32): Mask-level and box-level\nAP using large-stride features. Misalignments are more ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ap Ap 50 Ap75",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7fa3c2c962844decfee94f47537c33d888f83787333ab9aca13f97b98e6d6dec",
+            "evidence_id": "Ef9f795ef903e49e4-B0038",
+            "pages": [
+              6
+            ],
+            "section": "Ap Ap 50 Ap75",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "Ap Ap 50 Ap75",
+                "section_index": 13,
+                "start": 0,
+                "text": "AP AP 50 AP75\nsoftmax 24.8 44.1 25.1\nsigmoid 30.3 51.2 31.5\n+5.5 +7.1 +6.4\n(b) Multinomial vs. Independent Masks\n(ResNet-50-C4): Decoupling via per-\nclass binary masks (sigmoid) gives large\ngains over multinomial masks (softmax).\nalign? bilinear? agg. AP AP 50 AP75\nRoIPool [12] max 26.9 48.8 26.4\nRoIWarp [10] \u2713 max 27.2 49.2 27.1\u2713 ave 27.1 48.9 27.1\nRoIAlign \u2713 \u2713 max 30.2 51.0 31.8\u2713 \u2713 ave 30.3 51.2 31.5\n(c) RoIAlign (ResNet-50-C4): Mask results with various RoI\nlayers. Our RoIAlign layer improves AP by \u223c3 points and\nAP75 by\u223c5 points. Using proper alignment is the only fac-\ntor that contributes to the large gap between RoI layers.\nAP AP 50 AP75 APbb APbb50 APbb75\nRoIPool 23.6 46.5 21.6 28.2 52.7 26.9\nRoIAlign 30.9 51.8 32.1 34.0 55.3 36.4\n+7.3 + 5.3 +10.5 +5.8 +2.6 +9.5\n(d) RoIAlign (ResNet-50-C5, stride 32): Mask-level and box-level\nAP using large-stride features. Misalignments are more "
+              }
+            ],
+            "text": "AP AP 50 AP75\nsoftmax 24.8 44.1 25.1\nsigmoid 30.3 51.2 31.5\n+5.5 +7.1 +6.4\n(b) Multinomial vs. Independent Masks\n(ResNet-50-C4): Decoupling via per-\nclass binary masks (sigmoid) gives large\ngains over multinomial masks (softmax).\nalign? bilinear? agg. AP AP 50 AP75\nRoIPool [12] max 26.9 48.8 26.4\nRoIWarp [10] \u2713 max 27.2 49.2 27.1\u2713 ave 27.1 48.9 27.1\nRoIAlign \u2713 \u2713 max 30.2 51.0 31.8\u2713 \u2713 ave 30.3 51.2 31.5\n(c) RoIAlign (ResNet-50-C4): Mask results with various RoI\nlayers. Our RoIAlign layer improves AP by \u223c3 points and\nAP75 by\u223c5 points. Using proper alignment is the only fac-\ntor that contributes to the large gap between RoI layers.\nAP AP 50 AP75 APbb APbb50 APbb75\nRoIPool 23.6 46.5 21.6 28.2 52.7 26.9\nRoIAlign 30.9 51.8 32.1 34.0 55.3 36.4\n+7.3 + 5.3 +10.5 +5.8 +2.6 +9.5\n(d) RoIAlign (ResNet-50-C5, stride 32): Mask-level and box-level\nAP using large-stride features. Misalignments are more "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0041"
+        ],
+        "excerpt": "backbones. It benefits from deeper networks (50 vs. 101)\nand advanced designs including FPN and ResNeXt. We\nnote that not all frameworks automatically benefit from\ndeeper or advanced networks (see benchmarking in [21]).\nMultinomial vs. Independent Masks: Mask R-CNN de-\ncouples mask and class prediction: as the existing box\nbranch predicts the class label, we generate a mask for each\nclass without competition among classes (by a per-pixelsig-\nmoid and a binary loss). In Table 2b, we compare this to\nusing a per-pixel softmax and a multinomial loss (as com-\nmonly used in FCN [30]). This alternativecouples the tasks\nof mask and class prediction, and results in a severe loss\nin mask AP (5.5 points). This suggests that once the in-\nstance has been classified as a whole (by the box branch),\nit is sufficient to predict a binary mask without concern for\nthe categories, which makes the model ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "30906fd4b131e10def742728c895f70ded8e91ff444f65946f3875437c625732",
+            "evidence_id": "Ef9f795ef903e49e4-B0041",
+            "pages": [
+              6
+            ],
+            "section": "Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 6,
+                "section": "Architecture",
+                "section_index": 15,
+                "start": 0,
+                "text": "backbones. It benefits from deeper networks (50 vs. 101)\nand advanced designs including FPN and ResNeXt. We\nnote that not all frameworks automatically benefit from\ndeeper or advanced networks (see benchmarking in [21]).\nMultinomial vs. Independent Masks: Mask R-CNN de-\ncouples mask and class prediction: as the existing box\nbranch predicts the class label, we generate a mask for each\nclass without competition among classes (by a per-pixelsig-\nmoid and a binary loss). In Table 2b, we compare this to\nusing a per-pixel softmax and a multinomial loss (as com-\nmonly used in FCN [30]). This alternativecouples the tasks\nof mask and class prediction, and results in a severe loss\nin mask AP (5.5 points). This suggests that once the in-\nstance has been classified as a whole (by the box branch),\nit is sufficient to predict a binary mask without concern for\nthe categories, which makes the model "
+              }
+            ],
+            "text": "backbones. It benefits from deeper networks (50 vs. 101)\nand advanced designs including FPN and ResNeXt. We\nnote that not all frameworks automatically benefit from\ndeeper or advanced networks (see benchmarking in [21]).\nMultinomial vs. Independent Masks: Mask R-CNN de-\ncouples mask and class prediction: as the existing box\nbranch predicts the class label, we generate a mask for each\nclass without competition among classes (by a per-pixelsig-\nmoid and a binary loss). In Table 2b, we compare this to\nusing a per-pixel softmax and a multinomial loss (as com-\nmonly used in FCN [30]). This alternativecouples the tasks\nof mask and class prediction, and results in a severe loss\nin mask AP (5.5 points). This suggests that once the in-\nstance has been classified as a whole (by the box branch),\nit is sufficient to predict a binary mask without concern for\nthe categories, which makes the model "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0043"
+        ],
+        "excerpt": "adopt bilinear sampling. As discussed\nin\u00a73, RoIWarp still quantizes the RoI, losing alignment\nwith the input. As can be seen in Table 2c, RoIWarp per-\nforms on par with RoIPool and much worse than RoIAlign.\nThis highlights that proper alignment is key.\nWe also evaluate RoIAlign with a ResNet-50-C5 back-\nbone, which has an even larger stride of 32 pixels. We use\nthe same head as in Figure 4 (right), as the res5 head is not\napplicable. Table 2d shows that RoIAlign improves mask\nAP by a massive 7.3 points, and mask AP 75 by 10.5 points\n6\nbackbone APbb APbb50 APbb75 APbbS APbbM APbbL\nFaster R-CNN+++ [19] ResNet-101-C4 34.9 55.7 37.4 15.6 38.7 50.9\nFaster R-CNN w FPN [27] ResNet-101-FPN 36.2 59.1 39.0 18.2 39.0 48.2\nFaster R-CNN by G-RMI [21] Inception-ResNet-v2 [41] 34.7 55.5 36.7 13.5 38.1 52.0\nFaster R-CNN w TDM [39] Inception-ResNet-v2-TDM 36.8 57.7 39.2 16.2 39.8 52.1\nFaster R-CNN, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "74b097dce5e660c3e9519349f48b8866af6f53110c84a63256956e94427ec3be",
+            "evidence_id": "Ef9f795ef903e49e4-B0043",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2331,
+                "page": 6,
+                "section": "Architecture",
+                "section_index": 15,
+                "start": 1791,
+                "text": "adopt bilinear sampling. As discussed\nin\u00a73, RoIWarp still quantizes the RoI, losing alignment\nwith the input. As can be seen in Table 2c, RoIWarp per-\nforms on par with RoIPool and much worse than RoIAlign.\nThis highlights that proper alignment is key.\nWe also evaluate RoIAlign with a ResNet-50-C5 back-\nbone, which has an even larger stride of 32 pixels. We use\nthe same head as in Figure 4 (right), as the res5 head is not\napplicable. Table 2d shows that RoIAlign improves mask\nAP by a massive 7.3 points, and mask AP 75 by 10.5 points\n6"
+              },
+              {
+                "end": 354,
+                "page": 7,
+                "section": "Architecture",
+                "section_index": 16,
+                "start": 0,
+                "text": "backbone APbb APbb50 APbb75 APbbS APbbM APbbL\nFaster R-CNN+++ [19] ResNet-101-C4 34.9 55.7 37.4 15.6 38.7 50.9\nFaster R-CNN w FPN [27] ResNet-101-FPN 36.2 59.1 39.0 18.2 39.0 48.2\nFaster R-CNN by G-RMI [21] Inception-ResNet-v2 [41] 34.7 55.5 36.7 13.5 38.1 52.0\nFaster R-CNN w TDM [39] Inception-ResNet-v2-TDM 36.8 57.7 39.2 16.2 39.8 52.1\nFaster R-CNN, "
+              }
+            ],
+            "text": "adopt bilinear sampling. As discussed\nin\u00a73, RoIWarp still quantizes the RoI, losing alignment\nwith the input. As can be seen in Table 2c, RoIWarp per-\nforms on par with RoIPool and much worse than RoIAlign.\nThis highlights that proper alignment is key.\nWe also evaluate RoIAlign with a ResNet-50-C5 back-\nbone, which has an even larger stride of 32 pixels. We use\nthe same head as in Figure 4 (right), as the res5 head is not\napplicable. Table 2d shows that RoIAlign improves mask\nAP by a massive 7.3 points, and mask AP 75 by 10.5 points\n6\nbackbone APbb APbb50 APbb75 APbbS APbbM APbbL\nFaster R-CNN+++ [19] ResNet-101-C4 34.9 55.7 37.4 15.6 38.7 50.9\nFaster R-CNN w FPN [27] ResNet-101-FPN 36.2 59.1 39.0 18.2 39.0 48.2\nFaster R-CNN by G-RMI [21] Inception-ResNet-v2 [41] 34.7 55.5 36.7 13.5 38.1 52.0\nFaster R-CNN w TDM [39] Inception-ResNet-v2-TDM 36.8 57.7 39.2 16.2 39.8 52.1\nFaster R-CNN, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0044"
+        ],
+        "excerpt": "RoIAlign ResNet-101-FPN 37.3 59.6 40.3 19.8 40.2 48.8\nMask R-CNN ResNet-101-FPN 38.2 60.3 41.7 20.1 41.1 50.2\nMask R-CNN ResNeXt-101-FPN 39.8 62.3 43.4 22.1 43.2 51.2\nTable 3. Object detection single-model results (bounding box AP), vs. state-of-the-art on test-dev. Mask R-CNN using ResNet-101-\nFPN outperforms the base variants of all previous state-of-the-art models (the mask output is ignored in these experiments). The gains of\nMask R-CNN over [27] come from using RoIAlign (+1.1 APbb), multitask training (+0.9 APbb), and ResNeXt-101 (+1.6 APbb).\n(50% relative improvement). Moreover, we note that with\nRoIAlign, using stride-32 C5 features (30.9 AP) is more ac-\ncurate than using stride-16 C4 features (30.3 AP, Table 2c).\nRoIAlign largely resolves the long-standing challenge of\nusing large-stride features for detection and segmentation.\nFinally, RoIAlign shows a gain of 1.5 mask AP and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4a1f669f3ccd01a03f817b946422cea4d91fa7595a6e540b34ff12674adfd5f5",
+            "evidence_id": "Ef9f795ef903e49e4-B0044",
+            "pages": [
+              7
+            ],
+            "section": "Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1252,
+                "page": 7,
+                "section": "Architecture",
+                "section_index": 16,
+                "start": 354,
+                "text": "RoIAlign ResNet-101-FPN 37.3 59.6 40.3 19.8 40.2 48.8\nMask R-CNN ResNet-101-FPN 38.2 60.3 41.7 20.1 41.1 50.2\nMask R-CNN ResNeXt-101-FPN 39.8 62.3 43.4 22.1 43.2 51.2\nTable 3. Object detection single-model results (bounding box AP), vs. state-of-the-art on test-dev. Mask R-CNN using ResNet-101-\nFPN outperforms the base variants of all previous state-of-the-art models (the mask output is ignored in these experiments). The gains of\nMask R-CNN over [27] come from using RoIAlign (+1.1 APbb), multitask training (+0.9 APbb), and ResNeXt-101 (+1.6 APbb).\n(50% relative improvement). Moreover, we note that with\nRoIAlign, using stride-32 C5 features (30.9 AP) is more ac-\ncurate than using stride-16 C4 features (30.3 AP, Table 2c).\nRoIAlign largely resolves the long-standing challenge of\nusing large-stride features for detection and segmentation.\nFinally, RoIAlign shows a gain of 1.5 mask AP and "
+              }
+            ],
+            "text": "RoIAlign ResNet-101-FPN 37.3 59.6 40.3 19.8 40.2 48.8\nMask R-CNN ResNet-101-FPN 38.2 60.3 41.7 20.1 41.1 50.2\nMask R-CNN ResNeXt-101-FPN 39.8 62.3 43.4 22.1 43.2 51.2\nTable 3. Object detection single-model results (bounding box AP), vs. state-of-the-art on test-dev. Mask R-CNN using ResNet-101-\nFPN outperforms the base variants of all previous state-of-the-art models (the mask output is ignored in these experiments). The gains of\nMask R-CNN over [27] come from using RoIAlign (+1.1 APbb), multitask training (+0.9 APbb), and ResNeXt-101 (+1.6 APbb).\n(50% relative improvement). Moreover, we note that with\nRoIAlign, using stride-32 C5 features (30.9 AP) is more ac-\ncurate than using stride-16 C4 features (30.3 AP, Table 2c).\nRoIAlign largely resolves the long-standing challenge of\nusing large-stride features for detection and segmentation.\nFinally, RoIAlign shows a gain of 1.5 mask AP and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0046"
+        ],
+        "excerpt": "We compare Mask R-CNN to the state-of-the-art COCO\nbounding-box object detection in Table 3. For this result,\neven though the full Mask R-CNN model is trained, only\nthe classification and box outputs are used at inference (the\nmask output is ignored). Mask R-CNN using ResNet-101-\nFPN outperforms the base variants of all previous state-of-\nthe-art models, including the single-model variant of G-\nRMI [21], the winner of the COCO 2016 Detection Chal-\nlenge. Using ResNeXt-101-FPN, Mask R-CNN further im-\nproves results, with a margin of 3.0 points box AP over\nthe best previous single model entry from [39] (which used\nInception-ResNet-v2-TDM).\nAs a further comparison, we trained a version of Mask\nR-CNN but without the mask branch, denoted by \"Faster\nR-CNN, RoIAlign\" in Table 3. This model performs better\nthan the model presented in [27] due to RoIAlign. On the\nother hand, it is 0.9 points box ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Bounding Box Detection Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3b66ab0c8ba960992c025bd29cc67894bb75a7ddbd7d30c895c92536d3bff5b0",
+            "evidence_id": "Ef9f795ef903e49e4-B0046",
+            "pages": [
+              7
+            ],
+            "section": "Bounding Box Detection Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Bounding Box Detection Results",
+                "section_index": 17,
+                "start": 0,
+                "text": "We compare Mask R-CNN to the state-of-the-art COCO\nbounding-box object detection in Table 3. For this result,\neven though the full Mask R-CNN model is trained, only\nthe classification and box outputs are used at inference (the\nmask output is ignored). Mask R-CNN using ResNet-101-\nFPN outperforms the base variants of all previous state-of-\nthe-art models, including the single-model variant of G-\nRMI [21], the winner of the COCO 2016 Detection Chal-\nlenge. Using ResNeXt-101-FPN, Mask R-CNN further im-\nproves results, with a margin of 3.0 points box AP over\nthe best previous single model entry from [39] (which used\nInception-ResNet-v2-TDM).\nAs a further comparison, we trained a version of Mask\nR-CNN but without the mask branch, denoted by \"Faster\nR-CNN, RoIAlign\" in Table 3. This model performs better\nthan the model presented in [27] due to RoIAlign. On the\nother hand, it is 0.9 points box "
+              }
+            ],
+            "text": "We compare Mask R-CNN to the state-of-the-art COCO\nbounding-box object detection in Table 3. For this result,\neven though the full Mask R-CNN model is trained, only\nthe classification and box outputs are used at inference (the\nmask output is ignored). Mask R-CNN using ResNet-101-\nFPN outperforms the base variants of all previous state-of-\nthe-art models, including the single-model variant of G-\nRMI [21], the winner of the COCO 2016 Detection Chal-\nlenge. Using ResNeXt-101-FPN, Mask R-CNN further im-\nproves results, with a margin of 3.0 points box AP over\nthe best previous single model entry from [39] (which used\nInception-ResNet-v2-TDM).\nAs a further comparison, we trained a version of Mask\nR-CNN but without the mask branch, denoted by \"Faster\nR-CNN, RoIAlign\" in Table 3. This model performs better\nthan the model presented in [27] due to RoIAlign. On the\nother hand, it is 0.9 points box "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0048"
+        ],
+        "excerpt": "Inference: We train a ResNet-101-FPN model that shares\nfeatures between the RPN and Mask R-CNN stages, follow-\ning the 4-step training of Faster R-CNN [36]. This model\nruns at 195ms per image on an Nvidia Tesla M40 GPU (plus\n15ms CPU time resizing the outputs to the original resolu-\ntion), and achieves statistically the same mask AP as the\nunshared one. We also report that the ResNet-101-C4 vari-\nant takes \u223c400ms as it has a heavier box head (Figure 4), so\nwe do not recommend using the C4 variant in practice.\nAlthough Mask R-CNN is fast, we note that our design\nis not optimized for speed, and better speed/accuracy trade-\noffs could be achieved [21],e.g., by varying image sizes and\nproposal numbers, which is beyond the scope of this paper.\nTraining: Mask R-CNN is also fast to train. Training with\nResNet-50-FPN on COCO trainval35k takes 32 hours\nin our synchronized 8-GPU implementation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Timing",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "eb237cedb1916333c09d0f694061a69a29a6c6571afcd33f830dfc70f4901521",
+            "evidence_id": "Ef9f795ef903e49e4-B0048",
+            "pages": [
+              7
+            ],
+            "section": "Timing",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 7,
+                "section": "Timing",
+                "section_index": 18,
+                "start": 0,
+                "text": "Inference: We train a ResNet-101-FPN model that shares\nfeatures between the RPN and Mask R-CNN stages, follow-\ning the 4-step training of Faster R-CNN [36]. This model\nruns at 195ms per image on an Nvidia Tesla M40 GPU (plus\n15ms CPU time resizing the outputs to the original resolu-\ntion), and achieves statistically the same mask AP as the\nunshared one. We also report that the ResNet-101-C4 vari-\nant takes \u223c400ms as it has a heavier box head (Figure 4), so\nwe do not recommend using the C4 variant in practice.\nAlthough Mask R-CNN is fast, we note that our design\nis not optimized for speed, and better speed/accuracy trade-\noffs could be achieved [21],e.g., by varying image sizes and\nproposal numbers, which is beyond the scope of this paper.\nTraining: Mask R-CNN is also fast to train. Training with\nResNet-50-FPN on COCO trainval35k takes 32 hours\nin our synchronized 8-GPU implementation "
+              }
+            ],
+            "text": "Inference: We train a ResNet-101-FPN model that shares\nfeatures between the RPN and Mask R-CNN stages, follow-\ning the 4-step training of Faster R-CNN [36]. This model\nruns at 195ms per image on an Nvidia Tesla M40 GPU (plus\n15ms CPU time resizing the outputs to the original resolu-\ntion), and achieves statistically the same mask AP as the\nunshared one. We also report that the ResNet-101-C4 vari-\nant takes \u223c400ms as it has a heavier box head (Figure 4), so\nwe do not recommend using the C4 variant in practice.\nAlthough Mask R-CNN is fast, we note that our design\nis not optimized for speed, and better speed/accuracy trade-\noffs could be achieved [21],e.g., by varying image sizes and\nproposal numbers, which is beyond the scope of this paper.\nTraining: Mask R-CNN is also fast to train. Training with\nResNet-50-FPN on COCO trainval35k takes 32 hours\nin our synchronized 8-GPU implementation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0051"
+        ],
+        "excerpt": "cross-entropy\nloss over an m2-way softmax output (which encourages a\n7\nFigure 7. Keypoint detection results on COCO test using Mask R-CNN (ResNet-50-FPN), with person segmentation masks predicted\nfrom the same model. This model has a keypoint AP of 63.1 and runs at 5 fps.\nAPkp APkp50 APkp75 APkpM APkpL\nCMU-Pose+++ [6] 61.8 84.9 67.5 57.1 68.2\nG-RMI [32]\u2020 62.4 84.0 68.5 59.1 68.1\nMask R-CNN, keypoint-only 62.7 87.0 68.4 57.4 71.1\nMask R-CNN, keypoint & mask 63.1 87.3 68.7 57.8 71.4\nTable 4. Keypoint detection AP on COCO test-dev. Ours is a\nsingle model (ResNet-50-FPN) that runs at 5 fps. CMU-Pose+++\n[6] is the 2016 competition winner that uses multi-scale testing,\npost-processing with CPM [44], and filtering with an object detec-\ntor, adding a cumulative\u223c5 points (clarified in personal commu-\nnication).\u2020: G-RMI was trained on COCO plus MPII [1] (25k im-\nages), using two models ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mask R-Cnn For Human Pose Estimation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "347d7ed55d8478a418d74834ad1d6b9b89be76ce1f6ccc0b56a595538ce36759",
+            "evidence_id": "Ef9f795ef903e49e4-B0051",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Mask R-Cnn For Human Pose Estimation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 966,
+                "page": 7,
+                "section": "Mask R-Cnn For Human Pose Estimation",
+                "section_index": 19,
+                "start": 896,
+                "text": "cross-entropy\nloss over an m2-way softmax output (which encourages a\n7"
+              },
+              {
+                "end": 818,
+                "page": 8,
+                "section": "Mask R-Cnn For Human Pose Estimation",
+                "section_index": 20,
+                "start": 0,
+                "text": "Figure 7. Keypoint detection results on COCO test using Mask R-CNN (ResNet-50-FPN), with person segmentation masks predicted\nfrom the same model. This model has a keypoint AP of 63.1 and runs at 5 fps.\nAPkp APkp50 APkp75 APkpM APkpL\nCMU-Pose+++ [6] 61.8 84.9 67.5 57.1 68.2\nG-RMI [32]\u2020 62.4 84.0 68.5 59.1 68.1\nMask R-CNN, keypoint-only 62.7 87.0 68.4 57.4 71.1\nMask R-CNN, keypoint & mask 63.1 87.3 68.7 57.8 71.4\nTable 4. Keypoint detection AP on COCO test-dev. Ours is a\nsingle model (ResNet-50-FPN) that runs at 5 fps. CMU-Pose+++\n[6] is the 2016 competition winner that uses multi-scale testing,\npost-processing with CPM [44], and filtering with an object detec-\ntor, adding a cumulative\u223c5 points (clarified in personal commu-\nnication).\u2020: G-RMI was trained on COCO plus MPII [1] (25k im-\nages), using two models "
+              }
+            ],
+            "text": "cross-entropy\nloss over an m2-way softmax output (which encourages a\n7\nFigure 7. Keypoint detection results on COCO test using Mask R-CNN (ResNet-50-FPN), with person segmentation masks predicted\nfrom the same model. This model has a keypoint AP of 63.1 and runs at 5 fps.\nAPkp APkp50 APkp75 APkpM APkpL\nCMU-Pose+++ [6] 61.8 84.9 67.5 57.1 68.2\nG-RMI [32]\u2020 62.4 84.0 68.5 59.1 68.1\nMask R-CNN, keypoint-only 62.7 87.0 68.4 57.4 71.1\nMask R-CNN, keypoint & mask 63.1 87.3 68.7 57.8 71.4\nTable 4. Keypoint detection AP on COCO test-dev. Ours is a\nsingle model (ResNet-50-FPN) that runs at 5 fps. CMU-Pose+++\n[6] is the 2016 competition winner that uses multi-scale testing,\npost-processing with CPM [44], and filtering with an object detec-\ntor, adding a cumulative\u223c5 points (clarified in personal commu-\nnication).\u2020: G-RMI was trained on COCO plus MPII [1] (25k im-\nages), using two models "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0055"
+        ],
+        "excerpt": "from multitask\ntraining, it does not in turn help the other tasks. Neverthe-\nless, learning all three tasks jointly enables a unified system\nto efficiently predict all outputs simultaneously (Figure 7).\nWe also investigate the effect of RoIAlign on keypoint\ndetection (Table 6). Though this ResNet-50-FPN backbone\nhas finer strides (e.g., 4 pixels on the finest level), RoIAlign\nstill shows significant improvement over RoIPool and in-\ncreases APkp by 4.4 points. This is because keypoint detec-\ntions are more sensitive to localization accuracy. This again\nindicates that alignment is essential for pixel-level localiza-\ntion, including masks and keypoints.\nGiven the effectiveness of Mask R-CNN for extracting\nobject bounding boxes, masks, and keypoints, we expect it\nbe an effective framework for other instance-level tasks.\n8",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mask R-Cnn For Human Pose Estimation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "25947db9bcddd50d1e3f980ba2e61c22becc1d5a0ed763921285d69bc38ebd8b",
+            "evidence_id": "Ef9f795ef903e49e4-B0055",
+            "pages": [
+              8
+            ],
+            "section": "Mask R-Cnn For Human Pose Estimation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4321,
+                "page": 8,
+                "section": "Mask R-Cnn For Human Pose Estimation",
+                "section_index": 20,
+                "start": 3492,
+                "text": "from multitask\ntraining, it does not in turn help the other tasks. Neverthe-\nless, learning all three tasks jointly enables a unified system\nto efficiently predict all outputs simultaneously (Figure 7).\nWe also investigate the effect of RoIAlign on keypoint\ndetection (Table 6). Though this ResNet-50-FPN backbone\nhas finer strides (e.g., 4 pixels on the finest level), RoIAlign\nstill shows significant improvement over RoIPool and in-\ncreases APkp by 4.4 points. This is because keypoint detec-\ntions are more sensitive to localization accuracy. This again\nindicates that alignment is essential for pixel-level localiza-\ntion, including masks and keypoints.\nGiven the effectiveness of Mask R-CNN for extracting\nobject bounding boxes, masks, and keypoints, we expect it\nbe an effective framework for other instance-level tasks.\n8"
+              }
+            ],
+            "text": "from multitask\ntraining, it does not in turn help the other tasks. Neverthe-\nless, learning all three tasks jointly enables a unified system\nto efficiently predict all outputs simultaneously (Figure 7).\nWe also investigate the effect of RoIAlign on keypoint\ndetection (Table 6). Though this ResNet-50-FPN backbone\nhas finer strides (e.g., 4 pixels on the finest level), RoIAlign\nstill shows significant improvement over RoIPool and in-\ncreases APkp by 4.4 points. This is because keypoint detec-\ntions are more sensitive to localization accuracy. This again\nindicates that alignment is essential for pixel-level localiza-\ntion, including masks and keypoints.\nGiven the effectiveness of Mask R-CNN for extracting\nobject bounding boxes, masks, and keypoints, we expect it\nbe an effective framework for other instance-level tasks.\n8"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0056"
+        ],
+        "excerpt": "training data AP [val] AP AP 50 person rider car truck bus train mcycle bicycle\nInstanceCut [23] fine + coarse 15.8 13.0 27.9 10.0 8.0 23.7 14.0 19.5 15.2 9.3 4.7\nDWT [4] fine 19.8 15.6 30.0 15.1 11.7 32.9 17.1 20.4 15.0 7.9 4.9\nSAIS [17] fine - 17.4 36.7 14.6 12.9 35.7 16.0 23.2 19.0 10.3 7.8\nDIN [3] fine + coarse - 20.0 38.8 16.5 16.7 25.7 20.6 30.0 23.4 17.1 10.1\nSGN [29] fine + coarse 29.2 25.0 44.9 21.8 20.1 39.4 24.8 33.2 30.8 17.7 12.4\nMask R-CNN fine 31.5 26.2 49.9 30.5 23.7 46.9 22.8 32.2 18.6 19.1 16.0\nMask R-CNN fine + COCO 36.4 32.0 58.1 34.8 27.0 49.1 30.1 40.9 30.9 24.1 18.7\nTable 7. Results on Cityscapes val ('AP [val]' column) and test (remaining columns) sets. Our method uses ResNet-50-FPN.\nAppendix A: Experiments on Cityscapes\nWe further report instance segmentation results on the\nCityscapes [7] dataset. This dataset has fine annota-\ntions for 2975 train, 500 val, and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mask R-Cnn For Human Pose Estimation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b0419a54733f2c7a4bbd1b34a5311a1ec510fb0f8f6436dd0f67fd0b3356101b",
+            "evidence_id": "Ef9f795ef903e49e4-B0056",
+            "pages": [
+              9
+            ],
+            "section": "Mask R-Cnn For Human Pose Estimation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 9,
+                "section": "Mask R-Cnn For Human Pose Estimation",
+                "section_index": 21,
+                "start": 0,
+                "text": "training data AP [val] AP AP 50 person rider car truck bus train mcycle bicycle\nInstanceCut [23] fine + coarse 15.8 13.0 27.9 10.0 8.0 23.7 14.0 19.5 15.2 9.3 4.7\nDWT [4] fine 19.8 15.6 30.0 15.1 11.7 32.9 17.1 20.4 15.0 7.9 4.9\nSAIS [17] fine - 17.4 36.7 14.6 12.9 35.7 16.0 23.2 19.0 10.3 7.8\nDIN [3] fine + coarse - 20.0 38.8 16.5 16.7 25.7 20.6 30.0 23.4 17.1 10.1\nSGN [29] fine + coarse 29.2 25.0 44.9 21.8 20.1 39.4 24.8 33.2 30.8 17.7 12.4\nMask R-CNN fine 31.5 26.2 49.9 30.5 23.7 46.9 22.8 32.2 18.6 19.1 16.0\nMask R-CNN fine + COCO 36.4 32.0 58.1 34.8 27.0 49.1 30.1 40.9 30.9 24.1 18.7\nTable 7. Results on Cityscapes val ('AP [val]' column) and test (remaining columns) sets. Our method uses ResNet-50-FPN.\nAppendix A: Experiments on Cityscapes\nWe further report instance segmentation results on the\nCityscapes [7] dataset. This dataset has fine annota-\ntions for 2975 train, 500 val, and "
+              }
+            ],
+            "text": "training data AP [val] AP AP 50 person rider car truck bus train mcycle bicycle\nInstanceCut [23] fine + coarse 15.8 13.0 27.9 10.0 8.0 23.7 14.0 19.5 15.2 9.3 4.7\nDWT [4] fine 19.8 15.6 30.0 15.1 11.7 32.9 17.1 20.4 15.0 7.9 4.9\nSAIS [17] fine - 17.4 36.7 14.6 12.9 35.7 16.0 23.2 19.0 10.3 7.8\nDIN [3] fine + coarse - 20.0 38.8 16.5 16.7 25.7 20.6 30.0 23.4 17.1 10.1\nSGN [29] fine + coarse 29.2 25.0 44.9 21.8 20.1 39.4 24.8 33.2 30.8 17.7 12.4\nMask R-CNN fine 31.5 26.2 49.9 30.5 23.7 46.9 22.8 32.2 18.6 19.1 16.0\nMask R-CNN fine + COCO 36.4 32.0 58.1 34.8 27.0 49.1 30.1 40.9 30.9 24.1 18.7\nTable 7. Results on Cityscapes val ('AP [val]' column) and test (remaining columns) sets. Our method uses ResNet-50-FPN.\nAppendix A: Experiments on Cityscapes\nWe further report instance segmentation results on the\nCityscapes [7] dataset. This dataset has fine annota-\ntions for 2975 train, 500 val, and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0063"
+        ],
+        "excerpt": "fine-only counterpart. This indicates the important role\nthe amount of training data plays. It also suggests that\nmethods on Cityscapes might be influenced by their low-\nshot learning performance. We show that using COCO pre-\ntraining is an effective strategy on this dataset.\nFinally, we observed a bias between the val and test\nAP, as is also observed from the results of [23, 4, 29]. We\nfound that this bias is mainly caused by the truck, bus,\nand train categories, with the fine-only model having\nval/test AP of 28.8/22.8, 53.5/32.2, and 33.0/18.6, re-\nspectively. This suggests that there is a domain shift on\nthese categories, which also have little training data. COCO\npre-training helps to improve results the most on these cat-\negories; however, the domain shift persists with 38.0/30.1,\n57.5/40.9, and 41.2/30.9 val/test AP, respectively. Note\nthat for the person and car categories we do ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ap On Test, Almost A 6 Point Improvement Over The",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6a00a4a97013b36d4b0e7ca71a888ae51c11e2e5827f7d388b3488bedc3bdef1",
+            "evidence_id": "Ef9f795ef903e49e4-B0063",
+            "pages": [
+              9
+            ],
+            "section": "Ap On Test, Almost A 6 Point Improvement Over The",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 9,
+                "section": "Ap On Test, Almost A 6 Point Improvement Over The",
+                "section_index": 24,
+                "start": 0,
+                "text": "fine-only counterpart. This indicates the important role\nthe amount of training data plays. It also suggests that\nmethods on Cityscapes might be influenced by their low-\nshot learning performance. We show that using COCO pre-\ntraining is an effective strategy on this dataset.\nFinally, we observed a bias between the val and test\nAP, as is also observed from the results of [23, 4, 29]. We\nfound that this bias is mainly caused by the truck, bus,\nand train categories, with the fine-only model having\nval/test AP of 28.8/22.8, 53.5/32.2, and 33.0/18.6, re-\nspectively. This suggests that there is a domain shift on\nthese categories, which also have little training data. COCO\npre-training helps to improve results the most on these cat-\negories; however, the domain shift persists with 38.0/30.1,\n57.5/40.9, and 41.2/30.9 val/test AP, respectively. Note\nthat for the person and car categories we do "
+              }
+            ],
+            "text": "fine-only counterpart. This indicates the important role\nthe amount of training data plays. It also suggests that\nmethods on Cityscapes might be influenced by their low-\nshot learning performance. We show that using COCO pre-\ntraining is an effective strategy on this dataset.\nFinally, we observed a bias between the val and test\nAP, as is also observed from the results of [23, 4, 29]. We\nfound that this bias is mainly caused by the truck, bus,\nand train categories, with the fine-only model having\nval/test AP of 28.8/22.8, 53.5/32.2, and 33.0/18.6, re-\nspectively. This suggests that there is a domain shift on\nthese categories, which also have little training data. COCO\npre-training helps to improve results the most on these cat-\negories; however, the domain shift persists with 38.0/30.1,\n57.5/40.9, and 41.2/30.9 val/test AP, respectively. Note\nthat for the person and car categories we do "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0065"
+        ],
+        "excerpt": "techniques developed for de-\ntection/segmentation, including improvements made to\nFast/Faster R-CNN and FCNs. In this appendix we de-\nscribe some techniques that improve over our original re-\nsults. Thanks to its generality and flexibility, Mask R-CNN\nwas used as the framework by the three winning teams in\nthe COCO 2017 instance segmentation competition, which\nall significantly outperformed the previous state of the art.\nInstance Segmentation and Object Detection\nWe report some enhanced results of Mask R-CNN in Ta-\nble 8. Overall, the improvements increase mask AP 5.1\npoints (from 36.7 to 41.8) and box AP 7.7 points (from 39.6\nto 47.3). Each model improvement increases both mask AP\nand box AP consistently, showing good generalization of\nthe Mask R-CNN framework. We detail the improvements\nnext. These results, along with future updates, can be repro-\nduced by our released code at ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ap On Test, Almost A 6 Point Improvement Over The",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6e424faa43d3e9e3b6a77ae71302c0c3cb58de5d8691e174605fc9797df468e5",
+            "evidence_id": "Ef9f795ef903e49e4-B0065",
+            "pages": [
+              10
+            ],
+            "section": "Ap On Test, Almost A 6 Point Improvement Over The",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1681,
+                "page": 10,
+                "section": "Ap On Test, Almost A 6 Point Improvement Over The",
+                "section_index": 25,
+                "start": 789,
+                "text": "techniques developed for de-\ntection/segmentation, including improvements made to\nFast/Faster R-CNN and FCNs. In this appendix we de-\nscribe some techniques that improve over our original re-\nsults. Thanks to its generality and flexibility, Mask R-CNN\nwas used as the framework by the three winning teams in\nthe COCO 2017 instance segmentation competition, which\nall significantly outperformed the previous state of the art.\nInstance Segmentation and Object Detection\nWe report some enhanced results of Mask R-CNN in Ta-\nble 8. Overall, the improvements increase mask AP 5.1\npoints (from 36.7 to 41.8) and box AP 7.7 points (from 39.6\nto 47.3). Each model improvement increases both mask AP\nand box AP consistently, showing good generalization of\nthe Mask R-CNN framework. We detail the improvements\nnext. These results, along with future updates, can be repro-\nduced by our released code at "
+              }
+            ],
+            "text": "techniques developed for de-\ntection/segmentation, including improvements made to\nFast/Faster R-CNN and FCNs. In this appendix we de-\nscribe some techniques that improve over our original re-\nsults. Thanks to its generality and flexibility, Mask R-CNN\nwas used as the framework by the three winning teams in\nthe COCO 2017 instance segmentation competition, which\nall significantly outperformed the previous state of the art.\nInstance Segmentation and Object Detection\nWe report some enhanced results of Mask R-CNN in Ta-\nble 8. Overall, the improvements increase mask AP 5.1\npoints (from 36.7 to 41.8) and box AP 7.7 points (from 39.6\nto 47.3). Each model improvement increases both mask AP\nand box AP consistently, showing good generalization of\nthe Mask R-CNN framework. We detail the improvements\nnext. These results, along with future updates, can be repro-\nduced by our released code at "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/1703.06870",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.1703.06870",
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline outcomes use official held-out benchmark protocols including COCO test-dev, minival, and Cityscapes val/test sets, established external metrics independent of training.",
+          "final_evaluation_signal": "Standard COCO mask, box, and keypoint AP metrics on held-out COCO test-dev and minival, plus Cityscapes val/test AP.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised multi-task losses involving ground-truth box, class, mask, and keypoint annotations on COCO and Cityscapes training data.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0002",
+          "Ef9f795ef903e49e4-B0015",
+          "Ef9f795ef903e49e4-B0016",
+          "Ef9f795ef903e49e4-B0020",
+          "Ef9f795ef903e49e4-B0032",
+          "Ef9f795ef903e49e4-B0034",
+          "Ef9f795ef903e49e4-B0035",
+          "Ef9f795ef903e49e4-B0036",
+          "Ef9f795ef903e49e4-B0038",
+          "Ef9f795ef903e49e4-B0041",
+          "Ef9f795ef903e49e4-B0043",
+          "Ef9f795ef903e49e4-B0044",
+          "Ef9f795ef903e49e4-B0046",
+          "Ef9f795ef903e49e4-B0048",
+          "Ef9f795ef903e49e4-B0051",
+          "Ef9f795ef903e49e4-B0055",
+          "Ef9f795ef903e49e4-B0056",
+          "Ef9f795ef903e49e4-B0063",
+          "Ef9f795ef903e49e4-B0065"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "b595a882b763d55d933543131f32a2c4b6f41d0818d418ef46a2b66f946b67a8"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.1703.06870",
+        "claim_evidence_alignment": "Claims regarding superior accuracy, state-of-the-art results on benchmark suites, and running speeds (around 5 fps) are well-aligned with and directly substantiated by the reported empirical tables and timing measurements.",
+        "context_id": "f9f795ef903e49e4b226965b5968c7e321fa0bac53265d9b723745c45519e838",
+        "decision": "pass",
+        "evaluation_assessment": "The framework is evaluated rigorously against standard competitive benchmarks on COCO (instance segmentation, object detection, human pose estimation) and Cityscapes, supported by extensive ablation studies isolating the effects of RoIAlign and mask decoupling.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluation is conducted using official standardized benchmark test servers and held-out validation sets (COCO test-dev, minival, Cityscapes test).",
+          "final_evaluation_signal": "Standard COCO and Cityscapes average precision (AP) metrics evaluated across multiple IoU thresholds on held-out test and validation sets.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Supervised gradient descent optimizing multi-task losses (classification, bounding box regression, and per-pixel binary cross-entropy/softmax mask loss) on annotated ground-truth datasets.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ef9f795ef903e49e4-B0002",
+          "Ef9f795ef903e49e4-B0006",
+          "Ef9f795ef903e49e4-B0015",
+          "Ef9f795ef903e49e4-B0016",
+          "Ef9f795ef903e49e4-B0020",
+          "Ef9f795ef903e49e4-B0032",
+          "Ef9f795ef903e49e4-B0034",
+          "Ef9f795ef903e49e4-B0038",
+          "Ef9f795ef903e49e4-B0044",
+          "Ef9f795ef903e49e4-B0048",
+          "Ef9f795ef903e49e4-B0051",
+          "Ef9f795ef903e49e4-B0056",
+          "Ef9f795ef903e49e4-B0063"
+        ],
+        "limitations": "The authors identify trade-offs such as the heavier runtime of C4 backbones relative to FPN, slight degradation in box/mask accuracy when jointly training human keypoints, and domain shift effects in low-data regimes on Cityscapes.",
+        "method_assessment": "The methodology is thoroughly detailed, describing the RoIAlign operation to avoid spatial quantization via bilinear interpolation, multi-task loss formulation decoupling mask and category prediction, and network backbone instantiations.",
+        "quality_rationale": "Mask R-CNN provides an exceptionally clear conceptual contribution, complete and reproducible technical descriptions, and thorough empirical validation across multiple vision tasks with rigorous ablations.",
+        "scoped_contribution": "The paper introduces Mask R-CNN, an instance segmentation framework extending Faster R-CNN by adding an RoI-aligned FCN branch that outputs binary masks in parallel with bounding box classification and regression.",
+        "source_content_hash": "b595a882b763d55d933543131f32a2c4b6f41d0818d418ef46a2b66f946b67a8"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "Mask R-CNN provides an exceptionally clear conceptual contribution, complete and reproducible technical descriptions, and thorough empirical validation across multiple vision tasks with rigorous ablations.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "b595a882b763d55d933543131f32a2c4b6f41d0818d418ef46a2b66f946b67a8",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors identify trade-offs such as the heavier runtime of C4 backbones relative to FPN, slight degradation in box/mask accuracy when jointly training human keypoints, and domain shift effects in low-data regimes on Cityscapes."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -172,7 +1828,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

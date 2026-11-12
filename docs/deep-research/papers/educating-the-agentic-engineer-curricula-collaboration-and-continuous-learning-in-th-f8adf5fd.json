@@ -34,7 +34,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-03 10:08:59",
-    "generated_at": "2026-11-11 11:46:27",
+    "generated_at": "2026-11-12 12:13:46",
     "last_seen_at": "2026-08-07 07:44:46",
     "metadata_sources": [
       "arxiv"
@@ -93,141 +93,1824 @@
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
   "scholarly_quality": {
-    "applied_score_cap": 49,
-    "applied_score_cap_reason": "No meaningful evaluation or suitable comparison was detected for the central systems/method claim.",
-    "assessed_at": "2026-08-04T09:12:28+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-11-12T12:12:01.355017+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 49/100, medium confidence, based on partial full text.",
-    "confidence": "medium",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 0,
-      "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 3,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
-      "reproducibility_and_transparency": 3,
-      "scholarly_novelty_or_value": 4
+    "concerns": [
+      "The manuscript is an unvalidated conceptual synthesis: the ACCEL framework has not been implemented, deployed, or empirically tested, and its mitigation and effectiveness claims are explicitly design hypotheses pending future study.",
+      "The synthesis methodology lacks independent coding or inter-rater reliability checks, and a portion of the load-bearing sources characterizing AI-native practice are the author's own recent preprints, weakening the independence of the evidence base."
+    ],
+    "concise_summary": "While the conceptual framework is thoughtfully formulated and carefully positioned relative to established literature, it remains an unvalidated conceptual proposal without empirical corroboration of its effectiveness or institutional viability.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 75116,
+      "assessment_input_sha256": "00fbb82d95ca1d20cc382e65dc6cbbfd82d7c833f6079c5421a581e620915560",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2607.29610",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 74014,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 72528,
+      "evidence_block_count": 103,
+      "evidence_context_characters": 85542,
+      "evidence_context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+      "evidence_context_sha256": "75874c4ac498c78e410ecf6d13844db209b2926e4a56097e88df61d563bd4df5",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 105,
+      "excluded_sections": [
+        {
+          "characters": 105,
+          "heading": "References",
+          "page": 15,
+          "reason": "explicit_back_matter"
+        }
+      ],
+      "extracted_characters": 74044,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "extracted_pages": 16,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "609eafafd800a441e46549a898d651fc48e7b88aa09cf7b153596a1c37921a3c",
+        "source_url": "https://arxiv.org/pdf/2607.29610",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 74014,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 188,
+          "supplied_characters": 188
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2427,
+          "supplied_characters": 2427
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 841,
+          "supplied_characters": 841
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 4782,
+          "supplied_characters": 4782
+        },
+        {
+          "heading": "Approach: An Integrative Conceptual Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 405,
+          "supplied_characters": 405
+        },
+        {
+          "heading": "Approach: An Integrative Conceptual Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 3228,
+          "supplied_characters": 3228
+        },
+        {
+          "heading": "From Tools To Agents: The Changing Object Of Engineering Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 2497,
+          "supplied_characters": 2497
+        },
+        {
+          "heading": "From Tools To Agents: The Changing Object Of Engineering Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1991,
+          "supplied_characters": 1991
+        },
+        {
+          "heading": "Agency As The Organizing Construct",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2642,
+          "supplied_characters": 2642
+        },
+        {
+          "heading": "What The Empirical Record Already Shows",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 851,
+          "supplied_characters": 851
+        },
+        {
+          "heading": "What The Empirical Record Already Shows",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 3405,
+          "supplied_characters": 3405
+        },
+        {
+          "heading": "The Accel Framework",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 471,
+          "supplied_characters": 471
+        },
+        {
+          "heading": "The Five Competency Pillars",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1656,
+          "supplied_characters": 1656
+        },
+        {
+          "heading": "The Five Competency Pillars",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 3519,
+          "supplied_characters": 3519
+        },
+        {
+          "heading": "The Five Competency Pillars",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1002,
+          "supplied_characters": 1002
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 1799,
+          "supplied_characters": 1799
+        },
+        {
+          "heading": "The Three Delivery Vectors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 879,
+          "supplied_characters": 879
+        },
+        {
+          "heading": "Integration, Not Addition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1042,
+          "supplied_characters": 1042
+        },
+        {
+          "heading": "Integration, Not Addition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 238,
+          "supplied_characters": 238
+        },
+        {
+          "heading": "Foundations (Year 1) Tutor And Explainer; Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 169,
+          "supplied_characters": 169
+        },
+        {
+          "heading": "Assisted Practice (Year 2) Pair Collaborator On Bounded",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 129,
+          "supplied_characters": 129
+        },
+        {
+          "heading": "Supervised Delegation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 175,
+          "supplied_characters": 175
+        },
+        {
+          "heading": "Orchestration (Year 4 /",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 315,
+          "supplied_characters": 315
+        },
+        {
+          "heading": "A Scaffolded Progression",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 1199,
+          "supplied_characters": 1199
+        },
+        {
+          "heading": "Project-Based Learning As The Load-Bearing Pedagogy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 864,
+          "supplied_characters": 864
+        },
+        {
+          "heading": "Adaptive Platforms Under Pedagogical Control",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 354,
+          "supplied_characters": 354
+        },
+        {
+          "heading": "Adaptive Platforms Under Pedagogical Control",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Specify Intent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 46,
+          "supplied_characters": 46
+        },
+        {
+          "heading": "Delegate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 38,
+          "supplied_characters": 38
+        },
+        {
+          "heading": "Agent Executes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Verify",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 51,
+          "supplied_characters": 51
+        },
+        {
+          "heading": "Integrate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Reflect &",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 808,
+          "supplied_characters": 808
+        },
+        {
+          "heading": "The Delegation\u2013Verification Loop",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 2531,
+          "supplied_characters": 2531
+        },
+        {
+          "heading": "Interdisciplinary Teams And Ai As Boundary Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 804,
+          "supplied_characters": 804
+        },
+        {
+          "heading": "Interdisciplinary Teams And Ai As Boundary Object",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 158,
+          "supplied_characters": 158
+        },
+        {
+          "heading": "Industry Partnership As Curricular Metabolism",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 604,
+          "supplied_characters": 604
+        },
+        {
+          "heading": "Vector Iii \u2014 Continuous Learning: The Career-Length Program",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 2027,
+          "supplied_characters": 2027
+        },
+        {
+          "heading": "Cross-Cutting Thread I \u2014 Ethics And Governance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 1822,
+          "supplied_characters": 1822
+        },
+        {
+          "heading": "Cross-Cutting Thread I \u2014 Ethics And Governance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1130,
+          "supplied_characters": 1130
+        },
+        {
+          "heading": "Cross-Cutting Thread Ii \u2014 Assessment: From Artifact To Judgment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 2560,
+          "supplied_characters": 2560
+        },
+        {
+          "heading": "What Accel Adds",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 814,
+          "supplied_characters": 814
+        },
+        {
+          "heading": "What Accel Adds",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 1349,
+          "supplied_characters": 1349
+        },
+        {
+          "heading": "Risks The Framework Is Designed To Mitigate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 959,
+          "supplied_characters": 959
+        },
+        {
+          "heading": "Institutional And Policy Implications",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "discussion",
+          "section_index": 44,
+          "source_characters": 1416,
+          "supplied_characters": 1416
+        },
+        {
+          "heading": "Research Agenda",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 1094,
+          "supplied_characters": 1094
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "limitations",
+          "section_index": 46,
+          "source_characters": 232,
+          "supplied_characters": 232
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "limitations",
+          "section_index": 47,
+          "source_characters": 1521,
+          "supplied_characters": 1521
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 48,
+          "source_characters": 1730,
+          "supplied_characters": 1730
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 1635,
+          "supplied_characters": 1635
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 4651,
+          "supplied_characters": 4651
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 2925,
+          "supplied_characters": 2925
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 1551,
+          "supplied_characters": 1551
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 2900,
+          "supplied_characters": 2900
+        }
+      ],
+      "selected_characters": 72528,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "selected_sections": [
+        {
+          "characters": 188,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 2427,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 841,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4782,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 405,
+          "heading": "Approach: An Integrative Conceptual Synthesis",
+          "page": 2
+        },
+        {
+          "characters": 3228,
+          "heading": "Approach: An Integrative Conceptual Synthesis",
+          "page": 3
+        },
+        {
+          "characters": 2497,
+          "heading": "From Tools To Agents: The Changing Object Of Engineering Work",
+          "page": 3
+        },
+        {
+          "characters": 1991,
+          "heading": "From Tools To Agents: The Changing Object Of Engineering Work",
+          "page": 4
+        },
+        {
+          "characters": 2642,
+          "heading": "Agency As The Organizing Construct",
+          "page": 4
+        },
+        {
+          "characters": 851,
+          "heading": "What The Empirical Record Already Shows",
+          "page": 4
+        },
+        {
+          "characters": 3405,
+          "heading": "What The Empirical Record Already Shows",
+          "page": 5
+        },
+        {
+          "characters": 471,
+          "heading": "The Accel Framework",
+          "page": 5
+        },
+        {
+          "characters": 1656,
+          "heading": "The Five Competency Pillars",
+          "page": 5
+        },
+        {
+          "characters": 3519,
+          "heading": "The Five Competency Pillars",
+          "page": 6
+        },
+        {
+          "characters": 1002,
+          "heading": "The Five Competency Pillars",
+          "page": 7
+        },
+        {
+          "characters": 1799,
+          "heading": "Evaluation",
+          "page": 7
+        },
+        {
+          "characters": 879,
+          "heading": "The Three Delivery Vectors",
+          "page": 7
+        },
+        {
+          "characters": 1042,
+          "heading": "Integration, Not Addition",
+          "page": 7
+        },
+        {
+          "characters": 238,
+          "heading": "Integration, Not Addition",
+          "page": 8
+        },
+        {
+          "characters": 169,
+          "heading": "Foundations (Year 1) Tutor And Explainer; Generation",
+          "page": 8
+        },
+        {
+          "characters": 129,
+          "heading": "Assisted Practice (Year 2) Pair Collaborator On Bounded",
+          "page": 8
+        },
+        {
+          "characters": 175,
+          "heading": "Supervised Delegation",
+          "page": 8
+        },
+        {
+          "characters": 315,
+          "heading": "Orchestration (Year 4 /",
+          "page": 8
+        },
+        {
+          "characters": 1199,
+          "heading": "A Scaffolded Progression",
+          "page": 8
+        },
+        {
+          "characters": 864,
+          "heading": "Project-Based Learning As The Load-Bearing Pedagogy",
+          "page": 8
+        },
+        {
+          "characters": 354,
+          "heading": "Adaptive Platforms Under Pedagogical Control",
+          "page": 8
+        },
+        {
+          "characters": 24,
+          "heading": "Adaptive Platforms Under Pedagogical Control",
+          "page": 9
+        },
+        {
+          "characters": 46,
+          "heading": "Specify Intent",
+          "page": 9
+        },
+        {
+          "characters": 38,
+          "heading": "Delegate",
+          "page": 9
+        },
+        {
+          "characters": 26,
+          "heading": "Agent Executes",
+          "page": 9
+        },
+        {
+          "characters": 51,
+          "heading": "Verify",
+          "page": 9
+        },
+        {
+          "characters": 54,
+          "heading": "Integrate",
+          "page": 9
+        },
+        {
+          "characters": 808,
+          "heading": "Reflect &",
+          "page": 9
+        },
+        {
+          "characters": 2531,
+          "heading": "The Delegation\u2013Verification Loop",
+          "page": 9
+        },
+        {
+          "characters": 804,
+          "heading": "Interdisciplinary Teams And Ai As Boundary Object",
+          "page": 9
+        },
+        {
+          "characters": 158,
+          "heading": "Interdisciplinary Teams And Ai As Boundary Object",
+          "page": 10
+        },
+        {
+          "characters": 604,
+          "heading": "Industry Partnership As Curricular Metabolism",
+          "page": 10
+        },
+        {
+          "characters": 2027,
+          "heading": "Vector Iii \u2014 Continuous Learning: The Career-Length Program",
+          "page": 10
+        },
+        {
+          "characters": 1822,
+          "heading": "Cross-Cutting Thread I \u2014 Ethics And Governance",
+          "page": 10
+        },
+        {
+          "characters": 1130,
+          "heading": "Cross-Cutting Thread I \u2014 Ethics And Governance",
+          "page": 11
+        },
+        {
+          "characters": 2560,
+          "heading": "Cross-Cutting Thread Ii \u2014 Assessment: From Artifact To Judgment",
+          "page": 11
+        },
+        {
+          "characters": 814,
+          "heading": "What Accel Adds",
+          "page": 11
+        },
+        {
+          "characters": 1349,
+          "heading": "What Accel Adds",
+          "page": 12
+        },
+        {
+          "characters": 959,
+          "heading": "Risks The Framework Is Designed To Mitigate",
+          "page": 12
+        },
+        {
+          "characters": 1416,
+          "heading": "Institutional And Policy Implications",
+          "page": 12
+        },
+        {
+          "characters": 1094,
+          "heading": "Research Agenda",
+          "page": 12
+        },
+        {
+          "characters": 232,
+          "heading": "Limitations",
+          "page": 12
+        },
+        {
+          "characters": 1521,
+          "heading": "Limitations",
+          "page": 13
+        },
+        {
+          "characters": 1730,
+          "heading": "Conclusion",
+          "page": 13
+        },
+        {
+          "characters": 1635,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 4651,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 2925,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 1551,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 2900,
+          "heading": "Unclassified body after references",
+          "page": 16
+        }
+      ],
+      "selected_text_sha256": "00fbb82d95ca1d20cc382e65dc6cbbfd82d7c833f6079c5421a581e620915560",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "609eafafd800a441e46549a898d651fc48e7b88aa09cf7b153596a1c37921a3c",
+      "source_pages": 16,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": [
+        "Structurally bounded citation prefixes excluded; ambiguous back matter, body and detected appendices retained where budget permits."
+      ]
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": null,
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "limitations_and_uncertainty_handling",
-        "evidence_ids": [],
-        "excerpt": "Five limitations bound the claims of this article. First, it is a conceptual synthesis: ACCEL is",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 12,
-        "pages": [],
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "Limitations",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "reproducibility_and_transparency",
-        "evidence_ids": [],
-        "excerpt": "igned assessment regimes, and governance-literate ethics integration, and we position the framework against current curricular guideline",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "evidence_ids": [
+          "E0266057f12048f22-B0002"
+        ],
+        "excerpt": "Generative and agentic artificial intelligence (AI) are reconfiguring software and systems engineer-\ning from a discipline centered on the human authorship of artifacts toward one centered on the\ndirection, verification, and governance of autonomous systems. This transition demands a new pro-\nfessional archetype\u2014theagentic engineer\u2014whose durable value lies in intent specification, orches-\ntration of multi-agent workflows, critical evaluation of machine-generated outputs, and accountable\nethical judgment. This article presents an integrative conceptual synthesis of research spanning\nengineering education, computing education, human\u2013AI interaction, human factors, and the learn-\ning sciences to derive an evidence-grounded educational architecture for this archetype. We intro-\nduce the ACCEL framework (Agentic Competencies through Curricula, Collaboration, and Endur-\ning Learning), which ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "69b03af80c7db84b9a50ba332bd59e84ad0edb604e5341e85ae81c593f6f3697",
+            "evidence_id": "E0266057f12048f22-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Generative and agentic artificial intelligence (AI) are reconfiguring software and systems engineer-\ning from a discipline centered on the human authorship of artifacts toward one centered on the\ndirection, verification, and governance of autonomous systems. This transition demands a new pro-\nfessional archetype\u2014theagentic engineer\u2014whose durable value lies in intent specification, orches-\ntration of multi-agent workflows, critical evaluation of machine-generated outputs, and accountable\nethical judgment. This article presents an integrative conceptual synthesis of research spanning\nengineering education, computing education, human\u2013AI interaction, human factors, and the learn-\ning sciences to derive an evidence-grounded educational architecture for this archetype. We intro-\nduce the ACCEL framework (Agentic Competencies through Curricula, Collaboration, and Endur-\ning Learning), which "
+              }
+            ],
+            "text": "Generative and agentic artificial intelligence (AI) are reconfiguring software and systems engineer-\ning from a discipline centered on the human authorship of artifacts toward one centered on the\ndirection, verification, and governance of autonomous systems. This transition demands a new pro-\nfessional archetype\u2014theagentic engineer\u2014whose durable value lies in intent specification, orches-\ntration of multi-agent workflows, critical evaluation of machine-generated outputs, and accountable\nethical judgment. This article presents an integrative conceptual synthesis of research spanning\nengineering education, computing education, human\u2013AI interaction, human factors, and the learn-\ning sciences to derive an evidence-grounded educational architecture for this archetype. We intro-\nduce the ACCEL framework (Agentic Competencies through Curricula, Collaboration, and Endur-\ning Learning), which "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No suitable baseline comparison was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0003"
+        ],
+        "excerpt": "organizes five competency pillars\u2014intent specification and problem framing;\norchestration and delegation; verification, validation, and critical evaluation; ethical governance and\naccountability; and adaptive self-directed learning\u2014and maps them onto three institutional deliv-\nery vectors: curricula, collaboration structures, and continuous learning pathways. Drawing on\nagency theory, trust-in-automation research, and empirical studies of AI-assisted programming\u2014\nincluding randomized and observational evidence that AI benefits are unevenly realized and sys-\ntematically misperceived\u2014we specify a scaffolded curricular progression, a delegation\u2013verification\npedagogical loop for human\u2013AI teaming, redesigned assessment regimes, and governance-literate\nethics integration, and we position the framework against current curricular guidelines and interna-\ntional AI-competency frameworks. We ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "640c1b8e9008010e2ebf36176de3b3ec9bcb184ab403b08ae371de7174309c0f",
+            "evidence_id": "E0266057f12048f22-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 897,
+                "text": "organizes five competency pillars\u2014intent specification and problem framing;\norchestration and delegation; verification, validation, and critical evaluation; ethical governance and\naccountability; and adaptive self-directed learning\u2014and maps them onto three institutional deliv-\nery vectors: curricula, collaboration structures, and continuous learning pathways. Drawing on\nagency theory, trust-in-automation research, and empirical studies of AI-assisted programming\u2014\nincluding randomized and observational evidence that AI benefits are unevenly realized and sys-\ntematically misperceived\u2014we specify a scaffolded curricular progression, a delegation\u2013verification\npedagogical loop for human\u2013AI teaming, redesigned assessment regimes, and governance-literate\nethics integration, and we position the framework against current curricular guidelines and interna-\ntional AI-competency frameworks. We "
+              }
+            ],
+            "text": "organizes five competency pillars\u2014intent specification and problem framing;\norchestration and delegation; verification, validation, and critical evaluation; ethical governance and\naccountability; and adaptive self-directed learning\u2014and maps them onto three institutional deliv-\nery vectors: curricula, collaboration structures, and continuous learning pathways. Drawing on\nagency theory, trust-in-automation research, and empirical studies of AI-assisted programming\u2014\nincluding randomized and observational evidence that AI benefits are unevenly realized and sys-\ntematically misperceived\u2014we specify a scaffolded curricular progression, a delegation\u2013verification\npedagogical loop for human\u2013AI teaming, redesigned assessment regimes, and governance-literate\nethics integration, and we position the framework against current curricular guidelines and interna-\ntional AI-competency frameworks. We "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0004"
+        ],
+        "excerpt": "articulate the risks the framework is designed to mitigate\u2014\nautomation bias, deskilling, superficial engagement, and diffuse accountability\u2014and close with a re-\nsearch agenda and institutional implications. The analysis argues that educating the agentic engineer\nrequires systemic transformation rather than incremental curricular addition: the unit of instruction\nmust shift from the production of artifacts to the exercise of judgment over increasingly autonomous\nsocio-technical systems.\nKeywordsAgentic engineering\u00b7Generative AI\u00b7Engineering education\u00b7Human-AI collaboration\u00b7Curriculum\ndesign\u00b7Lifelong learning\u00b7AI literacy\u00b7Assessment",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e1a529f58494836a3138116e7d07b5c384a7c1836087c341763b544bdfbf4158",
+            "evidence_id": "E0266057f12048f22-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2427,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 1791,
+                "text": "articulate the risks the framework is designed to mitigate\u2014\nautomation bias, deskilling, superficial engagement, and diffuse accountability\u2014and close with a re-\nsearch agenda and institutional implications. The analysis argues that educating the agentic engineer\nrequires systemic transformation rather than incremental curricular addition: the unit of instruction\nmust shift from the production of artifacts to the exercise of judgment over increasingly autonomous\nsocio-technical systems.\nKeywordsAgentic engineering\u00b7Generative AI\u00b7Engineering education\u00b7Human-AI collaboration\u00b7Curriculum\ndesign\u00b7Lifelong learning\u00b7AI literacy\u00b7Assessment"
+              }
+            ],
+            "text": "articulate the risks the framework is designed to mitigate\u2014\nautomation bias, deskilling, superficial engagement, and diffuse accountability\u2014and close with a re-\nsearch agenda and institutional implications. The analysis argues that educating the agentic engineer\nrequires systemic transformation rather than incremental curricular addition: the unit of instruction\nmust shift from the production of artifacts to the exercise of judgment over increasingly autonomous\nsocio-technical systems.\nKeywordsAgentic engineering\u00b7Generative AI\u00b7Engineering education\u00b7Human-AI collaboration\u00b7Curriculum\ndesign\u00b7Lifelong learning\u00b7AI literacy\u00b7Assessment"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0012"
+        ],
+        "excerpt": "This article is an integrative conceptual synthesis in the tradition of [26] and [27]: its purpose is not the exhaustive,\nprotocol-driven coverage of a systematic review, but the construction of a new conceptual architecture from mature yet\ndisconnected literatures. We are explicit about the methodological commitments this entails, and about their limits.\nThe argument was constructed in three stages.\n2\nAPREPRINT- AUGUST3, 2026\nStage 1: Corpus assembly.Candidate sources were identified through keyword searches of Scopus, Web of Science,\nthe ACM Digital Library, and IEEE Xplore (search window: 1983\u20132026; core search terms combinedgenerative AI,\nagentic AI,engineering education,computing education,human\u2013AI collaboration,trust in automation, andlifelong\nlearning), supplemented by backward and forward citation chaining from anchor works in each community. From this\npool we assembled ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Approach: An Integrative Conceptual Synthesis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "aa31a623f7de5b9a109c7baf112edceffe88bab20c977bd5ea767bcaa0d4c30e",
+            "evidence_id": "E0266057f12048f22-B0012",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Approach: An Integrative Conceptual Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 405,
+                "page": 2,
+                "section": "Approach: An Integrative Conceptual Synthesis",
+                "section_index": 4,
+                "start": 0,
+                "text": "This article is an integrative conceptual synthesis in the tradition of [26] and [27]: its purpose is not the exhaustive,\nprotocol-driven coverage of a systematic review, but the construction of a new conceptual architecture from mature yet\ndisconnected literatures. We are explicit about the methodological commitments this entails, and about their limits.\nThe argument was constructed in three stages.\n2"
+              },
+              {
+                "end": 485,
+                "page": 3,
+                "section": "Approach: An Integrative Conceptual Synthesis",
+                "section_index": 5,
+                "start": 0,
+                "text": "APREPRINT- AUGUST3, 2026\nStage 1: Corpus assembly.Candidate sources were identified through keyword searches of Scopus, Web of Science,\nthe ACM Digital Library, and IEEE Xplore (search window: 1983\u20132026; core search terms combinedgenerative AI,\nagentic AI,engineering education,computing education,human\u2013AI collaboration,trust in automation, andlifelong\nlearning), supplemented by backward and forward citation chaining from anchor works in each community. From this\npool we assembled "
+              }
+            ],
+            "text": "This article is an integrative conceptual synthesis in the tradition of [26] and [27]: its purpose is not the exhaustive,\nprotocol-driven coverage of a systematic review, but the construction of a new conceptual architecture from mature yet\ndisconnected literatures. We are explicit about the methodological commitments this entails, and about their limits.\nThe argument was constructed in three stages.\n2\nAPREPRINT- AUGUST3, 2026\nStage 1: Corpus assembly.Candidate sources were identified through keyword searches of Scopus, Web of Science,\nthe ACM Digital Library, and IEEE Xplore (search window: 1983\u20132026; core search terms combinedgenerative AI,\nagentic AI,engineering education,computing education,human\u2013AI collaboration,trust in automation, andlifelong\nlearning), supplemented by backward and forward citation chaining from anchor works in each community. From this\npool we assembled "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0014"
+        ],
+        "excerpt": "Sources were selected for peer-\nreviewed standing, citational influence, and direct relevance to the education of engineers who supervise autonomous\nsystems; recent preprints and working papers were admitted only where they report emerging practice or field evidence\nnot yet available in the archival literature, and every claim they support in this article is additionally anchored to at\nleast one peer-reviewed source wherever possible.\nStage 2: Thematic integration.Following the logic of integrative conceptual review [26], we iteratively coded the\ncorpus for competency claims (what agentic engineers must be able to do), pedagogical claims (how such competencies\nare developed), and risk claims (what failure modes education must mitigate). Convergent claims across at least\ntwo research communities were promoted to framework elements; claims supported within a single community were\nretained ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Approach: An Integrative Conceptual Synthesis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "cb410555e9d76e5d1e670ad3e60d3c4a3e4ac140fb26c1b9d2c3ee9a0b241098",
+            "evidence_id": "E0266057f12048f22-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Approach: An Integrative Conceptual Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2281,
+                "page": 3,
+                "section": "Approach: An Integrative Conceptual Synthesis",
+                "section_index": 5,
+                "start": 1381,
+                "text": "Sources were selected for peer-\nreviewed standing, citational influence, and direct relevance to the education of engineers who supervise autonomous\nsystems; recent preprints and working papers were admitted only where they report emerging practice or field evidence\nnot yet available in the archival literature, and every claim they support in this article is additionally anchored to at\nleast one peer-reviewed source wherever possible.\nStage 2: Thematic integration.Following the logic of integrative conceptual review [26], we iteratively coded the\ncorpus for competency claims (what agentic engineers must be able to do), pedagogical claims (how such competencies\nare developed), and risk claims (what failure modes education must mitigate). Convergent claims across at least\ntwo research communities were promoted to framework elements; claims supported within a single community were\nretained "
+              }
+            ],
+            "text": "Sources were selected for peer-\nreviewed standing, citational influence, and direct relevance to the education of engineers who supervise autonomous\nsystems; recent preprints and working papers were admitted only where they report emerging practice or field evidence\nnot yet available in the archival literature, and every claim they support in this article is additionally anchored to at\nleast one peer-reviewed source wherever possible.\nStage 2: Thematic integration.Following the logic of integrative conceptual review [26], we iteratively coded the\ncorpus for competency claims (what agentic engineers must be able to do), pedagogical claims (how such competencies\nare developed), and risk claims (what failure modes education must mitigate). Convergent claims across at least\ntwo research communities were promoted to framework elements; claims supported within a single community were\nretained "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0015"
+        ],
+        "excerpt": "as design suggestions and flagged as such. Coding was performed by the author; the absence of independent\ncoding and inter-rater checks is acknowledged as a limitation in Section 11, and is partially offset by the convergence\nrule just stated, which requires cross-community corroboration before any claim enters the framework.\nStage 3: Framework construction and stress-testing.The resulting elements were organized into the ACCEL\nframework and stress-tested against three adversarial questions: Does each element survive plausible near-term ad-\nvances in AI capability? Does each element have at least one concrete curricular or assessment instantiation? And\ndoes the framework as a whole mitigate\u2014rather than merely acknowledge\u2014the documented risks of automation bias,\ndeskilling, and superficial engagement [24, 35, 37]?\nThe limitations inherent in this approach\u2014notably the absence of primary ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Approach: An Integrative Conceptual Synthesis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "93617d9f601df08579cc65424213967fa5347c7ea724c7a154ee80bf55dec929",
+            "evidence_id": "E0266057f12048f22-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Approach: An Integrative Conceptual Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3179,
+                "page": 3,
+                "section": "Approach: An Integrative Conceptual Synthesis",
+                "section_index": 5,
+                "start": 2281,
+                "text": "as design suggestions and flagged as such. Coding was performed by the author; the absence of independent\ncoding and inter-rater checks is acknowledged as a limitation in Section 11, and is partially offset by the convergence\nrule just stated, which requires cross-community corroboration before any claim enters the framework.\nStage 3: Framework construction and stress-testing.The resulting elements were organized into the ACCEL\nframework and stress-tested against three adversarial questions: Does each element survive plausible near-term ad-\nvances in AI capability? Does each element have at least one concrete curricular or assessment instantiation? And\ndoes the framework as a whole mitigate\u2014rather than merely acknowledge\u2014the documented risks of automation bias,\ndeskilling, and superficial engagement [24, 35, 37]?\nThe limitations inherent in this approach\u2014notably the absence of primary "
+              }
+            ],
+            "text": "as design suggestions and flagged as such. Coding was performed by the author; the absence of independent\ncoding and inter-rater checks is acknowledged as a limitation in Section 11, and is partially offset by the convergence\nrule just stated, which requires cross-community corroboration before any claim enters the framework.\nStage 3: Framework construction and stress-testing.The resulting elements were organized into the ACCEL\nframework and stress-tested against three adversarial questions: Does each element survive plausible near-term ad-\nvances in AI capability? Does each element have at least one concrete curricular or assessment instantiation? And\ndoes the framework as a whole mitigate\u2014rather than merely acknowledge\u2014the documented risks of automation bias,\ndeskilling, and superficial engagement [24, 35, 37]?\nThe limitations inherent in this approach\u2014notably the absence of primary "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0016"
+        ],
+        "excerpt": "empirical validation\u2014are addressed in\nSection 11.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Approach: An Integrative Conceptual Synthesis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5f7f6274cda21673df1159d3cdfa35100be7ba3bfc21dc9a561ab169b64e933e",
+            "evidence_id": "E0266057f12048f22-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Approach: An Integrative Conceptual Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3228,
+                "page": 3,
+                "section": "Approach: An Integrative Conceptual Synthesis",
+                "section_index": 5,
+                "start": 3179,
+                "text": "empirical validation\u2014are addressed in\nSection 11."
+              }
+            ],
+            "text": "empirical validation\u2014are addressed in\nSection 11."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0031"
+        ],
+        "excerpt": "We now integrate these foundations into a single architecture. ACCEL\u2014Agentic Competencies through Curricula,\nCollaboration, and Enduring Learning\u2014comprises (i) a competency core of five pillars that specifywhatthe agentic\nengineer must be able to do, and (ii) three institutional delivery vectors that specifyhoweducational systems develop\nthose pillars. Figure 1 depicts the architecture; Table 1 operationalizes the pillars as learning outcomes and assessment\nevidence.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Accel Framework",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e6f3feb80345abf586735ecd4f062c90e252b2a5fc54c9bce3b6e4f53c74b9e3",
+            "evidence_id": "E0266057f12048f22-B0031",
+            "pages": [
+              5
+            ],
+            "section": "The Accel Framework",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 471,
+                "page": 5,
+                "section": "The Accel Framework",
+                "section_index": 11,
+                "start": 0,
+                "text": "We now integrate these foundations into a single architecture. ACCEL\u2014Agentic Competencies through Curricula,\nCollaboration, and Enduring Learning\u2014comprises (i) a competency core of five pillars that specifywhatthe agentic\nengineer must be able to do, and (ii) three institutional delivery vectors that specifyhoweducational systems develop\nthose pillars. Figure 1 depicts the architecture; Table 1 operationalizes the pillars as learning outcomes and assessment\nevidence."
+              }
+            ],
+            "text": "We now integrate these foundations into a single architecture. ACCEL\u2014Agentic Competencies through Curricula,\nCollaboration, and Enduring Learning\u2014comprises (i) a competency core of five pillars that specifywhatthe agentic\nengineer must be able to do, and (ii) three institutional delivery vectors that specifyhoweducational systems develop\nthose pillars. Figure 1 depicts the architecture; Table 1 operationalizes the pillars as learning outcomes and assessment\nevidence."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0038"
+        ],
+        "excerpt": "specifica-\ntion & problem fram-\ning\nDecompose an ill-structured problem into dele-\ngable units; author executable specifications with\nacceptance criteria and guardrails; justify framing\nchoices against stakeholder needs.\nSpecification documents graded for completeness\nand testability; comparative critique of alternative\ndecompositions; traceability from requirements to\ndelegated tasks.\nP2 Orchestration &\ndelegation\nAllocate sub-tasks across humans and agents with\nexplicit rationale; design multi-agent workflows\nwith hand-off and context-management protocols;\nre-plan when agent performance deviates.\nOrchestration logs and workflow diagrams; design\nreviews defending allocation decisions; docu-\nmented re-planning episodes in project retrospec-\ntives.\nP3 Verification,\nvalidation & critical",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Five Competency Pillars",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6149fa2c107e707c431334f32c82327152a7fb10286ae1934f93337e8dfe111d",
+            "evidence_id": "E0266057f12048f22-B0038",
+            "pages": [
+              7
+            ],
+            "section": "The Five Competency Pillars",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1002,
+                "page": 7,
+                "section": "The Five Competency Pillars",
+                "section_index": 14,
+                "start": 206,
+                "text": "specifica-\ntion & problem fram-\ning\nDecompose an ill-structured problem into dele-\ngable units; author executable specifications with\nacceptance criteria and guardrails; justify framing\nchoices against stakeholder needs.\nSpecification documents graded for completeness\nand testability; comparative critique of alternative\ndecompositions; traceability from requirements to\ndelegated tasks.\nP2 Orchestration &\ndelegation\nAllocate sub-tasks across humans and agents with\nexplicit rationale; design multi-agent workflows\nwith hand-off and context-management protocols;\nre-plan when agent performance deviates.\nOrchestration logs and workflow diagrams; design\nreviews defending allocation decisions; docu-\nmented re-planning episodes in project retrospec-\ntives.\nP3 Verification,\nvalidation & critical"
+              }
+            ],
+            "text": "specifica-\ntion & problem fram-\ning\nDecompose an ill-structured problem into dele-\ngable units; author executable specifications with\nacceptance criteria and guardrails; justify framing\nchoices against stakeholder needs.\nSpecification documents graded for completeness\nand testability; comparative critique of alternative\ndecompositions; traceability from requirements to\ndelegated tasks.\nP2 Orchestration &\ndelegation\nAllocate sub-tasks across humans and agents with\nexplicit rationale; design multi-agent workflows\nwith hand-off and context-management protocols;\nre-plan when agent performance deviates.\nOrchestration logs and workflow diagrams; design\nreviews defending allocation decisions; docu-\nmented re-planning episodes in project retrospec-\ntives.\nP3 Verification,\nvalidation & critical"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0039"
+        ],
+        "excerpt": "Detect seeded defects in AI-generated artifacts; de-\nsign acceptance gates and test regimes for machine\ncontributions; demonstrate calibrated reliance\nacross task types.\nDefect-detection exercises with known ground\ntruth; review reports on AI contributions; reliance-\ncalibration records comparing trust decisions with\nmeasured agent accuracy.\nP4 Ethical gover-\nnance & accountabil-\nity\nConduct bias and impact assessments; map sys-\ntem decisions to accountable humans; apply risk-\nmanagement and regulatory requirements to a\nconcrete deployment.\nImpact-assessment artifacts; accountability ma-\ntrices; red-team exercise reports with reflective\ndebriefs.\nP5 Adaptive self-\ndirected learning\nSystematically evaluate an unfamiliar AI tool\nagainst task requirements; maintain a reflective\nrecord of one's own human\u2013AI process; construct\nand defend a personal development plan.\nTool-evaluation reports ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "04680854142f070eec773b50dba09cd6617f217ead25c93d049bc1676a910cab",
+            "evidence_id": "E0266057f12048f22-B0039",
+            "pages": [
+              7
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "Evaluation",
+                "section_index": 15,
+                "start": 0,
+                "text": "Detect seeded defects in AI-generated artifacts; de-\nsign acceptance gates and test regimes for machine\ncontributions; demonstrate calibrated reliance\nacross task types.\nDefect-detection exercises with known ground\ntruth; review reports on AI contributions; reliance-\ncalibration records comparing trust decisions with\nmeasured agent accuracy.\nP4 Ethical gover-\nnance & accountabil-\nity\nConduct bias and impact assessments; map sys-\ntem decisions to accountable humans; apply risk-\nmanagement and regulatory requirements to a\nconcrete deployment.\nImpact-assessment artifacts; accountability ma-\ntrices; red-team exercise reports with reflective\ndebriefs.\nP5 Adaptive self-\ndirected learning\nSystematically evaluate an unfamiliar AI tool\nagainst task requirements; maintain a reflective\nrecord of one's own human\u2013AI process; construct\nand defend a personal development plan.\nTool-evaluation reports "
+              }
+            ],
+            "text": "Detect seeded defects in AI-generated artifacts; de-\nsign acceptance gates and test regimes for machine\ncontributions; demonstrate calibrated reliance\nacross task types.\nDefect-detection exercises with known ground\ntruth; review reports on AI contributions; reliance-\ncalibration records comparing trust decisions with\nmeasured agent accuracy.\nP4 Ethical gover-\nnance & accountabil-\nity\nConduct bias and impact assessments; map sys-\ntem decisions to accountable humans; apply risk-\nmanagement and regulatory requirements to a\nconcrete deployment.\nImpact-assessment artifacts; accountability ma-\ntrices; red-team exercise reports with reflective\ndebriefs.\nP5 Adaptive self-\ndirected learning\nSystematically evaluate an unfamiliar AI tool\nagainst task requirements; maintain a reflective\nrecord of one's own human\u2013AI process; construct\nand defend a personal development plan.\nTool-evaluation reports "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0044"
+        ],
+        "excerpt": "critique its outputs\u2014\ntreated as a program-wide foundation rather than a course topic, consistent with its recent institutional codification\n7\nAPREPRINT- AUGUST3, 2026\nTable 2:Scaffolded curricular progression for agentic engineering education. AI autonomy is expanded stage-by-stage, contingent\non demonstrated verification competence.\nStage AI role Student focus Dominant pillars",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Integration, Not Addition",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "0bc5fb97324d0529b0ebd670a4a22a45fdf7791f056cf809deb9e7798d3a7121",
+            "evidence_id": "E0266057f12048f22-B0044",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Integration, Not Addition",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1042,
+                "page": 7,
+                "section": "Integration, Not Addition",
+                "section_index": 17,
+                "start": 900,
+                "text": "critique its outputs\u2014\ntreated as a program-wide foundation rather than a course topic, consistent with its recent institutional codification\n7"
+              },
+              {
+                "end": 238,
+                "page": 8,
+                "section": "Integration, Not Addition",
+                "section_index": 18,
+                "start": 0,
+                "text": "APREPRINT- AUGUST3, 2026\nTable 2:Scaffolded curricular progression for agentic engineering education. AI autonomy is expanded stage-by-stage, contingent\non demonstrated verification competence.\nStage AI role Student focus Dominant pillars"
+              }
+            ],
+            "text": "critique its outputs\u2014\ntreated as a program-wide foundation rather than a course topic, consistent with its recent institutional codification\n7\nAPREPRINT- AUGUST3, 2026\nTable 2:Scaffolded curricular progression for agentic engineering education. AI autonomy is expanded stage-by-stage, contingent\non demonstrated verification competence.\nStage AI role Student focus Dominant pillars"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0059"
+        ],
+        "excerpt": "The pedagogical core of human\u2013AI teaming instruction is a disciplined loop that students traverse repeatedly, first\nslowly and explicitly, later fluently (Figure 2). The loop renders visible\u2014and therefore teachable and assessable\u2014the\nsupervisory cycle that expert AI-native practitioners execute tacitly [9,25]. Its stages instantiate the pillars in sequence:\nintent specification and decomposition (P1), delegation with explicit guardrails (P2), agent execution, verification\nagainst acceptance criteria (P3), integration or re-delegation, and reflective rationale capture (P5), with accountability\nchecks (P4) gating irreversible actions.\nThree design features guard against the loop degenerating into ritual. First, curricula must engineer encounters with\nfailure: exercises seeded with plausible-but-wrong agent outputs, \"AI coworker\" simulations in which over-trust has\nvisible consequences, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Delegation\u2013Verification Loop",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "d2bbc15833c63b6b85acb099c2bf232fbfc3de4426935695a9696ebf40199cea",
+            "evidence_id": "E0266057f12048f22-B0059",
+            "pages": [
+              9
+            ],
+            "section": "The Delegation\u2013Verification Loop",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 9,
+                "section": "The Delegation\u2013Verification Loop",
+                "section_index": 33,
+                "start": 0,
+                "text": "The pedagogical core of human\u2013AI teaming instruction is a disciplined loop that students traverse repeatedly, first\nslowly and explicitly, later fluently (Figure 2). The loop renders visible\u2014and therefore teachable and assessable\u2014the\nsupervisory cycle that expert AI-native practitioners execute tacitly [9,25]. Its stages instantiate the pillars in sequence:\nintent specification and decomposition (P1), delegation with explicit guardrails (P2), agent execution, verification\nagainst acceptance criteria (P3), integration or re-delegation, and reflective rationale capture (P5), with accountability\nchecks (P4) gating irreversible actions.\nThree design features guard against the loop degenerating into ritual. First, curricula must engineer encounters with\nfailure: exercises seeded with plausible-but-wrong agent outputs, \"AI coworker\" simulations in which over-trust has\nvisible consequences, "
+              }
+            ],
+            "text": "The pedagogical core of human\u2013AI teaming instruction is a disciplined loop that students traverse repeatedly, first\nslowly and explicitly, later fluently (Figure 2). The loop renders visible\u2014and therefore teachable and assessable\u2014the\nsupervisory cycle that expert AI-native practitioners execute tacitly [9,25]. Its stages instantiate the pillars in sequence:\nintent specification and decomposition (P1), delegation with explicit guardrails (P2), agent execution, verification\nagainst acceptance criteria (P3), integration or re-delegation, and reflective rationale capture (P5), with accountability\nchecks (P4) gating irreversible actions.\nThree design features guard against the loop degenerating into ritual. First, curricula must engineer encounters with\nfailure: exercises seeded with plausible-but-wrong agent outputs, \"AI coworker\" simulations in which over-trust has\nvisible consequences, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0076"
+        ],
+        "excerpt": "what LLM-based agents can do across the lifecycle [3,4]\u2014\nbut leaves open the institutional question of who is educated to direct them, and how; ACCEL is addressed to precisely\nthat residual. Relative to these prior treatments, the framework makes three moves that we regard as its principal con-\ntributions. First, itunifiesliteratures that have addressed the problem in isolation: computing-education findings on\ngenerative AI [21, 22], human-factors theory on automation supervision [34\u201337], socio-cognitive agency theory and\nprincipal\u2013agent delegation theory [14,50,51], and emerging accounts of AI-native practice [1,25,48]\u2014yielding an ed-\nucational architecture in which pedagogical prescriptions inherit theoretical warrant. Second, itconditions autonomy\non verification: the scaffolded progression (Table 2) grants AI autonomy stage-by-stage against demonstrated super-\nvisory competence, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "What Accel Adds",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f7208a5ae4592a10378e03ed762daca31d0b4b1c5ce88671efe23bf4d436171f",
+            "evidence_id": "E0266057f12048f22-B0076",
+            "pages": [
+              12
+            ],
+            "section": "What Accel Adds",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 980,
+                "page": 12,
+                "section": "What Accel Adds",
+                "section_index": 42,
+                "start": 84,
+                "text": "what LLM-based agents can do across the lifecycle [3,4]\u2014\nbut leaves open the institutional question of who is educated to direct them, and how; ACCEL is addressed to precisely\nthat residual. Relative to these prior treatments, the framework makes three moves that we regard as its principal con-\ntributions. First, itunifiesliteratures that have addressed the problem in isolation: computing-education findings on\ngenerative AI [21, 22], human-factors theory on automation supervision [34\u201337], socio-cognitive agency theory and\nprincipal\u2013agent delegation theory [14,50,51], and emerging accounts of AI-native practice [1,25,48]\u2014yielding an ed-\nucational architecture in which pedagogical prescriptions inherit theoretical warrant. Second, itconditions autonomy\non verification: the scaffolded progression (Table 2) grants AI autonomy stage-by-stage against demonstrated super-\nvisory competence, "
+              }
+            ],
+            "text": "what LLM-based agents can do across the lifecycle [3,4]\u2014\nbut leaves open the institutional question of who is educated to direct them, and how; ACCEL is addressed to precisely\nthat residual. Relative to these prior treatments, the framework makes three moves that we regard as its principal con-\ntributions. First, itunifiesliteratures that have addressed the problem in isolation: computing-education findings on\ngenerative AI [21, 22], human-factors theory on automation supervision [34\u201337], socio-cognitive agency theory and\nprincipal\u2013agent delegation theory [14,50,51], and emerging accounts of AI-native practice [1,25,48]\u2014yielding an ed-\nucational architecture in which pedagogical prescriptions inherit theoretical warrant. Second, itconditions autonomy\non verification: the scaffolded progression (Table 2) grants AI autonomy stage-by-stage against demonstrated super-\nvisory competence, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0078"
+        ],
+        "excerpt": "Four failure modes recur in the record, and each is met by a specific framework mechanism.Automation bias and\nover-reliance[34, 35]\u2014whose contemporary signature is the measured gap between perceived and actual AI bene-\nfit [10, 11]\u2014are countered by engineered failure encounters, verification-cost design [40], and reliance-calibration\nassessment (Section 6).Deskilling[37] is countered by the protected foundational core and staged autonomy (Sec-\ntions 5, 9).Superficial engagement\u2014completing tasks through AI without learning, now documented at scale and\nknown to disproportionately harm weaker students [24, 30, 32, 42]\u2014is countered by assessing the loop rather than the\nartifact.Diffuse accountabilityis countered by the non-delegation commitment and its curricular instruments (Sec-\ntion 8). We emphasize that these are design intentions with empirical warrant, not demonstrated effects; ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Risks The Framework Is Designed To Mitigate",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a39646cc9e23bce15fed3c46e10a8ea1e3e156f22717fbb84b8e3481766244cd",
+            "evidence_id": "E0266057f12048f22-B0078",
+            "pages": [
+              12
+            ],
+            "section": "Risks The Framework Is Designed To Mitigate",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 12,
+                "section": "Risks The Framework Is Designed To Mitigate",
+                "section_index": 43,
+                "start": 0,
+                "text": "Four failure modes recur in the record, and each is met by a specific framework mechanism.Automation bias and\nover-reliance[34, 35]\u2014whose contemporary signature is the measured gap between perceived and actual AI bene-\nfit [10, 11]\u2014are countered by engineered failure encounters, verification-cost design [40], and reliance-calibration\nassessment (Section 6).Deskilling[37] is countered by the protected foundational core and staged autonomy (Sec-\ntions 5, 9).Superficial engagement\u2014completing tasks through AI without learning, now documented at scale and\nknown to disproportionately harm weaker students [24, 30, 32, 42]\u2014is countered by assessing the loop rather than the\nartifact.Diffuse accountabilityis countered by the non-delegation commitment and its curricular instruments (Sec-\ntion 8). We emphasize that these are design intentions with empirical warrant, not demonstrated effects; "
+              }
+            ],
+            "text": "Four failure modes recur in the record, and each is met by a specific framework mechanism.Automation bias and\nover-reliance[34, 35]\u2014whose contemporary signature is the measured gap between perceived and actual AI bene-\nfit [10, 11]\u2014are countered by engineered failure encounters, verification-cost design [40], and reliance-calibration\nassessment (Section 6).Deskilling[37] is countered by the protected foundational core and staged autonomy (Sec-\ntions 5, 9).Superficial engagement\u2014completing tasks through AI without learning, now documented at scale and\nknown to disproportionately harm weaker students [24, 30, 32, 42]\u2014is countered by assessing the loop rather than the\nartifact.Diffuse accountabilityis countered by the non-delegation commitment and its curricular instruments (Sec-\ntion 8). We emphasize that these are design intentions with empirical warrant, not demonstrated effects; "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0084"
+        ],
+        "excerpt": "Five limitations bound the claims of this article. First, it is a conceptual synthesis: ACCEL is derived from, and\nconsistent with, the empirical record, but the framework itself has not been implemented and evaluated as a whole;\n12\nAPREPRINT- AUGUST3, 2026\nits mitigation claims are design hypotheses pending the studies outlined above. Second, the corpus is weighted to-\nward software and computing education, where the empirical record on generative AI is deepest; extension to other\nengineering disciplines\u2014where physical artifacts, safety certification, and licensure alter the delegation calculus\u2014\nrequires discipline-specific validation. Third, the underlying technology is moving: findings about current model\nfailure modes [7, 8] may age quickly, though we have deliberately anchored the framework in competencies (specifi-\ncation, verification, governance, learning) chosen for robustness ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b2a096680cad8f9ae16932b7583916b3496508fafe0e62c849a300141d5033e0",
+            "evidence_id": "E0266057f12048f22-B0084",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 232,
+                "page": 12,
+                "section": "Limitations",
+                "section_index": 46,
+                "start": 0,
+                "text": "Five limitations bound the claims of this article. First, it is a conceptual synthesis: ACCEL is derived from, and\nconsistent with, the empirical record, but the framework itself has not been implemented and evaluated as a whole;\n12"
+              },
+              {
+                "end": 666,
+                "page": 13,
+                "section": "Limitations",
+                "section_index": 47,
+                "start": 0,
+                "text": "APREPRINT- AUGUST3, 2026\nits mitigation claims are design hypotheses pending the studies outlined above. Second, the corpus is weighted to-\nward software and computing education, where the empirical record on generative AI is deepest; extension to other\nengineering disciplines\u2014where physical artifacts, safety certification, and licensure alter the delegation calculus\u2014\nrequires discipline-specific validation. Third, the underlying technology is moving: findings about current model\nfailure modes [7, 8] may age quickly, though we have deliberately anchored the framework in competencies (specifi-\ncation, verification, governance, learning) chosen for robustness "
+              }
+            ],
+            "text": "Five limitations bound the claims of this article. First, it is a conceptual synthesis: ACCEL is derived from, and\nconsistent with, the empirical record, but the framework itself has not been implemented and evaluated as a whole;\n12\nAPREPRINT- AUGUST3, 2026\nits mitigation claims are design hypotheses pending the studies outlined above. Second, the corpus is weighted to-\nward software and computing education, where the empirical record on generative AI is deepest; extension to other\nengineering disciplines\u2014where physical artifacts, safety certification, and licensure alter the delegation calculus\u2014\nrequires discipline-specific validation. Third, the underlying technology is moving: findings about current model\nfailure modes [7, 8] may age quickly, though we have deliberately anchored the framework in competencies (specifi-\ncation, verification, governance, learning) chosen for robustness "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0266057f12048f22-B0085"
+        ],
+        "excerpt": "to capability shifts rather than in tool-specific skills.\nFourth, the analysis largely presumes institutional contexts with the resources to execute systemic reform; adaptation\nto resource-constrained settings, where faculty capacity and infrastructure are limiting, is an open design problem of\nthe first importance [58]. Fifth, the synthesis was conducted by a single author: corpus coding was not subject to\nindependent inter-rater checks, and a portion of the sources characterizing AI-native practice are the author's own\nrecent work, some of it available only as preprints at the time of writing. We have mitigated both risks by the cross-\ncommunity convergence rule of Section 2 and by anchoring every load-bearing claim to at least one independent,\npeer-reviewed source, but readers should weigh these provenance facts when assessing the argument.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "462cb34770b1d4aeccc9c4d1157040ef6d4a77cacdbc487152e887d90de8c3a2",
+            "evidence_id": "E0266057f12048f22-B0085",
+            "pages": [
+              13
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1521,
+                "page": 13,
+                "section": "Limitations",
+                "section_index": 47,
+                "start": 666,
+                "text": "to capability shifts rather than in tool-specific skills.\nFourth, the analysis largely presumes institutional contexts with the resources to execute systemic reform; adaptation\nto resource-constrained settings, where faculty capacity and infrastructure are limiting, is an open design problem of\nthe first importance [58]. Fifth, the synthesis was conducted by a single author: corpus coding was not subject to\nindependent inter-rater checks, and a portion of the sources characterizing AI-native practice are the author's own\nrecent work, some of it available only as preprints at the time of writing. We have mitigated both risks by the cross-\ncommunity convergence rule of Section 2 and by anchoring every load-bearing claim to at least one independent,\npeer-reviewed source, but readers should weigh these provenance facts when assessing the argument."
+              }
+            ],
+            "text": "to capability shifts rather than in tool-specific skills.\nFourth, the analysis largely presumes institutional contexts with the resources to execute systemic reform; adaptation\nto resource-constrained settings, where faculty capacity and infrastructure are limiting, is an open design problem of\nthe first importance [58]. Fifth, the synthesis was conducted by a single author: corpus coding was not subject to\nindependent inter-rater checks, and a portion of the sources characterizing AI-native practice are the author's own\nrecent work, some of it available only as preprints at the time of writing. We have mitigated both risks by the cross-\ncommunity convergence rule of Section 2 and by anchoring every load-bearing claim to at least one independent,\npeer-reviewed source, but readers should weigh these provenance facts when assessing the argument."
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.29610",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
-      "No suitable baseline comparison was detected in the available text.",
-      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+      "No reproducible review or selection methodology was detected.",
+      "Structurally bounded citation prefixes excluded; ambiguous back matter, body and detected appendices retained where budget permits."
     ],
-    "overall_quality_score": 49,
-    "paper_type": "empirical_research",
-    "positive_signals": [
-      "The contribution is stated explicitly.",
-      "Limitations or threats to validity are acknowledged.",
-      "Dataset documentation, quality control, licensing, or ethics is discussed."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "weak",
-    "rubric_version": "scholarly-rubric-v1",
+    "overall_quality_score": null,
+    "paper_type": "survey_or_review",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript is an unvalidated conceptual synthesis: the ACCEL framework has not been implemented, deployed, or empirically tested, and its mitigation and effectiveness claims are explicitly design hypotheses pending future study.",
+          "The synthesis methodology lacks independent coding or inter-rater reliability checks, and a portion of the load-bearing sources characterizing AI-native practice are the author's own recent preprints, weakening the independence of the evidence base."
+        ],
+        "canonical_id": "arxiv:2607.29610",
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No empirical validation of the ACCEL framework is reported; the author states that mitigation claims are design intentions with empirical warrant, not demonstrated effects.",
+          "final_evaluation_signal": "Not applicable; no quantitative or automated evaluation signal establishes a headline outcome, and the framework's effects are left to a future research agenda.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; the manuscript proposes a conceptual educational framework and does not train, tune, select, or otherwise adapt a model or system.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E0266057f12048f22-B0002",
+          "E0266057f12048f22-B0003",
+          "E0266057f12048f22-B0012",
+          "E0266057f12048f22-B0014",
+          "E0266057f12048f22-B0015",
+          "E0266057f12048f22-B0016",
+          "E0266057f12048f22-B0031",
+          "E0266057f12048f22-B0038",
+          "E0266057f12048f22-B0039",
+          "E0266057f12048f22-B0044",
+          "E0266057f12048f22-B0059",
+          "E0266057f12048f22-B0076",
+          "E0266057f12048f22-B0078",
+          "E0266057f12048f22-B0084",
+          "E0266057f12048f22-B0085"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "609eafafd800a441e46549a898d651fc48e7b88aa09cf7b153596a1c37921a3c"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2607.29610",
+        "claim_evidence_alignment": "The conceptual claims and pedagogical recommendations are logically structured and grounded in cited prior empirical findings, but claims regarding framework effectiveness or risk mitigation remain unverified design hypotheses as candidly acknowledged by the author.",
+        "context_id": "0266057f12048f22ab13affec57dd48c5d91fa4e3b9f927d20f00cbd4da2b2c6",
+        "decision": "uncertain",
+        "evaluation_assessment": "There is no primary empirical validation, classroom deployment, or quasi-experimental testing of the proposed ACCEL framework or its curricular progression. The paper tests the framework only against conceptual 'adversarial questions' and outlines an empirical research agenda for future validation.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No experimental or observational validation of the ACCEL framework was conducted; validation is left to future empirical research.",
+          "final_evaluation_signal": "Not applicable; no quantitative or automated evaluation signals were measured.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; the manuscript presents a conceptual synthesis and curricular framework rather than a trained model or machine-learning optimization system.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E0266057f12048f22-B0002",
+          "E0266057f12048f22-B0003",
+          "E0266057f12048f22-B0004",
+          "E0266057f12048f22-B0012",
+          "E0266057f12048f22-B0014",
+          "E0266057f12048f22-B0015",
+          "E0266057f12048f22-B0016",
+          "E0266057f12048f22-B0031",
+          "E0266057f12048f22-B0038",
+          "E0266057f12048f22-B0039",
+          "E0266057f12048f22-B0044",
+          "E0266057f12048f22-B0059",
+          "E0266057f12048f22-B0076",
+          "E0266057f12048f22-B0084",
+          "E0266057f12048f22-B0085"
+        ],
+        "limitations": "The author clearly delineates limitations, noting the purely conceptual nature of the synthesis, lack of empirical trial, single-coder bias, software-heavy scope, and assumptions regarding well-resourced institutions.",
+        "method_assessment": "The methodology is explicitly an integrative conceptual literature review synthesizing five disconnected research domains rather than an empirical study or protocol-driven systematic review. Literature selection and thematic coding were conducted solely by a single author without independent inter-rater reliability checks, though partially constrained by a two-domain convergence threshold.",
+        "quality_rationale": "While the conceptual framework is thoughtfully formulated and carefully positioned relative to established literature, it remains an unvalidated conceptual proposal without empirical corroboration of its effectiveness or institutional viability.",
+        "scoped_contribution": "The manuscript presents the ACCEL framework, an integrative conceptual synthesis proposing five competency pillars and three institutional delivery vectors to re-architect engineering and computing education around supervisory oversight of autonomous AI agents.",
+        "source_content_hash": "609eafafd800a441e46549a898d651fc48e7b88aa09cf7b153596a1c37921a3c"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the conceptual framework is thoughtfully formulated and carefully positioned relative to established literature, it remains an unvalidated conceptual proposal without empirical corroboration of its effectiveness or institutional viability.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "609eafafd800a441e46549a898d651fc48e7b88aa09cf7b153596a1c37921a3c",
-    "status": "not_assessed",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The author clearly delineates limitations, noting the purely conceptual nature of the synthesis, lack of empirical trial, single-coder bias, software-heavy scope, and assumptions regarding well-resourced institutions."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",

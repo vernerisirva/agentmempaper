@@ -59,16 +59,287 @@
             <p>Remote sensing increasingly captures the Earth&#x27;s surface through complementary sensors such as SAR and optical, yet ground-truth annotations remain scarce, limiting supervised approaches. Self-supervised learning (SSL) addresses the label scarcity, and cross-modal SSL further exploits the complementarity between co-...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work provides a clear and conceptually well-motivated contribution to cross-modal representation learning in remote sensing, backed by rigorous experimental controls and baselines evaluated across multiple runs with reporting of variance. The empirical evaluation and ablations solidly substantiate the claims.</p>
+      <p>The pre-training requires separate forward passes for augmented and masked images, leading to higher GPU compute time compared to single-pass designs like CROMA. The evaluation is focused on Sentinel-1 SAR and Sentinel-2 optical data without validation yet on other modality pairs.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-12T12:12:43.123085+00:00.</p>
+        <p>Coverage: 44105 of 44105 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and cross-modal SSL further exploits the
+complementarity between co-located sensors, but existing cross-
+modal frameworks align modalities mostly through global image-
+level representations or treat them as largely redundant, leaving
+their fine-grained complementary structure underexploited. We
+proposeCroCoMAE, a cross-modal SSL framework for SAR-
+optical remote sensing that unifies contrastive learning and
+masked image modeling within a ViT-based architecture, oper-
+ating at two complementary levels. At the image level, an intra-
+modality contrastive loss on the class token yields globally dis-
+criminative, augmentation-invariant representations. At the patch
+level, masked image modeling drives fine-grained per-modality
+representations, while a cross-modal contrastive objective aligns
+a shared subspace across SAR and optical patch tokens, leaving
+the complementary subspace </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>learning and masked
+image modeling at two complementary levels. At the image
+level, a within-modality contrastive loss on the class token
+enforces globally discriminative representations. At the patch
+level, masked image modeling drives per-modality fine-grained
+reconstruction, while a cross-modal contrastive term aligns a
+shared subspace across SAR and optical patch tokens, leaving
+the unshared subspace free to capture complementary, possibly
+modality-specific information. Unlike prior work that aligns
+only global representations, this patch-level objective lets
+CroCoMAEexploit fine-grained SAR-optical interactions. We
+evaluateCroCoMAEon two SAR-optical benchmarks cover-
+ing scene classification and semantic segmentation. Compared
+to uni-modal SSL baselines and cross-modal frameworks,
+across varying label regimes and under both linear probing and
+full fine-tuning,CroCoMAEconsistently </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>INDICATE WHETHER CROSS-MODAL(CM)ALIGNMENT IS PERFORMED AT
+THE GLOBAL IMAGE OR PATCH LEVEL.
+Global Patch Partition MAE Token
+CM Align. CM Align. Level
+CROMA✓– –✓Patch
+CoMM✓– – – CLS
+DeCUR✓– Shared/Unique – CLS
+CroCoMAE–✓Shared/Unshared✓CLS + Patch
+III. METHOD
+CroCoMAEis built on the Vision Transformer (ViT) archi-
+tecture and combines masked autoencoding with contrastive
+learning at two complementary levels of representation. At the
+image level, the CLS token is trained with an intra-modal con-
+trastive loss to produce globally discriminative, augmentation-
+invariant representations. At the patch level, the embedding
+of each per-modality encoder is split into a shared subspace,
+aligned across sensors, and an unshared subspace, left free to
+retain complementary, possibly modality-specific information.
+Unlike prior cross-modal approaches that decompose global
+image </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>input intoPnon-overlapping patches, projects each patch into aK-dimensional
+token, and prepends a learnable CLS token. The encoder
+output is therefore:
+Z(m) =f θm (X(m))∈R (P+1)×K
+whereZ (m)0,: is the CLS token andZ (m)1:,: are the patch tokens.
+We denote these two components as:
+h(m) =z (m)0 ∈R K ,P (m) =z (m)1: ∈R P×K
+The embedding dimensionKis split into two equal halves
+Kshd =K u =K/2, partitioning each row ofP (m) into
+a shared componentP (m)shd ∈R P×K shd and an unshared
+componentP (m)u ∈R P×K u. The shared subspace is trained
+to encode information shared across modalities, while the
+unshared one is unconstrained, allowing complementary, pos-
+sibly specific information to reside therein. This partition
+introduces no additional parameters: it is enforced implicitly
+through the training objectives described later, with no learned
+gating/routing mechanism. For the patch-level </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>negatives,
+positional information alone cannot solve this objective, which
+instead requires the shared subspace to encode patch content.
+Only visible patch tokens are encoded, and a lightweight per-
+modality decoder reconstructs the pixel values of the masked
+patches. With per-patch normalisation, the reconstruction loss
+is:
+LMAE = 12 X
+m∈{SAR,Opt}
+1
+|M(m)|
+X
+p∈M(m)
 
-        <ul></ul>
+
+
+X(m)p − ˆX(m)p
+
+
+22
+WhereX (m)p (resp. ˆX(m)p ) is the original (resp. reconstructed)
+masked patch token at positionp∈ M (m). This loss en-
+courages each encoder to develop rich intra-modal spatial
+representations independently of the cross-modal objectives,
+discouraging degenerate solutions that neglect fine-grained
+spatial structure in favour of cross-modal alignment shortcuts.
+Cross-modal shared subspace alignment.To align the shared
+subspace across modalities, we use the InfoNCE loss on the
+ℓ2-normalized shared patch </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>embeddings of both modalities,
+concatenated into a pool of2BP ′ tokens in a given batch. Co-
+registered patch pairs (i.e., patches at the same spatial position
+from the SAR and optical modalities) act as positives; all other
+patches serve as negatives. The label vectorℓ patch assigns the
+same index to thek-th patch from both modalities, defining
+co-registered patch pairs as positives. The cross-modal loss is
+defined as follows:
+Lshd = InfoNCE
+
+ℓ2
+ &quot;
+E(SAR)shd
+E(Opt)shd
+#!
+,ℓ patch
+!
+D. Overall Objective Function
+The final training loss is the unweighted sum of all three
+terms previously introduced:
+Ltotal =L MAE +L shd +L cls
+The interplay among the losses is deliberate:L MAE grounds
+each encoder in within-modality spatial structure;L shd drives
+patch-level cross-modal alignment in the shared subspace; and
+Lcls ensures that the global per-modality image-level represen-
+tations remain </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>invariant under augmentations. The unweighted
+formulation avoids loss-balancing hyperparameters, removing
+the need for per-task tuning.
+IV. EXPERIMENTALEVALUATION
+To evaluateCroCoMAE, we design an experimental study
+covering two SAR-optical RS benchmarks, for scene classifi-
+cation and semantic segmentation. We compare against both
+standard uni-modal SSL methods and recent cross-modal ap-
+proaches. We conduct an ablation study where the contribution
+of each component ofCroCoMAEis assessed, explore the
+interplay between CLS and patch tokens, and analyse the be-
+haviour ofCroCoMAEvarying the size of the shared subspace.
+Finally, we provide a visual inspection of the segmentation
+maps produced byCroCoMAEand representative competing
+approaches and a discussion on computational costs.
+Datasets.We evaluateCroCoMAEon two downstream tasks.
+In both cases, Sentinel-1 SAR and Sentinel-2 </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and recom-
+mendations, adapted to the shared ViT-Small backbone. We
+further includeSimCLR-CandBarlow Twins-C[11], which
+extend their respective uni-modal counterparts to the cross-
+modal setting by treating the corresponding image from the
+other modality (SAR or Opt) as an augmentation of the
+input. We additionally includeCroCoMAE N oUas an internal
+variant of our framework, in which theL shd loss is applied
+directly to the full patch embedding, without partitioning it
+into shared and unshared subspaces. For all SSL methods we
+use a ViT-Small backbone [29]. We additionally report two
+supervised baselines using ViT-Small and ResNet-50. For the
+multi-class classification task (EuroSAT-SAR), all backbones
+are combined with a single-layer classifier. For semantic
+segmentation (DFC2020), all ViT-based backbones are paired
+with a lightweight PSPNet-style pyramid pooling head [30]
+applied to </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the final-layer patch tokens, while ResNet-50 is
+used within a UNet [31] architecture baseline.
+Experimental Settings.All SSL approaches share the same
+data, backbone and fine-tuning setup, and are pre-trained with
+AdamW [32] (weight decay 0.05) for 260,000 steps (batch
+size 512), with a maximum learning rate of1.5×10 −4, a
+linear warm-up of 20 epochs, followed by cosine annealing
+with warm restarts. We evaluate single-modal (SAR, Opt) and
+multi-modal (MM) settings, the latter obtained by concatenat-
+ing per-modality embeddings before the classification head.
+Fine-tuning uses two labeled regimes (1% / 10% of data, with
+the remaining 99% / 90% held out for testing) under two
+strategies: Linear Probing (LP, frozen encoder) and Full Fine-
+Tuning (Full-FT, all weights updated), for 300 epochs with
+batch size 64. ForDFC2020, LP denotes a frozen encoder
+with a trainable segmentation head.
+We </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with average-pooled patch tokens
+for classification. Performance is measured via weighted F1
+onEuroSAT-SARand mIoU onDFC2020, averaged over five
+runs. Using a protocol identical across methods, forEuroSAT-
+SARwe adopt a transductive setup where pre-training and
+fine-tuning share the same images (labels used only during
+fine-tuning); forDFC2020, we pre-train on the training split
+and fine-tune/evaluate on the disjoint validation split. This
+inductive protocol, in which evaluation images are never seen
+during pre-training, complements the transductiveEuroSAT-
+SARsetting. Experiments run on an HPC facility with NVIDIA
+H100 SXM5 GPUs (80 GB HBM3).
+A. Results
+Table II and Table III report the results on theEuroSAT-SAR
+andDFC2020benchmarks, respectively. Standard deviations
+over the 5 runs are generally below 1.5 points at 1% labels and
+below 0.5 at 10%; the gains ofCroCoMAEover the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE II
+RESULTS ONEUROSAT-SAR. WE REPORTLP / FULL-FT WEIGHTEDF1-SCORE(%)AVERAGED OVER5RUNS,FOR SINGLE MODAL(SAR, OPT)AND
+MULTI-MODAL(MM)SETTINGS,WITH1%AND10%LABELED DATA. RED HIGHLIGHTS RESULTS BELOW THE BEST SUPERVISED BASELINE. BOLD
+INDICATES THE BEST RESULT PER COLUMN.
+EuroSAT-SAR
+1% 10%
+SAR Opt MM SAR Opt MM
+Sup. ViT 57.8 75.0 76.5 69.7 91.8 87.7
+ResNet-50 58.2 78.7 60.1 73.1 93.7 85.4
+Uni- MAE 67.3 / 67.2 89.9 / 85.3 91.0 / 89.5 78.0 / 74.0 95.4 / 94.8 95.9 / 95.1
+Modal SimCLR 48.2 / 48.6 65.0 / 73.1 67.7 / 71.8 55.5 / 61.6 80.2 / 88.3 82.2 / 85.9
+BarlowT 24.4 / 62.5 93.6 / 90.8 94.1 / 91.6 29.4 / 70.6 96.0 / 95.8 96.2 / 96.1
+Cross- SimCLR-C 82.4 / 71.4 84.6 / 88.4 84.0 / 87.0 82.8 / 74.6 87.0 / 93.9 86.9 / 91.3
+Modal BarlowT-C 82.5/ 69.5 83.2 / 86.2 79.5 / 87.6 88.6/ 72.1 89.8 / 93.1 89.9 / 92.8
+DeCUR 75.9 / 71.6 94.1 / 92.7 92.7 / 94.2 79.2 / 75.8 96.3 / 96.6 96.3 / 97.0
+CROMA </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE III
+RESULTS ONDFC2020. WE REPORTLP / FULL-FTMIOU (%)AVERAGED OVER5RUNS,FOR SINGLE MODAL(SAR, OPT)AND MULTI-MODAL(MM)
+SETTINGS,WITH1%AND10%LABELED DATA. RED HIGHLIGHTS RESULTS BELOW THE BEST SUPERVISED BASELINE. BOLD INDICATES THE BEST
+RESULT PER COLUMN.
+DFC2020
+1% 10%
+SAR Opt MM SAR Opt MM
+Sup. ViT-PPM 25.2 49.3 59.2 32.9 56.1 68.2
+UNet 29.2 48.3 54.1 33.4 54.7 67.1
+Uni- MAE 39.9 / 39.3 50.7 / 48.8 51.7 / 51.1 47.6 / 49.4 59.2 / 60.9 60.9 / 65.7
+Modal SimCLR 46.6 / 47.1 56.1 / 55.360.4/ 60.8 55.4 / 56.4 65.8 / 66.4 67.7 / 69.0
+BarlowT 40.5 / 39.2 49.9 / 51.4 52.0 / 53.3 48.8 / 50.3 60.1 / 66.4 61.9 / 66.5
+Cross- SimCLR-C 45.4 / 45.7 55.4 / 56.2 57.6 / 59.3 52.9 / 53.5 65.2 / 66.0 66.2 / 68.7
+Modal BarlowT-C 40.9 / 40.7 54.9 / 55.8 54.0 / 57.8 45.5 / 47.6 63.9 / 65.8 63.8 / 68.2
+DeCUR 38.6 / 45.9 48.4 / 55.0 47.2 / 59.1 46.4 / 56.7 57.0 / 67.5 57.6 / 69.2
+CROMA 45.0 / 44.3 51.1 / </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SAR
+performance (82.7/80.8 at 1%, 84.7/82.0 at 10%) but degrades
+Opt and MM, indicatingL cls is key to discriminative Opt
+representations, at some cost to SAR-specific discriminability.
+Lshd&#x27;s contribution is mainly visible under LP: the full model
+improves consistently over the configuration withoutL shd
+(69.5→77.1 for SAR, 96.3→96.5 for Opt at 1%), though this
+gap narrows under Full-FT, suggesting that, on this bench-
+mark,L shd improves the quality of pretrained representations,
+while Full-FT is able to partially compensate for its absence.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE IV
+CroCoMAE&#x27;S LOSS TERMS ABLATION ONEUROSAT-SAR. WE REPORTLP
+/ FULL-FT WEIGHTEDF1-SCORE(%)AVERAGED OVER5RUNS,FOR
+SAR, OPT AND MULTI-MODAL(MM)SETTINGS,WITH1%AND10%
+LABELED DATA. BOLD INDICATES THE BEST RESULT PER COLUMN.
+EuroSAT-SAR
+1% 10%
+LMAE Lshd Lcls SAR Opt MM SAR Opt MM
+✓ 48.2 / 48.6 65.0 / 73.1 67.7 / 71.8 55.5 / 61.6 80.2 / 88.3 82.2 / 85.9
+✓ 67.3 / 67.2 89.9 / 85.3 91.0 / 89.5 78.0 / 74.0 95.4 / 94.8 95.9 / 95.1
+✓ ✓ 73.7 / 79.6 95.7 / 94.8 95.6 / 94.6 80.4 / 81.2 97.0 / 96.8 97.1 / 97.0
+✓ ✓ 82.7/80.890.0 / 90.4 88.9 / 90.4 84.7/82.092.8 / 95.0 92.9 / 95.0
+✓ ✓ 69.5 / 70.5 96.3 /96.396.1 /96.3 76.4 / 78.3 97.6 /97.797.7 /98.0
+✓ ✓ ✓ 77.1 / 78.496.5/ 96.096.4/ 95.3 82.7 / 80.997.8/ 97.697.8/ 97.7
+Overall, the two contrastive terms play complementary roles:
+Lcls for global discriminability,L shd for frozen-representation
+quality, alongside the spatial grounding fromL </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE V
+CroCoMAE&#x27;S ANALYSIS OF THE TOKEN REPRESENTATION ON
+EuroSAT-SAR. WE REPORTLP WEIGHTEDF1-SCORE(%)AVERAGED
+OVER5RUNS,FORSAR, OPT ANDMMSETTINGS WITH1%AND10%
+LABELED DATA.CLS:CLASS TOKEN;Patch:AVERAGE-POOLED PATCH
+TOKENS;Patch(S)/Patch(U):SHARED/UNSHARED SUBSPACE OF THE
+POOLED PATCH TOKENS(HALF THE EMBEDDING DIMENSION);CLS+Patch:
+CONCATENATION OF CLASS AND POOLED PATCH TOKENS. BOLD
+INDICATES THE BEST RESULT PER COLUMN.
+1% 10%
+SAR Opt MM SAR Opt MM
+CLS 77.196.5 96.4 82.797.8 97.8
+Patch 81.895.3 94.3 84.697.0 97.1
+Patch(S) 80.6 80.3 81.5 81.9 81.9 83.0
+Patch(U) 78.8 92.1 95.1 84.3 96.6 97.2
+CLS+Patch 80.5 96.3 96.1 84.697.6 97.7
+SAR (81.8 vs. 77.1 at 1%, 84.6 vs. 82.7 at 10%), while the
+class token remains slightly better in the optical and multi-
+modal settings (e.g., 96.5 vs. 95.3 for Opt at 1%), indicating
+that the two levels emphasise different information. Their
+concatenation </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>subspace dominates (80.6 vs. 78.8 at 1%, 81.9
+vs. 84.3 at 10% for shared vs. unshared), suggesting that its
+discriminative information is spread across both. Finally, for
+single-modal inference the full patch embedding outperforms
+either subspace alone, confirming that both contribute to the
+learned representation. A direct measurement on the frozen
+encoders confirms that this complementary information is
+modality-specific rather than redundant: co-registered SAR
+and optical patches are nearly identical in the shared subspace
+(mean cosine similarity of 0.96 and 0.99 onDFC2020and
+EuroSAT-SAR, vs. 0.00 for random pairs; linear CKA (Cen-
+tered Kernel Alignment) [33] of 0.87 and 0.93), whereas in
+the unshared subspace they are no more similar than random
+pairs (cos. sim. of 0.01 and−0.01; CKA of 0.30 and 0.18).
+Analysis of the Shared/Unshared Subspace Partition.We
+investigate the </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +378,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +394,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-10</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-11 11:43:00</li><li>Last seen by Paper Scout: 2026-11-11 11:43:00</li></ul>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-10</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-11 11:43:00</li><li>Last seen by Paper Scout: 2026-11-12 12:10:30</li></ul>
             <ul><li>arXiv: 2611.14124</li><li>arXiv IDs: 2611.14124</li></ul>
           </section>
           <section class="detail-panel">

@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-11](2026-11-11.md).
+Latest daily digest: [2026-11-12](2026-11-12.md).
 
-# Paper Scout Digest - 2026-11-11
+# Paper Scout Digest - 2026-11-12
 
 ## Run Summary
 
-- **Run ID:** 132
-- **Candidates fetched:** 124
-- **New unique papers:** 123
-- **Relevant:** 9
+- **Run ID:** 133
+- **Candidates fetched:** 120
+- **New unique papers:** 116
+- **Relevant:** 11
 - **Maybe relevant:** 1
-- **Irrelevant:** 114
-- **Source summary:** arxiv: 24, openalex: 100, semantic_scholar: 0
+- **Irrelevant:** 108
+- **Source summary:** arxiv: 20, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -20,9 +20,39 @@ Latest daily digest: [2026-11-11](2026-11-11.md).
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
+- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
-No new relevant or maybe-relevant papers found.
+## Highly Relevant
+
+### [Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists](https://doi.org/10.48550/arxiv.2611.12184)
+
+- **Authors:** Guowei Xu, Jiaru Zou, Mete Erdogan, Haotian Ye, Pan Lu, James Zou
+- **Date:** 2026-11-09
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Scientific discovery requires ideas that are original, useful, and non-obvious. Yet AI scientists are typically given as much task information as possible during idea generation, which can anchor generation toward familiar approaches. Inspired by the cognitive framework of Blind Variation and Selective Retention (BV...
+
+### [ChemDFT: open-core snapshot (schemas, contracts and engine wrappers), release 0.0.26](https://doi.org/10.5281/zenodo.24082321)
+
+- **Authors:** Tabriz Ahmadli
+- **Date:** 2026-11-09
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** ChemDFT is a computational chemistry workbench in which an AI Scientist plans and explains, and every scientific value comes from a verified engine (PySCF, xTB, CREST) behind a Result Firewall that records provenance. This record archives only the parts of the ChemDFT repository that the author has published under A...
+
+### [ClaimTrace: Contradiction-Aware Evidence Lineage for Verifiable AI-Assisted Scientific Literature Reviews](https://doi.org/10.36948/ijfmr.2026.v08i06.90699)
+
+- **Authors:** Sayor Aaron, Ashif Newaz, Sajjat Abir, Md. Rahman, Md Hossain, Nazmul Ahosan
+- **Date:** 2026-11-08
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
+- **Tags:** citation-grounding, deep-research-agents
+- **Abstract summary:** ClaimTrace is a proposed framework for checking the relationship between scientific review assertions and their cited evidence. Its central mechanism is a typed lineage graph that preserves source identity, assertion boundaries, study conditions and numerical bindings rather than returning a single undifferentiated...

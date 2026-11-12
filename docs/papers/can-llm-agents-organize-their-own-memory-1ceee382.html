@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Can LLM Agents Organize Their Own Memory?</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>Can LLM Agents Organize Their Own Memory?</h1>
+          <p class="hero-copy">Zichuan Fu, Junjia Qi, Wenlin Zhang, Yimin Deng, Shirong Wang, Jinyang Li, Xian Wu, Xiangyu Zhao</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48550/arxiv.2611.11929">Open paper</a>
+            <a class="paper-detail-link" href="can-llm-agents-organize-their-own-memory-1ceee382.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Zichuan Fu, Junjia Qi, Wenlin Zhang, Yimin Deng, Shirong Wang, Jinyang Li, Xian Wu, Xiangyu Zhao</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-09</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-09</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.11929v1">arXiv</a><a href="https://arxiv.org/abs/2611.11929">arXiv</a><a href="https://openalex.org/W7225736469">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Focuses on persistent or long-term memory for agent behavior.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>In most LLM agents, weights are fixed after deployment, so new information must be retained in external memory. Existing approaches often rely on predefined records and fixed organizational rules, which cannot readily accommodate evolving tasks and interactions. This raises the question: can LLM agents organize thei...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The contribution is clearly scoped and methodologically sound, presenting a practical and transparent hybrid design of LLM-driven document structuring paired with deterministic runtime invariant checking. Extensive empirical evaluation on standardized benchmarks with controlled baselines and bootstrap uncertainty metrics justifies passing the paper.</p>
+      <p>The manuscript explicitly addresses its limitations, including reliance on automated LLM judges without systematic human evaluation, testing primarily on conversational QA rather than ongoing multi-step task execution, single-run ablation variances, and substantial upfront construction token costs.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-11T11:44:55.875870+00:00.</p>
+        <p>Coverage: 66870 of 66870 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In most LLM agents, weights are fixed after
+deployment, so new information must be re-
+tained in external memory. Existing approaches
+often rely on predefined records and fixed or-
+ganizational rules, which can not readily ac-
+commodate evolving tasks and interactions.
+This raises the question: can LLM agents or-
+ganize their own memory using ordinary doc-
+uments? We introduceself-organizedmemory
+(SOMEM), a framework that stores memory
+in linked documents. The agent decides what
+to summarize, how to group related informa-
+tion, and when to revise existing topics, and
+every summary it produces stays linked to the
+original interactions as evidence. The runtime
+validates updates and automatically derives
+temporal, relational, and recent-memory views
+from the organized content. At query time, the
+agent chooses what to search and read, fol-
+lowing document links and inspecting origi-
+nal </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evidence as needed. On LoCoMo, BEAM-
+100K, and LongMemEval-S, SOMEMoutper-
+forms the strongest baseline by 2.66, 3.10, and
+2.00 percentage points, respectively. The con-
+structed memory can be reused across mod-
+els, and additional reasoning effort can fur-
+ther improve answer quality. These findings
+demonstrate the feasibility of agents organiz-
+ing and using their own persistent memory
+through ordinary documents. Code is available
+at: https://github.com/Qi202/SoMem.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>proposeself-organizedmemory (SOMEM),
+in which the model controls semantic organization
+and the runtime maintains evidence and access con-
+sistency. First, the agent chooses how to group and
+revise information in Topic documents, which ref-
+erence immutable Source records and from which a
+small Core is promoted for persistent context. Sec-
+ond, the runtime applies the same validation checks
+to every revision. Once a revision is accepted, it
+rebuilds the access views from the updated content
+and metadata. This allows semantic grouping to
+change without requiring the model to maintain
+separate versions for each access structure. Third,
+the agent selects further searches and reads from
+its observations, returning to original records when
+organized content is insufficient. The same agent
+can write and read memory, and other models can
+reuse the resulting workspace through the </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Information about the same person, activity, or task
+can accumulate across many interactions, and later
+observations may change how earlier information
+should be grouped. Predefined memory schemas
+constrain how this grouping can change (Xu et al.,
+2025), while storing information as isolated records
+can leave related evidence scattered across separate
+items (Ji et al., 2026). We therefore let the agent
+organize memory in editable, linked documents
+whose subjects and internal structure can evolve
+with the content.
+At update t, the system archives new interac-
+tion records xt as Source records, preserving their
+original content for later reference. The agent uses
+Source and existing memory to update Topic and
+Core:
+St = Append(St−1, xt),
+(Tt,C t) = Organize(St,T t−1,C t−1). (1)
+Here, St contains the archived Source records, and
+Tt is the Topic document collection. Core, denoted
+by Ct ∈ </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Questions may access memory by relation, time, or
+recency (Wu et al., 2025), which a single topical
+organization does not directly support. Maintain-
+ing a separate representation for each access pat-
+tern, however, requires propagating every revision
+across them and increases update overhead (Fang
+et al., 2026). In SOMEM, the runtime derives access
+views from the Topic documents maintained by the
+agent, using paragraph references, event times, and
+3
+the creation order of memory units:
+Gt = Graph(Tt),
+Lt = Timeline(Tt),
+Rt = RecentK(Tt).
+(3)
+Here, Gt, Lt, and Rt denote Graph, Timeline, and
+Recent, respectively. These operations construct the
+views without requiring the model to write each
+representation separately.
+Graph.Each Topic memory unit is a node iden-
+tified by bi; a reference bj ∈L i defines a directed
+edge from unit i to unit j. The system parses these
+references into a </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Relevant evidence depends on the question: a topic
+match may miss temporal constraints, while a com-
+pact fact may omit needed context (Wu et al., 2025).
+Such evidence is often identified only after related
+memory has been read, so a single retrieval before
+answering may be insufficient. SOMEMprovides
+read-only operations for content search, file listing,
+and document reading:
+F={Search,List,Read}.
+Content search.The agent retrieves Topic and
+Source passages with BM25 (Robertson and
+Zaragoza, 2009) lexical matching or dense seman-
+tic search, choosing the mode for each query. Op-
+tional path and date-range filters restrict the search
+to relevant documents or periods. Each result pro-
+vides a passage and its location, allowing the agent
+to inspect the surrounding context.
+Document and view access.File-listing and
+reading operations let the agent locate documents
+and inspect their </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>knowledge update (KU), contradiction resolu-
+tion (CR), event ordering (EO), instruction follow-
+ing (IF), preference following (PF), summarization
+(SUM), and abstention (ABS). Table 1 summarizes
+the evaluation and analysis-subset sizes. The main
+method comparisons use the complete evaluation
+sets; component ablations use the full LoCoMo set,
+and Reader-effort analyses use fixed subsets. Sub-
+sets are stratified by conversation and question type
+and selected independently of model outputs and
+scores. Within each analysis, all conditions use the
+same subsets.
+Evaluation Metrics.We use GPT-4o-mini as
+the judge with temperature 0 to evaluate com-
+plete, unmodified answers. For LoCoMo and
+LongMemEval-S, the judge assesses correctness
+based on the question, reference answer, and task-
+specific requirements. We report LLM-judge (LJ)
+accuracy by question type and overall. Overall ac-
+curacy is </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the proportion of correctly answered ques-
+tions across the evaluation set. For BEAM-100K,
+each rubric criterion receives a score of 0, 0.5, or
+1; we average criteria within each question and
+then average over questions to obtain the overall
+nugget score. We also report the pass rate, counting
+questions with a score of at least 0.5 as passes. Eval-
+uation protocols and configurations are provided in
+Appendix B.
+Implementation Details.We compare SOMEM
+with representative memory methods: A-Mem (Xu
+et al., 2025), Mem0 (Chhikara et al., 2025), Memo-
+ryOS (Kang et al., 2025), Nemori (Ma et al., 2026),
+LightMem (Fang et al., 2026), and E-mem (Wang
+et al., 2026a). In the primary comparisons, GPT-</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>model (Writer) and the question-answering model
+(Reader) for every memory method, while each
+method retains its own memory organization and
+retrieval pipeline; no Reader uses reasoning effort.
+Full Context uses the same Reader and answers
+Table 2: LoCoMo LJ accuracy (%) on all 1,540 category
+1–4 questions.
+Method SH MH OD TR Overall
+Full Context 94.17 80.85 45.83 72.59 84.22
+A-Mem 62.78 55.67 41.67 62.31 60.06
+Mem0 83.83 76.95 53.12 82.24 80.32
+MemoryOS 60.05 56.03 43.75 50.16 56.23
+Nemori 79.79 67.73 43.75 66.36 72.53
+LightMem 82.88 70.21 52.08 79.75 77.99
+E-mem 92.7585.1158.33 78.82 86.30
+SOMEM94.5383.33 59.38 88.16 88.96
+SOMEM † 95.96 93.26 65.62 91.90 92.73
+SOMEM ‡ 95.36 91.49 72.92 90.97 92.34
+SOMEM § 94.89 91.13 63.54 89.72 91.17
+Writer and Reader: † DeepSeek V4 Flash; ‡ GPT-5.6 Luna;
+§ Gemini 3 Flash. These rows are excluded from the ranking;
+all other rows use GPT-6 </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>linking it to time-stamped original
+evidence supports this process: relevant statements
+can be located together and checked against the
+5
+Table 3: BEAM-100K results (%) on 400 questions. Capability columns report mean nugget scores; the final
+columns report overall nugget score and pass rate.
+Method IE MR TR KU CR EO IF PF SUM ABS Nugget Pass
+Full Context82.8650.25 41.25 50.00 25.63 36.95 56.25 84.3849.1432.50 50.92 55.25
+A-Mem 76.82 54.30 41.25 46.25 23.44 39.78 66.88 86.25 40.11 30.00 50.51 55.75
+Mem0 62.29 50.50 28.7558.7530.00 43.99 68.12 86.8835.70 25.00 49.00 53.25
+MemoryOS 60.9460.4934.38 39.38 26.88 32.93 63.75 82.08 36.2442.5047.96 50.75
+Nemori 63.96 48.59 24.38 46.25 24.06 41.4173.7585.00 44.72 27.50 47.96 51.50
+LightMem 62.29 52.88 31.87 42.50 30.31 29.72 61.25 77.50 18.37 28.75 43.54 47.00
+E-mem 59.58 45.36 30.00 31.2551.5641.96 54.37 76.25 25.77 17.50 43.36 49.00
+SOMEM73.70 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 5 compares Full with component removals
+on all LoCoMo evaluation questions. We freeze
+memory and fix the Reader (GPT-6 Luna without
+reasoning effort) and query settings, changing only
+query-time access; w/o Topic restricts the Reader
+to Source records. Additional settings, context mea-
+surements, and paired results are provided in Ap-
+pendix C.1.
+Removing either Topic or Source reduces over-
+all accuracy, with paired confidence intervals ex-
+cluding zero in both cases (Table 9), supporting
+the complementary roles of organized content and
+original evidence. Topic groups dispersed facts into
+thematic entry points, and Source preserves the
+original details and context needed to verify them.
+Removing Source produces the larger decline, indi-
+cating that organized content complements rather
+than replaces the original records.
+The remaining components mainly shift accu-
+racy across </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>most Readers, and its accuracy averaged across
+6
+Table 4: LongMemEval-S LJ accuracy (%) on all 500 questions.
+Method KU MS SSA SSP SSU TR Overall
+Full Context92.3151.13 96.43 53.33 90.00 42.11 65.80
+A-Mem 75.64 49.62 96.43 30.00 92.86 45.86 62.80
+Mem0 91.03 60.90 76.79 73.33 91.43 62.41 72.80
+MemoryOS 73.08 36.09 87.50 66.67 72.86 30.08 53.00
+Nemori 79.49 51.88 82.14 33.33 92.86 60.15 66.40
+LightMem 91.67 75.5625.0086.6792.86 71.80 74.50
+E-mem 87.18 46.62 94.64 26.67 85.71 56.39 65.20
+SOMEM77.56 58.6599.1173.33 98.57 73.31 76.50
+SOMEM † 91.03 83.46 100.00 76.67 100.00 90.23 90.20
+Writer and Reader: † DeepSeek V4 Flash. This row is excluded from the ranking; all other rows use GPT-6 Luna.
+Table 5: LoCoMo component ablations on all 1,540
+questions (LJ accuracy, %). Bold marks the Full refer-
+ence, not the best score.
+Condition SH MH OD TR Overall
+Full 94.53 83.33 59.38 88.16 88.96
+w/o </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 6: LoCoMo accuracy (%) for Writer–Reader combinations on all 1,540 questions. Each Writer&#x27;s frozen
+memory is reused by all Readers. Bold marks the best Reader for each Writer and task, including ties.
+Writer Reader SH MH OD TR Overall
+GPT-5.6
+Luna
+GPT-5.6 Luna 95.36 91.49 72.92 90.97 92.34
+Gemini 3 Flash 96.67 91.49 67.71 91.28 92.79
+DeepSeek V4 Flash96.7992.91 69.79 90.97 93.18
+Qwen 3.8 Flash 95.0193.97 73.96 93.77 93.25
+Gemini 3
+Flash
+GPT-5.6 Luna 96.08 91.13 64.58 90.03 91.95
+Gemini 3 Flash 94.89 91.13 63.54 89.72 91.17
+DeepSeek V4 Flash96.79 94.6860.4291.90 93.12
+Qwen 3.8 Flash 94.65 90.0766.6790.65 91.23
+DeepSeek V4
+Flash
+GPT-5.6 Luna 95.24 91.49 69.79 90.65 92.01
+Gemini 3 Flash96.9191.84 68.75 90.3492.86
+DeepSeek V4 Flash 95.9693.2665.6291.9092.73
+Qwen 3.8 Flash 92.39 89.0170.8390.97 90.13
+0 20 40 60 80 100
+Total Reader tokens / question (thousands)
+90
+91
+92
+93
+94
+95
+96LJ </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Full-dataset comparisons on three benchmarks and
+component ablations on LoCoMo primarily evalu-
+ate memory-based question answering over con-
+versation histories; they do not fully cover sus-
+tained personalization or task execution during
+long-term interaction. Reasoning-effort analyses
+use fixed subsets, and their trends warrant valida-
+tion on larger question sets and across repeated
+runs. Evaluation relies on LLM judges without sys-
+tematic human calibration and may be affected by
+judge biases.
+Component ablations restrict access to frozen
+memories rather than testing how memory would
+be reconstructed or reorganized after removing a
+component; each condition is a single run, and
+the overall effects of Core and individual derived
+views on LoCoMo fall within sampling uncertainty.
+Reasoning-effort settings also differ in implementa-
+tion across models and providers, so their labels </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generated answer of each evaluated item.
+Table 9: Paired accuracy changes relative to Full on all
+1,540 LoCoMo questions. Positive differences favor the
+ablated condition.
+Condition∆(pp) W→R R→W 95% CI (pp)
+w/o Topic−2.9265 110[−4.96,−0.88]
+w/o Core+0.0052 52[−1.16,+1.09]
+w/o Source−8.6428 161[−11.67,−6.11]
+w/o Recent−1.3044 64[−2.98,+0.30]
+w/o Timeline−0.9748 63[−2.54,+0.52]
+w/o Graph−0.9150 64[−2.65,+0.85]
+W→R and R→W count wrong-to-right and right-to-wrong
+changes. Intervals use 10,000 paired percentile bootstrap sam-
+ples (seed 20261031), resampling the ten conversations. They
+describe sampling uncertainty for the saved runs, not repeated-
+run variability; no multiple-comparison correction is applied.
+Source evidence once; E-mem reconstructs routed
+episodic evidence; and LightMem retrieves ex-
+tracted facts. The masking conditions restrict ac-
+cess to the same frozen SOMEMmemory. </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The following resource measurements supplement
+the Reader-only scaling analysis. Construction is
+counted once, whereas query resources accumulate
+over answered questions.
+Cost is concentrated in reusable input context.
+On the full LoCoMo benchmark, SOMEMreaches
+88.96% LJ accuracy at a total reference cost of
+$229.73, compared with $6.75 for Mem0 (80.32%),
+$6.46 for LightMem (77.99%), and $35.19 for A-
+Mem (60.06%) (Figure 6). Of this cost, $118.85
+is one-time construction, and querying costs about
+$0.07 per question. Input context dominates the
+usage, and 66.3% of input tokens are cache hits
+across the recorded calls; charging cached input at
+10% of the input price lowers the total to $96.33.
+The cross-model reuse experiment in Section 3.4
+shows how a construction cost can be shared across
+subsequent queries and Readers. In separate Reader
+runs, querying averages 5.2–7.4 model calls </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Benchmark / evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd>Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Relation to agentic memory</dt>
+              <dd>Evaluates memory behavior, safety, or retrieval in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 100/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: llm-agents, long-term-memory, benchmark, agent-memory, memory-systems</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-11</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-10 12:02:59</li><li>Last seen by Paper Scout: 2026-11-12 12:08:24</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.11929</li><li>arXiv: 2611.11929</li><li>OpenAlex: W7225736469</li><li>OpenAlex IDs: W7225736469</li><li>arXiv IDs: 2611.11929</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="can-llm-agents-organize-their-own-memory-1ceee382.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>Can LLM Agents Organize Their Own Memory?. Zichuan Fu, Junjia Qi, Wenlin Zhang, Yimin Deng, Shirong Wang, Jinyang Li, Xian Wu, Xiangyu Zhao. 2026-11-09. https://doi.org/10.48550/arxiv.2611.11929</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

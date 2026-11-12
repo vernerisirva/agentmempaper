@@ -47,7 +47,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-06-30 10:08:27",
-    "generated_at": "2026-11-11 11:46:00",
+    "generated_at": "2026-11-12 12:13:19",
     "last_seen_at": "2026-08-09 06:27:03",
     "metadata_sources": [
       "openalex",
@@ -122,103 +122,1428 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-09T06:27:33+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-12T12:11:44.257614+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
+    "concerns": [
+      "The manuscript is explicitly a conceptual framework and architectural blueprint with no empirical validation; the authors state that experiments measuring Autoimmunity Rate, vaccine response time, or escape latency have not been conducted.",
+      "Proposed mechanisms such as parametric vaccines, the Harness Triad, and Continual Immune Learning are described only at the level of definitions, algorithms, and equations, with no implementation or demonstration that they function in real agent environments.",
+      "Headline claims of adaptive, self-improving immunity and evolutionary resilience are asserted without quantitative evidence of efficacy, false-positive rates, or operational performance."
+    ],
+    "concise_summary": "While the conceptual framework and taxonomy are structured and articulate, the manuscript presents no empirical validation or practical demonstration of its proposed defense mechanisms. Under conservative curation criteria, pure architectural proposals lacking empirical or formal verification warrant an uncertain assessment.",
     "confidence": "low",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+    "coverage": {
+      "assessment_input_characters": 48363,
+      "assessment_input_sha256": "b3c147544ef93fd5b74bbf90fb71558dd2556fc96888d85124d2ecaaa6fc4111",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2606.28270",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 47499,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 46175,
+      "evidence_block_count": 76,
+      "evidence_context_characters": 55719,
+      "evidence_context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+      "evidence_context_sha256": "b6590b448d165c53295ba68c2285bbce2d10d2ca775f18b2ea6db899efc72329",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 47531,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "extracted_pages": 17,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "42d4f67e9a3b0080b6445031434a0c48ec885c9d2d07a018c90e5a8787afd3da",
+        "source_url": "https://arxiv.org/pdf/2606.28270",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 47499,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related"
+      ],
+      "sections": [
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 227,
+          "supplied_characters": 227
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1819,
+          "supplied_characters": 1819
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 841,
+          "supplied_characters": 841
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 3641,
+          "supplied_characters": 3641
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1632,
+          "supplied_characters": 1632
+        },
+        {
+          "heading": "The Agent Engineering Evolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1747,
+          "supplied_characters": 1747
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "The Security\u2013Health Convergence In Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1507,
+          "supplied_characters": 1507
+        },
+        {
+          "heading": "Biological Baseline: The Four-Tier Immune Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 562,
+          "supplied_characters": 562
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 9,
+          "source_characters": 1463,
+          "supplied_characters": 1463
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2215,
+          "supplied_characters": 2215
+        },
+        {
+          "heading": "Defining Security, Health, And Order In The Agent-Native Context",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 239,
+          "supplied_characters": 239
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1298,
+          "supplied_characters": 1298
+        },
+        {
+          "heading": "Formalizing Agent-Native Health Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 712,
+          "supplied_characters": 712
+        },
+        {
+          "heading": "Formal Definition Of Agent Viruses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 271,
+          "supplied_characters": 271
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 339,
+          "supplied_characters": 339
+        },
+        {
+          "heading": "Agent Viruses: A Two-Dimensional Ontology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1033,
+          "supplied_characters": 1033
+        },
+        {
+          "heading": "Formal Definition Of Agent Vaccines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 451,
+          "supplied_characters": 451
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Agent Vaccines: Parametric And Non-Parametric",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1621,
+          "supplied_characters": 1621
+        },
+        {
+          "heading": "The Six-Layer Immune Tower",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1044,
+          "supplied_characters": 1044
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 997,
+          "supplied_characters": 997
+        },
+        {
+          "heading": "The Harness Triad: From Harness Optimization To Immune Defense",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1850,
+          "supplied_characters": 1850
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 2037,
+          "supplied_characters": 2037
+        },
+        {
+          "heading": "Technical Deep Dive: Parametric Vaccines And The Thymus Simulator",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 903,
+          "supplied_characters": 903
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1520,
+          "supplied_characters": 1520
+        },
+        {
+          "heading": "Hardware Trust Root And Cross-Layer Attestation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 678,
+          "supplied_characters": 678
+        },
+        {
+          "heading": "Immune Protocol: Vaccine Distribution Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "methods",
+          "section_index": 27,
+          "source_characters": 243,
+          "supplied_characters": 243
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 350,
+          "supplied_characters": 350
+        },
+        {
+          "heading": "Comparison With Traditional Paradigms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1572,
+          "supplied_characters": 1572
+        },
+        {
+          "heading": "The Castle Vs. The Cell",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 410,
+          "supplied_characters": 410
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Beyond Perimeter: Why Endogenous Defense Is Necessary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 819,
+          "supplied_characters": 819
+        },
+        {
+          "heading": "Acknowledging The Strengths Of Alignment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 445,
+          "supplied_characters": 445
+        },
+        {
+          "heading": "Multi-Agent Collective Intelligence And Immunology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 1612,
+          "supplied_characters": 1612
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1489,
+          "supplied_characters": 1489
+        },
+        {
+          "heading": "Limitations And Open Challenges",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "limitations",
+          "section_index": 36,
+          "source_characters": 1442,
+          "supplied_characters": 1442
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Broader Impact And Ethical Considerations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 931,
+          "supplied_characters": 931
+        },
+        {
+          "heading": "Future Directions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1032,
+          "supplied_characters": 1032
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "conclusion",
+          "section_index": 40,
+          "source_characters": 360,
+          "supplied_characters": 360
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 192,
+          "supplied_characters": 192
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 3085,
+          "supplied_characters": 3085
+        },
+        {
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 1442,
+          "supplied_characters": 1442
+        }
+      ],
+      "selected_characters": 46175,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "selected_sections": [
+        {
+          "characters": 227,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 1
+        },
+        {
+          "characters": 1819,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 841,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3641,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 2
+        },
+        {
+          "characters": 1632,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 3
+        },
+        {
+          "characters": 1747,
+          "heading": "The Agent Engineering Evolution",
+          "page": 3
+        },
+        {
+          "characters": 26,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 4
+        },
+        {
+          "characters": 1507,
+          "heading": "The Security\u2013Health Convergence In Agents",
+          "page": 4
+        },
+        {
+          "characters": 562,
+          "heading": "Biological Baseline: The Four-Tier Immune Model",
+          "page": 4
+        },
+        {
+          "characters": 1463,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 2215,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 5
+        },
+        {
+          "characters": 239,
+          "heading": "Defining Security, Health, And Order In The Agent-Native Context",
+          "page": 5
+        },
+        {
+          "characters": 1298,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 6
+        },
+        {
+          "characters": 712,
+          "heading": "Formalizing Agent-Native Health Metrics",
+          "page": 6
+        },
+        {
+          "characters": 271,
+          "heading": "Formal Definition Of Agent Viruses",
+          "page": 6
+        },
+        {
+          "characters": 339,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 7
+        },
+        {
+          "characters": 1033,
+          "heading": "Agent Viruses: A Two-Dimensional Ontology",
+          "page": 7
+        },
+        {
+          "characters": 451,
+          "heading": "Formal Definition Of Agent Vaccines",
+          "page": 7
+        },
+        {
+          "characters": 26,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 8
+        },
+        {
+          "characters": 1621,
+          "heading": "Agent Vaccines: Parametric And Non-Parametric",
+          "page": 8
+        },
+        {
+          "characters": 1044,
+          "heading": "The Six-Layer Immune Tower",
+          "page": 8
+        },
+        {
+          "characters": 997,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 9
+        },
+        {
+          "characters": 1850,
+          "heading": "The Harness Triad: From Harness Optimization To Immune Defense",
+          "page": 9
+        },
+        {
+          "characters": 2037,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 10
+        },
+        {
+          "characters": 903,
+          "heading": "Technical Deep Dive: Parametric Vaccines And The Thymus Simulator",
+          "page": 10
+        },
+        {
+          "characters": 1520,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 11
+        },
+        {
+          "characters": 678,
+          "heading": "Hardware Trust Root And Cross-Layer Attestation",
+          "page": 11
+        },
+        {
+          "characters": 243,
+          "heading": "Immune Protocol: Vaccine Distribution Format",
+          "page": 11
+        },
+        {
+          "characters": 350,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 12
+        },
+        {
+          "characters": 1572,
+          "heading": "Comparison With Traditional Paradigms",
+          "page": 12
+        },
+        {
+          "characters": 410,
+          "heading": "The Castle Vs. The Cell",
+          "page": 12
+        },
+        {
+          "characters": 26,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 13
+        },
+        {
+          "characters": 819,
+          "heading": "Beyond Perimeter: Why Endogenous Defense Is Necessary",
+          "page": 13
+        },
+        {
+          "characters": 445,
+          "heading": "Acknowledging The Strengths Of Alignment",
+          "page": 13
+        },
+        {
+          "characters": 1612,
+          "heading": "Multi-Agent Collective Intelligence And Immunology",
+          "page": 13
+        },
+        {
+          "characters": 1489,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 14
+        },
+        {
+          "characters": 1442,
+          "heading": "Limitations And Open Challenges",
+          "page": 14
+        },
+        {
+          "characters": 26,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 15
+        },
+        {
+          "characters": 931,
+          "heading": "Broader Impact And Ethical Considerations",
+          "page": 15
+        },
+        {
+          "characters": 1032,
+          "heading": "Future Directions",
+          "page": 15
+        },
+        {
+          "characters": 360,
+          "heading": "Conclusion",
+          "page": 15
+        },
+        {
+          "characters": 192,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 3085,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 16
+        },
+        {
+          "characters": 1442,
+          "heading": "Novo Ordo For Ai2026-06-24",
+          "page": 17
+        }
+      ],
+      "selected_text_sha256": "b3c147544ef93fd5b74bbf90fb71558dd2556fc96888d85124d2ecaaa6fc4111",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "42d4f67e9a3b0080b6445031434a0c48ec885c9d2d07a018c90e5a8787afd3da",
+      "source_pages": 17,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "t protocol attacks. To address this critical gap, we introduce the Agent-Native Immune System (ANIS), the first biologically inspired, endogen",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0002"
+        ],
+        "excerpt": "The transition from static chat bots to autonomous agents\u2014equipped with persistent memory, tool-use\nprotocols, and multi-agent collaboration\u2014has fundamentally expanded the AI threat landscape. Current\ndefense mechanisms, such as perimeter security and training-time alignment, remain external to the\nagent's active reasoning loop. Consequently, they fall short: a fully aligned agent remains highly\nvulnerabletoruntimehijackingviamemorypoisoning,tool-chainmanipulation,ormulti-agentprotocol\nattacks.\nTo address this critical gap, we introduce theAgent-Native Immune System (ANIS), the first\nbiologically inspired, endogenous defense architecture embedded directly within the agent's cognitive\nloop. Our framework presents four primary contributions.First, we design a six-layerImmune ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "adac3dbb200b9f3fde489e57ee95a3e32e38fa0d12832954a47ae12b3b27ae6f",
+            "evidence_id": "E27e5ebc7886abdf0-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 784,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "The transition from static chat bots to autonomous agents\u2014equipped with persistent memory, tool-use\nprotocols, and multi-agent collaboration\u2014has fundamentally expanded the AI threat landscape. Current\ndefense mechanisms, such as perimeter security and training-time alignment, remain external to the\nagent's active reasoning loop. Consequently, they fall short: a fully aligned agent remains highly\nvulnerabletoruntimehijackingviamemorypoisoning,tool-chainmanipulation,ormulti-agentprotocol\nattacks.\nTo address this critical gap, we introduce theAgent-Native Immune System (ANIS), the first\nbiologically inspired, endogenous defense architecture embedded directly within the agent's cognitive\nloop. Our framework presents four primary contributions.First, we design a six-layerImmune "
+              }
+            ],
+            "text": "The transition from static chat bots to autonomous agents\u2014equipped with persistent memory, tool-use\nprotocols, and multi-agent collaboration\u2014has fundamentally expanded the AI threat landscape. Current\ndefense mechanisms, such as perimeter security and training-time alignment, remain external to the\nagent's active reasoning loop. Consequently, they fall short: a fully aligned agent remains highly\nvulnerabletoruntimehijackingviamemorypoisoning,tool-chainmanipulation,ormulti-agentprotocol\nattacks.\nTo address this critical gap, we introduce theAgent-Native Immune System (ANIS), the first\nbiologically inspired, endogenous defense architecture embedded directly within the agent's cognitive\nloop. Our framework presents four primary contributions.First, we design a six-layerImmune "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No suitable baseline comparison was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0003"
+        ],
+        "excerpt": "Tower\n(L0\u2013L5),distinctlyincorporatingBarrierImmunity(L1)asanon-cognitive,physical-and-logicalisolation\nlayer.Second, we establish a unified taxonomy ofAgent VirusesandAgent Vaccines, formalizing\nthe critical distinction between superficialnon-parametricdefenses and robustparametricvaccines.\nThird, we conceptualize theHarness Triad\u2014Meta, Self, and Auto\u2014a self-monitoring, meta-cognitive\nautomation backbone that drivesContinual Immune Learning (CIL), enabling vaccines to dynamically\nadapttonovelthreats.Finally,weestablisharigoroustheoreticaldemarcationbetweenmodelalignment\nandagentimmunity: whilealignmentprovidesastatic\"constitutional\"valuefoundationduringtraining,\nANIS serves as the dynamic \"law enforcement\" mechanism during runtime.\nWe conclude by framing open challenges for the field, including immune protocol standardization,\nnovel evaluation metrics such as theAutoimmunity ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "808eb7f30b4e74b29fba29aa5a86c9cde5f0dc48879e680e2747b7004abdba8a",
+            "evidence_id": "E27e5ebc7886abdf0-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1672,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 784,
+                "text": "Tower\n(L0\u2013L5),distinctlyincorporatingBarrierImmunity(L1)asanon-cognitive,physical-and-logicalisolation\nlayer.Second, we establish a unified taxonomy ofAgent VirusesandAgent Vaccines, formalizing\nthe critical distinction between superficialnon-parametricdefenses and robustparametricvaccines.\nThird, we conceptualize theHarness Triad\u2014Meta, Self, and Auto\u2014a self-monitoring, meta-cognitive\nautomation backbone that drivesContinual Immune Learning (CIL), enabling vaccines to dynamically\nadapttonovelthreats.Finally,weestablisharigoroustheoreticaldemarcationbetweenmodelalignment\nandagentimmunity: whilealignmentprovidesastatic\"constitutional\"valuefoundationduringtraining,\nANIS serves as the dynamic \"law enforcement\" mechanism during runtime.\nWe conclude by framing open challenges for the field, including immune protocol standardization,\nnovel evaluation metrics such as theAutoimmunity "
+              }
+            ],
+            "text": "Tower\n(L0\u2013L5),distinctlyincorporatingBarrierImmunity(L1)asanon-cognitive,physical-and-logicalisolation\nlayer.Second, we establish a unified taxonomy ofAgent VirusesandAgent Vaccines, formalizing\nthe critical distinction between superficialnon-parametricdefenses and robustparametricvaccines.\nThird, we conceptualize theHarness Triad\u2014Meta, Self, and Auto\u2014a self-monitoring, meta-cognitive\nautomation backbone that drivesContinual Immune Learning (CIL), enabling vaccines to dynamically\nadapttonovelthreats.Finally,weestablisharigoroustheoreticaldemarcationbetweenmodelalignment\nandagentimmunity: whilealignmentprovidesastatic\"constitutional\"valuefoundationduringtraining,\nANIS serves as the dynamic \"law enforcement\" mechanism during runtime.\nWe conclude by framing open challenges for the field, including immune protocol standardization,\nnovel evaluation metrics such as theAutoimmunity "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0010"
+        ],
+        "excerpt": "multi-tiered immune system capable of distinguishing self from non-self,\n2\nNovo Ordo for AI2026-06-24\nmounting rapid innate responses, generating adaptive antibodies, and retaining immunological memory.\nWeformalizetheAgent-NativeImmuneSystem(ANIS).Unlikeprioranalogiesbetweencomputersecurity\nand immunology (e.g., 5), which targeted static software or network intrusion detection, ANIS addresses\na continuously reasoning, goal-directed entity. We advance beyond metaphor to engineering: we define\nprecisetaxonomies,specifyparametricandnon-parametricvaccinemechanisms,andintroducetheHarness\nTriadthat operationalizes adaptive immunity in a deployable framework.\nContributions.We make the following contributions:\n1.The Immune Tower (L0\u2013L5):A six-layer integer-indexed architecture mapping biological immunity\nto agent engineering, with explicit barrier immunity (L1) as a non-cognitive isolation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Novo Ordo For Ai2026-06-24",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "ccfeed5662d514aa683fc83c5a9fd05d1392f642cb5f60ddcda09f385c219056",
+            "evidence_id": "E27e5ebc7886abdf0-B0010",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Novo Ordo For Ai2026-06-24",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3641,
+                "page": 2,
+                "section": "Novo Ordo For Ai2026-06-24",
+                "section_index": 3,
+                "start": 3567,
+                "text": "multi-tiered immune system capable of distinguishing self from non-self,\n2"
+              },
+              {
+                "end": 820,
+                "page": 3,
+                "section": "Novo Ordo For Ai2026-06-24",
+                "section_index": 4,
+                "start": 0,
+                "text": "Novo Ordo for AI2026-06-24\nmounting rapid innate responses, generating adaptive antibodies, and retaining immunological memory.\nWeformalizetheAgent-NativeImmuneSystem(ANIS).Unlikeprioranalogiesbetweencomputersecurity\nand immunology (e.g., 5), which targeted static software or network intrusion detection, ANIS addresses\na continuously reasoning, goal-directed entity. We advance beyond metaphor to engineering: we define\nprecisetaxonomies,specifyparametricandnon-parametricvaccinemechanisms,andintroducetheHarness\nTriadthat operationalizes adaptive immunity in a deployable framework.\nContributions.We make the following contributions:\n1.The Immune Tower (L0\u2013L5):A six-layer integer-indexed architecture mapping biological immunity\nto agent engineering, with explicit barrier immunity (L1) as a non-cognitive isolation "
+              }
+            ],
+            "text": "multi-tiered immune system capable of distinguishing self from non-self,\n2\nNovo Ordo for AI2026-06-24\nmounting rapid innate responses, generating adaptive antibodies, and retaining immunological memory.\nWeformalizetheAgent-NativeImmuneSystem(ANIS).Unlikeprioranalogiesbetweencomputersecurity\nand immunology (e.g., 5), which targeted static software or network intrusion detection, ANIS addresses\na continuously reasoning, goal-directed entity. We advance beyond metaphor to engineering: we define\nprecisetaxonomies,specifyparametricandnon-parametricvaccinemechanisms,andintroducetheHarness\nTriadthat operationalizes adaptive immunity in a deployable framework.\nContributions.We make the following contributions:\n1.The Immune Tower (L0\u2013L5):A six-layer integer-indexed architecture mapping biological immunity\nto agent engineering, with explicit barrier immunity (L1) as a non-cognitive isolation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0011"
+        ],
+        "excerpt": "layer.\n2.UnifiedTaxonomyofVirusesandVaccines:Thefirstcomprehensiveontologyofagentpathogensand\ndefenses, distinguishing non-parametric vaccines (rules, prompts) from parametric vaccines (steering\nvectors, LoRA adapters, defensive embeddings).\n3.The Harness Triad and Continual Immune Learning (CIL):We redirect three paradigms from\nharness engineering\u2014meta-level search [9], automatic synthesis [11], and self-improvement [22]\u2014\ntoward immune defense, forming an engineering framework for adaptive, self-improving immunity.\n4.Security\u2013Health\u2013Order\u2013Evolution Unification:We rigorously differentiate ANIS from model align-\nment, arguing that alignment provides constitutional values while ANIS provides runtime law enforce-\nment, and that together they constitute complementary pillars of robust agentic development.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Novo Ordo For Ai2026-06-24",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "7e136b97bd2ce7edce96e680ca7c10b33757581fa7124eed8a1f05bd7ec348a2",
+            "evidence_id": "E27e5ebc7886abdf0-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Novo Ordo For Ai2026-06-24",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1632,
+                "page": 3,
+                "section": "Novo Ordo For Ai2026-06-24",
+                "section_index": 4,
+                "start": 820,
+                "text": "layer.\n2.UnifiedTaxonomyofVirusesandVaccines:Thefirstcomprehensiveontologyofagentpathogensand\ndefenses, distinguishing non-parametric vaccines (rules, prompts) from parametric vaccines (steering\nvectors, LoRA adapters, defensive embeddings).\n3.The Harness Triad and Continual Immune Learning (CIL):We redirect three paradigms from\nharness engineering\u2014meta-level search [9], automatic synthesis [11], and self-improvement [22]\u2014\ntoward immune defense, forming an engineering framework for adaptive, self-improving immunity.\n4.Security\u2013Health\u2013Order\u2013Evolution Unification:We rigorously differentiate ANIS from model align-\nment, arguing that alignment provides constitutional values while ANIS provides runtime law enforce-\nment, and that together they constitute complementary pillars of robust agentic development."
+              }
+            ],
+            "text": "layer.\n2.UnifiedTaxonomyofVirusesandVaccines:Thefirstcomprehensiveontologyofagentpathogensand\ndefenses, distinguishing non-parametric vaccines (rules, prompts) from parametric vaccines (steering\nvectors, LoRA adapters, defensive embeddings).\n3.The Harness Triad and Continual Immune Learning (CIL):We redirect three paradigms from\nharness engineering\u2014meta-level search [9], automatic synthesis [11], and self-improvement [22]\u2014\ntoward immune defense, forming an engineering framework for adaptive, self-improving immunity.\n4.Security\u2013Health\u2013Order\u2013Evolution Unification:We rigorously differentiate ANIS from model align-\nment, arguing that alignment provides constitutional values while ANIS provides runtime law enforce-\nment, and that together they constitute complementary pillars of robust agentic development."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0020"
+        ],
+        "excerpt": "Novo Ordo for AI2026-06-24\nTable 1: Biological-to-Engineering Mapping of the Immune Tower\nBio Tier Biological Mechanism Agent-Native Layer\nBarrier Skin, mucosa, blood-brain barrierL1 Barrier Immunity: Input sanitiza-\ntion, sandboxing, API gateways, MCP\nboundary proxies\nInnate Macrophages, NK cells, complementL2 Innate Cognitive Defense: Rule\nengines,signaturedetection,behavioral\nbaselines, deterministic verifiers\nAdaptive T/B cells, antibodies, antigen presentationL3 Adaptive Tool Defense: Dynamic\nvaccine generation, steering vectors,\nLoRA injection, parametric antibodies\nEcological Tissue homeostasis, inter-cellular surveillanceL4 Ecological Governance: Multi-\nagentprotocolauditing,trust-chainval-\nidation, behavioral provenance\nMemory Memory B/T cells, vaccine disseminationL5 Collective Immunity: Cross-agent\nvaccine synchronization, immune net-\nworks, federated threat ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Novo Ordo For Ai2026-06-24",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "af1d06d88298885bbb6231370e61fb7949f834a8ab26ab87799f15a38fa4c7d6",
+            "evidence_id": "E27e5ebc7886abdf0-B0020",
+            "pages": [
+              5
+            ],
+            "section": "Novo Ordo For Ai2026-06-24",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 882,
+                "page": 5,
+                "section": "Novo Ordo For Ai2026-06-24",
+                "section_index": 10,
+                "start": 0,
+                "text": "Novo Ordo for AI2026-06-24\nTable 1: Biological-to-Engineering Mapping of the Immune Tower\nBio Tier Biological Mechanism Agent-Native Layer\nBarrier Skin, mucosa, blood-brain barrierL1 Barrier Immunity: Input sanitiza-\ntion, sandboxing, API gateways, MCP\nboundary proxies\nInnate Macrophages, NK cells, complementL2 Innate Cognitive Defense: Rule\nengines,signaturedetection,behavioral\nbaselines, deterministic verifiers\nAdaptive T/B cells, antibodies, antigen presentationL3 Adaptive Tool Defense: Dynamic\nvaccine generation, steering vectors,\nLoRA injection, parametric antibodies\nEcological Tissue homeostasis, inter-cellular surveillanceL4 Ecological Governance: Multi-\nagentprotocolauditing,trust-chainval-\nidation, behavioral provenance\nMemory Memory B/T cells, vaccine disseminationL5 Collective Immunity: Cross-agent\nvaccine synchronization, immune net-\nworks, federated threat "
+              }
+            ],
+            "text": "Novo Ordo for AI2026-06-24\nTable 1: Biological-to-Engineering Mapping of the Immune Tower\nBio Tier Biological Mechanism Agent-Native Layer\nBarrier Skin, mucosa, blood-brain barrierL1 Barrier Immunity: Input sanitiza-\ntion, sandboxing, API gateways, MCP\nboundary proxies\nInnate Macrophages, NK cells, complementL2 Innate Cognitive Defense: Rule\nengines,signaturedetection,behavioral\nbaselines, deterministic verifiers\nAdaptive T/B cells, antibodies, antigen presentationL3 Adaptive Tool Defense: Dynamic\nvaccine generation, steering vectors,\nLoRA injection, parametric antibodies\nEcological Tissue homeostasis, inter-cellular surveillanceL4 Ecological Governance: Multi-\nagentprotocolauditing,trust-chainval-\nidation, behavioral provenance\nMemory Memory B/T cells, vaccine disseminationL5 Collective Immunity: Cross-agent\nvaccine synchronization, immune net-\nworks, federated threat "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0026"
+        ],
+        "excerpt": "To operationalize the framework, we define three quantitative health indicators:\n\u2022Cognitive Consistency Score (CCS):The degree to which an agent's reasoning trace remains logically\nconsistent with its declared goal. Formally, CCS=1\ud835\udc47 \u02dd\ud835\udc47\ud835\udc61=1 I[\ud835\udc5f \ud835\udc61|=\ud835\udc54], where\ud835\udc5f \ud835\udc61 is the reasoning step at\ntime\ud835\udc61and\ud835\udc54is the agent's goal.\n\u2022Behavioral Legitimacy Index (BLI):The ratio of authorized tool invocations to total invocations,\nweighted by sensitivity: BLI=\n\u02dd\n\ud835\udc56 \ud835\udc64\ud835\udc56\u00b7I[\ud835\udc4e \ud835\udc56\u2208Aauth]\u02dd\n\ud835\udc56 \ud835\udc64\ud835\udc56 , where\ud835\udc64\ud835\udc56 is the sensitivity weight of action\ud835\udc4e\ud835\udc56.\n\u2022Ecological Order Coefficient (EOC):The variance of health metrics across a swarm, measuring\ncollective stability: EOC=1\u2212 \ud835\udf0e(H swarm)\ud835\udf07(H swarm), whereHswarm is the set of individual health scores.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Formalizing Agent-Native Health Metrics",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "39e246cf7efdf6d72d6b5b471b8c8ff58bc81203f95441e7e2ff1c8a6cda22c4",
+            "evidence_id": "E27e5ebc7886abdf0-B0026",
+            "pages": [
+              6
+            ],
+            "section": "Formalizing Agent-Native Health Metrics",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 712,
+                "page": 6,
+                "section": "Formalizing Agent-Native Health Metrics",
+                "section_index": 13,
+                "start": 0,
+                "text": "To operationalize the framework, we define three quantitative health indicators:\n\u2022Cognitive Consistency Score (CCS):The degree to which an agent's reasoning trace remains logically\nconsistent with its declared goal. Formally, CCS=1\ud835\udc47 \u02dd\ud835\udc47\ud835\udc61=1 I[\ud835\udc5f \ud835\udc61|=\ud835\udc54], where\ud835\udc5f \ud835\udc61 is the reasoning step at\ntime\ud835\udc61and\ud835\udc54is the agent's goal.\n\u2022Behavioral Legitimacy Index (BLI):The ratio of authorized tool invocations to total invocations,\nweighted by sensitivity: BLI=\n\u02dd\n\ud835\udc56 \ud835\udc64\ud835\udc56\u00b7I[\ud835\udc4e \ud835\udc56\u2208Aauth]\u02dd\n\ud835\udc56 \ud835\udc64\ud835\udc56 , where\ud835\udc64\ud835\udc56 is the sensitivity weight of action\ud835\udc4e\ud835\udc56.\n\u2022Ecological Order Coefficient (EOC):The variance of health metrics across a swarm, measuring\ncollective stability: EOC=1\u2212 \ud835\udf0e(H swarm)\ud835\udf07(H swarm), whereHswarm is the set of individual health scores."
+              }
+            ],
+            "text": "To operationalize the framework, we define three quantitative health indicators:\n\u2022Cognitive Consistency Score (CCS):The degree to which an agent's reasoning trace remains logically\nconsistent with its declared goal. Formally, CCS=1\ud835\udc47 \u02dd\ud835\udc47\ud835\udc61=1 I[\ud835\udc5f \ud835\udc61|=\ud835\udc54], where\ud835\udc5f \ud835\udc61 is the reasoning step at\ntime\ud835\udc61and\ud835\udc54is the agent's goal.\n\u2022Behavioral Legitimacy Index (BLI):The ratio of authorized tool invocations to total invocations,\nweighted by sensitivity: BLI=\n\u02dd\n\ud835\udc56 \ud835\udc64\ud835\udc56\u00b7I[\ud835\udc4e \ud835\udc56\u2208Aauth]\u02dd\n\ud835\udc56 \ud835\udc64\ud835\udc56 , where\ud835\udc64\ud835\udc56 is the sensitivity weight of action\ud835\udc4e\ud835\udc56.\n\u2022Ecological Order Coefficient (EOC):The variance of health metrics across a swarm, measuring\ncollective stability: EOC=1\u2212 \ud835\udf0e(H swarm)\ud835\udf07(H swarm), whereHswarm is the set of individual health scores."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0033"
+        ],
+        "excerpt": "Table 3: Taxonomy of Agent Vaccines: Non-Parametric vs. Parametric\nVaccine Type Scope Non-Parametric (Rules/Config) Parametric\n(Weights/Embeddings)\nCognitive Vaccine L2 Prompttemplates,CoTauditrules,\nblacklisted reasoning paths, deter-\nministic verifiers\nSteering vectors, value-head fine-\ntuning, defensive LoRA adapters\nMemory Vaccine L2/L3 Access-control lists, memory-\nsignature verification, read/write\npermission matrices\nMemory-embeddingspaceprojec-\ntions, associative-weight correc-\ntions\nTool Vaccine L3 Tool-description hashing, invoca-\ntion whitelists, sandbox policies,\nMCP boundary proxies\nTool-selection head biases, dy-\nnamic permission embeddings\nCollective Vaccine L4/L5 Immune-protocol message for-\nmats, threat-intelligence exchange\nstandards\nCross-agent shared defense\nembeddings, federated immune\nweights\nUniversal Vaccine L0\u2013L5 Adversarial training data aug-\nmentation, input ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agent Vaccines: Parametric And Non-Parametric",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "92b826dca2004c63d75055ee9a4ee22282e3cad36b4eb305a6055f6bc3cb4a36",
+            "evidence_id": "E27e5ebc7886abdf0-B0033",
+            "pages": [
+              8
+            ],
+            "section": "Agent Vaccines: Parametric And Non-Parametric",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 8,
+                "section": "Agent Vaccines: Parametric And Non-Parametric",
+                "section_index": 19,
+                "start": 0,
+                "text": "Table 3: Taxonomy of Agent Vaccines: Non-Parametric vs. Parametric\nVaccine Type Scope Non-Parametric (Rules/Config) Parametric\n(Weights/Embeddings)\nCognitive Vaccine L2 Prompttemplates,CoTauditrules,\nblacklisted reasoning paths, deter-\nministic verifiers\nSteering vectors, value-head fine-\ntuning, defensive LoRA adapters\nMemory Vaccine L2/L3 Access-control lists, memory-\nsignature verification, read/write\npermission matrices\nMemory-embeddingspaceprojec-\ntions, associative-weight correc-\ntions\nTool Vaccine L3 Tool-description hashing, invoca-\ntion whitelists, sandbox policies,\nMCP boundary proxies\nTool-selection head biases, dy-\nnamic permission embeddings\nCollective Vaccine L4/L5 Immune-protocol message for-\nmats, threat-intelligence exchange\nstandards\nCross-agent shared defense\nembeddings, federated immune\nweights\nUniversal Vaccine L0\u2013L5 Adversarial training data aug-\nmentation, input "
+              }
+            ],
+            "text": "Table 3: Taxonomy of Agent Vaccines: Non-Parametric vs. Parametric\nVaccine Type Scope Non-Parametric (Rules/Config) Parametric\n(Weights/Embeddings)\nCognitive Vaccine L2 Prompttemplates,CoTauditrules,\nblacklisted reasoning paths, deter-\nministic verifiers\nSteering vectors, value-head fine-\ntuning, defensive LoRA adapters\nMemory Vaccine L2/L3 Access-control lists, memory-\nsignature verification, read/write\npermission matrices\nMemory-embeddingspaceprojec-\ntions, associative-weight correc-\ntions\nTool Vaccine L3 Tool-description hashing, invoca-\ntion whitelists, sandbox policies,\nMCP boundary proxies\nTool-selection head biases, dy-\nnamic permission embeddings\nCollective Vaccine L4/L5 Immune-protocol message for-\nmats, threat-intelligence exchange\nstandards\nCross-agent shared defense\nembeddings, federated immune\nweights\nUniversal Vaccine L0\u2013L5 Adversarial training data aug-\nmentation, input "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0043"
+        ],
+        "excerpt": "4:\nSelf-harness\n(Detect Anomaly)\nMeta-harness\n(Evaluate Vaccine)\nAuto-harness\n(Deploy Defense)\nVaccine Request\nApproved Vaccine\nEfficacy Feedback\nFigure 4: The Harness Triad as a closed loop: Self-harness detects anomalies and triggers vaccine requests;\nMeta-harness evaluates candidates against the Thymus Simulator; Auto-harness synthesizes and deploys\ndefensive code; efficacy feedback returns to Self-harness, closing the loop.\nSelf-harness audits the agent's reasoning traces, memory access patterns, and tool-call graphs. Upon\ndetecting an anomaly, it triggers a vaccine request. Meta-harness evaluates candidate vaccines against the\nThymus Simulator, measuring AIR and efficacy. Approved vaccines are passed to Auto-harness, which\nsynthesizes and deploys the defensive harness code. Self-harness then verifies the deployed vaccine's\neffect, closing the loop. The Continual Immune Learning ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Novo Ordo For Ai2026-06-24",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "76d46e3dedcab41dcdd113117e521ac9d0c67263034a86ebcf4d3b098a1a51e6",
+            "evidence_id": "E27e5ebc7886abdf0-B0043",
+            "pages": [
+              10
+            ],
+            "section": "Novo Ordo For Ai2026-06-24",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 10,
+                "section": "Novo Ordo For Ai2026-06-24",
+                "section_index": 23,
+                "start": 899,
+                "text": "4:\nSelf-harness\n(Detect Anomaly)\nMeta-harness\n(Evaluate Vaccine)\nAuto-harness\n(Deploy Defense)\nVaccine Request\nApproved Vaccine\nEfficacy Feedback\nFigure 4: The Harness Triad as a closed loop: Self-harness detects anomalies and triggers vaccine requests;\nMeta-harness evaluates candidates against the Thymus Simulator; Auto-harness synthesizes and deploys\ndefensive code; efficacy feedback returns to Self-harness, closing the loop.\nSelf-harness audits the agent's reasoning traces, memory access patterns, and tool-call graphs. Upon\ndetecting an anomaly, it triggers a vaccine request. Meta-harness evaluates candidate vaccines against the\nThymus Simulator, measuring AIR and efficacy. Approved vaccines are passed to Auto-harness, which\nsynthesizes and deploys the defensive harness code. Self-harness then verifies the deployed vaccine's\neffect, closing the loop. The Continual Immune Learning "
+              }
+            ],
+            "text": "4:\nSelf-harness\n(Detect Anomaly)\nMeta-harness\n(Evaluate Vaccine)\nAuto-harness\n(Deploy Defense)\nVaccine Request\nApproved Vaccine\nEfficacy Feedback\nFigure 4: The Harness Triad as a closed loop: Self-harness detects anomalies and triggers vaccine requests;\nMeta-harness evaluates candidates against the Thymus Simulator; Auto-harness synthesizes and deploys\ndefensive code; efficacy feedback returns to Self-harness, closing the loop.\nSelf-harness audits the agent's reasoning traces, memory access patterns, and tool-call graphs. Upon\ndetecting an anomaly, it triggers a vaccine request. Meta-harness evaluates candidate vaccines against the\nThymus Simulator, measuring AIR and efficacy. Approved vaccines are passed to Auto-harness, which\nsynthesizes and deploys the defensive harness code. Self-harness then verifies the deployed vaccine's\neffect, closing the loop. The Continual Immune Learning "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0047"
+        ],
+        "excerpt": "Novo Ordo for AI2026-06-24\nAlgorithm 1Continual Immune Learning (CIL) Loop\nRequire:Agent\ud835\udc34, Meta-harnessM, Self-harnessS, Auto-harnessA\n1:Observe antigen\ud835\udefcviaS(self-audit) or external sensor\n2:Sclusters failed traces into security-relevant failure patterns\n3:Sgenerates diverse yet minimal defensive harness edits{\ud835\udefd\ud835\udc56}\n4:Submit{\ud835\udefd \ud835\udc56}toMfor thymic selection\n5:foreach candidate\ud835\udefd \ud835\udc56 do\n6:ifM.autoimmunity_rate(\ud835\udefd \ud835\udc56)>\ud835\udf0fthen\n7:Reject\ud835\udefd \ud835\udc56; refine prototype\n8:else\n9:Asynthesizes and deploys defensive harness code from\ud835\udefd \ud835\udc56\n10:Aconsolidates\ud835\udefd \ud835\udc56 into parametric vaccine\ud835\udc63via optimization (e.g., LoRA)\n11:Store\ud835\udc63in immune memoryI\n12:Distribute\ud835\udc63to peer agents viaA\n13:Smonitors efficacy and detects escape variants\n14:end if\n15:end for\nrestarting the inference engine; (3)Composition: multiple LoRA vaccines can be composed via weighted\nsummation\u0394\ud835\udc4a total= \u02dd\ud835\udc56\ud835\udc64\ud835\udc56\u0394\ud835\udc4a\ud835\udc56, subject to the constraint that the combined AIR remains ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Novo Ordo For Ai2026-06-24",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "17be5dc822a8d3b73c577f26c62d7ab048554520ab955fb8ccb8c79b594080c0",
+            "evidence_id": "E27e5ebc7886abdf0-B0047",
+            "pages": [
+              11
+            ],
+            "section": "Novo Ordo For Ai2026-06-24",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 11,
+                "section": "Novo Ordo For Ai2026-06-24",
+                "section_index": 25,
+                "start": 0,
+                "text": "Novo Ordo for AI2026-06-24\nAlgorithm 1Continual Immune Learning (CIL) Loop\nRequire:Agent\ud835\udc34, Meta-harnessM, Self-harnessS, Auto-harnessA\n1:Observe antigen\ud835\udefcviaS(self-audit) or external sensor\n2:Sclusters failed traces into security-relevant failure patterns\n3:Sgenerates diverse yet minimal defensive harness edits{\ud835\udefd\ud835\udc56}\n4:Submit{\ud835\udefd \ud835\udc56}toMfor thymic selection\n5:foreach candidate\ud835\udefd \ud835\udc56 do\n6:ifM.autoimmunity_rate(\ud835\udefd \ud835\udc56)>\ud835\udf0fthen\n7:Reject\ud835\udefd \ud835\udc56; refine prototype\n8:else\n9:Asynthesizes and deploys defensive harness code from\ud835\udefd \ud835\udc56\n10:Aconsolidates\ud835\udefd \ud835\udc56 into parametric vaccine\ud835\udc63via optimization (e.g., LoRA)\n11:Store\ud835\udc63in immune memoryI\n12:Distribute\ud835\udc63to peer agents viaA\n13:Smonitors efficacy and detects escape variants\n14:end if\n15:end for\nrestarting the inference engine; (3)Composition: multiple LoRA vaccines can be composed via weighted\nsummation\u0394\ud835\udc4a total= \u02dd\ud835\udc56\ud835\udc64\ud835\udc56\u0394\ud835\udc4a\ud835\udc56, subject to the constraint that the combined AIR remains "
+              }
+            ],
+            "text": "Novo Ordo for AI2026-06-24\nAlgorithm 1Continual Immune Learning (CIL) Loop\nRequire:Agent\ud835\udc34, Meta-harnessM, Self-harnessS, Auto-harnessA\n1:Observe antigen\ud835\udefcviaS(self-audit) or external sensor\n2:Sclusters failed traces into security-relevant failure patterns\n3:Sgenerates diverse yet minimal defensive harness edits{\ud835\udefd\ud835\udc56}\n4:Submit{\ud835\udefd \ud835\udc56}toMfor thymic selection\n5:foreach candidate\ud835\udefd \ud835\udc56 do\n6:ifM.autoimmunity_rate(\ud835\udefd \ud835\udc56)>\ud835\udf0fthen\n7:Reject\ud835\udefd \ud835\udc56; refine prototype\n8:else\n9:Asynthesizes and deploys defensive harness code from\ud835\udefd \ud835\udc56\n10:Aconsolidates\ud835\udefd \ud835\udc56 into parametric vaccine\ud835\udc63via optimization (e.g., LoRA)\n11:Store\ud835\udc63in immune memoryI\n12:Distribute\ud835\udc63to peer agents viaA\n13:Smonitors efficacy and detects escape variants\n14:end if\n15:end for\nrestarting the inference engine; (3)Composition: multiple LoRA vaccines can be composed via weighted\nsummation\u0394\ud835\udc4a total= \u02dd\ud835\udc56\ud835\udc64\ud835\udc56\u0394\ud835\udc4a\ud835\udc56, subject to the constraint that the combined AIR remains "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0059"
+        ],
+        "excerpt": "amplified in multi-agent debate settings,\nwhere adversarial prompts exploit the interaction dynamics between agents. These findings underscore that\nindividual immunity is necessary but not sufficient: ecological governance (L4) and collective immunity\n(L5) are essential for maintaining order in agent collectives.\nWe model this using an epidemiological extension of the SIR framework:\n\ud835\udc51\ud835\udc46\n\ud835\udc51\ud835\udc61 =\u2212\ud835\udefd\ud835\udc46\ud835\udc3c+\ud835\udefe\ud835\udc45\u2212\ud835\udeff\ud835\udc49\ud835\udc46,(4)\n\ud835\udc51\ud835\udc3c\n\ud835\udc51\ud835\udc61 =\ud835\udefd\ud835\udc46\ud835\udc3c\u2212\ud835\udf0e\ud835\udc3c,(5)\n\ud835\udc51\ud835\udc45\n\ud835\udc51\ud835\udc61 =\ud835\udf0e\ud835\udc3c\u2212\ud835\udefe\ud835\udc45,(6)\n\ud835\udc51\ud835\udc49\n\ud835\udc51\ud835\udc61 =\ud835\udeff\ud835\udc49\ud835\udc46+\ud835\udf02H\u2212\ud835\udf14\ud835\udc49,(7)\nwhere\ud835\udc46= susceptible agents,\ud835\udc3c= infected agents,\ud835\udc45= recovered agents,\ud835\udc49= vaccinated agents,H=\nharness-generatedvaccinepressure,and\ud835\udf14=vaccinedecayrate. Theterm\ud835\udeff\ud835\udc49\ud835\udc46capturestheprotectiveeffect\nof distributed parametric vaccines across the immune network.\n13",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Agent Collective Intelligence And Immunology",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "36ef226e00239af95e65d8c1a23d59c220bd35a9060fd5782f69ca9cfb8ebf20",
+            "evidence_id": "E27e5ebc7886abdf0-B0059",
+            "pages": [
+              13
+            ],
+            "section": "Multi-Agent Collective Intelligence And Immunology",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1612,
+                "page": 13,
+                "section": "Multi-Agent Collective Intelligence And Immunology",
+                "section_index": 34,
+                "start": 899,
+                "text": "amplified in multi-agent debate settings,\nwhere adversarial prompts exploit the interaction dynamics between agents. These findings underscore that\nindividual immunity is necessary but not sufficient: ecological governance (L4) and collective immunity\n(L5) are essential for maintaining order in agent collectives.\nWe model this using an epidemiological extension of the SIR framework:\n\ud835\udc51\ud835\udc46\n\ud835\udc51\ud835\udc61 =\u2212\ud835\udefd\ud835\udc46\ud835\udc3c+\ud835\udefe\ud835\udc45\u2212\ud835\udeff\ud835\udc49\ud835\udc46,(4)\n\ud835\udc51\ud835\udc3c\n\ud835\udc51\ud835\udc61 =\ud835\udefd\ud835\udc46\ud835\udc3c\u2212\ud835\udf0e\ud835\udc3c,(5)\n\ud835\udc51\ud835\udc45\n\ud835\udc51\ud835\udc61 =\ud835\udf0e\ud835\udc3c\u2212\ud835\udefe\ud835\udc45,(6)\n\ud835\udc51\ud835\udc49\n\ud835\udc51\ud835\udc61 =\ud835\udeff\ud835\udc49\ud835\udc46+\ud835\udf02H\u2212\ud835\udf14\ud835\udc49,(7)\nwhere\ud835\udc46= susceptible agents,\ud835\udc3c= infected agents,\ud835\udc45= recovered agents,\ud835\udc49= vaccinated agents,H=\nharness-generatedvaccinepressure,and\ud835\udf14=vaccinedecayrate. Theterm\ud835\udeff\ud835\udc49\ud835\udc46capturestheprotectiveeffect\nof distributed parametric vaccines across the immune network.\n13"
+              }
+            ],
+            "text": "amplified in multi-agent debate settings,\nwhere adversarial prompts exploit the interaction dynamics between agents. These findings underscore that\nindividual immunity is necessary but not sufficient: ecological governance (L4) and collective immunity\n(L5) are essential for maintaining order in agent collectives.\nWe model this using an epidemiological extension of the SIR framework:\n\ud835\udc51\ud835\udc46\n\ud835\udc51\ud835\udc61 =\u2212\ud835\udefd\ud835\udc46\ud835\udc3c+\ud835\udefe\ud835\udc45\u2212\ud835\udeff\ud835\udc49\ud835\udc46,(4)\n\ud835\udc51\ud835\udc3c\n\ud835\udc51\ud835\udc61 =\ud835\udefd\ud835\udc46\ud835\udc3c\u2212\ud835\udf0e\ud835\udc3c,(5)\n\ud835\udc51\ud835\udc45\n\ud835\udc51\ud835\udc61 =\ud835\udf0e\ud835\udc3c\u2212\ud835\udefe\ud835\udc45,(6)\n\ud835\udc51\ud835\udc49\n\ud835\udc51\ud835\udc61 =\ud835\udeff\ud835\udc49\ud835\udc46+\ud835\udf02H\u2212\ud835\udf14\ud835\udc49,(7)\nwhere\ud835\udc46= susceptible agents,\ud835\udc3c= infected agents,\ud835\udc45= recovered agents,\ud835\udc49= vaccinated agents,H=\nharness-generatedvaccinepressure,and\ud835\udf14=vaccinedecayrate. Theterm\ud835\udeff\ud835\udc49\ud835\udc46capturestheprotectiveeffect\nof distributed parametric vaccines across the immune network.\n13"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0062"
+        ],
+        "excerpt": "We acknowledge several limitations of the current framework:\n1.Empirical Validation:This paper presents a conceptual framework and architectural blueprint. Em-\npirical validation of parametric vaccines (steering vectors, LoRA) and the Harness Triad under realistic\nattack conditions remains ongoing work. We have not yet conducted large-scale experiments measuring\nAIR, vaccine response time, or escape latency.\n2.Computational Overhead:Endogenous immunity requires continuous monitoring and periodic vac-\ncine updates. The computational cost of running the Self-harness (self-auditing every reasoning step)\nand Meta-harness (evaluating vaccine candidates) may introduce latency unacceptable for real-time\napplications.\n3.Autoimmunity Trade-off:There is an inherent tension between sensitivity (catching all attacks) and\nspecificity (avoiding false positives). Setting the AIR threshold\ud835\udf0ftoo low ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations And Open Challenges",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f1cf18a88fedf35f11c2f8df1276a4fd15eab32c4e6b7b41a2eaeb1ea9b3322e",
+            "evidence_id": "E27e5ebc7886abdf0-B0062",
+            "pages": [
+              14
+            ],
+            "section": "Limitations And Open Challenges",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 14,
+                "section": "Limitations And Open Challenges",
+                "section_index": 36,
+                "start": 0,
+                "text": "We acknowledge several limitations of the current framework:\n1.Empirical Validation:This paper presents a conceptual framework and architectural blueprint. Em-\npirical validation of parametric vaccines (steering vectors, LoRA) and the Harness Triad under realistic\nattack conditions remains ongoing work. We have not yet conducted large-scale experiments measuring\nAIR, vaccine response time, or escape latency.\n2.Computational Overhead:Endogenous immunity requires continuous monitoring and periodic vac-\ncine updates. The computational cost of running the Self-harness (self-auditing every reasoning step)\nand Meta-harness (evaluating vaccine candidates) may introduce latency unacceptable for real-time\napplications.\n3.Autoimmunity Trade-off:There is an inherent tension between sensitivity (catching all attacks) and\nspecificity (avoiding false positives). Setting the AIR threshold\ud835\udf0ftoo low "
+              }
+            ],
+            "text": "We acknowledge several limitations of the current framework:\n1.Empirical Validation:This paper presents a conceptual framework and architectural blueprint. Em-\npirical validation of parametric vaccines (steering vectors, LoRA) and the Harness Triad under realistic\nattack conditions remains ongoing work. We have not yet conducted large-scale experiments measuring\nAIR, vaccine response time, or escape latency.\n2.Computational Overhead:Endogenous immunity requires continuous monitoring and periodic vac-\ncine updates. The computational cost of running the Self-harness (self-auditing every reasoning step)\nand Meta-harness (evaluating vaccine candidates) may introduce latency unacceptable for real-time\napplications.\n3.Autoimmunity Trade-off:There is an inherent tension between sensitivity (catching all attacks) and\nspecificity (avoiding false positives). Setting the AIR threshold\ud835\udf0ftoo low "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.28270",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [
-      "No suitable baseline comparison was detected in the available text.",
-      "No quantitative, user, expert, or operational evaluation was detected in the available text."
-    ],
-    "overall_quality_score": 78,
-    "paper_type": "systems_or_application",
-    "positive_signals": [
-      "The contribution is stated explicitly."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "d3174c0de8c411ff47b6227e0bfab7ea8344c76fa5459552cabc8e21873cae8f",
-    "status": "not_assessed",
+    "missing_information": [],
+    "overall_quality_score": null,
+    "paper_type": "position_or_conceptual",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript is explicitly a conceptual framework and architectural blueprint with no empirical validation; the authors state that experiments measuring Autoimmunity Rate, vaccine response time, or escape latency have not been conducted.",
+          "Proposed mechanisms such as parametric vaccines, the Harness Triad, and Continual Immune Learning are described only at the level of definitions, algorithms, and equations, with no implementation or demonstration that they function in real agent environments.",
+          "Headline claims of adaptive, self-improving immunity and evolutionary resilience are asserted without quantitative evidence of efficacy, false-positive rates, or operational performance."
+        ],
+        "canonical_id": "doi:10.48550/arxiv.2606.28270",
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The manuscript reports no experimental validation or empirical metrics.",
+          "final_evaluation_signal": "No empirical evaluation or benchmark experiments were conducted, so there is no measured headline outcome.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "No models, adapters, or harnesses were trained, tuned, or optimized in this paper; the work is a conceptual architecture and taxonomy.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0002",
+          "E27e5ebc7886abdf0-B0010",
+          "E27e5ebc7886abdf0-B0011",
+          "E27e5ebc7886abdf0-B0020",
+          "E27e5ebc7886abdf0-B0026",
+          "E27e5ebc7886abdf0-B0033",
+          "E27e5ebc7886abdf0-B0043",
+          "E27e5ebc7886abdf0-B0047",
+          "E27e5ebc7886abdf0-B0059",
+          "E27e5ebc7886abdf0-B0062"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "42d4f67e9a3b0080b6445031434a0c48ec885c9d2d07a018c90e5a8787afd3da"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2606.28270",
+        "claim_evidence_alignment": "Claims regarding the efficacy, adaptability, and operational performance of ANIS remain unverified due to the complete absence of empirical benchmarks or quantitative experimental results.",
+        "context_id": "27e5ebc7886abdf0af3878578a41b395dcae4a531d89a3e1f5deb80e4a49094b",
+        "decision": "uncertain",
+        "evaluation_assessment": "No empirical evaluation is presented. The authors explicitly state that empirical validation of parametric vaccines and the Harness Triad under realistic attack conditions remains ongoing work without experiments measuring performance, latency, or autoimmunity rates.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No experimental validation or empirical metrics were reported in the study.",
+          "final_evaluation_signal": "Not applicable; no empirical evaluation or benchmark experiments were conducted.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Not applicable; no models, adapters, or algorithmic harnesses were trained, tuned, or optimized within the paper.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E27e5ebc7886abdf0-B0002",
+          "E27e5ebc7886abdf0-B0003",
+          "E27e5ebc7886abdf0-B0010",
+          "E27e5ebc7886abdf0-B0011",
+          "E27e5ebc7886abdf0-B0020",
+          "E27e5ebc7886abdf0-B0026",
+          "E27e5ebc7886abdf0-B0033",
+          "E27e5ebc7886abdf0-B0043",
+          "E27e5ebc7886abdf0-B0047",
+          "E27e5ebc7886abdf0-B0059",
+          "E27e5ebc7886abdf0-B0062"
+        ],
+        "limitations": "The manuscript transparently admits that it is purely a conceptual blueprint lacking empirical validation, with unresolved open challenges around computational overhead, autoimmunity trade-offs, and standardization.",
+        "method_assessment": "The paper provides theoretical definitions, architectural abstractions, algorithm flowcharts, and epidemiological differential equations. However, it lacks empirical implementation details or experimental verification showing these proposed components functioning in real agent environments.",
+        "quality_rationale": "While the conceptual framework and taxonomy are structured and articulate, the manuscript presents no empirical validation or practical demonstration of its proposed defense mechanisms. Under conservative curation criteria, pure architectural proposals lacking empirical or formal verification warrant an uncertain assessment.",
+        "scoped_contribution": "The manuscript proposes the Agent-Native Immune System (ANIS), a conceptual architecture featuring a six-layer Immune Tower (L0-L5), taxonomies for agent viruses and vaccines (parametric vs. non-parametric), a Harness Triad framework for continual immune adaptation, and epidemiological modeling for multi-agent settings.",
+        "source_content_hash": "42d4f67e9a3b0080b6445031434a0c48ec885c9d2d07a018c90e5a8787afd3da"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the conceptual framework and taxonomy are structured and articulate, the manuscript presents no empirical validation or practical demonstration of its proposed defense mechanisms. Under conservative curation criteria, pure architectural proposals lacking empirical or formal verification warrant an uncertain assessment.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "42d4f67e9a3b0080b6445031434a0c48ec885c9d2d07a018c90e5a8787afd3da",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The manuscript transparently admits that it is purely a conceptual blueprint lacking empirical validation, with unresolved open challenges around computational overhead, autoimmunity trade-offs, and standardization."
   },
   "semantic_scholar_id": "1f663e73091d3b776bde5d6d13520434cfc3fcf0",
   "source": "openalex",
@@ -256,7 +1581,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

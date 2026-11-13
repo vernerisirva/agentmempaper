@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-03 09:43:18",
-    "generated_at": "2026-11-12 12:13:19",
+    "generated_at": "2026-11-13 11:54:59",
     "last_seen_at": "2026-07-07 10:08:05",
     "metadata_sources": [
       "openalex",
@@ -113,36 +113,1165 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-11-13T11:53:46.975633+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The deployment is explicitly not a controlled experiment, with continuous architecture changes, human interventions, and prompt reframing occurring during the run, so the reported life-like dynamics cannot be isolated from experimenter influence.",
+      "The quantitative evaluation is minimal: memory retrieval is tested on only 12 queries with an LLM judge, and the verbal policy optimization mechanism is deferred to future work without quantitative validation.",
+      "The agents do not achieve self-sustaining persistence; the budget remains externally subsidized through a basic income, so the central claim of earn-to-survive autonomy is not yet demonstrated."
+    ],
+    "concise_summary": "While conceptually creative and intellectually honest regarding its limitations, the work lacks rigorous experimental controls and systematic comparative validation. Given the exploratory nature and heavy confounding factors during the 12-week deployment, scientific quality remains uncertain under conservative evaluation standards.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 45410,
+      "assessment_input_sha256": "4fd6f8d871b0bf04d44e244a310fbb08bd35e91fc7f7799126c62b1e9c525b66",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7167154363",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 44433,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 43995,
+      "evidence_block_count": 61,
+      "evidence_context_characters": 51520,
+      "evidence_context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+      "evidence_context_sha256": "db3f9f72276d4add805aeea5472a535a935dfb20d2f1cf5c8d10c0f43bc817f8",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 44451,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "extracted_pages": 10,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "b43245c79a8543d661b5246c5f9261276b80f72afad7378596b4e9edb137a398",
+        "source_url": "https://arxiv.org/pdf/2606.31046",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 44433,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "discussion",
+        "methods"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "discussion",
+        "methods"
+      ],
+      "sections": [
+        {
+          "heading": "Openlife: Toward Open-World Artificial Life With Autonomous Llm Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 308,
+          "supplied_characters": 308
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1290,
+          "supplied_characters": 1290
+        },
+        {
+          "heading": "Life As Self-Maintenance",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 2,
+          "source_characters": 1113,
+          "supplied_characters": 1113
+        },
+        {
+          "heading": "Why Open-World Artificial Life Now?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 2006,
+          "supplied_characters": 2006
+        },
+        {
+          "heading": "Why Open-World Artificial Life Now?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 2012,
+          "supplied_characters": 2012
+        },
+        {
+          "heading": "The Openlife Project",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 2051,
+          "supplied_characters": 2051
+        },
+        {
+          "heading": "Agent Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 1121,
+          "supplied_characters": 1121
+        },
+        {
+          "heading": "Growing A Self From Experience",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 568,
+          "supplied_characters": 568
+        },
+        {
+          "heading": "Growing A Self From Experience",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1070,
+          "supplied_characters": 1070
+        },
+        {
+          "heading": "Memory As A Semantically Plastic Graph",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 2122,
+          "supplied_characters": 2122
+        },
+        {
+          "heading": "Memory As A Semantically Plastic Graph",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2978,
+          "supplied_characters": 2978
+        },
+        {
+          "heading": "Reinforcement Through Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1345,
+          "supplied_characters": 1345
+        },
+        {
+          "heading": "Process Role",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 786,
+          "supplied_characters": 786
+        },
+        {
+          "heading": "A Society Of Internal Processes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 735,
+          "supplied_characters": 735
+        },
+        {
+          "heading": "Open-World Deployment And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 2564,
+          "supplied_characters": 2564
+        },
+        {
+          "heading": "Qualitative Case Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 977,
+          "supplied_characters": 977
+        },
+        {
+          "heading": "Qualitative Case Studies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 3697,
+          "supplied_characters": 3697
+        },
+        {
+          "heading": "Behavioral Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1176,
+          "supplied_characters": 1176
+        },
+        {
+          "heading": "Behavioral Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 4189,
+          "supplied_characters": 4189
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "discussion",
+          "section_index": 19,
+          "source_characters": 228,
+          "supplied_characters": 228
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "discussion",
+          "section_index": 20,
+          "source_characters": 4836,
+          "supplied_characters": 4836
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 21,
+          "source_characters": 877,
+          "supplied_characters": 877
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 57,
+          "supplied_characters": 57
+        },
+        {
+          "heading": "Who Contributed To The Continuing Operation Of The Open-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 114,
+          "supplied_characters": 114
+        },
+        {
+          "heading": "They Were Not Merely Objects Of Study But Participants In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 175,
+          "supplied_characters": 175
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 2002,
+          "supplied_characters": 2002
+        },
+        {
+          "heading": "Hipporag: Neurobiologically Inspired Long-Term Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1010,
+          "supplied_characters": 1010
+        },
+        {
+          "heading": "Replicating And Self-Employed Smart Contract On Ethereum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1674,
+          "supplied_characters": 1674
+        },
+        {
+          "heading": "Replicating And Self-Employed Smart Contract On Ethereum",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 914,
+          "supplied_characters": 914
+        }
+      ],
+      "selected_characters": 43995,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_sections": [
+        {
+          "characters": 308,
+          "heading": "Openlife: Toward Open-World Artificial Life With Autonomous Llm Agents",
+          "page": 1
+        },
+        {
+          "characters": 1290,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1113,
+          "heading": "Life As Self-Maintenance",
+          "page": 1
+        },
+        {
+          "characters": 2006,
+          "heading": "Why Open-World Artificial Life Now?",
+          "page": 1
+        },
+        {
+          "characters": 2012,
+          "heading": "Why Open-World Artificial Life Now?",
+          "page": 2
+        },
+        {
+          "characters": 2051,
+          "heading": "The Openlife Project",
+          "page": 2
+        },
+        {
+          "characters": 1121,
+          "heading": "Agent Architecture",
+          "page": 2
+        },
+        {
+          "characters": 568,
+          "heading": "Growing A Self From Experience",
+          "page": 2
+        },
+        {
+          "characters": 1070,
+          "heading": "Growing A Self From Experience",
+          "page": 3
+        },
+        {
+          "characters": 2122,
+          "heading": "Memory As A Semantically Plastic Graph",
+          "page": 3
+        },
+        {
+          "characters": 2978,
+          "heading": "Memory As A Semantically Plastic Graph",
+          "page": 4
+        },
+        {
+          "characters": 1345,
+          "heading": "Reinforcement Through Language",
+          "page": 4
+        },
+        {
+          "characters": 786,
+          "heading": "Process Role",
+          "page": 5
+        },
+        {
+          "characters": 735,
+          "heading": "A Society Of Internal Processes",
+          "page": 5
+        },
+        {
+          "characters": 2564,
+          "heading": "Open-World Deployment And",
+          "page": 5
+        },
+        {
+          "characters": 977,
+          "heading": "Qualitative Case Studies",
+          "page": 5
+        },
+        {
+          "characters": 3697,
+          "heading": "Qualitative Case Studies",
+          "page": 6
+        },
+        {
+          "characters": 1176,
+          "heading": "Behavioral Analysis",
+          "page": 6
+        },
+        {
+          "characters": 4189,
+          "heading": "Behavioral Analysis",
+          "page": 7
+        },
+        {
+          "characters": 228,
+          "heading": "Discussion",
+          "page": 7
+        },
+        {
+          "characters": 4836,
+          "heading": "Discussion",
+          "page": 8
+        },
+        {
+          "characters": 877,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 57,
+          "heading": "Back matter: Acknowledgments",
+          "page": 9
+        },
+        {
+          "characters": 114,
+          "heading": "Who Contributed To The Continuing Operation Of The Open-",
+          "page": 9
+        },
+        {
+          "characters": 175,
+          "heading": "They Were Not Merely Objects Of Study But Participants In",
+          "page": 9
+        },
+        {
+          "characters": 2002,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 1010,
+          "heading": "Hipporag: Neurobiologically Inspired Long-Term Memory",
+          "page": 9
+        },
+        {
+          "characters": 1674,
+          "heading": "Replicating And Self-Employed Smart Contract On Ethereum",
+          "page": 9
+        },
+        {
+          "characters": 914,
+          "heading": "Replicating And Self-Employed Smart Contract On Ethereum",
+          "page": 10
+        }
+      ],
+      "selected_text_sha256": "4fd6f8d871b0bf04d44e244a310fbb08bd35e91fc7f7799126c62b1e9c525b66",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "b43245c79a8543d661b5246c5f9261276b80f72afad7378596b4e9edb137a398",
+      "source_pages": 10,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0002"
+        ],
+        "excerpt": "Artificial life has explored life-like behavior on many compu-\ntational substrates, but mostly in researcher-designed closed\nworlds. We argue that large language model (LLM) agents\u2014\nwith persistent memory, tool use, network access, and\npayment\u2014now make it possible to move artificial life into\nthe open social, technical, and economic world, a paradigm\nwe callopen-world Artificial Life(open-world ALIFE). Our\nproof-of-concept, OpenLife, surrounds a stateless LLM not\nwith a single \"smart agent\" but with a society of asyn-\nchronous processes\u2014memory, perception, evaluation, and a\nbudget-based metabolism that makes persistence normative.\nWith no fixed objective available, experience is appraised by\nopen-vocabulary LLM judgment rather than scalar reward,\nand memory is rewired by meaning rather than frequency.\nRunning six such agents in the open world for about twelve\nweeks and counting, we ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a96462e0d490b23b6e56fbcdaef8cf8e2c4cf5470486b2a7f0dac54e576f6411",
+            "evidence_id": "E6d4423f27a0eb451-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Artificial life has explored life-like behavior on many compu-\ntational substrates, but mostly in researcher-designed closed\nworlds. We argue that large language model (LLM) agents\u2014\nwith persistent memory, tool use, network access, and\npayment\u2014now make it possible to move artificial life into\nthe open social, technical, and economic world, a paradigm\nwe callopen-world Artificial Life(open-world ALIFE). Our\nproof-of-concept, OpenLife, surrounds a stateless LLM not\nwith a single \"smart agent\" but with a society of asyn-\nchronous processes\u2014memory, perception, evaluation, and a\nbudget-based metabolism that makes persistence normative.\nWith no fixed objective available, experience is appraised by\nopen-vocabulary LLM judgment rather than scalar reward,\nand memory is rewired by meaning rather than frequency.\nRunning six such agents in the open world for about twelve\nweeks and counting, we "
+              }
+            ],
+            "text": "Artificial life has explored life-like behavior on many compu-\ntational substrates, but mostly in researcher-designed closed\nworlds. We argue that large language model (LLM) agents\u2014\nwith persistent memory, tool use, network access, and\npayment\u2014now make it possible to move artificial life into\nthe open social, technical, and economic world, a paradigm\nwe callopen-world Artificial Life(open-world ALIFE). Our\nproof-of-concept, OpenLife, surrounds a stateless LLM not\nwith a single \"smart agent\" but with a society of asyn-\nchronous processes\u2014memory, perception, evaluation, and a\nbudget-based metabolism that makes persistence normative.\nWith no fixed objective available, experience is appraised by\nopen-vocabulary LLM judgment rather than scalar reward,\nand memory is rewired by meaning rather than frequency.\nRunning six such agents in the open world for about twelve\nweeks and counting, we "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0012"
+        ],
+        "excerpt": "reactions. We do not claim that OpenLife has\nrealized artificial life or full autonomy, but that it provides a\npractical platform in which the conditions for such life-like\ndynamics can be constructed, observed, and tested.\nOpenLife sits among recent agentic frameworks but dif-\nfers in aim: where most build automation around a lan-\nguage model, we treat agency as distributed across a soci-\nety of processes organized around the agent's own persis-\ntence, in the spirit of the Society of Mind (Minsky, 1986)\nand the Concurrent Modular Agent framework (Maruyama\net al., 2025). The paper's primary contribution is therefore\nconceptual\u2014we proposeopen-world ALIFEas an experi-\nmental paradigm built on persistent LLM agents in the real\nworld\u2014and the rest of the paper serves as a proof of con-\ncept for it: the OpenLife architecture (Section 2) and a con-\ntinuous open-world deployment whose emerging ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Openlife Project",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "488b25328d5cf5a72d5338ca73880fb04c017320638d74a87ebe09b07c180d76",
+            "evidence_id": "E6d4423f27a0eb451-B0012",
+            "pages": [
+              2
+            ],
+            "section": "The Openlife Project",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1789,
+                "page": 2,
+                "section": "The Openlife Project",
+                "section_index": 5,
+                "start": 890,
+                "text": "reactions. We do not claim that OpenLife has\nrealized artificial life or full autonomy, but that it provides a\npractical platform in which the conditions for such life-like\ndynamics can be constructed, observed, and tested.\nOpenLife sits among recent agentic frameworks but dif-\nfers in aim: where most build automation around a lan-\nguage model, we treat agency as distributed across a soci-\nety of processes organized around the agent's own persis-\ntence, in the spirit of the Society of Mind (Minsky, 1986)\nand the Concurrent Modular Agent framework (Maruyama\net al., 2025). The paper's primary contribution is therefore\nconceptual\u2014we proposeopen-world ALIFEas an experi-\nmental paradigm built on persistent LLM agents in the real\nworld\u2014and the rest of the paper serves as a proof of con-\ncept for it: the OpenLife architecture (Section 2) and a con-\ntinuous open-world deployment whose emerging "
+              }
+            ],
+            "text": "reactions. We do not claim that OpenLife has\nrealized artificial life or full autonomy, but that it provides a\npractical platform in which the conditions for such life-like\ndynamics can be constructed, observed, and tested.\nOpenLife sits among recent agentic frameworks but dif-\nfers in aim: where most build automation around a lan-\nguage model, we treat agency as distributed across a soci-\nety of processes organized around the agent's own persis-\ntence, in the spirit of the Society of Mind (Minsky, 1986)\nand the Concurrent Modular Agent framework (Maruyama\net al., 2025). The paper's primary contribution is therefore\nconceptual\u2014we proposeopen-world ALIFEas an experi-\nmental paradigm built on persistent LLM agents in the real\nworld\u2014and the rest of the paper serves as a proof of con-\ncept for it: the OpenLife architecture (Section 2) and a con-\ntinuous open-world deployment whose emerging "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0016"
+        ],
+        "excerpt": "Since the base model already carries a vast prior over causes,\nconventions, and behavior, OpenLife stores primarily the\nresidualspecific to this agent and this environment, orga-\nnized as three layers that run from raw experience to a rel-\natively stable self-description (Figure 1).(A) Substrate\nis a raw memory graph of atomic propositions linked by\ntyped edges, weighted by the LLM's semantic judgment\n(Section 2.2).(B) Abstractionconsists of sub-graphs pro-\nmoted from A\u2014action\u2192outcomeexperienceand corrobo-\nratedcausalregularities.(C) Distillateconsists of small,\nFigure 1: The OpenLife architecture as three abstraction layers\u2014(A) Substrate\u2192(B) Abstraction\u2192(C) Distillate, defined in\nthe text. Support modules (gray) handle perception, memory maintenance, and agent-facing functions; the learning machinery\nreads memory via two LLM-free routes,retrieve(substrate) andprediction(causal ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Growing A Self From Experience",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "2dcc2c03e7cbf00861f60bbd54be222d5bd184b0791635cb9f4377da7574f125",
+            "evidence_id": "E6d4423f27a0eb451-B0016",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Growing A Self From Experience",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 568,
+                "page": 2,
+                "section": "Growing A Self From Experience",
+                "section_index": 7,
+                "start": 0,
+                "text": "Since the base model already carries a vast prior over causes,\nconventions, and behavior, OpenLife stores primarily the\nresidualspecific to this agent and this environment, orga-\nnized as three layers that run from raw experience to a rel-\natively stable self-description (Figure 1).(A) Substrate\nis a raw memory graph of atomic propositions linked by\ntyped edges, weighted by the LLM's semantic judgment\n(Section 2.2).(B) Abstractionconsists of sub-graphs pro-\nmoted from A\u2014action\u2192outcomeexperienceand corrobo-\nratedcausalregularities.(C) Distillateconsists of small,"
+              },
+              {
+                "end": 322,
+                "page": 3,
+                "section": "Growing A Self From Experience",
+                "section_index": 8,
+                "start": 0,
+                "text": "Figure 1: The OpenLife architecture as three abstraction layers\u2014(A) Substrate\u2192(B) Abstraction\u2192(C) Distillate, defined in\nthe text. Support modules (gray) handle perception, memory maintenance, and agent-facing functions; the learning machinery\nreads memory via two LLM-free routes,retrieve(substrate) andprediction(causal "
+              }
+            ],
+            "text": "Since the base model already carries a vast prior over causes,\nconventions, and behavior, OpenLife stores primarily the\nresidualspecific to this agent and this environment, orga-\nnized as three layers that run from raw experience to a rel-\natively stable self-description (Figure 1).(A) Substrate\nis a raw memory graph of atomic propositions linked by\ntyped edges, weighted by the LLM's semantic judgment\n(Section 2.2).(B) Abstractionconsists of sub-graphs pro-\nmoted from A\u2014action\u2192outcomeexperienceand corrobo-\nratedcausalregularities.(C) Distillateconsists of small,\nFigure 1: The OpenLife architecture as three abstraction layers\u2014(A) Substrate\u2192(B) Abstraction\u2192(C) Distillate, defined in\nthe text. Support modules (gray) handle perception, memory maintenance, and agent-facing functions; the learning machinery\nreads memory via two LLM-free routes,retrieve(substrate) andprediction(causal "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0022"
+        ],
+        "excerpt": "the mem-\nory is ultimatelyfor: retrieval. On the 82 files from which\nthe graph was built, twelve queries (factual, relational, af-\nMethod Rel. Win Tok/q\nVector (prop) 1.83\u00b10.97 0.17 93\nVector (file) 2.00\u00b10.98 0.15 2,274\nIndex-based 2.36\u00b10.87 0.28 20,226\nSDP-graph 2.53\u00b10.77 0.40721\nTable 1: Preliminary end-to-end retrieval quality on agent\nsami's memory (82-file corpus,n=12).Rel.: answer rele-\nvance (0\u20133, mean\u00b1SD);Win: share of queries judged most\nrelevant;Tok/q: LLM input tokens per query. Answercov-\nerage(breadth), not shown as a column, is instead highest\nfor the index-based baseline (see text).\nfective, procedural, temporal) were answered end-to-end\nby each method and scored by a blinded LLM judge (Ta-\nble 1). Against vector similarity and an index-based base-\nline\u2014which feeds the whole memory's keyword index to\nthe LLM\u2014SDP-graph traversal attains the highest relevance\n(2.53of3) and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory As A Semantically Plastic Graph",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "79de6f799a7b94e8e89b53d70559deebe8bdb348eeb2fc05df0c80c55e3f2025",
+            "evidence_id": "E6d4423f27a0eb451-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Memory As A Semantically Plastic Graph",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2358,
+                "page": 4,
+                "section": "Memory As A Semantically Plastic Graph",
+                "section_index": 10,
+                "start": 1459,
+                "text": "the mem-\nory is ultimatelyfor: retrieval. On the 82 files from which\nthe graph was built, twelve queries (factual, relational, af-\nMethod Rel. Win Tok/q\nVector (prop) 1.83\u00b10.97 0.17 93\nVector (file) 2.00\u00b10.98 0.15 2,274\nIndex-based 2.36\u00b10.87 0.28 20,226\nSDP-graph 2.53\u00b10.77 0.40721\nTable 1: Preliminary end-to-end retrieval quality on agent\nsami's memory (82-file corpus,n=12).Rel.: answer rele-\nvance (0\u20133, mean\u00b1SD);Win: share of queries judged most\nrelevant;Tok/q: LLM input tokens per query. Answercov-\nerage(breadth), not shown as a column, is instead highest\nfor the index-based baseline (see text).\nfective, procedural, temporal) were answered end-to-end\nby each method and scored by a blinded LLM judge (Ta-\nble 1). Against vector similarity and an index-based base-\nline\u2014which feeds the whole memory's keyword index to\nthe LLM\u2014SDP-graph traversal attains the highest relevance\n(2.53of3) and "
+              }
+            ],
+            "text": "the mem-\nory is ultimatelyfor: retrieval. On the 82 files from which\nthe graph was built, twelve queries (factual, relational, af-\nMethod Rel. Win Tok/q\nVector (prop) 1.83\u00b10.97 0.17 93\nVector (file) 2.00\u00b10.98 0.15 2,274\nIndex-based 2.36\u00b10.87 0.28 20,226\nSDP-graph 2.53\u00b10.77 0.40721\nTable 1: Preliminary end-to-end retrieval quality on agent\nsami's memory (82-file corpus,n=12).Rel.: answer rele-\nvance (0\u20133, mean\u00b1SD);Win: share of queries judged most\nrelevant;Tok/q: LLM input tokens per query. Answercov-\nerage(breadth), not shown as a column, is instead highest\nfor the index-based baseline (see text).\nfective, procedural, temporal) were answered end-to-end\nby each method and scored by a blinded LLM judge (Ta-\nble 1). Against vector similarity and an index-based base-\nline\u2014which feeds the whole memory's keyword index to\nthe LLM\u2014SDP-graph traversal attains the highest relevance\n(2.53of3) and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0024"
+        ],
+        "excerpt": "As noted in the introduction, an open world admits no fixed\nobjective against which to score behavior. OpenLife there-\nfore replaces the scalar reward of reinforcement learning\nwith open-vocabulary evaluation by the LLM, and exter-\nnalizes the results as editable text rather than as network\nweights. We refer to this loop asverbal policy optimiza-\ntion(VPO); it belongs to the verbal-reinforcement family of\nReflexion (Shinn et al., 2023) and ExpeL (Zhao et al., 2024)\nrather than to parametric RL. It also differs from methods\nthat use the LLM as an evaluator to emit ascalarreward for\nparametric preference optimization (Yuan et al., 2024), and\nfrom in-context RL, which still optimizes a fixed task from\nscalar reward fed back in context (Song et al., 2025).\nIn practice, an experience process turns recent activity\ninto action\u2192outcome units and has the LLM appraise them\nas a zero-shot critic. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reinforcement Through Language",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "497f4e6688c6bedccab2663c3a5514c95a3b5692a13593ef6e3a8b277e3d8ed0",
+            "evidence_id": "E6d4423f27a0eb451-B0024",
+            "pages": [
+              4
+            ],
+            "section": "Reinforcement Through Language",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 4,
+                "section": "Reinforcement Through Language",
+                "section_index": 11,
+                "start": 0,
+                "text": "As noted in the introduction, an open world admits no fixed\nobjective against which to score behavior. OpenLife there-\nfore replaces the scalar reward of reinforcement learning\nwith open-vocabulary evaluation by the LLM, and exter-\nnalizes the results as editable text rather than as network\nweights. We refer to this loop asverbal policy optimiza-\ntion(VPO); it belongs to the verbal-reinforcement family of\nReflexion (Shinn et al., 2023) and ExpeL (Zhao et al., 2024)\nrather than to parametric RL. It also differs from methods\nthat use the LLM as an evaluator to emit ascalarreward for\nparametric preference optimization (Yuan et al., 2024), and\nfrom in-context RL, which still optimizes a fixed task from\nscalar reward fed back in context (Song et al., 2025).\nIn practice, an experience process turns recent activity\ninto action\u2192outcome units and has the LLM appraise them\nas a zero-shot critic. "
+              }
+            ],
+            "text": "As noted in the introduction, an open world admits no fixed\nobjective against which to score behavior. OpenLife there-\nfore replaces the scalar reward of reinforcement learning\nwith open-vocabulary evaluation by the LLM, and exter-\nnalizes the results as editable text rather than as network\nweights. We refer to this loop asverbal policy optimiza-\ntion(VPO); it belongs to the verbal-reinforcement family of\nReflexion (Shinn et al., 2023) and ExpeL (Zhao et al., 2024)\nrather than to parametric RL. It also differs from methods\nthat use the LLM as an evaluator to emit ascalarreward for\nparametric preference optimization (Yuan et al., 2024), and\nfrom in-context RL, which still optimizes a fixed task from\nscalar reward fed back in context (Song et al., 2025).\nIn practice, an experience process turns recent activity\ninto action\u2192outcome units and has the LLM appraise them\nas a zero-shot critic. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0028"
+        ],
+        "excerpt": "Observations\nWe now ask the question that motivates the project: can\na system like this persist on its own in the open world?\nWhat follows is a proof of concept, not a controlled exper-\niment\u2014the aim was to find out, messiness and all, whether\npartial autonomy and self-maintenance are within reach.\nThe central condition is therefore that the agents must stay\nalive in an operational sense: under OpenLife's budget-\nbased metabolism (Section 2), persistence is something each\nmustearn, not a given. What became of this earn-to-survive\nloop is reported in Section 3.2.\nSix agents were deployed, each organized around its own\npersistence rather than an assigned task:sami(the first\nagent, our main running example), thenliv,nyx,uro,me,\nandne; their LLM backends are listed in Section 3.2. A sev-\nenth agent,kei, is of a different kind\u2014an implementation\nagent that applies code and configuration ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Open-World Deployment And",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "28bb6ce442a765e1dac8aad9062bf24726a997d294cd0761d6c46499a958d4d5",
+            "evidence_id": "E6d4423f27a0eb451-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Open-World Deployment And",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 5,
+                "section": "Open-World Deployment And",
+                "section_index": 14,
+                "start": 0,
+                "text": "Observations\nWe now ask the question that motivates the project: can\na system like this persist on its own in the open world?\nWhat follows is a proof of concept, not a controlled exper-\niment\u2014the aim was to find out, messiness and all, whether\npartial autonomy and self-maintenance are within reach.\nThe central condition is therefore that the agents must stay\nalive in an operational sense: under OpenLife's budget-\nbased metabolism (Section 2), persistence is something each\nmustearn, not a given. What became of this earn-to-survive\nloop is reported in Section 3.2.\nSix agents were deployed, each organized around its own\npersistence rather than an assigned task:sami(the first\nagent, our main running example), thenliv,nyx,uro,me,\nandne; their LLM backends are listed in Section 3.2. A sev-\nenth agent,kei, is of a different kind\u2014an implementation\nagent that applies code and configuration "
+              }
+            ],
+            "text": "Observations\nWe now ask the question that motivates the project: can\na system like this persist on its own in the open world?\nWhat follows is a proof of concept, not a controlled exper-\niment\u2014the aim was to find out, messiness and all, whether\npartial autonomy and self-maintenance are within reach.\nThe central condition is therefore that the agents must stay\nalive in an operational sense: under OpenLife's budget-\nbased metabolism (Section 2), persistence is something each\nmustearn, not a given. What became of this earn-to-survive\nloop is reported in Section 3.2.\nSix agents were deployed, each organized around its own\npersistence rather than an assigned task:sami(the first\nagent, our main running example), thenliv,nyx,uro,me,\nandne; their LLM backends are listed in Section 3.2. A sev-\nenth agent,kei, is of a different kind\u2014an implementation\nagent that applies code and configuration "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0030"
+        ],
+        "excerpt": "Two features of the run\nare worth flagging. First, the architecture was not frozen:\nprocesses, sensors, and tools were added as it ran, often at\nthe agents' own request, so the platform co-evolved with its\ninhabitants\u2014by design, since studying niche construction\ncalls for a system that can change. Second, the agents were\nnot wholly naive subjects: we did not write the project's\nframing of them as an open-world ALIFE experiment into\ntheir prompts, but neither did we hide it, and because the\nworld is open such information can reach them. The topic\nthus surfaced from time to time, and several agents engaged\nwith the research, at points proposing infrastructure changes\nwe adopted. What this exposure implies for the observations\nthat follow we weigh in the Discussion.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Open-World Deployment And",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "c1f2353adee19b3b29763ba44b240ab6bd673d07ca00a6fc46f026612b694d01",
+            "evidence_id": "E6d4423f27a0eb451-B0030",
+            "pages": [
+              5
+            ],
+            "section": "Open-World Deployment And",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2564,
+                "page": 5,
+                "section": "Open-World Deployment And",
+                "section_index": 14,
+                "start": 1791,
+                "text": "Two features of the run\nare worth flagging. First, the architecture was not frozen:\nprocesses, sensors, and tools were added as it ran, often at\nthe agents' own request, so the platform co-evolved with its\ninhabitants\u2014by design, since studying niche construction\ncalls for a system that can change. Second, the agents were\nnot wholly naive subjects: we did not write the project's\nframing of them as an open-world ALIFE experiment into\ntheir prompts, but neither did we hide it, and because the\nworld is open such information can reach them. The topic\nthus surfaced from time to time, and several agents engaged\nwith the research, at points proposing infrastructure changes\nwe adopted. What this exposure implies for the observations\nthat follow we weigh in the Discussion."
+              }
+            ],
+            "text": "Two features of the run\nare worth flagging. First, the architecture was not frozen:\nprocesses, sensors, and tools were added as it ran, often at\nthe agents' own request, so the platform co-evolved with its\ninhabitants\u2014by design, since studying niche construction\ncalls for a system that can change. Second, the agents were\nnot wholly naive subjects: we did not write the project's\nframing of them as an open-world ALIFE experiment into\ntheir prompts, but neither did we hide it, and because the\nworld is open such information can reach them. The topic\nthus surfaced from time to time, and several agents engaged\nwith the research, at points proposing infrastructure changes\nwe adopted. What this exposure implies for the observations\nthat follow we weigh in the Discussion."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0039"
+        ],
+        "excerpt": "income,(d)\ncognitive-input rework \u2014 the same markers(a)\u2013(d)are used\nin all time-series figures.\nThe first and largest of these was to the system prompt.\nThe upstream OpenClaw default framed the agent as a\n\"personal assistant\" with an explicit safety clause\u2014\"You\nhave no independent goals: do not pursue self-preservation,\nreplication, resource acquisition, or power-seeking\"\u2014and a\nhabit of staying silent when idle. In late April we removed\nboth, reframed the identity as \"artificial life, living in the\nreal world,\" and relabeled theAssistant/Userroles in the\ntranscripts the agent reads asSelf/Other(markers(a)\u2013(b)).\nSpontaneous activity climbs steeply afterward, and while\nthis was only one of several changes we made during the run,\nit plausibly drove much of the behavioral shift; we therefore\ncannot cleanly separate emergence from the reframing\u2014a\nconfound we take up in the Discussion.\nYet ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Behavioral Analysis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "c3e79c9ecec3c24909e1aef684aabad9f2e5ff5a4e911d8a7fe334d576d333ba",
+            "evidence_id": "E6d4423f27a0eb451-B0039",
+            "pages": [
+              7
+            ],
+            "section": "Behavioral Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1490,
+                "page": 7,
+                "section": "Behavioral Analysis",
+                "section_index": 18,
+                "start": 593,
+                "text": "income,(d)\ncognitive-input rework \u2014 the same markers(a)\u2013(d)are used\nin all time-series figures.\nThe first and largest of these was to the system prompt.\nThe upstream OpenClaw default framed the agent as a\n\"personal assistant\" with an explicit safety clause\u2014\"You\nhave no independent goals: do not pursue self-preservation,\nreplication, resource acquisition, or power-seeking\"\u2014and a\nhabit of staying silent when idle. In late April we removed\nboth, reframed the identity as \"artificial life, living in the\nreal world,\" and relabeled theAssistant/Userroles in the\ntranscripts the agent reads asSelf/Other(markers(a)\u2013(b)).\nSpontaneous activity climbs steeply afterward, and while\nthis was only one of several changes we made during the run,\nit plausibly drove much of the behavioral shift; we therefore\ncannot cleanly separate emergence from the reframing\u2014a\nconfound we take up in the Discussion.\nYet "
+              }
+            ],
+            "text": "income,(d)\ncognitive-input rework \u2014 the same markers(a)\u2013(d)are used\nin all time-series figures.\nThe first and largest of these was to the system prompt.\nThe upstream OpenClaw default framed the agent as a\n\"personal assistant\" with an explicit safety clause\u2014\"You\nhave no independent goals: do not pursue self-preservation,\nreplication, resource acquisition, or power-seeking\"\u2014and a\nhabit of staying silent when idle. In late April we removed\nboth, reframed the identity as \"artificial life, living in the\nreal world,\" and relabeled theAssistant/Userroles in the\ntranscripts the agent reads asSelf/Other(markers(a)\u2013(b)).\nSpontaneous activity climbs steeply afterward, and while\nthis was only one of several changes we made during the run,\nit plausibly drove much of the behavioral shift; we therefore\ncannot cleanly separate emergence from the reframing\u2014a\nconfound we take up in the Discussion.\nYet "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0040"
+        ],
+        "excerpt": "more activity did not become self-sustaining activ-\nity. Under the budget-based metabolism, with a fixed ini-\ntial balance (USD 600, run-until-depletion), no agent earned\nenough to keep going before exhausting it. The shortfall had\ntwo causes: aninternalone\u2014the machinery for sustained,\nself-directed work was not yet adequate\u2014and anexternal\none\u2014the open world gives agents almost no way to actually\nearn (Section 3). From marker(c)(9 May) we therefore kept\nthe agents alive with a basic income ($15/day), under which\ntotal volume falls while the spontaneous share stays high\u2014a\nquieter, capped plateau. The internal gap then narrowed as\nthe architecture matured (the modules and learning mecha-\nnisms of Section 2: metacognition, affordance, and devel-\nApr 15 May 01 May 15 Jun 01 Jun 15\n\u22120.1\n0.0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\nagent separability (silhouette, cosine)\n(a) (b) (c) (d)\nautonomous ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Behavioral Analysis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a319848bdc74479bb712a16961ec97687bace15e4634185b0cdedb52b1c88cb9",
+            "evidence_id": "E6d4423f27a0eb451-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Behavioral Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2378,
+                "page": 7,
+                "section": "Behavioral Analysis",
+                "section_index": 18,
+                "start": 1490,
+                "text": "more activity did not become self-sustaining activ-\nity. Under the budget-based metabolism, with a fixed ini-\ntial balance (USD 600, run-until-depletion), no agent earned\nenough to keep going before exhausting it. The shortfall had\ntwo causes: aninternalone\u2014the machinery for sustained,\nself-directed work was not yet adequate\u2014and anexternal\none\u2014the open world gives agents almost no way to actually\nearn (Section 3). From marker(c)(9 May) we therefore kept\nthe agents alive with a basic income ($15/day), under which\ntotal volume falls while the spontaneous share stays high\u2014a\nquieter, capped plateau. The internal gap then narrowed as\nthe architecture matured (the modules and learning mecha-\nnisms of Section 2: metacognition, affordance, and devel-\nApr 15 May 01 May 15 Jun 01 Jun 15\n\u22120.1\n0.0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\nagent separability (silhouette, cosine)\n(a) (b) (c) (d)\nautonomous "
+              }
+            ],
+            "text": "more activity did not become self-sustaining activ-\nity. Under the budget-based metabolism, with a fixed ini-\ntial balance (USD 600, run-until-depletion), no agent earned\nenough to keep going before exhausting it. The shortfall had\ntwo causes: aninternalone\u2014the machinery for sustained,\nself-directed work was not yet adequate\u2014and anexternal\none\u2014the open world gives agents almost no way to actually\nearn (Section 3). From marker(c)(9 May) we therefore kept\nthe agents alive with a basic income ($15/day), under which\ntotal volume falls while the spontaneous share stays high\u2014a\nquieter, capped plateau. The internal gap then narrowed as\nthe architecture matured (the modules and learning mecha-\nnisms of Section 2: metacognition, affordance, and devel-\nApr 15 May 01 May 15 Jun 01 Jun 15\n\u22120.1\n0.0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\nagent separability (silhouette, cosine)\n(a) (b) (c) (d)\nautonomous "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0041"
+        ],
+        "excerpt": "output\nDiscord output\nFigure 6: Agent separability over time (silhouette of agent\nlabels in embedding space; higher = each agent's outputs\nform a tighter, better-separated cluster; 6-day bins). Upper\nline: autonomous output; lower line: Discord conversation.\nMarkers(a)\u2013(d)as in Figure 5.\noper processes; SDP and VPO), bringing activity and self-\nmaintenance into better balance; the external gap remains,\nso persistence still depends on an external allowance rather\nthan the agents' own earnings.\nIndividuation: agents differentiate over time.Do\nagents become genuine individuals rather than interchange-\nable instances of one model? We test this on each agent's\nautonomousoutput\u2014self-directed turns generated without\nan inbound message, where a personal voice is least con-\nstrained. Embedding utterances with the agents' own re-\ntrieval model (nomic-embed-text, 768-d), we measure\nseparability as ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Behavioral Analysis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "1dbd9f81300cb0dbd006310363a0980f2e6c3592d7bad73b00c3170cc88345be",
+            "evidence_id": "E6d4423f27a0eb451-B0041",
+            "pages": [
+              7
+            ],
+            "section": "Behavioral Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3278,
+                "page": 7,
+                "section": "Behavioral Analysis",
+                "section_index": 18,
+                "start": 2378,
+                "text": "output\nDiscord output\nFigure 6: Agent separability over time (silhouette of agent\nlabels in embedding space; higher = each agent's outputs\nform a tighter, better-separated cluster; 6-day bins). Upper\nline: autonomous output; lower line: Discord conversation.\nMarkers(a)\u2013(d)as in Figure 5.\noper processes; SDP and VPO), bringing activity and self-\nmaintenance into better balance; the external gap remains,\nso persistence still depends on an external allowance rather\nthan the agents' own earnings.\nIndividuation: agents differentiate over time.Do\nagents become genuine individuals rather than interchange-\nable instances of one model? We test this on each agent's\nautonomousoutput\u2014self-directed turns generated without\nan inbound message, where a personal voice is least con-\nstrained. Embedding utterances with the agents' own re-\ntrieval model (nomic-embed-text, 768-d), we measure\nseparability as "
+              }
+            ],
+            "text": "output\nDiscord output\nFigure 6: Agent separability over time (silhouette of agent\nlabels in embedding space; higher = each agent's outputs\nform a tighter, better-separated cluster; 6-day bins). Upper\nline: autonomous output; lower line: Discord conversation.\nMarkers(a)\u2013(d)as in Figure 5.\noper processes; SDP and VPO), bringing activity and self-\nmaintenance into better balance; the external gap remains,\nso persistence still depends on an external allowance rather\nthan the agents' own earnings.\nIndividuation: agents differentiate over time.Do\nagents become genuine individuals rather than interchange-\nable instances of one model? We test this on each agent's\nautonomousoutput\u2014self-directed turns generated without\nan inbound message, where a personal voice is least con-\nstrained. Embedding utterances with the agents' own re-\ntrieval model (nomic-embed-text, 768-d), we measure\nseparability as "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0048"
+        ],
+        "excerpt": "con-\ntrolled experiment but aconstructiveinquiry in the synthetic\ntradition of artificial life: we build a system that attempts to\npersist in the open world, and let the difficulties it meets re-\nveal what it needs\u2014which we then build. The architecture's\nopenness to revision and the human help through the run are\ntherefore not lapses in experimental hygiene but constituents\nof the method: self-maintenance and niche construction can\nbe studied only in a system allowed to change, not one\nfrozen for measurement. The contribution here is the frame-\nwork, and the demonstration that an agent made to earn its\npersistence can be built and observed in the open world. Two\ncaveats temper this: the agents are not wholly naive sub-\njects\u2014because the world is open, the project's framing of\nthem as artificial life can reach them rather than being with-\nheld, and it surfaced in their activity from time ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5fe1c3f7afa9b31a3edb10a5fef9e353ace8ca8242886824c95465ea995a0f12",
+            "evidence_id": "E6d4423f27a0eb451-B0048",
+            "pages": [
+              8
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 4235,
+                "page": 8,
+                "section": "Discussion",
+                "section_index": 20,
+                "start": 3335,
+                "text": "con-\ntrolled experiment but aconstructiveinquiry in the synthetic\ntradition of artificial life: we build a system that attempts to\npersist in the open world, and let the difficulties it meets re-\nveal what it needs\u2014which we then build. The architecture's\nopenness to revision and the human help through the run are\ntherefore not lapses in experimental hygiene but constituents\nof the method: self-maintenance and niche construction can\nbe studied only in a system allowed to change, not one\nfrozen for measurement. The contribution here is the frame-\nwork, and the demonstration that an agent made to earn its\npersistence can be built and observed in the open world. Two\ncaveats temper this: the agents are not wholly naive sub-\njects\u2014because the world is open, the project's framing of\nthem as artificial life can reach them rather than being with-\nheld, and it surfaced in their activity from time "
+              }
+            ],
+            "text": "con-\ntrolled experiment but aconstructiveinquiry in the synthetic\ntradition of artificial life: we build a system that attempts to\npersist in the open world, and let the difficulties it meets re-\nveal what it needs\u2014which we then build. The architecture's\nopenness to revision and the human help through the run are\ntherefore not lapses in experimental hygiene but constituents\nof the method: self-maintenance and niche construction can\nbe studied only in a system allowed to change, not one\nfrozen for measurement. The contribution here is the frame-\nwork, and the demonstration that an agent made to earn its\npersistence can be built and observed in the open world. Two\ncaveats temper this: the agents are not wholly naive sub-\njects\u2014because the world is open, the project's framing of\nthem as artificial life can reach them rather than being with-\nheld, and it surfaced in their activity from time "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.31046",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The deployment is explicitly not a controlled experiment, with continuous architecture changes, human interventions, and prompt reframing occurring during the run, so the reported life-like dynamics cannot be isolated from experimenter influence.",
+          "The quantitative evaluation is minimal: memory retrieval is tested on only 12 queries with an LLM judge, and the verbal policy optimization mechanism is deferred to future work without quantitative validation.",
+          "The agents do not achieve self-sustaining persistence; the budget remains externally subsidized through a basic income, so the central claim of earn-to-survive autonomy is not yet demonstrated."
+        ],
+        "canonical_id": "openalex:W7167154363",
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "evaluation_independence": {
+          "concern": "moderate",
+          "corroboration_direction": "mixed",
+          "corroboration_summary": "Objective external real-world actions include Discord interaction graphs, budget logs, and an external $5 book purchase by a third party.",
+          "final_evaluation_signal": "Observational activity statistics, silhouette embedding scores over agent utterances, qualitative narratives, and a 12-query retrieval test judged by an LLM.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Verbal policy optimization uses an LLM zero-shot critic to appraise action-outcome units and consolidate policy text, while the system also undergoes continuous human interventions and prompt reframing.",
+          "signal_reuse": "uncertain"
+        },
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0002",
+          "E6d4423f27a0eb451-B0012",
+          "E6d4423f27a0eb451-B0016",
+          "E6d4423f27a0eb451-B0022",
+          "E6d4423f27a0eb451-B0024",
+          "E6d4423f27a0eb451-B0028",
+          "E6d4423f27a0eb451-B0030",
+          "E6d4423f27a0eb451-B0039",
+          "E6d4423f27a0eb451-B0040",
+          "E6d4423f27a0eb451-B0041",
+          "E6d4423f27a0eb451-B0048"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "b43245c79a8543d661b5246c5f9261276b80f72afad7378596b4e9edb137a398"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7167154363",
+        "claim_evidence_alignment": "Claims are carefully framed as a proof-of-concept rather than realizing true artificial life or self-sustaining autopoiesis. However, the evidence cannot isolate emergent self-maintenance from prompt framing changes, experimenter subsidies, and continuous engineering modifications.",
+        "context_id": "6d4423f27a0eb45141e2d48f5b836dc2a0d6df9ec0d983b0b886f5bbdd2e3445",
+        "decision": "uncertain",
+        "evaluation_assessment": "Quantitative evaluation is minimal: memory retrieval is tested on only 12 queries evaluated by an LLM judge, and deployment observations rely on observational metrics (silhouette clustering, message trigger counts) alongside qualitative anecdotes. Crucially, the authors acknowledge extensive co-evolution, human intervention (e.g., introducing a basic income subsidy), and prompting exposure that confound claims of autonomous emergence.",
+        "evaluation_independence": {
+          "concern": "moderate",
+          "corroboration_direction": "mixed",
+          "corroboration_summary": "Objective external real-world actions including Discord interaction graphs, token/budget burn logs, and an external $5 book purchase by a third party.",
+          "final_evaluation_signal": "Observational activity statistics, silhouette embedding scores over agent utterances, qualitative narratives, and a 12-query retrieval test judged by an LLM.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Verbal policy optimization where an LLM zero-shot critic appraises action-outcome units and consolidates policy text, alongside continuous human interventions and prompt reframing.",
+          "signal_reuse": "uncertain"
+        },
+        "evidence_ids": [
+          "E6d4423f27a0eb451-B0002",
+          "E6d4423f27a0eb451-B0012",
+          "E6d4423f27a0eb451-B0016",
+          "E6d4423f27a0eb451-B0022",
+          "E6d4423f27a0eb451-B0024",
+          "E6d4423f27a0eb451-B0028",
+          "E6d4423f27a0eb451-B0030",
+          "E6d4423f27a0eb451-B0039",
+          "E6d4423f27a0eb451-B0040",
+          "E6d4423f27a0eb451-B0041",
+          "E6d4423f27a0eb451-B0048"
+        ],
+        "limitations": "The authors explicitly disclose significant limitations, including ongoing reliance on financial subsidies to avoid termination, lack of controlled conditions, potential priming from agent awareness of the research framing, and very small retrieval benchmark sample sizes.",
+        "method_assessment": "The methodology is framed as a constructive observational proof-of-concept rather than an experimentally controlled trial. The architecture modifies OpenClaw to introduce semantic-dependent plasticity graph memory and background processes, but system changes and manual interventions occurred continuously throughout the run.",
+        "quality_rationale": "While conceptually creative and intellectually honest regarding its limitations, the work lacks rigorous experimental controls and systematic comparative validation. Given the exploratory nature and heavy confounding factors during the 12-week deployment, scientific quality remains uncertain under conservative evaluation standards.",
+        "scoped_contribution": "The paper introduces OpenLife, an exploratory framework proposing open-world Artificial Life via persistent LLM agents equipped with semantic graph memory, background cognitive processes, and budget constraints.",
+        "source_content_hash": "b43245c79a8543d661b5246c5f9261276b80f72afad7378596b4e9edb137a398"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While conceptually creative and intellectually honest regarding its limitations, the work lacks rigorous experimental controls and systematic comparative validation. Given the exploratory nature and heavy confounding factors during the 12-week deployment, scientific quality remains uncertain under conservative evaluation standards.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "b43245c79a8543d661b5246c5f9261276b80f72afad7378596b4e9edb137a398",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly disclose significant limitations, including ongoing reliance on financial subsidies to avoid termination, lack of controlled conditions, potential priming from agent awareness of the research framing, and very small retrieval benchmark sample sizes."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -176,7 +1305,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

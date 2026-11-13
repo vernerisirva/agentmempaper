@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-12](2026-11-12.md).
+Latest daily digest: [2026-11-13](2026-11-13.md).
 
-# Paper Scout Digest - 2026-11-12
+# Paper Scout Digest - 2026-11-13
 
 ## Run Summary
 
-- **Run ID:** 133
-- **Candidates fetched:** 120
-- **New unique papers:** 116
-- **Relevant:** 11
+- **Run ID:** 134
+- **Candidates fetched:** 119
+- **New unique papers:** 118
+- **Relevant:** 9
 - **Maybe relevant:** 1
-- **Irrelevant:** 108
-- **Source summary:** arxiv: 20, openalex: 100, semantic_scholar: 0
+- **Irrelevant:** 109
+- **Source summary:** arxiv: 19, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -20,39 +20,39 @@ Latest daily digest: [2026-11-12](2026-11-12.md).
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
-- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists](https://doi.org/10.48550/arxiv.2611.12184)
+### [The Harness Is the Lab: Measured Self-Improvement for Ontology-Grounded AI Scientists](https://doi.org/10.5281/zenodo.24144799)
 
-- **Authors:** Guowei Xu, Jiaru Zou, Mete Erdogan, Haotian Ye, Pan Lu, James Zou
-- **Date:** 2026-11-09
+- **Authors:** Sayan Chowdhury
+- **Date:** 2026-11-11
+- **Source:** openalex
+- **Relevance:** relevant (95/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, web-research, deep-research-agents
+- **Abstract summary:** Every serious AI-scientist system released in 2026 has converged on the same lesson: generating hypotheses, code and papers is no longer the hard part; deciding which results deserve to be believed is. Karpathy's autoresearch showed that a sealed evaluator, a fixed budget and a git ratchet can run a hundred useful e...
+
+### [An auditable harness for biomolecular dynamics simulations by AI agents](https://doi.org/10.64898/2026.11.09.765490)
+
+- **Authors:** Yasuhiro Matsunaga, Yichao Wu, Yangyang Zhang, Shweta Kumari, Akari Enomoto, Yudai Homma, et al.
+- **Date:** 2026-11-11
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Scientific discovery requires ideas that are original, useful, and non-obvious. Yet AI scientists are typically given as much task information as possible during idea generation, which can anchor generation toward familiar approaches. Inspired by the cognitive framework of Blind Variation and Selective Retention (BV...
+- **Abstract summary:** AI agents now generate biological hypotheses faster than they can be tested. Hypotheses stated at the atomic level can be examined with molecular dynamics (MD) simulations. For new questions without a reference, trust in an agent-run simulation rests on a tool-written process record, not the agent's account. Existin...
 
-### [ChemDFT: open-core snapshot (schemas, contracts and engine wrappers), release 0.0.26](https://doi.org/10.5281/zenodo.24082321)
+### [Designing Institutions for Autonomous AI](https://arxiv.org/abs/2611.17114v1)
 
-- **Authors:** Tabriz Ahmadli
-- **Date:** 2026-11-09
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** ChemDFT is a computational chemistry workbench in which an AI Scientist plans and explains, and every scientific value comes from a verified engine (PySCF, xTB, CREST) behind a Result Firewall that records provenance. This record archives only the parts of the ChemDFT repository that the author has published under A...
-
-### [ClaimTrace: Contradiction-Aware Evidence Lineage for Verifiable AI-Assisted Scientific Literature Reviews](https://doi.org/10.36948/ijfmr.2026.v08i06.90699)
-
-- **Authors:** Sayor Aaron, Ashif Newaz, Sajjat Abir, Md. Rahman, Md Hossain, Nazmul Ahosan
-- **Date:** 2026-11-08
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** ClaimTrace is a proposed framework for checking the relationship between scientific review assertions and their cited evidence. Its central mechanism is a typed lineage graph that preserves source identity, assertion boundaries, study conditions and numerical bindings rather than returning a single undifferentiated...
+- **Authors:** Petter Törnberg
+- **Date:** 2026-11-12
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** As autonomous AI agents increasingly interact in persistent populations, their collective capabilities and alignment depend not only on individual models, but also on the institutions governing their interactions. Yet AI research has largely focused on individual agents. In this Perspective, we argue that institutio...

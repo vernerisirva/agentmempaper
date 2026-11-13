@@ -59,16 +59,275 @@
             <p>Deep research agents are often trained on expensive, environment-grounded tool-use trajectories that require repeated retrieval, document inspection, and report evaluation. We introduce Deep Research Pretraining (DRP), an offline framework that derives predictive navigation supervision from naturally occurring evide...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study offers a solid, well-controlled experimental validation of offline graph-derived pretraining for research agents, supported by rigorous paired statistics, clear negative controls, and comprehensive ablation studies.</p>
+      <p>The authors explicitly acknowledge the modest benchmark size (50 DRB questions), focus on English-only corpora and single expert trajectory sources, lack of full variance estimation across decoding/judge interactions, and the attenuation of gains under full downstream SFT budgets.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-06T09:09:56+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly.</li><li>No suitable baseline comparison was detected in the available text.</li><li>No quantitative, user, expert, or operational evaluation was detected in the available text.</li><li>Comparative claims were detected without a suitable baseline in the available text.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-13T11:53:30.040565+00:00.</p>
+        <p>Coverage: 71486 of 71486 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents are often trained on expensive, environment-grounded tool-
+use trajectories that require repeated retrieval, document inspection, and report
+evaluation. We introduce Deep Research Pretraining (DRP), an offline framework
+that derives predictive-navigation supervision from naturally occurring evidence
+structures. Given a citation-bearing or hyperlinked passage, DRP constructs a
+proxy research objective, recovers linked evidence and graph-related alternatives,
+and converts them into search–open–write trajectories. This teaches models what
+to search for, which documents to inspect, and how to synthesize evidence, with-
+out a live retrieval environment or executed policy rollout. We instantiate DRP
+on scholarly citation graphs (DRP-Paper) and Wikipedia hyperlinks (DRP-Web),
+continually pretrain separate Qwen3-14B-Base models on 1B tokens, and fine-
+tune them on </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>controlled fractions of 13K agent trajectories. Across five indepen-
+dently sampled subsets at each low-data budget, both variants consistently out-
+perform matched no-DRP models on DeepResearch Bench. With one quarter of
+the SFT data, DRP-Web even surpasses a fixed no-DRP full-data checkpoint, with
+gains transferring to ResearchQA, WebWalkerQA, and SimpleQA. Starting from
+matched low-data SFT checkpoints, the DRP-Web advantage also persists through
+subsequent agentic RL. Source-matched and evidence-mismatch controls indicate
+that these improvements arise from evidence-conditioned navigation rather than
+domain exposure or agent-format imitation. DRP thus provides a promising com-
+plementary approach to trajectory-based agent training.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and then fine-tune them on con-
+trolled fractions of 13K GPT-5-generated deep-research trajectories from DR Tulu (Shao et al.,
+2025). Here, sample efficiency is defined as performance as a function of the number of expert tra-
+jectories used for downstream training. Across five independently sampled subsets at both low-data
+budgets, DRP-Paper and DRP-Web consistently improve over matched no-DRP SFT on DeepRe-
+search Bench. With one quarter of the trajectories, DRP-Web also exceeds a fixed full-data Base
+checkpoint. Positive low-data gains transfer to ResearchQA, WebWalkerQA, and SimpleQA, and
+the1/16-SFT effect persists on Qwen3-30B-A3B. Starting from matched1/16-SFT checkpoints,
+DRP-Web also remains ahead of Base throughout 80 steps of ARPO-style agentic RL. Source-
+matched raw-document and evidence-mismatch controls support the hypothesis that the gain comes
+from evidence-conditioned </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Collectingτin the usual forward direction requires executing a policy in a retrieval environment.
+DRP instead constructs it in reverse from(r, E r). We partition the evidence targets across search
+steps,E r =P 1 ∪ · · · ∪Pm. For stepi, the constructor synthesizes a queryq i and forms a search
+candidate set
+Ki =P i ∪N i,(4)
+whereP i contains evidence vertices to acquire andNi contains vertices of topologically related doc-
+uments that are plausible for the topic but are not selected for the target passage. The corresponding
+search observation renders titles and snippets forK i. The open action selectsP i and returns their
+source text; candidates inN i are observed but left unopened, providing an implicit selection con-
+trast rather than explicit negative labels. Section 2.3 instantiatesE r and the candidate alternatives
+Ni using scholarly citation and Wikipedia hyperlink graphs.
+Our </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Letx 1:L be the tokenized trajectory and letm t indicate whether tokenx t is produced by the agent.
+DRP minimizes the masked causal language-model loss
+LDRP(θ) =− 1PL
+t=1 mt
+LX
+t=1
+mt logp θ(xt |x &lt;t).(7)
+We setm t = 1for assistant reasoning, tool calls and their arguments, and the final report, andm t =
+0for the system prompt, user objective, and search/open observations. The model therefore learns
+to predict evidence-conditioned decisions and synthesis rather than to reproduce the constructed
+environment responses.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Models and continual pretraining.Our primary model is Qwen3-14B-Base (Yang et al., 2025),
+with Qwen3-30B-A3B-Base used for scale analysis. Unless stated otherwise, each DRP corpus uses
+a 1B-token CPT budget. We pack 128K-token sequences with a 2M-token global batch (500 steps)
+and train in BF16 with AdamW (Loshchilov &amp; Hutter, 2019) (β1 = 0.9,β 2 = 0.999,ϵ= 10 −8), no
+weight decay, and gradient clipping at 1.0. The learning rate has 10% warmup to4×10 −5 followed
+by cosine decay to zero. A run takes approximately six hours on 128 H20 96GB GPUs. Canoni-
+cal DRP-Web uses the interleaved search–open schedule and medium response budget analyzed in
+Section 4.
+4
+1/16 1/4 Full
+SFT data fraction
+30
+32
+34
+36
+38
+40DRB RACE overall (%)
+Base (full SFT)
+Outperforms full-SFT Base
+with 4× fewer trajectories
+(a)  Sample efficiency
+Base
+DRP-Paper
+DRP-Web
+0 2 4 6 8
+Paired Δ RACE (%)
+1/16 SFT
+vs same-SFT </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>claim concerns SFT sample efficiency rather than replacing agent training.
+At each low-data fraction, we sample five subsets (seeds 42, 2026, 5678, 31337, and 1234); all
+initializations receive the same trajectories within a seed. We report mean and standard deviation
+across runs. For contrasts involving subset-trained models, we compute the paired score difference
+ds for each seed and report ¯d±t 0.975,4sd/√5, wheres d is the sample standard deviation. This 95%
+interval measures SFT-subset variation; full-data SFT is a fixed reference.
+Downstream agentic RL.To test whether DRP remains useful beyond SFT, we initialize two
+RL runs from Base and DRP-Web checkpoints trained on the same fixed1/16SFT subset. Both
+runs follow the ARPO deep-search setting (Dong et al., 2026), using the same 1K-example mixed
+hard-search training set and identical rollout, reward, and optimization </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>configurations. We evaluate
+the post-SFT policies before RL and after 40 and 80 optimizer steps. The reported score is the un-
+weighted mean of ResearchQA coverage, WebWalkerQA accuracy, and SimpleQA accuracy. Each
+run takes approximately 24 hours on 64 H20 GPUs.
+Evaluation.Our main evaluation is the 50-question English subset of DeepResearch Bench (DRB)
+(Du et al., 2025). We evaluate DRB with its official GPT-5.5 RACE evaluator. 2 Agents use the
+DR-Tulu protocol, Serper search, and Jina extraction, with at most 20 tool-call rounds and 32K
+output tokens. Decoding uses temperature 0.6, top-p0.95, and top-k20. We also report report-
+generation rate and mean search/open calls. Score differences are absolute points on this scale,
+not relative percentage changes. For single-checkpoint controls, we jointly resample question IDs,
+recompute the paired score difference, and take its 2.5th and </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>97.5th percentiles; unlike thet-intervals
+above, these paired-bootstrap intervals measure question uncertainty (Efron &amp; Tibshirani, 1994).
+For transfer, we evaluate fixed sets of 500 examples from ResearchQA (Li S. Yifei et al., 2025),
+WebWalkerQA (Wu et al., 2025), and SimpleQA (Wei et al., 2024) with the same agent, reporting
+coverage for ResearchQA and accuracy otherwise.</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DRP improves trajectory-SFT sample efficiency.Figure 2 gives the central result. Across five
+independently sampled subsets at both1/16and1/4SFT, DRP-Paper and DRP-Web consistently
+improve over directly fine-tuning the base model. With only one quarter of the expert trajectories,
+DRP-Web exceeds the no-DRP full-data model by 1.0 point, with its 95% interval above zero. DRP-
+1https://huggingface.co/datasets/rl-research/dr-tulu-sft-data
+2https://github.com/Ayanami0730/deep research bench
+5
+Corpus Traj. Available Loss %
+DRP-Paper 78,557 1.99B 8.67%
+DRP-Web 8,997,455 172.46B 7.73%
+Table 1: DRP corpus statistics before subsampling to the matched 1B-token CPT budget. Available
+is the total token count; Loss % is the fraction included in the language-model loss.
+Paper has a positive mean difference of 0.7 points, although its interval overlaps zero. The gain
+is largest in the lowest-data regime, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>transfers beyond long-form report evaluation.Figure 4 shows that the benefit is not
+confined to long-form report evaluation. At both1/16and1/4SFT, DRP-Paper and DRP-Web have
+positive paired gains over Base on ResearchQA coverage, WebWalkerQA accuracy, and SimpleQA
+accuracy. Under full-data SFT, the effects become small and task dependent, with most confidence
+intervals overlapping zero. This attenuation is consistent with DRP acting as a sample-efficient ini-
+tialization rather than directly optimizing each downstream benchmark.
+The advantage persists through agentic RL.Figure 5 tests whether the stronger DRP initializa-
+tion persists under subsequent policy optimization. Before RL, DRP-Web leads Base by 15.0 points
+(57.2 versus 42.2). The gap narrows but remains 6.8 points after 40 steps and 4.8 points after 80
+steps. Base after 80 steps still does not reach the pre-RL DRP-Web </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>checkpoint (54.4 versus 57.2),
+while DRP-Web itself improves to 59.2. Thus, DRP provides a stronger initial policy that remains
+advantageous under a fixed downstream RL budget and remains compatible with further policy op-
+timization.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We first test whether DRP&#x27;s gain can be explained by exposure to the underlying source domains.
+Raw-Web and Raw-Paper train directly on the same source documents used to construct their re-
+spective DRP corpora, but contain no proxy queries, tool calls, or graph-derived relevance relations.
+Within each domain, we compare Base, raw-document CPT, and structured DRP under the same
+1B-token CPT budget and downstream SFT setting. In Figure 6(a), DRP-Web gains 5.3 points over
+Base, compared with 0.8 for Raw-Web; DRP-Paper gains 5.0 points, whereas Raw-Paper decreases
+by 4.8. The corresponding direct DRP–Raw advantages are 4.5 and 9.8 points, with both paired-
+bootstrap intervals above zero (Figure 6(b)). Thus, source-matched domain exposure is not sufficient
+to account for the predictive-navigation gain.
+6
+Comp. Insight Instr. Read.
+30
+35
+40
+45DRB RACE dim. score (%)
+29.8 29.8
+35.0
+36.1
+33.0 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The raw-document controls establish an advantage for structured DRP over raw CPT, but do
+not isolate whether the constructed observations must be relevant to the model&#x27;s decisions. We
+therefore perform a controlled ablation in our canonical DRP-Web analysis setting. Evidence-
+Mismatched DRP-Web preserves the proxy queries, synthetic reasoning, action schedule, tool-call
+syntax, response-length distribution, and training budget of aligned DRP-Web, but replaces graph-
+derived search and open observations with random in-domain evidence. Aligned DRP-Web gains
+5.3 points over Base, while evidence-mismatched DRP-Web gains only 1.1; their direct difference is
+4.2 points with its 95% bootstrap interval above zero (Figure 7). Breaking query–observation–action
+alignment therefore removes most of the gain even though the agent-like surface form is preserved.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We test whether specializing CPT toward DRP harms general capabilities under a fixed 2B-token
+budget starting from Qwen3-14B-Base. The control uses 2B tokens of general midtraining data from
+the fully open OLMo 3 training flow (Team OLMo et al., 2025); the mixed condition replaces half of
+that budget with 1B DRP-Web tokens. Our 14-benchmark suite spans commonsense reasoning (e.g.,
+ARC), mathematical reasoning (GSM8K), knowledge (MMLU-Redux), and reading comprehension
+(DROP); Appendix C.4 provides the complete suite, citations, and per-benchmark results. Table 4
+shows that the aggregate score changes from 73.1 to 73.4. After matched1/16DR-Tulu SFT, the
+mixed checkpoint improves the score from 33.1 to 36.8 (+3.7 points). Thus, replacing half of the
+general CPT budget with DRP-Web preserves aggregate general capability in this evaluation while
+improving downstream agent initialization.</blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Training and supervising research agents.WebGPT and ReAct establish browser-assisted ques-
+tion answering and the interleaving of language-model reasoning with external actions (Nakano
+et al., 2021; Yao et al., 2023). Recent deep-research systems train these behaviors through search-
+environment RL, teacher-generated trajectories, synthetic tasks, and report-level rubrics (Jin et al.,
+2025; Zheng et al., 2025; Shao et al., 2025; Xie et al., 2026). ARPO further adapts policy optimiza-
+tion to multi-turn tool-use exploration (Dong et al., 2026). ZeroSearch and OpenResearcher reduce
+the cost of this supervision through simulated retrieval or a local search-and-browse environment
+(Sun et al., 2025; Li et al., 2026). These approaches improve the downstream post-training process
+9
+Backbone DRP corpus∆score (points)
+Qwen3-14B Paper +5.0
+Web +5.3
+Qwen3-30B-A3B Paper +4.7
+Web +3.1
+Table 3: </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Qwen3-30B judge. We report coverage for ResearchQA and accuracy for WebWalkerQA and
+SimpleQA.</blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Hyperparameter Value Hyperparameter Value
+Training tokens 1B Optimizer AdamW
+Maximum sequence length 128K Adam(β 1, β2) (0.9,0.999)
+Global batch size 2M tokens Adamϵ10 −8
+Peak learning rate4×10 −5 Weight decay 0
+Learning-rate schedule cosine decay to 0 Gradient clipping 1.0
+Warmup ratio 0.1 Precision BF16
+Table A1: Continual-pretraining hyperparameters.
+k-gram Queries with overlap Max. containment
+8-gram 0/776 0.000
+13-gram 0/776 0.000
+Table A2: Verbatim overlap between ResearchQA queries and DRP-Paper training text.
+No ResearchQA query shares even one 8- or 13-word span with the DRP-Paper training corpus,
+providing no evidence of verbatim benchmark-query leakage.</blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The five low-data runs at each fraction vary the sampled SFT subset rather than the training random
+seed. LetM a,s be the score of initializationaafter SFT on the subset sampled with seeds, and letb
+denote the no-CPT Base initialization. For a matched comparison, we first compute
+ds =M a,s −M b,s.(A1)
+We report the mean paired score gain ¯dand its 95% Student-tconfidence interval,
+¯d±t 0.975,4 sd√5 , t 0.975,4 = 2.776,(A2)
+wheres d is the sample standard deviation of the five paired differences. This interval measures how
+the estimated gain changes when the downstream SFT subset changes. It does not measure training-
+seed variation or question-level evaluation uncertainty.
+For the comparison between one-quarter-SFT DRP and full-SFT Base, the Base score is a fixed
+reference. We computed s =M 1/4a,s −M fullb for each of the five sampled one-quarter subsets and
+apply the sametinterval. </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>For single-checkpoint analyses, both compared systems answer the same DRB questions. We jointly
+resample question IDs with replacement, preserving the pairing between systems, recompute the
+mean score difference for each bootstrap replicate, and report the 2.5th and 97.5th percentiles. This
+paired bootstrap captures uncertainty over the evaluated questions while holding the trained check-
+points fixed. It is therefore complementary to, rather than interchangeable with, the subset-levelt
+intervals above. We use 10,000 bootstrap replicates with random seed 42.</blockquote></details></li><li><strong>Contribution clarity — page 21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>33.031.94±1.37
+1/437.7 38.6 36.5 35.8 37.937.30±1.00
+Full – – – – – 38.53
+DRP-Paper1/1637.6 34.1 33.9 33.1 38.035.35±2.06
+1/440.3 38.0 38.4 39.3 40.339.25±0.94
+Full – – – – – 41.08
+DRP-Web1/1634.6 34.8 38.3 36.3 38.336.48±1.62
+1/439.5 38.9 40.4 39.1 39.939.56±0.53
+Full – – – – – 40.69
+Table A4: Per-subset DeepResearch Bench results for the main Qwen3-14B experiment. Low-data
+rows report five independently sampled SFT subsets and their mean and standard deviation. Full-
+SFT values are fixed single-checkpoint references.
+Initialization Comparison Mean∆95% CI
+DRP-Paper1/16vs. matched Base+3.41 [+1.33,+5.49]
+1/4vs. matched Base+1.94 [+0.05,+3.84]
+1/4vs. full-SFT Base+0.72 [−0.59,+2.03]
+DRP-Web1/16vs. matched Base+4.54 [+0.92,+8.15]
+1/4vs. matched Base+2.26 [+0.57,+3.96]
+1/4vs. full-SFT Base+1.04 [+0.29,+1.78]
+Table A5: Subset-level paired score contrasts for the main experiment. Intervals </blockquote></details></li><li><strong>Contribution clarity — page 21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>are 95% Student-t
+intervals over the five paired SFT subsets, as defined in Section B. Full-SFT Base is a fixed reference.
+Initialization SFT Comp. Insight Instr. Read. Overall
+Base1/1629.8 29.8 35.0 36.1 31.9
+1/435.1 35.3 40.4 41.1 37.3
+Full 36.4 36.4 41.7 42.0 38.5
+DRP-Paper1/1633.0 32.9 38.6 40.1 35.3
+1/437.1 37.3 42.4 42.8 39.2
+Full 38.8 39.3 44.1 44.6 41.1
+DRP-Web1/1634.1 34.0 40.1 40.8 36.5
+1/437.4 37.7 42.7 42.8 39.6
+Full 38.4 38.8 43.9 44.3 40.7
+Table A6: Numerical DRB RACE-dimension results. Values at1/16and1/4SFT are means over
+five independently sampled, matched SFT subsets; full-SFT values are fixed single-run references.
+All scores use the 0–100 scale.
+Benchmark General Mixed Benchmark General Mixed
+ARC 93.093.8DROP71.070.5
+OBQA92.692.4 HotpotQA 69.672.4
+HellaSwag 91.191.2TriviaQA68.468.1
+PIQA89.388.1 WikiTableQ55.652.3
+GSM8K 87.087.12Wiki 51.755.7
+CSQA85.7 85.7SQuAD </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Raw-Web and Raw-Paper use the same source-document pools as DRP-Web and DRP-Paper, re-
+spectively. They match the 1B-token CPT budget but remove proxy queries, reasoning traces, tool
+calls, and graph-derived relevance relations. Consequently, the DRP–Raw comparison isolates the
+effect of restructuring the same domains into predictive-navigation supervision.</blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evidence-Mismatched DRP-Web preserves the proxy objectives, generated reasoning, action sched-
+ule, protocol rendering, response-length distribution, and training budget of canonical DRP-Web.
+We replace the graph-derived search and open observations with random in-domain evidence. The
+ablation therefore breaks the alignment among query, observation, and subsequent action while pre-
+serving the agent-like surface form.</blockquote></details></li><li><strong>Contribution clarity — page 25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>F ADDITIONALLIMITATIONS
+The current experiments use English downstream trajectories and one released trajectory source. The
+primary DRB evaluation has 50 English questions, making paired evaluation and transparent uncer-
+tainty reporting especially important. The five-run design measures downstream subset sensitivity
+but does not estimate the full interaction among subset sampling, training randomness, decoding
+randomness, and judge variation. Most construction ablations use one fixed SFT subset and paired
+question-level bootstrap intervals. Finally, DRP&#x27;s gain attenuates with more downstream SFT data.
+25</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +366,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

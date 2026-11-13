@@ -31,7 +31,7 @@
   "last_seen_date": "2026-08-08",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-04 09:12:29",
   "notified_date": "2026-08-04",
@@ -42,7 +42,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-04 09:12:02",
-    "generated_at": "2026-11-12 12:13:46",
+    "generated_at": "2026-11-13 11:55:26",
     "last_seen_at": "2026-08-08 07:18:42",
     "metadata_sources": [
       "openalex",
@@ -107,122 +107,2536 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-06T09:09:56+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-13T11:53:30.040565+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [
-      "Comparative claims were detected without a suitable baseline in the available text."
-    ],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
-    "confidence": "low",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+    "concerns": [],
+    "concise_summary": "The study offers a solid, well-controlled experimental validation of offline graph-derived pretraining for research agents, supported by rigorous paired statistics, clear negative controls, and comprehensive ablation studies.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 74675,
+      "assessment_input_sha256": "43860b18168a13024ea013a15a647ddba1df9bbf6aa9d6ccb57a0bd4209012c8",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7172558763",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 72608,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 71486,
+      "evidence_block_count": 108,
+      "evidence_context_characters": 84602,
+      "evidence_context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+      "evidence_context_sha256": "7e3d70d067d9e85a7f0554fa9ca69fb57e00ad3d97278585343d83d9e862f6a0",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 72656,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "extracted_pages": 25,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "a13ebca31d8d643717e3de641455429e28d75a812dcf3b1a42823a6794d63ac3",
+        "source_url": "https://arxiv.org/pdf/2608.00432",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 72608,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 155,
+          "supplied_characters": 155
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1634,
+          "supplied_characters": 1634
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2213,
+          "supplied_characters": 2213
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 65,
+          "supplied_characters": 65
+        },
+        {
+          "heading": "B C",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 171,
+          "supplied_characters": 171
+        },
+        {
+          "heading": "Ai B",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 3699,
+          "supplied_characters": 3699
+        },
+        {
+          "heading": "Ai B",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 623,
+          "supplied_characters": 623
+        },
+        {
+          "heading": "Problemformulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 7,
+          "source_characters": 1228,
+          "supplied_characters": 1228
+        },
+        {
+          "heading": "Offlinereversesynthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1305,
+          "supplied_characters": 1305
+        },
+        {
+          "heading": "Offlinereversesynthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 829,
+          "supplied_characters": 829
+        },
+        {
+          "heading": "Twoevidence-Graphinstantiations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1319,
+          "supplied_characters": 1319
+        },
+        {
+          "heading": "Maskedcontinual-Pretrainingobjective",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 11,
+          "source_characters": 522,
+          "supplied_characters": 522
+        },
+        {
+          "heading": "Experimentalsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 663,
+          "supplied_characters": 663
+        },
+        {
+          "heading": "Experimentalsetup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 13,
+          "source_characters": 3293,
+          "supplied_characters": 3293
+        },
+        {
+          "heading": "Mainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 491,
+          "supplied_characters": 491
+        },
+        {
+          "heading": "Mainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 2430,
+          "supplied_characters": 2430
+        },
+        {
+          "heading": "Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 491,
+          "supplied_characters": 491
+        },
+        {
+          "heading": "Rawdomainpretrainingisnotenough",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 811,
+          "supplied_characters": 811
+        },
+        {
+          "heading": "Rawdomainpretrainingisnotenough",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 121,
+          "supplied_characters": 121
+        },
+        {
+          "heading": "Sft 1/16",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 118,
+          "supplied_characters": 118
+        },
+        {
+          "heading": "Sft 1/4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 711,
+          "supplied_characters": 711
+        },
+        {
+          "heading": "Evidencealignmentmatters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 859,
+          "supplied_characters": 859
+        },
+        {
+          "heading": "Whichpseudo-Operationsmatter?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 724,
+          "supplied_characters": 724
+        },
+        {
+          "heading": "Protocolrendering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 605,
+          "supplied_characters": 605
+        },
+        {
+          "heading": "Toolresponselength",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 286,
+          "supplied_characters": 286
+        },
+        {
+          "heading": "Toolresponselength",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1661,
+          "supplied_characters": 1661
+        },
+        {
+          "heading": "Toolresponselength",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 642,
+          "supplied_characters": 642
+        },
+        {
+          "heading": "Transferacrossmodelscales",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 367,
+          "supplied_characters": 367
+        },
+        {
+          "heading": "Generalcapability Anddistributionshift",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 895,
+          "supplied_characters": 895
+        },
+        {
+          "heading": "Maskingtoolobservationsisimportant",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 569,
+          "supplied_characters": 569
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 785,
+          "supplied_characters": 785
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 2114,
+          "supplied_characters": 2114
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 32,
+          "source_characters": 1461,
+          "supplied_characters": 1461
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 4271,
+          "supplied_characters": 4271
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 4169,
+          "supplied_characters": 4169
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1219,
+          "supplied_characters": 1219
+        },
+        {
+          "heading": "Appendix: Reproducibilitydetails",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 164,
+          "supplied_characters": 164
+        },
+        {
+          "heading": "Appendix: Drp Dataconstruction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 2613,
+          "supplied_characters": 2613
+        },
+        {
+          "heading": "Appendix: Drp-Websynthesisprompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 941,
+          "supplied_characters": 941
+        },
+        {
+          "heading": "You Are A Deep Research Agent Simulating How A Researcher Explores An",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 126,
+          "supplied_characters": 126
+        },
+        {
+          "heading": "You Are A Deep Research Agent Simulating How A Researcher Explores An",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 2420,
+          "supplied_characters": 2420
+        },
+        {
+          "heading": "You Are A Deep Research Agent Simulating How A Researcher Explores An",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 502,
+          "supplied_characters": 502
+        },
+        {
+          "heading": "Round 1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Round 2",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 1837,
+          "supplied_characters": 1837
+        },
+        {
+          "heading": "Round 2",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 2262,
+          "supplied_characters": 2262
+        },
+        {
+          "heading": "Appendix: Continualpretraining",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 414,
+          "supplied_characters": 414
+        },
+        {
+          "heading": "Appendix: Downstreamagentsft",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 730,
+          "supplied_characters": 730
+        },
+        {
+          "heading": "Appendix: Downstreamagenticrl",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 47,
+          "source_characters": 1099,
+          "supplied_characters": 1099
+        },
+        {
+          "heading": "Appendix: Agentinference Andevaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 986,
+          "supplied_characters": 986
+        },
+        {
+          "heading": "Appendix: Researchqa Contaminationanalysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 427,
+          "supplied_characters": 427
+        },
+        {
+          "heading": "Hyperparameter Value Hyperparameter Value",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 672,
+          "supplied_characters": 672
+        },
+        {
+          "heading": "Appendix: Statisticalprocedures",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Appendix: Variationacrosssampledsft Subsets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 978,
+          "supplied_characters": 978
+        },
+        {
+          "heading": "Appendix: Question-Levelpairedbootstrap",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 564,
+          "supplied_characters": 564
+        },
+        {
+          "heading": "Appendix: Repeated-Evaluationstability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 54,
+          "source_characters": 489,
+          "supplied_characters": 489
+        },
+        {
+          "heading": "Appendix: Repeated-Evaluationstability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 55,
+          "source_characters": 179,
+          "supplied_characters": 179
+        },
+        {
+          "heading": "Appendix: Additionalmainresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 56,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Appendix: Per-Subsetdeepresearchbenchresults",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 57,
+          "source_characters": 283,
+          "supplied_characters": 283
+        },
+        {
+          "heading": "Appendix: Full-Sft Reference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 58,
+          "source_characters": 562,
+          "supplied_characters": 562
+        },
+        {
+          "heading": "Appendix: Race Dimensionbreakdown",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 59,
+          "source_characters": 304,
+          "supplied_characters": 304
+        },
+        {
+          "heading": "Appendix: General-Capabilityscores",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 60,
+          "source_characters": 780,
+          "supplied_characters": 780
+        },
+        {
+          "heading": "Appendix: General-Capabilityscores",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 2353,
+          "supplied_characters": 2353
+        },
+        {
+          "heading": "Appendix: General-Capabilityscores",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 349,
+          "supplied_characters": 349
+        },
+        {
+          "heading": "Appendix: Synthetic-Datacostaccounting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 1972,
+          "supplied_characters": 1972
+        },
+        {
+          "heading": "Appendix: Synthetic-Datacostaccounting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 64,
+          "source_characters": 1101,
+          "supplied_characters": 1101
+        },
+        {
+          "heading": "Appendix: Construction Andablationdetails",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 65,
+          "source_characters": 33,
+          "supplied_characters": 33
+        },
+        {
+          "heading": "Appendix: Raw-Domaincontrols",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 66,
+          "source_characters": 359,
+          "supplied_characters": 359
+        },
+        {
+          "heading": "Appendix: Evidence-Mismatcheddrp-Web",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 421,
+          "supplied_characters": 421
+        },
+        {
+          "heading": "Appendix: Pseudo-Operationtopologies",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 68,
+          "source_characters": 475,
+          "supplied_characters": 475
+        },
+        {
+          "heading": "Appendix: Protocolrendering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 204,
+          "supplied_characters": 204
+        },
+        {
+          "heading": "Appendix: Protocolrendering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 188,
+          "supplied_characters": 188
+        },
+        {
+          "heading": "Appendix: Responselength Andlossmasking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 429,
+          "supplied_characters": 429
+        },
+        {
+          "heading": "Appendix: Additionallimitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 72,
+          "source_characters": 612,
+          "supplied_characters": 612
+        }
+      ],
+      "selected_characters": 71486,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "selected_sections": [
+        {
+          "characters": 155,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1634,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2213,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 65,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 171,
+          "heading": "B C",
+          "page": 2
+        },
+        {
+          "characters": 3699,
+          "heading": "Ai B",
+          "page": 2
+        },
+        {
+          "characters": 623,
+          "heading": "Ai B",
+          "page": 3
+        },
+        {
+          "characters": 1228,
+          "heading": "Problemformulation",
+          "page": 3
+        },
+        {
+          "characters": 1305,
+          "heading": "Offlinereversesynthesis",
+          "page": 3
+        },
+        {
+          "characters": 829,
+          "heading": "Offlinereversesynthesis",
+          "page": 4
+        },
+        {
+          "characters": 1319,
+          "heading": "Twoevidence-Graphinstantiations",
+          "page": 4
+        },
+        {
+          "characters": 522,
+          "heading": "Maskedcontinual-Pretrainingobjective",
+          "page": 4
+        },
+        {
+          "characters": 663,
+          "heading": "Experimentalsetup",
+          "page": 4
+        },
+        {
+          "characters": 3293,
+          "heading": "Experimentalsetup",
+          "page": 5
+        },
+        {
+          "characters": 491,
+          "heading": "Mainresults",
+          "page": 5
+        },
+        {
+          "characters": 2430,
+          "heading": "Mainresults",
+          "page": 6
+        },
+        {
+          "characters": 491,
+          "heading": "Analysis",
+          "page": 6
+        },
+        {
+          "characters": 811,
+          "heading": "Rawdomainpretrainingisnotenough",
+          "page": 6
+        },
+        {
+          "characters": 121,
+          "heading": "Rawdomainpretrainingisnotenough",
+          "page": 7
+        },
+        {
+          "characters": 118,
+          "heading": "Sft 1/16",
+          "page": 7
+        },
+        {
+          "characters": 711,
+          "heading": "Sft 1/4",
+          "page": 7
+        },
+        {
+          "characters": 859,
+          "heading": "Evidencealignmentmatters",
+          "page": 7
+        },
+        {
+          "characters": 724,
+          "heading": "Whichpseudo-Operationsmatter?",
+          "page": 7
+        },
+        {
+          "characters": 605,
+          "heading": "Protocolrendering",
+          "page": 7
+        },
+        {
+          "characters": 286,
+          "heading": "Toolresponselength",
+          "page": 7
+        },
+        {
+          "characters": 1661,
+          "heading": "Toolresponselength",
+          "page": 8
+        },
+        {
+          "characters": 642,
+          "heading": "Toolresponselength",
+          "page": 9
+        },
+        {
+          "characters": 367,
+          "heading": "Transferacrossmodelscales",
+          "page": 9
+        },
+        {
+          "characters": 895,
+          "heading": "Generalcapability Anddistributionshift",
+          "page": 9
+        },
+        {
+          "characters": 569,
+          "heading": "Maskingtoolobservationsisimportant",
+          "page": 9
+        },
+        {
+          "characters": 785,
+          "heading": "Relatedwork",
+          "page": 9
+        },
+        {
+          "characters": 2114,
+          "heading": "Relatedwork",
+          "page": 10
+        },
+        {
+          "characters": 1461,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 4271,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 4169,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 1219,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 164,
+          "heading": "Appendix: Reproducibilitydetails",
+          "page": 14
+        },
+        {
+          "characters": 2613,
+          "heading": "Appendix: Drp Dataconstruction",
+          "page": 14
+        },
+        {
+          "characters": 941,
+          "heading": "Appendix: Drp-Websynthesisprompts",
+          "page": 14
+        },
+        {
+          "characters": 126,
+          "heading": "You Are A Deep Research Agent Simulating How A Researcher Explores An",
+          "page": 14
+        },
+        {
+          "characters": 2420,
+          "heading": "You Are A Deep Research Agent Simulating How A Researcher Explores An",
+          "page": 15
+        },
+        {
+          "characters": 502,
+          "heading": "You Are A Deep Research Agent Simulating How A Researcher Explores An",
+          "page": 16
+        },
+        {
+          "characters": 93,
+          "heading": "Round 1",
+          "page": 16
+        },
+        {
+          "characters": 1837,
+          "heading": "Round 2",
+          "page": 16
+        },
+        {
+          "characters": 2262,
+          "heading": "Round 2",
+          "page": 17
+        },
+        {
+          "characters": 414,
+          "heading": "Appendix: Continualpretraining",
+          "page": 18
+        },
+        {
+          "characters": 730,
+          "heading": "Appendix: Downstreamagentsft",
+          "page": 18
+        },
+        {
+          "characters": 1099,
+          "heading": "Appendix: Downstreamagenticrl",
+          "page": 18
+        },
+        {
+          "characters": 986,
+          "heading": "Appendix: Agentinference Andevaluation",
+          "page": 18
+        },
+        {
+          "characters": 427,
+          "heading": "Appendix: Researchqa Contaminationanalysis",
+          "page": 18
+        },
+        {
+          "characters": 672,
+          "heading": "Hyperparameter Value Hyperparameter Value",
+          "page": 19
+        },
+        {
+          "characters": 23,
+          "heading": "Appendix: Statisticalprocedures",
+          "page": 19
+        },
+        {
+          "characters": 978,
+          "heading": "Appendix: Variationacrosssampledsft Subsets",
+          "page": 19
+        },
+        {
+          "characters": 564,
+          "heading": "Appendix: Question-Levelpairedbootstrap",
+          "page": 19
+        },
+        {
+          "characters": 489,
+          "heading": "Appendix: Repeated-Evaluationstability",
+          "page": 19
+        },
+        {
+          "characters": 179,
+          "heading": "Appendix: Repeated-Evaluationstability",
+          "page": 20
+        },
+        {
+          "characters": 23,
+          "heading": "Appendix: Additionalmainresults",
+          "page": 20
+        },
+        {
+          "characters": 283,
+          "heading": "Appendix: Per-Subsetdeepresearchbenchresults",
+          "page": 20
+        },
+        {
+          "characters": 562,
+          "heading": "Appendix: Full-Sft Reference",
+          "page": 20
+        },
+        {
+          "characters": 304,
+          "heading": "Appendix: Race Dimensionbreakdown",
+          "page": 20
+        },
+        {
+          "characters": 780,
+          "heading": "Appendix: General-Capabilityscores",
+          "page": 20
+        },
+        {
+          "characters": 2353,
+          "heading": "Appendix: General-Capabilityscores",
+          "page": 21
+        },
+        {
+          "characters": 349,
+          "heading": "Appendix: General-Capabilityscores",
+          "page": 22
+        },
+        {
+          "characters": 1972,
+          "heading": "Appendix: Synthetic-Datacostaccounting",
+          "page": 23
+        },
+        {
+          "characters": 1101,
+          "heading": "Appendix: Synthetic-Datacostaccounting",
+          "page": 24
+        },
+        {
+          "characters": 33,
+          "heading": "Appendix: Construction Andablationdetails",
+          "page": 24
+        },
+        {
+          "characters": 359,
+          "heading": "Appendix: Raw-Domaincontrols",
+          "page": 24
+        },
+        {
+          "characters": 421,
+          "heading": "Appendix: Evidence-Mismatcheddrp-Web",
+          "page": 24
+        },
+        {
+          "characters": 475,
+          "heading": "Appendix: Pseudo-Operationtopologies",
+          "page": 24
+        },
+        {
+          "characters": 204,
+          "heading": "Appendix: Protocolrendering",
+          "page": 24
+        },
+        {
+          "characters": 188,
+          "heading": "Appendix: Protocolrendering",
+          "page": 25
+        },
+        {
+          "characters": 429,
+          "heading": "Appendix: Responselength Andlossmasking",
+          "page": 25
+        },
+        {
+          "characters": 612,
+          "heading": "Appendix: Additionallimitations",
+          "page": 25
+        }
+      ],
+      "selected_text_sha256": "43860b18168a13024ea013a15a647ddba1df9bbf6aa9d6ccb57a0bd4209012c8",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "a13ebca31d8d643717e3de641455429e28d75a812dcf3b1a42823a6794d63ac3",
+      "source_pages": 25,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "eval, document inspection, and report evaluation. We introduce Deep Research Pretraining (DRP), an offline framework that derives predictive n",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0002"
+        ],
+        "excerpt": "Deep research agents are often trained on expensive, environment-grounded tool-\nuse trajectories that require repeated retrieval, document inspection, and report\nevaluation. We introduce Deep Research Pretraining (DRP), an offline framework\nthat derives predictive-navigation supervision from naturally occurring evidence\nstructures. Given a citation-bearing or hyperlinked passage, DRP constructs a\nproxy research objective, recovers linked evidence and graph-related alternatives,\nand converts them into search\u2013open\u2013write trajectories. This teaches models what\nto search for, which documents to inspect, and how to synthesize evidence, with-\nout a live retrieval environment or executed policy rollout. We instantiate DRP\non scholarly citation graphs (DRP-Paper) and Wikipedia hyperlinks (DRP-Web),\ncontinually pretrain separate Qwen3-14B-Base models on 1B tokens, and fine-\ntune them on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "fd207622d9bbe501c8f88fd0fc826594597ab50edd533e23e67b61a2b674b935",
+            "evidence_id": "E13b702c4bd796d4f-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Deep research agents are often trained on expensive, environment-grounded tool-\nuse trajectories that require repeated retrieval, document inspection, and report\nevaluation. We introduce Deep Research Pretraining (DRP), an offline framework\nthat derives predictive-navigation supervision from naturally occurring evidence\nstructures. Given a citation-bearing or hyperlinked passage, DRP constructs a\nproxy research objective, recovers linked evidence and graph-related alternatives,\nand converts them into search\u2013open\u2013write trajectories. This teaches models what\nto search for, which documents to inspect, and how to synthesize evidence, with-\nout a live retrieval environment or executed policy rollout. We instantiate DRP\non scholarly citation graphs (DRP-Paper) and Wikipedia hyperlinks (DRP-Web),\ncontinually pretrain separate Qwen3-14B-Base models on 1B tokens, and fine-\ntune them on "
+              }
+            ],
+            "text": "Deep research agents are often trained on expensive, environment-grounded tool-\nuse trajectories that require repeated retrieval, document inspection, and report\nevaluation. We introduce Deep Research Pretraining (DRP), an offline framework\nthat derives predictive-navigation supervision from naturally occurring evidence\nstructures. Given a citation-bearing or hyperlinked passage, DRP constructs a\nproxy research objective, recovers linked evidence and graph-related alternatives,\nand converts them into search\u2013open\u2013write trajectories. This teaches models what\nto search for, which documents to inspect, and how to synthesize evidence, with-\nout a live retrieval environment or executed policy rollout. We instantiate DRP\non scholarly citation graphs (DRP-Paper) and Wikipedia hyperlinks (DRP-Web),\ncontinually pretrain separate Qwen3-14B-Base models on 1B tokens, and fine-\ntune them on "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No suitable baseline comparison was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0003"
+        ],
+        "excerpt": "controlled fractions of 13K agent trajectories. Across five indepen-\ndently sampled subsets at each low-data budget, both variants consistently out-\nperform matched no-DRP models on DeepResearch Bench. With one quarter of\nthe SFT data, DRP-Web even surpasses a fixed no-DRP full-data checkpoint, with\ngains transferring to ResearchQA, WebWalkerQA, and SimpleQA. Starting from\nmatched low-data SFT checkpoints, the DRP-Web advantage also persists through\nsubsequent agentic RL. Source-matched and evidence-mismatch controls indicate\nthat these improvements arise from evidence-conditioned navigation rather than\ndomain exposure or agent-format imitation. DRP thus provides a promising com-\nplementary approach to trajectory-based agent training.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "462ba257ebd37c654abe51a09fbd14582229a11678a5b1452618ca6492fbb22d",
+            "evidence_id": "E13b702c4bd796d4f-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1634,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 890,
+                "text": "controlled fractions of 13K agent trajectories. Across five indepen-\ndently sampled subsets at each low-data budget, both variants consistently out-\nperform matched no-DRP models on DeepResearch Bench. With one quarter of\nthe SFT data, DRP-Web even surpasses a fixed no-DRP full-data checkpoint, with\ngains transferring to ResearchQA, WebWalkerQA, and SimpleQA. Starting from\nmatched low-data SFT checkpoints, the DRP-Web advantage also persists through\nsubsequent agentic RL. Source-matched and evidence-mismatch controls indicate\nthat these improvements arise from evidence-conditioned navigation rather than\ndomain exposure or agent-format imitation. DRP thus provides a promising com-\nplementary approach to trajectory-based agent training."
+              }
+            ],
+            "text": "controlled fractions of 13K agent trajectories. Across five indepen-\ndently sampled subsets at each low-data budget, both variants consistently out-\nperform matched no-DRP models on DeepResearch Bench. With one quarter of\nthe SFT data, DRP-Web even surpasses a fixed no-DRP full-data checkpoint, with\ngains transferring to ResearchQA, WebWalkerQA, and SimpleQA. Starting from\nmatched low-data SFT checkpoints, the DRP-Web advantage also persists through\nsubsequent agentic RL. Source-matched and evidence-mismatch controls indicate\nthat these improvements arise from evidence-conditioned navigation rather than\ndomain exposure or agent-format imitation. DRP thus provides a promising com-\nplementary approach to trajectory-based agent training."
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0011"
+        ],
+        "excerpt": "and then fine-tune them on con-\ntrolled fractions of 13K GPT-5-generated deep-research trajectories from DR Tulu (Shao et al.,\n2025). Here, sample efficiency is defined as performance as a function of the number of expert tra-\njectories used for downstream training. Across five independently sampled subsets at both low-data\nbudgets, DRP-Paper and DRP-Web consistently improve over matched no-DRP SFT on DeepRe-\nsearch Bench. With one quarter of the trajectories, DRP-Web also exceeds a fixed full-data Base\ncheckpoint. Positive low-data gains transfer to ResearchQA, WebWalkerQA, and SimpleQA, and\nthe1/16-SFT effect persists on Qwen3-30B-A3B. Starting from matched1/16-SFT checkpoints,\nDRP-Web also remains ahead of Base throughout 80 steps of ARPO-style agentic RL. Source-\nmatched raw-document and evidence-mismatch controls support the hypothesis that the gain comes\nfrom evidence-conditioned ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ai B",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "439fc87ecef31bd2b67bd112f59a455176c480532619e564446093b7ad5e32c9",
+            "evidence_id": "E13b702c4bd796d4f-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Ai B",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3586,
+                "page": 2,
+                "section": "Ai B",
+                "section_index": 5,
+                "start": 2687,
+                "text": "and then fine-tune them on con-\ntrolled fractions of 13K GPT-5-generated deep-research trajectories from DR Tulu (Shao et al.,\n2025). Here, sample efficiency is defined as performance as a function of the number of expert tra-\njectories used for downstream training. Across five independently sampled subsets at both low-data\nbudgets, DRP-Paper and DRP-Web consistently improve over matched no-DRP SFT on DeepRe-\nsearch Bench. With one quarter of the trajectories, DRP-Web also exceeds a fixed full-data Base\ncheckpoint. Positive low-data gains transfer to ResearchQA, WebWalkerQA, and SimpleQA, and\nthe1/16-SFT effect persists on Qwen3-30B-A3B. Starting from matched1/16-SFT checkpoints,\nDRP-Web also remains ahead of Base throughout 80 steps of ARPO-style agentic RL. Source-\nmatched raw-document and evidence-mismatch controls support the hypothesis that the gain comes\nfrom evidence-conditioned "
+              }
+            ],
+            "text": "and then fine-tune them on con-\ntrolled fractions of 13K GPT-5-generated deep-research trajectories from DR Tulu (Shao et al.,\n2025). Here, sample efficiency is defined as performance as a function of the number of expert tra-\njectories used for downstream training. Across five independently sampled subsets at both low-data\nbudgets, DRP-Paper and DRP-Web consistently improve over matched no-DRP SFT on DeepRe-\nsearch Bench. With one quarter of the trajectories, DRP-Web also exceeds a fixed full-data Base\ncheckpoint. Positive low-data gains transfer to ResearchQA, WebWalkerQA, and SimpleQA, and\nthe1/16-SFT effect persists on Qwen3-30B-A3B. Starting from matched1/16-SFT checkpoints,\nDRP-Web also remains ahead of Base throughout 80 steps of ARPO-style agentic RL. Source-\nmatched raw-document and evidence-mismatch controls support the hypothesis that the gain comes\nfrom evidence-conditioned "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evidence_to_claim_alignment",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
-        "section": null,
-        "signal_type": "concern",
-        "source_blocks": [],
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0015"
+        ],
+        "excerpt": "Collecting\u03c4in the usual forward direction requires executing a policy in a retrieval environment.\nDRP instead constructs it in reverse from(r, E r). We partition the evidence targets across search\nsteps,E r =P 1 \u222a \u00b7 \u00b7 \u00b7 \u222aPm. For stepi, the constructor synthesizes a queryq i and forms a search\ncandidate set\nKi =P i \u222aN i,(4)\nwhereP i contains evidence vertices to acquire andNi contains vertices of topologically related doc-\numents that are plausible for the topic but are not selected for the target passage. The corresponding\nsearch observation renders titles and snippets forK i. The open action selectsP i and returns their\nsource text; candidates inN i are observed but left unopened, providing an implicit selection con-\ntrast rather than explicit negative labels. Section 2.3 instantiatesE r and the candidate alternatives\nNi using scholarly citation and Wikipedia hyperlink graphs.\nOur ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Offlinereversesynthesis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "543f5a08c79ae93dba0103adc627ac4c2c298a03a6fabbb60f814bcef4bfa88a",
+            "evidence_id": "E13b702c4bd796d4f-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Offlinereversesynthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 3,
+                "section": "Offlinereversesynthesis",
+                "section_index": 8,
+                "start": 0,
+                "text": "Collecting\u03c4in the usual forward direction requires executing a policy in a retrieval environment.\nDRP instead constructs it in reverse from(r, E r). We partition the evidence targets across search\nsteps,E r =P 1 \u222a \u00b7 \u00b7 \u00b7 \u222aPm. For stepi, the constructor synthesizes a queryq i and forms a search\ncandidate set\nKi =P i \u222aN i,(4)\nwhereP i contains evidence vertices to acquire andNi contains vertices of topologically related doc-\numents that are plausible for the topic but are not selected for the target passage. The corresponding\nsearch observation renders titles and snippets forK i. The open action selectsP i and returns their\nsource text; candidates inN i are observed but left unopened, providing an implicit selection con-\ntrast rather than explicit negative labels. Section 2.3 instantiatesE r and the candidate alternatives\nNi using scholarly citation and Wikipedia hyperlink graphs.\nOur "
+              }
+            ],
+            "text": "Collecting\u03c4in the usual forward direction requires executing a policy in a retrieval environment.\nDRP instead constructs it in reverse from(r, E r). We partition the evidence targets across search\nsteps,E r =P 1 \u222a \u00b7 \u00b7 \u00b7 \u222aPm. For stepi, the constructor synthesizes a queryq i and forms a search\ncandidate set\nKi =P i \u222aN i,(4)\nwhereP i contains evidence vertices to acquire andNi contains vertices of topologically related doc-\numents that are plausible for the topic but are not selected for the target passage. The corresponding\nsearch observation renders titles and snippets forK i. The open action selectsP i and returns their\nsource text; candidates inN i are observed but left unopened, providing an implicit selection con-\ntrast rather than explicit negative labels. Section 2.3 instantiatesE r and the candidate alternatives\nNi using scholarly citation and Wikipedia hyperlink graphs.\nOur "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0020"
+        ],
+        "excerpt": "Letx 1:L be the tokenized trajectory and letm t indicate whether tokenx t is produced by the agent.\nDRP minimizes the masked causal language-model loss\nLDRP(\u03b8) =\u2212 1PL\nt=1 mt\nLX\nt=1\nmt logp \u03b8(xt |x <t).(7)\nWe setm t = 1for assistant reasoning, tool calls and their arguments, and the final report, andm t =\n0for the system prompt, user objective, and search/open observations. The model therefore learns\nto predict evidence-conditioned decisions and synthesis rather than to reproduce the constructed\nenvironment responses.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Maskedcontinual-Pretrainingobjective",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ead2969a37b834dd191da515fcbce96e2a78993f4fba177980d390385b33801f",
+            "evidence_id": "E13b702c4bd796d4f-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Maskedcontinual-Pretrainingobjective",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 522,
+                "page": 4,
+                "section": "Maskedcontinual-Pretrainingobjective",
+                "section_index": 11,
+                "start": 0,
+                "text": "Letx 1:L be the tokenized trajectory and letm t indicate whether tokenx t is produced by the agent.\nDRP minimizes the masked causal language-model loss\nLDRP(\u03b8) =\u2212 1PL\nt=1 mt\nLX\nt=1\nmt logp \u03b8(xt |x <t).(7)\nWe setm t = 1for assistant reasoning, tool calls and their arguments, and the final report, andm t =\n0for the system prompt, user objective, and search/open observations. The model therefore learns\nto predict evidence-conditioned decisions and synthesis rather than to reproduce the constructed\nenvironment responses."
+              }
+            ],
+            "text": "Letx 1:L be the tokenized trajectory and letm t indicate whether tokenx t is produced by the agent.\nDRP minimizes the masked causal language-model loss\nLDRP(\u03b8) =\u2212 1PL\nt=1 mt\nLX\nt=1\nmt logp \u03b8(xt |x <t).(7)\nWe setm t = 1for assistant reasoning, tool calls and their arguments, and the final report, andm t =\n0for the system prompt, user objective, and search/open observations. The model therefore learns\nto predict evidence-conditioned decisions and synthesis rather than to reproduce the constructed\nenvironment responses."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0021"
+        ],
+        "excerpt": "Models and continual pretraining.Our primary model is Qwen3-14B-Base (Yang et al., 2025),\nwith Qwen3-30B-A3B-Base used for scale analysis. Unless stated otherwise, each DRP corpus uses\na 1B-token CPT budget. We pack 128K-token sequences with a 2M-token global batch (500 steps)\nand train in BF16 with AdamW (Loshchilov & Hutter, 2019) (\u03b21 = 0.9,\u03b2 2 = 0.999,\u03f5= 10 \u22128), no\nweight decay, and gradient clipping at 1.0. The learning rate has 10% warmup to4\u00d710 \u22125 followed\nby cosine decay to zero. A run takes approximately six hours on 128 H20 96GB GPUs. Canoni-\ncal DRP-Web uses the interleaved search\u2013open schedule and medium response budget analyzed in\nSection 4.\n4\n1/16 1/4 Full\nSFT data fraction\n30\n32\n34\n36\n38\n40DRB RACE overall (%)\nBase (full SFT)\nOutperforms full-SFT Base\nwith 4\u00d7 fewer trajectories\n(a)  Sample efficiency\nBase\nDRP-Paper\nDRP-Web\n0 2 4 6 8\nPaired \u0394 RACE (%)\n1/16 SFT\nvs same-SFT ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7366d7105075d8720eac5d3139298602f8f426dd3be150936f0242f1fada548b",
+            "evidence_id": "E13b702c4bd796d4f-B0021",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 663,
+                "page": 4,
+                "section": "Experimentalsetup",
+                "section_index": 12,
+                "start": 0,
+                "text": "Models and continual pretraining.Our primary model is Qwen3-14B-Base (Yang et al., 2025),\nwith Qwen3-30B-A3B-Base used for scale analysis. Unless stated otherwise, each DRP corpus uses\na 1B-token CPT budget. We pack 128K-token sequences with a 2M-token global batch (500 steps)\nand train in BF16 with AdamW (Loshchilov & Hutter, 2019) (\u03b21 = 0.9,\u03b2 2 = 0.999,\u03f5= 10 \u22128), no\nweight decay, and gradient clipping at 1.0. The learning rate has 10% warmup to4\u00d710 \u22125 followed\nby cosine decay to zero. A run takes approximately six hours on 128 H20 96GB GPUs. Canoni-\ncal DRP-Web uses the interleaved search\u2013open schedule and medium response budget analyzed in\nSection 4.\n4"
+              },
+              {
+                "end": 234,
+                "page": 5,
+                "section": "Experimentalsetup",
+                "section_index": 13,
+                "start": 0,
+                "text": "1/16 1/4 Full\nSFT data fraction\n30\n32\n34\n36\n38\n40DRB RACE overall (%)\nBase (full SFT)\nOutperforms full-SFT Base\nwith 4\u00d7 fewer trajectories\n(a)  Sample efficiency\nBase\nDRP-Paper\nDRP-Web\n0 2 4 6 8\nPaired \u0394 RACE (%)\n1/16 SFT\nvs same-SFT "
+              }
+            ],
+            "text": "Models and continual pretraining.Our primary model is Qwen3-14B-Base (Yang et al., 2025),\nwith Qwen3-30B-A3B-Base used for scale analysis. Unless stated otherwise, each DRP corpus uses\na 1B-token CPT budget. We pack 128K-token sequences with a 2M-token global batch (500 steps)\nand train in BF16 with AdamW (Loshchilov & Hutter, 2019) (\u03b21 = 0.9,\u03b2 2 = 0.999,\u03f5= 10 \u22128), no\nweight decay, and gradient clipping at 1.0. The learning rate has 10% warmup to4\u00d710 \u22125 followed\nby cosine decay to zero. A run takes approximately six hours on 128 H20 96GB GPUs. Canoni-\ncal DRP-Web uses the interleaved search\u2013open schedule and medium response budget analyzed in\nSection 4.\n4\n1/16 1/4 Full\nSFT data fraction\n30\n32\n34\n36\n38\n40DRB RACE overall (%)\nBase (full SFT)\nOutperforms full-SFT Base\nwith 4\u00d7 fewer trajectories\n(a)  Sample efficiency\nBase\nDRP-Paper\nDRP-Web\n0 2 4 6 8\nPaired \u0394 RACE (%)\n1/16 SFT\nvs same-SFT "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0023"
+        ],
+        "excerpt": "claim concerns SFT sample efficiency rather than replacing agent training.\nAt each low-data fraction, we sample five subsets (seeds 42, 2026, 5678, 31337, and 1234); all\ninitializations receive the same trajectories within a seed. We report mean and standard deviation\nacross runs. For contrasts involving subset-trained models, we compute the paired score difference\nds for each seed and report \u00afd\u00b1t 0.975,4sd/\u221a5, wheres d is the sample standard deviation. This 95%\ninterval measures SFT-subset variation; full-data SFT is a fixed reference.\nDownstream agentic RL.To test whether DRP remains useful beyond SFT, we initialize two\nRL runs from Base and DRP-Web checkpoints trained on the same fixed1/16SFT subset. Both\nruns follow the ARPO deep-search setting (Dong et al., 2026), using the same 1K-example mixed\nhard-search training set and identical rollout, reward, and optimization ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e8e393767193bc72d91d79326891f70ee1a1e7fe81b2fda49004439b0839ff51",
+            "evidence_id": "E13b702c4bd796d4f-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2019,
+                "page": 5,
+                "section": "Experimentalsetup",
+                "section_index": 13,
+                "start": 1134,
+                "text": "claim concerns SFT sample efficiency rather than replacing agent training.\nAt each low-data fraction, we sample five subsets (seeds 42, 2026, 5678, 31337, and 1234); all\ninitializations receive the same trajectories within a seed. We report mean and standard deviation\nacross runs. For contrasts involving subset-trained models, we compute the paired score difference\nds for each seed and report \u00afd\u00b1t 0.975,4sd/\u221a5, wheres d is the sample standard deviation. This 95%\ninterval measures SFT-subset variation; full-data SFT is a fixed reference.\nDownstream agentic RL.To test whether DRP remains useful beyond SFT, we initialize two\nRL runs from Base and DRP-Web checkpoints trained on the same fixed1/16SFT subset. Both\nruns follow the ARPO deep-search setting (Dong et al., 2026), using the same 1K-example mixed\nhard-search training set and identical rollout, reward, and optimization "
+              }
+            ],
+            "text": "claim concerns SFT sample efficiency rather than replacing agent training.\nAt each low-data fraction, we sample five subsets (seeds 42, 2026, 5678, 31337, and 1234); all\ninitializations receive the same trajectories within a seed. We report mean and standard deviation\nacross runs. For contrasts involving subset-trained models, we compute the paired score difference\nds for each seed and report \u00afd\u00b1t 0.975,4sd/\u221a5, wheres d is the sample standard deviation. This 95%\ninterval measures SFT-subset variation; full-data SFT is a fixed reference.\nDownstream agentic RL.To test whether DRP remains useful beyond SFT, we initialize two\nRL runs from Base and DRP-Web checkpoints trained on the same fixed1/16SFT subset. Both\nruns follow the ARPO deep-search setting (Dong et al., 2026), using the same 1K-example mixed\nhard-search training set and identical rollout, reward, and optimization "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0024"
+        ],
+        "excerpt": "configurations. We evaluate\nthe post-SFT policies before RL and after 40 and 80 optimizer steps. The reported score is the un-\nweighted mean of ResearchQA coverage, WebWalkerQA accuracy, and SimpleQA accuracy. Each\nrun takes approximately 24 hours on 64 H20 GPUs.\nEvaluation.Our main evaluation is the 50-question English subset of DeepResearch Bench (DRB)\n(Du et al., 2025). We evaluate DRB with its official GPT-5.5 RACE evaluator. 2 Agents use the\nDR-Tulu protocol, Serper search, and Jina extraction, with at most 20 tool-call rounds and 32K\noutput tokens. Decoding uses temperature 0.6, top-p0.95, and top-k20. We also report report-\ngeneration rate and mean search/open calls. Score differences are absolute points on this scale,\nnot relative percentage changes. For single-checkpoint controls, we jointly resample question IDs,\nrecompute the paired score difference, and take its 2.5th and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a3a4022136ae910be8c398dd1f16daa25eb0dcfdd89e06b7a1412cd344083462",
+            "evidence_id": "E13b702c4bd796d4f-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2916,
+                "page": 5,
+                "section": "Experimentalsetup",
+                "section_index": 13,
+                "start": 2019,
+                "text": "configurations. We evaluate\nthe post-SFT policies before RL and after 40 and 80 optimizer steps. The reported score is the un-\nweighted mean of ResearchQA coverage, WebWalkerQA accuracy, and SimpleQA accuracy. Each\nrun takes approximately 24 hours on 64 H20 GPUs.\nEvaluation.Our main evaluation is the 50-question English subset of DeepResearch Bench (DRB)\n(Du et al., 2025). We evaluate DRB with its official GPT-5.5 RACE evaluator. 2 Agents use the\nDR-Tulu protocol, Serper search, and Jina extraction, with at most 20 tool-call rounds and 32K\noutput tokens. Decoding uses temperature 0.6, top-p0.95, and top-k20. We also report report-\ngeneration rate and mean search/open calls. Score differences are absolute points on this scale,\nnot relative percentage changes. For single-checkpoint controls, we jointly resample question IDs,\nrecompute the paired score difference, and take its 2.5th and "
+              }
+            ],
+            "text": "configurations. We evaluate\nthe post-SFT policies before RL and after 40 and 80 optimizer steps. The reported score is the un-\nweighted mean of ResearchQA coverage, WebWalkerQA accuracy, and SimpleQA accuracy. Each\nrun takes approximately 24 hours on 64 H20 GPUs.\nEvaluation.Our main evaluation is the 50-question English subset of DeepResearch Bench (DRB)\n(Du et al., 2025). We evaluate DRB with its official GPT-5.5 RACE evaluator. 2 Agents use the\nDR-Tulu protocol, Serper search, and Jina extraction, with at most 20 tool-call rounds and 32K\noutput tokens. Decoding uses temperature 0.6, top-p0.95, and top-k20. We also report report-\ngeneration rate and mean search/open calls. Score differences are absolute points on this scale,\nnot relative percentage changes. For single-checkpoint controls, we jointly resample question IDs,\nrecompute the paired score difference, and take its 2.5th and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0025"
+        ],
+        "excerpt": "97.5th percentiles; unlike thet-intervals\nabove, these paired-bootstrap intervals measure question uncertainty (Efron & Tibshirani, 1994).\nFor transfer, we evaluate fixed sets of 500 examples from ResearchQA (Li S. Yifei et al., 2025),\nWebWalkerQA (Wu et al., 2025), and SimpleQA (Wei et al., 2024) with the same agent, reporting\ncoverage for ResearchQA and accuracy otherwise.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimentalsetup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "da03197e09abcf8e68cc81bf551b21fea83187dfc7adf5f15e8d682b0f9af335",
+            "evidence_id": "E13b702c4bd796d4f-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Experimentalsetup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3293,
+                "page": 5,
+                "section": "Experimentalsetup",
+                "section_index": 13,
+                "start": 2916,
+                "text": "97.5th percentiles; unlike thet-intervals\nabove, these paired-bootstrap intervals measure question uncertainty (Efron & Tibshirani, 1994).\nFor transfer, we evaluate fixed sets of 500 examples from ResearchQA (Li S. Yifei et al., 2025),\nWebWalkerQA (Wu et al., 2025), and SimpleQA (Wei et al., 2024) with the same agent, reporting\ncoverage for ResearchQA and accuracy otherwise."
+              }
+            ],
+            "text": "97.5th percentiles; unlike thet-intervals\nabove, these paired-bootstrap intervals measure question uncertainty (Efron & Tibshirani, 1994).\nFor transfer, we evaluate fixed sets of 500 examples from ResearchQA (Li S. Yifei et al., 2025),\nWebWalkerQA (Wu et al., 2025), and SimpleQA (Wei et al., 2024) with the same agent, reporting\ncoverage for ResearchQA and accuracy otherwise."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0026"
+        ],
+        "excerpt": "DRP improves trajectory-SFT sample efficiency.Figure 2 gives the central result. Across five\nindependently sampled subsets at both1/16and1/4SFT, DRP-Paper and DRP-Web consistently\nimprove over directly fine-tuning the base model. With only one quarter of the expert trajectories,\nDRP-Web exceeds the no-DRP full-data model by 1.0 point, with its 95% interval above zero. DRP-\n1https://huggingface.co/datasets/rl-research/dr-tulu-sft-data\n2https://github.com/Ayanami0730/deep research bench\n5\nCorpus Traj. Available Loss %\nDRP-Paper 78,557 1.99B 8.67%\nDRP-Web 8,997,455 172.46B 7.73%\nTable 1: DRP corpus statistics before subsampling to the matched 1B-token CPT budget. Available\nis the total token count; Loss % is the fraction included in the language-model loss.\nPaper has a positive mean difference of 0.7 points, although its interval overlaps zero. The gain\nis largest in the lowest-data regime, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mainresults",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "23b411e89d62bba941bf8e492302ad303133f73ad64b7eac5febf9ec639367bb",
+            "evidence_id": "E13b702c4bd796d4f-B0026",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Mainresults",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 491,
+                "page": 5,
+                "section": "Mainresults",
+                "section_index": 14,
+                "start": 0,
+                "text": "DRP improves trajectory-SFT sample efficiency.Figure 2 gives the central result. Across five\nindependently sampled subsets at both1/16and1/4SFT, DRP-Paper and DRP-Web consistently\nimprove over directly fine-tuning the base model. With only one quarter of the expert trajectories,\nDRP-Web exceeds the no-DRP full-data model by 1.0 point, with its 95% interval above zero. DRP-\n1https://huggingface.co/datasets/rl-research/dr-tulu-sft-data\n2https://github.com/Ayanami0730/deep research bench\n5"
+              },
+              {
+                "end": 409,
+                "page": 6,
+                "section": "Mainresults",
+                "section_index": 15,
+                "start": 0,
+                "text": "Corpus Traj. Available Loss %\nDRP-Paper 78,557 1.99B 8.67%\nDRP-Web 8,997,455 172.46B 7.73%\nTable 1: DRP corpus statistics before subsampling to the matched 1B-token CPT budget. Available\nis the total token count; Loss % is the fraction included in the language-model loss.\nPaper has a positive mean difference of 0.7 points, although its interval overlaps zero. The gain\nis largest in the lowest-data regime, "
+              }
+            ],
+            "text": "DRP improves trajectory-SFT sample efficiency.Figure 2 gives the central result. Across five\nindependently sampled subsets at both1/16and1/4SFT, DRP-Paper and DRP-Web consistently\nimprove over directly fine-tuning the base model. With only one quarter of the expert trajectories,\nDRP-Web exceeds the no-DRP full-data model by 1.0 point, with its 95% interval above zero. DRP-\n1https://huggingface.co/datasets/rl-research/dr-tulu-sft-data\n2https://github.com/Ayanami0730/deep research bench\n5\nCorpus Traj. Available Loss %\nDRP-Paper 78,557 1.99B 8.67%\nDRP-Web 8,997,455 172.46B 7.73%\nTable 1: DRP corpus statistics before subsampling to the matched 1B-token CPT budget. Available\nis the total token count; Loss % is the fraction included in the language-model loss.\nPaper has a positive mean difference of 0.7 points, although its interval overlaps zero. The gain\nis largest in the lowest-data regime, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0028"
+        ],
+        "excerpt": "transfers beyond long-form report evaluation.Figure 4 shows that the benefit is not\nconfined to long-form report evaluation. At both1/16and1/4SFT, DRP-Paper and DRP-Web have\npositive paired gains over Base on ResearchQA coverage, WebWalkerQA accuracy, and SimpleQA\naccuracy. Under full-data SFT, the effects become small and task dependent, with most confidence\nintervals overlapping zero. This attenuation is consistent with DRP acting as a sample-efficient ini-\ntialization rather than directly optimizing each downstream benchmark.\nThe advantage persists through agentic RL.Figure 5 tests whether the stronger DRP initializa-\ntion persists under subsequent policy optimization. Before RL, DRP-Web leads Base by 15.0 points\n(57.2 versus 42.2). The gap narrows but remains 6.8 points after 40 steps and 4.8 points after 80\nsteps. Base after 80 steps still does not reach the pre-RL DRP-Web ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mainresults",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f12ab965d191b2ad285028654e0c05acbf76c74d4b1edc6fb428ca4ce560a123",
+            "evidence_id": "E13b702c4bd796d4f-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Mainresults",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2196,
+                "page": 6,
+                "section": "Mainresults",
+                "section_index": 15,
+                "start": 1305,
+                "text": "transfers beyond long-form report evaluation.Figure 4 shows that the benefit is not\nconfined to long-form report evaluation. At both1/16and1/4SFT, DRP-Paper and DRP-Web have\npositive paired gains over Base on ResearchQA coverage, WebWalkerQA accuracy, and SimpleQA\naccuracy. Under full-data SFT, the effects become small and task dependent, with most confidence\nintervals overlapping zero. This attenuation is consistent with DRP acting as a sample-efficient ini-\ntialization rather than directly optimizing each downstream benchmark.\nThe advantage persists through agentic RL.Figure 5 tests whether the stronger DRP initializa-\ntion persists under subsequent policy optimization. Before RL, DRP-Web leads Base by 15.0 points\n(57.2 versus 42.2). The gap narrows but remains 6.8 points after 40 steps and 4.8 points after 80\nsteps. Base after 80 steps still does not reach the pre-RL DRP-Web "
+              }
+            ],
+            "text": "transfers beyond long-form report evaluation.Figure 4 shows that the benefit is not\nconfined to long-form report evaluation. At both1/16and1/4SFT, DRP-Paper and DRP-Web have\npositive paired gains over Base on ResearchQA coverage, WebWalkerQA accuracy, and SimpleQA\naccuracy. Under full-data SFT, the effects become small and task dependent, with most confidence\nintervals overlapping zero. This attenuation is consistent with DRP acting as a sample-efficient ini-\ntialization rather than directly optimizing each downstream benchmark.\nThe advantage persists through agentic RL.Figure 5 tests whether the stronger DRP initializa-\ntion persists under subsequent policy optimization. Before RL, DRP-Web leads Base by 15.0 points\n(57.2 versus 42.2). The gap narrows but remains 6.8 points after 40 steps and 4.8 points after 80\nsteps. Base after 80 steps still does not reach the pre-RL DRP-Web "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0029"
+        ],
+        "excerpt": "checkpoint (54.4 versus 57.2),\nwhile DRP-Web itself improves to 59.2. Thus, DRP provides a stronger initial policy that remains\nadvantageous under a fixed downstream RL budget and remains compatible with further policy op-\ntimization.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mainresults",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4763c4e82784e3e81a393cf1ac83c4b038fa17f04bde9ee4bdea4d7e30406892",
+            "evidence_id": "E13b702c4bd796d4f-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Mainresults",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2430,
+                "page": 6,
+                "section": "Mainresults",
+                "section_index": 15,
+                "start": 2196,
+                "text": "checkpoint (54.4 versus 57.2),\nwhile DRP-Web itself improves to 59.2. Thus, DRP provides a stronger initial policy that remains\nadvantageous under a fixed downstream RL budget and remains compatible with further policy op-\ntimization."
+              }
+            ],
+            "text": "checkpoint (54.4 versus 57.2),\nwhile DRP-Web itself improves to 59.2. Thus, DRP provides a stronger initial policy that remains\nadvantageous under a fixed downstream RL budget and remains compatible with further policy op-\ntimization."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0031"
+        ],
+        "excerpt": "We first test whether DRP's gain can be explained by exposure to the underlying source domains.\nRaw-Web and Raw-Paper train directly on the same source documents used to construct their re-\nspective DRP corpora, but contain no proxy queries, tool calls, or graph-derived relevance relations.\nWithin each domain, we compare Base, raw-document CPT, and structured DRP under the same\n1B-token CPT budget and downstream SFT setting. In Figure 6(a), DRP-Web gains 5.3 points over\nBase, compared with 0.8 for Raw-Web; DRP-Paper gains 5.0 points, whereas Raw-Paper decreases\nby 4.8. The corresponding direct DRP\u2013Raw advantages are 4.5 and 9.8 points, with both paired-\nbootstrap intervals above zero (Figure 6(b)). Thus, source-matched domain exposure is not sufficient\nto account for the predictive-navigation gain.\n6\nComp. Insight Instr. Read.\n30\n35\n40\n45DRB RACE dim. score (%)\n29.8 29.8\n35.0\n36.1\n33.0 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rawdomainpretrainingisnotenough",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1e22ef9d26da1b6606134dce95abdf00ad78947f42ac2aa8d929a5d9e170667f",
+            "evidence_id": "E13b702c4bd796d4f-B0031",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Rawdomainpretrainingisnotenough",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 811,
+                "page": 6,
+                "section": "Rawdomainpretrainingisnotenough",
+                "section_index": 17,
+                "start": 0,
+                "text": "We first test whether DRP's gain can be explained by exposure to the underlying source domains.\nRaw-Web and Raw-Paper train directly on the same source documents used to construct their re-\nspective DRP corpora, but contain no proxy queries, tool calls, or graph-derived relevance relations.\nWithin each domain, we compare Base, raw-document CPT, and structured DRP under the same\n1B-token CPT budget and downstream SFT setting. In Figure 6(a), DRP-Web gains 5.3 points over\nBase, compared with 0.8 for Raw-Web; DRP-Paper gains 5.0 points, whereas Raw-Paper decreases\nby 4.8. The corresponding direct DRP\u2013Raw advantages are 4.5 and 9.8 points, with both paired-\nbootstrap intervals above zero (Figure 6(b)). Thus, source-matched domain exposure is not sufficient\nto account for the predictive-navigation gain.\n6"
+              },
+              {
+                "end": 87,
+                "page": 7,
+                "section": "Rawdomainpretrainingisnotenough",
+                "section_index": 18,
+                "start": 0,
+                "text": "Comp. Insight Instr. Read.\n30\n35\n40\n45DRB RACE dim. score (%)\n29.8 29.8\n35.0\n36.1\n33.0 "
+              }
+            ],
+            "text": "We first test whether DRP's gain can be explained by exposure to the underlying source domains.\nRaw-Web and Raw-Paper train directly on the same source documents used to construct their re-\nspective DRP corpora, but contain no proxy queries, tool calls, or graph-derived relevance relations.\nWithin each domain, we compare Base, raw-document CPT, and structured DRP under the same\n1B-token CPT budget and downstream SFT setting. In Figure 6(a), DRP-Web gains 5.3 points over\nBase, compared with 0.8 for Raw-Web; DRP-Paper gains 5.0 points, whereas Raw-Paper decreases\nby 4.8. The corresponding direct DRP\u2013Raw advantages are 4.5 and 9.8 points, with both paired-\nbootstrap intervals above zero (Figure 6(b)). Thus, source-matched domain exposure is not sufficient\nto account for the predictive-navigation gain.\n6\nComp. Insight Instr. Read.\n30\n35\n40\n45DRB RACE dim. score (%)\n29.8 29.8\n35.0\n36.1\n33.0 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0035"
+        ],
+        "excerpt": "The raw-document controls establish an advantage for structured DRP over raw CPT, but do\nnot isolate whether the constructed observations must be relevant to the model's decisions. We\ntherefore perform a controlled ablation in our canonical DRP-Web analysis setting. Evidence-\nMismatched DRP-Web preserves the proxy queries, synthetic reasoning, action schedule, tool-call\nsyntax, response-length distribution, and training budget of aligned DRP-Web, but replaces graph-\nderived search and open observations with random in-domain evidence. Aligned DRP-Web gains\n5.3 points over Base, while evidence-mismatched DRP-Web gains only 1.1; their direct difference is\n4.2 points with its 95% bootstrap interval above zero (Figure 7). Breaking query\u2013observation\u2013action\nalignment therefore removes most of the gain even though the agent-like surface form is preserved.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evidencealignmentmatters",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2f46f33c610591e8d3aa3b705b865c958ff66b6c9a75bb0c24cb9e0254eb479c",
+            "evidence_id": "E13b702c4bd796d4f-B0035",
+            "pages": [
+              7
+            ],
+            "section": "Evidencealignmentmatters",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 859,
+                "page": 7,
+                "section": "Evidencealignmentmatters",
+                "section_index": 21,
+                "start": 0,
+                "text": "The raw-document controls establish an advantage for structured DRP over raw CPT, but do\nnot isolate whether the constructed observations must be relevant to the model's decisions. We\ntherefore perform a controlled ablation in our canonical DRP-Web analysis setting. Evidence-\nMismatched DRP-Web preserves the proxy queries, synthetic reasoning, action schedule, tool-call\nsyntax, response-length distribution, and training budget of aligned DRP-Web, but replaces graph-\nderived search and open observations with random in-domain evidence. Aligned DRP-Web gains\n5.3 points over Base, while evidence-mismatched DRP-Web gains only 1.1; their direct difference is\n4.2 points with its 95% bootstrap interval above zero (Figure 7). Breaking query\u2013observation\u2013action\nalignment therefore removes most of the gain even though the agent-like surface form is preserved."
+              }
+            ],
+            "text": "The raw-document controls establish an advantage for structured DRP over raw CPT, but do\nnot isolate whether the constructed observations must be relevant to the model's decisions. We\ntherefore perform a controlled ablation in our canonical DRP-Web analysis setting. Evidence-\nMismatched DRP-Web preserves the proxy queries, synthetic reasoning, action schedule, tool-call\nsyntax, response-length distribution, and training budget of aligned DRP-Web, but replaces graph-\nderived search and open observations with random in-domain evidence. Aligned DRP-Web gains\n5.3 points over Base, while evidence-mismatched DRP-Web gains only 1.1; their direct difference is\n4.2 points with its 95% bootstrap interval above zero (Figure 7). Breaking query\u2013observation\u2013action\nalignment therefore removes most of the gain even though the agent-like surface form is preserved."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0042"
+        ],
+        "excerpt": "We test whether specializing CPT toward DRP harms general capabilities under a fixed 2B-token\nbudget starting from Qwen3-14B-Base. The control uses 2B tokens of general midtraining data from\nthe fully open OLMo 3 training flow (Team OLMo et al., 2025); the mixed condition replaces half of\nthat budget with 1B DRP-Web tokens. Our 14-benchmark suite spans commonsense reasoning (e.g.,\nARC), mathematical reasoning (GSM8K), knowledge (MMLU-Redux), and reading comprehension\n(DROP); Appendix C.4 provides the complete suite, citations, and per-benchmark results. Table 4\nshows that the aggregate score changes from 73.1 to 73.4. After matched1/16DR-Tulu SFT, the\nmixed checkpoint improves the score from 33.1 to 36.8 (+3.7 points). Thus, replacing half of the\ngeneral CPT budget with DRP-Web preserves aggregate general capability in this evaluation while\nimproving downstream agent initialization.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Generalcapability Anddistributionshift",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e587b11e6cae9d1d80b6318310f7b4eab70c43b8c5216a61e8243def703cf67a",
+            "evidence_id": "E13b702c4bd796d4f-B0042",
+            "pages": [
+              9
+            ],
+            "section": "Generalcapability Anddistributionshift",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 9,
+                "section": "Generalcapability Anddistributionshift",
+                "section_index": 28,
+                "start": 0,
+                "text": "We test whether specializing CPT toward DRP harms general capabilities under a fixed 2B-token\nbudget starting from Qwen3-14B-Base. The control uses 2B tokens of general midtraining data from\nthe fully open OLMo 3 training flow (Team OLMo et al., 2025); the mixed condition replaces half of\nthat budget with 1B DRP-Web tokens. Our 14-benchmark suite spans commonsense reasoning (e.g.,\nARC), mathematical reasoning (GSM8K), knowledge (MMLU-Redux), and reading comprehension\n(DROP); Appendix C.4 provides the complete suite, citations, and per-benchmark results. Table 4\nshows that the aggregate score changes from 73.1 to 73.4. After matched1/16DR-Tulu SFT, the\nmixed checkpoint improves the score from 33.1 to 36.8 (+3.7 points). Thus, replacing half of the\ngeneral CPT budget with DRP-Web preserves aggregate general capability in this evaluation while\nimproving downstream agent initialization."
+              }
+            ],
+            "text": "We test whether specializing CPT toward DRP harms general capabilities under a fixed 2B-token\nbudget starting from Qwen3-14B-Base. The control uses 2B tokens of general midtraining data from\nthe fully open OLMo 3 training flow (Team OLMo et al., 2025); the mixed condition replaces half of\nthat budget with 1B DRP-Web tokens. Our 14-benchmark suite spans commonsense reasoning (e.g.,\nARC), mathematical reasoning (GSM8K), knowledge (MMLU-Redux), and reading comprehension\n(DROP); Appendix C.4 provides the complete suite, citations, and per-benchmark results. Table 4\nshows that the aggregate score changes from 73.1 to 73.4. After matched1/16DR-Tulu SFT, the\nmixed checkpoint improves the score from 33.1 to 36.8 (+3.7 points). Thus, replacing half of the\ngeneral CPT budget with DRP-Web preserves aggregate general capability in this evaluation while\nimproving downstream agent initialization."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0044"
+        ],
+        "excerpt": "Training and supervising research agents.WebGPT and ReAct establish browser-assisted ques-\ntion answering and the interleaving of language-model reasoning with external actions (Nakano\net al., 2021; Yao et al., 2023). Recent deep-research systems train these behaviors through search-\nenvironment RL, teacher-generated trajectories, synthetic tasks, and report-level rubrics (Jin et al.,\n2025; Zheng et al., 2025; Shao et al., 2025; Xie et al., 2026). ARPO further adapts policy optimiza-\ntion to multi-turn tool-use exploration (Dong et al., 2026). ZeroSearch and OpenResearcher reduce\nthe cost of this supervision through simulated retrieval or a local search-and-browse environment\n(Sun et al., 2025; Li et al., 2026). These approaches improve the downstream post-training process\n9\nBackbone DRP corpus\u2206score (points)\nQwen3-14B Paper +5.0\nWeb +5.3\nQwen3-30B-A3B Paper +4.7\nWeb +3.1\nTable 3: ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Relatedwork",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1a9039cdf7bd0ea9e50d707f91724b6b9b7dce2c2cf7bbbe40530b11496ed915",
+            "evidence_id": "E13b702c4bd796d4f-B0044",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Relatedwork",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 785,
+                "page": 9,
+                "section": "Relatedwork",
+                "section_index": 30,
+                "start": 0,
+                "text": "Training and supervising research agents.WebGPT and ReAct establish browser-assisted ques-\ntion answering and the interleaving of language-model reasoning with external actions (Nakano\net al., 2021; Yao et al., 2023). Recent deep-research systems train these behaviors through search-\nenvironment RL, teacher-generated trajectories, synthetic tasks, and report-level rubrics (Jin et al.,\n2025; Zheng et al., 2025; Shao et al., 2025; Xie et al., 2026). ARPO further adapts policy optimiza-\ntion to multi-turn tool-use exploration (Dong et al., 2026). ZeroSearch and OpenResearcher reduce\nthe cost of this supervision through simulated retrieval or a local search-and-browse environment\n(Sun et al., 2025; Li et al., 2026). These approaches improve the downstream post-training process\n9"
+              },
+              {
+                "end": 108,
+                "page": 10,
+                "section": "Relatedwork",
+                "section_index": 31,
+                "start": 0,
+                "text": "Backbone DRP corpus\u2206score (points)\nQwen3-14B Paper +5.0\nWeb +5.3\nQwen3-30B-A3B Paper +4.7\nWeb +3.1\nTable 3: "
+              }
+            ],
+            "text": "Training and supervising research agents.WebGPT and ReAct establish browser-assisted ques-\ntion answering and the interleaving of language-model reasoning with external actions (Nakano\net al., 2021; Yao et al., 2023). Recent deep-research systems train these behaviors through search-\nenvironment RL, teacher-generated trajectories, synthetic tasks, and report-level rubrics (Jin et al.,\n2025; Zheng et al., 2025; Shao et al., 2025; Xie et al., 2026). ARPO further adapts policy optimiza-\ntion to multi-turn tool-use exploration (Dong et al., 2026). ZeroSearch and OpenResearcher reduce\nthe cost of this supervision through simulated retrieval or a local search-and-browse environment\n(Sun et al., 2025; Li et al., 2026). These approaches improve the downstream post-training process\n9\nBackbone DRP corpus\u2206score (points)\nQwen3-14B Paper +5.0\nWeb +5.3\nQwen3-30B-A3B Paper +4.7\nWeb +3.1\nTable 3: "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0082"
+        ],
+        "excerpt": "Qwen3-30B judge. We report coverage for ResearchQA and accuracy for WebWalkerQA and\nSimpleQA.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Agentinference Andevaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1e4fffb710d670105ba342fadb976b142a3d3e845d044438ed4d8484bbf5577f",
+            "evidence_id": "E13b702c4bd796d4f-B0082",
+            "pages": [
+              18
+            ],
+            "section": "Appendix: Agentinference Andevaluation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 986,
+                "page": 18,
+                "section": "Appendix: Agentinference Andevaluation",
+                "section_index": 48,
+                "start": 893,
+                "text": "Qwen3-30B judge. We report coverage for ResearchQA and accuracy for WebWalkerQA and\nSimpleQA."
+              }
+            ],
+            "text": "Qwen3-30B judge. We report coverage for ResearchQA and accuracy for WebWalkerQA and\nSimpleQA."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0084"
+        ],
+        "excerpt": "Hyperparameter Value Hyperparameter Value\nTraining tokens 1B Optimizer AdamW\nMaximum sequence length 128K Adam(\u03b2 1, \u03b22) (0.9,0.999)\nGlobal batch size 2M tokens Adam\u03f510 \u22128\nPeak learning rate4\u00d710 \u22125 Weight decay 0\nLearning-rate schedule cosine decay to 0 Gradient clipping 1.0\nWarmup ratio 0.1 Precision BF16\nTable A1: Continual-pretraining hyperparameters.\nk-gram Queries with overlap Max. containment\n8-gram 0/776 0.000\n13-gram 0/776 0.000\nTable A2: Verbatim overlap between ResearchQA queries and DRP-Paper training text.\nNo ResearchQA query shares even one 8- or 13-word span with the DRP-Paper training corpus,\nproviding no evidence of verbatim benchmark-query leakage.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 19,
+        "pages": [
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Hyperparameter Value Hyperparameter Value",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d15d4744f7b29d69aee24b14b95dd7c7e89c7c3983c38ca19b28f6e9064c0409",
+            "evidence_id": "E13b702c4bd796d4f-B0084",
+            "pages": [
+              19
+            ],
+            "section": "Hyperparameter Value Hyperparameter Value",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 672,
+                "page": 19,
+                "section": "Hyperparameter Value Hyperparameter Value",
+                "section_index": 50,
+                "start": 0,
+                "text": "Hyperparameter Value Hyperparameter Value\nTraining tokens 1B Optimizer AdamW\nMaximum sequence length 128K Adam(\u03b2 1, \u03b22) (0.9,0.999)\nGlobal batch size 2M tokens Adam\u03f510 \u22128\nPeak learning rate4\u00d710 \u22125 Weight decay 0\nLearning-rate schedule cosine decay to 0 Gradient clipping 1.0\nWarmup ratio 0.1 Precision BF16\nTable A1: Continual-pretraining hyperparameters.\nk-gram Queries with overlap Max. containment\n8-gram 0/776 0.000\n13-gram 0/776 0.000\nTable A2: Verbatim overlap between ResearchQA queries and DRP-Paper training text.\nNo ResearchQA query shares even one 8- or 13-word span with the DRP-Paper training corpus,\nproviding no evidence of verbatim benchmark-query leakage."
+              }
+            ],
+            "text": "Hyperparameter Value Hyperparameter Value\nTraining tokens 1B Optimizer AdamW\nMaximum sequence length 128K Adam(\u03b2 1, \u03b22) (0.9,0.999)\nGlobal batch size 2M tokens Adam\u03f510 \u22128\nPeak learning rate4\u00d710 \u22125 Weight decay 0\nLearning-rate schedule cosine decay to 0 Gradient clipping 1.0\nWarmup ratio 0.1 Precision BF16\nTable A1: Continual-pretraining hyperparameters.\nk-gram Queries with overlap Max. containment\n8-gram 0/776 0.000\n13-gram 0/776 0.000\nTable A2: Verbatim overlap between ResearchQA queries and DRP-Paper training text.\nNo ResearchQA query shares even one 8- or 13-word span with the DRP-Paper training corpus,\nproviding no evidence of verbatim benchmark-query leakage."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0086"
+        ],
+        "excerpt": "The five low-data runs at each fraction vary the sampled SFT subset rather than the training random\nseed. LetM a,s be the score of initializationaafter SFT on the subset sampled with seeds, and letb\ndenote the no-CPT Base initialization. For a matched comparison, we first compute\nds =M a,s \u2212M b,s.(A1)\nWe report the mean paired score gain \u00afdand its 95% Student-tconfidence interval,\n\u00afd\u00b1t 0.975,4 sd\u221a5 , t 0.975,4 = 2.776,(A2)\nwheres d is the sample standard deviation of the five paired differences. This interval measures how\nthe estimated gain changes when the downstream SFT subset changes. It does not measure training-\nseed variation or question-level evaluation uncertainty.\nFor the comparison between one-quarter-SFT DRP and full-SFT Base, the Base score is a fixed\nreference. We computed s =M 1/4a,s \u2212M fullb for each of the five sampled one-quarter subsets and\napply the sametinterval. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 19,
+        "pages": [
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Variationacrosssampledsft Subsets",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "97f5d0aaa3113cd58bf87ce25fe0b2908864ecbb443b561bb13b8fe619471574",
+            "evidence_id": "E13b702c4bd796d4f-B0086",
+            "pages": [
+              19
+            ],
+            "section": "Appendix: Variationacrosssampledsft Subsets",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 19,
+                "section": "Appendix: Variationacrosssampledsft Subsets",
+                "section_index": 52,
+                "start": 0,
+                "text": "The five low-data runs at each fraction vary the sampled SFT subset rather than the training random\nseed. LetM a,s be the score of initializationaafter SFT on the subset sampled with seeds, and letb\ndenote the no-CPT Base initialization. For a matched comparison, we first compute\nds =M a,s \u2212M b,s.(A1)\nWe report the mean paired score gain \u00afdand its 95% Student-tconfidence interval,\n\u00afd\u00b1t 0.975,4 sd\u221a5 , t 0.975,4 = 2.776,(A2)\nwheres d is the sample standard deviation of the five paired differences. This interval measures how\nthe estimated gain changes when the downstream SFT subset changes. It does not measure training-\nseed variation or question-level evaluation uncertainty.\nFor the comparison between one-quarter-SFT DRP and full-SFT Base, the Base score is a fixed\nreference. We computed s =M 1/4a,s \u2212M fullb for each of the five sampled one-quarter subsets and\napply the sametinterval. "
+              }
+            ],
+            "text": "The five low-data runs at each fraction vary the sampled SFT subset rather than the training random\nseed. LetM a,s be the score of initializationaafter SFT on the subset sampled with seeds, and letb\ndenote the no-CPT Base initialization. For a matched comparison, we first compute\nds =M a,s \u2212M b,s.(A1)\nWe report the mean paired score gain \u00afdand its 95% Student-tconfidence interval,\n\u00afd\u00b1t 0.975,4 sd\u221a5 , t 0.975,4 = 2.776,(A2)\nwheres d is the sample standard deviation of the five paired differences. This interval measures how\nthe estimated gain changes when the downstream SFT subset changes. It does not measure training-\nseed variation or question-level evaluation uncertainty.\nFor the comparison between one-quarter-SFT DRP and full-SFT Base, the Base score is a fixed\nreference. We computed s =M 1/4a,s \u2212M fullb for each of the five sampled one-quarter subsets and\napply the sametinterval. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0088"
+        ],
+        "excerpt": "For single-checkpoint analyses, both compared systems answer the same DRB questions. We jointly\nresample question IDs with replacement, preserving the pairing between systems, recompute the\nmean score difference for each bootstrap replicate, and report the 2.5th and 97.5th percentiles. This\npaired bootstrap captures uncertainty over the evaluated questions while holding the trained check-\npoints fixed. It is therefore complementary to, rather than interchangeable with, the subset-levelt\nintervals above. We use 10,000 bootstrap replicates with random seed 42.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 19,
+        "pages": [
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Question-Levelpairedbootstrap",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c855e3586d7a42e96681b8c9405a074d26458606bf478541e75a0c2098247d46",
+            "evidence_id": "E13b702c4bd796d4f-B0088",
+            "pages": [
+              19
+            ],
+            "section": "Appendix: Question-Levelpairedbootstrap",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 564,
+                "page": 19,
+                "section": "Appendix: Question-Levelpairedbootstrap",
+                "section_index": 53,
+                "start": 0,
+                "text": "For single-checkpoint analyses, both compared systems answer the same DRB questions. We jointly\nresample question IDs with replacement, preserving the pairing between systems, recompute the\nmean score difference for each bootstrap replicate, and report the 2.5th and 97.5th percentiles. This\npaired bootstrap captures uncertainty over the evaluated questions while holding the trained check-\npoints fixed. It is therefore complementary to, rather than interchangeable with, the subset-levelt\nintervals above. We use 10,000 bootstrap replicates with random seed 42."
+              }
+            ],
+            "text": "For single-checkpoint analyses, both compared systems answer the same DRB questions. We jointly\nresample question IDs with replacement, preserving the pairing between systems, recompute the\nmean score difference for each bootstrap replicate, and report the 2.5th and 97.5th percentiles. This\npaired bootstrap captures uncertainty over the evaluated questions while holding the trained check-\npoints fixed. It is therefore complementary to, rather than interchangeable with, the subset-levelt\nintervals above. We use 10,000 bootstrap replicates with random seed 42."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0095"
+        ],
+        "excerpt": "33.031.94\u00b11.37\n1/437.7 38.6 36.5 35.8 37.937.30\u00b11.00\nFull \u2013 \u2013 \u2013 \u2013 \u2013 38.53\nDRP-Paper1/1637.6 34.1 33.9 33.1 38.035.35\u00b12.06\n1/440.3 38.0 38.4 39.3 40.339.25\u00b10.94\nFull \u2013 \u2013 \u2013 \u2013 \u2013 41.08\nDRP-Web1/1634.6 34.8 38.3 36.3 38.336.48\u00b11.62\n1/439.5 38.9 40.4 39.1 39.939.56\u00b10.53\nFull \u2013 \u2013 \u2013 \u2013 \u2013 40.69\nTable A4: Per-subset DeepResearch Bench results for the main Qwen3-14B experiment. Low-data\nrows report five independently sampled SFT subsets and their mean and standard deviation. Full-\nSFT values are fixed single-checkpoint references.\nInitialization Comparison Mean\u220695% CI\nDRP-Paper1/16vs. matched Base+3.41 [+1.33,+5.49]\n1/4vs. matched Base+1.94 [+0.05,+3.84]\n1/4vs. full-SFT Base+0.72 [\u22120.59,+2.03]\nDRP-Web1/16vs. matched Base+4.54 [+0.92,+8.15]\n1/4vs. matched Base+2.26 [+0.57,+3.96]\n1/4vs. full-SFT Base+1.04 [+0.29,+1.78]\nTable A5: Subset-level paired score contrasts for the main experiment. Intervals ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 21,
+        "pages": [
+          21
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: General-Capabilityscores",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "250c86ffce06cfec65f8ba72142712d885dbb24affa0a00fa36db97360d9aab2",
+            "evidence_id": "E13b702c4bd796d4f-B0095",
+            "pages": [
+              21
+            ],
+            "section": "Appendix: General-Capabilityscores",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1002,
+                "page": 21,
+                "section": "Appendix: General-Capabilityscores",
+                "section_index": 61,
+                "start": 104,
+                "text": "33.031.94\u00b11.37\n1/437.7 38.6 36.5 35.8 37.937.30\u00b11.00\nFull \u2013 \u2013 \u2013 \u2013 \u2013 38.53\nDRP-Paper1/1637.6 34.1 33.9 33.1 38.035.35\u00b12.06\n1/440.3 38.0 38.4 39.3 40.339.25\u00b10.94\nFull \u2013 \u2013 \u2013 \u2013 \u2013 41.08\nDRP-Web1/1634.6 34.8 38.3 36.3 38.336.48\u00b11.62\n1/439.5 38.9 40.4 39.1 39.939.56\u00b10.53\nFull \u2013 \u2013 \u2013 \u2013 \u2013 40.69\nTable A4: Per-subset DeepResearch Bench results for the main Qwen3-14B experiment. Low-data\nrows report five independently sampled SFT subsets and their mean and standard deviation. Full-\nSFT values are fixed single-checkpoint references.\nInitialization Comparison Mean\u220695% CI\nDRP-Paper1/16vs. matched Base+3.41 [+1.33,+5.49]\n1/4vs. matched Base+1.94 [+0.05,+3.84]\n1/4vs. full-SFT Base+0.72 [\u22120.59,+2.03]\nDRP-Web1/16vs. matched Base+4.54 [+0.92,+8.15]\n1/4vs. matched Base+2.26 [+0.57,+3.96]\n1/4vs. full-SFT Base+1.04 [+0.29,+1.78]\nTable A5: Subset-level paired score contrasts for the main experiment. Intervals "
+              }
+            ],
+            "text": "33.031.94\u00b11.37\n1/437.7 38.6 36.5 35.8 37.937.30\u00b11.00\nFull \u2013 \u2013 \u2013 \u2013 \u2013 38.53\nDRP-Paper1/1637.6 34.1 33.9 33.1 38.035.35\u00b12.06\n1/440.3 38.0 38.4 39.3 40.339.25\u00b10.94\nFull \u2013 \u2013 \u2013 \u2013 \u2013 41.08\nDRP-Web1/1634.6 34.8 38.3 36.3 38.336.48\u00b11.62\n1/439.5 38.9 40.4 39.1 39.939.56\u00b10.53\nFull \u2013 \u2013 \u2013 \u2013 \u2013 40.69\nTable A4: Per-subset DeepResearch Bench results for the main Qwen3-14B experiment. Low-data\nrows report five independently sampled SFT subsets and their mean and standard deviation. Full-\nSFT values are fixed single-checkpoint references.\nInitialization Comparison Mean\u220695% CI\nDRP-Paper1/16vs. matched Base+3.41 [+1.33,+5.49]\n1/4vs. matched Base+1.94 [+0.05,+3.84]\n1/4vs. full-SFT Base+0.72 [\u22120.59,+2.03]\nDRP-Web1/16vs. matched Base+4.54 [+0.92,+8.15]\n1/4vs. matched Base+2.26 [+0.57,+3.96]\n1/4vs. full-SFT Base+1.04 [+0.29,+1.78]\nTable A5: Subset-level paired score contrasts for the main experiment. Intervals "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0096"
+        ],
+        "excerpt": "are 95% Student-t\nintervals over the five paired SFT subsets, as defined in Section B. Full-SFT Base is a fixed reference.\nInitialization SFT Comp. Insight Instr. Read. Overall\nBase1/1629.8 29.8 35.0 36.1 31.9\n1/435.1 35.3 40.4 41.1 37.3\nFull 36.4 36.4 41.7 42.0 38.5\nDRP-Paper1/1633.0 32.9 38.6 40.1 35.3\n1/437.1 37.3 42.4 42.8 39.2\nFull 38.8 39.3 44.1 44.6 41.1\nDRP-Web1/1634.1 34.0 40.1 40.8 36.5\n1/437.4 37.7 42.7 42.8 39.6\nFull 38.4 38.8 43.9 44.3 40.7\nTable A6: Numerical DRB RACE-dimension results. Values at1/16and1/4SFT are means over\nfive independently sampled, matched SFT subsets; full-SFT values are fixed single-run references.\nAll scores use the 0\u2013100 scale.\nBenchmark General Mixed Benchmark General Mixed\nARC 93.093.8DROP71.070.5\nOBQA92.692.4 HotpotQA 69.672.4\nHellaSwag 91.191.2TriviaQA68.468.1\nPIQA89.388.1 WikiTableQ55.652.3\nGSM8K 87.087.12Wiki 51.755.7\nCSQA85.7 85.7SQuAD ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 21,
+        "pages": [
+          21
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: General-Capabilityscores",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "20d23a510aa746863d3130e8639e04bc5fa3fa8450f414e22a4f5d71d98f3d40",
+            "evidence_id": "E13b702c4bd796d4f-B0096",
+            "pages": [
+              21
+            ],
+            "section": "Appendix: General-Capabilityscores",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1895,
+                "page": 21,
+                "section": "Appendix: General-Capabilityscores",
+                "section_index": 61,
+                "start": 1002,
+                "text": "are 95% Student-t\nintervals over the five paired SFT subsets, as defined in Section B. Full-SFT Base is a fixed reference.\nInitialization SFT Comp. Insight Instr. Read. Overall\nBase1/1629.8 29.8 35.0 36.1 31.9\n1/435.1 35.3 40.4 41.1 37.3\nFull 36.4 36.4 41.7 42.0 38.5\nDRP-Paper1/1633.0 32.9 38.6 40.1 35.3\n1/437.1 37.3 42.4 42.8 39.2\nFull 38.8 39.3 44.1 44.6 41.1\nDRP-Web1/1634.1 34.0 40.1 40.8 36.5\n1/437.4 37.7 42.7 42.8 39.6\nFull 38.4 38.8 43.9 44.3 40.7\nTable A6: Numerical DRB RACE-dimension results. Values at1/16and1/4SFT are means over\nfive independently sampled, matched SFT subsets; full-SFT values are fixed single-run references.\nAll scores use the 0\u2013100 scale.\nBenchmark General Mixed Benchmark General Mixed\nARC 93.093.8DROP71.070.5\nOBQA92.692.4 HotpotQA 69.672.4\nHellaSwag 91.191.2TriviaQA68.468.1\nPIQA89.388.1 WikiTableQ55.652.3\nGSM8K 87.087.12Wiki 51.755.7\nCSQA85.7 85.7SQuAD "
+              }
+            ],
+            "text": "are 95% Student-t\nintervals over the five paired SFT subsets, as defined in Section B. Full-SFT Base is a fixed reference.\nInitialization SFT Comp. Insight Instr. Read. Overall\nBase1/1629.8 29.8 35.0 36.1 31.9\n1/435.1 35.3 40.4 41.1 37.3\nFull 36.4 36.4 41.7 42.0 38.5\nDRP-Paper1/1633.0 32.9 38.6 40.1 35.3\n1/437.1 37.3 42.4 42.8 39.2\nFull 38.8 39.3 44.1 44.6 41.1\nDRP-Web1/1634.1 34.0 40.1 40.8 36.5\n1/437.4 37.7 42.7 42.8 39.6\nFull 38.4 38.8 43.9 44.3 40.7\nTable A6: Numerical DRB RACE-dimension results. Values at1/16and1/4SFT are means over\nfive independently sampled, matched SFT subsets; full-SFT values are fixed single-run references.\nAll scores use the 0\u2013100 scale.\nBenchmark General Mixed Benchmark General Mixed\nARC 93.093.8DROP71.070.5\nOBQA92.692.4 HotpotQA 69.672.4\nHellaSwag 91.191.2TriviaQA68.468.1\nPIQA89.388.1 WikiTableQ55.652.3\nGSM8K 87.087.12Wiki 51.755.7\nCSQA85.7 85.7SQuAD "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0103"
+        ],
+        "excerpt": "Raw-Web and Raw-Paper use the same source-document pools as DRP-Web and DRP-Paper, re-\nspectively. They match the 1B-token CPT budget but remove proxy queries, reasoning traces, tool\ncalls, and graph-derived relevance relations. Consequently, the DRP\u2013Raw comparison isolates the\neffect of restructuring the same domains into predictive-navigation supervision.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 24,
+        "pages": [
+          24
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Raw-Domaincontrols",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "df39d36288e9936498e462ccca70eb86f82a29f1cabb7b3d4554595b26ebe59c",
+            "evidence_id": "E13b702c4bd796d4f-B0103",
+            "pages": [
+              24
+            ],
+            "section": "Appendix: Raw-Domaincontrols",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 359,
+                "page": 24,
+                "section": "Appendix: Raw-Domaincontrols",
+                "section_index": 66,
+                "start": 0,
+                "text": "Raw-Web and Raw-Paper use the same source-document pools as DRP-Web and DRP-Paper, re-\nspectively. They match the 1B-token CPT budget but remove proxy queries, reasoning traces, tool\ncalls, and graph-derived relevance relations. Consequently, the DRP\u2013Raw comparison isolates the\neffect of restructuring the same domains into predictive-navigation supervision."
+              }
+            ],
+            "text": "Raw-Web and Raw-Paper use the same source-document pools as DRP-Web and DRP-Paper, re-\nspectively. They match the 1B-token CPT budget but remove proxy queries, reasoning traces, tool\ncalls, and graph-derived relevance relations. Consequently, the DRP\u2013Raw comparison isolates the\neffect of restructuring the same domains into predictive-navigation supervision."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0104"
+        ],
+        "excerpt": "Evidence-Mismatched DRP-Web preserves the proxy objectives, generated reasoning, action sched-\nule, protocol rendering, response-length distribution, and training budget of canonical DRP-Web.\nWe replace the graph-derived search and open observations with random in-domain evidence. The\nablation therefore breaks the alignment among query, observation, and subsequent action while pre-\nserving the agent-like surface form.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 24,
+        "pages": [
+          24
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Evidence-Mismatcheddrp-Web",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f3440aa9a89fe8b7b13ea3b43333ec1b2e5f5babfc26d353420312d4f6c41590",
+            "evidence_id": "E13b702c4bd796d4f-B0104",
+            "pages": [
+              24
+            ],
+            "section": "Appendix: Evidence-Mismatcheddrp-Web",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 421,
+                "page": 24,
+                "section": "Appendix: Evidence-Mismatcheddrp-Web",
+                "section_index": 67,
+                "start": 0,
+                "text": "Evidence-Mismatched DRP-Web preserves the proxy objectives, generated reasoning, action sched-\nule, protocol rendering, response-length distribution, and training budget of canonical DRP-Web.\nWe replace the graph-derived search and open observations with random in-domain evidence. The\nablation therefore breaks the alignment among query, observation, and subsequent action while pre-\nserving the agent-like surface form."
+              }
+            ],
+            "text": "Evidence-Mismatched DRP-Web preserves the proxy objectives, generated reasoning, action sched-\nule, protocol rendering, response-length distribution, and training budget of canonical DRP-Web.\nWe replace the graph-derived search and open observations with random in-domain evidence. The\nablation therefore breaks the alignment among query, observation, and subsequent action while pre-\nserving the agent-like surface form."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0108"
+        ],
+        "excerpt": "F ADDITIONALLIMITATIONS\nThe current experiments use English downstream trajectories and one released trajectory source. The\nprimary DRB evaluation has 50 English questions, making paired evaluation and transparent uncer-\ntainty reporting especially important. The five-run design measures downstream subset sensitivity\nbut does not estimate the full interaction among subset sampling, training randomness, decoding\nrandomness, and judge variation. Most construction ablations use one fixed SFT subset and paired\nquestion-level bootstrap intervals. Finally, DRP's gain attenuates with more downstream SFT data.\n25",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 25,
+        "pages": [
+          25
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Additionallimitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "11d023d7bc5553f1d6207463da40f79f886e17d5b89e355915a1b788077720f8",
+            "evidence_id": "E13b702c4bd796d4f-B0108",
+            "pages": [
+              25
+            ],
+            "section": "Appendix: Additionallimitations",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 612,
+                "page": 25,
+                "section": "Appendix: Additionallimitations",
+                "section_index": 72,
+                "start": 0,
+                "text": "F ADDITIONALLIMITATIONS\nThe current experiments use English downstream trajectories and one released trajectory source. The\nprimary DRB evaluation has 50 English questions, making paired evaluation and transparent uncer-\ntainty reporting especially important. The five-run design measures downstream subset sensitivity\nbut does not estimate the full interaction among subset sampling, training randomness, decoding\nrandomness, and judge variation. Most construction ablations use one fixed SFT subset and paired\nquestion-level bootstrap intervals. Finally, DRP's gain attenuates with more downstream SFT data.\n25"
+              }
+            ],
+            "text": "F ADDITIONALLIMITATIONS\nThe current experiments use English downstream trajectories and one released trajectory source. The\nprimary DRB evaluation has 50 English questions, making paired evaluation and transparent uncer-\ntainty reporting especially important. The five-run design measures downstream subset sensitivity\nbut does not estimate the full interaction among subset sampling, training randomness, decoding\nrandomness, and judge variation. Most construction ablations use one fixed SFT subset and paired\nquestion-level bootstrap intervals. Finally, DRP's gain attenuates with more downstream SFT data.\n25"
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.00432",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
-      "No suitable baseline comparison was detected in the available text.",
-      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+      "No reproducible review or selection methodology was detected."
     ],
-    "overall_quality_score": 78,
-    "paper_type": "empirical_research",
-    "positive_signals": [
-      "The contribution is stated explicitly."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "210b0963cf0435636def397fd269efc96b80bede009dbd6fba432a6c7ae2bb4a",
-    "status": "not_assessed",
+    "overall_quality_score": null,
+    "paper_type": "survey_or_review",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7172558763",
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The transfer evaluations report accuracy and coverage using a separate Qwen3-30B judge on held-out WebWalkerQA, SimpleQA and ResearchQA, outside the DRB RACE evaluator.",
+          "final_evaluation_signal": "GPT-5.5 RACE scoring on DeepResearch Bench, plus a separate Qwen3-30B judge scoring accuracy and coverage on the transfer benchmarks.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Masked causal language modeling loss on agent tokens from offline-reconstructed trajectories, with further optimization by GPT-5 trajectory SFT.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0002",
+          "E13b702c4bd796d4f-B0003",
+          "E13b702c4bd796d4f-B0011",
+          "E13b702c4bd796d4f-B0015",
+          "E13b702c4bd796d4f-B0020",
+          "E13b702c4bd796d4f-B0021",
+          "E13b702c4bd796d4f-B0023",
+          "E13b702c4bd796d4f-B0024",
+          "E13b702c4bd796d4f-B0025",
+          "E13b702c4bd796d4f-B0026",
+          "E13b702c4bd796d4f-B0028",
+          "E13b702c4bd796d4f-B0029",
+          "E13b702c4bd796d4f-B0031",
+          "E13b702c4bd796d4f-B0035",
+          "E13b702c4bd796d4f-B0042",
+          "E13b702c4bd796d4f-B0082",
+          "E13b702c4bd796d4f-B0084",
+          "E13b702c4bd796d4f-B0086",
+          "E13b702c4bd796d4f-B0088",
+          "E13b702c4bd796d4f-B0095",
+          "E13b702c4bd796d4f-B0096",
+          "E13b702c4bd796d4f-B0103",
+          "E13b702c4bd796d4f-B0104",
+          "E13b702c4bd796d4f-B0108"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "a13ebca31d8d643717e3de641455429e28d75a812dcf3b1a42823a6794d63ac3"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7172558763",
+        "claim_evidence_alignment": "Reported claims regarding trajectory sample efficiency gains, persistence through RL, and the necessity of evidence alignment are tightly supported by matched baselines and ablation experiments.",
+        "context_id": "13b702c4bd796d4f0f863bf01a21bcf3d003e9c400a8ca0239f05f81352c4960",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluations are rigorously structured across multiple subsets with paired statistical tests (Student-t over subsets, paired bootstraps over items). Results demonstrate consistent sample-efficiency gains across DeepResearch Bench, downstream agentic RL, and out-of-domain benchmarks like ResearchQA, WebWalkerQA, and SimpleQA, accompanied by general-capability checks and n-gram contamination analyses.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Evaluations on WebWalkerQA, SimpleQA, and ResearchQA measure factual answer accuracy and coverage independently of the GPT-5.5 RACE judge, corroborating the sample-efficiency gains.",
+          "final_evaluation_signal": "GPT-5.5 RACE rubric scoring on DeepResearch Bench, as well as objective QA accuracy and coverage metrics on WebWalkerQA, SimpleQA, and ResearchQA evaluated by an independent local judge.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Masked causal language modeling loss on Qwen3.6-35B-generated rationales and action sequences derived offline from document graphs, followed by SFT on GPT-5 trajectory fractions.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E13b702c4bd796d4f-B0002",
+          "E13b702c4bd796d4f-B0003",
+          "E13b702c4bd796d4f-B0011",
+          "E13b702c4bd796d4f-B0021",
+          "E13b702c4bd796d4f-B0023",
+          "E13b702c4bd796d4f-B0024",
+          "E13b702c4bd796d4f-B0025",
+          "E13b702c4bd796d4f-B0026",
+          "E13b702c4bd796d4f-B0028",
+          "E13b702c4bd796d4f-B0031",
+          "E13b702c4bd796d4f-B0035",
+          "E13b702c4bd796d4f-B0042",
+          "E13b702c4bd796d4f-B0044",
+          "E13b702c4bd796d4f-B0084",
+          "E13b702c4bd796d4f-B0086",
+          "E13b702c4bd796d4f-B0088",
+          "E13b702c4bd796d4f-B0095",
+          "E13b702c4bd796d4f-B0108"
+        ],
+        "limitations": "The authors explicitly acknowledge the modest benchmark size (50 DRB questions), focus on English-only corpora and single expert trajectory sources, lack of full variance estimation across decoding/judge interactions, and the attenuation of gains under full downstream SFT budgets.",
+        "method_assessment": "The methodology is thoroughly detailed, describing graph extraction, proxy objective inference, interleaved candidate synthesis, and masked causal language model pretraining across both academic papers (DRP-Paper) and web text (DRP-Web). Clear operational controls isolate evidence alignment, raw domain exposure, trajectory topologies, protocol rendering, and observation loss masking.",
+        "quality_rationale": "The study offers a solid, well-controlled experimental validation of offline graph-derived pretraining for research agents, supported by rigorous paired statistics, clear negative controls, and comprehensive ablation studies.",
+        "scoped_contribution": "The paper introduces Deep Research Pretraining (DRP), an offline framework that converts naturally occurring evidence graphs (citation networks and web hyperlinks) into rollout-free predictive navigation trajectories for continual pretraining, improving downstream agent SFT sample efficiency.",
+        "source_content_hash": "a13ebca31d8d643717e3de641455429e28d75a812dcf3b1a42823a6794d63ac3"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study offers a solid, well-controlled experimental validation of offline graph-derived pretraining for research agents, supported by rigorous paired statistics, clear negative controls, and comprehensive ablation studies.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "a13ebca31d8d643717e3de641455429e28d75a812dcf3b1a42823a6794d63ac3",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors explicitly acknowledge the modest benchmark size (50 DRB questions), focus on English-only corpora and single expert trajectory sources, lack of full variance estimation across decoding/judge interactions, and the attenuation of gains under full downstream SFT budgets."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -256,7 +2670,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

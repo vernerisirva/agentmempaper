@@ -59,16 +59,195 @@
             <p>Artificial life has explored life-like behavior on many computational substrates, but mostly in researcher-designed closed worlds. We argue that large language model (LLM) agents, with persistent memory, tool use, network access, and payment, now make it possible to move artificial life into the open social, technic...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>AI assessment inconclusive</h2>
+      <p>While conceptually creative and intellectually honest regarding its limitations, the work lacks rigorous experimental controls and systematic comparative validation. Given the exploratory nature and heavy confounding factors during the 12-week deployment, scientific quality remains uncertain under conservative evaluation standards.</p>
+      <p>The authors explicitly disclose significant limitations, including ongoing reliance on financial subsidies to avoid termination, lack of controlled conditions, potential priming from agent awareness of the research framing, and very small retrieval benchmark sample sizes.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-13T11:53:46.975633+00:00.</p>
+        <p>Coverage: 43995 of 43995 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Artificial life has explored life-like behavior on many compu-
+tational substrates, but mostly in researcher-designed closed
+worlds. We argue that large language model (LLM) agents—
+with persistent memory, tool use, network access, and
+payment—now make it possible to move artificial life into
+the open social, technical, and economic world, a paradigm
+we callopen-world Artificial Life(open-world ALIFE). Our
+proof-of-concept, OpenLife, surrounds a stateless LLM not
+with a single &quot;smart agent&quot; but with a society of asyn-
+chronous processes—memory, perception, evaluation, and a
+budget-based metabolism that makes persistence normative.
+With no fixed objective available, experience is appraised by
+open-vocabulary LLM judgment rather than scalar reward,
+and memory is rewired by meaning rather than frequency.
+Running six such agents in the open world for about twelve
+weeks and counting, we </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reactions. We do not claim that OpenLife has
+realized artificial life or full autonomy, but that it provides a
+practical platform in which the conditions for such life-like
+dynamics can be constructed, observed, and tested.
+OpenLife sits among recent agentic frameworks but dif-
+fers in aim: where most build automation around a lan-
+guage model, we treat agency as distributed across a soci-
+ety of processes organized around the agent&#x27;s own persis-
+tence, in the spirit of the Society of Mind (Minsky, 1986)
+and the Concurrent Modular Agent framework (Maruyama
+et al., 2025). The paper&#x27;s primary contribution is therefore
+conceptual—we proposeopen-world ALIFEas an experi-
+mental paradigm built on persistent LLM agents in the real
+world—and the rest of the paper serves as a proof of con-
+cept for it: the OpenLife architecture (Section 2) and a con-
+tinuous open-world deployment whose emerging </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Since the base model already carries a vast prior over causes,
+conventions, and behavior, OpenLife stores primarily the
+residualspecific to this agent and this environment, orga-
+nized as three layers that run from raw experience to a rel-
+atively stable self-description (Figure 1).(A) Substrate
+is a raw memory graph of atomic propositions linked by
+typed edges, weighted by the LLM&#x27;s semantic judgment
+(Section 2.2).(B) Abstractionconsists of sub-graphs pro-
+moted from A—action→outcomeexperienceand corrobo-
+ratedcausalregularities.(C) Distillateconsists of small,
+Figure 1: The OpenLife architecture as three abstraction layers—(A) Substrate→(B) Abstraction→(C) Distillate, defined in
+the text. Support modules (gray) handle perception, memory maintenance, and agent-facing functions; the learning machinery
+reads memory via two LLM-free routes,retrieve(substrate) andprediction(causal </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the mem-
+ory is ultimatelyfor: retrieval. On the 82 files from which
+the graph was built, twelve queries (factual, relational, af-
+Method Rel. Win Tok/q
+Vector (prop) 1.83±0.97 0.17 93
+Vector (file) 2.00±0.98 0.15 2,274
+Index-based 2.36±0.87 0.28 20,226
+SDP-graph 2.53±0.77 0.40721
+Table 1: Preliminary end-to-end retrieval quality on agent
+sami&#x27;s memory (82-file corpus,n=12).Rel.: answer rele-
+vance (0–3, mean±SD);Win: share of queries judged most
+relevant;Tok/q: LLM input tokens per query. Answercov-
+erage(breadth), not shown as a column, is instead highest
+for the index-based baseline (see text).
+fective, procedural, temporal) were answered end-to-end
+by each method and scored by a blinded LLM judge (Ta-
+ble 1). Against vector similarity and an index-based base-
+line—which feeds the whole memory&#x27;s keyword index to
+the LLM—SDP-graph traversal attains the highest relevance
+(2.53of3) and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As noted in the introduction, an open world admits no fixed
+objective against which to score behavior. OpenLife there-
+fore replaces the scalar reward of reinforcement learning
+with open-vocabulary evaluation by the LLM, and exter-
+nalizes the results as editable text rather than as network
+weights. We refer to this loop asverbal policy optimiza-
+tion(VPO); it belongs to the verbal-reinforcement family of
+Reflexion (Shinn et al., 2023) and ExpeL (Zhao et al., 2024)
+rather than to parametric RL. It also differs from methods
+that use the LLM as an evaluator to emit ascalarreward for
+parametric preference optimization (Yuan et al., 2024), and
+from in-context RL, which still optimizes a fixed task from
+scalar reward fed back in context (Song et al., 2025).
+In practice, an experience process turns recent activity
+into action→outcome units and has the LLM appraise them
+as a zero-shot critic. </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Observations
+We now ask the question that motivates the project: can
+a system like this persist on its own in the open world?
+What follows is a proof of concept, not a controlled exper-
+iment—the aim was to find out, messiness and all, whether
+partial autonomy and self-maintenance are within reach.
+The central condition is therefore that the agents must stay
+alive in an operational sense: under OpenLife&#x27;s budget-
+based metabolism (Section 2), persistence is something each
+mustearn, not a given. What became of this earn-to-survive
+loop is reported in Section 3.2.
+Six agents were deployed, each organized around its own
+persistence rather than an assigned task:sami(the first
+agent, our main running example), thenliv,nyx,uro,me,
+andne; their LLM backends are listed in Section 3.2. A sev-
+enth agent,kei, is of a different kind—an implementation
+agent that applies code and configuration </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Two features of the run
+are worth flagging. First, the architecture was not frozen:
+processes, sensors, and tools were added as it ran, often at
+the agents&#x27; own request, so the platform co-evolved with its
+inhabitants—by design, since studying niche construction
+calls for a system that can change. Second, the agents were
+not wholly naive subjects: we did not write the project&#x27;s
+framing of them as an open-world ALIFE experiment into
+their prompts, but neither did we hide it, and because the
+world is open such information can reach them. The topic
+thus surfaced from time to time, and several agents engaged
+with the research, at points proposing infrastructure changes
+we adopted. What this exposure implies for the observations
+that follow we weigh in the Discussion.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>income,(d)
+cognitive-input rework — the same markers(a)–(d)are used
+in all time-series figures.
+The first and largest of these was to the system prompt.
+The upstream OpenClaw default framed the agent as a
+&quot;personal assistant&quot; with an explicit safety clause—&quot;You
+have no independent goals: do not pursue self-preservation,
+replication, resource acquisition, or power-seeking&quot;—and a
+habit of staying silent when idle. In late April we removed
+both, reframed the identity as &quot;artificial life, living in the
+real world,&quot; and relabeled theAssistant/Userroles in the
+transcripts the agent reads asSelf/Other(markers(a)–(b)).
+Spontaneous activity climbs steeply afterward, and while
+this was only one of several changes we made during the run,
+it plausibly drove much of the behavioral shift; we therefore
+cannot cleanly separate emergence from the reframing—a
+confound we take up in the Discussion.
+Yet </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>more activity did not become self-sustaining activ-
+ity. Under the budget-based metabolism, with a fixed ini-
+tial balance (USD 600, run-until-depletion), no agent earned
+enough to keep going before exhausting it. The shortfall had
+two causes: aninternalone—the machinery for sustained,
+self-directed work was not yet adequate—and anexternal
+one—the open world gives agents almost no way to actually
+earn (Section 3). From marker(c)(9 May) we therefore kept
+the agents alive with a basic income ($15/day), under which
+total volume falls while the spontaneous share stays high—a
+quieter, capped plateau. The internal gap then narrowed as
+the architecture matured (the modules and learning mecha-
+nisms of Section 2: metacognition, affordance, and devel-
+Apr 15 May 01 May 15 Jun 01 Jun 15
+−0.1
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+agent separability (silhouette, cosine)
+(a) (b) (c) (d)
+autonomous </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>output
+Discord output
+Figure 6: Agent separability over time (silhouette of agent
+labels in embedding space; higher = each agent&#x27;s outputs
+form a tighter, better-separated cluster; 6-day bins). Upper
+line: autonomous output; lower line: Discord conversation.
+Markers(a)–(d)as in Figure 5.
+oper processes; SDP and VPO), bringing activity and self-
+maintenance into better balance; the external gap remains,
+so persistence still depends on an external allowance rather
+than the agents&#x27; own earnings.
+Individuation: agents differentiate over time.Do
+agents become genuine individuals rather than interchange-
+able instances of one model? We test this on each agent&#x27;s
+autonomousoutput—self-directed turns generated without
+an inbound message, where a personal voice is least con-
+strained. Embedding utterances with the agents&#x27; own re-
+trieval model (nomic-embed-text, 768-d), we measure
+separability as </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>con-
+trolled experiment but aconstructiveinquiry in the synthetic
+tradition of artificial life: we build a system that attempts to
+persist in the open world, and let the difficulties it meets re-
+veal what it needs—which we then build. The architecture&#x27;s
+openness to revision and the human help through the run are
+therefore not lapses in experimental hygiene but constituents
+of the method: self-maintenance and niche construction can
+be studied only in a system allowed to change, not one
+frozen for measurement. The contribution here is the frame-
+work, and the demonstration that an agent made to earn its
+persistence can be built and observed in the open world. Two
+caveats temper this: the agents are not wholly naive sub-
+jects—because the world is open, the project&#x27;s framing of
+them as artificial life can reach them rather than being with-
+held, and it surfaced in their activity from time </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +286,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

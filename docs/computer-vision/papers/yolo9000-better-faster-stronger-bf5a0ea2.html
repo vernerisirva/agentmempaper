@@ -64,16 +64,314 @@
             <p>We introduce YOLO9000, a state-of-the-art, real-time object detection system that can detect over 9000 object categories. First we propose various improvements to the YOLO detection method, both novel and drawn from prior work. The improved model, YOLOv2, is state-of-the-art on standard detection tasks like PASCAL V...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript offers substantial algorithmic and architectural contributions, clear technical descriptions, rigorous multi-benchmark evaluations with extensive ablations, and candid discussions of limitations.</p>
+      <p>The authors identify specific failure modes and performance drops, noting that YOLO9000 struggles with object categories such as clothing and equipment where COCO lacks representative bounding box annotations.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-13T11:53:09.472719+00:00.</p>
+        <p>Coverage: 38213 of 38213 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We introduce YOLO9000, a state-of-the-art, real-time
+object detection system that can detect over 9000 object
+categories. First we propose various improvements to the
+YOLO detection method, both novel and drawn from prior
+work. The improved model, YOLOv2, is state-of-the-art on
+standard detection tasks likePASCAL VOC and COCO. Us-
+ing a novel, multi-scale training method the same YOLOv2
+model can run at varying sizes, offering an easy tradeoff
+between speed and accuracy. At 67 FPS, YOLOv2 gets
+76.8 mAP on VOC 2007. At 40 FPS, YOLOv2 gets 78.6
+mAP , outperforming state-of-the-art methods like Faster R-
+CNN with ResNet and SSD while still running significantly
+faster. Finally we propose a method to jointly train on ob-
+ject detection and classification. Using this method we train
+YOLO9000 simultaneously on the COCO detection dataset
+and the ImageNet classification dataset. Our joint </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>training
+allows YOLO9000 to predict detections for object classes
+that don&#x27;t have labelled detection data. We validate our
+approach on the ImageNet detection task. YOLO9000 gets
+19.7 mAP on the ImageNet detection validation set despite
+only having detection data for 44 of the 200 classes. On the
+156 classes not in COCO, YOLO9000 gets 16.0 mAP . But
+YOLO can detect more than just 200 classes; it predicts de-
+tections for more than 9000 different object categories. And
+it still runs in real-time.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 2.
+Batch Normalization. Batch normalization leads to sig-
+nificant improvements in convergence while eliminating the
+need for other forms of regularization [7]. By adding batch
+normalization on all of the convolutional layers in YOLO
+we get more than 2% improvement in mAP. Batch normal-
+ization also helps regularize the model. With batch nor-
+malization we can remove dropout from the model without
+overfitting.
+High Resolution Classifier. All state-of-the-art detec-
+tion methods use classifier pre-trained on ImageNet [16].
+Starting with AlexNet most classifiers operate on input im-
+ages smaller than 256× 256 [8]. The original YOLO trains
+the classifier network at 224× 224 and increases the reso-
+lution to 448 for detection. This means the network has to
+simultaneously switch to learning object detection and ad-
+just to the new input resolution.
+For YOLOv2 we first fine tune the </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>pick better priors
+for the network to start with we can make it easier for the
+network to learn to predict good detections.
+Instead of choosing priors by hand, we run k-means
+clustering on the training set bounding boxes to automat-
+2
+0
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+COCO
+# Clusters
+Avg IOU
+0.75</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predicting offsets we follow the approach of
+YOLO and predict location coordinates relative to the loca-
+tion of the grid cell. This bounds the ground truth to fall
+between 0 and 1. We use a logistic activation to constrain
+the network&#x27;s predictions to fall in this range.
+The network predicts 5 bounding boxes at each cell in
+the output feature map. The network predicts 5 coordinates
+for each bounding box, tx,ty,tw,th, and to. If the cell is
+offset from the top left corner of the image by (cx,c y) and
+the bounding box prior has width and height pw, ph, then
+the predictions correspond to:
+bx =σ(tx) +cx
+by =σ(ty) +cy
+bw =pwetw
+bh =pheth
+Pr (object)∗IOU (b, object) = σ(to)
+Since we constrain the location prediction the
+parametrization is easier to learn, making the network
+more stable. Using dimension clusters along with directly
+predicting the bounding box center location improves
+YOLO by </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>almost 5% over the version with anchor boxes.
+Fine-Grained Features.This modified YOLO predicts
+detections on a 13× 13 feature map. While this is suffi-
+cient for large objects, it may benefit from finer grained fea-
+tures for localizing smaller objects. Faster R-CNN and SSD
+both run their proposal networks at various feature maps in
+the network to get a range of resolutions. We take a differ-
+ent approach, simply adding a passthrough layer that brings
+features from an earlier layer at 26× 26 resolution.
+The passthrough layer concatenates the higher resolution
+features with the low resolution features by stacking adja-
+cent features into different channels instead of spatial lo-
+cations, similar to the identity mappings in ResNet. This
+3
+σ(tx)
+σ(ty)
+pw
+ph bh
+bw
+bw=pwe
+bh=phe
+cx
+cy
+bx=σ(tx)+cx
+by=σ(ty)+cy
+tw
+th
+Figure 3: Bounding boxes with dimension priors and location
+prediction. We </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predict the width and height of the box as offsets
+from cluster centroids. We predict the center coordinates of the
+box relative to the location of filter application using a sigmoid
+function.
+turns the 26× 26× 512 feature map into a 13× 13× 2048
+feature map, which can be concatenated with the original
+features. Our detector runs on top of this expanded feature
+map so that it has access to fine grained features. This gives
+a modest 1% performance increase.
+Multi-Scale Training. The original YOLO uses an input
+resolution of 448× 448. With the addition of anchor boxes
+we changed the resolution to416×416. However, since our
+model only uses convolutional and pooling layers it can be
+resized on the fly. We want YOLOv2 to be robust to running
+on images of different sizes so we train this into the model.
+Instead of fixing the input image size we change the net-
+work every few iterations. Every </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>10 batches our network
+randomly chooses a new image dimension size. Since our
+model downsamples by a factor of 32, we pull from the
+following multiples of 32: {320, 352,..., 608}. Thus the
+smallest option is 320× 320 and the largest is 608× 608.
+We resize the network to that dimension and continue train-
+ing.
+This regime forces the network to learn to predict well
+across a variety of input dimensions. This means the same
+network can predict detections at different resolutions. The
+network runs faster at smaller sizes so YOLOv2 offers an
+easy tradeoff between speed and accuracy.
+At low resolutions YOLOv2 operates as a cheap, fairly
+accurate detector. At 288× 288 it runs at more than 90 FPS
+with mAP almost as good as Fast R-CNN. This makes it
+ideal for smaller GPUs, high framerate video, or multiple
+video streams.
+At high resolution YOLOv2 is a state-of-the-art detector
+with 78.6 mAP on </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2007+2012 74.3 46
+SSD500 [11] 2007+2012 76.8 19
+YOLOv2 288× 288 2007+2012 69.0 91
+YOLOv2 352× 352 2007+2012 73.7 81
+YOLOv2 416× 416 2007+2012 76.8 67
+YOLOv2 480× 480 2007+2012 77.8 59
+YOLOv2 544× 544 2007+2012 78.6 40
+Table 3: Detection frameworks on P ASCAL VOC 2007.
+YOLOv2 is faster and more accurate than prior detection meth-
+ods. It can also run at different resolutions for an easy tradeoff
+between speed and accuracy. Each YOLOv2 entry is actually the
+same trained model with the same weights, just evaluated at a dif-
+ferent size. All timing information is on a Geforce GTX Titan X
+(original, not Pascal model).</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YOLO YOLOv2
+batch norm? ✓ ✓ ✓ ✓ ✓ ✓ ✓ ✓
+hi-res classifier? ✓ ✓ ✓ ✓ ✓ ✓ ✓
+convolutional? ✓ ✓ ✓ ✓ ✓ ✓
+anchor boxes? ✓ ✓
+new network? ✓ ✓ ✓ ✓ ✓
+dimension priors? ✓ ✓ ✓ ✓
+location prediction? ✓ ✓ ✓ ✓
+passthrough? ✓ ✓ ✓
+multi-scale? ✓ ✓
+hi-res detector? ✓
+VOC2007 mAP 63.4 65.8 69.5 69.2 69.6 74.4 75.4 76.8 78.6
+Table 2: The path from YOLO to YOLOv2. Most of the listed design decisions lead to significant increases in mAP. Two
+exceptions are switching to a fully convolutional network with anchor boxes and using the new network. Switching to the
+anchor box style approach increased recall without changing mAP while using the new network cut computation by 33%.
+Method data mAP aero bike bird boat bottle bus car cat chair cow table dog horse mbike person plant sheep sofa train tv
+Fast R-CNN [5] 07++12 68.4 82.3 78.4 70.8 52.3 38.7 77.8 71.6 89.3 44.2 73.0 55.0 87.5 80.5 80.8 72.0 35.1 68.3 65.7 </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>80.4 64.2
+Faster R-CNN [15] 07++12 70.4 84.9 79.8 74.3 53.9 49.8 77.5 75.9 88.5 45.6 77.1 55.3 86.9 81.7 80.9 79.6 40.1 72.6 60.9 81.2 61.5
+YOLO [14] 07++12 57.9 77.0 67.2 57.7 38.3 22.7 68.3 55.9 81.4 36.2 60.8 48.5 77.2 72.3 71.3 63.5 28.9 52.2 54.8 73.9 50.8
+SSD300 [11] 07++12 72.4 85.6 80.1 70.5 57.6 46.2 79.4 76.1 89.2 53.0 77.0 60.8 87.0 83.1 82.3 79.4 45.9 75.9 69.5 81.9 67.5
+SSD512 [11] 07++12 74.9 87.4 82.3 75.8 59.0 52.6 81.7 81.5 90.0 55.4 79.0 59.8 88.4 84.3 84.7 83.3 50.2 78.0 66.3 86.3 72.0
+ResNet [6] 07++12 73.8 86.5 81.6 77.2 58.0 51.0 78.6 76.6 93.2 48.6 80.4 59.0 92.1 85.3 84.8 80.7 48.1 77.3 66.5 84.7 65.6
+YOLOv2 544 07++12 73.4 86.3 82.0 74.8 59.2 51.8 79.8 76.5 90.6 52.1 78.2 58.5 89.3 82.5 83.4 81.3 49.1 77.2 62.4 83.8 68.7
+Table 4: PASCAL VOC2012 test detection results. YOLOv2 performs on par with state-of-the-art detectors like Faster
+R-CNN with ResNet and SSD512 </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>custom model gets 88.0% ImageNet compared to 90.0% for
+VGG-16.
+Darknet-19. We propose a new classification model to
+be used as the base of YOLOv2. Our model builds off of
+prior work on network design as well as common knowl-
+edge in the field. Similar to the VGG models we use mostly
+3× 3 filters and double the number of channels after ev-
+ery pooling step [17]. Following the work on Network in
+Network (NIN) we use global average pooling to make pre-
+dictions as well as 1× 1 filters to compress the feature rep-
+resentation between 3× 3 convolutions [9]. We use batch
+normalization to stabilize training, speed up convergence,
+and regularize the model [7].
+Our final model, called Darknet-19, has 19 convolutional
+layers and 5 maxpooling layers. For a full description see
+Table 6. Darknet-19 only requires 5.58 billion operations
+to process an image yet achieves 72.9% top-1 accuracy and
+91.2% </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>45.3 23.5 7.7 26.4 37.1 23.8 34.0 34.6 12.0 38.5 54.4
+SSD300 [11] trainval35k 23.2 41.2 23.4 5.3 23.2 39.6 22.5 33.2 35.3 9.6 37.6 56.5
+SSD512 [11] trainval35k 26.8 46.5 27.8 9.0 28.9 41.9 24.8 37.5 39.8 14.0 43.5 59.0
+YOLOv2 [11] trainval35k 21.6 44.0 19.2 5.0 22.4 35.5 20.7 31.6 33.3 9.8 36.5 54.4
+Table 5: Results on COCO test-dev2015. Table adapted from [11]
+Type Filters Size/Stride Output
+Convolutional 32 3 × 3 224 × 224
+Maxpool 2 × 2/2 112 × 112
+Convolutional 64 3 × 3 112 × 112
+Maxpool 2 × 2/2 56 × 56
+Convolutional 128 3 × 3 56 × 56
+Convolutional 64 1 × 1 56 × 56
+Convolutional 128 3 × 3 56 × 56
+Maxpool 2 × 2/2 28 × 28
+Convolutional 256 3 × 3 28 × 28
+Convolutional 128 1 × 1 28 × 28
+Convolutional 256 3 × 3 28 × 28
+Maxpool 2 × 2/2 14 × 14
+Convolutional 512 3 × 3 14 × 14
+Convolutional 256 1 × 1 14 × 14
+Convolutional 512 3 × 3 14 × 14
+Convolutional 256 1 × 1 14 × 14
+Convolutional 512 3 </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>path through the graph so first we add all of
+those paths to our tree. Then we iteratively examine the
+concepts we have left and add the paths that grow the tree
+by as little as possible. So if a concept has two paths to the
+root and one path would add three edges to our tree and the
+other would only add one edge, we choose the shorter path.
+6
+The final result is WordTree, a hierarchical model of vi-
+sual concepts. To perform classification with WordTree we
+predict conditional probabilities at every node for the prob-
+ability of each hyponym of that synset given that synset. For
+example, at the &quot;terrier&quot; node we predict:
+Pr (Norfolk terrier|terrier)
+Pr (Yorkshire terrier|terrier)
+Pr (Bedlington terrier|terrier)
+...
+If we want to compute the absolute probability for a par-
+ticular node we simply follow the path through the tree to
+the root node and multiply to conditional probabilities. </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>So
+if we want to know if a picture is of a Norfolk terrier we
+compute:
+Pr (Norfolk terrier) = Pr (Norfolk terrier|terrier)
+∗Pr (terrier|hunting dog)
+∗...∗
+∗Pr (mammal|Pr (animal)
+∗Pr (animal|physical object)
+For classification purposes we assume that the the image
+contains an object:Pr (physical object) = 1 .
+To validate this approach we train the Darknet-19 model
+on WordTree built using the 1000 class ImageNet. To build
+WordTree1k we add in all of the intermediate nodes which
+expands the label space from 1000 to 1369. During training
+we propagate ground truth labels up the tree so that if an im-
+age is labelled as a &quot;Norfolk terrier&quot; it also gets labelled as
+a &quot;dog&quot; and a &quot;mammal&quot;, etc. To compute the conditional
+probabilities our model predicts a vector of 1369 values and
+we compute the softmax over all sysnsets that are hyponyms
+of the same concept, see Figure 5.
+Using the same </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is extremely diverse so we can use this technique
+with most datasets.
+Joint classification and detection. Now that we can
+combine datasets using WordTree we can train our joint
+model on classification and detection. We want to train
+an extremely large scale detector so we create our com-
+bined dataset using the COCO detection dataset and the
+top 9000 classes from the full ImageNet release. We also
+need to evaluate our method so we add in any classes from
+the ImageNet detection challenge that were not already in-
+cluded. The corresponding WordTree for this dataset has
+9418 classes. ImageNet is a much larger dataset so we bal-
+ance the dataset by oversampling COCO so that ImageNet
+is only larger by a factor of 4:1.
+Using this dataset we train YOLO9000. We use the base
+YOLOv2 architecture but only 3 priors instead of 5 to limit
+the output size. When our network sees a detection image
+we </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ImageNet detection task.
+The detection task for ImageNet shares on 44 object cate-
+gories with COCO which means that YOLO9000 has only
+seen classification data for the majority of the test images,
+not detection data. YOLO9000 gets 19.7 mAP overall with
+16.0 mAP on the disjoint 156 object classes that it has never
+seen any labelled detection data for. This mAP is higher
+than results achieved by DPM but YOLO9000 is trained on
+different datasets with only partial supervision [4]. It also
+is simultaneously detecting 9000 other object categories, all
+in real-time.
+When we analyze YOLO9000&#x27;s performance on Ima-
+geNet we see it learns new species of animals well but strug-
+gles with learning categories like clothing and equipment.
+diaper 0.0
+horizontal bar 0.0
+rubber eraser 0.0
+sunglasses 0.0
+swimming trunks 0.0
+...
+red panda 50.7
+fox 52.1
+koala bear 54.3
+tiger 61.0
+armadillo 61.7
+Table 7: </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YOLO9000 Best and Worst Classes on ImageNet.
+The classes with the highest and lowest AP from the 156 weakly
+supervised classes. YOLO9000 learns good models for a variety of
+animals but struggles with new classes like clothing or equipment.
+New animals are easier to learn because the objectness pre-
+dictions generalize well from the animals in COCO. Con-
+versely, COCO does not have bounding box label for any
+type of clothing, only for person, so YOLO9000 struggles to
+model categories like &quot;sunglasses&quot; or &quot;swimming trunks&quot;.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +410,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

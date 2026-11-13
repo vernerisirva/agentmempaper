@@ -59,16 +59,150 @@
             <p>Reliable object-detection evaluation is essential because reported performance depends not only on detector architecture but also on whether training, validation, and testing subsets adequately represent the object-scale characteristics of the data. However, conventional dataset partitioning often ignores object-siz...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study addresses a sound data-centric question regarding the impact of dataset partitioning on object detection evaluation with clear experimental controls, appropriate baseline comparisons, and well-contextualized interpretations.</p>
+      <p>The authors transparently discuss the scope and limitations, noting that the study is conducted on two domain-specific license plate datasets and with a single detector architecture, leaving multi-class datasets and multiple architectures to future work [E133b4a6fca0a7e81-B0057, E133b4a6fca0a7e81-B0058].</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: Iraqi Journal for Computers and Informatics. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-13T11:54:39.531897+00:00.</p>
+        <p>Coverage: 51142 of 51142 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+adequately represent the object -scale characteristics of the data. Howeve r, conventional
+dataset partitioning often ignores object-size distribution, which can introduce scale bias and
+produce unstable or misleading estimates of model generalization. This study investigates
+whether object -size-aware dataset partitioning can imp rove the representativeness and
+reliability of detector evaluation without modifying the detector architecture. Two license -
+plate datasets were examined under four partitioning scenarios: natural unsorted splitting,
+descending size -ordered splitting, strat ified size -descending splitting, and size -aware
+stratified sampling using strict quantized and hybrid semi -stratified variants. After
+partitioning, subset representativeness was assessed using Kullback -Leibler divergence and
+normalized Earth Mover&#x27;s Distance, while the nano variant of You </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Only Look Once version 11
+was used as a fixed detector and trained under identical conditions at 640 × 640 resolution
+for 100 epochs. Performance was evaluated primarily using mean average precision over
+intersection-over-union thresholds from 0.50 to 0.95, supported by mean average precision
+at 0.50, precision, recall, and F1 -score. Size-ordered splitting reduced the primary metric to
+0.124 in Dataset 1 and as low as 0.005 in Dataset 2, whereas size -aware stratification
+recovered competitive values of 0.523 and 0.477, respectively. These findings indicate that
+dataset partitioning is a consequential data -level design factor and can support more
+dependable benchmarking for automated license -plate recognition, intelligent
+transportation, traffic monitoring, and surveillance applications.
 
-        <ul></ul>
+Keywords:
+Multi-Scale Object Detection,
+Dataset Partitioning, Scale
+Sensitivity, </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Object size is considered in this study as a determinant in the ability to influence the learning and assessment results of detectors.
+Instead of considering the traditional split as necessarily representative, we check the possibility that the object -size spectrum
+can irregularly cluster in the training, validation and test sets, and thus estimate performance biasedly. To define realisti c cases
+and controlled remedies, four partitioning scenarios are characterized, the first three represent an unsorted nat ural split, a
+descending size-ordered split, and a size -descending stratified split, whereas the fourth applies purposeful size -aware stratified
+sampling. After each partition is generated, its representativeness is assessed using KL divergence and normalized Earth Mover&#x27;s
+Distance (EMD) before model training and performance evaluation.
+The methodology is divided into </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To investigate how object size distribution and dataset ordering affect detection performance, a set of partitioning scenario s
+were designed that reflect both common practices and hypothetical edge cases.
+Scenarios 1-3: Baseline and Ordered Splits (Two Split Directions)
+In order to make a comparison consistent across the first three scenarios, we compared two split directions in each case:
+● Case 1 (70-20-10): the first 70% of samples are assigned to training, the next 20% to validation, and the final 10% to
+testing.
+● Case 2 (10-20-70): the first 10% of samples are assigned to testing, the next 20% to validation, and the remaining 70%
+to training.
+In Scenarios 1 -3, we intentionally use a sequential &quot;first/next/last&quot; allocation (rather than re -shuffling) to model realistic
+situations where data may be stored or received in a structured order, and to make ordering-induced </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>subsets
+would be concatenated to form the final train/validation/test sets. This does not change the overall size composition but imposes
+a deterministic order within each group of sizes.
+Implementation note. Let A denote the bounding -box area. Each stratum is sorted by A in descending order, then split using
+cumulative ratios (70/20/10 or 10/20/70). For images containing multiple boxes, the maximum A per image is used for ordering
+to avoid  placing objects from the same image into different subsets; ties are broken by image ID. This process can assure
+reproducibility and prevent split to split leakage and probe size-induced bias directly.
+Scenario 4: Size-Aware Stratified Sampling
+Case 1: (S trict Quantized Stratified Sampling):  A stratified quantized sampling technique was added to the size -ordered
+divisions to come up with balance data divisions but randomly. To read </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>through the groups (Small, Medium, and Large), the
+groups were divided into 5 bins depending on the bounding -box area rather than the size-based sorting and a sample of 70% of
+the samples was allocated to the training, 20% to the validation and 10% to the testing.
+The stratified randomization also provided a proportional represe ntation of all the subsets and the intra -class variation as well.
+The method gives a realistic yet manipulable approach towards defining the effects of minute alterations on object scale on
+learning behavior and model generalization.
+Case 2: Hybrid (Semi-Stratified Sampling or Relaxed Stratified): This hybrid (semi-stratified) sampling scheme was designed
+to avoid the fine-grained quantization used in Case 1 while still preserving object-size representation across the resulting subsets.
+Here, the dataset is  initially divided into three classes of </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>COCO -size (small, medium, and large). The samples of each size are
+selected randomly, and 70 percent of the sample is selected as the training samples, 20 percent of the sample is selected as the
+validation samples, and 10 percent of the sample is selected as the test set rather than further quantizing each category into bins.
+The summation of the subsets in the three categories sampled results in final splits. The method is a tradeoff between extrem ely
+quantized stratification by maintaining a coarse degree of balance between the sizes of items with each other, and total random
+assignment.
+ Summary of Partitioning Scenarios
+The four situations collectively represent a wide range of database organization techniques:
+● Scenarios 1: Natural unsorted sequential splitting without reshuffling.
+● Scenarios 2: Descending size-ordered splitting to expose ordering-induced scale bias. </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+distributions were described in terms of the complementary metrics of KL and EMD.
+After generating the four splitting scenarios described earlier, we further evaluated the resulting train/validation/test sub sets
+using KL divergence and EMD-based measures to quantify how closely their size distributions align. This post-partition analysis
+provides an objective assessment of how closely the resulting subsets preserve the object -size distribution, thereby supporting a
+more reliable interpretation of detector performance.
+The comparison of KL/EMD as presented  in Figure 3(a) reveals that Scenario 4, Case 2 produces the lowest distribution -
+discrepancy score for Dataset 1. Conversely, Figure 3(b) shows that Scenario 4, Case 1 produces the lowest distribution -
+discrepancy score for Dataset 2, and this means that th e most appropriate splitting decision might not be the same </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YOLOv11n was used as the fixed detection framework in this study to maintain a consistent detector configuration across all
+dataset-partitioning experiments. The model was trained with standardized Python pipelines containing popular deep learning
+libraries. All the model training and validation procedures were done in a similar manner across partitioned subsets to ensure
+comparability and experimental rigor.
+With a C3k2 block of higher speed and accuracy and C2PSA mechanism of better spatial perception of small objects, YOLOv11n
+is a significant step forward with its predecessors and can effectively be utilized in real -time[4]. Due to its flexibility and the
+possibility of supporting numerous tasks like instance segmentation and image classification, the application of YOLOv11n can
+Iraqi Journal for Computers and Informatics                                                DOI: </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The results were obtained using the fixed YOLOv11n detector, which was trained for 100 epochs with an input resolution of 640
+× 640 under identical conditions across all experiments to ensure comparability among partitioning scenarios. Altogether,
+YOLOv11n is capable of license plate detection, as high precision and recall are achieved in balanced training.
+The overall trends are consistent across both datasets, as reported in Tables 2 and 3 and summarized visually in Figure 4 and
+reveal that YOLOv11n is strongly affected by how objects sizes are distributed across the train/validation/test splits. In the
+scenarios of natural unsorted split (Scenario 1, both directions of split), the model does not decrease the performance:
+mAP@0.50:0.95 is between (0.483 -0.497) in Dataset (1) and (0.451-0.514) in Dataset (2), which indicates that the generalization
+of the model is not </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>dataset 1
+ scenario1 case1 scenario1 case2 Scenario2 case1 Scenario2 case2 Scenario3 case1 Scenario3 case2 Scenario4 case1 Scenario4 case2
+mAP@ 0.50:0.95 0.497367 0.483453 0.123639 0.219915 0.366973 0.366674 0.523274 0.420906
+mAP@ 0.50 0.898160 0.918334 0.297605 0.399236 0.674309 0.808457 0.819992 0.785393
+F1 0.889564 0.913142 0.438280 0.496637 0.704799 0.785248 0.778296 0.815085
+Precision 0.900608 0.930753 0.592315 0.973632 0.683673 0.782635 0.799248 0.809728
+Recall 0.878788 0.896185 0.347826 0.333333 0.727273 0.787879 0.758415 0.820513
+Table 3: Comparing Performance in Different Size-Based Splitting scenarios in dataset 2
+ scenario1 case1 scenario1 case2 Scenario2 case1 Scenario2 case2 Scenario3 case1 Scenario3 case2 Scenario4 case1 Scenario4 case2
+mAP@ 0.50:0.95 0.450905 0.514376 0.130585 0.005411 0.358599 0.312935 0.460224 0.476905
+mAP@ 0.50 0.848614 0.863911 0.464444 </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.006659 0.735884 0.637270 0.848278 0.856966
+F1 0.831557 0.837415 0.564822 0.009990 0.740310 0.710071 0.824865 0.827921
+Iraqi Journal for Computers and Informatics                                                DOI: 10.25195/ijci.v52i2899                          .
+433
+
+
+Precision 0.859927 0.870951 0.642951 0.075729 0.767900 0.768063 0.857249 0.845991
+Recall 0.805000 0.806366 0.503623 0.005348 0.714634 0.660221 0.794839 0.810606
+Tables 2 and 3 give the full numerical results of all the evaluation metrics, while Figure 4 offers a more detailed visualiza tion
+of the main metric mAP@0.50:0.95 for the evaluated dataset-partitioning scenarios. This shows-up the sensitivity of detector
+performance to changes in data partition, and does not duplicate the full tabulated results.
+
+(a) Dataset 1
+
+(b) Dataset 2
+Figure 4: Comparison of mAP@0.50:0.95 across dataset-partitioning </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>this research are corroborated by previous research findings that indicates data composition can affect model
+evaluation. Tadjine et al. [8] have proven it possible to deliberately change the organization of the datasets as suited for detection
+needs, and Elezi et al. [15] have demonstrated how sample selection can impact data representativeness and distribution drift .
+Likewise, Torralba and Efros [16] found that bias in the data, lack of attributes  in the data and shifts in the data distribution can
+compromise evaluation reliability and generalization capabilities. Fernández Llorca et al. [17] and Li et al. [19] also repor ted
+that distribution shifts, attribute underrepresentation and dataset bias c an reduce the reliability of evaluation and the
+generalization capabilities. For Datasets 1 &amp; 2, and with the same allocation of 70/20/10, S2 -C1 obtained mAP@0.50:0.95 of
+0.124 </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This study investigated how object -size-aware dataset partitioning affects the performance and reliability of YOLOv11n -based
+license-plate detection. The findings show that detector performance is influenced not only by the model and training
+configuration but also by the distribution of object scales across the training, validation, and testing subsets.
+The natural unsorted splits provided a relatively stable baseline when object-scale diversity was preserved, with mAP@0.50:0.95
+reaching approximately 0 .497 in Dataset 1 and ranging from 0.451 to 0.514 in Dataset 2. In contrast, size -ordered partitioning
+caused substantial performance degradation, reaching a near-collapse value of 0.005 under the most severe scale mismatch. Size-
+aware stratification using the quantized and hybrid strategies substantially recovered performance under these biased conditions
+and produced </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>competitive evaluation results, although it did not consistently outperform every natural unsorted split. The KL
+divergence and normalized EMD analysis further supported this trend by showing that the Scenario 4 configurations were among
+the most representative partitions, while the preferred variant differed between the two datasets.
+Comprehensively, the results highlight that dataset partitioning needs to be a design -level decision instead of a standard pre -
+processing step in the studies of object detectors. Because the experiments were conducted on two license -plate datasets, these
+findings should be interpreted as domain-specific evidence rather than as a universal conclusion for all object-detection datasets.
+Future work will extend the analysis to larger and more diverse object -detection datasets and investigate adaptive partitioni ng
+strategies that jointly consider </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +241,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +257,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-11-11</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-12 12:10:33</li><li>Last seen by Paper Scout: 2026-11-12 12:10:33</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-11-12</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-12 12:10:33</li><li>Last seen by Paper Scout: 2026-11-13 11:52:17</li></ul>
             <ul><li>DOI: 10.25195/ijci.v52i2.899</li><li>OpenAlex: W7225640970</li><li>OpenAlex IDs: W7225640970</li></ul>
           </section>
           <section class="detail-panel">

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ExQuery: Explicit Structured Query Priors for Temporal 3D Object Detection</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>ExQuery: Explicit Structured Query Priors for Temporal 3D Object Detection</h1>
+          <p class="hero-copy">Honglin Sun, Yifei Zhang, Junyang Zhang, Kenji Hashimoto</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.09527">Open paper</a>
+            <a class="paper-detail-link" href="exquery-explicit-structured-query-priors-for-temporal-3d-object-detection-521bb89e.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Honglin Sun, Yifei Zhang, Junyang Zhang, Kenji Hashimoto</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-06</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-06</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.09527v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2611.09527">DOI</a><a href="https://openalex.org/W7225653411">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies object-detection architecture, training, or evaluation.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Sparse query-based 3D detectors commonly encode heterogeneous semantic, geometric, and motion information into unified latent queries, including when explicit 3D anchors are used. We introduce ExQuery, an explicit structured query framework for temporal 3D object detection. Each decoded query is organized into a sha...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a clear, well-formulated technical contribution with clear motivation, comprehensive mathematical descriptions, solid empirical validation on standard benchmarks, and insightful ablation studies.</p>
+      <p>The authors clearly acknowledge the computational and latency overhead introduced by the additional encoders and modulation modules, the reliance on the shared slice for contextual reasoning, and the need for deeper attribute disentanglement.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-10T12:08:41.553961+00:00.</p>
+        <p>Coverage: 44026 of 44026 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Sparse query-based 3D detectors commonly encode heterogeneous semantic, geo-
+metric, and motion information into unified latent queries, including when explicit 3D
+anchors are used. We introduce ExQuery, an explicit structured query framework for
+temporal 3D object detection. Each decoded query is organized into a shared semantic-
+context slice and physical-state-specific slices for center, dimensions, orientation, and
+velocity. This structure is preserved from prior encoding to branch-specific regression
+and is reused to reconstruct temporal queries: predicted physical states are transformed
+by ego motion, classification scores form soft semantic priors, and the reconstructed
+query is fused with the stored latent instance feature through gated affine modulation.
+Experiments on the nuScenes benchmark show that our method achieves competitive
+detection performance, and ablation studies </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>provides
+attribute-aligned inputs for branch-specific regression.
+• We introduce an explicit temporal propagation mechanism built on the structured
+query state, so that propagated queries preserve physical interpretability together with
+semantic cues across frames. The resulting semantic interface also supports label em-
+beddings during denoising training.
+• Experiments on the nuScenes benchmark show that the proposed method achieves
+competitive detection performance and validate the effectiveness of structured query
+modeling for temporal 3D detection.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Instead of representing each object query as an undifferentiated latent vector, we model it as
+a structured query state. Specifically, the feature channels are divided into a shared semantic-
+context slice and several physical-state-specific slices:
+q= [qs |q c |q d |q o |q v],(2)
+whereq s denotes the shared semantic-context slice, andq c,q d,q o, andq v correspond to
+center, dimensions, orientation, and velocity, respectively. The shared slice preserves im-
+plicit cues such as semantic, contextual, and temporal information, while the physical slices
+are aligned with explicit object states. This design provides attribute-aligned subspaces for
+temporal propagation and regression.
+Given the 3D anchor state defined in Sec. 3.1, the query encoder maps its semantic and
+physical priors into the query feature space. The semantic prior is a learnable embedding
+for standard matching queries and </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>{c,d,o,v}.(6)
+Here ˆyc, ˆyd, ˆyo, and ˆyv denote the predicted center, dimensions, orientation, and velocity,
+respectively. For classification, we use the full decoder query, since category prediction in
+3D detection can still benefit from correlated geometry and motion cues.
+SUN ET AL.: EXQUERY7</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>prior from the classification scores. Letpti ∈[0,1] C
+be the class confidence scores of thei-th stored prediction, and letE={e c}Cc=1 be the learn-
+able class embedding table shared with the denoising branch. We select the top-Mclasses
+CMi and compute a score-weighted class embedding:
+¯eti = ∑
+c∈CMi
+αi,cec,α i,c =
+pti,c
+∑c′∈CMi pti,c′ .(8)
+Here,α i,c denotes the normalized confidence weight of classcamong the selected top-M
+classes, and ¯eti serves as a soft semantic prior for the stored instance.
+To account for low-confidence stored predictions, we mix this class-aware prior with a
+learnable neutral embeddinge 0:
+pobji =maxc pti,c,e t+1i =p obji ¯eti + 1−p obji  e0.(9)
+The transformed physical priora t+1i and semantic-context priore t+1i are then encoded as
+an explicit structured query:
+qt+1exp,i =φ enc et+1i ,a t+1i  .(10)
+As illustrated in Fig.3, we further fuse this explicit </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>structured query with the stored im-
+plicit instance feature through mutual gated affine modulation.
+To preserve useful implicit contextual information from the previous frame, we further
+modulate the explicit query with the stored instance feature. Letq timp,i denote the stored
+instance feature. We first project it to the query space:
+˜qtimp,i =φ align
+
+qtimp,i
+
+.(11)
+We then perform mutual gated affine fusion:
+γimp,β imp =φ imp
+
+˜qtimp,i
+
+,γ exp,β exp =φ exp
+
+qt+1exp,i
+
+,(12)
+qt+1prop,i =γ imp ⊙q t+1exp,i +β imp +γ exp ⊙ ˜qtimp,i +β exp,(13)
+8SUN ET AL.: EXQUERY
+temporal
+alignment
+latent space alignment
+From
+query
+embedding
+frame
+transformation
+reg &amp; cls
+branches
+query encoding
+Mutual Affine Mod.
+Figure 3: Mutual gated affine fusion for temporal query propagation. The score-derived
+semantic prior and predicted physical state form the explicit structured queryq exp, while </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We conduct experiments on the nuScenes dataset [1], a large-scale autonomous driving
+benchmark containing 1000 driving scenes of approximately 20 seconds each. The dataset
+is officially split into 700 scenes for training, 150 scenes for validation, and 150 scenes for
+testing. We train our models on the training set and report results on the validation set.
+We evaluate our method with the official nuScenes 3D detection metrics, including mean
+Average Precision (mAP), nuScenes Detection Score (NDS), and five true-positive error met-
+rics: mean Average Translation Error (mATE), mean Average Scale Error (mASE), mean
+Average Orientation Error (mAOE), mean Average Velocity Error (mA VE), and mean Aver-
+age Attribute Error (mAAE). The mAP is computed based on center-distance matching on
+the ground plane, while NDS summarizes both detection accuracy and box quality. Higher
+mAP and NDS indicate </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>256×704 0.560 0.456 0.5300.264 0.424 0.252 0.206
+ExQuery† ResNet50 256×704 0.561 0.459 0.585 0.261 0.400 0.256 0.193
+Table 1: Comparison results on the nuScenes validation set. † denotes perspective-view
+pretraining.
+Model Params. GFLOPs Mem. FPS Latency
+(M) (MB) (ms)
+RepDETR3D 43.29 225.03 404.12 67.22 14.88
+ExQuery 46.17 227.60 415.69 54.10 18.48
+Table 2: FP32 efficiency of the RepDETR3D base and ExQuery at batch size 1 on an RTX
+5090.
+Following StreamPETR, we use a ResNet-50 [5] backbone initialized from a nuImages-
+pretrained Cascade R-CNN, an FPN [21] neck, 256×704 input images, 300 standard queries,
+and 128 propagation queries. Models are trained on NVIDIA RTX 5090 GPUs with a total
+batch size of 16. We use AdamW [29], cosine learning-rate scheduling, and an initial learn-
+ing rate of 4×10 −4. The main model is trained for 60 epochs without class-balanced group
+sampling (CBGS) </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 compares our method with representative camera-based 3D object detectors on the
+nuScenes validation set. With the ResNet-50 image backbone and an input resolution of
+256×704, our method achieves 0.459 mAP and 0.561 NDS. Compared with StreamPETR,
+our method improves mAP from 0.450 to 0.459 and NDS from 0.550 to 0.561. With the ex-
+plicit propagated priors, it also reduces several box-quality errors, including mATE, mASE,
+mAOE, and mA VE, indicating that the proposed method benefits detection accuracy.
+RepDETR3D and ExQuery use the same ResNet-50 backbone, FPN neck, 256×704 in-
+put resolution, and runtime settings. Table 2 reports the computational overhead of ExQuery
+under this matched setup: 2.88M parameters, 2.57 GFLOPs, and 11.57 MB of measured
+memory, with latency increasing from 14.88 to 18.48 ms.</blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Effect of main components.Table 3 studies the contribution of the proposed components.
+Here, Structured Query denotes the channel-sliced query representation with decoupled re-
+gression heads. Explicit Prior denotes the explicitly propagated physical and semantic-
+context priors. Gated Fusion denotes the mutual gated affine fusion between the explicit
+query and the stored implicit instance feature. Introducing the structured query improves
+NDS from 0.470 to 0.497 and mAP from 0.383 to 0.386, indicating that organizing the
+10SUN ET AL.: EXQUERY
+Structured Query Explicit Prior Gated Fusion NDS↑mAP↑
+0.470 0.383
+✓ 0.497 0.386
+✓ 0.501 0.391
+✓ ✓ 0.516 0.406
+✓ ✓ ✓ 0.522 0.417
+Table 3: Ablation study of the proposed components on the nuScenes validation set.
+query into attribute-aligned subspaces benefits 3D detection. Adding the explicit prior fur-
+ther improves the performance to 0.516 NDS and </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Structured query slice intervention.To analyze the functional role of each physical slice,
+we zero out one slice at a time before the prediction heads and measure the metric difference
+∆m=m intervention −m normal. For NDS and mAP, negative values indicate degraded detection
+performance, while for mATE, mASE, mAOE, and mA VE, positive values indicate increased
+error. Since the shared slice is designed as a common semantic-context pathway rather than
+a physical-state-specific slice, zeroing the shared slice causes large degradation across all
+metrics, so we focus this analysis on the physical slices.
+NDS
+ mAP
+ mATE
+ mASE
+ mAOE
+ mAVE
+-0.018
+-0.022 +0.059 +0.001 +0.012 +0.000 -0.038
+-0.038 +0.055 +0.094 +0.025 +0.022 -0.015
+-0.010 +0.007 +0.001 +0.080 +0.011 -0.031
+-0.021 +0.022 +0.002 +0.014 +0.074
+0.075
+0.050
+0.025
+0.000
+0.025
+0.050
+0.075
+zero center
+zero dim.
+zero orient.
+zero </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We presented ExQuery, which preserves a shared/physical channel organization in 3D object
+queries from explicit prior encoding to temporal reconstruction and branch-specific regres-
+sion. Experiments show competitive detection performance, while the ablations support the
+complementary roles of structured queries, explicit priors, and gated fusion.
+Despite these encouraging results, several directions remain open for further exploration.
+In our current design, the shared semantic-context slice is intentionally used by all prediction
+branches, allowing physical prediction to benefit from contextual cues. The added query en-
+coders and fusion module also introduce a measurable latency cost. A deeper understanding
+of what information is involved in the query, and how to further encourage attribute-specific
+specialization without losing useful contextual interaction, remains an important </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Object-detection method</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Concerns object-detection architecture, training, or evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 96/100</li>
+              <li>Screening category: Object detection</li>
+              <li>Tags: object-detection, 3d-vision, benchmark</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-11-12</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-09 12:30:58</li><li>Last seen by Paper Scout: 2026-11-13 11:52:17</li></ul>
+            <ul><li>DOI: 10.48550/arxiv.2611.09527</li><li>arXiv: 2611.09527</li><li>OpenAlex: W7225653411</li><li>OpenAlex IDs: W7225653411</li><li>arXiv IDs: 2611.09527</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="exquery-explicit-structured-query-priors-for-temporal-3d-object-detection-521bb89e.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>ExQuery: Explicit Structured Query Priors for Temporal 3D Object Detection. Honglin Sun, Yifei Zhang, Junyang Zhang, Kenji Hashimoto. 2026-11-06. https://arxiv.org/abs/2611.09527</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

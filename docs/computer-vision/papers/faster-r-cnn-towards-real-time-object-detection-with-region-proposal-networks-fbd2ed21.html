@@ -64,16 +64,475 @@
             <p>State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like SPPnet and Fast R-CNN have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network (R...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>Faster R-CNN presents a foundational architectural innovation with clear mathematical and algorithmic formulation, robust ablation studies, and comprehensive validation against established computer vision benchmarks.</p>
+      <p>The manuscript explicitly addresses computational and boundary-handling aspects, such as clipping cross-boundary anchors and the approximation inherent in alternating versus fully differentiable joint training.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-16T12:27:56.273886+00:00.</p>
+        <p>Coverage: 66084 of 66084 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1
+Faster R-CNN: Towards Real-Time Object
+Detection with Region Proposal Networks
+Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun
+Abstract—State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations.
+Advances like SPPnet [1] and Fast R-CNN [2] have reduced the running time of these detection networks, exposing region
+proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network (RPN) that shares full-image
+convolutional features with the detection network, thus enabling nearly cost-free region proposals. An RPN is a fully convolutional
+network that simultaneously predicts object bounds and objectness scores at each position. The RPN is trained end-to-end to
+generate high-quality region proposals, which are used by Fast R-CNN for detection. We further merge RPN and Fast R-CNN
+into a single network by </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sharing their convolutional features—using the recently popular terminology of neural networks with
+&quot;attention&quot; mechanisms, the RPN component tells the unified network where to look. For the very deep VGG-16 model [3],
+our detection system has a frame rate of 5fps ( including all steps ) on a GPU, while achieving state-of-the-art object detection
+accuracy on PASCAL VOC 2007, 2012, and MS COCO datasets with only 300 proposals per image. In ILSVRC and COCO
+2015 competitions, Faster R-CNN and RPN are the foundations of the 1st-place winning entries in several tracks. Code has been
+made publicly available.
+Index Terms—Object Detection, Region Proposal, Convolutional Neural Network.
+!
+1 I NTRODUCTION
+Recent advances in object detection are driven by
+the success of region proposal methods ( e.g., [4])
+and region-based convolutional neural networks (R-
+CNNs) [5]. Although region-based CNNs </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+down-stream detection network and therefore misses
+important opportunities for sharing computation.
+In this paper, we show that an algorithmic change—
+computing proposals with a deep convolutional neu-
+ral network—leads to an elegant and effective solution
+where proposal computation is nearly cost-free given
+the detection network&#x27;s computation. To this end, we
+introduce novel Region Proposal Networks (RPNs) that
+share convolutional layers with state-of-the-art object
+detection networks [1], [2]. By sharing convolutions at
+test-time, the marginal cost for computing proposals
+is small ( e.g., 10ms per image).
+Our observation is that the convolutional feature
+maps used by region-based detectors, like Fast R-
+CNN, can also be used for generating region pro-
+posals. On top of these convolutional features, we
+construct an RPN by adding a few additional con-
+volutional layers that </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>simultaneously regress region
+bounds and objectness scores at each location on a
+regular grid. The RPN is thus a kind of fully convo-
+lutional network (FCN) [7] and can be trained end-to-
+end specifically for the task for generating detection
+proposals.
+RPNs are designed to efficiently predict region pro-
+posals with a wide range of scales and aspect ratios. In
+contrast to prevalent methods [8], [9], [1], [2] that use
+arXiv:1506.01497v3  [cs.CV]  6 Jan 2016
+2
+multiple scaled images
+multiple filter sizes
+multiple references
+(a) (b) (c)
+image
+feature map
+image
+feature map
+image
+feature map
+Figure 1: Different schemes for addressing multiple scales and sizes. (a) Pyramids of images and feature maps
+are built, and the classifier is run at all scales. (b) Pyramids of filters with multiple scales/sizes are run on
+the feature map. (c) We use pyramids of reference boxes in the regression </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>functions.
+pyramids of images (Figure 1, a) or pyramids of filters
+(Figure 1, b), we introduce novel &quot;anchor&quot; boxes
+that serve as references at multiple scales and aspect
+ratios. Our scheme can be thought of as a pyramid
+of regression references (Figure 1, c), which avoids
+enumerating images or filters of multiple scales or
+aspect ratios. This model performs well when trained
+and tested using single-scale images and thus benefits
+running speed.
+To unify RPNs with Fast R-CNN [2] object detec-
+tion networks, we propose a training scheme that
+alternates between fine-tuning for the region proposal
+task and then fine-tuning for object detection, while
+keeping the proposals fixed. This scheme converges
+quickly and produces a unified network with convo-
+lutional features that are shared between both tasks. 1
+We comprehensively evaluate our method on the
+PASCAL VOC detection benchmarks [11] </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>&#x27;attention&#x27; [31] mechanisms, the RPN
+module tells the Fast R-CNN module where to look.
+In Section 3.1 we introduce the designs and properties
+of the network for region proposal. In Section 3.2 we
+develop algorithms for training both modules with
+features shared.
+3.1 Region Proposal Networks
+A Region Proposal Network (RPN) takes an image
+(of any size) as input and outputs a set of rectangular
+object proposals, each with an objectness score. 3 We
+model this process with a fully convolutional network
+[7], which we describe in this section. Because our ulti-
+mate goal is to share computation with a Fast R-CNN
+object detection network [2], we assume that both nets
+share a common set of convolutional layers. In our ex-
+periments, we investigate the Zeiler and Fergus model
+[32] (ZF), which has 5 shareable convolutional layers
+and the Simonyan and Zisserman model [3] (VGG-16),
+which has 13 </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>shareable convolutional layers.
+To generate region proposals, we slide a small
+network over the convolutional feature map output
+by the last shared convolutional layer. This small
+network takes as input an n×n spatial window of
+the input convolutional feature map. Each sliding
+window is mapped to a lower-dimensional feature
+(256-d for ZF and 512-d for VGG, with ReLU [33]
+following). This feature is fed into two sibling fully-
+connected layers—a box-regression layer ( reg) and a
+box-classification layer ( cls). We use n = 3 in this
+paper, noting that the effective receptive field on the
+input image is large (171 and 228 pixels for ZF and
+VGG, respectively). This mini-network is illustrated
+at a single position in Figure 3 (left). Note that be-
+cause the mini-network operates in a sliding-window
+fashion, the fully-connected layers are shared across
+all spatial locations. This architecture </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is naturally im-
+plemented with an n×n convolutional layer followed
+by two sibling 1× 1 convolutional layers (for reg and
+cls, respectively).
+3.1.1 Anchors
+At each sliding-window location, we simultaneously
+predict multiple region proposals, where the number
+of maximum possible proposals for each location is
+denoted ask. So the reg layer has 4k outputs encoding
+the coordinates of k boxes, and the cls layer outputs
+2k scores that estimate probability of object or not
+object for each proposal 4. The k proposals are param-
+eterized relative to k reference boxes, which we call
+3. &quot;Region&quot; is a generic term and in this paper we only consider
+rectangular regions, as is common for many methods ( e.g., [27], [4],
+[6]). &quot;Objectness&quot; measures membership to a set of object classes
+vs. background.
+4. For simplicity we implement the cls layer as a two-class
+softmax layer. Alternatively, one may use </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>logistic regression to
+produce k scores.
+4
+car : 1.000
+dog : 0.997
+person : 0.992
+person : 0.979
+horse : 0.993
+conv feature map
+intermediate layer
+256-d
+2k scores 4k coordinates
+sliding window
+reg layercls layer
+k anchor boxes
+bus : 0.996
+person : 0.736
+boat : 0.970
+person : 0.989
+person : 0.983 person : 0.983
+person : 0.925
+cat : 0.982
+dog : 0.994
+Figure 3: Left: Region Proposal Network (RPN). Right: Example detections using RPN proposals on PASCAL
+VOC 2007 test. Our method detects objects in a wide range of scales and aspect ratios.
+anchors. An anchor is centered at the sliding window
+in question, and is associated with a scale and aspect
+ratio (Figure 3, left). By default we use 3 scales and
+3 aspect ratios, yielding k = 9 anchors at each sliding
+position. For a convolutional feature map of a size
+W×H (typically∼2,400), there are WHk anchors in
+total.
+T ranslation-Invariant Anchors
+An </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with a ground-truth box, or (ii) an
+anchor that has an IoU overlap higher than 0.7 with
+5
+any ground-truth box. Note that a single ground-truth
+box may assign positive labels to multiple anchors.
+Usually the second condition is sufficient to determine
+the positive samples; but we still adopt the first
+condition for the reason that in some rare cases the
+second condition may find no positive sample. We
+assign a negative label to a non-positive anchor if its
+IoU ratio is lower than 0.3 for all ground-truth boxes.
+Anchors that are neither positive nor negative do not
+contribute to the training objective.
+With these definitions, we minimize an objective
+function following the multi-task loss in Fast R-CNN
+[2]. Our loss function for an image is defined as:
+L({pi},{ti}) = 1Ncls ∑i Lcls (pi,p∗i )
++λ 1Nreg ∑i p∗iLreg(ti,t∗i ). (1)
+Here, i is the index of an anchor in a mini-batch and
+pi is the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predicted probability of anchor i being an
+object. The ground-truth label p∗i is 1 if the anchor
+is positive, and is 0 if the anchor is negative. ti is a
+vector representing the 4 parameterized coordinates
+of the predicted bounding box, and t∗i is that of the
+ground-truth box associated with a positive anchor.
+The classification loss Lcls is log loss over two classes
+(object vs. not object). For the regression loss, we use
+Lreg(ti,t∗i ) = R(ti− t∗i ) where R is the robust loss
+function (smooth L 1) defined in [2]. The term p∗iLreg
+means the regression loss is activated only for positive
+anchors (p∗i = 1 ) and is disabled otherwise ( p∗i = 0 ).
+The outputs of the cls and reg layers consist of {pi}
+and{ti} respectively.
+The two terms are normalized by Ncls and Nreg
+and weighted by a balancing parameter λ. In our
+current implementation (as in the released code), the
+cls term in Eqn.(1) is </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>normalized by the mini-batch
+size ( i.e., Ncls = 256 ) and the reg term is normalized
+by the number of anchor locations ( i.e.,Nreg∼ 2, 400).
+By default we set λ = 10 , and thus both cls and
+reg terms are roughly equally weighted. We show
+by experiments that the results are insensitive to the
+values of λ in a wide range (Table 9). We also note
+that the normalization as above is not required and
+could be simplified.
+For bounding box regression, we adopt the param-
+eterizations of the 4 coordinates following [5]:
+tx = (x−xa)/wa, t y = (y−ya)/ha,
+tw = log(w/wa), t h = log(h/ha),
+t∗x = (x∗−xa)/wa, t ∗y = (y∗−ya)/ha,
+t∗w = log(w∗/wa), t ∗h = log(h∗/ha),
+(2)
+where x, y, w, and h denote the box&#x27;s center coordi-
+nates and its width and height. Variables x, xa, and
+x∗ are for the predicted box, anchor box, and ground-
+truth box respectively (likewise for y,w,h ). This can
+be thought of as </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predicted bounding boxes as input, so
+a theoretically valid backpropagation solver should
+also involve gradients w.r.t. the box coordinates. These
+gradients are ignored in the above approximate joint
+training. In a non-approximate joint training solution,
+we need an RoI pooling layer that is differentiable
+w.r.t. the box coordinates. This is a nontrivial problem
+and a solution can be given by an &quot;RoI warping&quot; layer
+as developed in [15], which is beyond the scope of this
+paper.
+4-Step Alternating T raining. In this paper, we adopt
+a pragmatic 4-step training algorithm to learn shared
+features via alternating optimization. In the first step,
+we train the RPN as described in Section 3.1.3. This
+network is initialized with an ImageNet-pre-trained
+model and fine-tuned end-to-end for the region pro-
+posal task. In the second step, we train a separate
+detection network by Fast R-CNN using the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>proposals
+generated by the step-1 RPN. This detection net-
+work is also initialized by the ImageNet-pre-trained
+model. At this point the two networks do not share
+convolutional layers. In the third step, we use the
+detector network to initialize RPN training, but we
+fix the shared convolutional layers and only fine-tune
+the layers unique to RPN. Now the two networks
+share convolutional layers. Finally, keeping the shared
+convolutional layers fixed, we fine-tune the unique
+layers of Fast R-CNN. As such, both networks share
+the same convolutional layers and form a unified
+network. A similar alternating training can be run
+for more iterations, but we have observed negligible
+improvements.
+3.3 Implementation Details
+We train and test both region proposal and object
+detection networks on images of a single scale [1], [2].
+We re-scale the images such that their shorter side
+is s = 600 pixels </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>During
+testing, however, we still apply the fully convolutional
+RPN to the entire image. This may generate cross-
+boundary proposal boxes, which we clip to the image
+boundary.
+7
+Table 2: Detection results on PASCAL VOC 2007 test set (trained on VOC 2007 trainval). The detectors are
+Fast R-CNN with ZF, but using various proposal methods for training and testing.
+train-time region proposals test-time region proposals
+method # boxes method # proposals mAP (%)
+SS 2000 SS 2000 58.7
+EB 2000 EB 2000 58.6
+RPN+ZF, shared 2000 RPN+ZF, shared 300 59.9
+ablation experiments follow below
+RPN+ZF, unshared 2000 RPN+ZF, unshared 300 58.7
+SS 2000 RPN+ZF 100 55.1
+SS 2000 RPN+ZF 300 56.8
+SS 2000 RPN+ZF 1000 56.3
+SS 2000 RPN+ZF (no NMS) 6000 55.2
+SS 2000 RPN+ZF (no cls) 100 44.6
+SS 2000 RPN+ZF (no cls) 300 51.4
+SS 2000 RPN+ZF (no cls) 1000 55.8
+SS 2000 RPN+ZF (no reg) 300 52.1
+SS 2000 RPN+ZF (no reg) 1000 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>competitive results, with
+an mAP of 59.9% while using up to 300 proposals 8.
+Using RPN yields a much faster detection system than
+using either SS or EB because of shared convolutional
+computations; the fewer proposals also reduce the
+region-wise fully-connected layers&#x27; cost (Table 5).
+Ablation Experiments on RPN. To investigate the be-
+havior of RPNs as a proposal method, we conducted
+several ablation studies. First, we show the effect of
+sharing convolutional layers between the RPN and
+Fast R-CNN detection network. To do this, we stop
+after the second step in the 4-step training process.
+Using separate networks reduces the result slightly to
+58.7% (RPN+ZF, unshared, Table 2). We observe that
+this is because in the third step when the detector-
+tuned features are used to fine-tune the RPN, the
+proposal quality is improved.
+Next, we disentangle the RPN&#x27;s influence on train-
+ing the Fast </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>R-CNN and VGG-16. Training
+data: &quot;07&quot;: VOC 2007 trainval, &quot;07+12&quot;: union set of VOC 2007 trainval and VOC 2012 trainval. For RPN,
+the train-time proposals for Fast R-CNN are 2000. †: this number was reported in [2]; using the repository
+provided by this paper, this result is higher (68.1).
+method # proposals data mAP (%)
+SS 2000 07 66.9†
+SS 2000 07+12 70.0
+RPN+VGG, unshared 300 07 68.5
+RPN+VGG, shared 300 07 69.9
+RPN+VGG, shared 300 07+12 73.2
+RPN+VGG, shared 300 COCO+07+12 78.8
+Table 4: Detection results on PASCAL VOC 2012 test set . The detector is Fast R-CNN and VGG-16. Training
+data: &quot;07&quot;: VOC 2007 trainval, &quot;07++12&quot;: union set of VOC 2007 trainval+test and VOC 2012 trainval. For
+RPN, the train-time proposals for Fast R-CNN are 2000. †: http://host.robots.ox.ac.uk:8080/anonymous/HZJTQA.html.‡:
+http://host.robots.ox.ac.uk:8080/anonymous/YNPLXB.html.§: </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>http://host.robots.ox.ac.uk:8080/anonymous/XEDH10.html.
+method # proposals data mAP (%)
+SS 2000 12 65.7
+SS 2000 07++12 68.4
+RPN+VGG, shared† 300 12 67.0
+RPN+VGG, shared‡ 300 07++12 70.4
+RPN+VGG, shared§ 300 COCO+07++12 75.9
+Table 5: Timing (ms) on a K40 GPU, except SS proposal is evaluated in a CPU. &quot;Region-wise&quot; includes NMS,
+pooling, fully-connected, and softmax layers. See our released code for the profiling of running time.
+model system conv proposal region-wise total rate
+VGG SS + Fast R-CNN 146 1510 174 1830 0.5 fps
+VGG RPN + Fast R-CNN 141 10 47 198 5 fps
+ZF RPN + Fast R-CNN 31 3 25 59 17 fps
+100 proposals at test-time, indicating that the top-
+ranked RPN proposals are accurate. On the other
+extreme, using the top-ranked 6000 RPN proposals
+(without NMS) has a comparable mAP (55.2%), sug-
+gesting NMS does not harm the detection mAP and
+may reduce false alarms.
+Next, we separately </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>investigate the roles of RPN&#x27;s
+cls and reg outputs by turning off either of them
+at test-time. When the cls layer is removed at test-
+time (thus no NMS/ranking is used), we randomly
+sample N proposals from the unscored regions. The
+mAP is nearly unchanged with N = 1000 (55.8%), but
+degrades considerably to 44.6% when N = 100 . This
+shows that the cls scores account for the accuracy of
+the highest ranked proposals.
+On the other hand, when the reg layer is removed
+at test-time (so the proposals become anchor boxes),
+the mAP drops to 52.1%. This suggests that the high-
+quality proposals are mainly due to the regressed box
+bounds. The anchor boxes, though having multiple
+scales and aspect ratios, are not sufficient for accurate
+detection.
+We also evaluate the effects of more powerful net-
+works on the proposal quality of RPN alone. We use
+VGG-16 to train the RPN, and still use the </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1:2} 68.82562 {2:1, 1:1, 1:2} 67.9
+3 scales, 1 ratio {1282, 2562, 5122} 1:1 69.8
+3 scales, 3 ratios {1282, 2562, 5122}{2:1, 1:1, 1:2} 69.9
+Table 9: Detection results of Faster R-CNN on PAS-
+CAL VOC 2007 test set using different values of λ
+in Equation (1). The network is VGG-16. The training
+data is VOC 2007 trainval. The default setting of using
+λ = 10 (69.9%) is the same as that in Table 3.
+λ 0.1 1 10 100
+mAP (%) 67.2 68.9 69.9 69.1
+In Table 5 we summarize the running time of the
+entire object detection system. SS takes 1-2 seconds
+depending on content (on average about 1.5s), and
+Fast R-CNN with VGG-16 takes 320ms on 2000 SS
+proposals (or 223ms if using SVD on fully-connected
+layers [2]). Our system with VGG-16 takes in total
+198ms for both proposal and detection. With the con-
+volutional features shared, the RPN alone only takes
+10ms computing the additional layers. Our region-
+wise </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>computation is also lower, thanks to fewer pro-
+posals (300 per image). Our system has a frame-rate
+of 17 fps with the ZF net.
+Sensitivities to Hyper-parameters. In Table 8 we
+investigate the settings of anchors. By default we use
+3 scales and 3 aspect ratios (69.9% mAP in Table 8).
+If using just one anchor at each position, the mAP
+drops by a considerable margin of 3-4%. The mAP
+is higher if using 3 scales (with 1 aspect ratio) or 3
+aspect ratios (with 1 scale), demonstrating that using
+anchors of multiple sizes as the regression references
+is an effective solution. Using just 3 scales with 1
+aspect ratio (69.8%) is as good as using 3 scales with
+3 aspect ratios on this dataset, suggesting that scales
+and aspect ratios are not disentangled dimensions for
+the detection accuracy. But we still adopt these two
+dimensions in our designs to keep our system flexible.
+In Table 9 we compare </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>+ ZF, unshared 300 Fast R-CNN + ZF, 1 scale 58.7
+One-Stage dense, 3 scales, 3 aspect ratios 20000 Fast R-CNN + ZF, 1 scale 53.8
+One-Stage dense, 3 scales, 3 aspect ratios 20000 Fast R-CNN + ZF, 5 scales 53.9
+One-Stage Detection vs. Two-Stage Proposal + De-
+tection. The OverFeat paper [9] proposes a detection
+method that uses regressors and classifiers on sliding
+windows over convolutional feature maps. OverFeat
+is a one-stage, class-specific detection pipeline, and ours
+is a two-stage cascade consisting of class-agnostic pro-
+posals and class-specific detections. In OverFeat, the
+region-wise features come from a sliding window of
+one aspect ratio over a scale pyramid. These features
+are used to simultaneously determine the location and
+category of objects. In RPN, the features are from
+square (3×3) sliding windows and predict proposals
+relative to anchors with different scales and </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>21.5
+Faster R-CNN RPN, 300 COCO trainval - - 42.7 21.9
+The rest of the implementation details are the same
+as on PASCAL VOC. In particular, we keep using
+300 proposals and single-scale ( s = 600 ) testing. The
+testing time is still about 200ms per image on the
+COCO dataset.
+In Table 11 we first report the results of the Fast
+R-CNN system [2] using the implementation in this
+paper. Our Fast R-CNN baseline has 39.3% mAP@0.5
+on the test-dev set, higher than that reported in [2].
+We conjecture that the reason for this gap is mainly
+due to the definition of the negative samples and also
+the changes of the mini-batch sizes. We also note that
+the mAP@[.5, .95] is just comparable.
+Next we evaluate our Faster R-CNN system. Using
+the COCO training set to train, Faster R-CNN has
+42.1% mAP@0.5 and 21.5% mAP@[.5, .95] on the
+COCO test-dev set. This is 2.8% higher for mAP@0.5
+and 2.2% higher for </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>mAP@[.5, .95] than the Fast R-
+CNN counterpart under the same protocol (Table 11).
+This indicates that RPN performs excellent for im-
+proving the localization accuracy at higher IoU thresh-
+olds. Using the COCO trainval set to train, Faster R-
+CNN has 42.7% mAP@0.5 and 21.9% mAP@[.5, .95] on
+the COCO test-dev set. Figure 6 shows some results
+on the MS COCO test-dev set.
+Faster R-CNN in ILSVRC &amp; COCO 2015 compe-
+titions We have demonstrated that Faster R-CNN
+benefits more from better features, thanks to the fact
+that the RPN completely learns to propose regions by
+neural networks. This observation is still valid even
+when one increases the depth substantially to over
+100 layers [18]. Only by replacing VGG-16 with a 101-
+layer residual net (ResNet-101) [18], the Faster R-CNN
+system increases the mAP from 41.5%/21.2% (VGG-
+16) to 48.4%/27.2% (ResNet-101) on the COCO val
+set. With other </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>improvements orthogonal to Faster R-
+CNN, He et al. [18] obtained a single-model result of
+55.7%/34.9% and an ensemble result of 59.0%/37.4%
+on the COCO test-dev set, which won the 1st place
+in the COCO 2015 object detection competition. The
+same system [18] also won the 1st place in the ILSVRC
+2015 object detection competition, surpassing the sec-
+ond place by absolute 8.5%. RPN is also a building
+block of the 1st-place winning entries in ILSVRC 2015
+localization and COCO 2015 segmentation competi-
+tions, for which the details are available in [18] and
+[15] respectively.
+Table 12: Detection mAP (%) of Faster R-CNN on
+PASCAL VOC 2007 test set and 2012 test set us-
+ing different training data. The model is VGG-16.
+&quot;COCO&quot; denotes that the COCO trainval set is used
+for training. See also Table 6 and Table 7.
+training data 2007 test 2012 test
+VOC07 69.9 67.0
+VOC07+12 73.2 -
+VOC07++12 - </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -112,7 +571,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

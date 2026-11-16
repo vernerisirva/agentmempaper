@@ -33,7 +33,7 @@
   "last_seen_date": "2026-08-08",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-04 09:12:29",
   "notified_date": "2026-08-04",
@@ -44,7 +44,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-04 09:12:02",
-    "generated_at": "2026-11-13 11:55:26",
+    "generated_at": "2026-11-16 12:29:51",
     "last_seen_at": "2026-08-08 07:18:42",
     "metadata_sources": [
       "openalex",
@@ -109,140 +109,1804 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-08-07T07:45:16+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-11-16T12:28:26.136938+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
-    "concerns": [
-      "Comparative claims were detected without a suitable baseline in the available text."
-    ],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
-    "confidence": "low",
-    "coverage": {},
-    "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+    "concerns": [],
+    "concise_summary": "The benchmark provides an adequate, structured contribution to evaluating financial research agents beyond simple final-answer QA. Validation of LLM parsing and formula scoring via human inter-annotator agreement and the Alt-test provides sound measurement reliability.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 63070,
+      "assessment_input_sha256": "9416b34416b1da8323a25ba8d40ffc0b683179f0e30763a71b350e391e0e508a",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7172558388",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 60966,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 60348,
+      "evidence_block_count": 93,
+      "evidence_context_characters": 72232,
+      "evidence_context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+      "evidence_context_sha256": "34a76492a6081a705c4e48a36108efada1efd200a48aac14c787f7298bbd0870",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 60986,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "extracted_pages": 11,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "4814ac153e2bf9f22fdd008410608b434b1cf542c5308a2fef6174a6313a5ffc",
+        "source_url": "https://arxiv.org/pdf/2608.00764",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 60966,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Findeepindicator: Benchmarking Deep Research Agents In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "results",
+          "section_index": 0,
+          "source_characters": 704,
+          "supplied_characters": 704
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2348,
+          "supplied_characters": 2348
+        },
+        {
+          "heading": "Acm Isbn 978-1-4503-Xxxx-X/2018/06",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 2,
+          "source_characters": 414,
+          "supplied_characters": 414
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2317,
+          "supplied_characters": 2317
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 4417,
+          "supplied_characters": 4417
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 1056,
+          "supplied_characters": 1056
+        },
+        {
+          "heading": "Benchmark Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 6,
+          "source_characters": 5092,
+          "supplied_characters": 5092
+        },
+        {
+          "heading": "Benchmark Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 7,
+          "source_characters": 323,
+          "supplied_characters": 323
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 450,
+          "supplied_characters": 450
+        },
+        {
+          "heading": "Evaluation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 4908,
+          "supplied_characters": 4908
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 589,
+          "supplied_characters": 589
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 524,
+          "supplied_characters": 524
+        },
+        {
+          "heading": "Evaluated Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 670,
+          "supplied_characters": 670
+        },
+        {
+          "heading": "Overall Results (Rq1)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 2084,
+          "supplied_characters": 2084
+        },
+        {
+          "heading": "Cross-Market Analysis (Rq2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1300,
+          "supplied_characters": 1300
+        },
+        {
+          "heading": "Cross-Market Analysis (Rq2)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 129,
+          "supplied_characters": 129
+        },
+        {
+          "heading": "Impact Of Task Difficulty (Rq3)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1796,
+          "supplied_characters": 1796
+        },
+        {
+          "heading": "Performance Across Financial Indicator",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1904,
+          "supplied_characters": 1904
+        },
+        {
+          "heading": "Ablation Study On Data Collection (Rq5)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 1603,
+          "supplied_characters": 1603
+        },
+        {
+          "heading": "Ablation Study On Data Collection (Rq5)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 1152,
+          "supplied_characters": 1152
+        },
+        {
+          "heading": "Error Analysis (Rq6)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 323,
+          "supplied_characters": 323
+        },
+        {
+          "heading": "Error Analysis (Rq6)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1017,
+          "supplied_characters": 1017
+        },
+        {
+          "heading": "Deep Research Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1739,
+          "supplied_characters": 1739
+        },
+        {
+          "heading": "Financial Benchmarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 1512,
+          "supplied_characters": 1512
+        },
+        {
+          "heading": "Process-Based Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 24,
+          "source_characters": 1148,
+          "supplied_characters": 1148
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 25,
+          "source_characters": 515,
+          "supplied_characters": 515
+        },
+        {
+          "heading": "Limitations And Ethical Considerations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "limitations",
+          "section_index": 26,
+          "source_characters": 189,
+          "supplied_characters": 189
+        },
+        {
+          "heading": "Generative Ai Usage",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 124,
+          "supplied_characters": 124
+        },
+        {
+          "heading": "Generative Ai Usage",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 118,
+          "supplied_characters": 118
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 10521,
+          "supplied_characters": 10521
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1613,
+          "supplied_characters": 1613
+        },
+        {
+          "heading": "Appendix: A Appendix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 10,
+          "supplied_characters": 10
+        },
+        {
+          "heading": "Appendix: Indicator List",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 12,
+          "supplied_characters": 12
+        },
+        {
+          "heading": "Human Experts Are Instructed To Evaluate Whether The Four Com-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 201,
+          "supplied_characters": 201
+        },
+        {
+          "heading": "And Accurately Reflect The Information Contained In The Original",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 126,
+          "supplied_characters": 126
+        },
+        {
+          "heading": "Dently According To The Following Three-Level Scoring Rubric:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 188,
+          "supplied_characters": 188
+        },
+        {
+          "heading": "Information Explicitly Stated In The Original Response Without",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 384,
+          "supplied_characters": 384
+        },
+        {
+          "heading": "The Extraction Correctly Returns Na Or Leaves The Corresponding",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 188,
+          "supplied_characters": 188
+        },
+        {
+          "heading": "Information In The Original Response But Contains Minor Errors",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 127,
+          "supplied_characters": 127
+        },
+        {
+          "heading": "Typical Cases Include Extracting The Correct Formula With A Small",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 327,
+          "supplied_characters": 327
+        },
+        {
+          "heading": "Sion Or Unit Conversion When The Intended Value Remains Clearly",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 752,
+          "supplied_characters": 752
+        },
+        {
+          "heading": "Or Producing An Output Format That Makes The Extracted Result",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 41,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Specification Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 42,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Human Experts Evaluate The Correctness Of The Formula Specified",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 63,
+          "supplied_characters": 63
+        },
+        {
+          "heading": "In Each Model Response By Comparing The Extracted Candidate For-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 131,
+          "supplied_characters": 131
+        },
+        {
+          "heading": "Measures Whether The Candidate Formula Accurately Represents The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 134,
+          "supplied_characters": 134
+        },
+        {
+          "heading": "Instructed To Consider Both Mathematical Equivalence And Semantic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 199,
+          "supplied_characters": 199
+        },
+        {
+          "heading": "Of The Following Scores:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 389,
+          "supplied_characters": 389
+        },
+        {
+          "heading": "Eral Computational Structure Or Identifies The Relevant Inputs But",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 66,
+          "supplied_characters": 66
+        },
+        {
+          "heading": "Contains A Substantive Error That Prevents Full Equivalence With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 625,
+          "supplied_characters": 625
+        },
+        {
+          "heading": "Contains A Substantive Error That Prevents Full Equivalence With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 3706,
+          "supplied_characters": 3706
+        }
+      ],
+      "selected_characters": 60348,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_sections": [
+        {
+          "characters": 704,
+          "heading": "Findeepindicator: Benchmarking Deep Research Agents In",
+          "page": 1
+        },
+        {
+          "characters": 2348,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 414,
+          "heading": "Acm Isbn 978-1-4503-Xxxx-X/2018/06",
+          "page": 1
+        },
+        {
+          "characters": 2317,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4417,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1056,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 5092,
+          "heading": "Benchmark Construction",
+          "page": 3
+        },
+        {
+          "characters": 323,
+          "heading": "Benchmark Construction",
+          "page": 4
+        },
+        {
+          "characters": 450,
+          "heading": "Evaluation",
+          "page": 4
+        },
+        {
+          "characters": 4908,
+          "heading": "Evaluation Protocol",
+          "page": 4
+        },
+        {
+          "characters": 589,
+          "heading": "Experiments",
+          "page": 4
+        },
+        {
+          "characters": 524,
+          "heading": "Experiments",
+          "page": 5
+        },
+        {
+          "characters": 670,
+          "heading": "Evaluated Methods",
+          "page": 5
+        },
+        {
+          "characters": 2084,
+          "heading": "Overall Results (Rq1)",
+          "page": 5
+        },
+        {
+          "characters": 1300,
+          "heading": "Cross-Market Analysis (Rq2)",
+          "page": 5
+        },
+        {
+          "characters": 129,
+          "heading": "Cross-Market Analysis (Rq2)",
+          "page": 6
+        },
+        {
+          "characters": 1796,
+          "heading": "Impact Of Task Difficulty (Rq3)",
+          "page": 6
+        },
+        {
+          "characters": 1904,
+          "heading": "Performance Across Financial Indicator",
+          "page": 6
+        },
+        {
+          "characters": 1603,
+          "heading": "Ablation Study On Data Collection (Rq5)",
+          "page": 6
+        },
+        {
+          "characters": 1152,
+          "heading": "Ablation Study On Data Collection (Rq5)",
+          "page": 7
+        },
+        {
+          "characters": 323,
+          "heading": "Error Analysis (Rq6)",
+          "page": 7
+        },
+        {
+          "characters": 1017,
+          "heading": "Error Analysis (Rq6)",
+          "page": 8
+        },
+        {
+          "characters": 1739,
+          "heading": "Deep Research Agents",
+          "page": 8
+        },
+        {
+          "characters": 1512,
+          "heading": "Financial Benchmarks",
+          "page": 8
+        },
+        {
+          "characters": 1148,
+          "heading": "Process-Based Evaluation",
+          "page": 8
+        },
+        {
+          "characters": 515,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 189,
+          "heading": "Limitations And Ethical Considerations",
+          "page": 8
+        },
+        {
+          "characters": 124,
+          "heading": "Generative Ai Usage",
+          "page": 8
+        },
+        {
+          "characters": 118,
+          "heading": "Generative Ai Usage",
+          "page": 9
+        },
+        {
+          "characters": 10521,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 1613,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 10,
+          "heading": "Appendix: A Appendix",
+          "page": 10
+        },
+        {
+          "characters": 12,
+          "heading": "Appendix: Indicator List",
+          "page": 10
+        },
+        {
+          "characters": 201,
+          "heading": "Human Experts Are Instructed To Evaluate Whether The Four Com-",
+          "page": 10
+        },
+        {
+          "characters": 126,
+          "heading": "And Accurately Reflect The Information Contained In The Original",
+          "page": 10
+        },
+        {
+          "characters": 188,
+          "heading": "Dently According To The Following Three-Level Scoring Rubric:",
+          "page": 10
+        },
+        {
+          "characters": 384,
+          "heading": "Information Explicitly Stated In The Original Response Without",
+          "page": 10
+        },
+        {
+          "characters": 188,
+          "heading": "The Extraction Correctly Returns Na Or Leaves The Corresponding",
+          "page": 10
+        },
+        {
+          "characters": 127,
+          "heading": "Information In The Original Response But Contains Minor Errors",
+          "page": 10
+        },
+        {
+          "characters": 327,
+          "heading": "Typical Cases Include Extracting The Correct Formula With A Small",
+          "page": 10
+        },
+        {
+          "characters": 752,
+          "heading": "Sion Or Unit Conversion When The Intended Value Remains Clearly",
+          "page": 10
+        },
+        {
+          "characters": 97,
+          "heading": "Or Producing An Output Format That Makes The Extracted Result",
+          "page": 10
+        },
+        {
+          "characters": 24,
+          "heading": "Specification Evaluation",
+          "page": 10
+        },
+        {
+          "characters": 63,
+          "heading": "Human Experts Evaluate The Correctness Of The Formula Specified",
+          "page": 10
+        },
+        {
+          "characters": 131,
+          "heading": "In Each Model Response By Comparing The Extracted Candidate For-",
+          "page": 10
+        },
+        {
+          "characters": 134,
+          "heading": "Measures Whether The Candidate Formula Accurately Represents The",
+          "page": 10
+        },
+        {
+          "characters": 199,
+          "heading": "Instructed To Consider Both Mathematical Equivalence And Semantic",
+          "page": 10
+        },
+        {
+          "characters": 389,
+          "heading": "Of The Following Scores:",
+          "page": 10
+        },
+        {
+          "characters": 66,
+          "heading": "Eral Computational Structure Or Identifies The Relevant Inputs But",
+          "page": 10
+        },
+        {
+          "characters": 625,
+          "heading": "Contains A Substantive Error That Prevents Full Equivalence With",
+          "page": 10
+        },
+        {
+          "characters": 3706,
+          "heading": "Contains A Substantive Error That Prevents Full Equivalence With",
+          "page": 11
+        }
+      ],
+      "selected_text_sha256": "9416b34416b1da8323a25ba8d40ffc0b683179f0e30763a71b350e391e0e508a",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "4814ac153e2bf9f22fdd008410608b434b1cf542c5308a2fef6174a6313a5ffc",
+      "source_pages": 11,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
     },
+    "curation_note": null,
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "dicator construction underexplored. In this work, we propose FinDeepIndicator, the first benchmark dedicated to evaluating Deep Research (DR",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0002"
+        ],
+        "excerpt": "Financial indicators are essential tools for transforming raw finan-\ncial data into interpretable measures for various downstream tasks,\nsuch as valuation, risk assessment, and economic analysis. How-\never, existing financial benchmarks largely focus on answer-level\naccuracy and often assume that relevant data are already provided,\nleaving the assessment of the intermediate process of indicator con-\nstruction underexplored. In this work, we proposeFinDeepIndi-\ncator, the first benchmark dedicated to evaluating Deep Research\n(DR) agents in end-to-end financial indicator construction. Specifi-\ncally, FinDeepIndicator evaluates DR agents across four stages in\nindicator construction: formula specification, data collection, indi-\ncator calculation, and answer generation, and covers fundamental,\ntechnical, and macroeconomic indicators organized into 21 fine-\ngrained sub-categories. It ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "ab7e27d2be1a5eecd4780650df44728ed693c75de5106bbe8687691d7634ae76",
+            "evidence_id": "Ed7145f98b18d2f76-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Financial indicators are essential tools for transforming raw finan-\ncial data into interpretable measures for various downstream tasks,\nsuch as valuation, risk assessment, and economic analysis. How-\never, existing financial benchmarks largely focus on answer-level\naccuracy and often assume that relevant data are already provided,\nleaving the assessment of the intermediate process of indicator con-\nstruction underexplored. In this work, we proposeFinDeepIndi-\ncator, the first benchmark dedicated to evaluating Deep Research\n(DR) agents in end-to-end financial indicator construction. Specifi-\ncally, FinDeepIndicator evaluates DR agents across four stages in\nindicator construction: formula specification, data collection, indi-\ncator calculation, and answer generation, and covers fundamental,\ntechnical, and macroeconomic indicators organized into 21 fine-\ngrained sub-categories. It "
+              }
+            ],
+            "text": "Financial indicators are essential tools for transforming raw finan-\ncial data into interpretable measures for various downstream tasks,\nsuch as valuation, risk assessment, and economic analysis. How-\never, existing financial benchmarks largely focus on answer-level\naccuracy and often assume that relevant data are already provided,\nleaving the assessment of the intermediate process of indicator con-\nstruction underexplored. In this work, we proposeFinDeepIndi-\ncator, the first benchmark dedicated to evaluating Deep Research\n(DR) agents in end-to-end financial indicator construction. Specifi-\ncally, FinDeepIndicator evaluates DR agents across four stages in\nindicator construction: formula specification, data collection, indi-\ncator calculation, and answer generation, and covers fundamental,\ntechnical, and macroeconomic indicators organized into 21 fine-\ngrained sub-categories. It "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "this work, we propose FinDeepIndicator, the first benchmark dedicated to evaluating Deep Research (DR) agents in end-to-end financial indic",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0003"
+        ],
+        "excerpt": "contains 3,350 curated question-answer\n(QA) pairs derived from both U.S. and Chinese markets, 10 years\nof historical financial data, and 800 listed companies. Extensive\nexperiments on search-equipped Large Language Models (LLMs)\nand DR agents show that, while LLMs generally perform well in\nformula specification, their accuracy drops substantially during\ndata retrieval and numerical execution. DR agents consistently\noutperform search-equipped LLMs, yet remain unreliable in realis-\ntic financial analysis settings. These findings provide insights for\ndeveloping more capable and trustworthy DR agents in finance.\nCCS Concepts\n\u2022Computing methodologies \u2192 Natural language processing.\nKeywords\nDeep Research, Financial Analysis, Process-level Evaluation\n\u2217Corresponding authors.\nPermission to make digital or hard copies of all or part of this work for personal or\nclassroom use is granted without ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "d1917e2489add4eba73c18b8238dafe2c034f5c4afc64636f9451925276211e0",
+            "evidence_id": "Ed7145f98b18d2f76-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1789,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 892,
+                "text": "contains 3,350 curated question-answer\n(QA) pairs derived from both U.S. and Chinese markets, 10 years\nof historical financial data, and 800 listed companies. Extensive\nexperiments on search-equipped Large Language Models (LLMs)\nand DR agents show that, while LLMs generally perform well in\nformula specification, their accuracy drops substantially during\ndata retrieval and numerical execution. DR agents consistently\noutperform search-equipped LLMs, yet remain unreliable in realis-\ntic financial analysis settings. These findings provide insights for\ndeveloping more capable and trustworthy DR agents in finance.\nCCS Concepts\n\u2022Computing methodologies \u2192 Natural language processing.\nKeywords\nDeep Research, Financial Analysis, Process-level Evaluation\n\u2217Corresponding authors.\nPermission to make digital or hard copies of all or part of this work for personal or\nclassroom use is granted without "
+              }
+            ],
+            "text": "contains 3,350 curated question-answer\n(QA) pairs derived from both U.S. and Chinese markets, 10 years\nof historical financial data, and 800 listed companies. Extensive\nexperiments on search-equipped Large Language Models (LLMs)\nand DR agents show that, while LLMs generally perform well in\nformula specification, their accuracy drops substantially during\ndata retrieval and numerical execution. DR agents consistently\noutperform search-equipped LLMs, yet remain unreliable in realis-\ntic financial analysis settings. These findings provide insights for\ndeveloping more capable and trustworthy DR agents in finance.\nCCS Concepts\n\u2022Computing methodologies \u2192 Natural language processing.\nKeywords\nDeep Research, Financial Analysis, Process-level Evaluation\n\u2217Corresponding authors.\nPermission to make digital or hard copies of all or part of this work for personal or\nclassroom use is granted without "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No suitable baseline comparison was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0009"
+        ],
+        "excerpt": "this process, including incorrect indicator interpretation,\ninaccurate data retrieval, numerical computation mistakes, or in-\nappropriate aggregation. Consequently, evaluating only the final\nanswer provides an insufficient basis for assessing a model's finan-\ncial reasoning capability and fails to reveal its specific limitations.\nTo address these challenges, we propose a process-level evalua-\ntion framework for end-to-end financial indicator construction. The\nframework decomposes the indicator construction process into four\nstages:Formula Specification,Data Collection,Indicator Calculation\nandAnswer Generation.Formula Specificationevaluates whether an\nagent correctly identifies the financial concept and mathematical\ndefinition.Data Collectionmeasures whether the agent can retrieve\nrelevant and accurate financial information.Indicator Calculation\nevaluates numerical correctness under ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2943f065b9317f63d0ea544be359f90b63a4037119ff9143473fbe767bbdcef4",
+            "evidence_id": "Ed7145f98b18d2f76-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1273,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 377,
+                "text": "this process, including incorrect indicator interpretation,\ninaccurate data retrieval, numerical computation mistakes, or in-\nappropriate aggregation. Consequently, evaluating only the final\nanswer provides an insufficient basis for assessing a model's finan-\ncial reasoning capability and fails to reveal its specific limitations.\nTo address these challenges, we propose a process-level evalua-\ntion framework for end-to-end financial indicator construction. The\nframework decomposes the indicator construction process into four\nstages:Formula Specification,Data Collection,Indicator Calculation\nandAnswer Generation.Formula Specificationevaluates whether an\nagent correctly identifies the financial concept and mathematical\ndefinition.Data Collectionmeasures whether the agent can retrieve\nrelevant and accurate financial information.Indicator Calculation\nevaluates numerical correctness under "
+              }
+            ],
+            "text": "this process, including incorrect indicator interpretation,\ninaccurate data retrieval, numerical computation mistakes, or in-\nappropriate aggregation. Consequently, evaluating only the final\nanswer provides an insufficient basis for assessing a model's finan-\ncial reasoning capability and fails to reveal its specific limitations.\nTo address these challenges, we propose a process-level evalua-\ntion framework for end-to-end financial indicator construction. The\nframework decomposes the indicator construction process into four\nstages:Formula Specification,Data Collection,Indicator Calculation\nandAnswer Generation.Formula Specificationevaluates whether an\nagent correctly identifies the financial concept and mathematical\ndefinition.Data Collectionmeasures whether the agent can retrieve\nrelevant and accurate financial information.Indicator Calculation\nevaluates numerical correctness under "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
-        "section": null,
-        "signal_type": "missing",
-        "source_blocks": [],
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0011"
+        ],
+        "excerpt": "question generation, answer\nFigure 2: An overview of FinDeepIndicator.\nverification, and process-level evaluation. Based on the proposed\nevaluation framework and collected indicators, we constructFinD-\neepIndicator, the first benchmark specifically designed for assess-\ning DR agents in end-to-end financial indicator construction. The\nbenchmark spans the U.S. and Chinese markets and incorporates 10\nyears of historical data from 800 publicly listed companies. Overall,\nFinDeepIndicator contains 3,350 carefully curated question-answer\npairs that require agents to complete the full construction workflow,\nincluding indicator understanding, raw data collection, intermedi-\nate indicator calculation, and final answer generation.\nWith FinDeepIndicator, we conduct extensive experiments to\nevaluate search-equipped LLMs and DR agents in end-to-end fi-\nnancial indicator construction. The key findings ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ab864eb3a581b4b96a7b7b633e2c140681f9816416eb7b0205e87680e4fc12d7",
+            "evidence_id": "Ed7145f98b18d2f76-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3071,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 2171,
+                "text": "question generation, answer\nFigure 2: An overview of FinDeepIndicator.\nverification, and process-level evaluation. Based on the proposed\nevaluation framework and collected indicators, we constructFinD-\neepIndicator, the first benchmark specifically designed for assess-\ning DR agents in end-to-end financial indicator construction. The\nbenchmark spans the U.S. and Chinese markets and incorporates 10\nyears of historical data from 800 publicly listed companies. Overall,\nFinDeepIndicator contains 3,350 carefully curated question-answer\npairs that require agents to complete the full construction workflow,\nincluding indicator understanding, raw data collection, intermedi-\nate indicator calculation, and final answer generation.\nWith FinDeepIndicator, we conduct extensive experiments to\nevaluate search-equipped LLMs and DR agents in end-to-end fi-\nnancial indicator construction. The key findings "
+              }
+            ],
+            "text": "question generation, answer\nFigure 2: An overview of FinDeepIndicator.\nverification, and process-level evaluation. Based on the proposed\nevaluation framework and collected indicators, we constructFinD-\neepIndicator, the first benchmark specifically designed for assess-\ning DR agents in end-to-end financial indicator construction. The\nbenchmark spans the U.S. and Chinese markets and incorporates 10\nyears of historical data from 800 publicly listed companies. Overall,\nFinDeepIndicator contains 3,350 carefully curated question-answer\npairs that require agents to complete the full construction workflow,\nincluding indicator understanding, raw data collection, intermedi-\nate indicator calculation, and final answer generation.\nWith FinDeepIndicator, we conduct extensive experiments to\nevaluate search-equipped LLMs and DR agents in end-to-end fi-\nnancial indicator construction. The key findings "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evidence_to_claim_alignment",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
-        "section": null,
-        "signal_type": "concern",
-        "source_blocks": [],
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0016"
+        ],
+        "excerpt": "indicator, we document its\nname, mathematical formula, raw data, and calculation program.\nThis structured metadata serves two purposes. First, it ensures that\nall generated questions have well-defined ground-truth computa-\ntion procedures. Second, it supports process-level evaluation by\nmaking it possible to separately verify the formula, data, interme-\ndiate calculation, and final answer.\n2.1.2Template Design.We design a set of broadly applicable\nand linguistically diverse templates to cover common analytical\nrequests involving financial indicators. These templates support\ntasks such as computing an indicator for a company, comparing\nindicator values across years, and identifying the maximum or\nminimum value within a specified period.\nTo construct the templates, we first group indicators by type and\ndesign shared templates for indicators within the same type. Each\ntemplate is further ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Construction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "86dc1f37351f31cd419cb2aabc16a9575ee25d1a8db90a7271881af7c018d717",
+            "evidence_id": "Ed7145f98b18d2f76-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Benchmark Construction",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 3,
+                "section": "Benchmark Construction",
+                "section_index": 6,
+                "start": 893,
+                "text": "indicator, we document its\nname, mathematical formula, raw data, and calculation program.\nThis structured metadata serves two purposes. First, it ensures that\nall generated questions have well-defined ground-truth computa-\ntion procedures. Second, it supports process-level evaluation by\nmaking it possible to separately verify the formula, data, interme-\ndiate calculation, and final answer.\n2.1.2Template Design.We design a set of broadly applicable\nand linguistically diverse templates to cover common analytical\nrequests involving financial indicators. These templates support\ntasks such as computing an indicator for a company, comparing\nindicator values across years, and identifying the maximum or\nminimum value within a specified period.\nTo construct the templates, we first group indicators by type and\ndesign shared templates for indicators within the same type. Each\ntemplate is further "
+              }
+            ],
+            "text": "indicator, we document its\nname, mathematical formula, raw data, and calculation program.\nThis structured metadata serves two purposes. First, it ensures that\nall generated questions have well-defined ground-truth computa-\ntion procedures. Second, it supports process-level evaluation by\nmaking it possible to separately verify the formula, data, interme-\ndiate calculation, and final answer.\n2.1.2Template Design.We design a set of broadly applicable\nand linguistically diverse templates to cover common analytical\nrequests involving financial indicators. These templates support\ntasks such as computing an indicator for a company, comparing\nindicator values across years, and identifying the maximum or\nminimum value within a specified period.\nTo construct the templates, we first group indicators by type and\ndesign shared templates for indicators within the same type. Each\ntemplate is further "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0017"
+        ],
+        "excerpt": "associated with five surface variants that express\nthe same underlying analytical intent in different natural-language\nforms, thereby increasing linguistic diversity while maintaining\ngeneration controllability. In addition, each template contains sev-\neral placeholder variables,e.g.,indicator, company, date, conditional\nlogic, etc. During QA generation, these placeholders are instantiated\nwith values sampled from predefined variable pools.\nFigure 3: Construction pipeline of FinDeepIndicator.\nWhen designing templates, we divide them into three difficulty\nlevels:Easy,MediumandHard.Easyquestions require direct calcu-\nlation of the target indicator from the collected raw data.Medium\nquestions require one-hop analysis in addition to indicator compu-\ntation, such as selecting the maximum, minimum, or year-over-year\nchange after computing a sequence of values.Hardquestions re-\nquire multi-hop ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Construction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "63b84e69632728052385a326a27cdb0093ef3c01884c088e28d4304c0351b4e1",
+            "evidence_id": "Ed7145f98b18d2f76-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Benchmark Construction",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2691,
+                "page": 3,
+                "section": "Benchmark Construction",
+                "section_index": 6,
+                "start": 1791,
+                "text": "associated with five surface variants that express\nthe same underlying analytical intent in different natural-language\nforms, thereby increasing linguistic diversity while maintaining\ngeneration controllability. In addition, each template contains sev-\neral placeholder variables,e.g.,indicator, company, date, conditional\nlogic, etc. During QA generation, these placeholders are instantiated\nwith values sampled from predefined variable pools.\nFigure 3: Construction pipeline of FinDeepIndicator.\nWhen designing templates, we divide them into three difficulty\nlevels:Easy,MediumandHard.Easyquestions require direct calcu-\nlation of the target indicator from the collected raw data.Medium\nquestions require one-hop analysis in addition to indicator compu-\ntation, such as selecting the maximum, minimum, or year-over-year\nchange after computing a sequence of values.Hardquestions re-\nquire multi-hop "
+              }
+            ],
+            "text": "associated with five surface variants that express\nthe same underlying analytical intent in different natural-language\nforms, thereby increasing linguistic diversity while maintaining\ngeneration controllability. In addition, each template contains sev-\neral placeholder variables,e.g.,indicator, company, date, conditional\nlogic, etc. During QA generation, these placeholders are instantiated\nwith values sampled from predefined variable pools.\nFigure 3: Construction pipeline of FinDeepIndicator.\nWhen designing templates, we divide them into three difficulty\nlevels:Easy,MediumandHard.Easyquestions require direct calcu-\nlation of the target indicator from the collected raw data.Medium\nquestions require one-hop analysis in addition to indicator compu-\ntation, such as selecting the maximum, minimum, or year-over-year\nchange after computing a sequence of values.Hardquestions re-\nquire multi-hop "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0019"
+        ],
+        "excerpt": "natural-language question,\nthe reference formula, the required raw data, the intermediate in-\ndicator calculation, and the final numerical answer. Because each\ntemplate variant can be paired with many applicable indicators\nand each indicator can be instantiated with many combinations\nof entities, dates, and reasoning operators, the resulting candidate\npool contains billions of potential QA instances. From this pool,\nwe generate 3,350 representative QA examples by enumerating all\ntemplate variants and applicable indicators, and sampling valid\ncombinations of the remaining variables.\n2.1.4Quality Control.We maintain the high quality of FinD-\neepIndicator by implementing a rigorous quality-control process\nthroughout its construction and generation stages, including,\n\u2022 Comprehensive indicator taxonomy.We develop a compre-\nhensive taxonomy covering diverse financial indicators. For ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark Construction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c972097a015a933637b7f916eee56a0c45fd21e8b24b5648cb8d6e5b3233d095",
+            "evidence_id": "Ed7145f98b18d2f76-B0019",
+            "pages": [
+              3
+            ],
+            "section": "Benchmark Construction",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 4472,
+                "page": 3,
+                "section": "Benchmark Construction",
+                "section_index": 6,
+                "start": 3582,
+                "text": "natural-language question,\nthe reference formula, the required raw data, the intermediate in-\ndicator calculation, and the final numerical answer. Because each\ntemplate variant can be paired with many applicable indicators\nand each indicator can be instantiated with many combinations\nof entities, dates, and reasoning operators, the resulting candidate\npool contains billions of potential QA instances. From this pool,\nwe generate 3,350 representative QA examples by enumerating all\ntemplate variants and applicable indicators, and sampling valid\ncombinations of the remaining variables.\n2.1.4Quality Control.We maintain the high quality of FinD-\neepIndicator by implementing a rigorous quality-control process\nthroughout its construction and generation stages, including,\n\u2022 Comprehensive indicator taxonomy.We develop a compre-\nhensive taxonomy covering diverse financial indicators. For "
+              }
+            ],
+            "text": "natural-language question,\nthe reference formula, the required raw data, the intermediate in-\ndicator calculation, and the final numerical answer. Because each\ntemplate variant can be paired with many applicable indicators\nand each indicator can be instantiated with many combinations\nof entities, dates, and reasoning operators, the resulting candidate\npool contains billions of potential QA instances. From this pool,\nwe generate 3,350 representative QA examples by enumerating all\ntemplate variants and applicable indicators, and sampling valid\ncombinations of the remaining variables.\n2.1.4Quality Control.We maintain the high quality of FinD-\neepIndicator by implementing a rigorous quality-control process\nthroughout its construction and generation stages, including,\n\u2022 Comprehensive indicator taxonomy.We develop a compre-\nhensive taxonomy covering diverse financial indicators. For "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0022"
+        ],
+        "excerpt": "Gwet's\nAC1 0.86 0.92 0.83 0.91 0.71\nAcceptance\nRate 0.95 0.96 0.98 0.94 (1.0, 0.86)\n\u2022 Expert quality inspection.After QA generation, we conduct\nrandom-sampling inspections with human experts to further\nvalidate dataset quality. The sampled QA instances are reviewed\nfor question clarity, data availability, formula correctness, and\ncalculation correctness. Instances containing invalid parameter\nsettings or inconsistent computations are regenerated.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "24b5493a1319064d0d4b7b9fe4f2f2c1c5998383c4820669eb0057e7811bd2a5",
+            "evidence_id": "Ed7145f98b18d2f76-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 450,
+                "page": 4,
+                "section": "Evaluation",
+                "section_index": 8,
+                "start": 0,
+                "text": "Gwet's\nAC1 0.86 0.92 0.83 0.91 0.71\nAcceptance\nRate 0.95 0.96 0.98 0.94 (1.0, 0.86)\n\u2022 Expert quality inspection.After QA generation, we conduct\nrandom-sampling inspections with human experts to further\nvalidate dataset quality. The sampled QA instances are reviewed\nfor question clarity, data availability, formula correctness, and\ncalculation correctness. Instances containing invalid parameter\nsettings or inconsistent computations are regenerated."
+              }
+            ],
+            "text": "Gwet's\nAC1 0.86 0.92 0.83 0.91 0.71\nAcceptance\nRate 0.95 0.96 0.98 0.94 (1.0, 0.86)\n\u2022 Expert quality inspection.After QA generation, we conduct\nrandom-sampling inspections with human experts to further\nvalidate dataset quality. The sampled QA instances are reviewed\nfor question clarity, data availability, formula correctness, and\ncalculation correctness. Instances containing invalid parameter\nsettings or inconsistent computations are regenerated."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0024"
+        ],
+        "excerpt": "35]. Specifically, we randomly sample 100 model\nresponses and invite three domain experts with financial expertise\nto independently assess whether each parsed component is cor-\nrect and complete (See Appendix A.2 for expert review criteria).\nAs reported in Table 1, the inter-annotator agreement for the four\nextracted components is consistently high, with all Gwet's AC1\nscores exceeding 0.6. Moreover, the expert acceptance rates are all\nabove 0.9, indicating that the LLM-based parsing procedure reliably\nconverts free-form model responses into structured representations\nsuitable for subsequent evaluation.\n2.2.2Evaluation Metrics.We evaluate four stages of the indi-\ncator construction process: formula specification, data collection,\nindicator calculation, and final answer generation.\n\u2022 Formula Specification Evaluation. We evaluate formula cor-\nrectness based on semantic and mathematical ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4e25c1b9fbc65783de66dd3b73cec6d88c1ad1aa3161c075373f4d2ada6e2c1f",
+            "evidence_id": "Ed7145f98b18d2f76-B0024",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 4,
+                "section": "Evaluation Protocol",
+                "section_index": 9,
+                "start": 900,
+                "text": "35]. Specifically, we randomly sample 100 model\nresponses and invite three domain experts with financial expertise\nto independently assess whether each parsed component is cor-\nrect and complete (See Appendix A.2 for expert review criteria).\nAs reported in Table 1, the inter-annotator agreement for the four\nextracted components is consistently high, with all Gwet's AC1\nscores exceeding 0.6. Moreover, the expert acceptance rates are all\nabove 0.9, indicating that the LLM-based parsing procedure reliably\nconverts free-form model responses into structured representations\nsuitable for subsequent evaluation.\n2.2.2Evaluation Metrics.We evaluate four stages of the indi-\ncator construction process: formula specification, data collection,\nindicator calculation, and final answer generation.\n\u2022 Formula Specification Evaluation. We evaluate formula cor-\nrectness based on semantic and mathematical "
+              }
+            ],
+            "text": "35]. Specifically, we randomly sample 100 model\nresponses and invite three domain experts with financial expertise\nto independently assess whether each parsed component is cor-\nrect and complete (See Appendix A.2 for expert review criteria).\nAs reported in Table 1, the inter-annotator agreement for the four\nextracted components is consistently high, with all Gwet's AC1\nscores exceeding 0.6. Moreover, the expert acceptance rates are all\nabove 0.9, indicating that the LLM-based parsing procedure reliably\nconverts free-form model responses into structured representations\nsuitable for subsequent evaluation.\n2.2.2Evaluation Metrics.We evaluate four stages of the indi-\ncator construction process: formula specification, data collection,\nindicator calculation, and final answer generation.\n\u2022 Formula Specification Evaluation. We evaluate formula cor-\nrectness based on semantic and mathematical "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0025"
+        ],
+        "excerpt": "equivalence rather\nthan exact string matching, since the same financial indicator\nmay be expressed using different but equivalent formulations.\nSpecifically, we adopt an LLM-as-a-Judge protocol that assigns\neach parsed formula a three-level score according to whether\nit preserves the intended financial meaning, required variables,\nmathematical operations, and relevant domain conventions. The\ndetailed scoring criteria are provided in Appendix A.3. To assess\nthe reliability of the LLM-based evaluator, we further conduct\nthe Alt-test [2]. Three human experts independently evaluate\nthe consistency between each parsed formula and the correct\nformula. As reported in Table 1, the Gwet's AC1 scores exceed 0.6,\nindicating substantial agreement among the human annotators.\nMoreover, the winning rate surpasses 0.5, passing the statistical\ntest. Additionally, with an advantage probability exceeding ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8d95d8f5117c0174eded8f6b58e92ebab806db668290b1a861b3a10289530103",
+            "evidence_id": "Ed7145f98b18d2f76-B0025",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2696,
+                "page": 4,
+                "section": "Evaluation Protocol",
+                "section_index": 9,
+                "start": 1797,
+                "text": "equivalence rather\nthan exact string matching, since the same financial indicator\nmay be expressed using different but equivalent formulations.\nSpecifically, we adopt an LLM-as-a-Judge protocol that assigns\neach parsed formula a three-level score according to whether\nit preserves the intended financial meaning, required variables,\nmathematical operations, and relevant domain conventions. The\ndetailed scoring criteria are provided in Appendix A.3. To assess\nthe reliability of the LLM-based evaluator, we further conduct\nthe Alt-test [2]. Three human experts independently evaluate\nthe consistency between each parsed formula and the correct\nformula. As reported in Table 1, the Gwet's AC1 scores exceed 0.6,\nindicating substantial agreement among the human annotators.\nMoreover, the winning rate surpasses 0.5, passing the statistical\ntest. Additionally, with an advantage probability exceeding "
+              }
+            ],
+            "text": "equivalence rather\nthan exact string matching, since the same financial indicator\nmay be expressed using different but equivalent formulations.\nSpecifically, we adopt an LLM-as-a-Judge protocol that assigns\neach parsed formula a three-level score according to whether\nit preserves the intended financial meaning, required variables,\nmathematical operations, and relevant domain conventions. The\ndetailed scoring criteria are provided in Appendix A.3. To assess\nthe reliability of the LLM-based evaluator, we further conduct\nthe Alt-test [2]. Three human experts independently evaluate\nthe consistency between each parsed formula and the correct\nformula. As reported in Table 1, the Gwet's AC1 scores exceed 0.6,\nindicating substantial agreement among the human annotators.\nMoreover, the winning rate surpasses 0.5, passing the statistical\ntest. Additionally, with an advantage probability exceeding "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0026"
+        ],
+        "excerpt": "0.8,\nour results provide strong evidence that LLM annotation serves\nas a viable substitute for human evaluator.\n\u2022 Data Collection Evaluation. We evaluate the collected raw data\nby comparing the generated data table with the corresponding\nreference data table. Both tables are represented in CSV format,\nwhere rows denote entities and columns denote the required\nfields, such as year and company. After aligning the rows and\ncolumns, we perform a cell-level comparison. For numerical en-\ntries, a cell is considered correct when the difference between the\ngenerated value and the reference value falls within a predefined\ntolerance (e.g.,0.01, 0.005, or 0.001). This tolerance-aware com-\nparison accommodates minor discrepancies caused by numerical\nprecision, rounding, or unit conversion while still identifying\nmissing or incorrect values. The data collection accuracy is then\ncomputed as the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f5d40d93d2e4c9e43f6db369249eaf545f51b49b168d45cbe7ab8d5836d9a62c",
+            "evidence_id": "Ed7145f98b18d2f76-B0026",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3590,
+                "page": 4,
+                "section": "Evaluation Protocol",
+                "section_index": 9,
+                "start": 2696,
+                "text": "0.8,\nour results provide strong evidence that LLM annotation serves\nas a viable substitute for human evaluator.\n\u2022 Data Collection Evaluation. We evaluate the collected raw data\nby comparing the generated data table with the corresponding\nreference data table. Both tables are represented in CSV format,\nwhere rows denote entities and columns denote the required\nfields, such as year and company. After aligning the rows and\ncolumns, we perform a cell-level comparison. For numerical en-\ntries, a cell is considered correct when the difference between the\ngenerated value and the reference value falls within a predefined\ntolerance (e.g.,0.01, 0.005, or 0.001). This tolerance-aware com-\nparison accommodates minor discrepancies caused by numerical\nprecision, rounding, or unit conversion while still identifying\nmissing or incorrect values. The data collection accuracy is then\ncomputed as the "
+              }
+            ],
+            "text": "0.8,\nour results provide strong evidence that LLM annotation serves\nas a viable substitute for human evaluator.\n\u2022 Data Collection Evaluation. We evaluate the collected raw data\nby comparing the generated data table with the corresponding\nreference data table. Both tables are represented in CSV format,\nwhere rows denote entities and columns denote the required\nfields, such as year and company. After aligning the rows and\ncolumns, we perform a cell-level comparison. For numerical en-\ntries, a cell is considered correct when the difference between the\ngenerated value and the reference value falls within a predefined\ntolerance (e.g.,0.01, 0.005, or 0.001). This tolerance-aware com-\nparison accommodates minor discrepancies caused by numerical\nprecision, rounding, or unit conversion while still identifying\nmissing or incorrect values. The data collection accuracy is then\ncomputed as the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0027"
+        ],
+        "excerpt": "number of correctly matched cells divided by\nthe total number of evaluated cells in the reference table.\n\u2022 Indicator Calculation Evaluation. We evaluate the correct-\nness of intermediate indicator calculations using the same table-\nbased procedure. Specifically, the indicator calculation results\nare normalized into a CSV-style table and aligned with the corre-\nsponding reference table. Each numerical cell is evaluated using\nthe predefined tolerance threshold, and the indicator calculation\naccuracy is calculated as the proportion of correctly matched\ncells among all evaluated cells. This metric measures whether\nthe model correctly applies the indicator formula to the collected\ndata and produces the expected intermediate indicator results.\n\u2022 Answer Generation Evaluation. We evaluate the final answer\nusing tolerance-aware numerical matching against the reference\nanswer. A generated answer ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c2211cc8636f414dbb5fbad75a6fe7e3abb74b2a28b6568ac2258a41bce3d49f",
+            "evidence_id": "Ed7145f98b18d2f76-B0027",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 4489,
+                "page": 4,
+                "section": "Evaluation Protocol",
+                "section_index": 9,
+                "start": 3590,
+                "text": "number of correctly matched cells divided by\nthe total number of evaluated cells in the reference table.\n\u2022 Indicator Calculation Evaluation. We evaluate the correct-\nness of intermediate indicator calculations using the same table-\nbased procedure. Specifically, the indicator calculation results\nare normalized into a CSV-style table and aligned with the corre-\nsponding reference table. Each numerical cell is evaluated using\nthe predefined tolerance threshold, and the indicator calculation\naccuracy is calculated as the proportion of correctly matched\ncells among all evaluated cells. This metric measures whether\nthe model correctly applies the indicator formula to the collected\ndata and produces the expected intermediate indicator results.\n\u2022 Answer Generation Evaluation. We evaluate the final answer\nusing tolerance-aware numerical matching against the reference\nanswer. A generated answer "
+              }
+            ],
+            "text": "number of correctly matched cells divided by\nthe total number of evaluated cells in the reference table.\n\u2022 Indicator Calculation Evaluation. We evaluate the correct-\nness of intermediate indicator calculations using the same table-\nbased procedure. Specifically, the indicator calculation results\nare normalized into a CSV-style table and aligned with the corre-\nsponding reference table. Each numerical cell is evaluated using\nthe predefined tolerance threshold, and the indicator calculation\naccuracy is calculated as the proportion of correctly matched\ncells among all evaluated cells. This metric measures whether\nthe model correctly applies the indicator formula to the collected\ndata and produces the expected intermediate indicator results.\n\u2022 Answer Generation Evaluation. We evaluate the final answer\nusing tolerance-aware numerical matching against the reference\nanswer. A generated answer "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0028"
+        ],
+        "excerpt": "is considered correct if its numeri-\ncal difference from the reference value is within the predefined\ntolerance, in which case the answer accuracy is assigned a value\nof 1. Otherwise, it is considered incorrect and assigned a value\nof 0. This evaluation accommodates minor discrepancies caused\nby rounding, numerical precision, unit conversion, or output\nformatting while distinguishing substantively incorrect answers.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6c5b8ac403a961c26d8c1d39bde9a27974e24163cee5bf846489b6be8cb53c49",
+            "evidence_id": "Ed7145f98b18d2f76-B0028",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 4908,
+                "page": 4,
+                "section": "Evaluation Protocol",
+                "section_index": 9,
+                "start": 4489,
+                "text": "is considered correct if its numeri-\ncal difference from the reference value is within the predefined\ntolerance, in which case the answer accuracy is assigned a value\nof 1. Otherwise, it is considered incorrect and assigned a value\nof 0. This evaluation accommodates minor discrepancies caused\nby rounding, numerical precision, unit conversion, or output\nformatting while distinguishing substantively incorrect answers."
+              }
+            ],
+            "text": "is considered correct if its numeri-\ncal difference from the reference value is within the predefined\ntolerance, in which case the answer accuracy is assigned a value\nof 1. Otherwise, it is considered incorrect and assigned a value\nof 0. This evaluation accommodates minor discrepancies caused\nby rounding, numerical precision, unit conversion, or output\nformatting while distinguishing substantively incorrect answers."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0031"
+        ],
+        "excerpt": "We evaluate two representative settings on FinDeepIndicator:\n\u2022 LLM with Search (Search).The LLM performs a single web\nsearch and then generates the final answer based on the retrieved\ninformation.\n\u2022 Deep Research Agent (Agent).Since existing DR systems dif-\nfer substantially in implementation, making unified comparison\ndifficult, we adopt a minimal DR agent based on the ReAct par-\nadigm [39]. The agent iteratively reasons, invokes tools, and\nobserves the results, with access to search and Python tools.\nEvaluated LLMs include Qwen3.6-Max, Claude-Sonnet-4.6, Gemini-\n3-Flash, Deeepseek-V4-Flash, Grok-4.3, GPT-5, GPT-5-Mini. The\nequipped search API is Google Search.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluated Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6d94b917fb97f93dc44138a4dadb8ac46bbba1a6713f01be777c5cd90901ae2c",
+            "evidence_id": "Ed7145f98b18d2f76-B0031",
+            "pages": [
+              5
+            ],
+            "section": "Evaluated Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 670,
+                "page": 5,
+                "section": "Evaluated Methods",
+                "section_index": 12,
+                "start": 0,
+                "text": "We evaluate two representative settings on FinDeepIndicator:\n\u2022 LLM with Search (Search).The LLM performs a single web\nsearch and then generates the final answer based on the retrieved\ninformation.\n\u2022 Deep Research Agent (Agent).Since existing DR systems dif-\nfer substantially in implementation, making unified comparison\ndifficult, we adopt a minimal DR agent based on the ReAct par-\nadigm [39]. The agent iteratively reasons, invokes tools, and\nobserves the results, with access to search and Python tools.\nEvaluated LLMs include Qwen3.6-Max, Claude-Sonnet-4.6, Gemini-\n3-Flash, Deeepseek-V4-Flash, Grok-4.3, GPT-5, GPT-5-Mini. The\nequipped search API is Google Search."
+              }
+            ],
+            "text": "We evaluate two representative settings on FinDeepIndicator:\n\u2022 LLM with Search (Search).The LLM performs a single web\nsearch and then generates the final answer based on the retrieved\ninformation.\n\u2022 Deep Research Agent (Agent).Since existing DR systems dif-\nfer substantially in implementation, making unified comparison\ndifficult, we adopt a minimal DR agent based on the ReAct par-\nadigm [39]. The agent iteratively reasons, invokes tools, and\nobserves the results, with access to search and Python tools.\nEvaluated LLMs include Qwen3.6-Max, Claude-Sonnet-4.6, Gemini-\n3-Flash, Deeepseek-V4-Flash, Grok-4.3, GPT-5, GPT-5-Mini. The\nequipped search API is Google Search."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0032"
+        ],
+        "excerpt": "Figure 4 presents the overall performance of different LLMs and\nagents across the four stages of financial indicator construction,\nfrom which we can observe the following:\n\u2022 All methods show limited end-to-end construction ability.\nEven the best-performing method achieves only around 40%\naccuracy on final answers. Performance decreases further under\nstricter numerical tolerances. These results indicate that reliable\nend-to-end financial indicator construction remains challenging\nfor current methods.\n\u2022 Agentic gains are substantial but model-dependent.Agent-\nbased settings generally outperform their search-based counter-\nparts, particularly in data collection, indicator calculation, and\nfinal answer generation. However, the magnitude of improve-\nment varies considerably across models. Gemini-3-Flash achieves\nthe strongest performance in the search-only setting, but its\nagent-based ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overall Results (Rq1)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ed83773e9a286dff1ccd00b239455b6df0c064407c855071df5d90ed4354a17b",
+            "evidence_id": "Ed7145f98b18d2f76-B0032",
+            "pages": [
+              5
+            ],
+            "section": "Overall Results (Rq1)",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 5,
+                "section": "Overall Results (Rq1)",
+                "section_index": 13,
+                "start": 0,
+                "text": "Figure 4 presents the overall performance of different LLMs and\nagents across the four stages of financial indicator construction,\nfrom which we can observe the following:\n\u2022 All methods show limited end-to-end construction ability.\nEven the best-performing method achieves only around 40%\naccuracy on final answers. Performance decreases further under\nstricter numerical tolerances. These results indicate that reliable\nend-to-end financial indicator construction remains challenging\nfor current methods.\n\u2022 Agentic gains are substantial but model-dependent.Agent-\nbased settings generally outperform their search-based counter-\nparts, particularly in data collection, indicator calculation, and\nfinal answer generation. However, the magnitude of improve-\nment varies considerably across models. Gemini-3-Flash achieves\nthe strongest performance in the search-only setting, but its\nagent-based "
+              }
+            ],
+            "text": "Figure 4 presents the overall performance of different LLMs and\nagents across the four stages of financial indicator construction,\nfrom which we can observe the following:\n\u2022 All methods show limited end-to-end construction ability.\nEven the best-performing method achieves only around 40%\naccuracy on final answers. Performance decreases further under\nstricter numerical tolerances. These results indicate that reliable\nend-to-end financial indicator construction remains challenging\nfor current methods.\n\u2022 Agentic gains are substantial but model-dependent.Agent-\nbased settings generally outperform their search-based counter-\nparts, particularly in data collection, indicator calculation, and\nfinal answer generation. However, the magnitude of improve-\nment varies considerably across models. Gemini-3-Flash achieves\nthe strongest performance in the search-only setting, but its\nagent-based "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0042"
+        ],
+        "excerpt": "Figure 8 reports model performance when the required formula\nand raw data are directly provided, thereby removing the need for\nformula specification and data collection. We make the following\nobservations:\n\u2022 The ablation study further confirms that data collection is\nthe primary bottleneck.Once the required raw data is provided,\nall three agents achieve substantially higher indicator-calculation\nand answer-generation accuracy than in the end-to-end setting.\nFor fundamental and macroeconomic indicators, performance\ngenerally exceeds 80% and frequently approaches 100% across\nmodels and difficulty levels. This result reinforces our earlier\nfinding that the main challenge lies in locating, extracting, align-\ning, and normalizing the required financial data, rather than in\nformula understanding or numerical computation.\n\u2022 Technical indicators remain challenging even when the\ndata is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study On Data Collection (Rq5)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "85ef970645ab3f44188f2e3bc403307067f06de8a1b516954de2dfa6395f5cca",
+            "evidence_id": "Ed7145f98b18d2f76-B0042",
+            "pages": [
+              6
+            ],
+            "section": "Ablation Study On Data Collection (Rq5)",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 6,
+                "section": "Ablation Study On Data Collection (Rq5)",
+                "section_index": 18,
+                "start": 0,
+                "text": "Figure 8 reports model performance when the required formula\nand raw data are directly provided, thereby removing the need for\nformula specification and data collection. We make the following\nobservations:\n\u2022 The ablation study further confirms that data collection is\nthe primary bottleneck.Once the required raw data is provided,\nall three agents achieve substantially higher indicator-calculation\nand answer-generation accuracy than in the end-to-end setting.\nFor fundamental and macroeconomic indicators, performance\ngenerally exceeds 80% and frequently approaches 100% across\nmodels and difficulty levels. This result reinforces our earlier\nfinding that the main challenge lies in locating, extracting, align-\ning, and normalizing the required financial data, rather than in\nformula understanding or numerical computation.\n\u2022 Technical indicators remain challenging even when the\ndata is "
+              }
+            ],
+            "text": "Figure 8 reports model performance when the required formula\nand raw data are directly provided, thereby removing the need for\nformula specification and data collection. We make the following\nobservations:\n\u2022 The ablation study further confirms that data collection is\nthe primary bottleneck.Once the required raw data is provided,\nall three agents achieve substantially higher indicator-calculation\nand answer-generation accuracy than in the end-to-end setting.\nFor fundamental and macroeconomic indicators, performance\ngenerally exceeds 80% and frequently approaches 100% across\nmodels and difficulty levels. This result reinforces our earlier\nfinding that the main challenge lies in locating, extracting, align-\ning, and normalizing the required financial data, rather than in\nformula understanding or numerical computation.\n\u2022 Technical indicators remain challenging even when the\ndata is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0046"
+        ],
+        "excerpt": "To better understand the limitations of current models, we ran-\ndomly sample 100 failed cases from each of the three agent settings,\nresulting in 300 cases in total, and annotate the first error that oc-\ncurs in each case. As summarized in Table 2, these errors fall into\nfour categories:Formula,Data,Calculation, andLogic.\nXXX, XX, XX, XX, XX Chaoqun Yang et al.\n\u2022 Formula errors.Formula errors account for 8.6% of all failures,\nincluding completely incorrect formulas (3.8%) and partially in-\ncorrect formulas (4.8%). The latter typically involves missing or\nsubstituted accounting items, or using an ending balance instead\nof the required average of beginning and ending balances.\n\u2022 Data errors.Data errors dominate the failures, accounting for\n87.7%. They include incorrect data extraction (50.1%), missing\ncritical fields (19.8%), incorrect time windows (10.2%), and unit-\nconversion errors ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Error Analysis (Rq6)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "730b6f1f6c407e823ea6cfa7c5cd547d76ce598bf82a64e898794e61839e0f04",
+            "evidence_id": "Ed7145f98b18d2f76-B0046",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Error Analysis (Rq6)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 323,
+                "page": 7,
+                "section": "Error Analysis (Rq6)",
+                "section_index": 20,
+                "start": 0,
+                "text": "To better understand the limitations of current models, we ran-\ndomly sample 100 failed cases from each of the three agent settings,\nresulting in 300 cases in total, and annotate the first error that oc-\ncurs in each case. As summarized in Table 2, these errors fall into\nfour categories:Formula,Data,Calculation, andLogic."
+              },
+              {
+                "end": 572,
+                "page": 8,
+                "section": "Error Analysis (Rq6)",
+                "section_index": 21,
+                "start": 0,
+                "text": "XXX, XX, XX, XX, XX Chaoqun Yang et al.\n\u2022 Formula errors.Formula errors account for 8.6% of all failures,\nincluding completely incorrect formulas (3.8%) and partially in-\ncorrect formulas (4.8%). The latter typically involves missing or\nsubstituted accounting items, or using an ending balance instead\nof the required average of beginning and ending balances.\n\u2022 Data errors.Data errors dominate the failures, accounting for\n87.7%. They include incorrect data extraction (50.1%), missing\ncritical fields (19.8%), incorrect time windows (10.2%), and unit-\nconversion errors "
+              }
+            ],
+            "text": "To better understand the limitations of current models, we ran-\ndomly sample 100 failed cases from each of the three agent settings,\nresulting in 300 cases in total, and annotate the first error that oc-\ncurs in each case. As summarized in Table 2, these errors fall into\nfour categories:Formula,Data,Calculation, andLogic.\nXXX, XX, XX, XX, XX Chaoqun Yang et al.\n\u2022 Formula errors.Formula errors account for 8.6% of all failures,\nincluding completely incorrect formulas (3.8%) and partially in-\ncorrect formulas (4.8%). The latter typically involves missing or\nsubstituted accounting items, or using an ending balance instead\nof the required average of beginning and ending balances.\n\u2022 Data errors.Data errors dominate the failures, accounting for\n87.7%. They include incorrect data extraction (50.1%), missing\ncritical fields (19.8%), incorrect time windows (10.2%), and unit-\nconversion errors "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0055"
+        ],
+        "excerpt": "FinDeepIndicator is constructed from publicly available financial\nand macroeconomic data. We use these data solely for research\npurposes and avoid collecting sensitive personal information.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations And Ethical Considerations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "98d2b0004748b014def4657916fee1bf6203fed0571f10cd858f7cbc1199465f",
+            "evidence_id": "Ed7145f98b18d2f76-B0055",
+            "pages": [
+              8
+            ],
+            "section": "Limitations And Ethical Considerations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 189,
+                "page": 8,
+                "section": "Limitations And Ethical Considerations",
+                "section_index": 26,
+                "start": 0,
+                "text": "FinDeepIndicator is constructed from publicly available financial\nand macroeconomic data. We use these data solely for research\npurposes and avoid collecting sensitive personal information."
+              }
+            ],
+            "text": "FinDeepIndicator is constructed from publicly available financial\nand macroeconomic data. We use these data solely for research\npurposes and avoid collecting sensitive personal information."
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.00764",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [
-      "No suitable baseline comparison was detected in the available text.",
-      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+      "No reproducible review or selection methodology was detected."
     ],
-    "overall_quality_score": 78,
-    "paper_type": "empirical_research",
-    "positive_signals": [
-      "The contribution is stated explicitly.",
-      "The available text identifies data or a benchmark used by the work."
-    ],
-    "promotion": {},
-    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
-    "recommendation": "uncertain",
-    "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "11dee78320711e6b13dbf6bfa68e0467425ba47efbbe02d6bb6b9367cd68796f",
-    "status": "not_assessed",
+    "overall_quality_score": null,
+    "paper_type": "survey_or_review",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7172558388",
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Human expert inter-annotator agreement (Gwet's AC1) and Alt-test acceptance rates validated both the response parsing and formula evaluation stages against independent human judgments.",
+          "final_evaluation_signal": "LLM-as-a-judge for semantic formula equivalence, deterministic tolerance-aware cell matching for data and numerical answers against ground-truth tables.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pre-trained and instruction-tuned off-the-shelf LLMs and standard ReAct agent scaffolding evaluated without task-specific training on this benchmark.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0002",
+          "Ed7145f98b18d2f76-B0011",
+          "Ed7145f98b18d2f76-B0016",
+          "Ed7145f98b18d2f76-B0019",
+          "Ed7145f98b18d2f76-B0022",
+          "Ed7145f98b18d2f76-B0024",
+          "Ed7145f98b18d2f76-B0025",
+          "Ed7145f98b18d2f76-B0026",
+          "Ed7145f98b18d2f76-B0027",
+          "Ed7145f98b18d2f76-B0031",
+          "Ed7145f98b18d2f76-B0032",
+          "Ed7145f98b18d2f76-B0042",
+          "Ed7145f98b18d2f76-B0046",
+          "Ed7145f98b18d2f76-B0055"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "4814ac153e2bf9f22fdd008410608b434b1cf542c5308a2fef6174a6313a5ffc"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7172558388",
+        "claim_evidence_alignment": "Claims regarding model performance drops between formula understanding and execution, cross-market differences, and data collection bottlenecks are directly supported by tabular and empirical results.",
+        "context_id": "d7145f98b18d2f768230178e41c5045e917fc28903e86d6629892dd80522db0c",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation systematically benchmarks search-equipped LLMs and ReAct-based deep research agents across U.S. and Chinese markets. Process-stage breakdowns, an ablation isolating raw data retrieval, and error analysis validate the central finding that data retrieval is the core performance bottleneck.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Human financial expert evaluations (inter-annotator agreement Gwet's AC1 and Alt-test acceptance) validated both the response parsing and the formula evaluation stages.",
+          "final_evaluation_signal": "LLM-as-a-judge for semantic formula equivalence, alongside deterministic tolerance-aware cell matching for data and numerical answers against ground-truth tables.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pre-trained and instruction-tuned off-the-shelf LLMs and standard ReAct agent scaffoldings without task-specific training on this benchmark.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ed7145f98b18d2f76-B0002",
+          "Ed7145f98b18d2f76-B0003",
+          "Ed7145f98b18d2f76-B0009",
+          "Ed7145f98b18d2f76-B0011",
+          "Ed7145f98b18d2f76-B0016",
+          "Ed7145f98b18d2f76-B0017",
+          "Ed7145f98b18d2f76-B0019",
+          "Ed7145f98b18d2f76-B0022",
+          "Ed7145f98b18d2f76-B0024",
+          "Ed7145f98b18d2f76-B0025",
+          "Ed7145f98b18d2f76-B0026",
+          "Ed7145f98b18d2f76-B0027",
+          "Ed7145f98b18d2f76-B0028",
+          "Ed7145f98b18d2f76-B0031",
+          "Ed7145f98b18d2f76-B0032",
+          "Ed7145f98b18d2f76-B0042",
+          "Ed7145f98b18d2f76-B0046",
+          "Ed7145f98b18d2f76-B0055"
+        ],
+        "limitations": "The authors state the scope of public financial/macroeconomic data used, and the text acknowledges model limitations and constraints across technical/macro indicator domains, though a dedicated discussion of benchmark lifespan or live website drift is brief.",
+        "method_assessment": "The methodology is thoroughly described, detailing the curation of 234 financial indicators, structured template instantiation across three difficulty levels, and a multi-stage evaluation pipeline combining LLM extraction/formula judging with tolerance-aware ground-truth numerical matching.",
+        "quality_rationale": "The benchmark provides an adequate, structured contribution to evaluating financial research agents beyond simple final-answer QA. Validation of LLM parsing and formula scoring via human inter-annotator agreement and the Alt-test provides sound measurement reliability.",
+        "scoped_contribution": "The paper introduces FinDeepIndicator, an end-to-end benchmarking dataset of 3,350 QA pairs across 234 financial indicators, along with a process-level evaluation framework assessing formula specification, data collection, indicator calculation, and answer generation.",
+        "source_content_hash": "4814ac153e2bf9f22fdd008410608b434b1cf542c5308a2fef6174a6313a5ffc"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The benchmark provides an adequate, structured contribution to evaluating financial research agents beyond simple final-answer QA. Validation of LLM parsing and formula scoring via human inter-annotator agreement and the Alt-test provides sound measurement reliability.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "4814ac153e2bf9f22fdd008410608b434b1cf542c5308a2fef6174a6313a5ffc",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
+    "uncertainty": "The authors state the scope of public financial/macroeconomic data used, and the text acknowledges model limitations and constraints across technical/macro indicator domains, though a dedicated discussion of benchmark lifespan or live website drift is brief."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -276,7 +1940,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

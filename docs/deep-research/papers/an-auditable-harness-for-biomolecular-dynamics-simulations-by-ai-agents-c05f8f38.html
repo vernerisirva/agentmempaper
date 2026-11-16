@@ -59,16 +59,368 @@
             <p>AI agents now generate biological hypotheses faster than they can be tested. Hypotheses stated at the atomic level can be examined with molecular dynamics (MD) simulations. For new questions without a reference, trust in an agent-run simulation rests on a tool-written process record, not the agent&#x27;s account. Existin...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study provides a thoroughly documented, open-source tool with rigorous methodology and well-controlled evaluations on independent external datasets. The ablation and multi-model experimental design strongly validate the necessity of the proposed harness architecture.</p>
+      <p>The authors clearly acknowledge that DAG execution guarantees do not overcome conformational sampling limitations, that the harness cannot autonomously evaluate whether physical force-field choices suit arbitrary scientific problems, and that the DAG requires write-protection to prevent unauthorized modification by agents.</p>
       <p>Publication: preprint. Source metadata identifies a working manuscript/preprint; peer review is not established.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-16T12:28:45.420807+00:00.</p>
+        <p>Coverage: 94694 of 94694 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for coding agents,
+that is, the tools, instructions and records that surround the
+language model. MDClaw combines protocol documents
+(&quot;agent skills&quot;), validating command-line tools and a persis-
+tent directed acyclic graph (DAG) of calculation stages. Be-
+cause an agent builds its workflow while it runs, the record
+cannot be designed in advance. Instead, each tool records its
+calculation as a node in the DAG and runs only with inputs
+from recorded earlier stages, so a file produced outside the
+record cannot enter a later stage. The same record lets errors
+be corrected without starting over. A researcher or agent can
+trace a problem back to the stage where it began and branch a
+new calculation from the last valid stage. We also introduce
+MDDataBench, which compares prepared systems and short
+trajectories with MDDB reference simulations. On MD-
+DataBench, MDClaw tools without skills </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A DAG constrains execution and preserves the evi-
+dence behind a result. MDClaw connects a scientist&#x27;s hy-
+pothesis or prompt to a coding agent that plans simulations,
+executes them and analyzes the results (Fig. 1a). The scien-
+tist can be a human researcher or an AI system. An expert-
+designed harness provides 14 protocol documents, termed
+agent skills, and 100 command-line tools spanning structure
+preparation through trajectory analysis (Fig.1b). Skills guide
+planning, while tools perform the calculations and enforce
+technical checks. The agent can select and revise a workflow
+while the harness retains its inputs, settings and outputs. The
+tools also run enhanced-sampling and alchemical free-energy
+methods (Supplementary Fig. 2).
+The central data structure is a directed acyclic graph
+(DAG), in which nodes represent calculation stages and
+edges record their dependencies. The DAG also </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>constrains
+tool calls (Fig. 1c): a stage can execute only when its re-
+quired parent is complete, the transition is allowed, inputs
+belong to the recorded ancestry, and execution settings agree
+with declared conditions. For example, a failed Minimize
+node cannot supply an executable Equilibrate stage, and a
+node declared at 310 K cannot execute with a 300 K config-
+uration. Chemical and force-field checks reject specified in-
+consistencies before expensive calculations begin. The tool
+returns a structured error to the agent that states why the call
+was rejected and suggests a corrective action, so the agent
+can branch from the last valid stage instead of starting over
+(Fig. 4c,d).
+Each node retains parameters, file references, status and
+parent identifiers. A trajectory can be traced to the prepara-
+tion and equilibration that produced it, independently of the
+agent&#x27;s summary. An agent </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>topologies, trajectories, analyses and li-
+cences. We selected 128 development tasks spanning nine
+system classes. A separate test set contains 31 systems across
+eight classes, including complexes, nucleic acids and a mem-
+brane protein (Fig. 2a; Supplementary Table 1). To keep the
+test systems distinct from those MDClaw was developed on,
+no protein or nucleic-acid chain in a test system was similar
+in sequence to a development system or to a structure used in
+the MDClaw code (Methods).
+A script generates each prompt from the metadata and files
+of the deposited entry, stating the target structure, molecular
+composition, force field, solvent, thermodynamic conditions
+and required outputs (Fig. 2b). The grader evaluates files
+rather than the agent&#x27;s account: twelve checks assess prepa-
+ration and eight assess MD (Fig. 2c). Fluctuation profiles,
+fluctuation amplitude and radius of gyration </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>are compared
+with tolerances calibrated from reference 1–2.5 ns windows.
+All scored checks must pass: normally 20, with 19 for 5X0T,
+whose radius-of-gyration check is diagnostic only (Methods).
+This measures conformity to a defined simulation task, rather
+than equilibrium convergence or biological validity.
+We ran Kimi-K3, DeepSeek-V4.1-flash, GLM-5.3-flash
+and Qwen3.8-27B in the pi coding agent under three con-
+ditions: the simulation software container alone, MDClaw
+tools, and MDClaw tools plus skills. Each model ran the
+same prompt three times per system and condition (Fig. 2d).
+The primary metric, pass^3, is the fraction of systems pass-
+ing all three runs. The pass@1 metric is the fraction of suc-
+cessful individual runs. Development tasks guided improve-
+ment, and the test tasks evaluated the pre-optimization and
+optimized harness versions.
+2 | bioRχiv Matsunaga et al. | An </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>completed Minimize node into Equilibrate with different random seeds, followed by Production. Comparing the replicas assesses run-to-run variation. Changing
+seeds does not by itself establish statistical independence or convergence. Stage names and illustrations match b.
+Large-scale development runs guide harness opti-
+mization. We developed the harness in repeated rounds on
+the 128 development tasks (Fig. 3a). After each round, cod-
+ing agents inspected failed DAG nodes, inputs and execution
+records to diagnose errors, an MD specialist judged the pro-
+posed remedies, and we revised the tools or skills before the
+next round. We changed only the harness, not the language-
+model weights. Over these rounds we ran at least 3,726 agent
+runs on the RIKYU supercomputer at RIKEN R-CCS, across
+multiple language models and three tool-and-skill conditions,
+with three repeats per evaluated </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>combination. The count in-
+cludes unsuccessful attempts, not only completed trajecto-
+ries. To assess the effect of this development on new systems,
+we compared the pre-optimization and optimized versions on
+the same 31 test tasks (Fig. 3b).
+Of 124 model–task pairs (four models, 31 tasks), the num-
+ber passing all three runs rose from 84 to 111 with tools alone
+and from 112 to 119 with tools plus skills. Tools alone gained
+the most, so the gap between the two conditions narrowed
+from 28 to eight pairs, consistent with procedural knowledge
+Matsunaga et al. | An auditable harness for biomolecular dynamics simulations by AI agents bioRχiv | 3
+.CC-BY-NC-ND 4.0 International licenseavailable under a
+(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>20 for 30 systems and 19 for 5X0T, where radius of gyration is diagnostic
+only (Methods). Agent reports are not scored. d, The same prompt is evaluated under three conditions, with repeated runs aggregated into the primary metric, pass^3,
+the fraction of systems for which all three runs pass. For these three main conditions, four large language models (LLMs) each perform three independent runs per system
+and condition, with time limits of 30 minutes for preparation/submission and 20 minutes per MD job. A separate MDCrow comparison uses two LLMs and 30 non-membrane
+systems, with its execution settings described in Methods.
+moving from the skills into checks and error messages in the
+tools. This shift is desirable because checks in the tools use
+none of the agent&#x27;s context and apply even without a skill,
+so the agent can choose its own route flexibly while the tools
+still enforce the DAG. </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This comparison is between complete
+releases, including container dependencies, and does not iso-
+late individual changes.
+The harness improves repeated success. Without MD-
+Claw, 21 of 372 individual runs passed (pass@1 5.6%,
+95% Wilson confidence interval 3.7–8.5%). With tools
+alone, pass^3 reached 25–29 of 31 systems (81–94%) and
+pass@1 reached 90–98% across models (Fig. 3d,e). Adding
+skills increased these ranges to 28–31 systems (90–100%)
+and 94–100%, respectively. Most of the improvement was
+already present with the command-line harness, and skills
+added to it. For DeepSeek, GLM and Qwen, MDClaw cut
+median token usage by 42–77%, as validated commands re-
+placed trial-and-error scripting and model calls fell. Kimi-K3
+was the exception, because without MDClaw it submitted its
+scripts after few model calls and 84 of 93 such runs failed
+(Fig. 3c).
+We also evaluated MDCrow (13), a </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>preparation recovery
+Development run · Qwen3.6-35B · tools only
+Structure
+Prepare 1: invalid
+chemical string, rejected
+Prepare 2: charge 0,
+completed, superseded
+Prepare 3: charge −2,
+completed
+Solvate → … →
+Production
+20 / 20 checks
+Prompt requires −2.
+The agent checks
+the reported charge.
+6ME3 · membrane temperature recovery
+Development run · Qwen3.6-35B · tools + skills
+Minimize
+Equilibrate 1: declared 310 K,
+configured 300 K, rejected
+Equilibrate 2: 310 K,
+completed
+Production 1
+queued, not run
+Production 2
+completed
+20 / 20 checks
+a b
+c d
+Fig. 4. Removing the DAG reveals process errors in successful runs, and DAG records support recovery. a, Successful test runs with a process error, with and without
+the DAG (30 non-membrane systems, four models, three runs per system, tools without skills). With the DAG, the lineage of each scored production was read from the DAG
+records. Without </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fluc-
+tuation and radius-of-gyration checks. With MDClaw, 2–3%
+of runs had nothing to grade and no single check failed in
+more than 3% of runs.
+Removing the DAG reveals process errors in success-
+ful runs. To separate the contribution of the DAG, we built
+a version of MDClaw without it and evaluated it on the
+30 non-membrane test systems with the same four models
+and prompts, three runs per system and tools without skills
+(Methods). The chemistry code and validating checks were
+unchanged. Each tool instead reads files from paths the agent
+supplies and writes to a directory the agent names, and no
+settings are inherited from earlier stages, so the agent carries
+every file and condition from one stage to the next. Without
+the DAG,pass^3 was 103 of 120 model–system pairs, com-
+pared with 108 with the DAG (two-sided sign test,P≈ 0.30).
+This took more failed attempts: tool failures rose from </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>41 to
+147 episodes and failed MD jobs from 1 to 23.
+The DAG complements this outcome check by recording
+the process. Without the DAG, each tool call wrote a record
+of its input and output files with content hashes, from which
+we reconstructed the stages behind each submitted trajectory
+(Methods). Among 334 successful runs without the DAG,
+11 had errors in the process (Fig. 4a). In six, equilibra-
+tion started from the output of the topology build rather than
+from minimization. In two, production did as well, so nei-
+ther minimization nor equilibration preceded the scored tra-
+jectory (Fig. 4b). In three, the simulated structure was not
+the prepared one, because the agent had changed or swapped
+it with its own files. With the DAG, none of the 343 suc-
+cessful runs had such errors. All 11 runs passed every output
+check, which compares the results with the reference, not the
+steps behind </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>production, all recorded in the DAG. Anal-
+yses ran outside the DAG, and the cyclic scaffold required
+four patches to MDClaw.
+In the first study, we simulated three linear kinase–
+substrate complexes containing ATP and two Mg ions
+(abltide, AblTide and Abl Consensus), with ten 600 ns repli-
+cas per complex (18µs). Over 300–600 ns, the substrate
+with Gly at position +4 (AblTide) contacted fewer kinase
+residues per frame than the Phe and Pro substrates (means
+1.14, 2.64 and 2.72, respectively, Fig. 5a). This ordering
+agrees with steady-state kinetics of the Abl kinase domain, in
+which AblTide had a six-fold higher Michaelis constant than
+Abl Consensus (35 versus 6µM) at similar turnover numbers
+(29).
+In the second study, we examined how grafting the same
+three substrate motifs into the cyclic cystine-knot scaffold
+MCoTI-II affects groove engagement. Starting from 150
+Boltz-2 (30) </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>co-folded models screened by geometric cri-
+teria, we built six complexes crossing two binding poses
+(loop1-in and loop6-in) with the three sequences in the en-
+gaged loop while keeping the non-engaged loop as Abl Con-
+sensus, and ran ten 300 ns replicas per complex (18µs). The
+Abl Consensus pair therefore compared identical molecules
+in two poses. Over 100–300 ns, all 30 loop1-in replicas
+remained bound in every frame (mean 32.8 contact pairs
+for Abl Consensus versus 22.8 in loop6-in, Holm-adjusted
+permutation P = 0.0079), yet their acceptor Tyr5 stayed
+5.7–7.3 Å from the catalytic base Asp363 (Fig. 5b). In
+contrast, loop6-in allowed sequence-dependent catalytic ap-
+proach: AblTide stayed bound in all ten replicas and held
+Tyr33 at 3.12 Å from Asp363, closer than Abl Consen-
+sus (6.46 Å, P = 0.036, 7.3% unbound frames) and abltide
+(14.38 Å, P = 0.015, 10.6% unbound frames). This </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>unpublished). We therefore asked Biomni for
+its structural cause, and it proposed five hypotheses on dis-
+rupted core packing, loss of a buried hydrogen bond, reduced
+thermal stability, folding destabilization and altered confor-
+mations (Fig. 5c). A researcher asked a coding agent to test
+all five hypotheses in the saved dialogue with MDClaw, sub-
+stituting other methods where needed, within about 24 h on
+parallel GPUs. The agent translated them into runs MDClaw
+supports, using fixed-temperature runs at 400 and 450 K in-
+stead of temperature-ramp annealing, 36 ordinary-MD tra-
+jectories at 298/310 K, and hybrid-topology free-energy per-
+turbation (FEP) instead of thermodynamic integration. It
+trimmed the protein to fit the time limit and computed ob-
+servables lacking an MDClaw tool.
+The FEP calculations (Fig. 5d) gave folding free-energy
+changes of +5.22± 0.11, +0.42± 0.24, +4.14± </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.50 and
++0.05± 0.03 kcal mol −1 for S273F, S273A, S279L and
+I390V . The researcher approved a further 24 h after a promis-
+ing first S273F estimate, and the agent extended its folded-
+leg windows to reduce the error. S273F was destabilizing
+within the range Biomni predicted (+3 to +8), S273A was
+small and I390V , the second un-7 substitution, near neutral,
+which partially supports H4. This demonstrates hypothesis
+testing, from planning to execution across all five hypothe-
+ses within the approved time, rather than confirmation of all
+five.</blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis version posted November 11, 2026. ; https://doi.org/10.64898/2026.11.09.765490doi: bioRxiv preprint
+Two limitations remain. First, the DAG makes every step
+inspectable, but it is not tamper-proof, because an agent with
+write access could alter its records, and it covers only cal-
+culations run through the tools. A deployment can keep the
+records where the agent cannot write. The DAG also cannot
+judge whether a force field, starting model or collective vari-
+able suits a scientific question. Second, reliable execution
+does not overcome the sampling limits of MD. In the PNG-1
+study, only one of the five hypotheses was partially supported
+within the time limit. MD surrogate models and AI structure
+predictors (30, 36), whose </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>4,036 datasets in the three largest repositories were eligible.
+We selected 128 development tasks stratified across nine sys-
+tem classes (Supplementary Table 1).
+Prompts and grading contracts were generated by a script
+from each entry&#x27;s metadata and reference files. Each prompt
+gives only the boundary conditions: PDB identifier, chains
+and residue ranges, force field and water model, tempera-
+ture and ensemble, and minimum production length. If the
+reference modified the PDB coordinates (for example, by re-
+moving a fusion tag), the prompt states this in one sentence.
+Prompts never reveal the MDDB accession. Reference files
+are retrieved only at grading time and are not redistributed.
+MDDataBench grading protocol.Submissions are graded
+only from their artifacts: the prepared topology and
+OpenMM System, minimized coordinates, state logs and pro-
+duction trajectory. Agent-written </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>scored check passed. For
+5X0T, radius of gyration was diagnostic only and was ex-
+cluded from the pass criterion. The checks do not establish
+equilibrium convergence or biological correctness.
+Test set selection.Test systems were selected without us-
+ing agent outcomes. Reference trajectories required a mean
+backbone RMSD of at most 4.0 Å over the final third.
+Sequence similarity was measured as k-mer containment,
+|K(a)∩K(b)|/ min(|K(a)|,|K(b)|), with 3-mers for protein
+and 6-mers for nucleic-acid chains; immunoglobulin chains
+were compared through their V domain only. A candidate
+was excluded if the whole system, or any chain of at least
+30 residues, reached a containment of 0.70 against a devel-
+opment task or a structure mentioned in the MDClaw code,
+or if it shared a PDB identifier with either. Category quo-
+tas and sequence diversity determined the final set of 31 sys-
+tems, </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>including the membrane protein 7DTD (human Nav1.1
+in DPPC).
+Benchmark execution. The three main conditions ran on
+the RIKYU supercomputer at RIKEN R-CCS (one NVIDIA
+B200 GPU per MD job) with the pi coding agent and four
+locally hosted open-weight models with extended reason-
+ing: Kimi-K3, DeepSeek-V4.1-flash, GLM-5.3-flash and
+Qwen3.8-27B. All conditions used identical prompts: (1)
+MDClaw tools + skills, (2) MDClaw tools only, with skills
+withheld, and (3) container only, with the same scientific
+packages (OpenMM, AmberTools, Packmol-Memgen and
+PDBFixer) but without MDClaw. Each task was run three
+times per model and condition. An agent had 30 min to pre-
+pare the system and submit Slurm jobs, and each GPU job
+was limited to 20 min. A filesystem sandbox isolated runs
+and hid reference data and grading contracts. Network ac-
+cess remained available for structure and package </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with the sign test described above.
+The process audit followed each scored production back
+to its inputs. A run had a process error when equilibration
+or production did not start from the output of the preceding
+stage, when a structure entering a stage was not the recorded
+output of an earlier stage or had changed after it was written,
+or when a stage was missing. With the DAG, the same ques-
+tions were answered from node parents, node status and the
+system hashes recorded by each node. The DAG records do
+not hash the starting state of production, which the tool reads
+from its parent node. Failure episodes were counted per run
+from the transcript and Slurm accounting: an episode begins
+at a tool result reporting failure, or at an MD job that did not
+complete, and ends when the same stage later succeeds or the
+run ends.
+Token usage and recorded workflow progress.Token
+usage per run (Fig. </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sequence with physical steering potentials)
+were screened for active kinase geometry, groove engage-
+ment (acceptor Tyr OH within 0.6 nm of Asp363), three
+cystine-knot disulfides (0.18–0.23 nm) and head-to-tail clo-
+sure. After transplanting ATP and two Mg ions from PDB
+1ATP, six complexes (loop1-in and loop6-in crossed with
+abltide, AblTide and Abl Consensus in the engaged loop,
+with the non-engaged loop held as Abl Consensus) were de-
+rived from the shared Abl Consensus template, solvated with
+ff19SB/OPC in 0.15 M NaCl, minimized in two stages, equi-
+librated over four stages (3 ns) and simulated in ten 300 ns
+replicas per complex (18µs total). Head-to-tail backbone cy-
+clization, exclusion of cyclic chains from terminal capping,
+mutation to glycine and ancestor lookup of ligand chem-
+istry were executed from a local MDClaw worktree branch.
+Observables were averaged over bound frames </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>license to display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis version posted November 11, 2026. ; https://doi.org/10.64898/2026.11.09.765490doi: bioRxiv preprint
+plan replaced temperature-ramp annealing with 100 ns NVT
+runs at 400 and 450 K (24 trajectories), alongside 36 ordinary
+MD trajectories at 298 and 310 K.
+Because the first S273F estimate looked promising, the
+researcher approved a further 24 h, which the agent used
+to extend the S273F folded-leg windows from 10 to 40 ns
+to reduce the error. Folding free-energy changes at 310 K
+were computed as the difference between alchemical trans-
+formations in the folded protein and a tripeptide reference
+(41), with positive values denoting destabilization. Soft-core
+potentials were used for steric interactions (66). Each leg
+had three replicas, using 21 or 31 windows and 5–40 ns
+per window, and was </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +459,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +475,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-11-12</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-13 11:51:10</li><li>Last seen by Paper Scout: 2026-11-13 11:51:10</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-11-15</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-13 11:51:10</li><li>Last seen by Paper Scout: 2026-11-16 12:26:01</li></ul>
             <ul><li>DOI: 10.64898/2026.11.09.765490</li><li>OpenAlex: W7225773237</li><li>OpenAlex IDs: W7225773237</li></ul>
           </section>
           <section class="detail-panel">

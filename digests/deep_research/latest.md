@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-11-13](2026-11-13.md).
+Latest daily digest: [2026-11-16](2026-11-16.md).
 
-# Paper Scout Digest - 2026-11-13
+# Paper Scout Digest - 2026-11-16
 
 ## Run Summary
 
-- **Run ID:** 134
-- **Candidates fetched:** 119
-- **New unique papers:** 118
-- **Relevant:** 9
-- **Maybe relevant:** 1
-- **Irrelevant:** 109
-- **Source summary:** arxiv: 19, openalex: 100, semantic_scholar: 0
+- **Run ID:** 135
+- **Candidates fetched:** 117
+- **New unique papers:** 114
+- **Relevant:** 8
+- **Maybe relevant:** 3
+- **Irrelevant:** 106
+- **Source summary:** arxiv: 17, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -21,38 +21,40 @@ Latest daily digest: [2026-11-13](2026-11-13.md).
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [The Harness Is the Lab: Measured Self-Improvement for Ontology-Grounded AI Scientists](https://doi.org/10.5281/zenodo.24144799)
-
-- **Authors:** Sayan Chowdhury
-- **Date:** 2026-11-11
-- **Source:** openalex
-- **Relevance:** relevant (95/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, web-research, deep-research-agents
-- **Abstract summary:** Every serious AI-scientist system released in 2026 has converged on the same lesson: generating hypotheses, code and papers is no longer the hard part; deciding which results deserve to be believed is. Karpathy's autoresearch showed that a sealed evaluator, a fixed budget and a git ratchet can run a hundred useful e...
-
-### [An auditable harness for biomolecular dynamics simulations by AI agents](https://doi.org/10.64898/2026.11.09.765490)
-
-- **Authors:** Yasuhiro Matsunaga, Yichao Wu, Yangyang Zhang, Shweta Kumari, Akari Enomoto, Yudai Homma, et al.
-- **Date:** 2026-11-11
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** AI agents now generate biological hypotheses faster than they can be tested. Hypotheses stated at the atomic level can be examined with molecular dynamics (MD) simulations. For new questions without a reference, trust in an agent-run simulation rests on a tool-written process record, not the agent's account. Existin...
-
-### [Designing Institutions for Autonomous AI](https://arxiv.org/abs/2611.17114v1)
+### [Designing Institutions for Autonomous AI](https://arxiv.org/abs/2611.17114)
 
 - **Authors:** Petter Törnberg
 - **Date:** 2026-11-12
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
 - **Abstract summary:** As autonomous AI agents increasingly interact in persistent populations, their collective capabilities and alignment depend not only on individual models, but also on the institutions governing their interactions. Yet AI research has largely focused on individual agents. In this Perspective, we argue that institutio...
+
+## Maybe Relevant
+
+### [ARE-bench: Benchmarking Agents' Research Ability in Real-World Researcher Sessions and Workspaces](https://arxiv.org/abs/2611.14364)
+
+- **Authors:** Jiahang Lin, Wanying Ren, Wanghan Xu, Huayu Sha, Yang Shu, 卢中杭, et al.
+- **Date:** 2026-11-10
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** benchmark
+- **Abstract summary:** Research agents achieve increasingly strong benchmark scores, yet these scores do not necessarily translate into reliable delivery in ongoing research projects. Many research-agent benchmarks emphasize standalone tasks and relatively self-contained workflows in clean or curated workspaces. However, researchers ask a...
+
+### [SOMIN: Fusing Marketing Science and LLM Agents for Closed-Loop Autonomous Campaigns](https://doi.org/10.1145/3767308.3839058)
+
+- **Authors:** Aleksandr Farseev
+- **Date:** 2026-11-09
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** SOMIN is an autonomous digital marketing platform, built by SoMin.ai Research, that fuses marketing science with agentic Large Language Models to close the loop between predictive analytics and campaign execution. In SOMIN, predictive Deep Neural Networks score, filter, and explain multimodal creative signals; LLM a...

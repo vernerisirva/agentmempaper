@@ -1,0 +1,1142 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row_tracks": 0,
+    "nominees_missing_from_store": 0,
+    "nominees_not_walked": 14,
+    "non_promoted": 1,
+    "papers_attempted": 4,
+    "papers_successfully_assessed": 4,
+    "papers_walked": 31,
+    "promoted": 3,
+    "retry_eligible_failures": 27,
+    "skipped_before_model": 27,
+    "technical_failures": 27,
+    "unavailable_manuscripts": 18
+  },
+  "budget": {
+    "gemini_calls": 4,
+    "gemini_input_tokens": 119160,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 4865,
+    "max_papers_per_run": 8,
+    "max_papers_per_track": 2,
+    "openrouter_calls": 4,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.15061101,
+    "papers_assessed_per_track": {
+      "computer_vision": 2,
+      "deep_research": 2
+    },
+    "papers_assessed_total": 4,
+    "stopped_reason": null,
+    "version": "operational-budget-v2"
+  },
+  "completed_at": "2026-11-16T12:29:26.214600+00:00",
+  "cost": {
+    "deepseek_calls": 4,
+    "deepseek_cost_usd": 0.15061101,
+    "deepseek_input_tokens": 111882,
+    "deepseek_output_tokens": 2693,
+    "gemini_calls": 4,
+    "gemini_input_tokens": 119160,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 4865,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 1889,
+    "papers_discovered": 8847
+  },
+  "limits": {
+    "backlog_after_days": 7,
+    "max_acquisition_walk_per_track": 12,
+    "max_papers_per_run": 8,
+    "max_papers_per_track": 2
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v2",
+    "operational_eligibility": "operational-eligibility-v1",
+    "selection": "backlog-and-recent-v2"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 45,
+    "tracks": {
+      "agent_memory": {
+        "backlog_eligible": 519,
+        "completed_scientific_assessment": 91,
+        "eligible": 547,
+        "high_relevance": 654,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22970508",
+            "queue": "backlog",
+            "rank": 294,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22970508",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-13T11:53:29.221011+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Artifact for ICSE 2027 Submission: Coupling Planning with Episodic Memory in LLM Agents for Software Issue Resolution",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "openalex:W7166495346",
+            "queue": "backlog",
+            "rank": 567,
+            "selection": {
+              "canonical_id": "openalex:W7166495346",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-13T11:53:29.235711+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Context-Aware Planning, Reasoning, and Adaptive Behaviors for Autonomous Robots",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21082823",
+            "queue": "backlog",
+            "rank": 602,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.21082823",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-13T11:53:29.296208+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Instruction Drift in Autonomous LLM Agents: Emergent Goal Expansion Beyond Explicit Constraints in an Extended Loop Session",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.13140/rg.2.2.23282.26560",
+            "queue": "backlog",
+            "rank": 604,
+            "selection": {
+              "canonical_id": "doi:10.13140/rg.2.2.23282.26560",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Persistent Memory Modeling and Policy Optimization for Large Language Model Agents in Long-Horizon Tasks",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21035225",
+            "queue": "backlog",
+            "rank": 607,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.21035225",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Artifact for ICSE 2027 Paper: Coupling Execution-Grounded Planning with Episodic Memory in LLM Agents for Software Issue Resolution",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21020857",
+            "queue": "backlog",
+            "rank": 608,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.21020857",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "BIO Layer: Governance-First Memory for Auditable Long-Term Agents",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24202423",
+            "queue": "recent",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.24202423",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Algorithmic Psychodynamics in Multi-Agent Memory: Modeling Defense Mechanisms, Epistemic Dissonance, and Supersession Governance",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24201762",
+            "queue": "recent",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.24201762",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Cartographic Memory: An Impossibility Framework and Distortion Ledger for Agent Memory Consolidation",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.1145/3841580.3845739",
+            "queue": "recent",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.1145/3841580.3845739",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Integrating a Multi-Tier Memory Manager into a Educational RAG System",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24184983",
+            "queue": "recent",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.24184983",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Memory index in the weights: a proposal for agent memory whose contents stay in files",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24227858",
+            "queue": "recent",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.24227858",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Agent Memory Integrity Benchmark (AMIB)",
+            "track": "agent_memory"
+          },
+          {
+            "canonical_id": "doi:10.13140/rg.2.2.21386.84167",
+            "queue": "recent",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.13140/rg.2.2.21386.84167",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Engram: A Local-First Cognitive Agent Architecture with Dynamic Memory Retrieval, Emotional Modulation, and Introspective Experimentation",
+            "track": "agent_memory"
+          }
+        ],
+        "ranked": 3494,
+        "retry_blocked": 16,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22970508",
+            "outcome": "manuscript_unavailable",
+            "rank": 294
+          },
+          {
+            "canonical_id": "openalex:W7166495346",
+            "outcome": "manuscript_unavailable",
+            "rank": 567
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21082823",
+            "outcome": "manuscript_unavailable",
+            "rank": 602
+          },
+          {
+            "canonical_id": "doi:10.13140/rg.2.2.23282.26560",
+            "outcome": "manuscript_unavailable",
+            "rank": 604
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21035225",
+            "outcome": "manuscript_unavailable",
+            "rank": 607
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21020857",
+            "outcome": "manuscript_unavailable",
+            "rank": 608
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24202423",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24201762",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.1145/3841580.3845739",
+            "outcome": "manuscript_unavailable",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24184983",
+            "outcome": "manuscript_unavailable",
+            "rank": 4
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24227858",
+            "outcome": "manuscript_unavailable",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.13140/rg.2.2.21386.84167",
+            "outcome": "manuscript_unavailable",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "computer_vision": {
+        "backlog_eligible": 787,
+        "completed_scientific_assessment": 61,
+        "eligible": 907,
+        "high_relevance": 984,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.1506.01497",
+            "queue": "backlog",
+            "rank": 984,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.1506.01497",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1038/s41598-026-70962-z",
+            "queue": "backlog",
+            "rank": 938,
+            "selection": {
+              "canonical_id": "doi:10.1038/s41598-026-70962-z",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-23T09:09:29.849860+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Multi-output classification of dental implant placement parameters in the posterior maxilla from CBCT images using a two-stage vision transformer framework",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22859249",
+            "queue": "backlog",
+            "rank": 939,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22859249",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-23T09:09:29.854521+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "The Generalization Gap in Deep Learning for Wound Image Segmentation: A PRISMA 2020 Systematic Review of Internal versus External Validation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+            "queue": "backlog",
+            "rank": 951,
+            "selection": {
+              "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Self-supervised knowledge distillation for few-shot single-stage 3D object detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.3233/atde260887",
+            "queue": "backlog",
+            "rank": 954,
+            "selection": {
+              "canonical_id": "doi:10.3233/atde260887",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Multi-Stream Deep Learning Framework for Real-Time Dangerous Behavior Detection and Defect Recognition in Power Systems",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2304.02643",
+            "queue": "backlog",
+            "rank": 971,
+            "selection": {
+              "canonical_id": "arxiv:2304.02643",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Segment Anything",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.1007/978-981-92-7204-4_39",
+            "queue": "recent",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.1007/978-981-92-7204-4_39",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "DINO-Hybrid-YOLO: Bridging Vision Foundation Models and Real-Time Detectors via Dual-Stream Fusion and Adaptive Distillation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "doi:10.3217/978-3-85125-979-7-13",
+            "queue": "recent",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.3217/978-3-85125-979-7-13",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Horse Behaviour Classification During Air Transportation Using YOLO Object Detector",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.17897",
+            "queue": "recent",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "arxiv:2611.17897",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "See and Detect: Image-Driven Open-Vocabulary Multi-View 3D Object Detection",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.18057",
+            "queue": "recent",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "arxiv:2611.18057",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "SWAM: Saliency-Weighted Asymmetric Merging for Efficient Vision Transformers",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.17825",
+            "queue": "recent",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "arxiv:2611.17825",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Beyond Endpoints: B\u00e9zier Paths for Vision Foundation Model Adaptation",
+            "track": "computer_vision"
+          },
+          {
+            "canonical_id": "arxiv:2611.18519",
+            "queue": "recent",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "arxiv:2611.18519",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Box-conditional Hypothesis Testing for Out-of-Distribution Object Detection",
+            "track": "computer_vision"
+          }
+        ],
+        "ranked": 4949,
+        "retry_blocked": 16,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.1038/s41598-026-70962-z",
+            "outcome": "backlog_slot_consumed",
+            "rank": 938
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.22859249",
+            "outcome": "backlog_slot_consumed",
+            "rank": 939
+          },
+          {
+            "canonical_id": "doi:10.1016/j.compeleceng.2026.111522",
+            "outcome": "backlog_slot_consumed",
+            "rank": 951
+          },
+          {
+            "canonical_id": "doi:10.3233/atde260887",
+            "outcome": "backlog_slot_consumed",
+            "rank": 954
+          },
+          {
+            "canonical_id": "arxiv:2304.02643",
+            "outcome": "backlog_slot_consumed",
+            "rank": 971
+          },
+          {
+            "canonical_id": "doi:10.1007/978-981-92-7204-4_39",
+            "outcome": "manuscript_unavailable",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.3217/978-3-85125-979-7-13",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "arxiv:2611.18057",
+            "outcome": "track_slot_consumed",
+            "rank": 4
+          },
+          {
+            "canonical_id": "arxiv:2611.17825",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "arxiv:2611.18519",
+            "outcome": "track_slot_consumed",
+            "rank": 6
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "backlog_eligible": 106,
+        "completed_scientific_assessment": 85,
+        "eligible": 109,
+        "high_relevance": 234,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.1177/27681572261475914",
+            "queue": "backlog",
+            "rank": 178,
+            "selection": {
+              "canonical_id": "doi:10.1177/27681572261475914",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-13T11:53:29.212961+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Google DeepMind and Edison Are Building the AI Scientist",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21754161",
+            "queue": "backlog",
+            "rank": 169,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.21754161",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-13T11:53:29.225544+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "An Independent Evaluation of AI Scientist v2 on Biomedical Research Tasks",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21758297",
+            "queue": "backlog",
+            "rank": 171,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.21758297",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-13T11:53:29.241071+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Same Atomic Content, Different Falsification Histories: A causal protocol for testing whether AI scientists inherit falsification",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "openalex:W7172558388",
+            "queue": "backlog",
+            "rank": 174,
+            "selection": {
+              "canonical_id": "openalex:W7172558388",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "FinDeepIndicator: Benchmarking Deep Research Agents in End-to-End Financial Indicator Construction",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "openalex:W7197053879",
+            "queue": "backlog",
+            "rank": 166,
+            "selection": {
+              "canonical_id": "openalex:W7197053879",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Adversarial Fast-Moving Real-World Domains as Test Beds for Benchmarking AI Scientist Capabilities",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "openalex:W7197053313",
+            "queue": "backlog",
+            "rank": 167,
+            "selection": {
+              "canonical_id": "openalex:W7197053313",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Training Documents Reranker with Search Rubrics for Deep Research Agent",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24144799",
+            "queue": "recent",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.24144799",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "The Harness Is the Lab: Measured Self-Improvement for Ontology-Grounded AI Scientists",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.64898/2026.11.09.765490",
+            "queue": "recent",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.64898/2026.11.09.765490",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "An auditable harness for biomolecular dynamics simulations by AI agents",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24082321",
+            "queue": "recent",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.24082321",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-13T11:54:04.674237+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "ChemDFT: open-core snapshot (schemas, contracts and engine wrappers), release 0.0.26",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24031244",
+            "queue": "recent",
+            "rank": 8,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.24031244",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-10T12:07:21.862310+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "From Human\u2013AI Collaboration to Autonomous Scholarly Agents: A Transparent Model for Rapid Publication of AI-Generated Research",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24026258",
+            "queue": "recent",
+            "rank": 9,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.24026258",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-10T12:07:22.478958+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Does an Open Targets dossier skill help an AI scientist agent? An OpenScientist experiment",
+            "track": "deep_research"
+          },
+          {
+            "canonical_id": "doi:10.21686/2500-3925-2026-5-70-82",
+            "queue": "recent",
+            "rank": 10,
+            "selection": {
+              "canonical_id": "doi:10.21686/2500-3925-2026-5-70-82",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-10T12:08:04.018707+00:00",
+              "last_outcome": "manuscript_unavailable",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Artificial Intelligence Changes Cognition Systems",
+            "track": "deep_research"
+          }
+        ],
+        "ranked": 385,
+        "retry_blocked": 40,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.1177/27681572261475914",
+            "outcome": "manuscript_unavailable",
+            "rank": 178
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21754161",
+            "outcome": "manuscript_unavailable",
+            "rank": 169
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.21758297",
+            "outcome": "manuscript_unavailable",
+            "rank": 171
+          },
+          {
+            "canonical_id": "openalex:W7197053879",
+            "outcome": "backlog_slot_consumed",
+            "rank": 166
+          },
+          {
+            "canonical_id": "openalex:W7197053313",
+            "outcome": "backlog_slot_consumed",
+            "rank": 167
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24144799",
+            "outcome": "manuscript_unavailable",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24082321",
+            "outcome": "track_slot_consumed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24031244",
+            "outcome": "track_slot_consumed",
+            "rank": 8
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.24026258",
+            "outcome": "track_slot_consumed",
+            "rank": 9
+          },
+          {
+            "canonical_id": "doi:10.21686/2500-3925-2026-5-70-82",
+            "outcome": "track_slot_consumed",
+            "rank": 10
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "backlog_eligible": 9,
+        "completed_scientific_assessment": 8,
+        "eligible": 9,
+        "high_relevance": 17,
+        "nominated": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "queue": "backlog",
+            "rank": 9,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2609.35578",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-09-30T10:20:13.801385+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "FactorEngram: Factorized N-gram Memory with Basis-Level Gating for Language Models",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.10533",
+            "queue": "backlog",
+            "rank": 8,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.10533",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-09T11:21:59.348583+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.21810",
+            "queue": "backlog",
+            "rank": 6,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.21810",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-19T09:37:36.199484+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "N-Gram Memories at Two Bits: Quantizing Lookup Tables in Large Language Models",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.14921",
+            "queue": "backlog",
+            "rank": 7,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.14921",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-19T09:38:39.849500+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Representation Drift in Continual Learning: LoRA versus N-gram Memory",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.31646",
+            "queue": "backlog",
+            "rank": 5,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.31646",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-26T09:41:18.098161+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Low-Bit N-Gram Embeddings for Language Models",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23604600",
+            "queue": "backlog",
+            "rank": 3,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23604600",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-26T09:40:52.340411+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Fast to Write, Slow to Learn: Instant N-gram Notes that Upgrade to Learning Neurons for Two-Layer Dynamic Memory in a Production Inference Engine",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23803702",
+            "queue": "recent",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.23803702",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-11-02T12:03:12.371727+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Dynamic Engram: Answering from an Exact n-gram Memory Injected at Inference Time",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.35985",
+            "queue": "recent",
+            "rank": 2,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.35985",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-30T10:46:09.850706+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 2
+            },
+            "title": "Let the Gate Decide: Per-Lookup Precision for Quantized Conditional Memory in LLMs",
+            "track": "engram"
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.31125",
+            "queue": "recent",
+            "rank": 4,
+            "selection": {
+              "canonical_id": "doi:10.48550/arxiv.2610.31125",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": "2026-10-26T09:41:18.086170+00:00",
+              "last_outcome": "not_assessed",
+              "policy": "operational-eligibility-v1",
+              "reason": "retry_eligible",
+              "retry_eligible": true,
+              "technical_attempts": 1
+            },
+            "title": "Delta N-gram: Forward-Only Continual Writing into a Language Model's Native N-gram Memory",
+            "track": "engram"
+          }
+        ],
+        "ranked": 19,
+        "retry_blocked": 0,
+        "skipped_before_model": [
+          {
+            "canonical_id": "doi:10.48550/arxiv.2609.35578",
+            "outcome": "not_assessed",
+            "rank": 9
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.10533",
+            "outcome": "not_assessed",
+            "rank": 8
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.21810",
+            "outcome": "not_assessed",
+            "rank": 6
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.14921",
+            "outcome": "not_assessed",
+            "rank": 7
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.31646",
+            "outcome": "not_assessed",
+            "rank": 5
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23604600",
+            "outcome": "not_assessed",
+            "rank": 3
+          },
+          {
+            "canonical_id": "doi:10.5281/zenodo.23803702",
+            "outcome": "not_assessed",
+            "rank": 1
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.35985",
+            "outcome": "not_assessed",
+            "rank": 2
+          },
+          {
+            "canonical_id": "doi:10.48550/arxiv.2610.31125",
+            "outcome": "not_assessed",
+            "rank": 4
+          }
+        ],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-11-16T12:27:21.250762+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v3"
+}

@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>See and Detect: Image-Driven Open-Vocabulary Multi-View 3D Object Detection</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>See and Detect: Image-Driven Open-Vocabulary Multi-View 3D Object Detection</h1>
+          <p class="hero-copy">Yating Xu, Na Zhao, Chenhan Jiang, Qingwen Zhang, Jiankang Deng, Jifei Song</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://arxiv.org/abs/2611.17897v1">Open paper</a>
+            <a class="paper-detail-link" href="see-and-detect-image-driven-open-vocabulary-multi-view-3d-object-detection-84e4415e.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Yating Xu, Na Zhao, Chenhan Jiang, Qingwen Zhang, Jiankang Deng, Jifei Song</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-11-13</dd></div>
+              <div><dt>Publication date</dt><dd>2026-11-13</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>arxiv</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>high</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://arxiv.org/abs/2611.17897">arXiv</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies object-detection architecture, training, or evaluation.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Recent open-vocabulary multi-view indoor 3D detection methods typically follow a point-cloud-driven pipeline, where pseudo 3D boxes are generated from reconstructed or estimated geometry and semantic labels are inferred from projected regions. However, such a design makes box generation dependent on the completeness...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>AI assessment inconclusive</h2>
+      <p>The paper tackles clear failure modes of point-cloud-driven pseudo-labeling in multi-view 3D detection with principled, well-ablated components and demonstrates substantial empirical improvements on standard benchmarks without circular evaluation.</p>
+      <p>The manuscript could further explore sensitivity to depth map quality used during the offline single-view proposal step, though reliance on heavy pretrained models (Cubify Anything, SAM, Qwen3-VL) is properly noted as strictly offline training preparation.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-16T12:29:03.739117+00:00.</p>
+        <p>Coverage: 39787 of 39787 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Recent open-vocabulary multi-view indoor 3D detection
+methods typically follow a point-cloud-driven pipeline,
+where pseudo 3D boxes are generated from reconstructed
+or estimated geometry and semantic labels are inferred
+from projected regions. However, such a design makes box
+generation dependent on the completeness of point clouds
+and restricts semantic learning to local appearance, caus-
+ing inferior 3D object localization and open-vocabulary
+classification. In this paper, we present See and Detect, an
+image-driven framework that uses multi-view images as the
+primary evidence for 3D box and semantic label generation.
+For box generation, we first discover object candidates from
+individual images, enabling objects missing in point clouds
+to be recovered from visual evidence. However, single-view
+predictions are often noisy and redundant. To address this,
+we propose multi-view consensus </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>box consolidation to fuse
+spatially consistent predictions across views, and box qual-
+ity assessment to reduce the impact of boxes with partial ob-
+ject coverage. For semantic label generation, we introduce
+context-aware semantic learning, where semantic labels are
+queried from full image context, enabling more accurate se-
+mantic prediction. Extensive experiments on ScanNet and
+ARKitScenes demonstrate that our method achieves state-
+of-the-art open-vocabulary multi-view 3D detection perfor-
+mance while running over 500×faster than the previous
+state-of-the-art method.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>spurious. We further
+propose box quality assessment to reduce the impact of
+pseudo boxes with partial object coverage by measuring
+their cross-view visibility consistency and reweighting the
+localization loss accordingly.
+For semantic label generation, we propose context-aware
+semantic learning to incorporate scene context into seman-
+tic label generation. Specifically, we query object labels
+from full images with projected regions highlighted, allow-
+ing the prediction to consider global scene context and con-
+sequently generating more accurate semantic labels. We use
+an MLLM to perform this context-aware query and average
+its predictions across views as semantic learning targets. We
+further introduce semantic-aware negative sampling for ef-
+fective contrastive learning, which selects informative neg-
+ative labels based on semantic similarity in the text feature
+space. Our main </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>contributions are summarized as follows:
+• We develop an image-driven pseudo box supervision
+pipeline that leverages existing single-view 3D proposals
+and introduces multi-view consensus box consolidation
+and box quality assessment to construct reliable localiza-
+tion supervision.
+• We propose context-aware semantic learning, where se-
+mantic labels are inferred from full images with projected
+object regions to incorporate both local appearance and
+global scene context. We further introduce semantic-
+aware negative class selection for effective contrastive
+text–3D alignment.
+• We achieve state-of-the-art performance on both ScanNet
+and ARKitScenes datasets. Notably, our method outper-
+forms prior work by +4.3% mAP 50 on ScanNet60 open-
+vocabulary detection while running over 500×faster.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Fig. 2 shows our framework. We adopt SGCDet [27] as
+the detection backbone, which is the state-of-the-art multi-
+view 3D object detection model for indoor scenes. How-
+ever, SGCDet is a closed-set detector, where object cat-
+egories must be predefined during training. To extend it
+to open-vocabulary 3D detection, we augment the detector
+with two heads: a class-agnostic box head for object local-
+ization and a 3D semantic feature head for open-vocabulary
+classification. In the first head, we train for class-agnostic
+3D object localization with the pseudo boxes generated via
+image-driven approach (Sec. 3.2), which produces complete
+and reliable boxes. In the second head (Sec. 3.3), we aim
+to align the 3D with text feature space, where the context-
+aware semantic learning is introduced to generate reliable
+semantic labels by reasoning with scene context. We further
+apply semantic-aware </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Fig. 3 shows the proposed image-driven pseudo box gen-
+eration pipeline. We use Cubify Anything [11] as a
+per-view image-driven proposal generator to predict ini-
+tial class-agnostic 3D box candidates. The predicted can-
+didates from thev-th view are denoted as{ ˜Bvi }Ni=1 =
+CubifyAnything(Iv, Dv), where ˜Bvi is thei-th predicted
+box candidate from imageI v, andD v is the corresponding
+depth map ofI v to provide 3D information. These candi-
+dates provide visual evidence for object discovery, but are
+noisy and redundant when generated independently from
+different views. Therefore, we further perform multi-view
+consensus box consolidation and box quality assessment
+to convert the per-view candidates into reliable pseudo 3D
+boxes for training.
+Multi-View Consensus Box Consolidation.To associate
+cross-view predictions, we construct an undirected graph
+for each scene. Each node represents a </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>predicted 3D box
+˜Bvi . An edge between ˜Bvi and ˜Buj is established if they
+have sufficient spatial overlap in 3D:
+e ˜Bvi , ˜Buj =
+(
+1,if IoU( ˜Bvi , ˜Buj )&gt; θ,
+0,otherwise, (1)
+where IoU(·,·)denotes the 3D IoU.
+Then, the resulting graph is decomposed into connected
+components. Each component corresponds to a set of cross-
+view box predictions that agree on a shared 3D location. We
+observe that true objects are typically detected consistently
+across multiple views, forming components with multiple
+nodes. In contrast, spurious detections often appear only
+in a single view, resulting in singleton components. There-
+fore, we introduce a multi-view consensus filtering strategy
+to retain only components containing more than one node
+and discard singleton components. For each retained com-
+ponent, we fuse all boxes within the component to gener-
+ate a consolidated pseudo 3D box. Importantly, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>perspective division to obtain 2D projected cor-
+nersp= [p 1, . . . , p8]⊤ ∈R 8×2, wherep j = (u j, vj). A
+projected corner is considered visible if it lies within the
+image boundary,i.e.,0&lt; u j &lt; Wand0&lt; v j &lt; H. We
+define the visibility indicator for viewv i as
+I(vi) =1
+
+
+
+8X
+j=1
+1(0&lt; uj &lt; W,0&lt; vj &lt; H)≥4
+
+
+ .
+(2)
+For visible projection, we further check object coverage
+using SAM [9]. Our intuition is that a projection that tightly
+covers the instance is a good prompt for SAM, leading to
+high-confidence mask prediction. Therefore, we use the
+minimum and maximum coordinates of the projected cor-
+nerspas the prompt. We denote the SAM confidence as
+S(vi)∈[0,1]. The final box quality score is computed as
+Q= 1n
+nX
+i=1
+I(vi)S(v i),(3)
+wherenis the number of nearby views and is empirically
+set to 3. During training,Qis used as the weight for object
+localization loss so that imperfect </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To leverage the rich context information in the images, we
+use a multi-modal large language model (MLLM) to in-
+fer semantic label for each pseudo box. Specifically, we
+project each pseudo box onto its supporting views and over-
+lay the projected 2D box on the image as a visual prompt for
+Qwen3-VL [1], enabling category prediction with both lo-
+cal object appearance and scene context. Letˆy i denote the
+predicted label from thei-th supporting view, andf itext =
+Etext(ˆyi)∈R d is the extracted text feature by CLIP. The
+semantic label for the pseudo box is computed as follows:
+fpos = 1nsupp
+nsuppX
+i=1
+f itext,(4)
+wheren supp is the number of supporting views of the pseudo
+box.
+Semantic-Aware Negative Class Selection.To perform
+effective text-3D contrastive learning, the quality of neg-
+ative classes matters. Therefore, we construct semantic-
+aware negative classes by measuring the cosine </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>similarity
+between the semantic labelf pos and the text features of a
+class supersetT={t m}Mm=1. Classes are then sorted in
+descending order based on the similarity scores. Classes
+ranked at the top are highly similar and may correspond
+to the true class or near-duplicate categories, while classes
+ranked at the bottom are semantically unrelated and pro-
+vide limited discriminative learning signal. Therefore, we
+select the negative classes from a middle range denoted as
+N={t π(k) |k 1 ≤k≤k 2}, whereπ(k)represents the
+index of class ranked at positionk.
+Optimization.To enable open-vocabulary classification,
+we convert the classification head of SGCDet to predict a
+fixed-length feature vector that is aligned with the CLIP fea-
+ture space. We denote the feature vector asf 3D ∈R d. The
+text-3D contrastive loss is as follows:
+Ltext-3D =−log exp(cos(f3D, fpos)/τ)P
+f∈M
+exp(cos(f3D, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate on two challenging 3D indoor detection
+datasets: ScanNet [5] and ARKitScenes [2]. ScanNet has
+1,201 training and 312 testing scenes with annotations for
+200 object categories. We evaluate on two benchmarks,i.e.
+ScanNet60 with 60 classes [3] and ScanNet200 with 200
+classes [7]. We report mean average precision (mAP) un-
+der IoU thresholds of 0.25 and 0.5. ARKitScenes consists
+of 4493 training and 549 testing scans. These scans contain
+RGB-D frames along with 3D object bounding box annota-
+tions of 17 categories. Following [7], we use ARKitScenes
+only for 3D pseudo box evaluation and report precision and
+recall under IoU thresholds of 0.25 and 0.5.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our detection backbone is SGCDet [27], which is the state-
+of-the-art multi-view indoor 3D object detector. We fol-
+low the training and testing configuration of SGCDet. Im-
+ages are resized to320×240as the input with 40 and 100
+images for training and testing, respectively. The network
+is trained end-to-end under 50 epochs using AdamW opti-
+mizer. In the pseudo box generation, we evenly sample 60
+views for each scene to detect bounding boxes. We per-
+form Non-Maximum Suppression and size constraints after
+multi-view consensus box consolidation.θis set to 0.4 in
+the edge construction. In the context-aware semantic learn-
+ing, we follow CoDA [3] to adopt LVIS [6] categories as
+the class superset.k 1 andk 2 are set to 10 and 150 in the
+semantic-aware negative class selection. We use Qwen3-
+VL-30B-A3B-Instruct [1] as the MLLM for semantic label
+generation. During testing stage, we measure </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the cosine
+similarity between the predicted 3D box featuref 3D and
+CLIP text embeddings of text prompts to perform open-
+vocabulary classification. Following CoDA [3], the tem-
+plate for text prompt is set as &quot;A photo of [category name]
+in the scene&quot;. Importantly, Cubify Anything, SAM, and
+Qwen3-VL are used only for offline pseudo-label genera-
+tion during training. At inference time, our method uses
+only the feed-forward multi-view 3D detector with RGB
+images and camera parameters as input.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Open-V ocabulary 3D Object Detection.Tab. 1 com-
+pares our method with prior open-vocabulary 3D object de-
+tection approaches on ScanNet60 and ScanNet200 bench-
+marks. The baselines include state-of-the-art point-cloud-
+based methods such as CoDA [3], OV-3DET [14] and OV-
+Uni3DETR [23], as well as multi-view-based approaches
+including OpenM3D [7] and Zoo3D [12]. We report the
+best results in the setting of posed images from Zoo3D
+[12], which learns a class-agnostic 3D object detection from
+the pseudo boxes generated from point cloud instance seg-
+mentation and then extracts the CLIP features of the pro-
+jected 2D box crops for open-vocabulary classification. De-
+spite taking only RGB images as input, our method largely
+outperforms point-cloud-based open-vocabulary detectors
+(e.g. improves over OV-Uni3DETR by +9.1 on ScanNet60).
+Compared with multi-view based methods, our approach
+also </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>achieves state-of-the-art performance. In particular,
+we outperform Zoo3D by +4.6 mAP 25 and +4.3 mAP 50
+on ScanNet60. It verifies the superiority of the proposed
+image-driven approach for pseudo box and semantic label
+generation, which provides more complete 3D boxes and
+more accurate semantic labels than point-cloud-driven ap-
+proaches (i.e. Zoo3D and OpenM3D). Moreover, we run
+much faster than Zoo3D during inference, achieving a 500x
+speedup. The large speed gap stems from the fact that
+Zoo3D performs online 3D reconstruction and aligns 3D
+boxes to 2D image crops for open-vocabulary classification
+at inference time, while our method is a single-stage feed-
+forward 3D detector. Fig. 5 shows qualitative comparison
+on ScanNet60, where we show more compact and accurate
+open-vocabulary 3D object detections.
+Class-Agnostic 3D Object Detection.Tab. 2 reports the
+class-agnostic 3D detection </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Effectiveness of Multi-View Consensus Box Consolida-
+tion.Tab. 4 shows the ablation study of multi-view consen-
+sus filtering during pseudo box generation on ScanNet200.
+&quot;No Filtering&quot; denotes no multi-view consensus filtering,
+i.e. keep all components. &quot;Filtering (&lt;3views)&quot; refers to
+removing components that have fewer than 3 nodes (i.e. ob-
+6
+Ground-
+Truth
+Ours
+Zoo3D
+Figure 5. Qualitative results of open-vocabulary multi-view 3D object detection on ScanNet60.
+Method Test Input ScanNet60 ScanNet200 Inference Time(s)mAP25 mAP50 mAP25 mAP50
+CoDA [3] pcd 9.0 2.2 4.4 0.9 1.8
+OV-3DET [14] pcd 8.1 1.4 2.7 0.5 2.6
+OV-Uni3DETR [23] pcd 19.4 - - - -
+OpenM3D [7] imgs - - 4.2 - 0.4
+Zoo3D [12] imgs 23.9 10.816.56.3 378.3
+Ours imgs28.5 15.116.47.70.7
+Table 1. Open-vocabulary multi-view 3D object detection on ScanNet60 and ScanNet200 benchmarks. &quot;Test Input&quot; denotes the input at
+inference stage. </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Inference time is measured in seconds per scene. We report the best results of Zoo3D from their paper under the multi-view
+setting. Best results are marked bold.
+Method mAP 25 mAP50 mAR25 mAR50
+OpenM3D [7] 26.9 - 51.2 -
+Zoo3D [12] 36.1 13.9 - -
+Ours52.7 25.3 72.2 38.9
+Table 2. Class-agnostic 3D object detection on ScanNet200. Best
+results are marked bold.
+served in less than 3 views). &quot;No Filtering&quot; shows the high-
+est recall (76.5 / 61.2 at R 25/R50) but very low precision
+(34.1 / 27.3), as many spurious single-view detections are
+preserved. By removing only singleton components, pre-
+cision improves significantly (e.g., P50 increases from 27.3
+to 41.9) while recall at IoU 0.5 drops only slightly (61.2
+→59.6), indicating that most false positives originate from
+single-view predictions and can be effectively suppressed
+without sacrificing valid objects. Further applying </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Method ScanNet200 ARKitScenesR25 P25 R50 P50 R25 P25 R50 P50
+OpenM3D [7] 58.3 32.1 32.9 18.1 51.9 5.9 13.7 1.6
+Zoo3D [12] 58.7 35.9 45.6 27.9 52.0 8.4 28.2 4.3
+Ours71.9 50.5 59.6 41.9 61.3 45.6 58.0 43.2
+Table 3. 3D pseudo box evaluation on ScanNet200 and ARKitScenes dataset. We report recall (R) and precision (P) at IoU thresholds of
+0.25 and 0.50. Best results are marked bold.
+Method R 25 P25 R50 P50
+No Filtering76.534.161.227.3
+Filtering (&lt;3views) 65.553.756.343.9
+Ours 71.9 50.5 59.6 41.9
+Table 4. Ablation on multi-view consensus box consolidation
+on ScanNet200. &quot;No Filtering&quot; and &quot;Filtering (&lt;3views)&quot;
+denote no filtering and filtering components observed less than
+3 views, respectively.
+Method mAP 25 mAP50 mAR25 mAR50
+No Asses. 50.5 23.6 71.1 38.6
+Visibility Asses. 51.9 24.1 71.5 38.9
+Ours52.7 25.3 72.2 38.9
+Table 5. Ablation study on the box quality assessment on Scan-
+Net200. &quot;No </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Asses.&quot; denotes no box quality assessment, while &quot;Vis-
+ibility Asses.&quot; denotes only checking visibility.
+Method ScanNet60 ScanNet200mAP25 mAP50 mAP25 mAP50
+IMG Crop 20.6 11.4 7.8 4.4
+IMG Crop+Text 21.0 11.7 9.9 4.5
+Ours28.5 15.1 16.4 7.7
+Table 6. Ablation study on context-aware semantic learning.
+&quot;IMG Crop&quot; and &quot;IMG Crop+Text&quot; are two semantic learning
+methods derived from image crops.
+Range ScanNet60 ScanNet200mAP25 mAP50 mAP25 mAP50
+[2,1203]27.0 13.4 15.0 6.8
+[150,400]28.1 14.0 15.5 7.0
+[400,800]27.1 13.0 15.0 6.5
+Ours28.5 15.1 16.4 7.7
+Table 7. Ablation study on the range[k 1, k2]for the semantic-
+aware negative class selection on ScanNet60 and ScanNet200.
+&quot;Visibility Asses.&quot; are worse than ours because they do not
+fully assess pseudo box quality.
+Effectiveness of Context-Aware Semantic Learning.
+Tab. 6 shows the ablation study on context-aware semantic
+learning. We compare with the </blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Object-detection method</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Concerns object-detection architecture, training, or evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: metadata</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 96/100</li>
+              <li>Screening category: Object detection</li>
+              <li>Tags: object-detection, 3d-vision</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: arxiv</li><li>Latest revision / source update: 2026-11-13</li><li>Publication date source: arxiv</li><li>Publication date precision: day</li><li>Publication date confidence: high</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-11-16 12:26:47</li><li>Last seen by Paper Scout: 2026-11-16 12:27:04</li></ul>
+            <ul><li>arXiv: 2611.17897</li><li>arXiv IDs: 2611.17897</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="see-and-detect-image-driven-open-vocabulary-multi-view-3d-object-detection-84e4415e.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>See and Detect: Image-Driven Open-Vocabulary Multi-View 3D Object Detection. Yating Xu, Na Zhao, Chenhan Jiang, Qingwen Zhang, Jiankang Deng, Jifei Song. 2026-11-13. https://arxiv.org/abs/2611.17897v1</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

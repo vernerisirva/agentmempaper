@@ -59,16 +59,244 @@
             <p>Financial indicators are essential tools for transforming raw financial data into interpretable measures for various downstream tasks, such as valuation, risk assessment, and economic analysis. However, existing financial benchmarks largely focus on answer-level accuracy and often assume that relevant data are alrea...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Awaiting AI assessment</h2>
-      <p>Scientific quality has not been assessed under the manuscript evidence gate.</p>
-      <p>Legacy assessment retained; manuscript review is required before promotion.</p>
+      <h2>Quality reviewed</h2>
+      <p>The benchmark provides an adequate, structured contribution to evaluating financial research agents beyond simple final-answer QA. Validation of LLM parsing and formula scoring via human inter-annotator agreement and the Alt-test provides sound measurement reliability.</p>
+      <p>The authors state the scope of public financial/macroeconomic data used, and the text acknowledges model limitations and constraints across technical/macro indicator domains, though a dedicated discussion of benchmark lifespan or live website drift is brief.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: title_and_abstract.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v1. Gate: not assessed.</p>
-        <p>Assessed: 2026-08-07T07:45:16+00:00.</p>
-
-        <ul><li>The contribution is stated explicitly.</li><li>The available text identifies data or a benchmark used by the work.</li><li>No suitable baseline comparison was detected in the available text.</li><li>No quantitative, user, expert, or operational evaluation was detected in the available text.</li><li>Comparative claims were detected without a suitable baseline in the available text.</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-11-16T12:28:26.136938+00:00.</p>
+        <p>Coverage: 60348 of 60348 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Financial indicators are essential tools for transforming raw finan-
+cial data into interpretable measures for various downstream tasks,
+such as valuation, risk assessment, and economic analysis. How-
+ever, existing financial benchmarks largely focus on answer-level
+accuracy and often assume that relevant data are already provided,
+leaving the assessment of the intermediate process of indicator con-
+struction underexplored. In this work, we proposeFinDeepIndi-
+cator, the first benchmark dedicated to evaluating Deep Research
+(DR) agents in end-to-end financial indicator construction. Specifi-
+cally, FinDeepIndicator evaluates DR agents across four stages in
+indicator construction: formula specification, data collection, indi-
+cator calculation, and answer generation, and covers fundamental,
+technical, and macroeconomic indicators organized into 21 fine-
+grained sub-categories. It </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>contains 3,350 curated question-answer
+(QA) pairs derived from both U.S. and Chinese markets, 10 years
+of historical financial data, and 800 listed companies. Extensive
+experiments on search-equipped Large Language Models (LLMs)
+and DR agents show that, while LLMs generally perform well in
+formula specification, their accuracy drops substantially during
+data retrieval and numerical execution. DR agents consistently
+outperform search-equipped LLMs, yet remain unreliable in realis-
+tic financial analysis settings. These findings provide insights for
+developing more capable and trustworthy DR agents in finance.
+CCS Concepts
+•Computing methodologies → Natural language processing.
+Keywords
+Deep Research, Financial Analysis, Process-level Evaluation
+∗Corresponding authors.
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>this process, including incorrect indicator interpretation,
+inaccurate data retrieval, numerical computation mistakes, or in-
+appropriate aggregation. Consequently, evaluating only the final
+answer provides an insufficient basis for assessing a model&#x27;s finan-
+cial reasoning capability and fails to reveal its specific limitations.
+To address these challenges, we propose a process-level evalua-
+tion framework for end-to-end financial indicator construction. The
+framework decomposes the indicator construction process into four
+stages:Formula Specification,Data Collection,Indicator Calculation
+andAnswer Generation.Formula Specificationevaluates whether an
+agent correctly identifies the financial concept and mathematical
+definition.Data Collectionmeasures whether the agent can retrieve
+relevant and accurate financial information.Indicator Calculation
+evaluates numerical correctness under </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>question generation, answer
+Figure 2: An overview of FinDeepIndicator.
+verification, and process-level evaluation. Based on the proposed
+evaluation framework and collected indicators, we constructFinD-
+eepIndicator, the first benchmark specifically designed for assess-
+ing DR agents in end-to-end financial indicator construction. The
+benchmark spans the U.S. and Chinese markets and incorporates 10
+years of historical data from 800 publicly listed companies. Overall,
+FinDeepIndicator contains 3,350 carefully curated question-answer
+pairs that require agents to complete the full construction workflow,
+including indicator understanding, raw data collection, intermedi-
+ate indicator calculation, and final answer generation.
+With FinDeepIndicator, we conduct extensive experiments to
+evaluate search-equipped LLMs and DR agents in end-to-end fi-
+nancial indicator construction. The key findings </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>indicator, we document its
+name, mathematical formula, raw data, and calculation program.
+This structured metadata serves two purposes. First, it ensures that
+all generated questions have well-defined ground-truth computa-
+tion procedures. Second, it supports process-level evaluation by
+making it possible to separately verify the formula, data, interme-
+diate calculation, and final answer.
+2.1.2Template Design.We design a set of broadly applicable
+and linguistically diverse templates to cover common analytical
+requests involving financial indicators. These templates support
+tasks such as computing an indicator for a company, comparing
+indicator values across years, and identifying the maximum or
+minimum value within a specified period.
+To construct the templates, we first group indicators by type and
+design shared templates for indicators within the same type. Each
+template is further </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>associated with five surface variants that express
+the same underlying analytical intent in different natural-language
+forms, thereby increasing linguistic diversity while maintaining
+generation controllability. In addition, each template contains sev-
+eral placeholder variables,e.g.,indicator, company, date, conditional
+logic, etc. During QA generation, these placeholders are instantiated
+with values sampled from predefined variable pools.
+Figure 3: Construction pipeline of FinDeepIndicator.
+When designing templates, we divide them into three difficulty
+levels:Easy,MediumandHard.Easyquestions require direct calcu-
+lation of the target indicator from the collected raw data.Medium
+questions require one-hop analysis in addition to indicator compu-
+tation, such as selecting the maximum, minimum, or year-over-year
+change after computing a sequence of values.Hardquestions re-
+quire multi-hop </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>natural-language question,
+the reference formula, the required raw data, the intermediate in-
+dicator calculation, and the final numerical answer. Because each
+template variant can be paired with many applicable indicators
+and each indicator can be instantiated with many combinations
+of entities, dates, and reasoning operators, the resulting candidate
+pool contains billions of potential QA instances. From this pool,
+we generate 3,350 representative QA examples by enumerating all
+template variants and applicable indicators, and sampling valid
+combinations of the remaining variables.
+2.1.4Quality Control.We maintain the high quality of FinD-
+eepIndicator by implementing a rigorous quality-control process
+throughout its construction and generation stages, including,
+• Comprehensive indicator taxonomy.We develop a compre-
+hensive taxonomy covering diverse financial indicators. For </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Gwet&#x27;s
+AC1 0.86 0.92 0.83 0.91 0.71
+Acceptance
+Rate 0.95 0.96 0.98 0.94 (1.0, 0.86)
+• Expert quality inspection.After QA generation, we conduct
+random-sampling inspections with human experts to further
+validate dataset quality. The sampled QA instances are reviewed
+for question clarity, data availability, formula correctness, and
+calculation correctness. Instances containing invalid parameter
+settings or inconsistent computations are regenerated.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>35]. Specifically, we randomly sample 100 model
+responses and invite three domain experts with financial expertise
+to independently assess whether each parsed component is cor-
+rect and complete (See Appendix A.2 for expert review criteria).
+As reported in Table 1, the inter-annotator agreement for the four
+extracted components is consistently high, with all Gwet&#x27;s AC1
+scores exceeding 0.6. Moreover, the expert acceptance rates are all
+above 0.9, indicating that the LLM-based parsing procedure reliably
+converts free-form model responses into structured representations
+suitable for subsequent evaluation.
+2.2.2Evaluation Metrics.We evaluate four stages of the indi-
+cator construction process: formula specification, data collection,
+indicator calculation, and final answer generation.
+• Formula Specification Evaluation. We evaluate formula cor-
+rectness based on semantic and mathematical </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>equivalence rather
+than exact string matching, since the same financial indicator
+may be expressed using different but equivalent formulations.
+Specifically, we adopt an LLM-as-a-Judge protocol that assigns
+each parsed formula a three-level score according to whether
+it preserves the intended financial meaning, required variables,
+mathematical operations, and relevant domain conventions. The
+detailed scoring criteria are provided in Appendix A.3. To assess
+the reliability of the LLM-based evaluator, we further conduct
+the Alt-test [2]. Three human experts independently evaluate
+the consistency between each parsed formula and the correct
+formula. As reported in Table 1, the Gwet&#x27;s AC1 scores exceed 0.6,
+indicating substantial agreement among the human annotators.
+Moreover, the winning rate surpasses 0.5, passing the statistical
+test. Additionally, with an advantage probability exceeding </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.8,
+our results provide strong evidence that LLM annotation serves
+as a viable substitute for human evaluator.
+• Data Collection Evaluation. We evaluate the collected raw data
+by comparing the generated data table with the corresponding
+reference data table. Both tables are represented in CSV format,
+where rows denote entities and columns denote the required
+fields, such as year and company. After aligning the rows and
+columns, we perform a cell-level comparison. For numerical en-
+tries, a cell is considered correct when the difference between the
+generated value and the reference value falls within a predefined
+tolerance (e.g.,0.01, 0.005, or 0.001). This tolerance-aware com-
+parison accommodates minor discrepancies caused by numerical
+precision, rounding, or unit conversion while still identifying
+missing or incorrect values. The data collection accuracy is then
+computed as the </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>number of correctly matched cells divided by
+the total number of evaluated cells in the reference table.
+• Indicator Calculation Evaluation. We evaluate the correct-
+ness of intermediate indicator calculations using the same table-
+based procedure. Specifically, the indicator calculation results
+are normalized into a CSV-style table and aligned with the corre-
+sponding reference table. Each numerical cell is evaluated using
+the predefined tolerance threshold, and the indicator calculation
+accuracy is calculated as the proportion of correctly matched
+cells among all evaluated cells. This metric measures whether
+the model correctly applies the indicator formula to the collected
+data and produces the expected intermediate indicator results.
+• Answer Generation Evaluation. We evaluate the final answer
+using tolerance-aware numerical matching against the reference
+answer. A generated answer </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is considered correct if its numeri-
+cal difference from the reference value is within the predefined
+tolerance, in which case the answer accuracy is assigned a value
+of 1. Otherwise, it is considered incorrect and assigned a value
+of 0. This evaluation accommodates minor discrepancies caused
+by rounding, numerical precision, unit conversion, or output
+formatting while distinguishing substantively incorrect answers.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate two representative settings on FinDeepIndicator:
+• LLM with Search (Search).The LLM performs a single web
+search and then generates the final answer based on the retrieved
+information.
+• Deep Research Agent (Agent).Since existing DR systems dif-
+fer substantially in implementation, making unified comparison
+difficult, we adopt a minimal DR agent based on the ReAct par-
+adigm [39]. The agent iteratively reasons, invokes tools, and
+observes the results, with access to search and Python tools.
+Evaluated LLMs include Qwen3.6-Max, Claude-Sonnet-4.6, Gemini-
+3-Flash, Deeepseek-V4-Flash, Grok-4.3, GPT-5, GPT-5-Mini. The
+equipped search API is Google Search.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 4 presents the overall performance of different LLMs and
+agents across the four stages of financial indicator construction,
+from which we can observe the following:
+• All methods show limited end-to-end construction ability.
+Even the best-performing method achieves only around 40%
+accuracy on final answers. Performance decreases further under
+stricter numerical tolerances. These results indicate that reliable
+end-to-end financial indicator construction remains challenging
+for current methods.
+• Agentic gains are substantial but model-dependent.Agent-
+based settings generally outperform their search-based counter-
+parts, particularly in data collection, indicator calculation, and
+final answer generation. However, the magnitude of improve-
+ment varies considerably across models. Gemini-3-Flash achieves
+the strongest performance in the search-only setting, but its
+agent-based </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 8 reports model performance when the required formula
+and raw data are directly provided, thereby removing the need for
+formula specification and data collection. We make the following
+observations:
+• The ablation study further confirms that data collection is
+the primary bottleneck.Once the required raw data is provided,
+all three agents achieve substantially higher indicator-calculation
+and answer-generation accuracy than in the end-to-end setting.
+For fundamental and macroeconomic indicators, performance
+generally exceeds 80% and frequently approaches 100% across
+models and difficulty levels. This result reinforces our earlier
+finding that the main challenge lies in locating, extracting, align-
+ing, and normalizing the required financial data, rather than in
+formula understanding or numerical computation.
+• Technical indicators remain challenging even when the
+data is </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To better understand the limitations of current models, we ran-
+domly sample 100 failed cases from each of the three agent settings,
+resulting in 300 cases in total, and annotate the first error that oc-
+curs in each case. As summarized in Table 2, these errors fall into
+four categories:Formula,Data,Calculation, andLogic.
+XXX, XX, XX, XX, XX Chaoqun Yang et al.
+• Formula errors.Formula errors account for 8.6% of all failures,
+including completely incorrect formulas (3.8%) and partially in-
+correct formulas (4.8%). The latter typically involves missing or
+substituted accounting items, or using an ending balance instead
+of the required average of beginning and ending balances.
+• Data errors.Data errors dominate the failures, accounting for
+87.7%. They include incorrect data extraction (50.1%), missing
+critical fields (19.8%), incorrect time windows (10.2%), and unit-
+conversion errors </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>FinDeepIndicator is constructed from publicly available financial
+and macroeconomic data. We use these data solely for research
+purposes and avoid collecting sensitive personal information.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +335,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
